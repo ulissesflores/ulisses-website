@@ -17,6 +17,25 @@ interface PageProps {
   params: Promise<{ category: string; slug: string }>;
 }
 
+export async function generateMetadata({ params }: PageProps) {
+  const { category, slug } = await params;
+  const pub = publications.find((p) => p.id === slug && p.category === category);
+
+  if (!pub) return { title: 'Artigo não encontrado' };
+
+  return {
+    title: `${pub.title} | Carlos Ulisses Flores`,
+    description: pub.summary,
+    openGraph: {
+      title: pub.title,
+      description: pub.summary,
+      type: 'article',
+      publishedTime: pub.date,
+      authors: ['Carlos Ulisses Flores'],
+    },
+  };
+}
+
 export default async function ArticlePage({ params }: PageProps) {
   // 1. Desembrulhamos a promessa com 'await'
   const { category, slug } = await params;
