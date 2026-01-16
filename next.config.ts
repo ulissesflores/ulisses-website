@@ -6,7 +6,7 @@ const nextConfig: NextConfig = {
     const subdomains: Record<string, string> = {
       facebook: "https://www.facebook.com/UlissesFls",
       github: "https://github.com/ulissesflores", // Assumi seu user baseado no contexto, ajuste se necessário
-      gmb: "https://www.google.com/maps/contrib/111692728836998010674",
+      gmb: "https://share.google/HZs8K6Fkzb5C7Ezxl",
       instagram: "https://www.instagram.com/ulissesflores",
       lattes: "https://lattes.cnpq.br/6905246706890561",
       linkedin: "https://www.linkedin.com/in/ulisses-flores-75961921",

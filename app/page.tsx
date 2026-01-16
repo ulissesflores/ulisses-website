@@ -41,7 +41,7 @@ export default function Home() {
               <div className="relative w-44 h-44 rounded-full bg-neutral-900 border border-neutral-800 flex items-center justify-center overflow-hidden ring-2 ring-neutral-800 shadow-2xl">
                  <Image 
                    src="/carlos-ulisses-flores-cto.jpg" 
-                   alt="Carlos Ulisses Flores"
+                   alt="Carlos Ulisses Flores - CTO e Pesquisador Chefe da Codex Hash Ltda em Itupeva"
                    width={176}
                    height={176}
                    className="object-cover w-full h-full transform group-hover:scale-105 transition duration-500"
