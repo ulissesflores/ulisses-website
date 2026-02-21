@@ -22,13 +22,6 @@ const nextConfig: NextConfig = {
     ];
   },
   async redirects() {
-    const canonicalHostRedirect = {
-      source: "/:path*",
-      has: [{ type: "host" as const, value: "www.ulissesflores.com" }],
-      destination: "https://ulissesflores.com/:path*",
-      permanent: true,
-    };
-
     // Lista de subdomínios e seus destinos
     const subdomains: Record<string, string> = {
       facebook: "https://www.facebook.com/UlissesFls",
@@ -47,7 +40,7 @@ const nextConfig: NextConfig = {
       permanent: true, // 301 Permanente (Melhor para SEO)
     }));
 
-    return [canonicalHostRedirect, ...subdomainRedirects];
+    return subdomainRedirects;
   },
 };
 
