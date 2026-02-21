@@ -4,7 +4,7 @@
     "upload_type": "publication",
     "publication_type": "report",
     "publication_date": "2025-01-01",
-    "description": "<p>Whitepaper de termodinamica aplicada ao projeto de sistemas hibridos de resfriamento para infraestrutura critica. O problema central investigado e: Centros computacionais e ambientes edge enfrentam trade-off entre eficiencia energetica, confiabilidade e custo de manutencao. Adotou-se um desenho metodologico com foco em validade interna, comparabilidade e reproducibilidade: Analise termo-fluidodinamica com cenarios de carga, comparando estrategias hibridas de dissipacao e controle. Os resultados principais indicam que a configuracao hibrida apresenta melhor estabilidade termica em picos de carga e menor risco de indisponibilidade.. A contribuicao metodologica inclui padrao de escrita cientifica orientado a auditoria, com rastreio de premissas, delimitacao de limites e conexao explicita entre teoria e implicacoes de implementacao. O objetivo deste trabalho e avaliar de forma estruturada como &quot;Análise Termodinâmica e Engenharia de Sistemas Híbridos de Resfriamento&quot; pode gerar valor cientifico e operacional com rastreabilidade metodologica. Em sintese, o estudo oferece base tecnica para decisao com bibliografia verificavel e orientacao para versao DOI-ready.</p>",
+    "description": "<p>Whitepaper de termodinamica aplicada ao projeto de sistemas hibridos de resfriamento para infraestrutura critica. O problema central investigado e: Centros computacionais e ambientes edge enfrentam trade-off entre eficiencia energetica, confiabilidade e custo de manutencao. Adotou-se um desenho metodologico com foco em validade interna, comparabilidade e reproducibilidade: Analise termo-fluidodinamica com cenarios de carga, comparando estrategias hibridas de dissipacao e controle. Os resultados principais indicam que a configuracao hibrida apresenta melhor estabilidade termica em picos de carga e menor risco de indisponibilidade.. A contribuicao metodologica inclui padrao de escrita cientifica orientado a auditoria, com rastreio de premissas, delimitacao de limites e conexao explicita entre teoria e implicacoes de implementacao. O objetivo deste trabalho e avaliar de forma estruturada como &quot;Análise Termodinâmica e Engenharia de Sistemas Híbridos de Resfriamento&quot; pode gerar valor cientifico e operacional com rastreabilidade metodologica. Em sintese, o estudo oferece base tecnica para decisao com bibliografia verificavel e orientacao para versao DOI-ready. (ASHRAE, 2026).</p>",
     "creators": [
       {
         "name": "Flores, Carlos Ulisses",
@@ -36,13 +36,13 @@
         "resource_type": "publication-article"
       },
       {
-        "identifier": "https://ulissesflores.com/whitepapers/2025-hybrid-cooling-thermodynamics.pdf",
+        "identifier": "https://ulissesflores.com/deep-research/2025-hybrid-cooling-thermodynamics/deep-research.pdf",
         "relation": "isIdenticalTo",
         "resource_type": "publication-article"
       }
     ],
     "version": "v2026-02-21",
-    "notes": "DOI-ready metadata generated automatically from the canonical UPKF publication dataset.",
+    "notes": "DOI-ready metadata generated automatically from the canonical UPKF publication dataset. DOI target: 10.5281/zenodo.202503 (not minted).",
     "license": "CC-BY-4.0"
   }
 }

@@ -2,11 +2,11 @@
   "schema": "https://data.crossref.org/schemas/crossref_input.json",
   "type": "report",
   "title": "Transformação Ágil e Engenharia de Fluxo em Data Science",
-  "abstract": "Whitepaper sobre transformacao agil e engenharia de fluxo em contextos agritech orientados a dados. O problema central investigado e: Projetos agritechs sofrem com sazonalidade, variabilidade operacional e baixa sincronizacao entre produto e campo. Adotou-se um desenho metodologico com foco em validade interna, comparabilidade e reproducibilidade: Aplicacao de metricas de fluxo, mapeamento de cadeia de valor e ciclos de melhoria orientados por evidencia. Os resultados principais indicam que a governanca por fluxo eleva previsibilidade de entrega e reduz retrabalho em times multidisciplinares.. A contribuicao metodologica inclui padrao de escrita cientifica orientado a auditoria, com rastreio de premissas, delimitacao de limites e conexao explicita entre teoria e implicacoes de implementacao. O objetivo deste trabalho e avaliar de forma estruturada como \"Transformação Ágil e Engenharia de Fluxo em Data Science\" pode gerar valor cientifico e operacional com rastreabilidade metodologica. Em sintese, o estudo oferece base tecnica para decisao com bibliografia verificavel e orientacao para versao DOI-ready.",
+  "abstract": "Whitepaper sobre transformacao agil e engenharia de fluxo em contextos agritech orientados a dados. O problema central investigado e: Projetos agritechs sofrem com sazonalidade, variabilidade operacional e baixa sincronizacao entre produto e campo. Adotou-se um desenho metodologico com foco em validade interna, comparabilidade e reproducibilidade: Aplicacao de metricas de fluxo, mapeamento de cadeia de valor e ciclos de melhoria orientados por evidencia. Os resultados principais indicam que a governanca por fluxo eleva previsibilidade de entrega e reduz retrabalho em times multidisciplinares.. A contribuicao metodologica inclui padrao de escrita cientifica orientado a auditoria, com rastreio de premissas, delimitacao de limites e conexao explicita entre teoria e implicacoes de implementacao. O objetivo deste trabalho e avaliar de forma estruturada como \"Transformação Ágil e Engenharia de Fluxo em Data Science\" pode gerar valor cientifico e operacional com rastreabilidade metodologica. Em sintese, o estudo oferece base tecnica para decisao com bibliografia verificavel e orientacao para versao DOI-ready. (Reinertsen, 2009).",
   "authors": [
     {
       "given": "Carlos Ulisses",
-      "family": "Flores Ribeiro",
+      "family": "Flores",
       "ORCID": "https://orcid.org/0000-0002-6034-7765",
       "affiliation": "Codex Hash Research"
     }
@@ -19,7 +19,7 @@
       "URL": "https://ulissesflores.com/whitepapers/2024-agritech-agile-flow"
     },
     "pdf": {
-      "URL": "https://ulissesflores.com/whitepapers/2024-agritech-agile-flow.pdf"
+      "URL": "https://ulissesflores.com/deep-research/2024-agritech-agile-flow/deep-research.pdf"
     }
   },
   "reference": [
@@ -54,5 +54,5 @@
       "URL": "https://www.pmi.org/pmbok-guide-standards/practice-guides/agile"
     }
   ],
-  "DOI": "10.5281/zenodo.202423"
+  "doi_target": "10.5281/zenodo.202423"
 }

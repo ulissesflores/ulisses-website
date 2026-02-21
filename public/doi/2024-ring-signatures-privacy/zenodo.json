@@ -4,7 +4,7 @@
     "upload_type": "publication",
     "publication_type": "report",
     "publication_date": "2024-01-01",
-    "description": "<p>Whitepaper sobre ring signatures e enderecos furtivos para privacidade transacional em sistemas distribuidos. O problema central investigado e: Transparencia absoluta em blockchains publicas pode expor metadados sensiveis e comprometer fungibilidade. Adotou-se um desenho metodologico com foco em validade interna, comparabilidade e reproducibilidade: Revisao de primitives criptograficas com analise de seguranca, custos computacionais e requisitos de implementacao. Os resultados principais indicam que a combinacao de assinaturas em anel e stealth addresses melhora privacidade sem eliminar verificabilidade criptografica.. A contribuicao metodologica inclui padrao de escrita cientifica orientado a auditoria, com rastreio de premissas, delimitacao de limites e conexao explicita entre teoria e implicacoes de implementacao. O objetivo deste trabalho e avaliar de forma estruturada como &quot;Implementação de Ring Signatures e Endereços Furtivos&quot; pode gerar valor cientifico e operacional com rastreabilidade metodologica. Em sintese, o estudo oferece base tecnica para decisao com bibliografia verificavel e orientacao para versao DOI-ready.</p>",
+    "description": "<p>Whitepaper sobre ring signatures e enderecos furtivos para privacidade transacional em sistemas distribuidos. O problema central investigado e: Transparencia absoluta em blockchains publicas pode expor metadados sensiveis e comprometer fungibilidade. Adotou-se um desenho metodologico com foco em validade interna, comparabilidade e reproducibilidade: Revisao de primitives criptograficas com analise de seguranca, custos computacionais e requisitos de implementacao. Os resultados principais indicam que a combinacao de assinaturas em anel e stealth addresses melhora privacidade sem eliminar verificabilidade criptografica.. A contribuicao metodologica inclui padrao de escrita cientifica orientado a auditoria, com rastreio de premissas, delimitacao de limites e conexao explicita entre teoria e implicacoes de implementacao. O objetivo deste trabalho e avaliar de forma estruturada como &quot;Implementação de Ring Signatures e Endereços Furtivos&quot; pode gerar valor cientifico e operacional com rastreabilidade metodologica. Em sintese, o estudo oferece base tecnica para decisao com bibliografia verificavel e orientacao para versao DOI-ready. (Rivest, 2001).</p>",
     "creators": [
       {
         "name": "Flores, Carlos Ulisses",
@@ -36,13 +36,13 @@
         "resource_type": "publication-article"
       },
       {
-        "identifier": "https://ulissesflores.com/whitepapers/2024-ring-signatures-privacy.pdf",
+        "identifier": "https://ulissesflores.com/deep-research/2024-ring-signatures-privacy/deep-research.pdf",
         "relation": "isIdenticalTo",
         "resource_type": "publication-article"
       }
     ],
     "version": "v2026-02-21",
-    "notes": "DOI-ready metadata generated automatically from the canonical UPKF publication dataset.",
+    "notes": "DOI-ready metadata generated automatically from the canonical UPKF publication dataset. DOI target: 10.5281/zenodo.202418 (not minted).",
     "license": "CC-BY-4.0"
   }
 }

@@ -1,18 +1,17 @@
 cff-version: 1.2.0
-message: "If you use this work, please cite it using the metadata from this file."
+message: "If you use this work, cite with this metadata. DOI target: 10.5281/zenodo.202424 (not minted)."
 title: "Tratado Exegético sobre a Representação da Moralidade e Antropologia"
 type: article
 authors:
-  - family-names: "Flores Ribeiro"
+  - family-names: "Flores"
     given-names: "Carlos Ulisses"
     orcid: "0000-0002-6034-7765"
-doi: "10.5281/zenodo.202424"
 identifiers:
   - type: url
     value: "https://ulissesflores.com/essays/2024-exegetical-treatise-anthropology"
   - type: url
-    value: "https://ulissesflores.com/essays/2024-exegetical-treatise-anthropology.pdf"
-abstract: "Tratado exegético sobre representacao da moralidade e antropologia em tradicoes textuais teologicas. O problema central investigado e: Interpretacoes atomizadas de passagens isoladas fragilizam coerencia antropologica e moral do corpus. Adotou-se um desenho metodologico com foco em validade interna, comparabilidade e reproducibilidade: Leitura exegética com cruzamento de contexto historico, semantica e tradicao interpretativa. Os resultados principais indicam que o artigo organiza categorias antropologicas recorrentes e explicita implicacoes eticas contemporaneas.. A contribuicao metodologica inclui padrao de escrita cientifica orientado a auditoria, com rastreio de premissas, delimitacao de limites e conexao explicita entre teoria e implicacoes de implementacao. O objetivo deste trabalho e avaliar de forma estruturada como \"Tratado Exegético sobre a Representação da Moralidade e Antropologia\" pode gerar valor cientifico e operacional com rastreabilidade metodologica. Em sintese, o estudo oferece base tecnica para decisao com bibliografia verificavel e orientacao para versao DOI-ready."
+    value: "https://ulissesflores.com/deep-research/2024-exegetical-treatise-anthropology/deep-research.pdf"
+abstract: "Tratado exegético sobre representacao da moralidade e antropologia em tradicoes textuais teologicas. O problema central investigado e: Interpretacoes atomizadas de passagens isoladas fragilizam coerencia antropologica e moral do corpus. Adotou-se um desenho metodologico com foco em validade interna, comparabilidade e reproducibilidade: Leitura exegética com cruzamento de contexto historico, semantica e tradicao interpretativa. Os resultados principais indicam que o artigo organiza categorias antropologicas recorrentes e explicita implicacoes eticas contemporaneas.. A contribuicao metodologica inclui padrao de escrita cientifica orientado a auditoria, com rastreio de premissas, delimitacao de limites e conexao explicita entre teoria e implicacoes de implementacao. O objetivo deste trabalho e avaliar de forma estruturada como \"Tratado Exegético sobre a Representação da Moralidade e Antropologia\" pode gerar valor cientifico e operacional com rastreabilidade metodologica. Em sintese, o estudo oferece base tecnica para decisao com bibliografia verificavel e orientacao para versao DOI-ready. (Ricoeur, 1976)."
 keywords: ["Teologia", "Humanidades", "Historia", "EXEGETICAL", "TREATISE", "ANTHROPOLOGY"]
 license: "CC-BY-4.0"
 version: "v2026-02-21"

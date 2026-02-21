@@ -1,18 +1,17 @@
 cff-version: 1.2.0
-message: "If you use this work, please cite it using the metadata from this file."
+message: "If you use this work, cite with this metadata. DOI target: 10.5281/zenodo.202412 (not minted)."
 title: "Análise Historiográfica e Arqueológica Exaustiva: A Historicidade de Jesus"
 type: article
 authors:
-  - family-names: "Flores Ribeiro"
+  - family-names: "Flores"
     given-names: "Carlos Ulisses"
     orcid: "0000-0002-6034-7765"
-doi: "10.5281/zenodo.202412"
 identifiers:
   - type: url
     value: "https://ulissesflores.com/research/2024-historicity-jesus-archaeology"
   - type: url
-    value: "https://ulissesflores.com/research/2024-historicity-jesus-archaeology.pdf"
-abstract: "Pesquisa historiografica sobre historicidade de Jesus combinando critica textual, fontes antigas e evidencias arqueologicas. O problema central investigado e: Debates publicos misturam categorias teologicas e historicas sem separacao metodologica rigorosa. Adotou-se um desenho metodologico com foco em validade interna, comparabilidade e reproducibilidade: Revisao historico-critica de fontes primarias e secundarias com avaliacao de contexto, autoria e data. Os resultados principais indicam que o estudo delimita consenso academico minimo e identifica zonas de alta e baixa confianca documental.. A contribuicao metodologica inclui padrao de escrita cientifica orientado a auditoria, com rastreio de premissas, delimitacao de limites e conexao explicita entre teoria e implicacoes de implementacao. O objetivo deste trabalho e avaliar de forma estruturada como \"Análise Historiográfica e Arqueológica Exaustiva: A Historicidade de Jesus\" pode gerar valor cientifico e operacional com rastreabilidade metodologica. Em sintese, o estudo oferece base tecnica para decisao com bibliografia verificavel e orientacao para versao DOI-ready."
+    value: "https://ulissesflores.com/deep-research/2024-historicity-jesus-archaeology/deep-research.pdf"
+abstract: "Pesquisa historiografica sobre historicidade de Jesus combinando critica textual, fontes antigas e evidencias arqueologicas. O problema central investigado e: Debates publicos misturam categorias teologicas e historicas sem separacao metodologica rigorosa. Adotou-se um desenho metodologico com foco em validade interna, comparabilidade e reproducibilidade: Revisao historico-critica de fontes primarias e secundarias com avaliacao de contexto, autoria e data. Os resultados principais indicam que o estudo delimita consenso academico minimo e identifica zonas de alta e baixa confianca documental.. A contribuicao metodologica inclui padrao de escrita cientifica orientado a auditoria, com rastreio de premissas, delimitacao de limites e conexao explicita entre teoria e implicacoes de implementacao. O objetivo deste trabalho e avaliar de forma estruturada como \"Análise Historiográfica e Arqueológica Exaustiva: A Historicidade de Jesus\" pode gerar valor cientifico e operacional com rastreabilidade metodologica. Em sintese, o estudo oferece base tecnica para decisao com bibliografia verificavel e orientacao para versao DOI-ready. (Ehrman, 2012)."
 keywords: ["IA", "Economia", "Sistemas Complexos", "HISTORICITY", "JESUS", "ARCHAEOLOGY"]
 license: "CC-BY-4.0"
 version: "v2026-02-21"

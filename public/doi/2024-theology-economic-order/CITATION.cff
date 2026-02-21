@@ -1,18 +1,17 @@
 cff-version: 1.2.0
-message: "If you use this work, please cite it using the metadata from this file."
+message: "If you use this work, cite with this metadata. DOI target: 10.5281/zenodo.202417 (not minted)."
 title: "Fundamentos Transcendentes da Ordem Econômica"
 type: article
 authors:
-  - family-names: "Flores Ribeiro"
+  - family-names: "Flores"
     given-names: "Carlos Ulisses"
     orcid: "0000-0002-6034-7765"
-doi: "10.5281/zenodo.202417"
 identifiers:
   - type: url
     value: "https://ulissesflores.com/essays/2024-theology-economic-order"
   - type: url
-    value: "https://ulissesflores.com/essays/2024-theology-economic-order.pdf"
-abstract: "Ensaio sobre fundamentos transcendentes da ordem economica e sua relacao com normatividade moral. O problema central investigado e: Modelos puramente tecnocráticos tendem a negligenciar pressupostos antropologicos e eticos da cooperacao social. Adotou-se um desenho metodologico com foco em validade interna, comparabilidade e reproducibilidade: Analise conceitual interdisciplinar entre teologia, filosofia moral e teoria economica. Os resultados principais indicam que o texto demonstra que categorias de responsabilidade e dignidade influenciam desenho institucional e incentivos.. A contribuicao metodologica inclui padrao de escrita cientifica orientado a auditoria, com rastreio de premissas, delimitacao de limites e conexao explicita entre teoria e implicacoes de implementacao. O objetivo deste trabalho e avaliar de forma estruturada como \"Fundamentos Transcendentes da Ordem Econômica\" pode gerar valor cientifico e operacional com rastreabilidade metodologica. Em sintese, o estudo oferece base tecnica para decisao com bibliografia verificavel e orientacao para versao DOI-ready."
+    value: "https://ulissesflores.com/deep-research/2024-theology-economic-order/deep-research.pdf"
+abstract: "Ensaio sobre fundamentos transcendentes da ordem economica e sua relacao com normatividade moral. O problema central investigado e: Modelos puramente tecnocráticos tendem a negligenciar pressupostos antropologicos e eticos da cooperacao social. Adotou-se um desenho metodologico com foco em validade interna, comparabilidade e reproducibilidade: Analise conceitual interdisciplinar entre teologia, filosofia moral e teoria economica. Os resultados principais indicam que o texto demonstra que categorias de responsabilidade e dignidade influenciam desenho institucional e incentivos.. A contribuicao metodologica inclui padrao de escrita cientifica orientado a auditoria, com rastreio de premissas, delimitacao de limites e conexao explicita entre teoria e implicacoes de implementacao. O objetivo deste trabalho e avaliar de forma estruturada como \"Fundamentos Transcendentes da Ordem Econômica\" pode gerar valor cientifico e operacional com rastreabilidade metodologica. Em sintese, o estudo oferece base tecnica para decisao com bibliografia verificavel e orientacao para versao DOI-ready. (Augustine, 2026)."
 keywords: ["Teologia", "Humanidades", "Historia", "THEOLOGY", "ECONOMIC", "ORDER"]
 license: "CC-BY-4.0"
 version: "v2026-02-21"

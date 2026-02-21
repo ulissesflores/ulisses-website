@@ -4,7 +4,7 @@
     "upload_type": "publication",
     "publication_type": "article",
     "publication_date": "2025-01-01",
-    "description": "<p>Deteccao de fraude em cartoes com redes neurais MLP e engenharia de atributos para dados desbalanceados. O problema central investigado e: Fraude financeira combina alta assimetria de classes com necessidade de baixa latencia decisoria em tempo quase real. Adotou-se um desenho metodologico com foco em validade interna, comparabilidade e reproducibilidade: Pipeline supervisionado com reamostragem, calibracao de limiar e avaliacao por precision-recall e custo de erro. Os resultados principais indicam que a combinacao de mlp com ajuste de limiar melhora captura de fraudes mantendo taxa operacional aceitavel de falsos positivos.. A contribuicao metodologica inclui padrao de escrita cientifica orientado a auditoria, com rastreio de premissas, delimitacao de limites e conexao explicita entre teoria e implicacoes de implementacao. O objetivo deste trabalho e avaliar de forma estruturada como &quot;Detecção de Fraudes em Cartões com Redes Neurais&quot; pode gerar valor cientifico e operacional com rastreabilidade metodologica. Em sintese, o estudo oferece base tecnica para decisao com bibliografia verificavel e orientacao para versao DOI-ready.</p>",
+    "description": "<p>Deteccao de fraude em cartoes com redes neurais MLP e engenharia de atributos para dados desbalanceados. O problema central investigado e: Fraude financeira combina alta assimetria de classes com necessidade de baixa latencia decisoria em tempo quase real. Adotou-se um desenho metodologico com foco em validade interna, comparabilidade e reproducibilidade: Pipeline supervisionado com reamostragem, calibracao de limiar e avaliacao por precision-recall e custo de erro. Os resultados principais indicam que a combinacao de mlp com ajuste de limiar melhora captura de fraudes mantendo taxa operacional aceitavel de falsos positivos.. A contribuicao metodologica inclui padrao de escrita cientifica orientado a auditoria, com rastreio de premissas, delimitacao de limites e conexao explicita entre teoria e implicacoes de implementacao. O objetivo deste trabalho e avaliar de forma estruturada como &quot;Detecção de Fraudes em Cartões com Redes Neurais&quot; pode gerar valor cientifico e operacional com rastreabilidade metodologica. Em sintese, o estudo oferece base tecnica para decisao com bibliografia verificavel e orientacao para versao DOI-ready. (Ngai, 2011).</p>",
     "creators": [
       {
         "name": "Flores, Carlos Ulisses",
@@ -36,13 +36,13 @@
         "resource_type": "publication-article"
       },
       {
-        "identifier": "https://ulissesflores.com/research/2025-fraud-detection-mlp.pdf",
+        "identifier": "https://ulissesflores.com/deep-research/2025-fraud-detection-mlp/deep-research.pdf",
         "relation": "isIdenticalTo",
         "resource_type": "publication-article"
       }
     ],
     "version": "v2026-02-21",
-    "notes": "DOI-ready metadata generated automatically from the canonical UPKF publication dataset.",
+    "notes": "DOI-ready metadata generated automatically from the canonical UPKF publication dataset. DOI target: 10.5281/zenodo.202506 (not minted).",
     "license": "CC-BY-4.0"
   }
 }

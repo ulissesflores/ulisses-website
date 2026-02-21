@@ -2,11 +2,11 @@
   "schema": "https://data.crossref.org/schemas/crossref_input.json",
   "type": "article",
   "title": "Bitcoin como Ativo de Reserva e a Teoria da Moeda na Escola Austríaca",
-  "abstract": "Analise do Bitcoin como ativo de reserva sob praxeologia e teoria monetaria da Escola Austriaca. O problema central investigado e: Avaliacoes estritamente tecnicas ignoram fundamentos economicos de escassez, preferencia temporal e coordenacao social. Adotou-se um desenho metodologico com foco em validade interna, comparabilidade e reproducibilidade: Discussao teoretica com comparacao entre propriedades monetarias e mecanismos de governanca de oferta. Os resultados principais indicam que o artigo sustenta que bitcoin combina previsibilidade de emissao e portabilidade digital com implicacoes macroeconomicas relevantes.. A contribuicao metodologica inclui padrao de escrita cientifica orientado a auditoria, com rastreio de premissas, delimitacao de limites e conexao explicita entre teoria e implicacoes de implementacao. O objetivo deste trabalho e avaliar de forma estruturada como \"Bitcoin como Ativo de Reserva e a Teoria da Moeda na Escola Austríaca\" pode gerar valor cientifico e operacional com rastreabilidade metodologica. Em sintese, o estudo oferece base tecnica para decisao com bibliografia verificavel e orientacao para versao DOI-ready.",
+  "abstract": "Analise do Bitcoin como ativo de reserva sob praxeologia e teoria monetaria da Escola Austriaca. O problema central investigado e: Avaliacoes estritamente tecnicas ignoram fundamentos economicos de escassez, preferencia temporal e coordenacao social. Adotou-se um desenho metodologico com foco em validade interna, comparabilidade e reproducibilidade: Discussao teoretica com comparacao entre propriedades monetarias e mecanismos de governanca de oferta. Os resultados principais indicam que o artigo sustenta que bitcoin combina previsibilidade de emissao e portabilidade digital com implicacoes macroeconomicas relevantes.. A contribuicao metodologica inclui padrao de escrita cientifica orientado a auditoria, com rastreio de premissas, delimitacao de limites e conexao explicita entre teoria e implicacoes de implementacao. O objetivo deste trabalho e avaliar de forma estruturada como \"Bitcoin como Ativo de Reserva e a Teoria da Moeda na Escola Austríaca\" pode gerar valor cientifico e operacional com rastreabilidade metodologica. Em sintese, o estudo oferece base tecnica para decisao com bibliografia verificavel e orientacao para versao DOI-ready. (Nakamoto, 2008).",
   "authors": [
     {
       "given": "Carlos Ulisses",
-      "family": "Flores Ribeiro",
+      "family": "Flores",
       "ORCID": "https://orcid.org/0000-0002-6034-7765",
       "affiliation": "Codex Hash Research"
     }
@@ -19,7 +19,7 @@
       "URL": "https://ulissesflores.com/research/2024-bitcoin-praxeology"
     },
     "pdf": {
-      "URL": "https://ulissesflores.com/research/2024-bitcoin-praxeology.pdf"
+      "URL": "https://ulissesflores.com/deep-research/2024-bitcoin-praxeology/deep-research.pdf"
     }
   },
   "reference": [
@@ -55,5 +55,5 @@
       "URL": "https://saifedean.com/thebitcoinstandard"
     }
   ],
-  "DOI": "10.5281/zenodo.202414"
+  "doi_target": "10.5281/zenodo.202414"
 }

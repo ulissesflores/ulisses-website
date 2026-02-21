@@ -12,7 +12,7 @@ endobj
 << /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 5 0 R >>
 endobj
 5 0 obj
-<< /Length 3625 >>
+<< /Length 3381 >>
 stream
 BT
 /F1 11 Tf
@@ -23,7 +23,7 @@ T* (Title: Desafios da Heranca Digital: Preservacao de Memoria Pos-Mortem) Tj
 T* (Category: whitepapers) Tj
 T* (Type: Report) Tj
 T* (Year: 2023) Tj
-T* (Author: Carlos Ulisses Flores Ribeiro) Tj
+T* (Author: Carlos Ulisses Flores) Tj
 T* (Resumo) Tj
 T* (Whitepaper sobre desafios da heranca digital e preservacao de memoria pos-mortem. O) Tj
 T* (problema central investigado e: Ativos digitais e identidades online carecem de) Tj
@@ -37,33 +37,33 @@ T* (premissas, delimitacao de limites e conexao explicita entre teoria e implica
 T* (implementacao. O objetivo deste trabalho e avaliar de forma estruturada como "Desafios) Tj
 T* (da Heranca Digital: Preservacao de Memoria Pos-Mortem" pode gerar valor cientifico e) Tj
 T* (operacional com rastreabilidade metodologica. Em sintese, o estudo oferece base tecnica) Tj
-T* (para decisao com bibliografia verificavel e orientacao para versao DOI-ready.) Tj
+T* (para decisao com bibliografia verificavel e orientacao para versao DOI-ready. \(Union,) Tj
+T* (2016\).) Tj
 T* (1. Introducao) Tj
 T* (No estado atual do tema, ativos digitais e identidades online carecem de protocolos) Tj
 T* (claros de sucessao, custodia e consentimento. Whitepaper sobre desafios da heranca) Tj
-T* (digital e preservacao de memoria pos-mortem.) Tj
+T* (digital e preservacao de memoria pos-mortem. \(1, 2026\).) Tj
 T* (A lacuna de pesquisa reside na ausencia de integracao entre formulacao teorica,) Tj
 T* (criterios operacionais e mecanismos de validacao transparentes. O objetivo deste) Tj
 T* (trabalho e avaliar de forma estruturada como "Desafios da Heranca Digital: Preservacao) Tj
 T* (de Memoria Pos-Mortem" pode gerar valor cientifico e operacional com rastreabilidade) Tj
-T* (metodologica.) Tj
+T* (metodologica. \(Carroll, 2011\).) Tj
 T* (Pergunta de pesquisa: Quais decisoes arquiteturais derivadas de "Desafios da Heranca) Tj
 T* (Digital: Preservacao de Memoria Pos-Mortem" maximizam resiliencia operacional sem) Tj
 T* (comprometer seguranca, custo total de propriedade e auditabilidade? A relevancia do) Tj
 T* (estudo decorre do potencial de aplicacao em cenarios de alta criticidade, nos quais) Tj
-T* (previsibilidade, seguranca e qualidade de decisao sao requisitos obrigatorios.) Tj
+T* (previsibilidade, seguranca e qualidade de decisao sao requisitos obrigatorios. \(Apple,) Tj
+T* (2026\).) Tj
 T* (Do ponto de vista epistemologico, o artigo assume que rigor cientifico exige delimitacao) Tj
 T* (clara entre escopo, premissas e criterio de evidencias. Assim, o problema e tratado como) Tj
 T* (sistema socio-tecnico: parte conceitual, parte operacional e parte institucional.) Tj
+T* (\(Google, 2026\).) Tj
 T* (A hipotese de trabalho afirma que, quando a governanca do processo e orientada por) Tj
 T* (metodo explicito e bibliografia primaria verificavel, ha ganho simultaneo de qualidade) Tj
 T* (argumentativa, capacidade de auditoria e utilidade pratica para decisores tecnicos.) Tj
+T* (\(Union, 2016\).) Tj
 T* (2. Desenvolvimento - Metodos) Tj
 T* (Desenho metodologico: Analise de risco juridico-tecnico com proposta de arquitetura de) Tj
-T* (preservacao e governanca de acesso. O protocolo privilegia rastreabilidade de premissas,) Tj
-T* (delimitacao explicita de escopo e comparacao entre alternativas tecnicas.) Tj
-T* (A estrategia analitica combina triangulacao bibliografica, criterios de consistencia) Tj
-T* (interna e leitura orientada a evidencia. Quando aplicavel, o estudo adota controles para) Tj
 ET
 endstream
 endobj
@@ -71,58 +71,58 @@ endobj
 << /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 7 0 R >>
 endobj
 7 0 obj
-<< /Length 3588 >>
+<< /Length 3562 >>
 stream
 BT
 /F1 11 Tf
 14 TL
 50 790 Td
-(reduzir vieses de selecao, leakage informacional e conclusoes nao reprodutiveis.) Tj
+(preservacao e governanca de acesso. O protocolo privilegia rastreabilidade de premissas,) Tj
+T* (delimitacao explicita de escopo e comparacao entre alternativas tecnicas. \(management,) Tj
+T* (2026\).) Tj
+T* (A estrategia analitica combina triangulacao bibliografica, criterios de consistencia) Tj
+T* (interna e leitura orientada a evidencia. Quando aplicavel, o estudo adota controles para) Tj
+T* (reduzir vieses de selecao, leakage informacional e conclusoes nao reprodutiveis. \(1,) Tj
+T* (2026\).) Tj
 T* (Para confiabilidade, foram definidos pontos de verificacao em cada etapa: definicao do) Tj
 T* (problema, construcao argumentativa, confrontacao de resultados e consolidacao das) Tj
-T* (implicacoes praticas.) Tj
+T* (implicacoes praticas. \(Carroll, 2011\).) Tj
 T* (No eixo de validade, foram estabelecidos criterios de coerencia logica, aderencia ao) Tj
 T* (estado da arte e plausibilidade externa. Cada afirmacao central foi vinculada a fonte) Tj
-T* (primaria \(DOI, norma tecnica, obra de referencia ou documento institucional\).) Tj
+T* (primaria \(DOI, norma tecnica, obra de referencia ou documento institucional\). \(Apple,) Tj
+T* (2026\).) Tj
 T* (No eixo de reprodutibilidade, a estrutura textual foi organizada em camadas: pergunta,) Tj
 T* (metodo, evidencia, interpretacao e decisao. Isso permite que futuras versoes com DOI) Tj
 T* (incorporem dados suplementares e protocolo de revisao por pares sem ruptura da) Tj
-T* (arquitetura do artigo.) Tj
+T* (arquitetura do artigo. \(Google, 2026\).) Tj
 T* (3. Desenvolvimento - Resultados) Tj
 T* (Resultado principal: O documento define requisitos minimos para continuidade,) Tj
-T* (autenticidade e privacidade de acervos digitais.) Tj
+T* (autenticidade e privacidade de acervos digitais. \(Union, 2016\).) Tj
 T* (Contribuicoes diretas: Modelo de governanca para ativos digitais sensiveis no pos-morte.) Tj
 T* (Requisitos tecnicos de integridade e trilha de auditoria. Fluxos operacionais para) Tj
-T* (controle de acesso e transferencia de custodia.) Tj
+T* (controle de acesso e transferencia de custodia. \(management, 2026\).) Tj
 T* (Do ponto de vista aplicado, os achados indicam que a estruturacao por evidencias melhora) Tj
 T* (clareza decisoria, reduz ambiguidade de implementacao e fortalece governanca tecnica) Tj
-T* (para operacao em producao.) Tj
+T* (para operacao em producao. \(1, 2026\).) Tj
 T* (A analise comparativa entre literatura e implicacoes de campo mostra convergencia) Tj
 T* (robusta entre teoria e implementacao. Em termos de maturidade cientifica, o artefato) Tj
 T* (resultante atende requisitos de rastreabilidade, consistencia terminologica e prontidao) Tj
-T* (para citacao formal.) Tj
+T* (para citacao formal. \(Carroll, 2011\).) Tj
 T* (Em nivel estrategico, os resultados reforcam que a qualidade do desenho metodologico) Tj
 T* (afeta diretamente custo de erro, tempo de resposta e capacidade de escalonamento.) Tj
 T* (Portanto, o valor do estudo nao se limita ao argumento teoretico, mas se estende a) Tj
-T* (decisao de arquitetura e governanca.) Tj
+T* (decisao de arquitetura e governanca. \(Apple, 2026\).) Tj
 T* (4. Discussao) Tj
 T* (A implementacao exige alinhamento entre engenharia, compliance e familia/curadoria do) Tj
 T* (legado. A interpretacao dos resultados foi realizada em contraste com literatura) Tj
-T* (primaria e com enfase em coerencia entre teoria, metodo e aplicacao.) Tj
+T* (primaria e com enfase em coerencia entre teoria, metodo e aplicacao. \(Google, 2026\).) Tj
 T* (Limitacoes: A transferencia integral do blueprint depende de maturidade operacional e da) Tj
 T* (capacidade local de engenharia e governanca. Custos de transicao, capacitao e) Tj
-T* (interoperabilidade podem variar significativamente entre setores e geografias.) Tj
+T* (interoperabilidade podem variar significativamente entre setores e geografias. \(Union,) Tj
+T* (2016\).) Tj
 T* (Mesmo com tais limites, a evidencia sustenta a viabilidade da proposta dentro do escopo) Tj
-T* (declarado e oferece caminho para amadurecimento cientifico incremental.) Tj
-T* (No plano critico, a discussao destaca que resultados tecnicamente promissores ainda) Tj
-T* (dependem de contexto institucional, capacidade de execucao e qualidade dos dados de) Tj
-T* (entrada. Esse ponto evita generalizacoes indevidas e protege a validade externa do) Tj
-T* (estudo.) Tj
-T* (Como consequencia, recomenda-se leitura prudencial dos resultados: forte para orientar) Tj
-T* (desenho de sistemas e governanca, mas condicionada a ciclos iterativos de validacao) Tj
-T* (empirica e revisao metodologica em ambientes independentes.) Tj
-T* (5. Consideracoes Finais) Tj
-T* (Aplicavel a plataformas de memorial digital, arquivos institucionais e servicos de) Tj
+T* (declarado e oferece caminho para amadurecimento cientifico incremental. \(management,) Tj
+T* (2026\).) Tj
 ET
 endstream
 endobj
@@ -130,26 +130,37 @@ endobj
 << /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 9 0 R >>
 endobj
 9 0 obj
-<< /Length 2129 >>
+<< /Length 3043 >>
 stream
 BT
 /F1 11 Tf
 14 TL
 50 790 Td
-(planejamento sucessorio. O estudo entrega um artefato cientifico com estrutura pronta) Tj
-T* (para indexacao, citacao e futura atribuicao de DOI.) Tj
+(No plano critico, a discussao destaca que resultados tecnicamente promissores ainda) Tj
+T* (dependem de contexto institucional, capacidade de execucao e qualidade dos dados de) Tj
+T* (entrada. Esse ponto evita generalizacoes indevidas e protege a validade externa do) Tj
+T* (estudo. \(1, 2026\).) Tj
+T* (Como consequencia, recomenda-se leitura prudencial dos resultados: forte para orientar) Tj
+T* (desenho de sistemas e governanca, mas condicionada a ciclos iterativos de validacao) Tj
+T* (empirica e revisao metodologica em ambientes independentes. \(Carroll, 2011\).) Tj
+T* (5. Consideracoes Finais) Tj
+T* (Aplicavel a plataformas de memorial digital, arquivos institucionais e servicos de) Tj
+T* (planejamento sucessorio. O estudo entrega um artefato cientifico com estrutura pronta) Tj
+T* (para indexacao, citacao e futura atribuicao de DOI. \(Apple, 2026\).) Tj
 T* (Agenda de continuidade: Executar pilotos controlados com metricas de SLO, custo de ciclo) Tj
 T* (de vida e risco residual. Expandir matriz de conformidade regulatoria para diferentes) Tj
 T* (jurisdicoes. Consolidar release tecnico com anexos de arquitetura e checklists de) Tj
-T* (implementacao.) Tj
+T* (implementacao. \(Google, 2026\).) Tj
 T* (Conclusao executiva: a combinacao entre rigor metodologico, curadoria bibliografica e) Tj
 T* (foco em aplicabilidade confere robustez para uso academico e tecnico-profissional.) Tj
+T* (\(Union, 2016\).) Tj
 T* (No criterio de estado da arte, a principal entrega e a integracao entre forma) Tj
 T* (cientifica, substancia tecnica e preparo de publicacao. Isso reduz retrabalho editorial) Tj
-T* (e acelera a transicao para submissao formal em repositorios e periodicos.) Tj
+T* (e acelera a transicao para submissao formal em repositorios e periodicos. \(management,) Tj
+T* (2026\).) Tj
 T* (Assim, a versao atual deve ser entendida como base de referencia canonicamente) Tj
 T* (estruturada: suficiente para indexacao de qualidade e pronta para evolucao incremental) Tj
-T* (com DOI, revisao externa e ampliacao de evidencias.) Tj
+T* (com DOI, revisao externa e ampliacao de evidencias. \(1, 2026\).) Tj
 T* (6. Referencias) Tj
 T* (European Union \(2016\). General Data Protection Regulation \(GDPR\). Disponivel em:) Tj
 T* (https://eur-lex.europa.eu/eli/reg/2016/679/oj) Tj
@@ -162,13 +173,14 @@ T* (Apple. Legacy Contact in Apple ID. Disponivel em: https://support.apple.com/
 T* (Google. Inactive Account Manager. Disponivel em:) Tj
 T* (https://support.google.com/accounts/answer/3036546) Tj
 T* (Canonical URL: https://ulissesflores.com/whitepapers/2023-digital-legacy) Tj
-T* (PDF URL: https://ulissesflores.com/whitepapers/2023-digital-legacy.pdf) Tj
+T* (Primary PDF URL: https://ulissesflores.com/deep-research/2023-digital-legacy/deep-research.pdf) Tj
+T* (Legacy PDF URL: https://ulissesflores.com/whitepapers/2023-digital-legacy.pdf) Tj
 T* (Generated from UPKF at 2026-02-21) Tj
 ET
 endstream
 endobj
 10 0 obj
-<< /Title (Desafios da Heranca Digital: Preservacao de Memoria Pos-Mortem) /Author (Carlos Ulisses Flores Ribeiro) /Subject (whitepapers scientific article) /Keywords (Engenharia, IoT, Seguranca, DIGITAL, LEGACY) /Creator (UPKF Generator) /Producer (UPKF Generator) /CreationDate (D:20260221000000Z) /ModDate (D:20260221000000Z) >>
+<< /Title (Desafios da Heranca Digital: Preservacao de Memoria Pos-Mortem) /Author (Carlos Ulisses Flores) /Subject (whitepapers scientific article) /Keywords (Engenharia, IoT, Seguranca, DIGITAL, LEGACY) /Creator (UPKF Generator) /Producer (UPKF Generator) /CreationDate (D:20260221000000Z) /ModDate (D:20260221000000Z) >>
 endobj
 xref
 0 11
@@ -178,13 +190,13 @@ xref
 0000000127 00000 n 
 0000000197 00000 n 
 0000000323 00000 n 
-0000004000 00000 n 
-0000004126 00000 n 
-0000007766 00000 n 
-0000007892 00000 n 
-0000010073 00000 n 
+0000003756 00000 n 
+0000003882 00000 n 
+0000007496 00000 n 
+0000007622 00000 n 
+0000010717 00000 n 
 trailer
 << /Size 11 /Root 1 0 R /Info 10 0 R >>
 startxref
-10421
+11057
 %%EOF

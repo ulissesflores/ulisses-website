@@ -12,7 +12,7 @@ endobj
 << /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 5 0 R >>
 endobj
 5 0 obj
-<< /Length 3625 >>
+<< /Length 3568 >>
 stream
 BT
 /F1 11 Tf
@@ -23,7 +23,7 @@ T* (Title: Bitcoin como Ativo de Reserva e a Teoria da Moeda na Escola Austriaca
 T* (Category: research) Tj
 T* (Type: ScholarlyArticle) Tj
 T* (Year: 2024) Tj
-T* (Author: Carlos Ulisses Flores Ribeiro) Tj
+T* (Author: Carlos Ulisses Flores) Tj
 T* (Resumo) Tj
 T* (Analise do Bitcoin como ativo de reserva sob praxeologia e teoria monetaria da Escola) Tj
 T* (Austriaca. O problema central investigado e: Avaliacoes estritamente tecnicas ignoram) Tj
@@ -38,32 +38,32 @@ T* (limites e conexao explicita entre teoria e implicacoes de implementacao. O o
 T* (deste trabalho e avaliar de forma estruturada como "Bitcoin como Ativo de Reserva e a) Tj
 T* (Teoria da Moeda na Escola Austriaca" pode gerar valor cientifico e operacional com) Tj
 T* (rastreabilidade metodologica. Em sintese, o estudo oferece base tecnica para decisao com) Tj
-T* (bibliografia verificavel e orientacao para versao DOI-ready.) Tj
+T* (bibliografia verificavel e orientacao para versao DOI-ready. \(Nakamoto, 2008\).) Tj
 T* (1. Introducao) Tj
 T* (No estado atual do tema, avaliacoes estritamente tecnicas ignoram fundamentos economicos) Tj
 T* (de escassez, preferencia temporal e coordenacao social. Analise do Bitcoin como ativo de) Tj
-T* (reserva sob praxeologia e teoria monetaria da Escola Austriaca.) Tj
+T* (reserva sob praxeologia e teoria monetaria da Escola Austriaca. \(Hayek, 1976\).) Tj
 T* (A lacuna de pesquisa reside na ausencia de integracao entre formulacao teorica,) Tj
 T* (criterios operacionais e mecanismos de validacao transparentes. O objetivo deste) Tj
 T* (trabalho e avaliar de forma estruturada como "Bitcoin como Ativo de Reserva e a Teoria) Tj
 T* (da Moeda na Escola Austriaca" pode gerar valor cientifico e operacional com) Tj
-T* (rastreabilidade metodologica.) Tj
+T* (rastreabilidade metodologica. \(Bohme, 2015\).) Tj
 T* (Pergunta de pesquisa: Como a abordagem proposta em "Bitcoin como Ativo de Reserva e a) Tj
 T* (Teoria da Moeda na Escola Austriaca" pode reduzir risco sistemico e ampliar) Tj
 T* (confiabilidade decisoria em ambiente real? A relevancia do estudo decorre do potencial) Tj
 T* (de aplicacao em cenarios de alta criticidade, nos quais previsibilidade, seguranca e) Tj
-T* (qualidade de decisao sao requisitos obrigatorios.) Tj
+T* (qualidade de decisao sao requisitos obrigatorios. \(Selgin, 2015\).) Tj
 T* (Do ponto de vista epistemologico, o artigo assume que rigor cientifico exige delimitacao) Tj
 T* (clara entre escopo, premissas e criterio de evidencias. Assim, o problema e tratado como) Tj
 T* (sistema socio-tecnico: parte conceitual, parte operacional e parte institucional.) Tj
+T* (\(Ammous, 2018\).) Tj
 T* (A hipotese de trabalho afirma que, quando a governanca do processo e orientada por) Tj
 T* (metodo explicito e bibliografia primaria verificavel, ha ganho simultaneo de qualidade) Tj
 T* (argumentativa, capacidade de auditoria e utilidade pratica para decisores tecnicos.) Tj
+T* (\(Nakamoto, 2008\).) Tj
 T* (2. Desenvolvimento - Metodos) Tj
 T* (Desenho metodologico: Discussao teoretica com comparacao entre propriedades monetarias e) Tj
 T* (mecanismos de governanca de oferta. O protocolo privilegia rastreabilidade de premissas,) Tj
-T* (delimitacao explicita de escopo e comparacao entre alternativas tecnicas.) Tj
-T* (A estrategia analitica combina triangulacao bibliografica, criterios de consistencia) Tj
 ET
 endstream
 endobj
@@ -71,58 +71,58 @@ endobj
 << /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 7 0 R >>
 endobj
 7 0 obj
-<< /Length 3605 >>
+<< /Length 3756 >>
 stream
 BT
 /F1 11 Tf
 14 TL
 50 790 Td
-(interna e leitura orientada a evidencia. Quando aplicavel, o estudo adota controles para) Tj
-T* (reduzir vieses de selecao, leakage informacional e conclusoes nao reprodutiveis.) Tj
+(delimitacao explicita de escopo e comparacao entre alternativas tecnicas. \(Mises, 1912\).) Tj
+T* (A estrategia analitica combina triangulacao bibliografica, criterios de consistencia) Tj
+T* (interna e leitura orientada a evidencia. Quando aplicavel, o estudo adota controles para) Tj
+T* (reduzir vieses de selecao, leakage informacional e conclusoes nao reprodutiveis. \(Hayek,) Tj
+T* (1976\).) Tj
 T* (Para confiabilidade, foram definidos pontos de verificacao em cada etapa: definicao do) Tj
 T* (problema, construcao argumentativa, confrontacao de resultados e consolidacao das) Tj
-T* (implicacoes praticas.) Tj
+T* (implicacoes praticas. \(Bohme, 2015\).) Tj
 T* (No eixo de validade, foram estabelecidos criterios de coerencia logica, aderencia ao) Tj
 T* (estado da arte e plausibilidade externa. Cada afirmacao central foi vinculada a fonte) Tj
-T* (primaria \(DOI, norma tecnica, obra de referencia ou documento institucional\).) Tj
+T* (primaria \(DOI, norma tecnica, obra de referencia ou documento institucional\). \(Selgin,) Tj
+T* (2015\).) Tj
 T* (No eixo de reprodutibilidade, a estrutura textual foi organizada em camadas: pergunta,) Tj
 T* (metodo, evidencia, interpretacao e decisao. Isso permite que futuras versoes com DOI) Tj
 T* (incorporem dados suplementares e protocolo de revisao por pares sem ruptura da) Tj
-T* (arquitetura do artigo.) Tj
+T* (arquitetura do artigo. \(Ammous, 2018\).) Tj
 T* (3. Desenvolvimento - Resultados) Tj
 T* (Resultado principal: O artigo sustenta que Bitcoin combina previsibilidade de emissao e) Tj
-T* (portabilidade digital com implicacoes macroeconomicas relevantes.) Tj
+T* (portabilidade digital com implicacoes macroeconomicas relevantes. \(Nakamoto, 2008\).) Tj
 T* (Contribuicoes diretas: Integracao entre teoria praxeologica e arquitetura monetaria) Tj
 T* (digital. Criterios objetivos para avaliar funcao de reserva de valor. Enquadramento de) Tj
-T* (riscos regulatorios e de mercado.) Tj
+T* (riscos regulatorios e de mercado. \(Mises, 1912\).) Tj
 T* (Do ponto de vista aplicado, os achados indicam que a estruturacao por evidencias melhora) Tj
 T* (clareza decisoria, reduz ambiguidade de implementacao e fortalece governanca tecnica) Tj
-T* (para operacao em producao.) Tj
+T* (para operacao em producao. \(Hayek, 1976\).) Tj
 T* (A analise comparativa entre literatura e implicacoes de campo mostra convergencia) Tj
 T* (robusta entre teoria e implementacao. Em termos de maturidade cientifica, o artefato) Tj
 T* (resultante atende requisitos de rastreabilidade, consistencia terminologica e prontidao) Tj
-T* (para citacao formal.) Tj
+T* (para citacao formal. \(Bohme, 2015\).) Tj
 T* (Em nivel estrategico, os resultados reforcam que a qualidade do desenho metodologico) Tj
 T* (afeta diretamente custo de erro, tempo de resposta e capacidade de escalonamento.) Tj
 T* (Portanto, o valor do estudo nao se limita ao argumento teoretico, mas se estende a) Tj
-T* (decisao de arquitetura e governanca.) Tj
+T* (decisao de arquitetura e governanca. \(Selgin, 2015\).) Tj
 T* (4. Discussao) Tj
 T* (As limitacoes concentram-se em volatilidade de curto prazo e regimes regulatorios) Tj
 T* (heterogeneos. A interpretacao dos resultados foi realizada em contraste com literatura) Tj
-T* (primaria e com enfase em coerencia entre teoria, metodo e aplicacao.) Tj
+T* (primaria e com enfase em coerencia entre teoria, metodo e aplicacao. \(Ammous, 2018\).) Tj
 T* (Limitacoes: A generalizacao dos achados depende de replicacao em amostras adicionais,) Tj
 T* (com diferentes regimes de dados e horizontes temporais. A disponibilidade de dados com) Tj
 T* (granularidade adequada pode limitar comparabilidade entre ambientes institucionais) Tj
-T* (distintos.) Tj
+T* (distintos. \(Nakamoto, 2008\).) Tj
 T* (Mesmo com tais limites, a evidencia sustenta a viabilidade da proposta dentro do escopo) Tj
-T* (declarado e oferece caminho para amadurecimento cientifico incremental.) Tj
+T* (declarado e oferece caminho para amadurecimento cientifico incremental. \(Mises, 1912\).) Tj
 T* (No plano critico, a discussao destaca que resultados tecnicamente promissores ainda) Tj
 T* (dependem de contexto institucional, capacidade de execucao e qualidade dos dados de) Tj
 T* (entrada. Esse ponto evita generalizacoes indevidas e protege a validade externa do) Tj
-T* (estudo.) Tj
-T* (Como consequencia, recomenda-se leitura prudencial dos resultados: forte para orientar) Tj
-T* (desenho de sistemas e governanca, mas condicionada a ciclos iterativos de validacao) Tj
-T* (empirica e revisao metodologica em ambientes independentes.) Tj
 ET
 endstream
 endobj
@@ -130,28 +130,33 @@ endobj
 << /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 9 0 R >>
 endobj
 9 0 obj
-<< /Length 2330 >>
+<< /Length 2847 >>
 stream
 BT
 /F1 11 Tf
 14 TL
 50 790 Td
-(5. Consideracoes Finais) Tj
+(estudo. \(Hayek, 1976\).) Tj
+T* (Como consequencia, recomenda-se leitura prudencial dos resultados: forte para orientar) Tj
+T* (desenho de sistemas e governanca, mas condicionada a ciclos iterativos de validacao) Tj
+T* (empirica e revisao metodologica em ambientes independentes. \(Bohme, 2015\).) Tj
+T* (5. Consideracoes Finais) Tj
 T* (Base analitica para teses de tesouraria digital, hedge monetario e desenho de politicas) Tj
 T* (de alocacao. O estudo entrega um artefato cientifico com estrutura pronta para) Tj
-T* (indexacao, citacao e futura atribuicao de DOI.) Tj
+T* (indexacao, citacao e futura atribuicao de DOI. \(Selgin, 2015\).) Tj
 T* (Agenda de continuidade: Replicar o estudo em novos contextos operacionais com desenho) Tj
 T* (quasi-experimental. Aprofundar metricas de robustez, explicabilidade e impacto economico) Tj
 T* (sob incerteza. Preparar versao DOI-ready com pacote de dados, protocolo e apendice) Tj
-T* (metodologico.) Tj
+T* (metodologico. \(Ammous, 2018\).) Tj
 T* (Conclusao executiva: a combinacao entre rigor metodologico, curadoria bibliografica e) Tj
 T* (foco em aplicabilidade confere robustez para uso academico e tecnico-profissional.) Tj
+T* (\(Nakamoto, 2008\).) Tj
 T* (No criterio de estado da arte, a principal entrega e a integracao entre forma) Tj
 T* (cientifica, substancia tecnica e preparo de publicacao. Isso reduz retrabalho editorial) Tj
-T* (e acelera a transicao para submissao formal em repositorios e periodicos.) Tj
+T* (e acelera a transicao para submissao formal em repositorios e periodicos. \(Mises, 1912\).) Tj
 T* (Assim, a versao atual deve ser entendida como base de referencia canonicamente) Tj
 T* (estruturada: suficiente para indexacao de qualidade e pronta para evolucao incremental) Tj
-T* (com DOI, revisao externa e ampliacao de evidencias.) Tj
+T* (com DOI, revisao externa e ampliacao de evidencias. \(Hayek, 1976\).) Tj
 T* (6. Referencias) Tj
 T* (Nakamoto, S. \(2008\). Bitcoin: A Peer-to-Peer Electronic Cash System. Disponivel em:) Tj
 T* (https://bitcoin.org/bitcoin.pdf) Tj
@@ -166,13 +171,14 @@ T* (https://www.alt-m.org/2015/09/02/synthetic-commodity-money/) Tj
 T* (Ammous, S. \(2018\). The Bitcoin Standard. Disponivel em:) Tj
 T* (https://saifedean.com/thebitcoinstandard) Tj
 T* (Canonical URL: https://ulissesflores.com/research/2024-bitcoin-praxeology) Tj
-T* (PDF URL: https://ulissesflores.com/research/2024-bitcoin-praxeology.pdf) Tj
+T* (Primary PDF URL: https://ulissesflores.com/deep-research/2024-bitcoin-praxeology/deep-research.pdf) Tj
+T* (Legacy PDF URL: https://ulissesflores.com/research/2024-bitcoin-praxeology.pdf) Tj
 T* (Generated from UPKF at 2026-02-21) Tj
 ET
 endstream
 endobj
 10 0 obj
-<< /Title (Bitcoin como Ativo de Reserva e a Teoria da Moeda na Escola Austriaca) /Author (Carlos Ulisses Flores Ribeiro) /Subject (research scientific article) /Keywords (IA, Economia, Sistemas Complexos, BITCOIN, PRAXEOLOGY) /Creator (UPKF Generator) /Producer (UPKF Generator) /CreationDate (D:20260221000000Z) /ModDate (D:20260221000000Z) >>
+<< /Title (Bitcoin como Ativo de Reserva e a Teoria da Moeda na Escola Austriaca) /Author (Carlos Ulisses Flores) /Subject (research scientific article) /Keywords (IA, Economia, Sistemas Complexos, BITCOIN, PRAXEOLOGY) /Creator (UPKF Generator) /Producer (UPKF Generator) /CreationDate (D:20260221000000Z) /ModDate (D:20260221000000Z) >>
 endobj
 xref
 0 11
@@ -182,13 +188,13 @@ xref
 0000000127 00000 n 
 0000000197 00000 n 
 0000000323 00000 n 
-0000004000 00000 n 
-0000004126 00000 n 
-0000007783 00000 n 
-0000007909 00000 n 
-0000010291 00000 n 
+0000003943 00000 n 
+0000004069 00000 n 
+0000007877 00000 n 
+0000008003 00000 n 
+0000010902 00000 n 
 trailer
 << /Size 11 /Root 1 0 R /Info 10 0 R >>
 startxref
-10653
+11256
 %%EOF

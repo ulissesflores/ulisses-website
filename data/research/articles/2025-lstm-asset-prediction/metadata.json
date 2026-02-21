@@ -1,0 +1,11 @@
+{
+  "id": "2025-lstm-asset-prediction",
+  "title": "Análise Preditiva de Ativos Financeiros com Modelos LSTM",
+  "category": "research",
+  "canonicalUrl": "https://ulissesflores.com/research/2025-lstm-asset-prediction",
+  "generatedAt": "2026-02-21",
+  "doi": {
+    "status": "target",
+    "target": "10.5281/zenodo.202502"
+  }
+}

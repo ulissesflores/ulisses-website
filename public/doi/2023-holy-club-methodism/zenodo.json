@@ -4,7 +4,7 @@
     "upload_type": "publication",
     "publication_type": "article",
     "publication_date": "2023-01-01",
-    "description": "<p>Investigacao arqueologica espiritual, teologica e visual do Holy Club e suas implicacoes para o metodismo. O problema central investigado e: A memoria do movimento metodista inicial e frequentemente reduzida a narrativas lineares e pouco contextualizadas. Adotou-se um desenho metodologico com foco em validade interna, comparabilidade e reproducibilidade: Leitura historica interdisciplinar com fontes primarias, iconografia e tradicao institucional. Os resultados principais indicam que o estudo reconstrói redes de praticas formativas e disciplina comunitaria no contexto original.. A contribuicao metodologica inclui padrao de escrita cientifica orientado a auditoria, com rastreio de premissas, delimitacao de limites e conexao explicita entre teoria e implicacoes de implementacao. O objetivo deste trabalho e avaliar de forma estruturada como &quot;O Clube Santo: Arqueologia Espiritual, Teológica e Visual do Metodismo&quot; pode gerar valor cientifico e operacional com rastreabilidade metodologica. Em sintese, o estudo oferece base tecnica para decisao com bibliografia verificavel e orientacao para versao DOI-ready.</p>",
+    "description": "<p>Investigacao arqueologica espiritual, teologica e visual do Holy Club e suas implicacoes para o metodismo. O problema central investigado e: A memoria do movimento metodista inicial e frequentemente reduzida a narrativas lineares e pouco contextualizadas. Adotou-se um desenho metodologico com foco em validade interna, comparabilidade e reproducibilidade: Leitura historica interdisciplinar com fontes primarias, iconografia e tradicao institucional. Os resultados principais indicam que o estudo reconstrói redes de praticas formativas e disciplina comunitaria no contexto original.. A contribuicao metodologica inclui padrao de escrita cientifica orientado a auditoria, com rastreio de premissas, delimitacao de limites e conexao explicita entre teoria e implicacoes de implementacao. O objetivo deste trabalho e avaliar de forma estruturada como &quot;O Clube Santo: Arqueologia Espiritual, Teológica e Visual do Metodismo&quot; pode gerar valor cientifico e operacional com rastreabilidade metodologica. Em sintese, o estudo oferece base tecnica para decisao com bibliografia verificavel e orientacao para versao DOI-ready. (Wesley, 2026).</p>",
     "creators": [
       {
         "name": "Flores, Carlos Ulisses",
@@ -36,13 +36,13 @@
         "resource_type": "publication-article"
       },
       {
-        "identifier": "https://ulissesflores.com/research/2023-holy-club-methodism.pdf",
+        "identifier": "https://ulissesflores.com/deep-research/2023-holy-club-methodism/deep-research.pdf",
         "relation": "isIdenticalTo",
         "resource_type": "publication-article"
       }
     ],
     "version": "v2026-02-21",
-    "notes": "DOI-ready metadata generated automatically from the canonical UPKF publication dataset.",
+    "notes": "DOI-ready metadata generated automatically from the canonical UPKF publication dataset. DOI target: 10.5281/zenodo.202329 (not minted).",
     "license": "CC-BY-4.0"
   }
 }

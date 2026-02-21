@@ -2,11 +2,11 @@
   "schema": "https://data.crossref.org/schemas/crossref_input.json",
   "type": "article",
   "title": "Teoria do Caos: Emergência e Auto-organização em Mercados",
-  "abstract": "Trabalho sobre teoria do caos e auto-organizacao em mercados nao lineares. O problema central investigado e: Hipoteses de equilibrio linear falham em explicar dinamicas de instabilidade e transicoes abruptas de mercado. Adotou-se um desenho metodologico com foco em validade interna, comparabilidade e reproducibilidade: Discussao teorica com referencia a sistemas dinamicos, sensibilidade a condicoes iniciais e comportamento emergente. Os resultados principais indicam que o estudo mostra que pequenas perturbacoes podem amplificar risco e alterar padroes macro de forma nao proporcional.. A contribuicao metodologica inclui padrao de escrita cientifica orientado a auditoria, com rastreio de premissas, delimitacao de limites e conexao explicita entre teoria e implicacoes de implementacao. O objetivo deste trabalho e avaliar de forma estruturada como \"Teoria do Caos: Emergência e Auto-organização em Mercados\" pode gerar valor cientifico e operacional com rastreabilidade metodologica. Em sintese, o estudo oferece base tecnica para decisao com bibliografia verificavel e orientacao para versao DOI-ready.",
+  "abstract": "Trabalho sobre teoria do caos e auto-organizacao em mercados nao lineares. O problema central investigado e: Hipoteses de equilibrio linear falham em explicar dinamicas de instabilidade e transicoes abruptas de mercado. Adotou-se um desenho metodologico com foco em validade interna, comparabilidade e reproducibilidade: Discussao teorica com referencia a sistemas dinamicos, sensibilidade a condicoes iniciais e comportamento emergente. Os resultados principais indicam que o estudo mostra que pequenas perturbacoes podem amplificar risco e alterar padroes macro de forma nao proporcional.. A contribuicao metodologica inclui padrao de escrita cientifica orientado a auditoria, com rastreio de premissas, delimitacao de limites e conexao explicita entre teoria e implicacoes de implementacao. O objetivo deste trabalho e avaliar de forma estruturada como \"Teoria do Caos: Emergência e Auto-organização em Mercados\" pode gerar valor cientifico e operacional com rastreabilidade metodologica. Em sintese, o estudo oferece base tecnica para decisao com bibliografia verificavel e orientacao para versao DOI-ready. (Lorenz, 1963).",
   "authors": [
     {
       "given": "Carlos Ulisses",
-      "family": "Flores Ribeiro",
+      "family": "Flores",
       "ORCID": "https://orcid.org/0000-0002-6034-7765",
       "affiliation": "Codex Hash Research"
     }
@@ -19,7 +19,7 @@
       "URL": "https://ulissesflores.com/essays/2017-chaos-theory-economics"
     },
     "pdf": {
-      "URL": "https://ulissesflores.com/essays/2017-chaos-theory-economics.pdf"
+      "URL": "https://ulissesflores.com/deep-research/2017-chaos-theory-economics/deep-research.pdf"
     }
   },
   "reference": [
@@ -58,5 +58,5 @@
       "URL": "https://www.hbs.edu/faculty/Pages/item.aspx?num=19867"
     }
   ],
-  "DOI": "10.5281/zenodo.201737"
+  "doi_target": "10.5281/zenodo.201737"
 }

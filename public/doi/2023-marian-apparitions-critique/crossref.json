@@ -2,11 +2,11 @@
   "schema": "https://data.crossref.org/schemas/crossref_input.json",
   "type": "article",
   "title": "A Coroa e a Cruz: Análise Teológica e Fenomenológica das Aparições Marianas",
-  "abstract": "Analise teologica e fenomenologica critica de narrativas de aparicoes marianas. O problema central investigado e: Relatos devocionais frequentemente carecem de criterios consistentes de discernimento historico e fenomenologico. Adotou-se um desenho metodologico com foco em validade interna, comparabilidade e reproducibilidade: Comparacao de documentos, tradicoes e criterios de autenticidade em abordagem historico-critica. Os resultados principais indicam que o estudo distingue elementos simbolicos, historicos e pastorais sem reduzir o fenomeno a uma unica explicacao.. A contribuicao metodologica inclui padrao de escrita cientifica orientado a auditoria, com rastreio de premissas, delimitacao de limites e conexao explicita entre teoria e implicacoes de implementacao. O objetivo deste trabalho e avaliar de forma estruturada como \"A Coroa e a Cruz: Análise Teológica e Fenomenológica das Aparições Marianas\" pode gerar valor cientifico e operacional com rastreabilidade metodologica. Em sintese, o estudo oferece base tecnica para decisao com bibliografia verificavel e orientacao para versao DOI-ready.",
+  "abstract": "Analise teologica e fenomenologica critica de narrativas de aparicoes marianas. O problema central investigado e: Relatos devocionais frequentemente carecem de criterios consistentes de discernimento historico e fenomenologico. Adotou-se um desenho metodologico com foco em validade interna, comparabilidade e reproducibilidade: Comparacao de documentos, tradicoes e criterios de autenticidade em abordagem historico-critica. Os resultados principais indicam que o estudo distingue elementos simbolicos, historicos e pastorais sem reduzir o fenomeno a uma unica explicacao.. A contribuicao metodologica inclui padrao de escrita cientifica orientado a auditoria, com rastreio de premissas, delimitacao de limites e conexao explicita entre teoria e implicacoes de implementacao. O objetivo deste trabalho e avaliar de forma estruturada como \"A Coroa e a Cruz: Análise Teológica e Fenomenológica das Aparições Marianas\" pode gerar valor cientifico e operacional com rastreabilidade metodologica. Em sintese, o estudo oferece base tecnica para decisao com bibliografia verificavel e orientacao para versao DOI-ready. (Faith, 1978).",
   "authors": [
     {
       "given": "Carlos Ulisses",
-      "family": "Flores Ribeiro",
+      "family": "Flores",
       "ORCID": "https://orcid.org/0000-0002-6034-7765",
       "affiliation": "Codex Hash Research"
     }
@@ -19,7 +19,7 @@
       "URL": "https://ulissesflores.com/research/2023-marian-apparitions-critique"
     },
     "pdf": {
-      "URL": "https://ulissesflores.com/research/2023-marian-apparitions-critique.pdf"
+      "URL": "https://ulissesflores.com/deep-research/2023-marian-apparitions-critique/deep-research.pdf"
     }
   },
   "reference": [
@@ -54,5 +54,5 @@
       "URL": "https://www.vaticannews.va/en/vatican-city/news/2024-05/new-norms-discernment-apparitions-dicastery-doctrine-faith.html"
     }
   ],
-  "DOI": "10.5281/zenodo.202325"
+  "doi_target": "10.5281/zenodo.202325"
 }

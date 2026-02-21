@@ -10,7 +10,7 @@ This file contains an expanded machine-readable index of publication URLs and su
 ## Publications
 ### 1. A Lei de Little como Vetor de Resiliência e Qualidade
 - URL: https://ulissesflores.com/research/2025-little-law-resilience
-- PDF: https://ulissesflores.com/research/2025-little-law-resilience.pdf
+- PDF: https://ulissesflores.com/deep-research/2025-little-law-resilience/deep-research.pdf
 - Category: research
 - Type: ScholarlyArticle
 - Date: 2025-01-01
@@ -20,7 +20,7 @@ This file contains an expanded machine-readable index of publication URLs and su
 
 ### 2. Análise Preditiva de Ativos Financeiros com Modelos LSTM
 - URL: https://ulissesflores.com/research/2025-lstm-asset-prediction
-- PDF: https://ulissesflores.com/research/2025-lstm-asset-prediction.pdf
+- PDF: https://ulissesflores.com/deep-research/2025-lstm-asset-prediction/deep-research.pdf
 - Category: research
 - Type: ScholarlyArticle
 - Date: 2025-01-01
@@ -30,7 +30,7 @@ This file contains an expanded machine-readable index of publication URLs and su
 
 ### 3. Análise Termodinâmica e Engenharia de Sistemas Híbridos de Resfriamento
 - URL: https://ulissesflores.com/whitepapers/2025-hybrid-cooling-thermodynamics
-- PDF: https://ulissesflores.com/whitepapers/2025-hybrid-cooling-thermodynamics.pdf
+- PDF: https://ulissesflores.com/deep-research/2025-hybrid-cooling-thermodynamics/deep-research.pdf
 - Category: whitepapers
 - Type: Report
 - Date: 2025-01-01
@@ -40,7 +40,7 @@ This file contains an expanded machine-readable index of publication URLs and su
 
 ### 4. Arquiteturas Cloudless e Soberania de Dados em IoT
 - URL: https://ulissesflores.com/whitepapers/2025-iot-data-sovereignty
-- PDF: https://ulissesflores.com/whitepapers/2025-iot-data-sovereignty.pdf
+- PDF: https://ulissesflores.com/deep-research/2025-iot-data-sovereignty/deep-research.pdf
 - Category: whitepapers
 - Type: Report
 - Date: 2025-01-01
@@ -50,7 +50,7 @@ This file contains an expanded machine-readable index of publication URLs and su
 
 ### 5. Detecção de Fraudes em Cartões com Redes Neurais
 - URL: https://ulissesflores.com/research/2025-fraud-detection-mlp
-- PDF: https://ulissesflores.com/research/2025-fraud-detection-mlp.pdf
+- PDF: https://ulissesflores.com/deep-research/2025-fraud-detection-mlp/deep-research.pdf
 - Category: research
 - Type: ScholarlyArticle
 - Date: 2025-01-01
@@ -60,7 +60,7 @@ This file contains an expanded machine-readable index of publication URLs and su
 
 ### 6. Análise Historiográfica e Arqueológica Exaustiva: A Historicidade de Jesus
 - URL: https://ulissesflores.com/research/2024-historicity-jesus-archaeology
-- PDF: https://ulissesflores.com/research/2024-historicity-jesus-archaeology.pdf
+- PDF: https://ulissesflores.com/deep-research/2024-historicity-jesus-archaeology/deep-research.pdf
 - Category: research
 - Type: ScholarlyArticle
 - Date: 2024-01-01
@@ -70,7 +70,7 @@ This file contains an expanded machine-readable index of publication URLs and su
 
 ### 7. Bitcoin como Ativo de Reserva e a Teoria da Moeda na Escola Austríaca
 - URL: https://ulissesflores.com/research/2024-bitcoin-praxeology
-- PDF: https://ulissesflores.com/research/2024-bitcoin-praxeology.pdf
+- PDF: https://ulissesflores.com/deep-research/2024-bitcoin-praxeology/deep-research.pdf
 - Category: research
 - Type: ScholarlyArticle
 - Date: 2024-01-01
@@ -80,7 +80,7 @@ This file contains an expanded machine-readable index of publication URLs and su
 
 ### 8. Canonização Escribal: Análise Histórico-Crítica da Formação do Cânon
 - URL: https://ulissesflores.com/research/2024-scribal-canonization-ezra
-- PDF: https://ulissesflores.com/research/2024-scribal-canonization-ezra.pdf
+- PDF: https://ulissesflores.com/deep-research/2024-scribal-canonization-ezra/deep-research.pdf
 - Category: research
 - Type: ScholarlyArticle
 - Date: 2024-01-01
@@ -90,7 +90,7 @@ This file contains an expanded machine-readable index of publication URLs and su
 
 ### 9. Fundamentos Transcendentes da Ordem Econômica
 - URL: https://ulissesflores.com/essays/2024-theology-economic-order
-- PDF: https://ulissesflores.com/essays/2024-theology-economic-order.pdf
+- PDF: https://ulissesflores.com/deep-research/2024-theology-economic-order/deep-research.pdf
 - Category: essays
 - Type: ScholarlyArticle
 - Date: 2024-01-01
@@ -100,7 +100,7 @@ This file contains an expanded machine-readable index of publication URLs and su
 
 ### 10. Implementação de Ring Signatures e Endereços Furtivos
 - URL: https://ulissesflores.com/whitepapers/2024-ring-signatures-privacy
-- PDF: https://ulissesflores.com/whitepapers/2024-ring-signatures-privacy.pdf
+- PDF: https://ulissesflores.com/deep-research/2024-ring-signatures-privacy/deep-research.pdf
 - Category: whitepapers
 - Type: Report
 - Date: 2024-01-01
@@ -110,7 +110,7 @@ This file contains an expanded machine-readable index of publication URLs and su
 
 ### 11. Transformação Ágil e Engenharia de Fluxo em Data Science
 - URL: https://ulissesflores.com/whitepapers/2024-agritech-agile-flow
-- PDF: https://ulissesflores.com/whitepapers/2024-agritech-agile-flow.pdf
+- PDF: https://ulissesflores.com/deep-research/2024-agritech-agile-flow/deep-research.pdf
 - Category: whitepapers
 - Type: Report
 - Date: 2024-01-01
@@ -120,7 +120,7 @@ This file contains an expanded machine-readable index of publication URLs and su
 
 ### 12. Tratado Exegético sobre a Representação da Moralidade e Antropologia
 - URL: https://ulissesflores.com/essays/2024-exegetical-treatise-anthropology
-- PDF: https://ulissesflores.com/essays/2024-exegetical-treatise-anthropology.pdf
+- PDF: https://ulissesflores.com/deep-research/2024-exegetical-treatise-anthropology/deep-research.pdf
 - Category: essays
 - Type: ScholarlyArticle
 - Date: 2024-01-01
@@ -130,7 +130,7 @@ This file contains an expanded machine-readable index of publication URLs and su
 
 ### 13. A Coroa e a Cruz: Análise Teológica e Fenomenológica das Aparições Marianas
 - URL: https://ulissesflores.com/research/2023-marian-apparitions-critique
-- PDF: https://ulissesflores.com/research/2023-marian-apparitions-critique.pdf
+- PDF: https://ulissesflores.com/deep-research/2023-marian-apparitions-critique/deep-research.pdf
 - Category: research
 - Type: ScholarlyArticle
 - Date: 2023-01-01
@@ -140,7 +140,7 @@ This file contains an expanded machine-readable index of publication URLs and su
 
 ### 14. Desafios da Herança Digital: Preservação de Memória Pós-Mortem
 - URL: https://ulissesflores.com/whitepapers/2023-digital-legacy
-- PDF: https://ulissesflores.com/whitepapers/2023-digital-legacy.pdf
+- PDF: https://ulissesflores.com/deep-research/2023-digital-legacy/deep-research.pdf
 - Category: whitepapers
 - Type: Report
 - Date: 2023-01-01
@@ -150,7 +150,7 @@ This file contains an expanded machine-readable index of publication URLs and su
 
 ### 15. O Clube Santo: Arqueologia Espiritual, Teológica e Visual do Metodismo
 - URL: https://ulissesflores.com/research/2023-holy-club-methodism
-- PDF: https://ulissesflores.com/research/2023-holy-club-methodism.pdf
+- PDF: https://ulissesflores.com/deep-research/2023-holy-club-methodism/deep-research.pdf
 - Category: research
 - Type: ScholarlyArticle
 - Date: 2023-01-01
@@ -160,7 +160,7 @@ This file contains an expanded machine-readable index of publication URLs and su
 
 ### 16. A Teologia da Esperança em Tempos de Crise
 - URL: https://ulissesflores.com/essays/2022-theology-of-hope
-- PDF: https://ulissesflores.com/essays/2022-theology-of-hope.pdf
+- PDF: https://ulissesflores.com/deep-research/2022-theology-of-hope/deep-research.pdf
 - Category: essays
 - Type: ScholarlyArticle
 - Date: 2022-01-01
@@ -170,7 +170,7 @@ This file contains an expanded machine-readable index of publication URLs and su
 
 ### 17. Metodologias Ativas no Ensino de Lógica de Programação
 - URL: https://ulissesflores.com/essays/2020-robotics-education
-- PDF: https://ulissesflores.com/essays/2020-robotics-education.pdf
+- PDF: https://ulissesflores.com/deep-research/2020-robotics-education/deep-research.pdf
 - Category: essays
 - Type: ScholarlyArticle
 - Date: 2020-01-01
@@ -180,7 +180,7 @@ This file contains an expanded machine-readable index of publication URLs and su
 
 ### 18. Teoria do Caos: Emergência e Auto-organização em Mercados
 - URL: https://ulissesflores.com/essays/2017-chaos-theory-economics
-- PDF: https://ulissesflores.com/essays/2017-chaos-theory-economics.pdf
+- PDF: https://ulissesflores.com/deep-research/2017-chaos-theory-economics/deep-research.pdf
 - Category: essays
 - Type: ScholarlyArticle
 - Date: 2017-01-01

@@ -12,7 +12,7 @@ endobj
 << /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 5 0 R >>
 endobj
 5 0 obj
-<< /Length 3485 >>
+<< /Length 3479 >>
 stream
 BT
 /F1 11 Tf
@@ -23,7 +23,7 @@ T* (Title: Arquiteturas Cloudless e Soberania de Dados em IoT) Tj
 T* (Category: whitepapers) Tj
 T* (Type: Report) Tj
 T* (Year: 2025) Tj
-T* (Author: Carlos Ulisses Flores Ribeiro) Tj
+T* (Author: Carlos Ulisses Flores) Tj
 T* (Resumo) Tj
 T* (Arquiteturas cloudless para IoT com soberania de dados e processamento local em edge. O) Tj
 T* (problema central investigado e: Dependencia de nuvem publica amplia superficie de) Tj
@@ -38,32 +38,32 @@ T* (explicita entre teoria e implicacoes de implementacao. O objetivo deste trab
 T* (avaliar de forma estruturada como "Arquiteturas Cloudless e Soberania de Dados em IoT") Tj
 T* (pode gerar valor cientifico e operacional com rastreabilidade metodologica. Em sintese,) Tj
 T* (o estudo oferece base tecnica para decisao com bibliografia verificavel e orientacao) Tj
-T* (para versao DOI-ready.) Tj
+T* (para versao DOI-ready. \(Rose, 2020\).) Tj
 T* (1. Introducao) Tj
 T* (No estado atual do tema, dependencia de nuvem publica amplia superficie de ataque,) Tj
 T* (latencia e exposicao regulatoria de dados sensiveis. Arquiteturas cloudless para IoT com) Tj
-T* (soberania de dados e processamento local em edge.) Tj
+T* (soberania de dados e processamento local em edge. \(security, 2026\).) Tj
 T* (A lacuna de pesquisa reside na ausencia de integracao entre formulacao teorica,) Tj
 T* (criterios operacionais e mecanismos de validacao transparentes. O objetivo deste) Tj
 T* (trabalho e avaliar de forma estruturada como "Arquiteturas Cloudless e Soberania de) Tj
 T* (Dados em IoT" pode gerar valor cientifico e operacional com rastreabilidade) Tj
-T* (metodologica.) Tj
+T* (metodologica. \(cybersecurity, 2026\).) Tj
 T* (Pergunta de pesquisa: Quais decisoes arquiteturais derivadas de "Arquiteturas Cloudless) Tj
 T* (e Soberania de Dados em IoT" maximizam resiliencia operacional sem comprometer) Tj
 T* (seguranca, custo total de propriedade e auditabilidade? A relevancia do estudo decorre) Tj
 T* (do potencial de aplicacao em cenarios de alta criticidade, nos quais previsibilidade,) Tj
-T* (seguranca e qualidade de decisao sao requisitos obrigatorios.) Tj
+T* (seguranca e qualidade de decisao sao requisitos obrigatorios. \(Project, 2026\).) Tj
 T* (Do ponto de vista epistemologico, o artigo assume que rigor cientifico exige delimitacao) Tj
 T* (clara entre escopo, premissas e criterio de evidencias. Assim, o problema e tratado como) Tj
 T* (sistema socio-tecnico: parte conceitual, parte operacional e parte institucional.) Tj
+T* (\(framework, 2026\).) Tj
 T* (A hipotese de trabalho afirma que, quando a governanca do processo e orientada por) Tj
 T* (metodo explicito e bibliografia primaria verificavel, ha ganho simultaneo de qualidade) Tj
 T* (argumentativa, capacidade de auditoria e utilidade pratica para decisores tecnicos.) Tj
+T* (\(Rose, 2020\).) Tj
 T* (2. Desenvolvimento - Metodos) Tj
 T* (Desenho metodologico: Comparacao de arquiteturas centralizadas versus edge-first,) Tj
 T* (incluindo requisitos de identidade, criptografia e observabilidade. O protocolo) Tj
-T* (privilegia rastreabilidade de premissas, delimitacao explicita de escopo e comparacao) Tj
-T* (entre alternativas tecnicas.) Tj
 ET
 endstream
 endobj
@@ -71,58 +71,58 @@ endobj
 << /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 7 0 R >>
 endobj
 7 0 obj
-<< /Length 3672 >>
+<< /Length 3718 >>
 stream
 BT
 /F1 11 Tf
 14 TL
 50 790 Td
-(A estrategia analitica combina triangulacao bibliografica, criterios de consistencia) Tj
+(privilegia rastreabilidade de premissas, delimitacao explicita de escopo e comparacao) Tj
+T* (entre alternativas tecnicas. \(Fagan, 2020\).) Tj
+T* (A estrategia analitica combina triangulacao bibliografica, criterios de consistencia) Tj
 T* (interna e leitura orientada a evidencia. Quando aplicavel, o estudo adota controles para) Tj
 T* (reduzir vieses de selecao, leakage informacional e conclusoes nao reprodutiveis.) Tj
+T* (\(security, 2026\).) Tj
 T* (Para confiabilidade, foram definidos pontos de verificacao em cada etapa: definicao do) Tj
 T* (problema, construcao argumentativa, confrontacao de resultados e consolidacao das) Tj
-T* (implicacoes praticas.) Tj
+T* (implicacoes praticas. \(cybersecurity, 2026\).) Tj
 T* (No eixo de validade, foram estabelecidos criterios de coerencia logica, aderencia ao) Tj
 T* (estado da arte e plausibilidade externa. Cada afirmacao central foi vinculada a fonte) Tj
-T* (primaria \(DOI, norma tecnica, obra de referencia ou documento institucional\).) Tj
+T* (primaria \(DOI, norma tecnica, obra de referencia ou documento institucional\). \(Project,) Tj
+T* (2026\).) Tj
 T* (No eixo de reprodutibilidade, a estrutura textual foi organizada em camadas: pergunta,) Tj
 T* (metodo, evidencia, interpretacao e decisao. Isso permite que futuras versoes com DOI) Tj
 T* (incorporem dados suplementares e protocolo de revisao por pares sem ruptura da) Tj
-T* (arquitetura do artigo.) Tj
+T* (arquitetura do artigo. \(framework, 2026\).) Tj
 T* (3. Desenvolvimento - Resultados) Tj
 T* (Resultado principal: O desenho cloudless reduz dependencia externa e melhora controle) Tj
-T* (sobre confidencialidade e disponibilidade local.) Tj
+T* (sobre confidencialidade e disponibilidade local. \(Rose, 2020\).) Tj
 T* (Contribuicoes diretas: Blueprint de referencia para IoT com soberania de dados por) Tj
 T* (design. Politicas de seguranca e identidade para operacao zero trust em edge. Padroes de) Tj
-T* (integracao para reduzir lock-in de provedores.) Tj
+T* (integracao para reduzir lock-in de provedores. \(Fagan, 2020\).) Tj
 T* (Do ponto de vista aplicado, os achados indicam que a estruturacao por evidencias melhora) Tj
 T* (clareza decisoria, reduz ambiguidade de implementacao e fortalece governanca tecnica) Tj
-T* (para operacao em producao.) Tj
+T* (para operacao em producao. \(security, 2026\).) Tj
 T* (A analise comparativa entre literatura e implicacoes de campo mostra convergencia) Tj
 T* (robusta entre teoria e implementacao. Em termos de maturidade cientifica, o artefato) Tj
 T* (resultante atende requisitos de rastreabilidade, consistencia terminologica e prontidao) Tj
-T* (para citacao formal.) Tj
+T* (para citacao formal. \(cybersecurity, 2026\).) Tj
 T* (Em nivel estrategico, os resultados reforcam que a qualidade do desenho metodologico) Tj
 T* (afeta diretamente custo de erro, tempo de resposta e capacidade de escalonamento.) Tj
 T* (Portanto, o valor do estudo nao se limita ao argumento teoretico, mas se estende a) Tj
-T* (decisao de arquitetura e governanca.) Tj
+T* (decisao de arquitetura e governanca. \(Project, 2026\).) Tj
 T* (4. Discussao) Tj
 T* (O principal trade-off envolve operacao distribuida e necessidade de automacao robusta de) Tj
 T* (ciclo de vida. A interpretacao dos resultados foi realizada em contraste com literatura) Tj
-T* (primaria e com enfase em coerencia entre teoria, metodo e aplicacao.) Tj
+T* (primaria e com enfase em coerencia entre teoria, metodo e aplicacao. \(framework, 2026\).) Tj
 T* (Limitacoes: A transferencia integral do blueprint depende de maturidade operacional e da) Tj
 T* (capacidade local de engenharia e governanca. Custos de transicao, capacitao e) Tj
-T* (interoperabilidade podem variar significativamente entre setores e geografias.) Tj
+T* (interoperabilidade podem variar significativamente entre setores e geografias. \(Rose,) Tj
+T* (2020\).) Tj
 T* (Mesmo com tais limites, a evidencia sustenta a viabilidade da proposta dentro do escopo) Tj
-T* (declarado e oferece caminho para amadurecimento cientifico incremental.) Tj
+T* (declarado e oferece caminho para amadurecimento cientifico incremental. \(Fagan, 2020\).) Tj
 T* (No plano critico, a discussao destaca que resultados tecnicamente promissores ainda) Tj
 T* (dependem de contexto institucional, capacidade de execucao e qualidade dos dados de) Tj
-T* (entrada. Esse ponto evita generalizacoes indevidas e protege a validade externa do) Tj
-T* (estudo.) Tj
-T* (Como consequencia, recomenda-se leitura prudencial dos resultados: forte para orientar) Tj
-T* (desenho de sistemas e governanca, mas condicionada a ciclos iterativos de validacao) Tj
-T* (empirica e revisao metodologica em ambientes independentes.) Tj
 ET
 endstream
 endobj
@@ -130,28 +130,34 @@ endobj
 << /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 9 0 R >>
 endobj
 9 0 obj
-<< /Length 2388 >>
+<< /Length 3012 >>
 stream
 BT
 /F1 11 Tf
 14 TL
 50 790 Td
-(5. Consideracoes Finais) Tj
+(entrada. Esse ponto evita generalizacoes indevidas e protege a validade externa do) Tj
+T* (estudo. \(security, 2026\).) Tj
+T* (Como consequencia, recomenda-se leitura prudencial dos resultados: forte para orientar) Tj
+T* (desenho de sistemas e governanca, mas condicionada a ciclos iterativos de validacao) Tj
+T* (empirica e revisao metodologica em ambientes independentes. \(cybersecurity, 2026\).) Tj
+T* (5. Consideracoes Finais) Tj
 T* (Aplicavel a agricultura conectada, automacao industrial e ambientes com restricoes de) Tj
 T* (conectividade. O estudo entrega um artefato cientifico com estrutura pronta para) Tj
-T* (indexacao, citacao e futura atribuicao de DOI.) Tj
+T* (indexacao, citacao e futura atribuicao de DOI. \(Project, 2026\).) Tj
 T* (Agenda de continuidade: Executar pilotos controlados com metricas de SLO, custo de ciclo) Tj
 T* (de vida e risco residual. Expandir matriz de conformidade regulatoria para diferentes) Tj
 T* (jurisdicoes. Consolidar release tecnico com anexos de arquitetura e checklists de) Tj
-T* (implementacao.) Tj
+T* (implementacao. \(framework, 2026\).) Tj
 T* (Conclusao executiva: a combinacao entre rigor metodologico, curadoria bibliografica e) Tj
 T* (foco em aplicabilidade confere robustez para uso academico e tecnico-profissional.) Tj
+T* (\(Rose, 2020\).) Tj
 T* (No criterio de estado da arte, a principal entrega e a integracao entre forma) Tj
 T* (cientifica, substancia tecnica e preparo de publicacao. Isso reduz retrabalho editorial) Tj
-T* (e acelera a transicao para submissao formal em repositorios e periodicos.) Tj
+T* (e acelera a transicao para submissao formal em repositorios e periodicos. \(Fagan, 2020\).) Tj
 T* (Assim, a versao atual deve ser entendida como base de referencia canonicamente) Tj
 T* (estruturada: suficiente para indexacao de qualidade e pronta para evolucao incremental) Tj
-T* (com DOI, revisao externa e ampliacao de evidencias.) Tj
+T* (com DOI, revisao externa e ampliacao de evidencias. \(security, 2026\).) Tj
 T* (6. Referencias) Tj
 T* (Rose, S. et al. \(2020\). NIST SP 800-207 Zero Trust Architecture. Disponivel em:) Tj
 T* (https://doi.org/10.6028/NIST.SP.800-207) Tj
@@ -166,13 +172,14 @@ T* (https://owasp.org/www-project-internet-of-things/) Tj
 T* (GAIA-X policy and interoperability framework. Disponivel em:) Tj
 T* (https://gaia-x.eu/what-is-gaia-x/) Tj
 T* (Canonical URL: https://ulissesflores.com/whitepapers/2025-iot-data-sovereignty) Tj
-T* (PDF URL: https://ulissesflores.com/whitepapers/2025-iot-data-sovereignty.pdf) Tj
+T* (Primary PDF URL: https://ulissesflores.com/deep-research/2025-iot-data-sovereignty/deep-research.pdf) Tj
+T* (Legacy PDF URL: https://ulissesflores.com/whitepapers/2025-iot-data-sovereignty.pdf) Tj
 T* (Generated from UPKF at 2026-02-21) Tj
 ET
 endstream
 endobj
 10 0 obj
-<< /Title (Arquiteturas Cloudless e Soberania de Dados em IoT) /Author (Carlos Ulisses Flores Ribeiro) /Subject (whitepapers scientific article) /Keywords (Engenharia, IoT, Seguranca, IOT, DATA, SOVEREIGNTY) /Creator (UPKF Generator) /Producer (UPKF Generator) /CreationDate (D:20260221000000Z) /ModDate (D:20260221000000Z) >>
+<< /Title (Arquiteturas Cloudless e Soberania de Dados em IoT) /Author (Carlos Ulisses Flores) /Subject (whitepapers scientific article) /Keywords (Engenharia, IoT, Seguranca, IOT, DATA, SOVEREIGNTY) /Creator (UPKF Generator) /Producer (UPKF Generator) /CreationDate (D:20260221000000Z) /ModDate (D:20260221000000Z) >>
 endobj
 xref
 0 11
@@ -182,13 +189,13 @@ xref
 0000000127 00000 n 
 0000000197 00000 n 
 0000000323 00000 n 
-0000003860 00000 n 
-0000003986 00000 n 
-0000007710 00000 n 
-0000007836 00000 n 
-0000010276 00000 n 
+0000003854 00000 n 
+0000003980 00000 n 
+0000007750 00000 n 
+0000007876 00000 n 
+0000010940 00000 n 
 trailer
 << /Size 11 /Root 1 0 R /Info 10 0 R >>
 startxref
-10619
+11275
 %%EOF

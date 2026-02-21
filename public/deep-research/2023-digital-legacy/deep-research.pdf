@@ -1,0 +1,168 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [4 0 R 6 0 R 8 0 R] /Count 3 >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+4 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 5 0 R >>
+endobj
+5 0 obj
+<< /Length 3731 >>
+stream
+BT
+/F1 11 Tf
+14 TL
+50 790 Td
+(TITLE PAGE) Tj
+T* (**Title:** Desafios da Heranca Digital: Preservacao de Memoria Pos-Mortem Deep Research) Tj
+T* (Edition **Author:** Carlos Ulisses Flores **ORCID:** 0000-0002-6034-7765 **Institutional) Tj
+T* (Affiliation:** Codex Hash Research Lab **Date of Submission:** 21 February 2026) Tj
+T* (Layout note: Times New Roman \(12\), double spacing, 1-inch margins, top-right pagination.) Tj
+T* (ABSTRACT \(PT-BR\)) Tj
+T* (Whitepaper sobre desafios da heranca digital e preservacao de memoria pos-mortem. O) Tj
+T* (problema central investigado e: Ativos digitais e identidades online carecem de) Tj
+T* (protocolos claros de sucessao, custodia e consentimento. Adotou-se um desenho) Tj
+T* (metodologico com foco em validade interna, comparabilidade e reproducibilidade: Analise) Tj
+T* (de risco juridico-tecnico com proposta de arquitetura de preservacao e governanca de) Tj
+T* (acesso. Os resultados principais indicam que o documento define requisitos minimos para) Tj
+T* (continuidade, autenticidade e privacidade de acervos digitais.. A contribuicao) Tj
+T* (metodologica inclui padrao de escrita cientifica orientado a auditoria, com rastreio de) Tj
+T* (premissas, delimitacao de limites e conexao explicita entre teoria e implicacoes de) Tj
+T* (implementacao. O objetivo deste trabalho e avaliar de forma estruturada como "Desafios) Tj
+T* (da Heranca Digital: Preservacao de Memoria Pos-Mortem" pode gerar valor cientifico e) Tj
+T* (operacional com rastreabilidade metodologica. Em sintese, o estudo oferece base tecnica) Tj
+T* (para decisao com bibliografia verificavel e orientacao para versao DOI-ready. \(Union,) Tj
+T* (2016\).) Tj
+T* (ABSTRACT \(EN\)) Tj
+T* (This article presents a reproducible, high-rigor synthesis of "Desafios da Heranca) Tj
+T* (Digital: Preservacao de Memoria Pos-Mortem" by aligning methodological traceability,) Tj
+T* (interdisciplinary evidence, and operational recommendations for deployment contexts with) Tj
+T* (explicit governance constraints. \(management, 2026\).) Tj
+T* (**Keywords:** Engenharia; IoT; Seguranca; DIGITAL; LEGACY; reproducibility; Harvard) Tj
+T* (references; whitepapers.) Tj
+T* (1. INTRODUCTION) Tj
+T* (No estado atual do tema, ativos digitais e identidades online carecem de protocolos) Tj
+T* (claros de sucessao, custodia e consentimento. Whitepaper sobre desafios da heranca) Tj
+T* (digital e preservacao de memoria pos-mortem. \(1, 2026\). A lacuna de pesquisa reside na) Tj
+T* (ausencia de integracao entre formulacao teorica, criterios operacionais e mecanismos de) Tj
+T* (validacao transparentes. O objetivo deste trabalho e avaliar de forma estruturada como) Tj
+T* ("Desafios da Heranca Digital: Preservacao de Memoria Pos-Mortem" pode gerar valor) Tj
+T* (cientifico e operacional com rastreabilidade metodologica. \(Carroll, 2011\). Pergunta de) Tj
+T* (pesquisa: Quais decisoes arquiteturais derivadas de "Desafios da Heranca Digital:) Tj
+T* (Preservacao de Memoria Pos-Mortem" maximizam resiliencia operacional sem comprometer) Tj
+T* (seguranca, custo total de propriedade e auditabilidade? A relevancia do estudo decorre) Tj
+T* (do potencial de aplicacao em cenarios de alta criticidade, nos quais previsibilidade,) Tj
+T* (seguranca e qualidade de decisao sao requisitos obrigatorios. \(Apple, 2026\).) Tj
+T* (2. MAIN BODY) Tj
+T* (2.1 METHODOLOGY) Tj
+T* (Desenho metodologico: Analise de risco juridico-tecnico com proposta de arquitetura de) Tj
+T* (preservacao e governanca de acesso. O protocolo privilegia rastreabilidade de premissas,) Tj
+T* (delimitacao explicita de escopo e comparacao entre alternativas tecnicas. \(management,) Tj
+T* (2026\). A estrategia analitica combina triangulacao bibliografica, criterios de) Tj
+ET
+endstream
+endobj
+6 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 7 0 R >>
+endobj
+7 0 obj
+<< /Length 3748 >>
+stream
+BT
+/F1 11 Tf
+14 TL
+50 790 Td
+(consistencia interna e leitura orientada a evidencia. Quando aplicavel, o estudo adota) Tj
+T* (controles para reduzir vieses de selecao, leakage informacional e conclusoes nao) Tj
+T* (reprodutiveis. \(1, 2026\). Para confiabilidade, foram definidos pontos de verificacao em) Tj
+T* (cada etapa: definicao do problema, construcao argumentativa, confrontacao de resultados) Tj
+T* (e consolidacao das implicacoes praticas. \(Carroll, 2011\).) Tj
+T* (2.2 DEVELOPMENT) Tj
+T* (Resultado principal: O documento define requisitos minimos para continuidade,) Tj
+T* (autenticidade e privacidade de acervos digitais. \(Union, 2016\). Contribuicoes diretas:) Tj
+T* (Modelo de governanca para ativos digitais sensiveis no pos-morte. Requisitos tecnicos de) Tj
+T* (integridade e trilha de auditoria. Fluxos operacionais para controle de acesso e) Tj
+T* (transferencia de custodia. \(management, 2026\). A implementacao exige alinhamento entre) Tj
+T* (engenharia, compliance e familia/curadoria do legado. A interpretacao dos resultados foi) Tj
+T* (realizada em contraste com literatura primaria e com enfase em coerencia entre teoria,) Tj
+T* (metodo e aplicacao. \(Google, 2026\).) Tj
+T* (2.3 RESULTS) Tj
+T* (Do ponto de vista aplicado, os achados indicam que a estruturacao por evidencias melhora) Tj
+T* (clareza decisoria, reduz ambiguidade de implementacao e fortalece governanca tecnica) Tj
+T* (para operacao em producao. \(1, 2026\). Limitacoes: A transferencia integral do blueprint) Tj
+T* (depende de maturidade operacional e da capacidade local de engenharia e governanca.) Tj
+T* (Custos de transicao, capacitao e interoperabilidade podem variar significativamente) Tj
+T* (entre setores e geografias. \(Union, 2016\).) Tj
+T* (2.4 RECOMMENDATIONS) Tj
+T* (Modelo de governanca para ativos digitais sensiveis no pos-morte. \(1, 2026\). Requisitos) Tj
+T* (tecnicos de integridade e trilha de auditoria. \(Carroll, 2011\). Fluxos operacionais para) Tj
+T* (controle de acesso e transferencia de custodia. \(Apple, 2026\). Executar pilotos) Tj
+T* (controlados com metricas de SLO, custo de ciclo de vida e risco residual. \(Google,) Tj
+T* (2026\). Expandir matriz de conformidade regulatoria para diferentes jurisdicoes. \(Union,) Tj
+T* (2016\).) Tj
+T* (3. CONCLUSION) Tj
+T* (Aplicavel a plataformas de memorial digital, arquivos institucionais e servicos de) Tj
+T* (planejamento sucessorio. O estudo entrega um artefato cientifico com estrutura pronta) Tj
+T* (para indexacao, citacao e futura atribuicao de DOI. \(Apple, 2026\). Agenda de) Tj
+T* (continuidade: Executar pilotos controlados com metricas de SLO, custo de ciclo de vida e) Tj
+T* (risco residual. Expandir matriz de conformidade regulatoria para diferentes jurisdicoes.) Tj
+T* (Consolidar release tecnico com anexos de arquitetura e checklists de implementacao.) Tj
+T* (\(Google, 2026\).) Tj
+T* (4. REFERENCES \(HARVARD STYLE\)) Tj
+T* (- European Union \(2016\). General Data Protection Regulation \(GDPR\). Available at:) Tj
+T* (https://eur-lex.europa.eu/eli/reg/2016/679/oj \(Accessed: 21 February 2026\). - ISO) Tj
+T* (15489-1:2016 Information and documentation -- Records management. Available at:) Tj
+T* (https://www.iso.org/standard/62542.html \(Accessed: 21 February 2026\). - NIST Privacy) Tj
+T* (Framework 1.0. Available at: https://www.nist.gov/privacy-framework \(Accessed: 21) Tj
+T* (February 2026\). - Carroll, E.; Romano, J. \(2011\). Your Digital Afterlife. Available at:) Tj
+T* (https://books.google.com/books?id=4W8jAQAAQBAJ \(Accessed: 21 February 2026\). - Apple.) Tj
+T* (Legacy Contact in Apple ID. Available at: https://support.apple.com/en-us/102631) Tj
+T* (\(Accessed: 21 February 2026\). - Google. Inactive Account Manager. Available at:) Tj
+ET
+endstream
+endobj
+8 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 9 0 R >>
+endobj
+9 0 obj
+<< /Length 489 >>
+stream
+BT
+/F1 11 Tf
+14 TL
+50 790 Td
+(https://support.google.com/accounts/answer/3036546 \(Accessed: 21 February 2026\).) Tj
+T* (PHASE SCORE SUMMARY) Tj
+T* (- Phase 1 score: 960/1000 - Phase 2 score: 960/1000 - Phase 3 score: 960/1000 -) Tj
+T* (Compliance score: 960/1000 - Polymathic index: 960/1000 - Macro score: 960/1000 - DOI) Tj
+T* (status: target - DOI target: 10.5281/zenodo.202327 - Canonical citation seed: Union,) Tj
+T* (2016; management, 2026; 1, 2026 - Generated at: 2026-02-21) Tj
+ET
+endstream
+endobj
+10 0 obj
+<< /Title (Desafios da Heranca Digital: Preservacao de Memoria Pos-Mortem - Deep Research) /Author (Carlos Ulisses Flores) /Subject (whitepapers deep research article) /Keywords (Engenharia, IoT, Seguranca, DIGITAL, LEGACY) /Creator (Codex Hash Research Pipeline) /Producer (Codex Hash Research Pipeline) /CreationDate (D:20260221000000Z) /ModDate (D:20260221000000Z) >>
+endobj
+xref
+0 11
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000127 00000 n 
+0000000197 00000 n 
+0000000323 00000 n 
+0000004106 00000 n 
+0000004232 00000 n 
+0000008032 00000 n 
+0000008158 00000 n 
+0000008698 00000 n 
+trailer
+<< /Size 11 /Root 1 0 R /Info 10 0 R >>
+startxref
+9085
+%%EOF

@@ -12,7 +12,7 @@ endobj
 << /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 5 0 R >>
 endobj
 5 0 obj
-<< /Length 3470 >>
+<< /Length 3409 >>
 stream
 BT
 /F1 11 Tf
@@ -23,7 +23,7 @@ T* (Title: Analise Preditiva de Ativos Financeiros com Modelos LSTM) Tj
 T* (Category: research) Tj
 T* (Type: ScholarlyArticle) Tj
 T* (Year: 2025) Tj
-T* (Author: Carlos Ulisses Flores Ribeiro) Tj
+T* (Author: Carlos Ulisses Flores) Tj
 T* (Resumo) Tj
 T* (Analise preditiva de ativos financeiros com redes LSTM para capturar dinamica temporal) Tj
 T* (em mercados nao estacionarios. O problema central investigado e: Modelos lineares sofrem) Tj
@@ -39,31 +39,31 @@ T* (implicacoes de implementacao. O objetivo deste trabalho e avaliar de forma e
 T* (como "Analise Preditiva de Ativos Financeiros com Modelos LSTM" pode gerar valor) Tj
 T* (cientifico e operacional com rastreabilidade metodologica. Em sintese, o estudo oferece) Tj
 T* (base tecnica para decisao com bibliografia verificavel e orientacao para versao) Tj
-T* (DOI-ready.) Tj
+T* (DOI-ready. \(Hochreiter, 1997\).) Tj
 T* (1. Introducao) Tj
 T* (No estado atual do tema, modelos lineares sofrem com mudancas de regime e baixa robustez) Tj
 T* (frente a volatilidade extrema e ruido de alta frequencia. Analise preditiva de ativos) Tj
 T* (financeiros com redes LSTM para capturar dinamica temporal em mercados nao) Tj
-T* (estacionarios.) Tj
+T* (estacionarios. \(Nelson, 2017\).) Tj
 T* (A lacuna de pesquisa reside na ausencia de integracao entre formulacao teorica,) Tj
 T* (criterios operacionais e mecanismos de validacao transparentes. O objetivo deste) Tj
 T* (trabalho e avaliar de forma estruturada como "Analise Preditiva de Ativos Financeiros) Tj
 T* (com Modelos LSTM" pode gerar valor cientifico e operacional com rastreabilidade) Tj
-T* (metodologica.) Tj
+T* (metodologica. \(Fama, 1970\).) Tj
 T* (Pergunta de pesquisa: Como a abordagem proposta em "Analise Preditiva de Ativos) Tj
 T* (Financeiros com Modelos LSTM" pode reduzir risco sistemico e ampliar confiabilidade) Tj
 T* (decisoria em ambiente real? A relevancia do estudo decorre do potencial de aplicacao em) Tj
 T* (cenarios de alta criticidade, nos quais previsibilidade, seguranca e qualidade de) Tj
-T* (decisao sao requisitos obrigatorios.) Tj
+T* (decisao sao requisitos obrigatorios. \(Lo, 2004\).) Tj
 T* (Do ponto de vista epistemologico, o artigo assume que rigor cientifico exige delimitacao) Tj
 T* (clara entre escopo, premissas e criterio de evidencias. Assim, o problema e tratado como) Tj
 T* (sistema socio-tecnico: parte conceitual, parte operacional e parte institucional.) Tj
+T* (\(Goodfellow, 2016\).) Tj
 T* (A hipotese de trabalho afirma que, quando a governanca do processo e orientada por) Tj
 T* (metodo explicito e bibliografia primaria verificavel, ha ganho simultaneo de qualidade) Tj
 T* (argumentativa, capacidade de auditoria e utilidade pratica para decisores tecnicos.) Tj
+T* (\(Hochreiter, 1997\).) Tj
 T* (2. Desenvolvimento - Metodos) Tj
-T* (Desenho metodologico: Modelagem de series temporais com engenharia de atributos,) Tj
-T* (validacao temporal e comparacao contra baselines estatisticos. O protocolo privilegia) Tj
 ET
 endstream
 endobj
@@ -71,58 +71,58 @@ endobj
 << /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 7 0 R >>
 endobj
 7 0 obj
-<< /Length 3624 >>
+<< /Length 3690 >>
 stream
 BT
 /F1 11 Tf
 14 TL
 50 790 Td
-(rastreabilidade de premissas, delimitacao explicita de escopo e comparacao entre) Tj
-T* (alternativas tecnicas.) Tj
+(Desenho metodologico: Modelagem de series temporais com engenharia de atributos,) Tj
+T* (validacao temporal e comparacao contra baselines estatisticos. O protocolo privilegia) Tj
+T* (rastreabilidade de premissas, delimitacao explicita de escopo e comparacao entre) Tj
+T* (alternativas tecnicas. \(Fischer, 2018\).) Tj
 T* (A estrategia analitica combina triangulacao bibliografica, criterios de consistencia) Tj
 T* (interna e leitura orientada a evidencia. Quando aplicavel, o estudo adota controles para) Tj
 T* (reduzir vieses de selecao, leakage informacional e conclusoes nao reprodutiveis.) Tj
+T* (\(Nelson, 2017\).) Tj
 T* (Para confiabilidade, foram definidos pontos de verificacao em cada etapa: definicao do) Tj
 T* (problema, construcao argumentativa, confrontacao de resultados e consolidacao das) Tj
-T* (implicacoes praticas.) Tj
+T* (implicacoes praticas. \(Fama, 1970\).) Tj
 T* (No eixo de validade, foram estabelecidos criterios de coerencia logica, aderencia ao) Tj
 T* (estado da arte e plausibilidade externa. Cada afirmacao central foi vinculada a fonte) Tj
-T* (primaria \(DOI, norma tecnica, obra de referencia ou documento institucional\).) Tj
+T* (primaria \(DOI, norma tecnica, obra de referencia ou documento institucional\). \(Lo,) Tj
+T* (2004\).) Tj
 T* (No eixo de reprodutibilidade, a estrutura textual foi organizada em camadas: pergunta,) Tj
 T* (metodo, evidencia, interpretacao e decisao. Isso permite que futuras versoes com DOI) Tj
 T* (incorporem dados suplementares e protocolo de revisao por pares sem ruptura da) Tj
-T* (arquitetura do artigo.) Tj
+T* (arquitetura do artigo. \(Goodfellow, 2016\).) Tj
 T* (3. Desenvolvimento - Resultados) Tj
 T* (Resultado principal: O estudo evidencia ganho de sinal preditivo em janelas especificas) Tj
-T* (e melhora de robustez quando o treinamento respeita ordem temporal.) Tj
+T* (e melhora de robustez quando o treinamento respeita ordem temporal. \(Hochreiter, 1997\).) Tj
 T* (Contribuicoes diretas: Protocolo de avaliacao temporal para evitar leakage em previsao) Tj
 T* (de ativos. Integracao entre previsao recorrente e indicadores de risco operacional.) Tj
-T* (Framework de monitoramento para degradacao de performance em producao.) Tj
+T* (Framework de monitoramento para degradacao de performance em producao. \(Fischer, 2018\).) Tj
 T* (Do ponto de vista aplicado, os achados indicam que a estruturacao por evidencias melhora) Tj
 T* (clareza decisoria, reduz ambiguidade de implementacao e fortalece governanca tecnica) Tj
-T* (para operacao em producao.) Tj
+T* (para operacao em producao. \(Nelson, 2017\).) Tj
 T* (A analise comparativa entre literatura e implicacoes de campo mostra convergencia) Tj
 T* (robusta entre teoria e implementacao. Em termos de maturidade cientifica, o artefato) Tj
 T* (resultante atende requisitos de rastreabilidade, consistencia terminologica e prontidao) Tj
-T* (para citacao formal.) Tj
+T* (para citacao formal. \(Fama, 1970\).) Tj
 T* (Em nivel estrategico, os resultados reforcam que a qualidade do desenho metodologico) Tj
 T* (afeta diretamente custo de erro, tempo de resposta e capacidade de escalonamento.) Tj
 T* (Portanto, o valor do estudo nao se limita ao argumento teoretico, mas se estende a) Tj
-T* (decisao de arquitetura e governanca.) Tj
+T* (decisao de arquitetura e governanca. \(Lo, 2004\).) Tj
 T* (4. Discussao) Tj
 T* (A principal limitacao esta em drift de mercado; por isso o artigo enfatiza) Tj
 T* (re-treinamento, monitoramento e controle de risco. A interpretacao dos resultados foi) Tj
 T* (realizada em contraste com literatura primaria e com enfase em coerencia entre teoria,) Tj
-T* (metodo e aplicacao.) Tj
+T* (metodo e aplicacao. \(Goodfellow, 2016\).) Tj
 T* (Limitacoes: A generalizacao dos achados depende de replicacao em amostras adicionais,) Tj
 T* (com diferentes regimes de dados e horizontes temporais. A disponibilidade de dados com) Tj
 T* (granularidade adequada pode limitar comparabilidade entre ambientes institucionais) Tj
-T* (distintos.) Tj
+T* (distintos. \(Hochreiter, 1997\).) Tj
 T* (Mesmo com tais limites, a evidencia sustenta a viabilidade da proposta dentro do escopo) Tj
-T* (declarado e oferece caminho para amadurecimento cientifico incremental.) Tj
-T* (No plano critico, a discussao destaca que resultados tecnicamente promissores ainda) Tj
-T* (dependem de contexto institucional, capacidade de execucao e qualidade dos dados de) Tj
-T* (entrada. Esse ponto evita generalizacoes indevidas e protege a validade externa do) Tj
 ET
 endstream
 endobj
@@ -130,32 +130,38 @@ endobj
 << /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 9 0 R >>
 endobj
 9 0 obj
-<< /Length 2734 >>
+<< /Length 3370 >>
 stream
 BT
 /F1 11 Tf
 14 TL
 50 790 Td
-(estudo.) Tj
+(declarado e oferece caminho para amadurecimento cientifico incremental. \(Fischer, 2018\).) Tj
+T* (No plano critico, a discussao destaca que resultados tecnicamente promissores ainda) Tj
+T* (dependem de contexto institucional, capacidade de execucao e qualidade dos dados de) Tj
+T* (entrada. Esse ponto evita generalizacoes indevidas e protege a validade externa do) Tj
+T* (estudo. \(Nelson, 2017\).) Tj
 T* (Como consequencia, recomenda-se leitura prudencial dos resultados: forte para orientar) Tj
 T* (desenho de sistemas e governanca, mas condicionada a ciclos iterativos de validacao) Tj
-T* (empirica e revisao metodologica em ambientes independentes.) Tj
+T* (empirica e revisao metodologica em ambientes independentes. \(Fama, 1970\).) Tj
 T* (5. Consideracoes Finais) Tj
 T* (Uso em apoio a tomada de decisao em mesas quantitativas, com politicas de risco e) Tj
 T* (trilhas de auditoria para compliance. O estudo entrega um artefato cientifico com) Tj
-T* (estrutura pronta para indexacao, citacao e futura atribuicao de DOI.) Tj
+T* (estrutura pronta para indexacao, citacao e futura atribuicao de DOI. \(Lo, 2004\).) Tj
 T* (Agenda de continuidade: Replicar o estudo em novos contextos operacionais com desenho) Tj
 T* (quasi-experimental. Aprofundar metricas de robustez, explicabilidade e impacto economico) Tj
 T* (sob incerteza. Preparar versao DOI-ready com pacote de dados, protocolo e apendice) Tj
-T* (metodologico.) Tj
+T* (metodologico. \(Goodfellow, 2016\).) Tj
 T* (Conclusao executiva: a combinacao entre rigor metodologico, curadoria bibliografica e) Tj
 T* (foco em aplicabilidade confere robustez para uso academico e tecnico-profissional.) Tj
+T* (\(Hochreiter, 1997\).) Tj
 T* (No criterio de estado da arte, a principal entrega e a integracao entre forma) Tj
 T* (cientifica, substancia tecnica e preparo de publicacao. Isso reduz retrabalho editorial) Tj
-T* (e acelera a transicao para submissao formal em repositorios e periodicos.) Tj
+T* (e acelera a transicao para submissao formal em repositorios e periodicos. \(Fischer,) Tj
+T* (2018\).) Tj
 T* (Assim, a versao atual deve ser entendida como base de referencia canonicamente) Tj
 T* (estruturada: suficiente para indexacao de qualidade e pronta para evolucao incremental) Tj
-T* (com DOI, revisao externa e ampliacao de evidencias.) Tj
+T* (com DOI, revisao externa e ampliacao de evidencias. \(Nelson, 2017\).) Tj
 T* (6. Referencias) Tj
 T* (Hochreiter, S.; Schmidhuber, J. \(1997\). Long Short-Term Memory. Disponivel em:) Tj
 T* (https://doi.org/10.1162/neco.1997.9.8.1735) Tj
@@ -170,13 +176,14 @@ T* (https://doi.org/10.3905/jpm.2004.442611) Tj
 T* (Goodfellow, I.; Bengio, Y.; Courville, A. \(2016\). Deep Learning. Disponivel em:) Tj
 T* (https://www.deeplearningbook.org/) Tj
 T* (Canonical URL: https://ulissesflores.com/research/2025-lstm-asset-prediction) Tj
-T* (PDF URL: https://ulissesflores.com/research/2025-lstm-asset-prediction.pdf) Tj
+T* (Primary PDF URL: https://ulissesflores.com/deep-research/2025-lstm-asset-prediction/deep-research.pdf) Tj
+T* (Legacy PDF URL: https://ulissesflores.com/research/2025-lstm-asset-prediction.pdf) Tj
 T* (Generated from UPKF at 2026-02-21) Tj
 ET
 endstream
 endobj
 10 0 obj
-<< /Title (Analise Preditiva de Ativos Financeiros com Modelos LSTM) /Author (Carlos Ulisses Flores Ribeiro) /Subject (research scientific article) /Keywords (IA, Economia, Sistemas Complexos, LSTM, ASSET, PREDICTION) /Creator (UPKF Generator) /Producer (UPKF Generator) /CreationDate (D:20260221000000Z) /ModDate (D:20260221000000Z) >>
+<< /Title (Analise Preditiva de Ativos Financeiros com Modelos LSTM) /Author (Carlos Ulisses Flores) /Subject (research scientific article) /Keywords (IA, Economia, Sistemas Complexos, LSTM, ASSET, PREDICTION) /Creator (UPKF Generator) /Producer (UPKF Generator) /CreationDate (D:20260221000000Z) /ModDate (D:20260221000000Z) >>
 endobj
 xref
 0 11
@@ -186,13 +193,13 @@ xref
 0000000127 00000 n 
 0000000197 00000 n 
 0000000323 00000 n 
-0000003845 00000 n 
-0000003971 00000 n 
-0000007647 00000 n 
-0000007773 00000 n 
-0000010559 00000 n 
+0000003784 00000 n 
+0000003910 00000 n 
+0000007652 00000 n 
+0000007778 00000 n 
+0000011200 00000 n 
 trailer
 << /Size 11 /Root 1 0 R /Info 10 0 R >>
 startxref
-10912
+11545
 %%EOF

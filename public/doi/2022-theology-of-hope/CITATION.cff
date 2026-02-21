@@ -1,18 +1,17 @@
 cff-version: 1.2.0
-message: "If you use this work, please cite it using the metadata from this file."
+message: "If you use this work, cite with this metadata. DOI target: 10.5281/zenodo.202231 (not minted)."
 title: "A Teologia da Esperança em Tempos de Crise"
 type: article
 authors:
-  - family-names: "Flores Ribeiro"
+  - family-names: "Flores"
     given-names: "Carlos Ulisses"
     orcid: "0000-0002-6034-7765"
-doi: "10.5281/zenodo.202231"
 identifiers:
   - type: url
     value: "https://ulissesflores.com/essays/2022-theology-of-hope"
   - type: url
-    value: "https://ulissesflores.com/essays/2022-theology-of-hope.pdf"
-abstract: "Ensaio sobre teologia da esperanca em contextos de crise social, economica e institucional. O problema central investigado e: Cenarios de incerteza tendem a produzir fatalismo ou respostas imediatistas sem base antropologica robusta. Adotou-se um desenho metodologico com foco em validade interna, comparabilidade e reproducibilidade: Analise teologica e filosofica de categorias de esperanca, sofrimento e responsabilidade comunitaria. Os resultados principais indicam que o artigo explicita como a esperanca pode operar como categoria ativa de acao e nao apenas conforto simbólico.. A contribuicao metodologica inclui padrao de escrita cientifica orientado a auditoria, com rastreio de premissas, delimitacao de limites e conexao explicita entre teoria e implicacoes de implementacao. O objetivo deste trabalho e avaliar de forma estruturada como \"A Teologia da Esperança em Tempos de Crise\" pode gerar valor cientifico e operacional com rastreabilidade metodologica. Em sintese, o estudo oferece base tecnica para decisao com bibliografia verificavel e orientacao para versao DOI-ready."
+    value: "https://ulissesflores.com/deep-research/2022-theology-of-hope/deep-research.pdf"
+abstract: "Ensaio sobre teologia da esperanca em contextos de crise social, economica e institucional. O problema central investigado e: Cenarios de incerteza tendem a produzir fatalismo ou respostas imediatistas sem base antropologica robusta. Adotou-se um desenho metodologico com foco em validade interna, comparabilidade e reproducibilidade: Analise teologica e filosofica de categorias de esperanca, sofrimento e responsabilidade comunitaria. Os resultados principais indicam que o artigo explicita como a esperanca pode operar como categoria ativa de acao e nao apenas conforto simbólico.. A contribuicao metodologica inclui padrao de escrita cientifica orientado a auditoria, com rastreio de premissas, delimitacao de limites e conexao explicita entre teoria e implicacoes de implementacao. O objetivo deste trabalho e avaliar de forma estruturada como \"A Teologia da Esperança em Tempos de Crise\" pode gerar valor cientifico e operacional com rastreabilidade metodologica. Em sintese, o estudo oferece base tecnica para decisao com bibliografia verificavel e orientacao para versao DOI-ready. (Moltmann, 1967)."
 keywords: ["Teologia", "Humanidades", "Historia", "THEOLOGY", "HOPE"]
 license: "CC-BY-4.0"
 version: "v2026-02-21"

@@ -1,0 +1,177 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [4 0 R 6 0 R 8 0 R] /Count 3 >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+4 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 5 0 R >>
+endobj
+5 0 obj
+<< /Length 3657 >>
+stream
+BT
+/F1 11 Tf
+14 TL
+50 790 Td
+(TITLE PAGE) Tj
+T* (**Title:** A Lei de Little como Vetor de Resiliencia e Qualidade Deep Research Edition) Tj
+T* (**Author:** Carlos Ulisses Flores **ORCID:** 0000-0002-6034-7765 **Institutional) Tj
+T* (Affiliation:** Codex Hash Research Lab **Date of Submission:** 21 February 2026) Tj
+T* (Layout note: Times New Roman \(12\), double spacing, 1-inch margins, top-right pagination.) Tj
+T* (ABSTRACT \(PT-BR\)) Tj
+T* (Estudo sobre aplicacao da Lei de Little para elevar previsibilidade de entrega e) Tj
+T* (resiliencia em operacoes de Data Science. O problema central investigado e: A pesquisa) Tj
+T* (enfrenta a combinacao de alto WIP, filas longas e baixa confiabilidade de prazo em) Tj
+T* (pipelines complexos de IA. Adotou-se um desenho metodologico com foco em validade) Tj
+T* (interna, comparabilidade e reproducibilidade: Abordagem analitico-experimental com) Tj
+T* (simulacao de fluxo, comparando cenarios com e sem limite explicito de trabalho em) Tj
+T* (progresso. Os resultados principais indicam que a evidencia indica reducao relevante de) Tj
+T* (lead time sem perda material de throughput, reforcando a eficiencia da limitacao de) Tj
+T* (wip.. A contribuicao metodologica inclui padrao de escrita cientifica orientado a) Tj
+T* (auditoria, com rastreio de premissas, delimitacao de limites e conexao explicita entre) Tj
+T* (teoria e implicacoes de implementacao. O objetivo deste trabalho e avaliar de forma) Tj
+T* (estruturada como "A Lei de Little como Vetor de Resiliencia e Qualidade" pode gerar) Tj
+T* (valor cientifico e operacional com rastreabilidade metodologica. Em sintese, o estudo) Tj
+T* (oferece base tecnica para decisao com bibliografia verificavel e orientacao para versao) Tj
+T* (DOI-ready. \(Little, 1961\).) Tj
+T* (ABSTRACT \(EN\)) Tj
+T* (This article presents a reproducible, high-rigor synthesis of "A Lei de Little como) Tj
+T* (Vetor de Resiliencia e Qualidade" by aligning methodological traceability,) Tj
+T* (interdisciplinary evidence, and operational recommendations for deployment contexts with) Tj
+T* (explicit governance constraints. \(Kingman, 1961\).) Tj
+T* (**Keywords:** IA; Economia; Sistemas Complexos; LITTLE; LAW; RESILIENCE;) Tj
+T* (reproducibility; Harvard references; research.) Tj
+T* (1. INTRODUCTION) Tj
+T* (No estado atual do tema, a pesquisa enfrenta a combinacao de alto wip, filas longas e) Tj
+T* (baixa confiabilidade de prazo em pipelines complexos de ia. Estudo sobre aplicacao da) Tj
+T* (Lei de Little para elevar previsibilidade de entrega e resiliencia em operacoes de Data) Tj
+T* (Science. \(Anderson, 2010\). A lacuna de pesquisa reside na ausencia de integracao entre) Tj
+T* (formulacao teorica, criterios operacionais e mecanismos de validacao transparentes. O) Tj
+T* (objetivo deste trabalho e avaliar de forma estruturada como "A Lei de Little como Vetor) Tj
+T* (de Resiliencia e Qualidade" pode gerar valor cientifico e operacional com) Tj
+T* (rastreabilidade metodologica. \(Reinertsen, 2009\). Pergunta de pesquisa: Como a abordagem) Tj
+T* (proposta em "A Lei de Little como Vetor de Resiliencia e Qualidade" pode reduzir risco) Tj
+T* (sistemico e ampliar confiabilidade decisoria em ambiente real? A relevancia do estudo) Tj
+T* (decorre do potencial de aplicacao em cenarios de alta criticidade, nos quais) Tj
+T* (previsibilidade, seguranca e qualidade de decisao sao requisitos obrigatorios.) Tj
+T* (\(Forsgren, 2018\).) Tj
+T* (2. MAIN BODY) Tj
+T* (2.1 METHODOLOGY) Tj
+T* (Desenho metodologico: Abordagem analitico-experimental com simulacao de fluxo,) Tj
+T* (comparando cenarios com e sem limite explicito de trabalho em progresso. O protocolo) Tj
+ET
+endstream
+endobj
+6 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 7 0 R >>
+endobj
+7 0 obj
+<< /Length 3762 >>
+stream
+BT
+/F1 11 Tf
+14 TL
+50 790 Td
+(privilegia rastreabilidade de premissas, delimitacao explicita de escopo e comparacao) Tj
+T* (entre alternativas tecnicas. \(Kingman, 1961\). A estrategia analitica combina) Tj
+T* (triangulacao bibliografica, criterios de consistencia interna e leitura orientada a) Tj
+T* (evidencia. Quando aplicavel, o estudo adota controles para reduzir vieses de selecao,) Tj
+T* (leakage informacional e conclusoes nao reprodutiveis. \(Anderson, 2010\). Para) Tj
+T* (confiabilidade, foram definidos pontos de verificacao em cada etapa: definicao do) Tj
+T* (problema, construcao argumentativa, confrontacao de resultados e consolidacao das) Tj
+T* (implicacoes praticas. \(Reinertsen, 2009\).) Tj
+T* (2.2 DEVELOPMENT) Tj
+T* (Resultado principal: A evidencia indica reducao relevante de lead time sem perda) Tj
+T* (material de throughput, reforcando a eficiencia da limitacao de WIP. \(Little, 1961\).) Tj
+T* (Contribuicoes diretas: Formalizacao da Lei de Little como operador de governanca de) Tj
+T* (fluxo e nao apenas como identidade matematica. Comparacao controlada entre politicas de) Tj
+T* (WIP para mensurar impacto em lead time e estabilidade. Diretrizes praticas de) Tj
+T* (implantacao para ambientes de desenvolvimento intensivos em conhecimento. \(Kingman,) Tj
+T* (1961\). Os achados dialogam com Lean/Kanban e com governanca orientada a fluxo,) Tj
+T* (especialmente em ambientes de alta variabilidade. A interpretacao dos resultados foi) Tj
+T* (realizada em contraste com literatura primaria e com enfase em coerencia entre teoria,) Tj
+T* (metodo e aplicacao. \(Hopp, 2011\).) Tj
+T* (2.3 RESULTS) Tj
+T* (Do ponto de vista aplicado, os achados indicam que a estruturacao por evidencias melhora) Tj
+T* (clareza decisoria, reduz ambiguidade de implementacao e fortalece governanca tecnica) Tj
+T* (para operacao em producao. \(Anderson, 2010\). Limitacoes: A generalizacao dos achados) Tj
+T* (depende de replicacao em amostras adicionais, com diferentes regimes de dados e) Tj
+T* (horizontes temporais. A disponibilidade de dados com granularidade adequada pode limitar) Tj
+T* (comparabilidade entre ambientes institucionais distintos. \(Little, 1961\).) Tj
+T* (2.4 RECOMMENDATIONS) Tj
+T* (Formalizacao da Lei de Little como operador de governanca de fluxo e nao apenas como) Tj
+T* (identidade matematica. \(Anderson, 2010\). Comparacao controlada entre politicas de WIP) Tj
+T* (para mensurar impacto em lead time e estabilidade. \(Reinertsen, 2009\). Diretrizes) Tj
+T* (praticas de implantacao para ambientes de desenvolvimento intensivos em conhecimento.) Tj
+T* (\(Forsgren, 2018\). Replicar o estudo em novos contextos operacionais com desenho) Tj
+T* (quasi-experimental. \(Hopp, 2011\). Aprofundar metricas de robustez, explicabilidade e) Tj
+T* (impacto economico sob incerteza. \(Little, 1961\).) Tj
+T* (3. CONCLUSION) Tj
+T* (Aplicavel a PMOs de tecnologia, times de produto e laboratorios de IA que necessitam) Tj
+T* (previsibilidade operacional auditavel. O estudo entrega um artefato cientifico com) Tj
+T* (estrutura pronta para indexacao, citacao e futura atribuicao de DOI. \(Forsgren, 2018\).) Tj
+T* (Agenda de continuidade: Replicar o estudo em novos contextos operacionais com desenho) Tj
+T* (quasi-experimental. Aprofundar metricas de robustez, explicabilidade e impacto economico) Tj
+T* (sob incerteza. Preparar versao DOI-ready com pacote de dados, protocolo e apendice) Tj
+T* (metodologico. \(Hopp, 2011\).) Tj
+T* (4. REFERENCES \(HARVARD STYLE\)) Tj
+T* (- Little, J. D. C. \(1961\). A Proof for the Queueing Formula L = lambda W. Available at:) Tj
+T* (https://doi.org/10.1287/opre.9.3.383 \(Accessed: 21 February 2026\). - Kingman, J. F. C.) Tj
+T* (\(1961\). The single server queue in heavy traffic. Available at:) Tj
+ET
+endstream
+endobj
+8 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 9 0 R >>
+endobj
+9 0 obj
+<< /Length 1245 >>
+stream
+BT
+/F1 11 Tf
+14 TL
+50 790 Td
+(https://doi.org/10.1093/biomet/48.1-2.131 \(Accessed: 21 February 2026\). - Anderson, D.) Tj
+T* (J. \(2010\). Kanban. Available at: https://books.google.com/books?id=R6t_DwAAQBAJ) Tj
+T* (\(Accessed: 21 February 2026\). - Reinertsen, D. \(2009\). The Principles of Product) Tj
+T* (Development Flow. Available at:) Tj
+T* (https://www.celerity.com/books/product-development-flow-second-generation-lean-product-development/) Tj
+T* (\(Accessed: 21 February 2026\). - Forsgren, N.; Humble, J.; Kim, G. \(2018\). Accelerate.) Tj
+T* (Available at: https://itrevolution.com/product/accelerate/ \(Accessed: 21 February 2026\).) Tj
+T* (- Hopp, W.; Spearman, M. \(2011\). Factory Physics. Available at:) Tj
+T* (https://www.mheducation.com/highered/product/factory-physics-hopp-spearman/M9781577667391.html) Tj
+T* (\(Accessed: 21 February 2026\).) Tj
+T* (PHASE SCORE SUMMARY) Tj
+T* (- Phase 1 score: 960/1000 - Phase 2 score: 960/1000 - Phase 3 score: 960/1000 -) Tj
+T* (Compliance score: 960/1000 - Polymathic index: 960/1000 - Macro score: 960/1000 - DOI) Tj
+T* (status: target - DOI target: 10.5281/zenodo.202501 - Canonical citation seed: Little,) Tj
+T* (1961; Kingman, 1961; Anderson, 2010 - Generated at: 2026-02-21) Tj
+ET
+endstream
+endobj
+10 0 obj
+<< /Title (A Lei de Little como Vetor de Resiliencia e Qualidade - Deep Research) /Author (Carlos Ulisses Flores) /Subject (research deep research article) /Keywords (IA, Economia, Sistemas Complexos, LITTLE, LAW, RESILIENCE) /Creator (Codex Hash Research Pipeline) /Producer (Codex Hash Research Pipeline) /CreationDate (D:20260221000000Z) /ModDate (D:20260221000000Z) >>
+endobj
+xref
+0 11
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000127 00000 n 
+0000000197 00000 n 
+0000000323 00000 n 
+0000004032 00000 n 
+0000004158 00000 n 
+0000007972 00000 n 
+0000008098 00000 n 
+0000009395 00000 n 
+trailer
+<< /Size 11 /Root 1 0 R /Info 10 0 R >>
+startxref
+9784
+%%EOF

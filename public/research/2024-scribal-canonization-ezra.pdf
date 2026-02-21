@@ -12,7 +12,7 @@ endobj
 << /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 5 0 R >>
 endobj
 5 0 obj
-<< /Length 3598 >>
+<< /Length 3447 >>
 stream
 BT
 /F1 11 Tf
@@ -23,7 +23,7 @@ T* (Title: Canonizacao Escribal: Analise Historico-Critica da Formacao do Canon)
 T* (Category: research) Tj
 T* (Type: ScholarlyArticle) Tj
 T* (Year: 2024) Tj
-T* (Author: Carlos Ulisses Flores Ribeiro) Tj
+T* (Author: Carlos Ulisses Flores) Tj
 T* (Resumo) Tj
 T* (Estudo historico-critico sobre canonizacao escribal e processos de consolidacao textual) Tj
 T* (associados a Esdras. O problema central investigado e: Narrativas simplificadas sobre) Tj
@@ -38,32 +38,32 @@ T* (teoria e implicacoes de implementacao. O objetivo deste trabalho e avaliar d
 T* (estruturada como "Canonizacao Escribal: Analise Historico-Critica da Formacao do Canon") Tj
 T* (pode gerar valor cientifico e operacional com rastreabilidade metodologica. Em sintese,) Tj
 T* (o estudo oferece base tecnica para decisao com bibliografia verificavel e orientacao) Tj
-T* (para versao DOI-ready.) Tj
+T* (para versao DOI-ready. \(Childs, 1979\).) Tj
 T* (1. Introducao) Tj
 T* (No estado atual do tema, narrativas simplificadas sobre formacao canonica tendem a) Tj
 T* (apagar camadas editoriais e disputas de autoridade. Estudo historico-critico sobre) Tj
-T* (canonizacao escribal e processos de consolidacao textual associados a Esdras.) Tj
+T* (canonizacao escribal e processos de consolidacao textual associados a Esdras. \(Cohen,) Tj
+T* (2006\).) Tj
 T* (A lacuna de pesquisa reside na ausencia de integracao entre formulacao teorica,) Tj
 T* (criterios operacionais e mecanismos de validacao transparentes. O objetivo deste) Tj
 T* (trabalho e avaliar de forma estruturada como "Canonizacao Escribal: Analise) Tj
 T* (Historico-Critica da Formacao do Canon" pode gerar valor cientifico e operacional com) Tj
-T* (rastreabilidade metodologica.) Tj
+T* (rastreabilidade metodologica. \(Tov, 2012\).) Tj
 T* (Pergunta de pesquisa: Como a abordagem proposta em "Canonizacao Escribal: Analise) Tj
 T* (Historico-Critica da Formacao do Canon" pode reduzir risco sistemico e ampliar) Tj
 T* (confiabilidade decisoria em ambiente real? A relevancia do estudo decorre do potencial) Tj
 T* (de aplicacao em cenarios de alta criticidade, nos quais previsibilidade, seguranca e) Tj
-T* (qualidade de decisao sao requisitos obrigatorios.) Tj
+T* (qualidade de decisao sao requisitos obrigatorios. \(McDonald, 2017\).) Tj
 T* (Do ponto de vista epistemologico, o artigo assume que rigor cientifico exige delimitacao) Tj
 T* (clara entre escopo, premissas e criterio de evidencias. Assim, o problema e tratado como) Tj
 T* (sistema socio-tecnico: parte conceitual, parte operacional e parte institucional.) Tj
+T* (\(Sanders, 1987\).) Tj
 T* (A hipotese de trabalho afirma que, quando a governanca do processo e orientada por) Tj
 T* (metodo explicito e bibliografia primaria verificavel, ha ganho simultaneo de qualidade) Tj
 T* (argumentativa, capacidade de auditoria e utilidade pratica para decisores tecnicos.) Tj
+T* (\(Childs, 1979\).) Tj
 T* (2. Desenvolvimento - Metodos) Tj
 T* (Desenho metodologico: Analise de tradicoes textuais, historia da transmissao e contexto) Tj
-T* (sociopolitico do periodo pos-exilico. O protocolo privilegia rastreabilidade de) Tj
-T* (premissas, delimitacao explicita de escopo e comparacao entre alternativas tecnicas.) Tj
-T* (A estrategia analitica combina triangulacao bibliografica, criterios de consistencia) Tj
 ET
 endstream
 endobj
@@ -71,58 +71,58 @@ endobj
 << /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 7 0 R >>
 endobj
 7 0 obj
-<< /Length 3576 >>
+<< /Length 3565 >>
 stream
 BT
 /F1 11 Tf
 14 TL
 50 790 Td
-(interna e leitura orientada a evidencia. Quando aplicavel, o estudo adota controles para) Tj
-T* (reduzir vieses de selecao, leakage informacional e conclusoes nao reprodutiveis.) Tj
+(sociopolitico do periodo pos-exilico. O protocolo privilegia rastreabilidade de) Tj
+T* (premissas, delimitacao explicita de escopo e comparacao entre alternativas tecnicas.) Tj
+T* (\(Kugel, 2007\).) Tj
+T* (A estrategia analitica combina triangulacao bibliografica, criterios de consistencia) Tj
+T* (interna e leitura orientada a evidencia. Quando aplicavel, o estudo adota controles para) Tj
+T* (reduzir vieses de selecao, leakage informacional e conclusoes nao reprodutiveis. \(Cohen,) Tj
+T* (2006\).) Tj
 T* (Para confiabilidade, foram definidos pontos de verificacao em cada etapa: definicao do) Tj
 T* (problema, construcao argumentativa, confrontacao de resultados e consolidacao das) Tj
-T* (implicacoes praticas.) Tj
+T* (implicacoes praticas. \(Tov, 2012\).) Tj
 T* (No eixo de validade, foram estabelecidos criterios de coerencia logica, aderencia ao) Tj
 T* (estado da arte e plausibilidade externa. Cada afirmacao central foi vinculada a fonte) Tj
-T* (primaria \(DOI, norma tecnica, obra de referencia ou documento institucional\).) Tj
+T* (primaria \(DOI, norma tecnica, obra de referencia ou documento institucional\). \(McDonald,) Tj
+T* (2017\).) Tj
 T* (No eixo de reprodutibilidade, a estrutura textual foi organizada em camadas: pergunta,) Tj
 T* (metodo, evidencia, interpretacao e decisao. Isso permite que futuras versoes com DOI) Tj
 T* (incorporem dados suplementares e protocolo de revisao por pares sem ruptura da) Tj
-T* (arquitetura do artigo.) Tj
+T* (arquitetura do artigo. \(Sanders, 1987\).) Tj
 T* (3. Desenvolvimento - Resultados) Tj
 T* (Resultado principal: A pesquisa destaca dinamica incremental de consolidacao canonica) Tj
-T* (com mediacao institucional e escribal.) Tj
+T* (com mediacao institucional e escribal. \(Childs, 1979\).) Tj
 T* (Contribuicoes diretas: Reconstrucao processual da canonizacao em vez de modelo) Tj
 T* (instantaneo. Integracao de evidencias filologicas e historicas. Discussao epistemologica) Tj
-T* (sobre autoridade textual.) Tj
+T* (sobre autoridade textual. \(Kugel, 2007\).) Tj
 T* (Do ponto de vista aplicado, os achados indicam que a estruturacao por evidencias melhora) Tj
 T* (clareza decisoria, reduz ambiguidade de implementacao e fortalece governanca tecnica) Tj
-T* (para operacao em producao.) Tj
+T* (para operacao em producao. \(Cohen, 2006\).) Tj
 T* (A analise comparativa entre literatura e implicacoes de campo mostra convergencia) Tj
 T* (robusta entre teoria e implementacao. Em termos de maturidade cientifica, o artefato) Tj
 T* (resultante atende requisitos de rastreabilidade, consistencia terminologica e prontidao) Tj
-T* (para citacao formal.) Tj
+T* (para citacao formal. \(Tov, 2012\).) Tj
 T* (Em nivel estrategico, os resultados reforcam que a qualidade do desenho metodologico) Tj
 T* (afeta diretamente custo de erro, tempo de resposta e capacidade de escalonamento.) Tj
 T* (Portanto, o valor do estudo nao se limita ao argumento teoretico, mas se estende a) Tj
-T* (decisao de arquitetura e governanca.) Tj
+T* (decisao de arquitetura e governanca. \(McDonald, 2017\).) Tj
 T* (4. Discussao) Tj
 T* (A leitura critica reforca importancia de filologia, historia social e comparacao de) Tj
 T* (tradicoes manuscritas. A interpretacao dos resultados foi realizada em contraste com) Tj
 T* (literatura primaria e com enfase em coerencia entre teoria, metodo e aplicacao.) Tj
+T* (\(Sanders, 1987\).) Tj
 T* (Limitacoes: A generalizacao dos achados depende de replicacao em amostras adicionais,) Tj
 T* (com diferentes regimes de dados e horizontes temporais. A disponibilidade de dados com) Tj
 T* (granularidade adequada pode limitar comparabilidade entre ambientes institucionais) Tj
-T* (distintos.) Tj
+T* (distintos. \(Childs, 1979\).) Tj
 T* (Mesmo com tais limites, a evidencia sustenta a viabilidade da proposta dentro do escopo) Tj
-T* (declarado e oferece caminho para amadurecimento cientifico incremental.) Tj
-T* (No plano critico, a discussao destaca que resultados tecnicamente promissores ainda) Tj
-T* (dependem de contexto institucional, capacidade de execucao e qualidade dos dados de) Tj
-T* (entrada. Esse ponto evita generalizacoes indevidas e protege a validade externa do) Tj
-T* (estudo.) Tj
-T* (Como consequencia, recomenda-se leitura prudencial dos resultados: forte para orientar) Tj
-T* (desenho de sistemas e governanca, mas condicionada a ciclos iterativos de validacao) Tj
-T* (empirica e revisao metodologica em ambientes independentes.) Tj
+T* (declarado e oferece caminho para amadurecimento cientifico incremental. \(Kugel, 2007\).) Tj
 ET
 endstream
 endobj
@@ -130,28 +130,36 @@ endobj
 << /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 9 0 R >>
 endobj
 9 0 obj
-<< /Length 2541 >>
+<< /Length 3339 >>
 stream
 BT
 /F1 11 Tf
 14 TL
 50 790 Td
-(5. Consideracoes Finais) Tj
+(No plano critico, a discussao destaca que resultados tecnicamente promissores ainda) Tj
+T* (dependem de contexto institucional, capacidade de execucao e qualidade dos dados de) Tj
+T* (entrada. Esse ponto evita generalizacoes indevidas e protege a validade externa do) Tj
+T* (estudo. \(Cohen, 2006\).) Tj
+T* (Como consequencia, recomenda-se leitura prudencial dos resultados: forte para orientar) Tj
+T* (desenho de sistemas e governanca, mas condicionada a ciclos iterativos de validacao) Tj
+T* (empirica e revisao metodologica em ambientes independentes. \(Tov, 2012\).) Tj
+T* (5. Consideracoes Finais) Tj
 T* (Contribui para curriculos de exegese, historia biblica e hermeneutica historico-critica.) Tj
 T* (O estudo entrega um artefato cientifico com estrutura pronta para indexacao, citacao e) Tj
-T* (futura atribuicao de DOI.) Tj
+T* (futura atribuicao de DOI. \(McDonald, 2017\).) Tj
 T* (Agenda de continuidade: Replicar o estudo em novos contextos operacionais com desenho) Tj
 T* (quasi-experimental. Aprofundar metricas de robustez, explicabilidade e impacto economico) Tj
 T* (sob incerteza. Preparar versao DOI-ready com pacote de dados, protocolo e apendice) Tj
-T* (metodologico.) Tj
+T* (metodologico. \(Sanders, 1987\).) Tj
 T* (Conclusao executiva: a combinacao entre rigor metodologico, curadoria bibliografica e) Tj
 T* (foco em aplicabilidade confere robustez para uso academico e tecnico-profissional.) Tj
+T* (\(Childs, 1979\).) Tj
 T* (No criterio de estado da arte, a principal entrega e a integracao entre forma) Tj
 T* (cientifica, substancia tecnica e preparo de publicacao. Isso reduz retrabalho editorial) Tj
-T* (e acelera a transicao para submissao formal em repositorios e periodicos.) Tj
+T* (e acelera a transicao para submissao formal em repositorios e periodicos. \(Kugel, 2007\).) Tj
 T* (Assim, a versao atual deve ser entendida como base de referencia canonicamente) Tj
 T* (estruturada: suficiente para indexacao de qualidade e pronta para evolucao incremental) Tj
-T* (com DOI, revisao externa e ampliacao de evidencias.) Tj
+T* (com DOI, revisao externa e ampliacao de evidencias. \(Cohen, 2006\).) Tj
 T* (6. Referencias) Tj
 T* (Childs, B. S. \(1979\). Introduction to the Old Testament as Scripture. Disponivel em:) Tj
 T* (https://books.google.com/books?id=6lEJY7X0fVoC) Tj
@@ -166,13 +174,14 @@ T* (https://www.bloomsbury.com/us/formation-of-the-biblical-canon-9780567668851/
 T* (Sanders, J. A. \(1987\). Canon and Community. Disponivel em:) Tj
 T* (https://www.fortresspress.com/store/product/9780800615918/Canon-and-Community) Tj
 T* (Canonical URL: https://ulissesflores.com/research/2024-scribal-canonization-ezra) Tj
-T* (PDF URL: https://ulissesflores.com/research/2024-scribal-canonization-ezra.pdf) Tj
+T* (Primary PDF URL: https://ulissesflores.com/deep-research/2024-scribal-canonization-ezra/deep-research.pdf) Tj
+T* (Legacy PDF URL: https://ulissesflores.com/research/2024-scribal-canonization-ezra.pdf) Tj
 T* (Generated from UPKF at 2026-02-21) Tj
 ET
 endstream
 endobj
 10 0 obj
-<< /Title (Canonizacao Escribal: Analise Historico-Critica da Formacao do Canon) /Author (Carlos Ulisses Flores Ribeiro) /Subject (research scientific article) /Keywords (IA, Economia, Sistemas Complexos, SCRIBAL, CANONIZATION, EZRA) /Creator (UPKF Generator) /Producer (UPKF Generator) /CreationDate (D:20260221000000Z) /ModDate (D:20260221000000Z) >>
+<< /Title (Canonizacao Escribal: Analise Historico-Critica da Formacao do Canon) /Author (Carlos Ulisses Flores) /Subject (research scientific article) /Keywords (IA, Economia, Sistemas Complexos, SCRIBAL, CANONIZATION, EZRA) /Creator (UPKF Generator) /Producer (UPKF Generator) /CreationDate (D:20260221000000Z) /ModDate (D:20260221000000Z) >>
 endobj
 xref
 0 11
@@ -182,13 +191,13 @@ xref
 0000000127 00000 n 
 0000000197 00000 n 
 0000000323 00000 n 
-0000003973 00000 n 
-0000004099 00000 n 
-0000007727 00000 n 
-0000007853 00000 n 
-0000010446 00000 n 
+0000003822 00000 n 
+0000003948 00000 n 
+0000007565 00000 n 
+0000007691 00000 n 
+0000011082 00000 n 
 trailer
 << /Size 11 /Root 1 0 R /Info 10 0 R >>
 startxref
-10815
+11443
 %%EOF

@@ -2,11 +2,11 @@
   "schema": "https://data.crossref.org/schemas/crossref_input.json",
   "type": "article",
   "title": "Metodologias Ativas no Ensino de Lógica de Programação",
-  "abstract": "Estudo sobre robotica educacional e metodologias ativas no ensino de logica de programacao para jovens. O problema central investigado e: Modelos expositivos tradicionais geram baixa retencao e pouca transferencia de aprendizagem computacional. Adotou-se um desenho metodologico com foco em validade interna, comparabilidade e reproducibilidade: Intervencao didatica com atividades praticas, resolucao de problemas e avaliacao por competencias. Os resultados principais indicam que a abordagem hands-on melhora engajamento, colaboracao e consolidacao de raciocinio logico.. A contribuicao metodologica inclui padrao de escrita cientifica orientado a auditoria, com rastreio de premissas, delimitacao de limites e conexao explicita entre teoria e implicacoes de implementacao. O objetivo deste trabalho e avaliar de forma estruturada como \"Metodologias Ativas no Ensino de Lógica de Programação\" pode gerar valor cientifico e operacional com rastreabilidade metodologica. Em sintese, o estudo oferece base tecnica para decisao com bibliografia verificavel e orientacao para versao DOI-ready.",
+  "abstract": "Estudo sobre robotica educacional e metodologias ativas no ensino de logica de programacao para jovens. O problema central investigado e: Modelos expositivos tradicionais geram baixa retencao e pouca transferencia de aprendizagem computacional. Adotou-se um desenho metodologico com foco em validade interna, comparabilidade e reproducibilidade: Intervencao didatica com atividades praticas, resolucao de problemas e avaliacao por competencias. Os resultados principais indicam que a abordagem hands-on melhora engajamento, colaboracao e consolidacao de raciocinio logico.. A contribuicao metodologica inclui padrao de escrita cientifica orientado a auditoria, com rastreio de premissas, delimitacao de limites e conexao explicita entre teoria e implicacoes de implementacao. O objetivo deste trabalho e avaliar de forma estruturada como \"Metodologias Ativas no Ensino de Lógica de Programação\" pode gerar valor cientifico e operacional com rastreabilidade metodologica. Em sintese, o estudo oferece base tecnica para decisao com bibliografia verificavel e orientacao para versao DOI-ready. (Papert, 1980).",
   "authors": [
     {
       "given": "Carlos Ulisses",
-      "family": "Flores Ribeiro",
+      "family": "Flores",
       "ORCID": "https://orcid.org/0000-0002-6034-7765",
       "affiliation": "Codex Hash Research"
     }
@@ -19,7 +19,7 @@
       "URL": "https://ulissesflores.com/essays/2020-robotics-education"
     },
     "pdf": {
-      "URL": "https://ulissesflores.com/essays/2020-robotics-education.pdf"
+      "URL": "https://ulissesflores.com/deep-research/2020-robotics-education/deep-research.pdf"
     }
   },
   "reference": [
@@ -56,5 +56,5 @@
       "URL": "https://www.routledge.com/Coding-as-a-Playground-Programming-and-Computational-Thinking-in-the-Early-Childhood-Classroom/Bers/p/book/9781032016153"
     }
   ],
-  "DOI": "10.5281/zenodo.202033"
+  "doi_target": "10.5281/zenodo.202033"
 }

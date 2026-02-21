@@ -2,11 +2,11 @@
   "schema": "https://data.crossref.org/schemas/crossref_input.json",
   "type": "article",
   "title": "Canonização Escribal: Análise Histórico-Crítica da Formação do Cânon",
-  "abstract": "Estudo historico-critico sobre canonizacao escribal e processos de consolidacao textual associados a Esdras. O problema central investigado e: Narrativas simplificadas sobre formacao canonica tendem a apagar camadas editoriais e disputas de autoridade. Adotou-se um desenho metodologico com foco em validade interna, comparabilidade e reproducibilidade: Analise de tradicoes textuais, historia da transmissao e contexto sociopolitico do periodo pos-exilico. Os resultados principais indicam que a pesquisa destaca dinamica incremental de consolidacao canonica com mediação institucional e escribal.. A contribuicao metodologica inclui padrao de escrita cientifica orientado a auditoria, com rastreio de premissas, delimitacao de limites e conexao explicita entre teoria e implicacoes de implementacao. O objetivo deste trabalho e avaliar de forma estruturada como \"Canonização Escribal: Análise Histórico-Crítica da Formação do Cânon\" pode gerar valor cientifico e operacional com rastreabilidade metodologica. Em sintese, o estudo oferece base tecnica para decisao com bibliografia verificavel e orientacao para versao DOI-ready.",
+  "abstract": "Estudo historico-critico sobre canonizacao escribal e processos de consolidacao textual associados a Esdras. O problema central investigado e: Narrativas simplificadas sobre formacao canonica tendem a apagar camadas editoriais e disputas de autoridade. Adotou-se um desenho metodologico com foco em validade interna, comparabilidade e reproducibilidade: Analise de tradicoes textuais, historia da transmissao e contexto sociopolitico do periodo pos-exilico. Os resultados principais indicam que a pesquisa destaca dinamica incremental de consolidacao canonica com mediação institucional e escribal.. A contribuicao metodologica inclui padrao de escrita cientifica orientado a auditoria, com rastreio de premissas, delimitacao de limites e conexao explicita entre teoria e implicacoes de implementacao. O objetivo deste trabalho e avaliar de forma estruturada como \"Canonização Escribal: Análise Histórico-Crítica da Formação do Cânon\" pode gerar valor cientifico e operacional com rastreabilidade metodologica. Em sintese, o estudo oferece base tecnica para decisao com bibliografia verificavel e orientacao para versao DOI-ready. (Childs, 1979).",
   "authors": [
     {
       "given": "Carlos Ulisses",
-      "family": "Flores Ribeiro",
+      "family": "Flores",
       "ORCID": "https://orcid.org/0000-0002-6034-7765",
       "affiliation": "Codex Hash Research"
     }
@@ -19,7 +19,7 @@
       "URL": "https://ulissesflores.com/research/2024-scribal-canonization-ezra"
     },
     "pdf": {
-      "URL": "https://ulissesflores.com/research/2024-scribal-canonization-ezra.pdf"
+      "URL": "https://ulissesflores.com/deep-research/2024-scribal-canonization-ezra/deep-research.pdf"
     }
   },
   "reference": [
@@ -54,5 +54,5 @@
       "URL": "https://www.fortresspress.com/store/product/9780800615918/Canon-and-Community"
     }
   ],
-  "DOI": "10.5281/zenodo.202415"
+  "doi_target": "10.5281/zenodo.202415"
 }

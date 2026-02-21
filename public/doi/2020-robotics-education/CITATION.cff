@@ -1,18 +1,17 @@
 cff-version: 1.2.0
-message: "If you use this work, please cite it using the metadata from this file."
+message: "If you use this work, cite with this metadata. DOI target: 10.5281/zenodo.202033 (not minted)."
 title: "Metodologias Ativas no Ensino de Lógica de Programação"
 type: article
 authors:
-  - family-names: "Flores Ribeiro"
+  - family-names: "Flores"
     given-names: "Carlos Ulisses"
     orcid: "0000-0002-6034-7765"
-doi: "10.5281/zenodo.202033"
 identifiers:
   - type: url
     value: "https://ulissesflores.com/essays/2020-robotics-education"
   - type: url
-    value: "https://ulissesflores.com/essays/2020-robotics-education.pdf"
-abstract: "Estudo sobre robotica educacional e metodologias ativas no ensino de logica de programacao para jovens. O problema central investigado e: Modelos expositivos tradicionais geram baixa retencao e pouca transferencia de aprendizagem computacional. Adotou-se um desenho metodologico com foco em validade interna, comparabilidade e reproducibilidade: Intervencao didatica com atividades praticas, resolucao de problemas e avaliacao por competencias. Os resultados principais indicam que a abordagem hands-on melhora engajamento, colaboracao e consolidacao de raciocinio logico.. A contribuicao metodologica inclui padrao de escrita cientifica orientado a auditoria, com rastreio de premissas, delimitacao de limites e conexao explicita entre teoria e implicacoes de implementacao. O objetivo deste trabalho e avaliar de forma estruturada como \"Metodologias Ativas no Ensino de Lógica de Programação\" pode gerar valor cientifico e operacional com rastreabilidade metodologica. Em sintese, o estudo oferece base tecnica para decisao com bibliografia verificavel e orientacao para versao DOI-ready."
+    value: "https://ulissesflores.com/deep-research/2020-robotics-education/deep-research.pdf"
+abstract: "Estudo sobre robotica educacional e metodologias ativas no ensino de logica de programacao para jovens. O problema central investigado e: Modelos expositivos tradicionais geram baixa retencao e pouca transferencia de aprendizagem computacional. Adotou-se um desenho metodologico com foco em validade interna, comparabilidade e reproducibilidade: Intervencao didatica com atividades praticas, resolucao de problemas e avaliacao por competencias. Os resultados principais indicam que a abordagem hands-on melhora engajamento, colaboracao e consolidacao de raciocinio logico.. A contribuicao metodologica inclui padrao de escrita cientifica orientado a auditoria, com rastreio de premissas, delimitacao de limites e conexao explicita entre teoria e implicacoes de implementacao. O objetivo deste trabalho e avaliar de forma estruturada como \"Metodologias Ativas no Ensino de Lógica de Programação\" pode gerar valor cientifico e operacional com rastreabilidade metodologica. Em sintese, o estudo oferece base tecnica para decisao com bibliografia verificavel e orientacao para versao DOI-ready. (Papert, 1980)."
 keywords: ["Teologia", "Humanidades", "Historia", "ROBOTICS", "EDUCATION"]
 license: "CC-BY-4.0"
 version: "v2026-02-21"
