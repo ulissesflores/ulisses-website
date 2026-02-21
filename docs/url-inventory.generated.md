@@ -2,7 +2,7 @@
 
 - Source: `/Users/ulissesflores/Documents/Projetos/ulisses-hub/data/upkf/ulisses-flores-sovereign-upkf_v3.3.md`
 - Generated at: 2026-02-21
-- Total URLs: 213
+- Total URLs: 267
 
 ## Collections
 - https://ulissesflores.com/certifications
@@ -146,6 +146,24 @@
 - https://ulissesflores.com/whitepapers/2025-iot-data-sovereignty
 
 ## PDF Assets
+- https://ulissesflores.com/deep-research/2017-chaos-theory-economics/deep-research.pdf
+- https://ulissesflores.com/deep-research/2020-robotics-education/deep-research.pdf
+- https://ulissesflores.com/deep-research/2022-theology-of-hope/deep-research.pdf
+- https://ulissesflores.com/deep-research/2023-digital-legacy/deep-research.pdf
+- https://ulissesflores.com/deep-research/2023-holy-club-methodism/deep-research.pdf
+- https://ulissesflores.com/deep-research/2023-marian-apparitions-critique/deep-research.pdf
+- https://ulissesflores.com/deep-research/2024-agritech-agile-flow/deep-research.pdf
+- https://ulissesflores.com/deep-research/2024-bitcoin-praxeology/deep-research.pdf
+- https://ulissesflores.com/deep-research/2024-exegetical-treatise-anthropology/deep-research.pdf
+- https://ulissesflores.com/deep-research/2024-historicity-jesus-archaeology/deep-research.pdf
+- https://ulissesflores.com/deep-research/2024-ring-signatures-privacy/deep-research.pdf
+- https://ulissesflores.com/deep-research/2024-scribal-canonization-ezra/deep-research.pdf
+- https://ulissesflores.com/deep-research/2024-theology-economic-order/deep-research.pdf
+- https://ulissesflores.com/deep-research/2025-fraud-detection-mlp/deep-research.pdf
+- https://ulissesflores.com/deep-research/2025-hybrid-cooling-thermodynamics/deep-research.pdf
+- https://ulissesflores.com/deep-research/2025-iot-data-sovereignty/deep-research.pdf
+- https://ulissesflores.com/deep-research/2025-little-law-resilience/deep-research.pdf
+- https://ulissesflores.com/deep-research/2025-lstm-asset-prediction/deep-research.pdf
 - https://ulissesflores.com/essays/2017-chaos-theory-economics.pdf
 - https://ulissesflores.com/essays/2020-robotics-education.pdf
 - https://ulissesflores.com/essays/2022-theology-of-hope.pdf

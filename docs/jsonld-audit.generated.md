@@ -1,6 +1,6 @@
 # JSON-LD Audit (Generated)
 
-- Generated at: 2026-02-21T08:13:23.104Z
+- Generated at: 2026-02-21T10:03:22.369Z
 - Site graph nodes: 4
 - Public graph nodes: 144
 - Full graph nodes: 247
@@ -20,7 +20,11 @@
 - [x] Arquivo presente: articleQualityMd — /Users/ulissesflores/Documents/Projetos/ulisses-hub/docs/article-quality.generated.md
 - [x] Arquivo presente: doiReadyJson — /Users/ulissesflores/Documents/Projetos/ulisses-hub/docs/doi-ready.generated.json
 - [x] Arquivo presente: doiReadyMd — /Users/ulissesflores/Documents/Projetos/ulisses-hub/docs/doi-ready.generated.md
+- [x] Arquivo presente: deepQualityJson — /Users/ulissesflores/Documents/Projetos/ulisses-hub/docs/deep-research-quality.generated.json
+- [x] Arquivo presente: deepQualityMd — /Users/ulissesflores/Documents/Projetos/ulisses-hub/docs/deep-research-quality.generated.md
 - [x] Arquivo presente: doiManifest — /Users/ulissesflores/Documents/Projetos/ulisses-hub/public/doi/manifest.json
+- [x] Arquivo presente: deepResearchGeneratedTs — /Users/ulissesflores/Documents/Projetos/ulisses-hub/data/generated/deep-research.generated.ts
+- [x] Arquivo presente: publicationsJson — /Users/ulissesflores/Documents/Projetos/ulisses-hub/docs/publications.generated.json
 - [x] site.jsonld tem grafo minimo
 - [x] public.jsonld maior que site.jsonld
 - [x] full.jsonld maior que public.jsonld
@@ -43,5 +47,13 @@
 - [x] DOI-ready usa limiar minimo 950
 - [x] Score DOI-ready >= 950
 - [x] Todos os pacotes DOI por artigo com score >= 950
+- [x] DOI-ready usa politica doi_target para todos os artigos
+- [x] CITATION.cff sem campo doi oficial quando status=target
+- [x] crossref.json sem campo DOI oficial para pre-registro
+- [x] Deep research usa limiar minimo 950
+- [x] Score deep research >= 950
+- [x] Todos os artigos deep research com fases e macro >= 950
 - [x] Manifesto DOI publico presente
+- [x] 18/18 artigos com artefatos deep-research (.md/.pdf/.docx)
+- [x] Nome publico sem vazamento do nome juridico em artefatos publicos
 

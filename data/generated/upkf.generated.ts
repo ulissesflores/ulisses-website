@@ -9,8 +9,9 @@ export const upkfMeta = {
   "generatedAt": "2026-02-21",
   "schemaTarget": "Schema.org JSON-LD via deterministic derivation",
   "sourcePath": "/Users/ulissesflores/Documents/Projetos/ulisses-hub/data/upkf/ulisses-flores-sovereign-upkf_v3.3.md",
-  "displayName": "Carlos Ulisses Flores Ribeiro",
+  "displayName": "Carlos Ulisses Flores",
   "preferredName": "Ulisses",
+  "publicDisplayName": "Carlos Ulisses Flores",
   "canonicalLegalName": "Carlos Ulisses Flores Ribeiro",
   "primaryWebsite": "https://ulissesflores.com",
   "description": {
@@ -65,9 +66,9 @@ export const upkfMeta = {
     "siteGraphNodes": 4,
     "publicGraphNodes": 144,
     "fullGraphNodes": 247,
-    "siteJsonldBytes": 3476,
-    "publicJsonldBytes": 121553,
-    "fullJsonldBytes": 225585,
+    "siteJsonldBytes": 3468,
+    "publicJsonldBytes": 129270,
+    "fullJsonldBytes": 233302,
     "corpusFiles": 0,
     "corpusSnippets": 0,
     "corpusDirs": [],
@@ -96,7 +97,7 @@ export const siteJsonLd = {
     {
       "@id": "https://ulissesflores.com/#person",
       "@type": "Person",
-      "name": "Carlos Ulisses Flores Ribeiro",
+      "name": "Carlos Ulisses Flores",
       "alternateName": [
         "Carlos Ulisses Flores",
         "Ulisses Flores",

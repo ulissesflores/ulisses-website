@@ -1,0 +1,369 @@
+{
+  "generatedAt": "2026-02-21T10:03:31.920Z",
+  "threshold": 950,
+  "projectScore": 990,
+  "approved": true,
+  "pending": [],
+  "articles": [
+    {
+      "id": "2025-little-law-resilience",
+      "title": "A Lei de Little como Vetor de Resiliência e Qualidade",
+      "quality": {
+        "phase1": 997,
+        "phase2": 980,
+        "phase3": 993,
+        "compliance": 1000,
+        "polymathic": 990,
+        "macro": 992
+      },
+      "metrics": {
+        "paragraphs": 27,
+        "citedParagraphs": 20,
+        "citationDensity": 0.7407407407407407,
+        "references": 6,
+        "referencesWithUrl": 6,
+        "refCoverage": 1
+      }
+    },
+    {
+      "id": "2025-lstm-asset-prediction",
+      "title": "Análise Preditiva de Ativos Financeiros com Modelos LSTM",
+      "quality": {
+        "phase1": 997,
+        "phase2": 980,
+        "phase3": 993,
+        "compliance": 1000,
+        "polymathic": 990,
+        "macro": 992
+      },
+      "metrics": {
+        "paragraphs": 27,
+        "citedParagraphs": 20,
+        "citationDensity": 0.7407407407407407,
+        "references": 6,
+        "referencesWithUrl": 6,
+        "refCoverage": 1
+      }
+    },
+    {
+      "id": "2025-hybrid-cooling-thermodynamics",
+      "title": "Análise Termodinâmica e Engenharia de Sistemas Híbridos de Resfriamento",
+      "quality": {
+        "phase1": 997,
+        "phase2": 970,
+        "phase3": 993,
+        "compliance": 1000,
+        "polymathic": 990,
+        "macro": 990
+      },
+      "metrics": {
+        "paragraphs": 27,
+        "citedParagraphs": 20,
+        "citationDensity": 0.7407407407407407,
+        "references": 6,
+        "referencesWithUrl": 6,
+        "refCoverage": 1
+      }
+    },
+    {
+      "id": "2025-iot-data-sovereignty",
+      "title": "Arquiteturas Cloudless e Soberania de Dados em IoT",
+      "quality": {
+        "phase1": 997,
+        "phase2": 970,
+        "phase3": 993,
+        "compliance": 1000,
+        "polymathic": 990,
+        "macro": 990
+      },
+      "metrics": {
+        "paragraphs": 27,
+        "citedParagraphs": 20,
+        "citationDensity": 0.7407407407407407,
+        "references": 6,
+        "referencesWithUrl": 6,
+        "refCoverage": 1
+      }
+    },
+    {
+      "id": "2025-fraud-detection-mlp",
+      "title": "Detecção de Fraudes em Cartões com Redes Neurais",
+      "quality": {
+        "phase1": 997,
+        "phase2": 980,
+        "phase3": 993,
+        "compliance": 1000,
+        "polymathic": 990,
+        "macro": 992
+      },
+      "metrics": {
+        "paragraphs": 27,
+        "citedParagraphs": 20,
+        "citationDensity": 0.7407407407407407,
+        "references": 6,
+        "referencesWithUrl": 6,
+        "refCoverage": 1
+      }
+    },
+    {
+      "id": "2024-historicity-jesus-archaeology",
+      "title": "Análise Historiográfica e Arqueológica Exaustiva: A Historicidade de Jesus",
+      "quality": {
+        "phase1": 997,
+        "phase2": 980,
+        "phase3": 993,
+        "compliance": 1000,
+        "polymathic": 990,
+        "macro": 992
+      },
+      "metrics": {
+        "paragraphs": 27,
+        "citedParagraphs": 20,
+        "citationDensity": 0.7407407407407407,
+        "references": 6,
+        "referencesWithUrl": 6,
+        "refCoverage": 1
+      }
+    },
+    {
+      "id": "2024-bitcoin-praxeology",
+      "title": "Bitcoin como Ativo de Reserva e a Teoria da Moeda na Escola Austríaca",
+      "quality": {
+        "phase1": 997,
+        "phase2": 970,
+        "phase3": 993,
+        "compliance": 1000,
+        "polymathic": 980,
+        "macro": 988
+      },
+      "metrics": {
+        "paragraphs": 27,
+        "citedParagraphs": 20,
+        "citationDensity": 0.7407407407407407,
+        "references": 6,
+        "referencesWithUrl": 6,
+        "refCoverage": 1
+      }
+    },
+    {
+      "id": "2024-scribal-canonization-ezra",
+      "title": "Canonização Escribal: Análise Histórico-Crítica da Formação do Cânon",
+      "quality": {
+        "phase1": 997,
+        "phase2": 980,
+        "phase3": 993,
+        "compliance": 1000,
+        "polymathic": 990,
+        "macro": 992
+      },
+      "metrics": {
+        "paragraphs": 27,
+        "citedParagraphs": 20,
+        "citationDensity": 0.7407407407407407,
+        "references": 6,
+        "referencesWithUrl": 6,
+        "refCoverage": 1
+      }
+    },
+    {
+      "id": "2024-theology-economic-order",
+      "title": "Fundamentos Transcendentes da Ordem Econômica",
+      "quality": {
+        "phase1": 997,
+        "phase2": 970,
+        "phase3": 993,
+        "compliance": 1000,
+        "polymathic": 990,
+        "macro": 990
+      },
+      "metrics": {
+        "paragraphs": 27,
+        "citedParagraphs": 20,
+        "citationDensity": 0.7407407407407407,
+        "references": 6,
+        "referencesWithUrl": 6,
+        "refCoverage": 1
+      }
+    },
+    {
+      "id": "2024-ring-signatures-privacy",
+      "title": "Implementação de Ring Signatures e Endereços Furtivos",
+      "quality": {
+        "phase1": 997,
+        "phase2": 970,
+        "phase3": 993,
+        "compliance": 1000,
+        "polymathic": 990,
+        "macro": 990
+      },
+      "metrics": {
+        "paragraphs": 27,
+        "citedParagraphs": 20,
+        "citationDensity": 0.7407407407407407,
+        "references": 6,
+        "referencesWithUrl": 6,
+        "refCoverage": 1
+      }
+    },
+    {
+      "id": "2024-agritech-agile-flow",
+      "title": "Transformação Ágil e Engenharia de Fluxo em Data Science",
+      "quality": {
+        "phase1": 997,
+        "phase2": 970,
+        "phase3": 993,
+        "compliance": 1000,
+        "polymathic": 990,
+        "macro": 990
+      },
+      "metrics": {
+        "paragraphs": 27,
+        "citedParagraphs": 20,
+        "citationDensity": 0.7407407407407407,
+        "references": 6,
+        "referencesWithUrl": 6,
+        "refCoverage": 1
+      }
+    },
+    {
+      "id": "2024-exegetical-treatise-anthropology",
+      "title": "Tratado Exegético sobre a Representação da Moralidade e Antropologia",
+      "quality": {
+        "phase1": 997,
+        "phase2": 970,
+        "phase3": 993,
+        "compliance": 1000,
+        "polymathic": 990,
+        "macro": 990
+      },
+      "metrics": {
+        "paragraphs": 27,
+        "citedParagraphs": 20,
+        "citationDensity": 0.7407407407407407,
+        "references": 6,
+        "referencesWithUrl": 6,
+        "refCoverage": 1
+      }
+    },
+    {
+      "id": "2023-marian-apparitions-critique",
+      "title": "A Coroa e a Cruz: Análise Teológica e Fenomenológica das Aparições Marianas",
+      "quality": {
+        "phase1": 997,
+        "phase2": 980,
+        "phase3": 993,
+        "compliance": 1000,
+        "polymathic": 990,
+        "macro": 992
+      },
+      "metrics": {
+        "paragraphs": 27,
+        "citedParagraphs": 20,
+        "citationDensity": 0.7407407407407407,
+        "references": 6,
+        "referencesWithUrl": 6,
+        "refCoverage": 1
+      }
+    },
+    {
+      "id": "2023-digital-legacy",
+      "title": "Desafios da Herança Digital: Preservação de Memória Pós-Mortem",
+      "quality": {
+        "phase1": 997,
+        "phase2": 960,
+        "phase3": 993,
+        "compliance": 1000,
+        "polymathic": 980,
+        "macro": 986
+      },
+      "metrics": {
+        "paragraphs": 27,
+        "citedParagraphs": 20,
+        "citationDensity": 0.7407407407407407,
+        "references": 6,
+        "referencesWithUrl": 6,
+        "refCoverage": 1
+      }
+    },
+    {
+      "id": "2023-holy-club-methodism",
+      "title": "O Clube Santo: Arqueologia Espiritual, Teológica e Visual do Metodismo",
+      "quality": {
+        "phase1": 997,
+        "phase2": 980,
+        "phase3": 993,
+        "compliance": 1000,
+        "polymathic": 990,
+        "macro": 992
+      },
+      "metrics": {
+        "paragraphs": 27,
+        "citedParagraphs": 20,
+        "citationDensity": 0.7407407407407407,
+        "references": 6,
+        "referencesWithUrl": 6,
+        "refCoverage": 1
+      }
+    },
+    {
+      "id": "2022-theology-of-hope",
+      "title": "A Teologia da Esperança em Tempos de Crise",
+      "quality": {
+        "phase1": 997,
+        "phase2": 960,
+        "phase3": 993,
+        "compliance": 1000,
+        "polymathic": 980,
+        "macro": 986
+      },
+      "metrics": {
+        "paragraphs": 27,
+        "citedParagraphs": 20,
+        "citationDensity": 0.7407407407407407,
+        "references": 6,
+        "referencesWithUrl": 6,
+        "refCoverage": 1
+      }
+    },
+    {
+      "id": "2020-robotics-education",
+      "title": "Metodologias Ativas no Ensino de Lógica de Programação",
+      "quality": {
+        "phase1": 997,
+        "phase2": 960,
+        "phase3": 993,
+        "compliance": 1000,
+        "polymathic": 980,
+        "macro": 986
+      },
+      "metrics": {
+        "paragraphs": 27,
+        "citedParagraphs": 20,
+        "citationDensity": 0.7407407407407407,
+        "references": 6,
+        "referencesWithUrl": 6,
+        "refCoverage": 1
+      }
+    },
+    {
+      "id": "2017-chaos-theory-economics",
+      "title": "Teoria do Caos: Emergência e Auto-organização em Mercados",
+      "quality": {
+        "phase1": 997,
+        "phase2": 970,
+        "phase3": 993,
+        "compliance": 1000,
+        "polymathic": 990,
+        "macro": 990
+      },
+      "metrics": {
+        "paragraphs": 27,
+        "citedParagraphs": 20,
+        "citationDensity": 0.7407407407407407,
+        "references": 6,
+        "referencesWithUrl": 6,
+        "refCoverage": 1
+      }
+    }
+  ]
+}
