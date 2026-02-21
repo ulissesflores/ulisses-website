@@ -5,6 +5,7 @@ import { ArrowLeft, BookOpen, Calendar, Download } from 'lucide-react';
 import { publicationCollections, publications } from '@/data/publications';
 import { upkfMeta } from '@/data/generated/upkf.generated';
 import { buildLanguageAlternates } from '@/data/seo';
+import { deepResearchArtifacts } from '@/data/deep-research';
 
 interface PageProps {
   params: Promise<{ category: string; slug: string }>;
@@ -63,6 +64,7 @@ export default async function ArticlePage({ params }: PageProps) {
   }
 
   const collection = publicationCollections[publication.category];
+  const deepResearch = deepResearchArtifacts[publication.id];
 
   const sectionParagraphs = (text: string) =>
     text
@@ -264,6 +266,35 @@ export default async function ArticlePage({ params }: PageProps) {
               {` ${publication.date}`}. Disponivel em: {upkfMeta.primaryWebsite}/{publication.category}/{publication.id}
             </p>
           </section>
+
+          {deepResearch ? (
+            <section className='mt-8 p-6 border border-cyan-500/20 bg-cyan-950/10 rounded-2xl space-y-4'>
+              <h2 className='text-2xl font-semibold text-white'>Deep Research Artifacts</h2>
+              <p className='text-neutral-300 leading-relaxed'>{deepResearch.abstract}</p>
+              <div className='flex flex-wrap gap-3 text-sm'>
+                <span className='px-3 py-1 border border-cyan-400/30 rounded-full text-cyan-200'>
+                  Polymathic Index: {deepResearch.polymathicIndex}/1000
+                </span>
+                <span className='px-3 py-1 border border-cyan-400/30 rounded-full text-cyan-200'>
+                  Quality Score: {deepResearch.qualityScore}/1000
+                </span>
+              </div>
+              <p className='text-sm text-neutral-400'>
+                <strong>Canonical Citation:</strong> {deepResearch.citation}
+              </p>
+              <div className='flex flex-wrap gap-3'>
+                <a href={deepResearch.files.md} className='text-cyan-300 underline underline-offset-4'>
+                  Markdown (.md)
+                </a>
+                <a href={deepResearch.files.pdf} className='text-cyan-300 underline underline-offset-4'>
+                  PDF (.pdf)
+                </a>
+                <a href={deepResearch.files.docx} className='text-cyan-300 underline underline-offset-4'>
+                  DOCX (.docx)
+                </a>
+              </div>
+            </section>
+          ) : null}
         </div>
       </main>
 
