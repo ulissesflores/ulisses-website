@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { knowledgeData } from '@/data/knowledge';
 import { upkfMeta } from '@/data/generated/upkf.generated';
+import { buildLanguageAlternates } from '@/data/seo';
 
 export const metadata: Metadata = {
   title: 'Mundo Politico | Canonical Index',
@@ -9,6 +10,7 @@ export const metadata: Metadata = {
     'Índice canônico dos artigos publicados no portal Mundo Político com páginas de contexto e links para as fontes originais.',
   alternates: {
     canonical: '/mundo-politico',
+    languages: buildLanguageAlternates('/mundo-politico'),
   },
   openGraph: {
     type: 'website',
@@ -84,4 +86,3 @@ export default function MundoPoliticoPage() {
     </div>
   );
 }
-

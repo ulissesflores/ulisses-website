@@ -1,6 +1,6 @@
 # JSON-LD Audit (Generated)
 
-- Generated at: 2026-02-21T03:51:56.851Z
+- Generated at: 2026-02-21T04:01:48.819Z
 - Site graph nodes: 4
 - Public graph nodes: 144
 - Full graph nodes: 247

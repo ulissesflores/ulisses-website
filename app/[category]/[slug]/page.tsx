@@ -4,6 +4,7 @@ import { notFound } from 'next/navigation';
 import { ArrowLeft, BookOpen, Calendar, Download } from 'lucide-react';
 import { publicationCollections, publications } from '@/data/publications';
 import { upkfMeta } from '@/data/generated/upkf.generated';
+import { buildLanguageAlternates } from '@/data/seo';
 
 interface PageProps {
   params: Promise<{ category: string; slug: string }>;
@@ -31,6 +32,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     description: publication.summary,
     alternates: {
       canonical: canonicalPath,
+      languages: buildLanguageAlternates(canonicalPath),
     },
     openGraph: {
       type: 'article',

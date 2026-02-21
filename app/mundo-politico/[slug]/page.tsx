@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { knowledgeData } from '@/data/knowledge';
 import { upkfMeta } from '@/data/generated/upkf.generated';
+import { buildLanguageAlternates } from '@/data/seo';
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -27,6 +28,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     description: post.summary,
     alternates: {
       canonical: post.canonicalPath,
+      languages: buildLanguageAlternates(post.canonicalPath),
     },
     openGraph: {
       type: 'article',
@@ -108,4 +110,3 @@ export default async function MundoPoliticoPostPage({ params }: PageProps) {
     </div>
   );
 }
-

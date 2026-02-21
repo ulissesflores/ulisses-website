@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { knowledgeData } from '@/data/knowledge';
 import { upkfMeta } from '@/data/generated/upkf.generated';
+import { buildLanguageAlternates } from '@/data/seo';
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -27,6 +28,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     description: certification.summary,
     alternates: {
       canonical: certification.canonicalPath,
+      languages: buildLanguageAlternates(certification.canonicalPath),
     },
     openGraph: {
       type: 'article',

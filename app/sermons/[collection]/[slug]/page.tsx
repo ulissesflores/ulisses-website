@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { knowledgeData } from '@/data/knowledge';
 import { upkfMeta } from '@/data/generated/upkf.generated';
+import { buildLanguageAlternates } from '@/data/seo';
 
 interface PageProps {
   params: Promise<{ collection: string; slug: string }>;
@@ -44,6 +45,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     description: match.sermon.summary,
     alternates: {
       canonical: match.sermon.canonicalPath,
+      languages: buildLanguageAlternates(match.sermon.canonicalPath),
     },
     openGraph: {
       type: 'video.other',

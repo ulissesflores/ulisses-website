@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { knowledgeData } from '@/data/knowledge';
 import { upkfMeta } from '@/data/generated/upkf.generated';
+import { buildLanguageAlternates } from '@/data/seo';
 
 export const metadata: Metadata = {
   title: 'Sermons and Theological Talks',
@@ -9,6 +10,7 @@ export const metadata: Metadata = {
     'Canonical index of sermons and theological talks with structured context, collection grouping, and source links.',
   alternates: {
     canonical: '/sermons',
+    languages: buildLanguageAlternates('/sermons'),
   },
   openGraph: {
     type: 'website',
@@ -76,4 +78,3 @@ export default function SermonsPage() {
     </div>
   );
 }
-

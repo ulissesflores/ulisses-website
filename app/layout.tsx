@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Script from 'next/script';
 import { siteJsonLd, upkfMeta } from '@/data/generated/upkf.generated';
+import { buildLanguageAlternates } from '@/data/seo';
 import './globals.css';
 
 const siteUrl = upkfMeta.primaryWebsite;
@@ -36,6 +37,7 @@ export const metadata: Metadata = {
   classification: 'Science and Technology',
   alternates: {
     canonical: '/',
+    languages: buildLanguageAlternates('/'),
   },
   robots: {
     index: true,

@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { knowledgeData } from '@/data/knowledge';
 import { upkfMeta } from '@/data/generated/upkf.generated';
+import { buildLanguageAlternates } from '@/data/seo';
 
 interface PageProps {
   params: Promise<{ collection: string }>;
@@ -27,6 +28,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     description: `Coleção canônica com ${series.items.length} mensagens da série "${series.name}".`,
     alternates: {
       canonical: series.canonicalPath,
+      languages: buildLanguageAlternates(series.canonicalPath),
     },
     openGraph: {
       type: 'website',
@@ -98,4 +100,3 @@ export default async function SermonCollectionPage({ params }: PageProps) {
     </div>
   );
 }
-

@@ -1,6 +1,16 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  async rewrites() {
+    return {
+      beforeFiles: [
+        {
+          source: "/:locale(pt-br|en|es|he|it)/:path*",
+          destination: "/:path*",
+        },
+      ],
+    };
+  },
   async headers() {
     return [
       {

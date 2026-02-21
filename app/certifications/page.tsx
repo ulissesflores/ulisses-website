@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { knowledgeData } from '@/data/knowledge';
 import { upkfMeta } from '@/data/generated/upkf.generated';
+import { buildLanguageAlternates } from '@/data/seo';
 
 const providerOrder = ['Alura', 'Coursera', 'edX'] as const;
 type CertificationItem = (typeof knowledgeData.certifications)[number];
@@ -40,6 +41,7 @@ export const metadata: Metadata = {
     'Index of certifications and credentials with canonical pages, verification links, and structured metadata.',
   alternates: {
     canonical: '/certifications',
+    languages: buildLanguageAlternates('/certifications'),
   },
   openGraph: {
     type: 'website',
