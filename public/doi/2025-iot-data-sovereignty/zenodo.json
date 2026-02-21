@@ -1,0 +1,48 @@
+{
+  "metadata": {
+    "title": "Arquiteturas Cloudless e Soberania de Dados em IoT",
+    "upload_type": "publication",
+    "publication_type": "report",
+    "publication_date": "2025-01-01",
+    "description": "<p>Arquiteturas cloudless para IoT com soberania de dados e processamento local em edge. O problema central investigado e: Dependencia de nuvem publica amplia superficie de ataque, latencia e exposicao regulatoria de dados sensiveis. Adotou-se um desenho metodologico com foco em validade interna, comparabilidade e reproducibilidade: Comparacao de arquiteturas centralizadas versus edge-first, incluindo requisitos de identidade, criptografia e observabilidade. Os resultados principais indicam que o desenho cloudless reduz dependencia externa e melhora controle sobre confidencialidade e disponibilidade local.. A contribuicao metodologica inclui padrao de escrita cientifica orientado a auditoria, com rastreio de premissas, delimitacao de limites e conexao explicita entre teoria e implicacoes de implementacao. O objetivo deste trabalho e avaliar de forma estruturada como &quot;Arquiteturas Cloudless e Soberania de Dados em IoT&quot; pode gerar valor cientifico e operacional com rastreabilidade metodologica. Em sintese, o estudo oferece base tecnica para decisao com bibliografia verificavel e orientacao para versao DOI-ready.</p>",
+    "creators": [
+      {
+        "name": "Flores, Carlos Ulisses",
+        "affiliation": "Codex Hash Research",
+        "orcid": "0000-0002-6034-7765"
+      }
+    ],
+    "keywords": [
+      "Engenharia",
+      "IoT",
+      "Seguranca",
+      "IOT",
+      "DATA",
+      "SOVEREIGNTY"
+    ],
+    "language": "pt-BR",
+    "references": [
+      "Rose, S. et al. (2020). NIST SP 800-207 Zero Trust Architecture. (https://doi.org/10.6028/NIST.SP.800-207)",
+      "Fagan, M. et al. (2020). NISTIR 8259A IoT Device Cybersecurity Capability Core Baseline. (https://doi.org/10.6028/NIST.IR.8259A)",
+      "IEC 62443 series for industrial automation and control systems security. (https://www.iec.ch/standards-development/what-makes-a-good-standard/iec-62443-series-standards)",
+      "ETSI EN 303 645 for consumer IoT cybersecurity. (https://www.etsi.org/technologies/consumer-iot-security)",
+      "OWASP Internet of Things Project. (https://owasp.org/www-project-internet-of-things/)",
+      "GAIA-X policy and interoperability framework. (https://gaia-x.eu/what-is-gaia-x/)"
+    ],
+    "related_identifiers": [
+      {
+        "identifier": "https://ulissesflores.com/whitepapers/2025-iot-data-sovereignty",
+        "relation": "isSupplementTo",
+        "resource_type": "publication-article"
+      },
+      {
+        "identifier": "https://ulissesflores.com/whitepapers/2025-iot-data-sovereignty.pdf",
+        "relation": "isIdenticalTo",
+        "resource_type": "publication-article"
+      }
+    ],
+    "version": "v2026-02-21",
+    "notes": "DOI-ready metadata generated automatically from the canonical UPKF publication dataset.",
+    "license": "CC-BY-4.0"
+  }
+}

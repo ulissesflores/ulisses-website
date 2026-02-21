@@ -23,6 +23,7 @@ export async function GET() {
     { path: '/.well-known/did.json', changefreq: 'weekly', priority: '0.6' },
     { path: '/llms.txt', changefreq: 'weekly', priority: '0.8' },
     { path: '/llms-full.txt', changefreq: 'weekly', priority: '0.7' },
+    { path: '/doi/manifest.json', changefreq: 'weekly', priority: '0.7' },
     { path: '/feed.xml', changefreq: 'daily', priority: '0.7' },
   ];
 

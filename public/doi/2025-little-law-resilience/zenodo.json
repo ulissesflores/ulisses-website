@@ -1,0 +1,48 @@
+{
+  "metadata": {
+    "title": "A Lei de Little como Vetor de Resiliência e Qualidade",
+    "upload_type": "publication",
+    "publication_type": "article",
+    "publication_date": "2025-01-01",
+    "description": "<p>Estudo sobre aplicacao da Lei de Little para elevar previsibilidade de entrega e resiliencia em operacoes de Data Science. O problema central investigado e: A pesquisa enfrenta a combinacao de alto WIP, filas longas e baixa confiabilidade de prazo em pipelines complexos de IA. Adotou-se um desenho metodologico com foco em validade interna, comparabilidade e reproducibilidade: Abordagem analitico-experimental com simulacao de fluxo, comparando cenarios com e sem limite explicito de trabalho em progresso. Os resultados principais indicam que a evidencia indica reducao relevante de lead time sem perda material de throughput, reforcando a eficiencia da limitacao de wip.. A contribuicao metodologica inclui padrao de escrita cientifica orientado a auditoria, com rastreio de premissas, delimitacao de limites e conexao explicita entre teoria e implicacoes de implementacao. O objetivo deste trabalho e avaliar de forma estruturada como &quot;A Lei de Little como Vetor de Resiliência e Qualidade&quot; pode gerar valor cientifico e operacional com rastreabilidade metodologica. Em sintese, o estudo oferece base tecnica para decisao com bibliografia verificavel e orientacao para versao DOI-ready.</p>",
+    "creators": [
+      {
+        "name": "Flores, Carlos Ulisses",
+        "affiliation": "Codex Hash Research",
+        "orcid": "0000-0002-6034-7765"
+      }
+    ],
+    "keywords": [
+      "IA",
+      "Economia",
+      "Sistemas Complexos",
+      "LITTLE",
+      "LAW",
+      "RESILIENCE"
+    ],
+    "language": "pt-BR",
+    "references": [
+      "Little, J. D. C. (1961). A Proof for the Queueing Formula L = lambda W. (https://doi.org/10.1287/opre.9.3.383)",
+      "Kingman, J. F. C. (1961). The single server queue in heavy traffic. (https://doi.org/10.1093/biomet/48.1-2.131)",
+      "Anderson, D. J. (2010). Kanban. (https://books.google.com/books?id=R6t_DwAAQBAJ)",
+      "Reinertsen, D. (2009). The Principles of Product Development Flow. (https://www.celerity.com/books/product-development-flow-second-generation-lean-product-development/)",
+      "Forsgren, N.; Humble, J.; Kim, G. (2018). Accelerate. (https://itrevolution.com/product/accelerate/)",
+      "Hopp, W.; Spearman, M. (2011). Factory Physics. (https://www.mheducation.com/highered/product/factory-physics-hopp-spearman/M9781577667391.html)"
+    ],
+    "related_identifiers": [
+      {
+        "identifier": "https://ulissesflores.com/research/2025-little-law-resilience",
+        "relation": "isSupplementTo",
+        "resource_type": "publication-article"
+      },
+      {
+        "identifier": "https://ulissesflores.com/research/2025-little-law-resilience.pdf",
+        "relation": "isIdenticalTo",
+        "resource_type": "publication-article"
+      }
+    ],
+    "version": "v2026-02-21",
+    "notes": "DOI-ready metadata generated automatically from the canonical UPKF publication dataset.",
+    "license": "CC-BY-4.0"
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "metadata": {
+    "title": "A Coroa e a Cruz: Análise Teológica e Fenomenológica das Aparições Marianas",
+    "upload_type": "publication",
+    "publication_type": "article",
+    "publication_date": "2023-01-01",
+    "description": "<p>Analise teologica e fenomenologica critica de narrativas de aparicoes marianas. O problema central investigado e: Relatos devocionais frequentemente carecem de criterios consistentes de discernimento historico e fenomenologico. Adotou-se um desenho metodologico com foco em validade interna, comparabilidade e reproducibilidade: Comparacao de documentos, tradicoes e criterios de autenticidade em abordagem historico-critica. Os resultados principais indicam que o estudo distingue elementos simbolicos, historicos e pastorais sem reduzir o fenomeno a uma unica explicacao.. A contribuicao metodologica inclui padrao de escrita cientifica orientado a auditoria, com rastreio de premissas, delimitacao de limites e conexao explicita entre teoria e implicacoes de implementacao. O objetivo deste trabalho e avaliar de forma estruturada como &quot;A Coroa e a Cruz: Análise Teológica e Fenomenológica das Aparições Marianas&quot; pode gerar valor cientifico e operacional com rastreabilidade metodologica. Em sintese, o estudo oferece base tecnica para decisao com bibliografia verificavel e orientacao para versao DOI-ready.</p>",
+    "creators": [
+      {
+        "name": "Flores, Carlos Ulisses",
+        "affiliation": "Codex Hash Research",
+        "orcid": "0000-0002-6034-7765"
+      }
+    ],
+    "keywords": [
+      "IA",
+      "Economia",
+      "Sistemas Complexos",
+      "MARIAN",
+      "APPARITIONS",
+      "CRITIQUE"
+    ],
+    "language": "pt-BR",
+    "references": [
+      "Congregation for the Doctrine of the Faith (1978). Norms regarding alleged apparitions. (https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_19780225_norme-apparizioni_en.html)",
+      "Zimdars-Swartz, S. L. (1991). Encountering Mary. (https://press.princeton.edu/books/paperback/9780691028675/encountering-mary)",
+      "Christian Jr., W. A. (1981). Local Religion in Sixteenth-Century Spain. (https://press.princeton.edu/books/paperback/9780691101965/local-religion-in-sixteenth-century-spain)",
+      "Laurentin, R. (1990). The Apparitions of the Blessed Virgin Mary Today. (https://books.google.com/books?id=GdoIAQAAMAAJ)",
+      "Pelikan, J. (1996). Mary Through the Centuries. (https://yalebooks.yale.edu/book/9780300076619/mary-through-the-centuries/)",
+      "Vatican Dicastery (2024). New Norms for discernment of supernatural phenomena. (https://www.vaticannews.va/en/vatican-city/news/2024-05/new-norms-discernment-apparitions-dicastery-doctrine-faith.html)"
+    ],
+    "related_identifiers": [
+      {
+        "identifier": "https://ulissesflores.com/research/2023-marian-apparitions-critique",
+        "relation": "isSupplementTo",
+        "resource_type": "publication-article"
+      },
+      {
+        "identifier": "https://ulissesflores.com/research/2023-marian-apparitions-critique.pdf",
+        "relation": "isIdenticalTo",
+        "resource_type": "publication-article"
+      }
+    ],
+    "version": "v2026-02-21",
+    "notes": "DOI-ready metadata generated automatically from the canonical UPKF publication dataset.",
+    "license": "CC-BY-4.0"
+  }
+}

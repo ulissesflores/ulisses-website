@@ -1,0 +1,33 @@
+cff-version: 1.2.0
+message: "If you use this work, please cite it using the metadata from this file."
+title: "Análise Termodinâmica e Engenharia de Sistemas Híbridos de Resfriamento"
+type: article
+authors:
+  - family-names: "Flores Ribeiro"
+    given-names: "Carlos Ulisses"
+    orcid: "0000-0002-6034-7765"
+doi: "10.5281/zenodo.202503"
+identifiers:
+  - type: url
+    value: "https://ulissesflores.com/whitepapers/2025-hybrid-cooling-thermodynamics"
+  - type: url
+    value: "https://ulissesflores.com/whitepapers/2025-hybrid-cooling-thermodynamics.pdf"
+abstract: "Whitepaper de termodinamica aplicada ao projeto de sistemas hibridos de resfriamento para infraestrutura critica. O problema central investigado e: Centros computacionais e ambientes edge enfrentam trade-off entre eficiencia energetica, confiabilidade e custo de manutencao. Adotou-se um desenho metodologico com foco em validade interna, comparabilidade e reproducibilidade: Analise termo-fluidodinamica com cenarios de carga, comparando estrategias hibridas de dissipacao e controle. Os resultados principais indicam que a configuracao hibrida apresenta melhor estabilidade termica em picos de carga e menor risco de indisponibilidade.. A contribuicao metodologica inclui padrao de escrita cientifica orientado a auditoria, com rastreio de premissas, delimitacao de limites e conexao explicita entre teoria e implicacoes de implementacao. O objetivo deste trabalho e avaliar de forma estruturada como \"Análise Termodinâmica e Engenharia de Sistemas Híbridos de Resfriamento\" pode gerar valor cientifico e operacional com rastreabilidade metodologica. Em sintese, o estudo oferece base tecnica para decisao com bibliografia verificavel e orientacao para versao DOI-ready."
+keywords: ["Engenharia", "IoT", "Seguranca", "HYBRID", "COOLING", "THERMODYNAMICS"]
+license: "CC-BY-4.0"
+version: "v2026-02-21"
+date-released: "2025-01-01"
+repository-code: "https://ulissesflores.com/whitepapers/2025-hybrid-cooling-thermodynamics"
+references:
+  - unstructured: "ASHRAE. Thermal Guidelines for Data Processing Environments."
+    url: "https://www.ashrae.org/technical-resources/bookstore/thermal-guidelines-for-data-processing-environments"
+  - unstructured: "ASHRAE Standard 90.4 for Data Centers."
+    url: "https://www.ashrae.org/technical-resources/bookstore/standard-90-4"
+  - unstructured: "ISO 50001: Energy management systems."
+    url: "https://www.iso.org/iso-50001-energy-management.html"
+  - unstructured: "Patterson, M. K. (2008). The effect of data center temperature on energy efficiency."
+    url: "https://doi.org/10.1109/ITHERM.2008.4544301"
+  - unstructured: "Shehabi, A. et al. (2016). United States Data Center Energy Usage Report."
+    url: "https://eta-publications.lbl.gov/sites/default/files/lbnl-1005775_v2.pdf"
+  - unstructured: "US DOE. Data Center Energy Efficiency."
+    url: "https://www.energy.gov/eere/femp/data-center-energy-efficiency"

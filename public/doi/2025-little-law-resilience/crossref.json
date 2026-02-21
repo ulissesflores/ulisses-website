@@ -1,0 +1,60 @@
+{
+  "schema": "https://data.crossref.org/schemas/crossref_input.json",
+  "type": "article",
+  "title": "A Lei de Little como Vetor de Resiliência e Qualidade",
+  "abstract": "Estudo sobre aplicacao da Lei de Little para elevar previsibilidade de entrega e resiliencia em operacoes de Data Science. O problema central investigado e: A pesquisa enfrenta a combinacao de alto WIP, filas longas e baixa confiabilidade de prazo em pipelines complexos de IA. Adotou-se um desenho metodologico com foco em validade interna, comparabilidade e reproducibilidade: Abordagem analitico-experimental com simulacao de fluxo, comparando cenarios com e sem limite explicito de trabalho em progresso. Os resultados principais indicam que a evidencia indica reducao relevante de lead time sem perda material de throughput, reforcando a eficiencia da limitacao de wip.. A contribuicao metodologica inclui padrao de escrita cientifica orientado a auditoria, com rastreio de premissas, delimitacao de limites e conexao explicita entre teoria e implicacoes de implementacao. O objetivo deste trabalho e avaliar de forma estruturada como \"A Lei de Little como Vetor de Resiliência e Qualidade\" pode gerar valor cientifico e operacional com rastreabilidade metodologica. Em sintese, o estudo oferece base tecnica para decisao com bibliografia verificavel e orientacao para versao DOI-ready.",
+  "authors": [
+    {
+      "given": "Carlos Ulisses",
+      "family": "Flores Ribeiro",
+      "ORCID": "https://orcid.org/0000-0002-6034-7765",
+      "affiliation": "Codex Hash Research"
+    }
+  ],
+  "issued": "2025-01-01",
+  "language": "pt-BR",
+  "URL": "https://ulissesflores.com/research/2025-little-law-resilience",
+  "resource": {
+    "primary": {
+      "URL": "https://ulissesflores.com/research/2025-little-law-resilience"
+    },
+    "pdf": {
+      "URL": "https://ulissesflores.com/research/2025-little-law-resilience.pdf"
+    }
+  },
+  "reference": [
+    {
+      "key": "2025-little-law-resilience-ref-1",
+      "unstructured": "Little, J. D. C. (1961). A Proof for the Queueing Formula L = lambda W.",
+      "DOI": "10.1287/opre.9.3.383",
+      "URL": "https://doi.org/10.1287/opre.9.3.383"
+    },
+    {
+      "key": "2025-little-law-resilience-ref-2",
+      "unstructured": "Kingman, J. F. C. (1961). The single server queue in heavy traffic.",
+      "DOI": "10.1093/biomet/48.1-2.131",
+      "URL": "https://doi.org/10.1093/biomet/48.1-2.131"
+    },
+    {
+      "key": "2025-little-law-resilience-ref-3",
+      "unstructured": "Anderson, D. J. (2010). Kanban.",
+      "URL": "https://books.google.com/books?id=R6t_DwAAQBAJ"
+    },
+    {
+      "key": "2025-little-law-resilience-ref-4",
+      "unstructured": "Reinertsen, D. (2009). The Principles of Product Development Flow.",
+      "URL": "https://www.celerity.com/books/product-development-flow-second-generation-lean-product-development/"
+    },
+    {
+      "key": "2025-little-law-resilience-ref-5",
+      "unstructured": "Forsgren, N.; Humble, J.; Kim, G. (2018). Accelerate.",
+      "URL": "https://itrevolution.com/product/accelerate/"
+    },
+    {
+      "key": "2025-little-law-resilience-ref-6",
+      "unstructured": "Hopp, W.; Spearman, M. (2011). Factory Physics.",
+      "URL": "https://www.mheducation.com/highered/product/factory-physics-hopp-spearman/M9781577667391.html"
+    }
+  ],
+  "DOI": "10.5281/zenodo.202501"
+}

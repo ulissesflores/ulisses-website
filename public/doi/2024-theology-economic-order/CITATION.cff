@@ -1,0 +1,33 @@
+cff-version: 1.2.0
+message: "If you use this work, please cite it using the metadata from this file."
+title: "Fundamentos Transcendentes da Ordem Econômica"
+type: article
+authors:
+  - family-names: "Flores Ribeiro"
+    given-names: "Carlos Ulisses"
+    orcid: "0000-0002-6034-7765"
+doi: "10.5281/zenodo.202417"
+identifiers:
+  - type: url
+    value: "https://ulissesflores.com/essays/2024-theology-economic-order"
+  - type: url
+    value: "https://ulissesflores.com/essays/2024-theology-economic-order.pdf"
+abstract: "Ensaio sobre fundamentos transcendentes da ordem economica e sua relacao com normatividade moral. O problema central investigado e: Modelos puramente tecnocráticos tendem a negligenciar pressupostos antropologicos e eticos da cooperacao social. Adotou-se um desenho metodologico com foco em validade interna, comparabilidade e reproducibilidade: Analise conceitual interdisciplinar entre teologia, filosofia moral e teoria economica. Os resultados principais indicam que o texto demonstra que categorias de responsabilidade e dignidade influenciam desenho institucional e incentivos.. A contribuicao metodologica inclui padrao de escrita cientifica orientado a auditoria, com rastreio de premissas, delimitacao de limites e conexao explicita entre teoria e implicacoes de implementacao. O objetivo deste trabalho e avaliar de forma estruturada como \"Fundamentos Transcendentes da Ordem Econômica\" pode gerar valor cientifico e operacional com rastreabilidade metodologica. Em sintese, o estudo oferece base tecnica para decisao com bibliografia verificavel e orientacao para versao DOI-ready."
+keywords: ["Teologia", "Humanidades", "Historia", "THEOLOGY", "ECONOMIC", "ORDER"]
+license: "CC-BY-4.0"
+version: "v2026-02-21"
+date-released: "2024-01-01"
+repository-code: "https://ulissesflores.com/essays/2024-theology-economic-order"
+references:
+  - unstructured: "Augustine. The City of God."
+    url: "https://www.newadvent.org/fathers/1201.htm"
+  - unstructured: "Aquinas, T. Summa Theologiae."
+    url: "https://www.newadvent.org/summa/"
+  - unstructured: "Ropke, W. (1960). A Humane Economy."
+    url: "https://isi.org/books/a-humane-economy/"
+  - unstructured: "Weber, M. (1905). The Protestant Ethic and the Spirit of Capitalism."
+    url: "https://www.marxists.org/reference/archive/weber/protestant-ethic/"
+  - unstructured: "Novak, M. (1982). The Spirit of Democratic Capitalism."
+    url: "https://www.basicbooks.com/titles/michael-novak/the-spirit-of-democratic-capitalism/9781594035883/"
+  - unstructured: "McCloskey, D. (2006). The Bourgeois Virtues."
+    url: "https://press.uchicago.edu/ucp/books/book/chicago/B/bo3684036.html"

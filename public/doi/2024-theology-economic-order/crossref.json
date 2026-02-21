@@ -1,0 +1,58 @@
+{
+  "schema": "https://data.crossref.org/schemas/crossref_input.json",
+  "type": "article",
+  "title": "Fundamentos Transcendentes da Ordem Econômica",
+  "abstract": "Ensaio sobre fundamentos transcendentes da ordem economica e sua relacao com normatividade moral. O problema central investigado e: Modelos puramente tecnocráticos tendem a negligenciar pressupostos antropologicos e eticos da cooperacao social. Adotou-se um desenho metodologico com foco em validade interna, comparabilidade e reproducibilidade: Analise conceitual interdisciplinar entre teologia, filosofia moral e teoria economica. Os resultados principais indicam que o texto demonstra que categorias de responsabilidade e dignidade influenciam desenho institucional e incentivos.. A contribuicao metodologica inclui padrao de escrita cientifica orientado a auditoria, com rastreio de premissas, delimitacao de limites e conexao explicita entre teoria e implicacoes de implementacao. O objetivo deste trabalho e avaliar de forma estruturada como \"Fundamentos Transcendentes da Ordem Econômica\" pode gerar valor cientifico e operacional com rastreabilidade metodologica. Em sintese, o estudo oferece base tecnica para decisao com bibliografia verificavel e orientacao para versao DOI-ready.",
+  "authors": [
+    {
+      "given": "Carlos Ulisses",
+      "family": "Flores Ribeiro",
+      "ORCID": "https://orcid.org/0000-0002-6034-7765",
+      "affiliation": "Codex Hash Research"
+    }
+  ],
+  "issued": "2024-01-01",
+  "language": "pt-BR",
+  "URL": "https://ulissesflores.com/essays/2024-theology-economic-order",
+  "resource": {
+    "primary": {
+      "URL": "https://ulissesflores.com/essays/2024-theology-economic-order"
+    },
+    "pdf": {
+      "URL": "https://ulissesflores.com/essays/2024-theology-economic-order.pdf"
+    }
+  },
+  "reference": [
+    {
+      "key": "2024-theology-economic-order-ref-1",
+      "unstructured": "Augustine. The City of God.",
+      "URL": "https://www.newadvent.org/fathers/1201.htm"
+    },
+    {
+      "key": "2024-theology-economic-order-ref-2",
+      "unstructured": "Aquinas, T. Summa Theologiae.",
+      "URL": "https://www.newadvent.org/summa/"
+    },
+    {
+      "key": "2024-theology-economic-order-ref-3",
+      "unstructured": "Ropke, W. (1960). A Humane Economy.",
+      "URL": "https://isi.org/books/a-humane-economy/"
+    },
+    {
+      "key": "2024-theology-economic-order-ref-4",
+      "unstructured": "Weber, M. (1905). The Protestant Ethic and the Spirit of Capitalism.",
+      "URL": "https://www.marxists.org/reference/archive/weber/protestant-ethic/"
+    },
+    {
+      "key": "2024-theology-economic-order-ref-5",
+      "unstructured": "Novak, M. (1982). The Spirit of Democratic Capitalism.",
+      "URL": "https://www.basicbooks.com/titles/michael-novak/the-spirit-of-democratic-capitalism/9781594035883/"
+    },
+    {
+      "key": "2024-theology-economic-order-ref-6",
+      "unstructured": "McCloskey, D. (2006). The Bourgeois Virtues.",
+      "URL": "https://press.uchicago.edu/ucp/books/book/chicago/B/bo3684036.html"
+    }
+  ],
+  "DOI": "10.5281/zenodo.202417"
+}

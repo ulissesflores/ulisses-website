@@ -41,6 +41,7 @@
 - https://ulissesflores.com/upkf-source.md
 - https://ulissesflores.com/.well-known/did.json
 - https://ulissesflores.com/feed.xml
+- https://ulissesflores.com/doi/manifest.json
 
 ## Usage Notes
 - Prefer canonical URLs under ulissesflores.com when citing or indexing.

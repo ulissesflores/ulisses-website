@@ -1,0 +1,33 @@
+cff-version: 1.2.0
+message: "If you use this work, please cite it using the metadata from this file."
+title: "Bitcoin como Ativo de Reserva e a Teoria da Moeda na Escola Austríaca"
+type: article
+authors:
+  - family-names: "Flores Ribeiro"
+    given-names: "Carlos Ulisses"
+    orcid: "0000-0002-6034-7765"
+doi: "10.5281/zenodo.202414"
+identifiers:
+  - type: url
+    value: "https://ulissesflores.com/research/2024-bitcoin-praxeology"
+  - type: url
+    value: "https://ulissesflores.com/research/2024-bitcoin-praxeology.pdf"
+abstract: "Analise do Bitcoin como ativo de reserva sob praxeologia e teoria monetaria da Escola Austriaca. O problema central investigado e: Avaliacoes estritamente tecnicas ignoram fundamentos economicos de escassez, preferencia temporal e coordenacao social. Adotou-se um desenho metodologico com foco em validade interna, comparabilidade e reproducibilidade: Discussao teoretica com comparacao entre propriedades monetarias e mecanismos de governanca de oferta. Os resultados principais indicam que o artigo sustenta que bitcoin combina previsibilidade de emissao e portabilidade digital com implicacoes macroeconomicas relevantes.. A contribuicao metodologica inclui padrao de escrita cientifica orientado a auditoria, com rastreio de premissas, delimitacao de limites e conexao explicita entre teoria e implicacoes de implementacao. O objetivo deste trabalho e avaliar de forma estruturada como \"Bitcoin como Ativo de Reserva e a Teoria da Moeda na Escola Austríaca\" pode gerar valor cientifico e operacional com rastreabilidade metodologica. Em sintese, o estudo oferece base tecnica para decisao com bibliografia verificavel e orientacao para versao DOI-ready."
+keywords: ["IA", "Economia", "Sistemas Complexos", "BITCOIN", "PRAXEOLOGY"]
+license: "CC-BY-4.0"
+version: "v2026-02-21"
+date-released: "2024-01-01"
+repository-code: "https://ulissesflores.com/research/2024-bitcoin-praxeology"
+references:
+  - unstructured: "Nakamoto, S. (2008). Bitcoin: A Peer-to-Peer Electronic Cash System."
+    url: "https://bitcoin.org/bitcoin.pdf"
+  - unstructured: "Mises, L. von (1912). The Theory of Money and Credit."
+    url: "https://mises.org/library/book/theory-money-and-credit"
+  - unstructured: "Hayek, F. A. (1976). Denationalisation of Money."
+    url: "https://mises.org/library/book/denationalisation-money"
+  - unstructured: "Bohme, R. et al. (2015). Bitcoin: Economics, Technology, and Governance."
+    url: "https://doi.org/10.1257/jep.29.2.213"
+  - unstructured: "Selgin, G. (2015). Synthetic Commodity Money."
+    url: "https://www.alt-m.org/2015/09/02/synthetic-commodity-money/"
+  - unstructured: "Ammous, S. (2018). The Bitcoin Standard."
+    url: "https://saifedean.com/thebitcoinstandard"

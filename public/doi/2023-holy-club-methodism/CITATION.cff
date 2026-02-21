@@ -1,0 +1,33 @@
+cff-version: 1.2.0
+message: "If you use this work, please cite it using the metadata from this file."
+title: "O Clube Santo: Arqueologia Espiritual, Teológica e Visual do Metodismo"
+type: article
+authors:
+  - family-names: "Flores Ribeiro"
+    given-names: "Carlos Ulisses"
+    orcid: "0000-0002-6034-7765"
+doi: "10.5281/zenodo.202329"
+identifiers:
+  - type: url
+    value: "https://ulissesflores.com/research/2023-holy-club-methodism"
+  - type: url
+    value: "https://ulissesflores.com/research/2023-holy-club-methodism.pdf"
+abstract: "Investigacao arqueologica espiritual, teologica e visual do Holy Club e suas implicacoes para o metodismo. O problema central investigado e: A memoria do movimento metodista inicial e frequentemente reduzida a narrativas lineares e pouco contextualizadas. Adotou-se um desenho metodologico com foco em validade interna, comparabilidade e reproducibilidade: Leitura historica interdisciplinar com fontes primarias, iconografia e tradicao institucional. Os resultados principais indicam que o estudo reconstrói redes de praticas formativas e disciplina comunitaria no contexto original.. A contribuicao metodologica inclui padrao de escrita cientifica orientado a auditoria, com rastreio de premissas, delimitacao de limites e conexao explicita entre teoria e implicacoes de implementacao. O objetivo deste trabalho e avaliar de forma estruturada como \"O Clube Santo: Arqueologia Espiritual, Teológica e Visual do Metodismo\" pode gerar valor cientifico e operacional com rastreabilidade metodologica. Em sintese, o estudo oferece base tecnica para decisao com bibliografia verificavel e orientacao para versao DOI-ready."
+keywords: ["IA", "Economia", "Sistemas Complexos", "HOLY", "CLUB", "METHODISM"]
+license: "CC-BY-4.0"
+version: "v2026-02-21"
+date-released: "2023-01-01"
+repository-code: "https://ulissesflores.com/research/2023-holy-club-methodism"
+references:
+  - unstructured: "Wesley, J. The Journal of John Wesley."
+    url: "https://wesley.nnu.edu/john-wesley/the-journal-of-john-wesley/"
+  - unstructured: "Heitzenrater, R. P. (2013). Wesley and the People Called Methodists."
+    url: "https://www.abingdonpress.com/product/9781426775642"
+  - unstructured: "Hempton, D. (2005). Methodism: Empire of the Spirit."
+    url: "https://yalebooks.yale.edu/book/9780300106149/methodism/"
+  - unstructured: "Maddox, R. L. (1994). Responsible Grace."
+    url: "https://www.abingdonpress.com/product/9780687467426"
+  - unstructured: "Outler, A. C. (1964). John Wesley."
+    url: "https://global.oup.com/academic/product/john-wesley-9780195028102"
+  - unstructured: "Oxford Handbook of Methodist Studies."
+    url: "https://academic.oup.com/edited-volume/34318"

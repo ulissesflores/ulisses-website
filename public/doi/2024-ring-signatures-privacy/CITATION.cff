@@ -1,0 +1,33 @@
+cff-version: 1.2.0
+message: "If you use this work, please cite it using the metadata from this file."
+title: "Implementação de Ring Signatures e Endereços Furtivos"
+type: article
+authors:
+  - family-names: "Flores Ribeiro"
+    given-names: "Carlos Ulisses"
+    orcid: "0000-0002-6034-7765"
+doi: "10.5281/zenodo.202418"
+identifiers:
+  - type: url
+    value: "https://ulissesflores.com/whitepapers/2024-ring-signatures-privacy"
+  - type: url
+    value: "https://ulissesflores.com/whitepapers/2024-ring-signatures-privacy.pdf"
+abstract: "Whitepaper sobre ring signatures e enderecos furtivos para privacidade transacional em sistemas distribuidos. O problema central investigado e: Transparencia absoluta em blockchains publicas pode expor metadados sensiveis e comprometer fungibilidade. Adotou-se um desenho metodologico com foco em validade interna, comparabilidade e reproducibilidade: Revisao de primitives criptograficas com analise de seguranca, custos computacionais e requisitos de implementacao. Os resultados principais indicam que a combinacao de assinaturas em anel e stealth addresses melhora privacidade sem eliminar verificabilidade criptografica.. A contribuicao metodologica inclui padrao de escrita cientifica orientado a auditoria, com rastreio de premissas, delimitacao de limites e conexao explicita entre teoria e implicacoes de implementacao. O objetivo deste trabalho e avaliar de forma estruturada como \"Implementação de Ring Signatures e Endereços Furtivos\" pode gerar valor cientifico e operacional com rastreabilidade metodologica. Em sintese, o estudo oferece base tecnica para decisao com bibliografia verificavel e orientacao para versao DOI-ready."
+keywords: ["Engenharia", "IoT", "Seguranca", "RING", "SIGNATURES", "PRIVACY"]
+license: "CC-BY-4.0"
+version: "v2026-02-21"
+date-released: "2024-01-01"
+repository-code: "https://ulissesflores.com/whitepapers/2024-ring-signatures-privacy"
+references:
+  - unstructured: "Rivest, R.; Shamir, A.; Tauman, Y. (2001). How to Leak a Secret."
+    url: "https://doi.org/10.1007/3-540-45682-1_32"
+  - unstructured: "Franklin, M.; Zhang, H. (2012). A framework for unique ring signatures."
+    url: "https://doi.org/10.1007/978-3-642-28914-9_6"
+  - unstructured: "Noether, S. (2015). Ring Confidential Transactions."
+    url: "https://eprint.iacr.org/2015/1098"
+  - unstructured: "Monero Research Lab publications."
+    url: "https://www.getmonero.org/resources/research-lab/"
+  - unstructured: "NIST SP 800-56A Rev. 3."
+    url: "https://doi.org/10.6028/NIST.SP.800-56Ar3"
+  - unstructured: "Ruffing, T.; Moreno-Sanchez, P.; Kate, A. (2017). CoinShuffle++."
+    url: "https://doi.org/10.1109/EuroSP.2017.47"

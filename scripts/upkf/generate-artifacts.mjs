@@ -1939,6 +1939,7 @@ function buildUrlInventory(upkfText, publications, websiteUrl, knowledgeData) {
   add(`${websiteUrl}/sitemap-resources.xml`);
   add(`${websiteUrl}/llms.txt`);
   add(`${websiteUrl}/llms-full.txt`);
+  add(`${websiteUrl}/doi/manifest.json`);
 
   if (knowledgeData) {
     knowledgeData.certifications.forEach((certification) => add(`${websiteUrl}${certification.canonicalPath}`));
@@ -2633,6 +2634,7 @@ function buildLlmsTxt(identity, publications, generatedAt, knowledgeData) {
     `- ${siteUrl}/upkf-source.md`,
     `- ${siteUrl}/.well-known/did.json`,
     `- ${siteUrl}/feed.xml`,
+    `- ${siteUrl}/doi/manifest.json`,
     '',
     '## Usage Notes',
     '- Prefer canonical URLs under ulissesflores.com when citing or indexing.',
@@ -2684,6 +2686,7 @@ function buildLlmsFullTxt(identity, publications, generatedAt, knowledgeData) {
   lines.push(`- ${siteUrl}/sitemap.xml`);
   lines.push(`- ${siteUrl}/sitemap-resources.xml`);
   lines.push(`- ${siteUrl}/feed.xml`);
+  lines.push(`- ${siteUrl}/doi/manifest.json`);
   lines.push('');
   lines.push('## Certifications');
   knowledgeData.certifications.forEach((certification) => {
@@ -2858,6 +2861,304 @@ function buildProjectQualityMarkdown(report) {
   return `${lines.join('\n')}\n`;
 }
 
+function htmlEscape(value) {
+  return String(value || '')
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
+
+function scoreDoiReadinessItem(item) {
+  const requiredFields = [
+    item.slug,
+    item.title,
+    item.canonicalUrl,
+    item.pdfUrl,
+    item.publishedAt,
+    item.language,
+    item.version,
+    item.license,
+    item.creators?.[0]?.name,
+    item.creators?.[0]?.orcid,
+  ];
+
+  const completenessScore = clampScore(
+    (requiredFields.filter(Boolean).length / requiredFields.length) * 1000,
+  );
+
+  const referencesCount = Array.isArray(item.references) ? item.references.length : 0;
+  const referencesWithUrl = item.references.filter((reference) => Boolean(reference.url)).length;
+  const referencesScore = clampScore(
+    Math.min(1, referencesCount / 6) * 700 + Math.min(1, referencesWithUrl / 6) * 300,
+  );
+
+  const identifierSignals =
+    (item.canonicalUrl.startsWith('https://ulissesflores.com/') ? 1 : 0) +
+    (item.pdfUrl.startsWith('https://ulissesflores.com/') ? 1 : 0) +
+    (item.cffPath.startsWith('/doi/') ? 1 : 0) +
+    (item.zenodoPath.startsWith('/doi/') ? 1 : 0) +
+    (item.crossrefPath.startsWith('/doi/') ? 1 : 0);
+  const identifierScore = clampScore((identifierSignals / 5) * 1000);
+
+  const workflowSignals =
+    (item.zenodoMetadata?.metadata?.upload_type === 'publication' ? 1 : 0) +
+    (Boolean(item.zenodoMetadata?.metadata?.publication_type) ? 1 : 0) +
+    (Array.isArray(item.zenodoMetadata?.metadata?.related_identifiers) ? 1 : 0) +
+    (Boolean(item.crossrefMetadata?.title) ? 1 : 0) +
+    (Array.isArray(item.crossrefMetadata?.authors) ? 1 : 0);
+  const workflowScore = clampScore((workflowSignals / 5) * 1000);
+
+  const cffSignals =
+    (item.citationCff.includes('cff-version: 1.2.0') ? 1 : 0) +
+    (item.citationCff.includes('doi:') ? 1 : 0) +
+    (item.citationCff.includes('authors:') ? 1 : 0) +
+    (item.citationCff.includes('references:') ? 1 : 0);
+  const cffScore = clampScore((cffSignals / 4) * 1000);
+
+  const finalScore = clampScore(
+    (completenessScore + referencesScore + identifierScore + workflowScore + cffScore) / 5,
+  );
+
+  return {
+    completenessScore,
+    referencesScore,
+    identifierScore,
+    workflowScore,
+    cffScore,
+    finalScore,
+  };
+}
+
+function buildPublicationType(publication) {
+  if (publication.kind === 'R') {
+    return 'report';
+  }
+  if (publication.category === 'essays') {
+    return 'article';
+  }
+  return 'article';
+}
+
+function buildDoiTarget(publication) {
+  return `10.5281/zenodo.${publication.date}${publication.ordinal.toString().padStart(2, '0')}`;
+}
+
+function buildCitationCff(item, generatedAt) {
+  const referencesBlock = item.references
+    .map((reference) => {
+      const parts = [`  - unstructured: "${reference.citation.replace(/"/g, '\\"')}"`];
+      if (reference.url) {
+        parts.push(`    url: "${reference.url}"`);
+      }
+      return parts.join('\n');
+    })
+    .join('\n');
+
+  return `cff-version: 1.2.0
+message: "If you use this work, please cite it using the metadata from this file."
+title: "${item.title.replace(/"/g, '\\"')}"
+type: article
+authors:
+  - family-names: "${item.creators[0].familyName}"
+    given-names: "${item.creators[0].givenName}"
+    orcid: "${item.creators[0].orcid}"
+doi: "${item.doiTarget}"
+identifiers:
+  - type: url
+    value: "${item.canonicalUrl}"
+  - type: url
+    value: "${item.pdfUrl}"
+abstract: "${item.abstract.replace(/\s+/g, ' ').replace(/"/g, '\\"')}"
+keywords: [${item.keywords.map((keyword) => `"${keyword}"`).join(', ')}]
+license: "${item.license}"
+version: "${item.version}"
+date-released: "${generatedAt}"
+repository-code: "${item.canonicalUrl}"
+references:
+${referencesBlock}
+`;
+}
+
+function buildDoiReadyPackage(publications, identity, generatedAt) {
+  const creator = {
+    name: 'Flores, Carlos Ulisses',
+    givenName: 'Carlos Ulisses',
+    familyName: 'Flores Ribeiro',
+    affiliation: 'Codex Hash Research',
+    orcid: identity.orcid || '0000-0002-6034-7765',
+  };
+
+  const items = publications.map((publication) => {
+    const publicationType = buildPublicationType(publication);
+    const doiTarget = buildDoiTarget(publication);
+    const references = publication.sections.references.map((reference) => ({
+      citation: reference.citation,
+      url: reference.url || '',
+    }));
+    const canonicalUrl = publication.canonicalUrl;
+    const pdfUrl = `https://ulissesflores.com${publication.downloadUrl}`;
+    const version = `v${generatedAt}`;
+    const descriptionHtml = `<p>${htmlEscape(publication.sections.abstract)}</p>`;
+    const cffPath = `/doi/${publication.id}/CITATION.cff`;
+    const zenodoPath = `/doi/${publication.id}/zenodo.json`;
+    const crossrefPath = `/doi/${publication.id}/crossref.json`;
+
+    const zenodoMetadata = {
+      metadata: {
+        title: publication.title,
+        upload_type: 'publication',
+        publication_type: publicationType,
+        publication_date: publication.publishedAt,
+        description: descriptionHtml,
+        creators: [
+          {
+            name: creator.name,
+            affiliation: creator.affiliation,
+            orcid: creator.orcid,
+          },
+        ],
+        keywords: publication.tags,
+        language: publication.inLanguage,
+        references: references.map((reference) =>
+          reference.url ? `${reference.citation} (${reference.url})` : reference.citation,
+        ),
+        related_identifiers: [
+          {
+            identifier: canonicalUrl,
+            relation: 'isSupplementTo',
+            resource_type: 'publication-article',
+          },
+          {
+            identifier: pdfUrl,
+            relation: 'isIdenticalTo',
+            resource_type: 'publication-article',
+          },
+        ],
+        version,
+        notes:
+          'DOI-ready metadata generated automatically from the canonical UPKF publication dataset.',
+        license: 'CC-BY-4.0',
+      },
+    };
+
+    const crossrefMetadata = {
+      schema: 'https://data.crossref.org/schemas/crossref_input.json',
+      type: publicationType,
+      title: publication.title,
+      abstract: publication.sections.abstract,
+      authors: [
+        {
+          given: creator.givenName,
+          family: creator.familyName,
+          ORCID: `https://orcid.org/${creator.orcid}`,
+          affiliation: creator.affiliation,
+        },
+      ],
+      issued: publication.publishedAt,
+      language: publication.inLanguage,
+      URL: canonicalUrl,
+      resource: {
+        primary: {
+          URL: canonicalUrl,
+        },
+        pdf: {
+          URL: pdfUrl,
+        },
+      },
+      reference: references.map((reference, index) => ({
+        key: `${publication.id}-ref-${index + 1}`,
+        unstructured: reference.citation,
+        DOI: reference.url.startsWith('https://doi.org/')
+          ? reference.url.replace('https://doi.org/', '')
+          : undefined,
+        URL: reference.url || undefined,
+      })),
+      DOI: doiTarget,
+    };
+
+    const item = {
+      slug: publication.id,
+      title: publication.title,
+      category: publication.category,
+      publicationType,
+      kind: publication.kind,
+      publishedAt: publication.publishedAt,
+      language: publication.inLanguage,
+      canonicalUrl,
+      pdfUrl,
+      doiTarget,
+      version,
+      license: 'CC-BY-4.0',
+      creators: [creator],
+      keywords: publication.tags,
+      abstract: publication.sections.abstract,
+      references,
+      cffPath,
+      zenodoPath,
+      crossrefPath,
+      zenodoMetadata,
+      crossrefMetadata,
+      citationCff: '',
+    };
+
+    const citationCff = buildCitationCff(item, publication.publishedAt);
+    item.citationCff = citationCff;
+    item.score = scoreDoiReadinessItem(item);
+    item.approved = item.score.finalScore >= 950;
+
+    return item;
+  });
+
+  const taskScore = clampScore(
+    items.reduce((sum, item) => sum + item.score.finalScore, 0) / Math.max(1, items.length),
+  );
+  const threshold = 950;
+  const pending = items.filter((item) => !item.approved).map((item) => item.slug);
+
+  return {
+    generatedAt,
+    threshold,
+    taskScore,
+    approved: taskScore >= threshold && pending.length === 0,
+    pending,
+    items,
+  };
+}
+
+function buildDoiReadyMarkdown(doiReady) {
+  const lines = [
+    '# DOI Ready Report (Generated)',
+    '',
+    `- Generated at: ${doiReady.generatedAt}`,
+    `- Threshold: ${doiReady.threshold}`,
+    `- Task score: ${doiReady.taskScore}/1000`,
+    `- Approved: ${doiReady.approved ? 'yes' : 'no'}`,
+    '',
+    '## Per-Article Score',
+    '',
+    '| Slug | Completeness | References | Identifiers | Workflow | CFF | Final | Approved |',
+    '|:--|--:|--:|--:|--:|--:|--:|:--:|',
+    ...doiReady.items.map(
+      (item) =>
+        `| ${item.slug} | ${item.score.completenessScore} | ${item.score.referencesScore} | ${item.score.identifierScore} | ${item.score.workflowScore} | ${item.score.cffScore} | ${item.score.finalScore} | ${item.approved ? 'yes' : 'no'} |`,
+    ),
+    '',
+  ];
+
+  if (doiReady.pending.length > 0) {
+    lines.push('## Pending');
+    lines.push(...doiReady.pending.map((slug) => `- ${slug}`));
+  } else {
+    lines.push('## Pending');
+    lines.push('- None');
+  }
+
+  lines.push('');
+  return `${lines.join('\n')}\n`;
+}
+
 function writeGeneratedFiles({
   sourcePath,
   upkfText,
@@ -2872,6 +3173,7 @@ function writeGeneratedFiles({
   generatedAt,
   coverage,
   projectQualityReport,
+  doiReady,
 }) {
   ensureDir(GENERATED_DIR);
   ensureDir(DOCS_DIR);
@@ -2936,6 +3238,8 @@ function writeGeneratedFiles({
     path.join(DOCS_DIR, 'article-quality.generated.md'),
     buildProjectQualityMarkdown(projectQualityReport),
   );
+  fs.writeFileSync(path.join(DOCS_DIR, 'doi-ready.generated.json'), JSON.stringify(doiReady, null, 2));
+  fs.writeFileSync(path.join(DOCS_DIR, 'doi-ready.generated.md'), buildDoiReadyMarkdown(doiReady));
 
   const siteJson = JSON.stringify(siteJsonLd, null, 2);
   const publicJson = JSON.stringify(publicJsonLd, null, 2);
@@ -2949,6 +3253,16 @@ function writeGeneratedFiles({
   fs.writeFileSync(path.join(PUBLIC_DIR, 'upkf-source.md'), upkfText);
   fs.writeFileSync(path.join(PUBLIC_DIR, 'llms.txt'), llmsTxt);
   fs.writeFileSync(path.join(PUBLIC_DIR, 'llms-full.txt'), llmsFullTxt);
+  ensureDir(path.join(PUBLIC_DIR, 'doi'));
+  fs.writeFileSync(path.join(PUBLIC_DIR, 'doi', 'manifest.json'), JSON.stringify(doiReady, null, 2));
+
+  for (const item of doiReady.items) {
+    const itemDir = path.join(PUBLIC_DIR, 'doi', item.slug);
+    ensureDir(itemDir);
+    fs.writeFileSync(path.join(itemDir, 'zenodo.json'), JSON.stringify(item.zenodoMetadata, null, 2));
+    fs.writeFileSync(path.join(itemDir, 'crossref.json'), JSON.stringify(item.crossrefMetadata, null, 2));
+    fs.writeFileSync(path.join(itemDir, 'CITATION.cff'), item.citationCff);
+  }
 }
 
 function main() {
@@ -2978,6 +3292,7 @@ function main() {
   publications = attachTranslations(publications, translations);
   const knowledgeData = buildKnowledgeData(certifications, blogPosts, sermons, generatedAt);
   const projectQualityReport = buildProjectQualityReport(publications, generatedAt);
+  const doiReady = buildDoiReadyPackage(publications, identity, generatedAt);
 
   const createdPdfs = publications
     .map((publication) => ensureTemporaryPdf(publication, identity, generatedAt))
@@ -3050,6 +3365,7 @@ function main() {
     generatedAt,
     coverage,
     projectQualityReport,
+    doiReady,
   });
 
   const report = {
@@ -3072,6 +3388,11 @@ function main() {
       projectScore: projectQualityReport.projectScore,
       threshold: projectQualityReport.threshold,
       approvedSota: projectQualityReport.approvedSota,
+    },
+    doiReady: {
+      taskScore: doiReady.taskScore,
+      threshold: doiReady.threshold,
+      approved: doiReady.approved,
     },
     siteJsonldBytes: coverage.siteJsonldBytes,
     publicJsonldBytes: coverage.publicJsonldBytes,

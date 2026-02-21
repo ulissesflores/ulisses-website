@@ -1,0 +1,33 @@
+cff-version: 1.2.0
+message: "If you use this work, please cite it using the metadata from this file."
+title: "Transformação Ágil e Engenharia de Fluxo em Data Science"
+type: article
+authors:
+  - family-names: "Flores Ribeiro"
+    given-names: "Carlos Ulisses"
+    orcid: "0000-0002-6034-7765"
+doi: "10.5281/zenodo.202423"
+identifiers:
+  - type: url
+    value: "https://ulissesflores.com/whitepapers/2024-agritech-agile-flow"
+  - type: url
+    value: "https://ulissesflores.com/whitepapers/2024-agritech-agile-flow.pdf"
+abstract: "Whitepaper sobre transformacao agil e engenharia de fluxo em contextos agritech orientados a dados. O problema central investigado e: Projetos agritechs sofrem com sazonalidade, variabilidade operacional e baixa sincronizacao entre produto e campo. Adotou-se um desenho metodologico com foco em validade interna, comparabilidade e reproducibilidade: Aplicacao de metricas de fluxo, mapeamento de cadeia de valor e ciclos de melhoria orientados por evidencia. Os resultados principais indicam que a governanca por fluxo eleva previsibilidade de entrega e reduz retrabalho em times multidisciplinares.. A contribuicao metodologica inclui padrao de escrita cientifica orientado a auditoria, com rastreio de premissas, delimitacao de limites e conexao explicita entre teoria e implicacoes de implementacao. O objetivo deste trabalho e avaliar de forma estruturada como \"Transformação Ágil e Engenharia de Fluxo em Data Science\" pode gerar valor cientifico e operacional com rastreabilidade metodologica. Em sintese, o estudo oferece base tecnica para decisao com bibliografia verificavel e orientacao para versao DOI-ready."
+keywords: ["Engenharia", "IoT", "Seguranca", "AGRITECH", "AGILE", "FLOW"]
+license: "CC-BY-4.0"
+version: "v2026-02-21"
+date-released: "2024-01-01"
+repository-code: "https://ulissesflores.com/whitepapers/2024-agritech-agile-flow"
+references:
+  - unstructured: "Reinertsen, D. (2009). The Principles of Product Development Flow."
+    url: "https://www.celerity.com/books/product-development-flow-second-generation-lean-product-development/"
+  - unstructured: "Forsgren, N.; Humble, J.; Kim, G. (2018). Accelerate."
+    url: "https://itrevolution.com/product/accelerate/"
+  - unstructured: "Rother, M.; Shook, J. (1999). Learning to See."
+    url: "https://www.lean.org/lexicon-terms/learning-to-see/"
+  - unstructured: "FAO (2022). The State of Food and Agriculture: Leveraging automation."
+    url: "https://www.fao.org/3/cb9479en/cb9479en.pdf"
+  - unstructured: "OECD (2019). Digital Opportunities for Better Agricultural Policies."
+    url: "https://www.oecd.org/agriculture/topics/agricultural-policy-monitoring-and-evaluation/"
+  - unstructured: "Project Management Institute. Agile Practice Guide."
+    url: "https://www.pmi.org/pmbok-guide-standards/practice-guides/agile"

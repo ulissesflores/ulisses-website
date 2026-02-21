@@ -1,0 +1,58 @@
+{
+  "schema": "https://data.crossref.org/schemas/crossref_input.json",
+  "type": "article",
+  "title": "Análise Historiográfica e Arqueológica Exaustiva: A Historicidade de Jesus",
+  "abstract": "Pesquisa historiografica sobre historicidade de Jesus combinando critica textual, fontes antigas e evidencias arqueologicas. O problema central investigado e: Debates publicos misturam categorias teologicas e historicas sem separacao metodologica rigorosa. Adotou-se um desenho metodologico com foco em validade interna, comparabilidade e reproducibilidade: Revisao historico-critica de fontes primarias e secundarias com avaliacao de contexto, autoria e data. Os resultados principais indicam que o estudo delimita consenso academico minimo e identifica zonas de alta e baixa confianca documental.. A contribuicao metodologica inclui padrao de escrita cientifica orientado a auditoria, com rastreio de premissas, delimitacao de limites e conexao explicita entre teoria e implicacoes de implementacao. O objetivo deste trabalho e avaliar de forma estruturada como \"Análise Historiográfica e Arqueológica Exaustiva: A Historicidade de Jesus\" pode gerar valor cientifico e operacional com rastreabilidade metodologica. Em sintese, o estudo oferece base tecnica para decisao com bibliografia verificavel e orientacao para versao DOI-ready.",
+  "authors": [
+    {
+      "given": "Carlos Ulisses",
+      "family": "Flores Ribeiro",
+      "ORCID": "https://orcid.org/0000-0002-6034-7765",
+      "affiliation": "Codex Hash Research"
+    }
+  ],
+  "issued": "2024-01-01",
+  "language": "pt-BR",
+  "URL": "https://ulissesflores.com/research/2024-historicity-jesus-archaeology",
+  "resource": {
+    "primary": {
+      "URL": "https://ulissesflores.com/research/2024-historicity-jesus-archaeology"
+    },
+    "pdf": {
+      "URL": "https://ulissesflores.com/research/2024-historicity-jesus-archaeology.pdf"
+    }
+  },
+  "reference": [
+    {
+      "key": "2024-historicity-jesus-archaeology-ref-1",
+      "unstructured": "Ehrman, B. D. (2012). Did Jesus Exist?",
+      "URL": "https://global.oup.com/academic/product/did-jesus-exist-9780062206442"
+    },
+    {
+      "key": "2024-historicity-jesus-archaeology-ref-2",
+      "unstructured": "Sanders, E. P. (1993). The Historical Figure of Jesus.",
+      "URL": "https://www.penguinrandomhouse.com/books/322275/the-historical-figure-of-jesus-by-e-p-sanders/"
+    },
+    {
+      "key": "2024-historicity-jesus-archaeology-ref-3",
+      "unstructured": "Meier, J. P. (1991-2016). A Marginal Jew.",
+      "URL": "https://yalebooks.yale.edu/book/9780300140181/a-marginal-jew/"
+    },
+    {
+      "key": "2024-historicity-jesus-archaeology-ref-4",
+      "unstructured": "Vermes, G. (2001). The Changing Faces of Jesus.",
+      "URL": "https://www.penguin.co.uk/books/35040/the-changing-faces-of-jesus-by-geza-vermes/9780140287844"
+    },
+    {
+      "key": "2024-historicity-jesus-archaeology-ref-5",
+      "unstructured": "Josephus. Antiquities of the Jews, Book 18.",
+      "URL": "https://www.perseus.tufts.edu/hopper/text?doc=J.+AJ+18"
+    },
+    {
+      "key": "2024-historicity-jesus-archaeology-ref-6",
+      "unstructured": "Tacitus. Annals, Book 15.",
+      "URL": "https://www.perseus.tufts.edu/hopper/text?doc=Tac.+Ann.+15"
+    }
+  ],
+  "DOI": "10.5281/zenodo.202412"
+}

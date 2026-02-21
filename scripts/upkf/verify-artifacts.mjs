@@ -61,6 +61,9 @@ function main() {
     did: path.join(publicDir, '.well-known', 'did.json'),
     articleQualityJson: path.join(docsDir, 'article-quality.generated.json'),
     articleQualityMd: path.join(docsDir, 'article-quality.generated.md'),
+    doiReadyJson: path.join(docsDir, 'doi-ready.generated.json'),
+    doiReadyMd: path.join(docsDir, 'doi-ready.generated.md'),
+    doiManifest: path.join(publicDir, 'doi', 'manifest.json'),
   };
 
   const checks = [];
@@ -87,6 +90,7 @@ function main() {
   const fullJson = readJson(files.full);
   const didJson = readJson(files.did);
   const articleQuality = readJson(files.articleQualityJson);
+  const doiReady = readJson(files.doiReadyJson);
 
   const siteGraph = getGraph(siteJson);
   const publicGraph = getGraph(publicJson);
@@ -161,6 +165,14 @@ function main() {
     Array.isArray(articleQuality.articles) && articleQuality.articles.every((item) => item.finalScore >= 950),
     'Todos os artigos com score final >= 950',
   );
+  assert(checks, doiReady.threshold === 950, 'DOI-ready usa limiar minimo 950');
+  assert(checks, doiReady.taskScore >= 950, 'Score DOI-ready >= 950');
+  assert(
+    checks,
+    Array.isArray(doiReady.items) && doiReady.items.every((item) => item.score?.finalScore >= 950),
+    'Todos os pacotes DOI por artigo com score >= 950',
+  );
+  assert(checks, fs.existsSync(files.doiManifest), 'Manifesto DOI publico presente');
 
   const ok = checks.every((check) => check.ok);
   writeReport(checks, {
@@ -184,6 +196,7 @@ function main() {
     aluraCertifications: aluraCreds.length,
     sermons: sermonNodes.length,
     blogPosts: blogNodes.length,
+    doiReadyScore: doiReady.taskScore,
   };
 
   process.stdout.write(`${JSON.stringify(summary, null, 2)}\n`);

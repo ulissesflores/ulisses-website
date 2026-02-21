@@ -1,0 +1,33 @@
+cff-version: 1.2.0
+message: "If you use this work, please cite it using the metadata from this file."
+title: "A Lei de Little como Vetor de Resiliência e Qualidade"
+type: article
+authors:
+  - family-names: "Flores Ribeiro"
+    given-names: "Carlos Ulisses"
+    orcid: "0000-0002-6034-7765"
+doi: "10.5281/zenodo.202501"
+identifiers:
+  - type: url
+    value: "https://ulissesflores.com/research/2025-little-law-resilience"
+  - type: url
+    value: "https://ulissesflores.com/research/2025-little-law-resilience.pdf"
+abstract: "Estudo sobre aplicacao da Lei de Little para elevar previsibilidade de entrega e resiliencia em operacoes de Data Science. O problema central investigado e: A pesquisa enfrenta a combinacao de alto WIP, filas longas e baixa confiabilidade de prazo em pipelines complexos de IA. Adotou-se um desenho metodologico com foco em validade interna, comparabilidade e reproducibilidade: Abordagem analitico-experimental com simulacao de fluxo, comparando cenarios com e sem limite explicito de trabalho em progresso. Os resultados principais indicam que a evidencia indica reducao relevante de lead time sem perda material de throughput, reforcando a eficiencia da limitacao de wip.. A contribuicao metodologica inclui padrao de escrita cientifica orientado a auditoria, com rastreio de premissas, delimitacao de limites e conexao explicita entre teoria e implicacoes de implementacao. O objetivo deste trabalho e avaliar de forma estruturada como \"A Lei de Little como Vetor de Resiliência e Qualidade\" pode gerar valor cientifico e operacional com rastreabilidade metodologica. Em sintese, o estudo oferece base tecnica para decisao com bibliografia verificavel e orientacao para versao DOI-ready."
+keywords: ["IA", "Economia", "Sistemas Complexos", "LITTLE", "LAW", "RESILIENCE"]
+license: "CC-BY-4.0"
+version: "v2026-02-21"
+date-released: "2025-01-01"
+repository-code: "https://ulissesflores.com/research/2025-little-law-resilience"
+references:
+  - unstructured: "Little, J. D. C. (1961). A Proof for the Queueing Formula L = lambda W."
+    url: "https://doi.org/10.1287/opre.9.3.383"
+  - unstructured: "Kingman, J. F. C. (1961). The single server queue in heavy traffic."
+    url: "https://doi.org/10.1093/biomet/48.1-2.131"
+  - unstructured: "Anderson, D. J. (2010). Kanban."
+    url: "https://books.google.com/books?id=R6t_DwAAQBAJ"
+  - unstructured: "Reinertsen, D. (2009). The Principles of Product Development Flow."
+    url: "https://www.celerity.com/books/product-development-flow-second-generation-lean-product-development/"
+  - unstructured: "Forsgren, N.; Humble, J.; Kim, G. (2018). Accelerate."
+    url: "https://itrevolution.com/product/accelerate/"
+  - unstructured: "Hopp, W.; Spearman, M. (2011). Factory Physics."
+    url: "https://www.mheducation.com/highered/product/factory-physics-hopp-spearman/M9781577667391.html"

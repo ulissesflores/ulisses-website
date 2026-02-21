@@ -1,0 +1,62 @@
+{
+  "schema": "https://data.crossref.org/schemas/crossref_input.json",
+  "type": "article",
+  "title": "Teoria do Caos: Emergência e Auto-organização em Mercados",
+  "abstract": "Trabalho sobre teoria do caos e auto-organizacao em mercados nao lineares. O problema central investigado e: Hipoteses de equilibrio linear falham em explicar dinamicas de instabilidade e transicoes abruptas de mercado. Adotou-se um desenho metodologico com foco em validade interna, comparabilidade e reproducibilidade: Discussao teorica com referencia a sistemas dinamicos, sensibilidade a condicoes iniciais e comportamento emergente. Os resultados principais indicam que o estudo mostra que pequenas perturbacoes podem amplificar risco e alterar padroes macro de forma nao proporcional.. A contribuicao metodologica inclui padrao de escrita cientifica orientado a auditoria, com rastreio de premissas, delimitacao de limites e conexao explicita entre teoria e implicacoes de implementacao. O objetivo deste trabalho e avaliar de forma estruturada como \"Teoria do Caos: Emergência e Auto-organização em Mercados\" pode gerar valor cientifico e operacional com rastreabilidade metodologica. Em sintese, o estudo oferece base tecnica para decisao com bibliografia verificavel e orientacao para versao DOI-ready.",
+  "authors": [
+    {
+      "given": "Carlos Ulisses",
+      "family": "Flores Ribeiro",
+      "ORCID": "https://orcid.org/0000-0002-6034-7765",
+      "affiliation": "Codex Hash Research"
+    }
+  ],
+  "issued": "2017-01-01",
+  "language": "pt-BR",
+  "URL": "https://ulissesflores.com/essays/2017-chaos-theory-economics",
+  "resource": {
+    "primary": {
+      "URL": "https://ulissesflores.com/essays/2017-chaos-theory-economics"
+    },
+    "pdf": {
+      "URL": "https://ulissesflores.com/essays/2017-chaos-theory-economics.pdf"
+    }
+  },
+  "reference": [
+    {
+      "key": "2017-chaos-theory-economics-ref-1",
+      "unstructured": "Lorenz, E. N. (1963). Deterministic Nonperiodic Flow.",
+      "DOI": "10.1175/1520-0469(1963)020%3C0130:DNF%3E2.0.CO;2",
+      "URL": "https://doi.org/10.1175/1520-0469(1963)020%3C0130:DNF%3E2.0.CO;2"
+    },
+    {
+      "key": "2017-chaos-theory-economics-ref-2",
+      "unstructured": "Mandelbrot, B. (1963). The Variation of Certain Speculative Prices.",
+      "DOI": "10.1080/01621459.1963.10500830",
+      "URL": "https://doi.org/10.1080/01621459.1963.10500830"
+    },
+    {
+      "key": "2017-chaos-theory-economics-ref-3",
+      "unstructured": "Arthur, W. B. (1999). Complexity and the Economy.",
+      "DOI": "10.1126/science.284.5411.107",
+      "URL": "https://doi.org/10.1126/science.284.5411.107"
+    },
+    {
+      "key": "2017-chaos-theory-economics-ref-4",
+      "unstructured": "Farmer, J. D.; Foley, D. (2009). The economy needs agent-based modelling.",
+      "DOI": "10.1038/460685a",
+      "URL": "https://doi.org/10.1038/460685a"
+    },
+    {
+      "key": "2017-chaos-theory-economics-ref-5",
+      "unstructured": "Rosser, J. B. (2000). From Catastrophe to Chaos.",
+      "URL": "https://link.springer.com/book/10.1007/978-1-4615-4481-9"
+    },
+    {
+      "key": "2017-chaos-theory-economics-ref-6",
+      "unstructured": "Beinhocker, E. D. (2006). The Origin of Wealth.",
+      "URL": "https://www.hbs.edu/faculty/Pages/item.aspx?num=19867"
+    }
+  ],
+  "DOI": "10.5281/zenodo.201737"
+}

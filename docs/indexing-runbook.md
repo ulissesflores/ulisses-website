@@ -12,6 +12,7 @@ Generated context date: 2026-02-21.
 - `https://ulissesflores.com/llms-full.txt`
 - `https://ulissesflores.com/public.jsonld`
 - `https://ulissesflores.com/.well-known/did.json`
+- `https://ulissesflores.com/doi/manifest.json`
 
 ## Search Console (Google)
 
@@ -49,7 +50,7 @@ Generated context date: 2026-02-21.
 - [ ] `robots.txt` includes both sitemap URLs.
 - [ ] `sitemap.xml` includes canonical collections and items.
 - [ ] `sitemap-resources.xml` includes JSON-LD, DID, feed, and llms files.
+- [ ] DOI resources (`/doi/manifest.json` and per-article `CITATION.cff`) are publicly reachable.
 - [ ] hreflang alternates are present in page metadata.
 - [ ] New canonical routes return HTTP 200.
 - [ ] Search Console and Bing show sitemap processed without fatal errors.
-

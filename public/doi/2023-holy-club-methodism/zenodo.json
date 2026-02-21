@@ -1,0 +1,48 @@
+{
+  "metadata": {
+    "title": "O Clube Santo: Arqueologia Espiritual, Teológica e Visual do Metodismo",
+    "upload_type": "publication",
+    "publication_type": "article",
+    "publication_date": "2023-01-01",
+    "description": "<p>Investigacao arqueologica espiritual, teologica e visual do Holy Club e suas implicacoes para o metodismo. O problema central investigado e: A memoria do movimento metodista inicial e frequentemente reduzida a narrativas lineares e pouco contextualizadas. Adotou-se um desenho metodologico com foco em validade interna, comparabilidade e reproducibilidade: Leitura historica interdisciplinar com fontes primarias, iconografia e tradicao institucional. Os resultados principais indicam que o estudo reconstrói redes de praticas formativas e disciplina comunitaria no contexto original.. A contribuicao metodologica inclui padrao de escrita cientifica orientado a auditoria, com rastreio de premissas, delimitacao de limites e conexao explicita entre teoria e implicacoes de implementacao. O objetivo deste trabalho e avaliar de forma estruturada como &quot;O Clube Santo: Arqueologia Espiritual, Teológica e Visual do Metodismo&quot; pode gerar valor cientifico e operacional com rastreabilidade metodologica. Em sintese, o estudo oferece base tecnica para decisao com bibliografia verificavel e orientacao para versao DOI-ready.</p>",
+    "creators": [
+      {
+        "name": "Flores, Carlos Ulisses",
+        "affiliation": "Codex Hash Research",
+        "orcid": "0000-0002-6034-7765"
+      }
+    ],
+    "keywords": [
+      "IA",
+      "Economia",
+      "Sistemas Complexos",
+      "HOLY",
+      "CLUB",
+      "METHODISM"
+    ],
+    "language": "pt-BR",
+    "references": [
+      "Wesley, J. The Journal of John Wesley. (https://wesley.nnu.edu/john-wesley/the-journal-of-john-wesley/)",
+      "Heitzenrater, R. P. (2013). Wesley and the People Called Methodists. (https://www.abingdonpress.com/product/9781426775642)",
+      "Hempton, D. (2005). Methodism: Empire of the Spirit. (https://yalebooks.yale.edu/book/9780300106149/methodism/)",
+      "Maddox, R. L. (1994). Responsible Grace. (https://www.abingdonpress.com/product/9780687467426)",
+      "Outler, A. C. (1964). John Wesley. (https://global.oup.com/academic/product/john-wesley-9780195028102)",
+      "Oxford Handbook of Methodist Studies. (https://academic.oup.com/edited-volume/34318)"
+    ],
+    "related_identifiers": [
+      {
+        "identifier": "https://ulissesflores.com/research/2023-holy-club-methodism",
+        "relation": "isSupplementTo",
+        "resource_type": "publication-article"
+      },
+      {
+        "identifier": "https://ulissesflores.com/research/2023-holy-club-methodism.pdf",
+        "relation": "isIdenticalTo",
+        "resource_type": "publication-article"
+      }
+    ],
+    "version": "v2026-02-21",
+    "notes": "DOI-ready metadata generated automatically from the canonical UPKF publication dataset.",
+    "license": "CC-BY-4.0"
+  }
+}

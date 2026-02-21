@@ -1,0 +1,48 @@
+{
+  "metadata": {
+    "title": "Fundamentos Transcendentes da Ordem Econômica",
+    "upload_type": "publication",
+    "publication_type": "article",
+    "publication_date": "2024-01-01",
+    "description": "<p>Ensaio sobre fundamentos transcendentes da ordem economica e sua relacao com normatividade moral. O problema central investigado e: Modelos puramente tecnocráticos tendem a negligenciar pressupostos antropologicos e eticos da cooperacao social. Adotou-se um desenho metodologico com foco em validade interna, comparabilidade e reproducibilidade: Analise conceitual interdisciplinar entre teologia, filosofia moral e teoria economica. Os resultados principais indicam que o texto demonstra que categorias de responsabilidade e dignidade influenciam desenho institucional e incentivos.. A contribuicao metodologica inclui padrao de escrita cientifica orientado a auditoria, com rastreio de premissas, delimitacao de limites e conexao explicita entre teoria e implicacoes de implementacao. O objetivo deste trabalho e avaliar de forma estruturada como &quot;Fundamentos Transcendentes da Ordem Econômica&quot; pode gerar valor cientifico e operacional com rastreabilidade metodologica. Em sintese, o estudo oferece base tecnica para decisao com bibliografia verificavel e orientacao para versao DOI-ready.</p>",
+    "creators": [
+      {
+        "name": "Flores, Carlos Ulisses",
+        "affiliation": "Codex Hash Research",
+        "orcid": "0000-0002-6034-7765"
+      }
+    ],
+    "keywords": [
+      "Teologia",
+      "Humanidades",
+      "Historia",
+      "THEOLOGY",
+      "ECONOMIC",
+      "ORDER"
+    ],
+    "language": "pt-BR",
+    "references": [
+      "Augustine. The City of God. (https://www.newadvent.org/fathers/1201.htm)",
+      "Aquinas, T. Summa Theologiae. (https://www.newadvent.org/summa/)",
+      "Ropke, W. (1960). A Humane Economy. (https://isi.org/books/a-humane-economy/)",
+      "Weber, M. (1905). The Protestant Ethic and the Spirit of Capitalism. (https://www.marxists.org/reference/archive/weber/protestant-ethic/)",
+      "Novak, M. (1982). The Spirit of Democratic Capitalism. (https://www.basicbooks.com/titles/michael-novak/the-spirit-of-democratic-capitalism/9781594035883/)",
+      "McCloskey, D. (2006). The Bourgeois Virtues. (https://press.uchicago.edu/ucp/books/book/chicago/B/bo3684036.html)"
+    ],
+    "related_identifiers": [
+      {
+        "identifier": "https://ulissesflores.com/essays/2024-theology-economic-order",
+        "relation": "isSupplementTo",
+        "resource_type": "publication-article"
+      },
+      {
+        "identifier": "https://ulissesflores.com/essays/2024-theology-economic-order.pdf",
+        "relation": "isIdenticalTo",
+        "resource_type": "publication-article"
+      }
+    ],
+    "version": "v2026-02-21",
+    "notes": "DOI-ready metadata generated automatically from the canonical UPKF publication dataset.",
+    "license": "CC-BY-4.0"
+  }
+}

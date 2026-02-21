@@ -1,0 +1,33 @@
+cff-version: 1.2.0
+message: "If you use this work, please cite it using the metadata from this file."
+title: "Análise Preditiva de Ativos Financeiros com Modelos LSTM"
+type: article
+authors:
+  - family-names: "Flores Ribeiro"
+    given-names: "Carlos Ulisses"
+    orcid: "0000-0002-6034-7765"
+doi: "10.5281/zenodo.202502"
+identifiers:
+  - type: url
+    value: "https://ulissesflores.com/research/2025-lstm-asset-prediction"
+  - type: url
+    value: "https://ulissesflores.com/research/2025-lstm-asset-prediction.pdf"
+abstract: "Analise preditiva de ativos financeiros com redes LSTM para capturar dinamica temporal em mercados nao estacionarios. O problema central investigado e: Modelos lineares sofrem com mudancas de regime e baixa robustez frente a volatilidade extrema e ruido de alta frequencia. Adotou-se um desenho metodologico com foco em validade interna, comparabilidade e reproducibilidade: Modelagem de series temporais com engenharia de atributos, validacao temporal e comparacao contra baselines estatisticos. Os resultados principais indicam que o estudo evidencia ganho de sinal preditivo em janelas especificas e melhora de robustez quando o treinamento respeita ordem temporal.. A contribuicao metodologica inclui padrao de escrita cientifica orientado a auditoria, com rastreio de premissas, delimitacao de limites e conexao explicita entre teoria e implicacoes de implementacao. O objetivo deste trabalho e avaliar de forma estruturada como \"Análise Preditiva de Ativos Financeiros com Modelos LSTM\" pode gerar valor cientifico e operacional com rastreabilidade metodologica. Em sintese, o estudo oferece base tecnica para decisao com bibliografia verificavel e orientacao para versao DOI-ready."
+keywords: ["IA", "Economia", "Sistemas Complexos", "LSTM", "ASSET", "PREDICTION"]
+license: "CC-BY-4.0"
+version: "v2026-02-21"
+date-released: "2025-01-01"
+repository-code: "https://ulissesflores.com/research/2025-lstm-asset-prediction"
+references:
+  - unstructured: "Hochreiter, S.; Schmidhuber, J. (1997). Long Short-Term Memory."
+    url: "https://doi.org/10.1162/neco.1997.9.8.1735"
+  - unstructured: "Fischer, T.; Krauss, C. (2018). Deep learning with long short-term memory networks for financial market predictions."
+    url: "https://doi.org/10.1016/j.ejor.2017.11.054"
+  - unstructured: "Nelson, D. M. Q. et al. (2017). Stock market's price movement prediction with LSTM neural networks."
+    url: "https://doi.org/10.1016/j.neucom.2016.12.032"
+  - unstructured: "Fama, E. F. (1970). Efficient Capital Markets: A Review of Theory and Empirical Work."
+    url: "https://doi.org/10.2307/2325486"
+  - unstructured: "Lo, A. W. (2004). The Adaptive Markets Hypothesis."
+    url: "https://doi.org/10.3905/jpm.2004.442611"
+  - unstructured: "Goodfellow, I.; Bengio, Y.; Courville, A. (2016). Deep Learning."
+    url: "https://www.deeplearningbook.org/"

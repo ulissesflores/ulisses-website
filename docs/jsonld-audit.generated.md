@@ -1,6 +1,6 @@
 # JSON-LD Audit (Generated)
 
-- Generated at: 2026-02-21T04:46:30.797Z
+- Generated at: 2026-02-21T08:13:23.104Z
 - Site graph nodes: 4
 - Public graph nodes: 144
 - Full graph nodes: 247
@@ -18,6 +18,9 @@
 - [x] Arquivo presente: did — /Users/ulissesflores/Documents/Projetos/ulisses-hub/public/.well-known/did.json
 - [x] Arquivo presente: articleQualityJson — /Users/ulissesflores/Documents/Projetos/ulisses-hub/docs/article-quality.generated.json
 - [x] Arquivo presente: articleQualityMd — /Users/ulissesflores/Documents/Projetos/ulisses-hub/docs/article-quality.generated.md
+- [x] Arquivo presente: doiReadyJson — /Users/ulissesflores/Documents/Projetos/ulisses-hub/docs/doi-ready.generated.json
+- [x] Arquivo presente: doiReadyMd — /Users/ulissesflores/Documents/Projetos/ulisses-hub/docs/doi-ready.generated.md
+- [x] Arquivo presente: doiManifest — /Users/ulissesflores/Documents/Projetos/ulisses-hub/public/doi/manifest.json
 - [x] site.jsonld tem grafo minimo
 - [x] public.jsonld maior que site.jsonld
 - [x] full.jsonld maior que public.jsonld
@@ -37,4 +40,8 @@
 - [x] Relatorio de qualidade usa limiar SOTA = 950
 - [x] Score geral de artigos >= 950
 - [x] Todos os artigos com score final >= 950
+- [x] DOI-ready usa limiar minimo 950
+- [x] Score DOI-ready >= 950
+- [x] Todos os pacotes DOI por artigo com score >= 950
+- [x] Manifesto DOI publico presente
 

@@ -1,0 +1,48 @@
+{
+  "metadata": {
+    "title": "Transformação Ágil e Engenharia de Fluxo em Data Science",
+    "upload_type": "publication",
+    "publication_type": "report",
+    "publication_date": "2024-01-01",
+    "description": "<p>Whitepaper sobre transformacao agil e engenharia de fluxo em contextos agritech orientados a dados. O problema central investigado e: Projetos agritechs sofrem com sazonalidade, variabilidade operacional e baixa sincronizacao entre produto e campo. Adotou-se um desenho metodologico com foco em validade interna, comparabilidade e reproducibilidade: Aplicacao de metricas de fluxo, mapeamento de cadeia de valor e ciclos de melhoria orientados por evidencia. Os resultados principais indicam que a governanca por fluxo eleva previsibilidade de entrega e reduz retrabalho em times multidisciplinares.. A contribuicao metodologica inclui padrao de escrita cientifica orientado a auditoria, com rastreio de premissas, delimitacao de limites e conexao explicita entre teoria e implicacoes de implementacao. O objetivo deste trabalho e avaliar de forma estruturada como &quot;Transformação Ágil e Engenharia de Fluxo em Data Science&quot; pode gerar valor cientifico e operacional com rastreabilidade metodologica. Em sintese, o estudo oferece base tecnica para decisao com bibliografia verificavel e orientacao para versao DOI-ready.</p>",
+    "creators": [
+      {
+        "name": "Flores, Carlos Ulisses",
+        "affiliation": "Codex Hash Research",
+        "orcid": "0000-0002-6034-7765"
+      }
+    ],
+    "keywords": [
+      "Engenharia",
+      "IoT",
+      "Seguranca",
+      "AGRITECH",
+      "AGILE",
+      "FLOW"
+    ],
+    "language": "pt-BR",
+    "references": [
+      "Reinertsen, D. (2009). The Principles of Product Development Flow. (https://www.celerity.com/books/product-development-flow-second-generation-lean-product-development/)",
+      "Forsgren, N.; Humble, J.; Kim, G. (2018). Accelerate. (https://itrevolution.com/product/accelerate/)",
+      "Rother, M.; Shook, J. (1999). Learning to See. (https://www.lean.org/lexicon-terms/learning-to-see/)",
+      "FAO (2022). The State of Food and Agriculture: Leveraging automation. (https://www.fao.org/3/cb9479en/cb9479en.pdf)",
+      "OECD (2019). Digital Opportunities for Better Agricultural Policies. (https://www.oecd.org/agriculture/topics/agricultural-policy-monitoring-and-evaluation/)",
+      "Project Management Institute. Agile Practice Guide. (https://www.pmi.org/pmbok-guide-standards/practice-guides/agile)"
+    ],
+    "related_identifiers": [
+      {
+        "identifier": "https://ulissesflores.com/whitepapers/2024-agritech-agile-flow",
+        "relation": "isSupplementTo",
+        "resource_type": "publication-article"
+      },
+      {
+        "identifier": "https://ulissesflores.com/whitepapers/2024-agritech-agile-flow.pdf",
+        "relation": "isIdenticalTo",
+        "resource_type": "publication-article"
+      }
+    ],
+    "version": "v2026-02-21",
+    "notes": "DOI-ready metadata generated automatically from the canonical UPKF publication dataset.",
+    "license": "CC-BY-4.0"
+  }
+}

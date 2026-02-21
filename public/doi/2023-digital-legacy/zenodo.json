@@ -1,0 +1,47 @@
+{
+  "metadata": {
+    "title": "Desafios da Herança Digital: Preservação de Memória Pós-Mortem",
+    "upload_type": "publication",
+    "publication_type": "report",
+    "publication_date": "2023-01-01",
+    "description": "<p>Whitepaper sobre desafios da heranca digital e preservacao de memoria pos-mortem. O problema central investigado e: Ativos digitais e identidades online carecem de protocolos claros de sucessao, custodia e consentimento. Adotou-se um desenho metodologico com foco em validade interna, comparabilidade e reproducibilidade: Analise de risco juridico-tecnico com proposta de arquitetura de preservacao e governanca de acesso. Os resultados principais indicam que o documento define requisitos minimos para continuidade, autenticidade e privacidade de acervos digitais.. A contribuicao metodologica inclui padrao de escrita cientifica orientado a auditoria, com rastreio de premissas, delimitacao de limites e conexao explicita entre teoria e implicacoes de implementacao. O objetivo deste trabalho e avaliar de forma estruturada como &quot;Desafios da Herança Digital: Preservação de Memória Pós-Mortem&quot; pode gerar valor cientifico e operacional com rastreabilidade metodologica. Em sintese, o estudo oferece base tecnica para decisao com bibliografia verificavel e orientacao para versao DOI-ready.</p>",
+    "creators": [
+      {
+        "name": "Flores, Carlos Ulisses",
+        "affiliation": "Codex Hash Research",
+        "orcid": "0000-0002-6034-7765"
+      }
+    ],
+    "keywords": [
+      "Engenharia",
+      "IoT",
+      "Seguranca",
+      "DIGITAL",
+      "LEGACY"
+    ],
+    "language": "pt-BR",
+    "references": [
+      "European Union (2016). General Data Protection Regulation (GDPR). (https://eur-lex.europa.eu/eli/reg/2016/679/oj)",
+      "ISO 15489-1:2016 Information and documentation -- Records management. (https://www.iso.org/standard/62542.html)",
+      "NIST Privacy Framework 1.0. (https://www.nist.gov/privacy-framework)",
+      "Carroll, E.; Romano, J. (2011). Your Digital Afterlife. (https://books.google.com/books?id=4W8jAQAAQBAJ)",
+      "Apple. Legacy Contact in Apple ID. (https://support.apple.com/en-us/102631)",
+      "Google. Inactive Account Manager. (https://support.google.com/accounts/answer/3036546)"
+    ],
+    "related_identifiers": [
+      {
+        "identifier": "https://ulissesflores.com/whitepapers/2023-digital-legacy",
+        "relation": "isSupplementTo",
+        "resource_type": "publication-article"
+      },
+      {
+        "identifier": "https://ulissesflores.com/whitepapers/2023-digital-legacy.pdf",
+        "relation": "isIdenticalTo",
+        "resource_type": "publication-article"
+      }
+    ],
+    "version": "v2026-02-21",
+    "notes": "DOI-ready metadata generated automatically from the canonical UPKF publication dataset.",
+    "license": "CC-BY-4.0"
+  }
+}

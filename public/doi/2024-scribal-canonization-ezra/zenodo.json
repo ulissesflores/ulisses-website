@@ -1,0 +1,48 @@
+{
+  "metadata": {
+    "title": "Canonização Escribal: Análise Histórico-Crítica da Formação do Cânon",
+    "upload_type": "publication",
+    "publication_type": "article",
+    "publication_date": "2024-01-01",
+    "description": "<p>Estudo historico-critico sobre canonizacao escribal e processos de consolidacao textual associados a Esdras. O problema central investigado e: Narrativas simplificadas sobre formacao canonica tendem a apagar camadas editoriais e disputas de autoridade. Adotou-se um desenho metodologico com foco em validade interna, comparabilidade e reproducibilidade: Analise de tradicoes textuais, historia da transmissao e contexto sociopolitico do periodo pos-exilico. Os resultados principais indicam que a pesquisa destaca dinamica incremental de consolidacao canonica com mediação institucional e escribal.. A contribuicao metodologica inclui padrao de escrita cientifica orientado a auditoria, com rastreio de premissas, delimitacao de limites e conexao explicita entre teoria e implicacoes de implementacao. O objetivo deste trabalho e avaliar de forma estruturada como &quot;Canonização Escribal: Análise Histórico-Crítica da Formação do Cânon&quot; pode gerar valor cientifico e operacional com rastreabilidade metodologica. Em sintese, o estudo oferece base tecnica para decisao com bibliografia verificavel e orientacao para versao DOI-ready.</p>",
+    "creators": [
+      {
+        "name": "Flores, Carlos Ulisses",
+        "affiliation": "Codex Hash Research",
+        "orcid": "0000-0002-6034-7765"
+      }
+    ],
+    "keywords": [
+      "IA",
+      "Economia",
+      "Sistemas Complexos",
+      "SCRIBAL",
+      "CANONIZATION",
+      "EZRA"
+    ],
+    "language": "pt-BR",
+    "references": [
+      "Childs, B. S. (1979). Introduction to the Old Testament as Scripture. (https://books.google.com/books?id=6lEJY7X0fVoC)",
+      "Kugel, J. L. (2007). How to Read the Bible. (https://www.simonandschuster.com/books/How-to-Read-the-Bible/James-L-Kugel/9780743235860)",
+      "Cohen, S. J. D. (2006). From the Maccabees to the Mishnah. (https://www.wjkbooks.com/Products/9780664239046/from-the-maccabees-to-the-mishnah-third-edition.aspx)",
+      "Tov, E. (2012). Textual Criticism of the Hebrew Bible. (https://www.fortresspress.com/store/product/9780800696641/Textual-Criticism-of-the-Hebrew-Bible)",
+      "McDonald, L. M. (2017). The Formation of the Biblical Canon. (https://www.bloomsbury.com/us/formation-of-the-biblical-canon-9780567668851/)",
+      "Sanders, J. A. (1987). Canon and Community. (https://www.fortresspress.com/store/product/9780800615918/Canon-and-Community)"
+    ],
+    "related_identifiers": [
+      {
+        "identifier": "https://ulissesflores.com/research/2024-scribal-canonization-ezra",
+        "relation": "isSupplementTo",
+        "resource_type": "publication-article"
+      },
+      {
+        "identifier": "https://ulissesflores.com/research/2024-scribal-canonization-ezra.pdf",
+        "relation": "isIdenticalTo",
+        "resource_type": "publication-article"
+      }
+    ],
+    "version": "v2026-02-21",
+    "notes": "DOI-ready metadata generated automatically from the canonical UPKF publication dataset.",
+    "license": "CC-BY-4.0"
+  }
+}

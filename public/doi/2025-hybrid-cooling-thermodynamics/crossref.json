@@ -1,0 +1,59 @@
+{
+  "schema": "https://data.crossref.org/schemas/crossref_input.json",
+  "type": "report",
+  "title": "Análise Termodinâmica e Engenharia de Sistemas Híbridos de Resfriamento",
+  "abstract": "Whitepaper de termodinamica aplicada ao projeto de sistemas hibridos de resfriamento para infraestrutura critica. O problema central investigado e: Centros computacionais e ambientes edge enfrentam trade-off entre eficiencia energetica, confiabilidade e custo de manutencao. Adotou-se um desenho metodologico com foco em validade interna, comparabilidade e reproducibilidade: Analise termo-fluidodinamica com cenarios de carga, comparando estrategias hibridas de dissipacao e controle. Os resultados principais indicam que a configuracao hibrida apresenta melhor estabilidade termica em picos de carga e menor risco de indisponibilidade.. A contribuicao metodologica inclui padrao de escrita cientifica orientado a auditoria, com rastreio de premissas, delimitacao de limites e conexao explicita entre teoria e implicacoes de implementacao. O objetivo deste trabalho e avaliar de forma estruturada como \"Análise Termodinâmica e Engenharia de Sistemas Híbridos de Resfriamento\" pode gerar valor cientifico e operacional com rastreabilidade metodologica. Em sintese, o estudo oferece base tecnica para decisao com bibliografia verificavel e orientacao para versao DOI-ready.",
+  "authors": [
+    {
+      "given": "Carlos Ulisses",
+      "family": "Flores Ribeiro",
+      "ORCID": "https://orcid.org/0000-0002-6034-7765",
+      "affiliation": "Codex Hash Research"
+    }
+  ],
+  "issued": "2025-01-01",
+  "language": "pt-BR",
+  "URL": "https://ulissesflores.com/whitepapers/2025-hybrid-cooling-thermodynamics",
+  "resource": {
+    "primary": {
+      "URL": "https://ulissesflores.com/whitepapers/2025-hybrid-cooling-thermodynamics"
+    },
+    "pdf": {
+      "URL": "https://ulissesflores.com/whitepapers/2025-hybrid-cooling-thermodynamics.pdf"
+    }
+  },
+  "reference": [
+    {
+      "key": "2025-hybrid-cooling-thermodynamics-ref-1",
+      "unstructured": "ASHRAE. Thermal Guidelines for Data Processing Environments.",
+      "URL": "https://www.ashrae.org/technical-resources/bookstore/thermal-guidelines-for-data-processing-environments"
+    },
+    {
+      "key": "2025-hybrid-cooling-thermodynamics-ref-2",
+      "unstructured": "ASHRAE Standard 90.4 for Data Centers.",
+      "URL": "https://www.ashrae.org/technical-resources/bookstore/standard-90-4"
+    },
+    {
+      "key": "2025-hybrid-cooling-thermodynamics-ref-3",
+      "unstructured": "ISO 50001: Energy management systems.",
+      "URL": "https://www.iso.org/iso-50001-energy-management.html"
+    },
+    {
+      "key": "2025-hybrid-cooling-thermodynamics-ref-4",
+      "unstructured": "Patterson, M. K. (2008). The effect of data center temperature on energy efficiency.",
+      "DOI": "10.1109/ITHERM.2008.4544301",
+      "URL": "https://doi.org/10.1109/ITHERM.2008.4544301"
+    },
+    {
+      "key": "2025-hybrid-cooling-thermodynamics-ref-5",
+      "unstructured": "Shehabi, A. et al. (2016). United States Data Center Energy Usage Report.",
+      "URL": "https://eta-publications.lbl.gov/sites/default/files/lbnl-1005775_v2.pdf"
+    },
+    {
+      "key": "2025-hybrid-cooling-thermodynamics-ref-6",
+      "unstructured": "US DOE. Data Center Energy Efficiency.",
+      "URL": "https://www.energy.gov/eere/femp/data-center-energy-efficiency"
+    }
+  ],
+  "DOI": "10.5281/zenodo.202503"
+}

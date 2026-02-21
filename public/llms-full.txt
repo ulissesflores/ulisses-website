@@ -197,6 +197,7 @@ This file contains an expanded machine-readable index of publication URLs and su
 - https://ulissesflores.com/sitemap.xml
 - https://ulissesflores.com/sitemap-resources.xml
 - https://ulissesflores.com/feed.xml
+- https://ulissesflores.com/doi/manifest.json
 
 ## Certifications
 - Alura: Entrega Contínua: confiabilidade e qualidade -> https://ulissesflores.com/certifications/alura-1-entrega-continua-confiabilidade-e-qualidade

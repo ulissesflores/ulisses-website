@@ -1,0 +1,33 @@
+cff-version: 1.2.0
+message: "If you use this work, please cite it using the metadata from this file."
+title: "Detecção de Fraudes em Cartões com Redes Neurais"
+type: article
+authors:
+  - family-names: "Flores Ribeiro"
+    given-names: "Carlos Ulisses"
+    orcid: "0000-0002-6034-7765"
+doi: "10.5281/zenodo.202506"
+identifiers:
+  - type: url
+    value: "https://ulissesflores.com/research/2025-fraud-detection-mlp"
+  - type: url
+    value: "https://ulissesflores.com/research/2025-fraud-detection-mlp.pdf"
+abstract: "Deteccao de fraude em cartoes com redes neurais MLP e engenharia de atributos para dados desbalanceados. O problema central investigado e: Fraude financeira combina alta assimetria de classes com necessidade de baixa latencia decisoria em tempo quase real. Adotou-se um desenho metodologico com foco em validade interna, comparabilidade e reproducibilidade: Pipeline supervisionado com reamostragem, calibracao de limiar e avaliacao por precision-recall e custo de erro. Os resultados principais indicam que a combinacao de mlp com ajuste de limiar melhora captura de fraudes mantendo taxa operacional aceitavel de falsos positivos.. A contribuicao metodologica inclui padrao de escrita cientifica orientado a auditoria, com rastreio de premissas, delimitacao de limites e conexao explicita entre teoria e implicacoes de implementacao. O objetivo deste trabalho e avaliar de forma estruturada como \"Detecção de Fraudes em Cartões com Redes Neurais\" pode gerar valor cientifico e operacional com rastreabilidade metodologica. Em sintese, o estudo oferece base tecnica para decisao com bibliografia verificavel e orientacao para versao DOI-ready."
+keywords: ["IA", "Economia", "Sistemas Complexos", "FRAUD", "DETECTION", "MLP"]
+license: "CC-BY-4.0"
+version: "v2026-02-21"
+date-released: "2025-01-01"
+repository-code: "https://ulissesflores.com/research/2025-fraud-detection-mlp"
+references:
+  - unstructured: "Ngai, E. W. T. et al. (2011). The application of data mining techniques in financial fraud detection."
+    url: "https://doi.org/10.1016/j.dss.2010.08.006"
+  - unstructured: "Whitrow, C. et al. (2009). Transaction aggregation as a strategy for credit card fraud detection."
+    url: "https://doi.org/10.1016/j.eswa.2008.10.008"
+  - unstructured: "Jurgovsky, J. et al. (2018). Sequence classification for credit-card fraud detection."
+    url: "https://arxiv.org/abs/1811.07293"
+  - unstructured: "Carcillo, F. et al. (2021). Combining unsupervised and supervised learning in credit card fraud detection."
+    url: "https://doi.org/10.1016/j.is.2021.101705"
+  - unstructured: "Bahnsen, A. C. et al. (2016). Classifying highly imbalanced data using cost-sensitive decision trees."
+    url: "https://doi.org/10.1016/j.eswa.2016.05.032"
+  - unstructured: "NIST. AI Risk Management Framework 1.0."
+    url: "https://www.nist.gov/itl/ai-risk-management-framework"

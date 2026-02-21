@@ -1,0 +1,58 @@
+{
+  "schema": "https://data.crossref.org/schemas/crossref_input.json",
+  "type": "report",
+  "title": "Desafios da Herança Digital: Preservação de Memória Pós-Mortem",
+  "abstract": "Whitepaper sobre desafios da heranca digital e preservacao de memoria pos-mortem. O problema central investigado e: Ativos digitais e identidades online carecem de protocolos claros de sucessao, custodia e consentimento. Adotou-se um desenho metodologico com foco em validade interna, comparabilidade e reproducibilidade: Analise de risco juridico-tecnico com proposta de arquitetura de preservacao e governanca de acesso. Os resultados principais indicam que o documento define requisitos minimos para continuidade, autenticidade e privacidade de acervos digitais.. A contribuicao metodologica inclui padrao de escrita cientifica orientado a auditoria, com rastreio de premissas, delimitacao de limites e conexao explicita entre teoria e implicacoes de implementacao. O objetivo deste trabalho e avaliar de forma estruturada como \"Desafios da Herança Digital: Preservação de Memória Pós-Mortem\" pode gerar valor cientifico e operacional com rastreabilidade metodologica. Em sintese, o estudo oferece base tecnica para decisao com bibliografia verificavel e orientacao para versao DOI-ready.",
+  "authors": [
+    {
+      "given": "Carlos Ulisses",
+      "family": "Flores Ribeiro",
+      "ORCID": "https://orcid.org/0000-0002-6034-7765",
+      "affiliation": "Codex Hash Research"
+    }
+  ],
+  "issued": "2023-01-01",
+  "language": "pt-BR",
+  "URL": "https://ulissesflores.com/whitepapers/2023-digital-legacy",
+  "resource": {
+    "primary": {
+      "URL": "https://ulissesflores.com/whitepapers/2023-digital-legacy"
+    },
+    "pdf": {
+      "URL": "https://ulissesflores.com/whitepapers/2023-digital-legacy.pdf"
+    }
+  },
+  "reference": [
+    {
+      "key": "2023-digital-legacy-ref-1",
+      "unstructured": "European Union (2016). General Data Protection Regulation (GDPR).",
+      "URL": "https://eur-lex.europa.eu/eli/reg/2016/679/oj"
+    },
+    {
+      "key": "2023-digital-legacy-ref-2",
+      "unstructured": "ISO 15489-1:2016 Information and documentation -- Records management.",
+      "URL": "https://www.iso.org/standard/62542.html"
+    },
+    {
+      "key": "2023-digital-legacy-ref-3",
+      "unstructured": "NIST Privacy Framework 1.0.",
+      "URL": "https://www.nist.gov/privacy-framework"
+    },
+    {
+      "key": "2023-digital-legacy-ref-4",
+      "unstructured": "Carroll, E.; Romano, J. (2011). Your Digital Afterlife.",
+      "URL": "https://books.google.com/books?id=4W8jAQAAQBAJ"
+    },
+    {
+      "key": "2023-digital-legacy-ref-5",
+      "unstructured": "Apple. Legacy Contact in Apple ID.",
+      "URL": "https://support.apple.com/en-us/102631"
+    },
+    {
+      "key": "2023-digital-legacy-ref-6",
+      "unstructured": "Google. Inactive Account Manager.",
+      "URL": "https://support.google.com/accounts/answer/3036546"
+    }
+  ],
+  "DOI": "10.5281/zenodo.202327"
+}

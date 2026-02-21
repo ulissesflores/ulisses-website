@@ -1,0 +1,33 @@
+cff-version: 1.2.0
+message: "If you use this work, please cite it using the metadata from this file."
+title: "A Teologia da Esperança em Tempos de Crise"
+type: article
+authors:
+  - family-names: "Flores Ribeiro"
+    given-names: "Carlos Ulisses"
+    orcid: "0000-0002-6034-7765"
+doi: "10.5281/zenodo.202231"
+identifiers:
+  - type: url
+    value: "https://ulissesflores.com/essays/2022-theology-of-hope"
+  - type: url
+    value: "https://ulissesflores.com/essays/2022-theology-of-hope.pdf"
+abstract: "Ensaio sobre teologia da esperanca em contextos de crise social, economica e institucional. O problema central investigado e: Cenarios de incerteza tendem a produzir fatalismo ou respostas imediatistas sem base antropologica robusta. Adotou-se um desenho metodologico com foco em validade interna, comparabilidade e reproducibilidade: Analise teologica e filosofica de categorias de esperanca, sofrimento e responsabilidade comunitaria. Os resultados principais indicam que o artigo explicita como a esperanca pode operar como categoria ativa de acao e nao apenas conforto simbólico.. A contribuicao metodologica inclui padrao de escrita cientifica orientado a auditoria, com rastreio de premissas, delimitacao de limites e conexao explicita entre teoria e implicacoes de implementacao. O objetivo deste trabalho e avaliar de forma estruturada como \"A Teologia da Esperança em Tempos de Crise\" pode gerar valor cientifico e operacional com rastreabilidade metodologica. Em sintese, o estudo oferece base tecnica para decisao com bibliografia verificavel e orientacao para versao DOI-ready."
+keywords: ["Teologia", "Humanidades", "Historia", "THEOLOGY", "HOPE"]
+license: "CC-BY-4.0"
+version: "v2026-02-21"
+date-released: "2022-01-01"
+repository-code: "https://ulissesflores.com/essays/2022-theology-of-hope"
+references:
+  - unstructured: "Moltmann, J. (1967). Theology of Hope."
+    url: "https://www.fortresspress.com/store/product/9780800628277/Theology-of-Hope"
+  - unstructured: "Bonhoeffer, D. (1953). Letters and Papers from Prison."
+    url: "https://www.scmpress.co.uk/titles/3642/letters-and-papers-from-prison"
+  - unstructured: "Pannenberg, W. (1968). Theology and the Kingdom of God."
+    url: "https://www.westminsterjohnknoxpress.com/Products/0664240245/theology-and-the-kingdom-of-god.aspx"
+  - unstructured: "Volf, M. (2011). A Public Faith."
+    url: "https://brazospress.com/books/a-public-faith"
+  - unstructured: "Wright, N. T. (2008). Surprised by Hope."
+    url: "https://www.harpercollins.com/products/surprised-by-hope-n-t-wright"
+  - unstructured: "Metz, J. B. (1969). Theology of the World."
+    url: "https://www.herder.de/theologie-pastoral/shop/p6/10291-theology-of-the-world-hardcover/"

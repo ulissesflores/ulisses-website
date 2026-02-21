@@ -1,0 +1,58 @@
+{
+  "schema": "https://data.crossref.org/schemas/crossref_input.json",
+  "type": "article",
+  "title": "Tratado Exegético sobre a Representação da Moralidade e Antropologia",
+  "abstract": "Tratado exegético sobre representacao da moralidade e antropologia em tradicoes textuais teologicas. O problema central investigado e: Interpretacoes atomizadas de passagens isoladas fragilizam coerencia antropologica e moral do corpus. Adotou-se um desenho metodologico com foco em validade interna, comparabilidade e reproducibilidade: Leitura exegética com cruzamento de contexto historico, semantica e tradicao interpretativa. Os resultados principais indicam que o artigo organiza categorias antropologicas recorrentes e explicita implicacoes eticas contemporaneas.. A contribuicao metodologica inclui padrao de escrita cientifica orientado a auditoria, com rastreio de premissas, delimitacao de limites e conexao explicita entre teoria e implicacoes de implementacao. O objetivo deste trabalho e avaliar de forma estruturada como \"Tratado Exegético sobre a Representação da Moralidade e Antropologia\" pode gerar valor cientifico e operacional com rastreabilidade metodologica. Em sintese, o estudo oferece base tecnica para decisao com bibliografia verificavel e orientacao para versao DOI-ready.",
+  "authors": [
+    {
+      "given": "Carlos Ulisses",
+      "family": "Flores Ribeiro",
+      "ORCID": "https://orcid.org/0000-0002-6034-7765",
+      "affiliation": "Codex Hash Research"
+    }
+  ],
+  "issued": "2024-01-01",
+  "language": "pt-BR",
+  "URL": "https://ulissesflores.com/essays/2024-exegetical-treatise-anthropology",
+  "resource": {
+    "primary": {
+      "URL": "https://ulissesflores.com/essays/2024-exegetical-treatise-anthropology"
+    },
+    "pdf": {
+      "URL": "https://ulissesflores.com/essays/2024-exegetical-treatise-anthropology.pdf"
+    }
+  },
+  "reference": [
+    {
+      "key": "2024-exegetical-treatise-anthropology-ref-1",
+      "unstructured": "Ricoeur, P. (1976). Interpretation Theory.",
+      "URL": "https://www.degruyter.com/document/doi/10.3138/9781442678286/html"
+    },
+    {
+      "key": "2024-exegetical-treatise-anthropology-ref-2",
+      "unstructured": "Brueggemann, W. (1997). Theology of the Old Testament.",
+      "URL": "https://www.fortresspress.com/store/product/9780800628307/Theology-of-the-Old-Testament"
+    },
+    {
+      "key": "2024-exegetical-treatise-anthropology-ref-3",
+      "unstructured": "Wright, N. T. (1992). The New Testament and the People of God.",
+      "URL": "https://www.fortresspress.com/store/product/9780800626815/The-New-Testament-and-the-People-of-God"
+    },
+    {
+      "key": "2024-exegetical-treatise-anthropology-ref-4",
+      "unstructured": "Gadamer, H.-G. (1960). Truth and Method.",
+      "URL": "https://www.bloomsbury.com/us/truth-and-method-9780826405852/"
+    },
+    {
+      "key": "2024-exegetical-treatise-anthropology-ref-5",
+      "unstructured": "Thiselton, A. C. (1980). The Two Horizons.",
+      "URL": "https://www.eerdmans.com/9780802800169/the-two-horizons/"
+    },
+    {
+      "key": "2024-exegetical-treatise-anthropology-ref-6",
+      "unstructured": "von Rad, G. (2001). Old Testament Theology.",
+      "URL": "https://www.wjkbooks.com/Products/9780664223984/old-testament-theology-volume-1.aspx"
+    }
+  ],
+  "DOI": "10.5281/zenodo.202424"
+}

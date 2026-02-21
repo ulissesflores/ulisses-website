@@ -1,0 +1,33 @@
+cff-version: 1.2.0
+message: "If you use this work, please cite it using the metadata from this file."
+title: "Canonização Escribal: Análise Histórico-Crítica da Formação do Cânon"
+type: article
+authors:
+  - family-names: "Flores Ribeiro"
+    given-names: "Carlos Ulisses"
+    orcid: "0000-0002-6034-7765"
+doi: "10.5281/zenodo.202415"
+identifiers:
+  - type: url
+    value: "https://ulissesflores.com/research/2024-scribal-canonization-ezra"
+  - type: url
+    value: "https://ulissesflores.com/research/2024-scribal-canonization-ezra.pdf"
+abstract: "Estudo historico-critico sobre canonizacao escribal e processos de consolidacao textual associados a Esdras. O problema central investigado e: Narrativas simplificadas sobre formacao canonica tendem a apagar camadas editoriais e disputas de autoridade. Adotou-se um desenho metodologico com foco em validade interna, comparabilidade e reproducibilidade: Analise de tradicoes textuais, historia da transmissao e contexto sociopolitico do periodo pos-exilico. Os resultados principais indicam que a pesquisa destaca dinamica incremental de consolidacao canonica com mediação institucional e escribal.. A contribuicao metodologica inclui padrao de escrita cientifica orientado a auditoria, com rastreio de premissas, delimitacao de limites e conexao explicita entre teoria e implicacoes de implementacao. O objetivo deste trabalho e avaliar de forma estruturada como \"Canonização Escribal: Análise Histórico-Crítica da Formação do Cânon\" pode gerar valor cientifico e operacional com rastreabilidade metodologica. Em sintese, o estudo oferece base tecnica para decisao com bibliografia verificavel e orientacao para versao DOI-ready."
+keywords: ["IA", "Economia", "Sistemas Complexos", "SCRIBAL", "CANONIZATION", "EZRA"]
+license: "CC-BY-4.0"
+version: "v2026-02-21"
+date-released: "2024-01-01"
+repository-code: "https://ulissesflores.com/research/2024-scribal-canonization-ezra"
+references:
+  - unstructured: "Childs, B. S. (1979). Introduction to the Old Testament as Scripture."
+    url: "https://books.google.com/books?id=6lEJY7X0fVoC"
+  - unstructured: "Kugel, J. L. (2007). How to Read the Bible."
+    url: "https://www.simonandschuster.com/books/How-to-Read-the-Bible/James-L-Kugel/9780743235860"
+  - unstructured: "Cohen, S. J. D. (2006). From the Maccabees to the Mishnah."
+    url: "https://www.wjkbooks.com/Products/9780664239046/from-the-maccabees-to-the-mishnah-third-edition.aspx"
+  - unstructured: "Tov, E. (2012). Textual Criticism of the Hebrew Bible."
+    url: "https://www.fortresspress.com/store/product/9780800696641/Textual-Criticism-of-the-Hebrew-Bible"
+  - unstructured: "McDonald, L. M. (2017). The Formation of the Biblical Canon."
+    url: "https://www.bloomsbury.com/us/formation-of-the-biblical-canon-9780567668851/"
+  - unstructured: "Sanders, J. A. (1987). Canon and Community."
+    url: "https://www.fortresspress.com/store/product/9780800615918/Canon-and-Community"
