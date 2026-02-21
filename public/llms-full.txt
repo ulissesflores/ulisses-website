@@ -198,6 +198,69 @@ This file contains an expanded machine-readable index of publication URLs and su
 - https://ulissesflores.com/sitemap-resources.xml
 - https://ulissesflores.com/feed.xml
 
+## Certifications
+- Alura: Entrega Contínua: confiabilidade e qualidade -> https://ulissesflores.com/certifications/alura-1-entrega-continua-confiabilidade-e-qualidade
+- Alura: Formação Engenharia de software -> https://ulissesflores.com/certifications/alura-2-formacao-engenharia-de-software
+- Alura: Integração Contínua: qualidade e menos risco -> https://ulissesflores.com/certifications/alura-3-integracao-continua-qualidade-e-menos-risco
+- Alura: Microsserviços na prática -> https://ulissesflores.com/certifications/alura-4-microsservicos-na-pratica
+- Alura: Microsserviços: explorando conceitos -> https://ulissesflores.com/certifications/alura-5-microsservicos-explorando-conceitos
+- Alura: Microsserviços: padrões de projeto -> https://ulissesflores.com/certifications/alura-6-microsservicos-padroes-de-projeto
+- Alura: Extreme Programming: metodologia ágil -> https://ulissesflores.com/certifications/alura-7-extreme-programming-metodologia-agil
+- Alura: Organização de Equipes Ágeis -> https://ulissesflores.com/certifications/alura-8-organizacao-de-equipes-ageis
+- Alura: Scrum: agilidade em seu projeto -> https://ulissesflores.com/certifications/alura-9-scrum-agilidade-em-seu-projeto
+- Alura: Quality Assurance: plano de testes e bugs -> https://ulissesflores.com/certifications/alura-10-quality-assurance-plano-de-testes-e-bugs
+- Alura: Blockchain para Negócios -> https://ulissesflores.com/certifications/alura-11-blockchain-para-negocios
+- Alura: Blockchain: aumente a confiança -> https://ulissesflores.com/certifications/alura-12-blockchain-aumente-a-confianca
+- Alura: IA Generativa: Midjourney e ChatGPT -> https://ulissesflores.com/certifications/alura-13-ia-generativa-midjourney-e-chatgpt
+- Alura: Value Stream Mapping (VSM): desenhe mapa -> https://ulissesflores.com/certifications/alura-14-value-stream-mapping-vsm-desenhe-mapa
+- Alura: Value Stream Mapping (VSM): conheça fluxo -> https://ulissesflores.com/certifications/alura-15-value-stream-mapping-vsm-conheca-fluxo
+- Alura: RPA: aplicações gerais -> https://ulissesflores.com/certifications/alura-16-rpa-aplicacoes-gerais
+- Alura: Bizagi: mapeamento com BPMN -> https://ulissesflores.com/certifications/alura-17-bizagi-mapeamento-com-bpmn
+- Alura: UML: modelagem de diagramas -> https://ulissesflores.com/certifications/alura-18-uml-modelagem-de-diagramas
+- Alura: UML: modelagem de soluções -> https://ulissesflores.com/certifications/alura-19-uml-modelagem-de-solucoes
+- Alura: Linux Onboarding: CLI rápida e prática -> https://ulissesflores.com/certifications/alura-20-linux-onboarding-cli-rapida-e-pratica
+- Alura: Aprenda Java com Orientação a Objetos -> https://ulissesflores.com/certifications/alura-21-aprenda-java-com-orientacao-a-objetos
+- Alura: Java: criando primeira aplicação -> https://ulissesflores.com/certifications/alura-22-java-criando-primeira-aplicacao
+- Alura: Java: Orientação a Objetos -> https://ulissesflores.com/certifications/alura-23-java-orientacao-a-objetos
+- Alura: Java: listas e coleções de dados -> https://ulissesflores.com/certifications/alura-24-java-listas-e-colecoes-de-dados
+- Alura: Java: API, arquivos e erros -> https://ulissesflores.com/certifications/alura-25-java-api-arquivos-e-erros
+- Alura: C++: linguagem e STL -> https://ulissesflores.com/certifications/alura-26-c-linguagem-e-stl
+- Alura: SOLID com PHP: princípios OOP -> https://ulissesflores.com/certifications/alura-27-solid-com-php-principios-oop
+- Alura: Avançando OOP com PHP -> https://ulissesflores.com/certifications/alura-28-avancando-oop-com-php
+- Alura: Design Patterns em PHP -> https://ulissesflores.com/certifications/alura-29-design-patterns-em-php
+- Alura: Orientação a Objetos com PHP -> https://ulissesflores.com/certifications/alura-30-orientacao-a-objetos-com-php
+- Alura: JavaScript e HTML: desenvolva um jogo -> https://ulissesflores.com/certifications/alura-31-javascript-e-html-desenvolva-um-jogo
+- Alura: MongoDB: banco de dados NoSQL -> https://ulissesflores.com/certifications/alura-32-mongodb-banco-de-dados-nosql
+- Coursera: Philosophy, Science and Religion: Science and Philosophy -> https://ulissesflores.com/certifications/coursera-philosophy-science-and-religion-science-and-philosophy
+- edX: AI in Practice: Preparing for AI -> https://ulissesflores.com/certifications/edx-ai-in-practice-preparing-for-ai
+
+## Sermon Collections
+- Jejum da Vitória 2023 (21 devotionals): https://ulissesflores.com/sermons/jejum-da-vitoria-2023-21-devotionals
+- Cultos Online (27 services): https://ulissesflores.com/sermons/cultos-online-27-services
+- Cultos (3 services): https://ulissesflores.com/sermons/cultos-3-services
+- Outros (5 specials): https://ulissesflores.com/sermons/outros-5-specials
+
+## Mundo Politico
+- Campanha do governo Lula para reconstruir confiança no Pix: detalhes e impactos -> https://ulissesflores.com/mundo-politico/1-campanha-do-governo-lula-para-reconstruir-confianca-no-pix-detalhes-e-im
+- Conflito nas redes sociais: moderação de conteúdo vs. liberdade de expressão -> https://ulissesflores.com/mundo-politico/2-conflito-nas-redes-sociais-moderacao-de-conteudo-vs-liberdade-de-express
+- Desaprovação de Lula cresce no Nordeste: mudanças na lealdade política -> https://ulissesflores.com/mundo-politico/3-desaprovacao-de-lula-cresce-no-nordeste-mudancas-na-lealdade-politica
+- Pacote fiscal de Lula: expectativas e desafios para a economia brasileira -> https://ulissesflores.com/mundo-politico/4-pacote-fiscal-de-lula-expectativas-e-desafios-para-a-economia-brasileira
+- Preservação de valores tradicionais na era da diversidade -> https://ulissesflores.com/mundo-politico/5-preservacao-de-valores-tradicionais-na-era-da-diversidade
+- Análise das consequências dos perdões de Trump e paralelos com o Brasil -> https://ulissesflores.com/mundo-politico/6-analise-das-consequencias-dos-perdoes-de-trump-e-paralelos-com-o-brasil
+- Discrepâncias no Brasil: análise crítica da economia e política atuais -> https://ulissesflores.com/mundo-politico/7-discrepancias-no-brasil-analise-critica-da-economia-e-politica-atuais
+- Insatisfação popular cresce: como um vídeo viral no Instagram expõe gastos governamentais -> https://ulissesflores.com/mundo-politico/8-insatisfacao-popular-cresce-como-um-video-viral-no-instagram-expoe-gasto
+- Reforma eleitoral no Brasil: necessidade de maior transparência e comparação com os EUA -> https://ulissesflores.com/mundo-politico/9-reforma-eleitoral-no-brasil-necessidade-de-maior-transparencia-e-compara
+- Fiscalização do Pix: estratégia do governo Lula contra a sonegação -> https://ulissesflores.com/mundo-politico/10-fiscalizacao-do-pix-estrategia-do-governo-lula-contra-a-sonegacao
+- Impacto da geopolítica nos mercados: tensões EUA–China e o futuro econômico -> https://ulissesflores.com/mundo-politico/11-impacto-da-geopolitica-nos-mercados-tensoes-eua-china-e-o-futuro-economi
+- Combate à inflação no governo Lula: estratégias e impactos nos gastos públicos -> https://ulissesflores.com/mundo-politico/12-combate-a-inflacao-no-governo-lula-estrategias-e-impactos-nos-gastos-pub
+- Governo Lula confronta alta dos preços de alimentos: estratégias e impactos internos -> https://ulissesflores.com/mundo-politico/13-governo-lula-confronta-alta-dos-precos-de-alimentos-estrategias-e-impact
+- Lewandowski desafia EUA sobre deportações algemadas: impacto nas relações Brasil-EUA -> https://ulissesflores.com/mundo-politico/14-lewandowski-desafia-eua-sobre-deportacoes-algemadas-impacto-nas-relacoes
+- Polêmica em Porto Alegre: performance de "Jesus" no Carnaval reacende debate -> https://ulissesflores.com/mundo-politico/15-polemica-em-porto-alegre-performance-de-jesus-no-carnaval-reacende-debat
+- Relação Brasil–EUA: impacto de Trump e Eduardo Bolsonaro na política global -> https://ulissesflores.com/mundo-politico/16-relacao-brasil-eua-impacto-de-trump-e-eduardo-bolsonaro-na-politica-glob
+- Tancredo Neves e o impacto no 40º aniversário de uma transição democrática -> https://ulissesflores.com/mundo-politico/17-tancredo-neves-e-o-impacto-no-40-aniversario-de-uma-transicao-democratic
+- Vigilância do governo Lula e liberdade de expressão: impacto no Brasil moderno -> https://ulissesflores.com/mundo-politico/18-vigilancia-do-governo-lula-e-liberdade-de-expressao-impacto-no-brasil-mo
+- Análise atual: impacto dos eventos históricos na política contemporânea -> https://ulissesflores.com/mundo-politico/19-analise-atual-impacto-dos-eventos-historicos-na-politica-contemporanea
+
 ## Citation Guidance
 - Cite canonical landing URLs first.
 - Use PDF links as downloadable artifacts.

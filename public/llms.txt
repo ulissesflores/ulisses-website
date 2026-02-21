@@ -13,6 +13,9 @@
 - Research: https://ulissesflores.com/research
 - Whitepapers: https://ulissesflores.com/whitepapers
 - Essays: https://ulissesflores.com/essays
+- Certifications: https://ulissesflores.com/certifications
+- Sermons: https://ulissesflores.com/sermons
+- Mundo Politico: https://ulissesflores.com/mundo-politico
 
 ## Featured Publications
 - A Lei de Little como Vetor de Resiliência e Qualidade: https://ulissesflores.com/research/2025-little-law-resilience
@@ -25,6 +28,11 @@
 - Canonização Escribal: Análise Histórico-Crítica da Formação do Cânon: https://ulissesflores.com/research/2024-scribal-canonization-ezra
 - Fundamentos Transcendentes da Ordem Econômica: https://ulissesflores.com/essays/2024-theology-economic-order
 - Implementação de Ring Signatures e Endereços Furtivos: https://ulissesflores.com/whitepapers/2024-ring-signatures-privacy
+
+## Knowledge Collections
+- Certifications indexed: 34
+- Sermons indexed: 56
+- Mundo Politico posts indexed: 19
 
 ## Machine-Readable Resources
 - https://ulissesflores.com/site.jsonld

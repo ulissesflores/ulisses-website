@@ -1719,7 +1719,7 @@ function ensureTemporaryPdf(publication, identity, generatedAt) {
   return true;
 }
 
-function buildUrlInventory(upkfText, publications, websiteUrl) {
+function buildUrlInventory(upkfText, publications, websiteUrl, knowledgeData) {
   const directMatches = Array.from(
     upkfText.matchAll(/https?:\/\/(?:www\.)?ulissesflores\.com[^\s)\]"']*/g),
   ).map((match) => match[0]);
@@ -1749,13 +1749,32 @@ function buildUrlInventory(upkfText, publications, websiteUrl) {
     add(publication.canonicalUrl);
     add(`${websiteUrl}${publication.downloadUrl}`);
   });
+  add(`${websiteUrl}/certifications`);
+  add(`${websiteUrl}/sermons`);
+  add(`${websiteUrl}/mundo-politico`);
+  add(`${websiteUrl}/feed.xml`);
+  add(`${websiteUrl}/sitemap-resources.xml`);
+  add(`${websiteUrl}/llms.txt`);
+  add(`${websiteUrl}/llms-full.txt`);
+
+  if (knowledgeData) {
+    knowledgeData.certifications.forEach((certification) => add(`${websiteUrl}${certification.canonicalPath}`));
+    knowledgeData.blog.posts.forEach((post) => add(`${websiteUrl}${post.canonicalPath}`));
+    knowledgeData.sermons.collections.forEach((collection) => {
+      add(`${websiteUrl}${collection.canonicalPath}`);
+      collection.items.forEach((item) => add(`${websiteUrl}${item.canonicalPath}`));
+    });
+  }
 
   const urls = Array.from(normalized).sort();
   const grouped = {
     root: urls.filter((url) => new URL(url).pathname === '/'),
     collections: urls.filter((url) => {
       const pathname = new URL(url).pathname.replace(/^\//, '');
-      return Object.prototype.hasOwnProperty.call(CATEGORY_METADATA, pathname);
+      return (
+        Object.prototype.hasOwnProperty.call(CATEGORY_METADATA, pathname) ||
+        ['certifications', 'sermons', 'mundo-politico'].includes(pathname)
+      );
     }),
     items: urls.filter((url) => {
       const pathname = new URL(url).pathname;
@@ -1763,7 +1782,16 @@ function buildUrlInventory(upkfText, publications, websiteUrl) {
         return false;
       }
       const segments = pathname.split('/').filter(Boolean);
-      return segments.length === 2 && Object.prototype.hasOwnProperty.call(CATEGORY_METADATA, segments[0]);
+      const first = segments[0];
+      if (segments.length === 2) {
+        return (
+          Object.prototype.hasOwnProperty.call(CATEGORY_METADATA, first) ||
+          first === 'certifications' ||
+          first === 'mundo-politico' ||
+          first === 'sermons'
+        );
+      }
+      return segments.length === 3 && first === 'sermons';
     }),
     assets: urls.filter((url) => new URL(url).pathname.endsWith('.pdf')),
     anchors: urls.filter((url) => new URL(url).hash),
@@ -2265,7 +2293,122 @@ function sortPublicationsByRecency(publications) {
   });
 }
 
-function buildLlmsTxt(identity, publications, generatedAt) {
+function cleanDate(value, fallback) {
+  if (!value || value === 'UNDATED' || value === 'PENDING') {
+    return fallback;
+  }
+  return value;
+}
+
+function buildKnowledgeData(certifications, blogPosts, sermons, generatedAt) {
+  const certificationItems = [];
+
+  if (certifications.edx?.verifyUrl) {
+    const slug = `edx-${slugify(certifications.edx.name || certifications.edx.certId || 'certification').slice(0, 64)}`;
+    certificationItems.push({
+      slug,
+      canonicalPath: `/certifications/${slug}`,
+      provider: 'edX',
+      name: certifications.edx.name,
+      certId: certifications.edx.certId || '',
+      verifyUrl: certifications.edx.verifyUrl,
+      issuerRef: certifications.edx.issuerRef || '#edx',
+      summary: `Credential issued by edX for "${certifications.edx.name}". Includes public verification URL for authenticity checks.`,
+      publishedAt: generatedAt,
+    });
+  }
+
+  if (certifications.coursera?.verifyUrl) {
+    const slug = `coursera-${slugify(certifications.coursera.name || certifications.coursera.certId || 'certification').slice(0, 64)}`;
+    certificationItems.push({
+      slug,
+      canonicalPath: `/certifications/${slug}`,
+      provider: 'Coursera',
+      name: certifications.coursera.name,
+      certId: certifications.coursera.certId || '',
+      verifyUrl: certifications.coursera.verifyUrl,
+      issuerRef: certifications.coursera.issuerRef || '#coursera',
+      summary: `Credential issued by Coursera for "${certifications.coursera.name}". Includes public verification URL for authenticity checks.`,
+      publishedAt: generatedAt,
+    });
+  }
+
+  certifications.alura.forEach((certification) => {
+    const slug = `alura-${certification.position}-${slugify(certification.name).slice(0, 56) || certification.position}`;
+    certificationItems.push({
+      slug,
+      canonicalPath: `/certifications/${slug}`,
+      provider: 'Alura',
+      name: certification.name,
+      certId: certification.certId,
+      verifyUrl: certification.verifyUrl,
+      issuerRef: certifications.aluraIssuerRef || '#alura',
+      position: certification.position,
+      summary: `Professional training credential in "${certification.name}" with direct verification URL.`,
+      publishedAt: generatedAt,
+    });
+  });
+
+  const blogEntries = blogPosts.posts.map((post) => {
+    const slug = `${post.position}-${slugify(post.headline).slice(0, 72) || `post-${post.position}`}`;
+    const publishedAt = cleanDate(post.datePublished, generatedAt);
+    return {
+      ...post,
+      slug,
+      canonicalPath: `/mundo-politico/${slug}`,
+      publishedAt,
+      summary: `Análise política publicada no portal Mundo Político em ${publishedAt}, com foco em "${post.headline}".`,
+    };
+  });
+
+  const sermonCollections = sermons.collections.map((collection, collectionIndex) => {
+    const collectionSlug = slugify(collection.name).slice(0, 56) || `serie-${collectionIndex + 1}`;
+    const items = collection.items.map((item) => {
+      const itemSlug = `${item.position}-${slugify(item.name).slice(0, 64) || `sermon-${item.position}`}`;
+      const publishedAt = cleanDate(item.datePublished, generatedAt);
+      return {
+        ...item,
+        slug: itemSlug,
+        canonicalPath: `/sermons/${collectionSlug}/${itemSlug}`,
+        publishedAt,
+        summary: `Sermão "${item.name}" da série "${collection.name}", publicado em ${publishedAt}.`,
+      };
+    });
+
+    return {
+      name: collection.name,
+      slug: collectionSlug,
+      seriesSchemaId: collection.seriesSchemaId,
+      canonicalPath: `/sermons/${collectionSlug}`,
+      items,
+    };
+  });
+
+  return {
+    generatedAt,
+    certifications: certificationItems.sort((a, b) => (a.provider === b.provider ? (a.position || 0) - (b.position || 0) : a.provider.localeCompare(b.provider))),
+    blog: {
+      blogUrl: blogPosts.blogUrl,
+      blogSchemaId: blogPosts.blogSchemaId,
+      authorPage: blogPosts.authorPage,
+      inLanguage: blogPosts.inLanguage,
+      canonicalPath: '/mundo-politico',
+      posts: blogEntries,
+    },
+    sermons: {
+      collectionSchemaId: sermons.collectionSchemaId,
+      publisherRef: sermons.publisherRef,
+      channelUrl: sermons.channelUrl,
+      inLanguage: sermons.inLanguage,
+      period: sermons.period,
+      total: sermons.total,
+      canonicalPath: '/sermons',
+      collections: sermonCollections,
+    },
+  };
+}
+
+function buildLlmsTxt(identity, publications, generatedAt, knowledgeData) {
   const siteUrl = identity.primaryWebsite || 'https://ulissesflores.com';
   const sortedPublications = sortPublicationsByRecency(publications);
 
@@ -2285,9 +2428,17 @@ function buildLlmsTxt(identity, publications, generatedAt) {
     `- Research: ${siteUrl}/research`,
     `- Whitepapers: ${siteUrl}/whitepapers`,
     `- Essays: ${siteUrl}/essays`,
+    `- Certifications: ${siteUrl}/certifications`,
+    `- Sermons: ${siteUrl}/sermons`,
+    `- Mundo Politico: ${siteUrl}/mundo-politico`,
     '',
     '## Featured Publications',
     ...sortedPublications.slice(0, 10).map((publication) => `- ${publication.title}: ${publication.canonicalUrl}`),
+    '',
+    '## Knowledge Collections',
+    `- Certifications indexed: ${knowledgeData.certifications.length}`,
+    `- Sermons indexed: ${knowledgeData.sermons.collections.reduce((sum, collection) => sum + collection.items.length, 0)}`,
+    `- Mundo Politico posts indexed: ${knowledgeData.blog.posts.length}`,
     '',
     '## Machine-Readable Resources',
     `- ${siteUrl}/site.jsonld`,
@@ -2308,7 +2459,7 @@ function buildLlmsTxt(identity, publications, generatedAt) {
   return `${lines.join('\n')}\n`;
 }
 
-function buildLlmsFullTxt(identity, publications, generatedAt) {
+function buildLlmsFullTxt(identity, publications, generatedAt, knowledgeData) {
   const siteUrl = identity.primaryWebsite || 'https://ulissesflores.com';
   const sortedPublications = sortPublicationsByRecency(publications);
 
@@ -2348,6 +2499,21 @@ function buildLlmsFullTxt(identity, publications, generatedAt) {
   lines.push(`- ${siteUrl}/sitemap-resources.xml`);
   lines.push(`- ${siteUrl}/feed.xml`);
   lines.push('');
+  lines.push('## Certifications');
+  knowledgeData.certifications.forEach((certification) => {
+    lines.push(`- ${certification.provider}: ${certification.name} -> ${siteUrl}${certification.canonicalPath}`);
+  });
+  lines.push('');
+  lines.push('## Sermon Collections');
+  knowledgeData.sermons.collections.forEach((collection) => {
+    lines.push(`- ${collection.name}: ${siteUrl}${collection.canonicalPath}`);
+  });
+  lines.push('');
+  lines.push('## Mundo Politico');
+  knowledgeData.blog.posts.forEach((post) => {
+    lines.push(`- ${post.headline} -> ${siteUrl}${post.canonicalPath}`);
+  });
+  lines.push('');
   lines.push('## Citation Guidance');
   lines.push('- Cite canonical landing URLs first.');
   lines.push('- Use PDF links as downloadable artifacts.');
@@ -2364,6 +2530,7 @@ function writeGeneratedFiles({
   frontmatter,
   identity,
   publications,
+  knowledgeData,
   siteJsonLd,
   publicJsonLd,
   fullJsonLd,
@@ -2410,12 +2577,19 @@ function writeGeneratedFiles({
     2,
   )} as const;\n\nexport const siteJsonLd = ${JSON.stringify(siteJsonLd, null, 2)} as const;\n`;
 
+  const knowledgeTs = `/* AUTO-GENERATED FILE. DO NOT EDIT MANUALLY.\n * Source: ${sourcePath}\n * Generated at: ${generatedAt}\n */\n\nexport const knowledgeData = ${JSON.stringify(
+    knowledgeData,
+    null,
+    2,
+  )} as const;\n`;
+
   const inventoryMd = `# URL Inventory (Generated)\n\n- Source: \`${sourcePath}\`\n- Generated at: ${generatedAt}\n- Total URLs: ${urlInventory.totals.all}\n\n## Collections\n${urlInventory.grouped.collections.map((url) => `- ${url}`).join('\n') || '- none'}\n\n## Items\n${urlInventory.grouped.items.map((url) => `- ${url}`).join('\n') || '- none'}\n\n## PDF Assets\n${urlInventory.grouped.assets.map((url) => `- ${url}`).join('\n') || '- none'}\n\n## Anchors\n${urlInventory.grouped.anchors.map((url) => `- ${url}`).join('\n') || '- none'}\n`;
 
   const coverageMd = `# JSON-LD Coverage (Generated)\n\n- Source: \`${sourcePath}\`\n- Markdown bytes: ${coverage.markdownBytes}\n- Markdown lines: ${coverage.markdownLines}\n- Parsed sections: ${coverage.sectionCount}\n- Site graph nodes: ${coverage.siteGraphNodes}\n- Public graph nodes: ${coverage.publicGraphNodes}\n- Full graph nodes: ${coverage.fullGraphNodes}\n- Alura certifications parsed: ${coverage.aluraCertifications}\n- Blog posts parsed: ${coverage.blogPosts}\n- Sermons parsed: ${coverage.sermons}\n- \`/site.jsonld\` bytes: ${coverage.siteJsonldBytes}\n- \`/public.jsonld\` bytes: ${coverage.publicJsonldBytes}\n- \`/full.jsonld\` bytes: ${coverage.fullJsonldBytes}\n- Corpus files: ${coverage.corpusFiles}\n- Corpus snippets: ${coverage.corpusSnippets}\n- Corpus dirs:\n${coverage.corpusDirs.map((dir) => `  - ${dir}`).join('\n')}\n`;
 
   fs.writeFileSync(path.join(GENERATED_DIR, 'publications.generated.ts'), publicationsTs);
   fs.writeFileSync(path.join(GENERATED_DIR, 'upkf.generated.ts'), upkfTs);
+  fs.writeFileSync(path.join(GENERATED_DIR, 'knowledge.generated.ts'), knowledgeTs);
   fs.writeFileSync(path.join(DOCS_DIR, 'url-inventory.generated.json'), JSON.stringify(urlInventory, null, 2));
   fs.writeFileSync(path.join(DOCS_DIR, 'url-inventory.generated.md'), inventoryMd);
   fs.writeFileSync(path.join(DOCS_DIR, 'jsonld-coverage.generated.md'), coverageMd);
@@ -2423,8 +2597,8 @@ function writeGeneratedFiles({
   const siteJson = JSON.stringify(siteJsonLd, null, 2);
   const publicJson = JSON.stringify(publicJsonLd, null, 2);
   const fullJson = JSON.stringify(fullJsonLd, null, 2);
-  const llmsTxt = buildLlmsTxt(identity, publications, generatedAt);
-  const llmsFullTxt = buildLlmsFullTxt(identity, publications, generatedAt);
+  const llmsTxt = buildLlmsTxt(identity, publications, generatedAt, knowledgeData);
+  const llmsFullTxt = buildLlmsFullTxt(identity, publications, generatedAt, knowledgeData);
 
   fs.writeFileSync(path.join(PUBLIC_DIR, 'site.jsonld'), siteJson);
   fs.writeFileSync(path.join(PUBLIC_DIR, 'public.jsonld'), publicJson);
@@ -2458,6 +2632,7 @@ function main() {
 
   let publications = buildPublications(publicationRows, generatedAt, corpus);
   publications = attachTranslations(publications, translations);
+  const knowledgeData = buildKnowledgeData(certifications, blogPosts, sermons, generatedAt);
 
   const createdPdfs = publications
     .map((publication) => ensureTemporaryPdf(publication, identity, generatedAt))
@@ -2488,6 +2663,7 @@ function main() {
     upkfText,
     publications,
     identity.primaryWebsite || 'https://ulissesflores.com',
+    knowledgeData,
   );
 
   const siteJson = JSON.stringify(siteJsonLd);
@@ -2521,6 +2697,7 @@ function main() {
     frontmatter,
     identity,
     publications,
+    knowledgeData,
     siteJsonLd,
     publicJsonLd,
     fullJsonLd,
