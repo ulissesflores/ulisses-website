@@ -7,6 +7,7 @@ const repoRoot = path.resolve(__dirname, '../..');
 
 const publicDir = path.join(repoRoot, 'public');
 const docsDir = path.join(repoRoot, 'docs');
+const generatedDir = path.join(repoRoot, 'data', 'generated');
 
 function readJson(filePath) {
   return JSON.parse(fs.readFileSync(filePath, 'utf8'));
@@ -63,7 +64,11 @@ function main() {
     articleQualityMd: path.join(docsDir, 'article-quality.generated.md'),
     doiReadyJson: path.join(docsDir, 'doi-ready.generated.json'),
     doiReadyMd: path.join(docsDir, 'doi-ready.generated.md'),
+    deepQualityJson: path.join(docsDir, 'deep-research-quality.generated.json'),
+    deepQualityMd: path.join(docsDir, 'deep-research-quality.generated.md'),
     doiManifest: path.join(publicDir, 'doi', 'manifest.json'),
+    deepResearchGeneratedTs: path.join(generatedDir, 'deep-research.generated.ts'),
+    publicationsJson: path.join(docsDir, 'publications.generated.json'),
   };
 
   const checks = [];
@@ -91,6 +96,7 @@ function main() {
   const didJson = readJson(files.did);
   const articleQuality = readJson(files.articleQualityJson);
   const doiReady = readJson(files.doiReadyJson);
+  const deepQuality = readJson(files.deepQualityJson);
 
   const siteGraph = getGraph(siteJson);
   const publicGraph = getGraph(publicJson);
@@ -172,7 +178,68 @@ function main() {
     Array.isArray(doiReady.items) && doiReady.items.every((item) => item.score?.finalScore >= 950),
     'Todos os pacotes DOI por artigo com score >= 950',
   );
+  assert(
+    checks,
+    Array.isArray(doiReady.items) &&
+      doiReady.items.every((item) => item.doi?.status === 'target' && Boolean(item.doi?.target)),
+    'DOI-ready usa politica doi_target para todos os artigos',
+  );
+  assert(
+    checks,
+    Array.isArray(doiReady.items) &&
+      doiReady.items.every((item) => typeof item.citationCff === 'string' && !item.citationCff.includes('\ndoi:')),
+    'CITATION.cff sem campo doi oficial quando status=target',
+  );
+  assert(
+    checks,
+    Array.isArray(doiReady.items) &&
+      doiReady.items.every((item) => item.crossrefMetadata && !Object.prototype.hasOwnProperty.call(item.crossrefMetadata, 'DOI')),
+    'crossref.json sem campo DOI oficial para pre-registro',
+  );
+  assert(checks, deepQuality.threshold === 950, 'Deep research usa limiar minimo 950');
+  assert(checks, deepQuality.projectScore >= 950, 'Score deep research >= 950');
+  assert(
+    checks,
+    Array.isArray(deepQuality.articles) &&
+      deepQuality.articles.every((item) => item.quality?.phase1 >= 950 && item.quality?.phase2 >= 950 && item.quality?.phase3 >= 950 && item.quality?.macro >= 950),
+    'Todos os artigos deep research com fases e macro >= 950',
+  );
   assert(checks, fs.existsSync(files.doiManifest), 'Manifesto DOI publico presente');
+
+  const deepResearchMissing = [];
+  for (const item of doiReady.items) {
+    const mdPath = path.join(publicDir, 'deep-research', item.slug, 'deep-research.md');
+    const pdfPath = path.join(publicDir, 'deep-research', item.slug, 'deep-research.pdf');
+    const docxPath = path.join(publicDir, 'deep-research', item.slug, 'deep-research.docx');
+    if (!fs.existsSync(mdPath) || !fs.existsSync(pdfPath) || !fs.existsSync(docxPath)) {
+      deepResearchMissing.push(item.slug);
+    }
+  }
+  assert(
+    checks,
+    deepResearchMissing.length === 0,
+    '18/18 artigos com artefatos deep-research (.md/.pdf/.docx)',
+    deepResearchMissing.length > 0 ? `faltando: ${deepResearchMissing.join(', ')}` : '',
+  );
+
+  const publicFilesToScan = [
+    files.site,
+    files.pub,
+    files.full,
+    files.llms,
+    files.llmsFull,
+    files.doiReadyJson,
+    files.doiManifest,
+  ];
+  const leakedLegalName = publicFilesToScan.filter((filePath) =>
+    fs.readFileSync(filePath, 'utf8').includes('Carlos Ulisses Flores Ribeiro'),
+  );
+  assert(
+    checks,
+    leakedLegalName.length === 0,
+    'Nome publico sem vazamento do nome juridico em artefatos publicos',
+    leakedLegalName.length > 0 ? leakedLegalName.join(', ') : '',
+  );
 
   const ok = checks.every((check) => check.ok);
   writeReport(checks, {
@@ -197,6 +264,7 @@ function main() {
     sermons: sermonNodes.length,
     blogPosts: blogNodes.length,
     doiReadyScore: doiReady.taskScore,
+    deepResearchScore: deepQuality.projectScore,
   };
 
   process.stdout.write(`${JSON.stringify(summary, null, 2)}\n`);

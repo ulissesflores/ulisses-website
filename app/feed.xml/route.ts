@@ -34,7 +34,7 @@ export async function GET() {
   const itemsXml = sorted
     .map((publication) => {
       const link = `${siteUrl}/${publication.category}/${publication.id}`;
-      const pdf = `${siteUrl}${publication.downloadUrl}`;
+      const pdf = `${siteUrl}${publication.primaryPdfUrl || publication.downloadUrl}`;
       const categories = publication.tags.map((tag) => `<category>${escapeXml(tag)}</category>`).join('');
 
       return `<item>

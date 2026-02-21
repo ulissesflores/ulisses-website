@@ -1,11 +1,10 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { ArrowLeft, BookOpen, Calendar, Download } from 'lucide-react';
+import { ArrowLeft, BookOpen, Calendar, Download, FileText } from 'lucide-react';
 import { publicationCollections, publications } from '@/data/publications';
 import { upkfMeta } from '@/data/generated/upkf.generated';
 import { buildLanguageAlternates } from '@/data/seo';
-import { deepResearchArtifacts } from '@/data/deep-research';
 
 interface PageProps {
   params: Promise<{ category: string; slug: string }>;
@@ -42,15 +41,15 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       url: `${upkfMeta.primaryWebsite}${canonicalPath}`,
       publishedTime: publication.publishedAt,
       modifiedTime: publication.updatedAt,
-      authors: [upkfMeta.canonicalLegalName],
+      authors: [upkfMeta.publicDisplayName || upkfMeta.displayName],
       tags: publication.tags,
     },
     other: {
       citation_title: publication.title,
-      citation_author: upkfMeta.canonicalLegalName,
+      citation_author: upkfMeta.publicDisplayName || upkfMeta.displayName,
       citation_publication_date: publication.publishedAt,
       citation_language: publication.inLanguage,
-      citation_pdf_url: `${upkfMeta.primaryWebsite}${publication.downloadUrl}`,
+      citation_pdf_url: `${upkfMeta.primaryWebsite}${publication.primaryPdfUrl || publication.downloadUrl}`,
     },
   };
 }
@@ -64,7 +63,6 @@ export default async function ArticlePage({ params }: PageProps) {
   }
 
   const collection = publicationCollections[publication.category];
-  const deepResearch = deepResearchArtifacts[publication.id];
 
   const sectionParagraphs = (text: string) =>
     text
@@ -87,7 +85,7 @@ export default async function ArticlePage({ params }: PageProps) {
     author: {
       '@type': 'Person',
       '@id': `${upkfMeta.primaryWebsite}/#person`,
-      name: upkfMeta.canonicalLegalName,
+      name: upkfMeta.publicDisplayName || upkfMeta.displayName,
     },
     publisher: {
       '@type': 'Organization',
@@ -100,9 +98,26 @@ export default async function ArticlePage({ params }: PageProps) {
     },
     encoding: {
       '@type': 'MediaObject',
-      contentUrl: `${upkfMeta.primaryWebsite}${publication.downloadUrl}`,
+      contentUrl: `${upkfMeta.primaryWebsite}${publication.primaryPdfUrl || publication.downloadUrl}`,
       encodingFormat: 'application/pdf',
     },
+    associatedMedia: [
+      publication.mdUrl
+        ? {
+            '@type': 'MediaObject',
+            contentUrl: `${upkfMeta.primaryWebsite}${publication.mdUrl}`,
+            encodingFormat: 'text/markdown',
+          }
+        : null,
+      publication.docxUrl
+        ? {
+            '@type': 'MediaObject',
+            contentUrl: `${upkfMeta.primaryWebsite}${publication.docxUrl}`,
+            encodingFormat:
+              'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+          }
+        : null,
+    ].filter(Boolean),
   };
 
   return (
@@ -110,7 +125,7 @@ export default async function ArticlePage({ params }: PageProps) {
       <div className='fixed inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] pointer-events-none' />
       <div className='fixed inset-0 bg-[radial-gradient(circle_800px_at_50%_-200px,#10b98108,transparent)] pointer-events-none' />
 
-      <main className='relative max-w-4xl mx-auto px-6 py-20 z-10'>
+      <main className='relative max-w-5xl mx-auto px-6 py-20 z-10'>
         <Link
           href={`/${publication.category}`}
           className='inline-flex items-center gap-2 text-sm text-neutral-500 hover:text-emerald-400 transition-colors mb-4 group'
@@ -119,7 +134,10 @@ export default async function ArticlePage({ params }: PageProps) {
           Voltar para {collection.title}
         </Link>
 
-        <Link href='/' className='inline-flex items-center gap-2 text-sm text-neutral-600 hover:text-neutral-300 transition-colors mb-10'>
+        <Link
+          href='/'
+          className='inline-flex items-center gap-2 text-sm text-neutral-600 hover:text-neutral-300 transition-colors mb-10'
+        >
           Ir para Home
         </Link>
 
@@ -134,10 +152,12 @@ export default async function ArticlePage({ params }: PageProps) {
             <span className='text-xs text-neutral-500 border border-neutral-700 rounded-full px-2 py-1'>
               {publication.kind === 'R' ? 'Report' : 'ScholarlyArticle'}
             </span>
+            <span className='text-xs text-cyan-300 border border-cyan-500/40 rounded-full px-2 py-1'>
+              DOI: {publication.doi.status.toUpperCase()} {publication.doi.target ? `(${publication.doi.target})` : ''}
+            </span>
           </div>
 
           <h1 className='text-3xl md:text-5xl font-bold text-white mb-8 leading-tight'>{publication.title}</h1>
-
           <p className='text-lg text-neutral-400 leading-relaxed mb-8'>{publication.summary}</p>
 
           <div className='flex flex-wrap gap-2 mb-8'>
@@ -148,14 +168,43 @@ export default async function ArticlePage({ params }: PageProps) {
             ))}
           </div>
 
-          <div className='flex flex-col sm:flex-row gap-4'>
+          <div className='flex flex-wrap gap-2 mb-8 text-sm'>
+            <span className='px-3 py-1 border border-cyan-400/30 rounded-full text-cyan-200'>Phase 1: {publication.quality.phase1}/1000</span>
+            <span className='px-3 py-1 border border-cyan-400/30 rounded-full text-cyan-200'>Phase 2: {publication.quality.phase2}/1000</span>
+            <span className='px-3 py-1 border border-cyan-400/30 rounded-full text-cyan-200'>Phase 3: {publication.quality.phase3}/1000</span>
+            <span className='px-3 py-1 border border-cyan-400/30 rounded-full text-cyan-200'>Macro: {publication.quality.macro}/1000</span>
+          </div>
+
+          <div className='flex flex-wrap gap-3'>
             <a
-              href={publication.downloadUrl}
+              href={publication.primaryPdfUrl || publication.downloadUrl}
               target='_blank'
-              className='flex items-center justify-center gap-3 bg-emerald-600 hover:bg-emerald-500 text-white px-8 py-4 rounded-lg font-bold transition-all shadow-[0_0_20px_rgba(16,185,129,0.2)] hover:shadow-[0_0_30px_rgba(16,185,129,0.4)]'
+              className='flex items-center justify-center gap-3 bg-emerald-600 hover:bg-emerald-500 text-white px-7 py-3 rounded-lg font-bold transition-all shadow-[0_0_20px_rgba(16,185,129,0.2)] hover:shadow-[0_0_30px_rgba(16,185,129,0.4)]'
             >
               <Download size={20} />
-              Baixar PDF (temporario)
+              Baixar PDF Final
+            </a>
+            <a
+              href={publication.legacyPdfUrl}
+              target='_blank'
+              className='flex items-center justify-center gap-3 bg-neutral-900 border border-neutral-700 hover:border-neutral-500 text-neutral-200 px-7 py-3 rounded-lg font-semibold transition-colors'
+            >
+              <FileText size={18} />
+              PDF Legado
+            </a>
+            <a
+              href={publication.mdUrl}
+              target='_blank'
+              className='text-cyan-300 underline underline-offset-4 self-center'
+            >
+              Markdown (.md)
+            </a>
+            <a
+              href={publication.docxUrl}
+              target='_blank'
+              className='text-cyan-300 underline underline-offset-4 self-center'
+            >
+              DOCX (.docx)
             </a>
           </div>
         </header>
@@ -163,7 +212,7 @@ export default async function ArticlePage({ params }: PageProps) {
         <div className='prose prose-invert max-w-none space-y-10'>
           <section>
             <h2 className='text-xl font-bold text-white mb-4 flex items-center gap-2'>
-              <BookOpen size={20} className='text-emerald-500' /> Sintese Executiva da Pagina
+              <BookOpen size={20} className='text-emerald-500' /> Contexto Cientifico da Landing
             </h2>
             <div className='bg-neutral-900/40 p-8 rounded-2xl border border-emerald-500/20 space-y-4'>
               <p className='text-neutral-200 leading-relaxed'>{publication.landing.overview}</p>
@@ -182,37 +231,46 @@ export default async function ArticlePage({ params }: PageProps) {
 
           <section>
             <h2 className='text-xl font-bold text-white mb-4 flex items-center gap-2'>
-              <BookOpen size={20} className='text-cyan-500' /> Resumo Cientifico
+              <BookOpen size={20} className='text-cyan-500' /> Abstract (PT-BR)
             </h2>
             <div className='bg-neutral-900/30 p-8 rounded-2xl border border-white/5 text-lg leading-relaxed text-neutral-300 shadow-inner space-y-4'>
-              {sectionParagraphs(publication.sections.abstract).map((paragraph, index) => (
+              {sectionParagraphs(publication.articleSections.abstract).map((paragraph, index) => (
                 <p key={`abstract-${index}`}>{paragraph}</p>
               ))}
             </div>
           </section>
 
           <section>
+            <h2 className='text-xl font-bold text-white mb-4 flex items-center gap-2'>
+              <BookOpen size={20} className='text-cyan-500' /> Abstract (EN)
+            </h2>
+            <div className='bg-neutral-900/30 p-8 rounded-2xl border border-white/5 text-lg leading-relaxed text-neutral-300 shadow-inner'>
+              <p>{publication.articleSections.abstractEn}</p>
+            </div>
+          </section>
+
+          <section>
             <h2 className='text-2xl font-semibold text-white mb-3'>Introducao</h2>
             <div className='text-neutral-300 leading-relaxed space-y-4'>
-              {sectionParagraphs(publication.sections.introduction).map((paragraph, index) => (
+              {sectionParagraphs(publication.articleSections.introduction).map((paragraph, index) => (
                 <p key={`intro-${index}`}>{paragraph}</p>
               ))}
             </div>
           </section>
 
           <section>
-            <h2 className='text-2xl font-semibold text-white mb-3'>Metodos</h2>
+            <h2 className='text-2xl font-semibold text-white mb-3'>Metodologia</h2>
             <div className='text-neutral-300 leading-relaxed space-y-4'>
-              {sectionParagraphs(publication.sections.methods).map((paragraph, index) => (
+              {sectionParagraphs(publication.articleSections.methods).map((paragraph, index) => (
                 <p key={`methods-${index}`}>{paragraph}</p>
               ))}
             </div>
           </section>
 
           <section>
-            <h2 className='text-2xl font-semibold text-white mb-3'>Resultados</h2>
+            <h2 className='text-2xl font-semibold text-white mb-3'>Desenvolvimento e Resultados</h2>
             <div className='text-neutral-300 leading-relaxed space-y-4'>
-              {sectionParagraphs(publication.sections.results).map((paragraph, index) => (
+              {sectionParagraphs(publication.articleSections.results).map((paragraph, index) => (
                 <p key={`results-${index}`}>{paragraph}</p>
               ))}
             </div>
@@ -221,25 +279,34 @@ export default async function ArticlePage({ params }: PageProps) {
           <section>
             <h2 className='text-2xl font-semibold text-white mb-3'>Discussao</h2>
             <div className='text-neutral-300 leading-relaxed space-y-4'>
-              {sectionParagraphs(publication.sections.discussion).map((paragraph, index) => (
+              {sectionParagraphs(publication.articleSections.discussion).map((paragraph, index) => (
                 <p key={`discussion-${index}`}>{paragraph}</p>
               ))}
             </div>
           </section>
 
           <section>
+            <h2 className='text-2xl font-semibold text-white mb-3'>Recomendacoes</h2>
+            <ul className='list-disc pl-6 text-neutral-300 space-y-3'>
+              {publication.articleSections.recommendations.map((recommendation) => (
+                <li key={recommendation}>{recommendation}</li>
+              ))}
+            </ul>
+          </section>
+
+          <section>
             <h2 className='text-2xl font-semibold text-white mb-3'>Conclusao</h2>
             <div className='text-neutral-300 leading-relaxed space-y-4'>
-              {sectionParagraphs(publication.sections.conclusion).map((paragraph, index) => (
+              {sectionParagraphs(publication.articleSections.conclusion).map((paragraph, index) => (
                 <p key={`conclusion-${index}`}>{paragraph}</p>
               ))}
             </div>
           </section>
 
           <section>
-            <h2 className='text-2xl font-semibold text-white mb-3'>Referencias</h2>
+            <h2 className='text-2xl font-semibold text-white mb-3'>Referencias (Harvard)</h2>
             <ul className='list-disc pl-6 text-neutral-300 space-y-2'>
-              {publication.sections.references.map((reference) => (
+              {publication.articleSections.references.map((reference) => (
                 <li key={`${reference.citation}-${reference.url ?? ''}`}>
                   <span>{reference.citation}</span>
                   {reference.url ? (
@@ -262,39 +329,10 @@ export default async function ArticlePage({ params }: PageProps) {
 
           <section className='mt-12 p-6 border-l-4 border-emerald-500/30 bg-emerald-900/5 rounded-r-xl'>
             <p className='text-sm text-neutral-400 italic'>
-              <strong>Como citar:</strong> FLORES, C. U. &quot;{publication.title}&quot;. Codex Hash Research,
+              <strong>Como citar:</strong> FLORES, C. U. &quot;{publication.title}&quot;. Codex Hash Research Lab,
               {` ${publication.date}`}. Disponivel em: {upkfMeta.primaryWebsite}/{publication.category}/{publication.id}
             </p>
           </section>
-
-          {deepResearch ? (
-            <section className='mt-8 p-6 border border-cyan-500/20 bg-cyan-950/10 rounded-2xl space-y-4'>
-              <h2 className='text-2xl font-semibold text-white'>Deep Research Artifacts</h2>
-              <p className='text-neutral-300 leading-relaxed'>{deepResearch.abstract}</p>
-              <div className='flex flex-wrap gap-3 text-sm'>
-                <span className='px-3 py-1 border border-cyan-400/30 rounded-full text-cyan-200'>
-                  Polymathic Index: {deepResearch.polymathicIndex}/1000
-                </span>
-                <span className='px-3 py-1 border border-cyan-400/30 rounded-full text-cyan-200'>
-                  Quality Score: {deepResearch.qualityScore}/1000
-                </span>
-              </div>
-              <p className='text-sm text-neutral-400'>
-                <strong>Canonical Citation:</strong> {deepResearch.citation}
-              </p>
-              <div className='flex flex-wrap gap-3'>
-                <a href={deepResearch.files.md} className='text-cyan-300 underline underline-offset-4'>
-                  Markdown (.md)
-                </a>
-                <a href={deepResearch.files.pdf} className='text-cyan-300 underline underline-offset-4'>
-                  PDF (.pdf)
-                </a>
-                <a href={deepResearch.files.docx} className='text-cyan-300 underline underline-offset-4'>
-                  DOCX (.docx)
-                </a>
-              </div>
-            </section>
-          ) : null}
         </div>
       </main>
 

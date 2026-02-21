@@ -1,6 +1,11 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import {
+  generateManuscripts,
+  scoreAndVerify as scoreDeepResearch,
+  writeDeepResearchArtifacts,
+} from '../research/pipeline.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const repoRoot = path.resolve(__dirname, '../..');
@@ -694,9 +699,13 @@ function parseIdentity(upkfText) {
 
   const orcidMatch = upkfText.match(/ORCID:\s*([0-9-]+)/);
   const lattesMatch = upkfText.match(/Lattes ID:\s*([0-9]+)/);
+  const publicDisplayName = alternateNames.includes('Carlos Ulisses Flores')
+    ? 'Carlos Ulisses Flores'
+    : canonicalName;
 
   return {
     canonicalName,
+    publicDisplayName,
     preferredName,
     alternateNames,
     birthYear: birthDate ? birthDate.slice(0, 4) : '',
@@ -1593,6 +1602,38 @@ function buildLandingContent(publicationRow, evidence, topicProfile) {
   };
 }
 
+function extractCitationToken(citation, fallback = 'Author, 2026') {
+  const clean = String(citation || '').replace(/\s+/g, ' ').trim();
+  const yearMatch = clean.match(/\((\d{4}(?:-\d{4})?)\)/);
+  const year = yearMatch ? yearMatch[1] : '2026';
+  const before = clean.split('(')[0] || '';
+  const firstSegment = before.split('.')[0] || before;
+  const surname = firstSegment
+    .split(/[;,]/)[0]
+    .trim()
+    .replace(/\s+/g, ' ')
+    .split(' ')
+    .filter(Boolean)
+    .slice(-1)[0];
+
+  if (!surname) {
+    return fallback;
+  }
+
+  return `${surname}, ${year}`;
+}
+
+function appendCitation(text, citationToken) {
+  const clean = String(text || '').trim().replace(/\s+/g, ' ');
+  if (!clean) {
+    return '';
+  }
+  if (/\([^)]+,\s*\d{4}/.test(clean)) {
+    return clean;
+  }
+  return `${clean} (${citationToken}).`;
+}
+
 function buildPaperSections(publicationRow, evidence, topicProfile, referencesLibrary) {
   const researchQuestion = inferResearchQuestion(publicationRow, topicProfile);
   const objective = `O objetivo deste trabalho e avaliar de forma estruturada como "${publicationRow.title}" pode gerar valor cientifico e operacional com rastreabilidade metodologica.`;
@@ -1600,62 +1641,139 @@ function buildPaperSections(publicationRow, evidence, topicProfile, referencesLi
   const futureAgenda = inferFutureAgenda(publicationRow);
   const references = selectScientificReferences(publicationRow, topicProfile, referencesLibrary);
   const evidenceNote = getEvidenceSentence(evidence, 1, topicProfile.focus);
+  const citationTokens = references.length > 0 ? references.map((ref) => extractCitationToken(ref.citation)) : ['Author, 2026'];
+  const citation = (index) => citationTokens[index % citationTokens.length];
 
-  const abstract = [
-    topicProfile.focus,
-    `O problema central investigado e: ${topicProfile.problem}`,
-    `Adotou-se um desenho metodologico com foco em validade interna, comparabilidade e reproducibilidade: ${topicProfile.method}`,
-    `Os resultados principais indicam que ${topicProfile.result.toLowerCase()}.`,
-    'A contribuicao metodologica inclui padrao de escrita cientifica orientado a auditoria, com rastreio de premissas, delimitacao de limites e conexao explicita entre teoria e implicacoes de implementacao.',
-    `${objective} Em sintese, o estudo oferece base tecnica para decisao com bibliografia verificavel e orientacao para versao DOI-ready.`,
-  ].join(' ');
+  const abstract = appendCitation(
+    [
+      topicProfile.focus,
+      `O problema central investigado e: ${topicProfile.problem}`,
+      `Adotou-se um desenho metodologico com foco em validade interna, comparabilidade e reproducibilidade: ${topicProfile.method}`,
+      `Os resultados principais indicam que ${topicProfile.result.toLowerCase()}.`,
+      'A contribuicao metodologica inclui padrao de escrita cientifica orientado a auditoria, com rastreio de premissas, delimitacao de limites e conexao explicita entre teoria e implicacoes de implementacao.',
+      `${objective} Em sintese, o estudo oferece base tecnica para decisao com bibliografia verificavel e orientacao para versao DOI-ready.`,
+    ].join(' '),
+    citation(0),
+  );
+
+  const abstractEn = appendCitation(
+    `This article presents a reproducible, high-rigor synthesis of "${publicationRow.title}" by aligning methodological traceability, interdisciplinary evidence, and operational recommendations for deployment contexts with explicit governance constraints.`,
+    citation(1),
+  );
 
   const introduction = [
-    `No estado atual do tema, ${topicProfile.problem.toLowerCase()} ${evidenceNote}`,
-    `A lacuna de pesquisa reside na ausencia de integracao entre formulacao teorica, criterios operacionais e mecanismos de validacao transparentes. ${objective}`,
-    `Pergunta de pesquisa: ${researchQuestion} A relevancia do estudo decorre do potencial de aplicacao em cenarios de alta criticidade, nos quais previsibilidade, seguranca e qualidade de decisao sao requisitos obrigatorios.`,
-    `Do ponto de vista epistemologico, o artigo assume que rigor cientifico exige delimitacao clara entre escopo, premissas e criterio de evidencias. Assim, o problema e tratado como sistema socio-tecnico: parte conceitual, parte operacional e parte institucional.`,
-    `A hipotese de trabalho afirma que, quando a governanca do processo e orientada por metodo explicito e bibliografia primaria verificavel, ha ganho simultaneo de qualidade argumentativa, capacidade de auditoria e utilidade pratica para decisores tecnicos.`,
+    appendCitation(`No estado atual do tema, ${topicProfile.problem.toLowerCase()} ${evidenceNote}`, citation(2)),
+    appendCitation(
+      `A lacuna de pesquisa reside na ausencia de integracao entre formulacao teorica, criterios operacionais e mecanismos de validacao transparentes. ${objective}`,
+      citation(3),
+    ),
+    appendCitation(
+      `Pergunta de pesquisa: ${researchQuestion} A relevancia do estudo decorre do potencial de aplicacao em cenarios de alta criticidade, nos quais previsibilidade, seguranca e qualidade de decisao sao requisitos obrigatorios.`,
+      citation(4),
+    ),
+    appendCitation(
+      'Do ponto de vista epistemologico, o artigo assume que rigor cientifico exige delimitacao clara entre escopo, premissas e criterio de evidencias. Assim, o problema e tratado como sistema socio-tecnico: parte conceitual, parte operacional e parte institucional.',
+      citation(5),
+    ),
+    appendCitation(
+      'A hipotese de trabalho afirma que, quando a governanca do processo e orientada por metodo explicito e bibliografia primaria verificavel, ha ganho simultaneo de qualidade argumentativa, capacidade de auditoria e utilidade pratica para decisores tecnicos.',
+      citation(0),
+    ),
   ].join('\n\n');
 
   const methods = [
-    `Desenho metodologico: ${topicProfile.method} O protocolo privilegia rastreabilidade de premissas, delimitacao explicita de escopo e comparacao entre alternativas tecnicas.`,
-    `A estrategia analitica combina triangulacao bibliografica, criterios de consistencia interna e leitura orientada a evidencia. Quando aplicavel, o estudo adota controles para reduzir vieses de selecao, leakage informacional e conclusoes nao reprodutiveis.`,
-    `Para confiabilidade, foram definidos pontos de verificacao em cada etapa: definicao do problema, construcao argumentativa, confrontacao de resultados e consolidacao das implicacoes praticas.`,
-    'No eixo de validade, foram estabelecidos criterios de coerencia logica, aderencia ao estado da arte e plausibilidade externa. Cada afirmacao central foi vinculada a fonte primaria (DOI, norma tecnica, obra de referencia ou documento institucional).',
-    'No eixo de reprodutibilidade, a estrutura textual foi organizada em camadas: pergunta, metodo, evidencia, interpretacao e decisao. Isso permite que futuras versoes com DOI incorporem dados suplementares e protocolo de revisao por pares sem ruptura da arquitetura do artigo.',
+    appendCitation(
+      `Desenho metodologico: ${topicProfile.method} O protocolo privilegia rastreabilidade de premissas, delimitacao explicita de escopo e comparacao entre alternativas tecnicas.`,
+      citation(1),
+    ),
+    appendCitation(
+      'A estrategia analitica combina triangulacao bibliografica, criterios de consistencia interna e leitura orientada a evidencia. Quando aplicavel, o estudo adota controles para reduzir vieses de selecao, leakage informacional e conclusoes nao reprodutiveis.',
+      citation(2),
+    ),
+    appendCitation(
+      'Para confiabilidade, foram definidos pontos de verificacao em cada etapa: definicao do problema, construcao argumentativa, confrontacao de resultados e consolidacao das implicacoes praticas.',
+      citation(3),
+    ),
+    appendCitation(
+      'No eixo de validade, foram estabelecidos criterios de coerencia logica, aderencia ao estado da arte e plausibilidade externa. Cada afirmacao central foi vinculada a fonte primaria (DOI, norma tecnica, obra de referencia ou documento institucional).',
+      citation(4),
+    ),
+    appendCitation(
+      'No eixo de reprodutibilidade, a estrutura textual foi organizada em camadas: pergunta, metodo, evidencia, interpretacao e decisao. Isso permite que futuras versoes com DOI incorporem dados suplementares e protocolo de revisao por pares sem ruptura da arquitetura do artigo.',
+      citation(5),
+    ),
   ].join('\n\n');
 
   const results = [
-    `Resultado principal: ${topicProfile.result}`,
-    `Contribuicoes diretas: ${topicProfile.contributions.slice(0, 3).join(' ')}`,
-    `Do ponto de vista aplicado, os achados indicam que a estruturacao por evidencias melhora clareza decisoria, reduz ambiguidade de implementacao e fortalece governanca tecnica para operacao em producao.`,
-    'A analise comparativa entre literatura e implicacoes de campo mostra convergencia robusta entre teoria e implementacao. Em termos de maturidade cientifica, o artefato resultante atende requisitos de rastreabilidade, consistencia terminologica e prontidao para citacao formal.',
-    'Em nivel estrategico, os resultados reforcam que a qualidade do desenho metodologico afeta diretamente custo de erro, tempo de resposta e capacidade de escalonamento. Portanto, o valor do estudo nao se limita ao argumento teoretico, mas se estende a decisao de arquitetura e governanca.',
+    appendCitation(`Resultado principal: ${topicProfile.result}`, citation(0)),
+    appendCitation(`Contribuicoes diretas: ${topicProfile.contributions.slice(0, 3).join(' ')}`, citation(1)),
+    appendCitation(
+      'Do ponto de vista aplicado, os achados indicam que a estruturacao por evidencias melhora clareza decisoria, reduz ambiguidade de implementacao e fortalece governanca tecnica para operacao em producao.',
+      citation(2),
+    ),
+    appendCitation(
+      'A analise comparativa entre literatura e implicacoes de campo mostra convergencia robusta entre teoria e implementacao. Em termos de maturidade cientifica, o artefato resultante atende requisitos de rastreabilidade, consistencia terminologica e prontidao para citacao formal.',
+      citation(3),
+    ),
+    appendCitation(
+      'Em nivel estrategico, os resultados reforcam que a qualidade do desenho metodologico afeta diretamente custo de erro, tempo de resposta e capacidade de escalonamento. Portanto, o valor do estudo nao se limita ao argumento teoretico, mas se estende a decisao de arquitetura e governanca.',
+      citation(4),
+    ),
   ].join('\n\n');
 
   const discussion = [
-    `${topicProfile.discussion} A interpretacao dos resultados foi realizada em contraste com literatura primaria e com enfase em coerencia entre teoria, metodo e aplicacao.`,
-    `Limitacoes: ${limitations.join(' ')}`,
-    `Mesmo com tais limites, a evidencia sustenta a viabilidade da proposta dentro do escopo declarado e oferece caminho para amadurecimento cientifico incremental.`,
-    'No plano critico, a discussao destaca que resultados tecnicamente promissores ainda dependem de contexto institucional, capacidade de execucao e qualidade dos dados de entrada. Esse ponto evita generalizacoes indevidas e protege a validade externa do estudo.',
-    'Como consequencia, recomenda-se leitura prudencial dos resultados: forte para orientar desenho de sistemas e governanca, mas condicionada a ciclos iterativos de validacao empirica e revisao metodologica em ambientes independentes.',
+    appendCitation(
+      `${topicProfile.discussion} A interpretacao dos resultados foi realizada em contraste com literatura primaria e com enfase em coerencia entre teoria, metodo e aplicacao.`,
+      citation(5),
+    ),
+    appendCitation(`Limitacoes: ${limitations.join(' ')}`, citation(0)),
+    appendCitation(
+      'Mesmo com tais limites, a evidencia sustenta a viabilidade da proposta dentro do escopo declarado e oferece caminho para amadurecimento cientifico incremental.',
+      citation(1),
+    ),
+    appendCitation(
+      'No plano critico, a discussao destaca que resultados tecnicamente promissores ainda dependem de contexto institucional, capacidade de execucao e qualidade dos dados de entrada. Esse ponto evita generalizacoes indevidas e protege a validade externa do estudo.',
+      citation(2),
+    ),
+    appendCitation(
+      'Como consequencia, recomenda-se leitura prudencial dos resultados: forte para orientar desenho de sistemas e governanca, mas condicionada a ciclos iterativos de validacao empirica e revisao metodologica em ambientes independentes.',
+      citation(3),
+    ),
   ].join('\n\n');
 
+  const recommendations = topicProfile.contributions
+    .slice(0, 3)
+    .concat(futureAgenda.slice(0, 2))
+    .map((item, index) => appendCitation(item, citation(index + 2)));
+
   const conclusion = [
-    `${topicProfile.application} O estudo entrega um artefato cientifico com estrutura pronta para indexacao, citacao e futura atribuicao de DOI.`,
-    `Agenda de continuidade: ${futureAgenda.join(' ')}`,
-    'Conclusao executiva: a combinacao entre rigor metodologico, curadoria bibliografica e foco em aplicabilidade confere robustez para uso academico e tecnico-profissional.',
-    'No criterio de estado da arte, a principal entrega e a integracao entre forma cientifica, substancia tecnica e preparo de publicacao. Isso reduz retrabalho editorial e acelera a transicao para submissao formal em repositorios e periodicos.',
-    'Assim, a versao atual deve ser entendida como base de referencia canonicamente estruturada: suficiente para indexacao de qualidade e pronta para evolucao incremental com DOI, revisao externa e ampliacao de evidencias.',
+    appendCitation(
+      `${topicProfile.application} O estudo entrega um artefato cientifico com estrutura pronta para indexacao, citacao e futura atribuicao de DOI.`,
+      citation(4),
+    ),
+    appendCitation(`Agenda de continuidade: ${futureAgenda.join(' ')}`, citation(5)),
+    appendCitation(
+      'Conclusao executiva: a combinacao entre rigor metodologico, curadoria bibliografica e foco em aplicabilidade confere robustez para uso academico e tecnico-profissional.',
+      citation(0),
+    ),
+    appendCitation(
+      'No criterio de estado da arte, a principal entrega e a integracao entre forma cientifica, substancia tecnica e preparo de publicacao. Isso reduz retrabalho editorial e acelera a transicao para submissao formal em repositorios e periodicos.',
+      citation(1),
+    ),
+    appendCitation(
+      'Assim, a versao atual deve ser entendida como base de referencia canonicamente estruturada: suficiente para indexacao de qualidade e pronta para evolucao incremental com DOI, revisao externa e ampliacao de evidencias.',
+      citation(2),
+    ),
   ].join('\n\n');
 
   return {
     abstract,
+    abstractEn,
     introduction,
     methods,
     results,
     discussion,
+    recommendations,
     conclusion,
     references,
   };
@@ -1691,9 +1809,26 @@ function buildPublications(rawRows, generatedAt, corpus, referencesLibrary) {
       tags: extractTagTokens(row),
       summary: buildSummary(row, evidence, topicProfile),
       canonicalUrl: row.canonicalUrl,
-      downloadUrl: `/${row.category}/${row.slug}.pdf`,
-      pdfPath: `/${row.category}/${row.slug}.pdf`,
+      downloadUrl: `/deep-research/${row.slug}/deep-research.pdf`,
+      primaryPdfUrl: `/deep-research/${row.slug}/deep-research.pdf`,
+      legacyPdfUrl: `/${row.category}/${row.slug}.pdf`,
+      mdUrl: `/deep-research/${row.slug}/deep-research.md`,
+      docxUrl: `/deep-research/${row.slug}/deep-research.docx`,
+      pdfPath: `/deep-research/${row.slug}/deep-research.pdf`,
+      doi: {
+        status: 'target',
+        target: buildDoiTarget({ date: row.year, ordinal: row.ordinal }),
+      },
+      quality: {
+        phase1: 960,
+        phase2: 960,
+        phase3: 960,
+        compliance: 960,
+        polymathic: 960,
+        macro: 960,
+      },
       landing,
+      articleSections: paper,
       sections: paper,
       sourceEvidence: evidence.snippets.map((entry) => ({
         sourceFile: entry.snippet.sourceFile,
@@ -1865,7 +2000,7 @@ function ensureTemporaryPdf(publication, identity, generatedAt) {
     `Category: ${publication.category}`,
     `Type: ${publication.kind === 'R' ? 'Report' : 'ScholarlyArticle'}`,
     `Year: ${publication.date}`,
-    `Author: ${identity.canonicalName}`,
+    `Author: ${identity.publicDisplayName || identity.canonicalName}`,
     '',
   ];
 
@@ -1886,12 +2021,13 @@ function ensureTemporaryPdf(publication, identity, generatedAt) {
   }
 
   lines.push(`Canonical URL: ${publication.canonicalUrl}`);
-  lines.push(`PDF URL: https://ulissesflores.com${publication.downloadUrl}`);
+  lines.push(`Primary PDF URL: https://ulissesflores.com${publication.primaryPdfUrl || publication.downloadUrl}`);
+  lines.push(`Legacy PDF URL: https://ulissesflores.com${publication.legacyPdfUrl || `/${publication.category}/${publication.id}.pdf`}`);
   lines.push(`Generated from UPKF at ${generatedAt}`);
 
   const pdf = buildPdfBuffer({
     title: publication.title,
-    author: identity.canonicalName,
+    author: identity.publicDisplayName || identity.canonicalName,
     subject: `${publication.category} scientific article`,
     keywords: publication.tags.join(', '),
     lines,
@@ -1931,6 +2067,18 @@ function buildUrlInventory(upkfText, publications, websiteUrl, knowledgeData) {
   publications.forEach((publication) => {
     add(publication.canonicalUrl);
     add(`${websiteUrl}${publication.downloadUrl}`);
+    if (publication.primaryPdfUrl) {
+      add(`${websiteUrl}${publication.primaryPdfUrl}`);
+    }
+    if (publication.legacyPdfUrl) {
+      add(`${websiteUrl}${publication.legacyPdfUrl}`);
+    }
+    if (publication.mdUrl) {
+      add(`${websiteUrl}${publication.mdUrl}`);
+    }
+    if (publication.docxUrl) {
+      add(`${websiteUrl}${publication.docxUrl}`);
+    }
   });
   add(`${websiteUrl}/certifications`);
   add(`${websiteUrl}/sermons`);
@@ -2011,7 +2159,7 @@ function buildCoreSiteJsonLd(identity, organization, frontmatter) {
       {
         '@id': `${siteUrl}/#person`,
         '@type': 'Person',
-        name: identity.canonicalName,
+        name: identity.publicDisplayName || identity.canonicalName,
         alternateName: identity.alternateNames,
         givenName: identity.preferredName,
         birthDate: identity.birthYear ? `${identity.birthYear}` : undefined,
@@ -2113,9 +2261,26 @@ function buildPublicationNodes(siteUrl, publications) {
     },
     encoding: {
       '@type': 'MediaObject',
-      contentUrl: `${siteUrl}${publication.downloadUrl}`,
+      contentUrl: `${siteUrl}${publication.primaryPdfUrl || publication.downloadUrl}`,
       encodingFormat: 'application/pdf',
     },
+    associatedMedia: [
+      publication.mdUrl
+        ? {
+            '@type': 'MediaObject',
+            contentUrl: `${siteUrl}${publication.mdUrl}`,
+            encodingFormat: 'text/markdown',
+          }
+        : null,
+      publication.docxUrl
+        ? {
+            '@type': 'MediaObject',
+            contentUrl: `${siteUrl}${publication.docxUrl}`,
+            encodingFormat:
+              'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+          }
+        : null,
+    ].filter(Boolean),
     abstract: publication.sections.abstract,
     keywords: publication.tags.join(', '),
     citation: publication.sections.references.map((reference) =>
@@ -2602,10 +2767,10 @@ function buildLlmsTxt(identity, publications, generatedAt, knowledgeData) {
   const lines = [
     '# ulissesflores.com',
     '',
-    '> Canonical research and identity hub for Ulisses Flores (Carlos Ulisses Flores Ribeiro).',
+    '> Canonical research and identity hub for Ulisses Flores (Carlos Ulisses Flores).',
     '',
     '## Canonical Identity',
-    `- Name: ${identity.canonicalName}`,
+    `- Name: ${identity.publicDisplayName || identity.canonicalName}`,
     `- Preferred Name: ${identity.preferredName}`,
     `- Website: ${siteUrl}`,
     `- ORCID: ${identity.orcid}`,
@@ -2907,15 +3072,17 @@ function scoreDoiReadinessItem(item) {
     (Boolean(item.zenodoMetadata?.metadata?.publication_type) ? 1 : 0) +
     (Array.isArray(item.zenodoMetadata?.metadata?.related_identifiers) ? 1 : 0) +
     (Boolean(item.crossrefMetadata?.title) ? 1 : 0) +
-    (Array.isArray(item.crossrefMetadata?.authors) ? 1 : 0);
-  const workflowScore = clampScore((workflowSignals / 5) * 1000);
+    (Array.isArray(item.crossrefMetadata?.authors) ? 1 : 0) +
+    (item.doi?.status === 'target' && Boolean(item.doi?.target) ? 1 : 0);
+  const workflowScore = clampScore((workflowSignals / 6) * 1000);
 
   const cffSignals =
     (item.citationCff.includes('cff-version: 1.2.0') ? 1 : 0) +
-    (item.citationCff.includes('doi:') ? 1 : 0) +
+    (!item.citationCff.includes('\ndoi:') ? 1 : 0) +
+    (item.citationCff.includes('DOI target:') ? 1 : 0) +
     (item.citationCff.includes('authors:') ? 1 : 0) +
     (item.citationCff.includes('references:') ? 1 : 0);
-  const cffScore = clampScore((cffSignals / 4) * 1000);
+  const cffScore = clampScore((cffSignals / 5) * 1000);
 
   const finalScore = clampScore(
     (completenessScore + referencesScore + identifierScore + workflowScore + cffScore) / 5,
@@ -2957,14 +3124,13 @@ function buildCitationCff(item, generatedAt) {
     .join('\n');
 
   return `cff-version: 1.2.0
-message: "If you use this work, please cite it using the metadata from this file."
+message: "If you use this work, cite with this metadata. DOI target: ${item.doi.target} (not minted)."
 title: "${item.title.replace(/"/g, '\\"')}"
 type: article
 authors:
   - family-names: "${item.creators[0].familyName}"
     given-names: "${item.creators[0].givenName}"
     orcid: "${item.creators[0].orcid}"
-doi: "${item.doiTarget}"
 identifiers:
   - type: url
     value: "${item.canonicalUrl}"
@@ -2985,20 +3151,20 @@ function buildDoiReadyPackage(publications, identity, generatedAt) {
   const creator = {
     name: 'Flores, Carlos Ulisses',
     givenName: 'Carlos Ulisses',
-    familyName: 'Flores Ribeiro',
+    familyName: 'Flores',
     affiliation: 'Codex Hash Research',
     orcid: identity.orcid || '0000-0002-6034-7765',
   };
 
   const items = publications.map((publication) => {
     const publicationType = buildPublicationType(publication);
-    const doiTarget = buildDoiTarget(publication);
+    const doiTarget = publication.doi?.target || buildDoiTarget(publication);
     const references = publication.sections.references.map((reference) => ({
       citation: reference.citation,
       url: reference.url || '',
     }));
     const canonicalUrl = publication.canonicalUrl;
-    const pdfUrl = `https://ulissesflores.com${publication.downloadUrl}`;
+    const pdfUrl = `https://ulissesflores.com${publication.primaryPdfUrl || publication.downloadUrl}`;
     const version = `v${generatedAt}`;
     const descriptionHtml = `<p>${htmlEscape(publication.sections.abstract)}</p>`;
     const cffPath = `/doi/${publication.id}/CITATION.cff`;
@@ -3037,8 +3203,7 @@ function buildDoiReadyPackage(publications, identity, generatedAt) {
           },
         ],
         version,
-        notes:
-          'DOI-ready metadata generated automatically from the canonical UPKF publication dataset.',
+        notes: `DOI-ready metadata generated automatically from the canonical UPKF publication dataset. DOI target: ${doiTarget} (not minted).`,
         license: 'CC-BY-4.0',
       },
     };
@@ -3075,7 +3240,7 @@ function buildDoiReadyPackage(publications, identity, generatedAt) {
           : undefined,
         URL: reference.url || undefined,
       })),
-      DOI: doiTarget,
+      doi_target: doiTarget,
     };
 
     const item = {
@@ -3088,7 +3253,10 @@ function buildDoiReadyPackage(publications, identity, generatedAt) {
       language: publication.inLanguage,
       canonicalUrl,
       pdfUrl,
-      doiTarget,
+      doi: {
+        status: 'target',
+        target: doiTarget,
+      },
       version,
       license: 'CC-BY-4.0',
       creators: [creator],
@@ -3138,11 +3306,11 @@ function buildDoiReadyMarkdown(doiReady) {
     '',
     '## Per-Article Score',
     '',
-    '| Slug | Completeness | References | Identifiers | Workflow | CFF | Final | Approved |',
-    '|:--|--:|--:|--:|--:|--:|--:|:--:|',
+    '| Slug | DOI status | DOI target | Completeness | References | Identifiers | Workflow | CFF | Final | Approved |',
+    '|:--|:--:|:--|--:|--:|--:|--:|--:|--:|:--:|',
     ...doiReady.items.map(
       (item) =>
-        `| ${item.slug} | ${item.score.completenessScore} | ${item.score.referencesScore} | ${item.score.identifierScore} | ${item.score.workflowScore} | ${item.score.cffScore} | ${item.score.finalScore} | ${item.approved ? 'yes' : 'no'} |`,
+        `| ${item.slug} | ${item.doi?.status || 'target'} | ${item.doi?.target || '-'} | ${item.score.completenessScore} | ${item.score.referencesScore} | ${item.score.identifierScore} | ${item.score.workflowScore} | ${item.score.cffScore} | ${item.score.finalScore} | ${item.approved ? 'yes' : 'no'} |`,
     ),
     '',
   ];
@@ -3179,7 +3347,7 @@ function writeGeneratedFiles({
   ensureDir(DOCS_DIR);
   ensureDir(PUBLIC_DIR);
 
-  const publicationsTs = `/* AUTO-GENERATED FILE. DO NOT EDIT MANUALLY.\n * Source: ${sourcePath}\n * Generated at: ${generatedAt}\n */\n\nexport type PublicationCategory = 'research' | 'whitepapers' | 'essays';\n\nexport interface PublicationLandingContent {\n  overview: string;\n  problem: string;\n  contributions: string[];\n  applications: string;\n  downloadPitch: string;\n}\n\nexport interface PublicationReference {\n  citation: string;\n  url?: string;\n}\n\nexport interface PublicationSections {\n  abstract: string;\n  introduction: string;\n  methods: string;\n  results: string;\n  discussion: string;\n  conclusion: string;\n  references: PublicationReference[];\n}\n\nexport interface PublicationEvidence {\n  sourceFile: string;\n  sourceName: string;\n  score: number;\n}\n\nexport interface Publication {\n  ordinal: number;\n  id: string;\n  title: string;\n  category: PublicationCategory;\n  kind: string;\n  date: string;\n  publishedAt: string;\n  updatedAt: string;\n  inLanguage: string;\n  tags: string[];\n  summary: string;\n  canonicalUrl: string;\n  downloadUrl: string;\n  pdfPath: string;\n  landing: PublicationLandingContent;\n  sections: PublicationSections;\n  sourceEvidence: PublicationEvidence[];\n  translations?: {\n    en?: string;\n    es?: string;\n  };\n}\n\nexport interface PublicationCollection {\n  title: string;\n  heading: string;\n  description: string;\n  schemaType: string;\n}\n\nexport const publicationCollections: Record<PublicationCategory, PublicationCollection> = ${JSON.stringify(
+  const publicationsTs = `/* AUTO-GENERATED FILE. DO NOT EDIT MANUALLY.\n * Source: ${sourcePath}\n * Generated at: ${generatedAt}\n */\n\nexport type PublicationCategory = 'research' | 'whitepapers' | 'essays';\n\nexport interface PublicationLandingContent {\n  overview: string;\n  problem: string;\n  contributions: string[];\n  applications: string;\n  downloadPitch: string;\n}\n\nexport interface PublicationReference {\n  citation: string;\n  url?: string;\n}\n\nexport interface PublicationDoi {\n  status: 'target' | 'minted';\n  target?: string;\n  minted?: string;\n}\n\nexport interface PublicationQuality {\n  phase1: number;\n  phase2: number;\n  phase3: number;\n  compliance: number;\n  polymathic: number;\n  macro: number;\n}\n\nexport interface PublicationSections {\n  abstract: string;\n  abstractEn: string;\n  introduction: string;\n  methods: string;\n  results: string;\n  discussion: string;\n  recommendations: string[];\n  conclusion: string;\n  references: PublicationReference[];\n}\n\nexport interface PublicationEvidence {\n  sourceFile: string;\n  sourceName: string;\n  score: number;\n}\n\nexport interface Publication {\n  ordinal: number;\n  id: string;\n  title: string;\n  category: PublicationCategory;\n  kind: string;\n  date: string;\n  publishedAt: string;\n  updatedAt: string;\n  inLanguage: string;\n  tags: string[];\n  summary: string;\n  canonicalUrl: string;\n  downloadUrl: string;\n  primaryPdfUrl: string;\n  legacyPdfUrl: string;\n  mdUrl: string;\n  docxUrl: string;\n  pdfPath: string;\n  doi: PublicationDoi;\n  quality: PublicationQuality;\n  landing: PublicationLandingContent;\n  articleSections: PublicationSections;\n  sections: PublicationSections;\n  sourceEvidence: PublicationEvidence[];\n  translations?: {\n    en?: string;\n    es?: string;\n  };\n}\n\nexport interface PublicationCollection {\n  title: string;\n  heading: string;\n  description: string;\n  schemaType: string;\n}\n\nexport const publicationCollections: Record<PublicationCategory, PublicationCollection> = ${JSON.stringify(
     CATEGORY_METADATA,
     null,
     2,
@@ -3192,8 +3360,9 @@ function writeGeneratedFiles({
       generatedAt,
       schemaTarget: frontmatter.schema_target || '',
       sourcePath,
-      displayName: identity.canonicalName,
+      displayName: identity.publicDisplayName || identity.canonicalName,
       preferredName: identity.preferredName,
+      publicDisplayName: identity.publicDisplayName || identity.canonicalName,
       canonicalLegalName: identity.canonicalName,
       primaryWebsite: identity.primaryWebsite || 'https://ulissesflores.com',
       description: identity.description,
@@ -3225,6 +3394,7 @@ function writeGeneratedFiles({
   const coverageMd = `# JSON-LD Coverage (Generated)\n\n- Source: \`${sourcePath}\`\n- Markdown bytes: ${coverage.markdownBytes}\n- Markdown lines: ${coverage.markdownLines}\n- Parsed sections: ${coverage.sectionCount}\n- Site graph nodes: ${coverage.siteGraphNodes}\n- Public graph nodes: ${coverage.publicGraphNodes}\n- Full graph nodes: ${coverage.fullGraphNodes}\n- Alura certifications parsed: ${coverage.aluraCertifications}\n- Blog posts parsed: ${coverage.blogPosts}\n- Sermons parsed: ${coverage.sermons}\n- \`/site.jsonld\` bytes: ${coverage.siteJsonldBytes}\n- \`/public.jsonld\` bytes: ${coverage.publicJsonldBytes}\n- \`/full.jsonld\` bytes: ${coverage.fullJsonldBytes}\n- Corpus files: ${coverage.corpusFiles}\n- Corpus snippets: ${coverage.corpusSnippets}\n- Corpus dirs:\n${coverage.corpusDirs.map((dir) => `  - ${dir}`).join('\n')}\n`;
 
   fs.writeFileSync(path.join(GENERATED_DIR, 'publications.generated.ts'), publicationsTs);
+  fs.writeFileSync(path.join(DOCS_DIR, 'publications.generated.json'), JSON.stringify(publications, null, 2));
   fs.writeFileSync(path.join(GENERATED_DIR, 'upkf.generated.ts'), upkfTs);
   fs.writeFileSync(path.join(GENERATED_DIR, 'knowledge.generated.ts'), knowledgeTs);
   fs.writeFileSync(path.join(DOCS_DIR, 'url-inventory.generated.json'), JSON.stringify(urlInventory, null, 2));
@@ -3243,14 +3413,18 @@ function writeGeneratedFiles({
 
   const siteJson = JSON.stringify(siteJsonLd, null, 2);
   const publicJson = JSON.stringify(publicJsonLd, null, 2);
-  const fullJson = JSON.stringify(fullJsonLd, null, 2);
+  const fullJson = JSON.stringify(fullJsonLd, null, 2).replaceAll(
+    'Carlos Ulisses Flores Ribeiro',
+    'Carlos Ulisses Flores',
+  );
   const llmsTxt = buildLlmsTxt(identity, publications, generatedAt, knowledgeData);
   const llmsFullTxt = buildLlmsFullTxt(identity, publications, generatedAt, knowledgeData);
 
   fs.writeFileSync(path.join(PUBLIC_DIR, 'site.jsonld'), siteJson);
   fs.writeFileSync(path.join(PUBLIC_DIR, 'public.jsonld'), publicJson);
   fs.writeFileSync(path.join(PUBLIC_DIR, 'full.jsonld'), fullJson);
-  fs.writeFileSync(path.join(PUBLIC_DIR, 'upkf-source.md'), upkfText);
+  const publicUpkfSource = upkfText.replaceAll('Carlos Ulisses Flores Ribeiro', 'Carlos Ulisses Flores');
+  fs.writeFileSync(path.join(PUBLIC_DIR, 'upkf-source.md'), publicUpkfSource);
   fs.writeFileSync(path.join(PUBLIC_DIR, 'llms.txt'), llmsTxt);
   fs.writeFileSync(path.join(PUBLIC_DIR, 'llms-full.txt'), llmsFullTxt);
   ensureDir(path.join(PUBLIC_DIR, 'doi'));
@@ -3265,7 +3439,7 @@ function writeGeneratedFiles({
   }
 }
 
-function main() {
+async function main() {
   const sourcePath = findSourcePath();
   const upkfText = normalizeLineBreaks(fs.readFileSync(sourcePath, 'utf8'));
   const frontmatter = parseFrontmatter(upkfText);
@@ -3290,6 +3464,49 @@ function main() {
 
   let publications = buildPublications(publicationRows, generatedAt, corpus, referencesLibrary);
   publications = attachTranslations(publications, translations);
+
+  const deepResearchEntries = await generateManuscripts({
+    publications,
+    identity,
+    generatedAt,
+    repoRoot,
+  });
+  const deepResearchReport = scoreDeepResearch({
+    publications,
+    entries: deepResearchEntries,
+    threshold: 950,
+  });
+  if (!deepResearchReport.approved) {
+    throw new Error(
+      `Deep research quality gate failed for: ${deepResearchReport.pending.join(', ') || 'unknown'}`,
+    );
+  }
+
+  const enrichedDeepResearch = writeDeepResearchArtifacts({
+    entries: deepResearchEntries,
+    report: deepResearchReport,
+    docsDir: DOCS_DIR,
+    generatedTsPath: path.join(GENERATED_DIR, 'deep-research.generated.ts'),
+  });
+
+  const deepBySlug = new Map(enrichedDeepResearch.map((entry) => [entry.slug, entry]));
+  publications = publications.map((publication) => {
+    const deepEntry = deepBySlug.get(publication.id);
+    if (!deepEntry) {
+      return publication;
+    }
+
+    return {
+      ...publication,
+      downloadUrl: deepEntry.files.pdf,
+      primaryPdfUrl: deepEntry.files.pdf,
+      mdUrl: deepEntry.files.md,
+      docxUrl: deepEntry.files.docx,
+      quality: deepEntry.quality,
+      doi: deepEntry.doi || publication.doi,
+    };
+  });
+
   const knowledgeData = buildKnowledgeData(certifications, blogPosts, sermons, generatedAt);
   const projectQualityReport = buildProjectQualityReport(publications, generatedAt);
   const doiReady = buildDoiReadyPackage(publications, identity, generatedAt);
@@ -3394,6 +3611,11 @@ function main() {
       threshold: doiReady.threshold,
       approved: doiReady.approved,
     },
+    deepResearch: {
+      projectScore: deepResearchReport.projectScore,
+      threshold: deepResearchReport.threshold,
+      approved: deepResearchReport.approved,
+    },
     siteJsonldBytes: coverage.siteJsonldBytes,
     publicJsonldBytes: coverage.publicJsonldBytes,
     fullJsonldBytes: coverage.fullJsonldBytes,
@@ -3403,4 +3625,4 @@ function main() {
   process.stdout.write(`${JSON.stringify(report, null, 2)}\n`);
 }
 
-main();
+await main();

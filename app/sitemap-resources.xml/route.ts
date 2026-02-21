@@ -1,4 +1,5 @@
 import { upkfMeta } from '@/data/generated/upkf.generated';
+import { publications } from '@/data/publications';
 
 export const revalidate = 3600;
 
@@ -25,6 +26,11 @@ export async function GET() {
     { path: '/llms-full.txt', changefreq: 'weekly', priority: '0.7' },
     { path: '/doi/manifest.json', changefreq: 'weekly', priority: '0.7' },
     { path: '/feed.xml', changefreq: 'daily', priority: '0.7' },
+    ...publications.flatMap((publication) => [
+      { path: publication.mdUrl, changefreq: 'monthly', priority: '0.55' },
+      { path: publication.primaryPdfUrl || publication.downloadUrl, changefreq: 'monthly', priority: '0.65' },
+      { path: publication.docxUrl, changefreq: 'monthly', priority: '0.52' },
+    ]),
   ];
 
   const xml = `<?xml version="1.0" encoding="UTF-8"?>

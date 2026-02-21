@@ -47,6 +47,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ),
   );
 
+  const deepResearchEntries = publications.flatMap((publication) => {
+    const date = publication.updatedAt;
+    return [
+      makeSitemapEntry(publication.mdUrl, date, 'monthly', 0.62),
+      makeSitemapEntry(publication.primaryPdfUrl || publication.downloadUrl, date, 'monthly', 0.7),
+      makeSitemapEntry(publication.docxUrl, date, 'monthly', 0.58),
+    ];
+  });
+
   const certificationsEntries = [
     makeSitemapEntry('/certifications', knowledgeData.generatedAt, 'weekly', 0.78),
     ...knowledgeData.certifications.map((certification) =>
@@ -90,6 +99,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     makeSitemapEntry('/feed.xml', latestSiteDate, 'daily', 0.7),
     ...collectionEntries,
     ...publicationEntries,
+    ...deepResearchEntries,
     ...certificationsEntries,
     ...blogEntries,
     ...(sermonsCount > 0 ? sermonEntries : []),

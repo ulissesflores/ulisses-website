@@ -6,6 +6,8 @@
     "upkf:generate": "node scripts/upkf/generate-artifacts.mjs",
     "upkf:verify": "node scripts/upkf/verify-artifacts.mjs",
     "upkf:check": "npm run upkf:generate && npm run upkf:verify",
+    "research:generate": "node scripts/research/generate-manuscripts.mjs",
+    "research:check": "node scripts/research/generate-manuscripts.mjs && node scripts/research/score-and-verify.mjs",
     "predev": "npm run upkf:generate",
     "prebuild": "npm run upkf:generate",
     "dev": "next dev",
@@ -15,6 +17,7 @@
     "links:inventory": "npm run upkf:generate"
   },
   "dependencies": {
+    "jszip": "^3.10.1",
     "lucide-react": "^0.562.0",
     "next": "16.1.2",
     "react": "19.2.3",
