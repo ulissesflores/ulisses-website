@@ -1,6 +1,6 @@
 # JSON-LD Audit (Generated)
 
-- Generated at: 2026-02-21T02:56:09.597Z
+- Generated at: 2026-02-21T03:24:55.488Z
 - Site graph nodes: 4
 - Public graph nodes: 144
 - Full graph nodes: 247
@@ -22,7 +22,8 @@
 - [x] 56 sermoes estruturados
 - [x] 19 posts do Mundo Politico estruturados
 - [x] full root sem campo text gigante
-- [x] public dataset inclui objetos de certificacoes, sermoes e posts
+- [x] public dataset com hasPart
+- [x] public dataset sem includesObject invalido
 - [x] upkf-source.md publicado corretamente
 - [x] did:web configurado
 - [x] did.json com verificationMethod

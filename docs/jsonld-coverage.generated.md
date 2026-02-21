@@ -11,8 +11,8 @@
 - Blog posts parsed: 19
 - Sermons parsed: 56
 - `/site.jsonld` bytes: 3476
-- `/public.jsonld` bytes: 89737
-- `/full.jsonld` bytes: 195029
+- `/public.jsonld` bytes: 93247
+- `/full.jsonld` bytes: 197279
 - Corpus files: 0
 - Corpus snippets: 0
 - Corpus dirs:

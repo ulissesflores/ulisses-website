@@ -2059,7 +2059,6 @@ function buildSermonNodes(siteUrl, sermons) {
     publisher: {
       '@id': publisherId,
     },
-    numberOfItems: sermons.total || sermons.collections.reduce((sum, item) => sum + item.items.length, 0),
     hasPart: sermons.collections.map((collection) => ({
       '@id': normalizeLocalAnchorId(siteUrl, collection.seriesSchemaId, `sermons-series-${slugify(collection.name)}`),
     })),
@@ -2077,17 +2076,18 @@ function buildSermonNodes(siteUrl, sermons) {
         '@id': collectionId,
       },
       inLanguage: sermons.inLanguage || 'pt-BR',
-      numberOfItems: series.items.length,
     });
 
     series.items.forEach((item) => {
       const slug = slugify(item.name).slice(0, 56) || `sermon-${item.position}`;
       const sermonNode = {
         '@id': `${seriesId}-sermon-${item.position}-${slug}`,
-        '@type': 'Sermon',
+        '@type': 'VideoObject',
+        additionalType: 'https://schema.org/Sermon',
         name: item.name,
         url: item.youtubeUrl,
         inLanguage: sermons.inLanguage || 'pt-BR',
+        genre: 'Sermon',
         isPartOf: {
           '@id': seriesId,
         },
@@ -2126,6 +2126,16 @@ function buildPublicJsonLd({
   const blogNodes = buildBlogNodes(siteUrl, blogPosts);
   const sermonNodes = buildSermonNodes(siteUrl, sermons);
   const extraNodes = [...certificationNodes, ...blogNodes, ...sermonNodes];
+  const isOrganizationNode = (node) => {
+    const type = node?.['@type'];
+    if (Array.isArray(type)) {
+      return type.includes('Organization');
+    }
+    return type === 'Organization';
+  };
+  const publicHasPart = [...collectionNodes, ...publicationNodes, ...certificationNodes, ...blogNodes, ...sermonNodes]
+    .filter((node) => !isOrganizationNode(node))
+    .map((node) => ({ '@id': node['@id'] }));
 
   const publicDatasetNode = {
     '@id': `${siteUrl}/#upkf-public`,
@@ -2143,8 +2153,7 @@ function buildPublicJsonLd({
       '@type': 'CreativeWork',
       name: path.basename(sourcePath),
     },
-    hasPart: collectionNodes.map((node) => ({ '@id': node['@id'] })),
-    includesObject: [...publicationNodes, ...extraNodes].map((node) => ({ '@id': node['@id'] })),
+    hasPart: publicHasPart,
   };
 
   return {
@@ -2217,7 +2226,6 @@ function buildFullUpkfJsonLd({
       text: sourcePath,
     },
     hasPart: topLevelSections,
-    includesObject: publications.map((publication) => ({ '@id': `${siteUrl}/#pub-${publication.id}` })),
     distribution: [
       {
         '@type': 'DataDownload',

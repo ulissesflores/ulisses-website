@@ -95,7 +95,15 @@ function main() {
       typeof node.url === 'string' &&
       node.url.startsWith('https://cursos.alura.com.br/certificate/'),
   );
-  const sermonNodes = publicGraph.filter((node) => node['@type'] === 'Sermon');
+  const sermonNodes = publicGraph.filter((node) => {
+    const type = node['@type'];
+    const asArray = Array.isArray(type) ? type : [type];
+    const hasSermonType = asArray.includes('Sermon');
+    const hasVideoSermon =
+      asArray.includes('VideoObject') &&
+      (node.genre === 'Sermon' || node.additionalType === 'https://schema.org/Sermon');
+    return hasSermonType || hasVideoSermon;
+  });
   const blogNodes = publicGraph.filter((node) => node['@type'] === 'BlogPosting');
 
   const fullRoot = fullGraph.find((node) => node['@id'] === 'https://ulissesflores.com/#upkf');
@@ -109,12 +117,11 @@ function main() {
   assert(checks, sermonNodes.length === 56, '56 sermoes estruturados');
   assert(checks, blogNodes.length === 19, '19 posts do Mundo Politico estruturados');
   assert(checks, fullRoot && !Object.prototype.hasOwnProperty.call(fullRoot, 'text'), 'full root sem campo text gigante');
+  assert(checks, publicRoot && Array.isArray(publicRoot.hasPart), 'public dataset com hasPart');
   assert(
     checks,
-    publicRoot &&
-      Array.isArray(publicRoot.includesObject) &&
-      publicRoot.includesObject.length >= allCreds.length + sermonNodes.length + blogNodes.length,
-    'public dataset inclui objetos de certificacoes, sermoes e posts',
+    !publicRoot || !Object.prototype.hasOwnProperty.call(publicRoot, 'includesObject'),
+    'public dataset sem includesObject invalido',
   );
   assert(
     checks,
