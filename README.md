@@ -1,36 +1,74 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# ulissesflores.com
 
-## Getting Started
+Personal website treated as a long-lived digital product, focused on clarity, performance, and high engineering standards.
 
-First, run the development server:
+**Production:** https://ulissesflores.com
+
+---
+
+## Overview
+
+This repository contains the source code for **ulissesflores.com**. Although personal in nature, the project is operated with professional software engineering practices:
+
+- documentation-as-code
+- explicit decision-making (ADRs)
+- traceable changes (changelog + versioning)
+- SEO, performance, accessibility, and security as first-class concerns
+
+---
+
+## Tech Stack
+
+- **Framework:** Next.js (App Router)
+- **Language:** TypeScript
+- **Deployment:** Vercel (Git-integrated)
+- **Domain:** `ulissesflores.com`
+
+---
+
+## Documentation & Governance
+
+The repository is the single source of truth:
+
+- [`decisions/`](./decisions/) — Architecture Decision Records (ADRs)
+- [`docs/`](./docs/) — Operational and product documentation
+- [`CHANGELOG.md`](./CHANGELOG.md) — Notable changes (Keep a Changelog)
+
+---
+
+## Local Development
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open http://localhost:3000.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-## Learn More
+**Deployment**
+--------------
 
-To learn more about Next.js, take a look at the following resources:
+Deployments are automated via Git → Vercel.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+-   Pushes to main trigger production deployments
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+-   Preview deployments are created for pull requests
 
-## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+**Repository Notes**
+--------------------
+
+-   Public repository by default
+
+-   Secrets are never committed
+
+-   Environment variables are managed via Vercel
+
+
+
+
+
+

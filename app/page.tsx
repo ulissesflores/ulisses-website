@@ -1,12 +1,28 @@
 import Image from 'next/image';
 import { 
   BookOpen, Cpu, Github, Linkedin, Mail, Terminal, Download, 
-  Globe, Instagram, Facebook, MapPin, MessageCircle, 
-  Layers, Code, Briefcase, Award, TrendingUp, ShieldCheck, 
+  Globe, MapPin, MessageCircle, 
+  Layers, Code, Briefcase, Award, TrendingUp, 
   Database, CheckCircle, FileText
 } from 'lucide-react';
+import { publications } from '@/data/publications';
 
 export default function Home() {
+  const featuredPublications = [...publications]
+    .sort((a, b) => {
+      if (a.date === b.date) {
+        return a.ordinal - b.ordinal;
+      }
+      return Number(b.date) - Number(a.date);
+    })
+    .slice(0, 4);
+
+  const categoryLabels = {
+    research: 'RESEARCH • IA & ECONOMIA',
+    whitepapers: 'WHITEPAPER • ENGENHARIA',
+    essays: 'ENSAIO • HUMANIDADES',
+  } as const;
+
   return (
     <div className="min-h-screen bg-neutral-950 text-neutral-200 font-sans selection:bg-emerald-500/30 scroll-smooth">
       {/* Background Matrix/Grid Sutil */}
@@ -282,31 +298,27 @@ export default function Home() {
              <BookOpen className="text-cyan-500" /> Publicações Selecionadas
           </h2>
           <div className="grid md:grid-cols-2 gap-6">
-            <LinkCard 
-              category="RESEARCH • IA & ECONOMIA"
-              title="A Lei de Little como Vetor de Resiliência em Data Science"
-              desc="Desconstrução sistêmica de crises de entrega usando modelos estocásticos e LSTM."
-              href="/research/2025-little-law-resilience.pdf"
-            />
-             <LinkCard 
-              category="RESEARCH • ECONOMIA AUSTRIACA"
-              title="Bitcoin como Ativo de Reserva: Uma Abordagem Praxeológica"
-              desc="Teoria monetária aplicada a ativos de ledger descentralizado."
-              href="/research/2024-bitcoin-austrian-economics.pdf"
-            />
-            <LinkCard 
-              category="WHITEPAPER • IOT & HARDWARE"
-              title="Arquiteturas Cloudless e Soberania de Dados"
-              desc="Edge Computing com ESP32 para mitigar riscos de vigilância corporativa."
-              href="/whitepapers/2025-iot-data-sovereignty.pdf"
-            />
-             <LinkCard 
-              category="ENSAIO • HUMANIDADES"
-              title="Evidências Históricas e Crítica Textual do Cânon"
-              desc="Análise arqueológica da formação do pensamento ocidental e teologia histórica."
-              href="/essays/2024-biblical-canon-archaeology.pdf"
-            />
+            {featuredPublications.map((publication) => (
+              <LinkCard
+                key={publication.id}
+                category={categoryLabels[publication.category]}
+                title={publication.title}
+                desc={publication.summary}
+                href={`/${publication.category}/${publication.id}`}
+              />
+            ))}
           </div>
+        </section>
+
+        <section id="codexhash" className="mb-24 scroll-mt-24 border border-emerald-500/20 bg-emerald-500/5 rounded-2xl p-8">
+          <h2 className="text-2xl font-bold text-white mb-4">Codex Hash Ltda</h2>
+          <p className="text-neutral-300 leading-relaxed mb-4">
+            Laboratório de P&D (deep tech) com foco em finanças quantitativas/Web3, arquitetura cloudless para IoT
+            e inteligência artificial aplicada à resiliência ciberfinanceira.
+          </p>
+          <p className="text-neutral-400 text-sm leading-relaxed">
+            Esta seção é a âncora oficial <code>#codexhash</code> para resolver links semânticos internos.
+          </p>
         </section>
 
         {/* SEÇÃO: FORMAL BIO / MANIFESTO (O Texto Lattes na íntegra) */}

@@ -1,0 +1,699 @@
+/* AUTO-GENERATED FILE. DO NOT EDIT MANUALLY.
+ * Source: /Users/ulissesflores/Documents/Projetos/ulisses-hub/data/upkf/ulisses-flores-sovereign-upkf_v3.3.md
+ * Generated at: 2026-02-21
+ */
+
+export const upkfMeta = {
+  "upkfTitle": "Ulisses Flores — Sovereign UPKF (Universal Personal Knowledge Framework)",
+  "upkfVersion": "3.3",
+  "generatedAt": "2026-02-21",
+  "schemaTarget": "Schema.org JSON-LD via deterministic derivation",
+  "sourcePath": "/Users/ulissesflores/Documents/Projetos/ulisses-hub/data/upkf/ulisses-flores-sovereign-upkf_v3.3.md",
+  "displayName": "Carlos Ulisses Flores Ribeiro",
+  "preferredName": "Ulisses",
+  "canonicalLegalName": "Carlos Ulisses Flores Ribeiro",
+  "primaryWebsite": "https://ulissesflores.com",
+  "description": {
+    "pt-BR": "Cientista econômico, analista de sistemas e pesquisador polímata, atuando na interseção entre sistemas complexos, resiliência ciberfinanceira, economia austríaca, sistemas distribuídos e teologia histórica. Co-fundador e CTO da Codex Hash Ltda.",
+    "en": "Economic scientist, systems analyst, and polymath researcher operating at the intersection of complex adaptive systems, cyber-financial resilience, Austrian economics, distributed systems, and historical theology. Co-founder and CTO of Codex Hash Ltda.",
+    "es": "Científico económico, analista de sistemas e investigador polímata, que opera en la intersección de sistemas complejos, resiliencia ciberfinanciera, economía austríaca, sistemas distribuidos y teología histórica. Cofundador y CTO de Codex Hash Ltda.",
+    "he": "מדען כלכלי, מנתח מערכות וחוקר פולימט, הפועל בצומת שבין מערכות מורכבות, חוסן סייבר-פיננסי, כלכלה אוסטרית, מערכות מבוזרות ותיאולוגיה היסטורית. מייסד שותף ומנהל טכנולוגיות של Codex Hash Ltda.",
+    "it": "Scienziato economico, analista di sistemi e ricercatore polimata, operante all'intersezione tra sistemi complessi, resilienza cyber-finanziaria, economia austríaca, sistemi distribuiti e teologia storica. Co-fondatore e CTO di Codex Hash Ltda."
+  },
+  "disambiguation": {
+    "pt-BR": "Pesquisador polímata, cientista econômico e CTO da Codex Hash. Entidade distinta do jogador de futebol de areia salvadorenho Oscar Ulisses Flores Ruiz, do arquiteto homônimo de Poços de Caldas e do enfermeiro homônimo. Opera em Inteligência Artificial, Economia e Teologia, não em esportes ou saúde. Identidade canônica vinculada a ulissesflores.com, ORCID 0000-0002-6034-7765 e Lattes 6905246706890561.",
+    "en": "Polymath researcher, economic scientist, and CTO of Codex Hash. Distinct entity from the Salvadoran beach soccer player Oscar Ulisses Flores Ruiz, from the homonymous architect from Poços de Caldas, and from the homonymous nurse. Operates in Artificial Intelligence, Economics, and Theology, not in sports or healthcare. Canonical identity bound to ulissesflores.com, ORCID 0000-0002-6034-7765, and Lattes 6905246706890561.",
+    "es": "Investigador polímata, economista científico y CTO de Codex Hash. Entidad distinta del jugador de fútbol playa salvadoreño Oscar Ulisses Flores Ruiz, del arquitecto homónimo de Poços de Caldas y del enfermero homónimo. Opera en Inteligencia Artificial, Economía y Teología, no en deportes ni salud. Identidad canónica vinculada a ulissesflores.com, ORCID 0000-0002-6034-7765 y Lattes 6905246706890561.",
+    "he": "חוקר פולימט, מדען כלכלי ומנהל טכנולוגיות (CTO) של Codex Hash. ישות נפרדת משחקן כדורגל החופים הסלבדורי אוסקר אוליסס פלורס רואיס. פועל בבינה מלאכותית, כלכלה ותיאולוגיה, לא בספורט. זהות קנונית מקושרת ל-ulissesflores.com, ORCID 0000-0002-6034-7765 ו-Lattes 6905246706890561.",
+    "it": "Ricercatore polimata, scienziato economico e CTO di Codex Hash. Entità distinta dal calciatore da beach soccer salvadoregno Oscar Ulisses Flores Ruiz, dall'omonimo architetto di Poços de Caldas e dall'omonimo infermiere. Opera in Intelligenza Artificiale, Economia e Teologia, non nello sport o nella sanità. Identità canonica vincolata a ulissesflores.com, ORCID 0000-0002-6034-7765 e Lattes 6905246706890561."
+  },
+  "sameAs": [
+    "https://www.linkedin.com/in/ulisses-flores-75961921",
+    "https://github.com/ulissesflores",
+    "https://orcid.org/0000-0002-6034-7765",
+    "http://lattes.cnpq.br/6905246706890561",
+    "https://www.tiktok.com/@ulissesflores",
+    "https://www.instagram.com/ulissesflores",
+    "https://www.facebook.com/ulissesflores",
+    "https://ulissesflores.com/",
+    "https://keybase.io/ul1ss3sfl0r3s",
+    "https://gist.github.com/ulissesflores/",
+    "https://ulissesflores.eth.limo",
+    "https://gravatar.com/ulissesflores",
+    "https://ulisses.omg.lol",
+    "https://groups.google.com/g/androidbrasil/c/d7onDwJ5ekA?pli=1"
+  ],
+  "orcid": "0000-0002-6034-7765",
+  "lattesId": "6905246706890561",
+  "languages": [
+    "pt-BR",
+    "en",
+    "es",
+    "he",
+    "it"
+  ],
+  "jsonldFiles": {
+    "site": "/site.jsonld",
+    "full": "/public.jsonld"
+  },
+  "jsonldCoverage": {
+    "markdownBytes": 85249,
+    "markdownLines": 1391,
+    "sectionCount": 102,
+    "siteGraphNodes": 25,
+    "fullGraphNodes": 128,
+    "siteJsonldBytes": 28269,
+    "fullJsonldBytes": 230176,
+    "corpusFiles": 3,
+    "corpusSnippets": 47,
+    "corpusDirs": [
+      "/Users/ulissesflores/Documents/Mestrado/Estudo de caso Yape/Parametros e Modelos",
+      "/Users/ulissesflores/Documents/Projetos/Ulisses Flores Informações"
+    ]
+  }
+} as const;
+
+export const siteJsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@id": "https://ulissesflores.com/#website",
+      "@type": "WebSite",
+      "name": "Ulisses Flores — Sovereign UPKF (Universal Personal Knowledge Framework)",
+      "url": "https://ulissesflores.com",
+      "inLanguage": [
+        "pt-BR",
+        "en",
+        "es",
+        "he",
+        "it"
+      ]
+    },
+    {
+      "@id": "https://ulissesflores.com/#person",
+      "@type": "Person",
+      "name": "Carlos Ulisses Flores Ribeiro",
+      "alternateName": [
+        "Carlos Ulisses Flores",
+        "Ulisses Flores",
+        "C. U. Flores",
+        "Flores, C. U.",
+        "FLORES, C. U."
+      ],
+      "givenName": "Ulisses",
+      "birthDate": "1983",
+      "url": "https://ulissesflores.com",
+      "sameAs": [
+        "https://www.linkedin.com/in/ulisses-flores-75961921",
+        "https://github.com/ulissesflores",
+        "https://orcid.org/0000-0002-6034-7765",
+        "http://lattes.cnpq.br/6905246706890561",
+        "https://www.tiktok.com/@ulissesflores",
+        "https://www.instagram.com/ulissesflores",
+        "https://www.facebook.com/ulissesflores",
+        "https://ulissesflores.com/",
+        "https://keybase.io/ul1ss3sfl0r3s",
+        "https://gist.github.com/ulissesflores/",
+        "https://ulissesflores.eth.limo",
+        "https://gravatar.com/ulissesflores",
+        "https://ulisses.omg.lol",
+        "https://groups.google.com/g/androidbrasil/c/d7onDwJ5ekA?pli=1"
+      ],
+      "disambiguatingDescription": "Polymath researcher, economic scientist, and CTO of Codex Hash. Distinct entity from the Salvadoran beach soccer player Oscar Ulisses Flores Ruiz, from the homonymous architect from Poços de Caldas, and from the homonymous nurse. Operates in Artificial Intelligence, Economics, and Theology, not in sports or healthcare. Canonical identity bound to ulissesflores.com, ORCID 0000-0002-6034-7765, and Lattes 6905246706890561.",
+      "description": "Cientista econômico, analista de sistemas e pesquisador polímata, atuando na interseção entre sistemas complexos, resiliência ciberfinanceira, economia austríaca, sistemas distribuídos e teologia histórica. Co-fundador e CTO da Codex Hash Ltda.",
+      "identifier": [
+        {
+          "@type": "PropertyValue",
+          "propertyID": "ORCID",
+          "value": "0000-0002-6034-7765"
+        },
+        {
+          "@type": "PropertyValue",
+          "propertyID": "Lattes",
+          "value": "6905246706890561"
+        }
+      ],
+      "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "propertyID": "notSameAs",
+          "value": "Oscar Ulisses Flores Ruiz (Salvadoran beach soccer player, FIFA-registered)"
+        },
+        {
+          "@type": "PropertyValue",
+          "propertyID": "notSameAs",
+          "value": "the architect \"Ulisses Flores\" from Poços de Caldas, MG (CAU/MG registry)"
+        },
+        {
+          "@type": "PropertyValue",
+          "propertyID": "notSameAs",
+          "value": "the nurse \"Ulisses Flores\" in Brazilian healthcare registries (COREN)"
+        },
+        {
+          "@type": "PropertyValue",
+          "propertyID": "notSameAs",
+          "value": "any entity lacking at least one strong anchor listed above"
+        }
+      ],
+      "worksFor": {
+        "@id": "https://ulissesflores.com/#codexhash"
+      }
+    },
+    {
+      "@id": "https://ulissesflores.com/#codexhash",
+      "@type": "Organization",
+      "name": "Codex Hash",
+      "legalName": "CODEX HASH LTDA",
+      "identifier": {
+        "@type": "PropertyValue",
+        "propertyID": "CNPJ",
+        "value": "53.520.203/0001-75"
+      },
+      "foundingDate": "2024-01-16",
+      "url": "https://codexhash.com",
+      "email": "contato@codexhash.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Avenida Itacira, 2689, Planalto Paulista, São Paulo/SP, CEP 04061-003, BR",
+        "addressCountry": "BR"
+      },
+      "description": "Laboratório de P&D (deep tech) focado em finanças quantitativas/Web3, engenharia de hardware IoT (arquiteturas cloudless/edge) e IA aplicada para resiliência ciberfinanceira."
+    },
+    {
+      "@id": "https://ulissesflores.com/#codexhash-research",
+      "@type": "Organization",
+      "name": "Codex Hash Research",
+      "url": "https://codexhash.com/research",
+      "parentOrganization": {
+        "@id": "https://ulissesflores.com/#codexhash"
+      }
+    },
+    {
+      "@id": "https://ulissesflores.com/#collection-research",
+      "@type": "CollectionPage",
+      "name": "Research: IA, Economia e Sistemas Complexos",
+      "description": "Colecao de artigos cientificos com foco em resiliencia ciberfinanceira, modelagem quantitativa e inteligencia artificial aplicada a sistemas complexos.",
+      "url": "https://ulissesflores.com/research"
+    },
+    {
+      "@id": "https://ulissesflores.com/#collection-whitepapers",
+      "@type": "CollectionPage",
+      "name": "Whitepapers: Engenharia Aplicada e Arquitetura",
+      "description": "Whitepapers tecnicos sobre arquitetura de sistemas, hardware IoT, seguranca, privacidade e soberania de dados em ambientes de missao critica.",
+      "url": "https://ulissesflores.com/whitepapers"
+    },
+    {
+      "@id": "https://ulissesflores.com/#collection-essays",
+      "@type": "CollectionPage",
+      "name": "Essays: Teologia, Humanidades e Critica Historica",
+      "description": "Ensaios academicos com abordagem historico-critica em teologia, filosofia e fundamentos da ordem social e economica.",
+      "url": "https://ulissesflores.com/essays"
+    },
+    {
+      "@id": "https://ulissesflores.com/#pub-2025-little-law-resilience",
+      "@type": "ScholarlyArticle",
+      "name": "A Lei de Little como Vetor de Resiliência e Qualidade",
+      "headline": "A Lei de Little como Vetor de Resiliência e Qualidade",
+      "description": "Esta pagina apresenta uma sintese executiva de \"A Lei de Little como Vetor de Resiliência e Qualidade\" com foco no valor cientifico e aplicabilidade tecnica.",
+      "url": "https://ulissesflores.com/research/2025-little-law-resilience",
+      "datePublished": "2025-01-01",
+      "dateModified": "2026-02-21",
+      "inLanguage": "pt-BR",
+      "author": {
+        "@id": "https://ulissesflores.com/#person"
+      },
+      "publisher": {
+        "@id": "https://ulissesflores.com/#codexhash-research"
+      },
+      "isPartOf": {
+        "@id": "https://ulissesflores.com/#collection-research"
+      },
+      "encoding": {
+        "@type": "MediaObject",
+        "contentUrl": "https://ulissesflores.com/research/2025-little-law-resilience.pdf",
+        "encodingFormat": "application/pdf"
+      },
+      "abstract": "Estudo sobre aplicacao da Lei de Little para elevar previsibilidade de entrega e resiliencia em operacoes de Data Science. Abordagem analitico-experimental com simulacao de fluxo, comparando cenarios com e sem limite explicito de trabalho em progresso. A evidencia indica reducao relevante de lead time sem perda material de throughput, reforcando a eficiencia da limitacao de WIP.",
+      "keywords": "IA, Economia, Sistemas Complexos, LITTLE, LAW, RESILIENCE"
+    },
+    {
+      "@id": "https://ulissesflores.com/#pub-2025-lstm-asset-prediction",
+      "@type": "ScholarlyArticle",
+      "name": "Análise Preditiva de Ativos Financeiros com Modelos LSTM",
+      "headline": "Análise Preditiva de Ativos Financeiros com Modelos LSTM",
+      "description": "Esta pagina apresenta uma sintese executiva de \"Análise Preditiva de Ativos Financeiros com Modelos LSTM\" com foco no valor cientifico e aplicabilidade tecnica.",
+      "url": "https://ulissesflores.com/research/2025-lstm-asset-prediction",
+      "datePublished": "2025-01-01",
+      "dateModified": "2026-02-21",
+      "inLanguage": "pt-BR",
+      "author": {
+        "@id": "https://ulissesflores.com/#person"
+      },
+      "publisher": {
+        "@id": "https://ulissesflores.com/#codexhash-research"
+      },
+      "isPartOf": {
+        "@id": "https://ulissesflores.com/#collection-research"
+      },
+      "encoding": {
+        "@type": "MediaObject",
+        "contentUrl": "https://ulissesflores.com/research/2025-lstm-asset-prediction.pdf",
+        "encodingFormat": "application/pdf"
+      },
+      "abstract": "Analise preditiva de ativos financeiros com redes LSTM para capturar dinamica temporal em mercados nao estacionarios. Modelagem de series temporais com engenharia de atributos, validacao temporal e comparacao contra baselines estatisticos. O estudo evidencia ganho de sinal preditivo em janelas especificas e melhora de robustez quando o treinamento respeita ordem temporal.",
+      "keywords": "IA, Economia, Sistemas Complexos, LSTM, ASSET, PREDICTION"
+    },
+    {
+      "@id": "https://ulissesflores.com/#pub-2025-hybrid-cooling-thermodynamics",
+      "@type": "Report",
+      "name": "Análise Termodinâmica e Engenharia de Sistemas Híbridos de Resfriamento",
+      "headline": "Análise Termodinâmica e Engenharia de Sistemas Híbridos de Resfriamento",
+      "description": "Esta pagina apresenta uma sintese executiva de \"Análise Termodinâmica e Engenharia de Sistemas Híbridos de Resfriamento\" com foco no valor cientifico e aplicabilidade tecnica.",
+      "url": "https://ulissesflores.com/whitepapers/2025-hybrid-cooling-thermodynamics",
+      "datePublished": "2025-01-01",
+      "dateModified": "2026-02-21",
+      "inLanguage": "pt-BR",
+      "author": {
+        "@id": "https://ulissesflores.com/#person"
+      },
+      "publisher": {
+        "@id": "https://ulissesflores.com/#codexhash-research"
+      },
+      "isPartOf": {
+        "@id": "https://ulissesflores.com/#collection-whitepapers"
+      },
+      "encoding": {
+        "@type": "MediaObject",
+        "contentUrl": "https://ulissesflores.com/whitepapers/2025-hybrid-cooling-thermodynamics.pdf",
+        "encodingFormat": "application/pdf"
+      },
+      "abstract": "Whitepaper de termodinamica aplicada ao projeto de sistemas hibridos de resfriamento para infraestrutura critica. Analise termo-fluidodinamica com cenarios de carga, comparando estrategias hibridas de dissipacao e controle. A configuracao hibrida apresenta melhor estabilidade termica em picos de carga e menor risco de indisponibilidade.",
+      "keywords": "Engenharia, IoT, Seguranca, HYBRID, COOLING, THERMODYNAMICS"
+    },
+    {
+      "@id": "https://ulissesflores.com/#pub-2025-iot-data-sovereignty",
+      "@type": "Report",
+      "name": "Arquiteturas Cloudless e Soberania de Dados em IoT",
+      "headline": "Arquiteturas Cloudless e Soberania de Dados em IoT",
+      "description": "Esta pagina apresenta uma sintese executiva de \"Arquiteturas Cloudless e Soberania de Dados em IoT\" com foco no valor cientifico e aplicabilidade tecnica.",
+      "url": "https://ulissesflores.com/whitepapers/2025-iot-data-sovereignty",
+      "datePublished": "2025-01-01",
+      "dateModified": "2026-02-21",
+      "inLanguage": "pt-BR",
+      "author": {
+        "@id": "https://ulissesflores.com/#person"
+      },
+      "publisher": {
+        "@id": "https://ulissesflores.com/#codexhash-research"
+      },
+      "isPartOf": {
+        "@id": "https://ulissesflores.com/#collection-whitepapers"
+      },
+      "encoding": {
+        "@type": "MediaObject",
+        "contentUrl": "https://ulissesflores.com/whitepapers/2025-iot-data-sovereignty.pdf",
+        "encodingFormat": "application/pdf"
+      },
+      "abstract": "Arquiteturas cloudless para IoT com soberania de dados e processamento local em edge. Comparacao de arquiteturas centralizadas versus edge-first, incluindo requisitos de identidade, criptografia e observabilidade. O desenho cloudless reduz dependencia externa e melhora controle sobre confidencialidade e disponibilidade local.",
+      "keywords": "Engenharia, IoT, Seguranca, IOT, DATA, SOVEREIGNTY"
+    },
+    {
+      "@id": "https://ulissesflores.com/#pub-2025-fraud-detection-mlp",
+      "@type": "ScholarlyArticle",
+      "name": "Detecção de Fraudes em Cartões com Redes Neurais",
+      "headline": "Detecção de Fraudes em Cartões com Redes Neurais",
+      "description": "Esta pagina apresenta uma sintese executiva de \"Detecção de Fraudes em Cartões com Redes Neurais\" com foco no valor cientifico e aplicabilidade tecnica.",
+      "url": "https://ulissesflores.com/research/2025-fraud-detection-mlp",
+      "datePublished": "2025-01-01",
+      "dateModified": "2026-02-21",
+      "inLanguage": "pt-BR",
+      "author": {
+        "@id": "https://ulissesflores.com/#person"
+      },
+      "publisher": {
+        "@id": "https://ulissesflores.com/#codexhash-research"
+      },
+      "isPartOf": {
+        "@id": "https://ulissesflores.com/#collection-research"
+      },
+      "encoding": {
+        "@type": "MediaObject",
+        "contentUrl": "https://ulissesflores.com/research/2025-fraud-detection-mlp.pdf",
+        "encodingFormat": "application/pdf"
+      },
+      "abstract": "Deteccao de fraude em cartoes com redes neurais MLP e engenharia de atributos para dados desbalanceados. Pipeline supervisionado com reamostragem, calibracao de limiar e avaliacao por precision-recall e custo de erro. A combinacao de MLP com ajuste de limiar melhora captura de fraudes mantendo taxa operacional aceitavel de falsos positivos.",
+      "keywords": "IA, Economia, Sistemas Complexos, FRAUD, DETECTION, MLP"
+    },
+    {
+      "@id": "https://ulissesflores.com/#pub-2024-historicity-jesus-archaeology",
+      "@type": "ScholarlyArticle",
+      "name": "Análise Historiográfica e Arqueológica Exaustiva: A Historicidade de Jesus",
+      "headline": "Análise Historiográfica e Arqueológica Exaustiva: A Historicidade de Jesus",
+      "description": "Esta pagina apresenta uma sintese executiva de \"Análise Historiográfica e Arqueológica Exaustiva: A Historicidade de Jesus\" com foco no valor cientifico e aplicabilidade tecnica.",
+      "url": "https://ulissesflores.com/research/2024-historicity-jesus-archaeology",
+      "datePublished": "2024-01-01",
+      "dateModified": "2026-02-21",
+      "inLanguage": "pt-BR",
+      "author": {
+        "@id": "https://ulissesflores.com/#person"
+      },
+      "publisher": {
+        "@id": "https://ulissesflores.com/#codexhash-research"
+      },
+      "isPartOf": {
+        "@id": "https://ulissesflores.com/#collection-research"
+      },
+      "encoding": {
+        "@type": "MediaObject",
+        "contentUrl": "https://ulissesflores.com/research/2024-historicity-jesus-archaeology.pdf",
+        "encodingFormat": "application/pdf"
+      },
+      "abstract": "Pesquisa historiografica sobre historicidade de Jesus combinando critica textual, fontes antigas e evidencias arqueologicas. Revisao historico-critica de fontes primarias e secundarias com avaliacao de contexto, autoria e data. O estudo delimita consenso academico minimo e identifica zonas de alta e baixa confianca documental.",
+      "keywords": "IA, Economia, Sistemas Complexos, HISTORICITY, JESUS, ARCHAEOLOGY"
+    },
+    {
+      "@id": "https://ulissesflores.com/#pub-2024-bitcoin-praxeology",
+      "@type": "ScholarlyArticle",
+      "name": "Bitcoin como Ativo de Reserva e a Teoria da Moeda na Escola Austríaca",
+      "headline": "Bitcoin como Ativo de Reserva e a Teoria da Moeda na Escola Austríaca",
+      "description": "Esta pagina apresenta uma sintese executiva de \"Bitcoin como Ativo de Reserva e a Teoria da Moeda na Escola Austríaca\" com foco no valor cientifico e aplicabilidade tecnica.",
+      "url": "https://ulissesflores.com/research/2024-bitcoin-praxeology",
+      "datePublished": "2024-01-01",
+      "dateModified": "2026-02-21",
+      "inLanguage": "pt-BR",
+      "author": {
+        "@id": "https://ulissesflores.com/#person"
+      },
+      "publisher": {
+        "@id": "https://ulissesflores.com/#codexhash-research"
+      },
+      "isPartOf": {
+        "@id": "https://ulissesflores.com/#collection-research"
+      },
+      "encoding": {
+        "@type": "MediaObject",
+        "contentUrl": "https://ulissesflores.com/research/2024-bitcoin-praxeology.pdf",
+        "encodingFormat": "application/pdf"
+      },
+      "abstract": "Analise do Bitcoin como ativo de reserva sob praxeologia e teoria monetaria da Escola Austriaca. Discussao teoretica com comparacao entre propriedades monetarias e mecanismos de governanca de oferta. O artigo sustenta que Bitcoin combina previsibilidade de emissao e portabilidade digital com implicacoes macroeconomicas relevantes.",
+      "keywords": "IA, Economia, Sistemas Complexos, BITCOIN, PRAXEOLOGY"
+    },
+    {
+      "@id": "https://ulissesflores.com/#pub-2024-scribal-canonization-ezra",
+      "@type": "ScholarlyArticle",
+      "name": "Canonização Escribal: Análise Histórico-Crítica da Formação do Cânon",
+      "headline": "Canonização Escribal: Análise Histórico-Crítica da Formação do Cânon",
+      "description": "Esta pagina apresenta uma sintese executiva de \"Canonização Escribal: Análise Histórico-Crítica da Formação do Cânon\" com foco no valor cientifico e aplicabilidade tecnica.",
+      "url": "https://ulissesflores.com/research/2024-scribal-canonization-ezra",
+      "datePublished": "2024-01-01",
+      "dateModified": "2026-02-21",
+      "inLanguage": "pt-BR",
+      "author": {
+        "@id": "https://ulissesflores.com/#person"
+      },
+      "publisher": {
+        "@id": "https://ulissesflores.com/#codexhash-research"
+      },
+      "isPartOf": {
+        "@id": "https://ulissesflores.com/#collection-research"
+      },
+      "encoding": {
+        "@type": "MediaObject",
+        "contentUrl": "https://ulissesflores.com/research/2024-scribal-canonization-ezra.pdf",
+        "encodingFormat": "application/pdf"
+      },
+      "abstract": "Estudo historico-critico sobre canonizacao escribal e processos de consolidacao textual associados a Esdras. Analise de tradicoes textuais, historia da transmissao e contexto sociopolitico do periodo pos-exilico. A pesquisa destaca dinamica incremental de consolidacao canonica com mediação institucional e escribal.",
+      "keywords": "IA, Economia, Sistemas Complexos, SCRIBAL, CANONIZATION, EZRA"
+    },
+    {
+      "@id": "https://ulissesflores.com/#pub-2024-theology-economic-order",
+      "@type": "ScholarlyArticle",
+      "name": "Fundamentos Transcendentes da Ordem Econômica",
+      "headline": "Fundamentos Transcendentes da Ordem Econômica",
+      "description": "Esta pagina apresenta uma sintese executiva de \"Fundamentos Transcendentes da Ordem Econômica\" com foco no valor cientifico e aplicabilidade tecnica.",
+      "url": "https://ulissesflores.com/essays/2024-theology-economic-order",
+      "datePublished": "2024-01-01",
+      "dateModified": "2026-02-21",
+      "inLanguage": "pt-BR",
+      "author": {
+        "@id": "https://ulissesflores.com/#person"
+      },
+      "publisher": {
+        "@id": "https://ulissesflores.com/#codexhash-research"
+      },
+      "isPartOf": {
+        "@id": "https://ulissesflores.com/#collection-essays"
+      },
+      "encoding": {
+        "@type": "MediaObject",
+        "contentUrl": "https://ulissesflores.com/essays/2024-theology-economic-order.pdf",
+        "encodingFormat": "application/pdf"
+      },
+      "abstract": "Ensaio sobre fundamentos transcendentes da ordem economica e sua relacao com normatividade moral. Analise conceitual interdisciplinar entre teologia, filosofia moral e teoria economica. O texto demonstra que categorias de responsabilidade e dignidade influenciam desenho institucional e incentivos.",
+      "keywords": "Teologia, Humanidades, Historia, THEOLOGY, ECONOMIC, ORDER"
+    },
+    {
+      "@id": "https://ulissesflores.com/#pub-2024-ring-signatures-privacy",
+      "@type": "Report",
+      "name": "Implementação de Ring Signatures e Endereços Furtivos",
+      "headline": "Implementação de Ring Signatures e Endereços Furtivos",
+      "description": "Esta pagina apresenta uma sintese executiva de \"Implementação de Ring Signatures e Endereços Furtivos\" com foco no valor cientifico e aplicabilidade tecnica.",
+      "url": "https://ulissesflores.com/whitepapers/2024-ring-signatures-privacy",
+      "datePublished": "2024-01-01",
+      "dateModified": "2026-02-21",
+      "inLanguage": "pt-BR",
+      "author": {
+        "@id": "https://ulissesflores.com/#person"
+      },
+      "publisher": {
+        "@id": "https://ulissesflores.com/#codexhash-research"
+      },
+      "isPartOf": {
+        "@id": "https://ulissesflores.com/#collection-whitepapers"
+      },
+      "encoding": {
+        "@type": "MediaObject",
+        "contentUrl": "https://ulissesflores.com/whitepapers/2024-ring-signatures-privacy.pdf",
+        "encodingFormat": "application/pdf"
+      },
+      "abstract": "Whitepaper sobre ring signatures e enderecos furtivos para privacidade transacional em sistemas distribuidos. Revisao de primitives criptograficas com analise de seguranca, custos computacionais e requisitos de implementacao. A combinacao de assinaturas em anel e stealth addresses melhora privacidade sem eliminar verificabilidade criptografica.",
+      "keywords": "Engenharia, IoT, Seguranca, RING, SIGNATURES, PRIVACY"
+    },
+    {
+      "@id": "https://ulissesflores.com/#pub-2024-agritech-agile-flow",
+      "@type": "Report",
+      "name": "Transformação Ágil e Engenharia de Fluxo em Data Science",
+      "headline": "Transformação Ágil e Engenharia de Fluxo em Data Science",
+      "description": "Esta pagina apresenta uma sintese executiva de \"Transformação Ágil e Engenharia de Fluxo em Data Science\" com foco no valor cientifico e aplicabilidade tecnica.",
+      "url": "https://ulissesflores.com/whitepapers/2024-agritech-agile-flow",
+      "datePublished": "2024-01-01",
+      "dateModified": "2026-02-21",
+      "inLanguage": "pt-BR",
+      "author": {
+        "@id": "https://ulissesflores.com/#person"
+      },
+      "publisher": {
+        "@id": "https://ulissesflores.com/#codexhash-research"
+      },
+      "isPartOf": {
+        "@id": "https://ulissesflores.com/#collection-whitepapers"
+      },
+      "encoding": {
+        "@type": "MediaObject",
+        "contentUrl": "https://ulissesflores.com/whitepapers/2024-agritech-agile-flow.pdf",
+        "encodingFormat": "application/pdf"
+      },
+      "abstract": "Whitepaper sobre transformacao agil e engenharia de fluxo em contextos agritech orientados a dados. Aplicacao de metricas de fluxo, mapeamento de cadeia de valor e ciclos de melhoria orientados por evidencia. A governanca por fluxo eleva previsibilidade de entrega e reduz retrabalho em times multidisciplinares.",
+      "keywords": "Engenharia, IoT, Seguranca, AGRITECH, AGILE, FLOW"
+    },
+    {
+      "@id": "https://ulissesflores.com/#pub-2024-exegetical-treatise-anthropology",
+      "@type": "ScholarlyArticle",
+      "name": "Tratado Exegético sobre a Representação da Moralidade e Antropologia",
+      "headline": "Tratado Exegético sobre a Representação da Moralidade e Antropologia",
+      "description": "Esta pagina apresenta uma sintese executiva de \"Tratado Exegético sobre a Representação da Moralidade e Antropologia\" com foco no valor cientifico e aplicabilidade tecnica.",
+      "url": "https://ulissesflores.com/essays/2024-exegetical-treatise-anthropology",
+      "datePublished": "2024-01-01",
+      "dateModified": "2026-02-21",
+      "inLanguage": "pt-BR",
+      "author": {
+        "@id": "https://ulissesflores.com/#person"
+      },
+      "publisher": {
+        "@id": "https://ulissesflores.com/#codexhash-research"
+      },
+      "isPartOf": {
+        "@id": "https://ulissesflores.com/#collection-essays"
+      },
+      "encoding": {
+        "@type": "MediaObject",
+        "contentUrl": "https://ulissesflores.com/essays/2024-exegetical-treatise-anthropology.pdf",
+        "encodingFormat": "application/pdf"
+      },
+      "abstract": "Tratado exegético sobre representacao da moralidade e antropologia em tradicoes textuais teologicas. Leitura exegética com cruzamento de contexto historico, semantica e tradicao interpretativa. O artigo organiza categorias antropologicas recorrentes e explicita implicacoes eticas contemporaneas.",
+      "keywords": "Teologia, Humanidades, Historia, EXEGETICAL, TREATISE, ANTHROPOLOGY"
+    },
+    {
+      "@id": "https://ulissesflores.com/#pub-2023-marian-apparitions-critique",
+      "@type": "ScholarlyArticle",
+      "name": "A Coroa e a Cruz: Análise Teológica e Fenomenológica das Aparições Marianas",
+      "headline": "A Coroa e a Cruz: Análise Teológica e Fenomenológica das Aparições Marianas",
+      "description": "Esta pagina apresenta uma sintese executiva de \"A Coroa e a Cruz: Análise Teológica e Fenomenológica das Aparições Marianas\" com foco no valor cientifico e aplicabilidade tecnica.",
+      "url": "https://ulissesflores.com/research/2023-marian-apparitions-critique",
+      "datePublished": "2023-01-01",
+      "dateModified": "2026-02-21",
+      "inLanguage": "pt-BR",
+      "author": {
+        "@id": "https://ulissesflores.com/#person"
+      },
+      "publisher": {
+        "@id": "https://ulissesflores.com/#codexhash-research"
+      },
+      "isPartOf": {
+        "@id": "https://ulissesflores.com/#collection-research"
+      },
+      "encoding": {
+        "@type": "MediaObject",
+        "contentUrl": "https://ulissesflores.com/research/2023-marian-apparitions-critique.pdf",
+        "encodingFormat": "application/pdf"
+      },
+      "abstract": "Analise teologica e fenomenologica critica de narrativas de aparicoes marianas. Comparacao de documentos, tradicoes e criterios de autenticidade em abordagem historico-critica. O estudo distingue elementos simbolicos, historicos e pastorais sem reduzir o fenomeno a uma unica explicacao.",
+      "keywords": "IA, Economia, Sistemas Complexos, MARIAN, APPARITIONS, CRITIQUE"
+    },
+    {
+      "@id": "https://ulissesflores.com/#pub-2023-digital-legacy",
+      "@type": "Report",
+      "name": "Desafios da Herança Digital: Preservação de Memória Pós-Mortem",
+      "headline": "Desafios da Herança Digital: Preservação de Memória Pós-Mortem",
+      "description": "Esta pagina apresenta uma sintese executiva de \"Desafios da Herança Digital: Preservação de Memória Pós-Mortem\" com foco no valor cientifico e aplicabilidade tecnica.",
+      "url": "https://ulissesflores.com/whitepapers/2023-digital-legacy",
+      "datePublished": "2023-01-01",
+      "dateModified": "2026-02-21",
+      "inLanguage": "pt-BR",
+      "author": {
+        "@id": "https://ulissesflores.com/#person"
+      },
+      "publisher": {
+        "@id": "https://ulissesflores.com/#codexhash-research"
+      },
+      "isPartOf": {
+        "@id": "https://ulissesflores.com/#collection-whitepapers"
+      },
+      "encoding": {
+        "@type": "MediaObject",
+        "contentUrl": "https://ulissesflores.com/whitepapers/2023-digital-legacy.pdf",
+        "encodingFormat": "application/pdf"
+      },
+      "abstract": "Whitepaper sobre desafios da heranca digital e preservacao de memoria pos-mortem. Analise de risco juridico-tecnico com proposta de arquitetura de preservacao e governanca de acesso. O documento define requisitos minimos para continuidade, autenticidade e privacidade de acervos digitais.",
+      "keywords": "Engenharia, IoT, Seguranca, DIGITAL, LEGACY"
+    },
+    {
+      "@id": "https://ulissesflores.com/#pub-2023-holy-club-methodism",
+      "@type": "ScholarlyArticle",
+      "name": "O Clube Santo: Arqueologia Espiritual, Teológica e Visual do Metodismo",
+      "headline": "O Clube Santo: Arqueologia Espiritual, Teológica e Visual do Metodismo",
+      "description": "Esta pagina apresenta uma sintese executiva de \"O Clube Santo: Arqueologia Espiritual, Teológica e Visual do Metodismo\" com foco no valor cientifico e aplicabilidade tecnica.",
+      "url": "https://ulissesflores.com/research/2023-holy-club-methodism",
+      "datePublished": "2023-01-01",
+      "dateModified": "2026-02-21",
+      "inLanguage": "pt-BR",
+      "author": {
+        "@id": "https://ulissesflores.com/#person"
+      },
+      "publisher": {
+        "@id": "https://ulissesflores.com/#codexhash-research"
+      },
+      "isPartOf": {
+        "@id": "https://ulissesflores.com/#collection-research"
+      },
+      "encoding": {
+        "@type": "MediaObject",
+        "contentUrl": "https://ulissesflores.com/research/2023-holy-club-methodism.pdf",
+        "encodingFormat": "application/pdf"
+      },
+      "abstract": "Investigacao arqueologica espiritual, teologica e visual do Holy Club e suas implicacoes para o metodismo. Leitura historica interdisciplinar com fontes primarias, iconografia e tradicao institucional. O estudo reconstrói redes de praticas formativas e disciplina comunitaria no contexto original.",
+      "keywords": "IA, Economia, Sistemas Complexos, HOLY, CLUB, METHODISM"
+    },
+    {
+      "@id": "https://ulissesflores.com/#pub-2022-theology-of-hope",
+      "@type": "ScholarlyArticle",
+      "name": "A Teologia da Esperança em Tempos de Crise",
+      "headline": "A Teologia da Esperança em Tempos de Crise",
+      "description": "Esta pagina apresenta uma sintese executiva de \"A Teologia da Esperança em Tempos de Crise\" com foco no valor cientifico e aplicabilidade tecnica.",
+      "url": "https://ulissesflores.com/essays/2022-theology-of-hope",
+      "datePublished": "2022-01-01",
+      "dateModified": "2026-02-21",
+      "inLanguage": "pt-BR",
+      "author": {
+        "@id": "https://ulissesflores.com/#person"
+      },
+      "publisher": {
+        "@id": "https://ulissesflores.com/#codexhash-research"
+      },
+      "isPartOf": {
+        "@id": "https://ulissesflores.com/#collection-essays"
+      },
+      "encoding": {
+        "@type": "MediaObject",
+        "contentUrl": "https://ulissesflores.com/essays/2022-theology-of-hope.pdf",
+        "encodingFormat": "application/pdf"
+      },
+      "abstract": "Ensaio sobre teologia da esperanca em contextos de crise social, economica e institucional. Analise teologica e filosofica de categorias de esperanca, sofrimento e responsabilidade comunitaria. O artigo explicita como a esperanca pode operar como categoria ativa de acao e nao apenas conforto simbólico.",
+      "keywords": "Teologia, Humanidades, Historia, THEOLOGY, HOPE"
+    },
+    {
+      "@id": "https://ulissesflores.com/#pub-2020-robotics-education",
+      "@type": "ScholarlyArticle",
+      "name": "Metodologias Ativas no Ensino de Lógica de Programação",
+      "headline": "Metodologias Ativas no Ensino de Lógica de Programação",
+      "description": "Esta pagina apresenta uma sintese executiva de \"Metodologias Ativas no Ensino de Lógica de Programação\" com foco no valor cientifico e aplicabilidade tecnica.",
+      "url": "https://ulissesflores.com/essays/2020-robotics-education",
+      "datePublished": "2020-01-01",
+      "dateModified": "2026-02-21",
+      "inLanguage": "pt-BR",
+      "author": {
+        "@id": "https://ulissesflores.com/#person"
+      },
+      "publisher": {
+        "@id": "https://ulissesflores.com/#codexhash-research"
+      },
+      "isPartOf": {
+        "@id": "https://ulissesflores.com/#collection-essays"
+      },
+      "encoding": {
+        "@type": "MediaObject",
+        "contentUrl": "https://ulissesflores.com/essays/2020-robotics-education.pdf",
+        "encodingFormat": "application/pdf"
+      },
+      "abstract": "Estudo sobre robotica educacional e metodologias ativas no ensino de logica de programacao para jovens. Intervencao didatica com atividades praticas, resolucao de problemas e avaliacao por competencias. A abordagem hands-on melhora engajamento, colaboracao e consolidacao de raciocinio logico.",
+      "keywords": "Teologia, Humanidades, Historia, ROBOTICS, EDUCATION"
+    },
+    {
+      "@id": "https://ulissesflores.com/#pub-2017-chaos-theory-economics",
+      "@type": "ScholarlyArticle",
+      "name": "Teoria do Caos: Emergência e Auto-organização em Mercados",
+      "headline": "Teoria do Caos: Emergência e Auto-organização em Mercados",
+      "description": "Esta pagina apresenta uma sintese executiva de \"Teoria do Caos: Emergência e Auto-organização em Mercados\" com foco no valor cientifico e aplicabilidade tecnica.",
+      "url": "https://ulissesflores.com/essays/2017-chaos-theory-economics",
+      "datePublished": "2017-01-01",
+      "dateModified": "2026-02-21",
+      "inLanguage": "pt-BR",
+      "author": {
+        "@id": "https://ulissesflores.com/#person"
+      },
+      "publisher": {
+        "@id": "https://ulissesflores.com/#codexhash-research"
+      },
+      "isPartOf": {
+        "@id": "https://ulissesflores.com/#collection-essays"
+      },
+      "encoding": {
+        "@type": "MediaObject",
+        "contentUrl": "https://ulissesflores.com/essays/2017-chaos-theory-economics.pdf",
+        "encodingFormat": "application/pdf"
+      },
+      "abstract": "Trabalho sobre teoria do caos e auto-organizacao em mercados nao lineares. Discussao teorica com referencia a sistemas dinamicos, sensibilidade a condicoes iniciais e comportamento emergente. O estudo mostra que pequenas perturbacoes podem amplificar risco e alterar padroes macro de forma nao proporcional.",
+      "keywords": "Teologia, Humanidades, Historia, CHAOS, THEORY, ECONOMICS"
+    }
+  ]
+} as const;

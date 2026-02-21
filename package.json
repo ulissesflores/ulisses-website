@@ -3,10 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "upkf:generate": "node scripts/upkf/generate-artifacts.mjs",
+    "predev": "npm run upkf:generate",
+    "prebuild": "npm run upkf:generate",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "links:inventory": "npm run upkf:generate"
   },
   "dependencies": {
     "lucide-react": "^0.562.0",

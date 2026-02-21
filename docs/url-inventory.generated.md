@@ -1,0 +1,102 @@
+# URL Inventory (Generated)
+
+- Source: `/Users/ulissesflores/Documents/Projetos/ulisses-hub/data/upkf/ulisses-flores-sovereign-upkf_v3.3.md`
+- Generated at: 2026-02-21
+- Total URLs: 92
+
+## Collections
+- https://ulissesflores.com/essays
+- https://ulissesflores.com/research
+- https://ulissesflores.com/whitepapers
+
+## Items
+- https://ulissesflores.com/essays/2017-chaos-theory-economics
+- https://ulissesflores.com/essays/2020-robotics-education
+- https://ulissesflores.com/essays/2022-theology-of-hope
+- https://ulissesflores.com/essays/2024-exegetical-treatise-anthropology
+- https://ulissesflores.com/essays/2024-theology-economic-order
+- https://ulissesflores.com/research/2023-holy-club-methodism
+- https://ulissesflores.com/research/2023-marian-apparitions-critique
+- https://ulissesflores.com/research/2024-bitcoin-praxeology
+- https://ulissesflores.com/research/2024-historicity-jesus-archaeology
+- https://ulissesflores.com/research/2024-scribal-canonization-ezra
+- https://ulissesflores.com/research/2025-fraud-detection-mlp
+- https://ulissesflores.com/research/2025-little-law-resilience
+- https://ulissesflores.com/research/2025-lstm-asset-prediction
+- https://ulissesflores.com/whitepapers/2023-digital-legacy
+- https://ulissesflores.com/whitepapers/2024-agritech-agile-flow
+- https://ulissesflores.com/whitepapers/2024-ring-signatures-privacy
+- https://ulissesflores.com/whitepapers/2025-hybrid-cooling-thermodynamics
+- https://ulissesflores.com/whitepapers/2025-iot-data-sovereignty
+
+## PDF Assets
+- https://ulissesflores.com/essays/2017-chaos-theory-economics.pdf
+- https://ulissesflores.com/essays/2020-robotics-education.pdf
+- https://ulissesflores.com/essays/2022-theology-of-hope.pdf
+- https://ulissesflores.com/essays/2024-exegetical-treatise-anthropology.pdf
+- https://ulissesflores.com/essays/2024-theology-economic-order.pdf
+- https://ulissesflores.com/research/2023-holy-club-methodism.pdf
+- https://ulissesflores.com/research/2023-marian-apparitions-critique.pdf
+- https://ulissesflores.com/research/2024-bitcoin-praxeology.pdf
+- https://ulissesflores.com/research/2024-historicity-jesus-archaeology.pdf
+- https://ulissesflores.com/research/2024-scribal-canonization-ezra.pdf
+- https://ulissesflores.com/research/2025-fraud-detection-mlp.pdf
+- https://ulissesflores.com/research/2025-little-law-resilience.pdf
+- https://ulissesflores.com/research/2025-lstm-asset-prediction.pdf
+- https://ulissesflores.com/whitepapers/2023-digital-legacy.pdf
+- https://ulissesflores.com/whitepapers/2024-agritech-agile-flow.pdf
+- https://ulissesflores.com/whitepapers/2024-ring-signatures-privacy.pdf
+- https://ulissesflores.com/whitepapers/2025-hybrid-cooling-thermodynamics.pdf
+- https://ulissesflores.com/whitepapers/2025-iot-data-sovereignty.pdf
+
+## Anchors
+- https://ulissesflores.com/#agtu
+- https://ulissesflores.com/#alura
+- https://ulissesflores.com/#cefor
+- https://ulissesflores.com/#codexhash
+- https://ulissesflores.com/#codexhash-education
+- https://ulissesflores.com/#codexhash-labs
+- https://ulissesflores.com/#codexhash-research
+- https://ulissesflores.com/#coursera
+- https://ulissesflores.com/#cred-ads
+- https://ulissesflores.com/#cred-bachelor-economics
+- https://ulissesflores.com/#cred-cefor
+- https://ulissesflores.com/#cred-edinburgh-extension
+- https://ulissesflores.com/#cred-mba-blockchain
+- https://ulissesflores.com/#cred-msc-ai
+- https://ulissesflores.com/#cred-ucsd-extension
+- https://ulissesflores.com/#edinburgh
+- https://ulissesflores.com/#edx
+- https://ulissesflores.com/#fiap
+- https://ulissesflores.com/#instituto-clube-santo
+- https://ulissesflores.com/#occupation-codexhash-cto
+- https://ulissesflores.com/#occupation-economic-scientist
+- https://ulissesflores.com/#occupation-theology-researcher
+- https://ulissesflores.com/#padre-anchieta
+- https://ulissesflores.com/#prefeitura-itupeva
+- https://ulissesflores.com/#project-cognitive-archaeology-textual-criticism
+- https://ulissesflores.com/#project-edge-crypto-iot
+- https://ulissesflores.com/#project-resilience-antifragility
+- https://ulissesflores.com/#project-silk-road-vault
+- https://ulissesflores.com/#quadrangular-vila-helena
+- https://ulissesflores.com/#role-bemarco
+- https://ulissesflores.com/#role-c3group
+- https://ulissesflores.com/#role-codexhash
+- https://ulissesflores.com/#role-econofisica
+- https://ulissesflores.com/#role-junifer
+- https://ulissesflores.com/#role-movimater
+- https://ulissesflores.com/#role-mv9
+- https://ulissesflores.com/#role-prefeitura-itupeva
+- https://ulissesflores.com/#role-skam
+- https://ulissesflores.com/#role-trader
+- https://ulissesflores.com/#role-wizard
+- https://ulissesflores.com/#sermons
+- https://ulissesflores.com/#sermons#cultos
+- https://ulissesflores.com/#sermons#cultosonline
+- https://ulissesflores.com/#sermons#jejumdavitoria
+- https://ulissesflores.com/#sermons#outros
+- https://ulissesflores.com/#sw-llm-contextizer
+- https://ulissesflores.com/#sw-lrblstm
+- https://ulissesflores.com/#sw-mit507-yape
+- https://ulissesflores.com/#ucsd
+- https://ulissesflores.com/#unip
