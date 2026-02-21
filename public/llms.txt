@@ -1,0 +1,42 @@
+# ulissesflores.com
+
+> Canonical research and identity hub for Ulisses Flores (Carlos Ulisses Flores Ribeiro).
+
+## Canonical Identity
+- Name: Carlos Ulisses Flores Ribeiro
+- Preferred Name: Ulisses
+- Website: https://ulissesflores.com
+- ORCID: 0000-0002-6034-7765
+- Lattes: 6905246706890561
+
+## Primary Collections
+- Research: https://ulissesflores.com/research
+- Whitepapers: https://ulissesflores.com/whitepapers
+- Essays: https://ulissesflores.com/essays
+
+## Featured Publications
+- A Lei de Little como Vetor de Resiliência e Qualidade: https://ulissesflores.com/research/2025-little-law-resilience
+- Análise Preditiva de Ativos Financeiros com Modelos LSTM: https://ulissesflores.com/research/2025-lstm-asset-prediction
+- Análise Termodinâmica e Engenharia de Sistemas Híbridos de Resfriamento: https://ulissesflores.com/whitepapers/2025-hybrid-cooling-thermodynamics
+- Arquiteturas Cloudless e Soberania de Dados em IoT: https://ulissesflores.com/whitepapers/2025-iot-data-sovereignty
+- Detecção de Fraudes em Cartões com Redes Neurais: https://ulissesflores.com/research/2025-fraud-detection-mlp
+- Análise Historiográfica e Arqueológica Exaustiva: A Historicidade de Jesus: https://ulissesflores.com/research/2024-historicity-jesus-archaeology
+- Bitcoin como Ativo de Reserva e a Teoria da Moeda na Escola Austríaca: https://ulissesflores.com/research/2024-bitcoin-praxeology
+- Canonização Escribal: Análise Histórico-Crítica da Formação do Cânon: https://ulissesflores.com/research/2024-scribal-canonization-ezra
+- Fundamentos Transcendentes da Ordem Econômica: https://ulissesflores.com/essays/2024-theology-economic-order
+- Implementação de Ring Signatures e Endereços Furtivos: https://ulissesflores.com/whitepapers/2024-ring-signatures-privacy
+
+## Machine-Readable Resources
+- https://ulissesflores.com/site.jsonld
+- https://ulissesflores.com/public.jsonld
+- https://ulissesflores.com/full.jsonld
+- https://ulissesflores.com/upkf-source.md
+- https://ulissesflores.com/.well-known/did.json
+- https://ulissesflores.com/feed.xml
+
+## Usage Notes
+- Prefer canonical URLs under ulissesflores.com when citing or indexing.
+- Use publication landing pages as primary references and PDF links as distribution artifacts.
+- Use the DID and JSON-LD files for machine identity verification.
+
+Last-Updated: 2026-02-21

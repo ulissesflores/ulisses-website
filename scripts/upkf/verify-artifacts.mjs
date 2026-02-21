@@ -56,6 +56,8 @@ function main() {
     pub: path.join(publicDir, 'public.jsonld'),
     full: path.join(publicDir, 'full.jsonld'),
     sourceMd: path.join(publicDir, 'upkf-source.md'),
+    llms: path.join(publicDir, 'llms.txt'),
+    llmsFull: path.join(publicDir, 'llms-full.txt'),
     did: path.join(publicDir, '.well-known', 'did.json'),
   };
 
@@ -127,6 +129,16 @@ function main() {
     checks,
     fs.readFileSync(files.sourceMd, 'utf8').includes('Ulisses Flores — Sovereign UPKF'),
     'upkf-source.md publicado corretamente',
+  );
+  assert(
+    checks,
+    fs.readFileSync(files.llms, 'utf8').includes('/public.jsonld'),
+    'llms.txt referencia recursos semanticos',
+  );
+  assert(
+    checks,
+    fs.readFileSync(files.llmsFull, 'utf8').includes('## Publications'),
+    'llms-full.txt contem indice expandido',
   );
   assert(checks, didJson.id === 'did:web:ulissesflores.com', 'did:web configurado');
   assert(

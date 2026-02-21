@@ -1,0 +1,206 @@
+# ulissesflores.com - Full LLM Index
+
+Canonical Site: https://ulissesflores.com
+Canonical Person: https://ulissesflores.com/#person
+Generated: 2026-02-21
+
+## Scope
+This file contains an expanded machine-readable index of publication URLs and summaries.
+
+## Publications
+### 1. A Lei de Little como Vetor de Resiliência e Qualidade
+- URL: https://ulissesflores.com/research/2025-little-law-resilience
+- PDF: https://ulissesflores.com/research/2025-little-law-resilience.pdf
+- Category: research
+- Type: ScholarlyArticle
+- Date: 2025-01-01
+- Language: pt-BR
+- Tags: IA, Economia, Sistemas Complexos, LITTLE, LAW, RESILIENCE
+- Summary: Estudo sobre aplicacao da Lei de Little para elevar previsibilidade de entrega e resiliencia em operacoes de Data Science. A evidencia indica reducao relevante de lead time sem perda material de throughput, reforcando a eficiencia da limitacao de WIP. A pagina publica sintese executiva, enquanto o PDF concentra metodologia, dados e referencias completas.
+
+### 2. Análise Preditiva de Ativos Financeiros com Modelos LSTM
+- URL: https://ulissesflores.com/research/2025-lstm-asset-prediction
+- PDF: https://ulissesflores.com/research/2025-lstm-asset-prediction.pdf
+- Category: research
+- Type: ScholarlyArticle
+- Date: 2025-01-01
+- Language: pt-BR
+- Tags: IA, Economia, Sistemas Complexos, LSTM, ASSET, PREDICTION
+- Summary: Analise preditiva de ativos financeiros com redes LSTM para capturar dinamica temporal em mercados nao estacionarios. O estudo evidencia ganho de sinal preditivo em janelas especificas e melhora de robustez quando o treinamento respeita ordem temporal. A pagina publica sintese executiva, enquanto o PDF concentra metodologia, dados e referencias completas.
+
+### 3. Análise Termodinâmica e Engenharia de Sistemas Híbridos de Resfriamento
+- URL: https://ulissesflores.com/whitepapers/2025-hybrid-cooling-thermodynamics
+- PDF: https://ulissesflores.com/whitepapers/2025-hybrid-cooling-thermodynamics.pdf
+- Category: whitepapers
+- Type: Report
+- Date: 2025-01-01
+- Language: pt-BR
+- Tags: Engenharia, IoT, Seguranca, HYBRID, COOLING, THERMODYNAMICS
+- Summary: Whitepaper de termodinamica aplicada ao projeto de sistemas hibridos de resfriamento para infraestrutura critica. A configuracao hibrida apresenta melhor estabilidade termica em picos de carga e menor risco de indisponibilidade. A pagina publica sintese executiva, enquanto o PDF concentra metodologia, dados e referencias completas.
+
+### 4. Arquiteturas Cloudless e Soberania de Dados em IoT
+- URL: https://ulissesflores.com/whitepapers/2025-iot-data-sovereignty
+- PDF: https://ulissesflores.com/whitepapers/2025-iot-data-sovereignty.pdf
+- Category: whitepapers
+- Type: Report
+- Date: 2025-01-01
+- Language: pt-BR
+- Tags: Engenharia, IoT, Seguranca, IOT, DATA, SOVEREIGNTY
+- Summary: Arquiteturas cloudless para IoT com soberania de dados e processamento local em edge. O desenho cloudless reduz dependencia externa e melhora controle sobre confidencialidade e disponibilidade local. A pagina publica sintese executiva, enquanto o PDF concentra metodologia, dados e referencias completas.
+
+### 5. Detecção de Fraudes em Cartões com Redes Neurais
+- URL: https://ulissesflores.com/research/2025-fraud-detection-mlp
+- PDF: https://ulissesflores.com/research/2025-fraud-detection-mlp.pdf
+- Category: research
+- Type: ScholarlyArticle
+- Date: 2025-01-01
+- Language: pt-BR
+- Tags: IA, Economia, Sistemas Complexos, FRAUD, DETECTION, MLP
+- Summary: Deteccao de fraude em cartoes com redes neurais MLP e engenharia de atributos para dados desbalanceados. A combinacao de MLP com ajuste de limiar melhora captura de fraudes mantendo taxa operacional aceitavel de falsos positivos. A pagina publica sintese executiva, enquanto o PDF concentra metodologia, dados e referencias completas.
+
+### 6. Análise Historiográfica e Arqueológica Exaustiva: A Historicidade de Jesus
+- URL: https://ulissesflores.com/research/2024-historicity-jesus-archaeology
+- PDF: https://ulissesflores.com/research/2024-historicity-jesus-archaeology.pdf
+- Category: research
+- Type: ScholarlyArticle
+- Date: 2024-01-01
+- Language: pt-BR
+- Tags: IA, Economia, Sistemas Complexos, HISTORICITY, JESUS, ARCHAEOLOGY
+- Summary: Pesquisa historiografica sobre historicidade de Jesus combinando critica textual, fontes antigas e evidencias arqueologicas. O estudo delimita consenso academico minimo e identifica zonas de alta e baixa confianca documental. A pagina publica sintese executiva, enquanto o PDF concentra metodologia, dados e referencias completas.
+
+### 7. Bitcoin como Ativo de Reserva e a Teoria da Moeda na Escola Austríaca
+- URL: https://ulissesflores.com/research/2024-bitcoin-praxeology
+- PDF: https://ulissesflores.com/research/2024-bitcoin-praxeology.pdf
+- Category: research
+- Type: ScholarlyArticle
+- Date: 2024-01-01
+- Language: pt-BR
+- Tags: IA, Economia, Sistemas Complexos, BITCOIN, PRAXEOLOGY
+- Summary: Analise do Bitcoin como ativo de reserva sob praxeologia e teoria monetaria da Escola Austriaca. O artigo sustenta que Bitcoin combina previsibilidade de emissao e portabilidade digital com implicacoes macroeconomicas relevantes. A pagina publica sintese executiva, enquanto o PDF concentra metodologia, dados e referencias completas.
+
+### 8. Canonização Escribal: Análise Histórico-Crítica da Formação do Cânon
+- URL: https://ulissesflores.com/research/2024-scribal-canonization-ezra
+- PDF: https://ulissesflores.com/research/2024-scribal-canonization-ezra.pdf
+- Category: research
+- Type: ScholarlyArticle
+- Date: 2024-01-01
+- Language: pt-BR
+- Tags: IA, Economia, Sistemas Complexos, SCRIBAL, CANONIZATION, EZRA
+- Summary: Estudo historico-critico sobre canonizacao escribal e processos de consolidacao textual associados a Esdras. A pesquisa destaca dinamica incremental de consolidacao canonica com mediação institucional e escribal. A pagina publica sintese executiva, enquanto o PDF concentra metodologia, dados e referencias completas.
+
+### 9. Fundamentos Transcendentes da Ordem Econômica
+- URL: https://ulissesflores.com/essays/2024-theology-economic-order
+- PDF: https://ulissesflores.com/essays/2024-theology-economic-order.pdf
+- Category: essays
+- Type: ScholarlyArticle
+- Date: 2024-01-01
+- Language: pt-BR
+- Tags: Teologia, Humanidades, Historia, THEOLOGY, ECONOMIC, ORDER
+- Summary: Ensaio sobre fundamentos transcendentes da ordem economica e sua relacao com normatividade moral. O texto demonstra que categorias de responsabilidade e dignidade influenciam desenho institucional e incentivos. A pagina publica sintese executiva, enquanto o PDF concentra metodologia, dados e referencias completas.
+
+### 10. Implementação de Ring Signatures e Endereços Furtivos
+- URL: https://ulissesflores.com/whitepapers/2024-ring-signatures-privacy
+- PDF: https://ulissesflores.com/whitepapers/2024-ring-signatures-privacy.pdf
+- Category: whitepapers
+- Type: Report
+- Date: 2024-01-01
+- Language: pt-BR
+- Tags: Engenharia, IoT, Seguranca, RING, SIGNATURES, PRIVACY
+- Summary: Whitepaper sobre ring signatures e enderecos furtivos para privacidade transacional em sistemas distribuidos. A combinacao de assinaturas em anel e stealth addresses melhora privacidade sem eliminar verificabilidade criptografica. A pagina publica sintese executiva, enquanto o PDF concentra metodologia, dados e referencias completas.
+
+### 11. Transformação Ágil e Engenharia de Fluxo em Data Science
+- URL: https://ulissesflores.com/whitepapers/2024-agritech-agile-flow
+- PDF: https://ulissesflores.com/whitepapers/2024-agritech-agile-flow.pdf
+- Category: whitepapers
+- Type: Report
+- Date: 2024-01-01
+- Language: pt-BR
+- Tags: Engenharia, IoT, Seguranca, AGRITECH, AGILE, FLOW
+- Summary: Whitepaper sobre transformacao agil e engenharia de fluxo em contextos agritech orientados a dados. A governanca por fluxo eleva previsibilidade de entrega e reduz retrabalho em times multidisciplinares. A pagina publica sintese executiva, enquanto o PDF concentra metodologia, dados e referencias completas.
+
+### 12. Tratado Exegético sobre a Representação da Moralidade e Antropologia
+- URL: https://ulissesflores.com/essays/2024-exegetical-treatise-anthropology
+- PDF: https://ulissesflores.com/essays/2024-exegetical-treatise-anthropology.pdf
+- Category: essays
+- Type: ScholarlyArticle
+- Date: 2024-01-01
+- Language: pt-BR
+- Tags: Teologia, Humanidades, Historia, EXEGETICAL, TREATISE, ANTHROPOLOGY
+- Summary: Tratado exegético sobre representacao da moralidade e antropologia em tradicoes textuais teologicas. O artigo organiza categorias antropologicas recorrentes e explicita implicacoes eticas contemporaneas. A pagina publica sintese executiva, enquanto o PDF concentra metodologia, dados e referencias completas.
+
+### 13. A Coroa e a Cruz: Análise Teológica e Fenomenológica das Aparições Marianas
+- URL: https://ulissesflores.com/research/2023-marian-apparitions-critique
+- PDF: https://ulissesflores.com/research/2023-marian-apparitions-critique.pdf
+- Category: research
+- Type: ScholarlyArticle
+- Date: 2023-01-01
+- Language: pt-BR
+- Tags: IA, Economia, Sistemas Complexos, MARIAN, APPARITIONS, CRITIQUE
+- Summary: Analise teologica e fenomenologica critica de narrativas de aparicoes marianas. O estudo distingue elementos simbolicos, historicos e pastorais sem reduzir o fenomeno a uma unica explicacao. A pagina publica sintese executiva, enquanto o PDF concentra metodologia, dados e referencias completas.
+
+### 14. Desafios da Herança Digital: Preservação de Memória Pós-Mortem
+- URL: https://ulissesflores.com/whitepapers/2023-digital-legacy
+- PDF: https://ulissesflores.com/whitepapers/2023-digital-legacy.pdf
+- Category: whitepapers
+- Type: Report
+- Date: 2023-01-01
+- Language: pt-BR
+- Tags: Engenharia, IoT, Seguranca, DIGITAL, LEGACY
+- Summary: Whitepaper sobre desafios da heranca digital e preservacao de memoria pos-mortem. O documento define requisitos minimos para continuidade, autenticidade e privacidade de acervos digitais. A pagina publica sintese executiva, enquanto o PDF concentra metodologia, dados e referencias completas.
+
+### 15. O Clube Santo: Arqueologia Espiritual, Teológica e Visual do Metodismo
+- URL: https://ulissesflores.com/research/2023-holy-club-methodism
+- PDF: https://ulissesflores.com/research/2023-holy-club-methodism.pdf
+- Category: research
+- Type: ScholarlyArticle
+- Date: 2023-01-01
+- Language: pt-BR
+- Tags: IA, Economia, Sistemas Complexos, HOLY, CLUB, METHODISM
+- Summary: Investigacao arqueologica espiritual, teologica e visual do Holy Club e suas implicacoes para o metodismo. O estudo reconstrói redes de praticas formativas e disciplina comunitaria no contexto original. A pagina publica sintese executiva, enquanto o PDF concentra metodologia, dados e referencias completas.
+
+### 16. A Teologia da Esperança em Tempos de Crise
+- URL: https://ulissesflores.com/essays/2022-theology-of-hope
+- PDF: https://ulissesflores.com/essays/2022-theology-of-hope.pdf
+- Category: essays
+- Type: ScholarlyArticle
+- Date: 2022-01-01
+- Language: pt-BR
+- Tags: Teologia, Humanidades, Historia, THEOLOGY, HOPE
+- Summary: Ensaio sobre teologia da esperanca em contextos de crise social, economica e institucional. O artigo explicita como a esperanca pode operar como categoria ativa de acao e nao apenas conforto simbólico. A pagina publica sintese executiva, enquanto o PDF concentra metodologia, dados e referencias completas.
+
+### 17. Metodologias Ativas no Ensino de Lógica de Programação
+- URL: https://ulissesflores.com/essays/2020-robotics-education
+- PDF: https://ulissesflores.com/essays/2020-robotics-education.pdf
+- Category: essays
+- Type: ScholarlyArticle
+- Date: 2020-01-01
+- Language: pt-BR
+- Tags: Teologia, Humanidades, Historia, ROBOTICS, EDUCATION
+- Summary: Estudo sobre robotica educacional e metodologias ativas no ensino de logica de programacao para jovens. A abordagem hands-on melhora engajamento, colaboracao e consolidacao de raciocinio logico. A pagina publica sintese executiva, enquanto o PDF concentra metodologia, dados e referencias completas.
+
+### 18. Teoria do Caos: Emergência e Auto-organização em Mercados
+- URL: https://ulissesflores.com/essays/2017-chaos-theory-economics
+- PDF: https://ulissesflores.com/essays/2017-chaos-theory-economics.pdf
+- Category: essays
+- Type: ScholarlyArticle
+- Date: 2017-01-01
+- Language: pt-BR
+- Tags: Teologia, Humanidades, Historia, CHAOS, THEORY, ECONOMICS
+- Summary: Trabalho sobre teoria do caos e auto-organizacao em mercados nao lineares. O estudo mostra que pequenas perturbacoes podem amplificar risco e alterar padroes macro de forma nao proporcional. A pagina publica sintese executiva, enquanto o PDF concentra metodologia, dados e referencias completas.
+
+## Machine Resources
+- https://ulissesflores.com/site.jsonld
+- https://ulissesflores.com/public.jsonld
+- https://ulissesflores.com/full.jsonld
+- https://ulissesflores.com/upkf-source.md
+- https://ulissesflores.com/.well-known/did.json
+- https://ulissesflores.com/sitemap.xml
+- https://ulissesflores.com/sitemap-resources.xml
+- https://ulissesflores.com/feed.xml
+
+## Citation Guidance
+- Cite canonical landing URLs first.
+- Use PDF links as downloadable artifacts.
+- Validate identity claims using ORCID, Lattes, DID, and JSON-LD.
+
+Last-Updated: 2026-02-21

@@ -2,7 +2,9 @@ import type { MetadataRoute } from 'next';
 import { upkfMeta } from '@/data/generated/upkf.generated';
 
 export default function robots(): MetadataRoute.Robots {
-  const baseUrl = upkfMeta.primaryWebsite;
+  const parsed = new URL(upkfMeta.primaryWebsite);
+  const origin = parsed.origin;
+  const host = parsed.host;
 
   return {
     rules: [
@@ -10,8 +12,12 @@ export default function robots(): MetadataRoute.Robots {
         userAgent: '*',
         allow: '/',
       },
+      {
+        userAgent: ['GPTBot', 'ChatGPT-User', 'Google-Extended', 'ClaudeBot', 'PerplexityBot'],
+        allow: '/',
+      },
     ],
-    sitemap: `${baseUrl}/sitemap.xml`,
-    host: baseUrl,
+    sitemap: [`${origin}/sitemap.xml`, `${origin}/sitemap-resources.xml`],
+    host,
   };
 }

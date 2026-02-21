@@ -2256,6 +2256,108 @@ function buildFullUpkfJsonLd({
   };
 }
 
+function sortPublicationsByRecency(publications) {
+  return [...publications].sort((a, b) => {
+    if (a.publishedAt === b.publishedAt) {
+      return a.ordinal - b.ordinal;
+    }
+    return b.publishedAt.localeCompare(a.publishedAt);
+  });
+}
+
+function buildLlmsTxt(identity, publications, generatedAt) {
+  const siteUrl = identity.primaryWebsite || 'https://ulissesflores.com';
+  const sortedPublications = sortPublicationsByRecency(publications);
+
+  const lines = [
+    '# ulissesflores.com',
+    '',
+    '> Canonical research and identity hub for Ulisses Flores (Carlos Ulisses Flores Ribeiro).',
+    '',
+    '## Canonical Identity',
+    `- Name: ${identity.canonicalName}`,
+    `- Preferred Name: ${identity.preferredName}`,
+    `- Website: ${siteUrl}`,
+    `- ORCID: ${identity.orcid}`,
+    `- Lattes: ${identity.lattesId}`,
+    '',
+    '## Primary Collections',
+    `- Research: ${siteUrl}/research`,
+    `- Whitepapers: ${siteUrl}/whitepapers`,
+    `- Essays: ${siteUrl}/essays`,
+    '',
+    '## Featured Publications',
+    ...sortedPublications.slice(0, 10).map((publication) => `- ${publication.title}: ${publication.canonicalUrl}`),
+    '',
+    '## Machine-Readable Resources',
+    `- ${siteUrl}/site.jsonld`,
+    `- ${siteUrl}/public.jsonld`,
+    `- ${siteUrl}/full.jsonld`,
+    `- ${siteUrl}/upkf-source.md`,
+    `- ${siteUrl}/.well-known/did.json`,
+    `- ${siteUrl}/feed.xml`,
+    '',
+    '## Usage Notes',
+    '- Prefer canonical URLs under ulissesflores.com when citing or indexing.',
+    '- Use publication landing pages as primary references and PDF links as distribution artifacts.',
+    '- Use the DID and JSON-LD files for machine identity verification.',
+    '',
+    `Last-Updated: ${generatedAt}`,
+  ];
+
+  return `${lines.join('\n')}\n`;
+}
+
+function buildLlmsFullTxt(identity, publications, generatedAt) {
+  const siteUrl = identity.primaryWebsite || 'https://ulissesflores.com';
+  const sortedPublications = sortPublicationsByRecency(publications);
+
+  const lines = [
+    '# ulissesflores.com - Full LLM Index',
+    '',
+    `Canonical Site: ${siteUrl}`,
+    `Canonical Person: ${siteUrl}/#person`,
+    `Generated: ${generatedAt}`,
+    '',
+    '## Scope',
+    'This file contains an expanded machine-readable index of publication URLs and summaries.',
+    '',
+    '## Publications',
+  ];
+
+  sortedPublications.forEach((publication, index) => {
+    lines.push(`### ${index + 1}. ${publication.title}`);
+    lines.push(`- URL: ${publication.canonicalUrl}`);
+    lines.push(`- PDF: ${siteUrl}${publication.downloadUrl}`);
+    lines.push(`- Category: ${publication.category}`);
+    lines.push(`- Type: ${publication.kind === 'R' ? 'Report' : 'ScholarlyArticle'}`);
+    lines.push(`- Date: ${publication.publishedAt}`);
+    lines.push(`- Language: ${publication.inLanguage}`);
+    lines.push(`- Tags: ${publication.tags.join(', ')}`);
+    lines.push(`- Summary: ${publication.summary}`);
+    lines.push('');
+  });
+
+  lines.push('## Machine Resources');
+  lines.push(`- ${siteUrl}/site.jsonld`);
+  lines.push(`- ${siteUrl}/public.jsonld`);
+  lines.push(`- ${siteUrl}/full.jsonld`);
+  lines.push(`- ${siteUrl}/upkf-source.md`);
+  lines.push(`- ${siteUrl}/.well-known/did.json`);
+  lines.push(`- ${siteUrl}/sitemap.xml`);
+  lines.push(`- ${siteUrl}/sitemap-resources.xml`);
+  lines.push(`- ${siteUrl}/feed.xml`);
+  lines.push('');
+  lines.push('## Citation Guidance');
+  lines.push('- Cite canonical landing URLs first.');
+  lines.push('- Use PDF links as downloadable artifacts.');
+  lines.push('- Validate identity claims using ORCID, Lattes, DID, and JSON-LD.');
+  lines.push('');
+  lines.push(`Last-Updated: ${generatedAt}`);
+
+  return `${lines.join('\n')}\n`;
+}
+
 function writeGeneratedFiles({
   sourcePath,
   upkfText,
@@ -2321,11 +2423,15 @@ function writeGeneratedFiles({
   const siteJson = JSON.stringify(siteJsonLd, null, 2);
   const publicJson = JSON.stringify(publicJsonLd, null, 2);
   const fullJson = JSON.stringify(fullJsonLd, null, 2);
+  const llmsTxt = buildLlmsTxt(identity, publications, generatedAt);
+  const llmsFullTxt = buildLlmsFullTxt(identity, publications, generatedAt);
 
   fs.writeFileSync(path.join(PUBLIC_DIR, 'site.jsonld'), siteJson);
   fs.writeFileSync(path.join(PUBLIC_DIR, 'public.jsonld'), publicJson);
   fs.writeFileSync(path.join(PUBLIC_DIR, 'full.jsonld'), fullJson);
   fs.writeFileSync(path.join(PUBLIC_DIR, 'upkf-source.md'), upkfText);
+  fs.writeFileSync(path.join(PUBLIC_DIR, 'llms.txt'), llmsTxt);
+  fs.writeFileSync(path.join(PUBLIC_DIR, 'llms-full.txt'), llmsFullTxt);
 }
 
 function main() {

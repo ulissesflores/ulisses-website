@@ -11,9 +11,24 @@ const nextConfig: NextConfig = {
           { key: "Cache-Control", value: "public, max-age=3600, s-maxage=3600" },
         ],
       },
+      {
+        source: "/llms.txt",
+        headers: [{ key: "Content-Type", value: "text/plain; charset=utf-8" }],
+      },
+      {
+        source: "/llms-full.txt",
+        headers: [{ key: "Content-Type", value: "text/plain; charset=utf-8" }],
+      },
     ];
   },
   async redirects() {
+    const canonicalHostRedirect = {
+      source: "/:path*",
+      has: [{ type: "host" as const, value: "www.ulissesflores.com" }],
+      destination: "https://ulissesflores.com/:path*",
+      permanent: true,
+    };
+
     // Lista de subdomínios e seus destinos
     const subdomains: Record<string, string> = {
       facebook: "https://www.facebook.com/UlissesFls",
@@ -25,12 +40,14 @@ const nextConfig: NextConfig = {
       orcid: "https://orcid.org/0000-0002-6034-7765",
     };
 
-    return Object.entries(subdomains).map(([sub, destination]) => ({
+    const subdomainRedirects = Object.entries(subdomains).map(([sub, destination]) => ({
       source: "/:path*",
-      has: [{ type: "host", value: `${sub}.ulissesflores.com` }],
+      has: [{ type: "host" as const, value: `${sub}.ulissesflores.com` }],
       destination,
       permanent: true, // 301 Permanente (Melhor para SEO)
     }));
+
+    return [canonicalHostRedirect, ...subdomainRedirects];
   },
 };
 
