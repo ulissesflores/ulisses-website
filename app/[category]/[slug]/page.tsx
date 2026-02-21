@@ -64,6 +64,12 @@ export default async function ArticlePage({ params }: PageProps) {
 
   const collection = publicationCollections[publication.category];
 
+  const sectionParagraphs = (text: string) =>
+    text
+      .split(/\n{2,}/)
+      .map((paragraph) => paragraph.trim())
+      .filter(Boolean);
+
   const articleJsonLd = {
     '@context': 'https://schema.org',
     '@type': publication.kind === 'R' ? 'Report' : 'ScholarlyArticle',
@@ -176,41 +182,78 @@ export default async function ArticlePage({ params }: PageProps) {
             <h2 className='text-xl font-bold text-white mb-4 flex items-center gap-2'>
               <BookOpen size={20} className='text-cyan-500' /> Resumo Cientifico
             </h2>
-            <div className='bg-neutral-900/30 p-8 rounded-2xl border border-white/5 text-lg leading-relaxed text-neutral-300 shadow-inner'>
-              {publication.sections.abstract}
+            <div className='bg-neutral-900/30 p-8 rounded-2xl border border-white/5 text-lg leading-relaxed text-neutral-300 shadow-inner space-y-4'>
+              {sectionParagraphs(publication.sections.abstract).map((paragraph, index) => (
+                <p key={`abstract-${index}`}>{paragraph}</p>
+              ))}
             </div>
           </section>
 
           <section>
             <h2 className='text-2xl font-semibold text-white mb-3'>Introducao</h2>
-            <p className='text-neutral-300 leading-relaxed'>{publication.sections.introduction}</p>
+            <div className='text-neutral-300 leading-relaxed space-y-4'>
+              {sectionParagraphs(publication.sections.introduction).map((paragraph, index) => (
+                <p key={`intro-${index}`}>{paragraph}</p>
+              ))}
+            </div>
           </section>
 
           <section>
             <h2 className='text-2xl font-semibold text-white mb-3'>Metodos</h2>
-            <p className='text-neutral-300 leading-relaxed'>{publication.sections.methods}</p>
+            <div className='text-neutral-300 leading-relaxed space-y-4'>
+              {sectionParagraphs(publication.sections.methods).map((paragraph, index) => (
+                <p key={`methods-${index}`}>{paragraph}</p>
+              ))}
+            </div>
           </section>
 
           <section>
             <h2 className='text-2xl font-semibold text-white mb-3'>Resultados</h2>
-            <p className='text-neutral-300 leading-relaxed'>{publication.sections.results}</p>
+            <div className='text-neutral-300 leading-relaxed space-y-4'>
+              {sectionParagraphs(publication.sections.results).map((paragraph, index) => (
+                <p key={`results-${index}`}>{paragraph}</p>
+              ))}
+            </div>
           </section>
 
           <section>
             <h2 className='text-2xl font-semibold text-white mb-3'>Discussao</h2>
-            <p className='text-neutral-300 leading-relaxed'>{publication.sections.discussion}</p>
+            <div className='text-neutral-300 leading-relaxed space-y-4'>
+              {sectionParagraphs(publication.sections.discussion).map((paragraph, index) => (
+                <p key={`discussion-${index}`}>{paragraph}</p>
+              ))}
+            </div>
           </section>
 
           <section>
             <h2 className='text-2xl font-semibold text-white mb-3'>Conclusao</h2>
-            <p className='text-neutral-300 leading-relaxed'>{publication.sections.conclusion}</p>
+            <div className='text-neutral-300 leading-relaxed space-y-4'>
+              {sectionParagraphs(publication.sections.conclusion).map((paragraph, index) => (
+                <p key={`conclusion-${index}`}>{paragraph}</p>
+              ))}
+            </div>
           </section>
 
           <section>
             <h2 className='text-2xl font-semibold text-white mb-3'>Referencias</h2>
             <ul className='list-disc pl-6 text-neutral-300 space-y-2'>
               {publication.sections.references.map((reference) => (
-                <li key={reference}>{reference}</li>
+                <li key={`${reference.citation}-${reference.url ?? ''}`}>
+                  <span>{reference.citation}</span>
+                  {reference.url ? (
+                    <>
+                      {' '}
+                      <a
+                        href={reference.url}
+                        target='_blank'
+                        rel='noreferrer'
+                        className='text-emerald-300 hover:text-emerald-200 underline underline-offset-4'
+                      >
+                        Fonte
+                      </a>
+                    </>
+                  ) : null}
+                </li>
               ))}
             </ul>
           </section>

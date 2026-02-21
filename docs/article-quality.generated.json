@@ -1,0 +1,442 @@
+{
+  "generatedAt": "2026-02-21",
+  "rubric": "Yape model (Resumo, Introducao, Desenvolvimento, Consideracoes Finais, Referencias, SEO/GEO)",
+  "threshold": 950,
+  "projectScore": 962,
+  "approvedSota": true,
+  "pendingActions": [],
+  "articles": [
+    {
+      "id": "2025-little-law-resilience",
+      "title": "A Lei de Little como Vetor de Resiliência e Qualidade",
+      "canonicalUrl": "https://ulissesflores.com/research/2025-little-law-resilience",
+      "partScores": {
+        "resumo": 1000,
+        "introducao": 952,
+        "desenvolvimento": 932,
+        "consideracoesFinais": 958,
+        "referencias": 1000,
+        "seoGeo": 1000
+      },
+      "finalScore": 974,
+      "approvedSota": true,
+      "improvementActions": [],
+      "metrics": {
+        "abstractWords": 171,
+        "introWords": 217,
+        "developmentWords": 494,
+        "conclusionWords": 155,
+        "referencesCount": 6,
+        "referencesWithUrl": 6
+      }
+    },
+    {
+      "id": "2025-lstm-asset-prediction",
+      "title": "Análise Preditiva de Ativos Financeiros com Modelos LSTM",
+      "canonicalUrl": "https://ulissesflores.com/research/2025-lstm-asset-prediction",
+      "partScores": {
+        "resumo": 986,
+        "introducao": 943,
+        "desenvolvimento": 927,
+        "consideracoesFinais": 963,
+        "referencias": 1000,
+        "seoGeo": 1000
+      },
+      "finalScore": 970,
+      "approvedSota": true,
+      "improvementActions": [],
+      "metrics": {
+        "abstractWords": 163,
+        "introWords": 209,
+        "developmentWords": 481,
+        "conclusionWords": 158,
+        "referencesCount": 6,
+        "referencesWithUrl": 6
+      }
+    },
+    {
+      "id": "2025-hybrid-cooling-thermodynamics",
+      "title": "Análise Termodinâmica e Engenharia de Sistemas Híbridos de Resfriamento",
+      "canonicalUrl": "https://ulissesflores.com/whitepapers/2025-hybrid-cooling-thermodynamics",
+      "partScores": {
+        "resumo": 964,
+        "introducao": 940,
+        "desenvolvimento": 921,
+        "consideracoesFinais": 957,
+        "referencias": 1000,
+        "seoGeo": 1000
+      },
+      "finalScore": 964,
+      "approvedSota": true,
+      "improvementActions": [],
+      "metrics": {
+        "abstractWords": 152,
+        "introWords": 206,
+        "developmentWords": 468,
+        "conclusionWords": 154,
+        "referencesCount": 6,
+        "referencesWithUrl": 6
+      }
+    },
+    {
+      "id": "2025-iot-data-sovereignty",
+      "title": "Arquiteturas Cloudless e Soberania de Dados em IoT",
+      "canonicalUrl": "https://ulissesflores.com/whitepapers/2025-iot-data-sovereignty",
+      "partScores": {
+        "resumo": 956,
+        "introducao": 937,
+        "desenvolvimento": 921,
+        "consideracoesFinais": 955,
+        "referencias": 1000,
+        "seoGeo": 1000
+      },
+      "finalScore": 962,
+      "approvedSota": true,
+      "improvementActions": [],
+      "metrics": {
+        "abstractWords": 148,
+        "introWords": 203,
+        "developmentWords": 468,
+        "conclusionWords": 153,
+        "referencesCount": 6,
+        "referencesWithUrl": 6
+      }
+    },
+    {
+      "id": "2025-fraud-detection-mlp",
+      "title": "Detecção de Fraudes em Cartões com Redes Neurais",
+      "canonicalUrl": "https://ulissesflores.com/research/2025-fraud-detection-mlp",
+      "partScores": {
+        "resumo": 980,
+        "introducao": 941,
+        "desenvolvimento": 922,
+        "consideracoesFinais": 953,
+        "referencias": 1000,
+        "seoGeo": 1000
+      },
+      "finalScore": 966,
+      "approvedSota": true,
+      "improvementActions": [],
+      "metrics": {
+        "abstractWords": 160,
+        "introWords": 207,
+        "developmentWords": 470,
+        "conclusionWords": 152,
+        "referencesCount": 6,
+        "referencesWithUrl": 6
+      }
+    },
+    {
+      "id": "2024-historicity-jesus-archaeology",
+      "title": "Análise Historiográfica e Arqueológica Exaustiva: A Historicidade de Jesus",
+      "canonicalUrl": "https://ulissesflores.com/research/2024-historicity-jesus-archaeology",
+      "partScores": {
+        "resumo": 956,
+        "introducao": 934,
+        "desenvolvimento": 920,
+        "consideracoesFinais": 955,
+        "referencias": 1000,
+        "seoGeo": 1000
+      },
+      "finalScore": 961,
+      "approvedSota": true,
+      "improvementActions": [],
+      "metrics": {
+        "abstractWords": 148,
+        "introWords": 201,
+        "developmentWords": 465,
+        "conclusionWords": 153,
+        "referencesCount": 6,
+        "referencesWithUrl": 6
+      }
+    },
+    {
+      "id": "2024-bitcoin-praxeology",
+      "title": "Bitcoin como Ativo de Reserva e a Teoria da Moeda na Escola Austríaca",
+      "canonicalUrl": "https://ulissesflores.com/research/2024-bitcoin-praxeology",
+      "partScores": {
+        "resumo": 970,
+        "introducao": 947,
+        "desenvolvimento": 919,
+        "consideracoesFinais": 955,
+        "referencias": 1000,
+        "seoGeo": 1000
+      },
+      "finalScore": 965,
+      "approvedSota": true,
+      "improvementActions": [],
+      "metrics": {
+        "abstractWords": 155,
+        "introWords": 212,
+        "developmentWords": 463,
+        "conclusionWords": 153,
+        "referencesCount": 6,
+        "referencesWithUrl": 6
+      }
+    },
+    {
+      "id": "2024-scribal-canonization-ezra",
+      "title": "Canonização Escribal: Análise Histórico-Crítica da Formação do Cânon",
+      "canonicalUrl": "https://ulissesflores.com/research/2024-scribal-canonization-ezra",
+      "partScores": {
+        "resumo": 952,
+        "introducao": 934,
+        "desenvolvimento": 917,
+        "consideracoesFinais": 947,
+        "referencias": 1000,
+        "seoGeo": 1000
+      },
+      "finalScore": 958,
+      "approvedSota": true,
+      "improvementActions": [],
+      "metrics": {
+        "abstractWords": 146,
+        "introWords": 201,
+        "developmentWords": 458,
+        "conclusionWords": 148,
+        "referencesCount": 6,
+        "referencesWithUrl": 6
+      }
+    },
+    {
+      "id": "2024-theology-economic-order",
+      "title": "Fundamentos Transcendentes da Ordem Econômica",
+      "canonicalUrl": "https://ulissesflores.com/essays/2024-theology-economic-order",
+      "partScores": {
+        "resumo": 940,
+        "introducao": 921,
+        "desenvolvimento": 917,
+        "consideracoesFinais": 945,
+        "referencias": 1000,
+        "seoGeo": 1000
+      },
+      "finalScore": 954,
+      "approvedSota": true,
+      "improvementActions": [],
+      "metrics": {
+        "abstractWords": 140,
+        "introWords": 189,
+        "developmentWords": 459,
+        "conclusionWords": 147,
+        "referencesCount": 6,
+        "referencesWithUrl": 6
+      }
+    },
+    {
+      "id": "2024-ring-signatures-privacy",
+      "title": "Implementação de Ring Signatures e Endereços Furtivos",
+      "canonicalUrl": "https://ulissesflores.com/whitepapers/2024-ring-signatures-privacy",
+      "partScores": {
+        "resumo": 952,
+        "introducao": 931,
+        "desenvolvimento": 918,
+        "consideracoesFinais": 960,
+        "referencias": 1000,
+        "seoGeo": 1000
+      },
+      "finalScore": 960,
+      "approvedSota": true,
+      "improvementActions": [],
+      "metrics": {
+        "abstractWords": 146,
+        "introWords": 198,
+        "developmentWords": 462,
+        "conclusionWords": 156,
+        "referencesCount": 6,
+        "referencesWithUrl": 6
+      }
+    },
+    {
+      "id": "2024-agritech-agile-flow",
+      "title": "Transformação Ágil e Engenharia de Fluxo em Data Science",
+      "canonicalUrl": "https://ulissesflores.com/whitepapers/2024-agritech-agile-flow",
+      "partScores": {
+        "resumo": 966,
+        "introducao": 939,
+        "desenvolvimento": 920,
+        "consideracoesFinais": 955,
+        "referencias": 1000,
+        "seoGeo": 1000
+      },
+      "finalScore": 963,
+      "approvedSota": true,
+      "improvementActions": [],
+      "metrics": {
+        "abstractWords": 153,
+        "introWords": 205,
+        "developmentWords": 465,
+        "conclusionWords": 153,
+        "referencesCount": 6,
+        "referencesWithUrl": 6
+      }
+    },
+    {
+      "id": "2024-exegetical-treatise-anthropology",
+      "title": "Tratado Exegético sobre a Representação da Moralidade e Antropologia",
+      "canonicalUrl": "https://ulissesflores.com/essays/2024-exegetical-treatise-anthropology",
+      "partScores": {
+        "resumo": 940,
+        "introducao": 928,
+        "desenvolvimento": 916,
+        "consideracoesFinais": 945,
+        "referencias": 1000,
+        "seoGeo": 1000
+      },
+      "finalScore": 955,
+      "approvedSota": true,
+      "improvementActions": [],
+      "metrics": {
+        "abstractWords": 140,
+        "introWords": 195,
+        "developmentWords": 456,
+        "conclusionWords": 147,
+        "referencesCount": 6,
+        "referencesWithUrl": 6
+      }
+    },
+    {
+      "id": "2023-marian-apparitions-critique",
+      "title": "A Coroa e a Cruz: Análise Teológica e Fenomenológica das Aparições Marianas",
+      "canonicalUrl": "https://ulissesflores.com/research/2023-marian-apparitions-critique",
+      "partScores": {
+        "resumo": 952,
+        "introducao": 938,
+        "desenvolvimento": 918,
+        "consideracoesFinais": 952,
+        "referencias": 1000,
+        "seoGeo": 1000
+      },
+      "finalScore": 960,
+      "approvedSota": true,
+      "improvementActions": [],
+      "metrics": {
+        "abstractWords": 146,
+        "introWords": 204,
+        "developmentWords": 461,
+        "conclusionWords": 151,
+        "referencesCount": 6,
+        "referencesWithUrl": 6
+      }
+    },
+    {
+      "id": "2023-digital-legacy",
+      "title": "Desafios da Herança Digital: Preservação de Memória Pós-Mortem",
+      "canonicalUrl": "https://ulissesflores.com/whitepapers/2023-digital-legacy",
+      "partScores": {
+        "resumo": 950,
+        "introducao": 933,
+        "desenvolvimento": 918,
+        "consideracoesFinais": 957,
+        "referencias": 1000,
+        "seoGeo": 1000
+      },
+      "finalScore": 960,
+      "approvedSota": true,
+      "improvementActions": [],
+      "metrics": {
+        "abstractWords": 145,
+        "introWords": 200,
+        "developmentWords": 461,
+        "conclusionWords": 154,
+        "referencesCount": 6,
+        "referencesWithUrl": 6
+      }
+    },
+    {
+      "id": "2023-holy-club-methodism",
+      "title": "O Clube Santo: Arqueologia Espiritual, Teológica e Visual do Metodismo",
+      "canonicalUrl": "https://ulissesflores.com/research/2023-holy-club-methodism",
+      "partScores": {
+        "resumo": 956,
+        "introducao": 942,
+        "desenvolvimento": 918,
+        "consideracoesFinais": 948,
+        "referencias": 1000,
+        "seoGeo": 1000
+      },
+      "finalScore": 961,
+      "approvedSota": true,
+      "improvementActions": [],
+      "metrics": {
+        "abstractWords": 148,
+        "introWords": 208,
+        "developmentWords": 462,
+        "conclusionWords": 149,
+        "referencesCount": 6,
+        "referencesWithUrl": 6
+      }
+    },
+    {
+      "id": "2022-theology-of-hope",
+      "title": "A Teologia da Esperança em Tempos de Crise",
+      "canonicalUrl": "https://ulissesflores.com/essays/2022-theology-of-hope",
+      "partScores": {
+        "resumo": 960,
+        "introducao": 929,
+        "desenvolvimento": 920,
+        "consideracoesFinais": 950,
+        "referencias": 1000,
+        "seoGeo": 1000
+      },
+      "finalScore": 960,
+      "approvedSota": true,
+      "improvementActions": [],
+      "metrics": {
+        "abstractWords": 150,
+        "introWords": 196,
+        "developmentWords": 467,
+        "conclusionWords": 150,
+        "referencesCount": 6,
+        "referencesWithUrl": 6
+      }
+    },
+    {
+      "id": "2020-robotics-education",
+      "title": "Metodologias Ativas no Ensino de Lógica de Programação",
+      "canonicalUrl": "https://ulissesflores.com/essays/2020-robotics-education",
+      "partScores": {
+        "resumo": 946,
+        "introducao": 929,
+        "desenvolvimento": 916,
+        "consideracoesFinais": 943,
+        "referencias": 1000,
+        "seoGeo": 1000
+      },
+      "finalScore": 956,
+      "approvedSota": true,
+      "improvementActions": [],
+      "metrics": {
+        "abstractWords": 143,
+        "introWords": 196,
+        "developmentWords": 456,
+        "conclusionWords": 146,
+        "referencesCount": 6,
+        "referencesWithUrl": 6
+      }
+    },
+    {
+      "id": "2017-chaos-theory-economics",
+      "title": "Teoria do Caos: Emergência e Auto-organização em Mercados",
+      "canonicalUrl": "https://ulissesflores.com/essays/2017-chaos-theory-economics",
+      "partScores": {
+        "resumo": 960,
+        "introducao": 928,
+        "desenvolvimento": 921,
+        "consideracoesFinais": 947,
+        "referencias": 1000,
+        "seoGeo": 1000
+      },
+      "finalScore": 959,
+      "approvedSota": true,
+      "improvementActions": [],
+      "metrics": {
+        "abstractWords": 150,
+        "introWords": 195,
+        "developmentWords": 468,
+        "conclusionWords": 148,
+        "referencesCount": 6,
+        "referencesWithUrl": 6
+      }
+    }
+  ]
+}

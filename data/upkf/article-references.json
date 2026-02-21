@@ -1,0 +1,470 @@
+{
+  "2025-little-law-resilience": [
+    {
+      "citation": "Little, J. D. C. (1961). A Proof for the Queueing Formula L = lambda W.",
+      "url": "https://doi.org/10.1287/opre.9.3.383"
+    },
+    {
+      "citation": "Kingman, J. F. C. (1961). The single server queue in heavy traffic.",
+      "url": "https://doi.org/10.1093/biomet/48.1-2.131"
+    },
+    {
+      "citation": "Anderson, D. J. (2010). Kanban.",
+      "url": "https://books.google.com/books?id=R6t_DwAAQBAJ"
+    },
+    {
+      "citation": "Reinertsen, D. (2009). The Principles of Product Development Flow.",
+      "url": "https://www.celerity.com/books/product-development-flow-second-generation-lean-product-development/"
+    },
+    {
+      "citation": "Forsgren, N.; Humble, J.; Kim, G. (2018). Accelerate.",
+      "url": "https://itrevolution.com/product/accelerate/"
+    },
+    {
+      "citation": "Hopp, W.; Spearman, M. (2011). Factory Physics.",
+      "url": "https://www.mheducation.com/highered/product/factory-physics-hopp-spearman/M9781577667391.html"
+    }
+  ],
+  "2025-lstm-asset-prediction": [
+    {
+      "citation": "Hochreiter, S.; Schmidhuber, J. (1997). Long Short-Term Memory.",
+      "url": "https://doi.org/10.1162/neco.1997.9.8.1735"
+    },
+    {
+      "citation": "Fischer, T.; Krauss, C. (2018). Deep learning with long short-term memory networks for financial market predictions.",
+      "url": "https://doi.org/10.1016/j.ejor.2017.11.054"
+    },
+    {
+      "citation": "Nelson, D. M. Q. et al. (2017). Stock market's price movement prediction with LSTM neural networks.",
+      "url": "https://doi.org/10.1016/j.neucom.2016.12.032"
+    },
+    {
+      "citation": "Fama, E. F. (1970). Efficient Capital Markets: A Review of Theory and Empirical Work.",
+      "url": "https://doi.org/10.2307/2325486"
+    },
+    {
+      "citation": "Lo, A. W. (2004). The Adaptive Markets Hypothesis.",
+      "url": "https://doi.org/10.3905/jpm.2004.442611"
+    },
+    {
+      "citation": "Goodfellow, I.; Bengio, Y.; Courville, A. (2016). Deep Learning.",
+      "url": "https://www.deeplearningbook.org/"
+    }
+  ],
+  "2025-hybrid-cooling-thermodynamics": [
+    {
+      "citation": "ASHRAE. Thermal Guidelines for Data Processing Environments.",
+      "url": "https://www.ashrae.org/technical-resources/bookstore/thermal-guidelines-for-data-processing-environments"
+    },
+    {
+      "citation": "ASHRAE Standard 90.4 for Data Centers.",
+      "url": "https://www.ashrae.org/technical-resources/bookstore/standard-90-4"
+    },
+    {
+      "citation": "ISO 50001: Energy management systems.",
+      "url": "https://www.iso.org/iso-50001-energy-management.html"
+    },
+    {
+      "citation": "Patterson, M. K. (2008). The effect of data center temperature on energy efficiency.",
+      "url": "https://doi.org/10.1109/ITHERM.2008.4544301"
+    },
+    {
+      "citation": "Shehabi, A. et al. (2016). United States Data Center Energy Usage Report.",
+      "url": "https://eta-publications.lbl.gov/sites/default/files/lbnl-1005775_v2.pdf"
+    },
+    {
+      "citation": "US DOE. Data Center Energy Efficiency.",
+      "url": "https://www.energy.gov/eere/femp/data-center-energy-efficiency"
+    }
+  ],
+  "2025-iot-data-sovereignty": [
+    {
+      "citation": "Rose, S. et al. (2020). NIST SP 800-207 Zero Trust Architecture.",
+      "url": "https://doi.org/10.6028/NIST.SP.800-207"
+    },
+    {
+      "citation": "Fagan, M. et al. (2020). NISTIR 8259A IoT Device Cybersecurity Capability Core Baseline.",
+      "url": "https://doi.org/10.6028/NIST.IR.8259A"
+    },
+    {
+      "citation": "IEC 62443 series for industrial automation and control systems security.",
+      "url": "https://www.iec.ch/standards-development/what-makes-a-good-standard/iec-62443-series-standards"
+    },
+    {
+      "citation": "ETSI EN 303 645 for consumer IoT cybersecurity.",
+      "url": "https://www.etsi.org/technologies/consumer-iot-security"
+    },
+    {
+      "citation": "OWASP Internet of Things Project.",
+      "url": "https://owasp.org/www-project-internet-of-things/"
+    },
+    {
+      "citation": "GAIA-X policy and interoperability framework.",
+      "url": "https://gaia-x.eu/what-is-gaia-x/"
+    }
+  ],
+  "2025-fraud-detection-mlp": [
+    {
+      "citation": "Ngai, E. W. T. et al. (2011). The application of data mining techniques in financial fraud detection.",
+      "url": "https://doi.org/10.1016/j.dss.2010.08.006"
+    },
+    {
+      "citation": "Whitrow, C. et al. (2009). Transaction aggregation as a strategy for credit card fraud detection.",
+      "url": "https://doi.org/10.1016/j.eswa.2008.10.008"
+    },
+    {
+      "citation": "Jurgovsky, J. et al. (2018). Sequence classification for credit-card fraud detection.",
+      "url": "https://arxiv.org/abs/1811.07293"
+    },
+    {
+      "citation": "Carcillo, F. et al. (2021). Combining unsupervised and supervised learning in credit card fraud detection.",
+      "url": "https://doi.org/10.1016/j.is.2021.101705"
+    },
+    {
+      "citation": "Bahnsen, A. C. et al. (2016). Classifying highly imbalanced data using cost-sensitive decision trees.",
+      "url": "https://doi.org/10.1016/j.eswa.2016.05.032"
+    },
+    {
+      "citation": "NIST. AI Risk Management Framework 1.0.",
+      "url": "https://www.nist.gov/itl/ai-risk-management-framework"
+    }
+  ],
+  "2024-historicity-jesus-archaeology": [
+    {
+      "citation": "Ehrman, B. D. (2012). Did Jesus Exist?",
+      "url": "https://global.oup.com/academic/product/did-jesus-exist-9780062206442"
+    },
+    {
+      "citation": "Sanders, E. P. (1993). The Historical Figure of Jesus.",
+      "url": "https://www.penguinrandomhouse.com/books/322275/the-historical-figure-of-jesus-by-e-p-sanders/"
+    },
+    {
+      "citation": "Meier, J. P. (1991-2016). A Marginal Jew.",
+      "url": "https://yalebooks.yale.edu/book/9780300140181/a-marginal-jew/"
+    },
+    {
+      "citation": "Vermes, G. (2001). The Changing Faces of Jesus.",
+      "url": "https://www.penguin.co.uk/books/35040/the-changing-faces-of-jesus-by-geza-vermes/9780140287844"
+    },
+    {
+      "citation": "Josephus. Antiquities of the Jews, Book 18.",
+      "url": "https://www.perseus.tufts.edu/hopper/text?doc=J.+AJ+18"
+    },
+    {
+      "citation": "Tacitus. Annals, Book 15.",
+      "url": "https://www.perseus.tufts.edu/hopper/text?doc=Tac.+Ann.+15"
+    }
+  ],
+  "2024-bitcoin-praxeology": [
+    {
+      "citation": "Nakamoto, S. (2008). Bitcoin: A Peer-to-Peer Electronic Cash System.",
+      "url": "https://bitcoin.org/bitcoin.pdf"
+    },
+    {
+      "citation": "Mises, L. von (1912). The Theory of Money and Credit.",
+      "url": "https://mises.org/library/book/theory-money-and-credit"
+    },
+    {
+      "citation": "Hayek, F. A. (1976). Denationalisation of Money.",
+      "url": "https://mises.org/library/book/denationalisation-money"
+    },
+    {
+      "citation": "Bohme, R. et al. (2015). Bitcoin: Economics, Technology, and Governance.",
+      "url": "https://doi.org/10.1257/jep.29.2.213"
+    },
+    {
+      "citation": "Selgin, G. (2015). Synthetic Commodity Money.",
+      "url": "https://www.alt-m.org/2015/09/02/synthetic-commodity-money/"
+    },
+    {
+      "citation": "Ammous, S. (2018). The Bitcoin Standard.",
+      "url": "https://saifedean.com/thebitcoinstandard"
+    }
+  ],
+  "2024-scribal-canonization-ezra": [
+    {
+      "citation": "Childs, B. S. (1979). Introduction to the Old Testament as Scripture.",
+      "url": "https://books.google.com/books?id=6lEJY7X0fVoC"
+    },
+    {
+      "citation": "Kugel, J. L. (2007). How to Read the Bible.",
+      "url": "https://www.simonandschuster.com/books/How-to-Read-the-Bible/James-L-Kugel/9780743235860"
+    },
+    {
+      "citation": "Cohen, S. J. D. (2006). From the Maccabees to the Mishnah.",
+      "url": "https://www.wjkbooks.com/Products/9780664239046/from-the-maccabees-to-the-mishnah-third-edition.aspx"
+    },
+    {
+      "citation": "Tov, E. (2012). Textual Criticism of the Hebrew Bible.",
+      "url": "https://www.fortresspress.com/store/product/9780800696641/Textual-Criticism-of-the-Hebrew-Bible"
+    },
+    {
+      "citation": "McDonald, L. M. (2017). The Formation of the Biblical Canon.",
+      "url": "https://www.bloomsbury.com/us/formation-of-the-biblical-canon-9780567668851/"
+    },
+    {
+      "citation": "Sanders, J. A. (1987). Canon and Community.",
+      "url": "https://www.fortresspress.com/store/product/9780800615918/Canon-and-Community"
+    }
+  ],
+  "2024-theology-economic-order": [
+    {
+      "citation": "Augustine. The City of God.",
+      "url": "https://www.newadvent.org/fathers/1201.htm"
+    },
+    {
+      "citation": "Aquinas, T. Summa Theologiae.",
+      "url": "https://www.newadvent.org/summa/"
+    },
+    {
+      "citation": "Ropke, W. (1960). A Humane Economy.",
+      "url": "https://isi.org/books/a-humane-economy/"
+    },
+    {
+      "citation": "Weber, M. (1905). The Protestant Ethic and the Spirit of Capitalism.",
+      "url": "https://www.marxists.org/reference/archive/weber/protestant-ethic/"
+    },
+    {
+      "citation": "Novak, M. (1982). The Spirit of Democratic Capitalism.",
+      "url": "https://www.basicbooks.com/titles/michael-novak/the-spirit-of-democratic-capitalism/9781594035883/"
+    },
+    {
+      "citation": "McCloskey, D. (2006). The Bourgeois Virtues.",
+      "url": "https://press.uchicago.edu/ucp/books/book/chicago/B/bo3684036.html"
+    }
+  ],
+  "2024-ring-signatures-privacy": [
+    {
+      "citation": "Rivest, R.; Shamir, A.; Tauman, Y. (2001). How to Leak a Secret.",
+      "url": "https://doi.org/10.1007/3-540-45682-1_32"
+    },
+    {
+      "citation": "Franklin, M.; Zhang, H. (2012). A framework for unique ring signatures.",
+      "url": "https://doi.org/10.1007/978-3-642-28914-9_6"
+    },
+    {
+      "citation": "Noether, S. (2015). Ring Confidential Transactions.",
+      "url": "https://eprint.iacr.org/2015/1098"
+    },
+    {
+      "citation": "Monero Research Lab publications.",
+      "url": "https://www.getmonero.org/resources/research-lab/"
+    },
+    {
+      "citation": "NIST SP 800-56A Rev. 3.",
+      "url": "https://doi.org/10.6028/NIST.SP.800-56Ar3"
+    },
+    {
+      "citation": "Ruffing, T.; Moreno-Sanchez, P.; Kate, A. (2017). CoinShuffle++.",
+      "url": "https://doi.org/10.1109/EuroSP.2017.47"
+    }
+  ],
+  "2024-agritech-agile-flow": [
+    {
+      "citation": "Reinertsen, D. (2009). The Principles of Product Development Flow.",
+      "url": "https://www.celerity.com/books/product-development-flow-second-generation-lean-product-development/"
+    },
+    {
+      "citation": "Forsgren, N.; Humble, J.; Kim, G. (2018). Accelerate.",
+      "url": "https://itrevolution.com/product/accelerate/"
+    },
+    {
+      "citation": "Rother, M.; Shook, J. (1999). Learning to See.",
+      "url": "https://www.lean.org/lexicon-terms/learning-to-see/"
+    },
+    {
+      "citation": "FAO (2022). The State of Food and Agriculture: Leveraging automation.",
+      "url": "https://www.fao.org/3/cb9479en/cb9479en.pdf"
+    },
+    {
+      "citation": "OECD (2019). Digital Opportunities for Better Agricultural Policies.",
+      "url": "https://www.oecd.org/agriculture/topics/agricultural-policy-monitoring-and-evaluation/"
+    },
+    {
+      "citation": "Project Management Institute. Agile Practice Guide.",
+      "url": "https://www.pmi.org/pmbok-guide-standards/practice-guides/agile"
+    }
+  ],
+  "2024-exegetical-treatise-anthropology": [
+    {
+      "citation": "Ricoeur, P. (1976). Interpretation Theory.",
+      "url": "https://www.degruyter.com/document/doi/10.3138/9781442678286/html"
+    },
+    {
+      "citation": "Brueggemann, W. (1997). Theology of the Old Testament.",
+      "url": "https://www.fortresspress.com/store/product/9780800628307/Theology-of-the-Old-Testament"
+    },
+    {
+      "citation": "Wright, N. T. (1992). The New Testament and the People of God.",
+      "url": "https://www.fortresspress.com/store/product/9780800626815/The-New-Testament-and-the-People-of-God"
+    },
+    {
+      "citation": "Gadamer, H.-G. (1960). Truth and Method.",
+      "url": "https://www.bloomsbury.com/us/truth-and-method-9780826405852/"
+    },
+    {
+      "citation": "Thiselton, A. C. (1980). The Two Horizons.",
+      "url": "https://www.eerdmans.com/9780802800169/the-two-horizons/"
+    },
+    {
+      "citation": "von Rad, G. (2001). Old Testament Theology.",
+      "url": "https://www.wjkbooks.com/Products/9780664223984/old-testament-theology-volume-1.aspx"
+    }
+  ],
+  "2023-marian-apparitions-critique": [
+    {
+      "citation": "Congregation for the Doctrine of the Faith (1978). Norms regarding alleged apparitions.",
+      "url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_19780225_norme-apparizioni_en.html"
+    },
+    {
+      "citation": "Zimdars-Swartz, S. L. (1991). Encountering Mary.",
+      "url": "https://press.princeton.edu/books/paperback/9780691028675/encountering-mary"
+    },
+    {
+      "citation": "Christian Jr., W. A. (1981). Local Religion in Sixteenth-Century Spain.",
+      "url": "https://press.princeton.edu/books/paperback/9780691101965/local-religion-in-sixteenth-century-spain"
+    },
+    {
+      "citation": "Laurentin, R. (1990). The Apparitions of the Blessed Virgin Mary Today.",
+      "url": "https://books.google.com/books?id=GdoIAQAAMAAJ"
+    },
+    {
+      "citation": "Pelikan, J. (1996). Mary Through the Centuries.",
+      "url": "https://yalebooks.yale.edu/book/9780300076619/mary-through-the-centuries/"
+    },
+    {
+      "citation": "Vatican Dicastery (2024). New Norms for discernment of supernatural phenomena.",
+      "url": "https://www.vaticannews.va/en/vatican-city/news/2024-05/new-norms-discernment-apparitions-dicastery-doctrine-faith.html"
+    }
+  ],
+  "2023-digital-legacy": [
+    {
+      "citation": "European Union (2016). General Data Protection Regulation (GDPR).",
+      "url": "https://eur-lex.europa.eu/eli/reg/2016/679/oj"
+    },
+    {
+      "citation": "ISO 15489-1:2016 Information and documentation -- Records management.",
+      "url": "https://www.iso.org/standard/62542.html"
+    },
+    {
+      "citation": "NIST Privacy Framework 1.0.",
+      "url": "https://www.nist.gov/privacy-framework"
+    },
+    {
+      "citation": "Carroll, E.; Romano, J. (2011). Your Digital Afterlife.",
+      "url": "https://books.google.com/books?id=4W8jAQAAQBAJ"
+    },
+    {
+      "citation": "Apple. Legacy Contact in Apple ID.",
+      "url": "https://support.apple.com/en-us/102631"
+    },
+    {
+      "citation": "Google. Inactive Account Manager.",
+      "url": "https://support.google.com/accounts/answer/3036546"
+    }
+  ],
+  "2023-holy-club-methodism": [
+    {
+      "citation": "Wesley, J. The Journal of John Wesley.",
+      "url": "https://wesley.nnu.edu/john-wesley/the-journal-of-john-wesley/"
+    },
+    {
+      "citation": "Heitzenrater, R. P. (2013). Wesley and the People Called Methodists.",
+      "url": "https://www.abingdonpress.com/product/9781426775642"
+    },
+    {
+      "citation": "Hempton, D. (2005). Methodism: Empire of the Spirit.",
+      "url": "https://yalebooks.yale.edu/book/9780300106149/methodism/"
+    },
+    {
+      "citation": "Maddox, R. L. (1994). Responsible Grace.",
+      "url": "https://www.abingdonpress.com/product/9780687467426"
+    },
+    {
+      "citation": "Outler, A. C. (1964). John Wesley.",
+      "url": "https://global.oup.com/academic/product/john-wesley-9780195028102"
+    },
+    {
+      "citation": "Oxford Handbook of Methodist Studies.",
+      "url": "https://academic.oup.com/edited-volume/34318"
+    }
+  ],
+  "2022-theology-of-hope": [
+    {
+      "citation": "Moltmann, J. (1967). Theology of Hope.",
+      "url": "https://www.fortresspress.com/store/product/9780800628277/Theology-of-Hope"
+    },
+    {
+      "citation": "Bonhoeffer, D. (1953). Letters and Papers from Prison.",
+      "url": "https://www.scmpress.co.uk/titles/3642/letters-and-papers-from-prison"
+    },
+    {
+      "citation": "Pannenberg, W. (1968). Theology and the Kingdom of God.",
+      "url": "https://www.westminsterjohnknoxpress.com/Products/0664240245/theology-and-the-kingdom-of-god.aspx"
+    },
+    {
+      "citation": "Volf, M. (2011). A Public Faith.",
+      "url": "https://brazospress.com/books/a-public-faith"
+    },
+    {
+      "citation": "Wright, N. T. (2008). Surprised by Hope.",
+      "url": "https://www.harpercollins.com/products/surprised-by-hope-n-t-wright"
+    },
+    {
+      "citation": "Metz, J. B. (1969). Theology of the World.",
+      "url": "https://www.herder.de/theologie-pastoral/shop/p6/10291-theology-of-the-world-hardcover/"
+    }
+  ],
+  "2020-robotics-education": [
+    {
+      "citation": "Papert, S. (1980). Mindstorms.",
+      "url": "https://books.google.com/books?id=5ks9AAAAMAAJ"
+    },
+    {
+      "citation": "Wing, J. M. (2006). Computational Thinking.",
+      "url": "https://doi.org/10.1145/1118178.1118215"
+    },
+    {
+      "citation": "Kolb, D. A. (1984). Experiential Learning.",
+      "url": "https://www.peterlang.com/document/1095800"
+    },
+    {
+      "citation": "Hmelo-Silver, C. E. (2004). Problem-Based Learning.",
+      "url": "https://doi.org/10.1023/B:EDPR.0000034022.16470.f3"
+    },
+    {
+      "citation": "Resnick, M. (2017). Lifelong Kindergarten.",
+      "url": "https://mitpress.mit.edu/9780262536134/lifelong-kindergarten/"
+    },
+    {
+      "citation": "Bers, M. U. (2022). Coding as a Playground.",
+      "url": "https://www.routledge.com/Coding-as-a-Playground-Programming-and-Computational-Thinking-in-the-Early-Childhood-Classroom/Bers/p/book/9781032016153"
+    }
+  ],
+  "2017-chaos-theory-economics": [
+    {
+      "citation": "Lorenz, E. N. (1963). Deterministic Nonperiodic Flow.",
+      "url": "https://doi.org/10.1175/1520-0469(1963)020%3C0130:DNF%3E2.0.CO;2"
+    },
+    {
+      "citation": "Mandelbrot, B. (1963). The Variation of Certain Speculative Prices.",
+      "url": "https://doi.org/10.1080/01621459.1963.10500830"
+    },
+    {
+      "citation": "Arthur, W. B. (1999). Complexity and the Economy.",
+      "url": "https://doi.org/10.1126/science.284.5411.107"
+    },
+    {
+      "citation": "Farmer, J. D.; Foley, D. (2009). The economy needs agent-based modelling.",
+      "url": "https://doi.org/10.1038/460685a"
+    },
+    {
+      "citation": "Rosser, J. B. (2000). From Catastrophe to Chaos.",
+      "url": "https://link.springer.com/book/10.1007/978-1-4615-4481-9"
+    },
+    {
+      "citation": "Beinhocker, E. D. (2006). The Origin of Wealth.",
+      "url": "https://www.hbs.edu/faculty/Pages/item.aspx?num=19867"
+    }
+  ]
+}

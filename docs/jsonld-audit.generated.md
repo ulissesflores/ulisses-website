@@ -1,6 +1,6 @@
 # JSON-LD Audit (Generated)
 
-- Generated at: 2026-02-21T04:01:48.819Z
+- Generated at: 2026-02-21T04:46:30.797Z
 - Site graph nodes: 4
 - Public graph nodes: 144
 - Full graph nodes: 247
@@ -16,6 +16,8 @@
 - [x] Arquivo presente: llms — /Users/ulissesflores/Documents/Projetos/ulisses-hub/public/llms.txt
 - [x] Arquivo presente: llmsFull — /Users/ulissesflores/Documents/Projetos/ulisses-hub/public/llms-full.txt
 - [x] Arquivo presente: did — /Users/ulissesflores/Documents/Projetos/ulisses-hub/public/.well-known/did.json
+- [x] Arquivo presente: articleQualityJson — /Users/ulissesflores/Documents/Projetos/ulisses-hub/docs/article-quality.generated.json
+- [x] Arquivo presente: articleQualityMd — /Users/ulissesflores/Documents/Projetos/ulisses-hub/docs/article-quality.generated.md
 - [x] site.jsonld tem grafo minimo
 - [x] public.jsonld maior que site.jsonld
 - [x] full.jsonld maior que public.jsonld
@@ -32,4 +34,7 @@
 - [x] did:web configurado
 - [x] did.json com verificationMethod
 - [x] did.json referencia public.jsonld em service
+- [x] Relatorio de qualidade usa limiar SOTA = 950
+- [x] Score geral de artigos >= 950
+- [x] Todos os artigos com score final >= 950
 

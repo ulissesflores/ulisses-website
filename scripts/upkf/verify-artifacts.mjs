@@ -59,6 +59,8 @@ function main() {
     llms: path.join(publicDir, 'llms.txt'),
     llmsFull: path.join(publicDir, 'llms-full.txt'),
     did: path.join(publicDir, '.well-known', 'did.json'),
+    articleQualityJson: path.join(docsDir, 'article-quality.generated.json'),
+    articleQualityMd: path.join(docsDir, 'article-quality.generated.md'),
   };
 
   const checks = [];
@@ -84,6 +86,7 @@ function main() {
   const publicJson = readJson(files.pub);
   const fullJson = readJson(files.full);
   const didJson = readJson(files.did);
+  const articleQuality = readJson(files.articleQualityJson);
 
   const siteGraph = getGraph(siteJson);
   const publicGraph = getGraph(publicJson);
@@ -150,6 +153,13 @@ function main() {
     checks,
     Array.isArray(didJson.service) && didJson.service.some((item) => item.serviceEndpoint === 'https://ulissesflores.com/public.jsonld'),
     'did.json referencia public.jsonld em service',
+  );
+  assert(checks, articleQuality.threshold === 950, 'Relatorio de qualidade usa limiar SOTA = 950');
+  assert(checks, articleQuality.projectScore >= 950, 'Score geral de artigos >= 950');
+  assert(
+    checks,
+    Array.isArray(articleQuality.articles) && articleQuality.articles.every((item) => item.finalScore >= 950),
+    'Todos os artigos com score final >= 950',
   );
 
   const ok = checks.every((check) => check.ok);

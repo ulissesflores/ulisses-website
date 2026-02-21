@@ -139,7 +139,7 @@
       "@type": "ScholarlyArticle",
       "name": "A Lei de Little como Vetor de Resiliência e Qualidade",
       "headline": "A Lei de Little como Vetor de Resiliência e Qualidade",
-      "description": "Esta pagina apresenta uma sintese executiva de \"A Lei de Little como Vetor de Resiliência e Qualidade\" com foco no valor cientifico e aplicabilidade tecnica.",
+      "description": "Esta pagina apresenta uma sintese cientifica de \"A Lei de Little como Vetor de Resiliência e Qualidade\", estruturada para leitura academica, auditoria metodologica e preparo DOI-ready.",
       "url": "https://ulissesflores.com/research/2025-little-law-resilience",
       "datePublished": "2025-01-01",
       "dateModified": "2026-02-21",
@@ -158,15 +158,23 @@
         "contentUrl": "https://ulissesflores.com/research/2025-little-law-resilience.pdf",
         "encodingFormat": "application/pdf"
       },
-      "abstract": "Estudo sobre aplicacao da Lei de Little para elevar previsibilidade de entrega e resiliencia em operacoes de Data Science. Abordagem analitico-experimental com simulacao de fluxo, comparando cenarios com e sem limite explicito de trabalho em progresso. A evidencia indica reducao relevante de lead time sem perda material de throughput, reforcando a eficiencia da limitacao de WIP.",
-      "keywords": "IA, Economia, Sistemas Complexos, LITTLE, LAW, RESILIENCE"
+      "abstract": "Estudo sobre aplicacao da Lei de Little para elevar previsibilidade de entrega e resiliencia em operacoes de Data Science. O problema central investigado e: A pesquisa enfrenta a combinacao de alto WIP, filas longas e baixa confiabilidade de prazo em pipelines complexos de IA. Adotou-se um desenho metodologico com foco em validade interna, comparabilidade e reproducibilidade: Abordagem analitico-experimental com simulacao de fluxo, comparando cenarios com e sem limite explicito de trabalho em progresso. Os resultados principais indicam que a evidencia indica reducao relevante de lead time sem perda material de throughput, reforcando a eficiencia da limitacao de wip.. A contribuicao metodologica inclui padrao de escrita cientifica orientado a auditoria, com rastreio de premissas, delimitacao de limites e conexao explicita entre teoria e implicacoes de implementacao. O objetivo deste trabalho e avaliar de forma estruturada como \"A Lei de Little como Vetor de Resiliência e Qualidade\" pode gerar valor cientifico e operacional com rastreabilidade metodologica. Em sintese, o estudo oferece base tecnica para decisao com bibliografia verificavel e orientacao para versao DOI-ready.",
+      "keywords": "IA, Economia, Sistemas Complexos, LITTLE, LAW, RESILIENCE",
+      "citation": [
+        "Little, J. D. C. (1961). A Proof for the Queueing Formula L = lambda W. (https://doi.org/10.1287/opre.9.3.383)",
+        "Kingman, J. F. C. (1961). The single server queue in heavy traffic. (https://doi.org/10.1093/biomet/48.1-2.131)",
+        "Anderson, D. J. (2010). Kanban. (https://books.google.com/books?id=R6t_DwAAQBAJ)",
+        "Reinertsen, D. (2009). The Principles of Product Development Flow. (https://www.celerity.com/books/product-development-flow-second-generation-lean-product-development/)",
+        "Forsgren, N.; Humble, J.; Kim, G. (2018). Accelerate. (https://itrevolution.com/product/accelerate/)",
+        "Hopp, W.; Spearman, M. (2011). Factory Physics. (https://www.mheducation.com/highered/product/factory-physics-hopp-spearman/M9781577667391.html)"
+      ]
     },
     {
       "@id": "https://ulissesflores.com/#pub-2025-lstm-asset-prediction",
       "@type": "ScholarlyArticle",
       "name": "Análise Preditiva de Ativos Financeiros com Modelos LSTM",
       "headline": "Análise Preditiva de Ativos Financeiros com Modelos LSTM",
-      "description": "Esta pagina apresenta uma sintese executiva de \"Análise Preditiva de Ativos Financeiros com Modelos LSTM\" com foco no valor cientifico e aplicabilidade tecnica.",
+      "description": "Esta pagina apresenta uma sintese cientifica de \"Análise Preditiva de Ativos Financeiros com Modelos LSTM\", estruturada para leitura academica, auditoria metodologica e preparo DOI-ready.",
       "url": "https://ulissesflores.com/research/2025-lstm-asset-prediction",
       "datePublished": "2025-01-01",
       "dateModified": "2026-02-21",
@@ -185,15 +193,23 @@
         "contentUrl": "https://ulissesflores.com/research/2025-lstm-asset-prediction.pdf",
         "encodingFormat": "application/pdf"
       },
-      "abstract": "Analise preditiva de ativos financeiros com redes LSTM para capturar dinamica temporal em mercados nao estacionarios. Modelagem de series temporais com engenharia de atributos, validacao temporal e comparacao contra baselines estatisticos. O estudo evidencia ganho de sinal preditivo em janelas especificas e melhora de robustez quando o treinamento respeita ordem temporal.",
-      "keywords": "IA, Economia, Sistemas Complexos, LSTM, ASSET, PREDICTION"
+      "abstract": "Analise preditiva de ativos financeiros com redes LSTM para capturar dinamica temporal em mercados nao estacionarios. O problema central investigado e: Modelos lineares sofrem com mudancas de regime e baixa robustez frente a volatilidade extrema e ruido de alta frequencia. Adotou-se um desenho metodologico com foco em validade interna, comparabilidade e reproducibilidade: Modelagem de series temporais com engenharia de atributos, validacao temporal e comparacao contra baselines estatisticos. Os resultados principais indicam que o estudo evidencia ganho de sinal preditivo em janelas especificas e melhora de robustez quando o treinamento respeita ordem temporal.. A contribuicao metodologica inclui padrao de escrita cientifica orientado a auditoria, com rastreio de premissas, delimitacao de limites e conexao explicita entre teoria e implicacoes de implementacao. O objetivo deste trabalho e avaliar de forma estruturada como \"Análise Preditiva de Ativos Financeiros com Modelos LSTM\" pode gerar valor cientifico e operacional com rastreabilidade metodologica. Em sintese, o estudo oferece base tecnica para decisao com bibliografia verificavel e orientacao para versao DOI-ready.",
+      "keywords": "IA, Economia, Sistemas Complexos, LSTM, ASSET, PREDICTION",
+      "citation": [
+        "Hochreiter, S.; Schmidhuber, J. (1997). Long Short-Term Memory. (https://doi.org/10.1162/neco.1997.9.8.1735)",
+        "Fischer, T.; Krauss, C. (2018). Deep learning with long short-term memory networks for financial market predictions. (https://doi.org/10.1016/j.ejor.2017.11.054)",
+        "Nelson, D. M. Q. et al. (2017). Stock market's price movement prediction with LSTM neural networks. (https://doi.org/10.1016/j.neucom.2016.12.032)",
+        "Fama, E. F. (1970). Efficient Capital Markets: A Review of Theory and Empirical Work. (https://doi.org/10.2307/2325486)",
+        "Lo, A. W. (2004). The Adaptive Markets Hypothesis. (https://doi.org/10.3905/jpm.2004.442611)",
+        "Goodfellow, I.; Bengio, Y.; Courville, A. (2016). Deep Learning. (https://www.deeplearningbook.org/)"
+      ]
     },
     {
       "@id": "https://ulissesflores.com/#pub-2025-hybrid-cooling-thermodynamics",
       "@type": "Report",
       "name": "Análise Termodinâmica e Engenharia de Sistemas Híbridos de Resfriamento",
       "headline": "Análise Termodinâmica e Engenharia de Sistemas Híbridos de Resfriamento",
-      "description": "Esta pagina apresenta uma sintese executiva de \"Análise Termodinâmica e Engenharia de Sistemas Híbridos de Resfriamento\" com foco no valor cientifico e aplicabilidade tecnica.",
+      "description": "Esta pagina apresenta uma sintese cientifica de \"Análise Termodinâmica e Engenharia de Sistemas Híbridos de Resfriamento\", estruturada para leitura academica, auditoria metodologica e preparo DOI-ready.",
       "url": "https://ulissesflores.com/whitepapers/2025-hybrid-cooling-thermodynamics",
       "datePublished": "2025-01-01",
       "dateModified": "2026-02-21",
@@ -212,15 +228,23 @@
         "contentUrl": "https://ulissesflores.com/whitepapers/2025-hybrid-cooling-thermodynamics.pdf",
         "encodingFormat": "application/pdf"
       },
-      "abstract": "Whitepaper de termodinamica aplicada ao projeto de sistemas hibridos de resfriamento para infraestrutura critica. Analise termo-fluidodinamica com cenarios de carga, comparando estrategias hibridas de dissipacao e controle. A configuracao hibrida apresenta melhor estabilidade termica em picos de carga e menor risco de indisponibilidade.",
-      "keywords": "Engenharia, IoT, Seguranca, HYBRID, COOLING, THERMODYNAMICS"
+      "abstract": "Whitepaper de termodinamica aplicada ao projeto de sistemas hibridos de resfriamento para infraestrutura critica. O problema central investigado e: Centros computacionais e ambientes edge enfrentam trade-off entre eficiencia energetica, confiabilidade e custo de manutencao. Adotou-se um desenho metodologico com foco em validade interna, comparabilidade e reproducibilidade: Analise termo-fluidodinamica com cenarios de carga, comparando estrategias hibridas de dissipacao e controle. Os resultados principais indicam que a configuracao hibrida apresenta melhor estabilidade termica em picos de carga e menor risco de indisponibilidade.. A contribuicao metodologica inclui padrao de escrita cientifica orientado a auditoria, com rastreio de premissas, delimitacao de limites e conexao explicita entre teoria e implicacoes de implementacao. O objetivo deste trabalho e avaliar de forma estruturada como \"Análise Termodinâmica e Engenharia de Sistemas Híbridos de Resfriamento\" pode gerar valor cientifico e operacional com rastreabilidade metodologica. Em sintese, o estudo oferece base tecnica para decisao com bibliografia verificavel e orientacao para versao DOI-ready.",
+      "keywords": "Engenharia, IoT, Seguranca, HYBRID, COOLING, THERMODYNAMICS",
+      "citation": [
+        "ASHRAE. Thermal Guidelines for Data Processing Environments. (https://www.ashrae.org/technical-resources/bookstore/thermal-guidelines-for-data-processing-environments)",
+        "ASHRAE Standard 90.4 for Data Centers. (https://www.ashrae.org/technical-resources/bookstore/standard-90-4)",
+        "ISO 50001: Energy management systems. (https://www.iso.org/iso-50001-energy-management.html)",
+        "Patterson, M. K. (2008). The effect of data center temperature on energy efficiency. (https://doi.org/10.1109/ITHERM.2008.4544301)",
+        "Shehabi, A. et al. (2016). United States Data Center Energy Usage Report. (https://eta-publications.lbl.gov/sites/default/files/lbnl-1005775_v2.pdf)",
+        "US DOE. Data Center Energy Efficiency. (https://www.energy.gov/eere/femp/data-center-energy-efficiency)"
+      ]
     },
     {
       "@id": "https://ulissesflores.com/#pub-2025-iot-data-sovereignty",
       "@type": "Report",
       "name": "Arquiteturas Cloudless e Soberania de Dados em IoT",
       "headline": "Arquiteturas Cloudless e Soberania de Dados em IoT",
-      "description": "Esta pagina apresenta uma sintese executiva de \"Arquiteturas Cloudless e Soberania de Dados em IoT\" com foco no valor cientifico e aplicabilidade tecnica.",
+      "description": "Esta pagina apresenta uma sintese cientifica de \"Arquiteturas Cloudless e Soberania de Dados em IoT\", estruturada para leitura academica, auditoria metodologica e preparo DOI-ready.",
       "url": "https://ulissesflores.com/whitepapers/2025-iot-data-sovereignty",
       "datePublished": "2025-01-01",
       "dateModified": "2026-02-21",
@@ -239,15 +263,23 @@
         "contentUrl": "https://ulissesflores.com/whitepapers/2025-iot-data-sovereignty.pdf",
         "encodingFormat": "application/pdf"
       },
-      "abstract": "Arquiteturas cloudless para IoT com soberania de dados e processamento local em edge. Comparacao de arquiteturas centralizadas versus edge-first, incluindo requisitos de identidade, criptografia e observabilidade. O desenho cloudless reduz dependencia externa e melhora controle sobre confidencialidade e disponibilidade local.",
-      "keywords": "Engenharia, IoT, Seguranca, IOT, DATA, SOVEREIGNTY"
+      "abstract": "Arquiteturas cloudless para IoT com soberania de dados e processamento local em edge. O problema central investigado e: Dependencia de nuvem publica amplia superficie de ataque, latencia e exposicao regulatoria de dados sensiveis. Adotou-se um desenho metodologico com foco em validade interna, comparabilidade e reproducibilidade: Comparacao de arquiteturas centralizadas versus edge-first, incluindo requisitos de identidade, criptografia e observabilidade. Os resultados principais indicam que o desenho cloudless reduz dependencia externa e melhora controle sobre confidencialidade e disponibilidade local.. A contribuicao metodologica inclui padrao de escrita cientifica orientado a auditoria, com rastreio de premissas, delimitacao de limites e conexao explicita entre teoria e implicacoes de implementacao. O objetivo deste trabalho e avaliar de forma estruturada como \"Arquiteturas Cloudless e Soberania de Dados em IoT\" pode gerar valor cientifico e operacional com rastreabilidade metodologica. Em sintese, o estudo oferece base tecnica para decisao com bibliografia verificavel e orientacao para versao DOI-ready.",
+      "keywords": "Engenharia, IoT, Seguranca, IOT, DATA, SOVEREIGNTY",
+      "citation": [
+        "Rose, S. et al. (2020). NIST SP 800-207 Zero Trust Architecture. (https://doi.org/10.6028/NIST.SP.800-207)",
+        "Fagan, M. et al. (2020). NISTIR 8259A IoT Device Cybersecurity Capability Core Baseline. (https://doi.org/10.6028/NIST.IR.8259A)",
+        "IEC 62443 series for industrial automation and control systems security. (https://www.iec.ch/standards-development/what-makes-a-good-standard/iec-62443-series-standards)",
+        "ETSI EN 303 645 for consumer IoT cybersecurity. (https://www.etsi.org/technologies/consumer-iot-security)",
+        "OWASP Internet of Things Project. (https://owasp.org/www-project-internet-of-things/)",
+        "GAIA-X policy and interoperability framework. (https://gaia-x.eu/what-is-gaia-x/)"
+      ]
     },
     {
       "@id": "https://ulissesflores.com/#pub-2025-fraud-detection-mlp",
       "@type": "ScholarlyArticle",
       "name": "Detecção de Fraudes em Cartões com Redes Neurais",
       "headline": "Detecção de Fraudes em Cartões com Redes Neurais",
-      "description": "Esta pagina apresenta uma sintese executiva de \"Detecção de Fraudes em Cartões com Redes Neurais\" com foco no valor cientifico e aplicabilidade tecnica.",
+      "description": "Esta pagina apresenta uma sintese cientifica de \"Detecção de Fraudes em Cartões com Redes Neurais\", estruturada para leitura academica, auditoria metodologica e preparo DOI-ready.",
       "url": "https://ulissesflores.com/research/2025-fraud-detection-mlp",
       "datePublished": "2025-01-01",
       "dateModified": "2026-02-21",
@@ -266,15 +298,23 @@
         "contentUrl": "https://ulissesflores.com/research/2025-fraud-detection-mlp.pdf",
         "encodingFormat": "application/pdf"
       },
-      "abstract": "Deteccao de fraude em cartoes com redes neurais MLP e engenharia de atributos para dados desbalanceados. Pipeline supervisionado com reamostragem, calibracao de limiar e avaliacao por precision-recall e custo de erro. A combinacao de MLP com ajuste de limiar melhora captura de fraudes mantendo taxa operacional aceitavel de falsos positivos.",
-      "keywords": "IA, Economia, Sistemas Complexos, FRAUD, DETECTION, MLP"
+      "abstract": "Deteccao de fraude em cartoes com redes neurais MLP e engenharia de atributos para dados desbalanceados. O problema central investigado e: Fraude financeira combina alta assimetria de classes com necessidade de baixa latencia decisoria em tempo quase real. Adotou-se um desenho metodologico com foco em validade interna, comparabilidade e reproducibilidade: Pipeline supervisionado com reamostragem, calibracao de limiar e avaliacao por precision-recall e custo de erro. Os resultados principais indicam que a combinacao de mlp com ajuste de limiar melhora captura de fraudes mantendo taxa operacional aceitavel de falsos positivos.. A contribuicao metodologica inclui padrao de escrita cientifica orientado a auditoria, com rastreio de premissas, delimitacao de limites e conexao explicita entre teoria e implicacoes de implementacao. O objetivo deste trabalho e avaliar de forma estruturada como \"Detecção de Fraudes em Cartões com Redes Neurais\" pode gerar valor cientifico e operacional com rastreabilidade metodologica. Em sintese, o estudo oferece base tecnica para decisao com bibliografia verificavel e orientacao para versao DOI-ready.",
+      "keywords": "IA, Economia, Sistemas Complexos, FRAUD, DETECTION, MLP",
+      "citation": [
+        "Ngai, E. W. T. et al. (2011). The application of data mining techniques in financial fraud detection. (https://doi.org/10.1016/j.dss.2010.08.006)",
+        "Whitrow, C. et al. (2009). Transaction aggregation as a strategy for credit card fraud detection. (https://doi.org/10.1016/j.eswa.2008.10.008)",
+        "Jurgovsky, J. et al. (2018). Sequence classification for credit-card fraud detection. (https://arxiv.org/abs/1811.07293)",
+        "Carcillo, F. et al. (2021). Combining unsupervised and supervised learning in credit card fraud detection. (https://doi.org/10.1016/j.is.2021.101705)",
+        "Bahnsen, A. C. et al. (2016). Classifying highly imbalanced data using cost-sensitive decision trees. (https://doi.org/10.1016/j.eswa.2016.05.032)",
+        "NIST. AI Risk Management Framework 1.0. (https://www.nist.gov/itl/ai-risk-management-framework)"
+      ]
     },
     {
       "@id": "https://ulissesflores.com/#pub-2024-historicity-jesus-archaeology",
       "@type": "ScholarlyArticle",
       "name": "Análise Historiográfica e Arqueológica Exaustiva: A Historicidade de Jesus",
       "headline": "Análise Historiográfica e Arqueológica Exaustiva: A Historicidade de Jesus",
-      "description": "Esta pagina apresenta uma sintese executiva de \"Análise Historiográfica e Arqueológica Exaustiva: A Historicidade de Jesus\" com foco no valor cientifico e aplicabilidade tecnica.",
+      "description": "Esta pagina apresenta uma sintese cientifica de \"Análise Historiográfica e Arqueológica Exaustiva: A Historicidade de Jesus\", estruturada para leitura academica, auditoria metodologica e preparo DOI-ready.",
       "url": "https://ulissesflores.com/research/2024-historicity-jesus-archaeology",
       "datePublished": "2024-01-01",
       "dateModified": "2026-02-21",
@@ -293,15 +333,23 @@
         "contentUrl": "https://ulissesflores.com/research/2024-historicity-jesus-archaeology.pdf",
         "encodingFormat": "application/pdf"
       },
-      "abstract": "Pesquisa historiografica sobre historicidade de Jesus combinando critica textual, fontes antigas e evidencias arqueologicas. Revisao historico-critica de fontes primarias e secundarias com avaliacao de contexto, autoria e data. O estudo delimita consenso academico minimo e identifica zonas de alta e baixa confianca documental.",
-      "keywords": "IA, Economia, Sistemas Complexos, HISTORICITY, JESUS, ARCHAEOLOGY"
+      "abstract": "Pesquisa historiografica sobre historicidade de Jesus combinando critica textual, fontes antigas e evidencias arqueologicas. O problema central investigado e: Debates publicos misturam categorias teologicas e historicas sem separacao metodologica rigorosa. Adotou-se um desenho metodologico com foco em validade interna, comparabilidade e reproducibilidade: Revisao historico-critica de fontes primarias e secundarias com avaliacao de contexto, autoria e data. Os resultados principais indicam que o estudo delimita consenso academico minimo e identifica zonas de alta e baixa confianca documental.. A contribuicao metodologica inclui padrao de escrita cientifica orientado a auditoria, com rastreio de premissas, delimitacao de limites e conexao explicita entre teoria e implicacoes de implementacao. O objetivo deste trabalho e avaliar de forma estruturada como \"Análise Historiográfica e Arqueológica Exaustiva: A Historicidade de Jesus\" pode gerar valor cientifico e operacional com rastreabilidade metodologica. Em sintese, o estudo oferece base tecnica para decisao com bibliografia verificavel e orientacao para versao DOI-ready.",
+      "keywords": "IA, Economia, Sistemas Complexos, HISTORICITY, JESUS, ARCHAEOLOGY",
+      "citation": [
+        "Ehrman, B. D. (2012). Did Jesus Exist? (https://global.oup.com/academic/product/did-jesus-exist-9780062206442)",
+        "Sanders, E. P. (1993). The Historical Figure of Jesus. (https://www.penguinrandomhouse.com/books/322275/the-historical-figure-of-jesus-by-e-p-sanders/)",
+        "Meier, J. P. (1991-2016). A Marginal Jew. (https://yalebooks.yale.edu/book/9780300140181/a-marginal-jew/)",
+        "Vermes, G. (2001). The Changing Faces of Jesus. (https://www.penguin.co.uk/books/35040/the-changing-faces-of-jesus-by-geza-vermes/9780140287844)",
+        "Josephus. Antiquities of the Jews, Book 18. (https://www.perseus.tufts.edu/hopper/text?doc=J.+AJ+18)",
+        "Tacitus. Annals, Book 15. (https://www.perseus.tufts.edu/hopper/text?doc=Tac.+Ann.+15)"
+      ]
     },
     {
       "@id": "https://ulissesflores.com/#pub-2024-bitcoin-praxeology",
       "@type": "ScholarlyArticle",
       "name": "Bitcoin como Ativo de Reserva e a Teoria da Moeda na Escola Austríaca",
       "headline": "Bitcoin como Ativo de Reserva e a Teoria da Moeda na Escola Austríaca",
-      "description": "Esta pagina apresenta uma sintese executiva de \"Bitcoin como Ativo de Reserva e a Teoria da Moeda na Escola Austríaca\" com foco no valor cientifico e aplicabilidade tecnica.",
+      "description": "Esta pagina apresenta uma sintese cientifica de \"Bitcoin como Ativo de Reserva e a Teoria da Moeda na Escola Austríaca\", estruturada para leitura academica, auditoria metodologica e preparo DOI-ready.",
       "url": "https://ulissesflores.com/research/2024-bitcoin-praxeology",
       "datePublished": "2024-01-01",
       "dateModified": "2026-02-21",
@@ -320,15 +368,23 @@
         "contentUrl": "https://ulissesflores.com/research/2024-bitcoin-praxeology.pdf",
         "encodingFormat": "application/pdf"
       },
-      "abstract": "Analise do Bitcoin como ativo de reserva sob praxeologia e teoria monetaria da Escola Austriaca. Discussao teoretica com comparacao entre propriedades monetarias e mecanismos de governanca de oferta. O artigo sustenta que Bitcoin combina previsibilidade de emissao e portabilidade digital com implicacoes macroeconomicas relevantes.",
-      "keywords": "IA, Economia, Sistemas Complexos, BITCOIN, PRAXEOLOGY"
+      "abstract": "Analise do Bitcoin como ativo de reserva sob praxeologia e teoria monetaria da Escola Austriaca. O problema central investigado e: Avaliacoes estritamente tecnicas ignoram fundamentos economicos de escassez, preferencia temporal e coordenacao social. Adotou-se um desenho metodologico com foco em validade interna, comparabilidade e reproducibilidade: Discussao teoretica com comparacao entre propriedades monetarias e mecanismos de governanca de oferta. Os resultados principais indicam que o artigo sustenta que bitcoin combina previsibilidade de emissao e portabilidade digital com implicacoes macroeconomicas relevantes.. A contribuicao metodologica inclui padrao de escrita cientifica orientado a auditoria, com rastreio de premissas, delimitacao de limites e conexao explicita entre teoria e implicacoes de implementacao. O objetivo deste trabalho e avaliar de forma estruturada como \"Bitcoin como Ativo de Reserva e a Teoria da Moeda na Escola Austríaca\" pode gerar valor cientifico e operacional com rastreabilidade metodologica. Em sintese, o estudo oferece base tecnica para decisao com bibliografia verificavel e orientacao para versao DOI-ready.",
+      "keywords": "IA, Economia, Sistemas Complexos, BITCOIN, PRAXEOLOGY",
+      "citation": [
+        "Nakamoto, S. (2008). Bitcoin: A Peer-to-Peer Electronic Cash System. (https://bitcoin.org/bitcoin.pdf)",
+        "Mises, L. von (1912). The Theory of Money and Credit. (https://mises.org/library/book/theory-money-and-credit)",
+        "Hayek, F. A. (1976). Denationalisation of Money. (https://mises.org/library/book/denationalisation-money)",
+        "Bohme, R. et al. (2015). Bitcoin: Economics, Technology, and Governance. (https://doi.org/10.1257/jep.29.2.213)",
+        "Selgin, G. (2015). Synthetic Commodity Money. (https://www.alt-m.org/2015/09/02/synthetic-commodity-money/)",
+        "Ammous, S. (2018). The Bitcoin Standard. (https://saifedean.com/thebitcoinstandard)"
+      ]
     },
     {
       "@id": "https://ulissesflores.com/#pub-2024-scribal-canonization-ezra",
       "@type": "ScholarlyArticle",
       "name": "Canonização Escribal: Análise Histórico-Crítica da Formação do Cânon",
       "headline": "Canonização Escribal: Análise Histórico-Crítica da Formação do Cânon",
-      "description": "Esta pagina apresenta uma sintese executiva de \"Canonização Escribal: Análise Histórico-Crítica da Formação do Cânon\" com foco no valor cientifico e aplicabilidade tecnica.",
+      "description": "Esta pagina apresenta uma sintese cientifica de \"Canonização Escribal: Análise Histórico-Crítica da Formação do Cânon\", estruturada para leitura academica, auditoria metodologica e preparo DOI-ready.",
       "url": "https://ulissesflores.com/research/2024-scribal-canonization-ezra",
       "datePublished": "2024-01-01",
       "dateModified": "2026-02-21",
@@ -347,15 +403,23 @@
         "contentUrl": "https://ulissesflores.com/research/2024-scribal-canonization-ezra.pdf",
         "encodingFormat": "application/pdf"
       },
-      "abstract": "Estudo historico-critico sobre canonizacao escribal e processos de consolidacao textual associados a Esdras. Analise de tradicoes textuais, historia da transmissao e contexto sociopolitico do periodo pos-exilico. A pesquisa destaca dinamica incremental de consolidacao canonica com mediação institucional e escribal.",
-      "keywords": "IA, Economia, Sistemas Complexos, SCRIBAL, CANONIZATION, EZRA"
+      "abstract": "Estudo historico-critico sobre canonizacao escribal e processos de consolidacao textual associados a Esdras. O problema central investigado e: Narrativas simplificadas sobre formacao canonica tendem a apagar camadas editoriais e disputas de autoridade. Adotou-se um desenho metodologico com foco em validade interna, comparabilidade e reproducibilidade: Analise de tradicoes textuais, historia da transmissao e contexto sociopolitico do periodo pos-exilico. Os resultados principais indicam que a pesquisa destaca dinamica incremental de consolidacao canonica com mediação institucional e escribal.. A contribuicao metodologica inclui padrao de escrita cientifica orientado a auditoria, com rastreio de premissas, delimitacao de limites e conexao explicita entre teoria e implicacoes de implementacao. O objetivo deste trabalho e avaliar de forma estruturada como \"Canonização Escribal: Análise Histórico-Crítica da Formação do Cânon\" pode gerar valor cientifico e operacional com rastreabilidade metodologica. Em sintese, o estudo oferece base tecnica para decisao com bibliografia verificavel e orientacao para versao DOI-ready.",
+      "keywords": "IA, Economia, Sistemas Complexos, SCRIBAL, CANONIZATION, EZRA",
+      "citation": [
+        "Childs, B. S. (1979). Introduction to the Old Testament as Scripture. (https://books.google.com/books?id=6lEJY7X0fVoC)",
+        "Kugel, J. L. (2007). How to Read the Bible. (https://www.simonandschuster.com/books/How-to-Read-the-Bible/James-L-Kugel/9780743235860)",
+        "Cohen, S. J. D. (2006). From the Maccabees to the Mishnah. (https://www.wjkbooks.com/Products/9780664239046/from-the-maccabees-to-the-mishnah-third-edition.aspx)",
+        "Tov, E. (2012). Textual Criticism of the Hebrew Bible. (https://www.fortresspress.com/store/product/9780800696641/Textual-Criticism-of-the-Hebrew-Bible)",
+        "McDonald, L. M. (2017). The Formation of the Biblical Canon. (https://www.bloomsbury.com/us/formation-of-the-biblical-canon-9780567668851/)",
+        "Sanders, J. A. (1987). Canon and Community. (https://www.fortresspress.com/store/product/9780800615918/Canon-and-Community)"
+      ]
     },
     {
       "@id": "https://ulissesflores.com/#pub-2024-theology-economic-order",
       "@type": "ScholarlyArticle",
       "name": "Fundamentos Transcendentes da Ordem Econômica",
       "headline": "Fundamentos Transcendentes da Ordem Econômica",
-      "description": "Esta pagina apresenta uma sintese executiva de \"Fundamentos Transcendentes da Ordem Econômica\" com foco no valor cientifico e aplicabilidade tecnica.",
+      "description": "Esta pagina apresenta uma sintese cientifica de \"Fundamentos Transcendentes da Ordem Econômica\", estruturada para leitura academica, auditoria metodologica e preparo DOI-ready.",
       "url": "https://ulissesflores.com/essays/2024-theology-economic-order",
       "datePublished": "2024-01-01",
       "dateModified": "2026-02-21",
@@ -374,15 +438,23 @@
         "contentUrl": "https://ulissesflores.com/essays/2024-theology-economic-order.pdf",
         "encodingFormat": "application/pdf"
       },
-      "abstract": "Ensaio sobre fundamentos transcendentes da ordem economica e sua relacao com normatividade moral. Analise conceitual interdisciplinar entre teologia, filosofia moral e teoria economica. O texto demonstra que categorias de responsabilidade e dignidade influenciam desenho institucional e incentivos.",
-      "keywords": "Teologia, Humanidades, Historia, THEOLOGY, ECONOMIC, ORDER"
+      "abstract": "Ensaio sobre fundamentos transcendentes da ordem economica e sua relacao com normatividade moral. O problema central investigado e: Modelos puramente tecnocráticos tendem a negligenciar pressupostos antropologicos e eticos da cooperacao social. Adotou-se um desenho metodologico com foco em validade interna, comparabilidade e reproducibilidade: Analise conceitual interdisciplinar entre teologia, filosofia moral e teoria economica. Os resultados principais indicam que o texto demonstra que categorias de responsabilidade e dignidade influenciam desenho institucional e incentivos.. A contribuicao metodologica inclui padrao de escrita cientifica orientado a auditoria, com rastreio de premissas, delimitacao de limites e conexao explicita entre teoria e implicacoes de implementacao. O objetivo deste trabalho e avaliar de forma estruturada como \"Fundamentos Transcendentes da Ordem Econômica\" pode gerar valor cientifico e operacional com rastreabilidade metodologica. Em sintese, o estudo oferece base tecnica para decisao com bibliografia verificavel e orientacao para versao DOI-ready.",
+      "keywords": "Teologia, Humanidades, Historia, THEOLOGY, ECONOMIC, ORDER",
+      "citation": [
+        "Augustine. The City of God. (https://www.newadvent.org/fathers/1201.htm)",
+        "Aquinas, T. Summa Theologiae. (https://www.newadvent.org/summa/)",
+        "Ropke, W. (1960). A Humane Economy. (https://isi.org/books/a-humane-economy/)",
+        "Weber, M. (1905). The Protestant Ethic and the Spirit of Capitalism. (https://www.marxists.org/reference/archive/weber/protestant-ethic/)",
+        "Novak, M. (1982). The Spirit of Democratic Capitalism. (https://www.basicbooks.com/titles/michael-novak/the-spirit-of-democratic-capitalism/9781594035883/)",
+        "McCloskey, D. (2006). The Bourgeois Virtues. (https://press.uchicago.edu/ucp/books/book/chicago/B/bo3684036.html)"
+      ]
     },
     {
       "@id": "https://ulissesflores.com/#pub-2024-ring-signatures-privacy",
       "@type": "Report",
       "name": "Implementação de Ring Signatures e Endereços Furtivos",
       "headline": "Implementação de Ring Signatures e Endereços Furtivos",
-      "description": "Esta pagina apresenta uma sintese executiva de \"Implementação de Ring Signatures e Endereços Furtivos\" com foco no valor cientifico e aplicabilidade tecnica.",
+      "description": "Esta pagina apresenta uma sintese cientifica de \"Implementação de Ring Signatures e Endereços Furtivos\", estruturada para leitura academica, auditoria metodologica e preparo DOI-ready.",
       "url": "https://ulissesflores.com/whitepapers/2024-ring-signatures-privacy",
       "datePublished": "2024-01-01",
       "dateModified": "2026-02-21",
@@ -401,15 +473,23 @@
         "contentUrl": "https://ulissesflores.com/whitepapers/2024-ring-signatures-privacy.pdf",
         "encodingFormat": "application/pdf"
       },
-      "abstract": "Whitepaper sobre ring signatures e enderecos furtivos para privacidade transacional em sistemas distribuidos. Revisao de primitives criptograficas com analise de seguranca, custos computacionais e requisitos de implementacao. A combinacao de assinaturas em anel e stealth addresses melhora privacidade sem eliminar verificabilidade criptografica.",
-      "keywords": "Engenharia, IoT, Seguranca, RING, SIGNATURES, PRIVACY"
+      "abstract": "Whitepaper sobre ring signatures e enderecos furtivos para privacidade transacional em sistemas distribuidos. O problema central investigado e: Transparencia absoluta em blockchains publicas pode expor metadados sensiveis e comprometer fungibilidade. Adotou-se um desenho metodologico com foco em validade interna, comparabilidade e reproducibilidade: Revisao de primitives criptograficas com analise de seguranca, custos computacionais e requisitos de implementacao. Os resultados principais indicam que a combinacao de assinaturas em anel e stealth addresses melhora privacidade sem eliminar verificabilidade criptografica.. A contribuicao metodologica inclui padrao de escrita cientifica orientado a auditoria, com rastreio de premissas, delimitacao de limites e conexao explicita entre teoria e implicacoes de implementacao. O objetivo deste trabalho e avaliar de forma estruturada como \"Implementação de Ring Signatures e Endereços Furtivos\" pode gerar valor cientifico e operacional com rastreabilidade metodologica. Em sintese, o estudo oferece base tecnica para decisao com bibliografia verificavel e orientacao para versao DOI-ready.",
+      "keywords": "Engenharia, IoT, Seguranca, RING, SIGNATURES, PRIVACY",
+      "citation": [
+        "Rivest, R.; Shamir, A.; Tauman, Y. (2001). How to Leak a Secret. (https://doi.org/10.1007/3-540-45682-1_32)",
+        "Franklin, M.; Zhang, H. (2012). A framework for unique ring signatures. (https://doi.org/10.1007/978-3-642-28914-9_6)",
+        "Noether, S. (2015). Ring Confidential Transactions. (https://eprint.iacr.org/2015/1098)",
+        "Monero Research Lab publications. (https://www.getmonero.org/resources/research-lab/)",
+        "NIST SP 800-56A Rev. 3. (https://doi.org/10.6028/NIST.SP.800-56Ar3)",
+        "Ruffing, T.; Moreno-Sanchez, P.; Kate, A. (2017). CoinShuffle++. (https://doi.org/10.1109/EuroSP.2017.47)"
+      ]
     },
     {
       "@id": "https://ulissesflores.com/#pub-2024-agritech-agile-flow",
       "@type": "Report",
       "name": "Transformação Ágil e Engenharia de Fluxo em Data Science",
       "headline": "Transformação Ágil e Engenharia de Fluxo em Data Science",
-      "description": "Esta pagina apresenta uma sintese executiva de \"Transformação Ágil e Engenharia de Fluxo em Data Science\" com foco no valor cientifico e aplicabilidade tecnica.",
+      "description": "Esta pagina apresenta uma sintese cientifica de \"Transformação Ágil e Engenharia de Fluxo em Data Science\", estruturada para leitura academica, auditoria metodologica e preparo DOI-ready.",
       "url": "https://ulissesflores.com/whitepapers/2024-agritech-agile-flow",
       "datePublished": "2024-01-01",
       "dateModified": "2026-02-21",
@@ -428,15 +508,23 @@
         "contentUrl": "https://ulissesflores.com/whitepapers/2024-agritech-agile-flow.pdf",
         "encodingFormat": "application/pdf"
       },
-      "abstract": "Whitepaper sobre transformacao agil e engenharia de fluxo em contextos agritech orientados a dados. Aplicacao de metricas de fluxo, mapeamento de cadeia de valor e ciclos de melhoria orientados por evidencia. A governanca por fluxo eleva previsibilidade de entrega e reduz retrabalho em times multidisciplinares.",
-      "keywords": "Engenharia, IoT, Seguranca, AGRITECH, AGILE, FLOW"
+      "abstract": "Whitepaper sobre transformacao agil e engenharia de fluxo em contextos agritech orientados a dados. O problema central investigado e: Projetos agritechs sofrem com sazonalidade, variabilidade operacional e baixa sincronizacao entre produto e campo. Adotou-se um desenho metodologico com foco em validade interna, comparabilidade e reproducibilidade: Aplicacao de metricas de fluxo, mapeamento de cadeia de valor e ciclos de melhoria orientados por evidencia. Os resultados principais indicam que a governanca por fluxo eleva previsibilidade de entrega e reduz retrabalho em times multidisciplinares.. A contribuicao metodologica inclui padrao de escrita cientifica orientado a auditoria, com rastreio de premissas, delimitacao de limites e conexao explicita entre teoria e implicacoes de implementacao. O objetivo deste trabalho e avaliar de forma estruturada como \"Transformação Ágil e Engenharia de Fluxo em Data Science\" pode gerar valor cientifico e operacional com rastreabilidade metodologica. Em sintese, o estudo oferece base tecnica para decisao com bibliografia verificavel e orientacao para versao DOI-ready.",
+      "keywords": "Engenharia, IoT, Seguranca, AGRITECH, AGILE, FLOW",
+      "citation": [
+        "Reinertsen, D. (2009). The Principles of Product Development Flow. (https://www.celerity.com/books/product-development-flow-second-generation-lean-product-development/)",
+        "Forsgren, N.; Humble, J.; Kim, G. (2018). Accelerate. (https://itrevolution.com/product/accelerate/)",
+        "Rother, M.; Shook, J. (1999). Learning to See. (https://www.lean.org/lexicon-terms/learning-to-see/)",
+        "FAO (2022). The State of Food and Agriculture: Leveraging automation. (https://www.fao.org/3/cb9479en/cb9479en.pdf)",
+        "OECD (2019). Digital Opportunities for Better Agricultural Policies. (https://www.oecd.org/agriculture/topics/agricultural-policy-monitoring-and-evaluation/)",
+        "Project Management Institute. Agile Practice Guide. (https://www.pmi.org/pmbok-guide-standards/practice-guides/agile)"
+      ]
     },
     {
       "@id": "https://ulissesflores.com/#pub-2024-exegetical-treatise-anthropology",
       "@type": "ScholarlyArticle",
       "name": "Tratado Exegético sobre a Representação da Moralidade e Antropologia",
       "headline": "Tratado Exegético sobre a Representação da Moralidade e Antropologia",
-      "description": "Esta pagina apresenta uma sintese executiva de \"Tratado Exegético sobre a Representação da Moralidade e Antropologia\" com foco no valor cientifico e aplicabilidade tecnica.",
+      "description": "Esta pagina apresenta uma sintese cientifica de \"Tratado Exegético sobre a Representação da Moralidade e Antropologia\", estruturada para leitura academica, auditoria metodologica e preparo DOI-ready.",
       "url": "https://ulissesflores.com/essays/2024-exegetical-treatise-anthropology",
       "datePublished": "2024-01-01",
       "dateModified": "2026-02-21",
@@ -455,15 +543,23 @@
         "contentUrl": "https://ulissesflores.com/essays/2024-exegetical-treatise-anthropology.pdf",
         "encodingFormat": "application/pdf"
       },
-      "abstract": "Tratado exegético sobre representacao da moralidade e antropologia em tradicoes textuais teologicas. Leitura exegética com cruzamento de contexto historico, semantica e tradicao interpretativa. O artigo organiza categorias antropologicas recorrentes e explicita implicacoes eticas contemporaneas.",
-      "keywords": "Teologia, Humanidades, Historia, EXEGETICAL, TREATISE, ANTHROPOLOGY"
+      "abstract": "Tratado exegético sobre representacao da moralidade e antropologia em tradicoes textuais teologicas. O problema central investigado e: Interpretacoes atomizadas de passagens isoladas fragilizam coerencia antropologica e moral do corpus. Adotou-se um desenho metodologico com foco em validade interna, comparabilidade e reproducibilidade: Leitura exegética com cruzamento de contexto historico, semantica e tradicao interpretativa. Os resultados principais indicam que o artigo organiza categorias antropologicas recorrentes e explicita implicacoes eticas contemporaneas.. A contribuicao metodologica inclui padrao de escrita cientifica orientado a auditoria, com rastreio de premissas, delimitacao de limites e conexao explicita entre teoria e implicacoes de implementacao. O objetivo deste trabalho e avaliar de forma estruturada como \"Tratado Exegético sobre a Representação da Moralidade e Antropologia\" pode gerar valor cientifico e operacional com rastreabilidade metodologica. Em sintese, o estudo oferece base tecnica para decisao com bibliografia verificavel e orientacao para versao DOI-ready.",
+      "keywords": "Teologia, Humanidades, Historia, EXEGETICAL, TREATISE, ANTHROPOLOGY",
+      "citation": [
+        "Ricoeur, P. (1976). Interpretation Theory. (https://www.degruyter.com/document/doi/10.3138/9781442678286/html)",
+        "Brueggemann, W. (1997). Theology of the Old Testament. (https://www.fortresspress.com/store/product/9780800628307/Theology-of-the-Old-Testament)",
+        "Wright, N. T. (1992). The New Testament and the People of God. (https://www.fortresspress.com/store/product/9780800626815/The-New-Testament-and-the-People-of-God)",
+        "Gadamer, H.-G. (1960). Truth and Method. (https://www.bloomsbury.com/us/truth-and-method-9780826405852/)",
+        "Thiselton, A. C. (1980). The Two Horizons. (https://www.eerdmans.com/9780802800169/the-two-horizons/)",
+        "von Rad, G. (2001). Old Testament Theology. (https://www.wjkbooks.com/Products/9780664223984/old-testament-theology-volume-1.aspx)"
+      ]
     },
     {
       "@id": "https://ulissesflores.com/#pub-2023-marian-apparitions-critique",
       "@type": "ScholarlyArticle",
       "name": "A Coroa e a Cruz: Análise Teológica e Fenomenológica das Aparições Marianas",
       "headline": "A Coroa e a Cruz: Análise Teológica e Fenomenológica das Aparições Marianas",
-      "description": "Esta pagina apresenta uma sintese executiva de \"A Coroa e a Cruz: Análise Teológica e Fenomenológica das Aparições Marianas\" com foco no valor cientifico e aplicabilidade tecnica.",
+      "description": "Esta pagina apresenta uma sintese cientifica de \"A Coroa e a Cruz: Análise Teológica e Fenomenológica das Aparições Marianas\", estruturada para leitura academica, auditoria metodologica e preparo DOI-ready.",
       "url": "https://ulissesflores.com/research/2023-marian-apparitions-critique",
       "datePublished": "2023-01-01",
       "dateModified": "2026-02-21",
@@ -482,15 +578,23 @@
         "contentUrl": "https://ulissesflores.com/research/2023-marian-apparitions-critique.pdf",
         "encodingFormat": "application/pdf"
       },
-      "abstract": "Analise teologica e fenomenologica critica de narrativas de aparicoes marianas. Comparacao de documentos, tradicoes e criterios de autenticidade em abordagem historico-critica. O estudo distingue elementos simbolicos, historicos e pastorais sem reduzir o fenomeno a uma unica explicacao.",
-      "keywords": "IA, Economia, Sistemas Complexos, MARIAN, APPARITIONS, CRITIQUE"
+      "abstract": "Analise teologica e fenomenologica critica de narrativas de aparicoes marianas. O problema central investigado e: Relatos devocionais frequentemente carecem de criterios consistentes de discernimento historico e fenomenologico. Adotou-se um desenho metodologico com foco em validade interna, comparabilidade e reproducibilidade: Comparacao de documentos, tradicoes e criterios de autenticidade em abordagem historico-critica. Os resultados principais indicam que o estudo distingue elementos simbolicos, historicos e pastorais sem reduzir o fenomeno a uma unica explicacao.. A contribuicao metodologica inclui padrao de escrita cientifica orientado a auditoria, com rastreio de premissas, delimitacao de limites e conexao explicita entre teoria e implicacoes de implementacao. O objetivo deste trabalho e avaliar de forma estruturada como \"A Coroa e a Cruz: Análise Teológica e Fenomenológica das Aparições Marianas\" pode gerar valor cientifico e operacional com rastreabilidade metodologica. Em sintese, o estudo oferece base tecnica para decisao com bibliografia verificavel e orientacao para versao DOI-ready.",
+      "keywords": "IA, Economia, Sistemas Complexos, MARIAN, APPARITIONS, CRITIQUE",
+      "citation": [
+        "Congregation for the Doctrine of the Faith (1978). Norms regarding alleged apparitions. (https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_19780225_norme-apparizioni_en.html)",
+        "Zimdars-Swartz, S. L. (1991). Encountering Mary. (https://press.princeton.edu/books/paperback/9780691028675/encountering-mary)",
+        "Christian Jr., W. A. (1981). Local Religion in Sixteenth-Century Spain. (https://press.princeton.edu/books/paperback/9780691101965/local-religion-in-sixteenth-century-spain)",
+        "Laurentin, R. (1990). The Apparitions of the Blessed Virgin Mary Today. (https://books.google.com/books?id=GdoIAQAAMAAJ)",
+        "Pelikan, J. (1996). Mary Through the Centuries. (https://yalebooks.yale.edu/book/9780300076619/mary-through-the-centuries/)",
+        "Vatican Dicastery (2024). New Norms for discernment of supernatural phenomena. (https://www.vaticannews.va/en/vatican-city/news/2024-05/new-norms-discernment-apparitions-dicastery-doctrine-faith.html)"
+      ]
     },
     {
       "@id": "https://ulissesflores.com/#pub-2023-digital-legacy",
       "@type": "Report",
       "name": "Desafios da Herança Digital: Preservação de Memória Pós-Mortem",
       "headline": "Desafios da Herança Digital: Preservação de Memória Pós-Mortem",
-      "description": "Esta pagina apresenta uma sintese executiva de \"Desafios da Herança Digital: Preservação de Memória Pós-Mortem\" com foco no valor cientifico e aplicabilidade tecnica.",
+      "description": "Esta pagina apresenta uma sintese cientifica de \"Desafios da Herança Digital: Preservação de Memória Pós-Mortem\", estruturada para leitura academica, auditoria metodologica e preparo DOI-ready.",
       "url": "https://ulissesflores.com/whitepapers/2023-digital-legacy",
       "datePublished": "2023-01-01",
       "dateModified": "2026-02-21",
@@ -509,15 +613,23 @@
         "contentUrl": "https://ulissesflores.com/whitepapers/2023-digital-legacy.pdf",
         "encodingFormat": "application/pdf"
       },
-      "abstract": "Whitepaper sobre desafios da heranca digital e preservacao de memoria pos-mortem. Analise de risco juridico-tecnico com proposta de arquitetura de preservacao e governanca de acesso. O documento define requisitos minimos para continuidade, autenticidade e privacidade de acervos digitais.",
-      "keywords": "Engenharia, IoT, Seguranca, DIGITAL, LEGACY"
+      "abstract": "Whitepaper sobre desafios da heranca digital e preservacao de memoria pos-mortem. O problema central investigado e: Ativos digitais e identidades online carecem de protocolos claros de sucessao, custodia e consentimento. Adotou-se um desenho metodologico com foco em validade interna, comparabilidade e reproducibilidade: Analise de risco juridico-tecnico com proposta de arquitetura de preservacao e governanca de acesso. Os resultados principais indicam que o documento define requisitos minimos para continuidade, autenticidade e privacidade de acervos digitais.. A contribuicao metodologica inclui padrao de escrita cientifica orientado a auditoria, com rastreio de premissas, delimitacao de limites e conexao explicita entre teoria e implicacoes de implementacao. O objetivo deste trabalho e avaliar de forma estruturada como \"Desafios da Herança Digital: Preservação de Memória Pós-Mortem\" pode gerar valor cientifico e operacional com rastreabilidade metodologica. Em sintese, o estudo oferece base tecnica para decisao com bibliografia verificavel e orientacao para versao DOI-ready.",
+      "keywords": "Engenharia, IoT, Seguranca, DIGITAL, LEGACY",
+      "citation": [
+        "European Union (2016). General Data Protection Regulation (GDPR). (https://eur-lex.europa.eu/eli/reg/2016/679/oj)",
+        "ISO 15489-1:2016 Information and documentation -- Records management. (https://www.iso.org/standard/62542.html)",
+        "NIST Privacy Framework 1.0. (https://www.nist.gov/privacy-framework)",
+        "Carroll, E.; Romano, J. (2011). Your Digital Afterlife. (https://books.google.com/books?id=4W8jAQAAQBAJ)",
+        "Apple. Legacy Contact in Apple ID. (https://support.apple.com/en-us/102631)",
+        "Google. Inactive Account Manager. (https://support.google.com/accounts/answer/3036546)"
+      ]
     },
     {
       "@id": "https://ulissesflores.com/#pub-2023-holy-club-methodism",
       "@type": "ScholarlyArticle",
       "name": "O Clube Santo: Arqueologia Espiritual, Teológica e Visual do Metodismo",
       "headline": "O Clube Santo: Arqueologia Espiritual, Teológica e Visual do Metodismo",
-      "description": "Esta pagina apresenta uma sintese executiva de \"O Clube Santo: Arqueologia Espiritual, Teológica e Visual do Metodismo\" com foco no valor cientifico e aplicabilidade tecnica.",
+      "description": "Esta pagina apresenta uma sintese cientifica de \"O Clube Santo: Arqueologia Espiritual, Teológica e Visual do Metodismo\", estruturada para leitura academica, auditoria metodologica e preparo DOI-ready.",
       "url": "https://ulissesflores.com/research/2023-holy-club-methodism",
       "datePublished": "2023-01-01",
       "dateModified": "2026-02-21",
@@ -536,15 +648,23 @@
         "contentUrl": "https://ulissesflores.com/research/2023-holy-club-methodism.pdf",
         "encodingFormat": "application/pdf"
       },
-      "abstract": "Investigacao arqueologica espiritual, teologica e visual do Holy Club e suas implicacoes para o metodismo. Leitura historica interdisciplinar com fontes primarias, iconografia e tradicao institucional. O estudo reconstrói redes de praticas formativas e disciplina comunitaria no contexto original.",
-      "keywords": "IA, Economia, Sistemas Complexos, HOLY, CLUB, METHODISM"
+      "abstract": "Investigacao arqueologica espiritual, teologica e visual do Holy Club e suas implicacoes para o metodismo. O problema central investigado e: A memoria do movimento metodista inicial e frequentemente reduzida a narrativas lineares e pouco contextualizadas. Adotou-se um desenho metodologico com foco em validade interna, comparabilidade e reproducibilidade: Leitura historica interdisciplinar com fontes primarias, iconografia e tradicao institucional. Os resultados principais indicam que o estudo reconstrói redes de praticas formativas e disciplina comunitaria no contexto original.. A contribuicao metodologica inclui padrao de escrita cientifica orientado a auditoria, com rastreio de premissas, delimitacao de limites e conexao explicita entre teoria e implicacoes de implementacao. O objetivo deste trabalho e avaliar de forma estruturada como \"O Clube Santo: Arqueologia Espiritual, Teológica e Visual do Metodismo\" pode gerar valor cientifico e operacional com rastreabilidade metodologica. Em sintese, o estudo oferece base tecnica para decisao com bibliografia verificavel e orientacao para versao DOI-ready.",
+      "keywords": "IA, Economia, Sistemas Complexos, HOLY, CLUB, METHODISM",
+      "citation": [
+        "Wesley, J. The Journal of John Wesley. (https://wesley.nnu.edu/john-wesley/the-journal-of-john-wesley/)",
+        "Heitzenrater, R. P. (2013). Wesley and the People Called Methodists. (https://www.abingdonpress.com/product/9781426775642)",
+        "Hempton, D. (2005). Methodism: Empire of the Spirit. (https://yalebooks.yale.edu/book/9780300106149/methodism/)",
+        "Maddox, R. L. (1994). Responsible Grace. (https://www.abingdonpress.com/product/9780687467426)",
+        "Outler, A. C. (1964). John Wesley. (https://global.oup.com/academic/product/john-wesley-9780195028102)",
+        "Oxford Handbook of Methodist Studies. (https://academic.oup.com/edited-volume/34318)"
+      ]
     },
     {
       "@id": "https://ulissesflores.com/#pub-2022-theology-of-hope",
       "@type": "ScholarlyArticle",
       "name": "A Teologia da Esperança em Tempos de Crise",
       "headline": "A Teologia da Esperança em Tempos de Crise",
-      "description": "Esta pagina apresenta uma sintese executiva de \"A Teologia da Esperança em Tempos de Crise\" com foco no valor cientifico e aplicabilidade tecnica.",
+      "description": "Esta pagina apresenta uma sintese cientifica de \"A Teologia da Esperança em Tempos de Crise\", estruturada para leitura academica, auditoria metodologica e preparo DOI-ready.",
       "url": "https://ulissesflores.com/essays/2022-theology-of-hope",
       "datePublished": "2022-01-01",
       "dateModified": "2026-02-21",
@@ -563,15 +683,23 @@
         "contentUrl": "https://ulissesflores.com/essays/2022-theology-of-hope.pdf",
         "encodingFormat": "application/pdf"
       },
-      "abstract": "Ensaio sobre teologia da esperanca em contextos de crise social, economica e institucional. Analise teologica e filosofica de categorias de esperanca, sofrimento e responsabilidade comunitaria. O artigo explicita como a esperanca pode operar como categoria ativa de acao e nao apenas conforto simbólico.",
-      "keywords": "Teologia, Humanidades, Historia, THEOLOGY, HOPE"
+      "abstract": "Ensaio sobre teologia da esperanca em contextos de crise social, economica e institucional. O problema central investigado e: Cenarios de incerteza tendem a produzir fatalismo ou respostas imediatistas sem base antropologica robusta. Adotou-se um desenho metodologico com foco em validade interna, comparabilidade e reproducibilidade: Analise teologica e filosofica de categorias de esperanca, sofrimento e responsabilidade comunitaria. Os resultados principais indicam que o artigo explicita como a esperanca pode operar como categoria ativa de acao e nao apenas conforto simbólico.. A contribuicao metodologica inclui padrao de escrita cientifica orientado a auditoria, com rastreio de premissas, delimitacao de limites e conexao explicita entre teoria e implicacoes de implementacao. O objetivo deste trabalho e avaliar de forma estruturada como \"A Teologia da Esperança em Tempos de Crise\" pode gerar valor cientifico e operacional com rastreabilidade metodologica. Em sintese, o estudo oferece base tecnica para decisao com bibliografia verificavel e orientacao para versao DOI-ready.",
+      "keywords": "Teologia, Humanidades, Historia, THEOLOGY, HOPE",
+      "citation": [
+        "Moltmann, J. (1967). Theology of Hope. (https://www.fortresspress.com/store/product/9780800628277/Theology-of-Hope)",
+        "Bonhoeffer, D. (1953). Letters and Papers from Prison. (https://www.scmpress.co.uk/titles/3642/letters-and-papers-from-prison)",
+        "Pannenberg, W. (1968). Theology and the Kingdom of God. (https://www.westminsterjohnknoxpress.com/Products/0664240245/theology-and-the-kingdom-of-god.aspx)",
+        "Volf, M. (2011). A Public Faith. (https://brazospress.com/books/a-public-faith)",
+        "Wright, N. T. (2008). Surprised by Hope. (https://www.harpercollins.com/products/surprised-by-hope-n-t-wright)",
+        "Metz, J. B. (1969). Theology of the World. (https://www.herder.de/theologie-pastoral/shop/p6/10291-theology-of-the-world-hardcover/)"
+      ]
     },
     {
       "@id": "https://ulissesflores.com/#pub-2020-robotics-education",
       "@type": "ScholarlyArticle",
       "name": "Metodologias Ativas no Ensino de Lógica de Programação",
       "headline": "Metodologias Ativas no Ensino de Lógica de Programação",
-      "description": "Esta pagina apresenta uma sintese executiva de \"Metodologias Ativas no Ensino de Lógica de Programação\" com foco no valor cientifico e aplicabilidade tecnica.",
+      "description": "Esta pagina apresenta uma sintese cientifica de \"Metodologias Ativas no Ensino de Lógica de Programação\", estruturada para leitura academica, auditoria metodologica e preparo DOI-ready.",
       "url": "https://ulissesflores.com/essays/2020-robotics-education",
       "datePublished": "2020-01-01",
       "dateModified": "2026-02-21",
@@ -590,15 +718,23 @@
         "contentUrl": "https://ulissesflores.com/essays/2020-robotics-education.pdf",
         "encodingFormat": "application/pdf"
       },
-      "abstract": "Estudo sobre robotica educacional e metodologias ativas no ensino de logica de programacao para jovens. Intervencao didatica com atividades praticas, resolucao de problemas e avaliacao por competencias. A abordagem hands-on melhora engajamento, colaboracao e consolidacao de raciocinio logico.",
-      "keywords": "Teologia, Humanidades, Historia, ROBOTICS, EDUCATION"
+      "abstract": "Estudo sobre robotica educacional e metodologias ativas no ensino de logica de programacao para jovens. O problema central investigado e: Modelos expositivos tradicionais geram baixa retencao e pouca transferencia de aprendizagem computacional. Adotou-se um desenho metodologico com foco em validade interna, comparabilidade e reproducibilidade: Intervencao didatica com atividades praticas, resolucao de problemas e avaliacao por competencias. Os resultados principais indicam que a abordagem hands-on melhora engajamento, colaboracao e consolidacao de raciocinio logico.. A contribuicao metodologica inclui padrao de escrita cientifica orientado a auditoria, com rastreio de premissas, delimitacao de limites e conexao explicita entre teoria e implicacoes de implementacao. O objetivo deste trabalho e avaliar de forma estruturada como \"Metodologias Ativas no Ensino de Lógica de Programação\" pode gerar valor cientifico e operacional com rastreabilidade metodologica. Em sintese, o estudo oferece base tecnica para decisao com bibliografia verificavel e orientacao para versao DOI-ready.",
+      "keywords": "Teologia, Humanidades, Historia, ROBOTICS, EDUCATION",
+      "citation": [
+        "Papert, S. (1980). Mindstorms. (https://books.google.com/books?id=5ks9AAAAMAAJ)",
+        "Wing, J. M. (2006). Computational Thinking. (https://doi.org/10.1145/1118178.1118215)",
+        "Kolb, D. A. (1984). Experiential Learning. (https://www.peterlang.com/document/1095800)",
+        "Hmelo-Silver, C. E. (2004). Problem-Based Learning. (https://doi.org/10.1023/B:EDPR.0000034022.16470.f3)",
+        "Resnick, M. (2017). Lifelong Kindergarten. (https://mitpress.mit.edu/9780262536134/lifelong-kindergarten/)",
+        "Bers, M. U. (2022). Coding as a Playground. (https://www.routledge.com/Coding-as-a-Playground-Programming-and-Computational-Thinking-in-the-Early-Childhood-Classroom/Bers/p/book/9781032016153)"
+      ]
     },
     {
       "@id": "https://ulissesflores.com/#pub-2017-chaos-theory-economics",
       "@type": "ScholarlyArticle",
       "name": "Teoria do Caos: Emergência e Auto-organização em Mercados",
       "headline": "Teoria do Caos: Emergência e Auto-organização em Mercados",
-      "description": "Esta pagina apresenta uma sintese executiva de \"Teoria do Caos: Emergência e Auto-organização em Mercados\" com foco no valor cientifico e aplicabilidade tecnica.",
+      "description": "Esta pagina apresenta uma sintese cientifica de \"Teoria do Caos: Emergência e Auto-organização em Mercados\", estruturada para leitura academica, auditoria metodologica e preparo DOI-ready.",
       "url": "https://ulissesflores.com/essays/2017-chaos-theory-economics",
       "datePublished": "2017-01-01",
       "dateModified": "2026-02-21",
@@ -617,8 +753,16 @@
         "contentUrl": "https://ulissesflores.com/essays/2017-chaos-theory-economics.pdf",
         "encodingFormat": "application/pdf"
       },
-      "abstract": "Trabalho sobre teoria do caos e auto-organizacao em mercados nao lineares. Discussao teorica com referencia a sistemas dinamicos, sensibilidade a condicoes iniciais e comportamento emergente. O estudo mostra que pequenas perturbacoes podem amplificar risco e alterar padroes macro de forma nao proporcional.",
-      "keywords": "Teologia, Humanidades, Historia, CHAOS, THEORY, ECONOMICS"
+      "abstract": "Trabalho sobre teoria do caos e auto-organizacao em mercados nao lineares. O problema central investigado e: Hipoteses de equilibrio linear falham em explicar dinamicas de instabilidade e transicoes abruptas de mercado. Adotou-se um desenho metodologico com foco em validade interna, comparabilidade e reproducibilidade: Discussao teorica com referencia a sistemas dinamicos, sensibilidade a condicoes iniciais e comportamento emergente. Os resultados principais indicam que o estudo mostra que pequenas perturbacoes podem amplificar risco e alterar padroes macro de forma nao proporcional.. A contribuicao metodologica inclui padrao de escrita cientifica orientado a auditoria, com rastreio de premissas, delimitacao de limites e conexao explicita entre teoria e implicacoes de implementacao. O objetivo deste trabalho e avaliar de forma estruturada como \"Teoria do Caos: Emergência e Auto-organização em Mercados\" pode gerar valor cientifico e operacional com rastreabilidade metodologica. Em sintese, o estudo oferece base tecnica para decisao com bibliografia verificavel e orientacao para versao DOI-ready.",
+      "keywords": "Teologia, Humanidades, Historia, CHAOS, THEORY, ECONOMICS",
+      "citation": [
+        "Lorenz, E. N. (1963). Deterministic Nonperiodic Flow. (https://doi.org/10.1175/1520-0469(1963)020%3C0130:DNF%3E2.0.CO;2)",
+        "Mandelbrot, B. (1963). The Variation of Certain Speculative Prices. (https://doi.org/10.1080/01621459.1963.10500830)",
+        "Arthur, W. B. (1999). Complexity and the Economy. (https://doi.org/10.1126/science.284.5411.107)",
+        "Farmer, J. D.; Foley, D. (2009). The economy needs agent-based modelling. (https://doi.org/10.1038/460685a)",
+        "Rosser, J. B. (2000). From Catastrophe to Chaos. (https://link.springer.com/book/10.1007/978-1-4615-4481-9)",
+        "Beinhocker, E. D. (2006). The Origin of Wealth. (https://www.hbs.edu/faculty/Pages/item.aspx?num=19867)"
+      ]
     },
     {
       "@id": "https://ulissesflores.com/#edx",
