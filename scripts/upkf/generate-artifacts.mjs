@@ -5,13 +5,12 @@ import { fileURLToPath } from 'node:url';
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const repoRoot = path.resolve(__dirname, '../..');
 
-const EXTERNAL_UPKF_PATH =
-  '/Users/ulissesflores/Documents/Projetos/Ulisses Flores Informações/UPKF-3-3-1/ulisses-flores-sovereign-upkf_v3.3.md';
 const LOCAL_UPKF_PATH = path.join(repoRoot, 'data', 'upkf', 'ulisses-flores-sovereign-upkf_v3.3.md');
+const DOCS_UPKF_PATH = path.join(repoRoot, 'docs', 'ulisses-flores-sovereign-upkf_v3.3.md');
 
 const DEFAULT_ARTICLE_SOURCE_DIRS = [
-  '/Users/ulissesflores/Documents/Mestrado/Estudo de caso Yape/Parametros e Modelos',
-  '/Users/ulissesflores/Documents/Projetos/Ulisses Flores Informações',
+  path.join(repoRoot, 'data', 'sources'),
+  path.join(repoRoot, 'docs', 'sources'),
 ];
 
 const GENERATED_DIR = path.join(repoRoot, 'data', 'generated');
@@ -489,14 +488,6 @@ function normalizeForSearch(value) {
     .toLowerCase();
 }
 
-function slugify(value) {
-  return normalizeForSearch(value)
-    .replace(/[^a-z0-9\s-]/g, ' ')
-    .replace(/\s+/g, '-')
-    .replace(/-+/g, '-')
-    .replace(/^-|-$/g, '');
-}
-
 function parseInlineArray(rawValue) {
   const value = rawValue.trim();
   if (!value.startsWith('[') || !value.endsWith(']')) {
@@ -553,7 +544,7 @@ function parseFrontmatter(text) {
 }
 
 function findSourcePath() {
-  const candidates = [process.env.UPKF_SOURCE, LOCAL_UPKF_PATH, EXTERNAL_UPKF_PATH].filter(Boolean);
+  const candidates = [process.env.UPKF_SOURCE, LOCAL_UPKF_PATH, DOCS_UPKF_PATH].filter(Boolean);
   for (const candidate of candidates) {
     if (fs.existsSync(candidate)) {
       return candidate;
@@ -809,6 +800,185 @@ function parsePublicationRows(upkfText) {
     }
     return Number(b.year) - Number(a.year);
   });
+}
+
+function parseMarkdownTable(block) {
+  const lines = block
+    .split('\n')
+    .map((line) => line.trim())
+    .filter((line) => line.startsWith('|'));
+
+  if (lines.length < 2) {
+    return [];
+  }
+
+  const toCells = (line) =>
+    line
+      .split('|')
+      .map((cell) => cell.trim())
+      .filter(Boolean);
+
+  const headers = toCells(lines[0]);
+  if (headers.length === 0) {
+    return [];
+  }
+
+  const rows = [];
+  for (let index = 1; index < lines.length; index += 1) {
+    const line = lines[index];
+    if (/^\|[:\-\s|]+\|?$/.test(line)) {
+      continue;
+    }
+
+    const cells = toCells(line);
+    if (cells.length < headers.length) {
+      continue;
+    }
+
+    const row = {};
+    for (let col = 0; col < headers.length; col += 1) {
+      row[headers[col]] = cells[col];
+    }
+    rows.push(row);
+  }
+
+  return rows;
+}
+
+function parseCertifications(upkfText) {
+  const section = extractBlock(upkfText, '## Licenses & Certifications\n', '\n\n---');
+  if (!section) {
+    return {
+      edx: null,
+      coursera: null,
+      alura: [],
+      aluraIssuerRef: '',
+    };
+  }
+
+  const edxBlock = extractBlock(section, '### edX\n', '\n\n### Coursera');
+  const courseraBlock = extractBlock(section, '### Coursera\n', '\n\n### Alura (32 certifications)');
+  const aluraBlock = extractBlock(section, '### Alura (32 certifications)\n', undefined);
+
+  const buildSimpleCert = (block, fallbackName) => {
+    if (!block) {
+      return null;
+    }
+    return {
+      name: extractScalar(block, 'cert_name') || fallbackName,
+      certId: extractScalar(block, 'cert_id'),
+      verifyUrl: extractScalar(block, 'verify_url'),
+      issuerRef: extractScalar(block, 'issuer_ref'),
+    };
+  };
+
+  const aluraRows = parseMarkdownTable(aluraBlock)
+    .map((row) => ({
+      position: Number(row['#'] || 0),
+      name: row.Certification || '',
+      certId: row['Certificate ID'] || '',
+      verifyUrl: row.verify_url || '',
+    }))
+    .filter((row) => row.position > 0 && row.name && row.verifyUrl);
+
+  return {
+    edx: buildSimpleCert(edxBlock, 'edX Certification'),
+    coursera: buildSimpleCert(courseraBlock, 'Coursera Certification'),
+    alura: aluraRows,
+    aluraIssuerRef: extractScalar(aluraBlock, 'issuer_ref'),
+  };
+}
+
+function parseBlogPosts(upkfText) {
+  const section = extractBlock(
+    upkfText,
+    '# Mundo Político — Blog Posts (19 articles, itemized)\n',
+    '\n\n---\n\n\n# Sermons & Theological Talks (56 items, itemized)',
+  );
+  if (!section) {
+    return {
+      blogUrl: '',
+      blogSchemaId: '',
+      authorPage: '',
+      inLanguage: 'pt-BR',
+      posts: [],
+    };
+  }
+
+  const rows = parseMarkdownTable(section);
+  const posts = rows
+    .map((row) => ({
+      position: Number(row['#'] || 0),
+      datePublished: row.datePublished || '',
+      headline: row['headline_pt-BR'] || '',
+      url: row.url || '',
+    }))
+    .filter((row) => row.position > 0 && row.headline && row.url);
+
+  return {
+    blogUrl: extractScalar(section, 'blog_url'),
+    blogSchemaId: extractScalar(section, 'blog_schema_id'),
+    authorPage: extractScalar(section, 'author_page'),
+    inLanguage: extractScalar(section, 'inLanguage') || 'pt-BR',
+    posts,
+  };
+}
+
+function parseSermons(upkfText) {
+  const section = extractBlock(
+    upkfText,
+    '# Sermons & Theological Talks (56 items, itemized)\n',
+    '\n\n---\n\n\n# Provenance & Derivation Specification',
+  );
+  if (!section) {
+    return {
+      collectionSchemaId: '',
+      publisherRef: '',
+      channelUrl: '',
+      inLanguage: 'pt-BR',
+      period: '',
+      total: 0,
+      collections: [],
+    };
+  }
+
+  const headingRegex = /^## Collection:\s*(.+)$/gm;
+  const headings = Array.from(section.matchAll(headingRegex)).map((match) => ({
+    name: match[1].trim(),
+    index: match.index ?? 0,
+  }));
+
+  const collections = [];
+  for (let index = 0; index < headings.length; index += 1) {
+    const start = headings[index].index;
+    const end = headings[index + 1] ? headings[index + 1].index : section.length;
+    const chunk = section.slice(start, end);
+
+    const rows = parseMarkdownTable(chunk)
+      .map((row) => ({
+        position: Number(row['#'] || 0),
+        name: row['name_pt-BR'] || '',
+        datePublished: row.datePublished || '',
+        youtubeUrl: row.youtube_url || '',
+      }))
+      .filter((row) => row.position > 0 && row.name && row.youtubeUrl);
+
+    collections.push({
+      name: headings[index].name,
+      seriesSchemaId: extractScalar(chunk, 'series_schema_id'),
+      items: rows,
+    });
+  }
+
+  return {
+    collectionSchemaId: extractScalar(section, 'collection_schema_id'),
+    publisherRef: extractScalar(section, 'publisher_ref'),
+    channelUrl: extractScalar(section, 'channel_url'),
+    inLanguage: (extractScalar(section, 'inLanguage') || 'pt-BR').replace(/\s*\(.+$/, '').trim(),
+    period: extractScalar(section, 'period'),
+    total: Number(extractScalar(section, 'total') || 0),
+    collections,
+  };
 }
 
 function parseMarkdownSections(markdown) {
@@ -1613,44 +1783,8 @@ function buildUrlInventory(upkfText, publications, websiteUrl) {
   };
 }
 
-function buildSiteJsonLd(identity, organization, publications, frontmatter) {
+function buildCoreSiteJsonLd(identity, organization, frontmatter) {
   const siteUrl = identity.primaryWebsite || 'https://ulissesflores.com';
-
-  const collections = Object.entries(CATEGORY_METADATA).map(([slug, metadata]) => ({
-    '@id': `${siteUrl}/#collection-${slug}`,
-    '@type': 'CollectionPage',
-    name: metadata.heading,
-    description: metadata.description,
-    url: `${siteUrl}/${slug}`,
-  }));
-
-  const publicationNodes = publications.map((publication) => ({
-    '@id': `${siteUrl}/#pub-${publication.id}`,
-    '@type': publication.kind === 'R' ? 'Report' : 'ScholarlyArticle',
-    name: publication.title,
-    headline: publication.title,
-    description: publication.landing.overview,
-    url: publication.canonicalUrl,
-    datePublished: publication.publishedAt,
-    dateModified: publication.updatedAt,
-    inLanguage: publication.inLanguage,
-    author: {
-      '@id': `${siteUrl}/#person`,
-    },
-    publisher: {
-      '@id': `${siteUrl}/#codexhash-research`,
-    },
-    isPartOf: {
-      '@id': `${siteUrl}/#collection-${publication.category}`,
-    },
-    encoding: {
-      '@type': 'MediaObject',
-      contentUrl: `${siteUrl}${publication.downloadUrl}`,
-      encodingFormat: 'application/pdf',
-    },
-    abstract: publication.sections.abstract,
-    keywords: publication.tags.join(', '),
-  }));
 
   return {
     '@context': 'https://schema.org',
@@ -1731,19 +1865,309 @@ function buildSiteJsonLd(identity, organization, publications, frontmatter) {
           '@id': `${siteUrl}/#codexhash`,
         },
       },
-      ...collections,
-      ...publicationNodes,
     ],
   };
 }
 
-function buildFullUpkfJsonLd({ siteJsonLd, upkfText, upkfSections, frontmatter, sourcePath, publications, identity }) {
+function buildCollectionNodes(siteUrl) {
+  return Object.entries(CATEGORY_METADATA).map(([slug, metadata]) => ({
+    '@id': `${siteUrl}/#collection-${slug}`,
+    '@type': 'CollectionPage',
+    name: metadata.heading,
+    description: metadata.description,
+    url: `${siteUrl}/${slug}`,
+  }));
+}
+
+function buildPublicationNodes(siteUrl, publications) {
+  return publications.map((publication) => ({
+    '@id': `${siteUrl}/#pub-${publication.id}`,
+    '@type': publication.kind === 'R' ? 'Report' : 'ScholarlyArticle',
+    name: publication.title,
+    headline: publication.title,
+    description: publication.landing.overview,
+    url: publication.canonicalUrl,
+    datePublished: publication.publishedAt,
+    dateModified: publication.updatedAt,
+    inLanguage: publication.inLanguage,
+    author: {
+      '@id': `${siteUrl}/#person`,
+    },
+    publisher: {
+      '@id': `${siteUrl}/#codexhash-research`,
+    },
+    isPartOf: {
+      '@id': `${siteUrl}/#collection-${publication.category}`,
+    },
+    encoding: {
+      '@type': 'MediaObject',
+      contentUrl: `${siteUrl}${publication.downloadUrl}`,
+      encodingFormat: 'application/pdf',
+    },
+    abstract: publication.sections.abstract,
+    keywords: publication.tags.join(', '),
+  }));
+}
+
+function normalizeLocalAnchorId(siteUrl, value, fallback) {
+  if (!value) {
+    return `${siteUrl}/#${fallback}`;
+  }
+  if (value.startsWith('http://') || value.startsWith('https://')) {
+    return value;
+  }
+  if (value.startsWith('#')) {
+    return `${siteUrl}/${value}`;
+  }
+  return `${siteUrl}/#${value}`;
+}
+
+function buildCertificationNodes(siteUrl, certifications) {
+  const nodes = [];
+
+  const addIssuer = (issuerRef, name) => {
+    const id = normalizeLocalAnchorId(siteUrl, issuerRef, `issuer-${slugify(name || 'provider')}`);
+    nodes.push({
+      '@id': id,
+      '@type': 'Organization',
+      name,
+      url: id.startsWith('http') ? id : undefined,
+    });
+    return id;
+  };
+
+  if (certifications.edx?.verifyUrl) {
+    const issuerId = addIssuer(certifications.edx.issuerRef || '#edx', 'edX');
+    nodes.push({
+      '@id': `${siteUrl}/#cred-edx-${certifications.edx.certId || '1'}`,
+      '@type': 'EducationalOccupationalCredential',
+      name: certifications.edx.name,
+      identifier: certifications.edx.certId || undefined,
+      url: certifications.edx.verifyUrl,
+      credentialCategory: 'Certification',
+      recognizedBy: {
+        '@id': issuerId,
+      },
+    });
+  }
+
+  if (certifications.coursera?.verifyUrl) {
+    const issuerId = addIssuer(certifications.coursera.issuerRef || '#coursera', 'Coursera');
+    nodes.push({
+      '@id': `${siteUrl}/#cred-coursera-${certifications.coursera.certId || '1'}`,
+      '@type': 'EducationalOccupationalCredential',
+      name: certifications.coursera.name,
+      identifier: certifications.coursera.certId || undefined,
+      url: certifications.coursera.verifyUrl,
+      credentialCategory: 'Certification',
+      recognizedBy: {
+        '@id': issuerId,
+      },
+    });
+  }
+
+  if (certifications.alura.length > 0) {
+    const issuerId = addIssuer(certifications.aluraIssuerRef || '#alura', 'Alura');
+    certifications.alura.forEach((cert) => {
+      nodes.push({
+        '@id': `${siteUrl}/#cred-alura-${cert.position}`,
+        '@type': 'EducationalOccupationalCredential',
+        name: cert.name,
+        identifier: cert.certId,
+        url: cert.verifyUrl,
+        position: cert.position,
+        credentialCategory: 'Certification',
+        recognizedBy: {
+          '@id': issuerId,
+        },
+      });
+    });
+  }
+
+  return nodes;
+}
+
+function slugify(value) {
+  return normalizeForSearch(value || '')
+    .replace(/[^a-z0-9\s-]/g, ' ')
+    .replace(/\s+/g, '-')
+    .replace(/-+/g, '-')
+    .replace(/^-|-$/g, '');
+}
+
+function buildBlogNodes(siteUrl, blogPosts) {
+  if (!blogPosts.posts || blogPosts.posts.length === 0) {
+    return [];
+  }
+
+  const blogId = normalizeLocalAnchorId(siteUrl, blogPosts.blogSchemaId || '#mundopolitico-blog', 'mundopolitico-blog');
+  const nodes = [
+    {
+      '@id': blogId,
+      '@type': 'Blog',
+      name: 'Mundo Político',
+      url: blogPosts.blogUrl || 'https://mundopolitico.com.br/',
+      inLanguage: blogPosts.inLanguage || 'pt-BR',
+    },
+  ];
+
+  blogPosts.posts.forEach((post) => {
+    const slug = slugify(post.headline).slice(0, 64) || `post-${post.position}`;
+    const node = {
+      '@id': `${siteUrl}/#mundopolitico-post-${post.position}-${slug}`,
+      '@type': 'BlogPosting',
+      headline: post.headline,
+      url: post.url,
+      inLanguage: blogPosts.inLanguage || 'pt-BR',
+      isPartOf: {
+        '@id': blogId,
+      },
+      author: {
+        '@id': `${siteUrl}/#person`,
+      },
+      position: post.position,
+    };
+
+    if (post.datePublished && post.datePublished !== 'UNDATED') {
+      node.datePublished = post.datePublished;
+    }
+
+    nodes.push(node);
+  });
+
+  return nodes;
+}
+
+function buildSermonNodes(siteUrl, sermons) {
+  if (!sermons.collections || sermons.collections.length === 0) {
+    return [];
+  }
+
+  const collectionId = normalizeLocalAnchorId(siteUrl, sermons.collectionSchemaId || '#sermons', 'sermons');
+  const publisherId = normalizeLocalAnchorId(
+    siteUrl,
+    sermons.publisherRef || '#quadrangular-vila-helena',
+    'quadrangular-vila-helena',
+  );
+
+  const collectionNode = {
+    '@id': collectionId,
+    '@type': 'Collection',
+    name: 'Sermons & Theological Talks',
+    url: sermons.channelUrl || 'https://www.youtube.com/@quadrangularvilahelena',
+    inLanguage: sermons.inLanguage || 'pt-BR',
+    publisher: {
+      '@id': publisherId,
+    },
+    numberOfItems: sermons.total || sermons.collections.reduce((sum, item) => sum + item.items.length, 0),
+    hasPart: sermons.collections.map((collection) => ({
+      '@id': normalizeLocalAnchorId(siteUrl, collection.seriesSchemaId, `sermons-series-${slugify(collection.name)}`),
+    })),
+  };
+
+  const nodes = [collectionNode];
+
+  sermons.collections.forEach((series) => {
+    const seriesId = normalizeLocalAnchorId(siteUrl, series.seriesSchemaId, `sermons-series-${slugify(series.name)}`);
+    nodes.push({
+      '@id': seriesId,
+      '@type': 'CreativeWorkSeries',
+      name: series.name,
+      isPartOf: {
+        '@id': collectionId,
+      },
+      inLanguage: sermons.inLanguage || 'pt-BR',
+      numberOfItems: series.items.length,
+    });
+
+    series.items.forEach((item) => {
+      const slug = slugify(item.name).slice(0, 56) || `sermon-${item.position}`;
+      const sermonNode = {
+        '@id': `${seriesId}-sermon-${item.position}-${slug}`,
+        '@type': 'Sermon',
+        name: item.name,
+        url: item.youtubeUrl,
+        inLanguage: sermons.inLanguage || 'pt-BR',
+        isPartOf: {
+          '@id': seriesId,
+        },
+        publisher: {
+          '@id': publisherId,
+        },
+        position: item.position,
+      };
+
+      if (item.datePublished && item.datePublished !== 'UNDATED') {
+        sermonNode.datePublished = item.datePublished;
+      }
+
+      nodes.push(sermonNode);
+    });
+  });
+
+  return nodes;
+}
+
+function buildPublicJsonLd({
+  coreSiteJsonLd,
+  publications,
+  frontmatter,
+  sourcePath,
+  identity,
+  certifications,
+  blogPosts,
+  sermons,
+}) {
   const siteUrl = identity.primaryWebsite || 'https://ulissesflores.com';
-  const baseGraph = Array.isArray(siteJsonLd['@graph']) ? siteJsonLd['@graph'] : [];
+  const baseGraph = Array.isArray(coreSiteJsonLd['@graph']) ? coreSiteJsonLd['@graph'] : [];
+  const collectionNodes = buildCollectionNodes(siteUrl);
+  const publicationNodes = buildPublicationNodes(siteUrl, publications);
+  const certificationNodes = buildCertificationNodes(siteUrl, certifications);
+  const blogNodes = buildBlogNodes(siteUrl, blogPosts);
+  const sermonNodes = buildSermonNodes(siteUrl, sermons);
+  const extraNodes = [...certificationNodes, ...blogNodes, ...sermonNodes];
+
+  const publicDatasetNode = {
+    '@id': `${siteUrl}/#upkf-public`,
+    '@type': 'Dataset',
+    name: `${frontmatter.title || 'UPKF'} (Public Knowledge Graph)`,
+    version: frontmatter.version || 'unknown',
+    dateModified: frontmatter.generated_at || new Date().toISOString(),
+    description: 'Public semantic graph derived from the canonical UPKF source.',
+    inLanguage: frontmatter.languages || ['pt-BR'],
+    url: `${siteUrl}/public.jsonld`,
+    creator: {
+      '@id': `${siteUrl}/#person`,
+    },
+    isBasedOn: {
+      '@type': 'CreativeWork',
+      name: path.basename(sourcePath),
+    },
+    hasPart: collectionNodes.map((node) => ({ '@id': node['@id'] })),
+    includesObject: [...publicationNodes, ...extraNodes].map((node) => ({ '@id': node['@id'] })),
+  };
+
+  return {
+    '@context': 'https://schema.org',
+    '@graph': [...baseGraph, ...collectionNodes, ...publicationNodes, ...extraNodes, publicDatasetNode],
+  };
+}
+
+function buildFullUpkfJsonLd({
+  publicJsonLd,
+  upkfSections,
+  frontmatter,
+  sourcePath,
+  publications,
+  identity,
+  sourceMdPublicUrl,
+}) {
+  const siteUrl = identity.primaryWebsite || 'https://ulissesflores.com';
+  const baseGraph = Array.isArray(publicJsonLd['@graph']) ? publicJsonLd['@graph'] : [];
 
   const sectionIdMap = new Map();
   const sectionNodes = upkfSections.map((section, index) => {
-    const sectionId = `${siteUrl}/#upkf-section-${index + 1}`;
+    const sectionId = `urn:upkf:section:${index + 1}`;
     sectionIdMap.set(section.id, sectionId);
     return {
       '@id': sectionId,
@@ -1751,9 +2175,11 @@ function buildFullUpkfJsonLd({ siteJsonLd, upkfText, upkfSections, frontmatter, 
       name: section.title,
       text: section.content,
       position: index + 1,
-      identifier: section.id,
+      identifier: `upkf-section-${index + 1}`,
       isPartOf: section.parentId ? { '@id': '' } : { '@id': `${siteUrl}/#upkf` },
-      url: `${siteUrl}/#${slugify(section.title) || `section-${index + 1}`}`,
+      about: {
+        '@id': `${siteUrl}/#upkf`,
+      },
     };
   });
 
@@ -1766,18 +2192,23 @@ function buildFullUpkfJsonLd({ siteJsonLd, upkfText, upkfSections, frontmatter, 
     }
   }
 
+  const topLevelSections = upkfSections
+    .filter((section) => !section.parentId)
+    .map((section) => sectionIdMap.get(section.id))
+    .filter(Boolean)
+    .map((id) => ({ '@id': id }));
+
   const rootNode = {
     '@id': `${siteUrl}/#upkf`,
     '@type': 'Dataset',
     name: frontmatter.title || 'UPKF',
     version: frontmatter.version || 'unknown',
     dateModified: frontmatter.generated_at || new Date().toISOString(),
-    description: 'Canonical markdown source used for deterministic JSON-LD derivation.',
-    text: upkfText,
+    description: 'Canonical markdown source used for deterministic full JSON-LD derivation.',
     encodingFormat: 'text/markdown',
     inLanguage: frontmatter.languages || ['pt-BR'],
-    url: `${siteUrl}/public.jsonld`,
-    sourceOrganization: {
+    url: `${siteUrl}/full.jsonld`,
+    creator: {
       '@id': `${siteUrl}/#person`,
     },
     isBasedOn: {
@@ -1785,22 +2216,46 @@ function buildFullUpkfJsonLd({ siteJsonLd, upkfText, upkfSections, frontmatter, 
       name: path.basename(sourcePath),
       text: sourcePath,
     },
-    hasPart: sectionNodes.map((node) => ({ '@id': node['@id'] })),
+    hasPart: topLevelSections,
     includesObject: publications.map((publication) => ({ '@id': `${siteUrl}/#pub-${publication.id}` })),
+    distribution: [
+      {
+        '@type': 'DataDownload',
+        encodingFormat: 'application/ld+json',
+        contentUrl: `${siteUrl}/site.jsonld`,
+      },
+      {
+        '@type': 'DataDownload',
+        encodingFormat: 'application/ld+json',
+        contentUrl: `${siteUrl}/public.jsonld`,
+      },
+      {
+        '@type': 'DataDownload',
+        encodingFormat: 'application/ld+json',
+        contentUrl: `${siteUrl}/full.jsonld`,
+      },
+      {
+        '@type': 'DataDownload',
+        encodingFormat: 'text/markdown',
+        contentUrl: `${siteUrl}${sourceMdPublicUrl}`,
+      },
+    ],
   };
 
   return {
     '@context': 'https://schema.org',
-    '@graph': [rootNode, ...baseGraph, ...sectionNodes],
+    '@graph': [...baseGraph, rootNode, ...sectionNodes],
   };
 }
 
 function writeGeneratedFiles({
   sourcePath,
+  upkfText,
   frontmatter,
   identity,
   publications,
   siteJsonLd,
+  publicJsonLd,
   fullJsonLd,
   urlInventory,
   generatedAt,
@@ -1835,7 +2290,9 @@ function writeGeneratedFiles({
       languages: frontmatter.languages || identity.languages || ['pt-BR'],
       jsonldFiles: {
         site: '/site.jsonld',
-        full: '/public.jsonld',
+        public: '/public.jsonld',
+        full: '/full.jsonld',
+        sourceMd: '/upkf-source.md',
       },
       jsonldCoverage: coverage,
     },
@@ -1845,7 +2302,7 @@ function writeGeneratedFiles({
 
   const inventoryMd = `# URL Inventory (Generated)\n\n- Source: \`${sourcePath}\`\n- Generated at: ${generatedAt}\n- Total URLs: ${urlInventory.totals.all}\n\n## Collections\n${urlInventory.grouped.collections.map((url) => `- ${url}`).join('\n') || '- none'}\n\n## Items\n${urlInventory.grouped.items.map((url) => `- ${url}`).join('\n') || '- none'}\n\n## PDF Assets\n${urlInventory.grouped.assets.map((url) => `- ${url}`).join('\n') || '- none'}\n\n## Anchors\n${urlInventory.grouped.anchors.map((url) => `- ${url}`).join('\n') || '- none'}\n`;
 
-  const coverageMd = `# JSON-LD Coverage (Generated)\n\n- Source: \`${sourcePath}\`\n- Markdown bytes: ${coverage.markdownBytes}\n- Markdown lines: ${coverage.markdownLines}\n- Parsed sections: ${coverage.sectionCount}\n- Site graph nodes: ${coverage.siteGraphNodes}\n- Full graph nodes: ${coverage.fullGraphNodes}\n- \`/site.jsonld\` bytes: ${coverage.siteJsonldBytes}\n- \`/public.jsonld\` bytes: ${coverage.fullJsonldBytes}\n- Corpus files: ${coverage.corpusFiles}\n- Corpus snippets: ${coverage.corpusSnippets}\n- Corpus dirs:\n${coverage.corpusDirs.map((dir) => `  - ${dir}`).join('\n')}\n`;
+  const coverageMd = `# JSON-LD Coverage (Generated)\n\n- Source: \`${sourcePath}\`\n- Markdown bytes: ${coverage.markdownBytes}\n- Markdown lines: ${coverage.markdownLines}\n- Parsed sections: ${coverage.sectionCount}\n- Site graph nodes: ${coverage.siteGraphNodes}\n- Public graph nodes: ${coverage.publicGraphNodes}\n- Full graph nodes: ${coverage.fullGraphNodes}\n- Alura certifications parsed: ${coverage.aluraCertifications}\n- Blog posts parsed: ${coverage.blogPosts}\n- Sermons parsed: ${coverage.sermons}\n- \`/site.jsonld\` bytes: ${coverage.siteJsonldBytes}\n- \`/public.jsonld\` bytes: ${coverage.publicJsonldBytes}\n- \`/full.jsonld\` bytes: ${coverage.fullJsonldBytes}\n- Corpus files: ${coverage.corpusFiles}\n- Corpus snippets: ${coverage.corpusSnippets}\n- Corpus dirs:\n${coverage.corpusDirs.map((dir) => `  - ${dir}`).join('\n')}\n`;
 
   fs.writeFileSync(path.join(GENERATED_DIR, 'publications.generated.ts'), publicationsTs);
   fs.writeFileSync(path.join(GENERATED_DIR, 'upkf.generated.ts'), upkfTs);
@@ -1854,11 +2311,13 @@ function writeGeneratedFiles({
   fs.writeFileSync(path.join(DOCS_DIR, 'jsonld-coverage.generated.md'), coverageMd);
 
   const siteJson = JSON.stringify(siteJsonLd, null, 2);
+  const publicJson = JSON.stringify(publicJsonLd, null, 2);
   const fullJson = JSON.stringify(fullJsonLd, null, 2);
 
   fs.writeFileSync(path.join(PUBLIC_DIR, 'site.jsonld'), siteJson);
-  fs.writeFileSync(path.join(PUBLIC_DIR, 'public.jsonld'), fullJson);
+  fs.writeFileSync(path.join(PUBLIC_DIR, 'public.jsonld'), publicJson);
   fs.writeFileSync(path.join(PUBLIC_DIR, 'full.jsonld'), fullJson);
+  fs.writeFileSync(path.join(PUBLIC_DIR, 'upkf-source.md'), upkfText);
 }
 
 function main() {
@@ -1872,6 +2331,9 @@ function main() {
   const translations = parseTop10Translations(upkfText);
   const publicationRows = parsePublicationRows(upkfText);
   const upkfSections = parseMarkdownSections(upkfText);
+  const certifications = parseCertifications(upkfText);
+  const blogPosts = parseBlogPosts(upkfText);
+  const sermons = parseSermons(upkfText);
 
   if (publicationRows.length === 0) {
     throw new Error('Nenhuma publicacao com URL canonica foi encontrada no UPKF.');
@@ -1887,15 +2349,25 @@ function main() {
     .map((publication) => ensureTemporaryPdf(publication, identity, generatedAt))
     .filter(Boolean).length;
 
-  const siteJsonLd = buildSiteJsonLd(identity, organization, publications, frontmatter);
+  const siteJsonLd = buildCoreSiteJsonLd(identity, organization, frontmatter);
+  const publicJsonLd = buildPublicJsonLd({
+    coreSiteJsonLd: siteJsonLd,
+    publications,
+    frontmatter,
+    sourcePath,
+    identity,
+    certifications,
+    blogPosts,
+    sermons,
+  });
   const fullJsonLd = buildFullUpkfJsonLd({
-    siteJsonLd,
-    upkfText,
+    publicJsonLd,
     upkfSections,
     frontmatter,
     sourcePath,
     publications,
     identity,
+    sourceMdPublicUrl: '/upkf-source.md',
   });
 
   const urlInventory = buildUrlInventory(
@@ -1905,6 +2377,7 @@ function main() {
   );
 
   const siteJson = JSON.stringify(siteJsonLd);
+  const publicJson = JSON.stringify(publicJsonLd);
   const fullJson = JSON.stringify(fullJsonLd);
 
   const coverage = {
@@ -1912,20 +2385,30 @@ function main() {
     markdownLines: upkfText.split('\n').length,
     sectionCount: upkfSections.length,
     siteGraphNodes: Array.isArray(siteJsonLd['@graph']) ? siteJsonLd['@graph'].length : 0,
+    publicGraphNodes: Array.isArray(publicJsonLd['@graph']) ? publicJsonLd['@graph'].length : 0,
     fullGraphNodes: Array.isArray(fullJsonLd['@graph']) ? fullJsonLd['@graph'].length : 0,
     siteJsonldBytes: Buffer.byteLength(siteJson, 'utf8'),
+    publicJsonldBytes: Buffer.byteLength(publicJson, 'utf8'),
     fullJsonldBytes: Buffer.byteLength(fullJson, 'utf8'),
     corpusFiles: corpus.fileCount,
     corpusSnippets: corpus.snippetCount,
     corpusDirs: corpus.sourceDirs,
+    aluraCertifications: certifications.alura.length,
+    blogPosts: blogPosts.posts.length,
+    sermons:
+      sermons.collections.reduce((sum, collection) => sum + collection.items.length, 0) ||
+      sermons.total ||
+      0,
   };
 
   writeGeneratedFiles({
     sourcePath,
+    upkfText,
     frontmatter,
     identity,
     publications,
     siteJsonLd,
+    publicJsonLd,
     fullJsonLd,
     urlInventory,
     generatedAt,
@@ -1935,6 +2418,12 @@ function main() {
   const report = {
     sourcePath,
     publications: publications.length,
+    aluraCertifications: certifications.alura.length,
+    blogPosts: blogPosts.posts.length,
+    sermons:
+      sermons.collections.reduce((sum, collection) => sum + collection.items.length, 0) ||
+      sermons.total ||
+      0,
     parsedSections: upkfSections.length,
     temporaryPdfsCreated: createdPdfs,
     corpus: {
@@ -1943,6 +2432,7 @@ function main() {
       snippets: corpus.snippetCount,
     },
     siteJsonldBytes: coverage.siteJsonldBytes,
+    publicJsonldBytes: coverage.publicJsonldBytes,
     fullJsonldBytes: coverage.fullJsonldBytes,
     generatedAt,
   };

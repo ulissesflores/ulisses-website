@@ -1,6 +1,18 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  async headers() {
+    return [
+      {
+        source: "/.well-known/did.json",
+        headers: [
+          { key: "Content-Type", value: "application/did+ld+json; charset=utf-8" },
+          { key: "Access-Control-Allow-Origin", value: "*" },
+          { key: "Cache-Control", value: "public, max-age=3600, s-maxage=3600" },
+        ],
+      },
+    ];
+  },
   async redirects() {
     // Lista de subdomínios e seus destinos
     const subdomains: Record<string, string> = {

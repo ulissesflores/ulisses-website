@@ -4,12 +4,16 @@
 - Markdown bytes: 85249
 - Markdown lines: 1391
 - Parsed sections: 102
-- Site graph nodes: 25
-- Full graph nodes: 128
-- `/site.jsonld` bytes: 28269
-- `/public.jsonld` bytes: 230176
-- Corpus files: 3
-- Corpus snippets: 47
+- Site graph nodes: 4
+- Public graph nodes: 144
+- Full graph nodes: 247
+- Alura certifications parsed: 32
+- Blog posts parsed: 19
+- Sermons parsed: 56
+- `/site.jsonld` bytes: 3476
+- `/public.jsonld` bytes: 89737
+- `/full.jsonld` bytes: 195029
+- Corpus files: 0
+- Corpus snippets: 0
 - Corpus dirs:
-  - /Users/ulissesflores/Documents/Mestrado/Estudo de caso Yape/Parametros e Modelos
-  - /Users/ulissesflores/Documents/Projetos/Ulisses Flores Informações
+

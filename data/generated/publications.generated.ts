@@ -118,7 +118,7 @@ export const publications: Publication[] = [
     "sections": {
       "abstract": "Estudo sobre aplicacao da Lei de Little para elevar previsibilidade de entrega e resiliencia em operacoes de Data Science. Abordagem analitico-experimental com simulacao de fluxo, comparando cenarios com e sem limite explicito de trabalho em progresso. A evidencia indica reducao relevante de lead time sem perda material de throughput, reforcando a eficiencia da limitacao de WIP.",
       "introduction": "A pesquisa enfrenta a combinacao de alto WIP, filas longas e baixa confiabilidade de prazo em pipelines complexos de IA.",
-      "methods": "A questão de pesquisa que orienta este estudo é: em que medida a gestão explícita do trabalho em progresso (WIP), à luz da Lei de Little, contribui para a redução do lead time sem comprometer o throughput em projetos complexos de Data Science?",
+      "methods": "Abordagem analitico-experimental com simulacao de fluxo, comparando cenarios com e sem limite explicito de trabalho em progresso.",
       "results": "A evidencia indica reducao relevante de lead time sem perda material de throughput, reforcando a eficiencia da limitacao de WIP.",
       "discussion": "Os achados dialogam com Lean/Kanban e com governanca orientada a fluxo, especialmente em ambientes de alta variabilidade.",
       "conclusion": "Aplicavel a PMOs de tecnologia, times de produto e laboratorios de IA que necessitam previsibilidade operacional auditavel. Estudos futuros devem ampliar validacao empirica e comparacao em cenarios multi-contexto.",
@@ -131,29 +131,10 @@ export const publications: Publication[] = [
         "Referencia de dominio: NIST AI RMF",
         "Referencia de dominio: Little (1961)",
         "Referencia de dominio: Anderson (2010)",
-        "Referencia de dominio: Reinertsen (2009)",
-        "Fonte local: MODELO ARTIGO CIENTIFICO.md",
-        "Fonte local: MODELO ARTIGO CIENTIFICO.md",
-        "Fonte local: MODELO ARTIGO CIENTIFICO.md"
+        "Referencia de dominio: Reinertsen (2009)"
       ]
     },
-    "sourceEvidence": [
-      {
-        "sourceFile": "/Users/ulissesflores/Documents/Mestrado/Estudo de caso Yape/Parametros e Modelos/MODELO ARTIGO CIENTIFICO.md",
-        "sourceName": "MODELO ARTIGO CIENTIFICO.md",
-        "score": 49
-      },
-      {
-        "sourceFile": "/Users/ulissesflores/Documents/Mestrado/Estudo de caso Yape/Parametros e Modelos/MODELO ARTIGO CIENTIFICO.md",
-        "sourceName": "MODELO ARTIGO CIENTIFICO.md",
-        "score": 31
-      },
-      {
-        "sourceFile": "/Users/ulissesflores/Documents/Mestrado/Estudo de caso Yape/Parametros e Modelos/MODELO ARTIGO CIENTIFICO.md",
-        "sourceName": "MODELO ARTIGO CIENTIFICO.md",
-        "score": 21
-      }
-    ],
+    "sourceEvidence": [],
     "translations": {
       "en": "Little's Law as a Vector for Resilience and Quality",
       "es": "La Ley de Little como Vector de Resiliencia y Calidad"
@@ -890,23 +871,10 @@ export const publications: Publication[] = [
         "Referencia de dominio: Architecture reference literature",
         "Referencia de dominio: Digital estate planning literature",
         "Referencia de dominio: ISO 15489",
-        "Referencia de dominio: NIST privacy framework",
-        "Fonte local: Estudo de Caso_ Yape (2).md",
-        "Fonte local: Estudo de Caso_ Yape (2).md"
+        "Referencia de dominio: NIST privacy framework"
       ]
     },
-    "sourceEvidence": [
-      {
-        "sourceFile": "/Users/ulissesflores/Documents/Mestrado/Estudo de caso Yape/Parametros e Modelos/Estudo de Caso_ Yape (2).md",
-        "sourceName": "Estudo de Caso_ Yape (2).md",
-        "score": 11
-      },
-      {
-        "sourceFile": "/Users/ulissesflores/Documents/Mestrado/Estudo de caso Yape/Parametros e Modelos/Estudo de Caso_ Yape (2).md",
-        "sourceName": "Estudo de Caso_ Yape (2).md",
-        "score": 11
-      }
-    ]
+    "sourceEvidence": []
   },
   {
     "ordinal": 29,

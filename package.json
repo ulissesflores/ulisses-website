@@ -4,6 +4,8 @@
   "private": true,
   "scripts": {
     "upkf:generate": "node scripts/upkf/generate-artifacts.mjs",
+    "upkf:verify": "node scripts/upkf/verify-artifacts.mjs",
+    "upkf:check": "npm run upkf:generate && npm run upkf:verify",
     "predev": "npm run upkf:generate",
     "prebuild": "npm run upkf:generate",
     "dev": "next dev",

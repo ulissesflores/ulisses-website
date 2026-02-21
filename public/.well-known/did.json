@@ -1,0 +1,41 @@
+{
+  "@context": [
+    "https://www.w3.org/ns/did/v1",
+    "https://w3id.org/security/suites/jws-2020/v1"
+  ],
+  "id": "did:web:ulissesflores.com",
+  "alsoKnownAs": [
+    "https://ulissesflores.com",
+    "https://orcid.org/0000-0002-6034-7765"
+  ],
+  "verificationMethod": [
+    {
+      "id": "did:web:ulissesflores.com#key-1",
+      "type": "JsonWebKey2020",
+      "controller": "did:web:ulissesflores.com",
+      "publicKeyJwk": {
+        "kty": "OKP",
+        "crv": "Ed25519",
+        "x": "VCpo2LMLhn6iWku8MKvSLg2ZAoC-nlOyPVQaO3FxVeQ"
+      }
+    }
+  ],
+  "authentication": [
+    "did:web:ulissesflores.com#key-1"
+  ],
+  "assertionMethod": [
+    "did:web:ulissesflores.com#key-1"
+  ],
+  "service": [
+    {
+      "id": "did:web:ulissesflores.com#website",
+      "type": "LinkedDomains",
+      "serviceEndpoint": "https://ulissesflores.com"
+    },
+    {
+      "id": "did:web:ulissesflores.com#public-jsonld",
+      "type": "Dataset",
+      "serviceEndpoint": "https://ulissesflores.com/public.jsonld"
+    }
+  ]
+}
