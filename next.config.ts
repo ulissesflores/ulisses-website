@@ -22,6 +22,13 @@ const nextConfig: NextConfig = {
         ],
       },
       {
+        source: "/.well-known/keybase.txt",
+        headers: [
+          { key: "Content-Type", value: "text/plain; charset=utf-8" },
+          { key: "Cache-Control", value: "public, max-age=3600, s-maxage=3600" },
+        ],
+      },
+      {
         source: "/llms.txt",
         headers: [{ key: "Content-Type", value: "text/plain; charset=utf-8" }],
       },
@@ -32,6 +39,14 @@ const nextConfig: NextConfig = {
     ];
   },
   async redirects() {
+    const legacyRedirects = [
+      {
+        source: "/keybase.txt",
+        destination: "/.well-known/keybase.txt",
+        permanent: true,
+      },
+    ];
+
     // Lista de subdomínios e seus destinos
     const subdomains: Record<string, string> = {
       facebook: "https://www.facebook.com/UlissesFls",
@@ -50,7 +65,7 @@ const nextConfig: NextConfig = {
       permanent: true, // 301 Permanente (Melhor para SEO)
     }));
 
-    return subdomainRedirects;
+    return [...legacyRedirects, ...subdomainRedirects];
   },
 };
 

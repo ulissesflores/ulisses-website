@@ -22,6 +22,7 @@ export async function GET() {
     { path: '/full.jsonld', changefreq: 'monthly', priority: '0.3' },
     { path: '/upkf-source.md', changefreq: 'monthly', priority: '0.4' },
     { path: '/.well-known/did.json', changefreq: 'weekly', priority: '0.6' },
+    { path: '/.well-known/keybase.txt', changefreq: 'weekly', priority: '0.6' },
     { path: '/llms.txt', changefreq: 'weekly', priority: '0.8' },
     { path: '/llms-full.txt', changefreq: 'weekly', priority: '0.7' },
     { path: '/doi/manifest.json', changefreq: 'weekly', priority: '0.7' },
