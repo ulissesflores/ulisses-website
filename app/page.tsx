@@ -29,27 +29,6 @@ export default function Home() {
       <div className="fixed inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] pointer-events-none"></div>
       <div className="fixed inset-0 bg-[radial-gradient(circle_800px_at_50%_-200px,#10b98110,transparent)] pointer-events-none"></div>
       
-      {/* MENU FLUTUANTE */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-neutral-950/80 backdrop-blur-md border-b border-white/5">
-        <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-          <div className="text-emerald-500 font-bold text-lg tracking-wider flex items-center gap-2">
-            <Terminal size={18} /> UF<span className="text-neutral-500 font-light">.SCIENTIST</span>
-          </div>
-          <div className="hidden md:flex gap-8 text-sm font-medium text-neutral-400">
-            <a href="#about" className="hover:text-white transition-colors">Bio</a>
-            <a href="#pillars" className="hover:text-white transition-colors">Expertise</a>
-            <a href="#trajectory" className="hover:text-white transition-colors">Trajetória</a>
-            <a href="#research" className="hover:text-white transition-colors">Publicações</a>
-            <a href="/certifications" className="hover:text-white transition-colors">Certificações</a>
-            <a href="/acervo-teologico" className="hover:text-white transition-colors">Sermões</a>
-            <a href="/mundo-politico" className="hover:text-white transition-colors">Mundo Político</a>
-          </div>
-          <a href="#contact" className="px-4 py-2 bg-neutral-100 text-neutral-900 text-xs font-bold rounded-full hover:bg-emerald-400 transition-colors">
-            FALE COMIGO
-          </a>
-        </div>
-      </nav>
-
       <main className="relative max-w-6xl mx-auto px-6 pt-32 pb-20 z-10">
         
         {/* HERO SECTION */}

@@ -27,7 +27,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
   return {
     title: sermon.seoTitle,
-    description: sermon.metaDescription,
+    description: sermon.llmContext,
     alternates: {
       canonical: sermon.canonicalPath,
       languages: buildLanguageAlternates(sermon.canonicalPath),
@@ -36,7 +36,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       type: 'video.other',
       url: `${upkfMeta.primaryWebsite}${sermon.canonicalPath}`,
       title: sermon.seoTitle,
-      description: sermon.metaDescription,
+      description: sermon.llmContext,
     },
   };
 }
@@ -118,7 +118,7 @@ export default async function AcervoSermonDetailPage({ params }: PageProps) {
 
         <section className='rounded-xl border border-neutral-800 bg-neutral-900/30 p-6 space-y-5'>
           <div>
-            <h2 className='text-xl font-semibold text-white mb-2'>LLM Context</h2>
+            <h2 className='text-xl font-semibold text-white mb-2'>Resumo do Estudo</h2>
             <p className='text-neutral-300 leading-relaxed'>{sermon.llmContext}</p>
           </div>
 

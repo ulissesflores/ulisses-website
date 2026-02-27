@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
-import Script from 'next/script';
 import { siteJsonLd, upkfMeta } from '@/data/generated/upkf.generated';
 import { buildLanguageAlternates } from '@/data/seo';
+import { GlobalHeader } from '@/components/global-header';
 import './globals.css';
 
 const siteUrl = upkfMeta.primaryWebsite;
@@ -88,8 +88,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang='pt-BR'>
       <body className='antialiased'>
-        <Script
-          id='structured-data-upkf'
+        <GlobalHeader />
+        <script
+          id='structured-data-site'
           type='application/ld+json'
           dangerouslySetInnerHTML={{ __html: JSON.stringify(siteJsonLd) }}
         />
