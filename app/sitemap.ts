@@ -3,6 +3,23 @@ import { publications, publicationCollections } from '@/data/publications';
 import { knowledgeData } from '@/data/knowledge';
 import { upkfMeta } from '@/data/generated/upkf.generated';
 import { buildLanguageAlternates } from '@/data/seo';
+import { certificationsSotaData } from '@/data/certifications-sota';
+import { acervoCanonicalPath, acervoLatestPublishedAt, acervoSermons } from '@/data/acervo-teologico';
+
+function isIndexableSitemapPath(path: string): boolean {
+  const normalized = path.toLowerCase();
+
+  if (/\.(md|docx|json|jsonld)(?:$|[?#])/.test(normalized)) {
+    return false;
+  }
+
+  const extensionMatch = normalized.match(/\.([a-z0-9]+)(?:$|[?#])/);
+  if (!extensionMatch) {
+    return true;
+  }
+
+  return extensionMatch[1] === 'pdf';
+}
 
 function makeSitemapEntry(
   path: string,
@@ -11,6 +28,7 @@ function makeSitemapEntry(
   priority: number,
 ): MetadataRoute.Sitemap[number] {
   const normalizedPath = path === '/' ? '' : path;
+
   return {
     url: `${upkfMeta.primaryWebsite}${normalizedPath}`,
     lastModified,
@@ -22,46 +40,65 @@ function makeSitemapEntry(
   };
 }
 
+function maybeMakeSitemapEntry(
+  path: string,
+  lastModified: string,
+  changeFrequency: 'daily' | 'weekly' | 'monthly',
+  priority: number,
+): MetadataRoute.Sitemap[number] | null {
+  if (!isIndexableSitemapPath(path)) {
+    return null;
+  }
+
+  return makeSitemapEntry(path, lastModified, changeFrequency, priority);
+}
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const latestSiteDate =
     publications
       .map((publication) => publication.updatedAt)
       .sort((a, b) => b.localeCompare(a))[0] || upkfMeta.generatedAt;
 
-  const collectionEntries = Object.keys(publicationCollections).map((category) => {
-    const latestCategoryDate =
-      publications
-        .filter((publication) => publication.category === category)
-        .map((publication) => publication.updatedAt)
-        .sort((a, b) => b.localeCompare(a))[0] || latestSiteDate;
+  const collectionEntries = Object.keys(publicationCollections)
+    .map((category) => {
+      const latestCategoryDate =
+        publications
+          .filter((publication) => publication.category === category)
+          .map((publication) => publication.updatedAt)
+          .sort((a, b) => b.localeCompare(a))[0] || latestSiteDate;
 
-    return makeSitemapEntry(`/${category}`, latestCategoryDate, 'weekly', 0.85);
-  });
+      return maybeMakeSitemapEntry(`/${category}`, latestCategoryDate, 'weekly', 0.85);
+    })
+    .filter((entry): entry is MetadataRoute.Sitemap[number] => Boolean(entry));
 
-  const publicationEntries = publications.map((publication) =>
-    makeSitemapEntry(
-      `/${publication.category}/${publication.id}`,
-      publication.updatedAt,
-      'monthly',
-      publication.category === 'research' ? 0.9 : 0.8,
-    ),
-  );
+  const publicationEntries = publications
+    .map((publication) =>
+      maybeMakeSitemapEntry(
+        `/${publication.category}/${publication.id}`,
+        publication.updatedAt,
+        'monthly',
+        publication.category === 'research' ? 0.9 : 0.8,
+      ),
+    )
+    .filter((entry): entry is MetadataRoute.Sitemap[number] => Boolean(entry));
 
-  const deepResearchEntries = publications.flatMap((publication) => {
-    const date = publication.updatedAt;
-    return [
-      makeSitemapEntry(publication.mdUrl, date, 'monthly', 0.62),
-      makeSitemapEntry(publication.primaryPdfUrl || publication.downloadUrl, date, 'monthly', 0.7),
-      makeSitemapEntry(publication.docxUrl, date, 'monthly', 0.58),
-    ];
-  });
+  const deepResearchEntries = publications
+    .flatMap((publication) => {
+      const date = publication.updatedAt;
+      return [
+        maybeMakeSitemapEntry(publication.mdUrl, date, 'monthly', 0.62),
+        maybeMakeSitemapEntry(publication.primaryPdfUrl || publication.downloadUrl, date, 'monthly', 0.7),
+        maybeMakeSitemapEntry(publication.docxUrl, date, 'monthly', 0.58),
+      ];
+    })
+    .filter((entry): entry is MetadataRoute.Sitemap[number] => Boolean(entry));
 
   const certificationsEntries = [
-    makeSitemapEntry('/certifications', knowledgeData.generatedAt, 'weekly', 0.78),
-    ...knowledgeData.certifications.map((certification) =>
-      makeSitemapEntry(certification.canonicalPath, certification.publishedAt, 'monthly', 0.62),
+    maybeMakeSitemapEntry('/certifications', knowledgeData.generatedAt, 'weekly', 0.78),
+    ...certificationsSotaData.map((certification) =>
+      maybeMakeSitemapEntry(certification.canonicalPath, certification.publishedAt, 'monthly', 0.62),
     ),
-  ];
+  ].filter((entry): entry is MetadataRoute.Sitemap[number] => Boolean(entry));
 
   const blogLatest =
     knowledgeData.blog.posts
@@ -69,39 +106,22 @@ export default function sitemap(): MetadataRoute.Sitemap {
       .sort((a, b) => b.localeCompare(a))[0] || latestSiteDate;
 
   const blogEntries = [
-    makeSitemapEntry(knowledgeData.blog.canonicalPath, blogLatest, 'weekly', 0.75),
-    ...knowledgeData.blog.posts.map((post) => makeSitemapEntry(post.canonicalPath, post.publishedAt, 'monthly', 0.65)),
-  ];
+    maybeMakeSitemapEntry(knowledgeData.blog.canonicalPath, blogLatest, 'weekly', 0.75),
+    ...knowledgeData.blog.posts.map((post) => maybeMakeSitemapEntry(post.canonicalPath, post.publishedAt, 'monthly', 0.65)),
+  ].filter((entry): entry is MetadataRoute.Sitemap[number] => Boolean(entry));
 
-  const sermonsCount = knowledgeData.sermons.collections.reduce((sum, collection) => sum + collection.items.length, 0);
-  const sermonsLatest =
-    knowledgeData.sermons.collections
-      .flatMap((collection) => collection.items.map((item) => item.publishedAt))
-      .sort((a, b) => b.localeCompare(a))[0] || latestSiteDate;
-
-  const sermonEntries = [
-    makeSitemapEntry(knowledgeData.sermons.canonicalPath, sermonsLatest, 'weekly', 0.76),
-    ...knowledgeData.sermons.collections.map((collection) =>
-      makeSitemapEntry(
-        collection.canonicalPath,
-        collection.items.map((item) => item.publishedAt).sort((a, b) => b.localeCompare(a))[0] || sermonsLatest,
-        'weekly',
-        0.68,
-      ),
-    ),
-    ...knowledgeData.sermons.collections.flatMap((collection) =>
-      collection.items.map((item) => makeSitemapEntry(item.canonicalPath, item.publishedAt, 'monthly', 0.58)),
-    ),
-  ];
+  const acervoEntries = [
+    maybeMakeSitemapEntry(acervoCanonicalPath, acervoLatestPublishedAt, 'weekly', 0.76),
+    ...acervoSermons.map((sermon) => maybeMakeSitemapEntry(sermon.canonicalPath, sermon.publishedAt, 'monthly', 0.58)),
+  ].filter((entry): entry is MetadataRoute.Sitemap[number] => Boolean(entry));
 
   return [
     makeSitemapEntry('/', latestSiteDate, 'weekly', 1),
-    makeSitemapEntry('/feed.xml', latestSiteDate, 'daily', 0.7),
     ...collectionEntries,
     ...publicationEntries,
     ...deepResearchEntries,
     ...certificationsEntries,
     ...blogEntries,
-    ...(sermonsCount > 0 ? sermonEntries : []),
+    ...acervoEntries,
   ];
 }

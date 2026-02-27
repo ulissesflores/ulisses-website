@@ -1,4 +1,5 @@
 import type { NextConfig } from "next";
+import { legacySermonRedirects } from "./data/sermons-migration";
 
 const nextConfig: NextConfig = {
   async rewrites() {
@@ -65,7 +66,7 @@ const nextConfig: NextConfig = {
       permanent: true, // 301 Permanente (Melhor para SEO)
     }));
 
-    return [...legacyRedirects, ...subdomainRedirects];
+    return [...legacyRedirects, ...legacySermonRedirects, ...subdomainRedirects];
   },
 };
 

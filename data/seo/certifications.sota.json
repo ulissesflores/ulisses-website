@@ -1,0 +1,258 @@
+[
+  {
+    "id": "alura-1-entrega-continua-confiabilidade-e-qualidade",
+    "title": "Entrega Contínua: Confiabilidade e Qualidade",
+    "url": "https://www.ulissesflores.com/certifications/alura-1-entrega-continua-confiabilidade-e-qualidade",
+    "about": "A fundação de qualquer arquitetura de software escalável é a sua esteira de deploy. Neste curso, aprofundei os princípios de Continuous Delivery, garantindo que o software esteja sempre em um estado liberável para produção. Como arquiteto, isso me permite reduzir o Time-to-Market sem sacrificar a resiliência e a governança corporativa.",
+    "skills": ["Continuous Delivery (CD)", "Automação de Pipelines", "Governança de Release", "Mitigação de Riscos de Deploy"],
+    "problems_solved": "Eliminação do 'gargalo de sexta-feira'. O desafio foi desenhar um processo onde deploys deixam de ser eventos críticos e estressantes para se tornarem rotinas invisíveis e automatizadas, baseadas em métricas de qualidade."
+  },
+  {
+    "id": "alura-2-formacao-engenharia-de-software",
+    "title": "Formação Engenharia de Software",
+    "url": "https://www.ulissesflores.com/certifications/alura-2-formacao-engenharia-de-software",
+    "about": "Uma imersão estrutural nas melhores práticas, governança e ciclo de vida do desenvolvimento de software (SDLC). Essa formação consolida a visão holística necessária para orquestrar projetos de alta complexidade, unindo visão econômica e rigor técnico.",
+    "skills": ["SDLC", "Arquitetura de Software", "Engenharia de Requisitos", "Governança de TI"],
+    "problems_solved": "Fazer a ponte entre a teoria acadêmica rigorosa e o pragmatismo da entrega contínua corporativa. Adaptei as metodologias clássicas para ciclos curtos de feedback em ambientes de incerteza."
+  },
+  {
+    "id": "alura-3-integracao-continua-qualidade-e-menos-risco",
+    "title": "Integração Contínua: Qualidade e Menos Risco",
+    "url": "https://www.ulissesflores.com/certifications/alura-3-integracao-continua-qualidade-e-menos-risco",
+    "about": "A velocidade só tem valor com previsibilidade. Imersão nos fundamentos de CI (Continuous Integration) para mitigar riscos de deploy. O foco foi na automação implacável das pipelines de validação e execução de testes unitários.",
+    "skills": ["Continuous Integration (CI)", "Linting e Code Analysis", "Governança de Pull Requests", "DevOps Culture"],
+    "problems_solved": "Como eliminar o 'Merge Hell' em equipes descentralizadas. Solucionado com a implementação de validações assíncronas obrigatórias (Status Checks) antes da integração na branch principal."
+  },
+  {
+    "id": "alura-4-microsservicos-na-pratica",
+    "title": "Microsserviços na Prática",
+    "url": "https://www.ulissesflores.com/certifications/alura-4-microsservicos-na-pratica",
+    "about": "Estudo técnico de topologias distribuídas. A divisão de monólitos resolve problemas de escala de time, mas introduz complexidade de orquestração de rede. O foco foi a implementação prática da comunicação, isolamento de domínios e resiliência entre APIs.",
+    "skills": ["Design de Arquitetura Distribuída", "Service Discovery", "Containerização (Docker)", "Isolamento de Domínios"],
+    "problems_solved": "A falácia da rede confiável. Abordamos como arquitetar serviços que sobrevivem a latências extremas e quedas parciais de infraestrutura sem corromper o sistema inteiro."
+  },
+  {
+    "id": "alura-5-microsservicos-explorando-conceitos",
+    "title": "Microsserviços: Explorando Conceitos",
+    "url": "https://www.ulissesflores.com/certifications/alura-5-microsservicos-explorando-conceitos",
+    "about": "Aprofundamento analítico e teórico sobre os trade-offs (custo/benefício) na transição para arquiteturas distribuídas. Essencial para não cometer o erro de construir um 'Monólito Distribuído'.",
+    "skills": ["Teorema CAP", "Bounded Contexts (DDD)", "Comunicação Assíncrona", "Análise de Viabilidade Arquitetural"],
+    "problems_solved": "Identificar quando NÃO usar microsserviços. Desenvolvi um framework de decisão baseado em complexidade de negócios vs. custo de infraestrutura operacional e overhead cognitivo da equipe."
+  },
+  {
+    "id": "alura-6-microsservicos-padroes-de-projeto",
+    "title": "Microsserviços: Padrões de Projeto",
+    "url": "https://www.ulissesflores.com/certifications/alura-6-microsservicos-padroes-de-projeto",
+    "about": "Como orquestrar o caos distribuído. Imersão no estudo avançado das topologias de rede, implementando Design Patterns arquiteturais que garantem resiliência e tolerância a falhas na borda da aplicação.",
+    "skills": ["API Gateways", "Circuit Breakers", "Padrão Saga (Transações Distribuídas)", "Bulkheads"],
+    "problems_solved": "Evitar falhas em cascata. A solução é a aplicação cirúrgica de Circuit Breakers e rotinas de Fallback graciosas, protegendo o núcleo financeiro contra timeouts de serviços externos."
+  },
+  {
+    "id": "alura-7-extreme-programming-metodologia-agil",
+    "title": "Extreme Programming (XP): Metodologia Ágil",
+    "url": "https://www.ulissesflores.com/certifications/alura-7-extreme-programming-metodologia-agil",
+    "about": "A agilidade empurrada ao limite da excelência técnica. Imersão visceral no framework XP, focado em ciclos de feedback extremamente curtos, integração contínua e qualidade intrínseca do código guiada por testes (TDD).",
+    "skills": ["Test-Driven Development (TDD)", "Pair Programming", "Refatoração Contínua", "Entregas em Pequenos Lotes"],
+    "problems_solved": "Romper o silo entre o desenvolvimento técnico e as métricas de sucesso financeiro. A XP promove a coragem arquitetural, permitindo alterar sistemas core sem medo de quebras sistêmicas."
+  },
+  {
+    "id": "alura-8-organizacao-de-equipes-ageis",
+    "title": "Organização de Equipes Ágeis",
+    "url": "https://www.ulissesflores.com/certifications/alura-8-organizacao-de-equipes-ageis",
+    "about": "Entender a Lei de Conway na prática: a arquitetura do sistema reflete a arquitetura da comunicação da equipe. O foco foi a facilitação e estruturação topológica de times de alta performance focados em fluxo de valor.",
+    "skills": ["Team Topologies", "Facilitação Ágil", "Liderança Servidora", "Design Organizacional"],
+    "problems_solved": "O desafio de escalar a agilidade além de pequenos esquadrões. A solução foi alinhar a comunicação assíncrona entre múltiplos squads interdependentes para entregar um produto coeso."
+  },
+  {
+    "id": "alura-9-scrum-agilidade-em-seu-projeto",
+    "title": "Scrum: Agilidade em Seu Projeto",
+    "url": "https://www.ulissesflores.com/certifications/alura-9-scrum-agilidade-em-seu-projeto",
+    "about": "Gestão tática da incerteza. Imersão rigorosa no framework Scrum para controle empírico de projetos complexos, focando na orquestração dos papéis, cadência dos ritos e transparência do Backlog.",
+    "skills": ["Gestão de Product Backlog", "Controle Empírico de Processos", "Facilitação de Sprints e Reviews", "Cálculo de ROI em Software"],
+    "problems_solved": "Lidar com a falácia do escopo fechado em mercados voláteis. Implementei a gestão de expectativas focada em entregas incrementais baseadas em prototipação e validação rápida."
+  },
+  {
+    "id": "alura-10-quality-assurance-plano-de-testes-e-bugs",
+    "title": "Quality Assurance: Plano de Testes e Bugs",
+    "url": "https://www.ulissesflores.com/certifications/alura-10-quality-assurance-plano-de-testes-e-bugs",
+    "about": "A qualidade desde o design (Quality-by-Design) é inegociável em sistemas financeiros. Refinei os processos metodológicos para antecipação de falhas, estruturando planos de testes rigorosos e rastreabilidade de defeitos.",
+    "skills": ["Modelagem de Casos de Teste", "Rastreabilidade de Bugs", "Garantia de Qualidade (QA)", "Shift-Left Testing"],
+    "problems_solved": "Como orquestrar a cobertura de testes em arquiteturas legadas. A solução foi mapear fluxos críticos (Happy Paths) e introduzir testes de regressão de forma progressiva."
+  },
+  {
+    "id": "alura-11-blockchain-para-negocios",
+    "title": "Blockchain Para Negócios",
+    "url": "https://www.ulissesflores.com/certifications/alura-11-blockchain-para-negocios",
+    "about": "Como economista, encaro a descentralização como a evolução natural dos mercados. Aprofundei o entendimento da arquitetura de DLTs para validar a aplicabilidade comercial em negócios com criptoativos e modelos DeFi.",
+    "skills": ["Arquitetura DLT", "Análise de Viabilidade Blockchain", "Economia de Tokens (Tokenomics)", "Mapeamento P2P"],
+    "problems_solved": "O desafio de traduzir a complexidade criptográfica para 'Business Value'. Desenvolvi frameworks mentais para avaliar quando uma Blockchain resolve um problema real ou é apenas hype."
+  },
+  {
+    "id": "alura-12-blockchain-aumente-a-confianca",
+    "title": "Blockchain: Aumente a Confiança",
+    "url": "https://www.ulissesflores.com/certifications/alura-12-blockchain-aumente-a-confianca",
+    "about": "A confiança matemática substitui a institucional. Consolidei o entendimento sobre segurança imutável, explorando como redes Trustless agregam auditoria inviolável em transações financeiras e gestão de identidades.",
+    "skills": ["Sistemas Trustless", "Criptografia Aplicada", "Auditoria de Integridade", "Descentralização Estrutural"],
+    "problems_solved": "Mitigar riscos de centralização em soluções que se dizem descentralizadas. Solucionado através da análise crítica dos vetores de ataque em diferentes topologias de rede (Ex: Monero vs Bitcoin)."
+  },
+  {
+    "id": "alura-14-value-stream-mapping-vsm-desenhe-mapa",
+    "title": "Value Stream Mapping (VSM): Desenhe o Mapa",
+    "url": "https://www.ulissesflores.com/certifications/alura-14-value-stream-mapping-vsm-desenhe-mapa",
+    "about": "A abstração visual da cadeia de valor é o primeiro passo para arquitetar sistemas eficientes. Refinei minha capacidade de mapear processos aplicando o pensamento Lean, identificando onde o valor é gerado e onde é perdido.",
+    "skills": ["Modelagem SIPOC", "Mapeamento VSM (Current/Future State)", "Pensamento Lean", "Identificação de Desperdícios (Muda)"],
+    "problems_solved": "Abstrair processos informais de corporações caóticas. Utilizei o VSM para desenhar fluxos tangíveis, alinhando a comunicação entre o C-Level estratégico e a engenharia executiva."
+  },
+  {
+    "id": "alura-15-value-stream-mapping-vsm-conheca-fluxo",
+    "title": "Value Stream Mapping (VSM): Conheça o Fluxo",
+    "url": "https://www.ulissesflores.com/certifications/alura-15-value-stream-mapping-vsm-conheca-fluxo",
+    "about": "Aprofundamento analítico no VSM. O foco foi a extração contínua de métricas do fluxo de valor (Lead Time, Cycle Time) e a identificação cirúrgica de gargalos operacionais para guiar automações sistêmicas.",
+    "skills": ["Análise Quantitativa de Processos", "Cálculo de Lead/Cycle Time", "Governança de Gargalos", "Otimização de Fluxo"],
+    "problems_solved": "Transformar dados qualitativos do chão de fábrica em requisitos formais de software. Criei pontes semânticas entre a dor operacional do usuário e o design arquitetural do sistema."
+  },
+  {
+    "id": "alura-16-rpa-aplicacoes-gerais",
+    "title": "RPA: Aplicações Gerais",
+    "url": "https://www.ulissesflores.com/certifications/alura-16-rpa-aplicacoes-gerais",
+    "about": "A automação é a alavanca da escala. Explorei a Automação de Processos Robóticos (RPA) para eliminar atritos. Conectar RPA com IA é fundamental para otimizar a eficiência econômica de operações corporativas repetitivas.",
+    "skills": ["Automação Robótica (RPA)", "Integração de Sistemas Legados", "Governança de Bots", "Otimização de Tarefas (BPO)"],
+    "problems_solved": "Evitar a armadilha de 'automatizar um processo ruim'. Apliquei o redesenho formal do processo de negócios (BPM) antes de injetar a camada de RPA, garantindo eficiência raiz."
+  },
+  {
+    "id": "alura-17-bizagi-mapeamento-com-bpmn",
+    "title": "Bizagi: Mapeamento com BPMN",
+    "url": "https://www.ulissesflores.com/certifications/alura-17-bizagi-mapeamento-com-bpmn",
+    "about": "A modelagem precisa previne o caos arquitetural. Foquei na padronização semântica de regras de negócios via BPMN 2.0 no Bizagi, competência vital para orquestrar microsserviços orientados a eventos de domínio.",
+    "skills": ["BPMN 2.0", "Modelagem no Bizagi", "Design Orientado a Processos", "Elicitação Visual de Regras"],
+    "problems_solved": "Lidar com a ambiguidade nos requisitos do cliente. A modelagem BPMN força a clareza condicional, revelando edge cases lógicos que seriam perigosamente ignorados no desenvolvimento direto."
+  },
+  {
+    "id": "alura-18-uml-modelagem-de-diagramas",
+    "title": "UML: Modelagem de Diagramas",
+    "url": "https://www.ulissesflores.com/certifications/alura-18-uml-modelagem-de-diagramas",
+    "about": "Revisei profundamente os padrões da UML para abstrair e documentar a estrutura de sistemas complexos. O foco no design formal antes da codificação garante baixo acoplamento e escalabilidade da base de código.",
+    "skills": ["Modelagem Estrutural (Classes/Objetos)", "Modelagem Comportamental (Casos de Uso/Sequência)", "Abstração de Sistemas Complexos", "Engenharia Reversa Visual"],
+    "problems_solved": "A sobrecarga visual na documentação de monólitos. Apliquei técnicas de abstração em camadas para criar diagramas UML que servem como mapas de navegação, em vez de labirintos complexos."
+  },
+  {
+    "id": "alura-19-uml-modelagem-de-solucoes",
+    "title": "UML: Modelagem de Soluções Avançadas",
+    "url": "https://www.ulissesflores.com/certifications/alura-19-uml-modelagem-de-solucoes",
+    "about": "Avanço prático na linguagem de modelagem unificada (UML). Foco em transpor o modelo conceitual de negócios para diagramas de arquitetura técnica, como Componentes, Deployment e transições de Estado de máquina.",
+    "skills": ["Diagramas de Implantação", "Máquinas de Estado", "Arquitetura de Soluções", "Documentação Técnica SOTA"],
+    "problems_solved": "O hiato entre o código e a infraestrutura em nuvem. Usei diagramas de Implantação e Componentes para mapear a relação física e lógica dos containers, blindando a arquitetura contra falhas de rede."
+  },
+  {
+    "id": "alura-20-linux-onboarding-cli-rapida-e-pratica",
+    "title": "Linux Onboarding: CLI Rápida e Prática",
+    "url": "https://www.ulissesflores.com/certifications/alura-20-linux-onboarding-cli-rapida-e-pratica",
+    "about": "O controle irrestrito da infraestrutura começa no terminal. Aprofundei fundamentos de manipulação direta do SO. O controle fluente via CLI é vital para orquestração de servidores, Docker e hardware embarcado.",
+    "skills": ["Shell Scripting", "Manipulação de Streams e Pipes", "Gestão de Processos Unix", "Administração de Servidores (Sysadmin)"],
+    "problems_solved": "Automação de pipelines de deploy bare-metal sem depender de GUIs, utilizando scripts bash robustos para provisionamento ágil e previsível de infraestruturas."
+  },
+  {
+    "id": "alura-21-aprenda-java-com-orientacao-a-objetos",
+    "title": "Aprenda Java com Orientação a Objetos",
+    "url": "https://www.ulissesflores.com/certifications/alura-21-aprenda-java-com-orientacao-a-objetos",
+    "about": "Solidifiquei os pilares canônicos da Orientação a Objetos (OO) através da rigidez estrutural do Java. A tipagem estática e o design orientado a contratos fornecem a fundação para backends corporativos altamente tolerantes a falhas.",
+    "skills": ["Paradigma OO (Encapsulamento, Herança, Polimorfismo)", "Tipagem Estática Severa", "Design de Contratos (Interfaces)", "Arquitetura JVM"],
+    "problems_solved": "Vazamento de abstrações em domínios complexos. Solucionado através da criação de interfaces rígidas que blindam o core da aplicação contra alterações em bibliotecas ou banco de dados."
+  },
+  {
+    "id": "alura-22-java-criando-primeira-aplicacao",
+    "title": "Java: Criando Primeira Aplicação",
+    "url": "https://www.ulissesflores.com/certifications/alura-22-java-criando-primeira-aplicacao",
+    "about": "Imersão no ecossistema de compilação da JVM. Foco na estruturação clean code desde o momento zero, compreendendo o ciclo de compilação, o Garbage Collector e o controle de fluxo transacional.",
+    "skills": ["Compilação e Bytecode (.class)", "Estruturas de Controle", "Modelagem de Tipos", "Clean Code Basics"],
+    "problems_solved": "A barreira inicial da verbosidade do Java. Superada adotando um foco estrito nas convenções da linguagem e no uso avançado de IDEs para focar no design de domínio, não na sintaxe."
+  },
+  {
+    "id": "alura-24-java-listas-e-colecoes-de-dados",
+    "title": "Java: Listas e Coleções de Dados",
+    "url": "https://www.ulissesflores.com/certifications/alura-24-java-listas-e-colecoes-de-dados",
+    "about": "A eficiência de um sistema financeiro depende de suas estruturas de dados. Aprofundei o estudo na API de Collections, focando em complexidade computacional (Big-O) e otimização de memória em tempo de execução.",
+    "skills": ["Estruturas de Dados Avançadas", "Análise Big-O", "Otimização de Memória JVM", "API de Collections (List, Set, Map)"],
+    "problems_solved": "Trade-offs de escalabilidade. O desafio foi dominar a seleção arquitetural correta das coleções (ex: ArrayList vs LinkedList vs HashSet) para processar volumes massivos de transações com latência mínima."
+  },
+  {
+    "id": "alura-25-java-api-arquivos-e-erros",
+    "title": "Java: API de Arquivos e Erros",
+    "url": "https://www.ulissesflores.com/certifications/alura-25-java-api-arquivos-e-erros",
+    "about": "Tratar falhas como um estado natural é o que constrói arquiteturas 'Antifrágeis'. O curso abordou a persistência I/O profunda e o controle hierárquico e rigoroso de exceções na máquina virtual Java.",
+    "skills": ["Manipulação I/O (Streams)", "Exception Handling (Checked/Unchecked)", "Design de Resiliência", "Persistência File-System"],
+    "problems_solved": "Crashes em cascata no sistema. Implementei um tratamento de erros polimórfico e customizado, garantindo a recuperação graciosa do estado do sistema sem perda de dados financeiros ou logs."
+  },
+  {
+    "id": "alura-26-c-linguagem-e-stl",
+    "title": "C++: Linguagem e STL",
+    "url": "https://www.ulissesflores.com/certifications/alura-26-c-linguagem-e-stl",
+    "about": "Controle determinístico sobre o hardware. O C++ aliado à STL me fornece o ferramental bruto para pesquisas de alto desempenho, controle robótico (IoT) e algoritmos que demandam micro-otimização de latência.",
+    "skills": ["Gestão Manual de Memória (Ponteiros)", "Standard Template Library (STL)", "Otimização Bare-Metal", "Programação de Sistemas"],
+    "problems_solved": "Complexidade de memory leaks e ponteiros soltos (dangling pointers). A solução foi a adoção de padrões modernos de C++ (Smart Pointers/RAII) para garantir segurança de memória em aplicações críticas."
+  },
+  {
+    "id": "alura-27-solid-com-php-principios-oop",
+    "title": "SOLID com PHP: Princípios OOP",
+    "url": "https://www.ulissesflores.com/certifications/alura-27-solid-com-php-principios-oop",
+    "about": "A aplicação implacável dos princípios SOLID é o estado da arte para a engenharia de longo prazo. Elevou o design arquitetural, garantindo manutenibilidade, testabilidade isolada e sistemas imunes a refatorações caóticas.",
+    "skills": ["Design de Baixo Acoplamento", "Single Responsibility (SRP)", "Inversão de Dependência (DIP)", "Testabilidade Estrutural"],
+    "problems_solved": "Inflexibilidade em sistemas legados. Apliquei o SOLID como um bisturi cirúrgico para desacoplar lógicas de domínio de frameworks engessados, viabilizando a injeção de dependências limpa."
+  },
+  {
+    "id": "alura-28-avancando-oop-com-php",
+    "title": "Avançando OOP com PHP",
+    "url": "https://www.ulissesflores.com/certifications/alura-28-avancando-oop-com-php",
+    "about": "Lapidação avançada do paradigma OO. Foco intenso em design de interfaces rígidas, abstração de polimorfismo e namespaces para garantir a integridade do domínio em arquiteturas PHP escaláveis.",
+    "skills": ["Modelagem Avançada de Domínio", "Arquitetura Modular (Namespaces)", "Polimorfismo Comportamental", "Uso Estratégico de Traits"],
+    "problems_solved": "O anti-padrão das 'God Classes' (classes onipotentes). O desafio foi fatiar responsabilidades monolíticas em objetos altamente coesos, orquestrados por interfaces bem definidas."
+  },
+  {
+    "id": "alura-29-design-patterns-em-php",
+    "title": "Design Patterns em PHP",
+    "url": "https://www.ulissesflores.com/certifications/alura-29-design-patterns-em-php",
+    "about": "O estudo formal dos Padrões de Projeto (Gang of Four). Adquiri o vocabulário arquitetural para identificar dores no software e aplicar soluções estruturais clássicas, separando 'escrever código' de 'arquitetar soluções'.",
+    "skills": ["Padrões Criacionais (Factory/Builder)", "Padrões Estruturais (Decorator/Adapter)", "Padrões Comportamentais (Strategy/Observer)", "Refatoração Baseada em Padrões"],
+    "problems_solved": "Over-engineering precoce. O maior valor foi aprender não apenas 'como' implementar um Design Pattern, mas 'quando' a complexidade real do domínio financeiro exige sua aplicação pragmática."
+  },
+  {
+    "id": "alura-30-orientacao-a-objetos-com-php",
+    "title": "Orientação a Objetos com PHP",
+    "url": "https://www.ulissesflores.com/certifications/alura-30-orientacao-a-objetos-com-php",
+    "about": "O marco zero da estruturação de sistemas complexos. Revisão atômica de abstração e modelagem de tipos. Essencial para transformar rotinas processuais procedurais em ecossistemas de objetos autônomos e previsíveis.",
+    "skills": ["Modelagem OO Fundamental", "Encapsulamento Protetivo", "Sintaxe Orientada a Objetos", "Troca de Mensagens entre Instâncias"],
+    "problems_solved": "A armadilha mental do código procedural. O desafio foi forçar a mudança de paradigma: parar de pensar em 'fluxos imperativos' e arquitetar soluções baseadas em estado e comportamento encapsulado."
+  },
+  {
+    "id": "alura-31-javascript-e-html-desenvolva-um-jogo",
+    "title": "JavaScript e HTML: Desenvolva um Jogo",
+    "url": "https://www.ulissesflores.com/certifications/alura-31-javascript-e-html-desenvolva-um-jogo",
+    "about": "Construir um motor de renderização interativo Vanilla JS (sem frameworks) solidifica os fundamentos matemáticos e a lógica assíncrona profunda no client-side (Event Loops e repaints do DOM).",
+    "skills": ["Lógica Algorítmica (Vetores e Colisões)", "Manipulação Profunda de DOM e Canvas", "Arquitetura de Event Loops", "Game Loop Design"],
+    "problems_solved": "Gerenciamento severo de estado e performance visual no navegador. Otimizei funções de repaint para manter a taxa de quadros (FPS) perfeitamente estável, evitando sobrecarga de CPU/RAM."
+  },
+  {
+    "id": "alura-32-mongodb-banco-de-dados-nosql",
+    "title": "MongoDB: Banco de Dados NoSQL",
+    "url": "https://www.ulissesflores.com/certifications/alura-32-mongodb-banco-de-dados-nosql",
+    "about": "O relacional não é bala de prata. Imersão em persistência baseada em documentos (BSON). Focado em escalabilidade horizontal (Sharding) e flexibilidade de schema para Big Data e logs massivos de telemetria.",
+    "skills": ["Modelagem de Documentos (NoSQL)", "Pipelines de Agregação Avançada", "Arquitetura de Replica Sets", "Estratégias de Sharding"],
+    "problems_solved": "O viés cognitivo de tentar normalizar dados NoSQL como tabelas SQL. Reaprendi a desnormalizar dados estrategicamente, otimizando o modelo para performance extrema de leitura em operações distribuídas."
+  },
+  {
+    "id": "coursera-philosophy-science-and-religion-science-and-philosophy",
+    "title": "Philosophy, Science and Religion (University of Edinburgh)",
+    "url": "https://www.ulissesflores.com/certifications/coursera-philosophy-science-and-religion-science-and-philosophy",
+    "about": "Uma imersão acadêmica na epistemologia. A intersecção entre pensamento crítico-filosófico e método científico molda a forma heurística e rigorosa como abordo a teoria dos sistemas complexos e pesquisa em Inteligência Artificial.",
+    "skills": ["Epistemologia Científica", "Lógica Formal e Argumentação", "Análise de Sistemas de Crenças", "Pensamento Holístico Transdisciplinar"],
+    "problems_solved": "Evitar o reducionismo tecnocrático cego. O curso forneceu o framework ético para tratar problemas arquiteturais de IA e biofabricação considerando variáveis ontológicas, não apenas operacionais."
+  },
+  {
+    "id": "edx-ai-in-practice-preparing-for-ai",
+    "title": "AI in Practice: Preparing for AI (TU Delft)",
+    "url": "https://www.ulissesflores.com/certifications/edx-ai-in-practice-preparing-for-ai",
+    "about": "A ponte pragmática entre a academia de IA e a adoção corporativa. Foco nos gargalos operacionais de Machine Learning, transição de dados qualitativos (DIKW) e governança de algoritmos autônomos no mercado real.",
+    "skills": ["Governança de IA Corporativa", "Arquitetura de Dados DIKW", "Ética e Compliance Algorítmica", "Mapeamento de Viabilidade ML"],
+    "problems_solved": "O desafio da 'Caixa Preta' em modelos preditivos. Estruturei diretrizes de explainability (interpretabilidade) essenciais para a implantação segura e auditável de Agentes Autônomos em ambientes financeiros."
+  }
+]

@@ -41,7 +41,7 @@ export default function Home() {
             <a href="#trajectory" className="hover:text-white transition-colors">Trajetória</a>
             <a href="#research" className="hover:text-white transition-colors">Publicações</a>
             <a href="/certifications" className="hover:text-white transition-colors">Certificações</a>
-            <a href="/sermons" className="hover:text-white transition-colors">Sermões</a>
+            <a href="/acervo-teologico" className="hover:text-white transition-colors">Sermões</a>
             <a href="/mundo-politico" className="hover:text-white transition-colors">Mundo Político</a>
           </div>
           <a href="#contact" className="px-4 py-2 bg-neutral-100 text-neutral-900 text-xs font-bold rounded-full hover:bg-emerald-400 transition-colors">
