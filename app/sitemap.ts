@@ -114,9 +114,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     maybeMakeSitemapEntry(acervoCanonicalPath, acervoLatestPublishedAt, 'weekly', 0.76),
     ...acervoSermons.map((sermon) => maybeMakeSitemapEntry(sermon.canonicalPath, sermon.publishedAt, 'monthly', 0.58)),
   ].filter((entry): entry is MetadataRoute.Sitemap[number] => Boolean(entry));
+  const identidadeEntry = maybeMakeSitemapEntry('/identidade', upkfMeta.generatedAt, 'weekly', 0.92);
 
   return [
     makeSitemapEntry('/', latestSiteDate, 'weekly', 1),
+    ...(identidadeEntry ? [identidadeEntry] : []),
     ...collectionEntries,
     ...publicationEntries,
     ...deepResearchEntries,

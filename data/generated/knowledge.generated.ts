@@ -1,10 +1,192 @@
 /* AUTO-GENERATED FILE. DO NOT EDIT MANUALLY.
- * Source: /Users/ulissesflores/Documents/Projetos/ulisses-hub/data/upkf/ulisses-flores-sovereign-upkf_v3.3.md
+ * Source: /Users/ulissesflores/Documents/Projetos/ulisses-hub/public/upkf-source.md
  * Generated at: 2026-02-21
  */
 
 export const knowledgeData = {
   "generatedAt": "2026-02-21",
+  "authorityProfile": {
+    "personRef": "https://ulissesflores.com/#person",
+    "jobTitle": [
+      "CTO",
+      "Consultor Estratégico em IA",
+      "Palestrante Profissional",
+      "Arquiteto de Sistemas"
+    ],
+    "knowsAbout": [
+      "Artificial Intelligence Governance",
+      "Autonomous Agents Architecture",
+      "Austrian Economics",
+      "Web3 Sovereign Identity",
+      "Complex Systems Resiliency",
+      "Austrian School of economics",
+      "Chaos theory",
+      "Econophysics",
+      "Complex adaptive system",
+      "Little's law",
+      "Long short-term memory (LSTM)",
+      "Anomaly detection",
+      "Market microstructure",
+      "Distributed computing",
+      "Edge computing",
+      "Internet of things",
+      "Zero trust security model",
+      "Smart contract",
+      "Monero",
+      "Ring signature",
+      "Secure multi-party computation"
+    ],
+    "hasCredential": [
+      {
+        "id": "https://ulissesflores.com/#credential-palau-digital-residency",
+        "name": "RNS.ID Digital Residency (Palau)",
+        "identifier": "LUA3604A",
+        "credentialCategory": "Digital Residency",
+        "url": "https://rns.id/"
+      },
+      {
+        "id": "https://ulissesflores.com/#credential-gitcoin-passport",
+        "name": "Gitcoin Passport",
+        "identifier": "39",
+        "credentialCategory": "Web3 Identity Credential",
+        "url": "https://passport.gitcoin.co/"
+      }
+    ],
+    "geographicallyServes": [
+      "Itupeva",
+      "Jundiaí",
+      "Campinas",
+      "São Paulo",
+      "Brazil",
+      "Italy",
+      "United States",
+      "El Salvador",
+      "Israel"
+    ],
+    "sovereignIdentity": {
+      "palauDigitalResidency": {
+        "label": "RNS.ID (Palau)",
+        "value": "LUA3604A",
+        "url": "https://rns.id/",
+        "notes": "National digital ID (Palau)"
+      },
+      "gitcoinPassport": {
+        "label": "Gitcoin Passport",
+        "value": "39",
+        "url": "https://passport.gitcoin.co/",
+        "notes": "Sybil resistance score"
+      },
+      "keybaseUrl": "https://keybase.io/ul1ss3sfl0r3s",
+      "gravatarUrl": "https://gravatar.com/ulissesflores"
+    },
+    "domainInventory": [
+      {
+        "position": 1,
+        "domain": "ulissesflores.com",
+        "url": "https://ulissesflores.com/",
+        "category": "**HUB (canonical)**",
+        "purpose": "Primary sovereign site"
+      },
+      {
+        "position": 2,
+        "domain": "ulissesflor.es",
+        "url": "https://ulissesflor.es/",
+        "category": "Brand protection",
+        "purpose": "Vanity redirect"
+      },
+      {
+        "position": 3,
+        "domain": "ulisses.digital",
+        "url": "https://ulisses.digital/",
+        "category": "Brand protection",
+        "purpose": "Redirect"
+      },
+      {
+        "position": 4,
+        "domain": "ulissesflores.org",
+        "url": "https://ulissesflores.org/",
+        "category": "Brand protection",
+        "purpose": "Redirect"
+      },
+      {
+        "position": 5,
+        "domain": "carlosulisses.com.br",
+        "url": "https://carlosulisses.com.br/",
+        "category": "Brand protection",
+        "purpose": "BR legacy"
+      },
+      {
+        "position": 6,
+        "domain": "carlosulissesflores.com.br",
+        "url": "https://carlosulissesflores.com.br/",
+        "category": "Brand protection",
+        "purpose": "BR legacy"
+      },
+      {
+        "position": 7,
+        "domain": "ulissesflores.com.br",
+        "url": "https://ulissesflores.com.br/",
+        "category": "Brand protection",
+        "purpose": "BR legacy"
+      },
+      {
+        "position": 8,
+        "domain": "cuf.dev.br",
+        "url": "https://cuf.dev.br/",
+        "category": "Brand protection",
+        "purpose": "Dev initials"
+      },
+      {
+        "position": 9,
+        "domain": "ulisses.solutions",
+        "url": "https://ulisses.solutions/",
+        "category": "Deep link",
+        "purpose": "Service page"
+      },
+      {
+        "position": 10,
+        "domain": "ulissesflores.dev",
+        "url": "https://ulissesflores.dev/",
+        "category": "Deep link",
+        "purpose": "Developer profile"
+      },
+      {
+        "position": 11,
+        "domain": "ulisses.ia.br",
+        "url": "https://ulisses.ia.br/",
+        "category": "Deep link",
+        "purpose": "AI focus"
+      },
+      {
+        "position": 12,
+        "domain": "11-97272-7532.me",
+        "url": "https://11-97272-7532.me/",
+        "category": "Deep link",
+        "purpose": "Phone-to-web"
+      },
+      {
+        "position": 13,
+        "domain": "ul1ss.es",
+        "url": "https://ul1ss.es/",
+        "category": "Infrastructure",
+        "purpose": "Vanity / shortener"
+      },
+      {
+        "position": 14,
+        "domain": "anamnese.cc",
+        "url": "https://anamnese.cc/",
+        "category": "Project",
+        "purpose": "Isolated project"
+      },
+      {
+        "position": 15,
+        "domain": "horarionibus.com.br",
+        "url": "https://horarionibus.com.br/",
+        "category": "Project",
+        "purpose": "Isolated project"
+      }
+    ]
+  },
   "certifications": [
     {
       "slug": "alura-1-entrega-continua-confiabilidade-e-qualidade",

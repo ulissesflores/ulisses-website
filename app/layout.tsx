@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { siteJsonLd, upkfMeta } from '@/data/generated/upkf.generated';
 import { buildLanguageAlternates } from '@/data/seo';
 import { GlobalHeader } from '@/components/global-header';
+import { GlobalFooter } from '@/components/global-footer';
 import './globals.css';
 
 const siteUrl = upkfMeta.primaryWebsite;
@@ -95,6 +96,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           dangerouslySetInnerHTML={{ __html: JSON.stringify(siteJsonLd) }}
         />
         {children}
+        <GlobalFooter />
       </body>
     </html>
   );

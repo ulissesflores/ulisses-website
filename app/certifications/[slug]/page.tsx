@@ -114,6 +114,12 @@ export default async function CertificationDetailPage({ params }: PageProps) {
           <p className='text-xs uppercase tracking-widest text-emerald-400 mb-3'>{certification.provider}</p>
           <h1 className='text-3xl md:text-4xl font-bold text-white mb-4'>{certification.title}</h1>
           <p className='text-neutral-400 leading-relaxed'>{certification.about}</p>
+          <p className='text-sm text-neutral-500 mt-3'>
+            Autor:{' '}
+            <Link href='/identidade' className='text-emerald-300 hover:text-emerald-200 transition-colors'>
+              Ulisses Flores
+            </Link>
+          </p>
         </header>
 
         <section className='rounded-xl border border-neutral-800 bg-neutral-900/30 p-6 space-y-6'>

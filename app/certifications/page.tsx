@@ -93,6 +93,13 @@ export default function CertificationsPage() {
             Diretorio canonico de certificacoes com contexto tecnico, habilidades adquiridas, problemas resolvidos e
             verificacao publica para cada credencial.
           </p>
+          <p className='text-sm text-neutral-500 mt-3'>
+            Curadoria de{' '}
+            <Link href='/identidade' className='text-emerald-300 hover:text-emerald-200 transition-colors'>
+              Ulisses Flores
+            </Link>
+            .
+          </p>
         </header>
 
         <div className='space-y-10'>

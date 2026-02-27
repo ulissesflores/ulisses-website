@@ -113,6 +113,12 @@ export default async function AcervoSermonDetailPage({ params }: PageProps) {
           <p className='text-xs uppercase tracking-widest text-emerald-400 mb-3'>{clusterEntry.seoTitle}</p>
           <h1 className='text-3xl md:text-4xl font-bold text-white mb-4'>{sermon.seoTitle}</h1>
           <p className='text-sm text-neutral-500 mb-4'>Publicado em {sermon.publishedAt}</p>
+          <p className='text-sm text-neutral-500 mb-4'>
+            Autor:{' '}
+            <Link href='/identidade' className='text-emerald-300 hover:text-emerald-200 transition-colors'>
+              Ulisses Flores
+            </Link>
+          </p>
           <p className='text-neutral-400 leading-relaxed'>{sermon.clusterMetaDescription}</p>
         </header>
 

@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "upkf:generate": "node scripts/upkf/generate-artifacts.mjs",
+    "upkf:generate": "node scripts/upkf/generate-artifacts-v2.mjs",
     "upkf:verify": "node scripts/upkf/verify-artifacts.mjs",
     "upkf:check": "npm run upkf:generate && npm run upkf:verify",
     "research:generate": "node scripts/research/generate-manuscripts.mjs",

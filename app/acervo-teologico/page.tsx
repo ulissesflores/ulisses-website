@@ -52,6 +52,12 @@ export default function AcervoTeologicoPage() {
           <p className='text-sm text-neutral-500 mt-4'>
             Total de clusters: {acervoClusters.length} · Total de mensagens: {acervoSermons.length}
           </p>
+          <p className='text-sm text-neutral-500 mt-2'>
+            Autor:{' '}
+            <Link href='/identidade' className='text-emerald-300 hover:text-emerald-200 transition-colors'>
+              Ulisses Flores
+            </Link>
+          </p>
         </header>
 
         <div className='space-y-8'>

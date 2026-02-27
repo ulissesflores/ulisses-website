@@ -24,6 +24,9 @@ export function GlobalHeader() {
           <Link href='/certifications' className='hover:text-white transition-colors'>
             Certificacoes
           </Link>
+          <Link href='/identidade' className='hover:text-white transition-colors'>
+            Identidade
+          </Link>
           <Link href='/acervo-teologico' className='hover:text-white transition-colors'>
             Acervo Teologico
           </Link>
