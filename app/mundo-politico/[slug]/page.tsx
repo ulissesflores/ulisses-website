@@ -4,7 +4,7 @@ import { notFound } from 'next/navigation';
 import { knowledgeData } from '@/data/knowledge';
 import { upkfMeta } from '@/data/generated/upkf.generated';
 import { buildLanguageAlternates } from '@/data/seo';
-import { AuthorHubCard } from '@/components/author-hub-card';
+import AuthorHubCard from '@/components/author-hub-card';
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -85,9 +85,6 @@ export default async function MundoPoliticoPostPage({ params }: PageProps) {
           <h1 className='text-3xl md:text-4xl font-bold text-white mb-4'>{post.headline}</h1>
           <p className='text-sm text-neutral-500 mb-4'>Publicado em {post.publishedAt}</p>
           <p className='text-neutral-400 leading-relaxed'>{post.summary}</p>
-          <div className='mt-4 max-w-xl'>
-            <AuthorHubCard label='Hub canônico' compact />
-          </div>
         </header>
 
         <section className='rounded-xl border border-neutral-800 bg-neutral-900/30 p-6 space-y-5'>
@@ -114,6 +111,8 @@ export default async function MundoPoliticoPostPage({ params }: PageProps) {
             </a>
           </div>
         </section>
+
+        <AuthorHubCard />
       </main>
 
       <script type='application/ld+json' dangerouslySetInnerHTML={{ __html: JSON.stringify(blogPostingJsonLd) }} />

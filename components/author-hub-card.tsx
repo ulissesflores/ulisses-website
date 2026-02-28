@@ -1,36 +1,21 @@
 import Link from 'next/link';
 
-type AuthorHubCardProps = {
-  label?: string;
-  name?: string;
-  href?: string;
-  description?: string;
-  compact?: boolean;
-};
-
-export function AuthorHubCard({
-  label = 'Autor',
-  name = 'Ulisses Flores',
-  href = '/identidade',
-  description = 'Fonte canônica de autoria e identidade semântica deste conteúdo.',
-  compact = false,
-}: AuthorHubCardProps) {
+export default function AuthorHubCard() {
   return (
-    <aside
-      className={`rounded-xl border border-neutral-800 bg-neutral-900/40 ${
-        compact ? 'p-4' : 'p-5'
-      }`}
-      aria-label='Author canonical hub'
-    >
-      <p className='text-[11px] uppercase tracking-[0.18em] text-neutral-500 mb-2'>{label}</p>
-      <p className={`text-neutral-400 ${compact ? 'text-xs mb-3' : 'text-sm mb-4'}`}>{description}</p>
-      <Link
-        href={href}
-        rel='author'
-        className='inline-flex items-center gap-2 rounded-full border border-emerald-500/50 px-3 py-1.5 text-xs font-semibold text-emerald-300 hover:bg-emerald-900/20 transition-colors'
-      >
-        {name}
-      </Link>
-    </aside>
+    <footer className='mt-20 pt-8 pb-4 border-t border-neutral-900/50'>
+      <div className='max-w-prose mx-auto text-center md:text-left'>
+        <p className='text-[13px] text-neutral-500 font-light'>
+          Escrito por{' '}
+          <Link
+            href='/identidade'
+            rel='author'
+            className='text-neutral-400 hover:text-emerald-400 transition-colors border-b border-transparent hover:border-emerald-400/30 pb-0.5'
+          >
+            Carlos Ulisses Flores
+          </Link>{' '}
+          · CTO e Pesquisador Polímata.
+        </p>
+      </div>
+    </footer>
   );
 }

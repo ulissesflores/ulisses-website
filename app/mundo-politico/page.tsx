@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { knowledgeData } from '@/data/knowledge';
 import { upkfMeta } from '@/data/generated/upkf.generated';
 import { buildLanguageAlternates } from '@/data/seo';
-import { AuthorHubCard } from '@/components/author-hub-card';
+import AuthorHubCard from '@/components/author-hub-card';
 
 export const metadata: Metadata = {
   title: 'Mundo Politico | Canonical Index',
@@ -55,13 +55,6 @@ export default function MundoPoliticoPage() {
             Esta seção organiza as publicações do portal Mundo Político em páginas canônicas internas, com contexto editorial e
             referência para a URL original.
           </p>
-          <div className='mt-4 max-w-xl'>
-            <AuthorHubCard
-              label='Hub canônico'
-              compact
-              description='Coleção editorial indexada com vínculo explícito de autoria para GEO.'
-            />
-          </div>
         </header>
 
         <div className='space-y-4'>
@@ -88,6 +81,8 @@ export default function MundoPoliticoPage() {
             </article>
           ))}
         </div>
+
+        <AuthorHubCard />
       </main>
 
       <script type='application/ld+json' dangerouslySetInnerHTML={{ __html: JSON.stringify(pageJsonLd) }} />

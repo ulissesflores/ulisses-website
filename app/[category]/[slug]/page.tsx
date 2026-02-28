@@ -5,7 +5,7 @@ import { ArrowLeft, BookOpen, Calendar, Download, FileText } from 'lucide-react'
 import { publicationCollections, publications } from '@/data/publications';
 import { upkfMeta } from '@/data/generated/upkf.generated';
 import { buildLanguageAlternates } from '@/data/seo';
-import { AuthorHubCard } from '@/components/author-hub-card';
+import AuthorHubCard from '@/components/author-hub-card';
 
 interface PageProps {
   params: Promise<{ category: string; slug: string }>;
@@ -147,12 +147,6 @@ export default async function ArticlePage({ params }: PageProps) {
         >
           Ir para Home
         </Link>
-        <div className='mb-10'>
-          <AuthorHubCard
-            label='Hub canônico'
-            description='Fonte de autoria e identidade semântica desta publicação.'
-          />
-        </div>
 
         <header className='mb-12 border-b border-white/10 pb-12'>
           <div className='flex flex-wrap gap-4 mb-6'>
@@ -347,6 +341,8 @@ export default async function ArticlePage({ params }: PageProps) {
             </p>
           </section>
         </div>
+
+        <AuthorHubCard />
       </main>
 
       <script type='application/ld+json' dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }} />

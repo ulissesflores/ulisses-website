@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { RapaduriaSimulation } from '@/components/simulations/rapaduria/rapaduria-simulation';
 import { upkfMeta } from '@/data/generated/upkf.generated';
 import { buildLanguageAlternates } from '@/data/seo';
-import { AuthorHubCard } from '@/components/author-hub-card';
+import AuthorHubCard from '@/components/author-hub-card';
 
 const canonicalPath = '/simulacoes/rapaduria-2027';
 
@@ -72,10 +72,7 @@ export default async function Rapaduria2027Page({
       <RapaduriaSimulation initialPath={initialPath} />
       <section className='bg-neutral-950 text-neutral-200 pb-12'>
         <div className='max-w-7xl mx-auto px-6'>
-          <AuthorHubCard
-            label='Autor da Simulação'
-            description='Simulação conectada à entidade canônica para validação de autoria em buscadores e LLMs.'
-          />
+          <AuthorHubCard />
         </div>
       </section>
       <script id='structured-data-rapaduria' type='application/ld+json' dangerouslySetInnerHTML={{ __html: JSON.stringify(pageJsonLd) }} />

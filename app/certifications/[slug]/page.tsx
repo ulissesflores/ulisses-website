@@ -4,7 +4,7 @@ import { notFound } from 'next/navigation';
 import { certificationsSotaData, getCertificationSotaBySlug } from '@/data/certifications-sota';
 import { upkfMeta } from '@/data/generated/upkf.generated';
 import { buildLanguageAlternates } from '@/data/seo';
-import { AuthorHubCard } from '@/components/author-hub-card';
+import AuthorHubCard from '@/components/author-hub-card';
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -121,9 +121,6 @@ export default async function CertificationDetailPage({ params }: PageProps) {
           <p className='text-xs uppercase tracking-widest text-emerald-400 mb-3'>{certification.provider}</p>
           <h1 className='text-3xl md:text-4xl font-bold text-white mb-4'>{certification.title}</h1>
           <p className='text-neutral-400 leading-relaxed'>{certification.about}</p>
-          <div className='mt-4 max-w-xl'>
-            <AuthorHubCard label='Autor' compact />
-          </div>
         </header>
 
         <section className='rounded-xl border border-neutral-800 bg-neutral-900/30 p-6 space-y-6'>
@@ -167,6 +164,8 @@ export default async function CertificationDetailPage({ params }: PageProps) {
             </a>
           </div>
         </section>
+
+        <AuthorHubCard />
       </main>
 
       <script type='application/ld+json' dangerouslySetInnerHTML={{ __html: JSON.stringify(certificationJsonLd) }} />

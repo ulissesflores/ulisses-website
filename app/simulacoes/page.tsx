@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { upkfMeta } from '@/data/generated/upkf.generated';
 import { buildLanguageAlternates } from '@/data/seo';
-import { AuthorHubCard } from '@/components/author-hub-card';
+import AuthorHubCard from '@/components/author-hub-card';
 
 const canonicalPath = '/simulacoes';
 
@@ -44,13 +44,6 @@ export default function SimulacoesPage() {
             Espaço dedicado a projetos em execução com narrativa orientada a decisão. Cada simulação combina
             engenharia de interface, hipótese estratégica e visualização dinâmica de métricas.
           </p>
-          <div className='mt-5 max-w-xl'>
-            <AuthorHubCard
-              label='Hub canônico'
-              compact
-              description='Simulações conectadas à identidade soberana para contexto autoral e indexação semântica.'
-            />
-          </div>
         </header>
 
         <section className='grid gap-6'>
@@ -69,6 +62,8 @@ export default function SimulacoesPage() {
             </Link>
           </article>
         </section>
+
+        <AuthorHubCard />
       </main>
     </div>
   );

@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { certificationsSotaData } from '@/data/certifications-sota';
 import { upkfMeta } from '@/data/generated/upkf.generated';
 import { buildLanguageAlternates } from '@/data/seo';
-import { AuthorHubCard } from '@/components/author-hub-card';
+import AuthorHubCard from '@/components/author-hub-card';
 
 const providerOrder = ['Alura', 'Coursera', 'edX'] as const;
 type CertificationItem = (typeof certificationsSotaData)[number];
@@ -94,13 +94,6 @@ export default function CertificationsPage() {
             Diretorio canonico de certificacoes com contexto tecnico, habilidades adquiridas, problemas resolvidos e
             verificacao publica para cada credencial.
           </p>
-          <div className='mt-4 max-w-xl'>
-            <AuthorHubCard
-              label='Curadoria canônica'
-              compact
-              description='Coleção conectada ao hub de identidade para reforço de autoria em SEO e LLMs.'
-            />
-          </div>
         </header>
 
         <div className='space-y-10'>
@@ -155,6 +148,8 @@ export default function CertificationsPage() {
             </section>
           ))}
         </div>
+
+        <AuthorHubCard />
       </main>
 
       <script type='application/ld+json' dangerouslySetInnerHTML={{ __html: JSON.stringify(pageJsonLd) }} />

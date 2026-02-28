@@ -5,7 +5,7 @@ import { acervoCanonicalPath, acervoSermons, getAcervoCluster, getAcervoSermon }
 import { knowledgeData } from '@/data/knowledge';
 import { upkfMeta } from '@/data/generated/upkf.generated';
 import { buildLanguageAlternates } from '@/data/seo';
-import { AuthorHubCard } from '@/components/author-hub-card';
+import AuthorHubCard from '@/components/author-hub-card';
 
 interface PageProps {
   params: Promise<{ cluster: string; slug: string }>;
@@ -120,9 +120,6 @@ export default async function AcervoSermonDetailPage({ params }: PageProps) {
           <p className='text-xs uppercase tracking-widest text-emerald-400 mb-3'>{clusterEntry.seoTitle}</p>
           <h1 className='text-3xl md:text-4xl font-bold text-white mb-4'>{sermon.seoTitle}</h1>
           <p className='text-sm text-neutral-500 mb-4'>Publicado em {sermon.publishedAt}</p>
-          <div className='mb-4 max-w-xl'>
-            <AuthorHubCard label='Autor' compact />
-          </div>
           <p className='text-neutral-400 leading-relaxed'>{sermon.clusterMetaDescription}</p>
         </header>
 
@@ -144,6 +141,8 @@ export default async function AcervoSermonDetailPage({ params }: PageProps) {
             </a>
           </div>
         </section>
+
+        <AuthorHubCard />
       </main>
 
       <script type='application/ld+json' dangerouslySetInnerHTML={{ __html: JSON.stringify(sermonJsonLd) }} />
