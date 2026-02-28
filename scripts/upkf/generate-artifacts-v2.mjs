@@ -3276,6 +3276,188 @@ function slugify(value) {
     .replace(/^-|-$/g, '');
 }
 
+function asTypeList(typeValue) {
+  if (Array.isArray(typeValue)) {
+    return typeValue.filter((item) => typeof item === 'string');
+  }
+  return typeof typeValue === 'string' ? [typeValue] : [];
+}
+
+function hasSchemaType(node, typeName) {
+  return asTypeList(node?.['@type']).includes(typeName);
+}
+
+function ensureDateTime(dateValue) {
+  if (typeof dateValue !== 'string') {
+    return undefined;
+  }
+  const normalized = dateValue.trim();
+  if (!normalized) {
+    return undefined;
+  }
+  if (normalized.includes('T')) {
+    return normalized;
+  }
+  if (/^\d{4}-\d{2}-\d{2}$/.test(normalized)) {
+    return `${normalized}T00:00:00Z`;
+  }
+  return normalized;
+}
+
+function extractYoutubeVideoId(urlValue) {
+  if (typeof urlValue !== 'string') {
+    return '';
+  }
+  const raw = urlValue.trim();
+  if (!raw) {
+    return '';
+  }
+
+  try {
+    const parsed = new URL(raw);
+    const host = parsed.hostname.toLowerCase();
+    if (!host.includes('youtube.com') && !host.includes('youtu.be')) {
+      return '';
+    }
+
+    const byQuery = parsed.searchParams.get('v');
+    if (byQuery) {
+      return byQuery;
+    }
+
+    const segments = parsed.pathname.split('/').filter(Boolean);
+    if (host.includes('youtu.be') && segments[0]) {
+      return segments[0];
+    }
+
+    const markerIndex = segments.findIndex((segment) => ['embed', 'shorts', 'live'].includes(segment));
+    if (markerIndex >= 0 && segments[markerIndex + 1]) {
+      return segments[markerIndex + 1];
+    }
+
+    return segments.length > 0 ? segments[segments.length - 1] : '';
+  } catch {
+    const byQuery = raw.match(/[?&]v=([A-Za-z0-9_-]{6,})/);
+    if (byQuery) {
+      return byQuery[1];
+    }
+    const byPath = raw.match(/(?:embed|shorts|youtu\.be)\/([A-Za-z0-9_-]{6,})/);
+    return byPath ? byPath[1] : '';
+  }
+}
+
+function ensureImageArray(imageValue, fallbackImageUrl) {
+  if (Array.isArray(imageValue)) {
+    return imageValue.length > 0 ? imageValue : [fallbackImageUrl];
+  }
+  if (typeof imageValue === 'string' && imageValue.trim()) {
+    return [imageValue.trim()];
+  }
+  if (imageValue && typeof imageValue === 'object') {
+    return [imageValue];
+  }
+  return [fallbackImageUrl];
+}
+
+function ensurePublisherWithLogo(publisherValue, siteUrl, fallbackImageUrl) {
+  const fallbackPublisherId = `${siteUrl}/#codexhash`;
+  const publisher =
+    publisherValue && typeof publisherValue === 'object' && !Array.isArray(publisherValue)
+      ? { ...publisherValue }
+      : {};
+
+  if (!publisher['@id']) {
+    publisher['@id'] =
+      typeof publisherValue === 'string' && publisherValue.trim() ? publisherValue.trim() : fallbackPublisherId;
+  }
+
+  if (typeof publisher.logo === 'string' && publisher.logo.trim()) {
+    publisher.logo = {
+      '@type': 'ImageObject',
+      url: publisher.logo.trim(),
+    };
+    return publisher;
+  }
+
+  if (publisher.logo && typeof publisher.logo === 'object' && !Array.isArray(publisher.logo)) {
+    publisher.logo = {
+      '@type': publisher.logo['@type'] || 'ImageObject',
+      url: publisher.logo.url || fallbackImageUrl,
+      ...publisher.logo,
+    };
+    return publisher;
+  }
+
+  publisher.logo = {
+    '@type': 'ImageObject',
+    url: fallbackImageUrl,
+  };
+  return publisher;
+}
+
+function applyRichResultFallbacks(publicJsonLd, siteUrl) {
+  const fallbackImageUrl = `${siteUrl}/carlos-ulisses-flores-cto.jpg`;
+  const graph = Array.isArray(publicJsonLd?.['@graph']) ? publicJsonLd['@graph'] : [];
+
+  const enrichedGraph = graph.map((node) => {
+    if (!node || typeof node !== 'object') {
+      return node;
+    }
+
+    const enrichedNode = { ...node };
+
+    if (
+      hasSchemaType(enrichedNode, 'VideoObject') &&
+      typeof enrichedNode.url === 'string' &&
+      enrichedNode.url.toLowerCase().includes('youtube.com')
+    ) {
+      const videoId = extractYoutubeVideoId(enrichedNode.url);
+      const uploadDate = ensureDateTime(enrichedNode.datePublished);
+      if (uploadDate && !enrichedNode.uploadDate) {
+        enrichedNode.uploadDate = uploadDate;
+      }
+      if (videoId) {
+        if (!enrichedNode.thumbnailUrl) {
+          enrichedNode.thumbnailUrl = `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`;
+        }
+        if (!enrichedNode.embedUrl) {
+          enrichedNode.embedUrl = `https://www.youtube.com/embed/${videoId}`;
+        }
+      }
+      if (!enrichedNode.description) {
+        const fallbackName =
+          typeof enrichedNode.name === 'string' && enrichedNode.name.trim()
+            ? enrichedNode.name.trim()
+            : 'conteudo sem titulo';
+        enrichedNode.description = `Sermão e estudo teológico: ${fallbackName}. Ministrado por Carlos Ulisses Flores no Hub Canônico.`;
+      }
+    }
+
+    if (
+      hasSchemaType(enrichedNode, 'ScholarlyArticle') ||
+      hasSchemaType(enrichedNode, 'Report') ||
+      hasSchemaType(enrichedNode, 'BlogPosting')
+    ) {
+      enrichedNode.image = ensureImageArray(enrichedNode.image, fallbackImageUrl);
+      enrichedNode.publisher = ensurePublisherWithLogo(enrichedNode.publisher, siteUrl, fallbackImageUrl);
+      if (!enrichedNode.dateModified && enrichedNode.datePublished) {
+        enrichedNode.dateModified = enrichedNode.datePublished;
+      }
+    }
+
+    if (hasSchemaType(enrichedNode, 'EducationalOccupationalCredential')) {
+      enrichedNode.image = ensureImageArray(enrichedNode.image, fallbackImageUrl);
+    }
+
+    return enrichedNode;
+  });
+
+  return {
+    ...publicJsonLd,
+    '@graph': enrichedGraph,
+  };
+}
+
 function buildBlogNodes(siteUrl, blogPosts) {
   if (!blogPosts.posts || blogPosts.posts.length === 0) {
     return [];
@@ -3439,10 +3621,12 @@ function buildPublicJsonLd({
     hasPart: publicHasPart,
   };
 
-  return {
+  const publicJsonLd = {
     '@context': 'https://schema.org',
     '@graph': [...baseGraph, ...collectionNodes, ...publicationNodes, ...extraNodes, publicDatasetNode],
   };
+
+  return applyRichResultFallbacks(publicJsonLd, siteUrl);
 }
 
 function buildFullUpkfJsonLd({
