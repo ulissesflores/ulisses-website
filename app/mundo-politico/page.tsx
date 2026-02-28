@@ -54,6 +54,12 @@ export default function MundoPoliticoPage() {
             Esta seção organiza as publicações do portal Mundo Político em páginas canônicas internas, com contexto editorial e
             referência para a URL original.
           </p>
+          <p className='text-sm text-neutral-500 mt-3'>
+            Hub canônico:{' '}
+            <Link href='/identidade' className='text-emerald-300 hover:text-emerald-200 transition-colors'>
+              Identidade Soberana
+            </Link>
+          </p>
         </header>
 
         <div className='space-y-4'>

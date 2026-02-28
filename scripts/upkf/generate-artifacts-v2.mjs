@@ -747,6 +747,420 @@ function parseKnowledgeDomains(upkfText) {
     .filter(Boolean);
 }
 
+function escapeRegExp(value) {
+  return String(value).replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+}
+
+function splitByThirdLevelHeadings(section) {
+  const headingRegex = /^###\s+(.+)$/gm;
+  const headings = Array.from(section.matchAll(headingRegex)).map((match) => ({
+    heading: match[1].trim(),
+    index: match.index ?? 0,
+  }));
+
+  return headings.map((entry, index) => {
+    const next = headings[index + 1];
+    const block = section.slice(entry.index, next ? next.index : section.length);
+    return {
+      heading: entry.heading,
+      block,
+    };
+  });
+}
+
+function splitBySecondAndThirdLevelHeadings(section) {
+  const headingRegex = /^(##|###)\s+(.+)$/gm;
+  const headings = Array.from(section.matchAll(headingRegex)).map((match) => ({
+    heading: match[2].trim(),
+    index: match.index ?? 0,
+  }));
+
+  return headings.map((entry, index) => {
+    const next = headings[index + 1];
+    const block = section.slice(entry.index, next ? next.index : section.length);
+    return {
+      heading: entry.heading,
+      block,
+    };
+  });
+}
+
+function normalizeHeadingTitle(value) {
+  return String(value).replace(/^\d+\.\s*/, '').trim();
+}
+
+function parseIndentedMap(block, key) {
+  const pattern = new RegExp(`- ${escapeRegExp(key)}:\\n([\\s\\S]*?)(?=\\n- [a-zA-Z0-9_]+:|$)`);
+  const match = block.match(pattern);
+  if (!match) {
+    return {};
+  }
+
+  const lines = match[1].split('\n');
+  const map = {};
+
+  let activeKey = '';
+  let activeValue = [];
+  let multiline = false;
+
+  const flush = () => {
+    if (!activeKey) {
+      return;
+    }
+    const joined = activeValue
+      .map((line) => line.trim())
+      .filter(Boolean)
+      .join(' ')
+      .trim();
+    if (joined) {
+      map[activeKey] = joined;
+    }
+    activeKey = '';
+    activeValue = [];
+    multiline = false;
+  };
+
+  for (const line of lines) {
+    const langMatch = line.match(/^\s{4}([a-zA-Z0-9-]+):\s*(.*)$/);
+    if (langMatch) {
+      flush();
+      const lang = langMatch[1].trim();
+      const raw = langMatch[2].trim();
+      if (!lang) {
+        continue;
+      }
+      if (!raw || raw === '>') {
+        activeKey = lang;
+        multiline = true;
+        continue;
+      }
+      map[lang] = raw.replace(/^"|"$/g, '').replace(/^'|'$/g, '').trim();
+      continue;
+    }
+
+    if (!multiline || !activeKey) {
+      continue;
+    }
+
+    const valueMatch = line.match(/^\s{6}(.+)$/);
+    if (valueMatch) {
+      activeValue.push(valueMatch[1]);
+    }
+  }
+
+  flush();
+  return map;
+}
+
+function parseIndentedList(block, key) {
+  const pattern = new RegExp(`- ${escapeRegExp(key)}:\\n([\\s\\S]*?)(?=\\n- [a-zA-Z0-9_]+:|$)`);
+  const match = block.match(pattern);
+  if (!match) {
+    return [];
+  }
+
+  return match[1]
+    .split('\n')
+    .map((line) => {
+      const entryMatch = line.match(/^\s{4}-\s+(.+)$/);
+      return entryMatch ? entryMatch[1].trim() : '';
+    })
+    .filter(Boolean);
+}
+
+function parseBlockParagraph(block, key) {
+  const pattern = new RegExp(`- ${escapeRegExp(key)}:\\s*>\\n([\\s\\S]*?)(?=\\n- [a-zA-Z0-9_]+:|\\n###\\s|$)`, 'm');
+  const match = block.match(pattern);
+  if (!match) {
+    return '';
+  }
+
+  return match[1]
+    .split('\n')
+    .map((line) => line.replace(/^\s{4}/, '').trim())
+    .filter(Boolean)
+    .join(' ')
+    .trim();
+}
+
+function parseCurrentOccupations(upkfText) {
+  const section = extractBlock(upkfText, '## Current Occupations\n', '\n\n## Professional Experience (Chronological)');
+  if (!section) {
+    return [];
+  }
+
+  return splitByThirdLevelHeadings(section)
+    .map(({ heading, block }, index) => ({
+      position: index + 1,
+      title: normalizeHeadingTitle(heading),
+      schemaId: extractScalar(block, 'schema_id'),
+      schemaType: extractScalar(block, 'schema_type') || 'Occupation',
+      organizationRef: extractScalar(block, 'organization_ref'),
+      location: extractScalar(block, 'location'),
+      appliedSkills: parseInlineArray(extractScalar(block, 'applied_skills')),
+    }))
+    .filter((occupation) => occupation.title && occupation.schemaId);
+}
+
+function parseAcademicCredentialEntries(section, sourceType) {
+  if (!section) {
+    return [];
+  }
+
+  return splitByThirdLevelHeadings(section)
+    .map(({ heading, block }, index) => {
+      const thesisTitle = parseIndentedMap(block, 'thesis_title');
+      const topics = parseInlineArray(extractScalar(block, 'topics'));
+      const skillsAcquired = parseInlineArray(extractScalar(block, 'skills_acquired'));
+      const thesisTopics = parseInlineArray(extractScalar(block, 'thesis_topics'));
+      const skills = Array.from(new Set([...topics, ...skillsAcquired, ...thesisTopics]));
+
+      return {
+        position: index + 1,
+        sourceType,
+        title: normalizeHeadingTitle(heading),
+        schemaId: extractScalar(block, 'schema_id'),
+        schemaType: extractScalar(block, 'schema_type') || 'EducationalOccupationalCredential',
+        institution: extractScalar(block, 'institution'),
+        institutionRef: extractScalar(block, 'institution_ref'),
+        institutionUrl: extractScalar(block, 'institution_url'),
+        institutionSameAs: extractScalar(block, 'institution_sameAs'),
+        period: extractScalar(block, 'period'),
+        credentialStatus:
+          extractScalar(block, 'credentialStatus') || (sourceType === 'internationalExtensions' ? 'Completed' : ''),
+        credentialCategory: extractScalar(block, 'credentialCategory'),
+        thesisTitle,
+        skills,
+        flagshipProjectRef: extractScalar(block, 'flagship_project_ref'),
+      };
+    })
+    .filter((credential) => credential.title && credential.schemaId);
+}
+
+function parseAcademicCredentials(upkfText) {
+  const formalSection = extractBlock(upkfText, '## Formal Degrees\n', '\n\n## International Extensions');
+  const extensionsSection = extractBlock(upkfText, '## International Extensions\n', '\n\n## Licenses & Certifications');
+
+  return [
+    ...parseAcademicCredentialEntries(formalSection, 'formalDegrees'),
+    ...parseAcademicCredentialEntries(extensionsSection, 'internationalExtensions'),
+  ];
+}
+
+function parseSoftwareReleases(block) {
+  const releasesMatch = block.match(/^- releases:\n([\s\S]*?)(?=\n- [a-zA-Z0-9_]+:|$)/m);
+  if (!releasesMatch) {
+    return [];
+  }
+
+  return releasesMatch[1]
+    .split('\n')
+    .map((line) => line.match(/^\s{2}-\s+(.+)$/))
+    .filter(Boolean)
+    .map((match) => String(match[1] || '').trim())
+    .map((entry) => {
+      const segments = entry.split('|').map((item) => item.trim());
+      const release = {};
+      for (const segment of segments) {
+        const scalarMatch = segment.match(/^([a-zA-Z0-9_]+):\s*(.+)$/);
+        if (!scalarMatch) {
+          continue;
+        }
+        const key = scalarMatch[1];
+        const value = scalarMatch[2].trim();
+        release[key] = value;
+      }
+
+      return {
+        version: release.version || '',
+        doi: release.doi || '',
+        doiUrl: release.doi_url || '',
+      };
+    })
+    .filter((release) => release.version || release.doi || release.doiUrl);
+}
+
+function parseSoftwareProjects(upkfText) {
+  const section = extractBlock(
+    upkfText,
+    '## GitHub Repositories & Zenodo DOIs (Citable Artifacts)\n',
+    '\n\n## ORCID Works — Complete Inventory (40/40)',
+  );
+  if (!section) {
+    return [];
+  }
+
+  return splitByThirdLevelHeadings(section)
+    .map(({ heading, block }, index) => {
+      const releases = parseSoftwareReleases(block);
+      const scalarDoi = extractScalar(block, 'doi');
+      const scalarDoiUrl = extractScalar(block, 'doi_url');
+      const scalarVersion = extractScalar(block, 'version');
+
+      if (scalarDoi || scalarDoiUrl || scalarVersion) {
+        releases.unshift({
+          version: scalarVersion,
+          doi: scalarDoi,
+          doiUrl: scalarDoiUrl,
+        });
+      }
+
+      const dedupedReleaseMap = new Map();
+      releases.forEach((release) => {
+        const key = `${release.version || ''}|${release.doi || ''}|${release.doiUrl || ''}`;
+        if (!dedupedReleaseMap.has(key)) {
+          dedupedReleaseMap.set(key, release);
+        }
+      });
+      const dedupedReleases = Array.from(dedupedReleaseMap.values());
+
+      return {
+        position: index + 1,
+        slug: normalizeHeadingTitle(heading),
+        schemaId: extractScalar(block, 'schema_id'),
+        schemaType: extractScalar(block, 'schema_type') || 'SoftwareSourceCode',
+        repo: extractScalar(block, 'repo'),
+        codeRepository: extractScalar(block, 'codeRepository') || extractScalar(block, 'repo'),
+        version: extractScalar(block, 'version'),
+        license: extractScalar(block, 'license'),
+        licenseUrl: extractScalar(block, 'license_url'),
+        programmingLanguage: extractScalar(block, 'programmingLanguage'),
+        runtimePlatform: extractScalar(block, 'runtimePlatform'),
+        name: parseIndentedMap(block, 'name'),
+        description: parseIndentedMap(block, 'description'),
+        keywords: parseInlineArray(extractScalar(block, 'keywords')),
+        releases: dedupedReleases,
+      };
+    })
+    .filter((project) => project.schemaId && project.repo);
+}
+
+function parseAffiliations(upkfText) {
+  const section = extractBlock(
+    upkfText,
+    '# Organizations & Affiliations\n',
+    '\n\n---\n\n\n# Digital Assets & Web3 Identifiers',
+  );
+  if (!section) {
+    return [];
+  }
+
+  return splitBySecondAndThirdLevelHeadings(section)
+    .map(({ heading, block }) => {
+      const schemaId = extractScalar(block, 'schema_id');
+      if (!schemaId) {
+        return null;
+      }
+
+      const nameFromScalar = extractScalar(block, 'name');
+      const legalName = extractScalar(block, 'legal_name');
+      const normalizedHeading = heading.replace(/^Sub-Organization:\s*/i, '').trim();
+
+      return {
+        schemaId,
+        schemaType: extractScalar(block, 'schema_type') || 'Organization',
+        name: nameFromScalar || legalName || normalizedHeading,
+        legalName,
+        url: extractScalar(block, 'url'),
+        parentOrganizationRef: extractScalar(block, 'parentOrganization_ref'),
+        relation: extractScalar(block, 'relation'),
+        sameAs: parseIndentedList(block, 'sameAs'),
+        description: parseIndentedMap(block, 'description'),
+        alternateNames: parseInlineArray(extractScalar(block, 'alternate_names')),
+      };
+    })
+    .filter(Boolean);
+}
+
+function parseHeritage(upkfText) {
+  const section = extractBlock(
+    upkfText,
+    '## Forensic Heritage & Genealogical Audit\n',
+    '\n\n---\n\n\n# Professional Taxonomy',
+  );
+  if (!section) {
+    return {
+      publishPublic: false,
+      clusters: [],
+      synthesis: {},
+    };
+  }
+
+  const publishPublic =
+    /PUBLIC_OVERRIDE\s*:\s*HERITAGE_PUBLIC/i.test(section) ||
+    /public_override:\s*heritage_public/i.test(section) ||
+    /classification:\s*PUBLIC_OVERRIDE/i.test(section);
+
+  const clusters = splitByThirdLevelHeadings(section)
+    .filter(({ heading }) => normalizeForSearch(heading) !== normalizeForSearch('Strategic Synthesis'))
+    .map(({ heading, block }) => {
+      const surnamesRaw = extractScalar(block, 'key_surnames');
+      const keySurnames = surnamesRaw.includes('[')
+        ? parseInlineArray(surnamesRaw)
+        : surnamesRaw
+            .split(',')
+            .map((item) => item.trim())
+            .filter(Boolean);
+
+      return {
+        title: heading,
+        cluster: extractScalar(block, 'cluster'),
+        keySurnames,
+        region: extractScalar(block, 'region'),
+        probabilityScore: extractScalar(block, 'probability_score'),
+        thesis: parseBlockParagraph(block, 'thesis_pt-BR'),
+        nextStep: extractScalar(block, 'next_step'),
+      };
+    })
+    .filter((cluster) => cluster.title && cluster.cluster);
+
+  const synthesisBlock = extractBlock(section, '### Strategic Synthesis\n', undefined);
+  const synthesis = {
+    sephardicIdentity: extractScalar(synthesisBlock, 'sephardic_identity'),
+    italianIdentity: extractScalar(synthesisBlock, 'italian_identity'),
+  };
+
+  return {
+    publishPublic,
+    clusters,
+    synthesis,
+  };
+}
+
+function parseOrcidInventoryStats(upkfText) {
+  const section = extractBlock(
+    upkfText,
+    '## ORCID Works — Complete Inventory (40/40)\n',
+    '\n\n**Total: 40/40 ORCID works mapped.**',
+  );
+  if (!section) {
+    return {
+      counted: 0,
+      reported: 0,
+    };
+  }
+
+  const counted = section
+    .split('\n')
+    .map((line) => line.trim())
+    .filter((line) => line.startsWith('|') && !line.includes(':--'))
+    .map((line) =>
+      line
+        .split('|')
+        .map((cell) => cell.trim())
+        .filter(Boolean),
+    )
+    .filter((cells) => cells.length >= 6 && /^\d+$/.test(cells[0])).length;
+
+  const totalMatch = upkfText.match(/\*\*Total:\s*(\d+)\/(\d+)\s+ORCID works mapped\.\*\*/);
+  const reported = totalMatch ? Number(totalMatch[2] || totalMatch[1]) : counted;
+
+  return {
+    counted,
+    reported,
+  };
+}
+
 function parseIdentity(upkfText) {
   const canonicalName = extractScalar(upkfText, 'canonical_legal_name');
   const preferredName = extractScalar(upkfText, 'preferred_name');
@@ -851,6 +1265,7 @@ function parseIdentity(upkfText) {
       ethLimoUrl,
     },
     hasCredential,
+    publicIdentifiers: identifiers.rows,
     domainInventory,
   };
 }
@@ -1644,7 +2059,7 @@ function getEvidenceSentence(evidence, index, fallback) {
   return shortSentenceFromSnippet(entry.snippet.text, fallback);
 }
 
-function inferResearchQuestion(publicationRow, topicProfile) {
+function inferResearchQuestion(publicationRow) {
   if (publicationRow.category === 'research') {
     return `Como a abordagem proposta em "${publicationRow.title}" pode reduzir risco sistemico e ampliar confiabilidade decisoria em ambiente real?`;
   }
@@ -1710,12 +2125,12 @@ function selectScientificReferences(publicationRow, topicProfile, referencesLibr
 }
 
 function buildSummary(publicationRow, evidence, topicProfile) {
-  const researchQuestion = inferResearchQuestion(publicationRow, topicProfile);
+  const researchQuestion = inferResearchQuestion(publicationRow);
   return `${topicProfile.focus} ${topicProfile.result} Pergunta central: ${researchQuestion} A pagina publica apresenta sintese cientifica e o PDF consolidado contem a versao completa para citacao formal.`;
 }
 
 function buildLandingContent(publicationRow, evidence, topicProfile) {
-  const researchQuestion = inferResearchQuestion(publicationRow, topicProfile);
+  const researchQuestion = inferResearchQuestion(publicationRow);
   const overview = `Esta pagina apresenta uma sintese cientifica de "${publicationRow.title}", estruturada para leitura academica, auditoria metodologica e preparo DOI-ready.`;
   const problem = `${topicProfile.problem} Pergunta de pesquisa: ${researchQuestion}`;
 
@@ -1770,7 +2185,7 @@ function appendCitation(text, citationToken) {
 }
 
 function buildPaperSections(publicationRow, evidence, topicProfile, referencesLibrary) {
-  const researchQuestion = inferResearchQuestion(publicationRow, topicProfile);
+  const researchQuestion = inferResearchQuestion(publicationRow);
   const objective = `O objetivo deste trabalho e avaliar de forma estruturada como "${publicationRow.title}" pode gerar valor cientifico e operacional com rastreabilidade metodologica.`;
   const limitations = inferLimitations(publicationRow);
   const futureAgenda = inferFutureAgenda(publicationRow);
@@ -2289,47 +2704,54 @@ function buildUrlInventory(upkfText, publications, websiteUrl, knowledgeData) {
 
 function buildCoreSiteJsonLd(identity, organization, frontmatter) {
   const siteUrl = identity.primaryWebsite || 'https://ulissesflores.com';
-  const personIdentifier = [
+  const publicIdentifiers = Array.isArray(identity.publicIdentifiers) ? identity.publicIdentifiers : [];
+  const personIdentifier = [];
+  const personIdentifierDedup = new Set();
+
+  const pushIdentifier = (property) => {
+    if (!property || !property.propertyID || !property.value) {
+      return;
+    }
+    const dedupKey = `${property.propertyID}|${property.value}`;
+    if (personIdentifierDedup.has(dedupKey)) {
+      return;
+    }
+    personIdentifierDedup.add(dedupKey);
+    personIdentifier.push(property);
+  };
+
+  publicIdentifiers.forEach((identifier) => {
+    pushIdentifier({
+      '@type': 'PropertyValue',
+      propertyID: identifier.label,
+      value: identifier.value,
+      url: identifier.url && identifier.url.startsWith('http') ? identifier.url : undefined,
+      description: identifier.notes || undefined,
+    });
+  });
+
+  pushIdentifier(
     identity.orcid
       ? {
           '@type': 'PropertyValue',
           propertyID: 'ORCID',
           value: identity.orcid,
+          url: `https://orcid.org/${identity.orcid}`,
         }
       : null,
+  );
+  pushIdentifier(
     identity.lattesId
       ? {
           '@type': 'PropertyValue',
           propertyID: 'Lattes',
           value: identity.lattesId,
+          url: `http://lattes.cnpq.br/${identity.lattesId}`,
         }
       : null,
-    identity.sovereignIdentity?.palauDigitalResidency
-      ? {
-          '@type': 'PropertyValue',
-          propertyID: identity.sovereignIdentity.palauDigitalResidency.label,
-          value: identity.sovereignIdentity.palauDigitalResidency.value,
-          url: identity.sovereignIdentity.palauDigitalResidency.url,
-        }
-      : null,
-    identity.sovereignIdentity?.gitcoinPassport
-      ? {
-          '@type': 'PropertyValue',
-          propertyID: identity.sovereignIdentity.gitcoinPassport.label,
-          value: identity.sovereignIdentity.gitcoinPassport.value,
-          url: identity.sovereignIdentity.gitcoinPassport.url,
-        }
-      : null,
-    identity.sovereignIdentity?.keybaseUrl
-      ? {
-          '@type': 'PropertyValue',
-          propertyID: 'Keybase',
-          value: 'ul1ss3sfl0r3s',
-          url: identity.sovereignIdentity.keybaseUrl,
-        }
-      : null,
-  ].filter(Boolean);
-  const credentialNodes = (identity.hasCredential || []).map((credential) => ({
+  );
+
+  const webCredentialNodes = (identity.hasCredential || []).map((credential) => ({
     ...credential,
     recognizedBy: {
       '@id': `${siteUrl}/#person`,
@@ -2338,6 +2760,112 @@ function buildCoreSiteJsonLd(identity, organization, frontmatter) {
       '@id': `${siteUrl}/#person`,
     },
   }));
+
+  const institutionNodes = [];
+  const institutionNodeIds = new Set();
+
+  const academicCredentialNodes = (identity.academicCredentials || [])
+    .map((credential) => {
+      const institutionId = normalizeLocalAnchorId(
+        siteUrl,
+        credential.institutionRef || `#institution-${slugify(credential.institution || credential.title)}`,
+        `institution-${slugify(credential.institution || credential.title)}`,
+      );
+
+      if (credential.institution && !institutionNodeIds.has(institutionId)) {
+        institutionNodeIds.add(institutionId);
+        institutionNodes.push({
+          '@id': institutionId,
+          '@type': 'CollegeOrUniversity',
+          name: credential.institution,
+          url: credential.institutionUrl || undefined,
+          sameAs: credential.institutionSameAs || undefined,
+        });
+      }
+
+      const credentialProperties = [
+        credential.credentialStatus
+          ? {
+              '@type': 'PropertyValue',
+              propertyID: 'credentialStatus',
+              value: credential.credentialStatus,
+            }
+          : null,
+        credential.period
+          ? {
+              '@type': 'PropertyValue',
+              propertyID: 'period',
+              value: credential.period,
+            }
+          : null,
+        credential.skills && credential.skills.length > 0
+          ? {
+              '@type': 'PropertyValue',
+              propertyID: 'skills',
+              value: credential.skills.join(', '),
+            }
+          : null,
+      ].filter(Boolean);
+
+      const thesisLanguages = Object.entries(credential.thesisTitle || {}).map(([lang, value]) => ({
+        '@value': value,
+        '@language': lang,
+      }));
+
+      return {
+        '@id': normalizeLocalAnchorId(siteUrl, credential.schemaId, `credential-${slugify(credential.title)}`),
+        '@type': 'EducationalOccupationalCredential',
+        name: credential.title,
+        credentialCategory: credential.credentialCategory || undefined,
+        educationalLevel: credential.credentialCategory || undefined,
+        recognizedBy: credential.institution
+          ? {
+              '@id': institutionId,
+            }
+          : undefined,
+        about: {
+          '@id': `${siteUrl}/#person`,
+        },
+        url: credential.institutionUrl || undefined,
+        description:
+          credential.thesisTitle?.en ||
+          credential.thesisTitle?.['pt-BR'] ||
+          credential.thesisTitle?.es ||
+          undefined,
+        identifier: credential.period
+          ? {
+              '@type': 'PropertyValue',
+              propertyID: 'Period',
+              value: credential.period,
+            }
+          : undefined,
+        additionalProperty: credentialProperties.length > 0 ? credentialProperties : undefined,
+        alternateName: thesisLanguages.length > 0 ? thesisLanguages : undefined,
+      };
+    })
+    .filter((credential) => credential['@id'] && credential.name);
+
+  const credentialNodes = [...webCredentialNodes, ...academicCredentialNodes];
+
+  const occupationNodes = (identity.occupations || []).map((occupation) => ({
+    '@id': normalizeLocalAnchorId(siteUrl, occupation.schemaId, `occupation-${slugify(occupation.title)}`),
+    '@type': occupation.schemaType || 'Occupation',
+    name: occupation.title,
+    description:
+      occupation.appliedSkills && occupation.appliedSkills.length > 0
+        ? `Applied skills: ${occupation.appliedSkills.join(', ')}.`
+        : undefined,
+    skills:
+      occupation.appliedSkills && occupation.appliedSkills.length > 0 ? occupation.appliedSkills.join(', ') : undefined,
+    occupationalLocation: occupation.location
+      ? {
+          '@type': 'AdministrativeArea',
+          name: occupation.location,
+        }
+      : undefined,
+    estimatedSalary: undefined,
+  }));
+
   const geographicPlaces = (identity.geographicallyServes || []).map((place) => ({
     '@type': 'Place',
     name: place,
@@ -2360,6 +2888,98 @@ function buildCoreSiteJsonLd(identity, organization, frontmatter) {
     ),
   );
 
+  const affiliationNodes = [];
+  const affiliationNodeIds = new Set();
+  const protectedAffiliationIds = new Set([`${siteUrl}/#codexhash`, `${siteUrl}/#codexhash-research`]);
+
+  (identity.affiliations || []).forEach((affiliation) => {
+    const affiliationId = normalizeLocalAnchorId(
+      siteUrl,
+      affiliation.schemaId,
+      `organization-${slugify(affiliation.name || 'affiliation')}`,
+    );
+
+    if (protectedAffiliationIds.has(affiliationId) || affiliationNodeIds.has(affiliationId)) {
+      return;
+    }
+    affiliationNodeIds.add(affiliationId);
+
+    affiliationNodes.push({
+      '@id': affiliationId,
+      '@type': affiliation.schemaType || 'Organization',
+      name: affiliation.name,
+      legalName: affiliation.legalName || undefined,
+      alternateName: affiliation.alternateNames && affiliation.alternateNames.length > 0 ? affiliation.alternateNames : undefined,
+      url: affiliation.url || undefined,
+      sameAs: affiliation.sameAs && affiliation.sameAs.length > 0 ? affiliation.sameAs : undefined,
+      parentOrganization: affiliation.parentOrganizationRef
+        ? {
+            '@id': normalizeLocalAnchorId(
+              siteUrl,
+              affiliation.parentOrganizationRef,
+              `organization-${slugify(affiliation.name || 'parent')}`,
+            ),
+          }
+        : undefined,
+      description:
+        affiliation.description?.['pt-BR'] || affiliation.description?.en || affiliation.relation || undefined,
+    });
+  });
+
+  const affiliationRefs = Array.from(
+    new Set([
+      `${siteUrl}/#codexhash`,
+      ...affiliationNodes.map((node) => node['@id']),
+    ]),
+  ).map((id) => ({ '@id': id }));
+
+  const languageLabelByCode = {
+    'pt-BR': 'Portuguese',
+    en: 'English',
+    es: 'Spanish',
+    he: 'Hebrew',
+    it: 'Italian',
+  };
+
+  const knowsLanguage = (identity.languages || []).map((code) => ({
+    '@type': 'Language',
+    name: languageLabelByCode[code] || code,
+    alternateName: code,
+  }));
+
+  const heritageProperties =
+    identity.heritage?.publishPublic && Array.isArray(identity.heritage.clusters)
+      ? [
+          ...identity.heritage.clusters.map((cluster) => ({
+            '@type': 'PropertyValue',
+            propertyID: `heritage:${slugify(cluster.cluster || cluster.title || 'cluster')}`,
+            name: cluster.title,
+            value: [
+              cluster.keySurnames && cluster.keySurnames.length > 0 ? cluster.keySurnames.join(', ') : '',
+              cluster.region || '',
+              cluster.probabilityScore ? `probability ${cluster.probabilityScore}` : '',
+              cluster.thesis || '',
+            ]
+              .filter(Boolean)
+              .join(' — '),
+          })),
+          identity.heritage?.synthesis?.sephardicIdentity
+            ? {
+                '@type': 'PropertyValue',
+                propertyID: 'heritage:synthesis-sephardic',
+                value: identity.heritage.synthesis.sephardicIdentity,
+              }
+            : null,
+          identity.heritage?.synthesis?.italianIdentity
+            ? {
+                '@type': 'PropertyValue',
+                propertyID: 'heritage:synthesis-italian',
+                value: identity.heritage.synthesis.italianIdentity,
+              }
+            : null,
+        ].filter(Boolean)
+      : [];
+
   return {
     '@context': 'https://schema.org',
     '@graph': [
@@ -2381,13 +3001,16 @@ function buildCoreSiteJsonLd(identity, organization, frontmatter) {
         sameAs,
         jobTitle: identity.jobTitle || [],
         knowsAbout: identity.knowsAbout || [],
+        knowsLanguage: knowsLanguage.length > 0 ? knowsLanguage : undefined,
         nationality: identity.nationalities || [],
         hasCredential: credentialNodes.map((credential) => ({ '@id': credential['@id'] })),
+        hasOccupation: occupationNodes.map((occupation) => ({ '@id': occupation['@id'] })),
+        affiliation: affiliationRefs.length > 0 ? affiliationRefs : undefined,
         areaServed: geographicPlaces,
         geographicallyServes: identity.geographicallyServes || [],
         disambiguatingDescription: identity.disambiguation.en || identity.disambiguation['pt-BR'] || '',
         description: identity.description['pt-BR'] || '',
-        identifier: personIdentifier,
+        identifier: personIdentifier.length > 0 ? personIdentifier : undefined,
         additionalProperty: [
           ...identity.notSameAs.map((item) => ({
             '@type': 'PropertyValue',
@@ -2396,9 +3019,10 @@ function buildCoreSiteJsonLd(identity, organization, frontmatter) {
           })),
           {
             '@type': 'PropertyValue',
-            propertyID: 'geographicallyServes',
-            value: (identity.geographicallyServes || []).join(', '),
-          },
+              propertyID: 'geographicallyServes',
+              value: (identity.geographicallyServes || []).join(', '),
+            },
+          ...heritageProperties,
         ],
         worksFor: {
           '@id': `${siteUrl}/#codexhash`,
@@ -2437,7 +3061,10 @@ function buildCoreSiteJsonLd(identity, organization, frontmatter) {
           '@id': `${siteUrl}/#codexhash`,
         },
       },
+      ...institutionNodes,
+      ...affiliationNodes,
       ...credentialNodes,
+      ...occupationNodes,
       ...domainInventoryNodes,
     ],
   };
@@ -2501,6 +3128,66 @@ function buildPublicationNodes(siteUrl, publications) {
       reference.url ? `${reference.citation} (${reference.url})` : reference.citation,
     ),
   }));
+}
+
+function buildSoftwareProjectNodes(siteUrl, softwareProjects) {
+  if (!Array.isArray(softwareProjects) || softwareProjects.length === 0) {
+    return [];
+  }
+
+  return softwareProjects.map((project, index) => {
+    const projectId = normalizeLocalAnchorId(
+      siteUrl,
+      project.schemaId,
+      `software-${slugify(project.slug || `project-${index + 1}`)}`,
+    );
+    const releaseIdentifiers = (project.releases || [])
+      .map((release) => {
+        if (!release.doi && !release.doiUrl && !release.version) {
+          return null;
+        }
+
+        const label = release.version ? `DOI (v${release.version})` : 'DOI';
+        return {
+          '@type': 'PropertyValue',
+          propertyID: label,
+          value: release.doi || release.doiUrl || release.version,
+          url: release.doiUrl || (release.doi ? `https://doi.org/${release.doi}` : undefined),
+        };
+      })
+      .filter(Boolean);
+
+    const name = project.name?.en || project.name?.['pt-BR'] || project.slug;
+    const description = project.description?.en || project.description?.['pt-BR'] || undefined;
+    const inferredVersion =
+      project.version || (project.releases && project.releases.length > 0 ? project.releases[project.releases.length - 1].version : '');
+
+    return {
+      '@id': projectId,
+      '@type': 'SoftwareSourceCode',
+      name,
+      description,
+      url: project.repo || project.codeRepository || undefined,
+      codeRepository: project.codeRepository || project.repo || undefined,
+      programmingLanguage: project.programmingLanguage || undefined,
+      runtimePlatform: project.runtimePlatform || undefined,
+      version: inferredVersion || undefined,
+      license: project.licenseUrl || project.license || undefined,
+      creator: {
+        '@id': `${siteUrl}/#person`,
+      },
+      publisher: {
+        '@id': `${siteUrl}/#codexhash-research`,
+      },
+      keywords: project.keywords && project.keywords.length > 0 ? project.keywords.join(', ') : undefined,
+      identifier:
+        releaseIdentifiers.length > 1
+          ? releaseIdentifiers
+          : releaseIdentifiers.length === 1
+            ? releaseIdentifiers[0]
+            : undefined,
+    };
+  });
 }
 
 function normalizeLocalAnchorId(siteUrl, value, fallback) {
@@ -2711,15 +3398,17 @@ function buildPublicJsonLd({
   certifications,
   blogPosts,
   sermons,
+  softwareProjects,
 }) {
   const siteUrl = identity.primaryWebsite || 'https://ulissesflores.com';
   const baseGraph = Array.isArray(coreSiteJsonLd['@graph']) ? coreSiteJsonLd['@graph'] : [];
   const collectionNodes = buildCollectionNodes(siteUrl);
   const publicationNodes = buildPublicationNodes(siteUrl, publications);
+  const softwareNodes = buildSoftwareProjectNodes(siteUrl, softwareProjects);
   const certificationNodes = buildCertificationNodes(siteUrl, certifications);
   const blogNodes = buildBlogNodes(siteUrl, blogPosts);
   const sermonNodes = buildSermonNodes(siteUrl, sermons);
-  const extraNodes = [...certificationNodes, ...blogNodes, ...sermonNodes];
+  const extraNodes = [...softwareNodes, ...certificationNodes, ...blogNodes, ...sermonNodes];
   const isOrganizationNode = (node) => {
     const type = node?.['@type'];
     if (Array.isArray(type)) {
@@ -2727,7 +3416,7 @@ function buildPublicJsonLd({
     }
     return type === 'Organization';
   };
-  const publicHasPart = [...collectionNodes, ...publicationNodes, ...certificationNodes, ...blogNodes, ...sermonNodes]
+  const publicHasPart = [...collectionNodes, ...publicationNodes, ...softwareNodes, ...certificationNodes, ...blogNodes, ...sermonNodes]
     .filter((node) => !isOrganizationNode(node))
     .map((node) => ({ '@id': node['@id'] }));
 
@@ -2761,7 +3450,6 @@ function buildFullUpkfJsonLd({
   upkfSections,
   frontmatter,
   sourcePath,
-  publications,
   identity,
   sourceMdPublicUrl,
 }) {
@@ -3602,10 +4290,27 @@ function writeGeneratedFiles({
       description: identity.description,
       disambiguation: identity.disambiguation,
       sameAs: identity.sameAs,
+      notSameAs: identity.notSameAs,
       nationalities: identity.nationalities,
       jobTitle: identity.jobTitle,
       knowsAbout: identity.knowsAbout,
       hasCredential: identity.hasCredential,
+      publicIdentifiers: identity.publicIdentifiers || [],
+      academicCredentials: identity.academicCredentials || [],
+      occupations: identity.occupations || [],
+      softwareProjects: identity.softwareProjects || [],
+      affiliations: identity.affiliations || [],
+      heritage: identity.heritage || {
+        publishPublic: false,
+        clusters: [],
+        synthesis: {},
+      },
+      identityHubStats: identity.identityHubStats || {
+        orcidWorks: publications.length,
+        certifications: 0,
+        domains: identity.domainInventory ? identity.domainInventory.length : 0,
+        sermons: 0,
+      },
       geographicallyServes: identity.geographicallyServes,
       sovereignIdentity: identity.sovereignIdentity,
       domainInventory: identity.domainInventory,
@@ -3694,6 +4399,32 @@ async function main() {
   const certifications = parseCertifications(upkfText);
   const blogPosts = parseBlogPosts(upkfText);
   const sermons = parseSermons(upkfText);
+  const occupations = parseCurrentOccupations(upkfText);
+  const academicCredentials = parseAcademicCredentials(upkfText);
+  const softwareProjects = parseSoftwareProjects(upkfText);
+  const affiliations = parseAffiliations(upkfText);
+  const heritage = parseHeritage(upkfText);
+  const orcidInventory = parseOrcidInventoryStats(upkfText);
+
+  const totalSermons =
+    sermons.collections.reduce((sum, collection) => sum + collection.items.length, 0) || sermons.total || 0;
+  const totalCertifications =
+    certifications.alura.length + (certifications.edx?.verifyUrl ? 1 : 0) + (certifications.coursera?.verifyUrl ? 1 : 0);
+
+  const enrichedIdentity = {
+    ...identity,
+    occupations,
+    academicCredentials,
+    softwareProjects,
+    affiliations,
+    heritage,
+    identityHubStats: {
+      orcidWorks: orcidInventory.reported || orcidInventory.counted,
+      certifications: totalCertifications,
+      domains: Array.isArray(identity.domainInventory) ? identity.domainInventory.length : 0,
+      sermons: totalSermons,
+    },
+  };
 
   if (publicationRows.length === 0) {
     throw new Error('Nenhuma publicacao com URL canonica foi encontrada no UPKF.');
@@ -3708,7 +4439,7 @@ async function main() {
 
   const deepResearchEntries = await generateManuscripts({
     publications,
-    identity,
+    identity: enrichedIdentity,
     generatedAt,
     repoRoot,
   });
@@ -3748,39 +4479,39 @@ async function main() {
     };
   });
 
-  const knowledgeData = buildKnowledgeData(certifications, blogPosts, sermons, generatedAt, identity);
+  const knowledgeData = buildKnowledgeData(certifications, blogPosts, sermons, generatedAt, enrichedIdentity);
   const projectQualityReport = buildProjectQualityReport(publications, generatedAt);
-  const doiReady = buildDoiReadyPackage(publications, identity, generatedAt);
+  const doiReady = buildDoiReadyPackage(publications, enrichedIdentity, generatedAt);
 
   const createdPdfs = publications
-    .map((publication) => ensureTemporaryPdf(publication, identity, generatedAt))
+    .map((publication) => ensureTemporaryPdf(publication, enrichedIdentity, generatedAt))
     .filter(Boolean).length;
 
-  const siteJsonLd = buildCoreSiteJsonLd(identity, organization, frontmatter);
+  const siteJsonLd = buildCoreSiteJsonLd(enrichedIdentity, organization, frontmatter);
   const publicJsonLd = buildPublicJsonLd({
     coreSiteJsonLd: siteJsonLd,
     publications,
     frontmatter,
     sourcePath,
-    identity,
+    identity: enrichedIdentity,
     certifications,
     blogPosts,
     sermons,
+    softwareProjects: enrichedIdentity.softwareProjects,
   });
   const fullJsonLd = buildFullUpkfJsonLd({
     publicJsonLd,
     upkfSections,
     frontmatter,
     sourcePath,
-    publications,
-    identity,
+    identity: enrichedIdentity,
     sourceMdPublicUrl: '/upkf-source.md',
   });
 
   const urlInventory = buildUrlInventory(
     upkfText,
     publications,
-    identity.primaryWebsite || 'https://ulissesflores.com',
+    enrichedIdentity.primaryWebsite || 'https://ulissesflores.com',
     knowledgeData,
   );
 
@@ -3813,7 +4544,7 @@ async function main() {
     sourcePath,
     upkfText,
     frontmatter,
-    identity,
+    identity: enrichedIdentity,
     publications,
     knowledgeData,
     siteJsonLd,
@@ -3831,10 +4562,7 @@ async function main() {
     publications: publications.length,
     aluraCertifications: certifications.alura.length,
     blogPosts: blogPosts.posts.length,
-    sermons:
-      sermons.collections.reduce((sum, collection) => sum + collection.items.length, 0) ||
-      sermons.total ||
-      0,
+    sermons: totalSermons,
     parsedSections: upkfSections.length,
     temporaryPdfsCreated: createdPdfs,
     corpus: {

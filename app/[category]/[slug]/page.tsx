@@ -140,6 +140,12 @@ export default async function ArticlePage({ params }: PageProps) {
         >
           Ir para Home
         </Link>
+        <div className='mb-10 text-sm text-neutral-500'>
+          Hub canônico:{' '}
+          <Link href='/identidade' className='text-emerald-300 hover:text-emerald-200 transition-colors'>
+            Identidade Soberana
+          </Link>
+        </div>
 
         <header className='mb-12 border-b border-white/10 pb-12'>
           <div className='flex flex-wrap gap-4 mb-6'>

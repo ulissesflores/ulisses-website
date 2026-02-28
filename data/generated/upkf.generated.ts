@@ -44,6 +44,12 @@ export const upkfMeta = {
     "https://ulisses.omg.lol",
     "https://groups.google.com/g/androidbrasil/c/d7onDwJ5ekA?pli=1"
   ],
+  "notSameAs": [
+    "Oscar Ulisses Flores Ruiz (Salvadoran beach soccer player, FIFA-registered)",
+    "the architect \"Ulisses Flores\" from Poços de Caldas, MG (CAU/MG registry)",
+    "the nurse \"Ulisses Flores\" in Brazilian healthcare registries (COREN)",
+    "any entity lacking at least one strong anchor listed above"
+  ],
   "nationalities": [
     "Brazil",
     "El Salvador"
@@ -97,6 +103,564 @@ export const upkfMeta = {
       "description": "Sybil resistance score"
     }
   ],
+  "publicIdentifiers": [
+    {
+      "label": "ORCID",
+      "value": "0000-0002-6034-7765",
+      "url": "https://orcid.org/0000-0002-6034-7765",
+      "notes": "Strong anchor"
+    },
+    {
+      "label": "Lattes",
+      "value": "6905246706890561",
+      "url": "http://lattes.cnpq.br/6905246706890561",
+      "notes": "Strong anchor"
+    },
+    {
+      "label": "DID",
+      "value": "did:web:ulissesflores.com",
+      "url": "https://ulissesflores.com/.well-known/did.json",
+      "notes": "W3C DID"
+    },
+    {
+      "label": "RNS.ID (Palau)",
+      "value": "LUA3604A",
+      "url": "https://rns.id/",
+      "notes": "National digital ID (Palau)"
+    },
+    {
+      "label": "ENS",
+      "value": "ulissesflores.eth",
+      "url": "https://app.ens.domains/ulissesflores.eth",
+      "notes": "Ethereum Name Service"
+    },
+    {
+      "label": "Ethereum",
+      "value": "0x2b146dc6Ea5C2385c7EfFF10a09a96955E96F3C3",
+      "url": "https://etherscan.io/address/0x2b146dc6Ea5C2385c7EfFF10a09a96955E96F3C3",
+      "notes": "Primary wallet (L1)"
+    },
+    {
+      "label": "Ethereum (Base L2)",
+      "value": "0x2b146dc6Ea5C2385c7EfFF10a09a96955E96F3C3",
+      "url": "https://basescan.org/address/0x2b146dc6Ea5C2385c7EfFF10a09a96955E96F3C3",
+      "notes": "Base chain attestations"
+    },
+    {
+      "label": "BTC",
+      "value": "bc1qqddqpxufw7d2utfav2qa0mwe9ztkwx6qqe5t4g",
+      "url": "https://mempool.space/address/bc1qqddqpxufw7d2utfav2qa0mwe9ztkwx6qqe5t4g",
+      "notes": "Bitcoin address"
+    },
+    {
+      "label": "IPFS CID",
+      "value": "bafybeiefgqaigidav2fnccz57s4tr2fb6eapv3qmwxpnvl73s3adi5thjy",
+      "url": "https://bafybeiefgqaigidav2fnccz57s4tr2fb6eapv3qmwxpnvl73s3adi5thjy.ipfs.dweb.link/",
+      "notes": "Site pinned (IPFS gateway)"
+    },
+    {
+      "label": "Keybase",
+      "value": "ul1ss3sfl0r3s",
+      "url": "https://keybase.io/ul1ss3sfl0r3s",
+      "notes": "PGP + social proofs"
+    },
+    {
+      "label": "Gitcoin Passport",
+      "value": "39",
+      "url": "https://passport.gitcoin.co/",
+      "notes": "Sybil resistance score"
+    },
+    {
+      "label": "Humanity Score",
+      "value": "39.7",
+      "url": "https://base.easscan.org/address/0x2b146dc6Ea5C2385c7EfFF10a09a96955E96F3C3",
+      "notes": "Base EAS attestation"
+    },
+    {
+      "label": "PGP Fingerprint",
+      "value": "af30 44aa df8b d6cc 16a9 5750 d4e0 4e74 2ac8 f678",
+      "url": "https://keybase.io/ul1ss3sfl0r3s/pgp_keys.asc",
+      "notes": "Public key via Keybase"
+    }
+  ],
+  "academicCredentials": [
+    {
+      "position": 1,
+      "sourceType": "formalDegrees",
+      "title": "M.Sc. in Artificial Intelligence (in progress)",
+      "schemaId": "https://ulissesflores.com/#cred-msc-ai",
+      "schemaType": "EducationalOccupationalCredential",
+      "institution": "American Global Tech University (AGTU)",
+      "institutionRef": "https://ulissesflores.com/#agtu",
+      "institutionUrl": "https://www.agtu.us/",
+      "institutionSameAs": "",
+      "period": "Apr 2025 – Apr 2027",
+      "credentialStatus": "InProgress",
+      "credentialCategory": "Master's program",
+      "thesisTitle": {
+        "pt-BR": "Resiliência em Sistemas Complexos: Uma Abordagem Híbrida via Inteligência Artificial e Economia Praxeológica",
+        "en": "Resilience in Complex Systems: A Hybrid Approach via Artificial Intelligence and Praxeological Economics"
+      },
+      "skills": [
+        "Artificial Intelligence",
+        "Cyber-financial resilience",
+        "Little's Law",
+        "LSTM neural networks",
+        "Complex adaptive systems"
+      ],
+      "flagshipProjectRef": ""
+    },
+    {
+      "position": 2,
+      "sourceType": "formalDegrees",
+      "title": "MBA — Blockchain Development & Technologies",
+      "schemaId": "https://ulissesflores.com/#cred-mba-blockchain",
+      "schemaType": "EducationalOccupationalCredential",
+      "institution": "FIAP",
+      "institutionRef": "https://ulissesflores.com/#fiap",
+      "institutionUrl": "https://www.fiap.com.br/",
+      "institutionSameAs": "https://www.wikidata.org/entity/Q10269779",
+      "period": "May 2018 – May 2020",
+      "credentialStatus": "Completed",
+      "credentialCategory": "MBA",
+      "thesisTitle": {},
+      "skills": [
+        "Competências Interpessoais",
+        "Habilidades Analíticas",
+        "Node.js",
+        "Docker",
+        "Algorithms",
+        "SQL",
+        "Software",
+        "Economic Analysis",
+        "API REST",
+        "Ethereum",
+        "Docência",
+        "Visual Basic",
+        "API Development",
+        "Data Structures",
+        "Criptografia"
+      ],
+      "flagshipProjectRef": "https://ulissesflores.com/#project-silk-road-vault"
+    },
+    {
+      "position": 3,
+      "sourceType": "formalDegrees",
+      "title": "Bacharelado em Economia (B.A. in Economics)",
+      "schemaId": "https://ulissesflores.com/#cred-bachelor-economics",
+      "schemaType": "EducationalOccupationalCredential",
+      "institution": "Centro Universitário Padre Anchieta",
+      "institutionRef": "https://ulissesflores.com/#padre-anchieta",
+      "institutionUrl": "https://www.anchieta.br/",
+      "institutionSameAs": "",
+      "period": "2002 – 2017",
+      "credentialStatus": "Completed",
+      "credentialCategory": "Bachelor's degree",
+      "thesisTitle": {},
+      "skills": [
+        "Economics",
+        "Chaos theory",
+        "Austrian School",
+        "Nonlinear systems"
+      ],
+      "flagshipProjectRef": ""
+    },
+    {
+      "position": 4,
+      "sourceType": "formalDegrees",
+      "title": "Análise e Desenvolvimento de Sistemas (ADS)",
+      "schemaId": "https://ulissesflores.com/#cred-ads",
+      "schemaType": "EducationalOccupationalCredential",
+      "institution": "Universidade Paulista (UNIP)",
+      "institutionRef": "https://ulissesflores.com/#unip",
+      "institutionUrl": "https://www.unip.br/",
+      "institutionSameAs": "https://www.wikidata.org/entity/Q2301653",
+      "period": "Jan 2018 – Jan 2020",
+      "credentialStatus": "Completed",
+      "credentialCategory": "Higher education",
+      "thesisTitle": {},
+      "skills": [
+        "Software engineering",
+        "Systems analysis",
+        "Information systems"
+      ],
+      "flagshipProjectRef": ""
+    },
+    {
+      "position": 5,
+      "sourceType": "formalDegrees",
+      "title": "Estágio — Ciências Políticas e Leis",
+      "schemaId": "https://ulissesflores.com/#cred-cefor",
+      "schemaType": "EducationalOccupationalCredential",
+      "institution": "CEFOR — Congresso Nacional — Câmara dos Deputados",
+      "institutionRef": "https://ulissesflores.com/#cefor",
+      "institutionUrl": "https://www2.camara.leg.br/a-camara/programas-institucionais/educacao-para-a-cidadania",
+      "institutionSameAs": "",
+      "period": "",
+      "credentialStatus": "Completed",
+      "credentialCategory": "Internship",
+      "thesisTitle": {},
+      "skills": [
+        "Administrative Law",
+        "Political Consulting"
+      ],
+      "flagshipProjectRef": ""
+    },
+    {
+      "position": 1,
+      "sourceType": "internationalExtensions",
+      "title": "History and Philosophy of Science and Technology",
+      "schemaId": "https://ulissesflores.com/#cred-edinburgh-extension",
+      "schemaType": "EducationalOccupationalCredential",
+      "institution": "The University of Edinburgh",
+      "institutionRef": "https://ulissesflores.com/#edinburgh",
+      "institutionUrl": "https://www.ed.ac.uk/",
+      "institutionSameAs": "https://www.wikidata.org/entity/Q160302",
+      "period": "Jan 2016 – Apr 2016",
+      "credentialStatus": "Completed",
+      "credentialCategory": "International extension",
+      "thesisTitle": {},
+      "skills": [
+        "Science",
+        "Philosophy",
+        "Philosophy of Religion",
+        "Philosophy of Science",
+        "Political Philosophy"
+      ],
+      "flagshipProjectRef": ""
+    },
+    {
+      "position": 2,
+      "sourceType": "internationalExtensions",
+      "title": "Learning Sciences",
+      "schemaId": "https://ulissesflores.com/#cred-ucsd-extension",
+      "schemaType": "EducationalOccupationalCredential",
+      "institution": "California College San Diego",
+      "institutionRef": "https://ulissesflores.com/#ucsd",
+      "institutionUrl": "https://www.cc-sd.edu/",
+      "institutionSameAs": "",
+      "period": "Jan 2015 – Apr 2015",
+      "credentialStatus": "Completed",
+      "credentialCategory": "International extension",
+      "thesisTitle": {},
+      "skills": [
+        "Teaching",
+        "Memorization",
+        "Photographic Memory",
+        "Memory Management"
+      ],
+      "flagshipProjectRef": ""
+    }
+  ],
+  "occupations": [
+    {
+      "position": 1,
+      "title": "Co-founder, CTO and Chief Researcher — Codex Hash Ltda",
+      "schemaId": "https://ulissesflores.com/#occupation-codexhash-cto",
+      "schemaType": "Occupation",
+      "organizationRef": "https://ulissesflores.com/#codexhash",
+      "location": "Brazil (remote/global)",
+      "appliedSkills": [
+        "Python",
+        "Distributed systems",
+        "Security engineering",
+        "Quantitative finance",
+        "Blockchain",
+        "IoT/Embedded systems"
+      ]
+    },
+    {
+      "position": 2,
+      "title": "Economic Scientist and Systems Analyst",
+      "schemaId": "https://ulissesflores.com/#occupation-economic-scientist",
+      "schemaType": "Occupation",
+      "organizationRef": "",
+      "location": "Brazil",
+      "appliedSkills": [
+        "Econometrics",
+        "Austrian economics",
+        "Complex systems",
+        "Data science"
+      ]
+    },
+    {
+      "position": 3,
+      "title": "Researcher in Historical Theology and Textual Criticism",
+      "schemaId": "https://ulissesflores.com/#occupation-theology-researcher",
+      "schemaType": "Occupation",
+      "organizationRef": "",
+      "location": "Brazil",
+      "appliedSkills": [
+        "Textual criticism",
+        "Historiography",
+        "Archaeology",
+        "Hermeneutics"
+      ]
+    }
+  ],
+  "softwareProjects": [
+    {
+      "position": 1,
+      "slug": "cyberfinancial-resilience-lrblstm",
+      "schemaId": "https://ulissesflores.com/#sw-lrblstm",
+      "schemaType": "SoftwareSourceCode",
+      "repo": "https://github.com/ulissesflores/cyberfinancial-resilience-lrblstm",
+      "codeRepository": "https://github.com/ulissesflores/cyberfinancial-resilience-lrblstm",
+      "version": "0.1.1",
+      "license": "Apache-2.0",
+      "licenseUrl": "https://spdx.org/licenses/Apache-2.0.html",
+      "programmingLanguage": "Python",
+      "runtimePlatform": "Google Colab / Python 3.10+",
+      "name": {
+        "pt-BR": "Resiliência Ciberfinanceira via Lei de Little e LSTM Bayesiano (LR-BLSTM)",
+        "en": "Cyber-Financial Resilience via Little's Law and Bayesian LSTM (LR-BLSTM)",
+        "es": "Resiliencia Ciberfinanciera vía Ley de Little y LSTM Bayesiano (LR-BLSTM)"
+      },
+      "description": {
+        "en": "Reproducible scientific pipeline for cyber-financial resilience analysis using Little's Law proxies and Bayesian LSTM for anomaly detection in high-frequency trading.",
+        "pt-BR": "Pipeline científico reprodutível para análise de resiliência ciberfinanceira usando proxies da Lei de Little e LSTM Bayesiano para detecção de anomalias em trading de alta frequência."
+      },
+      "keywords": [
+        "cyber-financial resilience",
+        "Little's Law",
+        "Bayesian LSTM",
+        "anomaly detection",
+        "Python",
+        "SimPy"
+      ],
+      "releases": [
+        {
+          "version": "0.1.1",
+          "doi": "10.5281/zenodo.18275035",
+          "doiUrl": "https://doi.org/10.5281/zenodo.18275035"
+        }
+      ]
+    },
+    {
+      "position": 2,
+      "slug": "llm-contextizer",
+      "schemaId": "https://ulissesflores.com/#sw-llm-contextizer",
+      "schemaType": "SoftwareSourceCode",
+      "repo": "https://github.com/ulissesflores/llm-contextizer",
+      "codeRepository": "https://github.com/ulissesflores/llm-contextizer",
+      "version": "",
+      "license": "",
+      "licenseUrl": "",
+      "programmingLanguage": "",
+      "runtimePlatform": "",
+      "name": {
+        "en": "LLM Contextizer — Semantic Context Generator and Prompt Engineering for LLMs",
+        "pt-BR": "Gerador de Contexto Semântico e Engenharia de Prompt para LLMs"
+      },
+      "description": {},
+      "keywords": [],
+      "releases": [
+        {
+          "version": "0.1.1",
+          "doi": "10.5281/zenodo.18343438",
+          "doiUrl": "https://doi.org/10.5281/zenodo.18343438"
+        }
+      ]
+    },
+    {
+      "position": 3,
+      "slug": "mit507-yape-architecture-sim",
+      "schemaId": "https://ulissesflores.com/#sw-mit507-yape",
+      "schemaType": "SoftwareSourceCode",
+      "repo": "https://github.com/ulissesflores/mit507-yape-architecture-sim",
+      "codeRepository": "https://github.com/ulissesflores/mit507-yape-architecture-sim",
+      "version": "",
+      "license": "",
+      "licenseUrl": "",
+      "programmingLanguage": "",
+      "runtimePlatform": "",
+      "name": {
+        "en": "MIT-507 Yape Architecture Simulation — Discrete Event Simulation for Cell-Based Systems",
+        "pt-BR": "Simulação de Arquitetura Yape MIT-507 — Simulação de Eventos Discretos para Sistemas Cell-Based"
+      },
+      "description": {},
+      "keywords": [],
+      "releases": [
+        {
+          "version": "1.0.0",
+          "doi": "10.5281/zenodo.18641336",
+          "doiUrl": "https://doi.org/10.5281/zenodo.18641336"
+        }
+      ]
+    }
+  ],
+  "affiliations": [
+    {
+      "schemaId": "https://ulissesflores.com/#codexhash",
+      "schemaType": "Organization",
+      "name": "CODEX HASH LTDA",
+      "legalName": "CODEX HASH LTDA",
+      "url": "https://codexhash.com",
+      "parentOrganizationRef": "",
+      "relation": "",
+      "sameAs": [],
+      "description": {
+        "pt-BR": "Laboratório de P&D (deep tech) focado em finanças quantitativas/Web3, engenharia de hardware IoT (arquiteturas cloudless/edge) e IA aplicada para resiliência ciberfinanceira.",
+        "en": "R&D deep-tech lab focused on quantitative finance/Web3, IoT hardware engineering (cloudless/edge architectures), and applied AI for cyber-financial resilience.",
+        "es": "Laboratorio de I+D (deep tech) enfocado en finanzas cuantitativas/Web3, ingeniería de hardware IoT (arquitecturas cloudless/edge) e IA aplicada para resiliencia ciberfinanciera.",
+        "he": "מעבדת מו\"פ (דיפ-טק) המתמקדת בפיננסים כמותיים/Web3, הנדסת חומרה IoT (ארכיטקטורות ענן-ללא/קצה) ובינה מלאכותית לחוסן סייבר-פיננסי.",
+        "it": "Laboratorio R&S (deep tech) focalizzato su finanza quantitativa/Web3, ingegneria hardware IoT (architetture cloudless/edge) e IA applicata alla resilienza cyber-finanziaria."
+      },
+      "alternateNames": [
+        "CODEX HASH",
+        "Codex Hash Research Labs"
+      ]
+    },
+    {
+      "schemaId": "https://ulissesflores.com/#codexhash-research",
+      "schemaType": "Organization",
+      "name": "pt-BR: Codex Hash Research",
+      "legalName": "",
+      "url": "https://codexhash.com/research",
+      "parentOrganizationRef": "https://ulissesflores.com/#codexhash",
+      "relation": "",
+      "sameAs": [],
+      "description": {
+        "pt-BR": "Braço de pesquisa aplicada — publicações técnicas, software registrado com DOI e colaboração acadêmica.",
+        "en": "Applied research arm — technical publications, DOI-registered software, and academic collaboration.",
+        "es": "Brazo de investigación aplicada — publicaciones técnicas, software registrado con DOI y colaboración académica.",
+        "he": "זרוע מחקר יישומי — פרסומים טכניים, תוכנה רשומה עם DOI ושיתוף פעולה אקדמי.",
+        "it": "Braccio di ricerca applicata — pubblicazioni tecniche, software registrato con DOI e collaborazione accademica."
+      },
+      "alternateNames": []
+    },
+    {
+      "schemaId": "https://ulissesflores.com/#codexhash-labs",
+      "schemaType": "Organization",
+      "name": "pt-BR: Codex Hash Labs",
+      "legalName": "",
+      "url": "https://codexhash.com/labs",
+      "parentOrganizationRef": "https://ulissesflores.com/#codexhash",
+      "relation": "",
+      "sameAs": [],
+      "description": {
+        "pt-BR": "Engenharia de sistemas e prototipagem — hardware IoT/edge, arquiteturas cloudless e segurança embarcada.",
+        "en": "Systems engineering and prototyping — IoT/edge hardware, cloudless architectures, embedded security.",
+        "es": "Ingeniería de sistemas y prototipado — hardware IoT/edge, arquitecturas cloudless y seguridad embebida.",
+        "he": "הנדסת מערכות ואב-טיפוס — חומרת IoT/edge, ארכיטקטורות ללא ענן ואבטחה מוטמעת.",
+        "it": "Ingegneria dei sistemi e prototipazione — hardware IoT/edge, architetture cloudless e sicurezza embedded."
+      },
+      "alternateNames": []
+    },
+    {
+      "schemaId": "https://ulissesflores.com/#codexhash-education",
+      "schemaType": "Organization",
+      "name": "pt-BR: Codex Hash Education",
+      "legalName": "",
+      "url": "https://codexhash.com/education",
+      "parentOrganizationRef": "https://ulissesflores.com/#codexhash",
+      "relation": "",
+      "sameAs": [],
+      "description": {
+        "pt-BR": "Conteúdo, mentoria e educação técnica — cursos, workshops e engajamento comunitário.",
+        "en": "Content, mentoring, and technical education — courses, workshops, and community engagement.",
+        "es": "Contenido, mentoría y educación técnica — cursos, talleres y compromiso comunitario.",
+        "he": "תוכן, חונכות וחינוך טכני — קורסים, סדנאות ומעורבות קהילתית.",
+        "it": "Contenuti, mentoring e formazione tecnica — corsi, workshop e coinvolgimento della comunità."
+      },
+      "alternateNames": []
+    },
+    {
+      "schemaId": "https://ulissesflores.com/#instituto-clube-santo",
+      "schemaType": "Organization",
+      "name": "Instituto Clube Santo",
+      "legalName": "",
+      "url": "https://clubesanto.org",
+      "parentOrganizationRef": "",
+      "relation": "",
+      "sameAs": [],
+      "description": {
+        "pt-BR": "Instituto de pesquisa em Teologia Histórica, Arqueologia Cognitiva e tradição Metodista Wesleyana.",
+        "en": "Research institute for Historical Theology, Cognitive Archaeology, and the Wesleyan Methodist tradition.",
+        "es": "Instituto de investigación en Teología Histórica, Arqueología Cognitiva y tradición Metodista Wesleyana.",
+        "he": "מכון מחקר לתיאולוגיה היסטורית, ארכיאולוגיה קוגניטיבית ומסורת מתודיסטית וסליאנית.",
+        "it": "Istituto di ricerca in Teologia Storica, Archeologia Cognitiva e tradizione Metodista Wesleyana."
+      },
+      "alternateNames": []
+    },
+    {
+      "schemaId": "https://ulissesflores.com/#prefeitura-itupeva",
+      "schemaType": "GovernmentOrganization",
+      "name": "Prefeitura Municipal de Itupeva",
+      "legalName": "",
+      "url": "https://itupeva.sp.gov.br/",
+      "parentOrganizationRef": "",
+      "relation": "",
+      "sameAs": [
+        "https://www.wikidata.org/entity/Q734333",
+        "https://en.wikipedia.org/wiki/Itupeva"
+      ],
+      "description": {},
+      "alternateNames": []
+    },
+    {
+      "schemaId": "https://ulissesflores.com/#quadrangular-vila-helena",
+      "schemaType": "Organization",
+      "name": "Igreja do Evangelho Quadrangular — Vila Helena",
+      "legalName": "",
+      "url": "https://www.youtube.com/@quadrangularvilahelena",
+      "parentOrganizationRef": "",
+      "relation": "Pastoral ministry and sermon collection publisher",
+      "sameAs": [],
+      "description": {},
+      "alternateNames": []
+    }
+  ],
+  "heritage": {
+    "publishPublic": true,
+    "clusters": [
+      {
+        "title": "Paternal Lineage — Flores / Benavides / Zapata (El Salvador — Sephardic)",
+        "cluster": "A — PATERNA (El Salvador)",
+        "keySurnames": [
+          "Flores",
+          "Benavides",
+          "Zapata"
+        ],
+        "region": "San Miguel, El Salvador",
+        "probabilityScore": "HIGH",
+        "thesis": "A região de San Miguel, El Salvador, serviu como \"fronteira segura\" para famílias fugindo",
+        "nextStep": "Buscar registros de dispensa de consanguinidade nos arquivos paroquiais de San Miguel."
+      },
+      {
+        "title": "Maternal Lineage — Rodrigues Galvão / Ribeiro / Mendonça (Brasil — Sephardic)",
+        "cluster": "B — MATERNA (Brasil — Sefardita)",
+        "keySurnames": [
+          "Rodrigues Galvão",
+          "Ribeiro",
+          "Mendonça"
+        ],
+        "region": "Minas Gerais → Jundiaí, São Paulo",
+        "probabilityScore": "HIGH",
+        "thesis": "Migração clássica de Cristãos-Novos saindo de Minas Gerais para o \"Oeste Paulista\" (Jundiaí)",
+        "nextStep": "Localizar certidão de batismo ou óbito de Antônio Tobias Mendonça em Minas Gerais."
+      },
+      {
+        "title": "Maternal Lineage — Di Bartolomeo (Brasil — Italiana)",
+        "cluster": "C — MATERNA (Brasil — Italiana)",
+        "keySurnames": [],
+        "region": "",
+        "probabilityScore": "N/A (Origem Católica Europeia)",
+        "thesis": "\"Bartolomeu\" é a aportuguesação cartorial. O original \"Di Bartolomeo\" aponta para a região",
+        "nextStep": "Busca no Museu da Imigração de SP por \"Bartolomeo\", \"Bartolommei\" ou \"Di Bartolomeo\" (1888–1910)."
+      }
+    ],
+    "synthesis": {
+      "sephardicIdentity": "Dupla convergência (Paterna + Materna) de alta probabilidade.",
+      "italianIdentity": "Reconstrução do sobrenome Bartolomeu → Di Bartolomeo."
+    }
+  },
+  "identityHubStats": {
+    "orcidWorks": 40,
+    "certifications": 34,
+    "domains": 15,
+    "sermons": 56
+  },
   "geographicallyServes": [
     "Itupeva",
     "Jundiaí",
@@ -248,15 +812,15 @@ export const upkfMeta = {
     "sourceMd": "/upkf-source.md"
   },
   "jsonldCoverage": {
-    "markdownBytes": 85241,
-    "markdownLines": 1391,
+    "markdownBytes": 85586,
+    "markdownLines": 1397,
     "sectionCount": 102,
-    "siteGraphNodes": 21,
-    "publicGraphNodes": 161,
-    "fullGraphNodes": 264,
-    "siteJsonldBytes": 8810,
-    "publicJsonldBytes": 134589,
-    "fullJsonldBytes": 238564,
+    "siteGraphNodes": 43,
+    "publicGraphNodes": 186,
+    "fullGraphNodes": 289,
+    "siteJsonldBytes": 22753,
+    "publicJsonldBytes": 150923,
+    "fullJsonldBytes": 254976,
     "corpusFiles": 0,
     "corpusSnippets": 0,
     "corpusDirs": [],
@@ -351,6 +915,58 @@ export const siteJsonLd = {
         },
         {
           "@id": "https://ulissesflores.com/#credential-gitcoin-passport"
+        },
+        {
+          "@id": "https://ulissesflores.com/#cred-msc-ai"
+        },
+        {
+          "@id": "https://ulissesflores.com/#cred-mba-blockchain"
+        },
+        {
+          "@id": "https://ulissesflores.com/#cred-bachelor-economics"
+        },
+        {
+          "@id": "https://ulissesflores.com/#cred-ads"
+        },
+        {
+          "@id": "https://ulissesflores.com/#cred-cefor"
+        },
+        {
+          "@id": "https://ulissesflores.com/#cred-edinburgh-extension"
+        },
+        {
+          "@id": "https://ulissesflores.com/#cred-ucsd-extension"
+        }
+      ],
+      "hasOccupation": [
+        {
+          "@id": "https://ulissesflores.com/#occupation-codexhash-cto"
+        },
+        {
+          "@id": "https://ulissesflores.com/#occupation-economic-scientist"
+        },
+        {
+          "@id": "https://ulissesflores.com/#occupation-theology-researcher"
+        }
+      ],
+      "affiliation": [
+        {
+          "@id": "https://ulissesflores.com/#codexhash"
+        },
+        {
+          "@id": "https://ulissesflores.com/#codexhash-labs"
+        },
+        {
+          "@id": "https://ulissesflores.com/#codexhash-education"
+        },
+        {
+          "@id": "https://ulissesflores.com/#instituto-clube-santo"
+        },
+        {
+          "@id": "https://ulissesflores.com/#prefeitura-itupeva"
+        },
+        {
+          "@id": "https://ulissesflores.com/#quadrangular-vila-helena"
         }
       ],
       "areaServed": [
@@ -408,30 +1024,93 @@ export const siteJsonLd = {
         {
           "@type": "PropertyValue",
           "propertyID": "ORCID",
-          "value": "0000-0002-6034-7765"
+          "value": "0000-0002-6034-7765",
+          "url": "https://orcid.org/0000-0002-6034-7765",
+          "description": "Strong anchor"
         },
         {
           "@type": "PropertyValue",
           "propertyID": "Lattes",
-          "value": "6905246706890561"
+          "value": "6905246706890561",
+          "url": "http://lattes.cnpq.br/6905246706890561",
+          "description": "Strong anchor"
+        },
+        {
+          "@type": "PropertyValue",
+          "propertyID": "DID",
+          "value": "did:web:ulissesflores.com",
+          "url": "https://ulissesflores.com/.well-known/did.json",
+          "description": "W3C DID"
         },
         {
           "@type": "PropertyValue",
           "propertyID": "RNS.ID (Palau)",
           "value": "LUA3604A",
-          "url": "https://rns.id/"
+          "url": "https://rns.id/",
+          "description": "National digital ID (Palau)"
         },
         {
           "@type": "PropertyValue",
-          "propertyID": "Gitcoin Passport",
-          "value": "39",
-          "url": "https://passport.gitcoin.co/"
+          "propertyID": "ENS",
+          "value": "ulissesflores.eth",
+          "url": "https://app.ens.domains/ulissesflores.eth",
+          "description": "Ethereum Name Service"
+        },
+        {
+          "@type": "PropertyValue",
+          "propertyID": "Ethereum",
+          "value": "0x2b146dc6Ea5C2385c7EfFF10a09a96955E96F3C3",
+          "url": "https://etherscan.io/address/0x2b146dc6Ea5C2385c7EfFF10a09a96955E96F3C3",
+          "description": "Primary wallet (L1)"
+        },
+        {
+          "@type": "PropertyValue",
+          "propertyID": "Ethereum (Base L2)",
+          "value": "0x2b146dc6Ea5C2385c7EfFF10a09a96955E96F3C3",
+          "url": "https://basescan.org/address/0x2b146dc6Ea5C2385c7EfFF10a09a96955E96F3C3",
+          "description": "Base chain attestations"
+        },
+        {
+          "@type": "PropertyValue",
+          "propertyID": "BTC",
+          "value": "bc1qqddqpxufw7d2utfav2qa0mwe9ztkwx6qqe5t4g",
+          "url": "https://mempool.space/address/bc1qqddqpxufw7d2utfav2qa0mwe9ztkwx6qqe5t4g",
+          "description": "Bitcoin address"
+        },
+        {
+          "@type": "PropertyValue",
+          "propertyID": "IPFS CID",
+          "value": "bafybeiefgqaigidav2fnccz57s4tr2fb6eapv3qmwxpnvl73s3adi5thjy",
+          "url": "https://bafybeiefgqaigidav2fnccz57s4tr2fb6eapv3qmwxpnvl73s3adi5thjy.ipfs.dweb.link/",
+          "description": "Site pinned (IPFS gateway)"
         },
         {
           "@type": "PropertyValue",
           "propertyID": "Keybase",
           "value": "ul1ss3sfl0r3s",
-          "url": "https://keybase.io/ul1ss3sfl0r3s"
+          "url": "https://keybase.io/ul1ss3sfl0r3s",
+          "description": "PGP + social proofs"
+        },
+        {
+          "@type": "PropertyValue",
+          "propertyID": "Gitcoin Passport",
+          "value": "39",
+          "url": "https://passport.gitcoin.co/",
+          "description": "Sybil resistance score"
+        },
+        {
+          "@type": "PropertyValue",
+          "propertyID": "Humanity Score",
+          "value": "39.7",
+          "url": "https://base.easscan.org/address/0x2b146dc6Ea5C2385c7EfFF10a09a96955E96F3C3",
+          "description": "Base EAS attestation"
+        },
+        {
+          "@type": "PropertyValue",
+          "propertyID": "PGP Fingerprint",
+          "value": "af30 44aa df8b d6cc 16a9 5750 d4e0 4e74 2ac8 f678",
+          "url": "https://keybase.io/ul1ss3sfl0r3s/pgp_keys.asc",
+          "description": "Public key via Keybase"
         }
       ],
       "additionalProperty": [
@@ -459,6 +1138,34 @@ export const siteJsonLd = {
           "@type": "PropertyValue",
           "propertyID": "geographicallyServes",
           "value": "Itupeva, Jundiaí, Campinas, São Paulo, Brazil, Italy, United States, El Salvador, Israel"
+        },
+        {
+          "@type": "PropertyValue",
+          "propertyID": "heritage:a-paterna-el-salvador",
+          "name": "Paternal Lineage — Flores / Benavides / Zapata (El Salvador — Sephardic)",
+          "value": "Flores, Benavides, Zapata — San Miguel, El Salvador — probability HIGH — A região de San Miguel, El Salvador, serviu como \"fronteira segura\" para famílias fugindo"
+        },
+        {
+          "@type": "PropertyValue",
+          "propertyID": "heritage:b-materna-brasil-sefardita",
+          "name": "Maternal Lineage — Rodrigues Galvão / Ribeiro / Mendonça (Brasil — Sephardic)",
+          "value": "Rodrigues Galvão, Ribeiro, Mendonça — Minas Gerais → Jundiaí, São Paulo — probability HIGH — Migração clássica de Cristãos-Novos saindo de Minas Gerais para o \"Oeste Paulista\" (Jundiaí)"
+        },
+        {
+          "@type": "PropertyValue",
+          "propertyID": "heritage:c-materna-brasil-italiana",
+          "name": "Maternal Lineage — Di Bartolomeo (Brasil — Italiana)",
+          "value": "probability N/A (Origem Católica Europeia) — \"Bartolomeu\" é a aportuguesação cartorial. O original \"Di Bartolomeo\" aponta para a região"
+        },
+        {
+          "@type": "PropertyValue",
+          "propertyID": "heritage:synthesis-sephardic",
+          "value": "Dupla convergência (Paterna + Materna) de alta probabilidade."
+        },
+        {
+          "@type": "PropertyValue",
+          "propertyID": "heritage:synthesis-italian",
+          "value": "Reconstrução do sobrenome Bartolomeu → Di Bartolomeo."
         }
       ],
       "worksFor": {
@@ -495,6 +1202,95 @@ export const siteJsonLd = {
       }
     },
     {
+      "@id": "https://ulissesflores.com/#agtu",
+      "@type": "CollegeOrUniversity",
+      "name": "American Global Tech University (AGTU)",
+      "url": "https://www.agtu.us/"
+    },
+    {
+      "@id": "https://ulissesflores.com/#fiap",
+      "@type": "CollegeOrUniversity",
+      "name": "FIAP",
+      "url": "https://www.fiap.com.br/",
+      "sameAs": "https://www.wikidata.org/entity/Q10269779"
+    },
+    {
+      "@id": "https://ulissesflores.com/#padre-anchieta",
+      "@type": "CollegeOrUniversity",
+      "name": "Centro Universitário Padre Anchieta",
+      "url": "https://www.anchieta.br/"
+    },
+    {
+      "@id": "https://ulissesflores.com/#unip",
+      "@type": "CollegeOrUniversity",
+      "name": "Universidade Paulista (UNIP)",
+      "url": "https://www.unip.br/",
+      "sameAs": "https://www.wikidata.org/entity/Q2301653"
+    },
+    {
+      "@id": "https://ulissesflores.com/#cefor",
+      "@type": "CollegeOrUniversity",
+      "name": "CEFOR — Congresso Nacional — Câmara dos Deputados",
+      "url": "https://www2.camara.leg.br/a-camara/programas-institucionais/educacao-para-a-cidadania"
+    },
+    {
+      "@id": "https://ulissesflores.com/#edinburgh",
+      "@type": "CollegeOrUniversity",
+      "name": "The University of Edinburgh",
+      "url": "https://www.ed.ac.uk/",
+      "sameAs": "https://www.wikidata.org/entity/Q160302"
+    },
+    {
+      "@id": "https://ulissesflores.com/#ucsd",
+      "@type": "CollegeOrUniversity",
+      "name": "California College San Diego",
+      "url": "https://www.cc-sd.edu/"
+    },
+    {
+      "@id": "https://ulissesflores.com/#codexhash-labs",
+      "@type": "Organization",
+      "name": "pt-BR: Codex Hash Labs",
+      "url": "https://codexhash.com/labs",
+      "parentOrganization": {
+        "@id": "https://ulissesflores.com/#codexhash"
+      },
+      "description": "Engenharia de sistemas e prototipagem — hardware IoT/edge, arquiteturas cloudless e segurança embarcada."
+    },
+    {
+      "@id": "https://ulissesflores.com/#codexhash-education",
+      "@type": "Organization",
+      "name": "pt-BR: Codex Hash Education",
+      "url": "https://codexhash.com/education",
+      "parentOrganization": {
+        "@id": "https://ulissesflores.com/#codexhash"
+      },
+      "description": "Conteúdo, mentoria e educação técnica — cursos, workshops e engajamento comunitário."
+    },
+    {
+      "@id": "https://ulissesflores.com/#instituto-clube-santo",
+      "@type": "Organization",
+      "name": "Instituto Clube Santo",
+      "url": "https://clubesanto.org",
+      "description": "Instituto de pesquisa em Teologia Histórica, Arqueologia Cognitiva e tradição Metodista Wesleyana."
+    },
+    {
+      "@id": "https://ulissesflores.com/#prefeitura-itupeva",
+      "@type": "GovernmentOrganization",
+      "name": "Prefeitura Municipal de Itupeva",
+      "url": "https://itupeva.sp.gov.br/",
+      "sameAs": [
+        "https://www.wikidata.org/entity/Q734333",
+        "https://en.wikipedia.org/wiki/Itupeva"
+      ]
+    },
+    {
+      "@id": "https://ulissesflores.com/#quadrangular-vila-helena",
+      "@type": "Organization",
+      "name": "Igreja do Evangelho Quadrangular — Vila Helena",
+      "url": "https://www.youtube.com/@quadrangularvilahelena",
+      "description": "Pastoral ministry and sermon collection publisher"
+    },
+    {
       "@id": "https://ulissesflores.com/#credential-palau-digital-residency",
       "@type": "EducationalOccupationalCredential",
       "name": "RNS.ID Digital Residency (Palau)",
@@ -522,6 +1318,292 @@ export const siteJsonLd = {
       },
       "about": {
         "@id": "https://ulissesflores.com/#person"
+      }
+    },
+    {
+      "@id": "https://ulissesflores.com/#cred-msc-ai",
+      "@type": "EducationalOccupationalCredential",
+      "name": "M.Sc. in Artificial Intelligence (in progress)",
+      "credentialCategory": "Master's program",
+      "educationalLevel": "Master's program",
+      "recognizedBy": {
+        "@id": "https://ulissesflores.com/#agtu"
+      },
+      "about": {
+        "@id": "https://ulissesflores.com/#person"
+      },
+      "url": "https://www.agtu.us/",
+      "description": "Resilience in Complex Systems: A Hybrid Approach via Artificial Intelligence and Praxeological Economics",
+      "identifier": {
+        "@type": "PropertyValue",
+        "propertyID": "Period",
+        "value": "Apr 2025 – Apr 2027"
+      },
+      "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "propertyID": "credentialStatus",
+          "value": "InProgress"
+        },
+        {
+          "@type": "PropertyValue",
+          "propertyID": "period",
+          "value": "Apr 2025 – Apr 2027"
+        },
+        {
+          "@type": "PropertyValue",
+          "propertyID": "skills",
+          "value": "Artificial Intelligence, Cyber-financial resilience, Little's Law, LSTM neural networks, Complex adaptive systems"
+        }
+      ],
+      "alternateName": [
+        {
+          "@value": "Resiliência em Sistemas Complexos: Uma Abordagem Híbrida via Inteligência Artificial e Economia Praxeológica",
+          "@language": "pt-BR"
+        },
+        {
+          "@value": "Resilience in Complex Systems: A Hybrid Approach via Artificial Intelligence and Praxeological Economics",
+          "@language": "en"
+        }
+      ]
+    },
+    {
+      "@id": "https://ulissesflores.com/#cred-mba-blockchain",
+      "@type": "EducationalOccupationalCredential",
+      "name": "MBA — Blockchain Development & Technologies",
+      "credentialCategory": "MBA",
+      "educationalLevel": "MBA",
+      "recognizedBy": {
+        "@id": "https://ulissesflores.com/#fiap"
+      },
+      "about": {
+        "@id": "https://ulissesflores.com/#person"
+      },
+      "url": "https://www.fiap.com.br/",
+      "identifier": {
+        "@type": "PropertyValue",
+        "propertyID": "Period",
+        "value": "May 2018 – May 2020"
+      },
+      "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "propertyID": "credentialStatus",
+          "value": "Completed"
+        },
+        {
+          "@type": "PropertyValue",
+          "propertyID": "period",
+          "value": "May 2018 – May 2020"
+        },
+        {
+          "@type": "PropertyValue",
+          "propertyID": "skills",
+          "value": "Competências Interpessoais, Habilidades Analíticas, Node.js, Docker, Algorithms, SQL, Software, Economic Analysis, API REST, Ethereum, Docência, Visual Basic, API Development, Data Structures, Criptografia"
+        }
+      ]
+    },
+    {
+      "@id": "https://ulissesflores.com/#cred-bachelor-economics",
+      "@type": "EducationalOccupationalCredential",
+      "name": "Bacharelado em Economia (B.A. in Economics)",
+      "credentialCategory": "Bachelor's degree",
+      "educationalLevel": "Bachelor's degree",
+      "recognizedBy": {
+        "@id": "https://ulissesflores.com/#padre-anchieta"
+      },
+      "about": {
+        "@id": "https://ulissesflores.com/#person"
+      },
+      "url": "https://www.anchieta.br/",
+      "identifier": {
+        "@type": "PropertyValue",
+        "propertyID": "Period",
+        "value": "2002 – 2017"
+      },
+      "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "propertyID": "credentialStatus",
+          "value": "Completed"
+        },
+        {
+          "@type": "PropertyValue",
+          "propertyID": "period",
+          "value": "2002 – 2017"
+        },
+        {
+          "@type": "PropertyValue",
+          "propertyID": "skills",
+          "value": "Economics, Chaos theory, Austrian School, Nonlinear systems"
+        }
+      ]
+    },
+    {
+      "@id": "https://ulissesflores.com/#cred-ads",
+      "@type": "EducationalOccupationalCredential",
+      "name": "Análise e Desenvolvimento de Sistemas (ADS)",
+      "credentialCategory": "Higher education",
+      "educationalLevel": "Higher education",
+      "recognizedBy": {
+        "@id": "https://ulissesflores.com/#unip"
+      },
+      "about": {
+        "@id": "https://ulissesflores.com/#person"
+      },
+      "url": "https://www.unip.br/",
+      "identifier": {
+        "@type": "PropertyValue",
+        "propertyID": "Period",
+        "value": "Jan 2018 – Jan 2020"
+      },
+      "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "propertyID": "credentialStatus",
+          "value": "Completed"
+        },
+        {
+          "@type": "PropertyValue",
+          "propertyID": "period",
+          "value": "Jan 2018 – Jan 2020"
+        },
+        {
+          "@type": "PropertyValue",
+          "propertyID": "skills",
+          "value": "Software engineering, Systems analysis, Information systems"
+        }
+      ]
+    },
+    {
+      "@id": "https://ulissesflores.com/#cred-cefor",
+      "@type": "EducationalOccupationalCredential",
+      "name": "Estágio — Ciências Políticas e Leis",
+      "credentialCategory": "Internship",
+      "educationalLevel": "Internship",
+      "recognizedBy": {
+        "@id": "https://ulissesflores.com/#cefor"
+      },
+      "about": {
+        "@id": "https://ulissesflores.com/#person"
+      },
+      "url": "https://www2.camara.leg.br/a-camara/programas-institucionais/educacao-para-a-cidadania",
+      "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "propertyID": "credentialStatus",
+          "value": "Completed"
+        },
+        {
+          "@type": "PropertyValue",
+          "propertyID": "skills",
+          "value": "Administrative Law, Political Consulting"
+        }
+      ]
+    },
+    {
+      "@id": "https://ulissesflores.com/#cred-edinburgh-extension",
+      "@type": "EducationalOccupationalCredential",
+      "name": "History and Philosophy of Science and Technology",
+      "credentialCategory": "International extension",
+      "educationalLevel": "International extension",
+      "recognizedBy": {
+        "@id": "https://ulissesflores.com/#edinburgh"
+      },
+      "about": {
+        "@id": "https://ulissesflores.com/#person"
+      },
+      "url": "https://www.ed.ac.uk/",
+      "identifier": {
+        "@type": "PropertyValue",
+        "propertyID": "Period",
+        "value": "Jan 2016 – Apr 2016"
+      },
+      "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "propertyID": "credentialStatus",
+          "value": "Completed"
+        },
+        {
+          "@type": "PropertyValue",
+          "propertyID": "period",
+          "value": "Jan 2016 – Apr 2016"
+        },
+        {
+          "@type": "PropertyValue",
+          "propertyID": "skills",
+          "value": "Science, Philosophy, Philosophy of Religion, Philosophy of Science, Political Philosophy"
+        }
+      ]
+    },
+    {
+      "@id": "https://ulissesflores.com/#cred-ucsd-extension",
+      "@type": "EducationalOccupationalCredential",
+      "name": "Learning Sciences",
+      "credentialCategory": "International extension",
+      "educationalLevel": "International extension",
+      "recognizedBy": {
+        "@id": "https://ulissesflores.com/#ucsd"
+      },
+      "about": {
+        "@id": "https://ulissesflores.com/#person"
+      },
+      "url": "https://www.cc-sd.edu/",
+      "identifier": {
+        "@type": "PropertyValue",
+        "propertyID": "Period",
+        "value": "Jan 2015 – Apr 2015"
+      },
+      "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "propertyID": "credentialStatus",
+          "value": "Completed"
+        },
+        {
+          "@type": "PropertyValue",
+          "propertyID": "period",
+          "value": "Jan 2015 – Apr 2015"
+        },
+        {
+          "@type": "PropertyValue",
+          "propertyID": "skills",
+          "value": "Teaching, Memorization, Photographic Memory, Memory Management"
+        }
+      ]
+    },
+    {
+      "@id": "https://ulissesflores.com/#occupation-codexhash-cto",
+      "@type": "Occupation",
+      "name": "Co-founder, CTO and Chief Researcher — Codex Hash Ltda",
+      "description": "Applied skills: Python, Distributed systems, Security engineering, Quantitative finance, Blockchain, IoT/Embedded systems.",
+      "skills": "Python, Distributed systems, Security engineering, Quantitative finance, Blockchain, IoT/Embedded systems",
+      "occupationalLocation": {
+        "@type": "AdministrativeArea",
+        "name": "Brazil (remote/global)"
+      }
+    },
+    {
+      "@id": "https://ulissesflores.com/#occupation-economic-scientist",
+      "@type": "Occupation",
+      "name": "Economic Scientist and Systems Analyst",
+      "description": "Applied skills: Econometrics, Austrian economics, Complex systems, Data science.",
+      "skills": "Econometrics, Austrian economics, Complex systems, Data science",
+      "occupationalLocation": {
+        "@type": "AdministrativeArea",
+        "name": "Brazil"
+      }
+    },
+    {
+      "@id": "https://ulissesflores.com/#occupation-theology-researcher",
+      "@type": "Occupation",
+      "name": "Researcher in Historical Theology and Textual Criticism",
+      "description": "Applied skills: Textual criticism, Historiography, Archaeology, Hermeneutics.",
+      "skills": "Textual criticism, Historiography, Archaeology, Hermeneutics",
+      "occupationalLocation": {
+        "@type": "AdministrativeArea",
+        "name": "Brazil"
       }
     },
     {

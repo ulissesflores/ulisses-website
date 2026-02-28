@@ -46,6 +46,12 @@ data_classification_policy: >
   The generator MUST enforce these defaults even if a field lacks
   an explicit classification comment.
 
+public_override_registry:
+  - section: "Forensic Heritage & Genealogical Audit"
+    override: "PUBLIC_OVERRIDE: HERITAGE_PUBLIC"
+    scope: "Publish only structured lineage summary fields in public.jsonld by explicit subject decision."
+    approved_at: "2026-02-28"
+
 pending_and_undated_policy: >
   PENDING  = Data exists somewhere but has not yet been collected. Will be filled.
   UNDATED  = No source has this data. It may never be filled.
@@ -248,11 +254,11 @@ integrity_policy: >
 
 
 ## Forensic Heritage & Genealogical Audit
-<!-- classification: PRIVATE -->
+<!-- classification: PRIVATE; PUBLIC_OVERRIDE: HERITAGE_PUBLIC -->
 
 > Source: `auditoriagenealogica.md` v1.0 (compiled 2026-02-03). This section contains
 > forensic-grade genealogical research for citizenship and identity purposes.
-> CLASSIFICATION: PRIVATE — not included in public.jsonld.
+> CLASSIFICATION: PRIVATE with explicit public override for structured lineage summary in public.jsonld.
 
 ### Paternal Lineage — Flores / Benavides / Zapata (El Salvador — Sephardic)
 

@@ -78,6 +78,12 @@ export default async function MundoPoliticoPostPage({ params }: PageProps) {
           <h1 className='text-3xl md:text-4xl font-bold text-white mb-4'>{post.headline}</h1>
           <p className='text-sm text-neutral-500 mb-4'>Publicado em {post.publishedAt}</p>
           <p className='text-neutral-400 leading-relaxed'>{post.summary}</p>
+          <p className='text-sm text-neutral-500 mt-3'>
+            Hub canônico:{' '}
+            <Link href='/identidade' className='text-emerald-300 hover:text-emerald-200 transition-colors'>
+              Identidade Soberana
+            </Link>
+          </p>
         </header>
 
         <section className='rounded-xl border border-neutral-800 bg-neutral-900/30 p-6 space-y-5'>

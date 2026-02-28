@@ -62,7 +62,11 @@ export default function AcervoTeologicoPage() {
 
         <div className='space-y-8'>
           {acervoClusters.map((cluster) => (
-            <section key={cluster.id} className='rounded-xl border border-neutral-800 bg-neutral-900/30 p-6'>
+            <section
+              key={cluster.id}
+              id={`cluster-${cluster.id}`}
+              className='rounded-xl border border-neutral-800 bg-neutral-900/30 p-6 scroll-mt-24'
+            >
               <h2 className='text-2xl font-semibold text-white mb-2'>{cluster.seoTitle}</h2>
               <p className='text-sm text-neutral-400 mb-6'>{cluster.metaDescription}</p>
 

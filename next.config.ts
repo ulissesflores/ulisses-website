@@ -46,6 +46,16 @@ const nextConfig: NextConfig = {
         destination: "/.well-known/keybase.txt",
         permanent: true,
       },
+      {
+        source: "/sovereign-identity",
+        destination: "/identidade",
+        permanent: true,
+      },
+      {
+        source: "/sovereign-identity-hub",
+        destination: "/identidade",
+        permanent: true,
+      },
     ];
 
     // Lista de subdomínios e seus destinos
