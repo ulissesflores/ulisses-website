@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { acervoCanonicalPath, acervoClusters, acervoSermons } from '@/data/acervo-teologico';
 import { upkfMeta } from '@/data/generated/upkf.generated';
 import { buildLanguageAlternates } from '@/data/seo';
+import { AuthorHubCard } from '@/components/author-hub-card';
 
 export const metadata: Metadata = {
   title: 'Acervo Teologico',
@@ -52,12 +53,9 @@ export default function AcervoTeologicoPage() {
           <p className='text-sm text-neutral-500 mt-4'>
             Total de clusters: {acervoClusters.length} · Total de mensagens: {acervoSermons.length}
           </p>
-          <p className='text-sm text-neutral-500 mt-2'>
-            Autor:{' '}
-            <Link href='/identidade' className='text-emerald-300 hover:text-emerald-200 transition-colors'>
-              Ulisses Flores
-            </Link>
-          </p>
+          <div className='mt-4 max-w-xl'>
+            <AuthorHubCard label='Autor' compact description='Acervo com vínculo canônico de autoria para indexação semântica.' />
+          </div>
         </header>
 
         <div className='space-y-8'>

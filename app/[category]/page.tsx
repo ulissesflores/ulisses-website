@@ -4,6 +4,7 @@ import { notFound } from 'next/navigation';
 import { publicationCollections, publications, type PublicationCategory } from '@/data/publications';
 import { upkfMeta } from '@/data/generated/upkf.generated';
 import { buildLanguageAlternates } from '@/data/seo';
+import { AuthorHubCard } from '@/components/author-hub-card';
 
 const validCategories = Object.keys(publicationCollections) as PublicationCategory[];
 
@@ -73,12 +74,13 @@ export default async function CategoryPage({ params }: PageProps) {
           <p className='text-xs uppercase tracking-widest text-emerald-400 mb-3'>{collection.title}</p>
           <h1 className='text-3xl md:text-5xl font-bold text-white mb-4'>{collection.heading}</h1>
           <p className='text-neutral-400 text-lg leading-relaxed'>{collection.description}</p>
-          <p className='text-sm text-neutral-500 mt-3'>
-            Hub canônico:{' '}
-            <Link href='/identidade' className='text-emerald-300 hover:text-emerald-200 transition-colors'>
-              Identidade Soberana
-            </Link>
-          </p>
+          <div className='mt-4 max-w-xl'>
+            <AuthorHubCard
+              label='Hub canônico'
+              compact
+              description='Coleção vinculada à entidade mestra para SEO/GEO e validação de autoria.'
+            />
+          </div>
         </header>
 
         <section className='space-y-4'>

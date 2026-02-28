@@ -5,6 +5,7 @@ import { acervoCanonicalPath, acervoSermons, getAcervoCluster, getAcervoSermon }
 import { knowledgeData } from '@/data/knowledge';
 import { upkfMeta } from '@/data/generated/upkf.generated';
 import { buildLanguageAlternates } from '@/data/seo';
+import { AuthorHubCard } from '@/components/author-hub-card';
 
 interface PageProps {
   params: Promise<{ cluster: string; slug: string }>;
@@ -28,6 +29,12 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   return {
     title: sermon.seoTitle,
     description: sermon.llmContext,
+    authors: [
+      {
+        name: upkfMeta.publicDisplayName || upkfMeta.displayName,
+        url: `${upkfMeta.primaryWebsite}/identidade`,
+      },
+    ],
     alternates: {
       canonical: sermon.canonicalPath,
       languages: buildLanguageAlternates(sermon.canonicalPath),
@@ -113,12 +120,9 @@ export default async function AcervoSermonDetailPage({ params }: PageProps) {
           <p className='text-xs uppercase tracking-widest text-emerald-400 mb-3'>{clusterEntry.seoTitle}</p>
           <h1 className='text-3xl md:text-4xl font-bold text-white mb-4'>{sermon.seoTitle}</h1>
           <p className='text-sm text-neutral-500 mb-4'>Publicado em {sermon.publishedAt}</p>
-          <p className='text-sm text-neutral-500 mb-4'>
-            Autor:{' '}
-            <Link href='/identidade' className='text-emerald-300 hover:text-emerald-200 transition-colors'>
-              Ulisses Flores
-            </Link>
-          </p>
+          <div className='mb-4 max-w-xl'>
+            <AuthorHubCard label='Autor' compact />
+          </div>
           <p className='text-neutral-400 leading-relaxed'>{sermon.clusterMetaDescription}</p>
         </header>
 
