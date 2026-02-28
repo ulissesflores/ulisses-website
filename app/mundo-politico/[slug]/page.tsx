@@ -10,6 +10,8 @@ interface PageProps {
   params: Promise<{ slug: string }>;
 }
 
+const defaultOgImage = `${upkfMeta.primaryWebsite}/carlos-ulisses-flores-cto.jpg`;
+
 export function generateStaticParams() {
   return knowledgeData.blog.posts.map((post) => ({
     slug: post.slug,
@@ -43,6 +45,8 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       title: post.headline,
       description: post.summary,
       publishedTime: post.publishedAt,
+      modifiedTime: post.publishedAt,
+      images: [defaultOgImage],
     },
   };
 }
@@ -60,13 +64,26 @@ export default async function MundoPoliticoPostPage({ params }: PageProps) {
     '@type': 'BlogPosting',
     '@id': `${upkfMeta.primaryWebsite}${post.canonicalPath}#blog-post`,
     headline: post.headline,
+    name: post.headline,
     description: post.summary,
     datePublished: post.publishedAt,
+    dateModified: post.publishedAt,
     inLanguage: knowledgeData.blog.inLanguage || 'pt-BR',
-    url: post.url,
+    url: `${upkfMeta.primaryWebsite}${post.canonicalPath}`,
+    sameAs: post.url,
+    image: [defaultOgImage],
     mainEntityOfPage: `${upkfMeta.primaryWebsite}${post.canonicalPath}`,
     author: {
       '@id': `${upkfMeta.primaryWebsite}/#person`,
+    },
+    publisher: {
+      '@id': `${upkfMeta.primaryWebsite}/#codexhash`,
+      '@type': 'Organization',
+      name: 'Codex Hash',
+      logo: {
+        '@type': 'ImageObject',
+        url: defaultOgImage,
+      },
     },
     isPartOf: {
       '@id': `${upkfMeta.primaryWebsite}${knowledgeData.blog.canonicalPath}#collection`,

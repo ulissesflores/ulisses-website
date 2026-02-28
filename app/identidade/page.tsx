@@ -132,7 +132,7 @@ export default function IdentidadePage() {
     '@context': 'https://schema.org',
     '@graph': [
       {
-        '@type': 'WebPage',
+        '@type': 'ProfilePage',
         '@id': `${upkfMeta.primaryWebsite}${canonicalPath}#webpage`,
         url: `${upkfMeta.primaryWebsite}${canonicalPath}`,
         name: pageTitle,
@@ -142,8 +142,19 @@ export default function IdentidadePage() {
           '@id': `${upkfMeta.primaryWebsite}/#website`,
         },
         mainEntity: {
+          '@type': 'Person',
           '@id': `${upkfMeta.primaryWebsite}/#person`,
+          name: upkfMeta.publicDisplayName || upkfMeta.displayName,
+          url: `${upkfMeta.primaryWebsite}${canonicalPath}`,
+          sameAs: upkfMeta.sameAs,
+          knowsAbout: upkfMeta.knowsAbout,
+          hasOccupation: occupations.map((occupation) => ({
+            '@type': 'Occupation',
+            name: occupation.title,
+          })),
         },
+        primaryImageOfPage: `${upkfMeta.primaryWebsite}${ogImage}`,
+        dateModified: upkfMeta.generatedAt,
         significantLink: hubLinks.map((entry) => `${upkfMeta.primaryWebsite}${entry.href}`),
       },
       {

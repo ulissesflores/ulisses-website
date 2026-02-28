@@ -11,6 +11,8 @@ interface PageProps {
   params: Promise<{ category: string; slug: string }>;
 }
 
+const defaultOgImage = `${upkfMeta.primaryWebsite}/carlos-ulisses-flores-cto.jpg`;
+
 export function generateStaticParams() {
   return publications.map((publication) => ({
     category: publication.category,
@@ -50,6 +52,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       modifiedTime: publication.updatedAt,
       authors: [upkfMeta.publicDisplayName || upkfMeta.displayName],
       tags: publication.tags,
+      images: [defaultOgImage],
     },
     other: {
       citation_title: publication.title,
@@ -88,16 +91,23 @@ export default async function ArticlePage({ params }: PageProps) {
     dateModified: publication.updatedAt,
     inLanguage: publication.inLanguage,
     url: `${upkfMeta.primaryWebsite}/${publication.category}/${publication.id}`,
+    mainEntityOfPage: `${upkfMeta.primaryWebsite}/${publication.category}/${publication.id}`,
     keywords: publication.tags,
+    image: [defaultOgImage],
     author: {
       '@type': 'Person',
       '@id': `${upkfMeta.primaryWebsite}/#person`,
       name: upkfMeta.publicDisplayName || upkfMeta.displayName,
+      url: `${upkfMeta.primaryWebsite}/identidade`,
     },
     publisher: {
       '@type': 'Organization',
       '@id': `${upkfMeta.primaryWebsite}/#codexhash-research`,
       name: 'Codex Hash Research',
+      logo: {
+        '@type': 'ImageObject',
+        url: defaultOgImage,
+      },
     },
     isPartOf: {
       '@id': `${upkfMeta.primaryWebsite}/#collection-${publication.category}`,

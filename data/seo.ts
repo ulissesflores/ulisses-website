@@ -1,30 +1,18 @@
 import { upkfMeta } from '@/data/generated/upkf.generated';
+import { defaultLocale, localeToHreflang, localizePath, supportedLocales, type Locale } from '@/data/i18n';
 
-export const hreflangLocalePrefix = {
-  'pt-BR': 'pt-br',
-  en: 'en',
-  es: 'es',
-  he: 'he',
-  it: 'it',
-} as const;
-
-function normalizePath(path: string): string {
-  if (!path || path === '/') {
-    return '/';
-  }
-  return path.startsWith('/') ? path : `/${path}`;
-}
-
-export function buildLanguageAlternates(path: string): Record<string, string> {
+export function buildLanguageAlternates(path: string, publishedLocales: readonly Locale[] = supportedLocales): Record<string, string> {
   const origin = upkfMeta.primaryWebsite;
-  const normalizedPath = normalizePath(path);
   const alternates: Record<string, string> = {};
 
-  Object.entries(hreflangLocalePrefix).forEach(([lang, prefix]) => {
-    const suffix = normalizedPath === '/' ? '' : normalizedPath;
-    alternates[lang] = `${origin}/${prefix}${suffix}`;
-  });
+  for (const locale of publishedLocales) {
+    const hrefLang = localeToHreflang[locale];
+    const localizedPath = localizePath(path, locale);
+    alternates[hrefLang] = `${origin}${localizedPath === '/' ? '' : localizedPath}`;
+  }
+
+  const defaultPath = localizePath(path, defaultLocale);
+  alternates['x-default'] = `${origin}${defaultPath === '/' ? '' : defaultPath}`;
 
   return alternates;
 }
-

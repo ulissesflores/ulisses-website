@@ -20,6 +20,31 @@ function getGraph(jsonld) {
   return jsonld['@graph'];
 }
 
+function asTypeArray(node) {
+  const type = node?.['@type'];
+  if (Array.isArray(type)) {
+    return type.filter((item) => typeof item === 'string');
+  }
+  return typeof type === 'string' ? [type] : [];
+}
+
+function hasType(node, typeName) {
+  return asTypeArray(node).includes(typeName);
+}
+
+function hasImage(node) {
+  if (!node) {
+    return false;
+  }
+  if (Array.isArray(node.image)) {
+    return node.image.length > 0;
+  }
+  if (typeof node.image === 'string') {
+    return node.image.length > 0;
+  }
+  return Boolean(node.image && typeof node.image === 'object');
+}
+
 function assert(checks, condition, label, details = '') {
   checks.push({
     ok: Boolean(condition),
@@ -69,6 +94,9 @@ function main() {
     doiManifest: path.join(publicDir, 'doi', 'manifest.json'),
     deepResearchGeneratedTs: path.join(generatedDir, 'deep-research.generated.ts'),
     publicationsJson: path.join(docsDir, 'publications.generated.json'),
+    robotsSource: path.join(repoRoot, 'app', 'robots.ts'),
+    seoSource: path.join(repoRoot, 'data', 'seo.ts'),
+    identidadePage: path.join(repoRoot, 'app', 'identidade', 'page.tsx'),
   };
 
   const checks = [];
@@ -102,7 +130,7 @@ function main() {
   const publicGraph = getGraph(publicJson);
   const fullGraph = getGraph(fullJson);
 
-  const allCreds = publicGraph.filter((node) => node['@type'] === 'EducationalOccupationalCredential');
+  const allCreds = publicGraph.filter((node) => hasType(node, 'EducationalOccupationalCredential'));
   const aluraCreds = allCreds.filter(
     (node) =>
       typeof node['@id'] === 'string' &&
@@ -110,19 +138,17 @@ function main() {
       typeof node.url === 'string' &&
       node.url.startsWith('https://cursos.alura.com.br/certificate/'),
   );
-  const sermonNodes = publicGraph.filter((node) => {
-    const type = node['@type'];
-    const asArray = Array.isArray(type) ? type : [type];
-    const hasSermonType = asArray.includes('Sermon');
-    const hasVideoSermon =
-      asArray.includes('VideoObject') &&
-      (node.genre === 'Sermon' || node.additionalType === 'https://schema.org/Sermon');
-    return hasSermonType || hasVideoSermon;
-  });
-  const blogNodes = publicGraph.filter((node) => node['@type'] === 'BlogPosting');
+  const sermonNodes = publicGraph.filter((node) => hasType(node, 'VideoObject') && (node.genre === 'Sermon' || node.additionalType === 'https://schema.org/Sermon'));
+  const blogNodes = publicGraph.filter((node) => hasType(node, 'BlogPosting'));
+  const articleNodes = publicGraph.filter((node) => hasType(node, 'ScholarlyArticle') || hasType(node, 'Report') || hasType(node, 'BlogPosting'));
+  const robotsSource = fs.readFileSync(files.robotsSource, 'utf8');
+  const seoSource = fs.readFileSync(files.seoSource, 'utf8');
+  const identidadePageSource = fs.readFileSync(files.identidadePage, 'utf8');
 
   const fullRoot = fullGraph.find((node) => node['@id'] === 'https://ulissesflores.com/#upkf');
   const publicRoot = publicGraph.find((node) => node['@id'] === 'https://ulissesflores.com/#upkf-public');
+  const datasetDistribution = Array.isArray(publicRoot?.distribution) ? publicRoot.distribution : [];
+  const distributionUrls = new Set(datasetDistribution.map((item) => item.contentUrl).filter(Boolean));
 
   assert(checks, siteGraph.length >= 4, 'site.jsonld tem grafo minimo');
   assert(checks, publicGraph.length > siteGraph.length, 'public.jsonld maior que site.jsonld');
@@ -147,6 +173,53 @@ function main() {
     !publicRoot || !Object.prototype.hasOwnProperty.call(publicRoot, 'includesObject'),
     'public dataset sem includesObject invalido',
   );
+  assert(
+    checks,
+    publicRoot && publicRoot.includedInDataCatalog && publicRoot.includedInDataCatalog['@id'] === 'https://ulissesflores.com/#knowledge-catalog',
+    'public dataset referenciado em DataCatalog',
+  );
+  assert(checks, datasetDistribution.length >= 4, 'public dataset com distribution minima');
+  assert(checks, distributionUrls.has('https://ulissesflores.com/public.jsonld'), 'distribution inclui public.jsonld');
+  assert(checks, distributionUrls.has('https://ulissesflores.com/full.jsonld'), 'distribution inclui full.jsonld');
+  assert(checks, distributionUrls.has('https://ulissesflores.com/site.jsonld'), 'distribution inclui site.jsonld');
+  assert(checks, distributionUrls.has('https://ulissesflores.com/upkf-source.md'), 'distribution inclui upkf-source.md');
+  assert(
+    checks,
+    articleNodes.every((node) => hasImage(node)),
+    'Article/Report/BlogPosting com image',
+  );
+  assert(
+    checks,
+    articleNodes.every((node) => node.publisher?.logo?.url),
+    'Article/Report/BlogPosting com publisher.logo',
+  );
+  assert(
+    checks,
+    articleNodes.every((node) => Boolean(node.dateModified)),
+    'Article/Report/BlogPosting com dateModified',
+  );
+  assert(
+    checks,
+    articleNodes.filter((node) => hasType(node, 'ScholarlyArticle') || hasType(node, 'Report')).every((node) => Boolean(node.mainEntityOfPage)),
+    'ScholarlyArticle/Report com mainEntityOfPage',
+  );
+  assert(
+    checks,
+    sermonNodes.every((node) => Boolean(node.uploadDate) && Boolean(node.thumbnailUrl) && Boolean(node.embedUrl) && Boolean(node.description)),
+    'VideoObject com uploadDate/thumbnail/embed/description',
+  );
+  assert(
+    checks,
+    allCreds.every((node) => hasImage(node)),
+    'EducationalOccupationalCredential com image',
+  );
+  assert(
+    checks,
+    identidadePageSource.includes("'@type': 'ProfilePage'") || identidadePageSource.includes('"@type": "ProfilePage"'),
+    '/identidade usa ProfilePage',
+  );
+  assert(checks, robotsSource.includes('OAI-SearchBot'), 'robots inclui OAI-SearchBot');
+  assert(checks, seoSource.includes("'x-default'"), 'alternates inclui x-default');
   assert(
     checks,
     fs.readFileSync(files.sourceMd, 'utf8').includes('Ulisses Flores — Sovereign UPKF'),

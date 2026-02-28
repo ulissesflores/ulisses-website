@@ -5,6 +5,7 @@ import { upkfMeta } from '@/data/generated/upkf.generated';
 import { buildLanguageAlternates } from '@/data/seo';
 import { certificationsSotaData } from '@/data/certifications-sota';
 import { acervoCanonicalPath, acervoLatestPublishedAt, acervoSermons } from '@/data/acervo-teologico';
+import { localizePath, supportedLocales } from '@/data/i18n';
 
 function isIndexableSitemapPath(path: string): boolean {
   const normalized = path.toLowerCase();
@@ -51,6 +52,13 @@ function maybeMakeSitemapEntry(
   }
 
   return makeSitemapEntry(path, lastModified, changeFrequency, priority);
+}
+
+function normalizeChangeFrequency(value: MetadataRoute.Sitemap[number]['changeFrequency']): 'daily' | 'weekly' | 'monthly' {
+  if (value === 'daily' || value === 'weekly' || value === 'monthly') {
+    return value;
+  }
+  return 'weekly';
 }
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -120,7 +128,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     maybeMakeSitemapEntry('/simulacoes/rapaduria-2027', upkfMeta.generatedAt, 'weekly', 0.68),
   ].filter((entry): entry is MetadataRoute.Sitemap[number] => Boolean(entry));
 
-  return [
+  const baseEntries: MetadataRoute.Sitemap = [
     makeSitemapEntry('/', latestSiteDate, 'weekly', 1),
     ...(identidadeEntry ? [identidadeEntry] : []),
     ...simulationEntries,
@@ -131,4 +139,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...blogEntries,
     ...acervoEntries,
   ];
+
+  const localizedEntries: MetadataRoute.Sitemap = baseEntries.flatMap((entry) => {
+    const currentUrl = new URL(entry.url);
+    const currentPath = currentUrl.pathname === '/' ? '/' : currentUrl.pathname;
+    const lastModifiedRaw = entry.lastModified ?? upkfMeta.generatedAt;
+    const lastModified = typeof lastModifiedRaw === 'string' ? lastModifiedRaw : lastModifiedRaw.toISOString();
+    const changeFrequency = normalizeChangeFrequency(entry.changeFrequency);
+    const priority = entry.priority || 0.5;
+    return supportedLocales.map((locale) =>
+      makeSitemapEntry(localizePath(currentPath, locale), lastModified, changeFrequency, priority),
+    );
+  });
+
+  return Array.from(new Map(localizedEntries.map((entry) => [entry.url, entry])).values());
 }

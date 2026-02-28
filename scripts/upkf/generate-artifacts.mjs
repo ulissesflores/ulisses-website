@@ -2247,6 +2247,7 @@ function buildPublicationNodes(siteUrl, publications) {
     headline: publication.title,
     description: publication.landing.overview,
     url: publication.canonicalUrl,
+    mainEntityOfPage: publication.canonicalUrl,
     datePublished: publication.publishedAt,
     dateModified: publication.updatedAt,
     inLanguage: publication.inLanguage,
@@ -2688,6 +2689,16 @@ function buildPublicJsonLd({
   const blogNodes = buildBlogNodes(siteUrl, blogPosts);
   const sermonNodes = buildSermonNodes(siteUrl, sermons);
   const extraNodes = [...certificationNodes, ...blogNodes, ...sermonNodes];
+  const publicCatalogId = `${siteUrl}/#knowledge-catalog`;
+
+  const publicDataCatalogNode = {
+    '@id': publicCatalogId,
+    '@type': 'DataCatalog',
+    name: 'Ulisses Flores Public Knowledge Catalog',
+    description: 'Catalog of public machine-readable resources for SEO, GEO and LLM indexing.',
+    url: siteUrl,
+    inLanguage: frontmatter.languages || ['pt-BR'],
+  };
 
   const publicDatasetNode = {
     '@id': `${siteUrl}/#upkf-public`,
@@ -2706,11 +2717,36 @@ function buildPublicJsonLd({
       '@type': 'CreativeWork',
       name: path.basename(sourcePath),
     },
+    includedInDataCatalog: {
+      '@id': publicCatalogId,
+    },
+    distribution: [
+      {
+        '@type': 'DataDownload',
+        contentUrl: `${siteUrl}/public.jsonld`,
+        encodingFormat: 'application/ld+json',
+      },
+      {
+        '@type': 'DataDownload',
+        contentUrl: `${siteUrl}/full.jsonld`,
+        encodingFormat: 'application/ld+json',
+      },
+      {
+        '@type': 'DataDownload',
+        contentUrl: `${siteUrl}/site.jsonld`,
+        encodingFormat: 'application/ld+json',
+      },
+      {
+        '@type': 'DataDownload',
+        contentUrl: `${siteUrl}/upkf-source.md`,
+        encodingFormat: 'text/markdown',
+      },
+    ],
   };
 
   const publicJsonLd = {
     '@context': 'https://schema.org',
-    '@graph': [...baseGraph, ...collectionNodes, ...publicationNodes, ...extraNodes, publicDatasetNode],
+    '@graph': [...baseGraph, ...collectionNodes, ...publicationNodes, ...extraNodes, publicDataCatalogNode, publicDatasetNode],
   };
 
   return applyRichResultFallbacks(publicJsonLd, siteUrl);

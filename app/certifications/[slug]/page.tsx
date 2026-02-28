@@ -10,6 +10,8 @@ interface PageProps {
   params: Promise<{ slug: string }>;
 }
 
+const defaultOgImage = `${upkfMeta.primaryWebsite}/carlos-ulisses-flores-cto.jpg`;
+
 export function generateStaticParams() {
   return certificationsSotaData.map((certification) => ({
     slug: certification.slug,
@@ -45,6 +47,8 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       title: `${certification.title} | ${certification.provider}`,
       description,
       publishedTime: certification.publishedAt,
+      modifiedTime: certification.publishedAt,
+      images: [defaultOgImage],
     },
   };
 }
@@ -76,12 +80,18 @@ export default async function CertificationDetailPage({ params }: PageProps) {
         identifier: certification.certId || undefined,
         url: `${upkfMeta.primaryWebsite}${certification.canonicalPath}`,
         sameAs: certification.verifyUrl,
+        image: [defaultOgImage],
+        mainEntityOfPage: `${upkfMeta.primaryWebsite}${certification.canonicalPath}`,
         credentialCategory: 'Professional Certification',
         datePublished: certification.publishedAt,
         recognizedBy: {
           '@id': issuerId,
           '@type': 'Organization',
           name: certification.provider,
+          logo: {
+            '@type': 'ImageObject',
+            url: defaultOgImage,
+          },
         },
         about: {
           '@id': `${upkfMeta.primaryWebsite}/#person`,
@@ -96,8 +106,13 @@ export default async function CertificationDetailPage({ params }: PageProps) {
           '@id': issuerId,
           '@type': 'Organization',
           name: certification.provider,
+          logo: {
+            '@type': 'ImageObject',
+            url: defaultOgImage,
+          },
         },
         inLanguage: 'pt-BR',
+        image: [defaultOgImage],
         teaches: certification.skills,
         educationalCredentialAwarded: certification.title,
         hasCourseInstance: {
