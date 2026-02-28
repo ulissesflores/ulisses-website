@@ -33,6 +33,9 @@ export function GlobalHeader() {
           <Link href='/mundo-politico' className='hover:text-white transition-colors'>
             Mundo Politico
           </Link>
+          <Link href='/simulacoes' className='hover:text-white transition-colors'>
+            Simulacoes
+          </Link>
         </div>
 
         <Link

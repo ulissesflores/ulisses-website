@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   },
   applicationName: 'ulissesflores.com',
   description: defaultDescription,
-  authors: [{ name: upkfMeta.publicDisplayName || upkfMeta.displayName, url: siteOrigin }],
+  authors: [{ name: upkfMeta.publicDisplayName || upkfMeta.displayName, url: `${siteOrigin}/identidade` }],
   creator: upkfMeta.publicDisplayName || upkfMeta.displayName,
   publisher: 'Codex Hash Research',
   keywords: [
