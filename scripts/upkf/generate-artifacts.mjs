@@ -2688,16 +2688,6 @@ function buildPublicJsonLd({
   const blogNodes = buildBlogNodes(siteUrl, blogPosts);
   const sermonNodes = buildSermonNodes(siteUrl, sermons);
   const extraNodes = [...certificationNodes, ...blogNodes, ...sermonNodes];
-  const isOrganizationNode = (node) => {
-    const type = node?.['@type'];
-    if (Array.isArray(type)) {
-      return type.includes('Organization');
-    }
-    return type === 'Organization';
-  };
-  const publicHasPart = [...collectionNodes, ...publicationNodes, ...certificationNodes, ...blogNodes, ...sermonNodes]
-    .filter((node) => !isOrganizationNode(node))
-    .map((node) => ({ '@id': node['@id'] }));
 
   const publicDatasetNode = {
     '@id': `${siteUrl}/#upkf-public`,
@@ -2705,6 +2695,7 @@ function buildPublicJsonLd({
     name: `${frontmatter.title || 'UPKF'} (Public Knowledge Graph)`,
     version: frontmatter.version || 'unknown',
     dateModified: frontmatter.generated_at || new Date().toISOString(),
+    license: 'https://creativecommons.org/licenses/by/4.0/',
     description: 'Public semantic graph derived from the canonical UPKF source.',
     inLanguage: frontmatter.languages || ['pt-BR'],
     url: `${siteUrl}/public.jsonld`,
@@ -2715,7 +2706,6 @@ function buildPublicJsonLd({
       '@type': 'CreativeWork',
       name: path.basename(sourcePath),
     },
-    hasPart: publicHasPart,
   };
 
   const publicJsonLd = {

@@ -132,7 +132,16 @@ function main() {
   assert(checks, sermonNodes.length === 56, '56 sermoes estruturados');
   assert(checks, blogNodes.length === 19, '19 posts do Mundo Politico estruturados');
   assert(checks, fullRoot && !Object.prototype.hasOwnProperty.call(fullRoot, 'text'), 'full root sem campo text gigante');
-  assert(checks, publicRoot && Array.isArray(publicRoot.hasPart), 'public dataset com hasPart');
+  assert(
+    checks,
+    publicRoot && publicRoot.license === 'https://creativecommons.org/licenses/by/4.0/',
+    'public dataset com license CC-BY-4.0',
+  );
+  assert(
+    checks,
+    !publicRoot || !Object.prototype.hasOwnProperty.call(publicRoot, 'hasPart'),
+    'public dataset sem hasPart',
+  );
   assert(
     checks,
     !publicRoot || !Object.prototype.hasOwnProperty.call(publicRoot, 'includesObject'),
