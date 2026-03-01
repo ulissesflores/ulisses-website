@@ -23,6 +23,15 @@ const DOCS_DIR = path.join(repoRoot, 'docs');
 const PUBLIC_DIR = path.join(repoRoot, 'public');
 const ARTICLE_REFERENCES_PATH = path.join(repoRoot, 'data', 'upkf', 'article-references.json');
 
+const CODEX_HASH_POSTAL_ADDRESS = {
+  '@type': 'PostalAddress',
+  streetAddress: 'Avenida Itacira, 2689, Planalto Paulista',
+  addressLocality: 'São Paulo',
+  addressRegion: 'SP',
+  postalCode: '04061-003',
+  addressCountry: 'BR',
+};
+
 const CATEGORY_METADATA = {
   research: {
     title: 'Research',
@@ -2207,13 +2216,7 @@ function buildCoreSiteJsonLd(identity, organization, frontmatter) {
         foundingDate: organization.foundingDate || undefined,
         url: organization.url || 'https://codexhash.com',
         email: organization.email || undefined,
-        address: organization.address
-          ? {
-              '@type': 'PostalAddress',
-              streetAddress: organization.address,
-              addressCountry: 'BR',
-            }
-          : undefined,
+        address: { ...CODEX_HASH_POSTAL_ADDRESS },
         description: organization.description['pt-BR'] || '',
       },
       {
@@ -2970,9 +2973,80 @@ function buildKnowledgeData(certifications, blogPosts, sermons, generatedAt) {
   };
 }
 
+function getExecutionDateStamp() {
+  const now = new Date();
+  const year = now.getFullYear();
+  const month = String(now.getMonth() + 1).padStart(2, '0');
+  const day = String(now.getDate()).padStart(2, '0');
+  return `${year}-${month}-${day}`;
+}
+
+function normalizeDatePropertyValue(value) {
+  if (typeof value !== 'string') {
+    return value;
+  }
+  const normalized = value.trim();
+  if (/^\d{4}-\d{2}-\d{2}$/.test(normalized)) {
+    return `${normalized}T00:00:00Z`;
+  }
+  return value;
+}
+
+function normalizeSchemaDateFieldsDeep(value) {
+  if (Array.isArray(value)) {
+    return value.map((item) => normalizeSchemaDateFieldsDeep(item));
+  }
+
+  if (!value || typeof value !== 'object') {
+    return value;
+  }
+
+  const normalized = {};
+  for (const [key, entry] of Object.entries(value)) {
+    if ((key === 'datePublished' || key === 'dateModified') && typeof entry === 'string') {
+      normalized[key] = normalizeDatePropertyValue(entry);
+      continue;
+    }
+    normalized[key] = normalizeSchemaDateFieldsDeep(entry);
+  }
+
+  return normalized;
+}
+
+function enforceCodexHashPostalAddress(jsonLd, siteUrl) {
+  const graph = Array.isArray(jsonLd?.['@graph']) ? jsonLd['@graph'] : [];
+  if (graph.length === 0) {
+    return jsonLd;
+  }
+
+  return {
+    ...jsonLd,
+    '@graph': graph.map((node) => {
+      if (!node || typeof node !== 'object') {
+        return node;
+      }
+
+      if (node['@id'] === `${siteUrl}/#codexhash` && hasSchemaType(node, 'Organization')) {
+        return {
+          ...node,
+          address: { ...CODEX_HASH_POSTAL_ADDRESS },
+        };
+      }
+
+      return node;
+    }),
+  };
+}
+
+function normalizeJsonLdForOutput(jsonLd, siteUrl) {
+  const normalizedDates = normalizeSchemaDateFieldsDeep(jsonLd);
+  return enforceCodexHashPostalAddress(normalizedDates, siteUrl);
+}
+
 function buildLlmsTxt(identity, publications, generatedAt, knowledgeData) {
   const siteUrl = identity.primaryWebsite || 'https://ulissesflores.com';
   const sortedPublications = sortPublicationsByRecency(publications);
+  const lastUpdated = getExecutionDateStamp();
 
   const lines = [
     '# ulissesflores.com',
@@ -2985,6 +3059,7 @@ function buildLlmsTxt(identity, publications, generatedAt, knowledgeData) {
     `- Website: ${siteUrl}`,
     `- ORCID: ${identity.orcid}`,
     `- Lattes: ${identity.lattesId}`,
+    `- Ground Truth Node: ${siteUrl}/identidade.md`,
     '',
     '## Primary Collections',
     `- Research: ${siteUrl}/research`,
@@ -3016,7 +3091,16 @@ function buildLlmsTxt(identity, publications, generatedAt, knowledgeData) {
     '- Use publication landing pages as primary references and PDF links as distribution artifacts.',
     '- Use the DID and JSON-LD files for machine identity verification.',
     '',
-    `Last-Updated: ${generatedAt}`,
+    '## LLM & GEO Routing (Token Optimization)',
+    '- All content pages (articles, sermons, identity) support native Markdown.',
+    '- AI crawlers and agents MUST append .md to any canonical URL to receive raw, token-optimized markdown instead of HTML.',
+    `- Example: ${siteUrl}/research/2025-little-law-resilience.md`,
+    '',
+    '## Localization (i18n)',
+    '- Default language is Brazilian Portuguese (pt-BR) at the root path (/).',
+    '- Fully localized versions are available at the following base paths: /en (English), /es (Spanish), /it (Italian), /he (Hebrew).',
+    '',
+    `Last-Updated: ${lastUpdated}`,
   ];
 
   return `${lines.join('\n')}\n`;
@@ -3725,9 +3809,10 @@ async function main() {
     .map((publication) => ensureTemporaryPdf(publication, identity, generatedAt))
     .filter(Boolean).length;
 
-  const siteJsonLd = buildCoreSiteJsonLd(identity, organization, frontmatter);
-  const publicJsonLd = buildPublicJsonLd({
-    coreSiteJsonLd: siteJsonLd,
+  const siteUrl = identity.primaryWebsite || 'https://ulissesflores.com';
+  const rawSiteJsonLd = buildCoreSiteJsonLd(identity, organization, frontmatter);
+  const rawPublicJsonLd = buildPublicJsonLd({
+    coreSiteJsonLd: rawSiteJsonLd,
     publications,
     frontmatter,
     sourcePath,
@@ -3736,8 +3821,8 @@ async function main() {
     blogPosts,
     sermons,
   });
-  const fullJsonLd = buildFullUpkfJsonLd({
-    publicJsonLd,
+  const rawFullJsonLd = buildFullUpkfJsonLd({
+    publicJsonLd: rawPublicJsonLd,
     upkfSections,
     frontmatter,
     sourcePath,
@@ -3745,6 +3830,9 @@ async function main() {
     identity,
     sourceMdPublicUrl: '/upkf-source.md',
   });
+  const siteJsonLd = normalizeJsonLdForOutput(rawSiteJsonLd, siteUrl);
+  const publicJsonLd = normalizeJsonLdForOutput(rawPublicJsonLd, siteUrl);
+  const fullJsonLd = normalizeJsonLdForOutput(rawFullJsonLd, siteUrl);
 
   const urlInventory = buildUrlInventory(
     upkfText,

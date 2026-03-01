@@ -45,6 +45,26 @@ function hasImage(node) {
   return Boolean(node.image && typeof node.image === 'object');
 }
 
+function collectDateFieldViolations(value, violations, pointer = '$') {
+  if (Array.isArray(value)) {
+    value.forEach((item, index) => collectDateFieldViolations(item, violations, `${pointer}[${index}]`));
+    return;
+  }
+
+  if (!value || typeof value !== 'object') {
+    return;
+  }
+
+  for (const [key, entry] of Object.entries(value)) {
+    const childPointer = `${pointer}.${key}`;
+    if ((key === 'datePublished' || key === 'dateModified') && typeof entry === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(entry.trim())) {
+      violations.push(`${childPointer}=${entry}`);
+    } else {
+      collectDateFieldViolations(entry, violations, childPointer);
+    }
+  }
+}
+
 function assert(checks, condition, label, details = '') {
   checks.push({
     ok: Boolean(condition),
@@ -84,6 +104,12 @@ function main() {
     sourceMd: path.join(publicDir, 'upkf-source.md'),
     llms: path.join(publicDir, 'llms.txt'),
     llmsFull: path.join(publicDir, 'llms-full.txt'),
+    identidadeMd: path.join(publicDir, 'identidade.md'),
+    acervoMd: path.join(publicDir, 'acervo-teologico.md'),
+    researchMd: path.join(publicDir, 'research.md'),
+    whitepapersMd: path.join(publicDir, 'whitepapers.md'),
+    essaysMd: path.join(publicDir, 'essays.md'),
+    mundoPoliticoMd: path.join(publicDir, 'mundo-politico.md'),
     did: path.join(publicDir, '.well-known', 'did.json'),
     articleQualityJson: path.join(docsDir, 'article-quality.generated.json'),
     articleQualityMd: path.join(docsDir, 'article-quality.generated.md'),
@@ -125,6 +151,7 @@ function main() {
   const articleQuality = readJson(files.articleQualityJson);
   const doiReady = readJson(files.doiReadyJson);
   const deepQuality = readJson(files.deepQualityJson);
+  const llmsContent = fs.readFileSync(files.llms, 'utf8');
 
   const siteGraph = getGraph(siteJson);
   const publicGraph = getGraph(publicJson);
@@ -147,8 +174,13 @@ function main() {
 
   const fullRoot = fullGraph.find((node) => node['@id'] === 'https://ulissesflores.com/#upkf');
   const publicRoot = publicGraph.find((node) => node['@id'] === 'https://ulissesflores.com/#upkf-public');
+  const codexHash = publicGraph.find(
+    (node) => node['@id'] === 'https://ulissesflores.com/#codexhash' && hasType(node, 'Organization'),
+  );
   const datasetDistribution = Array.isArray(publicRoot?.distribution) ? publicRoot.distribution : [];
   const distributionUrls = new Set(datasetDistribution.map((item) => item.contentUrl).filter(Boolean));
+  const dateViolations = [];
+  collectDateFieldViolations(publicJson, dateViolations);
 
   assert(checks, siteGraph.length >= 4, 'site.jsonld tem grafo minimo');
   assert(checks, publicGraph.length > siteGraph.length, 'public.jsonld maior que site.jsonld');
@@ -227,8 +259,43 @@ function main() {
   );
   assert(
     checks,
-    fs.readFileSync(files.llms, 'utf8').includes('/public.jsonld'),
+    llmsContent.includes('/public.jsonld'),
     'llms.txt referencia recursos semanticos',
+  );
+  assert(
+    checks,
+    llmsContent.includes('Ground Truth Node: https://ulissesflores.com/identidade.md'),
+    'llms.txt inclui Ground Truth Node em /identidade.md',
+  );
+  assert(
+    checks,
+    llmsContent.includes('## LLM & GEO Routing (Token Optimization)'),
+    'llms.txt inclui secao LLM & GEO Routing',
+  );
+  assert(
+    checks,
+    llmsContent.includes('## Localization (i18n)'),
+    'llms.txt inclui secao Localization (i18n)',
+  );
+  assert(
+    checks,
+    dateViolations.length === 0,
+    'public.jsonld sem datePublished/dateModified no formato YYYY-MM-DD',
+    dateViolations.length > 0 ? dateViolations.slice(0, 8).join('; ') : '',
+  );
+  assert(
+    checks,
+    codexHash?.address?.['@type'] === 'PostalAddress',
+    'Codex Hash usa address com @type PostalAddress',
+  );
+  assert(
+    checks,
+    codexHash?.address?.streetAddress === 'Avenida Itacira, 2689, Planalto Paulista' &&
+      codexHash?.address?.addressLocality === 'São Paulo' &&
+      codexHash?.address?.addressRegion === 'SP' &&
+      codexHash?.address?.postalCode === '04061-003' &&
+      codexHash?.address?.addressCountry === 'BR',
+    'Codex Hash address contem campos completos canônicos',
   );
   assert(
     checks,

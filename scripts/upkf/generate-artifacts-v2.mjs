@@ -23,6 +23,17 @@ const GENERATED_DIR = path.join(repoRoot, 'data', 'generated');
 const DOCS_DIR = path.join(repoRoot, 'docs');
 const PUBLIC_DIR = path.join(repoRoot, 'public');
 const ARTICLE_REFERENCES_PATH = path.join(repoRoot, 'data', 'upkf', 'article-references.json');
+const SERMONS_MIGRATION_JSON_PATH = path.join(repoRoot, 'data', 'seo', 'sermons-full-migration.json');
+const SERMONS_MIGRATION_TS_PATH = path.join(repoRoot, 'data', 'sermons-migration.ts');
+
+const CODEX_HASH_POSTAL_ADDRESS = {
+  '@type': 'PostalAddress',
+  streetAddress: 'Avenida Itacira, 2689, Planalto Paulista',
+  addressLocality: 'São Paulo',
+  addressRegion: 'SP',
+  postalCode: '04061-003',
+  addressCountry: 'BR',
+};
 
 const SOTA_JOB_TITLES = [
   'CTO',
@@ -3043,13 +3054,7 @@ function buildCoreSiteJsonLd(identity, organization, frontmatter) {
         foundingDate: organization.foundingDate || undefined,
         url: organization.url || 'https://codexhash.com',
         email: organization.email || undefined,
-        address: organization.address
-          ? {
-              '@type': 'PostalAddress',
-              streetAddress: organization.address,
-              addressCountry: 'BR',
-            }
-          : undefined,
+        address: { ...CODEX_HASH_POSTAL_ADDRESS },
         description: organization.description['pt-BR'] || '',
       },
       {
@@ -3892,9 +3897,347 @@ function buildKnowledgeData(certifications, blogPosts, sermons, generatedAt, ide
   };
 }
 
+function getExecutionDateStamp() {
+  const now = new Date();
+  const year = now.getFullYear();
+  const month = String(now.getMonth() + 1).padStart(2, '0');
+  const day = String(now.getDate()).padStart(2, '0');
+  return `${year}-${month}-${day}`;
+}
+
+function normalizeDatePropertyValue(value) {
+  if (typeof value !== 'string') {
+    return value;
+  }
+  const normalized = value.trim();
+  if (/^\d{4}-\d{2}-\d{2}$/.test(normalized)) {
+    return `${normalized}T00:00:00Z`;
+  }
+  return value;
+}
+
+function normalizeSchemaDateFieldsDeep(value) {
+  if (Array.isArray(value)) {
+    return value.map((item) => normalizeSchemaDateFieldsDeep(item));
+  }
+
+  if (!value || typeof value !== 'object') {
+    return value;
+  }
+
+  const normalized = {};
+  for (const [key, entry] of Object.entries(value)) {
+    if ((key === 'datePublished' || key === 'dateModified') && typeof entry === 'string') {
+      normalized[key] = normalizeDatePropertyValue(entry);
+      continue;
+    }
+    normalized[key] = normalizeSchemaDateFieldsDeep(entry);
+  }
+
+  return normalized;
+}
+
+function enforceCodexHashPostalAddress(jsonLd, siteUrl) {
+  const graph = Array.isArray(jsonLd?.['@graph']) ? jsonLd['@graph'] : [];
+  if (graph.length === 0) {
+    return jsonLd;
+  }
+
+  return {
+    ...jsonLd,
+    '@graph': graph.map((node) => {
+      if (!node || typeof node !== 'object') {
+        return node;
+      }
+
+      if (node['@id'] === `${siteUrl}/#codexhash` && hasSchemaType(node, 'Organization')) {
+        return {
+          ...node,
+          address: { ...CODEX_HASH_POSTAL_ADDRESS },
+        };
+      }
+
+      return node;
+    }),
+  };
+}
+
+function normalizeJsonLdForOutput(jsonLd, siteUrl) {
+  const normalizedDates = normalizeSchemaDateFieldsDeep(jsonLd);
+  return enforceCodexHashPostalAddress(normalizedDates, siteUrl);
+}
+
+function normalizePathname(pathname, fallback = '/') {
+  if (!pathname || typeof pathname !== 'string') {
+    return fallback;
+  }
+  const trimmed = pathname.trim();
+  if (!trimmed) {
+    return fallback;
+  }
+  const withLeadingSlash = trimmed.startsWith('/') ? trimmed : `/${trimmed}`;
+  return withLeadingSlash.replace(/\/+$/g, '') || '/';
+}
+
+function toAbsoluteUrl(siteUrl, pathname) {
+  return `${siteUrl}${normalizePathname(pathname)}`;
+}
+
+function readFileIfExists(filePath) {
+  try {
+    if (!filePath || !fs.existsSync(filePath)) {
+      return '';
+    }
+    return fs.readFileSync(filePath, 'utf8');
+  } catch {
+    return '';
+  }
+}
+
+function buildMarkdownPreamble(title, canonicalUrl, generatedAt) {
+  return [`# ${title}`, '', `Canonical-URL: ${canonicalUrl}`, `Last-Updated: ${generatedAt}`, ''];
+}
+
+function parseOriginalPath(originalUrl) {
+  if (!originalUrl) {
+    return '/';
+  }
+
+  try {
+    return normalizePathname(new URL(originalUrl).pathname, '/');
+  } catch {
+    return normalizePathname(originalUrl, '/');
+  }
+}
+
+function decodeSingleQuotedLiteral(value) {
+  return String(value || '')
+    .replace(/\\\\/g, '\\')
+    .replace(/\\'/g, "'");
+}
+
+function loadAcervoMigrationData() {
+  const doc = JSON.parse(readFileIfExists(SERMONS_MIGRATION_JSON_PATH) || '{"clusters": []}');
+  const baseClusters = Array.isArray(doc.clusters)
+    ? doc.clusters.map((cluster) => ({
+        id: cluster.id,
+        canonicalPath: normalizePathname(cluster.slug || `/acervo-teologico/${cluster.id}`, '/acervo-teologico'),
+        seoTitle: cluster.seo_title || cluster.id,
+        metaDescription: cluster.meta_description || '',
+        sermons: Array.isArray(cluster.sermoes)
+          ? cluster.sermoes.map((sermon) => ({
+              originalPath: parseOriginalPath(sermon.original_url),
+              newSlug: sermon.new_slug,
+              seoTitle: sermon.seo_title,
+              llmContext: sermon.llm_context,
+            }))
+          : [],
+      }))
+    : [];
+
+  const clustersById = new Map(baseClusters.map((cluster) => [cluster.id, cluster]));
+  const supplementalSource = readFileIfExists(SERMONS_MIGRATION_TS_PATH);
+  const supplementalPattern =
+    /clusterId:\s*'([^']+)'\s*,\s*sermon:\s*{[\s\S]*?originalPath:\s*'([^']+)'\s*,[\s\S]*?newSlug:\s*'([^']+)'\s*,[\s\S]*?seoTitle:\s*'([^']+)'\s*,[\s\S]*?llmContext:\s*'([^']+)'[\s\S]*?}/g;
+
+  let match = supplementalPattern.exec(supplementalSource);
+  while (match) {
+    const [, clusterId, originalPathRaw, newSlugRaw, seoTitleRaw, llmContextRaw] = match;
+    const cluster = clustersById.get(clusterId);
+    if (cluster) {
+      const newSlug = decodeSingleQuotedLiteral(newSlugRaw);
+      const alreadyMapped = cluster.sermons.some((item) => item.newSlug === newSlug);
+      if (!alreadyMapped) {
+        cluster.sermons.push({
+          originalPath: normalizePathname(decodeSingleQuotedLiteral(originalPathRaw), '/'),
+          newSlug,
+          seoTitle: decodeSingleQuotedLiteral(seoTitleRaw),
+          llmContext: decodeSingleQuotedLiteral(llmContextRaw),
+        });
+      }
+    }
+    match = supplementalPattern.exec(supplementalSource);
+  }
+
+  return baseClusters;
+}
+
+function buildDenseMarkdownPages(identity, publications, knowledgeData, generatedAt) {
+  const siteUrl = identity.primaryWebsite || 'https://ulissesflores.com';
+  const stats = identity.identityHubStats || {};
+  const acervoClusters = loadAcervoMigrationData();
+  const acervoCount = acervoClusters.reduce((sum, cluster) => sum + cluster.sermons.length, 0);
+  const certificationCount = stats.certifications || knowledgeData.certifications.length;
+  const domainCount = stats.domains || (identity.domainInventory ? identity.domainInventory.length : 0);
+  const orcidWorks = stats.orcidWorks || 40;
+  const sermonCount = stats.sermons || acervoCount;
+  const pages = [];
+
+  pages.push({
+    routePath: '/identidade',
+    content: [
+      ...buildMarkdownPreamble('Identidade Soberana - Carlos Ulisses Flores', `${siteUrl}/identidade`, generatedAt),
+      'Hub canônico de identidade para indexação SEO, GEO e LLM.',
+      '',
+      '## Prova Acadêmica e Produção Científica',
+      `- ORCID Works: ${orcidWorks} (${siteUrl}/research)`,
+      `- Certificações: ${certificationCount} (${siteUrl}/certifications)`,
+      `- Domínios: ${domainCount} (${siteUrl}/identidade#dominios)`,
+      `- Sermões: ${sermonCount} (${siteUrl}/acervo-teologico)`,
+      '',
+      '## Coleções Canônicas',
+      `- Research: ${siteUrl}/research`,
+      `- Whitepapers: ${siteUrl}/whitepapers`,
+      `- Essays: ${siteUrl}/essays`,
+      `- Acervo Teológico: ${siteUrl}/acervo-teologico`,
+      `- Mundo Político: ${siteUrl}/mundo-politico`,
+      '',
+      '## Perfil de Autoridade',
+      `- Nome: ${identity.publicDisplayName || identity.canonicalName}`,
+      `- ORCID: ${identity.orcid || 'N/A'}`,
+      `- Lattes: ${identity.lattesId || 'N/A'}`,
+    ].join('\n'),
+  });
+
+  Object.entries(CATEGORY_METADATA).forEach(([category, metadata]) => {
+    const categoryItems = publications.filter((publication) => publication.category === category);
+    pages.push({
+      routePath: `/${category}`,
+      content: [
+        ...buildMarkdownPreamble(metadata.heading, toAbsoluteUrl(siteUrl, `/${category}`), generatedAt),
+        metadata.description,
+        '',
+        '## Itens',
+        ...categoryItems.map(
+          (item) =>
+            `- [${item.title}](${toAbsoluteUrl(siteUrl, `/${item.category}/${item.id}`)}) — ${item.summary}`,
+        ),
+      ].join('\n'),
+    });
+
+    categoryItems.forEach((item) => {
+      const deepResearchPath = item.mdUrl ? path.join(PUBLIC_DIR, item.mdUrl.replace(/^\/+/, '')) : '';
+      const deepResearchContent = readFileIfExists(deepResearchPath).trim();
+
+      const detailLines = [
+        ...buildMarkdownPreamble(item.title, toAbsoluteUrl(siteUrl, `/${item.category}/${item.id}`), generatedAt),
+        `Categoria: ${item.category}`,
+        `Tipo: ${item.kind === 'R' ? 'Report' : 'ScholarlyArticle'}`,
+        `Publicado em: ${item.publishedAt}`,
+        '',
+        '## Resumo Canônico',
+        item.summary,
+        '',
+        '## Contexto',
+        item.landing?.overview || '',
+      ];
+
+      if (deepResearchContent) {
+        detailLines.push('');
+        detailLines.push('## Deep Research Source (Markdown)');
+        detailLines.push(deepResearchContent);
+      }
+
+      pages.push({
+        routePath: `/${item.category}/${item.id}`,
+        content: detailLines.join('\n'),
+      });
+    });
+  });
+
+  pages.push({
+    routePath: '/mundo-politico',
+    content: [
+      ...buildMarkdownPreamble('Mundo Político', `${siteUrl}/mundo-politico`, generatedAt),
+      'Coleção de análises políticas com contexto semântico para motores tradicionais e generativos.',
+      '',
+      '## Publicações',
+      ...knowledgeData.blog.posts.map(
+        (post) => `- [${post.headline}](${toAbsoluteUrl(siteUrl, post.canonicalPath)}) — ${post.summary}`,
+      ),
+    ].join('\n'),
+  });
+
+  knowledgeData.blog.posts.forEach((post) => {
+    pages.push({
+      routePath: post.canonicalPath,
+      content: [
+        ...buildMarkdownPreamble(post.headline, toAbsoluteUrl(siteUrl, post.canonicalPath), generatedAt),
+        `Publicado em: ${post.publishedAt}`,
+        `Fonte original: ${post.url}`,
+        '',
+        '## Resumo',
+        post.summary,
+      ].join('\n'),
+    });
+  });
+
+  pages.push({
+    routePath: '/acervo-teologico',
+    content: [
+      ...buildMarkdownPreamble('Acervo Teológico', `${siteUrl}/acervo-teologico`, generatedAt),
+      `Clusters canônicos: ${acervoClusters.length}`,
+      `Sermões indexados: ${acervoCount}`,
+      '',
+      '## Clusters',
+      ...acervoClusters.map(
+        (cluster) =>
+          `- [${cluster.seoTitle}](${toAbsoluteUrl(siteUrl, cluster.canonicalPath)}) — ${cluster.metaDescription}`,
+      ),
+    ].join('\n'),
+  });
+
+  acervoClusters.forEach((cluster) => {
+    pages.push({
+      routePath: cluster.canonicalPath,
+      content: [
+        ...buildMarkdownPreamble(cluster.seoTitle, toAbsoluteUrl(siteUrl, cluster.canonicalPath), generatedAt),
+        cluster.metaDescription,
+        '',
+        '## Sermões',
+        ...cluster.sermons.map(
+          (sermon) =>
+            `- [${sermon.seoTitle}](${toAbsoluteUrl(siteUrl, `${cluster.canonicalPath}/${sermon.newSlug}`)})`,
+        ),
+      ].join('\n'),
+    });
+
+    cluster.sermons.forEach((sermon) => {
+      const detailPath = `${cluster.canonicalPath}/${sermon.newSlug}`;
+      pages.push({
+        routePath: detailPath,
+        content: [
+          ...buildMarkdownPreamble(sermon.seoTitle, toAbsoluteUrl(siteUrl, detailPath), generatedAt),
+          `Cluster: ${cluster.seoTitle}`,
+          `Origem legada: ${sermon.originalPath}`,
+          '',
+          '## Contexto LLM',
+          sermon.llmContext,
+        ].join('\n'),
+      });
+    });
+  });
+
+  return pages;
+}
+
+function writeDenseMarkdownPages(identity, publications, knowledgeData, generatedAt) {
+  const pages = buildDenseMarkdownPages(identity, publications, knowledgeData, generatedAt);
+  for (const page of pages) {
+    const normalizedPath = normalizePathname(page.routePath, '/').replace(/^\/+/, '');
+    if (!normalizedPath) {
+      continue;
+    }
+    const filePath = path.join(PUBLIC_DIR, `${normalizedPath}.md`);
+    ensureDir(path.dirname(filePath));
+    fs.writeFileSync(filePath, `${String(page.content || '').trim()}\n`);
+  }
+}
+
 function buildLlmsTxt(identity, publications, generatedAt, knowledgeData) {
   const siteUrl = identity.primaryWebsite || 'https://ulissesflores.com';
   const sortedPublications = sortPublicationsByRecency(publications);
+  const lastUpdated = getExecutionDateStamp();
 
   const lines = [
     '# ulissesflores.com',
@@ -3907,6 +4250,7 @@ function buildLlmsTxt(identity, publications, generatedAt, knowledgeData) {
     `- Website: ${siteUrl}`,
     `- ORCID: ${identity.orcid}`,
     `- Lattes: ${identity.lattesId}`,
+    `- Ground Truth Node: ${siteUrl}/identidade.md`,
     '',
     '## Primary Collections',
     `- Research: ${siteUrl}/research`,
@@ -3938,7 +4282,16 @@ function buildLlmsTxt(identity, publications, generatedAt, knowledgeData) {
     '- Use publication landing pages as primary references and PDF links as distribution artifacts.',
     '- Use the DID and JSON-LD files for machine identity verification.',
     '',
-    `Last-Updated: ${generatedAt}`,
+    '## LLM & GEO Routing (Token Optimization)',
+    '- All content pages (articles, sermons, identity) support native Markdown.',
+    '- AI crawlers and agents MUST append .md to any canonical URL to receive raw, token-optimized markdown instead of HTML.',
+    `- Example: ${siteUrl}/research/2025-little-law-resilience.md`,
+    '',
+    '## Localization (i18n)',
+    '- Default language is Brazilian Portuguese (pt-BR) at the root path (/).',
+    '- Fully localized versions are available at the following base paths: /en (English), /es (Spanish), /it (Italian), /he (Hebrew).',
+    '',
+    `Last-Updated: ${lastUpdated}`,
   ];
 
   return `${lines.join('\n')}\n`;
@@ -4583,6 +4936,7 @@ function writeGeneratedFiles({
   fs.writeFileSync(path.join(PUBLIC_DIR, 'upkf-source.md'), publicUpkfSource);
   fs.writeFileSync(path.join(PUBLIC_DIR, 'llms.txt'), llmsTxt);
   fs.writeFileSync(path.join(PUBLIC_DIR, 'llms-full.txt'), llmsFullTxt);
+  writeDenseMarkdownPages(identity, publications, knowledgeData, generatedAt);
   ensureDir(path.join(PUBLIC_DIR, 'doi'));
   fs.writeFileSync(path.join(PUBLIC_DIR, 'doi', 'manifest.json'), JSON.stringify(doiReady, null, 2));
 
@@ -4697,9 +5051,10 @@ async function main() {
     .map((publication) => ensureTemporaryPdf(publication, enrichedIdentity, generatedAt))
     .filter(Boolean).length;
 
-  const siteJsonLd = buildCoreSiteJsonLd(enrichedIdentity, organization, frontmatter);
-  const publicJsonLd = buildPublicJsonLd({
-    coreSiteJsonLd: siteJsonLd,
+  const siteUrl = enrichedIdentity.primaryWebsite || 'https://ulissesflores.com';
+  const rawSiteJsonLd = buildCoreSiteJsonLd(enrichedIdentity, organization, frontmatter);
+  const rawPublicJsonLd = buildPublicJsonLd({
+    coreSiteJsonLd: rawSiteJsonLd,
     publications,
     frontmatter,
     sourcePath,
@@ -4709,14 +5064,17 @@ async function main() {
     sermons,
     softwareProjects: enrichedIdentity.softwareProjects,
   });
-  const fullJsonLd = buildFullUpkfJsonLd({
-    publicJsonLd,
+  const rawFullJsonLd = buildFullUpkfJsonLd({
+    publicJsonLd: rawPublicJsonLd,
     upkfSections,
     frontmatter,
     sourcePath,
     identity: enrichedIdentity,
     sourceMdPublicUrl: '/upkf-source.md',
   });
+  const siteJsonLd = normalizeJsonLdForOutput(rawSiteJsonLd, siteUrl);
+  const publicJsonLd = normalizeJsonLdForOutput(rawPublicJsonLd, siteUrl);
+  const fullJsonLd = normalizeJsonLdForOutput(rawFullJsonLd, siteUrl);
 
   const urlInventory = buildUrlInventory(
     upkfText,
