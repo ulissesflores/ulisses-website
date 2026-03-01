@@ -3769,6 +3769,28 @@ function cleanDate(value, fallback) {
   return value;
 }
 
+function toShortSummary(text, max = 180) {
+  const normalized = String(text || '').trim();
+  if (!normalized) {
+    return '';
+  }
+  if (normalized.length <= max) {
+    return normalized;
+  }
+  return `${normalized.slice(0, max - 3).trimEnd()}...`;
+}
+
+function buildIdentityHubData(identity) {
+  const bioPtBr = identity.description?.['pt-BR'] || identity.description?.en || '';
+  return {
+    bioPtBr,
+    expertisePillars: Array.isArray(identity.knowsAbout) ? identity.knowsAbout : [],
+    semanticFirewall:
+      identity.disambiguation && typeof identity.disambiguation === 'object' ? identity.disambiguation : {},
+    canonicalDescription: bioPtBr,
+  };
+}
+
 function buildKnowledgeData(certifications, blogPosts, sermons, generatedAt, identity) {
   const certificationItems = [];
 
@@ -3853,6 +3875,9 @@ function buildKnowledgeData(certifications, blogPosts, sermons, generatedAt, ide
     };
   });
 
+  const identityHub = buildIdentityHubData(identity);
+  const acervo = buildAcervoClustersData(sermonCollections);
+
   return {
     generatedAt,
     authorityProfile: {
@@ -3894,6 +3919,8 @@ function buildKnowledgeData(certifications, blogPosts, sermons, generatedAt, ide
       canonicalPath: '/sermons',
       collections: sermonCollections,
     },
+    identityHub,
+    acervo,
   };
 }
 
@@ -4062,10 +4089,119 @@ function loadAcervoMigrationData() {
   return baseClusters;
 }
 
-function buildDenseMarkdownPages(identity, publications, knowledgeData, generatedAt) {
+function buildAcervoClusterProse(cluster, sermons) {
+  const collectionNames = Array.from(new Set(sermons.map((item) => item.legacyCollectionName).filter(Boolean)));
+  const firstDate = sermons.map((item) => item.publishedAt).sort((a, b) => a.localeCompare(b))[0] || '';
+  const lastDate = sermons.map((item) => item.publishedAt).sort((a, b) => b.localeCompare(a))[0] || '';
+  const thematicHighlights = sermons.slice(0, 4).map((item) => item.seoTitle);
+  const sampleContexts = sermons.slice(0, 3).map((item) => item.llmContext).filter(Boolean);
+
+  const paragraphs = [
+    `${cluster.seoTitle} consolida ${sermons.length} mensagens dentro de uma trilha temática única do acervo teológico canônico.`,
+    cluster.metaDescription,
+    `Faixa temporal coberta: ${firstDate || 'N/A'} até ${lastDate || 'N/A'}. Séries de origem: ${
+      collectionNames.length > 0 ? collectionNames.join(', ') : 'não informado'
+    }.`,
+    thematicHighlights.length > 0
+      ? `Temas centrais desta classificação: ${thematicHighlights.join('; ')}.`
+      : '',
+    sampleContexts.length > 0
+      ? `Síntese semântica do cluster: ${sampleContexts.join(' ')}`
+      : '',
+  ].filter(Boolean);
+
+  return paragraphs.join('\n\n');
+}
+
+function buildAcervoClustersData(sermonCollections) {
+  const legacySermonByPath = new Map();
+
+  sermonCollections.forEach((collection) => {
+    collection.items.forEach((item) => {
+      legacySermonByPath.set(item.canonicalPath, {
+        collectionName: collection.name,
+        collectionSlug: collection.slug,
+        position: item.position,
+        publishedAt: item.publishedAt,
+        youtubeUrl: item.youtubeUrl,
+        name: item.name,
+        summary: item.summary,
+      });
+    });
+  });
+
+  const migrationClusters = loadAcervoMigrationData();
+  const clusters = migrationClusters.map((cluster) => {
+    const sermons = cluster.sermons.map((migrationSermon) => {
+      const legacy = legacySermonByPath.get(migrationSermon.originalPath);
+      if (!legacy) {
+        throw new Error(`Sermon legado nao encontrado para migracao: ${migrationSermon.originalPath}`);
+      }
+
+      const canonicalPath = `${cluster.canonicalPath}/${migrationSermon.newSlug}`;
+      return {
+        clusterId: cluster.id,
+        clusterCanonicalPath: cluster.canonicalPath,
+        clusterSeoTitle: cluster.seoTitle,
+        clusterMetaDescription: cluster.metaDescription,
+        slug: migrationSermon.newSlug,
+        canonicalPath,
+        seoTitle: migrationSermon.seoTitle,
+        metaDescription: toShortSummary(migrationSermon.llmContext),
+        llmContext: migrationSermon.llmContext,
+        originalPath: migrationSermon.originalPath,
+        publishedAt: legacy.publishedAt,
+        youtubeUrl: legacy.youtubeUrl,
+        legacyName: legacy.name,
+        legacySummary: legacy.summary,
+        legacyCollectionName: legacy.collectionName,
+        legacyCollectionSlug: legacy.collectionSlug,
+        position: legacy.position,
+      };
+    });
+
+    return {
+      id: cluster.id,
+      canonicalPath: cluster.canonicalPath,
+      seoTitle: cluster.seoTitle,
+      metaDescription: cluster.metaDescription,
+      prose: buildAcervoClusterProse(cluster, sermons),
+      sermons,
+    };
+  });
+
+  return {
+    canonicalPath: '/acervo-teologico',
+    pageTitle: 'Acervo Teologico por Clusters',
+    pageDescription:
+      'Acervo teológico organizado por clusters com contexto semântico denso, rastreabilidade de origem e curadoria para indexação GEO/LLM.',
+    clusters,
+  };
+}
+
+function readRequiredArticleMarkdown(slug) {
+  const articlePath = path.join(repoRoot, 'data', 'research', 'articles', slug, 'article.md');
+  if (!fs.existsSync(articlePath)) {
+    throw new Error(`Arquivo obrigatório ausente para GEO markdown: ${articlePath}`);
+  }
+  return normalizeLineBreaks(fs.readFileSync(articlePath, 'utf8')).trim();
+}
+
+function getDateStampFrom(value) {
+  const text = String(value || '').trim();
+  if (!text) {
+    return getExecutionDateStamp();
+  }
+  return text.slice(0, 10);
+}
+
+function buildFatMarkdownPages(identity, publications, knowledgeData, generatedAt) {
   const siteUrl = identity.primaryWebsite || 'https://ulissesflores.com';
   const stats = identity.identityHubStats || {};
-  const acervoClusters = loadAcervoMigrationData();
+  const dateStamp = getDateStampFrom(generatedAt);
+  const identityHub = knowledgeData.identityHub || buildIdentityHubData(identity);
+  const acervo = knowledgeData.acervo || { canonicalPath: '/acervo-teologico', clusters: [], pageDescription: '' };
+  const acervoClusters = Array.isArray(acervo.clusters) ? acervo.clusters : [];
   const acervoCount = acervoClusters.reduce((sum, cluster) => sum + cluster.sermons.length, 0);
   const certificationCount = stats.certifications || knowledgeData.certifications.length;
   const domainCount = stats.domains || (identity.domainInventory ? identity.domainInventory.length : 0);
@@ -4076,8 +4212,14 @@ function buildDenseMarkdownPages(identity, publications, knowledgeData, generate
   pages.push({
     routePath: '/identidade',
     content: [
-      ...buildMarkdownPreamble('Identidade Soberana - Carlos Ulisses Flores', `${siteUrl}/identidade`, generatedAt),
-      'Hub canônico de identidade para indexação SEO, GEO e LLM.',
+      ...buildMarkdownPreamble('Identidade Soberana - Carlos Ulisses Flores', `${siteUrl}/identidade`, dateStamp),
+      identityHub.canonicalDescription || 'Hub canônico de identidade para indexação SEO, GEO e LLM.',
+      '',
+      '## Bio Semântica',
+      identityHub.bioPtBr || '',
+      '',
+      '## Expertise',
+      ...(identityHub.expertisePillars || []).map((item) => `- ${item}`),
       '',
       '## Prova Acadêmica e Produção Científica',
       `- ORCID Works: ${orcidWorks} (${siteUrl}/research)`,
@@ -4096,6 +4238,9 @@ function buildDenseMarkdownPages(identity, publications, knowledgeData, generate
       `- Nome: ${identity.publicDisplayName || identity.canonicalName}`,
       `- ORCID: ${identity.orcid || 'N/A'}`,
       `- Lattes: ${identity.lattesId || 'N/A'}`,
+      '',
+      '## Firewall Semântico',
+      ...Object.entries(identityHub.semanticFirewall || {}).map(([lang, text]) => `### ${lang}\n\n${text}`),
     ].join('\n'),
   });
 
@@ -4104,7 +4249,7 @@ function buildDenseMarkdownPages(identity, publications, knowledgeData, generate
     pages.push({
       routePath: `/${category}`,
       content: [
-        ...buildMarkdownPreamble(metadata.heading, toAbsoluteUrl(siteUrl, `/${category}`), generatedAt),
+        ...buildMarkdownPreamble(metadata.heading, toAbsoluteUrl(siteUrl, `/${category}`), dateStamp),
         metadata.description,
         '',
         '## Itens',
@@ -4116,11 +4261,10 @@ function buildDenseMarkdownPages(identity, publications, knowledgeData, generate
     });
 
     categoryItems.forEach((item) => {
-      const deepResearchPath = item.mdUrl ? path.join(PUBLIC_DIR, item.mdUrl.replace(/^\/+/, '')) : '';
-      const deepResearchContent = readFileIfExists(deepResearchPath).trim();
+      const articleMarkdown = readRequiredArticleMarkdown(item.id);
 
       const detailLines = [
-        ...buildMarkdownPreamble(item.title, toAbsoluteUrl(siteUrl, `/${item.category}/${item.id}`), generatedAt),
+        ...buildMarkdownPreamble(item.title, toAbsoluteUrl(siteUrl, `/${item.category}/${item.id}`), dateStamp),
         `Categoria: ${item.category}`,
         `Tipo: ${item.kind === 'R' ? 'Report' : 'ScholarlyArticle'}`,
         `Publicado em: ${item.publishedAt}`,
@@ -4130,13 +4274,16 @@ function buildDenseMarkdownPages(identity, publications, knowledgeData, generate
         '',
         '## Contexto',
         item.landing?.overview || '',
+        '',
+        '## Problema de Pesquisa',
+        item.landing?.problem || '',
+        '',
+        '## Contribuições',
+        ...(item.landing?.contributions || []).map((contribution) => `- ${contribution}`),
+        '',
+        '## Artigo Completo (Fonte Primária)',
+        articleMarkdown,
       ];
-
-      if (deepResearchContent) {
-        detailLines.push('');
-        detailLines.push('## Deep Research Source (Markdown)');
-        detailLines.push(deepResearchContent);
-      }
 
       pages.push({
         routePath: `/${item.category}/${item.id}`,
@@ -4148,7 +4295,7 @@ function buildDenseMarkdownPages(identity, publications, knowledgeData, generate
   pages.push({
     routePath: '/mundo-politico',
     content: [
-      ...buildMarkdownPreamble('Mundo Político', `${siteUrl}/mundo-politico`, generatedAt),
+      ...buildMarkdownPreamble('Mundo Político', `${siteUrl}/mundo-politico`, dateStamp),
       'Coleção de análises políticas com contexto semântico para motores tradicionais e generativos.',
       '',
       '## Publicações',
@@ -4162,7 +4309,7 @@ function buildDenseMarkdownPages(identity, publications, knowledgeData, generate
     pages.push({
       routePath: post.canonicalPath,
       content: [
-        ...buildMarkdownPreamble(post.headline, toAbsoluteUrl(siteUrl, post.canonicalPath), generatedAt),
+        ...buildMarkdownPreamble(post.headline, toAbsoluteUrl(siteUrl, post.canonicalPath), dateStamp),
         `Publicado em: ${post.publishedAt}`,
         `Fonte original: ${post.url}`,
         '',
@@ -4175,14 +4322,15 @@ function buildDenseMarkdownPages(identity, publications, knowledgeData, generate
   pages.push({
     routePath: '/acervo-teologico',
     content: [
-      ...buildMarkdownPreamble('Acervo Teológico', `${siteUrl}/acervo-teologico`, generatedAt),
+      ...buildMarkdownPreamble(acervo.pageTitle || 'Acervo Teológico', `${siteUrl}/acervo-teologico`, dateStamp),
+      acervo.pageDescription || '',
+      '',
       `Clusters canônicos: ${acervoClusters.length}`,
       `Sermões indexados: ${acervoCount}`,
       '',
       '## Clusters',
       ...acervoClusters.map(
-        (cluster) =>
-          `- [${cluster.seoTitle}](${toAbsoluteUrl(siteUrl, cluster.canonicalPath)}) — ${cluster.metaDescription}`,
+        (cluster) => `### [${cluster.seoTitle}](${toAbsoluteUrl(siteUrl, cluster.canonicalPath)})\n\n${cluster.prose}`,
       ),
     ].join('\n'),
   });
@@ -4191,28 +4339,32 @@ function buildDenseMarkdownPages(identity, publications, knowledgeData, generate
     pages.push({
       routePath: cluster.canonicalPath,
       content: [
-        ...buildMarkdownPreamble(cluster.seoTitle, toAbsoluteUrl(siteUrl, cluster.canonicalPath), generatedAt),
+        ...buildMarkdownPreamble(cluster.seoTitle, toAbsoluteUrl(siteUrl, cluster.canonicalPath), dateStamp),
         cluster.metaDescription,
         '',
+        cluster.prose,
+        '',
         '## Sermões',
-        ...cluster.sermons.map(
-          (sermon) =>
-            `- [${sermon.seoTitle}](${toAbsoluteUrl(siteUrl, `${cluster.canonicalPath}/${sermon.newSlug}`)})`,
-        ),
+        ...cluster.sermons.map((sermon) => `- [${sermon.seoTitle}](${toAbsoluteUrl(siteUrl, sermon.canonicalPath)})`),
       ].join('\n'),
     });
 
     cluster.sermons.forEach((sermon) => {
-      const detailPath = `${cluster.canonicalPath}/${sermon.newSlug}`;
+      const detailPath = sermon.canonicalPath;
       pages.push({
         routePath: detailPath,
         content: [
-          ...buildMarkdownPreamble(sermon.seoTitle, toAbsoluteUrl(siteUrl, detailPath), generatedAt),
+          ...buildMarkdownPreamble(sermon.seoTitle, toAbsoluteUrl(siteUrl, detailPath), dateStamp),
           `Cluster: ${cluster.seoTitle}`,
-          `Origem legada: ${sermon.originalPath}`,
+          `Publicado em: ${sermon.publishedAt}`,
+          `Origem legada: ${sermon.originalPath || 'N/A'}`,
+          `Fonte: ${sermon.youtubeUrl}`,
           '',
           '## Contexto LLM',
           sermon.llmContext,
+          '',
+          '## Resumo Legado',
+          sermon.legacySummary || '',
         ].join('\n'),
       });
     });
@@ -4221,8 +4373,8 @@ function buildDenseMarkdownPages(identity, publications, knowledgeData, generate
   return pages;
 }
 
-function writeDenseMarkdownPages(identity, publications, knowledgeData, generatedAt) {
-  const pages = buildDenseMarkdownPages(identity, publications, knowledgeData, generatedAt);
+function writeFatMarkdownPages(identity, publications, knowledgeData, generatedAt) {
+  const pages = buildFatMarkdownPages(identity, publications, knowledgeData, generatedAt);
   for (const page of pages) {
     const normalizedPath = normalizePathname(page.routePath, '/').replace(/^\/+/, '');
     if (!normalizedPath) {
@@ -4936,7 +5088,7 @@ function writeGeneratedFiles({
   fs.writeFileSync(path.join(PUBLIC_DIR, 'upkf-source.md'), publicUpkfSource);
   fs.writeFileSync(path.join(PUBLIC_DIR, 'llms.txt'), llmsTxt);
   fs.writeFileSync(path.join(PUBLIC_DIR, 'llms-full.txt'), llmsFullTxt);
-  writeDenseMarkdownPages(identity, publications, knowledgeData, generatedAt);
+  writeFatMarkdownPages(identity, publications, knowledgeData, generatedAt);
   ensureDir(path.join(PUBLIC_DIR, 'doi'));
   fs.writeFileSync(path.join(PUBLIC_DIR, 'doi', 'manifest.json'), JSON.stringify(doiReady, null, 2));
 

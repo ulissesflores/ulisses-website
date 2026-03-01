@@ -45,6 +45,12 @@ function hasImage(node) {
   return Boolean(node.image && typeof node.image === 'object');
 }
 
+function normalizeInlineText(value) {
+  return String(value || '')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
 function collectDateFieldViolations(value, violations, pointer = '$') {
   if (Array.isArray(value)) {
     value.forEach((item, index) => collectDateFieldViolations(item, violations, `${pointer}[${index}]`));
@@ -151,7 +157,10 @@ function main() {
   const articleQuality = readJson(files.articleQualityJson);
   const doiReady = readJson(files.doiReadyJson);
   const deepQuality = readJson(files.deepQualityJson);
+  const publicationsIndex = readJson(files.publicationsJson);
   const llmsContent = fs.readFileSync(files.llms, 'utf8');
+  const identidadeMdContent = fs.readFileSync(files.identidadeMd, 'utf8');
+  const acervoMdContent = fs.readFileSync(files.acervoMd, 'utf8');
 
   const siteGraph = getGraph(siteJson);
   const publicGraph = getGraph(publicJson);
@@ -181,6 +190,19 @@ function main() {
   const distributionUrls = new Set(datasetDistribution.map((item) => item.contentUrl).filter(Boolean));
   const dateViolations = [];
   collectDateFieldViolations(publicJson, dateViolations);
+  const sampleResearchPublication = Array.isArray(publicationsIndex)
+    ? publicationsIndex.find((item) => item?.category === 'research' && typeof item?.id === 'string')
+    : null;
+  const sampleArticlePath = sampleResearchPublication
+    ? path.join(repoRoot, 'data', 'research', 'articles', sampleResearchPublication.id, 'article.md')
+    : '';
+  const sampleResearchMdPath = sampleResearchPublication
+    ? path.join(publicDir, 'research', `${sampleResearchPublication.id}.md`)
+    : '';
+  const sampleArticleContent = sampleArticlePath && fs.existsSync(sampleArticlePath) ? fs.readFileSync(sampleArticlePath, 'utf8') : '';
+  const sampleResearchMdContent = sampleResearchMdPath && fs.existsSync(sampleResearchMdPath) ? fs.readFileSync(sampleResearchMdPath, 'utf8') : '';
+  const sampleArticleSnippet = normalizeInlineText(sampleArticleContent).slice(0, 220);
+  const sampleMdNormalized = normalizeInlineText(sampleResearchMdContent);
 
   assert(checks, siteGraph.length >= 4, 'site.jsonld tem grafo minimo');
   assert(checks, publicGraph.length > siteGraph.length, 'public.jsonld maior que site.jsonld');
@@ -261,6 +283,22 @@ function main() {
     checks,
     llmsContent.includes('/public.jsonld'),
     'llms.txt referencia recursos semanticos',
+  );
+  assert(checks, Buffer.byteLength(identidadeMdContent, 'utf8') > 2048, 'identidade.md com densidade > 2KB');
+  assert(checks, Buffer.byteLength(acervoMdContent, 'utf8') > 2048, 'acervo-teologico.md com densidade > 2KB');
+  assert(checks, identidadeMdContent.includes('## Bio Semântica'), 'identidade.md inclui secao Bio Semântica');
+  assert(checks, identidadeMdContent.includes('## Firewall Semântico'), 'identidade.md inclui secao Firewall Semântico');
+  assert(checks, acervoMdContent.includes('## Clusters'), 'acervo-teologico.md inclui secao de clusters');
+  assert(
+    checks,
+    sampleResearchPublication !== null,
+    'Existe publicacao de research para validacao de markdown denso',
+  );
+  assert(
+    checks,
+    sampleArticleSnippet.length > 0 && sampleMdNormalized.includes(sampleArticleSnippet),
+    'public/research/<slug>.md contem trecho do article.md original',
+    sampleResearchPublication ? sampleResearchPublication.id : '',
   );
   assert(
     checks,

@@ -172,13 +172,18 @@ export default async function AcervoSermonDetailPage({ params }: PageProps) {
           <p className='text-xs uppercase tracking-widest text-emerald-400 mb-3'>{clusterEntry.seoTitle}</p>
           <h1 className='text-3xl md:text-4xl font-bold text-white mb-4'>{sermon.seoTitle}</h1>
           <p className='text-sm text-neutral-500 mb-4'>Publicado em {sermon.publishedAt}</p>
-          <p className='text-neutral-400 leading-relaxed'>{sermon.clusterMetaDescription}</p>
+          <p className='text-neutral-400 leading-relaxed whitespace-pre-line'>{clusterEntry.prose}</p>
         </header>
 
         <section className='rounded-xl border border-neutral-800 bg-neutral-900/30 p-6 space-y-5'>
           <div>
             <h2 className='text-xl font-semibold text-white mb-2'>Resumo do Estudo</h2>
             <p className='text-neutral-300 leading-relaxed'>{sermon.llmContext}</p>
+          </div>
+
+          <div>
+            <h2 className='text-xl font-semibold text-white mb-2'>Enquadramento do Cluster</h2>
+            <p className='text-neutral-300 leading-relaxed whitespace-pre-line'>{sermon.clusterMetaDescription}</p>
           </div>
 
           <div>

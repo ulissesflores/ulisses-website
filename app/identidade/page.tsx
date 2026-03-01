@@ -4,6 +4,7 @@ import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import { acervoClusters } from '@/data/acervo-teologico';
+import { knowledgeData } from '@/data/knowledge';
 import { upkfMeta } from '@/data/generated/upkf.generated';
 import { publications } from '@/data/publications';
 import { buildLanguageAlternates } from '@/data/seo';
@@ -76,6 +77,12 @@ export const metadata: Metadata = {
 
 export default function IdentidadePage() {
   const publicJsonLd = loadPublicJsonLd();
+  const identityHub = knowledgeData.identityHub || {
+    bioPtBr: upkfMeta.description?.['pt-BR'] || '',
+    expertisePillars: upkfMeta.knowsAbout || [],
+    semanticFirewall: upkfMeta.disambiguation || {},
+    canonicalDescription: upkfMeta.description?.['pt-BR'] || '',
+  };
   const publicIdentifiers = Array.isArray(upkfMeta.publicIdentifiers) ? upkfMeta.publicIdentifiers : [];
   const domainInventory = Array.isArray(upkfMeta.domainInventory) ? upkfMeta.domainInventory : [];
   const academicCredentials = Array.isArray(upkfMeta.academicCredentials)
@@ -147,7 +154,7 @@ export default function IdentidadePage() {
           name: upkfMeta.publicDisplayName || upkfMeta.displayName,
           url: `${upkfMeta.primaryWebsite}${canonicalPath}`,
           sameAs: upkfMeta.sameAs,
-          knowsAbout: upkfMeta.knowsAbout,
+          knowsAbout: identityHub.expertisePillars,
           hasOccupation: occupations.map((occupation) => ({
             '@type': 'Occupation',
             name: occupation.title,
@@ -258,6 +265,11 @@ export default function IdentidadePage() {
               </Link>
             ))}
           </div>
+        </section>
+
+        <section className='rounded-2xl border border-neutral-800 bg-neutral-900/30 p-6'>
+          <h2 className='text-2xl font-semibold text-white mb-4'>Bio Semântica</h2>
+          <p className='text-neutral-300 leading-relaxed whitespace-pre-line'>{identityHub.bioPtBr}</p>
         </section>
 
         <section id='soberana' className='rounded-2xl border border-neutral-800 bg-neutral-900/30 p-6'>
@@ -529,7 +541,7 @@ export default function IdentidadePage() {
         <section id='conhecimento' className='rounded-2xl border border-neutral-800 bg-neutral-900/30 p-6'>
           <h2 className='text-2xl font-semibold text-white mb-4'>05 · Domínios de Conhecimento</h2>
           <div className='flex flex-wrap gap-2'>
-            {upkfMeta.knowsAbout.map((topic) => (
+            {identityHub.expertisePillars.map((topic) => (
               <span key={topic} className='rounded-full border border-neutral-700 bg-neutral-950/60 px-3 py-1 text-xs text-neutral-300'>
                 {topic}
               </span>
@@ -540,7 +552,7 @@ export default function IdentidadePage() {
         <section id='firewall' className='rounded-2xl border border-neutral-800 bg-neutral-900/30 p-6'>
           <h2 className='text-2xl font-semibold text-white mb-4'>06 · Firewall Semântico</h2>
           <div className='grid gap-3 md:grid-cols-2'>
-            {Object.entries(upkfMeta.disambiguation).map(([lang, text]) => (
+            {Object.entries(identityHub.semanticFirewall).map(([lang, text]) => (
               <article key={lang} className='rounded-xl border border-neutral-800 bg-neutral-950/70 p-4'>
                 <p className='text-xs uppercase tracking-widest text-neutral-500 mb-2'>{lang}</p>
                 <p className='text-sm text-neutral-300 leading-relaxed'>{text}</p>
