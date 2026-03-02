@@ -24,6 +24,7 @@ const DOCS_DIR = path.join(repoRoot, 'docs');
 const PUBLIC_DIR = path.join(repoRoot, 'public');
 const ARTICLE_REFERENCES_PATH = path.join(repoRoot, 'data', 'upkf', 'article-references.json');
 const SERMONS_MIGRATION_PATH = path.join(repoRoot, 'data', 'seo', 'sermons-full-migration.json');
+const SERMONS_MIGRATION_TS_PATH = path.join(repoRoot, 'data', 'sermons-migration.ts');
 const ARTICLE_LONGFORM_DIR = path.join(repoRoot, 'data', 'research', 'articles');
 
 const SOTA_JOB_TITLES = [
@@ -2935,6 +2936,8 @@ function buildCoreSiteJsonLd(identity, organization, frontmatter) {
     ]),
   ).map((id) => ({ '@id': id }));
 
+  const alumniOfRefs = institutionNodes.map((node) => ({ '@id': node['@id'] })).filter((node) => node['@id']);
+
   const languageLabelByCode = {
     'pt-BR': 'Portuguese',
     en: 'English',
@@ -3007,6 +3010,8 @@ function buildCoreSiteJsonLd(identity, organization, frontmatter) {
         nationality: identity.nationalities || [],
         hasCredential: credentialNodes.map((credential) => ({ '@id': credential['@id'] })),
         hasOccupation: occupationNodes.map((occupation) => ({ '@id': occupation['@id'] })),
+        memberOf: affiliationRefs.length > 0 ? affiliationRefs : undefined,
+        alumniOf: alumniOfRefs.length > 0 ? alumniOfRefs : undefined,
         affiliation: affiliationRefs.length > 0 ? affiliationRefs : undefined,
         areaServed: geographicPlaces,
         geographicallyServes: identity.geographicallyServes || [],
@@ -3577,8 +3582,61 @@ function loadSermonsMigrationClusters() {
   }
 }
 
+function loadSupplementalSermons() {
+  if (!fs.existsSync(SERMONS_MIGRATION_TS_PATH)) {
+    return [];
+  }
+
+  try {
+    const source = fs.readFileSync(SERMONS_MIGRATION_TS_PATH, 'utf8');
+    const match = source.match(
+      /const supplementalSermons:\s*Array<[\s\S]*?>\s*=\s*(\[[\s\S]*?\]);\n\nconst clusterById/,
+    );
+    if (!match || !match[1]) {
+      return [];
+    }
+
+    const rawArray = match[1];
+    const parsed = new Function(`return (${rawArray});`)();
+    if (!Array.isArray(parsed)) {
+      return [];
+    }
+    return parsed
+      .map((entry) => ({
+        clusterId: entry?.clusterId,
+        sermon: {
+          original_url: entry?.sermon?.originalPath || '',
+          new_slug: entry?.sermon?.newSlug || '',
+          seo_title: entry?.sermon?.seoTitle || '',
+          llm_context: entry?.sermon?.llmContext || '',
+        },
+      }))
+      .filter((entry) => entry.clusterId && entry.sermon.new_slug);
+  } catch (error) {
+    process.stderr.write(
+      `Aviso: falha ao extrair suplementos de sermoes em ${SERMONS_MIGRATION_TS_PATH}: ${
+        error instanceof Error ? error.message : String(error)
+      }\n`,
+    );
+    return [];
+  }
+}
+
 function normalizeSermonSlug(value) {
   return slugify(String(value || '').trim()).slice(0, 96);
+}
+
+function normalizeOriginalSermonPath(value) {
+  const raw = String(value || '').trim();
+  if (!raw) {
+    return '';
+  }
+  try {
+    const parsed = new URL(raw);
+    return parsed.pathname || raw;
+  } catch {
+    return raw.startsWith('/') ? raw : `/${raw}`;
+  }
 }
 
 function buildAcervoData(sermonCollections, generatedAt) {
@@ -3595,12 +3653,21 @@ function buildAcervoData(sermonCollections, generatedAt) {
         youtubeUrl: item.youtubeUrl || '',
         summary: item.summary || '',
         sourceCollection: collection.name,
+        sourceCollectionSlug: collection.slug || normalizeSermonSlug(collection.name),
       });
     });
   });
 
   const migrationClusters = loadSermonsMigrationClusters();
   if (migrationClusters.length > 0) {
+    const supplementalSermons = loadSupplementalSermons();
+    const supplementalByCluster = new Map();
+    supplementalSermons.forEach((entry) => {
+      const clusterEntries = supplementalByCluster.get(entry.clusterId) || [];
+      clusterEntries.push(entry.sermon);
+      supplementalByCluster.set(entry.clusterId, clusterEntries);
+    });
+
     const clusters = migrationClusters.map((cluster, index) => {
       const clusterId =
         String(cluster.id || '').trim() ||
@@ -3609,31 +3676,53 @@ function buildAcervoData(sermonCollections, generatedAt) {
       const canonicalPath = String(cluster.slug || '').trim().startsWith('/')
         ? String(cluster.slug || '').trim()
         : `/acervo-teologico/${clusterId}`;
-      const sermons = Array.isArray(cluster.sermoes)
-        ? cluster.sermoes.map((entry, entryIndex) => {
-            const sermonSlug = normalizeSermonSlug(entry.new_slug || entry.seo_title || `sermao-${entryIndex + 1}`);
-            const candidateKeys = [
-              sermonSlug,
-              normalizeSermonSlug(entry.seo_title),
-              normalizeSermonSlug(entry.original_url?.split('/').pop()),
-            ].filter(Boolean);
-            const fallback = candidateKeys.map((key) => sermonLookup.get(key)).find(Boolean);
-            const title = String(entry.seo_title || fallback?.title || sermonSlug.replaceAll('-', ' ')).trim();
-            const publishedAt = cleanDate(fallback?.publishedAt, generatedAt);
-            const summary = String(entry.llm_context || fallback?.summary || '').trim();
+      const mergedClusterSermons = [
+        ...(Array.isArray(cluster.sermoes) ? cluster.sermoes : []),
+        ...(supplementalByCluster.get(clusterId) || []),
+      ];
+      const clusterSeoTitle = String(cluster.seo_title || clusterId.replaceAll('-', ' ')).trim();
+      const clusterMetaDescription = String(cluster.meta_description || '').trim();
+      const sermons = mergedClusterSermons
+        .map((entry, entryIndex) => {
+          const sermonSlug = normalizeSermonSlug(entry.new_slug || entry.seo_title || `sermao-${entryIndex + 1}`);
+          const candidateKeys = [
+            sermonSlug,
+            normalizeSermonSlug(entry.seo_title),
+            normalizeSermonSlug(entry.original_url?.split('/').pop()),
+          ].filter(Boolean);
+          const fallback = candidateKeys.map((key) => sermonLookup.get(key)).find(Boolean);
+          const seoTitle = String(entry.seo_title || fallback?.title || sermonSlug.replaceAll('-', ' ')).trim();
+          const llmContext = String(entry.llm_context || fallback?.summary || '').trim();
+          const publishedAt = cleanDate(fallback?.publishedAt, generatedAt);
+          const originalPath = normalizeOriginalSermonPath(entry.original_url || '');
+          const legacyCollectionSlug =
+            fallback?.sourceCollectionSlug ||
+            normalizeSermonSlug(originalPath.split('/').filter(Boolean)[1] || '');
 
-            return {
-              position: entryIndex + 1,
-              slug: sermonSlug,
-              title,
-              canonicalPath: `${canonicalPath}/${sermonSlug}`,
-              publishedAt,
-              youtubeUrl: fallback?.youtubeUrl || '',
-              summary,
-              originalUrl: entry.original_url || '',
-            };
-          })
-        : [];
+          return {
+            clusterId,
+            clusterCanonicalPath: canonicalPath,
+            clusterSeoTitle,
+            clusterMetaDescription,
+            position: entryIndex + 1,
+            slug: sermonSlug,
+            canonicalPath: `${canonicalPath}/${sermonSlug}`,
+            seoTitle,
+            metaDescription: llmContext || clusterMetaDescription,
+            llmContext,
+            originalPath,
+            originalUrl: entry.original_url || '',
+            publishedAt,
+            youtubeUrl: fallback?.youtubeUrl || '',
+            legacyName: fallback?.title || seoTitle,
+            legacySummary: fallback?.summary || llmContext,
+            legacyCollectionName: fallback?.sourceCollection || '',
+            legacyCollectionSlug,
+            title: seoTitle,
+            summary: llmContext,
+          };
+        })
+        .filter((sermon) => sermon.slug);
 
       const proseSegments = sermons
         .map((item) => item.summary)
@@ -3644,9 +3733,9 @@ function buildAcervoData(sermonCollections, generatedAt) {
       return {
         id: clusterId,
         canonicalPath,
-        seoTitle: String(cluster.seo_title || clusterId.replaceAll('-', ' ')).trim(),
-        metaDescription: String(cluster.meta_description || '').trim(),
-        prose: [String(cluster.meta_description || '').trim(), proseSegments].filter(Boolean).join('\n\n'),
+        seoTitle: clusterSeoTitle,
+        metaDescription: clusterMetaDescription,
+        prose: [clusterMetaDescription, proseSegments].filter(Boolean).join('\n\n'),
         sermonCount: sermons.length,
         sermons,
       };
@@ -3664,25 +3753,40 @@ function buildAcervoData(sermonCollections, generatedAt) {
   const clusters = sermonCollections.map((collection, index) => {
     const clusterId = normalizeSermonSlug(collection.slug || collection.name || `cluster-${index + 1}`);
     const canonicalPath = `/acervo-teologico/${clusterId}`;
+    const clusterSeoTitle = collection.name;
+    const clusterMetaDescription = `Série teológica "${collection.name}" com mensagens publicadas e indexadas no hub canônico.`;
     const sermons = collection.items.map((item) => {
       const detailSlug = normalizeSermonSlug(item.slug || item.name || `sermao-${item.position}`);
+      const llmContext = item.summary || '';
       return {
+        clusterId,
+        clusterCanonicalPath: canonicalPath,
+        clusterSeoTitle,
+        clusterMetaDescription,
         position: item.position,
         slug: detailSlug,
-        title: item.name,
         canonicalPath: `${canonicalPath}/${detailSlug}`,
+        seoTitle: item.name,
+        metaDescription: llmContext || clusterMetaDescription,
+        llmContext,
+        originalPath: item.canonicalPath || '',
+        originalUrl: '',
         publishedAt: cleanDate(item.publishedAt, generatedAt),
         youtubeUrl: item.youtubeUrl || '',
-        summary: item.summary || '',
-        originalUrl: '',
+        legacyName: item.name,
+        legacySummary: item.summary || '',
+        legacyCollectionName: collection.name,
+        legacyCollectionSlug: collection.slug || clusterId,
+        title: item.name,
+        summary: llmContext,
       };
     });
 
     return {
       id: clusterId,
       canonicalPath,
-      seoTitle: collection.name,
-      metaDescription: `Série teológica "${collection.name}" com mensagens publicadas e indexadas no hub canônico.`,
+      seoTitle: clusterSeoTitle,
+      metaDescription: clusterMetaDescription,
       prose: sermons
         .map((sermon) => sermon.summary)
         .filter(Boolean)
@@ -3790,6 +3894,12 @@ function buildKnowledgeData(certifications, blogPosts, sermons, generatedAt, ide
 
   return {
     generatedAt,
+    identityHub: {
+      bioPtBr: identity.description?.['pt-BR'] || identity.description?.en || '',
+      expertisePillars: identity.knowsAbout || [],
+      semanticFirewall: identity.disambiguation || {},
+      canonicalDescription: identity.description?.['pt-BR'] || identity.description?.en || '',
+    },
     authorityProfile: {
       personRef: `${identity.primaryWebsite || 'https://ulissesflores.com'}/#person`,
       jobTitle: identity.jobTitle || [],
@@ -4078,53 +4188,197 @@ function toText(value) {
   return String(value || '').trim();
 }
 
-function formatObjectList(items, formatter) {
-  const list = asArray(items);
-  if (list.length === 0) {
-    return ['- none'];
-  }
-  return list.map((item, index) => formatter(item, index));
-}
-
 function buildIdentityFatMarkdown({ upkfMeta, siteUrl, generatedAt }) {
   const canonicalUrl = toCanonicalUrl(siteUrl, '/identidade');
-  const displayName = toText(upkfMeta.publicDisplayName || upkfMeta.displayName || upkfMeta.canonicalLegalName || 'Ulisses Flores');
+  const displayName = toText(
+    upkfMeta.publicDisplayName || upkfMeta.displayName || upkfMeta.canonicalLegalName || 'Ulisses Flores',
+  );
   const description = toText(upkfMeta?.description?.['pt-BR'] || upkfMeta?.description?.en || '');
   const firewall = toText(upkfMeta?.disambiguation?.['pt-BR'] || upkfMeta?.disambiguation?.en || '');
-  const knowsAbout = asArray(upkfMeta.knowsAbout).map((item) => toText(item)).filter(Boolean);
+  const knowsAbout = asArray(upkfMeta.knowsAbout)
+    .map((item) => toText(item))
+    .filter(Boolean);
 
-  const identifierLines = formatObjectList(upkfMeta.publicIdentifiers, (identifier) => {
-    const label = toText(identifier.label || identifier.propertyID || 'identifier');
-    const value = toText(identifier.value || identifier.identifier || '');
-    const url = toText(identifier.url || '');
-    const notes = toText(identifier.notes || '');
-    const suffix = [url ? `URL: ${url}` : '', notes ? `Notas: ${notes}` : ''].filter(Boolean).join(' | ');
-    return `- ${label}: ${value}${suffix ? ` (${suffix})` : ''}`;
-  });
+  const identifiers = asArray(upkfMeta.identifier).length > 0 ? asArray(upkfMeta.identifier) : asArray(upkfMeta.publicIdentifiers);
+  const identifierSection =
+    identifiers.length > 0
+      ? identifiers
+          .map((identifier) => {
+            const label = toText(identifier.label || identifier.propertyID || 'identifier');
+            const value = toText(identifier.value || identifier.identifier || '');
+            const url = toText(identifier.url || '');
+            const notes = toText(identifier.notes || identifier.description || '');
+            const suffix = [url ? `URL: ${url}` : '', notes ? `Notas: ${notes}` : '']
+              .filter(Boolean)
+              .join(' | ');
+            return `- ${label}: ${value}${suffix ? ` (${suffix})` : ''}`;
+          })
+          .join('\n')
+      : '- none';
 
-  const credentialLines = formatObjectList(upkfMeta.hasCredential, (credential) => {
-    const name = toText(credential.name || credential['@id'] || 'Credential');
-    const identifier = toText(credential.identifier || '');
-    const category = toText(credential.credentialCategory || credential['@type'] || '');
-    const url = toText(credential.url || '');
-    const details = [identifier ? `ID: ${identifier}` : '', category ? `Categoria: ${category}` : '', url ? `URL: ${url}` : '']
-      .filter(Boolean)
-      .join(' | ');
-    return `- ${name}${details ? ` (${details})` : ''}`;
-  });
+  const webCredentials = asArray(upkfMeta.hasCredential);
+  const academicCredentials = asArray(upkfMeta.academicCredentials);
+  const credentialSection =
+    webCredentials.length + academicCredentials.length > 0
+      ? [
+          ...webCredentials.map((credential) => {
+            const name = toText(credential.name || credential['@id'] || 'Credential');
+            const identifier = toText(credential.identifier || '');
+            const category = toText(credential.credentialCategory || credential['@type'] || '');
+            const url = toText(credential.url || '');
+            const details = [identifier ? `ID: ${identifier}` : '', category ? `Categoria: ${category}` : '', url ? `URL: ${url}` : '']
+              .filter(Boolean)
+              .join(' | ');
+            return `- ${name}${details ? ` (${details})` : ''}`;
+          }),
+          ...academicCredentials.map((credential) => {
+            const title = toText(credential.title || credential.name || credential.schemaId || 'Academic Credential');
+            const institution = toText(credential.institution || '');
+            const period = toText(credential.period || '');
+            const category = toText(credential.credentialCategory || '');
+            const status = toText(credential.credentialStatus || '');
+            const thesis = toText(
+              credential?.thesisTitle?.['pt-BR'] ||
+                credential?.thesisTitle?.en ||
+                credential?.thesisTitle?.es ||
+                '',
+            );
+            const details = [
+              institution ? `Instituição: ${institution}` : '',
+              period ? `Período: ${period}` : '',
+              category ? `Categoria: ${category}` : '',
+              status ? `Status: ${status}` : '',
+              thesis ? `Tese: ${thesis}` : '',
+            ]
+              .filter(Boolean)
+              .join(' | ');
+            return `- ${title}${details ? ` (${details})` : ''}`;
+          }),
+        ].join('\n')
+      : '- none';
 
-  const occupationLines = formatObjectList(upkfMeta.occupations, (occupation) => {
-    const title = toText(occupation.title || occupation.name || occupation.schemaId || 'Occupation');
-    const organizationRef = toText(occupation.organizationRef || '');
-    const location = toText(occupation.location || '');
-    const skills = asArray(occupation.appliedSkills).map((skill) => toText(skill)).filter(Boolean).join(', ');
-    const details = [organizationRef ? `OrgRef: ${organizationRef}` : '', location ? `Local: ${location}` : '', skills ? `Skills: ${skills}` : '']
-      .filter(Boolean)
-      .join(' | ');
-    return `- ${title}${details ? ` (${details})` : ''}`;
-  });
+  const occupations = asArray(upkfMeta.hasOccupation).length > 0 ? asArray(upkfMeta.hasOccupation) : asArray(upkfMeta.occupations);
+  const occupationSection =
+    occupations.length > 0
+      ? occupations
+          .map((occupation) => {
+            const title = toText(occupation.title || occupation.name || occupation.schemaId || 'Occupation');
+            const organizationRef = toText(occupation.organizationRef || '');
+            const location = toText(occupation.location || '');
+            const skills = asArray(occupation.appliedSkills)
+              .map((skill) => toText(skill))
+              .filter(Boolean)
+              .join(', ');
+            const details = [organizationRef ? `OrgRef: ${organizationRef}` : '', location ? `Local: ${location}` : '', skills ? `Skills: ${skills}` : '']
+              .filter(Boolean)
+              .join(' | ');
+            return `- ${title}${details ? ` (${details})` : ''}`;
+          })
+          .join('\n')
+      : '- none';
 
-  const notSameAsLines = formatObjectList(upkfMeta.notSameAs, (entry) => `- ${toText(entry)}`);
+  const heritage = upkfMeta.heritage || {};
+  const heritageClusters = asArray(heritage.clusters);
+  const heritageClusterSection =
+    heritageClusters.length > 0
+      ? heritageClusters
+          .map((cluster) => {
+            const clusterTitle = toText(cluster.title || cluster.cluster || 'Cluster');
+            const clusterLabel = toText(cluster.cluster || '');
+            const region = toText(cluster.region || '');
+            const probability = toText(cluster.probabilityScore || '');
+            const surnames = asArray(cluster.keySurnames)
+              .map((surname) => toText(surname))
+              .filter(Boolean)
+              .join(', ');
+            const thesis = toText(cluster.thesis || '');
+            const nextStep = toText(cluster.nextStep || '');
+            const details = [
+              clusterLabel ? `Linha: ${clusterLabel}` : '',
+              region ? `Região: ${region}` : '',
+              probability ? `Probabilidade: ${probability}` : '',
+              surnames ? `Sobrenomes: ${surnames}` : '',
+              thesis ? `Síntese: ${thesis}` : '',
+              nextStep ? `Próximo passo: ${nextStep}` : '',
+            ]
+              .filter(Boolean)
+              .join(' | ');
+            return `- ${clusterTitle}${details ? ` (${details})` : ''}`;
+          })
+          .join('\n')
+      : '- none';
+
+  const heritageSynthesis = heritage?.synthesis || {};
+  const heritageSynthesisSection = [
+    toText(heritageSynthesis.sephardicIdentity || ''),
+    toText(heritageSynthesis.italianIdentity || ''),
+  ]
+    .filter(Boolean)
+    .map((item) => `- ${item}`)
+    .join('\n');
+
+  const affiliations = asArray(upkfMeta.affiliations);
+  const memberOfSection =
+    affiliations.length > 0
+      ? affiliations
+          .map((affiliation) => {
+            const name = toText(affiliation.name || affiliation.legalName || affiliation.schemaId || 'Organization');
+            const relation = toText(affiliation.relation || '');
+            const url = toText(affiliation.url || '');
+            const descriptionPt = toText(affiliation?.description?.['pt-BR'] || affiliation?.description?.en || '');
+            const details = [relation ? `Relação: ${relation}` : '', url ? `URL: ${url}` : '', descriptionPt ? `Descrição: ${descriptionPt}` : '']
+              .filter(Boolean)
+              .join(' | ');
+            return `- ${name}${details ? ` (${details})` : ''}`;
+          })
+          .join('\n')
+      : '- none';
+
+  const academicInstitutions = Array.from(
+    new Set(
+      academicCredentials
+        .map((credential) => toText(credential.institution))
+        .filter(Boolean),
+    ),
+  );
+  const alumniOfSection =
+    academicInstitutions.length > 0
+      ? academicInstitutions.map((institution) => `- ${institution}`).join('\n')
+      : '- none';
+
+  const sameAsSection =
+    asArray(upkfMeta.sameAs).length > 0
+      ? asArray(upkfMeta.sameAs)
+          .map((url) => toText(url))
+          .filter(Boolean)
+          .map((url) => `- ${url}`)
+          .join('\n')
+      : '- none';
+
+  const domainInventorySection =
+    asArray(upkfMeta.domainInventory).length > 0
+      ? asArray(upkfMeta.domainInventory)
+          .map((domain) => {
+            const host = toText(domain.domain || '');
+            const url = toText(domain.url || '');
+            const category = toText(domain.category || '');
+            const purpose = toText(domain.purpose || '');
+            const details = [category ? `Categoria: ${category}` : '', purpose ? `Função: ${purpose}` : '']
+              .filter(Boolean)
+              .join(' | ');
+            return `- ${host}${url ? ` (${url})` : ''}${details ? ` — ${details}` : ''}`;
+          })
+          .join('\n')
+      : '- none';
+
+  const notSameAsSection =
+    asArray(upkfMeta.notSameAs).length > 0
+      ? asArray(upkfMeta.notSameAs)
+          .map((entry) => toText(entry))
+          .filter(Boolean)
+          .map((entry) => `- ${entry}`)
+          .join('\n')
+      : '- none';
 
   const lines = [
     markdownPageHeader({
@@ -4138,20 +4392,36 @@ function buildIdentityFatMarkdown({ upkfMeta, siteUrl, generatedAt }) {
     '## Pilares de Expertise',
     ...(knowsAbout.length > 0 ? knowsAbout.map((topic) => `- ${topic}`) : ['- none']),
     '',
+    '## Identificadores e Verificações',
+    identifierSection,
+    '',
+    '## Formação e Ocupações',
+    credentialSection,
+    '',
+    occupationSection,
+    '',
+    '## Herança e Linhagem',
+    heritageClusterSection,
+    '',
+    heritageSynthesisSection || '- none',
+    '',
+    '## Organizações e Afiliações',
+    '### memberOf',
+    memberOfSection,
+    '',
+    '### alumniOf',
+    alumniOfSection,
+    '',
+    '## Presença Pública (sameAs)',
+    sameAsSection,
+    '',
+    '## Domínios',
+    domainInventorySection,
+    '',
     '## Firewall Semântico',
     firewall ? `> ${firewall}` : '> Firewall semântico indisponível.',
     '',
-    '## identifier',
-    ...identifierLines,
-    '',
-    '## hasCredential',
-    ...credentialLines,
-    '',
-    '## hasOccupation',
-    ...occupationLines,
-    '',
-    '## notSameAs',
-    ...notSameAsLines,
+    notSameAsSection,
     '',
   ];
 
@@ -4169,14 +4439,28 @@ function getAcervoClusters(knowledgeData) {
     const canonicalPath = `/acervo-teologico/${clusterId}`;
     const sermons = asArray(collection.items).map((item) => {
       const sermonSlug = normalizeSermonSlug(item.slug || item.name || `sermao-${item.position}`);
+      const llmContext = item.summary || '';
       return {
+        clusterId,
+        clusterCanonicalPath: canonicalPath,
+        clusterSeoTitle: collection.name,
+        clusterMetaDescription: `Sermões e estudos da coleção ${collection.name}.`,
         position: item.position,
         slug: sermonSlug,
         title: item.name,
         canonicalPath: `${canonicalPath}/${sermonSlug}`,
-        summary: item.summary || '',
+        seoTitle: item.name,
+        metaDescription: llmContext || `Sermões e estudos da coleção ${collection.name}.`,
+        llmContext,
+        originalPath: item.canonicalPath || '',
+        originalUrl: '',
         publishedAt: item.publishedAt || '',
         youtubeUrl: item.youtubeUrl || '',
+        legacyName: item.name,
+        legacySummary: llmContext,
+        legacyCollectionName: collection.name,
+        legacyCollectionSlug: collection.slug || clusterId,
+        summary: llmContext,
       };
     });
 
@@ -4245,10 +4529,10 @@ function buildAcervoFatMarkdown({ knowledgeData, siteUrl, generatedAt }) {
       lines.push('- Nenhum sermão mapeado.');
     } else {
       sermons.forEach((sermon) => {
-        const sermonTitle = toText(sermon.title || sermon.name || sermon.slug || 'Sermão');
+        const sermonTitle = toText(sermon.seoTitle || sermon.title || sermon.name || sermon.slug || 'Sermão');
         const sermonPath = toText(sermon.canonicalPath || `${clusterPath}/${sermon.slug || ''}`);
         const sermonUrl = toCanonicalUrl(siteUrl, sermonPath);
-        const summary = toText(sermon.summary || '');
+        const summary = toText(sermon.llmContext || sermon.summary || sermon.metaDescription || '');
         const publishedAt = toText(sermon.publishedAt || '');
         const youtubeUrl = toText(sermon.youtubeUrl || '');
         const detail = [publishedAt ? `Publicado: ${toDateOnly(publishedAt)}` : '', youtubeUrl ? `YouTube: ${youtubeUrl}` : '', summary]
@@ -4415,7 +4699,7 @@ function buildAcervoDetailMarkdown({ cluster, sermon, siteUrl, generatedAt }) {
 
   const lines = [
     markdownPageHeader({
-      title: toText(sermon.title || sermon.slug || 'Sermão'),
+      title: toText(sermon.seoTitle || sermon.title || sermon.slug || 'Sermão'),
       canonicalUrl,
       updatedAt: sermon.publishedAt || generatedAt,
     }),
@@ -4423,10 +4707,10 @@ function buildAcervoDetailMarkdown({ cluster, sermon, siteUrl, generatedAt }) {
     clusterTitle,
     '',
     '## Contexto',
-    toText(sermon.summary || cluster.metaDescription || ''),
+    toText(sermon.llmContext || sermon.summary || sermon.metaDescription || cluster.metaDescription || ''),
     '',
     '## Fonte',
-    toText(sermon.youtubeUrl || sermon.originalUrl || ''),
+    toText(sermon.youtubeUrl || sermon.originalUrl || sermon.originalPath || ''),
     '',
   ];
 
@@ -4501,7 +4785,7 @@ function buildFatMarkdownPagesFromSsot({ upkfMeta, knowledgeData, publicationCol
       '## Sermões',
       ...asArray(cluster.sermons).map((sermon) => {
         const sermonCanonical = toCanonicalUrl(siteUrl, sermon.canonicalPath || `${cluster.canonicalPath}/${sermon.slug}`);
-        return `- [${toText(sermon.title || sermon.slug || 'Sermão')}](${sermonCanonical})`;
+        return `- [${toText(sermon.seoTitle || sermon.title || sermon.slug || 'Sermão')}](${sermonCanonical})`;
       }),
       '',
     ];

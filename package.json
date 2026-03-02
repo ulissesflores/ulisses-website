@@ -9,15 +9,13 @@
     "research:generate": "node scripts/research/generate-manuscripts.mjs",
     "research:check": "node scripts/research/generate-manuscripts.mjs && node scripts/research/score-and-verify.mjs",
     "predev": "echo 'Skipping upkf:generate during dev; run npm run upkf:generate manually when needed.'",
-    "prebuild": "npm run upkf:generate && npm run upkf:verify",
-    "postbuild": "npm run seo:indexnow || true",
+    "prebuild": "npm run upkf:generate",
     "dev": "next dev --webpack",
     "dev:turbopack": "next dev --turbopack",
-    "build": "next build",
+    "build": "npm run upkf:generate && next build",
     "start": "next start",
     "lint": "eslint",
-    "links:inventory": "npm run upkf:generate",
-    "seo:indexnow": "node scripts/seo/ping-indexnow.mjs"
+    "links:inventory": "npm run upkf:generate"
   },
   "dependencies": {
     "framer-motion": "^12.34.3",
