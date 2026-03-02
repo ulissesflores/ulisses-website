@@ -16,7 +16,7 @@ Ensaio sobre fundamentos transcendentes da ordem economica e sua relacao com nor
 
 This article presents a reproducible, high-rigor synthesis of "Fundamentos Transcendentes da Ordem Econômica" by aligning methodological traceability, interdisciplinary evidence, and operational recommendations for deployment contexts with explicit governance constraints. (Aquinas, 2026).
 
-**Keywords:** Teologia; Humanidades; Historia; THEOLOGY; ECONOMIC; ORDER; reproducibility; Harvard references; essays.
+**Keywords:** THEOLOGY; ECONOMIC; ORDER; reproducibility; Harvard references; essays.
 
 # 1. Introduction
 

@@ -1,9 +1,10 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import { 
   BookOpen, Cpu, Github, Linkedin, Mail, Terminal, Download, 
   Globe, MapPin, MessageCircle, 
   Layers, Code, Briefcase, Award, TrendingUp, 
-  Database, CheckCircle, FileText
+  Database, CheckCircle, FileText, FlaskConical
 } from 'lucide-react';
 import { publications } from '@/data/publications';
 
@@ -289,6 +290,26 @@ export default function Home() {
                 href={`/${publication.category}/${publication.id}`}
               />
             ))}
+          </div>
+        </section>
+
+        <section id="simulacoes" className="mb-24 scroll-mt-24">
+          <h2 className="text-2xl font-bold text-white mb-8 flex items-center gap-3">
+            <FlaskConical className="text-emerald-500" /> Simulacoes
+          </h2>
+          <div className="rounded-2xl border border-emerald-500/20 bg-emerald-500/5 p-8">
+            <p className="text-sm uppercase tracking-[0.18em] text-emerald-300 mb-3">Laboratorio de cenarios</p>
+            <h3 className="text-3xl font-bold text-white mb-3">IA 2027 em Portugues</h3>
+            <p className="text-neutral-300 leading-relaxed mb-6 max-w-3xl">
+              Simulacao prospectiva em formato scrollytelling com timeline, painel de KPIs dinamico e ramificacoes
+              de cenario (slowdown/race), baseada no manifesto AI 2027 em versao academica pt-BR.
+            </p>
+            <Link
+              href="/simulacoes/ia-2027"
+              className="inline-flex items-center gap-2 rounded-full border border-emerald-500/50 px-5 py-2 text-sm font-bold text-emerald-300 hover:bg-emerald-900/25 transition-colors"
+            >
+              Abrir simulacao
+            </Link>
           </div>
         </section>
 

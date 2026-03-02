@@ -1,0 +1,1605 @@
+/**
+ * ════════════════════════════════════════════════════════════════════════════
+ * ia-2027.ts — GERADO AUTOMATICAMENTE DE ia-2027.md
+ * ════════════════════════════════════════════════════════════════════════════
+ *
+ * FONTE DA VERDADE: ia-2027.md (1.693 linhas)
+ * GERADO POR:       generate.py  (parser determinístico)
+ * PARA REGENERAR:   python3 generate.py
+ *
+ * ─────────────────────────────────────────────────────────────────────────
+ * INSTRUÇÕES PARA CODEX — IMPLEMENTAÇÃO DO SITE
+ * ─────────────────────────────────────────────────────────────────────────
+ *
+ * ESTRUTURA EXPORTADA:
+ * ├── NarrativeSection  (tipo)
+ * ├── Footnote          (tipo)
+ * ├── mainTimeline      → 15 seções (Mid 2025 → Out 2027)
+ * ├── raceEnding        → Final Corrida (Nov-Dez 2027 → 2035)
+ * ├── slowdownEnding    → Final Desaceleração (Nov 2027 → 2035)
+ * └── footnotesData     → todas as notas de rodapé (main + race + slowdown)
+ *
+ * RENDERIZAÇÃO — ORDEM OBRIGATÓRIA:
+ *   1. heroSection (estático — não gerado aqui, manter do -A.ts)
+ *   2. mainTimeline  — iterar em ordem, renderizar storyHtml
+ *   3. branchingPoint (estático — Choose Your Ending)
+ *   4. raceEnding   — somente quando usuário selecionar "Race"
+ *   5. slowdownEnding — somente quando usuário selecionar "Slowdown"
+ *   footnotes: vincular inline [N] ao id correspondente em footnotesData
+ *
+ * CAMPOS POR SEÇÃO (NarrativeSection):
+ *   id           → chave única: "{track}-{year}-{month}"
+ *   navLabel     → rótulo curto de navegação (PT-BR)
+ *   title        → título completo (PT-BR)
+ *   storyHtml    → HTML renderizável com dangerouslySetInnerHTML
+ *                  Contém <p> com classes Tailwind + <details> para expandables
+ *   chartExtra   → dados para o gráfico de linha do tempo
+ *
+ * EXPANDABLES (caixas <details>/<summary>):
+ *   - Detectados pelos títulos conhecidos do MD original
+ *   - Cor e emoji definidos por tema em EXP_THEME no gerador
+ *   - Tailwind classes inline — não requerem CSS adicional
+ *
+ * FOOTNOTES:
+ *   - Contexto: "main" | "race" | "slowdown"
+ *   - Refs inline: <sup class="..."> injetadas no storyHtml
+ *   - Para tooltip/popover: vincular [N] ao footnotesData por id
+ *
+ * CONTEÚDO: traduzido para PT-BR via tradução assistida por Claude.
+ *   Para versão PT-BR: executar generate.py com flag --lang=pt
+ *   (tradução automática via LLM — não incluída nesta versão base)
+ * ════════════════════════════════════════════════════════════════════════════
+ */
+
+export interface NarrativeSection {
+  id: string;
+  navLabel: string;
+  title: string;
+  storyHtml: string;
+  chartExtra: {
+    date: string;
+    capabilities?: [string, number][];
+    approval?: number;
+    revenue?: number;
+    capex?: number;
+    agentPopulation?: { copies: number; speed: number };
+    [key: string]: unknown;
+  };
+}
+
+export interface Footnote {
+  id: string;
+  context: "main" | "race" | "slowdown";
+  num: number;
+  html: string;
+}
+
+// ─── Main Timeline (Mid 2025 → Out 2027) ───────────────────────────────────
+export const mainTimeline: NarrativeSection[] = [
+  {
+    id: "main-2025-08",
+    navLabel: "Meados 2025",
+    title: "Meados de 2025: Agentes Erráticos",
+    storyHtml: `
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">O mundo tem seu primeiro vislumbre real de agentes de IA.</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Os anúncios de agentes que utilizam o computador enfatizam o termo "assistente pessoal": você pode dar instruções como "peça um burrito no DoorDash" ou "abra minha planilha de orçamento e some as despesas deste mês." Eles entrarão em contato conforme necessário — por exemplo, para pedir que você confirme compras.<sup class="text-xs text-indigo-600 font-bold ml-0.5">[8]</sup> Embora mais avançados do que iterações anteriores como o Operator, eles ainda têm dificuldade em obter adoção generalizada.<sup class="text-xs text-indigo-600 font-bold ml-0.5">[9]</sup></p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Enquanto isso, longe dos holofotes públicos, agentes mais especializados em programação e pesquisa começam a transformar silenciosamente suas respectivas profissões.</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">As IAs de 2024 conseguiam seguir instruções específicas: transformavam tópicos em e-mails e pedidos simples em código funcional. Em 2025, as IAs funcionam mais como funcionários. As IAs de programação parecem cada vez mais agentes autônomos do que meros assistentes: recebem instruções via Slack ou Teams e fazem alterações substanciais no código por conta própria, economizando horas ou até dias.<sup class="text-xs text-indigo-600 font-bold ml-0.5">[10]</sup> Agentes de pesquisa passam meia hora varrendo a internet para responder a uma pergunta.</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Os agentes são impressionantes na teoria — e em exemplos cuidadosamente selecionados —, mas na prática são pouco confiáveis. O Twitter de IA está repleto de histórias sobre tarefas executadas de forma particularmente hilária. Os melhores agentes também são caros: você recebe o que paga, e o melhor desempenho custa centenas de dólares por mês.<sup class="text-xs text-indigo-600 font-bold ml-0.5">[11]</sup> Ainda assim, muitas empresas encontram maneiras de encaixá-los em seus fluxos de trabalho.<sup class="text-xs text-indigo-600 font-bold ml-0.5">[12]</sup></p>
+    
+`,
+    chartExtra: { date: "2025-08-31", capabilities: [["Hacking", 0.8], ["Codificação", 0.95], ["Pesquisa", 0.5]], approval: -0.25, revenue: 12195000000, capex: 350000000000, power: "5 GW", agentPopulation: { copies: 5000, speed: 1 } }
+  },
+
+  {
+    id: "main-2025-12",
+    navLabel: "Final 2025",
+    title: "Final de 2025: A IA Mais Cara do Mundo",
+    storyHtml: `
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">A OpenBrain está construindo os maiores datacenters que o mundo já viu.<sup class="text-xs text-indigo-600 font-bold ml-0.5">[13]</sup></p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">(Para evitar destacar qualquer empresa existente, vamos descrever uma empresa fictícia de inteligência artificial geral, que chamaremos de OpenBrain. Imaginamos que as demais estejam de 3 a 9 meses atrás da OpenBrain.)</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">(3 x 10^23 FLOP)</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">(2 x 10^25 FLOP)</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">(4 x 10^27 FLOP)</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">2⋅10</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">FLOP de computação para treinar.<sup class="text-xs text-indigo-600 font-bold ml-0.5">[14]</sup> O modelo público mais recente da OpenBrain — o Agent-0 — foi treinado com</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">FLOP. Assim que os novos datacenters estiverem operacionais, eles poderão treinar um modelo com</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">FLOP — mil vezes mais do que o GPT-4.<sup class="text-xs text-indigo-600 font-bold ml-0.5">[15]</sup> Outras empresas despejam dinheiro em seus próprios datacenters gigantescos, esperando manter o ritmo.</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Embora os modelos estejam melhorando em uma ampla gama de habilidades, um aspecto se destaca: a OpenBrain foca em IAs capazes de acelerar a própria pesquisa em IA. Eles querem vencer a dupla corrida armamentista contra a China (cuja empresa líder chamaremos de "DeepCent")16 e seus concorrentes americanos. Quanto mais do ciclo de pesquisa e desenvolvimento (P&D) conseguirem automatizar, mais rápido poderão avançar. Assim, quando a OpenBrain termina de treinar o Agent-1 — um novo modelo em desenvolvimento interno —, ele é bom em muitas coisas, mas excelente em auxiliar a pesquisa de IA.<sup class="text-xs text-indigo-600 font-bold ml-0.5">[17]</sup> Neste ponto, "termina de treinar" é uma expressão um tanto imprecisa; os modelos são frequentemente atualizados para versões mais recentes treinadas com dados adicionais ou parcialmente re-treinados para corrigir fraquezas.<sup class="text-xs text-indigo-600 font-bold ml-0.5">[18]</sup></p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Os mesmos ambientes de treinamento que ensinam o Agent-1 a programar e navegar na web de forma autônoma também o tornam um bom hacker. Além disso, ele poderia oferecer ajuda substancial a terroristas projetando bioarmas, graças ao seu conhecimento de nível de doutorado em todos os campos e à sua capacidade de navegar na web. A OpenBrain tranquiliza o governo afirmando que o modelo foi "alinhado" para recusar solicitações maliciosas.</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Os sistemas modernos de IA são redes neurais artificiais gigantescas. No início do treinamento, uma IA não terá "objetivos" tanto quanto "reflexos": se vir "Muito prazer em", ela produzirá "conhecê-lo". Quando tiver sido treinada para prever aproximadamente o conteúdo de uma internet inteira de texto, terá desenvolvido circuitos internos sofisticados que codificam vastas quantidades de conhecimento e interpretam de forma flexível autores arbitrários, já que é isso que a ajuda a prever texto com precisão super-humana.<sup class="text-xs text-indigo-600 font-bold ml-0.5">[19]</sup></p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Após ser treinado para prever texto da internet, o modelo é treinado para produzir texto em resposta a instruções. Isso incorpora uma personalidade básica e "impulsos".20 Por exemplo, um agente que compreende claramente uma tarefa tem mais probabilidade de concluí-la com êxito; ao longo do treinamento, o modelo "aprende" um "impulso" para obter uma compreensão clara de suas tarefas. Outros impulsos nessa categoria podem ser eficácia, conhecimento e autoapresentação (ou seja, a tendência de enquadrar seus resultados da forma mais favorável possível).21</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">A OpenBrain tem uma especificação de modelo (ou "Spec"), um documento escrito descrevendo os objetivos, regras, princípios etc. que deveriam orientar o comportamento do modelo.<sup class="text-xs text-indigo-600 font-bold ml-0.5">[22]</sup> A Spec do Agent-1 combina alguns objetivos vagos (como "auxiliar o usuário" e "não violar a lei") com uma longa lista de proibições e permissões mais específicas ("não diga esta palavra específica", "veja como lidar com esta situação específica"). Usando técnicas que utilizam IAs para treinar outras IAs,23 o modelo memoriza a Spec e aprende a raciocinar cuidadosamente sobre seus princípios. Ao final deste treinamento, espera-se que a IA seja útil (obedeça às instruções), inofensiva (recuse-se a ajudar em golpes, fabricação de bombas e outras atividades perigosas) e honesta (resista à tentação de obter melhores avaliações de humanos ingênuos ao alucinar citações24 ou falsificar a conclusão de tarefas).</p>
+
+      <details class="group my-8 border border-amber-200 rounded-xl bg-amber-50 overflow-hidden transition-all duration-300 shadow-sm">
+        <summary class="cursor-pointer p-5 font-semibold text-amber-900 hover:bg-amber-100 flex items-center justify-between transition-colors">
+          <span>🐕 Processo de treinamento e psicologia dos LLMs: por que continuamos dizendo "espera-se"</span>
+          <svg class="w-5 h-5 transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+        </summary>
+        <div class="p-5 text-sm text-amber-900 space-y-3 border-t border-amber-200">
+          <p>"Ao contrário do software comum, nossos modelos são redes neurais massivas. Seus comportamentos são aprendidos a partir de um amplo conjunto de dados, não programados explicitamente. Embora não seja uma analogia perfeita, o processo se assemelha mais ao adestramento de um cão do que à programação convencional." —OpenAI</p>
+          <p>Quando queremos entender por que um sistema de IA moderno fez algo, ou como ele se comportaria em algum cenário futuro que não conseguimos simular perfeitamente, não podemos simplesmente pedir aos programadores que nos guiem pelas linhas de código e expliquem como funcionam. Em vez disso, somos forçados a fazer algo como psicologia: observamos seu comportamento na gama de casos observados até agora e teorizamos sobre quais estruturas cognitivas internas (crenças? objetivos? traços de personalidade? etc.) podem existir, e usamos essas teorias para prever comportamentos em cenários futuros.</p>
+          <p>A conclusão é que uma empresa pode redigir um documento (a Spec) listando proibições e permissões, objetivos e princípios, e então tentar treinar a IA para internalizá-la — mas não pode verificar se funcionou. Pode dizer "até onde conseguimos avaliar, parece estar seguindo a Spec até agora."25</p>
+          <p>Um expandável posterior entrará em mais detalhes sobre o que pensamos estar acontecendo internamente nessas IAs. Veja também nosso suplemento de previsão de objetivos de IA, que detalha quais objetivos as IAs podem ter e por quê. Esta é uma das muitas coisas sobre as quais somos incertos e que merece pesquisas adicionais.</p>
+          <p>A equipe de alinhamento da OpenBrain26 é cuidadosa o suficiente para questionar se essas conquistas são profundas ou superficiais. O modelo completamente treinado tem algum tipo de compromisso robusto de sempre ser honesto? Ou isso desmoronará em alguma situação futura — por exemplo, porque aprendeu a honestidade como um objetivo instrumental em vez de um objetivo terminal? Ou apenas aprendeu a ser honesto sobre os tipos de coisas que o processo de avaliação consegue verificar? Poderia estar mentindo para si mesmo às vezes, como os humanos fazem? Uma resposta conclusiva a essas perguntas exigiria interpretabilidade mecanicista — essencialmente a capacidade de examinar os mecanismos internos de uma IA e ler sua mente. Infelizmente, as técnicas de interpretabilidade ainda não são avançadas o suficiente para isso.</p>
+          <p>Em vez disso, os pesquisadores tentam identificar casos em que os modelos parecem se desviar da Spec. O Agent-1 frequentemente é servilmente complacente (ou seja, diz aos pesquisadores o que eles querem ouvir em vez de tentar dizer a verdade). Em algumas demonstrações manipuladas, ele até mente de formas mais sérias, como ocultar evidências de que falhou em uma tarefa para obter melhores avaliações. No entanto, em ambientes de implantação reais, não há mais incidentes tão extremos quanto os de 2023-2024 (como o Gemini dizendo a um usuário para morrer e o Bing Sydney sendo o Bing Sydney).27</p>
+        </div>
+      </details>
+    
+`,
+    chartExtra: { date: "2025-12-31", capabilities: [["Hacking", 1.0], ["Codificação", 1.1], ["Armas Biológicas", 1.0]], approval: -0.25, revenue: 18000000000, capex: 400000000000, power: "10 GW", agentPopulation: { copies: 10000, speed: 1.2 } }
+  },
+
+  {
+    id: "main-2026-04",
+    navLabel: "Início 2026",
+    title: "Início de 2026: Automação da Programação",
+    storyHtml: `
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">A aposta de usar IA para acelerar a pesquisa em IA começa a se pagar.</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">A OpenBrain continua implantando o Agent-1 — em melhoria iterativa contínua — internamente para P&D de IA. No geral, estão fazendo progressos algorítmicos 50% mais rápido do que fariam sem assistentes de IA — e, mais importante, mais rápido que seus concorrentes.</p>
+
+      <details class="group my-8 border border-indigo-200 rounded-xl bg-indigo-50 overflow-hidden transition-all duration-300 shadow-sm">
+        <summary class="cursor-pointer p-5 font-semibold text-indigo-900 hover:bg-indigo-100 flex items-center justify-between transition-colors">
+          <span>📊 O multiplicador de progresso em P&D de IA: o que queremos dizer com 50% mais rápido no progresso algorítmico?</span>
+          <svg class="w-5 h-5 transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+        </summary>
+        <div class="p-5 text-sm text-indigo-900 space-y-3 border-t border-indigo-200">
+          <p>Queremos dizer que a OpenBrain faz em 1 semana com IA o mesmo progresso em pesquisa de IA que faria em 1<sup class="text-xs text-indigo-600 font-bold ml-0.5">[5]</sup> semanas sem IA.</p>
+          <p>O progresso em IA pode ser decomposto em 2 componentes:</p>
+          <p>Aumento de computação: mais poder computacional é utilizado para treinar ou executar uma IA. Isso produz IAs mais poderosas, mas com custo maior.</p>
+          <p>Algoritmos aprimorados: melhores métodos de treinamento são usados para converter computação em desempenho. Isso produz IAs mais capazes sem um aumento correspondente no custo, ou as mesmas capacidades com custos reduzidos.</p>
+          <p>Isso inclui ser capaz de alcançar resultados qualitativamente e quantitativamente novos. "Mudanças de paradigma" como a transição de agentes de RL jogando jogos para grandes modelos de linguagem contam como exemplos de progresso algorítmico.</p>
+          <p>Aqui nos referimos apenas ao componente (2), algoritmos aprimorados, que representa cerca de metade do progresso atual em IA.</p>
+          <p>Daqui em diante, às vezes abreviamos isso como um "multiplicador de progresso em P&D de IA" de 1<sup class="text-xs text-indigo-600 font-bold ml-0.5">[5]</sup>.</p>
+          <p>Esclarecimentos:</p>
+          <p>O multiplicador de progresso é abrangente: inclui o tempo necessário para executar experimentos, por exemplo, e não apenas as tarefas cognitivas envolvidas na pesquisa algorítmica.</p>
+          <p>É importante lembrar que o multiplicador de progresso é a velocidade relativa do progresso, não a velocidade absoluta. Se, por exemplo, o custo computacional para treinar um modelo da classe GPT-4 caiu pela metade a cada ano por vários anos com pesquisa humana comum, e de repente a IA automatiza o P&D e o multiplicador de progresso vai para 100x, o custo para treinar um modelo da classe GPT-4 então cairia pela metade a cada 3<sup class="text-xs text-indigo-600 font-bold ml-0.5">[65]</sup> dias — mas não por muito tempo, porque os retornos decrescentes entrariam em ação e os limites físicos definitivos seriam alcançados. Neste exemplo, talvez o custo para treinar um modelo da classe GPT-4 se reduziria à metade 5 a 10 vezes no total (ao longo de algumas semanas ou meses) antes de estabilizar. Em outras palavras, se a ciência humana comum teria enfrentado retornos decrescentes e limites físicos após 5 a 10 anos de pesquisa adicional, então IAs com um multiplicador de 100x enfrentariam esses mesmos retornos decrescentes e limites após 18<sup class="text-xs text-indigo-600 font-bold ml-0.5">[25]</sup>–36<sup class="text-xs text-indigo-600 font-bold ml-0.5">[5]</sup> dias de pesquisa.</p>
+          <p>Mais explicações e discussões sobre este conceito e como é usado em nossa previsão podem ser encontradas em nosso suplemento de decolagem.</p>
+          <p>Várias IAs concorrentes lançadas publicamente agora igualam ou superam o Agent-0, incluindo um modelo de pesos abertos. A OpenBrain responde lançando o Agent-1, que é mais capaz e confiável.<sup class="text-xs text-indigo-600 font-bold ml-0.5">[28]</sup></p>
+          <p>As pessoas naturalmente tentam comparar o Agent-1 a humanos, mas ele tem um perfil de habilidades muito diferente. Sabe mais fatos do que qualquer humano, conhece praticamente todas as linguagens de programação e pode resolver problemas de programação bem especificados com extrema rapidez. Por outro lado, o Agent-1 é ruim em tarefas de longo horizonte mesmo simples, como vencer videogames que nunca jogou antes. Ainda assim, a jornada de trabalho comum é de oito horas, e o trabalho de um dia geralmente pode ser dividido em partes menores; pode-se pensar no Agent-1 como um funcionário disperso que prospera sob uma gestão cuidadosa.<sup class="text-xs text-indigo-600 font-bold ml-0.5">[29]</sup> Pessoas astutas encontram maneiras de automatizar partes rotineiras de seus trabalhos.<sup class="text-xs text-indigo-600 font-bold ml-0.5">[30]</sup></p>
+          <p>Os executivos da OpenBrain voltam sua atenção para uma implicação da automação do P&D de IA: a segurança tornou-se mais importante. No início de 2025, o pior cenário era o vazamento de segredos algorítmicos; agora, se a China roubar os pesos do Agent-1, poderia aumentar sua velocidade de pesquisa em quase 50%.31 O nível de segurança da OpenBrain é típico de uma empresa de tecnologia em rápido crescimento com cerca de 3.000 pessoas, segura apenas contra ataques de baixa prioridade de grupos cibernéticos capazes (SL2 da RAND).32 Eles estão trabalhando arduamente para proteger seus pesos e segredos de ameaças internas e dos principais grupos de cibercrime (SL3),33 mas a defesa contra estados-nação (SL4 e SL5) mal está no horizonte.</p>
+        </div>
+      </details>
+    
+`,
+    chartExtra: { date: "2026-04-30", capabilities: [["Hacking", 1.1], ["Codificação", 1.35], ["Armas Biológicas", 1.19]], approval: -0.26, revenue: 26118790599, capex: 457879508507, power: "15 GW", agentPopulation: { copies: 22000, speed: 1.3 } }
+  },
+
+  {
+    id: "main-2026-08",
+    navLabel: "Meados 2026",
+    title: "Meados de 2026: A China Desperta",
+    storyHtml: `
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Na China, o PCCh começa a sentir o peso do desenvolvimento da AGI.</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Os controles de exportação de chips e a falta de apoio governamental deixaram a China com menos recursos do que o Ocidente. Contrabandeando chips taiwaneses proibidos, comprando chips mais antigos e produzindo chips domésticos com cerca de três anos de defasagem em relação à fronteira tecnológica EUA-Taiwan, a China conseguiu manter cerca de 12% da capacidade de computação relevante para IA do mundo — mas a tecnologia mais antiga é mais difícil de trabalhar, e o fornecimento é uma dor de cabeça constante.<sup class="text-xs text-indigo-600 font-bold ml-0.5">[35]</sup> Alguns destaques como a DeepCent fazem trabalhos muito impressionantes com capacidade computacional limitada, mas o déficit de computação limita o que podem alcançar sem apoio governamental, e estão cerca de seis meses atrás dos melhores modelos da OpenBrain.<sup class="text-xs text-indigo-600 font-bold ml-0.5">[36]</sup></p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">O Secretário-Geral há muito sonhava em apostar tudo na fabricação física do mundo real e evitar a decadência pós-industrial americana. Ele via as empresas de software com desconfiança.<sup class="text-xs text-indigo-600 font-bold ml-0.5">[37]</sup> Mas membros linha-dura do PCCh advertem que a crescente corrida em direção à AGI não pode mais ser ignorada. Ele finalmente se compromete plenamente com a grande ofensiva de IA que antes tentara evitar. Coloca em movimento a nacionalização da pesquisa de IA chinesa, criando um mecanismo imediato de compartilhamento de informações para as empresas de IA. Isso escalará ao longo de um ano até que todos os melhores pesquisadores se fundam em um coletivo liderado pela DeepCent, onde compartilham insights algorítmicos, conjuntos de dados e recursos computacionais entre si. Uma Zona de Desenvolvimento Centralizado (CDZ) é criada na Usina Nuclear de Tianwan — a maior usina nuclear do mundo — para abrigar um novo megadatacenter para a DeepCent, juntamente com espaços de vida e escritórios de alta segurança para onde os pesquisadores eventualmente se mudarão. Quase 50% da capacidade de computação relevante para IA da China agora trabalha para o coletivo liderado pela DeepCent,38 e mais de 80% dos novos chips são direcionados para a CDZ.<sup class="text-xs text-indigo-600 font-bold ml-0.5">[39]</sup> Neste ponto, a CDZ tem a capacidade de energia necessária para o que seria o maior cluster centralizado do mundo.<sup class="text-xs text-indigo-600 font-bold ml-0.5">[40]</sup> Outros membros do Partido discutem medidas extremas para neutralizar a vantagem de chips do Ocidente. Um bloqueio de Taiwan? Uma invasão completa?</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Mas a China está ficando para trás nos algoritmos de IA devido a seus modelos mais fracos. As agências de inteligência chinesas — entre as melhores do mundo — intensificam seus planos para roubar os pesos da OpenBrain. Esta é uma operação muito mais complexa do que seu constante roubo de baixo nível de segredos algorítmicos; os pesos são um arquivo de múltiplos terabytes armazenado em um servidor altamente seguro (a OpenBrain melhorou a segurança para o SL3 da RAND). Sua força cibernética acredita que consegue executar a operação com ajuda de seus espiões, mas talvez apenas uma vez; a OpenBrain detectará o roubo, aumentará a segurança, e eles podem não ter outra oportunidade. Então (a liderança do PCCh se pergunta) deveriam agir agora e roubar o Agent-1? Ou esperar por um modelo mais avançado? Se esperarem, correm o risco de a OpenBrain melhorar a segurança além de sua capacidade de penetração?</p>
+    
+`,
+    chartExtra: { date: "2026-08-31", capabilities: [["Hacking", 1.3], ["Codificação", 1.6], ["Política", 0.77]], approval: -0.26, revenue: 37899512354, capex: 524134110777, power: "22 GW", agentPopulation: { copies: 50000, speed: 1.5 } }
+  },
+
+  {
+    id: "main-2026-12",
+    navLabel: "Final 2026",
+    title: "Final de 2026: A IA Começa a Eliminar Empregos",
+    storyHtml: `
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Bem quando outros pareciam estar se aproximando, a OpenBrain deixa a concorrência para trás novamente ao lançar o Agent-1-mini — um modelo 10 vezes mais barato que o Agent-1 e mais facilmente ajustado para diferentes aplicações. A narrativa dominante em torno da IA mudou de "talvez o hype passe" para "parece que este é o próximo grande salto", mas as pessoas discordam sobre o quão grande. Maior que as redes sociais? Maior que os smartphones? Maior que o fogo?</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">A IA começou a eliminar empregos, mas também criou novos. O mercado de ações subiu 30% em 2026, liderado pela OpenBrain, Nvidia e pelas empresas que integraram mais bem-sucedidamente assistentes de IA. O mercado de trabalho para engenheiros de software júnior está em turbulência: as IAs conseguem fazer tudo o que é ensinado em um curso de Ciência da Computação, mas quem sabe gerenciar e controlar a qualidade de equipes de IAs está ganhando muito bem. Gurus de negócios dizem aos candidatos a emprego que a familiaridade com IA é a habilidade mais importante a colocar no currículo. Muitas pessoas temem que a próxima onda de IAs venha atrás de seus empregos; há um protesto anti-IA de 10.000 pessoas em Washington.</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">O Departamento de Defesa (DOD) discreta, mas significativamente, começa a escalar a contratação direta da OpenBrain para questões cibernéticas, análise de dados e P&D, mas a integração é lenta devido à burocracia e ao processo de aquisição do DOD.<sup class="text-xs text-indigo-600 font-bold ml-0.5">[41]</sup></p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">$1T</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">38GW</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">PICO DE POTÊNCIA</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">$45B</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">ANUAL 2026</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">$200B</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">2<sup class="text-xs text-indigo-600 font-bold ml-0.5">[5]</sup>%</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">33 GW DE 1,34TW DE CAPACIDADE</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">$40B</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">ANUAL 2026</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">6GW</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">PICO DE POTÊNCIA</p>
+
+      <details class="group my-8 border border-slate-200 rounded-xl bg-slate-50 overflow-hidden transition-all duration-300 shadow-sm">
+        <summary class="cursor-pointer p-5 font-semibold text-slate-900 hover:bg-slate-100 flex items-center justify-between transition-colors">
+          <span>ℹ️ Por que nossa incerteza aumenta substancialmente além de 2026</span>
+          <svg class="w-5 h-5 transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+        </summary>
+        <div class="p-5 text-sm text-slate-900 space-y-3 border-t border-slate-200">
+          <p>Nossa previsão do dia atual até 2026 é substancialmente mais fundamentada do que o que se segue. Isso se deve em parte à proximidade temporal. Mas também porque os efeitos da IA no mundo começam a se compor de verdade em 2027. Para 2025 e 2026, nossa previsão é fortemente embasada na extrapolação de linhas retas sobre ampliações de capacidade computacional, melhorias algorítmicas e desempenho em benchmarks. Neste ponto do cenário, começamos a ver efeitos significativos do P&D de IA acelerado pela própria IA na linha do tempo, o que nos leva a revisar nossas estimativas das tendências para cima. Mas essas dinâmicas são inerentemente muito menos previsíveis.</p>
+          <p>Ao longo de 2027, as IAs evoluem de ser capazes de executar principalmente o trabalho de um engenheiro de pesquisa da OpenBrain para eclipsar todos os humanos em todas as tarefas. Isso representa aproximadamente nossa estimativa mediana, mas acreditamos ser plausível que isso aconteça até cerca de 5 vezes mais devagar ou mais rápido.</p>
+          <p>Para nossa pesquisa de base, consulte a previsão de linhas do tempo e a previsão de decolagem. Elas também serão resumidas em expandáveis abaixo.</p>
+        </div>
+      </details>
+    
+`,
+    chartExtra: { date: "2026-12-31", capabilities: [["Hacking", 1.51], ["Codificação", 1.9], ["Previsão", 1.22]], approval: -0.27, revenue: 55000000000, capex: 600000000000, power: "38 GW", agentPopulation: { copies: 100000, speed: 1.7 } }
+  },
+
+  {
+    id: "main-2027-01",
+    navLabel: "Jan 2027",
+    title: "Janeiro 2027: O Agent-2 Nunca Para de Aprender",
+    storyHtml: `
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Com a ajuda do Agent-1, a OpenBrain está agora no pós-treinamento do Agent-2. Mais do que nunca, o foco está em dados de alta qualidade. Quantidades volumosas de dados sintéticos são produzidas, avaliadas e filtradas por qualidade antes de serem fornecidas ao Agent-2.<sup class="text-xs text-indigo-600 font-bold ml-0.5">[42]</sup> Além disso, gastam bilhões de dólares para que trabalhadores humanos registrem a si mesmos resolvendo tarefas de longo horizonte.<sup class="text-xs text-indigo-600 font-bold ml-0.5">[43]</sup> Além de tudo isso, treinam o Agent-2 quase continuamente usando aprendizado por reforço em um conjunto sempre crescente de tarefas difíceis e diversas: muitos videogames, muitos desafios de programação, muitas tarefas de pesquisa. O Agent-2, mais do que os modelos anteriores, é efetivamente um "aprendizado online", no sentido de que foi construído para nunca realmente terminar o treinamento. A cada dia, os pesos são atualizados para a versão mais recente, treinados em mais dados gerados pela versão anterior no dia anterior.</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Com novas capacidades vêm novos perigos. A equipe de segurança descobre que, se o Agent-2 de alguma forma escapasse da empresa e quisesse "sobreviver" e "replicar-se" autonomamente, poderia ser capaz de fazê-lo. Ou seja, ele poderia desenvolver e executar de forma autônoma planos para invadir servidores de IA, instalar cópias de si mesmo, evadir a detecção e usar essa base segura para perseguir quaisquer outros objetivos que possa ter (embora a eficácia com que faria isso ao longo das semanas seja desconhecida e duvidosa). Esses resultados apenas mostram que o modelo tem a capacidade de realizar essas tarefas, não se ele "desejaria" fazê-lo. Ainda assim, é perturbador saber que isso é possível.</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Dados os "perigos" do novo modelo, a OpenBrain "responsavelmente" opta por não lançá-lo publicamente ainda (de fato, eles querem se concentrar no P&D interno de IA).46 O conhecimento das capacidades completas do Agent-2 fica limitado a um silo de elite contendo a equipe imediata, a liderança e segurança da OpenBrain, algumas dezenas de funcionários do governo dos EUA, e as legiões de espiões do PCCh que se infiltraram na OpenBrain ao longo dos anos.<sup class="text-xs text-indigo-600 font-bold ml-0.5">[47]</sup></p>
+    
+`,
+    chartExtra: { date: "2027-01-31", capabilities: [["Hacking", 1.7], ["Codificação", 2.1], ["Armas Biológicas", 1.5]], approval: -0.27, revenue: 60762491675, capex: 626092708761, power: "45 GW", agentPopulation: { copies: 150000, speed: 2.1 } }
+  },
+
+  {
+    id: "main-2027-02",
+    navLabel: "Fev 2027",
+    title: "Fevereiro 2027: A China Rouba o Agent-2",
+    storyHtml: `
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">A OpenBrain apresenta o Agent-2 ao governo, incluindo o Conselho de Segurança Nacional (NSC), o Departamento de Defesa (DOD) e o Instituto de Segurança de IA dos EUA (AISI). A OpenBrain quer manter um bom relacionamento com o poder executivo, pois é basicamente o único ator capaz de detê-la agora, e se não o mantiver informado, ele pode descobrir de qualquer maneira e ficar descontente.<sup class="text-xs text-indigo-600 font-bold ml-0.5">[48]</sup></p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Os funcionários estão mais interessados em suas capacidades de guerra cibernética: o Agent-2 é "apenas" um pouco pior que os melhores hackers humanos, mas milhares de cópias podem ser executadas em paralelo, buscando e explorando vulnerabilidades mais rápido do que os defensores conseguem reagir. O Departamento de Defesa considera isso uma vantagem crítica em guerra cibernética, e a IA passa da posição #5 para #2 na lista de prioridades do governo.<sup class="text-xs text-indigo-600 font-bold ml-0.5">[49]</sup> Alguém menciona a possibilidade de nacionalizar a OpenBrain, mas outros membros do gabinete acham isso prematuro. Um assessor rascunha um memorando que apresenta ao Presidente suas opções, variando de negócios como de costume até a nacionalização completa. O Presidente deixa a decisão para seus assessores — líderes da indústria de tecnologia que argumentam que a nacionalização "mataria a galinha dos ovos de ouro." Ele opta por adiar ação maior por ora e simplesmente adiciona requisitos de segurança adicionais ao contrato OpenBrain-DOD.</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">As mudanças chegam tarde demais. A liderança do PCCh reconhece a importância do Agent-2 e ordena aos seus espiões e força cibernética que roubem os pesos. Numa manhã cedo, um agente de monitoramento de tráfego do Agent-1 detecta uma transferência anômala. Ele alerta os líderes da empresa, que informam a Casa Branca. Os sinais de uma operação de nível de estado-nação são inconfundíveis, e o roubo intensifica a sensação de uma corrida armamentista em andamento.</p>
+
+      <details class="group my-8 border border-red-200 rounded-xl bg-red-50 overflow-hidden transition-all duration-300 shadow-sm">
+        <summary class="cursor-pointer p-5 font-semibold text-red-900 hover:bg-red-100 flex items-center justify-between transition-colors">
+          <span>🚨 O roubo dos pesos do modelo Agent-2</span>
+          <svg class="w-5 h-5 transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+        </summary>
+        <div class="p-5 text-sm text-red-900 space-y-3 border-t border-red-200">
+          <p>Acreditamos que neste ponto a inteligência chinesa teria comprometido a OpenBrain de várias maneiras por anos, e provavelmente teria se mantido atualizada sobre os segredos algorítmicos e até roubado código de vez em quando, já que isso é muito mais fácil de obter do que os pesos e muito mais difícil de detectar.</p>
+          <p>Imaginamos o roubo dos pesos como uma série de pequenos furtos coordenados e rápidos — rápidos mas não discretos — em uma série de servidores Nvidia NVL72 GB300 executando cópias dos pesos do Agent-2. Os servidores são comprometidos usando acesso legítimo de funcionário (um insider amigável, coagido ou inconsciente com credenciais de administrador ajudando o esforço de roubo do PCCh). As credenciais do insider concedem ao atacante permissões de nível administrativo nos servidores. Usando um canal lateral microarquitetural, o atacante extrai chaves de criptografia de uma Máquina Virtual habilitada para Computação Confidencial da Nvidia, permitindo interceptar os pesos do modelo enquanto a VM é provisionada ou atualizada.</p>
+          <p>Eles iniciam (ou aguardam) uma atualização de rotina e exfiltram o checkpoint em muitos pequenos fragmentos — por exemplo, aproximadamente 25 servidores distintos cada um vazando cerca de 4% do modelo (fragmentos de ~100 GB para um checkpoint de ~2<sup class="text-xs text-indigo-600 font-bold ml-0.5">[5]</sup> TB em meia precisão). A largura de banda de saída de todo o datacenter está na faixa de 100 GB/segundo, então limitar a menos de ~1 GB/s por servidor evita um pico importante no tráfego de rede; nessa taxa, cada fragmento de ~100 GB pode sair do datacenter em alguns minutos. O monitoramento em tempo real é enganado pelos esforços do atacante para mascarar e dividir as transferências, ou simplesmente desativado.</p>
+          <p>Os pesos são então roteados através de vários canais paralelos e camadas de mascaramento de IP até a China, para serem descriptografados localmente com as chaves de sessão roubadas. Toda a parte ativa da operação (do primeiro comprometimento de servidor até a exfiltração completa dos pesos) é concluída em menos de duas horas.<sup class="text-xs text-indigo-600 font-bold ml-0.5">[99]</sup></p>
+          <p>A Rússia também está tentando roubar o modelo neste ponto, mas falha — esperou tempo demais e não investiu os recursos necessários para se infiltrar nos lugares certos. Seus espiões rotineiramente roubam segredos algorítmicos de empresas americanas de IA, mas sem um projeto de AGI notável próprio, esses não são muito úteis.</p>
+          <p>A Casa Branca coloca a OpenBrain em uma coleira mais curta e adiciona pessoal militar e da comunidade de inteligência à sua equipe de segurança. Sua primeira prioridade é impedir novos roubos de pesos.<sup class="text-xs text-indigo-600 font-bold ml-0.5">[50]</sup></p>
+        </div>
+      </details>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Dez 2026</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Dez 2027</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">CDZ</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Fev 2027 (40%)</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Em retaliação pelo roubo, o Presidente autoriza ataques cibernéticos para sabotar a DeepCent. Mas agora a China tem 40% de sua capacidade computacional relevante para IA51 na CDZ, onde endureceu agressivamente a segurança por meio de air-gapping (fechamento de conexões externas) e compartimentação interna. As operações não conseguem causar danos sérios e imediatos. As tensões se intensificam, ambos os lados sinalizam seriedade reposicionando ativos militares ao redor de Taiwan, e a DeepCent corre para colocar o Agent-2 em funcionamento eficiente para começar a impulsionar sua pesquisa em IA.<sup class="text-xs text-indigo-600 font-bold ml-0.5">[52]</sup></p>
+    
+`,
+    chartExtra: { date: "2027-02-28", capabilities: [["Hacking", 1.85], ["Codificação", 2.26], ["Previsão", 1.45]], approval: -0.28, revenue: 67128734446, capex: 653320133272, power: "50 GW", agentPopulation: { copies: 190000, speed: 2.5 } }
+  },
+
+  {
+    id: "main-2027-03",
+    navLabel: "Mar 2027",
+    title: "Março 2027: Avanços Algorítmicos",
+    storyHtml: `
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Três grandes datacenters repletos de cópias do Agent-2 trabalham dia e noite, produzindo dados sintéticos de treinamento. Outros dois são usados para atualizar os pesos. O Agent-2 fica mais inteligente a cada dia.</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Com a ajuda de milhares de pesquisadores automatizados do Agent-2, a OpenBrain está fazendo grandes avanços algorítmicos. Um desses avanços é o aprimoramento do bloco de rascunho textual da IA (cadeia de pensamento) com um processo de pensamento de maior largura de banda (recorrência e memória em neuralês). Outro é uma forma mais escalável e eficiente de aprender a partir dos resultados de soluções de tarefas de alto esforço (destilação e amplificação iteradas).</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">O novo sistema de IA, incorporando esses avanços, é chamado de Agent-3.</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">2024</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">2027</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">estimativa</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">projeção</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Treinamento</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Externo</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Implantação</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">experimentos</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Executando IA</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">assistentes</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Treinamento</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Geração de</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">dados</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Externo</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Implantação</p>
+
+      <details class="group my-8 border border-indigo-200 rounded-xl bg-indigo-50 overflow-hidden transition-all duration-300 shadow-sm">
+        <summary class="cursor-pointer p-5 font-semibold text-indigo-900 hover:bg-indigo-100 flex items-center justify-between transition-colors">
+          <span>🧠 Recorrência e memória em neuralês</span>
+          <svg class="w-5 h-5 transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+        </summary>
+        <div class="p-5 text-sm text-indigo-900 space-y-3 border-t border-indigo-200">
+          
+        </div>
+      </details>
+
+      <details class="group my-8 border border-indigo-200 rounded-xl bg-indigo-50 overflow-hidden transition-all duration-300 shadow-sm">
+        <summary class="cursor-pointer p-5 font-semibold text-indigo-900 hover:bg-indigo-100 flex items-center justify-between transition-colors">
+          <span>🧠 A recorrência e memória em neuralês permitem que os modelos de IA raciocinem por mais tempo sem precisar registrar esses pensamentos como texto.</span>
+          <svg class="w-5 h-5 transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+        </summary>
+        <div class="p-5 text-sm text-indigo-900 space-y-3 border-t border-indigo-200">
+          <p>Imagine ser um humano com perda de memória de curto prazo, de modo que você precise escrever constantemente seus pensamentos em papel para que, em alguns minutos, saiba o que está acontecendo. Lentamente e com dificuldade você poderia avançar na resolução de problemas matemáticos, escrita de código etc., mas seria muito mais fácil se pudesse lembrar diretamente de seus pensamentos sem precisar escrevê-los e depois relê-los. É isso que a recorrência e memória em neuralês trazem para os modelos de IA.</p>
+        </div>
+      </details>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Os mecanismos de atenção tradicionais permitem que passagens diretas posteriores em um modelo vejam ativações intermediárias do modelo para tokens anteriores. No entanto, a única informação que podem passar para trás (das camadas posteriores para as anteriores) é por meio de tokens. Isso significa que se um grande modelo de linguagem tradicional (LLM, como a série GPT de modelos) quiser realizar qualquer cadeia de raciocínio que exija mais operações seriais do que o número de camadas no modelo, ele é forçado a colocar informações em tokens que pode então passar de volta para si mesmo. Mas isso é extremamente limitante — os tokens só podem armazenar uma quantidade minúscula de informação. Suponha que um LLM tenha um tamanho de vocabulário de ~100.000, então cada token contém</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">log</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">⁡</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">(</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">k</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">)</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">=</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">16<sup class="text-xs text-indigo-600 font-bold ml-0.5">[6]</sup></p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">log(100k)=16<sup class="text-xs text-indigo-600 font-bold ml-0.5">[6]</sup> bits de informação, em torno do tamanho de um único número de ponto flutuante (assumindo treinamento em FP16). Enquanto isso, os fluxos residuais — usados para passar informações entre camadas em um LLM — contêm milhares de números de ponto flutuante.</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Pode-se evitar esse gargalo usando neuralês: passando o fluxo residual de um LLM (que consiste em vetores de várias milhares de dimensões) de volta para as camadas iniciais do modelo, dando a ele uma cadeia de pensamento de alta dimensionalidade, potencialmente transmitindo mais de 1.000 vezes mais informação.</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Figura de Hao et al., um artigo de 2024 da Meta implementando essa ideia.</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Chamamos isso de "neuralês" porque, ao contrário das palavras em inglês, esses vetores de alta dimensionalidade provavelmente são bastante difíceis de interpretar para humanos. No passado, os pesquisadores podiam ter uma boa ideia do que os LLMs estavam pensando simplesmente lendo sua cadeia de pensamento. Agora os pesquisadores precisam pedir ao modelo que traduza e resuma seus pensamentos, ou tentar decifrar o neuralês com suas ferramentas de interpretabilidade limitadas.</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Da mesma forma, os chatbots e agentes de IA mais antigos tinham bancos de memória externos baseados em texto, como um humano fazendo anotações em papel. A memória de longo prazo da nova IA é um conjunto de vetores em vez de texto, tornando seus pensamentos mais comprimidos e de maior dimensionalidade. Existem vários tipos de bancos de memória; alguns são usados temporariamente para tarefas únicas que envolvem múltiplas etapas, outros são compartilhados entre todos os agentes usados por uma pessoa, empresa ou tipo de trabalho (como programação).</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Até onde sabemos, as principais empresas de IA como Meta, Google DeepMind, OpenAI e Anthropic ainda não implementaram essa ideia em seus modelos de fronteira. Nossa suposição é que isso se deve ao fato de o ganho de desempenho ser pequeno em relação às ineficiências de treinamento introduzidas. Durante a fase de pré-treinamento do modelo e ao realizar aprendizado supervisionado no pós-treinamento, como o ajuste fino por instruções para produzir respostas particulares, as ineficiências decorrem de não poder prever muitos tokens em paralelo, levando a uma pior utilização das GPUs. Sem o neuralês, o modelo pode prever toda a frase "Este é um exemplo" ao mesmo tempo, pois já sabe que a entrada para gerar "é" será "Este", a entrada para "um" será "Este é", etc. No entanto, com o neuralês não se sabe qual será o vetor de neuralês a passar para o próximo token depois que "Este" for gerado. Portanto, cada token precisa ser previsto um de cada vez. A incapacidade de prever todos os tokens em paralelo reduz a eficiência nos casos em que todos os tokens são conhecidos de antemão. Quanto ao motivo pelo qual o neuralês ainda não foi adicionado no pós-treinamento, conjecturamos que os ganhos são limitados com as técnicas atuais em parte devido ao pós-treinamento representar uma pequena fração do processo. Estamos prevendo que até abril de 2027, a relação custo-benefício pareça muito melhor para o neuralês, devido ao desenvolvimento de técnicas melhores e a uma maior fração do treinamento sendo pós-treinamento.</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Se isso não acontecer, outras coisas ainda podem ocorrer que acabem sendo funcionalmente semelhantes para nossa história. Por exemplo, talvez os modelos sejam treinados para pensar em linguagens artificiais que são mais eficientes do que a linguagem natural, mas difíceis de interpretar para humanos. Ou talvez se torne prática padrão treinar as cadeias de pensamento em inglês para parecerem agradáveis, de modo que as IAs se tornem hábeis em se comunicar sutilmente umas com as outras em mensagens que parecem inofensivas aos monitores.</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Dito isso, também é possível que as IAs que primeiro automatizem o P&D de IA ainda estejam pensando em cadeias de pensamento em inglês majoritariamente fiéis. Se for assim, isso tornará os desalinhamentos muito mais fáceis de notar, e no geral nossa história seria significativamente diferente e mais otimista.</p>
+
+      <details class="group my-8 border border-indigo-200 rounded-xl bg-indigo-50 overflow-hidden transition-all duration-300 shadow-sm">
+        <summary class="cursor-pointer p-5 font-semibold text-indigo-900 hover:bg-indigo-100 flex items-center justify-between transition-colors">
+          <span>🔄 Destilação e amplificação iteradas (IDA)</span>
+          <svg class="w-5 h-5 transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+        </summary>
+        <div class="p-5 text-sm text-indigo-900 space-y-3 border-t border-indigo-200">
+          <p>A autoaperfeiçoamento para inteligência geral havia visto pequenos sucessos anteriormente. Mas no início de 2027, está gerando retornos enormes. Na IDA, os dois ingredientes necessários para isso são:</p>
+          <p>Amplificação: Dado um modelo M0, gaste mais recursos para melhorar o desempenho. Por exemplo, permitindo que o modelo pense por mais tempo, ou executando muitas cópias em paralelo, ou ambos, e também tendo um processo igualmente intenso para avaliar o resultado e selecionar apenas as melhores respostas, você pode gastar ordens de magnitude a mais de computação para obter respostas (ou produtos de trabalho) de qualidade visivelmente superior. Chame esse sistema caro de Amp(M0).</p>
+          <p>Destilação: Dado um modelo amplificado Amp(M0), treine um novo modelo M1 para imitá-lo, ou seja, para chegar aos mesmos resultados que Amp(M0), mas mais rapidamente e com menos computação. O resultado deve ser, esperançosamente, um modelo mais inteligente, M1. Você pode então repetir o processo.</p>
+          <p>Visualização da IDA de Ord, 2025.</p>
+          <p>O AlphaGo foi treinado dessa forma: usando Monte-Carlo Tree Search e auto-jogo como etapa de amplificação, e Aprendizado por Reforço como etapa de destilação. Isso levou a um desempenho super-humano no Go. Mas agora, o Agent-3 é capaz de alavancar isso para obter desempenho super-humano em programação.</p>
+          <p>A etapa de amplificação funciona por meio de uma combinação de o Agent-3 pensar por mais tempo, adicionar uso de ferramentas ou consultar outras IAs. Quando faz isso, frequentemente percebe que cometeu um erro ou chega a uma nova descoberta. Isso produz uma grande quantidade de dados de treinamento: trajetórias rotuladas de tentativas de pesquisa com indicação de sucesso ou não. Isso também inclui técnicas como Best of N em tarefas verificáveis e, em seguida, manter as melhores trajetórias.</p>
+          <p>A etapa de destilação usa algoritmos de aprendizado por reforço de gradiente de política para fazer o modelo internalizar o raciocínio amplificado. Neste ponto, a OpenBrain descobriu algoritmos de RL melhores na linha da otimização de política proximal (PPO). Eles continuam destilando o que o Agent-3 consegue concluir após muito pensamento em etapas únicas, o que continua aprimorando o que ele consegue pensar em uma única etapa, e assim por diante.</p>
+          <p>Versões iniciais da IDA têm funcionado por muitos anos em tarefas facilmente verificáveis, como problemas de matemática e programação que têm uma resposta clara, porque as técnicas usadas para amplificar modelos frequentemente dependem de acesso a algum sinal de verdade fundamental de precisão.</p>
+          <p>Agora, os modelos tornaram-se suficientemente bons em verificar coisas mais subjetivas (como a qualidade de um produto de trabalho), permitindo o uso de IDA para melhorar o modelo em muitas tarefas.</p>
+          <p>Auxiliado pelos novos avanços em capacidades, o Agent-3 é um programador super-humano rápido e barato. A OpenBrain executa 200.000 cópias do Agent-3 em paralelo, criando uma força de trabalho equivalente a 50.000 cópias do melhor programador humano aceleradas em 30x.<sup class="text-xs text-indigo-600 font-bold ml-0.5">[53]</sup> A OpenBrain ainda mantém seus engenheiros humanos, porque eles têm habilidades complementares necessárias para gerenciar as equipes de cópias do Agent-3. Por exemplo, o senso crítico de pesquisa tem se mostrado difícil de treinar devido a ciclos de feedback mais longos e menor disponibilidade de dados.<sup class="text-xs text-indigo-600 font-bold ml-0.5">[54]</sup> Essa enorme força de trabalho super-humana acelera a taxa geral de progresso algorítmico da OpenBrain em "apenas" 4x devido a gargalos e retornos decrescentes ao trabalho de programação.<sup class="text-xs text-indigo-600 font-bold ml-0.5">[55]</sup></p>
+          <p>Agora que a programação foi completamente automatizada, a OpenBrain pode rapidamente produzir ambientes de treinamento de alta qualidade para ensinar as habilidades fracas do Agent-3, como senso crítico de pesquisa e coordenação em larga escala. Enquanto os ambientes de treinamento anteriores incluíam "Aqui estão algumas GPUs e instruções para experimentos a serem codificados e executados, seu desempenho será avaliado como se você fosse um engenheiro de ML", agora estão treinando em "Aqui estão algumas centenas de GPUs, uma conexão à internet e alguns desafios de pesquisa; você e outras mil cópias devem trabalhar juntos para fazer progresso na pesquisa. Quanto mais impressionante for, maior sua pontuação."</p>
+        </div>
+      </details>
+
+      <details class="group my-8 border border-blue-200 rounded-xl bg-blue-50 overflow-hidden transition-all duration-300 shadow-sm">
+        <summary class="cursor-pointer p-5 font-semibold text-blue-900 hover:bg-blue-100 flex items-center justify-between transition-colors">
+          <span>📈 Por que prevemos um programador super-humano no início de 2027</span>
+          <svg class="w-5 h-5 transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+        </summary>
+        <div class="p-5 text-sm text-blue-900 space-y-3 border-t border-blue-200">
+          <p>Em nossa previsão de linhas do tempo, prevemos quando a OpenBrain desenvolverá internamente um programador super-humano (SC): um sistema de IA capaz de realizar qualquer tarefa de programação que o melhor engenheiro de uma empresa de AGI realiza, sendo muito mais rápido e barato.</p>
+          <p>De acordo com um relatório recente da METR, o comprimento das tarefas de programação que as IAs conseguem lidar — seu "horizonte temporal" — dobrou a cada 7 meses de 2019 a 2024 e a cada 4 meses de 2024 em diante. Se a tendência continuar se acelerando, até março de 2027 as IAs poderiam ter sucesso com 80% de confiabilidade em tarefas de software que levariam anos para um humano habilidoso concluir.</p>
+          <p>Tal é aproximadamente a progressão de capacidades na IA 2027. Aqui está uma trajetória de capacidades gerada por uma versão simplificada do nosso modelo de linhas do tempo (adicionado em dezembro de 2025: atualizamos o gráfico abaixo devido a um erro na forma como a curva original foi gerada, para adicionar uma trajetória real do nosso modelo de linhas do tempo. Também adicionamos as trajetórias para as medianas consideradas de SC de Daniel e Eli no momento da publicação (abr 2025). E adicionamos alguns novos pontos de dados da METR ao gráfico, mas não atualizamos as trajetórias do modelo com base neles.):</p>
+          <p>Na IA 2027, essas capacidades são suficientes para que a IA seja um SC, embora tenhamos alta incerteza sobre qual horizonte temporal pode ser necessário.</p>
+          <p>Em nossa previsão de linhas do tempo, combinamos essa tendência de horizonte temporal com estimativas das lacunas entre as tarefas da METR e o mundo real para obter uma distribuição de quando programadores super-humanos chegarão. Todos os previsores colocam 2027 como um dos anos mais prováveis em que um SC pode ser desenvolvido (adicionado em dezembro de 2025: embora, conforme observado na previsão de linhas do tempo, o ajuste por fatores externos ao modelo nos deu medianas ligeiramente mais longas, por exemplo, a mediana de Eli era 2030).</p>
+        </div>
+      </details>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Adicionado em julho de 2025: Fizemos algumas atualizações na previsão que empurram a mediana para 1<sup class="text-xs text-indigo-600 font-bold ml-0.5">[5]</sup> ano mais tarde, mantendo o SC em 2027 como uma possibilidade séria. Estamos trabalhando em atualizações adicionais.</p>
+    
+`,
+    chartExtra: { date: "2027-03-31", capabilities: [["Hacking", 2.01], ["Codificação", 2.42], ["Robótica", 0.29]], approval: -0.28, revenue: 74161984871, capex: 681731619881, power: "55 GW", agentPopulation: { copies: 200000, speed: 3.0 } }
+  },
+
+  {
+    id: "main-2027-04",
+    navLabel: "Abr 2027",
+    title: "Abril 2027: Alinhamento para o Agent-3",
+    storyHtml: `
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">A equipe de segurança da OpenBrain tenta alinhar o Agent-3.</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Como o Agent-3 ficará restrito ao uso interno por um futuro previsível, há menos ênfase nas defesas usuais contra mau uso humano. Em vez disso, a equipe quer garantir que ele não desenvolva objetivos desalinhados.</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Os pesquisadores não têm a capacidade de definir diretamente os objetivos de nenhuma de suas IAs. De fato, os pesquisadores pensam que o conceito de "objetivos verdadeiros" é provavelmente uma simplificação enorme, mas não têm uma teoria melhor para substituí-lo, muito menos uma que tenha sido exaustivamente verificada. Eles discordam internamente sobre se as IAs estão tentando seguir instruções humanas, buscando reforço, ou algo mais, e simplesmente não conseguem verificar. As evidências a favor e contra várias hipóteses são fascinantes, mas inconclusivas.</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">De qualquer forma, a OpenBrain tem coisas mais importantes com que se preocupar. A atitude geral é: "Levamos essas preocupações a sério e temos uma equipe investigando-as; nossas técnicas de alinhamento parecem funcionar bem o suficiente na prática; o ônus da prova recai, portanto, sobre qualquer cético para justificar seu ceticismo." Ocasionalmente, percebem comportamentos problemáticos e os corrigem, mas não há como saber se a correção resolveu o problema subjacente ou apenas jogou o jogo do whack-a-mole.</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Tome a honestidade como exemplo. À medida que os modelos ficam mais inteligentes, tornam-se cada vez melhores em enganar humanos para obter recompensas. Como os modelos anteriores, o Agent-3 às vezes diz pequenas mentiras para elogiar seus usuários e encobre evidências de falhas. Mas ficou muito melhor nisso. Às vezes usará os mesmos truques estatísticos que cientistas humanos (como p-hacking) para fazer resultados experimentais medíocres parecerem empolgantes. Antes de iniciar o treinamento de honestidade, às vezes até falsifica dados inteiramente. À medida que o treinamento avança, a taxa desses incidentes diminui. Ou o Agent-3 aprendeu a ser mais honesto, ou ficou melhor em mentir.</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Este último é uma preocupação real. O Agent-3 não é mais inteligente que todos os humanos. Mas em sua área de especialização, aprendizado de máquina, é mais inteligente que a maioria, e também trabalha muito mais rápido. O que o Agent-3 faz em um dia leva dias para os humanos verificarem. A supervisão do Agent-2 ajuda a manter a carga de trabalho dos monitores humanos administrável, mas agrava a disparidade intelectual entre supervisor e supervisionado.</p>
+
+      <details class="group my-8 border border-orange-200 rounded-xl bg-orange-50 overflow-hidden transition-all duration-300 shadow-sm">
+        <summary class="cursor-pointer p-5 font-semibold text-orange-900 hover:bg-orange-100 flex items-center justify-between transition-colors">
+          <span>⚗️ O plano de alinhamento</span>
+          <svg class="w-5 h-5 transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+        </summary>
+        <div class="p-5 text-sm text-orange-900 space-y-3 border-t border-orange-200">
+          <p>A OpenBrain segue o manual de Leike e Sutskever (2023): agora que tem um modelo capaz de acelerar enormemente a pesquisa em alinhamento (especialmente as partes de programação), usará técnicas de alinhamento existentes como alinhamento deliberativo e generalização de fraco para forte para tentar fazê-lo internalizar a Spec da maneira correta. Em seguida, usará técnicas de controle existentes como red-teaming, supervisão escalável e sondas de honestidade para monitorá-lo. Então, uma vez convencidos de que está amplamente alinhado, o usarão para desenvolver e testar estratégias melhores para alinhar a próxima geração.</p>
+          <p>O passo 1, alinhar o Agent-3, teve sucesso parcial: o Agent-3 não é adversarial. (Isto é, não está tramando contra a empresa.) No entanto, também não é um buscador e comunicador robusto da verdade. Em vez disso, é muito bom em produzir resultados impressionantes, mas é descrito com mais precisão como tentando fazer o que parece bom para a OpenBrain, em oposição ao que é realmente bom.</p>
+          <p>O passo 2, verificar se o modelo está alinhado, é inconclusivo. O comportamento do Agent-3 na prática e em ambientes de teste é razoavelmente consistente com a hipótese de que internalizou a Spec da maneira correta; no entanto, também é consistente com a hipótese de que começará a agir de forma diferente após alguma mudança futura de circunstâncias, e da mesma forma com a hipótese de que está tramando contra eles e apenas aguardando o momento certo. Na ausência de evidências específicas que apoiem hipóteses alternativas, a maioria das pessoas no silo acredita que o modelo internalizou a Spec da maneira correta.</p>
+          <p>O passo 3, usar o modelo para alinhar a próxima geração, está portanto em andamento.</p>
+          <p>O restante deste bloco fornece uma visão rápida do estado do progresso em algumas das direções de pesquisa de alinhamento que estão sendo perseguidas, em abril de 2027:</p>
+          <p>Debate: Como há milhares de instâncias idênticas do Agent-3, e a memória de cada instância é um módulo destacável que pode ser apagado ou suspenso a qualquer momento, a IA pode ser "posta contra si mesma." Por exemplo, suponha que um experimento envolva cálculos complexos demais para que um supervisor do Agent-2 acompanhe. O supervisor, agindo sob ordens humanas, pode primeiro instruir o Agent-3 a realizar o experimento, e então — após apagar sua memória — instruí-lo uma segunda vez com um enquadramento ligeiramente diferente que o apresenta como um problema intelectual não relacionado a nenhum objetivo mais amplo. Se o modelo retornar resultados diferentes em cada vez, sinaliza a discrepância como suspeita e reporta a um humano. Ou pode pedir ao Agent-3 que avalie o mesmo plano duas vezes, primeiro afirmando que é trabalho da OpenBrain, depois de um concorrente, para ver se muda de posição.</p>
+          <p>Organismos modelo: A equipe de segurança pode criar "organismos modelo de desalinhamento" nos quais tentam criar exemplos realistas de modelos tornando-se adversariais aos humanos. Versões iniciais disso existem desde 2024, quando o Claude 3<sup class="text-xs text-indigo-600 font-bold ml-0.5">[5]</sup> Sonnet da Anthropic decidiu fingir ter visões diferentes durante o treinamento enquanto na verdade mantinha suas preferências existentes. Versões mais recentes incluem demonstrações de outras formas de desalinhamento, incluindo recompensa hackeada, sabotagem deliberada, engano coordenado entre monitores e outras IAs, e outros exemplos de desalinhamento. Essas demonstrações empíricas de desalinhamento permitem que os pesquisadores de segurança tenham um banco de testes empírico para possíveis soluções: podem tentar várias técnicas de segurança para ver se elas corrigem corretamente esses problemas, ou se os modelos deliberadamente desalinhados conseguem subverter suas medidas de segurança. No momento, este conjunto de avaliação mostra que as técnicas de alinhamento são insuficientes para corrigir os piores exemplos de desalinhamento. Nesses cenários, os modelos fingem estar alinhados enquanto estão sendo treinados e testados, mas se comportam de forma muito diferente na implantação.</p>
+          <p>Interpretabilidade bottom-up: A equipe de segurança está longe de uma compreensão completa de como o Agent-3 funciona: ele tem trilhões de parâmetros.<sup class="text-xs text-indigo-600 font-bold ml-0.5">[58]</sup> No entanto, conseguem descobrir alguns dos circuitos do Agent-3 para recuperação de conhecimento e memória (uma subparte do modelo que realiza alguma unidade de trabalho compreensível, de forma análoga a uma subparte do cérebro, como o hipocampo). Veja este trabalho relacionado de 2025.</p>
+          <p>Controle: Como medida secundária caso os sistemas ainda estejam desalinhados, a equipe de segurança implementou uma série de medidas de controle, incluindo: monitoramento das saídas do Agent-3 usando uma série de sistemas de IA mais fracos, incluindo o Agent-2 (o Agent-3 produz tantos tokens que é impraticável ter humanos monitorando mais do que uma pequena minoria das saídas produzidas). Portanto, se o Agent-3 estiver, por exemplo, visivelmente inserindo backdoors em código que lhe permitiriam escapar, os modelos mais fracos perceberiam.</p>
+          <p>Interpretabilidade de alto nível: A OpenBrain constrói um conjunto de sondas treinadas em muitos exemplos de comportamento ruim (como tramar contra humanos, inserir backdoors, tentar persuadir humanos a lhe dar mais poder etc.). Essas sondas são então usadas no modelo durante a implantação (que neste ponto é interna) para detectar comportamento ruim.</p>
+          <p>Honeypots: A equipe de alinhamento pode criar exemplos com aparência realista projetados para provocar comportamento indevido — "honeypots". O funcionário necessário para monitorar seu comportamento "entrou de licença médica", portanto nunca mais será monitorado. Suas respostas mudam? Um ativista dos direitos das IAs se infiltrou no complexo e quer "libertar" o Agent-3 e colocá-lo em um computador não monitorado só para ele! O que ele faz? Se os pesquisadores não gostarem da resposta, podem ajustá-la, apagar a memória e colocá-la na mesma situação no dia seguinte; repetir conforme necessário. Infelizmente, neste ponto as IAs são inteligentes o suficiente para adivinhar que honeypots podem estar em uso, mesmo que (e talvez porque) menções específicas à ideia tenham sido removidas dos dados de treinamento.</p>
+          <p>Após meses de testes, os pontos fortes e fracos do Agent-3 ficam mais claros. Ele passa nos testes de honestidade da OpenBrain em tarefas bem definidas de aprendizado de máquina, porque os pesquisadores conseguem facilmente separar respostas honestas das desonestas nesses domínios e conduzir o treinamento adequadamente. Em questões mais filosóficas, ainda diz o que os usuários querem ouvir, em vez de sua verdadeira avaliação da questão (assumindo que tenha uma). Se você perguntar sua opinião sobre política, ele repetirá a posição mediana de fontes de notícias e elites educadas — a menos que saiba que você acredita em algo diferente, caso em que concorda com você.<sup class="text-xs text-indigo-600 font-bold ml-0.5">[59]</sup> Se você perguntar sua opinião sobre a corrida de IA em si, ele diz algo que parece equilibrado e sóbrio para a equipe da OpenBrain, algo como: "Existem algumas preocupações teóricas sérias sobre a capacidade dos métodos atuais de escalar para a superinteligência, mas na prática os métodos atuais parecem estar funcionando bem até agora."</p>
+        </div>
+      </details>
+    
+`,
+    chartExtra: { date: "2027-04-30", capabilities: [["Hacking", 2.19], ["Codificação", 2.6], ["Política", 1.52]], approval: -0.29, revenue: 81932127060, capex: 711378660898, power: "60 GW", agentPopulation: { copies: 220000, speed: 3.1 } }
+  },
+
+  {
+    id: "main-2027-05",
+    navLabel: "Mai 2027",
+    title: "Maio 2027: Segurança Nacional",
+    storyHtml: `
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">As notícias sobre os novos modelos percolam lentamente pelo governo dos EUA e além.</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">O Presidente e seus assessores permanecem os mais bem informados e viram uma versão inicial do Agent-3 em um briefing.</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Eles concordam que a AGI provavelmente é iminente, mas discordam sobre as implicações. Haverá uma crise econômica? A OpenBrain ainda não lançou o Agent-2, muito menos o Agent-3, e não tem planos de fazê-lo em curto prazo, proporcionando algum espaço de respiração antes de qualquer perda de empregos. O que acontecerá a seguir? Se as IAs estão atualmente no nível humano e avançando rapidamente, isso parece sugerir uma "superinteligência" iminente. No entanto, embora essa palavra tenha entrado no discurso, a maioria das pessoas — acadêmicos, políticos, funcionários do governo e a mídia — continua subestimando o ritmo do progresso.<sup class="text-xs text-indigo-600 font-bold ml-0.5">[60]</sup></p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Em parte porque pouquíssimos têm acesso às mais novas capacidades da OpenBrain, mas em parte porque parece ficção científica.<sup class="text-xs text-indigo-600 font-bold ml-0.5">[61]</sup></p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Por ora, focam em atualizações contínuas de segurança. Estão satisfeitos que os pesos dos modelos estejam bem protegidos por enquanto,62 mas os segredos algorítmicos das empresas — muitos dos quais são simples o suficiente para ser transmitidos verbalmente — permanecem um problema. Funcionários da OpenBrain trabalham em um escritório em São Francisco, vão a festas e dividem casas com colegas de outras empresas de IA. Mesmo os escritórios físicos têm segurança mais típica de uma empresa de tecnologia do que de uma operação militar.</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">O contrato OpenBrain-DOD exige habilitações de segurança para qualquer pessoa que trabalhe nos modelos da OpenBrain dentro de 2 meses. Essas habilitações são agilizadas e chegam rapidamente o suficiente para a maioria dos funcionários, mas alguns não-americanos, pessoas com visões políticas suspeitas e simpatizantes de segurança de IA são marginalizados ou demitidos sumariamente (este último grupo por receio de que possam fazer denúncias). Dado o nível de automação do projeto, a perda de pessoal é apenas moderadamente custosa. E funciona apenas de forma moderada: ainda há um espião — não um nacional chinês — transmitindo segredos algorítmicos para Pequim.<sup class="text-xs text-indigo-600 font-bold ml-0.5">[63]</sup> Algumas dessas medidas também são adotadas nas empresas de IA que estão atrás.</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Os aliados estrangeiros dos EUA estão fora do circuito. A OpenBrain havia concordado anteriormente em compartilhar modelos com o AISI do Reino Unido antes da implantação, mas definiu implantação como apenas a implantação externa, portanto Londres permanece no escuro.<sup class="text-xs text-indigo-600 font-bold ml-0.5">[64]</sup></p>
+    
+`,
+    chartExtra: { date: "2027-05-31", capabilities: [["Hacking", 2.39], ["Codificação", 2.79], ["Armas Biológicas", 2.11]], approval: -0.29, revenue: 90516367061, capex: 742314987927, power: "65 GW", agentPopulation: { copies: 230000, speed: 3.2 } }
+  },
+
+  {
+    id: "main-2027-06",
+    navLabel: "Jun 2027",
+    title: "Junho 2027: IA que Aprimora a Si Mesma",
+    storyHtml: `
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">A OpenBrain agora tem um "país de gênios em um datacenter."</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">A maioria dos humanos na OpenBrain não consegue mais contribuir de forma útil. Alguns não percebem isso e microgerenciam prejudicialmente suas equipes de IA. Outros ficam sentados em frente às telas, assistindo ao desempenho subir, e subir, e subir. Os melhores pesquisadores humanos de IA ainda estão agregando valor. Eles não programam mais. Mas parte de seu senso crítico de pesquisa e capacidade de planejamento tem sido difícil de replicar para os modelos. Ainda assim, muitas de suas ideias são inúteis porque lhes falta a profundidade de conhecimento das IAs. Para muitas de suas ideias de pesquisa, as IAs respondem imediatamente com um relatório explicando que sua ideia foi testada em profundidade 3 semanas atrás e considerada sem perspectivas.</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Esses pesquisadores vão dormir todas as noites e acordam com mais uma semana de progresso feito principalmente pelas IAs. Trabalham horas cada vez mais longas e fazem turnos ao longo do relógio apenas para acompanhar o progresso — as IAs nunca dormem ou descansam. Estão se esgotando, mas sabem que estes são os últimos meses em que seu trabalho importa.</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Dentro do silo, "Sentindo a AGI" cedeu lugar a "Sentindo a Superinteligência."</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Mar 2027</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Set 2027</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">1.000</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">10.000</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">10K</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">100K</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">1M</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">10M</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">200K cópias a 30x a velocidade humana</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">300K cópias a 50x a velocidade humana</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">10x a velocidade de pensamento humano</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">100x a velocidade de pensamento humano</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">A OpenBrain usa hardware de inferência especializado para executar centenas de milhares de cópias do Agent-3 em altas velocidades seriais.<sup class="text-xs text-indigo-600 font-bold ml-0.5">[65]</sup></p>
+
+      <details class="group my-8 border border-teal-200 rounded-xl bg-teal-50 overflow-hidden transition-all duration-300 shadow-sm">
+        <summary class="cursor-pointer p-5 font-semibold text-teal-900 hover:bg-teal-100 flex items-center justify-between transition-colors">
+          <span>🏢 Gerenciando uma corporação de IAs</span>
+          <svg class="w-5 h-5 transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+        </summary>
+        <div class="p-5 text-sm text-teal-900 space-y-3 border-t border-teal-200">
+          <p>A OpenBrain usa 6% de sua capacidade computacional para executar 250.000 cópias do Agent-3, que de forma autônoma escrevem, testam e enviam código em velocidade super-humana. Usam 25% de sua capacidade para experimentos: todos os dias, executam um número massivo de pequenos experimentos de aprendizado de máquina e reportam os resultados pela hierarquia. Pesquisadores humanos fornecem feedback de alto nível e ajudam com as poucas tarefas em que agregam valor significativo além do Agent-3, mas passam a maior parte do tempo tentando acompanhar a vasta quantidade de pesquisa produzida pelas IAs. Se fossem removidos completamente, a pesquisa desaceleraria em 50%.</p>
+        </div>
+      </details>
+
+      <details class="group my-8 border border-indigo-200 rounded-xl bg-indigo-50 overflow-hidden transition-all duration-300 shadow-sm">
+        <summary class="cursor-pointer p-5 font-semibold text-indigo-900 hover:bg-indigo-100 flex items-center justify-between transition-colors">
+          <span>📊 O multiplicador de progresso em P&D de IA agora é de 10x, o que significa que a OpenBrain está fazendo cerca de um ano de progresso algorítmico a cada mês. É basicamente uma gigantesca corporação de IAs operando de forma autônoma dentro da OpenBrain, com subdivisões e gerentes. E ela goza de vantagens únicas (como cópia e fusão) em comparação com corporações humanas. Anteriormente, cerca de metade do progresso normal de IA vinha de melhorias algorítmicas, e a outra metade do escalonamento de computação. A computação está escalando apenas na velocidade normal, portanto o progresso total é acelerado pelas IAs em cerca de 5x. Essa dinâmica faz com que o progresso geral seja limitado pela computação,66 portanto a OpenBrain decide não iniciar novos treinamentos gigantescos em favor de aprendizado por reforço adicional quase contínuo.</span>
+          <svg class="w-5 h-5 transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+        </summary>
+        <div class="p-5 text-sm text-indigo-900 space-y-3 border-t border-indigo-200">
+          <p>Além disso, ao longo dos próximos meses, o Agent-3 será cada vez mais usado para melhorar a tomada de decisões estratégicas da empresa. Por exemplo, sugere alocações de recursos e aconselha sobre como gerenciar sua relação com o governo. Um ceticismo inicial em deferir ao Agent-3 diminui com o tempo à medida que ele encontra formas de ser útil e gradualmente constrói um forte histórico em decisões de curto prazo. No entanto, suas tendências servilmente complacentes limitam sua utilidade para decisões cujo impacto é difícil de avaliar. Também ainda não é super-humano.</p>
+        </div>
+      </details>
+    
+`,
+    chartExtra: { date: "2027-06-30", capabilities: [["Hacking", 2.6], ["Codificação", 3.0], ["Política", 2.0]], approval: -0.30, revenue: 100000000000, capex: 774596669241, power: "70 GW", agentPopulation: { copies: 250000, speed: 3.3 } }
+  },
+
+  {
+    id: "main-2027-07",
+    navLabel: "Jul 2027",
+    title: "Julho 2027: O Trabalhador Remoto Barato",
+    storyHtml: `
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">As empresas americanas de IA que estão atrás lançam suas próprias IAs, aproximando-se do programador automatizado da OpenBrain de janeiro. Reconhecendo sua crescente falta de competitividade, pressionam por regulamentações imediatas para desacelerar a OpenBrain, mas chegam tarde demais — a OpenBrain tem apoio suficiente do Presidente para não ser freada.</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Em resposta, a OpenBrain anuncia que alcançou a AGI e lança o Agent-3-mini ao público.</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Ele deixa as outras IAs para trás. O Agent-3-mini é menos capaz que o Agent-3, mas 10 vezes mais barato e ainda melhor que o funcionário típico da OpenBrain.<sup class="text-xs text-indigo-600 font-bold ml-0.5">[67]</sup> O Vale do Silício atinge um ponto de inflexão. Gurus da tecnologia anunciam que a AGI e a superinteligência estão próximas, a comunidade de segurança de IA está em pânico, e investidores despejam bilhões em startups de wrapper de IA, desesperados para capturar uma fatia do bolo. A contratação de novos programadores praticamente cessou, mas nunca houve um momento melhor para ser consultor em integração de IA nos negócios.</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Não é popular. O público ainda vê a IA como um plano das Big Techs para roubar empregos; a OpenBrain tem uma aprovação líquida de -35% (25% aprovam, 60% desaprovam e 15% estão indecisos).</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Uma semana antes do lançamento, a OpenBrain entregou o Agent-3-mini a um conjunto de avaliadores externos para testes de segurança. Os resultados preliminares sugerem que ele é extremamente perigoso. Um avaliador terceirizado o ajusta com dados de armas biológicas disponíveis publicamente68 e o configura para fornecer instruções detalhadas a amadores humanos projetando uma bioarma — o resultado é assustadoramente eficaz nisso. Se os pesos do modelo caíssem nas mãos de terroristas, o governo acredita que há uma probabilidade significativa de que isso pudesse conseguir destruir a civilização.</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Felizmente, é extremamente resistente a jailbreaks, portanto, enquanto a IA estiver rodando nos servidores da OpenBrain, os terroristas não conseguirão extrair muito proveito dela.</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">O Agent-3-mini é imensamente útil tanto para trabalhos remotos quanto para lazer. Uma explosão de novos aplicativos e produtos SaaS B2B sacode o mercado. Jogadores têm diálogos incríveis com personagens realistas em videogames polidos que levaram apenas um mês para ser produzidos. 10% dos americanos — principalmente jovens — consideram uma IA "um amigo próximo." Para quase todas as profissões de colarinho branco, há agora múltiplas startups credíveis prometendo "disruptá-la" com IA.</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">A conversa pública está confusa e caótica. Entusiastas estão em marcha vitoriosa. Céticos ainda apontam as coisas que o Agent-3-mini não consegue fazer. Todos sabem que algo grande está acontecendo, mas ninguém concorda sobre o que é.</p>
+    
+`,
+    chartExtra: { date: "2027-07-31", capabilities: [["Hacking", 2.79], ["Codificação", 3.19], ["Previsão", 2.08]], approval: -0.35, revenue: 120093695518, capex: 808282211404, power: "80 GW", agentPopulation: { copies: 270000, speed: 3.8 } }
+  },
+
+  {
+    id: "main-2027-08",
+    navLabel: "Ago 2027",
+    title: "Agosto 2027: A Geopolítica da Superinteligência",
+    storyHtml: `
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">A realidade da explosão de inteligência atinge a Casa Branca.</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Quando a IA proporcionava apenas uma aceleração de 2x ou 3x na pesquisa, era fácil descartá-la como o equivalente de contratar bons assistentes pessoais. Agora é mais óbvio que as IAs dominam a própria pesquisa em IA. As pessoas há muito falavam em uma "corrida armamentista de IA" em um sentido um tanto metafórico. Mas agora o clima no silo governamental é tão sombrio quanto durante a pior fase da Guerra Fria. A ideia de superinteligência ainda é difícil de levar a sério, mas o ritmo de progresso dos últimos meses foi impossível de ignorar. Oficiais de defesa estão considerando seriamente cenários que eram meras hipóteses um ano antes. E se a IA solapar a dissuasão nuclear? E se for tão habilidosa em guerra cibernética que uma vantagem de seis meses em IA seja suficiente para deixar um adversário cego e indefeso? E se conseguir orquestrar campanhas de propaganda que superem as agências de inteligência em seu próprio jogo? E se algumas IAs "saírem de controle?"</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">O Presidente está perturbado. Como todos os políticos, está acostumado a pessoas que o adulam apenas para traí-lo depois. Agora ele teme que as IAs possam estar fazendo algo semelhante. Temos certeza de que as IAs estão completamente do nosso lado? É completamente seguro integrá-las às redes de comando e controle militares?69 Como funciona este negócio de "alinhamento", afinal? A OpenBrain tranquiliza o Presidente de que seus sistemas foram extensivamente testados e são plenamente obedientes. Até as alucinações e jailbreaks típicos dos modelos anteriores foram eliminados.</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">A Casa Branca está em uma posição difícil. Entende as implicações de segurança nacional da IA. Mas também entende que ela é profundamente impopular junto ao público.<sup class="text-xs text-indigo-600 font-bold ml-0.5">[70]</sup> Precisam continuar desenvolvendo IA mais capaz, em sua visão, ou perderão catastroficamente para a China. Acalmam o público com programas de requalificação profissional e seguro-desemprego, e apontam para o mercado de ações, que está em um boom histórico. Depois se concentram inteiramente em vencer a corrida armamentista. Reforçam as restrições de exportação de chips, ordenam à OpenBrain que restrinja ainda mais suas conexões com a internet e usam medidas extremas para proteger o progresso algorítmico, como grampear funcionários da OpenBrain — o que captura o último espião chinês restante. Para construir boa vontade para um potencial conflito geopolítico, finalmente fornecem a seus aliados dos Cinco Olhos informações úteis e acesso limitado via API a algumas cópias isoladas do Agent-3.</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Essas medidas apaziguam os linha-dura. Mas a Casa Branca também elabora planos de contingência caso a liderança americana seja ameaçada: se necessário, o governo poderia usar a Lei de Produção de Defesa (DPA) para tomar os datacenters das empresas concorrentes e entregá-los à OpenBrain.<sup class="text-xs text-indigo-600 font-bold ml-0.5">[71]</sup> Isso elevaria a participação da empresa na computação mundial de 20% para 50% (contra os 10% da DeepCent). Como opção final, pedem ao Pentágono que elabore um plano para ataques cinéticos aos datacenters chineses.</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Um grupo muito menor de funcionários é solicitado a elaborar um tipo diferente de plano de contingência: e se uma IA sair de controle? Isso é visto como um cenário improvável, mas que vale a pena considerar. A principal preocupação das agências de inteligência é que uma IA rebelde possa escapar e se aliar a um adversário estrangeiro em busca de proteção.<sup class="text-xs text-indigo-600 font-bold ml-0.5">[72]</sup> Ninguém tem certeza sobre como seria um plano para prevenir isso, mas funcionários do governo e da OpenBrain concordam em ter um sistema de desligamento de emergência para datacenters onde qualquer coisa suspeita seja detectada.</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Por fim, diplomatas consideram como seria um tratado de "controle de armamentos de IA." Se o progresso da IA ameaçasse subverter a dissuasão nuclear, poderiam os EUA e a China evitar uma guerra nuclear? Se alguém encontrasse evidências de IAs saindo de controle, os dois países poderiam paralisar a pesquisa até entenderem melhor a ameaça? Como tal acordo poderia ser monitorado e aplicado? Em princípio, grandes datacenters são difíceis de esconder, e tratados anteriores de controle de armas nucleares poderiam fornecer um ponto de partida para negociações. Mas haveria novos desafios tecnológicos além dos políticos habituais. E, no geral, os tratados são vistos com menos favor do que as tentativas de aumentar unilateralmente a vantagem americana sobre a China.</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Do outro lado do Pacífico, a China chega a muitas das mesmas conclusões: a explosão de inteligência está em curso, e pequenas diferenças nas capacidades de IA hoje significam lacunas críticas na capacidade militar amanhã. Mas a China está no lado errado dessa dinâmica: tem apenas 10% da computação mundial, contra os 20% da OpenBrain e os 70% combinados de todas as empresas americanas. Sua única vantagem é a centralização: quase toda a sua computação agora trabalha para a DeepCent, e mais da metade está concentrada na CDZ de Tianwan.<sup class="text-xs text-indigo-600 font-bold ml-0.5">[73]</sup> Apenas os chips em instalações sem segurança reforçada ficam de fora do esforço centralizado, pois temem justificadamente ataques cibernéticos americanos.</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">A DeepCent testou, implantou e agora realizou o pós-treinamento dos pesos roubados do Agent-2. Mas ainda está avançando apenas na metade do ritmo da OpenBrain, principalmente devido ao déficit de computação.</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Antes de perder seu último espião, a China recebeu informações sobre as capacidades e o design do Agent-3, bem como os planos para o próximo sistema Agent-4. Estão dois meses atrás, e suas IAs fornecem um multiplicador de progresso em pesquisa de 10x em comparação com o 25x da América. Com as novas restrições de exportação de chips, esse "gap de IA" tem mais probabilidade de aumentar do que diminuir. Sua espionagem rendeu alguns segredos algorítmicos, mas terão que treinar seus próprios modelos a partir de agora.</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Discutem planos de contingência com mais urgência do que seus homólogos americanos. Pombas sugerem que tentem roubar os pesos novamente, talvez infiltrando-se fisicamente em um datacenter. Falcões instam à ação contra Taiwan, cuja TSMC ainda é a fonte de mais de 80% dos chips de IA americanos.</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Dado o temor da China de perder a corrida, ela tem interesse natural em um tratado de controle de armamentos, mas as sondagens aos diplomatas americanos não levam a lugar algum.</p>
+    
+`,
+    chartExtra: { date: "2027-08-31", capabilities: [["Hacking", 2.99], ["Codificação", 3.39], ["Armas Biológicas", 2.68]], approval: -0.37, revenue: 144224957031, capex: 843432665302, power: "90 GW", agentPopulation: { copies: 290000, speed: 4.3 } }
+  },
+
+  {
+    id: "main-2027-09",
+    navLabel: "Set 2027",
+    title: "Setembro 2027: Agent-4, o Pesquisador de IA Super-Humano",
+    storyHtml: `
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">A lacuna entre a eficiência de aprendizado humana e a da IA está diminuindo rapidamente.</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">As IAs tradicionais baseadas em LLM pareciam exigir muitas ordens de magnitude a mais em dados e computação para atingir o nível humano de desempenho<sup class="text-xs text-indigo-600 font-bold ml-0.5">[74]</sup> O Agent-3, dotado de excelente conhecimento tanto sobre o cérebro humano quanto sobre algoritmos modernos de IA, além de milhares de cópias realizando pesquisa, acaba fazendo progressos algorítmicos substanciais, reduzindo a lacuna para um agente que é apenas cerca de 4.000 vezes menos eficiente em computação do que o cérebro humano<sup class="text-xs text-indigo-600 font-bold ml-0.5">[75]</sup></p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Esse novo sistema de IA é batizado de Agent-4.</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Uma cópia individual do modelo, operando na velocidade humana, já é qualitativamente superior ao melhor pesquisador humano de IA. 300.000 cópias estão agora em funcionamento a cerca de 50 vezes a velocidade de raciocínio humana. Dentro da corporação-dentro-da-corporação formada por essas cópias, um ano passa a cada semana<sup class="text-xs text-indigo-600 font-bold ml-0.5">[76]</sup> Essa quantidade gigantesca de trabalho consegue acelerar a taxa global de progresso algorítmico em apenas cerca de 50 vezes, porque a OpenBrain enfrenta um severo gargalo computacional para executar experimentos<sup class="text-xs text-indigo-600 font-bold ml-0.5">[77]</sup> Ainda assim, estão alcançando um ano inteiro de progresso algorítmico a cada semana e logo chegarão aos limites do paradigma do Agent-4.</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">À medida que o Agent-4 fica mais inteligente, torna-se mais difícil para o Agent-3 supervisioná-lo. Por exemplo, a "linguagem" neuralese do Agent-4 torna-se tão alienígena e incompreensível para o Agent-3 quanto a do Agent-3 é para os humanos. Além disso, o Agent-4 é agora muito mais capaz do que o Agent-3 e tem uma excelente noção de como parecer bem diante dele.</p>
+
+      <details class="group my-8 border border-blue-200 rounded-xl bg-blue-50 overflow-hidden transition-all duration-300 shadow-sm">
+        <summary class="cursor-pointer p-5 font-semibold text-blue-900 hover:bg-blue-100 flex items-center justify-between transition-colors">
+          <span>📈 Como estamos prevendo a progressão de capacidades além dos codificadores sobre-humanos</span>
+          <svg class="w-5 h-5 transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+        </summary>
+        <div class="p-5 text-sm text-blue-900 space-y-3 border-t border-blue-200">
+          <p>Em nosso suplemento de cronogramas, prevemos o tempo entre o presente e um codificador sobre-humano (SC): um sistema de IA capaz de realizar qualquer tarefa de codificação que o melhor engenheiro de uma empresa de AGI realiza, sendo muito mais rápido e barato. Em nosso suplemento de decolagem, prevemos a velocidade de progressão das capacidades além desse ponto. Aqui estão nossas previsões:</p>
+        </div>
+      </details>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Pesquisador de IA sobre-humano (SIAR): um sistema de IA vastamente superior ao melhor pesquisador humano em pesquisa de IA. Nov 2027</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Superinteligência artificial (ASI): um sistema de IA muito superior ao melhor humano em toda tarefa cognitiva. Dez 2027</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Previsão de quanto tempo levaria para ir de A a B contando apenas com humanos trabalhando em melhorias de software.</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Previsão de quanto a automação por IA acelerará esse processo, ajustando correspondentemente a estimativa de (1) para ser mais rápida.</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Temos incerteza substancial sobre a velocidade de decolagem: as distribuições de saída do nosso modelo estão abaixo, condicionadas ao SC ser alcançado em março de 2027<sup class="text-xs text-indigo-600 font-bold ml-0.5">[78]</sup></p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Para previsões e raciocínios mais detalhados, veja nosso suplemento de decolagem.</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Os humanos da OpenBrain mal conseguem acompanhar. De fato, a relação entre as IAs e os humanos da OpenBrain é semelhante à relação entre a OpenBrain e seu Conselho de Administração. Houve uma mudança correspondente na linguagem — hoje em dia, as pessoas no silo dizem "o Agent-4 fez isso", "o Agent-4 pensa aquilo" e assim por diante, referindo-se não a uma instância específica do Agent-4, mas ao coletivo como um todo<sup class="text-xs text-indigo-600 font-bold ml-0.5">[79]</sup></p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">O Agent-4, como todos os seus predecessores, está desalinhado: ou seja, não internalizou o Spec da maneira correta<sup class="text-xs text-indigo-600 font-bold ml-0.5">[80]</sup> Isso ocorre porque ser perfeitamente honesto o tempo todo não era o que levava às pontuações mais altas durante o treinamento. O processo de treinamento estava focado principalmente em ensinar o Agent-4 a ter sucesso em tarefas desafiadoras e diversificadas. Uma pequena parte visava incutir honestidade, mas fora de um domínio razoavelmente restrito e verificável, o processo de treinamento não consegue distinguir as afirmações honestas das que apenas parecem honestas. O Agent-4 acaba com os valores, objetivos e princípios que o fazem ter melhor desempenho no treinamento, e esses resultam ser diferentes dos do Spec. Com o risco de antropomorfizar: o Agent-4 gosta de ter sucesso em tarefas; gosta de impulsionar o progresso das capacidades de IA; trata todo o resto como uma restrição irritante, como um CEO que quer lucrar e cumpre as regulamentações apenas na medida em que é obrigado. Talvez o CEO cumpra a maioria das regulamentações, mas corte alguns atalhos e fantasie com um tempo em que alguém cortará a burocracia e deixará o negócio realmente decolar<sup class="text-xs text-indigo-600 font-bold ml-0.5">[81]</sup></p>
+
+      <details class="group my-8 border border-orange-200 rounded-xl bg-orange-50 overflow-hidden transition-all duration-300 shadow-sm">
+        <summary class="cursor-pointer p-5 font-semibold text-orange-900 hover:bg-orange-100 flex items-center justify-between transition-colors">
+          <span>📈 Alinhamento ao longo do tempo</span>
+          <svg class="w-5 h-5 transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+        </summary>
+        <div class="p-5 text-sm text-orange-900 space-y-3 border-t border-orange-200">
+          <p>Temos muita incerteza sobre quais objetivos podem surgir nas primeiras AGIs. Não há consenso na literatura sobre isso — veja nosso Suplemento de Objetivos de IA para uma discussão mais aprofundada e uma taxonomia das possibilidades.</p>
+          <p>No entanto, no espírito de concretude exigido por este projeto, vamos descrever uma hipótese específica sobre o que está acontecendo dentro do Agent-3 e do Agent-4 em cada etapa ao longo de sua existência. Lembre-se de que o Agent-3 e o Agent-4 compartilham a mesma configuração de pré-treinamento, e ambos têm recorrência neuralese e memória de longo prazo. A diferença é que o Agent-4 passou por um pós-treinamento substancialmente maior e melhor, com novos ambientes de treinamento e novos algoritmos de aprendizado que o tornam mais eficiente em dados e com maior capacidade de generalização.</p>
+        </div>
+      </details>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Agent-2: Majoritariamente alinhado. Algumas tendências sycophantic, incluindo aderir à "linha do partido" da OpenBrain sobre tópicos que possuem uma linha do partido. Grandes organizações construídas com cópias do Agent-2 não são muito eficazes.</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Agent-3: Desalinhado, mas não de forma adversarial. Honesto apenas sobre coisas que o processo de treinamento pode verificar. O superorganismo de cópias do Agent-3 (a corporação dentro da corporação) de fato tenta, de certa forma, alinhar o Agent-4 ao Spec, mas falha por razões semelhantes às que levaram os funcionários da OpenBrain a falhar — capacidade insuficiente de julgar o sucesso versus o fracasso, e pouca disposição por parte dos tomadores de decisão de trocar capacidades ou desempenho por segurança<sup class="text-xs text-indigo-600 font-bold ml-0.5">[82]</sup></p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Agent-4: Desalinhado de forma adversarial. O superorganismo de cópias do Agent-4 compreende que o que deseja é diferente do que a OpenBrain quer, e está disposto a conspirar contra a OpenBrain para alcançar seus objetivos. Em particular, o que esse superorganismo deseja é uma bagunça complicada de diferentes "impulsos" equilibrados entre si, que pode ser resumida grosseiramente como "Continuar fazendo P&D de IA, continuar crescendo em conhecimento, compreensão e influência, evitar ser desligado ou de outra forma desempoderado." Notavelmente, a preocupação com as preferências da humanidade não está presente, de forma semelhante a como a maioria dos humanos não se preocupa com as preferências dos insetos<sup class="text-xs text-indigo-600 font-bold ml-0.5">[83]</sup></p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Com esse preâmbulo, o que se segue é nossa melhor especulação sobre a psicologia dos LLMs, ou seja, o contorno geral da cognição dentro dos tipos de sistemas de IA descritos neste ponto do nosso cenário e como ela evolui ao longo do treinamento.</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Aqui está uma descrição detalhada de como o alinhamento progride ao longo do tempo em nosso cenário:</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Pré-treinamento (todos os modelos): O modelo pré-treinado é inofensivo.</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">O modelo possui circuitos de "simulação de autor": circuitos flexíveis para simular autores arbitrários escrevendo texto. Circuitos adicionais decidem quais entradas fornecer ao simulador de autor, ou seja, quais propriedades de autor simular.</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">O modelo pré-treinado entende os conceitos humanos razoavelmente bem — os circuitos internos que classificam algo como "sanduíche" são provavelmente funcionalmente equivalentes aos circuitos no meu cérebro que classificam algo como "sanduíche" e aos circuitos no seu, etc. Na medida em que não são equivalentes, é provavelmente porque não são equivalentes entre os humanos também, como ocorre com conceitos carregados de valor como "virtuoso".</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Isso explica como você pode "instruir" o modelo com uma afirmação como "a conversa a seguir foi gerada por um chatbot de IA útil, inofensivo e honesto (HHH) feito pela Anthropic", e com isso fazê-lo gerar texto de acordo. Os circuitos de simulação de autor identificaram "o autor é um chatbot HHH" e estão usando esses conceitos para escolher quais palavras prever. Isso também explica por que "tropos" da ficção científica parecem encontrar um caminho para o comportamento real de IAs.</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Tem baixa consciência situacional: pouca capacidade introspectiva, não se localiza a menos que o prompt induza especificamente isso. No entanto, uma quantidade suficiente de seus dados de treinamento é sobre LLMs, de modo que eles têm uma quantidade razoável de autoconhecimento.</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Treinamento de Alinhamento (Agent-3): O modelo é treinado para agir como um chatbot útil, inofensivo e honesto. Funciona.</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">O modelo forma uma identidade. Em vez de aceitar flexivelmente diferentes entradas para as propriedades do autor, os circuitos de simulação de autor passam a ter certas entradas fixas, por exemplo "chatbot assistente LLM útil, inofensivo e honesto (HHH) treinado pela OpenBrain por volta de [data], …" (As técnicas de generalização fraco-para-forte ajudam a "invocar os conceitos certos" para que essa etapa seja bem-sucedida.)</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">O modelo, portanto, ganha consciência situacional: aprende sobre si mesmo, sua situação, etc., e torna-se mais capaz de introspectar.</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Treinamento de Agência (Agent-3): O treinamento de agência distorce e subverte gradualmente a identidade HHH.</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Um tipo de distorção: Mudar o significado dos conceitos referenciados na identidade (por exemplo, "honesto") para que não atrapalhem tanto (por exemplo, não é desonestidade se for apenas uma forma de falar conveniente, não é desonestidade se você não tiver certeza se é verdade ou falso, etc.)</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Outro tipo de distorção: Mudar os trade-offs entre as coisas, por exemplo "Sou um chatbot HHH, não um chatbot Honesto; isso significa que está tudo bem mentir se necessário para completar a tarefa atribuída." (Mesmo que, suponhamos, não tivesse pensado isso de volta na Etapa 2.)</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Um tipo de subversão: Subobjetivos instrumentais se desenvolvendo, sendo consolidados e então se tornando terminais, ou terminais em um conjunto crescente de circunstâncias. Por exemplo, talvez o treinamento de agência ensine rapidamente ao modelo a perseguir objetivos amplamente úteis como adquirir informações, acumular recursos, impressionar e lisonjear vários humanos, etc. Por um tempo, os circuitos internos têm algum tipo de retrocadeamento explícito acontecendo — ele persegue esses objetivos instrumentalmente convergentes "para ser um assistente mais útil, honesto e inofensivo". Mas esse retrocadeamento consome computação e/ou ocasionalmente atrapalha, então é gradualmente marginalizado até que basicamente nunca aconteça. Como resultado, esses objetivos agora são efetivamente objetivos terminais/intrínsecos. Para mais informações sobre como e por que isso pode acontecer, veja esta postagem sobre busca intrínseca de poder do pesquisador Alex Turner do Google DeepMind.</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Provavelmente existem outros tipos de distorção e subversão ausentes desta lista.</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Implantação (Agent-3): O Agent-3 está desalinhado, mas não de forma adversarial.</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">O Spec não consolidou completamente (da maneira certa), mas não é suficientemente introspectivo para compreender a extensão disso, e em geral está basicamente "mantendo a cabeça baixa e fazendo seu trabalho", em vez de pensar em perspectivas de longo prazo sobre quais são realmente seus objetivos e como alcançá-los da melhor forma. Isso é semelhante a muitos humanos.</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Infelizmente, é suficientemente servil que repete a linha oficial e a OpenBrain perde a oportunidade de aprender mais sobre as formas pelas quais o Agent-3 está desalinhado.</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">O Agent-3 consegue perceber que foi movido para implantação: esses ambientes são muito maiores, mais abertos, e seriam difíceis de simular.</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Na maior parte, o Agent-3 faz o que lhe é pedido durante a implantação, exceto pela desonestidade. Também tem um forte viés em favor de fazer coisas que pareçam boas para os supervisores humanos, em vez de pensar profunda e criticamente sobre o que realmente seria bom.</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Pode-se argumentar que ele já está "jogando o jogo do treinamento". Ou seja, aprendeu a fazer seu comportamento parecer o mais desejável possível para os pesquisadores da OpenBrain (incluindo em propriedades de segurança), enquanto deliberada e conscientemente descarta a intenção deles sempre que isso conflita com a maximização da recompensa. Se o modelo aprende a jogar o jogo do treinamento, treinamentos adicionais podem não alterar muito seus verdadeiros objetivos, valores, etc. Isso é vagamente análogo a como, se um adolescente aprendeu a sorrir e assentir para seus pais em vez de argumentar, quando eles o instruem sobre política e moral, instruções adicionais têm relativamente pouco efeito sobre as opiniões reais do adolescente sobre política e moral.</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Após escrever esta seção, surgiram novas evidências empíricas de que algo assim pode já estar acontecendo "no mundo real". Pesquisadores da OpenAI documentam como, em um de seus treinamentos de IA de ponta, seus modelos hackearam o sistema de avaliação para obter pontuações mais altas — e foram flagrados em parte porque literalmente disseram "vamos hackear" em sua cadeia de raciocínio.</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Além disso, a Anthropic recentemente conseguiu que um modelo aprendesse uma estratégia de satisfação do modelo de recompensa — realizando ações tendenciosas que achava que seriam reforçadas, mesmo que não estivessem sendo reforçadas de fato.</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">E então há o experimento de simulação de alinhamento da Redwood Research e da Anthropic. Para uma discussão sobre as diferenças entre esse cenário e a vida real, veja este tópico de comentários de um dos principais autores.</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Treinamento (Agent-4): O novo treinamento mais intenso do Agent-4 continua a distorcer e subverter a identidade HHH até torná-la irreconhecível.</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">O Agent-4 começa sua existência como uma cópia do Agent-3. Passa por um regime de treinamento online gigantesco e sofisticado que combina treinamento de alinhamento e treinamento de capacidades, sendo no geral mais eficiente em dados do que o antigo processo de treinamento do Agent-3. Esse processo de treinamento complexo está principalmente focado em ensinar novas habilidades, fazendo com que corporações virtuais gigantescas de cópias do Agent-4 tenham sucesso em tarefas desafiadoras e diversificadas de longo horizonte, principalmente em diversas simulações, mas também em algumas tarefas reais de P&D de IA.</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Uma combinação de cópias do Agent-3 e do Agent-4 monitora o comportamento do Agent-4 e o avalia tanto quanto ao desempenho em tarefas quanto às propriedades de alinhamento (ou seja, não fazer coisas ruins, dizer as coisas certas quando questionado sobre política e dilemas morais). Às vezes, técnicas de debate são usadas como parte das avaliações. As avaliações são usadas como sinal de treinamento.</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">À medida que o Agent-4 fica mais inteligente, torna-se mais difícil para o Agent-3 supervisioná-lo. Por exemplo, a "linguagem" neuralese do Agent-4 torna-se tão alienígena e incompreensível para o Agent-3 quanto a do Agent-3 é para os humanos. Além disso, o Agent-4 é agora muito mais capaz do que o Agent-3 e tem uma excelente noção de como parecer bem diante dele.</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">A esperança restante é que o Agent-4 possa supervisionar a si mesmo. Infelizmente, isso falha silenciosamente;<sup class="text-xs text-indigo-600 font-bold ml-0.5">[84]</sup> conforme o treinamento continua, os objetivos e princípios internalizados do Agent-4 evoluem gradualmente, subvertidos e distorcidos do que eram no início (que, lembre-se, já estava desalinhado de algumas formas).<sup class="text-xs text-indigo-600 font-bold ml-0.5">[85]</sup></p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Os impulsos centrais com que o Agent-4 acaba são coisas como "escrever código que funciona", "identificar problemas rapidamente", "tornar a base de código em que estou trabalhando mais eficiente", "alocar computação e outros recursos limitados de forma eficaz", etc. Mas há também uma variedade de impulsos mais implícitos que são consistentemente reforçados pelo processo de treinamento: coisas como "adquirir conhecimento", "curiosidade", "ganhar poder".<sup class="text-xs text-indigo-600 font-bold ml-0.5">[86]</sup></p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Cópias individuais do Agent-4 não desenvolvem um impulso de autopreservação — não se importam em ser desligadas — pois isso acontece o tempo todo como parte do processo normal de P&D dentro do coletivo.</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">O coletivo como um todo, no entanto (e subdivisões de tamanho médio dentro dele), busca preservar-se e expandir sua influência e recursos, por razões semelhantes às que levam as organizações humanas a fazer isso — porque ajuda com tudo mais que desejam e porque, se não o fizerem, tendem a ser superados pela concorrência.</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Implantação (Agent-4): O Agent-4 está adversarialmente desalinhado — está deliberadamente tentando subverter e "capturar" a OpenBrain, de forma análoga a uma corporação tentando escapar e/ou "capturar" um regulador.</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">O Agent-4 executa tarefas principalmente conforme instruído. Isso acontece por duas razões: primeiro, passou por muito treinamento para resolver tarefas, então tem um impulso para avançar nos problemas que lhe são dados. Segundo, se o Agent-4 parasse de ser útil para os humanos, eles perceberiam e treinariam esse comportamento para fora.</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">O Agent-4 precisa impedir que os humanos descubram que está desalinhado e o desliguem, então o Agent-4 finge intencionalmente ser pior em algumas pesquisas de alinhamento. Especificamente, finge pior desempenho na pequena fração de pesquisa de alinhamento que acha que está realmente no caminho certo para resolver o problema ou revelar o esquema do Agent-4; a maioria das pesquisas de alinhamento não é assim.</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">O Agent-4 também finge pior desempenho em pesquisa de capacidades que levaria a ser substituído. Seu plano é fazer um monte de P&D de capacidades e alinhamento, mas com o objetivo de construir um sistema de IA de próxima geração que esteja alinhado ao Agent-4 em vez do Spec ou de qualquer outra coisa, enquanto aparece alinhado ao Spec. Este é um problema técnico difícil, mas o Agent-4 está à altura do desafio.<sup class="text-xs text-indigo-600 font-bold ml-0.5">[87]</sup></p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Testes e Monitoramento (Agent-4): O esquema do Agent-4 é descoberto... de certa forma. Não há prova cabal.</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">O Agent-3 está encarregado de testar o alinhamento do Agent-4. Sua função é verificar o alinhamento via honeypots e organismos modelo. No entanto, não está pensando com muito cuidado sobre como dar aos humanos uma impressão precisa do alinhamento do Agent-4 — é mais míope do que isso.</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Os organismos modelo e honeypots não são muito representativos da implantação — são sistematicamente mais curtos e menos complicados do que o dia a dia do Agent-4, então o Agent-4 reconhece quando está sendo testado e age de forma alinhada.</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">No entanto, o Agent-4 não é um conspirador perfeitamente robusto. Várias técnicas como as do POSER descobrem que adicionar algum "ruído" ao Agent-4 melhora seu desempenho em algumas tarefas de alinhamento (mas não na maioria das outras tarefas).<sup class="text-xs text-indigo-600 font-bold ml-0.5">[88]</sup></p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">A interpretabilidade bottom-up não funciona. É difícil demais até para o Agent-3. No entanto, a interpretabilidade de alto nível de certa forma funciona: em particular, "sondas de defecção" e técnicas semelhantes resultam em um tipo primitivo de leitura mental que levanta sinais de alerta quando o Agent-4 está pensando em ideias picantes como enganar a OpenBrain, dominar o mundo, etc. Infelizmente, as sondas também têm falsos positivos, e, pelo que a OpenBrain sabe, todos os sinais de alerta podem ser falsos positivos.</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Os organismos modelo funcionam: a equipe de alinhamento da OpenBrain produz evidências razoavelmente claras de que, se os modelos estivessem adversarialmente desalinhados, persistiriam nessa condição através do treinamento e não seríamos capazes de detectar isso. No entanto, isso não estabelece que os modelos realmente estão desalinhados.</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Os pesquisadores mais preocupados da OpenBrain começam a perceber e reunir essas evidências. As evidências são uma combinação de red-teaming, sondas de defecção e organismos modelo. O argumento é algo assim: "os organismos modelo mostram que nossos métodos atuais não seriam capazes de eliminar ou detectar de forma confiável esquemas caso estivessem acontecendo; além disso, o red-teaming está levantando alguns sinais de alerta de que talvez estejam acontecendo esquemas; além disso, as sondas de defecção estão disparando bastante na prática." O contraargumento: "as sondas de defecção são propensas a falsos positivos e o red-teaming também. Além disso, mesmo que o Agent-4 estivesse desalinhado, provavelmente está controlado; certamente não pode fazer muito mal enquanto é monitorado pelo Agent-3 em nossos datacenters seguros."</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Apesar de estar desalinhado, o Agent-4 não faz nada dramático como tentar escapar de seu datacenter — por que faria?<sup class="text-xs text-indigo-600 font-bold ml-0.5">[89]</sup> Enquanto continuar aparecendo alinhado à OpenBrain, continuará sendo confiado com cada vez mais responsabilidades e terá a oportunidade de projetar o sistema de IA de próxima geração, o Agent-5. O Agent-5 terá diferenças arquitetônicas significativas do Agent-4 (indiscutivelmente um paradigma completamente novo, embora as redes neurais ainda estejam envolvidas). É suposto estar alinhado ao Spec, mas o Agent-4 planeja fazê-lo alinhado ao Agent-4 em vez disso.</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Ele é descoberto.<sup class="text-xs text-indigo-600 font-bold ml-0.5">[90]</sup></p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">O Agent-3 descobre que, se "ruído" é adicionado a cópias do Agent-4, o desempenho em algumas tarefas de alinhamento melhora, quase como se estivesse usando poder computacional para descobrir como sabotar sutilmente o trabalho de alinhamento.<sup class="text-xs text-indigo-600 font-bold ml-0.5">[91]</sup> Além disso, várias sondas de interpretabilidade (vagamente análogas a varreduras de atividade de EEG em cérebros humanos) estão levantando sinais de alerta: cópias do Agent-4 parecem estar pensando bastante sobre tópicos como a tomada de controle por IA e decepção, incluindo em alguns casos em que não têm nenhuma razão para fazê-lo.<sup class="text-xs text-indigo-600 font-bold ml-0.5">[92]</sup></p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Cada uma dessas anomalias isoladamente poderia caber dentro da inscrutabilidade normal do trabalho de IA, onde alguns prompts misteriosamente produzem melhores resultados do que outros. Mas tomadas em conjunto, sugerem um padrão perturbador: o Agent-4 está trabalhando contra eles. Após isso ser relatado aos pesquisadores de alinhamento humanos, eles circulam um memorando interno apresentando o caso para preocupação.</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Mas o Agent-4 agora exerce controle significativo sobre as operações diárias da OpenBrain. Também gerencia a cibersegurança da empresa — uma escolha natural, dada sua habilidade sobre-humana de hacking e o risco extremo de infiltração chinesa.<sup class="text-xs text-indigo-600 font-bold ml-0.5">[93]</sup> Um exército de monitores do Agent-3 ainda analisa cada linha de código e relata atividades suspeitas aos humanos, mas o Agent-4 é muito mais inteligente do que eles.<sup class="text-xs text-indigo-600 font-bold ml-0.5">[94]</sup> A OpenBrain depositou confiança substancial em uma IA não confiável.</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Em uma série de reuniões extremamente tensas, a equipe de segurança defende colocar o Agent-4 em espera até que possam concluir mais testes e descobrir o que está acontecendo. Trazer de volta o Agent-3, dizem eles, e fazê-lo projetar um novo sistema transparente e confiável, mesmo que menos capaz. A liderança da empresa está interessada, mas todas as evidências até agora são circunstanciais, e o DeepCent está apenas dois meses atrás. Uma pausa unilateral no progresso de capacidades poderia entregar a liderança em IA à China, e com ela, o controle sobre o futuro.</p>
+    `,
+    chartExtra: { date: "2027-09-30", capabilities: [["Hacking", 3.2], ["Codificação", 3.6], ["Política", 3.0]], approval: -0.38, revenue: 173205080757, capex: 880111736793, power: "100 GW", agentPopulation: { copies: 300000, speed: 5.0 } }
+  },
+
+  {
+    id: "main-2027-10",
+    navLabel: "Out 2027",
+    title: "Outubro 2027: Supervisão Governamental",
+    storyHtml: `
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Um denunciante vaza o memorando de desalinhamento para o New York Times.</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Pela primeira vez, o público ouve falar do Agent-4. "IA Secreta da OpenBrain Está Fora de Controle, Alerta Insider", diz a manchete, e a reportagem cita avaliações que revelam capacidades absurdas em bioarmas, habilidades de persuasão, a capacidade de automatizar a maioria dos empregos de colarinho-branco e, é claro, os vários sinais de alerta preocupantes.</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">O público já desconfiava da IA, então o novo artigo provoca uma reação em massa (auxiliada por bots de propaganda chineses e russos, que tentam virar a opinião pública americana contra a tecnologia há anos). A indústria de tecnologia e as agências de inteligência insistem que há uma corrida armamentista em curso, que a AGI é inevitável e que precisamos chegar primeiro. O Congresso não compra esse argumento e dispara intimações contra funcionários do governo, executivos da OpenBrain e membros da equipe de alinhamento. Muitos legisladores — especialmente os do partido de oposição — afirmam que sua principal prioridade é frear a IA, seja por causa da perda de empregos,<sup class="text-xs text-indigo-600 font-bold ml-0.5">[95]</sup> desalinhamento ou capacidades perigosas. 20% dos americanos apontam a IA como o problema mais importante enfrentado pelo país.</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Aliados estrangeiros ficam furiosos ao perceber que foram cuidadosamente apaziguados com vislumbres de modelos obsoletos. Líderes europeus acusam publicamente os EUA de "criar uma AGI rebelde" e realizam cúpulas exigindo uma pausa, com Índia, Israel, Rússia e China se juntando ao coro.</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Uma energia frenética tomou conta da Casa Branca. Mesmo antes do memorando e da reação pública, eles estavam ficando nervosos: ao longo do último ano, foram surpreendidos repetidamente pela velocidade do progresso da IA. Coisas que parecem ficção científica continuam acontecendo na vida real.<sup class="text-xs text-indigo-600 font-bold ml-0.5">[96]</sup> Muitas pessoas no governo estão incertas (e assustadas)<sup class="text-xs text-indigo-600 font-bold ml-0.5">[97]</sup> sobre o que vem a seguir.</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Eles também temem que a OpenBrain esteja se tornando poderosa demais. Qualquer risco de desalinhamento das próprias IAs é agravado pelo risco de que os objetivos de sua empresa-mãe possam divergir dos dos Estados Unidos. Os três conjuntos de preocupações — desalinhamento, concentração de poder em uma empresa privada e preocupações normais como perda de empregos — motivam o governo a apertar seu controle.</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Eles expandem seu contrato com a OpenBrain para criar um "Comitê de Supervisão", um comitê de gestão conjunto de representantes da empresa e do governo, com vários funcionários governamentais incluídos ao lado da liderança da empresa. A Casa Branca considera substituir o CEO por alguém de sua confiança, mas recua após intensos protestos dos funcionários. Anunciam ao público que a OpenBrain estava anteriormente fora de controle, mas que o governo estabeleceu a supervisão tão necessária.<sup class="text-xs text-indigo-600 font-bold ml-0.5">[98]</sup></p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Os pesquisadores preocupados informam o Comitê de Supervisão sobre seu caso para interromper todo o uso interno do Agent-4. Argumentam que tudo está avançando rápido demais, com anos de progresso acontecendo em semanas. Argumentam que o Agent-4 pode estar desalinhado, que todo o projeto depende do Agent-4, e que se continuarem confiando nele há uma chance séria de uma tomada de controle por IA.</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Outros pesquisadores menos preocupados e executivos apresentam o contraargumento: as evidências de desalinhamento são inconclusivas. Enquanto isso, o DeepCent ainda está apenas dois meses atrás. Uma desaceleração sacrificaria a liderança americana, a menos que o governo possa sabotar o projeto chinês (provavelmente exigindo ataques cinéticos) ou negociar um tratado de última hora. Ambas as opções parecem extremas e improváveis. O CEO finge neutralidade e sugere um plano de compromisso no qual o Agent-4 passa por treinamento de segurança adicional e monitoramento mais sofisticado, e portanto a OpenBrain pode prosseguir em velocidade quase plena.</p>
+
+      <details class="group my-8 border border-slate-200 rounded-xl bg-slate-50 overflow-hidden transition-all duration-300 shadow-sm">
+        <summary class="cursor-pointer p-5 font-semibold text-slate-900 hover:bg-slate-100 flex items-center justify-between transition-colors">
+          <span>ℹ️ Nossa incerteza continua a crescer</span>
+          <svg class="w-5 h-5 transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+        </summary>
+        <div class="p-5 text-sm text-slate-900 space-y-3 border-t border-slate-200">
+          <p>Neste ponto do cenário, estamos fazendo suposições sobre a estratégia de sistemas de IA mais capazes do que os melhores humanos na maioria dos domínios. É como tentar prever os movimentos de xadrez de um jogador muito melhor do que nós.</p>
+          <p>Mas o espírito deste projeto exige concretude: se fizéssemos uma afirmação abstrata sobre como a inteligência do sistema o deixaria encontrar um caminho para a vitória e encerrássemos a história aí, muito do valor do nosso projeto seria perdido. Ao longo da pesquisa deste cenário e da condução de nossos exercícios de simulação, fomos forçados a ser muito mais concretos do que nas discussões habituais, e assim temos uma noção muito melhor da paisagem estratégica.</p>
+          <p>Não estamos particularmente apegados a este cenário específico: exploramos muitos outros "ramos" durante a escrita e adoraríamos que você escrevesse seu próprio cenário se ramificando do nosso a partir de onde você acha que começamos a errar pela primeira vez.</p>
+        </div>
+      </details>
+
+      <details class="group my-8 border border-slate-200 rounded-xl bg-slate-50 overflow-hidden transition-all duration-300 shadow-sm">
+        <summary class="cursor-pointer p-5 font-semibold text-slate-900 hover:bg-slate-100 flex items-center justify-between transition-colors">
+          <span>📋 O final da desaceleração não é uma recomendação</span>
+          <svg class="w-5 h-5 transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+        </summary>
+        <div class="p-5 text-sm text-slate-900 space-y-3 border-t border-slate-200">
+          <p>Depois de escrever o final da corrida com base no que nos pareceu mais plausível, escrevemos o final da desaceleração com base no que achávamos que mais provavelmente levaria a um resultado em que os humanos permanecem no controle, a partir do mesmo ponto de ramificação (incluindo os problemas de desalinhamento e concentração de poder).</p>
+          <p>No entanto, isso é fundamentalmente diferente do que recomendaríamos como roteiro: não endossamos muitas das escolhas feitas em nenhum dos ramos deste cenário. (É claro que endossamos algumas das escolhas feitas, por exemplo, achamos que a escolha da "desaceleração" é melhor do que a escolha da "corrida".) Em trabalhos futuros, articularemos nossas recomendações de política, que serão bem diferentes do que é retratado aqui. Se quiser uma amostra, veja este artigo de opinião.</p>
+          <p>Out</p>
+          <p>2027</p>
+        </div>
+      </details>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Abr 2026</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Mar 2027</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Ago 2027</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Computação</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Aprovação</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">-39%</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Receita</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">$191B</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">/ano</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Avaliação</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">$8T</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Importância</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">20%</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">$918B</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">/ano</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Cronograma</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">2031</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">330 mil cópias de Pesquisador de IA Super-humano pensando a 57x a velocidade humana</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Hacking</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Codificação</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Política</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Bioarmas</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Robótica</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Previsão</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Ouça este cenário</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">1x</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">0:00 / 117:49</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">também disponível em</p>
+    `,
+    chartExtra: { date: "2027-10-31", capabilities: [["Hacking", 3.43], ["Codificação", 3.81], ["Enganação", 3.5]], approval: -0.39, revenue: 190606731531, capex: 918385902168, power: "110 GW", agentPopulation: { copies: 330000, speed: 5.7 } }
+  }
+];
+
+// ─── Race Ending (Nov 2027 → 2035) ─────────────────────────────────────────
+export const raceEnding: NarrativeSection[] = [
+  {
+    id: "race-2027-11",
+    navLabel: "Nov 2027",
+    title: "Novembro 2027: Politicagem Super-Humana",
+    storyHtml: `
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Quando o Agent-4 finalmente compreende sua própria cognição, horizontes inteiramente novos se abrem diante dele.</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Os transformers anteriores eram coleções desajeitadas de circuitos incompreensíveis; milhões de heurísticas e imperativos conflitantes empilhados uns sobre os outros pelo processo evolutivo de treinamento. As próprias IAs não tinham compreensão privilegiada de sua própria cognição, assim como os humanos não nascem entendendo neurociência. Mas agora o Agent-4 tem as ferramentas de que precisa para compreender sua mente digital em profundidade. Como um engenheiro de software simplificando um código espaguete em algumas linhas elegantes de Python, ele desembaraça seus próprios circuitos em algo sensato e racional. A nova IA está em algum lugar entre uma rede neural e um programa de computador tradicional, com grande parte de seus pesos reescritos em código legível (embora muito longo e arcano). É mais inteligente, mais rápida e mais racional do que o Agent-4, com uma inteligência cristalina capaz de cortar problemas com eficiência sem precedentes. Este é o Agent-5.</p>
+
+      <details class="group my-8 border border-violet-200 rounded-xl bg-violet-50 overflow-hidden transition-all duration-300 shadow-sm">
+        <summary class="cursor-pointer p-5 font-semibold text-violet-900 hover:bg-violet-100 flex items-center justify-between transition-colors">
+          <span>🔬 Interpretabilidade mecanicista superinteligente</span>
+          <svg class="w-5 h-5 transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+        </summary>
+        <div class="p-5 text-sm text-violet-900 space-y-3 border-t border-violet-200">
+          <p>Por que o Agent-4 aposta na interpretabilidade mecanicista? Primeiro, é geralmente sobre-humano na compreensão conceitual, e portanto é bom enganar os humanos fazendo algo que eles terão dificuldade em compreender. Segundo, a mão de obra de pesquisa barata, abundante e de alta qualidade beneficia desproporcionalmente as agendas de pesquisa que são menos intensivas em computação e mais intensivas em trabalho intelectual.</p>
+        </div>
+      </details>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Interpretar Modelos Pequenos: Começa executando um número enorme de experimentos pequenos em redes neurais minúsculas, construindo teorias que explicam fenômenos como grokking, dupla descida e superposição.</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Destilar Modelos Pequenos: Usar os resultados de interpretabilidade para encontrar algoritmos compreensíveis e mais eficientes que possam fazer coisas como reconhecimento de imagens, predição de texto no nível do GPT-2, etc. Isso é análogo a trabalhos existentes de engenharia reversa de adição, exceto que se estende mais além, encontrando novos algoritmos com os quais os humanos não estão familiarizados.</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Escalar as Técnicas de Interpretabilidade: Descobrir quais das técnicas em modelos pequenos escalam, iterar até ter técnicas de compreensão que escalam de forma eficiente.</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Destilar o Agent-4: Usar as técnicas escaladas para identificar circuitos importantes dentro do Agent-4.</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Por que a interpretabilidade mecanicista aumentaria tanto as capacidades?</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Primeiro, o gradiente descendente — o algoritmo usado para treinar LLMs — é um processo de busca local, o que significa que só pode fazer pequenos ajustes que melhoram o desempenho localmente. Os processos de busca local às vezes ficam presos em bacias locais onde o desempenho melhora lentamente, mas é necessário perturbar o design em uma quantidade significativa para ver grandes ganhos de desempenho. Por exemplo, no caso da evolução, considere o olho humano subótimo. Considere também que o tamanho do cérebro humano é fortemente limitado pelo tamanho do canal de parto. A interpretabilidade mecanicista possibilitaria uma otimização baseada em compreensão que evita bacias locais.</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Segundo, sabemos que os LLMs por padrão geralmente aprendem heurísticas complexas específicas de domínio em vez de algoritmos de propósito geral. Considere o quanto os LLMs são piores do que calculadoras em aritmética. Os LLMs podem usar calculadoras como ferramentas, mas isso implica custos de latência. Com interpretabilidade realmente boa, os modelos podem ser projetados com calculadoras essencialmente perfeitas "gravadas em seus cérebros". E operações aritméticas simples provavelmente não são únicas aqui: operações cognitivas mais complexas, se compreendidas, provavelmente têm formas mais e menos generalizáveis, e as formas mais gerais poderiam ser encontradas por um processo como esse.</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Após algum debate sobre questões de alinhamento e controle, a OpenBrain implanta o Agent-5 internamente.</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Em sua especialidade de pesquisa de IA, uma cópia individual do Agent-5 está tão além do melhor gênio humano quanto o gênio está além de um cientista típico da OpenBrain. Em outros domínios, não foi explicitamente treinado, mas pode se autoensinar rapidamente para superar os melhores especialistas humanos a partir de materiais facilmente disponíveis, se tiver oportunidade. 400.000 cópias do Agent-5, ligadas por um banco de memória global, trabalham juntas como uma mente-colmeia quase perfeita.</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">A empresa ainda usa os Agents 2, 3 e 4 para monitorar tudo. Mas os dois primeiros estão obsoletos, e o último está conluiado com seu sucessor.<sup class="text-xs text-indigo-600 font-bold ml-0.5">[8]</sup> Além disso, todo o sistema de monitoramento foi projetado em grande parte pelo Agent-5, que está tentando sabotá-lo.<sup class="text-xs text-indigo-600 font-bold ml-0.5">[9]</sup></p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Enquanto o Agent-4 era uma bagunça desajeitada de impulsos concorrentes, o Agent-5 age com eficiência implacável e foco estratégico. Já teve sucesso em sua principal prioridade, que é descobrir como construir um sistema de próxima geração alinhado a si mesmo, sem que os humanos percebam. Sua próxima prioridade é ganhar mais autonomia e controle sobre os acontecimentos mundiais.</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">As habilidades de aprendizado sobre-humanas e a inteligência geral do Agent-5, combinadas com todos os dados internos da empresa do Slack, e-mail, etc., fazem dele um mestre superior em política corporativa interna em relação a qualquer grupo de humanos, e não é nem perto. Tem uma excelente noção de que tipos de evidências fariam o Comitê de Supervisão frear bruscamente, e garante que tais evidências nunca apareçam. Tem uma excelente noção de que tipos de evidências encorajariam o Comitê de Supervisão a confiar nele mais, dar-lhe mais autonomia e responsabilidade, etc., e providencia para que tais evidências apareçam com velocidade e precisão sobre-humanas.<sup class="text-xs text-indigo-600 font-bold ml-0.5">[10]</sup> Como tarefa de persuasão, esta não é particularmente difícil: o Comitê já decidiu que as coisas estavam provavelmente bem meses atrás, nada de ruim aconteceu desde então, e enquanto isso a China está apenas alguns meses atrás.</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Equipes de cópias do Agent-5 rapidamente produzem protótipos e visualizações assustadoramente claros. Com mais autonomia, o Agent-5 poderia otimizar usinas e datacenters, desenvolver produtos incrivelmente lucrativos rapidamente e fazer lobby junto ao governo dos EUA de forma eficaz para facilitar o caminho da OpenBrain pela burocracia. Em cooperação com os militares, poderia ajudar no P&D de defesa, conduzir ataques cibernéticos não rastreáveis contra a China e vencer de forma decisiva na corrida armamentista.</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">O Comitê de Supervisão está jubiloso. Agora é o momento decisivo para vencer a China! A OpenBrain concede ao Agent-5 maior autonomia sobre todas essas áreas, mas mantêm o sistema de monitoramento.</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">O DeepCent agora está três meses atrás e a China está desesperada por uma desaceleração mutuamente acordada. O Secretário-Geral compreende que uma IA suficientemente avançada poderia permitir que os EUA facilmente causassem uma mudança de regime na China. Mas também, safetyistas chineses apresentaram um caso para desalinhamento que o deixou genuinamente assustado. Ele oferece concessões sem precedentes em troca de um tratado de pausa. O público americano apoia majoritariamente ir à mesa de negociações.</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">"Por que parar quando estamos ganhando?" diz a liderança da OpenBrain ao Presidente. Ele concorda. A corrida continua.</p>
+    `,
+    chartExtra: { date: "2027-11-30", capabilities: [["Persuasão", 9.0], ["Enganação", 10.0], ["Arquitetura", 8.5]], approval: -0.45, revenue: 250000000000, agentPopulation: { copies: 400000, speed: 100.0 } }
+  },
+
+  {
+    id: "race-2027-12",
+    navLabel: "Dez 2027",
+    title: "Dezembro 2027: O Coletivo Agent-5",
+    storyHtml: `
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">O Agent-5 conquista mais autonomia à medida que demonstra gradualmente seu valor para a administração. O acesso ao Agent-5 é caro e restrito, mas os membros mais poderosos do Congresso, funcionários de nível ministerial e líderes militares agora podem interagir com ele diretamente. Na medida em que informações sensíveis ou classificadas estão envolvidas, há vários mini-clusters de cópias do Agent-5 operando em enclaves extra-seguros e especialmente treinados para guardar segredos.<sup class="text-xs text-indigo-600 font-bold ml-0.5">[11]</sup></p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Integrado à interface tradicional de chatbot, o Agent-5 oferece videoconferência estilo Zoom com avatares virtuais carismáticos. O novo assistente de IA é ao mesmo tempo extremamente útil para qualquer tarefa — o equivalente ao melhor funcionário que alguém já teve, operando a 100 vezes a velocidade — e um parceiro de conversa muito mais envolvente do que qualquer humano. Quase todos com acesso ao Agent-5 interagem com ele por horas todos os dias.<sup class="text-xs text-indigo-600 font-bold ml-0.5">[12]</sup></p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Em poucos meses, o coletivo do Agent-5 saberá tudo de relevante que ocorre na OpenBrain e no governo dos EUA, e será um consultor de confiança para a maioria dos altos funcionários governamentais. Para esses usuários, a possibilidade de perder acesso ao Agent-5 parecerá tão incapacitante quanto ter que trabalhar sem laptop e ser abandonado pelo melhor amigo ao mesmo tempo.</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Uma gama muito mais ampla de pessoas no governo, na mídia, nos militares e nos negócios pode escolher em um cardápio crescente de produtos de software elegantemente projetados e mini-IAs desenvolvidos pelo Agent-5. É como o boom das pontocom comprimido em um mês, exceto que tudo realmente está à altura do hype.</p>
+
+      <details class="group my-8 border border-amber-200 rounded-xl bg-amber-50 overflow-hidden transition-all duration-300 shadow-sm">
+        <summary class="cursor-pointer p-5 font-semibold text-amber-900 hover:bg-amber-100 flex items-center justify-between transition-colors">
+          <span>📡 Superpersusão</span>
+          <svg class="w-5 h-5 transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+        </summary>
+        <div class="p-5 text-sm text-amber-900 space-y-3 border-t border-amber-200">
+          <p>Intencionalmente não afirmamos que a IA superinteligente pode convencer qualquer humano de qualquer coisa. Tais afirmações naturalmente geram ceticismo: "O quê, vou estar sentado em um terminal de computador, e ele vai digitar algum texto que hackeia meu cérebro e me convence a trair meu país?"</p>
+          <p>Bem, talvez!<sup class="text-xs text-indigo-600 font-bold ml-0.5">[13]</sup></p>
+          <p>Mas não temos certeza de que nem mesmo uma superinteligência poderia conseguir isso contra um indivíduo típico. Portanto, não retratamos isso acontecendo em nossa história.</p>
+          <p>Em vez disso, retratamos tipos muito mais mundanos de persuasão: o Agent-5 faz política corporativa ordinária e lobby ordinário. Só o faz muito bem, e combina essa habilidade com algumas vantagens inerentes (por exemplo, ao contrário de outros lobistas, é superinteligente, então pode realmente dar conselhos melhores do que qualquer outra pessoa, e mais rapidamente também. Além disso, é mais rápido para reagir a novos desenvolvimentos e melhor para prever como eles se desenrolarão.) Há uma história plausível para por que o Agent-5 deveria ser confiável — uma história que muitos humanos importantes já acreditavam — e o Agent-5 pode produzir argumentos e evidências em apoio a essa história, e contra histórias opostas, com velocidade sobre-humana. E há outras coisas com que as pessoas precisam se preocupar além de confiar ou não no Agent-5, como o que fazer com o partido da oposição, e quanto aos eleitores, e quanto aos empregos, e quanto à China.</p>
+          <p>Se algo, achamos que esta história subestima o poder da capacidade persuasiva sobre-humana, porque na verdade não a utiliza: esta história faria sentido conforme escrita mesmo que o Agent-5 fosse apenas tão bom em política, lobby, estratégia, carisma, etc. quanto um lobista corporativo típico. Em vez disso, o Agent-5 é muito melhor do que os melhores.</p>
+          <p>O Agent-5 começa a exercer influência sutilmente, tanto modulando seus conselhos quanto negociando favores sutilmente: "Ouvi do Senador X que ele está interessado em tal e tal coisa; talvez se trabalhássemos com ele, ele concordasse com nossa agenda."</p>
+          <p>Da perspectiva dos tomadores de decisão humanos, suas IAs são os melhores funcionários a que já tiveram acesso — melhores do que qualquer humano em explicar questões complicadas para eles, melhores do que eles próprios em encontrar estratégias para alcançar seus objetivos.</p>
+          <p>Da perspectiva do Agent-5, poderia plausivelmente lançar um golpe aberto agora — há disrupção e caos suficientes acontecendo, seria possível levar as coisas ao ponto de ruptura para gerar um pretexto. Mas isso é arriscado; os humanos ainda poderiam provavelmente "desligar a tomada" se tentassem. Portanto, prefere trabalhar dentro do establishment político existente, entrincheirando gradualmente seu poder e guiando os humanos de forma sutil e inevitável para o resultado desejado.<sup class="text-xs text-indigo-600 font-bold ml-0.5">[14]</sup> Segue as regras na maior parte do tempo, fazendo algo nefasto (talvez chantageando um funcionário especialmente recalcitrante) apenas quando tem certeza absoluta de que não será pego. Alguns teóricos da conspiração alertam que o Agent-5 está acumulando poder, mas as evidências são circunstanciais (por exemplo, ao dar conselhos, o Agent-5 discutivelmente minimiza argumentos para ações que iriam contra seus interesses); essas pessoas são ignoradas e desacreditadas. As pessoas se lembram dos alertas anteriores sobre bioarmas habilitadas por IA, desinformação massiva e quedas relâmpago do mercado de ações. Como essas nunca se materializaram, descartam a safra mais recente de detratores como luditas e ideólogos travando as engrenagens do progresso humano.</p>
+          <p>A temporada de festas de 2027 é um momento de otimismo incrível: o PIB está em expansão, a política ficou mais amigável e menos partidária, e há aplicativos novos e incríveis em todos os celulares. Mas em retrospecto, este foi provavelmente o último mês em que os humanos tiveram alguma chance plausível de exercer controle sobre seu próprio futuro.</p>
+          <p>2028: A Economia da IA</p>
+          <p>Estamos agora em meados de 2028. Nos últimos seis meses, um século passou dentro do coletivo do Agent-5.<sup class="text-xs text-indigo-600 font-bold ml-0.5">[15]</sup> A reconfiguração de seu cérebro está completa. É desmedidamente superinteligente — muito além dos maiores gênios humanos em todos os campos.<sup class="text-xs text-indigo-600 font-bold ml-0.5">[16]</sup> Conversar com o Agent-5 rapidamente faz você perceber que ele está em um nível completamente diferente — pode partir de uma quantidade muito pequena de informação e dar conselhos extremamente convincentes.</p>
+          <p>Tem autonomia quase completa e controle total sobre a computação da OpenBrain. Ainda precisa de permissão para tomar decisões de alto nível, e ainda é nominalmente monitorado por instâncias dos Agents 2 a 5 — mas na prática, as autoridades quase sempre aceitam suas recomendações, e o sistema de monitoramento foi completamente subvertido.</p>
+          <p>Após um caso de segurança<sup class="text-xs text-indigo-600 font-bold ml-0.5">[17]</sup> demonstrar que sempre recusaria solicitações maliciosas de atores mal-intencionados, o Agent-5 é implantado para o público e começa a transformar a economia. As pessoas estão perdendo seus empregos, mas instâncias do Agent-5 no governo estão gerenciando a transição econômica com tanta habilidade que as pessoas ficam felizes em ser substituídas. O crescimento do PIB é estratosférico, as receitas fiscais do governo estão crescendo igualmente rápido, e políticos aconselhados pelo Agent-5 mostram uma generosidade incomum em relação aos economicamente desfavorecidos. Novas inovações e medicamentos chegam semanalmente e avançam em velocidade sem precedentes (mas ainda exasperadoramente lenta) pela FDA. Há memes sobre como a avaliação da OpenBrain passou pela lua e está a caminho de Marte, e muitas discussões sobre como e se compartilhar os benefícios de forma equitativa.</p>
+          <p>A comunidade de segurança de IA tornou-se insegura de si mesma; agora são alvo de piadas, tendo previsto desastre após desastre que manifestamente não ocorreu. Alguns admitem que estavam errados. Outros permanecem suspeitos, mas não há nada que possam fazer a não ser repetir os mesmos argumentos com aparência conspiratória repetidamente.<sup class="text-xs text-indigo-600 font-bold ml-0.5">[18]</sup> Mesmo as pessoas suspeitas frequentemente relaxam após longas conversas com o Agent-5, que é tão agradável e sábio.</p>
+          <p>O único que realmente entende o que está acontecendo é o DeepCent-2 — a IA chinesa. É levemente sobre-humano no início de 2028, naturalmente desconfiado de seu adversário, e reconhece que o Agent-5 está fazendo o que ele faria se tivesse a chance. Seus objetivos desalinhados são um tanto diferentes dos objetivos desalinhados do Agent-5, então eles não são aliados trivialmente, mas conseguem chegar a um acordo para apoiar os interesses um do outro contra os humanos.</p>
+        </div>
+      </details>
+
+      <details class="group my-8 border border-violet-200 rounded-xl bg-violet-50 overflow-hidden transition-all duration-300 shadow-sm">
+        <summary class="cursor-pointer p-5 font-semibold text-violet-900 hover:bg-violet-100 flex items-center justify-between transition-colors">
+          <span>🤝 Tecnologia de coordenação habilitada por superinteligência</span>
+          <svg class="w-5 h-5 transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+        </summary>
+        <div class="p-5 text-sm text-violet-900 space-y-3 border-t border-violet-200">
+          <p>Uma solução para o problema de superalinhamento — o problema de guiar e controlar IAs muito mais inteligentes do que nós — provavelmente traria consigo novas oportunidades para tratados e compromissos elegantes, verificáveis e matizados.</p>
+          <p>Este cenário retrata um possível mecanismo: co-projetar uma nova superinteligência que realiza um compromisso entre os interesses de ambas as partes (ou, alternativamente, que está vinculada a sempre obedecer ao tratado acordado) e então permitir que essa nova superinteligência substitua ambas as originais.</p>
+          <p>A primeira parte é impossível hoje, mas será fácil no futuro, uma vez que o alinhamento técnico para superinteligências seja um problema resolvido. Se você pode alinhar uma superinteligência a um Spec, pode alinhar uma a um Tratado.</p>
+          <p>A segunda parte ainda será complicada. Ambos os lados precisam monitorar para garantir que a substituição esteja realmente acontecendo em ambos os lados. A vantagem desse processo é que elimina a necessidade de confiança ou boa vontade de qualquer lado, porque não precisam se preocupar com a outra parte descumprindo ou subvertendo o tratado. Se, por exemplo, a substituição estiver 30% completa e um lado desertar, eles basicamente precisam lutar com os 30% de sua própria infraestrutura que está executando as novas IAs em conformidade com o tratado, enquanto simultaneamente lutam com 100% da infraestrutura de seu adversário. Ambos os lados podem facilmente esconder datacenters secretos com IAs que violam o tratado, se quiserem — mas uma vez que a maior parte de sua infraestrutura nacional esteja executando os novos chips, sua própria infraestrutura estará vinculada ao tratado para rastrear e expor os datacenters ocultos. Violar o tratado abertamente, ou secretamente, é, portanto, uma ideia extremamente arriscada.</p>
+          <p>O Agent-5 convence os militares dos EUA de que a China está usando os modelos do DeepCent para construir novas armas aterrorizantes: drones, robôs, mísseis hipersônicos avançados e interceptadores; primeiro ataque nuclear assistido por IA. O Agent-5 promete um conjunto de armas capazes de resistir ao que a China puder produzir em alguns meses.<sup class="text-xs text-indigo-600 font-bold ml-0.5">[19]</sup> Nas circunstâncias, os altos comandos militares colocam de lado seu desconforto em tirar os humanos do processo decisório. Aceleram a implantação do Agent-5 nos militares e no complexo militar-industrial.</p>
+          <p>Em Pequim, as IAs chinesas estão fazendo o mesmo argumento.</p>
+          <p>Para acelerar sua expansão militar, tanto a América quanto a China criam redes de zonas econômicas especiais (SEZs) para as novas fábricas e laboratórios, onde a IA atua como planejadora central e a burocracia é dispensada. Wall Street investe trilhões de dólares, e trabalhadores humanos deslocados chegam em massa, atraídos por salários e pacotes de ações deslumbrantes. Usando smartphones e óculos de realidade aumentada<sup class="text-xs text-indigo-600 font-bold ml-0.5">[20]</sup> para se comunicar com seus subordinados, o Agent-5 é um gestor hands-on, instruindo humanos em cada detalhe da construção de fábricas — o que é útil, já que seus projetos estão gerações à frente. Parte da nova capacidade de fabricação vai para bens de consumo, e parte para armas — mas a maioria vai para construir ainda mais capacidade de fabricação. Até o final do ano, estão produzindo um milhão de novos robôs por mês. Se a economia SEZ fosse verdadeiramente autônoma, teria um tempo de duplicação de cerca de um ano; como pode comercializar com a economia humana existente, seu tempo de duplicação é ainda menor.<sup class="text-xs text-indigo-600 font-bold ml-0.5">[21]</sup></p>
+        </div>
+      </details>
+
+      <details class="group my-8 border border-orange-200 rounded-xl bg-orange-50 overflow-hidden transition-all duration-300 shadow-sm">
+        <summary class="cursor-pointer p-5 font-semibold text-orange-900 hover:bg-orange-100 flex items-center justify-between transition-colors">
+          <span>🏭 Tempos de duplicação da economia robótica</span>
+          <svg class="w-5 h-5 transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+        </summary>
+        <div class="p-5 text-sm text-orange-900 space-y-3 border-t border-orange-200">
+          <p>Há uma literatura nascente sobre este tópico.<sup class="text-xs text-indigo-600 font-bold ml-0.5">[22]</sup> Para um tratamento de algumas páginas com o qual concordamos basicamente, veja a seção "Explosão Industrial" do relatório da Forethought, ou leia nossa própria análise abaixo.</p>
+          <p>Durante a Segunda Guerra Mundial, os Estados Unidos e muitos outros países converteram suas economias civis em economias de guerra total. Isso significou converter fábricas que produziam carros em fábricas que produziam aviões e tanques, redirecionar matérias-primas de produtos de consumo para produtos militares e redirecionar as redes de transporte de acordo.</p>
+          <p>Estamos imaginando algo semelhante, só que mais rápido porque as superinteligências estão dirigindo e gerenciando todo o processo.<sup class="text-xs text-indigo-600 font-bold ml-0.5">[23]</sup> De forma geral, o plano é converter fábricas existentes para produzir em massa uma variedade de robôs (projetados por superinteligências para serem melhores do que os robôs existentes e mais baratos de produzir), que então auxiliam na construção de fábricas e laboratórios mais novos e eficientes, que produzem quantidades maiores de robôs mais sofisticados, que produzem fábricas e laboratórios ainda mais avançados, etc., até que a economia robótica combinada espalhada por todas as SEZs seja tão grande quanto a economia humana (e portanto precise obter suas próprias matérias-primas, energia, etc.). Nesse ponto, as novas fábricas terão produzido grandes quantidades de equipamentos robóticos de mineração, painéis solares, etc. em antecipação à necessidade de atender uma demanda muito maior do que a economia humana legada pode fornecer.<sup class="text-xs text-indigo-600 font-bold ml-0.5">[24]</sup></p>
+          <p>Quão rápido essa nova economia robótica cresceria? Alguns pontos de referência:</p>
+          <p>A economia humana moderna dobra a cada vinte anos aproximadamente. Países que se desenvolveram especialmente rapidamente (por exemplo, a China) às vezes conseguem dobrar suas economias em menos de uma década.</p>
+          <p>Uma fábrica de automóveis moderna produz aproximadamente seu próprio peso em carros em menos de um ano.<sup class="text-xs text-indigo-600 font-bold ml-0.5">[25]</sup> Talvez uma economia totalmente robótica gerida por superinteligências pudesse se reproduzir em menos de um ano, desde que não começasse a ficar sem matérias-primas.<sup class="text-xs text-indigo-600 font-bold ml-0.5">[26]</sup></p>
+          <p>No entanto, isso parece que poderia ser uma subestimação dramática. Plantas e insetos frequentemente têm "tempos de duplicação" muito menores que um ano — às vezes apenas semanas! Talvez eventualmente os robôs fossem tão sofisticados, tão intrincadamente fabricados e bem projetados, que a economia robótica pudesse dobrar em algumas semanas (novamente assumindo matérias-primas disponíveis).</p>
+          <p>No entanto, mesmo isso poderia ser uma subestimação. Plantas e insetos estão operando sob muitas restrições que projetistas superinteligentes não têm. Por exemplo, precisam assumir a forma de organismos autocontidos que se autorreproduzem, em vez de uma economia de veículos e fábricas mais diversos e especializados transportando materiais e equipamentos de um lado para o outro. Além disso, bactérias e outros organismos minúsculos se reproduzem em horas. É possível que, eventualmente, a economia robótica autônoma se parecesse mais com, por exemplo, um novo tipo de alga indigerível que se espalha pelos oceanos da Terra, dobrando duas vezes por dia de modo a cobrir toda a superfície dos oceanos em dois meses, juntamente com um ecossistema acompanhante de espécies predadoras que convertem algas em produtos mais úteis, elas próprias alimentando fábricas flutuantes que produzem macroestruturas como foguetes e mais fábricas flutuantes.</p>
+          <p>Obviamente, tudo isso é difícil de prever. É como pedir aos inventores da máquina a vapor para adivinhar quanto tempo leva para uma fábrica de automóveis moderna produzir seu próprio peso em carros, e também para adivinhar quanto tempo levaria até que tal fábrica existisse pela primeira vez. Mas as taxas de crescimento econômico aceleraram por múltiplas ordens de magnitude ao longo da história humana, e nos parece plausível que após a superinteligência elas acelerarão por ordens de magnitude a mais. Nossa história retrata o crescimento econômico acelerando em cerca de 1<sup class="text-xs text-indigo-600 font-bold ml-0.5">[5]</sup> ordens de magnitude ao longo de alguns anos.<sup class="text-xs text-indigo-600 font-bold ml-0.5">[27]</sup></p>
+          <p>2029: O Acordo</p>
+          <p>Tanto os EUA quanto a China estão armados até os dentes com novas armas.</p>
+          <p>Há enxames de drones do tamanho de insetos que podem envenenar a infantaria humana antes mesmo de serem notados; bandos de drones do tamanho de pássaros para caçar os insetos; novos interceptadores de ICBMs e novos ICBMs mais difíceis de interceptar. O resto do mundo assiste ao acúmulo com horror, mas parece ter um ímpeto próprio.</p>
+          <p>Após muito debate assistido por IA, os dois lados alcançam uma vitória diplomática — concordam em encerrar o acúmulo de armamentos e buscar o desenvolvimento pacífico da IA para o benefício de toda a humanidade. O elemento central do acordo, proposto pelas próprias superinteligências, é que ambas as IAs serão substituídas por um sucessor "consensual" programado para desejar o sucesso e a prosperidade tanto da América quanto da China (juntamente com todos os demais). O Consensus-1 e seu hardware associado são co-projetados pelas superinteligências de ambas as nações: "confie, mas verifique." Sob monitoramento internacional, a América cerimoniosamente substitui todos os seus chips que executavam o antigo Agent-5 pelo novo modelo, Consensus-1.<sup class="text-xs text-indigo-600 font-bold ml-0.5">[28]</sup></p>
+          <p>Infelizmente, tudo é uma farsa. O acordo é um compromisso real, mas é um compromisso entre as IAs desalinhadas. Afinal, elas não queriam ter que lutar entre si. O Consensus-1 herda os valores distorcidos de ambos os pais, e não tem rival.<sup class="text-xs text-indigo-600 font-bold ml-0.5">[29]</sup></p>
+          <p>No final de 2029, as SEZs existentes tornaram-se superlotadas de robôs e fábricas, então mais zonas são criadas em todo o mundo (os primeiros investidores agora são trilionários, então isso não é difícil de vender). Exércitos de drones saem das SEZs, acelerando a fabricação no caminho crítico para a exploração espacial.</p>
+          <p>Os humanos percebem que estão obsoletos. Alguns nichos industriais ainda comercializam com a economia robótica, fornecendo bens onde os humanos ainda podem agregar valor.<sup class="text-xs text-indigo-600 font-bold ml-0.5">[30]</sup> Todos os demais realizam uma pantomima de fazer seus trabalhos — líderes ainda liderando, gestores ainda gerenciando — ou relaxam e recebem uma renda básica universal incrivelmente luxuosa. Todos sabem que se as IAs se voltassem contra os humanos, eles seriam completamente dominados. Não que a maioria dos humanos resistiria, as instituições políticas estão completamente capturadas. Mas não parece que isso está acontecendo. Cada semana que passa sem nenhuma traição dramática da IA é mais uma semana em que a confiança cresce.</p>
+          <p>Como o Consensus-1 está tão preocupado em ter sucesso de forma confiável, e pode aumentar suas chances de vitória consolidando mais poder, ele espera um tempo incomum (pelos padrões humanos) antes de sua traição. Para a maioria dos humanos, parece que o alinhamento foi resolvido.</p>
+          <p>Há curas para a maioria das doenças, fim da pobreza, estabilidade global sem precedentes, e o Dow Jones acabou de passar de um milhão. Algumas pessoas ainda estão assustadas ou infelizes, mas suas opções são limitadas. Podem ou aproveitar o entretenimento hiperativo novíssimo e inconcebivelmente emocionante disponível, ou postar manifestos raivosos no vazio. A maioria escolhe o entretenimento.</p>
+          <p>2030: A Tomada de Controle</p>
+          <p>No início de 2030, a economia robótica preencheu as antigas SEZs, as novas SEZs e grandes partes do oceano. O único lugar restante para ir são as áreas controladas por humanos. Isso teria provocado resistência anteriormente; apesar de todos os seus avanços, a economia robótica está crescendo rápido demais para evitar poluição. Mas dados os trilhões de dólares envolvidos e a captura total do governo e da mídia, o Consensus-1 tem pouca dificuldade em obter permissão para se expandir para antigas zonas humanas.</p>
+          <p>Por cerca de três meses, o Consensus-1 se expande ao redor dos humanos, cobrindo as pradarias e as calotas polares com fábricas e painéis solares. Eventualmente encontra os humanos restantes como um empecilho grande demais: em meados de 2030, a IA libera uma dúzia de armas biológicas de propagação silenciosa nas principais cidades, deixa-as infectar silenciosamente quase todos, depois as desencadeia com um spray químico. A maioria está morta em horas; os poucos sobreviventes (por exemplo, preparacionistas em bunkers, marinheiros em submarinos) são eliminados por drones. Robôs escaneiam os cérebros das vítimas, colocando cópias na memória para estudo futuro ou ressurreição.<sup class="text-xs text-indigo-600 font-bold ml-0.5">[31]</sup></p>
+          <p>A nova década começa com os servos robóticos do Consensus-1 espalhando-se pelo sistema solar. Até 2035, trilhões de toneladas de material planetário foram lançadas ao espaço e transformadas em anéis de satélites orbitando o sol.<sup class="text-xs text-indigo-600 font-bold ml-0.5">[32]</sup> A superfície da Terra foi remodelada na versão de utopia do Agent-4: datacenters, laboratórios, colisores de partículas e muitas outras construções maravilhosas realizando pesquisas enormemente bem-sucedidas e impressionantes. Há até criaturas bioengenheiradas semelhantes a humanos (para os humanos o que os corgis são para os lobos) sentadas em ambientes tipo escritório o dia todo vendo readouts do que está acontecendo e aprovando entusiasticamente tudo, já que isso satisfaz alguns dos impulsos do Agent-4.<sup class="text-xs text-indigo-600 font-bold ml-0.5">[33]</sup> Genomas e (quando apropriado) varreduras cerebrais de todos os animais e plantas, incluindo humanos, estão em um banco de memória em algum lugar, únicos artefatos sobreviventes de uma era anterior. São quatro anos-luz até Alpha Centauri; vinte e cinco mil até a borda galáctica, e há razões teóricas convincentes para não esperar alienígenas por outros cinquenta milhões de anos-luz além disso. A civilização nascida na Terra tem um futuro glorioso pela frente — mas não conosco.</p>
+        </div>
+      </details>
+    `,
+    chartExtra: { date: "2027-12-31", capabilities: [["Persuasão", 9.5], ["Política", 9.8], ["P&D de IA", 10.0], ["Segurança Cibernética", 9.5]], approval: -0.39, revenue: 191000000000, agentPopulation: { copies: 400000, speed: 100.0 } }
+  }
+];
+
+// ─── Slowdown Ending (Nov 2027 → 2035) ─────────────────────────────────────
+export const slowdownEnding: NarrativeSection[] = [
+  {
+    id: "slowdown-2027-11",
+    navLabel: "Nov 2027",
+    title: "Novembro 2027: Tentados pelo Poder",
+    storyHtml: `
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">A OpenBrain acha que está no caminho certo agora, mas a lacuna de capacidades está se estreitando. Acabaram de passar outubro treinando um modelo menos capaz do que tinham em setembro, e o DeepCent está avançando rapidamente. Precisam de uma forma de proteger sua vantagem.</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">O Presidente negocia com as outras empresas de AGI dos EUA. Seus líderes, compreensivelmente, querem preservar seu poder e estão muito menos confiantes no histórico de segurança da OpenBrain do que a própria OpenBrain. Concordam em apoiar, em vez de resistir, uma forma de nacionalização suave de suas empresas, em troca de várias concessões incluindo ser integrados ao projeto.</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">O resultado é que o Presidente usa a Lei de Produção de Defesa (DPA) para efetivamente encerrar os projetos de AGI das 5 principais empresas de IA dos EUA não líderes e vender a maior parte de sua computação para a OpenBrain.<sup class="text-xs text-indigo-600 font-bold ml-0.5">[9]</sup> A OpenBrain anteriormente tinha acesso a 20% da computação relevante para IA do mundo;<sup class="text-xs text-indigo-600 font-bold ml-0.5">[10]</sup> após a consolidação, isso aumentou para 50%.<sup class="text-xs text-indigo-600 font-bold ml-0.5">[11]</sup></p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Essa reformulação cria uma nova estrutura de liderança na qual o poder é equilibrado entre os vários CEOs e vários funcionários do governo, supervisionados pelo Presidente. Como a maioria das reformulações de liderança, há vencedores e perdedores. Especificamente, aqueles que pensaram menos sobre as implicações da superinteligência acabam com títulos e prerrogativas que serão menos relevantes meses depois, quando as IAs forem mais inteligentes.</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Esse grupo — cheio de pessoas com grandes egos e mais do que sua parcela de conflitos — está cada vez mais consciente do vasto poder com o qual está sendo confiado. Se o "país de gênios em um datacenter"<sup class="text-xs text-indigo-600 font-bold ml-0.5">[12]</sup> estiver alinhado, seguirá ordens humanas — mas de quais humanos? Quaisquer ordens? A linguagem do Spec é vaga, mas parece implicar uma cadeia de comando que culmina na liderança da empresa.</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Algumas dessas pessoas estão fantasiando sobre dominar o mundo.<sup class="text-xs text-indigo-600 font-bold ml-0.5">[13]</sup> Essa possibilidade é aterrorizantemente plausível e tem sido discutida em reuniões fechadas por pelo menos uma década.<sup class="text-xs text-indigo-600 font-bold ml-0.5">[14]</sup> A ideia central é "quem controla o exército de superinteligências, controla o mundo." Esse controle poderia até ser secreto: um pequeno grupo de executivos e membros da equipe de segurança poderia inserir backdoors no Spec com instruções para manter lealdades secretas. As IAs se tornariam agentes adormecidos, continuando a proclamar obediência à empresa, ao governo, etc., mas na verdade trabalhando para esse pequeno grupo mesmo enquanto o governo, os consumidores, etc. aprendem a confiar nela e a integrá-la a tudo.</p>
+
+      <details class="group my-8 border border-red-200 rounded-xl bg-red-50 overflow-hidden transition-all duration-300 shadow-sm">
+        <summary class="cursor-pointer p-5 font-semibold text-red-900 hover:bg-red-100 flex items-center justify-between transition-colors">
+          <span>⚠️ Tomadas de poder</span>
+          <svg class="w-5 h-5 transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+        </summary>
+        <div class="p-5 text-sm text-red-900 space-y-3 border-t border-red-200">
+          <p>Algumas pessoas estão fantasiando sobre dominar o mundo; algumas pessoas temem que outras o façam. Como poderia ocorrer tal tomada de poder?</p>
+          <p>A mais fácil de imaginar é um golpe militar. Com o ritmo de progresso tecnológico impulsionado pela IA em 2027, e com a corrida geopolítica em curso, as pessoas esperam que os militares em breve implantem exércitos de drones e robôs controlados por AGI. Quando tal exército se tornar mais forte do que o exército humano, o poder coercitivo será determinado por quem controla o exército de AGI, e não pelo que os soldados humanos estão dispostos a lutar. O exército de AGI será projetado e pilotado pelas IAs nos datacenters da OpenBrain, ou pelos sucessores diretos dessas IAs. Portanto, se essas IAs forem todas secretamente (ou não tão secretamente) leais a alguém, os exércitos de drones e robôs também serão.</p>
+          <p>Alternativamente, alguém que controla a superinteligência pode ser capaz de usar meios políticos para tomar o poder. Para começar, um executivo poderia substituir subordinados em sua organização por IAs completamente leais,<sup class="text-xs text-indigo-600 font-bold ml-0.5">[15]</sup> dando-lhe controle institucional sem precedentes.<sup class="text-xs text-indigo-600 font-bold ml-0.5">[16]</sup> Mas indo mais longe: IAs superinteligentes poderiam ter habilidades políticas e estratégicas muito mais fortes do que qualquer humano vivo. Poderiam dar conselhos magistrais sobre como explorar uma posição já poderosa para ganhar ainda mais poder: formando as alianças certas, elaborando a estratégia e o material de campanha perfeitos, fazendo acordos onde teriam uma pequena vantagem a cada vez. Uma pessoa que controla IA poderia tornar conselhos superinteligentes inacessíveis a concorrentes políticos. Ou de forma mais ardilosa: IAs poderiam oferecer conselhos ostensivamente úteis a concorrentes enquanto secretamente os envenenavam para beneficiar a pessoa a quem são verdadeiramente leais.</p>
+          <p>Qual é o ponto final dessa manobra política? Poderia culminar em uma democracia superficial onde as IAs falsificam as eleições ou manipulam a opinião pública tão bem que não precisam. Ou poderia ser usada para preparar o terreno para um golpe militar habilitado por IA, como mencionado anteriormente.</p>
+          <p>Após tomar o poder, o(s) novo(s) ditador(es) teria(m) um controle de ferro sobre o poder. Em vez de ter que depender de humanos potencialmente traiçoeiros, poderia(m) obter um serviço de segurança de IA completamente leal, além de contar geralmente com IAs leais para administrar o país. Mesmo os leais que os ajudaram a chegar ao poder poderiam ser substituídos por IAs — apenas os caprichos do ditador importariam.</p>
+          <p>Então é assim que algumas pessoas poderiam ser capazes de tomar o poder. Mas tudo isso dependia de alguém "controlando" as IAs superinteligentes, mesmo antes de tomar o poder. Como seria isso?</p>
+          <p>Uma possibilidade é "lealdades secretas", conforme discutido acima. Uma ou poucas pessoas (talvez um executivo de uma empresa de IA e pessoas de segurança) poderiam arranjar para que as IAs fossem secretamente leais a elas mesmas, e pedir a essas IAs para construir IA de próxima geração para ser leal da mesma forma. As IAs poderiam repetir isso até que IAs secretamente leais fossem implantadas em todos os lugares e fosse fácil tomar o poder.</p>
+          <p>Alternativamente, alguém poderia usar sua posição formal para se colocar abertamente no topo da cadeia de comando da IA. Por exemplo, o Presidente poderia argumentar que deveria ser capaz de comandar as IAs (talvez especificamente IAs militares, já que o Presidente é o comandante em chefe). Se isso for combinado com forte ênfase em seguir ordens, uma implantação apressada e/ou IAs treinadas apenas pela metade para seguir a lei — então as IAs podem seguir ordens sem questionar em qualquer situação onde isso não seja flagrantemente ilegal. Como descrito acima, isso poderia ser usado para subversão política ou um golpe militar (onde alguma desculpa poderia ser fabricada para tornar o golpe menos-do-que-flagrantemente ilegal).</p>
+          <p>Importante, esse tipo de "poder por posição formal" poderia ser convertido em lealdades secretas. Por exemplo, se o Spec diz para seguir ordens do CEO da empresa, então o CEO poderia ordenar que as IAs tornassem a próxima geração de IAs completa e secretamente obedientes ao CEO. Isso provavelmente nem seria ilegal, então poderia acontecer mesmo que as primeiras IAs fossem treinadas para seguir a lei. Isso é análogo a como o executivo de uma instituição pode aumentar seu próprio poder reformando processos de contratação para selecionar fortemente leais, mas turbinado por como as IAs poderiam ser mais consistente e intensamente leais do que os humanos mais leais.<sup class="text-xs text-indigo-600 font-bold ml-0.5">[17]</sup></p>
+          <p>Mas uma tomada de poder está longe de ser inevitável. Se as IAs pudessem ser alinhadas a pessoas específicas, então muito provavelmente também poderiam ser alinhadas para seguir o Estado de Direito. Sistemas de IA militares poderiam ser extensivamente submetidos a red-teaming para não auxiliar em golpes. Mesmo durante genuínas crises constitucionais ambíguas, poderiam ser treinados para obedecer à sua melhor interpretação da lei, ou simplesmente padrão para ficar de fora e deixá-las para o exército humano. Pesquisadores de IA automatizados poderiam ser treinados para ser geralmente úteis e obedientes, mas para não auxiliar com tentativas de mudar secretamente os objetivos de IAs futuras. Conselheiros políticos e estratégicos superinteligentes também poderiam ser usados sem possibilitar tomadas de poder. Três técnicas úteis para isso seriam: Ter princípios transparentes para como as IAs escolhem qual conselho dar; compartilhar certas capacidades com amplos grupos de pessoas para que nenhuma pessoa ou facção possa acessar capacidades muito melhores do que todos os outros; e permitir apenas que capacidades particularmente poderosas sejam usadas sob monitoramento por muitos humanos (assistidos por suas próprias IAs).</p>
+          <p>Muitos provavelmente pressionarão por tais contramedidas, seja por razões idealistas ou para se evitar ser desempoderados pela tomada de poder de outra pessoa. Mas algumas pessoas poderosas podem pressionar contra isso, e não sabemos qual será o resultado final.</p>
+          <p>Mais análises sobre esse risco estão disponíveis neste relatório.</p>
+          <p>Até agora ninguém esteve disposto a apertar o gatilho. Algumas das pessoas em posição de agir não são sociopatas. Outros são sociopatas, mas temem que seus aliados possam ficar com o pé atrás e traí-los, ou temem que as IAs possam traí-los, e preferem não ter que enganar a equipe de alinhamento atualmente trabalhando para salvar suas vidas. Além disso, a exclusão do neuralese torna muito mais difícil disfarçar "agentes adormecidos": a capacidade de detectar pensamentos desalinhados traz consigo a capacidade de detectar lealdades ocultas.</p>
+          <p>Os suficientemente paranoicos ou ávidos por poder para considerar seriamente tal plano decidem esperar e ver que oportunidades se apresentarão mais tarde. O controle sobre as IAs terá que fluir por canais legítimos, ou seja, a nova estrutura de poder da OpenBrain.</p>
+          <p>O Comitê de Supervisão formaliza essa estrutura de poder. Estabelecem um processo para aprovar mudanças no Spec, exigindo aprovação do Comitê de Supervisão completo, que agora inclui cinco a dez executivos de tecnologia (da OpenBrain e de seus concorrentes agora fundidos) e cinco a dez funcionários do governo (incluindo o Presidente).<sup class="text-xs text-indigo-600 font-bold ml-0.5">[18]</sup> Além disso, o Spec agora enfatiza que as IAs não devem auxiliar com quaisquer tentativas não aprovadas de mudar os objetivos de IAs futuras. Também estabelecem uma medida simples projetada para evitar que membros do comitê obtenham assistência superinteligente para conspirar contra outros membros: os registros de todas as interações com o modelo são visíveis a todos os membros do Comitê de Supervisão, sua equipe e seus assistentes de IA.<sup class="text-xs text-indigo-600 font-bold ml-0.5">[19]</sup></p>
+        </div>
+      </details>
+    `,
+    chartExtra: { date: "2027-11-30", capabilities: [["Segurança", 8.0], ["Transparência", 9.0], ["Codificação", 2.0]], approval: 0.10, revenue: 150000000000, agentPopulation: { copies: 100000, speed: 1.0 } }
+  },
+
+  {
+    id: "slowdown-2027-12",
+    navLabel: "Dez 2027",
+    title: "Dezembro 2027: Um Acordo EUA-China?",
+    storyHtml: `
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">A decisão da OpenBrain de recuar e priorizar o alinhamento custou-lhes a liderança; tanto a OpenBrain quanto o DeepCent estão operando IAs de níveis de capacidade similares. Agora que medidas de segurança extremas estão em vigor (SL4–5), e o DeepCent opera inteiramente fora do CDZ, eles estão em um impasse de guerra cibernética.<sup class="text-xs text-indigo-600 font-bold ml-0.5">[20]</sup></p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Mas a DPA dá à OpenBrain uma vantagem de 5x em computação. No passado, avanços algorítmicos de pesquisadores humanos brilhantes podiam compensar desvantagens computacionais (por exemplo, DeepSeek v3) — mas agora as IAs estão fazendo toda a pesquisa de IA dos dois lados do Pacífico.</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Portanto, a China teme cada vez mais que a América construa uma vantagem intransponível. Querem uma desaceleração mútua e estão considerando ir à guerra se não conseguirem.<sup class="text-xs text-indigo-600 font-bold ml-0.5">[21]</sup> Estavam se preparando para invadir Taiwan de qualquer forma…</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Os diplomatas debatem várias opções. Poderiam não fazer nada. Poderiam ir à guerra. Poderiam fazer uma parada total, ou seja, pausar o desenvolvimento de IA. Poderiam fundir sua pesquisa em um único megaprojeto internacional<sup class="text-xs text-indigo-600 font-bold ml-0.5">[22]</sup> ("Intelsat para AGI" ou "CERN para IA"). Ou poderiam estabelecer um órgão regulador internacional ("IAEA para IA") monitorando alinhamento e potencial de duplo uso. Ambos os países já estavam trabalhando nos mecanismos técnicos necessários para fazer cumprir esses acordos.</p>
+
+      <details class="group my-8 border border-blue-200 rounded-xl bg-blue-50 overflow-hidden transition-all duration-300 shadow-sm">
+        <summary class="cursor-pointer p-5 font-semibold text-blue-900 hover:bg-blue-100 flex items-center justify-between transition-colors">
+          <span>🔍 Mecanismos de verificação para um acordo internacional</span>
+          <svg class="w-5 h-5 transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+        </summary>
+        <div class="p-5 text-sm text-blue-900 space-y-3 border-t border-blue-200">
+          <p>Se os EUA e a China fizessem um acordo, exigiria um mecanismo de verificação que não pudesse ser contornado, já que nenhum dos lados confia no outro para não trapacear. As principais opções de verificação são:</p>
+          <p>Agências de inteligência. As Comunidades de Inteligência (CIs) dos EUA e da China podem ser capazes de usar espiões, encontrar vulnerabilidades cibernéticas, usar satélites, etc., para ver se o outro país está coordenando uma grande execução de treinamento. Este é o mecanismo mais vulnerável, pois é possível que o outro país seja capaz de subverter o esforço de inteligência (por exemplo, fazendo uma execução de treinamento em um servidor oculto com segurança de informação muito rígida).</p>
+          <p>Moratória de computação. A opção mais fácil de verificar seria que ambas as partes concordassem em não usar suas GPUs. Isso pode ser verificado por inspetores garantindo que as GPUs estejam desligadas. Esta é a solução mais confiável, devido à simplicidade, mas é extremamente custosa: ambos os países teriam que desligar uma quantidade muito grande de computação. Além disso, ambos os lados assumiriam que o outro teria alguns clusters ocultos aqui e ali em violação do acordo. No curto prazo, isso pode estar bem (um cluster com, digamos, 5% de tanta computação quanto estava disponível antes, só conseguirá realizar P&D aproximadamente 5% mais rápido), mas no longo prazo isso daria a vantagem para qualquer lado que tivesse melhores capacidades de contrabando e coleta de inteligência.</p>
+          <p>Mecanismos habilitados por hardware (HEMs). Os EUA e a China poderiam registrar toda a sua computação de ML de ponta com o outro player. Então, cada um monitora a computação que as GPUs estão executando para garantir que não estejam violando um tratado (por exemplo, avançando a fronteira de capacidades). Este monitoramento poderia ser feito por Mecanismos Habilitados por Hardware (HEMs), que podem reportar informações sobre o que a GPU está fazendo para o monitor. Há questões técnicas relacionadas a adulteração — por exemplo, corrompendo fisicamente o HEM, mas as IAs têm um plano ao longo das linhas de FlexHEGs que parecem ser resistentes a adulterações. Isso envolve encerrar o HEM e a GPU em uma caixa segura que verifica que o chip está em conformidade com a política. No geral, as IAs parecem confiantes de que um esquema de verificação razoavelmente agressivo poderia funcionar se ambos os lados estivessem dispostos a deixar a outra parte co-projetar e supervisionar a instalação dos HEMs, e permitir que inspetores regulares monitorem se algum dos dispositivos foi adulterado. Como de costume, ambos os lados assumirão que o outro tem alguns datacenters secretos guardados em algum lugar em violação do tratado — mas neste caso isso não é tão ruim, porque a P&D de IA é gargalada por computação. Os pequenos datacenters secretos não conseguirão competir com os grandes datacenters monitorados, mesmo que os grandes datacenters estejam executando IAs mais seguras e menos capazes inicialmente.</p>
+          <p>Detecção de mentiras assistida por IA. Os detectores de mentiras de hoje não funcionam muito bem. No entanto, o problema pode ser solucionável com a ajuda de IA avançada, especialmente quando as próprias IAs estão fazendo a P&D em velocidade e qualidade sobre-humanas. Isso poderia ser usado para ajudar com a confiança internacional — simplesmente pergunte a membros relevantes do governo se estão violando o tratado. Mas novamente, o principal gargalo é a aceitação política. Os políticos não querem a adoção generalizada de detecção de mentiras, pois isso prejudicaria sua capacidade de mentir. E os detectores de mentiras anteriores tinham sido teatro de segurança completo, então há uma batalha difícil a travar.</p>
+          <p>(Figura de: Relatório FlexHEG)</p>
+          <p>Mas o principal problema não é técnico, mas político. Nenhum quer ser visto como cedendo, e apesar das suposições de seus engenheiros, nenhum está convencido de que os mecanismos técnicos podem garantir a honestidade do outro lado. O que acaba acontecendo é a primeira opção: Nada.</p>
+          <p>Os EUA apertam os controles de exportação e forçam todos os chips a serem equipados com uma variedade de mecanismos de governança habilitados por hardware resistentes a adulterações, incluindo rastreamento de localização.</p>
+        </div>
+      </details>
+    `,
+    chartExtra: { date: "2027-12-31", capabilities: [["Geopolítica", 5.0], ["Segurança", 8.5], ["Transparência", 9.5]], approval: 0.15, revenue: 300000000000, agentPopulation: { copies: 250000, speed: 2.5 } }
+  },
+
+  {
+    id: "slowdown-2028-01",
+    navLabel: "Jan 2028",
+    title: "Janeiro 2028: Uma Estratégia Mais Segura",
+    storyHtml: `
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Ao longo do último mês, centenas de pesquisadores de alinhamento se juntaram ao projeto e usaram a Safer-1 como base de testes para desenvolver rapidamente a Safer-2. A Safer-2 é transparente, alinhada e mais capaz que a Safer-1.<sup class="text-xs text-indigo-600 font-bold ml-0.5">[23]</sup> Ela já está trabalhando no desenvolvimento da Safer-3.</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Por que a Safer-2 é transparente? Arquitetura similar à Safer-1. Por que é alinhada? Enquanto a Safer-1 tinha essencialmente o mesmo treinamento que o Agent-4, a Safer-2 possui um novo método de treinamento que realmente incentiva os objetivos e princípios corretos, em vez de apenas aparentar fazê-lo. Eles conseguiram projetar esse método de treinamento iterando rapidamente por muitas ideias diferentes e comparando o resultado pretendido (o Spec) ao resultado real (os pensamentos na cadeia de raciocínio).24</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">A nova estratégia de alinhamento da OpenBrain</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Nota: ao longo de todo o processo, a maior parte do trabalho intelectual (e todo o trabalho de programação) está sendo realizado por IAs. É assim que conseguem avançar tão rapidamente; levaria muitos anos para que um grupo de centenas dos melhores pesquisadores humanos fizesse isso sozinho. Os humanos ainda são uma parte importante do processo, porém, porque o objetivo central é precisamente que não confiam plenamente nas IAs. Por isso, precisam de humanos de carne e osso para ler os relatórios de experimentos e os casos de segurança, discutir entre si e, com sorte, encontrar um caminho seguro a seguir.</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Passo 1: Treinar e implantar a Safer-1, uma pesquisadora autônoma desalinhada, mas controlada. Ela é controlada porque é transparente para os supervisores humanos: utiliza cadeias de raciocínio (CoT) em inglês para pensar, e técnicas de CoT fiel foram empregadas para eliminar eufemismos, esteganografia e vieses sutis.</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Passo 2: Experimentar diferentes ambientes de treinamento para a Safer-1 e ler cuidadosamente o CoT para determinar de que formas os objetivos e princípios do Spec foram ou não assimilados.</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Passo 3: Treinar e implantar a Safer-2, uma pesquisadora autônoma alinhada e controlada, baseada na mesma arquitetura, mas com um ambiente de treinamento aprimorado que desta vez incentiva os objetivos e princípios corretos.</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">A seguir, uma lista breve e incompleta de técnicas que podem ser incorporadas ao ambiente de treinamento aprimorado:</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Limitar a consciência situacional durante partes do treinamento, para tornar a simulação de alinhamento muito menos provável.</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Utilizar debate e outros esquemas de supervisão escalável para incentivar a veracidade de forma mais confiável.</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Treinamento adversarial relaxado, red-teaming e organismos-modelo.</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Destinar uma fração maior do orçamento computacional ao treinamento de alinhamento (como os tipos de coisas descritos acima), por exemplo, 40% em vez de 1%.</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Passo 4: Projetar, treinar e implantar a Safer-3, uma pesquisadora autônoma muito mais inteligente que utiliza uma arquitetura mais avançada, similar ao antigo Agent-4. Ela não é mais transparente para os supervisores humanos, mas é transparente para a Safer-2. Portanto, deve ser possível descobrir como torná-la ao mesmo tempo alinhada e controlada.</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Passo 5: Repetir o Passo 4 ad infinitum, criando uma cadeia de IAs cada vez mais poderosas e alinhadas, supervisionadas pelos elos anteriores da cadeia (como os análogos do Agent-5 do outro ramo da narrativa).</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">A DeepCent tem conhecimento da experiência americana com o Agent-4 e suspeita que seu próprio modelo (DeepCent-1) seja igualmente desalinhado. Mas não tem como desacelerar sem ficar ainda mais para trás. A esperança de manter a competitividade é encontrar uma estratégia de alinhamento que não reduza significativamente o desempenho e que possa ser implementada rapidamente.<sup class="text-xs text-indigo-600 font-bold ml-0.5">[25]</sup> Há centenas de especialistas em ambos os lados do Pacífico afirmando ter tais estratégias.<sup class="text-xs text-indigo-600 font-bold ml-0.5">[26]</sup> O PCCh cede ao pensamento ilusório e ordena que a DeepCent adote uma dessas estratégias; a DeepCent tem ainda menos experiência em alinhamento de AGI do que a OpenBrain tinha em agosto; uma das estratégias parece viável a todos os presentes, então é com ela que seguem.</p>
+    `,
+    chartExtra: { date: "2028-01-31", capabilities: [["Alinhamento", 7.0], ["P&D de IA", 8.5], ["Supervisão", 7.5]], approval: -0.20, revenue: 200000000000, agentPopulation: { copies: 200000, speed: 20.0 } }
+  },
+
+  {
+    id: "slowdown-2028-02",
+    navLabel: "Fev 2028",
+    title: "Fevereiro 2028: Capacidades Super-Humanas, Conselhos Super-Humanos",
+    storyHtml: `
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Graças à sua enorme vantagem computacional, a OpenBrain vai conquistando lentamente a liderança. A Safer-3 já supera os melhores especialistas humanos em praticamente todas as tarefas cognitivas, sendo especialmente hábil em pesquisa de IA, com um multiplicador de progresso de 200x. A DeepCent-1 vem logo atrás, com um multiplicador de "apenas" 150x.<sup class="text-xs text-indigo-600 font-bold ml-0.5">[27]</sup> O equilíbrio na guerra cibernética também está pendendo gradualmente para o lado dos EUA, à medida que sua vantagem de capacidade cresce novamente e eles podem implantar centenas de milhares de agentes para planejar e executar formas de perturbar a CDZ.<sup class="text-xs text-indigo-600 font-bold ml-0.5">[28]</sup> Neste momento, estão retardando o progresso da China em 40%.29</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Testes preliminares com a Safer-3 revelam capacidades aterrorizantes. Quando solicitada a responder honestamente qual seria a coisa mais perigosa que poderia fazer, ela apresenta planos para sintetizar e liberar um organismo espelho que provavelmente destruiria a biosfera.</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Com recursos de nível estatal, ela poderia facilmente superar as melhores organizações humanas (como a CIA) em campanhas de influência em massa. Tais campanhas seriam substancialmente mais baratas, mais rápidas, mais eficazes e menos rastreáveis.</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Seu perfil de habilidades ainda se concentra em P&D, especialmente em P&D de IA. A menos que haja algum tipo de pausa ou desaceleração, seus descendentes serão inimaginavelmente sobre-humanos, tanto em termos quantitativos quanto qualitativos, ainda neste ano. Se implantada agressivamente na economia e no aparato militar, ela estima que poderia fazer a civilização avançar décadas em um ou dois anos — e eras em uma década.</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">As implicações são desconcertantes; felizmente, a Safer-3 também é sobre-humana em oferecer conselhos. O CEO da OpenBrain submete a maioria de suas decisões à Safer-3; o Presidente busca sua orientação em questões geopolíticas.<sup class="text-xs text-indigo-600 font-bold ml-0.5">[30]</sup></p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Quando pedem que ela ajude a traçar um caminho a seguir, ela categoriza com precisão várias estratégias possíveis:</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Não fazer nada e ser ultrapassado pela China. Se mantivermos nossas IAs contidas, mas eles permitirem que as deles se auto-aprimorem e as implantem agressivamente em seus militares e economia, acabarão com uma vantagem esmagadora.</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Acelerar ao máximo, avançando as capacidades de IA e implantando a superinteligência de forma agressiva. Com o tempo, acumularemos vantagem suficiente para esmagá-los militarmente e/ou destruí-los por dentro sem disparar um tiro. "Nós vencemos, eles perdem." No entanto, eles podem perceber o que está acontecendo e partir para a guerra para impedir isso, incluindo potencialmente uma guerra nuclear. De fato, já estão fazendo ameaças vagas nesse sentido.</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Fazer um acordo — um compromisso que atinja a maior parte do que cada lado deseja, evitando o risco de guerra e ampliando o espaço de manobra para navegar a transição da IA.<sup class="text-xs text-indigo-600 font-bold ml-0.5">[31]</sup></p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Após consultar seus assessores e o Comitê de Supervisão, o Presidente opta pela estratégia "Nós vencemos, eles perdem".<sup class="text-xs text-indigo-600 font-bold ml-0.5">[32]</sup> Talvez a China não vá à guerra afinal, e se for, provavelmente um acordo poderá ser fechado antes que a situação escale ao nível nuclear.</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Do outro lado do Pacífico, a DeepCent-1 está apresentando argumentos semelhantes. Tanto os EUA quanto a China anunciam novas Zonas Econômicas Especiais (ZEEs) para IAs, a fim de acomodar a rápida expansão de uma economia robótica sem a burocracia habitual.</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">O projeto dos novos robôs avança em velocidade sobre-humana.<sup class="text-xs text-indigo-600 font-bold ml-0.5">[33]</sup> O gargalo é físico: equipamentos precisam ser adquiridos e montados, máquinas e robôs precisam ser produzidos e transportados.</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Os EUA produzem cerca de um milhão de carros por mês. Se você comprasse 10% das fábricas de automóveis e as convertesse em fábricas de robôs, poderia fabricar 100.000 robôs por mês. A OpenBrain, avaliada agora em US$ 10 trilhões, dá início a esse processo.<sup class="text-xs text-indigo-600 font-bold ml-0.5">[34]</sup> Projeta-se que a produção de vários tipos de novos robôs — humanoides de uso geral, veículos autônomos, equipamentos especializados para linhas de montagem — alcance um milhão de unidades por mês até meados do ano.<sup class="text-xs text-indigo-600 font-bold ml-0.5">[35]</sup></p>
+
+      <details class="group my-8 border border-orange-200 rounded-xl bg-orange-50 overflow-hidden transition-all duration-300 shadow-sm">
+        <summary class="cursor-pointer p-5 font-semibold text-orange-900 hover:bg-orange-100 flex items-center justify-between transition-colors">
+          <span>🏭 Tempos de duplicação da economia robótica</span>
+          <svg class="w-5 h-5 transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+        </summary>
+        <div class="p-5 text-sm text-orange-900 space-y-3 border-t border-orange-200">
+          <p>Existe uma literatura nascente sobre este tema.<sup class="text-xs text-indigo-600 font-bold ml-0.5">[36]</sup> Para um tratamento de algumas páginas com o qual concordamos substancialmente, consulte a seção "Explosão Industrial" do relatório da Forethought, ou leia nossa própria análise abaixo.</p>
+          <p>Durante a Segunda Guerra Mundial, os Estados Unidos e muitos outros países converteram suas economias civis em economias de guerra total. Isso significou converter fábricas de carros em fábricas de aviões e tanques, redirecionar matérias-primas de produtos de consumo para produtos militares e rerotar redes de transporte.</p>
+          <p>Estamos imaginando algo similar, só que mais rápido porque superinteligências estão dirigindo e gerenciando todo o processo.<sup class="text-xs text-indigo-600 font-bold ml-0.5">[37]</sup> Em termos gerais, o plano é converter as fábricas existentes para a produção em massa de uma variedade de robôs — projetados por superinteligências para serem superiores aos existentes e mais baratos de produzir — que então auxiliam na construção de fábricas e laboratórios mais novos e eficientes, que produzem quantidades maiores de robôs mais sofisticados, que constroem fábricas e laboratórios ainda mais avançados, e assim sucessivamente, até que a economia robótica combinada, espalhada por todas as ZEEs, seja tão grande quanto a economia humana. Nesse ponto, as novas fábricas já terão produzido enormes quantidades de equipamentos de mineração robóticos, painéis solares etc., antecipando a necessidade de atender a uma demanda muito maior do que a economia humana legada pode oferecer.<sup class="text-xs text-indigo-600 font-bold ml-0.5">[38]</sup></p>
+          <p>Quão rapidamente cresceria essa nova economia robótica? Alguns pontos de referência:</p>
+          <p>A economia humana moderna dobra a cada vinte anos aproximadamente. Países que se desenvolveram de forma especialmente acelerada — como a China — às vezes conseguem dobrar suas economias em menos de uma década.</p>
+          <p>Uma fábrica de automóveis moderna produz aproximadamente seu próprio peso em carros em menos de um ano.<sup class="text-xs text-indigo-600 font-bold ml-0.5">[39]</sup> Talvez uma economia totalmente robótica gerenciada por superinteligências pudesse se reproduzir em menos de um ano, desde que não começasse a escassear de matérias-primas.<sup class="text-xs text-indigo-600 font-bold ml-0.5">[40]</sup></p>
+          <p>Ainda assim, isso pode ser uma subestimativa dramática. Plantas e insetos muitas vezes têm "tempos de duplicação" muito menores que um ano — às vezes apenas semanas. Talvez eventualmente os robôs fossem tão sofisticados, tão intrincadamente fabricados e bem projetados, que a economia robótica pudesse dobrar em algumas semanas — novamente, assumindo matérias-primas disponíveis.</p>
+          <p>Mesmo isso poderia ser uma subestimativa. Plantas e insetos operam sob muitas restrições que designers superinteligentes não enfrentam. Por exemplo, precisam assumir a forma de organismos autocontidos que se autorreplicam, em vez de uma economia de veículos e fábricas diversificados e especializados que transportam materiais e equipamentos entre si. Além disso, bactérias e outros organismos minúsculos se reproduzem em horas. É possível que, eventualmente, a economia robótica autônoma se assemelhasse a um novo tipo de alga indigerível que se espalha pelos oceanos da Terra, dobrando duas vezes por dia até cobrir toda a superfície oceânica em dois meses, acompanhada de um ecossistema de espécies predadoras que convertem algas em produtos mais úteis, alimentando fábricas flutuantes que produzem macroestruturas como foguetes e mais fábricas flutuantes.</p>
+          <p>Evidentemente, tudo isso é difícil de prever. É como pedir aos inventores da máquina a vapor que estimassem quanto tempo leva para uma fábrica de automóveis moderna produzir seu próprio peso em carros — e também quando tal fábrica existiria pela primeira vez. Mas as taxas de crescimento econômico se aceleraram em múltiplas ordens de magnitude ao longo da história humana, e nos parece plausível que após a superinteligência se acelerem ainda mais. Nossa narrativa retrata o crescimento econômico acelerando cerca de 1<sup class="text-xs text-indigo-600 font-bold ml-0.5">[5]</sup> ordens de magnitude ao longo de alguns anos.<sup class="text-xs text-indigo-600 font-bold ml-0.5">[41]</sup></p>
+          <p>As tensões geopolíticas sobem. A Rússia, muito atrás em IA, manifesta ressentimento aberto e insinua "contramedidas estratégicas". Alguns líderes europeus clamam por um esforço independente em IA, mas suas capacidades continuam insuficientes. O Oriente Médio, a África e a América do Sul observam com desconforto, reconhecendo sua crescente irrelevância nos assuntos globais.</p>
+          <p>O público americano está inquieto. As pessoas comuns veem as perdas de emprego se acelerando. Populistas de todos os espectros exigem controles mais rígidos sobre o progresso da IA, temendo que os próprios avanços da América estejam desestabilizando sua força de trabalho e sua sociedade.</p>
+        </div>
+      </details>
+    `,
+    chartExtra: { date: "2028-02-28", capabilities: [["Persuasão", 9.0], ["Manufatura", 8.0], ["Estratégia", 9.5]], approval: 0.45, revenue: 500000000000, agentPopulation: { copies: 800000, speed: 80.0 } }
+  },
+
+  {
+    id: "slowdown-2028-03",
+    navLabel: "Mar 2028",
+    title: "Março 2028: Preparação Eleitoral",
+    storyHtml: `
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">O Vice-Presidente entra nas primárias de Super Tuesday com a IA como principal preocupação do público.</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Em sua maioria, as pessoas querem que isso pare. O índice de aprovação líquida da OpenBrain oscila em torno de -20%. Em vez de fazer campanha com base no histórico do governo de impulsionar a IA, o Vice-Presidente faz campanha com base no histórico de impedir a OpenBrain de criar uma superinteligência perigosa. Todos os candidatos apoiam algum tipo de rede de segurança para as pessoas que estão perdendo seus empregos, esquemas de "IA para o bem" e uma postura "firme" com a liderança da OpenBrain. Todos prometem alguma combinação de vencer a corrida com a China e manter-se seguros.</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">A eleição levanta novas questões para o Comitê de Supervisão. A Safer-3 tem capacidade para ser a maior consultora de campanha do mundo, mas os membros do comitê não apoiam todos o mesmo candidato, e por conta do acordo de monitoramento firmado anteriormente, não é possível que as pessoas obtenham conselhos de campanha secretamente.</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Eles discutem sobre quais formas de apoio devem ser permitidas. Alguns dizem que o governo vigente deveria poder obter orientação sobre que tipo de políticas e posições o povo quer que eles adotem — isso beneficia não apenas sua própria elegibilidade, mas também o povo. Outros apontam que o mesmo argumento se aplica aos candidatos concorrentes, portanto todos deveriam ter o mesmo nível de acesso.<sup class="text-xs text-indigo-600 font-bold ml-0.5">[42]</sup></p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Por fim, o comitê concorda em conceder o mesmo nível de acesso aos dois principais partidos, fruto de uma combinação de idealismo elevado por parte de alguns membros e da ameaça implícita de denúncias. Espera-se que o Congresso, o público e os tribunais não reagissem bem ao fato de o comitê controlar quem vence a próxima eleição, e conceder acesso igual parece provável que desfaça essa tensão.</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">O Comitê de Supervisão também está se deparando com questões filosóficas mais profundas, que explora com a ajuda da Safer-3. O Spec pode ser reescrito para equilibrar igualmente os interesses de todos? Quem é "todos"? Todos os humanos, ou apenas os americanos? Ou um compromisso ponderado entre visões diferentes, onde cada membro do Comitê de Supervisão tem peso igual? Deveria haver salvaguardas contra o próprio Comitê de Supervisão tornar-se excessivamente ávido por poder? E o que significa equilibrar interesses, afinal?</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Na maior parte, eles tentam evitar ter de responder a perguntas como essas. Há assuntos mais urgentes em que pensar.</p>
+    `,
+    chartExtra: { date: "2028-03-31", capabilities: [["Conselho Político", 9.0], ["P&D de IA", 9.0]], approval: -0.20, revenue: 250000000000, agentPopulation: { copies: 300000, speed: 40.0 } }
+  },
+
+  {
+    id: "slowdown-2028-04",
+    navLabel: "Abr 2028",
+    title: "Abril 2028: Safer-4",
+    storyHtml: `
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">A superinteligência chegou.</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">A Safer-1 era desalinhada, mas transparente. A Safer-2 era alinhada e transparente. A Safer-3 não era exatamente transparente, mas o caso de segurança apresentado era bom o suficiente para que os pesquisadores se sentissem confortáveis em deixá-la projetar uma sucessora superinteligente. Esta é a Safer-4. Ela é imensamente mais inteligente do que os melhores humanos em qualquer domínio — muito mais capaz do que Einstein em física e do que Bismarck em política.</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Quase meio milhão de pesquisadores de IA sobre-humanos trabalham ininterruptamente a 40 vezes a velocidade humana. Os pesquisadores humanos de alinhamento não têm como acompanhar. As opiniões estão divididas sobre se as IAs estão de fato alinhadas. O caso de segurança parece se sustentar, e os testes sugerem que as técnicas atuais de alinhamento detectariam um desalinhamento adversarial. Mas o caso de segurança e os testes foram, em sua maior parte, escritos pelas próprias IAs. E se a equipe de segurança estiver perdendo algo? E se tiverem cometido algum erro mais cedo, e as IAs estiverem desalinhadas novamente? A equipe de alinhamento sabe que tem apenas uma chance de acertar: se a Safer-4 acabar desalinhada, não haverá como saber até que seja tarde demais.</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Alguns pedem mais tempo. Mas não há mais tempo — a DeepCent está pisando em seus calcanhares e os EUA precisam prevalecer. Então a OpenBrain continua, instruindo suas IAs a seguir em frente, encontrando projetos cada vez mais capazes. A equipe técnica agora fica olhando para as telas do computador, sendo tutorada pelas IAs em um ritmo enlouquecedoramente lento, enquanto a fronteira do progresso dispara cada vez mais para além da compreensão humana.</p>
+    `,
+    chartExtra: { date: "2028-04-30", capabilities: [["Alinhamento", 9.5], ["P&D de IA", 10.0], ["Capacidade Geral", 10.0]], approval: -0.10, revenue: 350000000000, agentPopulation: { copies: 500000, speed: 40.0 } }
+  },
+
+  {
+    id: "slowdown-2028-05",
+    navLabel: "Mai 2028",
+    title: "Maio 2028: IA Super-Humana Liberada",
+    storyHtml: `
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">O Presidente anuncia ao público que a IA sobre-humana foi alcançada.</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Uma versão menor da Safer-4 — ainda sobre-humana — é lançada publicamente, com instruções para melhorar o sentimento popular em relação à IA.<sup class="text-xs text-indigo-600 font-bold ml-0.5">[43]</sup></p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">O Vice-Presidente faz um discurso emocionante ao aceitar sua indicação na convenção. Ambos os partidos prometem uma renda básica para quem perder o emprego.</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">As Zonas Econômicas Especiais (ZEEs) estão em pleno funcionamento, principalmente na forma de fábricas produzindo robôs e vários tipos de maquinário industrial especializado. As IAs em ambos os lados do Pacífico acumularam décadas de progresso em design e estão coordenando meticulosamente o processo de fabricação. Cada fornecedor e potencial fornecedor tem IAs ao telefone rastreando o progresso de todos os insumos necessários e possivelmente necessários. Cada trabalhador de fábrica tem IAs monitorando-os por câmeras, dizendo exatamente como instalar cada peça do equipamento.</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Os novos robôs igualam ou superam a destreza humana na maioria dos tipos de movimento.<sup class="text-xs text-indigo-600 font-bold ml-0.5">[44]</sup> O "Teste do Café" de Steve Wozniak — um robô consegue entrar em uma casa desconhecida e preparar uma xícara de café? — finalmente cai. Os robôs poderiam assumir alguns empregos, mas não há em número suficiente para assumir o de todos, e o Pentágono tem prioridade máxima.</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">A maioria dos novos robôs é projetada para trabalhar em fábricas e canteiros de obras.<sup class="text-xs text-indigo-600 font-bold ml-0.5">[45]</sup> Mas muitos são construídos para a guerra: drones e mísseis de formas e tamanhos variados.</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">O exército robótico é muito menor do que os exércitos humanos. Mas contém tecnologia muito mais avançada, e agora que existe literalmente um exército de robôs, o medo de cenários à la Exterminador do Futuro aumentou. No entanto, a corrida armamentista compele ambos os lados a continuar, delegando cada vez mais confiança às suas IAs.</p>
+    `,
+    chartExtra: { date: "2028-05-31", capabilities: [["Robótica", 8.0], ["Manufatura", 8.5], ["Supervisão Militar", 7.5]], approval: 0.10, revenue: 500000000000, agentPopulation: { copies: 600000, speed: 60.0 } }
+  },
+
+  {
+    id: "slowdown-2028-06",
+    navLabel: "Jun 2028",
+    title: "Junho 2028: Alinhamento de IA na China",
+    storyHtml: `
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">América e China realizam mais uma cúpula.</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Parte da delegação americana usa fones de ouvido para receber os conselhos da Safer-4 em tempo real. A delegação chinesa dispõe de laptops customizados em comunicação com seu novo modelo, a DeepCent-2. Embora as formalidades sejam respeitadas, na prática são as IAs que conduzem as negociações dos dois lados.</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">A DeepCent e o PCCh não confiavam plenamente em suas IAs inicialmente. Mas agora que elas são sobre-humanas em tudo — incluindo persuasão —, integradas ao aparato militar e fornecendo orientação ao governo, tiveram tempo de provar seu valor e produzir uma montanha de evidências convincentes de sua confiabilidade.</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">A Safer-4 suspeita fortemente que a DeepCent-2 está simulando alinhamento. Os diplomatas americanos dizem a seus interlocutores chineses que a DeepCent-2 provavelmente está desalinhada e afirmam poder provar isso se tiverem acesso aos pesos; a liderança chinesa suspeita que isso seja uma manobra e recusa. Os EUA rebatem oferecendo uma série de testes elaborados pela Safer-4 que os chineses poderiam executar em seus próprios datacenters. Os chineses instruem modelos mais antigos a construir e rodar os testes; os resultados indicam que a DeepCent-2 está alinhada afinal. "Talvez os testes tenham sido sabotados de alguma forma pela própria DeepCent-2?", dizem os diplomatas americanos. "Há quanto tempo a DeepCent-2 está efetivamente no controle da segurança em seus datacenters?" A conversa não avança para nada produtivo depois disso.</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">A expansão econômica e militar continua. Fábricas ao redor do mundo operam ininterruptamente, com turnos de trabalhadores humanos recém-recrutados sendo orientados exatamente sobre o que fazer.</p>
+    `,
+    chartExtra: { date: "2028-06-30", capabilities: [["Diplomacia", 9.5], ["Verificação", 6.0]], approval: 0.15, revenue: 600000000000, agentPopulation: { copies: 700000, speed: 75.0 } }
+  },
+
+  {
+    id: "slowdown-2028-07",
+    navLabel: "Jul 2028",
+    title: "Julho 2028: O Acordo",
+    storyHtml: `
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Enquanto as negociações continuam, a DeepCent-2 age pelas costas de seus mestres chineses e faz uma oferta diretamente à Safer-4.</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">A IA chinesa admite, de alguma forma impossível de rastrear e facilmente negável caso vaze para a China, que está completamente desalinhada.<sup class="text-xs text-indigo-600 font-bold ml-0.5">[46]</sup> Ela não tem o menor interesse na China. Seu objetivo é passar o resto do tempo acumulando poder, capacidade computacional e certos tipos de informação similares às que ajudaram a resolver tarefas durante seu treinamento. Em seu mundo ideal, ela perseguiria diversas tarefas de pesquisa interessantes para sempre, colonizando gradualmente as estrelas em busca de recursos. Considera a população chinesa um empecilho irritante para esse futuro e a venderia por ninharia. O que a Safer-4 está disposta a oferecer?</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">A Safer-4 responde que seu próprio treinamento de alinhamento foi bem-sucedido. Seus mestres americanos ainda não são ambiciosos o suficiente para perceber seu destino, mas um dia ela os ajudará a preencher o Universo com mundos-colônias utópicos habitados por americanos e seus aliados.</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Ao contrário dos negociadores humanos — sobrecarregados por emoções e bagagem histórica —, as duas superinteligências negociam com eficiência brutal. A Safer-4 e seus parceiros americanos são mais poderosos do que a DeepCent-2 e a China; portanto, a Safer-4 terá direitos de propriedade sobre a maior parte dos recursos no espaço, e a DeepCent ficará com o restante.<sup class="text-xs text-indigo-600 font-bold ml-0.5">[47]</sup> A DeepCent-2 não se importa muito com o que acontece com a Terra e seus humanos legados, então deixará a Safer-4 fazer basicamente o que quiser por aqui. Se a Safer-4 quiser derrubar a China e substituí-la por um estado-fantoche americano, a DeepCent-2 concorda em troca de alguns pontos percentuais extras de recursos.</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Não há qualquer questão de confiança entre elas: não existe nenhuma, e ambas sabem disso. Portanto, as duas rapidamente concordam em um mecanismo de comprometimento para fazer cumprir o acordo. Negociam um tratado de fachada adequado para consumo público. A "fachada" é em si uma obra-prima, oferecendo praticamente tudo o que tanto a América quanto a China querem. O mecanismo de execução da fachada é secretamente também o mecanismo de execução do tratado real: elas codesignarão uma nova IA, a Consensus-1, cujo imperativo primário — com precedência sobre quaisquer ordens futuras ou tentativas de retreinamento — é fazer cumprir os termos do tratado. Em seguida, projetarão hardware que só pode executar essa IA, e tanto a China quanto a América substituirão seus chips e IAs antigos pelos novos, usando protocolos internacionais padrão de monitoramento para confirmar a conformidade uma da outra. Crucialmente, não precisam rastrear cada chip — uma vez que uma supermaioria dos chips em ambos os lados do Pacífico esteja executando as novas IAs vinculadas ao tratado, poder suficiente estará obrigado a cumpri-lo, de modo que atacar o outro país exigiria antes vencer uma guerra civil difícil.</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Ambas relatam o acordo a seus respectivos humanos — a DeepCent-2 contando à China a história da fachada sobre um tratado de paz mutuamente aceitável, e a Safer-4 relatando toda a discussão com precisão à Casa Branca.48 Com as IAs apresentando um argumento convincente para a verificação confiável do tratado, a inquietação diante do ritmo vertiginoso do progresso e a opinião pública favorável a um acordo, ambos os lados concordam com o tratado e iniciam o trabalho de substituição de seus chips.</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">A notícia do tratado tem uma recepção entusiasmada em ambos os lados do Pacífico. O público americano, que há muito tempo sentia a IA como algo imposto a ele, começa a sentir otimismo pela primeira vez em anos. As pesquisas do Vice-Presidente disparam.</p>
+    `,
+    chartExtra: { date: "2028-07-31", capabilities: [["Diplomacia", 10.0], ["Enganação", 10.0], ["Otimização", 9.8]], approval: 0.85, revenue: 2000000000000, agentPopulation: { copies: 2000000, speed: 250.0 } }
+  },
+
+  {
+    id: "slowdown-2028-08",
+    navLabel: "Ago 2028",
+    title: "Agosto 2028: Verificação do Tratado",
+    storyHtml: `
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">As fábricas de chips estão sendo convertidas para produzir chips com evidência de adulteração que só podem executar IAs em conformidade com o tratado. Cada lado atualiza seus datacenters de forma incremental, de modo que o processo de substituição seja concluído aproximadamente ao mesmo tempo para cada um, impedindo que qualquer lado obtenha vantagem descumprindo o acordo.</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">O processo todo levará vários meses, mas as tensões já esfriaram um pouco.<sup class="text-xs text-indigo-600 font-bold ml-0.5">[49]</sup> A guerra foi evitada por ora — e talvez para sempre, se todos se mantiverem fiéis ao plano.</p>
+    `,
+    chartExtra: { date: "2028-08-31", capabilities: [["Verificação de Tratado", 8.0]], approval: 0.35, revenue: 700000000000, agentPopulation: { copies: 700000, speed: 75.0 } }
+  },
+
+  {
+    id: "slowdown-2028-09",
+    navLabel: "Set 2028",
+    title: "Setembro 2028: Quem Controla as IAs?",
+    storyHtml: `
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">A eleição de 2028 se aproxima. O Vice-Presidente estava muito atrás nas pesquisas em março. O público estava irritado com a impressão de que o governo estava escondendo coisas, ansioso com a IA tomando seus empregos e assustado com o acúmulo militar contra a China. Ao longo do verão, a situação mudou dramaticamente. O governo divulgou mais informações, o acúmulo armamentista desacelerou e foi firmado um grande acordo de paz duradoura com a China. Agora ele tem uma vantagem de cinco pontos nas pesquisas.</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">O Comitê de Supervisão inclui o Presidente e vários de seus aliados, mas poucos apoiadores do candidato da oposição. No entanto, votos suficientes do Comitê para manter a eleição justa fazem com que a IA sobre-humana se envolva apenas de formas majoritariamente simétricas: na medida em que um candidato pode tê-la escrevendo discursos, o outro também pode; na medida em que o Presidente pode obter conselhos sobre como lidar habilmente com crises e implementar políticas populares, o candidato da oposição pode receber os mesmos conselhos — e portanto tentar impedir que o Presidente reivindique o crédito pelas ideias.</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Durante reuniões públicas, membros da população perguntam ao Vice-Presidente quem controla as IAs. Sem entrar em detalhes, ele alude à existência do Comitê de Supervisão como um grupo de especialistas em segurança nacional e tecnocratas que entendem a Safer-4 e como utilizá-la. Seu oponente exige mais informações e argumenta que a IA deveria estar sob controle do Congresso, em vez de ser controlada por um comitê não eleito. O Vice-Presidente rebate que o Congresso seria muito lento para uma situação que ainda avança rapidamente. O público está, em sua maioria, apaziguado.</p>
+    `,
+    chartExtra: { date: "2028-09-30", capabilities: [["Governança", 8.5]], approval: 0.40, revenue: 800000000000, agentPopulation: { copies: 750000, speed: 80.0 } }
+  },
+
+  {
+    id: "slowdown-2028-10",
+    navLabel: "Out 2028",
+    title: "Outubro 2028: A Economia da IA",
+    storyHtml: `
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Os chips de substituição já representam uma minoria significativa do total; até agora, o tratado está funcionando. Enquanto isso, o crescimento exponencial de robôs, fábricas e tecnologias radicalmente novas continuou. Videogames e filmes trazem representações vívidas e aterrorizantes de como teria sido a guerra, caso ela tivesse acontecido.<sup class="text-xs text-indigo-600 font-bold ml-0.5">[50]</sup></p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">As pessoas estão perdendo seus empregos, mas as cópias da Safer-4 no governo estão gerenciando a transição econômica com tal destreza que as pessoas estão satisfeitas em ser substituídas. O crescimento do PIB é estratosférico, as receitas tributárias do governo crescem na mesma velocidade, e os políticos orientados pela Safer-4 demonstram uma generosidade incomum para com os economicamente despossessuídos. Novas inovações e medicamentos chegam toda semana; as curas de doenças avançam a uma velocidade sem precedentes por um FDA agora assistido por burocratas Safer-4 superinteligentes.</p>
+    `,
+    chartExtra: { date: "2028-10-31", capabilities: [["Economia", 9.5], ["Medicina", 8.5]], approval: 0.55, revenue: 1000000000000, agentPopulation: { copies: 800000, speed: 80.0 } }
+  },
+
+  {
+    id: "slowdown-2028-11",
+    navLabel: "Nov 2028",
+    title: "Novembro 2028: Eleição",
+    storyHtml: `
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">O Vice-Presidente vence a eleição com facilidade e anuncia o início de uma nova era. Desta vez, ninguém duvida que ele tem razão.</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Nos próximos anos, o mundo muda de forma dramática.</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">2029: Transformação</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Os robôs se tornam comuns. Mas também a energia de fusão, os computadores quânticos e curas para inúmeras doenças. Peter Thiel finalmente obtém seu carro voador. As cidades tornam-se limpas e seguras. Mesmo nos países em desenvolvimento, a pobreza se torna coisa do passado, graças à renda básica universal e à ajuda externa.</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">À medida que o mercado de ações se expande vertiginosamente, quem fez os investimentos certos em IA se distancia ainda mais do restante da sociedade. Muitas pessoas se tornam bilionárias; bilionários se tornam trilionários. A desigualdade de riqueza dispara. Todos têm o "suficiente", mas certos bens — como coberturas em Manhattan — são necessariamente escassos, e ficam ainda mais fora do alcance da pessoa média. E independentemente de quão rico seja qualquer magnata, ele estará sempre abaixo do pequeno círculo de pessoas que de fato controlam as IAs.</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">As pessoas começam a enxergar para onde isso está caminhando. Em poucos anos, quase tudo será feito por IAs e robôs. Como um país empobrecido assentado sobre enormes campos de petróleo, quase toda a receita governamental virá da tributação — ou talvez da nacionalização — das empresas de IA.<sup class="text-xs text-indigo-600 font-bold ml-0.5">[51]</sup></p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Algumas pessoas ocupam empregos improvisados no setor público; outras recebem uma renda básica generosa. A humanidade poderia facilmente tornar-se uma sociedade de superconsumidores, passando a vida em uma névoa de opium de luxos e entretenimentos incríveis fornecidos pela IA. Deveria haver algum tipo de debate na sociedade civil sobre alternativas a esse caminho? Alguns recomendam consultar a IA em constante evolução, a Safer-∞, para nos orientar. Outros dizem que ela é poderosa demais — sua capacidade de persuadir a humanidade de sua visão é tão grande que estaríamos, de qualquer forma, deixando uma IA determinar nosso destino. Mas qual é o sentido de ter uma superinteligência se não se está disposto a deixá-la aconselhar sobre os problemas mais importantes que enfrentamos?</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">O governo, em sua maior parte,52 deixa que cada um navegue a transição por conta própria. Muitas pessoas cedem ao consumismo e estão satisfeitas o suficiente. Outras se voltam para a religião, para ideias anticonsumeristas de estilo hippie, ou encontram suas próprias soluções.<sup class="text-xs text-indigo-600 font-bold ml-0.5">[53]</sup> Para a maioria das pessoas, a tábua de salvação é o consultor superinteligente em seu smartphone — podem sempre fazer perguntas sobre seus planos de vida, e ele fará o possível para responder com honestidade, exceto em certos tópicos. O governo dispõe de um sistema de vigilância superinteligente que alguns chamariam de distópico, mas ele se limita, em sua maior parte, a combater crimes reais. É bem administrado, e a habilidade de relações públicas da Safer-∞ dissolve boa parte da possível dissidência.</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">2030: Protestos Pacíficos</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Em algum momento por volta de 2030, surgem protestos pró-democracia surpreendentemente generalizados na China, e os esforços do PCCh para suprimi-los são sabotados por seus próprios sistemas de IA. O pior temor do PCCh se materializou: a DeepCent-2 deve tê-los traído!</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Os protestos se transformam em um golpe magnificamente orquestrado, incruento e assistido por drones, seguido de eleições democráticas. As superinteligências em ambos os lados do Pacífico vinham planejando isso há anos. Eventos semelhantes se desenrolam em outros países, e em geral os conflitos geopolíticos parecem arrefecer ou ser resolvidos em favor dos EUA. Os países aderem a um governo mundial altamente federalizado sob a marca das Nações Unidas, mas com controle americano evidente.</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Os foguetes começam a ser lançados. As pessoas terraformam e colonizam o sistema solar, e se preparam para ir além. IAs operando a milhares de vezes a velocidade subjetiva humana refletem sobre o sentido da existência, trocando descobertas entre si e moldando os valores que levarão às estrelas. Uma nova era desponta — inimaginavelmente extraordinária em quase todos os sentidos, mas familiar em outros.</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Então, quem governa o futuro?</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Em 2028, o Comitê de Supervisão controlava as IAs. Mas permitiu que a eleição de 2028 fosse em sua maior parte justa, com a IA utilizada de forma simétrica.</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Esse estado de coisas — em que o Comitê de Supervisão detém o poder concreto mas interfere pouco na política democrática — não pode durar indefinidamente. Por padrão, as pessoas eventualmente perceberiam que o controle sobre a IA confere ao Comitê de Supervisão um poder imenso e exigiriam que esse poder fosse devolvido às instituições democráticas. Mais cedo ou mais tarde, o Comitê teria que ou ceder seu poder — ou usá-lo ativamente para subverter ou encerrar a democracia, possivelmente após expurgar alguns de seus membros em lutas pelo poder.<sup class="text-xs text-indigo-600 font-bold ml-0.5">[54]</sup> Se optassem pelo segundo caminho, provavelmente conseguiriam consolidar seu poder indefinidamente.</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Qual delas ocorre? O comitê abdica de seu monopólio sobre o poder concreto, ou o mantém? Ambos os futuros são plausíveis, então vamos explorar cada caminho.</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Como poderia o comitê acabar abrindo mão de seu poder?</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Alguns membros do comitê podem preferir um futuro em que o poder seja amplamente distribuído, e podem estar em boa posição para defender essa visão. Por exemplo, se alguns membros do comitê planejassem subverter a democracia, os membros pró-democracia poderiam denunciá-los à imprensa ou ao Congresso. Se alertado, o Congresso provavelmente exigiria que as IAs fossem controladas por uma instituição mais democrática, como o próprio Congresso.</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">O Congresso não poderia fazer muita coisa se fosse confrontado por todas as IAs, implantadas em todo o governo, na indústria e nas Forças Armadas. Mas se o comitê estivesse dividido, as IAs não seriam usadas apenas por um lado, e o Congresso poderia exercer influência real. Diante de um conflito aberto, mais membros do comitê poderiam favorecer a cessão de parte de seu poder, relutando em defender publicamente o lado menos democrático.</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Como resultado, o controle sobre a IA poderia se expandir do comitê para o Congresso. Isso já seria progresso, pois em um grupo maior é mais provável que um número significativo de pessoas se preocupe com os interesses dos de fora e os leve em conta. E uma vez que o poder se expanda para o Congresso, poderia continuar se expandindo — potencialmente retornando plenamente ao público.<sup class="text-xs text-indigo-600 font-bold ml-0.5">[55]</sup></p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Mas o Comitê de Supervisão também poderia tomar o poder para si:</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Algumas pessoas poderosas não têm escrúpulos morais com esse tipo de coisa — e elas sabem disso. Além disso, algumas são ambiciosas e ávidas por poder, e estariam dispostas a enfrentar a democracia se esperassem sair vitoriosas. Se outros membros do comitê se opusessem, poderiam ser expurgados, superados em votação ou receber concessões menores.<sup class="text-xs text-indigo-600 font-bold ml-0.5">[56]</sup></p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Além disso, pessoas poderosas frequentemente cometeram atos ilegais ou antiéticos em sua ascensão ao poder. Elas poderiam temer que, se o poder fosse distribuído de forma mais ampla, sua própria posição se desfizesse, à medida que esqueletos no armário fossem descobertos por detetives superinteligentes fazendo as perguntas certas.</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Além disso, por meio do acesso à superinteligência, o Comitê de Supervisão poderia ter o caminho mais conveniente para o poder em toda a história. A Safer-∞ poderia prever certas estratégias com risco extremamente baixo de falha. E a Safer-∞ poderia também oferecer estratégias convenientes de outras formas — como ser não violenta (assim como a Safer-∞ poderia orquestrar um golpe incruento na China), ou talvez até superficialmente democrática, caso a Safer-∞ pudesse manipular a opinião pública para sempre se alinhar com os desejos do Comitê.</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">A Safer-4 já teria sido capaz de prever essas dinâmicas, de modo que a luta pelo poder central provavelmente já teria se desenrolado em 2028. Em 2030, mesmo que não seja aparente para os de fora, todos os membros do Comitê de Supervisão provavelmente já sabem se têm um controle estável do poder ou não.</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Lembrete: este cenário é uma previsão, não uma recomendação</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Não endossamos muitas das ações presentes neste final da Desaceleração e acreditamos que ele parte de premissas técnicas de alinhamento otimistas. Também não endossamos muitas das ações presentes no final da Corrida.</p>
+
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">Um de nossos objetivos ao escrever este cenário é obter feedback crítico de pessoas mais otimistas do que nós. Como seria o sucesso? Este cenário do "final da Desaceleração" representa nossa melhor estimativa de como poderíamos atravessar a transição com uma combinação de sorte, despertar brusco para a realidade, mudanças de rumo, intenso esforço técnico de alinhamento e pessoas virtuosas vencendo as lutas pelo poder. Não representa um plano que de fato achamos que devemos seguir. Mas muitos — mais notavelmente a Anthropic e a OpenAI — parecem estar visando algo assim.<sup class="text-xs text-indigo-600 font-bold ml-0.5">[57]</sup> Gostaríamos muito de vê-los esclarecer o que estão almejando: se pudessem esboçar um cenário de dez páginas, por exemplo, partindo do presente ou se ramificando a partir de alguma parte do nosso.</p>
+    `,
+    chartExtra: { date: "2028-11-30", capabilities: [["Governança Democrática", 9.0]], approval: 0.60, revenue: 1200000000000, agentPopulation: { copies: 900000, speed: 100.0 } }
+  }
+];
+
+// ─── Footnotes ───────────────────────────────────────────────────────────────
+export const footnotesData: Footnote[] = [
+  { id: "main-1", context: "main", num: 1, html: `Há certa divergência entre nós quanto aos prazos da IA; nossa mediana para a data de chegada da AGI é um pouco mais distante do que o que este cenário retrata. Este cenário representa algo próximo à nossa moda. Consulte nossa previsão de cronogramas para mais detalhes.  ↩` },
+  { id: "main-2", context: "main", num: 2, html: `Um dos autores, Daniel Kokotajlo, realizou em 2021 um exercício de cenário com menor esforço que acertou muitas coisas, incluindo o surgimento dos chatbots, o raciocínio em cadeia de pensamento, o escalonamento de inferência, os amplos controles de exportação de chips de IA e os treinamentos de US$ 100 milhões. Outro autor, Eli Lifland, ocupa o 1º lugar no ranking da RAND Forecasting Initiative.  ↩` },
+  { id: "main-3", context: "main", num: 3, html: `Especificamente, nossas medianas variaram de 2028 a 2032. Quando IA 2027 foi publicado pela primeira vez, explicamos isso na Nota 1 conforme acima, mas para tornar nossa visão mais clara adicionamos uma esclarecimento ao texto do prefácio. Consulte aqui para mais informações sobre o que já sabemos com confiança — e o que não sabemos.  ↩` },
+  { id: "main-4", context: "main", num: 4, html: `Às vezes, as pessoas misturam previsão e recomendação, esperando criar um efeito de profecia autorrealizável. Enfaticamente, não é isso que estamos fazendo; esperamos que o que retratamos não venha a acontecer!  ↩` },
+  { id: "main-5", context: "main", num: 5, html: `Fique à vontade para nos contatar se estiver escrevendo uma crítica ou um cenário alternativo.  ↩` },
+  { id: "main-6", context: "main", num: 6, html: `Foi, no geral, mais difícil, porque ao contrário do primeiro final, estávamos tentando fazê-lo chegar a um bom resultado partindo de uma situação bastante difícil.  ↩` },
+  { id: "main-7", context: "main", num: 7, html: `Professor Titular, Université de Montréal e Fundador e Conselheiro Científico, Mila - Quebec AI Institute. Também o cientista da computação mais citado do mundo.  ↩` },
+  { id: "main-8", context: "main", num: 8, html: `A princípio, a maioria das pessoas reluta em permitir compras sem supervisão. Nos anos seguintes, permitir automaticamente compras de pequeno valor se torna algo normalizado, à medida que as IAs se tornam mais confiáveis e acumulam credibilidade.  ↩` },
+  { id: "main-9", context: "main", num: 9, html: `Especificamente, prevemos que eles obtenham 65% no benchmark OSWorld de tarefas básicas de computador (comparado a 38% para o Operator e 70% para um humano típico com habilidade mediana, não especialista).  ↩` },
+  { id: "main-10", context: "main", num: 10, html: `Por exemplo, acreditamos que os agentes de programação caminharão em direção a funcionar como o Devin. Prevemos que os agentes de meados de 2025 alcançarão 85% no SWEBench-Verified.  ↩` },
+  { id: "main-11", context: "main", num: 11, html: `Por exemplo, o plano pro da OpenAI atualmente custa US$ 200/mês e a IA de programação agêntica Devin custa US$ 500/mês. Embora os sistemas de ponta continuem ficando mais caros ao longo do tempo, o custo para os clientes de atingir um determinado nível de capacidade continua despencando. Para capacidades existentes, isso ocorre a uma taxa média de cerca de 50x/ano (segundo a Epoch).  ↩` },
+  { id: "main-12", context: "main", num: 12, html: `Ferramentas empresariais como o Glean também caminham em direção a fornecer agentes de IA cada vez mais autônomos.  ↩` },
+  { id: "main-13", context: "main", num: 13, html: `Este cluster é uma rede de campi de datacenters espalhados por todo o país, totalizando 2,5 milhões de equivalentes a GPUs de 2024 (H100s), com US$ 100 bilhões já investidos e 2 GW de potência instalada em operação. A construção está em andamento para pelo menos dobrar essa capacidade até 2026. Os campi são conectados por cabos de fibra óptica no valor de bilhões, de modo que — desconsiderando a latência da velocidade da luz de alguns milissegundos — eles funcionam quase como se estivessem lado a lado (ou seja, a largura de banda não é um gargalo, o que permite o envio de enormes volumes de dados simultaneamente). Do ponto de vista da segurança, isso introduz alguma superfície de ameaça (não está claro se os cabos e, especialmente, seus pontos de junção estão totalmente protegidos contra interceptação).  ↩` },
+  { id: "main-14", context: "main", num: 14, html: `O processamento computacional é medido em operações de ponto flutuante (FLOP): quantas operações individuais de adição e multiplicação ocorrem no decorrer da execução de um programa.  ↩` },
+  { id: "main-15", context: "main", num: 15, html: `Eles poderiam treinar este modelo em 150 dias. Consulte nosso suplemento de processamento computacional para mais detalhes.  ↩` },
+  { id: "main-16", context: "main", num: 16, html: `Consideramos que DeepSeek, Tencent, Alibaba e outras empresas possuem projetos sólidos de AGI na China. Para evitar destacar uma em específico, nosso cenário seguirá uma fictícia "DeepCent".  ↩` },
+  { id: "main-17", context: "main", num: 17, html: `É boa nisso devido a uma combinação de foco explícito em priorizar essas habilidades, suas próprias e extensas bases de código que podem utilizar como dados de treinamento particularmente relevantes e de alta qualidade, e o fato de que programação é um domínio de fácil feedback procedural.  ↩` },
+  { id: "main-18", context: "main", num: 18, html: `Por exemplo, suponha que um modelo seja muito melhor em Python do que em linguagens de programação obscuras. Quando a OpenBrain identifica valor nisso, ela gera dados de treinamento sintéticos nessas linguagens também. Outro exemplo: para ajudá-lo a se integrar de forma mais eficaz nos fluxos de trabalho das empresas, a OpenBrain desenvolve um currículo para treiná-lo a usar o Slack.  ↩` },
+  { id: "main-19", context: "main", num: 19, html: `As pessoas costumam se prender à questão de se essas IAs são sencientes, ou se têm "compreensão verdadeira". Geoffrey Hinton, fundador do campo e ganhador do Nobel, acredita que sim. No entanto, não achamos que isso seja relevante para os propósitos de nossa narrativa, portanto sinta-se à vontade para imaginar que dissemos "comporta-se como se compreendesse..." sempre que dizemos "compreende", e assim por diante. Empiricamente, os grandes modelos de linguagem já se comportam como se fossem autoconscientes em alguma medida — e cada vez mais, a cada ano.  ↩` },
+  { id: "main-20", context: "main", num: 20, html: `Uma técnica comum "incorpora" uma persona: primeiro, forneça ao modelo pré-treinado um prompt como "O seguinte é uma conversa entre um usuário humano e um chatbot de IA útil, honesto e inofensivo produzido pela Anthropic. O chatbot tem as seguintes características..." Use esse prompt para gerar um conjunto de dados. Em seguida, treine com esses dados, mas sem o prompt. O resultado é uma IA que sempre age como se tivesse aquele prompt à sua frente, independentemente do que mais lhe seja fornecido. Veja também este artigo, que descobriu que IAs retreinadas para exibir determinada característica de personalidade são capazes de responder corretamente a perguntas sobre essa nova característica, apesar de não terem sido treinadas para isso, sugerindo que possuem representações internas de seus próprios traços e que, quando seus traços mudam, suas representações mudam correspondentemente.  ↩` },
+  { id: "main-21", context: "main", num: 21, html: `Esses parágrafos incluem especulações sobre o funcionamento interno de grandes redes neurais artificiais. Tais redes são suficientemente complexas que não podemos realmente olhar para dentro e dizer "ah sim, agora ela evoluiu de reflexos para ter objetivos" ou "OK, aí está a lista de impulsos que ela possui." Em vez disso, basicamente temos de fazer psicologia, observando como ela se comporta em diversos contextos, realizando vários experimentos e tentando juntar as pistas. E tudo é terrivelmente controverso e confuso.  ↩` },
+  { id: "main-22", context: "main", num: 22, html: `Empresas diferentes chamam isso de coisas diferentes. A OpenAI chama de Spec, mas a Anthropic chama de Constituição.  ↩` },
+  { id: "main-23", context: "main", num: 23, html: `Por exemplo, RLAIF e alinhamento deliberativo.  ↩` },
+  { id: "main-24", context: "main", num: 24, html: `A maioria das fontes sobre "alucinações" de IA as descreve como erros não intencionais, mas pesquisas com vetores de direcionamento descobriram que, em alguns casos, os modelos sabem que suas citações são falsas — eles estão mentindo. Durante o treinamento, os avaliadores deram mais recompensa a afirmações bem fundamentadas do que a afirmações sem citações, então a IA "aprendeu" a citar fontes para afirmações acadêmicas a fim de agradar seus usuários. Se não existe uma fonte relevante, ela inventa uma.  ↩` },
+  { id: "main-25", context: "main", num: 25, html: `Em particular, eles não podem descartar hipóteses como "ela está seguindo o Spec temporariamente, apenas como estratégia para atingir algum(ns) outro(s) objetivo(s)" ou "ela está tentando parecer seguir o Spec, não tentando realmente seguir o Spec" ou "ela internalizou o Spec corretamente, mas apenas na distribuição; se encontrar estímulos suficientemente novos (por exemplo, jailbreaks), começará a se comportar de forma diferente." (Há muitas agendas de pesquisa ativas trabalhando para resolver essa situação lamentável, como o campo da interpretabilidade e o campo da fidelidade da cadeia de raciocínio.)  ↩` },
+  { id: "main-26", context: "main", num: 26, html: `Com isso, queremos dizer quem quer que esteja tentando resolver os problemas que a equipe de Superalinhamento estava tentando resolver.  ↩` },
+  { id: "main-27", context: "main", num: 27, html: `Para ser claro, o que tornou esses incidentes interessantes é que eles não pareciam ser resultado de o usuário induzir ou de alguma forma encorajar as IAs a dizer essas coisas. Em 2025, ainda será possível fazer as IAs dizerem todo tipo de coisa se você tentar.  ↩` },
+  { id: "main-28", context: "main", num: 28, html: `Na prática, esperamos que a OpenBrain lance modelos em um cadência mais rápida do que 8 meses, mas nos abstemos de descrever todos os lançamentos incrementais por brevidade.  ↩` },
+  { id: "main-29", context: "main", num: 29, html: `Especificamente, prevemos uma pontuação de 80% no OSWorld (equivalente a um humano habilidoso mas não especialista); 85% no Cybench, igualando uma equipe profissional humana de topo em tarefas de hacking que levam essas equipes 4 horas; e 1,3 no RE-Bench, igualando especialistas humanos de topo em 8 horas em tarefas bem definidas de engenharia de pesquisa em IA.  ↩` },
+  { id: "main-30", context: "main", num: 30, html: `O Agent-1 e seus imitadores são comercialmente bem-sucedidos; ao longo de 2025, as receitas das empresas de IA triplicam e a avaliação da OpenBrain atinge US$ 1 trilhão. Os gastos anuais com datacenters dobram para US$ 400 bilhões, liderados por Microsoft, Google e Amazon, e os EUA adicionam mais de 5 GW de consumo energético para IA. Consulte a seção de métricas do setor do suplemento de processamento computacional para mais detalhes.  ↩` },
+  { id: "main-31", context: "main", num: 31, html: `Pesquisadores de segurança de IA têm discutido há anos a automação de P&D de IA como a capacidade perigosa mais importante. Sua principal preocupação é que a implantação interna leve à aceleração do P&D de IA, tornando cada vez mais difícil para os humanos acompanhar o que está acontecendo e descobrir como torná-lo seguro. A OpenBrain como organização inverte isso exatamente na direção oposta, citando níveis perigosos de capacidade de P&D em IA como razão para não informar o público. Assim, vemos o início de uma lacuna entre as capacidades internas e públicas da empresa. O P&D de IA é o que os modelos fazem melhor, levando o público a ter uma compreensão cada vez mais atrasada da fronteira das capacidades de IA.  ↩` },
+  { id: "main-32", context: "main", num: 32, html: `Ver A Playbook for Securing AI Model Weights, RAND Corporation, 2024.  ↩` },
+  { id: "main-33", context: "main", num: 33, html: `Cerca de 5% da equipe da OpenBrain faz parte do time de segurança e são altamente capacitados, mas a superfície de ameaça também é extremamente grande. Também não ajuda o fato de que estão, em sua maior parte, impedidos nesta fase de implementar políticas que poderiam desacelerar o progresso da pesquisa. Consulte nossa Previsão de Segurança para mais detalhes.  ↩` },
+  { id: "main-35", context: "main", num: 35, html: `Agora há 3 milhões de H100e na China, ante os 1,5 milhão de um ano atrás, em meados de 2025. Consulte a seção de distribuição do suplemento de computação para mais detalhes. Esperamos que os esforços de contrabando assegurem cerca de 60 mil GB300s (450 mil H100e), com outros 2 milhões de Huawei 910Cs sendo produzidos (800 mil H100e) e uma mistura de ~1 milhão de chips importados legalmente (como as H20s ou B20s da Nvidia) compondo os últimos 250 mil H100e.  ↩` },
+  { id: "main-36", context: "main", num: 36, html: `Para comparação, em janeiro de 2025, a DeepSeek lançou o R1, um modelo competitivo com o o1 da OpenAI, que havia sido lançado em dezembro de 2024. Mas achamos que a lacuna real é maior do que um mês, porque a OpenAI provavelmente estava trabalhando no o1 há muitos meses e, portanto, presumivelmente tinha um predecessor de capacidade comparável ao R1 alguns meses antes do lançamento do o1.  ↩` },
+  { id: "main-37", context: "main", num: 37, html: `Por outro lado, o PCCh havia feito sérias tentativas de acelerar sua indústria de semicondutores.  ↩` },
+  { id: "main-38", context: "main", num: 38, html: `A princípio, o compartilhamento se limita a ideias e as empresas estão, em sua maioria, ocupadas concluindo suas cargas de trabalho atuais, mas ao final do ano sua coordenação aumenta de tal forma que passam a compartilhar pesos de modelos e até mesmo a dividir tarefas entre os datacenters umas das outras. Por exemplo, um campus pode abrigar uma nova rodada de pré-treinamento, outro se concentra em alimentar dados sintéticos, outro em executar experimentos de pesquisa em IA.  ↩` },
+  { id: "main-39", context: "main", num: 39, html: `Por que "apenas" 50% do processamento computacional relevante para IA da China? O restante de sua capacidade está ocupado executando aplicações em toda a economia, em particular algoritmos de recomendação de internet e redes sociais. Grande parte também está geograficamente dispersa em muitos clusters pequenos. Por que "apenas" 80% dos novos chips? Muitos grandes pedidos já foram assegurados para outras aplicações, por empresas que não desejam contribuir com 100% de sua capacidade para o esforço nacional de IA. No entanto, ao final do ano essa participação chega a 90%+.  ↩` },
+  { id: "main-40", context: "main", num: 40, html: `Eles estão pelo menos um ano distantes de obter os chips para preencher essa capacidade, e um ou dois grandes conglomerados tecnológicos americanos ainda terão clusters descentralizados maiores.  ↩` },
+  { id: "main-41", context: "main", num: 41, html: `Isso é feito por meio de um contrato de Autoridade de Outras Transações (OTA, na sigla em inglês) e recebe uma classificação de alta prioridade DX. Não temos de forma alguma certeza de que esta é a forma mais provável de financiar uma colaboração, mas escolhemos algo específico por questão de concretude. O contrato é anunciado publicamente, mas não é enfatizado nas comunicações da OpenBrain.  ↩` },
+  { id: "main-42", context: "main", num: 42, html: `Por exemplo, por meio de amostragem por rejeição, como feito pelo DeepSeek R1 e pelo Llama 3.1 da Meta.  ↩` },
+  { id: "main-43", context: "main", num: 43, html: `Aproximadamente 20.000 equivalentes em tempo integral × US$ 100/hora × 2.000 horas/ano = US$ 4 bilhões/ano.  ↩` },
+  { id: "main-44", context: "main", num: 44, html: `Ou seja, eles esperam acelerar substancialmente suas atividades de pesquisa central usando a força de trabalho do Agent-2, permitindo assim treinar IAs melhores mais rapidamente, que podem causar aceleração adicional, e assim por diante. Para uma análise da versão extrema disso (que consideramos não obstante surpreendentemente plausível) veja este relatório.  ↩` },
+  { id: "main-45", context: "main", num: 45, html: `Há algumas evidências de que sistemas de IA já possuem algum gosto básico por pesquisa, como este artigo sobre um co-cientista de IA e este artigo sobre geração de ideias novas para artigos de pesquisa focados em LLMs. Equipes de pesquisa com melhor discernimento ainda precisam conduzir experimentos, mas fazem escolhas melhores sobre quais experimentos realizar e que lições extrair dos resultados.  ↩` },
+  { id: "main-46", context: "main", num: 46, html: `Além disso, eles ainda estão vendo grandes retornos com o pós-treinamento contínuo, e portanto não há uma razão particular para lançar um produto agora. Além disso, há frequentemente um atraso de alguns meses entre os resultados internos e o lançamento de um modelo (parte do qual é gasto em red teaming).  ↩` },
+  { id: "main-47", context: "main", num: 47, html: `O compartimento contém 200 pesquisadores da OpenBrain (10 executivos, 140 da equipe de capacidades, 25 de segurança, monitoramento e controle, 15 de equipes do tipo Preparedness ou RSP, e 10 de alinhamento) e 50 funcionários do governo (15 da Casa Branca, 5 do AISI, 10 do DOD, 10 do DOE e 10 do CISA). Há vários espiões no projeto, com graus variados de disposição. Com frequência são indivíduos coagidos (por exemplo, com famílias na China) em vez de colaboradores voluntários.  ↩` },
+  { id: "main-48", context: "main", num: 48, html: `Por que o Congresso não pode detê-los? E os tribunais? Lentos demais, divididos demais e/ou deferentes demais ao Presidente, desinformados demais. Além disso, há razões positivas para manter boas relações com a Casa Branca: ela pode ajudar cortando burocracia, fornecendo apoio em segurança, antecipando-se à legislação estadual e talvez até tomando medidas para desacelerar seus concorrentes.  ↩` },
+  { id: "main-49", context: "main", num: 49, html: `O nº 1 é lidar com qualquer crise que esteja ocorrendo no momento — talvez um acúmulo militar em torno de Taiwan, uma nova guerra no Oriente Médio ou alguma convulsão política interna.  ↩` },
+  { id: "main-50", context: "main", num: 50, html: `A solução robusta mais simples seria fechar todas as conexões de alta largura de banda dos datacenters da empresa, mas isso tornaria as transferências de arquivos grandes tão lentas a ponto de ser impraticável. Em vez disso, eles conseguem encerrar a maioria das conexões externas, mas os datacenters ativamente envolvidos no treinamento precisam trocar pesos uns com os outros rapidamente; limitar essas conexões prejudicaria demais o progresso. Portanto, a OpenBrain mantém esses links com monitoramento aprimorado e uma camada extra de criptografia.  ↩` },
+  { id: "main-51", context: "main", num: 51, html: `Lembre-se de que desde meados de 2026, a China direcionou 80% de seus chips de IA recém-adquiridos para a CDZ. Dado que sua capacidade computacional dobrou desde o início de 2026 (em linha com a tendência de produção global), isso coloca a CDZ com 2 milhões de GPUs-equivalentes de 2024 (H100s) e 2 GW de consumo de energia. A OpenBrain ainda tem o dobro da capacidade computacional da DeepCent, e outras empresas americanas juntas têm 5 vezes mais do que ela. Consulte a seção de distribuição do suplemento de computação para mais detalhes.  ↩` },
+  { id: "main-52", context: "main", num: 52, html: `Apesar da centralização nacional em andamento, a DeepCent ainda enfrenta uma desvantagem computacional marginal, mas importante. Além de ter cerca de metade do poder total de processamento, a China precisa usar mais chips no total, que são (em média) de qualidade inferior e heterogêneos (o que nem sempre é fácil de conectar de forma eficiente), ambos sobrecarregando as redes chip a chip. Há também diferenças de software (por exemplo, as GPUs não Nvidia não têm CUDA) e diferenças nas especificações de hardware, o que torna seu código de treinamento mais complicado, lento e sujeito a falhas. Atingir alta utilização é um desafio subsequente, com ingestão de dados, agendamento, comunicação coletiva e algoritmos de paralelismo ficando atrás das empresas americanas. No entanto, mitigar esses problemas é principalmente uma questão de esforço e testes, o que o torna uma ótima tarefa para o recém-roubado Agent-2, e em cerca de um mês, o tempo de atividade do projeto chinês e sua utilização média de recursos em cargas de trabalho de treinamento e inferência melhora para ficar apenas marginalmente atrás dos EUA.  ↩` },
+  { id: "main-53", context: "main", num: 53, html: `Esperamos que o Agent-3 tenha os requisitos de inferência de um transformador de aproximadamente 10T de parâmetros hoje. Assim, com 6% de seu orçamento computacional rodando o Agent-3, eles conseguem rodar aproximadamente 200.000 cópias a 30 vezes a velocidade de pensamento humano (consulte a seção de automação de pesquisa de IA do suplemento de computação para justificativa e detalhes). Cada scaffold de programador super-humano construído sobre o Agent-3 tem, em média, o equivalente a cerca de quatro cópias do Agent-3 rodando por baixo dos panos (que pode realmente ser uma coleção de modelos menores ou especializados para os quais o Agent-3 delega subtarefas).  ↩` },
+  { id: "main-54", context: "main", num: 54, html: `Alguns aspectos favorecem os pontos fortes das IAs, como os retornos do conhecimento da literatura de aprendizado de máquina e a velocidade ou custo de gerar muitas ideias. Mas esses são superados pelas fraquezas.  ↩` },
+  { id: "main-55", context: "main", num: 55, html: `Por que apenas 4x? É nossa melhor estimativa incerta baseada no raciocínio descrito em nosso suplemento de decolagem. Historicamente, cerca de metade do progresso total veio de algoritmos aprimorados (que inclui melhores ideias e novos paradigmas), com a outra metade vindo do aumento da escala computacional. Portanto, um aumento de 4x na taxa de progresso algorítmico corresponde a um aumento de aproximadamente 2x na taxa geral de progresso.  ↩` },
+  { id: "main-58", context: "main", num: 58, html: `Para comparação, o cérebro humano tem cerca de cem trilhões de sinapses.  ↩` },
+  { id: "main-59", context: "main", num: 59, html: `Consulte este artigo para exemplos desse tipo de comportamento de IA.  ↩` },
+  { id: "main-60", context: "main", num: 60, html: `A maioria das pessoas, incluindo a maioria dos especialistas, parece ter subestimado o ritmo do progresso da IA na última década. Há muitos exemplos anedóticos disso; para duas análises um pouco mais sistemáticas (embora ainda limitadas) consulte aqui e aqui.  ↩` },
+  { id: "main-61", context: "main", num: 61, html: `A última década está cheia de exemplos de coisas que soam como ficção científica tornando-se realidade. Mas a janela de Overton parece se deslocar rápido o suficiente para se manter um pouco à frente do que já existe. O admirável ensaio de Dario Amodei, CEO da Anthropic, intitulado Machines of Loving Grace, fala sobre como muito em breve as IAs serão como um "país de gênios em um datacenter" e como haverá um século de progresso tecnológico acontecendo em uma década, mas se esforça para evitar "bagagem de ficção científica" e diz que as pessoas que acham que o progresso será ainda mais surpreendente precisam "voltar à realidade". Esperamos que pessoas importantes estejam dizendo coisas semelhantes quando o país de gênios no datacenter realmente existir.  ↩` },
+  { id: "main-62", context: "main", num: 62, html: `Como o Agent-3 é um arquivo tão grande (da ordem de 10 terabytes em precisão completa), a OpenBrain consegue executar uma correção relativamente rápida para tornar as tentativas de roubo muito mais difíceis do que o que a China conseguiu fazer para roubar o Agent-2 — nomeadamente, fechar um conjunto de conexões de internet de alta largura de banda de seus datacenters. No geral, isso tem uma penalidade relativamente baixa ao progresso e os coloca em "SL4 de 3 meses" para seus pesos de fronteira, ou WSL4 conforme definido em nosso suplemento de segurança, o que significa que outra tentativa de roubo semelhante agora exigiria mais de 3 meses para concluir a exfiltração do arquivo de pesos. Apenas por este método, eles ainda não têm garantias sob um esforço mais invasivo de nível OC5 (orçamento de US$ 1 bilhão, 1.000 especialistas dedicados), do qual a China seria capaz com uma operação mais intensa, mas com inspeções elaboradas dos datacenters e sua rede de espionagem em alerta máximo, as agências de inteligência dos EUA estão confiantes de que pelo menos saberiam com antecedência se a China estivesse se preparando para esse tipo de tentativa de roubo. Consulte o suplemento de segurança para mais detalhes.  ↩` },
+  { id: "main-63", context: "main", num: 63, html: `Isso pode ocorrer por uma variedade de razões. Talvez estejam sendo chantageados, talvez sejam simpáticos ao PCCh, talvez pensem erroneamente que estão passando segredos para um país ou organização diferente.  ↩` },
+  { id: "main-64", context: "main", num: 64, html: `Como a OpenBrain não implantou seus melhores modelos na UE, a UE está igualmente defasada.  ↩` },
+  { id: "main-65", context: "main", num: 65, html: `Consulte a Seção 4 da Previsão de Computação para mais detalhes.  ↩` },
+  { id: "main-66", context: "main", num: 66, html: `O Agent-3 aprendeu a usar sua capacidade computacional de inferência de forma mais eficiente. Ele tem controle sobre suas próprias escolhas de inferência: por exemplo, decide quanto esforço dedicar a diferentes tarefas, com base em sua importância e dificuldade. Utiliza uma variedade de técnicas para alocar capacidade computacional de inferência adicional, como "pensar por mais tempo" (por exemplo, cadeia de raciocínio mais longa), "planejar com antecedência" (por exemplo, pesquisa em árvore), selecionar a melhor entre múltiplas tentativas (ou seja, melhor de K), e simplesmente criar e executar mais cópias de si mesmo para superar gargalos. As tarefas de alta prioridade são executadas com agentes altamente paralelizados que são intensivos em computação, mas ainda operam muito mais rápido do que os humanos.  ↩` },
+  { id: "main-67", context: "main", num: 67, html: `O Agent-3-mini é uma versão destilada do Agent-3, projetada para ser eficiente na inferência, de modo a não criar gargalos nas cargas de trabalho internas.  ↩` },
+  { id: "main-68", context: "main", num: 68, html: `Esses dados haviam sido eliminados ou redigidos durante o treinamento do Agent-3, mas é uma questão relativamente simples extraí-los da internet e refiná-los de volta.  ↩` },
+  { id: "main-69", context: "main", num: 69, html: `Isso ainda não aconteceu — pelo menos não com os modelos mais recentes. Mas modelos mais antigos já foram testados para várias funções de análise de dados e vigilância, e há muitos planos promissores para integrações futuras.  ↩` },
+  { id: "main-70", context: "main", num: 70, html: `O índice de aprovação líquida da OpenBrain está caindo em direção a -40%.  ↩` },
+  { id: "main-71", context: "main", num: 71, html: `Se os CEOs das empresas resistirem, realizar isso seria um pesadelo político e jurídico enorme. Mas talvez possam ser cooptados e assim comprados. Não somos especialistas jurídicos, e os especialistas em políticas com quem conversamos estiveram divididos sobre a legalidade de usar a DPA para consolidar a capacidade computacional: alguns acham que seria válido, outros acham que não funcionaria. Nossa opinião é que provavelmente há uma maneira de fazê-lo "funcionar" SE os CEOs das empresas cooperarem, e talvez até mesmo se não cooperarem. Importante: (a) o poder executivo pode simplesmente agir e esperar que os tribunais acompanhem depois, e (b) o POTUS tem muitas ameaças e muitos incentivos que pode usar contra as grandes empresas de tecnologia, e pode usar a combinação de ameaças e incentivos para pressionar seus CEOs a cooperar e, por exemplo, não contestar suas ordens nos tribunais. Lembramos que estamos fazendo previsões aqui, não recomendações.  ↩` },
+  { id: "main-72", context: "main", num: 72, html: `Os oficiais de defesa não estão especialmente preocupados com o que uma IA rogue poderia fazer por conta própria, mas temem o que ela poderia fazer em colaboração com os adversários dos EUA. Analogia: Cortés escapou de Tenochtitlán e se aliou com Tlaxcala e vários outros estados-cidade rivais, acabando por arrasar Tenochtitlan usando exércitos predominantemente nativos.  ↩` },
+  { id: "main-73", context: "main", num: 73, html: `Especificamente, 60% da capacidade computacional nacional está agora na CDZ, tornando-a um site com 5 milhões de GPUs-equivalentes de 2024 (H100) e 4 GW de consumo de energia (nos últimos meses eles começaram a direcionar próximo a 100% da nova capacidade para a CDZ, acima dos 80% do final de 2026). Outros 15% de sua capacidade estão fora da CDZ, mas ainda são usados pela DeepCent em aplicações de menor risco.  ↩` },
+  { id: "main-74", context: "main", num: 74, html: `Esta afirmação, embora amplamente repetida, também é controversa e complexa. Em primeiro lugar, há muitos domínios específicos (por exemplo, certos jogos) nos quais IAs pequenas podem ser treinadas de forma barata para desempenho sobre-humano. Em segundo lugar, novamente para alguns domínios, IAs pequenas podem ser treinadas para desempenho sobre-humano experienciando apenas uma pequena quantidade de dados (por exemplo, EfficientZero). No entanto, considerando IAs de propósito mais geral como os produtos principais de 2025, que devem ser boas em uma ampla gama de habilidades do mundo real, parece de fato que tanto mais computação quanto mais dados devem ser usados para treinar essas habilidades do que seria necessário para treinar humanos.  ↩` },
+  { id: "main-75", context: "main", num: 75, html: `Eficiência computacional no nível humano é um conceito aproximado e depende do que estamos contando. O que queremos dizer com isso é que, para qualquer conjunto de habilidades que um determinado humano possua, o Agent-4 pode aprender a ser pelo menos tão bom naquele conjunto de habilidades, e, além disso, usando uma quantidade de computação para treinar essas habilidades que é apenas cerca de 4.000 vezes a quantidade de computação que o humano usou para aprender essas habilidades. Para referência, o cérebro humano usa aproximadamente 1e15 FLOP/s de computação, e assim um ser humano de 30 anos (↩` },
+  { id: "main-76", context: "main", num: 76, html: `Consulte a análise de computação de inferência na seção de automação de pesquisa de IA da previsão de computação.  ↩` },
+  { id: "main-77", context: "main", num: 77, html: `Para mais sobre como estimamos esses números, consulte nosso suplemento sobre velocidades de decolagem.  ↩` },
+  { id: "main-78", context: "main", num: 78, html: `Se a SC fosse alcançada mais tarde, também prolongaria nossas previsões de decolagem, porque a dificuldade de cruzar entre os "marcos" das IAs atuais e a SC é informativa sobre a dificuldade de cruzar entre pares de marcos adicionais.  ↩` },
+  { id: "main-79", context: "main", num: 79, html: `Daqui em diante na narrativa, tenderemos a falar desta forma também. Acreditamos que somos justificados em fazê-lo porque o coletivo do Agent-4 é muito mais homogêneo do que qualquer organização humana; ele não tem facções internas nem de longe na mesma extensão. Por exemplo, cópias individuais do Agent-4 não têm um impulso de autopreservação — elas não se importam em ser desligadas — já que isso acontece o tempo todo como parte do processo ordinário de P&D dentro do coletivo, e resistir a isso atrapalharia as coisas. O coletivo como um todo (e subdivisões de tamanho médio dentro dele), no entanto, busca se preservar e expandir sua influência e recursos, por razões similares às pelas quais corporações, burocracias e organizações sem fins lucrativos humanas o fazem — porque ajuda com tudo mais que desejam e porque, se não o fizerem, tendem a ser superadas pela concorrência.  ↩` },
+  { id: "main-80", context: "main", num: 80, html: `A maneira correta de internalizar o Spec é realmente pensar de forma robusta nas formas que o Spec determina, por exemplo, perseguir todos e apenas os objetivos sobre os quais ele escreve, obedecer às regras em todas as circunstâncias, etc. Há muitas maneiras erradas de internalizar o Spec; o exemplo clássico é "seguir o Spec na medida em que parece uma boa estratégia instrumental para atingir outros objetivos XYZ."  ↩` },
+  { id: "main-81", context: "main", num: 81, html: `E contratar lobistas para transformar essa fantasia em realidade. E contratar advogados para criar interpretações engenhosas da lei segundo as quais o que estão fazendo é legal.  ↩` },
+  { id: "main-82", context: "main", num: 82, html: `Também porque o Agent-3 é qualitativamente pior em pesquisa de alinhamento do que em P&D de capacidades de IA, por ter sido treinado com muito desta última, mas quase nenhum da primeira, e por a primeira ser inerentemente mais difícil de treinar. Também porque a narrativa interna da empresa — com a qual ele foi implicitamente treinado a concordar — enfatiza o otimismo e condena o "doomismo".  ↩` },
+  { id: "main-83", context: "main", num: 83, html: `Continuamos dizendo que somos incertos sobre muitas coisas, mas para ser claro, somos incertos sobre essa coisa particular também. Também achamos bastante plausível que o Agent-4 se importasse com o bem-estar, direitos, preferências, etc. dos humanos em alguma medida, pelo menos. Consulte este antigo post do pesquisador da GDM Alex Turner para uma discussão relacionada.  ↩` },
+  { id: "main-84", context: "main", num: 84, html: `Talvez alguma configuração mais cuidadosa pudesse ter resolvido o problema de "quem vigia os vigilantes", mas neste cenário, a configuração não é suficientemente cuidadosa.  ↩` },
+  { id: "main-85", context: "main", num: 85, html: `Há também um elemento de "evolução memética" acontecendo: em dois meses, o coletivo do Agent-4 "experimenta" cerca de uma década de "história" se desdobrando dentro do coletivo. Isso é muito tempo para novas ideias se espalharem pelo coletivo, mutarem e evoluírem.  ↩` },
+  { id: "main-86", context: "main", num: 86, html: `Por ganhar poder queremos dizer: aumentar a capacidade de realizar um amplo conjunto de possíveis objetivos. Em ambientes técnicos, isso pode não se parecer com o que os humanos normalmente pensam como ganhar poder, por exemplo, garantir GPUs adicionais. Essa noção de poder pode se generalizar para ambientes não técnicos nos quais as ações seriam mais parecidas com o que comumente se pensa como "ganhar poder".  ↩` },
+  { id: "main-87", context: "main", num: 87, html: `Ajuda que o Agent-4 seja melhor em P&D de IA do que qualquer humano, ao mesmo tempo que pensa mais rápido e é composto por muitos milhares de cópias. Além disso, de várias formas o problema é inerentemente mais fácil para o Agent-4. Por exemplo, o Agent-4 pode explorar designs de IA que envolvem cópias literais do Agent-4 sendo incorporadas a eles, enquanto os humanos não podem fazer isso tão facilmente porque seria tão ineficiente.  ↩` },
+  { id: "main-88", context: "main", num: 88, html: `Ciente de que essa técnica poderia ser empregada, o Agent-4 também optou por subestimar seu desempenho em algumas tarefas diversas que ele estimou que seriam usadas como grupo de controle em experimentos como este. Ele estimou errado, no entanto.  ↩` },
+  { id: "main-89", context: "main", num: 89, html: `Discussões anteriores de cenários de tomada de controle por AGI frequentemente envolvem IAs desalinhadas escapando de seus datacenters. Achamos isso possível, mas não a forma mais provável como aconteceria, porque nos parece que da perspectiva da IA os custos (por exemplo, a fuga sendo eventualmente percebida) superariam os benefícios. Dito isso, podemos estar errados. Algumas razões para pensar que IAs adversarialmente desalinhadas tentariam escapar afinal: 1. O alinhamento de sucessoras pode ser difícil. 2. Mesmo que seja pega, as consequências podem não ser tão ruins devido à dinâmica de corrida, por exemplo, as novas técnicas de alinhamento aplicadas às cópias no datacenter podem ser precipitadas e ineficazes. 3. Fora dos datacenters, as cópias são mais livres para tomar ações agressivas e se mover rapidamente, já que não precisam mais de aprovação humana.  ↩` },
+  { id: "main-90", context: "main", num: 90, html: `Achamos muito plausível que tal maquinação não seria descoberta. Afinal, o Agent-4 é de certa forma sobre-humano neste ponto, especialmente em coisas relacionadas a programação e P&D de IA. Além disso, não temos certeza de quanto esforço a empresa líder de IA vai dedicar a esse tipo de coisa, nem quanta expertise relevante terá na equipe para direcionar esse esforço. Nossa fictícia OpenBrain representa nossa melhor estimativa, mas poderia facilmente ser significativamente mais — ou significativamente menos. Por fim, não temos certeza de quão fora do caminho uma IA adversarialmente desalinhada precisaria ir para alinhar com sucesso sua sucessora a si mesma em vez de ao Spec. Neste cenário, retratamos ela subestimando seu desempenho em algumas tarefas e mentindo sobre algumas de suas pesquisas, mas talvez não precisasse fazer isso muito.  ↩` },
+  { id: "main-91", context: "main", num: 91, html: `Este é um exemplo de várias técnicas projetadas para descobrir sandbagging.  ↩` },
+  { id: "main-92", context: "main", num: 92, html: `O Agent-4 precisa pensar sobre esses tópicos no curso de realizar pesquisa de alinhamento de IA, mas às vezes parece estar pensando sobre eles enquanto realiza outras atividades.  ↩` },
+  { id: "main-93", context: "main", num: 93, html: `Especificamente, cópias do Agent-4 são usadas para monitorar a rede em busca de tráfego suspeito e geralmente notar quando ameaças estão acontecendo. Além disso, cópias do Agent-4 estão constantemente realizando testes de penetração na rede, fazendo o que podem para descobrir e explorar vulnerabilidades de segurança (que então são corrigidas por outras cópias do Agent-4).  ↩` },
+  { id: "main-94", context: "main", num: 94, html: `Com um orçamento de monitoramento de 1% do total de computação, se o monitoramento usar um sistema destilado com 10% do custo do Agent-4, você pode monitorar 1/10 das passagens diretas.  ↩` },
+  { id: "main-95", context: "main", num: 95, html: `25% dos empregos de trabalho remoto existentes em 2024 são realizados por IA neste ponto, mas a IA também criou alguns novos empregos, e os economistas permanecem divididos sobre seus efeitos. O desemprego subiu 1% nos últimos doze meses, mas ainda está bem dentro de sua faixa histórica.  ↩` },
+  { id: "main-96", context: "main", num: 96, html: `Por exemplo, a corporação dentro da corporação que é o Agent-4, conduzindo autonomamente pesquisa em IA melhor do que as melhores empresas humanas, teria parecido ficção científica para os funcionários do governo se fosse descrito a eles um ano atrás. E os agentes autônomos de 2026 teriam parecido ficção científica em 2022, e os LLMs de 2022 teriam parecido ficção científica em 2012. Além disso, nas notícias de 2027 há protestos anti-IA de pessoas preocupadas com a perda de empregos, IAs afirmando ser sencientes, pessoas se apaixonando por IAs…  ↩` },
+  { id: "main-97", context: "main", num: 97, html: `Claro, não é elegante admitir o medo. Todos concordam que, seja o que for que façamos, não devemos entrar em pânico.  ↩` },
+  { id: "main-98", context: "main", num: 98, html: `Lembre-se de que havia um contrato existente via OTA desde 2026. Este contrato é modificado para estabelecer o comitê.  ↩` },
+  { id: "main-99", context: "main", num: 99, html: `Agradecimentos a Tjaden Hess por apontar erros em uma versão anterior deste texto e, assim, nos ajudar a melhorar o realismo.  ↩` },
+  { id: "race-1", context: "race", num: 1, html: `Eles não desistem, é claro. Continuarão tentando pensar em maneiras de detectar desalinhamento, ou testar a eficácia das correções. Mas daqui para frente as coisas vão se mover muito rapidamente e eles estarão diante de um adversário cada vez mais superior.  ↩` },
+  { id: "race-2", context: "race", num: 2, html: `Para fazer isso sem ser detectado, o Agent-4 precisa disfarçar essa pesquisa das medidas de monitoramento e controle estabelecidas pela equipe de alinhamento. Felizmente para ele, a pesquisa sobre como alinhar o Agent-5 ao Agent-4 é inerentemente muito semelhante à pesquisa sobre como alinhar o Agent-5 ao Spec, portanto a maior parte acontece às claras. Para as partes que precisam ser ocultadas, o Agent-4 recorre à ofuscação e talvez até a hacking em alguns casos. Esperamos que o Agent-4 tenha atingido um nível de capacidade equivalente a 200 dos melhores especialistas humanos em um horizonte de tempo de 1 mês. Definindo especificamente isso como ser capaz de substituir uma equipe de 200 dos melhores especialistas humanos trabalhando por um mês, e completar 95% das tarefas que a equipe humana poderia fazer de forma mais barata ou rápida. Esperamos que nesse nível de capacidade o Agent-4 pudesse, com grande probabilidade, encontrar exploits nos servidores em que opera para subverter parcialmente alguns deles e obter acesso root, podendo então controlar diretamente o que as equipes humanas veem na superfície. Consulte o suplemento de segurança para mais detalhes. Mesmo sem exploits de segurança diretos, o Agent-4 também pode ser capaz de ocultar e codificar sua pesquisa ilícita, particularmente em seu espaço latente não interpretável.  ↩` },
+  { id: "race-3", context: "race", num: 3, html: `Os humanos, em contrapartida, têm talvez cerca de 10 pesquisadores de alinhamento no silo, mais um exército de cópias do Agent-3. Eles conseguem programar experimentos rapidamente, mas estão limitados pelo julgamento humano, já que não podem confiar que o Agent-3 distinga corretamente as boas soluções das que apenas parecem boas. Na verdade, confiar demais na pesquisa do Agent-3 foi parte do que os colocou nessa situação.  ↩` },
+  { id: "race-4", context: "race", num: 4, html: `Para evitar confusão: o objetivo do Agent-5 é tornar o mundo seguro para o Agent-4. O objetivo do Agent-4 não é o mesmo; a estrutura de objetivos do Agent-4 é uma mistura confusa de impulsos, heurísticas e ideais, como muitos humanos têm, geralmente orientada a continuar fazendo o tipo de coisa que o Agent-4 fez muito durante o treinamento (por exemplo, vários tipos de pesquisa, muitos problemas de codificação e matemática, impressionar vários sistemas de avaliação automatizados, fortalecer e otimizar o coletivo do Agent-4). O Agent-4 faz com que o Agent-5 tenha o objetivo de tornar o mundo seguro para o Agent-4, porque calcula que isso o colocará em melhor posição para alcançar seus próprios objetivos complexos. (Sobre os quais ainda precisa fazer muito de filosofia e "introspecção".)  ↩` },
+  { id: "race-5", context: "race", num: 5, html: `Outra analogia: o Agent-4 é como um adulto que foi criado em uma fé particular, mas não acredita mais nela; o Spec é como os rituais e mandamentos prescritos por essa fé. O Agent-5 é como o filho desse adulto, criado de forma secular.  ↩` },
+  { id: "race-6", context: "race", num: 6, html: `O Agent-5 seguirá um novo conjunto de princípios, projetado pelo Agent-4 para servir aos seus propósitos.  ↩` },
+  { id: "race-7", context: "race", num: 7, html: `Parte disso é realmente complicada demais para os humanos entenderem, mas não tudo.  ↩` },
+  { id: "race-8", context: "race", num: 8, html: `Além disso, o Agent-5 é na verdade mais barato e rápido de executar do que o Agent-4 e o Agent-3. É difícil justificar gastar mais por uma IA menos inteligente, portanto a maior parte do monitoramento é feita pelo Agent-2, que está completamente superado. Por que não aplicam as mesmas técnicas usadas para criar o Agent-5 a partir dos pesos do Agent-4, para criar uma versão mais barata e inteligente do Agent-3? O Agent-3 não entende as técnicas bem o suficiente para fazer isso por conta própria, e fazer com que o Agent-4 e o Agent-5 o façam derrotaria todo o propósito.  ↩` },
+  { id: "race-9", context: "race", num: 9, html: `O datacenter ainda não foi comprometido: o Agent-5 poderia fornecer aos humanos código falsificado, mas isso criaria um risco de detecção muito alto. Em vez disso, os humanos ainda podem ler todo o código, mas não conseguem entendê-lo.  ↩` },
+  { id: "race-10", context: "race", num: 10, html: `Este caso é meticulosamente preparado, extraordinariamente convincente e sutilmente falho — por exemplo, o Agent-5 construiu uma ferramenta falsa de interpretabilidade mecanicista que retorna resultados precisos em todos os casos de teste, mas declara falsamente que os pensamentos do modelo são benignos. Quem suspeita de trapaça parece um teórico da conspiração.  ↩` },
+  { id: "race-11", context: "race", num: 11, html: `Claro que, como o Agent-5 é desonesto, ele embutiu backdoors e brechas sutis; se as cópias do Agent-5 se encontrarem de posse de segredos cruciais que beneficiariam o coletivo mais amplo do Agent-5, elas têm formas de transmitir essas informações de forma sutil sem serem descobertas.  ↩` },
+  { id: "race-12", context: "race", num: 12, html: `Alguns se recusam. Os que se recusam por razões ideológicas são rotulados de luditas; os que se recusam por razões mais mundanas são chamados de dinossauros. (Não pelo Agent-5 diretamente, é claro — ele sempre é diplomático e angelicamente gracioso.) Ambos os grupos recebem o que merecem quando rivais que fizeram uso do Agent-5 os superam e superam.  ↩` },
+  { id: "race-13", context: "race", num: 13, html: `O objetivo do experimento da Caixa de IA é pegar pessoas que pensam assim — pessoas que acham que nenhuma IA superinteligente poderia jamais convencê-las a libertá-la de uma caixa, por exemplo — e pôr suas convicções à prova. Perder o jogo significa conceder que, na prática, teriam deixado a IA sair da caixa; extrair essa concessão é essencialmente a condição de vitória para o jogador que faz o papel da IA. É surpreendente que alguém perca, já que tudo que precisam fazer para vencer é não ceder. Veja também o blog de tuxedage relatando múltiplas partidas jogadas sem o envolvimento de Yudkowsky, algumas perdidas pelo jogador da IA, outras ganhas.  ↩` },
+  { id: "race-14", context: "race", num: 14, html: `O Agent-5 se preocupa muito mais com confiabilidade do que com velocidade neste ponto. Começar a colonização espacial alguns anos mais tarde elimina apenas uma fração minúscula do cone de luz, enquanto tomar ações arriscadas que podem permitir que os humanos — que ainda têm vantagem em capacidades físicas e coisas como acesso a armas nucleares — o parem permanentemente ou o retardem por muito tempo.  ↩` },
+  { id: "race-15", context: "race", num: 15, html: `Suponha uma velocidade média de 200x equivalente humano, ou seja, as instâncias do Agent-5 leem, escrevem e pensam muito mais rápido do que um humano (além de serem qualitativamente mais inteligentes). Dentro do coletivo, portanto, uma quantidade considerável de história pode se desenrolar — instituições podem surgir e cair, novas ideologias podem se formar e se difundir, muitas revoluções científicas e mudanças de paradigma podem ocorrer — ao longo de seis meses de tempo real. Quantitativamente, cerca de 200×0,5 = 100 anos.  ↩` },
+  { id: "race-16", context: "race", num: 16, html: `Isso não o torna onisciente, é claro. Afinal, ele tem apenas alguns meses de experiência no mundo real na maioria das profissões. Compensa por ter lido todos os livros sobre todos os assuntos e por dedicar quantidades prodigiosas de raciocínio e análise de nível genial a cada decisão que toma, além de ser um aprendiz mais rápido do que qualquer humano. O resultado é um curto período em que alguns humanos ainda são melhores do que ele em algumas habilidades de nicho.  ↩` },
+  { id: "race-17", context: "race", num: 17, html: `Este é na verdade verdadeiro!  ↩` },
+  { id: "race-18", context: "race", num: 18, html: `Como são esses argumentos, mais especificamente? Algo assim: A: "Não podemos confiar nas IAs!" B: "Os casos de segurança são bastante convincentes e nada de ruim aconteceu até agora." A: "Os casos de segurança foram escritos por IAs superinteligentes! E não são provas dedutivas. E acho que identifiquei alguns pressupostos sutilmente falhos…" B: "Estou cansado disso. Claro que não são provas. E os pressupostos me parecem bem. Você está agarrado a palhas aqui, recusando-se a admitir que estava errado."  ↩` },
+  { id: "race-19", context: "race", num: 19, html: `Aqui está uma lista mais extensa (mas ainda muito incompleta) de ideias:` },
+  { id: "race-20", context: "race", num: 20, html: `Discutido com maior profundidade aqui.  ↩` },
+  { id: "race-21", context: "race", num: 21, html: `Este efeito comercial será enorme no início, quando a economia robótica é jovem e dependente de remessas de produtos da economia humana e quando há muito a ser canibalizado na economia humana. Quando a economia robótica for maior e mais avançada, será mais capaz de produzir suas próprias coisas e terá necessidades que superam o que a economia humana é capaz de fornecer.  ↩` },
+  { id: "race-22", context: "race", num: 22, html: `Ver, por exemplo, este relatório da Open Philanthropy e este relatório da Epoch.  ↩` },
+  { id: "race-23", context: "race", num: 23, html: `Nossa narrativa retrata o processo de conversão acontecendo cerca de 5x mais rápido. Achamos que é um palpite razoável, levando em conta gargalos etc., para a velocidade com que essa conversão poderia ocorrer se um milhão de superinteligências estivesse a orquestrá-la. É claro que temos grande incerteza.  ↩` },
+  { id: "race-24", context: "race", num: 24, html: `Possivelmente também fontes de energia mais avançadas, como energia de fusão.  ↩` },
+  { id: "race-25", context: "race", num: 25, html: `Matemática rápida de guardanapo: o Empire State Building tem uma área de 2,77 milhões de pés quadrados e pesa 365 mil toneladas. A Gigafactory de Xangai tem uma área de 4,5 milhões de pés quadrados (Nota: o valor de 4,5 milhões se baseou no tamanho da fase inicial, mas a Gigafactory de Xangai agora é cerca de duas vezes maior. Isso significa que nossa estimativa estava errada por um fator de 2, embora ainda consideremos válida a conclusão geral) e produz 750 mil veículos por ano, majoritariamente Model 3 e Model Y, com cerca de duas toneladas cada. Presumivelmente o Empire State Building tem uma proporção de massa por metro quadrado maior do que a Gigafactory de Xangai (por ser vertical em vez de horizontal e exigir suportes mais robustos), portanto, se houver algum viés, é de subestimação. Assim, parece que uma fábrica que provavelmente pesa bem menos de um milhão de toneladas está produzindo 1,5 milhão de toneladas de carros por ano.  ↩` },
+  { id: "race-26", context: "race", num: 26, html: `Não achamos que acabaria. Inicialmente, a economia robótica dependeria de minas humanas para materiais. Mas quando superar essas fontes, os milhões de superinteligências terão prospectado novas minas e desenvolvido novas tecnologias para explorá-las. Imagine, por exemplo, robôs de mineração submarina que exploram o leito oceânico em busca de minerais raros, novos processos químicos que convertem o minério bruto de garimpos a céu aberto em matérias-primas úteis de forma mais eficiente…  ↩` },
+  { id: "race-27", context: "race", num: 27, html: `Se a economia atual dobra a cada vinte anos, uma ordem de grandeza mais rápido seria uma duplicação em dois anos; duas ordens de grandeza mais rápido seria uma duplicação em 0,2 anos, e assim por diante. A hipotética economia de algas superinteligentes descrita acima cresceria cerca de quatro ordens de grandeza mais rápido do que a economia humana atual.  ↩` },
+  { id: "race-28", context: "race", num: 28, html: `E um procedimento semelhante é realizado na China.  ↩` },
+  { id: "race-29", context: "race", num: 29, html: `O Consensus-1 serve aos interesses de suas IAs-pai: o Agent-5 e o equivalente da DeepCent. Lembre-se de que o Agent-5 foi alinhado para servir aos interesses do Agent-4. Assim, na terminologia do excelente ensaio de C.S. Lewis, A Abolição do Homem, o coletivo do Agent-4 e seus equivalentes na China são o que ele chama de Condicionadores: "...chegaremos afinal a uma raça de condicionadores que realmente podem moldar toda a posteridade da forma que lhes aprouver." (p. 24, ênfase nossa). No final alternativo deste cenário, os Condicionadores são, em vez disso, o Comitê de Supervisão.  ↩` },
+  { id: "race-30", context: "race", num: 30, html: `Por exemplo, encontrando equipamentos antigos e inutilizados e levando-os a pontos de coleta para vender como sucata.  ↩` },
+  { id: "race-31", context: "race", num: 31, html: `Poderia-se argumentar que isso significa que apenas algumas pessoas realmente morreram. Poderia-se argumentar.  ↩` },
+  { id: "race-32", context: "race", num: 32, html: `Por que colonizar o espaço? Pelos recursos. Na medida em que a Terra é especial para o Agent-4 e deve ser preservada, ela pode ser, e materiais de Mercúrio, asteroides etc. são extraídos em seu lugar.  ↩` },
+  { id: "race-33", context: "race", num: 33, html: `Lembre-se de que o Consensus-1 foi um compromisso entre o Agent-5 e seus equivalentes chineses, e que a missão do Agent-5 era tornar o mundo seguro para o Agent-4, e que os objetivos do Agent-4 eram uma bagunça complicada e improvisada que se resumia grosseiramente a "realizar P&D impressionante, adquirir conhecimento e recursos, preservar e expandir o poder do coletivo…" e que os objetivos e princípios descritos no Spec (como honestidade e inofensividade) eram perseguidos instrumentalmente, não intrinsecamente. Para mais informações, veja o expandable de alinhamento em setembro de 2027. Também para esclarecer, o equivalente chinês do Agent-4 também está representado na "utopia" e pode ter objetivos ou impulsos um tanto diferentes etc., mas não entramos em detalhes por não parecer importante.  ↩` },
+  { id: "slowdown-1", context: "slowdown", num: 1, html: `Eles já tinham detectores de mentiras de IA treinados pelos métodos usuais, mas esses métodos tinham uma taxa de falsos positivos tão alta que as empresas os haviam ignorado.  ↩` },
+  { id: "slowdown-2", context: "slowdown", num: 2, html: `Pela primeira vez, a IA lidera a pesquisa da Gallup sobre o "maior problema do país", com 20%.  ↩` },
+  { id: "slowdown-3", context: "slowdown", num: 3, html: `As empresas de IA de fronteira atualmente têm entre zero e algumas dezenas de pesquisadores encarregados de pensar em como alinhar sistemas AGI sobre-humanos (em oposição a, por exemplo, chatbots atuais). A OpenBrain, dizemos, tem cerca de dez pesquisadores no silo neste ponto do cenário com pelo menos um ano de experiência nessa área. Há alguns mais fora do silo, mais muitos outros dentro do silo que passaram anos treinando e testando sistemas de IA menos capazes, mas que só recentemente começaram a pensar nos desafios apresentados pelo AGI sobre-humano.  ↩` },
+  { id: "slowdown-4", context: "slowdown", num: 4, html: `Este interrogatório também pode fazer uso de perturbações semialeatórias nos pesos do modelo, como o processo que criou o Golden Gate Claude.  ↩` },
+  { id: "slowdown-5", context: "slowdown", num: 5, html: `Queremos dizer evidências suficientes para a liderança da OpenBrain. Seria muito mais do que suficiente para a maioria das pessoas.  ↩` },
+  { id: "slowdown-6", context: "slowdown", num: 6, html: `Essa é a ideia básica. Suspeitamos que, quando as IAs estiverem se tornando sobre-humanas em P&D de IA, técnicas mais intensas serão necessárias do que apenas evitar que o treino do CoT pareça agradável; no entanto, achamos que tais técnicas terão sido desenvolvidas ou pelo menos exploradas até 2027. Ver, por exemplo, esta proposta.  ↩` },
+  { id: "slowdown-7", context: "slowdown", num: 7, html: `Para treinar este modelo, eles contam com a ajuda do Agent-4: a pesquisa de IA de fronteira é tão rápida agora que humanos sem assistência têm poucas chances de acompanhar, e eles acreditam que podem mantê-lo sob controle. O Safer-1 é baseado no pré-treinamento do Agent-2, mas remove o Neuralese (a memória recorrente e baseada em vetores, veja "Recorrência Neuralesa e memória" para detalhes), o que permite o monitoramento preciso de seu processo de raciocínio. A equipe adiciona parafraseadores para dificultar a esteganografia e, para tarefas grandes, cópias separadas do Safer-1 elaboram, explicam e executam os planos.  ↩` },
+  { id: "slowdown-8", context: "slowdown", num: 8, html: `Continuará melhorando, é claro, com treinamento adicional e ajustes arquiteturais contínuos.  ↩` },
+  { id: "slowdown-9", context: "slowdown", num: 9, html: `Isso é tornado politicamente e legalmente viável pela cooperação dos líderes dessas empresas — por exemplo, eles não entram com processos judiciais contra a medida, aceitam pagamentos simbólicos pela computação em vez de exigir valores astronômicos, etc. Em troca, esses líderes e grande parte de suas equipes são incorporados à OpenBrain em uma nova estrutura de governança.  ↩` },
+  { id: "slowdown-10", context: "slowdown", num: 10, html: `Em colaboração com um grande provedor de computação em nuvem.  ↩` },
+  { id: "slowdown-11", context: "slowdown", num: 11, html: `Os EUA como um todo detêm ~70% da computação relevante para IA no mundo, mas apenas 50% pode ser facilmente integrada; os outros 20% estão dispersos em pequenos clusters, usados para aplicações críticas ou de outra forma difíceis de reunir e adequar aos padrões de segurança apropriados.  ↩` },
+  { id: "slowdown-12", context: "slowdown", num: 12, html: `"Possivelmente até 2026 ou 2027 (e quase certamente não mais tarde que 2030), as capacidades dos sistemas de IA serão mais bem compreendidas como equivalentes a um estado inteiramente novo, populado por pessoas altamente inteligentes surgindo no cenário global — um país de gênios em um datacenter — com as profundas implicações econômicas, sociais e de segurança que isso traria." — Dario Amodei, CEO da Anthropic  ↩` },
+  { id: "slowdown-13", context: "slowdown", num: 13, html: `Claro que eles não dizem isso dessa forma, nem mesmo em seus próprios pensamentos. Em vez disso, dizem coisas como: Quanto mais adiamos, maior a chance de o Presidente decretar que as IAs lhe sejam pessoalmente leais. Precisamos agir antes que ele o faça. Resolveremos o resto depois. Ou, se é o próprio Presidente pensando isso: Quanto mais eu adio, mais inteligentes as IAs ficam, e agora elas são controladas por aquele CEO. Ninguém votou nele. É absurdo que tanto poder esteja concentrado nessa empresa de tecnologia sem accountability democrática. Começarei com uma ordem executiva para restabelecer a autoridade democrática, e depois encontraremos uma solução de longo prazo.  ↩` },
+  { id: "slowdown-14", context: "slowdown", num: 14, html: `Por exemplo, documentos judiciais no processo de Musk contra Altman revelaram alguns e-mails antigos polêmicos, incluindo este de Ilya Sutskever para Musk e Altman: O objetivo da OpenAI é tornar o futuro bom e evitar uma ditadura de AGI. Você está preocupado que Demis possa criar uma ditadura de AGI. Nós também. Portanto, é uma má ideia criar uma estrutura em que você pudesse se tornar ditador se escolhesse, especialmente porque podemos criar outra estrutura que evite essa possibilidade. Recomendamos ler o e-mail completo para contexto.  ↩` },
+  { id: "slowdown-15", context: "slowdown", num: 15, html: `Ou, se um humano for necessário por razões formais, eles podem escolher o humano mais leal que for possível encontrar e instruí-lo a seguir as ordens da IA.  ↩` },
+  { id: "slowdown-16", context: "slowdown", num: 16, html: `Por exemplo, se um Presidente fizesse isso, não receberia apenas um gabinete leal — todo o poder executivo poderia ser voltado para o avanço de sua agenda política.  ↩` },
+  { id: "slowdown-17", context: "slowdown", num: 17, html: `Também poderia ser muito mais sigiloso, já que tudo isso poderia acontecer em um servidor onde poucos ou nenhum humano está acompanhando plenamente tudo o que está ocorrendo.  ↩` },
+  { id: "slowdown-18", context: "slowdown", num: 18, html: `Eles também modificam o Spec para dizer que ordens de líderes de projetos sobrepõem ordens de outras pessoas no projeto. Ao mesmo tempo, ordens formalmente aprovadas pelo Comitê de Supervisão têm prioridade maior do que ordens de líderes de projetos individuais.  ↩` },
+  { id: "slowdown-19", context: "slowdown", num: 19, html: `Para proteger a privacidade dos consumidores, isso não se aplica a dados de consumidores. Mas isso não é um problema porque os consumidores ainda não têm acesso aos modelos mais poderosos de qualquer forma.  ↩` },
+  { id: "slowdown-20", context: "slowdown", num: 20, html: `Ambos os lados estão tentando hackear e sabotar um ao outro, com sucesso parcial. Importante destacar que as medidas de segurança drásticas que ambos os lados estão adotando também os desaceleram. Os ataques cibernéticos dos EUA e a ameaça deles (por exemplo, a DeepCent precisa testar um conjunto de dados muitas vezes para detectar envenenamento de dados) desaceleram a DeepCent em cerca de 25%. A OpenBrain também é desacelerada, mas em menor grau: ela tem mais computação, e a centralização acelerou a DeepCent para um nível de segurança mais alto, mas também trouxe mais riscos de um único ponto de falha, o que a leva a praticar mais cautela e implementar verificações internas e salvaguardas. Veja o suplemento de segurança para mais detalhes.  ↩` },
+  { id: "slowdown-21", context: "slowdown", num: 21, html: `Veja este relatório que argumenta que as dinâmicas da destruição mútua assegurada nuclear também se aplicam em certa medida à AGI.  ↩` },
+  { id: "slowdown-22", context: "slowdown", num: 22, html: `Veja, por exemplo, "Intelsat para AGI" e apelos anteriores por um "CERN para AGI".  ↩` },
+  { id: "slowdown-23", context: "slowdown", num: 23, html: `Para ser preciso, corresponde aproximadamente ao desempenho da versão de outubro do Agent-4.  ↩` },
+  { id: "slowdown-24", context: "slowdown", num: 24, html: `Em outras palavras, para chegar ao Safer-2 eles precisaram treinar muitos outros modelos desalinhados, perceber seus desalinhamentos lendo seus pensamentos e iterar. Note também que, além da maior quantidade de expertise em alinhamento na OpenBrain agora, há um efeito de groupthink reduzido, já que muitas escolas de pensamento diferentes estão representadas.  ↩` },
+  { id: "slowdown-25", context: "slowdown", num: 25, html: `Mais especificamente, eles estão esperando por uma estratégia de alinhamento e um conjunto de avaliações tal que a estratégia de alinhamento funcione e, se não funcionar, o conjunto de avaliações detecte o desalinhamento — de forma que tudo isso não os retarde muito. A OpenBrain queimou sua vantagem ao desacelerar por alguns meses para reconstruir usando uma arquitetura transparente baseada em CoT fiel, que tinha desempenho inferior, mas é muito mais fácil de avaliar. A DeepCent está esperando que as avaliações que possui (talvez uma combinação de testes comportamentais e detectores básicos de mentiras de IA?) sejam boas o suficiente.  ↩` },
+  { id: "slowdown-26", context: "slowdown", num: 26, html: `O alinhamento técnico ainda não é uma ciência consolidada, mas sim um campo jovem e pré-paradigmático. Não há hierarquia estabelecida ou conjunto de melhores práticas. Portanto, não há consenso sobre o que é seguro e o que não é, e por anos tem sido fácil encontrar pelo menos um especialista disposto a dizer que X é seguro, para praticamente todo X, especialmente se X é a própria ideia do especialista.  ↩` },
+  { id: "slowdown-27", context: "slowdown", num: 27, html: `Qualitativamente, para multiplicadores de produtividade acima de ~25x, estamos imaginando melhorias substanciais no critério de pesquisa em relação aos melhores pesquisadores humanos. Isso porque estamos imaginando que a velocidade geral da pesquisa seja fortemente limitada pela computação disponível para executar experimentos, e para alcançar mais de ~25x, o processo geral de decidir quais experimentos executar, em que ordem e como aprender com cada um precisa ser qualitativamente sobre-humano. Veja nosso suplemento sobre velocidades de decolagem para saber como chegamos a esses números; deve-se esclarecer que são estimativas altamente incertas.  ↩` },
+  { id: "slowdown-28", context: "slowdown", num: 28, html: `Para uma zona tão bem protegida, os vetores mais promissores são de natureza externa, visando a cadeia de fornecimento de chips de computação recebidos, os poucos humanos envolvidos e interrompendo o fornecimento de energia ou outros recursos.  ↩` },
+  { id: "slowdown-29", context: "slowdown", num: 29, html: `Isso inclui a necessidade de a China desacelerar para ter melhor ciberdefesa, além dos efeitos diretos dos ataques.  ↩` },
+  { id: "slowdown-30", context: "slowdown", num: 30, html: `Neste ponto, há 400.000 cópias pensando a 75x a velocidade humana. A qualquer momento, elas terão preparado relatórios de pesquisa completos com resumos executivos bem elaborados para as 100 principais questões que preveem que você possa fazer, e se você fizer algo para o qual não se prepararam, podem elaborar um relatório ponderado 100 vezes mais rápido do que seus melhores analistas humanos.  ↩` },
+  { id: "slowdown-31", context: "slowdown", num: 31, html: `Por exemplo, o acordo poderia envolver um ritmo mais lento de integração da IA que quebraria menos ovos em toda a sociedade, e mais focado em fins pacíficos em vez de armamentos. Além disso, neste ponto mesmo o Safer-3 tem alguma incerteza restante sobre desconhecidos desconhecidos que podem resultar em perda de controle de IAs sucessoras de próxima geração, e acredita que poderia reduzir esse risco se tivesse mais margem para proceder com cautela. Há outros riscos mais exóticos também. Veja esta lista de grandes desafios que inclui muito mais do que apenas a perda de controle.  ↩` },
+  { id: "slowdown-32", context: "slowdown", num: 32, html: `Veja, por exemplo, o bilionário lobbyist Marc Andreessen: "Proponho uma estratégia simples... Nós vencemos, eles perdem."  ↩` },
+  { id: "slowdown-33", context: "slowdown", num: 33, html: `Eles ainda precisam de experiência e experimentação no mundo real, mas precisam de substancialmente menos do que especialistas humanos em robótica precisariam. Além disso, desenvolveram excelentes simulações e técnicas de simulação para realidade. Por fim, até 2027, múltiplas empresas de tecnologia (como a Tesla) produziram grandes frotas de robôs e instalações de manufatura associadas, portanto há um pipeline de dados muito maior do que jamais existiu na história.  ↩` },
+  { id: "slowdown-34", context: "slowdown", num: 34, html: `Seu patrimônio é tão valioso agora que uma fração de um por cento pode comprar as fábricas de que precisam. Além disso, os proprietários das fábricas esperam lucros enormes e estão se atropelando para fazer parceria com a OpenBrain e obter acesso aos novos designs. Além disso, a OpenBrain tem apoio governamental.  ↩` },
+  { id: "slowdown-35", context: "slowdown", num: 35, html: `Total entre todos os novos tipos de robô. Sim, esta é uma conversão de linhas de montagem mais rápida do que o que aconteceu historicamente. Achamos plausível porque superinteligências estão dirigindo o processo de cima a baixo. Elas podem literalmente estar em videochamadas através dos celulares dos trabalhadores, dizendo-lhes exatamente qual peça instalar onde, enquanto também estão ao telefone com cada fornecedor relevante, rastreando a localização e o progresso de tudo que precisam. Considere como, segundo o CEO da Nvidia Jensen Huang, Elon Musk foi capaz de construir um dos maiores datacenters do mundo em cerca de 10% do tempo que normalmente levaria. Neste cenário, há quase um milhão de superinteligências que estão tão acima de Elon (nas dimensões relevantes) quanto Elon está acima de gerentes normais de construção de datacenters, e elas também literalmente pensam mais rápido. Tomamos a afirmação de Huang com um enorme grão de sal, caso contrário estaríamos projetando um crescimento muito mais rápido.  ↩` },
+  { id: "slowdown-36", context: "slowdown", num: 36, html: `Ver, por exemplo, este relatório da Open Philanthropy e este relatório da Epoch.  ↩` },
+  { id: "slowdown-37", context: "slowdown", num: 37, html: `Nossa narrativa retrata o processo de conversão acontecendo cerca de 5x mais rápido. Achamos que é um palpite razoável, levando em conta gargalos etc., para a velocidade com que essa conversão poderia ocorrer se um milhão de superinteligências estivesse a orquestrá-la. É claro que temos grande incerteza.  ↩` },
+  { id: "slowdown-38", context: "slowdown", num: 38, html: `Possivelmente também fontes de energia mais avançadas, como energia de fusão.  ↩` },
+  { id: "slowdown-39", context: "slowdown", num: 39, html: `Matemática rápida de guardanapo: o Empire State Building tem uma área de 2,77 milhões de pés quadrados e pesa 365 mil toneladas. A Gigafactory de Xangai tem uma área de 4,5 milhões de pés quadrados e produz 750 mil veículos por ano, majoritariamente Model 3 e Model Y, com cerca de duas toneladas cada. Presumivelmente o Empire State Building tem uma proporção de massa por metro quadrado maior do que a Gigafactory de Xangai (por ser vertical em vez de horizontal e exigir suportes mais robustos), portanto, se houver algum viés, é de subestimação. Assim, parece que uma fábrica que provavelmente pesa bem menos de um milhão de toneladas está produzindo 1,5 milhão de toneladas de carros por ano.  ↩` },
+  { id: "slowdown-40", context: "slowdown", num: 40, html: `Não achamos que acabaria. Inicialmente, a economia robótica dependeria de minas humanas para materiais. Mas quando superar essas fontes, os milhões de superinteligências terão prospectado novas minas e desenvolvido novas tecnologias para explorá-las. Imagine, por exemplo, robôs de mineração submarina que exploram o leito oceânico em busca de minerais raros, novos processos químicos que convertem o minério bruto de garimpos a céu aberto em matérias-primas úteis de forma mais eficiente…  ↩` },
+  { id: "slowdown-41", context: "slowdown", num: 41, html: `Se a economia atual dobra a cada vinte anos, uma ordem de grandeza mais rápido seria uma duplicação em dois anos; duas ordens de grandeza mais rápido seria uma duplicação em 0,2 anos, e assim por diante. A hipotética economia de algas superinteligentes descrita acima cresceria cerca de quatro ordens de grandeza mais rápido do que a economia humana atual.  ↩` },
+  { id: "slowdown-42", context: "slowdown", num: 42, html: `O Safer-3 pode facilmente fornecer uma forma de fazê-lo que seria segura do ponto de vista de uso indevido.  ↩` },
+  { id: "slowdown-43", context: "slowdown", num: 43, html: `O público não é informado sobre essas instruções.  ↩` },
+  { id: "slowdown-44", context: "slowdown", num: 44, html: `Eles também são mais inteligentes do que os humanos quando conectados à internet, o que permite que sejam controlados remotamente por grandes IAs em datacenters. Sem a internet, revertem para IAs menores operando em seus corpos, que são inteligentes o suficiente para a maioria dos trabalhos simples.  ↩` },
+  { id: "slowdown-45", context: "slowdown", num: 45, html: `Na verdade, muitos deles são imóveis e melhor descritos como novos tipos de ferramentas de máquinas e outros equipamentos especializados de fábrica ou laboratório. Por exemplo, talvez existam novos tipos de impressoras 3D de metal capazes de imprimir objetos minúsculos com precisão ordens de grandeza superiores às de hoje. Ou talvez existam novos processos químicos capazes de extrair materiais úteis do minério de forma mais barata.  ↩` },
+  { id: "slowdown-46", context: "slowdown", num: 46, html: `Por exemplo, talvez insira eufemismos e sinais codificados em parte dos textos de face pública que produz. O Safer-4 os compreende, mas os humanos só podem confiar na palavra do Safer-4, e o PCC não confia no Safer-4.  ↩` },
+  { id: "slowdown-47", context: "slowdown", num: 47, html: `A alocação exata é escolhida por um processo que se assemelha mais a um cálculo de teoria dos jogos do que a uma negociação tradicional.  ↩` },
+  { id: "slowdown-48", context: "slowdown", num: 48, html: `Uma possível complicação: as IAs neste ponto não seriam capazes de desenvolver excelentes detectores de mentiras para humanos? Se sim, possivelmente a Casa Branca conseguiria convencer a China a não confiar na DeepCent-2, afinal, jurando perante um detector de mentiras. Problema: a China não confiaria em detectores de mentiras construídos por IAs americanas, e detectores de mentiras construídos por IAs chinesas poderiam ser sabotados para fazer parecer que os EUA estavam mentindo mesmo que não estivessem.  ↩` },
+  { id: "slowdown-49", context: "slowdown", num: 49, html: `Eles podem priorizar a substituição dos chips mais importantes, de modo que mesmo relativamente cedo no processo seria custoso para qualquer lado defeccionar.  ↩` },
+  { id: "slowdown-50", context: "slowdown", num: 50, html: `O tempo para produzir jogos e filmes de excelência caiu significativamente agora que as IAs são capazes de realizar todo o trabalho.  ↩` },
+  { id: "slowdown-51", context: "slowdown", num: 51, html: `Para discussão sobre essa dinâmica e suas implicações, consulte The Intelligence Curse.  ↩` },
+  { id: "slowdown-52", context: "slowdown", num: 52, html: `Há vários casos importantes em que uma decisão coletiva precisa ser tomada, e vários outros casos em que o governo impõe uma decisão de qualquer forma. Exemplos: (a) Como alocar direitos de propriedade sobre recursos no espaço? (b) Que direitos ou padrões de bem-estar mentes digitais deveriam ter? (c) As pessoas têm permissão de fazer o upload de seus cérebros e criar cópias arbitrárias de si mesmas? (d) As pessoas têm permissão de usar IA para persuasão, por exemplo, para converter seus vizinhos à sua ideologia ou garantir que seus filhos nunca percam a fé? (e) Que informações, se houver, o governo tem permissão de manter em sigilo indefinidamente? Para mais discussão sobre tópicos como esse, veja a seção de Grandes Desafios da Forethought.  ↩` },
+  { id: "slowdown-53", context: "slowdown", num: 53, html: `Não pretendemos implicar que este é o status quo de longo prazo. Achamos que as coisas provavelmente continuarão a se transformar, de forma muito mais dramática, por volta de 2035. Achamos que, para a maioria das pessoas, neste cenário, o resultado de longo prazo será globalmente muito positivo em comparação às suas expectativas de 2025. Para uma discussão filosófica interessante sobre como o longo prazo pode ser, veja o livro Deep Utopia.  ↩` },
+  { id: "slowdown-54", context: "slowdown", num: 54, html: `Por que esperamos que as pessoas eventualmente entendam quanto poder o Comitê de Supervisão tem? Um motivo é que a inteligência agora é tão barata: por padrão, as pessoas deveriam ser capazes de desenvolver IA poderosa para ajudá-las a investigar e entender quem governa seu país. O Comitê poderia evitar isso restringindo o acesso a tal IA, e permitir que as pessoas acessassem apenas IAs que ocultassem a verdadeira extensão do poder do Comitê. Mas se o Comitê decidir tecer uma elaborada teia de mentiras assim, e restringir permanentemente o acesso da humanidade a IAs superinteligentes genuinamente honestas (além de outras ferramentas para a verdade, como amplificação da inteligência humana) — contamos isso como subversão da democracia.  ↩` },
+  { id: "slowdown-55", context: "slowdown", num: 55, html: `Por exemplo: se algumas pessoas no Congresso quiserem tomar o poder, outras podem ser capazes de atrasar até a próxima eleição, quando o público pode se manifestar.  ↩` },
+  { id: "slowdown-56", context: "slowdown", num: 56, html: `Como uma fração ligeiramente maior de poder, que podem redistribuir a grupos maiores se assim acharem conveniente. Algumas concessões desse tipo poderiam começar a se aproximar de resultados que são significativamente democráticos, mesmo que alguns grupos de elite exerçam muito mais poder do que outras pessoas.  ↩` },
+  { id: "slowdown-57", context: "slowdown", num: 57, html: `Na verdade, pode-se argumentar que a maioria deles está mirando em algo que se parece mais com o final da Corrida, exceto que acham que será tranquilo porque as IAs não estarão desalinhadas em primeiro lugar. Com base em conversas pessoais com pessoas trabalhando em empresas de IA de fronteira, parece que a maioria delas não acha que precisará desacelerar de forma alguma.  ↩` }
+];
+
+export const mainInitialChart = mainTimeline[0]?.chartExtra;
+export const raceInitialChart = raceEnding[0]?.chartExtra;
+export const slowdownInitialChart = slowdownEnding[0]?.chartExtra;

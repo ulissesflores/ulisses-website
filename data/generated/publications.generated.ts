@@ -1,5 +1,5 @@
 /* AUTO-GENERATED FILE. DO NOT EDIT MANUALLY.
- * Source: /Users/ulissesflores/Documents/Projetos/ulisses-hub/data/upkf/ulisses-flores-sovereign-upkf_v3.3.md
+ * Source: /sessions/gifted-cool-faraday/mnt/ulisses-hub/public/upkf-source.md
  * Generated at: 2026-02-21
  */
 
@@ -122,9 +122,6 @@ export const publications: Publication[] = [
     "updatedAt": "2026-02-21",
     "inLanguage": "pt-BR",
     "tags": [
-      "IA",
-      "Economia",
-      "Sistemas Complexos",
       "LITTLE",
       "LAW",
       "RESILIENCE"
@@ -261,9 +258,6 @@ export const publications: Publication[] = [
     "updatedAt": "2026-02-21",
     "inLanguage": "pt-BR",
     "tags": [
-      "IA",
-      "Economia",
-      "Sistemas Complexos",
       "LSTM",
       "ASSET",
       "PREDICTION"
@@ -400,9 +394,6 @@ export const publications: Publication[] = [
     "updatedAt": "2026-02-21",
     "inLanguage": "pt-BR",
     "tags": [
-      "Engenharia",
-      "IoT",
-      "Seguranca",
       "HYBRID",
       "COOLING",
       "THERMODYNAMICS"
@@ -539,9 +530,6 @@ export const publications: Publication[] = [
     "updatedAt": "2026-02-21",
     "inLanguage": "pt-BR",
     "tags": [
-      "Engenharia",
-      "IoT",
-      "Seguranca",
       "IOT",
       "DATA",
       "SOVEREIGNTY"
@@ -678,9 +666,6 @@ export const publications: Publication[] = [
     "updatedAt": "2026-02-21",
     "inLanguage": "pt-BR",
     "tags": [
-      "IA",
-      "Economia",
-      "Sistemas Complexos",
       "FRAUD",
       "DETECTION",
       "MLP"
@@ -817,9 +802,6 @@ export const publications: Publication[] = [
     "updatedAt": "2026-02-21",
     "inLanguage": "pt-BR",
     "tags": [
-      "IA",
-      "Economia",
-      "Sistemas Complexos",
       "HISTORICITY",
       "JESUS",
       "ARCHAEOLOGY"
@@ -956,9 +938,6 @@ export const publications: Publication[] = [
     "updatedAt": "2026-02-21",
     "inLanguage": "pt-BR",
     "tags": [
-      "IA",
-      "Economia",
-      "Sistemas Complexos",
       "BITCOIN",
       "PRAXEOLOGY"
     ],
@@ -976,11 +955,11 @@ export const publications: Publication[] = [
     },
     "quality": {
       "phase1": 997,
-      "phase2": 970,
+      "phase2": 960,
       "phase3": 993,
       "compliance": 1000,
-      "polymathic": 980,
-      "macro": 988
+      "polymathic": 970,
+      "macro": 984
     },
     "landing": {
       "overview": "Esta pagina apresenta uma sintese cientifica de \"Bitcoin como Ativo de Reserva e a Teoria da Moeda na Escola Austríaca\", estruturada para leitura academica, auditoria metodologica e preparo DOI-ready.",
@@ -1094,9 +1073,6 @@ export const publications: Publication[] = [
     "updatedAt": "2026-02-21",
     "inLanguage": "pt-BR",
     "tags": [
-      "IA",
-      "Economia",
-      "Sistemas Complexos",
       "SCRIBAL",
       "CANONIZATION",
       "EZRA"
@@ -1233,9 +1209,6 @@ export const publications: Publication[] = [
     "updatedAt": "2026-02-21",
     "inLanguage": "pt-BR",
     "tags": [
-      "Teologia",
-      "Humanidades",
-      "Historia",
       "THEOLOGY",
       "ECONOMIC",
       "ORDER"
@@ -1368,9 +1341,6 @@ export const publications: Publication[] = [
     "updatedAt": "2026-02-21",
     "inLanguage": "pt-BR",
     "tags": [
-      "Engenharia",
-      "IoT",
-      "Seguranca",
       "RING",
       "SIGNATURES",
       "PRIVACY"
@@ -1507,9 +1477,6 @@ export const publications: Publication[] = [
     "updatedAt": "2026-02-21",
     "inLanguage": "pt-BR",
     "tags": [
-      "Engenharia",
-      "IoT",
-      "Seguranca",
       "AGRITECH",
       "AGILE",
       "FLOW"
@@ -1646,9 +1613,6 @@ export const publications: Publication[] = [
     "updatedAt": "2026-02-21",
     "inLanguage": "pt-BR",
     "tags": [
-      "Teologia",
-      "Humanidades",
-      "Historia",
       "EXEGETICAL",
       "TREATISE",
       "ANTHROPOLOGY"
@@ -1781,9 +1745,6 @@ export const publications: Publication[] = [
     "updatedAt": "2026-02-21",
     "inLanguage": "pt-BR",
     "tags": [
-      "IA",
-      "Economia",
-      "Sistemas Complexos",
       "MARIAN",
       "APPARITIONS",
       "CRITIQUE"
@@ -1916,9 +1877,6 @@ export const publications: Publication[] = [
     "updatedAt": "2026-02-21",
     "inLanguage": "pt-BR",
     "tags": [
-      "Engenharia",
-      "IoT",
-      "Seguranca",
       "DIGITAL",
       "LEGACY"
     ],
@@ -1936,11 +1894,11 @@ export const publications: Publication[] = [
     },
     "quality": {
       "phase1": 997,
-      "phase2": 960,
+      "phase2": 950,
       "phase3": 993,
       "compliance": 1000,
-      "polymathic": 980,
-      "macro": 986
+      "polymathic": 970,
+      "macro": 982
     },
     "landing": {
       "overview": "Esta pagina apresenta uma sintese cientifica de \"Desafios da Herança Digital: Preservação de Memória Pós-Mortem\", estruturada para leitura academica, auditoria metodologica e preparo DOI-ready.",
@@ -2050,9 +2008,6 @@ export const publications: Publication[] = [
     "updatedAt": "2026-02-21",
     "inLanguage": "pt-BR",
     "tags": [
-      "IA",
-      "Economia",
-      "Sistemas Complexos",
       "HOLY",
       "CLUB",
       "METHODISM"
@@ -2185,9 +2140,6 @@ export const publications: Publication[] = [
     "updatedAt": "2026-02-21",
     "inLanguage": "pt-BR",
     "tags": [
-      "Teologia",
-      "Humanidades",
-      "Historia",
       "THEOLOGY",
       "HOPE"
     ],
@@ -2205,11 +2157,11 @@ export const publications: Publication[] = [
     },
     "quality": {
       "phase1": 997,
-      "phase2": 960,
+      "phase2": 950,
       "phase3": 993,
       "compliance": 1000,
-      "polymathic": 980,
-      "macro": 986
+      "polymathic": 970,
+      "macro": 982
     },
     "landing": {
       "overview": "Esta pagina apresenta uma sintese cientifica de \"A Teologia da Esperança em Tempos de Crise\", estruturada para leitura academica, auditoria metodologica e preparo DOI-ready.",
@@ -2319,9 +2271,6 @@ export const publications: Publication[] = [
     "updatedAt": "2026-02-21",
     "inLanguage": "pt-BR",
     "tags": [
-      "Teologia",
-      "Humanidades",
-      "Historia",
       "ROBOTICS",
       "EDUCATION"
     ],
@@ -2339,11 +2288,11 @@ export const publications: Publication[] = [
     },
     "quality": {
       "phase1": 997,
-      "phase2": 960,
+      "phase2": 950,
       "phase3": 993,
       "compliance": 1000,
-      "polymathic": 980,
-      "macro": 986
+      "polymathic": 970,
+      "macro": 982
     },
     "landing": {
       "overview": "Esta pagina apresenta uma sintese cientifica de \"Metodologias Ativas no Ensino de Lógica de Programação\", estruturada para leitura academica, auditoria metodologica e preparo DOI-ready.",
@@ -2453,9 +2402,6 @@ export const publications: Publication[] = [
     "updatedAt": "2026-02-21",
     "inLanguage": "pt-BR",
     "tags": [
-      "Teologia",
-      "Humanidades",
-      "Historia",
       "CHAOS",
       "THEORY",
       "ECONOMICS"

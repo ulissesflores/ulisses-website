@@ -16,7 +16,7 @@ Estudo historico-critico sobre canonizacao escribal e processos de consolidacao 
 
 This article presents a reproducible, high-rigor synthesis of "Canonização Escribal: Análise Histórico-Crítica da Formação do Cânon" by aligning methodological traceability, interdisciplinary evidence, and operational recommendations for deployment contexts with explicit governance constraints. (Kugel, 2007).
 
-**Keywords:** IA; Economia; Sistemas Complexos; SCRIBAL; CANONIZATION; EZRA; reproducibility; Harvard references; research.
+**Keywords:** SCRIBAL; CANONIZATION; EZRA; reproducibility; Harvard references; research.
 
 # 1. Introduction
 

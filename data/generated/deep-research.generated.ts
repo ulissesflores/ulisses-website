@@ -204,14 +204,14 @@ export const deepResearchArtifacts: Record<string, DeepResearchArtifact> = {
     },
     "quality": {
       "phase1": 997,
-      "phase2": 970,
+      "phase2": 960,
       "phase3": 993,
       "compliance": 1000,
-      "polymathic": 980,
-      "macro": 988
+      "polymathic": 970,
+      "macro": 984
     },
-    "polymathicIndex": 980,
-    "qualityScore": 988
+    "polymathicIndex": 970,
+    "qualityScore": 984
   },
   "2024-scribal-canonization-ezra": {
     "slug": "2024-scribal-canonization-ezra",
@@ -386,14 +386,14 @@ export const deepResearchArtifacts: Record<string, DeepResearchArtifact> = {
     },
     "quality": {
       "phase1": 997,
-      "phase2": 960,
+      "phase2": 950,
       "phase3": 993,
       "compliance": 1000,
-      "polymathic": 980,
-      "macro": 986
+      "polymathic": 970,
+      "macro": 982
     },
-    "polymathicIndex": 980,
-    "qualityScore": 986
+    "polymathicIndex": 970,
+    "qualityScore": 982
   },
   "2023-holy-club-methodism": {
     "slug": "2023-holy-club-methodism",
@@ -438,14 +438,14 @@ export const deepResearchArtifacts: Record<string, DeepResearchArtifact> = {
     },
     "quality": {
       "phase1": 997,
-      "phase2": 960,
+      "phase2": 950,
       "phase3": 993,
       "compliance": 1000,
-      "polymathic": 980,
-      "macro": 986
+      "polymathic": 970,
+      "macro": 982
     },
-    "polymathicIndex": 980,
-    "qualityScore": 986
+    "polymathicIndex": 970,
+    "qualityScore": 982
   },
   "2020-robotics-education": {
     "slug": "2020-robotics-education",
@@ -464,14 +464,14 @@ export const deepResearchArtifacts: Record<string, DeepResearchArtifact> = {
     },
     "quality": {
       "phase1": 997,
-      "phase2": 960,
+      "phase2": 950,
       "phase3": 993,
       "compliance": 1000,
-      "polymathic": 980,
-      "macro": 986
+      "polymathic": 970,
+      "macro": 982
     },
-    "polymathicIndex": 980,
-    "qualityScore": 986
+    "polymathicIndex": 970,
+    "qualityScore": 982
   },
   "2017-chaos-theory-economics": {
     "slug": "2017-chaos-theory-economics",

@@ -9,52 +9,49 @@
 !.yarn/plugins
 !.yarn/releases
 !.yarn/versions
+
 # testing
 /coverage
+
 # next.js
 /.next/
+/.next-bak*/
 /out/
+
 # production
 /build
+
 # misc
 .DS_Store
 *.pem
 /relatorio.txt
+
+# Generated public artifacts (auto-created by upkf:generate at build time)
+# Do NOT commit these — they are ephemeral and regenerated on every build.
+public/research/*.md
+public/essays/*.md
+public/whitepapers/*.md
+public/acervo-teologico.md
+public/acervo-teologico/**/*.md
+public/essays.md
+public/research.md
+public/whitepapers.md
+public/mundo-politico.md
+public/mundo-politico/**/*.md
+public/identidade.md
+
 # debug
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
+
 # env files (can opt-in for committing if needed)
 .env*
+
 # vercel
 .vercel
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts
-public/identidade.md
-public/acervo-teologico.md
-public/acervo-teologico/*.md
-public/acervo-teologico/**/*.md
-public/research.md
-public/research/*.md
-public/research/**/*.md
-public/whitepapers.md
-public/whitepapers/*.md
-public/whitepapers/**/*.md
-public/essays.md
-public/essays/*.md
-public/essays/**/*.md
-public/mundo-politico.md
-public/mundo-politico/*.md
-public/mundo-politico/**/*.md
-public/certifications.md
-public/certifications/*.md
-public/certifications/**/*.md
-public/pesquisa.md
-public/ensaios.md
-public/certificacoes.md
-public/simulacoes.md
-public/simulacoes/*.md
-public/simulacoes/**/*.md
-!public/index.md

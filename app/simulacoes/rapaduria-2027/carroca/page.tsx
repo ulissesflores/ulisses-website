@@ -1,5 +1,5 @@
 import { redirect } from 'next/navigation';
 
-export default function RapaduriaCarrocaLegacyPage() {
-  redirect('/simulacoes/rapaduria-2027?path=race');
+export default function LegacyRaceRoute() {
+  redirect('/simulacoes/ia-2027?path=race');
 }

@@ -1,13 +1,14 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { acervoCanonicalPath, acervoClusters, acervoPageDescription, acervoPageTitle, acervoSermons } from '@/data/acervo-teologico';
+import { acervoCanonicalPath, acervoClusters, acervoSermons } from '@/data/acervo-teologico';
 import { upkfMeta } from '@/data/generated/upkf.generated';
 import { buildLanguageAlternates } from '@/data/seo';
-import AuthorHubCard from '@/components/author-hub-card';
+import { AuthorHubCard } from '@/components/author-hub-card';
 
 export const metadata: Metadata = {
-  title: acervoPageTitle,
-  description: acervoPageDescription,
+  title: 'Acervo Teologico',
+  description:
+    'Acervo teologico organizado por clusters de autoridade topical, com metadados enriquecidos para indexacao semantica e IA.',
   alternates: {
     canonical: acervoCanonicalPath,
     languages: buildLanguageAlternates(acervoCanonicalPath),
@@ -15,8 +16,9 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     url: `${upkfMeta.primaryWebsite}${acervoCanonicalPath}`,
-    title: acervoPageTitle,
-    description: acervoPageDescription,
+    title: 'Acervo Teologico',
+    description:
+      'Colecao canonica de mensagens teologicas por cluster, com contexto semantico aprofundado e ligacao para fonte original.',
   },
 };
 
@@ -26,8 +28,9 @@ export default function AcervoTeologicoPage() {
     '@type': 'CollectionPage',
     '@id': `${upkfMeta.primaryWebsite}${acervoCanonicalPath}#collection`,
     url: `${upkfMeta.primaryWebsite}${acervoCanonicalPath}`,
-    name: acervoPageTitle,
-    description: acervoPageDescription,
+    name: 'Acervo Teologico',
+    description:
+      'Colecao canonica de mensagens teologicas por cluster, com contexto semantico aprofundado e ligacao para fonte original.',
     hasPart: acervoSermons.map((sermon) => ({
       '@id': `${upkfMeta.primaryWebsite}${sermon.canonicalPath}`,
     })),
@@ -42,11 +45,17 @@ export default function AcervoTeologicoPage() {
 
         <header className='mt-8 mb-10'>
           <p className='text-xs uppercase tracking-widest text-emerald-400 mb-3'>Acervo Teologico</p>
-          <h1 className='text-4xl font-bold text-white mb-4'>{acervoPageTitle}</h1>
-          <p className='text-neutral-400 leading-relaxed max-w-3xl'>{acervoPageDescription}</p>
+          <h1 className='text-4xl font-bold text-white mb-4'>Acervo Teologico por Clusters</h1>
+          <p className='text-neutral-400 leading-relaxed max-w-3xl'>
+            Arquitetura semantica orientada por autoridade topical. Cada mensagem foi agrupada por cluster teologico e recebe
+            metadados ricos para indexacao em mecanismos tradicionais e generativos.
+          </p>
           <p className='text-sm text-neutral-500 mt-4'>
             Total de clusters: {acervoClusters.length} · Total de mensagens: {acervoSermons.length}
           </p>
+          <div className='mt-4 max-w-xl'>
+            <AuthorHubCard label='Autor' compact description='Acervo com vínculo canônico de autoria para indexação semântica.' />
+          </div>
         </header>
 
         <div className='space-y-8'>
@@ -57,8 +66,7 @@ export default function AcervoTeologicoPage() {
               className='rounded-xl border border-neutral-800 bg-neutral-900/30 p-6 scroll-mt-24'
             >
               <h2 className='text-2xl font-semibold text-white mb-2'>{cluster.seoTitle}</h2>
-              <p className='text-sm text-neutral-400 mb-3'>{cluster.metaDescription}</p>
-              <p className='text-sm text-neutral-300 leading-relaxed mb-6 whitespace-pre-line'>{cluster.prose}</p>
+              <p className='text-sm text-neutral-400 mb-6'>{cluster.metaDescription}</p>
 
               <div className='grid gap-4'>
                 {cluster.sermons.map((sermon) => (
@@ -76,8 +84,6 @@ export default function AcervoTeologicoPage() {
             </section>
           ))}
         </div>
-
-        <AuthorHubCard />
       </main>
 
       <script type='application/ld+json' dangerouslySetInnerHTML={{ __html: JSON.stringify(pageJsonLd) }} />

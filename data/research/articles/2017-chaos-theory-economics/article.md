@@ -16,7 +16,7 @@ Trabalho sobre teoria do caos e auto-organizacao em mercados nao lineares. O pro
 
 This article presents a reproducible, high-rigor synthesis of "Teoria do Caos: Emergência e Auto-organização em Mercados" by aligning methodological traceability, interdisciplinary evidence, and operational recommendations for deployment contexts with explicit governance constraints. (Mandelbrot, 1963).
 
-**Keywords:** Teologia; Humanidades; Historia; CHAOS; THEORY; ECONOMICS; reproducibility; Harvard references; essays.
+**Keywords:** CHAOS; THEORY; ECONOMICS; reproducibility; Harvard references; essays.
 
 # 1. Introduction
 

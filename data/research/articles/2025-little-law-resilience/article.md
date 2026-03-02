@@ -16,7 +16,7 @@ Estudo sobre aplicacao da Lei de Little para elevar previsibilidade de entrega e
 
 This article presents a reproducible, high-rigor synthesis of "A Lei de Little como Vetor de Resiliência e Qualidade" by aligning methodological traceability, interdisciplinary evidence, and operational recommendations for deployment contexts with explicit governance constraints. (Kingman, 1961).
 
-**Keywords:** IA; Economia; Sistemas Complexos; LITTLE; LAW; RESILIENCE; reproducibility; Harvard references; research.
+**Keywords:** LITTLE; LAW; RESILIENCE; reproducibility; Harvard references; research.
 
 # 1. Introduction
 

@@ -16,7 +16,7 @@ Investigacao arqueologica espiritual, teologica e visual do Holy Club e suas imp
 
 This article presents a reproducible, high-rigor synthesis of "O Clube Santo: Arqueologia Espiritual, Teológica e Visual do Metodismo" by aligning methodological traceability, interdisciplinary evidence, and operational recommendations for deployment contexts with explicit governance constraints. (Heitzenrater, 2013).
 
-**Keywords:** IA; Economia; Sistemas Complexos; HOLY; CLUB; METHODISM; reproducibility; Harvard references; research.
+**Keywords:** HOLY; CLUB; METHODISM; reproducibility; Harvard references; research.
 
 # 1. Introduction
 

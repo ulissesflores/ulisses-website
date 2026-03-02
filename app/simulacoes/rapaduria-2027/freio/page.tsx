@@ -1,5 +1,5 @@
 import { redirect } from 'next/navigation';
 
-export default function RapaduriaFreioLegacyPage() {
-  redirect('/simulacoes/rapaduria-2027?path=slowdown');
+export default function LegacySlowdownRoute() {
+  redirect('/simulacoes/ia-2027?path=slowdown');
 }

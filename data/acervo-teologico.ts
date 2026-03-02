@@ -1,5 +1,15 @@
 import { knowledgeData } from './knowledge';
-import { acervoCanonicalPath as migrationAcervoCanonicalPath, allSermonMigrations } from './sermons-migration';
+import { acervoCanonicalPath, allSermonMigrations, sermonMigrationClusters } from './sermons-migration';
+
+interface LegacySermonRecord {
+  collectionName: string;
+  collectionSlug: string;
+  position: number;
+  publishedAt: string;
+  youtubeUrl: string;
+  name: string;
+  summary: string;
+}
 
 export interface AcervoSermon {
   clusterId: string;
@@ -17,7 +27,6 @@ export interface AcervoSermon {
   legacyName: string;
   legacySummary: string;
   legacyCollectionName: string;
-  legacyCollectionSlug: string;
   position: number;
 }
 
@@ -26,43 +35,71 @@ export interface AcervoCluster {
   canonicalPath: string;
   seoTitle: string;
   metaDescription: string;
-  prose: string;
   sermons: AcervoSermon[];
 }
 
-interface GeneratedAcervoPayload {
-  canonicalPath?: string;
-  pageTitle?: string;
-  pageDescription?: string;
-  clusters?: readonly AcervoCluster[];
+function toMetaDescription(text: string): string {
+  const trimmed = text.trim();
+  if (trimmed.length <= 180) {
+    return trimmed;
+  }
+  return `${trimmed.slice(0, 177).trimEnd()}...`;
 }
 
-const generatedAcervo = (knowledgeData as unknown as { acervo?: GeneratedAcervoPayload }).acervo;
+const legacySermonByPath = new Map<string, LegacySermonRecord>();
 
-if (!generatedAcervo || !Array.isArray(generatedAcervo.clusters)) {
-  throw new Error('knowledgeData.acervo.clusters ausente. Rode npm run upkf:generate para materializar SSOT do acervo.');
-}
+knowledgeData.sermons.collections.forEach((collection) => {
+  collection.items.forEach((item) => {
+    legacySermonByPath.set(item.canonicalPath, {
+      collectionName: collection.name,
+      collectionSlug: collection.slug,
+      position: item.position,
+      publishedAt: item.publishedAt,
+      youtubeUrl: item.youtubeUrl,
+      name: item.name,
+      summary: item.summary,
+    });
+  });
+});
 
-export const acervoCanonicalPath =
-  typeof generatedAcervo.canonicalPath === 'string' && generatedAcervo.canonicalPath.trim().length > 0
-    ? generatedAcervo.canonicalPath
-    : migrationAcervoCanonicalPath;
+export const acervoClusters: AcervoCluster[] = sermonMigrationClusters.map((cluster) => {
+  const sermons = cluster.sermons.map((migrationSermon) => {
+    const legacy = legacySermonByPath.get(migrationSermon.originalPath);
 
-export const acervoPageTitle = generatedAcervo.pageTitle || 'Acervo Teologico por Clusters';
-export const acervoPageDescription =
-  generatedAcervo.pageDescription ||
-  'Acervo teologico organizado por clusters de autoridade topical, com metadados enriquecidos para indexacao semantica e IA.';
+    if (!legacy) {
+      throw new Error(`Sermon legado nao encontrado para migracao: ${migrationSermon.originalPath}`);
+    }
 
-const generatedClusters = generatedAcervo.clusters as readonly AcervoCluster[];
+    const canonicalPath = `${cluster.canonicalPath}/${migrationSermon.newSlug}`;
 
-export const acervoClusters: AcervoCluster[] = generatedClusters.map((cluster: AcervoCluster) => ({
-  ...cluster,
-  sermons: (cluster.sermons || []).map((sermon: AcervoSermon) => ({
-    ...sermon,
-    originalPath: sermon.originalPath || '',
-    legacyCollectionSlug: sermon.legacyCollectionSlug || '',
-  })),
-}));
+    return {
+      clusterId: cluster.id,
+      clusterCanonicalPath: cluster.canonicalPath,
+      clusterSeoTitle: cluster.seoTitle,
+      clusterMetaDescription: cluster.metaDescription,
+      slug: migrationSermon.newSlug,
+      canonicalPath,
+      seoTitle: migrationSermon.seoTitle,
+      metaDescription: toMetaDescription(migrationSermon.llmContext),
+      llmContext: migrationSermon.llmContext,
+      originalPath: migrationSermon.originalPath,
+      publishedAt: legacy.publishedAt,
+      youtubeUrl: legacy.youtubeUrl,
+      legacyName: legacy.name,
+      legacySummary: legacy.summary,
+      legacyCollectionName: legacy.collectionName,
+      position: legacy.position,
+    };
+  });
+
+  return {
+    id: cluster.id,
+    canonicalPath: cluster.canonicalPath,
+    seoTitle: cluster.seoTitle,
+    metaDescription: cluster.metaDescription,
+    sermons,
+  };
+});
 
 export const acervoSermons: AcervoSermon[] = acervoClusters.flatMap((cluster) => cluster.sermons);
 
@@ -91,3 +128,5 @@ export function getAcervoCluster(clusterId: string): AcervoCluster | null {
 export function getAcervoSermon(clusterId: string, slug: string): AcervoSermon | null {
   return acervoSermonByKey.get(`${clusterId}/${slug}`) ?? null;
 }
+
+export { acervoCanonicalPath };

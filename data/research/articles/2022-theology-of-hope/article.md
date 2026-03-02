@@ -16,7 +16,7 @@ Ensaio sobre teologia da esperanca em contextos de crise social, economica e ins
 
 This article presents a reproducible, high-rigor synthesis of "A Teologia da Esperança em Tempos de Crise" by aligning methodological traceability, interdisciplinary evidence, and operational recommendations for deployment contexts with explicit governance constraints. (Bonhoeffer, 1953).
 
-**Keywords:** Teologia; Humanidades; Historia; THEOLOGY; HOPE; reproducibility; Harvard references; essays.
+**Keywords:** THEOLOGY; HOPE; reproducibility; Harvard references; essays.
 
 # 1. Introduction
 

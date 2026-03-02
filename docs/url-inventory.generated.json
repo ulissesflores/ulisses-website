@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-02-21T10:03:31.939Z",
+  "generatedAt": "2026-03-02T18:54:17.010Z",
   "totals": {
-    "all": 267,
+    "all": 269,
     "collections": 6,
     "items": 131,
     "assets": 36,
@@ -347,6 +347,7 @@
     "https://ulissesflores.com/#ucsd",
     "https://ulissesflores.com/#unip",
     "https://ulissesflores.com/.well-known/did.json",
+    "https://ulissesflores.com/acervo-teologico",
     "https://ulissesflores.com/certifications",
     "https://ulissesflores.com/certifications/alura-1-entrega-continua-confiabilidade-e-qualidade",
     "https://ulissesflores.com/certifications/alura-10-quality-assurance-plano-de-testes-e-bugs",
@@ -449,6 +450,7 @@
     "https://ulissesflores.com/essays/2024-theology-economic-order",
     "https://ulissesflores.com/essays/2024-theology-economic-order.pdf",
     "https://ulissesflores.com/feed.xml",
+    "https://ulissesflores.com/identidade",
     "https://ulissesflores.com/llms-full.txt",
     "https://ulissesflores.com/llms.txt",
     "https://ulissesflores.com/mundo-politico",

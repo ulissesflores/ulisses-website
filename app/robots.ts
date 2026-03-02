@@ -11,12 +11,12 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: '*',
         allow: '/',
-        disallow: ['/*.docx$'],
+        disallow: ['/*.md$', '/*.docx$'],
       },
       {
-        userAgent: ['GPTBot', 'OAI-SearchBot', 'ChatGPT-User', 'Google-Extended', 'ClaudeBot', 'PerplexityBot'],
+        userAgent: ['GPTBot', 'ChatGPT-User', 'Google-Extended', 'ClaudeBot', 'PerplexityBot'],
         allow: '/',
-        disallow: ['/*.docx$'],
+        disallow: ['/*.md$', '/*.docx$'],
       },
     ],
     sitemap: [`${origin}/sitemap.xml`, `${origin}/sitemap-resources.xml`],

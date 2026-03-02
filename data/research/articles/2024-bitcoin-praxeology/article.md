@@ -16,7 +16,7 @@ Analise do Bitcoin como ativo de reserva sob praxeologia e teoria monetaria da E
 
 This article presents a reproducible, high-rigor synthesis of "Bitcoin como Ativo de Reserva e a Teoria da Moeda na Escola Austríaca" by aligning methodological traceability, interdisciplinary evidence, and operational recommendations for deployment contexts with explicit governance constraints. (Mises, 1912).
 
-**Keywords:** IA; Economia; Sistemas Complexos; BITCOIN; PRAXEOLOGY; reproducibility; Harvard references; research.
+**Keywords:** BITCOIN; PRAXEOLOGY; reproducibility; Harvard references; research.
 
 # 1. Introduction
 

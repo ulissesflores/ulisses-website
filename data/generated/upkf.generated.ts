@@ -1,5 +1,5 @@
 /* AUTO-GENERATED FILE. DO NOT EDIT MANUALLY.
- * Source: /Users/ulissesflores/Documents/Projetos/ulisses-hub/public/upkf-source.md
+ * Source: /sessions/gifted-cool-faraday/mnt/ulisses-hub/public/upkf-source.md
  * Generated at: 2026-02-21
  */
 
@@ -8,7 +8,7 @@ export const upkfMeta = {
   "upkfVersion": "3.3",
   "generatedAt": "2026-02-21",
   "schemaTarget": "Schema.org JSON-LD via deterministic derivation",
-  "sourcePath": "/Users/ulissesflores/Documents/Projetos/ulisses-hub/public/upkf-source.md",
+  "sourcePath": "/sessions/gifted-cool-faraday/mnt/ulisses-hub/public/upkf-source.md",
   "displayName": "Carlos Ulisses Flores",
   "preferredName": "Ulisses",
   "publicDisplayName": "Carlos Ulisses Flores",
@@ -818,9 +818,9 @@ export const upkfMeta = {
     "siteGraphNodes": 43,
     "publicGraphNodes": 186,
     "fullGraphNodes": 289,
-    "siteJsonldBytes": 22753,
-    "publicJsonldBytes": 150923,
-    "fullJsonldBytes": 254976,
+    "siteJsonldBytes": 23422,
+    "publicJsonldBytes": 151015,
+    "fullJsonldBytes": 255062,
     "corpusFiles": 0,
     "corpusSnippets": 0,
     "corpusDirs": [],
@@ -947,6 +947,49 @@ export const siteJsonLd = {
         },
         {
           "@id": "https://ulissesflores.com/#occupation-theology-researcher"
+        }
+      ],
+      "memberOf": [
+        {
+          "@id": "https://ulissesflores.com/#codexhash"
+        },
+        {
+          "@id": "https://ulissesflores.com/#codexhash-labs"
+        },
+        {
+          "@id": "https://ulissesflores.com/#codexhash-education"
+        },
+        {
+          "@id": "https://ulissesflores.com/#instituto-clube-santo"
+        },
+        {
+          "@id": "https://ulissesflores.com/#prefeitura-itupeva"
+        },
+        {
+          "@id": "https://ulissesflores.com/#quadrangular-vila-helena"
+        }
+      ],
+      "alumniOf": [
+        {
+          "@id": "https://ulissesflores.com/#agtu"
+        },
+        {
+          "@id": "https://ulissesflores.com/#fiap"
+        },
+        {
+          "@id": "https://ulissesflores.com/#padre-anchieta"
+        },
+        {
+          "@id": "https://ulissesflores.com/#unip"
+        },
+        {
+          "@id": "https://ulissesflores.com/#cefor"
+        },
+        {
+          "@id": "https://ulissesflores.com/#edinburgh"
+        },
+        {
+          "@id": "https://ulissesflores.com/#ucsd"
         }
       ],
       "affiliation": [

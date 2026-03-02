@@ -10,9 +10,6 @@
     "updatedAt": "2026-02-21",
     "inLanguage": "pt-BR",
     "tags": [
-      "IA",
-      "Economia",
-      "Sistemas Complexos",
       "LITTLE",
       "LAW",
       "RESILIENCE"
@@ -149,9 +146,6 @@
     "updatedAt": "2026-02-21",
     "inLanguage": "pt-BR",
     "tags": [
-      "IA",
-      "Economia",
-      "Sistemas Complexos",
       "LSTM",
       "ASSET",
       "PREDICTION"
@@ -288,9 +282,6 @@
     "updatedAt": "2026-02-21",
     "inLanguage": "pt-BR",
     "tags": [
-      "Engenharia",
-      "IoT",
-      "Seguranca",
       "HYBRID",
       "COOLING",
       "THERMODYNAMICS"
@@ -427,9 +418,6 @@
     "updatedAt": "2026-02-21",
     "inLanguage": "pt-BR",
     "tags": [
-      "Engenharia",
-      "IoT",
-      "Seguranca",
       "IOT",
       "DATA",
       "SOVEREIGNTY"
@@ -566,9 +554,6 @@
     "updatedAt": "2026-02-21",
     "inLanguage": "pt-BR",
     "tags": [
-      "IA",
-      "Economia",
-      "Sistemas Complexos",
       "FRAUD",
       "DETECTION",
       "MLP"
@@ -705,9 +690,6 @@
     "updatedAt": "2026-02-21",
     "inLanguage": "pt-BR",
     "tags": [
-      "IA",
-      "Economia",
-      "Sistemas Complexos",
       "HISTORICITY",
       "JESUS",
       "ARCHAEOLOGY"
@@ -844,9 +826,6 @@
     "updatedAt": "2026-02-21",
     "inLanguage": "pt-BR",
     "tags": [
-      "IA",
-      "Economia",
-      "Sistemas Complexos",
       "BITCOIN",
       "PRAXEOLOGY"
     ],
@@ -864,11 +843,11 @@
     },
     "quality": {
       "phase1": 997,
-      "phase2": 970,
+      "phase2": 960,
       "phase3": 993,
       "compliance": 1000,
-      "polymathic": 980,
-      "macro": 988
+      "polymathic": 970,
+      "macro": 984
     },
     "landing": {
       "overview": "Esta pagina apresenta uma sintese cientifica de \"Bitcoin como Ativo de Reserva e a Teoria da Moeda na Escola Austríaca\", estruturada para leitura academica, auditoria metodologica e preparo DOI-ready.",
@@ -982,9 +961,6 @@
     "updatedAt": "2026-02-21",
     "inLanguage": "pt-BR",
     "tags": [
-      "IA",
-      "Economia",
-      "Sistemas Complexos",
       "SCRIBAL",
       "CANONIZATION",
       "EZRA"
@@ -1121,9 +1097,6 @@
     "updatedAt": "2026-02-21",
     "inLanguage": "pt-BR",
     "tags": [
-      "Teologia",
-      "Humanidades",
-      "Historia",
       "THEOLOGY",
       "ECONOMIC",
       "ORDER"
@@ -1256,9 +1229,6 @@
     "updatedAt": "2026-02-21",
     "inLanguage": "pt-BR",
     "tags": [
-      "Engenharia",
-      "IoT",
-      "Seguranca",
       "RING",
       "SIGNATURES",
       "PRIVACY"
@@ -1395,9 +1365,6 @@
     "updatedAt": "2026-02-21",
     "inLanguage": "pt-BR",
     "tags": [
-      "Engenharia",
-      "IoT",
-      "Seguranca",
       "AGRITECH",
       "AGILE",
       "FLOW"
@@ -1534,9 +1501,6 @@
     "updatedAt": "2026-02-21",
     "inLanguage": "pt-BR",
     "tags": [
-      "Teologia",
-      "Humanidades",
-      "Historia",
       "EXEGETICAL",
       "TREATISE",
       "ANTHROPOLOGY"
@@ -1669,9 +1633,6 @@
     "updatedAt": "2026-02-21",
     "inLanguage": "pt-BR",
     "tags": [
-      "IA",
-      "Economia",
-      "Sistemas Complexos",
       "MARIAN",
       "APPARITIONS",
       "CRITIQUE"
@@ -1804,9 +1765,6 @@
     "updatedAt": "2026-02-21",
     "inLanguage": "pt-BR",
     "tags": [
-      "Engenharia",
-      "IoT",
-      "Seguranca",
       "DIGITAL",
       "LEGACY"
     ],
@@ -1824,11 +1782,11 @@
     },
     "quality": {
       "phase1": 997,
-      "phase2": 960,
+      "phase2": 950,
       "phase3": 993,
       "compliance": 1000,
-      "polymathic": 980,
-      "macro": 986
+      "polymathic": 970,
+      "macro": 982
     },
     "landing": {
       "overview": "Esta pagina apresenta uma sintese cientifica de \"Desafios da Herança Digital: Preservação de Memória Pós-Mortem\", estruturada para leitura academica, auditoria metodologica e preparo DOI-ready.",
@@ -1938,9 +1896,6 @@
     "updatedAt": "2026-02-21",
     "inLanguage": "pt-BR",
     "tags": [
-      "IA",
-      "Economia",
-      "Sistemas Complexos",
       "HOLY",
       "CLUB",
       "METHODISM"
@@ -2073,9 +2028,6 @@
     "updatedAt": "2026-02-21",
     "inLanguage": "pt-BR",
     "tags": [
-      "Teologia",
-      "Humanidades",
-      "Historia",
       "THEOLOGY",
       "HOPE"
     ],
@@ -2093,11 +2045,11 @@
     },
     "quality": {
       "phase1": 997,
-      "phase2": 960,
+      "phase2": 950,
       "phase3": 993,
       "compliance": 1000,
-      "polymathic": 980,
-      "macro": 986
+      "polymathic": 970,
+      "macro": 982
     },
     "landing": {
       "overview": "Esta pagina apresenta uma sintese cientifica de \"A Teologia da Esperança em Tempos de Crise\", estruturada para leitura academica, auditoria metodologica e preparo DOI-ready.",
@@ -2207,9 +2159,6 @@
     "updatedAt": "2026-02-21",
     "inLanguage": "pt-BR",
     "tags": [
-      "Teologia",
-      "Humanidades",
-      "Historia",
       "ROBOTICS",
       "EDUCATION"
     ],
@@ -2227,11 +2176,11 @@
     },
     "quality": {
       "phase1": 997,
-      "phase2": 960,
+      "phase2": 950,
       "phase3": 993,
       "compliance": 1000,
-      "polymathic": 980,
-      "macro": 986
+      "polymathic": 970,
+      "macro": 982
     },
     "landing": {
       "overview": "Esta pagina apresenta uma sintese cientifica de \"Metodologias Ativas no Ensino de Lógica de Programação\", estruturada para leitura academica, auditoria metodologica e preparo DOI-ready.",
@@ -2341,9 +2290,6 @@
     "updatedAt": "2026-02-21",
     "inLanguage": "pt-BR",
     "tags": [
-      "Teologia",
-      "Humanidades",
-      "Historia",
       "CHAOS",
       "THEORY",
       "ECONOMICS"

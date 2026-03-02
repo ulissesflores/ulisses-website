@@ -1,9 +1,9 @@
 # JSON-LD Audit (Generated)
 
-- Generated at: 2026-02-21T10:03:22.369Z
-- Site graph nodes: 4
-- Public graph nodes: 144
-- Full graph nodes: 247
+- Generated at: 2026-02-28T13:46:39.556Z
+- Site graph nodes: 43
+- Public graph nodes: 186
+- Full graph nodes: 289
 - Alura credentials: 32
 - Sermons: 56
 - Blog posts: 19

@@ -16,7 +16,7 @@ Pesquisa historiografica sobre historicidade de Jesus combinando critica textual
 
 This article presents a reproducible, high-rigor synthesis of "Análise Historiográfica e Arqueológica Exaustiva: A Historicidade de Jesus" by aligning methodological traceability, interdisciplinary evidence, and operational recommendations for deployment contexts with explicit governance constraints. (Sanders, 1993).
 
-**Keywords:** IA; Economia; Sistemas Complexos; HISTORICITY; JESUS; ARCHAEOLOGY; reproducibility; Harvard references; research.
+**Keywords:** HISTORICITY; JESUS; ARCHAEOLOGY; reproducibility; Harvard references; research.
 
 # 1. Introduction
 

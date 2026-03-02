@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-02-21T10:03:31.920Z",
+  "generatedAt": "2026-03-02T18:54:16.972Z",
   "threshold": 950,
-  "projectScore": 990,
+  "projectScore": 989,
   "approved": true,
   "pending": [],
   "articles": [
@@ -130,11 +130,11 @@
       "title": "Bitcoin como Ativo de Reserva e a Teoria da Moeda na Escola Austríaca",
       "quality": {
         "phase1": 997,
-        "phase2": 970,
+        "phase2": 960,
         "phase3": 993,
         "compliance": 1000,
-        "polymathic": 980,
-        "macro": 988
+        "polymathic": 970,
+        "macro": 984
       },
       "metrics": {
         "paragraphs": 27,
@@ -270,11 +270,11 @@
       "title": "Desafios da Herança Digital: Preservação de Memória Pós-Mortem",
       "quality": {
         "phase1": 997,
-        "phase2": 960,
+        "phase2": 950,
         "phase3": 993,
         "compliance": 1000,
-        "polymathic": 980,
-        "macro": 986
+        "polymathic": 970,
+        "macro": 982
       },
       "metrics": {
         "paragraphs": 27,
@@ -310,11 +310,11 @@
       "title": "A Teologia da Esperança em Tempos de Crise",
       "quality": {
         "phase1": 997,
-        "phase2": 960,
+        "phase2": 950,
         "phase3": 993,
         "compliance": 1000,
-        "polymathic": 980,
-        "macro": 986
+        "polymathic": 970,
+        "macro": 982
       },
       "metrics": {
         "paragraphs": 27,
@@ -330,11 +330,11 @@
       "title": "Metodologias Ativas no Ensino de Lógica de Programação",
       "quality": {
         "phase1": 997,
-        "phase2": 960,
+        "phase2": 950,
         "phase3": 993,
         "compliance": 1000,
-        "polymathic": 980,
-        "macro": 986
+        "polymathic": 970,
+        "macro": 982
       },
       "metrics": {
         "paragraphs": 27,
