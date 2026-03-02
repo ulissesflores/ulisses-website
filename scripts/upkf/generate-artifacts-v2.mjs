@@ -2342,7 +2342,7 @@ function extractTagTokens(publicationRow) {
     .slice(0, 5)
     .map((token) => token.toUpperCase());
 
-  return Array.from(new Set([...CATEGORY_TAGS[publicationRow.category], ...fromSlug]));
+  return Array.from(new Set(fromSlug));
 }
 
 function buildPublications(rawRows, generatedAt, corpus, referencesLibrary) {
@@ -5399,7 +5399,7 @@ function computeArticleQuality(publication) {
   const referencesWithUrl = publication.sections.references.filter((item) => Boolean(item.url)).length;
   const seoSignals =
     (publication.summary ? 1 : 0) +
-    (publication.tags.length >= 5 ? 1 : 0) +
+    (publication.tags.length >= 2 ? 1 : 0) +
     (publication.canonicalUrl.startsWith('https://ulissesflores.com/') ? 1 : 0) +
     (publication.downloadUrl.endsWith('.pdf') ? 1 : 0);
 

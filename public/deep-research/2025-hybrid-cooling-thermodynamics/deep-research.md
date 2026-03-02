@@ -16,7 +16,7 @@ Whitepaper de termodinamica aplicada ao projeto de sistemas hibridos de resfriam
 
 This article presents a reproducible, high-rigor synthesis of "Análise Termodinâmica e Engenharia de Sistemas Híbridos de Resfriamento" by aligning methodological traceability, interdisciplinary evidence, and operational recommendations for deployment contexts with explicit governance constraints. (90, 2026).
 
-**Keywords:** Engenharia; IoT; Seguranca; HYBRID; COOLING; THERMODYNAMICS; reproducibility; Harvard references; whitepapers.
+**Keywords:** HYBRID; COOLING; THERMODYNAMICS; reproducibility; Harvard references; whitepapers.
 
 # 1. Introduction
 

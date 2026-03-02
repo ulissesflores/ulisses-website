@@ -16,7 +16,7 @@ Arquiteturas cloudless para IoT com soberania de dados e processamento local em 
 
 This article presents a reproducible, high-rigor synthesis of "Arquiteturas Cloudless e Soberania de Dados em IoT" by aligning methodological traceability, interdisciplinary evidence, and operational recommendations for deployment contexts with explicit governance constraints. (Fagan, 2020).
 
-**Keywords:** Engenharia; IoT; Seguranca; IOT; DATA; SOVEREIGNTY; reproducibility; Harvard references; whitepapers.
+**Keywords:** IOT; DATA; SOVEREIGNTY; reproducibility; Harvard references; whitepapers.
 
 # 1. Introduction
 

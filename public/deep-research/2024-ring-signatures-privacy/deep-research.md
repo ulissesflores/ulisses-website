@@ -16,7 +16,7 @@ Whitepaper sobre ring signatures e enderecos furtivos para privacidade transacio
 
 This article presents a reproducible, high-rigor synthesis of "Implementação de Ring Signatures e Endereços Furtivos" by aligning methodological traceability, interdisciplinary evidence, and operational recommendations for deployment contexts with explicit governance constraints. (Franklin, 2012).
 
-**Keywords:** Engenharia; IoT; Seguranca; RING; SIGNATURES; PRIVACY; reproducibility; Harvard references; whitepapers.
+**Keywords:** RING; SIGNATURES; PRIVACY; reproducibility; Harvard references; whitepapers.
 
 # 1. Introduction
 

@@ -16,7 +16,7 @@ Tratado exegético sobre representacao da moralidade e antropologia em tradicoes
 
 This article presents a reproducible, high-rigor synthesis of "Tratado Exegético sobre a Representação da Moralidade e Antropologia" by aligning methodological traceability, interdisciplinary evidence, and operational recommendations for deployment contexts with explicit governance constraints. (Brueggemann, 1997).
 
-**Keywords:** Teologia; Humanidades; Historia; EXEGETICAL; TREATISE; ANTHROPOLOGY; reproducibility; Harvard references; essays.
+**Keywords:** EXEGETICAL; TREATISE; ANTHROPOLOGY; reproducibility; Harvard references; essays.
 
 # 1. Introduction
 

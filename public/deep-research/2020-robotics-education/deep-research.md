@@ -16,7 +16,7 @@ Estudo sobre robotica educacional e metodologias ativas no ensino de logica de p
 
 This article presents a reproducible, high-rigor synthesis of "Metodologias Ativas no Ensino de Lógica de Programação" by aligning methodological traceability, interdisciplinary evidence, and operational recommendations for deployment contexts with explicit governance constraints. (Wing, 2006).
 
-**Keywords:** Teologia; Humanidades; Historia; ROBOTICS; EDUCATION; reproducibility; Harvard references; essays.
+**Keywords:** ROBOTICS; EDUCATION; reproducibility; Harvard references; essays.
 
 # 1. Introduction
 

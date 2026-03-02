@@ -12,7 +12,7 @@ endobj
 << /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 5 0 R >>
 endobj
 5 0 obj
-<< /Length 3692 >>
+<< /Length 3748 >>
 stream
 BT
 /F1 11 Tf
@@ -43,8 +43,7 @@ T* (This article presents a reproducible, high-rigor synthesis of "Teoria do Cao
 T* (Emergencia e Auto-organizacao em Mercados" by aligning methodological traceability,) Tj
 T* (interdisciplinary evidence, and operational recommendations for deployment contexts with) Tj
 T* (explicit governance constraints. \(Mandelbrot, 1963\).) Tj
-T* (**Keywords:** Teologia; Humanidades; Historia; CHAOS; THEORY; ECONOMICS;) Tj
-T* (reproducibility; Harvard references; essays.) Tj
+T* (**Keywords:** CHAOS; THEORY; ECONOMICS; reproducibility; Harvard references; essays.) Tj
 T* (1. INTRODUCTION) Tj
 T* (No estado atual do tema, hipoteses de equilibrio linear falham em explicar dinamicas de) Tj
 T* (instabilidade e transicoes abruptas de mercado. Trabalho sobre teoria do caos e) Tj
@@ -64,6 +63,7 @@ T* (Desenho metodologico: Discussao teorica com referencia a sistemas dinamicos,
 T* (sensibilidade a condicoes iniciais e comportamento emergente. O protocolo privilegia) Tj
 T* (rastreabilidade de premissas, delimitacao explicita de escopo e comparacao entre) Tj
 T* (alternativas tecnicas. \(Mandelbrot, 1963\). A estrategia analitica combina triangulacao) Tj
+T* (bibliografica, criterios de consistencia interna e leitura orientada a evidencia. Quando) Tj
 ET
 endstream
 endobj
@@ -71,14 +71,13 @@ endobj
 << /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 7 0 R >>
 endobj
 7 0 obj
-<< /Length 3817 >>
+<< /Length 3792 >>
 stream
 BT
 /F1 11 Tf
 14 TL
 50 790 Td
-(bibliografica, criterios de consistencia interna e leitura orientada a evidencia. Quando) Tj
-T* (aplicavel, o estudo adota controles para reduzir vieses de selecao, leakage) Tj
+(aplicavel, o estudo adota controles para reduzir vieses de selecao, leakage) Tj
 T* (informacional e conclusoes nao reprodutiveis. \(Arthur, 1999\). Para confiabilidade, foram) Tj
 T* (definidos pontos de verificacao em cada etapa: definicao do problema, construcao) Tj
 T* (argumentativa, confrontacao de resultados e consolidacao das implicacoes praticas.) Tj
@@ -123,6 +122,7 @@ T* (D.; Foley, D. \(2009\). The economy needs agent-based modelling. Available a
 T* (https://doi.org/10.1038/460685a \(Accessed: 21 February 2026\). - Rosser, J. B. \(2000\).) Tj
 T* (From Catastrophe to Chaos. Available at:) Tj
 T* (https://link.springer.com/book/10.1007/978-1-4615-4481-9 \(Accessed: 21 February 2026\). -) Tj
+T* (Beinhocker, E. D. \(2006\). The Origin of Wealth. Available at:) Tj
 ET
 endstream
 endobj
@@ -130,14 +130,13 @@ endobj
 << /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 9 0 R >>
 endobj
 9 0 obj
-<< /Length 570 >>
+<< /Length 498 >>
 stream
 BT
 /F1 11 Tf
 14 TL
 50 790 Td
-(Beinhocker, E. D. \(2006\). The Origin of Wealth. Available at:) Tj
-T* (https://www.hbs.edu/faculty/Pages/item.aspx?num=19867 \(Accessed: 21 February 2026\).) Tj
+(https://www.hbs.edu/faculty/Pages/item.aspx?num=19867 \(Accessed: 21 February 2026\).) Tj
 T* (PHASE SCORE SUMMARY) Tj
 T* (- Phase 1 score: 960/1000 - Phase 2 score: 960/1000 - Phase 3 score: 960/1000 -) Tj
 T* (Compliance score: 960/1000 - Polymathic index: 960/1000 - Macro score: 960/1000 - DOI) Tj
@@ -147,7 +146,7 @@ ET
 endstream
 endobj
 10 0 obj
-<< /Title (Teoria do Caos: Emergencia e Auto-organizacao em Mercados - Deep Research) /Author (Carlos Ulisses Flores) /Subject (essays deep research article) /Keywords (Teologia, Humanidades, Historia, CHAOS, THEORY, ECONOMICS) /Creator (Codex Hash Research Pipeline) /Producer (Codex Hash Research Pipeline) /CreationDate (D:20260221000000Z) /ModDate (D:20260221000000Z) >>
+<< /Title (Teoria do Caos: Emergencia e Auto-organizacao em Mercados - Deep Research) /Author (Carlos Ulisses Flores) /Subject (essays deep research article) /Keywords (CHAOS, THEORY, ECONOMICS) /Creator (Codex Hash Research Pipeline) /Producer (Codex Hash Research Pipeline) /CreationDate (D:20260221000000Z) /ModDate (D:20260221000000Z) >>
 endobj
 xref
 0 11
@@ -157,13 +156,13 @@ xref
 0000000127 00000 n 
 0000000197 00000 n 
 0000000323 00000 n 
-0000004067 00000 n 
-0000004193 00000 n 
-0000008062 00000 n 
-0000008188 00000 n 
-0000008809 00000 n 
+0000004123 00000 n 
+0000004249 00000 n 
+0000008093 00000 n 
+0000008219 00000 n 
+0000008768 00000 n 
 trailer
 << /Size 11 /Root 1 0 R /Info 10 0 R >>
 startxref
-9200
+9126
 %%EOF

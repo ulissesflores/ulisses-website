@@ -16,7 +16,7 @@ Whitepaper sobre desafios da heranca digital e preservacao de memoria pos-mortem
 
 This article presents a reproducible, high-rigor synthesis of "Desafios da Herança Digital: Preservação de Memória Pós-Mortem" by aligning methodological traceability, interdisciplinary evidence, and operational recommendations for deployment contexts with explicit governance constraints. (management, 2026).
 
-**Keywords:** Engenharia; IoT; Seguranca; DIGITAL; LEGACY; reproducibility; Harvard references; whitepapers.
+**Keywords:** DIGITAL; LEGACY; reproducibility; Harvard references; whitepapers.
 
 # 1. Introduction
 

@@ -12,7 +12,7 @@ endobj
 << /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 5 0 R >>
 endobj
 5 0 obj
-<< /Length 3644 >>
+<< /Length 3698 >>
 stream
 BT
 /F1 11 Tf
@@ -43,8 +43,7 @@ T* (This article presents a reproducible, high-rigor synthesis of "Fundamentos) 
 T* (Transcendentes da Ordem Economica" by aligning methodological traceability,) Tj
 T* (interdisciplinary evidence, and operational recommendations for deployment contexts with) Tj
 T* (explicit governance constraints. \(Aquinas, 2026\).) Tj
-T* (**Keywords:** Teologia; Humanidades; Historia; THEOLOGY; ECONOMIC; ORDER;) Tj
-T* (reproducibility; Harvard references; essays.) Tj
+T* (**Keywords:** THEOLOGY; ECONOMIC; ORDER; reproducibility; Harvard references; essays.) Tj
 T* (1. INTRODUCTION) Tj
 T* (No estado atual do tema, modelos puramente tecnocraticos tendem a negligenciar) Tj
 T* (pressupostos antropologicos e eticos da cooperacao social. Ensaio sobre fundamentos) Tj
@@ -64,6 +63,7 @@ T* (Desenho metodologico: Analise conceitual interdisciplinar entre teologia, fi
 T* (moral e teoria economica. O protocolo privilegia rastreabilidade de premissas,) Tj
 T* (delimitacao explicita de escopo e comparacao entre alternativas tecnicas. \(Aquinas,) Tj
 T* (2026\). A estrategia analitica combina triangulacao bibliografica, criterios de) Tj
+T* (consistencia interna e leitura orientada a evidencia. Quando aplicavel, o estudo adota) Tj
 ET
 endstream
 endobj
@@ -71,14 +71,13 @@ endobj
 << /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 7 0 R >>
 endobj
 7 0 obj
-<< /Length 3875 >>
+<< /Length 3805 >>
 stream
 BT
 /F1 11 Tf
 14 TL
 50 790 Td
-(consistencia interna e leitura orientada a evidencia. Quando aplicavel, o estudo adota) Tj
-T* (controles para reduzir vieses de selecao, leakage informacional e conclusoes nao) Tj
+(controles para reduzir vieses de selecao, leakage informacional e conclusoes nao) Tj
 T* (reprodutiveis. \(Ropke, 1960\). Para confiabilidade, foram definidos pontos de verificacao) Tj
 T* (em cada etapa: definicao do problema, construcao argumentativa, confrontacao de) Tj
 T* (resultados e consolidacao das implicacoes praticas. \(Weber, 1905\).) Tj
@@ -123,6 +122,7 @@ T* (Available at:) Tj
 T* (https://www.basicbooks.com/titles/michael-novak/the-spirit-of-democratic-capitalism/9781594035883/) Tj
 T* (\(Accessed: 21 February 2026\). - McCloskey, D. \(2006\). The Bourgeois Virtues. Available) Tj
 T* (at: https://press.uchicago.edu/ucp/books/book/chicago/B/bo3684036.html \(Accessed: 21) Tj
+T* (February 2026\).) Tj
 ET
 endstream
 endobj
@@ -130,14 +130,13 @@ endobj
 << /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 9 0 R >>
 endobj
 9 0 obj
-<< /Length 428 >>
+<< /Length 403 >>
 stream
 BT
 /F1 11 Tf
 14 TL
 50 790 Td
-(February 2026\).) Tj
-T* (PHASE SCORE SUMMARY) Tj
+(PHASE SCORE SUMMARY) Tj
 T* (- Phase 1 score: 960/1000 - Phase 2 score: 960/1000 - Phase 3 score: 960/1000 -) Tj
 T* (Compliance score: 960/1000 - Polymathic index: 960/1000 - Macro score: 960/1000 - DOI) Tj
 T* (status: target - DOI target: 10.5281/zenodo.202417 - Canonical citation seed: Augustine,) Tj
@@ -146,7 +145,7 @@ ET
 endstream
 endobj
 10 0 obj
-<< /Title (Fundamentos Transcendentes da Ordem Economica - Deep Research) /Author (Carlos Ulisses Flores) /Subject (essays deep research article) /Keywords (Teologia, Humanidades, Historia, THEOLOGY, ECONOMIC, ORDER) /Creator (Codex Hash Research Pipeline) /Producer (Codex Hash Research Pipeline) /CreationDate (D:20260221000000Z) /ModDate (D:20260221000000Z) >>
+<< /Title (Fundamentos Transcendentes da Ordem Economica - Deep Research) /Author (Carlos Ulisses Flores) /Subject (essays deep research article) /Keywords (THEOLOGY, ECONOMIC, ORDER) /Creator (Codex Hash Research Pipeline) /Producer (Codex Hash Research Pipeline) /CreationDate (D:20260221000000Z) /ModDate (D:20260221000000Z) >>
 endobj
 xref
 0 11
@@ -156,13 +155,13 @@ xref
 0000000127 00000 n 
 0000000197 00000 n 
 0000000323 00000 n 
-0000004019 00000 n 
-0000004145 00000 n 
-0000008072 00000 n 
-0000008198 00000 n 
-0000008677 00000 n 
+0000004073 00000 n 
+0000004199 00000 n 
+0000008056 00000 n 
+0000008182 00000 n 
+0000008636 00000 n 
 trailer
 << /Size 11 /Root 1 0 R /Info 10 0 R >>
 startxref
-9057
+8983
 %%EOF

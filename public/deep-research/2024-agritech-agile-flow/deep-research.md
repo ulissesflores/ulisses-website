@@ -16,7 +16,7 @@ Whitepaper sobre transformacao agil e engenharia de fluxo em contextos agritech 
 
 This article presents a reproducible, high-rigor synthesis of "Transformação Ágil e Engenharia de Fluxo em Data Science" by aligning methodological traceability, interdisciplinary evidence, and operational recommendations for deployment contexts with explicit governance constraints. (Forsgren, 2018).
 
-**Keywords:** Engenharia; IoT; Seguranca; AGRITECH; AGILE; FLOW; reproducibility; Harvard references; whitepapers.
+**Keywords:** AGRITECH; AGILE; FLOW; reproducibility; Harvard references; whitepapers.
 
 # 1. Introduction
 

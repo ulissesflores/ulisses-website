@@ -16,7 +16,7 @@ Analise teologica e fenomenologica critica de narrativas de aparicoes marianas. 
 
 This article presents a reproducible, high-rigor synthesis of "A Coroa e a Cruz: Análise Teológica e Fenomenológica das Aparições Marianas" by aligning methodological traceability, interdisciplinary evidence, and operational recommendations for deployment contexts with explicit governance constraints. (Zimdars-Swartz, 1991).
 
-**Keywords:** IA; Economia; Sistemas Complexos; MARIAN; APPARITIONS; CRITIQUE; reproducibility; Harvard references; research.
+**Keywords:** MARIAN; APPARITIONS; CRITIQUE; reproducibility; Harvard references; research.
 
 # 1. Introduction
 

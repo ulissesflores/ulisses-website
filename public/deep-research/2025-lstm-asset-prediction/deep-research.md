@@ -16,7 +16,7 @@ Analise preditiva de ativos financeiros com redes LSTM para capturar dinamica te
 
 This article presents a reproducible, high-rigor synthesis of "Análise Preditiva de Ativos Financeiros com Modelos LSTM" by aligning methodological traceability, interdisciplinary evidence, and operational recommendations for deployment contexts with explicit governance constraints. (Fischer, 2018).
 
-**Keywords:** IA; Economia; Sistemas Complexos; LSTM; ASSET; PREDICTION; reproducibility; Harvard references; research.
+**Keywords:** LSTM; ASSET; PREDICTION; reproducibility; Harvard references; research.
 
 # 1. Introduction
 

@@ -16,7 +16,7 @@ Deteccao de fraude em cartoes com redes neurais MLP e engenharia de atributos pa
 
 This article presents a reproducible, high-rigor synthesis of "Detecção de Fraudes em Cartões com Redes Neurais" by aligning methodological traceability, interdisciplinary evidence, and operational recommendations for deployment contexts with explicit governance constraints. (Whitrow, 2009).
 
-**Keywords:** IA; Economia; Sistemas Complexos; FRAUD; DETECTION; MLP; reproducibility; Harvard references; research.
+**Keywords:** FRAUD; DETECTION; MLP; reproducibility; Harvard references; research.
 
 # 1. Introduction
 

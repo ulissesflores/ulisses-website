@@ -12,7 +12,7 @@ endobj
 << /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 5 0 R >>
 endobj
 5 0 obj
-<< /Length 3660 >>
+<< /Length 3717 >>
 stream
 BT
 /F1 11 Tf
@@ -44,8 +44,7 @@ T* (This article presents a reproducible, high-rigor synthesis of "Bitcoin como 
 T* (Reserva e a Teoria da Moeda na Escola Austriaca" by aligning methodological) Tj
 T* (traceability, interdisciplinary evidence, and operational recommendations for deployment) Tj
 T* (contexts with explicit governance constraints. \(Mises, 1912\).) Tj
-T* (**Keywords:** IA; Economia; Sistemas Complexos; BITCOIN; PRAXEOLOGY; reproducibility;) Tj
-T* (Harvard references; research.) Tj
+T* (**Keywords:** BITCOIN; PRAXEOLOGY; reproducibility; Harvard references; research.) Tj
 T* (1. INTRODUCTION) Tj
 T* (No estado atual do tema, avaliacoes estritamente tecnicas ignoram fundamentos economicos) Tj
 T* (de escassez, preferencia temporal e coordenacao social. Analise do Bitcoin como ativo de) Tj
@@ -64,6 +63,7 @@ T* (2. MAIN BODY) Tj
 T* (2.1 METHODOLOGY) Tj
 T* (Desenho metodologico: Discussao teoretica com comparacao entre propriedades monetarias e) Tj
 T* (mecanismos de governanca de oferta. O protocolo privilegia rastreabilidade de premissas,) Tj
+T* (delimitacao explicita de escopo e comparacao entre alternativas tecnicas. \(Mises, 1912\).) Tj
 ET
 endstream
 endobj
@@ -71,14 +71,13 @@ endobj
 << /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 7 0 R >>
 endobj
 7 0 obj
-<< /Length 3733 >>
+<< /Length 3734 >>
 stream
 BT
 /F1 11 Tf
 14 TL
 50 790 Td
-(delimitacao explicita de escopo e comparacao entre alternativas tecnicas. \(Mises, 1912\).) Tj
-T* (A estrategia analitica combina triangulacao bibliografica, criterios de consistencia) Tj
+(A estrategia analitica combina triangulacao bibliografica, criterios de consistencia) Tj
 T* (interna e leitura orientada a evidencia. Quando aplicavel, o estudo adota controles para) Tj
 T* (reduzir vieses de selecao, leakage informacional e conclusoes nao reprodutiveis. \(Hayek,) Tj
 T* (1976\). Para confiabilidade, foram definidos pontos de verificacao em cada etapa:) Tj
@@ -123,6 +122,7 @@ T* (https://mises.org/library/book/theory-money-and-credit \(Accessed: 21 Februa
 T* (Hayek, F. A. \(1976\). Denationalisation of Money. Available at:) Tj
 T* (https://mises.org/library/book/denationalisation-money \(Accessed: 21 February 2026\). -) Tj
 T* (Bohme, R. et al. \(2015\). Bitcoin: Economics, Technology, and Governance. Available at:) Tj
+T* (https://doi.org/10.1257/jep.29.2.213 \(Accessed: 21 February 2026\). - Selgin, G. \(2015\).) Tj
 ET
 endstream
 endobj
@@ -130,14 +130,13 @@ endobj
 << /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 9 0 R >>
 endobj
 9 0 obj
-<< /Length 797 >>
+<< /Length 697 >>
 stream
 BT
 /F1 11 Tf
 14 TL
 50 790 Td
-(https://doi.org/10.1257/jep.29.2.213 \(Accessed: 21 February 2026\). - Selgin, G. \(2015\).) Tj
-T* (Synthetic Commodity Money. Available at:) Tj
+(Synthetic Commodity Money. Available at:) Tj
 T* (https://www.alt-m.org/2015/09/02/synthetic-commodity-money/ \(Accessed: 21 February) Tj
 T* (2026\). - Ammous, S. \(2018\). The Bitcoin Standard. Available at:) Tj
 T* (https://saifedean.com/thebitcoinstandard \(Accessed: 21 February 2026\).) Tj
@@ -150,7 +149,7 @@ ET
 endstream
 endobj
 10 0 obj
-<< /Title (Bitcoin como Ativo de Reserva e a Teoria da Moeda na Escola Austriaca - Deep Research) /Author (Carlos Ulisses Flores) /Subject (research deep research article) /Keywords (IA, Economia, Sistemas Complexos, BITCOIN, PRAXEOLOGY) /Creator (Codex Hash Research Pipeline) /Producer (Codex Hash Research Pipeline) /CreationDate (D:20260221000000Z) /ModDate (D:20260221000000Z) >>
+<< /Title (Bitcoin como Ativo de Reserva e a Teoria da Moeda na Escola Austriaca - Deep Research) /Author (Carlos Ulisses Flores) /Subject (research deep research article) /Keywords (BITCOIN, PRAXEOLOGY) /Creator (Codex Hash Research Pipeline) /Producer (Codex Hash Research Pipeline) /CreationDate (D:20260221000000Z) /ModDate (D:20260221000000Z) >>
 endobj
 xref
 0 11
@@ -160,13 +159,13 @@ xref
 0000000127 00000 n 
 0000000197 00000 n 
 0000000323 00000 n 
-0000004035 00000 n 
-0000004161 00000 n 
-0000007946 00000 n 
-0000008072 00000 n 
-0000008920 00000 n 
+0000004092 00000 n 
+0000004218 00000 n 
+0000008004 00000 n 
+0000008130 00000 n 
+0000008878 00000 n 
 trailer
 << /Size 11 /Root 1 0 R /Info 10 0 R >>
 startxref
-9321
+9245
 %%EOF

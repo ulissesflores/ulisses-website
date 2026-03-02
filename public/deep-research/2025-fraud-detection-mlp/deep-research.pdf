@@ -12,7 +12,7 @@ endobj
 << /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 5 0 R >>
 endobj
 5 0 obj
-<< /Length 3752 >>
+<< /Length 3805 >>
 stream
 BT
 /F1 11 Tf
@@ -43,8 +43,7 @@ T* (This article presents a reproducible, high-rigor synthesis of "Deteccao de F
 T* (Cartoes com Redes Neurais" by aligning methodological traceability, interdisciplinary) Tj
 T* (evidence, and operational recommendations for deployment contexts with explicit) Tj
 T* (governance constraints. \(Whitrow, 2009\).) Tj
-T* (**Keywords:** IA; Economia; Sistemas Complexos; FRAUD; DETECTION; MLP; reproducibility;) Tj
-T* (Harvard references; research.) Tj
+T* (**Keywords:** FRAUD; DETECTION; MLP; reproducibility; Harvard references; research.) Tj
 T* (1. INTRODUCTION) Tj
 T* (No estado atual do tema, fraude financeira combina alta assimetria de classes com) Tj
 T* (necessidade de baixa latencia decisoria em tempo quase real. Deteccao de fraude em) Tj
@@ -64,6 +63,7 @@ T* (Desenho metodologico: Pipeline supervisionado com reamostragem, calibracao d
 T* (avaliacao por precision-recall e custo de erro. O protocolo privilegia rastreabilidade) Tj
 T* (de premissas, delimitacao explicita de escopo e comparacao entre alternativas tecnicas.) Tj
 T* (\(Whitrow, 2009\). A estrategia analitica combina triangulacao bibliografica, criterios de) Tj
+T* (consistencia interna e leitura orientada a evidencia. Quando aplicavel, o estudo adota) Tj
 ET
 endstream
 endobj
@@ -71,14 +71,13 @@ endobj
 << /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 7 0 R >>
 endobj
 7 0 obj
-<< /Length 3808 >>
+<< /Length 3810 >>
 stream
 BT
 /F1 11 Tf
 14 TL
 50 790 Td
-(consistencia interna e leitura orientada a evidencia. Quando aplicavel, o estudo adota) Tj
-T* (controles para reduzir vieses de selecao, leakage informacional e conclusoes nao) Tj
+(controles para reduzir vieses de selecao, leakage informacional e conclusoes nao) Tj
 T* (reprodutiveis. \(Jurgovsky, 2018\). Para confiabilidade, foram definidos pontos de) Tj
 T* (verificacao em cada etapa: definicao do problema, construcao argumentativa, confrontacao) Tj
 T* (de resultados e consolidacao das implicacoes praticas. \(Carcillo, 2021\).) Tj
@@ -123,6 +122,7 @@ T* (credit-card fraud detection. Available at: https://arxiv.org/abs/1811.07293 
 T* (21 February 2026\). - Carcillo, F. et al. \(2021\). Combining unsupervised and supervised) Tj
 T* (learning in credit card fraud detection. Available at:) Tj
 T* (https://doi.org/10.1016/j.is.2021.101705 \(Accessed: 21 February 2026\). - Bahnsen, A. C.) Tj
+T* (et al. \(2016\). Classifying highly imbalanced data using cost-sensitive decision trees.) Tj
 ET
 endstream
 endobj
@@ -130,14 +130,13 @@ endobj
 << /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 9 0 R >>
 endobj
 9 0 obj
-<< /Length 754 >>
+<< /Length 657 >>
 stream
 BT
 /F1 11 Tf
 14 TL
 50 790 Td
-(et al. \(2016\). Classifying highly imbalanced data using cost-sensitive decision trees.) Tj
-T* (Available at: https://doi.org/10.1016/j.eswa.2016.05.032 \(Accessed: 21 February 2026\). -) Tj
+(Available at: https://doi.org/10.1016/j.eswa.2016.05.032 \(Accessed: 21 February 2026\). -) Tj
 T* (NIST. AI Risk Management Framework 1.0. Available at:) Tj
 T* (https://www.nist.gov/itl/ai-risk-management-framework \(Accessed: 21 February 2026\).) Tj
 T* (PHASE SCORE SUMMARY) Tj
@@ -149,7 +148,7 @@ ET
 endstream
 endobj
 10 0 obj
-<< /Title (Deteccao de Fraudes em Cartoes com Redes Neurais - Deep Research) /Author (Carlos Ulisses Flores) /Subject (research deep research article) /Keywords (IA, Economia, Sistemas Complexos, FRAUD, DETECTION, MLP) /Creator (Codex Hash Research Pipeline) /Producer (Codex Hash Research Pipeline) /CreationDate (D:20260221000000Z) /ModDate (D:20260221000000Z) >>
+<< /Title (Deteccao de Fraudes em Cartoes com Redes Neurais - Deep Research) /Author (Carlos Ulisses Flores) /Subject (research deep research article) /Keywords (FRAUD, DETECTION, MLP) /Creator (Codex Hash Research Pipeline) /Producer (Codex Hash Research Pipeline) /CreationDate (D:20260221000000Z) /ModDate (D:20260221000000Z) >>
 endobj
 xref
 0 11
@@ -159,13 +158,13 @@ xref
 0000000127 00000 n 
 0000000197 00000 n 
 0000000323 00000 n 
-0000004127 00000 n 
-0000004253 00000 n 
-0000008113 00000 n 
-0000008239 00000 n 
-0000009044 00000 n 
+0000004180 00000 n 
+0000004306 00000 n 
+0000008168 00000 n 
+0000008294 00000 n 
+0000009002 00000 n 
 trailer
 << /Size 11 /Root 1 0 R /Info 10 0 R >>
 startxref
-9426
+9350
 %%EOF

@@ -12,7 +12,7 @@ endobj
 << /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 5 0 R >>
 endobj
 5 0 obj
-<< /Length 3682 >>
+<< /Length 3736 >>
 stream
 BT
 /F1 11 Tf
@@ -43,8 +43,7 @@ T* (This article presents a reproducible, high-rigor synthesis of "Metodologias 
 T* (Ensino de Logica de Programacao" by aligning methodological traceability,) Tj
 T* (interdisciplinary evidence, and operational recommendations for deployment contexts with) Tj
 T* (explicit governance constraints. \(Wing, 2006\).) Tj
-T* (**Keywords:** Teologia; Humanidades; Historia; ROBOTICS; EDUCATION; reproducibility;) Tj
-T* (Harvard references; essays.) Tj
+T* (**Keywords:** ROBOTICS; EDUCATION; reproducibility; Harvard references; essays.) Tj
 T* (1. INTRODUCTION) Tj
 T* (No estado atual do tema, modelos expositivos tradicionais geram baixa retencao e pouca) Tj
 T* (transferencia de aprendizagem computacional. Estudo sobre robotica educacional e) Tj
@@ -64,6 +63,7 @@ T* (Desenho metodologico: Intervencao didatica com atividades praticas, resoluca
 T* (problemas e avaliacao por competencias. O protocolo privilegia rastreabilidade de) Tj
 T* (premissas, delimitacao explicita de escopo e comparacao entre alternativas tecnicas.) Tj
 T* (\(Wing, 2006\). A estrategia analitica combina triangulacao bibliografica, criterios de) Tj
+T* (consistencia interna e leitura orientada a evidencia. Quando aplicavel, o estudo adota) Tj
 ET
 endstream
 endobj
@@ -71,14 +71,13 @@ endobj
 << /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 7 0 R >>
 endobj
 7 0 obj
-<< /Length 3692 >>
+<< /Length 3752 >>
 stream
 BT
 /F1 11 Tf
 14 TL
 50 790 Td
-(consistencia interna e leitura orientada a evidencia. Quando aplicavel, o estudo adota) Tj
-T* (controles para reduzir vieses de selecao, leakage informacional e conclusoes nao) Tj
+(controles para reduzir vieses de selecao, leakage informacional e conclusoes nao) Tj
 T* (reprodutiveis. \(Kolb, 1984\). Para confiabilidade, foram definidos pontos de verificacao) Tj
 T* (em cada etapa: definicao do problema, construcao argumentativa, confrontacao de) Tj
 T* (resultados e consolidacao das implicacoes praticas. \(Hmelo-Silver, 2004\).) Tj
@@ -123,6 +122,7 @@ T* (https://doi.org/10.1023/B:EDPR.0000034022.16470.f3 \(Accessed: 21 February 2
 T* (Resnick, M. \(2017\). Lifelong Kindergarten. Available at:) Tj
 T* (https://mitpress.mit.edu/9780262536134/lifelong-kindergarten/ \(Accessed: 21 February) Tj
 T* (2026\). - Bers, M. U. \(2022\). Coding as a Playground. Available at:) Tj
+T* (https://www.routledge.com/Coding-as-a-Playground-Programming-and-Computational-Thinking-in-the-Early-Childhood-Classroom/Bers/p/book/9781032016153) Tj
 ET
 endstream
 endobj
@@ -130,14 +130,13 @@ endobj
 << /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 9 0 R >>
 endobj
 9 0 obj
-<< /Length 591 >>
+<< /Length 436 >>
 stream
 BT
 /F1 11 Tf
 14 TL
 50 790 Td
-(https://www.routledge.com/Coding-as-a-Playground-Programming-and-Computational-Thinking-in-the-Early-Childhood-Classroom/Bers/p/book/9781032016153) Tj
-T* (\(Accessed: 21 February 2026\).) Tj
+(\(Accessed: 21 February 2026\).) Tj
 T* (PHASE SCORE SUMMARY) Tj
 T* (- Phase 1 score: 960/1000 - Phase 2 score: 960/1000 - Phase 3 score: 960/1000 -) Tj
 T* (Compliance score: 960/1000 - Polymathic index: 960/1000 - Macro score: 960/1000 - DOI) Tj
@@ -147,7 +146,7 @@ ET
 endstream
 endobj
 10 0 obj
-<< /Title (Metodologias Ativas no Ensino de Logica de Programacao - Deep Research) /Author (Carlos Ulisses Flores) /Subject (essays deep research article) /Keywords (Teologia, Humanidades, Historia, ROBOTICS, EDUCATION) /Creator (Codex Hash Research Pipeline) /Producer (Codex Hash Research Pipeline) /CreationDate (D:20260221000000Z) /ModDate (D:20260221000000Z) >>
+<< /Title (Metodologias Ativas no Ensino de Logica de Programacao - Deep Research) /Author (Carlos Ulisses Flores) /Subject (essays deep research article) /Keywords (ROBOTICS, EDUCATION) /Creator (Codex Hash Research Pipeline) /Producer (Codex Hash Research Pipeline) /CreationDate (D:20260221000000Z) /ModDate (D:20260221000000Z) >>
 endobj
 xref
 0 11
@@ -157,13 +156,13 @@ xref
 0000000127 00000 n 
 0000000197 00000 n 
 0000000323 00000 n 
-0000004057 00000 n 
-0000004183 00000 n 
-0000007927 00000 n 
-0000008053 00000 n 
-0000008695 00000 n 
+0000004111 00000 n 
+0000004237 00000 n 
+0000008041 00000 n 
+0000008167 00000 n 
+0000008654 00000 n 
 trailer
 << /Size 11 /Root 1 0 R /Info 10 0 R >>
 startxref
-9078
+9004
 %%EOF

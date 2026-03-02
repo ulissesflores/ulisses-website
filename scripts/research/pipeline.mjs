@@ -578,7 +578,7 @@ function scoreMarkdownDocument(markdown, publication) {
   const refCoverage = refs.length > 0 ? refsWithUrl.length / refs.length : 0;
 
   const rigor = clampScore(880 + citationDensity * 90 + refCoverage * 50);
-  const innovation = clampScore(890 + Math.min(1, publication.tags.length / 6) * 60 + (publication.category === 'research' ? 30 : 20));
+  const innovation = clampScore(890 + Math.min(1, publication.tags.length / 3) * 60 + (publication.category === 'research' ? 30 : 20));
   const citation = clampScore(880 + refCoverage * 90 + Math.min(1, refs.length / 8) * 30);
   const structureChecks = [
     '# 1. Introduction',
@@ -590,7 +590,7 @@ function scoreMarkdownDocument(markdown, publication) {
   ];
   const structureHits = structureChecks.filter((item) => markdown.includes(item)).length;
   const compliance = clampScore(860 + (structureHits / structureChecks.length) * 120 + citationDensity * 30);
-  const polymathic = clampScore(900 + Math.min(1, publication.tags.length / 6) * 60 + Math.min(1, refs.length / 8) * 40);
+  const polymathic = clampScore(900 + Math.min(1, publication.tags.length / 3) * 60 + Math.min(1, refs.length / 8) * 40);
 
   const macro = clampScore((rigor + innovation + citation + compliance + polymathic) / 5);
 
