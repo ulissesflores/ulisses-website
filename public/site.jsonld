@@ -399,7 +399,12 @@
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "Avenida Itacira, 2689, Planalto Paulista, São Paulo/SP, CEP 04061-003, BR",
-        "addressCountry": "BR"
+        "addressLocality": "São Paulo",
+        "postalCode": "04061-003",
+        "addressCountry": {
+          "@type": "Country",
+          "name": "BR"
+        }
       },
       "description": "Laboratório de P&D (deep tech) focado em finanças quantitativas/Web3, engenharia de hardware IoT (arquiteturas cloudless/edge) e IA aplicada para resiliência ciberfinanceira."
     },

@@ -399,7 +399,12 @@
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "Avenida Itacira, 2689, Planalto Paulista, São Paulo/SP, CEP 04061-003, BR",
-        "addressCountry": "BR"
+        "addressLocality": "São Paulo",
+        "postalCode": "04061-003",
+        "addressCountry": {
+          "@type": "Country",
+          "name": "BR"
+        }
       },
       "description": "Laboratório de P&D (deep tech) focado em finanças quantitativas/Web3, engenharia de hardware IoT (arquiteturas cloudless/edge) e IA aplicada para resiliência ciberfinanceira."
     },
@@ -950,8 +955,8 @@
       "headline": "A Lei de Little como Vetor de Resiliência e Qualidade",
       "description": "Esta pagina apresenta uma sintese cientifica de \"A Lei de Little como Vetor de Resiliência e Qualidade\", estruturada para leitura academica, auditoria metodologica e preparo DOI-ready.",
       "url": "https://ulissesflores.com/research/2025-little-law-resilience",
-      "datePublished": "2025-01-01",
-      "dateModified": "2026-02-21",
+      "datePublished": "2025-01-01T00:00:00-03:00",
+      "dateModified": "2026-02-21T00:00:00-03:00",
       "inLanguage": "pt-BR",
       "author": {
         "@id": "https://ulissesflores.com/#person"
@@ -997,8 +1002,8 @@
       "headline": "Análise Preditiva de Ativos Financeiros com Modelos LSTM",
       "description": "Esta pagina apresenta uma sintese cientifica de \"Análise Preditiva de Ativos Financeiros com Modelos LSTM\", estruturada para leitura academica, auditoria metodologica e preparo DOI-ready.",
       "url": "https://ulissesflores.com/research/2025-lstm-asset-prediction",
-      "datePublished": "2025-01-01",
-      "dateModified": "2026-02-21",
+      "datePublished": "2025-01-01T00:00:00-03:00",
+      "dateModified": "2026-02-21T00:00:00-03:00",
       "inLanguage": "pt-BR",
       "author": {
         "@id": "https://ulissesflores.com/#person"
@@ -1044,8 +1049,8 @@
       "headline": "Análise Termodinâmica e Engenharia de Sistemas Híbridos de Resfriamento",
       "description": "Esta pagina apresenta uma sintese cientifica de \"Análise Termodinâmica e Engenharia de Sistemas Híbridos de Resfriamento\", estruturada para leitura academica, auditoria metodologica e preparo DOI-ready.",
       "url": "https://ulissesflores.com/whitepapers/2025-hybrid-cooling-thermodynamics",
-      "datePublished": "2025-01-01",
-      "dateModified": "2026-02-21",
+      "datePublished": "2025-01-01T00:00:00-03:00",
+      "dateModified": "2026-02-21T00:00:00-03:00",
       "inLanguage": "pt-BR",
       "author": {
         "@id": "https://ulissesflores.com/#person"
@@ -1091,8 +1096,8 @@
       "headline": "Arquiteturas Cloudless e Soberania de Dados em IoT",
       "description": "Esta pagina apresenta uma sintese cientifica de \"Arquiteturas Cloudless e Soberania de Dados em IoT\", estruturada para leitura academica, auditoria metodologica e preparo DOI-ready.",
       "url": "https://ulissesflores.com/whitepapers/2025-iot-data-sovereignty",
-      "datePublished": "2025-01-01",
-      "dateModified": "2026-02-21",
+      "datePublished": "2025-01-01T00:00:00-03:00",
+      "dateModified": "2026-02-21T00:00:00-03:00",
       "inLanguage": "pt-BR",
       "author": {
         "@id": "https://ulissesflores.com/#person"
@@ -1138,8 +1143,8 @@
       "headline": "Detecção de Fraudes em Cartões com Redes Neurais",
       "description": "Esta pagina apresenta uma sintese cientifica de \"Detecção de Fraudes em Cartões com Redes Neurais\", estruturada para leitura academica, auditoria metodologica e preparo DOI-ready.",
       "url": "https://ulissesflores.com/research/2025-fraud-detection-mlp",
-      "datePublished": "2025-01-01",
-      "dateModified": "2026-02-21",
+      "datePublished": "2025-01-01T00:00:00-03:00",
+      "dateModified": "2026-02-21T00:00:00-03:00",
       "inLanguage": "pt-BR",
       "author": {
         "@id": "https://ulissesflores.com/#person"
@@ -1185,8 +1190,8 @@
       "headline": "Análise Historiográfica e Arqueológica Exaustiva: A Historicidade de Jesus",
       "description": "Esta pagina apresenta uma sintese cientifica de \"Análise Historiográfica e Arqueológica Exaustiva: A Historicidade de Jesus\", estruturada para leitura academica, auditoria metodologica e preparo DOI-ready.",
       "url": "https://ulissesflores.com/research/2024-historicity-jesus-archaeology",
-      "datePublished": "2024-01-01",
-      "dateModified": "2026-02-21",
+      "datePublished": "2024-01-01T00:00:00-03:00",
+      "dateModified": "2026-02-21T00:00:00-03:00",
       "inLanguage": "pt-BR",
       "author": {
         "@id": "https://ulissesflores.com/#person"
@@ -1232,8 +1237,8 @@
       "headline": "Bitcoin como Ativo de Reserva e a Teoria da Moeda na Escola Austríaca",
       "description": "Esta pagina apresenta uma sintese cientifica de \"Bitcoin como Ativo de Reserva e a Teoria da Moeda na Escola Austríaca\", estruturada para leitura academica, auditoria metodologica e preparo DOI-ready.",
       "url": "https://ulissesflores.com/research/2024-bitcoin-praxeology",
-      "datePublished": "2024-01-01",
-      "dateModified": "2026-02-21",
+      "datePublished": "2024-01-01T00:00:00-03:00",
+      "dateModified": "2026-02-21T00:00:00-03:00",
       "inLanguage": "pt-BR",
       "author": {
         "@id": "https://ulissesflores.com/#person"
@@ -1279,8 +1284,8 @@
       "headline": "Canonização Escribal: Análise Histórico-Crítica da Formação do Cânon",
       "description": "Esta pagina apresenta uma sintese cientifica de \"Canonização Escribal: Análise Histórico-Crítica da Formação do Cânon\", estruturada para leitura academica, auditoria metodologica e preparo DOI-ready.",
       "url": "https://ulissesflores.com/research/2024-scribal-canonization-ezra",
-      "datePublished": "2024-01-01",
-      "dateModified": "2026-02-21",
+      "datePublished": "2024-01-01T00:00:00-03:00",
+      "dateModified": "2026-02-21T00:00:00-03:00",
       "inLanguage": "pt-BR",
       "author": {
         "@id": "https://ulissesflores.com/#person"
@@ -1326,8 +1331,8 @@
       "headline": "Fundamentos Transcendentes da Ordem Econômica",
       "description": "Esta pagina apresenta uma sintese cientifica de \"Fundamentos Transcendentes da Ordem Econômica\", estruturada para leitura academica, auditoria metodologica e preparo DOI-ready.",
       "url": "https://ulissesflores.com/essays/2024-theology-economic-order",
-      "datePublished": "2024-01-01",
-      "dateModified": "2026-02-21",
+      "datePublished": "2024-01-01T00:00:00-03:00",
+      "dateModified": "2026-02-21T00:00:00-03:00",
       "inLanguage": "pt-BR",
       "author": {
         "@id": "https://ulissesflores.com/#person"
@@ -1373,8 +1378,8 @@
       "headline": "Implementação de Ring Signatures e Endereços Furtivos",
       "description": "Esta pagina apresenta uma sintese cientifica de \"Implementação de Ring Signatures e Endereços Furtivos\", estruturada para leitura academica, auditoria metodologica e preparo DOI-ready.",
       "url": "https://ulissesflores.com/whitepapers/2024-ring-signatures-privacy",
-      "datePublished": "2024-01-01",
-      "dateModified": "2026-02-21",
+      "datePublished": "2024-01-01T00:00:00-03:00",
+      "dateModified": "2026-02-21T00:00:00-03:00",
       "inLanguage": "pt-BR",
       "author": {
         "@id": "https://ulissesflores.com/#person"
@@ -1420,8 +1425,8 @@
       "headline": "Transformação Ágil e Engenharia de Fluxo em Data Science",
       "description": "Esta pagina apresenta uma sintese cientifica de \"Transformação Ágil e Engenharia de Fluxo em Data Science\", estruturada para leitura academica, auditoria metodologica e preparo DOI-ready.",
       "url": "https://ulissesflores.com/whitepapers/2024-agritech-agile-flow",
-      "datePublished": "2024-01-01",
-      "dateModified": "2026-02-21",
+      "datePublished": "2024-01-01T00:00:00-03:00",
+      "dateModified": "2026-02-21T00:00:00-03:00",
       "inLanguage": "pt-BR",
       "author": {
         "@id": "https://ulissesflores.com/#person"
@@ -1467,8 +1472,8 @@
       "headline": "Tratado Exegético sobre a Representação da Moralidade e Antropologia",
       "description": "Esta pagina apresenta uma sintese cientifica de \"Tratado Exegético sobre a Representação da Moralidade e Antropologia\", estruturada para leitura academica, auditoria metodologica e preparo DOI-ready.",
       "url": "https://ulissesflores.com/essays/2024-exegetical-treatise-anthropology",
-      "datePublished": "2024-01-01",
-      "dateModified": "2026-02-21",
+      "datePublished": "2024-01-01T00:00:00-03:00",
+      "dateModified": "2026-02-21T00:00:00-03:00",
       "inLanguage": "pt-BR",
       "author": {
         "@id": "https://ulissesflores.com/#person"
@@ -1514,8 +1519,8 @@
       "headline": "A Coroa e a Cruz: Análise Teológica e Fenomenológica das Aparições Marianas",
       "description": "Esta pagina apresenta uma sintese cientifica de \"A Coroa e a Cruz: Análise Teológica e Fenomenológica das Aparições Marianas\", estruturada para leitura academica, auditoria metodologica e preparo DOI-ready.",
       "url": "https://ulissesflores.com/research/2023-marian-apparitions-critique",
-      "datePublished": "2023-01-01",
-      "dateModified": "2026-02-21",
+      "datePublished": "2023-01-01T00:00:00-03:00",
+      "dateModified": "2026-02-21T00:00:00-03:00",
       "inLanguage": "pt-BR",
       "author": {
         "@id": "https://ulissesflores.com/#person"
@@ -1561,8 +1566,8 @@
       "headline": "Desafios da Herança Digital: Preservação de Memória Pós-Mortem",
       "description": "Esta pagina apresenta uma sintese cientifica de \"Desafios da Herança Digital: Preservação de Memória Pós-Mortem\", estruturada para leitura academica, auditoria metodologica e preparo DOI-ready.",
       "url": "https://ulissesflores.com/whitepapers/2023-digital-legacy",
-      "datePublished": "2023-01-01",
-      "dateModified": "2026-02-21",
+      "datePublished": "2023-01-01T00:00:00-03:00",
+      "dateModified": "2026-02-21T00:00:00-03:00",
       "inLanguage": "pt-BR",
       "author": {
         "@id": "https://ulissesflores.com/#person"
@@ -1608,8 +1613,8 @@
       "headline": "O Clube Santo: Arqueologia Espiritual, Teológica e Visual do Metodismo",
       "description": "Esta pagina apresenta uma sintese cientifica de \"O Clube Santo: Arqueologia Espiritual, Teológica e Visual do Metodismo\", estruturada para leitura academica, auditoria metodologica e preparo DOI-ready.",
       "url": "https://ulissesflores.com/research/2023-holy-club-methodism",
-      "datePublished": "2023-01-01",
-      "dateModified": "2026-02-21",
+      "datePublished": "2023-01-01T00:00:00-03:00",
+      "dateModified": "2026-02-21T00:00:00-03:00",
       "inLanguage": "pt-BR",
       "author": {
         "@id": "https://ulissesflores.com/#person"
@@ -1655,8 +1660,8 @@
       "headline": "A Teologia da Esperança em Tempos de Crise",
       "description": "Esta pagina apresenta uma sintese cientifica de \"A Teologia da Esperança em Tempos de Crise\", estruturada para leitura academica, auditoria metodologica e preparo DOI-ready.",
       "url": "https://ulissesflores.com/essays/2022-theology-of-hope",
-      "datePublished": "2022-01-01",
-      "dateModified": "2026-02-21",
+      "datePublished": "2022-01-01T00:00:00-03:00",
+      "dateModified": "2026-02-21T00:00:00-03:00",
       "inLanguage": "pt-BR",
       "author": {
         "@id": "https://ulissesflores.com/#person"
@@ -1702,8 +1707,8 @@
       "headline": "Metodologias Ativas no Ensino de Lógica de Programação",
       "description": "Esta pagina apresenta uma sintese cientifica de \"Metodologias Ativas no Ensino de Lógica de Programação\", estruturada para leitura academica, auditoria metodologica e preparo DOI-ready.",
       "url": "https://ulissesflores.com/essays/2020-robotics-education",
-      "datePublished": "2020-01-01",
-      "dateModified": "2026-02-21",
+      "datePublished": "2020-01-01T00:00:00-03:00",
+      "dateModified": "2026-02-21T00:00:00-03:00",
       "inLanguage": "pt-BR",
       "author": {
         "@id": "https://ulissesflores.com/#person"
@@ -1749,8 +1754,8 @@
       "headline": "Teoria do Caos: Emergência e Auto-organização em Mercados",
       "description": "Esta pagina apresenta uma sintese cientifica de \"Teoria do Caos: Emergência e Auto-organização em Mercados\", estruturada para leitura academica, auditoria metodologica e preparo DOI-ready.",
       "url": "https://ulissesflores.com/essays/2017-chaos-theory-economics",
-      "datePublished": "2017-01-01",
-      "dateModified": "2026-02-21",
+      "datePublished": "2017-01-01T00:00:00-03:00",
+      "dateModified": "2026-02-21T00:00:00-03:00",
       "inLanguage": "pt-BR",
       "author": {
         "@id": "https://ulissesflores.com/#person"
@@ -2608,7 +2613,10 @@
       "@type": "VideoObject",
       "additionalType": "https://schema.org/Sermon",
       "name": "Dia 1 — O Despertar da Fé",
+      "description": "Dia 1 — O Despertar da Fé",
       "url": "https://www.youtube.com/watch?v=NLAIyBqC4HU",
+      "contentUrl": "https://www.youtube.com/watch?v=NLAIyBqC4HU",
+      "thumbnailUrl": "https://img.youtube.com/vi/NLAIyBqC4HU/hqdefault.jpg",
       "inLanguage": "pt-BR",
       "genre": "Sermon",
       "isPartOf": {
@@ -2618,14 +2626,18 @@
         "@id": "https://ulissesflores.com/#quadrangular-vila-helena"
       },
       "position": 1,
-      "datePublished": "2023-01-02"
+      "datePublished": "2023-01-02T00:00:00-03:00",
+      "uploadDate": "2023-01-02T00:00:00-03:00"
     },
     {
       "@id": "https://ulissesflores.com/#sermons#jejumdavitoria-sermon-2-dia-2-vencendo-as-batalhas-da-mente",
       "@type": "VideoObject",
       "additionalType": "https://schema.org/Sermon",
       "name": "Dia 2 — Vencendo as Batalhas da Mente",
+      "description": "Dia 2 — Vencendo as Batalhas da Mente",
       "url": "https://www.youtube.com/watch?v=9YY1_EbBk_o",
+      "contentUrl": "https://www.youtube.com/watch?v=9YY1_EbBk_o",
+      "thumbnailUrl": "https://img.youtube.com/vi/9YY1_EbBk_o/hqdefault.jpg",
       "inLanguage": "pt-BR",
       "genre": "Sermon",
       "isPartOf": {
@@ -2635,14 +2647,18 @@
         "@id": "https://ulissesflores.com/#quadrangular-vila-helena"
       },
       "position": 2,
-      "datePublished": "2023-01-03"
+      "datePublished": "2023-01-03T00:00:00-03:00",
+      "uploadDate": "2023-01-03T00:00:00-03:00"
     },
     {
       "@id": "https://ulissesflores.com/#sermons#jejumdavitoria-sermon-3-dia-3-a-resiliencia-do-cristao",
       "@type": "VideoObject",
       "additionalType": "https://schema.org/Sermon",
       "name": "Dia 3 — A Resiliência do Cristão",
+      "description": "Dia 3 — A Resiliência do Cristão",
       "url": "https://www.youtube.com/watch?v=UD8W6bm_nys",
+      "contentUrl": "https://www.youtube.com/watch?v=UD8W6bm_nys",
+      "thumbnailUrl": "https://img.youtube.com/vi/UD8W6bm_nys/hqdefault.jpg",
       "inLanguage": "pt-BR",
       "genre": "Sermon",
       "isPartOf": {
@@ -2652,14 +2668,18 @@
         "@id": "https://ulissesflores.com/#quadrangular-vila-helena"
       },
       "position": 3,
-      "datePublished": "2023-01-04"
+      "datePublished": "2023-01-04T00:00:00-03:00",
+      "uploadDate": "2023-01-04T00:00:00-03:00"
     },
     {
       "@id": "https://ulissesflores.com/#sermons#jejumdavitoria-sermon-4-dia-4-quebrando-as-muralhas-pela-oracao",
       "@type": "VideoObject",
       "additionalType": "https://schema.org/Sermon",
       "name": "Dia 4 — Quebrando as Muralhas Pela Oração",
+      "description": "Dia 4 — Quebrando as Muralhas Pela Oração",
       "url": "https://www.youtube.com/watch?v=x4C_bJBXmAE",
+      "contentUrl": "https://www.youtube.com/watch?v=x4C_bJBXmAE",
+      "thumbnailUrl": "https://img.youtube.com/vi/x4C_bJBXmAE/hqdefault.jpg",
       "inLanguage": "pt-BR",
       "genre": "Sermon",
       "isPartOf": {
@@ -2669,14 +2689,18 @@
         "@id": "https://ulissesflores.com/#quadrangular-vila-helena"
       },
       "position": 4,
-      "datePublished": "2023-01-05"
+      "datePublished": "2023-01-05T00:00:00-03:00",
+      "uploadDate": "2023-01-05T00:00:00-03:00"
     },
     {
       "@id": "https://ulissesflores.com/#sermons#jejumdavitoria-sermon-5-dia-5-o-poder-da-unidade",
       "@type": "VideoObject",
       "additionalType": "https://schema.org/Sermon",
       "name": "Dia 5 — O Poder da Unidade",
+      "description": "Dia 5 — O Poder da Unidade",
       "url": "https://www.youtube.com/watch?v=TLNNov8cBPs",
+      "contentUrl": "https://www.youtube.com/watch?v=TLNNov8cBPs",
+      "thumbnailUrl": "https://img.youtube.com/vi/TLNNov8cBPs/hqdefault.jpg",
       "inLanguage": "pt-BR",
       "genre": "Sermon",
       "isPartOf": {
@@ -2686,14 +2710,18 @@
         "@id": "https://ulissesflores.com/#quadrangular-vila-helena"
       },
       "position": 5,
-      "datePublished": "2023-01-06"
+      "datePublished": "2023-01-06T00:00:00-03:00",
+      "uploadDate": "2023-01-06T00:00:00-03:00"
     },
     {
       "@id": "https://ulissesflores.com/#sermons#jejumdavitoria-sermon-6-dia-6-restituicao-divina",
       "@type": "VideoObject",
       "additionalType": "https://schema.org/Sermon",
       "name": "Dia 6 — Restituição Divina",
+      "description": "Dia 6 — Restituição Divina",
       "url": "https://www.youtube.com/watch?v=mtkDxX2XiEU",
+      "contentUrl": "https://www.youtube.com/watch?v=mtkDxX2XiEU",
+      "thumbnailUrl": "https://img.youtube.com/vi/mtkDxX2XiEU/hqdefault.jpg",
       "inLanguage": "pt-BR",
       "genre": "Sermon",
       "isPartOf": {
@@ -2703,14 +2731,18 @@
         "@id": "https://ulissesflores.com/#quadrangular-vila-helena"
       },
       "position": 6,
-      "datePublished": "2023-01-07"
+      "datePublished": "2023-01-07T00:00:00-03:00",
+      "uploadDate": "2023-01-07T00:00:00-03:00"
     },
     {
       "@id": "https://ulissesflores.com/#sermons#jejumdavitoria-sermon-7-dia-7-a-plenitude-do-espirito",
       "@type": "VideoObject",
       "additionalType": "https://schema.org/Sermon",
       "name": "Dia 7 — A Plenitude do Espírito",
+      "description": "Dia 7 — A Plenitude do Espírito",
       "url": "https://www.youtube.com/watch?v=jv0PsLg8cho",
+      "contentUrl": "https://www.youtube.com/watch?v=jv0PsLg8cho",
+      "thumbnailUrl": "https://img.youtube.com/vi/jv0PsLg8cho/hqdefault.jpg",
       "inLanguage": "pt-BR",
       "genre": "Sermon",
       "isPartOf": {
@@ -2720,14 +2752,18 @@
         "@id": "https://ulissesflores.com/#quadrangular-vila-helena"
       },
       "position": 7,
-      "datePublished": "2023-01-08"
+      "datePublished": "2023-01-08T00:00:00-03:00",
+      "uploadDate": "2023-01-08T00:00:00-03:00"
     },
     {
       "@id": "https://ulissesflores.com/#sermons#jejumdavitoria-sermon-8-dia-8-tempo-de-renovo",
       "@type": "VideoObject",
       "additionalType": "https://schema.org/Sermon",
       "name": "Dia 8 — Tempo de Renovo",
+      "description": "Dia 8 — Tempo de Renovo",
       "url": "https://www.youtube.com/watch?v=XODx3VUZp1Y",
+      "contentUrl": "https://www.youtube.com/watch?v=XODx3VUZp1Y",
+      "thumbnailUrl": "https://img.youtube.com/vi/XODx3VUZp1Y/hqdefault.jpg",
       "inLanguage": "pt-BR",
       "genre": "Sermon",
       "isPartOf": {
@@ -2737,14 +2773,18 @@
         "@id": "https://ulissesflores.com/#quadrangular-vila-helena"
       },
       "position": 8,
-      "datePublished": "2023-01-09"
+      "datePublished": "2023-01-09T00:00:00-03:00",
+      "uploadDate": "2023-01-09T00:00:00-03:00"
     },
     {
       "@id": "https://ulissesflores.com/#sermons#jejumdavitoria-sermon-9-dia-9-frutos-de-uma-vida-com-deus",
       "@type": "VideoObject",
       "additionalType": "https://schema.org/Sermon",
       "name": "Dia 9 — Frutos de Uma Vida com Deus",
+      "description": "Dia 9 — Frutos de Uma Vida com Deus",
       "url": "https://www.youtube.com/watch?v=3jLWYAOdorE",
+      "contentUrl": "https://www.youtube.com/watch?v=3jLWYAOdorE",
+      "thumbnailUrl": "https://img.youtube.com/vi/3jLWYAOdorE/hqdefault.jpg",
       "inLanguage": "pt-BR",
       "genre": "Sermon",
       "isPartOf": {
@@ -2754,14 +2794,18 @@
         "@id": "https://ulissesflores.com/#quadrangular-vila-helena"
       },
       "position": 9,
-      "datePublished": "2023-01-10"
+      "datePublished": "2023-01-10T00:00:00-03:00",
+      "uploadDate": "2023-01-10T00:00:00-03:00"
     },
     {
       "@id": "https://ulissesflores.com/#sermons#jejumdavitoria-sermon-10-dia-10-autoridade-espiritual",
       "@type": "VideoObject",
       "additionalType": "https://schema.org/Sermon",
       "name": "Dia 10 — Autoridade Espiritual",
+      "description": "Dia 10 — Autoridade Espiritual",
       "url": "https://www.youtube.com/watch?v=CC4pY7oXU3w",
+      "contentUrl": "https://www.youtube.com/watch?v=CC4pY7oXU3w",
+      "thumbnailUrl": "https://img.youtube.com/vi/CC4pY7oXU3w/hqdefault.jpg",
       "inLanguage": "pt-BR",
       "genre": "Sermon",
       "isPartOf": {
@@ -2771,14 +2815,18 @@
         "@id": "https://ulissesflores.com/#quadrangular-vila-helena"
       },
       "position": 10,
-      "datePublished": "2023-01-11"
+      "datePublished": "2023-01-11T00:00:00-03:00",
+      "uploadDate": "2023-01-11T00:00:00-03:00"
     },
     {
       "@id": "https://ulissesflores.com/#sermons#jejumdavitoria-sermon-11-dia-11-a-forca-da-palavra",
       "@type": "VideoObject",
       "additionalType": "https://schema.org/Sermon",
       "name": "Dia 11 — A Força da Palavra",
+      "description": "Dia 11 — A Força da Palavra",
       "url": "https://www.youtube.com/watch?v=wiK8Ckj24XQ",
+      "contentUrl": "https://www.youtube.com/watch?v=wiK8Ckj24XQ",
+      "thumbnailUrl": "https://img.youtube.com/vi/wiK8Ckj24XQ/hqdefault.jpg",
       "inLanguage": "pt-BR",
       "genre": "Sermon",
       "isPartOf": {
@@ -2788,14 +2836,18 @@
         "@id": "https://ulissesflores.com/#quadrangular-vila-helena"
       },
       "position": 11,
-      "datePublished": "2023-01-12"
+      "datePublished": "2023-01-12T00:00:00-03:00",
+      "uploadDate": "2023-01-12T00:00:00-03:00"
     },
     {
       "@id": "https://ulissesflores.com/#sermons#jejumdavitoria-sermon-12-dia-12-alinhamento-profetico",
       "@type": "VideoObject",
       "additionalType": "https://schema.org/Sermon",
       "name": "Dia 12 — Alinhamento Profético",
+      "description": "Dia 12 — Alinhamento Profético",
       "url": "https://www.youtube.com/watch?v=i4pcggtnSko",
+      "contentUrl": "https://www.youtube.com/watch?v=i4pcggtnSko",
+      "thumbnailUrl": "https://img.youtube.com/vi/i4pcggtnSko/hqdefault.jpg",
       "inLanguage": "pt-BR",
       "genre": "Sermon",
       "isPartOf": {
@@ -2805,14 +2857,18 @@
         "@id": "https://ulissesflores.com/#quadrangular-vila-helena"
       },
       "position": 12,
-      "datePublished": "2023-01-13"
+      "datePublished": "2023-01-13T00:00:00-03:00",
+      "uploadDate": "2023-01-13T00:00:00-03:00"
     },
     {
       "@id": "https://ulissesflores.com/#sermons#jejumdavitoria-sermon-13-dia-13-ousadia-para-romper-limites",
       "@type": "VideoObject",
       "additionalType": "https://schema.org/Sermon",
       "name": "Dia 13 — Ousadia para Romper Limites",
+      "description": "Dia 13 — Ousadia para Romper Limites",
       "url": "https://www.youtube.com/watch?v=PLXuFzpR6XY",
+      "contentUrl": "https://www.youtube.com/watch?v=PLXuFzpR6XY",
+      "thumbnailUrl": "https://img.youtube.com/vi/PLXuFzpR6XY/hqdefault.jpg",
       "inLanguage": "pt-BR",
       "genre": "Sermon",
       "isPartOf": {
@@ -2822,14 +2878,18 @@
         "@id": "https://ulissesflores.com/#quadrangular-vila-helena"
       },
       "position": 13,
-      "datePublished": "2023-01-14"
+      "datePublished": "2023-01-14T00:00:00-03:00",
+      "uploadDate": "2023-01-14T00:00:00-03:00"
     },
     {
       "@id": "https://ulissesflores.com/#sermons#jejumdavitoria-sermon-14-dia-14-a-recompensa-da-fidelidade",
       "@type": "VideoObject",
       "additionalType": "https://schema.org/Sermon",
       "name": "Dia 14 — A Recompensa da Fidelidade",
+      "description": "Dia 14 — A Recompensa da Fidelidade",
       "url": "https://www.youtube.com/watch?v=ui-xDNtmpYw",
+      "contentUrl": "https://www.youtube.com/watch?v=ui-xDNtmpYw",
+      "thumbnailUrl": "https://img.youtube.com/vi/ui-xDNtmpYw/hqdefault.jpg",
       "inLanguage": "pt-BR",
       "genre": "Sermon",
       "isPartOf": {
@@ -2839,14 +2899,18 @@
         "@id": "https://ulissesflores.com/#quadrangular-vila-helena"
       },
       "position": 14,
-      "datePublished": "2023-01-15"
+      "datePublished": "2023-01-15T00:00:00-03:00",
+      "uploadDate": "2023-01-15T00:00:00-03:00"
     },
     {
       "@id": "https://ulissesflores.com/#sermons#jejumdavitoria-sermon-15-dia-15-protecao-e-escudo",
       "@type": "VideoObject",
       "additionalType": "https://schema.org/Sermon",
       "name": "Dia 15 — Proteção e Escudo",
+      "description": "Dia 15 — Proteção e Escudo",
       "url": "https://www.youtube.com/watch?v=iZSbu2u0ORo",
+      "contentUrl": "https://www.youtube.com/watch?v=iZSbu2u0ORo",
+      "thumbnailUrl": "https://img.youtube.com/vi/iZSbu2u0ORo/hqdefault.jpg",
       "inLanguage": "pt-BR",
       "genre": "Sermon",
       "isPartOf": {
@@ -2856,14 +2920,18 @@
         "@id": "https://ulissesflores.com/#quadrangular-vila-helena"
       },
       "position": 15,
-      "datePublished": "2023-01-16"
+      "datePublished": "2023-01-16T00:00:00-03:00",
+      "uploadDate": "2023-01-16T00:00:00-03:00"
     },
     {
       "@id": "https://ulissesflores.com/#sermons#jejumdavitoria-sermon-16-dia-16-avancando-em-meio-as-oposicoes",
       "@type": "VideoObject",
       "additionalType": "https://schema.org/Sermon",
       "name": "Dia 16 — Avançando em Meio às Oposições",
+      "description": "Dia 16 — Avançando em Meio às Oposições",
       "url": "https://www.youtube.com/watch?v=7jXjSGKuaEs",
+      "contentUrl": "https://www.youtube.com/watch?v=7jXjSGKuaEs",
+      "thumbnailUrl": "https://img.youtube.com/vi/7jXjSGKuaEs/hqdefault.jpg",
       "inLanguage": "pt-BR",
       "genre": "Sermon",
       "isPartOf": {
@@ -2873,14 +2941,18 @@
         "@id": "https://ulissesflores.com/#quadrangular-vila-helena"
       },
       "position": 16,
-      "datePublished": "2023-01-17"
+      "datePublished": "2023-01-17T00:00:00-03:00",
+      "uploadDate": "2023-01-17T00:00:00-03:00"
     },
     {
       "@id": "https://ulissesflores.com/#sermons#jejumdavitoria-sermon-17-dia-17-celebracao-antecipada",
       "@type": "VideoObject",
       "additionalType": "https://schema.org/Sermon",
       "name": "Dia 17 — Celebração Antecipada",
+      "description": "Dia 17 — Celebração Antecipada",
       "url": "https://www.youtube.com/watch?v=B_q2gnCx6H0",
+      "contentUrl": "https://www.youtube.com/watch?v=B_q2gnCx6H0",
+      "thumbnailUrl": "https://img.youtube.com/vi/B_q2gnCx6H0/hqdefault.jpg",
       "inLanguage": "pt-BR",
       "genre": "Sermon",
       "isPartOf": {
@@ -2890,14 +2962,18 @@
         "@id": "https://ulissesflores.com/#quadrangular-vila-helena"
       },
       "position": 17,
-      "datePublished": "2023-01-18"
+      "datePublished": "2023-01-18T00:00:00-03:00",
+      "uploadDate": "2023-01-18T00:00:00-03:00"
     },
     {
       "@id": "https://ulissesflores.com/#sermons#jejumdavitoria-sermon-18-dia-18-destravando-promessas",
       "@type": "VideoObject",
       "additionalType": "https://schema.org/Sermon",
       "name": "Dia 18 — Destravando Promessas",
+      "description": "Dia 18 — Destravando Promessas",
       "url": "https://www.youtube.com/watch?v=e2e_npI5Tqg",
+      "contentUrl": "https://www.youtube.com/watch?v=e2e_npI5Tqg",
+      "thumbnailUrl": "https://img.youtube.com/vi/e2e_npI5Tqg/hqdefault.jpg",
       "inLanguage": "pt-BR",
       "genre": "Sermon",
       "isPartOf": {
@@ -2907,14 +2983,18 @@
         "@id": "https://ulissesflores.com/#quadrangular-vila-helena"
       },
       "position": 18,
-      "datePublished": "2023-01-19"
+      "datePublished": "2023-01-19T00:00:00-03:00",
+      "uploadDate": "2023-01-19T00:00:00-03:00"
     },
     {
       "@id": "https://ulissesflores.com/#sermons#jejumdavitoria-sermon-19-dia-19-o-fogo-que-nao-se-apaga",
       "@type": "VideoObject",
       "additionalType": "https://schema.org/Sermon",
       "name": "Dia 19 — O Fogo Que Não se Apaga",
+      "description": "Dia 19 — O Fogo Que Não se Apaga",
       "url": "https://www.youtube.com/watch?v=7F2l5DD3NuM",
+      "contentUrl": "https://www.youtube.com/watch?v=7F2l5DD3NuM",
+      "thumbnailUrl": "https://img.youtube.com/vi/7F2l5DD3NuM/hqdefault.jpg",
       "inLanguage": "pt-BR",
       "genre": "Sermon",
       "isPartOf": {
@@ -2924,14 +3004,18 @@
         "@id": "https://ulissesflores.com/#quadrangular-vila-helena"
       },
       "position": 19,
-      "datePublished": "2023-01-20"
+      "datePublished": "2023-01-20T00:00:00-03:00",
+      "uploadDate": "2023-01-20T00:00:00-03:00"
     },
     {
       "@id": "https://ulissesflores.com/#sermons#jejumdavitoria-sermon-20-dia-20-preparando-o-altar",
       "@type": "VideoObject",
       "additionalType": "https://schema.org/Sermon",
       "name": "Dia 20 — Preparando o Altar",
+      "description": "Dia 20 — Preparando o Altar",
       "url": "https://www.youtube.com/watch?v=Yt7HU3NwJAw",
+      "contentUrl": "https://www.youtube.com/watch?v=Yt7HU3NwJAw",
+      "thumbnailUrl": "https://img.youtube.com/vi/Yt7HU3NwJAw/hqdefault.jpg",
       "inLanguage": "pt-BR",
       "genre": "Sermon",
       "isPartOf": {
@@ -2941,14 +3025,18 @@
         "@id": "https://ulissesflores.com/#quadrangular-vila-helena"
       },
       "position": 20,
-      "datePublished": "2023-01-21"
+      "datePublished": "2023-01-21T00:00:00-03:00",
+      "uploadDate": "2023-01-21T00:00:00-03:00"
     },
     {
       "@id": "https://ulissesflores.com/#sermons#jejumdavitoria-sermon-21-dia-21-o-selo-da-vitoria",
       "@type": "VideoObject",
       "additionalType": "https://schema.org/Sermon",
       "name": "Dia 21 — O Selo da Vitória",
+      "description": "Dia 21 — O Selo da Vitória",
       "url": "https://www.youtube.com/watch?v=qLH3tloXWXE",
+      "contentUrl": "https://www.youtube.com/watch?v=qLH3tloXWXE",
+      "thumbnailUrl": "https://img.youtube.com/vi/qLH3tloXWXE/hqdefault.jpg",
       "inLanguage": "pt-BR",
       "genre": "Sermon",
       "isPartOf": {
@@ -2958,7 +3046,8 @@
         "@id": "https://ulissesflores.com/#quadrangular-vila-helena"
       },
       "position": 21,
-      "datePublished": "2023-01-22"
+      "datePublished": "2023-01-22T00:00:00-03:00",
+      "uploadDate": "2023-01-22T00:00:00-03:00"
     },
     {
       "@id": "https://ulissesflores.com/#sermons#cultosonline",
@@ -2974,7 +3063,10 @@
       "@type": "VideoObject",
       "additionalType": "https://schema.org/Sermon",
       "name": "Presença e Avivamento",
+      "description": "Presença e Avivamento",
       "url": "https://www.youtube.com/watch?v=Y7A6q62VpJM",
+      "contentUrl": "https://www.youtube.com/watch?v=Y7A6q62VpJM",
+      "thumbnailUrl": "https://img.youtube.com/vi/Y7A6q62VpJM/hqdefault.jpg",
       "inLanguage": "pt-BR",
       "genre": "Sermon",
       "isPartOf": {
@@ -2984,14 +3076,18 @@
         "@id": "https://ulissesflores.com/#quadrangular-vila-helena"
       },
       "position": 1,
-      "datePublished": "2022-10-30"
+      "datePublished": "2022-10-30T00:00:00-03:00",
+      "uploadDate": "2022-10-30T00:00:00-03:00"
     },
     {
       "@id": "https://ulissesflores.com/#sermons#cultosonline-sermon-2-o-chamado-inabalavel-07-08-22",
       "@type": "VideoObject",
       "additionalType": "https://schema.org/Sermon",
       "name": "O Chamado Inabalável — 07/08/22",
+      "description": "O Chamado Inabalável — 07/08/22",
       "url": "https://www.youtube.com/watch?v=6fRWwVcf-k0",
+      "contentUrl": "https://www.youtube.com/watch?v=6fRWwVcf-k0",
+      "thumbnailUrl": "https://img.youtube.com/vi/6fRWwVcf-k0/hqdefault.jpg",
       "inLanguage": "pt-BR",
       "genre": "Sermon",
       "isPartOf": {
@@ -3001,14 +3097,18 @@
         "@id": "https://ulissesflores.com/#quadrangular-vila-helena"
       },
       "position": 2,
-      "datePublished": "2022-08-07"
+      "datePublished": "2022-08-07T00:00:00-03:00",
+      "uploadDate": "2022-08-07T00:00:00-03:00"
     },
     {
       "@id": "https://ulissesflores.com/#sermons#cultosonline-sermon-3-firmes-na-promessa-14-08-22",
       "@type": "VideoObject",
       "additionalType": "https://schema.org/Sermon",
       "name": "Firmes na Promessa — 14/08/22",
+      "description": "Firmes na Promessa — 14/08/22",
       "url": "https://www.youtube.com/watch?v=BdLM6uzBFgI",
+      "contentUrl": "https://www.youtube.com/watch?v=BdLM6uzBFgI",
+      "thumbnailUrl": "https://img.youtube.com/vi/BdLM6uzBFgI/hqdefault.jpg",
       "inLanguage": "pt-BR",
       "genre": "Sermon",
       "isPartOf": {
@@ -3018,14 +3118,18 @@
         "@id": "https://ulissesflores.com/#quadrangular-vila-helena"
       },
       "position": 3,
-      "datePublished": "2022-08-14"
+      "datePublished": "2022-08-14T00:00:00-03:00",
+      "uploadDate": "2022-08-14T00:00:00-03:00"
     },
     {
       "@id": "https://ulissesflores.com/#sermons#cultosonline-sermon-4-a-importancia-da-intimidade-18-08-2022",
       "@type": "VideoObject",
       "additionalType": "https://schema.org/Sermon",
       "name": "A Importância da Intimidade — 18/08/2022",
+      "description": "A Importância da Intimidade — 18/08/2022",
       "url": "https://www.youtube.com/watch?v=Wc2WCYiM3Gc",
+      "contentUrl": "https://www.youtube.com/watch?v=Wc2WCYiM3Gc",
+      "thumbnailUrl": "https://img.youtube.com/vi/Wc2WCYiM3Gc/hqdefault.jpg",
       "inLanguage": "pt-BR",
       "genre": "Sermon",
       "isPartOf": {
@@ -3035,14 +3139,18 @@
         "@id": "https://ulissesflores.com/#quadrangular-vila-helena"
       },
       "position": 4,
-      "datePublished": "2022-08-18"
+      "datePublished": "2022-08-18T00:00:00-03:00",
+      "uploadDate": "2022-08-18T00:00:00-03:00"
     },
     {
       "@id": "https://ulissesflores.com/#sermons#cultosonline-sermon-5-construindo-uma-vida-com-proposito-21-08-2022",
       "@type": "VideoObject",
       "additionalType": "https://schema.org/Sermon",
       "name": "Construindo Uma Vida com Propósito — 21/08/2022",
+      "description": "Construindo Uma Vida com Propósito — 21/08/2022",
       "url": "https://www.youtube.com/watch?v=TyHh01KaXGw",
+      "contentUrl": "https://www.youtube.com/watch?v=TyHh01KaXGw",
+      "thumbnailUrl": "https://img.youtube.com/vi/TyHh01KaXGw/hqdefault.jpg",
       "inLanguage": "pt-BR",
       "genre": "Sermon",
       "isPartOf": {
@@ -3052,14 +3160,18 @@
         "@id": "https://ulissesflores.com/#quadrangular-vila-helena"
       },
       "position": 5,
-      "datePublished": "2022-08-21"
+      "datePublished": "2022-08-21T00:00:00-03:00",
+      "uploadDate": "2022-08-21T00:00:00-03:00"
     },
     {
       "@id": "https://ulissesflores.com/#sermons#cultosonline-sermon-6-restaurando-o-altar-25-08-2022",
       "@type": "VideoObject",
       "additionalType": "https://schema.org/Sermon",
       "name": "Restaurando o Altar — 25/08/2022",
+      "description": "Restaurando o Altar — 25/08/2022",
       "url": "https://www.youtube.com/watch?v=u1v4oAamxUg",
+      "contentUrl": "https://www.youtube.com/watch?v=u1v4oAamxUg",
+      "thumbnailUrl": "https://img.youtube.com/vi/u1v4oAamxUg/hqdefault.jpg",
       "inLanguage": "pt-BR",
       "genre": "Sermon",
       "isPartOf": {
@@ -3069,14 +3181,18 @@
         "@id": "https://ulissesflores.com/#quadrangular-vila-helena"
       },
       "position": 6,
-      "datePublished": "2022-08-25"
+      "datePublished": "2022-08-25T00:00:00-03:00",
+      "uploadDate": "2022-08-25T00:00:00-03:00"
     },
     {
       "@id": "https://ulissesflores.com/#sermons#cultosonline-sermon-7-o-agir-invisivel-de-deus-28-08-2022",
       "@type": "VideoObject",
       "additionalType": "https://schema.org/Sermon",
       "name": "O Agir Invisível de Deus — 28/08/2022",
+      "description": "O Agir Invisível de Deus — 28/08/2022",
       "url": "https://www.youtube.com/watch?v=cOZnirlxr8U",
+      "contentUrl": "https://www.youtube.com/watch?v=cOZnirlxr8U",
+      "thumbnailUrl": "https://img.youtube.com/vi/cOZnirlxr8U/hqdefault.jpg",
       "inLanguage": "pt-BR",
       "genre": "Sermon",
       "isPartOf": {
@@ -3086,14 +3202,18 @@
         "@id": "https://ulissesflores.com/#quadrangular-vila-helena"
       },
       "position": 7,
-      "datePublished": "2022-08-28"
+      "datePublished": "2022-08-28T00:00:00-03:00",
+      "uploadDate": "2022-08-28T00:00:00-03:00"
     },
     {
       "@id": "https://ulissesflores.com/#sermons#cultosonline-sermon-8-atravessando-tempestades-com-fe-04-09-2022",
       "@type": "VideoObject",
       "additionalType": "https://schema.org/Sermon",
       "name": "Atravessando Tempestades com Fé — 04/09/2022",
+      "description": "Atravessando Tempestades com Fé — 04/09/2022",
       "url": "https://www.youtube.com/watch?v=4Hg6UHYXENY",
+      "contentUrl": "https://www.youtube.com/watch?v=4Hg6UHYXENY",
+      "thumbnailUrl": "https://img.youtube.com/vi/4Hg6UHYXENY/hqdefault.jpg",
       "inLanguage": "pt-BR",
       "genre": "Sermon",
       "isPartOf": {
@@ -3103,14 +3223,18 @@
         "@id": "https://ulissesflores.com/#quadrangular-vila-helena"
       },
       "position": 8,
-      "datePublished": "2022-09-04"
+      "datePublished": "2022-09-04T00:00:00-03:00",
+      "uploadDate": "2022-09-04T00:00:00-03:00"
     },
     {
       "@id": "https://ulissesflores.com/#sermons#cultosonline-sermon-9-o-perdao-que-liberta-11-09-2022",
       "@type": "VideoObject",
       "additionalType": "https://schema.org/Sermon",
       "name": "O Perdão que Liberta — 11/09/2022",
+      "description": "O Perdão que Liberta — 11/09/2022",
       "url": "https://www.youtube.com/watch?v=pTAJOi1--tY",
+      "contentUrl": "https://www.youtube.com/watch?v=pTAJOi1--tY",
+      "thumbnailUrl": "https://img.youtube.com/vi/pTAJOi1--tY/hqdefault.jpg",
       "inLanguage": "pt-BR",
       "genre": "Sermon",
       "isPartOf": {
@@ -3120,14 +3244,18 @@
         "@id": "https://ulissesflores.com/#quadrangular-vila-helena"
       },
       "position": 9,
-      "datePublished": "2022-09-11"
+      "datePublished": "2022-09-11T00:00:00-03:00",
+      "uploadDate": "2022-09-11T00:00:00-03:00"
     },
     {
       "@id": "https://ulissesflores.com/#sermons#cultosonline-sermon-10-vencendo-o-medo-pela-graca-15-09-2022",
       "@type": "VideoObject",
       "additionalType": "https://schema.org/Sermon",
       "name": "Vencendo o Medo Pela Graça — 15/09/2022",
+      "description": "Vencendo o Medo Pela Graça — 15/09/2022",
       "url": "https://www.youtube.com/watch?v=ariz4Xm4lks",
+      "contentUrl": "https://www.youtube.com/watch?v=ariz4Xm4lks",
+      "thumbnailUrl": "https://img.youtube.com/vi/ariz4Xm4lks/hqdefault.jpg",
       "inLanguage": "pt-BR",
       "genre": "Sermon",
       "isPartOf": {
@@ -3137,14 +3265,18 @@
         "@id": "https://ulissesflores.com/#quadrangular-vila-helena"
       },
       "position": 10,
-      "datePublished": "2022-09-15"
+      "datePublished": "2022-09-15T00:00:00-03:00",
+      "uploadDate": "2022-09-15T00:00:00-03:00"
     },
     {
       "@id": "https://ulissesflores.com/#sermons#cultosonline-sermon-11-chamados-para-fazer-a-diferenca-18-09-2022",
       "@type": "VideoObject",
       "additionalType": "https://schema.org/Sermon",
       "name": "Chamados Para Fazer a Diferença — 18/09/2022",
+      "description": "Chamados Para Fazer a Diferença — 18/09/2022",
       "url": "https://www.youtube.com/watch?v=4lxzEWZ4AN8",
+      "contentUrl": "https://www.youtube.com/watch?v=4lxzEWZ4AN8",
+      "thumbnailUrl": "https://img.youtube.com/vi/4lxzEWZ4AN8/hqdefault.jpg",
       "inLanguage": "pt-BR",
       "genre": "Sermon",
       "isPartOf": {
@@ -3154,14 +3286,18 @@
         "@id": "https://ulissesflores.com/#quadrangular-vila-helena"
       },
       "position": 11,
-      "datePublished": "2022-09-18"
+      "datePublished": "2022-09-18T00:00:00-03:00",
+      "uploadDate": "2022-09-18T00:00:00-03:00"
     },
     {
       "@id": "https://ulissesflores.com/#sermons#cultosonline-sermon-12-batismo-nas-aguas-nova-vida-em-cristo-25-09-2022",
       "@type": "VideoObject",
       "additionalType": "https://schema.org/Sermon",
       "name": "Batismo nas águas: Nova Vida em Cristo — 25/09/2022",
+      "description": "Batismo nas águas: Nova Vida em Cristo — 25/09/2022",
       "url": "https://www.youtube.com/watch?v=D6pF7ZMa9UM",
+      "contentUrl": "https://www.youtube.com/watch?v=D6pF7ZMa9UM",
+      "thumbnailUrl": "https://img.youtube.com/vi/D6pF7ZMa9UM/hqdefault.jpg",
       "inLanguage": "pt-BR",
       "genre": "Sermon",
       "isPartOf": {
@@ -3171,14 +3307,18 @@
         "@id": "https://ulissesflores.com/#quadrangular-vila-helena"
       },
       "position": 12,
-      "datePublished": "2022-09-25"
+      "datePublished": "2022-09-25T00:00:00-03:00",
+      "uploadDate": "2022-09-25T00:00:00-03:00"
     },
     {
       "@id": "https://ulissesflores.com/#sermons#cultosonline-sermon-13-semeando-em-boa-terra-02-10-2022",
       "@type": "VideoObject",
       "additionalType": "https://schema.org/Sermon",
       "name": "Semeando em Boa Terra — 02/10/2022",
+      "description": "Semeando em Boa Terra — 02/10/2022",
       "url": "https://www.youtube.com/watch?v=Xl95QoBBQdo",
+      "contentUrl": "https://www.youtube.com/watch?v=Xl95QoBBQdo",
+      "thumbnailUrl": "https://img.youtube.com/vi/Xl95QoBBQdo/hqdefault.jpg",
       "inLanguage": "pt-BR",
       "genre": "Sermon",
       "isPartOf": {
@@ -3188,14 +3328,18 @@
         "@id": "https://ulissesflores.com/#quadrangular-vila-helena"
       },
       "position": 13,
-      "datePublished": "2022-10-02"
+      "datePublished": "2022-10-02T00:00:00-03:00",
+      "uploadDate": "2022-10-02T00:00:00-03:00"
     },
     {
       "@id": "https://ulissesflores.com/#sermons#cultosonline-sermon-14-a-cruz-e-o-seu-significado-hoje-23-10-2022",
       "@type": "VideoObject",
       "additionalType": "https://schema.org/Sermon",
       "name": "A Cruz e o Seu Significado Hoje — 23/10/2022",
+      "description": "A Cruz e o Seu Significado Hoje — 23/10/2022",
       "url": "https://www.youtube.com/watch?v=kQIEbtM57Go",
+      "contentUrl": "https://www.youtube.com/watch?v=kQIEbtM57Go",
+      "thumbnailUrl": "https://img.youtube.com/vi/kQIEbtM57Go/hqdefault.jpg",
       "inLanguage": "pt-BR",
       "genre": "Sermon",
       "isPartOf": {
@@ -3205,14 +3349,18 @@
         "@id": "https://ulissesflores.com/#quadrangular-vila-helena"
       },
       "position": 14,
-      "datePublished": "2022-10-23"
+      "datePublished": "2022-10-23T00:00:00-03:00",
+      "uploadDate": "2022-10-23T00:00:00-03:00"
     },
     {
       "@id": "https://ulissesflores.com/#sermons#cultosonline-sermon-15-caminhando-em-sobrenaturalidade-06-11-2022",
       "@type": "VideoObject",
       "additionalType": "https://schema.org/Sermon",
       "name": "Caminhando em Sobrenaturalidade — 06/11/2022",
+      "description": "Caminhando em Sobrenaturalidade — 06/11/2022",
       "url": "https://www.youtube.com/watch?v=YQrIOabiMoQ",
+      "contentUrl": "https://www.youtube.com/watch?v=YQrIOabiMoQ",
+      "thumbnailUrl": "https://img.youtube.com/vi/YQrIOabiMoQ/hqdefault.jpg",
       "inLanguage": "pt-BR",
       "genre": "Sermon",
       "isPartOf": {
@@ -3222,14 +3370,18 @@
         "@id": "https://ulissesflores.com/#quadrangular-vila-helena"
       },
       "position": 15,
-      "datePublished": "2022-11-06"
+      "datePublished": "2022-11-06T00:00:00-03:00",
+      "uploadDate": "2022-11-06T00:00:00-03:00"
     },
     {
       "@id": "https://ulissesflores.com/#sermons#cultosonline-sermon-16-identidade-quem-somos-em-cristo-13-11-2022",
       "@type": "VideoObject",
       "additionalType": "https://schema.org/Sermon",
       "name": "Identidade: Quem Somos em Cristo? — 13/11/2022",
+      "description": "Identidade: Quem Somos em Cristo? — 13/11/2022",
       "url": "https://www.youtube.com/watch?v=CJPxc-6fy04",
+      "contentUrl": "https://www.youtube.com/watch?v=CJPxc-6fy04",
+      "thumbnailUrl": "https://img.youtube.com/vi/CJPxc-6fy04/hqdefault.jpg",
       "inLanguage": "pt-BR",
       "genre": "Sermon",
       "isPartOf": {
@@ -3239,14 +3391,18 @@
         "@id": "https://ulissesflores.com/#quadrangular-vila-helena"
       },
       "position": 16,
-      "datePublished": "2022-11-13"
+      "datePublished": "2022-11-13T00:00:00-03:00",
+      "uploadDate": "2022-11-13T00:00:00-03:00"
     },
     {
       "@id": "https://ulissesflores.com/#sermons#cultosonline-sermon-17-cultivando-um-coracao-grato-20-11",
       "@type": "VideoObject",
       "additionalType": "https://schema.org/Sermon",
       "name": "Cultivando um Coração Grato — 20/11",
+      "description": "Cultivando um Coração Grato — 20/11",
       "url": "https://www.youtube.com/watch?v=kaKPhbBvo04",
+      "contentUrl": "https://www.youtube.com/watch?v=kaKPhbBvo04",
+      "thumbnailUrl": "https://img.youtube.com/vi/kaKPhbBvo04/hqdefault.jpg",
       "inLanguage": "pt-BR",
       "genre": "Sermon",
       "isPartOf": {
@@ -3256,14 +3412,18 @@
         "@id": "https://ulissesflores.com/#quadrangular-vila-helena"
       },
       "position": 17,
-      "datePublished": "2022-11-20"
+      "datePublished": "2022-11-20T00:00:00-03:00",
+      "uploadDate": "2022-11-20T00:00:00-03:00"
     },
     {
       "@id": "https://ulissesflores.com/#sermons#cultosonline-sermon-18-renovando-as-forcas-no-altar-27-11-2022",
       "@type": "VideoObject",
       "additionalType": "https://schema.org/Sermon",
       "name": "Renovando as Forças no Altar — 27/11/2022",
+      "description": "Renovando as Forças no Altar — 27/11/2022",
       "url": "https://www.youtube.com/watch?v=vhFhr1Qxyw4",
+      "contentUrl": "https://www.youtube.com/watch?v=vhFhr1Qxyw4",
+      "thumbnailUrl": "https://img.youtube.com/vi/vhFhr1Qxyw4/hqdefault.jpg",
       "inLanguage": "pt-BR",
       "genre": "Sermon",
       "isPartOf": {
@@ -3273,14 +3433,18 @@
         "@id": "https://ulissesflores.com/#quadrangular-vila-helena"
       },
       "position": 18,
-      "datePublished": "2022-11-27"
+      "datePublished": "2022-11-27T00:00:00-03:00",
+      "uploadDate": "2022-11-27T00:00:00-03:00"
     },
     {
       "@id": "https://ulissesflores.com/#sermons#cultosonline-sermon-19-a-esperanca-que-nao-decepciona-04-12-2022",
       "@type": "VideoObject",
       "additionalType": "https://schema.org/Sermon",
       "name": "A Esperança Que Não Decepciona — 04/12/2022",
+      "description": "A Esperança Que Não Decepciona — 04/12/2022",
       "url": "https://www.youtube.com/watch?v=s5oh63j0Itc",
+      "contentUrl": "https://www.youtube.com/watch?v=s5oh63j0Itc",
+      "thumbnailUrl": "https://img.youtube.com/vi/s5oh63j0Itc/hqdefault.jpg",
       "inLanguage": "pt-BR",
       "genre": "Sermon",
       "isPartOf": {
@@ -3290,14 +3454,18 @@
         "@id": "https://ulissesflores.com/#quadrangular-vila-helena"
       },
       "position": 19,
-      "datePublished": "2022-12-04"
+      "datePublished": "2022-12-04T00:00:00-03:00",
+      "uploadDate": "2022-12-04T00:00:00-03:00"
     },
     {
       "@id": "https://ulissesflores.com/#sermons#cultosonline-sermon-20-preparando-o-coracao-para-o-novo-ano-11-12-2022",
       "@type": "VideoObject",
       "additionalType": "https://schema.org/Sermon",
       "name": "Preparando o Coração Para o Novo Ano — 11/12/2022",
+      "description": "Preparando o Coração Para o Novo Ano — 11/12/2022",
       "url": "https://www.youtube.com/watch?v=gkeiRaXiCMI",
+      "contentUrl": "https://www.youtube.com/watch?v=gkeiRaXiCMI",
+      "thumbnailUrl": "https://img.youtube.com/vi/gkeiRaXiCMI/hqdefault.jpg",
       "inLanguage": "pt-BR",
       "genre": "Sermon",
       "isPartOf": {
@@ -3307,14 +3475,18 @@
         "@id": "https://ulissesflores.com/#quadrangular-vila-helena"
       },
       "position": 20,
-      "datePublished": "2022-12-11"
+      "datePublished": "2022-12-11T00:00:00-03:00",
+      "uploadDate": "2022-12-11T00:00:00-03:00"
     },
     {
       "@id": "https://ulissesflores.com/#sermons#cultosonline-sermon-21-fortalecendo-as-bases-da-fe-15-01-2023",
       "@type": "VideoObject",
       "additionalType": "https://schema.org/Sermon",
       "name": "Fortalecendo as Bases da Fé — 15/01/2023",
+      "description": "Fortalecendo as Bases da Fé — 15/01/2023",
       "url": "https://www.youtube.com/watch?v=aSSpJn9ggaw",
+      "contentUrl": "https://www.youtube.com/watch?v=aSSpJn9ggaw",
+      "thumbnailUrl": "https://img.youtube.com/vi/aSSpJn9ggaw/hqdefault.jpg",
       "inLanguage": "pt-BR",
       "genre": "Sermon",
       "isPartOf": {
@@ -3324,14 +3496,18 @@
         "@id": "https://ulissesflores.com/#quadrangular-vila-helena"
       },
       "position": 21,
-      "datePublished": "2023-01-15"
+      "datePublished": "2023-01-15T00:00:00-03:00",
+      "uploadDate": "2023-01-15T00:00:00-03:00"
     },
     {
       "@id": "https://ulissesflores.com/#sermons#cultosonline-sermon-22-o-agir-do-espirito-em-nossas-vidas-22-01-2023",
       "@type": "VideoObject",
       "additionalType": "https://schema.org/Sermon",
       "name": "O Agir do Espírito em Nossas Vidas — 22/01/2023",
+      "description": "O Agir do Espírito em Nossas Vidas — 22/01/2023",
       "url": "https://www.youtube.com/watch?v=O9HCFQI4rK4",
+      "contentUrl": "https://www.youtube.com/watch?v=O9HCFQI4rK4",
+      "thumbnailUrl": "https://img.youtube.com/vi/O9HCFQI4rK4/hqdefault.jpg",
       "inLanguage": "pt-BR",
       "genre": "Sermon",
       "isPartOf": {
@@ -3341,14 +3517,18 @@
         "@id": "https://ulissesflores.com/#quadrangular-vila-helena"
       },
       "position": 22,
-      "datePublished": "2023-01-22"
+      "datePublished": "2023-01-22T00:00:00-03:00",
+      "uploadDate": "2023-01-22T00:00:00-03:00"
     },
     {
       "@id": "https://ulissesflores.com/#sermons#cultosonline-sermon-23-aprendendo-a-ouvir-a-voz-de-deus-29-01-2023",
       "@type": "VideoObject",
       "additionalType": "https://schema.org/Sermon",
       "name": "Aprendendo a Ouvir a Voz de Deus — 29/01/2023",
+      "description": "Aprendendo a Ouvir a Voz de Deus — 29/01/2023",
       "url": "https://www.youtube.com/watch?v=WYOYxtc5OUM",
+      "contentUrl": "https://www.youtube.com/watch?v=WYOYxtc5OUM",
+      "thumbnailUrl": "https://img.youtube.com/vi/WYOYxtc5OUM/hqdefault.jpg",
       "inLanguage": "pt-BR",
       "genre": "Sermon",
       "isPartOf": {
@@ -3358,14 +3538,18 @@
         "@id": "https://ulissesflores.com/#quadrangular-vila-helena"
       },
       "position": 23,
-      "datePublished": "2023-01-29"
+      "datePublished": "2023-01-29T00:00:00-03:00",
+      "uploadDate": "2023-01-29T00:00:00-03:00"
     },
     {
       "@id": "https://ulissesflores.com/#sermons#cultosonline-sermon-24-comunhao-e-crescimento-espiritual-05-02-2023",
       "@type": "VideoObject",
       "additionalType": "https://schema.org/Sermon",
       "name": "Comunhão e Crescimento Espiritual — 05/02/2023",
+      "description": "Comunhão e Crescimento Espiritual — 05/02/2023",
       "url": "https://www.youtube.com/watch?v=t9wESfLpYrc",
+      "contentUrl": "https://www.youtube.com/watch?v=t9wESfLpYrc",
+      "thumbnailUrl": "https://img.youtube.com/vi/t9wESfLpYrc/hqdefault.jpg",
       "inLanguage": "pt-BR",
       "genre": "Sermon",
       "isPartOf": {
@@ -3375,14 +3559,18 @@
         "@id": "https://ulissesflores.com/#quadrangular-vila-helena"
       },
       "position": 24,
-      "datePublished": "2023-02-05"
+      "datePublished": "2023-02-05T00:00:00-03:00",
+      "uploadDate": "2023-02-05T00:00:00-03:00"
     },
     {
       "@id": "https://ulissesflores.com/#sermons#cultosonline-sermon-25-quebrando-cadeias-invisiveis-12-02-2023",
       "@type": "VideoObject",
       "additionalType": "https://schema.org/Sermon",
       "name": "Quebrando Cadeias Invisíveis — 12/02/2023",
+      "description": "Quebrando Cadeias Invisíveis — 12/02/2023",
       "url": "https://www.youtube.com/watch?v=iLDmtOS8DT4",
+      "contentUrl": "https://www.youtube.com/watch?v=iLDmtOS8DT4",
+      "thumbnailUrl": "https://img.youtube.com/vi/iLDmtOS8DT4/hqdefault.jpg",
       "inLanguage": "pt-BR",
       "genre": "Sermon",
       "isPartOf": {
@@ -3392,14 +3580,18 @@
         "@id": "https://ulissesflores.com/#quadrangular-vila-helena"
       },
       "position": 25,
-      "datePublished": "2023-02-12"
+      "datePublished": "2023-02-12T00:00:00-03:00",
+      "uploadDate": "2023-02-12T00:00:00-03:00"
     },
     {
       "@id": "https://ulissesflores.com/#sermons#cultosonline-sermon-26-viver-em-santidade-no-seculo-xxi-19-02-2023",
       "@type": "VideoObject",
       "additionalType": "https://schema.org/Sermon",
       "name": "Viver em Santidade no Século XXI — 19/02/2023",
+      "description": "Viver em Santidade no Século XXI — 19/02/2023",
       "url": "https://www.youtube.com/watch?v=Dtli1GcgBKA",
+      "contentUrl": "https://www.youtube.com/watch?v=Dtli1GcgBKA",
+      "thumbnailUrl": "https://img.youtube.com/vi/Dtli1GcgBKA/hqdefault.jpg",
       "inLanguage": "pt-BR",
       "genre": "Sermon",
       "isPartOf": {
@@ -3409,14 +3601,18 @@
         "@id": "https://ulissesflores.com/#quadrangular-vila-helena"
       },
       "position": 26,
-      "datePublished": "2023-02-19"
+      "datePublished": "2023-02-19T00:00:00-03:00",
+      "uploadDate": "2023-02-19T00:00:00-03:00"
     },
     {
       "@id": "https://ulissesflores.com/#sermons#cultosonline-sermon-27-festival-de-danca-expressao-de-adoracao-e-arte-profetica",
       "@type": "VideoObject",
       "additionalType": "https://schema.org/Sermon",
       "name": "Festival de dança: Expressão de Adoração e Arte Profética",
+      "description": "Festival de dança: Expressão de Adoração e Arte Profética",
       "url": "https://www.youtube.com/watch?v=wN4FlJtEHuY",
+      "contentUrl": "https://www.youtube.com/watch?v=wN4FlJtEHuY",
+      "thumbnailUrl": "https://img.youtube.com/vi/wN4FlJtEHuY/hqdefault.jpg",
       "inLanguage": "pt-BR",
       "genre": "Sermon",
       "isPartOf": {
@@ -3426,7 +3622,8 @@
         "@id": "https://ulissesflores.com/#quadrangular-vila-helena"
       },
       "position": 27,
-      "datePublished": "2022-08-20"
+      "datePublished": "2022-08-20T00:00:00-03:00",
+      "uploadDate": "2022-08-20T00:00:00-03:00"
     },
     {
       "@id": "https://ulissesflores.com/#sermons#cultos",
@@ -3442,7 +3639,10 @@
       "@type": "VideoObject",
       "additionalType": "https://schema.org/Sermon",
       "name": "Restaurando o Primeiro Amor — 24/07/22",
+      "description": "Restaurando o Primeiro Amor — 24/07/22",
       "url": "https://www.youtube.com/watch?v=rm5_xlw-JH4",
+      "contentUrl": "https://www.youtube.com/watch?v=rm5_xlw-JH4",
+      "thumbnailUrl": "https://img.youtube.com/vi/rm5_xlw-JH4/hqdefault.jpg",
       "inLanguage": "pt-BR",
       "genre": "Sermon",
       "isPartOf": {
@@ -3452,14 +3652,18 @@
         "@id": "https://ulissesflores.com/#quadrangular-vila-helena"
       },
       "position": 1,
-      "datePublished": "2022-07-24"
+      "datePublished": "2022-07-24T00:00:00-03:00",
+      "uploadDate": "2022-07-24T00:00:00-03:00"
     },
     {
       "@id": "https://ulissesflores.com/#sermons#cultos-sermon-2-o-poder-transformador-da-graca-31-07-22",
       "@type": "VideoObject",
       "additionalType": "https://schema.org/Sermon",
       "name": "O Poder Transformador da Graça — 31/07/22",
+      "description": "O Poder Transformador da Graça — 31/07/22",
       "url": "https://www.youtube.com/watch?v=SJ_8fliMJoE",
+      "contentUrl": "https://www.youtube.com/watch?v=SJ_8fliMJoE",
+      "thumbnailUrl": "https://img.youtube.com/vi/SJ_8fliMJoE/hqdefault.jpg",
       "inLanguage": "pt-BR",
       "genre": "Sermon",
       "isPartOf": {
@@ -3469,14 +3673,18 @@
         "@id": "https://ulissesflores.com/#quadrangular-vila-helena"
       },
       "position": 2,
-      "datePublished": "2022-07-31"
+      "datePublished": "2022-07-31T00:00:00-03:00",
+      "uploadDate": "2022-07-31T00:00:00-03:00"
     },
     {
       "@id": "https://ulissesflores.com/#sermons#cultos-sermon-3-culto-regional-de-casais-edificando-a-familia-sobre-a-ro",
       "@type": "VideoObject",
       "additionalType": "https://schema.org/Sermon",
       "name": "Culto regional de casais: Edificando a Família Sobre a Rocha — 03/09/2022",
+      "description": "Culto regional de casais: Edificando a Família Sobre a Rocha — 03/09/2022",
       "url": "https://www.youtube.com/watch?v=ny5D6FRIUgo",
+      "contentUrl": "https://www.youtube.com/watch?v=ny5D6FRIUgo",
+      "thumbnailUrl": "https://img.youtube.com/vi/ny5D6FRIUgo/hqdefault.jpg",
       "inLanguage": "pt-BR",
       "genre": "Sermon",
       "isPartOf": {
@@ -3486,7 +3694,8 @@
         "@id": "https://ulissesflores.com/#quadrangular-vila-helena"
       },
       "position": 3,
-      "datePublished": "2022-09-03"
+      "datePublished": "2022-09-03T00:00:00-03:00",
+      "uploadDate": "2022-09-03T00:00:00-03:00"
     },
     {
       "@id": "https://ulissesflores.com/#sermons#outros",
@@ -3502,7 +3711,10 @@
       "@type": "VideoObject",
       "additionalType": "https://schema.org/Sermon",
       "name": "Janeiro Profético: Consagrando o Novo Ano (Dia 1) — 01/01/2023",
+      "description": "Janeiro Profético: Consagrando o Novo Ano (Dia 1) — 01/01/2023",
       "url": "https://www.youtube.com/watch?v=YEzeDRZTkDk",
+      "contentUrl": "https://www.youtube.com/watch?v=YEzeDRZTkDk",
+      "thumbnailUrl": "https://img.youtube.com/vi/YEzeDRZTkDk/hqdefault.jpg",
       "inLanguage": "pt-BR",
       "genre": "Sermon",
       "isPartOf": {
@@ -3512,14 +3724,18 @@
         "@id": "https://ulissesflores.com/#quadrangular-vila-helena"
       },
       "position": 1,
-      "datePublished": "2023-01-01"
+      "datePublished": "2023-01-01T00:00:00-03:00",
+      "uploadDate": "2023-01-01T00:00:00-03:00"
     },
     {
       "@id": "https://ulissesflores.com/#sermons#outros-sermon-2-perseveranca-e-resposta-dia-8",
       "@type": "VideoObject",
       "additionalType": "https://schema.org/Sermon",
       "name": "Perseverança e Resposta (Dia 8)",
+      "description": "Perseverança e Resposta (Dia 8)",
       "url": "https://www.youtube.com/watch?v=eUuMWxIqUFY",
+      "contentUrl": "https://www.youtube.com/watch?v=eUuMWxIqUFY",
+      "thumbnailUrl": "https://img.youtube.com/vi/eUuMWxIqUFY/hqdefault.jpg",
       "inLanguage": "pt-BR",
       "genre": "Sermon",
       "isPartOf": {
@@ -3529,14 +3745,18 @@
         "@id": "https://ulissesflores.com/#quadrangular-vila-helena"
       },
       "position": 2,
-      "datePublished": "2023-01-08"
+      "datePublished": "2023-01-08T00:00:00-03:00",
+      "uploadDate": "2023-01-08T00:00:00-03:00"
     },
     {
       "@id": "https://ulissesflores.com/#sermons#outros-sermon-3-o-selo-profetico-para-os-12-meses-de-vitoria-dia-12",
       "@type": "VideoObject",
       "additionalType": "https://schema.org/Sermon",
       "name": "O Selo Profético Para os 12 Meses de Vitória (Dia 12)",
+      "description": "O Selo Profético Para os 12 Meses de Vitória (Dia 12)",
       "url": "https://www.youtube.com/watch?v=eJRJDpo0V7s",
+      "contentUrl": "https://www.youtube.com/watch?v=eJRJDpo0V7s",
+      "thumbnailUrl": "https://img.youtube.com/vi/eJRJDpo0V7s/hqdefault.jpg",
       "inLanguage": "pt-BR",
       "genre": "Sermon",
       "isPartOf": {
@@ -3546,14 +3766,18 @@
         "@id": "https://ulissesflores.com/#quadrangular-vila-helena"
       },
       "position": 3,
-      "datePublished": "2023-01-12"
+      "datePublished": "2023-01-12T00:00:00-03:00",
+      "uploadDate": "2023-01-12T00:00:00-03:00"
     },
     {
       "@id": "https://ulissesflores.com/#sermons#outros-sermon-4-o-grande-rompimento-celebracao-dos-testemunhos-dia-40",
       "@type": "VideoObject",
       "additionalType": "https://schema.org/Sermon",
       "name": "O Grande Rompimento: Celebração dos Testemunhos (Dia 40)",
+      "description": "O Grande Rompimento: Celebração dos Testemunhos (Dia 40)",
       "url": "https://www.youtube.com/watch?v=Y8vCcqbQgns",
+      "contentUrl": "https://www.youtube.com/watch?v=Y8vCcqbQgns",
+      "thumbnailUrl": "https://img.youtube.com/vi/Y8vCcqbQgns/hqdefault.jpg",
       "inLanguage": "pt-BR",
       "genre": "Sermon",
       "isPartOf": {
@@ -3563,14 +3787,18 @@
         "@id": "https://ulissesflores.com/#quadrangular-vila-helena"
       },
       "position": 4,
-      "datePublished": "2022-09-21"
+      "datePublished": "2022-09-21T00:00:00-03:00",
+      "uploadDate": "2022-09-21T00:00:00-03:00"
     },
     {
       "@id": "https://ulissesflores.com/#sermons#outros-sermon-5-cantata-de-natal-o-verbo-que-se-fez-carne-e-habitou-entr",
       "@type": "VideoObject",
       "additionalType": "https://schema.org/Sermon",
       "name": "Cantata de Natal: O Verbo que se Fez Carne e Habitou Entre Nós — 18/12/2022",
+      "description": "Cantata de Natal: O Verbo que se Fez Carne e Habitou Entre Nós — 18/12/2022",
       "url": "https://www.youtube.com/watch?v=Ci0Bc1TQkN4",
+      "contentUrl": "https://www.youtube.com/watch?v=Ci0Bc1TQkN4",
+      "thumbnailUrl": "https://img.youtube.com/vi/Ci0Bc1TQkN4/hqdefault.jpg",
       "inLanguage": "pt-BR",
       "genre": "Sermon",
       "isPartOf": {
@@ -3580,14 +3808,15 @@
         "@id": "https://ulissesflores.com/#quadrangular-vila-helena"
       },
       "position": 5,
-      "datePublished": "2022-12-18"
+      "datePublished": "2022-12-18T00:00:00-03:00",
+      "uploadDate": "2022-12-18T00:00:00-03:00"
     },
     {
       "@id": "https://ulissesflores.com/#upkf-public",
       "@type": "Dataset",
       "name": "Ulisses Flores — Sovereign UPKF (Universal Personal Knowledge Framework) (Public Knowledge Graph)",
       "version": "3.3",
-      "dateModified": "2026-02-21",
+      "dateModified": "2026-02-21T00:00:00-03:00",
       "description": "Public semantic graph derived from the canonical UPKF source.",
       "inLanguage": [
         "pt-BR",
@@ -3597,6 +3826,7 @@
         "it"
       ],
       "url": "https://ulissesflores.com/public.jsonld",
+      "license": "https://creativecommons.org/licenses/by-sa/4.0/",
       "creator": {
         "@id": "https://ulissesflores.com/#person"
       },
@@ -3606,421 +3836,560 @@
       },
       "hasPart": [
         {
-          "@id": "https://ulissesflores.com/#collection-research"
+          "@id": "https://ulissesflores.com/#collection-research",
+          "@type": "CollectionPage"
         },
         {
-          "@id": "https://ulissesflores.com/#collection-whitepapers"
+          "@id": "https://ulissesflores.com/#collection-whitepapers",
+          "@type": "CollectionPage"
         },
         {
-          "@id": "https://ulissesflores.com/#collection-essays"
+          "@id": "https://ulissesflores.com/#collection-essays",
+          "@type": "CollectionPage"
         },
         {
-          "@id": "https://ulissesflores.com/#pub-2025-little-law-resilience"
+          "@id": "https://ulissesflores.com/#pub-2025-little-law-resilience",
+          "@type": "ScholarlyArticle"
         },
         {
-          "@id": "https://ulissesflores.com/#pub-2025-lstm-asset-prediction"
+          "@id": "https://ulissesflores.com/#pub-2025-lstm-asset-prediction",
+          "@type": "ScholarlyArticle"
         },
         {
-          "@id": "https://ulissesflores.com/#pub-2025-hybrid-cooling-thermodynamics"
+          "@id": "https://ulissesflores.com/#pub-2025-hybrid-cooling-thermodynamics",
+          "@type": "Report"
         },
         {
-          "@id": "https://ulissesflores.com/#pub-2025-iot-data-sovereignty"
+          "@id": "https://ulissesflores.com/#pub-2025-iot-data-sovereignty",
+          "@type": "Report"
         },
         {
-          "@id": "https://ulissesflores.com/#pub-2025-fraud-detection-mlp"
+          "@id": "https://ulissesflores.com/#pub-2025-fraud-detection-mlp",
+          "@type": "ScholarlyArticle"
         },
         {
-          "@id": "https://ulissesflores.com/#pub-2024-historicity-jesus-archaeology"
+          "@id": "https://ulissesflores.com/#pub-2024-historicity-jesus-archaeology",
+          "@type": "ScholarlyArticle"
         },
         {
-          "@id": "https://ulissesflores.com/#pub-2024-bitcoin-praxeology"
+          "@id": "https://ulissesflores.com/#pub-2024-bitcoin-praxeology",
+          "@type": "ScholarlyArticle"
         },
         {
-          "@id": "https://ulissesflores.com/#pub-2024-scribal-canonization-ezra"
+          "@id": "https://ulissesflores.com/#pub-2024-scribal-canonization-ezra",
+          "@type": "ScholarlyArticle"
         },
         {
-          "@id": "https://ulissesflores.com/#pub-2024-theology-economic-order"
+          "@id": "https://ulissesflores.com/#pub-2024-theology-economic-order",
+          "@type": "ScholarlyArticle"
         },
         {
-          "@id": "https://ulissesflores.com/#pub-2024-ring-signatures-privacy"
+          "@id": "https://ulissesflores.com/#pub-2024-ring-signatures-privacy",
+          "@type": "Report"
         },
         {
-          "@id": "https://ulissesflores.com/#pub-2024-agritech-agile-flow"
+          "@id": "https://ulissesflores.com/#pub-2024-agritech-agile-flow",
+          "@type": "Report"
         },
         {
-          "@id": "https://ulissesflores.com/#pub-2024-exegetical-treatise-anthropology"
+          "@id": "https://ulissesflores.com/#pub-2024-exegetical-treatise-anthropology",
+          "@type": "ScholarlyArticle"
         },
         {
-          "@id": "https://ulissesflores.com/#pub-2023-marian-apparitions-critique"
+          "@id": "https://ulissesflores.com/#pub-2023-marian-apparitions-critique",
+          "@type": "ScholarlyArticle"
         },
         {
-          "@id": "https://ulissesflores.com/#pub-2023-digital-legacy"
+          "@id": "https://ulissesflores.com/#pub-2023-digital-legacy",
+          "@type": "Report"
         },
         {
-          "@id": "https://ulissesflores.com/#pub-2023-holy-club-methodism"
+          "@id": "https://ulissesflores.com/#pub-2023-holy-club-methodism",
+          "@type": "ScholarlyArticle"
         },
         {
-          "@id": "https://ulissesflores.com/#pub-2022-theology-of-hope"
+          "@id": "https://ulissesflores.com/#pub-2022-theology-of-hope",
+          "@type": "ScholarlyArticle"
         },
         {
-          "@id": "https://ulissesflores.com/#pub-2020-robotics-education"
+          "@id": "https://ulissesflores.com/#pub-2020-robotics-education",
+          "@type": "ScholarlyArticle"
         },
         {
-          "@id": "https://ulissesflores.com/#pub-2017-chaos-theory-economics"
+          "@id": "https://ulissesflores.com/#pub-2017-chaos-theory-economics",
+          "@type": "ScholarlyArticle"
         },
         {
-          "@id": "https://ulissesflores.com/#sw-lrblstm"
+          "@id": "https://ulissesflores.com/#sw-lrblstm",
+          "@type": "SoftwareSourceCode"
         },
         {
-          "@id": "https://ulissesflores.com/#sw-llm-contextizer"
+          "@id": "https://ulissesflores.com/#sw-llm-contextizer",
+          "@type": "SoftwareSourceCode"
         },
         {
-          "@id": "https://ulissesflores.com/#sw-mit507-yape"
+          "@id": "https://ulissesflores.com/#sw-mit507-yape",
+          "@type": "SoftwareSourceCode"
         },
         {
-          "@id": "https://ulissesflores.com/#cred-edx-2f268caff8444004be14eedb309b1d9c"
+          "@id": "https://ulissesflores.com/#cred-edx-2f268caff8444004be14eedb309b1d9c",
+          "@type": "EducationalOccupationalCredential"
         },
         {
-          "@id": "https://ulissesflores.com/#cred-coursera-MYG9K9GQRP6W"
+          "@id": "https://ulissesflores.com/#cred-coursera-MYG9K9GQRP6W",
+          "@type": "EducationalOccupationalCredential"
         },
         {
-          "@id": "https://ulissesflores.com/#cred-alura-1"
+          "@id": "https://ulissesflores.com/#cred-alura-1",
+          "@type": "EducationalOccupationalCredential"
         },
         {
-          "@id": "https://ulissesflores.com/#cred-alura-2"
+          "@id": "https://ulissesflores.com/#cred-alura-2",
+          "@type": "EducationalOccupationalCredential"
         },
         {
-          "@id": "https://ulissesflores.com/#cred-alura-3"
+          "@id": "https://ulissesflores.com/#cred-alura-3",
+          "@type": "EducationalOccupationalCredential"
         },
         {
-          "@id": "https://ulissesflores.com/#cred-alura-4"
+          "@id": "https://ulissesflores.com/#cred-alura-4",
+          "@type": "EducationalOccupationalCredential"
         },
         {
-          "@id": "https://ulissesflores.com/#cred-alura-5"
+          "@id": "https://ulissesflores.com/#cred-alura-5",
+          "@type": "EducationalOccupationalCredential"
         },
         {
-          "@id": "https://ulissesflores.com/#cred-alura-6"
+          "@id": "https://ulissesflores.com/#cred-alura-6",
+          "@type": "EducationalOccupationalCredential"
         },
         {
-          "@id": "https://ulissesflores.com/#cred-alura-7"
+          "@id": "https://ulissesflores.com/#cred-alura-7",
+          "@type": "EducationalOccupationalCredential"
         },
         {
-          "@id": "https://ulissesflores.com/#cred-alura-8"
+          "@id": "https://ulissesflores.com/#cred-alura-8",
+          "@type": "EducationalOccupationalCredential"
         },
         {
-          "@id": "https://ulissesflores.com/#cred-alura-9"
+          "@id": "https://ulissesflores.com/#cred-alura-9",
+          "@type": "EducationalOccupationalCredential"
         },
         {
-          "@id": "https://ulissesflores.com/#cred-alura-10"
+          "@id": "https://ulissesflores.com/#cred-alura-10",
+          "@type": "EducationalOccupationalCredential"
         },
         {
-          "@id": "https://ulissesflores.com/#cred-alura-11"
+          "@id": "https://ulissesflores.com/#cred-alura-11",
+          "@type": "EducationalOccupationalCredential"
         },
         {
-          "@id": "https://ulissesflores.com/#cred-alura-12"
+          "@id": "https://ulissesflores.com/#cred-alura-12",
+          "@type": "EducationalOccupationalCredential"
         },
         {
-          "@id": "https://ulissesflores.com/#cred-alura-13"
+          "@id": "https://ulissesflores.com/#cred-alura-13",
+          "@type": "EducationalOccupationalCredential"
         },
         {
-          "@id": "https://ulissesflores.com/#cred-alura-14"
+          "@id": "https://ulissesflores.com/#cred-alura-14",
+          "@type": "EducationalOccupationalCredential"
         },
         {
-          "@id": "https://ulissesflores.com/#cred-alura-15"
+          "@id": "https://ulissesflores.com/#cred-alura-15",
+          "@type": "EducationalOccupationalCredential"
         },
         {
-          "@id": "https://ulissesflores.com/#cred-alura-16"
+          "@id": "https://ulissesflores.com/#cred-alura-16",
+          "@type": "EducationalOccupationalCredential"
         },
         {
-          "@id": "https://ulissesflores.com/#cred-alura-17"
+          "@id": "https://ulissesflores.com/#cred-alura-17",
+          "@type": "EducationalOccupationalCredential"
         },
         {
-          "@id": "https://ulissesflores.com/#cred-alura-18"
+          "@id": "https://ulissesflores.com/#cred-alura-18",
+          "@type": "EducationalOccupationalCredential"
         },
         {
-          "@id": "https://ulissesflores.com/#cred-alura-19"
+          "@id": "https://ulissesflores.com/#cred-alura-19",
+          "@type": "EducationalOccupationalCredential"
         },
         {
-          "@id": "https://ulissesflores.com/#cred-alura-20"
+          "@id": "https://ulissesflores.com/#cred-alura-20",
+          "@type": "EducationalOccupationalCredential"
         },
         {
-          "@id": "https://ulissesflores.com/#cred-alura-21"
+          "@id": "https://ulissesflores.com/#cred-alura-21",
+          "@type": "EducationalOccupationalCredential"
         },
         {
-          "@id": "https://ulissesflores.com/#cred-alura-22"
+          "@id": "https://ulissesflores.com/#cred-alura-22",
+          "@type": "EducationalOccupationalCredential"
         },
         {
-          "@id": "https://ulissesflores.com/#cred-alura-23"
+          "@id": "https://ulissesflores.com/#cred-alura-23",
+          "@type": "EducationalOccupationalCredential"
         },
         {
-          "@id": "https://ulissesflores.com/#cred-alura-24"
+          "@id": "https://ulissesflores.com/#cred-alura-24",
+          "@type": "EducationalOccupationalCredential"
         },
         {
-          "@id": "https://ulissesflores.com/#cred-alura-25"
+          "@id": "https://ulissesflores.com/#cred-alura-25",
+          "@type": "EducationalOccupationalCredential"
         },
         {
-          "@id": "https://ulissesflores.com/#cred-alura-26"
+          "@id": "https://ulissesflores.com/#cred-alura-26",
+          "@type": "EducationalOccupationalCredential"
         },
         {
-          "@id": "https://ulissesflores.com/#cred-alura-27"
+          "@id": "https://ulissesflores.com/#cred-alura-27",
+          "@type": "EducationalOccupationalCredential"
         },
         {
-          "@id": "https://ulissesflores.com/#cred-alura-28"
+          "@id": "https://ulissesflores.com/#cred-alura-28",
+          "@type": "EducationalOccupationalCredential"
         },
         {
-          "@id": "https://ulissesflores.com/#cred-alura-29"
+          "@id": "https://ulissesflores.com/#cred-alura-29",
+          "@type": "EducationalOccupationalCredential"
         },
         {
-          "@id": "https://ulissesflores.com/#cred-alura-30"
+          "@id": "https://ulissesflores.com/#cred-alura-30",
+          "@type": "EducationalOccupationalCredential"
         },
         {
-          "@id": "https://ulissesflores.com/#cred-alura-31"
+          "@id": "https://ulissesflores.com/#cred-alura-31",
+          "@type": "EducationalOccupationalCredential"
         },
         {
-          "@id": "https://ulissesflores.com/#cred-alura-32"
+          "@id": "https://ulissesflores.com/#cred-alura-32",
+          "@type": "EducationalOccupationalCredential"
         },
         {
-          "@id": "https://mundopolitico.com.br/#blog"
+          "@id": "https://mundopolitico.com.br/#blog",
+          "@type": "Blog"
         },
         {
-          "@id": "https://ulissesflores.com/#mundopolitico-post-1-campanha-do-governo-lula-para-reconstruir-confianca-no-pix-detal"
+          "@id": "https://ulissesflores.com/#mundopolitico-post-1-campanha-do-governo-lula-para-reconstruir-confianca-no-pix-detal",
+          "@type": "BlogPosting"
         },
         {
-          "@id": "https://ulissesflores.com/#mundopolitico-post-2-conflito-nas-redes-sociais-moderacao-de-conteudo-vs-liberdade-de"
+          "@id": "https://ulissesflores.com/#mundopolitico-post-2-conflito-nas-redes-sociais-moderacao-de-conteudo-vs-liberdade-de",
+          "@type": "BlogPosting"
         },
         {
-          "@id": "https://ulissesflores.com/#mundopolitico-post-3-desaprovacao-de-lula-cresce-no-nordeste-mudancas-na-lealdade-pol"
+          "@id": "https://ulissesflores.com/#mundopolitico-post-3-desaprovacao-de-lula-cresce-no-nordeste-mudancas-na-lealdade-pol",
+          "@type": "BlogPosting"
         },
         {
-          "@id": "https://ulissesflores.com/#mundopolitico-post-4-pacote-fiscal-de-lula-expectativas-e-desafios-para-a-economia-br"
+          "@id": "https://ulissesflores.com/#mundopolitico-post-4-pacote-fiscal-de-lula-expectativas-e-desafios-para-a-economia-br",
+          "@type": "BlogPosting"
         },
         {
-          "@id": "https://ulissesflores.com/#mundopolitico-post-5-preservacao-de-valores-tradicionais-na-era-da-diversidade"
+          "@id": "https://ulissesflores.com/#mundopolitico-post-5-preservacao-de-valores-tradicionais-na-era-da-diversidade",
+          "@type": "BlogPosting"
         },
         {
-          "@id": "https://ulissesflores.com/#mundopolitico-post-6-analise-das-consequencias-dos-perdoes-de-trump-e-paralelos-com-o"
+          "@id": "https://ulissesflores.com/#mundopolitico-post-6-analise-das-consequencias-dos-perdoes-de-trump-e-paralelos-com-o",
+          "@type": "BlogPosting"
         },
         {
-          "@id": "https://ulissesflores.com/#mundopolitico-post-7-discrepancias-no-brasil-analise-critica-da-economia-e-politica-a"
+          "@id": "https://ulissesflores.com/#mundopolitico-post-7-discrepancias-no-brasil-analise-critica-da-economia-e-politica-a",
+          "@type": "BlogPosting"
         },
         {
-          "@id": "https://ulissesflores.com/#mundopolitico-post-8-insatisfacao-popular-cresce-como-um-video-viral-no-instagram-exp"
+          "@id": "https://ulissesflores.com/#mundopolitico-post-8-insatisfacao-popular-cresce-como-um-video-viral-no-instagram-exp",
+          "@type": "BlogPosting"
         },
         {
-          "@id": "https://ulissesflores.com/#mundopolitico-post-9-reforma-eleitoral-no-brasil-necessidade-de-maior-transparencia-e"
+          "@id": "https://ulissesflores.com/#mundopolitico-post-9-reforma-eleitoral-no-brasil-necessidade-de-maior-transparencia-e",
+          "@type": "BlogPosting"
         },
         {
-          "@id": "https://ulissesflores.com/#mundopolitico-post-10-fiscalizacao-do-pix-estrategia-do-governo-lula-contra-a-sonegaca"
+          "@id": "https://ulissesflores.com/#mundopolitico-post-10-fiscalizacao-do-pix-estrategia-do-governo-lula-contra-a-sonegaca",
+          "@type": "BlogPosting"
         },
         {
-          "@id": "https://ulissesflores.com/#mundopolitico-post-11-impacto-da-geopolitica-nos-mercados-tensoes-eua-china-e-o-futuro"
+          "@id": "https://ulissesflores.com/#mundopolitico-post-11-impacto-da-geopolitica-nos-mercados-tensoes-eua-china-e-o-futuro",
+          "@type": "BlogPosting"
         },
         {
-          "@id": "https://ulissesflores.com/#mundopolitico-post-12-combate-a-inflacao-no-governo-lula-estrategias-e-impactos-nos-ga"
+          "@id": "https://ulissesflores.com/#mundopolitico-post-12-combate-a-inflacao-no-governo-lula-estrategias-e-impactos-nos-ga",
+          "@type": "BlogPosting"
         },
         {
-          "@id": "https://ulissesflores.com/#mundopolitico-post-13-governo-lula-confronta-alta-dos-precos-de-alimentos-estrategias-"
+          "@id": "https://ulissesflores.com/#mundopolitico-post-13-governo-lula-confronta-alta-dos-precos-de-alimentos-estrategias-",
+          "@type": "BlogPosting"
         },
         {
-          "@id": "https://ulissesflores.com/#mundopolitico-post-14-lewandowski-desafia-eua-sobre-deportacoes-algemadas-impacto-nas-"
+          "@id": "https://ulissesflores.com/#mundopolitico-post-14-lewandowski-desafia-eua-sobre-deportacoes-algemadas-impacto-nas-",
+          "@type": "BlogPosting"
         },
         {
-          "@id": "https://ulissesflores.com/#mundopolitico-post-15-polemica-em-porto-alegre-performance-de-jesus-no-carnaval-reacen"
+          "@id": "https://ulissesflores.com/#mundopolitico-post-15-polemica-em-porto-alegre-performance-de-jesus-no-carnaval-reacen",
+          "@type": "BlogPosting"
         },
         {
-          "@id": "https://ulissesflores.com/#mundopolitico-post-16-relacao-brasil-eua-impacto-de-trump-e-eduardo-bolsonaro-na-polit"
+          "@id": "https://ulissesflores.com/#mundopolitico-post-16-relacao-brasil-eua-impacto-de-trump-e-eduardo-bolsonaro-na-polit",
+          "@type": "BlogPosting"
         },
         {
-          "@id": "https://ulissesflores.com/#mundopolitico-post-17-tancredo-neves-e-o-impacto-no-40-aniversario-de-uma-transicao-de"
+          "@id": "https://ulissesflores.com/#mundopolitico-post-17-tancredo-neves-e-o-impacto-no-40-aniversario-de-uma-transicao-de",
+          "@type": "BlogPosting"
         },
         {
-          "@id": "https://ulissesflores.com/#mundopolitico-post-18-vigilancia-do-governo-lula-e-liberdade-de-expressao-impacto-no-b"
+          "@id": "https://ulissesflores.com/#mundopolitico-post-18-vigilancia-do-governo-lula-e-liberdade-de-expressao-impacto-no-b",
+          "@type": "BlogPosting"
         },
         {
-          "@id": "https://ulissesflores.com/#mundopolitico-post-19-analise-atual-impacto-dos-eventos-historicos-na-politica-contemp"
+          "@id": "https://ulissesflores.com/#mundopolitico-post-19-analise-atual-impacto-dos-eventos-historicos-na-politica-contemp",
+          "@type": "BlogPosting"
         },
         {
-          "@id": "https://ulissesflores.com/#sermons"
+          "@id": "https://ulissesflores.com/#sermons",
+          "@type": "Collection"
         },
         {
-          "@id": "https://ulissesflores.com/#sermons#jejumdavitoria"
+          "@id": "https://ulissesflores.com/#sermons#jejumdavitoria",
+          "@type": "CreativeWorkSeries"
         },
         {
-          "@id": "https://ulissesflores.com/#sermons#jejumdavitoria-sermon-1-dia-1-o-despertar-da-fe"
+          "@id": "https://ulissesflores.com/#sermons#jejumdavitoria-sermon-1-dia-1-o-despertar-da-fe",
+          "@type": "VideoObject"
         },
         {
-          "@id": "https://ulissesflores.com/#sermons#jejumdavitoria-sermon-2-dia-2-vencendo-as-batalhas-da-mente"
+          "@id": "https://ulissesflores.com/#sermons#jejumdavitoria-sermon-2-dia-2-vencendo-as-batalhas-da-mente",
+          "@type": "VideoObject"
         },
         {
-          "@id": "https://ulissesflores.com/#sermons#jejumdavitoria-sermon-3-dia-3-a-resiliencia-do-cristao"
+          "@id": "https://ulissesflores.com/#sermons#jejumdavitoria-sermon-3-dia-3-a-resiliencia-do-cristao",
+          "@type": "VideoObject"
         },
         {
-          "@id": "https://ulissesflores.com/#sermons#jejumdavitoria-sermon-4-dia-4-quebrando-as-muralhas-pela-oracao"
+          "@id": "https://ulissesflores.com/#sermons#jejumdavitoria-sermon-4-dia-4-quebrando-as-muralhas-pela-oracao",
+          "@type": "VideoObject"
         },
         {
-          "@id": "https://ulissesflores.com/#sermons#jejumdavitoria-sermon-5-dia-5-o-poder-da-unidade"
+          "@id": "https://ulissesflores.com/#sermons#jejumdavitoria-sermon-5-dia-5-o-poder-da-unidade",
+          "@type": "VideoObject"
         },
         {
-          "@id": "https://ulissesflores.com/#sermons#jejumdavitoria-sermon-6-dia-6-restituicao-divina"
+          "@id": "https://ulissesflores.com/#sermons#jejumdavitoria-sermon-6-dia-6-restituicao-divina",
+          "@type": "VideoObject"
         },
         {
-          "@id": "https://ulissesflores.com/#sermons#jejumdavitoria-sermon-7-dia-7-a-plenitude-do-espirito"
+          "@id": "https://ulissesflores.com/#sermons#jejumdavitoria-sermon-7-dia-7-a-plenitude-do-espirito",
+          "@type": "VideoObject"
         },
         {
-          "@id": "https://ulissesflores.com/#sermons#jejumdavitoria-sermon-8-dia-8-tempo-de-renovo"
+          "@id": "https://ulissesflores.com/#sermons#jejumdavitoria-sermon-8-dia-8-tempo-de-renovo",
+          "@type": "VideoObject"
         },
         {
-          "@id": "https://ulissesflores.com/#sermons#jejumdavitoria-sermon-9-dia-9-frutos-de-uma-vida-com-deus"
+          "@id": "https://ulissesflores.com/#sermons#jejumdavitoria-sermon-9-dia-9-frutos-de-uma-vida-com-deus",
+          "@type": "VideoObject"
         },
         {
-          "@id": "https://ulissesflores.com/#sermons#jejumdavitoria-sermon-10-dia-10-autoridade-espiritual"
+          "@id": "https://ulissesflores.com/#sermons#jejumdavitoria-sermon-10-dia-10-autoridade-espiritual",
+          "@type": "VideoObject"
         },
         {
-          "@id": "https://ulissesflores.com/#sermons#jejumdavitoria-sermon-11-dia-11-a-forca-da-palavra"
+          "@id": "https://ulissesflores.com/#sermons#jejumdavitoria-sermon-11-dia-11-a-forca-da-palavra",
+          "@type": "VideoObject"
         },
         {
-          "@id": "https://ulissesflores.com/#sermons#jejumdavitoria-sermon-12-dia-12-alinhamento-profetico"
+          "@id": "https://ulissesflores.com/#sermons#jejumdavitoria-sermon-12-dia-12-alinhamento-profetico",
+          "@type": "VideoObject"
         },
         {
-          "@id": "https://ulissesflores.com/#sermons#jejumdavitoria-sermon-13-dia-13-ousadia-para-romper-limites"
+          "@id": "https://ulissesflores.com/#sermons#jejumdavitoria-sermon-13-dia-13-ousadia-para-romper-limites",
+          "@type": "VideoObject"
         },
         {
-          "@id": "https://ulissesflores.com/#sermons#jejumdavitoria-sermon-14-dia-14-a-recompensa-da-fidelidade"
+          "@id": "https://ulissesflores.com/#sermons#jejumdavitoria-sermon-14-dia-14-a-recompensa-da-fidelidade",
+          "@type": "VideoObject"
         },
         {
-          "@id": "https://ulissesflores.com/#sermons#jejumdavitoria-sermon-15-dia-15-protecao-e-escudo"
+          "@id": "https://ulissesflores.com/#sermons#jejumdavitoria-sermon-15-dia-15-protecao-e-escudo",
+          "@type": "VideoObject"
         },
         {
-          "@id": "https://ulissesflores.com/#sermons#jejumdavitoria-sermon-16-dia-16-avancando-em-meio-as-oposicoes"
+          "@id": "https://ulissesflores.com/#sermons#jejumdavitoria-sermon-16-dia-16-avancando-em-meio-as-oposicoes",
+          "@type": "VideoObject"
         },
         {
-          "@id": "https://ulissesflores.com/#sermons#jejumdavitoria-sermon-17-dia-17-celebracao-antecipada"
+          "@id": "https://ulissesflores.com/#sermons#jejumdavitoria-sermon-17-dia-17-celebracao-antecipada",
+          "@type": "VideoObject"
         },
         {
-          "@id": "https://ulissesflores.com/#sermons#jejumdavitoria-sermon-18-dia-18-destravando-promessas"
+          "@id": "https://ulissesflores.com/#sermons#jejumdavitoria-sermon-18-dia-18-destravando-promessas",
+          "@type": "VideoObject"
         },
         {
-          "@id": "https://ulissesflores.com/#sermons#jejumdavitoria-sermon-19-dia-19-o-fogo-que-nao-se-apaga"
+          "@id": "https://ulissesflores.com/#sermons#jejumdavitoria-sermon-19-dia-19-o-fogo-que-nao-se-apaga",
+          "@type": "VideoObject"
         },
         {
-          "@id": "https://ulissesflores.com/#sermons#jejumdavitoria-sermon-20-dia-20-preparando-o-altar"
+          "@id": "https://ulissesflores.com/#sermons#jejumdavitoria-sermon-20-dia-20-preparando-o-altar",
+          "@type": "VideoObject"
         },
         {
-          "@id": "https://ulissesflores.com/#sermons#jejumdavitoria-sermon-21-dia-21-o-selo-da-vitoria"
+          "@id": "https://ulissesflores.com/#sermons#jejumdavitoria-sermon-21-dia-21-o-selo-da-vitoria",
+          "@type": "VideoObject"
         },
         {
-          "@id": "https://ulissesflores.com/#sermons#cultosonline"
+          "@id": "https://ulissesflores.com/#sermons#cultosonline",
+          "@type": "CreativeWorkSeries"
         },
         {
-          "@id": "https://ulissesflores.com/#sermons#cultosonline-sermon-1-presenca-e-avivamento"
+          "@id": "https://ulissesflores.com/#sermons#cultosonline-sermon-1-presenca-e-avivamento",
+          "@type": "VideoObject"
         },
         {
-          "@id": "https://ulissesflores.com/#sermons#cultosonline-sermon-2-o-chamado-inabalavel-07-08-22"
+          "@id": "https://ulissesflores.com/#sermons#cultosonline-sermon-2-o-chamado-inabalavel-07-08-22",
+          "@type": "VideoObject"
         },
         {
-          "@id": "https://ulissesflores.com/#sermons#cultosonline-sermon-3-firmes-na-promessa-14-08-22"
+          "@id": "https://ulissesflores.com/#sermons#cultosonline-sermon-3-firmes-na-promessa-14-08-22",
+          "@type": "VideoObject"
         },
         {
-          "@id": "https://ulissesflores.com/#sermons#cultosonline-sermon-4-a-importancia-da-intimidade-18-08-2022"
+          "@id": "https://ulissesflores.com/#sermons#cultosonline-sermon-4-a-importancia-da-intimidade-18-08-2022",
+          "@type": "VideoObject"
         },
         {
-          "@id": "https://ulissesflores.com/#sermons#cultosonline-sermon-5-construindo-uma-vida-com-proposito-21-08-2022"
+          "@id": "https://ulissesflores.com/#sermons#cultosonline-sermon-5-construindo-uma-vida-com-proposito-21-08-2022",
+          "@type": "VideoObject"
         },
         {
-          "@id": "https://ulissesflores.com/#sermons#cultosonline-sermon-6-restaurando-o-altar-25-08-2022"
+          "@id": "https://ulissesflores.com/#sermons#cultosonline-sermon-6-restaurando-o-altar-25-08-2022",
+          "@type": "VideoObject"
         },
         {
-          "@id": "https://ulissesflores.com/#sermons#cultosonline-sermon-7-o-agir-invisivel-de-deus-28-08-2022"
+          "@id": "https://ulissesflores.com/#sermons#cultosonline-sermon-7-o-agir-invisivel-de-deus-28-08-2022",
+          "@type": "VideoObject"
         },
         {
-          "@id": "https://ulissesflores.com/#sermons#cultosonline-sermon-8-atravessando-tempestades-com-fe-04-09-2022"
+          "@id": "https://ulissesflores.com/#sermons#cultosonline-sermon-8-atravessando-tempestades-com-fe-04-09-2022",
+          "@type": "VideoObject"
         },
         {
-          "@id": "https://ulissesflores.com/#sermons#cultosonline-sermon-9-o-perdao-que-liberta-11-09-2022"
+          "@id": "https://ulissesflores.com/#sermons#cultosonline-sermon-9-o-perdao-que-liberta-11-09-2022",
+          "@type": "VideoObject"
         },
         {
-          "@id": "https://ulissesflores.com/#sermons#cultosonline-sermon-10-vencendo-o-medo-pela-graca-15-09-2022"
+          "@id": "https://ulissesflores.com/#sermons#cultosonline-sermon-10-vencendo-o-medo-pela-graca-15-09-2022",
+          "@type": "VideoObject"
         },
         {
-          "@id": "https://ulissesflores.com/#sermons#cultosonline-sermon-11-chamados-para-fazer-a-diferenca-18-09-2022"
+          "@id": "https://ulissesflores.com/#sermons#cultosonline-sermon-11-chamados-para-fazer-a-diferenca-18-09-2022",
+          "@type": "VideoObject"
         },
         {
-          "@id": "https://ulissesflores.com/#sermons#cultosonline-sermon-12-batismo-nas-aguas-nova-vida-em-cristo-25-09-2022"
+          "@id": "https://ulissesflores.com/#sermons#cultosonline-sermon-12-batismo-nas-aguas-nova-vida-em-cristo-25-09-2022",
+          "@type": "VideoObject"
         },
         {
-          "@id": "https://ulissesflores.com/#sermons#cultosonline-sermon-13-semeando-em-boa-terra-02-10-2022"
+          "@id": "https://ulissesflores.com/#sermons#cultosonline-sermon-13-semeando-em-boa-terra-02-10-2022",
+          "@type": "VideoObject"
         },
         {
-          "@id": "https://ulissesflores.com/#sermons#cultosonline-sermon-14-a-cruz-e-o-seu-significado-hoje-23-10-2022"
+          "@id": "https://ulissesflores.com/#sermons#cultosonline-sermon-14-a-cruz-e-o-seu-significado-hoje-23-10-2022",
+          "@type": "VideoObject"
         },
         {
-          "@id": "https://ulissesflores.com/#sermons#cultosonline-sermon-15-caminhando-em-sobrenaturalidade-06-11-2022"
+          "@id": "https://ulissesflores.com/#sermons#cultosonline-sermon-15-caminhando-em-sobrenaturalidade-06-11-2022",
+          "@type": "VideoObject"
         },
         {
-          "@id": "https://ulissesflores.com/#sermons#cultosonline-sermon-16-identidade-quem-somos-em-cristo-13-11-2022"
+          "@id": "https://ulissesflores.com/#sermons#cultosonline-sermon-16-identidade-quem-somos-em-cristo-13-11-2022",
+          "@type": "VideoObject"
         },
         {
-          "@id": "https://ulissesflores.com/#sermons#cultosonline-sermon-17-cultivando-um-coracao-grato-20-11"
+          "@id": "https://ulissesflores.com/#sermons#cultosonline-sermon-17-cultivando-um-coracao-grato-20-11",
+          "@type": "VideoObject"
         },
         {
-          "@id": "https://ulissesflores.com/#sermons#cultosonline-sermon-18-renovando-as-forcas-no-altar-27-11-2022"
+          "@id": "https://ulissesflores.com/#sermons#cultosonline-sermon-18-renovando-as-forcas-no-altar-27-11-2022",
+          "@type": "VideoObject"
         },
         {
-          "@id": "https://ulissesflores.com/#sermons#cultosonline-sermon-19-a-esperanca-que-nao-decepciona-04-12-2022"
+          "@id": "https://ulissesflores.com/#sermons#cultosonline-sermon-19-a-esperanca-que-nao-decepciona-04-12-2022",
+          "@type": "VideoObject"
         },
         {
-          "@id": "https://ulissesflores.com/#sermons#cultosonline-sermon-20-preparando-o-coracao-para-o-novo-ano-11-12-2022"
+          "@id": "https://ulissesflores.com/#sermons#cultosonline-sermon-20-preparando-o-coracao-para-o-novo-ano-11-12-2022",
+          "@type": "VideoObject"
         },
         {
-          "@id": "https://ulissesflores.com/#sermons#cultosonline-sermon-21-fortalecendo-as-bases-da-fe-15-01-2023"
+          "@id": "https://ulissesflores.com/#sermons#cultosonline-sermon-21-fortalecendo-as-bases-da-fe-15-01-2023",
+          "@type": "VideoObject"
         },
         {
-          "@id": "https://ulissesflores.com/#sermons#cultosonline-sermon-22-o-agir-do-espirito-em-nossas-vidas-22-01-2023"
+          "@id": "https://ulissesflores.com/#sermons#cultosonline-sermon-22-o-agir-do-espirito-em-nossas-vidas-22-01-2023",
+          "@type": "VideoObject"
         },
         {
-          "@id": "https://ulissesflores.com/#sermons#cultosonline-sermon-23-aprendendo-a-ouvir-a-voz-de-deus-29-01-2023"
+          "@id": "https://ulissesflores.com/#sermons#cultosonline-sermon-23-aprendendo-a-ouvir-a-voz-de-deus-29-01-2023",
+          "@type": "VideoObject"
         },
         {
-          "@id": "https://ulissesflores.com/#sermons#cultosonline-sermon-24-comunhao-e-crescimento-espiritual-05-02-2023"
+          "@id": "https://ulissesflores.com/#sermons#cultosonline-sermon-24-comunhao-e-crescimento-espiritual-05-02-2023",
+          "@type": "VideoObject"
         },
         {
-          "@id": "https://ulissesflores.com/#sermons#cultosonline-sermon-25-quebrando-cadeias-invisiveis-12-02-2023"
+          "@id": "https://ulissesflores.com/#sermons#cultosonline-sermon-25-quebrando-cadeias-invisiveis-12-02-2023",
+          "@type": "VideoObject"
         },
         {
-          "@id": "https://ulissesflores.com/#sermons#cultosonline-sermon-26-viver-em-santidade-no-seculo-xxi-19-02-2023"
+          "@id": "https://ulissesflores.com/#sermons#cultosonline-sermon-26-viver-em-santidade-no-seculo-xxi-19-02-2023",
+          "@type": "VideoObject"
         },
         {
-          "@id": "https://ulissesflores.com/#sermons#cultosonline-sermon-27-festival-de-danca-expressao-de-adoracao-e-arte-profetica"
+          "@id": "https://ulissesflores.com/#sermons#cultosonline-sermon-27-festival-de-danca-expressao-de-adoracao-e-arte-profetica",
+          "@type": "VideoObject"
         },
         {
-          "@id": "https://ulissesflores.com/#sermons#cultos"
+          "@id": "https://ulissesflores.com/#sermons#cultos",
+          "@type": "CreativeWorkSeries"
         },
         {
-          "@id": "https://ulissesflores.com/#sermons#cultos-sermon-1-restaurando-o-primeiro-amor-24-07-22"
+          "@id": "https://ulissesflores.com/#sermons#cultos-sermon-1-restaurando-o-primeiro-amor-24-07-22",
+          "@type": "VideoObject"
         },
         {
-          "@id": "https://ulissesflores.com/#sermons#cultos-sermon-2-o-poder-transformador-da-graca-31-07-22"
+          "@id": "https://ulissesflores.com/#sermons#cultos-sermon-2-o-poder-transformador-da-graca-31-07-22",
+          "@type": "VideoObject"
         },
         {
-          "@id": "https://ulissesflores.com/#sermons#cultos-sermon-3-culto-regional-de-casais-edificando-a-familia-sobre-a-ro"
+          "@id": "https://ulissesflores.com/#sermons#cultos-sermon-3-culto-regional-de-casais-edificando-a-familia-sobre-a-ro",
+          "@type": "VideoObject"
         },
         {
-          "@id": "https://ulissesflores.com/#sermons#outros"
+          "@id": "https://ulissesflores.com/#sermons#outros",
+          "@type": "CreativeWorkSeries"
         },
         {
-          "@id": "https://ulissesflores.com/#sermons#outros-sermon-1-janeiro-profetico-consagrando-o-novo-ano-dia-1-01-01-202"
+          "@id": "https://ulissesflores.com/#sermons#outros-sermon-1-janeiro-profetico-consagrando-o-novo-ano-dia-1-01-01-202",
+          "@type": "VideoObject"
         },
         {
-          "@id": "https://ulissesflores.com/#sermons#outros-sermon-2-perseveranca-e-resposta-dia-8"
+          "@id": "https://ulissesflores.com/#sermons#outros-sermon-2-perseveranca-e-resposta-dia-8",
+          "@type": "VideoObject"
         },
         {
-          "@id": "https://ulissesflores.com/#sermons#outros-sermon-3-o-selo-profetico-para-os-12-meses-de-vitoria-dia-12"
+          "@id": "https://ulissesflores.com/#sermons#outros-sermon-3-o-selo-profetico-para-os-12-meses-de-vitoria-dia-12",
+          "@type": "VideoObject"
         },
         {
-          "@id": "https://ulissesflores.com/#sermons#outros-sermon-4-o-grande-rompimento-celebracao-dos-testemunhos-dia-40"
+          "@id": "https://ulissesflores.com/#sermons#outros-sermon-4-o-grande-rompimento-celebracao-dos-testemunhos-dia-40",
+          "@type": "VideoObject"
         },
         {
-          "@id": "https://ulissesflores.com/#sermons#outros-sermon-5-cantata-de-natal-o-verbo-que-se-fez-carne-e-habitou-entr"
+          "@id": "https://ulissesflores.com/#sermons#outros-sermon-5-cantata-de-natal-o-verbo-que-se-fez-carne-e-habitou-entr",
+          "@type": "VideoObject"
         }
       ]
     },

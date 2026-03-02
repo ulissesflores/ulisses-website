@@ -3057,7 +3057,12 @@ function buildCoreSiteJsonLd(identity, organization, frontmatter) {
           ? {
               '@type': 'PostalAddress',
               streetAddress: organization.address,
-              addressCountry: 'BR',
+              addressLocality: organization.addressLocality || 'São Paulo',
+              postalCode: organization.postalCode || '04061-003',
+              addressCountry: {
+                '@type': 'Country',
+                name: 'BR',
+              },
             }
           : undefined,
         description: organization.description['pt-BR'] || '',
@@ -3098,8 +3103,8 @@ function buildPublicationNodes(siteUrl, publications) {
     headline: publication.title,
     description: publication.landing.overview,
     url: publication.canonicalUrl,
-    datePublished: publication.publishedAt,
-    dateModified: publication.updatedAt,
+    datePublished: formatDateWithTimezone(publication.publishedAt),
+    dateModified: formatDateWithTimezone(publication.updatedAt),
     inLanguage: publication.inLanguage,
     author: {
       '@id': `${siteUrl}/#person`,
@@ -3278,6 +3283,20 @@ function buildCertificationNodes(siteUrl, certifications) {
   return nodes;
 }
 
+function formatDateWithTimezone(dateString, timezone = '-03:00') {
+  if (!dateString || dateString === 'UNDATED') return undefined;
+  if (dateString.includes('T')) {
+    return dateString.endsWith('Z') || /[+-]\d{2}:\d{2}$/.test(dateString) ? dateString : dateString + timezone;
+  }
+  return `${dateString}T00:00:00${timezone}`;
+}
+
+function extractYouTubeThumbnail(url) {
+  if (!url) return undefined;
+  const match = url.match(/(?:v=|\/embed\/|youtu\.be\/)([\w-]{11})/);
+  return match ? `https://img.youtube.com/vi/${match[1]}/hqdefault.jpg` : undefined;
+}
+
 function slugify(value) {
   return normalizeForSearch(value || '')
     .replace(/[^a-z0-9\s-]/g, ' ')
@@ -3376,7 +3395,10 @@ function buildSermonNodes(siteUrl, sermons) {
         '@type': 'VideoObject',
         additionalType: 'https://schema.org/Sermon',
         name: item.name,
+        description: item.summary || item.name,
         url: item.youtubeUrl,
+        contentUrl: item.youtubeUrl,
+        thumbnailUrl: extractYouTubeThumbnail(item.youtubeUrl),
         inLanguage: sermons.inLanguage || 'pt-BR',
         genre: 'Sermon',
         isPartOf: {
@@ -3389,7 +3411,8 @@ function buildSermonNodes(siteUrl, sermons) {
       };
 
       if (item.datePublished && item.datePublished !== 'UNDATED') {
-        sermonNode.datePublished = item.datePublished;
+        sermonNode.datePublished = formatDateWithTimezone(item.datePublished);
+        sermonNode.uploadDate = formatDateWithTimezone(item.datePublished);
       }
 
       nodes.push(sermonNode);
@@ -3428,17 +3451,18 @@ function buildPublicJsonLd({
   };
   const publicHasPart = [...collectionNodes, ...publicationNodes, ...softwareNodes, ...certificationNodes, ...blogNodes, ...sermonNodes]
     .filter((node) => !isOrganizationNode(node))
-    .map((node) => ({ '@id': node['@id'] }));
+    .map((node) => ({ '@id': node['@id'], '@type': node['@type'] || 'CreativeWork' }));
 
   const publicDatasetNode = {
     '@id': `${siteUrl}/#upkf-public`,
     '@type': 'Dataset',
     name: `${frontmatter.title || 'UPKF'} (Public Knowledge Graph)`,
     version: frontmatter.version || 'unknown',
-    dateModified: frontmatter.generated_at || new Date().toISOString(),
+    dateModified: formatDateWithTimezone(frontmatter.generated_at) || new Date().toISOString(),
     description: 'Public semantic graph derived from the canonical UPKF source.',
     inLanguage: frontmatter.languages || ['pt-BR'],
     url: `${siteUrl}/public.jsonld`,
+    license: 'https://creativecommons.org/licenses/by-sa/4.0/',
     creator: {
       '@id': `${siteUrl}/#person`,
     },
@@ -4283,7 +4307,7 @@ function loadIa2027Stats() {
   };
 }
 
-function buildIdentityFatMarkdown({ upkfMeta, siteUrl, generatedAt }) {
+function buildIdentityFatMarkdown({ upkfMeta, siteUrl, generatedAt, publications }) {
   const canonicalUrl = toCanonicalUrl(siteUrl, '/identidade');
   const displayName = toText(
     upkfMeta.publicDisplayName || upkfMeta.displayName || upkfMeta.canonicalLegalName || 'Ulisses Flores',
@@ -4512,6 +4536,21 @@ function buildIdentityFatMarkdown({ upkfMeta, siteUrl, generatedAt }) {
     '',
     '## Domínios',
     domainInventorySection,
+    '',
+    '## Publicações Científicas e Ensaios',
+    '',
+    ...(Array.isArray(publications) && publications.length > 0
+      ? publications
+          .slice()
+          .sort((a, b) => (b.publishedAt || '').localeCompare(a.publishedAt || ''))
+          .map((pub) => {
+            const cat = pub.category || 'essays';
+            const url = `${siteUrl}/${cat}/${pub.id}`;
+            const date = pub.publishedAt ? ` (${pub.publishedAt})` : '';
+            const tags = Array.isArray(pub.tags) && pub.tags.length > 0 ? ` — ${pub.tags.join(', ')}` : '';
+            return `- [${pub.title}](${url})${date}${tags}`;
+          })
+      : ['- Nenhuma publicação indexada.']),
     '',
     '## Firewall Semântico',
     firewall ? `> ${firewall}` : '> Firewall semântico indisponível.',
@@ -5138,7 +5177,7 @@ function buildFatMarkdownPagesFromSsot({ upkfMeta, knowledgeData, publicationCol
 
   pages.push({
     relativePath: 'identidade.md',
-    content: buildIdentityFatMarkdown({ upkfMeta, siteUrl, generatedAt }),
+    content: buildIdentityFatMarkdown({ upkfMeta, siteUrl, generatedAt, publications }),
   });
 
   pages.push({

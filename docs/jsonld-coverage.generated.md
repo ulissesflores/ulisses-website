@@ -10,9 +10,9 @@
 - Alura certifications parsed: 32
 - Blog posts parsed: 19
 - Sermons parsed: 56
-- `/site.jsonld` bytes: 23422
-- `/public.jsonld` bytes: 151015
-- `/full.jsonld` bytes: 255062
+- `/site.jsonld` bytes: 23505
+- `/public.jsonld` bytes: 169257
+- `/full.jsonld` bytes: 273304
 - Corpus files: 0
 - Corpus snippets: 0
 - Corpus dirs:

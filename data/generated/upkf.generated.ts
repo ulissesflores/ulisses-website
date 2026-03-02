@@ -818,9 +818,9 @@ export const upkfMeta = {
     "siteGraphNodes": 43,
     "publicGraphNodes": 186,
     "fullGraphNodes": 289,
-    "siteJsonldBytes": 23422,
-    "publicJsonldBytes": 151015,
-    "fullJsonldBytes": 255062,
+    "siteJsonldBytes": 23505,
+    "publicJsonldBytes": 169257,
+    "fullJsonldBytes": 273304,
     "corpusFiles": 0,
     "corpusSnippets": 0,
     "corpusDirs": [],
@@ -1231,7 +1231,12 @@ export const siteJsonLd = {
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "Avenida Itacira, 2689, Planalto Paulista, São Paulo/SP, CEP 04061-003, BR",
-        "addressCountry": "BR"
+        "addressLocality": "São Paulo",
+        "postalCode": "04061-003",
+        "addressCountry": {
+          "@type": "Country",
+          "name": "BR"
+        }
       },
       "description": "Laboratório de P&D (deep tech) focado em finanças quantitativas/Web3, engenharia de hardware IoT (arquiteturas cloudless/edge) e IA aplicada para resiliência ciberfinanceira."
     },
