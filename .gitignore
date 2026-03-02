@@ -39,6 +39,18 @@ public/whitepapers.md
 public/mundo-politico.md
 public/mundo-politico/**/*.md
 public/identidade.md
+public/certifications.md
+public/certifications/**/*.md
+public/certificacoes.md
+public/ensaios.md
+public/pesquisa.md
+public/simulacoes.md
+public/simulacoes/**/*.md
+
+# Generated PDFs (auto-created by upkf:generate — do not commit)
+public/essays/*.pdf
+public/research/*.pdf
+public/whitepapers/*.pdf
 
 # debug
 npm-debug.log*
