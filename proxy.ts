@@ -8,7 +8,7 @@ function isDenseRoute(pathname: string): boolean {
   return DENSE_PREFIXES.some((prefix) => pathname === prefix || pathname.startsWith(`${prefix}/`));
 }
 
-export function middleware(request: NextRequest) {
+export function proxy(request: NextRequest) {
   const ua = request.headers.get('user-agent') || '';
   const pathname = request.nextUrl.pathname;
 
