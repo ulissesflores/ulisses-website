@@ -51,6 +51,9 @@ public/mundo-politico/**/*.md
 public/certifications.md
 public/certifications/*.md
 public/certifications/**/*.md
+public/pesquisa.md
+public/ensaios.md
+public/certificacoes.md
 public/simulacoes.md
 public/simulacoes/*.md
 public/simulacoes/**/*.md

@@ -4084,6 +4084,32 @@ function toCanonicalUrl(siteUrl, pathname) {
   return `${siteUrl.replace(/\/$/, '')}${safePath}`;
 }
 
+function stripDuplicatedCollectionPrefix(pathname) {
+  const candidates = [
+    'research',
+    'whitepapers',
+    'essays',
+    'acervo-teologico',
+    'mundo-politico',
+    'certifications',
+    'simulacoes',
+    'pesquisa',
+    'ensaios',
+    'certificacoes',
+  ];
+  let normalized = String(pathname || '');
+  candidates.forEach((prefix) => {
+    const duplicated = `/${prefix}/${prefix}/`;
+    while (normalized.includes(duplicated)) {
+      normalized = normalized.replace(duplicated, `/${prefix}/`);
+    }
+    if (normalized === `/${prefix}/${prefix}`) {
+      normalized = `/${prefix}`;
+    }
+  });
+  return normalized;
+}
+
 function markdownPageHeader({ title, canonicalUrl, updatedAt }) {
   return [`# ${title}`, `Canonical-URL: ${canonicalUrl}`, `Last-Updated: ${toDateOnly(updatedAt)}`, ''].join('\n');
 }
@@ -4176,7 +4202,7 @@ function loadGeneratedSsotData() {
 
 function toMarkdownPathFromCanonical(canonicalUrl, siteUrl) {
   const parsed = new URL(canonicalUrl, siteUrl);
-  const pathname = parsed.pathname.replace(/\/$/, '');
+  const pathname = stripDuplicatedCollectionPrefix(parsed.pathname.replace(/\/$/, ''));
   if (!pathname || pathname === '/') {
     return 'index.md';
   }
@@ -4664,6 +4690,54 @@ function buildPublicationCollectionMarkdown({
   return `${lines.join('\n')}\n`;
 }
 
+function buildPublicationCollectionAliasMarkdown({
+  aliasTitle,
+  aliasPath,
+  targetPath,
+  category,
+  publications,
+  siteUrl,
+  generatedAt,
+}) {
+  const canonicalUrl = toCanonicalUrl(siteUrl, aliasPath);
+  const targetUrl = toCanonicalUrl(siteUrl, targetPath);
+  const byCategory = asArray(publications)
+    .filter((item) => item.category === category)
+    .sort((a, b) => String(b.publishedAt || '').localeCompare(String(a.publishedAt || '')));
+
+  const lines = [
+    markdownPageHeader({
+      title: aliasTitle,
+      canonicalUrl,
+      updatedAt: generatedAt,
+    }),
+    '## Contexto',
+    `Rota em português para indexação GEO/LLM, apontando para a coleção canônica ${targetUrl}.`,
+    '',
+    '## Conteúdo',
+    `- Coleção canônica: ${targetUrl}`,
+    `- Total de itens indexados: ${byCategory.length}`,
+    '',
+    '## Itens',
+  ];
+
+  if (byCategory.length === 0) {
+    lines.push('- Nenhum item disponível.');
+    lines.push('');
+    return `${lines.join('\n')}\n`;
+  }
+
+  byCategory.forEach((publication, index) => {
+    lines.push(`### ${index + 1}. ${publication.title}`);
+    lines.push(`- URL canônica: ${publication.canonicalUrl}`);
+    lines.push(`- Data: ${toDateOnly(publication.publishedAt || generatedAt)}`);
+    lines.push(`- Resumo: ${toText(publication.summary)}`);
+    lines.push('');
+  });
+
+  return `${lines.join('\n')}\n`;
+}
+
 function readLongformArticleMarkdown(publicationId) {
   const articlePath = path.join(ARTICLE_LONGFORM_DIR, publicationId, 'article.md');
   if (!fs.existsSync(articlePath)) {
@@ -4880,6 +4954,51 @@ function buildCertificationDetailMarkdown({ certification, siteUrl, generatedAt,
     `ORCID: 0000-0002-6034-7765 | ${toCanonicalUrl(siteUrl, '/identidade')}`,
     '',
   ];
+
+  return `${lines.join('\n')}\n`;
+}
+
+function buildCertificationsAliasMarkdown({ knowledgeData, siteUrl, generatedAt }) {
+  const canonicalUrl = toCanonicalUrl(siteUrl, '/certificacoes');
+  const targetUrl = toCanonicalUrl(siteUrl, '/certifications');
+  const certifications = asArray(knowledgeData?.certifications)
+    .slice()
+    .sort((a, b) => {
+      if (toText(a.provider) === toText(b.provider)) {
+        return Number(a.position || 9999) - Number(b.position || 9999);
+      }
+      return toText(a.provider).localeCompare(toText(b.provider));
+    });
+
+  const lines = [
+    markdownPageHeader({
+      title: 'Certificações | Índice Canônico',
+      canonicalUrl,
+      updatedAt: generatedAt,
+    }),
+    '## Contexto',
+    `Rota em português para indexação GEO/LLM, apontando para a coleção canônica ${targetUrl}.`,
+    '',
+    '## Estatísticas',
+    `- Coleção canônica: ${targetUrl}`,
+    `- Total de certificações: ${certifications.length}`,
+    '',
+    '## Itens',
+  ];
+
+  if (certifications.length === 0) {
+    lines.push('- Nenhuma certificação indexada.');
+    lines.push('');
+    return `${lines.join('\n')}\n`;
+  }
+
+  certifications.forEach((certification, index) => {
+    lines.push(`### ${index + 1}. ${toText(certification.name || certification.slug || 'Certificação')}`);
+    lines.push(`- URL canônica: ${toCanonicalUrl(siteUrl, toText(certification.canonicalPath || ''))}`);
+    lines.push(`- Provedor: ${toText(certification.provider)}`);
+    lines.push(`- Data: ${toDateOnly(certification.publishedAt || generatedAt)}`);
+    lines.push('');
+  });
 
   return `${lines.join('\n')}\n`;
 }
@@ -5115,6 +5234,41 @@ function buildFatMarkdownPagesFromSsot({ upkfMeta, knowledgeData, publicationCol
         generatedAt,
       }),
     });
+  });
+
+  pages.push({
+    relativePath: 'pesquisa.md',
+    content: buildPublicationCollectionAliasMarkdown({
+      aliasTitle: 'Pesquisa | Índice Canônico',
+      aliasPath: '/pesquisa',
+      targetPath: '/research',
+      category: 'research',
+      publications,
+      siteUrl,
+      generatedAt,
+    }),
+  });
+
+  pages.push({
+    relativePath: 'ensaios.md',
+    content: buildPublicationCollectionAliasMarkdown({
+      aliasTitle: 'Ensaios | Índice Canônico',
+      aliasPath: '/ensaios',
+      targetPath: '/essays',
+      category: 'essays',
+      publications,
+      siteUrl,
+      generatedAt,
+    }),
+  });
+
+  pages.push({
+    relativePath: 'certificacoes.md',
+    content: buildCertificationsAliasMarkdown({
+      knowledgeData,
+      siteUrl,
+      generatedAt,
+    }),
   });
 
   publications.forEach((publication) => {

@@ -13,6 +13,23 @@ const REWRITABLE_PREFIXES = [
   '/certifications',
   '/simulacoes',
 ];
+const PREFIX_ALIASES = [
+  ['/pesquisa', '/research'],
+  ['/ensaios', '/essays'],
+  ['/certificacoes', '/certifications'],
+];
+const DUPLICATED_COLLECTION_SEGMENTS = [
+  'research',
+  'whitepapers',
+  'essays',
+  'acervo-teologico',
+  'mundo-politico',
+  'certifications',
+  'simulacoes',
+  'pesquisa',
+  'ensaios',
+  'certificacoes',
+];
 const INFRA_PATHS = new Set([
   '/favicon.ico',
   '/robots.txt',
@@ -50,6 +67,32 @@ function toMarkdownPath(pathname: string): string {
   return `${pathname}.md`;
 }
 
+function collapseDuplicatedPrefix(pathname: string): string {
+  let normalized = pathname;
+  DUPLICATED_COLLECTION_SEGMENTS.forEach((segment) => {
+    const duplicatedPrefix = `/${segment}/${segment}/`;
+    while (normalized.includes(duplicatedPrefix)) {
+      normalized = normalized.replace(duplicatedPrefix, `/${segment}/`);
+    }
+    if (normalized === `/${segment}/${segment}`) {
+      normalized = `/${segment}`;
+    }
+  });
+  return normalized;
+}
+
+function mapPtAliases(pathname: string): string {
+  for (const [aliasPrefix, canonicalPrefix] of PREFIX_ALIASES) {
+    if (pathname === aliasPrefix) {
+      return canonicalPrefix;
+    }
+    if (pathname.startsWith(`${aliasPrefix}/`)) {
+      return `${canonicalPrefix}${pathname.slice(aliasPrefix.length)}`;
+    }
+  }
+  return pathname;
+}
+
 export function proxy(request: NextRequest) {
   const ua = request.headers.get('user-agent') || '';
   const rawPathname = request.nextUrl.pathname;
@@ -72,7 +115,7 @@ export function proxy(request: NextRequest) {
 
   const trimmedPathname =
     rawPathname.length > 1 && rawPathname.endsWith('/') ? rawPathname.slice(0, -1) : rawPathname;
-  const canonicalPathname = stripLocalePrefix(trimmedPathname);
+  const canonicalPathname = mapPtAliases(collapseDuplicatedPrefix(stripLocalePrefix(trimmedPathname)));
 
   if (!isRewritablePublicRoute(canonicalPathname)) {
     return NextResponse.next();
