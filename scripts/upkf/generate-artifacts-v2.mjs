@@ -26,6 +26,9 @@ const ARTICLE_REFERENCES_PATH = path.join(repoRoot, 'data', 'upkf', 'article-ref
 const SERMONS_MIGRATION_PATH = path.join(repoRoot, 'data', 'seo', 'sermons-full-migration.json');
 const SERMONS_MIGRATION_TS_PATH = path.join(repoRoot, 'data', 'sermons-migration.ts');
 const ARTICLE_LONGFORM_DIR = path.join(repoRoot, 'data', 'research', 'articles');
+const CERTIFICATIONS_SOTA_PATH = path.join(repoRoot, 'data', 'seo', 'certifications.sota.json');
+const IA_2027_SOURCE_PATH = path.join(repoRoot, 'data', 'simulations', 'ia-2027.ts');
+const REQUIRED_GEO_MARKDOWN_PATHS = ['identidade.md', 'acervo-teologico.md'];
 
 const SOTA_JOB_TITLES = [
   'CTO',
@@ -4188,6 +4191,72 @@ function toText(value) {
   return String(value || '').trim();
 }
 
+function loadJsonArray(filePath, label) {
+  if (!fs.existsSync(filePath)) {
+    return [];
+  }
+
+  try {
+    const parsed = JSON.parse(fs.readFileSync(filePath, 'utf8'));
+    if (!Array.isArray(parsed)) {
+      return [];
+    }
+    return parsed;
+  } catch (error) {
+    process.stderr.write(`Aviso: falha ao carregar ${label} (${error.message}).\n`);
+    return [];
+  }
+}
+
+function loadCertificationNarrativesMap() {
+  const rows = loadJsonArray(CERTIFICATIONS_SOTA_PATH, 'certifications.sota.json');
+  return new Map(
+    rows
+      .map((row) => ({
+        id: toText(row.id),
+        title: toText(row.title),
+        about: toText(row.about),
+        skills: asArray(row.skills).map((skill) => toText(skill)).filter(Boolean),
+        problemsSolved: toText(row.problems_solved),
+      }))
+      .filter((row) => row.id)
+      .map((row) => [row.id, row]),
+  );
+}
+
+function loadIa2027Stats() {
+  if (!fs.existsSync(IA_2027_SOURCE_PATH)) {
+    return {
+      mainSections: 0,
+      raceSections: 0,
+      slowdownSections: 0,
+      footnotes: 0,
+      highlightedTitles: [],
+    };
+  }
+
+  const source = fs.readFileSync(IA_2027_SOURCE_PATH, 'utf8');
+  const mainSections = (source.match(/id:\s*"main-/g) || []).length;
+  const raceSections = (source.match(/id:\s*"race-/g) || []).length;
+  const slowdownSections = (source.match(/id:\s*"slowdown-/g) || []).length;
+  const footnotes = (source.match(/context:\s*"main"|context:\s*"race"|context:\s*"slowdown"/g) || []).length;
+  const highlightedTitles = Array.from(
+    new Set(
+      Array.from(source.matchAll(/title:\s*"([^"]+)"/g))
+        .map((match) => toText(match[1]))
+        .filter(Boolean),
+    ),
+  ).slice(0, 8);
+
+  return {
+    mainSections,
+    raceSections,
+    slowdownSections,
+    footnotes,
+    highlightedTitles,
+  };
+}
+
 function buildIdentityFatMarkdown({ upkfMeta, siteUrl, generatedAt }) {
   const canonicalUrl = toCanonicalUrl(siteUrl, '/identidade');
   const displayName = toText(
@@ -4717,8 +4786,235 @@ function buildAcervoDetailMarkdown({ cluster, sermon, siteUrl, generatedAt }) {
   return `${lines.join('\n')}\n`;
 }
 
+function buildCertificationsCollectionMarkdown({ knowledgeData, siteUrl, generatedAt, narrativesById }) {
+  const canonicalUrl = toCanonicalUrl(siteUrl, '/certifications');
+  const certifications = asArray(knowledgeData?.certifications)
+    .slice()
+    .sort((a, b) => {
+      if (toText(a.provider) === toText(b.provider)) {
+        return Number(a.position || 9999) - Number(b.position || 9999);
+      }
+      return toText(a.provider).localeCompare(toText(b.provider));
+    });
+
+  const lines = [
+    markdownPageHeader({
+      title: 'Certifications and Credentials',
+      canonicalUrl,
+      updatedAt: generatedAt,
+    }),
+    '## Descrição',
+    'Coleção canônica de certificações com contexto semântico, verificação pública e vínculo de autoria com o hub soberano.',
+    '',
+    '## Credenciais',
+  ];
+
+  if (certifications.length === 0) {
+    lines.push('- Nenhuma certificação indexada.');
+    lines.push('');
+    return `${lines.join('\n')}\n`;
+  }
+
+  certifications.forEach((certification, index) => {
+    const narrative = narrativesById.get(toText(certification.slug));
+    const title = toText(narrative?.title || certification.name || certification.slug || 'Credential');
+    const canonicalPath = toText(certification.canonicalPath || `/certifications/${certification.slug}`);
+    const detailUrl = toCanonicalUrl(siteUrl, canonicalPath);
+    const summary = toText(narrative?.about || certification.summary || '');
+    const skills = asArray(narrative?.skills).map((skill) => toText(skill)).filter(Boolean);
+
+    lines.push(`### ${index + 1}. ${title}`);
+    lines.push(`- URL: ${detailUrl}`);
+    lines.push(`- Provider: ${toText(certification.provider || 'n/a')}`);
+    lines.push(`- Data: ${toDateOnly(certification.publishedAt || generatedAt)}`);
+    if (toText(certification.certId)) {
+      lines.push(`- Certificate ID: ${toText(certification.certId)}`);
+    }
+    if (toText(certification.verifyUrl)) {
+      lines.push(`- Verificação: ${toText(certification.verifyUrl)}`);
+    }
+    if (summary) {
+      lines.push(`- Contexto: ${summary}`);
+    }
+    if (skills.length > 0) {
+      lines.push(`- Skills: ${skills.join(', ')}`);
+    }
+    lines.push('');
+  });
+
+  return `${lines.join('\n')}\n`;
+}
+
+function buildCertificationDetailMarkdown({ certification, siteUrl, generatedAt, narrative }) {
+  const canonicalPath = toText(certification.canonicalPath || `/certifications/${certification.slug}`);
+  const canonicalUrl = toCanonicalUrl(siteUrl, canonicalPath);
+  const title = toText(narrative?.title || certification.name || certification.slug || 'Credential');
+  const summary = toText(narrative?.about || certification.summary || '');
+  const skills = asArray(narrative?.skills).map((skill) => toText(skill)).filter(Boolean);
+  const problemsSolved = toText(narrative?.problemsSolved || '');
+
+  const lines = [
+    markdownPageHeader({
+      title,
+      canonicalUrl,
+      updatedAt: certification.publishedAt || generatedAt,
+    }),
+    '## Metadados',
+    `- Provider: ${toText(certification.provider || 'n/a')}`,
+    `- Data: ${toDateOnly(certification.publishedAt || generatedAt)}`,
+    `- Coleção: Certifications`,
+    `- URL de verificação: ${toText(certification.verifyUrl || 'n/a')}`,
+    `- Certificate ID: ${toText(certification.certId || 'n/a')}`,
+    '',
+    '## Resumo',
+    summary || 'Credencial profissional registrada no índice canônico.',
+    '',
+    '## Habilidades',
+    ...(skills.length > 0 ? skills.map((skill) => `- ${skill}`) : ['- Skill map indisponível.']),
+    '',
+    '## Problemas resolvidos',
+    problemsSolved || 'Consolidação prática de competência técnica para execução de projetos com rastreabilidade pública.',
+    '',
+    '## Sobre o Autor',
+    'Carlos Ulisses Flores — Cientista econômico, CTO da Codex Hash Ltda.',
+    `ORCID: 0000-0002-6034-7765 | ${toCanonicalUrl(siteUrl, '/identidade')}`,
+    '',
+  ];
+
+  return `${lines.join('\n')}\n`;
+}
+
+function buildSimulacoesCollectionMarkdown({ siteUrl, generatedAt, ia2027Stats }) {
+  const canonicalUrl = toCanonicalUrl(siteUrl, '/simulacoes');
+  const totalNarrativeBlocks = ia2027Stats.mainSections + ia2027Stats.raceSections + ia2027Stats.slowdownSections;
+  const highlighted = ia2027Stats.highlightedTitles.slice(0, 4);
+
+  const lines = [
+    markdownPageHeader({
+      title: 'Simulações | Laboratório de Cenários',
+      canonicalUrl,
+      updatedAt: generatedAt,
+    }),
+    '## Descrição',
+    'Hub de simulações e soluções experimentais com foco em cenários de IA, economia e sistemas complexos.',
+    '',
+    '## Projetos',
+    `- [IA 2027 em Português](${toCanonicalUrl(siteUrl, '/simulacoes/ia-2027')}) — simulação prospectiva com timeline interativa e finais ramificados.`,
+    `- [Rapaduria 2027 (Alias Legado)](${toCanonicalUrl(siteUrl, '/simulacoes/rapaduria-2027')}) — rota de compatibilidade para o cenário IA 2027.`,
+    '',
+    '## Estatísticas da Simulação IA 2027',
+    `- Seções principais: ${ia2027Stats.mainSections}`,
+    `- Seções finais (race): ${ia2027Stats.raceSections}`,
+    `- Seções finais (slowdown): ${ia2027Stats.slowdownSections}`,
+    `- Blocos narrativos totais: ${totalNarrativeBlocks}`,
+    `- Notas de rodapé indexadas: ${ia2027Stats.footnotes}`,
+    '',
+    '## Tópicos em Destaque',
+    ...(highlighted.length > 0 ? highlighted.map((topic) => `- ${topic}`) : ['- Timeline e tópicos carregados a partir da base canônica.']),
+    '',
+  ];
+
+  return `${lines.join('\n')}\n`;
+}
+
+function buildIa2027DetailMarkdown({ siteUrl, generatedAt, ia2027Stats }) {
+  const canonicalUrl = toCanonicalUrl(siteUrl, '/simulacoes/ia-2027');
+  const highlighted = ia2027Stats.highlightedTitles.slice(0, 8);
+
+  const lines = [
+    markdownPageHeader({
+      title: 'IA 2027 em Português | Simulação Prospectiva',
+      canonicalUrl,
+      updatedAt: generatedAt,
+    }),
+    '## Resumo',
+    'Simulação prospectiva em português do cenário AI 2027 com linha do tempo interativa, métricas dinâmicas e finais ramificados.',
+    '',
+    '## Estrutura Narrativa',
+    `- Trilha principal: ${ia2027Stats.mainSections} seções`,
+    `- Final \"Race\": ${ia2027Stats.raceSections} seções`,
+    `- Final \"Slowdown\": ${ia2027Stats.slowdownSections} seções`,
+    `- Notas de rodapé estruturadas: ${ia2027Stats.footnotes}`,
+    '',
+    '## Tópicos-Chave',
+    ...(highlighted.length > 0 ? highlighted.map((topic) => `- ${topic}`) : ['- Sem tópicos extras extraídos.']),
+    '',
+    '## Rotas Relacionadas',
+    `- Hub de Simulações: ${toCanonicalUrl(siteUrl, '/simulacoes')}`,
+    `- Alias legado: ${toCanonicalUrl(siteUrl, '/simulacoes/rapaduria-2027')}`,
+    `- Variante race: ${toCanonicalUrl(siteUrl, '/simulacoes/ia-2027?path=race')}`,
+    `- Variante slowdown: ${toCanonicalUrl(siteUrl, '/simulacoes/ia-2027?path=slowdown')}`,
+    '',
+    '## Sobre o Autor',
+    'Carlos Ulisses Flores — Cientista econômico, CTO da Codex Hash Ltda.',
+    `ORCID: 0000-0002-6034-7765 | ${toCanonicalUrl(siteUrl, '/identidade')}`,
+    '',
+  ];
+
+  return `${lines.join('\n')}\n`;
+}
+
+function buildLegacySimulationAliasMarkdown({ title, canonicalPath, redirectedTo, mode, siteUrl, generatedAt }) {
+  const canonicalUrl = toCanonicalUrl(siteUrl, canonicalPath);
+  const targetUrl = toCanonicalUrl(siteUrl, redirectedTo);
+  const redirectTarget = mode ? `${targetUrl}?path=${mode}` : targetUrl;
+
+  const lines = [
+    markdownPageHeader({
+      title,
+      canonicalUrl,
+      updatedAt: generatedAt,
+    }),
+    '## Contexto',
+    'Esta rota é legada e mantida por compatibilidade de links históricos.',
+    '',
+    '## Canonical Redirect',
+    `- Destino canônico: ${targetUrl}`,
+    `- Destino efetivo para navegação: ${redirectTarget}`,
+    '',
+    '## GEO Routing',
+    'Para crawlers de IA, este arquivo markdown existe para preservar continuidade semântica e evitar resposta 404 em rotas de legado.',
+    '',
+    '## Hub de Referência',
+    `- Simulações: ${toCanonicalUrl(siteUrl, '/simulacoes')}`,
+    `- Identidade canônica: ${toCanonicalUrl(siteUrl, '/identidade')}`,
+    '',
+  ];
+
+  return `${lines.join('\n')}\n`;
+}
+
+function buildMarkdownGenerationReport(generatedFiles) {
+  const sorted = generatedFiles
+    .slice()
+    .sort((a, b) => a.relativePath.localeCompare(b.relativePath));
+  const missingMandatory = REQUIRED_GEO_MARKDOWN_PATHS.filter(
+    (relativePath) => !sorted.some((file) => file.relativePath === relativePath),
+  );
+
+  if (missingMandatory.length > 0) {
+    throw new Error(
+      `Falha GEO: arquivos markdown obrigatórios ausentes: ${missingMandatory.join(', ')}`,
+    );
+  }
+
+  const lines = ['[geo-md] Generated markdown files'];
+  lines.push(`[geo-md] Total: ${sorted.length}`);
+
+  sorted.forEach((file) => {
+    lines.push(`[geo-md] ${file.relativePath} (${file.size} bytes)`);
+    if (file.size < 300) {
+      lines.push(`[geo-md][WARN] ${file.relativePath} abaixo de 300 bytes`);
+    }
+  });
+
+  return `${lines.join('\n')}\n`;
+}
+
 function buildFatMarkdownPagesFromSsot({ upkfMeta, knowledgeData, publicationCollections, publications }, generatedAt) {
   const siteUrl = toText(upkfMeta.primaryWebsite || 'https://ulissesflores.com').replace(/\/$/, '');
+  const certificationNarrativesById = loadCertificationNarrativesMap();
+  const ia2027Stats = loadIa2027Stats();
   const pages = [];
 
   pages.push({
@@ -4729,6 +5025,83 @@ function buildFatMarkdownPagesFromSsot({ upkfMeta, knowledgeData, publicationCol
   pages.push({
     relativePath: 'acervo-teologico.md',
     content: buildAcervoFatMarkdown({ knowledgeData, siteUrl, generatedAt }),
+  });
+
+  pages.push({
+    relativePath: 'certifications.md',
+    content: buildCertificationsCollectionMarkdown({
+      knowledgeData,
+      siteUrl,
+      generatedAt,
+      narrativesById: certificationNarrativesById,
+    }),
+  });
+
+  asArray(knowledgeData?.certifications).forEach((certification) => {
+    const canonicalPath = toText(certification.canonicalPath || `/certifications/${certification.slug || ''}`);
+    const detailPath = toMarkdownPathFromCanonical(canonicalPath, siteUrl);
+    pages.push({
+      relativePath: detailPath,
+      content: buildCertificationDetailMarkdown({
+        certification,
+        siteUrl,
+        generatedAt,
+        narrative: certificationNarrativesById.get(toText(certification.slug)),
+      }),
+    });
+  });
+
+  pages.push({
+    relativePath: 'simulacoes.md',
+    content: buildSimulacoesCollectionMarkdown({
+      siteUrl,
+      generatedAt,
+      ia2027Stats,
+    }),
+  });
+
+  pages.push({
+    relativePath: 'simulacoes/ia-2027.md',
+    content: buildIa2027DetailMarkdown({
+      siteUrl,
+      generatedAt,
+      ia2027Stats,
+    }),
+  });
+
+  pages.push({
+    relativePath: 'simulacoes/rapaduria-2027.md',
+    content: buildLegacySimulationAliasMarkdown({
+      title: 'Rapaduria 2027 (Alias Legado)',
+      canonicalPath: '/simulacoes/rapaduria-2027',
+      redirectedTo: '/simulacoes/ia-2027',
+      siteUrl,
+      generatedAt,
+    }),
+  });
+
+  pages.push({
+    relativePath: 'simulacoes/rapaduria-2027/carroca.md',
+    content: buildLegacySimulationAliasMarkdown({
+      title: 'Rapaduria 2027 / Carroca (Alias Legado)',
+      canonicalPath: '/simulacoes/rapaduria-2027/carroca',
+      redirectedTo: '/simulacoes/ia-2027',
+      mode: 'race',
+      siteUrl,
+      generatedAt,
+    }),
+  });
+
+  pages.push({
+    relativePath: 'simulacoes/rapaduria-2027/freio.md',
+    content: buildLegacySimulationAliasMarkdown({
+      title: 'Rapaduria 2027 / Freio (Alias Legado)',
+      canonicalPath: '/simulacoes/rapaduria-2027/freio',
+      redirectedTo: '/simulacoes/ia-2027',
+      mode: 'slowdown',
+      siteUrl,
+      generatedAt,
+    }),
   });
 
   ['research', 'whitepapers', 'essays'].forEach((category) => {
@@ -4813,12 +5186,26 @@ function buildFatMarkdownPagesFromSsot({ upkfMeta, knowledgeData, publicationCol
 function writeFatMarkdownPagesFromSsot(generatedAt) {
   const ssotData = loadGeneratedSsotData();
   const pages = buildFatMarkdownPagesFromSsot(ssotData, generatedAt);
+  const seen = new Set();
+  const generatedFiles = [];
 
   pages.forEach((page) => {
+    if (seen.has(page.relativePath)) {
+      throw new Error(`Falha GEO: caminho markdown duplicado detectado: ${page.relativePath}`);
+    }
+    seen.add(page.relativePath);
     const targetPath = path.join(PUBLIC_DIR, page.relativePath);
     ensureDir(path.dirname(targetPath));
     fs.writeFileSync(targetPath, page.content);
+    const size = Buffer.byteLength(page.content, 'utf8');
+    generatedFiles.push({
+      relativePath: page.relativePath,
+      size,
+    });
   });
+
+  process.stdout.write(buildMarkdownGenerationReport(generatedFiles));
+  return generatedFiles;
 }
 
 function countWords(text) {

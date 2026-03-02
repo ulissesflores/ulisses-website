@@ -2,29 +2,89 @@ import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
 
 const AI_BOT_REGEX = /GPTBot|ClaudeBot|Google-Extended|OAI-SearchBot|PerplexityBot|ChatGPT-User/i;
-const DENSE_PREFIXES = ['/identidade', '/research', '/whitepapers', '/essays', '/acervo-teologico', '/mundo-politico'];
+const LOCALE_PREFIXES = new Set(['pt-br', 'en', 'es', 'it', 'he']);
+const REWRITABLE_PREFIXES = [
+  '/identidade',
+  '/research',
+  '/whitepapers',
+  '/essays',
+  '/acervo-teologico',
+  '/mundo-politico',
+  '/certifications',
+  '/simulacoes',
+];
+const INFRA_PATHS = new Set([
+  '/favicon.ico',
+  '/robots.txt',
+  '/feed.xml',
+  '/sitemap.xml',
+  '/sitemap-resources.xml',
+  '/llms.txt',
+  '/llms-full.txt',
+]);
 
-function isDenseRoute(pathname: string): boolean {
-  return DENSE_PREFIXES.some((prefix) => pathname === prefix || pathname.startsWith(`${prefix}/`));
+function stripLocalePrefix(pathname: string): string {
+  const segments = pathname.split('/').filter(Boolean);
+  if (segments.length === 0) {
+    return '/';
+  }
+
+  const [first, ...rest] = segments;
+  if (LOCALE_PREFIXES.has(first.toLowerCase())) {
+    return rest.length > 0 ? `/${rest.join('/')}` : '/';
+  }
+  return pathname;
+}
+
+function isRewritablePublicRoute(pathname: string): boolean {
+  if (pathname === '/') {
+    return true;
+  }
+  return REWRITABLE_PREFIXES.some((prefix) => pathname === prefix || pathname.startsWith(`${prefix}/`));
+}
+
+function toMarkdownPath(pathname: string): string {
+  if (pathname === '/') {
+    return '/index.md';
+  }
+  return `${pathname}.md`;
 }
 
 export function proxy(request: NextRequest) {
   const ua = request.headers.get('user-agent') || '';
-  const pathname = request.nextUrl.pathname;
+  const rawPathname = request.nextUrl.pathname;
 
   if (!AI_BOT_REGEX.test(ua)) {
     return NextResponse.next();
   }
 
-  if (pathname === '/' || pathname.endsWith('.md') || !isDenseRoute(pathname)) {
+  if (rawPathname.endsWith('.md')) {
+    return NextResponse.next();
+  }
+
+  if (INFRA_PATHS.has(rawPathname) || rawPathname.startsWith('/.well-known/')) {
+    return NextResponse.next();
+  }
+
+  if (/\.[a-z0-9]+$/i.test(rawPathname)) {
+    return NextResponse.next();
+  }
+
+  const trimmedPathname =
+    rawPathname.length > 1 && rawPathname.endsWith('/') ? rawPathname.slice(0, -1) : rawPathname;
+  const canonicalPathname = stripLocalePrefix(trimmedPathname);
+
+  if (!isRewritablePublicRoute(canonicalPathname)) {
     return NextResponse.next();
   }
 
   const url = request.nextUrl.clone();
-  url.pathname = `${pathname}.md`;
+  url.pathname = toMarkdownPath(canonicalPathname);
   return NextResponse.rewrite(url);
 }
 
 export const config = {
-  matcher: '/((?!api|_next/static|_next/image|favicon.ico|sitemap.*|robots.*).*)',
+  matcher: [
+    '/((?!api|_next|favicon.ico|robots.txt|sitemap.*|feed.xml|\\.well-known/.*).*)',
+  ],
 };
