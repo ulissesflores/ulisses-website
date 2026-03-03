@@ -52,11 +52,6 @@ public/essays/*.pdf
 public/research/*.pdf
 public/whitepapers/*.pdf
 
-# Generated TypeScript/JSON artifacts (machine-specific paths, regenerated per build)
-data/generated/
-docs/*.generated.json
-docs/*.generated.md
-
 # debug
 npm-debug.log*
 yarn-debug.log*
