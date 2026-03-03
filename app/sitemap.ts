@@ -6,7 +6,7 @@ import { buildLanguageAlternates } from '@/data/seo';
 import { certificationsSotaData } from '@/data/certifications-sota';
 import { acervoCanonicalPath, acervoLatestPublishedAt, acervoSermons } from '@/data/acervo-teologico';
 
-function isIndexableSitemapPath(path: string): boolean {
+export function isIndexableSitemapPath(path: string): boolean {
   const normalized = path.toLowerCase();
 
   if (/\.(md|docx|json|jsonld)(?:$|[?#])/.test(normalized)) {

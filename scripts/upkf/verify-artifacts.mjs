@@ -71,6 +71,8 @@ function collectDateFieldViolations(value, violations, pointer = '$') {
   }
 }
 
+export { getGraph, asTypeArray, hasType, hasImage, normalizeInlineText, collectDateFieldViolations };
+
 function assert(checks, condition, label, details = '') {
   checks.push({
     ok: Boolean(condition),
@@ -457,4 +459,6 @@ function main() {
   process.stdout.write(`${JSON.stringify(summary, null, 2)}\n`);
 }
 
-main();
+if (process.argv[1] === fileURLToPath(import.meta.url)) {
+  main();
+}

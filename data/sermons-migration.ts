@@ -68,7 +68,7 @@ function normalizePath(path: string): string {
   return path.startsWith('/') ? path : `/${path}`;
 }
 
-function normalizeOriginalPath(originalUrl: string): string {
+export function normalizeOriginalPath(originalUrl: string): string {
   try {
     return normalizePath(new URL(originalUrl).pathname);
   } catch {

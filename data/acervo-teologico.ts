@@ -38,7 +38,7 @@ export interface AcervoCluster {
   sermons: AcervoSermon[];
 }
 
-function toMetaDescription(text: string): string {
+export function toMetaDescription(text: string): string {
   const trimmed = text.trim();
   if (trimmed.length <= 180) {
     return trimmed;

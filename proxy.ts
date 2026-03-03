@@ -93,6 +93,8 @@ function mapPtAliases(pathname: string): string {
   return pathname;
 }
 
+export { stripLocalePrefix, isRewritablePublicRoute, toMarkdownPath, collapseDuplicatedPrefix, mapPtAliases };
+
 export function proxy(request: NextRequest) {
   const ua = request.headers.get('user-agent') || '';
   const rawPathname = request.nextUrl.pathname;

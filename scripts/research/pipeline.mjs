@@ -644,6 +644,19 @@ function buildDeepResearchQualityMarkdown(report) {
   return `${lines.join('\n')}\n`;
 }
 
+export {
+  clampScore,
+  xmlEscape,
+  sanitizePdfText,
+  escapePdfLiteral,
+  toPdfDate,
+  wrapText,
+  chunkLines,
+  splitMarkdownBlocks,
+  markdownToPdfLines,
+  markdownToDocxParagraphs,
+};
+
 export async function generateManuscripts({ publications, identity, generatedAt, repoRoot }) {
   const publicRoot = path.join(repoRoot, 'public', 'deep-research');
   const dataRoot = path.join(repoRoot, 'data', 'research', 'articles');

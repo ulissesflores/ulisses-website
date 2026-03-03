@@ -3,7 +3,7 @@ import { upkfMeta } from '@/data/generated/upkf.generated';
 
 export const revalidate = 3600;
 
-function escapeXml(value: string): string {
+export function escapeXml(value: string): string {
   return value
     .replaceAll('&', '&amp;')
     .replaceAll('<', '&lt;')
@@ -12,7 +12,7 @@ function escapeXml(value: string): string {
     .replaceAll("'", '&apos;');
 }
 
-function toRfc2822(date: string): string {
+export function toRfc2822(date: string): string {
   const parsed = new Date(date);
   if (Number.isNaN(parsed.getTime())) {
     return new Date().toUTCString();
