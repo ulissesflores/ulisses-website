@@ -1,6 +1,6 @@
 # URL Inventory (Generated)
 
-- Source: `/sessions/gifted-cool-faraday/mnt/ulisses-hub/public/upkf-source.md`
+- Source: `public/upkf-source.md`
 - Generated at: 2026-02-21
 - Total URLs: 269
 

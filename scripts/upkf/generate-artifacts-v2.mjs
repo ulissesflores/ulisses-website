@@ -5988,8 +5988,9 @@ function writeGeneratedFiles({
 }
 
 async function main() {
-  const sourcePath = findSourcePath();
-  const upkfText = normalizeLineBreaks(fs.readFileSync(sourcePath, 'utf8'));
+  const sourcePathAbsolute = findSourcePath();
+  const sourcePath = path.relative(repoRoot, sourcePathAbsolute);
+  const upkfText = normalizeLineBreaks(fs.readFileSync(sourcePathAbsolute, 'utf8'));
   const frontmatter = parseFrontmatter(upkfText);
   const generatedAt = frontmatter.generated_at || new Date().toISOString();
 
@@ -6033,7 +6034,7 @@ async function main() {
   }
 
   const articleSourceDirs = getArticleSourceDirs();
-  const corpus = loadLocalCorpus(articleSourceDirs, sourcePath);
+  const corpus = loadLocalCorpus(articleSourceDirs, sourcePathAbsolute);
   const referencesLibrary = loadArticleReferencesMap();
 
   let publications = buildPublications(publicationRows, generatedAt, corpus, referencesLibrary);

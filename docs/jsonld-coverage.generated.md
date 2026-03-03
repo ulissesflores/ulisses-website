@@ -1,6 +1,6 @@
 # JSON-LD Coverage (Generated)
 
-- Source: `/sessions/gifted-cool-faraday/mnt/ulisses-hub/public/upkf-source.md`
+- Source: `public/upkf-source.md`
 - Markdown bytes: 85586
 - Markdown lines: 1397
 - Parsed sections: 102
@@ -12,7 +12,7 @@
 - Sermons parsed: 56
 - `/site.jsonld` bytes: 23505
 - `/public.jsonld` bytes: 169257
-- `/full.jsonld` bytes: 273304
+- `/full.jsonld` bytes: 273258
 - Corpus files: 0
 - Corpus snippets: 0
 - Corpus dirs:

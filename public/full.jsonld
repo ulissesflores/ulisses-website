@@ -4415,7 +4415,7 @@
       "isBasedOn": {
         "@type": "CreativeWork",
         "name": "upkf-source.md",
-        "text": "/sessions/gifted-cool-faraday/mnt/ulisses-hub/public/upkf-source.md"
+        "text": "public/upkf-source.md"
       },
       "hasPart": [
         {

@@ -1,5 +1,5 @@
 /* AUTO-GENERATED FILE. DO NOT EDIT MANUALLY.
- * Source: /sessions/gifted-cool-faraday/mnt/ulisses-hub/public/upkf-source.md
+ * Source: public/upkf-source.md
  * Generated at: 2026-02-21
  */
 

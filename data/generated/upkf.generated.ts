@@ -1,5 +1,5 @@
 /* AUTO-GENERATED FILE. DO NOT EDIT MANUALLY.
- * Source: /sessions/gifted-cool-faraday/mnt/ulisses-hub/public/upkf-source.md
+ * Source: public/upkf-source.md
  * Generated at: 2026-02-21
  */
 
@@ -8,7 +8,7 @@ export const upkfMeta = {
   "upkfVersion": "3.3",
   "generatedAt": "2026-02-21",
   "schemaTarget": "Schema.org JSON-LD via deterministic derivation",
-  "sourcePath": "/sessions/gifted-cool-faraday/mnt/ulisses-hub/public/upkf-source.md",
+  "sourcePath": "public/upkf-source.md",
   "displayName": "Carlos Ulisses Flores",
   "preferredName": "Ulisses",
   "publicDisplayName": "Carlos Ulisses Flores",
@@ -820,7 +820,7 @@ export const upkfMeta = {
     "fullGraphNodes": 289,
     "siteJsonldBytes": 23505,
     "publicJsonldBytes": 169257,
-    "fullJsonldBytes": 273304,
+    "fullJsonldBytes": 273258,
     "corpusFiles": 0,
     "corpusSnippets": 0,
     "corpusDirs": [],
