@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { siteJsonLd, upkfMeta } from '@/data/generated/upkf.generated';
-import { buildLanguageAlternates } from '@/data/seo';
+
 import { GlobalHeader } from '@/components/global-header';
 import { GlobalFooter } from '@/components/global-footer';
 import './globals.css';
@@ -38,7 +38,6 @@ export const metadata: Metadata = {
   classification: 'Science and Technology',
   alternates: {
     canonical: '/',
-    languages: buildLanguageAlternates('/'),
   },
   robots: {
     index: true,

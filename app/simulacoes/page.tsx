@@ -1,8 +1,9 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { upkfMeta } from '@/data/generated/upkf.generated';
-import { buildLanguageAlternates } from '@/data/seo';
 import { AuthorHubCard } from '@/components/author-hub-card';
+import { FaqSection } from '@/components/faq-section';
+import { simulacoesFaq } from '@/data/faq';
 
 const canonicalPath = '/simulacoes';
 
@@ -18,7 +19,6 @@ export const metadata: Metadata = {
   ],
   alternates: {
     canonical: canonicalPath,
-    languages: buildLanguageAlternates(canonicalPath),
   },
   openGraph: {
     type: 'website',
@@ -68,7 +68,31 @@ export default function SimulacoesPage() {
               Abrir simulação
             </Link>
           </article>
+
+          <article className='rounded-2xl border border-neutral-800 bg-neutral-900/40 p-7'>
+            <div className='flex items-center gap-2 mb-2'>
+              <p className='text-[11px] uppercase tracking-[0.2em] text-violet-300'>Ferramenta Experimental</p>
+              <span className='text-[9px] uppercase tracking-widest text-amber-400 border border-amber-500/30 rounded-full px-1.5 py-0.5 font-bold'>
+                BETA
+              </span>
+            </div>
+            <h2 className='text-2xl font-bold text-white mb-3'>Mumm-Ra · Humor Negro via WhatsApp</h2>
+            <p className='text-neutral-300 leading-relaxed mb-5'>
+              Chatbot inspirado no vilão imortal dos ThunderCats (anos 90). Te xinga, reclama, te chama de verme —
+              mas sempre responde. Humor negro com IA. Gratuito e em BETA.
+            </p>
+            <Link
+              href='/simulacoes/mumm-ra'
+              className='inline-flex items-center gap-2 rounded-full border border-emerald-500/50 px-4 py-2 text-sm font-semibold text-emerald-300 hover:bg-emerald-900/20 transition-colors'
+            >
+              Ver detalhes
+            </Link>
+          </article>
         </section>
+
+        <div className='mt-12'>
+          <FaqSection items={simulacoesFaq} sectionTitle='Perguntas sobre Simulações' />
+        </div>
       </main>
     </div>
   );

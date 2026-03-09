@@ -4,7 +4,6 @@ import { notFound } from 'next/navigation';
 import { ArrowLeft, BookOpen, Calendar, Download, FileText } from 'lucide-react';
 import { publicationCollections, publications } from '@/data/publications';
 import { upkfMeta } from '@/data/generated/upkf.generated';
-import { buildLanguageAlternates } from '@/data/seo';
 import { AuthorHubCard } from '@/components/author-hub-card';
 
 interface PageProps {
@@ -39,7 +38,6 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     ],
     alternates: {
       canonical: canonicalPath,
-      languages: buildLanguageAlternates(canonicalPath),
     },
     openGraph: {
       type: 'article',
@@ -77,49 +75,53 @@ export default async function ArticlePage({ params }: PageProps) {
       .map((paragraph) => paragraph.trim())
       .filter(Boolean);
 
+  const origin = upkfMeta.primaryWebsite;
+  const defaultImage = `${origin}/carlos-ulisses-flores-cto.jpg`;
+
   const articleJsonLd = {
     '@context': 'https://schema.org',
     '@type': publication.kind === 'R' ? 'Report' : 'ScholarlyArticle',
-    '@id': `${upkfMeta.primaryWebsite}/#pub-${publication.id}`,
+    '@id': `${origin}/#pub-${publication.id}`,
     headline: publication.title,
     name: publication.title,
     description: publication.summary,
-    datePublished: publication.publishedAt ? (publication.publishedAt.includes('T') ? publication.publishedAt : `${publication.publishedAt}T00:00:00-03:00`) : undefined,
-    dateModified: publication.updatedAt ? (publication.updatedAt.includes('T') ? publication.updatedAt : `${publication.updatedAt}T00:00:00-03:00`) : undefined,
+    image: defaultImage,
+    datePublished: publication.publishedAt ? new Date(publication.publishedAt.includes('T') ? publication.publishedAt : `${publication.publishedAt}T00:00:00-03:00`).toISOString() : undefined,
+    dateModified: publication.updatedAt ? new Date(publication.updatedAt.includes('T') ? publication.updatedAt : `${publication.updatedAt}T00:00:00-03:00`).toISOString() : undefined,
     inLanguage: publication.inLanguage,
-    url: `${upkfMeta.primaryWebsite}/${publication.category}/${publication.id}`,
+    url: `${origin}/${publication.category}/${publication.id}`,
     keywords: publication.tags,
     author: {
       '@type': 'Person',
-      '@id': `${upkfMeta.primaryWebsite}/#person`,
+      '@id': `${origin}/#person`,
       name: upkfMeta.publicDisplayName || upkfMeta.displayName,
     },
     publisher: {
       '@type': 'Organization',
-      '@id': `${upkfMeta.primaryWebsite}/#codexhash-research`,
+      '@id': `${origin}/#codexhash-research`,
       name: 'Codex Hash Research',
     },
     isPartOf: {
-      '@id': `${upkfMeta.primaryWebsite}/#collection-${publication.category}`,
+      '@id': `${origin}/#collection-${publication.category}`,
       name: collection.heading,
     },
     encoding: {
       '@type': 'MediaObject',
-      contentUrl: `${upkfMeta.primaryWebsite}${publication.primaryPdfUrl || publication.downloadUrl}`,
+      contentUrl: `${origin}${publication.primaryPdfUrl || publication.downloadUrl}`,
       encodingFormat: 'application/pdf',
     },
     associatedMedia: [
       publication.mdUrl
         ? {
             '@type': 'MediaObject',
-            contentUrl: `${upkfMeta.primaryWebsite}${publication.mdUrl}`,
+            contentUrl: `${origin}${publication.mdUrl}`,
             encodingFormat: 'text/markdown',
           }
         : null,
       publication.docxUrl
         ? {
             '@type': 'MediaObject',
-            contentUrl: `${upkfMeta.primaryWebsite}${publication.docxUrl}`,
+            contentUrl: `${origin}${publication.docxUrl}`,
             encodingFormat:
               'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
           }

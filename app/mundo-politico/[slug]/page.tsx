@@ -3,7 +3,6 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { knowledgeData } from '@/data/knowledge';
 import { upkfMeta } from '@/data/generated/upkf.generated';
-import { buildLanguageAlternates } from '@/data/seo';
 import { AuthorHubCard } from '@/components/author-hub-card';
 
 interface PageProps {
@@ -35,7 +34,6 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     ],
     alternates: {
       canonical: post.canonicalPath,
-      languages: buildLanguageAlternates(post.canonicalPath),
     },
     openGraph: {
       type: 'article',

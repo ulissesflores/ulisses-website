@@ -2,8 +2,9 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { acervoCanonicalPath, acervoClusters, acervoSermons } from '@/data/acervo-teologico';
 import { upkfMeta } from '@/data/generated/upkf.generated';
-import { buildLanguageAlternates } from '@/data/seo';
 import { AuthorHubCard } from '@/components/author-hub-card';
+import { FaqSection } from '@/components/faq-section';
+import { acervoTeologicoFaq } from '@/data/faq';
 
 export const metadata: Metadata = {
   title: 'Acervo Teologico',
@@ -11,7 +12,6 @@ export const metadata: Metadata = {
     'Acervo teologico organizado por clusters de autoridade topical, com metadados enriquecidos para indexacao semantica e IA.',
   alternates: {
     canonical: acervoCanonicalPath,
-    languages: buildLanguageAlternates(acervoCanonicalPath),
   },
   openGraph: {
     type: 'website',
@@ -32,7 +32,10 @@ export default function AcervoTeologicoPage() {
     description:
       'Colecao canonica de mensagens teologicas por cluster, com contexto semantico aprofundado e ligacao para fonte original.',
     hasPart: acervoSermons.map((sermon) => ({
+      '@type': 'WebPage',
       '@id': `${upkfMeta.primaryWebsite}${sermon.canonicalPath}`,
+      name: sermon.seoTitle,
+      url: `${upkfMeta.primaryWebsite}${sermon.canonicalPath}`,
     })),
   };
 
@@ -83,6 +86,9 @@ export default function AcervoTeologicoPage() {
               </div>
             </section>
           ))}
+        </div>
+        <div className='mt-12'>
+          <FaqSection items={acervoTeologicoFaq} sectionTitle='Perguntas sobre o Acervo Teológico' />
         </div>
       </main>
 

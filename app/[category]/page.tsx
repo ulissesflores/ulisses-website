@@ -3,7 +3,6 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { publicationCollections, publications, type PublicationCategory } from '@/data/publications';
 import { upkfMeta } from '@/data/generated/upkf.generated';
-import { buildLanguageAlternates } from '@/data/seo';
 import { AuthorHubCard } from '@/components/author-hub-card';
 
 const validCategories = Object.keys(publicationCollections) as PublicationCategory[];
@@ -30,7 +29,6 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     description: collection.description,
     alternates: {
       canonical: `/${category}`,
-      languages: buildLanguageAlternates(`/${category}`),
     },
     openGraph: {
       type: 'website',
