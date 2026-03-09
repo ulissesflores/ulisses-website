@@ -2,7 +2,6 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { knowledgeData } from '@/data/knowledge';
 import { upkfMeta } from '@/data/generated/upkf.generated';
-import { buildLanguageAlternates } from '@/data/seo';
 import { AuthorHubCard } from '@/components/author-hub-card';
 
 export const metadata: Metadata = {
@@ -11,7 +10,6 @@ export const metadata: Metadata = {
     'Índice canônico dos artigos publicados no portal Mundo Político com páginas de contexto e links para as fontes originais.',
   alternates: {
     canonical: '/mundo-politico',
-    languages: buildLanguageAlternates('/mundo-politico'),
   },
   openGraph: {
     type: 'website',
@@ -34,7 +32,10 @@ export default function MundoPoliticoPage() {
     description:
       'Canonical index of Mundo Político publications with individual context pages and outbound references.',
     hasPart: posts.map((post) => ({
+      '@type': 'BlogPosting',
       '@id': `${upkfMeta.primaryWebsite}${post.canonicalPath}`,
+      headline: post.headline,
+      url: `${upkfMeta.primaryWebsite}${post.canonicalPath}`,
     })),
     about: {
       '@id': `${upkfMeta.primaryWebsite}/#person`,

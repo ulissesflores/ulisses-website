@@ -6,7 +6,8 @@ import Link from 'next/link';
 import { acervoClusters } from '@/data/acervo-teologico';
 import { upkfMeta } from '@/data/generated/upkf.generated';
 import { publications } from '@/data/publications';
-import { buildLanguageAlternates } from '@/data/seo';
+import { FaqSection } from '@/components/faq-section';
+import { identidadeFaq } from '@/data/faq';
 
 const canonicalPath = '/identidade';
 const ogImage = '/carlos-ulisses-flores-cto.jpg';
@@ -46,7 +47,6 @@ export const metadata: Metadata = {
   description: llmDescription,
   alternates: {
     canonical: canonicalPath,
-    languages: buildLanguageAlternates(canonicalPath),
   },
   openGraph: {
     type: 'profile',
@@ -570,6 +570,10 @@ export default function IdentidadePage() {
             ))}
           </div>
         </section>
+
+        <div className='mt-10'>
+          <FaqSection items={identidadeFaq} sectionTitle='Perguntas Frequentes sobre Ulisses Flores' />
+        </div>
       </main>
 
       <script

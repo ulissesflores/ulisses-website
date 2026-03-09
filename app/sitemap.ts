@@ -2,7 +2,7 @@ import type { MetadataRoute } from 'next';
 import { publications, publicationCollections } from '@/data/publications';
 import { knowledgeData } from '@/data/knowledge';
 import { upkfMeta } from '@/data/generated/upkf.generated';
-import { buildLanguageAlternates } from '@/data/seo';
+
 import { certificationsSotaData } from '@/data/certifications-sota';
 import { acervoCanonicalPath, acervoLatestPublishedAt, acervoSermons } from '@/data/acervo-teologico';
 
@@ -34,9 +34,6 @@ function makeSitemapEntry(
     lastModified,
     changeFrequency,
     priority,
-    alternates: {
-      languages: buildLanguageAlternates(path),
-    },
   };
 }
 

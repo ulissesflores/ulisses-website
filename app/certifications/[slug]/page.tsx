@@ -3,7 +3,6 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { certificationsSotaData, getCertificationSotaBySlug } from '@/data/certifications-sota';
 import { upkfMeta } from '@/data/generated/upkf.generated';
-import { buildLanguageAlternates } from '@/data/seo';
 import { AuthorHubCard } from '@/components/author-hub-card';
 
 interface PageProps {
@@ -37,7 +36,6 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     ],
     alternates: {
       canonical: certification.canonicalPath,
-      languages: buildLanguageAlternates(certification.canonicalPath),
     },
     openGraph: {
       type: 'article',

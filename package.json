@@ -18,6 +18,8 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "test:coverage": "vitest run --coverage",
+    "test:ui": "vitest --ui",
+    "test:coverage-ui": "vitest --coverage --ui",
     "links:inventory": "npm run upkf:generate"
   },
   "dependencies": {
@@ -35,6 +37,7 @@
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "@vitest/coverage-v8": "^4.0.18",
+    "@vitest/ui": "^4.0.18",
     "eslint": "^9",
     "eslint-config-next": "16.1.2",
     "tailwindcss": "^4",

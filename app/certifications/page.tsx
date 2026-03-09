@@ -2,8 +2,9 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { certificationsSotaData } from '@/data/certifications-sota';
 import { upkfMeta } from '@/data/generated/upkf.generated';
-import { buildLanguageAlternates } from '@/data/seo';
 import { AuthorHubCard } from '@/components/author-hub-card';
+import { FaqSection } from '@/components/faq-section';
+import { certificacoesFaq } from '@/data/faq';
 
 const providerOrder = ['Alura', 'Coursera', 'edX'] as const;
 type CertificationItem = (typeof certificationsSotaData)[number];
@@ -49,7 +50,6 @@ export const metadata: Metadata = {
     'Indice canonico de certificacoes com contextualizacao tecnica, habilidades adquiridas, problemas resolvidos e verificacao publica.',
   alternates: {
     canonical: '/certifications',
-    languages: buildLanguageAlternates('/certifications'),
   },
   openGraph: {
     type: 'website',
@@ -76,7 +76,10 @@ export default function CertificationsPage() {
       '@id': `${upkfMeta.primaryWebsite}/#person`,
     },
     hasPart: certificationsSotaData.map((certification) => ({
+      '@type': 'EducationalOccupationalCredential',
       '@id': `${upkfMeta.primaryWebsite}${certification.canonicalPath}`,
+      name: certification.title,
+      url: `${upkfMeta.primaryWebsite}${certification.canonicalPath}`,
     })),
   };
 
@@ -154,6 +157,10 @@ export default function CertificationsPage() {
               </div>
             </section>
           ))}
+        </div>
+
+        <div className='mt-12'>
+          <FaqSection items={certificacoesFaq} sectionTitle='Perguntas sobre Certificações' />
         </div>
       </main>
 

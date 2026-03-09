@@ -4,7 +4,6 @@ import { notFound } from 'next/navigation';
 import { acervoCanonicalPath, acervoSermons, getAcervoCluster, getAcervoSermon } from '@/data/acervo-teologico';
 import { knowledgeData } from '@/data/knowledge';
 import { upkfMeta } from '@/data/generated/upkf.generated';
-import { buildLanguageAlternates } from '@/data/seo';
 import { AuthorHubCard } from '@/components/author-hub-card';
 
 interface PageProps {
@@ -37,7 +36,6 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     ],
     alternates: {
       canonical: sermon.canonicalPath,
-      languages: buildLanguageAlternates(sermon.canonicalPath),
     },
     openGraph: {
       type: 'video.other',

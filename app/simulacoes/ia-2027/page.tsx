@@ -2,7 +2,6 @@ import type { Metadata } from 'next';
 import { IA2027Simulation } from '@/components/simulations/ia-2027/ia-2027-simulation';
 import type { SimulationPath } from '@/components/simulations/ia-2027/types';
 import { upkfMeta } from '@/data/generated/upkf.generated';
-import { buildLanguageAlternates } from '@/data/seo';
 import { AuthorHubCard } from '@/components/author-hub-card';
 
 const canonicalPath = '/simulacoes/ia-2027';
@@ -31,7 +30,6 @@ export const metadata: Metadata = {
   ],
   alternates: {
     canonical: canonicalPath,
-    languages: buildLanguageAlternates(canonicalPath),
   },
   openGraph: {
     type: 'article',

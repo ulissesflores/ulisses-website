@@ -1,59 +1,37 @@
 # JSON-LD Audit (Generated)
 
-- Generated at: 2026-02-28T13:46:39.556Z
-- Site graph nodes: 43
-- Public graph nodes: 186
-- Full graph nodes: 289
-- Alura credentials: 32
-- Sermons: 56
-- Blog posts: 19
+- Generated at: 2026-03-03T03:52:26.116Z
+- Site graph nodes: 0
+- Public graph nodes: 0
+- Full graph nodes: 0
+- Alura credentials: 0
+- Sermons: 0
+- Blog posts: 0
 
 ## Checks
-- [x] Arquivo presente: site — /Users/ulissesflores/Documents/Projetos/ulisses-hub/public/site.jsonld
-- [x] Arquivo presente: pub — /Users/ulissesflores/Documents/Projetos/ulisses-hub/public/public.jsonld
-- [x] Arquivo presente: full — /Users/ulissesflores/Documents/Projetos/ulisses-hub/public/full.jsonld
-- [x] Arquivo presente: sourceMd — /Users/ulissesflores/Documents/Projetos/ulisses-hub/public/upkf-source.md
-- [x] Arquivo presente: llms — /Users/ulissesflores/Documents/Projetos/ulisses-hub/public/llms.txt
-- [x] Arquivo presente: llmsFull — /Users/ulissesflores/Documents/Projetos/ulisses-hub/public/llms-full.txt
-- [x] Arquivo presente: did — /Users/ulissesflores/Documents/Projetos/ulisses-hub/public/.well-known/did.json
-- [x] Arquivo presente: articleQualityJson — /Users/ulissesflores/Documents/Projetos/ulisses-hub/docs/article-quality.generated.json
-- [x] Arquivo presente: articleQualityMd — /Users/ulissesflores/Documents/Projetos/ulisses-hub/docs/article-quality.generated.md
-- [x] Arquivo presente: doiReadyJson — /Users/ulissesflores/Documents/Projetos/ulisses-hub/docs/doi-ready.generated.json
-- [x] Arquivo presente: doiReadyMd — /Users/ulissesflores/Documents/Projetos/ulisses-hub/docs/doi-ready.generated.md
-- [x] Arquivo presente: deepQualityJson — /Users/ulissesflores/Documents/Projetos/ulisses-hub/docs/deep-research-quality.generated.json
-- [x] Arquivo presente: deepQualityMd — /Users/ulissesflores/Documents/Projetos/ulisses-hub/docs/deep-research-quality.generated.md
-- [x] Arquivo presente: doiManifest — /Users/ulissesflores/Documents/Projetos/ulisses-hub/public/doi/manifest.json
-- [x] Arquivo presente: deepResearchGeneratedTs — /Users/ulissesflores/Documents/Projetos/ulisses-hub/data/generated/deep-research.generated.ts
-- [x] Arquivo presente: publicationsJson — /Users/ulissesflores/Documents/Projetos/ulisses-hub/docs/publications.generated.json
-- [x] site.jsonld tem grafo minimo
-- [x] public.jsonld maior que site.jsonld
-- [x] full.jsonld maior que public.jsonld
-- [x] Credenciais publicas >= 34
-- [x] 32 certificacoes Alura com verify_url
-- [x] 56 sermoes estruturados
-- [x] 19 posts do Mundo Politico estruturados
-- [x] full root sem campo text gigante
-- [x] public dataset com hasPart
-- [x] public dataset sem includesObject invalido
-- [x] upkf-source.md publicado corretamente
-- [x] llms.txt referencia recursos semanticos
-- [x] llms-full.txt contem indice expandido
-- [x] did:web configurado
-- [x] did.json com verificationMethod
-- [x] did.json referencia public.jsonld em service
-- [x] Relatorio de qualidade usa limiar SOTA = 950
-- [x] Score geral de artigos >= 950
-- [x] Todos os artigos com score final >= 950
-- [x] DOI-ready usa limiar minimo 950
-- [x] Score DOI-ready >= 950
-- [x] Todos os pacotes DOI por artigo com score >= 950
-- [x] DOI-ready usa politica doi_target para todos os artigos
-- [x] CITATION.cff sem campo doi oficial quando status=target
-- [x] crossref.json sem campo DOI oficial para pre-registro
-- [x] Deep research usa limiar minimo 950
-- [x] Score deep research >= 950
-- [x] Todos os artigos deep research com fases e macro >= 950
-- [x] Manifesto DOI publico presente
-- [x] 18/18 artigos com artefatos deep-research (.md/.pdf/.docx)
-- [x] Nome publico sem vazamento do nome juridico em artefatos publicos
+- [x] Arquivo presente: site — /Users/ulissesflores/Documents/Projetos/ulisses-hub/.claude/worktrees/compassionate-feistel/public/site.jsonld
+- [x] Arquivo presente: pub — /Users/ulissesflores/Documents/Projetos/ulisses-hub/.claude/worktrees/compassionate-feistel/public/public.jsonld
+- [x] Arquivo presente: full — /Users/ulissesflores/Documents/Projetos/ulisses-hub/.claude/worktrees/compassionate-feistel/public/full.jsonld
+- [x] Arquivo presente: sourceMd — /Users/ulissesflores/Documents/Projetos/ulisses-hub/.claude/worktrees/compassionate-feistel/public/upkf-source.md
+- [x] Arquivo presente: llms — /Users/ulissesflores/Documents/Projetos/ulisses-hub/.claude/worktrees/compassionate-feistel/public/llms.txt
+- [x] Arquivo presente: llmsFull — /Users/ulissesflores/Documents/Projetos/ulisses-hub/.claude/worktrees/compassionate-feistel/public/llms-full.txt
+- [ ] Arquivo presente: identidadeMd — /Users/ulissesflores/Documents/Projetos/ulisses-hub/.claude/worktrees/compassionate-feistel/public/identidade.md
+- [ ] Arquivo presente: acervoMd — /Users/ulissesflores/Documents/Projetos/ulisses-hub/.claude/worktrees/compassionate-feistel/public/acervo-teologico.md
+- [ ] Arquivo presente: researchMd — /Users/ulissesflores/Documents/Projetos/ulisses-hub/.claude/worktrees/compassionate-feistel/public/research.md
+- [ ] Arquivo presente: whitepapersMd — /Users/ulissesflores/Documents/Projetos/ulisses-hub/.claude/worktrees/compassionate-feistel/public/whitepapers.md
+- [ ] Arquivo presente: essaysMd — /Users/ulissesflores/Documents/Projetos/ulisses-hub/.claude/worktrees/compassionate-feistel/public/essays.md
+- [ ] Arquivo presente: mundoPoliticoMd — /Users/ulissesflores/Documents/Projetos/ulisses-hub/.claude/worktrees/compassionate-feistel/public/mundo-politico.md
+- [x] Arquivo presente: did — /Users/ulissesflores/Documents/Projetos/ulisses-hub/.claude/worktrees/compassionate-feistel/public/.well-known/did.json
+- [x] Arquivo presente: articleQualityJson — /Users/ulissesflores/Documents/Projetos/ulisses-hub/.claude/worktrees/compassionate-feistel/docs/article-quality.generated.json
+- [x] Arquivo presente: articleQualityMd — /Users/ulissesflores/Documents/Projetos/ulisses-hub/.claude/worktrees/compassionate-feistel/docs/article-quality.generated.md
+- [x] Arquivo presente: doiReadyJson — /Users/ulissesflores/Documents/Projetos/ulisses-hub/.claude/worktrees/compassionate-feistel/docs/doi-ready.generated.json
+- [x] Arquivo presente: doiReadyMd — /Users/ulissesflores/Documents/Projetos/ulisses-hub/.claude/worktrees/compassionate-feistel/docs/doi-ready.generated.md
+- [x] Arquivo presente: deepQualityJson — /Users/ulissesflores/Documents/Projetos/ulisses-hub/.claude/worktrees/compassionate-feistel/docs/deep-research-quality.generated.json
+- [x] Arquivo presente: deepQualityMd — /Users/ulissesflores/Documents/Projetos/ulisses-hub/.claude/worktrees/compassionate-feistel/docs/deep-research-quality.generated.md
+- [x] Arquivo presente: doiManifest — /Users/ulissesflores/Documents/Projetos/ulisses-hub/.claude/worktrees/compassionate-feistel/public/doi/manifest.json
+- [x] Arquivo presente: deepResearchGeneratedTs — /Users/ulissesflores/Documents/Projetos/ulisses-hub/.claude/worktrees/compassionate-feistel/data/generated/deep-research.generated.ts
+- [x] Arquivo presente: publicationsJson — /Users/ulissesflores/Documents/Projetos/ulisses-hub/.claude/worktrees/compassionate-feistel/docs/publications.generated.json
+- [x] Arquivo presente: robotsSource — /Users/ulissesflores/Documents/Projetos/ulisses-hub/.claude/worktrees/compassionate-feistel/app/robots.ts
+- [x] Arquivo presente: seoSource — /Users/ulissesflores/Documents/Projetos/ulisses-hub/.claude/worktrees/compassionate-feistel/data/seo.ts
+- [x] Arquivo presente: identidadePage — /Users/ulissesflores/Documents/Projetos/ulisses-hub/.claude/worktrees/compassionate-feistel/app/identidade/page.tsx
 
