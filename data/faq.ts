@@ -96,21 +96,31 @@ export const mumMraFaq: FaqItem[] = [
   {
     question: 'O que é o Mumm-Ra?',
     answer:
-      'Mumm-Ra é um chatbot teológico disponível via WhatsApp que utiliza inteligência artificial para auxiliar em análise bíblica, exegese e estudos teológicos. Foi desenvolvido como parte do laboratório de simulações.',
+      'Mumm-Ra é um chatbot via WhatsApp inspirado no vilão imortal dos ThunderCats, o desenho animado dos anos 90. Ele responde com humor negro e sarcasmo pesado, te chamando de "verme" e "larva humana", mas sempre entrega a resposta que você precisa. É 100% personagem — pura diversão.',
   },
   {
     question: 'Como conversar com o Mumm-Ra?',
     answer:
-      'Basta enviar uma mensagem para o número +55 11 5286-8689 via WhatsApp. O Mumm-Ra responde automaticamente com análises teológicas contextualizadas baseadas na sua pergunta.',
+      'Mande uma mensagem para o número +55 11 5286-8689 via WhatsApp. Ele vai reclamar que foi invocado, te insultar criativamente e depois responder sua pergunta. Você também pode adicioná-lo a grupos de WhatsApp.',
   },
   {
     question: 'O Mumm-Ra é gratuito?',
     answer:
-      'Sim, o Mumm-Ra é uma ferramenta experimental gratuita. Por ser um projeto de pesquisa, a disponibilidade pode variar e as respostas devem ser tratadas como auxílio ao estudo, não como autoridade doutrinária.',
+      'Sim, o Mumm-Ra é totalmente gratuito. O projeto está em fase BETA, então pode ter bugs ou momentos de indisponibilidade. Estamos constantemente ajustando a personalidade e a capacidade de resposta.',
   },
   {
     question: 'Que tipo de perguntas posso fazer ao Mumm-Ra?',
     answer:
-      'Você pode perguntar sobre passagens bíblicas, conceitos teológicos, contexto histórico de textos, comparação entre interpretações e análise exegética. O Mumm-Ra é otimizado para perguntas teológicas em português.',
+      'Qualquer tipo de pergunta — receitas, matemática, tecnologia, conselhos, curiosidades. Ele responde sobre tudo, mas sempre no estilo do vilão: com insultos, drama cósmico e superioridade imortal. O conteúdo da resposta é útil, a embalagem é humor negro.',
+  },
+  {
+    question: 'Os insultos do Mumm-Ra são de verdade?',
+    answer:
+      'Não. O Mumm-Ra é 100% um personagem fictício baseado no vilão do desenho ThunderCats dos anos 90. Todos os xingamentos como "verme", "larva humana" e "ser inferior" fazem parte da atuação. É humor negro para quem gosta — nada é pessoal.',
+  },
+  {
+    question: 'Posso adicionar o Mumm-Ra em grupos de WhatsApp?',
+    answer:
+      'Sim! Basta adicionar o número +55 11 5286-8689 ao grupo. O Mumm-Ra participa das conversas quando mencionado ou quando alguém faz uma pergunta direta. Ele xinga todo mundo igualmente, sem favoritismo.',
   },
 ];

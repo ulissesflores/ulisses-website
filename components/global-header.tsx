@@ -181,6 +181,7 @@ export function GlobalHeader() {
                     <Link
                       key={item.href}
                       href={item.href}
+                      onClick={() => setMobileOpen(false)}
                       className='block px-4 py-3 rounded-lg text-neutral-200 hover:bg-emerald-500/10 hover:text-emerald-300 transition-colors'
                     >
                       <span className='text-sm font-medium'>{item.label}</span>
@@ -196,6 +197,7 @@ export function GlobalHeader() {
             <div className='pt-4 border-t border-neutral-800'>
               <Link
                 href='/#contact'
+                onClick={() => setMobileOpen(false)}
                 className='block w-full text-center px-4 py-3 bg-emerald-600 text-white text-sm font-bold rounded-full hover:bg-emerald-500 transition-colors'
               >
                 FALE COMIGO

@@ -70,11 +70,16 @@ export default function SimulacoesPage() {
           </article>
 
           <article className='rounded-2xl border border-neutral-800 bg-neutral-900/40 p-7'>
-            <p className='text-[11px] uppercase tracking-[0.2em] text-violet-300 mb-2'>Ferramenta Experimental</p>
-            <h2 className='text-2xl font-bold text-white mb-3'>Mumm-Ra · Chatbot Teológico</h2>
+            <div className='flex items-center gap-2 mb-2'>
+              <p className='text-[11px] uppercase tracking-[0.2em] text-violet-300'>Ferramenta Experimental</p>
+              <span className='text-[9px] uppercase tracking-widest text-amber-400 border border-amber-500/30 rounded-full px-1.5 py-0.5 font-bold'>
+                BETA
+              </span>
+            </div>
+            <h2 className='text-2xl font-bold text-white mb-3'>Mumm-Ra · Humor Negro via WhatsApp</h2>
             <p className='text-neutral-300 leading-relaxed mb-5'>
-              Chatbot via WhatsApp que utiliza inteligência artificial para auxiliar em análise bíblica, exegese e estudos
-              teológicos. Gratuito e disponível 24h.
+              Chatbot inspirado no vilão imortal dos ThunderCats (anos 90). Te xinga, reclama, te chama de verme —
+              mas sempre responde. Humor negro com IA. Gratuito e em BETA.
             </p>
             <Link
               href='/simulacoes/mumm-ra'
