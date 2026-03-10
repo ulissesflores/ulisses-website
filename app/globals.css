@@ -36,19 +36,37 @@ body {
   background: rgba(23, 23, 23, 0.6) !important;
   border-color: #404040 !important;
   border-radius: 0.75rem;
-  padding: 1rem;
   margin: 1.5rem 0;
+  box-shadow: none !important;
 }
 .ia2027-story summary {
   cursor: pointer;
   font-weight: 600;
   font-size: 0.875rem;
   color: #e5e5e5 !important;
+  padding: 1rem 1.25rem;
+  border-radius: 0.75rem;
+  transition: background 0.2s ease;
+}
+/* Override ALL light-theme hover classes on summary elements */
+.ia2027-story summary:hover {
+  background: rgba(52, 211, 153, 0.08) !important;
+  color: #ffffff !important;
+}
+.ia2027-story details[open] > summary {
+  border-bottom: 1px solid #404040;
+  border-radius: 0.75rem 0.75rem 0 0;
+}
+.ia2027-story details > div {
+  padding: 1rem 1.25rem;
 }
 .ia2027-story details p {
   color: #a3a3a3 !important;
   font-size: 0.95rem;
   margin-top: 0.75rem;
+}
+.ia2027-story details p:first-child {
+  margin-top: 0;
 }
 .ia2027-story sup a,
 .ia2027-story sup {
@@ -59,4 +77,33 @@ body {
 }
 .ia2027-story a:hover {
   text-decoration: underline;
+}
+
+/* Footnote tooltip */
+.ia2027-footnote-tooltip {
+  position: absolute;
+  z-index: 50;
+  max-width: 400px;
+  padding: 0.75rem 1rem;
+  background: #1a1a1a;
+  border: 1px solid #404040;
+  border-radius: 0.5rem;
+  color: #a3a3a3;
+  font-size: 0.8rem;
+  line-height: 1.5;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+  pointer-events: none;
+  bottom: calc(100% + 6px);
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: normal;
+}
+.ia2027-footnote-tooltip::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 5px solid transparent;
+  border-top-color: #404040;
 }

@@ -104,19 +104,7 @@ export const mainTimeline: NarrativeSection[] = [
 
       <p class="mb-4 text-lg leading-relaxed text-gray-800">(Para evitar destacar qualquer empresa existente, vamos descrever uma empresa fictícia de inteligência artificial geral, que chamaremos de OpenBrain. Imaginamos que as demais estejam de 3 a 9 meses atrás da OpenBrain.)</p>
 
-      <p class="mb-4 text-lg leading-relaxed text-gray-800">(3 x 10^23 FLOP)</p>
-
-      <p class="mb-4 text-lg leading-relaxed text-gray-800">(2 x 10^25 FLOP)</p>
-
-      <p class="mb-4 text-lg leading-relaxed text-gray-800">(4 x 10^27 FLOP)</p>
-
-      <p class="mb-4 text-lg leading-relaxed text-gray-800">2⋅10</p>
-
-      <p class="mb-4 text-lg leading-relaxed text-gray-800">FLOP de computação para treinar.<sup class="text-xs text-indigo-600 font-bold ml-0.5">[14]</sup> O modelo público mais recente da OpenBrain — o Agent-0 — foi treinado com</p>
-
-      <p class="mb-4 text-lg leading-relaxed text-gray-800">FLOP. Assim que os novos datacenters estiverem operacionais, eles poderão treinar um modelo com</p>
-
-      <p class="mb-4 text-lg leading-relaxed text-gray-800">FLOP — mil vezes mais do que o GPT-4.<sup class="text-xs text-indigo-600 font-bold ml-0.5">[15]</sup> Outras empresas despejam dinheiro em seus próprios datacenters gigantescos, esperando manter o ritmo.</p>
+      <p class="mb-4 text-lg leading-relaxed text-gray-800">O GPT-4 necessitou de cerca de 3×10²³ FLOP de computação para treinar.<sup class="text-xs text-indigo-600 font-bold ml-0.5">[14]</sup> O modelo público mais recente da OpenBrain — o Agent-0 — foi treinado com 2×10²⁵ FLOP. Assim que os novos datacenters estiverem operacionais, eles poderão treinar um modelo com 4×10²⁷ FLOP — mil vezes mais do que o GPT-4.<sup class="text-xs text-indigo-600 font-bold ml-0.5">[15]</sup> Outras empresas despejam dinheiro em seus próprios datacenters gigantescos, esperando manter o ritmo.</p>
 
       <p class="mb-4 text-lg leading-relaxed text-gray-800">Embora os modelos estejam melhorando em uma ampla gama de habilidades, um aspecto se destaca: a OpenBrain foca em IAs capazes de acelerar a própria pesquisa em IA. Eles querem vencer a dupla corrida armamentista contra a China (cuja empresa líder chamaremos de "DeepCent")16 e seus concorrentes americanos. Quanto mais do ciclo de pesquisa e desenvolvimento (P&D) conseguirem automatizar, mais rápido poderão avançar. Assim, quando a OpenBrain termina de treinar o Agent-1 — um novo modelo em desenvolvimento interno —, ele é bom em muitas coisas, mas excelente em auxiliar a pesquisa de IA.<sup class="text-xs text-indigo-600 font-bold ml-0.5">[17]</sup> Neste ponto, "termina de treinar" é uma expressão um tanto imprecisa; os modelos são frequentemente atualizados para versões mais recentes treinadas com dados adicionais ou parcialmente re-treinados para corrigir fraquezas.<sup class="text-xs text-indigo-600 font-bold ml-0.5">[18]</sup></p>
 
@@ -211,29 +199,6 @@ export const mainTimeline: NarrativeSection[] = [
 
       <p class="mb-4 text-lg leading-relaxed text-gray-800">O Departamento de Defesa (DOD) discreta, mas significativamente, começa a escalar a contratação direta da OpenBrain para questões cibernéticas, análise de dados e P&D, mas a integração é lenta devido à burocracia e ao processo de aquisição do DOD.<sup class="text-xs text-indigo-600 font-bold ml-0.5">[41]</sup></p>
 
-      <p class="mb-4 text-lg leading-relaxed text-gray-800">$1T</p>
-
-      <p class="mb-4 text-lg leading-relaxed text-gray-800">38GW</p>
-
-      <p class="mb-4 text-lg leading-relaxed text-gray-800">PICO DE POTÊNCIA</p>
-
-      <p class="mb-4 text-lg leading-relaxed text-gray-800">$45B</p>
-
-      <p class="mb-4 text-lg leading-relaxed text-gray-800">ANUAL 2026</p>
-
-      <p class="mb-4 text-lg leading-relaxed text-gray-800">$200B</p>
-
-      <p class="mb-4 text-lg leading-relaxed text-gray-800">2<sup class="text-xs text-indigo-600 font-bold ml-0.5">[5]</sup>%</p>
-
-      <p class="mb-4 text-lg leading-relaxed text-gray-800">33 GW DE 1,34TW DE CAPACIDADE</p>
-
-      <p class="mb-4 text-lg leading-relaxed text-gray-800">$40B</p>
-
-      <p class="mb-4 text-lg leading-relaxed text-gray-800">ANUAL 2026</p>
-
-      <p class="mb-4 text-lg leading-relaxed text-gray-800">6GW</p>
-
-      <p class="mb-4 text-lg leading-relaxed text-gray-800">PICO DE POTÊNCIA</p>
 
       <details class="group my-8 border border-slate-200 rounded-xl bg-slate-50 overflow-hidden transition-all duration-300 shadow-sm">
         <summary class="cursor-pointer p-5 font-semibold text-slate-900 hover:bg-slate-100 flex items-center justify-between transition-colors">
@@ -317,87 +282,22 @@ export const mainTimeline: NarrativeSection[] = [
 
       <p class="mb-4 text-lg leading-relaxed text-gray-800">O novo sistema de IA, incorporando esses avanços, é chamado de Agent-3.</p>
 
-      <p class="mb-4 text-lg leading-relaxed text-gray-800">2024</p>
-
-      <p class="mb-4 text-lg leading-relaxed text-gray-800">2027</p>
-
-      <p class="mb-4 text-lg leading-relaxed text-gray-800">estimativa</p>
-
-      <p class="mb-4 text-lg leading-relaxed text-gray-800">projeção</p>
-
-      <p class="mb-4 text-lg leading-relaxed text-gray-800">Treinamento</p>
-
-      <p class="mb-4 text-lg leading-relaxed text-gray-800">Externo</p>
-
-      <p class="mb-4 text-lg leading-relaxed text-gray-800">Implantação</p>
-
-      <p class="mb-4 text-lg leading-relaxed text-gray-800">experimentos</p>
-
-      <p class="mb-4 text-lg leading-relaxed text-gray-800">Executando IA</p>
-
-      <p class="mb-4 text-lg leading-relaxed text-gray-800">assistentes</p>
-
-      <p class="mb-4 text-lg leading-relaxed text-gray-800">Treinamento</p>
-
-      <p class="mb-4 text-lg leading-relaxed text-gray-800">Geração de</p>
-
-      <p class="mb-4 text-lg leading-relaxed text-gray-800">dados</p>
-
-      <p class="mb-4 text-lg leading-relaxed text-gray-800">Externo</p>
-
-      <p class="mb-4 text-lg leading-relaxed text-gray-800">Implantação</p>
-
       <details class="group my-8 border border-indigo-200 rounded-xl bg-indigo-50 overflow-hidden transition-all duration-300 shadow-sm">
         <summary class="cursor-pointer p-5 font-semibold text-indigo-900 hover:bg-indigo-100 flex items-center justify-between transition-colors">
           <span>🧠 Recorrência e memória em neuralês</span>
           <svg class="w-5 h-5 transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
         </summary>
         <div class="p-5 text-sm text-indigo-900 space-y-3 border-t border-indigo-200">
-          
-        </div>
-      </details>
-
-      <details class="group my-8 border border-indigo-200 rounded-xl bg-indigo-50 overflow-hidden transition-all duration-300 shadow-sm">
-        <summary class="cursor-pointer p-5 font-semibold text-indigo-900 hover:bg-indigo-100 flex items-center justify-between transition-colors">
-          <span>🧠 A recorrência e memória em neuralês permitem que os modelos de IA raciocinem por mais tempo sem precisar registrar esses pensamentos como texto.</span>
-          <svg class="w-5 h-5 transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-        </summary>
-        <div class="p-5 text-sm text-indigo-900 space-y-3 border-t border-indigo-200">
           <p>Imagine ser um humano com perda de memória de curto prazo, de modo que você precise escrever constantemente seus pensamentos em papel para que, em alguns minutos, saiba o que está acontecendo. Lentamente e com dificuldade você poderia avançar na resolução de problemas matemáticos, escrita de código etc., mas seria muito mais fácil se pudesse lembrar diretamente de seus pensamentos sem precisar escrevê-los e depois relê-los. É isso que a recorrência e memória em neuralês trazem para os modelos de IA.</p>
+          <p>Os mecanismos de atenção tradicionais permitem que passagens diretas posteriores em um modelo vejam ativações intermediárias do modelo para tokens anteriores. No entanto, a única informação que podem passar para trás (das camadas posteriores para as anteriores) é por meio de tokens. Isso significa que se um grande modelo de linguagem tradicional (LLM, como a série GPT de modelos) quiser realizar qualquer cadeia de raciocínio que exija mais operações seriais do que o número de camadas no modelo, ele é forçado a colocar informações em tokens que pode então passar de volta para si mesmo. Mas isso é extremamente limitante — os tokens só podem armazenar uma quantidade minúscula de informação. Com um vocabulário de ~100.000, cada token contém log₂(100k) ≈ 16,6 bits de informação, em torno do tamanho de um único número de ponto flutuante (assumindo treinamento em FP16). Enquanto isso, os fluxos residuais — usados para passar informações entre camadas em um LLM — contêm milhares de números de ponto flutuante.</p>
+          <p>Pode-se evitar esse gargalo usando neuralês: passando o fluxo residual de um LLM (que consiste em vetores de várias milhares de dimensões) de volta para as camadas iniciais do modelo, dando a ele uma cadeia de pensamento de alta dimensionalidade, potencialmente transmitindo mais de 1.000 vezes mais informação.</p>
+          <p>Chamamos isso de "neuralês" porque, ao contrário das palavras em inglês, esses vetores de alta dimensionalidade provavelmente são bastante difíceis de interpretar para humanos. No passado, os pesquisadores podiam ter uma boa ideia do que os LLMs estavam pensando simplesmente lendo sua cadeia de pensamento. Agora os pesquisadores precisam pedir ao modelo que traduza e resuma seus pensamentos, ou tentar decifrar o neuralês com suas ferramentas de interpretabilidade limitadas.</p>
+          <p>Da mesma forma, os chatbots e agentes de IA mais antigos tinham bancos de memória externos baseados em texto, como um humano fazendo anotações em papel. A memória de longo prazo da nova IA é um conjunto de vetores em vez de texto, tornando seus pensamentos mais comprimidos e de maior dimensionalidade. Existem vários tipos de bancos de memória; alguns são usados temporariamente para tarefas únicas que envolvem múltiplas etapas, outros são compartilhados entre todos os agentes usados por uma pessoa, empresa ou tipo de trabalho (como programação).</p>
+          <p>Até onde sabemos, as principais empresas de IA como Meta, Google DeepMind, OpenAI e Anthropic ainda não implementaram essa ideia em seus modelos de fronteira. Nossa suposição é que isso se deve ao fato de o ganho de desempenho ser pequeno em relação às ineficiências de treinamento introduzidas. Estamos prevendo que até abril de 2027, a relação custo-benefício pareça muito melhor para o neuralês, devido ao desenvolvimento de técnicas melhores e a uma maior fração do treinamento sendo pós-treinamento.</p>
+          <p>Se isso não acontecer, outras coisas ainda podem ocorrer que acabem sendo funcionalmente semelhantes para nossa história. Por exemplo, talvez os modelos sejam treinados para pensar em linguagens artificiais que são mais eficientes do que a linguagem natural, mas difíceis de interpretar para humanos.</p>
+          <p>Dito isso, também é possível que as IAs que primeiro automatizem o P&D de IA ainda estejam pensando em cadeias de pensamento em inglês majoritariamente fiéis. Se for assim, isso tornará os desalinhamentos muito mais fáceis de notar, e no geral nossa história seria significativamente diferente e mais otimista.</p>
         </div>
       </details>
-
-      <p class="mb-4 text-lg leading-relaxed text-gray-800">Os mecanismos de atenção tradicionais permitem que passagens diretas posteriores em um modelo vejam ativações intermediárias do modelo para tokens anteriores. No entanto, a única informação que podem passar para trás (das camadas posteriores para as anteriores) é por meio de tokens. Isso significa que se um grande modelo de linguagem tradicional (LLM, como a série GPT de modelos) quiser realizar qualquer cadeia de raciocínio que exija mais operações seriais do que o número de camadas no modelo, ele é forçado a colocar informações em tokens que pode então passar de volta para si mesmo. Mas isso é extremamente limitante — os tokens só podem armazenar uma quantidade minúscula de informação. Suponha que um LLM tenha um tamanho de vocabulário de ~100.000, então cada token contém</p>
-
-      <p class="mb-4 text-lg leading-relaxed text-gray-800">log</p>
-
-      <p class="mb-4 text-lg leading-relaxed text-gray-800">⁡</p>
-
-      <p class="mb-4 text-lg leading-relaxed text-gray-800">(</p>
-
-      <p class="mb-4 text-lg leading-relaxed text-gray-800">k</p>
-
-      <p class="mb-4 text-lg leading-relaxed text-gray-800">)</p>
-
-      <p class="mb-4 text-lg leading-relaxed text-gray-800">=</p>
-
-      <p class="mb-4 text-lg leading-relaxed text-gray-800">16<sup class="text-xs text-indigo-600 font-bold ml-0.5">[6]</sup></p>
-
-      <p class="mb-4 text-lg leading-relaxed text-gray-800">log(100k)=16<sup class="text-xs text-indigo-600 font-bold ml-0.5">[6]</sup> bits de informação, em torno do tamanho de um único número de ponto flutuante (assumindo treinamento em FP16). Enquanto isso, os fluxos residuais — usados para passar informações entre camadas em um LLM — contêm milhares de números de ponto flutuante.</p>
-
-      <p class="mb-4 text-lg leading-relaxed text-gray-800">Pode-se evitar esse gargalo usando neuralês: passando o fluxo residual de um LLM (que consiste em vetores de várias milhares de dimensões) de volta para as camadas iniciais do modelo, dando a ele uma cadeia de pensamento de alta dimensionalidade, potencialmente transmitindo mais de 1.000 vezes mais informação.</p>
-
-      <p class="mb-4 text-lg leading-relaxed text-gray-800">Figura de Hao et al., um artigo de 2024 da Meta implementando essa ideia.</p>
-
-      <p class="mb-4 text-lg leading-relaxed text-gray-800">Chamamos isso de "neuralês" porque, ao contrário das palavras em inglês, esses vetores de alta dimensionalidade provavelmente são bastante difíceis de interpretar para humanos. No passado, os pesquisadores podiam ter uma boa ideia do que os LLMs estavam pensando simplesmente lendo sua cadeia de pensamento. Agora os pesquisadores precisam pedir ao modelo que traduza e resuma seus pensamentos, ou tentar decifrar o neuralês com suas ferramentas de interpretabilidade limitadas.</p>
-
-      <p class="mb-4 text-lg leading-relaxed text-gray-800">Da mesma forma, os chatbots e agentes de IA mais antigos tinham bancos de memória externos baseados em texto, como um humano fazendo anotações em papel. A memória de longo prazo da nova IA é um conjunto de vetores em vez de texto, tornando seus pensamentos mais comprimidos e de maior dimensionalidade. Existem vários tipos de bancos de memória; alguns são usados temporariamente para tarefas únicas que envolvem múltiplas etapas, outros são compartilhados entre todos os agentes usados por uma pessoa, empresa ou tipo de trabalho (como programação).</p>
-
-      <p class="mb-4 text-lg leading-relaxed text-gray-800">Até onde sabemos, as principais empresas de IA como Meta, Google DeepMind, OpenAI e Anthropic ainda não implementaram essa ideia em seus modelos de fronteira. Nossa suposição é que isso se deve ao fato de o ganho de desempenho ser pequeno em relação às ineficiências de treinamento introduzidas. Durante a fase de pré-treinamento do modelo e ao realizar aprendizado supervisionado no pós-treinamento, como o ajuste fino por instruções para produzir respostas particulares, as ineficiências decorrem de não poder prever muitos tokens em paralelo, levando a uma pior utilização das GPUs. Sem o neuralês, o modelo pode prever toda a frase "Este é um exemplo" ao mesmo tempo, pois já sabe que a entrada para gerar "é" será "Este", a entrada para "um" será "Este é", etc. No entanto, com o neuralês não se sabe qual será o vetor de neuralês a passar para o próximo token depois que "Este" for gerado. Portanto, cada token precisa ser previsto um de cada vez. A incapacidade de prever todos os tokens em paralelo reduz a eficiência nos casos em que todos os tokens são conhecidos de antemão. Quanto ao motivo pelo qual o neuralês ainda não foi adicionado no pós-treinamento, conjecturamos que os ganhos são limitados com as técnicas atuais em parte devido ao pós-treinamento representar uma pequena fração do processo. Estamos prevendo que até abril de 2027, a relação custo-benefício pareça muito melhor para o neuralês, devido ao desenvolvimento de técnicas melhores e a uma maior fração do treinamento sendo pós-treinamento.</p>
-
-      <p class="mb-4 text-lg leading-relaxed text-gray-800">Se isso não acontecer, outras coisas ainda podem ocorrer que acabem sendo funcionalmente semelhantes para nossa história. Por exemplo, talvez os modelos sejam treinados para pensar em linguagens artificiais que são mais eficientes do que a linguagem natural, mas difíceis de interpretar para humanos. Ou talvez se torne prática padrão treinar as cadeias de pensamento em inglês para parecerem agradáveis, de modo que as IAs se tornem hábeis em se comunicar sutilmente umas com as outras em mensagens que parecem inofensivas aos monitores.</p>
-
-      <p class="mb-4 text-lg leading-relaxed text-gray-800">Dito isso, também é possível que as IAs que primeiro automatizem o P&D de IA ainda estejam pensando em cadeias de pensamento em inglês majoritariamente fiéis. Se for assim, isso tornará os desalinhamentos muito mais fáceis de notar, e no geral nossa história seria significativamente diferente e mais otimista.</p>
 
       <details class="group my-8 border border-indigo-200 rounded-xl bg-indigo-50 overflow-hidden transition-all duration-300 shadow-sm">
         <summary class="cursor-pointer p-5 font-semibold text-indigo-900 hover:bg-indigo-100 flex items-center justify-between transition-colors">
@@ -517,29 +417,6 @@ export const mainTimeline: NarrativeSection[] = [
 
       <p class="mb-4 text-lg leading-relaxed text-gray-800">Dentro do silo, "Sentindo a AGI" cedeu lugar a "Sentindo a Superinteligência."</p>
 
-      <p class="mb-4 text-lg leading-relaxed text-gray-800">Mar 2027</p>
-
-      <p class="mb-4 text-lg leading-relaxed text-gray-800">Set 2027</p>
-
-      <p class="mb-4 text-lg leading-relaxed text-gray-800">1.000</p>
-
-      <p class="mb-4 text-lg leading-relaxed text-gray-800">10.000</p>
-
-      <p class="mb-4 text-lg leading-relaxed text-gray-800">10K</p>
-
-      <p class="mb-4 text-lg leading-relaxed text-gray-800">100K</p>
-
-      <p class="mb-4 text-lg leading-relaxed text-gray-800">1M</p>
-
-      <p class="mb-4 text-lg leading-relaxed text-gray-800">10M</p>
-
-      <p class="mb-4 text-lg leading-relaxed text-gray-800">200K cópias a 30x a velocidade humana</p>
-
-      <p class="mb-4 text-lg leading-relaxed text-gray-800">300K cópias a 50x a velocidade humana</p>
-
-      <p class="mb-4 text-lg leading-relaxed text-gray-800">10x a velocidade de pensamento humano</p>
-
-      <p class="mb-4 text-lg leading-relaxed text-gray-800">100x a velocidade de pensamento humano</p>
 
       <p class="mb-4 text-lg leading-relaxed text-gray-800">A OpenBrain usa hardware de inferência especializado para executar centenas de milhares de cópias do Agent-3 em altas velocidades seriais.<sup class="text-xs text-indigo-600 font-bold ml-0.5">[65]</sup></p>
 
@@ -827,66 +704,9 @@ export const mainTimeline: NarrativeSection[] = [
         <div class="p-5 text-sm text-slate-900 space-y-3 border-t border-slate-200">
           <p>Depois de escrever o final da corrida com base no que nos pareceu mais plausível, escrevemos o final da desaceleração com base no que achávamos que mais provavelmente levaria a um resultado em que os humanos permanecem no controle, a partir do mesmo ponto de ramificação (incluindo os problemas de desalinhamento e concentração de poder).</p>
           <p>No entanto, isso é fundamentalmente diferente do que recomendaríamos como roteiro: não endossamos muitas das escolhas feitas em nenhum dos ramos deste cenário. (É claro que endossamos algumas das escolhas feitas, por exemplo, achamos que a escolha da "desaceleração" é melhor do que a escolha da "corrida".) Em trabalhos futuros, articularemos nossas recomendações de política, que serão bem diferentes do que é retratado aqui. Se quiser uma amostra, veja este artigo de opinião.</p>
-          <p>Out</p>
-          <p>2027</p>
         </div>
       </details>
 
-      <p class="mb-4 text-lg leading-relaxed text-gray-800">Abr 2026</p>
-
-      <p class="mb-4 text-lg leading-relaxed text-gray-800">Mar 2027</p>
-
-      <p class="mb-4 text-lg leading-relaxed text-gray-800">Ago 2027</p>
-
-      <p class="mb-4 text-lg leading-relaxed text-gray-800">Computação</p>
-
-      <p class="mb-4 text-lg leading-relaxed text-gray-800">Aprovação</p>
-
-      <p class="mb-4 text-lg leading-relaxed text-gray-800">-39%</p>
-
-      <p class="mb-4 text-lg leading-relaxed text-gray-800">Receita</p>
-
-      <p class="mb-4 text-lg leading-relaxed text-gray-800">$191B</p>
-
-      <p class="mb-4 text-lg leading-relaxed text-gray-800">/ano</p>
-
-      <p class="mb-4 text-lg leading-relaxed text-gray-800">Avaliação</p>
-
-      <p class="mb-4 text-lg leading-relaxed text-gray-800">$8T</p>
-
-      <p class="mb-4 text-lg leading-relaxed text-gray-800">Importância</p>
-
-      <p class="mb-4 text-lg leading-relaxed text-gray-800">20%</p>
-
-      <p class="mb-4 text-lg leading-relaxed text-gray-800">$918B</p>
-
-      <p class="mb-4 text-lg leading-relaxed text-gray-800">/ano</p>
-
-      <p class="mb-4 text-lg leading-relaxed text-gray-800">Cronograma</p>
-
-      <p class="mb-4 text-lg leading-relaxed text-gray-800">2031</p>
-
-      <p class="mb-4 text-lg leading-relaxed text-gray-800">330 mil cópias de Pesquisador de IA Super-humano pensando a 57x a velocidade humana</p>
-
-      <p class="mb-4 text-lg leading-relaxed text-gray-800">Hacking</p>
-
-      <p class="mb-4 text-lg leading-relaxed text-gray-800">Codificação</p>
-
-      <p class="mb-4 text-lg leading-relaxed text-gray-800">Política</p>
-
-      <p class="mb-4 text-lg leading-relaxed text-gray-800">Bioarmas</p>
-
-      <p class="mb-4 text-lg leading-relaxed text-gray-800">Robótica</p>
-
-      <p class="mb-4 text-lg leading-relaxed text-gray-800">Previsão</p>
-
-      <p class="mb-4 text-lg leading-relaxed text-gray-800">Ouça este cenário</p>
-
-      <p class="mb-4 text-lg leading-relaxed text-gray-800">1x</p>
-
-      <p class="mb-4 text-lg leading-relaxed text-gray-800">0:00 / 117:49</p>
-
-      <p class="mb-4 text-lg leading-relaxed text-gray-800">também disponível em</p>
     `,
     chartExtra: { date: "2027-10-31", capabilities: [["Hacking", 3.43], ["Codificação", 3.81], ["Enganação", 3.5]], approval: -0.39, revenue: 190606731531, capex: 918385902168, power: "110 GW", agentPopulation: { copies: 330000, speed: 5.7 } }
   }

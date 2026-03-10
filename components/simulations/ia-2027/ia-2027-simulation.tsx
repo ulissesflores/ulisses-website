@@ -1,6 +1,6 @@
 'use client';
 
-import { memo, useEffect, useMemo, useState } from 'react';
+import { memo, useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { useScrollSpy } from '@/components/simulations/ia-2027/use-scroll-spy';
@@ -123,60 +123,87 @@ function resolveCapabilities(value: unknown): [string, number][] {
     .map(([label, score]) => [label, score]);
 }
 
+const compactNumber = new Intl.NumberFormat('pt-BR', {
+  notation: 'compact',
+  compactDisplay: 'short',
+  maximumFractionDigits: 0,
+});
+
 function SimulationMetricsSidebar({ chart }: { chart: SimulationChartExtra }) {
   const revenue = resolveNumber(chart.revenue);
   const approval = resolveNumber(chart.approval);
+  const capex = resolveNumber(chart.capex as number);
+  const power = chart.power as string | undefined;
   const capabilities = resolveCapabilities(chart.capabilities);
   const maxCapability = Math.max(1, ...capabilities.map(([, value]) => value));
   const approvalClass = approval < 0 ? 'text-red-400' : 'text-emerald-400';
 
   return (
-    <div className='bg-neutral-900/60 p-6 rounded-2xl border border-neutral-800 flex flex-col gap-6 mt-10'>
+    <div className='bg-neutral-900/60 p-6 rounded-2xl border border-neutral-800 flex flex-col gap-5 mt-10'>
       <div className='flex justify-between items-start gap-4'>
-        <h3 className='text-xl font-bold uppercase tracking-tight text-white'>Indicadores</h3>
+        <h3 className='text-lg font-bold uppercase tracking-tight text-white'>Indicadores</h3>
         <span className='text-xs font-mono text-neutral-500 uppercase'>{formatDate(chart.date)}</span>
       </div>
 
-      <div className='rounded-xl p-4 bg-emerald-600/15 border border-emerald-500/25'>
-        <div className='text-[10px] uppercase text-emerald-400/80 mb-1'>Receita</div>
-        <div className='text-3xl font-bold text-emerald-300'>{currencyFormatter.format(revenue)}</div>
+      <div className='grid grid-cols-2 gap-3'>
+        <div className='rounded-xl p-3 bg-emerald-600/15 border border-emerald-500/25'>
+          <div className='text-[10px] uppercase text-emerald-400/80 mb-1'>Receita</div>
+          <div className='text-xl font-bold text-emerald-300'>{currencyFormatter.format(revenue)}</div>
+        </div>
+
+        <div className='rounded-xl p-3 bg-neutral-800/60 border border-neutral-700'>
+          <div className='text-[10px] uppercase text-neutral-500 mb-1'>Aprovação</div>
+          <div className={`text-xl font-bold ${approvalClass}`}>{percentFormatter.format(approval)}</div>
+        </div>
       </div>
 
-      <div className='rounded-xl p-4 bg-neutral-800/60 border border-neutral-700'>
-        <div className='text-[10px] uppercase text-neutral-500 mb-1'>Aprovação Pública</div>
-        <div className={`text-3xl font-bold ${approvalClass}`}>{percentFormatter.format(approval)}</div>
-      </div>
+      {(capex > 0 || power) ? (
+        <div className='grid grid-cols-2 gap-3'>
+          {capex > 0 ? (
+            <div className='rounded-xl p-3 bg-neutral-800/60 border border-neutral-700'>
+              <div className='text-[10px] uppercase text-neutral-500 mb-1'>Capex</div>
+              <div className='text-xl font-bold text-white'>{currencyFormatter.format(capex)}</div>
+            </div>
+          ) : null}
+          {power ? (
+            <div className='rounded-xl p-3 bg-neutral-800/60 border border-neutral-700'>
+              <div className='text-[10px] uppercase text-neutral-500 mb-1'>Pico Potência</div>
+              <div className='text-xl font-bold text-white'>{power}</div>
+            </div>
+          ) : null}
+        </div>
+      ) : null}
 
       {chart.agentPopulation ? (
-        <div className='rounded-xl p-4 bg-neutral-800/60 border border-neutral-700'>
+        <div className='rounded-xl p-3 bg-neutral-800/60 border border-neutral-700'>
           <div className='text-[10px] uppercase text-neutral-500 mb-2'>População de Agentes</div>
           <div className='flex items-end justify-between gap-3'>
             <div>
-              <div className='text-2xl font-bold text-white'>{chart.agentPopulation.copies.toLocaleString('pt-BR')}</div>
-              <div className='text-xs text-neutral-500 uppercase'>cópias ativas</div>
+              <div className='text-lg font-bold text-white'>{compactNumber.format(chart.agentPopulation.copies)}</div>
+              <div className='text-[10px] text-neutral-500 uppercase'>cópias ativas</div>
             </div>
             <div className='text-right'>
-              <div className='text-xl font-bold text-white'>{chart.agentPopulation.speed}x</div>
-              <div className='text-xs text-neutral-500 uppercase'>velocidade</div>
+              <div className='text-lg font-bold text-white'>{chart.agentPopulation.speed}×</div>
+              <div className='text-[10px] text-neutral-500 uppercase'>velocidade</div>
             </div>
           </div>
         </div>
       ) : null}
 
-      <div className='mt-2'>
-        <div className='text-[12px] uppercase font-mono text-neutral-400 mb-3'>Capacidades</div>
+      <div>
+        <div className='text-[11px] uppercase font-mono text-neutral-400 mb-2'>Capacidades</div>
         {capabilities.length === 0 ? (
           <p className='text-sm text-neutral-500'>Sem dados de capacidades para este período.</p>
         ) : (
-          <div className='flex flex-col gap-2'>
+          <div className='flex flex-col gap-1.5'>
             {capabilities.map(([label, value]) => {
               const width = Math.max(6, Math.min(100, (value / maxCapability) * 100));
               return (
-                <div key={label} className='w-full bg-neutral-800 h-6 rounded-md relative overflow-hidden border border-neutral-700'>
+                <div key={label} className='w-full bg-neutral-800 h-5 rounded-md relative overflow-hidden border border-neutral-700'>
                   <div className='bg-emerald-500/70 h-full transition-all duration-500' style={{ width: `${width}%` }} />
-                  <span className='absolute inset-0 flex items-center justify-between px-2 text-[10px] text-neutral-200 font-mono'>
+                  <span className='absolute inset-0 flex items-center justify-between px-2 text-[9px] text-neutral-200 font-mono'>
                     <span>{label}</span>
-                    <span>{value.toFixed(2)}x</span>
+                    <span>{value.toFixed(1)}×</span>
                   </span>
                 </div>
               );
@@ -188,6 +215,58 @@ function SimulationMetricsSidebar({ chart }: { chart: SimulationChartExtra }) {
   );
 }
 
+function FootnoteTooltipHandler({ containerRef, path }: { containerRef: React.RefObject<HTMLDivElement | null>; path: SimulationPath }) {
+  const tooltipRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    const container = containerRef.current;
+    if (!container) return;
+
+    const showTooltip = (e: Event) => {
+      const target = (e.target as HTMLElement).closest?.(`a[href^="#fn-${path}-"]`) as HTMLAnchorElement | null;
+      if (!target) return;
+
+      const match = target.href.match(/#fn-\w+-(\d+)$/);
+      if (!match) return;
+      const num = Number(match[1]);
+      const footnote = (footnotesData as Footnote[]).find((f) => f.context === path && f.num === num);
+      if (!footnote) return;
+
+      if (tooltipRef.current) {
+        tooltipRef.current.remove();
+      }
+
+      const tooltip = document.createElement('div');
+      tooltip.className = 'ia2027-footnote-tooltip';
+      const tempDiv = document.createElement('div');
+      tempDiv.innerHTML = footnote.html;
+      tooltip.textContent = tempDiv.textContent?.replace(/\s*↩\s*$/, '') ?? '';
+      tooltipRef.current = tooltip;
+
+      const sup = target.closest('sup') ?? target;
+      sup.style.position = 'relative';
+      sup.appendChild(tooltip);
+    };
+
+    const hideTooltip = () => {
+      if (tooltipRef.current) {
+        tooltipRef.current.remove();
+        tooltipRef.current = null;
+      }
+    };
+
+    container.addEventListener('mouseover', showTooltip);
+    container.addEventListener('mouseout', hideTooltip);
+    return () => {
+      container.removeEventListener('mouseover', showTooltip);
+      container.removeEventListener('mouseout', hideTooltip);
+      hideTooltip();
+    };
+  }, [containerRef, path]);
+
+  return null;
+}
+
 const NarrativeSectionArticle = memo(function NarrativeSectionArticle({
   section,
   index,
@@ -197,6 +276,8 @@ const NarrativeSectionArticle = memo(function NarrativeSectionArticle({
   index: number;
   path: SimulationPath;
 }) {
+  const containerRef = useRef<HTMLDivElement>(null);
+
   return (
     <motion.article
       id={section.id}
@@ -211,9 +292,11 @@ const NarrativeSectionArticle = memo(function NarrativeSectionArticle({
       <p className='text-xs font-mono uppercase tracking-[0.18em] text-emerald-400 mb-2'>{section.navLabel}</p>
       <h2 className='text-3xl font-bold mb-4 text-white'>{section.title}</h2>
       <div
+        ref={containerRef}
         className='ia2027-story text-[1.05rem] leading-relaxed'
         dangerouslySetInnerHTML={{ __html: section.storyHtml }}
       />
+      <FootnoteTooltipHandler containerRef={containerRef} path={path} />
     </motion.article>
   );
 });
@@ -240,7 +323,7 @@ function BranchDecisionBlock({
             className='rounded-2xl border-2 border-neutral-700 bg-neutral-900 text-white px-6 py-8 text-left hover:bg-neutral-800 hover:border-emerald-500/50 transition-colors'
           >
             <span className='block text-xs uppercase font-mono tracking-[0.2em] mb-2 text-emerald-400'>Slowdown</span>
-            <span className='block text-3xl font-black'>Puxar o Freio</span>
+            <span className='block text-3xl font-black'>Desaceleração Coordenada</span>
             <span className='block text-sm mt-2 text-neutral-400'>Priorizar segurança, verificabilidade e coordenação institucional.</span>
           </button>
 
@@ -250,7 +333,7 @@ function BranchDecisionBlock({
             className='rounded-2xl border-2 border-red-500/30 bg-red-950/30 text-white px-6 py-8 text-left hover:bg-red-900/30 hover:border-red-500/50 transition-colors'
           >
             <span className='block text-xs uppercase font-mono tracking-[0.2em] mb-2 text-red-400'>Race</span>
-            <span className='block text-3xl font-black'>Acelerar a Carroça</span>
+            <span className='block text-3xl font-black'>Corrida Estratégica</span>
             <span className='block text-sm mt-2 text-red-300/70'>Maximizar velocidade e vantagem estratégica sob risco sistêmico elevado.</span>
           </button>
         </div>
@@ -279,7 +362,7 @@ function BranchDecisionBlock({
               : 'border-neutral-700 bg-neutral-900 text-neutral-200 hover:bg-neutral-800'
           }`}
         >
-          Puxar o Freio
+          Desaceleração Coordenada
         </button>
         <button
           type='button'
@@ -290,7 +373,7 @@ function BranchDecisionBlock({
               : 'border-neutral-700 bg-neutral-900 text-neutral-200 hover:bg-neutral-800'
           }`}
         >
-          Acelerar a Carroça
+          Corrida Estratégica
         </button>
       </div>
     </section>
@@ -363,13 +446,19 @@ export function IA2027Simulation({ initialPath }: { initialPath?: SimulationPath
 
   const currentChart = activeChart ?? config.initialChart;
 
-  const handleSelectPath = (nextPath: SimulationPath) => {
+  const handleSelectPath = useCallback((nextPath: SimulationPath) => {
     if (nextPath === activePath) {
       return;
     }
     setActivePath(nextPath);
-    window.scrollTo(0, 0);
-  };
+    // Scroll to the simulation container, not page top
+    requestAnimationFrame(() => {
+      const el = document.getElementById('simulacao');
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+  }, [activePath]);
 
   return (
     <div id='simulacao' className='min-h-screen bg-neutral-950 text-neutral-200 font-sans pt-4'>
