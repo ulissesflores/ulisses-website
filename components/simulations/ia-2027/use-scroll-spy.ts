@@ -16,6 +16,7 @@ type UseScrollSpyOptions = {
 type UseScrollSpyResult = {
   activeSectionId: string | null;
   activeChart: SimulationChartExtra | null;
+  chartHistory: SimulationChartExtra[];
 };
 
 function isSimulationChartExtra(value: unknown): value is SimulationChartExtra {
@@ -56,6 +57,7 @@ export function useScrollSpy(options: UseScrollSpyOptions = {}): UseScrollSpyRes
 
   const [activeSectionId, setActiveSectionId] = useState<string | null>(initialSectionId ?? null);
   const [activeChart, setActiveChart] = useState<SimulationChartExtra | null>(initialChart ?? null);
+  const [chartHistory, setChartHistory] = useState<SimulationChartExtra[]>(initialChart ? [initialChart] : []);
   const activeSectionIdRef = useRef<string | null>(initialSectionId ?? null);
   const activeChartRawRef = useRef<string | null>(initialChart ? JSON.stringify(initialChart) : null);
 
@@ -91,6 +93,18 @@ export function useScrollSpy(options: UseScrollSpyOptions = {}): UseScrollSpyRes
       if (parsed) {
         activeChartRawRef.current = rawChartExtra;
         setActiveChart(parsed);
+        // Accumulate chart history: keep all charts up to and including current date
+        setChartHistory((prev) => {
+          const currentDate = parsed.date;
+          // Remove future data points (user scrolled backwards)
+          const trimmed = prev.filter((c) => c.date <= currentDate);
+          // Add current if not already present
+          if (!trimmed.some((c) => c.date === currentDate)) {
+            trimmed.push(parsed);
+          }
+          // Sort chronologically and deduplicate
+          return trimmed.sort((a, b) => a.date.localeCompare(b.date));
+        });
       }
     };
 
@@ -148,5 +162,6 @@ export function useScrollSpy(options: UseScrollSpyOptions = {}): UseScrollSpyRes
   return {
     activeSectionId,
     activeChart,
+    chartHistory,
   };
 }

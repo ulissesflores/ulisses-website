@@ -79,31 +79,33 @@ body {
   text-decoration: underline;
 }
 
-/* Footnote tooltip */
-.ia2027-footnote-tooltip {
-  position: absolute;
-  z-index: 50;
-  max-width: 400px;
-  padding: 0.75rem 1rem;
-  background: #1a1a1a;
+/* Footnote tooltip — fixed position, viewport-aware */
+.ia2027-footnote-tooltip-fixed {
+  padding: 1rem 1.25rem;
+  background: #171717;
   border: 1px solid #404040;
-  border-radius: 0.5rem;
-  color: #a3a3a3;
-  font-size: 0.8rem;
-  line-height: 1.5;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+  border-radius: 0.75rem;
+  color: #d4d4d4;
+  font-size: 0.85rem;
+  line-height: 1.65;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.6);
   pointer-events: none;
-  bottom: calc(100% + 6px);
-  left: 50%;
-  transform: translateX(-50%);
   white-space: normal;
 }
-.ia2027-footnote-tooltip::after {
-  content: "";
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  transform: translateX(-50%);
-  border: 5px solid transparent;
-  border-top-color: #404040;
+
+/* Sim callout block */
+.sim-callout {
+  border-left: 3px solid #10b981;
+  background: rgba(23, 23, 23, 0.6);
+  padding: 1rem 1.5rem;
+  margin: 1.5rem 0;
+  border-radius: 0 0.5rem 0.5rem 0;
+}
+
+/* Section divider */
+.sim-divider {
+  height: 1px;
+  width: 8rem;
+  margin: 0 auto;
+  background: linear-gradient(to right, transparent, rgba(52, 211, 153, 0.4), transparent);
 }
