@@ -26,3 +26,37 @@ body {
   color: var(--foreground);
   font-family: var(--font-sans);
 }
+
+/* IA 2027 storyHtml overrides — inline HTML uses light-theme classes, so we override them */
+.ia2027-story p {
+  color: #d4d4d4 !important;
+  margin-bottom: 1rem;
+}
+.ia2027-story details {
+  background: rgba(23, 23, 23, 0.6) !important;
+  border-color: #404040 !important;
+  border-radius: 0.75rem;
+  padding: 1rem;
+  margin: 1.5rem 0;
+}
+.ia2027-story summary {
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.875rem;
+  color: #e5e5e5 !important;
+}
+.ia2027-story details p {
+  color: #a3a3a3 !important;
+  font-size: 0.95rem;
+  margin-top: 0.75rem;
+}
+.ia2027-story sup a,
+.ia2027-story sup {
+  color: #34d399 !important;
+}
+.ia2027-story a {
+  color: #34d399;
+}
+.ia2027-story a:hover {
+  text-decoration: underline;
+}

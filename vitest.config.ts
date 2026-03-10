@@ -9,6 +9,6 @@ export default defineConfig({
   },
   test: {
     include: ['**/*.test.ts', '**/*.test.mts', '**/*.test.mjs'],
-    exclude: ['node_modules', '.next', 'public'],
+    exclude: ['node_modules', '.next', 'public', '.claude'],
   },
 });

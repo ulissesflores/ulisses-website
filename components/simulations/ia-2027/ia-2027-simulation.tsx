@@ -30,7 +30,7 @@ const FALLBACK_CHART: SimulationChartExtra = {
 
 const currencyFormatter = new Intl.NumberFormat('pt-BR', {
   style: 'currency',
-  currency: 'BRL',
+  currency: 'USD',
   notation: 'compact',
   compactDisplay: 'short',
   maximumFractionDigits: 1,
@@ -128,53 +128,53 @@ function SimulationMetricsSidebar({ chart }: { chart: SimulationChartExtra }) {
   const approval = resolveNumber(chart.approval);
   const capabilities = resolveCapabilities(chart.capabilities);
   const maxCapability = Math.max(1, ...capabilities.map(([, value]) => value));
-  const approvalClass = approval < 0 ? 'text-red-600' : 'text-emerald-700';
+  const approvalClass = approval < 0 ? 'text-red-400' : 'text-emerald-400';
 
   return (
-    <div className='bg-gray-50 p-6 rounded-xl border border-black flex flex-col gap-6 mt-10'>
+    <div className='bg-neutral-900/60 p-6 rounded-2xl border border-neutral-800 flex flex-col gap-6 mt-10'>
       <div className='flex justify-between items-start gap-4'>
-        <h3 className='text-2xl font-bold font-sans uppercase tracking-tight text-right'>Indicadores</h3>
-        <span className='text-xs font-mono text-gray-500 uppercase'>{formatDate(chart.date)}</span>
+        <h3 className='text-xl font-bold uppercase tracking-tight text-white'>Indicadores</h3>
+        <span className='text-xs font-mono text-neutral-500 uppercase'>{formatDate(chart.date)}</span>
       </div>
 
-      <div className='border border-black rounded-md p-4 bg-blue-700 text-white'>
-        <div className='text-[10px] uppercase opacity-85 mb-1'>Receita</div>
-        <div className='text-3xl font-bold'>{currencyFormatter.format(revenue)}</div>
+      <div className='rounded-xl p-4 bg-emerald-600/15 border border-emerald-500/25'>
+        <div className='text-[10px] uppercase text-emerald-400/80 mb-1'>Receita</div>
+        <div className='text-3xl font-bold text-emerald-300'>{currencyFormatter.format(revenue)}</div>
       </div>
 
-      <div className='border border-black rounded-md p-4 bg-white'>
-        <div className='text-[10px] uppercase text-gray-500 mb-1'>Aprovação Pública</div>
+      <div className='rounded-xl p-4 bg-neutral-800/60 border border-neutral-700'>
+        <div className='text-[10px] uppercase text-neutral-500 mb-1'>Aprovação Pública</div>
         <div className={`text-3xl font-bold ${approvalClass}`}>{percentFormatter.format(approval)}</div>
       </div>
 
       {chart.agentPopulation ? (
-        <div className='border border-black rounded-md p-4 bg-white'>
-          <div className='text-[10px] uppercase text-gray-500 mb-2'>População de Agentes</div>
+        <div className='rounded-xl p-4 bg-neutral-800/60 border border-neutral-700'>
+          <div className='text-[10px] uppercase text-neutral-500 mb-2'>População de Agentes</div>
           <div className='flex items-end justify-between gap-3'>
             <div>
-              <div className='text-2xl font-bold'>{chart.agentPopulation.copies.toLocaleString('pt-BR')}</div>
-              <div className='text-xs text-gray-500 uppercase'>cópias ativas</div>
+              <div className='text-2xl font-bold text-white'>{chart.agentPopulation.copies.toLocaleString('pt-BR')}</div>
+              <div className='text-xs text-neutral-500 uppercase'>cópias ativas</div>
             </div>
             <div className='text-right'>
-              <div className='text-xl font-bold'>{chart.agentPopulation.speed}x</div>
-              <div className='text-xs text-gray-500 uppercase'>velocidade</div>
+              <div className='text-xl font-bold text-white'>{chart.agentPopulation.speed}x</div>
+              <div className='text-xs text-neutral-500 uppercase'>velocidade</div>
             </div>
           </div>
         </div>
       ) : null}
 
       <div className='mt-2'>
-        <div className='text-[12px] uppercase font-mono mb-3'>Capacidades</div>
+        <div className='text-[12px] uppercase font-mono text-neutral-400 mb-3'>Capacidades</div>
         {capabilities.length === 0 ? (
-          <p className='text-sm text-gray-500'>Sem dados de capacidades para este período.</p>
+          <p className='text-sm text-neutral-500'>Sem dados de capacidades para este período.</p>
         ) : (
           <div className='flex flex-col gap-2'>
             {capabilities.map(([label, value]) => {
               const width = Math.max(6, Math.min(100, (value / maxCapability) * 100));
               return (
-                <div key={label} className='w-full bg-gray-200 h-6 rounded-sm relative overflow-hidden border border-gray-300'>
-                  <div className='bg-blue-700 h-full transition-all duration-500' style={{ width: `${width}%` }} />
-                  <span className='absolute inset-0 flex items-center justify-between px-2 text-[10px] text-white font-mono mix-blend-difference'>
+                <div key={label} className='w-full bg-neutral-800 h-6 rounded-md relative overflow-hidden border border-neutral-700'>
+                  <div className='bg-emerald-500/70 h-full transition-all duration-500' style={{ width: `${width}%` }} />
+                  <span className='absolute inset-0 flex items-center justify-between px-2 text-[10px] text-neutral-200 font-mono'>
                     <span>{label}</span>
                     <span>{value.toFixed(2)}x</span>
                   </span>
@@ -208,10 +208,10 @@ const NarrativeSectionArticle = memo(function NarrativeSectionArticle({
       viewport={{ once: true, amount: 0.2 }}
       transition={{ duration: 0.4, delay: index * 0.02 }}
     >
-      <p className='text-xs font-mono uppercase tracking-[0.18em] text-blue-800 mb-2'>{section.navLabel}</p>
-      <h2 className='text-3xl font-bold mb-4'>{section.title}</h2>
+      <p className='text-xs font-mono uppercase tracking-[0.18em] text-emerald-400 mb-2'>{section.navLabel}</p>
+      <h2 className='text-3xl font-bold mb-4 text-white'>{section.title}</h2>
       <div
-        className='text-[1.05rem] leading-relaxed text-gray-900 [&>p]:mb-4 [&_details]:border [&_details]:border-gray-300 [&_details]:rounded-xl [&_details]:p-4 [&_details]:bg-gray-50 [&_summary]:cursor-pointer [&_summary]:font-semibold [&_summary]:text-sm [&_summary]:uppercase [&_summary]:tracking-wide [&_details_p]:text-[0.95rem] [&_details_p]:text-gray-700 [&_details_p]:mt-3 [&_sup_a]:text-indigo-700 [&_sup_a]:font-semibold [&_sup_a]:no-underline [&_sup_a:hover]:underline'
+        className='ia2027-story text-[1.05rem] leading-relaxed'
         dangerouslySetInnerHTML={{ __html: section.storyHtml }}
       />
     </motion.article>
@@ -227,9 +227,9 @@ function BranchDecisionBlock({
 }) {
   if (activePath === 'main') {
     return (
-      <section className='border-t border-gray-300 pt-10'>
-        <h3 className='text-2xl font-black uppercase tracking-tight mb-4'>Bifurcação de Cenário</h3>
-        <p className='text-gray-700 mb-6'>
+      <section className='border-t border-neutral-800 pt-10'>
+        <h3 className='text-2xl font-black uppercase tracking-tight mb-4 text-white'>Bifurcação de Cenário</h3>
+        <p className='text-neutral-400 mb-6'>
           A partir deste ponto, a narrativa se divide em dois ramos alternativos: desaceleração coordenada ou corrida
           estratégica acelerada.
         </p>
@@ -237,21 +237,21 @@ function BranchDecisionBlock({
           <button
             type='button'
             onClick={() => onSelectPath('slowdown')}
-            className='rounded-2xl border-2 border-black bg-white text-black px-6 py-8 text-left hover:bg-gray-100 transition-colors'
+            className='rounded-2xl border-2 border-neutral-700 bg-neutral-900 text-white px-6 py-8 text-left hover:bg-neutral-800 hover:border-emerald-500/50 transition-colors'
           >
-            <span className='block text-xs uppercase font-mono tracking-[0.2em] mb-2'>Slowdown</span>
+            <span className='block text-xs uppercase font-mono tracking-[0.2em] mb-2 text-emerald-400'>Slowdown</span>
             <span className='block text-3xl font-black'>Puxar o Freio</span>
-            <span className='block text-sm mt-2 text-gray-600'>Priorizar segurança, verificabilidade e coordenação institucional.</span>
+            <span className='block text-sm mt-2 text-neutral-400'>Priorizar segurança, verificabilidade e coordenação institucional.</span>
           </button>
 
           <button
             type='button'
             onClick={() => onSelectPath('race')}
-            className='rounded-2xl border-2 border-black bg-blue-700 text-white px-6 py-8 text-left hover:bg-blue-800 transition-colors'
+            className='rounded-2xl border-2 border-red-500/30 bg-red-950/30 text-white px-6 py-8 text-left hover:bg-red-900/30 hover:border-red-500/50 transition-colors'
           >
-            <span className='block text-xs uppercase font-mono tracking-[0.2em] mb-2'>Race</span>
+            <span className='block text-xs uppercase font-mono tracking-[0.2em] mb-2 text-red-400'>Race</span>
             <span className='block text-3xl font-black'>Acelerar a Carroça</span>
-            <span className='block text-sm mt-2 text-blue-100'>Maximizar velocidade e vantagem estratégica sob risco sistêmico elevado.</span>
+            <span className='block text-sm mt-2 text-red-300/70'>Maximizar velocidade e vantagem estratégica sob risco sistêmico elevado.</span>
           </button>
         </div>
       </section>
@@ -259,14 +259,14 @@ function BranchDecisionBlock({
   }
 
   return (
-    <section className='border-t border-gray-300 pt-10'>
-      <h3 className='text-2xl font-black uppercase tracking-tight mb-4'>Finais Alternativos</h3>
-      <p className='text-gray-700 mb-6'>Ramo ativo: {activePath === 'slowdown' ? 'Desaceleração (Slowdown)' : 'Corrida (Race)'}.</p>
+    <section className='border-t border-neutral-800 pt-10'>
+      <h3 className='text-2xl font-black uppercase tracking-tight mb-4 text-white'>Finais Alternativos</h3>
+      <p className='text-neutral-400 mb-6'>Ramo ativo: {activePath === 'slowdown' ? 'Desaceleração (Slowdown)' : 'Corrida (Race)'}.</p>
       <div className='grid grid-cols-1 md:grid-cols-3 gap-3'>
         <button
           type='button'
           onClick={() => onSelectPath('main')}
-          className='rounded-xl border border-black bg-white px-4 py-4 text-sm font-semibold hover:bg-gray-50 transition-colors text-left'
+          className='rounded-xl border border-neutral-700 bg-neutral-900 px-4 py-4 text-sm font-semibold hover:bg-neutral-800 transition-colors text-left text-neutral-200'
         >
           Voltar para a Bifurcação
         </button>
@@ -275,8 +275,8 @@ function BranchDecisionBlock({
           onClick={() => onSelectPath('slowdown')}
           className={`rounded-xl border px-4 py-4 text-sm font-semibold transition-colors text-left ${
             activePath === 'slowdown'
-              ? 'border-emerald-700 bg-emerald-700 text-white'
-              : 'border-black bg-white text-black hover:bg-gray-50'
+              ? 'border-emerald-500 bg-emerald-600 text-white'
+              : 'border-neutral-700 bg-neutral-900 text-neutral-200 hover:bg-neutral-800'
           }`}
         >
           Puxar o Freio
@@ -286,8 +286,8 @@ function BranchDecisionBlock({
           onClick={() => onSelectPath('race')}
           className={`rounded-xl border px-4 py-4 text-sm font-semibold transition-colors text-left ${
             activePath === 'race'
-              ? 'border-blue-700 bg-blue-700 text-white'
-              : 'border-black bg-white text-black hover:bg-gray-50'
+              ? 'border-red-500 bg-red-600 text-white'
+              : 'border-neutral-700 bg-neutral-900 text-neutral-200 hover:bg-neutral-800'
           }`}
         >
           Acelerar a Carroça
@@ -311,8 +311,8 @@ function FootnotesBlock({
   }
 
   return (
-    <section className='border-t border-gray-300 pt-10'>
-      <h3 className='text-2xl font-black uppercase tracking-tight mb-6'>Referências Bibliográficas</h3>
+    <section className='border-t border-neutral-800 pt-10'>
+      <h3 className='text-2xl font-black uppercase tracking-tight mb-6 text-white'>Referências Bibliográficas</h3>
       <ol className='space-y-4'>
         {footnotes.map((footnote) => {
           const backReferenceId = firstReferenceByFootnote.get(footnote.num);
@@ -320,11 +320,11 @@ function FootnotesBlock({
             <li
               key={footnote.id}
               id={`fn-${path}-${footnote.num}`}
-              className='scroll-mt-28 border border-gray-200 rounded-lg p-4 bg-gray-50 text-sm text-gray-700 leading-relaxed'
+              className='scroll-mt-28 border border-neutral-800 rounded-lg p-4 bg-neutral-900/50 text-sm text-neutral-400 leading-relaxed'
             >
               <div dangerouslySetInnerHTML={{ __html: footnote.html }} />
               {backReferenceId ? (
-                <a href={`#${backReferenceId}`} className='inline-block mt-2 text-indigo-700 font-semibold hover:underline'>
+                <a href={`#${backReferenceId}`} className='inline-block mt-2 text-emerald-400 font-semibold hover:underline'>
                   Voltar ao trecho
                 </a>
               ) : null}
@@ -372,33 +372,33 @@ export function IA2027Simulation({ initialPath }: { initialPath?: SimulationPath
   };
 
   return (
-    <div className='min-h-screen bg-white text-black font-sans pt-16'>
-      <header className='p-6 border-b border-gray-200 flex justify-between items-center bg-white'>
+    <div id='simulacao' className='min-h-screen bg-neutral-950 text-neutral-200 font-sans pt-4'>
+      <header className='p-6 border-b border-neutral-800 flex justify-between items-center'>
         <div className='max-w-7xl mx-auto w-full flex flex-wrap items-center justify-between gap-4'>
           <div>
-            <p className='text-[11px] font-mono uppercase tracking-widest text-blue-700'>{config.kicker}</p>
-            <h1 className='text-3xl font-bold'>{config.title}</h1>
-            <p className='text-sm text-gray-600 mt-1'>{config.summary}</p>
+            <p className='text-[11px] font-mono uppercase tracking-widest text-emerald-400'>{config.kicker}</p>
+            <h2 className='text-3xl font-bold text-white'>{config.title}</h2>
+            <p className='text-sm text-neutral-400 mt-1'>{config.summary}</p>
           </div>
           <Link
             href='/simulacoes'
-            className='text-sm font-semibold border border-black rounded-full px-4 py-2 hover:bg-black hover:text-white transition-colors'
+            className='text-sm font-semibold border border-neutral-700 rounded-full px-4 py-2 text-neutral-300 hover:bg-neutral-800 hover:text-white transition-colors'
           >
             Voltar para Simulações
           </Link>
         </div>
       </header>
 
-      <main className='grid grid-cols-1 md:grid-cols-[120px_minmax(0,1fr)_400px] gap-8 max-w-7xl mx-auto p-6 relative'>
-        <aside className='hidden md:block sticky top-24 h-[80vh] border-r border-gray-300'>
-          <nav className='flex flex-col gap-4 text-xs font-mono text-gray-500 mt-12 pr-3 max-h-[70vh] overflow-auto'>
+      <main className='grid grid-cols-1 lg:grid-cols-[120px_minmax(0,1fr)_380px] gap-8 max-w-7xl mx-auto p-6 relative'>
+        <aside className='hidden lg:block sticky top-24 h-[80vh] border-r border-neutral-800'>
+          <nav className='flex flex-col gap-4 text-xs font-mono text-neutral-500 mt-12 pr-3 max-h-[70vh] overflow-auto'>
             {config.sections.map((section) => {
               const isActive = section.id === activeSectionId;
               return (
                 <a
                   key={section.id}
                   href={`#${section.id}`}
-                  className={`hover:text-black transition-colors ${isActive ? 'text-blue-700 font-bold' : ''}`}
+                  className={`hover:text-white transition-colors ${isActive ? 'text-emerald-400 font-bold' : ''}`}
                 >
                   {section.navLabel}
                 </a>
@@ -420,18 +420,18 @@ export function IA2027Simulation({ initialPath }: { initialPath?: SimulationPath
             firstReferenceByFootnote={config.firstReferenceByFootnote}
           />
 
-          <footer className='border-t border-gray-300 pt-6'>
-            <p className='text-sm text-gray-700'>
-              Esta simulação em português é baseada no modelo original publicado em{' '}
-              <a href='https://ai-2027.com/' target='_blank' rel='noopener noreferrer' className='underline font-semibold'>
+          <footer className='border-t border-neutral-800 pt-6'>
+            <p className='text-sm text-neutral-500'>
+              Esta simulação em português é baseada no cenário original publicado em{' '}
+              <a href='https://ai-2027.com/' target='_blank' rel='noopener noreferrer' className='underline font-semibold text-emerald-400 hover:text-emerald-300'>
                 ai-2027.com
               </a>
-              .
+              . Tradução e adaptação por Ulisses Flores.
             </p>
           </footer>
         </section>
 
-        <aside className='hidden md:block sticky top-24 h-[80vh]'>
+        <aside className='hidden lg:block sticky top-24 h-[80vh]'>
           <SimulationMetricsSidebar chart={currentChart} />
         </aside>
       </main>

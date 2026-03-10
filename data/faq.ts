@@ -70,12 +70,45 @@ export const simulacoesFaq: FaqItem[] = [
   {
     question: 'Como funciona a simulação IA 2027?',
     answer:
-      'A IA 2027 é uma simulação prospectiva em português do cenário AI 2027, com linha do tempo interativa, métricas de capacidade e risco, e finais ramificados (slowdown vs. race). O leitor acompanha a narrativa por scroll.',
+      'A IA 2027 é uma simulação narrativa interativa traduzida do cenário original AI 2027. Cobre de 2025 a 2035 com timeline por scroll, métricas dinâmicas (receita, capacidades, aprovação pública, população de agentes) e dois finais alternativos: Slowdown (freio coordenado) e Race (corrida acelerada).',
   },
   {
     question: 'O que é o cenário Rapaduria?',
     answer:
       'Rapaduria 2027 é uma simulação econômica com cenários alternativos (freio e carroça) que exploram diferentes trajetórias para a economia brasileira. Combina dados macroeconômicos com narrativa estratégica.',
+  },
+];
+
+export const ia2027Faq: FaqItem[] = [
+  {
+    question: 'O que é a simulação IA 2027?',
+    answer:
+      'A IA 2027 é uma simulação narrativa prospectiva que modela cenários de evolução da inteligência artificial de 2025 a 2035. Traduzida e adaptada do cenário original AI 2027 (ai-2027.com), ela apresenta uma timeline interativa com métricas dinâmicas, expandables técnicos e dois finais alternativos.',
+  },
+  {
+    question: 'A IA 2027 é uma previsão real?',
+    answer:
+      'Não é uma previsão determinística, mas um exercício de cenário baseado em projeções de pesquisadores, economistas e analistas de segurança de IA. O objetivo é explorar possibilidades plausíveis — não prever o futuro com certeza — para estimular reflexão e preparação.',
+  },
+  {
+    question: 'O que significa a bifurcação slowdown vs race?',
+    answer:
+      'A narrativa se divide em dois finais: Slowdown (desaceleração coordenada) prioriza segurança, alinhamento técnico e cooperação internacional; Race (corrida estratégica) maximiza velocidade de desenvolvimento sob risco sistêmico elevado. O leitor escolhe qual caminho explorar.',
+  },
+  {
+    question: 'O que é soberania de IA?',
+    answer:
+      'Soberania de IA refere-se ao controle que nações, organizações e a humanidade exercem sobre sistemas de inteligência artificial cada vez mais autônomos. A simulação explora cenários onde esse controle é mantido, disputado ou perdido — e as consequências de cada trajetória.',
+  },
+  {
+    question: 'Quem criou o cenário original AI 2027?',
+    answer:
+      'O cenário original foi publicado em ai-2027.com em abril de 2025 por pesquisadores de IA. Esta versão em português foi traduzida e adaptada por Ulisses Flores como parte do laboratório de simulações prospectivas.',
+  },
+  {
+    question: 'A simulação IA 2027 é interativa?',
+    answer:
+      'Sim. A simulação funciona como uma narrativa por scroll com indicadores que se atualizam a cada seção (receita, capacidades de IA, aprovação pública, população de agentes). Expandables revelam detalhes técnicos e notas de rodapé. No ponto de bifurcação, o leitor escolhe entre dois finais.',
   },
 ];
 

@@ -1600,6 +1600,7 @@ export const footnotesData: Footnote[] = [
   { id: "slowdown-57", context: "slowdown", num: 57, html: `Na verdade, pode-se argumentar que a maioria deles está mirando em algo que se parece mais com o final da Corrida, exceto que acham que será tranquilo porque as IAs não estarão desalinhadas em primeiro lugar. Com base em conversas pessoais com pessoas trabalhando em empresas de IA de fronteira, parece que a maioria delas não acha que precisará desacelerar de forma alguma.  ↩` }
 ];
 
+// ─── Initial Chart Convenience Exports ──────────────────────────────────────
 export const mainInitialChart = mainTimeline[0]?.chartExtra;
 export const raceInitialChart = raceEnding[0]?.chartExtra;
 export const slowdownInitialChart = slowdownEnding[0]?.chartExtra;
