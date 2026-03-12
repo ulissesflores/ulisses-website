@@ -23,9 +23,18 @@ function parseInitialPath(rawPath?: string | string[]): SimulationPath {
 }
 
 export const metadata: Metadata = {
-  title: 'IA 2027 em Português | Simulação sobre Soberania de IA e AGI',
+  title: 'IA 2027: Simulação Interativa sobre o Futuro da Inteligência Artificial | AGI e Soberania',
   description:
-    'Simulação prospectiva em português do cenário AI 2027: narrativa interativa sobre inteligência artificial geral (AGI), soberania tecnológica, corrida armamentista de IA e cenários de 2025 a 2035 com finais ramificados.',
+    'Explore a única simulação interativa em português sobre a chegada da AGI (Inteligência Artificial Geral). Análise de cenários futuros, corrida tecnológica e impacto econômico por Ulisses Flores — Cientista, Consultor, Professor e Palestrante.',
+  keywords: [
+    'futuro da inteligência artificial',
+    'cenários futuros IA',
+    'o que é AGI',
+    'inteligência artificial geral',
+    'soberania tecnológica',
+    'impacto da IA no mercado',
+    'agentes autônomos',
+  ],
   authors: [
     {
       name: upkfMeta.publicDisplayName || upkfMeta.displayName,
@@ -38,9 +47,10 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'article',
     url: `${upkfMeta.primaryWebsite}${canonicalPath}`,
-    title: 'IA 2027 em Português | Simulação sobre Soberania de IA e AGI',
+    title: 'IA 2027: Simulação Interativa sobre o Futuro da Inteligência Artificial | AGI e Soberania',
     description:
-      'O que acontece quando a inteligência artificial supera a capacidade humana? Simulação narrativa com timeline interativa, métricas dinâmicas e dois finais alternativos.',
+      'Explore a única simulação interativa em português sobre a chegada da AGI. Análise de cenários futuros, corrida tecnológica e impacto econômico por Ulisses Flores — Cientista, Consultor, Professor e Palestrante.',
+    locale: 'pt_BR',
   },
 };
 
@@ -57,14 +67,15 @@ export default async function IA2027Page({
     '@context': 'https://schema.org',
     '@graph': [
       {
-        '@type': ['WebPage', 'Article'],
+        '@type': ['WebPage', 'Article', 'SoftwareApplication'],
         '@id': `${origin}${canonicalPath}#webpage`,
         url: `${origin}${canonicalPath}`,
-        name: 'IA 2027 em Português — Simulação Prospectiva sobre Soberania de IA',
-        headline: 'IA 2027 em Português: Simulação Interativa sobre AGI e o Futuro da Inteligência Artificial',
+        name: 'IA 2027: Simulação Interativa sobre o Futuro da Inteligência Artificial',
+        headline: 'IA 2027: Simulação Interativa sobre o Futuro da Inteligência Artificial',
         description:
-          'Simulação prospectiva traduzida e adaptada do cenário AI 2027, com timeline interativa, métricas dinâmicas, finais ramificados e análise sobre soberania de inteligência artificial.',
+          'Explore a única simulação interativa em português sobre a chegada da AGI (Inteligência Artificial Geral). Análise de cenários futuros, corrida tecnológica e impacto econômico por Ulisses Flores — Cientista, Consultor, Professor e Palestrante.',
         inLanguage: 'pt-BR',
+        keywords: 'futuro da inteligência artificial, cenários futuros IA, o que é AGI, inteligência artificial geral, soberania tecnológica, impacto da IA no mercado, agentes autônomos',
         isPartOf: {
           '@id': `${origin}/#website`,
         },
@@ -81,18 +92,15 @@ export default async function IA2027Page({
           {
             '@type': 'Thing',
             name: 'Artificial General Intelligence',
+            sameAs: 'https://en.wikipedia.org/wiki/Artificial_general_intelligence',
             description: 'Inteligência artificial com capacidade cognitiva comparável ou superior à humana.',
           },
           {
             '@type': 'Thing',
             name: 'AI Safety',
+            sameAs: 'https://en.wikipedia.org/wiki/AI_safety',
             description: 'Pesquisa em segurança e alinhamento de sistemas de inteligência artificial avançada.',
           },
-        ],
-        keywords: [
-          'IA 2027', 'AGI', 'inteligência artificial geral', 'simulação IA',
-          'soberania de IA', 'AI safety', 'alinhamento de IA', 'cenário prospectivo',
-          'superinteligência', 'corrida armamentista IA',
         ],
       },
     ],
@@ -109,20 +117,16 @@ export default async function IA2027Page({
         </Link>
 
         <header className='mt-8 mb-10'>
-          <p className='text-xs uppercase tracking-[0.2em] text-emerald-400 mb-3'>Simulação Prospectiva</p>
-          <h1 className='text-4xl md:text-5xl font-bold text-white mb-4'>IA 2027 em Português</h1>
+          <p className='text-xs uppercase tracking-[0.2em] text-emerald-400 mb-3'>Simulações Estratégicas → Cenários Futuros da IA</p>
+          <h1 className='text-4xl md:text-5xl font-bold text-white mb-4'>
+            IA 2027: Simulação Interativa sobre o Futuro da Inteligência Artificial
+          </h1>
           <p className='text-xl text-neutral-300 leading-relaxed max-w-3xl'>
-            Tradução e adaptação do cenário original{' '}
-            <a
-              href='https://ai-2027.com/'
-              target='_blank'
-              rel='noopener noreferrer'
-              className='text-emerald-400 hover:underline font-medium'
-            >
-              AI 2027
-            </a>{' '}
-            — uma simulação narrativa sobre os próximos anos da inteligência artificial, soberania tecnológica
-            e os riscos de uma corrida sem freios rumo à AGI.
+            Os CEOs da OpenAI, Google DeepMind e Anthropic convergem em um ponto crítico: a Inteligência
+            Artificial Geral (AGI) pode ser alcançada antes do final desta década. Quando a máquina superar
+            a capacidade cognitiva humana, as regras que governam a economia global, o mercado de trabalho e
+            o poder geopolítico serão reescritas de forma irreversível. Esta simulação modela de forma
+            interativa os próximos anos dessa transição.
           </p>
         </header>
 
@@ -133,10 +137,12 @@ export default async function IA2027Page({
             <div>
               <h2 className='text-lg font-semibold text-white mb-2'>Por que isso importa</h2>
               <p className='text-neutral-300 leading-relaxed text-sm'>
-                A soberania da inteligência artificial não é ficção científica — é uma questão geopolítica
-                real que está se desenrolando agora. Esta simulação modela cenários de 2025 a 2035 baseados
-                em projeções de pesquisadores de IA, economistas e analistas de segurança. O ponto central:
-                o que acontece quando a IA começa a acelerar sua própria pesquisa? A resposta define o futuro.
+                A soberania tecnológica não é mais ficção científica; é a disputa econômica e arquitetônica
+                mais urgente do nosso tempo. Como cientista, consultor em IA e criador desta adaptação,
+                estruturei este cenário baseado em modelagens de Harvard, MIRI e analistas de segurança de IA.
+                O ponto de ruptura central explorado aqui é: o que acontece com a economia e a infraestrutura
+                de sistemas quando a IA começa a acelerar sua própria pesquisa de forma recursiva? O ramo que
+                escolhermos definirá o futuro.
               </p>
             </div>
           </div>
@@ -147,26 +153,26 @@ export default async function IA2027Page({
           {[
             {
               icon: Clock,
-              title: 'Timeline interativa',
-              description: 'Narrativa cronológica de 2025 a 2027 com acompanhamento por scroll. Cada seção representa um marco na evolução da IA.',
+              title: 'Linha do Tempo 2025–2027',
+              description: 'Narrativa cronológica baseada em projeções reais de evolução de hardware e software.',
               color: 'text-cyan-400',
             },
             {
               icon: BarChart3,
-              title: 'Métricas dinâmicas',
-              description: 'Receita, capacidades, aprovação pública e população de agentes — indicadores que se atualizam conforme você avança na narrativa.',
+              title: 'Métricas de Impacto em Tempo Real',
+              description: 'Acompanhe a receita corporativa, aprovação pública e proliferação de agentes autônomos.',
               color: 'text-emerald-400',
             },
             {
               icon: GitFork,
-              title: 'Finais ramificados',
-              description: 'No ponto de bifurcação, escolha entre Slowdown (freio coordenado) e Race (corrida acelerada) — dois futuros drasticamente diferentes.',
+              title: 'Ponto de Bifurcação (Slowdown vs. Race)',
+              description: 'Você decide o desfecho: uma pausa coordenada global ou uma corrida armamentista pelo domínio da AGI.',
               color: 'text-violet-400',
             },
             {
               icon: BookOpen,
-              title: 'Expandables e referências',
-              description: 'Seções expandíveis com detalhes técnicos e notas de rodapé para quem quer se aprofundar nos fundamentos da previsão.',
+              title: 'Arquitetura e Fundamentos Técnicos',
+              description: 'Notas de rodapé expansíveis detalhando a engenharia de sistemas e o impacto macroeconômico por trás de cada previsão.',
               color: 'text-amber-400',
             },
           ].map((item) => {
@@ -184,7 +190,7 @@ export default async function IA2027Page({
         {/* CTA to start simulation */}
         <div className='text-center mb-8'>
           <a
-            href='#simulacao'
+            href='#ia-2027-sim'
             className='inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-500 text-white px-8 py-4 rounded-full font-bold text-lg transition-all shadow-[0_0_30px_rgba(16,185,129,0.2)] hover:shadow-[0_0_40px_rgba(16,185,129,0.35)]'
           >
             <Zap size={20} />
@@ -194,9 +200,9 @@ export default async function IA2027Page({
 
         <div className='max-w-xl mx-auto mb-4'>
           <AuthorHubCard
-            label='Autor da Simulação'
+            label='Tradução & Curadoria'
             compact
-            description='Tradução e adaptação conectadas ao hub canônico de identidade para validação autoral.'
+            description='Adaptação, curadoria e análise técnica por Ulisses Flores — Cientista, Consultor em IA, Professor, Palestrante e Mestrando.'
           />
         </div>
       </section>
@@ -207,7 +213,7 @@ export default async function IA2027Page({
       {/* FAQ Section */}
       <section className='bg-neutral-950 text-neutral-200 pb-16'>
         <div className='max-w-4xl mx-auto px-6'>
-          <FaqSection items={ia2027Faq} sectionTitle='Perguntas sobre a Simulação IA 2027' />
+          <FaqSection items={ia2027Faq} sectionTitle='Perguntas sobre IA 2027 e o Futuro da Inteligência Artificial' />
         </div>
       </section>
 

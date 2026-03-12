@@ -637,7 +637,7 @@ export function IA2027Simulation({ initialPath }: { initialPath?: SimulationPath
   );
 
   return (
-    <div id='simulacao' className='min-h-screen bg-neutral-950 text-neutral-200 font-sans pt-4'>
+    <div id='ia-2027-sim' className='min-h-screen bg-neutral-950 text-neutral-200 font-sans pt-4'>
       <header className='p-6 border-b border-neutral-800 flex justify-between items-center'>
         <div className='max-w-7xl mx-auto w-full flex flex-wrap items-center justify-between gap-4'>
           <div>
@@ -693,9 +693,9 @@ export function IA2027Simulation({ initialPath }: { initialPath?: SimulationPath
             firstReferenceByFootnote={config.firstReferenceByFootnote}
           />
 
-          <footer className='border-t border-neutral-800 pt-6'>
+          <footer className='border-t border-neutral-800 pt-6 space-y-3'>
             <p className='text-sm text-neutral-500'>
-              Esta simulacao em portugues e baseada no cenario original publicado em{' '}
+              Esta simulação em português é uma adaptação do cenário original publicado em{' '}
               <a
                 href='https://ai-2027.com/'
                 target='_blank'
@@ -704,7 +704,16 @@ export function IA2027Simulation({ initialPath }: { initialPath?: SimulationPath
               >
                 ai-2027.com
               </a>
-              . Traducao e adaptacao por Ulisses Flores.
+              .
+            </p>
+            <p className='text-sm text-neutral-600'>
+              Autores originais: Daniel Kokotajlo, Eli Lifland, Thomas Larsen, Romeo Dean.
+              Narrativa por Scott Alexander. Baseado em aproximadamente 25 exercícios de
+              simulação e feedback de mais de 100 especialistas em governança e segurança de IA.
+            </p>
+            <p className='text-sm text-neutral-600'>
+              Tradução, adaptação e curadoria: Ulisses Flores — Cientista, Consultor em IA,
+              Professor, Palestrante e Mestrando.
             </p>
           </footer>
         </section>

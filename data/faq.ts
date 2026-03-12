@@ -81,34 +81,54 @@ export const simulacoesFaq: FaqItem[] = [
 
 export const ia2027Faq: FaqItem[] = [
   {
-    question: 'O que é a simulação IA 2027?',
+    question: 'O que é a simulação IA 2027 em português?',
     answer:
-      'A IA 2027 é uma simulação narrativa prospectiva que modela cenários de evolução da inteligência artificial de 2025 a 2035. Traduzida e adaptada do cenário original AI 2027 (ai-2027.com), ela apresenta uma timeline interativa com métricas dinâmicas, expandables técnicos e dois finais alternativos.',
+      'A IA 2027 é um exercício interativo de modelagem de cenários futuros que projeta a evolução da inteligência artificial entre 2025 e 2035. Traduzida e adaptada para o contexto brasileiro, a simulação permite que você acompanhe uma linha do tempo com métricas dinâmicas e tome decisões sobre o desenvolvimento tecnológico.',
   },
   {
-    question: 'A IA 2027 é uma previsão real?',
+    question: 'O que é AGI (Inteligência Artificial Geral)?',
     answer:
-      'Não é uma previsão determinística, mas um exercício de cenário baseado em projeções de pesquisadores, economistas e analistas de segurança de IA. O objetivo é explorar possibilidades plausíveis — não prever o futuro com certeza — para estimular reflexão e preparação.',
+      'AGI (Artificial General Intelligence) é um sistema de IA autônomo capaz de compreender, aprender e executar qualquer tarefa intelectual humana de forma igual ou superior. A chegada da AGI representa o maior ponto de inflexão na economia moderna e na engenharia de software.',
   },
   {
-    question: 'O que significa a bifurcação slowdown vs race?',
+    question: 'Quais são os possíveis finais para o futuro da IA na simulação?',
     answer:
-      'A narrativa se divide em dois finais: Slowdown (desaceleração coordenada) prioriza segurança, alinhamento técnico e cooperação internacional; Race (corrida estratégica) maximiza velocidade de desenvolvimento sob risco sistêmico elevado. O leitor escolhe qual caminho explorar.',
+      'A simulação apresenta dois caminhos no ponto crítico de bifurcação: Slowdown (uma desaceleração coordenada global focada em segurança e alinhamento) e Race (uma corrida estratégica acelerada entre superpotências, assumindo altíssimo risco de perda de controle humano).',
   },
   {
-    question: 'O que é soberania de IA?',
+    question: 'Por que a Soberania Tecnológica da IA importa para o Brasil?',
     answer:
-      'Soberania de IA refere-se ao controle que nações, organizações e a humanidade exercem sobre sistemas de inteligência artificial cada vez mais autônomos. A simulação explora cenários onde esse controle é mantido, disputado ou perdido — e as consequências de cada trajetória.',
+      'A soberania de IA dita quais nações controlam as infraestruturas críticas do futuro. Países que dependem exclusivamente de modelos de fundação estrangeiros correm o risco de subordinação econômica. Cenários como o Rapaduria 2027 exploram especificamente os impactos macroeconômicos locais.',
   },
   {
-    question: 'Quem criou o cenário original AI 2027?',
+    question: 'O que são Agentes Autônomos de IA?',
     answer:
-      'O cenário original foi publicado em ai-2027.com em abril de 2025 por pesquisadores de IA. Esta versão em português foi traduzida e adaptada por Ulisses Flores como parte do laboratório de simulações prospectivas.',
+      'Agentes autônomos são sistemas de IA que não apenas respondem a prompts, mas planejam, tomam decisões e executam fluxos de trabalho complexos de forma independente, consumindo recursos computacionais e interagindo com outras APIs sem supervisão humana constante.',
   },
   {
-    question: 'A simulação IA 2027 é interativa?',
+    question: 'Como a IA pode acelerar sua própria pesquisa (Recursive Self-Improvement)?',
     answer:
-      'Sim. A simulação funciona como uma narrativa por scroll com indicadores que se atualizam a cada seção (receita, capacidades de IA, aprovação pública, população de agentes). Expandables revelam detalhes técnicos e notas de rodapé. No ponto de bifurcação, o leitor escolhe entre dois finais.',
+      'O auto-aperfeiçoamento recursivo ocorre quando uma IA avançada se torna capaz de escrever códigos melhores, projetar chips mais eficientes e treinar a próxima geração de IAs mais rápido que engenheiros humanos. Este é o gatilho principal para a explosão de inteligência abordada na simulação.',
+  },
+  {
+    question: 'Quem criou o cenário AI 2027 original?',
+    answer:
+      'O framework original foi publicado em ai-2027.com, com narrativa de Scott Alexander e baseado em previsões estruturadas por pesquisadores focados em governança e segurança de IA (como Daniel Kokotajlo e Eli Lifland).',
+  },
+  {
+    question: 'Qual o impacto da AGI no mercado de trabalho e na economia?',
+    answer:
+      'A transição para a AGI forçará uma reestruturação profunda da matriz econômica. A simulação projeta um cenário onde o custo marginal da inteligência tende a zero, alterando drasticamente a curva de oferta de trabalho intelectual e exigindo novos modelos de distribuição de riqueza.',
+  },
+  {
+    question: 'Como me preparar profissionalmente para a chegada da AGI?',
+    answer:
+      'A preparação exige migrar de habilidades operacionais e de codificação pura para arquitetura de sistemas complexos, economia digital e gestão de agentes autônomos. Compreender a infraestrutura por trás dos modelos é tão crítico quanto saber usá-los.',
+  },
+  {
+    question: 'As previsões da simulação IA 2027 vão realmente acontecer?',
+    answer:
+      'A simulação não é determinística, mas probabilística. Ela não afirma o que vai acontecer, mas constrói cenários plausíveis baseados em leis de escala de computação e tendências geopolíticas atuais, servindo como uma ferramenta de preparação estratégica para tomadores de decisão.',
   },
 ];
 
