@@ -372,19 +372,18 @@ export function IA2027Simulation({ initialPath }: { initialPath?: SimulationPath
   };
 
   return (
-    <div className='min-h-screen bg-white text-black font-sans pt-16'>
+    <div id='ia-2027-sim' className='min-h-screen bg-white text-black font-sans'>
       <header className='p-6 border-b border-gray-200 flex justify-between items-center bg-white'>
         <div className='max-w-7xl mx-auto w-full flex flex-wrap items-center justify-between gap-4'>
           <div>
             <p className='text-[11px] font-mono uppercase tracking-widest text-blue-700'>{config.kicker}</p>
-            <h1 className='text-3xl font-bold'>{config.title}</h1>
-            <p className='text-sm text-gray-600 mt-1'>{config.summary}</p>
+            <h2 className='text-3xl font-bold'>{config.title}</h2>
           </div>
           <Link
             href='/simulacoes'
             className='text-sm font-semibold border border-black rounded-full px-4 py-2 hover:bg-black hover:text-white transition-colors'
           >
-            Voltar para Simulações
+            ← Voltar para Simulações
           </Link>
         </div>
       </header>
@@ -420,13 +419,22 @@ export function IA2027Simulation({ initialPath }: { initialPath?: SimulationPath
             firstReferenceByFootnote={config.firstReferenceByFootnote}
           />
 
-          <footer className='border-t border-gray-300 pt-6'>
+          <footer className='border-t border-gray-300 pt-6 space-y-3'>
             <p className='text-sm text-gray-700'>
-              Esta simulação em português é baseada no modelo original publicado em{' '}
+              Esta simulação em português é uma adaptação do cenário original publicado em{' '}
               <a href='https://ai-2027.com/' target='_blank' rel='noopener noreferrer' className='underline font-semibold'>
                 ai-2027.com
               </a>
               .
+            </p>
+            <p className='text-sm text-gray-500'>
+              Autores originais: Daniel Kokotajlo, Eli Lifland, Thomas Larsen, Romeo Dean.
+              Narrativa por Scott Alexander. Baseado em aproximadamente 25 exercícios de
+              simulação e feedback de mais de 100 especialistas em governança e segurança de IA.
+            </p>
+            <p className='text-sm text-gray-500'>
+              Tradução, adaptação e curadoria: Ulisses Flores — Cientista, Consultor em IA,
+              Professor, Palestrante e Mestrando.
             </p>
           </footer>
         </section>

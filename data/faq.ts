@@ -124,3 +124,56 @@ export const mumMraFaq: FaqItem[] = [
       'Sim! Basta adicionar o número +55 11 5286-8689 ao grupo. O Mumm-Ra participa das conversas quando mencionado ou quando alguém faz uma pergunta direta. Ele xinga todo mundo igualmente, sem favoritismo.',
   },
 ];
+
+export const ia2027Faq: FaqItem[] = [
+  {
+    question: 'O que é a simulação IA 2027 em português?',
+    answer:
+      'A IA 2027 é um exercício interativo de modelagem de cenários futuros que projeta a evolução da inteligência artificial entre 2025 e 2035. Traduzida e adaptada para o contexto brasileiro, a simulação permite que você acompanhe uma linha do tempo com métricas dinâmicas e tome decisões sobre o desenvolvimento tecnológico.',
+  },
+  {
+    question: 'O que é AGI (Inteligência Artificial Geral)?',
+    answer:
+      'AGI (Artificial General Intelligence) é um sistema de IA autônomo capaz de compreender, aprender e executar qualquer tarefa intelectual humana de forma igual ou superior. A chegada da AGI representa o maior ponto de inflexão na economia moderna e na engenharia de software.',
+  },
+  {
+    question: 'Quais são os possíveis finais para o futuro da IA na simulação?',
+    answer:
+      'A simulação apresenta dois caminhos no ponto crítico de bifurcação: Slowdown (uma desaceleração coordenada global focada em segurança e alinhamento) e Race (uma corrida estratégica acelerada entre superpotências, assumindo altíssimo risco de perda de controle humano).',
+  },
+  {
+    question: 'Por que a Soberania Tecnológica da IA importa para o Brasil?',
+    answer:
+      'A soberania de IA dita quais nações controlam as infraestruturas críticas do futuro. Países que dependem exclusivamente de modelos de fundação estrangeiros correm o risco de subordinação econômica. Cenários como o Rapaduria 2027 exploram especificamente os impactos macroeconômicos locais.',
+  },
+  {
+    question: 'O que são Agentes Autônomos de IA?',
+    answer:
+      'Agentes autônomos são sistemas de IA que não apenas respondem a prompts, mas planejam, tomam decisões e executam fluxos de trabalho complexos de forma independente, consumindo recursos computacionais e interagindo com outras APIs sem supervisão humana constante.',
+  },
+  {
+    question: 'Como a IA pode acelerar sua própria pesquisa (Recursive Self-Improvement)?',
+    answer:
+      'O auto-aperfeiçoamento recursivo ocorre quando uma IA avançada se torna capaz de escrever códigos melhores, projetar chips mais eficientes e treinar a próxima geração de IAs mais rápido que engenheiros humanos. Este é o gatilho principal para a explosão de inteligência abordada na simulação.',
+  },
+  {
+    question: 'Quem criou o cenário AI 2027 original?',
+    answer:
+      'O framework original foi publicado em ai-2027.com, com narrativa de Scott Alexander e baseado em previsões estruturadas por pesquisadores focados em governança e segurança de IA (como Daniel Kokotajlo e Eli Lifland).',
+  },
+  {
+    question: 'Qual o impacto da AGI no mercado de trabalho e na economia?',
+    answer:
+      'A transição para a AGI forçará uma reestruturação profunda da matriz econômica. A simulação projeta um cenário onde o custo marginal da inteligência tende a zero, alterando drasticamente a curva de oferta de trabalho intelectual e exigindo novos modelos de distribuição de riqueza.',
+  },
+  {
+    question: 'Como me preparar profissionalmente para a chegada da AGI?',
+    answer:
+      'A preparação exige migrar de habilidades operacionais e de codificação pura para arquitetura de sistemas complexos, economia digital e gestão de agentes autônomos. Compreender a infraestrutura por trás dos modelos é tão crítico quanto saber usá-los.',
+  },
+  {
+    question: 'As previsões da simulação IA 2027 vão realmente acontecer?',
+    answer:
+      'A simulação não é determinística, mas probabilística. Ela não afirma o que vai acontecer, mas constrói cenários plausíveis baseados em leis de escala de computação e tendências geopolíticas atuais, servindo como uma ferramenta de preparação estratégica para tomadores de decisão.',
+  },
+];
