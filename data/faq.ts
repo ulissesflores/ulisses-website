@@ -63,38 +63,113 @@ export const acervoTeologicoFaq: FaqItem[] = [
 
 export const simulacoesFaq: FaqItem[] = [
   {
-    question: 'O que são simulações prospectivas?',
+    question: 'O que é a simulação IA 2027 em português?',
     answer:
-      'Simulações prospectivas são exercícios de modelagem de cenários futuros baseados em dados, tendências e hipóteses estratégicas. Cada simulação apresenta uma narrativa interativa com métricas dinâmicas e pontos de decisão.',
+      'É uma simulação interativa baseada em cronogramas reais de evolução tecnológica (2025–2027), curada e adaptada por Ulisses Flores, projetando o impacto inevitável da AGI na economia, no mercado de trabalho e na geopolítica.',
   },
   {
-    question: 'Como funciona a simulação IA 2027?',
+    question: 'O que é AGI (Inteligência Artificial Geral)?',
     answer:
-      'A IA 2027 é uma simulação prospectiva em português do cenário AI 2027, com linha do tempo interativa, métricas de capacidade e risco, e finais ramificados (slowdown vs. race). O leitor acompanha a narrativa por scroll.',
+      'Refere-se a sistemas de inteligência artificial que alcançam ou superam a capacidade cognitiva humana em praticamente todos os domínios de trabalho econômico e intelectual, capazes de acelerar sua própria pesquisa (Recursive Self-Improvement).',
   },
   {
-    question: 'O que é o cenário Rapaduria?',
+    question: 'Quais são os possíveis finais para o futuro da IA na simulação?',
     answer:
-      'Rapaduria 2027 é uma simulação econômica com cenários alternativos (freio e carroça) que exploram diferentes trajetórias para a economia brasileira. Combina dados macroeconômicos com narrativa estratégica.',
+      'A simulação culmina em um ponto de bifurcação: a "Corrida Estratégica" (Race), onde empresas e nações aceleram rumo à superinteligência sem restrições, ou a "Desaceleração Coordenada" (Slowdown), focada em contenção, regulamentação internacional e alinhamento técnico.',
+  },
+  {
+    question: 'Por que a Soberania Tecnológica da IA importa para o Brasil?',
+    answer:
+      'Em um cenário onde "o vencedor leva tudo", a dependência exclusiva de datacenters e algoritmos estrangeiros representa uma perda catastrófica de autonomia econômica e de segurança nacional.',
+  },
+  {
+    question: 'O que são Agentes Autônomos de IA?',
+    answer:
+      'São sistemas de IA que transcendem a função de "assistentes". Eles recebem objetivos de alto nível, raciocinam, usam ferramentas computacionais e executam tarefas longas e complexas de forma independente, agindo efetivamente como funcionários digitais.',
+  },
+  {
+    question: 'Como a IA pode acelerar sua própria pesquisa (Recursive Self-Improvement)?',
+    answer:
+      'À medida que a IA se torna superior a engenheiros humanos em programação, milhares de cópias podem ser executadas paralelamente para criar algoritmos de IA ainda mais potentes, compactando décadas de avanço tecnológico em meses.',
+  },
+  {
+    question: 'Quem criou o cenário AI 2027 original?',
+    answer:
+      'A narrativa original foi criada por Scott Alexander, com base em simulações e pesquisas de especialistas como Daniel Kokotajlo e Eli Lifland, refletindo estimativas sólidas de profissionais da linha de frente da segurança em IA.',
+  },
+  {
+    question: 'Qual o impacto da AGI no mercado de trabalho e na economia?',
+    answer:
+      'A simulação projeta a automação inicial em trabalhos de colarinho branco (programação, análise) e, com a chegada de robôs super-hábeis, em quase todos os setores, exigindo novas estruturas econômicas como a renda básica e gerando um crescimento absurdo do PIB.',
+  },
+  {
+    question: 'Como me preparar profissionalmente para a chegada da AGI?',
+    answer:
+      'Dominar as ferramentas fundamentais, focar em habilidades humanas de alta complexidade interpessoal e alavancar IAs como extensão de sua própria capacidade produtiva.',
+  },
+  {
+    question: 'As previsões da simulação IA 2027 vão realmente acontecer?',
+    answer:
+      'A simulação é um exercício prospectivo para analisar riscos de cauda (eventos extremos). Seu valor não está em ser uma bola de cristal perfeita, mas em fornecer um framework lógico para testar a resiliência corporativa e estatal.',
   },
 ];
 
 export const certificacoesFaq: FaqItem[] = [
   {
-    question: 'Quais certificações Ulisses possui?',
+    question: 'Por que Ulisses mantém um vasto portfólio de certificações técnicas?',
     answer:
-      'Ulisses possui mais de 30 certificações em plataformas como Alura, Coursera e edX, cobrindo áreas como inteligência artificial, ciência de dados, segurança da informação e engenharia de software.',
+      'Porque atuar como Arquiteto de Software, Consultor Estratégico de IA e Desenvolvedor por demanda exige fluência inquestionável em múltiplas stacks e paradigmas. As certificações são a evidência auditável dessa atualização contínua.',
   },
   {
-    question: 'Onde as certificações são verificadas?',
+    question: 'Quais áreas da engenharia de software são cobertas pelas certificações?',
     answer:
-      'Cada certificação possui um link de verificação pública diretamente na página individual. Os IDs de certificação e URLs de verificação permitem validação independente junto ao provedor emissor.',
+      'As certificações cobrem C++, Java, PHP avançado, JavaScript moderno, HTML/CSS semântico, arquitetura de microsserviços, APIs REST/GraphQL, padrões de design e engenharia de software orientada a sistemas críticos.',
+  },
+  {
+    question: 'Há certificações em Bancos de Dados e Cloud?',
+    answer:
+      'Sim. O portfólio inclui certificações em NoSQL (MongoDB), modelagem relacional, PostgreSQL, Redis, arquitetura em nuvem (AWS, GCP), containerização com Docker e orquestração com Kubernetes.',
+  },
+  {
+    question: 'Quais plataformas emitiram as certificações?',
+    answer:
+      'As certificações foram emitidas por plataformas de referência global como Alura, Coursera (parceria com universidades e Google), edX (parceria com MIT, Harvard), além de certificações diretas de fabricantes e provedores de tecnologia.',
+  },
+  {
+    question: 'As certificações cobrem Inteligência Artificial e Machine Learning?',
+    answer:
+      'Sim. O portfólio inclui certificações em Machine Learning, Deep Learning, LLMs, MLOps, visão computacional, NLP e engenharia de dados — alinhadas com a atuação como Consultor Estratégico de IA e Mestrando em IA pela AGTU (EUA).',
+  },
+  {
+    question: 'Há certificações em Blockchain e Segurança da Informação?',
+    answer:
+      'Sim. As certificações incluem fundamentos e desenvolvimento em Blockchain, criptografia aplicada, identidade soberana (SSI/DID), segurança de APIs, OWASP e boas práticas de segurança para sistemas distribuídos.',
+  },
+  {
+    question: 'Como as certificações se aplicam às consultorias e palestras?',
+    answer:
+      'Cada certificação representa domínio técnico aplicado diretamente em projetos reais de consultoria — desde arquitetura de sistemas até implementação de pipelines de IA. São a base técnica que sustenta o posicionamento de alto ticket.',
+  },
+  {
+    question: 'Ulisses Flores também possui certificações em metodologias ágeis?',
+    answer:
+      'Sim. O portfólio inclui certificações em Scrum, Kanban, DevOps, CI/CD e práticas de engenharia de software ágil, essenciais para liderar times técnicos e conduzir transformações digitais em organizações de médio e grande porte.',
+  },
+  {
+    question: 'Como verificar a autenticidade das certificações?',
+    answer:
+      'Cada certificação possui um link de verificação pública diretamente na página individual. Os IDs de certificação e URLs de verificação permitem validação independente junto ao provedor emissor, garantindo total transparência e rastreabilidade.',
+  },
+  {
+    question: 'Como contratar Ulisses Flores como Consultor ou Professor?',
+    answer:
+      'Entre em contato pelo formulário da página principal ou via LinkedIn. Ulisses atua como Consultor Estratégico de IA, Professor Convidado, Palestrante e Desenvolvedor por demanda para empresas, universidades e eventos em todo o Brasil e exterior.',
   },
 ];
 
 export const mumMraFaq: FaqItem[] = [
   {
-    question: 'O que é o Mumm-Ra?',
+    question: 'O que é o projeto experimental Mumm-Ra?',
     answer:
       'Mumm-Ra é um chatbot via WhatsApp inspirado no vilão imortal dos ThunderCats, o desenho animado dos anos 90. Ele responde com humor negro e sarcasmo pesado, te chamando de "verme" e "larva humana", mas sempre entrega a resposta que você precisa. É 100% personagem — pura diversão.',
   },
@@ -102,11 +177,6 @@ export const mumMraFaq: FaqItem[] = [
     question: 'Como conversar com o Mumm-Ra?',
     answer:
       'Mande uma mensagem para o número +55 11 5286-8689 via WhatsApp. Ele vai reclamar que foi invocado, te insultar criativamente e depois responder sua pergunta. Você também pode adicioná-lo a grupos de WhatsApp.',
-  },
-  {
-    question: 'O Mumm-Ra é gratuito?',
-    answer:
-      'Sim, o Mumm-Ra é totalmente gratuito. O projeto está em fase BETA, então pode ter bugs ou momentos de indisponibilidade. Estamos constantemente ajustando a personalidade e a capacidade de resposta.',
   },
   {
     question: 'Que tipo de perguntas posso fazer ao Mumm-Ra?',
@@ -119,9 +189,34 @@ export const mumMraFaq: FaqItem[] = [
       'Não. O Mumm-Ra é 100% um personagem fictício baseado no vilão do desenho ThunderCats dos anos 90. Todos os xingamentos como "verme", "larva humana" e "ser inferior" fazem parte da atuação. É humor negro para quem gosta — nada é pessoal.',
   },
   {
+    question: 'O Mumm-Ra é gratuito?',
+    answer:
+      'Sim, o Mumm-Ra é totalmente gratuito. O projeto está em fase BETA, então pode ter bugs ou momentos de indisponibilidade. Estamos constantemente ajustando a personalidade e a capacidade de resposta.',
+  },
+  {
     question: 'Posso adicionar o Mumm-Ra em grupos de WhatsApp?',
     answer:
       'Sim! Basta adicionar o número +55 11 5286-8689 ao grupo. O Mumm-Ra participa das conversas quando mencionado ou quando alguém faz uma pergunta direta. Ele xinga todo mundo igualmente, sem favoritismo.',
+  },
+  {
+    question: 'Qual tecnologia está por trás do Mumm-Ra?',
+    answer:
+      'O Mumm-Ra é alimentado por modelos de linguagem de grande escala (LLMs) integrados via WhatsApp Business API. A personalidade e as respostas são calibradas por engenharia de prompt avançada, desenvolvida por Ulisses Flores como parte de sua pesquisa em IA aplicada.',
+  },
+  {
+    question: 'O Mumm-Ra sempre responde às perguntas?',
+    answer:
+      'Sim, por mais que ele reclame, xingue e dramatize ao ser invocado, o Mumm-Ra sempre entrega uma resposta útil ao final. A reclamação faz parte do personagem — a informação útil é garantida.',
+  },
+  {
+    question: 'Por que o projeto está em fase BETA?',
+    answer:
+      'O Mumm-Ra está em desenvolvimento ativo. Estamos expandindo sua base de conhecimento, refinando a personalidade e testando integrações. Durante o BETA, o serviço pode ter instabilidades pontuais e o feedback dos usuários é fundamental para sua evolução.',
+  },
+  {
+    question: 'O Mumm-Ra tem relação com pesquisa acadêmica?',
+    answer:
+      'Sim. O projeto é um laboratório experimental que explora a fronteira entre engenharia de prompt, personagens de IA e interfaces conversacionais. Faz parte do portfólio de pesquisa em IA aplicada de Ulisses Flores, Mestrando em Inteligência Artificial pela AGTU (EUA).',
   },
 ];
 
@@ -144,7 +239,7 @@ export const ia2027Faq: FaqItem[] = [
   {
     question: 'Por que a Soberania Tecnológica da IA importa para o Brasil?',
     answer:
-      'A soberania de IA dita quais nações controlam as infraestruturas críticas do futuro. Países que dependem exclusivamente de modelos de fundação estrangeiros correm o risco de subordinação econômica. Cenários como o Rapaduria 2027 exploram especificamente os impactos macroeconômicos locais.',
+      'A soberania de IA dita quais nações controlam as infraestruturas críticas do futuro. Países que dependem exclusivamente de modelos de fundação estrangeiros correm o risco de subordinação econômica e perda de autonomia estratégica em setores essenciais.',
   },
   {
     question: 'O que são Agentes Autônomos de IA?',
@@ -175,5 +270,58 @@ export const ia2027Faq: FaqItem[] = [
     question: 'As previsões da simulação IA 2027 vão realmente acontecer?',
     answer:
       'A simulação não é determinística, mas probabilística. Ela não afirma o que vai acontecer, mas constrói cenários plausíveis baseados em leis de escala de computação e tendências geopolíticas atuais, servindo como uma ferramenta de preparação estratégica para tomadores de decisão.',
+  },
+];
+
+export const homeFaq: FaqItem[] = [
+  {
+    question: 'Quem é Ulisses Flores?',
+    answer:
+      'Carlos Ulisses Flores é Cientista Econômico, Analista de Sistemas e Pesquisador Polímata com atuação em Inteligência Artificial, Blockchain, Economia e Sistemas Complexos. Atua como Consultor Estratégico de IA, Palestrante, Professor Convidado e Mestrando em IA pela AGTU (EUA).',
+  },
+  {
+    question: 'Qual a formação acadêmica de Ulisses Flores?',
+    answer:
+      'Ulisses é Mestrando em Inteligência Artificial pela AGTU (EUA), possui MBA em Gestão de TI pela FIAP, graduação em Ciências Econômicas e em Análise de Sistemas. Sua produção acadêmica está indexada no ORCID (0000-0002-6034-7765) e na Plataforma Lattes.',
+  },
+  {
+    question: 'Quais são as áreas de pesquisa de Ulisses Flores?',
+    answer:
+      'As pesquisas de Ulisses cobrem IA aplicada, modelos preditivos (LSTM, MLP), Blockchain e criptografia (Bitcoin, Ring Signatures), Sistemas Híbridos de Resfriamento, Teologia Histórica e Canonização Bíblica, e Economia Austríaca. Publicações disponíveis em ulissesflores.com.',
+  },
+  {
+    question: 'Como contratar Ulisses Flores como Consultor Estratégico de IA?',
+    answer:
+      'Entre em contato pelo formulário da página principal ou via LinkedIn. Ulisses atende empresas, startups e instituições nas áreas de estratégia de IA, arquitetura de sistemas, transformação digital e desenvolvimento de software e hardware por demanda.',
+  },
+  {
+    question: 'Ulisses Flores realiza palestras sobre Inteligência Artificial?',
+    answer:
+      'Sim. Ulisses é palestrante em IA, AGI, Soberania Tecnológica, Blockchain e Economia Digital. Realiza apresentações em português, inglês e espanhol para corporações, universidades e eventos de tecnologia. Entre em contato para verificar disponibilidade e cachê.',
+  },
+  {
+    question: 'O que é a Simulação IA 2027 criada por Ulisses Flores?',
+    answer:
+      'É a principal simulação interativa em português sobre o futuro da AGI (Inteligência Artificial Geral), com linha do tempo 2025–2027, métricas dinâmicas e dois finais alternativos: Desaceleração Coordenada ou Corrida Estratégica. Disponível gratuitamente em ulissesflores.com/simulacoes/ia-2027.',
+  },
+  {
+    question: 'O que é o Mumm-Ra e como ele se relaciona com a pesquisa de Ulisses?',
+    answer:
+      'Mumm-Ra é um chatbot experimental via WhatsApp que combina engenharia de prompt avançada com o personagem vilão dos ThunderCats. É um laboratório de pesquisa em interfaces conversacionais e personalidades de IA, parte do portfólio de IA aplicada de Ulisses.',
+  },
+  {
+    question: 'Onde estão publicados os artigos e pesquisas de Ulisses Flores?',
+    answer:
+      'As publicações estão disponíveis em ulissesflores.com, com indexação pública no ORCID e Lattes. O portfólio inclui artigos de pesquisa, whitepapers técnicos e ensaios nas áreas de IA, economia, blockchain, teologia e engenharia de sistemas.',
+  },
+  {
+    question: 'Em que regiões Ulisses Flores atua como consultor e professor?',
+    answer:
+      'Baseado em Jundiaí/Itupeva (SP), Ulisses atende clientes e instituições em toda a Grande São Paulo e interior, com projetos e palestras em todo o Brasil e internacionalmente. Consultorias e aulas remotas estão disponíveis globalmente.',
+  },
+  {
+    question: 'Como verificar a identidade digital de Ulisses Flores?',
+    answer:
+      'A identidade de Ulisses é verificável através de identificadores públicos: ORCID (0000-0002-6034-7765), Lattes (6905246706890561), Keybase (ul1ss3sfl0r3s), DID e Gitcoin Passport. Todos os links de validação estão em ulissesflores.com/identidade.',
   },
 ];

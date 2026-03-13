@@ -2,7 +2,7 @@
 
 Canonical Site: https://ulissesflores.com
 Canonical Person: https://ulissesflores.com/#person
-Generated: 2026-02-21
+Generated: 2026-03-12
 
 ## Scope
 This file contains an expanded machine-readable index of publication URLs and summaries.
