@@ -76,4 +76,4 @@ Agenda de continuidade: Ampliar confronto com bibliografia de fronteira e reviso
 - DOI status: target
 - DOI target: 10.5281/zenodo.202424
 - Canonical citation seed: Ricoeur, 1976; Brueggemann, 1997; Wright, 1992
-- Generated at: 2026-02-21
+- Generated at: 2026-03-12

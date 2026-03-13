@@ -76,4 +76,4 @@ Agenda de continuidade: Ampliar confronto com bibliografia de fronteira e reviso
 - DOI status: target
 - DOI target: 10.5281/zenodo.202231
 - Canonical citation seed: Moltmann, 1967; Bonhoeffer, 1953; Pannenberg, 1968
-- Generated at: 2026-02-21
+- Generated at: 2026-03-12

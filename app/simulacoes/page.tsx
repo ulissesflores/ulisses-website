@@ -8,9 +8,18 @@ import { simulacoesFaq } from '@/data/faq';
 const canonicalPath = '/simulacoes';
 
 export const metadata: Metadata = {
-  title: 'Simulações | Laboratório de Cenários',
+  title: 'Simulações Estratégicas de IA | IA 2027, AGI e Cenários Futuros | Ulisses Flores',
   description:
-    'Hub de simulações e soluções experimentais com foco em cenários de IA, economia e sistemas complexos.',
+    'Explore simulações interativas sobre o futuro da Inteligência Artificial e AGI, criadas por Ulisses Flores — Consultor Estratégico de IA, Professor, Palestrante e Mestrando em IA pela AGTU (EUA). A principal plataforma de modelagem de cenários futuros em português.',
+  keywords: [
+    'simulações estratégicas IA',
+    'cenários futuros inteligência artificial',
+    'IA 2027',
+    'AGI futuro',
+    'modelagem de cenários',
+    'soberania tecnológica',
+    'Ulisses Flores consultor IA',
+  ],
   authors: [
     {
       name: upkfMeta.publicDisplayName || upkfMeta.displayName,
@@ -23,77 +32,310 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     url: `${upkfMeta.primaryWebsite}${canonicalPath}`,
-    title: 'Simulações | Laboratório de Cenários',
+    title: 'Simulações Estratégicas de IA | IA 2027, AGI e Cenários Futuros | Ulisses Flores',
     description:
-      'Acesso às simulações ativas do hub, incluindo a experiência prospectiva IA 2027.',
+      'Explore simulações interativas sobre o futuro da Inteligência Artificial e AGI, criadas por Ulisses Flores — Consultor Estratégico de IA, Professor, Palestrante e Mestrando em IA pela AGTU (EUA).',
+    locale: 'pt_BR',
   },
 };
 
 export default function SimulacoesPage() {
+  const origin = upkfMeta.primaryWebsite;
+
+  const pageJsonLd = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'CollectionPage',
+        '@id': `${origin}${canonicalPath}#collection`,
+        url: `${origin}${canonicalPath}`,
+        name: 'Simulações Estratégicas de IA | Ulisses Flores',
+        description:
+          'Hub de simulações interativas sobre o futuro da Inteligência Artificial, AGI e cenários geopolíticos, criadas por Ulisses Flores.',
+        inLanguage: 'pt-BR',
+        isPartOf: {
+          '@id': `${origin}/#website`,
+        },
+        author: {
+          '@id': `${origin}/#person`,
+        },
+        hasPart: [
+          {
+            '@type': ['WebPage', 'SoftwareApplication'],
+            url: `${origin}/simulacoes/ia-2027`,
+            name: 'IA 2027: Simulação Interativa sobre o Futuro da Inteligência Artificial',
+          },
+          {
+            '@type': ['WebPage', 'SoftwareApplication'],
+            url: `${origin}/simulacoes/mumm-ra`,
+            name: 'Mumm-Ra: Chatbot Experimental via WhatsApp',
+          },
+        ],
+      },
+    ],
+  };
+
   return (
-    <div className='min-h-screen bg-neutral-950 text-neutral-200 pt-20'>
-      <main className='max-w-5xl mx-auto px-6 py-16'>
-        <Link href='/' className='text-sm text-neutral-400 hover:text-emerald-300 transition-colors'>
-          Voltar para Home
-        </Link>
-
-        <header className='mt-8 mb-12'>
-          <p className='text-xs uppercase tracking-[0.18em] text-emerald-300 mb-3'>Simulações & Soluções</p>
-          <h1 className='text-4xl font-bold text-white mb-3'>Laboratório de Simulações</h1>
-          <p className='text-neutral-400 max-w-3xl leading-relaxed'>
-            Espaço dedicado a projetos em execução com narrativa orientada a decisão. Cada simulação combina
-            engenharia de interface, hipótese estratégica e visualização dinâmica de métricas.
-          </p>
-          <div className='mt-5 max-w-xl'>
-            <AuthorHubCard
-              label='Hub canônico'
-              compact
-              description='Simulações conectadas à identidade soberana para contexto autoral e indexação semântica.'
-            />
+    <>
+      {/* Hero Section — white, SEO/GEO/LLM optimized */}
+      <section className='bg-white text-black pt-20 pb-16 border-b border-gray-200'>
+        <div className='max-w-4xl mx-auto px-6'>
+          {/* Breadcrumb / Kicker */}
+          <div className='flex items-center gap-2 mb-6'>
+            <Link href='/' className='text-xs font-mono uppercase tracking-widest text-blue-700 hover:underline'>
+              Home
+            </Link>
+            <span className='text-xs text-gray-400'>→</span>
+            <span className='text-xs font-mono uppercase tracking-widest text-gray-500'>
+              Simulações Estratégicas
+            </span>
           </div>
-        </header>
 
-        <section className='grid gap-6'>
-          <article className='rounded-2xl border border-neutral-800 bg-neutral-900/40 p-7'>
-            <p className='text-[11px] uppercase tracking-[0.2em] text-cyan-300 mb-2'>Projeto Ativo</p>
-            <h2 className='text-2xl font-bold text-white mb-3'>IA 2027 em Português</h2>
-            <p className='text-neutral-300 leading-relaxed mb-5'>
-              Simulação prospectiva baseada no cenário AI 2027, com timeline interativa, métricas dinâmicas por seção
-              e finais ramificados (slowdown/race).
+          {/* H1 */}
+          <h1 className='text-4xl sm:text-5xl font-bold leading-tight tracking-tight mb-6'>
+            Simulações Estratégicas de IA
+          </h1>
+
+          {/* Lead paragraph */}
+          <p className='text-lg text-gray-700 leading-relaxed mb-8 max-w-3xl'>
+            Modelagem interativa de cenários sobre o futuro da Inteligência Artificial Geral (AGI),
+            soberania tecnológica e impacto econômico. Criadas e curadas por Ulisses Flores —
+            Cientista Econômico, Consultor Estratégico de IA, Professor, Palestrante e Mestrando
+            em Inteligência Artificial pela AGTU (EUA).
+          </p>
+
+          {/* Authority block */}
+          <div className='border-l-4 border-blue-600 bg-blue-50 px-6 py-5 rounded-r-xl mb-10'>
+            <p className='text-sm font-semibold text-blue-800 uppercase tracking-wide mb-2'>
+              Por que estas simulações importam
             </p>
-            <Link
-              href='/simulacoes/ia-2027'
-              className='inline-flex items-center gap-2 rounded-full border border-emerald-500/50 px-4 py-2 text-sm font-semibold text-emerald-300 hover:bg-emerald-900/20 transition-colors'
-            >
-              Abrir simulação
-            </Link>
-          </article>
+            <p className='text-gray-800 leading-relaxed'>
+              Cada simulação aqui é construída com rigor científico: combinando dados reais de
+              evolução tecnológica, modelos econômicos e análise estratégica. O objetivo é
+              oferecer a líderes, pesquisadores e profissionais as ferramentas para antecipar,
+              compreender e agir diante das transformações que a AGI imporá à economia e à
+              geopolítica global.
+            </p>
+          </div>
 
-          <article className='rounded-2xl border border-neutral-800 bg-neutral-900/40 p-7'>
-            <div className='flex items-center gap-2 mb-2'>
-              <p className='text-[11px] uppercase tracking-[0.2em] text-violet-300'>Ferramenta Experimental</p>
-              <span className='text-[9px] uppercase tracking-widest text-amber-400 border border-amber-500/30 rounded-full px-1.5 py-0.5 font-bold'>
-                BETA
+          {/* Credential chips */}
+          <div className='flex flex-wrap gap-2 mb-8'>
+            {[
+              'Consultor Estratégico de IA',
+              'Palestrante',
+              'Professor Convidado',
+              'Mestrando AGTU (EUA)',
+              'Economista & Cientista de Sistemas',
+            ].map((credential) => (
+              <span
+                key={credential}
+                className='text-xs font-mono border border-gray-300 bg-gray-50 text-gray-700 px-3 py-1 rounded-full'
+              >
+                {credential}
               </span>
-            </div>
-            <h2 className='text-2xl font-bold text-white mb-3'>Mumm-Ra · Humor Negro via WhatsApp</h2>
-            <p className='text-neutral-300 leading-relaxed mb-5'>
-              Chatbot inspirado no vilão imortal dos ThunderCats (anos 90). Te xinga, reclama, te chama de verme —
-              mas sempre responde. Humor negro com IA. Gratuito e em BETA.
-            </p>
-            <Link
-              href='/simulacoes/mumm-ra'
-              className='inline-flex items-center gap-2 rounded-full border border-emerald-500/50 px-4 py-2 text-sm font-semibold text-emerald-300 hover:bg-emerald-900/20 transition-colors'
-            >
-              Ver detalhes
-            </Link>
-          </article>
-        </section>
-
-        <div className='mt-12'>
-          <FaqSection items={simulacoesFaq} sectionTitle='Perguntas sobre Simulações' />
+            ))}
+          </div>
         </div>
-      </main>
-    </div>
+      </section>
+
+      {/* Simulations Grid */}
+      <section className='bg-neutral-950 text-neutral-200 py-16'>
+        <div className='max-w-5xl mx-auto px-6'>
+          <h2 className='text-2xl font-bold text-white mb-8'>Simulações Disponíveis</h2>
+
+          <div className='grid gap-8'>
+            {/* IA 2027 — featured */}
+            <article className='rounded-2xl border border-emerald-800/30 bg-neutral-900/60 p-8'>
+              <div className='flex items-center gap-3 mb-4'>
+                <span className='text-[10px] uppercase tracking-[0.2em] text-emerald-300 border border-emerald-700/40 rounded-full px-3 py-1'>
+                  Destaque Principal
+                </span>
+                <span className='text-[10px] uppercase tracking-[0.2em] text-cyan-300'>
+                  Projeto Ativo
+                </span>
+              </div>
+              <h2 className='text-2xl font-bold text-white mb-3'>
+                IA 2027: Simulação Interativa sobre o Futuro da Inteligência Artificial
+              </h2>
+              <p className='text-neutral-300 leading-relaxed mb-4'>
+                A única simulação interativa em português sobre a chegada da AGI. Linha do tempo
+                2025–2027 com métricas dinâmicas, notas técnicas expansíveis e dois finais
+                alternativos: <strong className='text-emerald-300'>Desaceleração Coordenada</strong>{' '}
+                ou <strong className='text-red-400'>Corrida Estratégica</strong>.
+              </p>
+              <div className='flex flex-wrap gap-3 mb-6'>
+                {['AGI', 'Soberania Tecnológica', 'Impacto Econômico', 'Segurança de IA'].map((tag) => (
+                  <span key={tag} className='text-xs border border-neutral-700 text-neutral-400 px-3 py-1 rounded-full'>
+                    {tag}
+                  </span>
+                ))}
+              </div>
+              <div className='flex flex-wrap gap-3'>
+                <Link
+                  href='/simulacoes/ia-2027'
+                  className='inline-flex items-center gap-2 bg-emerald-700 hover:bg-emerald-600 text-white font-semibold px-5 py-2.5 rounded-full transition-colors text-sm'
+                >
+                  Iniciar Simulação →
+                </Link>
+                <Link
+                  href='/simulacoes/ia-2027/desaceleracao-coordenada'
+                  className='inline-flex items-center gap-2 border border-emerald-700/50 text-emerald-300 hover:bg-emerald-900/30 font-medium px-5 py-2.5 rounded-full transition-colors text-sm'
+                >
+                  Cenário: Desaceleração
+                </Link>
+                <Link
+                  href='/simulacoes/ia-2027/corrida-estrategica'
+                  className='inline-flex items-center gap-2 border border-red-700/50 text-red-400 hover:bg-red-900/20 font-medium px-5 py-2.5 rounded-full transition-colors text-sm'
+                >
+                  Cenário: Corrida
+                </Link>
+              </div>
+            </article>
+
+            {/* Projeto PSI */}
+            <article className='rounded-2xl border border-neutral-800 bg-neutral-900/40 p-8'>
+              <div className='flex items-center gap-3 mb-4'>
+                <span className='text-[10px] uppercase tracking-[0.2em] text-cyan-300 border border-cyan-700/40 rounded-full px-3 py-1'>
+                  Hardware & Blockchain
+                </span>
+                <span className='text-[10px] uppercase tracking-widest text-amber-400 border border-amber-500/30 rounded-full px-2 py-0.5 font-bold'>
+                  R&D
+                </span>
+              </div>
+              <h2 className='text-2xl font-bold text-white mb-3'>
+                Projeto PSI · Hardware Wallet Nuclear-Grade
+              </h2>
+              <p className='text-neutral-300 leading-relaxed mb-4'>
+                Hardware wallet de nível nuclear com Ring Signatures, endereços furtivos e airgap
+                total para soberania digital absoluta. Co-inventada como parte do ecossistema Codex Hash.
+              </p>
+              <div className='flex flex-wrap gap-3 mb-6'>
+                {['Ring Signatures', 'Airgap', 'Codex Hash', 'Privacidade'].map((tag) => (
+                  <span key={tag} className='text-xs border border-neutral-700 text-neutral-400 px-3 py-1 rounded-full'>
+                    {tag}
+                  </span>
+                ))}
+              </div>
+              <Link
+                href='/simulacoes/projeto-psi'
+                className='inline-flex items-center gap-2 border border-neutral-700 text-neutral-300 hover:text-white hover:border-neutral-500 font-medium px-5 py-2.5 rounded-full transition-colors text-sm'
+              >
+                Ver detalhes →
+              </Link>
+            </article>
+
+            {/* GoldenLeaf */}
+            <article className='rounded-2xl border border-neutral-800 bg-neutral-900/40 p-8'>
+              <div className='flex items-center gap-3 mb-4'>
+                <span className='text-[10px] uppercase tracking-[0.2em] text-green-300 border border-green-700/40 rounded-full px-3 py-1'>
+                  IoT & Agricultura
+                </span>
+                <span className='text-[10px] uppercase tracking-widest text-amber-400 border border-amber-500/30 rounded-full px-2 py-0.5 font-bold'>
+                  R&D
+                </span>
+              </div>
+              <h2 className='text-2xl font-bold text-white mb-3'>
+                GoldenLeaf · Micologia Inteligente com IoT e IA
+              </h2>
+              <p className='text-neutral-300 leading-relaxed mb-4'>
+                Sistema de cultivo autônomo de cogumelos gourmet com sensores IoT de precisão, IA
+                preditiva on-edge e arquitetura cloudless — soberania total dos dados sem nuvem.
+              </p>
+              <div className='flex flex-wrap gap-3 mb-6'>
+                {['IoT', 'IA Preditiva', 'Cloudless', 'Agricultura'].map((tag) => (
+                  <span key={tag} className='text-xs border border-neutral-700 text-neutral-400 px-3 py-1 rounded-full'>
+                    {tag}
+                  </span>
+                ))}
+              </div>
+              <Link
+                href='/simulacoes/goldenleaf'
+                className='inline-flex items-center gap-2 border border-neutral-700 text-neutral-300 hover:text-white hover:border-neutral-500 font-medium px-5 py-2.5 rounded-full transition-colors text-sm'
+              >
+                Ver detalhes →
+              </Link>
+            </article>
+
+            {/* Mumm-Ra */}
+            <article className='rounded-2xl border border-neutral-800 bg-neutral-900/40 p-8'>
+              <div className='flex items-center gap-3 mb-4'>
+                <span className='text-[10px] uppercase tracking-[0.2em] text-violet-300 border border-violet-700/40 rounded-full px-3 py-1'>
+                  Ferramenta Experimental
+                </span>
+                <span className='text-[10px] uppercase tracking-widest text-amber-400 border border-amber-500/30 rounded-full px-2 py-0.5 font-bold'>
+                  BETA
+                </span>
+              </div>
+              <h2 className='text-2xl font-bold text-white mb-3'>
+                Mumm-Ra · Chatbot de Humor Negro via WhatsApp
+              </h2>
+              <p className='text-neutral-300 leading-relaxed mb-4'>
+                Chatbot experimental alimentado por LLMs, inspirado no vilão imortal dos
+                ThunderCats (anos 90). Te xinga, reclama de ter sido invocado, te chama de verme —
+                mas sempre entrega a resposta. Laboratório de engenharia de prompt e personagens de IA.
+              </p>
+              <div className='flex flex-wrap gap-3 mb-6'>
+                {['WhatsApp', 'LLMs', 'Engenharia de Prompt', 'Humor Negro'].map((tag) => (
+                  <span key={tag} className='text-xs border border-neutral-700 text-neutral-400 px-3 py-1 rounded-full'>
+                    {tag}
+                  </span>
+                ))}
+              </div>
+              <Link
+                href='/simulacoes/mumm-ra'
+                className='inline-flex items-center gap-2 border border-neutral-700 text-neutral-300 hover:text-white hover:border-neutral-500 font-medium px-5 py-2.5 rounded-full transition-colors text-sm'
+              >
+                Ver detalhes →
+              </Link>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      {/* Author block */}
+      <section className='bg-neutral-950 text-neutral-200 pb-4'>
+        <div className='max-w-5xl mx-auto px-6'>
+          <AuthorHubCard
+            label='Curadoria & Pesquisa'
+            description='Simulações criadas, curadas e analisadas por Ulisses Flores — Consultor Estratégico de IA, Professor, Palestrante e Mestrando em IA pela AGTU (EUA).'
+          />
+        </div>
+      </section>
+
+      {/* CTA consulting */}
+      <section className='bg-neutral-950 text-neutral-200 py-12'>
+        <div className='max-w-4xl mx-auto px-6 text-center'>
+          <h2 className='text-xl font-bold text-white mb-3'>
+            Quer usar estas simulações na sua empresa ou evento?
+          </h2>
+          <p className='text-neutral-400 mb-6 max-w-2xl mx-auto text-sm leading-relaxed'>
+            Ulisses Flores aplica estas simulações em workshops corporativos, aulas universitárias e
+            palestras. Entre em contato para consultoria personalizada ou para apresentação ao seu time.
+          </p>
+          <Link
+            href='/'
+            className='inline-flex items-center gap-2 bg-white text-black font-semibold px-6 py-3 rounded-full hover:bg-gray-100 transition-colors text-sm'
+          >
+            Falar com Ulisses →
+          </Link>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className='bg-neutral-950 text-neutral-200 pb-16'>
+        <div className='max-w-4xl mx-auto px-6'>
+          <FaqSection
+            items={simulacoesFaq}
+            sectionTitle='Perguntas sobre Simulações Estratégicas de IA'
+          />
+        </div>
+      </section>
+
+      <script
+        id='structured-data-simulacoes'
+        type='application/ld+json'
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(pageJsonLd) }}
+      />
+    </>
   );
 }

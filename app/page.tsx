@@ -1,14 +1,117 @@
+import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
-import { 
-  BookOpen, Cpu, Github, Linkedin, Mail, Terminal, Download, 
-  Globe, MapPin, MessageCircle, 
-  Layers, Code, Briefcase, Award, TrendingUp, 
+import {
+  BookOpen, Cpu, Github, Linkedin, Mail, Terminal, Download,
+  Globe, MapPin, MessageCircle,
+  Layers, Code, Briefcase, Award, TrendingUp,
   Database, CheckCircle, FileText, FlaskConical
 } from 'lucide-react';
 import { publications } from '@/data/publications';
+import { FaqSection } from '@/components/faq-section';
+import { homeFaq } from '@/data/faq';
+import { upkfMeta } from '@/data/generated/upkf.generated';
+
+export const metadata: Metadata = {
+  title: 'Ulisses Flores | Consultor de IA, Professor, Palestrante e Pesquisador',
+  description:
+    'Ulisses Flores — Cientista Econômico, Consultor Estratégico de IA, Professor Convidado, Palestrante e Mestrando em IA pela AGTU (EUA). Pesquisas em IA, Blockchain, Economia e Sistemas Complexos. Baseado em Jundiaí/SP, atende todo o Brasil.',
+  keywords: [
+    'Ulisses Flores',
+    'consultor estratégico IA',
+    'palestrante inteligência artificial',
+    'professor convidado IA',
+    'mestrando AGTU',
+    'cientista econômico',
+    'blockchain consultor',
+    'Jundiaí São Paulo',
+  ],
+  authors: [
+    {
+      name: 'Ulisses Flores',
+      url: 'https://ulissesflores.com/identidade',
+    },
+  ],
+  alternates: {
+    canonical: '/',
+  },
+  openGraph: {
+    type: 'profile',
+    url: 'https://ulissesflores.com',
+    title: 'Ulisses Flores | Consultor de IA, Professor, Palestrante e Pesquisador',
+    description:
+      'Ulisses Flores — Consultor Estratégico de IA, Professor, Palestrante e Mestrando AGTU (EUA). Pesquisas em IA, Blockchain e Economia.',
+    locale: 'pt_BR',
+    images: [
+      {
+        url: 'https://ulissesflores.com/carlos-ulisses-flores-cto.jpg',
+        width: 800,
+        height: 800,
+        alt: 'Ulisses Flores — Consultor de IA, Professor e Palestrante',
+      },
+    ],
+  },
+};
 
 export default function Home() {
+  const origin = upkfMeta.primaryWebsite;
+
+  const homeJsonLd = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'ProfilePage',
+        '@id': `${origin}/#profilepage`,
+        url: origin,
+        name: 'Ulisses Flores — Hub Canônico',
+        mainEntity: {
+          '@id': `${origin}/#person`,
+        },
+        isPartOf: {
+          '@id': `${origin}/#website`,
+        },
+      },
+      {
+        '@type': 'WebSite',
+        '@id': `${origin}/#website`,
+        url: origin,
+        name: 'Ulisses Flores',
+        description: 'Hub canônico de pesquisa e identidade de Carlos Ulisses Flores.',
+        inLanguage: 'pt-BR',
+        potentialAction: {
+          '@type': 'SearchAction',
+          target: {
+            '@type': 'EntryPoint',
+            urlTemplate: `${origin}/research?q={search_term_string}`,
+          },
+          'query-input': 'required name=search_term_string',
+        },
+      },
+      {
+        '@type': 'Person',
+        '@id': `${origin}/#person`,
+        name: 'Carlos Ulisses Flores',
+        alternateName: 'Ulisses Flores',
+        url: origin,
+        image: `${origin}/carlos-ulisses-flores-cto.jpg`,
+        jobTitle: ['Consultor Estratégico de IA', 'Professor', 'Palestrante', 'Pesquisador', 'CTO'],
+        description:
+          'Cientista Econômico, Analista de Sistemas e Pesquisador Polímata. Mestrando em IA pela AGTU (EUA). Consultor Estratégico de IA, Professor Convidado, Palestrante e Desenvolvedor por demanda.',
+        sameAs: [
+          'https://orcid.org/0000-0002-6034-7765',
+          'https://lattes.cnpq.br/6905246706890561',
+          'https://keybase.io/ul1ss3sfl0r3s',
+          'https://www.linkedin.com/in/ulisses-flores-75961921',
+        ],
+        knowsLanguage: ['pt-BR', 'en', 'es'],
+        areaServed: ['Jundiaí', 'Itupeva', 'São Paulo', 'Brasil'],
+        alumniOf: [
+          { '@type': 'CollegeOrUniversity', name: 'American Global Tech University (AGTU)', location: 'EUA' },
+          { '@type': 'CollegeOrUniversity', name: 'FIAP', location: 'São Paulo, Brasil' },
+        ],
+      },
+    ],
+  };
   const featuredPublications = [...publications]
     .sort((a, b) => {
       if (a.date === b.date) {
@@ -361,12 +464,23 @@ export default function Home() {
            </div>
         </section>
 
+        {/* FAQ Section */}
+        <section id="faq" className="mb-12 scroll-mt-24">
+          <FaqSection items={homeFaq} sectionTitle='Perguntas sobre Ulisses Flores' />
+        </section>
+
         <footer className="text-center text-neutral-600 text-sm py-12 border-t border-white/5">
           <p>© 2026 Codex Hash Ltda. All rights reserved.</p>
           <p className="text-xs mt-2 font-mono text-neutral-700">UlissesFlores.com • v10.0 • State of the Art</p>
         </footer>
 
       </main>
+
+      <script
+        id='structured-data-home'
+        type='application/ld+json'
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(homeJsonLd) }}
+      />
     </div>
   );
 }

@@ -76,4 +76,4 @@ Agenda de continuidade: Replicar o estudo em novos contextos operacionais com de
 - DOI status: target
 - DOI target: 10.5281/zenodo.202502
 - Canonical citation seed: Hochreiter, 1997; Fischer, 2018; Nelson, 2017
-- Generated at: 2026-02-21
+- Generated at: 2026-03-12

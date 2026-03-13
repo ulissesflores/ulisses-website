@@ -1,10 +1,10 @@
 /* AUTO-GENERATED FILE. DO NOT EDIT MANUALLY.
  * Source: public/upkf-source.md
- * Generated at: 2026-02-21
+ * Generated at: 2026-03-12
  */
 
 export const knowledgeData = {
-  "generatedAt": "2026-02-21",
+  "generatedAt": "2026-03-12",
   "identityHub": {
     "bioPtBr": "Cientista econômico, analista de sistemas e pesquisador polímata, atuando na interseção entre sistemas complexos, resiliência ciberfinanceira, economia austríaca, sistemas distribuídos e teologia histórica. Co-fundador e CTO da Codex Hash Ltda.",
     "expertisePillars": [
@@ -232,7 +232,7 @@ export const knowledgeData = {
       "issuerRef": "https://ulissesflores.com/#alura",
       "position": 1,
       "summary": "Professional training credential in \"Entrega Contínua: confiabilidade e qualidade\" with direct verification URL.",
-      "publishedAt": "2026-02-21"
+      "publishedAt": "2026-03-12"
     },
     {
       "slug": "alura-2-formacao-engenharia-de-software",
@@ -244,7 +244,7 @@ export const knowledgeData = {
       "issuerRef": "https://ulissesflores.com/#alura",
       "position": 2,
       "summary": "Professional training credential in \"Formação Engenharia de software\" with direct verification URL.",
-      "publishedAt": "2026-02-21"
+      "publishedAt": "2026-03-12"
     },
     {
       "slug": "alura-3-integracao-continua-qualidade-e-menos-risco",
@@ -256,7 +256,7 @@ export const knowledgeData = {
       "issuerRef": "https://ulissesflores.com/#alura",
       "position": 3,
       "summary": "Professional training credential in \"Integração Contínua: qualidade e menos risco\" with direct verification URL.",
-      "publishedAt": "2026-02-21"
+      "publishedAt": "2026-03-12"
     },
     {
       "slug": "alura-4-microsservicos-na-pratica",
@@ -268,7 +268,7 @@ export const knowledgeData = {
       "issuerRef": "https://ulissesflores.com/#alura",
       "position": 4,
       "summary": "Professional training credential in \"Microsserviços na prática\" with direct verification URL.",
-      "publishedAt": "2026-02-21"
+      "publishedAt": "2026-03-12"
     },
     {
       "slug": "alura-5-microsservicos-explorando-conceitos",
@@ -280,7 +280,7 @@ export const knowledgeData = {
       "issuerRef": "https://ulissesflores.com/#alura",
       "position": 5,
       "summary": "Professional training credential in \"Microsserviços: explorando conceitos\" with direct verification URL.",
-      "publishedAt": "2026-02-21"
+      "publishedAt": "2026-03-12"
     },
     {
       "slug": "alura-6-microsservicos-padroes-de-projeto",
@@ -292,7 +292,7 @@ export const knowledgeData = {
       "issuerRef": "https://ulissesflores.com/#alura",
       "position": 6,
       "summary": "Professional training credential in \"Microsserviços: padrões de projeto\" with direct verification URL.",
-      "publishedAt": "2026-02-21"
+      "publishedAt": "2026-03-12"
     },
     {
       "slug": "alura-7-extreme-programming-metodologia-agil",
@@ -304,7 +304,7 @@ export const knowledgeData = {
       "issuerRef": "https://ulissesflores.com/#alura",
       "position": 7,
       "summary": "Professional training credential in \"Extreme Programming: metodologia ágil\" with direct verification URL.",
-      "publishedAt": "2026-02-21"
+      "publishedAt": "2026-03-12"
     },
     {
       "slug": "alura-8-organizacao-de-equipes-ageis",
@@ -316,7 +316,7 @@ export const knowledgeData = {
       "issuerRef": "https://ulissesflores.com/#alura",
       "position": 8,
       "summary": "Professional training credential in \"Organização de Equipes Ágeis\" with direct verification URL.",
-      "publishedAt": "2026-02-21"
+      "publishedAt": "2026-03-12"
     },
     {
       "slug": "alura-9-scrum-agilidade-em-seu-projeto",
@@ -328,7 +328,7 @@ export const knowledgeData = {
       "issuerRef": "https://ulissesflores.com/#alura",
       "position": 9,
       "summary": "Professional training credential in \"Scrum: agilidade em seu projeto\" with direct verification URL.",
-      "publishedAt": "2026-02-21"
+      "publishedAt": "2026-03-12"
     },
     {
       "slug": "alura-10-quality-assurance-plano-de-testes-e-bugs",
@@ -340,7 +340,7 @@ export const knowledgeData = {
       "issuerRef": "https://ulissesflores.com/#alura",
       "position": 10,
       "summary": "Professional training credential in \"Quality Assurance: plano de testes e bugs\" with direct verification URL.",
-      "publishedAt": "2026-02-21"
+      "publishedAt": "2026-03-12"
     },
     {
       "slug": "alura-11-blockchain-para-negocios",
@@ -352,7 +352,7 @@ export const knowledgeData = {
       "issuerRef": "https://ulissesflores.com/#alura",
       "position": 11,
       "summary": "Professional training credential in \"Blockchain para Negócios\" with direct verification URL.",
-      "publishedAt": "2026-02-21"
+      "publishedAt": "2026-03-12"
     },
     {
       "slug": "alura-12-blockchain-aumente-a-confianca",
@@ -364,7 +364,7 @@ export const knowledgeData = {
       "issuerRef": "https://ulissesflores.com/#alura",
       "position": 12,
       "summary": "Professional training credential in \"Blockchain: aumente a confiança\" with direct verification URL.",
-      "publishedAt": "2026-02-21"
+      "publishedAt": "2026-03-12"
     },
     {
       "slug": "alura-13-ia-generativa-midjourney-e-chatgpt",
@@ -376,7 +376,7 @@ export const knowledgeData = {
       "issuerRef": "https://ulissesflores.com/#alura",
       "position": 13,
       "summary": "Professional training credential in \"IA Generativa: Midjourney e ChatGPT\" with direct verification URL.",
-      "publishedAt": "2026-02-21"
+      "publishedAt": "2026-03-12"
     },
     {
       "slug": "alura-14-value-stream-mapping-vsm-desenhe-mapa",
@@ -388,7 +388,7 @@ export const knowledgeData = {
       "issuerRef": "https://ulissesflores.com/#alura",
       "position": 14,
       "summary": "Professional training credential in \"Value Stream Mapping (VSM): desenhe mapa\" with direct verification URL.",
-      "publishedAt": "2026-02-21"
+      "publishedAt": "2026-03-12"
     },
     {
       "slug": "alura-15-value-stream-mapping-vsm-conheca-fluxo",
@@ -400,7 +400,7 @@ export const knowledgeData = {
       "issuerRef": "https://ulissesflores.com/#alura",
       "position": 15,
       "summary": "Professional training credential in \"Value Stream Mapping (VSM): conheça fluxo\" with direct verification URL.",
-      "publishedAt": "2026-02-21"
+      "publishedAt": "2026-03-12"
     },
     {
       "slug": "alura-16-rpa-aplicacoes-gerais",
@@ -412,7 +412,7 @@ export const knowledgeData = {
       "issuerRef": "https://ulissesflores.com/#alura",
       "position": 16,
       "summary": "Professional training credential in \"RPA: aplicações gerais\" with direct verification URL.",
-      "publishedAt": "2026-02-21"
+      "publishedAt": "2026-03-12"
     },
     {
       "slug": "alura-17-bizagi-mapeamento-com-bpmn",
@@ -424,7 +424,7 @@ export const knowledgeData = {
       "issuerRef": "https://ulissesflores.com/#alura",
       "position": 17,
       "summary": "Professional training credential in \"Bizagi: mapeamento com BPMN\" with direct verification URL.",
-      "publishedAt": "2026-02-21"
+      "publishedAt": "2026-03-12"
     },
     {
       "slug": "alura-18-uml-modelagem-de-diagramas",
@@ -436,7 +436,7 @@ export const knowledgeData = {
       "issuerRef": "https://ulissesflores.com/#alura",
       "position": 18,
       "summary": "Professional training credential in \"UML: modelagem de diagramas\" with direct verification URL.",
-      "publishedAt": "2026-02-21"
+      "publishedAt": "2026-03-12"
     },
     {
       "slug": "alura-19-uml-modelagem-de-solucoes",
@@ -448,7 +448,7 @@ export const knowledgeData = {
       "issuerRef": "https://ulissesflores.com/#alura",
       "position": 19,
       "summary": "Professional training credential in \"UML: modelagem de soluções\" with direct verification URL.",
-      "publishedAt": "2026-02-21"
+      "publishedAt": "2026-03-12"
     },
     {
       "slug": "alura-20-linux-onboarding-cli-rapida-e-pratica",
@@ -460,7 +460,7 @@ export const knowledgeData = {
       "issuerRef": "https://ulissesflores.com/#alura",
       "position": 20,
       "summary": "Professional training credential in \"Linux Onboarding: CLI rápida e prática\" with direct verification URL.",
-      "publishedAt": "2026-02-21"
+      "publishedAt": "2026-03-12"
     },
     {
       "slug": "alura-21-aprenda-java-com-orientacao-a-objetos",
@@ -472,7 +472,7 @@ export const knowledgeData = {
       "issuerRef": "https://ulissesflores.com/#alura",
       "position": 21,
       "summary": "Professional training credential in \"Aprenda Java com Orientação a Objetos\" with direct verification URL.",
-      "publishedAt": "2026-02-21"
+      "publishedAt": "2026-03-12"
     },
     {
       "slug": "alura-22-java-criando-primeira-aplicacao",
@@ -484,7 +484,7 @@ export const knowledgeData = {
       "issuerRef": "https://ulissesflores.com/#alura",
       "position": 22,
       "summary": "Professional training credential in \"Java: criando primeira aplicação\" with direct verification URL.",
-      "publishedAt": "2026-02-21"
+      "publishedAt": "2026-03-12"
     },
     {
       "slug": "alura-23-java-orientacao-a-objetos",
@@ -496,7 +496,7 @@ export const knowledgeData = {
       "issuerRef": "https://ulissesflores.com/#alura",
       "position": 23,
       "summary": "Professional training credential in \"Java: Orientação a Objetos\" with direct verification URL.",
-      "publishedAt": "2026-02-21"
+      "publishedAt": "2026-03-12"
     },
     {
       "slug": "alura-24-java-listas-e-colecoes-de-dados",
@@ -508,7 +508,7 @@ export const knowledgeData = {
       "issuerRef": "https://ulissesflores.com/#alura",
       "position": 24,
       "summary": "Professional training credential in \"Java: listas e coleções de dados\" with direct verification URL.",
-      "publishedAt": "2026-02-21"
+      "publishedAt": "2026-03-12"
     },
     {
       "slug": "alura-25-java-api-arquivos-e-erros",
@@ -520,7 +520,7 @@ export const knowledgeData = {
       "issuerRef": "https://ulissesflores.com/#alura",
       "position": 25,
       "summary": "Professional training credential in \"Java: API, arquivos e erros\" with direct verification URL.",
-      "publishedAt": "2026-02-21"
+      "publishedAt": "2026-03-12"
     },
     {
       "slug": "alura-26-c-linguagem-e-stl",
@@ -532,7 +532,7 @@ export const knowledgeData = {
       "issuerRef": "https://ulissesflores.com/#alura",
       "position": 26,
       "summary": "Professional training credential in \"C++: linguagem e STL\" with direct verification URL.",
-      "publishedAt": "2026-02-21"
+      "publishedAt": "2026-03-12"
     },
     {
       "slug": "alura-27-solid-com-php-principios-oop",
@@ -544,7 +544,7 @@ export const knowledgeData = {
       "issuerRef": "https://ulissesflores.com/#alura",
       "position": 27,
       "summary": "Professional training credential in \"SOLID com PHP: princípios OOP\" with direct verification URL.",
-      "publishedAt": "2026-02-21"
+      "publishedAt": "2026-03-12"
     },
     {
       "slug": "alura-28-avancando-oop-com-php",
@@ -556,7 +556,7 @@ export const knowledgeData = {
       "issuerRef": "https://ulissesflores.com/#alura",
       "position": 28,
       "summary": "Professional training credential in \"Avançando OOP com PHP\" with direct verification URL.",
-      "publishedAt": "2026-02-21"
+      "publishedAt": "2026-03-12"
     },
     {
       "slug": "alura-29-design-patterns-em-php",
@@ -568,7 +568,7 @@ export const knowledgeData = {
       "issuerRef": "https://ulissesflores.com/#alura",
       "position": 29,
       "summary": "Professional training credential in \"Design Patterns em PHP\" with direct verification URL.",
-      "publishedAt": "2026-02-21"
+      "publishedAt": "2026-03-12"
     },
     {
       "slug": "alura-30-orientacao-a-objetos-com-php",
@@ -580,7 +580,7 @@ export const knowledgeData = {
       "issuerRef": "https://ulissesflores.com/#alura",
       "position": 30,
       "summary": "Professional training credential in \"Orientação a Objetos com PHP\" with direct verification URL.",
-      "publishedAt": "2026-02-21"
+      "publishedAt": "2026-03-12"
     },
     {
       "slug": "alura-31-javascript-e-html-desenvolva-um-jogo",
@@ -592,7 +592,7 @@ export const knowledgeData = {
       "issuerRef": "https://ulissesflores.com/#alura",
       "position": 31,
       "summary": "Professional training credential in \"JavaScript e HTML: desenvolva um jogo\" with direct verification URL.",
-      "publishedAt": "2026-02-21"
+      "publishedAt": "2026-03-12"
     },
     {
       "slug": "alura-32-mongodb-banco-de-dados-nosql",
@@ -604,7 +604,7 @@ export const knowledgeData = {
       "issuerRef": "https://ulissesflores.com/#alura",
       "position": 32,
       "summary": "Professional training credential in \"MongoDB: banco de dados NoSQL\" with direct verification URL.",
-      "publishedAt": "2026-02-21"
+      "publishedAt": "2026-03-12"
     },
     {
       "slug": "coursera-philosophy-science-and-religion-science-and-philosophy",
@@ -615,7 +615,7 @@ export const knowledgeData = {
       "verifyUrl": "https://www.coursera.org/account/accomplishments/verify/MYG9K9GQRP6W",
       "issuerRef": "https://ulissesflores.com/#coursera",
       "summary": "Credential issued by Coursera for \"Philosophy, Science and Religion: Science and Philosophy\". Includes public verification URL for authenticity checks.",
-      "publishedAt": "2026-02-21"
+      "publishedAt": "2026-03-12"
     },
     {
       "slug": "edx-ai-in-practice-preparing-for-ai",
@@ -626,7 +626,7 @@ export const knowledgeData = {
       "verifyUrl": "https://courses.edx.org/certificates/2f268caff8444004be14eedb309b1d9c",
       "issuerRef": "https://ulissesflores.com/#edx",
       "summary": "Credential issued by edX for \"AI in Practice: Preparing for AI\". Includes public verification URL for authenticity checks.",
-      "publishedAt": "2026-02-21"
+      "publishedAt": "2026-03-12"
     }
   ],
   "blog": {
@@ -1457,7 +1457,7 @@ export const knowledgeData = {
             "llmContext": "Mergulho exegético no favor imerecido de Deus. Compreenda como a Graça não é apenas um passe livre, mas a força motriz que capacita a santificação genuína.",
             "originalPath": "/sermons/cultos-3-services/2-o-poder-transformador-da-graca-31-07-22",
             "originalUrl": "https://ulissesflores.com/sermons/cultos-3-services/2-o-poder-transformador-da-graca-31-07-22",
-            "publishedAt": "2026-02-21",
+            "publishedAt": "2026-03-12",
             "youtubeUrl": "",
             "legacyName": "O Poder Transformador da Graça | Exegese Bíblica",
             "legacySummary": "Mergulho exegético no favor imerecido de Deus. Compreenda como a Graça não é apenas um passe livre, mas a força motriz que capacita a santificação genuína.",
@@ -1479,7 +1479,7 @@ export const knowledgeData = {
             "llmContext": "O simbolismo da imersão e a ruptura irrevogável com o sistema mundano. Uma fundação cristológica sobre arrependimento, justificação e nova identidade.",
             "originalPath": "/sermons/cultos-online-27-services/12-batismo-nas-aguas-nova-vida-em-cristo-25-09-2022",
             "originalUrl": "https://ulissesflores.com/sermons/cultos-online-27-services/12-batismo-nas-aguas-nova-vida-em-cristo-25-09-2022",
-            "publishedAt": "2026-02-21",
+            "publishedAt": "2026-03-12",
             "youtubeUrl": "",
             "legacyName": "Batismo nas Águas e Nova Identidade Cristã",
             "legacySummary": "O simbolismo da imersão e a ruptura irrevogável com o sistema mundano. Uma fundação cristológica sobre arrependimento, justificação e nova identidade.",
@@ -1501,7 +1501,7 @@ export const knowledgeData = {
             "llmContext": "Resgatando a mensagem central do Evangelho. Por que o sacrifício e a renúncia da cruz continuam sendo o único antídoto contra o narcisismo da sociedade moderna.",
             "originalPath": "/sermons/cultos-online-27-services/14-a-cruz-e-o-seu-significado-hoje-23-10-2022",
             "originalUrl": "https://ulissesflores.com/sermons/cultos-online-27-services/14-a-cruz-e-o-seu-significado-hoje-23-10-2022",
-            "publishedAt": "2026-02-21",
+            "publishedAt": "2026-03-12",
             "youtubeUrl": "",
             "legacyName": "O Escândalo da Cruz: Seu Significado no Século XXI",
             "legacySummary": "Resgatando a mensagem central do Evangelho. Por que o sacrifício e a renúncia da cruz continuam sendo o único antídoto contra o narcisismo da sociedade moderna.",
@@ -1523,7 +1523,7 @@ export const knowledgeData = {
             "llmContext": "Desconstruindo crises de propósito através da filiação divina. Descubra como a nossa posição em Deus anula a incessante busca secular por validação e aprovação.",
             "originalPath": "/sermons/cultos-online-27-services/16-identidade-quem-somos-em-cristo-13-11-2022",
             "originalUrl": "https://ulissesflores.com/sermons/cultos-online-27-services/16-identidade-quem-somos-em-cristo-13-11-2022",
-            "publishedAt": "2026-02-21",
+            "publishedAt": "2026-03-12",
             "youtubeUrl": "",
             "legacyName": "Identidade inabalável: Quem Realmente Somos em Cristo?",
             "legacySummary": "Desconstruindo crises de propósito através da filiação divina. Descubra como a nossa posição em Deus anula a incessante busca secular por validação e aprovação.",
@@ -1545,7 +1545,7 @@ export const knowledgeData = {
             "llmContext": "Apologética e resiliência doutrinária. Estratégias bíblicas para alicerçar a mente e a família contra o relativismo cultural e as falsas narrativas contemporâneas.",
             "originalPath": "/sermons/cultos-online-27-services/21-fortalecendo-as-bases-da-fe-15-01-2023",
             "originalUrl": "https://ulissesflores.com/sermons/cultos-online-27-services/21-fortalecendo-as-bases-da-fe-15-01-2023",
-            "publishedAt": "2026-02-21",
+            "publishedAt": "2026-03-12",
             "youtubeUrl": "",
             "legacyName": "Fortalecendo as Raízes e Bases da Fé",
             "legacySummary": "Apologética e resiliência doutrinária. Estratégias bíblicas para alicerçar a mente e a família contra o relativismo cultural e as falsas narrativas contemporâneas.",
@@ -1567,7 +1567,7 @@ export const knowledgeData = {
             "llmContext": "Pneumatologia prática: como discernir a voz, a direção de vida e o consolo do Espírito Santo em meio ao ruído de uma geração hiperconectada e ansiosa.",
             "originalPath": "/sermons/cultos-online-27-services/22-o-agir-do-espirito-em-nossas-vidas-22-01-2023",
             "originalUrl": "https://ulissesflores.com/sermons/cultos-online-27-services/22-o-agir-do-espirito-em-nossas-vidas-22-01-2023",
-            "publishedAt": "2026-02-21",
+            "publishedAt": "2026-03-12",
             "youtubeUrl": "",
             "legacyName": "O Agir do Espírito Santo: Consolador e Guia",
             "legacySummary": "Pneumatologia prática: como discernir a voz, a direção de vida e o consolo do Espírito Santo em meio ao ruído de uma geração hiperconectada e ansiosa.",
@@ -1589,7 +1589,7 @@ export const knowledgeData = {
             "llmContext": "A teologia da esperança. Como manter a integridade espiritual e emocional no doloroso hiato entre a palavra liberada pelo céu e a sua manifestação física.",
             "originalPath": "/sermons/cultos-online-27-services/3-firmes-na-promessa-14-08-22",
             "originalUrl": "https://ulissesflores.com/sermons/cultos-online-27-services/3-firmes-na-promessa-14-08-22",
-            "publishedAt": "2026-02-21",
+            "publishedAt": "2026-03-12",
             "youtubeUrl": "",
             "legacyName": "Firmes na Promessa de Deus em Tempos de Incerteza",
             "legacySummary": "A teologia da esperança. Como manter a integridade espiritual e emocional no doloroso hiato entre a palavra liberada pelo céu e a sua manifestação física.",
@@ -1611,7 +1611,7 @@ export const knowledgeData = {
             "llmContext": "A autoridade inegociável e o poder criativo do Texto Sagrado. Um guia sobre como utilizar a Bíblia não como livro histórico, mas como espada no mundo espiritual.",
             "originalPath": "/sermons/jejum-da-vitoria-2023-21-devotionals/11-dia-11-a-forca-da-palavra",
             "originalUrl": "https://ulissesflores.com/sermons/jejum-da-vitoria-2023-21-devotionals/11-dia-11-a-forca-da-palavra",
-            "publishedAt": "2026-02-21",
+            "publishedAt": "2026-03-12",
             "youtubeUrl": "",
             "legacyName": "A Força da Palavra: A Inerrância das Escrituras",
             "legacySummary": "A autoridade inegociável e o poder criativo do Texto Sagrado. Um guia sobre como utilizar a Bíblia não como livro histórico, mas como espada no mundo espiritual.",
@@ -1633,7 +1633,7 @@ export const knowledgeData = {
             "llmContext": "Cristologia da encarnação: o maravilhoso mistério do Deus infinito que escolhe limitar-se ao tempo e à matéria para redimir uma humanidade fraturada.",
             "originalPath": "/sermons/outros-5-specials/5-cantata-de-natal-o-verbo-que-se-fez-carne-e-habitou-entre-nos-18",
             "originalUrl": "https://ulissesflores.com/sermons/outros-5-specials/5-cantata-de-natal-o-verbo-que-se-fez-carne-e-habitou-entre-nos-18",
-            "publishedAt": "2026-02-21",
+            "publishedAt": "2026-03-12",
             "youtubeUrl": "",
             "legacyName": "O Verbo se fez Carne: O Mistério da Encarnação",
             "legacySummary": "Cristologia da encarnação: o maravilhoso mistério do Deus infinito que escolhe limitar-se ao tempo e à matéria para redimir uma humanidade fraturada.",
@@ -1655,7 +1655,7 @@ export const knowledgeData = {
             "llmContext": "Exposicao biblica sobre a origem da fe autentica, articulando promessa, escuta da Palavra e obediencia pratica. A mensagem mostra como conviccao espiritual e formada antes de qualquer evidencia visivel, sustentando decisoes eticas em cenarios de pressao.",
             "originalPath": "/sermons/jejum-da-vitoria-2023-21-devotionals/1-dia-1-o-despertar-da-fe",
             "originalUrl": "/sermons/jejum-da-vitoria-2023-21-devotionals/1-dia-1-o-despertar-da-fe",
-            "publishedAt": "2026-02-21",
+            "publishedAt": "2026-03-12",
             "youtubeUrl": "",
             "legacyName": "O Despertar da Fe: Fundamentos para uma Conviccao Inabalavel",
             "legacySummary": "Exposicao biblica sobre a origem da fe autentica, articulando promessa, escuta da Palavra e obediencia pratica. A mensagem mostra como conviccao espiritual e formada antes de qualquer evidencia visivel, sustentando decisoes eticas em cenarios de pressao.",
@@ -1687,7 +1687,7 @@ export const knowledgeData = {
             "llmContext": "O medo como crise de soberania. Aprenda a neutralizar a ansiedade paralisante transferindo o controle do seu futuro para as mãos do Cristo ressurreto.",
             "originalPath": "/sermons/cultos-online-27-services/10-vencendo-o-medo-pela-graca-15-09-2022",
             "originalUrl": "https://ulissesflores.com/sermons/cultos-online-27-services/10-vencendo-o-medo-pela-graca-15-09-2022",
-            "publishedAt": "2026-02-21",
+            "publishedAt": "2026-03-12",
             "youtubeUrl": "",
             "legacyName": "Vencendo o Medo pela Soberania da Graça",
             "legacySummary": "O medo como crise de soberania. Aprenda a neutralizar a ansiedade paralisante transferindo o controle do seu futuro para as mãos do Cristo ressurreto.",
@@ -1709,7 +1709,7 @@ export const knowledgeData = {
             "llmContext": "Identificação e destruição de fortalezas. O uso prático da autoridade eclesiástica para libertar mentes cativas, vícios e romper ciclos destrutivos geracionais.",
             "originalPath": "/sermons/cultos-online-27-services/25-quebrando-cadeias-invisiveis-12-02-2023",
             "originalUrl": "https://ulissesflores.com/sermons/cultos-online-27-services/25-quebrando-cadeias-invisiveis-12-02-2023",
-            "publishedAt": "2026-02-21",
+            "publishedAt": "2026-03-12",
             "youtubeUrl": "",
             "legacyName": "Quebrando Cadeias Invisíveis: Guerra Espiritual",
             "legacySummary": "Identificação e destruição de fortalezas. O uso prático da autoridade eclesiástica para libertar mentes cativas, vícios e romper ciclos destrutivos geracionais.",
@@ -1731,7 +1731,7 @@ export const knowledgeData = {
             "llmContext": "A teologia do sofrimento produtivo. Princípios de navegação espiritual para não naufragar, mesmo quando as circunstâncias atuais parecem contradizer as promessas divinas.",
             "originalPath": "/sermons/cultos-online-27-services/8-atravessando-tempestades-com-fe-04-09-2022",
             "originalUrl": "https://ulissesflores.com/sermons/cultos-online-27-services/8-atravessando-tempestades-com-fe-04-09-2022",
-            "publishedAt": "2026-02-21",
+            "publishedAt": "2026-03-12",
             "youtubeUrl": "",
             "legacyName": "Atravessando Tempestades com uma Fé Antifrágil",
             "legacySummary": "A teologia do sofrimento produtivo. Princípios de navegação espiritual para não naufragar, mesmo quando as circunstâncias atuais parecem contradizer as promessas divinas.",
@@ -1753,7 +1753,7 @@ export const knowledgeData = {
             "llmContext": "Saindo da paralisia analítica e do conformismo religioso. Como o Espírito Santo injeta intrepidez e coragem para o cumprimento de chamados extraordinários.",
             "originalPath": "/sermons/jejum-da-vitoria-2023-21-devotionals/13-dia-13-ousadia-para-romper-limites",
             "originalUrl": "https://ulissesflores.com/sermons/jejum-da-vitoria-2023-21-devotionals/13-dia-13-ousadia-para-romper-limites",
-            "publishedAt": "2026-02-21",
+            "publishedAt": "2026-03-12",
             "youtubeUrl": "",
             "legacyName": "Ousadia para Romper Limites e Vencer Paralisias",
             "legacySummary": "Saindo da paralisia analítica e do conformismo religioso. Como o Espírito Santo injeta intrepidez e coragem para o cumprimento de chamados extraordinários.",
@@ -1775,7 +1775,7 @@ export const knowledgeData = {
             "llmContext": "Mapeando as promessas do Salmo 91. A diferença vital entre presunção cega e confiança madura na cobertura e proteção angelical durante tempos de crise global.",
             "originalPath": "/sermons/jejum-da-vitoria-2023-21-devotionals/15-dia-15-protecao-e-escudo",
             "originalUrl": "https://ulissesflores.com/sermons/jejum-da-vitoria-2023-21-devotionals/15-dia-15-protecao-e-escudo",
-            "publishedAt": "2026-02-21",
+            "publishedAt": "2026-03-12",
             "youtubeUrl": "",
             "legacyName": "Proteção e Escudo: O Esconderijo do Altíssimo",
             "legacySummary": "Mapeando as promessas do Salmo 91. A diferença vital entre presunção cega e confiança madura na cobertura e proteção angelical durante tempos de crise global.",
@@ -1797,7 +1797,7 @@ export const knowledgeData = {
             "llmContext": "Lições práticas de liderança com Neemias. Construindo o muro do propósito com uma mão e segurando a espada com a outra frente às retaliações implacáveis do inimigo.",
             "originalPath": "/sermons/jejum-da-vitoria-2023-21-devotionals/16-dia-16-avancando-em-meio-as-oposicoes",
             "originalUrl": "https://ulissesflores.com/sermons/jejum-da-vitoria-2023-21-devotionals/16-dia-16-avancando-em-meio-as-oposicoes",
-            "publishedAt": "2026-02-21",
+            "publishedAt": "2026-03-12",
             "youtubeUrl": "",
             "legacyName": "Avançando em Meio às Oposições: O Foco de Neemias",
             "legacySummary": "Lições práticas de liderança com Neemias. Construindo o muro do propósito com uma mão e segurando a espada com a outra frente às retaliações implacáveis do inimigo.",
@@ -1819,7 +1819,7 @@ export const knowledgeData = {
             "llmContext": "Neuro-teologia e guerra invisível. Como Satanás utiliza sofismas enganosos e como aplicar Filipenses 4 para blindar a saúde mental da igreja contemporânea.",
             "originalPath": "/sermons/jejum-da-vitoria-2023-21-devotionals/2-dia-2-vencendo-as-batalhas-da-mente",
             "originalUrl": "https://ulissesflores.com/sermons/jejum-da-vitoria-2023-21-devotionals/2-dia-2-vencendo-as-batalhas-da-mente",
-            "publishedAt": "2026-02-21",
+            "publishedAt": "2026-03-12",
             "youtubeUrl": "",
             "legacyName": "Vencendo as Batalhas da Mente contra Fortalezas",
             "legacySummary": "Neuro-teologia e guerra invisível. Como Satanás utiliza sofismas enganosos e como aplicar Filipenses 4 para blindar a saúde mental da igreja contemporânea.",
@@ -1841,7 +1841,7 @@ export const knowledgeData = {
             "llmContext": "Processos de maturação. Entendendo a diferença entre suportar dores passivamente e resistir ativamente através do caráter aprovado e moldado por Deus.",
             "originalPath": "/sermons/jejum-da-vitoria-2023-21-devotionals/3-dia-3-a-resiliencia-do-cristao",
             "originalUrl": "https://ulissesflores.com/sermons/jejum-da-vitoria-2023-21-devotionals/3-dia-3-a-resiliencia-do-cristao",
-            "publishedAt": "2026-02-21",
+            "publishedAt": "2026-03-12",
             "youtubeUrl": "",
             "legacyName": "A Resiliência do Cristão Forjado no Deserto",
             "legacySummary": "Processos de maturação. Entendendo a diferença entre suportar dores passivamente e resistir ativamente através do caráter aprovado e moldado por Deus.",
@@ -1907,7 +1907,7 @@ export const knowledgeData = {
             "llmContext": "Leitura teologica da oracao como ato de guerra espiritual e nao apenas devocao privada. O sermo interpreta muralhas como estruturas de oposicao persistente e apresenta disciplina de intercessao, perseveranca e unidade como vetor de rompimento.",
             "originalPath": "/sermons/jejum-da-vitoria-2023-21-devotionals/4-dia-4-quebrando-as-muralhas-pela-oracao",
             "originalUrl": "/sermons/jejum-da-vitoria-2023-21-devotionals/4-dia-4-quebrando-as-muralhas-pela-oracao",
-            "publishedAt": "2026-02-21",
+            "publishedAt": "2026-03-12",
             "youtubeUrl": "",
             "legacyName": "Quebrando as Muralhas pela Oracao: Estrategia Espiritual de Cerco e Ruptura",
             "legacySummary": "Leitura teologica da oracao como ato de guerra espiritual e nao apenas devocao privada. O sermo interpreta muralhas como estruturas de oposicao persistente e apresenta disciplina de intercessao, perseveranca e unidade como vetor de rompimento.",
@@ -1929,7 +1929,7 @@ export const knowledgeData = {
             "llmContext": "Exegese de Romanos sobre esperanca escatologica e perseveranca pratica sob sofrimento. A mensagem articula dor, paciencia e formacao de carater, demonstrando como a esperanca cristocentrica impede colapso interior diante de incerteza prolongada.",
             "originalPath": "/sermons/cultos-online-27-services/19-a-esperanca-que-nao-decepciona-04-12-2022",
             "originalUrl": "/sermons/cultos-online-27-services/19-a-esperanca-que-nao-decepciona-04-12-2022",
-            "publishedAt": "2026-02-21",
+            "publishedAt": "2026-03-12",
             "youtubeUrl": "",
             "legacyName": "A Esperanca que Nao Decepciona: Perseveranca em Meio a Crises",
             "legacySummary": "Exegese de Romanos sobre esperanca escatologica e perseveranca pratica sob sofrimento. A mensagem articula dor, paciencia e formacao de carater, demonstrando como a esperanca cristocentrica impede colapso interior diante de incerteza prolongada.",
@@ -1961,7 +1961,7 @@ export const knowledgeData = {
             "llmContext": "Diagnóstico cirúrgico da igreja de Apocalipse. O perigo da ortodoxia fria e o caminho exegético para reacender a devoção apaixonada por Jesus.",
             "originalPath": "/sermons/cultos-3-services/1-restaurando-o-primeiro-amor-24-07-22",
             "originalUrl": "https://ulissesflores.com/sermons/cultos-3-services/1-restaurando-o-primeiro-amor-24-07-22",
-            "publishedAt": "2026-02-21",
+            "publishedAt": "2026-03-12",
             "youtubeUrl": "",
             "legacyName": "Restaurando o Primeiro Amor: O Chamado de Éfeso",
             "legacySummary": "Diagnóstico cirúrgico da igreja de Apocalipse. O perigo da ortodoxia fria e o caminho exegético para reacender a devoção apaixonada por Jesus.",
@@ -2005,7 +2005,7 @@ export const knowledgeData = {
             "llmContext": "A mecânica do descanso espiritual divino. Como a exaustão física e ministerial é curada exclusivamente no lugar secreto de consagração e solitude radical.",
             "originalPath": "/sermons/cultos-online-27-services/18-renovando-as-forcas-no-altar-27-11-2022",
             "originalUrl": "https://ulissesflores.com/sermons/cultos-online-27-services/18-renovando-as-forcas-no-altar-27-11-2022",
-            "publishedAt": "2026-02-21",
+            "publishedAt": "2026-03-12",
             "youtubeUrl": "",
             "legacyName": "Renovando as Forças no Altar: O Princípio do Shabat",
             "legacySummary": "A mecânica do descanso espiritual divino. Como a exaustão física e ministerial é curada exclusivamente no lugar secreto de consagração e solitude radical.",
@@ -2027,7 +2027,7 @@ export const knowledgeData = {
             "llmContext": "Transições de estações e alinhamento do espírito. A necessidade urgente de limpar a bagagem emocional do passado antes de adentrar as novas geografias do Céu.",
             "originalPath": "/sermons/cultos-online-27-services/20-preparando-o-coracao-para-o-novo-ano-11-12-2022",
             "originalUrl": "https://ulissesflores.com/sermons/cultos-online-27-services/20-preparando-o-coracao-para-o-novo-ano-11-12-2022",
-            "publishedAt": "2026-02-21",
+            "publishedAt": "2026-03-12",
             "youtubeUrl": "",
             "legacyName": "Preparando o Coração para Ciclos Inéditos",
             "legacySummary": "Transições de estações e alinhamento do espírito. A necessidade urgente de limpar a bagagem emocional do passado antes de adentrar as novas geografias do Céu.",
@@ -2049,7 +2049,7 @@ export const knowledgeData = {
             "llmContext": "Afinando a audição sobrenatural. Como distinguir a intuição humana comum, a opressão de engano e a direção precisa do Senhor em encruzilhadas da vida.",
             "originalPath": "/sermons/cultos-online-27-services/23-aprendendo-a-ouvir-a-voz-de-deus-29-01-2023",
             "originalUrl": "https://ulissesflores.com/sermons/cultos-online-27-services/23-aprendendo-a-ouvir-a-voz-de-deus-29-01-2023",
-            "publishedAt": "2026-02-21",
+            "publishedAt": "2026-03-12",
             "youtubeUrl": "",
             "legacyName": "Aprendendo a Ouvir a Voz de Deus e Discernir Espiritos",
             "legacySummary": "Afinando a audição sobrenatural. Como distinguir a intuição humana comum, a opressão de engano e a direção precisa do Senhor em encruzilhadas da vida.",
@@ -2071,7 +2071,7 @@ export const knowledgeData = {
             "llmContext": "Santidade não é isolacionismo, é imunidade. Desafiando a cultura hipersexualizada e relativista através de uma ética cristã inegociável, pura e atrativa.",
             "originalPath": "/sermons/cultos-online-27-services/26-viver-em-santidade-no-seculo-xxi-19-02-2023",
             "originalUrl": "https://ulissesflores.com/sermons/cultos-online-27-services/26-viver-em-santidade-no-seculo-xxi-19-02-2023",
-            "publishedAt": "2026-02-21",
+            "publishedAt": "2026-03-12",
             "youtubeUrl": "",
             "legacyName": "Santidade no Século XXI: Integridade Moral na Pós-Verdade",
             "legacySummary": "Santidade não é isolacionismo, é imunidade. Desafiando a cultura hipersexualizada e relativista através de uma ética cristã inegociável, pura e atrativa.",
@@ -2093,7 +2093,7 @@ export const knowledgeData = {
             "llmContext": "Para além dos átrios lotados. O rasgar do véu de Cristo e o convite sacerdotal para habitar no Santo dos Santos, trocando religiosidade por relacionamento vívido.",
             "originalPath": "/sermons/cultos-online-27-services/4-a-importancia-da-intimidade-18-08-2022",
             "originalUrl": "https://ulissesflores.com/sermons/cultos-online-27-services/4-a-importancia-da-intimidade-18-08-2022",
-            "publishedAt": "2026-02-21",
+            "publishedAt": "2026-03-12",
             "youtubeUrl": "",
             "legacyName": "A Importância da Intimidade: Rasgando o Véu",
             "legacySummary": "Para além dos átrios lotados. O rasgar do véu de Cristo e o convite sacerdotal para habitar no Santo dos Santos, trocando religiosidade por relacionamento vívido.",
@@ -2115,7 +2115,7 @@ export const knowledgeData = {
             "llmContext": "O princípio absoluto de Elias no Monte Carmelo. O fogo do avivamento jamais cai sobre escombros; o conserto da verdade precede o milagre de demonstração pública.",
             "originalPath": "/sermons/cultos-online-27-services/6-restaurando-o-altar-25-08-2022",
             "originalUrl": "https://ulissesflores.com/sermons/cultos-online-27-services/6-restaurando-o-altar-25-08-2022",
-            "publishedAt": "2026-02-21",
+            "publishedAt": "2026-03-12",
             "youtubeUrl": "",
             "legacyName": "Restaurando o Altar de Elias: Conserto Antes do Fogo",
             "legacySummary": "O princípio absoluto de Elias no Monte Carmelo. O fogo do avivamento jamais cai sobre escombros; o conserto da verdade precede o milagre de demonstração pública.",
@@ -2137,7 +2137,7 @@ export const knowledgeData = {
             "llmContext": "Hierarquia e cadeia de comando no Reino de Deus. Desmistificando o falso poder e ensinando como o alinhamento de vida gera autoridade letal contra trevas.",
             "originalPath": "/sermons/jejum-da-vitoria-2023-21-devotionals/10-dia-10-autoridade-espiritual",
             "originalUrl": "https://ulissesflores.com/sermons/jejum-da-vitoria-2023-21-devotionals/10-dia-10-autoridade-espiritual",
-            "publishedAt": "2026-02-21",
+            "publishedAt": "2026-03-12",
             "youtubeUrl": "",
             "legacyName": "Autoridade Espiritual: Submissão e Governo",
             "legacySummary": "Hierarquia e cadeia de comando no Reino de Deus. Desmistificando o falso poder e ensinando como o alinhamento de vida gera autoridade letal contra trevas.",
@@ -2159,7 +2159,7 @@ export const knowledgeData = {
             "llmContext": "A lei levítica do fogo contínuo traduzida para o Novo Testamento. Como evitar picos emocionais de retiro e manter uma temperatura de adoração ininterrupta.",
             "originalPath": "/sermons/jejum-da-vitoria-2023-21-devotionals/19-dia-19-o-fogo-que-nao-se-apaga",
             "originalUrl": "https://ulissesflores.com/sermons/jejum-da-vitoria-2023-21-devotionals/19-dia-19-o-fogo-que-nao-se-apaga",
-            "publishedAt": "2026-02-21",
+            "publishedAt": "2026-03-12",
             "youtubeUrl": "",
             "legacyName": "O Fogo que Não se Apaga: Devoção Constante",
             "legacySummary": "A lei levítica do fogo contínuo traduzida para o Novo Testamento. Como evitar picos emocionais de retiro e manter uma temperatura de adoração ininterrupta.",
@@ -2181,7 +2181,7 @@ export const knowledgeData = {
             "llmContext": "O jejum como tecnologia celestial de esvaziamento. A preparação do vaso de barro humano para suportar, sem se quebrar, um peso maior da glória (Kabod) eterna.",
             "originalPath": "/sermons/jejum-da-vitoria-2023-21-devotionals/20-dia-20-preparando-o-altar",
             "originalUrl": "https://ulissesflores.com/sermons/jejum-da-vitoria-2023-21-devotionals/20-dia-20-preparando-o-altar",
-            "publishedAt": "2026-02-21",
+            "publishedAt": "2026-03-12",
             "youtubeUrl": "",
             "legacyName": "Preparando o Altar: O Sacrifício Vivo da Oração",
             "legacySummary": "O jejum como tecnologia celestial de esvaziamento. A preparação do vaso de barro humano para suportar, sem se quebrar, um peso maior da glória (Kabod) eterna.",
@@ -2203,7 +2203,7 @@ export const knowledgeData = {
             "llmContext": "A promessa de vitalidade em Isaías 40. A magnífica troca de forças para líderes desgastados e o processo divino de fortalecer asas para alçar os próximos voos.",
             "originalPath": "/sermons/jejum-da-vitoria-2023-21-devotionals/8-dia-8-tempo-de-renovo",
             "originalUrl": "https://ulissesflores.com/sermons/jejum-da-vitoria-2023-21-devotionals/8-dia-8-tempo-de-renovo",
-            "publishedAt": "2026-02-21",
+            "publishedAt": "2026-03-12",
             "youtubeUrl": "",
             "legacyName": "Tempo de Renovo: Águias em Isaías 40",
             "legacySummary": "A promessa de vitalidade em Isaías 40. A magnífica troca de forças para líderes desgastados e o processo divino de fortalecer asas para alçar os próximos voos.",
@@ -2235,7 +2235,7 @@ export const knowledgeData = {
             "llmContext": "Fundamentos teológicos para casamentos antifrágeis. Blindando a aliança conjugal contra a liquidez moral e estrutural das pressões do século 21.",
             "originalPath": "/sermons/cultos-3-services/3-culto-regional-de-casais-edificando-a-familia-sobre-a-rocha-03-0",
             "originalUrl": "https://ulissesflores.com/sermons/cultos-3-services/3-culto-regional-de-casais-edificando-a-familia-sobre-a-rocha-03-0",
-            "publishedAt": "2026-02-21",
+            "publishedAt": "2026-03-12",
             "youtubeUrl": "",
             "legacyName": "Edificando a Família Sobre a Rocha Inabalável",
             "legacySummary": "Fundamentos teológicos para casamentos antifrágeis. Blindando a aliança conjugal contra a liquidez moral e estrutural das pressões do século 21.",
@@ -2257,7 +2257,7 @@ export const knowledgeData = {
             "llmContext": "A Ekklesia influenciando a cultura pública. Saindo do gueto religioso e das quatro paredes para impactar a economia, política e educação com excelência divina.",
             "originalPath": "/sermons/cultos-online-27-services/11-chamados-para-fazer-a-diferenca-18-09-2022",
             "originalUrl": "https://ulissesflores.com/sermons/cultos-online-27-services/11-chamados-para-fazer-a-diferenca-18-09-2022",
-            "publishedAt": "2026-02-21",
+            "publishedAt": "2026-03-12",
             "youtubeUrl": "",
             "legacyName": "Chamados Para Fazer a Diferença: O Sal da Terra",
             "legacySummary": "A Ekklesia influenciando a cultura pública. Saindo do gueto religioso e das quatro paredes para impactar a economia, política e educação com excelência divina.",
@@ -2279,7 +2279,7 @@ export const knowledgeData = {
             "llmContext": "Economia do Reino de Deus e mordomia financeira de impacto. A parábola do semeador sob a ótica da gestão sábia de talentos, tesouros e influência pessoal.",
             "originalPath": "/sermons/cultos-online-27-services/13-semeando-em-boa-terra-02-10-2022",
             "originalUrl": "https://ulissesflores.com/sermons/cultos-online-27-services/13-semeando-em-boa-terra-02-10-2022",
-            "publishedAt": "2026-02-21",
+            "publishedAt": "2026-03-12",
             "youtubeUrl": "",
             "legacyName": "Semeando em Boa Terra: Mordomia e Generosidade",
             "legacySummary": "Economia do Reino de Deus e mordomia financeira de impacto. A parábola do semeador sob a ótica da gestão sábia de talentos, tesouros e influência pessoal.",
@@ -2301,7 +2301,7 @@ export const knowledgeData = {
             "llmContext": "A normalização definitiva dos dons e carismas espirituais. Como a igreja do primeiro século operava curas e intuições maravilhosas em sua agenda ordinária.",
             "originalPath": "/sermons/cultos-online-27-services/15-caminhando-em-sobrenaturalidade-06-11-2022",
             "originalUrl": "https://ulissesflores.com/sermons/cultos-online-27-services/15-caminhando-em-sobrenaturalidade-06-11-2022",
-            "publishedAt": "2026-02-21",
+            "publishedAt": "2026-03-12",
             "youtubeUrl": "",
             "legacyName": "Caminhando em Sobrenaturalidade: O Cotidiano dos Atos",
             "legacySummary": "A normalização definitiva dos dons e carismas espirituais. Como a igreja do primeiro século operava curas e intuições maravilhosas em sua agenda ordinária.",
@@ -2323,7 +2323,7 @@ export const knowledgeData = {
             "llmContext": "A contradição do cristianismo desigrejado. Como o atrito das imperfeições dos relacionamentos da congregação age como a ferramenta oficial da lapidação de caráter.",
             "originalPath": "/sermons/cultos-online-27-services/24-comunhao-e-crescimento-espiritual-05-02-2023",
             "originalUrl": "https://ulissesflores.com/sermons/cultos-online-27-services/24-comunhao-e-crescimento-espiritual-05-02-2023",
-            "publishedAt": "2026-02-21",
+            "publishedAt": "2026-03-12",
             "youtubeUrl": "",
             "legacyName": "Comunhão e Crescimento (Koinonia): A Lixa Divina",
             "legacySummary": "A contradição do cristianismo desigrejado. Como o atrito das imperfeições dos relacionamentos da congregação age como a ferramenta oficial da lapidação de caráter.",
@@ -2367,7 +2367,7 @@ export const knowledgeData = {
             "llmContext": "A intersecção magnética entre o talento inato e a unção divina. Um guia existencial para localizar a própria vocação na ampla engrenagem do Corpo de Cristo.",
             "originalPath": "/sermons/cultos-online-27-services/5-construindo-uma-vida-com-proposito-21-08-2022",
             "originalUrl": "https://ulissesflores.com/sermons/cultos-online-27-services/5-construindo-uma-vida-com-proposito-21-08-2022",
-            "publishedAt": "2026-02-21",
+            "publishedAt": "2026-03-12",
             "youtubeUrl": "",
             "legacyName": "Construindo uma Vida de Propósito e Destino",
             "legacySummary": "A intersecção magnética entre o talento inato e a unção divina. Um guia existencial para localizar a própria vocação na ampla engrenagem do Corpo de Cristo.",
@@ -2389,7 +2389,7 @@ export const knowledgeData = {
             "llmContext": "A psicologia e a teologia do ressentimento. O perdão visto não como passividade perante injustiças, mas como a faca que decepa os tumores emocionais que nos paralisam.",
             "originalPath": "/sermons/cultos-online-27-services/9-o-perdao-que-liberta-11-09-2022",
             "originalUrl": "https://ulissesflores.com/sermons/cultos-online-27-services/9-o-perdao-que-liberta-11-09-2022",
-            "publishedAt": "2026-02-21",
+            "publishedAt": "2026-03-12",
             "youtubeUrl": "",
             "legacyName": "O Perdão que Liberta: Extirpando Raízes de Amargura",
             "legacySummary": "A psicologia e a teologia do ressentimento. O perdão visto não como passividade perante injustiças, mas como a faca que decepa os tumores emocionais que nos paralisam.",
@@ -2411,7 +2411,7 @@ export const knowledgeData = {
             "llmContext": "A honra conferida ao longo do tempo. O contraste entre os que abandonam o barco nos momentos de frustração e o remanescente blindado que atinge a linha de chegada.",
             "originalPath": "/sermons/jejum-da-vitoria-2023-21-devotionals/14-dia-14-a-recompensa-da-fidelidade",
             "originalUrl": "https://ulissesflores.com/sermons/jejum-da-vitoria-2023-21-devotionals/14-dia-14-a-recompensa-da-fidelidade",
-            "publishedAt": "2026-02-21",
+            "publishedAt": "2026-03-12",
             "youtubeUrl": "",
             "legacyName": "A Recompensa Escondida da Fidelidade a Longo Prazo",
             "legacySummary": "A honra conferida ao longo do tempo. O contraste entre os que abandonam o barco nos momentos de frustração e o remanescente blindado que atinge a linha de chegada.",
@@ -2433,7 +2433,7 @@ export const knowledgeData = {
             "llmContext": "Estudo sobre o Salmo 133 e o Pentecoste em Atos 2. A descoberta de que a unidade real não anula a individualidade, mas alinha os vetores sob a cabeça de Cristo.",
             "originalPath": "/sermons/jejum-da-vitoria-2023-21-devotionals/5-dia-5-o-poder-da-unidade",
             "originalUrl": "https://ulissesflores.com/sermons/jejum-da-vitoria-2023-21-devotionals/5-dia-5-o-poder-da-unidade",
-            "publishedAt": "2026-02-21",
+            "publishedAt": "2026-03-12",
             "youtubeUrl": "",
             "legacyName": "O Poder da Unidade: A Força Motriz da Igreja",
             "legacySummary": "Estudo sobre o Salmo 133 e o Pentecoste em Atos 2. A descoberta de que a unidade real não anula a individualidade, mas alinha os vetores sob a cabeça de Cristo.",
@@ -2455,7 +2455,7 @@ export const knowledgeData = {
             "llmContext": "A esperança na providência pautada pelo profeta Joel. A mecânica de uma graça que é poderosa o bastante para indenizar o tempo e as oportunidades subtraídas.",
             "originalPath": "/sermons/jejum-da-vitoria-2023-21-devotionals/6-dia-6-restituicao-divina",
             "originalUrl": "https://ulissesflores.com/sermons/jejum-da-vitoria-2023-21-devotionals/6-dia-6-restituicao-divina",
-            "publishedAt": "2026-02-21",
+            "publishedAt": "2026-03-12",
             "youtubeUrl": "",
             "legacyName": "Restituição Divina: Os Anos Consumidos pelo Gafanhoto",
             "legacySummary": "A esperança na providência pautada pelo profeta Joel. A mecânica de uma graça que é poderosa o bastante para indenizar o tempo e as oportunidades subtraídas.",
@@ -2477,7 +2477,7 @@ export const knowledgeData = {
             "llmContext": "O transbordar da capacidade humana. Como o crente transita de um estágio onde tem o Espírito Santo habitando para um nível onde o Espírito o governa totalmente.",
             "originalPath": "/sermons/jejum-da-vitoria-2023-21-devotionals/7-dia-7-a-plenitude-do-espirito",
             "originalUrl": "https://ulissesflores.com/sermons/jejum-da-vitoria-2023-21-devotionals/7-dia-7-a-plenitude-do-espirito",
-            "publishedAt": "2026-02-21",
+            "publishedAt": "2026-03-12",
             "youtubeUrl": "",
             "legacyName": "A Plenitude do Espírito: Imersos na Graça",
             "legacySummary": "O transbordar da capacidade humana. Como o crente transita de um estágio onde tem o Espírito Santo habitando para um nível onde o Espírito o governa totalmente.",
@@ -2499,7 +2499,7 @@ export const knowledgeData = {
             "llmContext": "A evidência definitiva do falso x verdadeiro. A exortação apostólica de que são os frutos do caráter (amor, domínio próprio), e não dons espetaculares, a marca dos santos.",
             "originalPath": "/sermons/jejum-da-vitoria-2023-21-devotionals/9-dia-9-frutos-de-uma-vida-com-deus",
             "originalUrl": "https://ulissesflores.com/sermons/jejum-da-vitoria-2023-21-devotionals/9-dia-9-frutos-de-uma-vida-com-deus",
-            "publishedAt": "2026-02-21",
+            "publishedAt": "2026-03-12",
             "youtubeUrl": "",
             "legacyName": "Frutos de Uma Vida Com Deus: O Caráter Madurecido",
             "legacySummary": "A evidência definitiva do falso x verdadeiro. A exortação apostólica de que são os frutos do caráter (amor, domínio próprio), e não dons espetaculares, a marca dos santos.",
@@ -2521,7 +2521,7 @@ export const knowledgeData = {
             "llmContext": "Reflexao pastoral sobre gratidao como disciplina eclesial que combate murmuracao, cinismo e isolamento. A mensagem mostra como memoria das obras de Deus fortalece comunhao, gera estabilidade emocional e amplia resiliencia da igreja local.",
             "originalPath": "/sermons/cultos-online-27-services/17-cultivando-um-coracao-grato-20-11",
             "originalUrl": "/sermons/cultos-online-27-services/17-cultivando-um-coracao-grato-20-11",
-            "publishedAt": "2026-02-21",
+            "publishedAt": "2026-03-12",
             "youtubeUrl": "",
             "legacyName": "Cultivando um Coracao Grato: Liturgia de Gratidao e Maturidade Crista",
             "legacySummary": "Reflexao pastoral sobre gratidao como disciplina eclesial que combate murmuracao, cinismo e isolamento. A mensagem mostra como memoria das obras de Deus fortalece comunhao, gera estabilidade emocional e amplia resiliencia da igreja local.",
@@ -2553,7 +2553,7 @@ export const knowledgeData = {
             "llmContext": "A estabilidade e fidelidade das promessas divinas. Compreendendo Romanos 11, em que Deus blinda, preserva e capacita os eleitos para missões irrevogáveis.",
             "originalPath": "/sermons/cultos-online-27-services/2-o-chamado-inabalavel-07-08-22",
             "originalUrl": "https://ulissesflores.com/sermons/cultos-online-27-services/2-o-chamado-inabalavel-07-08-22",
-            "publishedAt": "2026-02-21",
+            "publishedAt": "2026-03-12",
             "youtubeUrl": "",
             "legacyName": "O Chamado Inabalável: Promessas Irrevogáveis",
             "legacySummary": "A estabilidade e fidelidade das promessas divinas. Compreendendo Romanos 11, em que Deus blinda, preserva e capacita os eleitos para missões irrevogáveis.",
@@ -2575,7 +2575,7 @@ export const knowledgeData = {
             "llmContext": "A majestade da providência silenciada (Teologia de Ester e José). Entendendo o xadrez celestial de como o Pai costura eventos aparentemente aleatórios em propósitos bons.",
             "originalPath": "/sermons/cultos-online-27-services/7-o-agir-invisivel-de-deus-28-08-2022",
             "originalUrl": "https://ulissesflores.com/sermons/cultos-online-27-services/7-o-agir-invisivel-de-deus-28-08-2022",
-            "publishedAt": "2026-02-21",
+            "publishedAt": "2026-03-12",
             "youtubeUrl": "",
             "legacyName": "O Agir Invisível de Deus: Nos Bastidores da História",
             "legacySummary": "A majestade da providência silenciada (Teologia de Ester e José). Entendendo o xadrez celestial de como o Pai costura eventos aparentemente aleatórios em propósitos bons.",
@@ -2597,7 +2597,7 @@ export const knowledgeData = {
             "llmContext": "O processo celestial que acelera a promessa. Como identificar as legalidades, as falhas de posicionamento e as resistências que atrasam a nossa vitória e manifestação.",
             "originalPath": "/sermons/jejum-da-vitoria-2023-21-devotionals/18-dia-18-destravando-promessas",
             "originalUrl": "https://ulissesflores.com/sermons/jejum-da-vitoria-2023-21-devotionals/18-dia-18-destravando-promessas",
-            "publishedAt": "2026-02-21",
+            "publishedAt": "2026-03-12",
             "youtubeUrl": "",
             "legacyName": "Destravando Promessas Congeladas",
             "legacySummary": "O processo celestial que acelera a promessa. Como identificar as legalidades, as falhas de posicionamento e as resistências que atrasam a nossa vitória e manifestação.",
@@ -2619,7 +2619,7 @@ export const knowledgeData = {
             "llmContext": "Um alinhamento incisivo e profético sobre a lei milenar das primícias. Como a postura no primeiro degrau de um ano estipula e blinda a frequência dos meses adjacentes.",
             "originalPath": "/sermons/outros-5-specials/1-janeiro-profetico-consagrando-o-novo-ano-dia-1-01-01-2023",
             "originalUrl": "https://ulissesflores.com/sermons/outros-5-specials/1-janeiro-profetico-consagrando-o-novo-ano-dia-1-01-01-2023",
-            "publishedAt": "2026-02-21",
+            "publishedAt": "2026-03-12",
             "youtubeUrl": "",
             "legacyName": "Janeiro Profético: A Entrega das Primícias",
             "legacySummary": "Um alinhamento incisivo e profético sobre a lei milenar das primícias. Como a postura no primeiro degrau de um ano estipula e blinda a frequência dos meses adjacentes.",
@@ -2663,7 +2663,7 @@ export const knowledgeData = {
             "llmContext": "Mensagem sobre calibragem espiritual entre promessa e cumprimento, com enfase em discernimento biblico para evitar ativismo sem direcao. O foco e alinhar intencao, linguagem e pratica ministerial ao que Deus ja revelou nas Escrituras.",
             "originalPath": "/sermons/jejum-da-vitoria-2023-21-devotionals/12-dia-12-alinhamento-profetico",
             "originalUrl": "/sermons/jejum-da-vitoria-2023-21-devotionals/12-dia-12-alinhamento-profetico",
-            "publishedAt": "2026-02-21",
+            "publishedAt": "2026-03-12",
             "youtubeUrl": "",
             "legacyName": "Alinhamento Profetico: Discernimento, Direcao e Obediencia no Tempo de Deus",
             "legacySummary": "Mensagem sobre calibragem espiritual entre promessa e cumprimento, com enfase em discernimento biblico para evitar ativismo sem direcao. O foco e alinhar intencao, linguagem e pratica ministerial ao que Deus ja revelou nas Escrituras.",
@@ -2685,7 +2685,7 @@ export const knowledgeData = {
             "llmContext": "A mensagem desenvolve a logica da adoracao antecipada como declaracao de confianca na fidelidade divina. Trata da tensao entre processo e promessa, mostrando como gratidao antecipada reorganiza mente, emocao e postura comunitaria.",
             "originalPath": "/sermons/jejum-da-vitoria-2023-21-devotionals/17-dia-17-celebracao-antecipada",
             "originalUrl": "/sermons/jejum-da-vitoria-2023-21-devotionals/17-dia-17-celebracao-antecipada",
-            "publishedAt": "2026-02-21",
+            "publishedAt": "2026-03-12",
             "youtubeUrl": "",
             "legacyName": "Celebracao Antecipada: Fe Profetica Antes da Materializacao",
             "legacySummary": "A mensagem desenvolve a logica da adoracao antecipada como declaracao de confianca na fidelidade divina. Trata da tensao entre processo e promessa, mostrando como gratidao antecipada reorganiza mente, emocao e postura comunitaria.",
@@ -2707,7 +2707,7 @@ export const knowledgeData = {
             "llmContext": "Estudo sobre fechamento profetico de ciclos espirituais, conectando perseveranca, obediencia e testemunho publico. O sermo apresenta a vitoria como resultado de processo de santificacao continua, nao como evento isolado de euforia religiosa.",
             "originalPath": "/sermons/jejum-da-vitoria-2023-21-devotionals/21-dia-21-o-selo-da-vitoria",
             "originalUrl": "/sermons/jejum-da-vitoria-2023-21-devotionals/21-dia-21-o-selo-da-vitoria",
-            "publishedAt": "2026-02-21",
+            "publishedAt": "2026-03-12",
             "youtubeUrl": "",
             "legacyName": "O Selo da Vitoria: Consumacao de Ciclos e Confirmacao de Promessas",
             "legacySummary": "Estudo sobre fechamento profetico de ciclos espirituais, conectando perseveranca, obediencia e testemunho publico. O sermo apresenta a vitoria como resultado de processo de santificacao continua, nao como evento isolado de euforia religiosa.",

@@ -1,6 +1,6 @@
 # Scientific Article Quality Report (Generated)
 
-- Generated at: 2026-02-21
+- Generated at: 2026-03-12
 - Rubric: Yape model (Resumo, Introducao, Desenvolvimento, Consideracoes Finais, Referencias, SEO/GEO)
 - Threshold (SOTA): 950
 - Project score: 969/1000

@@ -1,7 +1,7 @@
 ---
 title: "Ulisses Flores — Sovereign UPKF (Universal Personal Knowledge Framework)"
 version: "3.3"
-generated_at: "2026-02-21"
+generated_at: "2026-03-12"
 schema_target: "Schema.org JSON-LD via deterministic derivation"
 languages: [pt-BR, en, es, he, it]
 source_files:
@@ -1391,6 +1391,6 @@ Competências Interpessoais, Habilidades Analíticas.
 
 ---
 
-*End of Sovereign UPKF v3.3 — Generated 2026-02-21.*
+*End of Sovereign UPKF v3.3 — Generated 2026-03-12.*
 *This file is the canonical source of truth. All JSON-LD must be derived from it.*
 *JSON-LD serialization rules belong in the generator, not in this file.*

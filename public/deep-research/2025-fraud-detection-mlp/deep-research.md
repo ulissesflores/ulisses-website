@@ -76,4 +76,4 @@ Agenda de continuidade: Replicar o estudo em novos contextos operacionais com de
 - DOI status: target
 - DOI target: 10.5281/zenodo.202506
 - Canonical citation seed: Ngai, 2011; Whitrow, 2009; Jurgovsky, 2018
-- Generated at: 2026-02-21
+- Generated at: 2026-03-12

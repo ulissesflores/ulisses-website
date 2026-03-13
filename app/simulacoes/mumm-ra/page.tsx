@@ -10,18 +10,34 @@ const canonicalPath = '/simulacoes/mumm-ra';
 const whatsappUrl = 'https://wa.me/551152868689';
 
 export const metadata: Metadata = {
-  title: 'Mumm-Ra | Chatbot de Humor Negro via WhatsApp',
+  title: 'Mumm-Ra | Chatbot Experimental de Humor Negro via WhatsApp | Ulisses Flores',
   description:
-    'Mumm-Ra é um chatbot via WhatsApp inspirado no vilão dos ThunderCats dos anos 90. Humor negro, sarcasmo pesado e respostas ácidas — mas sempre te ajuda no final. Gratuito e em BETA.',
+    'Mumm-Ra é um chatbot experimental via WhatsApp criado por Ulisses Flores — Consultor Estratégico de IA, Professor, Palestrante e Mestrando AGTU (EUA). Inspirado no vilão dos ThunderCats: te xinga, reclama, te chama de verme — mas sempre responde. Gratuito, em BETA.',
+  keywords: [
+    'chatbot WhatsApp humor negro',
+    'Mumm-Ra chatbot',
+    'chatbot experimental IA',
+    'ThunderCats chatbot',
+    'engenharia de prompt',
+    'Ulisses Flores chatbot',
+    'IA conversacional WhatsApp',
+  ],
+  authors: [
+    {
+      name: upkfMeta.publicDisplayName || upkfMeta.displayName,
+      url: `${upkfMeta.primaryWebsite}/identidade`,
+    },
+  ],
   alternates: {
     canonical: canonicalPath,
   },
   openGraph: {
     type: 'website',
     url: `${upkfMeta.primaryWebsite}${canonicalPath}`,
-    title: 'Mumm-Ra | Chatbot de Humor Negro via WhatsApp',
+    title: 'Mumm-Ra | Chatbot Experimental de Humor Negro via WhatsApp | Ulisses Flores',
     description:
-      'Chatbot inspirado no vilão imortal dos ThunderCats. Te xinga, te chama de verme, reclama de ter sido invocado — mas sempre responde. Gratuito via WhatsApp.',
+      'Chatbot experimental criado por Ulisses Flores. Inspirado no vilão imortal dos ThunderCats: te xinga, te chama de verme, reclama de ter sido invocado — mas sempre responde. Gratuito via WhatsApp.',
+    locale: 'pt_BR',
   },
 };
 
@@ -91,7 +107,18 @@ export default function MummRaPage() {
             mais icônico da série: reclama de ser invocado, te chama de &ldquo;verme&rdquo; e &ldquo;larva humana&rdquo;,
             mas entrega a resposta que você precisa. É 100% atuação — pura diversão com humor negro.
           </p>
-          <div className='mt-5 max-w-xl'>
+          {/* EEAT authority block */}
+          <div className='mt-6 rounded-xl border border-neutral-800 bg-neutral-900/40 p-5 max-w-2xl'>
+            <p className='text-xs uppercase tracking-widest text-violet-400 mb-2'>Criado por</p>
+            <p className='text-sm text-neutral-300 leading-relaxed'>
+              <strong className='text-white'>Ulisses Flores</strong> — Consultor Estratégico de IA,
+              Professor Convidado, Palestrante e Mestrando em Inteligência Artificial pela{' '}
+              <strong className='text-white'>AGTU (EUA)</strong>. O Mumm-Ra é um laboratório de
+              pesquisa em engenharia de prompt avançada e design de personalidades para IAs
+              conversacionais.
+            </p>
+          </div>
+          <div className='mt-4 max-w-xl'>
             <AuthorHubCard
               label='Projeto experimental'
               compact

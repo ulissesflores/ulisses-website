@@ -1,6 +1,5 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { AlertTriangle, Clock, GitFork, BarChart3, BookOpen, Zap } from 'lucide-react';
 import { IA2027Simulation } from '@/components/simulations/ia-2027/ia-2027-simulation';
 import type { SimulationPath } from '@/components/simulations/ia-2027/types';
 import { upkfMeta } from '@/data/generated/upkf.generated';
@@ -51,14 +50,6 @@ export const metadata: Metadata = {
     description:
       'Explore a única simulação interativa em português sobre a chegada da AGI. Análise de cenários futuros, corrida tecnológica e impacto econômico por Ulisses Flores — Cientista, Consultor, Professor e Palestrante.',
     locale: 'pt_BR',
-    images: [
-      {
-        url: `${upkfMeta.primaryWebsite}/simulacao-ia-2027-futuro-agi-ulisses-flores.jpg`,
-        width: 2752,
-        height: 1536,
-        alt: 'IA 2027: Simulação Interativa sobre o Futuro da Inteligência Artificial — AGI Strategic Simulation',
-      },
-    ],
   },
 };
 
@@ -69,169 +60,169 @@ export default async function IA2027Page({
 }) {
   const resolvedSearchParams = await searchParams;
   const initialPath = parseInitialPath(resolvedSearchParams.path);
-  const origin = upkfMeta.primaryWebsite;
 
   const pageJsonLd = {
     '@context': 'https://schema.org',
-    '@graph': [
+    '@type': ['WebPage', 'Article', 'SoftwareApplication'],
+    '@id': `${upkfMeta.primaryWebsite}${canonicalPath}#webpage`,
+    url: `${upkfMeta.primaryWebsite}${canonicalPath}`,
+    name: 'IA 2027: Simulação Interativa sobre o Futuro da Inteligência Artificial',
+    headline: 'IA 2027: Simulação Interativa sobre o Futuro da Inteligência Artificial',
+    description:
+      'Explore a única simulação interativa em português sobre a chegada da AGI (Inteligência Artificial Geral). Análise de cenários futuros, corrida tecnológica e impacto econômico por Ulisses Flores — Cientista, Consultor, Professor e Palestrante.',
+    inLanguage: 'pt-BR',
+    keywords: 'futuro da inteligência artificial, cenários futuros IA, o que é AGI, inteligência artificial geral, soberania tecnológica, impacto da IA no mercado, agentes autônomos',
+    about: [
       {
-        '@type': ['WebPage', 'Article', 'SoftwareApplication'],
-        '@id': `${origin}${canonicalPath}#webpage`,
-        url: `${origin}${canonicalPath}`,
-        name: 'IA 2027: Simulação Interativa sobre o Futuro da Inteligência Artificial',
-        headline: 'IA 2027: Simulação Interativa sobre o Futuro da Inteligência Artificial',
-        description:
-          'Explore a única simulação interativa em português sobre a chegada da AGI (Inteligência Artificial Geral). Análise de cenários futuros, corrida tecnológica e impacto econômico por Ulisses Flores — Cientista, Consultor, Professor e Palestrante.',
-        inLanguage: 'pt-BR',
-        keywords: 'futuro da inteligência artificial, cenários futuros IA, o que é AGI, inteligência artificial geral, soberania tecnológica, impacto da IA no mercado, agentes autônomos',
-        isPartOf: {
-          '@id': `${origin}/#website`,
-        },
-        author: {
-          '@id': `${origin}/#person`,
-        },
-        translationOfWork: {
-          '@type': 'CreativeWork',
-          url: 'https://ai-2027.com/',
-          name: 'AI 2027',
-          inLanguage: 'en',
-        },
-        about: [
-          {
-            '@type': 'Thing',
-            name: 'Artificial General Intelligence',
-            sameAs: 'https://en.wikipedia.org/wiki/Artificial_general_intelligence',
-            description: 'Inteligência artificial com capacidade cognitiva comparável ou superior à humana.',
-          },
-          {
-            '@type': 'Thing',
-            name: 'AI Safety',
-            sameAs: 'https://en.wikipedia.org/wiki/AI_safety',
-            description: 'Pesquisa em segurança e alinhamento de sistemas de inteligência artificial avançada.',
-          },
-        ],
-        // Resolve SoftwareApplication required fields
-        applicationCategory: 'WebApplication',
-        operatingSystem: 'Any',
-        offers: {
-          '@type': 'Offer',
-          price: '0',
-          priceCurrency: 'BRL',
-        },
-        // Resolve Article image warning
-        image: `${origin}/simulacao-ia-2027-futuro-agi-ulisses-flores.jpg`,
+        '@type': 'Thing',
+        name: 'Artificial General Intelligence',
+        sameAs: 'https://en.wikipedia.org/wiki/Artificial_general_intelligence',
+      },
+      {
+        '@type': 'Thing',
+        name: 'AI Safety',
+        sameAs: 'https://en.wikipedia.org/wiki/AI_safety',
       },
     ],
+    translationOfWork: {
+      '@type': 'CreativeWork',
+      url: 'https://ai-2027.com/',
+      name: 'AI 2027',
+      inLanguage: 'en',
+    },
+    isPartOf: {
+      '@id': `${upkfMeta.primaryWebsite}/#website`,
+    },
+    author: {
+      '@id': `${upkfMeta.primaryWebsite}/#person`,
+    },
   };
 
   return (
-    <div className='min-h-screen bg-neutral-950 text-neutral-200'>
-      <div className='fixed inset-0 bg-[radial-gradient(circle_800px_at_50%_-200px,#10b98110,transparent)] pointer-events-none' />
+    <>
+      {/* Hero Section — server-rendered for SEO/GEO/LLM */}
+      <section className='bg-white text-black pt-20 pb-16 border-b border-gray-200'>
+        <div className='max-w-4xl mx-auto px-6'>
 
-      {/* Intro / Context Section */}
-      <section className='relative max-w-4xl mx-auto px-6 pt-20 pb-12 z-10'>
-        <Link href='/simulacoes' className='text-sm text-neutral-400 hover:text-emerald-400 transition-colors'>
-          ← Voltar para Simulações
-        </Link>
+          {/* Breadcrumb / Kicker */}
+          <div className='flex items-center gap-2 mb-6'>
+            <Link
+              href='/simulacoes'
+              className='text-xs font-mono uppercase tracking-widest text-blue-700 hover:underline'
+            >
+              Simulações Estratégicas
+            </Link>
+            <span className='text-xs text-gray-400'>→</span>
+            <span className='text-xs font-mono uppercase tracking-widest text-gray-500'>
+              Cenários Futuros da IA
+            </span>
+          </div>
 
-        <header className='mt-8 mb-10'>
-          <p className='text-xs uppercase tracking-[0.2em] text-emerald-400 mb-3'>Simulações Estratégicas → Cenários Futuros da IA</p>
-          <h1 className='text-4xl md:text-5xl font-bold text-white mb-4'>
+          {/* H1 */}
+          <h1 className='text-4xl sm:text-5xl font-bold leading-tight tracking-tight mb-6'>
             IA 2027: Simulação Interativa sobre o Futuro da Inteligência Artificial
           </h1>
-          <p className='text-xl text-neutral-300 leading-relaxed max-w-3xl'>
-            Os CEOs da OpenAI, Google DeepMind e Anthropic convergem em um ponto crítico: a Inteligência
-            Artificial Geral (AGI) pode ser alcançada antes do final desta década. Quando a máquina superar
-            a capacidade cognitiva humana, as regras que governam a economia global, o mercado de trabalho e
-            o poder geopolítico serão reescritas de forma irreversível. Esta simulação modela de forma
-            interativa os próximos anos dessa transição.
-          </p>
-        </header>
 
-        {/* Alert Card — Why this matters */}
-        <div className='rounded-2xl border border-amber-500/20 bg-amber-950/15 p-6 mb-8'>
-          <div className='flex items-start gap-3'>
-            <AlertTriangle size={22} className='text-amber-400 shrink-0 mt-0.5' />
-            <div>
-              <h2 className='text-lg font-semibold text-white mb-2'>Por que isso importa</h2>
-              <p className='text-neutral-300 leading-relaxed text-sm'>
-                A soberania tecnológica não é mais ficção científica; é a disputa econômica e arquitetônica
-                mais urgente do nosso tempo. Como cientista, consultor em IA e criador desta adaptação,
-                estruturei este cenário baseado em modelagens de Harvard, MIRI e analistas de segurança de IA.
-                O ponto de ruptura central explorado aqui é: o que acontece com a economia e a infraestrutura
-                de sistemas quando a IA começa a acelerar sua própria pesquisa de forma recursiva? O ramo que
-                escolhermos definirá o futuro.
-              </p>
-            </div>
+          {/* Lead paragraph */}
+          <p className='text-lg text-gray-700 leading-relaxed mb-8 max-w-3xl'>
+            Os CEOs da OpenAI, Google DeepMind e Anthropic convergem em um ponto crítico: a
+            Inteligência Artificial Geral (AGI) pode ser alcançada antes do final desta década.
+            Quando a máquina superar a capacidade cognitiva humana, as regras que governam a
+            economia global, o mercado de trabalho e o poder geopolítico serão reescritas de
+            forma irreversível. Esta simulação modela de forma interativa os próximos anos
+            dessa transição.
+          </p>
+
+          {/* Alert card — EEAT / Por que isso importa */}
+          <div className='border-l-4 border-blue-600 bg-blue-50 px-6 py-5 rounded-r-xl mb-10'>
+            <p className='text-sm font-semibold text-blue-800 uppercase tracking-wide mb-2'>
+              Por que isso importa
+            </p>
+            <p className='text-gray-800 leading-relaxed'>
+              A soberania tecnológica não é mais ficção científica; é a disputa econômica e
+              arquitetônica mais urgente do nosso tempo. Como cientista, consultor em IA e
+              criador desta adaptação, estruturei este cenário baseado em modelagens de Harvard,
+              MIRI e analistas de segurança de IA. O ponto de ruptura central explorado aqui
+              é: o que acontece com a economia e a infraestrutura de sistemas quando a IA começa
+              a acelerar sua própria pesquisa de forma recursiva? O ramo que escolhermos
+              definirá o futuro.
+            </p>
+          </div>
+
+          {/* Feature cards */}
+          <div className='grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10'>
+            {[
+              {
+                title: 'Linha do Tempo 2025–2027',
+                body: 'Narrativa cronológica baseada em projeções reais de evolução de hardware e software.',
+              },
+              {
+                title: 'Métricas de Impacto em Tempo Real',
+                body: 'Acompanhe a receita corporativa, aprovação pública e proliferação de agentes autônomos.',
+              },
+              {
+                title: 'Ponto de Bifurcação (Slowdown vs. Race)',
+                body: 'Você decide o desfecho: uma pausa coordenada global ou uma corrida armamentista pelo domínio da AGI.',
+              },
+              {
+                title: 'Arquitetura e Fundamentos Técnicos',
+                body: 'Notas de rodapé expansíveis detalhando a engenharia de sistemas e o impacto macroeconômico por trás de cada previsão.',
+              },
+            ].map((card) => (
+              <div
+                key={card.title}
+                className='border border-gray-200 rounded-xl p-5 bg-gray-50'
+              >
+                <p className='font-semibold text-sm text-black mb-1'>{card.title}</p>
+                <p className='text-sm text-gray-600 leading-relaxed'>{card.body}</p>
+              </div>
+            ))}
+          </div>
+
+          {/* CTA */}
+          <div className='flex flex-col sm:flex-row items-start sm:items-center gap-4'>
+            <a
+              href='#ia-2027-sim'
+              className='inline-flex items-center gap-2 bg-black text-white font-semibold px-6 py-3 rounded-full hover:bg-blue-700 transition-colors text-sm'
+            >
+              Iniciar Simulação →
+            </a>
+            <p className='text-xs text-gray-500 max-w-sm'>
+              Tradução e adaptação do cenário original publicado em{' '}
+              <a
+                href='https://ai-2027.com/'
+                target='_blank'
+                rel='noopener noreferrer'
+                className='underline hover:text-gray-700'
+              >
+                ai-2027.com
+              </a>{' '}
+              — baseado em modelagens de Harvard, MIRI e analistas de segurança de IA.
+            </p>
           </div>
         </div>
+      </section>
 
-        {/* How it works */}
-        <div className='grid gap-4 md:grid-cols-2 mb-8'>
-          {[
-            {
-              icon: Clock,
-              title: 'Linha do Tempo 2025–2027',
-              description: 'Narrativa cronológica baseada em projeções reais de evolução de hardware e software.',
-              color: 'text-cyan-400',
-            },
-            {
-              icon: BarChart3,
-              title: 'Métricas de Impacto em Tempo Real',
-              description: 'Acompanhe a receita corporativa, aprovação pública e proliferação de agentes autônomos.',
-              color: 'text-emerald-400',
-            },
-            {
-              icon: GitFork,
-              title: 'Ponto de Bifurcação (Slowdown vs. Race)',
-              description: 'Você decide o desfecho: uma pausa coordenada global ou uma corrida armamentista pelo domínio da AGI.',
-              color: 'text-violet-400',
-            },
-            {
-              icon: BookOpen,
-              title: 'Arquitetura e Fundamentos Técnicos',
-              description: 'Notas de rodapé expansíveis detalhando a engenharia de sistemas e o impacto macroeconômico por trás de cada previsão.',
-              color: 'text-amber-400',
-            },
-          ].map((item) => {
-            const Icon = item.icon;
-            return (
-              <div key={item.title} className='rounded-xl border border-neutral-800 bg-neutral-900/40 p-5'>
-                <Icon size={20} className={`${item.color} mb-3`} />
-                <h3 className='text-sm font-semibold text-white mb-1'>{item.title}</h3>
-                <p className='text-xs text-neutral-400 leading-relaxed'>{item.description}</p>
-              </div>
-            );
-          })}
-        </div>
+      {/* Simulation */}
+      <IA2027Simulation initialPath={initialPath} />
 
-        {/* CTA to start simulation */}
-        <div className='text-center mb-8'>
-          <a
-            href='#ia-2027-sim'
-            className='inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-500 text-white px-8 py-4 rounded-full font-bold text-lg transition-all shadow-[0_0_30px_rgba(16,185,129,0.2)] hover:shadow-[0_0_40px_rgba(16,185,129,0.35)]'
-          >
-            <Zap size={20} />
-            Iniciar Simulação
-          </a>
-        </div>
-
-        <div className='max-w-xl mx-auto mb-4'>
+      {/* Author section */}
+      <section className='bg-neutral-950 text-neutral-200 pb-12 pt-2'>
+        <div className='max-w-7xl mx-auto px-6'>
           <AuthorHubCard
             label='Tradução & Curadoria'
-            compact
             description='Adaptação, curadoria e análise técnica por Ulisses Flores — Cientista, Consultor em IA, Professor, Palestrante e Mestrando.'
           />
         </div>
       </section>
 
-      {/* The Simulation Component */}
-      <IA2027Simulation initialPath={initialPath} />
-
-      {/* FAQ Section */}
+      {/* FAQ section */}
       <section className='bg-neutral-950 text-neutral-200 pb-16'>
         <div className='max-w-4xl mx-auto px-6'>
-          <FaqSection items={ia2027Faq} sectionTitle='Perguntas sobre IA 2027 e o Futuro da Inteligência Artificial' />
+          <FaqSection
+            items={ia2027Faq}
+            sectionTitle='Perguntas sobre IA 2027 e o Futuro da Inteligência Artificial'
+          />
         </div>
       </section>
 
@@ -240,6 +231,6 @@ export default async function IA2027Page({
         type='application/ld+json'
         dangerouslySetInnerHTML={{ __html: JSON.stringify(pageJsonLd) }}
       />
-    </div>
+    </>
   );
 }
