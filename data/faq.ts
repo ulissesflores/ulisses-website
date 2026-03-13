@@ -273,6 +273,158 @@ export const ia2027Faq: FaqItem[] = [
   },
 ];
 
+export const mundoPoliticoFaq: FaqItem[] = [
+  {
+    question: 'Qual é a fundamentação analítica dos artigos publicados neste hub?',
+    answer:
+      'As análises macroeconômicas e geopolíticas aqui publicadas baseiam-se rigorosamente nos princípios da Escola Austríaca de Economia, focando-se na ação humana (Praxeologia), na análise dos ciclos econômicos e nos efeitos deletérios da expansão do crédito fiduciário estatal.',
+  },
+  {
+    question: 'Quem é o autor por trás das análises do "Mundo Político"?',
+    answer:
+      'Os textos são redigidos por Ulisses Flores, Cientista Econômico, Pesquisador e CTO com mais de 28 anos de experiência na convergência entre finanças quantitativas, tecnologia de sistemas distribuídos e comportamento humano.',
+  },
+  {
+    question: 'Quais são os temas centrais abordados nesta seção?',
+    answer:
+      'O hub explora cinco eixos fundamentais: Política Nacional e Internacional, Economia Global, Relações Internacionais (com foco especial no eixo Brasil-EUA), Dinâmicas Eleitorais e Análises Estratégicas de Cidades.',
+  },
+  {
+    question: 'Como a democracia é analisada do ponto de vista filosófico nos seus textos?',
+    answer:
+      'A plataforma faz uma leitura crítica e socrática da democracia. Questionamos o sistema não para o destruir, mas para alertar que a "regra da maioria", quando desprovida de verdade, lógica e limites constitucionais rígidos, pode tornar-se numa tirania contra o indivíduo, como os julgamentos históricos de Sócrates e de Jesus demonstram.',
+  },
+  {
+    question: 'Qual é o foco prático destas análises econômicas?',
+    answer:
+      'O objetivo final é a Soberania Individual. Fornecer ao leitor e ao investidor inteligência acionável para estruturar estratégias de proteção financeira (hedges) contra a inflação e a volatilidade institucional.',
+  },
+  {
+    question: 'O hub recomenda ativos financeiros específicos?',
+    answer:
+      'As análises de risco convergem frequentemente para o estudo técnico de ativos descentralizados e imunes à senhoriagem estatal, com um foco profundo nas propriedades monetárias e tecnológicas do Bitcoin e do Monero.',
+  },
+  {
+    question: 'Como a geopolítica internacional afeta o dia a dia econômico?',
+    answer:
+      'Analisamos eventos sistêmicos — como as eleições norte-americanas ou a ascensão de novas potências — e mapeamos como essas dinâmicas redefinem as cadeias de abastecimento, a inflação global e as taxas de juro nas economias emergentes.',
+  },
+  {
+    question: 'O conteúdo do Mundo Político está associado a algum partido?',
+    answer:
+      'Não. A análise é apartidária, fria e focada na "Mecânica do Poder". O objetivo não é defender facções, mas sim compreender como o sistema político-econômico realmente opera para evitar narrativas e manipulações.',
+  },
+  {
+    question: 'Ulisses Flores presta consultoria baseada nestes cenários?',
+    answer:
+      'Sim. A framework analítica aqui exposta é utilizada em consultorias de alto nível (CTO as a Service) para corporações e family offices que precisam de salvaguardar os seus portfólios contra riscos de cauda (eventos extremos).',
+  },
+  {
+    question: 'Qual é o manifesto central desta iniciativa?',
+    answer:
+      '"A mudança só acontece quando nos tornamos agentes ativos dela." Acreditamos que o conhecimento profundo e a capacidade de interpretar fatos sob a ótica da lógica irrefutável são as únicas armas eficazes contra o populismo econômico.',
+  },
+];
+
+export const projectPsiFaq: FaqItem[] = [
+  {
+    question: 'O que é exatamente o Projeto PSI?',
+    answer:
+      'É um dispositivo de hardware ultra-seguro para custódia de ativos digitais e identidade soberana. Transcende os padrões bancários civis e nivela-se às arquiteturas de segurança militar e de lançamento nuclear.',
+  },
+  {
+    question: 'O código do projeto é fechado ou Open-Source?',
+    answer:
+      'O Projeto PSI utiliza uma arquitetura híbrida. Alia o melhor da auditabilidade do Open-Source em camadas criptográficas com soluções proprietárias avançadas de engenharia física e comportamental.',
+  },
+  {
+    question: 'O que significa a premissa "Zero Trust in Silicon"?',
+    answer:
+      'Significa que o dispositivo assume que o ambiente é hostil, o utilizador pode estar sob coação, a cadeia de abastecimento (chips) pode estar comprometida e o fabricante pode ser malicioso. Elimina-se a confiança, restando apenas o rigor das leis da física e da matemática.',
+  },
+  {
+    question: 'Como o PSI lida com o armazenamento da semente (Seed/Chave Privada)?',
+    answer:
+      'Ele não a armazena. A chave privada colapsa (é apagada) após cada uso. Ela é reconstruída temporariamente ("The Wavefunction Collapse") apenas durante a assinatura, usando uma combinação de entropia estática (NFC/Biometria) e dinâmica (SRAM PUF).',
+  },
+  {
+    question: 'Quais são as características de blindagem física do dispositivo?',
+    answer:
+      'O chassi é um "squircle" (quadrado de cantos suaves) blindado com camadas cerâmicas para resistência a ataques térmicos, malha Faraday contra pulsos eletromagnéticos (EMP) e isolamento acústico/vibracional contra ataques de canal lateral (Side-Channel).',
+  },
+  {
+    question: 'O dispositivo tem ecrã ou botões físicos?',
+    answer:
+      'Não. O PSI opera com uma arquitetura "Air-Gapped" radical. Não tem USB-C (apenas Pogo Pins magnéticos para energia), não tem ecrã e não possui botões físicos para evitar vetores de ataque.',
+  },
+  {
+    question: 'Como o dispositivo lida com ameaças quânticas?',
+    answer:
+      'Está equipado com assinaturas XMSS (Criptografia Pós-Quântica Baseada em Hash), garantindo que a custódia permanece matematicamente inquebrável mesmo após a chegada de computadores quânticos viáveis (Q-Day).',
+  },
+  {
+    question: 'O que é o "Phantom Input" contra tentativas de extorsão?',
+    answer:
+      'É uma heurística de IA comportamental. O dispositivo aprende o padrão milimétrico dos batimentos cardíacos ou toques do dono real. Se o toque indicar stress ou coação (sequestro), ele entra num modo de plausibilidade negável, desbloqueando fundos falsos ou um sistema inócuo.',
+  },
+  {
+    question: 'Qual a inovação na proteção contra ataques "Evil Maid" (Clonagem)?',
+    answer:
+      'A utilização de "Attestation Cryptography". O dispositivo gera uma Imagem de Boot Pessoal e intransmissível que autentica o hardware perante o utilizador antes que o utilizador autentique a sua biometria, prevenindo a troca furtiva do equipamento.',
+  },
+  {
+    question: 'Qual é o veredicto final do nível de segurança do PSI?',
+    answer:
+      'Com proteção EMP, redundância modular tripla (TMR) e memória tolerante a radiação, o PSI atinge um nível "Nuclear-Grade Sovereign Hardware", sendo funcional até mesmo em condições severas como a órbita terrestre baixa (LEO).',
+  },
+];
+
+export const clubeSantoFaq: FaqItem[] = [
+  {
+    question: 'O que é, essencialmente, O Clube Santo?',
+    answer:
+      'É uma comunidade e um instituto focado no crescimento espiritual contínuo. É um projeto co-fundado por Ulisses Flores que visa trazer os princípios do avivamento metodista de John Wesley para a era digital.',
+  },
+  {
+    question: 'Qual é o objetivo a longo prazo deste instituto?',
+    answer:
+      'Criar um movimento avivalista estruturado na América Latina, reunindo mentes e corações para a geração de propriedade intelectual teológica de alto impacto e aplicação prática para a vida diária dos membros.',
+  },
+  {
+    question: 'Como a Inteligência Artificial é aplicada neste projeto teológico?',
+    answer:
+      'Utilizamos IA e automação de software no que chamamos de "Arqueologia Espiritual e Teológica". A IA auxilia na recolha, tradução e análise rigorosa de textos históricos e manuscritos antigos, garantindo profundidade e escalabilidade à pesquisa.',
+  },
+  {
+    question: 'O Clube Santo é uma igreja?',
+    answer:
+      'Não. É uma comunidade de estudos, um ecossistema de partilha e aprimoramento pessoal que transcende denominações, focada no conceito original de buscar a verdadeira conexão com Deus aliada ao rigor intelectual.',
+  },
+];
+
+export const goldenleafFaq: FaqItem[] = [
+  {
+    question: 'O que é o Projeto GoldenLeaf?',
+    answer:
+      'É um sistema "Cloudless" de hardware embarcado (IoT) para o cultivo de precisão de fungos como Ganoderma e Pleurotus, desenvolvido por Ulisses Flores com foco em aplicações industriais de biomateriais.',
+  },
+  {
+    question: 'Por que Edge Computing em vez de Cloud para micologia?',
+    answer:
+      'A micologia de precisão exige controlo absoluto de temperatura, humidade e CO₂ com latência zero. Qualquer falha de conexão cloud pode destruir uma colónia inteira. O Edge Computing garante autonomia total do sistema.',
+  },
+  {
+    question: 'Qual é a segurança dos dados no sistema GoldenLeaf?',
+    answer:
+      'O ecossistema opera com criptografia de curva elíptica para garantir soberania total dos dados de cultivo. Nenhuma telemetria é enviada para servidores externos — tudo permanece no hardware local.',
+  },
+  {
+    question: 'Quais fungos o sistema é capaz de cultivar?',
+    answer:
+      'O foco principal está em Ganoderma (Reishi) e Pleurotus (Cogumelo Ostra) para aplicações de biomateriais, incluindo embalagens biodegradáveis, isolamentos acústicos e materiais de construção sustentáveis.',
+  },
+];
+
 export const homeFaq: FaqItem[] = [
   {
     question: 'Quem é Ulisses Flores?',

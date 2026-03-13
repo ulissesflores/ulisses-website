@@ -118,6 +118,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     maybeMakeSitemapEntry('/simulacoes/ia-2027/desaceleracao-coordenada', upkfMeta.generatedAt, 'weekly', 0.65),
     maybeMakeSitemapEntry('/simulacoes/ia-2027/corrida-estrategica', upkfMeta.generatedAt, 'weekly', 0.65),
     maybeMakeSitemapEntry('/simulacoes/mumm-ra', upkfMeta.generatedAt, 'weekly', 0.62),
+    maybeMakeSitemapEntry('/simulacoes/projeto-psi', upkfMeta.generatedAt, 'weekly', 0.62),
+    maybeMakeSitemapEntry('/simulacoes/goldenleaf', upkfMeta.generatedAt, 'weekly', 0.62),
+    maybeMakeSitemapEntry('/clube-santo', upkfMeta.generatedAt, 'weekly', 0.68),
   ].filter((entry): entry is MetadataRoute.Sitemap[number] => Boolean(entry));
 
   return [

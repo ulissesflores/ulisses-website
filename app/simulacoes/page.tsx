@@ -192,6 +192,70 @@ export default function SimulacoesPage() {
               </div>
             </article>
 
+            {/* Projeto PSI */}
+            <article className='rounded-2xl border border-neutral-800 bg-neutral-900/40 p-8'>
+              <div className='flex items-center gap-3 mb-4'>
+                <span className='text-[10px] uppercase tracking-[0.2em] text-cyan-300 border border-cyan-700/40 rounded-full px-3 py-1'>
+                  Hardware & Blockchain
+                </span>
+                <span className='text-[10px] uppercase tracking-widest text-amber-400 border border-amber-500/30 rounded-full px-2 py-0.5 font-bold'>
+                  R&D
+                </span>
+              </div>
+              <h2 className='text-2xl font-bold text-white mb-3'>
+                Projeto PSI · Hardware Wallet Nuclear-Grade
+              </h2>
+              <p className='text-neutral-300 leading-relaxed mb-4'>
+                Hardware wallet de nível nuclear com Ring Signatures, endereços furtivos e airgap
+                total para soberania digital absoluta. Co-inventada como parte do ecossistema Codex Hash.
+              </p>
+              <div className='flex flex-wrap gap-3 mb-6'>
+                {['Ring Signatures', 'Airgap', 'Codex Hash', 'Privacidade'].map((tag) => (
+                  <span key={tag} className='text-xs border border-neutral-700 text-neutral-400 px-3 py-1 rounded-full'>
+                    {tag}
+                  </span>
+                ))}
+              </div>
+              <Link
+                href='/simulacoes/projeto-psi'
+                className='inline-flex items-center gap-2 border border-neutral-700 text-neutral-300 hover:text-white hover:border-neutral-500 font-medium px-5 py-2.5 rounded-full transition-colors text-sm'
+              >
+                Ver detalhes →
+              </Link>
+            </article>
+
+            {/* GoldenLeaf */}
+            <article className='rounded-2xl border border-neutral-800 bg-neutral-900/40 p-8'>
+              <div className='flex items-center gap-3 mb-4'>
+                <span className='text-[10px] uppercase tracking-[0.2em] text-green-300 border border-green-700/40 rounded-full px-3 py-1'>
+                  IoT & Agricultura
+                </span>
+                <span className='text-[10px] uppercase tracking-widest text-amber-400 border border-amber-500/30 rounded-full px-2 py-0.5 font-bold'>
+                  R&D
+                </span>
+              </div>
+              <h2 className='text-2xl font-bold text-white mb-3'>
+                GoldenLeaf · Micologia Inteligente com IoT e IA
+              </h2>
+              <p className='text-neutral-300 leading-relaxed mb-4'>
+                Sistema de cultivo autônomo de cogumelos gourmet com sensores IoT de precisão, IA
+                preditiva on-edge e arquitetura cloudless — soberania total dos dados sem nuvem.
+              </p>
+              <div className='flex flex-wrap gap-3 mb-6'>
+                {['IoT', 'IA Preditiva', 'Cloudless', 'Agricultura'].map((tag) => (
+                  <span key={tag} className='text-xs border border-neutral-700 text-neutral-400 px-3 py-1 rounded-full'>
+                    {tag}
+                  </span>
+                ))}
+              </div>
+              <Link
+                href='/simulacoes/goldenleaf'
+                className='inline-flex items-center gap-2 border border-neutral-700 text-neutral-300 hover:text-white hover:border-neutral-500 font-medium px-5 py-2.5 rounded-full transition-colors text-sm'
+              >
+                Ver detalhes →
+              </Link>
+            </article>
+
             {/* Mumm-Ra */}
             <article className='rounded-2xl border border-neutral-800 bg-neutral-900/40 p-8'>
               <div className='flex items-center gap-3 mb-4'>
