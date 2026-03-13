@@ -38,6 +38,7 @@ const navCategories: NavCategory[] = [
     label: 'Ferramentas',
     items: [
       { label: 'Simulações', href: '/simulacoes', description: 'Laboratório de cenários prospectivos' },
+      { label: 'Projeto PSI', href: '/simulacoes/projeto-psi', description: 'Hardware Wallet Nuclear-Grade · Whitepaper' },
       { label: 'Identidade', href: '/identidade', description: 'Hub canônico de identidade soberana' },
       { label: 'Certificações', href: '/certifications', description: 'Credenciais e verificações' },
     ],
