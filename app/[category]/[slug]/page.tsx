@@ -210,6 +210,7 @@ export default async function ArticlePage({ params }: PageProps) {
             <a
               href={publication.mdUrl}
               target='_blank'
+              rel='nofollow noopener noreferrer'
               className='text-cyan-300 underline underline-offset-4 self-center'
             >
               Markdown (.md)
@@ -217,6 +218,7 @@ export default async function ArticlePage({ params }: PageProps) {
             <a
               href={publication.docxUrl}
               target='_blank'
+              rel='nofollow noopener noreferrer'
               className='text-cyan-300 underline underline-offset-4 self-center'
             >
               DOCX (.docx)

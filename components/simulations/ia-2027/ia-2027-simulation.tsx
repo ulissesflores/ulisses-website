@@ -203,10 +203,10 @@ const NarrativeSectionArticle = memo(function NarrativeSectionArticle({
       data-chart-extra={JSON.stringify(section.chartExtra)}
       data-path={path}
       className='scroll-mt-28'
-      initial={{ opacity: 0, y: 24 }}
+      initial={{ opacity: 1, y: 16 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.2 }}
-      transition={{ duration: 0.4, delay: index * 0.02 }}
+      transition={{ duration: 0.35, delay: index * 0.02 }}
     >
       <p className='text-xs font-mono uppercase tracking-[0.18em] text-blue-800 mb-2'>{section.navLabel}</p>
       <h2 className='text-3xl font-bold mb-4'>{section.title}</h2>
@@ -368,7 +368,14 @@ export function IA2027Simulation({ initialPath }: { initialPath?: SimulationPath
       return;
     }
     setActivePath(nextPath);
-    window.scrollTo(0, 0);
+    // Scroll to the simulation container instead of page top
+    // to keep context after branch switch (avoids "jump to hero" bug)
+    const simEl = document.getElementById('ia-2027-sim');
+    if (simEl) {
+      simEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    } else {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
   };
 
   return (

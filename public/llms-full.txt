@@ -267,4 +267,4 @@ This file contains an expanded machine-readable index of publication URLs and su
 - Use PDF links as downloadable artifacts.
 - Validate identity claims using ORCID, Lattes, DID, and JSON-LD.
 
-Last-Updated: 2026-02-21
+Last-Updated: 2026-03-12
