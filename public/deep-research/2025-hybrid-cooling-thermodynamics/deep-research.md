@@ -76,4 +76,4 @@ Agenda de continuidade: Executar pilotos controlados com metricas de SLO, custo 
 - DOI status: target
 - DOI target: 10.5281/zenodo.202503
 - Canonical citation seed: ASHRAE, 2026; 90, 2026; systems, 2026
-- Generated at: 2026-02-21
+- Generated at: 2026-03-12

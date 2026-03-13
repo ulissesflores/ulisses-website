@@ -76,4 +76,4 @@ Agenda de continuidade: Replicar o estudo em novos contextos operacionais com de
 - DOI status: target
 - DOI target: 10.5281/zenodo.202501
 - Canonical citation seed: Little, 1961; Kingman, 1961; Anderson, 2010
-- Generated at: 2026-02-21
+- Generated at: 2026-03-12

@@ -1,12 +1,12 @@
 /* AUTO-GENERATED FILE. DO NOT EDIT MANUALLY.
  * Source: public/upkf-source.md
- * Generated at: 2026-02-21
+ * Generated at: 2026-03-12
  */
 
 export const upkfMeta = {
   "upkfTitle": "Ulisses Flores — Sovereign UPKF (Universal Personal Knowledge Framework)",
   "upkfVersion": "3.3",
-  "generatedAt": "2026-02-21",
+  "generatedAt": "2026-03-12",
   "schemaTarget": "Schema.org JSON-LD via deterministic derivation",
   "sourcePath": "public/upkf-source.md",
   "displayName": "Carlos Ulisses Flores",

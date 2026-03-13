@@ -76,4 +76,4 @@ Agenda de continuidade: Executar pilotos controlados com metricas de SLO, custo 
 - DOI status: target
 - DOI target: 10.5281/zenodo.202418
 - Canonical citation seed: Rivest, 2001; Franklin, 2012; Noether, 2015
-- Generated at: 2026-02-21
+- Generated at: 2026-03-12

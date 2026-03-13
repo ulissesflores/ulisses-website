@@ -76,4 +76,4 @@ Agenda de continuidade: Replicar o estudo em novos contextos operacionais com de
 - DOI status: target
 - DOI target: 10.5281/zenodo.202325
 - Canonical citation seed: Faith, 1978; Zimdars-Swartz, 1991; Jr, 1981
-- Generated at: 2026-02-21
+- Generated at: 2026-03-12

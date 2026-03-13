@@ -76,4 +76,4 @@ Agenda de continuidade: Replicar o estudo em novos contextos operacionais com de
 - DOI status: target
 - DOI target: 10.5281/zenodo.202329
 - Canonical citation seed: Wesley, 2026; Heitzenrater, 2013; Hempton, 2005
-- Generated at: 2026-02-21
+- Generated at: 2026-03-12

@@ -1,6 +1,6 @@
 /* AUTO-GENERATED FILE. DO NOT EDIT MANUALLY.
  * Source: public/upkf-source.md
- * Generated at: 2026-02-21
+ * Generated at: 2026-03-12
  */
 
 export type PublicationCategory = 'research' | 'whitepapers' | 'essays';
@@ -119,7 +119,7 @@ export const publications: Publication[] = [
     "kind": "J",
     "date": "2025",
     "publishedAt": "2025-01-01",
-    "updatedAt": "2026-02-21",
+    "updatedAt": "2026-03-12",
     "inLanguage": "pt-BR",
     "tags": [
       "LITTLE",
@@ -255,7 +255,7 @@ export const publications: Publication[] = [
     "kind": "J",
     "date": "2025",
     "publishedAt": "2025-01-01",
-    "updatedAt": "2026-02-21",
+    "updatedAt": "2026-03-12",
     "inLanguage": "pt-BR",
     "tags": [
       "LSTM",
@@ -391,7 +391,7 @@ export const publications: Publication[] = [
     "kind": "R",
     "date": "2025",
     "publishedAt": "2025-01-01",
-    "updatedAt": "2026-02-21",
+    "updatedAt": "2026-03-12",
     "inLanguage": "pt-BR",
     "tags": [
       "HYBRID",
@@ -527,7 +527,7 @@ export const publications: Publication[] = [
     "kind": "R",
     "date": "2025",
     "publishedAt": "2025-01-01",
-    "updatedAt": "2026-02-21",
+    "updatedAt": "2026-03-12",
     "inLanguage": "pt-BR",
     "tags": [
       "IOT",
@@ -663,7 +663,7 @@ export const publications: Publication[] = [
     "kind": "J",
     "date": "2025",
     "publishedAt": "2025-01-01",
-    "updatedAt": "2026-02-21",
+    "updatedAt": "2026-03-12",
     "inLanguage": "pt-BR",
     "tags": [
       "FRAUD",
@@ -799,7 +799,7 @@ export const publications: Publication[] = [
     "kind": "J",
     "date": "2024",
     "publishedAt": "2024-01-01",
-    "updatedAt": "2026-02-21",
+    "updatedAt": "2026-03-12",
     "inLanguage": "pt-BR",
     "tags": [
       "HISTORICITY",
@@ -935,7 +935,7 @@ export const publications: Publication[] = [
     "kind": "J",
     "date": "2024",
     "publishedAt": "2024-01-01",
-    "updatedAt": "2026-02-21",
+    "updatedAt": "2026-03-12",
     "inLanguage": "pt-BR",
     "tags": [
       "BITCOIN",
@@ -1070,7 +1070,7 @@ export const publications: Publication[] = [
     "kind": "J",
     "date": "2024",
     "publishedAt": "2024-01-01",
-    "updatedAt": "2026-02-21",
+    "updatedAt": "2026-03-12",
     "inLanguage": "pt-BR",
     "tags": [
       "SCRIBAL",
@@ -1206,7 +1206,7 @@ export const publications: Publication[] = [
     "kind": "J",
     "date": "2024",
     "publishedAt": "2024-01-01",
-    "updatedAt": "2026-02-21",
+    "updatedAt": "2026-03-12",
     "inLanguage": "pt-BR",
     "tags": [
       "THEOLOGY",
@@ -1338,7 +1338,7 @@ export const publications: Publication[] = [
     "kind": "R",
     "date": "2024",
     "publishedAt": "2024-01-01",
-    "updatedAt": "2026-02-21",
+    "updatedAt": "2026-03-12",
     "inLanguage": "pt-BR",
     "tags": [
       "RING",
@@ -1474,7 +1474,7 @@ export const publications: Publication[] = [
     "kind": "R",
     "date": "2024",
     "publishedAt": "2024-01-01",
-    "updatedAt": "2026-02-21",
+    "updatedAt": "2026-03-12",
     "inLanguage": "pt-BR",
     "tags": [
       "AGRITECH",
@@ -1610,7 +1610,7 @@ export const publications: Publication[] = [
     "kind": "J",
     "date": "2024",
     "publishedAt": "2024-01-01",
-    "updatedAt": "2026-02-21",
+    "updatedAt": "2026-03-12",
     "inLanguage": "pt-BR",
     "tags": [
       "EXEGETICAL",
@@ -1742,7 +1742,7 @@ export const publications: Publication[] = [
     "kind": "J",
     "date": "2023",
     "publishedAt": "2023-01-01",
-    "updatedAt": "2026-02-21",
+    "updatedAt": "2026-03-12",
     "inLanguage": "pt-BR",
     "tags": [
       "MARIAN",
@@ -1874,7 +1874,7 @@ export const publications: Publication[] = [
     "kind": "R",
     "date": "2023",
     "publishedAt": "2023-01-01",
-    "updatedAt": "2026-02-21",
+    "updatedAt": "2026-03-12",
     "inLanguage": "pt-BR",
     "tags": [
       "DIGITAL",
@@ -2005,7 +2005,7 @@ export const publications: Publication[] = [
     "kind": "J",
     "date": "2023",
     "publishedAt": "2023-01-01",
-    "updatedAt": "2026-02-21",
+    "updatedAt": "2026-03-12",
     "inLanguage": "pt-BR",
     "tags": [
       "HOLY",
@@ -2137,7 +2137,7 @@ export const publications: Publication[] = [
     "kind": "J",
     "date": "2022",
     "publishedAt": "2022-01-01",
-    "updatedAt": "2026-02-21",
+    "updatedAt": "2026-03-12",
     "inLanguage": "pt-BR",
     "tags": [
       "THEOLOGY",
@@ -2268,7 +2268,7 @@ export const publications: Publication[] = [
     "kind": "J",
     "date": "2020",
     "publishedAt": "2020-01-01",
-    "updatedAt": "2026-02-21",
+    "updatedAt": "2026-03-12",
     "inLanguage": "pt-BR",
     "tags": [
       "ROBOTICS",
@@ -2399,7 +2399,7 @@ export const publications: Publication[] = [
     "kind": "J",
     "date": "2017",
     "publishedAt": "2017-01-01",
-    "updatedAt": "2026-02-21",
+    "updatedAt": "2026-03-12",
     "inLanguage": "pt-BR",
     "tags": [
       "CHAOS",

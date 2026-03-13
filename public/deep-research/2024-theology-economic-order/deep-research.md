@@ -76,4 +76,4 @@ Agenda de continuidade: Ampliar confronto com bibliografia de fronteira e reviso
 - DOI status: target
 - DOI target: 10.5281/zenodo.202417
 - Canonical citation seed: Augustine, 2026; Aquinas, 2026; Ropke, 1960
-- Generated at: 2026-02-21
+- Generated at: 2026-03-12

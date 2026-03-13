@@ -76,4 +76,4 @@ Agenda de continuidade: Ampliar confronto com bibliografia de fronteira e reviso
 - DOI status: target
 - DOI target: 10.5281/zenodo.202033
 - Canonical citation seed: Papert, 1980; Wing, 2006; Kolb, 1984
-- Generated at: 2026-02-21
+- Generated at: 2026-03-12

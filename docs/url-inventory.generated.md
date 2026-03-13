@@ -1,7 +1,7 @@
 # URL Inventory (Generated)
 
 - Source: `public/upkf-source.md`
-- Generated at: 2026-02-21
+- Generated at: 2026-03-12
 - Total URLs: 269
 
 ## Collections

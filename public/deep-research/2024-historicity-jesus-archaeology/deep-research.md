@@ -76,4 +76,4 @@ Agenda de continuidade: Replicar o estudo em novos contextos operacionais com de
 - DOI status: target
 - DOI target: 10.5281/zenodo.202412
 - Canonical citation seed: Ehrman, 2012; Sanders, 1993; Meier, 1991-2016
-- Generated at: 2026-02-21
+- Generated at: 2026-03-12
