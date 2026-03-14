@@ -50,6 +50,21 @@ export const metadata: Metadata = {
     description:
       'Explore a única simulação interativa em português sobre a chegada da AGI. Análise de cenários futuros, corrida tecnológica e impacto econômico por Ulisses Flores — Cientista, Consultor, Professor e Palestrante.',
     locale: 'pt_BR',
+    images: [
+      {
+        url: `${upkfMeta.primaryWebsite}/simulacao-ia-2027-futuro-agi-ulisses-flores.jpg`,
+        width: 1200,
+        height: 630,
+        alt: 'Simulação Estratégica IA-2027 por Ulisses Flores',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'IA 2027: Simulação Interativa sobre o Futuro da Inteligência Artificial | AGI e Soberania',
+    description:
+      'Explore a única simulação interativa em português sobre a chegada da AGI. Análise de cenários futuros, corrida tecnológica e impacto econômico por Ulisses Flores.',
+    images: [`${upkfMeta.primaryWebsite}/simulacao-ia-2027-futuro-agi-ulisses-flores.jpg`],
   },
 };
 
@@ -98,6 +113,7 @@ export default async function IA2027Page({
     },
     applicationCategory: 'EducationalApplication',
     operatingSystem: 'Web',
+    image: `${upkfMeta.primaryWebsite}/simulacao-ia-2027-futuro-agi-ulisses-flores.jpg`,
   };
 
   return (
