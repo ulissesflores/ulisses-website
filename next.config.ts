@@ -75,18 +75,21 @@ const nextConfig: NextConfig = {
       },
     ];
 
-    // Fix GSC 404s: double-locale prefix pattern (e.g. /he/he/path, /it/en/path)
-    const doubleLocaleRedirect = {
-      source: "/:locale1(pt-br|en|es|he|it)/:locale2(pt-br|en|es|he|it)/:path*",
-      destination: "/:path*",
-      permanent: true,
-    };
+    // Double-locale URLs (e.g. /he/he/path, /it/en/path) now handled by middleware.ts → 410 Gone
 
     // Fix GSC 404s: single-locale prefix pattern (e.g. /pt-br/path, /he/path)
     // Converted from beforeFiles rewrites to 301 redirects to fix "Alternate page with canonical" errors
     const singleLocaleRedirect = {
       source: "/:locale(pt-br|en|es|he|it)/:path*",
       destination: "/:path*",
+      permanent: true,
+    };
+
+    // Canonical host: www → non-www (defense-in-depth; Vercel Dashboard is primary control)
+    const canonicalHostRedirect = {
+      source: "/:path*",
+      has: [{ type: "host" as const, value: "www.ulissesflores.com" }],
+      destination: "https://ulissesflores.com/:path*",
       permanent: true,
     };
 
@@ -109,7 +112,7 @@ const nextConfig: NextConfig = {
     }));
 
     return [
-      doubleLocaleRedirect,
+      canonicalHostRedirect,
       singleLocaleRedirect,
       psiRedirect,
       ...rapaduriaRedirects,
