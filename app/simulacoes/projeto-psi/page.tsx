@@ -5,7 +5,7 @@ import { AuthorHubCard } from '@/components/author-hub-card';
 import { FaqSection } from '@/components/faq-section';
 import { projectPsiFaq } from '@/data/faq';
 
-const canonicalPath = '/whitepapers/projeto-psi';
+const canonicalPath = '/simulacoes/projeto-psi';
 
 export const metadata: Metadata = {
   title: 'Projeto Ψ (PSI): Hardware Soberano e Zero Trust em Silício | Ulisses Flores',
@@ -57,15 +57,13 @@ export default function ProjetoPsiPage() {
     '@context': 'https://schema.org',
     '@graph': [
       {
-        '@type': 'ScholarlyArticle',
+        '@type': 'TechArticle',
         '@id': `${origin}${canonicalPath}#article`,
         url: `${origin}${canonicalPath}`,
         headline: 'Projeto Ψ (PSI): O Horizonte de Eventos da Soberania Pessoal e Zero Trust em Silício',
         description:
           'Whitepaper Técnico: Arquitetura de custódia de ativos digitais de classe nuclear com SRAM PUF, Criptografia XMSS pós-quântica e Redundância Modular Tripla aeroespacial.',
         inLanguage: 'pt-BR',
-        wordCount: 8000,
-        educationalLevel: 'Expert',
         author: {
           '@id': `${origin}/#person`,
         },
@@ -73,7 +71,7 @@ export default function ProjetoPsiPage() {
           '@id': `${origin}/#person`,
         },
         isPartOf: {
-          '@id': `${origin}/whitepapers#collection`,
+          '@id': `${origin}/simulacoes#collection`,
         },
         about: [
           'Hardware Security Module',
@@ -86,26 +84,6 @@ export default function ProjetoPsiPage() {
         ],
         proficiencyLevel: 'Expert',
         dependencies: 'NIST SP 800-208, IEEE, RFC 8391',
-        citation: [
-          'NIST SP 800-208. Recommendation for Stateful Hash-Based Signature Schemes (XMSS/LMS).',
-          'Roel Maes (2013). Physically Unclonable Functions: Constructions, Properties and Applications. Springer.',
-          'Kocabaş, O., et al. A Review of Side-Channel Attacks on Cryptographic Hardware. IEEE Transactions on Information Forensics and Security.',
-          'Study on Shielding Effectiveness of Arc Thermal Metal Spraying Against EMP. Materials 10(10), 2017. MDPI.',
-          'Radiation Effects in Tungsten and Tungsten-Copper Alloys. PMC, 2024.',
-          'PreSCAN: Comprehensive Review of Pre-Silicon Physical SCA Assessment. MDPI.',
-          'A Survey on Acoustic Side-Channel Attacks: An AI Perspective. MDPI.',
-          'Can\'t Touch This: Inertial HSMs Thwart Advanced Physical Attacks. ResearchGate, 2021.',
-          'Proof-of-PUF Enabled Blockchain: Concurrent Data and Device Security. PMC, 2020.',
-          'Understanding SRAM PUF: The Secure Silicon Fingerprint. Synopsys.',
-          'A Configurable Hardware Implementation of XMSS. Cryptology ePrint Archive, 2021.',
-          'Improved Biometric Stress Monitoring Using HRV and CapsNet. PMC, 2024.',
-          'Cyber Coercion Detection Using LLM-Assisted Multimodal Biometric System. MDPI, 2025.',
-          'Coercion-Resistant CP-ABE for IoT Security. PMC, 2025.',
-          'Deniable-Encryption Protocols Based on Commutative Ciphers. Quasigroups and Related Systems 25(1).',
-          'SkyForge Core: TMR Computing Architecture for Small Satellites. Taylor University.',
-          'Reliability Analysis of TMR System Under Step-Partially Accelerated Life Tests Using Lomax Distribution. PMC, 2023.',
-          'Designing a Rad-Hard CubeSat Onboard Computer. Military Embedded Systems.',
-        ],
       },
       {
         '@type': 'SoftwareApplication',
@@ -127,51 +105,51 @@ export default function ProjetoPsiPage() {
       {/* ═══════════════════════════════════════════════════════════════
           HERO — White section for SEO/GEO crawl visibility
           ═══════════════════════════════════════════════════════════════ */}
-      <section className='bg-neutral-950 text-neutral-200 pt-20 pb-16 border-b border-neutral-800'>
+      <section className='bg-white text-black pt-20 pb-16 border-b border-gray-200'>
         <div className='max-w-4xl mx-auto px-6'>
           {/* Breadcrumb */}
           <div className='flex items-center gap-2 mb-6'>
-            <Link href='/' className='text-xs font-mono uppercase tracking-widest text-emerald-400 hover:underline'>
+            <Link href='/' className='text-xs font-mono uppercase tracking-widest text-blue-700 hover:underline'>
               Home
             </Link>
-            <span className='text-xs text-neutral-600'>→</span>
-            <Link href='/whitepapers' className='text-xs font-mono uppercase tracking-widest text-emerald-400 hover:underline'>
-              Whitepapers
+            <span className='text-xs text-gray-400'>→</span>
+            <Link href='/simulacoes' className='text-xs font-mono uppercase tracking-widest text-blue-700 hover:underline'>
+              Simulações
             </Link>
-            <span className='text-xs text-neutral-600'>→</span>
-            <span className='text-xs font-mono uppercase tracking-widest text-neutral-500'>
+            <span className='text-xs text-gray-400'>→</span>
+            <span className='text-xs font-mono uppercase tracking-widest text-gray-500'>
               Projeto PSI
             </span>
           </div>
 
           {/* Kicker */}
           <div className='flex items-center gap-3 mb-4'>
-            <span className='text-[10px] uppercase tracking-[0.2em] text-cyan-400 border border-cyan-700/40 rounded-full px-3 py-1 font-bold'>
+            <span className='text-[10px] uppercase tracking-[0.2em] text-blue-700 border border-blue-300 rounded-full px-3 py-1 font-bold'>
               Whitepaper Técnico
             </span>
-            <span className='text-[10px] uppercase tracking-[0.2em] text-neutral-500'>
+            <span className='text-[10px] uppercase tracking-[0.2em] text-gray-500'>
               Pesquisa em Arquitetura de Sistemas e Criptografia Aplicada
             </span>
           </div>
 
           {/* H1 */}
-          <h1 className='text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight tracking-tight mb-6 text-white'>
+          <h1 className='text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight tracking-tight mb-6'>
             Projeto Ψ (PSI): O Horizonte de Eventos da Soberania Pessoal e Zero Trust em Silício
           </h1>
 
           {/* Author line */}
-          <p className='text-sm text-neutral-500 mb-8'>
-            <span className='font-semibold text-neutral-300'>Autor:</span>{' '}
-            <Link href='/identidade' className='text-emerald-400 hover:underline'>Ulisses Flores</Link>
+          <p className='text-sm text-gray-500 mb-8'>
+            <span className='font-semibold text-gray-800'>Autor:</span>{' '}
+            <Link href='/identidade' className='text-blue-700 hover:underline'>Ulisses Flores</Link>
             {' — '}Consultor Estratégico de IA, Arquiteto de Software, Desenvolvedor de Hardware, Mestrando AGTU (EUA)
           </p>
 
           {/* Abstract */}
-          <div className='border-l-4 border-cyan-700 bg-cyan-950/20 px-6 py-5 rounded-r-xl mb-8'>
-            <p className='text-sm font-semibold text-cyan-400 uppercase tracking-wide mb-2'>
+          <div className='border-l-4 border-blue-600 bg-blue-50 px-6 py-5 rounded-r-xl mb-8'>
+            <p className='text-sm font-semibold text-blue-800 uppercase tracking-wide mb-2'>
               Resumo Executivo
             </p>
-            <p className='text-neutral-300 leading-relaxed text-[15px]'>
+            <p className='text-gray-800 leading-relaxed text-[15px]'>
               O advento da hipervigilância algorítmica em escala estatal, aliado à proliferação de vetores de
               coerção física e ataques invasivos na cadeia de suprimentos de hardware, exige uma reformulação
               ontológica nas arquiteturas de custódia de ativos digitais críticos. As carteiras de hardware civis
@@ -196,7 +174,7 @@ export default function ProjetoPsiPage() {
             ].map((chip) => (
               <span
                 key={chip}
-                className='bg-neutral-800/80 text-cyan-300 border border-cyan-700/50 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-mono uppercase tracking-wider'
+                className='text-xs font-mono border border-gray-300 bg-gray-50 text-gray-700 px-3 py-1 rounded-full'
               >
                 {chip}
               </span>
@@ -248,28 +226,15 @@ export default function ProjetoPsiPage() {
           </nav>
 
           {/* ─── Prose content ─── */}
-          <div className='prose prose-invert max-w-none lg:prose-lg
-
-            /* 1. Respiro dos parágrafos — Long-Read UX */
-            prose-p:mb-8 prose-p:leading-[1.8] prose-p:text-neutral-300
-
-            /* 2. Hierarquia de Capítulos — H2 como divisórias reais */
+          <div className='prose prose-lg prose-invert max-w-none
             prose-headings:font-bold prose-headings:tracking-tight
-            prose-h2:text-3xl md:prose-h2:text-4xl prose-h2:text-neutral-100
-            prose-h2:mt-24 prose-h2:mb-10 prose-h2:border-b prose-h2:border-neutral-800 prose-h2:pb-4
-
-            /* 3. Subtítulos H3 e listas organizadas */
-            prose-h3:text-2xl prose-h3:mt-14 prose-h3:mb-6 prose-h3:text-cyan-400
-            prose-li:mb-3 prose-ul:my-8 prose-ol:my-8
-
-            /* 4. Estilo científico para links */
-            prose-a:text-cyan-400 hover:prose-a:text-cyan-300
-            prose-a:decoration-cyan-900 prose-a:underline-offset-4
-
-            /* 5. Blocos auxiliares */
+            prose-h2:text-2xl prose-h2:text-cyan-300 prose-h2:border-b prose-h2:border-cyan-900/40 prose-h2:pb-3 prose-h2:mb-6 prose-h2:mt-16
+            prose-h3:text-xl prose-h3:text-emerald-300 prose-h3:mt-12 prose-h3:mb-4
+            prose-p:text-neutral-300 prose-p:leading-relaxed
             prose-strong:text-white
-            prose-blockquote:border-cyan-700 prose-blockquote:bg-neutral-900/40
-            prose-blockquote:rounded-r-xl prose-blockquote:py-1
+            prose-a:text-cyan-400 prose-a:no-underline hover:prose-a:text-cyan-200
+            prose-blockquote:border-cyan-700 prose-blockquote:bg-neutral-900/40 prose-blockquote:rounded-r-xl prose-blockquote:py-1
+            prose-li:text-neutral-300
             prose-table:border-neutral-700
             prose-th:text-neutral-200 prose-th:border-neutral-700 prose-th:bg-neutral-900/60
             prose-td:text-neutral-400 prose-td:border-neutral-800
@@ -333,18 +298,6 @@ export default function ProjetoPsiPage() {
               espionagem baseadas em emanometria.
             </p>
 
-            <figure className='not-prose my-16'>
-              <img
-                src='/whitepapers/psi-arquitetura-hardware-camadas-defesa.webp'
-                alt='Diagrama isométrico em vista explodida detalhando as quatro camadas de defesa física do hardware criptográfico Projeto PSI: blindagem externa em Cobre-Tungstênio, potting de resina epóxi, malha de segurança ativa (Tamper Mesh) ciano, e núcleo lógico de silício.'
-                loading='lazy'
-                className='w-full rounded-2xl border border-neutral-800 shadow-2xl mix-blend-screen opacity-90'
-              />
-              <figcaption className='text-center text-sm text-neutral-500 font-mono'>
-                <strong className='text-cyan-500 uppercase tracking-widest'>Figura 1:</strong> Camadas de Defesa Física e Lógica do Receptáculo PSI (Cu-W → Epóxi → Tamper Mesh → Silício).
-              </figcaption>
-            </figure>
-
             <h3 id='section-2-1'>2.1 Ligas de Cobre-Tungstênio e Mitigação de Pulsos Eletromagnéticos (EMP)</h3>
 
             <p>
@@ -376,26 +329,12 @@ export default function ProjetoPsiPage() {
               A eficácia é quantificada pela <strong>Eficácia de Blindagem (SE)</strong>, medida em decibéis:
             </p>
 
-            <div className='not-prose overflow-x-auto my-14'>
-              <figure className='p-8 bg-neutral-900/40 rounded-3xl border border-neutral-800 shadow-2xl flex flex-col items-center'>
-                <div className='font-serif text-3xl md:text-5xl text-neutral-100 mb-6 tracking-widest text-center'>
-                  SE = 10 · log₁₀(P<sub className='text-2xl'>i</sub> / P<sub className='text-2xl'>t</sub>)
-                </div>
-                <figcaption className='w-full max-w-md border-t border-neutral-800 pt-4 text-sm text-neutral-400 text-center font-mono'>
-                  <p>Eficácia de Blindagem (<strong className='text-cyan-400'>SE<sub>total</sub></strong>) = R + A + B</p>
-                </figcaption>
-              </figure>
-            </div>
-
-            {/* ── Callout: Descoberta Chave — Blindagem ── */}
-            <aside className='not-prose my-10 border-l-4 border-cyan-500 bg-cyan-950/20 p-6 rounded-r-xl'>
-              <h4 className='text-cyan-400 font-bold uppercase tracking-widest text-xs mb-3 flex items-center gap-2'>
-                💡 Descoberta Chave (TL;DR)
-              </h4>
-              <p className='text-neutral-200 m-0 leading-relaxed'>
-                A implementação da arquitetura de blindagem Cu-W do Projeto PSI resultou em uma <strong className='text-white'>eficácia de blindagem superior a 100 dB</strong>, excedendo as rigorosas normativas militares MIL-STD-285. O compósito 70-80% W / 20-30% Cu combina inércia cinética do tungstênio com a condutividade do cobre em uma Gaiola de Faraday de grau nuclear.
+            <div className='not-prose rounded-xl border border-cyan-900/40 bg-neutral-900/60 p-6 my-8 font-mono text-center'>
+              <p className='text-cyan-300 text-lg'>SE = 10 log₁₀(Pᵢ / Pₜ)</p>
+              <p className='text-neutral-500 text-xs mt-2'>
+                Pᵢ = potência incidente | Pₜ = potência transmitida | SE em dB
               </p>
-            </aside>
+            </div>
 
             <p>
               A atenuação global resulta do somatório de três mecanismos: <strong>perda por reflexão (R)</strong>,
@@ -405,11 +344,8 @@ export default function ProjetoPsiPage() {
             </p>
 
             {/* Table: Shielding Comparison */}
-            <div className='not-prose overflow-x-auto my-12 border border-neutral-800 rounded-xl shadow-lg'>
-              <table className='w-full text-left text-sm text-neutral-300'>
-                <caption className='p-4 bg-neutral-900/80 text-left text-cyan-400 font-mono uppercase tracking-widest font-bold border-b border-neutral-800 text-xs'>
-                  Tabela 1: Parâmetros de Blindagem Eletromagnética (Cu-W)
-                </caption>
+            <div className='not-prose overflow-x-auto my-8'>
+              <table className='w-full text-sm border border-neutral-700 rounded-lg overflow-hidden'>
                 <thead>
                   <tr className='bg-neutral-900/80 text-neutral-200'>
                     <th className='px-4 py-3 text-left border-b border-neutral-700 font-semibold'>Material</th>
@@ -551,18 +487,6 @@ export default function ProjetoPsiPage() {
               as cargas dissipam-se e <strong>a chave deixa de existir</strong>.
             </p>
 
-            <figure className='not-prose my-16'>
-              <img
-                src='/whitepapers/psi-ciclo-vida-chave-criptografica-sram-puf.webp'
-                alt='Fluxograma lógico do ciclo de vida da chave privada no Projeto PSI via SRAM PUF. O fluxo converte ruído físico de silício em entropia pura, processa pelo Fuzzy Extractor para gerar a semente (cristal estruturado), culminando em zeroização instantânea e desintegração digital.'
-                loading='lazy'
-                className='w-full rounded-2xl border border-neutral-800 shadow-2xl mix-blend-screen opacity-90'
-              />
-              <figcaption className='text-center text-sm text-neutral-500 font-mono'>
-                <strong className='text-cyan-500 uppercase tracking-widest'>Figura 2:</strong> Fluxo de Derivação de Chave Efêmera via SRAM PUF (Power-up → RDF → Fuzzy Extractor → Semente → Zeroização).
-              </figcaption>
-            </figure>
-
             <h3 id='section-3-2'>3.2 O Padrão Pós-Quântico XMSS (NIST SP 800-208)</h3>
 
             <p>
@@ -669,11 +593,8 @@ export default function ProjetoPsiPage() {
             </p>
 
             {/* Table: Biometrics */}
-            <div className='not-prose overflow-x-auto my-12 border border-neutral-800 rounded-xl shadow-lg'>
-              <table className='w-full text-left text-sm text-neutral-300'>
-                <caption className='p-4 bg-neutral-900/80 text-left text-cyan-400 font-mono uppercase tracking-widest font-bold border-b border-neutral-800 text-xs'>
-                  Tabela 2: Biomarcadores de Detecção Fisiológica de Coação
-                </caption>
+            <div className='not-prose overflow-x-auto my-8'>
+              <table className='w-full text-sm border border-neutral-700 rounded-lg overflow-hidden'>
                 <thead>
                   <tr className='bg-neutral-900/80 text-neutral-200'>
                     <th className='px-4 py-3 text-left border-b border-neutral-700 font-semibold'>Biomarcador</th>
@@ -700,16 +621,6 @@ export default function ProjetoPsiPage() {
                 </tbody>
               </table>
             </div>
-
-            {/* ── Callout: Descoberta Chave — Biometria ── */}
-            <aside className='not-prose my-10 border-l-4 border-cyan-500 bg-cyan-950/20 p-6 rounded-r-xl'>
-              <h4 className='text-cyan-400 font-bold uppercase tracking-widest text-xs mb-3 flex items-center gap-2'>
-                💡 Descoberta Chave (TL;DR)
-              </h4>
-              <p className='text-neutral-200 m-0 leading-relaxed'>
-                Os módulos de IA de borda (CapsNets + Random Forest) atingiram <strong className='text-white'>escores F1 entre 96.97% e 99.82%</strong> na detecção de estresse fisiológico em datasets clínicos — permitindo ao dispositivo distinguir operação legítima de operação sob coerção em tempo real, sem dependência de servidores externos.
-              </p>
-            </aside>
 
             <h3 id='section-4-2'>4.2 Criptografia Negável (Deniable Encryption — Protocolo Phantom Input)</h3>
 
@@ -739,18 +650,6 @@ export default function ProjetoPsiPage() {
               destrinchadas. O agressor escapa saciado acreditando ter extraído as chaves-mestras — enquanto
               a soberania patrimonial real permanece oculta e intacta.
             </p>
-
-            <figure className='not-prose my-16'>
-              <img
-                src='/whitepapers/psi-protocolo-phantom-biometria-coacao.webp'
-                alt='Árvore de decisão lógica do Protocolo Phantom Input (Deniable Encryption). Uma biometria central bifurca ativamente o roteamento: o caminho ótico superior seguro (ciano) acessa a chave real (RSK), enquanto o caminho inferior sob detecção de coação (âmbar) redireciona silenciosamente para uma chave falsa (FSK).'
-                loading='lazy'
-                className='w-full rounded-2xl border border-neutral-800 shadow-2xl mix-blend-screen opacity-90'
-              />
-              <figcaption className='text-center text-sm text-neutral-500 font-mono'>
-                <strong className='text-cyan-500 uppercase tracking-widest'>Figura 3:</strong> Protocolo Phantom Input — Biometria → Flag Coerção → RSK vs FSK (Deniable Encryption).
-              </figcaption>
-            </figure>
 
             <h3 id='section-4-3'>4.3 Atestado Criptográfico contra Substituição Hostil (&ldquo;Evil Maid&rdquo;)</h3>
 
@@ -826,28 +725,6 @@ export default function ProjetoPsiPage() {
               dispositivo mantém operação contínua e infalível sob bombardeio radioativo orbital.
             </p>
 
-            <figure className='not-prose my-16'>
-              <img
-                src='/whitepapers/psi-arquitetura-tmr-redundancia-voter.webp'
-                alt='Esquema de arquitetura Triple Modular Redundancy (TMR) aeroespacial do Projeto PSI. Três microprocessadores independentes processam dados de forma paralela tolerante a falhas, convergindo para uma porta lógica de Voter Majoritário central que valida e emite apenas uma saída ciano unificada e imune a injeção de falhas.'
-                loading='lazy'
-                className='w-full rounded-2xl border border-neutral-800 shadow-2xl mix-blend-screen opacity-90'
-              />
-              <figcaption className='text-center text-sm text-neutral-500 font-mono'>
-                <strong className='text-cyan-500 uppercase tracking-widest'>Figura 4:</strong> Redundância Modular Tripla — Sub-blocos A/B/C → Voter por Maioria → Saída Infalível.
-              </figcaption>
-            </figure>
-
-            {/* ── Callout: Descoberta Chave — TMR ── */}
-            <aside className='not-prose my-10 border-l-4 border-cyan-500 bg-cyan-950/20 p-6 rounded-r-xl'>
-              <h4 className='text-cyan-400 font-bold uppercase tracking-widest text-xs mb-3 flex items-center gap-2'>
-                💡 Descoberta Chave (TL;DR)
-              </h4>
-              <p className='text-neutral-200 m-0 leading-relaxed'>
-                A arquitetura de <strong className='text-white'>Redundância Modular Tripla (TMR)</strong> com Voter por maioria simples, combinada a memórias <strong className='text-white'>FRAM Rad-Hard</strong> imunes a TID, garante operação contínua e infalível do PSI mesmo sob bombardeio de raios cósmicos galácticos em Órbita Terrestre Baixa (LEO) — eliminando Single-Event Upsets sem reinicializações.
-              </p>
-            </aside>
-
             {/* ═════════ Section 6 ═════════ */}
             <h2 id='section-6'>6. Conclusão</h2>
 
@@ -892,41 +769,41 @@ export default function ProjetoPsiPage() {
           <section className='mt-16 rounded-xl border border-neutral-800 bg-neutral-900/30 p-6'>
             <h2 className='text-lg font-bold text-white mb-4'>Referências Científicas</h2>
             <ol className='space-y-2 text-xs text-neutral-500 list-decimal list-inside'>
-              <li id='ref-1'>NIST SP 800-208. <em>Recommendation for Stateful Hash-Based Signature Schemes (XMSS/LMS)</em>. National Institute of Standards and Technology.</li>
-              <li id='ref-2'>Roel Maes (2013). <em>Physically Unclonable Functions: Constructions, Properties and Applications</em>. Springer.</li>
-              <li id='ref-3'>Kocabaş, O., et al. &ldquo;A Review of Side-Channel Attacks on Cryptographic Hardware.&rdquo; <em>IEEE Transactions on Information Forensics and Security</em>.</li>
-              <li id='ref-4'>TMR &amp; Rad-Hard Architecture: Estudos em redundância modular tripla e FRAM para ambientes LEO/Aeroespacial.</li>
-              <li id='ref-5'>Deniable Encryption &amp; Behavioral Biometrics: Literaturas de heurísticas comportamentais em Edge AI contra coerção (<em>Rubber-hose cryptanalysis</em>).</li>
-              <li id='ref-6'>Study on Shielding Effectiveness of Arc Thermal Metal Spraying Against EMP. <em>Materials</em> 10(10), 2017. MDPI.</li>
-              <li id='ref-7'>Electromagnetic Shielding Performance of Carbon Black Mixed Concrete with Zn-Al Metal Thermal Spray Coating. <em>PMC</em>, 2020.</li>
-              <li id='ref-8'>Radiation Effects in Tungsten and Tungsten-Copper Alloys. <em>PMC</em>, 2024.</li>
-              <li id='ref-9'>Laser Powder Bed Fusion of Copper-Tungsten Composites. mediaTUM, TU Munich.</li>
-              <li id='ref-10'>PreSCAN: Comprehensive Review of Pre-Silicon Physical SCA Assessment. <em>MDPI</em>.</li>
-              <li id='ref-11'>A Comprehensive Survey on Non-Invasive Passive Side-Channel Analysis. <em>PMC</em>, 2022.</li>
-              <li id='ref-12'>A Survey on Acoustic Side-Channel Attacks: An AI Perspective. <em>MDPI</em>.</li>
-              <li id='ref-13'>Thermal Side-Channel Threats in Densely Integrated Microarchitectures. <em>PMC</em>, 2024.</li>
-              <li id='ref-14'>Can&apos;t Touch This: Inertial HSMs Thwart Advanced Physical Attacks. <em>ResearchGate</em>, 2021.</li>
-              <li id='ref-15'>Proof-of-PUF Enabled Blockchain: Concurrent Data and Device Security. <em>PMC</em>, 2020.</li>
-              <li id='ref-16'>In-Depth Review and Comparative Analysis of DRAM-Based PUFs. <em>ResearchGate</em>, 2024.</li>
-              <li id='ref-17'>Understanding SRAM PUF: The Secure Silicon Fingerprint. Synopsys.</li>
-              <li id='ref-18'>Building Secure SRAM PUF Key Generators on Resource Constrained Devices. <em>arXiv</em>, 2019.</li>
-              <li id='ref-19'>NIST SP 800-208 (Draft). <em>Recommendation for Stateful Hash-Based Signature Schemes</em>.</li>
-              <li id='ref-20'>A Configurable Hardware Implementation of XMSS. <em>Cryptology ePrint Archive</em>, 2021.</li>
-              <li id='ref-21'>Hash-based Signatures: State and Backup Management. IETF Draft.</li>
-              <li id='ref-22'>Improved Biometric Stress Monitoring Using HRV and CapsNet. <em>PMC</em>, 2024.</li>
-              <li id='ref-23'>Cyber Coercion Detection Using LLM-Assisted Multimodal Biometric System. <em>MDPI</em>, 2025.</li>
-              <li id='ref-24'>Stress Detection for Keystroke Dynamics. Carnegie Mellon University.</li>
-              <li id='ref-25'>Optimizing Mental Stress Detection via HRV Feature Selection. <em>MDPI Sensors</em>, 2025.</li>
-              <li id='ref-26'>Coercion-Resistant CP-ABE for IoT Security. <em>PMC</em>, 2025.</li>
-              <li id='ref-27'>Deniable-Encryption Protocols Based on Commutative Ciphers. <em>Quasigroups and Related Systems</em> 25(1).</li>
-              <li id='ref-28'>SkyForge Core: TMR Computing Architecture for Small Satellites. Taylor University.</li>
-              <li id='ref-29'>Experimental Study on SEU Mitigation in SRAM FPGA for LHC Phase-2. IIHE.</li>
-              <li id='ref-30'>Reliability Analysis of TMR System Under Step-Partially Accelerated Life Tests Using Lomax Distribution. <em>PMC</em>, 2023.</li>
-              <li id='ref-31'>A Rad Hard ASIC Design Approach: TMR. ASIC North.</li>
-              <li id='ref-32'>SRAM FPGA Reliability Analysis for Harsh Radiation Environments. Pitt Space.</li>
-              <li id='ref-33'>Designing a Rad-Hard CubeSat Onboard Computer. <em>Military Embedded Systems</em>.</li>
-              <li id='ref-34'>Aging-Induced Long-Term Data Remanence in SRAM Cells. Auburn University.</li>
-              <li id='ref-35'>System-Level Mitigation of SEFIs in Data Handling Architectures for Small Satellites. DigitalCommons@USU.</li>
+              <li>NIST SP 800-208. <em>Recommendation for Stateful Hash-Based Signature Schemes (XMSS/LMS)</em>. National Institute of Standards and Technology.</li>
+              <li>Roel Maes (2013). <em>Physically Unclonable Functions: Constructions, Properties and Applications</em>. Springer.</li>
+              <li>Kocabaş, O., et al. &ldquo;A Review of Side-Channel Attacks on Cryptographic Hardware.&rdquo; <em>IEEE Transactions on Information Forensics and Security</em>.</li>
+              <li>TMR &amp; Rad-Hard Architecture: Estudos em redundância modular tripla e FRAM para ambientes LEO/Aeroespacial.</li>
+              <li>Deniable Encryption &amp; Behavioral Biometrics: Literaturas de heurísticas comportamentais em Edge AI contra coerção (<em>Rubber-hose cryptanalysis</em>).</li>
+              <li>Study on Shielding Effectiveness of Arc Thermal Metal Spraying Against EMP. <em>Materials</em> 10(10), 2017. MDPI.</li>
+              <li>Electromagnetic Shielding Performance of Carbon Black Mixed Concrete with Zn-Al Metal Thermal Spray Coating. <em>PMC</em>, 2020.</li>
+              <li>Radiation Effects in Tungsten and Tungsten-Copper Alloys. <em>PMC</em>, 2024.</li>
+              <li>Laser Powder Bed Fusion of Copper-Tungsten Composites. mediaTUM, TU Munich.</li>
+              <li>PreSCAN: Comprehensive Review of Pre-Silicon Physical SCA Assessment. <em>MDPI</em>.</li>
+              <li>A Comprehensive Survey on Non-Invasive Passive Side-Channel Analysis. <em>PMC</em>, 2022.</li>
+              <li>A Survey on Acoustic Side-Channel Attacks: An AI Perspective. <em>MDPI</em>.</li>
+              <li>Thermal Side-Channel Threats in Densely Integrated Microarchitectures. <em>PMC</em>, 2024.</li>
+              <li>Can&apos;t Touch This: Inertial HSMs Thwart Advanced Physical Attacks. <em>ResearchGate</em>, 2021.</li>
+              <li>Proof-of-PUF Enabled Blockchain: Concurrent Data and Device Security. <em>PMC</em>, 2020.</li>
+              <li>In-Depth Review and Comparative Analysis of DRAM-Based PUFs. <em>ResearchGate</em>, 2024.</li>
+              <li>Understanding SRAM PUF: The Secure Silicon Fingerprint. Synopsys.</li>
+              <li>Building Secure SRAM PUF Key Generators on Resource Constrained Devices. <em>arXiv</em>, 2019.</li>
+              <li>NIST SP 800-208 (Draft). <em>Recommendation for Stateful Hash-Based Signature Schemes</em>.</li>
+              <li>A Configurable Hardware Implementation of XMSS. <em>Cryptology ePrint Archive</em>, 2021.</li>
+              <li>Hash-based Signatures: State and Backup Management. IETF Draft.</li>
+              <li>Improved Biometric Stress Monitoring Using HRV and CapsNet. <em>PMC</em>, 2024.</li>
+              <li>Cyber Coercion Detection Using LLM-Assisted Multimodal Biometric System. <em>MDPI</em>, 2025.</li>
+              <li>Stress Detection for Keystroke Dynamics. Carnegie Mellon University.</li>
+              <li>Optimizing Mental Stress Detection via HRV Feature Selection. <em>MDPI Sensors</em>, 2025.</li>
+              <li>Coercion-Resistant CP-ABE for IoT Security. <em>PMC</em>, 2025.</li>
+              <li>Deniable-Encryption Protocols Based on Commutative Ciphers. <em>Quasigroups and Related Systems</em> 25(1).</li>
+              <li>SkyForge Core: TMR Computing Architecture for Small Satellites. Taylor University.</li>
+              <li>Experimental Study on SEU Mitigation in SRAM FPGA for LHC Phase-2. IIHE.</li>
+              <li>Reliability Analysis of TMR System Under Step-Partially Accelerated Life Tests Using Lomax Distribution. <em>PMC</em>, 2023.</li>
+              <li>A Rad Hard ASIC Design Approach: TMR. ASIC North.</li>
+              <li>SRAM FPGA Reliability Analysis for Harsh Radiation Environments. Pitt Space.</li>
+              <li>Designing a Rad-Hard CubeSat Onboard Computer. <em>Military Embedded Systems</em>.</li>
+              <li>Aging-Induced Long-Term Data Remanence in SRAM Cells. Auburn University.</li>
+              <li>System-Level Mitigation of SEFIs in Data Handling Architectures for Small Satellites. DigitalCommons@USU.</li>
             </ol>
           </section>
         </div>
