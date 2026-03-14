@@ -67,6 +67,11 @@ export default function SimulacoesPage() {
           },
           {
             '@type': ['WebPage', 'SoftwareApplication'],
+            url: `${origin}/simulacoes/goldenleaf`,
+            name: 'GoldenLeaf: Micologia Inteligente com IoT e IA',
+          },
+          {
+            '@type': ['WebPage', 'SoftwareApplication'],
             url: `${origin}/simulacoes/mumm-ra`,
             name: 'Mumm-Ra: Chatbot Experimental via WhatsApp',
           },
@@ -78,26 +83,26 @@ export default function SimulacoesPage() {
   return (
     <>
       {/* Hero Section — white, SEO/GEO/LLM optimized */}
-      <section className='bg-white text-black pt-20 pb-16 border-b border-gray-200'>
+      <section className='bg-neutral-950 text-neutral-200 pt-20 pb-16 border-b border-neutral-800'>
         <div className='max-w-4xl mx-auto px-6'>
           {/* Breadcrumb / Kicker */}
           <div className='flex items-center gap-2 mb-6'>
-            <Link href='/' className='text-xs font-mono uppercase tracking-widest text-blue-700 hover:underline'>
+            <Link href='/' className='text-xs font-mono uppercase tracking-widest text-emerald-400 hover:underline'>
               Home
             </Link>
-            <span className='text-xs text-gray-400'>→</span>
-            <span className='text-xs font-mono uppercase tracking-widest text-gray-500'>
+            <span className='text-xs text-neutral-600'>→</span>
+            <span className='text-xs font-mono uppercase tracking-widest text-neutral-500'>
               Simulações Estratégicas
             </span>
           </div>
 
           {/* H1 */}
-          <h1 className='text-4xl sm:text-5xl font-bold leading-tight tracking-tight mb-6'>
+          <h1 className='text-4xl sm:text-5xl font-bold leading-tight tracking-tight mb-6 text-white'>
             Simulações Estratégicas de IA
           </h1>
 
           {/* Lead paragraph */}
-          <p className='text-lg text-gray-700 leading-relaxed mb-8 max-w-3xl'>
+          <p className='text-lg text-neutral-400 leading-relaxed mb-8 max-w-3xl'>
             Modelagem interativa de cenários sobre o futuro da Inteligência Artificial Geral (AGI),
             soberania tecnológica e impacto econômico. Criadas e curadas por Ulisses Flores —
             Cientista Econômico, Consultor Estratégico de IA, Professor, Palestrante e Mestrando
@@ -105,11 +110,11 @@ export default function SimulacoesPage() {
           </p>
 
           {/* Authority block */}
-          <div className='border-l-4 border-blue-600 bg-blue-50 px-6 py-5 rounded-r-xl mb-10'>
-            <p className='text-sm font-semibold text-blue-800 uppercase tracking-wide mb-2'>
+          <div className='border-l-4 border-cyan-700 bg-cyan-950/20 px-6 py-5 rounded-r-xl mb-10'>
+            <p className='text-sm font-semibold text-cyan-400 uppercase tracking-wide mb-2'>
               Por que estas simulações importam
             </p>
-            <p className='text-gray-800 leading-relaxed'>
+            <p className='text-neutral-300 leading-relaxed'>
               Cada simulação aqui é construída com rigor científico: combinando dados reais de
               evolução tecnológica, modelos econômicos e análise estratégica. O objetivo é
               oferecer a líderes, pesquisadores e profissionais as ferramentas para antecipar,
@@ -129,7 +134,7 @@ export default function SimulacoesPage() {
             ].map((credential) => (
               <span
                 key={credential}
-                className='text-xs font-mono border border-gray-300 bg-gray-50 text-gray-700 px-3 py-1 rounded-full'
+                className='text-xs font-mono border border-neutral-700 bg-neutral-900/40 text-neutral-400 px-3 py-1 rounded-full'
               >
                 {credential}
               </span>
@@ -155,7 +160,9 @@ export default function SimulacoesPage() {
                 </span>
               </div>
               <h2 className='text-2xl font-bold text-white mb-3'>
-                IA 2027: Simulação Interativa sobre o Futuro da Inteligência Artificial
+                <Link href='/simulacoes/ia-2027' className='hover:text-emerald-400 transition-colors'>
+                  IA 2027: Simulação Interativa sobre o Futuro da Inteligência Artificial
+                </Link>
               </h2>
               <p className='text-neutral-300 leading-relaxed mb-4'>
                 A única simulação interativa em português sobre a chegada da AGI. Linha do tempo
@@ -175,53 +182,9 @@ export default function SimulacoesPage() {
                   href='/simulacoes/ia-2027'
                   className='inline-flex items-center gap-2 bg-emerald-700 hover:bg-emerald-600 text-white font-semibold px-5 py-2.5 rounded-full transition-colors text-sm'
                 >
-                  Iniciar Simulação →
-                </Link>
-                <Link
-                  href='/simulacoes/ia-2027/desaceleracao-coordenada'
-                  className='inline-flex items-center gap-2 border border-emerald-700/50 text-emerald-300 hover:bg-emerald-900/30 font-medium px-5 py-2.5 rounded-full transition-colors text-sm'
-                >
-                  Cenário: Desaceleração
-                </Link>
-                <Link
-                  href='/simulacoes/ia-2027/corrida-estrategica'
-                  className='inline-flex items-center gap-2 border border-red-700/50 text-red-400 hover:bg-red-900/20 font-medium px-5 py-2.5 rounded-full transition-colors text-sm'
-                >
-                  Cenário: Corrida
+                  Explorar Simulação →
                 </Link>
               </div>
-            </article>
-
-            {/* Projeto PSI */}
-            <article className='rounded-2xl border border-neutral-800 bg-neutral-900/40 p-8'>
-              <div className='flex items-center gap-3 mb-4'>
-                <span className='text-[10px] uppercase tracking-[0.2em] text-cyan-300 border border-cyan-700/40 rounded-full px-3 py-1'>
-                  Hardware & Blockchain
-                </span>
-                <span className='text-[10px] uppercase tracking-widest text-amber-400 border border-amber-500/30 rounded-full px-2 py-0.5 font-bold'>
-                  R&D
-                </span>
-              </div>
-              <h2 className='text-2xl font-bold text-white mb-3'>
-                Projeto PSI · Hardware Wallet Nuclear-Grade
-              </h2>
-              <p className='text-neutral-300 leading-relaxed mb-4'>
-                Hardware wallet de nível nuclear com Ring Signatures, endereços furtivos e airgap
-                total para soberania digital absoluta. Co-inventada como parte do ecossistema Codex Hash.
-              </p>
-              <div className='flex flex-wrap gap-3 mb-6'>
-                {['Ring Signatures', 'Airgap', 'Codex Hash', 'Privacidade'].map((tag) => (
-                  <span key={tag} className='text-xs border border-neutral-700 text-neutral-400 px-3 py-1 rounded-full'>
-                    {tag}
-                  </span>
-                ))}
-              </div>
-              <Link
-                href='/simulacoes/projeto-psi'
-                className='inline-flex items-center gap-2 border border-neutral-700 text-neutral-300 hover:text-white hover:border-neutral-500 font-medium px-5 py-2.5 rounded-full transition-colors text-sm'
-              >
-                Ver detalhes →
-              </Link>
             </article>
 
             {/* GoldenLeaf */}
@@ -235,7 +198,9 @@ export default function SimulacoesPage() {
                 </span>
               </div>
               <h2 className='text-2xl font-bold text-white mb-3'>
-                GoldenLeaf · Micologia Inteligente com IoT e IA
+                <Link href='/simulacoes/goldenleaf' className='hover:text-emerald-400 transition-colors'>
+                  GoldenLeaf · Micologia Inteligente com IoT e IA
+                </Link>
               </h2>
               <p className='text-neutral-300 leading-relaxed mb-4'>
                 Sistema de cultivo autônomo de cogumelos gourmet com sensores IoT de precisão, IA
@@ -248,12 +213,6 @@ export default function SimulacoesPage() {
                   </span>
                 ))}
               </div>
-              <Link
-                href='/simulacoes/goldenleaf'
-                className='inline-flex items-center gap-2 border border-neutral-700 text-neutral-300 hover:text-white hover:border-neutral-500 font-medium px-5 py-2.5 rounded-full transition-colors text-sm'
-              >
-                Ver detalhes →
-              </Link>
             </article>
 
             {/* Mumm-Ra */}
@@ -267,7 +226,9 @@ export default function SimulacoesPage() {
                 </span>
               </div>
               <h2 className='text-2xl font-bold text-white mb-3'>
-                Mumm-Ra · Chatbot de Humor Negro via WhatsApp
+                <Link href='/simulacoes/mumm-ra' className='hover:text-emerald-400 transition-colors'>
+                  Mumm-Ra · Chatbot de Humor Negro via WhatsApp
+                </Link>
               </h2>
               <p className='text-neutral-300 leading-relaxed mb-4'>
                 Chatbot experimental alimentado por LLMs, inspirado no vilão imortal dos
@@ -281,12 +242,6 @@ export default function SimulacoesPage() {
                   </span>
                 ))}
               </div>
-              <Link
-                href='/simulacoes/mumm-ra'
-                className='inline-flex items-center gap-2 border border-neutral-700 text-neutral-300 hover:text-white hover:border-neutral-500 font-medium px-5 py-2.5 rounded-full transition-colors text-sm'
-              >
-                Ver detalhes →
-              </Link>
             </article>
           </div>
         </div>

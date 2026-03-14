@@ -5,7 +5,7 @@ import { AuthorHubCard } from '@/components/author-hub-card';
 import { FaqSection } from '@/components/faq-section';
 import { projectPsiFaq } from '@/data/faq';
 
-const canonicalPath = '/simulacoes/projeto-psi';
+const canonicalPath = '/whitepapers/projeto-psi';
 
 export const metadata: Metadata = {
   title: 'Projeto Ψ (PSI): Hardware Soberano e Zero Trust em Silício | Ulisses Flores',
@@ -71,7 +71,7 @@ export default function ProjetoPsiPage() {
           '@id': `${origin}/#person`,
         },
         isPartOf: {
-          '@id': `${origin}/simulacoes#collection`,
+          '@id': `${origin}/whitepapers#collection`,
         },
         about: [
           'Hardware Security Module',
@@ -105,51 +105,51 @@ export default function ProjetoPsiPage() {
       {/* ═══════════════════════════════════════════════════════════════
           HERO — White section for SEO/GEO crawl visibility
           ═══════════════════════════════════════════════════════════════ */}
-      <section className='bg-white text-black pt-20 pb-16 border-b border-gray-200'>
+      <section className='bg-neutral-950 text-neutral-200 pt-20 pb-16 border-b border-neutral-800'>
         <div className='max-w-4xl mx-auto px-6'>
           {/* Breadcrumb */}
           <div className='flex items-center gap-2 mb-6'>
-            <Link href='/' className='text-xs font-mono uppercase tracking-widest text-blue-700 hover:underline'>
+            <Link href='/' className='text-xs font-mono uppercase tracking-widest text-emerald-400 hover:underline'>
               Home
             </Link>
-            <span className='text-xs text-gray-400'>→</span>
-            <Link href='/simulacoes' className='text-xs font-mono uppercase tracking-widest text-blue-700 hover:underline'>
-              Simulações
+            <span className='text-xs text-neutral-600'>→</span>
+            <Link href='/whitepapers' className='text-xs font-mono uppercase tracking-widest text-emerald-400 hover:underline'>
+              Whitepapers
             </Link>
-            <span className='text-xs text-gray-400'>→</span>
-            <span className='text-xs font-mono uppercase tracking-widest text-gray-500'>
+            <span className='text-xs text-neutral-600'>→</span>
+            <span className='text-xs font-mono uppercase tracking-widest text-neutral-500'>
               Projeto PSI
             </span>
           </div>
 
           {/* Kicker */}
           <div className='flex items-center gap-3 mb-4'>
-            <span className='text-[10px] uppercase tracking-[0.2em] text-blue-700 border border-blue-300 rounded-full px-3 py-1 font-bold'>
+            <span className='text-[10px] uppercase tracking-[0.2em] text-cyan-400 border border-cyan-700/40 rounded-full px-3 py-1 font-bold'>
               Whitepaper Técnico
             </span>
-            <span className='text-[10px] uppercase tracking-[0.2em] text-gray-500'>
+            <span className='text-[10px] uppercase tracking-[0.2em] text-neutral-500'>
               Pesquisa em Arquitetura de Sistemas e Criptografia Aplicada
             </span>
           </div>
 
           {/* H1 */}
-          <h1 className='text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight tracking-tight mb-6'>
+          <h1 className='text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight tracking-tight mb-6 text-white'>
             Projeto Ψ (PSI): O Horizonte de Eventos da Soberania Pessoal e Zero Trust em Silício
           </h1>
 
           {/* Author line */}
-          <p className='text-sm text-gray-500 mb-8'>
-            <span className='font-semibold text-gray-800'>Autor:</span>{' '}
-            <Link href='/identidade' className='text-blue-700 hover:underline'>Ulisses Flores</Link>
+          <p className='text-sm text-neutral-500 mb-8'>
+            <span className='font-semibold text-neutral-300'>Autor:</span>{' '}
+            <Link href='/identidade' className='text-emerald-400 hover:underline'>Ulisses Flores</Link>
             {' — '}Consultor Estratégico de IA, Arquiteto de Software, Desenvolvedor de Hardware, Mestrando AGTU (EUA)
           </p>
 
           {/* Abstract */}
-          <div className='border-l-4 border-blue-600 bg-blue-50 px-6 py-5 rounded-r-xl mb-8'>
-            <p className='text-sm font-semibold text-blue-800 uppercase tracking-wide mb-2'>
+          <div className='border-l-4 border-cyan-700 bg-cyan-950/20 px-6 py-5 rounded-r-xl mb-8'>
+            <p className='text-sm font-semibold text-cyan-400 uppercase tracking-wide mb-2'>
               Resumo Executivo
             </p>
-            <p className='text-gray-800 leading-relaxed text-[15px]'>
+            <p className='text-neutral-300 leading-relaxed text-[15px]'>
               O advento da hipervigilância algorítmica em escala estatal, aliado à proliferação de vetores de
               coerção física e ataques invasivos na cadeia de suprimentos de hardware, exige uma reformulação
               ontológica nas arquiteturas de custódia de ativos digitais críticos. As carteiras de hardware civis

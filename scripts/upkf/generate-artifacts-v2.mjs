@@ -4012,7 +4012,7 @@ function buildLlmsTxt(identity, publications, generatedAt, knowledgeData) {
     `  - Cenário Desaceleração Coordenada (slowdown): ${siteUrl}/simulacoes/ia-2027/desaceleracao-coordenada`,
     `  - Cenário Corrida Estratégica (race): ${siteUrl}/simulacoes/ia-2027/corrida-estrategica`,
     `- Mumm-Ra — Chatbot Experimental via WhatsApp: ${siteUrl}/simulacoes/mumm-ra`,
-    `- Projeto PSI — Hardware Wallet Nuclear-Grade com Ring Signatures: ${siteUrl}/simulacoes/projeto-psi`,
+    `- Projeto PSI — Hardware Wallet Nuclear-Grade com Ring Signatures: ${siteUrl}/whitepapers/projeto-psi`,
     `- GoldenLeaf — Micologia Inteligente com IoT e IA: ${siteUrl}/simulacoes/goldenleaf`,
     '',
     '## Comunidade & Instituto',

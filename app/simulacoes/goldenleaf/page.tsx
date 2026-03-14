@@ -81,30 +81,30 @@ export default function GoldenLeafPage() {
   return (
     <>
       {/* Hero Section */}
-      <section className='bg-white text-black pt-20 pb-16 border-b border-gray-200'>
+      <section className='bg-neutral-950 text-neutral-200 pt-20 pb-16 border-b border-neutral-800'>
         <div className='max-w-4xl mx-auto px-6'>
           {/* Breadcrumb */}
           <div className='flex items-center gap-2 mb-6'>
-            <Link href='/' className='text-xs font-mono uppercase tracking-widest text-blue-700 hover:underline'>
+            <Link href='/' className='text-xs font-mono uppercase tracking-widest text-emerald-400 hover:underline'>
               Home
             </Link>
-            <span className='text-xs text-gray-400'>→</span>
-            <Link href='/simulacoes' className='text-xs font-mono uppercase tracking-widest text-blue-700 hover:underline'>
+            <span className='text-xs text-neutral-600'>→</span>
+            <Link href='/simulacoes' className='text-xs font-mono uppercase tracking-widest text-emerald-400 hover:underline'>
               Simulações
             </Link>
-            <span className='text-xs text-gray-400'>→</span>
-            <span className='text-xs font-mono uppercase tracking-widest text-gray-500'>
+            <span className='text-xs text-neutral-600'>→</span>
+            <span className='text-xs font-mono uppercase tracking-widest text-neutral-500'>
               GoldenLeaf
             </span>
           </div>
 
           {/* H1 */}
-          <h1 className='text-4xl sm:text-5xl font-bold leading-tight tracking-tight mb-6'>
+          <h1 className='text-4xl sm:text-5xl font-bold leading-tight tracking-tight mb-6 text-white'>
             GoldenLeaf — Micologia Inteligente com IoT e IA
           </h1>
 
           {/* Lead paragraph */}
-          <p className='text-lg text-gray-700 leading-relaxed mb-8 max-w-3xl'>
+          <p className='text-lg text-neutral-400 leading-relaxed mb-8 max-w-3xl'>
             O GoldenLeaf combina sensores IoT de precisão, IA preditiva e arquiteturas cloudless
             para criar um sistema de cultivo autônomo de cogumelos gourmet — com soberania total
             dos dados e sem dependência de servidores externos. Desenvolvido por Ulisses Flores como
@@ -112,11 +112,11 @@ export default function GoldenLeafPage() {
           </p>
 
           {/* Authority block */}
-          <div className='border-l-4 border-blue-600 bg-blue-50 px-6 py-5 rounded-r-xl mb-10'>
-            <p className='text-sm font-semibold text-blue-800 uppercase tracking-wide mb-2'>
+          <div className='border-l-4 border-cyan-700 bg-cyan-950/20 px-6 py-5 rounded-r-xl mb-10'>
+            <p className='text-sm font-semibold text-cyan-400 uppercase tracking-wide mb-2'>
               IoT soberana aplicada à agricultura
             </p>
-            <p className='text-gray-800 leading-relaxed'>
+            <p className='text-neutral-300 leading-relaxed'>
               O GoldenLeaf materializa a pesquisa de Ulisses Flores em arquiteturas cloudless e
               soberania de dados em IoT. Cada sensor opera localmente, os dados permanecem no
               dispositivo e os modelos de IA são executados on-edge — sem cloud, sem latência,
@@ -137,7 +137,7 @@ export default function GoldenLeafPage() {
             ].map((credential) => (
               <span
                 key={credential}
-                className='text-xs font-mono border border-gray-300 bg-gray-50 text-gray-700 px-3 py-1 rounded-full'
+                className='text-xs font-mono border border-neutral-700 bg-neutral-900/40 text-neutral-400 px-3 py-1 rounded-full'
               >
                 {credential}
               </span>

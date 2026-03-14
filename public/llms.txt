@@ -35,7 +35,7 @@
   - Cenário Desaceleração Coordenada (slowdown): https://ulissesflores.com/simulacoes/ia-2027/desaceleracao-coordenada
   - Cenário Corrida Estratégica (race): https://ulissesflores.com/simulacoes/ia-2027/corrida-estrategica
 - Mumm-Ra — Chatbot Experimental via WhatsApp: https://ulissesflores.com/simulacoes/mumm-ra
-- Projeto PSI — Hardware Wallet Nuclear-Grade com Ring Signatures: https://ulissesflores.com/simulacoes/projeto-psi
+- Projeto PSI — Hardware Wallet Nuclear-Grade com Ring Signatures: https://ulissesflores.com/whitepapers/projeto-psi
 - GoldenLeaf — Micologia Inteligente com IoT e IA: https://ulissesflores.com/simulacoes/goldenleaf
 
 ## Comunidade & Instituto

@@ -24,6 +24,7 @@ const navCategories: NavCategory[] = [
     items: [
       { label: 'Research', href: '/research', description: 'IA, Economia e Sistemas Complexos' },
       { label: 'Whitepapers', href: '/whitepapers', description: 'Engenharia, IoT e Segurança' },
+      { label: 'Projeto Ψ (PSI)', href: '/whitepapers/projeto-psi', description: 'Whitepaper: Hardware Wallet Nuclear-Grade' },
       { label: 'Essays', href: '/essays', description: 'Teologia, Humanidades e História' },
     ],
   },
@@ -38,7 +39,6 @@ const navCategories: NavCategory[] = [
     label: 'Ferramentas',
     items: [
       { label: 'Simulações', href: '/simulacoes', description: 'Laboratório de cenários prospectivos' },
-      { label: 'Projeto PSI', href: '/simulacoes/projeto-psi', description: 'Hardware Wallet Nuclear-Grade · Whitepaper' },
       { label: 'Identidade', href: '/identidade', description: 'Hub canônico de identidade soberana' },
       { label: 'Certificações', href: '/certifications', description: 'Credenciais e verificações' },
     ],
