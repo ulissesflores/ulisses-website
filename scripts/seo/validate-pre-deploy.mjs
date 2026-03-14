@@ -213,10 +213,16 @@ function validateNextConfig() {
     warn('No canonical host redirect found in next.config.ts');
   }
 
-  if (content.includes('singleLocaleRedirect')) {
-    ok('Single-locale redirect (301) configured');
+  // Single-locale redirect moved to proxy.ts — verify it's there
+  const proxyContent = fs.existsSync(path.join(ROOT, 'proxy.ts'))
+    ? fs.readFileSync(path.join(ROOT, 'proxy.ts'), 'utf-8')
+    : '';
+  if (proxyContent.includes('SINGLE_LOCALE_PATTERN') && proxyContent.includes('301')) {
+    ok('Single-locale redirect (301) configured in proxy.ts');
+  } else if (content.includes('singleLocaleRedirect')) {
+    ok('Single-locale redirect (301) configured in next.config.ts');
   } else {
-    warn('No single-locale redirect found');
+    warn('No single-locale redirect found in proxy.ts or next.config.ts');
   }
 }
 
