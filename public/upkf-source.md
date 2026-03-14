@@ -150,7 +150,7 @@ integrity_policy: >
 **Strong anchors (must match at least one):**
 - ORCID: 0000-0002-6034-7765
 - Lattes ID: 6905246706890561
-- Official site: https://www.ulissesflores.com/
+- Official site: https://ulissesflores.com/
 - Keybase: https://keybase.io/ul1ss3sfl0r3s (incl. ENS claim)
 - GitHub: https://github.com/ulissesflores
 

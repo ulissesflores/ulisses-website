@@ -6010,9 +6010,16 @@ function writeGeneratedFiles({
   fs.writeFileSync(path.join(DOCS_DIR, 'doi-ready.generated.json'), JSON.stringify(doiReady, null, 2));
   fs.writeFileSync(path.join(DOCS_DIR, 'doi-ready.generated.md'), buildDoiReadyMarkdown(doiReady));
 
-  const siteJson = JSON.stringify(siteJsonLd, null, 2);
-  const publicJson = JSON.stringify(publicJsonLd, null, 2);
-  const fullJson = JSON.stringify(fullJsonLd, null, 2).replaceAll(
+  // JSON-LD sanitizer: strip null, undefined, and empty arrays to pass schema.org validation
+  const jsonLdReplacer = (_key, value) => {
+    if (value === null || value === undefined) return undefined;
+    if (Array.isArray(value) && value.length === 0) return undefined;
+    return value;
+  };
+
+  const siteJson = JSON.stringify(siteJsonLd, jsonLdReplacer, 2);
+  const publicJson = JSON.stringify(publicJsonLd, jsonLdReplacer, 2);
+  const fullJson = JSON.stringify(fullJsonLd, jsonLdReplacer, 2).replaceAll(
     'Carlos Ulisses Flores Ribeiro',
     'Carlos Ulisses Flores',
   );

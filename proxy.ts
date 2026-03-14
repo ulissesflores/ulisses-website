@@ -95,9 +95,26 @@ function mapPtAliases(pathname: string): string {
 
 export { stripLocalePrefix, isRewritablePublicRoute, toMarkdownPath, collapseDuplicatedPrefix, mapPtAliases };
 
+const DOUBLE_LOCALE_PATTERN = /^\/(pt-br|en|es|he|it)\/(pt-br|en|es|he|it)\//i;
+
 export function proxy(request: NextRequest) {
-  const ua = request.headers.get('user-agent') || '';
   const rawPathname = request.nextUrl.pathname;
+
+  // Double-locale URLs (e.g. /he/he/path, /it/en/path) → 410 Gone
+  // These are corrupted URLs from erroneous cross-locale crawling that never had real content.
+  // 410 is the strongest signal for search engines to permanently de-index these pages.
+  if (DOUBLE_LOCALE_PATTERN.test(rawPathname)) {
+    return new NextResponse(null, {
+      status: 410,
+      statusText: 'Gone',
+      headers: {
+        'X-Robots-Tag': 'noindex',
+        'Cache-Control': 'public, max-age=86400, s-maxage=86400',
+      },
+    });
+  }
+
+  const ua = request.headers.get('user-agent') || '';
 
   if (!AI_BOT_REGEX.test(ua)) {
     return NextResponse.next();

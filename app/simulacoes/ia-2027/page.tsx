@@ -96,6 +96,8 @@ export default async function IA2027Page({
     author: {
       '@id': `${upkfMeta.primaryWebsite}/#person`,
     },
+    applicationCategory: 'EducationalApplication',
+    operatingSystem: 'Web',
   };
 
   return (
