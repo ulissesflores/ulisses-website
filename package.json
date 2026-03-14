@@ -24,6 +24,7 @@
     "links:inventory": "npm run upkf:generate"
   },
   "dependencies": {
+    "@tailwindcss/typography": "^0.5.19",
     "framer-motion": "^12.34.3",
     "jszip": "^3.10.1",
     "lucide-react": "^0.562.0",

@@ -247,33 +247,9 @@ export default function ProjetoPsiPage() {
             </ol>
           </nav>
 
-          {/* ─── Prose content ─── */}
-          <div className='prose prose-invert max-w-none lg:prose-lg
-
-            /* 1. Respiro dos parágrafos — Long-Read UX */
-            prose-p:mb-8 prose-p:leading-[1.8] prose-p:text-neutral-300
-
-            /* 2. Hierarquia de Capítulos — H2 como divisórias reais */
-            prose-headings:font-bold prose-headings:tracking-tight
-            prose-h2:text-3xl md:prose-h2:text-4xl prose-h2:text-neutral-100
-            prose-h2:mt-24 prose-h2:mb-10 prose-h2:border-b prose-h2:border-neutral-800 prose-h2:pb-4
-
-            /* 3. Subtítulos H3 e listas organizadas */
-            prose-h3:text-2xl prose-h3:mt-14 prose-h3:mb-6 prose-h3:text-cyan-400
-            prose-li:mb-3 prose-ul:my-8 prose-ol:my-8
-
-            /* 4. Estilo científico para links */
-            prose-a:text-cyan-400 hover:prose-a:text-cyan-300
-            prose-a:decoration-cyan-900 prose-a:underline-offset-4
-
-            /* 5. Blocos auxiliares */
-            prose-strong:text-white
-            prose-blockquote:border-cyan-700 prose-blockquote:bg-neutral-900/40
-            prose-blockquote:rounded-r-xl prose-blockquote:py-1
-            prose-table:border-neutral-700
-            prose-th:text-neutral-200 prose-th:border-neutral-700 prose-th:bg-neutral-900/60
-            prose-td:text-neutral-400 prose-td:border-neutral-800
-          '>
+          {/* ─── Prose content ───
+               1=Respiro parágrafos  2=H2 capítulos  3=H3+listas  4=Links  5=Auxiliares */}
+          <div className='prose prose-invert max-w-none lg:prose-lg prose-p:mb-8 prose-p:leading-[1.8] prose-p:text-neutral-300 prose-headings:font-bold prose-headings:tracking-tight prose-h2:text-3xl md:prose-h2:text-4xl prose-h2:text-neutral-100 prose-h2:mt-24 prose-h2:mb-10 prose-h2:border-b prose-h2:border-neutral-800 prose-h2:pb-4 prose-h3:text-2xl prose-h3:mt-14 prose-h3:mb-6 prose-h3:text-cyan-400 prose-li:mb-3 prose-ul:my-8 prose-ol:my-8 prose-a:text-cyan-400 hover:prose-a:text-cyan-300 prose-a:decoration-cyan-900 prose-a:underline-offset-4 prose-strong:text-white prose-blockquote:border-cyan-700 prose-blockquote:bg-neutral-900/40 prose-blockquote:rounded-r-xl prose-blockquote:py-1 prose-table:border-neutral-700 prose-th:text-neutral-200 prose-th:border-neutral-700 prose-th:bg-neutral-900/60 prose-td:text-neutral-400 prose-td:border-neutral-800'>
 
             {/* ═════════ Section 1 ═════════ */}
             <h2 id='section-1'>1. Introdução: O Colapso da Confiança Institucional e o Modelo de Ameaça</h2>
@@ -338,7 +314,7 @@ export default function ProjetoPsiPage() {
                 src='/whitepapers/psi-arquitetura-hardware-camadas-defesa.webp'
                 alt='Diagrama isométrico em vista explodida detalhando as quatro camadas de defesa física do hardware criptográfico Projeto PSI: blindagem externa em Cobre-Tungstênio, potting de resina epóxi, malha de segurança ativa (Tamper Mesh) ciano, e núcleo lógico de silício.'
                 loading='lazy'
-                className='w-full rounded-2xl border border-neutral-800 shadow-2xl mix-blend-screen opacity-90'
+                className='w-full rounded-2xl shadow-2xl mix-blend-lighten'
               />
               <figcaption className='text-center text-sm text-neutral-500 font-mono'>
                 <strong className='text-cyan-500 uppercase tracking-widest'>Figura 1:</strong> Camadas de Defesa Física e Lógica do Receptáculo PSI (Cu-W → Epóxi → Tamper Mesh → Silício).
@@ -556,7 +532,7 @@ export default function ProjetoPsiPage() {
                 src='/whitepapers/psi-ciclo-vida-chave-criptografica-sram-puf.webp'
                 alt='Fluxograma lógico do ciclo de vida da chave privada no Projeto PSI via SRAM PUF. O fluxo converte ruído físico de silício em entropia pura, processa pelo Fuzzy Extractor para gerar a semente (cristal estruturado), culminando em zeroização instantânea e desintegração digital.'
                 loading='lazy'
-                className='w-full rounded-2xl border border-neutral-800 shadow-2xl mix-blend-screen opacity-90'
+                className='w-full rounded-2xl shadow-2xl mix-blend-lighten'
               />
               <figcaption className='text-center text-sm text-neutral-500 font-mono'>
                 <strong className='text-cyan-500 uppercase tracking-widest'>Figura 2:</strong> Fluxo de Derivação de Chave Efêmera via SRAM PUF (Power-up → RDF → Fuzzy Extractor → Semente → Zeroização).
@@ -745,7 +721,7 @@ export default function ProjetoPsiPage() {
                 src='/whitepapers/psi-protocolo-phantom-biometria-coacao.webp'
                 alt='Árvore de decisão lógica do Protocolo Phantom Input (Deniable Encryption). Uma biometria central bifurca ativamente o roteamento: o caminho ótico superior seguro (ciano) acessa a chave real (RSK), enquanto o caminho inferior sob detecção de coação (âmbar) redireciona silenciosamente para uma chave falsa (FSK).'
                 loading='lazy'
-                className='w-full rounded-2xl border border-neutral-800 shadow-2xl mix-blend-screen opacity-90'
+                className='w-full rounded-2xl shadow-2xl mix-blend-lighten'
               />
               <figcaption className='text-center text-sm text-neutral-500 font-mono'>
                 <strong className='text-cyan-500 uppercase tracking-widest'>Figura 3:</strong> Protocolo Phantom Input — Biometria → Flag Coerção → RSK vs FSK (Deniable Encryption).
@@ -831,7 +807,7 @@ export default function ProjetoPsiPage() {
                 src='/whitepapers/psi-arquitetura-tmr-redundancia-voter.webp'
                 alt='Esquema de arquitetura Triple Modular Redundancy (TMR) aeroespacial do Projeto PSI. Três microprocessadores independentes processam dados de forma paralela tolerante a falhas, convergindo para uma porta lógica de Voter Majoritário central que valida e emite apenas uma saída ciano unificada e imune a injeção de falhas.'
                 loading='lazy'
-                className='w-full rounded-2xl border border-neutral-800 shadow-2xl mix-blend-screen opacity-90'
+                className='w-full rounded-2xl shadow-2xl mix-blend-lighten'
               />
               <figcaption className='text-center text-sm text-neutral-500 font-mono'>
                 <strong className='text-cyan-500 uppercase tracking-widest'>Figura 4:</strong> Redundância Modular Tripla — Sub-blocos A/B/C → Voter por Maioria → Saída Infalível.
