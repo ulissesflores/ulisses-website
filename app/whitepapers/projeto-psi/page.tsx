@@ -174,7 +174,7 @@ export default function ProjetoPsiPage() {
             ].map((chip) => (
               <span
                 key={chip}
-                className='text-xs font-mono border border-gray-300 bg-gray-50 text-gray-700 px-3 py-1 rounded-full'
+                className='text-xs font-mono border border-cyan-700/40 bg-neutral-800/60 text-cyan-300 px-3 py-1 rounded-full'
               >
                 {chip}
               </span>
@@ -226,15 +226,16 @@ export default function ProjetoPsiPage() {
           </nav>
 
           {/* ─── Prose content ─── */}
-          <div className='prose prose-lg prose-invert max-w-none
+          <div className='prose prose-lg prose-invert max-w-3xl mx-auto
             prose-headings:font-bold prose-headings:tracking-tight
-            prose-h2:text-2xl prose-h2:text-cyan-300 prose-h2:border-b prose-h2:border-cyan-900/40 prose-h2:pb-3 prose-h2:mb-6 prose-h2:mt-16
-            prose-h3:text-xl prose-h3:text-emerald-300 prose-h3:mt-12 prose-h3:mb-4
-            prose-p:text-neutral-300 prose-p:leading-relaxed
+            prose-h2:text-2xl prose-h2:text-cyan-300 prose-h2:border-b prose-h2:border-cyan-900/40 prose-h2:pb-3 prose-h2:mb-8 prose-h2:mt-20 prose-h2:border-t prose-h2:border-cyan-900/20 prose-h2:pt-12
+            prose-h3:text-xl prose-h3:text-emerald-300 prose-h3:mt-14 prose-h3:mb-6
+            prose-p:text-neutral-300 prose-p:leading-[1.85] prose-p:mb-6
             prose-strong:text-white
             prose-a:text-cyan-400 prose-a:no-underline hover:prose-a:text-cyan-200
             prose-blockquote:border-cyan-700 prose-blockquote:bg-neutral-900/40 prose-blockquote:rounded-r-xl prose-blockquote:py-1
-            prose-li:text-neutral-300
+            prose-li:text-neutral-300 prose-li:mb-3
+            prose-ol:my-8 prose-ul:my-8
             prose-table:border-neutral-700
             prose-th:text-neutral-200 prose-th:border-neutral-700 prose-th:bg-neutral-900/60
             prose-td:text-neutral-400 prose-td:border-neutral-800
@@ -286,6 +287,17 @@ export default function ProjetoPsiPage() {
               disciplina puramente eletrônica para uma ciência psicológica, biomecânica e estrutural</strong>.
             </p>
 
+            {/* ── Pull-quote: Paradigm ── */}
+            <div className='not-prose my-14 border-l-2 border-cyan-400/80 pl-8 py-4'>
+              <p className='text-xl italic text-neutral-100 leading-relaxed font-light tracking-wide'>
+                &ldquo;A segurança deve ser ancorada unicamente na frieza inviolável das leis da física
+                de materiais, da termodinâmica e da matemática criptográfica avançada.&rdquo;
+              </p>
+              <p className='text-[10px] uppercase tracking-[0.25em] text-cyan-400 mt-4 font-bold'>
+                — Ulisses Flores &middot; Projeto Ψ
+              </p>
+            </div>
+
             {/* ═════════ Section 2 ═════════ */}
             <h2 id='section-2'>2. Arquitetura Física (O Receptáculo)</h2>
 
@@ -329,11 +341,24 @@ export default function ProjetoPsiPage() {
               A eficácia é quantificada pela <strong>Eficácia de Blindagem (SE)</strong>, medida em decibéis:
             </p>
 
-            <div className='not-prose rounded-xl border border-cyan-900/40 bg-neutral-900/60 p-6 my-8 font-mono text-center'>
-              <p className='text-cyan-300 text-lg'>SE = 10 log₁₀(Pᵢ / Pₜ)</p>
-              <p className='text-neutral-500 text-xs mt-2'>
-                Pᵢ = potência incidente | Pₜ = potência transmitida | SE em dB
+            <div className='not-prose rounded-xl border border-cyan-900/40 bg-neutral-900/80 p-8 my-10 text-center'>
+              <p className='text-[10px] uppercase tracking-[0.25em] text-cyan-400/60 font-bold mb-5'>Equação 1 — Eficácia de Blindagem Eletromagnética</p>
+              <p className='text-cyan-200 text-2xl font-light tracking-wide' style={{ fontFamily: 'Georgia, "Times New Roman", serif' }}>
+                SE = 10 &middot; log<sub>10</sub>(P<sub>i</sub> &frasl; P<sub>t</sub>)
               </p>
+              <div className='mt-4 pt-4 border-t border-cyan-900/30'>
+                <p className='text-cyan-200 text-lg font-light tracking-wide' style={{ fontFamily: 'Georgia, "Times New Roman", serif' }}>
+                  SE<sub>total</sub> = R + A + B
+                </p>
+              </div>
+              <div className='mt-5 grid grid-cols-2 sm:grid-cols-3 gap-3 text-xs text-neutral-500 font-mono'>
+                <span>P<sub>i</sub> = potência incidente</span>
+                <span>P<sub>t</sub> = potência transmitida</span>
+                <span>SE = eficácia (dB)</span>
+                <span>R = perda por reflexão</span>
+                <span>A = absorção interna</span>
+                <span>B = múltiplas reflexões</span>
+              </div>
             </div>
 
             <p>
@@ -344,7 +369,8 @@ export default function ProjetoPsiPage() {
             </p>
 
             {/* Table: Shielding Comparison */}
-            <div className='not-prose overflow-x-auto my-8'>
+            <p className='not-prose text-[10px] uppercase tracking-[0.25em] text-cyan-400/60 font-bold mb-3 mt-10'>Tabela 1 — Comparação de Blindagem Eletromagnética por Material</p>
+            <div className='not-prose overflow-x-auto mb-8'>
               <table className='w-full text-sm border border-neutral-700 rounded-lg overflow-hidden'>
                 <thead>
                   <tr className='bg-neutral-900/80 text-neutral-200'>
@@ -375,6 +401,33 @@ export default function ProjetoPsiPage() {
                   </tr>
                 </tbody>
               </table>
+            </div>
+
+            {/* ── Spec Sheet: Cu-W Blueprint ── */}
+            <div className='not-prose my-12 rounded-xl border border-cyan-700/40 bg-neutral-900/80 overflow-hidden'>
+              <div className='bg-cyan-950/40 px-6 py-3 border-b border-cyan-900/40 flex items-center gap-3'>
+                <span className='text-[10px] uppercase tracking-[0.25em] text-cyan-400 font-bold'>
+                  Ficha Técnica — Receptáculo Cu-W PSI
+                </span>
+              </div>
+              <div className='grid grid-cols-2 sm:grid-cols-3'>
+                {[
+                  { label: 'Composição', value: '70-80% W / 20-30% Cu' },
+                  { label: 'Densidade', value: '~15.5–17.0 g/cm³' },
+                  { label: 'Ponto de Fusão (W)', value: '3.422 °C' },
+                  { label: 'Condutividade', value: '40-50% IACS' },
+                  { label: 'Blindagem (SE)', value: '>100 dB' },
+                  { label: 'Norma Militar', value: 'MIL-STD-285' },
+                  { label: 'Fabricação', value: 'Metalurgia do pó' },
+                  { label: 'Resistência', value: 'EMP + Radiação γ' },
+                  { label: 'Interface', value: 'Pogo Pins magnéticos' },
+                ].map((spec) => (
+                  <div key={spec.label} className='p-4 border-b border-r border-neutral-800 last:border-r-0'>
+                    <p className='text-[9px] uppercase tracking-wider text-neutral-500 mb-1'>{spec.label}</p>
+                    <p className='text-sm text-cyan-300 font-mono'>{spec.value}</p>
+                  </div>
+                ))}
+              </div>
             </div>
 
             <h3 id='section-2-2'>2.2 Isolamento Acústico, Térmico e Químico contra Ataques de Canal Lateral (SCA)</h3>
@@ -438,6 +491,25 @@ export default function ProjetoPsiPage() {
               firmware injection, fuzzing).
             </p>
 
+            {/* ── Diagram: Defense Layers ── */}
+            <div className='not-prose my-12'>
+              <p className='text-[10px] uppercase tracking-[0.25em] text-cyan-400/60 font-bold mb-4 text-center'>Figura 1 — Seção Transversal das Camadas de Defesa</p>
+              <div className='relative border-2 border-cyan-500/80 rounded-xl p-5 bg-neutral-950'>
+                <span className='absolute -top-3 left-4 bg-neutral-950 px-2 text-[9px] font-mono text-cyan-400 tracking-wider'>CHASSI Cu-W (19.3 g/cm³)</span>
+                <div className='border border-cyan-700/40 rounded-lg p-4 border-dashed'>
+                  <span className='text-[8px] font-mono text-cyan-300/50 tracking-wider'>GAIOLA DE FARADAY — SE &gt;100 dB (MIL-STD-285)</span>
+                  <div className='border border-emerald-600/50 rounded-lg p-4 mt-3 bg-emerald-950/10'>
+                    <span className='text-[8px] font-mono text-emerald-400/70 tracking-wider'>EPÓXI TERMOFIXA + TAMPER MESH ATIVA</span>
+                    <div className='border-2 border-cyan-400/80 rounded-lg p-6 mt-3 bg-cyan-950/20 text-center'>
+                      <p className='text-cyan-300 font-mono font-bold text-sm tracking-widest'>⬡ SRAM PUF CORE</p>
+                      <p className='text-[9px] font-mono text-cyan-400/60 mt-1'>XMSS · KDF Híbrido · Zeroização</p>
+                    </div>
+                    <p className='text-[8px] font-mono text-red-400/50 mt-3 text-right'>⚠ Violação física → Zeroização instantânea</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
             {/* ═════════ Section 3 ═════════ */}
             <h2 id='section-3'>3. O Núcleo Criptográfico (O Colapso da Função de Onda)</h2>
 
@@ -454,6 +526,16 @@ export default function ProjetoPsiPage() {
               A resposta do PSI é drástica: <strong>a chave privada não é armazenada no dispositivo em
               momento algum</strong>.
             </p>
+
+            {/* ── Pull-quote: Ephemeral Key ── */}
+            <div className='not-prose my-14 border-l-2 border-cyan-400/80 pl-8 py-4'>
+              <p className='text-xl italic text-neutral-100 leading-relaxed font-light tracking-wide'>
+                &ldquo;A chave privada não é armazenada no dispositivo em momento algum.&rdquo;
+              </p>
+              <p className='text-[10px] uppercase tracking-[0.25em] text-cyan-400 mt-4 font-bold'>
+                — Ulisses Flores &middot; Projeto Ψ
+              </p>
+            </div>
 
             <h3 id='section-3-1'>3.1 Funções Físicas Não-Clonáveis Baseadas em SRAM (SRAM PUF)</h3>
 
@@ -486,6 +568,32 @@ export default function ProjetoPsiPage() {
               de correção de erros (BCH ou Polares). Após a assinatura, a alimentação da SRAM é obliterada,
               as cargas dissipam-se e <strong>a chave deixa de existir</strong>.
             </p>
+
+            {/* ── Diagram: Key Lifecycle ── */}
+            <div className='not-prose my-12'>
+              <p className='text-[10px] uppercase tracking-[0.25em] text-cyan-400/60 font-bold mb-4 text-center'>Figura 2 — Ciclo de Vida Efêmero da Chave Privada</p>
+              <div className='flex flex-wrap items-center justify-center gap-2 text-[9px] font-mono'>
+                {[
+                  { label: 'POWER ON', color: 'text-neutral-400 border-neutral-600' },
+                  { label: 'SRAM PUF READ', color: 'text-cyan-300 border-cyan-600' },
+                  { label: 'FUZZY EXTRACTOR', color: 'text-cyan-300 border-cyan-600' },
+                  { label: 'KDF + ENTROPIA HUMANA', color: 'text-emerald-300 border-emerald-600' },
+                  { label: 'ASSINATURA', color: 'text-white border-cyan-400' },
+                  { label: 'ZEROIZAÇÃO', color: 'text-red-400 border-red-600' },
+                  { label: 'POWER OFF', color: 'text-neutral-500 border-neutral-700' },
+                ].map((step, i) => (
+                  <div key={step.label} className='flex items-center gap-2'>
+                    <span className={`border rounded-md px-3 py-2 tracking-wider bg-neutral-900/60 ${step.color}`}>
+                      {step.label}
+                    </span>
+                    {i < 6 && <span className='text-cyan-700'>→</span>}
+                  </div>
+                ))}
+              </div>
+              <p className='text-[8px] font-mono text-neutral-600 text-center mt-3'>
+                A chave existe apenas durante o milissegundo da assinatura — antes e depois, é vácuo absoluto de informação.
+              </p>
+            </div>
 
             <h3 id='section-3-2'>3.2 O Padrão Pós-Quântico XMSS (NIST SP 800-208)</h3>
 
@@ -593,7 +701,8 @@ export default function ProjetoPsiPage() {
             </p>
 
             {/* Table: Biometrics */}
-            <div className='not-prose overflow-x-auto my-8'>
+            <p className='not-prose text-[10px] uppercase tracking-[0.25em] text-cyan-400/60 font-bold mb-3 mt-10'>Tabela 2 — Biomarcadores de Coerção e Hardware de Detecção</p>
+            <div className='not-prose overflow-x-auto mb-8'>
               <table className='w-full text-sm border border-neutral-700 rounded-lg overflow-hidden'>
                 <thead>
                   <tr className='bg-neutral-900/80 text-neutral-200'>
@@ -650,6 +759,51 @@ export default function ProjetoPsiPage() {
               destrinchadas. O agressor escapa saciado acreditando ter extraído as chaves-mestras — enquanto
               a soberania patrimonial real permanece oculta e intacta.
             </p>
+
+            {/* ── Pull-quote: Biological Integrity ── */}
+            <div className='not-prose my-14 border-l-2 border-cyan-400/80 pl-8 py-4'>
+              <p className='text-xl italic text-neutral-100 leading-relaxed font-light tracking-wide'>
+                &ldquo;O dispositivo assume a preservação da integridade biológica do dono.&rdquo;
+              </p>
+              <p className='text-[10px] uppercase tracking-[0.25em] text-cyan-400 mt-4 font-bold'>
+                — Ulisses Flores &middot; Projeto Ψ
+              </p>
+            </div>
+
+            {/* ── Diagram: Dual-Path Deniability ── */}
+            <div className='not-prose my-12'>
+              <p className='text-[10px] uppercase tracking-[0.25em] text-cyan-400/60 font-bold mb-4 text-center'>Figura 3 — Protocolo Phantom Input: Criptografia Negável Dual-Path</p>
+              <div className='grid grid-cols-1 sm:grid-cols-3 gap-4 text-center text-[9px] font-mono'>
+                <div className='border border-neutral-700 rounded-lg p-4 bg-neutral-900/40'>
+                  <p className='text-neutral-400 tracking-wider mb-2'>BIOMETRIA</p>
+                  <p className='text-emerald-300 text-xs font-bold'>Sem Coerção</p>
+                  <p className='text-cyan-700 my-2'>↓</p>
+                  <div className='border border-emerald-600/60 rounded-md p-3 bg-emerald-950/20'>
+                    <p className='text-emerald-400 font-bold tracking-wider'>RSK</p>
+                    <p className='text-emerald-300/60 mt-1'>Real Secret Key</p>
+                    <p className='text-[8px] text-neutral-500 mt-1'>Carteira verídica</p>
+                  </div>
+                </div>
+                <div className='flex items-center justify-center'>
+                  <div className='border border-cyan-700/40 rounded-lg p-4 bg-cyan-950/10'>
+                    <p className='text-cyan-400 tracking-wider mb-1'>SENSOR</p>
+                    <p className='text-[8px] text-neutral-500'>IMU + PPG + HRV</p>
+                    <p className='text-cyan-300 text-lg my-2'>⚠</p>
+                    <p className='text-[8px] text-neutral-500'>Coerção?</p>
+                  </div>
+                </div>
+                <div className='border border-neutral-700 rounded-lg p-4 bg-neutral-900/40'>
+                  <p className='text-neutral-400 tracking-wider mb-2'>BIOMETRIA</p>
+                  <p className='text-red-400 text-xs font-bold'>Coerção Detectada</p>
+                  <p className='text-cyan-700 my-2'>↓</p>
+                  <div className='border border-red-600/40 rounded-md p-3 bg-red-950/10'>
+                    <p className='text-red-400 font-bold tracking-wider'>FSK</p>
+                    <p className='text-red-300/60 mt-1'>Fake Secret Key</p>
+                    <p className='text-[8px] text-neutral-500 mt-1'>Ambiente ilusório</p>
+                  </div>
+                </div>
+              </div>
+            </div>
 
             <h3 id='section-4-3'>4.3 Atestado Criptográfico contra Substituição Hostil (&ldquo;Evil Maid&rdquo;)</h3>
 
@@ -717,13 +871,44 @@ export default function ProjetoPsiPage() {
               independentes (sub-blocos A, B, C). Ao final dos cálculos paralelos, as vias convergem num
               <strong> Dispositivo Escrutinador de Maioria (&ldquo;Voter&rdquo;)</strong>.
             </p>
-
             <p>
               Se uma partícula cósmica flipar os transistores do sub-bloco B (SEU), os conjuntos A e C
               continuam reportando dados corretos. O Voter — por Maioria Simples (2 contra 1) — expulsa
               instantaneamente os erros espúrios, sem reinicializações ou intervenções operacionais. O
               dispositivo mantém operação contínua e infalível sob bombardeio radioativo orbital.
             </p>
+
+            {/* ── Diagram: TMR Architecture ── */}
+            <div className='not-prose my-12'>
+              <p className='text-[10px] uppercase tracking-[0.25em] text-cyan-400/60 font-bold mb-4 text-center'>Figura 4 — Redundância Modular Tripla (TMR) com Votação por Maioria</p>
+              <div className='flex flex-col sm:flex-row items-center justify-center gap-4'>
+                <div className='flex flex-col gap-3'>
+                  {[
+                    { id: 'A', status: '&#10003;', color: 'border-emerald-600/60 text-emerald-300' },
+                    { id: 'B', status: '&#10007;', color: 'border-red-600/40 text-red-400' },
+                    { id: 'C', status: '&#10003;', color: 'border-emerald-600/60 text-emerald-300' },
+                  ].map((block) => (
+                    <div key={block.id} className={`border rounded-lg px-6 py-3 bg-neutral-900/60 text-center font-mono text-[9px] tracking-wider ${block.color}`}>
+                      <p className='font-bold text-xs'>MCU {block.id}</p>
+                      <p className='mt-1'>{block.status === '&#10003;' ? '&#10003; Correto' : '&#10007; SEU Flip'}</p>
+                    </div>
+                  ))}
+                </div>
+                <div className='text-cyan-700 font-mono text-lg hidden sm:block'>&#8594;&#8594;&#8594;</div>
+                <div className='text-cyan-700 font-mono text-lg sm:hidden'>&#8595;</div>
+                <div className='border-2 border-cyan-400/80 rounded-xl px-8 py-6 bg-cyan-950/20 text-center font-mono'>
+                  <p className='text-[9px] text-cyan-400/60 tracking-wider mb-1'>MAJORITY VOTER</p>
+                  <p className='text-cyan-300 font-bold text-sm'>2 de 3 = Válido</p>
+                  <p className='text-[8px] text-neutral-500 mt-1'>Erro de B expulso</p>
+                </div>
+                <div className='text-cyan-700 font-mono text-lg hidden sm:block'>&#8594;</div>
+                <div className='text-cyan-700 font-mono text-lg sm:hidden'>&#8595;</div>
+                <div className='border border-emerald-600 rounded-lg px-6 py-4 bg-emerald-950/10 text-center font-mono'>
+                  <p className='text-emerald-400 font-bold text-xs tracking-wider'>OUTPUT</p>
+                  <p className='text-[8px] text-emerald-300/60 mt-1'>Operação contínua</p>
+                </div>
+              </div>
+            </div>
 
             {/* ═════════ Section 6 ═════════ */}
             <h2 id='section-6'>6. Conclusão</h2>
