@@ -314,7 +314,7 @@ export default function ProjetoPsiPage() {
                 src='/whitepapers/psi-arquitetura-hardware-camadas-defesa.webp'
                 alt='Diagrama isométrico em vista explodida detalhando as quatro camadas de defesa física do hardware criptográfico Projeto PSI: blindagem externa em Cobre-Tungstênio, potting de resina epóxi, malha de segurança ativa (Tamper Mesh) ciano, e núcleo lógico de silício.'
                 loading='lazy'
-                className='w-full rounded-2xl shadow-2xl mix-blend-lighten'
+                className='w-full rounded-2xl mix-blend-screen brightness-[1.3] contrast-[1.4]'
               />
               <figcaption className='text-center text-sm text-neutral-500 font-mono'>
                 <strong className='text-cyan-500 uppercase tracking-widest'>Figura 1:</strong> Camadas de Defesa Física e Lógica do Receptáculo PSI (Cu-W → Epóxi → Tamper Mesh → Silício).
@@ -532,7 +532,7 @@ export default function ProjetoPsiPage() {
                 src='/whitepapers/psi-ciclo-vida-chave-criptografica-sram-puf.webp'
                 alt='Fluxograma lógico do ciclo de vida da chave privada no Projeto PSI via SRAM PUF. O fluxo converte ruído físico de silício em entropia pura, processa pelo Fuzzy Extractor para gerar a semente (cristal estruturado), culminando em zeroização instantânea e desintegração digital.'
                 loading='lazy'
-                className='w-full rounded-2xl shadow-2xl mix-blend-lighten'
+                className='w-full rounded-2xl mix-blend-screen brightness-[1.3] contrast-[1.4]'
               />
               <figcaption className='text-center text-sm text-neutral-500 font-mono'>
                 <strong className='text-cyan-500 uppercase tracking-widest'>Figura 2:</strong> Fluxo de Derivação de Chave Efêmera via SRAM PUF (Power-up → RDF → Fuzzy Extractor → Semente → Zeroização).
@@ -721,7 +721,7 @@ export default function ProjetoPsiPage() {
                 src='/whitepapers/psi-protocolo-phantom-biometria-coacao.webp'
                 alt='Árvore de decisão lógica do Protocolo Phantom Input (Deniable Encryption). Uma biometria central bifurca ativamente o roteamento: o caminho ótico superior seguro (ciano) acessa a chave real (RSK), enquanto o caminho inferior sob detecção de coação (âmbar) redireciona silenciosamente para uma chave falsa (FSK).'
                 loading='lazy'
-                className='w-full rounded-2xl shadow-2xl mix-blend-lighten'
+                className='w-full rounded-2xl mix-blend-screen brightness-[1.3] contrast-[1.4]'
               />
               <figcaption className='text-center text-sm text-neutral-500 font-mono'>
                 <strong className='text-cyan-500 uppercase tracking-widest'>Figura 3:</strong> Protocolo Phantom Input — Biometria → Flag Coerção → RSK vs FSK (Deniable Encryption).
@@ -807,7 +807,7 @@ export default function ProjetoPsiPage() {
                 src='/whitepapers/psi-arquitetura-tmr-redundancia-voter.webp'
                 alt='Esquema de arquitetura Triple Modular Redundancy (TMR) aeroespacial do Projeto PSI. Três microprocessadores independentes processam dados de forma paralela tolerante a falhas, convergindo para uma porta lógica de Voter Majoritário central que valida e emite apenas uma saída ciano unificada e imune a injeção de falhas.'
                 loading='lazy'
-                className='w-full rounded-2xl shadow-2xl mix-blend-lighten'
+                className='w-full rounded-2xl mix-blend-screen brightness-[1.3] contrast-[1.4]'
               />
               <figcaption className='text-center text-sm text-neutral-500 font-mono'>
                 <strong className='text-cyan-500 uppercase tracking-widest'>Figura 4:</strong> Redundância Modular Tripla — Sub-blocos A/B/C → Voter por Maioria → Saída Infalível.
