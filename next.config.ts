@@ -49,6 +49,13 @@ const nextConfig: NextConfig = {
       },
     ];
 
+    // Projeto PSI → whitepapers route migration (301)
+    const psiRedirect = {
+      source: '/simulacoes/projeto-psi',
+      destination: '/whitepapers/projeto-psi',
+      permanent: true,
+    };
+
     // Rapaduria-2027 → ia-2027 route migration (301s)
     const rapaduriaRedirects = [
       {
@@ -104,6 +111,7 @@ const nextConfig: NextConfig = {
     return [
       doubleLocaleRedirect,
       singleLocaleRedirect,
+      psiRedirect,
       ...rapaduriaRedirects,
       ...legacyRedirects,
       ...legacySermonRedirects,

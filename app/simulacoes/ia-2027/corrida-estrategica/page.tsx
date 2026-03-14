@@ -80,47 +80,47 @@ export default function CorridaEstrategicaPage() {
   return (
     <>
       {/* Hero Section */}
-      <section className='bg-white text-black pt-20 pb-16 border-b border-gray-200'>
+      <section className='bg-neutral-950 text-neutral-200 pt-20 pb-16 border-b border-neutral-800'>
         <div className='max-w-4xl mx-auto px-6'>
           {/* Breadcrumb */}
           <div className='flex items-center gap-2 mb-6 flex-wrap'>
             <Link
               href='/simulacoes'
-              className='text-xs font-mono uppercase tracking-widest text-blue-700 hover:underline'
+              className='text-xs font-mono uppercase tracking-widest text-emerald-400 hover:underline'
             >
               Simulações Estratégicas
             </Link>
-            <span className='text-xs text-gray-400'>→</span>
+            <span className='text-xs text-neutral-600'>→</span>
             <Link
               href='/simulacoes/ia-2027'
-              className='text-xs font-mono uppercase tracking-widest text-blue-700 hover:underline'
+              className='text-xs font-mono uppercase tracking-widest text-emerald-400 hover:underline'
             >
               IA 2027
             </Link>
-            <span className='text-xs text-gray-400'>→</span>
-            <span className='text-xs font-mono uppercase tracking-widest text-red-600'>
+            <span className='text-xs text-neutral-600'>→</span>
+            <span className='text-xs font-mono uppercase tracking-widest text-red-500'>
               Corrida Estratégica
             </span>
           </div>
 
           {/* H1 */}
-          <h1 className='text-4xl sm:text-5xl font-bold leading-tight tracking-tight mb-6'>
+          <h1 className='text-4xl sm:text-5xl font-bold leading-tight tracking-tight mb-6 text-white'>
             IA 2027 · Corrida Estratégica
           </h1>
 
           {/* Lead */}
-          <p className='text-lg text-gray-700 leading-relaxed mb-8 max-w-3xl'>
+          <p className='text-lg text-neutral-400 leading-relaxed mb-8 max-w-3xl'>
             O cenário em que empresas e nações aceleram irrestritamente rumo à Inteligência
             Artificial Geral. Escalada de autonomia, concentração de poder e risco progressivo
             de perda de controle humano sobre sistemas de IA superinteligentes.
           </p>
 
           {/* Alert card */}
-          <div className='border-l-4 border-red-500 bg-red-50 px-6 py-5 rounded-r-xl mb-10'>
-            <p className='text-sm font-semibold text-red-800 uppercase tracking-wide mb-2'>
+          <div className='border-l-4 border-red-600 bg-red-950/20 px-6 py-5 rounded-r-xl mb-10'>
+            <p className='text-sm font-semibold text-red-400 uppercase tracking-wide mb-2'>
               Cenário Alternativo — Final Race
             </p>
-            <p className='text-gray-800 leading-relaxed'>
+            <p className='text-neutral-300 leading-relaxed'>
               Este é o ramo de aceleração máxima da simulação IA 2027. A narrativa explora o que
               acontece quando a competição por domínio tecnológico supera qualquer esforço de
               contenção: quem vence a corrida, o que é perdido no caminho, e se o controle humano
@@ -132,13 +132,13 @@ export default function CorridaEstrategicaPage() {
           <div className='flex flex-col sm:flex-row items-start sm:items-center gap-4'>
             <Link
               href='/simulacoes/ia-2027'
-              className='inline-flex items-center gap-2 bg-black text-white font-semibold px-6 py-3 rounded-full hover:bg-red-700 transition-colors text-sm'
+              className='inline-flex items-center gap-2 bg-red-600 text-white font-semibold px-6 py-3 rounded-full hover:bg-red-500 transition-colors text-sm'
             >
               ← Ver Simulação Completa
             </Link>
             <Link
               href='/simulacoes/ia-2027/desaceleracao-coordenada'
-              className='text-xs text-gray-500 hover:text-gray-700 underline'
+              className='text-xs text-neutral-500 hover:text-neutral-300 underline'
             >
               Ver cenário alternativo: Desaceleração Coordenada →
             </Link>

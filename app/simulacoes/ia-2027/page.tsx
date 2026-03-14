@@ -101,30 +101,30 @@ export default async function IA2027Page({
   return (
     <>
       {/* Hero Section — server-rendered for SEO/GEO/LLM */}
-      <section className='bg-white text-black pt-20 pb-16 border-b border-gray-200'>
+      <section className='bg-neutral-950 text-neutral-200 pt-20 pb-16 border-b border-neutral-800'>
         <div className='max-w-4xl mx-auto px-6'>
 
           {/* Breadcrumb / Kicker */}
           <div className='flex items-center gap-2 mb-6'>
             <Link
               href='/simulacoes'
-              className='text-xs font-mono uppercase tracking-widest text-blue-700 hover:underline'
+              className='text-xs font-mono uppercase tracking-widest text-emerald-400 hover:underline'
             >
               Simulações Estratégicas
             </Link>
-            <span className='text-xs text-gray-400'>→</span>
-            <span className='text-xs font-mono uppercase tracking-widest text-gray-500'>
+            <span className='text-xs text-neutral-600'>→</span>
+            <span className='text-xs font-mono uppercase tracking-widest text-neutral-500'>
               Cenários Futuros da IA
             </span>
           </div>
 
           {/* H1 */}
-          <h1 className='text-4xl sm:text-5xl font-bold leading-tight tracking-tight mb-6'>
+          <h1 className='text-4xl sm:text-5xl font-bold leading-tight tracking-tight mb-6 text-white'>
             IA 2027: Simulação Interativa sobre o Futuro da Inteligência Artificial
           </h1>
 
           {/* Lead paragraph */}
-          <p className='text-lg text-gray-700 leading-relaxed mb-8 max-w-3xl'>
+          <p className='text-lg text-neutral-400 leading-relaxed mb-8 max-w-3xl'>
             Os CEOs da OpenAI, Google DeepMind e Anthropic convergem em um ponto crítico: a
             Inteligência Artificial Geral (AGI) pode ser alcançada antes do final desta década.
             Quando a máquina superar a capacidade cognitiva humana, as regras que governam a
@@ -134,11 +134,11 @@ export default async function IA2027Page({
           </p>
 
           {/* Alert card — EEAT / Por que isso importa */}
-          <div className='border-l-4 border-blue-600 bg-blue-50 px-6 py-5 rounded-r-xl mb-10'>
-            <p className='text-sm font-semibold text-blue-800 uppercase tracking-wide mb-2'>
+          <div className='border-l-4 border-cyan-700 bg-cyan-950/20 px-6 py-5 rounded-r-xl mb-10'>
+            <p className='text-sm font-semibold text-cyan-400 uppercase tracking-wide mb-2'>
               Por que isso importa
             </p>
-            <p className='text-gray-800 leading-relaxed'>
+            <p className='text-neutral-300 leading-relaxed'>
               A soberania tecnológica não é mais ficção científica; é a disputa econômica e
               arquitetônica mais urgente do nosso tempo. Como cientista, consultor em IA e
               criador desta adaptação, estruturei este cenário baseado em modelagens de Harvard,
@@ -171,10 +171,10 @@ export default async function IA2027Page({
             ].map((card) => (
               <div
                 key={card.title}
-                className='border border-gray-200 rounded-xl p-5 bg-gray-50'
+                className='border border-neutral-800 rounded-xl p-5 bg-neutral-900/40'
               >
-                <p className='font-semibold text-sm text-black mb-1'>{card.title}</p>
-                <p className='text-sm text-gray-600 leading-relaxed'>{card.body}</p>
+                <p className='font-semibold text-sm text-white mb-1'>{card.title}</p>
+                <p className='text-sm text-neutral-400 leading-relaxed'>{card.body}</p>
               </div>
             ))}
           </div>
@@ -183,11 +183,11 @@ export default async function IA2027Page({
           <div className='flex flex-col sm:flex-row items-start sm:items-center gap-4'>
             <a
               href='#ia-2027-sim'
-              className='inline-flex items-center gap-2 bg-black text-white font-semibold px-6 py-3 rounded-full hover:bg-blue-700 transition-colors text-sm'
+              className='inline-flex items-center gap-2 bg-emerald-700 text-white font-semibold px-6 py-3 rounded-full hover:bg-emerald-600 transition-colors text-sm'
             >
               Iniciar Simulação →
             </a>
-            <p className='text-xs text-gray-500 max-w-sm'>
+            <p className='text-xs text-neutral-500 max-w-sm'>
               Tradução e adaptação do cenário original publicado em{' '}
               <a
                 href='https://ai-2027.com/'

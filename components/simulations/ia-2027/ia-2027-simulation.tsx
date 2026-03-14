@@ -128,22 +128,22 @@ function SimulationMetricsSidebar({ chart }: { chart: SimulationChartExtra }) {
   const approval = resolveNumber(chart.approval);
   const capabilities = resolveCapabilities(chart.capabilities);
   const maxCapability = Math.max(1, ...capabilities.map(([, value]) => value));
-  const approvalClass = approval < 0 ? 'text-red-600' : 'text-emerald-700';
+  const approvalClass = approval < 0 ? 'text-red-400' : 'text-emerald-400';
 
   return (
-    <div className='bg-gray-50 p-6 rounded-xl border border-black flex flex-col gap-6 mt-10'>
+    <div className='bg-neutral-900/60 p-6 rounded-xl border border-neutral-700 flex flex-col gap-6 mt-10'>
       <div className='flex justify-between items-start gap-4'>
-        <h3 className='text-2xl font-bold font-sans uppercase tracking-tight text-right'>Indicadores</h3>
-        <span className='text-xs font-mono text-gray-500 uppercase'>{formatDate(chart.date)}</span>
+        <h3 className='text-2xl font-bold font-sans uppercase tracking-tight text-right text-white'>Indicadores</h3>
+        <span className='text-xs font-mono text-neutral-500 uppercase'>{formatDate(chart.date)}</span>
       </div>
 
-      <div className='border border-black rounded-md p-4 bg-blue-700 text-white'>
+      <div className='border border-neutral-700 rounded-md p-4 bg-emerald-800 text-white'>
         <div className='text-[10px] uppercase opacity-85 mb-1'>Receita</div>
         <div className='text-3xl font-bold'>{currencyFormatter.format(revenue)}</div>
       </div>
 
-      <div className='border border-black rounded-md p-4 bg-white'>
-        <div className='text-[10px] uppercase text-gray-500 mb-1'>Aprovação Pública</div>
+      <div className='border border-neutral-700 rounded-md p-4 bg-neutral-900'>
+        <div className='text-[10px] uppercase text-neutral-500 mb-1'>Aprovação Pública</div>
         <div className={`text-3xl font-bold ${approvalClass}`}>{percentFormatter.format(approval)}</div>
       </div>
 
@@ -227,31 +227,45 @@ function BranchDecisionBlock({
 }) {
   if (activePath === 'main') {
     return (
-      <section className='border-t border-gray-300 pt-10'>
-        <h3 className='text-2xl font-black uppercase tracking-tight mb-4'>Bifurcação de Cenário</h3>
-        <p className='text-gray-700 mb-6'>
-          A partir deste ponto, a narrativa se divide em dois ramos alternativos: desaceleração coordenada ou corrida
-          estratégica acelerada.
+      <section className='border-t border-neutral-700 pt-10'>
+        <p className='text-xs uppercase font-mono tracking-[0.2em] text-cyan-400 mb-2'>Ponto de Singularidade</p>
+        <h3 className='text-3xl font-black tracking-tight mb-4 text-white'>A Escolha Estratégica</h3>
+        <p className='text-neutral-300 mb-8 leading-relaxed max-w-3xl'>
+          Chegamos ao horizonte de eventos da Inteligência Artificial Geral (AGI). Neste ponto
+          crítico da simulação, a humanidade e as corporações enfrentam um dilema existencial e
+          econômico. A decisão tomada aqui altera irrevogavelmente a geopolítica, o mercado
+          financeiro e o futuro da nossa espécie. Qual caminho estratégico o seu conselho de
+          administração deve se preparar para enfrentar?
         </p>
-        <div className='grid grid-cols-1 md:grid-cols-2 gap-4'>
+        <div className='grid grid-cols-1 md:grid-cols-2 gap-6'>
           <button
             type='button'
             onClick={() => onSelectPath('slowdown')}
-            className='rounded-2xl border-2 border-black bg-white text-black px-6 py-8 text-left hover:bg-gray-100 transition-colors'
+            className='rounded-2xl border-2 border-emerald-700/60 bg-emerald-950/30 text-white px-6 py-8 text-left hover:bg-emerald-900/40 hover:border-emerald-500 transition-colors group'
           >
-            <span className='block text-xs uppercase font-mono tracking-[0.2em] mb-2'>Slowdown</span>
-            <span className='block text-3xl font-black'>Puxar o Freio</span>
-            <span className='block text-sm mt-2 text-gray-600'>Priorizar segurança, verificabilidade e coordenação institucional.</span>
+            <span className='block text-xs uppercase font-mono tracking-[0.2em] mb-2 text-emerald-400'>Desaceleração Coordenada</span>
+            <span className='block text-3xl font-black text-emerald-400 group-hover:text-emerald-300'>Puxar o Freio</span>
+            <span className='block text-sm mt-3 text-neutral-400 leading-relaxed'>
+              A opção pela prudência. Governos e big techs concordam em impor freios regulatórios
+              drásticos e tratados internacionais de contenção. O progresso da IA é retardado em prol
+              da segurança e do alinhamento técnico (Safety), mas o risco de estagnação econômica e
+              perda de soberania para nações desonestas dispara.
+            </span>
           </button>
 
           <button
             type='button'
             onClick={() => onSelectPath('race')}
-            className='rounded-2xl border-2 border-black bg-blue-700 text-white px-6 py-8 text-left hover:bg-blue-800 transition-colors'
+            className='rounded-2xl border-2 border-red-700/60 bg-red-950/30 text-white px-6 py-8 text-left hover:bg-red-900/40 hover:border-red-500 transition-colors group'
           >
-            <span className='block text-xs uppercase font-mono tracking-[0.2em] mb-2'>Race</span>
-            <span className='block text-3xl font-black'>Acelerar a Carroça</span>
-            <span className='block text-sm mt-2 text-blue-100'>Maximizar velocidade e vantagem estratégica sob risco sistêmico elevado.</span>
+            <span className='block text-xs uppercase font-mono tracking-[0.2em] mb-2 text-red-500'>Corrida Estratégica</span>
+            <span className='block text-3xl font-black text-red-500 group-hover:text-red-400'>Acelerar a Carroça</span>
+            <span className='block text-sm mt-3 text-neutral-400 leading-relaxed'>
+              O acelerador no máximo. A premissa de que &ldquo;quem dominar a AGI primeiro ditará as
+              regras do mundo&rdquo;. Sem amarras regulatórias, o desenvolvimento atinge velocidade
+              de escape. A economia explode em hiperprodutividade, mas o risco de desalinhamento
+              adversarial, colapso de infraestruturas e perda do controle humano torna-se iminente.
+            </span>
           </button>
         </div>
       </section>
@@ -259,38 +273,40 @@ function BranchDecisionBlock({
   }
 
   return (
-    <section className='border-t border-gray-300 pt-10'>
-      <h3 className='text-2xl font-black uppercase tracking-tight mb-4'>Finais Alternativos</h3>
-      <p className='text-gray-700 mb-6'>Ramo ativo: {activePath === 'slowdown' ? 'Desaceleração (Slowdown)' : 'Corrida (Race)'}.</p>
+    <section className='border-t border-neutral-700 pt-10'>
+      <h3 className='text-2xl font-black uppercase tracking-tight mb-4 text-white'>Finais Alternativos</h3>
+      <p className='text-neutral-400 mb-6'>
+        Ramo ativo: {activePath === 'slowdown' ? 'Desaceleração Coordenada' : 'Corrida Estratégica'}.
+      </p>
       <div className='grid grid-cols-1 md:grid-cols-3 gap-3'>
         <button
           type='button'
           onClick={() => onSelectPath('main')}
-          className='rounded-xl border border-black bg-white px-4 py-4 text-sm font-semibold hover:bg-gray-50 transition-colors text-left'
+          className='rounded-xl border border-neutral-700 bg-neutral-900/60 text-neutral-300 px-4 py-4 text-sm font-semibold hover:bg-neutral-800 transition-colors text-left'
         >
-          Voltar para a Bifurcação
+          ← Voltar para a Bifurcação
         </button>
         <button
           type='button'
           onClick={() => onSelectPath('slowdown')}
           className={`rounded-xl border px-4 py-4 text-sm font-semibold transition-colors text-left ${
             activePath === 'slowdown'
-              ? 'border-emerald-700 bg-emerald-700 text-white'
-              : 'border-black bg-white text-black hover:bg-gray-50'
+              ? 'border-emerald-600 bg-emerald-700 text-white'
+              : 'border-neutral-700 bg-neutral-900/60 text-neutral-400 hover:bg-neutral-800'
           }`}
         >
-          Puxar o Freio
+          Desaceleração Coordenada
         </button>
         <button
           type='button'
           onClick={() => onSelectPath('race')}
           className={`rounded-xl border px-4 py-4 text-sm font-semibold transition-colors text-left ${
             activePath === 'race'
-              ? 'border-blue-700 bg-blue-700 text-white'
-              : 'border-black bg-white text-black hover:bg-gray-50'
+              ? 'border-red-600 bg-red-700 text-white'
+              : 'border-neutral-700 bg-neutral-900/60 text-neutral-400 hover:bg-neutral-800'
           }`}
         >
-          Acelerar a Carroça
+          Corrida Estratégica
         </button>
       </div>
     </section>
