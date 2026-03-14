@@ -379,6 +379,59 @@ export const projectPsiFaq: FaqItem[] = [
   },
 ];
 
+export const projetoPsiComercialFaq: FaqItem[] = [
+  {
+    question: 'Qual é o modelo de negócio do Projeto PSI?',
+    answer:
+      'O PSI opera em modelo de licenciamento de propriedade intelectual (IP licensing) e venda direta de hardware. Há três vias de receita: (1) dispositivos para consumidores de alto patrimônio, (2) licenciamento de tecnologia para fabricantes OEM, e (3) contratos de custódia institucional para fundos, exchanges e governos.',
+  },
+  {
+    question: 'Qual é o estágio atual de desenvolvimento do PSI?',
+    answer:
+      'O Projeto PSI está em fase de prototipação avançada e validação de arquitetura. O whitepaper técnico detalhado está publicado e revisado. O próximo milestone é a fabricação do primeiro protótipo funcional com SRAM PUF e XMSS integrados.',
+  },
+  {
+    question: 'Como o PSI se diferencia de hardware wallets existentes como Ledger e Trezor?',
+    answer:
+      'Ledger e Trezor são dispositivos de segurança de consumidor. O PSI é um dispositivo de segurança de classe militar. Não armazena chaves (zero attack surface), usa criptografia pós-quântica (XMSS), tem blindagem EMP, redundância aeroespacial (TMR) e detecção de coação biométrica. É uma categoria completamente diferente.',
+  },
+  {
+    question: 'Qual é o mercado endereçável (TAM) para custódia soberana?',
+    answer:
+      'O mercado global de custódia de criptoativos ultrapassou US$ 300 bilhões em ativos sob custódia em 2025. O segmento de custódia institucional e de alto patrimônio cresce 40%+ ao ano. O PSI endereça diretamente o topo desta pirâmide — clientes que exigem segurança além do padrão bancário.',
+  },
+  {
+    question: 'Que tipo de investimento o projeto busca?',
+    answer:
+      'O PSI busca investimento estratégico de seed/Series A para financiar prototipação, certificação de segurança e go-to-market institucional. Investidores ideais são fundos de deep tech, family offices com exposição a crypto e corporações de defesa/segurança interessadas em licenciamento.',
+  },
+  {
+    question: 'O PSI tem propriedade intelectual protegida?',
+    answer:
+      'Sim. A tecnologia core do PSI, incluindo o Protocolo Phantom Input e a arquitetura de reconstrução efêmera de chaves via SRAM PUF, possui notação inventiva registrada sob a marca Codex Hash. O whitepaper técnico completo está publicado como prior art.',
+  },
+  {
+    question: 'Quem é a equipe por trás do Projeto PSI?',
+    answer:
+      'O projeto é liderado por Ulisses Flores — Consultor Estratégico de IA, Mestrando em Inteligência Artificial pela AGTU (EUA), Arquiteto de Software e co-inventor de tecnologias blockchain (Codex Hash). Com 28+ anos de experiência em sistemas distribuídos, criptografia e engenharia de hardware.',
+  },
+  {
+    question: 'O PSI é viável tecnicamente com a tecnologia atual?',
+    answer:
+      'Sim. Cada componente individual do PSI já existe e é validado: SRAM PUF (Synopsys, Intrinsic ID), XMSS (NIST SP 800-208), TMR (padrão aeroespacial NASA/ESA), blindagem Faraday e biometria comportamental. A inovação do PSI está na integração única destas tecnologias num dispositivo de custódia soberana.',
+  },
+  {
+    question: 'Qual é o timeline de go-to-market?',
+    answer:
+      'Com financiamento adequado: 6 meses para protótipo funcional, 12 meses para certificação de segurança (Common Criteria), 18 meses para primeiras unidades em produção limitada para early adopters institucionais.',
+  },
+  {
+    question: 'Como posso solicitar uma apresentação executiva do PSI?',
+    answer:
+      'Entre em contato diretamente pelo site ulissesflores.com ou via LinkedIn. Apresentações executivas estão disponíveis para investidores qualificados, family offices e corporações interessadas em licenciamento da tecnologia.',
+  },
+];
+
 export const clubeSantoFaq: FaqItem[] = [
   {
     question: 'O que é, essencialmente, O Clube Santo?',

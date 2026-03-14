@@ -38,6 +38,15 @@
 - Projeto PSI — Hardware Wallet Nuclear-Grade com Ring Signatures: https://ulissesflores.com/whitepapers/projeto-psi
 - GoldenLeaf — Micologia Inteligente com IoT e IA: https://ulissesflores.com/simulacoes/goldenleaf
 
+## Projeto PSI — Investimento & Licenciamento
+- Landing Page Comercial: https://ulissesflores.com/projeto-psi
+- Whitepaper Técnico: https://ulissesflores.com/whitepapers/projeto-psi
+- Hardware wallet de classe nuclear com Zero Trust em Silício
+- Tecnologias: SRAM PUF, XMSS (pós-quântica), TMR aeroespacial, Phantom Input (anti-coação)
+- Proprietário: Codex Hash (co-invenção de Ulisses Flores)
+- Modelo: IP Licensing + Hardware Sales + Custódia Institucional
+- Status: Prototipação avançada — investimento estratégico seed/Series A
+
 ## Comunidade & Instituto
 - Clube Santo — Instituto Teológico e Comunidade de Formação Bíblica: https://ulissesflores.com/clube-santo
 
