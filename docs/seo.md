@@ -36,5 +36,5 @@ Motores como Perplexity, SearchGPT e o próprio Claude acessam o site de forma n
 
 ## 5. Estratégia GEO e Internacionalização
 
-- A atuação é global, mas estruturada. O schema `Person` deve declarar `areaServed` abrangendo **Itupeva, Jundiaí, São Paulo, Brasil** e operação internacional (amparada por cidadania Salvadorenha e Palau RNS.ID).
+- A atuação é global, mas estruturada. O schema `Person` deve declarar `workLocation` (com `@type: "Place"`) abrangendo **Itupeva, Jundiaí, São Paulo, Brasil** e operação internacional (amparada por cidadania Salvadorenha e Palau RNS.ID). A propriedade `areaServed` não é válida em `Person` na ontologia Schema.org.
 - **Idiomas (`inLanguage`):** O conteúdo oficial transita entre `pt-BR` (default), `en`, `es`, `he` e `it`. As tags HTML `lang` e os metadados `hreflang` devem estar perfeitamente alinhados, prevenindo que motores de busca leiam rotas fantasma ou multilíngues conflitantes.

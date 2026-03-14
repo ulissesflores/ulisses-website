@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-03-13T23:08:05.067Z",
+  "generatedAt": "2026-03-14T15:21:17.840Z",
   "totals": {
-    "all": 269,
+    "all": 268,
     "collections": 6,
     "items": 131,
     "assets": 36,
@@ -59,8 +59,7 @@
       "https://ulissesflores.com/#sw-lrblstm",
       "https://ulissesflores.com/#sw-mit507-yape",
       "https://ulissesflores.com/#ucsd",
-      "https://ulissesflores.com/#unip",
-      "https://www.ulissesflores.com"
+      "https://ulissesflores.com/#unip"
     ],
     "collections": [
       "https://ulissesflores.com/certifications",
@@ -562,7 +561,6 @@
     "https://ulissesflores.com/whitepapers/2025-hybrid-cooling-thermodynamics",
     "https://ulissesflores.com/whitepapers/2025-hybrid-cooling-thermodynamics.pdf",
     "https://ulissesflores.com/whitepapers/2025-iot-data-sovereignty",
-    "https://ulissesflores.com/whitepapers/2025-iot-data-sovereignty.pdf",
-    "https://www.ulissesflores.com"
+    "https://ulissesflores.com/whitepapers/2025-iot-data-sovereignty.pdf"
   ]
 }

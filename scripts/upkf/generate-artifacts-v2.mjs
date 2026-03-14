@@ -2757,11 +2757,11 @@ function buildCoreSiteJsonLd(identity, organization, frontmatter) {
       : null,
   );
 
+  // Web credentials (Gitcoin, Palau, etc.) — recognizedBy must point to an Organization,
+  // not a Person. Since these are self-sovereign credentials without a traditional issuing
+  // institution, we omit recognizedBy and keep only the about reference.
   const webCredentialNodes = (identity.hasCredential || []).map((credential) => ({
     ...credential,
-    recognizedBy: {
-      '@id': `${siteUrl}/#person`,
-    },
     about: {
       '@id': `${siteUrl}/#person`,
     },
@@ -2863,12 +2863,8 @@ function buildCoreSiteJsonLd(identity, organization, frontmatter) {
         : undefined,
     skills:
       occupation.appliedSkills && occupation.appliedSkills.length > 0 ? occupation.appliedSkills.join(', ') : undefined,
-    occupationalLocation: occupation.location
-      ? {
-          '@type': 'AdministrativeArea',
-          name: occupation.location,
-        }
-      : undefined,
+    // occupationalLocation removed: not a valid Schema.org property for Occupation.
+    // Location context is represented via workLocation on the Person node.
     estimatedSalary: undefined,
   }));
 
@@ -3016,8 +3012,9 @@ function buildCoreSiteJsonLd(identity, organization, frontmatter) {
         memberOf: affiliationRefs.length > 0 ? affiliationRefs : undefined,
         alumniOf: alumniOfRefs.length > 0 ? alumniOfRefs : undefined,
         affiliation: affiliationRefs.length > 0 ? affiliationRefs : undefined,
-        areaServed: geographicPlaces,
-        geographicallyServes: identity.geographicallyServes || [],
+        // areaServed/geographicallyServes removed: not valid Schema.org properties for Person.
+        // workLocation represents where the person operates professionally.
+        workLocation: geographicPlaces.length > 0 ? geographicPlaces : undefined,
         disambiguatingDescription: identity.disambiguation.en || identity.disambiguation['pt-BR'] || '',
         description: identity.description['pt-BR'] || '',
         identifier: personIdentifier.length > 0 ? personIdentifier : undefined,
