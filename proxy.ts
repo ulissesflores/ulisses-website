@@ -96,9 +96,12 @@ function mapPtAliases(pathname: string): string {
 export { stripLocalePrefix, isRewritablePublicRoute, toMarkdownPath, collapseDuplicatedPrefix, mapPtAliases };
 
 const DOUBLE_LOCALE_PATTERN = /^\/(pt-br|en|es|he|it)\/(pt-br|en|es|he|it)\//i;
+const SINGLE_LOCALE_PATTERN = /^\/(pt-br|en|es|he|it)(\/|$)/i;
 
 export function proxy(request: NextRequest) {
   const rawPathname = request.nextUrl.pathname;
+
+  // ─── Locale handling (runs for ALL users, not just bots) ───────────
 
   // Double-locale URLs (e.g. /he/he/path, /it/en/path) → 410 Gone
   // These are corrupted URLs from erroneous cross-locale crawling that never had real content.
@@ -113,6 +116,18 @@ export function proxy(request: NextRequest) {
       },
     });
   }
+
+  // Single-locale prefix (e.g. /pt-br/path, /he/path) → 301 redirect to canonical path
+  // This replaces the singleLocaleRedirect from next.config.ts to ensure proxy handles locale
+  // logic in the correct order (double-locale 410 BEFORE single-locale 301).
+  if (SINGLE_LOCALE_PATTERN.test(rawPathname)) {
+    const stripped = stripLocalePrefix(rawPathname);
+    const url = request.nextUrl.clone();
+    url.pathname = stripped;
+    return NextResponse.redirect(url, 301);
+  }
+
+  // ─── AI bot markdown rewrite (bot-only) ────────────────────────────
 
   const ua = request.headers.get('user-agent') || '';
 

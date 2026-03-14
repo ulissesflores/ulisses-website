@@ -75,15 +75,8 @@ const nextConfig: NextConfig = {
       },
     ];
 
-    // Double-locale URLs (e.g. /he/he/path, /it/en/path) now handled by middleware.ts → 410 Gone
-
-    // Fix GSC 404s: single-locale prefix pattern (e.g. /pt-br/path, /he/path)
-    // Converted from beforeFiles rewrites to 301 redirects to fix "Alternate page with canonical" errors
-    const singleLocaleRedirect = {
-      source: "/:locale(pt-br|en|es|he|it)/:path*",
-      destination: "/:path*",
-      permanent: true,
-    };
+    // Locale handling (double-locale 410 + single-locale 301) moved to proxy.ts
+    // to ensure correct evaluation order: 410 fires before 301 stripping.
 
     // Canonical host: www → non-www (defense-in-depth; Vercel Dashboard is primary control)
     const canonicalHostRedirect = {
@@ -113,7 +106,6 @@ const nextConfig: NextConfig = {
 
     return [
       canonicalHostRedirect,
-      singleLocaleRedirect,
       psiRedirect,
       ...rapaduriaRedirects,
       ...legacyRedirects,
