@@ -812,7 +812,7 @@ export const upkfMeta = {
     "sourceMd": "/upkf-source.md"
   },
   "jsonldCoverage": {
-    "markdownBytes": 85586,
+    "markdownBytes": 85582,
     "markdownLines": 1397,
     "sectionCount": 102,
     "siteGraphNodes": 43,
@@ -820,7 +820,7 @@ export const upkfMeta = {
     "fullGraphNodes": 289,
     "siteJsonldBytes": 23505,
     "publicJsonldBytes": 169257,
-    "fullJsonldBytes": 273258,
+    "fullJsonldBytes": 273254,
     "corpusFiles": 0,
     "corpusSnippets": 0,
     "corpusDirs": [],
