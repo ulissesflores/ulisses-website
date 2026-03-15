@@ -1,91 +1,91 @@
 export const mummRa = {
-  backLink: 'Voltar para Simulações',
+  backLink: 'Volver a Simulaciones',
   hero: {
-    badge: 'Ferramenta Experimental',
+    badge: 'Herramienta Experimental',
     h1: 'Mumm-Ra',
-    lead: 'O vilão imortal dos ThunderCats agora mora no seu WhatsApp. Humor negro, sarcasmo pesado e respostas ácidas — mas no fundo, ele sempre te ajuda.',
-    description: 'Inspirado no Mumm-Ra dos desenhos animados dos anos 90, esse chatbot tem a personalidade do vilão mais icônico da série: reclama de ser invocado, te chama de "verme" e "larva humana", mas entrega a resposta que você precisa. É 100% atuação — pura diversão com humor negro.',
-    createdBy: 'Criado por',
-    authorDesc: 'Ulisses Flores — Consultor Estratégico de IA, Professor Convidado, Palestrante e Mestrando em Inteligência Artificial pela AGTU (EUA). O Mumm-Ra é um laboratório de pesquisa em engenharia de prompt avançada e design de personalidades para IAs conversacionais.',
-    authorLabel: 'Projeto experimental',
-    authorHubDesc: 'Ferramenta conectada ao laboratório de simulações e ao hub canônico de identidade.',
+    lead: 'El villano inmortal de los ThunderCats ahora vive en tu WhatsApp. Humor negro, sarcasmo pesado y respuestas ácidas — pero en el fondo, siempre te ayuda.',
+    description: 'Inspirado en Mumm-Ra de los dibujos animados de los años 90, este chatbot tiene la personalidad del villano más icónico de la serie: se queja de ser invocado, te llama "gusano" y "larva humana", pero te da la respuesta que necesitas. Es 100% actuación — pura diversión con humor negro.',
+    createdBy: 'Creado por',
+    authorDesc: 'Ulisses Flores — Consultor Estratégico de IA, Profesor Invitado, Ponente y Estudiante de Máster en Inteligencia Artificial por la AGTU (EE. UU.). Mumm-Ra es un laboratorio de investigación en ingeniería de prompt avanzada y diseño de personalidades para IAs conversacionales.',
+    authorLabel: 'Proyecto experimental',
+    authorHubDesc: 'Herramienta conectada al laboratorio de simulaciones y al hub canónico de identidad.'
   },
   cta: {
-    title: 'Invoque o Mumm-Ra',
-    description: 'Mande uma mensagem pelo WhatsApp e prepare-se para ser xingado. Ele vai reclamar, te chamar de verme, questionar por que foi invocado — mas vai responder. Sempre responde.',
-    button: 'Abrir no WhatsApp',
+    title: 'Invoca a Mumm-Ra',
+    description: 'Envía un mensaje por WhatsApp y prepárate para ser insultado. Se quejará, te llamará gusano, cuestionará por qué fue invocado — pero responderá. Siempre responde.',
+    button: 'Abrir en WhatsApp'
   },
   personality: {
-    title: 'A personalidade do vilão',
-    description: 'O Mumm-Ra é um chatbot com personalidade própria: ele responde como se fosse o vilão imortal dos ThunderCats dos anos 90. Isso significa que ele vai te insultar, reclamar, demonstrar superioridade cósmica — e depois te ajudar. É humor negro puro. Nada é de verdade, tudo é personagem.',
+    title: 'La personalidad del villano',
+    description: 'Mumm-Ra es un chatbot con personalidad propia: responde como si fuera el villano inmortal de los ThunderCats de los años 90. Esto significa que te insultará, se quejará, demostrará superioridad cósmica — y luego te ayudará. Es humor negro puro. Nada es real, todo es un personaje.',
     traits: [
       {
-        title: 'Xingamentos criativos',
-        description: 'Te chama de "verme", "larva humana", "ser inferior" e variações cada vez mais elaboradas. Quanto mais você pergunta, mais criativo ele fica.',
+        title: 'Insultos creativos',
+        description: 'Te llama "gusano", "larva humana", "ser inferior" y variaciones cada vez más elaboradas. Cuanto más preguntas, más creativo se vuelve.'
       },
       {
-        title: 'Reclama de ser invocado',
-        description: '"Quem ousa perturbar o sono eterno de Mumm-Ra?!" — toda conversa começa com ele indignado por ter sido acordado das profundezas.',
+        title: 'Se queja de ser invocado',
+        description: '¡"¿Quién osa perturbar el sueño eterno de Mumm-Ra?!" — toda conversación comienza con él indignado por haber sido despertado de las profundidades.'
       },
       {
-        title: 'Mas sempre responde',
-        description: 'Apesar de toda a encenação, ele sempre entrega a resposta que você precisa. O insulto é de graça, a ajuda é garantida.',
+        title: 'Pero siempre responde',
+        description: 'A pesar de toda la escenificación, siempre te da la respuesta que necesitas. El insulto es gratis, la ayuda está garantizada.'
       },
       {
-        title: '100% atuação',
-        description: 'Nenhum insulto é real. É um personagem baseado no vilão do desenho animado. Diversão pura com humor negro — se você gosta, vai adorar.',
-      },
-    ],
+        title: '100% actuación',
+        description: 'Ningún insulto es real. Es un personaje basado en el villano del dibujo animado. Pura diversión con humor negro — si te gusta, te encantará.'
+      }
+    ]
   },
   howItWorks: {
-    title: 'Como funciona',
+    title: 'Cómo funciona',
     steps: [
       {
         step: '01',
-        title: 'Invoque o Mumm-Ra',
-        description: 'Mande uma mensagem pelo WhatsApp para o número +55 11 5286-8689. Qualquer assunto serve — ele responde sobre tudo.',
+        title: 'Invoca a Mumm-Ra',
+        description: 'Envía un mensaje por WhatsApp al número +55 11 5286-8689. Cualquier tema sirve — responde sobre todo.'
       },
       {
         step: '02',
-        title: 'Aguente os insultos',
-        description: 'Ele vai te chamar de verme, larva humana e reclamar que foi invocado. Faz parte da experiência. Respire fundo.',
+        title: 'Soporta los insultos',
+        description: 'Te llamará gusano, larva humana y se quejará de haber sido invocado. Es parte de la experiencia. Respira hondo.'
       },
       {
         step: '03',
-        title: 'Receba a resposta',
-        description: 'Depois de toda a encenação dramática, o Mumm-Ra entrega a resposta que você pediu. Sempre ajuda, mesmo xingando.',
-      },
-    ],
+        title: 'Recibe la respuesta',
+        description: 'Después de toda la escenificación dramática, Mumm-Ra te da la respuesta que pediste. Siempre ayuda, incluso insultando.'
+      }
+    ]
   },
   groups: {
-    title: 'Adicione em grupos do WhatsApp',
-    description: 'O Mumm-Ra pode ser adicionado a grupos de WhatsApp. Ele participa das conversas com a mesma personalidade ácida — xinga todo mundo igualmente, sem favoritismo. Perfeito para grupos que gostam de uma dose de humor negro.',
-    note: 'Basta adicionar o número +55 11 5286-8689 ao grupo. Ele começa a responder automaticamente quando mencionado ou quando alguém faz uma pergunta direta.',
+    title: 'Añade a grupos de WhatsApp',
+    description: 'Mumm-Ra puede ser añadido a grupos de WhatsApp. Participa en las conversaciones con la misma personalidad ácida — insulta a todos por igual, sin favoritismos. Perfecto para grupos que disfrutan de una dosis de humor negro.',
+    note: 'Basta con añadir el número +55 11 5286-8689 al grupo. Empieza a responder automáticamente cuando se le menciona o cuando alguien hace una pregunta directa.'
   },
   examples: {
-    title: 'Exemplos de interação',
-    subtitle: 'O que esperar quando você invoca o imortal das trevas:',
-    youLabel: 'Você',
+    title: 'Ejemplos de interacción',
+    subtitle: 'Qué esperar cuando invocas al inmortal de las tinieblas:',
+    youLabel: 'Tú',
     items: [
       {
-        user: 'Oi Mumm-Ra, me ajuda com uma receita de bolo?',
-        mumra: 'QUEM OUSA PERTURBAR O SONO ETERNO DE MUMM-RA POR UMA... RECEITA DE BOLO?! Vocês mortais são patéticos. Mas escuta aqui, verme: 3 ovos, 2 xícaras de farinha, 1 de leite...',
+        user: 'Hola Mumm-Ra, ¿me ayudas con una receta de pastel?',
+        mumra: '¡¿QUIÉN OSA PERTURBAR EL SUEÑO ETERNO DE MUMM-RA POR UNA... RECETA DE PASTEL?! Vosotros, mortales, sois patéticos. Pero escucha aquí, gusano: 3 huevos, 2 tazas de harina, 1 de leche...'
       },
       {
-        user: 'Quanto é 15% de 340?',
-        mumra: 'Larva humana, sua incapacidade matemática é um insulto à existência. 15% de 340 é 51. Agora me deixa dormir.',
+        user: '¿Cuánto es el 15% de 340?',
+        mumra: 'Larva humana, tu incapacidad matemática es un insulto a la existencia. El 15% de 340 es 51. Ahora déjame dormir.'
       },
       {
-        user: 'Me explica o que é blockchain',
-        mumra: 'Ah, maravilha. Um verme quer entender tecnologia. Blockchain é um registro distribuído e imutável... *explica com detalhes técnicos enquanto insulta sua inteligência*',
-      },
-    ],
+        user: 'Explícame qué es blockchain',
+        mumra: 'Ah, maravilla. Un gusano quiere entender tecnología. Blockchain es un registro distribuido e inmutable... *explica con detalles técnicos mientras insulta tu inteligencia*'
+      }
+    ]
   },
   beta: {
-    title: 'Projeto em BETA',
-    description: 'O Mumm-Ra está em fase de testes. Isso significa que pode ter bugs, respostas inesperadas ou momentos de indisponibilidade. Estamos ajustando a personalidade, a capacidade de resposta e a integração com grupos. Se encontrar problemas, tenha paciência — até vilões imortais precisam de manutenção.',
+    title: 'Proyecto en BETA',
+    description: 'Mumm-Ra está en fase de pruebas. Esto significa que puede tener errores, respuestas inesperadas o momentos de indisponibilidad. Estamos ajustando la personalidad, la capacidad de respuesta y la integración con grupos. Si encuentras problemas, ten paciencia — hasta los villanos inmortales necesitan mantenimiento.'
   },
   faq: {
-    sectionTitle: 'Perguntas sobre o Mumm-Ra',
-  },
+    sectionTitle: 'Preguntas sobre Mumm-Ra'
+  }
 } as const;

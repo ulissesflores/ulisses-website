@@ -2,6 +2,7 @@
 
 import { memo, useMemo } from 'react';
 import { motion } from 'framer-motion';
+import { useDict } from '@/lib/i18n-context';
 import type { SimulationChartExtra } from '@/components/simulations/ia-2027/types';
 import { areaPath, compactUSD, linearScale, linePath, shortMonth } from './chart-utils';
 
@@ -71,23 +72,28 @@ export const SidebarTimelineChart = memo(function SidebarTimelineChart({
   }, [history]);
 
   if (!data) {
+    const { ia2027 } = useDict();
+    const t = ia2027.simulation?.sidebar;
     return (
       <div className="h-[170px] rounded-xl border border-neutral-800 bg-neutral-900/40 flex items-center justify-center">
-        <span className="text-xs text-neutral-500 font-mono">Scroll para ver a evolucao</span>
+        <span className="text-xs text-neutral-500 font-mono">{t?.scrollToSee ?? 'Scroll to see evolution'}</span>
       </div>
     );
   }
 
+  const { ia2027: dictIa } = useDict();
+  const ts = dictIa.simulation?.sidebar;
+
   return (
     <div className="rounded-xl border border-neutral-800 bg-neutral-900/40 overflow-hidden">
       <div className="flex items-center justify-between px-3 pt-2">
-        <span className="text-[9px] font-mono uppercase text-neutral-500">Receita & Capex</span>
+        <span className="text-[9px] font-mono uppercase text-neutral-500">{ts?.revenueAndCapex ?? 'Revenue & Capex'}</span>
         <div className="flex items-center gap-3">
           <span className="flex items-center gap-1 text-[9px] text-emerald-400">
-            <span className="inline-block w-3 h-0.5 bg-emerald-500 rounded" /> Receita
+            <span className="inline-block w-3 h-0.5 bg-emerald-500 rounded" /> {ts?.revenueLabel ?? 'Revenue'}
           </span>
           <span className="flex items-center gap-1 text-[9px] text-amber-400">
-            <span className="inline-block w-3 h-0.5 bg-amber-500 rounded border-dashed" /> Capex
+            <span className="inline-block w-3 h-0.5 bg-amber-500 rounded border-dashed" /> {ts?.capexLabel ?? 'Capex'}
           </span>
         </div>
       </div>

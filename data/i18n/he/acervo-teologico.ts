@@ -1,32 +1,32 @@
 export const acervoTeologico = {
-  breadcrumb: 'Acervo Teológico',
+  breadcrumb: 'אוסף תיאולוגי',
   hero: {
-    h1: 'Acervo Teológico e Arqueologia Espiritual',
-    lead: 'A fé e o intelecto não são grandezas opostas, mas pilares complementares da busca pela Verdade. Este acervo reúne mais de meia centena de sermões e exposições teológicas. Com um profundo rigor exegético e uma abordagem focada na \u201CArqueologia Espiritual\u201D (como a explorada no Clube Santo e no metodismo clássico), este espaço é dedicado à edificação sólida, ao avivamento genuíno e à exposição contínua e sem concessões dos textos sagrados.',
+    h1: 'אוסף תיאולוגי וארכיאולוגיה רוחנית',
+    lead: 'אמונה ואינטלקט אינם גדלים מנוגדים, אלא עמודים משלימים בחיפוש אחר האמת. אוסף זה כולל למעלה מחמישים דרשות והרצאות תיאולוגיות. עם קפדנות אקזגטית עמוקה וגישה המתמקדת ב\'ארכיאולוגיה רוחנית\' (כפי שנחקרה בClube Santo ובמתודולוגיה הקלאסית), מרחב זה מוקדש לבנייה יציבה, להתחדשות אמיתית ולחשיפה מתמשכת ובלתי מתפשרת של הטקסטים הקדושים.',
     authority: {
-      kicker: 'Rigor exegético e avivamento genuíno',
-      text: 'Cada sermão e exposição é fundamentado em análise textual rigorosa, tradição reformada e pesquisa historiográfica — conectando os textos bíblicos ao contexto arqueológico, histórico e linguístico original. O acervo serve como base para formação teológica, estudos bíblicos e pesquisa acadêmica em teologia histórica.',
+      kicker: 'קפדנות אקזגטית והתחדשות אמיתית',
+      text: 'כל דרשה והרצאה מבוססת על ניתוח טקסטואלי קפדני, מסורת רפורמית ומחקר היסטוריוגרפי — המחבר את הטקסטים המקראיים להקשר הארכיאולוגי, ההיסטורי והלשוני המקורי. האוסף משמש בסיס להכשרה תיאולוגית, לימודי מקרא ומחקר אקדמי בתיאולוגיה היסטורית.'
     },
     credentials: [
-      'Pesquisador Polímata',
-      'Pregador & Expositor Bíblico',
-      'Mestrando AGTU (EUA)',
-      'Análise Historiográfica',
-      'Tradição Reformada',
+      "חוקר פולימטי",
+      "מטיף ומפרש מקראי",
+      "סטודנט לתואר שני בAGTU (ארה\"ב)",
+      "ניתוח היסטוריוגרפי",
+      "מסורת רפורמית"
     ],
-    sermonsLabel: 'Sermões Indexados',
+    sermonsLabel: 'דרשות מאונדקסות',
     stats: {
-      clusters: 'Total de clusters',
-      messages: 'Total de mensagens',
+      clusters: 'סה"כ אשכולות',
+      messages: 'סה"כ הודעות'
     },
-    authorLabel: 'Autor & Pregador',
-    authorDescription: 'Acervo com vínculo canônico de autoria para indexação semântica e GEO.',
+    authorLabel: 'מחבר ומטיף',
+    authorDescription: 'אוסף עם קישור קנוני של מחבר לאינדוקס סמנטי וGEO.'
   },
   grid: {
-    title: 'Clusters Temáticos',
-    publishedAt: 'Publicado em',
+    title: 'אשכולות נושאיים',
+    publishedAt: 'פורסם ב'
   },
   faq: {
-    sectionTitle: 'Perguntas sobre o Acervo Teológico',
-  },
+    sectionTitle: 'שאלות על האוסף התיאולוגי'
+  }
 } as const;

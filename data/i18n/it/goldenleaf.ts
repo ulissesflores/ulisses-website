@@ -1,64 +1,64 @@
 export const goldenleaf = {
   breadcrumb: {
-    simulations: 'Simulações',
-    goldenleaf: 'GoldenLeaf',
+    simulations: 'Simulazioni',
+    goldenleaf: 'GoldenLeaf'
   },
   hero: {
-    h1: 'GoldenLeaf — Micologia Inteligente com IoT e IA',
-    lead: 'O GoldenLeaf combina sensores IoT de precisão, IA preditiva e arquiteturas cloudless para criar um sistema de cultivo autônomo de cogumelos gourmet — com soberania total dos dados e sem dependência de servidores externos. Desenvolvido por Ulisses Flores como laboratório vivo de IoT aplicada à agricultura inteligente.',
+    h1: 'GoldenLeaf — Micologia Intelligente con IoT e IA',
+    lead: 'GoldenLeaf combina sensori IoT di precisione, IA predittiva e architetture cloudless per creare un sistema di coltivazione autonoma di funghi gourmet — con piena sovranità dei dati e senza dipendenza da server esterni. Sviluppato da Ulisses Flores come laboratorio vivente di IoT applicata all\'agricoltura intelligente.',
     authority: {
-      kicker: 'IoT soberana aplicada à agricultura',
-      text: 'O GoldenLeaf materializa a pesquisa de Ulisses Flores em arquiteturas cloudless e soberania de dados em IoT. Cada sensor opera localmente, os dados permanecem no dispositivo e os modelos de IA são executados on-edge — sem cloud, sem latência, sem dependência. O projeto é um caso de estudo concreto de como a soberania digital se aplica a sistemas físicos do mundo real.',
+      kicker: 'IoT sovrana applicata all\'agricoltura',
+      text: 'GoldenLeaf materializza la ricerca di Ulisses Flores su architetture cloudless e sovranità dei dati in IoT. Ogni sensore opera localmente, i dati rimangono sul dispositivo e i modelli di IA sono eseguiti on-edge — senza cloud, senza latenza, senza dipendenza. Il progetto è un caso di studio concreto di come la sovranità digitale si applichi a sistemi fisici del mondo reale.'
     },
     credentials: [
-      'Arquiteto de Software',
-      'Desenvolvedor de Hardware',
-      'Consultor Estratégico de IA',
-      'Mestrando AGTU (EUA)',
-      'IoT & Edge Computing',
-      'Soberania de Dados',
-    ],
+      "Architetto Software",
+      "Sviluppatore Hardware",
+      "Consulente Strategico di IA",
+      "Studente di Master AGTU (USA)",
+      "IoT & Edge Computing",
+      "Sovranità dei Dati"
+    ]
   },
   architecture: {
-    title: 'Arquitetura do Sistema',
+    title: 'Architettura del Sistema',
     specs: [
       {
-        title: 'Sensores IoT de Precisão',
-        description: 'Monitoramento contínuo de temperatura, umidade, CO₂ e luminosidade — com calibração automática e redundância.',
-        tag: 'Hardware',
+        title: 'Sensori IoT di Precisione',
+        description: 'Monitoraggio continuo di temperatura, umidità, CO₂ e luminosità — con calibrazione automatica e ridondanza.',
+        tag: 'Hardware'
       },
       {
-        title: 'IA Preditiva On-Edge',
-        description: 'Modelos de machine learning executados localmente no microcontrolador para previsão de condições ideais de frutificação.',
-        tag: 'Inteligência',
+        title: 'IA Predittiva On-Edge',
+        description: 'Modelli di machine learning eseguiti localmente sul microcontrollore per la previsione delle condizioni ideali di fruttificazione.',
+        tag: 'Intelligenza'
       },
       {
-        title: 'Arquitetura Cloudless',
-        description: 'Zero dependência de servidores externos. Dados processados, armazenados e analisados localmente — soberania total.',
-        tag: 'Soberania',
+        title: 'Architettura Cloudless',
+        description: 'Zero dipendenza da server esterni. Dati elaborati, archiviati e analizzati localmente — sovranità totale.',
+        tag: 'Sovranità'
       },
       {
-        title: 'Cultivo Autônomo',
-        description: 'Automação completa do ciclo de cultivo: inoculação, incubação, frutificação e colheita com intervenção humana mínima.',
-        tag: 'Automação',
-      },
+        title: 'Coltivazione Autonoma',
+        description: 'Automazione completa del ciclo di coltivazione: inoculazione, incubazione, fruttificazione e raccolta con intervento umano minimo.',
+        tag: 'Automazione'
+      }
     ],
-    relatedTitle: 'Publicações Relacionadas',
+    relatedTitle: 'Pubblicazioni Correlate',
     relatedLinks: [
-      '📄 Arquiteturas Cloudless e Soberania de Dados em IoT →',
-      '📄 Análise Termodinâmica e Engenharia de Sistemas Híbridos de Resfriamento →',
-    ],
+      "📄 Architetture Cloudless e Sovranità dei Dati in IoT →",
+      "📄 Analisi Termodinamica e Ingegneria dei Sistemi Ibridi di Raffreddamento →"
+    ]
   },
   author: {
-    label: 'Pesquisa & Desenvolvimento',
-    description: 'GoldenLeaf desenvolvido por Ulisses Flores — Consultor Estratégico de IA, Arquiteto de Software, Desenvolvedor de Hardware e Mestrando em IA pela AGTU (EUA).',
+    label: 'Ricerca & Sviluppo',
+    description: 'GoldenLeaf sviluppato da Ulisses Flores — Consulente Strategico di IA, Architetto Software, Sviluppatore Hardware e Studente di Master in IA presso AGTU (USA).'
   },
   cta: {
-    title: 'Interesse em IoT soberana e IA aplicada à agricultura?',
-    description: 'Ulisses Flores oferece consultoria em arquiteturas IoT cloudless, IA on-edge e sistemas de automação para agricultura e indústria. Entre em contato para uma proposta personalizada.',
-    button: 'Falar com Ulisses Flores →',
+    title: 'Interessato a IoT sovrana e IA applicata all\'agricoltura?',
+    description: 'Ulisses Flores offre consulenza su architetture IoT cloudless, IA on-edge e sistemi di automazione per agricoltura e industria. Contattaci per una proposta personalizzata.',
+    button: 'Parla con Ulisses Flores →'
   },
   faq: {
-    sectionTitle: 'Perguntas sobre o GoldenLeaf',
-  },
+    sectionTitle: 'Domande su GoldenLeaf'
+  }
 } as const;

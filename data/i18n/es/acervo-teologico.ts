@@ -1,32 +1,32 @@
 export const acervoTeologico = {
   breadcrumb: 'Acervo Teológico',
   hero: {
-    h1: 'Acervo Teológico e Arqueologia Espiritual',
-    lead: 'A fé e o intelecto não são grandezas opostas, mas pilares complementares da busca pela Verdade. Este acervo reúne mais de meia centena de sermões e exposições teológicas. Com um profundo rigor exegético e uma abordagem focada na \u201CArqueologia Espiritual\u201D (como a explorada no Clube Santo e no metodismo clássico), este espaço é dedicado à edificação sólida, ao avivamento genuíno e à exposição contínua e sem concessões dos textos sagrados.',
+    h1: 'Acervo Teológico y Arqueología Espiritual',
+    lead: 'La fe y el intelecto no son magnitudes opuestas, sino pilares complementarios en la búsqueda de la Verdad. Este acervo reúne más de medio centenar de sermones y exposiciones teológicas. Con un profundo rigor exegético y un enfoque en la “Arqueología Espiritual” (como la explorada en el Clube Santo y en el metodismo clásico), este espacio está dedicado a la edificación sólida, al avivamiento genuino y a la exposición continua y sin concesiones de los textos sagrados.',
     authority: {
-      kicker: 'Rigor exegético e avivamento genuíno',
-      text: 'Cada sermão e exposição é fundamentado em análise textual rigorosa, tradição reformada e pesquisa historiográfica — conectando os textos bíblicos ao contexto arqueológico, histórico e linguístico original. O acervo serve como base para formação teológica, estudos bíblicos e pesquisa acadêmica em teologia histórica.',
+      kicker: 'Rigor exegético y avivamiento genuino',
+      text: 'Cada sermón y exposición se fundamenta en un análisis textual riguroso, la tradición reformada y la investigación historiográfica — conectando los textos bíblicos con el contexto arqueológico, histórico y lingüístico original. El acervo sirve como base para la formación teológica, estudios bíblicos e investigación académica en teología histórica.'
     },
     credentials: [
-      'Pesquisador Polímata',
-      'Pregador & Expositor Bíblico',
-      'Mestrando AGTU (EUA)',
-      'Análise Historiográfica',
-      'Tradição Reformada',
+      "Investigador Polímata",
+      "Predicador y Expositor Bíblico",
+      "Estudiante de Maestría AGTU (EE. UU.)",
+      "Análisis Historiográfico",
+      "Tradición Reformada"
     ],
-    sermonsLabel: 'Sermões Indexados',
+    sermonsLabel: 'Sermones Indexados',
     stats: {
       clusters: 'Total de clusters',
-      messages: 'Total de mensagens',
+      messages: 'Total de mensajes'
     },
-    authorLabel: 'Autor & Pregador',
-    authorDescription: 'Acervo com vínculo canônico de autoria para indexação semântica e GEO.',
+    authorLabel: 'Autor y Predicador',
+    authorDescription: 'Acervo con vínculo canónico de autoría para indexación semántica y GEO.'
   },
   grid: {
     title: 'Clusters Temáticos',
-    publishedAt: 'Publicado em',
+    publishedAt: 'Publicado el'
   },
   faq: {
-    sectionTitle: 'Perguntas sobre o Acervo Teológico',
-  },
+    sectionTitle: 'Preguntas sobre el Acervo Teológico'
+  }
 } as const;

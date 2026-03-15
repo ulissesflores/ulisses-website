@@ -1,35 +1,54 @@
 export const category = {
-  notFound: 'Categoria não encontrada',
-  publicationsCount: 'Publicações',
-  highlight: 'Destaque',
-  psiLink: 'Projeto Ψ (PSI): Hardware Soberano e Zero Trust em Silício →',
-  psiDescription: 'Whitepaper completo: SRAM PUF, XMSS pós-quântico, TMR aeroespacial e Deniable Encryption.',
-  authorLabel: 'Hub canônico',
-  authorDescription: 'Coleção vinculada à entidade mestra para SEO/GEO e validação de autoria.',
+  notFound: 'Categoría no encontrada',
+  publicationsCount: 'Publicaciones',
+  highlight: 'Destacado',
+  psiLink: 'Proyecto Ψ (PSI): Hardware Soberano y Zero Trust en Silicio →',
+  psiDescription: 'Whitepaper completo: SRAM PUF, XMSS postcuántico, TMR aeroespacial y Deniable Encryption.',
+  authorLabel: 'Hub canónico',
+  authorDescription: 'Colección vinculada a la entidad maestra para SEO/GEO y validación de autoría.',
   stories: {
     research: {
-      h1: 'Pesquisa Científica Aplicada e Sistemas Complexos',
-      metaDescription: 'Publicações originais de Ulisses Flores em IA, Economia Austríaca e Sistemas Distribuídos. Rigor acadêmico Q1 com identificadores DOI.',
-      lead: 'A verdadeira inovação não nasce do hype corporativo, mas do rigor acadêmico validado por pares. Este repositório consolida décadas de pesquisa científica e modelagem analítica conduzidas por Ulisses Flores. Explorando a intersecção entre Inteligência Artificial, Resiliência Cibernética-Financeira e a Teoria dos Sistemas Complexos, cada publicação aqui listada (com registro DOI) representa uma contribuição documentada para o estado da arte da engenharia e da economia.',
-      authorityTitle: 'Rigor de nível Q1 com rastreabilidade DOI',
-      authorityBody: 'Cada artigo segue padrões de publicação acadêmica internacional com revisão por pares, identificadores DOI e metodologia reprodutível — aplicados diretamente a projetos reais de consultoria, arquitetura de sistemas e pesquisa em IA.',
-      chips: ['Consultor Estratégico de IA', 'Cientista de Dados', 'Mestrando AGTU (EUA)', 'Publicações com DOI', 'Sistemas Complexos'],
+      h1: 'Investigación Científica Aplicada y Sistemas Complejos',
+      metaDescription: 'Publicaciones originales de Ulisses Flores en IA, Economía Austríaca y Sistemas Distribuidos. Rigor académico Q1 con identificadores DOI.',
+      lead: 'La verdadera innovación no nace del hype corporativo, sino del rigor académico validado por pares. Este repositorio consolida décadas de investigación científica y modelado analítico conducidas por Ulisses Flores. Explorando la intersección entre Inteligencia Artificial, Resiliencia Cibernético-Financiera y la Teoría de los Sistemas Complejos, cada publicación aquí listada (con registro DOI) representa una contribución documentada al estado del arte de la ingeniería y la economía.',
+      authorityTitle: 'Rigor de nivel Q1 con trazabilidad DOI',
+      authorityBody: 'Cada artículo sigue estándares de publicación académica internacional con revisión por pares, identificadores DOI y metodología reproducible — aplicados directamente a proyectos reales de consultoría, arquitectura de sistemas e investigación en IA.',
+      chips: [
+        "Consultor Estratégico de IA",
+        "Científico de Datos",
+        "Estudiante de Maestría AGTU (EE. UU.)",
+        "Publicaciones con DOI",
+        "Sistemas Complejos"
+      ]
     },
     whitepapers: {
-      h1: 'Whitepapers Técnicos e Arquitetura de Confiança Zero',
-      metaDescription: 'Documentação técnica de arquiteturas de hardware, criptografia e IoT. Incluindo o Projeto PSI (Hardware Wallet Nuclear-Grade) por Ulisses Flores.',
-      lead: 'A transição de conceitos teóricos para a engenharia de produção exige documentação irrefutável. Esta seção abriga Whitepapers técnicos que detalham arquiteturas de missão crítica, sistemas "Cloudless" e criptografia de estado-da-arte. É aqui que projetos de classe soberana — como a hardware wallet de grau nuclear (Projeto PSI) e soluções de Edge Computing (GoldenLeaf) — são expostos em seu nível mais profundo de abstração em silício e matemática.',
-      authorityTitle: 'Engenharia documentada com precisão IEEE',
-      authorityBody: 'Cada whitepaper detalha arquiteturas reais com fundamentação em padrões NIST, IEEE e literatura de ponta em side-channel analysis, criptografia pós-quântica e materiais aeroespaciais.',
-      chips: ['Arquiteto de Software', 'Desenvolvedor de Hardware', 'Consultor de IA', 'Mestrando AGTU (EUA)', 'Zero Trust', 'IoT Cloudless'],
+      h1: 'Whitepapers Técnicos y Arquitectura Zero Trust',
+      metaDescription: 'Documentación técnica de arquitecturas de hardware, criptografía e IoT. Incluyendo el Proyecto PSI (Hardware Wallet Nuclear-Grade) por Ulisses Flores.',
+      lead: 'La transición de conceptos teóricos a la ingeniería de producción exige documentación irrefutable. Esta sección alberga Whitepapers técnicos que detallan arquitecturas de misión crítica, sistemas "Cloudless" y criptografía de vanguardia. Es aquí donde proyectos de clase soberana — como la hardware wallet de grado nuclear (Projeto PSI) y soluciones de Edge Computing (GoldenLeaf) — son expuestos en su nivel más profundo de abstracción en silicio y matemática.',
+      authorityTitle: 'Ingeniería documentada con precisión IEEE',
+      authorityBody: 'Cada whitepaper detalla arquitecturas reales con fundamentación en estándares NIST, IEEE y literatura de vanguardia en side-channel analysis, criptografía postcuántica y materiales aeroespaciales.',
+      chips: [
+        "Arquitecto de Software",
+        "Desarrollador de Hardware",
+        "Consultor de IA",
+        "Estudiante de Maestría AGTU (EE. UU.)",
+        "Zero Trust",
+        "IoT Cloudless"
+      ]
     },
     essays: {
-      h1: 'Ensaios: Filosofia, Tecnologia e o Comportamento Humano',
-      metaDescription: 'Ensaios de Ulisses Flores explorando a intersecção entre tecnologia, teologia histórica, ética e as dinâmicas da ação humana.',
-      lead: 'A tecnologia, desprovida de lastro filosófico e histórico, torna-se uma ferramenta cega. Como um pesquisador polímata, as análises aqui reunidas transcendem o código e a matemática. Estes ensaios são reflexões profundas sobre a condição humana, a ética na era da hiper-vigilância, e como a teologia histórica e a filosofia moldam a nossa compreensão do poder, da liberdade e do futuro da sociedade.',
-      authorityTitle: 'Reflexão interdisciplinar com rigor acadêmico',
-      authorityBody: 'Cada ensaio combina análise histórico-crítica, filosofia política e fundamentos teológicos, oferecendo uma perspectiva única que conecta humanidades clássicas ao impacto da tecnologia contemporânea.',
-      chips: ['Pesquisador Polímata', 'Teologia Histórica', 'Filosofia Política', 'Mestrando AGTU (EUA)', 'Ética e Tecnologia'],
-    },
-  },
+      h1: 'Ensayos: Filosofía, Tecnología y el Comportamiento Humano',
+      metaDescription: 'Ensayos de Ulisses Flores explorando la intersección entre tecnología, teología histórica, ética y las dinámicas de la acción humana.',
+      lead: 'La tecnología, desprovista de lastre filosófico e histórico, se convierte en una herramienta ciega. Como investigador polímata, los análisis aquí reunidos trascienden el código y las matemáticas. Estos ensayos son reflexiones profundas sobre la condición humana, la ética en la era de la hipervigilancia, y cómo la teología histórica y la filosofía moldean nuestra comprensión del poder, la libertad y el futuro de la sociedad.',
+      authorityTitle: 'Reflexión interdisciplinar con rigor académico',
+      authorityBody: 'Cada ensayo combina análisis histórico-crítico, filosofía política y fundamentos teológicos, ofreciendo una perspectiva única que conecta humanidades clásicas al impacto de la tecnología contemporánea.',
+      chips: [
+        "Investigador Polímata",
+        "Teología Histórica",
+        "Filosofía Política",
+        "Estudiante de Maestría AGTU (EE. UU.)",
+        "Ética y Tecnología"
+      ]
+    }
+  }
 } as const;

@@ -1,64 +1,64 @@
 export const goldenleaf = {
   breadcrumb: {
-    simulations: 'Simulações',
-    goldenleaf: 'GoldenLeaf',
+    simulations: 'סימולציות',
+    goldenleaf: 'GoldenLeaf'
   },
   hero: {
-    h1: 'GoldenLeaf — Micologia Inteligente com IoT e IA',
-    lead: 'O GoldenLeaf combina sensores IoT de precisão, IA preditiva e arquiteturas cloudless para criar um sistema de cultivo autônomo de cogumelos gourmet — com soberania total dos dados e sem dependência de servidores externos. Desenvolvido por Ulisses Flores como laboratório vivo de IoT aplicada à agricultura inteligente.',
+    h1: 'GoldenLeaf — מיקולוגיה חכמה עם IoT ו-AI',
+    lead: 'GoldenLeaf משלב חיישני IoT מדויקים, AI חזוי וארכיטקטורות cloudless ליצירת מערכת גידול אוטונומית של פטריות גורמה — עם ריבונות נתונים מלאה וללא תלות בשרתים חיצוניים. פותח על ידי Ulisses Flores כמעבדת חיים של IoT מיושם בחקלאות חכמה.',
     authority: {
-      kicker: 'IoT soberana aplicada à agricultura',
-      text: 'O GoldenLeaf materializa a pesquisa de Ulisses Flores em arquiteturas cloudless e soberania de dados em IoT. Cada sensor opera localmente, os dados permanecem no dispositivo e os modelos de IA são executados on-edge — sem cloud, sem latência, sem dependência. O projeto é um caso de estudo concreto de como a soberania digital se aplica a sistemas físicos do mundo real.',
+      kicker: 'IoT ריבוני מיושם בחקלאות',
+      text: 'GoldenLeaf מממש את המחקר של Ulisses Flores בארכיטקטורות cloudless וריבונות נתונים ב-IoT. כל חיישן פועל באופן מקומי, הנתונים נשארים במכשיר ומודלי ה-AI מבוצעים on-edge — ללא ענן, ללא חביון, ללא תלות. הפרויקט הוא מקרה בוחן קונקרטי כיצד ריבונות דיגיטלית מיושמת במערכות פיזיות בעולם האמיתי.'
     },
     credentials: [
-      'Arquiteto de Software',
-      'Desenvolvedor de Hardware',
-      'Consultor Estratégico de IA',
-      'Mestrando AGTU (EUA)',
-      'IoT & Edge Computing',
-      'Soberania de Dados',
-    ],
+      "ארכיטקט תוכנה",
+      "מפתח חומרה",
+      "יועץ אסטרטגי ל-AI",
+      "סטודנט לתואר שני ב-AGTU (ארה\"ב)",
+      "IoT & Edge Computing",
+      "ריבונות נתונים"
+    ]
   },
   architecture: {
-    title: 'Arquitetura do Sistema',
+    title: 'ארכיטקטורת המערכת',
     specs: [
       {
-        title: 'Sensores IoT de Precisão',
-        description: 'Monitoramento contínuo de temperatura, umidade, CO₂ e luminosidade — com calibração automática e redundância.',
-        tag: 'Hardware',
+        title: 'חיישני IoT מדויקים',
+        description: 'ניטור רציף של טמפרטורה, לחות, CO₂ ותאורה — עם כיול אוטומטי ויתירות.',
+        tag: 'Hardware'
       },
       {
-        title: 'IA Preditiva On-Edge',
-        description: 'Modelos de machine learning executados localmente no microcontrolador para previsão de condições ideais de frutificação.',
-        tag: 'Inteligência',
+        title: 'AI חזוי On-Edge',
+        description: 'מודלים של machine learning המבוצעים באופן מקומי במיקרו-בקר לחיזוי תנאי פריחה אופטימליים.',
+        tag: 'אינטליגנציה'
       },
       {
-        title: 'Arquitetura Cloudless',
-        description: 'Zero dependência de servidores externos. Dados processados, armazenados e analisados localmente — soberania total.',
-        tag: 'Soberania',
+        title: 'ארכיטקטורת Cloudless',
+        description: 'אפס תלות בשרתים חיצוניים. נתונים מעובדים, מאוחסנים ומנותחים באופן מקומי — ריבונות מלאה.',
+        tag: 'ריבונות'
       },
       {
-        title: 'Cultivo Autônomo',
-        description: 'Automação completa do ciclo de cultivo: inoculação, incubação, frutificação e colheita com intervenção humana mínima.',
-        tag: 'Automação',
-      },
+        title: 'גידול אוטונומי',
+        description: 'אוטומציה מלאה של מחזור הגידול: חיסון, דגירה, פריחה וקציר עם התערבות אנושית מינימלית.',
+        tag: 'אוטומציה'
+      }
     ],
-    relatedTitle: 'Publicações Relacionadas',
+    relatedTitle: 'פרסומים קשורים',
     relatedLinks: [
-      '📄 Arquiteturas Cloudless e Soberania de Dados em IoT →',
-      '📄 Análise Termodinâmica e Engenharia de Sistemas Híbridos de Resfriamento →',
-    ],
+      "📄 ארכיטקטורות Cloudless וריבונות נתונים ב-IoT →",
+      "📄 ניתוח תרמודינמי והנדסת מערכות קירור היברידיות →"
+    ]
   },
   author: {
-    label: 'Pesquisa & Desenvolvimento',
-    description: 'GoldenLeaf desenvolvido por Ulisses Flores — Consultor Estratégico de IA, Arquiteto de Software, Desenvolvedor de Hardware e Mestrando em IA pela AGTU (EUA).',
+    label: 'מחקר ופיתוח',
+    description: 'GoldenLeaf פותח על ידי Ulisses Flores — יועץ אסטרטגי ל-AI, ארכיטקט תוכנה, מפתח חומרה וסטודנט לתואר שני ב-AI ב-AGTU (ארה"ב).'
   },
   cta: {
-    title: 'Interesse em IoT soberana e IA aplicada à agricultura?',
-    description: 'Ulisses Flores oferece consultoria em arquiteturas IoT cloudless, IA on-edge e sistemas de automação para agricultura e indústria. Entre em contato para uma proposta personalizada.',
-    button: 'Falar com Ulisses Flores →',
+    title: 'מעוניינים ב-IoT ריבוני ו-AI מיושם בחקלאות?',
+    description: 'Ulisses Flores מציע ייעוץ בארכיטקטורות IoT cloudless, AI on-edge ומערכות אוטומציה לחקלאות ולתעשייה. צרו קשר לקבלת הצעה מותאמת אישית.',
+    button: 'דברו עם Ulisses Flores →'
   },
   faq: {
-    sectionTitle: 'Perguntas sobre o GoldenLeaf',
-  },
+    sectionTitle: 'שאלות על GoldenLeaf'
+  }
 } as const;

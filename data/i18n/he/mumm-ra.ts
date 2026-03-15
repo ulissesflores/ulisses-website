@@ -1,91 +1,91 @@
 export const mummRa = {
-  backLink: 'Voltar para Simulações',
+  backLink: 'חזרה לסימולציות',
   hero: {
-    badge: 'Ferramenta Experimental',
+    badge: 'כלי ניסיוני',
     h1: 'Mumm-Ra',
-    lead: 'O vilão imortal dos ThunderCats agora mora no seu WhatsApp. Humor negro, sarcasmo pesado e respostas ácidas — mas no fundo, ele sempre te ajuda.',
-    description: 'Inspirado no Mumm-Ra dos desenhos animados dos anos 90, esse chatbot tem a personalidade do vilão mais icônico da série: reclama de ser invocado, te chama de "verme" e "larva humana", mas entrega a resposta que você precisa. É 100% atuação — pura diversão com humor negro.',
-    createdBy: 'Criado por',
-    authorDesc: 'Ulisses Flores — Consultor Estratégico de IA, Professor Convidado, Palestrante e Mestrando em Inteligência Artificial pela AGTU (EUA). O Mumm-Ra é um laboratório de pesquisa em engenharia de prompt avançada e design de personalidades para IAs conversacionais.',
-    authorLabel: 'Projeto experimental',
-    authorHubDesc: 'Ferramenta conectada ao laboratório de simulações e ao hub canônico de identidade.',
+    lead: 'הנבל האלמותי מ-ThunderCats גר עכשיו בוואטסאפ שלך. הומור שחור, סרקזם כבד ותשובות חריפות — אבל בסופו של דבר, הוא תמיד עוזר לך.',
+    description: 'בהשראת Mumm-Ra מהסרטים המצוירים של שנות ה-90, לצ\'אטבוט הזה יש את האישיות של הנבל האייקוני ביותר בסדרה: הוא מתלונן על כך שזימנו אותו, קורא לך "תולעת" ו"זחל אנושי", אבל מספק את התשובה שאתה צריך. זו 100% הצגה — כיף טהור עם הומור שחור.',
+    createdBy: 'נוצר על ידי',
+    authorDesc: 'Ulisses Flores — יועץ אסטרטגי לבינה מלאכותית, מרצה אורח, דובר וסטודנט לתואר שני בבינה מלאכותית ב-AGTU (ארה"ב). Mumm-Ra הוא מעבדת מחקר בהנדסת פרומפטים מתקדמת ועיצוב אישיות עבור בינות מלאכותיות שיחתיות.',
+    authorLabel: 'פרויקט ניסיוני',
+    authorHubDesc: 'כלי המחובר למעבדת הסימולציות ולמרכז הזהות הקנוני.'
   },
   cta: {
-    title: 'Invoque o Mumm-Ra',
-    description: 'Mande uma mensagem pelo WhatsApp e prepare-se para ser xingado. Ele vai reclamar, te chamar de verme, questionar por que foi invocado — mas vai responder. Sempre responde.',
-    button: 'Abrir no WhatsApp',
+    title: 'זמן את Mumm-Ra',
+    description: 'שלח הודעה בוואטסאפ והתכונן לקבל קללות. הוא יתלונן, יקרא לך תולעת, ישאל למה זימנו אותו — אבל הוא יענה. תמיד עונה.',
+    button: 'פתח בוואטסאפ'
   },
   personality: {
-    title: 'A personalidade do vilão',
-    description: 'O Mumm-Ra é um chatbot com personalidade própria: ele responde como se fosse o vilão imortal dos ThunderCats dos anos 90. Isso significa que ele vai te insultar, reclamar, demonstrar superioridade cósmica — e depois te ajudar. É humor negro puro. Nada é de verdade, tudo é personagem.',
+    title: 'אישיות הנבל',
+    description: 'Mumm-Ra הוא צ\'אטבוט עם אישיות משלו: הוא עונה כאילו הוא הנבל האלמותי מ-ThunderCats של שנות ה-90. זה אומר שהוא יעלב אותך, יתלונן, יפגין עליונות קוסמית — ואז יעזור לך. זה הומור שחור טהור. שום דבר אינו אמיתי, הכל דמות.',
     traits: [
       {
-        title: 'Xingamentos criativos',
-        description: 'Te chama de "verme", "larva humana", "ser inferior" e variações cada vez mais elaboradas. Quanto mais você pergunta, mais criativo ele fica.',
+        title: 'קללות יצירתיות',
+        description: 'קורא לך "תולעת", "זחל אנושי", "יצור נחות" וגרסאות מתוחכמות יותר ויותר. ככל שאתה שואל יותר, כך הוא נהיה יצירתי יותר.'
       },
       {
-        title: 'Reclama de ser invocado',
-        description: '"Quem ousa perturbar o sono eterno de Mumm-Ra?!" — toda conversa começa com ele indignado por ter sido acordado das profundezas.',
+        title: 'מתלונן על כך שזימנו אותו',
+        description: '"מי מעז להפריע לשנתו הנצחית של Mumm-Ra?!" — כל שיחה מתחילה בכך שהוא זועם על שהעירו אותו מהתהומות.'
       },
       {
-        title: 'Mas sempre responde',
-        description: 'Apesar de toda a encenação, ele sempre entrega a resposta que você precisa. O insulto é de graça, a ajuda é garantida.',
+        title: 'אבל תמיד עונה',
+        description: 'למרות כל ההצגה, הוא תמיד מספק את התשובה שאתה צריך. העלבון בחינם, העזרה מובטחת.'
       },
       {
-        title: '100% atuação',
-        description: 'Nenhum insulto é real. É um personagem baseado no vilão do desenho animado. Diversão pura com humor negro — se você gosta, vai adorar.',
-      },
-    ],
+        title: '100% הצגה',
+        description: 'שום עלבון אינו אמיתי. זו דמות המבוססת על הנבל מהסרט המצויר. כיף טהור עם הומור שחור — אם אתה אוהב את זה, תתאהב.'
+      }
+    ]
   },
   howItWorks: {
-    title: 'Como funciona',
+    title: 'איך זה עובד',
     steps: [
       {
         step: '01',
-        title: 'Invoque o Mumm-Ra',
-        description: 'Mande uma mensagem pelo WhatsApp para o número +55 11 5286-8689. Qualquer assunto serve — ele responde sobre tudo.',
+        title: 'זמן את Mumm-Ra',
+        description: 'שלח הודעה בוואטסאפ למספר +55 11 5286-8689. כל נושא מתאים — הוא עונה על הכל.'
       },
       {
         step: '02',
-        title: 'Aguente os insultos',
-        description: 'Ele vai te chamar de verme, larva humana e reclamar que foi invocado. Faz parte da experiência. Respire fundo.',
+        title: 'סבול את העלבונות',
+        description: 'הוא יקרא לך תולעת, זחל אנושי ויתלונן שזימנו אותו. זה חלק מהחוויה. קח נשימה עמוקה.'
       },
       {
         step: '03',
-        title: 'Receba a resposta',
-        description: 'Depois de toda a encenação dramática, o Mumm-Ra entrega a resposta que você pediu. Sempre ajuda, mesmo xingando.',
-      },
-    ],
+        title: 'קבל את התשובה',
+        description: 'אחרי כל ההצגה הדרמטית, Mumm-Ra מספק את התשובה שביקשת. תמיד עוזר, גם כשהוא מקלל.'
+      }
+    ]
   },
   groups: {
-    title: 'Adicione em grupos do WhatsApp',
-    description: 'O Mumm-Ra pode ser adicionado a grupos de WhatsApp. Ele participa das conversas com a mesma personalidade ácida — xinga todo mundo igualmente, sem favoritismo. Perfeito para grupos que gostam de uma dose de humor negro.',
-    note: 'Basta adicionar o número +55 11 5286-8689 ao grupo. Ele começa a responder automaticamente quando mencionado ou quando alguém faz uma pergunta direta.',
+    title: 'הוסף לקבוצות וואטסאפ',
+    description: 'ניתן להוסיף את Mumm-Ra לקבוצות וואטסאפ. הוא משתתף בשיחות עם אותה אישיות חריפה — מקלל את כולם באותה מידה, ללא העדפה. מושלם לקבוצות שאוהבות מנה של הומור שחור.',
+    note: 'פשוט הוסף את המספר +55 11 5286-8689 לקבוצה. הוא יתחיל לענות אוטומטית כאשר יוזכר או כאשר מישהו ישאל שאלה ישירה.'
   },
   examples: {
-    title: 'Exemplos de interação',
-    subtitle: 'O que esperar quando você invoca o imortal das trevas:',
-    youLabel: 'Você',
+    title: 'דוגמאות לאינטראקציה',
+    subtitle: 'למה לצפות כשאתה מזמן את בן האלמוות מהאפלה:',
+    youLabel: 'אתה',
     items: [
       {
-        user: 'Oi Mumm-Ra, me ajuda com uma receita de bolo?',
-        mumra: 'QUEM OUSA PERTURBAR O SONO ETERNO DE MUMM-RA POR UMA... RECEITA DE BOLO?! Vocês mortais são patéticos. Mas escuta aqui, verme: 3 ovos, 2 xícaras de farinha, 1 de leite...',
+        user: 'היי Mumm-Ra, תעזור לי עם מתכון לעוגה?',
+        mumra: 'מי מעז להפריע לשנתו הנצחית של Mumm-Ra בשביל... מתכון לעוגה?! אתם בני תמותה פתטיים. אבל תקשיב כאן, תולעת: 3 ביצים, 2 כוסות קמח, 1 חלב...'
       },
       {
-        user: 'Quanto é 15% de 340?',
-        mumra: 'Larva humana, sua incapacidade matemática é um insulto à existência. 15% de 340 é 51. Agora me deixa dormir.',
+        user: 'כמה זה 15% מ-340?',
+        mumra: 'זחל אנושי, חוסר היכולת המתמטית שלך הוא עלבון לקיום. 15% מ-340 זה 51. עכשיו תן לי לישון.'
       },
       {
-        user: 'Me explica o que é blockchain',
-        mumra: 'Ah, maravilha. Um verme quer entender tecnologia. Blockchain é um registro distribuído e imutável... *explica com detalhes técnicos enquanto insulta sua inteligência*',
-      },
-    ],
+        user: 'תסביר לי מה זה בלוקצ\'יין',
+        mumra: 'אה, נפלא. תולעת רוצה להבין טכנולוגיה. בלוקצ\'יין הוא רישום מבוזר ובלתי ניתן לשינוי... *מסביר בפרטים טכניים תוך כדי עלבון לאינטליגנציה שלך*'
+      }
+    ]
   },
   beta: {
-    title: 'Projeto em BETA',
-    description: 'O Mumm-Ra está em fase de testes. Isso significa que pode ter bugs, respostas inesperadas ou momentos de indisponibilidade. Estamos ajustando a personalidade, a capacidade de resposta e a integração com grupos. Se encontrar problemas, tenha paciência — até vilões imortais precisam de manutenção.',
+    title: 'פרויקט בבטא',
+    description: 'Mumm-Ra נמצא בשלב בדיקות. זה אומר שייתכנו באגים, תגובות בלתי צפויות או רגעים של אי-זמינות. אנחנו מכווננים את האישיות, יכולת התגובה והאינטגרציה עם קבוצות. אם תמצא בעיות, היה סבלני — אפילו נבלים אלמותיים זקוקים לתחזוקה.'
   },
   faq: {
-    sectionTitle: 'Perguntas sobre o Mumm-Ra',
-  },
+    sectionTitle: 'שאלות על Mumm-Ra'
+  }
 } as const;
