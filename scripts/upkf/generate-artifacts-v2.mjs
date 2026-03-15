@@ -57,6 +57,54 @@ const SOTA_GEOGRAPHIC_SERVICES = [
   'Israel',
 ];
 
+/**
+ * Build rich areaServed array with GeoCoordinates for Organization JSON-LD.
+ * Mirrors data/regions.ts but inlined here since MJS can't import TS.
+ */
+function buildAreaServedJsonLd() {
+  const regions = [
+    { country: 'Brasil', code: 'BR', cities: [
+      { name: 'São Paulo', lat: -23.5505, lng: -46.6333 },
+      { name: 'Jundiaí', lat: -23.1857, lng: -46.8978 },
+      { name: 'Campinas', lat: -22.9099, lng: -47.0626 },
+      { name: 'Itupeva', lat: -23.1530, lng: -47.0578 },
+    ]},
+    { country: 'El Salvador', code: 'SV', cities: [
+      { name: 'San Salvador', lat: 13.6929, lng: -89.2182 },
+    ]},
+    { country: 'Itália', code: 'IT', cities: [
+      { name: 'Roma', lat: 41.9028, lng: 12.4964 },
+    ]},
+    { country: 'Israel', code: 'IL', cities: [
+      { name: 'Tel Aviv', lat: 32.0853, lng: 34.7818 },
+    ]},
+    { country: 'Estados Unidos', code: 'US', cities: [
+      { name: 'Houston', lat: 29.7604, lng: -95.3698 },
+      { name: 'Dallas', lat: 32.7767, lng: -96.7970 },
+      { name: 'San Antonio', lat: 29.4241, lng: -98.4936 },
+      { name: 'Frisco', lat: 33.1507, lng: -96.8236 },
+      { name: 'Plano', lat: 33.0198, lng: -96.6989 },
+      { name: 'Highland Park', lat: 32.8335, lng: -96.7920 },
+    ]},
+  ];
+  return regions.flatMap((region) =>
+    region.cities.map((city) => ({
+      '@type': 'Place',
+      name: `${city.name}, ${region.country}`,
+      geo: {
+        '@type': 'GeoCoordinates',
+        latitude: city.lat,
+        longitude: city.lng,
+      },
+      address: {
+        '@type': 'PostalAddress',
+        addressCountry: region.code,
+        addressLocality: city.name,
+      },
+    })),
+  );
+}
+
 const CATEGORY_METADATA = {
   research: {
     title: 'Research',
@@ -3063,7 +3111,8 @@ function buildCoreSiteJsonLd(identity, organization, frontmatter) {
             }
           : undefined,
         description: organization.description['pt-BR'] || '',
-        areaServed: geographicPlaces.length > 0 ? geographicPlaces : undefined,
+        areaServed: buildAreaServedJsonLd(),
+        knowsLanguage: ['pt-BR', 'en', 'es', 'it', 'he'],
       },
       {
         '@id': `${siteUrl}/#codexhash-research`,
@@ -4058,6 +4107,13 @@ function buildLlmsTxt(identity, publications, generatedAt, knowledgeData) {
     '## Manifestos',
     `- ${siteUrl}/clube-santo — O Clube Santo: Um Avivamento para a Era Digital`,
     `- ${siteUrl}/mundo-politico — Manifesto: A Mecânica do Poder e a Busca pela Verdade`,
+    '',
+    '## Available Languages',
+    `- pt-BR (default): ${siteUrl}/`,
+    `- English: ${siteUrl}/en/`,
+    `- Español: ${siteUrl}/es/`,
+    `- Italiano: ${siteUrl}/it/`,
+    `- עברית (Hebrew): ${siteUrl}/he/`,
     '',
     '## FAQ Canônico',
     '',

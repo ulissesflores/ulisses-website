@@ -14,6 +14,32 @@ export const localeToHreflang: Record<Locale, string> = {
   he: 'he',
 };
 
+/** Human-readable labels for language switcher UI */
+export const localeLabels: Record<Locale, string> = {
+  'pt-br': 'Português',
+  en: 'English',
+  es: 'Español',
+  it: 'Italiano',
+  he: 'עברית',
+};
+
+/** OpenGraph locale codes (used in metadata) */
+export const localeToOgLocale: Record<Locale, string> = {
+  'pt-br': 'pt_BR',
+  en: 'en_US',
+  es: 'es_ES',
+  it: 'it_IT',
+  he: 'he_IL',
+};
+
+/** RTL locales */
+const rtlLocales: ReadonlySet<Locale> = new Set(['he']);
+
+/** Returns text direction for a locale: 'rtl' for Hebrew, 'ltr' for all others */
+export function getDirection(locale: Locale): 'ltr' | 'rtl' {
+  return rtlLocales.has(locale) ? 'rtl' : 'ltr';
+}
+
 export function isLocale(value: string): value is Locale {
   return supportedLocales.includes(value as Locale);
 }

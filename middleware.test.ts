@@ -5,7 +5,8 @@ import {
   toMarkdownPath,
   collapseDuplicatedPrefix,
   mapPtAliases,
-} from './proxy';
+  extractLocale,
+} from './middleware';
 
 describe('stripLocalePrefix', () => {
   it('returns / for root', () => {
@@ -56,6 +57,8 @@ describe('isRewritablePublicRoute', () => {
     expect(isRewritablePublicRoute('/mundo-politico')).toBe(true);
     expect(isRewritablePublicRoute('/certifications')).toBe(true);
     expect(isRewritablePublicRoute('/simulacoes')).toBe(true);
+    expect(isRewritablePublicRoute('/clube-santo')).toBe(true);
+    expect(isRewritablePublicRoute('/projeto-psi')).toBe(true);
   });
 
   it('returns true for nested paths under rewritable prefixes', () => {
@@ -106,7 +109,9 @@ describe('collapseDuplicatedPrefix', () => {
 
   it('handles all collection segments', () => {
     expect(collapseDuplicatedPrefix('/whitepapers/whitepapers/x')).toBe('/whitepapers/x');
-    expect(collapseDuplicatedPrefix('/acervo-teologico/acervo-teologico/x')).toBe('/acervo-teologico/x');
+    expect(collapseDuplicatedPrefix('/acervo-teologico/acervo-teologico/x')).toBe(
+      '/acervo-teologico/x',
+    );
     expect(collapseDuplicatedPrefix('/mundo-politico/mundo-politico/x')).toBe('/mundo-politico/x');
     expect(collapseDuplicatedPrefix('/simulacoes/simulacoes/x')).toBe('/simulacoes/x');
   });
@@ -134,5 +139,24 @@ describe('mapPtAliases', () => {
     expect(mapPtAliases('/research')).toBe('/research');
     expect(mapPtAliases('/identidade')).toBe('/identidade');
     expect(mapPtAliases('/')).toBe('/');
+  });
+});
+
+describe('extractLocale', () => {
+  it('returns locale from path', () => {
+    expect(extractLocale('/en/clube-santo')).toBe('en');
+    expect(extractLocale('/pt-br/identidade')).toBe('pt-br');
+    expect(extractLocale('/he/mundo-politico')).toBe('he');
+  });
+
+  it('returns null for non-locale paths', () => {
+    expect(extractLocale('/clube-santo')).toBeNull();
+    expect(extractLocale('/')).toBeNull();
+    expect(extractLocale('/fr/page')).toBeNull();
+  });
+
+  it('is case-insensitive', () => {
+    expect(extractLocale('/EN/page')).toBe('en');
+    expect(extractLocale('/PT-BR/page')).toBe('pt-br');
   });
 });

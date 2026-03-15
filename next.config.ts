@@ -75,8 +75,8 @@ const nextConfig: NextConfig = {
       },
     ];
 
-    // Locale handling (double-locale 410 + single-locale 301) moved to proxy.ts
-    // to ensure correct evaluation order: 410 fires before 301 stripping.
+    // Locale handling (double-locale 410 + single-locale 301 + i18n rewrite) moved to middleware.ts
+    // to ensure correct evaluation order: 410 fires before 301 stripping before locale rewrite.
 
     // Canonical host: www → non-www (defense-in-depth; Vercel Dashboard is primary control)
     const canonicalHostRedirect = {

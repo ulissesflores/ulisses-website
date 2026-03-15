@@ -818,9 +818,9 @@ export const upkfMeta = {
     "siteGraphNodes": 43,
     "publicGraphNodes": 186,
     "fullGraphNodes": 289,
-    "siteJsonldBytes": 23378,
-    "publicJsonldBytes": 169130,
-    "fullJsonldBytes": 273127,
+    "siteJsonldBytes": 25805,
+    "publicJsonldBytes": 171557,
+    "fullJsonldBytes": 275554,
     "corpusFiles": 0,
     "corpusSnippets": 0,
     "corpusDirs": [],
@@ -1231,40 +1231,193 @@ export const siteJsonLd = {
       "areaServed": [
         {
           "@type": "Place",
-          "name": "Itupeva"
+          "name": "São Paulo, Brasil",
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": -23.5505,
+            "longitude": -46.6333
+          },
+          "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "BR",
+            "addressLocality": "São Paulo"
+          }
         },
         {
           "@type": "Place",
-          "name": "Jundiaí"
+          "name": "Jundiaí, Brasil",
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": -23.1857,
+            "longitude": -46.8978
+          },
+          "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "BR",
+            "addressLocality": "Jundiaí"
+          }
         },
         {
           "@type": "Place",
-          "name": "Campinas"
+          "name": "Campinas, Brasil",
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": -22.9099,
+            "longitude": -47.0626
+          },
+          "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "BR",
+            "addressLocality": "Campinas"
+          }
         },
         {
           "@type": "Place",
-          "name": "São Paulo"
+          "name": "Itupeva, Brasil",
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": -23.153,
+            "longitude": -47.0578
+          },
+          "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "BR",
+            "addressLocality": "Itupeva"
+          }
         },
         {
           "@type": "Place",
-          "name": "Brazil"
+          "name": "San Salvador, El Salvador",
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 13.6929,
+            "longitude": -89.2182
+          },
+          "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "SV",
+            "addressLocality": "San Salvador"
+          }
         },
         {
           "@type": "Place",
-          "name": "Italy"
+          "name": "Roma, Itália",
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 41.9028,
+            "longitude": 12.4964
+          },
+          "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "IT",
+            "addressLocality": "Roma"
+          }
         },
         {
           "@type": "Place",
-          "name": "United States"
+          "name": "Tel Aviv, Israel",
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 32.0853,
+            "longitude": 34.7818
+          },
+          "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "IL",
+            "addressLocality": "Tel Aviv"
+          }
         },
         {
           "@type": "Place",
-          "name": "El Salvador"
+          "name": "Houston, Estados Unidos",
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 29.7604,
+            "longitude": -95.3698
+          },
+          "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "US",
+            "addressLocality": "Houston"
+          }
         },
         {
           "@type": "Place",
-          "name": "Israel"
+          "name": "Dallas, Estados Unidos",
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 32.7767,
+            "longitude": -96.797
+          },
+          "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "US",
+            "addressLocality": "Dallas"
+          }
+        },
+        {
+          "@type": "Place",
+          "name": "San Antonio, Estados Unidos",
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 29.4241,
+            "longitude": -98.4936
+          },
+          "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "US",
+            "addressLocality": "San Antonio"
+          }
+        },
+        {
+          "@type": "Place",
+          "name": "Frisco, Estados Unidos",
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 33.1507,
+            "longitude": -96.8236
+          },
+          "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "US",
+            "addressLocality": "Frisco"
+          }
+        },
+        {
+          "@type": "Place",
+          "name": "Plano, Estados Unidos",
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 33.0198,
+            "longitude": -96.6989
+          },
+          "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "US",
+            "addressLocality": "Plano"
+          }
+        },
+        {
+          "@type": "Place",
+          "name": "Highland Park, Estados Unidos",
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 32.8335,
+            "longitude": -96.792
+          },
+          "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "US",
+            "addressLocality": "Highland Park"
+          }
         }
+      ],
+      "knowsLanguage": [
+        "pt-BR",
+        "en",
+        "es",
+        "it",
+        "he"
       ]
     },
     {

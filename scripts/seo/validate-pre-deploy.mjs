@@ -170,27 +170,27 @@ function validateCanonicalDomain() {
 // ─── 3. Middleware check ─────────────────────────────────────────────
 
 function validateProxy() {
-  console.log('\n🛡️  Validating proxy (double-locale 410)...');
+  console.log('\n🛡️  Validating middleware (double-locale 410 + i18n routing)...');
 
-  // Next.js 16 uses proxy.ts instead of middleware.ts
-  const proxyPath = path.join(ROOT, 'proxy.ts');
   const middlewarePath = path.join(ROOT, 'middleware.ts');
 
-  if (fs.existsSync(middlewarePath)) {
-    error('middleware.ts exists alongside proxy.ts — Next.js 16 will reject this');
+  if (!fs.existsSync(middlewarePath)) {
+    error('middleware.ts not found (locale routing and double-locale 410 not configured)');
     return;
   }
 
-  if (!fs.existsSync(proxyPath)) {
-    warn('proxy.ts does not exist (double-locale 410 not configured)');
-    return;
-  }
+  const content = fs.readFileSync(middlewarePath, 'utf-8');
 
-  const content = fs.readFileSync(proxyPath, 'utf-8');
   if (content.includes('410') && content.includes('DOUBLE_LOCALE')) {
-    ok('proxy.ts returns 410 for double-locale patterns');
+    ok('middleware.ts returns 410 for double-locale patterns');
   } else {
-    warn('proxy.ts exists but does not handle double-locale 410');
+    warn('middleware.ts exists but does not handle double-locale 410');
+  }
+
+  if (content.includes('DEFAULT_LOCALE') && content.includes('rewrite')) {
+    ok('middleware.ts rewrites bare paths to default locale');
+  } else {
+    warn('middleware.ts missing invisible locale rewrite');
   }
 }
 
@@ -213,16 +213,15 @@ function validateNextConfig() {
     warn('No canonical host redirect found in next.config.ts');
   }
 
-  // Single-locale redirect moved to proxy.ts — verify it's there
-  const proxyContent = fs.existsSync(path.join(ROOT, 'proxy.ts'))
-    ? fs.readFileSync(path.join(ROOT, 'proxy.ts'), 'utf-8')
-    : '';
-  if (proxyContent.includes('SINGLE_LOCALE_PATTERN') && proxyContent.includes('301')) {
-    ok('Single-locale redirect (301) configured in proxy.ts');
+  // Single-locale redirect (pt-br/path → /path) in middleware.ts
+  const mwPath = path.join(ROOT, 'middleware.ts');
+  const mwContent = fs.existsSync(mwPath) ? fs.readFileSync(mwPath, 'utf-8') : '';
+  if (mwContent.includes('SINGLE_LOCALE_PATTERN') && mwContent.includes('301')) {
+    ok('Single-locale redirect (301) configured in middleware.ts');
   } else if (content.includes('singleLocaleRedirect')) {
     ok('Single-locale redirect (301) configured in next.config.ts');
   } else {
-    warn('No single-locale redirect found in proxy.ts or next.config.ts');
+    warn('No single-locale redirect found in middleware.ts or next.config.ts');
   }
 }
 
