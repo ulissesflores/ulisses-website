@@ -8,6 +8,7 @@ import { AuthorHubCard } from '@/components/author-hub-card';
 import { FaqSection } from '@/components/faq-section';
 import { acervoTeologicoFaq } from '@/data/faq';
 import { getDictionary } from '@/lib/get-dictionary';
+import { buildSermonI18nMaps, localizeCluster } from '@/data/sermons-i18n';
 
 interface PageProps {
   params: Promise<{ locale: string }>;
@@ -48,6 +49,10 @@ export default async function AcervoTeologicoPage({ params }: PageProps) {
   const dict = await getDictionary(locale);
   const t = dict.acervoTeologico;
 
+  // Build locale-aware overlay
+  const { sermonMap, clusterMap } = buildSermonI18nMaps(locale);
+  const localizedClusters = acervoClusters.map((c) => localizeCluster(c, clusterMap, sermonMap));
+
   const pageJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'CollectionPage',
@@ -62,7 +67,7 @@ export default async function AcervoTeologicoPage({ params }: PageProps) {
     author: {
       '@id': `${upkfMeta.primaryWebsite}/#person`,
     },
-    hasPart: acervoSermons.map((sermon) => ({
+    hasPart: localizedClusters.flatMap((c) => c.sermons).map((sermon) => ({
       '@type': 'WebPage',
       '@id': `${upkfMeta.primaryWebsite}${sermon.canonicalPath}`,
       name: sermon.seoTitle,
@@ -133,7 +138,7 @@ export default async function AcervoTeologicoPage({ params }: PageProps) {
         <h2 className='text-2xl font-bold text-white mb-8'>{t.grid.title}</h2>
 
         <div className='space-y-8'>
-          {acervoClusters.map((cluster) => (
+          {localizedClusters.map((cluster) => (
             <section
               key={cluster.id}
               id={`cluster-${cluster.id}`}

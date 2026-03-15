@@ -25,7 +25,7 @@ const FlopScalingChart = memo(function FlopScalingChart() {
         const width = linearScale(item.log, minLog, maxLog, 8, 100);
         return (
           <div key={item.label} className="flex items-center gap-3">
-            <span className="text-[10px] font-mono text-neutral-400 w-16 text-right shrink-0">{item.label}</span>
+            <span className="text-[10px] font-mono text-neutral-400 w-16 text-end shrink-0">{item.label}</span>
             <div className="flex-1 bg-neutral-800 rounded-md h-7 relative overflow-hidden">
               <motion.div
                 className="h-full rounded-md"
@@ -65,7 +65,7 @@ const CodingAutomationChart = memo(function CodingAutomationChart() {
         const pct = (item.value / item.max) * 100;
         return (
           <div key={item.label} className="flex items-center gap-3">
-            <span className="text-[10px] font-mono text-neutral-400 w-20 text-right shrink-0">{item.label}</span>
+            <span className="text-[10px] font-mono text-neutral-400 w-20 text-end shrink-0">{item.label}</span>
             <div className="flex-1 bg-neutral-800 rounded-md h-6 relative overflow-hidden">
               <motion.div
                 className="h-full bg-emerald-500/70 rounded-md"
@@ -170,7 +170,7 @@ const ResearchMultiplierChart = memo(function ResearchMultiplierChart() {
         const width = Math.min(100, (Math.log10(s.mult) / Math.log10(50)) * 100);
         return (
           <div key={s.label} className="flex items-center gap-2">
-            <span className="text-[9px] font-mono text-neutral-500 w-16 text-right shrink-0">{s.label}</span>
+            <span className="text-[9px] font-mono text-neutral-500 w-16 text-end shrink-0">{s.label}</span>
             <div className="flex-1 relative">
               <div className="bg-neutral-800 rounded-md h-7 overflow-hidden">
                 <motion.div
@@ -301,7 +301,7 @@ const AlignmentSpectrumChart = memo(function AlignmentSpectrumChart() {
           viewport={{ once: true }}
           transition={{ delay: i * 0.1 }}
         >
-          <span className="w-16 text-[10px] font-mono text-right" style={{ color: a.color }}>
+          <span className="w-16 text-[10px] font-mono text-end" style={{ color: a.color }}>
             {a.label}
           </span>
           <div className="flex-1 relative h-5">
@@ -368,7 +368,7 @@ const FinalDashboardChart = memo(function FinalDashboardChart() {
                   transition={{ duration: 0.5 }}
                 />
               </div>
-              <span className="text-[9px] font-mono text-neutral-300 w-8 text-right">{(value as number).toFixed(1)}x</span>
+              <span className="text-[9px] font-mono text-neutral-300 w-8 text-end">{(value as number).toFixed(1)}x</span>
             </div>
           ))}
         </div>
@@ -378,7 +378,7 @@ const FinalDashboardChart = memo(function FinalDashboardChart() {
           <div className="text-lg font-bold text-white">330K</div>
           <div className="text-[9px] text-neutral-500 uppercase">{t?.activeCopies ?? 'Active copies'}</div>
         </div>
-        <div className="text-right">
+        <div className="text-end">
           <div className="text-lg font-bold text-white">5.7x</div>
           <div className="text-[9px] text-neutral-500 uppercase">{t?.speedLabel ?? 'Speed'}</div>
         </div>

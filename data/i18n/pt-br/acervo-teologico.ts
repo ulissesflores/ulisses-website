@@ -36,4 +36,11 @@ export const acervoTeologico = {
   faq: {
     sectionTitle: 'Perguntas sobre o Acervo Teológico',
   },
+  detail: {
+    backLink: '← Voltar para o Acervo Teológico',
+    publishedAt: 'Publicado em',
+    authorLabel: 'Autor',
+    studySummary: 'Resumo do Estudo',
+    sourceLabel: 'Fonte da Mensagem',
+  },
 } as const;

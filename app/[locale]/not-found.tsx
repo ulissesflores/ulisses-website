@@ -32,7 +32,7 @@ export default function NotFound() {
               <Link
                 key={link.href}
                 href={link.href}
-                className='flex items-center gap-3 rounded-xl border border-neutral-800 bg-neutral-900/40 px-5 py-4 hover:border-emerald-500/40 hover:text-emerald-300 transition-colors text-left'
+                className='flex items-center gap-3 rounded-xl border border-neutral-800 bg-neutral-900/40 px-5 py-4 hover:border-emerald-500/40 hover:text-emerald-300 transition-colors text-start'
               >
                 <Icon size={20} className='text-emerald-500 shrink-0' />
                 <div>

@@ -336,10 +336,10 @@ export default async function ProjetoPsiPage({ params }: PageProps) {
               <table className='w-full text-sm border border-neutral-700 rounded-lg overflow-hidden'>
                 <thead>
                   <tr className='bg-neutral-900/80 text-neutral-200'>
-                    <th className='px-4 py-3 text-left border-b border-neutral-700 font-semibold'>Material</th>
-                    <th className='px-4 py-3 text-left border-b border-neutral-700 font-semibold'>Condutividade</th>
-                    <th className='px-4 py-3 text-left border-b border-neutral-700 font-semibold'>SE (RF)</th>
-                    <th className='px-4 py-3 text-left border-b border-neutral-700 font-semibold'>Vantagem Estrutural</th>
+                    <th className='px-4 py-3 text-start border-b border-neutral-700 font-semibold'>Material</th>
+                    <th className='px-4 py-3 text-start border-b border-neutral-700 font-semibold'>Condutividade</th>
+                    <th className='px-4 py-3 text-start border-b border-neutral-700 font-semibold'>SE (RF)</th>
+                    <th className='px-4 py-3 text-start border-b border-neutral-700 font-semibold'>Vantagem Estrutural</th>
                   </tr>
                 </thead>
                 <tbody className='text-neutral-400'>
@@ -585,9 +585,9 @@ export default async function ProjetoPsiPage({ params }: PageProps) {
               <table className='w-full text-sm border border-neutral-700 rounded-lg overflow-hidden'>
                 <thead>
                   <tr className='bg-neutral-900/80 text-neutral-200'>
-                    <th className='px-4 py-3 text-left border-b border-neutral-700 font-semibold'>Biomarcador</th>
-                    <th className='px-4 py-3 text-left border-b border-neutral-700 font-semibold'>Hardware</th>
-                    <th className='px-4 py-3 text-left border-b border-neutral-700 font-semibold'>Padrão Sob Coerção</th>
+                    <th className='px-4 py-3 text-start border-b border-neutral-700 font-semibold'>Biomarcador</th>
+                    <th className='px-4 py-3 text-start border-b border-neutral-700 font-semibold'>Hardware</th>
+                    <th className='px-4 py-3 text-start border-b border-neutral-700 font-semibold'>Padrão Sob Coerção</th>
                   </tr>
                 </thead>
                 <tbody className='text-neutral-400'>

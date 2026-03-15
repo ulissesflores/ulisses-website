@@ -10,7 +10,7 @@ export const acervoTeologico = {
       "spiritual archaeology",
       "biblical exegesis",
       "Ulisses Flores preacher",
-      "clube santo",
+      "Clube Santo",
       "revival"
     ],
     ogTitle: 'Theological Collection and Spiritual Archaeology | Ulisses Flores',
@@ -19,10 +19,10 @@ export const acervoTeologico = {
   breadcrumb: 'Theological Collection',
   hero: {
     h1: 'Theological Collection and Spiritual Archaeology',
-    lead: 'Faith and intellect are not opposing forces, but complementary pillars in the pursuit of Truth. This collection gathers over fifty sermons and theological expositions. With profound exegetical rigor and an approach focused on “Spiritual Archaeology” (as explored in Clube Santo and classical Methodism), this space is dedicated to solid edification, genuine revival, and the continuous and uncompromising exposition of sacred texts.',
+    lead: 'Faith and intellect are not opposing forces, but complementary pillars in the pursuit of Truth. This collection gathers over half a hundred sermons and theological expositions. With profound exegetical rigor and an approach focused on “Spiritual Archaeology” (as explored in Clube Santo and classical Methodism), this space is dedicated to solid edification, genuine revival, and the continuous, uncompromising exposition of sacred texts.',
     authority: {
       kicker: 'Exegetical rigor and genuine revival',
-      text: 'Each sermon and exposition is founded on rigorous textual analysis, Reformed tradition, and historiographical research — connecting biblical texts to their original archaeological, historical, and linguistic context. The collection serves as a basis for theological training, biblical studies, and academic research in historical theology.'
+      text: 'Each sermon and exposition is grounded in rigorous textual analysis, Reformed tradition, and historiographical research — connecting biblical texts to their original archaeological, historical, and linguistic context. The collection serves as a basis for theological training, biblical studies, and academic research in historical theology.'
     },
     credentials: [
       "Polymath Researcher",
@@ -45,5 +45,12 @@ export const acervoTeologico = {
   },
   faq: {
     sectionTitle: 'Questions about the Theological Collection'
+  },
+  detail: {
+    backLink: '← Back to Theological Collection',
+    publishedAt: 'Published on',
+    authorLabel: 'Author',
+    studySummary: 'Study Summary',
+    sourceLabel: 'Message Source'
   }
 } as const;

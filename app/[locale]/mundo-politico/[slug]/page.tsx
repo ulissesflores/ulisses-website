@@ -4,9 +4,11 @@ import { notFound } from 'next/navigation';
 import { knowledgeData } from '@/data/knowledge';
 import { upkfMeta } from '@/data/generated/upkf.generated';
 import { AuthorHubCard } from '@/components/author-hub-card';
+import { defaultLocale, isLocale, localeToOgLocale, type Locale } from '@/data/i18n';
+import { getDictionary } from '@/lib/get-dictionary';
 
 interface PageProps {
-  params: Promise<{ slug: string }>;
+  params: Promise<{ slug: string; locale: string }>;
 }
 
 export function generateStaticParams() {
@@ -16,7 +18,8 @@ export function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-  const { slug } = await params;
+  const { slug, locale: rawLocale } = await params;
+  const locale = (isLocale(rawLocale) ? rawLocale : defaultLocale) as Locale;
   const post = knowledgeData.blog.posts.find((item) => item.slug === slug);
 
   if (!post) {
@@ -41,12 +44,15 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       title: post.headline,
       description: post.summary,
       publishedTime: post.publishedAt,
+      locale: localeToOgLocale[locale],
     },
   };
 }
 
 export default async function MundoPoliticoPostPage({ params }: PageProps) {
-  const { slug } = await params;
+  const { slug, locale: rawLocale } = await params;
+  const locale = (isLocale(rawLocale) ? rawLocale : defaultLocale) as Locale;
+  const dict = await getDictionary(locale);
   const post = knowledgeData.blog.posts.find((item) => item.slug === slug);
 
   if (!post) {
@@ -60,7 +66,7 @@ export default async function MundoPoliticoPostPage({ params }: PageProps) {
     headline: post.headline,
     description: post.summary,
     datePublished: post.publishedAt,
-    inLanguage: knowledgeData.blog.inLanguage || 'pt-BR',
+    inLanguage: locale,
     url: post.url,
     mainEntityOfPage: `${upkfMeta.primaryWebsite}${post.canonicalPath}`,
     author: {

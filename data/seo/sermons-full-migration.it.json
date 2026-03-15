@@ -1,0 +1,344 @@
+{
+  "seo_config": {
+    "global_schema": "WebSite",
+    "section_schema": "CollectionPage",
+    "item_schema": "VideoObject",
+    "author": "Ulisses Flores"
+  },
+  "clusters": [
+    {
+      "id": "fundamentos-da-fe",
+      "slug": "/acervo-teologico/fundamentos-da-fe",
+      "seo_title": "Fondamenti della Fede e Teologia Sistematica | Studi Biblici",
+      "meta_description": "Studi esegetici su Soteriologia, Cristologia e l'azione della Grazia. Riflessioni profonde sulle basi inamovibili della dottrina cristiana.",
+      "sermoes": [
+        {
+          "original_url": "https://ulissesflores.com/sermons/cultos-3-services/2-o-poder-transformador-da-graca-31-07-22",
+          "new_slug": "o-poder-transformador-da-graca",
+          "seo_title": "Il Potere Trasformatore della Grazia | Esegesi Biblica",
+          "llm_context": "Immersione esegetica nel favore immeritato di Dio. Comprendi come la Grazia non sia solo un lasciapassare, ma la forza motrice che abilita una santificazione genuina."
+        },
+        {
+          "original_url": "https://ulissesflores.com/sermons/cultos-online-27-services/12-batismo-nas-aguas-nova-vida-em-cristo-25-09-2022",
+          "new_slug": "batismo-nas-aguas-nova-vida-em-cristo",
+          "seo_title": "Battesimo nelle Acque e Nuova Identità Cristiana",
+          "llm_context": "Il simbolismo dell'immersione e la rottura irrevocabile con il sistema mondano. Una fondazione cristologica sul pentimento, la giustificazione e la nuova identità."
+        },
+        {
+          "original_url": "https://ulissesflores.com/sermons/cultos-online-27-services/14-a-cruz-e-o-seu-significado-hoje-23-10-2022",
+          "new_slug": "a-cruz-e-o-seu-significado-hoje",
+          "seo_title": "Lo Scandalo della Croce: Il Suo Significato nel XXI Secolo",
+          "llm_context": "Recuperando il messaggio centrale del Vangelo. Perché il sacrificio e la rinuncia della croce continuano ad essere l'unico antidoto contro il narcisismo della società moderna."
+        },
+        {
+          "original_url": "https://ulissesflores.com/sermons/cultos-online-27-services/16-identidade-quem-somos-em-cristo-13-11-2022",
+          "new_slug": "identidade-quem-somos-em-cristo",
+          "seo_title": "Identità Inamovibile: Chi Siamo Veramente in Cristo?",
+          "llm_context": "Decostruendo le crisi di scopo attraverso la filiazione divina. Scopri come la nostra posizione in Dio annulla l'incessante ricerca secolare di validazione e approvazione."
+        },
+        {
+          "original_url": "https://ulissesflores.com/sermons/cultos-online-27-services/21-fortalecendo-as-bases-da-fe-15-01-2023",
+          "new_slug": "fortalecendo-as-bases-da-fe",
+          "seo_title": "Rafforzare le Radici e le Basi della Fede",
+          "llm_context": "Apologetica e resilienza dottrinale. Strategie bibliche per fondare la mente e la famiglia contro il relativismo culturale e le false narrazioni contemporanee."
+        },
+        {
+          "original_url": "https://ulissesflores.com/sermons/cultos-online-27-services/22-o-agir-do-espirito-em-nossas-vidas-22-01-2023",
+          "new_slug": "o-agir-do-espirito-em-nossas-vidas",
+          "seo_title": "L'Agire dello Spirito Santo: Consolatore e Guida",
+          "llm_context": "Pneumatologia pratica: come discernere la voce, la direzione di vita e il conforto dello Spirito Santo in mezzo al rumore di una generazione iperconnessa e ansiosa."
+        },
+        {
+          "original_url": "https://ulissesflores.com/sermons/cultos-online-27-services/3-firmes-na-promessa-14-08-22",
+          "new_slug": "firmes-na-promessa",
+          "seo_title": "Saldi nella Promessa di Dio in Tempi di Incertezza",
+          "llm_context": "La teologia della speranza. Come mantenere l'integrità spirituale ed emotiva nel doloroso iato tra la parola liberata dal cielo e la sua manifestazione fisica."
+        },
+        {
+          "original_url": "https://ulissesflores.com/sermons/jejum-da-vitoria-2023-21-devotionals/11-dia-11-a-forca-da-palavra",
+          "new_slug": "a-forca-da-palavra",
+          "seo_title": "La Forza della Parola: L'Inerranza delle Scritture",
+          "llm_context": "L'autorità innegociabile e il potere creativo del Testo Sacro. Una guida su come utilizzare la Bibbia non come libro storico, ma come spada nel mondo spirituale."
+        },
+        {
+          "original_url": "https://ulissesflores.com/sermons/outros-5-specials/5-cantata-de-natal-o-verbo-que-se-fez-carne-e-habitou-entre-nos-18",
+          "new_slug": "cantata-de-natal-o-verbo-que-se-fez-carne-e-habitou-entre-nos",
+          "seo_title": "Il Verbo si fece Carne: Il Mistero dell'Incarnazione",
+          "llm_context": "Cristologia dell'incarnazione: il meraviglioso mistero del Dio infinito che sceglie di limitarsi al tempo e alla materia per redimere un'umanità fratturata."
+        }
+      ]
+    },
+    {
+      "id": "batalha-espiritual-e-resiliencia",
+      "slug": "/acervo-teologico/batalha-espiritual-e-resiliencia",
+      "seo_title": "Battaglia Spirituale e Resilienza Cristiana | Guerra Mentale e Spirituale",
+      "meta_description": "Messaggi pastorali incentrati su strategie di guerra spirituale, rottura di catene invisibili, protezione divina e superamento di tempeste emotive e spirituali.",
+      "sermoes": [
+        {
+          "original_url": "https://ulissesflores.com/sermons/cultos-online-27-services/10-vencendo-o-medo-pela-graca-15-09-2022",
+          "new_slug": "vencendo-o-medo-pela-graca",
+          "seo_title": "Vincere la Paura attraverso la Sovranità della Grazia",
+          "llm_context": "La paura come crisi di sovranità. Impara a neutralizzare l'ansia paralizzante trasferendo il controllo del tuo futuro nelle mani del Cristo risorto."
+        },
+        {
+          "original_url": "https://ulissesflores.com/sermons/cultos-online-27-services/25-quebrando-cadeias-invisiveis-12-02-2023",
+          "new_slug": "quebrando-cadeias-invisiveis",
+          "seo_title": "Rompere Catene Invisibili: Guerra Spirituale",
+          "llm_context": "Identificazione e distruzione di fortezze. L'uso pratico dell'autorità ecclesiastica per liberare menti captive, vizi e rompere cicli distruttivi generazionali."
+        },
+        {
+          "original_url": "https://ulissesflores.com/sermons/cultos-online-27-services/8-atravessando-tempestades-com-fe-04-09-2022",
+          "new_slug": "atravessando-tempestades-com-fe",
+          "seo_title": "Attraversare Tempeste con una Fede Antifragile",
+          "llm_context": "La teologia della sofferenza produttiva. Principi di navigazione spirituale per non naufragare, anche quando le circostanze attuali sembrano contraddire le promesse divine."
+        },
+        {
+          "original_url": "https://ulissesflores.com/sermons/jejum-da-vitoria-2023-21-devotionals/13-dia-13-ousadia-para-romper-limites",
+          "new_slug": "ousadia-para-romper-limites",
+          "seo_title": "Audacia per Rompere i Limiti e Vincere le Paralisi",
+          "llm_context": "Uscire dalla paralisi analitica e dal conformismo religioso. Come lo Spirito Santo inietta intrepidezza e coraggio per il compimento di chiamate straordinarie."
+        },
+        {
+          "original_url": "https://ulissesflores.com/sermons/jejum-da-vitoria-2023-21-devotionals/15-dia-15-protecao-e-escudo",
+          "new_slug": "protecao-e-escudo",
+          "seo_title": "Protezione e Scudo: Il Rifugio dell'Altissimo",
+          "llm_context": "Mappando le promesse del Salmo 91. La differenza vitale tra presunzione cieca e fiducia matura nella copertura e protezione angelica durante tempi di crisi globale."
+        },
+        {
+          "original_url": "https://ulissesflores.com/sermons/jejum-da-vitoria-2023-21-devotionals/16-dia-16-avancando-em-meio-as-oposicoes",
+          "new_slug": "avancando-em-meio-as-oposicoes",
+          "seo_title": "Avanzare in Mezzo alle Opposizioni: Il Focus di Neemia",
+          "llm_context": "Lezioni pratiche di leadership con Neemia. Costruire il muro dello scopo con una mano e tenere la spada con l'altra di fronte alle ritorsioni implacabili del nemico."
+        },
+        {
+          "original_url": "https://ulissesflores.com/sermons/jejum-da-vitoria-2023-21-devotionals/2-dia-2-vencendo-as-batalhas-da-mente",
+          "new_slug": "vencendo-as-batalhas-da-mente",
+          "seo_title": "Vincere le Battaglie della Mente contro le Fortezze",
+          "llm_context": "Neuro-teologia e guerra invisibile. Come Satana utilizza sofismi ingannevoli e come applicare Filippesi 4 per blindare la salute mentale della chiesa contemporanea."
+        },
+        {
+          "original_url": "https://ulissesflores.com/sermons/jejum-da-vitoria-2023-21-devotionals/3-dia-3-a-resiliencia-do-cristao",
+          "new_slug": "a-resiliencia-do-cristao",
+          "seo_title": "La Resilienza del Cristiano Forgiato nel Deserto",
+          "llm_context": "Processi di maturazione. Comprendere la differenza tra sopportare passivamente i dolori e resistere attivamente attraverso il carattere approvato e modellato da Dio."
+        },
+        {
+          "original_url": "https://ulissesflores.com/sermons/outros-5-specials/2-perseveranca-e-resposta-dia-8",
+          "new_slug": "perseveranca-e-resposta-dia-8",
+          "seo_title": "Perseveranza e Risposta: Il Tempo dell'Insistenza",
+          "llm_context": "La dinamica profonda della preghiera che non si arrende. Quando il cielo sembra di bronzo, la persistenza inamovibile diventa la chiave che sblocca decreti spirituali trattenuti."
+        },
+        {
+          "original_url": "https://ulissesflores.com/sermons/outros-5-specials/4-o-grande-rompimento-celebracao-dos-testemunhos-dia-40",
+          "new_slug": "o-grande-rompimento-celebracao-dos-testemunhos-dia-40",
+          "seo_title": "La Grande Rottura: La Celebrazione delle Testimonianze",
+          "llm_context": "Il potere della testimonianza come arma profetica. Come la dichiarazione delle opere di Dio nel passato spiana immediatamente la strada ai miracoli nel futuro."
+        }
+      ]
+    },
+    {
+      "id": "avivamento-e-consagracao",
+      "slug": "/acervo-teologico/avivamento-e-consagracao",
+      "seo_title": "Risveglio, Consacrazione e Intimità | Fuoco che non si Spegne",
+      "meta_description": "Studi sulla ricerca incessante della presenza di Dio, il ripristino del primo amore, la pratica del digiuno e la disciplina dell'intimità sull'altare.",
+      "sermoes": [
+        {
+          "original_url": "https://ulissesflores.com/sermons/cultos-3-services/1-restaurando-o-primeiro-amor-24-07-22",
+          "new_slug": "restaurando-o-primeiro-amor",
+          "seo_title": "Restaurare il Primo Amore: La Chiamata di Efeso",
+          "llm_context": "Diagnosi chirurgica della chiesa dell'Apocalisse. Il pericolo dell'ortodossia fredda e il percorso esegetico per riaccendere la devozione appassionata per Gesù."
+        },
+        {
+          "original_url": "https://ulissesflores.com/sermons/cultos-online-27-services/1-presenca-e-avivamento",
+          "new_slug": "presenca-e-avivamento",
+          "seo_title": "Presenza e Risveglio: Più di un'Emozione",
+          "llm_context": "La distinzione biblica e chiara tra movimento emotivo passeggero e la Presenza manifesta (Shekinah). I prerequisiti per ospitare un risveglio sostenibile."
+        },
+        {
+          "original_url": "https://ulissesflores.com/sermons/cultos-online-27-services/18-renovando-as-forcas-no-altar-27-11-2022",
+          "new_slug": "renovando-as-forcas-no-altar",
+          "seo_title": "Rinnovare le Forze sull'Altare: Il Principio dello Shabbat",
+          "llm_context": "La meccanica del riposo spirituale divino. Come l'esaurimento fisico e ministeriale è curato esclusivamente nel luogo segreto di consacrazione e solitudine radicale."
+        },
+        {
+          "original_url": "https://ulissesflores.com/sermons/cultos-online-27-services/20-preparando-o-coracao-para-o-novo-ano-11-12-2022",
+          "new_slug": "preparando-o-coracao-para-o-novo-ano",
+          "seo_title": "Preparare il Cuore per Cicli Inediti",
+          "llm_context": "Transizioni di stagioni e allineamento dello spirito. La necessità urgente di pulire il bagaglio emotivo del passato prima di addentrarsi nelle nuove geografie del Cielo."
+        },
+        {
+          "original_url": "https://ulissesflores.com/sermons/cultos-online-27-services/23-aprendendo-a-ouvir-a-voz-de-deus-29-01-2023",
+          "new_slug": "aprendendo-a-ouvir-a-voz-de-deus",
+          "seo_title": "Imparare ad Ascoltare la Voce di Dio e Discernere gli Spiriti",
+          "llm_context": "Affilare l'udito soprannaturale. Come distinguere l'intuizione umana comune, l'oppressione dell'inganno e la direzione precisa del Signore nei bivi della vita."
+        },
+        {
+          "original_url": "https://ulissesflores.com/sermons/cultos-online-27-services/26-viver-em-santidade-no-seculo-xxi-19-02-2023",
+          "new_slug": "viver-em-santidade-no-seculo-xxi",
+          "seo_title": "Santità nel XXI Secolo: Integrità Morale nella Post-Verità",
+          "llm_context": "La santità non è isolazionismo, è immunità. Sfidare la cultura ipersessualizzata e relativista attraverso un'etica cristiana innegociabile, pura e attraente."
+        },
+        {
+          "original_url": "https://ulissesflores.com/sermons/cultos-online-27-services/4-a-importancia-da-intimidade-18-08-2022",
+          "new_slug": "a-importancia-da-intimidade",
+          "seo_title": "L'Importanza dell'Intimità: Strappare il Velo",
+          "llm_context": "Oltre gli atri affollati. Lo strappo del velo di Cristo e l'invito sacerdotale ad abitare nel Santo dei Santi, scambiando la religiosità con una relazione vivida."
+        },
+        {
+          "original_url": "https://ulissesflores.com/sermons/cultos-online-27-services/6-restaurando-o-altar-25-08-2022",
+          "new_slug": "restaurando-o-altar",
+          "seo_title": "Restaurare l'Altare di Elia: Riparazione Prima del Fuoco",
+          "llm_context": "Il principio assoluto di Elia sul Monte Carmelo. Il fuoco del risveglio non cade mai su macerie; la riparazione della verità precede il miracolo della dimostrazione pubblica."
+        },
+        {
+          "original_url": "https://ulissesflores.com/sermons/jejum-da-vitoria-2023-21-devotionals/10-dia-10-autoridade-espiritual",
+          "new_slug": "autoridade-espiritual",
+          "seo_title": "Autorità Spirituale: Sottomissione e Governo",
+          "llm_context": "Gerarchia e catena di comando nel Regno di Dio. Demistificare il falso potere e insegnare come l'allineamento di vita generi autorità letale contro le tenebre."
+        },
+        {
+          "original_url": "https://ulissesflores.com/sermons/jejum-da-vitoria-2023-21-devotionals/19-dia-19-o-fogo-que-nao-se-apaga",
+          "new_slug": "o-fogo-que-nao-se-apaga",
+          "seo_title": "Il Fuoco che non si Spegne: Devozione Costante",
+          "llm_context": "La legge levitica del fuoco continuo tradotta nel Nuovo Testamento. Come evitare picchi emotivi di ritiro e mantenere una temperatura di adorazione ininterrotta."
+        },
+        {
+          "original_url": "https://ulissesflores.com/sermons/jejum-da-vitoria-2023-21-devotionals/20-dia-20-preparando-o-altar",
+          "new_slug": "preparando-o-altar",
+          "seo_title": "Preparare l'Altare: Il Sacrificio Vivo della Preghiera",
+          "llm_context": "Il digiuno come tecnologia celeste di svuotamento. La preparazione del vaso di argilla umano per sopportare, senza rompersi, un peso maggiore della gloria (Kabod) eterna."
+        },
+        {
+          "original_url": "https://ulissesflores.com/sermons/jejum-da-vitoria-2023-21-devotionals/8-dia-8-tempo-de-renovo",
+          "new_slug": "tempo-de-renovo",
+          "seo_title": "Tempo di Rinnovamento: Aquile in Isaia 40",
+          "llm_context": "La promessa di vitalità in Isaia 40. Il magnifico scambio di forze per leader esausti e il processo divino di rafforzare le ali per spiccare i prossimi voli."
+        }
+      ]
+    },
+    {
+      "id": "eclesiologia-e-vida-pratica",
+      "slug": "/acervo-teologico/eclesiologia-e-vida-pratica",
+      "seo_title": "Ecclesiologia, Famiglia e Vita Cristiana Pratica",
+      "meta_description": "Il corpo di Cristo in azione: messaggi sull'edificazione della famiglia, il potere dell'unità congregazionale, la liberazione del perdono e l'allineamento degli scopi.",
+      "sermoes": [
+        {
+          "original_url": "https://ulissesflores.com/sermons/cultos-3-services/3-culto-regional-de-casais-edificando-a-familia-sobre-a-rocha-03-0",
+          "new_slug": "culto-regional-de-casais-edificando-a-familia-sobre-a-rocha",
+          "seo_title": "Edificare la Famiglia sulla Roccia Inamovibile",
+          "llm_context": "Fondamenti teologici per matrimoni antifragili. Blindare l'alleanza coniugale contro la liquidità morale e strutturale delle pressioni del XXI secolo."
+        },
+        {
+          "original_url": "https://ulissesflores.com/sermons/cultos-online-27-services/11-chamados-para-fazer-a-diferenca-18-09-2022",
+          "new_slug": "chamados-para-fazer-a-diferenca",
+          "seo_title": "Chiamati a Fare la Differenza: Il Sale della Terra",
+          "llm_context": "L'Ekklesia che influenza la cultura pubblica. Uscire dal ghetto religioso e dalle quattro mura per impattare l'economia, la politica e l'educazione con eccellenza divina."
+        },
+        {
+          "original_url": "https://ulissesflores.com/sermons/cultos-online-27-services/13-semeando-em-boa-terra-02-10-2022",
+          "new_slug": "semeando-em-boa-terra",
+          "seo_title": "Seminare in Buona Terra: Amministrazione e Generosità",
+          "llm_context": "Economia del Regno di Dio e amministrazione finanziaria di impatto. La parabola del seminatore sotto l'ottica della gestione saggia di talenti, tesori e influenza personale."
+        },
+        {
+          "original_url": "https://ulissesflores.com/sermons/cultos-online-27-services/15-caminhando-em-sobrenaturalidade-06-11-2022",
+          "new_slug": "caminhando-em-sobrenaturalidade",
+          "seo_title": "Camminare nella Soprannaturalità: Il Quotidiano degli Atti",
+          "llm_context": "La normalizzazione definitiva dei doni e carismi spirituali. Come la chiesa del primo secolo operava guarigioni e intuizioni meravigliose nella sua agenda ordinaria."
+        },
+        {
+          "original_url": "https://ulissesflores.com/sermons/cultos-online-27-services/24-comunhao-e-crescimento-espiritual-05-02-2023",
+          "new_slug": "comunhao-e-crescimento-espiritual",
+          "seo_title": "Comunione e Crescita (Koinonia): La Carta Vetrata Divina",
+          "llm_context": "La contraddizione del cristianesimo senza chiesa. Come l'attrito delle imperfezioni delle relazioni della congregazione agisce come lo strumento ufficiale della levigatura del carattere."
+        },
+        {
+          "original_url": "https://ulissesflores.com/sermons/cultos-online-27-services/27-festival-de-danca-expressao-de-adoracao-e-arte-profetica",
+          "new_slug": "festival-de-danca-expressao-de-adoracao-e-arte-profetica",
+          "seo_title": "Adorazione e Arte Profetica Corporale",
+          "llm_context": "La bellezza santificata dell'arte. Il ruolo essenziale dell'espressione corporale per manifestare adorazione e dichiarare liberazione nei corridoi geografi della chiesa."
+        },
+        {
+          "original_url": "https://ulissesflores.com/sermons/cultos-online-27-services/5-construindo-uma-vida-com-proposito-21-08-2022",
+          "new_slug": "construindo-uma-vida-com-proposito",
+          "seo_title": "Costruire una Vita di Scopo e Destino",
+          "llm_context": "L'intersezione magnetica tra il talento innato e l'unzione divina. Una guida esistenziale per localizzare la propria vocazione nell'ampio ingranaggio del Corpo di Cristo."
+        },
+        {
+          "original_url": "https://ulissesflores.com/sermons/cultos-online-27-services/9-o-perdao-que-liberta-11-09-2022",
+          "new_slug": "o-perdao-que-liberta",
+          "seo_title": "Il Perdono che Libera: Estirpare Radici di Amarezza",
+          "llm_context": "La psicologia e la teologia del risentimento. Il perdono visto non come passività di fronte alle ingiustizie, ma come il coltello che recide i tumori emotivi che ci paralizzano."
+        },
+        {
+          "original_url": "https://ulissesflores.com/sermons/jejum-da-vitoria-2023-21-devotionals/14-dia-14-a-recompensa-da-fidelidade",
+          "new_slug": "a-recompensa-da-fidelidade",
+          "seo_title": "La Ricompensa Nascosta della Fedeltà a Lungo Termine",
+          "llm_context": "L'onore conferito nel tempo. Il contrasto tra coloro che abbandonano la nave nei momenti di frustrazione e il rimanente blindato che raggiunge il traguardo."
+        },
+        {
+          "original_url": "https://ulissesflores.com/sermons/jejum-da-vitoria-2023-21-devotionals/5-dia-5-o-poder-da-unidade",
+          "new_slug": "o-poder-da-unidade",
+          "seo_title": "Il Potere dell'Unità: La Forza Motrice della Chiesa",
+          "llm_context": "Studio sul Salmo 133 e la Pentecoste in Atti 2. La scoperta che l'unità reale non annulla l'individualità, ma allinea i vettori sotto il capo di Cristo."
+        },
+        {
+          "original_url": "https://ulissesflores.com/sermons/jejum-da-vitoria-2023-21-devotionals/6-dia-6-restituicao-divina",
+          "new_slug": "restituicao-divina",
+          "seo_title": "Restituzione Divina: Gli Anni Consumati dalla Locusta",
+          "llm_context": "La speranza nella provvidenza basata sul profeta Gioele. La meccanica di una grazia che è abbastanza potente da risarcire il tempo e le opportunità sottratte."
+        },
+        {
+          "original_url": "https://ulissesflores.com/sermons/jejum-da-vitoria-2023-21-devotionals/7-dia-7-a-plenitude-do-espirito",
+          "new_slug": "a-plenitude-do-espirito",
+          "seo_title": "La Pienezza dello Spirito: Immersi nella Grazia",
+          "llm_context": "Il traboccare della capacità umana. Come il credente transita da uno stadio in cui ha lo Spirito Santo che abita a un livello in cui lo Spirito lo governa totalmente."
+        },
+        {
+          "original_url": "https://ulissesflores.com/sermons/jejum-da-vitoria-2023-21-devotionals/9-dia-9-frutos-de-uma-vida-com-deus",
+          "new_slug": "frutos-de-uma-vida-com-deus",
+          "seo_title": "Frutti di una Vita con Dio: Il Carattere Maturato",
+          "llm_context": "L'evidenza definitiva del falso vs. vero. L'esortazione apostolica che sono i frutti del carattere (amore, autocontrollo), e non doni spettacolari, il segno dei santi."
+        }
+      ]
+    },
+    {
+      "id": "mensagens-profeticas",
+      "slug": "/acervo-teologico/mensagens-profeticas",
+      "seo_title": "Messaggi Profetici e Direzionamenti",
+      "meta_description": "Visione di futuro e insegnamento profetico. Messaggi predicati in transizioni di anno, celebrazioni di rottura e sigilli profetici sulla chiesa.",
+      "sermoes": [
+        {
+          "original_url": "https://ulissesflores.com/sermons/cultos-online-27-services/2-o-chamado-inabalavel-07-08-22",
+          "new_slug": "o-chamado-inabalavel",
+          "seo_title": "La Chiamata Inamovibile: Promesse Irrevocabili",
+          "llm_context": "La stabilità e fedeltà delle promesse divine. Comprendendo Romani 11, in cui Dio blinda, preserva e abilita gli eletti per missioni irrevocabili."
+        },
+        {
+          "original_url": "https://ulissesflores.com/sermons/cultos-online-27-services/7-o-agir-invisivel-de-deus-28-08-2022",
+          "new_slug": "o-agir-invisivel-de-deus",
+          "seo_title": "L'Agire Invisibile di Dio: Dietro le Quinte della Storia",
+          "llm_context": "La maestà della provvidenza silenziata (Teologia di Ester e Giuseppe). Comprendere la scacchiera celeste di come il Padre cuce eventi apparentemente casuali in buoni propositi."
+        },
+        {
+          "original_url": "https://ulissesflores.com/sermons/jejum-da-vitoria-2023-21-devotionals/18-dia-18-destravando-promessas",
+          "new_slug": "destravando-promessas",
+          "seo_title": "Sbloccare Promesse Congelate",
+          "llm_context": "Il processo celeste che accelera la promessa. Come identificare le legalità, le falle di posizionamento e le resistenze che ritardano la nostra vittoria e manifestazione."
+        },
+        {
+          "original_url": "https://ulissesflores.com/sermons/outros-5-specials/1-janeiro-profetico-consagrando-o-novo-ano-dia-1-01-01-2023",
+          "new_slug": "janeiro-profetico-consagrando-o-novo-ano",
+          "seo_title": "Gennaio Profetico: La Consegna delle Primizie",
+          "llm_context": "Un allineamento incisivo e profetico sulla legge millenaria delle primizie. Come la postura nel primo gradino di un anno stipula e blinda la frequenza dei mesi adiacenti."
+        },
+        {
+          "original_url": "https://ulissesflores.com/sermons/outros-5-specials/3-o-selo-profetico-para-os-12-meses-de-vitoria-dia-12",
+          "new_slug": "o-selo-profetico-para-os-12-meses-de-vitoria-dia-12",
+          "seo_title": "Il Sigillo Profetico per 12 Mesi",
+          "llm_context": "Istruzioni dirette su come blindare un intero ciclo annuale attraverso l'obbedienza radicale, stabilendo pietre miliari di gratitudine e direzione."
+        }
+      ]
+    }
+  ]
+}

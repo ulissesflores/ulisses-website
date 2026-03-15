@@ -522,7 +522,7 @@ function TimelineItem({ role, company, period, desc, current, currentLabel, isOl
       </div>
       <div className={`font-medium text-sm mb-2 ${current ? 'text-emerald-400' : 'text-cyan-600'}`}>
         {company}
-        {current && currentLabel && <span className="ml-2 text-[9px] bg-emerald-500/10 text-emerald-400 px-2 py-0.5 rounded-full border border-emerald-500/20">{currentLabel}</span>}
+        {current && currentLabel && <span className="ms-2 text-[9px] bg-emerald-500/10 text-emerald-400 px-2 py-0.5 rounded-full border border-emerald-500/20">{currentLabel}</span>}
       </div>
       <p className="text-sm text-neutral-400 leading-relaxed max-w-2xl">{desc}</p>
     </div>

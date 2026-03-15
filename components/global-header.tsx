@@ -23,6 +23,16 @@ export function GlobalHeader() {
   const langRef = useRef<HTMLDivElement>(null);
   const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
+  /** Prefix an internal path with the current locale (skip for default locale and anchors). */
+  const localePath = useCallback(
+    (href: string) => {
+      if (!href.startsWith('/') || href.startsWith('/#')) return href;
+      if (locale === defaultLocale) return href;
+      return `/${locale}${href}`;
+    },
+    [locale],
+  );
+
   // Close menus on route change
   useEffect(() => {
     setMobileOpen(false);
@@ -95,7 +105,7 @@ export function GlobalHeader() {
       <header className='fixed top-0 left-0 right-0 z-50 bg-neutral-950/85 backdrop-blur-md border-b border-white/5'>
         <nav className='max-w-6xl mx-auto px-6 h-16 flex items-center justify-between'>
           {/* Logo */}
-          <Link href='/' className='text-emerald-500 font-bold text-lg tracking-wider'>
+          <Link href={localePath('/')} className='text-emerald-500 font-bold text-lg tracking-wider'>
             UF<span className='text-neutral-500 font-light'>.SCIENTIST</span>
           </Link>
 
@@ -134,7 +144,7 @@ export function GlobalHeader() {
                     {category.items.map((item) => (
                       <Link
                         key={item.href}
-                        href={item.href}
+                        href={localePath(item.href)}
                         onClick={() => setActiveDropdown(null)}
                         className='block px-4 py-3 hover:bg-emerald-500/10 transition-colors group'
                       >
@@ -220,7 +230,7 @@ export function GlobalHeader() {
                   {category.items.map((item) => (
                     <Link
                       key={item.href}
-                      href={item.href}
+                      href={localePath(item.href)}
                       onClick={() => setMobileOpen(false)}
                       className='block px-4 py-3 rounded-lg text-neutral-200 hover:bg-emerald-500/10 hover:text-emerald-300 transition-colors'
                     >

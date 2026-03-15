@@ -52,10 +52,11 @@ export function compactUSD(value: number): string {
 }
 
 /** Format a date string (YYYY-MM-DD) as abbreviated month. */
-export function shortMonth(dateStr: string): string {
+export function shortMonth(dateStr: string, locale = 'en'): string {
   const d = new Date(`${dateStr}T00:00:00`);
   if (Number.isNaN(d.getTime())) return dateStr;
-  return d.toLocaleDateString('pt-BR', { month: 'short', year: '2-digit' }).replace('.', '');
+  const bcp47 = locale === 'pt-br' ? 'pt-BR' : locale;
+  return d.toLocaleDateString(bcp47, { month: 'short', year: '2-digit' }).replace('.', '');
 }
 
 /** Calculate nice Y-axis ticks for a given min/max range. */

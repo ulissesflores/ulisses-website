@@ -273,7 +273,7 @@ export default async function IdentidadePage({ params }: PageProps) {
 
           <div className='mt-6 overflow-x-auto'>
             <table className='w-full min-w-[760px] text-sm'>
-              <thead className='text-left text-neutral-500'>
+              <thead className='text-start text-neutral-500'>
                 <tr className='border-b border-neutral-800'>
                   <th className='py-2 pr-4'>Identificador</th>
                   <th className='py-2 pr-4'>Valor</th>
@@ -356,7 +356,7 @@ export default async function IdentidadePage({ params }: PageProps) {
                 {upkfMeta.languages.map((language) => (
                   <div key={language} className='rounded-md border border-neutral-800 px-3 py-2 text-sm text-neutral-300'>
                     {languageNames[language] || language}
-                    <span className='ml-2 text-xs text-neutral-500'>({language})</span>
+                    <span className='ms-2 text-xs text-neutral-500'>({language})</span>
                   </div>
                 ))}
               </div>

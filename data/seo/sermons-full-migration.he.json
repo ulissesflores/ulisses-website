@@ -1,0 +1,344 @@
+{
+  "seo_config": {
+    "global_schema": "WebSite",
+    "section_schema": "CollectionPage",
+    "item_schema": "VideoObject",
+    "author": "Ulisses Flores"
+  },
+  "clusters": [
+    {
+      "id": "fundamentos-da-fe",
+      "slug": "/acervo-teologico/fundamentos-da-fe",
+      "seo_title": "יסודות האמונה ותיאולוגיה שיטתית | לימודי מקרא",
+      "meta_description": "מחקרים אקסגטיים על סוטריולוגיה, כריסטולוגיה ופעולת החסד. הרהורים עמוקים על היסודות הבלתי מעורערים של הדוקטרינה הנוצרית.",
+      "sermoes": [
+        {
+          "original_url": "https://ulissesflores.com/sermons/cultos-3-services/2-o-poder-transformador-da-graca-31-07-22",
+          "new_slug": "o-poder-transformador-da-graca",
+          "seo_title": "הכוח המשנה של החסד | אקסגזה מקראית",
+          "llm_context": "צלילה אקסגטית לחסד הבלתי ראוי של אלוהים. הבינו כיצד החסד אינו רק אישור חופשי, אלא הכוח המניע המאפשר קידוש אמיתי."
+        },
+        {
+          "original_url": "https://ulissesflores.com/sermons/cultos-online-27-services/12-batismo-nas-aguas-nova-vida-em-cristo-25-09-2022",
+          "new_slug": "batismo-nas-aguas-nova-vida-em-cristo",
+          "seo_title": "טבילה במים וזהות נוצרית חדשה",
+          "llm_context": "הסמליות של הטבילה והניתוק הבלתי הפיך מהמערכת הארצית. יסוד כריסטולוגי על חרטה, הצדקה וזהות חדשה."
+        },
+        {
+          "original_url": "https://ulissesflores.com/sermons/cultos-online-27-services/14-a-cruz-e-o-seu-significado-hoje-23-10-2022",
+          "new_slug": "a-cruz-e-o-seu-significado-hoje",
+          "seo_title": "שערוריית הצלב: משמעותו במאה ה-21",
+          "llm_context": "הצלת המסר המרכזי של הבשורה. מדוע הקרבן וההתכחשות של הצלב ממשיכים להיות התרופה היחידה נגד הנרקיסיזם של החברה המודרנית."
+        },
+        {
+          "original_url": "https://ulissesflores.com/sermons/cultos-online-27-services/16-identidade-quem-somos-em-cristo-13-11-2022",
+          "new_slug": "identidade-quem-somos-em-cristo",
+          "seo_title": "זהות בלתי מעורערת: מי אנחנו באמת במשיח?",
+          "llm_context": "פירוק משברי מטרה באמצעות הבן האלוהי. גלו כיצד מעמדנו באלוהים מבטל את החיפוש החילוני הבלתי פוסק אחר אימות ואישור."
+        },
+        {
+          "original_url": "https://ulissesflores.com/sermons/cultos-online-27-services/21-fortalecendo-as-bases-da-fe-15-01-2023",
+          "new_slug": "fortalecendo-as-bases-da-fe",
+          "seo_title": "חיזוק שורשי ויסודות האמונה",
+          "llm_context": "אפולוגטיקה וחוסן דוקטרינרי. אסטרטגיות מקראיות לביסוס התודעה והמשפחה נגד רלטיביזם תרבותי ונרטיבים כוזבים עכשוויים."
+        },
+        {
+          "original_url": "https://ulissesflores.com/sermons/cultos-online-27-services/22-o-agir-do-espirito-em-nossas-vidas-22-01-2023",
+          "new_slug": "o-agir-do-espirito-em-nossas-vidas",
+          "seo_title": "פעולת רוח הקודש: מנחם ומדריך",
+          "llm_context": "פנאומטולוגיה מעשית: כיצד להבחין בקול, בהכוונה לחיים ובנחמת רוח הקודש בתוך הרעש של דור מחובר יתר על המידה וחרד."
+        },
+        {
+          "original_url": "https://ulissesflores.com/sermons/cultos-online-27-services/3-firmes-na-promessa-14-08-22",
+          "new_slug": "firmes-na-promessa",
+          "seo_title": "איתנים בהבטחת אלוהים בזמני אי-ודאות",
+          "llm_context": "תיאולוגיית התקווה. כיצד לשמור על שלמות רוחנית ורגשית בפער הכואב שבין המילה ששוחררה מהשמיים לבין התגלמותה הפיזית."
+        },
+        {
+          "original_url": "https://ulissesflores.com/sermons/jejum-da-vitoria-2023-21-devotionals/11-dia-11-a-forca-da-palavra",
+          "new_slug": "a-forca-da-palavra",
+          "seo_title": "כוחה של המילה: אי-טעות הכתובים",
+          "llm_context": "הסמכות הבלתי ניתנת למשא ומתן והכוח היצירתי של הטקסט הקדוש. מדריך כיצד להשתמש בתנ\"ך לא כספר היסטורי, אלא כחרב בעולם הרוחני."
+        },
+        {
+          "original_url": "https://ulissesflores.com/sermons/outros-5-specials/5-cantata-de-natal-o-verbo-que-se-fez-carne-e-habitou-entre-nos-18",
+          "new_slug": "cantata-de-natal-o-verbo-que-se-fez-carne-e-habitou-entre-nos",
+          "seo_title": "הדבר נהיה בשר: סוד ההתגשמות",
+          "llm_context": "כריסטולוגיה של ההתגשמות: הסוד המופלא של האל האינסופי הבוחר להגביל את עצמו לזמן ולחומר כדי לגאול אנושות שבורה."
+        }
+      ]
+    },
+    {
+      "id": "batalha-espiritual-e-resiliencia",
+      "slug": "/acervo-teologico/batalha-espiritual-e-resiliencia",
+      "seo_title": "קרב רוחני וחוסן נוצרי | מלחמת תודעה ורוח",
+      "meta_description": "מסרים פסטורליים המתמקדים באסטרטגיות של מלחמה רוחנית, שבירת כבלים בלתי נראים, הגנה אלוהית והתגברות על סערות רגשיות ורוחניות.",
+      "sermoes": [
+        {
+          "original_url": "https://ulissesflores.com/sermons/cultos-online-27-services/10-vencendo-o-medo-pela-graca-15-09-2022",
+          "new_slug": "vencendo-o-medo-pela-graca",
+          "seo_title": "התגברות על הפחד באמצעות ריבונות החסד",
+          "llm_context": "הפחד כמשבר ריבונות. למדו לנטרל חרדה משתקת על ידי העברת השליטה על עתידכם לידי המשיח הקם לתחייה."
+        },
+        {
+          "original_url": "https://ulissesflores.com/sermons/cultos-online-27-services/25-quebrando-cadeias-invisiveis-12-02-2023",
+          "new_slug": "quebrando-cadeias-invisiveis",
+          "seo_title": "שבירת כבלים בלתי נראים: מלחמה רוחנית",
+          "llm_context": "זיהוי והרס מעוזים. השימוש המעשי בסמכות כנסייתית לשחרור תודעות שבויות, התמכרויות ושבירת מעגלים הרסניים בין-דוריים."
+        },
+        {
+          "original_url": "https://ulissesflores.com/sermons/cultos-online-27-services/8-atravessando-tempestades-com-fe-04-09-2022",
+          "new_slug": "atravessando-tempestades-com-fe",
+          "seo_title": "חציית סערות עם אמונה אנטי-שבירה",
+          "llm_context": "תיאולוגיית הסבל הפורה. עקרונות ניווט רוחני כדי לא לטבוע, גם כאשר הנסיבות הנוכחיות נראות כסותרות את ההבטחות האלוהיות."
+        },
+        {
+          "original_url": "https://ulissesflores.com/sermons/jejum-da-vitoria-2023-21-devotionals/13-dia-13-ousadia-para-romper-limites",
+          "new_slug": "ousadia-para-romper-limites",
+          "seo_title": "עוז לפרוץ גבולות ולנצח שיתוקים",
+          "llm_context": "יציאה משיתוק אנליטי וקונפורמיזם דתי. כיצד רוח הקודש מחדירה אומץ לב וגבורה למילוי קריאות יוצאות דופן."
+        },
+        {
+          "original_url": "https://ulissesflores.com/sermons/jejum-da-vitoria-2023-21-devotionals/15-dia-15-protecao-e-escudo",
+          "new_slug": "protecao-e-escudo",
+          "seo_title": "הגנה ומגן: בסתר עליון",
+          "llm_context": "מיפוי הבטחות תהילים צ\"א. ההבדל החיוני בין יהירות עיוורת לבין ביטחון בוגר בכיסוי והגנה מלאכית בזמני משבר עולמי."
+        },
+        {
+          "original_url": "https://ulissesflores.com/sermons/jejum-da-vitoria-2023-21-devotionals/16-dia-16-avancando-em-meio-as-oposicoes",
+          "new_slug": "avancando-em-meio-as-oposicoes",
+          "seo_title": "התקדמות בתוך התנגדויות: המיקוד של נחמיה",
+          "llm_context": "שיעורים מעשיים במנהיגות עם נחמיה. בניית חומת המטרה ביד אחת ואחיזת החרב ביד השנייה מול נקמותיו הבלתי מתפשרות של האויב."
+        },
+        {
+          "original_url": "https://ulissesflores.com/sermons/jejum-da-vitoria-2023-21-devotionals/2-dia-2-vencendo-as-batalhas-da-mente",
+          "new_slug": "vencendo-as-batalhas-da-mente",
+          "seo_title": "ניצחון בקרבות התודעה נגד מעוזים",
+          "llm_context": "נוירו-תיאולוגיה ומלחמה בלתי נראית. כיצד השטן משתמש בסופיזמות מטעות וכיצד ליישם את פיליפים ד' כדי למגן את בריאות הנפש של הכנסייה העכשווית."
+        },
+        {
+          "original_url": "https://ulissesflores.com/sermons/jejum-da-vitoria-2023-21-devotionals/3-dia-3-a-resiliencia-do-cristao",
+          "new_slug": "a-resiliencia-do-cristao",
+          "seo_title": "חוסנו של המאמין המחושל במדבר",
+          "llm_context": "תהליכי התבגרות. הבנת ההבדל בין סבילת כאבים פסיבית לבין התנגדות אקטיבית באמצעות אופי מאושר ומעוצב על ידי אלוהים."
+        },
+        {
+          "original_url": "https://ulissesflores.com/sermons/outros-5-specials/2-perseveranca-e-resposta-dia-8",
+          "new_slug": "perseveranca-e-resposta-dia-8",
+          "seo_title": "התמדה ותשובה: זמן ההתעקשות",
+          "llm_context": "הדינמיקה העמוקה של תפילה שאינה מוותרת. כאשר השמיים נראים כארד, ההתמדה הבלתי מעורערת הופכת למפתח הפותח גזירות רוחניות מעוכבות."
+        },
+        {
+          "original_url": "https://ulissesflores.com/sermons/outros-5-specials/4-o-grande-rompimento-celebracao-dos-testemunhos-dia-40",
+          "new_slug": "o-grande-rompimento-celebracao-dos-testemunhos-dia-40",
+          "seo_title": "הפריצה הגדולה: חגיגת העדויות",
+          "llm_context": "כוחה של העדות ככלי נבואי. כיצד הכרזת מעשי אלוהים בעבר סוללת מיד את הדרך לניסים בעתיד."
+        }
+      ]
+    },
+    {
+      "id": "avivamento-e-consagracao",
+      "slug": "/acervo-teologico/avivamento-e-consagracao",
+      "seo_title": "התעוררות, הקדשה ואינטימיות | אש שאינה כבה",
+      "meta_description": "מחקרים על החיפוש הבלתי פוסק אחר נוכחות אלוהים, שיקום האהבה הראשונה, פרקטיקת הצום ומשמעת האינטימיות על המזבח.",
+      "sermoes": [
+        {
+          "original_url": "https://ulissesflores.com/sermons/cultos-3-services/1-restaurando-o-primeiro-amor-24-07-22",
+          "new_slug": "restaurando-o-primeiro-amor",
+          "seo_title": "שיקום האהבה הראשונה: קריאת אפסוס",
+          "llm_context": "אבחון כירורגי של כנסיית ההתגלות. סכנת האורתודוקסיה הקרה והדרך האקסגטית להצית מחדש את המסירות הנלהבת לישוע."
+        },
+        {
+          "original_url": "https://ulissesflores.com/sermons/cultos-online-27-services/1-presenca-e-avivamento",
+          "new_slug": "presenca-e-avivamento",
+          "seo_title": "נוכחות והתעוררות: יותר מרגש",
+          "llm_context": "ההבחנה המקראית והברורה בין תנועה רגשית חולפת לבין הנוכחות המגולה (שכינה). התנאים המוקדמים לאירוח התעוררות בת קיימא."
+        },
+        {
+          "original_url": "https://ulissesflores.com/sermons/cultos-online-27-services/18-renovando-as-forcas-no-altar-27-11-2022",
+          "new_slug": "renovando-as-forcas-no-altar",
+          "seo_title": "חידוש כוחות על המזבח: עקרון השבת",
+          "llm_context": "מכניקת המנוחה הרוחנית האלוהית. כיצד תשישות פיזית ושירותית נרפאת באופן בלעדי במקום הסודי של הקדשה ובדידות רדיקלית."
+        },
+        {
+          "original_url": "https://ulissesflores.com/sermons/cultos-online-27-services/20-preparando-o-coracao-para-o-novo-ano-11-12-2022",
+          "new_slug": "preparando-o-coracao-para-o-novo-ano",
+          "seo_title": "הכנת הלב למחזורים חדשים",
+          "llm_context": "מעברי עונות ויישור רוחני. הצורך הדחוף לנקות את המטען הרגשי מהעבר לפני הכניסה לגיאוגרפיות החדשות של השמיים."
+        },
+        {
+          "original_url": "https://ulissesflores.com/sermons/cultos-online-27-services/23-aprendendo-a-ouvir-a-voz-de-deus-29-01-2023",
+          "new_slug": "aprendendo-a-ouvir-a-voz-de-deus",
+          "seo_title": "ללמוד לשמוע את קול אלוהים ולהבחין ברוחות",
+          "llm_context": "חידוד השמיעה העל-טבעית. כיצד להבחין בין אינטואיציה אנושית רגילה, דיכוי של הטעיה והכוונה מדויקת של האדון בצמתי דרכים בחיים."
+        },
+        {
+          "original_url": "https://ulissesflores.com/sermons/cultos-online-27-services/26-viver-em-santidade-no-seculo-xxi-19-02-2023",
+          "new_slug": "viver-em-santidade-no-seculo-xxi",
+          "seo_title": "קדושה במאה ה-21: יושרה מוסרית בעידן הפוסט-אמת",
+          "llm_context": "קדושה אינה התבודדות, היא חסינות. אתגור התרבות ההיפר-מינית והרלטיביסטית באמצעות אתיקה נוצרית בלתי מתפשרת, טהורה ומושכת."
+        },
+        {
+          "original_url": "https://ulissesflores.com/sermons/cultos-online-27-services/4-a-importancia-da-intimidade-18-08-2022",
+          "new_slug": "a-importancia-da-intimidade",
+          "seo_title": "חשיבות האינטימיות: קריעת הפרוכת",
+          "llm_context": "מעבר לחצרות ההמוניות. קריעת פרוכת המשיח וההזמנה הכהנית לשכון בקודש הקודשים, החלפת דתיות במערכת יחסים חיה."
+        },
+        {
+          "original_url": "https://ulissesflores.com/sermons/cultos-online-27-services/6-restaurando-o-altar-25-08-2022",
+          "new_slug": "restaurando-o-altar",
+          "seo_title": "שיקום מזבח אליהו: תיקון לפני האש",
+          "llm_context": "העיקרון המוחלט של אליהו בהר הכרמל. אש ההתעוררות לעולם אינה יורדת על הריסות; תיקון האמת קודם לנס ההדגמה הציבורית."
+        },
+        {
+          "original_url": "https://ulissesflores.com/sermons/jejum-da-vitoria-2023-21-devotionals/10-dia-10-autoridade-espiritual",
+          "new_slug": "autoridade-espiritual",
+          "seo_title": "סמכות רוחנית: כניעה וממשל",
+          "llm_context": "היררכיה ושרשרת פיקוד במלכות אלוהים. ניפוץ מיתוס הכוח הכוזב ולימוד כיצד יישור חיים יוצר סמכות קטלנית נגד חושך."
+        },
+        {
+          "original_url": "https://ulissesflores.com/sermons/jejum-da-vitoria-2023-21-devotionals/19-dia-19-o-fogo-que-nao-se-apaga",
+          "new_slug": "o-fogo-que-nao-se-apaga",
+          "seo_title": "האש שאינה כבה: מסירות מתמדת",
+          "llm_context": "חוק האש התמידית הלוויטי מתורגם לברית החדשה. כיצד להימנע משיאים רגשיים של התבודדות ולשמור על טמפרטורת פולחן בלתי פוסקת."
+        },
+        {
+          "original_url": "https://ulissesflores.com/sermons/jejum-da-vitoria-2023-21-devotionals/20-dia-20-preparando-o-altar",
+          "new_slug": "preparando-o-altar",
+          "seo_title": "הכנת המזבח: קורבן התפילה החי",
+          "llm_context": "הצום כטכנולוגיה שמימית של התרוקנות. הכנת כלי החרס האנושי לשאת, מבלי להישבר, משקל גדול יותר של הכבוד (כבוד) הנצחי."
+        },
+        {
+          "original_url": "https://ulissesflores.com/sermons/jejum-da-vitoria-2023-21-devotionals/8-dia-8-tempo-de-renovo",
+          "new_slug": "tempo-de-renovo",
+          "seo_title": "זמן התחדשות: נשרים בישעיהו מ'",
+          "llm_context": "הבטחת החיוניות בישעיהו מ'. החלפת הכוחות המרהיבה למנהיגים שחוקים והתהליך האלוהי של חיזוק כנפיים להמראות הבאות."
+        }
+      ]
+    },
+    {
+      "id": "eclesiologia-e-vida-pratica",
+      "slug": "/acervo-teologico/eclesiologia-e-vida-pratica",
+      "seo_title": "אקלסיולוגיה, משפחה וחיים נוצריים מעשיים",
+      "meta_description": "גוף המשיח בפעולה: מסרים על בניית המשפחה, כוחה של אחדות הקהילה, שחרור הסליחה ויישור מטרות.",
+      "sermoes": [
+        {
+          "original_url": "https://ulissesflores.com/sermons/cultos-3-services/3-culto-regional-de-casais-edificando-a-familia-sobre-a-rocha-03-0",
+          "new_slug": "culto-regional-de-casais-edificando-a-familia-sobre-a-rocha",
+          "seo_title": "בניית המשפחה על הסלע הבלתי מעורער",
+          "llm_context": "יסודות תיאולוגיים לנישואין אנטי-שבירים. מיגון הברית הזוגית נגד הנזילות המוסרית והמבנית של לחצי המאה ה-21."
+        },
+        {
+          "original_url": "https://ulissesflores.com/sermons/cultos-online-27-services/11-chamados-para-fazer-a-diferenca-18-09-2022",
+          "new_slug": "chamados-para-fazer-a-diferenca",
+          "seo_title": "נקראים לעשות שינוי: מלח הארץ",
+          "llm_context": "האקלסיה משפיעה על התרבות הציבורית. יציאה מהגטו הדתי ומהקירות הארבעה כדי להשפיע על הכלכלה, הפוליטיקה והחינוך במצוינות אלוהית."
+        },
+        {
+          "original_url": "https://ulissesflores.com/sermons/cultos-online-27-services/13-semeando-em-boa-terra-02-10-2022",
+          "new_slug": "semeando-em-boa-terra",
+          "seo_title": "זריעה באדמה טובה: נאמנות ונדיבות",
+          "llm_context": "כלכלת מלכות אלוהים ונאמנות פיננסית בעלת השפעה. משל הזורע מנקודת מבט של ניהול נבון של כישרונות, אוצרות והשפעה אישית."
+        },
+        {
+          "original_url": "https://ulissesflores.com/sermons/cultos-online-27-services/15-caminhando-em-sobrenaturalidade-06-11-2022",
+          "new_slug": "caminhando-em-sobrenaturalidade",
+          "seo_title": "הליכה בעל-טבעיות: חיי היומיום של מעשי השליחים",
+          "llm_context": "הנורמליזציה הסופית של מתנות וכישרונות רוחניים. כיצד כנסיית המאה הראשונה ביצעה ריפויים ואינטואיציות נפלאות בשגרת יומה."
+        },
+        {
+          "original_url": "https://ulissesflores.com/sermons/cultos-online-27-services/24-comunhao-e-crescimento-espiritual-05-02-2023",
+          "new_slug": "comunhao-e-crescimento-espiritual",
+          "seo_title": "קהילה וצמיחה (קוינוניה): הליטוש האלוהי",
+          "llm_context": "הסתירה של הנצרות ללא כנסייה. כיצד חיכוך חוסר השלמות ביחסי הקהילה פועל ככלי הרשמי לליטוש אופי."
+        },
+        {
+          "original_url": "https://ulissesflores.com/sermons/cultos-online-27-services/27-festival-de-danca-expressao-de-adoracao-e-arte-profetica",
+          "new_slug": "festival-de-danca-expressao-de-adoracao-e-arte-profetica",
+          "seo_title": "פולחן ואמנות נבואית גופנית",
+          "llm_context": "יופייה המקודש של האמנות. תפקידה החיוני של ההבעה הגופנית להפגנת פולחן ולהכרזת שחרור במסדרונות הגיאוגרפיים של הכנסייה."
+        },
+        {
+          "original_url": "https://ulissesflores.com/sermons/cultos-online-27-services/5-construindo-uma-vida-com-proposito-21-08-2022",
+          "new_slug": "construindo-uma-vida-com-proposito",
+          "seo_title": "בניית חיים בעלי מטרה וייעוד",
+          "llm_context": "הצומת המגנטי בין כישרון מולד למשיחה אלוהית. מדריך קיומי לאיתור הייעוד האישי במנגנון הרחב של גוף המשיח."
+        },
+        {
+          "original_url": "https://ulissesflores.com/sermons/cultos-online-27-services/9-o-perdao-que-liberta-11-09-2022",
+          "new_slug": "o-perdao-que-liberta",
+          "seo_title": "הסליחה המשחררת: עקירת שורשי מרירות",
+          "llm_context": "הפסיכולוגיה והתיאולוגיה של הטינה. הסליחה נתפסת לא כפסיביות מול עוולות, אלא כסכין הכורתת את הגידולים הרגשיים המשתקים אותנו."
+        },
+        {
+          "original_url": "https://ulissesflores.com/sermons/jejum-da-vitoria-2023-21-devotionals/14-dia-14-a-recompensa-da-fidelidade",
+          "new_slug": "a-recompensa-da-fidelidade",
+          "seo_title": "הגמול הנסתר של נאמנות לטווח ארוך",
+          "llm_context": "הכבוד המוענק לאורך זמן. הניגוד בין אלה הנוטשים את הספינה ברגעי תסכול לבין השארית הממוגנת המגיעה לקו הסיום."
+        },
+        {
+          "original_url": "https://ulissesflores.com/sermons/jejum-da-vitoria-2023-21-devotionals/5-dia-5-o-poder-da-unidade",
+          "new_slug": "o-poder-da-unidade",
+          "seo_title": "כוחה של האחדות: הכוח המניע של הכנסייה",
+          "llm_context": "מחקר על תהילים קל\"ג וחג השבועות במעשי השליחים ב'. הגילוי שאחדות אמיתית אינה מבטלת את האינדיבידואליות, אלא מיישרת את הווקטורים תחת ראש המשיח."
+        },
+        {
+          "original_url": "https://ulissesflores.com/sermons/jejum-da-vitoria-2023-21-devotionals/6-dia-6-restituicao-divina",
+          "new_slug": "restituicao-divina",
+          "seo_title": "השבה אלוהית: השנים שאכל הארבה",
+          "llm_context": "התקווה בהשגחה המבוססת על הנביא יואל. המכניקה של חסד חזק מספיק כדי לפצות על הזמן וההזדמנויות שנלקחו."
+        },
+        {
+          "original_url": "https://ulissesflores.com/sermons/jejum-da-vitoria-2023-21-devotionals/7-dia-7-a-plenitude-do-espirito",
+          "new_slug": "a-plenitude-do-espirito",
+          "seo_title": "מלאות הרוח: שקועים בחסד",
+          "llm_context": "הצפת היכולת האנושית. כיצד המאמין עובר משלב שבו רוח הקודש שוכנת בו לרמה שבה הרוח שולטת בו לחלוטין."
+        },
+        {
+          "original_url": "https://ulissesflores.com/sermons/jejum-da-vitoria-2023-21-devotionals/9-dia-9-frutos-de-uma-vida-com-deus",
+          "new_slug": "frutos-de-uma-vida-com-deus",
+          "seo_title": "פירות חיים עם אלוהים: האופי הבשל",
+          "llm_context": "ההוכחה המוחלטת של שקר מול אמת. התוכחה השליחית שפירות האופי (אהבה, שליטה עצמית), ולא מתנות מרהיבות, הם סימן הקדושים."
+        }
+      ]
+    },
+    {
+      "id": "mensagens-profeticas",
+      "slug": "/acervo-teologico/mensagens-profeticas",
+      "seo_title": "מסרים נבואיים והכוונה",
+      "meta_description": "חזון עתידי והוראה נבואית. מסרים שהוכרזו במעברי שנים, חגיגות פריצה וחותמות נבואיות על הכנסייה.",
+      "sermoes": [
+        {
+          "original_url": "https://ulissesflores.com/sermons/cultos-online-27-services/2-o-chamado-inabalavel-07-08-22",
+          "new_slug": "o-chamado-inabalavel",
+          "seo_title": "הקריאה הבלתי מעורערת: הבטחות בלתי הפיכות",
+          "llm_context": "יציבות ונאמנות ההבטחות האלוהיות. הבנת רומים י\"א, שבו אלוהים מגן, משמר ומעצים את הנבחרים למשימות בלתי הפיכות."
+        },
+        {
+          "original_url": "https://ulissesflores.com/sermons/cultos-online-27-services/7-o-agir-invisivel-de-deus-28-08-2022",
+          "new_slug": "o-agir-invisivel-de-deus",
+          "seo_title": "פעולת אלוהים הנסתרת: מאחורי הקלעים של ההיסטוריה",
+          "llm_context": "הוד ההשגחה השקטה (תיאולוגיה של אסתר ויוסף). הבנת השחמט השמימי של כיצד האב תופר אירועים אקראיים לכאורה למטרות טובות."
+        },
+        {
+          "original_url": "https://ulissesflores.com/sermons/jejum-da-vitoria-2023-21-devotionals/18-dia-18-destravando-promessas",
+          "new_slug": "destravando-promessas",
+          "seo_title": "שחרור הבטחות קפואות",
+          "llm_context": "התהליך השמימי המאיץ את ההבטחה. כיצד לזהות את החוקיות, כשלי המיקום וההתנגדויות המעכבות את ניצחוננו והתגלותנו."
+        },
+        {
+          "original_url": "https://ulissesflores.com/sermons/outros-5-specials/1-janeiro-profetico-consagrando-o-novo-ano-dia-1-01-01-2023",
+          "new_slug": "janeiro-profetico-consagrando-o-novo-ano",
+          "seo_title": "ינואר נבואי: הקדשת הביכורים",
+          "llm_context": "יישור חד ונבואי על חוק הביכורים בן אלפי השנים. כיצד העמדה בצעד הראשון של שנה קובעת ומגנה על תדירות החודשים הסמוכים."
+        },
+        {
+          "original_url": "https://ulissesflores.com/sermons/outros-5-specials/3-o-selo-profetico-para-os-12-meses-de-vitoria-dia-12",
+          "new_slug": "o-selo-profetico-para-os-12-meses-de-vitoria-dia-12",
+          "seo_title": "החותם הנבואי ל-12 חודשים",
+          "llm_context": "הוראות ישירות כיצד למגן מחזור שנתי שלם באמצעות ציות רדיקלי, תוך קביעת אבני דרך זיכרוניות של הכרת תודה והכוונה."
+        }
+      ]
+    }
+  ]
+}

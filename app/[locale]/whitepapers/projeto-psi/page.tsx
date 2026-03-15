@@ -370,16 +370,16 @@ export default async function ProjetoPsiPage({ params }: PageProps) {
 
             {/* Table: Shielding Comparison */}
             <div className='not-prose overflow-x-auto my-12 border border-neutral-800 rounded-xl shadow-lg'>
-              <table className='w-full text-left text-sm text-neutral-300'>
-                <caption className='p-4 bg-neutral-900/80 text-left text-cyan-400 font-mono uppercase tracking-widest font-bold border-b border-neutral-800 text-xs'>
+              <table className='w-full text-start text-sm text-neutral-300'>
+                <caption className='p-4 bg-neutral-900/80 text-start text-cyan-400 font-mono uppercase tracking-widest font-bold border-b border-neutral-800 text-xs'>
                   Tabela 1: Parâmetros de Blindagem Eletromagnética (Cu-W)
                 </caption>
                 <thead>
                   <tr className='bg-neutral-900/80 text-neutral-200'>
-                    <th className='px-4 py-3 text-left border-b border-neutral-700 font-semibold'>Material</th>
-                    <th className='px-4 py-3 text-left border-b border-neutral-700 font-semibold'>Condutividade</th>
-                    <th className='px-4 py-3 text-left border-b border-neutral-700 font-semibold'>SE (RF)</th>
-                    <th className='px-4 py-3 text-left border-b border-neutral-700 font-semibold'>Vantagem Estrutural</th>
+                    <th className='px-4 py-3 text-start border-b border-neutral-700 font-semibold'>Material</th>
+                    <th className='px-4 py-3 text-start border-b border-neutral-700 font-semibold'>Condutividade</th>
+                    <th className='px-4 py-3 text-start border-b border-neutral-700 font-semibold'>SE (RF)</th>
+                    <th className='px-4 py-3 text-start border-b border-neutral-700 font-semibold'>Vantagem Estrutural</th>
                   </tr>
                 </thead>
                 <tbody className='text-neutral-400'>
@@ -634,15 +634,15 @@ export default async function ProjetoPsiPage({ params }: PageProps) {
 
             {/* Table: Biometrics */}
             <div className='not-prose overflow-x-auto my-12 border border-neutral-800 rounded-xl shadow-lg'>
-              <table className='w-full text-left text-sm text-neutral-300'>
-                <caption className='p-4 bg-neutral-900/80 text-left text-cyan-400 font-mono uppercase tracking-widest font-bold border-b border-neutral-800 text-xs'>
+              <table className='w-full text-start text-sm text-neutral-300'>
+                <caption className='p-4 bg-neutral-900/80 text-start text-cyan-400 font-mono uppercase tracking-widest font-bold border-b border-neutral-800 text-xs'>
                   Tabela 2: Biomarcadores de Detecção Fisiológica de Coação
                 </caption>
                 <thead>
                   <tr className='bg-neutral-900/80 text-neutral-200'>
-                    <th className='px-4 py-3 text-left border-b border-neutral-700 font-semibold'>Biomarcador</th>
-                    <th className='px-4 py-3 text-left border-b border-neutral-700 font-semibold'>Hardware</th>
-                    <th className='px-4 py-3 text-left border-b border-neutral-700 font-semibold'>Padrão Sob Coerção</th>
+                    <th className='px-4 py-3 text-start border-b border-neutral-700 font-semibold'>Biomarcador</th>
+                    <th className='px-4 py-3 text-start border-b border-neutral-700 font-semibold'>Hardware</th>
+                    <th className='px-4 py-3 text-start border-b border-neutral-700 font-semibold'>Padrão Sob Coerção</th>
                   </tr>
                 </thead>
                 <tbody className='text-neutral-400'>

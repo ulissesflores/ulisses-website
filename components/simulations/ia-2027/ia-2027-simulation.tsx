@@ -109,7 +109,7 @@ function SimulationMetricsSidebar({ chart }: { chart: SimulationChartExtra }) {
   return (
     <div className='bg-neutral-900/60 p-6 rounded-xl border border-neutral-700 flex flex-col gap-6 mt-10'>
       <div className='flex justify-between items-start gap-4'>
-        <h3 className='text-2xl font-bold font-sans uppercase tracking-tight text-right text-white'>{t.indicators}</h3>
+        <h3 className='text-2xl font-bold font-sans uppercase tracking-tight text-end text-white'>{t.indicators}</h3>
         <span className='text-xs font-mono text-neutral-500 uppercase'>{formatDate(chart.date, locale)}</span>
       </div>
 
@@ -131,7 +131,7 @@ function SimulationMetricsSidebar({ chart }: { chart: SimulationChartExtra }) {
               <div className='text-2xl font-bold'>{chart.agentPopulation.copies.toLocaleString(locale)}</div>
               <div className='text-xs text-gray-500 uppercase'>{t.activeCopies}</div>
             </div>
-            <div className='text-right'>
+            <div className='text-end'>
               <div className='text-xl font-bold'>{chart.agentPopulation.speed}x</div>
               <div className='text-xs text-gray-500 uppercase'>{t.speed}</div>
             </div>
@@ -216,7 +216,7 @@ function BranchDecisionBlock({
           <button
             type='button'
             onClick={() => onSelectPath('slowdown')}
-            className='rounded-2xl border-2 border-emerald-700/60 bg-emerald-950/30 text-white px-6 py-8 text-left hover:bg-emerald-900/40 hover:border-emerald-500 transition-colors group'
+            className='rounded-2xl border-2 border-emerald-700/60 bg-emerald-950/30 text-white px-6 py-8 text-start hover:bg-emerald-900/40 hover:border-emerald-500 transition-colors group'
           >
             <span className='block text-xs uppercase font-mono tracking-[0.2em] mb-2 text-emerald-400'>{t.slowdownLabel}</span>
             <span className='block text-3xl font-black text-emerald-400 group-hover:text-emerald-300'>{t.slowdownTitle}</span>
@@ -226,7 +226,7 @@ function BranchDecisionBlock({
           <button
             type='button'
             onClick={() => onSelectPath('race')}
-            className='rounded-2xl border-2 border-red-700/60 bg-red-950/30 text-white px-6 py-8 text-left hover:bg-red-900/40 hover:border-red-500 transition-colors group'
+            className='rounded-2xl border-2 border-red-700/60 bg-red-950/30 text-white px-6 py-8 text-start hover:bg-red-900/40 hover:border-red-500 transition-colors group'
           >
             <span className='block text-xs uppercase font-mono tracking-[0.2em] mb-2 text-red-500'>{t.raceLabel}</span>
             <span className='block text-3xl font-black text-red-500 group-hover:text-red-400'>{t.raceTitle}</span>
@@ -247,14 +247,14 @@ function BranchDecisionBlock({
         <button
           type='button'
           onClick={() => onSelectPath('main')}
-          className='rounded-xl border border-neutral-700 bg-neutral-900/60 text-neutral-300 px-4 py-4 text-sm font-semibold hover:bg-neutral-800 transition-colors text-left'
+          className='rounded-xl border border-neutral-700 bg-neutral-900/60 text-neutral-300 px-4 py-4 text-sm font-semibold hover:bg-neutral-800 transition-colors text-start'
         >
           {t.backToBifurcation}
         </button>
         <button
           type='button'
           onClick={() => onSelectPath('slowdown')}
-          className={`rounded-xl border px-4 py-4 text-sm font-semibold transition-colors text-left ${
+          className={`rounded-xl border px-4 py-4 text-sm font-semibold transition-colors text-start ${
             activePath === 'slowdown'
               ? 'border-emerald-600 bg-emerald-700 text-white'
               : 'border-neutral-700 bg-neutral-900/60 text-neutral-400 hover:bg-neutral-800'
@@ -265,7 +265,7 @@ function BranchDecisionBlock({
         <button
           type='button'
           onClick={() => onSelectPath('race')}
-          className={`rounded-xl border px-4 py-4 text-sm font-semibold transition-colors text-left ${
+          className={`rounded-xl border px-4 py-4 text-sm font-semibold transition-colors text-start ${
             activePath === 'race'
               ? 'border-red-600 bg-red-700 text-white'
               : 'border-neutral-700 bg-neutral-900/60 text-neutral-400 hover:bg-neutral-800'
