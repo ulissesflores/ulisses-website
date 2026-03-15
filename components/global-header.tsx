@@ -24,7 +24,8 @@ const navCategories: NavCategory[] = [
     items: [
       { label: 'Research', href: '/research', description: 'IA, Economia e Sistemas Complexos' },
       { label: 'Whitepapers', href: '/whitepapers', description: 'Engenharia, IoT e Segurança' },
-      { label: 'Projeto Ψ (PSI)', href: '/whitepapers/projeto-psi', description: 'Whitepaper: Hardware Wallet Nuclear-Grade' },
+      { label: 'Projeto Ψ (PSI)', href: '/whitepapers/projeto-psi', description: 'Whitepaper técnico: Hardware Soberano' },
+      { label: 'PSI — Demonstração', href: '/projeto-psi', description: 'Landing comercial: investimento e licenciamento' },
       { label: 'Essays', href: '/essays', description: 'Teologia, Humanidades e História' },
     ],
   },

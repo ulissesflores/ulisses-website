@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { siteJsonLd, upkfMeta } from '@/data/generated/upkf.generated';
+import { buildLanguageAlternates } from '@/data/seo';
 
 import { GlobalHeader } from '@/components/global-header';
 import { GlobalFooter } from '@/components/global-footer';
@@ -38,6 +39,7 @@ export const metadata: Metadata = {
   classification: 'Science and Technology',
   alternates: {
     canonical: '/',
+    languages: buildLanguageAlternates('/'),
   },
   robots: {
     index: true,
@@ -57,6 +59,7 @@ export const metadata: Metadata = {
     description: defaultDescription,
     siteName: 'ulissesflores.com',
     locale: 'pt_BR',
+    alternateLocale: ['en_US', 'es_ES', 'it_IT', 'he_IL'],
     images: [
       {
         url: defaultOgImage,

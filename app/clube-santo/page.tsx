@@ -140,6 +140,60 @@ export default function ClubeSantoPage() {
         </div>
       </section>
 
+      {/* Manifesto: O Clube Santo — Um Avivamento para a Era Digital */}
+      <section className='bg-neutral-950 text-neutral-200 py-16 border-b border-neutral-800'>
+        <div className='max-w-3xl mx-auto px-6'>
+          <div className='prose prose-lg dark:prose-invert max-w-none prose-headings:text-white prose-p:text-neutral-300 prose-blockquote:border-emerald-600 prose-blockquote:text-neutral-400 prose-em:text-emerald-300/80 prose-strong:text-white'>
+            <p className='text-sm font-mono uppercase tracking-widest text-emerald-400 mb-6 not-prose'>
+              Manifesto
+            </p>
+
+            <h2 className='text-3xl font-bold mb-8'>
+              O Clube Santo: Um Avivamento para a Era Digital
+            </h2>
+
+            <p className='italic text-neutral-400 text-xl leading-relaxed mb-10'>
+              Uma comunidade de mentes e corações em busca da verdadeira conexão.
+            </p>
+
+            <h3>Tudo começou com um chá.</h3>
+
+            <p>
+              Não, não estamos falando do chá das cinco britânico, mas de um chá que derramou um sopro
+              de vida em uma Inglaterra espiritualmente adormecida. John Wesley, o protagonista dessa
+              história, poderia muito bem ter sido o inventor do chá matcha ou do detox, mas o que ele
+              realmente fez foi criar uma xícara cheia de avivamento, conhecida como{' '}
+              <strong>O Clube Santo</strong>.
+            </p>
+
+            <p>
+              O Clube Santo, para os desavisados, não era um clube de boas-vindas para aspirantes a
+              santos. Era muito mais que isso. Era uma reunião de mentes e corações que buscavam a
+              verdadeira conexão com Deus, aliada a um rigor intelectual implacável. E que conexão! A
+              Inglaterra nunca mais foi a mesma. John Wesley, com seu Clube Santo, desencadeou um
+              avivamento espiritual tão grande que até o Rei George I teve que ajustar sua coroa.
+            </p>
+
+            <h3>O Novo Giro: Arqueologia Espiritual</h3>
+
+            <p>
+              Você deve estar se perguntando: por que estamos falando de um clube criado séculos atrás
+              na Inglaterra? Porque acreditamos que é hora de um novo avivamento para os nossos tempos.
+              Um movimento que começará na América Latina, mas não parará até alcançar os confins do
+              mundo.
+            </p>
+
+            <p>
+              Estamos trazendo de volta o Clube Santo, mas com um giro para a era digital. O nosso
+              instituto une o fervor pentecostal avivalista com ferramentas de Inteligência Artificial
+              para realizar o que chamamos de{' '}
+              <strong>Arqueologia Espiritual e Teológica</strong>. Juntos, vamos revolucionar o mundo,
+              um avivamento de cada vez. Prepare a sua xícara.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* Content Sections */}
       <section className='bg-neutral-950 text-neutral-200 py-16'>
         <div className='max-w-5xl mx-auto px-6'>

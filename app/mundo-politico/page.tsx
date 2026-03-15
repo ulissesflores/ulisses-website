@@ -136,6 +136,62 @@ export default function MundoPoliticoPage() {
         </div>
       </section>
 
+      {/* Manifesto: A Mecânica do Poder e a Busca pela Verdade */}
+      <section className='bg-neutral-950 text-neutral-200 py-16 border-b border-neutral-800'>
+        <div className='max-w-3xl mx-auto px-6'>
+          <div className='prose prose-lg dark:prose-invert max-w-none prose-headings:text-white prose-p:text-neutral-300 prose-blockquote:border-amber-600 prose-blockquote:text-neutral-400 prose-em:text-amber-300/80 prose-strong:text-white'>
+            <p className='text-sm font-mono uppercase tracking-widest text-amber-400 mb-6 not-prose'>
+              Manifesto
+            </p>
+
+            <h2 className='text-3xl font-bold mb-8'>
+              A Mecânica do Poder e a Busca pela Verdade
+            </h2>
+
+            <blockquote className='border-l-4 border-amber-600 pl-6 my-8'>
+              <p className='text-xl italic'>
+                &ldquo;A democracia já matou muitas verdades. Não podemos permitir que isso continue
+                acontecendo.&rdquo;
+              </p>
+            </blockquote>
+
+            <p>
+              Criamos este projeto — o <strong>Mundo Político</strong> — como um espaço dedicado a quem
+              busca entender o jogo do poder e se recusa a ser refém de manipulações e narrativas
+              enganosas. A mudança só pode acontecer quando nos tornamos agentes ativos dela, e o
+              primeiro passo é entender como o sistema realmente funciona.
+            </p>
+
+            <h3>A Crítica Socrática</h3>
+
+            <p>
+              A democracia, como a conhecemos, permite que o povo vote em quem o governará. Porém, o
+              pai da Filosofia, Sócrates, era receoso quanto a este método. Em um dos casos mais
+              importantes da humanidade, a ideia de Sócrates foi posta à prova em seu próprio
+              julgamento. Diante de 500 atenienses, por uma curta margem na votação, ele foi condenado
+              à morte por cicuta. Pelo método do voto, a filosofia — a busca incansável pela verdade —
+              foi injustiçada por pessoas que não entendiam exatamente do que se tratava aquela votação.
+            </p>
+
+            <p>
+              Essa mesma injustiça histórica evidenciou-se na condenação de outro homem. O povo, de
+              forma democrática, condenou à pena de morte um homem sem crime: Jesus Cristo. Aquele que
+              não apenas buscava a verdade, mas que <em>era</em> a própria Verdade.
+            </p>
+
+            <h3>Nosso Propósito</h3>
+
+            <p>
+              Esse é o mundo político em que vivemos. Entendemos que o conhecimento é a melhor forma de
+              blindar a sociedade contra as falhas da &ldquo;regra da maioria&rdquo; desprovida de
+              lastro moral e intelectual. Nossos esforços estão em promover os meios para que os fatos,
+              a economia e a geopolítica sejam interpretados sob a ótica da lógica irrefutável (Escola
+              Austríaca) e da soberania individual.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* Posts Grid */}
       <section className='bg-neutral-950 text-neutral-200 py-16'>
         <div className='max-w-5xl mx-auto px-6'>

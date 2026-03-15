@@ -55,6 +55,22 @@ public/essays/*.pdf
 public/research/*.pdf
 public/whitepapers/*.pdf
 
+# Deep Research artifacts (auto-created by research pipeline — do not commit)
+public/deep-research/**/*.docx
+public/deep-research/**/*.pdf
+public/deep-research/**/*.md
+
+# Generated JSON-LD, LLM, and UPKF artifacts (auto-created by upkf:generate)
+public/*.jsonld
+public/upkf-source.md
+public/llms.txt
+public/llms-full.txt
+public/doi/
+
+# Duplicate/temp images
+public/whitepapers/*\ 2.webp
+Gemini_Generated_Image_*.webp
+
 # debug
 npm-debug.log*
 yarn-debug.log*

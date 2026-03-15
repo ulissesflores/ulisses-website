@@ -120,6 +120,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     maybeMakeSitemapEntry('/simulacoes/mumm-ra', upkfMeta.generatedAt, 'weekly', 0.62),
     maybeMakeSitemapEntry('/whitepapers/projeto-psi', upkfMeta.generatedAt, 'weekly', 0.72),
     maybeMakeSitemapEntry('/projeto-psi', upkfMeta.generatedAt, 'weekly', 0.80),
+    maybeMakeSitemapEntry('/simulacoes/projeto-psi', upkfMeta.generatedAt, 'weekly', 0.68),
     maybeMakeSitemapEntry('/simulacoes/goldenleaf', upkfMeta.generatedAt, 'weekly', 0.62),
     maybeMakeSitemapEntry('/clube-santo', upkfMeta.generatedAt, 'weekly', 0.68),
   ].filter((entry): entry is MetadataRoute.Sitemap[number] => Boolean(entry));

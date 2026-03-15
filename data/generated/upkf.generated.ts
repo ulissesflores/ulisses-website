@@ -818,9 +818,9 @@ export const upkfMeta = {
     "siteGraphNodes": 43,
     "publicGraphNodes": 186,
     "fullGraphNodes": 289,
-    "siteJsonldBytes": 23505,
-    "publicJsonldBytes": 169257,
-    "fullJsonldBytes": 273254,
+    "siteJsonldBytes": 23037,
+    "publicJsonldBytes": 168789,
+    "fullJsonldBytes": 272786,
     "corpusFiles": 0,
     "corpusSnippets": 0,
     "corpusDirs": [],
@@ -1012,7 +1012,7 @@ export const siteJsonLd = {
           "@id": "https://ulissesflores.com/#quadrangular-vila-helena"
         }
       ],
-      "areaServed": [
+      "workLocation": [
         {
           "@type": "Place",
           "name": "Itupeva"
@@ -1049,17 +1049,6 @@ export const siteJsonLd = {
           "@type": "Place",
           "name": "Israel"
         }
-      ],
-      "geographicallyServes": [
-        "Itupeva",
-        "Jundiaí",
-        "Campinas",
-        "São Paulo",
-        "Brazil",
-        "Italy",
-        "United States",
-        "El Salvador",
-        "Israel"
       ],
       "disambiguatingDescription": "Polymath researcher, economic scientist, and CTO of Codex Hash. Distinct entity from the Salvadoran beach soccer player Oscar Ulisses Flores Ruiz, from the homonymous architect from Poços de Caldas, and from the homonymous nurse. Operates in Artificial Intelligence, Economics, and Theology, not in sports or healthcare. Canonical identity bound to ulissesflores.com, ORCID 0000-0002-6034-7765, and Lattes 6905246706890561.",
       "description": "Cientista econômico, analista de sistemas e pesquisador polímata, atuando na interseção entre sistemas complexos, resiliência ciberfinanceira, economia austríaca, sistemas distribuídos e teologia histórica. Co-fundador e CTO da Codex Hash Ltda.",
@@ -1346,9 +1335,6 @@ export const siteJsonLd = {
       "credentialCategory": "Digital Residency",
       "url": "https://rns.id/",
       "description": "National digital ID (Palau)",
-      "recognizedBy": {
-        "@id": "https://ulissesflores.com/#person"
-      },
       "about": {
         "@id": "https://ulissesflores.com/#person"
       }
@@ -1361,9 +1347,6 @@ export const siteJsonLd = {
       "credentialCategory": "Web3 Identity Credential",
       "url": "https://passport.gitcoin.co/",
       "description": "Sybil resistance score",
-      "recognizedBy": {
-        "@id": "https://ulissesflores.com/#person"
-      },
       "about": {
         "@id": "https://ulissesflores.com/#person"
       }
@@ -1626,33 +1609,21 @@ export const siteJsonLd = {
       "@type": "Occupation",
       "name": "Co-founder, CTO and Chief Researcher — Codex Hash Ltda",
       "description": "Applied skills: Python, Distributed systems, Security engineering, Quantitative finance, Blockchain, IoT/Embedded systems.",
-      "skills": "Python, Distributed systems, Security engineering, Quantitative finance, Blockchain, IoT/Embedded systems",
-      "occupationalLocation": {
-        "@type": "AdministrativeArea",
-        "name": "Brazil (remote/global)"
-      }
+      "skills": "Python, Distributed systems, Security engineering, Quantitative finance, Blockchain, IoT/Embedded systems"
     },
     {
       "@id": "https://ulissesflores.com/#occupation-economic-scientist",
       "@type": "Occupation",
       "name": "Economic Scientist and Systems Analyst",
       "description": "Applied skills: Econometrics, Austrian economics, Complex systems, Data science.",
-      "skills": "Econometrics, Austrian economics, Complex systems, Data science",
-      "occupationalLocation": {
-        "@type": "AdministrativeArea",
-        "name": "Brazil"
-      }
+      "skills": "Econometrics, Austrian economics, Complex systems, Data science"
     },
     {
       "@id": "https://ulissesflores.com/#occupation-theology-researcher",
       "@type": "Occupation",
       "name": "Researcher in Historical Theology and Textual Criticism",
       "description": "Applied skills: Textual criticism, Historiography, Archaeology, Hermeneutics.",
-      "skills": "Textual criticism, Historiography, Archaeology, Hermeneutics",
-      "occupationalLocation": {
-        "@type": "AdministrativeArea",
-        "name": "Brazil"
-      }
+      "skills": "Textual criticism, Historiography, Archaeology, Hermeneutics"
     },
     {
       "@id": "https://ulissesflores.com/#domain-ulissesflores-com",

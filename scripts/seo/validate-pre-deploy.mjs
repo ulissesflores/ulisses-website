@@ -226,6 +226,122 @@ function validateNextConfig() {
   }
 }
 
+// ─── 5. Route Coverage ───────────────────────────────────────────────
+
+function validateRouteCoverage() {
+  console.log('\n🗺️  Validating route coverage...');
+
+  // Find all page.tsx files in app/
+  const appDir = path.join(ROOT, 'app');
+  const pageFiles = [];
+
+  function findPages(dir) {
+    for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+      if (entry.isDirectory()) {
+        findPages(path.join(dir, entry.name));
+      } else if (entry.name === 'page.tsx') {
+        pageFiles.push(path.join(dir, entry.name));
+      }
+    }
+  }
+
+  findPages(appDir);
+
+  // Extract canonical paths from page.tsx files
+  const canonicalPaths = [];
+  for (const file of pageFiles) {
+    const content = fs.readFileSync(file, 'utf-8');
+    const match = content.match(/const canonicalPath\s*=\s*['"]([^'"]+)['"]/);
+    if (match) {
+      canonicalPaths.push({ path: match[1], file: path.relative(ROOT, file) });
+    }
+  }
+
+  ok(`Found ${pageFiles.length} page.tsx files, ${canonicalPaths.length} with canonical paths`);
+
+  // Check sitemap.ts references these paths
+  const sitemapSrc = path.join(ROOT, 'app/sitemap.ts');
+  if (fs.existsSync(sitemapSrc)) {
+    const sitemapContent = fs.readFileSync(sitemapSrc, 'utf-8');
+    for (const { path: canonical, file } of canonicalPaths) {
+      if (sitemapContent.includes(`'${canonical}'`) || sitemapContent.includes(`"${canonical}"`)) {
+        ok(`${canonical} found in sitemap.ts`);
+      } else {
+        // Check if it's a dynamic route covered by collection entries
+        const isDynamic = file.includes('[');
+        if (!isDynamic) {
+          warn(`${canonical} (${file}) not explicitly found in sitemap.ts`);
+        }
+      }
+    }
+  }
+}
+
+// ─── 6. Generated Artifacts Presence ─────────────────────────────────
+
+function validateGeneratedArtifacts() {
+  console.log('\n📦 Validating generated artifacts...');
+
+  const required = [
+    'llms.txt',
+    'llms-full.txt',
+    'site.jsonld',
+    'public.jsonld',
+    'full.jsonld',
+    'upkf-source.md',
+    'feed.xml',
+  ];
+
+  for (const filename of required) {
+    // Check in public/ or .next/server/app/ (for route handlers)
+    const publicPath = path.join(PUBLIC_DIR, filename);
+    if (fs.existsSync(publicPath)) {
+      const stat = fs.statSync(publicPath);
+      if (stat.size > 0) {
+        ok(`${filename} exists (${(stat.size / 1024).toFixed(1)} KB)`);
+      } else {
+        error(`${filename} is empty`);
+      }
+    } else {
+      // May be a route handler (feed.xml, etc.)
+      warn(`${filename} not in public/ (may be route handler)`);
+    }
+  }
+}
+
+// ─── 7. Hreflang & i18n Check ────────────────────────────────────────
+
+function validateI18n() {
+  console.log('\n🌍 Validating i18n configuration...');
+
+  const layoutPath = path.join(ROOT, 'app/layout.tsx');
+  if (fs.existsSync(layoutPath)) {
+    const content = fs.readFileSync(layoutPath, 'utf-8');
+    if (content.includes('buildLanguageAlternates') || content.includes('languages:')) {
+      ok('layout.tsx has hreflang language alternates');
+    } else {
+      warn('layout.tsx missing hreflang language alternates');
+    }
+    if (content.includes('alternateLocale')) {
+      ok('layout.tsx has OG alternateLocale');
+    } else {
+      warn('layout.tsx missing OG alternateLocale');
+    }
+  }
+
+  const i18nPath = path.join(ROOT, 'data/i18n.ts');
+  if (fs.existsSync(i18nPath)) {
+    const content = fs.readFileSync(i18nPath, 'utf-8');
+    for (const locale of ['pt-br', 'en', 'es', 'it', 'he']) {
+      if (content.includes(`'${locale}'`)) {
+        ok(`Locale ${locale} supported`);
+      } else {
+        error(`Locale ${locale} not found in i18n.ts`);
+      }
+    }
+  }
+}
+
 // ─── Run All ─────────────────────────────────────────────────────────
 
 console.log('═══════════════════════════════════════════════════');
@@ -238,6 +354,9 @@ validateJsonLdFile('site.jsonld');
 validateCanonicalDomain();
 validateProxy();
 validateNextConfig();
+validateRouteCoverage();
+validateGeneratedArtifacts();
+validateI18n();
 
 console.log('\n═══════════════════════════════════════════════════');
 if (errors > 0) {

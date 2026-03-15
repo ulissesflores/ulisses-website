@@ -8,9 +8,9 @@ import { projectPsiFaq } from '@/data/faq';
 const canonicalPath = '/simulacoes/projeto-psi';
 
 export const metadata: Metadata = {
-  title: 'Projeto Ψ (PSI): Hardware Soberano e Zero Trust em Silício | Ulisses Flores',
+  title: 'Projeto Ψ (PSI): Explorador Técnico da Arquitetura de Segurança | Ulisses Flores',
   description:
-    'Whitepaper Técnico: Arquitetura de custódia de ativos digitais de classe nuclear. Conheça o Projeto PSI, equipado com SRAM PUF, Criptografia XMSS e Redundância TMR.',
+    'Explorador interativo da arquitetura do Projeto PSI — SRAM PUF, criptografia pós-quântica XMSS, redundância TMR aeroespacial e Ring Signatures. Navegue pelos 4 pilares de segurança nuclear.',
   keywords: [
     'hardware wallet',
     'zero trust',
@@ -43,9 +43,9 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'article',
     url: `${upkfMeta.primaryWebsite}${canonicalPath}`,
-    title: 'Projeto Ψ (PSI): Hardware Soberano e Zero Trust em Silício | Ulisses Flores',
+    title: 'Projeto Ψ (PSI): Explorador Técnico da Arquitetura de Segurança | Ulisses Flores',
     description:
-      'Whitepaper Técnico: Arquitetura de custódia de ativos digitais de classe nuclear com SRAM PUF, XMSS pós-quântico e Redundância TMR aeroespacial.',
+      'Explorador interativo da arquitetura do Projeto PSI — SRAM PUF, XMSS pós-quântico e Redundância TMR aeroespacial.',
     locale: 'pt_BR',
   },
 };
