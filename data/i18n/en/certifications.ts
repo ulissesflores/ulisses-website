@@ -41,6 +41,12 @@ export const certifications = {
     problemsSolved: 'Problems solved',
     verifyUrl: 'Verify URL',
   },
+  detail: {
+    backLink: 'Back to Certifications',
+    provider: 'Provider',
+    certId: 'Certificate ID',
+    author: 'Author',
+  },
   cta: {
     title: 'Need a Consultant or Developer with these skills?',
     description:

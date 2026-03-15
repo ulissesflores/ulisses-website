@@ -4,9 +4,12 @@ import { notFound } from 'next/navigation';
 import { certificationsSotaData, getCertificationSotaBySlug } from '@/data/certifications-sota';
 import { upkfMeta } from '@/data/generated/upkf.generated';
 import { AuthorHubCard } from '@/components/author-hub-card';
+import { getDictionary } from '@/lib/get-dictionary';
+import { isLocale, defaultLocale } from '@/data/i18n';
+import type { Locale } from '@/data/i18n';
 
 interface PageProps {
-  params: Promise<{ slug: string }>;
+  params: Promise<{ slug: string; locale: string }>;
 }
 
 export function generateStaticParams() {
@@ -48,7 +51,10 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 }
 
 export default async function CertificationDetailPage({ params }: PageProps) {
-  const { slug } = await params;
+  const { slug, locale: raw } = await params;
+  const locale = (isLocale(raw) ? raw : defaultLocale) as Locale;
+  const dict = await getDictionary(locale);
+  const t = dict.certifications;
   const certification = getCertificationSotaBySlug(slug);
 
   if (!certification) {
@@ -95,7 +101,7 @@ export default async function CertificationDetailPage({ params }: PageProps) {
           '@type': 'Organization',
           name: certification.provider,
         },
-        inLanguage: 'pt-BR',
+        inLanguage: locale,
         teaches: certification.skills,
         educationalCredentialAwarded: certification.title,
         hasCourseInstance: {
@@ -112,7 +118,7 @@ export default async function CertificationDetailPage({ params }: PageProps) {
     <div className='min-h-screen bg-neutral-950 text-neutral-200'>
       <main className='max-w-3xl mx-auto px-6 py-20'>
         <Link href='/certifications' className='text-sm text-neutral-400 hover:text-emerald-400 transition-colors'>
-          Voltar para Certifications
+          {t.detail.backLink}
         </Link>
 
         <header className='mt-8 mb-10'>
@@ -120,25 +126,25 @@ export default async function CertificationDetailPage({ params }: PageProps) {
           <h1 className='text-3xl md:text-4xl font-bold text-white mb-4'>{certification.title}</h1>
           <p className='text-neutral-400 leading-relaxed'>{certification.about}</p>
           <div className='mt-4 max-w-xl'>
-            <AuthorHubCard label='Autor' compact />
+            <AuthorHubCard label={t.detail.author} compact />
           </div>
         </header>
 
         <section className='rounded-xl border border-neutral-800 bg-neutral-900/30 p-6 space-y-6'>
           <div>
-            <p className='text-xs uppercase tracking-widest text-neutral-500 mb-1'>Provider</p>
+            <p className='text-xs uppercase tracking-widest text-neutral-500 mb-1'>{t.detail.provider}</p>
             <p className='text-neutral-200'>{certification.provider}</p>
           </div>
 
           {certification.certId ? (
             <div>
-              <p className='text-xs uppercase tracking-widest text-neutral-500 mb-1'>Certificate ID</p>
+              <p className='text-xs uppercase tracking-widest text-neutral-500 mb-1'>{t.detail.certId}</p>
               <p className='text-neutral-200 font-mono break-all'>{certification.certId}</p>
             </div>
           ) : null}
 
           <div>
-            <p className='text-xs uppercase tracking-widest text-neutral-500 mb-2'>Habilidades adquiridas</p>
+            <p className='text-xs uppercase tracking-widest text-neutral-500 mb-2'>{t.grid.skillsAcquired}</p>
             <div className='flex flex-wrap gap-2'>
               {certification.skills.map((skill) => (
                 <span key={skill} className='rounded-full border border-neutral-700 px-3 py-1 text-xs text-neutral-300'>
@@ -149,12 +155,12 @@ export default async function CertificationDetailPage({ params }: PageProps) {
           </div>
 
           <div>
-            <p className='text-xs uppercase tracking-widest text-neutral-500 mb-1'>Problemas enfrentados</p>
+            <p className='text-xs uppercase tracking-widest text-neutral-500 mb-1'>{t.grid.problemsSolved}</p>
             <p className='text-neutral-300'>{certification.problems_solved}</p>
           </div>
 
           <div>
-            <p className='text-xs uppercase tracking-widest text-neutral-500 mb-1'>Verification URL</p>
+            <p className='text-xs uppercase tracking-widest text-neutral-500 mb-1'>{t.grid.verifyUrl}</p>
             <a
               href={certification.verifyUrl}
               target='_blank'

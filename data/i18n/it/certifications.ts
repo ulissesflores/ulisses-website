@@ -38,6 +38,12 @@ export const certifications = {
     problemsSolved: 'Problemi affrontati',
     verifyUrl: 'Verify URL'
   },
+  detail: {
+    backLink: 'Back to Certifications',
+    provider: 'Provider',
+    certId: 'Certificate ID',
+    author: 'Author',
+  },
   cta: {
     title: 'Hai bisogno di un Consulente o Sviluppatore con queste competenze?',
     description: 'Ulisses Flores serve aziende, startup e istituzioni come Consulente Strategico di IA, Professore Ospite e Sviluppatore su richiesta in C++, Java, Python, Blockchain e architettura di sistemi complessi.',

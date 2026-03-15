@@ -38,6 +38,12 @@ export const certifications = {
     problemsSolved: 'בעיות שנפתרו',
     verifyUrl: 'אמת כתובת URL'
   },
+  detail: {
+    backLink: 'Back to Certifications',
+    provider: 'Provider',
+    certId: 'Certificate ID',
+    author: 'Author',
+  },
   cta: {
     title: 'זקוק ליועץ או מפתח עם כישורים אלו?',
     description: 'Ulisses Flores משרת חברות, סטארט-אפים ומוסדות כיועץ אסטרטגי ל-IA, מרצה אורח ומפתח לפי דרישה ב-C++, Java, Python, Blockchain וארכיטקטורת מערכות מורכבות.',

@@ -41,6 +41,12 @@ export const certifications = {
     problemsSolved: 'Problemas enfrentados',
     verifyUrl: 'Verify URL',
   },
+  detail: {
+    backLink: 'Voltar para Certificações',
+    provider: 'Provider',
+    certId: 'Certificate ID',
+    author: 'Autor',
+  },
   cta: {
     title: 'Precisa de um Consultor ou Desenvolvedor com estas competências?',
     description:
