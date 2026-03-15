@@ -33,6 +33,7 @@ const navCategories: NavCategory[] = [
     label: 'Acervo',
     items: [
       { label: 'Acervo Teológico', href: '/acervo-teologico', description: 'Sermões por cluster temático' },
+      { label: 'Clube Santo', href: '/clube-santo', description: 'Avivamento para a era digital' },
       { label: 'Mundo Político', href: '/mundo-politico', description: 'Artigos e análises políticas' },
     ],
   },
