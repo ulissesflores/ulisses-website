@@ -77,6 +77,11 @@ const NAMESPACE_REGISTRY = [
   { file: 'identidade',      exportName: 'identidade',     hasFaqImport: false },
   { file: 'certifications',  exportName: 'certifications', hasFaqImport: false },
   { file: 'faq',             exportName: 'faq',            hasFaqImport: true  },
+  { file: 'ia2027',          exportName: 'ia2027',         hasFaqImport: false },
+  { file: 'goldenleaf',      exportName: 'goldenleaf',     hasFaqImport: false },
+  { file: 'mumm-ra',         exportName: 'mummRa',         hasFaqImport: false },
+  { file: 'acervo-teologico',exportName: 'acervoTeologico', hasFaqImport: false },
+  { file: 'category',        exportName: 'category',       hasFaqImport: false },
 ];
 
 // ── System Prompt ───────────────────────────────────────────────────────────────
@@ -210,18 +215,12 @@ function generateIndexTs(locale) {
     (ns) => `import { ${ns.exportName} } from './${ns.file}';`,
   );
 
+  const dictEntries = NAMESPACE_REGISTRY.map((ns) => `  ${ns.exportName},`).join('\n');
+
   const body = `${importLines.join('\n')}
 
 const dict = {
-  common,
-  home,
-  clubeSanto,
-  mundoPolitico,
-  projetoPsi,
-  simulacoes,
-  identidade,
-  certifications,
-  faq,
+${dictEntries}
 };
 
 export default dict;
