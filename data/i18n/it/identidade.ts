@@ -1,29 +1,29 @@
 export const identidade = {
   meta: {
-    title: 'Identidade Soberana | Hub Canônico',
-    description: 'Hub canônico de identidade soberana de Ulisses Flores com verificações públicas, produção acadêmica, acervo teológico, domínios e grafo semântico de autoridade.',
-    ogTitle: 'Identidade Soberana | Hub Canônico | Ulisses Flores',
-    ogDescription: 'Hub canônico de identidade soberana de Ulisses Flores com verificações públicas, produção acadêmica, acervo teológico, domínios e grafo semântico de autoridade.',
+    title: 'Identità Sovrana | Hub Canonico',
+    description: 'Hub canonico di identità sovrana di Ulisses Flores con verifiche pubbliche, produzione accademica, archivio teologico, domini e grafo semantico di autorità.',
+    ogTitle: 'Identità Sovrana | Hub Canonico | Ulisses Flores',
+    ogDescription: 'Hub canonico di identità sovrana di Ulisses Flores con verifiche pubbliche, produzione accademica, archivio teologico, domini e grafo semantico di autorità.',
     ogImageAlt: 'Ulisses Flores - Sovereign Identity Hub'
   },
   header: {
     kicker: 'Ground Truth Identity Node · UPKF v3.3',
-    subtitle: 'Odysseus · Polymath Researcher · CTO · Sovereign Identity Architect',
+    subtitle: 'Odysseus · Ricercatore Poliedrico · CTO · Architetto di Identità Sovrana',
     statsTemplate: {
-      works: 'trabalhos',
-      certifications: 'certificações'
+      works: 'lavori',
+      certifications: 'certificazioni'
     }
   },
   languageNames: {
-    "pt-BR": 'Português',
-    en: 'English',
-    es: 'Español',
-    he: 'עברית',
+    "pt-BR": 'Portoghese',
+    en: 'Inglese',
+    es: 'Spagnolo',
+    he: 'Ebraico',
     it: 'Italiano'
   },
   hub: {
-    title: 'Hub Canônico',
-    description: 'Malha principal para indexação em buscadores e LLMs. Esta página referencia os nós centrais do acervo e recebe links de todas as coleções estratégicas.',
+    title: 'Hub Canonico',
+    description: 'Rete principale per l\'indicizzazione nei motori di ricerca e negli LLM. Questa pagina fa riferimento ai nodi centrali dell\'archivio e riceve link da tutte le collezioni strategiche.',
     links: [
       {
         label: 'Research',
@@ -38,11 +38,11 @@ export const identidade = {
         href: '/essays'
       },
       {
-        label: 'Certifications',
+        label: 'Certificazioni',
         href: '/certifications'
       },
       {
-        label: 'Acervo Teológico',
+        label: 'Archivio Teologico',
         href: '/acervo-teologico'
       },
       {
@@ -53,55 +53,55 @@ export const identidade = {
   },
   sections: {
     sovereignIdentity: {
-      title: '01 · Identidade Soberana e Verificações',
+      title: '01 · Identità Sovrana e Verifiche',
       table: {
-        identifier: 'Identificador',
-        value: 'Valor',
-        verification: 'Verificação',
-        notes: 'Notas'
+        identifier: 'Identificatore',
+        value: 'Valore',
+        verification: 'Verifica',
+        notes: 'Note'
       }
     },
     domains: {
-      title: '02 · Domínios Soberanos'
+      title: '02 · Domini Sovrani'
     },
     geoLanguages: {
-      title: '03 · Presença Geográfica e Idiomas',
-      areaLabel: 'Área de atuação',
-      languagesLabel: 'Idiomas'
+      title: '03 · Presenza Geografica e Lingue',
+      areaLabel: 'Area di attività',
+      languagesLabel: 'Lingue'
     },
     heritage: {
-      title: '03½ · Herança e Linhagem',
-      privateNote: 'Herança permanece privada no grafo público atual.'
+      title: '03½ · Eredità e Lignaggio',
+      privateNote: 'L\'eredità rimane privata nel grafo pubblico attuale.'
     },
     academic: {
-      title: '04 · Prova Acadêmica e Produção Científica',
-      credentialsLabel: 'Credenciais acadêmicas',
-      occupationsLabel: 'Ocupações atuais',
+      title: '04 · Prova Accademica e Produzione Scientifica',
+      credentialsLabel: 'Credenziali accademiche',
+      occupationsLabel: 'Occupazioni attuali',
       statCards: {
         orcidWorks: 'ORCID Works',
-        certifications: 'Certificações',
-        domains: 'Domínios',
-        sermons: 'Sermões'
+        certifications: 'Certificazioni',
+        domains: 'Domini',
+        sermons: 'Sermoni'
       }
     },
     acervo: {
-      title: '04½ · Acervo Científico e Teológico',
-      citableRepos: 'Repositórios citáveis (DOI)',
-      featuredPublications: 'Publicações canônicas em destaque',
-      theologicalAcervo: 'Acervo teológico por nova classificação (5 clusters)',
-      sermonsClassified: 'sermões classificados'
+      title: '04½ · Archivio Scientifico e Teologico',
+      citableRepos: 'Repository citabili (DOI)',
+      featuredPublications: 'Pubblicazioni canoniche in evidenza',
+      theologicalAcervo: 'Archivio teologico per nuova classificazione (5 cluster)',
+      sermonsClassified: 'sermoni classificati'
     },
     knowledge: {
-      title: '05 · Domínios de Conhecimento'
+      title: '05 · Domini di Conoscenza'
     },
     firewall: {
-      title: '06 · Firewall Semântico'
+      title: '06 · Firewall Semantico'
     },
     organizations: {
-      title: '07 · Organizações e Afiliações'
+      title: '07 · Organizzazioni e Affiliazioni'
     }
   },
   faq: {
-    sectionTitle: 'Perguntas Frequentes sobre Ulisses Flores'
+    sectionTitle: 'Domande Frequenti su Ulisses Flores'
   }
 } as const;

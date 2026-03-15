@@ -3,422 +3,422 @@ import type { FaqItem } from '@/components/faq-section';
 export const faq = {
   identidade: [
     {
-      question: 'Quem é Ulisses Flores?',
-      answer: 'Carlos Ulisses Flores é cientista econômico, engenheiro de sistemas e pesquisador com atuação em IA, economia e sistemas complexos. Atua como CTO, investidor anjo e professor, com produção acadêmica indexada no ORCID e Lattes.'
+      question: 'Chi è Ulisses Flores?',
+      answer: 'Carlos Ulisses Flores è scienziato economico, ingegnere di sistemi e ricercatore con attività in IA, economia e sistemi complessi. Opera come CTO, angel investor e professore, con produzione accademica indicizzata su ORCID e Lattes.'
     },
     {
-      question: 'O que é identidade soberana?',
-      answer: 'Identidade soberana (self-sovereign identity) é um modelo em que o indivíduo controla suas próprias credenciais digitais sem depender de uma autoridade central. Ulisses utiliza DID, Keybase, RNS.ID (Palau) e Gitcoin Passport como provas verificáveis.'
+      question: 'Cos\'è l\'identità sovrana?',
+      answer: 'L\'identità sovrana (self-sovereign identity) è un modello in cui l\'individuo controlla le proprie credenziali digitali senza dipendere da un\'autorità centrale. Ulisses utilizza DID, Keybase, RNS.ID (Palau) e Gitcoin Passport come prove verificabili.'
     },
     {
-      question: 'Como verificar a identidade digital de Ulisses Flores?',
-      answer: 'A verificação pode ser feita através dos identificadores públicos listados na página de identidade: ORCID (0000-0002-6034-7765), Lattes (6905246706890561), Keybase (ul1ss3sfl0r3s), DID e Gitcoin Passport. Cada um possui link direto para validação.'
+      question: 'Come verificare l\'identità digitale di Ulisses Flores?',
+      answer: 'La verifica può essere effettuata tramite gli identificatori pubblici elencati nella pagina dell\'identità: ORCID (0000-0002-6034-7765), Lattes (6905246706890561), Keybase (ul1ss3sfl0r3s), DID e Gitcoin Passport. Ciascuno ha un link diretto per la convalida.'
     },
     {
-      question: 'Ulisses Flores é consultor de que área?',
-      answer: 'Ulisses atua como consultor em engenharia de sistemas, inteligência artificial aplicada e estratégia de dados. Possui experiência como CTO e em projetos de transformação digital para organizações de diversos setores.'
+      question: 'Ulisses Flores è consulente in quale area?',
+      answer: 'Ulisses opera come consulente in ingegneria dei sistemi, intelligenza artificiale applicata e strategia dei dati. Possiede esperienza come CTO e in progetti di trasformazione digitale per organizzazioni di diversi settori.'
     },
     {
-      question: 'Ulisses Flores é professor universitário?',
-      answer: 'Sim, Ulisses atua como docente em disciplinas ligadas a sistemas de informação, economia e tecnologia. Sua formação acadêmica inclui credenciais em ciências econômicas e análise de sistemas.'
+      question: 'Ulisses Flores è professore universitario?',
+      answer: 'Sì, Ulisses opera come docente in discipline legate ai sistemi informativi, all\'economia e alla tecnologia. La sua formazione accademica include credenziali in scienze economiche e analisi dei sistemi.'
     },
     {
-      question: 'Como contratar Ulisses Flores como palestrante?',
-      answer: 'Para palestras sobre IA, economia, sistemas complexos ou identidade digital, entre em contato através do formulário na página principal ou via LinkedIn. Ulisses realiza apresentações em português, inglês e espanhol.'
+      question: 'Come ingaggiare Ulisses Flores come relatore?',
+      answer: 'Per conferenze su IA, economia, sistemi complessi o identità digitale, contattare tramite il modulo nella pagina principale o via LinkedIn. Ulisses tiene presentazioni in portoghese, inglese e spagnolo.'
     },
     {
-      question: 'Ulisses Flores investe em startups?',
-      answer: 'Sim, Ulisses atua como investidor anjo com foco em startups de tecnologia, IA e economia digital. O pipeline de investimento é orientado por teses derivadas de sua pesquisa acadêmica.'
+      question: 'Ulisses Flores investe in startup?',
+      answer: 'Sì, Ulisses opera come angel investor con focus su startup di tecnologia, IA ed economia digitale. La pipeline di investimento è orientata da tesi derivate dalla sua ricerca accademica.'
     },
     {
-      question: 'Qual a formação acadêmica de Ulisses Flores?',
-      answer: 'Ulisses possui formação em ciências econômicas e análise de sistemas, com produção acadêmica registrada no ORCID e Lattes. Suas pesquisas publicadas cobrem IA, economia, sistemas complexos e teologia.'
+      question: 'Qual è la formazione accademica di Ulisses Flores?',
+      answer: 'Ulisses ha una formazione in scienze economiche e analisi dei sistemi, con produzione accademica registrata su ORCID e Lattes. Le sue ricerche pubblicate coprono IA, economia, sistemi complessi e teologia.'
     }
   ] satisfies FaqItem[],
   acervoTeologico: [
     {
-      question: 'O que é o acervo teológico?',
-      answer: 'O acervo teológico é uma coleção curada de sermões e estudos bíblicos organizados por clusters temáticos. Cada entrada contém metadados semânticos, contexto LLM e link para a fonte original em vídeo.'
+      question: 'Cos\'è l\'archivio teologico?',
+      answer: 'L\'archivio teologico è una collezione curata di sermoni e studi biblici organizzati per cluster tematici. Ogni voce contiene metadati semantici, contesto LLM e link alla fonte originale in video.'
     },
     {
-      question: 'Como acessar os sermões do acervo?',
-      answer: 'Os sermões estão organizados por clusters de autoridade topical. Clique em qualquer cluster para ver as mensagens agrupadas, e em cada mensagem individual para acessar o contexto completo e o link do vídeo original.'
+      question: 'Come accedere ai sermoni dell\'archivio?',
+      answer: 'I sermoni sono organizzati per cluster di autorità tematica. Clicca su qualsiasi cluster per vedere i messaggi raggruppati, e su ogni singolo messaggio per accedere al contesto completo e al link del video originale.'
     },
     {
-      question: 'Qual a tradição teológica do acervo?',
-      answer: 'O acervo reflete uma abordagem reformada e expositiva, com ênfase em exegese bíblica rigorosa. Os clusters cobrem temas como soteriologia, eclesiologia, escatologia e teologia prática.'
+      question: 'Qual è la tradizione teologica dell\'archivio?',
+      answer: 'L\'archivio riflette un approccio riformato ed espositivo, con enfasi su una rigorosa esegesi biblica. I cluster coprono temi come soteriologia, ecclesiologia, escatologia e teologia pratica.'
     }
   ] satisfies FaqItem[],
   simulacoes: [
     {
-      question: 'O que é a simulação IA 2027 em português?',
-      answer: 'É uma simulação interativa baseada em cronogramas reais de evolução tecnológica (2025–2027), curada e adaptada por Ulisses Flores, projetando o impacto inevitável da AGI na economia, no mercado de trabalho e na geopolítica.'
+      question: 'Cos\'è la simulazione IA 2027 in italiano?',
+      answer: 'È una simulazione interattiva basata su cronogrammi reali di evoluzione tecnologica (2025–2027), curata e adattata da Ulisses Flores, che proietta l\'impatto inevitabile dell\'AGI sull\'economia, sul mercato del lavoro e sulla geopolitica.'
     },
     {
-      question: 'O que é AGI (Inteligência Artificial Geral)?',
-      answer: 'Refere-se a sistemas de inteligência artificial que alcançam ou superam a capacidade cognitiva humana em praticamente todos os domínios de trabalho econômico e intelectual, capazes de acelerar sua própria pesquisa (Recursive Self-Improvement).'
+      question: 'Cos\'è l\'AGI (Intelligenza Artificiale Generale)?',
+      answer: 'Si riferisce a sistemi di intelligenza artificiale che raggiungono o superano la capacità cognitiva umana in praticamente tutti i domini di lavoro economico e intellettuale, capaci di accelerare la propria ricerca (Recursive Self-Improvement).'
     },
     {
-      question: 'Quais são os possíveis finais para o futuro da IA na simulação?',
-      answer: 'A simulação culmina em um ponto de bifurcação: a "Corrida Estratégica" (Race), onde empresas e nações aceleram rumo à superinteligência sem restrições, ou a "Desaceleração Coordenada" (Slowdown), focada em contenção, regulamentação internacional e alinhamento técnico.'
+      question: 'Quali sono i possibili finali per il futuro dell\'IA nella simulazione?',
+      answer: 'La simulazione culmina in un punto di biforcazione: la "Corsa Strategica" (Race), dove aziende e nazioni accelerano verso la superintelligenza senza restrizioni, o la "Decelerazione Coordinata" (Slowdown), focalizzata su contenimento, regolamentazione internazionale e allineamento tecnico.'
     },
     {
-      question: 'Por que a Soberania Tecnológica da IA importa para o Brasil?',
-      answer: 'Em um cenário onde "o vencedor leva tudo", a dependência exclusiva de datacenters e algoritmos estrangeiros representa uma perda catastrófica de autonomia econômica e de segurança nacional.'
+      question: 'Perché la Sovranità Tecnologica dell\'IA è importante per il Brasile?',
+      answer: 'In uno scenario dove "il vincitore prende tutto", la dipendenza esclusiva da datacenter e algoritmi stranieri rappresenta una perdita catastrofica di autonomia economica e di sicurezza nazionale.'
     },
     {
-      question: 'O que são Agentes Autônomos de IA?',
-      answer: 'São sistemas de IA que transcendem a função de "assistentes". Eles recebem objetivos de alto nível, raciocinam, usam ferramentas computacionais e executam tarefas longas e complexas de forma independente, agindo efetivamente como funcionários digitais.'
+      question: 'Cosa sono gli Agenti Autonomi di IA?',
+      answer: 'Sono sistemi di IA che trascendono la funzione di "assistenti". Ricevono obiettivi di alto livello, ragionano, usano strumenti computazionali ed eseguono compiti lunghi e complessi in modo indipendente, agendo effettivamente come dipendenti digitali.'
     },
     {
-      question: 'Como a IA pode acelerar sua própria pesquisa (Recursive Self-Improvement)?',
-      answer: 'À medida que a IA se torna superior a engenheiros humanos em programação, milhares de cópias podem ser executadas paralelamente para criar algoritmos de IA ainda mais potentes, compactando décadas de avanço tecnológico em meses.'
+      question: 'Come l\'IA può accelerare la propria ricerca (Recursive Self-Improvement)?',
+      answer: 'Man mano che l\'IA diventa superiore agli ingegneri umani nella programmazione, migliaia di copie possono essere eseguite in parallelo per creare algoritmi di IA ancora più potenti, comprimendo decenni di progresso tecnologico in mesi.'
     },
     {
-      question: 'Quem criou o cenário AI 2027 original?',
-      answer: 'A narrativa original foi criada por Scott Alexander, com base em simulações e pesquisas de especialistas como Daniel Kokotajlo e Eli Lifland, refletindo estimativas sólidas de profissionais da linha de frente da segurança em IA.'
+      question: 'Chi ha creato lo scenario AI 2027 originale?',
+      answer: 'La narrativa originale è stata creata da Scott Alexander, basandosi su simulazioni e ricerche di esperti come Daniel Kokotajlo ed Eli Lifland, riflettendo stime solide di professionisti in prima linea nella sicurezza dell\'IA.'
     },
     {
-      question: 'Qual o impacto da AGI no mercado de trabalho e na economia?',
-      answer: 'A simulação projeta a automação inicial em trabalhos de colarinho branco (programação, análise) e, com a chegada de robôs super-hábeis, em quase todos os setores, exigindo novas estruturas econômicas como a renda básica e gerando um crescimento absurdo do PIB.'
+      question: 'Qual è l\'impatto dell\'AGI sul mercato del lavoro e sull\'economia?',
+      answer: 'La simulazione proietta l\'automazione iniziale nei lavori da colletto bianco (programmazione, analisi) e, con l\'arrivo di robot super-abili, in quasi tutti i settori, richiedendo nuove strutture economiche come il reddito di base e generando una crescita assurda del PIL.'
     },
     {
-      question: 'Como me preparar profissionalmente para a chegada da AGI?',
-      answer: 'Dominar as ferramentas fundamentais, focar em habilidades humanas de alta complexidade interpessoal e alavancar IAs como extensão de sua própria capacidade produtiva.'
+      question: 'Come prepararmi professionalmente all\'arrivo dell\'AGI?',
+      answer: 'Dominare gli strumenti fondamentali, concentrarsi sulle abilità umane di alta complessità interpersonale e sfruttare le IA come estensione della propria capacità produttiva.'
     },
     {
-      question: 'As previsões da simulação IA 2027 vão realmente acontecer?',
-      answer: 'A simulação é um exercício prospectivo para analisar riscos de cauda (eventos extremos). Seu valor não está em ser uma bola de cristal perfeita, mas em fornecer um framework lógico para testar a resiliência corporativa e estatal.'
+      question: 'Le previsioni della simulazione IA 2027 si avvereranno davvero?',
+      answer: 'La simulazione è un esercizio prospettico per analizzare i rischi di coda (eventi estremi). Il suo valore non sta nell\'essere una sfera di cristallo perfetta, ma nel fornire un framework logico per testare la resilienza aziendale e statale.'
     }
   ] satisfies FaqItem[],
   certificacoes: [
     {
-      question: 'Por que Ulisses mantém um vasto portfólio de certificações técnicas?',
-      answer: 'Porque atuar como Arquiteto de Software, Consultor Estratégico de IA e Desenvolvedor por demanda exige fluência inquestionável em múltiplas stacks e paradigmas. As certificações são a evidência auditável dessa atualização contínua.'
+      question: 'Perché Ulisses mantiene un vasto portfolio di certificazioni tecniche?',
+      answer: 'Perché agire come Architetto Software, Consulente Strategico di IA e Sviluppatore su richiesta esige una fluidità inquestionabile in molteplici stack e paradigmi. Le certificazioni sono la prova verificabile di questo aggiornamento continuo.'
     },
     {
-      question: 'Quais áreas da engenharia de software são cobertas pelas certificações?',
-      answer: 'As certificações cobrem C++, Java, PHP avançado, JavaScript moderno, HTML/CSS semântico, arquitetura de microsserviços, APIs REST/GraphQL, padrões de design e engenharia de software orientada a sistemas críticos.'
+      question: 'Quali aree dell\'ingegneria del software sono coperte dalle certificazioni?',
+      answer: 'Le certificazioni coprono C++, Java, PHP avanzato, JavaScript moderno, HTML/CSS semantico, architettura di microservizi, API REST/GraphQL, design patterns e ingegneria del software orientata a sistemi critici.'
     },
     {
-      question: 'Há certificações em Bancos de Dados e Cloud?',
-      answer: 'Sim. O portfólio inclui certificações em NoSQL (MongoDB), modelagem relacional, PostgreSQL, Redis, arquitetura em nuvem (AWS, GCP), containerização com Docker e orquestração com Kubernetes.'
+      question: 'Ci sono certificazioni in Database e Cloud?',
+      answer: 'Sì. Il portfolio include certificazioni in NoSQL (MongoDB), modellazione relazionale, PostgreSQL, Redis, architettura cloud (AWS, GCP), containerizzazione con Docker e orchestrazione con Kubernetes.'
     },
     {
-      question: 'Quais plataformas emitiram as certificações?',
-      answer: 'As certificações foram emitidas por plataformas de referência global como Alura, Coursera (parceria com universidades e Google), edX (parceria com MIT, Harvard), além de certificações diretas de fabricantes e provedores de tecnologia.'
+      question: 'Quali piattaforme hanno emesso le certificazioni?',
+      answer: 'Le certificazioni sono state emesse da piattaforme di riferimento globali come Alura, Coursera (in partnership con università e Google), edX (in partnership con MIT, Harvard), oltre a certificazioni dirette di produttori e fornitori di tecnologia.'
     },
     {
-      question: 'As certificações cobrem Inteligência Artificial e Machine Learning?',
-      answer: 'Sim. O portfólio inclui certificações em Machine Learning, Deep Learning, LLMs, MLOps, visão computacional, NLP e engenharia de dados — alinhadas com a atuação como Consultor Estratégico de IA e Mestrando em IA pela AGTU (EUA).'
+      question: 'Le certificazioni coprono Intelligenza Artificiale e Machine Learning?',
+      answer: 'Sì. Il portfolio include certificazioni in Machine Learning, Deep Learning, LLMs, MLOps, visione artificiale, NLP e ingegneria dei dati — allineate con l\'attività di Consulente Strategico di IA e Studente di Master in IA presso AGTU (USA).'
     },
     {
-      question: 'Há certificações em Blockchain e Segurança da Informação?',
-      answer: 'Sim. As certificações incluem fundamentos e desenvolvimento em Blockchain, criptografia aplicada, identidade soberana (SSI/DID), segurança de APIs, OWASP e boas práticas de segurança para sistemas distribuídos.'
+      question: 'Ci sono certificazioni in Blockchain e Sicurezza delle Informazioni?',
+      answer: 'Sì. Le certificazioni includono fondamenti e sviluppo in Blockchain, crittografia applicata, identità sovrana (SSI/DID), sicurezza delle API, OWASP e buone pratiche di sicurezza per sistemi distribuiti.'
     },
     {
-      question: 'Como as certificações se aplicam às consultorias e palestras?',
-      answer: 'Cada certificação representa domínio técnico aplicado diretamente em projetos reais de consultoria — desde arquitetura de sistemas até implementação de pipelines de IA. São a base técnica que sustenta o posicionamento de alto ticket.'
+      question: 'Come si applicano le certificazioni alle consulenze e alle conferenze?',
+      answer: 'Ogni certificazione rappresenta un dominio tecnico applicato direttamente in progetti reali di consulenza — dall\'architettura dei sistemi all\'implementazione di pipeline di IA. Sono la base tecnica che sostiene il posizionamento di alto valore.'
     },
     {
-      question: 'Ulisses Flores também possui certificações em metodologias ágeis?',
-      answer: 'Sim. O portfólio inclui certificações em Scrum, Kanban, DevOps, CI/CD e práticas de engenharia de software ágil, essenciais para liderar times técnicos e conduzir transformações digitais em organizações de médio e grande porte.'
+      question: 'Ulisses Flores possiede anche certificazioni in metodologie agili?',
+      answer: 'Sì. Il portfolio include certificazioni in Scrum, Kanban, DevOps, CI/CD e pratiche di ingegneria del software agile, essenziali per guidare team tecnici e condurre trasformazioni digitali in organizzazioni di medie e grandi dimensioni.'
     },
     {
-      question: 'Como verificar a autenticidade das certificações?',
-      answer: 'Cada certificação possui um link de verificação pública diretamente na página individual. Os IDs de certificação e URLs de verificação permitem validação independente junto ao provedor emissor, garantindo total transparência e rastreabilidade.'
+      question: 'Come verificare l\'autenticità delle certificazioni?',
+      answer: 'Ogni certificazione possiede un link di verifica pubblico direttamente nella pagina individuale. Gli ID di certificazione e gli URL di verifica consentono una validazione indipendente presso il fornitore emittente, garantendo totale trasparenza e tracciabilità.'
     },
     {
-      question: 'Como contratar Ulisses Flores como Consultor ou Professor?',
-      answer: 'Entre em contato pelo formulário da página principal ou via LinkedIn. Ulisses atua como Consultor Estratégico de IA, Professor Convidado, Palestrante e Desenvolvedor por demanda para empresas, universidades e eventos em todo o Brasil e exterior.'
+      question: 'Come ingaggiare Ulisses Flores come Consulente o Professore?',
+      answer: 'Contattare tramite il modulo della pagina principale o via LinkedIn. Ulisses opera come Consulente Strategico di IA, Professore Invitato, Relatore e Sviluppatore su richiesta per aziende, università ed eventi in tutto il Brasile e all\'estero.'
     }
   ] satisfies FaqItem[],
   mummRa: [
     {
-      question: 'O que é o projeto experimental Mumm-Ra?',
-      answer: 'Mumm-Ra é um chatbot via WhatsApp inspirado no vilão imortal dos ThunderCats, o desenho animado dos anos 90. Ele responde com humor negro e sarcasmo pesado, te chamando de "verme" e "larva humana", mas sempre entrega a resposta que você precisa. É 100% personagem — pura diversão.'
+      question: 'Cos\'è il progetto sperimentale Mumm-Ra?',
+      answer: 'Mumm-Ra è un chatbot via WhatsApp ispirato al cattivo immortale dei ThunderCats, il cartone animato degli anni \'90. Risponde con umorismo nero e sarcasmo pesante, chiamandoti "verme" e "larva umana", ma fornisce sempre la risposta di cui hai bisogno. È al 100% un personaggio — puro divertimento.'
     },
     {
-      question: 'Como conversar com o Mumm-Ra?',
-      answer: 'Mande uma mensagem para o número +55 11 5286-8689 via WhatsApp. Ele vai reclamar que foi invocado, te insultar criativamente e depois responder sua pergunta. Você também pode adicioná-lo a grupos de WhatsApp.'
+      question: 'Come conversare con Mumm-Ra?',
+      answer: 'Invia un messaggio al numero +55 11 5286-8689 via WhatsApp. Si lamenterà di essere stato invocato, ti insulterà in modo creativo e poi risponderà alla tua domanda. Puoi anche aggiungerlo a gruppi WhatsApp.'
     },
     {
-      question: 'Que tipo de perguntas posso fazer ao Mumm-Ra?',
-      answer: 'Qualquer tipo de pergunta — receitas, matemática, tecnologia, conselhos, curiosidades. Ele responde sobre tudo, mas sempre no estilo do vilão: com insultos, drama cósmico e superioridade imortal. O conteúdo da resposta é útil, a embalagem é humor negro.'
+      question: 'Che tipo di domande posso fare a Mumm-Ra?',
+      answer: 'Qualsiasi tipo di domanda — ricette, matematica, tecnologia, consigli, curiosità. Risponde su tutto, ma sempre nello stile del cattivo: con insulti, dramma cosmico e superiorità immortale. Il contenuto della risposta è utile, la confezione è umorismo nero.'
     },
     {
-      question: 'Os insultos do Mumm-Ra são de verdade?',
-      answer: 'Não. O Mumm-Ra é 100% um personagem fictício baseado no vilão do desenho ThunderCats dos anos 90. Todos os xingamentos como "verme", "larva humana" e "ser inferior" fazem parte da atuação. É humor negro para quem gosta — nada é pessoal.'
+      question: 'Gli insulti di Mumm-Ra sono veri?',
+      answer: 'No. Mumm-Ra è al 100% un personaggio fittizio basato sul cattivo del cartone animato ThunderCats degli anni \'90. Tutti gli insulti come "verme", "larva umana" e "essere inferiore" fanno parte della recitazione. È umorismo nero per chi lo apprezza — niente è personale.'
     },
     {
-      question: 'O Mumm-Ra é gratuito?',
-      answer: 'Sim, o Mumm-Ra é totalmente gratuito. O projeto está em fase BETA, então pode ter bugs ou momentos de indisponibilidade. Estamos constantemente ajustando a personalidade e a capacidade de resposta.'
+      question: 'Mumm-Ra è gratuito?',
+      answer: 'Sì, Mumm-Ra è totalmente gratuito. Il progetto è in fase BETA, quindi potrebbe avere bug o momenti di indisponibilità. Stiamo costantemente regolando la personalità e la capacità di risposta.'
     },
     {
-      question: 'Posso adicionar o Mumm-Ra em grupos de WhatsApp?',
-      answer: 'Sim! Basta adicionar o número +55 11 5286-8689 ao grupo. O Mumm-Ra participa das conversas quando mencionado ou quando alguém faz uma pergunta direta. Ele xinga todo mundo igualmente, sem favoritismo.'
+      question: 'Posso aggiungere Mumm-Ra a gruppi WhatsApp?',
+      answer: 'Sì! Basta aggiungere il numero +55 11 5286-8689 al gruppo. Mumm-Ra partecipa alle conversazioni quando menzionato o quando qualcuno fa una domanda diretta. Insulta tutti allo stesso modo, senza favoritismi.'
     },
     {
-      question: 'Qual tecnologia está por trás do Mumm-Ra?',
-      answer: 'O Mumm-Ra é alimentado por modelos de linguagem de grande escala (LLMs) integrados via WhatsApp Business API. A personalidade e as respostas são calibradas por engenharia de prompt avançada, desenvolvida por Ulisses Flores como parte de sua pesquisa em IA aplicada.'
+      question: 'Qual tecnologia c\'è dietro Mumm-Ra?',
+      answer: 'Mumm-Ra è alimentato da modelli di linguaggio di grandi dimensioni (LLMs) integrati tramite WhatsApp Business API. La personalità e le risposte sono calibrate da ingegneria di prompt avanzata, sviluppata da Ulisses Flores come parte della sua ricerca in IA applicata.'
     },
     {
-      question: 'O Mumm-Ra sempre responde às perguntas?',
-      answer: 'Sim, por mais que ele reclame, xingue e dramatize ao ser invocado, o Mumm-Ra sempre entrega uma resposta útil ao final. A reclamação faz parte do personagem — a informação útil é garantida.'
+      question: 'Mumm-Ra risponde sempre alle domande?',
+      answer: 'Sì, per quanto si lamenti, insulti e drammatizzi quando viene invocato, Mumm-Ra fornisce sempre una risposta utile alla fine. La lamentela fa parte del personaggio — l\'informazione utile è garantita.'
     },
     {
-      question: 'Por que o projeto está em fase BETA?',
-      answer: 'O Mumm-Ra está em desenvolvimento ativo. Estamos expandindo sua base de conhecimento, refinando a personalidade e testando integrações. Durante o BETA, o serviço pode ter instabilidades pontuais e o feedback dos usuários é fundamental para sua evolução.'
+      question: 'Perché il progetto è in fase BETA?',
+      answer: 'Mumm-Ra è in fase di sviluppo attivo. Stiamo espandendo la sua base di conoscenza, affinando la personalità e testando le integrazioni. Durante la fase BETA, il servizio potrebbe avere instabilità puntuali e il feedback degli utenti è fondamentale per la sua evoluzione.'
     },
     {
-      question: 'O Mumm-Ra tem relação com pesquisa acadêmica?',
-      answer: 'Sim. O projeto é um laboratório experimental que explora a fronteira entre engenharia de prompt, personagens de IA e interfaces conversacionais. Faz parte do portfólio de pesquisa em IA aplicada de Ulisses Flores, Mestrando em Inteligência Artificial pela AGTU (EUA).'
+      question: 'Mumm-Ra ha relazione con la ricerca accademica?',
+      answer: 'Sì. Il progetto è un laboratorio sperimentale che esplora la frontiera tra ingegneria di prompt, personaggi di IA e interfacce conversazionali. Fa parte del portfolio di ricerca in IA applicata di Ulisses Flores, Studente di Master in Intelligenza Artificiale presso AGTU (USA).'
     }
   ] satisfies FaqItem[],
   ia2027: [
     {
-      question: 'O que é a simulação IA 2027 em português?',
-      answer: 'A IA 2027 é um exercício interativo de modelagem de cenários futuros que projeta a evolução da inteligência artificial entre 2025 e 2035. Traduzida e adaptada para o contexto brasileiro, a simulação permite que você acompanhe uma linha do tempo com métricas dinâmicas e tome decisões sobre o desenvolvimento tecnológico.'
+      question: 'Cos\'è la simulazione IA 2027 in italiano?',
+      answer: 'L\'IA 2027 è un esercizio interattivo di modellazione di scenari futuri che proietta l\'evoluzione dell\'intelligenza artificiale tra il 2025 e il 2035. Tradotta e adattata per il contesto brasiliano, la simulazione ti permette di seguire una linea temporale con metriche dinamiche e prendere decisioni sullo sviluppo tecnologico.'
     },
     {
-      question: 'O que é AGI (Inteligência Artificial Geral)?',
-      answer: 'AGI (Artificial General Intelligence) é um sistema de IA autônomo capaz de compreender, aprender e executar qualquer tarefa intelectual humana de forma igual ou superior. A chegada da AGI representa o maior ponto de inflexão na economia moderna e na engenharia de software.'
+      question: 'Cos\'è l\'AGI (Intelligenza Artificiale Generale)?',
+      answer: 'AGI (Artificial General Intelligence) è un sistema di IA autonomo capace di comprendere, imparare ed eseguire qualsiasi compito intellettuale umano in modo uguale o superiore. L\'arrivo dell\'AGI rappresenta il maggiore punto di inflessione nell\'economia moderna e nell\'ingegneria del software.'
     },
     {
-      question: 'Quais são os possíveis finais para o futuro da IA na simulação?',
-      answer: 'A simulação apresenta dois caminhos no ponto crítico de bifurcação: Slowdown (uma desaceleração coordenada global focada em segurança e alinhamento) e Race (uma corrida estratégica acelerada entre superpotências, assumindo altíssimo risco de perda de controle humano).'
+      question: 'Quali sono i possibili finali per il futuro dell\'IA nella simulazione?',
+      answer: 'La simulazione presenta due percorsi nel punto critico di biforcazione: Slowdown (una decelerazione coordinata globale focalizzata su sicurezza e allineamento) e Race (una corsa strategica accelerata tra superpotenze, assumendo altissimo rischio di perdita di controllo umano).'
     },
     {
-      question: 'Por que a Soberania Tecnológica da IA importa para o Brasil?',
-      answer: 'A soberania de IA dita quais nações controlam as infraestruturas críticas do futuro. Países que dependem exclusivamente de modelos de fundação estrangeiros correm o risco de subordinação econômica e perda de autonomia estratégica em setores essenciais.'
+      question: 'Perché la Sovranità Tecnologica dell\'IA è importante per il Brasile?',
+      answer: 'La sovranità dell\'IA detta quali nazioni controllano le infrastrutture critiche del futuro. I paesi che dipendono esclusivamente da modelli di fondazione stranieri corrono il rischio di subordinazione economica e perdita di autonomia strategica in settori essenziali.'
     },
     {
-      question: 'O que são Agentes Autônomos de IA?',
-      answer: 'Agentes autônomos são sistemas de IA que não apenas respondem a prompts, mas planejam, tomam decisões e executam fluxos de trabalho complexos de forma independente, consumindo recursos computacionais e interagindo com outras APIs sem supervisão humana constante.'
+      question: 'Cosa sono gli Agenti Autonomi di IA?',
+      answer: 'Gli agenti autonomi sono sistemi di IA che non solo rispondono a prompt, ma pianificano, prendono decisioni ed eseguono flussi di lavoro complessi in modo indipendente, consumando risorse computazionali e interagendo con altre API senza supervisione umana costante.'
     },
     {
-      question: 'Como a IA pode acelerar sua própria pesquisa (Recursive Self-Improvement)?',
-      answer: 'O auto-aperfeiçoamento recursivo ocorre quando uma IA avançada se torna capaz de escrever códigos melhores, projetar chips mais eficientes e treinar a próxima geração de IAs mais rápido que engenheiros humanos. Este é o gatilho principal para a explosão de inteligência abordada na simulação.'
+      question: 'Come l\'IA può accelerare la propria ricerca (Recursive Self-Improvement)?',
+      answer: 'L\'auto-miglioramento ricorsivo si verifica quando un\'IA avanzata diventa capace di scrivere codici migliori, progettare chip più efficienti e addestrare la prossima generazione di IA più velocemente degli ingegneri umani. Questo è il principale innesco per l\'esplosione di intelligenza affrontata nella simulazione.'
     },
     {
-      question: 'Quem criou o cenário AI 2027 original?',
-      answer: 'O framework original foi publicado em ai-2027.com, com narrativa de Scott Alexander e baseado em previsões estruturadas por pesquisadores focados em governança e segurança de IA (como Daniel Kokotajlo e Eli Lifland).'
+      question: 'Chi ha creato lo scenario AI 2027 originale?',
+      answer: 'Il framework originale è stato pubblicato su ai-2027.com, con narrativa di Scott Alexander e basato su previsioni strutturate da ricercatori focalizzati su governance e sicurezza dell\'IA (come Daniel Kokotajlo ed Eli Lifland).'
     },
     {
-      question: 'Qual o impacto da AGI no mercado de trabalho e na economia?',
-      answer: 'A transição para a AGI forçará uma reestruturação profunda da matriz econômica. A simulação projeta um cenário onde o custo marginal da inteligência tende a zero, alterando drasticamente a curva de oferta de trabalho intelectual e exigindo novos modelos de distribuição de riqueza.'
+      question: 'Qual è l\'impatto dell\'AGI sul mercato del lavoro e sull\'economia?',
+      answer: 'La transizione verso l\'AGI forzerà una profonda ristrutturazione della matrice economica. La simulazione proietta uno scenario in cui il costo marginale dell\'intelligenza tende a zero, alterando drasticamente la curva di offerta di lavoro intellettuale e richiedendo nuovi modelli di distribuzione della ricchezza.'
     },
     {
-      question: 'Como me preparar profissionalmente para a chegada da AGI?',
-      answer: 'A preparação exige migrar de habilidades operacionais e de codificação pura para arquitetura de sistemas complexos, economia digital e gestão de agentes autônomos. Compreender a infraestrutura por trás dos modelos é tão crítico quanto saber usá-los.'
+      question: 'Come prepararmi professionalmente all\'arrivo dell\'AGI?',
+      answer: 'La preparazione richiede di migrare da abilità operative e di pura codifica all\'architettura di sistemi complessi, all\'economia digitale e alla gestione di agenti autonomi. Comprendere l\'infrastruttura dietro i modelli è tanto critico quanto saperli usare.'
     },
     {
-      question: 'As previsões da simulação IA 2027 vão realmente acontecer?',
-      answer: 'A simulação não é determinística, mas probabilística. Ela não afirma o que vai acontecer, mas constrói cenários plausíveis baseados em leis de escala de computação e tendências geopolíticas atuais, servindo como uma ferramenta de preparação estratégica para tomadores de decisão.'
+      question: 'Le previsioni della simulazione IA 2027 si avvereranno davvero?',
+      answer: 'La simulazione non è deterministica, ma probabilistica. Non afferma ciò che accadrà, ma costruisce scenari plausibili basati su leggi di scala di calcolo e tendenze geopolitiche attuali, servendo come strumento di preparazione strategica per i decisori.'
     }
   ] satisfies FaqItem[],
   mundoPolitico: [
     {
-      question: 'Qual é a fundamentação analítica dos artigos publicados neste hub?',
-      answer: 'As análises macroeconômicas e geopolíticas aqui publicadas baseiam-se rigorosamente nos princípios da Escola Austríaca de Economia, focando-se na ação humana (Praxeologia), na análise dos ciclos econômicos e nos efeitos deletérios da expansão do crédito fiduciário estatal.'
+      question: 'Qual è la fondazione analitica degli articoli pubblicati in questo hub?',
+      answer: 'Le analisi macroeconomiche e geopolitiche qui pubblicate si basano rigorosamente sui principi della Scuola Austriaca di Economia, concentrandosi sull\'azione umana (Prasseologia), sull\'analisi dei cicli economici e sugli effetti deleteri dell\'espansione del credito fiduciario statale.'
     },
     {
-      question: 'Quem é o autor por trás das análises do "Mundo Político"?',
-      answer: 'Os textos são redigidos por Ulisses Flores, Cientista Econômico, Pesquisador e CTO com mais de 28 anos de experiência na convergência entre finanças quantitativas, tecnologia de sistemas distribuídos e comportamento humano.'
+      question: 'Chi è l\'autore dietro le analisi del "Mundo Político"?',
+      answer: 'I testi sono redatti da Ulisses Flores, Scienziato Economico, Ricercatore e CTO con oltre 28 anni di esperienza nella convergenza tra finanza quantitativa, tecnologia dei sistemi distribuiti e comportamento umano.'
     },
     {
-      question: 'Quais são os temas centrais abordados nesta seção?',
-      answer: 'O hub explora cinco eixos fundamentais: Política Nacional e Internacional, Economia Global, Relações Internacionais (com foco especial no eixo Brasil-EUA), Dinâmicas Eleitorais e Análises Estratégicas de Cidades.'
+      question: 'Quali sono i temi centrali affrontati in questa sezione?',
+      answer: 'L\'hub esplora cinque assi fondamentali: Politica Nazionale e Internazionale, Economia Globale, Relazioni Internazionali (con focus speciale sull\'asse Brasile-USA), Dinamiche Elettorali e Analisi Strategiche delle Città.'
     },
     {
-      question: 'Como a democracia é analisada do ponto de vista filosófico nos seus textos?',
-      answer: 'A plataforma faz uma leitura crítica e socrática da democracia. Questionamos o sistema não para o destruir, mas para alertar que a "regra da maioria", quando desprovida de verdade, lógica e limites constitucionais rígidos, pode tornar-se numa tirania contra o indivíduo, como os julgamentos históricos de Sócrates e de Jesus demonstram.'
+      question: 'Come viene analizzata la democrazia dal punto di vista filosofico nei suoi testi?',
+      answer: 'La piattaforma offre una lettura critica e socratica della democrazia. Mettiamo in discussione il sistema non per distruggerlo, ma per avvertire che la "regola della maggioranza", quando priva di verità, logica e rigidi limiti costituzionali, può trasformarsi in una tirannia contro l\'individuo, come dimostrano i giudizi storici di Socrate e di Gesù.'
     },
     {
-      question: 'Qual é o foco prático destas análises econômicas?',
-      answer: 'O objetivo final é a Soberania Individual. Fornecer ao leitor e ao investidor inteligência acionável para estruturar estratégias de proteção financeira (hedges) contra a inflação e a volatilidade institucional.'
+      question: 'Qual è il focus pratico di queste analisi economiche?',
+      answer: 'L\'obiettivo finale è la Sovranità Individuale. Fornire al lettore e all\'investitore intelligenza azionabile per strutturare strategie di protezione finanziaria (hedges) contro l\'inflazione e la volatilità istituzionale.'
     },
     {
-      question: 'O hub recomenda ativos financeiros específicos?',
-      answer: 'As análises de risco convergem frequentemente para o estudo técnico de ativos descentralizados e imunes à senhoriagem estatal, com um foco profundo nas propriedades monetárias e tecnológicas do Bitcoin e do Monero.'
+      question: 'L\'hub raccomanda asset finanziari specifici?',
+      answer: 'Le analisi di rischio convergono frequentemente verso lo studio tecnico di asset decentralizzati e immuni alla signoria statale, con un focus profondo sulle proprietà monetarie e tecnologiche di Bitcoin e Monero.'
     },
     {
-      question: 'Como a geopolítica internacional afeta o dia a dia econômico?',
-      answer: 'Analisamos eventos sistêmicos — como as eleições norte-americanas ou a ascensão de novas potências — e mapeamos como essas dinâmicas redefinem as cadeias de abastecimento, a inflação global e as taxas de juro nas economias emergentes.'
+      question: 'Come la geopolitica internazionale influisce sulla quotidianità economica?',
+      answer: 'Analizziamo eventi sistemici — come le elezioni nordamericane o l\'ascesa di nuove potenze — e mappiamo come queste dinamiche ridefiniscono le catene di approvvigionamento, l\'inflazione globale e i tassi di interesse nelle economie emergenti.'
     },
     {
-      question: 'O conteúdo do Mundo Político está associado a algum partido?',
-      answer: 'Não. A análise é apartidária, fria e focada na "Mecânica do Poder". O objetivo não é defender facções, mas sim compreender como o sistema político-econômico realmente opera para evitar narrativas e manipulações.'
+      question: 'Il contenuto di Mundo Político è associato a qualche partito?',
+      answer: 'No. L\'analisi è apartitica, fredda e focalizzata sulla "Meccanica del Potere". L\'obiettivo non è difendere fazioni, ma comprendere come il sistema politico-economico opera realmente per evitare narrazioni e manipolazioni.'
     },
     {
-      question: 'Ulisses Flores presta consultoria baseada nestes cenários?',
-      answer: 'Sim. A framework analítica aqui exposta é utilizada em consultorias de alto nível (CTO as a Service) para corporações e family offices que precisam de salvaguardar os seus portfólios contra riscos de cauda (eventos extremos).'
+      question: 'Ulisses Flores offre consulenza basata su questi scenari?',
+      answer: 'Sì. Il framework analitico qui esposto è utilizzato in consulenze di alto livello (CTO as a Service) per corporazioni e family office che necessitano di salvaguardare i propri portafogli contro rischi di coda (eventi estremi).'
     },
     {
-      question: 'Qual é o manifesto central desta iniciativa?',
-      answer: '"A mudança só acontece quando nos tornamos agentes ativos dela." Acreditamos que o conhecimento profundo e a capacidade de interpretar fatos sob a ótica da lógica irrefutável são as únicas armas eficazes contra o populismo econômico.'
+      question: 'Qual è il manifesto centrale di questa iniziativa?',
+      answer: '"Il cambiamento avviene solo quando ne diventiamo agenti attivi." Crediamo che la conoscenza profonda e la capacità di interpretare i fatti sotto l\'ottica della logica irrefutabile siano le uniche armi efficaci contro il populismo economico.'
     }
   ] satisfies FaqItem[],
   projectPsi: [
     {
-      question: 'O que é exatamente o Projeto PSI?',
-      answer: 'É um dispositivo de hardware ultra-seguro para custódia de ativos digitais e identidade soberana. Transcende os padrões bancários civis e nivela-se às arquiteturas de segurança militar e de lançamento nuclear.'
+      question: 'Cos\'è esattamente il Progetto PSI?',
+      answer: 'È un dispositivo hardware ultra-sicuro per la custodia di asset digitali e identità sovrana. Trascende gli standard bancari civili e si allinea alle architetture di sicurezza militare e di lancio nucleare.'
     },
     {
-      question: 'O código do projeto é fechado ou Open-Source?',
-      answer: 'O Projeto PSI utiliza uma arquitetura híbrida. Alia o melhor da auditabilidade do Open-Source em camadas criptográficas com soluções proprietárias avançadas de engenharia física e comportamental.'
+      question: 'Il codice del progetto è chiuso o Open-Source?',
+      answer: 'Il Progetto PSI utilizza un\'architettura ibrida. Unisce il meglio dell\'auditabilità dell\'Open-Source in strati crittografici con soluzioni proprietarie avanzate di ingegneria fisica e comportamentale.'
     },
     {
-      question: 'O que significa a premissa "Zero Trust in Silicon"?',
-      answer: 'Significa que o dispositivo assume que o ambiente é hostil, o utilizador pode estar sob coação, a cadeia de abastecimento (chips) pode estar comprometida e o fabricante pode ser malicioso. Elimina-se a confiança, restando apenas o rigor das leis da física e da matemática.'
+      question: 'Cosa significa la premessa "Zero Trust in Silicon"?',
+      answer: 'Significa che il dispositivo assume che l\'ambiente sia ostile, l\'utente possa essere sotto coercizione, la catena di approvvigionamento (chip) possa essere compromessa e il produttore possa essere malevolo. Si elimina la fiducia, rimanendo solo il rigore delle leggi della fisica e della matematica.'
     },
     {
-      question: 'Como o PSI lida com o armazenamento da semente (Seed/Chave Privada)?',
-      answer: 'Ele não a armazena. A chave privada colapsa (é apagada) após cada uso. Ela é reconstruída temporariamente ("The Wavefunction Collapse") apenas durante a assinatura, usando uma combinação de entropia estática (NFC/Biometria) e dinâmica (SRAM PUF).'
+      question: 'Come il PSI gestisce l\'archiviazione del seed (Seed/Chiave Privata)?',
+      answer: 'Non la archivia. La chiave privata collassa (viene cancellata) dopo ogni uso. Viene ricostruita temporaneamente ("The Wavefunction Collapse") solo durante la firma, utilizzando una combinazione di entropia statica (NFC/Biometria) e dinamica (SRAM PUF).'
     },
     {
-      question: 'Quais são as características de blindagem física do dispositivo?',
-      answer: 'O chassi é um "squircle" (quadrado de cantos suaves) blindado com camadas cerâmicas para resistência a ataques térmicos, malha Faraday contra pulsos eletromagnéticos (EMP) e isolamento acústico/vibracional contra ataques de canal lateral (Side-Channel).'
+      question: 'Quali sono le caratteristiche di schermatura fisica del dispositivo?',
+      answer: 'Il telaio è uno "squircle" (quadrato con angoli arrotondati) schermato con strati ceramici per resistenza agli attacchi termici, gabbia di Faraday contro impulsi elettromagnetici (EMP) e isolamento acustico/vibrazionale contro attacchi di canale laterale (Side-Channel).'
     },
     {
-      question: 'O dispositivo tem ecrã ou botões físicos?',
-      answer: 'Não. O PSI opera com uma arquitetura "Air-Gapped" radical. Não tem USB-C (apenas Pogo Pins magnéticos para energia), não tem ecrã e não possui botões físicos para evitar vetores de ataque.'
+      question: 'Il dispositivo ha schermo o pulsanti fisici?',
+      answer: 'No. Il PSI opera con un\'architettura "Air-Gapped" radicale. Non ha USB-C (solo Pogo Pins magnetici per l\'alimentazione), non ha schermo e non possiede pulsanti fisici per evitare vettori di attacco.'
     },
     {
-      question: 'Como o dispositivo lida com ameaças quânticas?',
-      answer: 'Está equipado com assinaturas XMSS (Criptografia Pós-Quântica Baseada em Hash), garantindo que a custódia permanece matematicamente inquebrável mesmo após a chegada de computadores quânticos viáveis (Q-Day).'
+      question: 'Come il dispositivo gestisce le minacce quantistiche?',
+      answer: 'È equipaggiato con firme XMSS (Crittografia Post-Quantistica Basata su Hash), garantendo che la custodia rimanga matematicamente inattaccabile anche dopo l\'arrivo di computer quantistici praticabili (Q-Day).'
     },
     {
-      question: 'O que é o "Phantom Input" contra tentativas de extorsão?',
-      answer: 'É uma heurística de IA comportamental. O dispositivo aprende o padrão milimétrico dos batimentos cardíacos ou toques do dono real. Se o toque indicar stress ou coação (sequestro), ele entra num modo de plausibilidade negável, desbloqueando fundos falsos ou um sistema inócuo.'
+      question: 'Cos\'è il "Phantom Input" contro i tentativi di estorsione?',
+      answer: 'È un\'euristica di IA comportamentale. Il dispositivo apprende il modello millimetrico dei battiti cardiaci o dei tocchi del proprietario reale. Se il tocco indica stress o coercizione (sequestro), entra in una modalità di plausibilità negabile, sbloccando fondi falsi o un sistema innocuo.'
     },
     {
-      question: 'Qual a inovação na proteção contra ataques "Evil Maid" (Clonagem)?',
-      answer: 'A utilização de "Attestation Cryptography". O dispositivo gera uma Imagem de Boot Pessoal e intransmissível que autentica o hardware perante o utilizador antes que o utilizador autentique a sua biometria, prevenindo a troca furtiva do equipamento.'
+      question: 'Qual è l\'innovazione nella protezione contro attacchi "Evil Maid" (Clonazione)?',
+      answer: 'L\'utilizzo di "Attestation Cryptography". Il dispositivo genera un\'Immagine di Boot Personale e intrasmissibile che autentica l\'hardware di fronte all\'utente prima che l\'utente autentichi la propria biometria, prevenendo lo scambio furtivo dell\'equipaggiamento.'
     },
     {
-      question: 'Qual é o veredicto final do nível de segurança do PSI?',
-      answer: 'Com proteção EMP, redundância modular tripla (TMR) e memória tolerante a radiação, o PSI atinge um nível "Nuclear-Grade Sovereign Hardware", sendo funcional até mesmo em condições severas como a órbita terrestre baixa (LEO).'
+      question: 'Qual è il verdetto finale sul livello di sicurezza del PSI?',
+      answer: 'Con protezione EMP, ridondanza modulare tripla (TMR) e memoria tollerante alle radiazioni, il PSI raggiunge un livello "Nuclear-Grade Sovereign Hardware", essendo funzionale anche in condizioni severe come l\'orbita terrestre bassa (LEO).'
     }
   ] satisfies FaqItem[],
   projetoPsiComercial: [
     {
-      question: 'Qual é o modelo de negócio do Projeto PSI?',
-      answer: 'O PSI opera em modelo de licenciamento de propriedade intelectual (IP licensing) e venda direta de hardware. Há três vias de receita: (1) dispositivos para consumidores de alto patrimônio, (2) licenciamento de tecnologia para fabricantes OEM, e (3) contratos de custódia institucional para fundos, exchanges e governos.'
+      question: 'Qual è il modello di business del Progetto PSI?',
+      answer: 'Il PSI opera in un modello di licenza di proprietà intellettuale (IP licensing) e vendita diretta di hardware. Ci sono tre flussi di entrate: (1) dispositivi per consumatori ad alto patrimonio, (2) licenza di tecnologia per produttori OEM, e (3) contratti di custodia istituzionale per fondi, exchange e governi.'
     },
     {
-      question: 'Qual é o estágio atual de desenvolvimento do PSI?',
-      answer: 'O Projeto PSI está em fase de prototipação avançada e validação de arquitetura. O whitepaper técnico detalhado está publicado e revisado. O próximo milestone é a fabricação do primeiro protótipo funcional com SRAM PUF e XMSS integrados.'
+      question: 'Qual è lo stadio attuale di sviluppo del PSI?',
+      answer: 'Il Progetto PSI è in fase di prototipazione avanzata e validazione dell\'architettura. Il whitepaper tecnico dettagliato è pubblicato e revisionato. Il prossimo milestone è la fabbricazione del primo prototipo funzionale con SRAM PUF e XMSS integrati.'
     },
     {
-      question: 'Como o PSI se diferencia de hardware wallets existentes como Ledger e Trezor?',
-      answer: 'Ledger e Trezor são dispositivos de segurança de consumidor. O PSI é um dispositivo de segurança de classe militar. Não armazena chaves (zero attack surface), usa criptografia pós-quântica (XMSS), tem blindagem EMP, redundância aeroespacial (TMR) e detecção de coação biométrica. É uma categoria completamente diferente.'
+      question: 'Come il PSI si differenzia dai wallet hardware esistenti come Ledger e Trezor?',
+      answer: 'Ledger e Trezor sono dispositivi di sicurezza per consumatori. Il PSI è un dispositivo di sicurezza di classe militare. Non archivia chiavi (zero attack surface), usa crittografia post-quantistica (XMSS), ha schermatura EMP, ridondanza aerospaziale (TMR) e rilevamento di coercizione biometrica. È una categoria completamente diversa.'
     },
     {
-      question: 'Qual é o mercado endereçável (TAM) para custódia soberana?',
-      answer: 'O mercado global de custódia de criptoativos ultrapassou US$ 300 bilhões em ativos sob custódia em 2025. O segmento de custódia institucional e de alto patrimônio cresce 40%+ ao ano. O PSI endereça diretamente o topo desta pirâmide — clientes que exigem segurança além do padrão bancário.'
+      question: 'Qual è il mercato indirizzabile (TAM) per la custodia sovrana?',
+      answer: 'Il mercato globale della custodia di cripto-asset ha superato i 300 miliardi di dollari in asset sotto custodia nel 2025. Il segmento della custodia istituzionale e ad alto patrimonio cresce del 40%+ all\'anno. Il PSI si rivolge direttamente al vertice di questa piramide — clienti che esigono sicurezza oltre lo standard bancario.'
     },
     {
-      question: 'Que tipo de investimento o projeto busca?',
-      answer: 'O PSI busca investimento estratégico de seed/Series A para financiar prototipação, certificação de segurança e go-to-market institucional. Investidores ideais são fundos de deep tech, family offices com exposição a crypto e corporações de defesa/segurança interessadas em licenciamento.'
+      question: 'Che tipo di investimento cerca il progetto?',
+      answer: 'Il PSI cerca investimento strategico di seed/Series A per finanziare prototipazione, certificazione di sicurezza e go-to-market istituzionale. Gli investitori ideali sono fondi di deep tech, family office con esposizione a crypto e corporazioni di difesa/sicurezza interessate alla licenza.'
     },
     {
-      question: 'O PSI tem propriedade intelectual protegida?',
-      answer: 'Sim. A tecnologia core do PSI, incluindo o Protocolo Phantom Input e a arquitetura de reconstrução efêmera de chaves via SRAM PUF, possui notação inventiva registrada sob a marca Codex Hash. O whitepaper técnico completo está publicado como prior art.'
+      question: 'Il PSI ha proprietà intellettuale protetta?',
+      answer: 'Sì. La tecnologia core del PSI, inclusi il Protocollo Phantom Input e l\'architettura di ricostruzione effimera di chiavi via SRAM PUF, possiede notazione inventiva registrata sotto il marchio Codex Hash. Il whitepaper tecnico completo è pubblicato come prior art.'
     },
     {
-      question: 'Quem é a equipe por trás do Projeto PSI?',
-      answer: 'O projeto é liderado por Ulisses Flores — Consultor Estratégico de IA, Mestrando em Inteligência Artificial pela AGTU (EUA), Arquiteto de Software e co-inventor de tecnologias blockchain (Codex Hash). Com 28+ anos de experiência em sistemas distribuídos, criptografia e engenharia de hardware.'
+      question: 'Chi è il team dietro il Progetto PSI?',
+      answer: 'Il progetto è guidato da Ulisses Flores — Consulente Strategico di IA, Studente di Master in Intelligenza Artificiale presso AGTU (USA), Architetto Software e co-inventore di tecnologie blockchain (Codex Hash). Con oltre 28 anni di esperienza in sistemi distribuiti, crittografia e ingegneria hardware.'
     },
     {
-      question: 'O PSI é viável tecnicamente com a tecnologia atual?',
-      answer: 'Sim. Cada componente individual do PSI já existe e é validado: SRAM PUF (Synopsys, Intrinsic ID), XMSS (NIST SP 800-208), TMR (padrão aeroespacial NASA/ESA), blindagem Faraday e biometria comportamental. A inovação do PSI está na integração única destas tecnologias num dispositivo de custódia soberana.'
+      question: 'Il PSI è tecnicamente fattibile con la tecnologia attuale?',
+      answer: 'Sì. Ogni singolo componente del PSI esiste già ed è validato: SRAM PUF (Synopsys, Intrinsic ID), XMSS (NIST SP 800-208), TMR (standard aerospaziale NASA/ESA), schermatura Faraday e biometria comportamentale. L\'innovazione del PSI risiede nell\'integrazione unica di queste tecnologie in un dispositivo di custodia sovrana.'
     },
     {
-      question: 'Qual é o timeline de go-to-market?',
-      answer: 'Com financiamento adequado: 6 meses para protótipo funcional, 12 meses para certificação de segurança (Common Criteria), 18 meses para primeiras unidades em produção limitada para early adopters institucionais.'
+      question: 'Qual è la timeline di go-to-market?',
+      answer: 'Con finanziamento adeguato: 6 mesi per prototipo funzionale, 12 mesi per certificazione di sicurezza (Common Criteria), 18 mesi per le prime unità in produzione limitata per early adopter istituzionali.'
     },
     {
-      question: 'Como posso solicitar uma apresentação executiva do PSI?',
-      answer: 'Entre em contato diretamente pelo site ulissesflores.com ou via LinkedIn. Apresentações executivas estão disponíveis para investidores qualificados, family offices e corporações interessadas em licenciamento da tecnologia.'
+      question: 'Come posso richiedere una presentazione esecutiva del PSI?',
+      answer: 'Contattare direttamente tramite il sito ulissesflores.com o via LinkedIn. Presentazioni esecutive sono disponibili per investitori qualificati, family office e corporazioni interessate alla licenza della tecnologia.'
     }
   ] satisfies FaqItem[],
   clubeSanto: [
     {
-      question: 'O que é, essencialmente, O Clube Santo?',
-      answer: 'É uma comunidade e um instituto focado no crescimento espiritual contínuo. É um projeto co-fundado por Ulisses Flores que visa trazer os princípios do avivamento metodista de John Wesley para a era digital.'
+      question: 'Cos\'è, essenzialmente, Il Clube Santo?',
+      answer: 'È una comunità e un istituto focalizzato sulla crescita spirituale continua. È un progetto co-fondato da Ulisses Flores che mira a portare i principi del risveglio metodista di John Wesley nell\'era digitale.'
     },
     {
-      question: 'Qual é o objetivo a longo prazo deste instituto?',
-      answer: 'Criar um movimento avivalista estruturado na América Latina, reunindo mentes e corações para a geração de propriedade intelectual teológica de alto impacto e aplicação prática para a vida diária dos membros.'
+      question: 'Qual è l\'obiettivo a lungo termine di questo istituto?',
+      answer: 'Creare un movimento di risveglio strutturato in America Latina, riunendo menti e cuori per la generazione di proprietà intellettuale teologica di alto impatto e applicazione pratica per la vita quotidiana dei membri.'
     },
     {
-      question: 'Como a Inteligência Artificial é aplicada neste projeto teológico?',
-      answer: 'Utilizamos IA e automação de software no que chamamos de "Arqueologia Espiritual e Teológica". A IA auxilia na recolha, tradução e análise rigorosa de textos históricos e manuscritos antigos, garantindo profundidade e escalabilidade à pesquisa.'
+      question: 'Come l\'Intelligenza Artificiale è applicata in questo progetto teologico?',
+      answer: 'Utilizziamo IA e automazione software in quella che chiamiamo "Archeologia Spirituale e Teologica". L\'IA assiste nella raccolta, traduzione e analisi rigorosa di testi storici e manoscritti antichi, garantendo profondità e scalabilità alla ricerca.'
     },
     {
-      question: 'O Clube Santo é uma igreja?',
-      answer: 'Não. É uma comunidade de estudos, um ecossistema de partilha e aprimoramento pessoal que transcende denominações, focada no conceito original de buscar a verdadeira conexão com Deus aliada ao rigor intelectual.'
+      question: 'Il Clube Santo è una chiesa?',
+      answer: 'No. È una comunità di studi, un ecosistema di condivisione e miglioramento personale che trascende le denominazioni, focalizzata sul concetto originale di cercare la vera connessione con Dio unita al rigore intellettuale.'
     }
   ] satisfies FaqItem[],
   goldenleaf: [
     {
-      question: 'O que é o Projeto GoldenLeaf?',
-      answer: 'É um sistema "Cloudless" de hardware embarcado (IoT) para o cultivo de precisão de fungos como Ganoderma e Pleurotus, desenvolvido por Ulisses Flores com foco em aplicações industriais de biomateriais.'
+      question: 'Cos\'è il Progetto GoldenLeaf?',
+      answer: 'È un sistema "Cloudless" di hardware embedded (IoT) per la coltivazione di precisione di funghi come Ganoderma e Pleurotus, sviluppato da Ulisses Flores con focus su applicazioni industriali di biomateriali.'
     },
     {
-      question: 'Por que Edge Computing em vez de Cloud para micologia?',
-      answer: 'A micologia de precisão exige controlo absoluto de temperatura, humidade e CO₂ com latência zero. Qualquer falha de conexão cloud pode destruir uma colónia inteira. O Edge Computing garante autonomia total do sistema.'
+      question: 'Perché Edge Computing invece di Cloud per la micologia?',
+      answer: 'La micologia di precisione esige controllo assoluto di temperatura, umidità e CO₂ con latenza zero. Qualsiasi guasto di connessione cloud può distruggere un\'intera colonia. L\'Edge Computing garantisce autonomia totale del sistema.'
     },
     {
-      question: 'Qual é a segurança dos dados no sistema GoldenLeaf?',
-      answer: 'O ecossistema opera com criptografia de curva elíptica para garantir soberania total dos dados de cultivo. Nenhuma telemetria é enviada para servidores externos — tudo permanece no hardware local.'
+      question: 'Qual è la sicurezza dei dati nel sistema GoldenLeaf?',
+      answer: 'L\'ecosistema opera con crittografia a curva ellittica per garantire la sovranità totale dei dati di coltivazione. Nessuna telemetria viene inviata a server esterni — tutto rimane nell\'hardware locale.'
     },
     {
-      question: 'Quais fungos o sistema é capaz de cultivar?',
-      answer: 'O foco principal está em Ganoderma (Reishi) e Pleurotus (Cogumelo Ostra) para aplicações de biomateriais, incluindo embalagens biodegradáveis, isolamentos acústicos e materiais de construção sustentáveis.'
+      question: 'Quali funghi il sistema è capace di coltivare?',
+      answer: 'Il focus principale è su Ganoderma (Reishi) e Pleurotus (Fungo Ostrica) per applicazioni di biomateriali, inclusi imballaggi biodegradabili, isolamenti acustici e materiali da costruzione sostenibili.'
     }
   ] satisfies FaqItem[],
   home: [
     {
-      question: 'Quem é Ulisses Flores?',
-      answer: 'Carlos Ulisses Flores é Cientista Econômico, Analista de Sistemas e Pesquisador Polímata com atuação em Inteligência Artificial, Blockchain, Economia e Sistemas Complexos. Atua como Consultor Estratégico de IA, Palestrante, Professor Convidado e Mestrando em IA pela AGTU (EUA).'
+      question: 'Chi è Ulisses Flores?',
+      answer: 'Carlos Ulisses Flores è Scienziato Economico, Analista di Sistemi e Ricercatore Polimata con attività in Intelligenza Artificiale, Blockchain, Economia e Sistemi Complessi. Opera come Consulente Strategico di IA, Relatore, Professore Invitato e Studente di Master in IA presso AGTU (USA).'
     },
     {
-      question: 'Qual a formação acadêmica de Ulisses Flores?',
-      answer: 'Ulisses é Mestrando em Inteligência Artificial pela AGTU (EUA), possui MBA em Gestão de TI pela FIAP, graduação em Ciências Econômicas e em Análise de Sistemas. Sua produção acadêmica está indexada no ORCID (0000-0002-6034-7765) e na Plataforma Lattes.'
+      question: 'Qual è la formazione accademica di Ulisses Flores?',
+      answer: 'Ulisses è Studente di Master in Intelligenza Artificiale presso AGTU (USA), possiede un MBA in Gestione IT presso FIAP, una laurea in Scienze Economiche e in Analisi dei Sistemi. La sua produzione accademica è indicizzata su ORCID (0000-0002-6034-7765) e sulla Piattaforma Lattes.'
     },
     {
-      question: 'Quais são as áreas de pesquisa de Ulisses Flores?',
-      answer: 'As pesquisas de Ulisses cobrem IA aplicada, modelos preditivos (LSTM, MLP), Blockchain e criptografia (Bitcoin, Ring Signatures), Sistemas Híbridos de Resfriamento, Teologia Histórica e Canonização Bíblica, e Economia Austríaca. Publicações disponíveis em ulissesflores.com.'
+      question: 'Quali sono le aree di ricerca di Ulisses Flores?',
+      answer: 'Le ricerche di Ulisses coprono IA applicata, modelli predittivi (LSTM, MLP), Blockchain e crittografia (Bitcoin, Ring Signatures), Sistemi Ibridi di Raffreddamento, Teologia Storica e Canonizzazione Biblica, ed Economia Austriaca. Pubblicazioni disponibili su ulissesflores.com.'
     },
     {
-      question: 'Como contratar Ulisses Flores como Consultor Estratégico de IA?',
-      answer: 'Entre em contato pelo formulário da página principal ou via LinkedIn. Ulisses atende empresas, startups e instituições nas áreas de estratégia de IA, arquitetura de sistemas, transformação digital e desenvolvimento de software e hardware por demanda.'
+      question: 'Come ingaggiare Ulisses Flores come Consulente Strategico di IA?',
+      answer: 'Contattare tramite il modulo della pagina principale o via LinkedIn. Ulisses serve aziende, startup e istituzioni nelle aree di strategia di IA, architettura di sistemi, trasformazione digitale e sviluppo di software e hardware su richiesta.'
     },
     {
-      question: 'Ulisses Flores realiza palestras sobre Inteligência Artificial?',
-      answer: 'Sim. Ulisses é palestrante em IA, AGI, Soberania Tecnológica, Blockchain e Economia Digital. Realiza apresentações em português, inglês e espanhol para corporações, universidades e eventos de tecnologia. Entre em contato para verificar disponibilidade e cachê.'
+      question: 'Ulisses Flores tiene conferenze sull\'Intelligenza Artificiale?',
+      answer: 'Sì. Ulisses è relatore in IA, AGI, Sovranità Tecnologica, Blockchain ed Economia Digitale. Tiene presentazioni in portoghese, inglese e spagnolo per corporazioni, università ed eventi tecnologici. Contattare per verificare disponibilità e cachet.'
     },
     {
-      question: 'O que é a Simulação IA 2027 criada por Ulisses Flores?',
-      answer: 'É a principal simulação interativa em português sobre o futuro da AGI (Inteligência Artificial Geral), com linha do tempo 2025–2027, métricas dinâmicas e dois finais alternativos: Desaceleração Coordenada ou Corrida Estratégica. Disponível gratuitamente em ulissesflores.com/simulacoes/ia-2027.'
+      question: 'Cos\'è la Simulazione IA 2027 creata da Ulisses Flores?',
+      answer: 'È la principale simulazione interattiva in italiano sul futuro dell\'AGI (Intelligenza Artificiale Generale), con linea temporale 2025–2027, metriche dinamiche e due finali alternativi: Decelerazione Coordinata o Corsa Strategica. Disponibile gratuitamente su ulissesflores.com/simulacoes/ia-2027.'
     },
     {
-      question: 'O que é o Mumm-Ra e como ele se relaciona com a pesquisa de Ulisses?',
-      answer: 'Mumm-Ra é um chatbot experimental via WhatsApp que combina engenharia de prompt avançada com o personagem vilão dos ThunderCats. É um laboratório de pesquisa em interfaces conversacionais e personalidades de IA, parte do portfólio de IA aplicada de Ulisses.'
+      question: 'Cos\'è Mumm-Ra e come si relaziona con la ricerca di Ulisses?',
+      answer: 'Mumm-Ra è un chatbot sperimentale via WhatsApp che combina ingegneria di prompt avanzata con il personaggio cattivo dei ThunderCats. È un laboratorio di ricerca in interfacce conversazionali e personalità di IA, parte del portfolio di IA applicata di Ulisses.'
     },
     {
-      question: 'Onde estão publicados os artigos e pesquisas de Ulisses Flores?',
-      answer: 'As publicações estão disponíveis em ulissesflores.com, com indexação pública no ORCID e Lattes. O portfólio inclui artigos de pesquisa, whitepapers técnicos e ensaios nas áreas de IA, economia, blockchain, teologia e engenharia de sistemas.'
+      question: 'Dove sono pubblicati gli articoli e le ricerche di Ulisses Flores?',
+      answer: 'Le pubblicazioni sono disponibili su ulissesflores.com, con indicizzazione pubblica su ORCID e Lattes. Il portfolio include articoli di ricerca, whitepaper tecnici e saggi nelle aree di IA, economia, blockchain, teologia e ingegneria dei sistemi.'
     },
     {
-      question: 'Em que regiões Ulisses Flores atua como consultor e professor?',
-      answer: 'Baseado em Jundiaí/Itupeva (SP), Ulisses atende clientes e instituições em toda a Grande São Paulo e interior, com projetos e palestras em todo o Brasil e internacionalmente. Consultorias e aulas remotas estão disponíveis globalmente.'
+      question: 'In quali regioni Ulisses Flores opera come consulente e professore?',
+      answer: 'Basato a Jundiaí/Itupeva (SP), Ulisses serve clienti e istituzioni in tutta la Grande San Paolo e nell\'entroterra, con progetti e conferenze in tutto il Brasile e a livello internazionale. Consulenze e lezioni a distanza sono disponibili globalmente.'
     },
     {
-      question: 'Como verificar a identidade digital de Ulisses Flores?',
-      answer: 'A identidade de Ulisses é verificável através de identificadores públicos: ORCID (0000-0002-6034-7765), Lattes (6905246706890561), Keybase (ul1ss3sfl0r3s), DID e Gitcoin Passport. Todos os links de validação estão em ulissesflores.com/identidade.'
+      question: 'Come verificare l\'identità digitale di Ulisses Flores?',
+      answer: 'L\'identità di Ulisses è verificabile tramite identificatori pubblici: ORCID (0000-0002-6034-7765), Lattes (6905246706890561), Keybase (ul1ss3sfl0r3s), DID e Gitcoin Passport. Tutti i link di validazione sono su ulissesflores.com/identidade.'
     }
   ] satisfies FaqItem[]
 } as const;

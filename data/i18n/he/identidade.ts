@@ -1,29 +1,29 @@
 export const identidade = {
   meta: {
-    title: 'Identidade Soberana | Hub Canônico',
-    description: 'Hub canônico de identidade soberana de Ulisses Flores com verificações públicas, produção acadêmica, acervo teológico, domínios e grafo semântico de autoridade.',
-    ogTitle: 'Identidade Soberana | Hub Canônico | Ulisses Flores',
-    ogDescription: 'Hub canônico de identidade soberana de Ulisses Flores com verificações públicas, produção acadêmica, acervo teológico, domínios e grafo semântico de autoridade.',
-    ogImageAlt: 'Ulisses Flores - Sovereign Identity Hub'
+    title: 'זהות ריבונית | רכזת קנונית',
+    description: 'רכזת קנונית של זהות ריבונית של Ulisses Flores עם אימותים ציבוריים, תוצרת אקדמית, אוסף תיאולוגי, דומיינים וגרף סמנטי של סמכות.',
+    ogTitle: 'זהות ריבונית | רכזת קנונית | Ulisses Flores',
+    ogDescription: 'רכזת קנונית של זהות ריבונית של Ulisses Flores עם אימותים ציבוריים, תוצרת אקדמית, אוסף תיאולוגי, דומיינים וגרף סמנטי של סמכות.',
+    ogImageAlt: 'Ulisses Flores - רכזת זהות ריבונית'
   },
   header: {
     kicker: 'Ground Truth Identity Node · UPKF v3.3',
-    subtitle: 'Odysseus · Polymath Researcher · CTO · Sovereign Identity Architect',
+    subtitle: 'אודיסאוס · חוקר רב-תחומי · CTO · אדריכל זהות ריבונית',
     statsTemplate: {
-      works: 'trabalhos',
-      certifications: 'certificações'
+      works: 'עבודות',
+      certifications: 'הסמכות'
     }
   },
   languageNames: {
-    "pt-BR": 'Português',
-    en: 'English',
-    es: 'Español',
+    "pt-BR": 'פורטוגזית',
+    en: 'אנגלית',
+    es: 'ספרדית',
     he: 'עברית',
-    it: 'Italiano'
+    it: 'איטלקית'
   },
   hub: {
-    title: 'Hub Canônico',
-    description: 'Malha principal para indexação em buscadores e LLMs. Esta página referencia os nós centrais do acervo e recebe links de todas as coleções estratégicas.',
+    title: 'רכזת קנונית',
+    description: 'רשת ראשית לאינדוקס במנועי חיפוש ו-LLMs. עמוד זה מפנה לצמתים המרכזיים של האוסף ומקבל קישורים מכל האוספים האסטרטגיים.',
     links: [
       {
         label: 'Research',
@@ -42,7 +42,7 @@ export const identidade = {
         href: '/certifications'
       },
       {
-        label: 'Acervo Teológico',
+        label: 'אוסף תיאולוגי',
         href: '/acervo-teologico'
       },
       {
@@ -53,55 +53,56 @@ export const identidade = {
   },
   sections: {
     sovereignIdentity: {
-      title: '01 · Identidade Soberana e Verificações',
+      title: '01 · זהות ריבונית ואימותים',
       table: {
-        identifier: 'Identificador',
-        value: 'Valor',
-        verification: 'Verificação',
-        notes: 'Notas'
+        identifier: 'מזהה',
+        value: 'ערך',
+        verification: 'אימות',
+        notes: 'הערות'
       }
     },
     domains: {
-      title: '02 · Domínios Soberanos'
+      title: '02 · דומיינים ריבוניים'
     },
     geoLanguages: {
-      title: '03 · Presença Geográfica e Idiomas',
-      areaLabel: 'Área de atuação',
-      languagesLabel: 'Idiomas'
+      title: '03 · נוכחות גאוגרפית ושפות',
+      areaLabel: 'תחום פעילות',
+      languagesLabel: 'שפות'
     },
     heritage: {
-      title: '03½ · Herança e Linhagem',
-      privateNote: 'Herança permanece privada no grafo público atual.'
+      title: '03½ · מורשת ושושלת',
+      privateNote: 'המורשת נשארת פרטית בגרף הציבורי הנוכחי.'
     },
     academic: {
-      title: '04 · Prova Acadêmica e Produção Científica',
-      credentialsLabel: 'Credenciais acadêmicas',
-      occupationsLabel: 'Ocupações atuais',
+      title: '04 · הוכחה אקדמית ותוצרת מדעית',
+      credentialsLabel: 'אישורים אקדמיים',
+      occupationsLabel: 'עיסוקים נוכחיים',
       statCards: {
-        orcidWorks: 'ORCID Works',
-        certifications: 'Certificações',
-        domains: 'Domínios',
-        sermons: 'Sermões'
+        orcidWorks: 'עבודות ORCID',
+        certifications: 'הסמכות',
+        domains: 'דומיינים',
+        sermons: 'דרשות'
       }
     },
     acervo: {
-      title: '04½ · Acervo Científico e Teológico',
-      citableRepos: 'Repositórios citáveis (DOI)',
-      featuredPublications: 'Publicações canônicas em destaque',
-      theologicalAcervo: 'Acervo teológico por nova classificação (5 clusters)',
-      sermonsClassified: 'sermões classificados'
+      title: '04½ · אוסף מדעי ותיאולוגי',
+      citableRepos: 'מאגרים ניתנים לציטוט (DOI)',
+      featuredPublications: 'פרסומים קנוניים מומלצים',
+      theologicalAcervo: 'אוסף תיאולוגי לפי סיווג חדש (5 clusters)',
+      sermonsClassified: 'דרשות מסווגות'
     },
     knowledge: {
-      title: '05 · Domínios de Conhecimento'
+      title: '05 · תחומי ידע'
     },
     firewall: {
-      title: '06 · Firewall Semântico'
+      title: '06 · חומת אש סמנטית',
+      description: null
     },
     organizations: {
-      title: '07 · Organizações e Afiliações'
+      title: '07 · ארגונים ושיוכים'
     }
   },
   faq: {
-    sectionTitle: 'Perguntas Frequentes sobre Ulisses Flores'
+    sectionTitle: 'שאלות נפוצות על Ulisses Flores'
   }
 } as const;

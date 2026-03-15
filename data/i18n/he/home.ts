@@ -1,151 +1,151 @@
 export const home = {
   meta: {
-    title: 'Ulisses Flores | Consultor de IA, Professor, Palestrante e Pesquisador',
-    description: 'Ulisses Flores — Cientista Econômico, Consultor Estratégico de IA, Professor Convidado, Palestrante e Mestrando em IA pela AGTU (EUA). Pesquisas em IA, Blockchain, Economia e Sistemas Complexos. Baseado em Jundiaí/SP, atende todo o Brasil.',
+    title: 'Ulisses Flores | יועץ בינה מלאכותית, מרצה, דובר וחוקר',
+    description: 'Ulisses Flores — כלכלן, יועץ אסטרטגי לבינה מלאכותית, מרצה אורח, דובר ומועמד לתואר שני בבינה מלאכותית ב-AGTU (ארה"ב). מחקרים בבינה מלאכותית, Blockchain, כלכלה ומערכות מורכבות. מבוסס בז\'ונדיאי/סאו פאולו, משרת את כל ברזיל.',
     keywords: [
       "Ulisses Flores",
-      "consultor estratégico IA",
-      "palestrante inteligência artificial",
-      "professor convidado IA",
-      "mestrando AGTU",
-      "cientista econômico",
-      "blockchain consultor",
+      "יועץ אסטרטגי בינה מלאכותית",
+      "דובר בינה מלאכותית",
+      "מרצה אורח בינה מלאכותית",
+      "מועמד לתואר שני AGTU",
+      "כלכלן",
+      "יועץ Blockchain",
       "Jundiaí São Paulo"
     ],
-    ogTitle: 'Ulisses Flores | Consultor de IA, Professor, Palestrante e Pesquisador',
-    ogDescription: 'Ulisses Flores — Consultor Estratégico de IA, Professor, Palestrante e Mestrando AGTU (EUA). Pesquisas em IA, Blockchain e Economia.',
-    ogImageAlt: 'Ulisses Flores — Consultor de IA, Professor e Palestrante'
+    ogTitle: 'Ulisses Flores | יועץ בינה מלאכותית, מרצה, דובר וחוקר',
+    ogDescription: 'Ulisses Flores — יועץ אסטרטגי לבינה מלאכותית, מרצה, דובר ומועמד לתואר שני AGTU (ארה"ב). מחקרים בבינה מלאכותית, Blockchain וכלכלה.',
+    ogImageAlt: 'Ulisses Flores — יועץ בינה מלאכותית, מרצה ודובר'
   },
   hero: {
-    imageAlt: 'Carlos Ulisses Flores - CTO e Pesquisador Chefe da Codex Hash Ltda em Itupeva',
+    imageAlt: 'Carlos Ulisses Flores - CTO וחוקר ראשי ב-Codex Hash Ltda באיתופבה',
     name: 'Carlos Ulisses Flores',
     badges: {
-      cto: 'CTO & Pesquisador Chefe',
+      cto: 'CTO וחוקר ראשי',
       msc: 'MSc Candidate AI @ AGTU',
-      polymath: 'Polímata'
+      polymath: 'פולימאת'
     },
-    quote: '"Atuando na fronteira do desenvolvimento tecnológico, integrando rigor acadêmico e pragmatismo executivo para solucionar problemas em sistemas complexos adaptativos."',
+    quote: '"פועל בחזית הפיתוח הטכנולוגי, משלב קפדנות אקדמית ופרגמטיזם ניהולי לפתרון בעיות במערכות מורכבות אדפטיביות."',
     languages: {
-      pt: 'PORTUGUÊS (NATIVO)',
-      en: 'INGLÊS (FLUENTE)',
-      es: 'ESPANHOL (FLUENTE)'
+      pt: 'פורטוגזית (שפת אם)',
+      en: 'אנגלית (שוטפת)',
+      es: 'ספרדית (שוטפת)'
     }
   },
   contact: {
-    academicLinks: 'Links Acadêmicos',
-    directContact: 'Contato Direto',
-    location: 'Localização'
+    academicLinks: 'קישורים אקדמיים',
+    directContact: 'יצירת קשר ישיר',
+    location: 'מיקום'
   },
   pillars: {
-    title: 'Pilares de Atuação',
+    title: 'עמודי תווך של פעילות',
     cards: {
       finance: {
-        title: 'Finanças Quant & Web3',
+        title: 'מימון כמותי ו-Web3',
         items: [
-          "Algoritmos HFT e Arbitragem (Cash & Carry)",
-          "Custódia Institucional (MPC) e Privacidade (Monero)",
-          "Smart Contracts Auditáveis (Solidity)"
+          "אלגוריתמים HFT וארביטראז' (Cash & Carry)",
+          "משמורת מוסדית (MPC) ופרטיות (Monero)",
+          "חוזים חכמים ניתנים לביקורת (Solidity)"
         ]
       },
       hardware: {
-        title: 'Hardware & IoT',
+        title: 'חומרה ו-IoT',
         items: [
-          "Edge Computing e Automação Agrícola (GoldenLeaf)",
-          "Arquiteturas 'Cloudless' e Zero Trust",
-          "Criptografia Embarcada (ESP32/ECC)"
+          "Edge Computing ואוטומציה חקלאית (GoldenLeaf)",
+          "ארכיטקטורות 'Cloudless' ו-Zero Trust",
+          "הצפנה משובצת (ESP32/ECC)"
         ]
       },
       ai: {
-        title: 'AI & Ciência de Dados',
+        title: 'בינה מלאכותית ומדעי הנתונים',
         items: [
-          "Resiliência Cibernética (LSTM + Lei de Little)",
-          "Detecção de Anomalias em Séries Temporais",
-          "Pipelines de Data Science Financeiro"
+          "חוסן סייבר (LSTM + חוק ליטל)",
+          "זיהוי חריגות בסדרות זמן",
+          "צינורות Data Science פיננסיים"
         ]
       }
     }
   },
   trajectory: {
     formation: {
-      title: 'Formação Acadêmica',
+      title: 'השכלה אקדמית',
       items: {
         msc: {
           year: '2025',
-          title: 'Mestrado em IA (MSc)',
+          title: 'תואר שני בבינה מלאכותית (MSc)',
           inst: 'American Global Tech University (USA)',
-          desc: 'Pesquisa: Resiliência em Sistemas Complexos.'
+          desc: 'מחקר: חוסן במערכות מורכבות.'
         },
         mba: {
           year: '2018 - 2020',
-          title: 'MBA em Blockchain Dev',
-          inst: 'FIAP (1ª Turma do Brasil)',
-          desc: 'Criptoeconomia e Governança.'
+          title: 'MBA בפיתוח Blockchain',
+          inst: 'FIAP (מחזור ראשון בברזיל)',
+          desc: 'קריפטואקונומיה וממשל.'
         },
         engSoftware: {
           year: '2018 - 2020',
-          title: 'Engenharia de Software',
-          inst: 'UNIP (Universidade Paulista)',
-          desc: 'Arquitetura de Microsserviços.'
+          title: 'הנדסת תוכנה',
+          inst: 'UNIP (אוניברסיטת פאוליסטה)',
+          desc: 'ארכיטקטורת מיקרו-שירותים.'
         },
         economics: {
           year: '2002 - 2017',
-          title: 'Bacharelado em Economia',
+          title: 'תואר ראשון בכלכלה',
           inst: 'Centro Universitário Padre Anchieta',
-          desc: 'Monografia: Teoria do Caos.'
+          desc: 'עבודת גמר: תורת הכאוס.'
         }
       },
       extension: {
-        title: 'Extensão Internacional',
+        title: 'השתלמויות בינלאומיות',
         items: [
-          "Univ. of Edinburgh (Filosofia da Ciência)",
-          "UC San Diego (Learning Sciences)"
+          "אוניברסיטת אדינבורו (פילוסופיה של המדע)",
+          "UC San Diego (מדעי הלמידה)"
         ]
       }
     },
     career: {
-      title: 'Trajetória Profissional',
+      title: 'מסלול מקצועי',
       items: {
         codexHash: {
-          role: 'CTO & Pesquisador Chefe',
+          role: 'CTO וחוקר ראשי',
           company: 'Codex Hash Ltda',
-          period: '2020 - Atual',
-          desc: 'Liderança de P&D em Finanças Quantitativas, Custódia (MPC) e Hardware IoT. Gestão de equipes.',
+          period: '2020 - הווה',
+          desc: 'הובלת מחקר ופיתוח במימון כמותי, משמורת (MPC) וחומרת IoT. ניהול צוותים.',
           current: true
         },
         prefeitura: {
-          role: 'Gestão de Planejamento',
-          company: 'Prefeitura de Itupeva',
+          role: 'ניהול תכנון',
+          company: 'עיריית איתופבה',
           period: '2017 - 2023',
-          desc: 'Responsável pelo planejamento estratégico municipal, orçamento e desenvolvimento socioeconômico.'
+          desc: 'אחראי על התכנון האסטרטגי העירוני, תקציב ופיתוח חברתי-כלכלי.'
         },
         mv9: {
-          role: 'Sócio-Diretor & Arquiteto',
+          role: 'שותף-מנהל ואדריכל',
           company: 'MV9 Web & Sistemas',
           period: '2012 - 2019',
-          desc: 'Desenvolvimento de ERPs, automação comercial e parceria com Google. Migração Cloud.'
+          desc: 'פיתוח מערכות ERP, אוטומציה מסחרית ושותפות עם Google. הגירת ענן.'
         },
         c3: {
-          role: 'Consultor Estratégico',
+          role: 'יועץ אסטרטגי',
           company: 'C3 Group / EconoFísica',
           period: '2013 - 2018',
-          desc: 'Auditoria de algoritmos (Loterias), LGPD e Business Intelligence financeiro.'
+          desc: 'ביקורת אלגוריתמים (הגרלות), LGPD ו-Business Intelligence פיננסי.'
         },
         early: {
-          role: 'Gestão & Tecnologia (Início)',
+          role: 'ניהול וטכנולוגיה (תחילת דרך)',
           company: 'Junifer / Bemarco / Skam',
           period: '1998 - 2012',
-          desc: 'Década fundamental: Analista Financeiro, Coordenador Técnico e dev de sistemas iniciais (VBA/PHP).'
+          desc: 'עשור מכונן: אנליסט פיננסי, מתאם טכני ומפתח מערכות ראשוניות (VBA/PHP).'
         }
       },
-      currentBadge: 'ATUAL'
+      currentBadge: 'נוכחי'
     }
   },
   engineering: {
-    title: 'Engenharia & Produtos',
+    title: 'הנדסה ומוצרים',
     products: {
       algoTrading: {
         title: 'Codex Hash Algo-Trading',
-        desc: 'Sistema estocástico de arbitragem e alta frequência (HFT) para mercados de criptoativos.',
+        desc: 'מערכת סטוכסטית לארביטראז\' ותדירות גבוהה (HFT) לשוקי קריפטו-נכסים.',
         tags: [
           "PYTHON",
           "MQL5",
@@ -154,7 +154,7 @@ export const home = {
       },
       goldenleaf: {
         title: 'GoldenLeaf IoT System',
-        desc: 'Sistema embarcado para controle ambiental e agricultura de precisão com criptografia de curva elíptica.',
+        desc: 'מערכת משובצת לבקרת סביבה וחקלאות מדויקת עם הצפנת עקומה אליפטית.',
         tags: [
           "C++",
           "ESP32",
@@ -163,7 +163,7 @@ export const home = {
       },
       bioBytes: {
         title: 'BioBytes Legacy',
-        desc: 'Sistema de preservação digital de memória e herança biográfica com segurança de nível militar.',
+        desc: 'מערכת לשימור דיגיטלי של זיכרון ומורשת ביוגרפית עם אבטחה ברמה צבאית.',
         tags: [
           "SECURITY",
           "CRYPTOGRAPHY",
@@ -172,7 +172,7 @@ export const home = {
       },
       clubeSanto: {
         title: 'Clube Santo Platform',
-        desc: 'Plataforma digital de ensino teológico e comunidades virtuais com CMS proprietário.',
+        desc: 'פלטפורמה דיגיטלית ללימוד תיאולוגי וקהילות וירטואליות עם CMS קנייני.',
         tags: [
           "REACT",
           "NODE.JS",
@@ -182,7 +182,7 @@ export const home = {
     }
   },
   skills: {
-    title: 'Stack Tecnológica & Habilidades',
+    title: 'ערימה טכנולוגית ומיומנויות',
     columns: {
       core: {
         title: 'Core Engineering',
@@ -205,7 +205,7 @@ export const home = {
         ]
       },
       management: {
-        title: 'Gestão & Processos',
+        title: 'ניהול ותהליכים',
         items: [
           "BPMN (Bizagi)",
           "Scrum & Agile / XP",
@@ -215,9 +215,9 @@ export const home = {
         ]
       },
       certifications: {
-        title: 'Certificações (Alura/FIAP)',
+        title: 'הסמכות (Alura/FIAP)',
         items: [
-          "AI Generativa",
+          "בינה מלאכותית גנרטיבית",
           "Midjourney",
           "MongoDB",
           "RPA",
@@ -229,48 +229,48 @@ export const home = {
     }
   },
   publications: {
-    title: 'Publicações Selecionadas',
+    title: 'פרסומים נבחרים',
     categoryLabels: {
-      research: 'RESEARCH • IA & ECONOMIA',
-      whitepapers: 'WHITEPAPER • ENGENHARIA',
-      essays: 'ENSAIO • HUMANIDADES'
+      research: 'מחקר • בינה מלאכותית וכלכלה',
+      whitepapers: 'נייר עמדה • הנדסה',
+      essays: 'מאמר • מדעי הרוח'
     }
   },
   simulacoes: {
-    title: 'Simulacoes',
-    kicker: 'Laboratorio de cenarios',
-    heading: 'IA 2027 em Portugues',
-    description: 'Simulacao prospectiva em formato scrollytelling com timeline, painel de KPIs dinamico e ramificacoes de cenario (slowdown/race), baseada no manifesto AI 2027 em versao academica pt-BR.',
-    cta: 'Abrir simulacao'
+    title: 'סימולציות',
+    kicker: 'מעבדת תרחישים',
+    heading: 'בינה מלאכותית 2027 בפורטוגזית',
+    description: 'סימולציה פרוספקטיבית בפורמט scrollytelling עם ציר זמן, לוח מחוונים דינמי של KPIs והסתעפויות תרחישים (האטה/מירוץ), מבוססת על מניפסט AI 2027 בגרסה אקדמית pt-BR.',
+    cta: 'פתח סימולציה'
   },
   codexHash: {
     title: 'Codex Hash Ltda',
-    description: 'Laboratório de P&D (deep tech) com foco em finanças quantitativas/Web3, arquitetura cloudless para IoT e inteligência artificial aplicada à resiliência ciberfinanceira.',
-    anchor: 'Esta seção é a âncora oficial #codexhash para resolver links semânticos internos.'
+    description: 'מעבדת מחקר ופיתוח (deep tech) עם התמקדות במימון כמותי/Web3, ארכיטקטורה ללא ענן עבור IoT ובינה מלאכותית יישומית לחוסן סייבר-פיננסי.',
+    anchor: 'סעיף זה הוא העוגן הרשמי #codexhash לפתרון קישורים סמנטיים פנימיים.'
   },
   manifesto: {
-    title: 'Resumo Profissional & Acadêmico (Lattes)',
-    intro: 'Cientista Econômico, Analista de Sistemas e Pesquisador Polímata com sólida trajetória de mais de 28 anos na convergência entre Engenharia Financeira, Arquitetura de Software Distribuída e Humanidades. Atua na fronteira do desenvolvimento tecnológico, integrando rigor acadêmico e pragmatismo executivo para solucionar problemas em sistemas complexos adaptativos.',
+    title: 'תקציר מקצועי ואקדמי (Lattes)',
+    intro: 'כלכלן, מנתח מערכות וחוקר פולימאת עם רקורד מוצק של למעלה מ-28 שנים בצומת שבין הנדסה פיננסית, ארכיטקטורת תוכנה מבוזרת ומדעי הרוח. פועל בחזית הפיתוח הטכנולוגי, משלב קפדנות אקדמית ופרגמטיזם ניהולי לפתרון בעיות במערכות מורכבות אדפטיביות.',
     formation: {
-      title: ':: Formação Acadêmica e Pesquisa Avançada',
-      text: 'Mestrando em Inteligência Artificial pela American Global Tech University (AGTU/EUA), onde desenvolve pesquisa de ponta sobre "Resiliência Cibernética e Financeira". Sua dissertação investiga arquiteturas híbridas que acoplam Redes Neurais Recorrentes (LSTM) com modelos estocásticos de fluxo (Lei de Little) e Inferência Bayesiana, visando a criação de agentes autônomos antifrágeis para mercados de alta volatilidade. Possui MBA em Blockchain Development & Technologies pela FIAP, com foco em criptoeconomia e governança descentralizada. Bacharel em Ciências Econômicas, com monografia revisitando a Teoria do Caos e a não-linearidade nos mercados sob a ótica da Escola Austríaca.'
+      title: ':: השכלה אקדמית ומחקר מתקדם',
+      text: 'מועמד לתואר שני בבינה מלאכותית באוניברסיטת American Global Tech (AGTU/ארה"ב), שם הוא מפתח מחקר חלוצי בנושא "חוסן סייבר ופיננסי". עבודת התזה שלו חוקרת ארכיטקטורות היברידיות המשלבות רשתות נוירונים רקורסיביות (LSTM) עם מודלים סטוכסטיים של זרימה (חוק ליטל) והסקה בייסיאנית, במטרה ליצור סוכנים אוטונומיים אנטי-שבירים לשווקים בעלי תנודתיות גבוהה. בעל תואר MBA בפיתוח וטכנולוגיות Blockchain מ-FIAP, עם התמקדות בקריפטואקונומיה וממשל מבוזר. בוגר תואר ראשון במדעי הכלכלה, עם עבודת גמר המבקרת מחדש את תורת הכאוס ואי-הליניאריות בשווקים מנקודת מבטה של האסכולה האוסטרית.'
     },
     leadership: {
-      title: ':: Liderança Executiva e Inovação',
-      text: 'Atualmente é CTO e Pesquisador Chefe na Codex Hash Ltda, liderando um laboratório de P&D focado em três pilares: Finanças Quantitativas & Web3 (HFT, Cash and Carry, Solidity, Custódia MPC/Monero), Engenharia de Hardware & IoT (Edge Computing, "Cloudless", Zero Trust, ESP32) e Inteligência Artificial Aplicada (Data Science para séries temporais financeiras).'
+      title: ':: מנהיגות ביצועית וחדשנות',
+      text: 'כיום הוא CTO וחוקר ראשי ב-Codex Hash Ltda, מוביל מעבדת מחקר ופיתוח המתמקדת בשלושה עמודי תווך: מימון כמותי ו-Web3 (HFT, Cash and Carry, Solidity, משמורת MPC/Monero), הנדסת חומרה ו-IoT (Edge Computing, "Cloudless", Zero Trust, ESP32) ובינה מלאכותית יישומית (Data Science לסדרות זמן פיננסיות).'
     },
     arsenal: {
-      title: ':: Arsenal Técnico & Humanidades',
-      engineering: 'Arquiteto de soluções distribuídas com domínio de microsserviços, orquestração de contêineres e DevOps. Expert em stack JavaScript moderna e sistemas críticos em C++ e MQL5.',
-      dataScience: 'Proficiência avançada em Python (Pandas, Scikit-learn, TensorFlow, PyTorch).',
-      humanities: 'Paralelamente à carreira tecnológica, mantém linha de pesquisa em Teologia Histórica e Arqueologia Cognitiva. Fundador do Instituto Clube Santo, aplica metodologia de Crítica Textual e hermenêutica comparada. Perfil Intelectual que combina a capacidade analítica das ciências exatas com a profundidade filosófica, alinhando inovação digital com preservação da memória e liberdade individual (Cypherpunk ethos).'
+      title: ':: ארסנל טכני ומדעי הרוח',
+      engineering: 'ארכיטקט פתרונות מבוזרים עם שליטה במיקרו-שירותים, תזמור קונטיינרים ו-DevOps. מומחה בערימת JavaScript מודרנית ובמערכות קריטיות ב-C++ ו-MQL5.',
+      dataScience: 'מיומנות מתקדמת ב-Python (Pandas, Scikit-learn, TensorFlow, PyTorch).',
+      humanities: 'במקביל לקריירה הטכנולוגית, הוא מקיים קו מחקר בתיאולוגיה היסטורית וארכיאולוגיה קוגניטיבית. מייסד מכון Clube Santo, מיישם מתודולוגיה של ביקורת טקסטואלית והרמנויטיקה השוואתית. פרופיל אינטלקטואלי המשלב את היכולת האנליטית של המדעים המדויקים עם עומק פילוסופי, ומיישר קו בין חדשנות דיגיטלית לשימור זיכרון וחירות הפרט (Cypherpunk ethos).'
     }
   },
   faq: {
-    sectionTitle: 'Perguntas sobre Ulisses Flores'
+    sectionTitle: 'שאלות על Ulisses Flores'
   },
   pageFooter: {
-    copyright: '© 2026 Codex Hash Ltda. All rights reserved.',
-    version: 'UlissesFlores.com • v10.0 • State of the Art'
+    copyright: '© 2026 Codex Hash Ltda. כל הזכויות שמורות.',
+    version: 'UlissesFlores.com • v10.0 • חזית הטכנולוגיה'
   }
 } as const;

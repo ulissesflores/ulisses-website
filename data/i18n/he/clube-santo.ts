@@ -1,83 +1,83 @@
 export const clubeSanto = {
   meta: {
-    title: 'Clube Santo — Instituto Teológico e Comunidade de Formação Bíblica | Ulisses Flores',
-    description: 'O Clube Santo é o instituto teológico e comunidade de formação bíblica fundado por Ulisses Flores — Pesquisador Polímata, Pregador e Mestrando em IA pela AGTU (EUA). Acervo de sermões, estudos bíblicos e análise historiográfica.',
+    title: 'Clube Santo — מכון תיאולוגי וקהילה להכשרה מקראית | Ulisses Flores',
+    description: 'Clube Santo הוא המכון התיאולוגי והקהילה להכשרה מקראית שנוסדו על ידי Ulisses Flores — חוקר פולימטי, מטיף וסטודנט לתואר שני ב-AI ב-AGTU (ארה"ב). אוסף דרשות, לימודי מקרא וניתוח היסטוריוגרפי.',
     keywords: [
       "clube santo",
-      "instituto teológico",
-      "comunidade bíblica",
-      "formação teológica",
-      "sermões",
-      "estudos bíblicos",
-      "Ulisses Flores teologia",
-      "pregador",
-      "análise historiográfica bíblica",
-      "cânon bíblico"
+      "מכון תיאולוגי",
+      "קהילה מקראית",
+      "הכשרה תיאולוגית",
+      "דרשות",
+      "לימודי מקרא",
+      "התיאולוגיה של Ulisses Flores",
+      "מטיף",
+      "ניתוח היסטוריוגרפי מקראי",
+      "קאנון מקראי"
     ],
-    ogTitle: 'Clube Santo — Instituto Teológico e Comunidade de Formação Bíblica | Ulisses Flores',
-    ogDescription: 'Instituto teológico e comunidade de formação bíblica fundado por Ulisses Flores — Pesquisador Polímata, Pregador e Mestrando em IA pela AGTU (EUA).'
+    ogTitle: 'Clube Santo — מכון תיאולוגי וקהילה להכשרה מקראית | Ulisses Flores',
+    ogDescription: 'מכון תיאולוגי וקהילה להכשרה מקראית שנוסדו על ידי Ulisses Flores — חוקר פולימטי, מטיף וסטודנט לתואר שני ב-AI ב-AGTU (ארה"ב).'
   },
   breadcrumb: 'Clube Santo',
   hero: {
-    h1: 'Instituto Teológico e Comunidade de Formação Bíblica',
-    lead: 'O Clube Santo é o instituto teológico fundado por Ulisses Flores para formação bíblica rigorosa, análise historiográfica e comunidade de estudo. Reúne um acervo de mais de 50 sermões, pesquisas sobre canonização escribal, historicidade bíblica e fundamentos transcendentes da ordem econômica — conectando teologia, história e ciência.',
+    h1: 'מכון תיאולוגי וקהילה להכשרה מקראית',
+    lead: 'Clube Santo הוא המכון התיאולוגי שנוסד על ידי Ulisses Flores להכשרה מקראית קפדנית, ניתוח היסטוריוגרפי וקהילת לימוד. הוא מאגד אוסף של למעלה מ-50 דרשות, מחקרים על קאנוניזציה סופרית, היסטוריות מקראית ויסודות טרנסצנדנטיים של הסדר הכלכלי — המקשרים תיאולוגיה, היסטוריה ומדע.',
     authority: {
-      kicker: 'Rigor acadêmico aplicado à formação teológica',
-      text: 'Como Pesquisador Polímata, Ulisses Flores aplica metodologia científica à análise bíblica — combinando arqueologia, historiografia, análise textual e tradição reformada. As pesquisas publicadas incluem análise exaustiva da historicidade de Jesus (métodos arqueológicos e historiográficos) e estudo histórico-crítico da formação do cânon bíblico.'
+      kicker: 'קפדנות אקדמית מיושמת להכשרה תיאולוגית',
+      text: 'כחוקר פולימטי, Ulisses Flores מיישם מתודולוגיה מדעית לניתוח מקראי — המשלב ארכיאולוגיה, היסטוריוגרפיה, ניתוח טקסטואלי ומסורת רפורמית. המחקרים שפורסמו כוללים ניתוח מקיף של ההיסטוריות של ישו (שיטות ארכיאולוגיות והיסטוריוגרפיות) ומחקר היסטורי-ביקורתי של היווצרות הקאנון המקראי.'
     },
     credentials: [
-      "Pesquisador Polímata",
-      "Pregador & Expositor Bíblico",
-      "Mestrando AGTU (EUA)",
-      "Análise Historiográfica",
-      "Tradição Reformada",
-      "+56 Sermões Indexados"
+      "חוקר פולימטי",
+      "מטיף ומפרש מקראי",
+      "סטודנט לתואר שני ב-AGTU (ארה\"ב)",
+      "ניתוח היסטוריוגרפי",
+      "מסורת רפורמית",
+      "+56 דרשות מאונדקסות"
     ]
   },
   manifesto: {
-    kicker: 'Manifesto',
-    title: 'O Clube Santo: Um Avivamento para a Era Digital',
-    subtitle: 'Uma comunidade de mentes e corações em busca da verdadeira conexão.',
-    h3_1: 'Tudo começou com um chá.',
-    p1: 'Não, não estamos falando do chá das cinco britânico, mas de um chá que derramou um sopro de vida em uma Inglaterra espiritualmente adormecida. John Wesley, o protagonista dessa história, poderia muito bem ter sido o inventor do chá matcha ou do detox, mas o que ele realmente fez foi criar uma xícara cheia de avivamento, conhecida como O Clube Santo.',
-    p2: 'O Clube Santo, para os desavisados, não era um clube de boas-vindas para aspirantes a santos. Era muito mais que isso. Era uma reunião de mentes e corações que buscavam a verdadeira conexão com Deus, aliada a um rigor intelectual implacável. E que conexão! A Inglaterra nunca mais foi a mesma. John Wesley, com seu Clube Santo, desencadeou um avivamento espiritual tão grande que até o Rei George I teve que ajustar sua coroa.',
-    h3_2: 'O Novo Giro: Arqueologia Espiritual',
-    p3: 'Você deve estar se perguntando: por que estamos falando de um clube criado séculos atrás na Inglaterra? Porque acreditamos que é hora de um novo avivamento para os nossos tempos. Um movimento que começará na América Latina, mas não parará até alcançar os confins do mundo.',
-    p4: 'Estamos trazendo de volta o Clube Santo, mas com um giro para a era digital. O nosso instituto une o fervor pentecostal avivalista com ferramentas de Inteligência Artificial para realizar o que chamamos de Arqueologia Espiritual e Teológica. Juntos, vamos revolucionar o mundo, um avivamento de cada vez. Prepare a sua xícara.'
+    kicker: 'מניפסט',
+    title: 'Clube Santo: התעוררות לעידן הדיגיטלי',
+    subtitle: 'קהילה של מוחות ולבבות בחיפוש אחר הקשר האמיתי.',
+    h3_1: 'הכל התחיל עם תה.',
+    p1: 'לא, אנחנו לא מדברים על תה של חמש אחר הצהריים הבריטי, אלא על תה שהפיח רוח חיים באנגליה רדומה רוחנית. ג\'ון וסלי, גיבור הסיפור הזה, יכול היה בהחלט להיות ממציא תה המאצ\'ה או הדטוקס, אבל מה שהוא באמת עשה היה ליצור כוס מלאה בהתעוררות, הידוע בשם Clube Santo.',
+    p2: 'Clube Santo, למי שלא ידע, לא היה מועדון קבלת פנים לשואפי קדושה. זה היה הרבה יותר מזה. זו הייתה התכנסות של מוחות ולבבות שחיפשו את הקשר האמיתי עם אלוהים, בשילוב עם קפדנות אינטלקטואלית בלתי מתפשרת. ואיזה קשר! אנגליה מעולם לא הייתה כפי שהייתה. ג\'ון וססלי, עם Clube Santo שלו, עורר התעוררות רוחנית כה גדולה שאפילו המלך ג\'ורג\' הראשון נאלץ להתאים את כתר מלכותו.',
+    h3_2: 'הטוויסט החדש: ארכיאולוגיה רוחנית',
+    p3: 'אתם בטח שואלים את עצמכם: למה אנחנו מדברים על מועדון שנוצר לפני מאות שנים באנגליה? כי אנחנו מאמינים שהגיע הזמן להתעוררות חדשה לזמננו. תנועה שתתחיל באמריקה הלטינית, אך לא תעצור עד שתגיע לקצוות העולם.',
+    p4: 'אנחנו מחזירים את Clube Santo, אבל עם טוויסט לעידן הדיגיטלי. המכון שלנו מאחד את הלהט הפנטקוסטלי ההתעוררותי עם כלי AI כדי לבצע את מה שאנחנו מכנים ארכיאולוגיה רוחנית ותיאולוגית. יחד, נחולל מהפכה בעולם, התעוררות אחת בכל פעם. הכינו את הכוס שלכם.'
   },
   collections: {
-    title: 'Coleções e Acervo',
+    title: 'אוספים וארכיון',
     acervo: {
-      badge: 'Acervo Principal',
-      title: 'Acervo Teológico',
-      description: 'Mais de 56 sermões indexados, organizados cronologicamente com exposição bíblica detalhada, notas exegéticas e referências cruzadas.',
-      cta: 'Explorar Acervo →'
+      badge: 'ארכיון ראשי',
+      title: 'ארכיון תיאולוגי',
+      description: 'למעלה מ-56 דרשות מאונדקסות, מאורגנות כרונולוגית עם פירוש מקראי מפורט, הערות אקסגטיות והפניות צולבות.',
+      cta: 'חקור את הארכיון →'
     },
     research: {
-      badge: 'Pesquisa Acadêmica',
-      title: 'Publicações de Pesquisa',
-      description: 'Pesquisas com rigor científico sobre historicidade bíblica, canonização escribal, fundamentos transcendentes da economia e intersecção fé-ciência.',
-      cta: 'Ver Pesquisas →'
+      badge: 'מחקר אקדמי',
+      title: 'פרסומי מחקר',
+      description: 'מחקרים בעלי קפדנות מדעית על היסטוריות מקראית, קאנוניזציה סופרית, יסודות טרנסצנדנטיים של הכלכלה והצטלבות אמונה-מדע.',
+      cta: 'צפה במחקרים →'
     },
     featured: {
-      title: 'Publicações em Destaque',
+      title: 'פרסומים מומלצים',
       items: [
-        "📄 Análise Historiográfica e Arqueológica Exaustiva: A Historicidade de Jesus →",
-        "📄 Canonização Escribal: Análise Histórico-Crítica da Formação do Cânon →",
-        "📄 Fundamentos Transcendentes da Ordem Econômica →"
+        "📄 ניתוח היסטוריוגרפי וארכיאולוגי מקיף: ההיסטוריות של ישו →",
+        "📄 קאנוניזציה סופרית: ניתוח היסטורי-ביקורתי של היווצרות הקאנון →",
+        "📄 יסודות טרנסצנדנטיים של הסדר הכלכלי →"
       ]
     }
   },
   author: {
-    label: 'Fundador & Pesquisador',
-    description: 'Clube Santo fundado e curado por Ulisses Flores — Pesquisador Polímata, Pregador, Consultor Estratégico de IA e Mestrando em IA pela AGTU (EUA).'
+    label: 'מייסד וחוקר',
+    description: 'Clube Santo נוסד ונאצר על ידי Ulisses Flores — חוקר פולימטי, מטיף, יועץ אסטרטגי ל-AI וסטודנט לתואר שני ב-AI ב-AGTU (ארה"ב).'
   },
   cta: {
-    title: 'Interesse em formação teológica ou palestra sobre fé e ciência?',
-    description: 'Ulisses Flores ministra estudos bíblicos, palestras sobre a intersecção entre teologia e ciência, e oferece mentoria em pesquisa historiográfica bíblica. Entre em contato.',
-    button: 'Falar com Ulisses Flores →'
+    title: 'מעוניינים בהכשרה תיאולוגית או בהרצאה על אמונה ומדע?',
+    description: 'Ulisses Flores מעביר לימודי מקרא, הרצאות על הצטלבות בין תיאולוגיה למדע, ומציע מנטורינג במחקר היסטוריוגרפי מקראי. צרו קשר.',
+    button: 'דברו עם Ulisses Flores →'
   },
   faq: {
-    sectionTitle: 'Perguntas sobre o Clube Santo'
+    sectionTitle: 'שאלות על Clube Santo'
   }
 } as const;

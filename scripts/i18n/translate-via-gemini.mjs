@@ -51,8 +51,8 @@ const parsedArgs = Object.fromEntries(
 const FILTER_LOCALE = parsedArgs['locale'] || null;
 const FILTER_NAMESPACE = parsedArgs['namespace'] || null;
 const DRY_RUN = parsedArgs['dry-run'] === 'true';
-const DELAY_MS = Number(parsedArgs['delay']) || 6000;
-const MODEL_NAME = parsedArgs['model'] || 'gemini-2.0-flash-lite';
+const DELAY_MS = Number(parsedArgs['delay']) || 1000;
+const MODEL_NAME = parsedArgs['model'] || 'gemini-2.5-flash';
 const MAX_RETRIES = Number(parsedArgs['retries']) || 3;
 
 // ── Target Locales ──────────────────────────────────────────────────────────────
@@ -210,12 +210,9 @@ function generateIndexTs(locale) {
     (ns) => `import { ${ns.exportName} } from './${ns.file}';`,
   );
 
-  const dictName = locale.replace(/-/g, '') + 'Dict';
-
   const body = `${importLines.join('\n')}
-import type { Dictionary } from '../types';
 
-const ${dictName}: Dictionary = {
+const dict = {
   common,
   home,
   clubeSanto,
@@ -227,7 +224,7 @@ const ${dictName}: Dictionary = {
   faq,
 };
 
-export default ${dictName};
+export default dict;
 `;
 
   return body;

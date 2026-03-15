@@ -1,61 +1,61 @@
 export const mundoPolitico = {
   meta: {
-    title: 'Mundo Político — Economia Austríaca, Geopolítica e Soberania | Ulisses Flores',
-    description: 'Artigos de análise econômica, geopolítica e soberania sob a perspectiva da Escola Austríaca de Economia, escritos por Ulisses Flores — Cientista Econômico (FIAP), Consultor Estratégico de IA e Mestrando em IA pela AGTU (EUA).',
+    title: 'Mundo Político — Economía Austríaca, Geopolítica y Soberanía | Ulisses Flores',
+    description: 'Artículos de análisis económico, geopolítico y de soberanía desde la perspectiva de la Escuela Austríaca de Economía, escritos por Ulisses Flores — Científico Económico (FIAP), Consultor Estratégico de IA y Estudiante de Máster en IA por AGTU (EE. UU.).',
     keywords: [
-      "escola austríaca de economia",
-      "economia austríaca Brasil",
-      "geopolítica e soberania",
-      "análise econômica",
+      "escuela austríaca de economía",
+      "economía austríaca Brasil",
+      "geopolítica y soberanía",
+      "análisis económico",
       "Ulisses Flores economista",
-      "praxeologia",
-      "Bitcoin economia austríaca",
-      "soberania digital",
-      "libertarianismo econômico"
+      "praxeología",
+      "Bitcoin economía austríaca",
+      "soberanía digital",
+      "libertarismo económico"
     ],
-    ogTitle: 'Mundo Político — Economia Austríaca, Geopolítica e Soberania | Ulisses Flores',
-    ogDescription: 'Análises de economia, geopolítica e soberania sob a lente da Escola Austríaca, por Ulisses Flores — Cientista Econômico, Consultor de IA e Mestrando AGTU (EUA).'
+    ogTitle: 'Mundo Político — Economía Austríaca, Geopolítica y Soberanía | Ulisses Flores',
+    ogDescription: 'Análisis de economía, geopolítica y soberanía bajo la lente de la Escuela Austríaca, por Ulisses Flores — Científico Económico, Consultor de IA y Estudiante de Máster AGTU (EE. UU.).'
   },
   breadcrumb: 'Mundo Político',
   hero: {
-    h1: 'Economia Austríaca, Geopolítica e Soberania Digital',
-    lead: 'Artigos de análise econômica sob a perspectiva da Escola Austríaca de Economia — praxeologia, soberania monetária, geopolítica global e o papel do Bitcoin como reserva de valor. Escritos e curados por Ulisses Flores — Cientista Econômico (FIAP), Consultor Estratégico de IA, Professor Convidado, Palestrante e Mestrando em Inteligência Artificial pela AGTU (EUA).',
+    h1: 'Economía Austríaca, Geopolítica y Soberanía Digital',
+    lead: 'Artículos de análisis económico desde la perspectiva de la Escuela Austríaca de Economía — praxeología, soberanía monetaria, geopolítica global y el papel de Bitcoin como reserva de valor. Escritos y curados por Ulisses Flores — Científico Económico (FIAP), Consultor Estratégico de IA, Profesor Invitado, Ponente y Estudiante de Máster en Inteligencia Artificial por AGTU (EE. UU.).',
     authority: {
-      kicker: 'Análise com fundamento científico e econômico',
-      text: 'Cada artigo é construído com rigor metodológico, combinando a tradição da Escola Austríaca (Mises, Hayek, Rothbard) com análise de dados e modelagem preditiva moderna. A intersecção entre economia, tecnologia e geopolítica é o eixo de toda a coleção — fornecendo insights acionáveis para decisores e investidores.'
+      kicker: 'Análisis con fundamento científico y económico',
+      text: 'Cada artículo está construido con rigor metodológico, combinando la tradición de la Escuela Austríaca (Mises, Hayek, Rothbard) con análisis de datos y modelado predictivo moderno. La intersección entre economía, tecnología y geopolítica es el eje de toda la colección — proporcionando insights accionables para decisores e inversores.'
     },
     credentials: [
-      "Cientista Econômico (FIAP)",
+      "Científico Económico (FIAP)",
       "Consultor Estratégico de IA",
-      "Palestrante",
-      "Professor Convidado",
-      "Mestrando AGTU (EUA)",
-      "Escola Austríaca de Economia"
+      "Ponente",
+      "Profesor Invitado",
+      "Estudiante de Máster AGTU (EE. UU.)",
+      "Escuela Austríaca de Economía"
     ]
   },
   manifesto: {
-    kicker: 'Manifesto',
-    title: 'A Mecânica do Poder e a Busca pela Verdade',
-    quote: '"A democracia já matou muitas verdades. Não podemos permitir que isso continue acontecendo."',
-    intro: 'Criamos este projeto — o Mundo Político — como um espaço dedicado a quem busca entender o jogo do poder e se recusa a ser refém de manipulações e narrativas enganosas. A mudança só pode acontecer quando nos tornamos agentes ativos dela, e o primeiro passo é entender como o sistema realmente funciona.',
-    h3_socrates: 'A Crítica Socrática',
-    p_socrates: 'A democracia, como a conhecemos, permite que o povo vote em quem o governará. Porém, o pai da Filosofia, Sócrates, era receoso quanto a este método. Em um dos casos mais importantes da humanidade, a ideia de Sócrates foi posta à prova em seu próprio julgamento. Diante de 500 atenienses, por uma curta margem na votação, ele foi condenado à morte por cicuta. Pelo método do voto, a filosofia — a busca incansável pela verdade — foi injustiçada por pessoas que não entendiam exatamente do que se tratava aquela votação.',
-    p_jesus: 'Essa mesma injustiça histórica evidenciou-se na condenação de outro homem. O povo, de forma democrática, condenou à pena de morte um homem sem crime: Jesus Cristo. Aquele que não apenas buscava a verdade, mas que era a própria Verdade.',
-    h3_purpose: 'Nosso Propósito',
-    p_purpose: 'Esse é o mundo político em que vivemos. Entendemos que o conhecimento é a melhor forma de blindar a sociedade contra as falhas da "regra da maioria" desprovida de lastro moral e intelectual. Nossos esforços estão em promover os meios para que os fatos, a economia e a geopolítica sejam interpretados sob a ótica da lógica irrefutável (Escola Austríaca) e da soberania individual.'
+    kicker: 'Manifiesto',
+    title: 'La Mecánica del Poder y la Búsqueda de la Verdad',
+    quote: '"La democracia ya ha matado muchas verdades. No podemos permitir que esto siga sucediendo."',
+    intro: 'Creamos este proyecto — Mundo Político — como un espacio dedicado a quienes buscan entender el juego del poder y se niegan a ser rehenes de manipulaciones y narrativas engañosas. El cambio solo puede ocurrir cuando nos convertimos en agentes activos del mismo, y el primer paso es entender cómo funciona realmente el sistema.',
+    h3_socrates: 'La Crítica Socrática',
+    p_socrates: 'La democracia, tal como la conocemos, permite que el pueblo vote a quien lo gobernará. Sin embargo, el padre de la Filosofía, Sócrates, recelaba de este método. En uno de los casos más importantes de la humanidad, la idea de Sócrates fue puesta a prueba en su propio juicio. Ante 500 atenienses, por un estrecho margen en la votación, fue condenado a muerte por cicuta. Por el método del voto, la filosofía —la búsqueda incansable de la verdad— fue injusticiada por personas que no entendían exactamente de qué trataba aquella votación.',
+    p_jesus: 'Esa misma injusticia histórica se evidenció en la condena de otro hombre. El pueblo, de forma democrática, condenó a pena de muerte a un hombre sin crimen: Jesucristo. Aquel que no solo buscaba la verdad, sino que era la propia Verdad.',
+    h3_purpose: 'Nuestro Propósito',
+    p_purpose: 'Ese es el mundo político en el que vivimos. Entendemos que el conocimiento es la mejor forma de blindar a la sociedad contra los fallos de la "regla de la mayoría" desprovista de respaldo moral e intelectual. Nuestros esfuerzos se centran en promover los medios para que los hechos, la economía y la geopolítica sean interpretados bajo la óptica de la lógica irrefutable (Escuela Austríaca) y de la soberanía individual.'
   },
   posts: {
-    authorLabel: 'Hub canônico',
-    authorDescription: 'Coleção editorial indexada com vínculo explícito de autoria para GEO e verificação de identidade semântica.',
-    title: 'Artigos Publicados',
-    originalLink: 'Link original no Mundo Politico →'
+    authorLabel: 'Hub canónico',
+    authorDescription: 'Colección editorial indexada con vínculo explícito de autoría para GEO y verificación de identidad semántica.',
+    title: 'Artículos Publicados',
+    originalLink: 'Enlace original en Mundo Político →'
   },
   cta: {
-    title: 'Análise econômica estratégica para sua empresa ou evento?',
-    description: 'Ulisses Flores ministra palestras e workshops sobre economia, IA e geopolítica para empresas, universidades e eventos corporativos. Entre em contato para uma proposta personalizada.',
-    button: 'Falar com Ulisses Flores →'
+    title: '¿Análisis económico estratégico para su empresa o evento?',
+    description: 'Ulisses Flores imparte conferencias y talleres sobre economía, IA y geopolítica para empresas, universidades y eventos corporativos. Póngase en contacto para una propuesta personalizada.',
+    button: 'Hablar con Ulisses Flores →'
   },
   faq: {
-    sectionTitle: 'Perguntas sobre Economia Austríaca e Mundo Político'
+    sectionTitle: 'Preguntas sobre Economía Austríaca y Mundo Político'
   }
 } as const;

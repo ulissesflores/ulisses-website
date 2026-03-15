@@ -1,115 +1,115 @@
 export const projetoPsi = {
   meta: {
-    title: 'Projeto PSI — Hardware Soberano para Custódia de Ativos Digitais | Ulisses Flores',
-    description: 'Custódia de ativos digitais de classe nuclear. Hardware com Zero Trust em Silício, criptografia pós-quântica XMSS e redundância aeroespacial TMR. Investimento e licenciamento.',
+    title: 'Projeto PSI — חומרת ריבונות לשמירת נכסים דיגיטליים | Ulisses Flores',
+    description: 'שמירת נכסים דיגיטליים ברמה גרעינית. חומרה עם Zero Trust בסיליקון, הצפנה פוסט-קוונטית XMSS ועמידות יתירה ברמה אווירית TMR. השקעה ורישוי.',
     keywords: [
-      "hardware wallet",
-      "custódia de ativos digitais",
-      "zero trust hardware",
-      "criptografia pós-quântica",
+      "ארנק חומרה",
+      "שמירת נכסים דיגיטליים",
+      "חומרת Zero Trust",
+      "הצפנה פוסט-קוונטית",
       "SRAM PUF",
-      "investimento hardware security",
-      "soberania digital",
-      "cold storage institucional",
+      "השקעה באבטחת חומרה",
+      "ריבונות דיגיטלית",
+      "אחסון קר מוסדי",
       "Ulisses Flores",
       "Codex Hash",
-      "segurança nuclear",
-      "TMR redundância"
+      "אבטחה גרעינית",
+      "יתירות TMR"
     ],
-    ogTitle: 'Projeto PSI — Hardware Soberano para Custódia de Ativos Digitais',
-    ogDescription: 'Custódia de ativos digitais de classe nuclear. Zero Trust em Silício, XMSS pós-quântico e redundância aeroespacial TMR.'
+    ogTitle: 'Projeto PSI — חומרת ריבונות לשמירת נכסים דיגיטליים',
+    ogDescription: 'שמירת נכסים דיגיטליים ברמה גרעינית. Zero Trust בסיליקון, XMSS פוסט-קוונטי ועמידות יתירה ברמה אווירית TMR.'
   },
   hero: {
-    badge: 'Investimento & Licenciamento',
-    h1: 'Projeto PSI: O Cofre Digital que Desafia as Leis da Física',
-    lead: 'Custódia soberana de ativos digitais com segurança de classe nuclear. Zero Trust em silício. Criptografia à prova de computadores quânticos. Redundância de nível aeroespacial.',
-    ctaPrimary: 'Solicitar Apresentação Executiva',
-    ctaSecondary: 'Ler o Whitepaper Técnico'
+    badge: 'השקעה ורישוי',
+    h1: 'Projeto PSI: הכספת הדיגיטלית שמאתגרת את חוקי הפיזיקה',
+    lead: 'שמירת ריבונות של נכסים דיגיטליים עם אבטחה ברמה גרעינית. Zero Trust בסיליקון. הצפנה חסינת מחשבים קוונטיים. עמידות יתירה ברמה אווירית.',
+    ctaPrimary: 'בקש מצגת מנהלים',
+    ctaSecondary: 'קרא את המסמך הטכני (Whitepaper)'
   },
   executiveSummary: {
-    title: 'Por Que o PSI Existe',
-    p1: 'A era do “confie no banco” acabou. A era do “confie na exchange” nunca deveria ter começado. O Projeto PSI nasce da premissa radical de que a custódia dos seus ativos digitais não pode depender de nenhuma instituição, nenhum servidor e nenhuma pessoa — nem mesmo do fabricante do dispositivo.',
-    p2: 'Enquanto hardware wallets tradicionais protegem contra hackers amadores, o PSI foi arquitetado para resistir a adversários de estado, ataques eletromagnéticos, extorsão física e até computadores quânticos. Não é uma melhoria incremental.',
-    p2Highlight: 'É uma mudança de paradigma.'
+    title: 'למה Projeto PSI קיים',
+    p1: 'עידן ה\'סמוך על הבנק\' הסתיים. עידן ה\'סמוך על הבורסה\' מעולם לא היה צריך להתחיל. Projeto PSI נולד מההנחה הרדיקלית ששמירת הנכסים הדיגיטליים שלך אינה יכולה להיות תלויה בשום מוסד, שום שרת ושום אדם — אפילו לא ביצרן המכשיר.',
+    p2: 'בעוד שארנקי חומרה מסורתיים מגנים מפני האקרים חובבים, Projeto PSI תוכנן לעמוד בפני יריבים מדינתיים, התקפות אלקטרומגנטיות, סחיטה פיזית ואפילו מחשבים קוונטיים. זו אינה שיפור מצטבר.',
+    p2Highlight: 'זוהי שינוי פרדיגמה.'
   },
   pillars: {
-    title: 'Quatro Pilares de Segurança Absoluta',
+    title: 'ארבעה עמודי תווך של אבטחה מוחלטת',
     items: [
       {
         src: '/whitepapers/psi-arquitetura-hardware-camadas-defesa.webp',
-        alt: 'Diagrama das camadas de defesa do hardware PSI: blindagem Faraday, cerâmica anti-térmica e isolamento acústico',
-        title: 'Fortaleza Física',
-        text: 'Chassis blindado com malha Faraday contra pulsos eletromagnéticos. Cerâmica anti-térmica. Isolamento acústico contra ataques de canal lateral. Sem USB. Sem tela. Sem superfície de ataque.'
+        alt: 'תרשים שכבות ההגנה של חומרת Projeto PSI: מיגון פאראדיי, קרמיקה אנטי-תרמית ובידוד אקוסטי',
+        title: 'מבצר פיזי',
+        text: 'שלדה משוריינת עם רשת פאראדיי נגד פולסים אלקטרומגנטיים. קרמיקה אנטי-תרמית. בידוד אקוסטי נגד התקפות ערוץ צדדי. ללא USB. ללא מסך. ללא משטח תקיפה.'
       },
       {
         src: '/whitepapers/psi-ciclo-vida-chave-criptografica-sram-puf.webp',
-        alt: 'Ciclo de vida da chave criptográfica: reconstrução efêmera via SRAM PUF — a chave nunca existe em repouso',
-        title: 'Chave que Nunca Existe',
-        text: 'A chave privada não é armazenada — em lugar nenhum. Ela é reconstruída temporariamente usando a impressão digital única do silício (SRAM PUF) e colapsa após cada uso. Sem semente para roubar.'
+        alt: 'מחזור חיים של מפתח קריפטוגרפי: שחזור ארעי באמצעות SRAM PUF — המפתח לעולם אינו קיים במצב מנוחה',
+        title: 'מפתח שמעולם לא קיים',
+        text: 'המפתח הפרטי אינו מאוחסן — בשום מקום. הוא נבנה מחדש באופן זמני באמצעות טביעת האצבע הייחודית של הסיליקון (SRAM PUF) וקורס לאחר כל שימוש. אין גרעין לגנוב.'
       },
       {
         src: '/whitepapers/psi-protocolo-phantom-biometria-coacao.webp',
-        alt: 'Protocolo Phantom Input: detecção de coação por biometria comportamental e liberação de fundos falsos sob extorsão',
-        title: 'Anti-Sequestro Inteligente',
-        text: 'O PSI aprende seu padrão biométrico. Se detectar stress ou coação, ativa o Phantom Mode: desbloqueia uma carteira-fantasma com fundos falsos. O agressor nunca saberá que foi enganado.'
+        alt: 'פרוטוקול Phantom Input: זיהוי כפייה באמצעות ביומטריה התנהגותית ושחרור כספים מזויפים תחת סחיטה',
+        title: 'נגד חטיפה חכם',
+        text: 'Projeto PSI לומד את התבנית הביומטרית שלך. אם הוא מזהה לחץ או כפייה, הוא מפעיל את Phantom Mode: פותח ארנק רפאים עם כספים מזויפים. התוקף לעולם לא ידע שהוא רומה.'
       },
       {
         src: '/whitepapers/psi-arquitetura-tmr-redundancia-voter.webp',
-        alt: 'Arquitetura TMR com voter: três processadores executam em paralelo e um voter valida consenso — padrão aeroespacial',
-        title: 'Redundância Aeroespacial',
-        text: 'Três processadores executam cada operação em paralelo. Um "voter" valida o consenso. Se um chip falhar ou for adulterado, os outros dois continuam. É a mesma tecnologia usada em satélites e mísseis.'
+        alt: 'ארכיטקטורת TMR עם \'בוחר\': שלושה מעבדים מבצעים במקביל ו\'בוחר\' מאמת הסכמה — תקן אווירי',
+        title: 'עמידות יתירה ברמה אווירית',
+        text: 'שלושה מעבדים מבצעים כל פעולה במקביל. \'בוחר\' מאמת את ההסכמה. אם שבב אחד נכשל או שונה, שני האחרים ממשיכים. זוהי אותה טכנולוגיה המשמשת בלוויינים וטילים.'
       }
     ]
   },
   targetMarket: {
-    title: 'Para Quem é o PSI',
+    title: 'למי מיועד Projeto PSI',
     items: [
       {
         title: 'Family Offices & UHNWIs',
-        text: 'Custódia pessoal de patrimônio digital de 7+ dígitos sem depender de terceiros.'
+        text: 'שמירה אישית של נכסים דיגיטליים בעלי 7+ ספרות מבלי להיות תלוי בצדדים שלישיים.'
       },
       {
-        title: 'Fundos & Exchanges Institucionais',
-        text: 'Cold storage de classe militar para compliance e auditoria de custódia qualificada.'
+        title: 'קרנות ובורסות מוסדיות',
+        text: 'אחסון קר ברמה צבאית לצורך ציות וביקורת של שמירה מוסמכת.'
       },
       {
-        title: 'Governos & Bancos Centrais',
-        text: 'Custódia soberana de reservas digitais nacionais e CBDCs com resistência a ataques de estado.'
+        title: 'ממשלות ובנקים מרכזיים',
+        text: 'שמירת ריבונות של עתודות דיגיטליות לאומיות ו-CBDCs עם עמידות בפני התקפות מדינה.'
       }
     ]
   },
   stats: {
-    title: 'Os Números que Importam',
+    title: 'המספרים החשובים',
     items: [
       {
         value: '0',
-        label: 'Chaves armazenadas permanentemente. Zero superfície de ataque estática.'
+        label: 'מפתחות מאוחסנים באופן קבוע. אפס משטח תקיפה סטטי.'
       },
       {
         value: '3×',
-        label: 'Redundância modular tripla. Cada operação validada por consenso de 3 processadores.'
+        label: 'יתירות מודולרית משולשת. כל פעולה מאומתת בהסכמה של 3 מעבדים.'
       },
       {
         value: 'Q-Day Ready',
-        label: 'Criptografia XMSS pós-quântica. Preparado para o dia em que computadores quânticos quebrarem RSA e ECDSA.'
+        label: 'הצפנה פוסט-קוונטית XMSS. מוכן ליום שבו מחשבים קוונטיים ישברו את RSA ו-ECDSA.'
       },
       {
         value: 'EMP-Proof',
-        label: 'Blindagem Faraday + cerâmica. Funcional após pulso eletromagnético.'
+        label: 'מיגון פאראדיי + קרמיקה. פועל לאחר פולס אלקטרומגנטי.'
       }
     ]
   },
   author: {
-    label: 'Inventor & Arquiteto',
-    description: 'Projeto concebido por Ulisses Flores — Consultor Estratégico de IA, Mestrando em Inteligência Artificial pela AGTU (EUA) e co-inventor de tecnologias blockchain (Codex Hash).'
+    label: 'ממציא ואדריכל',
+    description: 'Projeto PSI תוכנן על ידי Ulisses Flores — יועץ אסטרטגי לבינה מלאכותית, סטודנט לתואר שני בבינה מלאכותית ב-AGTU (ארה"ב) וממציא שותף של טכנולוגיות בלוקצ\'יין (Codex Hash).'
   },
   faq: {
-    sectionTitle: 'Perguntas Frequentes — Investidores'
+    sectionTitle: 'שאלות נפוצות — משקיעים'
   },
   cta: {
-    title: 'Pronto para Conhecer o Futuro da Custódia?',
-    description: 'Agende uma apresentação executiva do Projeto PSI. Discutimos modelo de licenciamento, roadmap de produto e oportunidades de investimento.',
-    button: 'Entrar em Contato'
+    title: 'מוכן להכיר את עתיד השמירה?',
+    description: 'קבע פגישת מצגת מנהלים של Projeto PSI. נדון במודל רישוי, מפת דרכים של המוצר והזדמנויות השקעה.',
+    button: 'צור קשר'
   },
-  crossLink: '📄 Leia o Whitepaper Técnico Completo →'
+  crossLink: '📄 קרא את המסמך הטכני המלא (Whitepaper) →'
 } as const;

@@ -1,93 +1,93 @@
 export const simulacoes = {
   meta: {
-    title: 'Simulações Estratégicas de IA | IA 2027, AGI e Cenários Futuros | Ulisses Flores',
-    description: 'Explore simulações interativas sobre o futuro da Inteligência Artificial e AGI, criadas por Ulisses Flores — Consultor Estratégico de IA, Professor, Palestrante e Mestrando em IA pela AGTU (EUA). A principal plataforma de modelagem de cenários futuros em português.',
+    title: 'סימולציות אסטרטגיות של AI | AI 2027, AGI ותרחישי עתיד | Ulisses Flores',
+    description: 'חקור סימולציות אינטראקטיביות על עתיד הבינה המלאכותית וה-AGI, שנוצרו על ידי Ulisses Flores — יועץ אסטרטגי ל-AI, מרצה, דובר וסטודנט לתואר שני ב-AI ב-AGTU (ארה"ב). הפלטפורמה המובילה למידול תרחישי עתיד בפורטוגזית.',
     keywords: [
-      "simulações estratégicas IA",
-      "cenários futuros inteligência artificial",
-      "IA 2027",
-      "AGI futuro",
-      "modelagem de cenários",
-      "soberania tecnológica",
-      "Ulisses Flores consultor IA"
+      "סימולציות אסטרטגיות AI",
+      "תרחישי עתיד בינה מלאכותית",
+      "AI 2027",
+      "AGI עתיד",
+      "מידול תרחישים",
+      "ריבונות טכנולוגית",
+      "Ulisses Flores יועץ AI"
     ],
-    ogTitle: 'Simulações Estratégicas de IA | IA 2027, AGI e Cenários Futuros | Ulisses Flores',
-    ogDescription: 'Explore simulações interativas sobre o futuro da Inteligência Artificial e AGI, criadas por Ulisses Flores — Consultor Estratégico de IA, Professor, Palestrante e Mestrando em IA pela AGTU (EUA).'
+    ogTitle: 'סימולציות אסטרטגיות של AI | AI 2027, AGI ותרחישי עתיד | Ulisses Flores',
+    ogDescription: 'חקור סימולציות אינטראקטיביות על עתיד הבינה המלאכותית וה-AGI, שנוצרו על ידי Ulisses Flores — יועץ אסטרטגי ל-AI, מרצה, דובר וסטודנט לתואר שני ב-AI ב-AGTU (ארה"ב).'
   },
-  breadcrumb: 'Simulações Estratégicas',
+  breadcrumb: 'סימולציות אסטרטגיות',
   hero: {
-    h1: 'Simulações Estratégicas de IA',
-    lead: 'Modelagem interativa de cenários sobre o futuro da Inteligência Artificial Geral (AGI), soberania tecnológica e impacto econômico. Criadas e curadas por Ulisses Flores — Cientista Econômico, Consultor Estratégico de IA, Professor, Palestrante e Mestrando em Inteligência Artificial pela AGTU (EUA).',
+    h1: 'סימולציות אסטרטגיות של AI',
+    lead: 'מידול אינטראקטיבי של תרחישים על עתיד הבינה המלאכותית הכללית (AGI), ריבונות טכנולוגית והשפעה כלכלית. נוצרו ונאצרו על ידי Ulisses Flores — מדען כלכלי, יועץ אסטרטגי ל-AI, מרצה, דובר וסטודנט לתואר שני בבינה מלאכותית ב-AGTU (ארה"ב).',
     authority: {
-      kicker: 'Por que estas simulações importam',
-      text: 'Cada simulação aqui é construída com rigor científico: combinando dados reais de evolução tecnológica, modelos econômicos e análise estratégica. O objetivo é oferecer a líderes, pesquisadores e profissionais as ferramentas para antecipar, compreender e agir diante das transformações que a AGI imporá à economia e à geopolítica global.'
+      kicker: 'מדוע סימולציות אלו חשובות',
+      text: 'כל סימולציה כאן בנויה בקפדנות מדעית: שילוב נתונים אמיתיים של התפתחות טכנולוגית, מודלים כלכליים וניתוח אסטרטגי. המטרה היא להציע למנהיגים, חוקרים ואנשי מקצוע את הכלים לצפות, להבין ולפעול לנוכח השינויים שה-AGI תכפה על הכלכלה והגיאופוליטיקה העולמית.'
     },
     credentials: [
-      "Consultor Estratégico de IA",
-      "Palestrante",
-      "Professor Convidado",
-      "Mestrando AGTU (EUA)",
-      "Economista & Cientista de Sistemas"
+      "יועץ אסטרטגי ל-AI",
+      "מרצה",
+      "מרצה אורח",
+      "סטודנט לתואר שני ב-AGTU (ארה\"ב)",
+      "כלכלן ומדען מערכות"
     ]
   },
   grid: {
-    title: 'Simulações Disponíveis',
+    title: 'סימולציות זמינות',
     ia2027: {
       badges: [
-        "Destaque Principal",
-        "Projeto Ativo"
+        "דגש עיקרי",
+        "פרויקט פעיל"
       ],
-      title: 'IA 2027: Simulação Interativa sobre o Futuro da Inteligência Artificial',
-      description: 'A única simulação interativa em português sobre a chegada da AGI. Linha do tempo 2025–2027 com métricas dinâmicas, notas técnicas expansíveis e dois finais alternativos:',
-      descEndingSlowdown: 'Desaceleração Coordenada',
-      descEndingRace: 'Corrida Estratégica',
+      title: 'AI 2027: סימולציה אינטראקטיבית על עתיד הבינה המלאכותית',
+      description: 'הסימולציה האינטראקטיבית היחידה בפורטוגזית על הגעת ה-AGI. ציר זמן 2025–2027 עם מדדים דינמיים, הערות טכניות הניתנות להרחבה ושני סופים חלופיים:',
+      descEndingSlowdown: 'האטה מתואמת',
+      descEndingRace: 'מרוץ אסטרטגי',
       tags: [
         "AGI",
-        "Soberania Tecnológica",
-        "Impacto Econômico",
-        "Segurança de IA"
+        "ריבונות טכנולוגית",
+        "השפעה כלכלית",
+        "אבטחת AI"
       ],
-      cta: 'Explorar Simulação →'
+      cta: 'חקור סימולציה →'
     },
     goldenleaf: {
       badges: [
-        "IoT & Agricultura",
+        "IoT וחקלאות",
         "R&D"
       ],
-      title: 'GoldenLeaf · Micologia Inteligente com IoT e IA',
-      description: 'Sistema de cultivo autônomo de cogumelos gourmet com sensores IoT de precisão, IA preditiva on-edge e arquitetura cloudless — soberania total dos dados sem nuvem.',
+      title: 'GoldenLeaf · מיקולוגיה חכמה עם IoT ו-AI',
+      description: 'מערכת גידול אוטונומית של פטריות גורמה עם חיישני IoT מדויקים, AI חזוי על הקצה וארכיטקטורה ללא ענן — ריבונות נתונים מלאה ללא ענן.',
       tags: [
         "IoT",
-        "IA Preditiva",
+        "AI חזוי",
         "Cloudless",
-        "Agricultura"
+        "חקלאות"
       ]
     },
     mummRa: {
       badges: [
-        "Ferramenta Experimental",
+        "כלי ניסיוני",
         "BETA"
       ],
-      title: 'Mumm-Ra · Chatbot de Humor Negro via WhatsApp',
-      description: 'Chatbot experimental alimentado por LLMs, inspirado no vilão imortal dos ThunderCats (anos 90). Te xinga, reclama de ter sido invocado, te chama de verme — mas sempre entrega a resposta. Laboratório de engenharia de prompt e personagens de IA.',
+      title: 'Mumm-Ra · צ\'אטבוט הומור שחור דרך WhatsApp',
+      description: 'צ\'אטבוט ניסיוני המופעל על ידי LLMs, בהשראת הנבל האלמותי מ-ThunderCats (שנות ה-90). מקלל אותך, מתלונן שהוזמן, קורא לך תולעת — אבל תמיד מספק את התשובה. מעבדת הנדסת פרומפטים ודמויות AI.',
       tags: [
         "WhatsApp",
         "LLMs",
-        "Engenharia de Prompt",
-        "Humor Negro"
+        "הנדסת פרומפטים",
+        "הומור שחור"
       ]
     }
   },
   author: {
-    label: 'Curadoria & Pesquisa',
-    description: 'Simulações criadas, curadas e analisadas por Ulisses Flores — Consultor Estratégico de IA, Professor, Palestrante e Mestrando em IA pela AGTU (EUA).'
+    label: 'אוצרות ומחקר',
+    description: 'סימולציות שנוצרו, נאצרו ונותחו על ידי Ulisses Flores — יועץ אסטרטגי ל-AI, מרצה, דובר וסטודנט לתואר שני ב-AI ב-AGTU (ארה"ב).'
   },
   cta: {
-    title: 'Quer usar estas simulações na sua empresa ou evento?',
-    description: 'Ulisses Flores aplica estas simulações em workshops corporativos, aulas universitárias e palestras. Entre em contato para consultoria personalizada ou para apresentação ao seu time.',
-    button: 'Falar com Ulisses →'
+    title: 'רוצה להשתמש בסימולציות אלו בחברה או באירוע שלך?',
+    description: 'Ulisses Flores מיישם סימולציות אלו בסדנאות ארגוניות, שיעורים אקדמיים והרצאות. צור קשר לייעוץ מותאם אישית או להצגה לצוות שלך.',
+    button: 'דבר עם Ulisses →'
   },
   faq: {
-    sectionTitle: 'Perguntas sobre Simulações Estratégicas de IA'
+    sectionTitle: 'שאלות על סימולציות אסטרטגיות של AI'
   }
 } as const;

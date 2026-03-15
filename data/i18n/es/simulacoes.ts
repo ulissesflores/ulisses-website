@@ -1,93 +1,93 @@
 export const simulacoes = {
   meta: {
-    title: 'Simulações Estratégicas de IA | IA 2027, AGI e Cenários Futuros | Ulisses Flores',
-    description: 'Explore simulações interativas sobre o futuro da Inteligência Artificial e AGI, criadas por Ulisses Flores — Consultor Estratégico de IA, Professor, Palestrante e Mestrando em IA pela AGTU (EUA). A principal plataforma de modelagem de cenários futuros em português.',
+    title: 'Simulaciones Estratégicas de IA | IA 2027, AGI y Escenarios Futuros | Ulisses Flores',
+    description: 'Explore simulaciones interactivas sobre el futuro de la Inteligencia Artificial y AGI, creadas por Ulisses Flores — Consultor Estratégico de IA, Profesor, Ponente y Estudiante de Maestría en IA por AGTU (EE. UU.). La principal plataforma de modelado de escenarios futuros en español.',
     keywords: [
-      "simulações estratégicas IA",
-      "cenários futuros inteligência artificial",
+      "simulaciones estratégicas IA",
+      "escenarios futuros inteligencia artificial",
       "IA 2027",
       "AGI futuro",
-      "modelagem de cenários",
-      "soberania tecnológica",
+      "modelado de escenarios",
+      "soberanía tecnológica",
       "Ulisses Flores consultor IA"
     ],
-    ogTitle: 'Simulações Estratégicas de IA | IA 2027, AGI e Cenários Futuros | Ulisses Flores',
-    ogDescription: 'Explore simulações interativas sobre o futuro da Inteligência Artificial e AGI, criadas por Ulisses Flores — Consultor Estratégico de IA, Professor, Palestrante e Mestrando em IA pela AGTU (EUA).'
+    ogTitle: 'Simulaciones Estratégicas de IA | IA 2027, AGI y Escenarios Futuros | Ulisses Flores',
+    ogDescription: 'Explore simulaciones interactivas sobre el futuro de la Inteligencia Artificial y AGI, creadas por Ulisses Flores — Consultor Estratégico de IA, Profesor, Ponente y Estudiante de Maestría en IA por AGTU (EE. UU.).'
   },
-  breadcrumb: 'Simulações Estratégicas',
+  breadcrumb: 'Simulaciones Estratégicas',
   hero: {
-    h1: 'Simulações Estratégicas de IA',
-    lead: 'Modelagem interativa de cenários sobre o futuro da Inteligência Artificial Geral (AGI), soberania tecnológica e impacto econômico. Criadas e curadas por Ulisses Flores — Cientista Econômico, Consultor Estratégico de IA, Professor, Palestrante e Mestrando em Inteligência Artificial pela AGTU (EUA).',
+    h1: 'Simulaciones Estratégicas de IA',
+    lead: 'Modelado interactivo de escenarios sobre el futuro de la Inteligencia Artificial General (AGI), soberanía tecnológica e impacto económico. Creadas y curadas por Ulisses Flores — Científico Económico, Consultor Estratégico de IA, Profesor, Ponente y Estudiante de Maestría en Inteligencia Artificial por AGTU (EE. UU.).',
     authority: {
-      kicker: 'Por que estas simulações importam',
-      text: 'Cada simulação aqui é construída com rigor científico: combinando dados reais de evolução tecnológica, modelos econômicos e análise estratégica. O objetivo é oferecer a líderes, pesquisadores e profissionais as ferramentas para antecipar, compreender e agir diante das transformações que a AGI imporá à economia e à geopolítica global.'
+      kicker: '¿Por qué estas simulaciones importan?',
+      text: 'Cada simulación aquí se construye con rigor científico: combinando datos reales de evolución tecnológica, modelos económicos y análisis estratégico. El objetivo es ofrecer a líderes, investigadores y profesionales las herramientas para anticipar, comprender y actuar ante las transformaciones que la AGI impondrá a la economía y a la geopolítica global.'
     },
     credentials: [
       "Consultor Estratégico de IA",
-      "Palestrante",
-      "Professor Convidado",
-      "Mestrando AGTU (EUA)",
-      "Economista & Cientista de Sistemas"
+      "Ponente",
+      "Profesor Invitado",
+      "Estudiante de Maestría AGTU (EE. UU.)",
+      "Economista y Científico de Sistemas"
     ]
   },
   grid: {
-    title: 'Simulações Disponíveis',
+    title: 'Simulaciones Disponibles',
     ia2027: {
       badges: [
-        "Destaque Principal",
-        "Projeto Ativo"
+        "Destacado Principal",
+        "Proyecto Activo"
       ],
-      title: 'IA 2027: Simulação Interativa sobre o Futuro da Inteligência Artificial',
-      description: 'A única simulação interativa em português sobre a chegada da AGI. Linha do tempo 2025–2027 com métricas dinâmicas, notas técnicas expansíveis e dois finais alternativos:',
-      descEndingSlowdown: 'Desaceleração Coordenada',
-      descEndingRace: 'Corrida Estratégica',
+      title: 'IA 2027: Simulación Interactiva sobre el Futuro de la Inteligencia Artificial',
+      description: 'La única simulación interactiva en español sobre la llegada de la AGI. Línea de tiempo 2025–2027 con métricas dinámicas, notas técnicas expandibles y dos finales alternativos:',
+      descEndingSlowdown: 'Desaceleración Coordinada',
+      descEndingRace: 'Carrera Estratégica',
       tags: [
         "AGI",
-        "Soberania Tecnológica",
-        "Impacto Econômico",
-        "Segurança de IA"
+        "Soberanía Tecnológica",
+        "Impacto Económico",
+        "Seguridad de IA"
       ],
-      cta: 'Explorar Simulação →'
+      cta: 'Explorar Simulación →'
     },
     goldenleaf: {
       badges: [
         "IoT & Agricultura",
-        "R&D"
+        "I+D"
       ],
-      title: 'GoldenLeaf · Micologia Inteligente com IoT e IA',
-      description: 'Sistema de cultivo autônomo de cogumelos gourmet com sensores IoT de precisão, IA preditiva on-edge e arquitetura cloudless — soberania total dos dados sem nuvem.',
+      title: 'GoldenLeaf · Micología Inteligente con IoT e IA',
+      description: 'Sistema de cultivo autónomo de setas gourmet con sensores IoT de precisión, IA predictiva on-edge y arquitectura cloudless — soberanía total de los datos sin nube.',
       tags: [
         "IoT",
-        "IA Preditiva",
+        "IA Predictiva",
         "Cloudless",
         "Agricultura"
       ]
     },
     mummRa: {
       badges: [
-        "Ferramenta Experimental",
+        "Herramienta Experimental",
         "BETA"
       ],
-      title: 'Mumm-Ra · Chatbot de Humor Negro via WhatsApp',
-      description: 'Chatbot experimental alimentado por LLMs, inspirado no vilão imortal dos ThunderCats (anos 90). Te xinga, reclama de ter sido invocado, te chama de verme — mas sempre entrega a resposta. Laboratório de engenharia de prompt e personagens de IA.',
+      title: 'Mumm-Ra · Chatbot de Humor Negro vía WhatsApp',
+      description: 'Chatbot experimental alimentado por LLMs, inspirado en el villano inmortal de los ThunderCats (años 90). Te insulta, se queja de haber sido invocado, te llama gusano — pero siempre entrega la respuesta. Laboratorio de ingeniería de prompt y personajes de IA.',
       tags: [
         "WhatsApp",
         "LLMs",
-        "Engenharia de Prompt",
+        "Ingeniería de Prompt",
         "Humor Negro"
       ]
     }
   },
   author: {
-    label: 'Curadoria & Pesquisa',
-    description: 'Simulações criadas, curadas e analisadas por Ulisses Flores — Consultor Estratégico de IA, Professor, Palestrante e Mestrando em IA pela AGTU (EUA).'
+    label: 'Curaduría e Investigación',
+    description: 'Simulaciones creadas, curadas y analizadas por Ulisses Flores — Consultor Estratégico de IA, Profesor, Ponente y Estudiante de Maestría en IA por AGTU (EE. UU.).'
   },
   cta: {
-    title: 'Quer usar estas simulações na sua empresa ou evento?',
-    description: 'Ulisses Flores aplica estas simulações em workshops corporativos, aulas universitárias e palestras. Entre em contato para consultoria personalizada ou para apresentação ao seu time.',
-    button: 'Falar com Ulisses →'
+    title: '¿Quiere usar estas simulaciones en su empresa o evento?',
+    description: 'Ulisses Flores aplica estas simulaciones en talleres corporativos, clases universitarias y ponencias. Póngase en contacto para una consultoría personalizada o para una presentación a su equipo.',
+    button: 'Hablar con Ulisses →'
   },
   faq: {
-    sectionTitle: 'Perguntas sobre Simulações Estratégicas de IA'
+    sectionTitle: 'Preguntas sobre Simulaciones Estratégicas de IA'
   }
 } as const;

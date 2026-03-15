@@ -1,83 +1,83 @@
 export const clubeSanto = {
   meta: {
-    title: 'Clube Santo — Instituto Teológico e Comunidade de Formação Bíblica | Ulisses Flores',
-    description: 'O Clube Santo é o instituto teológico e comunidade de formação bíblica fundado por Ulisses Flores — Pesquisador Polímata, Pregador e Mestrando em IA pela AGTU (EUA). Acervo de sermões, estudos bíblicos e análise historiográfica.',
+    title: 'Clube Santo — Theological Institute and Biblical Training Community | Ulisses Flores',
+    description: 'Clube Santo is the theological institute and biblical training community founded by Ulisses Flores — Polymath Researcher, Preacher, and Master\'s student in AI at AGTU (USA). Collection of sermons, biblical studies, and historiographical analysis.',
     keywords: [
       "clube santo",
-      "instituto teológico",
-      "comunidade bíblica",
-      "formação teológica",
-      "sermões",
-      "estudos bíblicos",
-      "Ulisses Flores teologia",
-      "pregador",
-      "análise historiográfica bíblica",
-      "cânon bíblico"
+      "theological institute",
+      "biblical community",
+      "theological training",
+      "sermons",
+      "biblical studies",
+      "Ulisses Flores theology",
+      "preacher",
+      "biblical historiographical analysis",
+      "biblical canon"
     ],
-    ogTitle: 'Clube Santo — Instituto Teológico e Comunidade de Formação Bíblica | Ulisses Flores',
-    ogDescription: 'Instituto teológico e comunidade de formação bíblica fundado por Ulisses Flores — Pesquisador Polímata, Pregador e Mestrando em IA pela AGTU (EUA).'
+    ogTitle: 'Clube Santo — Theological Institute and Biblical Training Community | Ulisses Flores',
+    ogDescription: 'Theological institute and biblical training community founded by Ulisses Flores — Polymath Researcher, Preacher, and Master\'s student in AI at AGTU (USA).'
   },
   breadcrumb: 'Clube Santo',
   hero: {
-    h1: 'Instituto Teológico e Comunidade de Formação Bíblica',
-    lead: 'O Clube Santo é o instituto teológico fundado por Ulisses Flores para formação bíblica rigorosa, análise historiográfica e comunidade de estudo. Reúne um acervo de mais de 50 sermões, pesquisas sobre canonização escribal, historicidade bíblica e fundamentos transcendentes da ordem econômica — conectando teologia, história e ciência.',
+    h1: 'Theological Institute and Biblical Training Community',
+    lead: 'Clube Santo is the theological institute founded by Ulisses Flores for rigorous biblical training, historiographical analysis, and a study community. It gathers a collection of over 50 sermons, research on scribal canonization, biblical historicity, and transcendent foundations of economic order — connecting theology, history, and science.',
     authority: {
-      kicker: 'Rigor acadêmico aplicado à formação teológica',
-      text: 'Como Pesquisador Polímata, Ulisses Flores aplica metodologia científica à análise bíblica — combinando arqueologia, historiografia, análise textual e tradição reformada. As pesquisas publicadas incluem análise exaustiva da historicidade de Jesus (métodos arqueológicos e historiográficos) e estudo histórico-crítico da formação do cânon bíblico.'
+      kicker: 'Academic rigor applied to theological training',
+      text: 'As a Polymath Researcher, Ulisses Flores applies scientific methodology to biblical analysis — combining archaeology, historiography, textual analysis, and Reformed tradition. Published research includes an exhaustive analysis of the historicity of Jesus (archaeological and historiographical methods) and a historical-critical study of the formation of the biblical canon.'
     },
     credentials: [
-      "Pesquisador Polímata",
-      "Pregador & Expositor Bíblico",
-      "Mestrando AGTU (EUA)",
-      "Análise Historiográfica",
-      "Tradição Reformada",
-      "+56 Sermões Indexados"
+      "Polymath Researcher",
+      "Preacher & Biblical Expositor",
+      "Master's Student AGTU (USA)",
+      "Historiographical Analysis",
+      "Reformed Tradition",
+      "+56 Indexed Sermons"
     ]
   },
   manifesto: {
     kicker: 'Manifesto',
-    title: 'O Clube Santo: Um Avivamento para a Era Digital',
-    subtitle: 'Uma comunidade de mentes e corações em busca da verdadeira conexão.',
-    h3_1: 'Tudo começou com um chá.',
-    p1: 'Não, não estamos falando do chá das cinco britânico, mas de um chá que derramou um sopro de vida em uma Inglaterra espiritualmente adormecida. John Wesley, o protagonista dessa história, poderia muito bem ter sido o inventor do chá matcha ou do detox, mas o que ele realmente fez foi criar uma xícara cheia de avivamento, conhecida como O Clube Santo.',
-    p2: 'O Clube Santo, para os desavisados, não era um clube de boas-vindas para aspirantes a santos. Era muito mais que isso. Era uma reunião de mentes e corações que buscavam a verdadeira conexão com Deus, aliada a um rigor intelectual implacável. E que conexão! A Inglaterra nunca mais foi a mesma. John Wesley, com seu Clube Santo, desencadeou um avivamento espiritual tão grande que até o Rei George I teve que ajustar sua coroa.',
-    h3_2: 'O Novo Giro: Arqueologia Espiritual',
-    p3: 'Você deve estar se perguntando: por que estamos falando de um clube criado séculos atrás na Inglaterra? Porque acreditamos que é hora de um novo avivamento para os nossos tempos. Um movimento que começará na América Latina, mas não parará até alcançar os confins do mundo.',
-    p4: 'Estamos trazendo de volta o Clube Santo, mas com um giro para a era digital. O nosso instituto une o fervor pentecostal avivalista com ferramentas de Inteligência Artificial para realizar o que chamamos de Arqueologia Espiritual e Teológica. Juntos, vamos revolucionar o mundo, um avivamento de cada vez. Prepare a sua xícara.'
+    title: 'Clube Santo: A Revival for the Digital Age',
+    subtitle: 'A community of minds and hearts in search of true connection.',
+    h3_1: 'It all started with a tea.',
+    p1: 'No, we\'re not talking about British afternoon tea, but a tea that breathed life into a spiritually dormant England. John Wesley, the protagonist of this story, could very well have been the inventor of matcha tea or detox, but what he really did was create a cup full of revival, known as The Holy Club.',
+    p2: 'The Holy Club, for the uninitiated, was not a welcome club for aspiring saints. It was much more than that. It was a gathering of minds and hearts seeking true connection with God, coupled with relentless intellectual rigor. And what a connection! England was never the same. John Wesley, with his Holy Club, unleashed such a great spiritual revival that even King George I had to adjust his crown.',
+    h3_2: 'The New Turn: Spiritual Archaeology',
+    p3: 'You must be wondering: why are we talking about a club created centuries ago in England? Because we believe it\'s time for a new revival for our times. A movement that will start in Latin America, but won\'t stop until it reaches the ends of the earth.',
+    p4: 'We are bringing back Clube Santo, but with a twist for the digital age. Our institute combines revivalist Pentecostal fervor with Artificial Intelligence tools to perform what we call Spiritual and Theological Archaeology. Together, we will revolutionize the world, one revival at a time. Prepare your cup.'
   },
   collections: {
-    title: 'Coleções e Acervo',
+    title: 'Collections and Archive',
     acervo: {
-      badge: 'Acervo Principal',
-      title: 'Acervo Teológico',
-      description: 'Mais de 56 sermões indexados, organizados cronologicamente com exposição bíblica detalhada, notas exegéticas e referências cruzadas.',
-      cta: 'Explorar Acervo →'
+      badge: 'Main Archive',
+      title: 'Theological Archive',
+      description: 'Over 56 indexed sermons, chronologically organized with detailed biblical exposition, exegetical notes, and cross-references.',
+      cta: 'Explore Archive →'
     },
     research: {
-      badge: 'Pesquisa Acadêmica',
-      title: 'Publicações de Pesquisa',
-      description: 'Pesquisas com rigor científico sobre historicidade bíblica, canonização escribal, fundamentos transcendentes da economia e intersecção fé-ciência.',
-      cta: 'Ver Pesquisas →'
+      badge: 'Academic Research',
+      title: 'Research Publications',
+      description: 'Scientifically rigorous research on biblical historicity, scribal canonization, transcendent foundations of economics, and the intersection of faith and science.',
+      cta: 'View Research →'
     },
     featured: {
-      title: 'Publicações em Destaque',
+      title: 'Featured Publications',
       items: [
-        "📄 Análise Historiográfica e Arqueológica Exaustiva: A Historicidade de Jesus →",
-        "📄 Canonização Escribal: Análise Histórico-Crítica da Formação do Cânon →",
-        "📄 Fundamentos Transcendentes da Ordem Econômica →"
+        "📄 Exhaustive Historiographical and Archaeological Analysis: The Historicity of Jesus →",
+        "📄 Scribal Canonization: Historical-Critical Analysis of Canon Formation →",
+        "📄 Transcendent Foundations of the Economic Order →"
       ]
     }
   },
   author: {
-    label: 'Fundador & Pesquisador',
-    description: 'Clube Santo fundado e curado por Ulisses Flores — Pesquisador Polímata, Pregador, Consultor Estratégico de IA e Mestrando em IA pela AGTU (EUA).'
+    label: 'Founder & Researcher',
+    description: 'Clube Santo founded and curated by Ulisses Flores — Polymath Researcher, Preacher, Strategic AI Consultant, and Master\'s student in AI at AGTU (USA).'
   },
   cta: {
-    title: 'Interesse em formação teológica ou palestra sobre fé e ciência?',
-    description: 'Ulisses Flores ministra estudos bíblicos, palestras sobre a intersecção entre teologia e ciência, e oferece mentoria em pesquisa historiográfica bíblica. Entre em contato.',
-    button: 'Falar com Ulisses Flores →'
+    title: 'Interested in theological training or a lecture on faith and science?',
+    description: 'Ulisses Flores teaches biblical studies, lectures on the intersection of theology and science, and offers mentorship in biblical historiographical research. Get in touch.',
+    button: 'Talk to Ulisses Flores →'
   },
   faq: {
-    sectionTitle: 'Perguntas sobre o Clube Santo'
+    sectionTitle: 'Questions about Clube Santo'
   }
 } as const;

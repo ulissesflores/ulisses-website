@@ -1,151 +1,151 @@
 export const home = {
   meta: {
-    title: 'Ulisses Flores | Consultor de IA, Professor, Palestrante e Pesquisador',
-    description: 'Ulisses Flores — Cientista Econômico, Consultor Estratégico de IA, Professor Convidado, Palestrante e Mestrando em IA pela AGTU (EUA). Pesquisas em IA, Blockchain, Economia e Sistemas Complexos. Baseado em Jundiaí/SP, atende todo o Brasil.',
+    title: 'Ulisses Flores | Consultor de IA, Profesor, Ponente e Investigador',
+    description: 'Ulisses Flores — Científico Económico, Consultor Estratégico de IA, Profesor Invitado, Ponente y Estudiante de Maestría en IA por AGTU (EE. UU.). Investigaciones en IA, Blockchain, Economía y Sistemas Complejos. Con sede en Jundiaí/SP, atiende a todo Brasil.',
     keywords: [
       "Ulisses Flores",
       "consultor estratégico IA",
-      "palestrante inteligência artificial",
-      "professor convidado IA",
-      "mestrando AGTU",
-      "cientista econômico",
-      "blockchain consultor",
+      "ponente inteligencia artificial",
+      "profesor invitado IA",
+      "estudiante de maestría AGTU",
+      "científico económico",
+      "consultor Blockchain",
       "Jundiaí São Paulo"
     ],
-    ogTitle: 'Ulisses Flores | Consultor de IA, Professor, Palestrante e Pesquisador',
-    ogDescription: 'Ulisses Flores — Consultor Estratégico de IA, Professor, Palestrante e Mestrando AGTU (EUA). Pesquisas em IA, Blockchain e Economia.',
-    ogImageAlt: 'Ulisses Flores — Consultor de IA, Professor e Palestrante'
+    ogTitle: 'Ulisses Flores | Consultor de IA, Profesor, Ponente e Investigador',
+    ogDescription: 'Ulisses Flores — Consultor Estratégico de IA, Profesor, Ponente y Estudiante de Maestría AGTU (EE. UU.). Investigaciones en IA, Blockchain y Economía.',
+    ogImageAlt: 'Ulisses Flores — Consultor de IA, Profesor y Ponente'
   },
   hero: {
-    imageAlt: 'Carlos Ulisses Flores - CTO e Pesquisador Chefe da Codex Hash Ltda em Itupeva',
+    imageAlt: 'Carlos Ulisses Flores - CTO y Jefe de Investigación de Codex Hash Ltda en Itupeva',
     name: 'Carlos Ulisses Flores',
     badges: {
-      cto: 'CTO & Pesquisador Chefe',
+      cto: 'CTO y Jefe de Investigación',
       msc: 'MSc Candidate AI @ AGTU',
       polymath: 'Polímata'
     },
-    quote: '"Atuando na fronteira do desenvolvimento tecnológico, integrando rigor acadêmico e pragmatismo executivo para solucionar problemas em sistemas complexos adaptativos."',
+    quote: '"Actuando en la frontera del desarrollo tecnológico, integrando rigor académico y pragmatismo ejecutivo para solucionar problemas en sistemas complejos adaptativos."',
     languages: {
-      pt: 'PORTUGUÊS (NATIVO)',
-      en: 'INGLÊS (FLUENTE)',
-      es: 'ESPANHOL (FLUENTE)'
+      pt: 'PORTUGUÉS (NATIVO)',
+      en: 'INGLÉS (FLUIDO)',
+      es: 'ESPAÑOL (FLUIDO)'
     }
   },
   contact: {
-    academicLinks: 'Links Acadêmicos',
-    directContact: 'Contato Direto',
-    location: 'Localização'
+    academicLinks: 'Enlaces Académicos',
+    directContact: 'Contacto Directo',
+    location: 'Ubicación'
   },
   pillars: {
-    title: 'Pilares de Atuação',
+    title: 'Pilares de Actividad',
     cards: {
       finance: {
-        title: 'Finanças Quant & Web3',
+        title: 'Finanzas Cuantitativas & Web3',
         items: [
-          "Algoritmos HFT e Arbitragem (Cash & Carry)",
-          "Custódia Institucional (MPC) e Privacidade (Monero)",
-          "Smart Contracts Auditáveis (Solidity)"
+          "Algoritmos HFT y Arbitraje (Cash & Carry)",
+          "Custodia Institucional (MPC) y Privacidad (Monero)",
+          "Smart Contracts Auditables (Solidity)"
         ]
       },
       hardware: {
         title: 'Hardware & IoT',
         items: [
-          "Edge Computing e Automação Agrícola (GoldenLeaf)",
-          "Arquiteturas 'Cloudless' e Zero Trust",
-          "Criptografia Embarcada (ESP32/ECC)"
+          "Edge Computing y Automatización Agrícola (GoldenLeaf)",
+          "Arquitecturas 'Cloudless' y Zero Trust",
+          "Criptografía Embarcada (ESP32/ECC)"
         ]
       },
       ai: {
-        title: 'AI & Ciência de Dados',
+        title: 'IA & Ciencia de Datos',
         items: [
-          "Resiliência Cibernética (LSTM + Lei de Little)",
-          "Detecção de Anomalias em Séries Temporais",
-          "Pipelines de Data Science Financeiro"
+          "Resiliencia Cibernética (LSTM + Ley de Little)",
+          "Detección de Anomalías en Series Temporales",
+          "Pipelines de Data Science Financiero"
         ]
       }
     }
   },
   trajectory: {
     formation: {
-      title: 'Formação Acadêmica',
+      title: 'Formación Académica',
       items: {
         msc: {
           year: '2025',
-          title: 'Mestrado em IA (MSc)',
+          title: 'Maestría en IA (MSc)',
           inst: 'American Global Tech University (USA)',
-          desc: 'Pesquisa: Resiliência em Sistemas Complexos.'
+          desc: 'Investigación: Resiliencia en Sistemas Complejos.'
         },
         mba: {
           year: '2018 - 2020',
-          title: 'MBA em Blockchain Dev',
-          inst: 'FIAP (1ª Turma do Brasil)',
-          desc: 'Criptoeconomia e Governança.'
+          title: 'MBA en Blockchain Dev',
+          inst: 'FIAP (1ª Promoción de Brasil)',
+          desc: 'Criptoeconomía y Gobernanza.'
         },
         engSoftware: {
           year: '2018 - 2020',
-          title: 'Engenharia de Software',
-          inst: 'UNIP (Universidade Paulista)',
-          desc: 'Arquitetura de Microsserviços.'
+          title: 'Ingeniería de Software',
+          inst: 'UNIP (Universidad Paulista)',
+          desc: 'Arquitectura de Microservicios.'
         },
         economics: {
           year: '2002 - 2017',
-          title: 'Bacharelado em Economia',
-          inst: 'Centro Universitário Padre Anchieta',
-          desc: 'Monografia: Teoria do Caos.'
+          title: 'Licenciatura en Economía',
+          inst: 'Centro Universitario Padre Anchieta',
+          desc: 'Monografía: Teoría del Caos.'
         }
       },
       extension: {
-        title: 'Extensão Internacional',
+        title: 'Extensión Internacional',
         items: [
-          "Univ. of Edinburgh (Filosofia da Ciência)",
+          "Univ. of Edinburgh (Filosofía de la Ciencia)",
           "UC San Diego (Learning Sciences)"
         ]
       }
     },
     career: {
-      title: 'Trajetória Profissional',
+      title: 'Trayectoria Profesional',
       items: {
         codexHash: {
-          role: 'CTO & Pesquisador Chefe',
+          role: 'CTO y Jefe de Investigación',
           company: 'Codex Hash Ltda',
-          period: '2020 - Atual',
-          desc: 'Liderança de P&D em Finanças Quantitativas, Custódia (MPC) e Hardware IoT. Gestão de equipes.',
+          period: '2020 - Actual',
+          desc: 'Liderazgo de I+D en Finanzas Cuantitativas, Custodia (MPC) y Hardware IoT. Gestión de equipos.',
           current: true
         },
         prefeitura: {
-          role: 'Gestão de Planejamento',
-          company: 'Prefeitura de Itupeva',
+          role: 'Gestión de Planificación',
+          company: 'Ayuntamiento de Itupeva',
           period: '2017 - 2023',
-          desc: 'Responsável pelo planejamento estratégico municipal, orçamento e desenvolvimento socioeconômico.'
+          desc: 'Responsable del planeamiento estratégico municipal, presupuesto y desarrollo socioeconómico.'
         },
         mv9: {
-          role: 'Sócio-Diretor & Arquiteto',
+          role: 'Socio-Director y Arquitecto',
           company: 'MV9 Web & Sistemas',
           period: '2012 - 2019',
-          desc: 'Desenvolvimento de ERPs, automação comercial e parceria com Google. Migração Cloud.'
+          desc: 'Desarrollo de ERPs, automatización comercial y asociación con Google. Migración Cloud.'
         },
         c3: {
           role: 'Consultor Estratégico',
           company: 'C3 Group / EconoFísica',
           period: '2013 - 2018',
-          desc: 'Auditoria de algoritmos (Loterias), LGPD e Business Intelligence financeiro.'
+          desc: 'Auditoría de algoritmos (Loterías), LGPD y Business Intelligence financiero.'
         },
         early: {
-          role: 'Gestão & Tecnologia (Início)',
+          role: 'Gestión y Tecnología (Inicio)',
           company: 'Junifer / Bemarco / Skam',
           period: '1998 - 2012',
-          desc: 'Década fundamental: Analista Financeiro, Coordenador Técnico e dev de sistemas iniciais (VBA/PHP).'
+          desc: 'Década fundamental: Analista Financiero, Coordinador Técnico y desarrollador de sistemas iniciales (VBA/PHP).'
         }
       },
-      currentBadge: 'ATUAL'
+      currentBadge: 'ACTUAL'
     }
   },
   engineering: {
-    title: 'Engenharia & Produtos',
+    title: 'Ingeniería & Productos',
     products: {
       algoTrading: {
         title: 'Codex Hash Algo-Trading',
-        desc: 'Sistema estocástico de arbitragem e alta frequência (HFT) para mercados de criptoativos.',
+        desc: 'Sistema estocástico de arbitraje y alta frecuencia (HFT) para mercados de criptoactivos.',
         tags: [
           "PYTHON",
           "MQL5",
@@ -154,7 +154,7 @@ export const home = {
       },
       goldenleaf: {
         title: 'GoldenLeaf IoT System',
-        desc: 'Sistema embarcado para controle ambiental e agricultura de precisão com criptografia de curva elíptica.',
+        desc: 'Sistema embebido para control ambiental y agricultura de precisión con criptografía de curva elíptica.',
         tags: [
           "C++",
           "ESP32",
@@ -163,7 +163,7 @@ export const home = {
       },
       bioBytes: {
         title: 'BioBytes Legacy',
-        desc: 'Sistema de preservação digital de memória e herança biográfica com segurança de nível militar.',
+        desc: 'Sistema de preservación digital de memoria y herencia biográfica con seguridad de nivel militar.',
         tags: [
           "SECURITY",
           "CRYPTOGRAPHY",
@@ -171,8 +171,8 @@ export const home = {
         ]
       },
       clubeSanto: {
-        title: 'Clube Santo Platform',
-        desc: 'Plataforma digital de ensino teológico e comunidades virtuais com CMS proprietário.',
+        title: 'Plataforma Clube Santo',
+        desc: 'Plataforma digital de enseñanza teológica y comunidades virtuales con CMS propietario.',
         tags: [
           "REACT",
           "NODE.JS",
@@ -185,7 +185,7 @@ export const home = {
     title: 'Stack Tecnológica & Habilidades',
     columns: {
       core: {
-        title: 'Core Engineering',
+        title: 'Ingeniería Core',
         items: [
           "Node.js / TypeScript",
           "Python / Rust",
@@ -195,7 +195,7 @@ export const home = {
         ]
       },
       architecture: {
-        title: 'Architecture & DevOps',
+        title: 'Arquitectura & DevOps',
         items: [
           "Microservices & Docker",
           "CI/CD Pipelines",
@@ -205,7 +205,7 @@ export const home = {
         ]
       },
       management: {
-        title: 'Gestão & Processos',
+        title: 'Gestión & Procesos',
         items: [
           "BPMN (Bizagi)",
           "Scrum & Agile / XP",
@@ -215,9 +215,9 @@ export const home = {
         ]
       },
       certifications: {
-        title: 'Certificações (Alura/FIAP)',
+        title: 'Certificaciones (Alura/FIAP)',
         items: [
-          "AI Generativa",
+          "IA Generativa",
           "Midjourney",
           "MongoDB",
           "RPA",
@@ -229,48 +229,48 @@ export const home = {
     }
   },
   publications: {
-    title: 'Publicações Selecionadas',
+    title: 'Publicaciones Seleccionadas',
     categoryLabels: {
-      research: 'RESEARCH • IA & ECONOMIA',
-      whitepapers: 'WHITEPAPER • ENGENHARIA',
-      essays: 'ENSAIO • HUMANIDADES'
+      research: 'RESEARCH • IA & ECONOMÍA',
+      whitepapers: 'WHITEPAPER • INGENIERÍA',
+      essays: 'ENSAYO • HUMANIDADES'
     }
   },
   simulacoes: {
-    title: 'Simulacoes',
-    kicker: 'Laboratorio de cenarios',
-    heading: 'IA 2027 em Portugues',
-    description: 'Simulacao prospectiva em formato scrollytelling com timeline, painel de KPIs dinamico e ramificacoes de cenario (slowdown/race), baseada no manifesto AI 2027 em versao academica pt-BR.',
-    cta: 'Abrir simulacao'
+    title: 'Simulaciones',
+    kicker: 'Laboratorio de escenarios',
+    heading: 'IA 2027 en Español',
+    description: 'Simulación prospectiva en formato scrollytelling con línea de tiempo, panel de KPIs dinámico y ramificaciones de escenario (slowdown/race), basada en el manifiesto AI 2027 en versión académica pt-BR.',
+    cta: 'Abrir simulación'
   },
   codexHash: {
     title: 'Codex Hash Ltda',
-    description: 'Laboratório de P&D (deep tech) com foco em finanças quantitativas/Web3, arquitetura cloudless para IoT e inteligência artificial aplicada à resiliência ciberfinanceira.',
-    anchor: 'Esta seção é a âncora oficial #codexhash para resolver links semânticos internos.'
+    description: 'Laboratorio de I+D (deep tech) con foco en finanzas cuantitativas/Web3, arquitectura cloudless para IoT e inteligencia artificial aplicada a la resiliencia ciberfinanciera.',
+    anchor: 'Esta sección es el ancla oficial #codexhash para resolver enlaces semánticos internos.'
   },
   manifesto: {
-    title: 'Resumo Profissional & Acadêmico (Lattes)',
-    intro: 'Cientista Econômico, Analista de Sistemas e Pesquisador Polímata com sólida trajetória de mais de 28 anos na convergência entre Engenharia Financeira, Arquitetura de Software Distribuída e Humanidades. Atua na fronteira do desenvolvimento tecnológico, integrando rigor acadêmico e pragmatismo executivo para solucionar problemas em sistemas complexos adaptativos.',
+    title: 'Resumen Profesional & Académico (Lattes)',
+    intro: 'Científico Económico, Analista de Sistemas e Investigador Polímata con una sólida trayectoria de más de 28 años en la convergencia entre Ingeniería Financiera, Arquitectura de Software Distribuida y Humanidades. Actúa en la frontera del desarrollo tecnológico, integrando rigor académico y pragmatismo ejecutivo para solucionar problemas en sistemas complejos adaptativos.',
     formation: {
-      title: ':: Formação Acadêmica e Pesquisa Avançada',
-      text: 'Mestrando em Inteligência Artificial pela American Global Tech University (AGTU/EUA), onde desenvolve pesquisa de ponta sobre "Resiliência Cibernética e Financeira". Sua dissertação investiga arquiteturas híbridas que acoplam Redes Neurais Recorrentes (LSTM) com modelos estocásticos de fluxo (Lei de Little) e Inferência Bayesiana, visando a criação de agentes autônomos antifrágeis para mercados de alta volatilidade. Possui MBA em Blockchain Development & Technologies pela FIAP, com foco em criptoeconomia e governança descentralizada. Bacharel em Ciências Econômicas, com monografia revisitando a Teoria do Caos e a não-linearidade nos mercados sob a ótica da Escola Austríaca.'
+      title: ':: Formación Académica e Investigación Avanzada',
+      text: 'Estudiante de Maestría en Inteligencia Artificial por la American Global Tech University (AGTU/EE. UU.), donde desarrolla investigación de vanguardia sobre "Resiliencia Cibernética y Financiera". Su disertación investiga arquitecturas híbridas que acoplan Redes Neuronales Recurrentes (LSTM) con modelos estocásticos de flujo (Ley de Little) e Inferencia Bayesiana, buscando la creación de agentes autónomos antifrágiles para mercados de alta volatilidad. Posee un MBA en Blockchain Development & Technologies por FIAP, con foco en criptoeconomía y gobernanza descentralizada. Licenciado en Ciencias Económicas, con monografía que revisita la Teoría del Caos y la no-linealidad en los mercados bajo la óptica de la Escuela Austríaca.'
     },
     leadership: {
-      title: ':: Liderança Executiva e Inovação',
-      text: 'Atualmente é CTO e Pesquisador Chefe na Codex Hash Ltda, liderando um laboratório de P&D focado em três pilares: Finanças Quantitativas & Web3 (HFT, Cash and Carry, Solidity, Custódia MPC/Monero), Engenharia de Hardware & IoT (Edge Computing, "Cloudless", Zero Trust, ESP32) e Inteligência Artificial Aplicada (Data Science para séries temporais financeiras).'
+      title: ':: Liderazgo Ejecutivo e Innovación',
+      text: 'Actualmente es CTO y Jefe de Investigación en Codex Hash Ltda, liderando un laboratorio de I+D enfocado en tres pilares: Finanzas Cuantitativas & Web3 (HFT, Cash and Carry, Solidity, Custodia MPC/Monero), Ingeniería de Hardware & IoT (Edge Computing, "Cloudless", Zero Trust, ESP32) e Inteligencia Artificial Aplicada (Data Science para series temporales financieras).'
     },
     arsenal: {
       title: ':: Arsenal Técnico & Humanidades',
-      engineering: 'Arquiteto de soluções distribuídas com domínio de microsserviços, orquestração de contêineres e DevOps. Expert em stack JavaScript moderna e sistemas críticos em C++ e MQL5.',
-      dataScience: 'Proficiência avançada em Python (Pandas, Scikit-learn, TensorFlow, PyTorch).',
-      humanities: 'Paralelamente à carreira tecnológica, mantém linha de pesquisa em Teologia Histórica e Arqueologia Cognitiva. Fundador do Instituto Clube Santo, aplica metodologia de Crítica Textual e hermenêutica comparada. Perfil Intelectual que combina a capacidade analítica das ciências exatas com a profundidade filosófica, alinhando inovação digital com preservação da memória e liberdade individual (Cypherpunk ethos).'
+      engineering: 'Arquitecto de soluciones distribuidas con dominio de microservicios, orquestación de contenedores y DevOps. Experto en stack JavaScript moderna y sistemas críticos en C++ y MQL5.',
+      dataScience: 'Proficiencia avanzada en Python (Pandas, Scikit-learn, TensorFlow, PyTorch).',
+      humanities: 'Paralelamente a la carrera tecnológica, mantiene una línea de investigación en Teología Histórica y Arqueología Cognitiva. Fundador del Instituto Clube Santo, aplica metodología de Crítica Textual y hermenéutica comparada. Perfil Intelectual que combina la capacidad analítica de las ciencias exactas con la profundidad filosófica, alineando innovación digital con preservación de la memoria y libertad individual (Cypherpunk ethos).'
     }
   },
   faq: {
-    sectionTitle: 'Perguntas sobre Ulisses Flores'
+    sectionTitle: 'Preguntas sobre Ulisses Flores'
   },
   pageFooter: {
-    copyright: '© 2026 Codex Hash Ltda. All rights reserved.',
+    copyright: '© 2026 Codex Hash Ltda. Todos los derechos reservados.',
     version: 'UlissesFlores.com • v10.0 • State of the Art'
   }
 } as const;

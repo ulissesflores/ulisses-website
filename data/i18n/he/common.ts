@@ -2,123 +2,123 @@ export const common = {
   nav: {
     categories: [
       {
-        label: 'Sobre',
+        label: 'אודות',
         items: [
           {
-            label: 'Bio',
+            label: 'ביוגרפיה',
             href: '/#about',
-            description: 'Quem sou e minha trajetória'
+            description: 'מי אני והמסלול שלי'
           },
           {
-            label: 'Expertise',
+            label: 'מומחיות',
             href: '/#pillars',
-            description: 'Pilares de atuação'
+            description: 'עמודי תווך של פעילות'
           },
           {
-            label: 'Trajetória',
+            label: 'מסלול',
             href: '/#trajectory',
-            description: 'Linha do tempo profissional'
+            description: 'ציר זמן מקצועי'
           }
         ]
       },
       {
-        label: 'Publicações',
+        label: 'פרסומים',
         items: [
           {
             label: 'Research',
             href: '/research',
-            description: 'IA, Economia e Sistemas Complexos'
+            description: 'בינה מלאכותית, כלכלה ומערכות מורכבות'
           },
           {
             label: 'Whitepapers',
             href: '/whitepapers',
-            description: 'Engenharia, IoT e Segurança'
+            description: 'הנדסה, IoT ואבטחה'
           },
           {
             label: 'Projeto Ψ (PSI)',
             href: '/whitepapers/projeto-psi',
-            description: 'Whitepaper técnico: Hardware Soberano'
+            description: 'Whitepaper טכני: חומרה ריבונית'
           },
           {
-            label: 'PSI — Demonstração',
+            label: 'PSI — הדגמה',
             href: '/projeto-psi',
-            description: 'Landing comercial: investimento e licenciamento'
+            description: 'דף נחיתה מסחרי: השקעה ורישוי'
           },
           {
-            label: 'Essays',
+            label: 'מאמרים',
             href: '/essays',
-            description: 'Teologia, Humanidades e História'
+            description: 'תאולוגיה, מדעי הרוח והיסטוריה'
           }
         ]
       },
       {
-        label: 'Acervo',
+        label: 'ארכיון',
         items: [
           {
-            label: 'Acervo Teológico',
+            label: 'ארכיון תאולוגי',
             href: '/acervo-teologico',
-            description: 'Sermões por cluster temático'
+            description: 'דרשות לפי אשכול נושאים'
           },
           {
             label: 'Clube Santo',
             href: '/clube-santo',
-            description: 'Avivamento para a era digital'
+            description: 'התעוררות לעידן הדיגיטלי'
           },
           {
             label: 'Mundo Político',
             href: '/mundo-politico',
-            description: 'Artigos e análises políticas'
+            description: 'מאמרים וניתוחים פוליטיים'
           }
         ]
       },
       {
-        label: 'Ferramentas',
+        label: 'כלים',
         items: [
           {
-            label: 'Simulações',
+            label: 'סימולציות',
             href: '/simulacoes',
-            description: 'Laboratório de cenários prospectivos'
+            description: 'מעבדה לתרחישים עתידיים'
           },
           {
-            label: 'Identidade',
+            label: 'זהות',
             href: '/identidade',
-            description: 'Hub canônico de identidade soberana'
+            description: 'מרכז קנוני לזהות ריבונית'
           },
           {
-            label: 'Certificações',
+            label: 'הסמכות',
             href: '/certifications',
-            description: 'Credenciais e verificações'
+            description: 'אישורים ואימותים'
           }
         ]
       }
     ]
   },
-  cta: 'FALE COMIGO',
+  cta: 'דברו איתי',
   mobileMenu: {
-    open: 'Abrir menu',
-    close: 'Fechar menu'
+    open: 'פתח תפריט',
+    close: 'סגור תפריט'
   },
   footer: {
     tagline: 'Ulisses Flores · Ground Truth Knowledge Hub',
     identityLink: 'Sovereign Identity Graph'
   },
   faqSection: {
-    defaultTitle: 'Perguntas Frequentes'
+    defaultTitle: 'שאלות נפוצות'
   },
   authorHubCard: {
-    defaultLabel: 'Autor',
-    defaultDescription: 'Fonte canônica de autoria e identidade semântica deste conteúdo.'
+    defaultLabel: 'מחבר',
+    defaultDescription: 'מקור קנוני לזיהוי מחבר וזהות סמנטית של תוכן זה.'
   },
   breadcrumb: {
-    home: 'Home'
+    home: 'בית'
   },
   actions: {
-    verify: 'Verificar',
-    open: 'Abrir',
-    explore: 'Explorar',
-    contact: 'Falar com Ulisses Flores →'
+    verify: 'אמת',
+    open: 'פתח',
+    explore: 'חקור',
+    contact: 'דבר עם Ulisses Flores →'
   },
   languageSwitcher: {
-    label: 'Idioma'
+    label: 'שפה'
   }
 } as const;

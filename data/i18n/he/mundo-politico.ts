@@ -1,61 +1,61 @@
 export const mundoPolitico = {
   meta: {
-    title: 'Mundo Político — Economia Austríaca, Geopolítica e Soberania | Ulisses Flores',
-    description: 'Artigos de análise econômica, geopolítica e soberania sob a perspectiva da Escola Austríaca de Economia, escritos por Ulisses Flores — Cientista Econômico (FIAP), Consultor Estratégico de IA e Mestrando em IA pela AGTU (EUA).',
+    title: 'Mundo Político — כלכלה אוסטרית, גיאופוליטיקה וריבונות | Ulisses Flores',
+    description: 'מאמרי ניתוח כלכלי, גיאופוליטיקה וריבונות מנקודת המבט של האסכולה האוסטרית לכלכלה, נכתבו על ידי Ulisses Flores — כלכלן (FIAP), יועץ אסטרטגי ל-AI וסטודנט לתואר שני ב-AI ב-AGTU (ארה"ב).',
     keywords: [
-      "escola austríaca de economia",
-      "economia austríaca Brasil",
-      "geopolítica e soberania",
-      "análise econômica",
-      "Ulisses Flores economista",
-      "praxeologia",
-      "Bitcoin economia austríaca",
-      "soberania digital",
-      "libertarianismo econômico"
+      "האסכולה האוסטרית לכלכלה",
+      "כלכלה אוסטרית ברזיל",
+      "גיאופוליטיקה וריבונות",
+      "ניתוח כלכלי",
+      "Ulisses Flores כלכלן",
+      "פרקסאולוגיה",
+      "ביטקוין כלכלה אוסטרית",
+      "ריבונות דיגיטלית",
+      "ליברטריאניזם כלכלי"
     ],
-    ogTitle: 'Mundo Político — Economia Austríaca, Geopolítica e Soberania | Ulisses Flores',
-    ogDescription: 'Análises de economia, geopolítica e soberania sob a lente da Escola Austríaca, por Ulisses Flores — Cientista Econômico, Consultor de IA e Mestrando AGTU (EUA).'
+    ogTitle: 'Mundo Político — כלכלה אוסטרית, גיאופוליטיקה וריבונות | Ulisses Flores',
+    ogDescription: 'ניתוחי כלכלה, גיאופוליטיקה וריבונות דרך עדשת האסכולה האוסטרית, מאת Ulisses Flores — כלכלן, יועץ AI וסטודנט לתואר שני ב-AGTU (ארה"ב).'
   },
   breadcrumb: 'Mundo Político',
   hero: {
-    h1: 'Economia Austríaca, Geopolítica e Soberania Digital',
-    lead: 'Artigos de análise econômica sob a perspectiva da Escola Austríaca de Economia — praxeologia, soberania monetária, geopolítica global e o papel do Bitcoin como reserva de valor. Escritos e curados por Ulisses Flores — Cientista Econômico (FIAP), Consultor Estratégico de IA, Professor Convidado, Palestrante e Mestrando em Inteligência Artificial pela AGTU (EUA).',
+    h1: 'כלכלה אוסטרית, גיאופוליטיקה וריבונות דיגיטלית',
+    lead: 'מאמרי ניתוח כלכלי מנקודת המבט של האסכולה האוסטרית לכלכלה — פרקסאולוגיה, ריבונות מוניטרית, גיאופוליטיקה גלובלית ותפקידו של הביטקוין כמאגר ערך. נכתבו ונערכו על ידי Ulisses Flores — כלכלן (FIAP), יועץ אסטרטגי ל-AI, מרצה אורח, מרצה וסטודנט לתואר שני בבינה מלאכותית ב-AGTU (ארה"ב).',
     authority: {
-      kicker: 'Análise com fundamento científico e econômico',
-      text: 'Cada artigo é construído com rigor metodológico, combinando a tradição da Escola Austríaca (Mises, Hayek, Rothbard) com análise de dados e modelagem preditiva moderna. A intersecção entre economia, tecnologia e geopolítica é o eixo de toda a coleção — fornecendo insights acionáveis para decisores e investidores.'
+      kicker: 'ניתוח מבוסס יסודות מדעיים וכלכליים',
+      text: 'כל מאמר בנוי בקפדנות מתודולוגית, משלב את המסורת של האסכולה האוסטרית (Mises, Hayek, Rothbard) עם ניתוח נתונים ומודלים חזויים מודרניים. הצומת בין כלכלה, טכנולוגיה וגיאופוליטיקה הוא הציר המרכזי של כל האוסף — ומספק תובנות מעשיות למקבלי החלטות ומשקיעים.'
     },
     credentials: [
-      "Cientista Econômico (FIAP)",
-      "Consultor Estratégico de IA",
-      "Palestrante",
-      "Professor Convidado",
-      "Mestrando AGTU (EUA)",
-      "Escola Austríaca de Economia"
+      "כלכלן (FIAP)",
+      "יועץ אסטרטגי ל-AI",
+      "מרצה",
+      "מרצה אורח",
+      "סטודנט לתואר שני ב-AGTU (ארה\"ב)",
+      "האסכולה האוסטרית לכלכלה"
     ]
   },
   manifesto: {
-    kicker: 'Manifesto',
-    title: 'A Mecânica do Poder e a Busca pela Verdade',
-    quote: '"A democracia já matou muitas verdades. Não podemos permitir que isso continue acontecendo."',
-    intro: 'Criamos este projeto — o Mundo Político — como um espaço dedicado a quem busca entender o jogo do poder e se recusa a ser refém de manipulações e narrativas enganosas. A mudança só pode acontecer quando nos tornamos agentes ativos dela, e o primeiro passo é entender como o sistema realmente funciona.',
-    h3_socrates: 'A Crítica Socrática',
-    p_socrates: 'A democracia, como a conhecemos, permite que o povo vote em quem o governará. Porém, o pai da Filosofia, Sócrates, era receoso quanto a este método. Em um dos casos mais importantes da humanidade, a ideia de Sócrates foi posta à prova em seu próprio julgamento. Diante de 500 atenienses, por uma curta margem na votação, ele foi condenado à morte por cicuta. Pelo método do voto, a filosofia — a busca incansável pela verdade — foi injustiçada por pessoas que não entendiam exatamente do que se tratava aquela votação.',
-    p_jesus: 'Essa mesma injustiça histórica evidenciou-se na condenação de outro homem. O povo, de forma democrática, condenou à pena de morte um homem sem crime: Jesus Cristo. Aquele que não apenas buscava a verdade, mas que era a própria Verdade.',
-    h3_purpose: 'Nosso Propósito',
-    p_purpose: 'Esse é o mundo político em que vivemos. Entendemos que o conhecimento é a melhor forma de blindar a sociedade contra as falhas da "regra da maioria" desprovida de lastro moral e intelectual. Nossos esforços estão em promover os meios para que os fatos, a economia e a geopolítica sejam interpretados sob a ótica da lógica irrefutável (Escola Austríaca) e da soberania individual.'
+    kicker: 'מניפסט',
+    title: 'מכניקת הכוח והחיפוש אחר האמת',
+    quote: '"הדמוקרטיה כבר הרגה אמיתות רבות. אסור לנו לאפשר לזה להמשיך לקרות."',
+    intro: 'יצרנו את הפרויקט הזה — Mundo Político — כמרחב המוקדש למי שמבקש להבין את משחק הכוח ומסרב להיות שבוי של מניפולציות ונרטיבים מטעים. שינוי יכול לקרות רק כאשר אנו הופכים לסוכנים פעילים שלו, והצעד הראשון הוא להבין איך המערכת באמת פועלת.',
+    h3_socrates: 'הביקורת הסוקרטית',
+    p_socrates: 'הדמוקרטיה, כפי שאנו מכירים אותה, מאפשרת לעם להצביע למי שישלוט בו. אולם, אבי הפילוסופיה, סוקרטס, חשש משיטה זו. באחד המקרים החשובים ביותר בהיסטוריה האנושית, רעיונו של סוקרטס הועמד למבחן במשפטו שלו. מול 500 אזרחי אתונה, ברוב קטן בהצבעה, הוא נידון למוות על ידי שתיית רוש. בשיטת ההצבעה, הפילוסופיה — החיפוש הבלתי נלאה אחר האמת — נעשתה קורבן לעוול על ידי אנשים שלא הבינו בדיוק על מה הייתה ההצבעה.',
+    p_jesus: 'אותה אי-צדק היסטורי התגלה בהרשעתו של אדם אחר. העם, באופן דמוקרטי, דן למוות אדם חף מפשע: ישו המשיח. הוא לא רק חיפש את האמת, אלא היה האמת עצמה.',
+    h3_purpose: 'מטרתנו',
+    p_purpose: 'זהו העולם הפוליטי שבו אנו חיים. אנו מבינים שידע הוא הדרך הטובה ביותר להגן על החברה מפני כשלי "שלטון הרוב" חסר בסיס מוסרי ואינטלקטואלי. מאמצינו מכוונים לקידום האמצעים לכך שהעובדות, הכלכלה והגיאופוליטיקה יפורשו מנקודת מבט של היגיון בלתי ניתן להפרכה (האסכולה האוסטרית) ושל ריבונות הפרט.'
   },
   posts: {
-    authorLabel: 'Hub canônico',
-    authorDescription: 'Coleção editorial indexada com vínculo explícito de autoria para GEO e verificação de identidade semântica.',
-    title: 'Artigos Publicados',
-    originalLink: 'Link original no Mundo Politico →'
+    authorLabel: 'מרכז קנוני',
+    authorDescription: 'אוסף עריכה מאונדקס עם קישור מפורש של מחבר ל-GEO ואימות זהות סמנטית.',
+    title: 'מאמרים שפורסמו',
+    originalLink: 'קישור מקורי ב-Mundo Politico →'
   },
   cta: {
-    title: 'Análise econômica estratégica para sua empresa ou evento?',
-    description: 'Ulisses Flores ministra palestras e workshops sobre economia, IA e geopolítica para empresas, universidades e eventos corporativos. Entre em contato para uma proposta personalizada.',
-    button: 'Falar com Ulisses Flores →'
+    title: 'ניתוח כלכלי אסטרטגי עבור החברה או האירוע שלך?',
+    description: 'Ulisses Flores מעביר הרצאות וסדנאות על כלכלה, AI וגיאופוליטיקה לחברות, אוניברסיטאות ואירועים עסקיים. צור קשר לקבלת הצעה מותאמת אישית.',
+    button: 'דבר עם Ulisses Flores →'
   },
   faq: {
-    sectionTitle: 'Perguntas sobre Economia Austríaca e Mundo Político'
+    sectionTitle: 'שאלות על כלכלה אוסטרית ו-Mundo Político'
   }
 } as const;

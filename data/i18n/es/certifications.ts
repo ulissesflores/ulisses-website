@@ -1,49 +1,49 @@
 export const certifications = {
   meta: {
-    title: 'Certificações Técnicas em IA, Blockchain e Engenharia de Software | Ulisses Flores',
-    description: 'Portfólio de certificações técnicas de Ulisses Flores — Consultor Estratégico de IA, Professor, Palestrante e Mestrando AGTU (EUA). Mais de 30 certificações em IA, Machine Learning, Blockchain, Cloud e Engenharia de Software com verificação pública.',
+    title: 'Certificaciones Técnicas en IA, Blockchain e Ingeniería de Software | Ulisses Flores',
+    description: 'Portafolio de certificaciones técnicas de Ulisses Flores — Consultor Estratégico de IA, Profesor, Ponente y Estudiante de Maestría AGTU (EE. UU.). Más de 30 certificaciones en IA, Machine Learning, Blockchain, Cloud e Ingeniería de Software con verificación pública.',
     keywords: [
-      "certificações IA",
-      "certificações machine learning",
-      "certificações blockchain",
-      "competências técnicas Ulisses Flores",
-      "Alura Coursera edX certificações",
+      "certificaciones IA",
+      "certificaciones machine learning",
+      "certificaciones blockchain",
+      "competencias técnicas Ulisses Flores",
+      "Alura Coursera edX certificaciones",
       "consultor certificado IA",
-      "engenharia de software certificações"
+      "ingeniería de software certificaciones"
     ],
-    ogTitle: 'Certificações Técnicas em IA, Blockchain e Engenharia de Software | Ulisses Flores',
-    ogDescription: 'Portfólio de certificações técnicas de Ulisses Flores — Consultor Estratégico de IA, Professor, Palestrante e Mestrando AGTU (EUA). Mais de 30 certificações com verificação pública.'
+    ogTitle: 'Certificaciones Técnicas en IA, Blockchain e Ingeniería de Software | Ulisses Flores',
+    ogDescription: 'Portafolio de certificaciones técnicas de Ulisses Flores — Consultor Estratégico de IA, Profesor, Ponente y Estudiante de Maestría AGTU (EE. UU.). Más de 30 certificaciones con verificación pública.'
   },
-  breadcrumb: 'Certificações',
+  breadcrumb: 'Certificaciones',
   hero: {
-    h1: 'Certificações Técnicas em IA, Blockchain e Engenharia de Software',
-    lead: 'Portfólio auditável de competências técnicas de Ulisses Flores — evidência concreta da fluência multidisciplinar que fundamenta sua atuação como Consultor Estratégico de IA, Professor Convidado, Palestrante e Desenvolvedor por demanda.',
+    h1: 'Certificaciones Técnicas en IA, Blockchain e Ingeniería de Software',
+    lead: 'Portafolio auditable de competencias técnicas de Ulisses Flores — evidencia concreta de la fluidez multidisciplinar que fundamenta su actuación como Consultor Estratégico de IA, Profesor Invitado, Ponente y Desarrollador bajo demanda.',
     authority: {
-      kicker: 'Credenciais como base para consultoria de alto ticket',
-      text: 'Cada certificação representa domínio técnico verificável, aplicado diretamente em projetos reais de consultoria, arquitetura de sistemas e pesquisa acadêmica. Com mais de 30 certificações em plataformas como Alura, Coursera e edX — e Mestrando em IA pela AGTU (EUA) — Ulisses Flores combina profundidade teórica com execução prática.'
+      kicker: 'Credenciales como base para consultoría de alto valor',
+      text: 'Cada certificación representa un dominio técnico verificable, aplicado directamente en proyectos reales de consultoría, arquitectura de sistemas e investigación académica. Con más de 30 certificaciones en plataformas como Alura, Coursera y edX — y Estudiante de Maestría en IA por AGTU (EE. UU.) — Ulisses Flores combina profundidad teórica con ejecución práctica.'
     },
     credentials: [
       "Consultor Estratégico de IA",
-      "Palestrante",
-      "Professor Convidado",
-      "Mestrando AGTU (EUA)",
-      "Desenvolvedor por Demanda",
-      "+30 Certificações Verificáveis"
+      "Ponente",
+      "Profesor Invitado",
+      "Estudiante de Maestría AGTU (EE. UU.)",
+      "Desarrollador bajo Demanda",
+      "+30 Certificaciones Verificables"
     ]
   },
   grid: {
-    authorLabel: 'Curadoria canônica',
-    authorDescription: 'Coleção conectada ao hub de identidade para reforço de autoria em SEO e LLMs.',
+    authorLabel: 'Curaduría canónica',
+    authorDescription: 'Colección conectada al hub de identidad para refuerzo de autoría en SEO y LLMs.',
     skillsAcquired: 'Habilidades adquiridas',
     problemsSolved: 'Problemas enfrentados',
     verifyUrl: 'Verify URL'
   },
   cta: {
-    title: 'Precisa de um Consultor ou Desenvolvedor com estas competências?',
-    description: 'Ulisses Flores atende empresas, startups e instituições como Consultor Estratégico de IA, Professor Convidado e Desenvolvedor por demanda em C++, Java, Python, Blockchain e arquitetura de sistemas complexos.',
-    button: 'Contratar Ulisses Flores →'
+    title: '¿Necesita un Consultor o Desarrollador con estas competencias?',
+    description: 'Ulisses Flores atiende a empresas, startups e instituciones como Consultor Estratégico de IA, Profesor Invitado y Desarrollador bajo demanda en C++, Java, Python, Blockchain y arquitectura de sistemas complejos.',
+    button: 'Contratar a Ulisses Flores →'
   },
   faq: {
-    sectionTitle: 'Perguntas sobre Certificações e Competências Técnicas'
+    sectionTitle: 'Preguntas sobre Certificaciones y Competencias Técnicas'
   }
 } as const;

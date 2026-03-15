@@ -1,115 +1,115 @@
 export const projetoPsi = {
   meta: {
-    title: 'Projeto PSI — Hardware Soberano para Custódia de Ativos Digitais | Ulisses Flores',
-    description: 'Custódia de ativos digitais de classe nuclear. Hardware com Zero Trust em Silício, criptografia pós-quântica XMSS e redundância aeroespacial TMR. Investimento e licenciamento.',
+    title: 'Projeto PSI — Sovereign Hardware for Digital Asset Custody | Ulisses Flores',
+    description: 'Nuclear-grade digital asset custody. Hardware with Zero Trust in Silicon, XMSS post-quantum cryptography, and aerospace TMR redundancy. Investment and licensing.',
     keywords: [
       "hardware wallet",
-      "custódia de ativos digitais",
+      "digital asset custody",
       "zero trust hardware",
-      "criptografia pós-quântica",
+      "post-quantum cryptography",
       "SRAM PUF",
-      "investimento hardware security",
-      "soberania digital",
-      "cold storage institucional",
+      "hardware security investment",
+      "digital sovereignty",
+      "institutional cold storage",
       "Ulisses Flores",
       "Codex Hash",
-      "segurança nuclear",
-      "TMR redundância"
+      "nuclear security",
+      "TMR redundancy"
     ],
-    ogTitle: 'Projeto PSI — Hardware Soberano para Custódia de Ativos Digitais',
-    ogDescription: 'Custódia de ativos digitais de classe nuclear. Zero Trust em Silício, XMSS pós-quântico e redundância aeroespacial TMR.'
+    ogTitle: 'Projeto PSI — Sovereign Hardware for Digital Asset Custody',
+    ogDescription: 'Nuclear-grade digital asset custody. Zero Trust in Silicon, post-quantum XMSS, and aerospace TMR redundancy.'
   },
   hero: {
-    badge: 'Investimento & Licenciamento',
-    h1: 'Projeto PSI: O Cofre Digital que Desafia as Leis da Física',
-    lead: 'Custódia soberana de ativos digitais com segurança de classe nuclear. Zero Trust em silício. Criptografia à prova de computadores quânticos. Redundância de nível aeroespacial.',
-    ctaPrimary: 'Solicitar Apresentação Executiva',
-    ctaSecondary: 'Ler o Whitepaper Técnico'
+    badge: 'Investment & Licensing',
+    h1: 'Projeto PSI: The Digital Vault That Defies the Laws of Physics',
+    lead: 'Sovereign digital asset custody with nuclear-grade security. Zero Trust in silicon. Quantum-computer-proof cryptography. Aerospace-level redundancy.',
+    ctaPrimary: 'Request Executive Presentation',
+    ctaSecondary: 'Read the Technical Whitepaper'
   },
   executiveSummary: {
-    title: 'Por Que o PSI Existe',
-    p1: 'A era do “confie no banco” acabou. A era do “confie na exchange” nunca deveria ter começado. O Projeto PSI nasce da premissa radical de que a custódia dos seus ativos digitais não pode depender de nenhuma instituição, nenhum servidor e nenhuma pessoa — nem mesmo do fabricante do dispositivo.',
-    p2: 'Enquanto hardware wallets tradicionais protegem contra hackers amadores, o PSI foi arquitetado para resistir a adversários de estado, ataques eletromagnéticos, extorsão física e até computadores quânticos. Não é uma melhoria incremental.',
-    p2Highlight: 'É uma mudança de paradigma.'
+    title: 'Why PSI Exists',
+    p1: 'The era of \'trust the bank\' is over. The era of \'trust the exchange\' should never have begun. Projeto PSI is born from the radical premise that the custody of your digital assets cannot depend on any institution, any server, or any person — not even the device manufacturer.',
+    p2: 'While traditional hardware wallets protect against amateur hackers, PSI was engineered to withstand state adversaries, electromagnetic attacks, physical extortion, and even quantum computers. It\'s not an incremental improvement.',
+    p2Highlight: 'It\'s a paradigm shift.'
   },
   pillars: {
-    title: 'Quatro Pilares de Segurança Absoluta',
+    title: 'Four Pillars of Absolute Security',
     items: [
       {
         src: '/whitepapers/psi-arquitetura-hardware-camadas-defesa.webp',
-        alt: 'Diagrama das camadas de defesa do hardware PSI: blindagem Faraday, cerâmica anti-térmica e isolamento acústico',
-        title: 'Fortaleza Física',
-        text: 'Chassis blindado com malha Faraday contra pulsos eletromagnéticos. Cerâmica anti-térmica. Isolamento acústico contra ataques de canal lateral. Sem USB. Sem tela. Sem superfície de ataque.'
+        alt: 'Diagram of PSI hardware defense layers: Faraday shielding, anti-thermal ceramic, and acoustic isolation',
+        title: 'Physical Fortress',
+        text: 'Armored chassis with Faraday cage against electromagnetic pulses. Anti-thermal ceramic. Acoustic isolation against side-channel attacks. No USB. No screen. No attack surface.'
       },
       {
         src: '/whitepapers/psi-ciclo-vida-chave-criptografica-sram-puf.webp',
-        alt: 'Ciclo de vida da chave criptográfica: reconstrução efêmera via SRAM PUF — a chave nunca existe em repouso',
-        title: 'Chave que Nunca Existe',
-        text: 'A chave privada não é armazenada — em lugar nenhum. Ela é reconstruída temporariamente usando a impressão digital única do silício (SRAM PUF) e colapsa após cada uso. Sem semente para roubar.'
+        alt: 'Cryptographic key lifecycle: ephemeral reconstruction via SRAM PUF — the key never exists at rest',
+        title: 'Key That Never Exists',
+        text: 'The private key is not stored — anywhere. It is temporarily reconstructed using the unique silicon fingerprint (SRAM PUF) and collapses after each use. No seed to steal.'
       },
       {
         src: '/whitepapers/psi-protocolo-phantom-biometria-coacao.webp',
-        alt: 'Protocolo Phantom Input: detecção de coação por biometria comportamental e liberação de fundos falsos sob extorsão',
-        title: 'Anti-Sequestro Inteligente',
-        text: 'O PSI aprende seu padrão biométrico. Se detectar stress ou coação, ativa o Phantom Mode: desbloqueia uma carteira-fantasma com fundos falsos. O agressor nunca saberá que foi enganado.'
+        alt: 'Phantom Input Protocol: coercion detection via behavioral biometrics and release of decoy funds under extortion',
+        title: 'Intelligent Anti-Coercion',
+        text: 'PSI learns your biometric pattern. If it detects stress or coercion, it activates Phantom Mode: unlocking a phantom wallet with decoy funds. The aggressor will never know they\'ve been fooled.'
       },
       {
         src: '/whitepapers/psi-arquitetura-tmr-redundancia-voter.webp',
-        alt: 'Arquitetura TMR com voter: três processadores executam em paralelo e um voter valida consenso — padrão aeroespacial',
-        title: 'Redundância Aeroespacial',
-        text: 'Três processadores executam cada operação em paralelo. Um "voter" valida o consenso. Se um chip falhar ou for adulterado, os outros dois continuam. É a mesma tecnologia usada em satélites e mísseis.'
+        alt: 'TMR architecture with voter: three processors execute in parallel and a voter validates consensus — aerospace standard',
+        title: 'Aerospace Redundancy',
+        text: 'Three processors execute each operation in parallel. A "voter" validates the consensus. If one chip fails or is tampered with, the other two continue. It\'s the same technology used in satellites and missiles.'
       }
     ]
   },
   targetMarket: {
-    title: 'Para Quem é o PSI',
+    title: 'Who PSI Is For',
     items: [
       {
         title: 'Family Offices & UHNWIs',
-        text: 'Custódia pessoal de patrimônio digital de 7+ dígitos sem depender de terceiros.'
+        text: 'Personal custody of 7+ digit digital wealth without relying on third parties.'
       },
       {
-        title: 'Fundos & Exchanges Institucionais',
-        text: 'Cold storage de classe militar para compliance e auditoria de custódia qualificada.'
+        title: 'Institutional Funds & Exchanges',
+        text: 'Military-grade cold storage for qualified custody compliance and auditing.'
       },
       {
-        title: 'Governos & Bancos Centrais',
-        text: 'Custódia soberana de reservas digitais nacionais e CBDCs com resistência a ataques de estado.'
+        title: 'Governments & Central Banks',
+        text: 'Sovereign custody of national digital reserves and CBDCs with resistance to state-level attacks.'
       }
     ]
   },
   stats: {
-    title: 'Os Números que Importam',
+    title: 'The Numbers That Matter',
     items: [
       {
         value: '0',
-        label: 'Chaves armazenadas permanentemente. Zero superfície de ataque estática.'
+        label: 'Keys permanently stored. Zero static attack surface.'
       },
       {
         value: '3×',
-        label: 'Redundância modular tripla. Cada operação validada por consenso de 3 processadores.'
+        label: 'Triple modular redundancy. Each operation validated by consensus of 3 processors.'
       },
       {
         value: 'Q-Day Ready',
-        label: 'Criptografia XMSS pós-quântica. Preparado para o dia em que computadores quânticos quebrarem RSA e ECDSA.'
+        label: 'XMSS post-quantum cryptography. Prepared for the day when quantum computers break RSA and ECDSA.'
       },
       {
         value: 'EMP-Proof',
-        label: 'Blindagem Faraday + cerâmica. Funcional após pulso eletromagnético.'
+        label: 'Faraday shielding + ceramic. Functional after electromagnetic pulse.'
       }
     ]
   },
   author: {
-    label: 'Inventor & Arquiteto',
-    description: 'Projeto concebido por Ulisses Flores — Consultor Estratégico de IA, Mestrando em Inteligência Artificial pela AGTU (EUA) e co-inventor de tecnologias blockchain (Codex Hash).'
+    label: 'Inventor & Architect',
+    description: 'Project conceived by Ulisses Flores — AI Strategic Consultant, Master\'s student in Artificial Intelligence at AGTU (USA), and co-inventor of blockchain technologies (Codex Hash).'
   },
   faq: {
-    sectionTitle: 'Perguntas Frequentes — Investidores'
+    sectionTitle: 'Frequently Asked Questions — Investors'
   },
   cta: {
-    title: 'Pronto para Conhecer o Futuro da Custódia?',
-    description: 'Agende uma apresentação executiva do Projeto PSI. Discutimos modelo de licenciamento, roadmap de produto e oportunidades de investimento.',
-    button: 'Entrar em Contato'
+    title: 'Ready to Discover the Future of Custody?',
+    description: 'Schedule an executive presentation of Projeto PSI. We discuss licensing model, product roadmap, and investment opportunities.',
+    button: 'Get in Touch'
   },
-  crossLink: '📄 Leia o Whitepaper Técnico Completo →'
+  crossLink: '📄 Read the Full Technical Whitepaper →'
 } as const;
