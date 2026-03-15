@@ -1,3 +1,4 @@
+import { defaultLocale } from '@/data/i18n';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { IA2027Simulation } from '@/components/simulations/ia-2027/ia-2027-simulation';
@@ -63,7 +64,7 @@ export default function DesaceleracaoCoordenadaPage() {
         headline: 'Desaceleração Coordenada: O Cenário de Alinhamento e Contenção da AGI',
         description:
           'Explore o cenário de Desaceleração Coordenada da simulação IA 2027: pausa global, alinhamento técnico e regulamentação internacional da AGI. Análise por Ulisses Flores.',
-        inLanguage: 'pt-BR',
+        inLanguage: defaultLocale,
         keywords:
           'desaceleração coordenada IA, slowdown AGI, alinhamento de IA, regulamentação inteligência artificial, segurança IA',
         isPartOf: {

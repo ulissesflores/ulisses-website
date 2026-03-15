@@ -1,3 +1,4 @@
+import { defaultLocale } from '@/data/i18n';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { IA2027Simulation } from '@/components/simulations/ia-2027/ia-2027-simulation';
@@ -85,7 +86,7 @@ export default async function IA2027Page({
     headline: 'IA 2027: Simulação Interativa sobre o Futuro da Inteligência Artificial',
     description:
       'Explore a única simulação interativa em português sobre a chegada da AGI (Inteligência Artificial Geral). Análise de cenários futuros, corrida tecnológica e impacto econômico por Ulisses Flores — Cientista, Consultor, Professor e Palestrante.',
-    inLanguage: 'pt-BR',
+    inLanguage: defaultLocale,
     keywords: 'futuro da inteligência artificial, cenários futuros IA, o que é AGI, inteligência artificial geral, soberania tecnológica, impacto da IA no mercado, agentes autônomos',
     about: [
       {

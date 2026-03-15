@@ -1,3 +1,4 @@
+import { defaultLocale } from '@/data/i18n';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { IA2027Simulation } from '@/components/simulations/ia-2027/ia-2027-simulation';
@@ -63,7 +64,7 @@ export default function CorridaEstrategicaPage() {
         headline: 'Corrida Estratégica: O Cenário de Aceleração Máxima Rumo à AGI',
         description:
           'Explore o cenário de Corrida Estratégica da simulação IA 2027: aceleração máxima rumo à AGI, escalada de autonomia e risco de perda de controle humano.',
-        inLanguage: 'pt-BR',
+        inLanguage: defaultLocale,
         keywords:
           'corrida estratégica IA, race AGI, corrida armamentista inteligência artificial, superinteligência riscos, AGI perda de controle',
         isPartOf: {

@@ -1,3 +1,4 @@
+import { defaultLocale } from '@/data/i18n';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { acervoCanonicalPath, acervoClusters, acervoSermons } from '@/data/acervo-teologico';
@@ -49,7 +50,7 @@ export default function AcervoTeologicoPage() {
     name: 'Acervo Teológico e Arqueologia Espiritual',
     description:
       'Mais de 50 sermões, pregações expositivas e análises de teologia histórica por Ulisses Flores.',
-    inLanguage: 'pt-BR',
+    inLanguage: defaultLocale,
     isPartOf: {
       '@id': `${upkfMeta.primaryWebsite}/#website`,
     },

@@ -1,3 +1,4 @@
+import { defaultLocale } from '@/data/i18n';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { upkfMeta } from '@/data/generated/upkf.generated';
@@ -55,7 +56,7 @@ export default function GoldenLeafPage() {
         name: 'GoldenLeaf — Micologia Inteligente com IoT e IA',
         description:
           'Projeto de micologia inteligente que combina sensores IoT, IA preditiva e arquiteturas cloudless para cultivo autônomo de cogumelos gourmet.',
-        inLanguage: 'pt-BR',
+        inLanguage: defaultLocale,
         isPartOf: {
           '@id': `${origin}/simulacoes#collection`,
         },

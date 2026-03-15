@@ -1,3 +1,5 @@
+import { defaultLocale, isLocale } from '@/data/i18n';
+import type { Locale } from '@/data/i18n';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
@@ -8,7 +10,7 @@ import { AuthorHubCard } from '@/components/author-hub-card';
 const validCategories = Object.keys(publicationCollections) as PublicationCategory[];
 
 interface PageProps {
-  params: Promise<{ category: string }>;
+  params: Promise<{ category: string; locale: string }>;
 }
 
 /* ── Per-category storytelling (SEO/GEO/LLM) ────────────────────── */
@@ -64,7 +66,7 @@ export function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-  const { category } = await params;
+  const { category, locale: rawLocale } = await params;
 
   if (!validCategories.includes(category as PublicationCategory)) {
     return { title: 'Categoria nao encontrada' };
@@ -97,7 +99,8 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 }
 
 export default async function CategoryPage({ params }: PageProps) {
-  const { category } = await params;
+  const { category, locale: rawLocale } = await params;
+  const locale = (isLocale(rawLocale) ? rawLocale : defaultLocale) as Locale;
 
   if (!validCategories.includes(category as PublicationCategory)) {
     notFound();
@@ -123,7 +126,7 @@ export default async function CategoryPage({ params }: PageProps) {
     name: story?.h1 || collection.heading,
     description: story?.metaDescription || collection.description,
     url: collectionUrl,
-    inLanguage: 'pt-BR',
+    inLanguage: locale,
     isPartOf: {
       '@id': `${upkfMeta.primaryWebsite}/#website`,
     },

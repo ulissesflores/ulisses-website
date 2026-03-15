@@ -1,3 +1,4 @@
+import { defaultLocale } from '@/data/i18n';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { upkfMeta } from '@/data/generated/upkf.generated';
@@ -63,7 +64,7 @@ export default function ProjetoPsiPage() {
         headline: 'Projeto Ψ (PSI): O Horizonte de Eventos da Soberania Pessoal e Zero Trust em Silício',
         description:
           'Whitepaper Técnico: Arquitetura de custódia de ativos digitais de classe nuclear com SRAM PUF, Criptografia XMSS pós-quântica e Redundância Modular Tripla aeroespacial.',
-        inLanguage: 'pt-BR',
+        inLanguage: defaultLocale,
         wordCount: 8000,
         educationalLevel: 'Expert',
         author: {
