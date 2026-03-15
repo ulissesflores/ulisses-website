@@ -21,6 +21,20 @@ export const projetoPsi = {
     ogDescription:
       'Custódia de ativos digitais de classe nuclear. Zero Trust em Silício, XMSS pós-quântico e redundância aeroespacial TMR.',
   },
+  whitepaperMeta: {
+    title: 'Projeto Ψ (PSI): Hardware Soberano e Zero Trust em Silício | Ulisses Flores',
+    description: 'Whitepaper Técnico: Arquitetura de custódia de ativos digitais de classe nuclear. Conheça o Projeto PSI, equipado com SRAM PUF, Criptografia XMSS e Redundância TMR.',
+    keywords: ['hardware wallet', 'zero trust', 'SRAM PUF', 'XMSS', 'criptografia pós-quântica', 'ring signatures', 'endereços furtivos', 'airgap wallet', 'soberania digital', 'Codex Hash', 'TMR redundância modular tripla', 'FRAM rad-hard', 'side-channel attacks', 'EMP shielding', 'deniable encryption', 'Ulisses Flores blockchain', 'hardware security module', 'cold storage nuclear'],
+    ogTitle: 'Projeto Ψ (PSI): Hardware Soberano e Zero Trust em Silício | Ulisses Flores',
+    ogDescription: 'Whitepaper Técnico: Arquitetura de custódia de ativos digitais de classe nuclear com SRAM PUF, XMSS pós-quântico e Redundância TMR aeroespacial.',
+  },
+  simulacaoMeta: {
+    title: 'Projeto Ψ (PSI): Explorador Técnico da Arquitetura de Segurança | Ulisses Flores',
+    description: 'Explorador interativo da arquitetura do Projeto PSI — SRAM PUF, criptografia pós-quântica XMSS, redundância TMR aeroespacial e Ring Signatures. Navegue pelos 4 pilares de segurança nuclear.',
+    keywords: ['hardware wallet', 'zero trust', 'SRAM PUF', 'XMSS', 'criptografia pós-quântica', 'ring signatures', 'endereços furtivos', 'airgap wallet', 'soberania digital', 'Codex Hash', 'TMR redundância modular tripla', 'FRAM rad-hard', 'side-channel attacks', 'EMP shielding', 'deniable encryption', 'Ulisses Flores blockchain', 'hardware security module', 'cold storage nuclear'],
+    ogTitle: 'Projeto Ψ (PSI): Explorador Técnico da Arquitetura de Segurança | Ulisses Flores',
+    ogDescription: 'Explorador interativo da arquitetura do Projeto PSI — SRAM PUF, XMSS pós-quântico e Redundância TMR aeroespacial.',
+  },
   hero: {
     badge: 'Investimento & Licenciamento',
     h1: 'Projeto PSI: O Cofre Digital que Desafia as Leis da Física',

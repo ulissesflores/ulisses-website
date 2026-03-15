@@ -1,4 +1,28 @@
 export const ia2027 = {
+  meta: {
+    title: 'IA 2027: Simulação Interativa sobre o Futuro da Inteligência Artificial | AGI e Soberania',
+    description: 'Explore a única simulação interativa em português sobre a chegada da AGI (Inteligência Artificial Geral). Análise de cenários futuros, corrida tecnológica e impacto econômico por Ulisses Flores — Cientista, Consultor, Professor e Palestrante.',
+    keywords: ['futuro da inteligência artificial', 'cenários futuros IA', 'o que é AGI', 'inteligência artificial geral', 'soberania tecnológica', 'impacto da IA no mercado', 'agentes autônomos'],
+    ogTitle: 'IA 2027: Simulação Interativa sobre o Futuro da Inteligência Artificial | AGI e Soberania',
+    ogDescription: 'Explore a única simulação interativa em português sobre a chegada da AGI. Análise de cenários futuros, corrida tecnológica e impacto econômico por Ulisses Flores — Cientista, Consultor, Professor e Palestrante.',
+    ogImageAlt: 'Simulação Estratégica IA-2027 por Ulisses Flores',
+  },
+  raceMeta: {
+    title: 'Corrida Estratégica: Cenário Race da IA 2027 | Ulisses Flores',
+    description: 'Explore o cenário de Corrida Estratégica da simulação IA 2027: aceleração máxima rumo à AGI, escalada de autonomia e risco de perda de controle humano. Análise por Ulisses Flores — Consultor em IA, Professor, Palestrante e Mestrando AGTU (EUA).',
+    keywords: ['corrida estratégica IA', 'race AGI', 'corrida armamentista inteligência artificial', 'superinteligência riscos', 'AGI perda de controle', 'cenários futuros IA', 'soberania tecnológica'],
+    ogTitle: 'Corrida Estratégica: Cenário Race da IA 2027',
+    ogDescription: 'Explore o cenário de Corrida Estratégica da simulação IA 2027: aceleração máxima rumo à AGI, escalada de autonomia e risco de perda de controle humano.',
+    ogImageAlt: 'IA 2027 · Corrida Estratégica — Cenário Race',
+  },
+  slowdownMeta: {
+    title: 'Desaceleração Coordenada: Cenário Slowdown da IA 2027 | Ulisses Flores',
+    description: 'Explore o cenário de Desaceleração Coordenada da simulação IA 2027: pausa global, alinhamento técnico e regulamentação internacional da AGI. Análise por Ulisses Flores — Consultor em IA, Professor, Palestrante e Mestrando AGTU (EUA).',
+    keywords: ['desaceleração coordenada IA', 'slowdown AGI', 'alinhamento de IA', 'regulamentação inteligência artificial', 'segurança IA AGI', 'cenários futuros IA', 'soberania tecnológica'],
+    ogTitle: 'Desaceleração Coordenada: Cenário Slowdown da IA 2027',
+    ogDescription: 'Explore o cenário de Desaceleração Coordenada da simulação IA 2027: pausa global, alinhamento técnico e regulamentação internacional da AGI.',
+    ogImageAlt: 'IA 2027 · Desaceleração Coordenada — Cenário Slowdown',
+  },
   breadcrumb: {
     simulations: 'Simulações Estratégicas',
     scenarios: 'Cenários Futuros da IA',

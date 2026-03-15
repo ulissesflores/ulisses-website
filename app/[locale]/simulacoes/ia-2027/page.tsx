@@ -1,4 +1,4 @@
-import { defaultLocale, isLocale } from '@/data/i18n';
+import { defaultLocale, isLocale, localeToOgLocale } from '@/data/i18n';
 import type { Locale } from '@/data/i18n';
 import type { Metadata } from 'next';
 import Link from 'next/link';
@@ -29,52 +29,39 @@ function parseInitialPath(rawPath?: string | string[]): SimulationPath {
   return 'main';
 }
 
-export const metadata: Metadata = {
-  title: 'IA 2027: Simulação Interativa sobre o Futuro da Inteligência Artificial | AGI e Soberania',
-  description:
-    'Explore a única simulação interativa em português sobre a chegada da AGI (Inteligência Artificial Geral). Análise de cenários futuros, corrida tecnológica e impacto econômico por Ulisses Flores — Cientista, Consultor, Professor e Palestrante.',
-  keywords: [
-    'futuro da inteligência artificial',
-    'cenários futuros IA',
-    'o que é AGI',
-    'inteligência artificial geral',
-    'soberania tecnológica',
-    'impacto da IA no mercado',
-    'agentes autônomos',
-  ],
-  authors: [
-    {
-      name: upkfMeta.publicDisplayName || upkfMeta.displayName,
-      url: `${upkfMeta.primaryWebsite}/identidade`,
-    },
-  ],
-  alternates: {
-    canonical: canonicalPath,
-  },
-  openGraph: {
-    type: 'article',
-    url: `${upkfMeta.primaryWebsite}${canonicalPath}`,
-    title: 'IA 2027: Simulação Interativa sobre o Futuro da Inteligência Artificial | AGI e Soberania',
-    description:
-      'Explore a única simulação interativa em português sobre a chegada da AGI. Análise de cenários futuros, corrida tecnológica e impacto econômico por Ulisses Flores — Cientista, Consultor, Professor e Palestrante.',
-    locale: 'pt_BR',
-    images: [
-      {
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const { locale: raw } = await params;
+  const locale = (isLocale(raw) ? raw : defaultLocale) as Locale;
+  const dict = await getDictionary(locale);
+  const t = dict.ia2027;
+
+  return {
+    title: t.meta.title,
+    description: t.meta.description,
+    keywords: [...t.meta.keywords],
+    authors: [{ name: upkfMeta.publicDisplayName || upkfMeta.displayName, url: `${upkfMeta.primaryWebsite}/identidade` }],
+    alternates: { canonical: canonicalPath },
+    openGraph: {
+      type: 'article',
+      url: `${upkfMeta.primaryWebsite}${canonicalPath}`,
+      title: t.meta.ogTitle,
+      description: t.meta.ogDescription,
+      locale: localeToOgLocale[locale],
+      images: [{
         url: `${upkfMeta.primaryWebsite}/simulacao-ia-2027-futuro-agi-ulisses-flores.jpg`,
         width: 1200,
         height: 630,
-        alt: 'Simulação Estratégica IA-2027 por Ulisses Flores',
-      },
-    ],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'IA 2027: Simulação Interativa sobre o Futuro da Inteligência Artificial | AGI e Soberania',
-    description:
-      'Explore a única simulação interativa em português sobre a chegada da AGI. Análise de cenários futuros, corrida tecnológica e impacto econômico por Ulisses Flores.',
-    images: [`${upkfMeta.primaryWebsite}/simulacao-ia-2027-futuro-agi-ulisses-flores.jpg`],
-  },
-};
+        alt: t.meta.ogImageAlt,
+      }],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: t.meta.ogTitle,
+      description: t.meta.ogDescription,
+      images: [`${upkfMeta.primaryWebsite}/simulacao-ia-2027-futuro-agi-ulisses-flores.jpg`],
+    },
+  };
+}
 
 export default async function IA2027Page({ params, searchParams }: PageProps) {
   const { locale: rawLocale } = await params;

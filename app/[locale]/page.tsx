@@ -10,7 +10,7 @@ import {
 import { publications } from '@/data/publications';
 import { FaqSection } from '@/components/faq-section';
 import { upkfMeta } from '@/data/generated/upkf.generated';
-import { isLocale, defaultLocale, type Locale } from '@/data/i18n';
+import { isLocale, defaultLocale, localeToOgLocale, type Locale } from '@/data/i18n';
 import { getDictionary } from '@/lib/get-dictionary';
 import { buildLanguageAlternates } from '@/data/seo';
 
@@ -33,7 +33,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       url: 'https://ulissesflores.com',
       title: t.meta.ogTitle,
       description: t.meta.ogDescription,
-      locale: 'pt_BR',
+      locale: localeToOgLocale[locale],
       images: [
         {
           url: 'https://ulissesflores.com/carlos-ulisses-flores-cto.jpg',

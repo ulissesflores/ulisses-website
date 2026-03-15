@@ -1,4 +1,4 @@
-import { defaultLocale, isLocale } from '@/data/i18n';
+import { defaultLocale, isLocale, localeToOgLocale } from '@/data/i18n';
 import type { Locale } from '@/data/i18n';
 import type { Metadata } from 'next';
 import Link from 'next/link';
@@ -6,51 +6,31 @@ import { upkfMeta } from '@/data/generated/upkf.generated';
 import { AuthorHubCard } from '@/components/author-hub-card';
 import { FaqSection } from '@/components/faq-section';
 import { projectPsiFaq } from '@/data/faq';
+import { getDictionary } from '@/lib/get-dictionary';
 
 const canonicalPath = '/simulacoes/projeto-psi';
 
-export const metadata: Metadata = {
-  title: 'Projeto Ψ (PSI): Explorador Técnico da Arquitetura de Segurança | Ulisses Flores',
-  description:
-    'Explorador interativo da arquitetura do Projeto PSI — SRAM PUF, criptografia pós-quântica XMSS, redundância TMR aeroespacial e Ring Signatures. Navegue pelos 4 pilares de segurança nuclear.',
-  keywords: [
-    'hardware wallet',
-    'zero trust',
-    'SRAM PUF',
-    'XMSS',
-    'criptografia pós-quântica',
-    'ring signatures',
-    'endereços furtivos',
-    'airgap wallet',
-    'soberania digital',
-    'Codex Hash',
-    'TMR redundância modular tripla',
-    'FRAM rad-hard',
-    'side-channel attacks',
-    'EMP shielding',
-    'deniable encryption',
-    'Ulisses Flores blockchain',
-    'hardware security module',
-    'cold storage nuclear',
-  ],
-  authors: [
-    {
-      name: upkfMeta.publicDisplayName || upkfMeta.displayName,
-      url: `${upkfMeta.primaryWebsite}/identidade`,
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const { locale: raw } = await params;
+  const locale = (isLocale(raw) ? raw : defaultLocale) as Locale;
+  const dict = await getDictionary(locale);
+  const t = dict.projetoPsi.simulacaoMeta;
+
+  return {
+    title: t.title,
+    description: t.description,
+    keywords: [...t.keywords],
+    authors: [{ name: upkfMeta.publicDisplayName || upkfMeta.displayName, url: `${upkfMeta.primaryWebsite}/identidade` }],
+    alternates: { canonical: canonicalPath },
+    openGraph: {
+      type: 'article',
+      url: `${upkfMeta.primaryWebsite}${canonicalPath}`,
+      title: t.ogTitle,
+      description: t.ogDescription,
+      locale: localeToOgLocale[locale],
     },
-  ],
-  alternates: {
-    canonical: canonicalPath,
-  },
-  openGraph: {
-    type: 'article',
-    url: `${upkfMeta.primaryWebsite}${canonicalPath}`,
-    title: 'Projeto Ψ (PSI): Explorador Técnico da Arquitetura de Segurança | Ulisses Flores',
-    description:
-      'Explorador interativo da arquitetura do Projeto PSI — SRAM PUF, XMSS pós-quântico e Redundância TMR aeroespacial.',
-    locale: 'pt_BR',
-  },
-};
+  };
+}
 
 interface PageProps {
   params: Promise<{ locale: string }>;

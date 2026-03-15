@@ -1,20 +1,38 @@
 export const goldenleaf = {
+  meta: {
+    title: 'GoldenLeaf — Smart Mycology with IoT and AI | Ulisses Flores',
+    description: 'GoldenLeaf is a smart mycology project that combines IoT sensors, predictive AI, and cloudless architectures for autonomous gourmet mushroom cultivation. Developed by Ulisses Flores.',
+    keywords: [
+      "smart mycology",
+      "IoT mushrooms",
+      "autonomous cultivation",
+      "AI agriculture",
+      "gourmet mushrooms",
+      "IoT sensors",
+      "cloudless IoT",
+      "data sovereignty",
+      "Ulisses Flores IoT",
+      "smart agriculture"
+    ],
+    ogTitle: 'GoldenLeaf — Smart Mycology with IoT and AI | Ulisses Flores',
+    ogDescription: 'Smart mycology project with IoT, predictive AI, and cloudless architectures for autonomous cultivation. By Ulisses Flores.'
+  },
   breadcrumb: {
     simulations: 'Simulations',
     goldenleaf: 'GoldenLeaf'
   },
   hero: {
-    h1: 'GoldenLeaf — Intelligent Mycology with IoT and AI',
-    lead: 'GoldenLeaf combines precision IoT sensors, predictive AI, and cloudless architectures to create an autonomous gourmet mushroom cultivation system — with total data sovereignty and no reliance on external servers. Developed by Ulisses Flores as a living laboratory of IoT applied to smart agriculture.',
+    h1: 'GoldenLeaf — Smart Mycology with IoT and AI',
+    lead: 'GoldenLeaf combines precision IoT sensors, predictive AI, and cloudless architectures to create an autonomous gourmet mushroom cultivation system — with total data sovereignty and no dependence on external servers. Developed by Ulisses Flores as a living laboratory for IoT applied to smart agriculture.',
     authority: {
       kicker: 'Sovereign IoT applied to agriculture',
-      text: 'GoldenLeaf materializes Ulisses Flores\' research into cloudless architectures and data sovereignty in IoT. Each sensor operates locally, data remains on the device, and AI models are executed on-edge — no cloud, no latency, no dependency. The project is a concrete case study of how digital sovereignty applies to real-world physical systems.'
+      text: 'GoldenLeaf materializes Ulisses Flores\' research in cloudless architectures and data sovereignty in IoT. Each sensor operates locally, data remains on the device, and AI models are executed on-edge — no cloud, no latency, no dependence. The project is a concrete case study of how digital sovereignty applies to real-world physical systems.'
     },
     credentials: [
       "Software Architect",
       "Hardware Developer",
       "Strategic AI Consultant",
-      "AGTU Master's Student (USA)",
+      "Master's Student AGTU (USA)",
       "IoT & Edge Computing",
       "Data Sovereignty"
     ]
@@ -46,7 +64,7 @@ export const goldenleaf = {
     relatedTitle: 'Related Publications',
     relatedLinks: [
       "📄 Cloudless Architectures and Data Sovereignty in IoT →",
-      "📄 Thermodynamic Analysis and Engineering of Hybrid Cooling Systems →"
+      "📄 Thermodynamic Analysis and Hybrid Cooling System Engineering →"
     ]
   },
   author: {

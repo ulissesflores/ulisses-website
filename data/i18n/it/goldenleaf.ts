@@ -1,14 +1,32 @@
 export const goldenleaf = {
+  meta: {
+    title: 'GoldenLeaf — Micologia Intelligente con IoT e IA | Ulisses Flores',
+    description: 'GoldenLeaf è un progetto di micologia intelligente che combina sensori IoT, IA predittiva e architetture cloudless per la coltivazione autonoma di funghi gourmet. Sviluppato da Ulisses Flores.',
+    keywords: [
+      "micologia intelligente",
+      "IoT funghi",
+      "coltivazione autonoma",
+      "IA agricoltura",
+      "funghi gourmet",
+      "sensori IoT",
+      "cloudless IoT",
+      "sovranità dei dati",
+      "Ulisses Flores IoT",
+      "agricoltura intelligente"
+    ],
+    ogTitle: 'GoldenLeaf — Micologia Intelligente con IoT e IA | Ulisses Flores',
+    ogDescription: 'Progetto di micologia intelligente con IoT, IA predittiva e architetture cloudless per la coltivazione autonoma. Di Ulisses Flores.'
+  },
   breadcrumb: {
     simulations: 'Simulazioni',
     goldenleaf: 'GoldenLeaf'
   },
   hero: {
     h1: 'GoldenLeaf — Micologia Intelligente con IoT e IA',
-    lead: 'GoldenLeaf combina sensori IoT di precisione, IA predittiva e architetture cloudless per creare un sistema di coltivazione autonoma di funghi gourmet — con piena sovranità dei dati e senza dipendenza da server esterni. Sviluppato da Ulisses Flores come laboratorio vivente di IoT applicata all\'agricoltura intelligente.',
+    lead: 'GoldenLeaf combina sensori IoT di precisione, IA predittiva e architetture cloudless per creare un sistema di coltivazione autonoma di funghi gourmet — con sovranità totale dei dati e senza dipendenza da server esterni. Sviluppato da Ulisses Flores come laboratorio vivente di IoT applicata all\'agricoltura intelligente.',
     authority: {
       kicker: 'IoT sovrana applicata all\'agricoltura',
-      text: 'GoldenLeaf materializza la ricerca di Ulisses Flores su architetture cloudless e sovranità dei dati in IoT. Ogni sensore opera localmente, i dati rimangono sul dispositivo e i modelli di IA sono eseguiti on-edge — senza cloud, senza latenza, senza dipendenza. Il progetto è un caso di studio concreto di come la sovranità digitale si applichi a sistemi fisici del mondo reale.'
+      text: 'GoldenLeaf materializza la ricerca di Ulisses Flores in architetture cloudless e sovranità dei dati in IoT. Ogni sensore opera localmente, i dati rimangono sul dispositivo e i modelli di IA sono eseguiti on-edge — senza cloud, senza latenza, senza dipendenza. Il progetto è un caso di studio concreto di come la sovranità digitale si applica a sistemi fisici del mondo reale.'
     },
     credentials: [
       "Architetto Software",
@@ -54,8 +72,8 @@ export const goldenleaf = {
     description: 'GoldenLeaf sviluppato da Ulisses Flores — Consulente Strategico di IA, Architetto Software, Sviluppatore Hardware e Studente di Master in IA presso AGTU (USA).'
   },
   cta: {
-    title: 'Interessato a IoT sovrana e IA applicata all\'agricoltura?',
-    description: 'Ulisses Flores offre consulenza su architetture IoT cloudless, IA on-edge e sistemi di automazione per agricoltura e industria. Contattaci per una proposta personalizzata.',
+    title: 'Interesse in IoT sovrana e IA applicata all\'agricoltura?',
+    description: 'Ulisses Flores offre consulenza in architetture IoT cloudless, IA on-edge e sistemi di automazione per agricoltura e industria. Contattaci per una proposta personalizzata.',
     button: 'Parla con Ulisses Flores →'
   },
   faq: {

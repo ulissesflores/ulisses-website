@@ -1,4 +1,4 @@
-import { defaultLocale, isLocale } from '@/data/i18n';
+import { defaultLocale, isLocale, localeToOgLocale } from '@/data/i18n';
 import type { Locale } from '@/data/i18n';
 import type { Metadata } from 'next';
 import Link from 'next/link';
@@ -16,45 +16,39 @@ interface PageProps {
   params: Promise<{ locale: string }>;
 }
 
-export const metadata: Metadata = {
-  title: 'Corrida Estratégica: Cenário Race da IA 2027 | Ulisses Flores',
-  description:
-    'Explore o cenário de Corrida Estratégica da simulação IA 2027: aceleração máxima rumo à AGI, escalada de autonomia e risco de perda de controle humano. Análise por Ulisses Flores — Consultor em IA, Professor, Palestrante e Mestrando AGTU (EUA).',
-  keywords: [
-    'corrida estratégica IA',
-    'race AGI',
-    'corrida armamentista inteligência artificial',
-    'superinteligência riscos',
-    'AGI perda de controle',
-    'cenários futuros IA',
-    'soberania tecnológica',
-  ],
-  authors: [
-    {
-      name: upkfMeta.publicDisplayName || upkfMeta.displayName,
-      url: `${upkfMeta.primaryWebsite}/identidade`,
-    },
-  ],
-  alternates: {
-    canonical: canonicalPath,
-  },
-  openGraph: {
-    type: 'article',
-    url: `${upkfMeta.primaryWebsite}${canonicalPath}`,
-    title: 'Corrida Estratégica: Cenário Race da IA 2027',
-    description:
-      'Explore o cenário de Corrida Estratégica da simulação IA 2027: aceleração máxima rumo à AGI, escalada de autonomia e risco de perda de controle humano.',
-    locale: 'pt_BR',
-    images: [
-      {
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const { locale: raw } = await params;
+  const locale = (isLocale(raw) ? raw : defaultLocale) as Locale;
+  const dict = await getDictionary(locale);
+  const t = dict.ia2027;
+
+  return {
+    title: t.raceMeta.title,
+    description: t.raceMeta.description,
+    keywords: [...t.raceMeta.keywords],
+    authors: [{ name: upkfMeta.publicDisplayName || upkfMeta.displayName, url: `${upkfMeta.primaryWebsite}/identidade` }],
+    alternates: { canonical: canonicalPath },
+    openGraph: {
+      type: 'article',
+      url: `${upkfMeta.primaryWebsite}${canonicalPath}`,
+      title: t.raceMeta.ogTitle,
+      description: t.raceMeta.ogDescription,
+      locale: localeToOgLocale[locale],
+      images: [{
         url: `${upkfMeta.primaryWebsite}/simulacao-ia-2027-futuro-agi-ulisses-flores.jpg`,
         width: 2752,
         height: 1536,
-        alt: 'IA 2027 · Corrida Estratégica — Cenário Race',
-      },
-    ],
-  },
-};
+        alt: t.raceMeta.ogImageAlt,
+      }],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: t.raceMeta.ogTitle,
+      description: t.raceMeta.ogDescription,
+      images: [`${upkfMeta.primaryWebsite}/simulacao-ia-2027-futuro-agi-ulisses-flores.jpg`],
+    },
+  };
+}
 
 export default async function CorridaEstrategicaPage({ params }: PageProps) {
   const { locale: rawLocale } = await params;

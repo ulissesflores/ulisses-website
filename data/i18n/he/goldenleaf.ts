@@ -1,14 +1,32 @@
 export const goldenleaf = {
+  meta: {
+    title: 'GoldenLeaf — מיקולוגיה חכמה עם IoT ו-AI | Ulisses Flores',
+    description: 'GoldenLeaf הוא פרויקט מיקולוגיה חכמה המשלב חיישני IoT, AI חזוי וארכיטקטורות cloudless לגידול אוטונומי של פטריות גורמה. פותח על ידי Ulisses Flores.',
+    keywords: [
+      "מיקולוגיה חכמה",
+      "IoT פטריות",
+      "גידול אוטונומי",
+      "AI חקלאות",
+      "פטריות גורמה",
+      "חיישני IoT",
+      "cloudless IoT",
+      "ריבונות נתונים",
+      "Ulisses Flores IoT",
+      "חקלאות חכמה"
+    ],
+    ogTitle: 'GoldenLeaf — מיקולוגיה חכמה עם IoT ו-AI | Ulisses Flores',
+    ogDescription: 'פרויקט מיקולוגיה חכמה עם IoT, AI חזוי וארכיטקטורות cloudless לגידול אוטונומי. מאת Ulisses Flores.'
+  },
   breadcrumb: {
     simulations: 'סימולציות',
     goldenleaf: 'GoldenLeaf'
   },
   hero: {
     h1: 'GoldenLeaf — מיקולוגיה חכמה עם IoT ו-AI',
-    lead: 'GoldenLeaf משלב חיישני IoT מדויקים, AI חזוי וארכיטקטורות cloudless ליצירת מערכת גידול אוטונומית של פטריות גורמה — עם ריבונות נתונים מלאה וללא תלות בשרתים חיצוניים. פותח על ידי Ulisses Flores כמעבדת חיים של IoT מיושם בחקלאות חכמה.',
+    lead: 'ה-GoldenLeaf משלב חיישני IoT מדויקים, AI חזוי וארכיטקטורות cloudless כדי ליצור מערכת גידול אוטונומית של פטריות גורמה — עם ריבונות נתונים מלאה וללא תלות בשרתים חיצוניים. פותח על ידי Ulisses Flores כמעבדת חיים של IoT המיושמת בחקלאות חכמה.',
     authority: {
       kicker: 'IoT ריבוני מיושם בחקלאות',
-      text: 'GoldenLeaf מממש את המחקר של Ulisses Flores בארכיטקטורות cloudless וריבונות נתונים ב-IoT. כל חיישן פועל באופן מקומי, הנתונים נשארים במכשיר ומודלי ה-AI מבוצעים on-edge — ללא ענן, ללא חביון, ללא תלות. הפרויקט הוא מקרה בוחן קונקרטי כיצד ריבונות דיגיטלית מיושמת במערכות פיזיות בעולם האמיתי.'
+      text: 'ה-GoldenLeaf מממש את המחקר של Ulisses Flores בארכיטקטורות cloudless וריבונות נתונים ב-IoT. כל חיישן פועל מקומית, הנתונים נשארים במכשיר ומודלי ה-AI מבוצעים on-edge — ללא ענן, ללא השהיה, ללא תלות. הפרויקט הוא מקרה בוחן קונקרטי לאופן שבו ריבונות דיגיטלית מיושמת במערכות פיזיות בעולם האמיתי.'
     },
     credentials: [
       "ארכיטקט תוכנה",
@@ -29,12 +47,12 @@ export const goldenleaf = {
       },
       {
         title: 'AI חזוי On-Edge',
-        description: 'מודלים של machine learning המבוצעים באופן מקומי במיקרו-בקר לחיזוי תנאי פריחה אופטימליים.',
-        tag: 'אינטליגנציה'
+        description: 'מודלים של machine learning המבוצעים מקומית במיקרו-בקר לחיזוי תנאי פריחה אופטימליים.',
+        tag: 'בינה'
       },
       {
         title: 'ארכיטקטורת Cloudless',
-        description: 'אפס תלות בשרתים חיצוניים. נתונים מעובדים, מאוחסנים ומנותחים באופן מקומי — ריבונות מלאה.',
+        description: 'אפס תלות בשרתים חיצוניים. נתונים מעובדים, מאוחסנים ומנותחים מקומית — ריבונות מלאה.',
         tag: 'ריבונות'
       },
       {
@@ -56,7 +74,7 @@ export const goldenleaf = {
   cta: {
     title: 'מעוניינים ב-IoT ריבוני ו-AI מיושם בחקלאות?',
     description: 'Ulisses Flores מציע ייעוץ בארכיטקטורות IoT cloudless, AI on-edge ומערכות אוטומציה לחקלאות ולתעשייה. צרו קשר לקבלת הצעה מותאמת אישית.',
-    button: 'דברו עם Ulisses Flores →'
+    button: 'שוחחו עם Ulisses Flores →'
   },
   faq: {
     sectionTitle: 'שאלות על GoldenLeaf'

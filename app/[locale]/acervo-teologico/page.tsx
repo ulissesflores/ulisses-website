@@ -1,4 +1,4 @@
-import { defaultLocale, isLocale } from '@/data/i18n';
+import { defaultLocale, isLocale, localeToOgLocale } from '@/data/i18n';
 import type { Locale } from '@/data/i18n';
 import type { Metadata } from 'next';
 import Link from 'next/link';
@@ -13,39 +13,34 @@ interface PageProps {
   params: Promise<{ locale: string }>;
 }
 
-export const metadata: Metadata = {
-  title: 'Acervo Teológico e Arqueologia Espiritual | Ulisses Flores',
-  description:
-    'Mais de 50 sermões, pregações expositivas e análises de teologia histórica por Ulisses Flores. Rigor exegético e avivamento.',
-  keywords: [
-    'acervo teológico',
-    'sermões',
-    'pregações expositivas',
-    'teologia histórica',
-    'arqueologia espiritual',
-    'exegese bíblica',
-    'Ulisses Flores pregador',
-    'clube santo',
-    'avivamento',
-  ],
-  authors: [
-    {
-      name: upkfMeta.publicDisplayName || upkfMeta.displayName,
-      url: `${upkfMeta.primaryWebsite}/identidade`,
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const { locale: raw } = await params;
+  const locale = (isLocale(raw) ? raw : defaultLocale) as Locale;
+  const dict = await getDictionary(locale);
+  const t = dict.acervoTeologico;
+
+  return {
+    title: t.meta.title,
+    description: t.meta.description,
+    keywords: [...t.meta.keywords],
+    authors: [
+      {
+        name: upkfMeta.publicDisplayName || upkfMeta.displayName,
+        url: `${upkfMeta.primaryWebsite}/identidade`,
+      },
+    ],
+    alternates: {
+      canonical: acervoCanonicalPath,
     },
-  ],
-  alternates: {
-    canonical: acervoCanonicalPath,
-  },
-  openGraph: {
-    type: 'website',
-    url: `${upkfMeta.primaryWebsite}${acervoCanonicalPath}`,
-    title: 'Acervo Teológico e Arqueologia Espiritual | Ulisses Flores',
-    description:
-      'Mais de 50 sermões, pregações expositivas e análises de teologia histórica por Ulisses Flores. Rigor exegético e avivamento.',
-    locale: 'pt_BR',
-  },
-};
+    openGraph: {
+      type: 'website',
+      url: `${upkfMeta.primaryWebsite}${acervoCanonicalPath}`,
+      title: t.meta.ogTitle,
+      description: t.meta.ogDescription,
+      locale: localeToOgLocale[locale],
+    },
+  };
+}
 
 export default async function AcervoTeologicoPage({ params }: PageProps) {
   const { locale: rawLocale } = await params;

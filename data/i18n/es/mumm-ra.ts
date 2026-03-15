@@ -1,4 +1,19 @@
 export const mummRa = {
+  meta: {
+    title: 'Mumm-Ra | Chatbot Experimental de Humor Negro vía WhatsApp | Ulisses Flores',
+    description: 'Mumm-Ra es un chatbot experimental vía WhatsApp creado por Ulisses Flores. Inspirado en el villano de los ThunderCats: te insulta, se queja, te llama gusano — pero siempre responde. Gratuito, en BETA.',
+    keywords: [
+      "chatbot WhatsApp humor negro",
+      "Mumm-Ra chatbot",
+      "chatbot experimental IA",
+      "ThunderCats chatbot",
+      "ingeniería de prompt",
+      "Ulisses Flores chatbot",
+      "IA conversacional WhatsApp"
+    ],
+    ogTitle: 'Mumm-Ra | Chatbot Experimental de Humor Negro vía WhatsApp | Ulisses Flores',
+    ogDescription: 'Chatbot experimental creado por Ulisses Flores. Inspirado en el villano inmortal de los ThunderCats. Gratuito vía WhatsApp.'
+  },
   backLink: 'Volver a Simulaciones',
   hero: {
     badge: 'Herramienta Experimental',
@@ -6,7 +21,7 @@ export const mummRa = {
     lead: 'El villano inmortal de los ThunderCats ahora vive en tu WhatsApp. Humor negro, sarcasmo pesado y respuestas ácidas — pero en el fondo, siempre te ayuda.',
     description: 'Inspirado en Mumm-Ra de los dibujos animados de los años 90, este chatbot tiene la personalidad del villano más icónico de la serie: se queja de ser invocado, te llama "gusano" y "larva humana", pero te da la respuesta que necesitas. Es 100% actuación — pura diversión con humor negro.',
     createdBy: 'Creado por',
-    authorDesc: 'Ulisses Flores — Consultor Estratégico de IA, Profesor Invitado, Ponente y Estudiante de Máster en Inteligencia Artificial por la AGTU (EE. UU.). Mumm-Ra es un laboratorio de investigación en ingeniería de prompt avanzada y diseño de personalidades para IAs conversacionales.',
+    authorDesc: 'Ulisses Flores — Consultor Estratégico de IA, Profesor Invitado, Ponente y Estudiante de Maestría en Inteligencia Artificial por AGTU (EE. UU.). Mumm-Ra es un laboratorio de investigación en ingeniería de prompt avanzada y diseño de personalidades para IAs conversacionales.',
     authorLabel: 'Proyecto experimental',
     authorHubDesc: 'Herramienta conectada al laboratorio de simulaciones y al hub canónico de identidad.'
   },
@@ -17,7 +32,7 @@ export const mummRa = {
   },
   personality: {
     title: 'La personalidad del villano',
-    description: 'Mumm-Ra es un chatbot con personalidad propia: responde como si fuera el villano inmortal de los ThunderCats de los años 90. Esto significa que te insultará, se quejará, demostrará superioridad cósmica — y luego te ayudará. Es humor negro puro. Nada es real, todo es un personaje.',
+    description: 'Mumm-Ra es un chatbot con personalidad propia: responde como si fuera el villano inmortal de los ThunderCats de los años 90. Esto significa que te insultará, se quejará, demostrará superioridad cósmica — y luego te ayudará. Es humor negro puro. Nada es real, todo es personaje.',
     traits: [
       {
         title: 'Insultos creativos',
@@ -25,7 +40,7 @@ export const mummRa = {
       },
       {
         title: 'Se queja de ser invocado',
-        description: '¡"¿Quién osa perturbar el sueño eterno de Mumm-Ra?!" — toda conversación comienza con él indignado por haber sido despertado de las profundidades.'
+        description: '«¡¿Quién osa perturbar el sueño eterno de Mumm-Ra?!» — toda conversación comienza con él indignado por haber sido despertado de las profundidades.'
       },
       {
         title: 'Pero siempre responde',
@@ -47,7 +62,7 @@ export const mummRa = {
       },
       {
         step: '02',
-        title: 'Soporta los insultos',
+        title: 'Aguanta los insultos',
         description: 'Te llamará gusano, larva humana y se quejará de haber sido invocado. Es parte de la experiencia. Respira hondo.'
       },
       {
@@ -58,7 +73,7 @@ export const mummRa = {
     ]
   },
   groups: {
-    title: 'Añade a grupos de WhatsApp',
+    title: 'Añádelo a grupos de WhatsApp',
     description: 'Mumm-Ra puede ser añadido a grupos de WhatsApp. Participa en las conversaciones con la misma personalidad ácida — insulta a todos por igual, sin favoritismos. Perfecto para grupos que disfrutan de una dosis de humor negro.',
     note: 'Basta con añadir el número +55 11 5286-8689 al grupo. Empieza a responder automáticamente cuando se le menciona o cuando alguien hace una pregunta directa.'
   },
@@ -69,7 +84,7 @@ export const mummRa = {
     items: [
       {
         user: 'Hola Mumm-Ra, ¿me ayudas con una receta de pastel?',
-        mumra: '¡¿QUIÉN OSA PERTURBAR EL SUEÑO ETERNO DE MUMM-RA POR UNA... RECETA DE PASTEL?! Vosotros, mortales, sois patéticos. Pero escucha aquí, gusano: 3 huevos, 2 tazas de harina, 1 de leche...'
+        mumra: '¡¿QUIÉN OSA PERTURBAR EL SUEÑO ETERNO DE MUMM-RA POR UNA... RECETA DE PASTEL?! Vosotros mortales sois patéticos. Pero escucha aquí, gusano: 3 huevos, 2 tazas de harina, 1 de leche...'
       },
       {
         user: '¿Cuánto es el 15% de 340?',

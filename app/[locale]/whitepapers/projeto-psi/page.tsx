@@ -1,4 +1,4 @@
-import { defaultLocale, isLocale } from '@/data/i18n';
+import { defaultLocale, isLocale, localeToOgLocale } from '@/data/i18n';
 import type { Locale } from '@/data/i18n';
 import type { Metadata } from 'next';
 import Link from 'next/link';
@@ -6,51 +6,31 @@ import { upkfMeta } from '@/data/generated/upkf.generated';
 import { AuthorHubCard } from '@/components/author-hub-card';
 import { FaqSection } from '@/components/faq-section';
 import { projectPsiFaq } from '@/data/faq';
+import { getDictionary } from '@/lib/get-dictionary';
 
 const canonicalPath = '/whitepapers/projeto-psi';
 
-export const metadata: Metadata = {
-  title: 'Projeto Ψ (PSI): Hardware Soberano e Zero Trust em Silício | Ulisses Flores',
-  description:
-    'Whitepaper Técnico: Arquitetura de custódia de ativos digitais de classe nuclear. Conheça o Projeto PSI, equipado com SRAM PUF, Criptografia XMSS e Redundância TMR.',
-  keywords: [
-    'hardware wallet',
-    'zero trust',
-    'SRAM PUF',
-    'XMSS',
-    'criptografia pós-quântica',
-    'ring signatures',
-    'endereços furtivos',
-    'airgap wallet',
-    'soberania digital',
-    'Codex Hash',
-    'TMR redundância modular tripla',
-    'FRAM rad-hard',
-    'side-channel attacks',
-    'EMP shielding',
-    'deniable encryption',
-    'Ulisses Flores blockchain',
-    'hardware security module',
-    'cold storage nuclear',
-  ],
-  authors: [
-    {
-      name: upkfMeta.publicDisplayName || upkfMeta.displayName,
-      url: `${upkfMeta.primaryWebsite}/identidade`,
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const { locale: raw } = await params;
+  const locale = (isLocale(raw) ? raw : defaultLocale) as Locale;
+  const dict = await getDictionary(locale);
+  const t = dict.projetoPsi.whitepaperMeta;
+
+  return {
+    title: t.title,
+    description: t.description,
+    keywords: [...t.keywords],
+    authors: [{ name: upkfMeta.publicDisplayName || upkfMeta.displayName, url: `${upkfMeta.primaryWebsite}/identidade` }],
+    alternates: { canonical: canonicalPath },
+    openGraph: {
+      type: 'article',
+      url: `${upkfMeta.primaryWebsite}${canonicalPath}`,
+      title: t.ogTitle,
+      description: t.ogDescription,
+      locale: localeToOgLocale[locale],
     },
-  ],
-  alternates: {
-    canonical: canonicalPath,
-  },
-  openGraph: {
-    type: 'article',
-    url: `${upkfMeta.primaryWebsite}${canonicalPath}`,
-    title: 'Projeto Ψ (PSI): Hardware Soberano e Zero Trust em Silício | Ulisses Flores',
-    description:
-      'Whitepaper Técnico: Arquitetura de custódia de ativos digitais de classe nuclear com SRAM PUF, XMSS pós-quântico e Redundância TMR aeroespacial.',
-    locale: 'pt_BR',
-  },
-};
+  };
+}
 
 interface PageProps {
   params: Promise<{ locale: string }>;

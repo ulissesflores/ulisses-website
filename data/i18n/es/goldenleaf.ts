@@ -1,4 +1,22 @@
 export const goldenleaf = {
+  meta: {
+    title: 'GoldenLeaf — Micología Inteligente con IoT e IA | Ulisses Flores',
+    description: 'GoldenLeaf es un proyecto de micología inteligente que combina sensores IoT, IA predictiva y arquitecturas cloudless para el cultivo autónomo de setas gourmet. Desarrollado por Ulisses Flores.',
+    keywords: [
+      "micología inteligente",
+      "IoT setas",
+      "cultivo autónomo",
+      "IA agricultura",
+      "setas gourmet",
+      "sensores IoT",
+      "cloudless IoT",
+      "soberanía de datos",
+      "Ulisses Flores IoT",
+      "agricultura inteligente"
+    ],
+    ogTitle: 'GoldenLeaf — Micología Inteligente con IoT e IA | Ulisses Flores',
+    ogDescription: 'Proyecto de micología inteligente con IoT, IA predictiva y arquitecturas cloudless para cultivo autónomo. Por Ulisses Flores.'
+  },
   breadcrumb: {
     simulations: 'Simulaciones',
     goldenleaf: 'GoldenLeaf'
@@ -14,7 +32,7 @@ export const goldenleaf = {
       "Arquitecto de Software",
       "Desarrollador de Hardware",
       "Consultor Estratégico de IA",
-      "Estudiante de Máster AGTU (EE. UU.)",
+      "Estudiante de Maestría AGTU (EE. UU.)",
       "IoT & Edge Computing",
       "Soberanía de Datos"
     ]
@@ -51,7 +69,7 @@ export const goldenleaf = {
   },
   author: {
     label: 'Investigación y Desarrollo',
-    description: 'GoldenLeaf desarrollado por Ulisses Flores — Consultor Estratégico de IA, Arquitecto de Software, Desarrollador de Hardware y Estudiante de Máster en IA por AGTU (EE. UU.).'
+    description: 'GoldenLeaf desarrollado por Ulisses Flores — Consultor Estratégico de IA, Arquitecto de Software, Desarrollador de Hardware y Estudiante de Maestría en IA por AGTU (EE. UU.).'
   },
   cta: {
     title: '¿Interesado en IoT soberana e IA aplicada a la agricultura?',

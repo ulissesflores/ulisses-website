@@ -1,9 +1,24 @@
 export const mummRa = {
-  backLink: 'Torna a Simulazioni',
+  meta: {
+    title: 'Mumm-Ra | Chatbot Sperimentale di Umorismo Nero via WhatsApp | Ulisses Flores',
+    description: 'Mumm-Ra è un chatbot sperimentale via WhatsApp creato da Ulisses Flores. Ispirato al cattivo dei ThunderCats: ti insulta, si lamenta, ti chiama verme — ma risponde sempre. Gratuito, in BETA.',
+    keywords: [
+      "chatbot WhatsApp umorismo nero",
+      "Mumm-Ra chatbot",
+      "chatbot sperimentale IA",
+      "ThunderCats chatbot",
+      "ingegneria di prompt",
+      "Ulisses Flores chatbot",
+      "IA conversazionale WhatsApp"
+    ],
+    ogTitle: 'Mumm-Ra | Chatbot Sperimentale di Umorismo Nero via WhatsApp | Ulisses Flores',
+    ogDescription: 'Chatbot sperimentale creato da Ulisses Flores. Ispirato al cattivo immortale dei ThunderCats. Gratuito via WhatsApp.'
+  },
+  backLink: 'Torna alle Simulazioni',
   hero: {
     badge: 'Strumento Sperimentale',
     h1: 'Mumm-Ra',
-    lead: 'Il malvagio immortale dei ThunderCats ora vive nel tuo WhatsApp. Umorismo nero, sarcasmo pesante e risposte acide — ma in fondo, ti aiuta sempre.',
+    lead: 'Il cattivo immortale dei ThunderCats ora vive nel tuo WhatsApp. Umorismo nero, sarcasmo pesante e risposte acide — ma in fondo, ti aiuta sempre.',
     description: 'Ispirato a Mumm-Ra dei cartoni animati degli anni \'90, questo chatbot ha la personalità del cattivo più iconico della serie: si lamenta di essere invocato, ti chiama "verme" e "larva umana", ma ti fornisce la risposta di cui hai bisogno. È al 100% recitazione — puro divertimento con umorismo nero.',
     createdBy: 'Creato da',
     authorDesc: 'Ulisses Flores — Consulente Strategico di IA, Professore Invitato, Relatore e Studente di Master in Intelligenza Artificiale presso AGTU (USA). Mumm-Ra è un laboratorio di ricerca in ingegneria di prompt avanzata e design di personalità per IA conversazionali.',
@@ -12,12 +27,12 @@ export const mummRa = {
   },
   cta: {
     title: 'Invoca Mumm-Ra',
-    description: 'Invia un messaggio tramite WhatsApp e preparati a essere insultato. Si lamenterà, ti chiamerà verme, ti chiederà perché è stato invocato — ma risponderà. Risponde sempre.',
+    description: 'Invia un messaggio via WhatsApp e preparati a essere insultato. Si lamenterà, ti chiamerà verme, ti chiederà perché è stato invocato — ma risponderà. Risponde sempre.',
     button: 'Apri su WhatsApp'
   },
   personality: {
     title: 'La personalità del cattivo',
-    description: 'Mumm-Ra è un chatbot con una personalità propria: risponde come se fosse il malvagio immortale dei ThunderCats degli anni \'90. Ciò significa che ti insulterà, si lamenterà, dimostrerà superiorità cosmica — e poi ti aiuterà. È puro umorismo nero. Niente è reale, tutto è un personaggio.',
+    description: 'Mumm-Ra è un chatbot con una personalità propria: risponde come se fosse il cattivo immortale dei ThunderCats degli anni \'90. Ciò significa che ti insulterà, si lamenterà, dimostrerà superiorità cosmica — e poi ti aiuterà. È puro umorismo nero. Nulla è reale, tutto è un personaggio.',
     traits: [
       {
         title: 'Insulti creativi',
@@ -43,7 +58,7 @@ export const mummRa = {
       {
         step: '01',
         title: 'Invoca Mumm-Ra',
-        description: 'Invia un messaggio tramite WhatsApp al numero +55 11 5286-8689. Qualsiasi argomento va bene — risponde su tutto.'
+        description: 'Invia un messaggio via WhatsApp al numero +55 11 5286-8689. Qualsiasi argomento va bene — risponde su tutto.'
       },
       {
         step: '02',
@@ -59,7 +74,7 @@ export const mummRa = {
   },
   groups: {
     title: 'Aggiungi ai gruppi WhatsApp',
-    description: 'Mumm-Ra può essere aggiunto ai gruppi WhatsApp. Partecipa alle conversazioni con la stessa personalità acida — insulta tutti allo stesso modo, senza favoritismi. Perfetto per i gruppi che amano una dose di umorismo nero.',
+    description: 'Mumm-Ra può essere aggiunto ai gruppi WhatsApp. Partecipa alle conversazioni con la stessa personalità acida — insulta tutti allo stesso modo, senza favoritismi. Perfetto per i gruppi che apprezzano una dose di umorismo nero.',
     note: 'Basta aggiungere il numero +55 11 5286-8689 al gruppo. Inizia a rispondere automaticamente quando menzionato o quando qualcuno fa una domanda diretta.'
   },
   examples: {
@@ -76,14 +91,14 @@ export const mummRa = {
         mumra: 'Larva umana, la tua incapacità matematica è un insulto all\'esistenza. Il 15% di 340 è 51. Ora lasciami dormire.'
       },
       {
-        user: 'Mi spieghi cos\'è la blockchain',
-        mumra: 'Ah, meraviglia. Un verme vuole capire la tecnologia. La blockchain è un registro distribuito e immutabile... *spiega con dettagli tecnici mentre insulta la tua intelligenza*'
+        user: 'Mi spieghi cos\'è blockchain',
+        mumra: 'Ah, meraviglia. Un verme vuole capire la tecnologia. Blockchain è un registro distribuito e immutabile... *spiega con dettagli tecnici mentre insulta la tua intelligenza*'
       }
     ]
   },
   beta: {
     title: 'Progetto in BETA',
-    description: 'Mumm-Ra è in fase di test. Ciò significa che potrebbe presentare bug, risposte inaspettate o momenti di indisponibilità. Stiamo regolando la personalità, la capacità di risposta e l\'integrazione con i gruppi. Se riscontri problemi, sii paziente — anche i cattivi immortali hanno bisogno di manutenzione.'
+    description: 'Mumm-Ra è in fase di test. Ciò significa che potrebbe avere bug, risposte inaspettate o momenti di indisponibilità. Stiamo regolando la personalità, la capacità di risposta e l\'integrazione con i gruppi. Se riscontri problemi, sii paziente — anche i cattivi immortali hanno bisogno di manutenzione.'
   },
   faq: {
     sectionTitle: 'Domande su Mumm-Ra'

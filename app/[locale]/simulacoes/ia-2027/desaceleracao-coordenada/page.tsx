@@ -1,4 +1,4 @@
-import { defaultLocale, isLocale } from '@/data/i18n';
+import { defaultLocale, isLocale, localeToOgLocale } from '@/data/i18n';
 import type { Locale } from '@/data/i18n';
 import type { Metadata } from 'next';
 import Link from 'next/link';
@@ -16,45 +16,39 @@ interface PageProps {
   params: Promise<{ locale: string }>;
 }
 
-export const metadata: Metadata = {
-  title: 'Desaceleração Coordenada: Cenário Slowdown da IA 2027 | Ulisses Flores',
-  description:
-    'Explore o cenário de Desaceleração Coordenada da simulação IA 2027: pausa global, alinhamento técnico e regulamentação internacional da AGI. Análise por Ulisses Flores — Consultor em IA, Professor, Palestrante e Mestrando AGTU (EUA).',
-  keywords: [
-    'desaceleração coordenada IA',
-    'slowdown AGI',
-    'alinhamento de IA',
-    'regulamentação inteligência artificial',
-    'segurança IA AGI',
-    'cenários futuros IA',
-    'soberania tecnológica',
-  ],
-  authors: [
-    {
-      name: upkfMeta.publicDisplayName || upkfMeta.displayName,
-      url: `${upkfMeta.primaryWebsite}/identidade`,
-    },
-  ],
-  alternates: {
-    canonical: canonicalPath,
-  },
-  openGraph: {
-    type: 'article',
-    url: `${upkfMeta.primaryWebsite}${canonicalPath}`,
-    title: 'Desaceleração Coordenada: Cenário Slowdown da IA 2027',
-    description:
-      'Explore o cenário de Desaceleração Coordenada da simulação IA 2027: pausa global, alinhamento técnico e regulamentação internacional da AGI.',
-    locale: 'pt_BR',
-    images: [
-      {
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const { locale: raw } = await params;
+  const locale = (isLocale(raw) ? raw : defaultLocale) as Locale;
+  const dict = await getDictionary(locale);
+  const t = dict.ia2027;
+
+  return {
+    title: t.slowdownMeta.title,
+    description: t.slowdownMeta.description,
+    keywords: [...t.slowdownMeta.keywords],
+    authors: [{ name: upkfMeta.publicDisplayName || upkfMeta.displayName, url: `${upkfMeta.primaryWebsite}/identidade` }],
+    alternates: { canonical: canonicalPath },
+    openGraph: {
+      type: 'article',
+      url: `${upkfMeta.primaryWebsite}${canonicalPath}`,
+      title: t.slowdownMeta.ogTitle,
+      description: t.slowdownMeta.ogDescription,
+      locale: localeToOgLocale[locale],
+      images: [{
         url: `${upkfMeta.primaryWebsite}/simulacao-ia-2027-futuro-agi-ulisses-flores.jpg`,
         width: 2752,
         height: 1536,
-        alt: 'IA 2027 · Desaceleração Coordenada — Cenário Slowdown',
-      },
-    ],
-  },
-};
+        alt: t.slowdownMeta.ogImageAlt,
+      }],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: t.slowdownMeta.ogTitle,
+      description: t.slowdownMeta.ogDescription,
+      images: [`${upkfMeta.primaryWebsite}/simulacao-ia-2027-futuro-agi-ulisses-flores.jpg`],
+    },
+  };
+}
 
 export default async function DesaceleracaoCoordenadaPage({ params }: PageProps) {
   const { locale: rawLocale } = await params;

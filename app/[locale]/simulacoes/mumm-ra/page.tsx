@@ -1,4 +1,4 @@
-import { defaultLocale, isLocale } from '@/data/i18n';
+import { defaultLocale, isLocale, localeToOgLocale } from '@/data/i18n';
 import type { Locale } from '@/data/i18n';
 import type { Metadata } from 'next';
 import Link from 'next/link';
@@ -16,37 +16,27 @@ interface PageProps {
   params: Promise<{ locale: string }>;
 }
 
-export const metadata: Metadata = {
-  title: 'Mumm-Ra | Chatbot Experimental de Humor Negro via WhatsApp | Ulisses Flores',
-  description:
-    'Mumm-Ra é um chatbot experimental via WhatsApp criado por Ulisses Flores. Inspirado no vilão dos ThunderCats: te xinga, reclama, te chama de verme — mas sempre responde. Gratuito, em BETA.',
-  keywords: [
-    'chatbot WhatsApp humor negro',
-    'Mumm-Ra chatbot',
-    'chatbot experimental IA',
-    'ThunderCats chatbot',
-    'engenharia de prompt',
-    'Ulisses Flores chatbot',
-    'IA conversacional WhatsApp',
-  ],
-  authors: [
-    {
-      name: upkfMeta.publicDisplayName || upkfMeta.displayName,
-      url: `${upkfMeta.primaryWebsite}/identidade`,
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const { locale: raw } = await params;
+  const locale = (isLocale(raw) ? raw : defaultLocale) as Locale;
+  const dict = await getDictionary(locale);
+  const t = dict.mummRa;
+
+  return {
+    title: t.meta.title,
+    description: t.meta.description,
+    keywords: [...t.meta.keywords],
+    authors: [{ name: upkfMeta.publicDisplayName || upkfMeta.displayName, url: `${upkfMeta.primaryWebsite}/identidade` }],
+    alternates: { canonical: canonicalPath },
+    openGraph: {
+      type: 'website',
+      url: `${upkfMeta.primaryWebsite}${canonicalPath}`,
+      title: t.meta.ogTitle,
+      description: t.meta.ogDescription,
+      locale: localeToOgLocale[locale],
     },
-  ],
-  alternates: {
-    canonical: canonicalPath,
-  },
-  openGraph: {
-    type: 'website',
-    url: `${upkfMeta.primaryWebsite}${canonicalPath}`,
-    title: 'Mumm-Ra | Chatbot Experimental de Humor Negro via WhatsApp | Ulisses Flores',
-    description:
-      'Chatbot experimental criado por Ulisses Flores. Inspirado no vilão imortal dos ThunderCats. Gratuito via WhatsApp.',
-    locale: 'pt_BR',
-  },
-};
+  };
+}
 
 const traitIcons = [Skull, AlertTriangle, Zap, Sparkles] as const;
 

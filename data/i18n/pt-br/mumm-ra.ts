@@ -1,4 +1,11 @@
 export const mummRa = {
+  meta: {
+    title: 'Mumm-Ra | Chatbot Experimental de Humor Negro via WhatsApp | Ulisses Flores',
+    description: 'Mumm-Ra é um chatbot experimental via WhatsApp criado por Ulisses Flores. Inspirado no vilão dos ThunderCats: te xinga, reclama, te chama de verme — mas sempre responde. Gratuito, em BETA.',
+    keywords: ['chatbot WhatsApp humor negro', 'Mumm-Ra chatbot', 'chatbot experimental IA', 'ThunderCats chatbot', 'engenharia de prompt', 'Ulisses Flores chatbot', 'IA conversacional WhatsApp'],
+    ogTitle: 'Mumm-Ra | Chatbot Experimental de Humor Negro via WhatsApp | Ulisses Flores',
+    ogDescription: 'Chatbot experimental criado por Ulisses Flores. Inspirado no vilão imortal dos ThunderCats. Gratuito via WhatsApp.',
+  },
   backLink: 'Voltar para Simulações',
   hero: {
     badge: 'Ferramenta Experimental',

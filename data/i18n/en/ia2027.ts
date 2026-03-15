@@ -1,4 +1,52 @@
 export const ia2027 = {
+  meta: {
+    title: 'AI 2027: Interactive Simulation on the Future of Artificial Intelligence | AGI and Sovereignty',
+    description: 'Explore the only interactive simulation in Portuguese about the arrival of AGI (Artificial General Intelligence). Analysis of future scenarios, technological race, and economic impact by Ulisses Flores — Scientist, Consultant, Professor, and Speaker.',
+    keywords: [
+      "future of artificial intelligence",
+      "future AI scenarios",
+      "what is AGI",
+      "artificial general intelligence",
+      "technological sovereignty",
+      "impact of AI on the market",
+      "autonomous agents"
+    ],
+    ogTitle: 'AI 2027: Interactive Simulation on the Future of Artificial Intelligence | AGI and Sovereignty',
+    ogDescription: 'Explore the only interactive simulation in Portuguese about the arrival of AGI. Analysis of future scenarios, technological race, and economic impact by Ulisses Flores — Scientist, Consultant, Professor, and Speaker.',
+    ogImageAlt: 'Strategic Simulation AI-2027 by Ulisses Flores'
+  },
+  raceMeta: {
+    title: 'Strategic Race: AI 2027 Race Scenario | Ulisses Flores',
+    description: 'Explore the Strategic Race scenario of the AI 2027 simulation: maximum acceleration towards AGI, escalation of autonomy, and risk of loss of human control. Analysis by Ulisses Flores — AI Consultant, Professor, Speaker, and AGTU (USA) Master\'s Student.',
+    keywords: [
+      "strategic AI race",
+      "AGI race",
+      "artificial intelligence arms race",
+      "superintelligence risks",
+      "AGI loss of control",
+      "future AI scenarios",
+      "technological sovereignty"
+    ],
+    ogTitle: 'Strategic Race: AI 2027 Race Scenario',
+    ogDescription: 'Explore the Strategic Race scenario of the AI 2027 simulation: maximum acceleration towards AGI, escalation of autonomy, and risk of loss of human control.',
+    ogImageAlt: 'AI 2027 · Strategic Race — Race Scenario'
+  },
+  slowdownMeta: {
+    title: 'Coordinated Slowdown: AI 2027 Slowdown Scenario | Ulisses Flores',
+    description: 'Explore the Coordinated Slowdown scenario of the AI 2027 simulation: global pause, technical alignment, and international AGI regulation. Analysis by Ulisses Flores — AI Consultant, Professor, Speaker, and AGTU (USA) Master\'s Student.',
+    keywords: [
+      "coordinated AI slowdown",
+      "AGI slowdown",
+      "AI alignment",
+      "artificial intelligence regulation",
+      "AI AGI safety",
+      "future AI scenarios",
+      "technological sovereignty"
+    ],
+    ogTitle: 'Coordinated Slowdown: AI 2027 Slowdown Scenario',
+    ogDescription: 'Explore the Coordinated Slowdown scenario of the AI 2027 simulation: global pause, technical alignment, and international AGI regulation.',
+    ogImageAlt: 'AI 2027 · Coordinated Slowdown — Slowdown Scenario'
+  },
   breadcrumb: {
     simulations: 'Strategic Simulations',
     scenarios: 'Future AI Scenarios',
@@ -7,7 +55,7 @@ export const ia2027 = {
   },
   mainPage: {
     h1: 'AI 2027: Interactive Simulation on the Future of Artificial Intelligence',
-    lead: 'The CEOs of OpenAI, Google DeepMind, and Anthropic converge on a critical point: Artificial General Intelligence (AGI) may be achieved before the end of this decade. When machines surpass human cognitive capacity, the rules governing the global economy, labor market, and geopolitical power will be irreversibly rewritten. This simulation interactively models the coming years of this transition.',
+    lead: 'The CEOs of OpenAI, Google DeepMind, and Anthropic converge on a critical point: Artificial General Intelligence (AGI) may be achieved before the end of this decade. When machines surpass human cognitive capacity, the rules governing the global economy, the job market, and geopolitical power will be irreversibly rewritten. This simulation interactively models the coming years of this transition.',
     authority: {
       kicker: 'Why this matters',
       text: 'Technological sovereignty is no longer science fiction; it is the most urgent economic and architectural dispute of our time. As a scientist, AI consultant, and creator of this adaptation, I structured this scenario based on models from Harvard, MIRI, and AI safety analysts. The central breaking point explored here is: what happens to the economy and systems infrastructure when AI begins to recursively accelerate its own research? The path we choose will define the future.'
@@ -27,7 +75,7 @@ export const ia2027 = {
       },
       {
         title: 'Architecture and Technical Foundations',
-        body: 'Expandable footnotes detailing the systems engineering and macroeconomic impact behind each prediction.'
+        body: 'Expandable footnotes detailing the systems engineering and macroeconomic impact behind each forecast.'
       }
     ],
     cta: 'Start Simulation →',
@@ -41,7 +89,7 @@ export const ia2027 = {
     h1: 'AI 2027 · Strategic Race',
     lead: 'The scenario where companies and nations accelerate unrestrainedly towards Artificial General Intelligence. Escalation of autonomy, concentration of power, and progressive risk of loss of human control over superintelligent AI systems.',
     alert: {
-      kicker: 'Alternative Scenario — Final Race',
+      kicker: 'Alternative Scenario — Race Ending',
       text: 'This is the maximum acceleration branch of the AI 2027 simulation. The narrative explores what happens when the competition for technological dominance overrides any containment efforts: who wins the race, what is lost along the way, and whether human control can be maintained in a world of unaligned AGI.'
     },
     ctaFull: '← View Full Simulation',
@@ -54,7 +102,7 @@ export const ia2027 = {
     h1: 'AI 2027 · Coordinated Slowdown',
     lead: 'The scenario where humanity decides to slow down — in a coordinated and international manner — the race towards Artificial General Intelligence. Focus on technical alignment, global regulation, and containment of AGI\'s existential risks.',
     alert: {
-      kicker: 'Alternative Scenario — Final Slowdown',
+      kicker: 'Alternative Scenario — Slowdown Ending',
       text: 'This is the containment branch of the AI 2027 simulation. The narrative explores what happens when global institutions, AI labs, and governments converge on a coordinated pause: the economic costs, the safety gains, and the challenges of maintaining alignment under competitive pressure.'
     },
     ctaFull: '← View Full Simulation',
@@ -72,16 +120,16 @@ export const ia2027 = {
     activeCopies: 'active copies',
     speed: 'speed',
     capabilities: 'Capabilities',
-    noCapabilities: 'No capabilities data for this period.',
+    noCapabilities: 'No capability data for this period.',
     singularityKicker: 'Singularity Point',
     strategicChoice: 'The Strategic Choice',
     choiceDescription: 'We have reached the event horizon of Artificial General Intelligence (AGI). At this critical point in the simulation, humanity and corporations face an existential and economic dilemma. The decision made here irrevocably alters geopolitics, the financial market, and the future of our species. Which strategic path should your board of directors prepare to face?',
     slowdownLabel: 'Coordinated Slowdown',
     slowdownTitle: 'Pull the Brake',
-    slowdownDescription: 'The option for prudence. Governments and big tech agree to impose drastic regulatory brakes and international containment treaties. AI progress is slowed for the sake of safety and technical alignment, but the risk of economic stagnation and loss of sovereignty to rogue nations skyrockets.',
+    slowdownDescription: 'The option for prudence. Governments and big tech agree to impose drastic regulatory brakes and international containment treaties. AI progress is slowed down for the sake of safety and technical alignment, but the risk of economic stagnation and loss of sovereignty to rogue nations skyrockets.',
     raceLabel: 'Strategic Race',
-    raceTitle: 'Accelerate the Cart',
-    raceDescription: 'The accelerator to the max. The premise that "whoever masters AGI first will dictate the rules of the world." Without regulatory constraints, development reaches escape velocity. The economy explodes into hyper-productivity, but the risk of adversarial misalignment, infrastructure collapse, and loss of human control becomes imminent.',
+    raceTitle: 'Full Speed Ahead',
+    raceDescription: 'The accelerator to the max. The premise that "whoever dominates AGI first will dictate the rules of the world." Without regulatory constraints, development reaches escape velocity. The economy explodes in hyperproductivity, but the risk of adversarial misalignment, infrastructure collapse, and loss of human control becomes imminent.',
     alternateEndings: 'Alternative Endings',
     activeBranch: 'Active branch:',
     backToBifurcation: '← Back to Bifurcation',

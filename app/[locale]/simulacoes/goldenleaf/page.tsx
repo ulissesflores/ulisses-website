@@ -1,4 +1,4 @@
-import { defaultLocale, isLocale } from '@/data/i18n';
+import { defaultLocale, isLocale, localeToOgLocale } from '@/data/i18n';
 import type { Locale } from '@/data/i18n';
 import type { Metadata } from 'next';
 import Link from 'next/link';
@@ -14,40 +14,27 @@ interface PageProps {
   params: Promise<{ locale: string }>;
 }
 
-export const metadata: Metadata = {
-  title: 'GoldenLeaf — Micologia Inteligente com IoT e IA | Ulisses Flores',
-  description:
-    'GoldenLeaf é um projeto de micologia inteligente que combina sensores IoT, IA preditiva e arquiteturas cloudless para cultivo autônomo de cogumelos gourmet. Desenvolvido por Ulisses Flores.',
-  keywords: [
-    'micologia inteligente',
-    'IoT cogumelos',
-    'cultivo autônomo',
-    'IA agricultura',
-    'cogumelos gourmet',
-    'sensores IoT',
-    'cloudless IoT',
-    'soberania de dados',
-    'Ulisses Flores IoT',
-    'agricultura inteligente',
-  ],
-  authors: [
-    {
-      name: upkfMeta.publicDisplayName || upkfMeta.displayName,
-      url: `${upkfMeta.primaryWebsite}/identidade`,
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const { locale: raw } = await params;
+  const locale = (isLocale(raw) ? raw : defaultLocale) as Locale;
+  const dict = await getDictionary(locale);
+  const t = dict.goldenleaf;
+
+  return {
+    title: t.meta.title,
+    description: t.meta.description,
+    keywords: [...t.meta.keywords],
+    authors: [{ name: upkfMeta.publicDisplayName || upkfMeta.displayName, url: `${upkfMeta.primaryWebsite}/identidade` }],
+    alternates: { canonical: canonicalPath },
+    openGraph: {
+      type: 'website',
+      url: `${upkfMeta.primaryWebsite}${canonicalPath}`,
+      title: t.meta.ogTitle,
+      description: t.meta.ogDescription,
+      locale: localeToOgLocale[locale],
     },
-  ],
-  alternates: {
-    canonical: canonicalPath,
-  },
-  openGraph: {
-    type: 'website',
-    url: `${upkfMeta.primaryWebsite}${canonicalPath}`,
-    title: 'GoldenLeaf — Micologia Inteligente com IoT e IA | Ulisses Flores',
-    description:
-      'Projeto de micologia inteligente com IoT, IA preditiva e arquiteturas cloudless para cultivo autônomo. Por Ulisses Flores.',
-    locale: 'pt_BR',
-  },
-};
+  };
+}
 
 export default async function GoldenLeafPage({ params }: PageProps) {
   const { locale: rawLocale } = await params;

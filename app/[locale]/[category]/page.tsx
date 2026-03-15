@@ -1,4 +1,4 @@
-import { defaultLocale, isLocale } from '@/data/i18n';
+import { defaultLocale, isLocale, localeToOgLocale } from '@/data/i18n';
 import type { Locale } from '@/data/i18n';
 import type { Metadata } from 'next';
 import Link from 'next/link';
@@ -48,7 +48,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       title: story ? `${story.h1} | Ulisses Flores` : collection.heading,
       description: story?.metaDescription || collection.description,
       url: `${upkfMeta.primaryWebsite}/${category}`,
-      locale: 'pt_BR',
+      locale: localeToOgLocale[locale],
     },
   };
 }

@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { upkfMeta } from '@/data/generated/upkf.generated';
 import { AuthorHubCard } from '@/components/author-hub-card';
 import { FaqSection } from '@/components/faq-section';
-import { isLocale, defaultLocale, type Locale } from '@/data/i18n';
+import { isLocale, defaultLocale, localeToOgLocale, type Locale } from '@/data/i18n';
 import { getDictionary } from '@/lib/get-dictionary';
 import { buildLanguageAlternates } from '@/data/seo';
 
@@ -28,7 +28,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       url: `https://ulissesflores.com${canonicalPath}`,
       title: t.meta.ogTitle,
       description: t.meta.ogDescription,
-      locale: 'pt_BR',
+      locale: localeToOgLocale[locale],
     },
   };
 }

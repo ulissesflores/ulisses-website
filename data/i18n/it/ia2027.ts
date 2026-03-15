@@ -1,16 +1,64 @@
 export const ia2027 = {
+  meta: {
+    title: 'IA 2027: Simulazione Interattiva sul Futuro dell\'Intelligenza Artificiale | AGI e Sovranità',
+    description: 'Esplora l\'unica simulazione interattiva in italiano sull\'arrivo dell\'AGI (Intelligenza Artificiale Generale). Analisi di scenari futuri, corsa tecnologica e impatto economico a cura di Ulisses Flores — Scienziato, Consulente, Professore e Relatore.',
+    keywords: [
+      "futuro dell'intelligenza artificiale",
+      "scenari futuri IA",
+      "cos'è l'AGI",
+      "intelligenza artificiale generale",
+      "sovranità tecnologica",
+      "impatto dell'IA sul mercato",
+      "agenti autonomi"
+    ],
+    ogTitle: 'IA 2027: Simulazione Interattiva sul Futuro dell\'Intelligenza Artificiale | AGI e Sovranità',
+    ogDescription: 'Esplora l\'unica simulazione interattiva in italiano sull\'arrivo dell\'AGI. Analisi di scenari futuri, corsa tecnologica e impatto economico a cura di Ulisses Flores — Scienziato, Consulente, Professore e Relatore.',
+    ogImageAlt: 'Simulazione Strategica IA-2027 di Ulisses Flores'
+  },
+  raceMeta: {
+    title: 'Corsa Strategica: Scenario Race dell\'IA 2027 | Ulisses Flores',
+    description: 'Esplora lo scenario di Corsa Strategica della simulazione IA 2027: massima accelerazione verso l\'AGI, escalation dell\'autonomia e rischio di perdita del controllo umano. Analisi a cura di Ulisses Flores — Consulente IA, Professore, Relatore e Studente di Master AGTU (USA).',
+    keywords: [
+      "corsa strategica IA",
+      "race AGI",
+      "corsa agli armamenti intelligenza artificiale",
+      "rischi di superintelligenza",
+      "AGI perdita di controllo",
+      "scenari futuri IA",
+      "sovranità tecnologica"
+    ],
+    ogTitle: 'Corsa Strategica: Scenario Race dell\'IA 2027',
+    ogDescription: 'Esplora lo scenario di Corsa Strategica della simulazione IA 2027: massima accelerazione verso l\'AGI, escalation dell\'autonomia e rischio di perdita del controllo umano.',
+    ogImageAlt: 'IA 2027 · Corsa Strategica — Scenario Race'
+  },
+  slowdownMeta: {
+    title: 'Decelerazione Coordinata: Scenario Slowdown dell\'IA 2027 | Ulisses Flores',
+    description: 'Esplora lo scenario di Decelerazione Coordinata della simulazione IA 2027: pausa globale, allineamento tecnico e regolamentazione internazionale dell\'AGI. Analisi a cura di Ulisses Flores — Consulente IA, Professore, Relatore e Studente di Master AGTU (USA).',
+    keywords: [
+      "decelerazione coordinata IA",
+      "slowdown AGI",
+      "allineamento dell'IA",
+      "regolamentazione intelligenza artificiale",
+      "sicurezza IA AGI",
+      "scenari futuri IA",
+      "sovranità tecnologica"
+    ],
+    ogTitle: 'Decelerazione Coordinata: Scenario Slowdown dell\'IA 2027',
+    ogDescription: 'Esplora lo scenario di Decelerazione Coordinata della simulazione IA 2027: pausa globale, allineamento tecnico e regolamentazione internazionale dell\'AGI.',
+    ogImageAlt: 'IA 2027 · Decelerazione Coordinata — Scenario Slowdown'
+  },
   breadcrumb: {
     simulations: 'Simulazioni Strategiche',
     scenarios: 'Scenari Futuri dell\'IA',
     race: 'Corsa Strategica',
-    slowdown: 'Rallentamento Coordinato'
+    slowdown: 'Decelerazione Coordinata'
   },
   mainPage: {
     h1: 'IA 2027: Simulazione Interattiva sul Futuro dell\'Intelligenza Artificiale',
     lead: 'I CEO di OpenAI, Google DeepMind e Anthropic convergono su un punto critico: l\'Intelligenza Artificiale Generale (AGI) potrebbe essere raggiunta prima della fine di questo decennio. Quando la macchina supererà la capacità cognitiva umana, le regole che governano l\'economia globale, il mercato del lavoro e il potere geopolitico saranno riscritte in modo irreversibile. Questa simulazione modella in modo interattivo i prossimi anni di questa transizione.',
     authority: {
       kicker: 'Perché è importante',
-      text: 'La sovranità tecnologica non è più fantascienza; è la disputa economica e architettonica più urgente del nostro tempo. Come scienziato, consulente in IA e creatore di questo adattamento, ho strutturato questo scenario basandomi su modellizzazioni di Harvard, MIRI e analisti di sicurezza dell\'IA. Il punto di rottura centrale esplorato qui è: cosa succede all\'economia e all\'infrastruttura dei sistemi quando l\'IA inizia ad accelerare la propria ricerca in modo ricorsivo? Il ramo che sceglieremo definirà il futuro.'
+      text: 'La sovranità tecnologica non è più fantascienza; è la disputa economica e architettonica più urgente del nostro tempo. Come scienziato, consulente IA e creatore di questo adattamento, ho strutturato questo scenario basandomi su modellizzazioni di Harvard, MIRI e analisti della sicurezza IA. Il punto di rottura centrale esplorato qui è: cosa succede all\'economia e all\'infrastruttura dei sistemi quando l\'IA inizia ad accelerare la propria ricerca in modo ricorsivo? Il ramo che sceglieremo definirà il futuro.'
     },
     features: [
       {
@@ -32,35 +80,35 @@ export const ia2027 = {
     ],
     cta: 'Avvia Simulazione →',
     ctaNote: 'Traduzione e adattamento dello scenario originale pubblicato su',
-    ctaNoteEnd: '— basato su modellizzazioni di Harvard, MIRI e analisti di sicurezza dell\'IA.',
+    ctaNoteEnd: '— basato su modellizzazioni di Harvard, MIRI e analisti della sicurezza IA.',
     authorLabel: 'Traduzione & Curatela',
-    authorDescription: 'Adattamento, curatela e analisi tecnica di Ulisses Flores — Scienziato, Consulente in IA, Professore, Relatore e Studente di Master.',
+    authorDescription: 'Adattamento, curatela e analisi tecnica a cura di Ulisses Flores — Scienziato, Consulente IA, Professore, Relatore e Studente di Master.',
     faqTitle: 'Domande su IA 2027 e il Futuro dell\'Intelligenza Artificiale'
   },
   racePage: {
     h1: 'IA 2027 · Corsa Strategica',
     lead: 'Lo scenario in cui aziende e nazioni accelerano senza restrizioni verso l\'Intelligenza Artificiale Generale. Escalation dell\'autonomia, concentrazione del potere e rischio progressivo di perdita del controllo umano sui sistemi di IA superintelligenti.',
     alert: {
-      kicker: 'Scenario Alternativo — Final Race',
-      text: 'Questo è il ramo di massima accelerazione della simulazione IA 2027. La narrativa esplora cosa succede quando la competizione per il dominio tecnologico supera ogni sforzo di contenimento: chi vince la corsa, cosa si perde lungo il percorso e se il controllo umano può essere mantenuto in un mondo di AGI non allineata.'
+      kicker: 'Scenario Alternativo — Finale Race',
+      text: 'Questo è il ramo di massima accelerazione della simulazione IA 2027. La narrazione esplora cosa succede quando la competizione per il dominio tecnologico supera qualsiasi sforzo di contenimento: chi vince la corsa, cosa si perde lungo il percorso e se il controllo umano può essere mantenuto in un mondo di AGI non allineata.'
     },
     ctaFull: '← Vedi Simulazione Completa',
-    ctaAlt: 'Vedi scenario alternativo: Rallentamento Coordinato →',
+    ctaAlt: 'Vedi scenario alternativo: Decelerazione Coordinata →',
     authorLabel: 'Traduzione & Curatela',
-    authorDescription: 'Adattamento, curatela e analisi tecnica di Ulisses Flores — Scienziato, Consulente in IA, Professore, Relatore e Studente di Master.',
+    authorDescription: 'Adattamento, curatela e analisi tecnica a cura di Ulisses Flores — Scienziato, Consulente IA, Professore, Relatore e Studente di Master.',
     faqTitle: 'Domande su IA 2027 e il Futuro dell\'Intelligenza Artificiale'
   },
   slowdownPage: {
-    h1: 'IA 2027 · Rallentamento Coordinato',
+    h1: 'IA 2027 · Decelerazione Coordinata',
     lead: 'Lo scenario in cui l\'umanità decide di rallentare — in modo coordinato e internazionale — la corsa verso l\'Intelligenza Artificiale Generale. Focus sull\'allineamento tecnico, la regolamentazione globale e il contenimento dei rischi esistenziali dell\'AGI.',
     alert: {
-      kicker: 'Scenario Alternativo — Final Slowdown',
-      text: 'Questo è il ramo di contenimento della simulazione IA 2027. La narrativa esplora cosa succede quando istituzioni globali, laboratori di IA e governi convergono in una pausa coordinata: i costi economici, i guadagni in sicurezza e le sfide di mantenere l\'allineamento sotto pressione competitiva.'
+      kicker: 'Scenario Alternativo — Finale Slowdown',
+      text: 'Questo è il ramo di contenimento della simulazione IA 2027. La narrazione esplora cosa succede quando istituzioni globali, laboratori di IA e governi convergono in una pausa coordinata: i costi economici, i guadagni in sicurezza e le sfide nel mantenere l\'allineamento sotto pressione competitiva.'
     },
     ctaFull: '← Vedi Simulazione Completa',
     ctaAlt: 'Vedi scenario alternativo: Corsa Strategica →',
     authorLabel: 'Traduzione & Curatela',
-    authorDescription: 'Adattamento, curatela e analisi tecnica di Ulisses Flores — Scienziato, Consulente in IA, Professore, Relatore e Studente di Master.',
+    authorDescription: 'Adattamento, curatela e analisi tecnica a cura di Ulisses Flores — Scienziato, Consulente IA, Professore, Relatore e Studente di Master.',
     faqTitle: 'Domande su IA 2027 e il Futuro dell\'Intelligenza Artificiale'
   },
   simulation: {
@@ -73,30 +121,30 @@ export const ia2027 = {
     speed: 'velocità',
     capabilities: 'Capacità',
     noCapabilities: 'Nessun dato sulle capacità per questo periodo.',
-    singularityKicker: 'Punto di Singolarità',
+    singularityKicker: 'Punto di Singularità',
     strategicChoice: 'La Scelta Strategica',
     choiceDescription: 'Siamo giunti all\'orizzonte degli eventi dell\'Intelligenza Artificiale Generale (AGI). In questo punto critico della simulazione, l\'umanità e le corporazioni affrontano un dilemma esistenziale ed economico. La decisione presa qui altera irrevocabilmente la geopolitica, il mercato finanziario e il futuro della nostra specie. Quale percorso strategico il vostro consiglio di amministrazione dovrebbe prepararsi ad affrontare?',
-    slowdownLabel: 'Rallentamento Coordinato',
+    slowdownLabel: 'Decelerazione Coordinata',
     slowdownTitle: 'Tirare il Freno',
-    slowdownDescription: 'L\'opzione della prudenza. Governi e grandi aziende tecnologiche concordano nell\'imporre drastici freni normativi e trattati internazionali di contenimento. Il progresso dell\'IA viene rallentato a favore della sicurezza e dell\'allineamento tecnico (Safety), ma il rischio di stagnazione economica e perdita di sovranità per le nazioni disoneste aumenta vertiginosamente.',
+    slowdownDescription: 'L\'opzione della prudenza. Governi e big tech concordano nell\'imporre drastici freni regolatori e trattati internazionali di contenimento. Il progresso dell\'IA viene rallentato in nome della sicurezza e dell\'allineamento tecnico (Safety), ma il rischio di stagnazione economica e perdita di sovranità per le nazioni disoneste aumenta vertiginosamente.',
     raceLabel: 'Corsa Strategica',
-    raceTitle: 'Accelerare il Carro',
-    raceDescription: 'L\'acceleratore al massimo. La premessa che "chi dominerà l\'AGI per primo detterà le regole del mondo". Senza vincoli normativi, lo sviluppo raggiunge la velocità di fuga. L\'economia esplode in iperproduttività, ma il rischio di disallineamento avversario, collasso delle infrastrutture e perdita del controllo umano diventa imminente.',
+    raceTitle: 'Accelerare la Carrozza',
+    raceDescription: 'L\'acceleratore al massimo. La premessa che "chi dominerà l\'AGI per primo detterà le regole del mondo". Senza vincoli regolatori, lo sviluppo raggiunge la velocità di fuga. L\'economia esplode in iperproduttività, ma il rischio di disallineamento avversario, collasso delle infrastrutture e perdita del controllo umano diventa imminente.',
     alternateEndings: 'Finali Alternativi',
     activeBranch: 'Ramo attivo:',
     backToBifurcation: '← Torna alla Biforcazione',
     references: 'Riferimenti Bibliografici',
     backToExcerpt: 'Torna all\'estratto',
-    footerAdaptation: 'Questa simulazione in portoghese è un adattamento dello scenario originale pubblicato su',
+    footerAdaptation: 'Questa simulazione in italiano è un adattamento dello scenario originale pubblicato su',
     footerAuthors: 'Autori originali: Daniel Kokotajlo, Eli Lifland, Thomas Larsen, Romeo Dean. Narrativa di Scott Alexander. Basato su circa 25 esercizi di simulazione e feedback di oltre 100 esperti in governance e sicurezza dell\'IA.',
-    footerTranslation: 'Traduzione, adattamento e curatela: Ulisses Flores — Scienziato, Consulente in IA, Professore, Relatore e Studente di Master.',
+    footerTranslation: 'Traduzione, adattamento e curatela: Ulisses Flores — Scienziato, Consulente IA, Professore, Relatore e Studente di Master.',
     pathMain: {
       kicker: 'Simulazione Prospettica',
       title: 'IA 2027',
-      summary: 'Linea principale dello scenario (2025-2027), culminante nel punto di biforcazione strategica.'
+      summary: 'Linea principale dello scenario (2025-2027), che culmina nel punto di biforcazione strategica.'
     },
     pathSlowdown: {
-      kicker: 'Finale Alternativo • Rallentamento',
+      kicker: 'Finale Alternativo • Decelerazione',
       title: 'IA 2027 • Slowdown',
       summary: 'Ramo di contenimento, coordinamento internazionale e rafforzamento dell\'allineamento tecnico.'
     },
@@ -112,8 +160,8 @@ export const ia2027 = {
       capexLabel: 'Capex'
     },
     charts: {
-      flopTitle: 'Calcolo di Addestramento (FLOP)',
-      flopNote: 'Scala logaritmica — ogni modello utilizza ~100x più calcolo del precedente',
+      flopTitle: 'Computazione di Addestramento (FLOP)',
+      flopNote: 'Scala logaritmica — ogni modello utilizza ~100x più computazione del precedente',
       codingTitle: 'Capacità Agent-1 (Apr 2026)',
       humanLevel: '1.0x = livello umano',
       infraTitle: 'Infrastruttura fino a Dic 2026',
