@@ -1,12 +1,17 @@
 import Link from 'next/link';
 import { Home, Search, BookOpen, Shield, FlaskConical } from 'lucide-react';
+import { common as commonDict } from '@/data/i18n/pt-br/common';
+
+const iconMap = { Home, BookOpen, Shield, FlaskConical } as const;
 
 export default function NotFound() {
+  const t = commonDict.notFound;
+
   const quickLinks = [
-    { label: 'Home', href: '/', icon: Home, description: 'Pagina principal' },
-    { label: 'Publicacoes', href: '/research', icon: BookOpen, description: 'Research, Whitepapers e Essays' },
-    { label: 'Identidade', href: '/identidade', icon: Shield, description: 'Hub canonico de identidade' },
-    { label: 'Simulacoes', href: '/simulacoes', icon: FlaskConical, description: 'Laboratorio de cenarios' },
+    { ...t.links.home, href: '/', icon: 'Home' as const },
+    { ...t.links.publications, href: '/research', icon: 'BookOpen' as const },
+    { ...t.links.identity, href: '/identidade', icon: 'Shield' as const },
+    { ...t.links.simulations, href: '/simulacoes', icon: 'FlaskConical' as const },
   ];
 
   return (
@@ -15,15 +20,14 @@ export default function NotFound() {
 
       <main className='relative max-w-2xl mx-auto px-6 py-20 text-center z-10'>
         <p className='text-7xl font-bold text-emerald-500 mb-4'>404</p>
-        <h1 className='text-3xl font-bold text-white mb-3'>Pagina nao encontrada</h1>
+        <h1 className='text-3xl font-bold text-white mb-3'>{t.title}</h1>
         <p className='text-neutral-400 mb-10 max-w-md mx-auto'>
-          A pagina que voce procura pode ter sido movida, renomeada ou nao existe mais.
-          Explore as secoes principais abaixo.
+          {t.description}
         </p>
 
         <div className='grid gap-3 sm:grid-cols-2 mb-10'>
           {quickLinks.map((link) => {
-            const Icon = link.icon;
+            const Icon = iconMap[link.icon];
             return (
               <Link
                 key={link.href}
@@ -42,7 +46,7 @@ export default function NotFound() {
 
         <div className='flex items-center gap-2 justify-center text-sm text-neutral-500'>
           <Search size={14} />
-          <span>Ou use a navegacao no topo para encontrar o que procura.</span>
+          <span>{t.searchHint}</span>
         </div>
       </main>
     </div>

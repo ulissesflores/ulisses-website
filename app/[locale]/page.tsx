@@ -61,7 +61,7 @@ export default async function Home({ params }: PageProps) {
         '@type': 'ProfilePage',
         '@id': `${origin}/#profilepage`,
         url: origin,
-        name: 'Ulisses Flores — Hub Canônico',
+        name: t.meta.ogTitle,
         mainEntity: {
           '@id': `${origin}/#person`,
         },
@@ -74,8 +74,8 @@ export default async function Home({ params }: PageProps) {
         '@id': `${origin}/#website`,
         url: origin,
         name: 'Ulisses Flores',
-        description: 'Hub canônico de pesquisa e identidade de Carlos Ulisses Flores.',
-        inLanguage: 'pt-BR',
+        description: t.meta.ogDescription,
+        inLanguage: locale,
         potentialAction: {
           '@type': 'SearchAction',
           target: {
@@ -92,9 +92,8 @@ export default async function Home({ params }: PageProps) {
         alternateName: 'Ulisses Flores',
         url: origin,
         image: `${origin}/carlos-ulisses-flores-cto.jpg`,
-        jobTitle: ['Consultor Estratégico de IA', 'Professor', 'Palestrante', 'Pesquisador', 'CTO'],
-        description:
-          'Cientista Econômico, Analista de Sistemas e Pesquisador Polímata. Mestrando em IA pela AGTU (EUA). Consultor Estratégico de IA, Professor Convidado, Palestrante e Desenvolvedor por demanda.',
+        jobTitle: [t.hero.badges.cto, t.hero.badges.msc, t.hero.badges.polymath],
+        description: t.meta.description,
         sameAs: [
           'https://orcid.org/0000-0002-6034-7765',
           'https://lattes.cnpq.br/6905246706890561',
@@ -102,7 +101,7 @@ export default async function Home({ params }: PageProps) {
           'https://www.linkedin.com/in/ulisses-flores-75961921',
         ],
         knowsLanguage: ['pt-BR', 'en', 'es'],
-        areaServed: ['Jundiaí', 'Itupeva', 'São Paulo', 'Brasil'],
+        areaServed: ['Jundiaí', 'Itupeva', 'São Paulo', 'Brasil'], // Geo names stay canonical
         alumniOf: [
           { '@type': 'CollegeOrUniversity', name: 'American Global Tech University (AGTU)', location: 'EUA' },
           { '@type': 'CollegeOrUniversity', name: 'FIAP', location: 'São Paulo, Brasil' },
@@ -119,11 +118,7 @@ export default async function Home({ params }: PageProps) {
     })
     .slice(0, 4);
 
-  const categoryLabels = {
-    research: 'RESEARCH • IA & ECONOMIA',
-    whitepapers: 'WHITEPAPER • ENGENHARIA',
-    essays: 'ENSAIO • HUMANIDADES',
-  } as const;
+  const categoryLabels = t.publications.categoryLabels;
 
   return (
     <div className="min-h-screen bg-neutral-950 text-neutral-200 font-sans selection:bg-emerald-500/30 scroll-smooth">
@@ -141,7 +136,7 @@ export default async function Home({ params }: PageProps) {
               <div className="relative w-44 h-44 rounded-full bg-neutral-900 border border-neutral-800 flex items-center justify-center overflow-hidden ring-2 ring-neutral-800 shadow-2xl">
                  <Image 
                    src="/carlos-ulisses-flores-cto.jpg" 
-                   alt="Carlos Ulisses Flores - CTO e Pesquisador Chefe da Codex Hash Ltda em Itupeva"
+                   alt={t.hero.imageAlt}
                    width={176}
                    height={176}
                    className="object-cover w-full h-full transform group-hover:scale-105 transition duration-500"
@@ -155,36 +150,36 @@ export default async function Home({ params }: PageProps) {
                 Carlos Ulisses Flores
               </h1>
               <div className="flex flex-wrap justify-center md:justify-start gap-3 text-sm font-medium uppercase tracking-wider mb-6">
-                <Badge icon={<Terminal size={14} />} text="CTO & Pesquisador Chefe" color="emerald" />
-                <Badge icon={<Cpu size={14} />} text="MSc Candidate AI @ AGTU" color="cyan" />
-                <Badge icon={<Layers size={14} />} text="Polímata" color="purple" />
+                <Badge icon={<Terminal size={14} />} text={t.hero.badges.cto} color="emerald" />
+                <Badge icon={<Cpu size={14} />} text={t.hero.badges.msc} color="cyan" />
+                <Badge icon={<Layers size={14} />} text={t.hero.badges.polymath} color="purple" />
               </div>
               
               <p className="text-xl text-neutral-400 leading-relaxed italic border-s-4 border-emerald-500/50 ps-6 mb-8 text-start">
-                "Atuando na fronteira do desenvolvimento tecnológico, integrando rigor acadêmico e pragmatismo executivo para solucionar problemas em sistemas complexos adaptativos."
+                {t.hero.quote}
               </p>
               
               <div className="flex justify-center md:justify-start gap-6 text-xs font-mono text-neutral-500">
-                <span className="flex items-center gap-2"><div className="w-2 h-2 bg-emerald-500 rounded-full"></div> PORTUGUÊS (NATIVO)</span>
-                <span className="flex items-center gap-2"><div className="w-2 h-2 bg-emerald-500 rounded-full"></div> INGLÊS (FLUENTE)</span>
-                <span className="flex items-center gap-2"><div className="w-2 h-2 bg-emerald-500 rounded-full"></div> ESPANHOL (FLUENTE)</span>
+                <span className="flex items-center gap-2"><div className="w-2 h-2 bg-emerald-500 rounded-full"></div> {t.hero.languages.pt}</span>
+                <span className="flex items-center gap-2"><div className="w-2 h-2 bg-emerald-500 rounded-full"></div> {t.hero.languages.en}</span>
+                <span className="flex items-center gap-2"><div className="w-2 h-2 bg-emerald-500 rounded-full"></div> {t.hero.languages.es}</span>
               </div>
             </div>
           </div>
 
           <div id="contact" className="grid md:grid-cols-2 gap-4 scroll-mt-24">
             <div className="bg-neutral-900/30 p-5 rounded-xl border border-white/5 flex flex-wrap gap-3 items-center backdrop-blur-sm">
-               <span className="text-[10px] font-bold text-neutral-500 w-full uppercase mb-1 tracking-widest">Links Acadêmicos</span>
+               <span className="text-[10px] font-bold text-neutral-500 w-full uppercase mb-1 tracking-widest">{t.contact.academicLinks}</span>
                <SocialBtn href="https://lattes.ulissesflores.com" icon={<BookOpen size={16} />} label="Lattes CV" primary />
                <SocialBtn href="https://orcid.ulissesflores.com" icon={<Globe size={16} />} label="ORCID" />
                <SocialBtn href="https://linkedin.ulissesflores.com" icon={<Linkedin size={16} />} label="LinkedIn" />
                <SocialBtn href="https://github.ulissesflores.com" icon={<Github size={16} />} label="GitHub" />
             </div>
             <div className="bg-neutral-900/30 p-5 rounded-xl border border-white/5 flex flex-wrap gap-3 items-center backdrop-blur-sm">
-               <span className="text-[10px] font-bold text-neutral-500 w-full uppercase mb-1 tracking-widest">Contato Direto</span>
+               <span className="text-[10px] font-bold text-neutral-500 w-full uppercase mb-1 tracking-widest">{t.contact.directContact}</span>
                <SocialBtn href="https://wa.me/5511972727532" icon={<MessageCircle size={16} />} label="WhatsApp" color="emerald" />
                <SocialBtn href="mailto:c.ulisses@gmail.com" icon={<Mail size={16} />} label="Email" />
-               <SocialBtn href="https://gmb.ulissesflores.com" icon={<MapPin size={16} />} label="Localização" />
+               <SocialBtn href="https://gmb.ulissesflores.com" icon={<MapPin size={16} />} label={t.contact.location} />
             </div>
           </div>
         </header>
@@ -193,36 +188,24 @@ export default async function Home({ params }: PageProps) {
         <section id="pillars" className="mb-24 scroll-mt-24">
            <div className="flex items-center gap-3 mb-8">
               <div className="w-1 h-8 bg-emerald-500 rounded-full"></div>
-              <h2 className="text-2xl font-bold text-white">Pilares de Atuação</h2>
+              <h2 className="text-2xl font-bold text-white">{t.pillars.title}</h2>
            </div>
            
            <div className="grid md:grid-cols-3 gap-6">
               <BioCard 
                 icon={<TrendingUp className="text-emerald-400" />}
-                title="Finanças Quant & Web3"
-                items={[
-                  "Algoritmos HFT e Arbitragem (Cash & Carry)",
-                  "Custódia Institucional (MPC) e Privacidade (Monero)",
-                  "Smart Contracts Auditáveis (Solidity)"
-                ]}
+                title={t.pillars.cards.finance.title}
+                items={[...t.pillars.cards.finance.items]}
               />
               <BioCard 
                 icon={<Cpu className="text-amber-400" />}
-                title="Hardware & IoT"
-                items={[
-                  "Edge Computing e Automação Agrícola (GoldenLeaf)",
-                  "Arquiteturas 'Cloudless' e Zero Trust",
-                  "Criptografia Embarcada (ESP32/ECC)"
-                ]}
+                title={t.pillars.cards.hardware.title}
+                items={[...t.pillars.cards.hardware.items]}
               />
               <BioCard 
                 icon={<Code className="text-cyan-400" />}
-                title="AI & Ciência de Dados"
-                items={[
-                  "Resiliência Cibernética (LSTM + Lei de Little)",
-                  "Detecção de Anomalias em Séries Temporais",
-                  "Pipelines de Data Science Financeiro"
-                ]}
+                title={t.pillars.cards.ai.title}
+                items={[...t.pillars.cards.ai.items]}
               />
            </div>
         </section>
@@ -232,80 +215,82 @@ export default async function Home({ params }: PageProps) {
           
           <div className="md:col-span-5 space-y-8">
             <h2 className="text-xl font-bold text-white flex items-center gap-2 border-b border-white/10 pb-4">
-               <Award className="text-cyan-500" /> Formação Acadêmica
+               <Award className="text-cyan-500" /> {t.trajectory.formation.title}
             </h2>
             
             <FormationCard 
-               year="2025" 
-               title="Mestrado em IA (MSc)" 
-               inst="American Global Tech University (USA)"
-               desc="Pesquisa: Resiliência em Sistemas Complexos." 
+               year={t.trajectory.formation.items.msc.year} 
+               title={t.trajectory.formation.items.msc.title} 
+               inst={t.trajectory.formation.items.msc.inst}
+               desc={t.trajectory.formation.items.msc.desc} 
                highlight
             />
             <FormationCard 
-               year="2018 - 2020" 
-               title="MBA em Blockchain Dev" 
-               inst="FIAP (1ª Turma do Brasil)"
-               desc="Criptoeconomia e Governança." 
+               year={t.trajectory.formation.items.mba.year} 
+               title={t.trajectory.formation.items.mba.title} 
+               inst={t.trajectory.formation.items.mba.inst}
+               desc={t.trajectory.formation.items.mba.desc} 
             />
             <FormationCard 
-               year="2018 - 2020" 
-               title="Engenharia de Software" 
-               inst="UNIP (Universidade Paulista)"
-               desc="Arquitetura de Microsserviços." 
+               year={t.trajectory.formation.items.engSoftware.year} 
+               title={t.trajectory.formation.items.engSoftware.title} 
+               inst={t.trajectory.formation.items.engSoftware.inst}
+               desc={t.trajectory.formation.items.engSoftware.desc} 
             />
             <FormationCard 
-               year="2002 - 2017" 
-               title="Bacharelado em Economia" 
-               inst="Centro Universitário Padre Anchieta"
-               desc="Monografia: Teoria do Caos." 
+               year={t.trajectory.formation.items.economics.year} 
+               title={t.trajectory.formation.items.economics.title} 
+               inst={t.trajectory.formation.items.economics.inst}
+               desc={t.trajectory.formation.items.economics.desc} 
             />
             
             <div className="bg-neutral-900/20 p-4 rounded-lg border border-white/5 mt-6">
-               <h3 className="text-[10px] font-bold text-neutral-500 uppercase tracking-widest mb-3">Extensão Internacional</h3>
+               <h3 className="text-[10px] font-bold text-neutral-500 uppercase tracking-widest mb-3">{t.trajectory.formation.extension.title}</h3>
                <ul className="space-y-2 text-sm text-neutral-300">
-                  <li className="flex gap-2 items-center"><Globe size={12} className="text-emerald-500"/> Univ. of Edinburgh (Filosofia da Ciência)</li>
-                  <li className="flex gap-2 items-center"><Globe size={12} className="text-cyan-500"/> UC San Diego (Learning Sciences)</li>
+                  {[...t.trajectory.formation.extension.items].map((item, i) => (
+                     <li key={i} className="flex gap-2 items-center"><Globe size={12} className={i === 0 ? 'text-emerald-500' : 'text-cyan-500'}/> {item}</li>
+                  ))}
                </ul>
             </div>
           </div>
 
           <div className="md:col-span-7 space-y-8">
              <h2 className="text-xl font-bold text-white flex items-center gap-2 border-b border-white/10 pb-4">
-               <Briefcase className="text-emerald-500" /> Trajetória Profissional
+               <Briefcase className="text-emerald-500" /> {t.trajectory.career.title}
              </h2>
              
              <div className="relative border-s border-neutral-800 ms-3 space-y-10 ps-8 py-2">
                 <TimelineItem 
-                   role="CTO & Pesquisador Chefe" 
-                   company="Codex Hash Ltda" 
-                   period="2020 - Atual"
-                   desc="Liderança de P&D em Finanças Quantitativas, Custódia (MPC) e Hardware IoT. Gestão de equipes."
+                   role={t.trajectory.career.items.codexHash.role} 
+                   company={t.trajectory.career.items.codexHash.company} 
+                   period={t.trajectory.career.items.codexHash.period}
+                   desc={t.trajectory.career.items.codexHash.desc}
+                   currentLabel={t.trajectory.career.currentBadge}
                    current
                 />
                 <TimelineItem 
-                   role="Gestão de Planejamento" 
-                   company="Prefeitura de Itupeva" 
-                   period="2017 - 2023"
-                   desc="Responsável pelo planejamento estratégico municipal, orçamento e desenvolvimento socioeconômico."
+                   role={t.trajectory.career.items.prefeitura.role} 
+                   company={t.trajectory.career.items.prefeitura.company} 
+                   period={t.trajectory.career.items.prefeitura.period}
+                   desc={t.trajectory.career.items.prefeitura.desc}
                 />
                 <TimelineItem 
-                   role="Sócio-Diretor & Arquiteto" 
-                   company="MV9 Web & Sistemas" 
-                   period="2012 - 2019"
-                   desc="Desenvolvimento de ERPs, automação comercial e parceria com Google. Migração Cloud."
+                   role={t.trajectory.career.items.mv9.role} 
+                   company={t.trajectory.career.items.mv9.company} 
+                   period={t.trajectory.career.items.mv9.period}
+                   desc={t.trajectory.career.items.mv9.desc}
                 />
                 <TimelineItem 
-                   role="Consultor Estratégico" 
-                   company="C3 Group / EconoFísica" 
-                   period="2013 - 2018"
-                   desc="Auditoria de algoritmos (Loterias), LGPD e Business Intelligence financeiro."
+                   role={t.trajectory.career.items.c3.role} 
+                   company={t.trajectory.career.items.c3.company} 
+                   period={t.trajectory.career.items.c3.period}
+                   desc={t.trajectory.career.items.c3.desc}
                 />
                  <TimelineItem 
-                   role="Gestão & Tecnologia (Início)" 
-                   company="Junifer / Bemarco / Skam" 
-                   period="1998 - 2012"
-                   desc="Década fundamental: Analista Financeiro, Coordenador Técnico e dev de sistemas iniciais (VBA/PHP)."
+                   role={t.trajectory.career.items.early.role} 
+                   company={t.trajectory.career.items.early.company} 
+                   period={t.trajectory.career.items.early.period}
+                   desc={t.trajectory.career.items.early.desc}
                    isOld
                 />
              </div>
@@ -316,30 +301,30 @@ export default async function Home({ params }: PageProps) {
         <section id="engineering" className="mb-24 scroll-mt-24">
            <div className="flex items-center justify-between mb-8">
               <h2 className="text-2xl font-bold text-white flex items-center gap-3">
-                 <Code className="text-purple-500" /> Engenharia & Produtos
+                 <Code className="text-purple-500" /> {t.engineering.title}
               </h2>
            </div>
 
            <div className="grid md:grid-cols-2 gap-6">
               <ProductCard 
-                 title="Codex Hash Algo-Trading" 
-                 desc="Sistema estocástico de arbitragem e alta frequência (HFT) para mercados de criptoativos."
-                 tags={["PYTHON", "MQL5", "GENETIC ALGO"]}
+                 title={t.engineering.products.algoTrading.title} 
+                 desc={t.engineering.products.algoTrading.desc}
+                 tags={[...t.engineering.products.algoTrading.tags]}
               />
               <ProductCard 
-                 title="GoldenLeaf IoT System" 
-                 desc="Sistema embarcado para controle ambiental e agricultura de precisão com criptografia de curva elíptica."
-                 tags={["C++", "ESP32", "EDGE COMPUTING"]}
+                 title={t.engineering.products.goldenleaf.title} 
+                 desc={t.engineering.products.goldenleaf.desc}
+                 tags={[...t.engineering.products.goldenleaf.tags]}
               />
               <ProductCard 
-                 title="BioBytes Legacy" 
-                 desc="Sistema de preservação digital de memória e herança biográfica com segurança de nível militar."
-                 tags={["SECURITY", "CRYPTOGRAPHY", "BLOCKCHAIN"]}
+                 title={t.engineering.products.bioBytes.title} 
+                 desc={t.engineering.products.bioBytes.desc}
+                 tags={[...t.engineering.products.bioBytes.tags]}
               />
               <ProductCard 
-                 title="Clube Santo Platform" 
-                 desc="Plataforma digital de ensino teológico e comunidades virtuais com CMS proprietário."
-                 tags={["REACT", "NODE.JS", "LMS"]}
+                 title={t.engineering.products.clubeSanto.title} 
+                 desc={t.engineering.products.clubeSanto.desc}
+                 tags={[...t.engineering.products.clubeSanto.tags]}
               />
            </div>
         </section>
@@ -348,26 +333,26 @@ export default async function Home({ params }: PageProps) {
         <section className="mb-24 scroll-mt-24">
            <div className="bg-neutral-900/20 border border-neutral-800 rounded-2xl p-8">
               <h3 className="text-sm font-bold text-white uppercase tracking-widest mb-8 flex items-center gap-2">
-                 <Database size={16} className="text-emerald-500"/> Stack Tecnológica & Habilidades
+                 <Database size={16} className="text-emerald-500"/> {t.skills.title}
               </h3>
               
               <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
                  <SkillColumn 
-                    title="Core Engineering" 
-                    items={["Node.js / TypeScript", "Python / Rust", "C++ / C# / C", "PHP / Java", "Solidity (Contracts)"]}
+                    title={t.skills.columns.core.title} 
+                    items={[...t.skills.columns.core.items]}
                  />
                  <SkillColumn 
-                    title="Architecture & DevOps" 
-                    items={["Microservices & Docker", "CI/CD Pipelines", "Linux CLI & OS", "UML / Design Patterns", "Cloudless Architectures"]}
+                    title={t.skills.columns.architecture.title} 
+                    items={[...t.skills.columns.architecture.items]}
                  />
                  <SkillColumn 
-                    title="Gestão & Processos" 
-                    items={["BPMN (Bizagi)", "Scrum & Agile / XP", "Value Stream Mapping", "Business Intelligence", "Quality Assurance (QA)"]}
+                    title={t.skills.columns.management.title} 
+                    items={[...t.skills.columns.management.items]}
                  />
                  <div>
-                    <h4 className="text-emerald-500 font-bold text-[10px] uppercase tracking-widest mb-4 border-b border-emerald-500/20 pb-2">Certificações (Alura/FIAP)</h4>
+                    <h4 className="text-emerald-500 font-bold text-[10px] uppercase tracking-widest mb-4 border-b border-emerald-500/20 pb-2">{t.skills.columns.certifications.title}</h4>
                     <div className="flex flex-wrap gap-2">
-                       {["AI Generativa", "Midjourney", "MongoDB", "RPA", "Blockchain Business", "C++ STL", "DevOps"].map((s, i) => (
+                       {[...t.skills.columns.certifications.items].map((s, i) => (
                           <span key={i} className="text-[10px] bg-neutral-950 text-neutral-400 px-2 py-1 rounded border border-neutral-800 cursor-default hover:text-white transition-colors">{s}</span>
                        ))}
                     </div>
@@ -379,7 +364,7 @@ export default async function Home({ params }: PageProps) {
         {/* PUBLICAÇÕES */}
         <section id="research" className="mb-24 scroll-mt-24">
           <h2 className="text-2xl font-bold text-white mb-8 flex items-center gap-3">
-             <BookOpen className="text-cyan-500" /> Publicações Selecionadas
+             <BookOpen className="text-cyan-500" /> {t.publications.title}
           </h2>
           <div className="grid md:grid-cols-2 gap-6">
             {featuredPublications.map((publication) => (
@@ -396,32 +381,30 @@ export default async function Home({ params }: PageProps) {
 
         <section id="simulacoes" className="mb-24 scroll-mt-24">
           <h2 className="text-2xl font-bold text-white mb-8 flex items-center gap-3">
-            <FlaskConical className="text-emerald-500" /> Simulacoes
+            <FlaskConical className="text-emerald-500" /> {t.simulacoes.title}
           </h2>
           <div className="rounded-2xl border border-emerald-500/20 bg-emerald-500/5 p-8">
-            <p className="text-sm uppercase tracking-[0.18em] text-emerald-300 mb-3">Laboratorio de cenarios</p>
-            <h3 className="text-3xl font-bold text-white mb-3">IA 2027 em Portugues</h3>
+            <p className="text-sm uppercase tracking-[0.18em] text-emerald-300 mb-3">{t.simulacoes.kicker}</p>
+            <h3 className="text-3xl font-bold text-white mb-3">{t.simulacoes.heading}</h3>
             <p className="text-neutral-300 leading-relaxed mb-6 max-w-3xl">
-              Simulacao prospectiva em formato scrollytelling com timeline, painel de KPIs dinamico e ramificacoes
-              de cenario (slowdown/race), baseada no manifesto AI 2027 em versao academica pt-BR.
+              {t.simulacoes.description}
             </p>
             <Link
               href="/simulacoes/ia-2027"
               className="inline-flex items-center gap-2 rounded-full border border-emerald-500/50 px-5 py-2 text-sm font-bold text-emerald-300 hover:bg-emerald-900/25 transition-colors"
             >
-              Abrir simulacao
+              {t.simulacoes.cta}
             </Link>
           </div>
         </section>
 
         <section id="codexhash" className="mb-24 scroll-mt-24 border border-emerald-500/20 bg-emerald-500/5 rounded-2xl p-8">
-          <h2 className="text-2xl font-bold text-white mb-4">Codex Hash Ltda</h2>
+          <h2 className="text-2xl font-bold text-white mb-4">{t.codexHash.title}</h2>
           <p className="text-neutral-300 leading-relaxed mb-4">
-            Laboratório de P&D (deep tech) com foco em finanças quantitativas/Web3, arquitetura cloudless para IoT
-            e inteligência artificial aplicada à resiliência ciberfinanceira.
+            {t.codexHash.description}
           </p>
           <p className="text-neutral-400 text-sm leading-relaxed">
-            Esta seção é a âncora oficial <code>#codexhash</code> para resolver links semânticos internos.
+            {t.codexHash.anchor}
           </p>
         </section>
 
@@ -429,34 +412,34 @@ export default async function Home({ params }: PageProps) {
         <section id="manifesto" className="mb-24 scroll-mt-24 border-t border-white/5 pt-12">
            <div className="flex items-center gap-3 mb-8 opacity-70">
               <FileText size={18} className="text-neutral-500" />
-              <h2 className="text-sm font-bold text-neutral-500 uppercase tracking-widest">Resumo Profissional & Acadêmico (Lattes)</h2>
+              <h2 className="text-sm font-bold text-neutral-500 uppercase tracking-widest">{t.manifesto.title}</h2>
            </div>
            
            <div className="bg-neutral-950 border border-neutral-900 rounded-lg p-8 font-mono text-sm text-neutral-400 leading-relaxed text-justify space-y-6 shadow-inner">
               <p>
-                <span className="text-emerald-500 font-bold">&gt;</span> Cientista Econômico, Analista de Sistemas e Pesquisador Polímata com sólida trajetória de mais de 28 anos na convergência entre Engenharia Financeira, Arquitetura de Software Distribuída e Humanidades. Atua na fronteira do desenvolvimento tecnológico, integrando rigor acadêmico e pragmatismo executivo para solucionar problemas em sistemas complexos adaptativos.
+                <span className="text-emerald-500 font-bold">&gt;</span> {t.manifesto.intro}
               </p>
               
               <div className="grid md:grid-cols-2 gap-8 pt-4">
                 <div>
-                   <strong className="block text-neutral-300 mb-2">:: Formação Acadêmica e Pesquisa Avançada</strong>
-                   <p>Mestrando em Inteligência Artificial pela American Global Tech University (AGTU/EUA), onde desenvolve pesquisa de ponta sobre "Resiliência Cibernética e Financeira". Sua dissertação investiga arquiteturas híbridas que acoplam Redes Neurais Recorrentes (LSTM) com modelos estocásticos de fluxo (Lei de Little) e Inferência Bayesiana, visando a criação de agentes autônomos antifrágeis para mercados de alta volatilidade. Possui MBA em Blockchain Development & Technologies pela FIAP, com foco em criptoeconomia e governança descentralizada. Bacharel em Ciências Econômicas, com monografia revisitando a Teoria do Caos e a não-linearidade nos mercados sob a ótica da Escola Austríaca.</p>
+                   <strong className="block text-neutral-300 mb-2">{t.manifesto.formation.title}</strong>
+                   <p>{t.manifesto.formation.text}</p>
                 </div>
                 <div>
-                   <strong className="block text-neutral-300 mb-2">:: Liderança Executiva e Inovação</strong>
-                   <p>Atualmente é CTO e Pesquisador Chefe na Codex Hash Ltda, liderando um laboratório de P&D focado em três pilares: Finanças Quantitativas & Web3 (HFT, Cash and Carry, Solidity, Custódia MPC/Monero), Engenharia de Hardware & IoT (Edge Computing, "Cloudless", Zero Trust, ESP32) e Inteligência Artificial Aplicada (Data Science para séries temporais financeiras).</p>
+                   <strong className="block text-neutral-300 mb-2">{t.manifesto.leadership.title}</strong>
+                   <p>{t.manifesto.leadership.text}</p>
                 </div>
               </div>
 
               <div className="pt-4">
-                 <strong className="block text-neutral-300 mb-2">:: Arsenal Técnico & Humanidades</strong>
+                 <strong className="block text-neutral-300 mb-2">{t.manifesto.arsenal.title}</strong>
                  <p className="mb-4">
-                   <strong>Engenharia de Software:</strong> Arquiteto de soluções distribuídas com domínio de microsserviços, orquestração de contêineres e DevOps. Expert em stack JavaScript moderna e sistemas críticos em C++ e MQL5.
+                   {t.manifesto.arsenal.engineering}
                    <br/>
-                   <strong>Ciência de Dados:</strong> Proficiência avançada em Python (Pandas, Scikit-learn, TensorFlow, PyTorch).
+                   {t.manifesto.arsenal.dataScience}
                  </p>
                  <p>
-                   <strong>Humanidades:</strong> Paralelamente à carreira tecnológica, mantém linha de pesquisa em Teologia Histórica e Arqueologia Cognitiva. Fundador do Instituto Clube Santo, aplica metodologia de Crítica Textual e hermenêutica comparada. Perfil Intelectual que combina a capacidade analítica das ciências exatas com a profundidade filosófica, alinhando inovação digital com preservação da memória e liberdade individual (Cypherpunk ethos).
+                   {t.manifesto.arsenal.humanities}
                  </p>
               </div>
            </div>
@@ -468,8 +451,8 @@ export default async function Home({ params }: PageProps) {
         </section>
 
         <footer className="text-center text-neutral-600 text-sm py-12 border-t border-white/5">
-          <p>© 2026 Codex Hash Ltda. All rights reserved.</p>
-          <p className="text-xs mt-2 font-mono text-neutral-700">UlissesFlores.com • v10.0 • State of the Art</p>
+          <p>{t.pageFooter.copyright}</p>
+          <p className="text-xs mt-2 font-mono text-neutral-700">{t.pageFooter.version}</p>
         </footer>
 
       </main>
@@ -529,7 +512,7 @@ function FormationCard({ year, title, inst, desc, highlight }: any) {
   )
 }
 
-function TimelineItem({ role, company, period, desc, current, isOld }: any) {
+function TimelineItem({ role, company, period, desc, current, currentLabel, isOld }: any) {
   return (
     <div className={`relative ${isOld ? 'opacity-60 hover:opacity-100 transition-opacity' : ''}`}>
       <span className={`absolute -left-[41px] top-1.5 w-4 h-4 rounded-full border-2 border-neutral-950 ${current ? 'bg-emerald-500' : 'bg-neutral-700'}`}></span>
@@ -539,7 +522,7 @@ function TimelineItem({ role, company, period, desc, current, isOld }: any) {
       </div>
       <div className={`font-medium text-sm mb-2 ${current ? 'text-emerald-400' : 'text-cyan-600'}`}>
         {company}
-        {current && <span className="ml-2 text-[9px] bg-emerald-500/10 text-emerald-400 px-2 py-0.5 rounded-full border border-emerald-500/20">ATUAL</span>}
+        {current && currentLabel && <span className="ml-2 text-[9px] bg-emerald-500/10 text-emerald-400 px-2 py-0.5 rounded-full border border-emerald-500/20">{currentLabel}</span>}
       </div>
       <p className="text-sm text-neutral-400 leading-relaxed max-w-2xl">{desc}</p>
     </div>
