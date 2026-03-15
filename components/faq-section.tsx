@@ -46,9 +46,9 @@ export function FaqSection({ items, sectionTitle = 'Perguntas Frequentes' }: Faq
             <button
               type='button'
               onClick={() => toggle(index)}
-              className='w-full flex items-center justify-between px-5 py-4 text-left group'
+              className='w-full flex items-center justify-between px-5 py-4 text-start group'
             >
-              <span className='text-sm font-medium text-neutral-200 group-hover:text-emerald-300 transition-colors pr-4'>
+              <span className='text-sm font-medium text-neutral-200 group-hover:text-emerald-300 transition-colors pe-4'>
                 {item.question}
               </span>
               <ChevronDown

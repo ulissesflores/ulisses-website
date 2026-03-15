@@ -3,46 +3,45 @@ import Link from 'next/link';
 import { upkfMeta } from '@/data/generated/upkf.generated';
 import { AuthorHubCard } from '@/components/author-hub-card';
 import { FaqSection } from '@/components/faq-section';
-import { clubeSantoFaq } from '@/data/faq';
+import { isLocale, defaultLocale, type Locale } from '@/data/i18n';
+import { getDictionary } from '@/lib/get-dictionary';
+import { buildLanguageAlternates } from '@/data/seo';
 
 const canonicalPath = '/clube-santo';
 
-export const metadata: Metadata = {
-  title: 'Clube Santo — Instituto Teológico e Comunidade de Formação Bíblica | Ulisses Flores',
-  description:
-    'O Clube Santo é o instituto teológico e comunidade de formação bíblica fundado por Ulisses Flores — Pesquisador Polímata, Pregador e Mestrando em IA pela AGTU (EUA). Acervo de sermões, estudos bíblicos e análise historiográfica.',
-  keywords: [
-    'clube santo',
-    'instituto teológico',
-    'comunidade bíblica',
-    'formação teológica',
-    'sermões',
-    'estudos bíblicos',
-    'Ulisses Flores teologia',
-    'pregador',
-    'análise historiográfica bíblica',
-    'cânon bíblico',
-  ],
-  authors: [
-    {
-      name: upkfMeta.publicDisplayName || upkfMeta.displayName,
-      url: `${upkfMeta.primaryWebsite}/identidade`,
-    },
-  ],
-  alternates: {
-    canonical: canonicalPath,
-  },
-  openGraph: {
-    type: 'website',
-    url: `${upkfMeta.primaryWebsite}${canonicalPath}`,
-    title: 'Clube Santo — Instituto Teológico e Comunidade de Formação Bíblica | Ulisses Flores',
-    description:
-      'Instituto teológico e comunidade de formação bíblica fundado por Ulisses Flores — Pesquisador Polímata, Pregador e Mestrando em IA pela AGTU (EUA).',
-    locale: 'pt_BR',
-  },
-};
+type PageProps = { params: Promise<{ locale: string }> };
 
-export default function ClubeSantoPage() {
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const { locale: raw } = await params;
+  const locale = (isLocale(raw) ? raw : defaultLocale) as Locale;
+  const dict = await getDictionary(locale);
+  const t = dict.clubeSanto;
+
+  return {
+    title: t.meta.title,
+    description: t.meta.description,
+    keywords: [...t.meta.keywords],
+    alternates: {
+      canonical: canonicalPath,
+      languages: buildLanguageAlternates(canonicalPath),
+    },
+    openGraph: {
+      type: 'website',
+      url: `${upkfMeta.primaryWebsite}${canonicalPath}`,
+      title: t.meta.ogTitle,
+      description: t.meta.ogDescription,
+      locale: 'pt_BR',
+    },
+  };
+}
+
+export default async function ClubeSantoPage({ params }: PageProps) {
+  const { locale: raw } = await params;
+  const locale = (isLocale(raw) ? raw : defaultLocale) as Locale;
+  const dict = await getDictionary(locale);
+  const t = dict.clubeSanto;
+  const tFaq = dict.faq.clubeSanto;
+
   const origin = upkfMeta.primaryWebsite;
 
   const pageJsonLd = {
@@ -52,83 +51,60 @@ export default function ClubeSantoPage() {
         '@type': 'WebPage',
         '@id': `${origin}${canonicalPath}#webpage`,
         url: `${origin}${canonicalPath}`,
-        name: 'Clube Santo — Instituto Teológico e Comunidade de Formação Bíblica',
-        description:
-          'Instituto teológico e comunidade de formação bíblica com sermões, estudos e análise historiográfica.',
-        inLanguage: 'pt-BR',
-        isPartOf: {
-          '@id': `${origin}/#website`,
-        },
-        author: {
-          '@id': `${origin}/#person`,
-        },
+        name: t.meta.title,
+        description: t.meta.description,
+        inLanguage: locale,
+        isPartOf: { '@id': `${origin}/#website` },
+        about: { '@id': `${origin}${canonicalPath}#org` },
+        author: { '@id': `${origin}/#person` },
       },
       {
         '@type': 'Organization',
-        '@id': `${origin}${canonicalPath}#organization`,
-        name: 'Clube Santo',
-        description:
-          'Instituto teológico e comunidade de formação bíblica fundado por Ulisses Flores.',
-        url: `${origin}${canonicalPath}`,
-        founder: {
-          '@id': `${origin}/#person`,
-        },
+        '@id': `${origin}${canonicalPath}#org`,
+        name: 'O Clube Santo',
+        description: t.meta.description,
+        foundingDate: '2024',
+        founder: { '@id': `${origin}/#person` },
       },
     ],
   };
 
   return (
     <>
-      {/* Hero Section */}
+      <script type='application/ld+json' dangerouslySetInnerHTML={{ __html: JSON.stringify(pageJsonLd) }} />
+
+      {/* Hero */}
       <section className='bg-neutral-950 text-neutral-200 pt-20 pb-16 border-b border-neutral-800'>
         <div className='max-w-4xl mx-auto px-6'>
-          {/* Breadcrumb */}
           <div className='flex items-center gap-2 mb-6'>
             <Link href='/' className='text-xs font-mono uppercase tracking-widest text-emerald-400 hover:underline'>
-              Home
+              {dict.common.breadcrumb.home}
             </Link>
             <span className='text-xs text-neutral-600'>→</span>
             <span className='text-xs font-mono uppercase tracking-widest text-neutral-500'>
-              Clube Santo
+              {t.breadcrumb}
             </span>
           </div>
 
-          {/* H1 */}
           <h1 className='text-4xl sm:text-5xl font-bold leading-tight tracking-tight mb-6 text-white'>
-            Instituto Teológico e Comunidade de Formação Bíblica
+            {t.hero.h1}
           </h1>
 
-          {/* Lead paragraph */}
           <p className='text-lg text-neutral-400 leading-relaxed mb-8 max-w-3xl'>
-            O Clube Santo é o instituto teológico fundado por Ulisses Flores para formação bíblica
-            rigorosa, análise historiográfica e comunidade de estudo. Reúne um acervo de mais de 50
-            sermões, pesquisas sobre canonização escribal, historicidade bíblica e fundamentos
-            transcendentes da ordem econômica — conectando teologia, história e ciência.
+            {t.hero.lead}
           </p>
 
-          {/* Authority block */}
-          <div className='border-l-4 border-cyan-700 bg-cyan-950/20 px-6 py-5 rounded-r-xl mb-10'>
+          <div className='border-s-4 border-cyan-700 bg-cyan-950/20 px-6 py-5 rounded-e-xl mb-10'>
             <p className='text-sm font-semibold text-cyan-400 uppercase tracking-wide mb-2'>
-              Rigor acadêmico aplicado à formação teológica
+              {t.hero.authority.kicker}
             </p>
             <p className='text-neutral-300 leading-relaxed'>
-              Como Pesquisador Polímata, Ulisses Flores aplica metodologia científica à análise
-              bíblica — combinando arqueologia, historiografia, análise textual e tradição reformada.
-              As pesquisas publicadas incluem análise exaustiva da historicidade de Jesus (métodos
-              arqueológicos e historiográficos) e estudo histórico-crítico da formação do cânon bíblico.
+              {t.hero.authority.text}
             </p>
           </div>
 
-          {/* Credential chips */}
           <div className='flex flex-wrap gap-2 mb-8'>
-            {[
-              'Pesquisador Polímata',
-              'Pregador & Expositor Bíblico',
-              'Mestrando AGTU (EUA)',
-              'Análise Historiográfica',
-              'Tradição Reformada',
-              '+56 Sermões Indexados',
-            ].map((credential) => (
+            {t.hero.credentials.map((credential) => (
               <span
                 key={credential}
                 className='text-xs font-mono border border-neutral-700 bg-neutral-900/40 text-neutral-400 px-3 py-1 rounded-full'
@@ -140,155 +116,88 @@ export default function ClubeSantoPage() {
         </div>
       </section>
 
-      {/* Manifesto: O Clube Santo — Um Avivamento para a Era Digital */}
-      <section className='bg-neutral-950 text-neutral-200 py-16 border-b border-neutral-800'>
-        <div className='max-w-3xl mx-auto px-6'>
-          <div className='prose prose-lg dark:prose-invert max-w-none prose-headings:text-white prose-p:text-neutral-300 prose-blockquote:border-emerald-600 prose-blockquote:text-neutral-400 prose-em:text-emerald-300/80 prose-strong:text-white'>
-            <p className='text-sm font-mono uppercase tracking-widest text-emerald-400 mb-6 not-prose'>
-              Manifesto
-            </p>
-
-            <h2 className='text-3xl font-bold mb-8'>
-              O Clube Santo: Um Avivamento para a Era Digital
-            </h2>
-
-            <p className='italic text-neutral-400 text-xl leading-relaxed mb-10'>
-              Uma comunidade de mentes e corações em busca da verdadeira conexão.
-            </p>
-
-            <h3>Tudo começou com um chá.</h3>
-
-            <p>
-              Não, não estamos falando do chá das cinco britânico, mas de um chá que derramou um sopro
-              de vida em uma Inglaterra espiritualmente adormecida. John Wesley, o protagonista dessa
-              história, poderia muito bem ter sido o inventor do chá matcha ou do detox, mas o que ele
-              realmente fez foi criar uma xícara cheia de avivamento, conhecida como{' '}
-              <strong>O Clube Santo</strong>.
-            </p>
-
-            <p>
-              O Clube Santo, para os desavisados, não era um clube de boas-vindas para aspirantes a
-              santos. Era muito mais que isso. Era uma reunião de mentes e corações que buscavam a
-              verdadeira conexão com Deus, aliada a um rigor intelectual implacável. E que conexão! A
-              Inglaterra nunca mais foi a mesma. John Wesley, com seu Clube Santo, desencadeou um
-              avivamento espiritual tão grande que até o Rei George I teve que ajustar sua coroa.
-            </p>
-
-            <h3>O Novo Giro: Arqueologia Espiritual</h3>
-
-            <p>
-              Você deve estar se perguntando: por que estamos falando de um clube criado séculos atrás
-              na Inglaterra? Porque acreditamos que é hora de um novo avivamento para os nossos tempos.
-              Um movimento que começará na América Latina, mas não parará até alcançar os confins do
-              mundo.
-            </p>
-
-            <p>
-              Estamos trazendo de volta o Clube Santo, mas com um giro para a era digital. O nosso
-              instituto une o fervor pentecostal avivalista com ferramentas de Inteligência Artificial
-              para realizar o que chamamos de{' '}
-              <strong>Arqueologia Espiritual e Teológica</strong>. Juntos, vamos revolucionar o mundo,
-              um avivamento de cada vez. Prepare a sua xícara.
-            </p>
+      {/* Manifesto */}
+      <section className='bg-neutral-950 text-neutral-200 py-16'>
+        <article className='max-w-4xl mx-auto px-6'>
+          <div className='mb-6'>
+            <span className='text-xs font-mono uppercase tracking-[0.2em] text-emerald-400'>
+              {t.manifesto.kicker}
+            </span>
           </div>
-        </div>
+          <h2 className='text-3xl font-bold text-white mb-4'>{t.manifesto.title}</h2>
+          <p className='text-lg text-neutral-400 italic mb-8'>{t.manifesto.subtitle}</p>
+
+          <div className='prose prose-invert max-w-none'>
+            <h3 className='text-xl font-semibold text-white'>{t.manifesto.h3_1}</h3>
+            <p className='text-neutral-300 leading-relaxed mb-4'>{t.manifesto.p1}</p>
+            <p className='text-neutral-300 leading-relaxed mb-8'>{t.manifesto.p2}</p>
+
+            <h3 className='text-xl font-semibold text-white'>{t.manifesto.h3_2}</h3>
+            <p className='text-neutral-300 leading-relaxed mb-4'>{t.manifesto.p3}</p>
+            <p className='text-neutral-300 leading-relaxed'>{t.manifesto.p4}</p>
+          </div>
+        </article>
       </section>
 
-      {/* Content Sections */}
+      {/* Collections */}
       <section className='bg-neutral-950 text-neutral-200 py-16'>
         <div className='max-w-5xl mx-auto px-6'>
-          <h2 className='text-2xl font-bold text-white mb-8'>Coleções e Acervo</h2>
-
-          <div className='grid sm:grid-cols-2 gap-6 mb-10'>
-            {/* Acervo Teológico */}
-            <article className='rounded-xl border border-neutral-800 bg-neutral-900/40 p-6'>
+          <h2 className='text-3xl font-bold text-white mb-8'>{t.collections.title}</h2>
+          <div className='grid gap-6 md:grid-cols-2'>
+            <article className='rounded-2xl border border-emerald-800/30 bg-neutral-900/60 p-8'>
               <span className='text-[10px] uppercase tracking-[0.2em] text-emerald-300 border border-emerald-700/40 rounded-full px-3 py-1'>
-                Acervo Principal
+                {t.collections.acervo.badge}
               </span>
-              <h3 className='text-lg font-bold text-white mt-4 mb-2'>Acervo Teológico</h3>
-              <p className='text-sm text-neutral-400 leading-relaxed mb-4'>
-                Mais de 56 sermões indexados, organizados cronologicamente com exposição bíblica
-                detalhada, notas exegéticas e referências cruzadas.
-              </p>
+              <h3 className='text-xl font-bold text-white mt-4 mb-3'>{t.collections.acervo.title}</h3>
+              <p className='text-neutral-400 leading-relaxed mb-4'>{t.collections.acervo.description}</p>
               <Link
                 href='/acervo-teologico'
-                className='inline-flex items-center gap-2 border border-emerald-700/50 text-emerald-300 hover:bg-emerald-900/30 font-medium px-4 py-2 rounded-full transition-colors text-sm'
+                className='text-sm text-emerald-300 hover:text-emerald-200 transition-colors'
               >
-                Explorar Acervo →
+                {t.collections.acervo.cta}
               </Link>
             </article>
 
-            {/* Pesquisas */}
-            <article className='rounded-xl border border-neutral-800 bg-neutral-900/40 p-6'>
-              <span className='text-[10px] uppercase tracking-[0.2em] text-cyan-300 border border-cyan-700/40 rounded-full px-3 py-1'>
-                Pesquisa Acadêmica
-              </span>
-              <h3 className='text-lg font-bold text-white mt-4 mb-2'>Publicações de Pesquisa</h3>
-              <p className='text-sm text-neutral-400 leading-relaxed mb-4'>
-                Pesquisas com rigor científico sobre historicidade bíblica, canonização escribal,
-                fundamentos transcendentes da economia e intersecção fé-ciência.
-              </p>
-              <Link
-                href='/research'
-                className='inline-flex items-center gap-2 border border-cyan-700/50 text-cyan-300 hover:bg-cyan-900/30 font-medium px-4 py-2 rounded-full transition-colors text-sm'
-              >
-                Ver Pesquisas →
-              </Link>
+            <article className='rounded-2xl border border-neutral-800 bg-neutral-900/40 p-8'>
+              <h3 className='text-xl font-bold text-white mb-3'>{t.collections.research.title}</h3>
+              <p className='text-neutral-400 leading-relaxed'>{t.collections.research.description}</p>
             </article>
           </div>
 
-          {/* Featured Research Links */}
-          <div className='rounded-xl border border-neutral-800 bg-neutral-900/30 p-6'>
-            <h3 className='text-lg font-semibold text-white mb-4'>Publicações em Destaque</h3>
-            <div className='space-y-3'>
-              <Link
-                href='/research/2024-historicity-jesus-archaeology'
-                className='block text-sm text-emerald-300 hover:text-emerald-200 transition-colors'
-              >
-                📄 Análise Historiográfica e Arqueológica Exaustiva: A Historicidade de Jesus →
-              </Link>
-              <Link
-                href='/research/2024-scribal-canonization-ezra'
-                className='block text-sm text-emerald-300 hover:text-emerald-200 transition-colors'
-              >
-                📄 Canonização Escribal: Análise Histórico-Crítica da Formação do Cânon →
-              </Link>
-              <Link
-                href='/essays/2024-theology-economic-order'
-                className='block text-sm text-emerald-300 hover:text-emerald-200 transition-colors'
-              >
-                📄 Fundamentos Transcendentes da Ordem Econômica →
-              </Link>
+          {t.collections.featured.items.length > 0 && (
+            <div className='mt-8'>
+              <h3 className='text-xl font-bold text-white mb-4'>{t.collections.featured.title}</h3>
+              <div className='grid gap-4 md:grid-cols-3'>
+                {t.collections.featured.items.map((item, index) => (
+                  <article key={index} className='rounded-xl border border-neutral-800 bg-neutral-950/60 p-6'>
+                    <p className='text-sm text-neutral-300 leading-relaxed'>{item}</p>
+                  </article>
+                ))}
+              </div>
             </div>
-          </div>
+          )}
         </div>
       </section>
 
-      {/* Author block */}
+      {/* Author */}
       <section className='bg-neutral-950 text-neutral-200 pb-4'>
         <div className='max-w-5xl mx-auto px-6'>
-          <AuthorHubCard
-            label='Fundador & Pesquisador'
-            description='Clube Santo fundado e curado por Ulisses Flores — Pesquisador Polímata, Pregador, Consultor Estratégico de IA e Mestrando em IA pela AGTU (EUA).'
-          />
+          <AuthorHubCard label={t.author.label} description={t.author.description} />
         </div>
       </section>
 
       {/* CTA */}
       <section className='bg-neutral-950 text-neutral-200 py-12'>
         <div className='max-w-4xl mx-auto px-6 text-center'>
-          <h2 className='text-xl font-bold text-white mb-3'>
-            Interesse em formação teológica ou palestra sobre fé e ciência?
-          </h2>
+          <h2 className='text-xl font-bold text-white mb-3'>{t.cta.title}</h2>
           <p className='text-neutral-400 mb-6 max-w-2xl mx-auto text-sm leading-relaxed'>
-            Ulisses Flores ministra estudos bíblicos, palestras sobre a intersecção entre teologia
-            e ciência, e oferece mentoria em pesquisa historiográfica bíblica. Entre em contato.
+            {t.cta.description}
           </p>
           <Link
             href='/'
             className='inline-flex items-center gap-2 bg-white text-black font-semibold px-6 py-3 rounded-full hover:bg-gray-100 transition-colors text-sm'
           >
-            Falar com Ulisses Flores →
+            {t.cta.button}
           </Link>
         </div>
       </section>
@@ -296,18 +205,9 @@ export default function ClubeSantoPage() {
       {/* FAQ */}
       <section className='bg-neutral-950 text-neutral-200 pb-16'>
         <div className='max-w-4xl mx-auto px-6'>
-          <FaqSection
-            items={clubeSantoFaq}
-            sectionTitle='Perguntas sobre o Clube Santo'
-          />
+          <FaqSection items={[...tFaq]} sectionTitle={t.faq.sectionTitle} />
         </div>
       </section>
-
-      <script
-        id='structured-data-clube-santo'
-        type='application/ld+json'
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(pageJsonLd) }}
-      />
     </>
   );
 }

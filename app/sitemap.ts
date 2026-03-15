@@ -2,9 +2,12 @@ import type { MetadataRoute } from 'next';
 import { publications, publicationCollections } from '@/data/publications';
 import { knowledgeData } from '@/data/knowledge';
 import { upkfMeta } from '@/data/generated/upkf.generated';
-
 import { certificationsSotaData } from '@/data/certifications-sota';
 import { acervoCanonicalPath, acervoLatestPublishedAt, acervoSermons } from '@/data/acervo-teologico';
+import { supportedLocales, defaultLocale } from '@/data/i18n';
+import { hreflangLocalePrefix } from '@/data/seo';
+
+// ── Helpers ─────────────────────────────────────────────────────────────────────
 
 export function isIndexableSitemapPath(path: string): boolean {
   const normalized = path.toLowerCase();
@@ -21,6 +24,30 @@ export function isIndexableSitemapPath(path: string): boolean {
   return extensionMatch[1] === 'pdf';
 }
 
+/**
+ * Build the alternates.languages map for a given path.
+ * Each locale gets its prefixed URL; `x-default` uses the default locale.
+ */
+function buildSitemapAlternates(path: string): Record<string, string> {
+  const origin = upkfMeta.primaryWebsite;
+  const suffix = path === '/' ? '' : path;
+  const alternates: Record<string, string> = {};
+
+  Object.entries(hreflangLocalePrefix).forEach(([lang, prefix]) => {
+    alternates[lang] = `${origin}/${prefix}${suffix}`;
+  });
+
+  // x-default points to the default locale
+  const defaultPrefix = hreflangLocalePrefix[
+    Object.keys(hreflangLocalePrefix).find(
+      (k) => hreflangLocalePrefix[k as keyof typeof hreflangLocalePrefix] === defaultLocale,
+    ) as keyof typeof hreflangLocalePrefix
+  ] ?? defaultLocale;
+  alternates['x-default'] = `${origin}/${defaultPrefix}${suffix}`;
+
+  return alternates;
+}
+
 function makeSitemapEntry(
   path: string,
   lastModified: string,
@@ -34,6 +61,9 @@ function makeSitemapEntry(
     lastModified,
     changeFrequency,
     priority,
+    alternates: {
+      languages: buildSitemapAlternates(path === '' ? '/' : path),
+    },
   };
 }
 
@@ -49,6 +79,8 @@ function maybeMakeSitemapEntry(
 
   return makeSitemapEntry(path, lastModified, changeFrequency, priority);
 }
+
+// ── Sitemap ─────────────────────────────────────────────────────────────────────
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const latestSiteDate =
@@ -111,7 +143,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     maybeMakeSitemapEntry(acervoCanonicalPath, acervoLatestPublishedAt, 'weekly', 0.76),
     ...acervoSermons.map((sermon) => maybeMakeSitemapEntry(sermon.canonicalPath, sermon.publishedAt, 'monthly', 0.58)),
   ].filter((entry): entry is MetadataRoute.Sitemap[number] => Boolean(entry));
+
   const identidadeEntry = maybeMakeSitemapEntry('/identidade', upkfMeta.generatedAt, 'daily', 0.92);
+
   const simulationEntries = [
     maybeMakeSitemapEntry('/simulacoes', upkfMeta.generatedAt, 'weekly', 0.72),
     maybeMakeSitemapEntry('/simulacoes/ia-2027', upkfMeta.generatedAt, 'weekly', 0.68),

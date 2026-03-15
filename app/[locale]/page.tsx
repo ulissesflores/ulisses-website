@@ -9,51 +9,49 @@ import {
 } from 'lucide-react';
 import { publications } from '@/data/publications';
 import { FaqSection } from '@/components/faq-section';
-import { homeFaq } from '@/data/faq';
 import { upkfMeta } from '@/data/generated/upkf.generated';
+import { isLocale, defaultLocale, type Locale } from '@/data/i18n';
+import { getDictionary } from '@/lib/get-dictionary';
+import { buildLanguageAlternates } from '@/data/seo';
 
-export const metadata: Metadata = {
-  title: 'Ulisses Flores | Consultor de IA, Professor, Palestrante e Pesquisador',
-  description:
-    'Ulisses Flores — Cientista Econômico, Consultor Estratégico de IA, Professor Convidado, Palestrante e Mestrando em IA pela AGTU (EUA). Pesquisas em IA, Blockchain, Economia e Sistemas Complexos. Baseado em Jundiaí/SP, atende todo o Brasil.',
-  keywords: [
-    'Ulisses Flores',
-    'consultor estratégico IA',
-    'palestrante inteligência artificial',
-    'professor convidado IA',
-    'mestrando AGTU',
-    'cientista econômico',
-    'blockchain consultor',
-    'Jundiaí São Paulo',
-  ],
-  authors: [
-    {
-      name: 'Ulisses Flores',
-      url: 'https://ulissesflores.com/identidade',
+type PageProps = { params: Promise<{ locale: string }> };
+
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const { locale: raw } = await params;
+  const locale = (isLocale(raw) ? raw : defaultLocale) as Locale;
+  const dict = await getDictionary(locale);
+  const t = dict.home;
+
+  return {
+    title: t.meta.title,
+    description: t.meta.description,
+    keywords: [...t.meta.keywords],
+    authors: [{ name: 'Ulisses Flores', url: 'https://ulissesflores.com/identidade' }],
+    alternates: { canonical: '/', languages: buildLanguageAlternates('/') },
+    openGraph: {
+      type: 'profile',
+      url: 'https://ulissesflores.com',
+      title: t.meta.ogTitle,
+      description: t.meta.ogDescription,
+      locale: 'pt_BR',
+      images: [
+        {
+          url: 'https://ulissesflores.com/carlos-ulisses-flores-cto.jpg',
+          width: 800,
+          height: 800,
+          alt: t.meta.ogImageAlt,
+        },
+      ],
     },
-  ],
-  alternates: {
-    canonical: '/',
-  },
-  openGraph: {
-    type: 'profile',
-    url: 'https://ulissesflores.com',
-    title: 'Ulisses Flores | Consultor de IA, Professor, Palestrante e Pesquisador',
-    description:
-      'Ulisses Flores — Consultor Estratégico de IA, Professor, Palestrante e Mestrando AGTU (EUA). Pesquisas em IA, Blockchain e Economia.',
-    locale: 'pt_BR',
-    images: [
-      {
-        url: 'https://ulissesflores.com/carlos-ulisses-flores-cto.jpg',
-        width: 800,
-        height: 800,
-        alt: 'Ulisses Flores — Consultor de IA, Professor e Palestrante',
-      },
-    ],
-  },
-};
+  };
+}
 
-export default function Home() {
+export default async function Home({ params }: PageProps) {
+  const { locale: raw } = await params;
+  const locale = (isLocale(raw) ? raw : defaultLocale) as Locale;
+  const dict = await getDictionary(locale);
+  const t = dict.home;
+  const tFaq = dict.faq.home;
   const origin = upkfMeta.primaryWebsite;
 
   const homeJsonLd = {
@@ -152,7 +150,7 @@ export default function Home() {
               </div>
             </div>
             
-            <div className="text-center md:text-left pt-2 flex-1">
+            <div className="text-center md:text-start pt-2 flex-1">
               <h1 className="text-5xl md:text-6xl font-bold text-white tracking-tight mb-4">
                 Carlos Ulisses Flores
               </h1>
@@ -162,7 +160,7 @@ export default function Home() {
                 <Badge icon={<Layers size={14} />} text="Polímata" color="purple" />
               </div>
               
-              <p className="text-xl text-neutral-400 leading-relaxed italic border-l-4 border-emerald-500/50 pl-6 mb-8 text-left">
+              <p className="text-xl text-neutral-400 leading-relaxed italic border-s-4 border-emerald-500/50 ps-6 mb-8 text-start">
                 "Atuando na fronteira do desenvolvimento tecnológico, integrando rigor acadêmico e pragmatismo executivo para solucionar problemas em sistemas complexos adaptativos."
               </p>
               
@@ -277,7 +275,7 @@ export default function Home() {
                <Briefcase className="text-emerald-500" /> Trajetória Profissional
              </h2>
              
-             <div className="relative border-l border-neutral-800 ml-3 space-y-10 pl-8 py-2">
+             <div className="relative border-s border-neutral-800 ms-3 space-y-10 ps-8 py-2">
                 <TimelineItem 
                    role="CTO & Pesquisador Chefe" 
                    company="Codex Hash Ltda" 
@@ -466,7 +464,7 @@ export default function Home() {
 
         {/* FAQ Section */}
         <section id="faq" className="mb-12 scroll-mt-24">
-          <FaqSection items={homeFaq} sectionTitle='Perguntas sobre Ulisses Flores' />
+          <FaqSection items={[...tFaq]} sectionTitle={t.faq.sectionTitle} />
         </section>
 
         <footer className="text-center text-neutral-600 text-sm py-12 border-t border-white/5">
@@ -522,7 +520,7 @@ function SkillColumn({ title, items }: any) {
 
 function FormationCard({ year, title, inst, desc, highlight }: any) {
   return (
-    <div className={`border-l-2 pl-4 py-1 transition-colors group ${highlight ? 'border-emerald-500' : 'border-neutral-800 hover:border-cyan-500'} mb-6`}>
+    <div className={`border-s-2 ps-4 py-1 transition-colors group ${highlight ? 'border-emerald-500' : 'border-neutral-800 hover:border-cyan-500'} mb-6`}>
       <div className={`text-xs font-mono mb-1 ${highlight ? 'text-emerald-400' : 'text-cyan-600'}`}>{year}</div>
       <div className={`font-bold text-lg ${highlight ? 'text-white' : 'text-neutral-200 group-hover:text-white'}`}>{title}</div>
       <div className="text-sm text-neutral-400 mb-1">{inst}</div>

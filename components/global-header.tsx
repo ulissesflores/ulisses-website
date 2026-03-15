@@ -2,62 +2,32 @@
 
 import { useState, useEffect, useRef, useCallback } from 'react';
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
-import { Menu, X, ChevronDown } from 'lucide-react';
-
-interface NavCategory {
-  label: string;
-  items: { label: string; href: string; description?: string }[];
-}
-
-const navCategories: NavCategory[] = [
-  {
-    label: 'Sobre',
-    items: [
-      { label: 'Bio', href: '/#about', description: 'Quem sou e minha trajetória' },
-      { label: 'Expertise', href: '/#pillars', description: 'Pilares de atuação' },
-      { label: 'Trajetória', href: '/#trajectory', description: 'Linha do tempo profissional' },
-    ],
-  },
-  {
-    label: 'Publicações',
-    items: [
-      { label: 'Research', href: '/research', description: 'IA, Economia e Sistemas Complexos' },
-      { label: 'Whitepapers', href: '/whitepapers', description: 'Engenharia, IoT e Segurança' },
-      { label: 'Projeto Ψ (PSI)', href: '/whitepapers/projeto-psi', description: 'Whitepaper técnico: Hardware Soberano' },
-      { label: 'PSI — Demonstração', href: '/projeto-psi', description: 'Landing comercial: investimento e licenciamento' },
-      { label: 'Essays', href: '/essays', description: 'Teologia, Humanidades e História' },
-    ],
-  },
-  {
-    label: 'Acervo',
-    items: [
-      { label: 'Acervo Teológico', href: '/acervo-teologico', description: 'Sermões por cluster temático' },
-      { label: 'Clube Santo', href: '/clube-santo', description: 'Avivamento para a era digital' },
-      { label: 'Mundo Político', href: '/mundo-politico', description: 'Artigos e análises políticas' },
-    ],
-  },
-  {
-    label: 'Ferramentas',
-    items: [
-      { label: 'Simulações', href: '/simulacoes', description: 'Laboratório de cenários prospectivos' },
-      { label: 'Identidade', href: '/identidade', description: 'Hub canônico de identidade soberana' },
-      { label: 'Certificações', href: '/certifications', description: 'Credenciais e verificações' },
-    ],
-  },
-];
+import { usePathname, useRouter } from 'next/navigation';
+import { Menu, X, ChevronDown, Globe } from 'lucide-react';
+import { useDict } from '@/lib/i18n-context';
+import {
+  supportedLocales,
+  defaultLocale,
+  localeLabels,
+  type Locale,
+} from '@/data/i18n';
 
 export function GlobalHeader() {
+  const { common, locale } = useDict();
   const [mobileOpen, setMobileOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  const [langOpen, setLangOpen] = useState(false);
   const pathname = usePathname();
+  const router = useRouter();
   const dropdownRef = useRef<HTMLDivElement>(null);
+  const langRef = useRef<HTMLDivElement>(null);
   const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
-  // Close mobile menu on route change
+  // Close menus on route change
   useEffect(() => {
     setMobileOpen(false);
     setActiveDropdown(null);
+    setLangOpen(false);
   }, [pathname]);
 
   // Close dropdown when clicking outside
@@ -65,6 +35,9 @@ export function GlobalHeader() {
     function handleClickOutside(event: MouseEvent) {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
         setActiveDropdown(null);
+      }
+      if (langRef.current && !langRef.current.contains(event.target as Node)) {
+        setLangOpen(false);
       }
     }
     document.addEventListener('mousedown', handleClickOutside);
@@ -86,6 +59,37 @@ export function GlobalHeader() {
     timeoutRef.current = setTimeout(() => setActiveDropdown(null), 150);
   }, []);
 
+  // ─── Language Switcher ──────────────────────────────────────────────
+  function switchLocale(newLocale: Locale) {
+    if (newLocale === locale) {
+      setLangOpen(false);
+      return;
+    }
+
+    // Strip current locale prefix from pathname to get bare path
+    let barePath = pathname;
+
+    // Remove current locale prefix if present
+    for (const loc of supportedLocales) {
+      if (barePath.startsWith(`/${loc}/`)) {
+        barePath = barePath.slice(`/${loc}`.length);
+        break;
+      }
+      if (barePath === `/${loc}`) {
+        barePath = '/';
+        break;
+      }
+    }
+
+    // Build new path
+    const newPath = newLocale === defaultLocale
+      ? barePath || '/'
+      : `/${newLocale}${barePath === '/' ? '' : barePath}`;
+
+    setLangOpen(false);
+    router.push(newPath);
+  }
+
   return (
     <>
       <header className='fixed top-0 left-0 right-0 z-50 bg-neutral-950/85 backdrop-blur-md border-b border-white/5'>
@@ -97,7 +101,7 @@ export function GlobalHeader() {
 
           {/* Desktop Mega Menu */}
           <div ref={dropdownRef} className='hidden lg:flex items-center gap-1'>
-            {navCategories.map((category) => (
+            {common.nav.categories.map((category) => (
               <div
                 key={category.label}
                 className='relative'
@@ -148,13 +152,46 @@ export function GlobalHeader() {
             ))}
           </div>
 
-          {/* Right side: CTA + Hamburger */}
+          {/* Right side: Lang Switcher + CTA + Hamburger */}
           <div className='flex items-center gap-3'>
+            {/* Language Switcher */}
+            <div ref={langRef} className='relative hidden sm:block'>
+              <button
+                type='button'
+                onClick={() => setLangOpen(!langOpen)}
+                className='flex items-center gap-1.5 px-2.5 py-1.5 text-xs font-medium text-neutral-400 hover:text-white rounded-md border border-neutral-800 hover:border-neutral-600 transition-colors'
+                aria-label={common.languageSwitcher.label}
+              >
+                <Globe size={14} />
+                {localeLabels[locale]}
+                <ChevronDown size={12} className={`transition-transform ${langOpen ? 'rotate-180' : ''}`} />
+              </button>
+
+              {langOpen && (
+                <div className='absolute top-full end-0 mt-1 w-40 rounded-xl border border-neutral-800 bg-neutral-950/95 backdrop-blur-lg shadow-2xl shadow-black/40 py-1 z-50'>
+                  {supportedLocales.map((loc) => (
+                    <button
+                      key={loc}
+                      type='button'
+                      onClick={() => switchLocale(loc)}
+                      className={`block w-full text-start px-4 py-2 text-sm transition-colors ${
+                        loc === locale
+                          ? 'text-emerald-400 bg-emerald-500/10'
+                          : 'text-neutral-300 hover:bg-emerald-500/10 hover:text-emerald-300'
+                      }`}
+                    >
+                      {localeLabels[loc]}
+                    </button>
+                  ))}
+                </div>
+              )}
+            </div>
+
             <Link
               href='/#contact'
               className='px-4 py-2 bg-neutral-100 text-neutral-900 text-xs font-bold rounded-full hover:bg-emerald-400 transition-colors'
             >
-              FALE COMIGO
+              {common.cta}
             </Link>
 
             {/* Mobile hamburger */}
@@ -162,7 +199,7 @@ export function GlobalHeader() {
               type='button'
               onClick={() => setMobileOpen(!mobileOpen)}
               className='lg:hidden p-2 text-neutral-400 hover:text-white transition-colors'
-              aria-label={mobileOpen ? 'Fechar menu' : 'Abrir menu'}
+              aria-label={mobileOpen ? common.mobileMenu.close : common.mobileMenu.open}
             >
               {mobileOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
@@ -174,7 +211,7 @@ export function GlobalHeader() {
       {mobileOpen && (
         <div className='fixed inset-0 z-40 bg-neutral-950/98 backdrop-blur-lg pt-20 overflow-y-auto lg:hidden'>
           <nav className='max-w-md mx-auto px-6 py-8 space-y-6'>
-            {navCategories.map((category) => (
+            {common.nav.categories.map((category) => (
               <div key={category.label}>
                 <p className='text-xs uppercase tracking-[0.2em] text-emerald-400 mb-3 font-bold'>
                   {category.label}
@@ -197,13 +234,36 @@ export function GlobalHeader() {
               </div>
             ))}
 
+            {/* Mobile Language Switcher */}
+            <div className='pt-2 border-t border-neutral-800'>
+              <p className='text-xs uppercase tracking-[0.2em] text-neutral-500 mb-3 font-bold flex items-center gap-2'>
+                <Globe size={12} /> {common.languageSwitcher.label}
+              </p>
+              <div className='flex flex-wrap gap-2'>
+                {supportedLocales.map((loc) => (
+                  <button
+                    key={loc}
+                    type='button'
+                    onClick={() => { switchLocale(loc); setMobileOpen(false); }}
+                    className={`px-3 py-1.5 text-sm rounded-full border transition-colors ${
+                      loc === locale
+                        ? 'border-emerald-500/50 text-emerald-400 bg-emerald-500/10'
+                        : 'border-neutral-700 text-neutral-400 hover:text-white hover:border-neutral-500'
+                    }`}
+                  >
+                    {localeLabels[loc]}
+                  </button>
+                ))}
+              </div>
+            </div>
+
             <div className='pt-4 border-t border-neutral-800'>
               <Link
                 href='/#contact'
                 onClick={() => setMobileOpen(false)}
                 className='block w-full text-center px-4 py-3 bg-emerald-600 text-white text-sm font-bold rounded-full hover:bg-emerald-500 transition-colors'
               >
-                FALE COMIGO
+                {common.cta}
               </Link>
             </div>
           </nav>

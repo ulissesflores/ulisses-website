@@ -7,13 +7,14 @@ import { acervoClusters } from '@/data/acervo-teologico';
 import { upkfMeta } from '@/data/generated/upkf.generated';
 import { publications } from '@/data/publications';
 import { FaqSection } from '@/components/faq-section';
-import { identidadeFaq } from '@/data/faq';
+import { isLocale, defaultLocale, type Locale } from '@/data/i18n';
+import { getDictionary } from '@/lib/get-dictionary';
+import { buildLanguageAlternates } from '@/data/seo';
 
 const canonicalPath = '/identidade';
 const ogImage = '/carlos-ulisses-flores-cto.jpg';
-const pageTitle = 'Identidade Soberana | Hub Canônico';
-const llmDescription =
-  'Hub canônico de identidade soberana de Ulisses Flores com verificações públicas, produção acadêmica, acervo teológico, domínios e grafo semântico de autoridade.';
+
+type PageProps = { params: Promise<{ locale: string }> };
 
 function loadPublicJsonLd() {
   try {
@@ -34,47 +35,40 @@ function normalizeForSearch(value: string) {
     .toLowerCase();
 }
 
-const languageNames: Record<string, string> = {
-  'pt-BR': 'Português',
-  en: 'English',
-  es: 'Español',
-  he: 'עברית',
-  it: 'Italiano',
-};
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const { locale: raw } = await params;
+  const locale = (isLocale(raw) ? raw : defaultLocale) as Locale;
+  const dict = await getDictionary(locale);
+  const t = dict.identidade;
 
-export const metadata: Metadata = {
-  title: pageTitle,
-  description: llmDescription,
-  alternates: {
-    canonical: canonicalPath,
-  },
-  openGraph: {
-    type: 'profile',
-    url: `${upkfMeta.primaryWebsite}${canonicalPath}`,
-    title: `${pageTitle} | Ulisses Flores`,
-    description: llmDescription,
-    images: [
-      {
-        url: ogImage,
-        width: 1200,
-        height: 630,
-        alt: 'Ulisses Flores - Sovereign Identity Hub',
-      },
-    ],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: `${pageTitle} | Ulisses Flores`,
-    description: llmDescription,
-    images: [ogImage],
-  },
-  other: {
-    'geo.region': 'BR-SP',
-    'geo.placename': 'Sao Paulo',
-  },
-};
+  return {
+    title: t.meta.title,
+    description: t.meta.description,
+    alternates: { canonical: canonicalPath, languages: buildLanguageAlternates(canonicalPath) },
+    openGraph: {
+      type: 'profile',
+      url: `${upkfMeta.primaryWebsite}${canonicalPath}`,
+      title: t.meta.ogTitle,
+      description: t.meta.ogDescription,
+      images: [{ url: ogImage, width: 1200, height: 630, alt: t.meta.ogImageAlt }],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: t.meta.ogTitle,
+      description: t.meta.ogDescription,
+      images: [ogImage],
+    },
+    other: { 'geo.region': 'BR-SP', 'geo.placename': 'Sao Paulo' },
+  };
+}
 
-export default function IdentidadePage() {
+export default async function IdentidadePage({ params }: PageProps) {
+  const { locale: raw } = await params;
+  const locale = (isLocale(raw) ? raw : defaultLocale) as Locale;
+  const dict = await getDictionary(locale);
+  const t = dict.identidade;
+  const tFaq = dict.faq.identidade;
+  const languageNames = t.languageNames;
   const publicJsonLd = loadPublicJsonLd();
   const publicIdentifiers = Array.isArray(upkfMeta.publicIdentifiers) ? upkfMeta.publicIdentifiers : [];
   const domainInventory = Array.isArray(upkfMeta.domainInventory) ? upkfMeta.domainInventory : [];
@@ -113,20 +107,13 @@ export default function IdentidadePage() {
     .slice(0, 8);
 
   const statCards = [
-    { label: 'ORCID Works', value: identityStats.orcidWorks, href: '/research' },
-    { label: 'Certificações', value: identityStats.certifications, href: '/certifications' },
-    { label: 'Domínios', value: identityStats.domains, href: '/identidade#dominios' },
-    { label: 'Sermões', value: identityStats.sermons, href: '/acervo-teologico' },
+    { label: t.sections.academic.statCards.orcidWorks, value: identityStats.orcidWorks, href: '/research' },
+    { label: t.sections.academic.statCards.certifications, value: identityStats.certifications, href: '/certifications' },
+    { label: t.sections.academic.statCards.domains, value: identityStats.domains, href: '/identidade#dominios' },
+    { label: t.sections.academic.statCards.sermons, value: identityStats.sermons, href: '/acervo-teologico' },
   ];
 
-  const hubLinks = [
-    { label: 'Research', href: '/research' },
-    { label: 'Whitepapers', href: '/whitepapers' },
-    { label: 'Essays', href: '/essays' },
-    { label: 'Certifications', href: '/certifications' },
-    { label: 'Acervo Teológico', href: '/acervo-teologico' },
-    { label: 'Mundo Político', href: '/mundo-politico' },
-  ];
+  const hubLinks = t.hub.links;
 
   const pageJsonLd = {
     '@context': 'https://schema.org',
@@ -135,9 +122,9 @@ export default function IdentidadePage() {
         '@type': 'WebPage',
         '@id': `${upkfMeta.primaryWebsite}${canonicalPath}#webpage`,
         url: `${upkfMeta.primaryWebsite}${canonicalPath}`,
-        name: pageTitle,
-        description: llmDescription,
-        inLanguage: 'pt-BR',
+        name: t.meta.title,
+        description: t.meta.description,
+        inLanguage: locale,
         isPartOf: {
           '@id': `${upkfMeta.primaryWebsite}/#website`,
         },
@@ -167,7 +154,7 @@ export default function IdentidadePage() {
       {
         '@type': 'ItemList',
         '@id': `${upkfMeta.primaryWebsite}${canonicalPath}#hub-links`,
-        name: 'Hub Canônico de Conteúdo',
+        name: t.hub.title,
         itemListElement: hubLinks.map((entry, index) => ({
           '@type': 'ListItem',
           position: index + 1,
@@ -198,12 +185,12 @@ export default function IdentidadePage() {
             </div>
 
             <div>
-              <p className='text-xs uppercase tracking-[0.18em] text-emerald-300 mb-3'>Ground Truth Identity Node · UPKF v3.3</p>
+              <p className='text-xs uppercase tracking-[0.18em] text-emerald-300 mb-3'>{t.header.kicker}</p>
               <h1 className='text-4xl md:text-5xl font-bold text-white mb-3'>{upkfMeta.publicDisplayName}</h1>
-              <p className='text-neutral-300 text-lg'>Odysseus · Polymath Researcher · CTO · Sovereign Identity Architect</p>
+              <p className='text-neutral-300 text-lg'>{t.header.subtitle}</p>
               <p className='text-sm text-neutral-500 mt-4'>
-                ORCID {upkfMeta.orcid} · Lattes {upkfMeta.lattesId} · {identityStats.orcidWorks} trabalhos ·{' '}
-                {identityStats.certifications} certificações
+                ORCID {upkfMeta.orcid} · Lattes {upkfMeta.lattesId} · {identityStats.orcidWorks} {t.header.statsTemplate.works} ·{' '}
+                {identityStats.certifications} {t.header.statsTemplate.certifications}
               </p>
 
               <div className='mt-6 flex flex-wrap gap-2 text-xs'>
@@ -231,10 +218,9 @@ export default function IdentidadePage() {
         </header>
 
         <section className='rounded-2xl border border-neutral-800 bg-neutral-900/30 p-6'>
-          <h2 className='text-2xl font-semibold text-white mb-4'>Hub Canônico</h2>
+          <h2 className='text-2xl font-semibold text-white mb-4'>{t.hub.title}</h2>
           <p className='text-neutral-400 mb-5'>
-            Malha principal para indexação em buscadores e LLMs. Esta página referencia os nós centrais do acervo e recebe links
-            de todas as coleções estratégicas.
+            {t.hub.description}
           </p>
           <div className='grid gap-3 md:grid-cols-3'>
             {hubLinks.map((entry) => (
@@ -250,7 +236,7 @@ export default function IdentidadePage() {
         </section>
 
         <section id='soberana' className='rounded-2xl border border-neutral-800 bg-neutral-900/30 p-6'>
-          <h2 className='text-2xl font-semibold text-white mb-4'>01 · Identidade Soberana e Verificações</h2>
+          <h2 className='text-2xl font-semibold text-white mb-4'>{t.sections.sovereignIdentity.title}</h2>
           <div className='grid gap-4 md:grid-cols-3'>
             {[
               {
@@ -323,7 +309,7 @@ export default function IdentidadePage() {
         </section>
 
         <section id='dominios' className='rounded-2xl border border-neutral-800 bg-neutral-900/30 p-6'>
-          <h2 className='text-2xl font-semibold text-white mb-4'>02 · Domínios Soberanos</h2>
+          <h2 className='text-2xl font-semibold text-white mb-4'>{t.sections.domains.title}</h2>
           <div className='grid gap-3 md:grid-cols-2 lg:grid-cols-3'>
             {domainInventory.map((domain) => {
               const category = String(domain.category || '').replace(/\*/g, '').trim();
@@ -351,7 +337,7 @@ export default function IdentidadePage() {
         </section>
 
         <section className='rounded-2xl border border-neutral-800 bg-neutral-900/30 p-6'>
-          <h2 className='text-2xl font-semibold text-white mb-4'>03 · Presença Geográfica e Idiomas</h2>
+          <h2 className='text-2xl font-semibold text-white mb-4'>{t.sections.geoLanguages.title}</h2>
           <div className='grid gap-6 md:grid-cols-2'>
             <article className='rounded-xl border border-neutral-800 bg-neutral-950/70 p-4'>
               <p className='text-xs uppercase tracking-widest text-neutral-500 mb-3'>Área de atuação</p>
@@ -379,7 +365,7 @@ export default function IdentidadePage() {
         </section>
 
         <section className='rounded-2xl border border-neutral-800 bg-neutral-900/30 p-6'>
-          <h2 className='text-2xl font-semibold text-white mb-4'>03½ · Herança e Linhagem</h2>
+          <h2 className='text-2xl font-semibold text-white mb-4'>{t.sections.heritage.title}</h2>
           {heritage.publishPublic ? (
             <>
               <div className='grid gap-4 md:grid-cols-3'>
@@ -404,7 +390,7 @@ export default function IdentidadePage() {
         </section>
 
         <section id='academico' className='rounded-2xl border border-neutral-800 bg-neutral-900/30 p-6'>
-          <h2 className='text-2xl font-semibold text-white mb-4'>04 · Prova Acadêmica e Produção Científica</h2>
+          <h2 className='text-2xl font-semibold text-white mb-4'>{t.sections.academic.title}</h2>
 
           <div className='grid gap-3 md:grid-cols-4 mb-6'>
             {statCards.map((card) => (
@@ -454,7 +440,7 @@ export default function IdentidadePage() {
         </section>
 
         <section id='acervo' className='rounded-2xl border border-neutral-800 bg-neutral-900/30 p-6'>
-          <h2 className='text-2xl font-semibold text-white mb-4'>04½ · Acervo Científico e Teológico</h2>
+          <h2 className='text-2xl font-semibold text-white mb-4'>{t.sections.acervo.title}</h2>
 
           <h3 className='text-lg font-semibold text-white mb-3'>Repositórios citáveis (DOI)</h3>
           <div className='grid gap-3 md:grid-cols-3'>
@@ -516,7 +502,7 @@ export default function IdentidadePage() {
         </section>
 
         <section id='conhecimento' className='rounded-2xl border border-neutral-800 bg-neutral-900/30 p-6'>
-          <h2 className='text-2xl font-semibold text-white mb-4'>05 · Domínios de Conhecimento</h2>
+          <h2 className='text-2xl font-semibold text-white mb-4'>{t.sections.knowledge.title}</h2>
           <div className='flex flex-wrap gap-2'>
             {upkfMeta.knowsAbout.map((topic) => (
               <span key={topic} className='rounded-full border border-neutral-700 bg-neutral-950/60 px-3 py-1 text-xs text-neutral-300'>
@@ -527,7 +513,7 @@ export default function IdentidadePage() {
         </section>
 
         <section id='firewall' className='rounded-2xl border border-neutral-800 bg-neutral-900/30 p-6'>
-          <h2 className='text-2xl font-semibold text-white mb-4'>06 · Firewall Semântico</h2>
+          <h2 className='text-2xl font-semibold text-white mb-4'>{t.sections.firewall.title}</h2>
           <div className='grid gap-3 md:grid-cols-2'>
             {Object.entries(upkfMeta.disambiguation).map(([lang, text]) => (
               <article key={lang} className='rounded-xl border border-neutral-800 bg-neutral-950/70 p-4'>
@@ -549,7 +535,7 @@ export default function IdentidadePage() {
         </section>
 
         <section id='organizacoes' className='rounded-2xl border border-neutral-800 bg-neutral-900/30 p-6'>
-          <h2 className='text-2xl font-semibold text-white mb-4'>07 · Organizações e Afiliações</h2>
+          <h2 className='text-2xl font-semibold text-white mb-4'>{t.sections.organizations.title}</h2>
           <div className='grid gap-3 md:grid-cols-2'>
             {affiliations.map((affiliation) => (
               <article key={affiliation.schemaId} className='rounded-xl border border-neutral-800 bg-neutral-950/70 p-4'>
@@ -572,7 +558,7 @@ export default function IdentidadePage() {
         </section>
 
         <div className='mt-10'>
-          <FaqSection items={identidadeFaq} sectionTitle='Perguntas Frequentes sobre Ulisses Flores' />
+          <FaqSection items={[...tFaq]} sectionTitle={t.faq.sectionTitle} />
         </div>
       </main>
 

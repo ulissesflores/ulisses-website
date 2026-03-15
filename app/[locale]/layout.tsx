@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
+import { Noto_Sans_Hebrew } from 'next/font/google';
 import { siteJsonLd, upkfMeta } from '@/data/generated/upkf.generated';
 import { buildLanguageAlternates } from '@/data/seo';
 import {
@@ -11,10 +12,21 @@ import {
   isLocale,
   type Locale,
 } from '@/data/i18n';
+import { getDictionary } from '@/lib/get-dictionary';
+import { I18nProvider } from '@/lib/i18n-context';
 
 import { GlobalHeader } from '@/components/global-header';
 import { GlobalFooter } from '@/components/global-footer';
 import '../globals.css';
+
+// ─── Fonts ──────────────────────────────────────────────────────────────────────
+
+const notoSansHebrew = Noto_Sans_Hebrew({
+  subsets: ['hebrew'],
+  weight: ['400', '700'],
+  display: 'swap',
+  variable: '--font-hebrew',
+});
 
 // ─── Site-wide constants ────────────────────────────────────────────────────────
 
@@ -40,6 +52,7 @@ type LayoutProps = {
 export async function generateMetadata({ params }: LayoutProps): Promise<Metadata> {
   const { locale: rawLocale } = await params;
   const locale = (isLocale(rawLocale) ? rawLocale : defaultLocale) as Locale;
+  const dict = await getDictionary(locale);
   const ogLocale = localeToOgLocale[locale];
   const alternateOgLocales = supportedLocales
     .filter((l) => l !== locale)
@@ -48,11 +61,11 @@ export async function generateMetadata({ params }: LayoutProps): Promise<Metadat
   return {
     metadataBase: new URL(siteOrigin),
     title: {
-      default: `${upkfMeta.preferredName} Flores | CTO, Pesquisa e Engenharia`,
+      default: dict.home.meta.title,
       template: `%s | ${upkfMeta.preferredName} Flores`,
     },
     applicationName: 'ulissesflores.com',
-    description: defaultDescription,
+    description: dict.home.meta.description,
     authors: [
       {
         name: upkfMeta.publicDisplayName || upkfMeta.displayName,
@@ -61,17 +74,7 @@ export async function generateMetadata({ params }: LayoutProps): Promise<Metadat
     ],
     creator: upkfMeta.publicDisplayName || upkfMeta.displayName,
     publisher: 'Codex Hash Research',
-    keywords: [
-      'Ulisses Flores',
-      'Carlos Ulisses Flores',
-      'Codex Hash',
-      'research',
-      'artificial intelligence',
-      'economics',
-      'systems engineering',
-      'theology',
-      'ORCID 0000-0002-6034-7765',
-    ],
+    keywords: [...dict.home.meta.keywords],
     category: 'Research',
     classification: 'Science and Technology',
     alternates: {
@@ -92,8 +95,8 @@ export async function generateMetadata({ params }: LayoutProps): Promise<Metadat
     openGraph: {
       type: 'website',
       url: siteOrigin,
-      title: `${upkfMeta.preferredName} Flores | CTO, Pesquisa e Engenharia`,
-      description: defaultDescription,
+      title: dict.home.meta.ogTitle,
+      description: dict.home.meta.ogDescription,
       siteName: 'ulissesflores.com',
       locale: ogLocale,
       alternateLocale: alternateOgLocales,
@@ -102,14 +105,14 @@ export async function generateMetadata({ params }: LayoutProps): Promise<Metadat
           url: defaultOgImage,
           width: 1200,
           height: 630,
-          alt: 'Ulisses Flores - profile and research hub',
+          alt: dict.home.meta.ogImageAlt,
         },
       ],
     },
     twitter: {
       card: 'summary_large_image',
-      title: `${upkfMeta.preferredName} Flores | CTO, Pesquisa e Engenharia`,
-      description: defaultDescription,
+      title: dict.home.meta.ogTitle,
+      description: dict.home.meta.ogDescription,
       images: [defaultOgImage],
     },
     icons: {
@@ -142,18 +145,23 @@ export default async function RootLayout({ children, params }: RootLayoutProps) 
   const locale = rawLocale as Locale;
   const hreflang = localeToHreflang[locale];
   const dir = getDirection(locale);
+  const dict = await getDictionary(locale);
+
+  const hebrewFontClass = locale === 'he' ? notoSansHebrew.variable : '';
 
   return (
-    <html lang={hreflang} dir={dir}>
+    <html lang={hreflang} dir={dir} className={hebrewFontClass}>
       <body className='antialiased'>
-        <GlobalHeader />
-        <script
-          id='structured-data-site'
-          type='application/ld+json'
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(siteJsonLd) }}
-        />
-        {children}
-        <GlobalFooter />
+        <I18nProvider locale={locale} common={dict.common}>
+          <GlobalHeader />
+          <script
+            id='structured-data-site'
+            type='application/ld+json'
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(siteJsonLd) }}
+          />
+          {children}
+          <GlobalFooter />
+        </I18nProvider>
       </body>
     </html>
   );

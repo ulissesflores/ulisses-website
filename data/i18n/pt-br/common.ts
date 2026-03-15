@@ -1,41 +1,41 @@
 export const common = {
   nav: {
-    categories: {
-      sobre: {
+    categories: [
+      {
         label: 'Sobre',
-        items: {
-          bio: { label: 'Bio', href: '/#about', description: 'Quem sou e minha trajetória' },
-          expertise: { label: 'Expertise', href: '/#pillars', description: 'Pilares de atuação' },
-          trajetoria: { label: 'Trajetória', href: '/#trajectory', description: 'Linha do tempo profissional' },
-        },
+        items: [
+          { label: 'Bio', href: '/#about', description: 'Quem sou e minha trajetória' },
+          { label: 'Expertise', href: '/#pillars', description: 'Pilares de atuação' },
+          { label: 'Trajetória', href: '/#trajectory', description: 'Linha do tempo profissional' },
+        ],
       },
-      publicacoes: {
+      {
         label: 'Publicações',
-        items: {
-          research: { label: 'Research', href: '/research', description: 'IA, Economia e Sistemas Complexos' },
-          whitepapers: { label: 'Whitepapers', href: '/whitepapers', description: 'Engenharia, IoT e Segurança' },
-          projetoPsi: { label: 'Projeto Ψ (PSI)', href: '/whitepapers/projeto-psi', description: 'Whitepaper técnico: Hardware Soberano' },
-          psiDemo: { label: 'PSI — Demonstração', href: '/projeto-psi', description: 'Landing comercial: investimento e licenciamento' },
-          essays: { label: 'Essays', href: '/essays', description: 'Teologia, Humanidades e História' },
-        },
+        items: [
+          { label: 'Research', href: '/research', description: 'IA, Economia e Sistemas Complexos' },
+          { label: 'Whitepapers', href: '/whitepapers', description: 'Engenharia, IoT e Segurança' },
+          { label: 'Projeto Ψ (PSI)', href: '/whitepapers/projeto-psi', description: 'Whitepaper técnico: Hardware Soberano' },
+          { label: 'PSI — Demonstração', href: '/projeto-psi', description: 'Landing comercial: investimento e licenciamento' },
+          { label: 'Essays', href: '/essays', description: 'Teologia, Humanidades e História' },
+        ],
       },
-      acervo: {
+      {
         label: 'Acervo',
-        items: {
-          acervoTeologico: { label: 'Acervo Teológico', href: '/acervo-teologico', description: 'Sermões por cluster temático' },
-          clubeSanto: { label: 'Clube Santo', href: '/clube-santo', description: 'Avivamento para a era digital' },
-          mundoPolitico: { label: 'Mundo Político', href: '/mundo-politico', description: 'Artigos e análises políticas' },
-        },
+        items: [
+          { label: 'Acervo Teológico', href: '/acervo-teologico', description: 'Sermões por cluster temático' },
+          { label: 'Clube Santo', href: '/clube-santo', description: 'Avivamento para a era digital' },
+          { label: 'Mundo Político', href: '/mundo-politico', description: 'Artigos e análises políticas' },
+        ],
       },
-      ferramentas: {
+      {
         label: 'Ferramentas',
-        items: {
-          simulacoes: { label: 'Simulações', href: '/simulacoes', description: 'Laboratório de cenários prospectivos' },
-          identidade: { label: 'Identidade', href: '/identidade', description: 'Hub canônico de identidade soberana' },
-          certificacoes: { label: 'Certificações', href: '/certifications', description: 'Credenciais e verificações' },
-        },
+        items: [
+          { label: 'Simulações', href: '/simulacoes', description: 'Laboratório de cenários prospectivos' },
+          { label: 'Identidade', href: '/identidade', description: 'Hub canônico de identidade soberana' },
+          { label: 'Certificações', href: '/certifications', description: 'Credenciais e verificações' },
+        ],
       },
-    },
+    ],
   },
   cta: 'FALE COMIGO',
   mobileMenu: {
@@ -61,5 +61,8 @@ export const common = {
     open: 'Abrir',
     explore: 'Explorar',
     contact: 'Falar com Ulisses Flores →',
+  },
+  languageSwitcher: {
+    label: 'Idioma',
   },
 } as const;
