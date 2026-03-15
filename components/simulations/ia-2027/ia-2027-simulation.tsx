@@ -3,6 +3,7 @@
 import { memo, useEffect, useMemo, useState } from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
+import { useDict } from '@/lib/i18n-context';
 import { useScrollSpy } from '@/components/simulations/ia-2027/use-scroll-spy';
 import { processNarrativeFootnotes } from '@/components/simulations/ia-2027/footnotes';
 import type {
@@ -28,25 +29,6 @@ const FALLBACK_CHART: SimulationChartExtra = {
   revenue: 0,
 };
 
-const currencyFormatter = new Intl.NumberFormat('pt-BR', {
-  style: 'currency',
-  currency: 'BRL',
-  notation: 'compact',
-  compactDisplay: 'short',
-  maximumFractionDigits: 1,
-});
-
-const percentFormatter = new Intl.NumberFormat('pt-BR', {
-  style: 'percent',
-  signDisplay: 'always',
-  maximumFractionDigits: 0,
-});
-
-const dateFormatter = new Intl.DateTimeFormat('pt-BR', {
-  month: 'short',
-  year: 'numeric',
-});
-
 type PathConfig = {
   kicker: string;
   title: string;
@@ -61,36 +43,6 @@ const processedMain = processNarrativeFootnotes(mainTimeline as NarrativeSection
 const processedSlowdown = processNarrativeFootnotes(slowdownEnding as NarrativeSection[], 'slowdown');
 const processedRace = processNarrativeFootnotes(raceEnding as NarrativeSection[], 'race');
 
-const pathConfig: Record<SimulationPath, PathConfig> = {
-  main: {
-    kicker: 'Simulação Prospectiva',
-    title: 'IA 2027',
-    summary: 'Linha principal do cenário (2025-2027), culminando no ponto de bifurcação estratégica.',
-    sections: processedMain.sections,
-    initialChart: (mainInitialChart as SimulationChartExtra) ?? FALLBACK_CHART,
-    footnotes: (footnotesData as Footnote[]).filter((note) => note.context === 'main'),
-    firstReferenceByFootnote: processedMain.firstReferenceByFootnote,
-  },
-  slowdown: {
-    kicker: 'Final Alternativo • Desaceleração',
-    title: 'IA 2027 • Slowdown',
-    summary: 'Ramo de contenção, coordenação internacional e reforço de alinhamento técnico.',
-    sections: processedSlowdown.sections,
-    initialChart: (slowdownInitialChart as SimulationChartExtra) ?? FALLBACK_CHART,
-    footnotes: (footnotesData as Footnote[]).filter((note) => note.context === 'slowdown'),
-    firstReferenceByFootnote: processedSlowdown.firstReferenceByFootnote,
-  },
-  race: {
-    kicker: 'Final Alternativo • Corrida',
-    title: 'IA 2027 • Race',
-    summary: 'Ramo de aceleração máxima, com escalada de autonomia e perda progressiva de controle humano.',
-    sections: processedRace.sections,
-    initialChart: (raceInitialChart as SimulationChartExtra) ?? FALLBACK_CHART,
-    footnotes: (footnotesData as Footnote[]).filter((note) => note.context === 'race'),
-    firstReferenceByFootnote: processedRace.firstReferenceByFootnote,
-  },
-};
-
 function normalizeInitialPath(value?: SimulationPath): SimulationPath {
   if (value === 'slowdown' || value === 'race') {
     return value;
@@ -98,12 +50,12 @@ function normalizeInitialPath(value?: SimulationPath): SimulationPath {
   return 'main';
 }
 
-function formatDate(date: string): string {
+function formatDate(date: string, locale: string): string {
   const parsed = new Date(`${date}T00:00:00`);
   if (Number.isNaN(parsed.getTime())) {
     return date;
   }
-  return dateFormatter.format(parsed);
+  return new Intl.DateTimeFormat(locale, { month: 'short', year: 'numeric' }).format(parsed);
 }
 
 function resolveNumber(value: unknown, fallback = 0): number {
@@ -114,7 +66,6 @@ function resolveCapabilities(value: unknown): [string, number][] {
   if (!Array.isArray(value)) {
     return [];
   }
-
   return value
     .filter(
       (metric): metric is [string, number] =>
@@ -124,6 +75,31 @@ function resolveCapabilities(value: unknown): [string, number][] {
 }
 
 function SimulationMetricsSidebar({ chart }: { chart: SimulationChartExtra }) {
+  const { ia2027, locale } = useDict();
+  const t = ia2027.simulation;
+
+  const currencyFormatter = useMemo(
+    () =>
+      new Intl.NumberFormat(locale, {
+        style: 'currency',
+        currency: 'BRL',
+        notation: 'compact',
+        compactDisplay: 'short',
+        maximumFractionDigits: 1,
+      }),
+    [locale],
+  );
+
+  const percentFormatter = useMemo(
+    () =>
+      new Intl.NumberFormat(locale, {
+        style: 'percent',
+        signDisplay: 'always',
+        maximumFractionDigits: 0,
+      }),
+    [locale],
+  );
+
   const revenue = resolveNumber(chart.revenue);
   const approval = resolveNumber(chart.approval);
   const capabilities = resolveCapabilities(chart.capabilities);
@@ -133,40 +109,40 @@ function SimulationMetricsSidebar({ chart }: { chart: SimulationChartExtra }) {
   return (
     <div className='bg-neutral-900/60 p-6 rounded-xl border border-neutral-700 flex flex-col gap-6 mt-10'>
       <div className='flex justify-between items-start gap-4'>
-        <h3 className='text-2xl font-bold font-sans uppercase tracking-tight text-right text-white'>Indicadores</h3>
-        <span className='text-xs font-mono text-neutral-500 uppercase'>{formatDate(chart.date)}</span>
+        <h3 className='text-2xl font-bold font-sans uppercase tracking-tight text-right text-white'>{t.indicators}</h3>
+        <span className='text-xs font-mono text-neutral-500 uppercase'>{formatDate(chart.date, locale)}</span>
       </div>
 
       <div className='border border-neutral-700 rounded-md p-4 bg-emerald-800 text-white'>
-        <div className='text-[10px] uppercase opacity-85 mb-1'>Receita</div>
+        <div className='text-[10px] uppercase opacity-85 mb-1'>{t.revenue}</div>
         <div className='text-3xl font-bold'>{currencyFormatter.format(revenue)}</div>
       </div>
 
       <div className='border border-neutral-700 rounded-md p-4 bg-neutral-900'>
-        <div className='text-[10px] uppercase text-neutral-500 mb-1'>Aprovação Pública</div>
+        <div className='text-[10px] uppercase text-neutral-500 mb-1'>{t.publicApproval}</div>
         <div className={`text-3xl font-bold ${approvalClass}`}>{percentFormatter.format(approval)}</div>
       </div>
 
       {chart.agentPopulation ? (
         <div className='border border-black rounded-md p-4 bg-white'>
-          <div className='text-[10px] uppercase text-gray-500 mb-2'>População de Agentes</div>
+          <div className='text-[10px] uppercase text-gray-500 mb-2'>{t.agentPopulation}</div>
           <div className='flex items-end justify-between gap-3'>
             <div>
-              <div className='text-2xl font-bold'>{chart.agentPopulation.copies.toLocaleString('pt-BR')}</div>
-              <div className='text-xs text-gray-500 uppercase'>cópias ativas</div>
+              <div className='text-2xl font-bold'>{chart.agentPopulation.copies.toLocaleString(locale)}</div>
+              <div className='text-xs text-gray-500 uppercase'>{t.activeCopies}</div>
             </div>
             <div className='text-right'>
               <div className='text-xl font-bold'>{chart.agentPopulation.speed}x</div>
-              <div className='text-xs text-gray-500 uppercase'>velocidade</div>
+              <div className='text-xs text-gray-500 uppercase'>{t.speed}</div>
             </div>
           </div>
         </div>
       ) : null}
 
       <div className='mt-2'>
-        <div className='text-[12px] uppercase font-mono mb-3'>Capacidades</div>
+        <div className='text-[12px] uppercase font-mono mb-3'>{t.capabilities}</div>
         {capabilities.length === 0 ? (
-          <p className='text-sm text-gray-500'>Sem dados de capacidades para este período.</p>
+          <p className='text-sm text-gray-500'>{t.noCapabilities}</p>
         ) : (
           <div className='flex flex-col gap-2'>
             {capabilities.map(([label, value]) => {
@@ -225,17 +201,16 @@ function BranchDecisionBlock({
   activePath: SimulationPath;
   onSelectPath: (nextPath: SimulationPath) => void;
 }) {
+  const { ia2027 } = useDict();
+  const t = ia2027.simulation;
+
   if (activePath === 'main') {
     return (
       <section className='border-t border-neutral-700 pt-10'>
-        <p className='text-xs uppercase font-mono tracking-[0.2em] text-cyan-400 mb-2'>Ponto de Singularidade</p>
-        <h3 className='text-3xl font-black tracking-tight mb-4 text-white'>A Escolha Estratégica</h3>
+        <p className='text-xs uppercase font-mono tracking-[0.2em] text-cyan-400 mb-2'>{t.singularityKicker}</p>
+        <h3 className='text-3xl font-black tracking-tight mb-4 text-white'>{t.strategicChoice}</h3>
         <p className='text-neutral-300 mb-8 leading-relaxed max-w-3xl'>
-          Chegamos ao horizonte de eventos da Inteligência Artificial Geral (AGI). Neste ponto
-          crítico da simulação, a humanidade e as corporações enfrentam um dilema existencial e
-          econômico. A decisão tomada aqui altera irrevogavelmente a geopolítica, o mercado
-          financeiro e o futuro da nossa espécie. Qual caminho estratégico o seu conselho de
-          administração deve se preparar para enfrentar?
+          {t.choiceDescription}
         </p>
         <div className='grid grid-cols-1 md:grid-cols-2 gap-6'>
           <button
@@ -243,14 +218,9 @@ function BranchDecisionBlock({
             onClick={() => onSelectPath('slowdown')}
             className='rounded-2xl border-2 border-emerald-700/60 bg-emerald-950/30 text-white px-6 py-8 text-left hover:bg-emerald-900/40 hover:border-emerald-500 transition-colors group'
           >
-            <span className='block text-xs uppercase font-mono tracking-[0.2em] mb-2 text-emerald-400'>Desaceleração Coordenada</span>
-            <span className='block text-3xl font-black text-emerald-400 group-hover:text-emerald-300'>Puxar o Freio</span>
-            <span className='block text-sm mt-3 text-neutral-400 leading-relaxed'>
-              A opção pela prudência. Governos e big techs concordam em impor freios regulatórios
-              drásticos e tratados internacionais de contenção. O progresso da IA é retardado em prol
-              da segurança e do alinhamento técnico (Safety), mas o risco de estagnação econômica e
-              perda de soberania para nações desonestas dispara.
-            </span>
+            <span className='block text-xs uppercase font-mono tracking-[0.2em] mb-2 text-emerald-400'>{t.slowdownLabel}</span>
+            <span className='block text-3xl font-black text-emerald-400 group-hover:text-emerald-300'>{t.slowdownTitle}</span>
+            <span className='block text-sm mt-3 text-neutral-400 leading-relaxed'>{t.slowdownDescription}</span>
           </button>
 
           <button
@@ -258,14 +228,9 @@ function BranchDecisionBlock({
             onClick={() => onSelectPath('race')}
             className='rounded-2xl border-2 border-red-700/60 bg-red-950/30 text-white px-6 py-8 text-left hover:bg-red-900/40 hover:border-red-500 transition-colors group'
           >
-            <span className='block text-xs uppercase font-mono tracking-[0.2em] mb-2 text-red-500'>Corrida Estratégica</span>
-            <span className='block text-3xl font-black text-red-500 group-hover:text-red-400'>Acelerar a Carroça</span>
-            <span className='block text-sm mt-3 text-neutral-400 leading-relaxed'>
-              O acelerador no máximo. A premissa de que &ldquo;quem dominar a AGI primeiro ditará as
-              regras do mundo&rdquo;. Sem amarras regulatórias, o desenvolvimento atinge velocidade
-              de escape. A economia explode em hiperprodutividade, mas o risco de desalinhamento
-              adversarial, colapso de infraestruturas e perda do controle humano torna-se iminente.
-            </span>
+            <span className='block text-xs uppercase font-mono tracking-[0.2em] mb-2 text-red-500'>{t.raceLabel}</span>
+            <span className='block text-3xl font-black text-red-500 group-hover:text-red-400'>{t.raceTitle}</span>
+            <span className='block text-sm mt-3 text-neutral-400 leading-relaxed'>{t.raceDescription}</span>
           </button>
         </div>
       </section>
@@ -274,9 +239,9 @@ function BranchDecisionBlock({
 
   return (
     <section className='border-t border-neutral-700 pt-10'>
-      <h3 className='text-2xl font-black uppercase tracking-tight mb-4 text-white'>Finais Alternativos</h3>
+      <h3 className='text-2xl font-black uppercase tracking-tight mb-4 text-white'>{t.alternateEndings}</h3>
       <p className='text-neutral-400 mb-6'>
-        Ramo ativo: {activePath === 'slowdown' ? 'Desaceleração Coordenada' : 'Corrida Estratégica'}.
+        {t.activeBranch} {activePath === 'slowdown' ? t.slowdownLabel : t.raceLabel}.
       </p>
       <div className='grid grid-cols-1 md:grid-cols-3 gap-3'>
         <button
@@ -284,7 +249,7 @@ function BranchDecisionBlock({
           onClick={() => onSelectPath('main')}
           className='rounded-xl border border-neutral-700 bg-neutral-900/60 text-neutral-300 px-4 py-4 text-sm font-semibold hover:bg-neutral-800 transition-colors text-left'
         >
-          ← Voltar para a Bifurcação
+          {t.backToBifurcation}
         </button>
         <button
           type='button'
@@ -295,7 +260,7 @@ function BranchDecisionBlock({
               : 'border-neutral-700 bg-neutral-900/60 text-neutral-400 hover:bg-neutral-800'
           }`}
         >
-          Desaceleração Coordenada
+          {t.slowdownLabel}
         </button>
         <button
           type='button'
@@ -306,7 +271,7 @@ function BranchDecisionBlock({
               : 'border-neutral-700 bg-neutral-900/60 text-neutral-400 hover:bg-neutral-800'
           }`}
         >
-          Corrida Estratégica
+          {t.raceLabel}
         </button>
       </div>
     </section>
@@ -322,13 +287,16 @@ function FootnotesBlock({
   footnotes: Footnote[];
   firstReferenceByFootnote: Map<number, string>;
 }) {
+  const { ia2027 } = useDict();
+  const t = ia2027.simulation;
+
   if (!footnotes.length) {
     return null;
   }
 
   return (
     <section className='border-t border-gray-300 pt-10'>
-      <h3 className='text-2xl font-black uppercase tracking-tight mb-6'>Referências Bibliográficas</h3>
+      <h3 className='text-2xl font-black uppercase tracking-tight mb-6'>{t.references}</h3>
       <ol className='space-y-4'>
         {footnotes.map((footnote) => {
           const backReferenceId = firstReferenceByFootnote.get(footnote.num);
@@ -341,7 +309,7 @@ function FootnotesBlock({
               <div dangerouslySetInnerHTML={{ __html: footnote.html }} />
               {backReferenceId ? (
                 <a href={`#${backReferenceId}`} className='inline-block mt-2 text-indigo-700 font-semibold hover:underline'>
-                  Voltar ao trecho
+                  {t.backToExcerpt}
                 </a>
               ) : null}
             </li>
@@ -353,6 +321,9 @@ function FootnotesBlock({
 }
 
 export function IA2027Simulation({ initialPath }: { initialPath?: SimulationPath }) {
+  const { ia2027 } = useDict();
+  const t = ia2027.simulation;
+
   const [activePath, setActivePath] = useState<SimulationPath>(normalizeInitialPath(initialPath));
 
   useEffect(() => {
@@ -368,7 +339,40 @@ export function IA2027Simulation({ initialPath }: { initialPath?: SimulationPath
     };
   }, []);
 
-  const config = pathConfig[activePath];
+  const pathConfigMap: Record<SimulationPath, PathConfig> = useMemo(
+    () => ({
+      main: {
+        kicker: t.pathMain.kicker,
+        title: t.pathMain.title,
+        summary: t.pathMain.summary,
+        sections: processedMain.sections,
+        initialChart: (mainInitialChart as SimulationChartExtra) ?? FALLBACK_CHART,
+        footnotes: (footnotesData as Footnote[]).filter((note) => note.context === 'main'),
+        firstReferenceByFootnote: processedMain.firstReferenceByFootnote,
+      },
+      slowdown: {
+        kicker: t.pathSlowdown.kicker,
+        title: t.pathSlowdown.title,
+        summary: t.pathSlowdown.summary,
+        sections: processedSlowdown.sections,
+        initialChart: (slowdownInitialChart as SimulationChartExtra) ?? FALLBACK_CHART,
+        footnotes: (footnotesData as Footnote[]).filter((note) => note.context === 'slowdown'),
+        firstReferenceByFootnote: processedSlowdown.firstReferenceByFootnote,
+      },
+      race: {
+        kicker: t.pathRace.kicker,
+        title: t.pathRace.title,
+        summary: t.pathRace.summary,
+        sections: processedRace.sections,
+        initialChart: (raceInitialChart as SimulationChartExtra) ?? FALLBACK_CHART,
+        footnotes: (footnotesData as Footnote[]).filter((note) => note.context === 'race'),
+        firstReferenceByFootnote: processedRace.firstReferenceByFootnote,
+      },
+    }),
+    [t],
+  );
+
+  const config = pathConfigMap[activePath];
   const selector = useMemo(() => `[data-chart-extra][data-path="${activePath}"]`, [activePath]);
 
   const { activeSectionId, activeChart } = useScrollSpy({
@@ -384,8 +388,6 @@ export function IA2027Simulation({ initialPath }: { initialPath?: SimulationPath
       return;
     }
     setActivePath(nextPath);
-    // Scroll to the simulation container instead of page top
-    // to keep context after branch switch (avoids "jump to hero" bug)
     const simEl = document.getElementById('ia-2027-sim');
     if (simEl) {
       simEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -406,7 +408,7 @@ export function IA2027Simulation({ initialPath }: { initialPath?: SimulationPath
             href='/simulacoes'
             className='text-sm font-semibold border border-black rounded-full px-4 py-2 hover:bg-black hover:text-white transition-colors'
           >
-            ← Voltar para Simulações
+            {t.backLink}
           </Link>
         </div>
       </header>
@@ -444,21 +446,14 @@ export function IA2027Simulation({ initialPath }: { initialPath?: SimulationPath
 
           <footer className='border-t border-gray-300 pt-6 space-y-3'>
             <p className='text-sm text-gray-700'>
-              Esta simulação em português é uma adaptação do cenário original publicado em{' '}
+              {t.footerAdaptation}{' '}
               <a href='https://ai-2027.com/' target='_blank' rel='noopener noreferrer' className='underline font-semibold'>
                 ai-2027.com
               </a>
               .
             </p>
-            <p className='text-sm text-gray-500'>
-              Autores originais: Daniel Kokotajlo, Eli Lifland, Thomas Larsen, Romeo Dean.
-              Narrativa por Scott Alexander. Baseado em aproximadamente 25 exercícios de
-              simulação e feedback de mais de 100 especialistas em governança e segurança de IA.
-            </p>
-            <p className='text-sm text-gray-500'>
-              Tradução, adaptação e curadoria: Ulisses Flores — Cientista, Consultor em IA,
-              Professor, Palestrante e Mestrando.
-            </p>
+            <p className='text-sm text-gray-500'>{t.footerAuthors}</p>
+            <p className='text-sm text-gray-500'>{t.footerTranslation}</p>
           </footer>
         </section>
 

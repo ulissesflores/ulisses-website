@@ -9,8 +9,11 @@ import type { Dictionary } from '@/data/i18n/types';
 type I18nContextValue = {
   /** Current locale string, e.g. 'pt-br' */
   locale: Locale;
-  /** Common namespace — the ONLY part of the dict shipped to the client bundle */
+  /** Common namespace — always available in the client bundle */
   common: Dictionary['common'];
+  /** Optional page-specific namespaces — only shipped when needed by the page */
+  ia2027: Dictionary['ia2027'];
+  mummRa: Dictionary['mummRa'];
 };
 
 const I18nContext = createContext<I18nContextValue | null>(null);
@@ -20,19 +23,25 @@ const I18nContext = createContext<I18nContextValue | null>(null);
 type I18nProviderProps = {
   locale: Locale;
   common: Dictionary['common'];
+  ia2027?: Dictionary['ia2027'];
+  mummRa?: Dictionary['mummRa'];
   children: ReactNode;
 };
+
+// Default empty stubs to avoid runtime errors when namespace isn't provided
+const EMPTY_IA2027 = {} as Dictionary['ia2027'];
+const EMPTY_MUMMRA = {} as Dictionary['mummRa'];
 
 /**
  * Wraps the app tree and provides i18n data to client components.
  *
- * Performance: only `dict.common` and `locale` are sent to the client.
- * Page-specific namespaces stay server-side and are passed as props
- * directly to server components.
+ * Performance: `dict.common` is always sent; page-specific namespaces
+ * like `ia2027` or `mummRa` are sent ONLY by pages that need them.
+ * Server components continue to import getDictionary() directly.
  */
-export function I18nProvider({ locale, common, children }: I18nProviderProps) {
+export function I18nProvider({ locale, common, ia2027, mummRa, children }: I18nProviderProps) {
   return (
-    <I18nContext.Provider value={{ locale, common }}>
+    <I18nContext.Provider value={{ locale, common, ia2027: ia2027 ?? EMPTY_IA2027, mummRa: mummRa ?? EMPTY_MUMMRA }}>
       {children}
     </I18nContext.Provider>
   );
@@ -42,7 +51,7 @@ export function I18nProvider({ locale, common, children }: I18nProviderProps) {
 
 /**
  * Access i18n context in client components.
- * Returns `{ locale, common }`.
+ * Returns `{ locale, common, ia2027, mummRa }`.
  *
  * @example
  * const { common, locale } = useDict();

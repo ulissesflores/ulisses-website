@@ -152,7 +152,7 @@ export default async function RootLayout({ children, params }: RootLayoutProps) 
   return (
     <html lang={hreflang} dir={dir} className={hebrewFontClass}>
       <body className='antialiased'>
-        <I18nProvider locale={locale} common={dict.common}>
+        <I18nProvider locale={locale} common={dict.common} ia2027={dict.ia2027} mummRa={dict.mummRa}>
           <GlobalHeader />
           <script
             id='structured-data-site'
