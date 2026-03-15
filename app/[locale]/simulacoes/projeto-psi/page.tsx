@@ -1,4 +1,5 @@
-import { defaultLocale } from '@/data/i18n';
+import { defaultLocale, isLocale } from '@/data/i18n';
+import type { Locale } from '@/data/i18n';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { upkfMeta } from '@/data/generated/upkf.generated';
@@ -51,7 +52,13 @@ export const metadata: Metadata = {
   },
 };
 
-export default function ProjetoPsiPage() {
+interface PageProps {
+  params: Promise<{ locale: string }>;
+}
+
+export default async function ProjetoPsiPage({ params }: PageProps) {
+  const { locale: rawLocale } = await params;
+  const locale = (isLocale(rawLocale) ? rawLocale : defaultLocale) as Locale;
   const origin = upkfMeta.primaryWebsite;
 
   const pageJsonLd = {
@@ -64,7 +71,7 @@ export default function ProjetoPsiPage() {
         headline: 'Projeto Ψ (PSI): O Horizonte de Eventos da Soberania Pessoal e Zero Trust em Silício',
         description:
           'Whitepaper Técnico: Arquitetura de custódia de ativos digitais de classe nuclear com SRAM PUF, Criptografia XMSS pós-quântica e Redundância Modular Tripla aeroespacial.',
-        inLanguage: defaultLocale,
+        inLanguage: locale,
         author: {
           '@id': `${origin}/#person`,
         },
