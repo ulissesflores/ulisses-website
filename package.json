@@ -25,6 +25,7 @@
     "prepare": "husky"
   },
   "dependencies": {
+    "@google/generative-ai": "^0.24.1",
     "@tailwindcss/typography": "^0.5.19",
     "framer-motion": "^12.34.3",
     "jszip": "^3.10.1",
