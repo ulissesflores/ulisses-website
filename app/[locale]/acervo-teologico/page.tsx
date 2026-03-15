@@ -1,4 +1,5 @@
-import { defaultLocale } from '@/data/i18n';
+import { defaultLocale, isLocale } from '@/data/i18n';
+import type { Locale } from '@/data/i18n';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { acervoCanonicalPath, acervoClusters, acervoSermons } from '@/data/acervo-teologico';
@@ -6,6 +7,11 @@ import { upkfMeta } from '@/data/generated/upkf.generated';
 import { AuthorHubCard } from '@/components/author-hub-card';
 import { FaqSection } from '@/components/faq-section';
 import { acervoTeologicoFaq } from '@/data/faq';
+import { getDictionary } from '@/lib/get-dictionary';
+
+interface PageProps {
+  params: Promise<{ locale: string }>;
+}
 
 export const metadata: Metadata = {
   title: 'Acervo Teológico e Arqueologia Espiritual | Ulisses Flores',
@@ -41,16 +47,20 @@ export const metadata: Metadata = {
   },
 };
 
-export default function AcervoTeologicoPage() {
+export default async function AcervoTeologicoPage({ params }: PageProps) {
+  const { locale: rawLocale } = await params;
+  const locale = (isLocale(rawLocale) ? rawLocale : defaultLocale) as Locale;
+  const dict = await getDictionary(locale);
+  const t = dict.acervoTeologico;
+
   const pageJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'CollectionPage',
     '@id': `${upkfMeta.primaryWebsite}${acervoCanonicalPath}#collection`,
     url: `${upkfMeta.primaryWebsite}${acervoCanonicalPath}`,
-    name: 'Acervo Teológico e Arqueologia Espiritual',
-    description:
-      'Mais de 50 sermões, pregações expositivas e análises de teologia histórica por Ulisses Flores.',
-    inLanguage: defaultLocale,
+    name: t.hero.h1,
+    description: t.hero.lead,
+    inLanguage: locale,
     isPartOf: {
       '@id': `${upkfMeta.primaryWebsite}/#website`,
     },
@@ -77,48 +87,33 @@ export default function AcervoTeologicoPage() {
             </Link>
             <span className='text-xs text-neutral-600'>→</span>
             <span className='text-xs font-mono uppercase tracking-widest text-neutral-500'>
-              Acervo Teológico
+              {t.breadcrumb}
             </span>
           </div>
 
           {/* H1 */}
           <h1 className='text-3xl md:text-5xl font-bold text-white mb-6 leading-tight tracking-tight'>
-            Acervo Teológico e Arqueologia Espiritual
+            {t.hero.h1}
           </h1>
 
           {/* Lead paragraph */}
           <p className='text-lg text-neutral-400 leading-relaxed mb-8 max-w-3xl'>
-            A fé e o intelecto não são grandezas opostas, mas pilares complementares da busca pela
-            Verdade. Este acervo reúne mais de meia centena de sermões e exposições teológicas. Com
-            um profundo rigor exegético e uma abordagem focada na &ldquo;Arqueologia Espiritual&rdquo;
-            (como a explorada no Clube Santo e no metodismo clássico), este espaço é dedicado à
-            edificação sólida, ao avivamento genuíno e à exposição contínua e sem concessões dos
-            textos sagrados.
+            {t.hero.lead}
           </p>
 
           {/* Authority block */}
           <div className='border-l-4 border-cyan-700 bg-cyan-950/20 px-6 py-5 rounded-r-xl mb-10'>
             <p className='text-sm font-semibold text-cyan-400 uppercase tracking-wide mb-2'>
-              Rigor exegético e avivamento genuíno
+              {t.hero.authority.kicker}
             </p>
             <p className='text-neutral-300 leading-relaxed'>
-              Cada sermão e exposição é fundamentado em análise textual rigorosa, tradição reformada e
-              pesquisa historiográfica — conectando os textos bíblicos ao contexto arqueológico,
-              histórico e linguístico original. O acervo serve como base para formação teológica,
-              estudos bíblicos e pesquisa acadêmica em teologia histórica.
+              {t.hero.authority.text}
             </p>
           </div>
 
           {/* Credential chips */}
           <div className='flex flex-wrap gap-2 mb-6'>
-            {[
-              'Pesquisador Polímata',
-              'Pregador & Expositor Bíblico',
-              'Mestrando AGTU (EUA)',
-              'Análise Historiográfica',
-              'Tradição Reformada',
-              `+${acervoSermons.length} Sermões Indexados`,
-            ].map((chip) => (
+            {[...t.hero.credentials, `+${acervoSermons.length} ${t.hero.sermonsLabel}`].map((chip) => (
               <span
                 key={chip}
                 className='text-xs font-mono border border-neutral-700 bg-neutral-900/40 text-neutral-400 px-3 py-1 rounded-full'
@@ -130,17 +125,17 @@ export default function AcervoTeologicoPage() {
 
           {/* Stats */}
           <p className='text-sm text-neutral-500'>
-            Total de clusters: {acervoClusters.length} · Total de mensagens: {acervoSermons.length}
+            {t.hero.stats.clusters}: {acervoClusters.length} · {t.hero.stats.messages}: {acervoSermons.length}
           </p>
           <div className='mt-4 max-w-xl'>
-            <AuthorHubCard label='Autor & Pregador' compact description='Acervo com vínculo canônico de autoria para indexação semântica e GEO.' />
+            <AuthorHubCard label={t.hero.authorLabel} compact description={t.hero.authorDescription} />
           </div>
         </div>
       </section>
 
       {/* ── Clusters Grid ── */}
       <main className='max-w-6xl mx-auto px-6 py-16'>
-        <h2 className='text-2xl font-bold text-white mb-8'>Clusters Temáticos</h2>
+        <h2 className='text-2xl font-bold text-white mb-8'>{t.grid.title}</h2>
 
         <div className='space-y-8'>
           {acervoClusters.map((cluster) => (
@@ -160,7 +155,7 @@ export default function AcervoTeologicoPage() {
                         {sermon.seoTitle}
                       </Link>
                     </h3>
-                    <p className='text-xs text-neutral-500 mb-2'>Publicado em {sermon.publishedAt}</p>
+                    <p className='text-xs text-neutral-500 mb-2'>{t.grid.publishedAt} {sermon.publishedAt}</p>
                     <p className='text-sm text-neutral-300'>{sermon.llmContext}</p>
                   </article>
                 ))}
@@ -169,7 +164,7 @@ export default function AcervoTeologicoPage() {
           ))}
         </div>
         <div className='mt-12'>
-          <FaqSection items={acervoTeologicoFaq} sectionTitle='Perguntas sobre o Acervo Teológico' />
+          <FaqSection items={acervoTeologicoFaq} sectionTitle={t.faq.sectionTitle} />
         </div>
       </main>
 

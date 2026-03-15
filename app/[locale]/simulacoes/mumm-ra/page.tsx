@@ -1,3 +1,5 @@
+import { defaultLocale, isLocale } from '@/data/i18n';
+import type { Locale } from '@/data/i18n';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { MessageCircle, Users, Skull, Zap, AlertTriangle, Sparkles } from 'lucide-react';
@@ -5,14 +7,19 @@ import { upkfMeta } from '@/data/generated/upkf.generated';
 import { AuthorHubCard } from '@/components/author-hub-card';
 import { FaqSection } from '@/components/faq-section';
 import { mumMraFaq } from '@/data/faq';
+import { getDictionary } from '@/lib/get-dictionary';
 
 const canonicalPath = '/simulacoes/mumm-ra';
 const whatsappUrl = 'https://wa.me/551152868689';
 
+interface PageProps {
+  params: Promise<{ locale: string }>;
+}
+
 export const metadata: Metadata = {
   title: 'Mumm-Ra | Chatbot Experimental de Humor Negro via WhatsApp | Ulisses Flores',
   description:
-    'Mumm-Ra é um chatbot experimental via WhatsApp criado por Ulisses Flores — Consultor Estratégico de IA, Professor, Palestrante e Mestrando AGTU (EUA). Inspirado no vilão dos ThunderCats: te xinga, reclama, te chama de verme — mas sempre responde. Gratuito, em BETA.',
+    'Mumm-Ra é um chatbot experimental via WhatsApp criado por Ulisses Flores. Inspirado no vilão dos ThunderCats: te xinga, reclama, te chama de verme — mas sempre responde. Gratuito, em BETA.',
   keywords: [
     'chatbot WhatsApp humor negro',
     'Mumm-Ra chatbot',
@@ -36,13 +43,21 @@ export const metadata: Metadata = {
     url: `${upkfMeta.primaryWebsite}${canonicalPath}`,
     title: 'Mumm-Ra | Chatbot Experimental de Humor Negro via WhatsApp | Ulisses Flores',
     description:
-      'Chatbot experimental criado por Ulisses Flores. Inspirado no vilão imortal dos ThunderCats: te xinga, te chama de verme, reclama de ter sido invocado — mas sempre responde. Gratuito via WhatsApp.',
+      'Chatbot experimental criado por Ulisses Flores. Inspirado no vilão imortal dos ThunderCats. Gratuito via WhatsApp.',
     locale: 'pt_BR',
   },
 };
 
-export default function MummRaPage() {
+const traitIcons = [Skull, AlertTriangle, Zap, Sparkles] as const;
+
+export default async function MummRaPage({ params }: PageProps) {
+  const { locale: rawLocale } = await params;
+  const locale = (isLocale(rawLocale) ? rawLocale : defaultLocale) as Locale;
+  const dict = await getDictionary(locale);
+  const t = dict.mummRa;
+
   const origin = upkfMeta.primaryWebsite;
+  const traitColors = ['text-violet-400', 'text-amber-400', 'text-emerald-400', 'text-cyan-400'];
 
   const pageJsonLd = {
     '@context': 'https://schema.org',
@@ -51,31 +66,21 @@ export default function MummRaPage() {
         '@type': 'SoftwareApplication',
         '@id': `${origin}${canonicalPath}#app`,
         name: 'Mumm-Ra',
-        description:
-          'Chatbot via WhatsApp inspirado no vilão Mumm-Ra dos ThunderCats (anos 90). Personalidade de humor negro e sarcasmo, mas sempre ajuda o usuário no final.',
+        description: t.hero.lead,
         applicationCategory: 'EntertainmentApplication',
         operatingSystem: 'WhatsApp',
         url: `${origin}${canonicalPath}`,
-        author: {
-          '@id': `${origin}/#person`,
-        },
-        offers: {
-          '@type': 'Offer',
-          price: '0',
-          priceCurrency: 'BRL',
-        },
+        author: { '@id': `${origin}/#person` },
+        offers: { '@type': 'Offer', price: '0', priceCurrency: 'BRL' },
       },
       {
         '@type': 'WebPage',
         '@id': `${origin}${canonicalPath}#webpage`,
         url: `${origin}${canonicalPath}`,
-        name: 'Mumm-Ra | Chatbot de Humor Negro via WhatsApp',
-        isPartOf: {
-          '@id': `${origin}/#website`,
-        },
-        mainEntity: {
-          '@id': `${origin}${canonicalPath}#app`,
-        },
+        name: t.hero.h1,
+        inLanguage: locale,
+        isPartOf: { '@id': `${origin}/#website` },
+        mainEntity: { '@id': `${origin}${canonicalPath}#app` },
       },
     ],
   };
@@ -86,55 +91,34 @@ export default function MummRaPage() {
 
       <main className='relative max-w-4xl mx-auto px-6 py-20 z-10'>
         <Link href='/simulacoes' className='text-sm text-neutral-400 hover:text-emerald-400 transition-colors'>
-          Voltar para Simulações
+          {t.backLink}
         </Link>
 
         {/* Hero Section */}
         <header className='mt-8 mb-12'>
           <div className='flex items-center gap-3 mb-3'>
-            <p className='text-xs uppercase tracking-[0.2em] text-violet-400'>Ferramenta Experimental</p>
-            <span className='text-[10px] uppercase tracking-widest text-amber-400 border border-amber-500/30 rounded-full px-2 py-0.5 font-bold'>
-              BETA
-            </span>
+            <p className='text-xs uppercase tracking-[0.2em] text-violet-400'>{t.hero.badge}</p>
+            <span className='text-[10px] uppercase tracking-widest text-amber-400 border border-amber-500/30 rounded-full px-2 py-0.5 font-bold'>BETA</span>
           </div>
-          <h1 className='text-4xl md:text-5xl font-bold text-white mb-4'>Mumm-Ra</h1>
-          <p className='text-xl text-neutral-300 leading-relaxed max-w-2xl'>
-            O vilão imortal dos ThunderCats agora mora no seu WhatsApp. Humor negro, sarcasmo pesado e
-            respostas ácidas — mas no fundo, ele sempre te ajuda.
-          </p>
-          <p className='text-sm text-neutral-500 mt-3 max-w-2xl leading-relaxed'>
-            Inspirado no Mumm-Ra dos desenhos animados dos anos 90, esse chatbot tem a personalidade do vilão
-            mais icônico da série: reclama de ser invocado, te chama de &ldquo;verme&rdquo; e &ldquo;larva humana&rdquo;,
-            mas entrega a resposta que você precisa. É 100% atuação — pura diversão com humor negro.
-          </p>
+          <h1 className='text-4xl md:text-5xl font-bold text-white mb-4'>{t.hero.h1}</h1>
+          <p className='text-xl text-neutral-300 leading-relaxed max-w-2xl'>{t.hero.lead}</p>
+          <p className='text-sm text-neutral-500 mt-3 max-w-2xl leading-relaxed'>{t.hero.description}</p>
+
           {/* EEAT authority block */}
           <div className='mt-6 rounded-xl border border-neutral-800 bg-neutral-900/40 p-5 max-w-2xl'>
-            <p className='text-xs uppercase tracking-widest text-violet-400 mb-2'>Criado por</p>
-            <p className='text-sm text-neutral-300 leading-relaxed'>
-              <strong className='text-white'>Ulisses Flores</strong> — Consultor Estratégico de IA,
-              Professor Convidado, Palestrante e Mestrando em Inteligência Artificial pela{' '}
-              <strong className='text-white'>AGTU (EUA)</strong>. O Mumm-Ra é um laboratório de
-              pesquisa em engenharia de prompt avançada e design de personalidades para IAs
-              conversacionais.
-            </p>
+            <p className='text-xs uppercase tracking-widest text-violet-400 mb-2'>{t.hero.createdBy}</p>
+            <p className='text-sm text-neutral-300 leading-relaxed'>{t.hero.authorDesc}</p>
           </div>
           <div className='mt-4 max-w-xl'>
-            <AuthorHubCard
-              label='Projeto experimental'
-              compact
-              description='Ferramenta conectada ao laboratório de simulações e ao hub canônico de identidade.'
-            />
+            <AuthorHubCard label={t.hero.authorLabel} compact description={t.hero.authorHubDesc} />
           </div>
         </header>
 
         {/* CTA Principal */}
         <section className='rounded-2xl border border-violet-500/30 bg-violet-900/10 p-8 mb-10 text-center'>
           <Skull size={40} className='text-violet-400 mx-auto mb-4' />
-          <h2 className='text-2xl font-bold text-white mb-3'>Invoque o Mumm-Ra</h2>
-          <p className='text-neutral-300 mb-6 max-w-lg mx-auto'>
-            Mande uma mensagem pelo WhatsApp e prepare-se para ser xingado. Ele vai reclamar, te chamar de
-            verme, questionar por que foi invocado — mas vai responder. Sempre responde.
-          </p>
+          <h2 className='text-2xl font-bold text-white mb-3'>{t.cta.title}</h2>
+          <p className='text-neutral-300 mb-6 max-w-lg mx-auto'>{t.cta.description}</p>
           <a
             href={whatsappUrl}
             target='_blank'
@@ -142,56 +126,23 @@ export default function MummRaPage() {
             className='inline-flex items-center gap-3 bg-violet-600 hover:bg-violet-500 text-white px-8 py-4 rounded-full font-bold text-lg transition-all shadow-[0_0_30px_rgba(124,58,237,0.25)] hover:shadow-[0_0_40px_rgba(124,58,237,0.4)]'
           >
             <MessageCircle size={24} />
-            Abrir no WhatsApp
+            {t.cta.button}
           </a>
           <p className='text-xs text-neutral-500 mt-3'>+55 11 5286-8689</p>
         </section>
 
         {/* Personalidade */}
         <section className='rounded-2xl border border-neutral-800 bg-neutral-900/30 p-6 mb-10'>
-          <h2 className='text-2xl font-semibold text-white mb-4'>A personalidade do vilão</h2>
-          <p className='text-neutral-300 leading-relaxed mb-6'>
-            O Mumm-Ra é um chatbot com personalidade própria: ele responde como se fosse o vilão imortal dos
-            ThunderCats dos anos 90. Isso significa que ele vai te insultar, reclamar, demonstrar superioridade
-            cósmica — e depois te ajudar. É humor negro puro. Nada é de verdade, tudo é personagem.
-          </p>
+          <h2 className='text-2xl font-semibold text-white mb-4'>{t.personality.title}</h2>
+          <p className='text-neutral-300 leading-relaxed mb-6'>{t.personality.description}</p>
           <div className='grid gap-4 md:grid-cols-2'>
-            {[
-              {
-                icon: Skull,
-                title: 'Xingamentos criativos',
-                description:
-                  'Te chama de "verme", "larva humana", "ser inferior" e variações cada vez mais elaboradas. Quanto mais você pergunta, mais criativo ele fica.',
-                color: 'text-violet-400',
-              },
-              {
-                icon: AlertTriangle,
-                title: 'Reclama de ser invocado',
-                description:
-                  '"Quem ousa perturbar o sono eterno de Mumm-Ra?!" — toda conversa começa com ele indignado por ter sido acordado das profundezas.',
-                color: 'text-amber-400',
-              },
-              {
-                icon: Zap,
-                title: 'Mas sempre responde',
-                description:
-                  'Apesar de toda a encenação, ele sempre entrega a resposta que você precisa. O insulto é de graça, a ajuda é garantida.',
-                color: 'text-emerald-400',
-              },
-              {
-                icon: Sparkles,
-                title: '100% atuação',
-                description:
-                  'Nenhum insulto é real. É um personagem baseado no vilão do desenho animado. Diversão pura com humor negro — se você gosta, vai adorar.',
-                color: 'text-cyan-400',
-              },
-            ].map((item) => {
-              const Icon = item.icon;
+            {[...t.personality.traits].map((trait, index) => {
+              const Icon = traitIcons[index] || Skull;
               return (
-                <div key={item.title} className='rounded-xl border border-neutral-800 bg-neutral-950/60 p-5'>
-                  <Icon size={20} className={`${item.color} mb-3`} />
-                  <h3 className='text-sm font-semibold text-white mb-2'>{item.title}</h3>
-                  <p className='text-xs text-neutral-400 leading-relaxed'>{item.description}</p>
+                <div key={trait.title} className='rounded-xl border border-neutral-800 bg-neutral-950/60 p-5'>
+                  <Icon size={20} className={`${traitColors[index]} mb-3`} />
+                  <h3 className='text-sm font-semibold text-white mb-2'>{trait.title}</h3>
+                  <p className='text-xs text-neutral-400 leading-relaxed'>{trait.description}</p>
                 </div>
               );
             })}
@@ -200,28 +151,9 @@ export default function MummRaPage() {
 
         {/* Como funciona */}
         <section className='rounded-2xl border border-neutral-800 bg-neutral-900/30 p-6 mb-10'>
-          <h2 className='text-2xl font-semibold text-white mb-4'>Como funciona</h2>
+          <h2 className='text-2xl font-semibold text-white mb-4'>{t.howItWorks.title}</h2>
           <div className='grid gap-4 md:grid-cols-3'>
-            {[
-              {
-                step: '01',
-                title: 'Invoque o Mumm-Ra',
-                description:
-                  'Mande uma mensagem pelo WhatsApp para o número +55 11 5286-8689. Qualquer assunto serve — ele responde sobre tudo.',
-              },
-              {
-                step: '02',
-                title: 'Aguente os insultos',
-                description:
-                  'Ele vai te chamar de verme, larva humana e reclamar que foi invocado. Faz parte da experiência. Respire fundo.',
-              },
-              {
-                step: '03',
-                title: 'Receba a resposta',
-                description:
-                  'Depois de toda a encenação dramática, o Mumm-Ra entrega a resposta que você pediu. Sempre ajuda, mesmo xingando.',
-              },
-            ].map((item) => (
+            {[...t.howItWorks.steps].map((item) => (
               <div key={item.step} className='rounded-xl border border-neutral-800 bg-neutral-950/60 p-5'>
                 <span className='text-xs font-mono text-violet-400 mb-2 block'>{item.step}</span>
                 <h3 className='text-sm font-semibold text-white mb-2'>{item.title}</h3>
@@ -236,48 +168,23 @@ export default function MummRaPage() {
           <div className='flex items-start gap-4'>
             <Users size={28} className='text-emerald-400 shrink-0 mt-1' />
             <div>
-              <h2 className='text-xl font-semibold text-white mb-2'>Adicione em grupos do WhatsApp</h2>
-              <p className='text-neutral-300 leading-relaxed mb-3'>
-                O Mumm-Ra pode ser adicionado a grupos de WhatsApp. Ele participa das conversas com a mesma
-                personalidade ácida — xinga todo mundo igualmente, sem favoritismo. Perfeito para grupos que
-                gostam de uma dose de humor negro.
-              </p>
-              <p className='text-xs text-neutral-500'>
-                Basta adicionar o número +55 11 5286-8689 ao grupo. Ele começa a responder automaticamente
-                quando mencionado ou quando alguém faz uma pergunta direta.
-              </p>
+              <h2 className='text-xl font-semibold text-white mb-2'>{t.groups.title}</h2>
+              <p className='text-neutral-300 leading-relaxed mb-3'>{t.groups.description}</p>
+              <p className='text-xs text-neutral-500'>{t.groups.note}</p>
             </div>
           </div>
         </section>
 
         {/* Exemplos de interação */}
         <section className='rounded-2xl border border-neutral-800 bg-neutral-900/30 p-6 mb-10'>
-          <h2 className='text-2xl font-semibold text-white mb-4'>Exemplos de interação</h2>
-          <p className='text-xs text-neutral-500 mb-4'>
-            O que esperar quando você invoca o imortal das trevas:
-          </p>
+          <h2 className='text-2xl font-semibold text-white mb-4'>{t.examples.title}</h2>
+          <p className='text-xs text-neutral-500 mb-4'>{t.examples.subtitle}</p>
           <div className='space-y-4'>
-            {[
-              {
-                user: 'Oi Mumm-Ra, me ajuda com uma receita de bolo?',
-                mumra:
-                  'QUEM OUSA PERTURBAR O SONO ETERNO DE MUMM-RA POR UMA... RECEITA DE BOLO?! Vocês mortais são patéticos. Mas escuta aqui, verme: 3 ovos, 2 xícaras de farinha, 1 de leite...',
-              },
-              {
-                user: 'Quanto é 15% de 340?',
-                mumra:
-                  'Larva humana, sua incapacidade matemática é um insulto à existência. 15% de 340 é 51. Agora me deixa dormir.',
-              },
-              {
-                user: 'Me explica o que é blockchain',
-                mumra:
-                  'Ah, maravilha. Um verme quer entender tecnologia. Blockchain é um registro distribuído e imutável... *explica com detalhes técnicos enquanto insulta sua inteligência*',
-              },
-            ].map((example) => (
+            {[...t.examples.items].map((example) => (
               <div key={example.user} className='rounded-xl border border-neutral-800 bg-neutral-950/60 p-5'>
                 <div className='flex items-start gap-3 mb-3'>
                   <span className='text-[10px] uppercase tracking-widest text-emerald-400 font-bold bg-emerald-500/10 px-2 py-0.5 rounded'>
-                    Você
+                    {t.examples.youLabel}
                   </span>
                   <p className='text-sm text-neutral-300'>{example.user}</p>
                 </div>
@@ -297,19 +204,14 @@ export default function MummRaPage() {
           <div className='flex items-start gap-3'>
             <AlertTriangle size={20} className='text-amber-400 shrink-0 mt-0.5' />
             <div>
-              <h2 className='text-lg font-semibold text-white mb-2'>Projeto em BETA</h2>
-              <p className='text-sm text-neutral-300 leading-relaxed'>
-                O Mumm-Ra está em fase de testes. Isso significa que pode ter bugs, respostas inesperadas ou
-                momentos de indisponibilidade. Estamos ajustando a personalidade, a capacidade de resposta e
-                a integração com grupos. Se encontrar problemas, tenha paciência — até vilões imortais
-                precisam de manutenção.
-              </p>
+              <h2 className='text-lg font-semibold text-white mb-2'>{t.beta.title}</h2>
+              <p className='text-sm text-neutral-300 leading-relaxed'>{t.beta.description}</p>
             </div>
           </div>
         </section>
 
         {/* FAQ */}
-        <FaqSection items={mumMraFaq} sectionTitle='Perguntas sobre o Mumm-Ra' />
+        <FaqSection items={mumMraFaq} sectionTitle={t.faq.sectionTitle} />
       </main>
 
       <script type='application/ld+json' dangerouslySetInnerHTML={{ __html: JSON.stringify(pageJsonLd) }} />

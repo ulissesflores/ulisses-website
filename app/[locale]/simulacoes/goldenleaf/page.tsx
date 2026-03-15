@@ -1,17 +1,23 @@
-import { defaultLocale } from '@/data/i18n';
+import { defaultLocale, isLocale } from '@/data/i18n';
+import type { Locale } from '@/data/i18n';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { upkfMeta } from '@/data/generated/upkf.generated';
 import { AuthorHubCard } from '@/components/author-hub-card';
 import { FaqSection } from '@/components/faq-section';
 import { goldenleafFaq } from '@/data/faq';
+import { getDictionary } from '@/lib/get-dictionary';
 
 const canonicalPath = '/simulacoes/goldenleaf';
+
+interface PageProps {
+  params: Promise<{ locale: string }>;
+}
 
 export const metadata: Metadata = {
   title: 'GoldenLeaf — Micologia Inteligente com IoT e IA | Ulisses Flores',
   description:
-    'GoldenLeaf é um projeto de micologia inteligente que combina sensores IoT, IA preditiva e arquiteturas cloudless para cultivo autônomo de cogumelos gourmet. Desenvolvido por Ulisses Flores — Consultor de IA, Arquiteto de Software e Mestrando AGTU (EUA).',
+    'GoldenLeaf é um projeto de micologia inteligente que combina sensores IoT, IA preditiva e arquiteturas cloudless para cultivo autônomo de cogumelos gourmet. Desenvolvido por Ulisses Flores.',
   keywords: [
     'micologia inteligente',
     'IoT cogumelos',
@@ -38,12 +44,17 @@ export const metadata: Metadata = {
     url: `${upkfMeta.primaryWebsite}${canonicalPath}`,
     title: 'GoldenLeaf — Micologia Inteligente com IoT e IA | Ulisses Flores',
     description:
-      'Projeto de micologia inteligente com IoT, IA preditiva e arquiteturas cloudless para cultivo autônomo. Por Ulisses Flores — Consultor de IA e Arquiteto de Software.',
+      'Projeto de micologia inteligente com IoT, IA preditiva e arquiteturas cloudless para cultivo autônomo. Por Ulisses Flores.',
     locale: 'pt_BR',
   },
 };
 
-export default function GoldenLeafPage() {
+export default async function GoldenLeafPage({ params }: PageProps) {
+  const { locale: rawLocale } = await params;
+  const locale = (isLocale(rawLocale) ? rawLocale : defaultLocale) as Locale;
+  const dict = await getDictionary(locale);
+  const t = dict.goldenleaf;
+
   const origin = upkfMeta.primaryWebsite;
 
   const pageJsonLd = {
@@ -53,10 +64,9 @@ export default function GoldenLeafPage() {
         '@type': 'WebPage',
         '@id': `${origin}${canonicalPath}#webpage`,
         url: `${origin}${canonicalPath}`,
-        name: 'GoldenLeaf — Micologia Inteligente com IoT e IA',
-        description:
-          'Projeto de micologia inteligente que combina sensores IoT, IA preditiva e arquiteturas cloudless para cultivo autônomo de cogumelos gourmet.',
-        inLanguage: defaultLocale,
+        name: t.hero.h1,
+        description: t.hero.lead,
+        inLanguage: locale,
         isPartOf: {
           '@id': `${origin}/simulacoes#collection`,
         },
@@ -68,8 +78,7 @@ export default function GoldenLeafPage() {
         '@type': 'SoftwareApplication',
         '@id': `${origin}${canonicalPath}#software`,
         name: 'GoldenLeaf',
-        description:
-          'Sistema de micologia inteligente com sensores IoT, IA preditiva e arquitetura cloudless para soberania de dados no cultivo de cogumelos.',
+        description: t.hero.lead,
         applicationCategory: 'LifestyleApplication',
         operatingSystem: 'IoT / Embedded',
         author: {
@@ -91,51 +100,37 @@ export default function GoldenLeafPage() {
             </Link>
             <span className='text-xs text-neutral-600'>→</span>
             <Link href='/simulacoes' className='text-xs font-mono uppercase tracking-widest text-emerald-400 hover:underline'>
-              Simulações
+              {t.breadcrumb.simulations}
             </Link>
             <span className='text-xs text-neutral-600'>→</span>
             <span className='text-xs font-mono uppercase tracking-widest text-neutral-500'>
-              GoldenLeaf
+              {t.breadcrumb.goldenleaf}
             </span>
           </div>
 
           {/* H1 */}
           <h1 className='text-4xl sm:text-5xl font-bold leading-tight tracking-tight mb-6 text-white'>
-            GoldenLeaf — Micologia Inteligente com IoT e IA
+            {t.hero.h1}
           </h1>
 
           {/* Lead paragraph */}
           <p className='text-lg text-neutral-400 leading-relaxed mb-8 max-w-3xl'>
-            O GoldenLeaf combina sensores IoT de precisão, IA preditiva e arquiteturas cloudless
-            para criar um sistema de cultivo autônomo de cogumelos gourmet — com soberania total
-            dos dados e sem dependência de servidores externos. Desenvolvido por Ulisses Flores como
-            laboratório vivo de IoT aplicada à agricultura inteligente.
+            {t.hero.lead}
           </p>
 
           {/* Authority block */}
           <div className='border-l-4 border-cyan-700 bg-cyan-950/20 px-6 py-5 rounded-r-xl mb-10'>
             <p className='text-sm font-semibold text-cyan-400 uppercase tracking-wide mb-2'>
-              IoT soberana aplicada à agricultura
+              {t.hero.authority.kicker}
             </p>
             <p className='text-neutral-300 leading-relaxed'>
-              O GoldenLeaf materializa a pesquisa de Ulisses Flores em arquiteturas cloudless e
-              soberania de dados em IoT. Cada sensor opera localmente, os dados permanecem no
-              dispositivo e os modelos de IA são executados on-edge — sem cloud, sem latência,
-              sem dependência. O projeto é um caso de estudo concreto de como a soberania digital
-              se aplica a sistemas físicos do mundo real.
+              {t.hero.authority.text}
             </p>
           </div>
 
           {/* Credential chips */}
           <div className='flex flex-wrap gap-2 mb-8'>
-            {[
-              'Arquiteto de Software',
-              'Desenvolvedor de Hardware',
-              'Consultor Estratégico de IA',
-              'Mestrando AGTU (EUA)',
-              'IoT & Edge Computing',
-              'Soberania de Dados',
-            ].map((credential) => (
+            {[...t.hero.credentials].map((credential) => (
               <span
                 key={credential}
                 className='text-xs font-mono border border-neutral-700 bg-neutral-900/40 text-neutral-400 px-3 py-1 rounded-full'
@@ -150,31 +145,10 @@ export default function GoldenLeafPage() {
       {/* Technical Architecture */}
       <section className='bg-neutral-950 text-neutral-200 py-16'>
         <div className='max-w-5xl mx-auto px-6'>
-          <h2 className='text-2xl font-bold text-white mb-8'>Arquitetura do Sistema</h2>
+          <h2 className='text-2xl font-bold text-white mb-8'>{t.architecture.title}</h2>
 
           <div className='grid sm:grid-cols-2 gap-6 mb-10'>
-            {[
-              {
-                title: 'Sensores IoT de Precisão',
-                description: 'Monitoramento contínuo de temperatura, umidade, CO₂ e luminosidade — com calibração automática e redundância.',
-                tag: 'Hardware',
-              },
-              {
-                title: 'IA Preditiva On-Edge',
-                description: 'Modelos de machine learning executados localmente no microcontrolador para previsão de condições ideais de frutificação.',
-                tag: 'Inteligência',
-              },
-              {
-                title: 'Arquitetura Cloudless',
-                description: 'Zero dependência de servidores externos. Dados processados, armazenados e analisados localmente — soberania total.',
-                tag: 'Soberania',
-              },
-              {
-                title: 'Cultivo Autônomo',
-                description: 'Automação completa do ciclo de cultivo: inoculação, incubação, frutificação e colheita com intervenção humana mínima.',
-                tag: 'Automação',
-              },
-            ].map((spec) => (
+            {[...t.architecture.specs].map((spec) => (
               <article key={spec.title} className='rounded-xl border border-neutral-800 bg-neutral-900/40 p-6'>
                 <span className='text-[10px] uppercase tracking-[0.2em] text-emerald-300 border border-emerald-700/40 rounded-full px-3 py-1'>
                   {spec.tag}
@@ -187,19 +161,19 @@ export default function GoldenLeafPage() {
 
           {/* Related Publications */}
           <div className='rounded-xl border border-neutral-800 bg-neutral-900/30 p-6'>
-            <h3 className='text-lg font-semibold text-white mb-4'>Publicações Relacionadas</h3>
+            <h3 className='text-lg font-semibold text-white mb-4'>{t.architecture.relatedTitle}</h3>
             <div className='space-y-3'>
               <Link
                 href='/whitepapers/2025-iot-data-sovereignty'
                 className='block text-sm text-emerald-300 hover:text-emerald-200 transition-colors'
               >
-                📄 Arquiteturas Cloudless e Soberania de Dados em IoT →
+                {t.architecture.relatedLinks[0]}
               </Link>
               <Link
                 href='/whitepapers/2025-hybrid-cooling-thermodynamics'
                 className='block text-sm text-emerald-300 hover:text-emerald-200 transition-colors'
               >
-                📄 Análise Termodinâmica e Engenharia de Sistemas Híbridos de Resfriamento →
+                {t.architecture.relatedLinks[1]}
               </Link>
             </div>
           </div>
@@ -210,8 +184,8 @@ export default function GoldenLeafPage() {
       <section className='bg-neutral-950 text-neutral-200 pb-4'>
         <div className='max-w-5xl mx-auto px-6'>
           <AuthorHubCard
-            label='Pesquisa & Desenvolvimento'
-            description='GoldenLeaf desenvolvido por Ulisses Flores — Consultor Estratégico de IA, Arquiteto de Software, Desenvolvedor de Hardware e Mestrando em IA pela AGTU (EUA).'
+            label={t.author.label}
+            description={t.author.description}
           />
         </div>
       </section>
@@ -220,18 +194,16 @@ export default function GoldenLeafPage() {
       <section className='bg-neutral-950 text-neutral-200 py-12'>
         <div className='max-w-4xl mx-auto px-6 text-center'>
           <h2 className='text-xl font-bold text-white mb-3'>
-            Interesse em IoT soberana e IA aplicada à agricultura?
+            {t.cta.title}
           </h2>
           <p className='text-neutral-400 mb-6 max-w-2xl mx-auto text-sm leading-relaxed'>
-            Ulisses Flores oferece consultoria em arquiteturas IoT cloudless, IA on-edge e
-            sistemas de automação para agricultura e indústria. Entre em contato para uma
-            proposta personalizada.
+            {t.cta.description}
           </p>
           <Link
             href='/'
             className='inline-flex items-center gap-2 bg-white text-black font-semibold px-6 py-3 rounded-full hover:bg-gray-100 transition-colors text-sm'
           >
-            Falar com Ulisses Flores →
+            {t.cta.button}
           </Link>
         </div>
       </section>
@@ -241,7 +213,7 @@ export default function GoldenLeafPage() {
         <div className='max-w-4xl mx-auto px-6'>
           <FaqSection
             items={goldenleafFaq}
-            sectionTitle='Perguntas sobre o GoldenLeaf'
+            sectionTitle={t.faq.sectionTitle}
           />
         </div>
       </section>
