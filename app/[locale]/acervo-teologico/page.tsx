@@ -9,6 +9,7 @@ import { FaqSection } from '@/components/faq-section';
 import { acervoTeologicoFaq } from '@/data/faq';
 import { getDictionary } from '@/lib/get-dictionary';
 import { buildSermonI18nMaps, localizeCluster } from '@/data/sermons-i18n';
+import { localePath } from '@/lib/locale-path';
 
 interface PageProps {
   params: Promise<{ locale: string }>;
@@ -82,7 +83,7 @@ export default async function AcervoTeologicoPage({ params }: PageProps) {
         <div className='max-w-4xl mx-auto px-6'>
           {/* Breadcrumb */}
           <div className='flex items-center gap-2 mb-6'>
-            <Link href='/' className='text-xs font-mono uppercase tracking-widest text-emerald-400 hover:underline'>
+            <Link href={localePath('/', locale)} className='text-xs font-mono uppercase tracking-widest text-emerald-400 hover:underline'>
               Home
             </Link>
             <span className='text-xs text-neutral-600'>→</span>

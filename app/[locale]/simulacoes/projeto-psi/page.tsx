@@ -7,6 +7,7 @@ import { AuthorHubCard } from '@/components/author-hub-card';
 import { FaqSection } from '@/components/faq-section';
 import { projectPsiFaq } from '@/data/faq';
 import { getDictionary } from '@/lib/get-dictionary';
+import { localePath } from '@/lib/locale-path';
 
 const canonicalPath = '/simulacoes/projeto-psi';
 
@@ -97,11 +98,11 @@ export default async function ProjetoPsiPage({ params }: PageProps) {
         <div className='max-w-4xl mx-auto px-6'>
           {/* Breadcrumb */}
           <div className='flex items-center gap-2 mb-6'>
-            <Link href='/' className='text-xs font-mono uppercase tracking-widest text-blue-700 hover:underline'>
+            <Link href={localePath('/', locale)} className='text-xs font-mono uppercase tracking-widest text-blue-700 hover:underline'>
               Home
             </Link>
             <span className='text-xs text-gray-400'>→</span>
-            <Link href='/simulacoes' className='text-xs font-mono uppercase tracking-widest text-blue-700 hover:underline'>
+            <Link href={localePath('/simulacoes', locale)} className='text-xs font-mono uppercase tracking-widest text-blue-700 hover:underline'>
               Simulações
             </Link>
             <span className='text-xs text-gray-400'>→</span>
@@ -128,7 +129,7 @@ export default async function ProjetoPsiPage({ params }: PageProps) {
           {/* Author line */}
           <p className='text-sm text-gray-500 mb-8'>
             <span className='font-semibold text-gray-800'>Autor:</span>{' '}
-            <Link href='/identidade' className='text-blue-700 hover:underline'>Ulisses Flores</Link>
+            <Link href={localePath('/identidade', locale)} className='text-blue-700 hover:underline'>Ulisses Flores</Link>
             {' — '}Consultor Estratégico de IA, Arquiteto de Software, Desenvolvedor de Hardware, Mestrando AGTU (EUA)
           </p>
 
@@ -820,7 +821,7 @@ export default async function ProjetoPsiPage({ params }: PageProps) {
             blockchain. Entre em contato.
           </p>
           <Link
-            href='/'
+            href={localePath('/', locale)}
             className='inline-flex items-center gap-2 bg-white text-black font-semibold px-6 py-3 rounded-full hover:bg-gray-100 transition-colors text-sm'
           >
             Falar com Ulisses Flores →

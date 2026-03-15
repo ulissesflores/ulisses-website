@@ -7,6 +7,7 @@ import { publicationCollections, publications, type PublicationCategory } from '
 import { upkfMeta } from '@/data/generated/upkf.generated';
 import { AuthorHubCard } from '@/components/author-hub-card';
 import { getDictionary } from '@/lib/get-dictionary';
+import { localePath } from '@/lib/locale-path';
 
 const validCategories = Object.keys(publicationCollections) as PublicationCategory[];
 
@@ -114,7 +115,7 @@ export default async function CategoryPage({ params }: PageProps) {
         <div className='max-w-4xl mx-auto px-6'>
           {/* Breadcrumb */}
           <div className='flex items-center gap-2 mb-6'>
-            <Link href='/' className='text-xs font-mono uppercase tracking-widest text-emerald-400 hover:underline'>
+            <Link href={localePath('/', locale)} className='text-xs font-mono uppercase tracking-widest text-emerald-400 hover:underline'>
               Home
             </Link>
             <span className='text-xs text-neutral-600'>→</span>
@@ -164,7 +165,7 @@ export default async function CategoryPage({ params }: PageProps) {
             <div className='rounded-xl border border-cyan-800/40 bg-cyan-950/10 p-5 mt-4'>
               <p className='text-[10px] uppercase tracking-[0.2em] text-cyan-400 font-bold mb-2'>{t.highlight}</p>
               <Link
-                href='/whitepapers/projeto-psi'
+                href={localePath('/whitepapers/projeto-psi', locale)}
                 className='text-lg font-bold text-white hover:text-cyan-300 transition-colors'
               >
                 {t.psiLink}

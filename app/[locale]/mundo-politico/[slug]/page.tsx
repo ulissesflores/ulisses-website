@@ -6,6 +6,7 @@ import { upkfMeta } from '@/data/generated/upkf.generated';
 import { AuthorHubCard } from '@/components/author-hub-card';
 import { defaultLocale, isLocale, localeToOgLocale, type Locale } from '@/data/i18n';
 import { getDictionary } from '@/lib/get-dictionary';
+import { localePath } from '@/lib/locale-path';
 
 interface PageProps {
   params: Promise<{ slug: string; locale: string }>;
@@ -80,7 +81,7 @@ export default async function MundoPoliticoPostPage({ params }: PageProps) {
   return (
     <div className='min-h-screen bg-neutral-950 text-neutral-200'>
       <main className='max-w-3xl mx-auto px-6 py-20'>
-        <Link href='/mundo-politico' className='text-sm text-neutral-400 hover:text-emerald-400 transition-colors'>
+        <Link href={localePath('/mundo-politico', locale)} className='text-sm text-neutral-400 hover:text-emerald-400 transition-colors'>
           Voltar para Mundo Politico
         </Link>
 

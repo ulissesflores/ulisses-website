@@ -8,6 +8,7 @@ import { AuthorHubCard } from '@/components/author-hub-card';
 import { FaqSection } from '@/components/faq-section';
 import { mumMraFaq } from '@/data/faq';
 import { getDictionary } from '@/lib/get-dictionary';
+import { localePath } from '@/lib/locale-path';
 
 const canonicalPath = '/simulacoes/mumm-ra';
 const whatsappUrl = 'https://wa.me/551152868689';
@@ -80,7 +81,7 @@ export default async function MummRaPage({ params }: PageProps) {
       <div className='fixed inset-0 bg-[radial-gradient(circle_800px_at_50%_-200px,#7c3aed10,transparent)] pointer-events-none' />
 
       <main className='relative max-w-4xl mx-auto px-6 py-20 z-10'>
-        <Link href='/simulacoes' className='text-sm text-neutral-400 hover:text-emerald-400 transition-colors'>
+        <Link href={localePath('/simulacoes', locale)} className='text-sm text-neutral-400 hover:text-emerald-400 transition-colors'>
           {t.backLink}
         </Link>
 

@@ -13,6 +13,7 @@ import { upkfMeta } from '@/data/generated/upkf.generated';
 import { isLocale, defaultLocale, localeToOgLocale, type Locale } from '@/data/i18n';
 import { getDictionary } from '@/lib/get-dictionary';
 import { buildLanguageAlternates } from '@/data/seo';
+import { localePath } from '@/lib/locale-path';
 
 type PageProps = { params: Promise<{ locale: string }> };
 
@@ -390,7 +391,7 @@ export default async function Home({ params }: PageProps) {
               {t.simulacoes.description}
             </p>
             <Link
-              href="/simulacoes/ia-2027"
+              href={localePath("/simulacoes/ia-2027", locale)}
               className="inline-flex items-center gap-2 rounded-full border border-emerald-500/50 px-5 py-2 text-sm font-bold text-emerald-300 hover:bg-emerald-900/25 transition-colors"
             >
               {t.simulacoes.cta}

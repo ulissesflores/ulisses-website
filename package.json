@@ -7,6 +7,7 @@
     "upkf:verify": "node scripts/upkf/verify-artifacts.mjs",
     "upkf:check": "npm run upkf:generate && npm run upkf:verify",
     "seo:validate": "node scripts/seo/validate-pre-deploy.mjs",
+    "seo:rich-results": "node scripts/seo/validate-rich-results.mjs",
     "research:generate": "node scripts/research/generate-manuscripts.mjs",
     "research:check": "node scripts/research/generate-manuscripts.mjs && node scripts/research/score-and-verify.mjs",
     "predev": "echo 'Skipping upkf:generate during dev; run npm run upkf:generate manually when needed.'",

@@ -6,6 +6,7 @@ import { FaqSection } from '@/components/faq-section';
 import { isLocale, defaultLocale, localeToOgLocale, type Locale } from '@/data/i18n';
 import { getDictionary } from '@/lib/get-dictionary';
 import { buildLanguageAlternates } from '@/data/seo';
+import { localePath } from '@/lib/locale-path';
 
 const canonicalPath = '/simulacoes';
 
@@ -64,7 +65,7 @@ export default async function SimulacoesPage({ params }: PageProps) {
       <section className='bg-neutral-950 text-neutral-200 pt-20 pb-16 border-b border-neutral-800'>
         <div className='max-w-4xl mx-auto px-6'>
           <div className='flex items-center gap-2 mb-6'>
-            <Link href='/' className='text-xs font-mono uppercase tracking-widest text-emerald-400 hover:underline'>
+            <Link href={localePath('/', locale)} className='text-xs font-mono uppercase tracking-widest text-emerald-400 hover:underline'>
               {dict.common.breadcrumb.home}
             </Link>
             <span className='text-xs text-neutral-600'>→</span>
@@ -97,7 +98,7 @@ export default async function SimulacoesPage({ params }: PageProps) {
                 ))}
               </div>
               <h2 className='text-2xl font-bold text-white mb-3'>
-                <Link href='/simulacoes/ia-2027' className='hover:text-emerald-400 transition-colors'>{t.grid.ia2027.title}</Link>
+                <Link href={localePath('/simulacoes/ia-2027', locale)} className='hover:text-emerald-400 transition-colors'>{t.grid.ia2027.title}</Link>
               </h2>
               <p className='text-neutral-300 leading-relaxed mb-4'>
                 {t.grid.ia2027.description}{' '}
@@ -109,7 +110,7 @@ export default async function SimulacoesPage({ params }: PageProps) {
                   <span key={tag} className='text-xs border border-neutral-700 text-neutral-400 px-3 py-1 rounded-full'>{tag}</span>
                 ))}
               </div>
-              <Link href='/simulacoes/ia-2027' className='inline-flex items-center gap-2 bg-emerald-700 hover:bg-emerald-600 text-white font-semibold px-5 py-2.5 rounded-full transition-colors text-sm'>
+              <Link href={localePath('/simulacoes/ia-2027', locale)} className='inline-flex items-center gap-2 bg-emerald-700 hover:bg-emerald-600 text-white font-semibold px-5 py-2.5 rounded-full transition-colors text-sm'>
                 {t.grid.ia2027.cta}
               </Link>
             </article>
@@ -122,7 +123,7 @@ export default async function SimulacoesPage({ params }: PageProps) {
                 ))}
               </div>
               <h2 className='text-2xl font-bold text-white mb-3'>
-                <Link href='/simulacoes/goldenleaf' className='hover:text-emerald-400 transition-colors'>{t.grid.goldenleaf.title}</Link>
+                <Link href={localePath('/simulacoes/goldenleaf', locale)} className='hover:text-emerald-400 transition-colors'>{t.grid.goldenleaf.title}</Link>
               </h2>
               <p className='text-neutral-300 leading-relaxed mb-4'>{t.grid.goldenleaf.description}</p>
               <div className='flex flex-wrap gap-3 mb-6'>
@@ -140,7 +141,7 @@ export default async function SimulacoesPage({ params }: PageProps) {
                 ))}
               </div>
               <h2 className='text-2xl font-bold text-white mb-3'>
-                <Link href='/simulacoes/mumm-ra' className='hover:text-emerald-400 transition-colors'>{t.grid.mummRa.title}</Link>
+                <Link href={localePath('/simulacoes/mumm-ra', locale)} className='hover:text-emerald-400 transition-colors'>{t.grid.mummRa.title}</Link>
               </h2>
               <p className='text-neutral-300 leading-relaxed mb-4'>{t.grid.mummRa.description}</p>
               <div className='flex flex-wrap gap-3 mb-6'>
@@ -165,7 +166,7 @@ export default async function SimulacoesPage({ params }: PageProps) {
         <div className='max-w-4xl mx-auto px-6 text-center'>
           <h2 className='text-xl font-bold text-white mb-3'>{t.cta.title}</h2>
           <p className='text-neutral-400 mb-6 max-w-2xl mx-auto text-sm leading-relaxed'>{t.cta.description}</p>
-          <Link href='/' className='inline-flex items-center gap-2 bg-white text-black font-semibold px-6 py-3 rounded-full hover:bg-gray-100 transition-colors text-sm'>
+          <Link href={localePath('/', locale)} className='inline-flex items-center gap-2 bg-white text-black font-semibold px-6 py-3 rounded-full hover:bg-gray-100 transition-colors text-sm'>
             {t.cta.button}
           </Link>
         </div>

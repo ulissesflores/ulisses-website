@@ -8,6 +8,7 @@ import { AuthorHubCard } from '@/components/author-hub-card';
 import { FaqSection } from '@/components/faq-section';
 import { ia2027Faq } from '@/data/faq';
 import { getDictionary } from '@/lib/get-dictionary';
+import { localePath } from '@/lib/locale-path';
 
 const canonicalPath = '/simulacoes/ia-2027/desaceleracao-coordenada';
 const parentPath = '/simulacoes/ia-2027';
@@ -90,14 +91,14 @@ export default async function DesaceleracaoCoordenadaPage({ params }: PageProps)
           {/* Breadcrumb */}
           <div className='flex items-center gap-2 mb-6 flex-wrap'>
             <Link
-              href='/simulacoes'
+              href={localePath('/simulacoes', locale)}
               className='text-xs font-mono uppercase tracking-widest text-emerald-400 hover:underline'
             >
               {dict.ia2027.breadcrumb.simulations}
             </Link>
             <span className='text-xs text-neutral-600'>→</span>
             <Link
-              href='/simulacoes/ia-2027'
+              href={localePath('/simulacoes/ia-2027', locale)}
               className='text-xs font-mono uppercase tracking-widest text-emerald-400 hover:underline'
             >
               IA 2027
@@ -131,13 +132,13 @@ export default async function DesaceleracaoCoordenadaPage({ params }: PageProps)
           {/* CTA */}
           <div className='flex flex-col sm:flex-row items-start sm:items-center gap-4'>
             <Link
-              href='/simulacoes/ia-2027'
+              href={localePath('/simulacoes/ia-2027', locale)}
               className='inline-flex items-center gap-2 bg-emerald-700 text-white font-semibold px-6 py-3 rounded-full hover:bg-emerald-600 transition-colors text-sm'
             >
               {t.ctaFull}
             </Link>
             <Link
-              href='/simulacoes/ia-2027/corrida-estrategica'
+              href={localePath('/simulacoes/ia-2027/corrida-estrategica', locale)}
               className='text-xs text-neutral-500 hover:text-neutral-300 underline'
             >
               {t.ctaAlt}

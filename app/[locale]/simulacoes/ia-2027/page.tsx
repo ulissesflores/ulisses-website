@@ -9,6 +9,7 @@ import { AuthorHubCard } from '@/components/author-hub-card';
 import { FaqSection } from '@/components/faq-section';
 import { ia2027Faq } from '@/data/faq';
 import { getDictionary } from '@/lib/get-dictionary';
+import { localePath } from '@/lib/locale-path';
 
 const canonicalPath = '/simulacoes/ia-2027';
 
@@ -120,7 +121,7 @@ export default async function IA2027Page({ params, searchParams }: PageProps) {
           {/* Breadcrumb / Kicker */}
           <div className='flex items-center gap-2 mb-6'>
             <Link
-              href='/simulacoes'
+              href={localePath('/simulacoes', locale)}
               className='text-xs font-mono uppercase tracking-widest text-emerald-400 hover:underline'
             >
               {dict.ia2027.breadcrumb.simulations}

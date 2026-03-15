@@ -7,6 +7,7 @@ import { FaqSection } from '@/components/faq-section';
 import { isLocale, defaultLocale, localeToOgLocale, type Locale } from '@/data/i18n';
 import { getDictionary } from '@/lib/get-dictionary';
 import { buildLanguageAlternates } from '@/data/seo';
+import { localePath } from '@/lib/locale-path';
 
 const canonicalPath = '/mundo-politico';
 
@@ -78,7 +79,7 @@ export default async function MundoPoliticoPage({ params }: PageProps) {
       <section className='bg-neutral-950 text-neutral-200 pt-20 pb-16 border-b border-neutral-800'>
         <div className='max-w-4xl mx-auto px-6'>
           <div className='flex items-center gap-2 mb-6'>
-            <Link href='/' className='text-xs font-mono uppercase tracking-widest text-emerald-400 hover:underline'>
+            <Link href={localePath('/', locale)} className='text-xs font-mono uppercase tracking-widest text-emerald-400 hover:underline'>
               {dict.common.breadcrumb.home}
             </Link>
             <span className='text-xs text-neutral-600'>→</span>
@@ -180,7 +181,7 @@ export default async function MundoPoliticoPage({ params }: PageProps) {
             {t.cta.description}
           </p>
           <Link
-            href='/'
+            href={localePath('/', locale)}
             className='inline-flex items-center gap-2 bg-white text-black font-semibold px-6 py-3 rounded-full hover:bg-gray-100 transition-colors text-sm'
           >
             {t.cta.button}

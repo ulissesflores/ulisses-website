@@ -7,6 +7,7 @@ import { AuthorHubCard } from '@/components/author-hub-card';
 import { getDictionary } from '@/lib/get-dictionary';
 import { isLocale, defaultLocale } from '@/data/i18n';
 import type { Locale } from '@/data/i18n';
+import { localePath } from '@/lib/locale-path';
 
 interface PageProps {
   params: Promise<{ slug: string; locale: string }>;
@@ -117,7 +118,7 @@ export default async function CertificationDetailPage({ params }: PageProps) {
   return (
     <div className='min-h-screen bg-neutral-950 text-neutral-200'>
       <main className='max-w-3xl mx-auto px-6 py-20'>
-        <Link href='/certifications' className='text-sm text-neutral-400 hover:text-emerald-400 transition-colors'>
+        <Link href={localePath('/certifications', locale)} className='text-sm text-neutral-400 hover:text-emerald-400 transition-colors'>
           {t.detail.backLink}
         </Link>
 

@@ -5,9 +5,11 @@ import { ArrowLeft, BookOpen, Calendar, Download, FileText } from 'lucide-react'
 import { publicationCollections, publications } from '@/data/publications';
 import { upkfMeta } from '@/data/generated/upkf.generated';
 import { AuthorHubCard } from '@/components/author-hub-card';
+import { localePath } from '@/lib/locale-path';
+import { defaultLocale, isLocale, type Locale } from '@/data/i18n';
 
 interface PageProps {
-  params: Promise<{ category: string; slug: string }>;
+  params: Promise<{ category: string; slug: string; locale: string }>;
 }
 
 export function generateStaticParams() {
@@ -60,7 +62,8 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 }
 
 export default async function ArticlePage({ params }: PageProps) {
-  const { category, slug } = await params;
+  const { category, slug, locale: rawLocale } = await params;
+  const locale = (isLocale(rawLocale) ? rawLocale : defaultLocale) as Locale;
   const publication = publications.find((item) => item.category === category && item.id === slug);
 
   if (!publication) {
@@ -144,7 +147,7 @@ export default async function ArticlePage({ params }: PageProps) {
         </Link>
 
         <Link
-          href='/'
+          href={localePath('/', locale)}
           className='inline-flex items-center gap-2 text-sm text-neutral-600 hover:text-neutral-300 transition-colors mb-10'
         >
           Ir para Home

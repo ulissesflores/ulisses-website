@@ -7,6 +7,7 @@ import { AuthorHubCard } from '@/components/author-hub-card';
 import { FaqSection } from '@/components/faq-section';
 import { goldenleafFaq } from '@/data/faq';
 import { getDictionary } from '@/lib/get-dictionary';
+import { localePath } from '@/lib/locale-path';
 
 const canonicalPath = '/simulacoes/goldenleaf';
 
@@ -82,11 +83,11 @@ export default async function GoldenLeafPage({ params }: PageProps) {
         <div className='max-w-4xl mx-auto px-6'>
           {/* Breadcrumb */}
           <div className='flex items-center gap-2 mb-6'>
-            <Link href='/' className='text-xs font-mono uppercase tracking-widest text-emerald-400 hover:underline'>
+            <Link href={localePath('/', locale)} className='text-xs font-mono uppercase tracking-widest text-emerald-400 hover:underline'>
               Home
             </Link>
             <span className='text-xs text-neutral-600'>→</span>
-            <Link href='/simulacoes' className='text-xs font-mono uppercase tracking-widest text-emerald-400 hover:underline'>
+            <Link href={localePath('/simulacoes', locale)} className='text-xs font-mono uppercase tracking-widest text-emerald-400 hover:underline'>
               {t.breadcrumb.simulations}
             </Link>
             <span className='text-xs text-neutral-600'>→</span>
@@ -151,13 +152,13 @@ export default async function GoldenLeafPage({ params }: PageProps) {
             <h3 className='text-lg font-semibold text-white mb-4'>{t.architecture.relatedTitle}</h3>
             <div className='space-y-3'>
               <Link
-                href='/whitepapers/2025-iot-data-sovereignty'
+                href={localePath('/whitepapers/2025-iot-data-sovereignty', locale)}
                 className='block text-sm text-emerald-300 hover:text-emerald-200 transition-colors'
               >
                 {t.architecture.relatedLinks[0]}
               </Link>
               <Link
-                href='/whitepapers/2025-hybrid-cooling-thermodynamics'
+                href={localePath('/whitepapers/2025-hybrid-cooling-thermodynamics', locale)}
                 className='block text-sm text-emerald-300 hover:text-emerald-200 transition-colors'
               >
                 {t.architecture.relatedLinks[1]}
@@ -187,7 +188,7 @@ export default async function GoldenLeafPage({ params }: PageProps) {
             {t.cta.description}
           </p>
           <Link
-            href='/'
+            href={localePath('/', locale)}
             className='inline-flex items-center gap-2 bg-white text-black font-semibold px-6 py-3 rounded-full hover:bg-gray-100 transition-colors text-sm'
           >
             {t.cta.button}
