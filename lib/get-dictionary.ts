@@ -8,7 +8,8 @@ import type { Dictionary } from '@/data/i18n/types';
  * Usage (server component):
  *   const dict = await getDictionary(locale);
  */
-const loaders: Record<Locale, () => Promise<{ default: Dictionary }>> = {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const loaders: Record<Locale, () => Promise<{ default: any }>> = {
   'pt-br': () => import('@/data/i18n/pt-br'),
   en: () => import('@/data/i18n/en'),
   es: () => import('@/data/i18n/es'),
@@ -21,10 +22,10 @@ export async function getDictionary(locale: Locale): Promise<Dictionary> {
 
   try {
     const mod = await load();
-    return mod.default;
+    return mod.default as Dictionary;
   } catch {
     // Fallback: se o import falhar, carrega pt-BR como safety net
     const fallback = await loaders['pt-br']();
-    return fallback.default;
+    return fallback.default as Dictionary;
   }
 }

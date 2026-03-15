@@ -51,7 +51,9 @@ const parsedArgs = Object.fromEntries(
 const FILTER_LOCALE = parsedArgs['locale'] || null;
 const FILTER_NAMESPACE = parsedArgs['namespace'] || null;
 const DRY_RUN = parsedArgs['dry-run'] === 'true';
-const DELAY_MS = Number(parsedArgs['delay']) || 4000;
+const DELAY_MS = Number(parsedArgs['delay']) || 6000;
+const MODEL_NAME = parsedArgs['model'] || 'gemini-2.0-flash-lite';
+const MAX_RETRIES = Number(parsedArgs['retries']) || 3;
 
 // ── Target Locales ──────────────────────────────────────────────────────────────
 
@@ -247,52 +249,83 @@ Remember: output ONLY the raw JSON object. No markdown, no explanations, no code
 INPUT JSON:
 ${inputJson}`;
 
-  const result = await model.generateContent({
-    contents: [{ role: 'user', parts: [{ text: userPrompt }] }],
-    systemInstruction: { parts: [{ text: SYSTEM_PROMPT }] },
-    generationConfig: {
-      temperature: 0.3,
-      topP: 0.85,
-      maxOutputTokens: 65536,
-      responseMimeType: 'application/json',
-    },
-  });
-
-  const responseText = result.response.text().trim();
-
-  // Attempt to parse the response as JSON
-  let parsed;
-  try {
-    parsed = JSON.parse(responseText);
-  } catch (parseErr) {
-    // Sometimes the model wraps in ```json ... ```, strip it
-    const cleaned = responseText
-      .replace(/^```(?:json)?\s*/i, '')
-      .replace(/\s*```\s*$/i, '')
-      .trim();
-
+  // Retry loop with exponential backoff
+  let lastError;
+  for (let attempt = 1; attempt <= MAX_RETRIES; attempt++) {
     try {
-      parsed = JSON.parse(cleaned);
-    } catch (secondErr) {
-      throw new Error(
-        `JSON parse failed for namespace "${namespaceName}": ${secondErr.message}\n` +
-        `--- RAW RESPONSE (first 500 chars) ---\n${responseText.slice(0, 500)}`,
-      );
+      const result = await model.generateContent({
+        contents: [{ role: 'user', parts: [{ text: userPrompt }] }],
+        systemInstruction: { parts: [{ text: SYSTEM_PROMPT }] },
+        generationConfig: {
+          temperature: 0.3,
+          topP: 0.85,
+          maxOutputTokens: 65536,
+          responseMimeType: 'application/json',
+        },
+      });
+
+      const responseText = result.response.text().trim();
+
+      // Attempt to parse the response as JSON
+      let parsed;
+      try {
+        parsed = JSON.parse(responseText);
+      } catch (parseErr) {
+        // Sometimes the model wraps in ```json ... ```, strip it
+        const cleaned = responseText
+          .replace(/^```(?:json)?\s*/i, '')
+          .replace(/\s*```\s*$/i, '')
+          .trim();
+
+        try {
+          parsed = JSON.parse(cleaned);
+        } catch (secondErr) {
+          throw new Error(
+            `JSON parse failed for namespace "${namespaceName}": ${secondErr.message}\n` +
+            `--- RAW RESPONSE (first 500 chars) ---\n${responseText.slice(0, 500)}`,
+          );
+        }
+      }
+
+      // Validate key structure (top-level keys must match)
+      const sourceKeys = Object.keys(sourceData).sort();
+      const parsedKeys = Object.keys(parsed).sort();
+
+      if (JSON.stringify(sourceKeys) !== JSON.stringify(parsedKeys)) {
+        const missing = sourceKeys.filter((k) => !parsedKeys.includes(k));
+        const extra = parsedKeys.filter((k) => !sourceKeys.includes(k));
+        log('⚠️', `Key mismatch in "${namespaceName}": missing=[${missing}] extra=[${extra}]`);
+      }
+
+      return parsed;
+    } catch (err) {
+      lastError = err;
+      const msg = err.message || '';
+
+      // Check if it's a 429 rate limit error
+      if (msg.includes('429') || msg.includes('Too Many Requests') || msg.includes('quota')) {
+        // Extract retryDelay from the error message if available
+        const retryMatch = msg.match(/retry in ([\d.]+)s/i);
+        const suggestedDelay = retryMatch ? Math.ceil(parseFloat(retryMatch[1])) * 1000 : 0;
+        const backoffMs = Math.max(suggestedDelay, 15000 * attempt);
+
+        if (attempt < MAX_RETRIES) {
+          log('🔄', `Rate limited (attempt ${attempt}/${MAX_RETRIES}). Waiting ${Math.round(backoffMs / 1000)}s...`);
+          await sleep(backoffMs);
+          continue;
+        }
+      }
+
+      // Non-retryable error or max retries exhausted
+      if (attempt < MAX_RETRIES) {
+        log('⚠️', `Attempt ${attempt}/${MAX_RETRIES} failed: ${msg.slice(0, 100)}. Retrying...`);
+        await sleep(5000 * attempt);
+        continue;
+      }
     }
   }
 
-  // Validate key structure (top-level keys must match)
-  const sourceKeys = Object.keys(sourceData).sort();
-  const parsedKeys = Object.keys(parsed).sort();
-
-  if (JSON.stringify(sourceKeys) !== JSON.stringify(parsedKeys)) {
-    const missing = sourceKeys.filter((k) => !parsedKeys.includes(k));
-    const extra = parsedKeys.filter((k) => !sourceKeys.includes(k));
-    log('⚠️', `Key mismatch in "${namespaceName}": missing=[${missing}] extra=[${extra}]`);
-    // Don't throw — partial translations are still useful
-  }
-
-  return parsed;
+  throw lastError;
 }
 
 // ── Main ────────────────────────────────────────────────────────────────────────
@@ -314,9 +347,9 @@ async function main() {
 
   // ── Initialize Gemini ──
   const genAI = new GoogleGenerativeAI(apiKey);
-  const model = genAI.getGenerativeModel({ model: 'gemini-2.0-flash' });
+  const model = genAI.getGenerativeModel({ model: MODEL_NAME });
 
-  log('🔑', 'Gemini API initialized (model: gemini-2.0-flash)');
+  log('🔑', `Gemini API initialized (model: ${MODEL_NAME})`);
   log('⏱️', `Delay between requests: ${DELAY_MS}ms`);
   if (DRY_RUN) log('🧪', 'DRY RUN — no files will be written');
   if (FILTER_LOCALE) log('🎯', `Filtering locale: ${FILTER_LOCALE}`);
