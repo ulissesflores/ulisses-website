@@ -3063,6 +3063,7 @@ function buildCoreSiteJsonLd(identity, organization, frontmatter) {
             }
           : undefined,
         description: organization.description['pt-BR'] || '',
+        areaServed: geographicPlaces.length > 0 ? geographicPlaces : undefined,
       },
       {
         '@id': `${siteUrl}/#codexhash-research`,

@@ -818,9 +818,9 @@ export const upkfMeta = {
     "siteGraphNodes": 43,
     "publicGraphNodes": 186,
     "fullGraphNodes": 289,
-    "siteJsonldBytes": 23037,
-    "publicJsonldBytes": 168789,
-    "fullJsonldBytes": 272786,
+    "siteJsonldBytes": 23378,
+    "publicJsonldBytes": 169130,
+    "fullJsonldBytes": 273127,
     "corpusFiles": 0,
     "corpusSnippets": 0,
     "corpusDirs": [],
@@ -1227,7 +1227,45 @@ export const siteJsonLd = {
           "name": "BR"
         }
       },
-      "description": "Laboratório de P&D (deep tech) focado em finanças quantitativas/Web3, engenharia de hardware IoT (arquiteturas cloudless/edge) e IA aplicada para resiliência ciberfinanceira."
+      "description": "Laboratório de P&D (deep tech) focado em finanças quantitativas/Web3, engenharia de hardware IoT (arquiteturas cloudless/edge) e IA aplicada para resiliência ciberfinanceira.",
+      "areaServed": [
+        {
+          "@type": "Place",
+          "name": "Itupeva"
+        },
+        {
+          "@type": "Place",
+          "name": "Jundiaí"
+        },
+        {
+          "@type": "Place",
+          "name": "Campinas"
+        },
+        {
+          "@type": "Place",
+          "name": "São Paulo"
+        },
+        {
+          "@type": "Place",
+          "name": "Brazil"
+        },
+        {
+          "@type": "Place",
+          "name": "Italy"
+        },
+        {
+          "@type": "Place",
+          "name": "United States"
+        },
+        {
+          "@type": "Place",
+          "name": "El Salvador"
+        },
+        {
+          "@type": "Place",
+          "name": "Israel"
+        }
+      ]
     },
     {
       "@id": "https://ulissesflores.com/#codexhash-research",
