@@ -8,3 +8,9 @@ npm run seo:validate
 
 # ── SEO: validate Rich Results, DID & JSON-LD integrity ──
 npm run seo:rich-results
+
+# ── i18n: structural parity validator (anti-fraud) ──
+npm run i18n:parity
+
+# ── Tests: full test suite ──
+npm test
