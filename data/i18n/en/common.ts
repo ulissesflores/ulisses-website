@@ -2,121 +2,121 @@ export const common = {
   nav: {
     categories: [
       {
-        label: 'Sobre',
+        label: 'About',
         items: [
           {
             label: 'Bio',
             href: '/#about',
-            description: 'Quem sou e minha trajetória'
+            description: 'Who I am and my career path'
           },
           {
             label: 'Expertise',
             href: '/#pillars',
-            description: 'Pilares de atuação'
+            description: 'Core areas of expertise'
           },
           {
-            label: 'Trajetória',
+            label: 'Career',
             href: '/#trajectory',
-            description: 'Linha do tempo profissional'
+            description: 'Professional timeline'
           }
         ]
       },
       {
-        label: 'Publicações',
+        label: 'Publications',
         items: [
           {
             label: 'Research',
             href: '/research',
-            description: 'IA, Economia e Sistemas Complexos'
+            description: 'AI, Economics, and Complex Systems'
           },
           {
             label: 'Whitepapers',
             href: '/whitepapers',
-            description: 'Engenharia, IoT e Segurança'
+            description: 'Engineering, IoT, and Security'
           },
           {
             label: 'Projeto Ψ (PSI)',
             href: '/whitepapers/projeto-psi',
-            description: 'Whitepaper técnico: Hardware Soberano'
+            description: 'Technical Whitepaper: Sovereign Hardware'
           },
           {
-            label: 'PSI — Demonstração',
+            label: 'PSI — Demo',
             href: '/projeto-psi',
-            description: 'Landing comercial: investimento e licenciamento'
+            description: 'Commercial landing: investment and licensing'
           },
           {
             label: 'Essays',
             href: '/essays',
-            description: 'Teologia, Humanidades e História'
+            description: 'Theology, Humanities, and History'
           }
         ]
       },
       {
-        label: 'Acervo',
+        label: 'Collection',
         items: [
           {
-            label: 'Acervo Teológico',
+            label: 'Theological Archive',
             href: '/acervo-teologico',
-            description: 'Sermões por cluster temático'
+            description: 'Sermons by thematic cluster'
           },
           {
             label: 'Clube Santo',
             href: '/clube-santo',
-            description: 'Avivamento para a era digital'
+            description: 'Revival for the digital age'
           },
           {
-            label: 'Mundo Político',
+            label: 'Political World',
             href: '/mundo-politico',
-            description: 'Artigos e análises políticas'
+            description: 'Political articles and analyses'
           }
         ]
       },
       {
-        label: 'Ferramentas',
+        label: 'Tools',
         items: [
           {
-            label: 'Simulações',
+            label: 'Simulations',
             href: '/simulacoes',
-            description: 'Laboratório de cenários prospectivos'
+            description: 'Prospective scenario laboratory'
           },
           {
-            label: 'Identidade',
+            label: 'Identity',
             href: '/identidade',
-            description: 'Hub canônico de identidade soberana'
+            description: 'Canonical sovereign identity hub'
           },
           {
-            label: 'Certificações',
+            label: 'Certifications',
             href: '/certifications',
-            description: 'Credenciais e verificações'
+            description: 'Credentials and verifications'
           }
         ]
       }
     ]
   },
-  cta: 'FALE COMIGO',
+  cta: 'CONTACT ME',
   mobileMenu: {
-    open: 'Abrir menu',
-    close: 'Fechar menu'
+    open: 'Open menu',
+    close: 'Close menu'
   },
   footer: {
     tagline: 'Ulisses Flores · Ground Truth Knowledge Hub',
     identityLink: 'Sovereign Identity Graph'
   },
   faqSection: {
-    defaultTitle: 'Perguntas Frequentes'
+    defaultTitle: 'Frequently Asked Questions'
   },
   authorHubCard: {
-    defaultLabel: 'Autor',
-    defaultDescription: 'Fonte canônica de autoria e identidade semântica deste conteúdo.'
+    defaultLabel: 'Author',
+    defaultDescription: 'Canonical source of authorship and semantic identity for this content.',
   },
   breadcrumb: {
     home: 'Home'
   },
   actions: {
-    verify: 'Verificar',
-    open: 'Abrir',
-    explore: 'Explorar',
-    contact: 'Falar com Ulisses Flores →'
+    verify: 'Verify',
+    open: 'Open',
+    explore: 'Explore',
+    contact: 'Talk to Ulisses Flores →'
   },
   notFound: {
     title: 'Page not found',
@@ -130,6 +130,6 @@ export const common = {
     },
   },
   languageSwitcher: {
-    label: 'Idioma'
+    label: 'Language'
   }
 } as const;
