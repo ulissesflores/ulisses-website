@@ -42,7 +42,7 @@ export const identidade = {
         href: '/certifications'
       },
       {
-        label: 'Acervo Teológico',
+        label: 'Archivo Teológico',
         href: '/acervo-teologico'
       },
       {

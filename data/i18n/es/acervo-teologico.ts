@@ -16,7 +16,7 @@ export const acervoTeologico = {
     ogTitle: 'Acervo Teológico y Arqueología Espiritual | Ulisses Flores',
     ogDescription: 'Más de 50 sermones, predicaciones expositivas y análisis de teología histórica por Ulisses Flores. Rigor exegético y avivamiento.'
   },
-  breadcrumb: 'Acervo Teológico',
+  breadcrumb: 'Archivo Teológico',
   hero: {
     h1: 'Acervo Teológico y Arqueología Espiritual',
     lead: 'La fe y el intelecto no son magnitudes opuestas, sino pilares complementarios en la búsqueda de la Verdad. Este acervo reúne más de medio centenar de sermones y exposiciones teológicas. Con un profundo rigor exegético y un enfoque en la «Arqueología Espiritual» (como la explorada en el Clube Santo y en el metodismo clásico), este espacio está dedicado a la edificación sólida, al avivamiento genuino y a la exposición continua y sin concesiones de los textos sagrados.',
