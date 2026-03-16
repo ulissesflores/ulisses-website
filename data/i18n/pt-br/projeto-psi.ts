@@ -130,4 +130,32 @@ export const projetoPsi = {
     button: 'Entrar em Contato',
   },
   crossLink: '📄 Leia o Whitepaper Técnico Completo →',
+  // ── Whitepaper/Simulação Page UI strings ──
+  whitepaperUI: {
+    kicker: 'Whitepaper Técnico',
+    kickerSub: 'Pesquisa em Arquitetura de Sistemas e Criptografia Aplicada',
+    h1: 'Projeto Ψ (PSI): O Horizonte de Eventos da Soberania Pessoal e Zero Trust em Silício',
+    authorLabel: 'Autor:',
+    authorRole: 'Consultor Estratégico de IA, Arquiteto de Software, Desenvolvedor de Hardware, Mestrando AGTU (EUA)',
+    abstractTitle: 'Resumo Executivo',
+    abstractText:
+      'O advento da hipervigilância algorítmica em escala estatal, aliado à proliferação de vetores de coerção física e ataques invasivos na cadeia de suprimentos de hardware, exige uma reformulação ontológica nas arquiteturas de custódia de ativos digitais críticos. As carteiras de hardware civis tradicionais operam sob a premissa fundamental de um ambiente seguro e de um usuário livre de coação — suposições que se provam catastroficamente falhas sob modelos de ameaça hostis. Este artigo apresenta uma análise científica exaustiva do Projeto Ψ (PSI), uma arquitetura de custódia de classe soberana baseada no paradigma de Confiança Zero (Zero Trust) absoluto em silício.',
+    authorCardLabel: 'Pesquisa & Co-invenção',
+    authorCardDescription:
+      'Projeto PSI investigado e documentado por Ulisses Flores — Consultor Estratégico de IA, Arquiteto de Software, Desenvolvedor de Hardware, co-inventor do Codex Hash e Mestrando em IA pela AGTU (EUA).',
+    ctaTitle: 'Interesse em soberania digital e hardware criptográfico?',
+    ctaDescription:
+      'Ulisses Flores oferece consultoria em privacidade digital, arquiteturas de hardware wallet, Ring Signatures e implementação de protocolos de soberania para empresas e projetos de blockchain. Entre em contato.',
+    ctaButton: 'Falar com Ulisses Flores →',
+    faqTitle: 'Perguntas sobre o Projeto PSI e Hardware Wallet',
+  },
+  // JSON-LD strings (for dynamic locale)
+  jsonLd: {
+    headline: 'Projeto Ψ (PSI): O Horizonte de Eventos da Soberania Pessoal e Zero Trust em Silício',
+    description:
+      'Whitepaper Técnico: Arquitetura de custódia de ativos digitais de classe nuclear com SRAM PUF, Criptografia XMSS pós-quântica e Redundância Modular Tripla aeroespacial.',
+    softwareName: 'Projeto PSI',
+    softwareDescription:
+      'Hardware wallet de classe soberana com Zero Trust em silício, SRAM PUF, XMSS pós-quântico e redundância TMR aeroespacial.',
+  },
 } as const;
