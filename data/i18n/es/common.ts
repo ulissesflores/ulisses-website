@@ -119,14 +119,14 @@ export const common = {
     contact: 'Contactar con Ulisses Flores →'
   },
   notFound: {
-    title: 'Page not found',
-    description: 'The page you are looking for may have been moved, renamed, or no longer exists. Explore the main sections below.',
-    searchHint: 'Or use the navigation at the top to find what you are looking for.',
+    title: 'Página no encontrada',
+    description: 'Es posible que la página que buscas se haya movido, cambiado de nombre o ya no exista. Explora las secciones principales a continuación.',
+    searchHint: 'O usa la navegación en la parte superior para encontrar lo que buscas.',
     links: {
-      home: { label: 'Home', description: 'Main page' },
-      publications: { label: 'Publications', description: 'Research, Whitepapers and Essays' },
-      identity: { label: 'Identity', description: 'Canonical identity hub' },
-      simulations: { label: 'Simulations', description: 'Scenario laboratory' },
+      home: { label: 'Inicio', description: 'Página principal' },
+      publications: { label: 'Publicaciones', description: 'Research, Whitepapers y Ensayos' },
+      identity: { label: 'Identidad', description: 'Hub canónico de identidad' },
+      simulations: { label: 'Simulaciones', description: 'Laboratorio de escenarios' },
     },
   },
   languageSwitcher: {

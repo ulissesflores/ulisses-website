@@ -119,14 +119,14 @@ export const common = {
     contact: 'דבר עם Ulisses Flores →'
   },
   notFound: {
-    title: 'Page not found',
-    description: 'The page you are looking for may have been moved, renamed, or no longer exists. Explore the main sections below.',
-    searchHint: 'Or use the navigation at the top to find what you are looking for.',
+    title: 'הדף לא נמצא',
+    description: 'ייתכן שהדף שאתה מחפש הועבר, שונה שמו או שאינו קיים עוד. חקור את הסעיפים העיקריים למטה.',
+    searchHint: 'או השתמש בניווט בראש העמוד כדי למצוא את מה שאתה מחפש.',
     links: {
-      home: { label: 'Home', description: 'Main page' },
-      publications: { label: 'Publications', description: 'Research, Whitepapers and Essays' },
-      identity: { label: 'Identity', description: 'Canonical identity hub' },
-      simulations: { label: 'Simulations', description: 'Scenario laboratory' },
+      home: { label: 'בית', description: 'עמוד ראשי' },
+      publications: { label: 'פרסומים', description: 'מחקר, Whitepapers ומאמרים' },
+      identity: { label: 'זהות', description: 'מרכז קנוני לזהות' },
+      simulations: { label: 'סימולציות', description: 'מעבדה לתרחישים' },
     },
   },
   languageSwitcher: {
