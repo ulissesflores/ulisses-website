@@ -8,6 +8,7 @@ import { upkfMeta } from '@/data/generated/upkf.generated';
 import { AuthorHubCard } from '@/components/author-hub-card';
 import { getDictionary } from '@/lib/get-dictionary';
 import { localePath } from '@/lib/locale-path';
+import { buildCanonical } from '@/data/seo';
 
 const validCategories = Object.keys(publicationCollections) as PublicationCategory[];
 
@@ -42,7 +43,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       },
     ],
     alternates: {
-      canonical: `/${category}`,
+      canonical: buildCanonical(locale, `/${category}`),
     },
     openGraph: {
       type: 'website',
@@ -205,7 +206,7 @@ export default async function CategoryPage({ params }: PageProps) {
               </div>
               <h2 className='text-2xl font-semibold text-white mb-3'>
                 <Link href={`/${publication.category}/${publication.id}`} className='hover:text-emerald-400 transition-colors'>
-                  {publication.title}
+                  {(locale !== 'pt-br' && publication.translations?.[locale as keyof NonNullable<typeof publication.translations>]) || publication.title}
                 </Link>
               </h2>
               <p className='text-neutral-400 mb-4 leading-relaxed'>{publication.summary}</p>

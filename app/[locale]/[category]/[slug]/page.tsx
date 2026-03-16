@@ -8,6 +8,7 @@ import { AuthorHubCard } from '@/components/author-hub-card';
 import { localePath } from '@/lib/locale-path';
 import { defaultLocale, isLocale, type Locale } from '@/data/i18n';
 import { getDictionary } from '@/lib/get-dictionary';
+import { buildCanonical } from '@/data/seo';
 
 interface PageProps {
   params: Promise<{ category: string; slug: string; locale: string }>;
@@ -21,7 +22,7 @@ export function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-  const { category, slug } = await params;
+  const { category, slug, locale } = await params;
   const publication = publications.find((item) => item.category === category && item.id === slug);
 
   if (!publication) {
@@ -40,7 +41,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       },
     ],
     alternates: {
-      canonical: canonicalPath,
+      canonical: buildCanonical(locale, canonicalPath),
     },
     openGraph: {
       type: 'article',

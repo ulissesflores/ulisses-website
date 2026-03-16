@@ -9,7 +9,7 @@ import { publications } from '@/data/publications';
 import { FaqSection } from '@/components/faq-section';
 import { isLocale, defaultLocale, type Locale } from '@/data/i18n';
 import { getDictionary } from '@/lib/get-dictionary';
-import { buildLanguageAlternates } from '@/data/seo';
+import { buildLanguageAlternates, buildCanonical } from '@/data/seo';
 
 const canonicalPath = '/identidade';
 const ogImage = '/carlos-ulisses-flores-cto.jpg';
@@ -44,7 +44,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   return {
     title: t.meta.title,
     description: t.meta.description,
-    alternates: { canonical: canonicalPath, languages: buildLanguageAlternates(canonicalPath) },
+    alternates: { canonical: buildCanonical(locale, canonicalPath), languages: buildLanguageAlternates(canonicalPath) },
     openGraph: {
       type: 'profile',
       url: `${upkfMeta.primaryWebsite}${canonicalPath}`,

@@ -6,7 +6,7 @@ import { AuthorHubCard } from '@/components/author-hub-card';
 import { FaqSection } from '@/components/faq-section';
 import { isLocale, defaultLocale, localeToOgLocale, type Locale } from '@/data/i18n';
 import { getDictionary } from '@/lib/get-dictionary';
-import { buildLanguageAlternates } from '@/data/seo';
+import { buildLanguageAlternates, buildCanonical } from '@/data/seo';
 import { localePath } from '@/lib/locale-path';
 
 const canonicalPath = '/mundo-politico';
@@ -24,7 +24,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     description: t.meta.description,
     keywords: [...t.meta.keywords],
     alternates: {
-      canonical: canonicalPath,
+      canonical: buildCanonical(locale, canonicalPath),
       languages: buildLanguageAlternates(canonicalPath),
     },
     openGraph: {

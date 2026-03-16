@@ -9,6 +9,7 @@ import { FaqSection } from '@/components/faq-section';
 import { getDictionary } from '@/lib/get-dictionary';
 import { buildSermonI18nMaps, localizeCluster } from '@/data/sermons-i18n';
 import { localePath } from '@/lib/locale-path';
+import { buildCanonical } from '@/data/seo';
 
 interface PageProps {
   params: Promise<{ locale: string }>;

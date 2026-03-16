@@ -8,6 +8,7 @@ import { getDictionary } from '@/lib/get-dictionary';
 import { isLocale, defaultLocale } from '@/data/i18n';
 import type { Locale } from '@/data/i18n';
 import { localePath } from '@/lib/locale-path';
+import { buildCanonical } from '@/data/seo';
 
 interface PageProps {
   params: Promise<{ slug: string; locale: string }>;
@@ -20,7 +21,7 @@ export function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-  const { slug } = await params;
+  const { slug, locale } = await params;
   const certification = getCertificationSotaBySlug(slug);
 
   if (!certification) {
@@ -39,7 +40,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       },
     ],
     alternates: {
-      canonical: certification.canonicalPath,
+      canonical: buildCanonical(locale, certification.canonicalPath),
     },
     openGraph: {
       type: 'article',

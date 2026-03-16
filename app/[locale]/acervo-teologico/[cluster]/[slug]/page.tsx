@@ -8,6 +8,7 @@ import { AuthorHubCard } from '@/components/author-hub-card';
 import { defaultLocale, isLocale, localeToOgLocale, type Locale } from '@/data/i18n';
 import { getDictionary } from '@/lib/get-dictionary';
 import { buildSermonI18nMaps, localizeSermon, localizeCluster } from '@/data/sermons-i18n';
+import { buildCanonical } from '@/data/seo';
 
 interface PageProps {
   params: Promise<{ cluster: string; slug: string; locale: string }>;

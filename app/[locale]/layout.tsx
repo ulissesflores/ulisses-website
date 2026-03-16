@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { Noto_Sans_Hebrew } from 'next/font/google';
 import { siteJsonLd, upkfMeta } from '@/data/generated/upkf.generated';
-import { buildLanguageAlternates } from '@/data/seo';
+import { buildLanguageAlternates, buildCanonical } from '@/data/seo';
 import {
   supportedLocales,
   defaultLocale,
@@ -78,7 +78,7 @@ export async function generateMetadata({ params }: LayoutProps): Promise<Metadat
     category: 'Research',
     classification: 'Science and Technology',
     alternates: {
-      canonical: '/',
+      canonical: buildCanonical(locale, '/'),
       languages: buildLanguageAlternates('/'),
     },
     robots: {
