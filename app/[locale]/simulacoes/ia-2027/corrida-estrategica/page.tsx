@@ -6,7 +6,6 @@ import { IA2027Simulation } from '@/components/simulations/ia-2027/ia-2027-simul
 import { upkfMeta } from '@/data/generated/upkf.generated';
 import { AuthorHubCard } from '@/components/author-hub-card';
 import { FaqSection } from '@/components/faq-section';
-import { ia2027Faq } from '@/data/faq';
 import { getDictionary } from '@/lib/get-dictionary';
 import { localePath } from '@/lib/locale-path';
 
@@ -164,7 +163,7 @@ export default async function CorridaEstrategicaPage({ params }: PageProps) {
       <section className='bg-neutral-950 text-neutral-200 pb-16'>
         <div className='max-w-4xl mx-auto px-6'>
           <FaqSection
-            items={ia2027Faq}
+            items={[...dict.faq.ia2027]}
             sectionTitle={t.faqTitle}
           />
         </div>

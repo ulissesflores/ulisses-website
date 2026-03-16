@@ -6,7 +6,6 @@ import { MessageCircle, Users, Skull, Zap, AlertTriangle, Sparkles } from 'lucid
 import { upkfMeta } from '@/data/generated/upkf.generated';
 import { AuthorHubCard } from '@/components/author-hub-card';
 import { FaqSection } from '@/components/faq-section';
-import { mumMraFaq } from '@/data/faq';
 import { getDictionary } from '@/lib/get-dictionary';
 import { localePath } from '@/lib/locale-path';
 
@@ -202,7 +201,7 @@ export default async function MummRaPage({ params }: PageProps) {
         </section>
 
         {/* FAQ */}
-        <FaqSection items={mumMraFaq} sectionTitle={t.faq.sectionTitle} />
+        <FaqSection items={[...dict.faq.mummRa]} sectionTitle={t.faq.sectionTitle} />
       </main>
 
       <script type='application/ld+json' dangerouslySetInnerHTML={{ __html: JSON.stringify(pageJsonLd) }} />

@@ -6,7 +6,6 @@ import { acervoCanonicalPath, acervoClusters, acervoSermons } from '@/data/acerv
 import { upkfMeta } from '@/data/generated/upkf.generated';
 import { AuthorHubCard } from '@/components/author-hub-card';
 import { FaqSection } from '@/components/faq-section';
-import { acervoTeologicoFaq } from '@/data/faq';
 import { getDictionary } from '@/lib/get-dictionary';
 import { buildSermonI18nMaps, localizeCluster } from '@/data/sermons-i18n';
 import { localePath } from '@/lib/locale-path';
@@ -165,7 +164,7 @@ export default async function AcervoTeologicoPage({ params }: PageProps) {
           ))}
         </div>
         <div className='mt-12'>
-          <FaqSection items={acervoTeologicoFaq} sectionTitle={t.faq.sectionTitle} />
+          <FaqSection items={[...dict.faq.acervoTeologico]} sectionTitle={t.faq.sectionTitle} />
         </div>
       </main>
 

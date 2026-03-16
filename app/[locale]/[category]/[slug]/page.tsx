@@ -7,6 +7,7 @@ import { upkfMeta } from '@/data/generated/upkf.generated';
 import { AuthorHubCard } from '@/components/author-hub-card';
 import { localePath } from '@/lib/locale-path';
 import { defaultLocale, isLocale, type Locale } from '@/data/i18n';
+import { getDictionary } from '@/lib/get-dictionary';
 
 interface PageProps {
   params: Promise<{ category: string; slug: string; locale: string }>;
@@ -64,6 +65,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 export default async function ArticlePage({ params }: PageProps) {
   const { category, slug, locale: rawLocale } = await params;
   const locale = (isLocale(rawLocale) ? rawLocale : defaultLocale) as Locale;
+  const dict = await getDictionary(locale);
   const publication = publications.find((item) => item.category === category && item.id === slug);
 
   if (!publication) {
@@ -154,8 +156,8 @@ export default async function ArticlePage({ params }: PageProps) {
         </Link>
         <div className='mb-10'>
           <AuthorHubCard
-            label='Hub canônico'
-            description='Fonte de autoria e identidade semântica desta publicação.'
+            label={dict.common.authorHubCard.defaultLabel}
+            description={dict.common.authorHubCard.defaultDescription}
           />
         </div>
 

@@ -1,0 +1,133 @@
+import { describe, it, expect } from 'vitest';
+import { readFileSync, existsSync } from 'fs';
+import { resolve } from 'path';
+
+/**
+ * Tests for the validate-rich-results.mjs logic.
+ * Cannot run the script directly in vitest (it uses process.exit),
+ * so we verify the data integrity that the script validates.
+ */
+
+const ROOT = resolve(__dirname, '../..');
+
+describe('validate-rich-results data integrity', () => {
+  // ── JSON-LD presence ──
+
+  it('all page files that define JSON-LD use inLanguage: locale (not hardcoded)', () => {
+    const pages = [
+      'app/[locale]/whitepapers/projeto-psi/page.tsx',
+      'app/[locale]/simulacoes/projeto-psi/page.tsx',
+      'app/[locale]/simulacoes/goldenleaf/page.tsx',
+      'app/[locale]/simulacoes/mumm-ra/page.tsx',
+      'app/[locale]/simulacoes/ia-2027/page.tsx',
+    ];
+    for (const pagePath of pages) {
+      const full = resolve(ROOT, pagePath);
+      if (!existsSync(full)) continue;
+      const content = readFileSync(full, 'utf-8');
+      if (content.includes('inLanguage')) {
+        expect(
+          content.includes("inLanguage: locale") ||
+          content.includes("inLanguage: 'pt-br'") === false,
+          `${pagePath} should use dynamic inLanguage`
+        ).toBe(true);
+      }
+    }
+  });
+
+  // ── localePath usage ──
+
+  it('all pages use localePath for internal links (no hardcoded /pt-br/ prefixes)', () => {
+    const pages = [
+      'app/[locale]/whitepapers/projeto-psi/page.tsx',
+      'app/[locale]/simulacoes/projeto-psi/page.tsx',
+      'app/[locale]/page.tsx',
+    ];
+    for (const pagePath of pages) {
+      const full = resolve(ROOT, pagePath);
+      if (!existsSync(full)) continue;
+      const content = readFileSync(full, 'utf-8');
+      // Should not have href='/pt-br/' hardcoded links
+      const hardcoded = content.match(/href=['"]\/pt-br\//g);
+      expect(
+        hardcoded,
+        `${pagePath} should not have hardcoded /pt-br/ links`
+      ).toBeNull();
+    }
+  });
+
+  // ── OpenGraph locale tags ──
+
+  it('no page uses hardcoded pt_BR in og:locale', () => {
+    const pages = [
+      'app/[locale]/whitepapers/projeto-psi/page.tsx',
+      'app/[locale]/simulacoes/projeto-psi/page.tsx',
+      'app/[locale]/page.tsx',
+      'app/[locale]/identidade/page.tsx',
+    ];
+    for (const pagePath of pages) {
+      const full = resolve(ROOT, pagePath);
+      if (!existsSync(full)) continue;
+      const content = readFileSync(full, 'utf-8');
+      // Should not have hardcoded locale: 'pt_BR'
+      const hardcoded = content.match(/locale:\s*['"]pt_BR['"]/g);
+      expect(
+        hardcoded,
+        `${pagePath} should not have hardcoded og:locale pt_BR`
+      ).toBeNull();
+    }
+  });
+
+  // ── Person/DID integrity ──
+
+  it('validate-rich-results.mjs script exists', () => {
+    const scriptPath = resolve(ROOT, 'scripts/seo/validate-rich-results.mjs');
+    expect(existsSync(scriptPath), 'validate-rich-results.mjs must exist').toBe(true);
+  });
+
+  // ── No static llms.txt in public ──
+
+  it('public/llms.txt does not exist (dynamic route should handle it)', () => {
+    const staticPath = resolve(ROOT, 'public/llms.txt');
+    expect(existsSync(staticPath), 'public/llms.txt should be removed').toBe(false);
+  });
+
+  it('dynamic llms.txt route exists', () => {
+    const routePath = resolve(ROOT, 'app/[locale]/llms.txt/route.ts');
+    expect(existsSync(routePath), 'dynamic llms.txt route must exist').toBe(true);
+  });
+});
+
+describe('PsiWhitepaperBody translated components', () => {
+  const BASE = resolve(ROOT, 'components/content');
+
+  it('all 5 locale variants exist', () => {
+    expect(existsSync(resolve(BASE, 'PsiWhitepaperBody.tsx'))).toBe(true);
+    expect(existsSync(resolve(BASE, 'PsiWhitepaperBody.en.tsx'))).toBe(true);
+    expect(existsSync(resolve(BASE, 'PsiWhitepaperBody.es.tsx'))).toBe(true);
+    expect(existsSync(resolve(BASE, 'PsiWhitepaperBody.it.tsx'))).toBe(true);
+    expect(existsSync(resolve(BASE, 'PsiWhitepaperBody.he.tsx'))).toBe(true);
+  });
+
+  it('locale loader component exists', () => {
+    expect(existsSync(resolve(BASE, 'PsiWhitepaperBodyLocalized.tsx'))).toBe(true);
+  });
+
+  it('all components export PsiWhitepaperBody function', () => {
+    const files = [
+      'PsiWhitepaperBody.tsx',
+      'PsiWhitepaperBody.en.tsx',
+      'PsiWhitepaperBody.es.tsx',
+      'PsiWhitepaperBody.it.tsx',
+      'PsiWhitepaperBody.he.tsx',
+    ];
+    for (const file of files) {
+      const content = readFileSync(resolve(BASE, file), 'utf-8');
+      expect(
+        content.includes('export function PsiWhitepaperBody') ||
+        content.includes('export default function PsiWhitepaperBody'),
+        `${file} must export PsiWhitepaperBody`
+      ).toBe(true);
+    }
+  });
+});

@@ -91,7 +91,7 @@ export default async function MundoPoliticoPostPage({ params }: PageProps) {
           <p className='text-sm text-neutral-500 mb-4'>Publicado em {post.publishedAt}</p>
           <p className='text-neutral-400 leading-relaxed'>{post.summary}</p>
           <div className='mt-4 max-w-xl'>
-            <AuthorHubCard label='Hub canônico' compact />
+            <AuthorHubCard label={dict.common.authorHubCard.defaultLabel} compact />
           </div>
         </header>
 
