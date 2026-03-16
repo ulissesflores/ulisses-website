@@ -258,12 +258,113 @@ ${inputJson}`;
   throw new Error(`Failed after ${MAX_RETRIES} attempts for [${namespaceName}]: ${lastError?.message}`);
 }
 
-// ── Main ────────────────────────────────────────────────────────────────────────
+// ── Markdown Translation Engine ─────────────────────────────────────────────
+
+const MD_WATCHED_DIRS = [
+  'public/research',
+  'public/essays',
+  'public/acervo-teologico',
+  'data/research',
+];
+
+const MD_SYSTEM_PROMPT = `You are a professional academic translator. Translate the following Markdown text to {LANGUAGE}.
+
+STRICT RULES:
+1. DO NOT alter any Markdown formatting, links, headers, code blocks, or LaTeX/math notations.
+2. Preserve the EXACT structure: headings hierarchy, bullet points, numbered lists, tables.
+3. DO NOT translate proper nouns, author names, institution names, DOI URLs, or bibliographic references.
+4. DO NOT translate technical acronyms (LSTM, SRAM, PUF, XMSS, TMR, IoT, AGI).
+5. Keep Harvard-style references EXACTLY as they are (author, year, URL, access date).
+6. Translate abstract, body text, conclusions, recommendations, and section titles.
+7. Keep the "Phase Score Summary" section EXACTLY as-is (do not translate scores or metadata).
+8. Output ONLY the translated Markdown. No wrapping, no explanations, no code fences.`;
+
+function getChangedMarkdownFiles() {
+  try {
+    const diff = execSync('git diff --cached --name-only', { encoding: 'utf8' });
+    const lines = diff.trim().split('\n').filter(Boolean);
+    const localePattern = /\.(en|es|it|he)\.(md|mdx)$/;
+    return lines.filter((f) => {
+      if (!f.endsWith('.md') && !f.endsWith('.mdx')) return false;
+      if (localePattern.test(f)) return false;
+      return MD_WATCHED_DIRS.some((dir) => f.startsWith(dir));
+    });
+  } catch {
+    return [];
+  }
+}
+
+async function translateMarkdownFile(mdModel, filePath) {
+  const fullPath = join(ROOT, filePath);
+  if (!existsSync(fullPath)) {
+    log('⚠️', `  MD file not found: ${filePath}`);
+    return { success: 0, failed: 0 };
+  }
+
+  const content = readFileSync(fullPath, 'utf8');
+  const ext = filePath.endsWith('.mdx') ? '.mdx' : '.md';
+  const basePath = fullPath.replace(new RegExp(`\\${ext}$`), '');
+  let success = 0;
+  let failed = 0;
+
+  for (const locale of TARGET_LOCALES) {
+    const outPath = `${basePath}.${locale.code}${ext}`;
+    log('🌐', `  → ${locale.code}: ${basename(outPath)}…`);
+
+    if (DRY_RUN) {
+      log('🏜️', `  [DRY-RUN] Would write to ${outPath}`);
+      success++;
+      continue;
+    }
+
+    const prompt = MD_SYSTEM_PROMPT.replace(/{LANGUAGE}/g, locale.label);
+    let lastError;
+
+    for (let attempt = 1; attempt <= MAX_RETRIES; attempt++) {
+      try {
+        const result = await mdModel.generateContent({
+          contents: [{ role: 'user', parts: [{ text: content }] }],
+          systemInstruction: { parts: [{ text: prompt }] },
+          generationConfig: { temperature: 0.2, maxOutputTokens: 65536 },
+        });
+
+        let output = result.response.text();
+        output = output.replace(/^```(?:markdown|json|md|mdx)?\n?/i, '').replace(/\n?```$/i, '');
+
+        writeFileSync(outPath, output, 'utf8');
+        log('✅', `  Written: ${basename(outPath)} (${output.length} chars)`);
+
+        try { execSync(`git add "${outPath}"`, { encoding: 'utf8' }); } catch {}
+
+        success++;
+        lastError = null;
+        break;
+      } catch (err) {
+        lastError = err;
+        const isRateLimit = err.message?.includes('429') || err.message?.includes('RESOURCE_EXHAUSTED');
+        const backoffMs = isRateLimit ? 15000 * attempt : 3000 * attempt;
+        log('⚠️', `  Attempt ${attempt}/${MAX_RETRIES} failed. Retrying in ${backoffMs}ms…`);
+        await sleep(backoffMs);
+      }
+    }
+
+    if (lastError) {
+      log('❌', `  FAILED: ${basename(outPath)}`);
+      failed++;
+    }
+
+    await sleep(DELAY_MS);
+  }
+
+  return { success, failed };
+}
+
+// ── Main ────────────────────────────────────────────────────────────────────
 
 async function main() {
   console.log('');
   console.log('  ═══════════════════════════════════════════════════════════════');
-  console.log('   🔄 sync-i18n — Sincronização Diferencial Contínua');
+  console.log('   🔄 sync-i18n — Sincronização Diferencial Contínua (Omni-Sync)');
   console.log('  ═══════════════════════════════════════════════════════════════');
   console.log('');
 
@@ -281,31 +382,34 @@ async function main() {
     namespacesToSync = getChangedPtBrNamespaces();
 
     if (namespacesToSync.length === 0) {
-      log('✅', 'No pt-BR dictionary changes detected in staged files. Skipping sync.');
-      process.exit(0);
+      log('✅', 'No pt-BR dictionary changes detected in staged files.');
+    } else {
+      log('📝', `Detected ${namespacesToSync.length} changed namespace(s): ${namespacesToSync.join(', ')}`);
     }
-
-    log('📝', `Detected ${namespacesToSync.length} changed namespace(s): ${namespacesToSync.join(', ')}`);
   }
 
   // ── Step 2: Validate API key ─────────────────────────────────────────────────
 
   const apiKey = process.env.GEMINI_API_KEY;
-  if (!apiKey) {
+  const hasApiKey = Boolean(apiKey);
+
+  if (!hasApiKey && namespacesToSync.length > 0) {
     log('⚠️', 'GEMINI_API_KEY not set. Skipping translation sync (stubs will remain).');
-    process.exit(0);
   }
 
-  const genAI = new GoogleGenerativeAI(apiKey);
-  const model = genAI.getGenerativeModel({ model: MODEL_NAME });
+  let model = null;
+  if (hasApiKey) {
+    const genAI = new GoogleGenerativeAI(apiKey);
+    model = genAI.getGenerativeModel({ model: MODEL_NAME });
+    log('🤖', `Model: ${MODEL_NAME} | Delay: ${DELAY_MS}ms | Retries: ${MAX_RETRIES}`);
+  }
 
-  log('🤖', `Model: ${MODEL_NAME} | Delay: ${DELAY_MS}ms | Retries: ${MAX_RETRIES}`);
-
-  // ── Step 3: Load and translate ───────────────────────────────────────────────
+  // ── Step 3: Load and translate dictionaries ──────────────────────────────────
 
   let totalTranslations = 0;
   let totalErrors = 0;
 
+  if (hasApiKey && namespacesToSync.length > 0) {
   for (const nsFile of namespacesToSync) {
     const nsEntry = NAMESPACE_REGISTRY.find((ns) => ns.file === nsFile);
     if (!nsEntry) {
@@ -368,12 +472,47 @@ async function main() {
       await sleep(DELAY_MS * 2);
     }
   }
+  } // end if (hasApiKey && namespacesToSync...)
+
+  // ═══════════════════════════════════════════════════════════════════════════
+  //  PHASE 2: Markdown (.md / .mdx) Sync
+  // ═══════════════════════════════════════════════════════════════════════════
+
+  const changedMdFiles = FORCE ? [] : getChangedMarkdownFiles();
+
+  if (changedMdFiles.length === 0 && !FORCE) {
+    log('✅', 'No Markdown content changes detected in staged files.');
+  } else if (changedMdFiles.length > 0) {
+    log('📝', `Detected ${changedMdFiles.length} changed Markdown file(s):`);
+    changedMdFiles.forEach((f) => log('  📄', f));
+
+    if (!hasApiKey) {
+      log('⚠️', 'GEMINI_API_KEY not set. Skipping Markdown translation.');
+    } else {
+      for (const mdFile of changedMdFiles) {
+        log('📄', `Translating: ${mdFile}`);
+        const result = await translateMarkdownFile(model, mdFile);
+        totalTranslations += result.success;
+        totalErrors += result.failed;
+
+        if (changedMdFiles.indexOf(mdFile) < changedMdFiles.length - 1) {
+          await sleep(DELAY_MS * 2);
+        }
+      }
+    }
+  }
 
   // ── Summary ──────────────────────────────────────────────────────────────────
 
   console.log('');
   console.log('  ─────────────────────────────────────────────────────────────');
   log('📊', `Sync complete: ${totalTranslations} translations, ${totalErrors} errors`);
+  if (namespacesToSync.length > 0) {
+    log('📦', `Dictionaries: ${namespacesToSync.length} namespace(s)`);
+  }
+  if (changedMdFiles.length > 0) {
+    log('📄', `Markdown: ${changedMdFiles.length} file(s)`);
+  }
   console.log('  ─────────────────────────────────────────────────────────────');
   console.log('');
 
