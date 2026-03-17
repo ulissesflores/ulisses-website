@@ -1,0 +1,27 @@
+---
+title: Simulação IA 2027 — Corrida vs. Desaceleração
+slug: ia-2027
+category: simulation
+date: 2025-06-01
+language: pt-BR
+type: interactive-simulation
+description: Simulação narrativa interativa sobre cenários de corrida armamentista vs. desaceleração coordenada em IA até 2027.
+components:
+  - "ChartIA2027"
+  - "TimelineNav"
+  - "BranchingPoint"
+---
+
+<!-- Simulação interativa: dados em data/simulations/ia-2027.ts -->
+<!-- Renderização via componentes React: ChartIA2027, TimelineNav, BranchingPoint -->
+
+{/* Fonte: 1411 linhas de dados narrativos estruturados */}
+
+import { mainTimeline, raceEnding, slowdownEnding, footnotesData } from "@/data/simulations/ia-2027"
+
+<SimulationRenderer
+  mainTimeline={mainTimeline}
+  raceEnding={raceEnding}
+  slowdownEnding={slowdownEnding}
+  footnotes={footnotesData}
+/>

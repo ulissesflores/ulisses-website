@@ -33,15 +33,19 @@
     "sota:full": "node scripts/sota-validate.mjs",
     "links:inventory": "npm run upkf:generate",
     "seo:indexnow": "INDEXNOW_ENABLED=1 node scripts/seo/ping-indexnow.mjs",
+    "content:publish": "node --env-file=.env.local scripts/content/publish.mjs",
+    "content:publish:dry": "node --env-file=.env.local scripts/content/publish.mjs --dry-run",
     "prepare": "husky"
   },
   "dependencies": {
     "@google/generative-ai": "^0.24.1",
     "@tailwindcss/typography": "^0.5.19",
     "framer-motion": "^12.34.3",
+    "gray-matter": "^4.0.3",
     "jszip": "^3.10.1",
     "lucide-react": "^0.562.0",
     "next": "16.1.2",
+    "next-mdx-remote": "^6.0.0",
     "react": "19.2.3",
     "react-dom": "19.2.3"
   },

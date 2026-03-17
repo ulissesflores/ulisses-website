@@ -1,0 +1,101 @@
+{
+  "migratedAt": "2026-03-17T22:09:17.804Z",
+  "totalFiles": 19,
+  "items": [
+    {
+      "slug": "2017-chaos-theory-economics",
+      "category": "essays",
+      "lines": 113
+    },
+    {
+      "slug": "2020-robotics-education",
+      "category": "essays",
+      "lines": 113
+    },
+    {
+      "slug": "2022-theology-of-hope",
+      "category": "essays",
+      "lines": 113
+    },
+    {
+      "slug": "2023-digital-legacy",
+      "category": "whitepapers",
+      "lines": 113
+    },
+    {
+      "slug": "2023-holy-club-methodism",
+      "category": "publications",
+      "lines": 113
+    },
+    {
+      "slug": "2023-marian-apparitions-critique",
+      "category": "publications",
+      "lines": 113
+    },
+    {
+      "slug": "2024-agritech-agile-flow",
+      "category": "whitepapers",
+      "lines": 113
+    },
+    {
+      "slug": "2024-bitcoin-praxeology",
+      "category": "publications",
+      "lines": 113
+    },
+    {
+      "slug": "2024-exegetical-treatise-anthropology",
+      "category": "essays",
+      "lines": 113
+    },
+    {
+      "slug": "2024-historicity-jesus-archaeology",
+      "category": "publications",
+      "lines": 113
+    },
+    {
+      "slug": "2024-ring-signatures-privacy",
+      "category": "whitepapers",
+      "lines": 113
+    },
+    {
+      "slug": "2024-scribal-canonization-ezra",
+      "category": "publications",
+      "lines": 113
+    },
+    {
+      "slug": "2024-theology-economic-order",
+      "category": "essays",
+      "lines": 113
+    },
+    {
+      "slug": "2025-fraud-detection-mlp",
+      "category": "publications",
+      "lines": 113
+    },
+    {
+      "slug": "2025-hybrid-cooling-thermodynamics",
+      "category": "whitepapers",
+      "lines": 113
+    },
+    {
+      "slug": "2025-iot-data-sovereignty",
+      "category": "whitepapers",
+      "lines": 113
+    },
+    {
+      "slug": "2025-little-law-resilience",
+      "category": "publications",
+      "lines": 113
+    },
+    {
+      "slug": "2025-lstm-asset-prediction",
+      "category": "publications",
+      "lines": 113
+    },
+    {
+      "slug": "ia-2027",
+      "category": "simulations",
+      "lines": 28
+    }
+  ]
+}

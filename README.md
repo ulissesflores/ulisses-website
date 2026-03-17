@@ -137,11 +137,18 @@ Headers de segurança Enterprise injectados em **todas as rotas** via `next.conf
 ulisses-hub/
 ├── app/[locale]/           # Rotas Next.js (SSG) por locale
 ├── components/             # Componentes React (Server Components)
+├── content/                # 📄 Conteúdo MDX (Zero Hardcoded — Lote 28)
+│   ├── publications/       #   8 artigos de pesquisa (5 locales cada)
+│   ├── essays/             #   5 ensaios teológicos/filosóficos
+│   ├── whitepapers/        #   5 whitepapers técnicos
+│   └── simulations/        #   Simulação interativa IA-2027
 ├── data/
 │   ├── generated/          # Artefactos gerados (UPKF, publicações)
 │   └── i18n/               # Dicionários i18n (pt-br, en, es, it, he)
+├── lib/content/            # MDX loader + componentes (next-mdx-remote)
 ├── scripts/
 │   ├── config/             # Single Source of Truth (i18n, cognatos)
+│   ├── content/            # ContentOps publisher (publish.mjs)
 │   ├── i18n/               # Tradução e validação de paridade
 │   ├── seo/                # Validação SEO, Rich Results, llms.txt
 │   └── sota-validate.mjs   # Orquestrador da esteira SOTA
@@ -150,6 +157,19 @@ ulisses-hub/
 ├── public/                 # Assets estáticos, .jsonld, llms.txt
 └── playwright.config.ts    # Configuração E2E
 ```
+
+### ContentOps: Publicar Novo Conteúdo
+
+```bash
+# 1. Escreva um artigo em content/essays/meu-artigo/index.pt-br.mdx
+# 2. Rode o comando mágico:
+npm run content:publish
+
+# Ou valide sem commit:
+npm run content:publish:dry
+```
+
+O `content:publish` executa automaticamente: Quality Gate → Tradução Gemini → Regeneração SOTA → Git Commit.
 
 ---
 
@@ -189,7 +209,8 @@ npm run build
 | Locales | **5** (PT-BR, EN, ES, IT, HE) |
 | JSON-LD Nodes | **22** páginas com `application/ld+json` |
 | Security Headers | **7** (CSP, HSTS, X-Frame, XCTO, Referrer, Permissions, DNS) |
-| ADRs | **3** |
+| Ficheiros MDX | **91** (19 pt-br + 72 traduções) |
+| ADRs | **5** |
 | Score SOTA | **1000/1000** |
 
 ---

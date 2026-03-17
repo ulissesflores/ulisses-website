@@ -1,11 +1,15 @@
 import fs from 'node:fs';
 import path from 'node:path';
+import { createRequire } from 'node:module';
 import { fileURLToPath } from 'node:url';
 import {
   generateManuscripts,
   scoreAndVerify as scoreDeepResearch,
   writeDeepResearchArtifacts,
 } from '../research/pipeline.mjs';
+
+const require = createRequire(import.meta.url);
+const matter = require('gray-matter');
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const repoRoot = path.resolve(__dirname, '../..');
@@ -234,389 +238,55 @@ const NOISY_SOURCE_PATTERNS = [
   /prompt para artigo/i,
 ];
 
-const SLUG_TOPIC_OVERRIDES = {
-  '2025-little-law-resilience': {
-    focus:
-      'Estudo sobre aplicacao da Lei de Little para elevar previsibilidade de entrega e resiliencia em operacoes de Data Science.',
-    problem:
-      'A pesquisa enfrenta a combinacao de alto WIP, filas longas e baixa confiabilidade de prazo em pipelines complexos de IA.',
-    method:
-      'Abordagem analitico-experimental com simulacao de fluxo, comparando cenarios com e sem limite explicito de trabalho em progresso.',
-    result:
-      'A evidencia indica reducao relevante de lead time sem perda material de throughput, reforcando a eficiencia da limitacao de WIP.',
-    discussion:
-      'Os achados dialogam com Lean/Kanban e com governanca orientada a fluxo, especialmente em ambientes de alta variabilidade.',
-    application:
-      'Aplicavel a PMOs de tecnologia, times de produto e laboratorios de IA que necessitam previsibilidade operacional auditavel.',
-    contributions: [
-      'Formalizacao da Lei de Little como operador de governanca de fluxo e nao apenas como identidade matematica.',
-      'Comparacao controlada entre politicas de WIP para mensurar impacto em lead time e estabilidade.',
-      'Diretrizes praticas de implantacao para ambientes de desenvolvimento intensivos em conhecimento.',
-    ],
-    references: ['Little (1961)', 'Anderson (2010)', 'Reinertsen (2009)'],
-  },
-  '2025-lstm-asset-prediction': {
-    focus:
-      'Analise preditiva de ativos financeiros com redes LSTM para capturar dinamica temporal em mercados nao estacionarios.',
-    problem:
-      'Modelos lineares sofrem com mudancas de regime e baixa robustez frente a volatilidade extrema e ruido de alta frequencia.',
-    method:
-      'Modelagem de series temporais com engenharia de atributos, validacao temporal e comparacao contra baselines estatisticos.',
-    result:
-      'O estudo evidencia ganho de sinal preditivo em janelas especificas e melhora de robustez quando o treinamento respeita ordem temporal.',
-    discussion:
-      'A principal limitacao esta em drift de mercado; por isso o artigo enfatiza re-treinamento, monitoramento e controle de risco.',
-    application:
-      'Uso em apoio a tomada de decisao em mesas quantitativas, com politicas de risco e trilhas de auditoria para compliance.',
-    contributions: [
-      'Protocolo de avaliacao temporal para evitar leakage em previsao de ativos.',
-      'Integração entre previsao recorrente e indicadores de risco operacional.',
-      'Framework de monitoramento para degradacao de performance em producao.',
-    ],
-    references: ['Hochreiter & Schmidhuber (1997)', 'NIST AI RMF (2023)', 'Goodfellow et al.'],
-  },
-  '2025-hybrid-cooling-thermodynamics': {
-    focus:
-      'Whitepaper de termodinamica aplicada ao projeto de sistemas hibridos de resfriamento para infraestrutura critica.',
-    problem:
-      'Centros computacionais e ambientes edge enfrentam trade-off entre eficiencia energetica, confiabilidade e custo de manutencao.',
-    method:
-      'Analise termo-fluidodinamica com cenarios de carga, comparando estrategias hibridas de dissipacao e controle.',
-    result:
-      'A configuracao hibrida apresenta melhor estabilidade termica em picos de carga e menor risco de indisponibilidade.',
-    discussion:
-      'A decisao arquitetural depende de clima, perfil de carga e estrategia de redundancia do ativo fisico.',
-    application:
-      'Relevante para datacenters, edge nodes industriais e laboratorios com requisitos de disponibilidade continua.',
-    contributions: [
-      'Modelo comparativo entre topologias de resfriamento em regime variavel.',
-      'Criticos de dimensionamento para reduzir risco termico sistêmico.',
-      'Matriz de decisao para engenharia de infraestrutura de missao critica.',
-    ],
-    references: ['ASHRAE Thermal Guidelines', 'ISO 50001', 'NIST Datacenter Guidance'],
-  },
-  '2025-iot-data-sovereignty': {
-    focus:
-      'Arquiteturas cloudless para IoT com soberania de dados e processamento local em edge.',
-    problem:
-      'Dependencia de nuvem publica amplia superficie de ataque, latencia e exposicao regulatoria de dados sensiveis.',
-    method:
-      'Comparacao de arquiteturas centralizadas versus edge-first, incluindo requisitos de identidade, criptografia e observabilidade.',
-    result:
-      'O desenho cloudless reduz dependencia externa e melhora controle sobre confidencialidade e disponibilidade local.',
-    discussion:
-      'O principal trade-off envolve operacao distribuida e necessidade de automacao robusta de ciclo de vida.',
-    application:
-      'Aplicavel a agricultura conectada, automacao industrial e ambientes com restricoes de conectividade.',
-    contributions: [
-      'Blueprint de referencia para IoT com soberania de dados por design.',
-      'Politicas de seguranca e identidade para operacao zero trust em edge.',
-      'Padroes de integracao para reduzir lock-in de provedores.',
-    ],
-    references: ['NIST Zero Trust', 'IEC 62443', 'OWASP IoT Top 10'],
-  },
-  '2025-fraud-detection-mlp': {
-    focus:
-      'Deteccao de fraude em cartoes com redes neurais MLP e engenharia de atributos para dados desbalanceados.',
-    problem:
-      'Fraude financeira combina alta assimetria de classes com necessidade de baixa latencia decisoria em tempo quase real.',
-    method:
-      'Pipeline supervisionado com reamostragem, calibracao de limiar e avaliacao por precision-recall e custo de erro.',
-    result:
-      'A combinacao de MLP com ajuste de limiar melhora captura de fraudes mantendo taxa operacional aceitavel de falsos positivos.',
-    discussion:
-      'O desempenho depende de atualizacao continua e governanca de drift comportamental.',
-    application:
-      'Suporte a motores antifraude em emissores, adquirentes e fintechs com trilha explicavel para auditoria.',
-    contributions: [
-      'Estrutura de avaliacao orientada a risco economico de fraude.',
-      'Integração de calibracao de probabilidade com politicas operacionais.',
-      'Boas praticas para monitorar drift em cenarios de pagamento digital.',
-    ],
-    references: ['Dal Pozzolo et al.', 'NIST AI RMF (2023)', 'ISO 27001'],
-  },
-  '2024-historicity-jesus-archaeology': {
-    focus:
-      'Pesquisa historiografica sobre historicidade de Jesus combinando critica textual, fontes antigas e evidencias arqueologicas.',
-    problem:
-      'Debates publicos misturam categorias teologicas e historicas sem separacao metodologica rigorosa.',
-    method:
-      'Revisao historico-critica de fontes primarias e secundarias com avaliacao de contexto, autoria e data.',
-    result:
-      'O estudo delimita consenso academico minimo e identifica zonas de alta e baixa confianca documental.',
-    discussion:
-      'A contribuicao central esta na disciplina metodologica e no tratamento de vieses interpretativos.',
-    application:
-      'Relevante para pesquisa teologica, ensino de historia antiga e dialogo interdisciplinar entre fe e academia.',
-    contributions: [
-      'Matriz de confiabilidade para comparar fontes textuais e arqueologicas.',
-      'Distincao explicita entre plano historico e plano doutrinario.',
-      'Sintese de consenso e controvérsias na literatura especializada.',
-    ],
-    references: ['Ehrman', 'Sanders', 'Vermes'],
-  },
-  '2024-bitcoin-praxeology': {
-    focus:
-      'Analise do Bitcoin como ativo de reserva sob praxeologia e teoria monetaria da Escola Austriaca.',
-    problem:
-      'Avaliacoes estritamente tecnicas ignoram fundamentos economicos de escassez, preferencia temporal e coordenacao social.',
-    method:
-      'Discussao teoretica com comparacao entre propriedades monetarias e mecanismos de governanca de oferta.',
-    result:
-      'O artigo sustenta que Bitcoin combina previsibilidade de emissao e portabilidade digital com implicacoes macroeconomicas relevantes.',
-    discussion:
-      'As limitacoes concentram-se em volatilidade de curto prazo e regimes regulatórios heterogeneos.',
-    application:
-      'Base analitica para teses de tesouraria digital, hedge monetario e desenho de politicas de alocacao.',
-    contributions: [
-      'Integração entre teoria praxeologica e arquitetura monetaria digital.',
-      'Critérios objetivos para avaliar funcao de reserva de valor.',
-      'Enquadramento de riscos regulatórios e de mercado.',
-    ],
-    references: ['Mises', 'Hayek', 'Nakamoto (2008)'],
-  },
-  '2024-scribal-canonization-ezra': {
-    focus:
-      'Estudo historico-critico sobre canonizacao escribal e processos de consolidacao textual associados a Esdras.',
-    problem:
-      'Narrativas simplificadas sobre formacao canonica tendem a apagar camadas editoriais e disputas de autoridade.',
-    method:
-      'Analise de tradicoes textuais, historia da transmissao e contexto sociopolitico do periodo pos-exilico.',
-    result:
-      'A pesquisa destaca dinamica incremental de consolidacao canonica com mediação institucional e escribal.',
-    discussion:
-      'A leitura critica reforca importancia de filologia, historia social e comparacao de tradicoes manuscritas.',
-    application:
-      'Contribui para curriculos de exegese, historia biblica e hermeneutica historico-critica.',
-    contributions: [
-      'Reconstrucao processual da canonizacao em vez de modelo instantaneo.',
-      'Integração de evidencias filologicas e historicas.',
-      'Discussao epistemologica sobre autoridade textual.',
-    ],
-    references: ['Brevard Childs', 'James Kugel', 'Shaye Cohen'],
-  },
-  '2024-theology-economic-order': {
-    focus:
-      'Ensaio sobre fundamentos transcendentes da ordem economica e sua relacao com normatividade moral.',
-    problem:
-      'Modelos puramente tecnocráticos tendem a negligenciar pressupostos antropologicos e eticos da cooperacao social.',
-    method:
-      'Analise conceitual interdisciplinar entre teologia, filosofia moral e teoria economica.',
-    result:
-      'O texto demonstra que categorias de responsabilidade e dignidade influenciam desenho institucional e incentivos.',
-    discussion:
-      'A proposta nao substitui analise econometrica, mas oferece base axiologica para interpretacao de resultados.',
-    application:
-      'Util para formulacao de politicas publicas, governanca corporativa e educacao civica.',
-    contributions: [
-      'Framework para conectar etica teologica e ordem economica.',
-      'Critica a reducionismos materialistas na analise institucional.',
-      'Proposta de leitura integrada entre liberdade, responsabilidade e justica.',
-    ],
-    references: ['Augustine', 'Aquinas', 'Röpke'],
-  },
-  '2024-ring-signatures-privacy': {
-    focus:
-      'Whitepaper sobre ring signatures e enderecos furtivos para privacidade transacional em sistemas distribuidos.',
-    problem:
-      'Transparencia absoluta em blockchains publicas pode expor metadados sensiveis e comprometer fungibilidade.',
-    method:
-      'Revisao de primitives criptograficas com analise de seguranca, custos computacionais e requisitos de implementacao.',
-    result:
-      'A combinacao de assinaturas em anel e stealth addresses melhora privacidade sem eliminar verificabilidade criptografica.',
-    discussion:
-      'Trade-offs principais envolvem tamanho de assinatura, custo de verificacao e complexidade operacional.',
-    application:
-      'Uso em wallets, protocolos de pagamentos privados e infra de custodia com requisitos de compliance.',
-    contributions: [
-      'Comparativo tecnico entre abordagens de anonimato em ledger publico.',
-      'Diretrizes para integracao segura em stacks de producao.',
-      'Mapa de riscos de implementacao e manutencao criptografica.',
-    ],
-    references: ['Rivest et al. ring signatures', 'Monero Research', 'NIST cryptography guidance'],
-  },
-  '2024-agritech-agile-flow': {
-    focus:
-      'Whitepaper sobre transformacao agil e engenharia de fluxo em contextos agritech orientados a dados.',
-    problem:
-      'Projetos agritechs sofrem com sazonalidade, variabilidade operacional e baixa sincronizacao entre produto e campo.',
-    method:
-      'Aplicacao de metricas de fluxo, mapeamento de cadeia de valor e ciclos de melhoria orientados por evidencia.',
-    result:
-      'A governanca por fluxo eleva previsibilidade de entrega e reduz retrabalho em times multidisciplinares.',
-    discussion:
-      'A escalabilidade depende de disciplina de medicao e alinhamento entre metas tecnicas e metas de negocio.',
-    application:
-      'Aplicavel a plataformas de agricultura de precisao, IoT rural e analytics operacional.',
-    contributions: [
-      'Adaptação de principios lean-flow para dominio agritech.',
-      'Modelo de indicadores para operacao sazonal e distribuida.',
-      'Plano de implementacao incremental com governanca executiva.',
-    ],
-    references: ['Reinertsen', 'Forsgren et al. DORA', 'Lean Product Development'],
-  },
-  '2024-exegetical-treatise-anthropology': {
-    focus:
-      'Tratado exegético sobre representacao da moralidade e antropologia em tradicoes textuais teologicas.',
-    problem:
-      'Interpretacoes atomizadas de passagens isoladas fragilizam coerencia antropologica e moral do corpus.',
-    method:
-      'Leitura exegética com cruzamento de contexto historico, semantica e tradicao interpretativa.',
-    result:
-      'O artigo organiza categorias antropologicas recorrentes e explicita implicacoes eticas contemporaneas.',
-    discussion:
-      'A principal contribuicao esta na articulacao entre exegese rigorosa e filosofia moral aplicada.',
-    application:
-      'Recurso para ensino teologico, pesquisa hermeneutica e formacao de lideranca comunitaria.',
-    contributions: [
-      'Sistematizacao de categorias morais e antropologicas no texto base.',
-      'Procedimento de leitura que reduz anacronismos interpretativos.',
-      'Conexao entre interpretacao textual e dilemas eticos atuais.',
-    ],
-    references: ['Ricoeur', 'Brueggemann', 'N.T. Wright'],
-  },
-  '2023-marian-apparitions-critique': {
-    focus:
-      'Analise teologica e fenomenologica critica de narrativas de aparicoes marianas.',
-    problem:
-      'Relatos devocionais frequentemente carecem de criterios consistentes de discernimento historico e fenomenologico.',
-    method:
-      'Comparacao de documentos, tradicoes e criterios de autenticidade em abordagem historico-critica.',
-    result:
-      'O estudo distingue elementos simbolicos, historicos e pastorais sem reduzir o fenomeno a uma unica explicacao.',
-    discussion:
-      'A pesquisa reforca necessidade de metodos transparentes para evitar conclusoes apologeticas ou céticas simplistas.',
-    application:
-      'Util em estudos de religiao, historia da espiritualidade e analise de fenomenos coletivos.',
-    contributions: [
-      'Matriz de avaliacao de relatos de aparicoes sob criterios academicos.',
-      'Integração entre fenomenologia e critica documental.',
-      'Clarificacao de limites epistemologicos do tema.',
-    ],
-    references: ['Marian studies corpus', 'Phenomenology of religion', 'Church historical commissions'],
-  },
-  '2023-digital-legacy': {
-    focus:
-      'Whitepaper sobre desafios da heranca digital e preservacao de memoria pos-mortem.',
-    problem:
-      'Ativos digitais e identidades online carecem de protocolos claros de sucessao, custodia e consentimento.',
-    method:
-      'Analise de risco juridico-tecnico com proposta de arquitetura de preservacao e governanca de acesso.',
-    result:
-      'O documento define requisitos minimos para continuidade, autenticidade e privacidade de acervos digitais.',
-    discussion:
-      'A implementacao exige alinhamento entre engenharia, compliance e familia/curadoria do legado.',
-    application:
-      'Aplicavel a plataformas de memorial digital, arquivos institucionais e servicos de planejamento sucessorio.',
-    contributions: [
-      'Modelo de governanca para ativos digitais sensiveis no pos-morte.',
-      'Requisitos tecnicos de integridade e trilha de auditoria.',
-      'Fluxos operacionais para controle de acesso e transferencia de custodia.',
-    ],
-    references: ['Digital estate planning literature', 'ISO 15489', 'NIST privacy framework'],
-  },
-  '2023-holy-club-methodism': {
-    focus:
-      'Investigacao arqueologica espiritual, teologica e visual do Holy Club e suas implicacoes para o metodismo.',
-    problem:
-      'A memoria do movimento metodista inicial e frequentemente reduzida a narrativas lineares e pouco contextualizadas.',
-    method:
-      'Leitura historica interdisciplinar com fontes primarias, iconografia e tradicao institucional.',
-    result:
-      'O estudo reconstrói redes de praticas formativas e disciplina comunitaria no contexto original.',
-    discussion:
-      'Os achados destacam continuidade e ruptura entre o nucleo inicial e desenvolvimentos posteriores do metodismo.',
-    application:
-      'Contribui para historia eclesiastica, formacao pastoral e pesquisa em espiritualidade historica.',
-    contributions: [
-      'Reconstrucao critica de praticas e simbolos do Holy Club.',
-      'Integração de evidencias textuais e visuais em abordagem unica.',
-      'Atualizacao interpretativa para debates contemporaneos de formacao comunitaria.',
-    ],
-    references: ['Methodist historiography', 'John Wesley sources', 'Ecclesiastical history methods'],
-  },
-  '2022-theology-of-hope': {
-    focus:
-      'Ensaio sobre teologia da esperanca em contextos de crise social, economica e institucional.',
-    problem:
-      'Cenarios de incerteza tendem a produzir fatalismo ou respostas imediatistas sem base antropologica robusta.',
-    method:
-      'Analise teologica e filosofica de categorias de esperanca, sofrimento e responsabilidade comunitaria.',
-    result:
-      'O artigo explicita como a esperanca pode operar como categoria ativa de acao e nao apenas conforto simbólico.',
-    discussion:
-      'A relevancia pratica surge ao traduzir teologia em etica publica e estrategias de coesao social.',
-    application:
-      'Util para lideranca comunitaria, educacao teologica e programas de cuidado em ambientes de crise.',
-    contributions: [
-      'Releitura critica da esperanca como categoria historica e social.',
-      'Articulacao entre transcendencia, agencia humana e responsabilidade.',
-      'Pistas de aplicacao para cuidado pastoral e acao comunitaria.',
-    ],
-    references: ['Moltmann', 'Bonhoeffer', 'Public theology literature'],
-  },
-  '2020-robotics-education': {
-    focus:
-      'Estudo sobre robotica educacional e metodologias ativas no ensino de logica de programacao para jovens.',
-    problem:
-      'Modelos expositivos tradicionais geram baixa retencao e pouca transferencia de aprendizagem computacional.',
-    method:
-      'Intervencao didatica com atividades praticas, resolucao de problemas e avaliacao por competencias.',
-    result:
-      'A abordagem hands-on melhora engajamento, colaboracao e consolidacao de raciocinio logico.',
-    discussion:
-      'Escalabilidade depende de formacao docente e desenho curricular orientado a projeto.',
-    application:
-      'Aplicavel a escolas, labs maker e programas de iniciacao tecnologica.',
-    contributions: [
-      'Modelo pedagogico integrando robotica e logica computacional.',
-      'Indicadores para avaliar aprendizagem ativa em contexto juvenil.',
-      'Guia de implementacao para ambientes com diferentes niveis de infraestrutura.',
-    ],
-    references: ['Papert', 'Kolb', 'Active learning research'],
-  },
-  '2017-chaos-theory-economics': {
-    focus:
-      'Trabalho sobre teoria do caos e auto-organizacao em mercados nao lineares.',
-    problem:
-      'Hipoteses de equilibrio linear falham em explicar dinamicas de instabilidade e transicoes abruptas de mercado.',
-    method:
-      'Discussao teorica com referencia a sistemas dinamicos, sensibilidade a condicoes iniciais e comportamento emergente.',
-    result:
-      'O estudo mostra que pequenas perturbacoes podem amplificar risco e alterar padroes macro de forma nao proporcional.',
-    discussion:
-      'A implicacao central e metodologica: modelos economicos devem incorporar nao linearidade e complexidade adaptativa.',
-    application:
-      'Base para analise de risco sistemico, macroprudencial e desenho de politicas resilientes.',
-    contributions: [
-      'Integração entre teoria do caos e interpretacao economica aplicada.',
-      'Critica a simplificacoes lineares em previsao de mercados.',
-      'Proposta de agenda para modelagem economica de sistemas complexos.',
-    ],
-    references: ['Lorenz', 'Mandelbrot', 'Complexity economics'],
-  },
-};
+// ── LOTE 28: Content loaded from MDX files (Zero Hardcoded) ─────────
+const CONTENT_DIR = path.join(repoRoot, 'content');
+const CONTENT_SUBDIRS = ['publications', 'essays', 'whitepapers', 'simulations'];
 
-const PUBLICATION_I18N = {
-  '2025-little-law-resilience': { it: 'La Legge di Little come Vettore di Resilienza e Qualità', he: 'חוק ליטל כווקטור לחוסן ואיכות', summary_en: 'Study on applying Little\'s Law to elevate delivery predictability and resilience in Data Science operations.', summary_es: 'Estudio sobre la aplicación de la Ley de Little para elevar la previsibilidad de entrega y la resiliencia en operaciones de Data Science.', summary_it: 'Studio sull\'applicazione della Legge di Little per elevare la prevedibilità delle consegne e la resilienza nelle operazioni di Data Science.', summary_he: 'מחקר על יישום חוק ליטל להעלאת חיזוי אספקה וחוסן בפעולות מדעי הנתונים.' },
-  '2025-lstm-asset-prediction': { it: 'Analisi Predittiva degli Attivi Finanziari con Modelli LSTM', he: 'ניתוח חזוי של נכסים פיננסיים עם מודלי LSTM', summary_en: 'Predictive analysis of financial assets with LSTM networks to capture temporal dynamics in non-stationary markets.', summary_es: 'Análisis predictivo de activos financieros con redes LSTM para capturar dinámica temporal en mercados no estacionarios.', summary_it: 'Analisi predittiva degli attivi finanziari con reti LSTM per catturare le dinamiche temporali nei mercati non stazionari.', summary_he: 'ניתוח חזוי של נכסים פיננסיים עם רשתות LSTM ללכידת דינמיקה זמנית בשווקים לא סטציונריים.' },
-  '2025-hybrid-cooling-thermodynamics': { it: 'Analisi Termodinamica e Ingegneria di Sistemi Ibridi di Raffreddamento', he: 'ניתוח תרמודינמי והנדסת מערכות קירור היברידיות', summary_en: 'Whitepaper on applied thermodynamics for hybrid cooling system design in critical infrastructure.', summary_es: 'Whitepaper de termodinámica aplicada al diseño de sistemas híbridos de enfriamiento para infraestructura crítica.', summary_it: 'Whitepaper di termodinamica applicata alla progettazione di sistemi ibridi di raffreddamento per infrastrutture critiche.', summary_he: 'מסמך טכני על תרמודינמיקה יישומית לתכנון מערכות קירור היברידיות לתשתיות קריטיות.' },
-  '2025-iot-data-sovereignty': { it: 'Architetture Cloudless e Sovranità dei Dati in IoT', he: 'ארכיטקטורות ללא ענן וריבונות מידע ב-IoT', summary_en: 'Cloudless architectures for IoT with data sovereignty and local edge processing.', summary_es: 'Arquitecturas cloudless para IoT con soberanía de datos y procesamiento local en edge.', summary_it: 'Architetture cloudless per IoT con sovranità dei dati ed elaborazione locale in edge.', summary_he: 'ארכיטקטורות ללא ענן עבור IoT עם ריבונות מידע ועיבוד מקומי בקצה.' },
-  '2025-fraud-detection-mlp': { it: 'Rilevamento Frodi con Carte di Credito mediante Reti Neurali', he: 'זיהוי הונאות בכרטיסי אשראי עם רשתות עצביות', summary_en: 'Credit card fraud detection with MLP neural networks and feature engineering for imbalanced data.', summary_es: 'Detección de fraude en tarjetas con redes neuronales MLP e ingeniería de atributos para datos desbalanceados.', summary_it: 'Rilevamento delle frodi con carte di credito mediante reti neurali MLP e ingegneria delle feature per dati sbilanciati.', summary_he: 'זיהוי הונאות בכרטיסי אשראי עם רשתות עצביות MLP והנדסת תכונות לנתונים לא מאוזנים.' },
-  '2024-historicity-jesus-archaeology': { it: 'Analisi Storiografica e Archeologica Esaustiva: La Storicità di Gesù', he: 'ניתוח היסטוריוגרפי וארכיאולוגי מקיף: ההיסטוריות של ישוע', summary_en: 'Comprehensive historiographic and archaeological analysis on the historicity of Jesus.', summary_es: 'Análisis historiográfico y arqueológico exhaustivo sobre la historicidad de Jesús.', summary_it: 'Analisi storiografica e archeologica esaustiva sulla storicità di Gesù.', summary_he: 'ניתוח היסטוריוגרפי וארכיאולוגי מקיף על ההיסטוריות של ישוע.' },
-  '2024-bitcoin-praxeology': { it: 'Bitcoin come Attivo di Riserva e la Teoria Monetaria nella Scuola Austriaca', he: 'ביטקוין כנכס רזרבי ותיאוריית המטבע באסכולה האוסטרית', summary_en: 'Analysis of Bitcoin as a reserve asset through Austrian School monetary theory and praxeology.', summary_es: 'Análisis de Bitcoin como activo de reserva a través de la teoría monetaria de la Escuela Austríaca.', summary_it: 'Analisi di Bitcoin come attivo di riserva attraverso la teoria monetaria della Scuola Austriaca.', summary_he: 'ניתוח ביטקוין כנכס רזרבי דרך התיאוריה המוניטרית של האסכולה האוסטרית.' },
-  '2024-scribal-canonization-ezra': { it: 'Canonizzazione Scribale: Analisi Storico-Critica della Formazione del Canone', he: 'קנוניזציה סופרית: ניתוח היסטורי-ביקורתי של גיבוש הקנון', summary_en: 'Historical-critical analysis of scribal canonization and the formation of the biblical canon.', summary_es: 'Análisis histórico-crítico de la canonización escribal y la formación del canon bíblico.', summary_it: 'Analisi storico-critica della canonizzazione scribale e della formazione del canone biblico.', summary_he: 'ניתוח היסטורי-ביקורתי של הקנוניזציה הסופרית ושל גיבוש הקנון המקראי.' },
-  '2024-theology-economic-order': { it: "Fondamenti Trascendenti dell'Ordine Economico", he: 'יסודות טרנסצנדנטיים של הסדר הכלכלי', summary_en: 'Study on the transcendent foundations of economic order.', summary_es: 'Estudio sobre los fundamentos trascendentes del orden económico.', summary_it: "Studio sui fondamenti trascendenti dell'ordine economico.", summary_he: 'מחקר על היסודות הטרנסצנדנטיים של הסדר הכלכלי.' },
-  '2024-ring-signatures-privacy': { it: 'Implementazione di Ring Signatures e Indirizzi Stealth', he: 'יישום חתימות טבעת וכתובות חמקניות', summary_en: 'Technical analysis of ring signature implementation and stealth addresses for privacy-preserving transactions.', summary_es: 'Análisis técnico de la implementación de ring signatures y direcciones furtivas.', summary_it: "Analisi tecnica dell'implementazione delle ring signatures e degli indirizzi stealth.", summary_he: 'ניתוח טכני של יישום חתימות טבעת וכתובות חמקניות.' },
-  '2024-agritech-agile-flow': { it: 'Trasformazione Agile e Ingegneria del Flusso in Data Science', he: 'טרנספורמציה אג\'ילית והנדסת זרימה במדעי הנתונים', summary_en: 'Study on agile transformation and flow engineering applied to Data Science teams.', summary_es: 'Estudio sobre transformación ágil e ingeniería de flujo aplicadas a equipos de Data Science.', summary_it: "Studio sulla trasformazione agile e l'ingegneria del flusso applicata ai team di Data Science.", summary_he: 'מחקר על טרנספורמציה אג\'ילית והנדסת זרימה המיושמת על צוותי מדעי הנתונים.' },
-  '2024-exegetical-treatise-anthropology': { it: 'Trattato Esegetico sulla Rappresentazione della Moralità e Antropologia', he: 'מסה אקסגטית על ייצוג המוסר והאנתרופולוגיה', summary_en: 'Exegetical treatise on the representation of morality and anthropology.', summary_es: 'Tratado exegético sobre la representación de la moralidad y antropología.', summary_it: 'Trattato esegetico sulla rappresentazione della moralità e antropologia.', summary_he: 'מסה אקסגטית על ייצוג המוסר והאנתרופולוגיה.' },
-  '2023-marian-apparitions-critique': { it: 'La Corona e la Croce: Analisi Teologica e Fenomenologica delle Apparizioni Mariane', he: 'הכתר והצלב: ניתוח תאולוגי ופנומנולוגי של הופעות מריאניות', summary_en: 'Theological and phenomenological analysis of Marian apparitions.', summary_es: 'Análisis teológico y fenomenológico de las apariciones marianas.', summary_it: 'Analisi teologica e fenomenologica delle apparizioni mariane.', summary_he: 'ניתוח תאולוגי ופנומנולוגי של הופעות מריאניות.' },
-  '2023-digital-legacy': { it: "Sfide dell'Eredità Digitale: Preservazione della Memoria Post-Mortem", he: 'אתגרי המורשת הדיגיטלית: שימור זיכרון לאחר המוות', summary_en: 'Analysis of digital legacy challenges and post-mortem memory preservation.', summary_es: 'Análisis de los desafíos de la herencia digital y preservación de memoria post-mortem.', summary_it: "Analisi delle sfide dell'eredità digitale e preservazione della memoria post-mortem.", summary_he: 'ניתוח אתגרי המורשת הדיגיטלית ושימור זיכרון לאחר המוות.' },
-  '2023-holy-club-methodism': { it: 'Il Club Santo: Archeologia Spirituale, Teologica e Visuale del Metodismo', he: 'המועדון הקדוש: ארכיאולוגיה רוחנית, תאולוגית וחזותית של המתודיזם', summary_en: 'Spiritual, theological and visual archaeology of the Holy Club and the origins of Methodism.', summary_es: 'Arqueología espiritual, teológica y visual del Club Santo y los orígenes del metodismo.', summary_it: 'Archeologia spirituale, teologica e visuale del Club Santo e le origini del metodismo.', summary_he: 'ארכיאולוגיה רוחנית, תאולוגית וחזותית של המועדון הקדוש ומקורות המתודיזם.' },
-  '2022-theology-of-hope': { it: 'La Teologia della Speranza in Tempi di Crisi', he: 'תאולוגיית התקווה בעתות משבר', summary_en: 'Theological reflection on hope in times of crisis.', summary_es: 'Reflexión teológica sobre la esperanza en tiempos de crisis.', summary_it: 'Riflessione teologica sulla speranza in tempi di crisi.', summary_he: 'הגות תאולוגית על תקווה בעתות משבר.' },
-  '2020-robotics-education': { it: "Metodologie Attive nell'Insegnamento della Logica di Programmazione", he: 'מתודולוגיות פעילות בהוראת לוגיקה של תכנות', summary_en: 'Study on active methodologies in teaching programming logic using robotics and gamification.', summary_es: 'Estudio sobre metodologías activas en la enseñanza de lógica de programación.', summary_it: "Studio sulle metodologie attive nell'insegnamento della logica di programmazione.", summary_he: 'מחקר על מתודולוגיות פעילות בהוראת לוגיקה של תכנות.' },
-  '2017-chaos-theory-economics': { it: 'Teoria del Caos: Emergenza e Auto-organizzazione nei Mercati', he: 'תורת הכאוס: צמיחה והתארגנות עצמית בשווקים', summary_en: 'Analysis of chaos theory applied to economic systems.', summary_es: 'Análisis de la teoría del caos aplicada a sistemas económicos.', summary_it: 'Analisi della teoria del caos applicata ai sistemi economici.', summary_he: 'ניתוח תורת הכאוס המיושמת על מערכות כלכליות.' },
-};
+function loadContentOverrides() {
+  const overrides = {};
+  const i18n = {};
+
+  for (const subdir of CONTENT_SUBDIRS) {
+    const dir = path.join(CONTENT_DIR, subdir);
+    if (!fs.existsSync(dir)) continue;
+
+    for (const slug of fs.readdirSync(dir, { withFileTypes: true }).filter(d => d.isDirectory()).map(d => d.name)) {
+      const mdxPath = path.join(dir, slug, 'index.pt-br.mdx');
+      if (!fs.existsSync(mdxPath)) continue;
+
+      const { data } = matter(fs.readFileSync(mdxPath, 'utf8'));
+
+      // Build topic override from frontmatter
+      const topicFields = {};
+      for (const key of ['focus', 'problem', 'method', 'result', 'discussion', 'application']) {
+        if (data[key]) topicFields[key] = data[key];
+      }
+      if (data.contributions) topicFields.contributions = data.contributions;
+      if (data.references) topicFields.references = data.references;
+
+      if (Object.keys(topicFields).length > 0) {
+        overrides[data.slug || slug] = topicFields;
+      }
+
+      // Build i18n from frontmatter translations
+      if (data.translations) {
+        const t = data.translations;
+        i18n[data.slug || slug] = {
+          ...(t.it ? { it: t.it } : {}),
+          ...(t.he ? { he: t.he } : {}),
+          ...(t.summary_en ? { summary_en: t.summary_en } : {}),
+          ...(t.summary_es ? { summary_es: t.summary_es } : {}),
+          ...(t.summary_it ? { summary_it: t.summary_it } : {}),
+          ...(t.summary_he ? { summary_he: t.summary_he } : {}),
+        };
+      }
+    }
+  }
+
+  return { overrides, i18n };
+}
+
+const { overrides: SLUG_TOPIC_OVERRIDES, i18n: PUBLICATION_I18N } = loadContentOverrides();
 
 const BLOG_HEADLINE_I18N = {
   1: { en: 'Lula government campaign to rebuild trust in Pix: details and impacts', es: 'Campaña del gobierno Lula para reconstruir confianza en Pix: detalles e impactos', it: 'Campagna del governo Lula per ricostruire la fiducia nel Pix: dettagli e impatti', he: 'קמפיין ממשלת לולה לשיקום האמון ב-Pix: פרטים והשפעות' },

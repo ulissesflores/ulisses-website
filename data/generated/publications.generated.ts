@@ -2137,8 +2137,8 @@ export const publications: Publication[] = [
       "summary_es": "Análisis de los desafíos de la herencia digital y preservación de memoria post-mortem.",
       "summary_it": "Analisi delle sfide dell'eredità digitale e preservazione della memoria post-mortem.",
       "summary_he": "ניתוח אתגרי המורשת הדיגיטלית ושימור זיכרון לאחר המוות.",
-      "en": "Challenges of Digital Inheritance: Post-Mortem Memory Preservation",
-      "es": "Desafíos de la Herencia Digital: Preservación de Memoria Post-Mortem"
+      "en": "Challenges of Digital Heritage: Post-Mortem Memory Preservation",
+      "es": "Desafíos de la Herencia Digital: Preservación de la Memoria Post-Mortem"
     }
   },
   {
@@ -2279,7 +2279,7 @@ export const publications: Publication[] = [
       "summary_es": "Arqueología espiritual, teológica y visual del Club Santo y los orígenes del metodismo.",
       "summary_it": "Archeologia spirituale, teologica e visuale del Club Santo e le origini del metodismo.",
       "summary_he": "ארכיאולוגיה רוחנית, תאולוגית וחזותית של המועדון הקדוש ומקורות המתודיזם.",
-      "en": "The Clube Santo: Spiritual, Theological, and Visual Archaeology of Methodism",
+      "en": "The Holy Club: Spiritual, Theological, and Visual Archaeology of Methodism",
       "es": "El Clube Santo: Arqueología Espiritual, Teológica y Visual del Metodismo"
     }
   },

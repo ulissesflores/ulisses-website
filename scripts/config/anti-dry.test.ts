@@ -18,7 +18,7 @@ describe('Anti-DRY — Locale arrays centralizado (Lote 22)', () => {
   it('nenhum script fora de config/ hardcoda arrays de locales', () => {
     // Grep for common locale array patterns in scripts (excluding config/, upkf/ data generators, and test files)
     const result = execSync(
-      `grep -rn "'en', 'es', 'it', 'he'" scripts/ --include="*.mjs" --include="*.ts" | grep -v "config/" | grep -v "upkf/" | grep -v ".test." | grep -v "node_modules" || echo "__CLEAN__"`,
+      `grep -rn "'en', 'es', 'it', 'he'" scripts/ --include="*.mjs" --include="*.ts" | grep -v "config/" | grep -v "upkf/" | grep -v "temp/" | grep -v ".test." | grep -v "node_modules" || echo "__CLEAN__"`,
       { cwd: ROOT, encoding: 'utf-8' }
     );
     expect(

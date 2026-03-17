@@ -7,6 +7,33 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added — Lote 28: A Grande Extração — Operação Zero Hardcoded (ContentOps)
+
+- `content/` directory with 91 physical `.mdx` files (19 pt-br + 72 translations)
+  - `content/publications/` — 8 research articles
+  - `content/essays/` — 5 theological/philosophical essays
+  - `content/whitepapers/` — 5 technical whitepapers
+  - `content/simulations/ia-2027/` — Interactive simulation reference
+- `scripts/temp/migrate-hardcoded-to-mdx.mjs` — Programmatic extraction script (anti-hallucination)
+- `scripts/content/publish.mjs` — ContentOps orchestrator (`npm run content:publish`)
+  - Quality Gate (frontmatter validation via gray-matter)
+  - Localization Inventory (missing translations audit)
+  - Regeneration (upkf:generate → i18n:artifacts → sota:check)
+  - Git Auto-Commit (only if all green)
+- `lib/content/mdx-loader.ts` — Server-side MDX loader with locale-aware resolution
+- `lib/content/mdx-components.tsx` — Component map + RTL wrapper for Hebrew
+- `ADR-0005-zero-hardcoded-mdx.md` — Architecture decision for Zero Hardcoded program
+- `npm run content:publish` and `npm run content:publish:dry` scripts
+- `gray-matter` and `next-mdx-remote` dependencies
+
+### Changed — Lote 28
+
+- `scripts/upkf/generate-artifacts-v2.mjs` — Removed 330 lines of hardcoded content (6,433 → 6,103)
+  - `SLUG_TOPIC_OVERRIDES` (18 publication profiles) now loaded from `content/*/index.pt-br.mdx` via gray-matter
+  - `PUBLICATION_I18N` (18 translation blocks) now loaded from MDX frontmatter
+  - Added `loadContentOverrides()` function with gray-matter import
+- `scripts/config/anti-dry.test.ts` — Exclude `scripts/temp/` from locale array grep
+
 ### Added — Lote 26: IndexNow & Translation Resilience
 
 - `npm run seo:indexnow` — Proactive search engine ping via IndexNow protocol (142 URLs)
