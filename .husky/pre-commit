@@ -1,16 +1,9 @@
-# ── i18n: sync translations if pt-BR dictionaries changed ──
-# Uses git diff --cached to detect changes; exits instantly if none found.
-# Requires GEMINI_API_KEY in .env.local for actual translation.
-node --env-file=.env.local scripts/i18n/sync-i18n.mjs 2>/dev/null || node scripts/i18n/sync-i18n.mjs
+# ═══════════════════════════════════════════════════════════════════════════════
+#  🛡️  HUSKY PRE-COMMIT — Master Validation Pipeline (LOTE 20)
+# ───────────────────────────────────────────────────────────────────────────────
+#  A Lei do Código: um único orquestrador é o juiz absoluto de qualidade.
+#  Este hook chama `sota:check` (sem build) para velocidade.
+#  O build completo roda no pre-push.
+# ═══════════════════════════════════════════════════════════════════════════════
 
-# ── SEO: validate structured data ──
-npm run seo:validate
-
-# ── SEO: validate Rich Results, DID & JSON-LD integrity ──
-npm run seo:rich-results
-
-# ── i18n: structural parity validator (anti-fraud) ──
-npm run i18n:parity
-
-# ── Tests: full test suite ──
-npm test
+npm run sota:check

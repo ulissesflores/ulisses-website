@@ -1,1 +1,8 @@
-npm run seo:validate
+# ═══════════════════════════════════════════════════════════════════════════════
+#  🛡️  HUSKY PRE-PUSH — Master Validation Pipeline COMPLETO (LOTE 20)
+# ───────────────────────────────────────────────────────────────────────────────
+#  A Lei do Código: antes de enviar ao remoto, TODAS as validações + build.
+#  Este hook chama `sota:full` (com build SSG completo).
+# ═══════════════════════════════════════════════════════════════════════════════
+
+npm run sota:full

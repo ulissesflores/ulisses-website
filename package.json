@@ -27,6 +27,8 @@
     "test:coverage": "vitest run --coverage",
     "test:ui": "vitest --ui",
     "test:coverage-ui": "vitest --coverage --ui",
+    "sota:check": "node scripts/sota-validate.mjs --skip-build",
+    "sota:full": "node scripts/sota-validate.mjs",
     "links:inventory": "npm run upkf:generate",
     "prepare": "husky"
   },
