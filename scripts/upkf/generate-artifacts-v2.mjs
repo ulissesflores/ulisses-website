@@ -112,6 +112,18 @@ const CATEGORY_METADATA = {
     description:
       'Colecao de artigos cientificos com foco em resiliencia ciberfinanceira, modelagem quantitativa e inteligencia artificial aplicada a sistemas complexos.',
     schemaType: 'CollectionPage',
+    headings: {
+      en: 'Research: AI, Economics and Complex Systems',
+      es: 'Investigación: IA, Economía y Sistemas Complejos',
+      it: 'Ricerca: IA, Economia e Sistemi Complessi',
+      he: 'מחקר: בינה מלאכותית, כלכלה ומערכות מורכבות',
+    },
+    descriptions: {
+      en: 'Collection of scientific articles focused on cyber-financial resilience, quantitative modeling and artificial intelligence applied to complex systems.',
+      es: 'Colección de artículos científicos enfocados en resiliencia ciberfinanciera, modelado cuantitativo e inteligencia artificial aplicada a sistemas complejos.',
+      it: 'Collezione di articoli scientifici focalizzati sulla resilienza ciberfinanziaria, modellazione quantitativa e intelligenza artificiale applicata a sistemi complessi.',
+      he: 'אוסף מאמרים מדעיים עם דגש על חוסן סייבר-פיננסי, מידול כמותי ובינה מלאכותית יישומית למערכות מורכבות.',
+    },
   },
   whitepapers: {
     title: 'Whitepapers',
@@ -119,6 +131,18 @@ const CATEGORY_METADATA = {
     description:
       'Whitepapers tecnicos sobre arquitetura de sistemas, hardware IoT, seguranca, privacidade e soberania de dados em ambientes de missao critica.',
     schemaType: 'CollectionPage',
+    headings: {
+      en: 'Whitepapers: Applied Engineering and Architecture',
+      es: 'Whitepapers: Ingeniería Aplicada y Arquitectura',
+      it: 'Whitepapers: Ingegneria Applicata e Architettura',
+      he: 'מסמכים טכניים: הנדסה יישומית וארכיטקטורה',
+    },
+    descriptions: {
+      en: 'Technical whitepapers on systems architecture, IoT hardware, security, privacy and data sovereignty in mission-critical environments.',
+      es: 'Whitepapers técnicos sobre arquitectura de sistemas, hardware IoT, seguridad, privacidad y soberanía de datos en ambientes de misión crítica.',
+      it: 'Whitepapers tecnici su architettura dei sistemi, hardware IoT, sicurezza, privacy e sovranità dei dati in ambienti mission-critical.',
+      he: 'מסמכים טכניים על ארכיטקטורת מערכות, חומרת IoT, אבטחה, פרטיות וריבונות מידע בסביבות קריטיות.',
+    },
   },
   essays: {
     title: 'Essays',
@@ -126,6 +150,18 @@ const CATEGORY_METADATA = {
     description:
       'Ensaios academicos com abordagem historico-critica em teologia, filosofia e fundamentos da ordem social e economica.',
     schemaType: 'CollectionPage',
+    headings: {
+      en: 'Essays: Theology, Humanities and Historical Criticism',
+      es: 'Ensayos: Teología, Humanidades y Crítica Histórica',
+      it: 'Saggi: Teologia, Umanistica e Critica Storica',
+      he: 'מאמרים: תאולוגיה, מדעי הרוח וביקורת היסטורית',
+    },
+    descriptions: {
+      en: 'Academic essays with a historical-critical approach in theology, philosophy and foundations of social and economic order.',
+      es: 'Ensayos académicos con enfoque histórico-crítico en teología, filosofía y fundamentos del orden social y económico.',
+      it: 'Saggi accademici con approccio storico-critico in teologia, filosofia e fondamenti dell\'ordine sociale ed economico.',
+      he: 'מאמרים אקדמיים עם גישה היסטורית-ביקורתית בתאולוגיה, פילוסופיה ויסודות הסדר החברתי והכלכלי.',
+    },
   },
 };
 
@@ -559,6 +595,49 @@ const SLUG_TOPIC_OVERRIDES = {
     ],
     references: ['Lorenz', 'Mandelbrot', 'Complexity economics'],
   },
+};
+
+const PUBLICATION_I18N = {
+  '2025-little-law-resilience': { it: 'La Legge di Little come Vettore di Resilienza e Qualità', he: 'חוק ליטל כווקטור לחוסן ואיכות', summary_en: 'Study on applying Little\'s Law to elevate delivery predictability and resilience in Data Science operations.', summary_es: 'Estudio sobre la aplicación de la Ley de Little para elevar la previsibilidad de entrega y la resiliencia en operaciones de Data Science.', summary_it: 'Studio sull\'applicazione della Legge di Little per elevare la prevedibilità delle consegne e la resilienza nelle operazioni di Data Science.', summary_he: 'מחקר על יישום חוק ליטל להעלאת חיזוי אספקה וחוסן בפעולות מדעי הנתונים.' },
+  '2025-lstm-asset-prediction': { it: 'Analisi Predittiva degli Attivi Finanziari con Modelli LSTM', he: 'ניתוח חזוי של נכסים פיננסיים עם מודלי LSTM', summary_en: 'Predictive analysis of financial assets with LSTM networks to capture temporal dynamics in non-stationary markets.', summary_es: 'Análisis predictivo de activos financieros con redes LSTM para capturar dinámica temporal en mercados no estacionarios.', summary_it: 'Analisi predittiva degli attivi finanziari con reti LSTM per catturare le dinamiche temporali nei mercati non stazionari.', summary_he: 'ניתוח חזוי של נכסים פיננסיים עם רשתות LSTM ללכידת דינמיקה זמנית בשווקים לא סטציונריים.' },
+  '2025-hybrid-cooling-thermodynamics': { it: 'Analisi Termodinamica e Ingegneria di Sistemi Ibridi di Raffreddamento', he: 'ניתוח תרמודינמי והנדסת מערכות קירור היברידיות', summary_en: 'Whitepaper on applied thermodynamics for hybrid cooling system design in critical infrastructure.', summary_es: 'Whitepaper de termodinámica aplicada al diseño de sistemas híbridos de enfriamiento para infraestructura crítica.', summary_it: 'Whitepaper di termodinamica applicata alla progettazione di sistemi ibridi di raffreddamento per infrastrutture critiche.', summary_he: 'מסמך טכני על תרמודינמיקה יישומית לתכנון מערכות קירור היברידיות לתשתיות קריטיות.' },
+  '2025-iot-data-sovereignty': { it: 'Architetture Cloudless e Sovranità dei Dati in IoT', he: 'ארכיטקטורות ללא ענן וריבונות מידע ב-IoT', summary_en: 'Cloudless architectures for IoT with data sovereignty and local edge processing.', summary_es: 'Arquitecturas cloudless para IoT con soberanía de datos y procesamiento local en edge.', summary_it: 'Architetture cloudless per IoT con sovranità dei dati ed elaborazione locale in edge.', summary_he: 'ארכיטקטורות ללא ענן עבור IoT עם ריבונות מידע ועיבוד מקומי בקצה.' },
+  '2025-fraud-detection-mlp': { it: 'Rilevamento Frodi con Carte di Credito mediante Reti Neurali', he: 'זיהוי הונאות בכרטיסי אשראי עם רשתות עצביות', summary_en: 'Credit card fraud detection with MLP neural networks and feature engineering for imbalanced data.', summary_es: 'Detección de fraude en tarjetas con redes neuronales MLP e ingeniería de atributos para datos desbalanceados.', summary_it: 'Rilevamento delle frodi con carte di credito mediante reti neurali MLP e ingegneria delle feature per dati sbilanciati.', summary_he: 'זיהוי הונאות בכרטיסי אשראי עם רשתות עצביות MLP והנדסת תכונות לנתונים לא מאוזנים.' },
+  '2024-historicity-jesus-archaeology': { it: 'Analisi Storiografica e Archeologica Esaustiva: La Storicità di Gesù', he: 'ניתוח היסטוריוגרפי וארכיאולוגי מקיף: ההיסטוריות של ישוע', summary_en: 'Comprehensive historiographic and archaeological analysis on the historicity of Jesus.', summary_es: 'Análisis historiográfico y arqueológico exhaustivo sobre la historicidad de Jesús.', summary_it: 'Analisi storiografica e archeologica esaustiva sulla storicità di Gesù.', summary_he: 'ניתוח היסטוריוגרפי וארכיאולוגי מקיף על ההיסטוריות של ישוע.' },
+  '2024-bitcoin-praxeology': { it: 'Bitcoin come Attivo di Riserva e la Teoria Monetaria nella Scuola Austriaca', he: 'ביטקוין כנכס רזרבי ותיאוריית המטבע באסכולה האוסטרית', summary_en: 'Analysis of Bitcoin as a reserve asset through Austrian School monetary theory and praxeology.', summary_es: 'Análisis de Bitcoin como activo de reserva a través de la teoría monetaria de la Escuela Austríaca.', summary_it: 'Analisi di Bitcoin come attivo di riserva attraverso la teoria monetaria della Scuola Austriaca.', summary_he: 'ניתוח ביטקוין כנכס רזרבי דרך התיאוריה המוניטרית של האסכולה האוסטרית.' },
+  '2024-scribal-canonization-ezra': { it: 'Canonizzazione Scribale: Analisi Storico-Critica della Formazione del Canone', he: 'קנוניזציה סופרית: ניתוח היסטורי-ביקורתי של גיבוש הקנון', summary_en: 'Historical-critical analysis of scribal canonization and the formation of the biblical canon.', summary_es: 'Análisis histórico-crítico de la canonización escribal y la formación del canon bíblico.', summary_it: 'Analisi storico-critica della canonizzazione scribale e della formazione del canone biblico.', summary_he: 'ניתוח היסטורי-ביקורתי של הקנוניזציה הסופרית ושל גיבוש הקנון המקראי.' },
+  '2024-theology-economic-order': { it: "Fondamenti Trascendenti dell'Ordine Economico", he: 'יסודות טרנסצנדנטיים של הסדר הכלכלי', summary_en: 'Study on the transcendent foundations of economic order.', summary_es: 'Estudio sobre los fundamentos trascendentes del orden económico.', summary_it: "Studio sui fondamenti trascendenti dell'ordine economico.", summary_he: 'מחקר על היסודות הטרנסצנדנטיים של הסדר הכלכלי.' },
+  '2024-ring-signatures-privacy': { it: 'Implementazione di Ring Signatures e Indirizzi Stealth', he: 'יישום חתימות טבעת וכתובות חמקניות', summary_en: 'Technical analysis of ring signature implementation and stealth addresses for privacy-preserving transactions.', summary_es: 'Análisis técnico de la implementación de ring signatures y direcciones furtivas.', summary_it: "Analisi tecnica dell'implementazione delle ring signatures e degli indirizzi stealth.", summary_he: 'ניתוח טכני של יישום חתימות טבעת וכתובות חמקניות.' },
+  '2024-agritech-agile-flow': { it: 'Trasformazione Agile e Ingegneria del Flusso in Data Science', he: 'טרנספורמציה אג\'ילית והנדסת זרימה במדעי הנתונים', summary_en: 'Study on agile transformation and flow engineering applied to Data Science teams.', summary_es: 'Estudio sobre transformación ágil e ingeniería de flujo aplicadas a equipos de Data Science.', summary_it: "Studio sulla trasformazione agile e l'ingegneria del flusso applicata ai team di Data Science.", summary_he: 'מחקר על טרנספורמציה אג\'ילית והנדסת זרימה המיושמת על צוותי מדעי הנתונים.' },
+  '2024-exegetical-treatise-anthropology': { it: 'Trattato Esegetico sulla Rappresentazione della Moralità e Antropologia', he: 'מסה אקסגטית על ייצוג המוסר והאנתרופולוגיה', summary_en: 'Exegetical treatise on the representation of morality and anthropology.', summary_es: 'Tratado exegético sobre la representación de la moralidad y antropología.', summary_it: 'Trattato esegetico sulla rappresentazione della moralità e antropologia.', summary_he: 'מסה אקסגטית על ייצוג המוסר והאנתרופולוגיה.' },
+  '2023-marian-apparitions-critique': { it: 'La Corona e la Croce: Analisi Teologica e Fenomenologica delle Apparizioni Mariane', he: 'הכתר והצלב: ניתוח תאולוגי ופנומנולוגי של הופעות מריאניות', summary_en: 'Theological and phenomenological analysis of Marian apparitions.', summary_es: 'Análisis teológico y fenomenológico de las apariciones marianas.', summary_it: 'Analisi teologica e fenomenologica delle apparizioni mariane.', summary_he: 'ניתוח תאולוגי ופנומנולוגי של הופעות מריאניות.' },
+  '2023-digital-legacy': { it: "Sfide dell'Eredità Digitale: Preservazione della Memoria Post-Mortem", he: 'אתגרי המורשת הדיגיטלית: שימור זיכרון לאחר המוות', summary_en: 'Analysis of digital legacy challenges and post-mortem memory preservation.', summary_es: 'Análisis de los desafíos de la herencia digital y preservación de memoria post-mortem.', summary_it: "Analisi delle sfide dell'eredità digitale e preservazione della memoria post-mortem.", summary_he: 'ניתוח אתגרי המורשת הדיגיטלית ושימור זיכרון לאחר המוות.' },
+  '2023-holy-club-methodism': { it: 'Il Club Santo: Archeologia Spirituale, Teologica e Visuale del Metodismo', he: 'המועדון הקדוש: ארכיאולוגיה רוחנית, תאולוגית וחזותית של המתודיזם', summary_en: 'Spiritual, theological and visual archaeology of the Holy Club and the origins of Methodism.', summary_es: 'Arqueología espiritual, teológica y visual del Club Santo y los orígenes del metodismo.', summary_it: 'Archeologia spirituale, teologica e visuale del Club Santo e le origini del metodismo.', summary_he: 'ארכיאולוגיה רוחנית, תאולוגית וחזותית של המועדון הקדוש ומקורות המתודיזם.' },
+  '2022-theology-of-hope': { it: 'La Teologia della Speranza in Tempi di Crisi', he: 'תאולוגיית התקווה בעתות משבר', summary_en: 'Theological reflection on hope in times of crisis.', summary_es: 'Reflexión teológica sobre la esperanza en tiempos de crisis.', summary_it: 'Riflessione teologica sulla speranza in tempi di crisi.', summary_he: 'הגות תאולוגית על תקווה בעתות משבר.' },
+  '2020-robotics-education': { it: "Metodologie Attive nell'Insegnamento della Logica di Programmazione", he: 'מתודולוגיות פעילות בהוראת לוגיקה של תכנות', summary_en: 'Study on active methodologies in teaching programming logic using robotics and gamification.', summary_es: 'Estudio sobre metodologías activas en la enseñanza de lógica de programación.', summary_it: "Studio sulle metodologie attive nell'insegnamento della logica di programmazione.", summary_he: 'מחקר על מתודולוגיות פעילות בהוראת לוגיקה של תכנות.' },
+  '2017-chaos-theory-economics': { it: 'Teoria del Caos: Emergenza e Auto-organizzazione nei Mercati', he: 'תורת הכאוס: צמיחה והתארגנות עצמית בשווקים', summary_en: 'Analysis of chaos theory applied to economic systems.', summary_es: 'Análisis de la teoría del caos aplicada a sistemas económicos.', summary_it: 'Analisi della teoria del caos applicata ai sistemi economici.', summary_he: 'ניתוח תורת הכאוס המיושמת על מערכות כלכליות.' },
+};
+
+const BLOG_HEADLINE_I18N = {
+  1: { en: 'Lula government campaign to rebuild trust in Pix: details and impacts', es: 'Campaña del gobierno Lula para reconstruir confianza en Pix: detalles e impactos', it: 'Campagna del governo Lula per ricostruire la fiducia nel Pix: dettagli e impatti', he: 'קמפיין ממשלת לולה לשיקום האמון ב-Pix: פרטים והשפעות' },
+  2: { en: 'Social media conflict: content moderation vs. freedom of expression', es: 'Conflicto en redes sociales: moderación de contenido vs. libertad de expresión', it: 'Conflitto sui social media: moderazione dei contenuti vs. libertà di espressione', he: 'עימות ברשתות חברתיות: ניהול תוכן מול חופש ביטוי' },
+  3: { en: "Lula's disapproval grows in Northeast Brazil: shifts in political loyalty", es: 'La desaprobación de Lula crece en el Nordeste: cambios en la lealtad política', it: 'La disapprovazione di Lula cresce nel Nordest: cambiamenti nella fedeltà politica', he: 'אי-שביעות הרצון מלולה גוברת בצפון-מזרח' },
+  4: { en: "Lula's fiscal package: expectations and challenges for the Brazilian economy", es: 'Paquete fiscal de Lula: expectativas y desafíos para la economía brasileña', it: 'Pacchetto fiscale di Lula: aspettative e sfide per l\'economia brasiliana', he: 'חבילת המיסוי של לולה: ציפיות ואתגרים לכלכלה הברזילאית' },
+  5: { en: 'Preservation of traditional values in the age of diversity', es: 'Preservación de valores tradicionales en la era de la diversidad', it: 'Preservazione dei valori tradizionali nell\'era della diversità', he: 'שימור ערכים מסורתיים בעידן הגיוון' },
+  6: { en: 'Analysis of Trump pardon consequences and parallels with Brazil', es: 'Análisis de las consecuencias de los indultos de Trump y paralelos con Brasil', it: 'Analisi delle conseguenze dei perdoni di Trump e paralleli con il Brasile', he: 'ניתוח השלכות החנינות של טראמפ ומקבילות עם ברזיל' },
+  7: { en: 'Discrepancies in Brazil: critical analysis of current economics and politics', es: 'Discrepancias en Brasil: análisis crítico de la economía y política actuales', it: 'Discrepanze in Brasile: analisi critica dell\'economia e della politica attuali', he: 'פערים בברזיל: ניתוח ביקורתי של הכלכלה והפוליטיקה הנוכחיות' },
+  8: { en: 'Popular dissatisfaction grows: how a viral Instagram video exposes government spending', es: 'La insatisfacción popular crece: cómo un video viral en Instagram expone gastos gubernamentales', it: 'L\'insoddisfazione popolare cresce: come un video virale su Instagram espone le spese governative', he: 'חוסר שביעות רצון ציבורית גובר' },
+  9: { en: 'Electoral reform in Brazil: need for greater transparency', es: 'Reforma electoral en Brasil: necesidad de mayor transparencia', it: 'Riforma elettorale in Brasile: necessità di maggiore trasparenza', he: 'רפורמה בבחירות בברזיל: הצורך בשקיפות רבה יותר' },
+  10: { en: 'Pix monitoring: Lula government strategy against tax evasion', es: 'Fiscalización del Pix: estrategia del gobierno Lula contra la evasión fiscal', it: 'Monitoraggio del Pix: strategia del governo Lula contro l\'evasione fiscale', he: 'פיקוח על מערכת Pix: אסטרטגיית ממשלת לולה נגד העלמת מסים' },
+  11: { en: 'Geopolitical impact on markets: US-China tensions and the economic future', es: 'Impacto de la geopolítica en los mercados: tensiones EE.UU.–China y el futuro económico', it: 'Impatto della geopolitica sui mercati: tensioni USA-Cina e il futuro economico', he: 'השפעת הגיאופוליטיקה על השווקים: מתחים ארה"ב-סין' },
+  12: { en: 'Fighting inflation under Lula: strategies and impacts on public spending', es: 'Combate a la inflación en el gobierno Lula: estrategias e impactos en el gasto público', it: 'Lotta all\'inflazione nel governo Lula: strategie e impatti sulla spesa pubblica', he: 'מלחמה באינפלציה בממשלת לולה: אסטרטגיות והשפעות' },
+  13: { en: 'Lula government confronts rising food prices: strategies and domestic impacts', es: 'Gobierno Lula confronta el alza de precios de alimentos: estrategias e impactos', it: 'Il governo Lula affronta l\'aumento dei prezzi alimentari: strategie e impatti', he: 'ממשלת לולה מתמודדת עם עליית מחירי המזון' },
+  14: { en: 'Lewandowski challenges US on handcuffed deportations: impact on Brazil-US relations', es: 'Lewandowski desafía a EE.UU. sobre deportaciones esposadas', it: 'Lewandowski sfida gli USA sulle deportazioni ammanettate', he: 'לוונדובסקי מאתגר את ארה"ב בנושא גירושים באזיקים' },
+  15: { en: 'Controversy in Porto Alegre: Jesus performance at Carnival reignites debate', es: 'Polémica en Porto Alegre: performance de Jesús en el Carnaval reaviva debate', it: 'Polemica a Porto Alegre: performance di Gesù al Carnevale riaccende il dibattito', he: 'מחלוקת בפורטו אלגרי: הופעת ישוע בקרנבל מחדשת ויכוח' },
+  16: { en: 'Brazil-US relations: impact of Trump and Eduardo Bolsonaro on global politics', es: 'Relación Brasil-EE.UU.: impacto de Trump y Eduardo Bolsonaro en la política global', it: 'Relazioni Brasile-USA: impatto di Trump ed Eduardo Bolsonaro sulla politica globale', he: 'יחסי ברזיל-ארה"ב: השפעת טראמפ ואדוארדו בולסונארו' },
+  17: { en: 'Tancredo Neves and the impact on the 40th anniversary of a democratic transition', es: 'Tancredo Neves y el impacto en el 40º aniversario de una transición democrática', it: 'Tancredo Neves e l\'impatto nel 40° anniversario di una transizione democratica', he: 'טנקרדו נבס וההשפעה ביום השנה ה-40 למעבר הדמוקרטי' },
+  18: { en: 'Lula government surveillance and freedom of expression: impact on modern Brazil', es: 'Vigilancia del gobierno Lula y libertad de expresión: impacto en el Brasil moderno', it: 'Sorveglianza del governo Lula e libertà di espressione: impatto sul Brasile moderno', he: 'מעקב ממשלת לולה וחופש ביטוי: השפעה על ברזיל המודרנית' },
+  19: { en: 'Current analysis: impact of historical events on contemporary politics', es: 'Análisis actual: impacto de los eventos históricos en la política contemporánea', it: 'Analisi attuale: impatto degli eventi storici sulla politica contemporanea', he: 'ניתוח עכשווי: השפעת אירועים היסטוריים על הפוליטיקה בת-זמננו' },
 };
 
 function ensureDir(dir) {
@@ -2446,13 +2525,27 @@ function buildPublications(rawRows, generatedAt, corpus, referencesLibrary) {
 function attachTranslations(publications, translationsMap) {
   return publications.map((publication) => {
     const translated = translationsMap.get(publication.title.replace(/\s+/g, ' ').trim());
-    if (!translated) {
+    const i18n = PUBLICATION_I18N[publication.id];
+
+    const translations = {
+      ...(translated || {}),
+      ...(i18n ? {
+        it: i18n.it,
+        he: i18n.he,
+        summary_en: i18n.summary_en,
+        summary_es: i18n.summary_es,
+        summary_it: i18n.summary_it,
+        summary_he: i18n.summary_he,
+      } : {}),
+    };
+
+    if (Object.keys(translations).length === 0) {
       return publication;
     }
 
     return {
       ...publication,
-      translations: translated,
+      translations,
     };
   });
 }
@@ -3932,12 +4025,21 @@ function buildKnowledgeData(certifications, blogPosts, sermons, generatedAt, ide
   const blogEntries = blogPosts.posts.map((post) => {
     const slug = `${post.position}-${slugify(post.headline).slice(0, 72) || `post-${post.position}`}`;
     const publishedAt = cleanDate(post.datePublished, generatedAt);
+    const i18n = BLOG_HEADLINE_I18N[post.position] || {};
     return {
       ...post,
       slug,
       canonicalPath: `/mundo-politico/${slug}`,
       publishedAt,
       summary: `Análise política publicada no portal Mundo Político em ${publishedAt}, com foco em "${post.headline}".`,
+      headline_en: i18n.en || post.headline,
+      headline_es: i18n.es || post.headline,
+      headline_it: i18n.it || post.headline,
+      headline_he: i18n.he || post.headline,
+      summary_en: i18n.en ? `Political analysis published on Mundo Político on ${publishedAt}, focused on "${i18n.en}".` : undefined,
+      summary_es: i18n.es ? `Análisis político publicado en Mundo Político el ${publishedAt}, con enfoque en "${i18n.es}".` : undefined,
+      summary_it: i18n.it ? `Analisi politica pubblicata su Mundo Político il ${publishedAt}, con focus su "${i18n.it}".` : undefined,
+      summary_he: i18n.he ? `ניתוח פוליטי שפורסם ב-Mundo Político ב-${publishedAt}, עם דגש על "${i18n.he}".` : undefined,
     };
   });
 
@@ -5994,7 +6096,7 @@ function writeGeneratedFiles({
   ensureDir(DOCS_DIR);
   ensureDir(PUBLIC_DIR);
 
-  const publicationsTs = `/* AUTO-GENERATED FILE. DO NOT EDIT MANUALLY.\n * Source: ${sourcePath}\n * Generated at: ${generatedAt}\n */\n\nexport type PublicationCategory = 'research' | 'whitepapers' | 'essays';\n\nexport interface PublicationLandingContent {\n  overview: string;\n  problem: string;\n  contributions: string[];\n  applications: string;\n  downloadPitch: string;\n}\n\nexport interface PublicationReference {\n  citation: string;\n  url?: string;\n}\n\nexport interface PublicationDoi {\n  status: 'target' | 'minted';\n  target?: string;\n  minted?: string;\n}\n\nexport interface PublicationQuality {\n  phase1: number;\n  phase2: number;\n  phase3: number;\n  compliance: number;\n  polymathic: number;\n  macro: number;\n}\n\nexport interface PublicationSections {\n  abstract: string;\n  abstractEn: string;\n  introduction: string;\n  methods: string;\n  results: string;\n  discussion: string;\n  recommendations: string[];\n  conclusion: string;\n  references: PublicationReference[];\n}\n\nexport interface PublicationEvidence {\n  sourceFile: string;\n  sourceName: string;\n  score: number;\n}\n\nexport interface Publication {\n  ordinal: number;\n  id: string;\n  title: string;\n  category: PublicationCategory;\n  kind: string;\n  date: string;\n  publishedAt: string;\n  updatedAt: string;\n  inLanguage: string;\n  tags: string[];\n  summary: string;\n  canonicalUrl: string;\n  downloadUrl: string;\n  primaryPdfUrl: string;\n  legacyPdfUrl: string;\n  mdUrl: string;\n  docxUrl: string;\n  pdfPath: string;\n  doi: PublicationDoi;\n  quality: PublicationQuality;\n  landing: PublicationLandingContent;\n  articleSections: PublicationSections;\n  sections: PublicationSections;\n  sourceEvidence: PublicationEvidence[];\n  translations?: {\n    en?: string;\n    es?: string;\n  };\n}\n\nexport interface PublicationCollection {\n  title: string;\n  heading: string;\n  description: string;\n  schemaType: string;\n}\n\nexport const publicationCollections: Record<PublicationCategory, PublicationCollection> = ${JSON.stringify(
+  const publicationsTs = `/* AUTO-GENERATED FILE. DO NOT EDIT MANUALLY.\n * Source: ${sourcePath}\n * Generated at: ${generatedAt}\n */\n\nexport type PublicationCategory = 'research' | 'whitepapers' | 'essays';\n\nexport interface PublicationLandingContent {\n  overview: string;\n  problem: string;\n  contributions: string[];\n  applications: string;\n  downloadPitch: string;\n}\n\nexport interface PublicationReference {\n  citation: string;\n  url?: string;\n}\n\nexport interface PublicationDoi {\n  status: 'target' | 'minted';\n  target?: string;\n  minted?: string;\n}\n\nexport interface PublicationQuality {\n  phase1: number;\n  phase2: number;\n  phase3: number;\n  compliance: number;\n  polymathic: number;\n  macro: number;\n}\n\nexport interface PublicationSections {\n  abstract: string;\n  abstractEn: string;\n  introduction: string;\n  methods: string;\n  results: string;\n  discussion: string;\n  recommendations: string[];\n  conclusion: string;\n  references: PublicationReference[];\n}\n\nexport interface PublicationEvidence {\n  sourceFile: string;\n  sourceName: string;\n  score: number;\n}\n\nexport interface Publication {\n  ordinal: number;\n  id: string;\n  title: string;\n  category: PublicationCategory;\n  kind: string;\n  date: string;\n  publishedAt: string;\n  updatedAt: string;\n  inLanguage: string;\n  tags: string[];\n  summary: string;\n  canonicalUrl: string;\n  downloadUrl: string;\n  primaryPdfUrl: string;\n  legacyPdfUrl: string;\n  mdUrl: string;\n  docxUrl: string;\n  pdfPath: string;\n  doi: PublicationDoi;\n  quality: PublicationQuality;\n  landing: PublicationLandingContent;\n  articleSections: PublicationSections;\n  sections: PublicationSections;\n  sourceEvidence: PublicationEvidence[];\n  translations?: {\n    en?: string;\n    es?: string;\n    it?: string;\n    he?: string;\n    summary_en?: string;\n    summary_es?: string;\n    summary_it?: string;\n    summary_he?: string;\n  };\n}\n\nexport interface PublicationCollection {\n  title: string;\n  heading: string;\n  description: string;\n  schemaType: string;\n  headings?: Record<string, string>;\n  descriptions?: Record<string, string>;\n}\n\nexport const publicationCollections: Record<PublicationCategory, PublicationCollection> = ${JSON.stringify(
     CATEGORY_METADATA,
     null,
     2,

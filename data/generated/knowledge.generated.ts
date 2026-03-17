@@ -644,7 +644,15 @@ export const knowledgeData = {
         "slug": "1-campanha-do-governo-lula-para-reconstruir-confianca-no-pix-detalhes-e-im",
         "canonicalPath": "/mundo-politico/1-campanha-do-governo-lula-para-reconstruir-confianca-no-pix-detalhes-e-im",
         "publishedAt": "2026-01-15",
-        "summary": "Análise política publicada no portal Mundo Político em 2026-01-15, com foco em \"Campanha do governo Lula para reconstruir confiança no Pix: detalhes e impactos\"."
+        "summary": "Análise política publicada no portal Mundo Político em 2026-01-15, com foco em \"Campanha do governo Lula para reconstruir confiança no Pix: detalhes e impactos\".",
+        "headline_en": "Lula government campaign to rebuild trust in Pix: details and impacts",
+        "headline_es": "Campaña del gobierno Lula para reconstruir confianza en Pix: detalles e impactos",
+        "headline_it": "Campagna del governo Lula per ricostruire la fiducia nel Pix: dettagli e impatti",
+        "headline_he": "קמפיין ממשלת לולה לשיקום האמון ב-Pix: פרטים והשפעות",
+        "summary_en": "Political analysis published on Mundo Político on 2026-01-15, focused on \"Lula government campaign to rebuild trust in Pix: details and impacts\".",
+        "summary_es": "Análisis político publicado en Mundo Político el 2026-01-15, con enfoque en \"Campaña del gobierno Lula para reconstruir confianza en Pix: detalles e impactos\".",
+        "summary_it": "Analisi politica pubblicata su Mundo Político il 2026-01-15, con focus su \"Campagna del governo Lula per ricostruire la fiducia nel Pix: dettagli e impatti\".",
+        "summary_he": "ניתוח פוליטי שפורסם ב-Mundo Político ב-2026-01-15, עם דגש על \"קמפיין ממשלת לולה לשיקום האמון ב-Pix: פרטים והשפעות\"."
       },
       {
         "position": 2,
@@ -654,7 +662,15 @@ export const knowledgeData = {
         "slug": "2-conflito-nas-redes-sociais-moderacao-de-conteudo-vs-liberdade-de-express",
         "canonicalPath": "/mundo-politico/2-conflito-nas-redes-sociais-moderacao-de-conteudo-vs-liberdade-de-express",
         "publishedAt": "2026-01-15",
-        "summary": "Análise política publicada no portal Mundo Político em 2026-01-15, com foco em \"Conflito nas redes sociais: moderação de conteúdo vs. liberdade de expressão\"."
+        "summary": "Análise política publicada no portal Mundo Político em 2026-01-15, com foco em \"Conflito nas redes sociais: moderação de conteúdo vs. liberdade de expressão\".",
+        "headline_en": "Social media conflict: content moderation vs. freedom of expression",
+        "headline_es": "Conflicto en redes sociales: moderación de contenido vs. libertad de expresión",
+        "headline_it": "Conflitto sui social media: moderazione dei contenuti vs. libertà di espressione",
+        "headline_he": "עימות ברשתות חברתיות: ניהול תוכן מול חופש ביטוי",
+        "summary_en": "Political analysis published on Mundo Político on 2026-01-15, focused on \"Social media conflict: content moderation vs. freedom of expression\".",
+        "summary_es": "Análisis político publicado en Mundo Político el 2026-01-15, con enfoque en \"Conflicto en redes sociales: moderación de contenido vs. libertad de expresión\".",
+        "summary_it": "Analisi politica pubblicata su Mundo Político il 2026-01-15, con focus su \"Conflitto sui social media: moderazione dei contenuti vs. libertà di espressione\".",
+        "summary_he": "ניתוח פוליטי שפורסם ב-Mundo Político ב-2026-01-15, עם דגש על \"עימות ברשתות חברתיות: ניהול תוכן מול חופש ביטוי\"."
       },
       {
         "position": 3,
@@ -664,7 +680,15 @@ export const knowledgeData = {
         "slug": "3-desaprovacao-de-lula-cresce-no-nordeste-mudancas-na-lealdade-politica",
         "canonicalPath": "/mundo-politico/3-desaprovacao-de-lula-cresce-no-nordeste-mudancas-na-lealdade-politica",
         "publishedAt": "2026-01-15",
-        "summary": "Análise política publicada no portal Mundo Político em 2026-01-15, com foco em \"Desaprovação de Lula cresce no Nordeste: mudanças na lealdade política\"."
+        "summary": "Análise política publicada no portal Mundo Político em 2026-01-15, com foco em \"Desaprovação de Lula cresce no Nordeste: mudanças na lealdade política\".",
+        "headline_en": "Lula's disapproval grows in Northeast Brazil: shifts in political loyalty",
+        "headline_es": "La desaprobación de Lula crece en el Nordeste: cambios en la lealtad política",
+        "headline_it": "La disapprovazione di Lula cresce nel Nordest: cambiamenti nella fedeltà politica",
+        "headline_he": "אי-שביעות הרצון מלולה גוברת בצפון-מזרח",
+        "summary_en": "Political analysis published on Mundo Político on 2026-01-15, focused on \"Lula's disapproval grows in Northeast Brazil: shifts in political loyalty\".",
+        "summary_es": "Análisis político publicado en Mundo Político el 2026-01-15, con enfoque en \"La desaprobación de Lula crece en el Nordeste: cambios en la lealtad política\".",
+        "summary_it": "Analisi politica pubblicata su Mundo Político il 2026-01-15, con focus su \"La disapprovazione di Lula cresce nel Nordest: cambiamenti nella fedeltà politica\".",
+        "summary_he": "ניתוח פוליטי שפורסם ב-Mundo Político ב-2026-01-15, עם דגש על \"אי-שביעות הרצון מלולה גוברת בצפון-מזרח\"."
       },
       {
         "position": 4,
@@ -674,7 +698,15 @@ export const knowledgeData = {
         "slug": "4-pacote-fiscal-de-lula-expectativas-e-desafios-para-a-economia-brasileira",
         "canonicalPath": "/mundo-politico/4-pacote-fiscal-de-lula-expectativas-e-desafios-para-a-economia-brasileira",
         "publishedAt": "2026-01-15",
-        "summary": "Análise política publicada no portal Mundo Político em 2026-01-15, com foco em \"Pacote fiscal de Lula: expectativas e desafios para a economia brasileira\"."
+        "summary": "Análise política publicada no portal Mundo Político em 2026-01-15, com foco em \"Pacote fiscal de Lula: expectativas e desafios para a economia brasileira\".",
+        "headline_en": "Lula's fiscal package: expectations and challenges for the Brazilian economy",
+        "headline_es": "Paquete fiscal de Lula: expectativas y desafíos para la economía brasileña",
+        "headline_it": "Pacchetto fiscale di Lula: aspettative e sfide per l'economia brasiliana",
+        "headline_he": "חבילת המיסוי של לולה: ציפיות ואתגרים לכלכלה הברזילאית",
+        "summary_en": "Political analysis published on Mundo Político on 2026-01-15, focused on \"Lula's fiscal package: expectations and challenges for the Brazilian economy\".",
+        "summary_es": "Análisis político publicado en Mundo Político el 2026-01-15, con enfoque en \"Paquete fiscal de Lula: expectativas y desafíos para la economía brasileña\".",
+        "summary_it": "Analisi politica pubblicata su Mundo Político il 2026-01-15, con focus su \"Pacchetto fiscale di Lula: aspettative e sfide per l'economia brasiliana\".",
+        "summary_he": "ניתוח פוליטי שפורסם ב-Mundo Político ב-2026-01-15, עם דגש על \"חבילת המיסוי של לולה: ציפיות ואתגרים לכלכלה הברזילאית\"."
       },
       {
         "position": 5,
@@ -684,7 +716,15 @@ export const knowledgeData = {
         "slug": "5-preservacao-de-valores-tradicionais-na-era-da-diversidade",
         "canonicalPath": "/mundo-politico/5-preservacao-de-valores-tradicionais-na-era-da-diversidade",
         "publishedAt": "2026-01-15",
-        "summary": "Análise política publicada no portal Mundo Político em 2026-01-15, com foco em \"Preservação de valores tradicionais na era da diversidade\"."
+        "summary": "Análise política publicada no portal Mundo Político em 2026-01-15, com foco em \"Preservação de valores tradicionais na era da diversidade\".",
+        "headline_en": "Preservation of traditional values in the age of diversity",
+        "headline_es": "Preservación de valores tradicionales en la era de la diversidad",
+        "headline_it": "Preservazione dei valori tradizionali nell'era della diversità",
+        "headline_he": "שימור ערכים מסורתיים בעידן הגיוון",
+        "summary_en": "Political analysis published on Mundo Político on 2026-01-15, focused on \"Preservation of traditional values in the age of diversity\".",
+        "summary_es": "Análisis político publicado en Mundo Político el 2026-01-15, con enfoque en \"Preservación de valores tradicionales en la era de la diversidad\".",
+        "summary_it": "Analisi politica pubblicata su Mundo Político il 2026-01-15, con focus su \"Preservazione dei valori tradizionali nell'era della diversità\".",
+        "summary_he": "ניתוח פוליטי שפורסם ב-Mundo Político ב-2026-01-15, עם דגש על \"שימור ערכים מסורתיים בעידן הגיוון\"."
       },
       {
         "position": 6,
@@ -694,7 +734,15 @@ export const knowledgeData = {
         "slug": "6-analise-das-consequencias-dos-perdoes-de-trump-e-paralelos-com-o-brasil",
         "canonicalPath": "/mundo-politico/6-analise-das-consequencias-dos-perdoes-de-trump-e-paralelos-com-o-brasil",
         "publishedAt": "2026-01-16",
-        "summary": "Análise política publicada no portal Mundo Político em 2026-01-16, com foco em \"Análise das consequências dos perdões de Trump e paralelos com o Brasil\"."
+        "summary": "Análise política publicada no portal Mundo Político em 2026-01-16, com foco em \"Análise das consequências dos perdões de Trump e paralelos com o Brasil\".",
+        "headline_en": "Analysis of Trump pardon consequences and parallels with Brazil",
+        "headline_es": "Análisis de las consecuencias de los indultos de Trump y paralelos con Brasil",
+        "headline_it": "Analisi delle conseguenze dei perdoni di Trump e paralleli con il Brasile",
+        "headline_he": "ניתוח השלכות החנינות של טראמפ ומקבילות עם ברזיל",
+        "summary_en": "Political analysis published on Mundo Político on 2026-01-16, focused on \"Analysis of Trump pardon consequences and parallels with Brazil\".",
+        "summary_es": "Análisis político publicado en Mundo Político el 2026-01-16, con enfoque en \"Análisis de las consecuencias de los indultos de Trump y paralelos con Brasil\".",
+        "summary_it": "Analisi politica pubblicata su Mundo Político il 2026-01-16, con focus su \"Analisi delle conseguenze dei perdoni di Trump e paralleli con il Brasile\".",
+        "summary_he": "ניתוח פוליטי שפורסם ב-Mundo Político ב-2026-01-16, עם דגש על \"ניתוח השלכות החנינות של טראמפ ומקבילות עם ברזיל\"."
       },
       {
         "position": 7,
@@ -704,7 +752,15 @@ export const knowledgeData = {
         "slug": "7-discrepancias-no-brasil-analise-critica-da-economia-e-politica-atuais",
         "canonicalPath": "/mundo-politico/7-discrepancias-no-brasil-analise-critica-da-economia-e-politica-atuais",
         "publishedAt": "2026-01-16",
-        "summary": "Análise política publicada no portal Mundo Político em 2026-01-16, com foco em \"Discrepâncias no Brasil: análise crítica da economia e política atuais\"."
+        "summary": "Análise política publicada no portal Mundo Político em 2026-01-16, com foco em \"Discrepâncias no Brasil: análise crítica da economia e política atuais\".",
+        "headline_en": "Discrepancies in Brazil: critical analysis of current economics and politics",
+        "headline_es": "Discrepancias en Brasil: análisis crítico de la economía y política actuales",
+        "headline_it": "Discrepanze in Brasile: analisi critica dell'economia e della politica attuali",
+        "headline_he": "פערים בברזיל: ניתוח ביקורתי של הכלכלה והפוליטיקה הנוכחיות",
+        "summary_en": "Political analysis published on Mundo Político on 2026-01-16, focused on \"Discrepancies in Brazil: critical analysis of current economics and politics\".",
+        "summary_es": "Análisis político publicado en Mundo Político el 2026-01-16, con enfoque en \"Discrepancias en Brasil: análisis crítico de la economía y política actuales\".",
+        "summary_it": "Analisi politica pubblicata su Mundo Político il 2026-01-16, con focus su \"Discrepanze in Brasile: analisi critica dell'economia e della politica attuali\".",
+        "summary_he": "ניתוח פוליטי שפורסם ב-Mundo Político ב-2026-01-16, עם דגש על \"פערים בברזיל: ניתוח ביקורתי של הכלכלה והפוליטיקה הנוכחיות\"."
       },
       {
         "position": 8,
@@ -714,7 +770,15 @@ export const knowledgeData = {
         "slug": "8-insatisfacao-popular-cresce-como-um-video-viral-no-instagram-expoe-gasto",
         "canonicalPath": "/mundo-politico/8-insatisfacao-popular-cresce-como-um-video-viral-no-instagram-expoe-gasto",
         "publishedAt": "2026-01-16",
-        "summary": "Análise política publicada no portal Mundo Político em 2026-01-16, com foco em \"Insatisfação popular cresce: como um vídeo viral no Instagram expõe gastos governamentais\"."
+        "summary": "Análise política publicada no portal Mundo Político em 2026-01-16, com foco em \"Insatisfação popular cresce: como um vídeo viral no Instagram expõe gastos governamentais\".",
+        "headline_en": "Popular dissatisfaction grows: how a viral Instagram video exposes government spending",
+        "headline_es": "La insatisfacción popular crece: cómo un video viral en Instagram expone gastos gubernamentales",
+        "headline_it": "L'insoddisfazione popolare cresce: come un video virale su Instagram espone le spese governative",
+        "headline_he": "חוסר שביעות רצון ציבורית גובר",
+        "summary_en": "Political analysis published on Mundo Político on 2026-01-16, focused on \"Popular dissatisfaction grows: how a viral Instagram video exposes government spending\".",
+        "summary_es": "Análisis político publicado en Mundo Político el 2026-01-16, con enfoque en \"La insatisfacción popular crece: cómo un video viral en Instagram expone gastos gubernamentales\".",
+        "summary_it": "Analisi politica pubblicata su Mundo Político il 2026-01-16, con focus su \"L'insoddisfazione popolare cresce: come un video virale su Instagram espone le spese governative\".",
+        "summary_he": "ניתוח פוליטי שפורסם ב-Mundo Político ב-2026-01-16, עם דגש על \"חוסר שביעות רצון ציבורית גובר\"."
       },
       {
         "position": 9,
@@ -724,7 +788,15 @@ export const knowledgeData = {
         "slug": "9-reforma-eleitoral-no-brasil-necessidade-de-maior-transparencia-e-compara",
         "canonicalPath": "/mundo-politico/9-reforma-eleitoral-no-brasil-necessidade-de-maior-transparencia-e-compara",
         "publishedAt": "2026-01-16",
-        "summary": "Análise política publicada no portal Mundo Político em 2026-01-16, com foco em \"Reforma eleitoral no Brasil: necessidade de maior transparência e comparação com os EUA\"."
+        "summary": "Análise política publicada no portal Mundo Político em 2026-01-16, com foco em \"Reforma eleitoral no Brasil: necessidade de maior transparência e comparação com os EUA\".",
+        "headline_en": "Electoral reform in Brazil: need for greater transparency",
+        "headline_es": "Reforma electoral en Brasil: necesidad de mayor transparencia",
+        "headline_it": "Riforma elettorale in Brasile: necessità di maggiore trasparenza",
+        "headline_he": "רפורמה בבחירות בברזיל: הצורך בשקיפות רבה יותר",
+        "summary_en": "Political analysis published on Mundo Político on 2026-01-16, focused on \"Electoral reform in Brazil: need for greater transparency\".",
+        "summary_es": "Análisis político publicado en Mundo Político el 2026-01-16, con enfoque en \"Reforma electoral en Brasil: necesidad de mayor transparencia\".",
+        "summary_it": "Analisi politica pubblicata su Mundo Político il 2026-01-16, con focus su \"Riforma elettorale in Brasile: necessità di maggiore trasparenza\".",
+        "summary_he": "ניתוח פוליטי שפורסם ב-Mundo Político ב-2026-01-16, עם דגש על \"רפורמה בבחירות בברזיל: הצורך בשקיפות רבה יותר\"."
       },
       {
         "position": 10,
@@ -734,7 +806,15 @@ export const knowledgeData = {
         "slug": "10-fiscalizacao-do-pix-estrategia-do-governo-lula-contra-a-sonegacao",
         "canonicalPath": "/mundo-politico/10-fiscalizacao-do-pix-estrategia-do-governo-lula-contra-a-sonegacao",
         "publishedAt": "2026-01-17",
-        "summary": "Análise política publicada no portal Mundo Político em 2026-01-17, com foco em \"Fiscalização do Pix: estratégia do governo Lula contra a sonegação\"."
+        "summary": "Análise política publicada no portal Mundo Político em 2026-01-17, com foco em \"Fiscalização do Pix: estratégia do governo Lula contra a sonegação\".",
+        "headline_en": "Pix monitoring: Lula government strategy against tax evasion",
+        "headline_es": "Fiscalización del Pix: estrategia del gobierno Lula contra la evasión fiscal",
+        "headline_it": "Monitoraggio del Pix: strategia del governo Lula contro l'evasione fiscale",
+        "headline_he": "פיקוח על מערכת Pix: אסטרטגיית ממשלת לולה נגד העלמת מסים",
+        "summary_en": "Political analysis published on Mundo Político on 2026-01-17, focused on \"Pix monitoring: Lula government strategy against tax evasion\".",
+        "summary_es": "Análisis político publicado en Mundo Político el 2026-01-17, con enfoque en \"Fiscalización del Pix: estrategia del gobierno Lula contra la evasión fiscal\".",
+        "summary_it": "Analisi politica pubblicata su Mundo Político il 2026-01-17, con focus su \"Monitoraggio del Pix: strategia del governo Lula contro l'evasione fiscale\".",
+        "summary_he": "ניתוח פוליטי שפורסם ב-Mundo Político ב-2026-01-17, עם דגש על \"פיקוח על מערכת Pix: אסטרטגיית ממשלת לולה נגד העלמת מסים\"."
       },
       {
         "position": 11,
@@ -744,7 +824,15 @@ export const knowledgeData = {
         "slug": "11-impacto-da-geopolitica-nos-mercados-tensoes-eua-china-e-o-futuro-economi",
         "canonicalPath": "/mundo-politico/11-impacto-da-geopolitica-nos-mercados-tensoes-eua-china-e-o-futuro-economi",
         "publishedAt": "2025-02-20",
-        "summary": "Análise política publicada no portal Mundo Político em 2025-02-20, com foco em \"Impacto da geopolítica nos mercados: tensões EUA–China e o futuro econômico\"."
+        "summary": "Análise política publicada no portal Mundo Político em 2025-02-20, com foco em \"Impacto da geopolítica nos mercados: tensões EUA–China e o futuro econômico\".",
+        "headline_en": "Geopolitical impact on markets: US-China tensions and the economic future",
+        "headline_es": "Impacto de la geopolítica en los mercados: tensiones EE.UU.–China y el futuro económico",
+        "headline_it": "Impatto della geopolitica sui mercati: tensioni USA-Cina e il futuro economico",
+        "headline_he": "השפעת הגיאופוליטיקה על השווקים: מתחים ארה\"ב-סין",
+        "summary_en": "Political analysis published on Mundo Político on 2025-02-20, focused on \"Geopolitical impact on markets: US-China tensions and the economic future\".",
+        "summary_es": "Análisis político publicado en Mundo Político el 2025-02-20, con enfoque en \"Impacto de la geopolítica en los mercados: tensiones EE.UU.–China y el futuro económico\".",
+        "summary_it": "Analisi politica pubblicata su Mundo Político il 2025-02-20, con focus su \"Impatto della geopolitica sui mercati: tensioni USA-Cina e il futuro economico\".",
+        "summary_he": "ניתוח פוליטי שפורסם ב-Mundo Político ב-2025-02-20, עם דגש על \"השפעת הגיאופוליטיקה על השווקים: מתחים ארה\"ב-סין\"."
       },
       {
         "position": 12,
@@ -754,7 +842,15 @@ export const knowledgeData = {
         "slug": "12-combate-a-inflacao-no-governo-lula-estrategias-e-impactos-nos-gastos-pub",
         "canonicalPath": "/mundo-politico/12-combate-a-inflacao-no-governo-lula-estrategias-e-impactos-nos-gastos-pub",
         "publishedAt": "2025-02-09",
-        "summary": "Análise política publicada no portal Mundo Político em 2025-02-09, com foco em \"Combate à inflação no governo Lula: estratégias e impactos nos gastos públicos\"."
+        "summary": "Análise política publicada no portal Mundo Político em 2025-02-09, com foco em \"Combate à inflação no governo Lula: estratégias e impactos nos gastos públicos\".",
+        "headline_en": "Fighting inflation under Lula: strategies and impacts on public spending",
+        "headline_es": "Combate a la inflación en el gobierno Lula: estrategias e impactos en el gasto público",
+        "headline_it": "Lotta all'inflazione nel governo Lula: strategie e impatti sulla spesa pubblica",
+        "headline_he": "מלחמה באינפלציה בממשלת לולה: אסטרטגיות והשפעות",
+        "summary_en": "Political analysis published on Mundo Político on 2025-02-09, focused on \"Fighting inflation under Lula: strategies and impacts on public spending\".",
+        "summary_es": "Análisis político publicado en Mundo Político el 2025-02-09, con enfoque en \"Combate a la inflación en el gobierno Lula: estrategias e impactos en el gasto público\".",
+        "summary_it": "Analisi politica pubblicata su Mundo Político il 2025-02-09, con focus su \"Lotta all'inflazione nel governo Lula: strategie e impatti sulla spesa pubblica\".",
+        "summary_he": "ניתוח פוליטי שפורסם ב-Mundo Político ב-2025-02-09, עם דגש על \"מלחמה באינפלציה בממשלת לולה: אסטרטגיות והשפעות\"."
       },
       {
         "position": 13,
@@ -764,7 +860,15 @@ export const knowledgeData = {
         "slug": "13-governo-lula-confronta-alta-dos-precos-de-alimentos-estrategias-e-impact",
         "canonicalPath": "/mundo-politico/13-governo-lula-confronta-alta-dos-precos-de-alimentos-estrategias-e-impact",
         "publishedAt": "2025-02-18",
-        "summary": "Análise política publicada no portal Mundo Político em 2025-02-18, com foco em \"Governo Lula confronta alta dos preços de alimentos: estratégias e impactos internos\"."
+        "summary": "Análise política publicada no portal Mundo Político em 2025-02-18, com foco em \"Governo Lula confronta alta dos preços de alimentos: estratégias e impactos internos\".",
+        "headline_en": "Lula government confronts rising food prices: strategies and domestic impacts",
+        "headline_es": "Gobierno Lula confronta el alza de precios de alimentos: estrategias e impactos",
+        "headline_it": "Il governo Lula affronta l'aumento dei prezzi alimentari: strategie e impatti",
+        "headline_he": "ממשלת לולה מתמודדת עם עליית מחירי המזון",
+        "summary_en": "Political analysis published on Mundo Político on 2025-02-18, focused on \"Lula government confronts rising food prices: strategies and domestic impacts\".",
+        "summary_es": "Análisis político publicado en Mundo Político el 2025-02-18, con enfoque en \"Gobierno Lula confronta el alza de precios de alimentos: estrategias e impactos\".",
+        "summary_it": "Analisi politica pubblicata su Mundo Político il 2025-02-18, con focus su \"Il governo Lula affronta l'aumento dei prezzi alimentari: strategie e impatti\".",
+        "summary_he": "ניתוח פוליטי שפורסם ב-Mundo Político ב-2025-02-18, עם דגש על \"ממשלת לולה מתמודדת עם עליית מחירי המזון\"."
       },
       {
         "position": 14,
@@ -774,7 +878,15 @@ export const knowledgeData = {
         "slug": "14-lewandowski-desafia-eua-sobre-deportacoes-algemadas-impacto-nas-relacoes",
         "canonicalPath": "/mundo-politico/14-lewandowski-desafia-eua-sobre-deportacoes-algemadas-impacto-nas-relacoes",
         "publishedAt": "2025-02-18",
-        "summary": "Análise política publicada no portal Mundo Político em 2025-02-18, com foco em \"Lewandowski desafia EUA sobre deportações algemadas: impacto nas relações Brasil-EUA\"."
+        "summary": "Análise política publicada no portal Mundo Político em 2025-02-18, com foco em \"Lewandowski desafia EUA sobre deportações algemadas: impacto nas relações Brasil-EUA\".",
+        "headline_en": "Lewandowski challenges US on handcuffed deportations: impact on Brazil-US relations",
+        "headline_es": "Lewandowski desafía a EE.UU. sobre deportaciones esposadas",
+        "headline_it": "Lewandowski sfida gli USA sulle deportazioni ammanettate",
+        "headline_he": "לוונדובסקי מאתגר את ארה\"ב בנושא גירושים באזיקים",
+        "summary_en": "Political analysis published on Mundo Político on 2025-02-18, focused on \"Lewandowski challenges US on handcuffed deportations: impact on Brazil-US relations\".",
+        "summary_es": "Análisis político publicado en Mundo Político el 2025-02-18, con enfoque en \"Lewandowski desafía a EE.UU. sobre deportaciones esposadas\".",
+        "summary_it": "Analisi politica pubblicata su Mundo Político il 2025-02-18, con focus su \"Lewandowski sfida gli USA sulle deportazioni ammanettate\".",
+        "summary_he": "ניתוח פוליטי שפורסם ב-Mundo Político ב-2025-02-18, עם דגש על \"לוונדובסקי מאתגר את ארה\"ב בנושא גירושים באזיקים\"."
       },
       {
         "position": 15,
@@ -784,7 +896,15 @@ export const knowledgeData = {
         "slug": "15-polemica-em-porto-alegre-performance-de-jesus-no-carnaval-reacende-debat",
         "canonicalPath": "/mundo-politico/15-polemica-em-porto-alegre-performance-de-jesus-no-carnaval-reacende-debat",
         "publishedAt": "2025-02-17",
-        "summary": "Análise política publicada no portal Mundo Político em 2025-02-17, com foco em \"Polêmica em Porto Alegre: performance de \"Jesus\" no Carnaval reacende debate\"."
+        "summary": "Análise política publicada no portal Mundo Político em 2025-02-17, com foco em \"Polêmica em Porto Alegre: performance de \"Jesus\" no Carnaval reacende debate\".",
+        "headline_en": "Controversy in Porto Alegre: Jesus performance at Carnival reignites debate",
+        "headline_es": "Polémica en Porto Alegre: performance de Jesús en el Carnaval reaviva debate",
+        "headline_it": "Polemica a Porto Alegre: performance di Gesù al Carnevale riaccende il dibattito",
+        "headline_he": "מחלוקת בפורטו אלגרי: הופעת ישוע בקרנבל מחדשת ויכוח",
+        "summary_en": "Political analysis published on Mundo Político on 2025-02-17, focused on \"Controversy in Porto Alegre: Jesus performance at Carnival reignites debate\".",
+        "summary_es": "Análisis político publicado en Mundo Político el 2025-02-17, con enfoque en \"Polémica en Porto Alegre: performance de Jesús en el Carnaval reaviva debate\".",
+        "summary_it": "Analisi politica pubblicata su Mundo Político il 2025-02-17, con focus su \"Polemica a Porto Alegre: performance di Gesù al Carnevale riaccende il dibattito\".",
+        "summary_he": "ניתוח פוליטי שפורסם ב-Mundo Político ב-2025-02-17, עם דגש על \"מחלוקת בפורטו אלגרי: הופעת ישוע בקרנבל מחדשת ויכוח\"."
       },
       {
         "position": 16,
@@ -794,7 +914,15 @@ export const knowledgeData = {
         "slug": "16-relacao-brasil-eua-impacto-de-trump-e-eduardo-bolsonaro-na-politica-glob",
         "canonicalPath": "/mundo-politico/16-relacao-brasil-eua-impacto-de-trump-e-eduardo-bolsonaro-na-politica-glob",
         "publishedAt": "2025-02-12",
-        "summary": "Análise política publicada no portal Mundo Político em 2025-02-12, com foco em \"Relação Brasil–EUA: impacto de Trump e Eduardo Bolsonaro na política global\"."
+        "summary": "Análise política publicada no portal Mundo Político em 2025-02-12, com foco em \"Relação Brasil–EUA: impacto de Trump e Eduardo Bolsonaro na política global\".",
+        "headline_en": "Brazil-US relations: impact of Trump and Eduardo Bolsonaro on global politics",
+        "headline_es": "Relación Brasil-EE.UU.: impacto de Trump y Eduardo Bolsonaro en la política global",
+        "headline_it": "Relazioni Brasile-USA: impatto di Trump ed Eduardo Bolsonaro sulla politica globale",
+        "headline_he": "יחסי ברזיל-ארה\"ב: השפעת טראמפ ואדוארדו בולסונארו",
+        "summary_en": "Political analysis published on Mundo Político on 2025-02-12, focused on \"Brazil-US relations: impact of Trump and Eduardo Bolsonaro on global politics\".",
+        "summary_es": "Análisis político publicado en Mundo Político el 2025-02-12, con enfoque en \"Relación Brasil-EE.UU.: impacto de Trump y Eduardo Bolsonaro en la política global\".",
+        "summary_it": "Analisi politica pubblicata su Mundo Político il 2025-02-12, con focus su \"Relazioni Brasile-USA: impatto di Trump ed Eduardo Bolsonaro sulla politica globale\".",
+        "summary_he": "ניתוח פוליטי שפורסם ב-Mundo Político ב-2025-02-12, עם דגש על \"יחסי ברזיל-ארה\"ב: השפעת טראמפ ואדוארדו בולסונארו\"."
       },
       {
         "position": 17,
@@ -804,7 +932,15 @@ export const knowledgeData = {
         "slug": "17-tancredo-neves-e-o-impacto-no-40-aniversario-de-uma-transicao-democratic",
         "canonicalPath": "/mundo-politico/17-tancredo-neves-e-o-impacto-no-40-aniversario-de-uma-transicao-democratic",
         "publishedAt": "2025-02-20",
-        "summary": "Análise política publicada no portal Mundo Político em 2025-02-20, com foco em \"Tancredo Neves e o impacto no 40º aniversário de uma transição democrática\"."
+        "summary": "Análise política publicada no portal Mundo Político em 2025-02-20, com foco em \"Tancredo Neves e o impacto no 40º aniversário de uma transição democrática\".",
+        "headline_en": "Tancredo Neves and the impact on the 40th anniversary of a democratic transition",
+        "headline_es": "Tancredo Neves y el impacto en el 40º aniversario de una transición democrática",
+        "headline_it": "Tancredo Neves e l'impatto nel 40° anniversario di una transizione democratica",
+        "headline_he": "טנקרדו נבס וההשפעה ביום השנה ה-40 למעבר הדמוקרטי",
+        "summary_en": "Political analysis published on Mundo Político on 2025-02-20, focused on \"Tancredo Neves and the impact on the 40th anniversary of a democratic transition\".",
+        "summary_es": "Análisis político publicado en Mundo Político el 2025-02-20, con enfoque en \"Tancredo Neves y el impacto en el 40º aniversario de una transición democrática\".",
+        "summary_it": "Analisi politica pubblicata su Mundo Político il 2025-02-20, con focus su \"Tancredo Neves e l'impatto nel 40° anniversario di una transizione democratica\".",
+        "summary_he": "ניתוח פוליטי שפורסם ב-Mundo Político ב-2025-02-20, עם דגש על \"טנקרדו נבס וההשפעה ביום השנה ה-40 למעבר הדמוקרטי\"."
       },
       {
         "position": 18,
@@ -814,7 +950,15 @@ export const knowledgeData = {
         "slug": "18-vigilancia-do-governo-lula-e-liberdade-de-expressao-impacto-no-brasil-mo",
         "canonicalPath": "/mundo-politico/18-vigilancia-do-governo-lula-e-liberdade-de-expressao-impacto-no-brasil-mo",
         "publishedAt": "2025-02-18",
-        "summary": "Análise política publicada no portal Mundo Político em 2025-02-18, com foco em \"Vigilância do governo Lula e liberdade de expressão: impacto no Brasil moderno\"."
+        "summary": "Análise política publicada no portal Mundo Político em 2025-02-18, com foco em \"Vigilância do governo Lula e liberdade de expressão: impacto no Brasil moderno\".",
+        "headline_en": "Lula government surveillance and freedom of expression: impact on modern Brazil",
+        "headline_es": "Vigilancia del gobierno Lula y libertad de expresión: impacto en el Brasil moderno",
+        "headline_it": "Sorveglianza del governo Lula e libertà di espressione: impatto sul Brasile moderno",
+        "headline_he": "מעקב ממשלת לולה וחופש ביטוי: השפעה על ברזיל המודרנית",
+        "summary_en": "Political analysis published on Mundo Político on 2025-02-18, focused on \"Lula government surveillance and freedom of expression: impact on modern Brazil\".",
+        "summary_es": "Análisis político publicado en Mundo Político el 2025-02-18, con enfoque en \"Vigilancia del gobierno Lula y libertad de expresión: impacto en el Brasil moderno\".",
+        "summary_it": "Analisi politica pubblicata su Mundo Político il 2025-02-18, con focus su \"Sorveglianza del governo Lula e libertà di espressione: impatto sul Brasile moderno\".",
+        "summary_he": "ניתוח פוליטי שפורסם ב-Mundo Político ב-2025-02-18, עם דגש על \"מעקב ממשלת לולה וחופש ביטוי: השפעה על ברזיל המודרנית\"."
       },
       {
         "position": 19,
@@ -824,7 +968,15 @@ export const knowledgeData = {
         "slug": "19-analise-atual-impacto-dos-eventos-historicos-na-politica-contemporanea",
         "canonicalPath": "/mundo-politico/19-analise-atual-impacto-dos-eventos-historicos-na-politica-contemporanea",
         "publishedAt": "2025-02-18",
-        "summary": "Análise política publicada no portal Mundo Político em 2025-02-18, com foco em \"Análise atual: impacto dos eventos históricos na política contemporânea\"."
+        "summary": "Análise política publicada no portal Mundo Político em 2025-02-18, com foco em \"Análise atual: impacto dos eventos históricos na política contemporânea\".",
+        "headline_en": "Current analysis: impact of historical events on contemporary politics",
+        "headline_es": "Análisis actual: impacto de los eventos históricos en la política contemporánea",
+        "headline_it": "Analisi attuale: impatto degli eventi storici sulla politica contemporanea",
+        "headline_he": "ניתוח עכשווי: השפעת אירועים היסטוריים על הפוליטיקה בת-זמננו",
+        "summary_en": "Political analysis published on Mundo Político on 2025-02-18, focused on \"Current analysis: impact of historical events on contemporary politics\".",
+        "summary_es": "Análisis político publicado en Mundo Político el 2025-02-18, con enfoque en \"Análisis actual: impacto de los eventos históricos en la política contemporánea\".",
+        "summary_it": "Analisi politica pubblicata su Mundo Político il 2025-02-18, con focus su \"Analisi attuale: impatto degli eventi storici sulla politica contemporanea\".",
+        "summary_he": "ניתוח פוליטי שפורסם ב-Mundo Político ב-2025-02-18, עם דגש על \"ניתוח עכשווי: השפעת אירועים היסטוריים על הפוליטיקה בת-זמננו\"."
       }
     ]
   },

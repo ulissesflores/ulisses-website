@@ -4,24 +4,23 @@ import { common as en } from './i18n/en/common';
 import { common as es } from './i18n/es/common';
 import { common as itLocale } from './i18n/it/common';
 import { common as he } from './i18n/he/common';
-import { publications, publicationTranslations, blogHeadlineTranslations } from './publications';
+import { publications } from './publications';
 import { knowledgeData } from './knowledge';
 
 // ─── FASE 1: Menu Integrity Test ────────────────────────────────────────────────
-// Guarantees that nav hrefs are NEVER scrambled by AI translation.
-// If Gemini hallucinate a href during translation, this test breaks the build.
+// Garante que hrefs de navegação NUNCA sejam embaralhados por tradução IA.
 
 describe('Menu Integrity — nav.categories href parity', () => {
   const locales = { en, es, it: itLocale, he };
   const ptBrCategories = ptBr.nav.categories;
 
-  it('all locales have the same number of nav categories', () => {
+  it('todos os locales têm o mesmo número de categorias de nav', () => {
     for (const [name, locale] of Object.entries(locales)) {
       expect(locale.nav.categories.length, `${name} categories count`).toBe(ptBrCategories.length);
     }
   });
 
-  it('all locales have the same number of items per category', () => {
+  it('todos os locales têm o mesmo número de items por categoria', () => {
     for (const [name, locale] of Object.entries(locales)) {
       for (let c = 0; c < ptBrCategories.length; c++) {
         expect(
@@ -32,7 +31,7 @@ describe('Menu Integrity — nav.categories href parity', () => {
     }
   });
 
-  it('all locales have IDENTICAL href values at every position', () => {
+  it('todos os locales têm valores href IDÊNTICOS em cada posição', () => {
     for (const [name, locale] of Object.entries(locales)) {
       for (let c = 0; c < ptBrCategories.length; c++) {
         for (let i = 0; i < ptBrCategories[c].items.length; i++) {
@@ -44,7 +43,7 @@ describe('Menu Integrity — nav.categories href parity', () => {
     }
   });
 
-  it('no nav href contains a bare anchor (#) without leading slash', () => {
+  it('nenhum nav href contém âncora (#) sem barra inicial', () => {
     for (const [name, locale] of Object.entries(locales)) {
       for (const cat of locale.nav.categories) {
         for (const item of cat.items) {
@@ -58,70 +57,73 @@ describe('Menu Integrity — nav.categories href parity', () => {
   });
 });
 
-// ─── FASE 2: Publication Translations Completeness (Overlay) ─────────────────────
-// Guarantees that every publication has translations in the overlay file.
+// ─── FASE 2: Traduções Nativas de Publicações (Gerador) ─────────────────────────
+// Valida que o gerador injetou todas as traduções diretamente nos objetos Publication.
 
-describe('Publication Translations — overlay completeness', () => {
+describe('Traduções nativas de publicações — completude', () => {
   const requiredLocales = ['en', 'es', 'it', 'he'] as const;
 
-  it('every publication has an entry in publicationTranslations', () => {
+  it('toda publicação tem translations definido', () => {
     for (const pub of publications) {
       expect(
-        publicationTranslations[pub.id],
-        `Publication "${pub.id}" is missing from publicationTranslations overlay`,
+        pub.translations,
+        `Publicação "${pub.id}" não tem translations`,
       ).toBeDefined();
     }
   });
 
   for (const locale of requiredLocales) {
-    it(`every publication has a non-empty title for ${locale}`, () => {
+    it(`toda publicação tem título traduzido para ${locale}`, () => {
       for (const pub of publications) {
-        const title = publicationTranslations[pub.id]?.[locale];
+        const title = pub.translations?.[locale];
         expect(
           typeof title === 'string' && title.length > 0,
-          `Publication "${pub.id}" is missing title for ${locale}`,
+          `Publicação "${pub.id}" sem título ${locale}`,
         ).toBe(true);
       }
     });
   }
 
   for (const locale of requiredLocales) {
-    it(`every publication has a non-empty summary_${locale}`, () => {
+    it(`toda publicação tem summary_${locale}`, () => {
       for (const pub of publications) {
-        const key = `summary_${locale}` as keyof typeof publicationTranslations[string];
-        const summary = publicationTranslations[pub.id]?.[key];
+        const key = `summary_${locale}` as keyof NonNullable<typeof pub.translations>;
+        const summary = pub.translations?.[key];
         expect(
           typeof summary === 'string' && summary.length > 0,
-          `Publication "${pub.id}" is missing summary_${locale}`,
+          `Publicação "${pub.id}" sem summary_${locale}`,
         ).toBe(true);
       }
     });
   }
 });
 
-// ─── FASE 3: Blog Headline Translations (Overlay) ────────────────────────────────
-// Guarantees that every blog post has localized headlines in the overlay file.
+// ─── FASE 3: Traduções Nativas do Blog (Gerador) ────────────────────────────────
+// Valida que o gerador injetou headlines traduzidas diretamente nos objetos blog.
 
-describe('Blog Headline Translations — overlay completeness', () => {
+describe('Traduções nativas do blog — completude', () => {
   const posts = knowledgeData.blog.posts;
   const requiredLocales = ['en', 'es', 'it', 'he'] as const;
 
-  it('every blog post has an entry in blogHeadlineTranslations', () => {
-    for (const post of posts) {
-      expect(
-        blogHeadlineTranslations[post.slug],
-        `Blog "${post.slug}" is missing from blogHeadlineTranslations overlay`,
-      ).toBeDefined();
-    }
-  });
-
   for (const locale of requiredLocales) {
-    it(`every blog post has a non-empty headline for ${locale}`, () => {
+    it(`todo post tem headline_${locale} não-vazio`, () => {
       for (const post of posts) {
-        const headline = blogHeadlineTranslations[post.slug]?.[locale];
+        const headline = (post as Record<string, unknown>)[`headline_${locale}`];
         expect(
           typeof headline === 'string' && headline.length > 0,
-          `Blog "${post.slug}" is missing headline for ${locale}`,
+          `Post "${post.slug}" sem headline_${locale}`,
+        ).toBe(true);
+      }
+    });
+  }
+
+  for (const locale of requiredLocales) {
+    it(`todo post tem summary_${locale} não-vazio`, () => {
+      for (const post of posts) {
+        const summary = (post as Record<string, unknown>)[`summary_${locale}`];
+        expect(
+          typeof summary === 'string' && summary.length > 0,
+          `Post "${post.slug}" sem summary_${locale}`,
         ).toBe(true);
       }
     });

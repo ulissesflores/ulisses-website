@@ -3,7 +3,7 @@ import type { Locale } from '@/data/i18n';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { publicationCollections, publications, publicationCollectionTranslations, publicationTranslations, type PublicationCategory } from '@/data/publications';
+import { publicationCollections, publications, type PublicationCategory } from '@/data/publications';
 import { upkfMeta } from '@/data/generated/upkf.generated';
 import { AuthorHubCard } from '@/components/author-hub-card';
 import { getDictionary } from '@/lib/get-dictionary';
@@ -67,7 +67,8 @@ export default async function CategoryPage({ params }: PageProps) {
   const t = dict.category;
   const typedCategory = category as PublicationCategory;
   const collection = publicationCollections[typedCategory];
-  const collTrans = locale !== 'pt-br' ? publicationCollectionTranslations[typedCategory]?.[locale] : undefined;
+  const collHeading = locale !== 'pt-br' ? collection.headings?.[locale] : undefined;
+  const collDescription = locale !== 'pt-br' ? collection.descriptions?.[locale] : undefined;
   const story = t.stories[typedCategory as keyof typeof t.stories];
   const categoryPublications = publications
     .filter((publication) => publication.category === typedCategory)
@@ -122,18 +123,18 @@ export default async function CategoryPage({ params }: PageProps) {
             </Link>
             <span className='text-xs text-neutral-600'>→</span>
             <span className='text-xs font-mono uppercase tracking-widest text-neutral-500'>
-              {collTrans ? typedCategory.charAt(0).toUpperCase() + typedCategory.slice(1) : collection.title}
+              {collHeading ? typedCategory.charAt(0).toUpperCase() + typedCategory.slice(1) : collection.title}
             </span>
           </div>
 
           {/* H1 */}
           <h1 className='text-3xl md:text-5xl font-bold text-white mb-6 leading-tight tracking-tight'>
-            {story?.h1 || collTrans?.heading || collection.heading}
+            {story?.h1 || collHeading || collection.heading}
           </h1>
 
           {/* Lead paragraph */}
           <p className='text-lg text-neutral-400 leading-relaxed mb-8 max-w-3xl'>
-            {story?.lead || collTrans?.description || collection.description}
+            {story?.lead || collDescription || collection.description}
           </p>
 
           {/* Authority block */}
@@ -207,11 +208,11 @@ export default async function CategoryPage({ params }: PageProps) {
               </div>
               <h2 className='text-2xl font-semibold text-white mb-3'>
                 <Link href={`/${publication.category}/${publication.id}`} className='hover:text-emerald-400 transition-colors'>
-                  {(locale !== 'pt-br' && publicationTranslations[publication.id]?.[locale as keyof typeof publicationTranslations[string]]) || publication.title}
+                  {(locale !== 'pt-br' && publication.translations?.[locale as keyof NonNullable<typeof publication.translations>]) || publication.title}
                 </Link>
               </h2>
               <p className='text-neutral-400 mb-4 leading-relaxed'>
-                {(locale !== 'pt-br' && publicationTranslations[publication.id]?.[`summary_${locale}` as keyof typeof publicationTranslations[string]]) || publication.summary}
+                {(locale !== 'pt-br' && publication.translations?.[`summary_${locale}` as keyof NonNullable<typeof publication.translations>]) || publication.summary}
               </p>
               <div className='flex flex-wrap gap-2'>
                 {publication.tags.map((tag) => (
