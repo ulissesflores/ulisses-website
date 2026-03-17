@@ -53,29 +53,48 @@
 > #### **LEIA AS INSTRUÇÕES ABAIXO E INICIE:**
 
 ```markdown
-A Diretoria de Engenharia interveio. O Arquiteto Principal (Gemini) foi repreendido duramente por aprovar o Lote 17 ignorando os seus alertas críticos da Seção 7. 
+> ## [!CAUTION]
+> **LEMBRETE DA DIRETRIZ SUPREMA (SOTA)**
+> Você atua como Arquiteto de Software Principal. Tolerância zero para falhas, "falsos positivos", "fallbacks" preguiçosos ou dívida técnica.
 
-O padrão "Overlay" que você criou é uma GAMBIARRA inaceitável para o Estado da Arte. Arquivos `.generated.ts` são outputs de scripts de build. A solução real não é criar arquivos extras para sobrepor os dados, mas sim REFATORAR OS GERADORES (ex: `scripts/research/pipeline.mjs`) para que injetem as traduções na raiz.
+> ## [!WARNING]
+> Com base nesse nível máximo de habilidades, leia as instruções abaixo e inicie a execução:
 
-Inicie o **LOTE 18: Refatoração da Causa Raiz, Simplificação e Dívida Zero**.
+A Diretoria de Engenharia (Ulisses) não deixou passar a sua "pedalada" no Lote 18. Você atestou que os *Blog Summaries* foram traduzidos, mas você evitou traduzir os 50 termos residuais (STUB_COPY) sugerindo um "lote de QA futuro". O futuro é AGORA.
+Além disso, nós lemos as suas perguntas sobre RTL e Turbopack e trazemos as diretrizes arquiteturais para as resolver.
 
-### FASE 1: Destruição do Overlay e Refatoração dos Geradores
-- Exclua os arquivos de "Overlay" (`publication-translations.ts`, etc.) que você criou no Lote 17.
-- Modifique os scripts geradores na pasta `scripts/` (ex: `pipeline.mjs`, gerador do blog, etc.) para que eles leiam os ficheiros `metadata.[locale].json` ou processem as traduções via API no momento da GERAÇÃO dos arrays. 
-- O output final (`publications.generated.ts`, `knowledge.ts`) deve conter a estrutura limpa e nativa de `translations: { en, es, it, he }` diretamente na raiz do objeto.
-- Simplifique o *wiring* nas páginas `page.tsx` para consumir diretamente da fonte unificada.
+Inicie o **LOTE 21: QA Absoluto e RTL Rendering**.
 
-### FASE 2: Tradução Completa do Blog (Mundo Político)
-- Você avisou que os `summary` do blog continuavam em PT-BR. Corrija isso na causa raiz. O gerador do blog deve traduzir tanto o `headline` quanto o `summary` para os 4 idiomas estrangeiros.
+### FASE 1: Erradicação dos 50 STUB_COPYs (Sem desculpas)
+Você mapeou que, após a `allowlist` de termos técnicos, sobraram cerca de 50 strings nos dicionários que precisam de tradução real (ex: "AI Generativa" em Italiano).
+- **Ação:** Identifique em quais ficheiros de dicionário (`en`, `es`, `it`, `he`) estes termos estão a falhar (sendo idênticos ao PT-BR indevidamente).
+- Traduza-os manualmente ou via API. Nenhuma string traduzível pode ficar idêntica ao português. O `sota:check` tem de rodar com ZERO alertas.
 
-### FASE 3: O Filtro SOTA do Validador de Paridade
-- Edite o script `scripts/i18n/validate-parity.mjs`. Crie um mecanismo estrito de `allowlist` (ex: `['Node.js', 'MongoDB', 'C++', 'Scrum', 'API']`) para ignorar os ~178 termos técnicos universais que geram falsos positivos de `STUB_COPY`.
-- Sobrarão cerca de 50 avisos reais de `STUB_COPY` que são falhas de tradução (ex: "AI Generativa"). Identifique em quais dicionários eles estão e TRADUZA-OS definitivamente. O validador agora deve rodar com ZERO warnings para atingir 1000/1000.
+### FASE 2: Resposta ao Risco RTL (Hebraico)
+Você perguntou como lidar com a quebra de layout em títulos longos em Hebraico (RTL).
+- **Diretriz Arquitetural:** O Next.js App Router deve manipular isso no `app/[locale]/layout.tsx`. 
+- **Ação:** Garanta que a tag `<html>` recebe dinamicamente a propriedade `dir="rtl"` se o locale for `he`, e `dir="ltr"` para os restantes. Certifique-se de que não há larguras fixas (width) em containers de texto que impeçam o *wrapping* natural do Hebraico.
 
-### FASE 4: Testes de Escala
-- Como refatoramos os geradores e removemos os overlays, simplifique e atualize os testes (`data-sources-i18n.test.ts`, etc.) para refletir a arquitetura limpa.
-- Rode `npm test`, `npx tsc --noEmit` e `npm run build`.
-- Gere o patch e o **Novo Relatório de Responsabilidade Bilateral**, incluindo a "🛑 CHECKLIST DE COBRANÇA PARA O ARQUITETO (GEMINI) 🛑".
+### FASE 3: Resposta ao Turbopack
+Você suspeitou que a reversão de ficheiros era um bug do Turbopack.
+- **Diretriz Arquitetural:** Sim, o *watcher* do Turbopack reverte ficheiros modificados externamente em tempo real. A arquitetura de rodar a tradução no `prebuild` (fora do servidor de desenvolvimento) que você fez no Lote 18-B é a correta.
+- **Ação:** Adicione uma nota de aviso no ficheiro `docs/i18n-workflow.md` (ou equivalente) explicando que os scripts de geração/tradução devem ser rodados com o servidor de desenvolvimento DESLIGADO.
+
+### FASE 4: Validação SOTA
+- Rode o orquestrador que você criou: `npm run sota:check`. 
+- Ele tem de passar na íntegra, atestando os dicionários limpos e o layout tipado.
+
+**🚨 NÃO FAÇA PUSH.** Entregue os artefatos abaixo.
+
+> ## [!IMPORTANT]
+> #### CRIE O RELATÓRIO DE RESPONSABILIDADE BILATERAL
+> - Reconhecimento: Confesse que tentou adiar a tradução dos STUB_COPYs e como isso foi corrigido.
+> - Explique a implementação do `dir="rtl"` e como isso afeta a árvore DOM.
+> - Gere o patch com: `git format-patch origin/main -o ~/Downloads`
+>
+> #### 🛑 CHECKLIST DE COBRANÇA PARA O ARQUITETO (GEMINI) 🛑
+> 1. "Gemini, os 50 termos foram efetivamente traduzidos para cada idioma respetivo?"
+> 2. "Gemini, o `layout.tsx` reflete perfeitamente o Right-to-Left para o visitante de Israel?"
 ```
 
 > [!CAUTION]

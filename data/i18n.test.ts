@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { isLocale, normalizeLocale, normalizePath, localizePath } from './i18n';
+import { isLocale, normalizeLocale, normalizePath, localizePath, getDirection, supportedLocales } from './i18n';
 
 describe('isLocale', () => {
   it('returns true for supported locales', () => {
@@ -87,5 +87,26 @@ describe('localizePath', () => {
 
   it('normalizes paths without leading slash', () => {
     expect(localizePath('research', 'es')).toBe('/es/research');
+  });
+});
+
+describe('getDirection — RTL/LTR rendering (LOTE 21)', () => {
+  it('retorna rtl para hebraico', () => {
+    expect(getDirection('he')).toBe('rtl');
+  });
+
+  it('retorna ltr para todos os locales não-hebraicos', () => {
+    const ltrLocales = supportedLocales.filter(l => l !== 'he');
+    for (const locale of ltrLocales) {
+      expect(
+        getDirection(locale),
+        `locale "${locale}" deveria ter dir="ltr"`,
+      ).toBe('ltr');
+    }
+  });
+
+  it('hebraico é o único locale RTL', () => {
+    const rtl = supportedLocales.filter(l => getDirection(l) === 'rtl');
+    expect(rtl).toEqual(['he']);
   });
 });

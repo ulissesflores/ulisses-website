@@ -1,23 +1,49 @@
 # 🌐 Fluxo de Trabalho de Internacionalização (i18n)
 
 > **Contrato SOTA:** Este documento define as regras absolutas para criação de conteúdo multilíngue no projeto `ulissesflores.com`.
+> Atualizado no **Lote 21** para refletir o Master Validation Pipeline (sota:check) e a arquitetura pós-Lote 18-B.
 
-## Arquitetura
+---
+
+## ⚠️ Aviso Crítico: Turbopack e Scripts de Geração
+
+> [!CAUTION]
+> O watcher do Turbopack (`next dev --turbopack`) **reverte** ficheiros modificados externamente em tempo real.
+> Isso significa que rodar scripts que alteram ficheiros `.generated.ts` ou dicionários i18n
+> enquanto o servidor de desenvolvimento está ativo **vai causar perda de dados**.
+>
+> **REGRA ABSOLUTA:** Scripts de geração e tradução (`upkf:generate`, `i18n:artifacts`, `seo:llms`)
+> devem ser rodados com o servidor de desenvolvimento **DESLIGADO**.
+>
+> O modo `--webpack` (`npm run dev`) não apresenta este problema, mas o modo `--turbopack`
+> (`npm run dev:turbopack`) sim.
+
+---
+
+## Arquitetura do Pipeline
 
 ```mermaid
 graph TD
-    A[Desenvolvedor cria conteúdo em pt-BR] --> B[git add + git commit]
-    B --> C{Husky Pre-Commit}
-    C --> D[sync-i18n.mjs - PHASE 1]
-    D --> D1[Dict .ts alterado? → Gemini traduz → git add]
-    C --> E[sync-i18n.mjs - PHASE 2]
-    E --> E1[.md alterado? → Gemini traduz → git add]
-    C --> F[seo:validate]
-    C --> G[seo:rich-results]
-    C --> H[i18n:parity]
-    C --> I[npm test]
-    I --> J[Commit completo com traduções incluídas]
+    A[Novo conteúdo em pt-BR] --> B[npm run build / prebuild]
+    B --> C[upkf:generate]
+    C --> D[translate-generated-artifacts.mjs]
+    D --> E["generate-llms-txt.mjs"]
+    E --> F[next build]
+    F --> G["sitemap.xml / robots.txt / feed.xml / llms.txt"]
+
+    H[git commit] --> I{Husky pre-commit}
+    I --> J["sota:check (5 gates)"]
+    J --> K["1. tsc --noEmit"]
+    J --> L["2. i18n:parity"]
+    J --> M["3. npm test (261+ testes)"]
+    J --> N["4. seo:validate"]
+    J --> O["5. seo:rich-results"]
+    
+    P[git push] --> Q{Husky pre-push}
+    Q --> R["sota:full (5 gates + next build)"]
 ```
+
+---
 
 ## Regra 1: Novas Páginas (React / JSX)
 
@@ -43,62 +69,65 @@ const dict = useDict('myPage');
 <p>{dict.description}</p>
 ```
 
-**O que acontece automaticamente:**  
-Ao dar `git commit`, o `sync-i18n.mjs` detecta a alteração em `data/i18n/pt-br/myPage.ts`, traduz via Gemini API para EN, ES, IT e HE, gera os ficheiros em `data/i18n/{locale}/myPage.ts`, e faz `git add` automático.
-
----
-
-## Regra 2: Novos Artigos / Whitepapers (Markdown)
-
-### Passo a Passo:
-
-1. **Crie o ficheiro Markdown** na pasta correta:
-   - Artigos de pesquisa: `public/research/YYYY-titulo-do-artigo.md`
-   - Ensaios: `public/essays/YYYY-titulo-do-ensaio.md`
-   - Sermões: `public/acervo-teologico/titulo/sermon.md`
-
-2. **Escreva apenas em Português (pt-BR).**
-
-3. **Faça `git add` e `git commit`.**
-
 **O que acontece automaticamente:**
-- O `sync-i18n.mjs` (PHASE 2) detecta o novo `.md` staged.
-- Chama a API Gemini para traduzir automaticamente.
-- Gera 4 variantes: `artigo.en.md`, `artigo.es.md`, `artigo.it.md`, `artigo.he.md`.
-- Faz `git add` automático nos ficheiros gerados.
-- O Next.js SSG pega as variantes no build e gera páginas localizadas.
-- O Sitemap e `llms.txt` são atualizados dinamicamente.
+O `prebuild` detecta novos textos no gerador de artefatos, traduz via Gemini API para EN, ES, IT e HE, e gera o conteúdo traduzido.
 
 ---
 
-## Pipeline Pre-Commit (Husky)
+## Regra 2: Novos Artigos / Whitepapers
 
-Cada `git commit` dispara **5 gates** automáticas:
-
-| # | Gate | Script | Função |
-|---|---|---|---|
-| 1 | **sync-i18n** (Phase 1) | `sync-i18n.mjs` | Traduz dicionários `.ts` alterados |
-| 2 | **sync-i18n** (Phase 2) | `sync-i18n.mjs` | Traduz Markdown `.md` alterados |
-| 3 | **SEO Validate** | `seo:validate` | Valida metadados estruturados |
-| 4 | **Rich Results** | `seo:rich-results` | Valida JSON-LD, DID, Schema.org |
-| 5 | **Parity** | `i18n:parity` | Valida paridade de chaves i18n |
-| 6 | **Tests** | `npm test` | Suite completa (224+ testes) |
-
-> [!IMPORTANT]  
-> O `sync-i18n.mjs` **nunca bloqueia** o commit. Se a API Gemini falhar, o commit prossegue com stubs.  
-> O `i18n:parity` e `npm test` **bloqueiam** se detectarem erros críticos.
+1. **Crie o ficheiro** na pasta correta (em Português pt-BR).
+2. **Execute `npm run build`.** O `prebuild` gera → traduz → gera llms.txt → compila.
+3. **Execute `npm run sota:check`** para garantir que tudo passa.
+4. **Commit.** O husky roda `sota:check` automaticamente.
 
 ---
 
-## Diretórios Monitorados
+## Regra 3: RTL (Hebraico)
 
-| Diretório | Tipo | Exemplo |
-|---|---|---|
-| `data/i18n/pt-br/*.ts` | Dicionários | `common.ts`, `home.ts`, `faq.ts` |
-| `public/research/*.md` | Artigos | `2025-lstm-asset-prediction.md` |
-| `public/essays/*.md` | Ensaios | `2024-theology-economic-order.md` |
-| `public/acervo-teologico/**` | Sermões | `sermon.md` |
-| `data/research/*.md` | UPKF / Artigos | `ulisses-flores-sovereign-upkf.md` |
+O locale `he` (Hebraico) usa layout Right-to-Left.
+- A tag `<html>` recebe `dir="rtl"` automaticamente via `getDirection(locale)` no `layout.tsx`.
+- A fonte Noto Sans Hebrew é carregada exclusivamente para `he`.
+- Não use `width` fixo em containers de texto — use `max-width` com `overflow-x-auto` para tabelas.
+
+---
+
+## Pipeline Pre-Commit: `sota:check` (A Lei do Código — Lote 20)
+
+Cada `git commit` dispara o **Master Validation Pipeline**:
+
+| # | Gate | Script | Função | Tempo |
+|---|---|---|---|---|
+| 1 | **TypeScript** | `tsc --noEmit` | Tipagem estrita | ~0.3s |
+| 2 | **i18n Parity** | `validate-parity.mjs` | 4420 chaves × 4 locales, 0 errors, 0 warnings | ~0.2s |
+| 3 | **Test Suite** | `vitest run` | 264+ testes (charset HE, anti-cópia, SEO, i18n) | ~0.4s |
+| 4 | **SEO Validate** | `validate-pre-deploy.mjs` | Canonical URLs, hreflang, meta tags | ~0.1s |
+| 5 | **Rich Results** | `validate-rich-results.mjs` | JSON-LD, DID, Schema.org | ~0.1s |
+
+> [!IMPORTANT]
+> O `sota:check` **aborta no primeiro erro** (exit 1). Não há "warnings aceitáveis".
+> Score exigido: **1000/1000**.
+
+### Pre-Push: `sota:full`
+Roda as mesmas 5 gates + `next build` (SSG completo).
+
+---
+
+## Pipeline de Build Automático
+
+```bash
+npm run build
+#   1. upkf:generate          → gera publications.generated.ts, knowledge.generated.ts
+#   2. translate-generated-artifacts.mjs → traduz campos faltantes via Gemini API
+#   3. generate-llms-txt.mjs  → gera public/llms.txt dinâmico
+#   4. next build              → SSG completo × 5 locales
+```
+
+> [!CAUTION]
+> Em **produção** (VERCEL=1 / CI=true), a ausência da `GEMINI_API_KEY` causa **Hard Fail** (exit 1).
+> Traduções faltantes em produção = deploy impedido. Configurar `GEMINI_API_KEY` nas env vars do provider.
+
+---
 
 ## Configuração
 
@@ -107,21 +136,24 @@ Cada `git commit` dispara **5 gates** automáticas:
 GEMINI_API_KEY=your-api-key-here
 ```
 
-## Comandos Manuais
+## Comandos Disponíveis
 
 ```bash
-# Traduzir todos os dicionários (forçar)
-node --env-file=.env.local scripts/i18n/sync-i18n.mjs --force
+# ── SOTA (único ponto de validação) ──────────────────
+npm run sota:check     # Roda 5 gates SEM build (pre-commit, ~2s)
+npm run sota:full      # Roda 5 gates COM build (pre-push, ~60s)
 
-# Traduzir um namespace específico
-node --env-file=.env.local scripts/i18n/sync-i18n.mjs --namespace=common
+# ── i18n ─────────────────────────────────────────────
+npm run i18n:parity               # Validar paridade de chaves
+npm run i18n:artifacts            # Traduzir artefatos gerados
+npm run i18n:artifacts:dry        # Dry run (sem alterar ficheiros)
+npm run i18n:full-check           # Generate + translate + parity
 
-# Traduzir artigos Markdown manualmente
-node --env-file=.env.local scripts/i18n/translate-md-via-gemini.mjs
+# ── SEO ──────────────────────────────────────────────
+npm run seo:validate              # Canonical URLs, hreflang
+npm run seo:rich-results          # JSON-LD, DID
+npm run seo:llms                  # Gerar public/llms.txt
 
-# Validar paridade i18n
-npm run i18n:parity
-
-# Dry run (sem escrever ficheiros)
-node --env-file=.env.local scripts/i18n/sync-i18n.mjs --force --dry-run
+# ── Build ────────────────────────────────────────────
+npm run build                     # Pipeline completo (generate → translate → llms → next build)
 ```
