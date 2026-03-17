@@ -56,9 +56,11 @@ const TRANSLATIONS = {
   'Explorar Simulação →': { en: 'Explore Simulation →', es: 'Explorar Simulación →', it: 'Esplora Simulazione →', he: 'חקור סימולציה →' },
 };
 
+import { TARGET_LOCALES } from '../config/i18n.config.mjs';
+
 let totalFixed = 0;
 
-for (const locale of ['en', 'es', 'it', 'he']) {
+for (const locale of TARGET_LOCALES) {
   let localeFixed = 0;
   const localeDir = join(I18N_DIR, locale);
 

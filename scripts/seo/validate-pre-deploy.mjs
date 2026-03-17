@@ -16,6 +16,7 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { ALL_LOCALES } from '../config/i18n.config.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, '../..');
@@ -331,7 +332,7 @@ function validateI18n() {
   const i18nPath = path.join(ROOT, 'data/i18n.ts');
   if (fs.existsSync(i18nPath)) {
     const content = fs.readFileSync(i18nPath, 'utf-8');
-    for (const locale of ['pt-br', 'en', 'es', 'it', 'he']) {
+    for (const locale of ALL_LOCALES) {
       if (content.includes(`'${locale}'`)) {
         ok(`Locale ${locale} supported`);
       } else {

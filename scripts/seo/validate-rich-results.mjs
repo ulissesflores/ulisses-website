@@ -12,7 +12,7 @@ import path from 'node:path';
 
 const ROOT = process.cwd();
 const SITE_ORIGIN = 'https://ulissesflores.com';
-const SUPPORTED_LOCALES = ['pt-br', 'en', 'es', 'it', 'he'];
+import { ALL_LOCALES as SUPPORTED_LOCALES } from '../config/i18n.config.mjs';
 
 let errors = 0;
 let warnings = 0;

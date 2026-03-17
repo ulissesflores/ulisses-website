@@ -14,7 +14,7 @@ Ulisses Flores não é tratado pelos motores de busca como um usuário genérico
 
 - **Domínio Canônico:** O único host válido é `https://ulissesflores.com`. Qualquer acesso via `www` deve sofrer redirect 301 Permanente no nível de infraestrutura (Vercel/next.config.ts). Nenhum `307 Temporary Redirect` é tolerado em rotas de produção.
 - **Política de Extermínio (410 Gone):** Padrões de rotas gerados por erros de internacionalização (ex: `/*/*/`) ou páginas legadas que não possuem equivalente (ex: categorias antigas) são interceptadas via `middleware.ts` e retornam **HTTP 410 Gone**. Isso preserva o Crawl Budget e limpa o índice do Google rapidamente.
-- **Sitemap Canônico:** O `sitemap.xml` é dinâmico, mas restrito. Ele deve expor apenas URLs que retornam `200 OK`. 
+- **Sitemap Canônico:** O `sitemap.xml` é dinâmico, mas restrito. Ele deve expor apenas URLs que retornam `200 OK`.
 
 ## 3. O Grafo de Conhecimento (Ontologia JSON-LD)
 

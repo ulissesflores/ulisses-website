@@ -18,6 +18,7 @@
 > O modo `--webpack` (`npm run dev`) não apresenta este problema, mas o modo `--turbopack`
 > (`npm run dev:turbopack`) sim.
 
+
 ---
 
 ## Arquitetura do Pipeline

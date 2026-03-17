@@ -37,18 +37,21 @@ Depois do deploy, validar URLs publicas:
 ## 3) Auditoria externa gratuita (online)
 
 ### Schema / JSON-LD
+
 - Schema Markup Validator:
   - [https://validator.schema.org/](https://validator.schema.org/)
 - JSON-LD Playground:
   - [https://json-ld.github.io/json-ld.org/playground/](https://json-ld.github.io/json-ld.org/playground/)
 
 ### Google
+
 - Rich Results Test (home e paginas de artigo):
   - [https://search.google.com/test/rich-results](https://search.google.com/test/rich-results)
 - Search Console (inspecao e solicitacao de indexacao):
   - [https://search.google.com/search-console](https://search.google.com/search-console)
 
 ### DID
+
 - Universal Resolver:
   - [https://dev.uniresolver.io/](https://dev.uniresolver.io/)
   - DID de teste: `did:web:ulissesflores.com`

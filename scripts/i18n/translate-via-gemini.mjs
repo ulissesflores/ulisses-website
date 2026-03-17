@@ -55,14 +55,8 @@ const DELAY_MS = Number(parsedArgs['delay']) || 1000;
 const MODEL_NAME = parsedArgs['model'] || 'gemini-2.5-flash';
 const MAX_RETRIES = Number(parsedArgs['retries']) || 3;
 
-// ── Target Locales ──────────────────────────────────────────────────────────────
-
-const TARGET_LOCALES = [
-  { code: 'en', label: 'English', dir: 'ltr' },
-  { code: 'es', label: 'Spanish (Castilian)', dir: 'ltr' },
-  { code: 'it', label: 'Italian', dir: 'ltr' },
-  { code: 'he', label: 'Hebrew', dir: 'rtl' },
-];
+// ── Target Locales (from central config — Anti-DRY Lote 22) ────────────────
+import { TARGET_LOCALES_RICH as TARGET_LOCALES } from '../config/i18n.config.mjs';
 
 // ── Namespace Registry ──────────────────────────────────────────────────────────
 // Maps filename → export name, matching the pt-br/index.ts barrel exports

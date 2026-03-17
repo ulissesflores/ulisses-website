@@ -35,12 +35,11 @@ const TARGET_LOCALE = getArg('locale');
 const DRY_RUN = args.includes('--dry-run');
 const MODEL = getArg('model') || 'gemini-2.5-flash';
 
-const LOCALES = [
-  { code: 'en', name: 'English' },
-  { code: 'es', name: 'Spanish (Castilian)' },
-  { code: 'it', name: 'Italian' },
-  { code: 'he', name: 'Hebrew' },
-].filter((l) => !TARGET_LOCALE || l.code === TARGET_LOCALE);
+// ── Target Locales (from central config — Anti-DRY Lote 22) ────────────────
+import { TARGET_LOCALES_RICH } from '../config/i18n.config.mjs';
+const LOCALES = TARGET_LOCALES_RICH
+  .map(l => ({ code: l.code, name: l.label }))
+  .filter(l => !TARGET_LOCALE || l.code === TARGET_LOCALE);
 
 // ── API Init ─────────────────────────────────────────────────────────────────
 const API_KEY = process.env.GEMINI_API_KEY;

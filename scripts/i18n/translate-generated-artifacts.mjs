@@ -60,10 +60,8 @@ const IS_PRODUCTION = process.env.NODE_ENV === 'production'
   || process.env.VERCEL === '1'
   || process.env.CI === 'true';
 
-// ── Target Locales ──────────────────────────────────────────────────────────────
-
-const LOCALES = ['en', 'es', 'it', 'he'];
-const LOCALE_LABELS = { en: 'English', es: 'Spanish', it: 'Italian', he: 'Hebrew' };
+// ── Target Locales (from central config — Anti-DRY Lote 22) ────────────────
+import { TARGET_LOCALES as LOCALES, LOCALE_LABELS } from '../config/i18n.config.mjs';
 
 // ── FASE 4: Charset Validators (Anti-Alucinação) ────────────────────────────────
 
