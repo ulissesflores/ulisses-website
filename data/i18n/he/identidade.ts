@@ -96,7 +96,6 @@ export const identidade = {
     },
     firewall: {
       title: '06 · חומת אש סמנטית',
-      description: null
     },
     organizations: {
       title: '07 · ארגונים ושיוכים'

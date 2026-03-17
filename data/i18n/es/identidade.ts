@@ -96,7 +96,6 @@ export const identidade = {
     },
     firewall: {
       title: '06 · Firewall Semántico',
-      description: 'El Firewall Semántico de Ulisses Flores es un sistema de gestión de conocimiento que utiliza un grafo de conocimiento para filtrar y organizar información, asegurando la coherencia y relevancia de los datos. Este sistema es fundamental para mantener la integridad de la identidad soberana y la producción intelectual.'
     },
     organizations: {
       title: '07 · Organizaciones y Afiliaciones'

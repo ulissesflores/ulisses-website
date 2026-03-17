@@ -39,7 +39,7 @@ const ALLOWED_IDENTICAL = new Set([
   '/research', '/whitepapers', '/whitepapers/projeto-psi',
   '/projeto-psi', '/essays', '/acervo-teologico', '/clube-santo',
   '/mundo-politico', '/simulacoes', '/identidade', '/certifications',
-  // Tech terms (universal in all languages)
+  // ─── Tech stack labels (universal, no translation needed) ───
   'SRAM PUF', 'XMSS', 'TMR', 'NFC', 'EMP', 'LED', 'USB-C',
   'WhatsApp', 'LinkedIn', 'GitHub',
   'BETA', 'LLMs', '+55 11 5286-8689',
@@ -49,6 +49,33 @@ const ALLOWED_IDENTICAL = new Set([
   'Certificate ID', 'Provider', 'Verify URL',
   'MSc Candidate AI @ AGTU',
   'cloudless IoT',
+  // ─── Skills column items (tech labels, intentionally identical) ───
+  'Node.js / TypeScript', 'C++ / C# / C', 'Solidity (Contracts)',
+  'Core Engineering', 'Architecture & DevOps',
+  'BPMN (Bizagi)', 'Value Stream Mapping', 'Business Intelligence',
+  'Quality Assurance (QA)', 'Cloudless Architectures',
+  'AI Generativa', 'Midjourney', 'MongoDB', 'Blockchain Business',
+  'C++ STL', 'DevOps',
+  // ─── Simulation labels (brand/product names stay universal) ───
+  'IA 2027', 'IA 2027 • Slowdown', 'IA 2027 • Race',
+  'Capex', 'Adversarial',
+  // ─── SEO keywords that are universal anglicisms / brand terms ───
+  'hardware wallet', 'zero trust', 'zero trust hardware',
+  'ring signatures', 'airgap wallet', 'FRAM rad-hard',
+  'race AGI', 'slowdown AGI',
+  // ─── Identity branding (deliberately English, brand-specific) ───
+  'Ground Truth Identity Node · UPKF v3.3',
+  'ORCID Works', 'Certifications',
+  'Mumm-Ra',
+  // ─── Cybersecurity/hardware SEO keywords (universal anglicisms) ───
+  'side-channel attacks', 'EMP shielding', 'deniable encryption',
+  'hardware security module', 'cold storage nuclear', 'cold storage institucional',
+  'Ulisses Flores blockchain', 'Q-Day Ready', 'EMP-Proof',
+  'Projeto PSI',
+  // ─── Identity subtitle/ogImage (brand-specific English) ───
+  'Ulisses Flores - Sovereign Identity Hub',
+  'Odysseus · Polymath Researcher · CTO · Sovereign Identity Architect',
+  'chatbot experimental IA',
   // Language name self-references
   'Português', 'English', 'Español', 'Italiano', 'עברית',
   // Proper Names (people, companies, institutions, products)
@@ -64,11 +91,14 @@ const ALLOWED_IDENTICAL = new Set([
   'MV9 Web & Sistemas', 'C3 Group / EconoFísica',
   // Brand names that stay in all languages
   'Manifesto',
+  // ─── Footer/version strings (brand identity) ───
+  '© 2026 Codex Hash Ltda. All rights reserved.',
+  'UlissesFlores.com • v10.0 • State of the Art',
 ]);
 
 // ─── PT-ES cognates: words that are legitimately the same in Portuguese AND Spanish ───
 const PT_ES_COGNATES = new Set([
-  'Autor', 'Verificar', 'Abrir', 'Explorar', 'Idioma',
+  'Autor', 'Autor:', 'Verificar', 'Abrir', 'Explorar', 'Idioma',
   'Consultor Estratégico de IA', 'Consultor de IA',
   'consultor certificado IA',
   'Habilidades adquiridas', 'Problemas enfrentados',
@@ -78,12 +108,26 @@ const PT_ES_COGNATES = new Set([
   'instituto teológico',
   'IA agricultura', 'sensores IoT',
   'Ulisses Flores teologia',
+  'acervo teológico', 'agricultura inteligente',
+  'consultor estratégico IA',
+  'Indicadores', 'Capacidades',
+  // ─── PT-ES simulation cognates (identical in both languages) ───
+  'Capex total', 'Capacidades Agent-4',
+  // ─── PT-ES identidade table headers ───
+  'Identificador', 'Valor', 'Notas', 'Idiomas',
+  // ─── PT-ES projeto-psi ───
+  'Fortaleza Física', 'Whitepaper Técnico',
+  'IoT & Agricultura',
+  // ─── PT-ES IA simulation chart labels ───
+  'Capacidades Agent-1 (Abr 2026)',
+  ':: Arsenal Técnico & Humanidades',
 ]);
 
 // ─── PT-IT cognates: words legitimately the same in Portuguese AND Italian ───
 const PT_IT_COGNATES = new Set([
   'Ulisses Flores teologia',
   'Manifesto',
+  'acervo teológico',
 ]);
 
 // ─── Namespaces to skip identity check (FAQ items are long and may have false positives) ───

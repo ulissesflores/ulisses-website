@@ -182,7 +182,7 @@ export const home = {
     }
   },
   skills: {
-    title: 'Stack Tecnológica & Habilidades',
+    title: 'Stack Tecnológico & Habilidades',
     columns: {
       core: {
         title: 'Ingeniería Core',

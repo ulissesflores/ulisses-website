@@ -1990,8 +1990,8 @@ export const publications: Publication[] = [
     },
     "sourceEvidence": [],
     "translations": {
-      "en": "The Crown and the Cross: Theological and Phenomenological Analysis of Marian Apparitions",
-      "es": "La Corona y la Cruz: Análisis Teológico y Fenomenológico de las Apariciones Marianas",
+      "en": "The Crown and the Cross: Theological Analysis of Marian Apparitions",
+      "es": "La Corona y la Cruz: Análisis Teológico de las Apariciones Marianas",
       "it": "La Corona e la Croce: Analisi Teologica e Fenomenologica delle Apparizioni Mariane",
       "he": "הכתר והצלב: ניתוח תאולוגי ופנומנולוגי של הופעות מריאניות",
       "summary_en": "Theological and phenomenological analysis of Marian apparitions.",
