@@ -51,7 +51,7 @@ const parsedArgs = Object.fromEntries(
 const DRY_RUN = parsedArgs['dry-run'] === 'true';
 const FORCE = parsedArgs['force'] === 'true';
 const MODEL_NAME = parsedArgs['model'] || 'gemini-2.5-flash';
-const BATCH_SIZE = Number(parsedArgs['batch']) || 5;
+const BATCH_SIZE = Number(parsedArgs['batch']) || 3;
 const DELAY_MS = Number(parsedArgs['delay']) || 2000;
 
 // ── FASE 2: Detecção de Ambiente de Produção ────────────────────────────────────
@@ -195,9 +195,39 @@ ${input}`;
       let parsed;
       try {
         parsed = JSON.parse(responseText);
-      } catch {
-        const cleaned = responseText.replace(/^```(?:json)?\s*/i, '').replace(/\s*```\s*$/i, '').trim();
-        parsed = JSON.parse(cleaned);
+      } catch (parseErr) {
+        if (process.env.DEBUG_TRANSLATE) log('🐛', `Raw response (first 600 chars): ${responseText.slice(0, 600)}`);
+        if (process.env.DEBUG_TRANSLATE) log('🐛', `Parse error: ${parseErr.message}`);
+        let cleaned = responseText.replace(/^```(?:json)?\s*/i, '').replace(/\s*```\s*$/i, '').trim();
+        try {
+          parsed = JSON.parse(cleaned);
+        } catch {
+          // Attempt to repair common Gemini JSON issues:
+          // 1. Unescaped quotes inside string values
+          // 2. Trailing commas
+          cleaned = cleaned
+            .replace(/,\s*([}\]])/g, '$1')  // trailing commas
+            .replace(/[\u201C\u201D]/g, '\\"')  // smart quotes
+            .replace(/[\u2018\u2019]/g, "'");  // smart apostrophes
+          try {
+            parsed = JSON.parse(cleaned);
+          } catch {
+            // Last resort: extract objects manually via regex
+            const objects = [];
+            // Match objects with optional "id" field and "title"+"summary" in any order
+            const re = /\{[^{}]*?"title"\s*:\s*"((?:[^"\\]|\\.)*)"\s*,[^{}]*?"summary"\s*:\s*"((?:[^"\\]|\\.)*)"\s*[^{}]*?\}/g;
+            let m;
+            while ((m = re.exec(cleaned)) !== null) {
+              objects.push({ title: m[1].replace(/\\"/g, '"'), summary: m[2].replace(/\\"/g, '"') });
+            }
+            if (objects.length === items.length) {
+              parsed = objects;
+              log('🔧', `  JSON repaired via regex extraction (${objects.length} objects)`);
+            } else {
+              throw new Error(`JSON repair failed: extracted ${objects.length} of ${items.length} objects`);
+            }
+          }
+        }
       }
 
       if (!Array.isArray(parsed) || parsed.length !== items.length) {

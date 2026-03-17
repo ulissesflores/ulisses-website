@@ -1422,14 +1422,14 @@ export const publications: Publication[] = [
     },
     "sourceEvidence": [],
     "translations": {
-      "en": "Transcendent Foundations of Economic Order",
-      "es": "Fundamentos Trascendentes del Orden Económico",
       "it": "Fondamenti Trascendenti dell'Ordine Economico",
       "he": "יסודות טרנסצנדנטיים של הסדר הכלכלי",
       "summary_en": "Study on the transcendent foundations of economic order.",
       "summary_es": "Estudio sobre los fundamentos trascendentes del orden económico.",
       "summary_it": "Studio sui fondamenti trascendenti dell'ordine economico.",
-      "summary_he": "מחקר על היסודות הטרנסצנדנטיים של הסדר הכלכלי."
+      "summary_he": "מחקר על היסודות הטרנסצנדנטיים של הסדר הכלכלי.",
+      "en": "Transcendent Foundations of the Economic Order",
+      "es": "Fundamentos Trascendentes del Orden Económico"
     }
   },
   {
@@ -1848,14 +1848,14 @@ export const publications: Publication[] = [
     },
     "sourceEvidence": [],
     "translations": {
-      "en": "Exegetical Treatise on the Representation of Morality and Anthropology",
-      "es": "Tratado Exegético sobre la Representación de la Moralidad y Antropología",
       "it": "Trattato Esegetico sulla Rappresentazione della Moralità e Antropologia",
       "he": "מסה אקסגטית על ייצוג המוסר והאנתרופולוגיה",
       "summary_en": "Exegetical treatise on the representation of morality and anthropology.",
       "summary_es": "Tratado exegético sobre la representación de la moralidad y antropología.",
       "summary_it": "Trattato esegetico sulla rappresentazione della moralità e antropologia.",
-      "summary_he": "מסה אקסגטית על ייצוג המוסר והאנתרופולוגיה."
+      "summary_he": "מסה אקסגטית על ייצוג המוסר והאנתרופולוגיה.",
+      "en": "Exegetical Treatise on the Representation of Morality and Anthropology",
+      "es": "Tratado Exegético sobre la Representación de la Moralidad y Antropología"
     }
   },
   {
@@ -1990,14 +1990,14 @@ export const publications: Publication[] = [
     },
     "sourceEvidence": [],
     "translations": {
-      "en": "The Crown and the Cross: Theological Analysis of Marian Apparitions",
-      "es": "La Corona y la Cruz: Análisis Teológico de las Apariciones Marianas",
       "it": "La Corona e la Croce: Analisi Teologica e Fenomenologica delle Apparizioni Mariane",
       "he": "הכתר והצלב: ניתוח תאולוגי ופנומנולוגי של הופעות מריאניות",
       "summary_en": "Theological and phenomenological analysis of Marian apparitions.",
       "summary_es": "Análisis teológico y fenomenológico de las apariciones marianas.",
       "summary_it": "Analisi teologica e fenomenologica delle apparizioni mariane.",
-      "summary_he": "ניתוח תאולוגי ופנומנולוגי של הופעות מריאניות."
+      "summary_he": "ניתוח תאולוגי ופנומנולוגי של הופעות מריאניות.",
+      "en": "The Crown and the Cross: Theological and Phenomenological Analysis of Marian Apparitions",
+      "es": "La Corona y la Cruz: Análisis Teológico y Fenomenológico de las Apariciones Marianas"
     }
   },
   {
@@ -2131,14 +2131,14 @@ export const publications: Publication[] = [
     },
     "sourceEvidence": [],
     "translations": {
-      "en": "Digital Legacy Challenges: Post-Mortem Memory Preservation",
-      "es": "Desafíos de la Herencia Digital: Preservación de la Memoria Post-Mortem",
       "it": "Sfide dell'Eredità Digitale: Preservazione della Memoria Post-Mortem",
       "he": "אתגרי המורשת הדיגיטלית: שימור זיכרון לאחר המוות",
       "summary_en": "Analysis of digital legacy challenges and post-mortem memory preservation.",
       "summary_es": "Análisis de los desafíos de la herencia digital y preservación de memoria post-mortem.",
       "summary_it": "Analisi delle sfide dell'eredità digitale e preservazione della memoria post-mortem.",
-      "summary_he": "ניתוח אתגרי המורשת הדיגיטלית ושימור זיכרון לאחר המוות."
+      "summary_he": "ניתוח אתגרי המורשת הדיגיטלית ושימור זיכרון לאחר המוות.",
+      "en": "Challenges of Digital Inheritance: Post-Mortem Memory Preservation",
+      "es": "Desafíos de la Herencia Digital: Preservación de la Memoria Post-Mortem"
     }
   },
   {
@@ -2273,14 +2273,14 @@ export const publications: Publication[] = [
     },
     "sourceEvidence": [],
     "translations": {
-      "en": "The Holy Club: Spiritual, Theological and Visual Archaeology of Methodism",
-      "es": "El Club Santo: Arqueología Espiritual, Teológica y Visual del Metodismo",
       "it": "Il Club Santo: Archeologia Spirituale, Teologica e Visuale del Metodismo",
       "he": "המועדון הקדוש: ארכיאולוגיה רוחנית, תאולוגית וחזותית של המתודיזם",
       "summary_en": "Spiritual, theological and visual archaeology of the Holy Club and the origins of Methodism.",
       "summary_es": "Arqueología espiritual, teológica y visual del Club Santo y los orígenes del metodismo.",
       "summary_it": "Archeologia spirituale, teologica e visuale del Club Santo e le origini del metodismo.",
-      "summary_he": "ארכיאולוגיה רוחנית, תאולוגית וחזותית של המועדון הקדוש ומקורות המתודיזם."
+      "summary_he": "ארכיאולוגיה רוחנית, תאולוגית וחזותית של המועדון הקדוש ומקורות המתודיזם.",
+      "en": "The Clube Santo: Spiritual, Theological, and Visual Archaeology of Methodism",
+      "es": "El Clube Santo: Arqueología Espiritual, Teológica y Visual del Metodismo"
     }
   },
   {
@@ -2414,14 +2414,14 @@ export const publications: Publication[] = [
     },
     "sourceEvidence": [],
     "translations": {
-      "en": "The Theology of Hope in Times of Crisis",
-      "es": "La Teología de la Esperanza en Tiempos de Crisis",
       "it": "La Teologia della Speranza in Tempi di Crisi",
       "he": "תאולוגיית התקווה בעתות משבר",
       "summary_en": "Theological reflection on hope in times of crisis.",
       "summary_es": "Reflexión teológica sobre la esperanza en tiempos de crisis.",
       "summary_it": "Riflessione teologica sulla speranza in tempi di crisi.",
-      "summary_he": "הגות תאולוגית על תקווה בעתות משבר."
+      "summary_he": "הגות תאולוגית על תקווה בעתות משבר.",
+      "en": "The Theology of Hope in Times of Crisis",
+      "es": "La Teología de la Esperanza en Tiempos de Crisis"
     }
   },
   {
@@ -2555,14 +2555,14 @@ export const publications: Publication[] = [
     },
     "sourceEvidence": [],
     "translations": {
-      "en": "Active Methodologies in Teaching Programming Logic",
-      "es": "Metodologías Activas en la Enseñanza de Lógica de Programación",
       "it": "Metodologie Attive nell'Insegnamento della Logica di Programmazione",
       "he": "מתודולוגיות פעילות בהוראת לוגיקה של תכנות",
       "summary_en": "Study on active methodologies in teaching programming logic using robotics and gamification.",
       "summary_es": "Estudio sobre metodologías activas en la enseñanza de lógica de programación.",
       "summary_it": "Studio sulle metodologie attive nell'insegnamento della logica di programmazione.",
-      "summary_he": "מחקר על מתודולוגיות פעילות בהוראת לוגיקה של תכנות."
+      "summary_he": "מחקר על מתודולוגיות פעילות בהוראת לוגיקה של תכנות.",
+      "en": "Active Methodologies in Programming Logic Education",
+      "es": "Metodologías Activas en la Enseñanza de Lógica de Programación"
     }
   },
   {
@@ -2697,14 +2697,14 @@ export const publications: Publication[] = [
     },
     "sourceEvidence": [],
     "translations": {
-      "en": "Chaos Theory: Emergence and Self-Organization in Markets",
-      "es": "Teoría del Caos: Emergencia y Autoorganización en los Mercados",
       "it": "Teoria del Caos: Emergenza e Auto-organizzazione nei Mercati",
       "he": "תורת הכאוס: צמיחה והתארגנות עצמית בשווקים",
       "summary_en": "Analysis of chaos theory applied to economic systems.",
       "summary_es": "Análisis de la teoría del caos aplicada a sistemas económicos.",
       "summary_it": "Analisi della teoria del caos applicata ai sistemi economici.",
-      "summary_he": "ניתוח תורת הכאוס המיושמת על מערכות כלכליות."
+      "summary_he": "ניתוח תורת הכאוס המיושמת על מערכות כלכליות.",
+      "en": "Chaos Theory: Emergence and Self-organization in Markets",
+      "es": "Teoría del Caos: Emergencia y Autoorganización en Mercados"
     }
   }
 ];
