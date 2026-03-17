@@ -1,4 +1,5 @@
 import { upkfMeta } from '@/data/generated/upkf.generated';
+import { normalizePath } from './i18n';
 
 export const hreflangLocalePrefix = {
   'pt-BR': 'pt-br',
@@ -7,13 +8,6 @@ export const hreflangLocalePrefix = {
   he: 'he',
   it: 'it',
 } as const;
-
-function normalizePath(path: string): string {
-  if (!path || path === '/') {
-    return '/';
-  }
-  return path.startsWith('/') ? path : `/${path}`;
-}
 
 export function buildLanguageAlternates(path: string): Record<string, string> {
   const origin = upkfMeta.primaryWebsite;
