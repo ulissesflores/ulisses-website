@@ -32,6 +32,7 @@
     "sota:check": "node scripts/sota-validate.mjs --skip-build",
     "sota:full": "node scripts/sota-validate.mjs",
     "links:inventory": "npm run upkf:generate",
+    "seo:indexnow": "INDEXNOW_ENABLED=1 node scripts/seo/ping-indexnow.mjs",
     "prepare": "husky"
   },
   "dependencies": {

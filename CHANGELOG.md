@@ -7,6 +7,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added — Lote 26: IndexNow & Translation Resilience
+
+- `npm run seo:indexnow` — Proactive search engine ping via IndexNow protocol (142 URLs)
+- `ADR-0004-indexnow-search-engine-ping.md` — Architecture decision for IndexNow adoption
+- JSON repair chain in `translate-generated-artifacts.mjs` (smart quotes, trailing commas, regex fallback)
+- Reduced translation batch size from 5→3 for Gemini API stability
+- Manual injection of 8 missing EN/ES publication translations blocked by Gemini API malformed responses
+
+### Changed — Lote 26
+
+- `package.json` — Added `seo:indexnow` script
+- `publications.generated.ts` — Minor Gemini re-translation refinements (3 title improvements)
+
 ### Added — Lote 22: Higiene SOTA e Erradicação DRY
 
 - `scripts/config/i18n.config.mjs` — Single Source of Truth for locale configuration (Anti-DRY)
