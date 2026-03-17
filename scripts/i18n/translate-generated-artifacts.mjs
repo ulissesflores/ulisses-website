@@ -79,17 +79,21 @@ async function sleep(ms) {
 // ── Gemini Translation ──────────────────────────────────────────────────────────
 
 let genAI, model;
+let API_AVAILABLE = false;
 
 async function initGemini() {
   const apiKey = process.env.GEMINI_API_KEY;
   if (!apiKey) {
-    console.error('❌ GEMINI_API_KEY not found. Use: node --env-file=.env.local scripts/i18n/translate-generated-artifacts.mjs');
-    process.exit(1);
+    log('⚠️', 'GEMINI_API_KEY not found. Translation will only work if all artifacts are already translated.');
+    log('💡', 'To enable auto-translation: node --env-file=.env.local scripts/i18n/translate-generated-artifacts.mjs');
+    API_AVAILABLE = false;
+    return;
   }
 
   const { GoogleGenerativeAI } = await import('@google/generative-ai');
   genAI = new GoogleGenerativeAI(apiKey);
   model = genAI.getGenerativeModel({ model: MODEL_NAME });
+  API_AVAILABLE = true;
   log('🔑', `Gemini API initialized (model: ${MODEL_NAME})`);
 }
 
@@ -206,6 +210,13 @@ async function translatePublications() {
   }
 
   log('🔄', `${needsWork.length} publications need translations`);
+
+  if (!API_AVAILABLE) {
+    console.error('\n❌ FATAL: ${needsWork.length} publications need translations but GEMINI_API_KEY is not set!');
+    console.error('   Run: node --env-file=.env.local scripts/i18n/translate-generated-artifacts.mjs');
+    console.error('   Missing: ' + needsWork.map(p => p.id).join(', '));
+    process.exit(1);
+  }
 
   // Batch translate per locale
   let totalInjected = 0;
@@ -337,6 +348,12 @@ async function translateBlogPosts() {
   }
 
   log('🔄', `${posts.length} blog posts need translations`);
+
+  if (!API_AVAILABLE) {
+    console.error('\n❌ FATAL: ' + posts.length + ' blog posts need translations but GEMINI_API_KEY is not set!');
+    console.error('   Run: node --env-file=.env.local scripts/i18n/translate-generated-artifacts.mjs');
+    process.exit(1);
+  }
 
   if (DRY_RUN) {
     for (const p of posts) log('🧪', `  Would translate: "${p.headline}"`);
