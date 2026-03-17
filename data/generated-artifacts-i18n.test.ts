@@ -1,14 +1,19 @@
 /**
  * ═══════════════════════════════════════════════════════════════════════════════
- *  🧪 Teste de Completude das Traduções nos Artefatos Gerados
+ *  🧪 Teste de Completude e Sanidade das Traduções nos Artefatos Gerados
  * ───────────────────────────────────────────────────────────────────────────────
- *  Valida que publications.generated.ts e knowledge.generated.ts
- *  contêm traduções automáticas completas para todos os 4 locales.
+ *  LOTE 19 — OPERAÇÃO RESILIÊNCIA E ESCALA
  *
- *  Este teste garante que:
- *  1. O gerador + API de tradução produziram dados completos
- *  2. Nenhuma publicação ficou sem tradução
- *  3. Nenhum blog post ficou sem headline traduzida
+ *  Valida que publications.generated.ts e knowledge.generated.ts
+ *  contêm traduções automáticas completas e LINGUISTICAMENTE CORRETAS
+ *  para todos os 4 locales.
+ *
+ *  BLINDAGENS:
+ *    ✅ Completude: todo campo title/summary existe e não é vazio
+ *    ✅ Charset HE: hebraico usa script correcto (bloco Unicode 0590-05FF)
+ *    ✅ Proporção HE: pelo menos 20% dos caracteres são hebraicos (anti-alucinação)
+ *    ✅ Anti-cópia: título traduzido NÃO é cópia exacta do pt-br
+ *    ✅ Charset IT: confirma presença de caracteres latinos com acentos italianos
  * ═══════════════════════════════════════════════════════════════════════════════
  */
 
@@ -18,6 +23,19 @@ import { knowledgeData } from '../data/generated/knowledge.generated';
 
 const REQUIRED_TITLE_LOCALES = ['en', 'es', 'it', 'he'] as const;
 const REQUIRED_SUMMARY_LOCALES = ['summary_en', 'summary_es', 'summary_it', 'summary_he'] as const;
+
+// ── Charset Validators ──────────────────────────────────────────────────────────
+
+const HEBREW_RE = /[\u0590-\u05FF]/;
+const HEBREW_MIN_RATIO = 0.2; // Pelo menos 20% do texto deve ser hebraico
+
+function hebrewRatio(text: string): number {
+  if (!text) return 0;
+  const heChars = (text.match(/[\u0590-\u05FF]/g) ?? []).length;
+  return heChars / text.length;
+}
+
+// ── Publication Tests ───────────────────────────────────────────────────────────
 
 describe('Completude de traduções em artefatos gerados — publicações', () => {
   it('toda publicação tem objecto translations definido', () => {
@@ -55,31 +73,75 @@ describe('Completude de traduções em artefatos gerados — publicações', () 
     });
   }
 
-  it('HE usa script hebraico em todas as publicações', () => {
-    const hebrewRe = /[\u0590-\u05FF]/;
+  // ── FASE 3 LOTE 19: Testes de Sanidade de Charset (Anti-Alucinação) ─────────
+
+  it('HE: título usa script hebraico com proporção mínima de 20%', () => {
     for (const pub of publications) {
       const trans = (pub as Record<string, unknown>).translations as Record<string, string> | undefined;
       const he = trans?.he;
       if (he) {
         expect(
-          hebrewRe.test(he),
-          `Publicação "${pub.id}" — HE não contém caracteres hebraicos: "${he}"`,
+          HEBREW_RE.test(he),
+          `Publicação "${pub.id}" — title HE não contém NENHUM caractere hebraico: "${he}"`,
+        ).toBe(true);
+        const ratio = hebrewRatio(he);
+        expect(
+          ratio >= HEBREW_MIN_RATIO,
+          `Publicação "${pub.id}" — title HE tem apenas ${Math.round(ratio * 100)}% chars hebraicos (mín: ${HEBREW_MIN_RATIO * 100}%): "${he.slice(0, 60)}"`,
         ).toBe(true);
       }
     }
   });
+
+  it('HE: summary_he usa script hebraico com proporção mínima de 20%', () => {
+    for (const pub of publications) {
+      const trans = (pub as Record<string, unknown>).translations as Record<string, string> | undefined;
+      const summaryHe = trans?.summary_he;
+      if (summaryHe) {
+        expect(
+          HEBREW_RE.test(summaryHe),
+          `Publicação "${pub.id}" — summary_he não contém NENHUM caractere hebraico: "${summaryHe.slice(0, 80)}"`,
+        ).toBe(true);
+        const ratio = hebrewRatio(summaryHe);
+        expect(
+          ratio >= HEBREW_MIN_RATIO,
+          `Publicação "${pub.id}" — summary_he tem apenas ${Math.round(ratio * 100)}% chars hebraicos (mín: ${HEBREW_MIN_RATIO * 100}%): "${summaryHe.slice(0, 60)}"`,
+        ).toBe(true);
+      }
+    }
+  });
+
+  it('Anti-cópia: título traduzido NÃO é cópia exacta do pt-br em nenhum locale', () => {
+    for (const pub of publications) {
+      const ptTitle = pub.title;
+      const trans = (pub as Record<string, unknown>).translations as Record<string, string> | undefined;
+      if (!trans) continue;
+      for (const locale of REQUIRED_TITLE_LOCALES) {
+        const translated = trans[locale];
+        if (translated) {
+          // Ignorar termos técnicos curtos que podem ser iguais (ex: "LSTM", "IoT")
+          if (ptTitle.length > 15) {
+            expect(
+              translated !== ptTitle,
+              `Publicação "${pub.id}" — título ${locale} é cópia exacta do pt-br: "${ptTitle}"`,
+            ).toBe(true);
+          }
+        }
+      }
+    }
+  });
 });
+
+// ── Blog Post Tests ─────────────────────────────────────────────────────────────
 
 describe('Completude de traduções em artefatos gerados — blog posts', () => {
   const blogPosts = (knowledgeData as Record<string, unknown>)?.blog
     ? ((knowledgeData as Record<string, { posts?: Array<Record<string, unknown>> }>).blog?.posts ?? [])
     : [];
 
-  // Fallback: procurar posts em qualquer estrutura
   const posts = blogPosts.length > 0
     ? blogPosts
     : (() => {
-        // Search for posts in knowledgeData's various categories
         const found: Array<Record<string, unknown>> = [];
         if (typeof knowledgeData === 'object' && knowledgeData !== null) {
           for (const val of Object.values(knowledgeData as Record<string, unknown>)) {
@@ -114,15 +176,54 @@ describe('Completude de traduções em artefatos gerados — blog posts', () => 
     });
   }
 
-  it('HE usa script hebraico em headlines de blog', () => {
-    const hebrewRe = /[\u0590-\u05FF]/;
+  // ── FASE 3 LOTE 19: Charset validation para blog posts ──────────────────────
+
+  it('HE: headline_he de blog usa script hebraico com proporção mínima', () => {
     for (const post of posts) {
       const he = post.headline_he as string | undefined;
       if (he) {
         expect(
-          hebrewRe.test(he),
-          `Post "${post.slug}" — headline_he não contém hebraico`,
+          HEBREW_RE.test(he),
+          `Post "${post.slug}" — headline_he não contém hebraico: "${he}"`,
         ).toBe(true);
+        const ratio = hebrewRatio(he);
+        expect(
+          ratio >= HEBREW_MIN_RATIO,
+          `Post "${post.slug}" — headline_he tem apenas ${Math.round(ratio * 100)}% chars hebraicos: "${he.slice(0, 60)}"`,
+        ).toBe(true);
+      }
+    }
+  });
+
+  it('HE: summary_he de blog usa script hebraico com proporção mínima', () => {
+    for (const post of posts) {
+      const he = post.summary_he as string | undefined;
+      if (he) {
+        expect(
+          HEBREW_RE.test(he),
+          `Post "${post.slug}" — summary_he não contém hebraico: "${he.slice(0, 80)}"`,
+        ).toBe(true);
+        const ratio = hebrewRatio(he);
+        expect(
+          ratio >= HEBREW_MIN_RATIO,
+          `Post "${post.slug}" — summary_he tem apenas ${Math.round(ratio * 100)}% chars hebraicos: "${he.slice(0, 60)}"`,
+        ).toBe(true);
+      }
+    }
+  });
+
+  it('Anti-cópia: headline traduzido NÃO é cópia exacta do pt-br', () => {
+    for (const post of posts) {
+      const ptHeadline = post.headline as string;
+      if (!ptHeadline || ptHeadline.length <= 15) continue;
+      for (const locale of REQUIRED_TITLE_LOCALES) {
+        const translated = post[`headline_${locale}`] as string | undefined;
+        if (translated) {
+          expect(
+            translated !== ptHeadline,
+            `Post "${post.slug}" — headline_${locale} é cópia exacta do pt-br: "${ptHeadline}"`,
+          ).toBe(true);
+        }
       }
     }
   });

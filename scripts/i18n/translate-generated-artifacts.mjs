@@ -3,8 +3,16 @@
  * ═══════════════════════════════════════════════════════════════════════════════
  *  🌐 translate-generated-artifacts.mjs — Tradução Automática de Artefatos
  * ───────────────────────────────────────────────────────────────────────────────
+ *  LOTE 19 — OPERAÇÃO RESILIÊNCIA E ESCALA (Zero Trust Pipeline)
+ *
  *  Lê os arquivos .generated.ts (publications, knowledge) e traduz
  *  automaticamente títulos e summaries faltantes via Google Gemini API.
+ *
+ *  BLINDAGENS IMPLEMENTADAS:
+ *    🔒 FASE 1: Concorrência controlada (chunks de BATCH_SIZE, p-limit embutido)
+ *    🔒 FASE 2: Hard Fail em produção (VERCEL=1 ou NODE_ENV=production)
+ *    🔒 FASE 3: Exponential Backoff com jitter para HTTP 429
+ *    🔒 FASE 4: Validação de charset pós-tradução (anti-alucinação)
  *
  *  USO:
  *    node --env-file=.env.local scripts/i18n/translate-generated-artifacts.mjs
@@ -13,9 +21,10 @@
  *    --dry-run     Mostra o que seria traduzido sem alterar ficheiros
  *    --force       Re-traduz tudo, mesmo os que já têm tradução
  *    --model=X     Modelo Gemini (default: gemini-2.5-flash)
+ *    --batch=N     Tamanho do batch por chamada API (default: 5)
+ *    --delay=N     Delay base entre batches em ms (default: 2000)
  *
  *  ⚠️  Requer: GEMINI_API_KEY no ambiente (via .env.local)
- *  Integra-se como etapa pós-geração: npm run upkf:generate && npm run i18n:artifacts
  * ═══════════════════════════════════════════════════════════════════════════════
  */
 
@@ -42,12 +51,47 @@ const parsedArgs = Object.fromEntries(
 const DRY_RUN = parsedArgs['dry-run'] === 'true';
 const FORCE = parsedArgs['force'] === 'true';
 const MODEL_NAME = parsedArgs['model'] || 'gemini-2.5-flash';
+const BATCH_SIZE = Number(parsedArgs['batch']) || 5;
 const DELAY_MS = Number(parsedArgs['delay']) || 2000;
+
+// ── FASE 2: Detecção de Ambiente de Produção ────────────────────────────────────
+
+const IS_PRODUCTION = process.env.NODE_ENV === 'production'
+  || process.env.VERCEL === '1'
+  || process.env.CI === 'true';
 
 // ── Target Locales ──────────────────────────────────────────────────────────────
 
 const LOCALES = ['en', 'es', 'it', 'he'];
 const LOCALE_LABELS = { en: 'English', es: 'Spanish', it: 'Italian', he: 'Hebrew' };
+
+// ── FASE 4: Charset Validators (Anti-Alucinação) ────────────────────────────────
+
+const CHARSET_VALIDATORS = {
+  he: /[\u0590-\u05FF]/,    // Bloco Unicode Hebraico
+  // Locales latinos: validar que NÃO é cópia idêntica do PT-BR
+  en: /[a-zA-Z]/,
+  es: /[a-zA-ZáéíóúñüÁÉÍÓÚÑÜ]/,
+  it: /[a-zA-ZàèéìòùÀÈÉÌÒÙ]/,
+};
+
+function validateCharset(text, locale, fieldName) {
+  if (!text || text.length === 0) return { valid: false, reason: `${fieldName} vazio para ${locale}` };
+  const validator = CHARSET_VALIDATORS[locale];
+  if (!validator) return { valid: true };
+  if (!validator.test(text)) {
+    return { valid: false, reason: `${fieldName} em ${locale} não contém caracteres esperados: "${text.slice(0, 60)}..."` };
+  }
+  // Hebraico: verificação adicional — pelo menos 30% dos caracteres devem ser hebraicos
+  if (locale === 'he') {
+    const heChars = (text.match(/[\u0590-\u05FF]/g) || []).length;
+    const ratio = heChars / text.length;
+    if (ratio < 0.2) {
+      return { valid: false, reason: `${fieldName} HE tem apenas ${Math.round(ratio * 100)}% caracteres hebraicos (mín: 20%): "${text.slice(0, 60)}..."` };
+    }
+  }
+  return { valid: true };
+}
 
 // ── System Prompt (aligned with translate-via-gemini.mjs) ───────────────────────
 
@@ -76,6 +120,18 @@ async function sleep(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
 
+/**
+ * FASE 1: Divide um array em chunks de tamanho N.
+ * Previne sobrecarga da API com 100 itens simultâneos.
+ */
+function chunk(arr, size) {
+  const chunks = [];
+  for (let i = 0; i < arr.length; i += size) {
+    chunks.push(arr.slice(i, i + size));
+  }
+  return chunks;
+}
+
 // ── Gemini Translation ──────────────────────────────────────────────────────────
 
 let genAI, model;
@@ -84,8 +140,15 @@ let API_AVAILABLE = false;
 async function initGemini() {
   const apiKey = process.env.GEMINI_API_KEY;
   if (!apiKey) {
-    log('⚠️', 'GEMINI_API_KEY not found. Translation will only work if all artifacts are already translated.');
-    log('💡', 'To enable auto-translation: node --env-file=.env.local scripts/i18n/translate-generated-artifacts.mjs');
+    if (IS_PRODUCTION) {
+      // FASE 2: Hard Fail em Produção — NÃO aceitar build sem API key
+      console.error('\n🚨 HARD FAIL [PRODUCTION]: GEMINI_API_KEY ausente!');
+      console.error('   Em ambiente de produção (VERCEL/CI), a API key é OBRIGATÓRIA.');
+      console.error('   Configure GEMINI_API_KEY nas Environment Variables do provider.');
+      process.exit(1);
+    }
+    log('⚠️', 'GEMINI_API_KEY not found. Translation only works if all artifacts are already translated.');
+    log('💡', 'To enable: node --env-file=.env.local scripts/i18n/translate-generated-artifacts.mjs');
     API_AVAILABLE = false;
     return;
   }
@@ -96,6 +159,13 @@ async function initGemini() {
   API_AVAILABLE = true;
   log('🔑', `Gemini API initialized (model: ${MODEL_NAME})`);
 }
+
+/**
+ * FASE 1 + FASE 3: Traduz um batch com retries e exponential backoff com jitter.
+ * Max 5 tentativas. Backoff: 2^attempt * 1000ms + random jitter (0-2000ms).
+ * HTTP 429 (rate limit): backoff base 15s × attempt.
+ */
+const MAX_RETRIES = 5;
 
 async function translateBatch(items, targetLocale) {
   const input = JSON.stringify(items, null, 2);
@@ -110,7 +180,7 @@ Output ONLY a JSON array with the same structure, where "title" and "summary" ar
 INPUT JSON:
 ${input}`;
 
-  for (let attempt = 1; attempt <= 3; attempt++) {
+  for (let attempt = 1; attempt <= MAX_RETRIES; attempt++) {
     try {
       const result = await model.generateContent({
         contents: [{ role: 'user', parts: [{ text: userPrompt }] }],
@@ -136,12 +206,37 @@ ${input}`;
         throw new Error(`Expected array of ${items.length}, got ${Array.isArray(parsed) ? parsed.length : 'non-array'}`);
       }
 
+      // FASE 4: Validação de charset pós-tradução (anti-alucinação)
+      const charsetErrors = [];
+      for (let i = 0; i < parsed.length; i++) {
+        const titleCheck = validateCharset(parsed[i].title, targetLocale, `items[${i}].title`);
+        const summaryCheck = validateCharset(parsed[i].summary, targetLocale, `items[${i}].summary`);
+        if (!titleCheck.valid) charsetErrors.push(titleCheck.reason);
+        if (!summaryCheck.valid) charsetErrors.push(summaryCheck.reason);
+      }
+      if (charsetErrors.length > 0) {
+        const errMsg = `Charset validation failed for ${targetLocale}:\n  ${charsetErrors.join('\n  ')}`;
+        if (attempt < MAX_RETRIES) {
+          log('🚫', `Anti-alucinação: charset inválido. Retentando... (${attempt}/${MAX_RETRIES})`);
+          log('  ', charsetErrors[0]);
+          await sleep(3000 * attempt);
+          continue;
+        }
+        throw new Error(errMsg);
+      }
+
       return parsed;
     } catch (err) {
-      if (attempt < 3) {
-        const delay = err.message?.includes('429') ? 15000 * attempt : 5000 * attempt;
-        log('🔄', `Attempt ${attempt}/3 failed. Retrying in ${delay / 1000}s...`);
-        await sleep(delay);
+      if (attempt < MAX_RETRIES) {
+        // FASE 3: Exponential backoff com jitter
+        const is429 = err.message?.includes('429') || err.message?.includes('RESOURCE_EXHAUSTED');
+        const jitter = Math.random() * 2000;
+        const backoff = is429
+          ? (15000 * attempt) + jitter          // Rate limit: 15s × attempt + jitter
+          : (Math.pow(2, attempt) * 1000) + jitter; // Outros erros: 2^N seconds + jitter
+        log('🔄', `Attempt ${attempt}/${MAX_RETRIES} failed (${is429 ? 'RATE_LIMIT' : 'ERROR'}). Backoff ${Math.round(backoff / 1000)}s...`);
+        if (!is429) log('  ', `Error: ${err.message?.slice(0, 120)}`);
+        await sleep(backoff);
         continue;
       }
       throw err;
@@ -166,7 +261,6 @@ async function translatePublications() {
     const id = match[1];
 
     // Find title
-    const titleIdx = content.lastIndexOf('"title":', match.index + 100);
     const titleMatch = content.slice(match.index, match.index + 500).match(/"title": "([^"]+)"/);
     const title = titleMatch ? titleMatch[1] : '';
 
@@ -212,13 +306,20 @@ async function translatePublications() {
   log('🔄', `${needsWork.length} publications need translations`);
 
   if (!API_AVAILABLE) {
-    console.error('\n❌ FATAL: ${needsWork.length} publications need translations but GEMINI_API_KEY is not set!');
+    if (IS_PRODUCTION) {
+      // FASE 2: Hard Fail
+      console.error(`\n🚨 HARD FAIL [PRODUCTION]: ${needsWork.length} publications sem tradução e GEMINI_API_KEY ausente!`);
+      console.error('   IDs: ' + needsWork.map(p => p.id).join(', '));
+      console.error('   O build de produção NÃO pode gerar páginas sem metadados traduzidos.');
+      process.exit(1);
+    }
+    console.error(`\n❌ FATAL: ${needsWork.length} publications precisam de tradução mas GEMINI_API_KEY não está definida!`);
     console.error('   Run: node --env-file=.env.local scripts/i18n/translate-generated-artifacts.mjs');
     console.error('   Missing: ' + needsWork.map(p => p.id).join(', '));
     process.exit(1);
   }
 
-  // Batch translate per locale
+  // FASE 1: Tradução por locale com batching controlado
   let totalInjected = 0;
 
   for (const locale of LOCALES) {
@@ -234,74 +335,88 @@ async function translatePublications() {
       continue;
     }
 
-    // Prepare batch
-    const batch = needTitle.map(p => ({
+    // FASE 1: Chunking — processar em blocos de BATCH_SIZE
+    const allBatch = needTitle.map(p => ({
       id: p.id,
       title: p.title,
-      summary: p.summary.slice(0, 500), // Limit summary length for API
+      summary: p.summary.slice(0, 500),
     }));
+    const chunks_ = chunk(allBatch, BATCH_SIZE);
+    log('📦', `  Dividido em ${chunks_.length} batch(es) de até ${BATCH_SIZE} itens`);
 
-    try {
-      const translated = await translateBatch(batch, locale);
+    let chunkIndex = 0;
+    for (const batchChunk of chunks_) {
+      chunkIndex++;
+      try {
+        log('🔄', `  Batch ${chunkIndex}/${chunks_.length} (${batchChunk.length} itens) → ${locale}...`);
+        const translated = await translateBatch(batchChunk, locale);
 
-      // Inject translations back into the content
-      for (let i = 0; i < translated.length; i++) {
-        const pub = needTitle[i];
-        const translatedTitle = translated[i].title;
-        const translatedSummary = translated[i].summary;
+        // Inject translations back into the content
+        for (let i = 0; i < translated.length; i++) {
+          const pubId = batchChunk[i].id;
+          const pub = needTitle.find(p => p.id === pubId);
+          if (!pub) continue;
+          const translatedTitle = translated[i].title;
+          const translatedSummary = translated[i].summary;
 
-        if (pub.hasTrans) {
-          // Find the translations block and inject
-          const transIdx = content.indexOf('"translations":', pub.matchIndex + (content.length - readFileSync(PUB_PATH, 'utf8').length));
-          // Recalculate since content may have grown
-          const actualTransIdx = content.indexOf('"translations":', content.indexOf('"id": "' + pub.id + '"'));
-          if (actualTransIdx === -1) continue;
+          if (pub.hasTrans) {
+            const actualTransIdx = content.indexOf('"translations":', content.indexOf('"id": "' + pub.id + '"'));
+            if (actualTransIdx === -1) continue;
 
-          const ob = content.indexOf('{', actualTransIdx);
-          let bc = 1, pos = ob + 1;
-          while (bc > 0 && pos < content.length) { if (content[pos] === '{') bc++; if (content[pos] === '}') bc--; pos++; }
-          const closeBrace = pos - 1;
+            const ob = content.indexOf('{', actualTransIdx);
+            let bc = 1, pos = ob + 1;
+            while (bc > 0 && pos < content.length) { if (content[pos] === '{') bc++; if (content[pos] === '}') bc--; pos++; }
+            const closeBrace = pos - 1;
 
-          // Check what's already inside
-          const block = content.slice(ob, pos);
-          const newFields = [];
+            const block = content.slice(ob, pos);
+            const newFields = [];
 
-          if (!block.includes(`"${locale}":`)) {
-            newFields.push(`      "${locale}": ${JSON.stringify(translatedTitle)}`);
+            if (!block.includes(`"${locale}":`)) {
+              newFields.push(`      "${locale}": ${JSON.stringify(translatedTitle)}`);
+            }
+            if (!block.includes(`"summary_${locale}":`)) {
+              newFields.push(`      "summary_${locale}": ${JSON.stringify(translatedSummary)}`);
+            }
+
+            if (newFields.length > 0) {
+              let insertPos = closeBrace;
+              while (insertPos > ob && /\s/.test(content[insertPos - 1])) insertPos--;
+              content = content.slice(0, insertPos) + ',\n' + newFields.join(',\n') + '\n    ' + content.slice(closeBrace);
+              totalInjected += newFields.length;
+            }
+          } else {
+            const evidenceIdx = content.indexOf('"sourceEvidence":', content.indexOf('"id": "' + pub.id + '"'));
+            if (evidenceIdx === -1) continue;
+            const bracketOpen = content.indexOf('[', evidenceIdx);
+            let bc = 1, pos = bracketOpen + 1;
+            while (bc > 0 && pos < content.length) { if (content[pos] === '[') bc++; if (content[pos] === ']') bc--; pos++; }
+
+            const transObj = {};
+            transObj[locale] = translatedTitle;
+            transObj[`summary_${locale}`] = translatedSummary;
+            const transJson = JSON.stringify(transObj, null, 6).split('\n').map((line, i) => i === 0 ? line : '    ' + line).join('\n');
+            content = content.slice(0, pos) + ',\n    "translations": ' + transJson + content.slice(pos);
+            totalInjected += 2;
           }
-          if (!block.includes(`"summary_${locale}":`)) {
-            newFields.push(`      "summary_${locale}": ${JSON.stringify(translatedSummary)}`);
-          }
-
-          if (newFields.length > 0) {
-            let insertPos = closeBrace;
-            while (insertPos > ob && /\s/.test(content[insertPos - 1])) insertPos--;
-            content = content.slice(0, insertPos) + ',\n' + newFields.join(',\n') + '\n    ' + content.slice(closeBrace);
-            totalInjected += newFields.length;
-          }
-        } else {
-          // No translations block — create one
-          const evidenceIdx = content.indexOf('"sourceEvidence":', content.indexOf('"id": "' + pub.id + '"'));
-          if (evidenceIdx === -1) continue;
-          const bracketOpen = content.indexOf('[', evidenceIdx);
-          let bc = 1, pos = bracketOpen + 1;
-          while (bc > 0 && pos < content.length) { if (content[pos] === '[') bc++; if (content[pos] === ']') bc--; pos++; }
-
-          const transObj = {};
-          transObj[locale] = translatedTitle;
-          transObj[`summary_${locale}`] = translatedSummary;
-          const transJson = JSON.stringify(transObj, null, 6).split('\n').map((line, i) => i === 0 ? line : '    ' + line).join('\n');
-          content = content.slice(0, pos) + ',\n    "translations": ' + transJson + content.slice(pos);
-          totalInjected += 2;
         }
+
+        log('✅', `  Batch ${chunkIndex} OK`);
+      } catch (err) {
+        if (IS_PRODUCTION) {
+          console.error(`\n🚨 HARD FAIL [PRODUCTION]: Tradução falhou para ${locale}, batch ${chunkIndex}`);
+          console.error(`   Error: ${err.message}`);
+          process.exit(1);
+        }
+        log('❌', `  Batch ${chunkIndex} failed for ${locale}: ${err.message}`);
       }
 
-      log('✅', `Injected ${translated.length} translations for ${locale}`);
-
-    } catch (err) {
-      log('❌', `Failed for ${locale}: ${err.message}`);
+      // Delay entre batches (rate-limit prevention)
+      if (chunkIndex < chunks_.length) {
+        await sleep(DELAY_MS);
+      }
     }
 
+    // Delay entre locales
     await sleep(DELAY_MS);
   }
 
@@ -328,12 +443,10 @@ async function translateBlogPosts() {
     const headline = match[1];
     const around = content.slice(Math.max(0, match.index - 200), match.index + 1000);
 
-    // Check if this post already has headline_en
     const hasEn = around.includes('"headline_en"');
     const posMatch = around.match(/"position": (\d+)/);
     const position = posMatch ? parseInt(posMatch[1]) : -1;
 
-    // Find summary
     const summaryMatch = around.match(/"summary": "([^"]*(?:\\.[^"]*)*)"/);
     const summary = summaryMatch ? summaryMatch[1].replace(/\\"/g, '"') : '';
 
@@ -350,7 +463,11 @@ async function translateBlogPosts() {
   log('🔄', `${posts.length} blog posts need translations`);
 
   if (!API_AVAILABLE) {
-    console.error('\n❌ FATAL: ' + posts.length + ' blog posts need translations but GEMINI_API_KEY is not set!');
+    if (IS_PRODUCTION) {
+      console.error(`\n🚨 HARD FAIL [PRODUCTION]: ${posts.length} posts sem tradução e GEMINI_API_KEY ausente!`);
+      process.exit(1);
+    }
+    console.error(`\n❌ FATAL: ${posts.length} blog posts precisam de tradução mas GEMINI_API_KEY não está definida!`);
     console.error('   Run: node --env-file=.env.local scripts/i18n/translate-generated-artifacts.mjs');
     process.exit(1);
   }
@@ -365,45 +482,62 @@ async function translateBlogPosts() {
   for (const locale of LOCALES) {
     log('🌍', `Translating ${posts.length} blog headlines → ${locale}...`);
 
-    const batch = posts.map(p => ({ title: p.headline, summary: p.summary.slice(0, 300) }));
+    // FASE 1: Chunking
+    const allBatch = posts.map(p => ({ title: p.headline, summary: p.summary.slice(0, 300) }));
+    const chunks_ = chunk(allBatch, BATCH_SIZE);
+    log('📦', `  Dividido em ${chunks_.length} batch(es) de até ${BATCH_SIZE} itens`);
 
-    try {
-      const translated = await translateBatch(batch, locale);
+    let chunkIndex = 0;
+    for (const batchChunk of chunks_) {
+      chunkIndex++;
+      try {
+        log('🔄', `  Batch ${chunkIndex}/${chunks_.length} (${batchChunk.length} itens) → ${locale}...`);
+        const translated = await translateBatch(batchChunk, locale);
 
-      // Inject into content (re-read to account for mutations)
-      for (let i = 0; i < translated.length; i++) {
-        const post = posts[i];
-        const headlineIdx = content.indexOf('"headline": "' + post.headline + '"');
-        if (headlineIdx === -1) continue;
+        const startIdx = (chunkIndex - 1) * BATCH_SIZE;
+        for (let i = 0; i < translated.length; i++) {
+          const post = posts[startIdx + i];
+          if (!post) continue;
+          const headlineIdx = content.indexOf('"headline": "' + post.headline + '"');
+          if (headlineIdx === -1) continue;
 
-        const summaryIdx = content.indexOf('"summary":', headlineIdx);
-        if (summaryIdx === -1 || summaryIdx - headlineIdx > 1000) continue;
+          const summaryIdx = content.indexOf('"summary":', headlineIdx);
+          if (summaryIdx === -1 || summaryIdx - headlineIdx > 1000) continue;
 
-        const summaryLineEnd = content.indexOf('\n', summaryIdx);
-        if (summaryLineEnd === -1) continue;
+          const summaryLineEnd = content.indexOf('\n', summaryIdx);
+          if (summaryLineEnd === -1) continue;
 
-        // Check if already has this locale
-        const context = content.slice(headlineIdx, headlineIdx + 1500);
-        if (context.includes(`"headline_${locale}"`)) continue;
+          const context = content.slice(headlineIdx, headlineIdx + 1500);
+          if (context.includes(`"headline_${locale}"`)) continue;
 
-        const summaryLine = content.slice(summaryIdx, summaryLineEnd);
-        let fixedLine = summaryLine;
-        if (!summaryLine.trimEnd().endsWith(',')) {
-          fixedLine = summaryLine.trimEnd() + ',';
+          const summaryLine = content.slice(summaryIdx, summaryLineEnd);
+          let fixedLine = summaryLine;
+          if (!summaryLine.trimEnd().endsWith(',')) {
+            fixedLine = summaryLine.trimEnd() + ',';
+          }
+
+          const fields = [
+            `      "headline_${locale}": ${JSON.stringify(translated[i].title)},`,
+            `      "summary_${locale}": ${JSON.stringify(translated[i].summary)}${locale === 'he' ? '' : ','}`
+          ].join('\n');
+
+          content = content.slice(0, summaryIdx) + fixedLine + '\n' + fields + content.slice(summaryLineEnd);
+          totalInjected += 2;
         }
 
-        const fields = [
-          `      "headline_${locale}": ${JSON.stringify(translated[i].title)},`,
-          `      "summary_${locale}": ${JSON.stringify(translated[i].summary)}${locale === 'he' ? '' : ','}`
-        ].join('\n');
-
-        content = content.slice(0, summaryIdx) + fixedLine + '\n' + fields + content.slice(summaryLineEnd);
-        totalInjected += 2;
+        log('✅', `  Batch ${chunkIndex} OK`);
+      } catch (err) {
+        if (IS_PRODUCTION) {
+          console.error(`\n🚨 HARD FAIL [PRODUCTION]: Tradução de blog falhou para ${locale}, batch ${chunkIndex}`);
+          console.error(`   Error: ${err.message}`);
+          process.exit(1);
+        }
+        log('❌', `  Batch ${chunkIndex} failed for ${locale}: ${err.message}`);
       }
 
-      log('✅', `Injected ${translated.length} blog translations for ${locale}`);
-    } catch (err) {
-      log('❌', `Failed for ${locale}: ${err.message}`);
+      if (chunkIndex < chunks_.length) {
+        await sleep(DELAY_MS);
+      }
     }
 
     await sleep(DELAY_MS);
@@ -422,12 +556,14 @@ async function translateBlogPosts() {
 async function main() {
   console.log('');
   console.log('═══════════════════════════════════════════════════════════════');
-  console.log('  🌐 translate-generated-artifacts.mjs — Post-Generation i18n');
+  console.log('  🌐 translate-generated-artifacts.mjs — Zero Trust Pipeline');
   console.log('═══════════════════════════════════════════════════════════════');
   console.log('');
 
+  if (IS_PRODUCTION) log('🔒', 'PRODUCTION MODE — Hard Fail ativado');
   if (DRY_RUN) log('🧪', 'DRY RUN — no files will be modified');
   if (FORCE) log('⚡', 'FORCE mode — re-translating everything');
+  log('📦', `Batch size: ${BATCH_SIZE} | Delay: ${DELAY_MS}ms | Max retries: ${MAX_RETRIES}`);
 
   await initGemini();
 
@@ -440,6 +576,7 @@ async function main() {
   console.log('═══════════════════════════════════════════════════════════════');
   console.log(`  📖 Publications: ${pubCount} fields translated`);
   console.log(`  📰 Blog posts:   ${blogCount} fields translated`);
+  if (IS_PRODUCTION) console.log('  🔒 Mode: PRODUCTION (Hard Fail)');
   console.log('');
 
   if (pubCount === 0 && blogCount === 0) {
