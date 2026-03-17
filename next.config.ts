@@ -4,7 +4,55 @@ import { legacySermonRedirects } from "./data/sermons-migration";
 const nextConfig: NextConfig = {
   // Locale rewrites removed — converted to 301 redirects below to fix GSC "Alternate page with canonical" errors
   async headers() {
+    // ── Security Headers (Lote 23 — Enterprise Grade) ─────────────────────────
+    const securityHeaders = [
+      {
+        key: 'Content-Security-Policy',
+        value: [
+          "default-src 'self'",
+          "script-src 'self' 'unsafe-inline'",
+          "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
+          "font-src 'self' https://fonts.gstatic.com",
+          "img-src 'self' data: https: blob:",
+          "connect-src 'self' https://generativelanguage.googleapis.com https://vitals.vercel-insights.com",
+          "frame-ancestors 'none'",
+          "base-uri 'self'",
+          "form-action 'self'",
+        ].join('; '),
+      },
+      {
+        key: 'Strict-Transport-Security',
+        value: 'max-age=63072000; includeSubDomains; preload',
+      },
+      {
+        key: 'X-Frame-Options',
+        value: 'DENY',
+      },
+      {
+        key: 'X-Content-Type-Options',
+        value: 'nosniff',
+      },
+      {
+        key: 'Referrer-Policy',
+        value: 'strict-origin-when-cross-origin',
+      },
+      {
+        key: 'Permissions-Policy',
+        value: 'camera=(), microphone=(), geolocation=(), interest-cohort=()',
+      },
+      {
+        key: 'X-DNS-Prefetch-Control',
+        value: 'on',
+      },
+    ];
+
     return [
+      // Global security headers for all routes
+      {
+        source: '/(.*)',
+        headers: securityHeaders,
+      },
+      // ── Per-route headers ─────────────────────────────────────────────────
       {
         source: "/.well-known/did.json",
         headers: [

@@ -28,6 +28,7 @@
     "test:coverage": "vitest run --coverage",
     "test:ui": "vitest --ui",
     "test:coverage-ui": "vitest --coverage --ui",
+    "test:e2e": "npx playwright test",
     "sota:check": "node scripts/sota-validate.mjs --skip-build",
     "sota:full": "node scripts/sota-validate.mjs",
     "links:inventory": "npm run upkf:generate",
@@ -44,6 +45,7 @@
     "react-dom": "19.2.3"
   },
   "devDependencies": {
+    "@playwright/test": "^1.58.2",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",

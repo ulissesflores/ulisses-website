@@ -6,6 +6,7 @@
 import { readFileSync, writeFileSync, readdirSync, existsSync } from 'fs';
 import { resolve, join } from 'path';
 import { fileURLToPath } from 'url';
+import { TARGET_LOCALES } from '../config/i18n.config.mjs';
 
 const __dirname = fileURLToPath(new URL('.', import.meta.url));
 const ROOT = resolve(__dirname, '../..');
@@ -55,8 +56,6 @@ const TRANSLATIONS = {
   'Explorar Arquivo →': { en: 'Explore Archive →', es: 'Explorar Archivo →', it: 'Esplora Archivio →', he: 'חקור ארכיון →' },
   'Explorar Simulação →': { en: 'Explore Simulation →', es: 'Explorar Simulación →', it: 'Esplora Simulazione →', he: 'חקור סימולציה →' },
 };
-
-import { TARGET_LOCALES } from '../config/i18n.config.mjs';
 
 let totalFixed = 0;
 

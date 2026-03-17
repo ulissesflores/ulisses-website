@@ -97,7 +97,7 @@ function run(label, command) {
 
 // ── Pipeline ────────────────────────────────────────────────────────────────────
 
-const totalSteps = SKIP_BUILD ? 6 : 7;
+const totalSteps = SKIP_BUILD ? 6 : 8;
 const startTime = Date.now();
 
 console.log('');
@@ -159,10 +159,18 @@ header(6, totalSteps, 'SEO — JSON-LD, DID, Rich Results');
 run('seo:rich-results', 'node scripts/seo/validate-rich-results.mjs');
 success('Rich Results e JSON-LD validados');
 
-// ── STEP 7: Build (Optional) ────────────────────────────────────────────────────
+// ── STEP 7: E2E Playwright (Optional — sota:full only) ──────────────────────
 
 if (!SKIP_BUILD) {
-  header(7, totalSteps, 'Build — SSG Completo (next build)');
+  header(7, totalSteps, 'E2E — Playwright Adversarial Tests');
+  run('test:e2e', 'npx playwright test');
+  success('E2E Playwright — todos os testes passaram');
+}
+
+// ── STEP 8: Build (Optional) ────────────────────────────────────────────────────
+
+if (!SKIP_BUILD) {
+  header(8, totalSteps, 'Build — SSG Completo (next build)');
   run('build', 'npm run build');
   success('Build SSG completo sem erros');
 }
@@ -182,7 +190,9 @@ console.log(`${GREEN}  ✅ Test Suite:     todos passaram${RESET}`);
 console.log(`${GREEN}  ✅ SEO:            validado${RESET}`);
 console.log(`${GREEN}  ✅ Rich Results:   validado${RESET}`);
 if (!SKIP_BUILD) {
+  console.log(`${GREEN}  ✅ E2E:            Playwright green${RESET}`);
   console.log(`${GREEN}  ✅ Build:          SSG completo${RESET}`);
 }
 console.log(`${DIM}  ⏱️  Tempo total: ${elapsed}s${RESET}`);
 console.log('');
+
