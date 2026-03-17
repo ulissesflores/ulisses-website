@@ -4,7 +4,8 @@ import { common as en } from './i18n/en/common';
 import { common as es } from './i18n/es/common';
 import { common as itLocale } from './i18n/it/common';
 import { common as he } from './i18n/he/common';
-import { publications } from './publications';
+import { publications, publicationTranslations, blogHeadlineTranslations } from './publications';
+import { knowledgeData } from './knowledge';
 
 // ─── FASE 1: Menu Integrity Test ────────────────────────────────────────────────
 // Guarantees that nav hrefs are NEVER scrambled by AI translation.
@@ -57,29 +58,70 @@ describe('Menu Integrity — nav.categories href parity', () => {
   });
 });
 
-// ─── FASE 2: Publication Translations Completeness ──────────────────────────────
-// Guarantees that every publication has translations for ALL supported locales.
-// Tolerância zero para fallbacks: se it/he estiver faltando, o build quebra.
+// ─── FASE 2: Publication Translations Completeness (Overlay) ─────────────────────
+// Guarantees that every publication has translations in the overlay file.
 
-describe('Publication Translations — zero fallback tolerance', () => {
+describe('Publication Translations — overlay completeness', () => {
   const requiredLocales = ['en', 'es', 'it', 'he'] as const;
 
-  it('every publication has a translations object', () => {
+  it('every publication has an entry in publicationTranslations', () => {
     for (const pub of publications) {
       expect(
-        pub.translations,
-        `Publication "${pub.id}" is missing translations object`,
+        publicationTranslations[pub.id],
+        `Publication "${pub.id}" is missing from publicationTranslations overlay`,
       ).toBeDefined();
     }
   });
 
   for (const locale of requiredLocales) {
-    it(`every publication has a non-empty translations.${locale}`, () => {
+    it(`every publication has a non-empty title for ${locale}`, () => {
       for (const pub of publications) {
-        const title = pub.translations?.[locale as keyof NonNullable<typeof pub.translations>];
+        const title = publicationTranslations[pub.id]?.[locale];
         expect(
           typeof title === 'string' && title.length > 0,
-          `Publication "${pub.id}" is missing translations.${locale}`,
+          `Publication "${pub.id}" is missing title for ${locale}`,
+        ).toBe(true);
+      }
+    });
+  }
+
+  for (const locale of requiredLocales) {
+    it(`every publication has a non-empty summary_${locale}`, () => {
+      for (const pub of publications) {
+        const key = `summary_${locale}` as keyof typeof publicationTranslations[string];
+        const summary = publicationTranslations[pub.id]?.[key];
+        expect(
+          typeof summary === 'string' && summary.length > 0,
+          `Publication "${pub.id}" is missing summary_${locale}`,
+        ).toBe(true);
+      }
+    });
+  }
+});
+
+// ─── FASE 3: Blog Headline Translations (Overlay) ────────────────────────────────
+// Guarantees that every blog post has localized headlines in the overlay file.
+
+describe('Blog Headline Translations — overlay completeness', () => {
+  const posts = knowledgeData.blog.posts;
+  const requiredLocales = ['en', 'es', 'it', 'he'] as const;
+
+  it('every blog post has an entry in blogHeadlineTranslations', () => {
+    for (const post of posts) {
+      expect(
+        blogHeadlineTranslations[post.slug],
+        `Blog "${post.slug}" is missing from blogHeadlineTranslations overlay`,
+      ).toBeDefined();
+    }
+  });
+
+  for (const locale of requiredLocales) {
+    it(`every blog post has a non-empty headline for ${locale}`, () => {
+      for (const post of posts) {
+        const headline = blogHeadlineTranslations[post.slug]?.[locale];
+        expect(
+          typeof headline === 'string' && headline.length > 0,
+          `Blog "${post.slug}" is missing headline for ${locale}`,
         ).toBe(true);
       }
     });

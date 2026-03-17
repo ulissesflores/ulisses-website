@@ -1,0 +1,599 @@
+From 406ebfe8c837f99bd1c11ee39962809fb16fbc92 Mon Sep 17 00:00:00 2001
+From: Carlos Ulisses Flores <c.ulisses@gmail.com>
+Date: Mon, 16 Mar 2026 17:50:19 -0300
+Subject: [PATCH 1/2] fix(seo): lote 14+15 - self-referencing canonical urls,
+ publication title i18n, canonical tests
+
+---
+ app/[locale]/[category]/[slug]/page.tsx       |  5 +--
+ app/[locale]/[category]/page.tsx              |  5 +--
+ .../[cluster]/[slug]/page.tsx                 |  1 +
+ app/[locale]/acervo-teologico/page.tsx        |  1 +
+ app/[locale]/certifications/[slug]/page.tsx   |  5 +--
+ app/[locale]/certifications/page.tsx          |  4 +--
+ app/[locale]/clube-santo/page.tsx             |  4 +--
+ app/[locale]/identidade/page.tsx              |  4 +--
+ app/[locale]/layout.tsx                       |  4 +--
+ app/[locale]/mundo-politico/[slug]/page.tsx   |  1 +
+ app/[locale]/mundo-politico/page.tsx          |  4 +--
+ app/[locale]/page.tsx                         |  4 +--
+ app/[locale]/projeto-psi/page.tsx             |  4 +--
+ app/[locale]/simulacoes/goldenleaf/page.tsx   |  3 +-
+ .../ia-2027/corrida-estrategica/page.tsx      |  3 +-
+ .../ia-2027/desaceleracao-coordenada/page.tsx |  3 +-
+ app/[locale]/simulacoes/ia-2027/page.tsx      |  3 +-
+ app/[locale]/simulacoes/mumm-ra/page.tsx      |  3 +-
+ app/[locale]/simulacoes/page.tsx              |  4 +--
+ app/[locale]/simulacoes/projeto-psi/page.tsx  |  3 +-
+ app/[locale]/whitepapers/projeto-psi/page.tsx |  3 +-
+ data/seo.test.ts                              | 35 ++++++++++++++++++-
+ data/seo.ts                                   | 22 ++++++++++++
+ docs/deep-research-quality.generated.json     |  2 +-
+ docs/deep-research-quality.generated.md       |  2 +-
+ docs/url-inventory.generated.json             |  2 +-
+ 26 files changed, 101 insertions(+), 33 deletions(-)
+
+diff --git a/app/[locale]/[category]/[slug]/page.tsx b/app/[locale]/[category]/[slug]/page.tsx
+index d45c025..289c5f8 100644
+--- a/app/[locale]/[category]/[slug]/page.tsx
++++ b/app/[locale]/[category]/[slug]/page.tsx
+@@ -8,6 +8,7 @@ import { AuthorHubCard } from '@/components/author-hub-card';
+ import { localePath } from '@/lib/locale-path';
+ import { defaultLocale, isLocale, type Locale } from '@/data/i18n';
+ import { getDictionary } from '@/lib/get-dictionary';
++import { buildCanonical } from '@/data/seo';
+ 
+ interface PageProps {
+   params: Promise<{ category: string; slug: string; locale: string }>;
+@@ -21,7 +22,7 @@ export function generateStaticParams() {
+ }
+ 
+ export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+-  const { category, slug } = await params;
++  const { category, slug, locale } = await params;
+   const publication = publications.find((item) => item.category === category && item.id === slug);
+ 
+   if (!publication) {
+@@ -40,7 +41,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
+       },
+     ],
+     alternates: {
+-      canonical: canonicalPath,
++      canonical: buildCanonical(locale, canonicalPath),
+     },
+     openGraph: {
+       type: 'article',
+diff --git a/app/[locale]/[category]/page.tsx b/app/[locale]/[category]/page.tsx
+index be90818..a4d4107 100644
+--- a/app/[locale]/[category]/page.tsx
++++ b/app/[locale]/[category]/page.tsx
+@@ -8,6 +8,7 @@ import { upkfMeta } from '@/data/generated/upkf.generated';
+ import { AuthorHubCard } from '@/components/author-hub-card';
+ import { getDictionary } from '@/lib/get-dictionary';
+ import { localePath } from '@/lib/locale-path';
++import { buildCanonical } from '@/data/seo';
+ 
+ const validCategories = Object.keys(publicationCollections) as PublicationCategory[];
+ 
+@@ -42,7 +43,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
+       },
+     ],
+     alternates: {
+-      canonical: `/${category}`,
++      canonical: buildCanonical(locale, `/${category}`),
+     },
+     openGraph: {
+       type: 'website',
+@@ -205,7 +206,7 @@ export default async function CategoryPage({ params }: PageProps) {
+               </div>
+               <h2 className='text-2xl font-semibold text-white mb-3'>
+                 <Link href={`/${publication.category}/${publication.id}`} className='hover:text-emerald-400 transition-colors'>
+-                  {publication.title}
++                  {(locale !== 'pt-br' && publication.translations?.[locale as keyof NonNullable<typeof publication.translations>]) || publication.title}
+                 </Link>
+               </h2>
+               <p className='text-neutral-400 mb-4 leading-relaxed'>{publication.summary}</p>
+diff --git a/app/[locale]/acervo-teologico/[cluster]/[slug]/page.tsx b/app/[locale]/acervo-teologico/[cluster]/[slug]/page.tsx
+index 2d0c49e..ccc1bd7 100644
+--- a/app/[locale]/acervo-teologico/[cluster]/[slug]/page.tsx
++++ b/app/[locale]/acervo-teologico/[cluster]/[slug]/page.tsx
+@@ -8,6 +8,7 @@ import { AuthorHubCard } from '@/components/author-hub-card';
+ import { defaultLocale, isLocale, localeToOgLocale, type Locale } from '@/data/i18n';
+ import { getDictionary } from '@/lib/get-dictionary';
+ import { buildSermonI18nMaps, localizeSermon, localizeCluster } from '@/data/sermons-i18n';
++import { buildCanonical } from '@/data/seo';
+ 
+ interface PageProps {
+   params: Promise<{ cluster: string; slug: string; locale: string }>;
+diff --git a/app/[locale]/acervo-teologico/page.tsx b/app/[locale]/acervo-teologico/page.tsx
+index 9cd1fab..63ec510 100644
+--- a/app/[locale]/acervo-teologico/page.tsx
++++ b/app/[locale]/acervo-teologico/page.tsx
+@@ -9,6 +9,7 @@ import { FaqSection } from '@/components/faq-section';
+ import { getDictionary } from '@/lib/get-dictionary';
+ import { buildSermonI18nMaps, localizeCluster } from '@/data/sermons-i18n';
+ import { localePath } from '@/lib/locale-path';
++import { buildCanonical } from '@/data/seo';
+ 
+ interface PageProps {
+   params: Promise<{ locale: string }>;
+diff --git a/app/[locale]/certifications/[slug]/page.tsx b/app/[locale]/certifications/[slug]/page.tsx
+index d44939c..0e57dae 100644
+--- a/app/[locale]/certifications/[slug]/page.tsx
++++ b/app/[locale]/certifications/[slug]/page.tsx
+@@ -8,6 +8,7 @@ import { getDictionary } from '@/lib/get-dictionary';
+ import { isLocale, defaultLocale } from '@/data/i18n';
+ import type { Locale } from '@/data/i18n';
+ import { localePath } from '@/lib/locale-path';
++import { buildCanonical } from '@/data/seo';
+ 
+ interface PageProps {
+   params: Promise<{ slug: string; locale: string }>;
+@@ -20,7 +21,7 @@ export function generateStaticParams() {
+ }
+ 
+ export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+-  const { slug } = await params;
++  const { slug, locale } = await params;
+   const certification = getCertificationSotaBySlug(slug);
+ 
+   if (!certification) {
+@@ -39,7 +40,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
+       },
+     ],
+     alternates: {
+-      canonical: certification.canonicalPath,
++      canonical: buildCanonical(locale, certification.canonicalPath),
+     },
+     openGraph: {
+       type: 'article',
+diff --git a/app/[locale]/certifications/page.tsx b/app/[locale]/certifications/page.tsx
+index eea0c42..91d6803 100644
+--- a/app/[locale]/certifications/page.tsx
++++ b/app/[locale]/certifications/page.tsx
+@@ -6,7 +6,7 @@ import { AuthorHubCard } from '@/components/author-hub-card';
+ import { FaqSection } from '@/components/faq-section';
+ import { isLocale, defaultLocale, localeToOgLocale, type Locale } from '@/data/i18n';
+ import { getDictionary } from '@/lib/get-dictionary';
+-import { buildLanguageAlternates } from '@/data/seo';
++import { buildLanguageAlternates, buildCanonical } from '@/data/seo';
+ import { localePath } from '@/lib/locale-path';
+ 
+ const providerOrder = ['Alura', 'Coursera', 'edX'] as const;
+@@ -50,7 +50,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
+     title: t.meta.title,
+     description: t.meta.description,
+     keywords: [...t.meta.keywords],
+-    alternates: { canonical: canonicalPath, languages: buildLanguageAlternates(canonicalPath) },
++    alternates: { canonical: buildCanonical(locale, canonicalPath), languages: buildLanguageAlternates(canonicalPath) },
+     openGraph: {
+       type: 'website',
+       url: `${upkfMeta.primaryWebsite}${canonicalPath}`,
+diff --git a/app/[locale]/clube-santo/page.tsx b/app/[locale]/clube-santo/page.tsx
+index 26876cf..29d9512 100644
+--- a/app/[locale]/clube-santo/page.tsx
++++ b/app/[locale]/clube-santo/page.tsx
+@@ -5,7 +5,7 @@ import { AuthorHubCard } from '@/components/author-hub-card';
+ import { FaqSection } from '@/components/faq-section';
+ import { isLocale, defaultLocale, localeToOgLocale, type Locale } from '@/data/i18n';
+ import { getDictionary } from '@/lib/get-dictionary';
+-import { buildLanguageAlternates } from '@/data/seo';
++import { buildLanguageAlternates, buildCanonical } from '@/data/seo';
+ import { localePath } from '@/lib/locale-path';
+ 
+ const canonicalPath = '/clube-santo';
+@@ -23,7 +23,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
+     description: t.meta.description,
+     keywords: [...t.meta.keywords],
+     alternates: {
+-      canonical: canonicalPath,
++      canonical: buildCanonical(locale, canonicalPath),
+       languages: buildLanguageAlternates(canonicalPath),
+     },
+     openGraph: {
+diff --git a/app/[locale]/identidade/page.tsx b/app/[locale]/identidade/page.tsx
+index 86fca39..b4fd5af 100644
+--- a/app/[locale]/identidade/page.tsx
++++ b/app/[locale]/identidade/page.tsx
+@@ -9,7 +9,7 @@ import { publications } from '@/data/publications';
+ import { FaqSection } from '@/components/faq-section';
+ import { isLocale, defaultLocale, type Locale } from '@/data/i18n';
+ import { getDictionary } from '@/lib/get-dictionary';
+-import { buildLanguageAlternates } from '@/data/seo';
++import { buildLanguageAlternates, buildCanonical } from '@/data/seo';
+ 
+ const canonicalPath = '/identidade';
+ const ogImage = '/carlos-ulisses-flores-cto.jpg';
+@@ -44,7 +44,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
+   return {
+     title: t.meta.title,
+     description: t.meta.description,
+-    alternates: { canonical: canonicalPath, languages: buildLanguageAlternates(canonicalPath) },
++    alternates: { canonical: buildCanonical(locale, canonicalPath), languages: buildLanguageAlternates(canonicalPath) },
+     openGraph: {
+       type: 'profile',
+       url: `${upkfMeta.primaryWebsite}${canonicalPath}`,
+diff --git a/app/[locale]/layout.tsx b/app/[locale]/layout.tsx
+index 115b6b9..df4b1a5 100644
+--- a/app/[locale]/layout.tsx
++++ b/app/[locale]/layout.tsx
+@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
+ import { notFound } from 'next/navigation';
+ import { Noto_Sans_Hebrew } from 'next/font/google';
+ import { siteJsonLd, upkfMeta } from '@/data/generated/upkf.generated';
+-import { buildLanguageAlternates } from '@/data/seo';
++import { buildLanguageAlternates, buildCanonical } from '@/data/seo';
+ import {
+   supportedLocales,
+   defaultLocale,
+@@ -78,7 +78,7 @@ export async function generateMetadata({ params }: LayoutProps): Promise<Metadat
+     category: 'Research',
+     classification: 'Science and Technology',
+     alternates: {
+-      canonical: '/',
++      canonical: buildCanonical(locale, '/'),
+       languages: buildLanguageAlternates('/'),
+     },
+     robots: {
+diff --git a/app/[locale]/mundo-politico/[slug]/page.tsx b/app/[locale]/mundo-politico/[slug]/page.tsx
+index 201d33c..73bf998 100644
+--- a/app/[locale]/mundo-politico/[slug]/page.tsx
++++ b/app/[locale]/mundo-politico/[slug]/page.tsx
+@@ -7,6 +7,7 @@ import { AuthorHubCard } from '@/components/author-hub-card';
+ import { defaultLocale, isLocale, localeToOgLocale, type Locale } from '@/data/i18n';
+ import { getDictionary } from '@/lib/get-dictionary';
+ import { localePath } from '@/lib/locale-path';
++import { buildCanonical } from '@/data/seo';
+ 
+ interface PageProps {
+   params: Promise<{ slug: string; locale: string }>;
+diff --git a/app/[locale]/mundo-politico/page.tsx b/app/[locale]/mundo-politico/page.tsx
+index fa40390..41a03fb 100644
+--- a/app/[locale]/mundo-politico/page.tsx
++++ b/app/[locale]/mundo-politico/page.tsx
+@@ -6,7 +6,7 @@ import { AuthorHubCard } from '@/components/author-hub-card';
+ import { FaqSection } from '@/components/faq-section';
+ import { isLocale, defaultLocale, localeToOgLocale, type Locale } from '@/data/i18n';
+ import { getDictionary } from '@/lib/get-dictionary';
+-import { buildLanguageAlternates } from '@/data/seo';
++import { buildLanguageAlternates, buildCanonical } from '@/data/seo';
+ import { localePath } from '@/lib/locale-path';
+ 
+ const canonicalPath = '/mundo-politico';
+@@ -24,7 +24,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
+     description: t.meta.description,
+     keywords: [...t.meta.keywords],
+     alternates: {
+-      canonical: canonicalPath,
++      canonical: buildCanonical(locale, canonicalPath),
+       languages: buildLanguageAlternates(canonicalPath),
+     },
+     openGraph: {
+diff --git a/app/[locale]/page.tsx b/app/[locale]/page.tsx
+index e5a0d62..bb21d3d 100644
+--- a/app/[locale]/page.tsx
++++ b/app/[locale]/page.tsx
+@@ -12,7 +12,7 @@ import { FaqSection } from '@/components/faq-section';
+ import { upkfMeta } from '@/data/generated/upkf.generated';
+ import { isLocale, defaultLocale, localeToOgLocale, type Locale } from '@/data/i18n';
+ import { getDictionary } from '@/lib/get-dictionary';
+-import { buildLanguageAlternates } from '@/data/seo';
++import { buildLanguageAlternates, buildCanonical } from '@/data/seo';
+ import { localePath } from '@/lib/locale-path';
+ 
+ type PageProps = { params: Promise<{ locale: string }> };
+@@ -28,7 +28,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
+     description: t.meta.description,
+     keywords: [...t.meta.keywords],
+     authors: [{ name: 'Ulisses Flores', url: 'https://ulissesflores.com/identidade' }],
+-    alternates: { canonical: '/', languages: buildLanguageAlternates('/') },
++    alternates: { canonical: buildCanonical(locale, '/'), languages: buildLanguageAlternates('/') },
+     openGraph: {
+       type: 'profile',
+       url: 'https://ulissesflores.com',
+diff --git a/app/[locale]/projeto-psi/page.tsx b/app/[locale]/projeto-psi/page.tsx
+index abf7106..8baa433 100644
+--- a/app/[locale]/projeto-psi/page.tsx
++++ b/app/[locale]/projeto-psi/page.tsx
+@@ -6,7 +6,7 @@ import { AuthorHubCard } from '@/components/author-hub-card';
+ import { FaqSection } from '@/components/faq-section';
+ import { isLocale, defaultLocale, localeToOgLocale, type Locale } from '@/data/i18n';
+ import { getDictionary } from '@/lib/get-dictionary';
+-import { buildLanguageAlternates } from '@/data/seo';
++import { buildLanguageAlternates, buildCanonical } from '@/data/seo';
+ import { localePath } from '@/lib/locale-path';
+ 
+ const canonicalPath = '/projeto-psi';
+@@ -23,7 +23,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
+     title: t.meta.title,
+     description: t.meta.description,
+     keywords: [...t.meta.keywords],
+-    alternates: { canonical: canonicalPath, languages: buildLanguageAlternates(canonicalPath) },
++    alternates: { canonical: buildCanonical(locale, canonicalPath), languages: buildLanguageAlternates(canonicalPath) },
+     openGraph: {
+       type: 'website',
+       url: `https://ulissesflores.com${canonicalPath}`,
+diff --git a/app/[locale]/simulacoes/goldenleaf/page.tsx b/app/[locale]/simulacoes/goldenleaf/page.tsx
+index 1f31dbd..16ae180 100644
+--- a/app/[locale]/simulacoes/goldenleaf/page.tsx
++++ b/app/[locale]/simulacoes/goldenleaf/page.tsx
+@@ -7,6 +7,7 @@ import { AuthorHubCard } from '@/components/author-hub-card';
+ import { FaqSection } from '@/components/faq-section';
+ import { getDictionary } from '@/lib/get-dictionary';
+ import { localePath } from '@/lib/locale-path';
++import { buildCanonical } from '@/data/seo';
+ 
+ const canonicalPath = '/simulacoes/goldenleaf';
+ 
+@@ -25,7 +26,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
+     description: t.meta.description,
+     keywords: [...t.meta.keywords],
+     authors: [{ name: upkfMeta.publicDisplayName || upkfMeta.displayName, url: `${upkfMeta.primaryWebsite}/identidade` }],
+-    alternates: { canonical: canonicalPath },
++    alternates: { canonical: buildCanonical(locale, canonicalPath) },
+     openGraph: {
+       type: 'website',
+       url: `${upkfMeta.primaryWebsite}${canonicalPath}`,
+diff --git a/app/[locale]/simulacoes/ia-2027/corrida-estrategica/page.tsx b/app/[locale]/simulacoes/ia-2027/corrida-estrategica/page.tsx
+index 5842d8a..05c0c97 100644
+--- a/app/[locale]/simulacoes/ia-2027/corrida-estrategica/page.tsx
++++ b/app/[locale]/simulacoes/ia-2027/corrida-estrategica/page.tsx
+@@ -8,6 +8,7 @@ import { AuthorHubCard } from '@/components/author-hub-card';
+ import { FaqSection } from '@/components/faq-section';
+ import { getDictionary } from '@/lib/get-dictionary';
+ import { localePath } from '@/lib/locale-path';
++import { buildCanonical } from '@/data/seo';
+ 
+ const canonicalPath = '/simulacoes/ia-2027/corrida-estrategica';
+ const parentPath = '/simulacoes/ia-2027';
+@@ -27,7 +28,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
+     description: t.raceMeta.description,
+     keywords: [...t.raceMeta.keywords],
+     authors: [{ name: upkfMeta.publicDisplayName || upkfMeta.displayName, url: `${upkfMeta.primaryWebsite}/identidade` }],
+-    alternates: { canonical: canonicalPath },
++    alternates: { canonical: buildCanonical(locale, canonicalPath) },
+     openGraph: {
+       type: 'article',
+       url: `${upkfMeta.primaryWebsite}${canonicalPath}`,
+diff --git a/app/[locale]/simulacoes/ia-2027/desaceleracao-coordenada/page.tsx b/app/[locale]/simulacoes/ia-2027/desaceleracao-coordenada/page.tsx
+index a58e43a..f6ed06c 100644
+--- a/app/[locale]/simulacoes/ia-2027/desaceleracao-coordenada/page.tsx
++++ b/app/[locale]/simulacoes/ia-2027/desaceleracao-coordenada/page.tsx
+@@ -8,6 +8,7 @@ import { AuthorHubCard } from '@/components/author-hub-card';
+ import { FaqSection } from '@/components/faq-section';
+ import { getDictionary } from '@/lib/get-dictionary';
+ import { localePath } from '@/lib/locale-path';
++import { buildCanonical } from '@/data/seo';
+ 
+ const canonicalPath = '/simulacoes/ia-2027/desaceleracao-coordenada';
+ const parentPath = '/simulacoes/ia-2027';
+@@ -27,7 +28,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
+     description: t.slowdownMeta.description,
+     keywords: [...t.slowdownMeta.keywords],
+     authors: [{ name: upkfMeta.publicDisplayName || upkfMeta.displayName, url: `${upkfMeta.primaryWebsite}/identidade` }],
+-    alternates: { canonical: canonicalPath },
++    alternates: { canonical: buildCanonical(locale, canonicalPath) },
+     openGraph: {
+       type: 'article',
+       url: `${upkfMeta.primaryWebsite}${canonicalPath}`,
+diff --git a/app/[locale]/simulacoes/ia-2027/page.tsx b/app/[locale]/simulacoes/ia-2027/page.tsx
+index 0f3ee30..9e9fc0d 100644
+--- a/app/[locale]/simulacoes/ia-2027/page.tsx
++++ b/app/[locale]/simulacoes/ia-2027/page.tsx
+@@ -9,6 +9,7 @@ import { AuthorHubCard } from '@/components/author-hub-card';
+ import { FaqSection } from '@/components/faq-section';
+ import { getDictionary } from '@/lib/get-dictionary';
+ import { localePath } from '@/lib/locale-path';
++import { buildCanonical } from '@/data/seo';
+ 
+ const canonicalPath = '/simulacoes/ia-2027';
+ 
+@@ -40,7 +41,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
+     description: t.meta.description,
+     keywords: [...t.meta.keywords],
+     authors: [{ name: upkfMeta.publicDisplayName || upkfMeta.displayName, url: `${upkfMeta.primaryWebsite}/identidade` }],
+-    alternates: { canonical: canonicalPath },
++    alternates: { canonical: buildCanonical(locale, canonicalPath) },
+     openGraph: {
+       type: 'article',
+       url: `${upkfMeta.primaryWebsite}${canonicalPath}`,
+diff --git a/app/[locale]/simulacoes/mumm-ra/page.tsx b/app/[locale]/simulacoes/mumm-ra/page.tsx
+index 081d154..a960283 100644
+--- a/app/[locale]/simulacoes/mumm-ra/page.tsx
++++ b/app/[locale]/simulacoes/mumm-ra/page.tsx
+@@ -8,6 +8,7 @@ import { AuthorHubCard } from '@/components/author-hub-card';
+ import { FaqSection } from '@/components/faq-section';
+ import { getDictionary } from '@/lib/get-dictionary';
+ import { localePath } from '@/lib/locale-path';
++import { buildCanonical } from '@/data/seo';
+ 
+ const canonicalPath = '/simulacoes/mumm-ra';
+ const whatsappUrl = 'https://wa.me/551152868689';
+@@ -27,7 +28,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
+     description: t.meta.description,
+     keywords: [...t.meta.keywords],
+     authors: [{ name: upkfMeta.publicDisplayName || upkfMeta.displayName, url: `${upkfMeta.primaryWebsite}/identidade` }],
+-    alternates: { canonical: canonicalPath },
++    alternates: { canonical: buildCanonical(locale, canonicalPath) },
+     openGraph: {
+       type: 'website',
+       url: `${upkfMeta.primaryWebsite}${canonicalPath}`,
+diff --git a/app/[locale]/simulacoes/page.tsx b/app/[locale]/simulacoes/page.tsx
+index 3d8f4ba..3814f65 100644
+--- a/app/[locale]/simulacoes/page.tsx
++++ b/app/[locale]/simulacoes/page.tsx
+@@ -5,7 +5,7 @@ import { AuthorHubCard } from '@/components/author-hub-card';
+ import { FaqSection } from '@/components/faq-section';
+ import { isLocale, defaultLocale, localeToOgLocale, type Locale } from '@/data/i18n';
+ import { getDictionary } from '@/lib/get-dictionary';
+-import { buildLanguageAlternates } from '@/data/seo';
++import { buildLanguageAlternates, buildCanonical } from '@/data/seo';
+ import { localePath } from '@/lib/locale-path';
+ 
+ const canonicalPath = '/simulacoes';
+@@ -23,7 +23,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
+     description: t.meta.description,
+     keywords: [...t.meta.keywords],
+     authors: [{ name: upkfMeta.publicDisplayName || upkfMeta.displayName, url: `${upkfMeta.primaryWebsite}/identidade` }],
+-    alternates: { canonical: canonicalPath, languages: buildLanguageAlternates(canonicalPath) },
++    alternates: { canonical: buildCanonical(locale, canonicalPath), languages: buildLanguageAlternates(canonicalPath) },
+     openGraph: {
+       type: 'website',
+       url: `${upkfMeta.primaryWebsite}${canonicalPath}`,
+diff --git a/app/[locale]/simulacoes/projeto-psi/page.tsx b/app/[locale]/simulacoes/projeto-psi/page.tsx
+index 1a5576c..a95653b 100644
+--- a/app/[locale]/simulacoes/projeto-psi/page.tsx
++++ b/app/[locale]/simulacoes/projeto-psi/page.tsx
+@@ -8,6 +8,7 @@ import { FaqSection } from '@/components/faq-section';
+ import { getDictionary } from '@/lib/get-dictionary';
+ import { localePath } from '@/lib/locale-path';
+ import { PsiWhitepaperBodyLocalized } from '@/components/content/PsiWhitepaperBodyLocalized';
++import { buildCanonical } from '@/data/seo';
+ 
+ const canonicalPath = '/simulacoes/projeto-psi';
+ 
+@@ -22,7 +23,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
+     description: t.description,
+     keywords: [...t.keywords],
+     authors: [{ name: upkfMeta.publicDisplayName || upkfMeta.displayName, url: `${upkfMeta.primaryWebsite}/identidade` }],
+-    alternates: { canonical: canonicalPath },
++    alternates: { canonical: buildCanonical(locale, canonicalPath) },
+     openGraph: {
+       type: 'article',
+       url: `${upkfMeta.primaryWebsite}${canonicalPath}`,
+diff --git a/app/[locale]/whitepapers/projeto-psi/page.tsx b/app/[locale]/whitepapers/projeto-psi/page.tsx
+index e33ee41..dcb9c2d 100644
+--- a/app/[locale]/whitepapers/projeto-psi/page.tsx
++++ b/app/[locale]/whitepapers/projeto-psi/page.tsx
+@@ -8,6 +8,7 @@ import { FaqSection } from '@/components/faq-section';
+ import { getDictionary } from '@/lib/get-dictionary';
+ import { localePath } from '@/lib/locale-path';
+ import { PsiWhitepaperBodyLocalized } from '@/components/content/PsiWhitepaperBodyLocalized';
++import { buildCanonical } from '@/data/seo';
+ 
+ const canonicalPath = '/whitepapers/projeto-psi';
+ 
+@@ -22,7 +23,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
+     description: t.description,
+     keywords: [...t.keywords],
+     authors: [{ name: upkfMeta.publicDisplayName || upkfMeta.displayName, url: `${upkfMeta.primaryWebsite}/identidade` }],
+-    alternates: { canonical: canonicalPath },
++    alternates: { canonical: buildCanonical(locale, canonicalPath) },
+     openGraph: {
+       type: 'article',
+       url: `${upkfMeta.primaryWebsite}${canonicalPath}`,
+diff --git a/data/seo.test.ts b/data/seo.test.ts
+index f151168..e4aa1c8 100644
+--- a/data/seo.test.ts
++++ b/data/seo.test.ts
+@@ -1,5 +1,5 @@
+ import { describe, it, expect } from 'vitest';
+-import { buildLanguageAlternates } from './seo';
++import { buildLanguageAlternates, buildCanonical } from './seo';
+ 
+ describe('buildLanguageAlternates', () => {
+   it('returns alternates for all 5 locales', () => {
+@@ -32,3 +32,36 @@ describe('buildLanguageAlternates', () => {
+     }
+   });
+ });
++
++describe('buildCanonical (self-referencing canonical URLs)', () => {
++  it('pt-br returns bare path (no locale prefix)', () => {
++    expect(buildCanonical('pt-br', '/simulacoes')).toBe('/simulacoes');
++    expect(buildCanonical('pt-br', '/research')).toBe('/research');
++    expect(buildCanonical('pt-br', '/')).toBe('/');
++  });
++
++  it('foreign locales prepend /{locale} prefix', () => {
++    expect(buildCanonical('en', '/simulacoes')).toBe('/en/simulacoes');
++    expect(buildCanonical('es', '/research')).toBe('/es/research');
++    expect(buildCanonical('it', '/certifications')).toBe('/it/certifications');
++    expect(buildCanonical('he', '/identidade')).toBe('/he/identidade');
++  });
++
++  it('root path returns /{locale} for foreign locales', () => {
++    expect(buildCanonical('en', '/')).toBe('/en');
++    expect(buildCanonical('es', '/')).toBe('/es');
++    expect(buildCanonical('he', '/')).toBe('/he');
++  });
++
++  it('handles nested paths correctly', () => {
++    expect(buildCanonical('en', '/whitepapers/projeto-psi')).toBe('/en/whitepapers/projeto-psi');
++    expect(buildCanonical('es', '/simulacoes/ia-2027/corrida-estrategica')).toBe('/es/simulacoes/ia-2027/corrida-estrategica');
++    expect(buildCanonical('pt-br', '/whitepapers/projeto-psi')).toBe('/whitepapers/projeto-psi');
++  });
++
++  it('normalizes paths without leading slash', () => {
++    expect(buildCanonical('en', 'research')).toBe('/en/research');
++    expect(buildCanonical('pt-br', 'research')).toBe('/research');
++  });
++});
++
+diff --git a/data/seo.ts b/data/seo.ts
+index 3a87a9a..253f522 100644
+--- a/data/seo.ts
++++ b/data/seo.ts
+@@ -28,3 +28,25 @@ export function buildLanguageAlternates(path: string): Record<string, string> {
+   return alternates;
+ }
+ 
++/**
++ * Build a self-referencing canonical URL for the current locale.
++ *
++ * For pt-br (default locale): returns bare path (e.g., '/simulacoes')
++ *   because middleware rewrites bare paths → /pt-br/... invisibly.
++ *
++ * For all other locales: returns '/{locale}{path}' (e.g., '/es/simulacoes')
++ *   so Google sees each localized page as self-referencing canonical.
++ *
++ * Without this, all non-pt-br pages generate canonical pointing to the
++ * pt-br version, causing GSC to exclude 1000+ pages as duplicates.
++ */
++export function buildCanonical(locale: string, path: string): string {
++  const normalizedPath = normalizePath(path);
++  // Default locale uses bare paths (no prefix) — middleware handles rewrite
++  if (locale === 'pt-br') {
++    return normalizedPath;
++  }
++  // Foreign locales MUST include their locale prefix for self-referencing canonical
++  const suffix = normalizedPath === '/' ? '' : normalizedPath;
++  return `/${locale}${suffix}`;
++}
+diff --git a/docs/deep-research-quality.generated.json b/docs/deep-research-quality.generated.json
+index 38042df..895f81d 100644
+--- a/docs/deep-research-quality.generated.json
++++ b/docs/deep-research-quality.generated.json
+@@ -1,5 +1,5 @@
+ {
+-  "generatedAt": "2026-03-16T02:47:09.780Z",
++  "generatedAt": "2026-03-16T20:47:55.326Z",
+   "threshold": 950,
+   "projectScore": 989,
+   "approved": true,
+diff --git a/docs/deep-research-quality.generated.md b/docs/deep-research-quality.generated.md
+index f171e17..36504c2 100644
+--- a/docs/deep-research-quality.generated.md
++++ b/docs/deep-research-quality.generated.md
+@@ -1,6 +1,6 @@
+ # Deep Research Quality Report (Generated)
+ 
+-- Generated at: 2026-03-16T02:47:09.780Z
++- Generated at: 2026-03-16T20:47:55.326Z
+ - Threshold: 950
+ - Project score: 989/1000
+ - Approved: yes
+diff --git a/docs/url-inventory.generated.json b/docs/url-inventory.generated.json
+index 6dce82a..6f74fb3 100644
+--- a/docs/url-inventory.generated.json
++++ b/docs/url-inventory.generated.json
+@@ -1,5 +1,5 @@
+ {
+-  "generatedAt": "2026-03-16T02:47:09.798Z",
++  "generatedAt": "2026-03-16T20:47:55.345Z",
+   "totals": {
+     "all": 268,
+     "collections": 6,
+-- 
+2.53.0
+

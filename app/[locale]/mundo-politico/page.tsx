@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { knowledgeData } from '@/data/knowledge';
+import { blogHeadlineTranslations } from '@/data/publications';
 import { upkfMeta } from '@/data/generated/upkf.generated';
 import { AuthorHubCard } from '@/components/author-hub-card';
 import { FaqSection } from '@/components/faq-section';
@@ -148,7 +149,7 @@ export default async function MundoPoliticoPage({ params }: PageProps) {
               <article key={post.canonicalPath} className='rounded-xl border border-neutral-800 bg-neutral-900/40 p-6'>
                 <Link href={post.canonicalPath} className='group'>
                   <h3 className='text-lg font-semibold text-white group-hover:text-emerald-400 transition-colors mb-2'>
-                    {post.headline}
+                    {(locale !== 'pt-br' && blogHeadlineTranslations[post.slug]?.[locale as keyof typeof blogHeadlineTranslations[string]]) || post.headline}
                   </h3>
                   <p className='text-sm text-neutral-400 leading-relaxed line-clamp-2'>
                     {post.summary}

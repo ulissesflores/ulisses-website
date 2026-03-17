@@ -244,9 +244,7 @@ export const publications: Publication[] = [
     "sourceEvidence": [],
     "translations": {
       "en": "Little's Law as a Vector for Resilience and Quality",
-      "es": "La Ley de Little como Vector de Resiliencia y Calidad",
-      "it": "La Legge di Little come Vettore di Resilienza e Qualità",
-      "he": "חוק ליטל כווקטור לחוסן ואיכות"
+      "es": "La Ley de Little como Vector de Resiliencia y Calidad"
     }
   },
   {
@@ -382,9 +380,7 @@ export const publications: Publication[] = [
     "sourceEvidence": [],
     "translations": {
       "en": "Predictive Analysis of Financial Assets Using LSTM Models",
-      "es": "Análisis Predictivo de Activos Financieros con Modelos LSTM",
-      "it": "Analisi Predittiva degli Attivi Finanziari con Modelli LSTM",
-      "he": "ניתוח חזוי של נכסים פיננסיים באמצעות מודלי LSTM"
+      "es": "Análisis Predictivo de Activos Financieros con Modelos LSTM"
     }
   },
   {
@@ -520,9 +516,7 @@ export const publications: Publication[] = [
     "sourceEvidence": [],
     "translations": {
       "en": "Thermodynamic Analysis and Engineering of Hybrid Cooling Systems",
-      "es": "Análisis Termodinámico e Ingeniería de Sistemas Híbridos de Enfriamiento",
-      "it": "Analisi Termodinamica e Ingegneria dei Sistemi Ibridi di Raffreddamento",
-      "he": "ניתוח תרמודינמי והנדסת מערכות קירור היברידיות"
+      "es": "Análisis Termodinámico e Ingeniería de Sistemas Híbridos de Enfriamiento"
     }
   },
   {
@@ -658,9 +652,7 @@ export const publications: Publication[] = [
     "sourceEvidence": [],
     "translations": {
       "en": "Cloudless Architectures and Data Sovereignty in IoT",
-      "es": "Arquitecturas Cloudless y Soberanía de Datos en IoT",
-      "it": "Architetture Cloudless e Sovranità dei Dati nell'IoT",
-      "he": "ארכיטקטורות ללא ענן וריבונות מידע ב-IoT"
+      "es": "Arquitecturas Cloudless y Soberanía de Datos en IoT"
     }
   },
   {
@@ -796,9 +788,7 @@ export const publications: Publication[] = [
     "sourceEvidence": [],
     "translations": {
       "en": "Credit Card Fraud Detection Using Neural Networks",
-      "es": "Detección de Fraudes en Tarjetas con Redes Neuronales",
-      "it": "Rilevamento delle Frodi con Carte di Credito mediante Reti Neurali",
-      "he": "זיהוי הונאות בכרטיסי אשראי באמצעות רשתות עצביות"
+      "es": "Detección de Fraudes en Tarjetas con Redes Neuronales"
     }
   },
   {
@@ -934,9 +924,7 @@ export const publications: Publication[] = [
     "sourceEvidence": [],
     "translations": {
       "en": "Comprehensive Historiographic and Archaeological Analysis: The Historicity of Jesus",
-      "es": "Análisis Historiográfico y Arqueológico Exhaustivo: La Historicidad de Jesús",
-      "it": "Analisi Storiografica e Archeologica Esaustiva: La Storicità di Gesù",
-      "he": "ניתוח היסטוריוגרפי וארכיאולוגי מקיף: ההיסטוריות של ישוע"
+      "es": "Análisis Historiográfico y Arqueológico Exhaustivo: La Historicidad de Jesús"
     }
   },
   {
@@ -1071,9 +1059,7 @@ export const publications: Publication[] = [
     "sourceEvidence": [],
     "translations": {
       "en": "Bitcoin as a Reserve Asset and Monetary Theory in the Austrian School",
-      "es": "Bitcoin como Activo de Reserva y la Teoría Monetaria de la Escuela Austríaca",
-      "it": "Bitcoin come Attivo di Riserva e la Teoria Monetaria della Scuola Austriaca",
-      "he": "ביטקוין כנכס רזרבי והתיאוריה המוניטרית של האסכולה האוסטרית"
+      "es": "Bitcoin como Activo de Reserva y la Teoría Monetaria de la Escuela Austríaca"
     }
   },
   {
@@ -1209,9 +1195,7 @@ export const publications: Publication[] = [
     "sourceEvidence": [],
     "translations": {
       "en": "Scribal Canonization: A Historical-Critical Analysis of Canon Formation",
-      "es": "Canonización Escribal: Análisis Histórico-Crítico de la Formación del Canon",
-      "it": "Canonizzazione Scribale: Analisi Storico-Critica della Formazione del Canone",
-      "he": "קנוניזציה סופרית: ניתוח היסטורי-ביקורתי של גיבוש הקנון"
+      "es": "Canonización Escribal: Análisis Histórico-Crítico de la Formación del Canon"
     }
   },
   {
@@ -1344,13 +1328,7 @@ export const publications: Publication[] = [
         }
       ]
     },
-    "sourceEvidence": [],
-    "translations": {
-      "en": "Transcendent Foundations of the Economic Order",
-      "es": "Fundamentos Trascendentes del Orden Económico",
-      "it": "Fondamenti Trascendenti dell'Ordine Economico",
-      "he": "יסודות טרנסצנדנטיים של הסדר הכלכלי"
-    }
+    "sourceEvidence": []
   },
   {
     "ordinal": 18,
@@ -1485,9 +1463,7 @@ export const publications: Publication[] = [
     "sourceEvidence": [],
     "translations": {
       "en": "Implementation of Ring Signatures and Stealth Addresses",
-      "es": "Implementación de Ring Signatures y Direcciones Furtivas",
-      "it": "Implementazione di Ring Signatures e Indirizzi Stealth",
-      "he": "יישום חתימות טבעת וכתובות חמקניות"
+      "es": "Implementación de Ring Signatures y Direcciones Furtivas"
     }
   },
   {
@@ -1623,9 +1599,7 @@ export const publications: Publication[] = [
     "sourceEvidence": [],
     "translations": {
       "en": "Agile Transformation and Flow Engineering in Data Science",
-      "es": "Transformación Ágil e Ingeniería de Flujo en Data Science",
-      "it": "Trasformazione Agile e Ingegneria del Flusso nella Data Science",
-      "he": "טרנספורמציה אג'ילית והנדסת זרימה במדעי הנתונים"
+      "es": "Transformación Ágil e Ingeniería de Flujo en Data Science"
     }
   },
   {
@@ -1758,13 +1732,7 @@ export const publications: Publication[] = [
         }
       ]
     },
-    "sourceEvidence": [],
-    "translations": {
-      "en": "Exegetical Treatise on the Representation of Morality and Anthropology",
-      "es": "Tratado Exegético sobre la Representación de la Moralidad y Antropología",
-      "it": "Trattato Esegetico sulla Rappresentazione della Moralità e Antropologia",
-      "he": "מסה אקסגטית על ייצוג המוסר והאנתרופולוגיה"
-    }
+    "sourceEvidence": []
   },
   {
     "ordinal": 25,
@@ -1896,13 +1864,7 @@ export const publications: Publication[] = [
         }
       ]
     },
-    "sourceEvidence": [],
-    "translations": {
-      "en": "The Crown and the Cross: Theological and Phenomenological Analysis of Marian Apparitions",
-      "es": "La Corona y la Cruz: Análisis Teológico y Fenomenológico de las Apariciones Marianas",
-      "it": "La Corona e la Croce: Analisi Teologica e Fenomenologica delle Apparizioni Mariane",
-      "he": "הכתר והצלב: ניתוח תאולוגי ופנומנולוגי של הופעות מריאניות"
-    }
+    "sourceEvidence": []
   },
   {
     "ordinal": 27,
@@ -2033,13 +1995,7 @@ export const publications: Publication[] = [
         }
       ]
     },
-    "sourceEvidence": [],
-    "translations": {
-      "en": "Challenges of Digital Legacy: Post-Mortem Memory Preservation",
-      "es": "Desafíos de la Herencia Digital: Preservación de la Memoria Post-Mortem",
-      "it": "Sfide dell'Eredità Digitale: Preservazione della Memoria Post-Mortem",
-      "he": "אתגרי המורשת הדיגיטלית: שימור זיכרון לאחר המוות"
-    }
+    "sourceEvidence": []
   },
   {
     "ordinal": 29,
@@ -2171,13 +2127,7 @@ export const publications: Publication[] = [
         }
       ]
     },
-    "sourceEvidence": [],
-    "translations": {
-      "en": "The Holy Club: Spiritual, Theological and Visual Archaeology of Methodism",
-      "es": "El Club Santo: Arqueología Espiritual, Teológica y Visual del Metodismo",
-      "it": "Il Club Santo: Archeologia Spirituale, Teologica e Visuale del Metodismo",
-      "he": "המועדון הקדוש: ארכיאולוגיה רוחנית, תאולוגית וחזותית של המתודיזם"
-    }
+    "sourceEvidence": []
   },
   {
     "ordinal": 31,
@@ -2308,13 +2258,7 @@ export const publications: Publication[] = [
         }
       ]
     },
-    "sourceEvidence": [],
-    "translations": {
-      "en": "The Theology of Hope in Times of Crisis",
-      "es": "La Teología de la Esperanza en Tiempos de Crisis",
-      "it": "La Teologia della Speranza in Tempi di Crisi",
-      "he": "תאולוגיית התקווה בעתות משבר"
-    }
+    "sourceEvidence": []
   },
   {
     "ordinal": 33,
@@ -2445,13 +2389,7 @@ export const publications: Publication[] = [
         }
       ]
     },
-    "sourceEvidence": [],
-    "translations": {
-      "en": "Active Methodologies in Teaching Programming Logic",
-      "es": "Metodologías Activas en la Enseñanza de Lógica de Programación",
-      "it": "Metodologie Attive nell'Insegnamento della Logica di Programmazione",
-      "he": "מתודולוגיות פעילות בהוראת לוגיקה של תכנות"
-    }
+    "sourceEvidence": []
   },
   {
     "ordinal": 37,
@@ -2583,12 +2521,6 @@ export const publications: Publication[] = [
         }
       ]
     },
-    "sourceEvidence": [],
-    "translations": {
-      "en": "Chaos Theory: Emergence and Self-Organization in Markets",
-      "es": "Teoría del Caos: Emergencia y Autoorganización en Mercados",
-      "it": "Teoria del Caos: Emergenza e Auto-organizzazione nei Mercati",
-      "he": "תורת הכאוס: צמיחה והתארגנות עצמית בשווקים"
-    }
+    "sourceEvidence": []
   }
 ];
