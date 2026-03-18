@@ -155,11 +155,10 @@ async function initGemini() {
   const apiKey = process.env.GEMINI_API_KEY;
   if (!apiKey) {
     if (IS_PRODUCTION) {
-      // FASE 2: Hard Fail em Produção — NÃO aceitar build sem API key
-      console.error('\n🚨 HARD FAIL [PRODUCTION]: GEMINI_API_KEY ausente!');
-      console.error('   Em ambiente de produção (VERCEL/CI), a API key é OBRIGATÓRIA.');
-      console.error('   Configure GEMINI_API_KEY nas Environment Variables do provider.');
-      process.exit(1);
+      // Traduções já devem estar commitadas — skip silencioso no Vercel/CI
+      log('ℹ️', 'GEMINI_API_KEY ausente em produção. Traduções pré-commitadas serão usadas.');
+      API_AVAILABLE = false;
+      return;
     }
     log('⚠️', 'GEMINI_API_KEY not found. Translation only works if all artifacts are already translated.');
     log('💡', 'To enable: node --env-file=.env.local scripts/i18n/translate-generated-artifacts.mjs');
