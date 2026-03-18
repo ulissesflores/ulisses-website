@@ -3,6 +3,7 @@
 import { useEffect } from 'react';
 import { AlertTriangle, RotateCcw, Home } from 'lucide-react';
 import Link from 'next/link';
+import { useDict } from '@/lib/i18n-context';
 
 /**
  * ═══════════════════════════════════════════════════════════════════════════════
@@ -19,6 +20,9 @@ export default function Error({
   error: Error & { digest?: string };
   reset: () => void;
 }) {
+  const { common, locale } = useDict();
+  const t = common.error;
+
   useEffect(() => {
     console.error('[Error Boundary]', error);
   }, [error]);
@@ -33,10 +37,10 @@ export default function Error({
         </div>
 
         <h1 className='text-2xl font-bold text-white mb-3'>
-          Algo deu errado
+          {t.title}
         </h1>
         <p className='text-neutral-400 mb-2 text-sm'>
-          Um erro inesperado ocorreu ao renderizar esta página.
+          {t.description}
         </p>
         {error.digest && (
           <p className='text-neutral-600 text-xs font-mono mb-8'>
@@ -50,14 +54,14 @@ export default function Error({
             className='flex items-center gap-2 rounded-xl border border-neutral-700 bg-neutral-900/60 px-5 py-3 text-sm font-medium hover:border-emerald-500/40 hover:text-emerald-300 transition-colors'
           >
             <RotateCcw size={16} />
-            Tentar novamente
+            {t.retry}
           </button>
           <Link
-            href='/'
+            href={locale === 'pt-br' ? '/' : `/${locale}/`}
             className='flex items-center gap-2 rounded-xl border border-neutral-700 bg-neutral-900/60 px-5 py-3 text-sm font-medium hover:border-emerald-500/40 hover:text-emerald-300 transition-colors'
           >
             <Home size={16} />
-            Início
+            {t.home}
           </Link>
         </div>
       </main>

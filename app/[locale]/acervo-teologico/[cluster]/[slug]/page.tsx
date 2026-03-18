@@ -8,6 +8,7 @@ import { AuthorHubCard } from '@/components/author-hub-card';
 import { defaultLocale, isLocale, localeToOgLocale, type Locale } from '@/data/i18n';
 import { getDictionary } from '@/lib/get-dictionary';
 import { buildSermonI18nMaps, localizeSermon, localizeCluster } from '@/data/sermons-i18n';
+import { localePath } from '@/lib/locale-path';
 import { buildCanonical } from '@/data/seo';
 
 interface PageProps {
@@ -128,7 +129,7 @@ export default async function AcervoSermonDetailPage({ params }: PageProps) {
   return (
     <div className='min-h-screen bg-neutral-950 text-neutral-200'>
       <main className='max-w-3xl mx-auto px-6 py-20'>
-        <Link href={acervoCanonicalPath} className='text-sm text-neutral-400 hover:text-emerald-400 transition-colors'>
+        <Link href={localePath(acervoCanonicalPath, locale)} className='text-sm text-neutral-400 hover:text-emerald-400 transition-colors'>
           {t.detail?.backLink ?? '← Back'}
         </Link>
 

@@ -26,8 +26,9 @@ export function GlobalHeader() {
   /** Prefix an internal path with the current locale (skip for default locale and anchors). */
   const localePath = useCallback(
     (href: string) => {
-      if (!href.startsWith('/') || href.startsWith('/#')) return href;
+      if (!href.startsWith('/')) return href;
       if (locale === defaultLocale) return href;
+      if (href.startsWith('/#')) return `/${locale}${href}`;
       return `/${locale}${href}`;
     },
     [locale],
@@ -198,7 +199,7 @@ export function GlobalHeader() {
             </div>
 
             <Link
-              href='/#contact'
+              href={localePath('/#contact')}
               className='px-4 py-2 bg-neutral-100 text-neutral-900 text-xs font-bold rounded-full hover:bg-emerald-400 transition-colors'
             >
               {common.cta}
@@ -269,7 +270,7 @@ export function GlobalHeader() {
 
             <div className='pt-4 border-t border-neutral-800'>
               <Link
-                href='/#contact'
+                href={localePath('/#contact')}
                 onClick={() => setMobileOpen(false)}
                 className='block w-full text-center px-4 py-3 bg-emerald-600 text-white text-sm font-bold rounded-full hover:bg-emerald-500 transition-colors'
               >

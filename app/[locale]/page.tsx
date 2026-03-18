@@ -372,9 +372,9 @@ export default async function Home({ params }: PageProps) {
               <LinkCard
                 key={publication.id}
                 category={categoryLabels[publication.category]}
-                title={publication.title}
-                desc={publication.summary}
-                href={`/${publication.category}/${publication.id}`}
+                title={(locale !== 'pt-br' && publication.translations?.[locale as keyof NonNullable<typeof publication.translations>]) || publication.title}
+                desc={(locale !== 'pt-br' && publication.translations?.[`summary_${locale}` as keyof NonNullable<typeof publication.translations>]) || publication.summary}
+                href={localePath(`/${publication.category}/${publication.id}`, locale)}
               />
             ))}
           </div>

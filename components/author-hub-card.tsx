@@ -9,10 +9,10 @@ type AuthorHubCardProps = {
 };
 
 export function AuthorHubCard({
-  label = 'Autor',
+  label,
   name = 'Ulisses Flores',
   href = '/identidade',
-  description = 'Fonte canônica de autoria e identidade semântica deste conteúdo.',
+  description,
   compact = false,
 }: AuthorHubCardProps) {
   return (
@@ -22,8 +22,8 @@ export function AuthorHubCard({
       }`}
       aria-label='Author canonical hub'
     >
-      <p className='text-[11px] uppercase tracking-[0.18em] text-neutral-500 mb-2'>{label}</p>
-      <p className={`text-neutral-400 ${compact ? 'text-xs mb-3' : 'text-sm mb-4'}`}>{description}</p>
+      {label && <p className='text-[11px] uppercase tracking-[0.18em] text-neutral-500 mb-2'>{label}</p>}
+      {description && <p className={`text-neutral-400 ${compact ? 'text-xs mb-3' : 'text-sm mb-4'}`}>{description}</p>}
       <Link
         href={href}
         rel='author'

@@ -2138,7 +2138,7 @@ export const publications: Publication[] = [
       "summary_it": "Analisi delle sfide dell'eredità digitale e preservazione della memoria post-mortem.",
       "summary_he": "ניתוח אתגרי המורשת הדיגיטלית ושימור זיכרון לאחר המוות.",
       "en": "Challenges of Digital Heritage: Post-Mortem Memory Preservation",
-      "es": "Desafíos de la Herencia Digital: Preservación de Memoria Post-Mortem"
+      "es": "Desafíos de la Herencia Digital: Preservación de la Memoria Post-Mortem"
     }
   },
   {
@@ -2561,7 +2561,7 @@ export const publications: Publication[] = [
       "summary_es": "Estudio sobre metodologías activas en la enseñanza de lógica de programación.",
       "summary_it": "Studio sulle metodologie attive nell'insegnamento della logica di programmazione.",
       "summary_he": "מחקר על מתודולוגיות פעילות בהוראת לוגיקה של תכנות.",
-      "en": "Active Methodologies in Programming Logic Education",
+      "en": "Active Methodologies in the Teaching of Programming Logic",
       "es": "Metodologías Activas en la Enseñanza de Lógica de Programación"
     }
   },

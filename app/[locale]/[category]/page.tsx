@@ -207,7 +207,7 @@ export default async function CategoryPage({ params }: PageProps) {
                 <span>{publication.kind === 'R' ? 'Report' : 'ScholarlyArticle'}</span>
               </div>
               <h2 className='text-2xl font-semibold text-white mb-3'>
-                <Link href={`/${publication.category}/${publication.id}`} className='hover:text-emerald-400 transition-colors'>
+                <Link href={localePath(`/${publication.category}/${publication.id}`, locale)} className='hover:text-emerald-400 transition-colors'>
                   {(locale !== 'pt-br' && publication.translations?.[locale as keyof NonNullable<typeof publication.translations>]) || publication.title}
                 </Link>
               </h2>

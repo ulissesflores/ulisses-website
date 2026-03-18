@@ -1,17 +1,39 @@
 import Link from 'next/link';
 import { Home, Search, BookOpen, Shield, FlaskConical } from 'lucide-react';
-import { common as commonDict } from '@/data/i18n/pt-br/common';
+import { common as ptBrCommon } from '@/data/i18n/pt-br/common';
+import { common as enCommon } from '@/data/i18n/en/common';
+import { common as esCommon } from '@/data/i18n/es/common';
+import { common as itCommon } from '@/data/i18n/it/common';
+import { common as heCommon } from '@/data/i18n/he/common';
+import { headers } from 'next/headers';
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const dictMap: Record<string, any> = {
+  'pt-br': ptBrCommon,
+  en: enCommon,
+  es: esCommon,
+  it: itCommon,
+  he: heCommon,
+};
 
 const iconMap = { Home, BookOpen, Shield, FlaskConical } as const;
 
-export default function NotFound() {
-  const t = commonDict.notFound;
+export default async function NotFound() {
+  // Attempt to detect locale from the request URL
+  const headersList = await headers();
+  const referer = headersList.get('referer') || '';
+  const match = referer.match(/\/(en|es|it|he)\//);
+  const locale = match?.[1] || 'pt-br';
+  const common = dictMap[locale] || ptBrCommon;
+  const t = common.notFound;
+
+  const prefix = locale !== 'pt-br' ? `/${locale}` : '';
 
   const quickLinks = [
-    { ...t.links.home, href: '/', icon: 'Home' as const },
-    { ...t.links.publications, href: '/research', icon: 'BookOpen' as const },
-    { ...t.links.identity, href: '/identidade', icon: 'Shield' as const },
-    { ...t.links.simulations, href: '/simulacoes', icon: 'FlaskConical' as const },
+    { ...t.links.home, href: `${prefix}/`, icon: 'Home' as const },
+    { ...t.links.publications, href: `${prefix}/research`, icon: 'BookOpen' as const },
+    { ...t.links.identity, href: `${prefix}/identidade`, icon: 'Shield' as const },
+    { ...t.links.simulations, href: `${prefix}/simulacoes`, icon: 'FlaskConical' as const },
   ];
 
   return (
@@ -27,7 +49,7 @@ export default function NotFound() {
 
         <div className='grid gap-3 sm:grid-cols-2 mb-10'>
           {quickLinks.map((link) => {
-            const Icon = iconMap[link.icon];
+            const Icon = iconMap[link.icon as keyof typeof iconMap];
             return (
               <Link
                 key={link.href}

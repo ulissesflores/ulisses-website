@@ -146,7 +146,7 @@ export default async function MundoPoliticoPage({ params }: PageProps) {
           <div className='grid gap-6'>
             {posts.map((post) => (
               <article key={post.canonicalPath} className='rounded-xl border border-neutral-800 bg-neutral-900/40 p-6'>
-                <Link href={post.canonicalPath} className='group'>
+                <Link href={localePath(post.canonicalPath, locale)} className='group'>
                   <h3 className='text-lg font-semibold text-white group-hover:text-emerald-400 transition-colors mb-2'>
                     {(locale !== 'pt-br' && (post as Record<string, unknown>)[`headline_${locale}`] as string) || post.headline}
                   </h3>

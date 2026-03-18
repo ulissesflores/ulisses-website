@@ -22,18 +22,28 @@ export function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-  const { category, slug, locale } = await params;
+  const { category, slug, locale: rawLocale } = await params;
+  const locale = (isLocale(rawLocale) ? rawLocale : defaultLocale) as Locale;
+  const dict = await getDictionary(locale);
   const publication = publications.find((item) => item.category === category && item.id === slug);
 
   if (!publication) {
-    return { title: 'Artigo nao encontrado' };
+    return { title: dict.common.articleDetail.notFound };
   }
+
+  const localizedTitle =
+    (locale !== 'pt-br' && publication.translations?.[locale as keyof NonNullable<typeof publication.translations>]) ||
+    publication.title;
+  const localizedSummary =
+    (locale !== 'pt-br' &&
+      publication.translations?.[`summary_${locale}` as keyof NonNullable<typeof publication.translations>]) ||
+    publication.summary;
 
   const canonicalPath = `/${publication.category}/${publication.id}`;
 
   return {
-    title: publication.title,
-    description: publication.summary,
+    title: localizedTitle,
+    description: localizedSummary,
     authors: [
       {
         name: upkfMeta.publicDisplayName || upkfMeta.displayName,
@@ -45,8 +55,8 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     },
     openGraph: {
       type: 'article',
-      title: publication.title,
-      description: publication.summary,
+      title: localizedTitle,
+      description: localizedSummary,
       url: `${upkfMeta.primaryWebsite}${canonicalPath}`,
       publishedTime: publication.publishedAt,
       modifiedTime: publication.updatedAt,
@@ -54,10 +64,10 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       tags: publication.tags,
     },
     other: {
-      citation_title: publication.title,
+      citation_title: localizedTitle as string,
       citation_author: upkfMeta.publicDisplayName || upkfMeta.displayName,
       citation_publication_date: publication.publishedAt,
-      citation_language: publication.inLanguage,
+      citation_language: locale,
       citation_pdf_url: `${upkfMeta.primaryWebsite}${publication.primaryPdfUrl || publication.downloadUrl}`,
     },
   };
@@ -67,6 +77,7 @@ export default async function ArticlePage({ params }: PageProps) {
   const { category, slug, locale: rawLocale } = await params;
   const locale = (isLocale(rawLocale) ? rawLocale : defaultLocale) as Locale;
   const dict = await getDictionary(locale);
+  const t = dict.common.articleDetail;
   const publication = publications.find((item) => item.category === category && item.id === slug);
 
   if (!publication) {
@@ -74,6 +85,14 @@ export default async function ArticlePage({ params }: PageProps) {
   }
 
   const collection = publicationCollections[publication.category];
+
+  const localizedTitle =
+    (locale !== 'pt-br' && publication.translations?.[locale as keyof NonNullable<typeof publication.translations>]) ||
+    publication.title;
+  const localizedSummary =
+    (locale !== 'pt-br' &&
+      publication.translations?.[`summary_${locale}` as keyof NonNullable<typeof publication.translations>]) ||
+    publication.summary;
 
   const sectionParagraphs = (text: string) =>
     text
@@ -88,13 +107,13 @@ export default async function ArticlePage({ params }: PageProps) {
     '@context': 'https://schema.org',
     '@type': publication.kind === 'R' ? 'Report' : 'ScholarlyArticle',
     '@id': `${origin}/#pub-${publication.id}`,
-    headline: publication.title,
-    name: publication.title,
-    description: publication.summary,
+    headline: localizedTitle,
+    name: localizedTitle,
+    description: localizedSummary,
     image: defaultImage,
     datePublished: publication.publishedAt ? new Date(publication.publishedAt.includes('T') ? publication.publishedAt : `${publication.publishedAt}T00:00:00-03:00`).toISOString() : undefined,
     dateModified: publication.updatedAt ? new Date(publication.updatedAt.includes('T') ? publication.updatedAt : `${publication.updatedAt}T00:00:00-03:00`).toISOString() : undefined,
-    inLanguage: publication.inLanguage,
+    inLanguage: locale,
     url: `${origin}/${publication.category}/${publication.id}`,
     keywords: publication.tags,
     author: {
@@ -142,23 +161,24 @@ export default async function ArticlePage({ params }: PageProps) {
 
       <main className='relative max-w-5xl mx-auto px-6 py-20 z-10'>
         <Link
-          href={`/${publication.category}`}
+          href={localePath(`/${publication.category}`, locale)}
           className='inline-flex items-center gap-2 text-sm text-neutral-500 hover:text-emerald-400 transition-colors mb-4 group'
         >
           <ArrowLeft size={16} className='group-hover:-translate-x-1 transition-transform' />
-          Voltar para {collection.title}
+          {t.backTo} {collection.title}
         </Link>
 
         <Link
           href={localePath('/', locale)}
           className='inline-flex items-center gap-2 text-sm text-neutral-600 hover:text-neutral-300 transition-colors mb-10'
         >
-          Ir para Home
+          {t.goHome}
         </Link>
         <div className='mb-10'>
           <AuthorHubCard
             label={dict.common.authorHubCard.defaultLabel}
             description={dict.common.authorHubCard.defaultDescription}
+            href={localePath('/identidade', locale)}
           />
         </div>
 
@@ -178,8 +198,8 @@ export default async function ArticlePage({ params }: PageProps) {
             </span>
           </div>
 
-          <h1 className='text-3xl md:text-5xl font-bold text-white mb-8 leading-tight'>{publication.title}</h1>
-          <p className='text-lg text-neutral-400 leading-relaxed mb-8'>{publication.summary}</p>
+          <h1 className='text-3xl md:text-5xl font-bold text-white mb-8 leading-tight'>{localizedTitle}</h1>
+          <p className='text-lg text-neutral-400 leading-relaxed mb-8'>{localizedSummary}</p>
 
           <div className='flex flex-wrap gap-2 mb-8'>
             {publication.tags.map((tag) => (
@@ -203,7 +223,7 @@ export default async function ArticlePage({ params }: PageProps) {
               className='flex items-center justify-center gap-3 bg-emerald-600 hover:bg-emerald-500 text-white px-7 py-3 rounded-lg font-bold transition-all shadow-[0_0_20px_rgba(16,185,129,0.2)] hover:shadow-[0_0_30px_rgba(16,185,129,0.4)]'
             >
               <Download size={20} />
-              Baixar PDF Final
+              {t.downloadPdf}
             </a>
             <a
               href={publication.legacyPdfUrl}
@@ -211,7 +231,7 @@ export default async function ArticlePage({ params }: PageProps) {
               className='flex items-center justify-center gap-3 bg-neutral-900 border border-neutral-700 hover:border-neutral-500 text-neutral-200 px-7 py-3 rounded-lg font-semibold transition-colors'
             >
               <FileText size={18} />
-              PDF Legado
+              {t.legacyPdf}
             </a>
             <a
               href={publication.mdUrl}
@@ -235,7 +255,7 @@ export default async function ArticlePage({ params }: PageProps) {
         <div className='prose prose-invert max-w-none space-y-10'>
           <section>
             <h2 className='text-xl font-bold text-white mb-4 flex items-center gap-2'>
-              <BookOpen size={20} className='text-emerald-500' /> Contexto Cientifico da Landing
+              <BookOpen size={20} className='text-emerald-500' /> {t.scientificContext}
             </h2>
             <div className='bg-neutral-900/40 p-8 rounded-2xl border border-emerald-500/20 space-y-4'>
               <p className='text-neutral-200 leading-relaxed'>{publication.landing.overview}</p>
@@ -254,7 +274,7 @@ export default async function ArticlePage({ params }: PageProps) {
 
           <section>
             <h2 className='text-xl font-bold text-white mb-4 flex items-center gap-2'>
-              <BookOpen size={20} className='text-cyan-500' /> Abstract (PT-BR)
+              <BookOpen size={20} className='text-cyan-500' /> {t.abstractPtBr}
             </h2>
             <div className='bg-neutral-900/30 p-8 rounded-2xl border border-white/5 text-lg leading-relaxed text-neutral-300 shadow-inner space-y-4'>
               {sectionParagraphs(publication.articleSections.abstract).map((paragraph, index) => (
@@ -265,7 +285,7 @@ export default async function ArticlePage({ params }: PageProps) {
 
           <section>
             <h2 className='text-xl font-bold text-white mb-4 flex items-center gap-2'>
-              <BookOpen size={20} className='text-cyan-500' /> Abstract (EN)
+              <BookOpen size={20} className='text-cyan-500' /> {t.abstractEn}
             </h2>
             <div className='bg-neutral-900/30 p-8 rounded-2xl border border-white/5 text-lg leading-relaxed text-neutral-300 shadow-inner'>
               <p>{publication.articleSections.abstractEn}</p>
@@ -273,7 +293,7 @@ export default async function ArticlePage({ params }: PageProps) {
           </section>
 
           <section>
-            <h2 className='text-2xl font-semibold text-white mb-3'>Introducao</h2>
+            <h2 className='text-2xl font-semibold text-white mb-3'>{t.introduction}</h2>
             <div className='text-neutral-300 leading-relaxed space-y-4'>
               {sectionParagraphs(publication.articleSections.introduction).map((paragraph, index) => (
                 <p key={`intro-${index}`}>{paragraph}</p>
@@ -282,7 +302,7 @@ export default async function ArticlePage({ params }: PageProps) {
           </section>
 
           <section>
-            <h2 className='text-2xl font-semibold text-white mb-3'>Metodologia</h2>
+            <h2 className='text-2xl font-semibold text-white mb-3'>{t.methodology}</h2>
             <div className='text-neutral-300 leading-relaxed space-y-4'>
               {sectionParagraphs(publication.articleSections.methods).map((paragraph, index) => (
                 <p key={`methods-${index}`}>{paragraph}</p>
@@ -291,7 +311,7 @@ export default async function ArticlePage({ params }: PageProps) {
           </section>
 
           <section>
-            <h2 className='text-2xl font-semibold text-white mb-3'>Desenvolvimento e Resultados</h2>
+            <h2 className='text-2xl font-semibold text-white mb-3'>{t.developmentResults}</h2>
             <div className='text-neutral-300 leading-relaxed space-y-4'>
               {sectionParagraphs(publication.articleSections.results).map((paragraph, index) => (
                 <p key={`results-${index}`}>{paragraph}</p>
@@ -300,7 +320,7 @@ export default async function ArticlePage({ params }: PageProps) {
           </section>
 
           <section>
-            <h2 className='text-2xl font-semibold text-white mb-3'>Discussao</h2>
+            <h2 className='text-2xl font-semibold text-white mb-3'>{t.discussion}</h2>
             <div className='text-neutral-300 leading-relaxed space-y-4'>
               {sectionParagraphs(publication.articleSections.discussion).map((paragraph, index) => (
                 <p key={`discussion-${index}`}>{paragraph}</p>
@@ -309,7 +329,7 @@ export default async function ArticlePage({ params }: PageProps) {
           </section>
 
           <section>
-            <h2 className='text-2xl font-semibold text-white mb-3'>Recomendacoes</h2>
+            <h2 className='text-2xl font-semibold text-white mb-3'>{t.recommendations}</h2>
             <ul className='list-disc pl-6 text-neutral-300 space-y-3'>
               {publication.articleSections.recommendations.map((recommendation) => (
                 <li key={recommendation}>{recommendation}</li>
@@ -318,7 +338,7 @@ export default async function ArticlePage({ params }: PageProps) {
           </section>
 
           <section>
-            <h2 className='text-2xl font-semibold text-white mb-3'>Conclusao</h2>
+            <h2 className='text-2xl font-semibold text-white mb-3'>{t.conclusion}</h2>
             <div className='text-neutral-300 leading-relaxed space-y-4'>
               {sectionParagraphs(publication.articleSections.conclusion).map((paragraph, index) => (
                 <p key={`conclusion-${index}`}>{paragraph}</p>
@@ -327,7 +347,7 @@ export default async function ArticlePage({ params }: PageProps) {
           </section>
 
           <section>
-            <h2 className='text-2xl font-semibold text-white mb-3'>Referencias (Harvard)</h2>
+            <h2 className='text-2xl font-semibold text-white mb-3'>{t.referencesHarvard}</h2>
             <ul className='list-disc pl-6 text-neutral-300 space-y-2'>
               {publication.articleSections.references.map((reference) => (
                 <li key={`${reference.citation}-${reference.url ?? ''}`}>
@@ -341,7 +361,7 @@ export default async function ArticlePage({ params }: PageProps) {
                         rel='noreferrer'
                         className='text-emerald-300 hover:text-emerald-200 underline underline-offset-4'
                       >
-                        Fonte
+                        {t.source}
                       </a>
                     </>
                   ) : null}
@@ -352,8 +372,8 @@ export default async function ArticlePage({ params }: PageProps) {
 
           <section className='mt-12 p-6 border-l-4 border-emerald-500/30 bg-emerald-900/5 rounded-r-xl'>
             <p className='text-sm text-neutral-400 italic'>
-              <strong>Como citar:</strong> FLORES, C. U. &quot;{publication.title}&quot;. Codex Hash Research Lab,
-              {` ${publication.date}`}. Disponivel em: {upkfMeta.primaryWebsite}/{publication.category}/{publication.id}
+              <strong>{t.howToCite}</strong> FLORES, C. U. &quot;{localizedTitle}&quot;. Codex Hash Research Lab,
+              {` ${publication.date}`}. {t.availableAt} {upkfMeta.primaryWebsite}/{publication.category}/{publication.id}
             </p>
           </section>
         </div>

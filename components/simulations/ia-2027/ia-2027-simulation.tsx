@@ -4,6 +4,8 @@ import { memo, useEffect, useMemo, useState } from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { useDict } from '@/lib/i18n-context';
+import { defaultLocale, type Locale } from '@/data/i18n';
+import { localePath as lp } from '@/lib/locale-path';
 import { useScrollSpy } from '@/components/simulations/ia-2027/use-scroll-spy';
 import { processNarrativeFootnotes } from '@/components/simulations/ia-2027/footnotes';
 import type {
@@ -321,7 +323,7 @@ function FootnotesBlock({
 }
 
 export function IA2027Simulation({ initialPath }: { initialPath?: SimulationPath }) {
-  const { ia2027 } = useDict();
+  const { ia2027, locale } = useDict();
   const t = ia2027.simulation;
 
   const [activePath, setActivePath] = useState<SimulationPath>(normalizeInitialPath(initialPath));
@@ -405,7 +407,7 @@ export function IA2027Simulation({ initialPath }: { initialPath?: SimulationPath
             <h2 className='text-3xl font-bold'>{config.title}</h2>
           </div>
           <Link
-            href='/simulacoes'
+            href={lp('/simulacoes', locale as Locale)}
             className='text-sm font-semibold border border-black rounded-full px-4 py-2 hover:bg-black hover:text-white transition-colors'
           >
             {t.backLink}

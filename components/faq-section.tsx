@@ -13,7 +13,7 @@ interface FaqSectionProps {
   sectionTitle?: string;
 }
 
-export function FaqSection({ items, sectionTitle = 'Perguntas Frequentes' }: FaqSectionProps) {
+export function FaqSection({ items, sectionTitle = 'FAQ' }: FaqSectionProps) {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   const toggle = (index: number) => {
