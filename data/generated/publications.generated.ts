@@ -4451,7 +4451,7 @@ export const publications: Publication[] = [
       "summary_it": "Trattato esegetico sulla rappresentazione della moralità e antropologia.",
       "summary_he": "מסה אקסגטית על ייצוג המוסר והאנתרופולוגיה.",
       "en": "Exegetical Treatise on the Representation of Morality and Anthropology",
-      "es": "Tratado Exegético sobre la Representación de la Moralidad y la Antropología"
+      "es": "Tratado Exegético sobre la Representación de la Moralidad y Antropología"
     }
   },
   {
@@ -5523,7 +5523,7 @@ export const publications: Publication[] = [
       "summary_es": "Arqueología espiritual, teológica y visual del Club Santo y los orígenes del metodismo.",
       "summary_it": "Archeologia spirituale, teologica e visuale del Club Santo e le origini del metodismo.",
       "summary_he": "ארכיאולוגיה רוחנית, תאולוגית וחזותית של המועדון הקדוש ומקורות המתודיזם.",
-      "en": "The Clube Santo: Spiritual, Theological, and Visual Archaeology of Methodism",
+      "en": "O Clube Santo: Spiritual, Theological, and Visual Archaeology of Methodism",
       "es": "El Clube Santo: Arqueología Espiritual, Teológica y Visual del Metodismo"
     }
   },
@@ -6237,7 +6237,7 @@ export const publications: Publication[] = [
       "summary_es": "Estudio sobre metodologías activas en la enseñanza de lógica de programación.",
       "summary_it": "Studio sulle metodologie attive nell'insegnamento della logica di programmazione.",
       "summary_he": "מחקר על מתודולוגיות פעילות בהוראת לוגיקה של תכנות.",
-      "en": "Active Methodologies in the Teaching of Programming Logic",
+      "en": "Active Methodologies in Programming Logic Education",
       "es": "Metodologías Activas en la Enseñanza de Lógica de Programación"
     }
   },
