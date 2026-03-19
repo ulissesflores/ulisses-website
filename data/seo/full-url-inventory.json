@@ -1,0 +1,3925 @@
+{
+  "generated": "2026-03-19T03:15:43.984Z",
+  "urls": [
+    {
+      "path": "/",
+      "type": "static-page",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/en/",
+      "type": "static-page",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/es/",
+      "type": "static-page",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/it/",
+      "type": "static-page",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/he/",
+      "type": "static-page",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/identidade",
+      "type": "static-page",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/en/identidade",
+      "type": "static-page",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/es/identidade",
+      "type": "static-page",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/it/identidade",
+      "type": "static-page",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/he/identidade",
+      "type": "static-page",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/simulacoes",
+      "type": "static-page",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/en/simulacoes",
+      "type": "static-page",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/es/simulacoes",
+      "type": "static-page",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/it/simulacoes",
+      "type": "static-page",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/he/simulacoes",
+      "type": "static-page",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/simulacoes/ia-2027",
+      "type": "static-page",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/en/simulacoes/ia-2027",
+      "type": "static-page",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/es/simulacoes/ia-2027",
+      "type": "static-page",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/it/simulacoes/ia-2027",
+      "type": "static-page",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/he/simulacoes/ia-2027",
+      "type": "static-page",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/simulacoes/ia-2027/desaceleracao-coordenada",
+      "type": "static-page",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/en/simulacoes/ia-2027/desaceleracao-coordenada",
+      "type": "static-page",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/es/simulacoes/ia-2027/desaceleracao-coordenada",
+      "type": "static-page",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/it/simulacoes/ia-2027/desaceleracao-coordenada",
+      "type": "static-page",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/he/simulacoes/ia-2027/desaceleracao-coordenada",
+      "type": "static-page",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/simulacoes/ia-2027/corrida-estrategica",
+      "type": "static-page",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/en/simulacoes/ia-2027/corrida-estrategica",
+      "type": "static-page",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/es/simulacoes/ia-2027/corrida-estrategica",
+      "type": "static-page",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/it/simulacoes/ia-2027/corrida-estrategica",
+      "type": "static-page",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/he/simulacoes/ia-2027/corrida-estrategica",
+      "type": "static-page",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/simulacoes/mumm-ra",
+      "type": "static-page",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/en/simulacoes/mumm-ra",
+      "type": "static-page",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/es/simulacoes/mumm-ra",
+      "type": "static-page",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/it/simulacoes/mumm-ra",
+      "type": "static-page",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/he/simulacoes/mumm-ra",
+      "type": "static-page",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/simulacoes/goldenleaf",
+      "type": "static-page",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/en/simulacoes/goldenleaf",
+      "type": "static-page",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/es/simulacoes/goldenleaf",
+      "type": "static-page",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/it/simulacoes/goldenleaf",
+      "type": "static-page",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/he/simulacoes/goldenleaf",
+      "type": "static-page",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/simulacoes/projeto-psi",
+      "type": "static-page",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/en/simulacoes/projeto-psi",
+      "type": "static-page",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/es/simulacoes/projeto-psi",
+      "type": "static-page",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/it/simulacoes/projeto-psi",
+      "type": "static-page",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/he/simulacoes/projeto-psi",
+      "type": "static-page",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/projeto-psi",
+      "type": "static-page",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/en/projeto-psi",
+      "type": "static-page",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/es/projeto-psi",
+      "type": "static-page",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/it/projeto-psi",
+      "type": "static-page",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/he/projeto-psi",
+      "type": "static-page",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/clube-santo",
+      "type": "static-page",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/en/clube-santo",
+      "type": "static-page",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/es/clube-santo",
+      "type": "static-page",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/it/clube-santo",
+      "type": "static-page",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/he/clube-santo",
+      "type": "static-page",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/whitepapers/projeto-psi",
+      "type": "static-page",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/en/whitepapers/projeto-psi",
+      "type": "static-page",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/es/whitepapers/projeto-psi",
+      "type": "static-page",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/it/whitepapers/projeto-psi",
+      "type": "static-page",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/he/whitepapers/projeto-psi",
+      "type": "static-page",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/acervo-teologico",
+      "type": "static-page",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/en/acervo-teologico",
+      "type": "static-page",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/es/acervo-teologico",
+      "type": "static-page",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/it/acervo-teologico",
+      "type": "static-page",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/he/acervo-teologico",
+      "type": "static-page",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/certifications",
+      "type": "static-page",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/en/certifications",
+      "type": "static-page",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/es/certifications",
+      "type": "static-page",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/it/certifications",
+      "type": "static-page",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/he/certifications",
+      "type": "static-page",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/mundo-politico",
+      "type": "static-page",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/en/mundo-politico",
+      "type": "static-page",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/es/mundo-politico",
+      "type": "static-page",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/it/mundo-politico",
+      "type": "static-page",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/he/mundo-politico",
+      "type": "static-page",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/research",
+      "type": "static-page",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/en/research",
+      "type": "static-page",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/es/research",
+      "type": "static-page",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/it/research",
+      "type": "static-page",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/he/research",
+      "type": "static-page",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/whitepapers",
+      "type": "static-page",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/en/whitepapers",
+      "type": "static-page",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/es/whitepapers",
+      "type": "static-page",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/it/whitepapers",
+      "type": "static-page",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/he/whitepapers",
+      "type": "static-page",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/essays",
+      "type": "static-page",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/en/essays",
+      "type": "static-page",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/es/essays",
+      "type": "static-page",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/it/essays",
+      "type": "static-page",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/he/essays",
+      "type": "static-page",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/research/2025-little-law-resilience",
+      "type": "publication",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/en/research/2025-little-law-resilience",
+      "type": "publication",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/es/research/2025-little-law-resilience",
+      "type": "publication",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/it/research/2025-little-law-resilience",
+      "type": "publication",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/he/research/2025-little-law-resilience",
+      "type": "publication",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/research/2025-lstm-asset-prediction",
+      "type": "publication",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/en/research/2025-lstm-asset-prediction",
+      "type": "publication",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/es/research/2025-lstm-asset-prediction",
+      "type": "publication",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/it/research/2025-lstm-asset-prediction",
+      "type": "publication",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/he/research/2025-lstm-asset-prediction",
+      "type": "publication",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/whitepapers/2025-hybrid-cooling-thermodynamics",
+      "type": "publication",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/en/whitepapers/2025-hybrid-cooling-thermodynamics",
+      "type": "publication",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/es/whitepapers/2025-hybrid-cooling-thermodynamics",
+      "type": "publication",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/it/whitepapers/2025-hybrid-cooling-thermodynamics",
+      "type": "publication",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/he/whitepapers/2025-hybrid-cooling-thermodynamics",
+      "type": "publication",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/whitepapers/2025-iot-data-sovereignty",
+      "type": "publication",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/en/whitepapers/2025-iot-data-sovereignty",
+      "type": "publication",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/es/whitepapers/2025-iot-data-sovereignty",
+      "type": "publication",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/it/whitepapers/2025-iot-data-sovereignty",
+      "type": "publication",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/he/whitepapers/2025-iot-data-sovereignty",
+      "type": "publication",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/research/2025-fraud-detection-mlp",
+      "type": "publication",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/en/research/2025-fraud-detection-mlp",
+      "type": "publication",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/es/research/2025-fraud-detection-mlp",
+      "type": "publication",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/it/research/2025-fraud-detection-mlp",
+      "type": "publication",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/he/research/2025-fraud-detection-mlp",
+      "type": "publication",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/research/2024-historicity-jesus-archaeology",
+      "type": "publication",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/en/research/2024-historicity-jesus-archaeology",
+      "type": "publication",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/es/research/2024-historicity-jesus-archaeology",
+      "type": "publication",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/it/research/2024-historicity-jesus-archaeology",
+      "type": "publication",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/he/research/2024-historicity-jesus-archaeology",
+      "type": "publication",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/research/2024-bitcoin-praxeology",
+      "type": "publication",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/en/research/2024-bitcoin-praxeology",
+      "type": "publication",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/es/research/2024-bitcoin-praxeology",
+      "type": "publication",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/it/research/2024-bitcoin-praxeology",
+      "type": "publication",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/he/research/2024-bitcoin-praxeology",
+      "type": "publication",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/research/2024-scribal-canonization-ezra",
+      "type": "publication",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/en/research/2024-scribal-canonization-ezra",
+      "type": "publication",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/es/research/2024-scribal-canonization-ezra",
+      "type": "publication",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/it/research/2024-scribal-canonization-ezra",
+      "type": "publication",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/he/research/2024-scribal-canonization-ezra",
+      "type": "publication",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/essays/2024-theology-economic-order",
+      "type": "publication",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/en/essays/2024-theology-economic-order",
+      "type": "publication",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/es/essays/2024-theology-economic-order",
+      "type": "publication",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/it/essays/2024-theology-economic-order",
+      "type": "publication",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/he/essays/2024-theology-economic-order",
+      "type": "publication",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/whitepapers/2024-ring-signatures-privacy",
+      "type": "publication",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/en/whitepapers/2024-ring-signatures-privacy",
+      "type": "publication",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/es/whitepapers/2024-ring-signatures-privacy",
+      "type": "publication",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/it/whitepapers/2024-ring-signatures-privacy",
+      "type": "publication",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/he/whitepapers/2024-ring-signatures-privacy",
+      "type": "publication",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/whitepapers/2024-agritech-agile-flow",
+      "type": "publication",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/en/whitepapers/2024-agritech-agile-flow",
+      "type": "publication",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/es/whitepapers/2024-agritech-agile-flow",
+      "type": "publication",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/it/whitepapers/2024-agritech-agile-flow",
+      "type": "publication",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/he/whitepapers/2024-agritech-agile-flow",
+      "type": "publication",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/essays/2024-exegetical-treatise-anthropology",
+      "type": "publication",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/en/essays/2024-exegetical-treatise-anthropology",
+      "type": "publication",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/es/essays/2024-exegetical-treatise-anthropology",
+      "type": "publication",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/it/essays/2024-exegetical-treatise-anthropology",
+      "type": "publication",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/he/essays/2024-exegetical-treatise-anthropology",
+      "type": "publication",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/research/2023-marian-apparitions-critique",
+      "type": "publication",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/en/research/2023-marian-apparitions-critique",
+      "type": "publication",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/es/research/2023-marian-apparitions-critique",
+      "type": "publication",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/it/research/2023-marian-apparitions-critique",
+      "type": "publication",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/he/research/2023-marian-apparitions-critique",
+      "type": "publication",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/whitepapers/2023-digital-legacy",
+      "type": "publication",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/en/whitepapers/2023-digital-legacy",
+      "type": "publication",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/es/whitepapers/2023-digital-legacy",
+      "type": "publication",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/it/whitepapers/2023-digital-legacy",
+      "type": "publication",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/he/whitepapers/2023-digital-legacy",
+      "type": "publication",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/research/2023-holy-club-methodism",
+      "type": "publication",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/en/research/2023-holy-club-methodism",
+      "type": "publication",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/es/research/2023-holy-club-methodism",
+      "type": "publication",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/it/research/2023-holy-club-methodism",
+      "type": "publication",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/he/research/2023-holy-club-methodism",
+      "type": "publication",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/essays/2022-theology-of-hope",
+      "type": "publication",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/en/essays/2022-theology-of-hope",
+      "type": "publication",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/es/essays/2022-theology-of-hope",
+      "type": "publication",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/it/essays/2022-theology-of-hope",
+      "type": "publication",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/he/essays/2022-theology-of-hope",
+      "type": "publication",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/essays/2020-robotics-education",
+      "type": "publication",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/en/essays/2020-robotics-education",
+      "type": "publication",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/es/essays/2020-robotics-education",
+      "type": "publication",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/it/essays/2020-robotics-education",
+      "type": "publication",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/he/essays/2020-robotics-education",
+      "type": "publication",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/essays/2017-chaos-theory-economics",
+      "type": "publication",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/en/essays/2017-chaos-theory-economics",
+      "type": "publication",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/es/essays/2017-chaos-theory-economics",
+      "type": "publication",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/it/essays/2017-chaos-theory-economics",
+      "type": "publication",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/he/essays/2017-chaos-theory-economics",
+      "type": "publication",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/mundo-politico/1-campanha-do-governo-lula-para-reconstruir-confianca-no-pix-detalhes-e-im",
+      "type": "blog-post",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/en/mundo-politico/1-campanha-do-governo-lula-para-reconstruir-confianca-no-pix-detalhes-e-im",
+      "type": "blog-post",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/es/mundo-politico/1-campanha-do-governo-lula-para-reconstruir-confianca-no-pix-detalhes-e-im",
+      "type": "blog-post",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/it/mundo-politico/1-campanha-do-governo-lula-para-reconstruir-confianca-no-pix-detalhes-e-im",
+      "type": "blog-post",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/he/mundo-politico/1-campanha-do-governo-lula-para-reconstruir-confianca-no-pix-detalhes-e-im",
+      "type": "blog-post",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/mundo-politico/2-conflito-nas-redes-sociais-moderacao-de-conteudo-vs-liberdade-de-express",
+      "type": "blog-post",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/en/mundo-politico/2-conflito-nas-redes-sociais-moderacao-de-conteudo-vs-liberdade-de-express",
+      "type": "blog-post",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/es/mundo-politico/2-conflito-nas-redes-sociais-moderacao-de-conteudo-vs-liberdade-de-express",
+      "type": "blog-post",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/it/mundo-politico/2-conflito-nas-redes-sociais-moderacao-de-conteudo-vs-liberdade-de-express",
+      "type": "blog-post",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/he/mundo-politico/2-conflito-nas-redes-sociais-moderacao-de-conteudo-vs-liberdade-de-express",
+      "type": "blog-post",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/mundo-politico/3-desaprovacao-de-lula-cresce-no-nordeste-mudancas-na-lealdade-politica",
+      "type": "blog-post",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/en/mundo-politico/3-desaprovacao-de-lula-cresce-no-nordeste-mudancas-na-lealdade-politica",
+      "type": "blog-post",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/es/mundo-politico/3-desaprovacao-de-lula-cresce-no-nordeste-mudancas-na-lealdade-politica",
+      "type": "blog-post",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/it/mundo-politico/3-desaprovacao-de-lula-cresce-no-nordeste-mudancas-na-lealdade-politica",
+      "type": "blog-post",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/he/mundo-politico/3-desaprovacao-de-lula-cresce-no-nordeste-mudancas-na-lealdade-politica",
+      "type": "blog-post",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/mundo-politico/4-pacote-fiscal-de-lula-expectativas-e-desafios-para-a-economia-brasileira",
+      "type": "blog-post",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/en/mundo-politico/4-pacote-fiscal-de-lula-expectativas-e-desafios-para-a-economia-brasileira",
+      "type": "blog-post",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/es/mundo-politico/4-pacote-fiscal-de-lula-expectativas-e-desafios-para-a-economia-brasileira",
+      "type": "blog-post",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/it/mundo-politico/4-pacote-fiscal-de-lula-expectativas-e-desafios-para-a-economia-brasileira",
+      "type": "blog-post",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/he/mundo-politico/4-pacote-fiscal-de-lula-expectativas-e-desafios-para-a-economia-brasileira",
+      "type": "blog-post",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/mundo-politico/5-preservacao-de-valores-tradicionais-na-era-da-diversidade",
+      "type": "blog-post",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/en/mundo-politico/5-preservacao-de-valores-tradicionais-na-era-da-diversidade",
+      "type": "blog-post",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/es/mundo-politico/5-preservacao-de-valores-tradicionais-na-era-da-diversidade",
+      "type": "blog-post",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/it/mundo-politico/5-preservacao-de-valores-tradicionais-na-era-da-diversidade",
+      "type": "blog-post",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/he/mundo-politico/5-preservacao-de-valores-tradicionais-na-era-da-diversidade",
+      "type": "blog-post",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/mundo-politico/6-analise-das-consequencias-dos-perdoes-de-trump-e-paralelos-com-o-brasil",
+      "type": "blog-post",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/en/mundo-politico/6-analise-das-consequencias-dos-perdoes-de-trump-e-paralelos-com-o-brasil",
+      "type": "blog-post",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/es/mundo-politico/6-analise-das-consequencias-dos-perdoes-de-trump-e-paralelos-com-o-brasil",
+      "type": "blog-post",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/it/mundo-politico/6-analise-das-consequencias-dos-perdoes-de-trump-e-paralelos-com-o-brasil",
+      "type": "blog-post",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/he/mundo-politico/6-analise-das-consequencias-dos-perdoes-de-trump-e-paralelos-com-o-brasil",
+      "type": "blog-post",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/mundo-politico/7-discrepancias-no-brasil-analise-critica-da-economia-e-politica-atuais",
+      "type": "blog-post",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/en/mundo-politico/7-discrepancias-no-brasil-analise-critica-da-economia-e-politica-atuais",
+      "type": "blog-post",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/es/mundo-politico/7-discrepancias-no-brasil-analise-critica-da-economia-e-politica-atuais",
+      "type": "blog-post",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/it/mundo-politico/7-discrepancias-no-brasil-analise-critica-da-economia-e-politica-atuais",
+      "type": "blog-post",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/he/mundo-politico/7-discrepancias-no-brasil-analise-critica-da-economia-e-politica-atuais",
+      "type": "blog-post",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/mundo-politico/8-insatisfacao-popular-cresce-como-um-video-viral-no-instagram-expoe-gasto",
+      "type": "blog-post",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/en/mundo-politico/8-insatisfacao-popular-cresce-como-um-video-viral-no-instagram-expoe-gasto",
+      "type": "blog-post",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/es/mundo-politico/8-insatisfacao-popular-cresce-como-um-video-viral-no-instagram-expoe-gasto",
+      "type": "blog-post",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/it/mundo-politico/8-insatisfacao-popular-cresce-como-um-video-viral-no-instagram-expoe-gasto",
+      "type": "blog-post",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/he/mundo-politico/8-insatisfacao-popular-cresce-como-um-video-viral-no-instagram-expoe-gasto",
+      "type": "blog-post",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/mundo-politico/9-reforma-eleitoral-no-brasil-necessidade-de-maior-transparencia-e-compara",
+      "type": "blog-post",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/en/mundo-politico/9-reforma-eleitoral-no-brasil-necessidade-de-maior-transparencia-e-compara",
+      "type": "blog-post",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/es/mundo-politico/9-reforma-eleitoral-no-brasil-necessidade-de-maior-transparencia-e-compara",
+      "type": "blog-post",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/it/mundo-politico/9-reforma-eleitoral-no-brasil-necessidade-de-maior-transparencia-e-compara",
+      "type": "blog-post",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/he/mundo-politico/9-reforma-eleitoral-no-brasil-necessidade-de-maior-transparencia-e-compara",
+      "type": "blog-post",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/mundo-politico/10-fiscalizacao-do-pix-estrategia-do-governo-lula-contra-a-sonegacao",
+      "type": "blog-post",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/en/mundo-politico/10-fiscalizacao-do-pix-estrategia-do-governo-lula-contra-a-sonegacao",
+      "type": "blog-post",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/es/mundo-politico/10-fiscalizacao-do-pix-estrategia-do-governo-lula-contra-a-sonegacao",
+      "type": "blog-post",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/it/mundo-politico/10-fiscalizacao-do-pix-estrategia-do-governo-lula-contra-a-sonegacao",
+      "type": "blog-post",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/he/mundo-politico/10-fiscalizacao-do-pix-estrategia-do-governo-lula-contra-a-sonegacao",
+      "type": "blog-post",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/mundo-politico/11-impacto-da-geopolitica-nos-mercados-tensoes-eua-china-e-o-futuro-economi",
+      "type": "blog-post",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/en/mundo-politico/11-impacto-da-geopolitica-nos-mercados-tensoes-eua-china-e-o-futuro-economi",
+      "type": "blog-post",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/es/mundo-politico/11-impacto-da-geopolitica-nos-mercados-tensoes-eua-china-e-o-futuro-economi",
+      "type": "blog-post",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/it/mundo-politico/11-impacto-da-geopolitica-nos-mercados-tensoes-eua-china-e-o-futuro-economi",
+      "type": "blog-post",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/he/mundo-politico/11-impacto-da-geopolitica-nos-mercados-tensoes-eua-china-e-o-futuro-economi",
+      "type": "blog-post",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/mundo-politico/12-combate-a-inflacao-no-governo-lula-estrategias-e-impactos-nos-gastos-pub",
+      "type": "blog-post",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/en/mundo-politico/12-combate-a-inflacao-no-governo-lula-estrategias-e-impactos-nos-gastos-pub",
+      "type": "blog-post",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/es/mundo-politico/12-combate-a-inflacao-no-governo-lula-estrategias-e-impactos-nos-gastos-pub",
+      "type": "blog-post",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/it/mundo-politico/12-combate-a-inflacao-no-governo-lula-estrategias-e-impactos-nos-gastos-pub",
+      "type": "blog-post",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/he/mundo-politico/12-combate-a-inflacao-no-governo-lula-estrategias-e-impactos-nos-gastos-pub",
+      "type": "blog-post",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/mundo-politico/13-governo-lula-confronta-alta-dos-precos-de-alimentos-estrategias-e-impact",
+      "type": "blog-post",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/en/mundo-politico/13-governo-lula-confronta-alta-dos-precos-de-alimentos-estrategias-e-impact",
+      "type": "blog-post",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/es/mundo-politico/13-governo-lula-confronta-alta-dos-precos-de-alimentos-estrategias-e-impact",
+      "type": "blog-post",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/it/mundo-politico/13-governo-lula-confronta-alta-dos-precos-de-alimentos-estrategias-e-impact",
+      "type": "blog-post",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/he/mundo-politico/13-governo-lula-confronta-alta-dos-precos-de-alimentos-estrategias-e-impact",
+      "type": "blog-post",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/mundo-politico/14-lewandowski-desafia-eua-sobre-deportacoes-algemadas-impacto-nas-relacoes",
+      "type": "blog-post",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/en/mundo-politico/14-lewandowski-desafia-eua-sobre-deportacoes-algemadas-impacto-nas-relacoes",
+      "type": "blog-post",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/es/mundo-politico/14-lewandowski-desafia-eua-sobre-deportacoes-algemadas-impacto-nas-relacoes",
+      "type": "blog-post",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/it/mundo-politico/14-lewandowski-desafia-eua-sobre-deportacoes-algemadas-impacto-nas-relacoes",
+      "type": "blog-post",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/he/mundo-politico/14-lewandowski-desafia-eua-sobre-deportacoes-algemadas-impacto-nas-relacoes",
+      "type": "blog-post",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/mundo-politico/15-polemica-em-porto-alegre-performance-de-jesus-no-carnaval-reacende-debat",
+      "type": "blog-post",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/en/mundo-politico/15-polemica-em-porto-alegre-performance-de-jesus-no-carnaval-reacende-debat",
+      "type": "blog-post",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/es/mundo-politico/15-polemica-em-porto-alegre-performance-de-jesus-no-carnaval-reacende-debat",
+      "type": "blog-post",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/it/mundo-politico/15-polemica-em-porto-alegre-performance-de-jesus-no-carnaval-reacende-debat",
+      "type": "blog-post",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/he/mundo-politico/15-polemica-em-porto-alegre-performance-de-jesus-no-carnaval-reacende-debat",
+      "type": "blog-post",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/mundo-politico/16-relacao-brasil-eua-impacto-de-trump-e-eduardo-bolsonaro-na-politica-glob",
+      "type": "blog-post",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/en/mundo-politico/16-relacao-brasil-eua-impacto-de-trump-e-eduardo-bolsonaro-na-politica-glob",
+      "type": "blog-post",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/es/mundo-politico/16-relacao-brasil-eua-impacto-de-trump-e-eduardo-bolsonaro-na-politica-glob",
+      "type": "blog-post",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/it/mundo-politico/16-relacao-brasil-eua-impacto-de-trump-e-eduardo-bolsonaro-na-politica-glob",
+      "type": "blog-post",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/he/mundo-politico/16-relacao-brasil-eua-impacto-de-trump-e-eduardo-bolsonaro-na-politica-glob",
+      "type": "blog-post",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/mundo-politico/17-tancredo-neves-e-o-impacto-no-40-aniversario-de-uma-transicao-democratic",
+      "type": "blog-post",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/en/mundo-politico/17-tancredo-neves-e-o-impacto-no-40-aniversario-de-uma-transicao-democratic",
+      "type": "blog-post",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/es/mundo-politico/17-tancredo-neves-e-o-impacto-no-40-aniversario-de-uma-transicao-democratic",
+      "type": "blog-post",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/it/mundo-politico/17-tancredo-neves-e-o-impacto-no-40-aniversario-de-uma-transicao-democratic",
+      "type": "blog-post",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/he/mundo-politico/17-tancredo-neves-e-o-impacto-no-40-aniversario-de-uma-transicao-democratic",
+      "type": "blog-post",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/mundo-politico/18-vigilancia-do-governo-lula-e-liberdade-de-expressao-impacto-no-brasil-mo",
+      "type": "blog-post",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/en/mundo-politico/18-vigilancia-do-governo-lula-e-liberdade-de-expressao-impacto-no-brasil-mo",
+      "type": "blog-post",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/es/mundo-politico/18-vigilancia-do-governo-lula-e-liberdade-de-expressao-impacto-no-brasil-mo",
+      "type": "blog-post",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/it/mundo-politico/18-vigilancia-do-governo-lula-e-liberdade-de-expressao-impacto-no-brasil-mo",
+      "type": "blog-post",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/he/mundo-politico/18-vigilancia-do-governo-lula-e-liberdade-de-expressao-impacto-no-brasil-mo",
+      "type": "blog-post",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/mundo-politico/19-analise-atual-impacto-dos-eventos-historicos-na-politica-contemporanea",
+      "type": "blog-post",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/en/mundo-politico/19-analise-atual-impacto-dos-eventos-historicos-na-politica-contemporanea",
+      "type": "blog-post",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/es/mundo-politico/19-analise-atual-impacto-dos-eventos-historicos-na-politica-contemporanea",
+      "type": "blog-post",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/it/mundo-politico/19-analise-atual-impacto-dos-eventos-historicos-na-politica-contemporanea",
+      "type": "blog-post",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/he/mundo-politico/19-analise-atual-impacto-dos-eventos-historicos-na-politica-contemporanea",
+      "type": "blog-post",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/robots.txt",
+      "type": "infrastructure",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/sitemap.xml",
+      "type": "infrastructure",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/feed.xml",
+      "type": "infrastructure",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/llms.txt",
+      "type": "infrastructure",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/llms-full.txt",
+      "type": "infrastructure",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/deep-research/2025-little-law-resilience/deep-research.pdf",
+      "type": "asset",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/deep-research/2025-little-law-resilience/deep-research.md",
+      "type": "asset",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/deep-research/2025-little-law-resilience/deep-research.docx",
+      "type": "asset",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/deep-research/2025-lstm-asset-prediction/deep-research.pdf",
+      "type": "asset",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/deep-research/2025-lstm-asset-prediction/deep-research.md",
+      "type": "asset",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/deep-research/2025-lstm-asset-prediction/deep-research.docx",
+      "type": "asset",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/deep-research/2025-hybrid-cooling-thermodynamics/deep-research.pdf",
+      "type": "asset",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/deep-research/2025-hybrid-cooling-thermodynamics/deep-research.md",
+      "type": "asset",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/deep-research/2025-hybrid-cooling-thermodynamics/deep-research.docx",
+      "type": "asset",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/deep-research/2025-iot-data-sovereignty/deep-research.pdf",
+      "type": "asset",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/deep-research/2025-iot-data-sovereignty/deep-research.md",
+      "type": "asset",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/deep-research/2025-iot-data-sovereignty/deep-research.docx",
+      "type": "asset",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/deep-research/2025-fraud-detection-mlp/deep-research.pdf",
+      "type": "asset",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/deep-research/2025-fraud-detection-mlp/deep-research.md",
+      "type": "asset",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/deep-research/2025-fraud-detection-mlp/deep-research.docx",
+      "type": "asset",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/deep-research/2024-historicity-jesus-archaeology/deep-research.pdf",
+      "type": "asset",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/deep-research/2024-historicity-jesus-archaeology/deep-research.md",
+      "type": "asset",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/deep-research/2024-historicity-jesus-archaeology/deep-research.docx",
+      "type": "asset",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/deep-research/2024-bitcoin-praxeology/deep-research.pdf",
+      "type": "asset",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/deep-research/2024-bitcoin-praxeology/deep-research.md",
+      "type": "asset",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/deep-research/2024-bitcoin-praxeology/deep-research.docx",
+      "type": "asset",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/deep-research/2024-scribal-canonization-ezra/deep-research.pdf",
+      "type": "asset",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/deep-research/2024-scribal-canonization-ezra/deep-research.md",
+      "type": "asset",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/deep-research/2024-scribal-canonization-ezra/deep-research.docx",
+      "type": "asset",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/deep-research/2024-theology-economic-order/deep-research.pdf",
+      "type": "asset",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/deep-research/2024-theology-economic-order/deep-research.md",
+      "type": "asset",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/deep-research/2024-theology-economic-order/deep-research.docx",
+      "type": "asset",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/deep-research/2024-ring-signatures-privacy/deep-research.pdf",
+      "type": "asset",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/deep-research/2024-ring-signatures-privacy/deep-research.md",
+      "type": "asset",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/deep-research/2024-ring-signatures-privacy/deep-research.docx",
+      "type": "asset",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/deep-research/2024-agritech-agile-flow/deep-research.pdf",
+      "type": "asset",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/deep-research/2024-agritech-agile-flow/deep-research.md",
+      "type": "asset",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/deep-research/2024-agritech-agile-flow/deep-research.docx",
+      "type": "asset",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/deep-research/2024-exegetical-treatise-anthropology/deep-research.pdf",
+      "type": "asset",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/deep-research/2024-exegetical-treatise-anthropology/deep-research.md",
+      "type": "asset",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/deep-research/2024-exegetical-treatise-anthropology/deep-research.docx",
+      "type": "asset",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/deep-research/2023-marian-apparitions-critique/deep-research.pdf",
+      "type": "asset",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/deep-research/2023-marian-apparitions-critique/deep-research.md",
+      "type": "asset",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/deep-research/2023-marian-apparitions-critique/deep-research.docx",
+      "type": "asset",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/deep-research/2023-digital-legacy/deep-research.pdf",
+      "type": "asset",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/deep-research/2023-digital-legacy/deep-research.md",
+      "type": "asset",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/deep-research/2023-digital-legacy/deep-research.docx",
+      "type": "asset",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/deep-research/2023-holy-club-methodism/deep-research.pdf",
+      "type": "asset",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/deep-research/2023-holy-club-methodism/deep-research.md",
+      "type": "asset",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/deep-research/2023-holy-club-methodism/deep-research.docx",
+      "type": "asset",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/deep-research/2022-theology-of-hope/deep-research.pdf",
+      "type": "asset",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/deep-research/2022-theology-of-hope/deep-research.md",
+      "type": "asset",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/deep-research/2022-theology-of-hope/deep-research.docx",
+      "type": "asset",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/deep-research/2020-robotics-education/deep-research.pdf",
+      "type": "asset",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/deep-research/2020-robotics-education/deep-research.md",
+      "type": "asset",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/deep-research/2020-robotics-education/deep-research.docx",
+      "type": "asset",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/deep-research/2017-chaos-theory-economics/deep-research.pdf",
+      "type": "asset",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/deep-research/2017-chaos-theory-economics/deep-research.md",
+      "type": "asset",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/deep-research/2017-chaos-theory-economics/deep-research.docx",
+      "type": "asset",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/certifications/alura-1-entrega-continua-confiabilidade-e-qualidade",
+      "type": "certification",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/en/certifications/alura-1-entrega-continua-confiabilidade-e-qualidade",
+      "type": "certification",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/es/certifications/alura-1-entrega-continua-confiabilidade-e-qualidade",
+      "type": "certification",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/it/certifications/alura-1-entrega-continua-confiabilidade-e-qualidade",
+      "type": "certification",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/he/certifications/alura-1-entrega-continua-confiabilidade-e-qualidade",
+      "type": "certification",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/certifications/alura-2-formacao-engenharia-de-software",
+      "type": "certification",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/en/certifications/alura-2-formacao-engenharia-de-software",
+      "type": "certification",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/es/certifications/alura-2-formacao-engenharia-de-software",
+      "type": "certification",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/it/certifications/alura-2-formacao-engenharia-de-software",
+      "type": "certification",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/he/certifications/alura-2-formacao-engenharia-de-software",
+      "type": "certification",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/certifications/alura-3-integracao-continua-qualidade-e-menos-risco",
+      "type": "certification",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/en/certifications/alura-3-integracao-continua-qualidade-e-menos-risco",
+      "type": "certification",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/es/certifications/alura-3-integracao-continua-qualidade-e-menos-risco",
+      "type": "certification",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/it/certifications/alura-3-integracao-continua-qualidade-e-menos-risco",
+      "type": "certification",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/he/certifications/alura-3-integracao-continua-qualidade-e-menos-risco",
+      "type": "certification",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/certifications/alura-4-microsservicos-na-pratica",
+      "type": "certification",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/en/certifications/alura-4-microsservicos-na-pratica",
+      "type": "certification",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/es/certifications/alura-4-microsservicos-na-pratica",
+      "type": "certification",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/it/certifications/alura-4-microsservicos-na-pratica",
+      "type": "certification",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/he/certifications/alura-4-microsservicos-na-pratica",
+      "type": "certification",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/certifications/alura-5-microsservicos-explorando-conceitos",
+      "type": "certification",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/en/certifications/alura-5-microsservicos-explorando-conceitos",
+      "type": "certification",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/es/certifications/alura-5-microsservicos-explorando-conceitos",
+      "type": "certification",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/it/certifications/alura-5-microsservicos-explorando-conceitos",
+      "type": "certification",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/he/certifications/alura-5-microsservicos-explorando-conceitos",
+      "type": "certification",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/certifications/alura-6-microsservicos-padroes-de-projeto",
+      "type": "certification",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/en/certifications/alura-6-microsservicos-padroes-de-projeto",
+      "type": "certification",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/es/certifications/alura-6-microsservicos-padroes-de-projeto",
+      "type": "certification",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/it/certifications/alura-6-microsservicos-padroes-de-projeto",
+      "type": "certification",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/he/certifications/alura-6-microsservicos-padroes-de-projeto",
+      "type": "certification",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/certifications/alura-7-extreme-programming-metodologia-agil",
+      "type": "certification",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/en/certifications/alura-7-extreme-programming-metodologia-agil",
+      "type": "certification",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/es/certifications/alura-7-extreme-programming-metodologia-agil",
+      "type": "certification",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/it/certifications/alura-7-extreme-programming-metodologia-agil",
+      "type": "certification",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/he/certifications/alura-7-extreme-programming-metodologia-agil",
+      "type": "certification",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/certifications/alura-8-organizacao-de-equipes-ageis",
+      "type": "certification",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/en/certifications/alura-8-organizacao-de-equipes-ageis",
+      "type": "certification",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/es/certifications/alura-8-organizacao-de-equipes-ageis",
+      "type": "certification",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/it/certifications/alura-8-organizacao-de-equipes-ageis",
+      "type": "certification",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/he/certifications/alura-8-organizacao-de-equipes-ageis",
+      "type": "certification",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/certifications/alura-9-scrum-agilidade-em-seu-projeto",
+      "type": "certification",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/en/certifications/alura-9-scrum-agilidade-em-seu-projeto",
+      "type": "certification",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/es/certifications/alura-9-scrum-agilidade-em-seu-projeto",
+      "type": "certification",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/it/certifications/alura-9-scrum-agilidade-em-seu-projeto",
+      "type": "certification",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/he/certifications/alura-9-scrum-agilidade-em-seu-projeto",
+      "type": "certification",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/certifications/alura-10-quality-assurance-plano-de-testes-e-bugs",
+      "type": "certification",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/en/certifications/alura-10-quality-assurance-plano-de-testes-e-bugs",
+      "type": "certification",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/es/certifications/alura-10-quality-assurance-plano-de-testes-e-bugs",
+      "type": "certification",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/it/certifications/alura-10-quality-assurance-plano-de-testes-e-bugs",
+      "type": "certification",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/he/certifications/alura-10-quality-assurance-plano-de-testes-e-bugs",
+      "type": "certification",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/certifications/alura-11-blockchain-para-negocios",
+      "type": "certification",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/en/certifications/alura-11-blockchain-para-negocios",
+      "type": "certification",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/es/certifications/alura-11-blockchain-para-negocios",
+      "type": "certification",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/it/certifications/alura-11-blockchain-para-negocios",
+      "type": "certification",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/he/certifications/alura-11-blockchain-para-negocios",
+      "type": "certification",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/certifications/alura-12-blockchain-aumente-a-confianca",
+      "type": "certification",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/en/certifications/alura-12-blockchain-aumente-a-confianca",
+      "type": "certification",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/es/certifications/alura-12-blockchain-aumente-a-confianca",
+      "type": "certification",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/it/certifications/alura-12-blockchain-aumente-a-confianca",
+      "type": "certification",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/he/certifications/alura-12-blockchain-aumente-a-confianca",
+      "type": "certification",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/certifications/alura-13-ia-generativa-midjourney-e-chatgpt",
+      "type": "certification",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/en/certifications/alura-13-ia-generativa-midjourney-e-chatgpt",
+      "type": "certification",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/es/certifications/alura-13-ia-generativa-midjourney-e-chatgpt",
+      "type": "certification",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/it/certifications/alura-13-ia-generativa-midjourney-e-chatgpt",
+      "type": "certification",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/he/certifications/alura-13-ia-generativa-midjourney-e-chatgpt",
+      "type": "certification",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/certifications/alura-14-value-stream-mapping-vsm-desenhe-mapa",
+      "type": "certification",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/en/certifications/alura-14-value-stream-mapping-vsm-desenhe-mapa",
+      "type": "certification",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/es/certifications/alura-14-value-stream-mapping-vsm-desenhe-mapa",
+      "type": "certification",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/it/certifications/alura-14-value-stream-mapping-vsm-desenhe-mapa",
+      "type": "certification",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/he/certifications/alura-14-value-stream-mapping-vsm-desenhe-mapa",
+      "type": "certification",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/certifications/alura-15-value-stream-mapping-vsm-conheca-fluxo",
+      "type": "certification",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/en/certifications/alura-15-value-stream-mapping-vsm-conheca-fluxo",
+      "type": "certification",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/es/certifications/alura-15-value-stream-mapping-vsm-conheca-fluxo",
+      "type": "certification",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/it/certifications/alura-15-value-stream-mapping-vsm-conheca-fluxo",
+      "type": "certification",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/he/certifications/alura-15-value-stream-mapping-vsm-conheca-fluxo",
+      "type": "certification",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/certifications/alura-16-rpa-aplicacoes-gerais",
+      "type": "certification",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/en/certifications/alura-16-rpa-aplicacoes-gerais",
+      "type": "certification",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/es/certifications/alura-16-rpa-aplicacoes-gerais",
+      "type": "certification",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/it/certifications/alura-16-rpa-aplicacoes-gerais",
+      "type": "certification",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/he/certifications/alura-16-rpa-aplicacoes-gerais",
+      "type": "certification",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/certifications/alura-17-bizagi-mapeamento-com-bpmn",
+      "type": "certification",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/en/certifications/alura-17-bizagi-mapeamento-com-bpmn",
+      "type": "certification",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/es/certifications/alura-17-bizagi-mapeamento-com-bpmn",
+      "type": "certification",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/it/certifications/alura-17-bizagi-mapeamento-com-bpmn",
+      "type": "certification",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/he/certifications/alura-17-bizagi-mapeamento-com-bpmn",
+      "type": "certification",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/certifications/alura-18-uml-modelagem-de-diagramas",
+      "type": "certification",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/en/certifications/alura-18-uml-modelagem-de-diagramas",
+      "type": "certification",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/es/certifications/alura-18-uml-modelagem-de-diagramas",
+      "type": "certification",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/it/certifications/alura-18-uml-modelagem-de-diagramas",
+      "type": "certification",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/he/certifications/alura-18-uml-modelagem-de-diagramas",
+      "type": "certification",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/certifications/alura-19-uml-modelagem-de-solucoes",
+      "type": "certification",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/en/certifications/alura-19-uml-modelagem-de-solucoes",
+      "type": "certification",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/es/certifications/alura-19-uml-modelagem-de-solucoes",
+      "type": "certification",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/it/certifications/alura-19-uml-modelagem-de-solucoes",
+      "type": "certification",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/he/certifications/alura-19-uml-modelagem-de-solucoes",
+      "type": "certification",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/certifications/alura-20-linux-onboarding-cli-rapida-e-pratica",
+      "type": "certification",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/en/certifications/alura-20-linux-onboarding-cli-rapida-e-pratica",
+      "type": "certification",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/es/certifications/alura-20-linux-onboarding-cli-rapida-e-pratica",
+      "type": "certification",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/it/certifications/alura-20-linux-onboarding-cli-rapida-e-pratica",
+      "type": "certification",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/he/certifications/alura-20-linux-onboarding-cli-rapida-e-pratica",
+      "type": "certification",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/certifications/alura-21-aprenda-java-com-orientacao-a-objetos",
+      "type": "certification",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/en/certifications/alura-21-aprenda-java-com-orientacao-a-objetos",
+      "type": "certification",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/es/certifications/alura-21-aprenda-java-com-orientacao-a-objetos",
+      "type": "certification",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/it/certifications/alura-21-aprenda-java-com-orientacao-a-objetos",
+      "type": "certification",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/he/certifications/alura-21-aprenda-java-com-orientacao-a-objetos",
+      "type": "certification",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/certifications/alura-22-java-criando-primeira-aplicacao",
+      "type": "certification",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/en/certifications/alura-22-java-criando-primeira-aplicacao",
+      "type": "certification",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/es/certifications/alura-22-java-criando-primeira-aplicacao",
+      "type": "certification",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/it/certifications/alura-22-java-criando-primeira-aplicacao",
+      "type": "certification",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/he/certifications/alura-22-java-criando-primeira-aplicacao",
+      "type": "certification",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/certifications/alura-23-java-orientacao-a-objetos",
+      "type": "certification",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/en/certifications/alura-23-java-orientacao-a-objetos",
+      "type": "certification",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/es/certifications/alura-23-java-orientacao-a-objetos",
+      "type": "certification",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/it/certifications/alura-23-java-orientacao-a-objetos",
+      "type": "certification",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/he/certifications/alura-23-java-orientacao-a-objetos",
+      "type": "certification",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/certifications/alura-24-java-listas-e-colecoes-de-dados",
+      "type": "certification",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/en/certifications/alura-24-java-listas-e-colecoes-de-dados",
+      "type": "certification",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/es/certifications/alura-24-java-listas-e-colecoes-de-dados",
+      "type": "certification",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/it/certifications/alura-24-java-listas-e-colecoes-de-dados",
+      "type": "certification",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/he/certifications/alura-24-java-listas-e-colecoes-de-dados",
+      "type": "certification",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/certifications/alura-25-java-api-arquivos-e-erros",
+      "type": "certification",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/en/certifications/alura-25-java-api-arquivos-e-erros",
+      "type": "certification",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/es/certifications/alura-25-java-api-arquivos-e-erros",
+      "type": "certification",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/it/certifications/alura-25-java-api-arquivos-e-erros",
+      "type": "certification",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/he/certifications/alura-25-java-api-arquivos-e-erros",
+      "type": "certification",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/certifications/alura-26-c-linguagem-e-stl",
+      "type": "certification",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/en/certifications/alura-26-c-linguagem-e-stl",
+      "type": "certification",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/es/certifications/alura-26-c-linguagem-e-stl",
+      "type": "certification",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/it/certifications/alura-26-c-linguagem-e-stl",
+      "type": "certification",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/he/certifications/alura-26-c-linguagem-e-stl",
+      "type": "certification",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/certifications/alura-27-solid-com-php-principios-oop",
+      "type": "certification",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/en/certifications/alura-27-solid-com-php-principios-oop",
+      "type": "certification",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/es/certifications/alura-27-solid-com-php-principios-oop",
+      "type": "certification",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/it/certifications/alura-27-solid-com-php-principios-oop",
+      "type": "certification",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/he/certifications/alura-27-solid-com-php-principios-oop",
+      "type": "certification",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/certifications/alura-28-avancando-oop-com-php",
+      "type": "certification",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/en/certifications/alura-28-avancando-oop-com-php",
+      "type": "certification",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/es/certifications/alura-28-avancando-oop-com-php",
+      "type": "certification",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/it/certifications/alura-28-avancando-oop-com-php",
+      "type": "certification",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/he/certifications/alura-28-avancando-oop-com-php",
+      "type": "certification",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/certifications/alura-29-design-patterns-em-php",
+      "type": "certification",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/en/certifications/alura-29-design-patterns-em-php",
+      "type": "certification",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/es/certifications/alura-29-design-patterns-em-php",
+      "type": "certification",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/it/certifications/alura-29-design-patterns-em-php",
+      "type": "certification",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/he/certifications/alura-29-design-patterns-em-php",
+      "type": "certification",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/certifications/alura-30-orientacao-a-objetos-com-php",
+      "type": "certification",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/en/certifications/alura-30-orientacao-a-objetos-com-php",
+      "type": "certification",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/es/certifications/alura-30-orientacao-a-objetos-com-php",
+      "type": "certification",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/it/certifications/alura-30-orientacao-a-objetos-com-php",
+      "type": "certification",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/he/certifications/alura-30-orientacao-a-objetos-com-php",
+      "type": "certification",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/certifications/alura-31-javascript-e-html-desenvolva-um-jogo",
+      "type": "certification",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/en/certifications/alura-31-javascript-e-html-desenvolva-um-jogo",
+      "type": "certification",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/es/certifications/alura-31-javascript-e-html-desenvolva-um-jogo",
+      "type": "certification",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/it/certifications/alura-31-javascript-e-html-desenvolva-um-jogo",
+      "type": "certification",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/he/certifications/alura-31-javascript-e-html-desenvolva-um-jogo",
+      "type": "certification",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/certifications/alura-32-mongodb-banco-de-dados-nosql",
+      "type": "certification",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/en/certifications/alura-32-mongodb-banco-de-dados-nosql",
+      "type": "certification",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/es/certifications/alura-32-mongodb-banco-de-dados-nosql",
+      "type": "certification",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/it/certifications/alura-32-mongodb-banco-de-dados-nosql",
+      "type": "certification",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/he/certifications/alura-32-mongodb-banco-de-dados-nosql",
+      "type": "certification",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/certifications/coursera-philosophy-science-and-religion-science-and-philosophy",
+      "type": "certification",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/en/certifications/coursera-philosophy-science-and-religion-science-and-philosophy",
+      "type": "certification",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/es/certifications/coursera-philosophy-science-and-religion-science-and-philosophy",
+      "type": "certification",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/it/certifications/coursera-philosophy-science-and-religion-science-and-philosophy",
+      "type": "certification",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/he/certifications/coursera-philosophy-science-and-religion-science-and-philosophy",
+      "type": "certification",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/certifications/edx-ai-in-practice-preparing-for-ai",
+      "type": "certification",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/en/certifications/edx-ai-in-practice-preparing-for-ai",
+      "type": "certification",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/es/certifications/edx-ai-in-practice-preparing-for-ai",
+      "type": "certification",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/it/certifications/edx-ai-in-practice-preparing-for-ai",
+      "type": "certification",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/he/certifications/edx-ai-in-practice-preparing-for-ai",
+      "type": "certification",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/acervo-teologico/fundamentos-da-fe/o-poder-transformador-da-graca",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/en/acervo-teologico/fundamentos-da-fe/o-poder-transformador-da-graca",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/es/acervo-teologico/fundamentos-da-fe/o-poder-transformador-da-graca",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/it/acervo-teologico/fundamentos-da-fe/o-poder-transformador-da-graca",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/he/acervo-teologico/fundamentos-da-fe/o-poder-transformador-da-graca",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/acervo-teologico/fundamentos-da-fe/batismo-nas-aguas-nova-vida-em-cristo",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/en/acervo-teologico/fundamentos-da-fe/batismo-nas-aguas-nova-vida-em-cristo",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/es/acervo-teologico/fundamentos-da-fe/batismo-nas-aguas-nova-vida-em-cristo",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/it/acervo-teologico/fundamentos-da-fe/batismo-nas-aguas-nova-vida-em-cristo",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/he/acervo-teologico/fundamentos-da-fe/batismo-nas-aguas-nova-vida-em-cristo",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/acervo-teologico/fundamentos-da-fe/a-cruz-e-o-seu-significado-hoje",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/en/acervo-teologico/fundamentos-da-fe/a-cruz-e-o-seu-significado-hoje",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/es/acervo-teologico/fundamentos-da-fe/a-cruz-e-o-seu-significado-hoje",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/it/acervo-teologico/fundamentos-da-fe/a-cruz-e-o-seu-significado-hoje",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/he/acervo-teologico/fundamentos-da-fe/a-cruz-e-o-seu-significado-hoje",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/acervo-teologico/fundamentos-da-fe/identidade-quem-somos-em-cristo",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/en/acervo-teologico/fundamentos-da-fe/identidade-quem-somos-em-cristo",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/es/acervo-teologico/fundamentos-da-fe/identidade-quem-somos-em-cristo",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/it/acervo-teologico/fundamentos-da-fe/identidade-quem-somos-em-cristo",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/he/acervo-teologico/fundamentos-da-fe/identidade-quem-somos-em-cristo",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/acervo-teologico/fundamentos-da-fe/fortalecendo-as-bases-da-fe",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/en/acervo-teologico/fundamentos-da-fe/fortalecendo-as-bases-da-fe",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/es/acervo-teologico/fundamentos-da-fe/fortalecendo-as-bases-da-fe",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/it/acervo-teologico/fundamentos-da-fe/fortalecendo-as-bases-da-fe",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/he/acervo-teologico/fundamentos-da-fe/fortalecendo-as-bases-da-fe",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/acervo-teologico/fundamentos-da-fe/o-agir-do-espirito-em-nossas-vidas",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/en/acervo-teologico/fundamentos-da-fe/o-agir-do-espirito-em-nossas-vidas",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/es/acervo-teologico/fundamentos-da-fe/o-agir-do-espirito-em-nossas-vidas",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/it/acervo-teologico/fundamentos-da-fe/o-agir-do-espirito-em-nossas-vidas",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/he/acervo-teologico/fundamentos-da-fe/o-agir-do-espirito-em-nossas-vidas",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/acervo-teologico/fundamentos-da-fe/firmes-na-promessa",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/en/acervo-teologico/fundamentos-da-fe/firmes-na-promessa",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/es/acervo-teologico/fundamentos-da-fe/firmes-na-promessa",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/it/acervo-teologico/fundamentos-da-fe/firmes-na-promessa",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/he/acervo-teologico/fundamentos-da-fe/firmes-na-promessa",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/acervo-teologico/fundamentos-da-fe/a-forca-da-palavra",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/en/acervo-teologico/fundamentos-da-fe/a-forca-da-palavra",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/es/acervo-teologico/fundamentos-da-fe/a-forca-da-palavra",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/it/acervo-teologico/fundamentos-da-fe/a-forca-da-palavra",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/he/acervo-teologico/fundamentos-da-fe/a-forca-da-palavra",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/acervo-teologico/fundamentos-da-fe/cantata-de-natal-o-verbo-que-se-fez-carne-e-habitou-entre-nos",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/en/acervo-teologico/fundamentos-da-fe/cantata-de-natal-o-verbo-que-se-fez-carne-e-habitou-entre-nos",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/es/acervo-teologico/fundamentos-da-fe/cantata-de-natal-o-verbo-que-se-fez-carne-e-habitou-entre-nos",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/it/acervo-teologico/fundamentos-da-fe/cantata-de-natal-o-verbo-que-se-fez-carne-e-habitou-entre-nos",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/he/acervo-teologico/fundamentos-da-fe/cantata-de-natal-o-verbo-que-se-fez-carne-e-habitou-entre-nos",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/acervo-teologico/fundamentos-da-fe/o-despertar-da-fe",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/en/acervo-teologico/fundamentos-da-fe/o-despertar-da-fe",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/es/acervo-teologico/fundamentos-da-fe/o-despertar-da-fe",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/it/acervo-teologico/fundamentos-da-fe/o-despertar-da-fe",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/he/acervo-teologico/fundamentos-da-fe/o-despertar-da-fe",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/acervo-teologico/batalha-espiritual-e-resiliencia/vencendo-o-medo-pela-graca",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/en/acervo-teologico/batalha-espiritual-e-resiliencia/vencendo-o-medo-pela-graca",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/es/acervo-teologico/batalha-espiritual-e-resiliencia/vencendo-o-medo-pela-graca",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/it/acervo-teologico/batalha-espiritual-e-resiliencia/vencendo-o-medo-pela-graca",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/he/acervo-teologico/batalha-espiritual-e-resiliencia/vencendo-o-medo-pela-graca",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/acervo-teologico/batalha-espiritual-e-resiliencia/quebrando-cadeias-invisiveis",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/en/acervo-teologico/batalha-espiritual-e-resiliencia/quebrando-cadeias-invisiveis",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/es/acervo-teologico/batalha-espiritual-e-resiliencia/quebrando-cadeias-invisiveis",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/it/acervo-teologico/batalha-espiritual-e-resiliencia/quebrando-cadeias-invisiveis",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/he/acervo-teologico/batalha-espiritual-e-resiliencia/quebrando-cadeias-invisiveis",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/acervo-teologico/batalha-espiritual-e-resiliencia/atravessando-tempestades-com-fe",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/en/acervo-teologico/batalha-espiritual-e-resiliencia/atravessando-tempestades-com-fe",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/es/acervo-teologico/batalha-espiritual-e-resiliencia/atravessando-tempestades-com-fe",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/it/acervo-teologico/batalha-espiritual-e-resiliencia/atravessando-tempestades-com-fe",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/he/acervo-teologico/batalha-espiritual-e-resiliencia/atravessando-tempestades-com-fe",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/acervo-teologico/batalha-espiritual-e-resiliencia/ousadia-para-romper-limites",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/en/acervo-teologico/batalha-espiritual-e-resiliencia/ousadia-para-romper-limites",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/es/acervo-teologico/batalha-espiritual-e-resiliencia/ousadia-para-romper-limites",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/it/acervo-teologico/batalha-espiritual-e-resiliencia/ousadia-para-romper-limites",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/he/acervo-teologico/batalha-espiritual-e-resiliencia/ousadia-para-romper-limites",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/acervo-teologico/batalha-espiritual-e-resiliencia/protecao-e-escudo",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/en/acervo-teologico/batalha-espiritual-e-resiliencia/protecao-e-escudo",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/es/acervo-teologico/batalha-espiritual-e-resiliencia/protecao-e-escudo",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/it/acervo-teologico/batalha-espiritual-e-resiliencia/protecao-e-escudo",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/he/acervo-teologico/batalha-espiritual-e-resiliencia/protecao-e-escudo",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/acervo-teologico/batalha-espiritual-e-resiliencia/avancando-em-meio-as-oposicoes",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/en/acervo-teologico/batalha-espiritual-e-resiliencia/avancando-em-meio-as-oposicoes",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/es/acervo-teologico/batalha-espiritual-e-resiliencia/avancando-em-meio-as-oposicoes",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/it/acervo-teologico/batalha-espiritual-e-resiliencia/avancando-em-meio-as-oposicoes",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/he/acervo-teologico/batalha-espiritual-e-resiliencia/avancando-em-meio-as-oposicoes",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/acervo-teologico/batalha-espiritual-e-resiliencia/vencendo-as-batalhas-da-mente",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/en/acervo-teologico/batalha-espiritual-e-resiliencia/vencendo-as-batalhas-da-mente",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/es/acervo-teologico/batalha-espiritual-e-resiliencia/vencendo-as-batalhas-da-mente",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/it/acervo-teologico/batalha-espiritual-e-resiliencia/vencendo-as-batalhas-da-mente",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/he/acervo-teologico/batalha-espiritual-e-resiliencia/vencendo-as-batalhas-da-mente",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/acervo-teologico/batalha-espiritual-e-resiliencia/a-resiliencia-do-cristao",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/en/acervo-teologico/batalha-espiritual-e-resiliencia/a-resiliencia-do-cristao",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/es/acervo-teologico/batalha-espiritual-e-resiliencia/a-resiliencia-do-cristao",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/it/acervo-teologico/batalha-espiritual-e-resiliencia/a-resiliencia-do-cristao",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/he/acervo-teologico/batalha-espiritual-e-resiliencia/a-resiliencia-do-cristao",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/acervo-teologico/batalha-espiritual-e-resiliencia/perseveranca-e-resposta-dia-8",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/en/acervo-teologico/batalha-espiritual-e-resiliencia/perseveranca-e-resposta-dia-8",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/es/acervo-teologico/batalha-espiritual-e-resiliencia/perseveranca-e-resposta-dia-8",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/it/acervo-teologico/batalha-espiritual-e-resiliencia/perseveranca-e-resposta-dia-8",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/he/acervo-teologico/batalha-espiritual-e-resiliencia/perseveranca-e-resposta-dia-8",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/acervo-teologico/batalha-espiritual-e-resiliencia/o-grande-rompimento-celebracao-dos-testemunhos-dia-40",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/en/acervo-teologico/batalha-espiritual-e-resiliencia/o-grande-rompimento-celebracao-dos-testemunhos-dia-40",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/es/acervo-teologico/batalha-espiritual-e-resiliencia/o-grande-rompimento-celebracao-dos-testemunhos-dia-40",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/it/acervo-teologico/batalha-espiritual-e-resiliencia/o-grande-rompimento-celebracao-dos-testemunhos-dia-40",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/he/acervo-teologico/batalha-espiritual-e-resiliencia/o-grande-rompimento-celebracao-dos-testemunhos-dia-40",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/acervo-teologico/batalha-espiritual-e-resiliencia/quebrando-as-muralhas-pela-oracao",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/en/acervo-teologico/batalha-espiritual-e-resiliencia/quebrando-as-muralhas-pela-oracao",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/es/acervo-teologico/batalha-espiritual-e-resiliencia/quebrando-as-muralhas-pela-oracao",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/it/acervo-teologico/batalha-espiritual-e-resiliencia/quebrando-as-muralhas-pela-oracao",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/he/acervo-teologico/batalha-espiritual-e-resiliencia/quebrando-as-muralhas-pela-oracao",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/acervo-teologico/batalha-espiritual-e-resiliencia/a-esperanca-que-nao-decepciona",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/en/acervo-teologico/batalha-espiritual-e-resiliencia/a-esperanca-que-nao-decepciona",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/es/acervo-teologico/batalha-espiritual-e-resiliencia/a-esperanca-que-nao-decepciona",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/it/acervo-teologico/batalha-espiritual-e-resiliencia/a-esperanca-que-nao-decepciona",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/he/acervo-teologico/batalha-espiritual-e-resiliencia/a-esperanca-que-nao-decepciona",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/acervo-teologico/avivamento-e-consagracao/restaurando-o-primeiro-amor",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/en/acervo-teologico/avivamento-e-consagracao/restaurando-o-primeiro-amor",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/es/acervo-teologico/avivamento-e-consagracao/restaurando-o-primeiro-amor",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/it/acervo-teologico/avivamento-e-consagracao/restaurando-o-primeiro-amor",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/he/acervo-teologico/avivamento-e-consagracao/restaurando-o-primeiro-amor",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/acervo-teologico/avivamento-e-consagracao/presenca-e-avivamento",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/en/acervo-teologico/avivamento-e-consagracao/presenca-e-avivamento",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/es/acervo-teologico/avivamento-e-consagracao/presenca-e-avivamento",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/it/acervo-teologico/avivamento-e-consagracao/presenca-e-avivamento",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/he/acervo-teologico/avivamento-e-consagracao/presenca-e-avivamento",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/acervo-teologico/avivamento-e-consagracao/renovando-as-forcas-no-altar",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/en/acervo-teologico/avivamento-e-consagracao/renovando-as-forcas-no-altar",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/es/acervo-teologico/avivamento-e-consagracao/renovando-as-forcas-no-altar",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/it/acervo-teologico/avivamento-e-consagracao/renovando-as-forcas-no-altar",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/he/acervo-teologico/avivamento-e-consagracao/renovando-as-forcas-no-altar",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/acervo-teologico/avivamento-e-consagracao/preparando-o-coracao-para-o-novo-ano",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/en/acervo-teologico/avivamento-e-consagracao/preparando-o-coracao-para-o-novo-ano",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/es/acervo-teologico/avivamento-e-consagracao/preparando-o-coracao-para-o-novo-ano",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/it/acervo-teologico/avivamento-e-consagracao/preparando-o-coracao-para-o-novo-ano",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/he/acervo-teologico/avivamento-e-consagracao/preparando-o-coracao-para-o-novo-ano",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/acervo-teologico/avivamento-e-consagracao/aprendendo-a-ouvir-a-voz-de-deus",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/en/acervo-teologico/avivamento-e-consagracao/aprendendo-a-ouvir-a-voz-de-deus",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/es/acervo-teologico/avivamento-e-consagracao/aprendendo-a-ouvir-a-voz-de-deus",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/it/acervo-teologico/avivamento-e-consagracao/aprendendo-a-ouvir-a-voz-de-deus",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/he/acervo-teologico/avivamento-e-consagracao/aprendendo-a-ouvir-a-voz-de-deus",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/acervo-teologico/avivamento-e-consagracao/viver-em-santidade-no-seculo-xxi",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/en/acervo-teologico/avivamento-e-consagracao/viver-em-santidade-no-seculo-xxi",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/es/acervo-teologico/avivamento-e-consagracao/viver-em-santidade-no-seculo-xxi",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/it/acervo-teologico/avivamento-e-consagracao/viver-em-santidade-no-seculo-xxi",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/he/acervo-teologico/avivamento-e-consagracao/viver-em-santidade-no-seculo-xxi",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/acervo-teologico/avivamento-e-consagracao/a-importancia-da-intimidade",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/en/acervo-teologico/avivamento-e-consagracao/a-importancia-da-intimidade",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/es/acervo-teologico/avivamento-e-consagracao/a-importancia-da-intimidade",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/it/acervo-teologico/avivamento-e-consagracao/a-importancia-da-intimidade",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/he/acervo-teologico/avivamento-e-consagracao/a-importancia-da-intimidade",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/acervo-teologico/avivamento-e-consagracao/restaurando-o-altar",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/en/acervo-teologico/avivamento-e-consagracao/restaurando-o-altar",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/es/acervo-teologico/avivamento-e-consagracao/restaurando-o-altar",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/it/acervo-teologico/avivamento-e-consagracao/restaurando-o-altar",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/he/acervo-teologico/avivamento-e-consagracao/restaurando-o-altar",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/acervo-teologico/avivamento-e-consagracao/autoridade-espiritual",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/en/acervo-teologico/avivamento-e-consagracao/autoridade-espiritual",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/es/acervo-teologico/avivamento-e-consagracao/autoridade-espiritual",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/it/acervo-teologico/avivamento-e-consagracao/autoridade-espiritual",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/he/acervo-teologico/avivamento-e-consagracao/autoridade-espiritual",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/acervo-teologico/avivamento-e-consagracao/o-fogo-que-nao-se-apaga",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/en/acervo-teologico/avivamento-e-consagracao/o-fogo-que-nao-se-apaga",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/es/acervo-teologico/avivamento-e-consagracao/o-fogo-que-nao-se-apaga",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/it/acervo-teologico/avivamento-e-consagracao/o-fogo-que-nao-se-apaga",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/he/acervo-teologico/avivamento-e-consagracao/o-fogo-que-nao-se-apaga",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/acervo-teologico/avivamento-e-consagracao/preparando-o-altar",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/en/acervo-teologico/avivamento-e-consagracao/preparando-o-altar",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/es/acervo-teologico/avivamento-e-consagracao/preparando-o-altar",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/it/acervo-teologico/avivamento-e-consagracao/preparando-o-altar",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/he/acervo-teologico/avivamento-e-consagracao/preparando-o-altar",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/acervo-teologico/avivamento-e-consagracao/tempo-de-renovo",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/en/acervo-teologico/avivamento-e-consagracao/tempo-de-renovo",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/es/acervo-teologico/avivamento-e-consagracao/tempo-de-renovo",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/it/acervo-teologico/avivamento-e-consagracao/tempo-de-renovo",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/he/acervo-teologico/avivamento-e-consagracao/tempo-de-renovo",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/acervo-teologico/eclesiologia-e-vida-pratica/culto-regional-de-casais-edificando-a-familia-sobre-a-rocha",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/en/acervo-teologico/eclesiologia-e-vida-pratica/culto-regional-de-casais-edificando-a-familia-sobre-a-rocha",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/es/acervo-teologico/eclesiologia-e-vida-pratica/culto-regional-de-casais-edificando-a-familia-sobre-a-rocha",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/it/acervo-teologico/eclesiologia-e-vida-pratica/culto-regional-de-casais-edificando-a-familia-sobre-a-rocha",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/he/acervo-teologico/eclesiologia-e-vida-pratica/culto-regional-de-casais-edificando-a-familia-sobre-a-rocha",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/acervo-teologico/eclesiologia-e-vida-pratica/chamados-para-fazer-a-diferenca",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/en/acervo-teologico/eclesiologia-e-vida-pratica/chamados-para-fazer-a-diferenca",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/es/acervo-teologico/eclesiologia-e-vida-pratica/chamados-para-fazer-a-diferenca",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/it/acervo-teologico/eclesiologia-e-vida-pratica/chamados-para-fazer-a-diferenca",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/he/acervo-teologico/eclesiologia-e-vida-pratica/chamados-para-fazer-a-diferenca",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/acervo-teologico/eclesiologia-e-vida-pratica/semeando-em-boa-terra",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/en/acervo-teologico/eclesiologia-e-vida-pratica/semeando-em-boa-terra",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/es/acervo-teologico/eclesiologia-e-vida-pratica/semeando-em-boa-terra",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/it/acervo-teologico/eclesiologia-e-vida-pratica/semeando-em-boa-terra",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/he/acervo-teologico/eclesiologia-e-vida-pratica/semeando-em-boa-terra",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/acervo-teologico/eclesiologia-e-vida-pratica/caminhando-em-sobrenaturalidade",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/en/acervo-teologico/eclesiologia-e-vida-pratica/caminhando-em-sobrenaturalidade",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/es/acervo-teologico/eclesiologia-e-vida-pratica/caminhando-em-sobrenaturalidade",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/it/acervo-teologico/eclesiologia-e-vida-pratica/caminhando-em-sobrenaturalidade",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/he/acervo-teologico/eclesiologia-e-vida-pratica/caminhando-em-sobrenaturalidade",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/acervo-teologico/eclesiologia-e-vida-pratica/comunhao-e-crescimento-espiritual",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/en/acervo-teologico/eclesiologia-e-vida-pratica/comunhao-e-crescimento-espiritual",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/es/acervo-teologico/eclesiologia-e-vida-pratica/comunhao-e-crescimento-espiritual",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/it/acervo-teologico/eclesiologia-e-vida-pratica/comunhao-e-crescimento-espiritual",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/he/acervo-teologico/eclesiologia-e-vida-pratica/comunhao-e-crescimento-espiritual",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/acervo-teologico/eclesiologia-e-vida-pratica/festival-de-danca-expressao-de-adoracao-e-arte-profetica",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/en/acervo-teologico/eclesiologia-e-vida-pratica/festival-de-danca-expressao-de-adoracao-e-arte-profetica",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/es/acervo-teologico/eclesiologia-e-vida-pratica/festival-de-danca-expressao-de-adoracao-e-arte-profetica",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/it/acervo-teologico/eclesiologia-e-vida-pratica/festival-de-danca-expressao-de-adoracao-e-arte-profetica",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/he/acervo-teologico/eclesiologia-e-vida-pratica/festival-de-danca-expressao-de-adoracao-e-arte-profetica",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/acervo-teologico/eclesiologia-e-vida-pratica/construindo-uma-vida-com-proposito",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/en/acervo-teologico/eclesiologia-e-vida-pratica/construindo-uma-vida-com-proposito",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/es/acervo-teologico/eclesiologia-e-vida-pratica/construindo-uma-vida-com-proposito",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/it/acervo-teologico/eclesiologia-e-vida-pratica/construindo-uma-vida-com-proposito",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/he/acervo-teologico/eclesiologia-e-vida-pratica/construindo-uma-vida-com-proposito",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/acervo-teologico/eclesiologia-e-vida-pratica/o-perdao-que-liberta",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/en/acervo-teologico/eclesiologia-e-vida-pratica/o-perdao-que-liberta",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/es/acervo-teologico/eclesiologia-e-vida-pratica/o-perdao-que-liberta",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/it/acervo-teologico/eclesiologia-e-vida-pratica/o-perdao-que-liberta",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/he/acervo-teologico/eclesiologia-e-vida-pratica/o-perdao-que-liberta",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/acervo-teologico/eclesiologia-e-vida-pratica/a-recompensa-da-fidelidade",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/en/acervo-teologico/eclesiologia-e-vida-pratica/a-recompensa-da-fidelidade",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/es/acervo-teologico/eclesiologia-e-vida-pratica/a-recompensa-da-fidelidade",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/it/acervo-teologico/eclesiologia-e-vida-pratica/a-recompensa-da-fidelidade",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/he/acervo-teologico/eclesiologia-e-vida-pratica/a-recompensa-da-fidelidade",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/acervo-teologico/eclesiologia-e-vida-pratica/o-poder-da-unidade",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/en/acervo-teologico/eclesiologia-e-vida-pratica/o-poder-da-unidade",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/es/acervo-teologico/eclesiologia-e-vida-pratica/o-poder-da-unidade",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/it/acervo-teologico/eclesiologia-e-vida-pratica/o-poder-da-unidade",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/he/acervo-teologico/eclesiologia-e-vida-pratica/o-poder-da-unidade",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/acervo-teologico/eclesiologia-e-vida-pratica/restituicao-divina",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/en/acervo-teologico/eclesiologia-e-vida-pratica/restituicao-divina",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/es/acervo-teologico/eclesiologia-e-vida-pratica/restituicao-divina",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/it/acervo-teologico/eclesiologia-e-vida-pratica/restituicao-divina",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/he/acervo-teologico/eclesiologia-e-vida-pratica/restituicao-divina",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/acervo-teologico/eclesiologia-e-vida-pratica/a-plenitude-do-espirito",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/en/acervo-teologico/eclesiologia-e-vida-pratica/a-plenitude-do-espirito",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/es/acervo-teologico/eclesiologia-e-vida-pratica/a-plenitude-do-espirito",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/it/acervo-teologico/eclesiologia-e-vida-pratica/a-plenitude-do-espirito",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/he/acervo-teologico/eclesiologia-e-vida-pratica/a-plenitude-do-espirito",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/acervo-teologico/eclesiologia-e-vida-pratica/frutos-de-uma-vida-com-deus",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/en/acervo-teologico/eclesiologia-e-vida-pratica/frutos-de-uma-vida-com-deus",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/es/acervo-teologico/eclesiologia-e-vida-pratica/frutos-de-uma-vida-com-deus",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/it/acervo-teologico/eclesiologia-e-vida-pratica/frutos-de-uma-vida-com-deus",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/he/acervo-teologico/eclesiologia-e-vida-pratica/frutos-de-uma-vida-com-deus",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/acervo-teologico/eclesiologia-e-vida-pratica/cultivando-um-coracao-grato",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/en/acervo-teologico/eclesiologia-e-vida-pratica/cultivando-um-coracao-grato",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/es/acervo-teologico/eclesiologia-e-vida-pratica/cultivando-um-coracao-grato",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/it/acervo-teologico/eclesiologia-e-vida-pratica/cultivando-um-coracao-grato",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/he/acervo-teologico/eclesiologia-e-vida-pratica/cultivando-um-coracao-grato",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/acervo-teologico/mensagens-profeticas/o-chamado-inabalavel",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/en/acervo-teologico/mensagens-profeticas/o-chamado-inabalavel",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/es/acervo-teologico/mensagens-profeticas/o-chamado-inabalavel",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/it/acervo-teologico/mensagens-profeticas/o-chamado-inabalavel",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/he/acervo-teologico/mensagens-profeticas/o-chamado-inabalavel",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/acervo-teologico/mensagens-profeticas/o-agir-invisivel-de-deus",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/en/acervo-teologico/mensagens-profeticas/o-agir-invisivel-de-deus",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/es/acervo-teologico/mensagens-profeticas/o-agir-invisivel-de-deus",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/it/acervo-teologico/mensagens-profeticas/o-agir-invisivel-de-deus",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/he/acervo-teologico/mensagens-profeticas/o-agir-invisivel-de-deus",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/acervo-teologico/mensagens-profeticas/destravando-promessas",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/en/acervo-teologico/mensagens-profeticas/destravando-promessas",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/es/acervo-teologico/mensagens-profeticas/destravando-promessas",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/it/acervo-teologico/mensagens-profeticas/destravando-promessas",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/he/acervo-teologico/mensagens-profeticas/destravando-promessas",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/acervo-teologico/mensagens-profeticas/janeiro-profetico-consagrando-o-novo-ano",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/en/acervo-teologico/mensagens-profeticas/janeiro-profetico-consagrando-o-novo-ano",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/es/acervo-teologico/mensagens-profeticas/janeiro-profetico-consagrando-o-novo-ano",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/it/acervo-teologico/mensagens-profeticas/janeiro-profetico-consagrando-o-novo-ano",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/he/acervo-teologico/mensagens-profeticas/janeiro-profetico-consagrando-o-novo-ano",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/acervo-teologico/mensagens-profeticas/o-selo-profetico-para-os-12-meses-de-vitoria-dia-12",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/en/acervo-teologico/mensagens-profeticas/o-selo-profetico-para-os-12-meses-de-vitoria-dia-12",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/es/acervo-teologico/mensagens-profeticas/o-selo-profetico-para-os-12-meses-de-vitoria-dia-12",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/it/acervo-teologico/mensagens-profeticas/o-selo-profetico-para-os-12-meses-de-vitoria-dia-12",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/he/acervo-teologico/mensagens-profeticas/o-selo-profetico-para-os-12-meses-de-vitoria-dia-12",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/acervo-teologico/mensagens-profeticas/alinhamento-profetico",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/en/acervo-teologico/mensagens-profeticas/alinhamento-profetico",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/es/acervo-teologico/mensagens-profeticas/alinhamento-profetico",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/it/acervo-teologico/mensagens-profeticas/alinhamento-profetico",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/he/acervo-teologico/mensagens-profeticas/alinhamento-profetico",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/acervo-teologico/mensagens-profeticas/celebracao-antecipada",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/en/acervo-teologico/mensagens-profeticas/celebracao-antecipada",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/es/acervo-teologico/mensagens-profeticas/celebracao-antecipada",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/it/acervo-teologico/mensagens-profeticas/celebracao-antecipada",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/he/acervo-teologico/mensagens-profeticas/celebracao-antecipada",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/acervo-teologico/mensagens-profeticas/o-selo-da-vitoria",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/en/acervo-teologico/mensagens-profeticas/o-selo-da-vitoria",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/es/acervo-teologico/mensagens-profeticas/o-selo-da-vitoria",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/it/acervo-teologico/mensagens-profeticas/o-selo-da-vitoria",
+      "type": "sermon",
+      "expectedStatus": 200
+    },
+    {
+      "path": "/he/acervo-teologico/mensagens-profeticas/o-selo-da-vitoria",
+      "type": "sermon",
+      "expectedStatus": 200
+    }
+  ]
+}
