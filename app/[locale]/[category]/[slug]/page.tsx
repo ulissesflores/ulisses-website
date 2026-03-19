@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { ArrowLeft, BookOpen, Calendar, Download, FileText } from 'lucide-react';
-import { publicationCollections, publications } from '@/data/publications';
+import { publicationCollections, publications, type TranslatableLocale } from '@/data/publications';
 import { upkfMeta } from '@/data/generated/upkf.generated';
 import { AuthorHubCard } from '@/components/author-hub-card';
 import { localePath } from '@/lib/locale-path';
@@ -85,14 +85,19 @@ export default async function ArticlePage({ params }: PageProps) {
   }
 
   const collection = publicationCollections[publication.category];
+  const tLocale = locale !== 'pt-br' ? (locale as TranslatableLocale) : null;
 
   const localizedTitle =
-    (locale !== 'pt-br' && publication.translations?.[locale as keyof NonNullable<typeof publication.translations>]) ||
+    (tLocale && publication.translations?.[tLocale]) ||
     publication.title;
   const localizedSummary =
-    (locale !== 'pt-br' &&
-      publication.translations?.[`summary_${locale}` as keyof NonNullable<typeof publication.translations>]) ||
+    (tLocale &&
+      publication.translations?.[`summary_${tLocale}` as keyof NonNullable<typeof publication.translations>]) ||
     publication.summary;
+
+  // Select locale-aware article sections and landing content
+  const activeSections = (tLocale && publication.translatedSections?.[tLocale]) || publication.articleSections;
+  const activeLanding = (tLocale && publication.translatedLanding?.[tLocale]) || publication.landing;
 
   const sectionParagraphs = (text: string) =>
     text
@@ -258,16 +263,16 @@ export default async function ArticlePage({ params }: PageProps) {
               <BookOpen size={20} className='text-emerald-500' /> {t.scientificContext}
             </h2>
             <div className='bg-neutral-900/40 p-8 rounded-2xl border border-emerald-500/20 space-y-4'>
-              <p className='text-neutral-200 leading-relaxed'>{publication.landing.overview}</p>
-              <p className='text-neutral-300 leading-relaxed'>{publication.landing.problem}</p>
+              <p className='text-neutral-200 leading-relaxed'>{activeLanding.overview}</p>
+              <p className='text-neutral-300 leading-relaxed'>{activeLanding.problem}</p>
               <ul className='list-disc pl-6 text-neutral-300 space-y-2'>
-                {publication.landing.contributions.map((contribution) => (
+                {activeLanding.contributions.map((contribution) => (
                   <li key={contribution}>{contribution}</li>
                 ))}
               </ul>
-              <p className='text-neutral-300 leading-relaxed'>{publication.landing.applications}</p>
+              <p className='text-neutral-300 leading-relaxed'>{activeLanding.applications}</p>
               <p className='text-sm text-emerald-300/90 leading-relaxed border-t border-emerald-500/20 pt-4'>
-                {publication.landing.downloadPitch}
+                {activeLanding.downloadPitch}
               </p>
             </div>
           </section>
@@ -277,7 +282,7 @@ export default async function ArticlePage({ params }: PageProps) {
               <BookOpen size={20} className='text-cyan-500' /> {t.abstractPtBr}
             </h2>
             <div className='bg-neutral-900/30 p-8 rounded-2xl border border-white/5 text-lg leading-relaxed text-neutral-300 shadow-inner space-y-4'>
-              {sectionParagraphs(publication.articleSections.abstract).map((paragraph, index) => (
+              {sectionParagraphs(activeSections.abstract).map((paragraph, index) => (
                 <p key={`abstract-${index}`}>{paragraph}</p>
               ))}
             </div>
@@ -288,14 +293,14 @@ export default async function ArticlePage({ params }: PageProps) {
               <BookOpen size={20} className='text-cyan-500' /> {t.abstractEn}
             </h2>
             <div className='bg-neutral-900/30 p-8 rounded-2xl border border-white/5 text-lg leading-relaxed text-neutral-300 shadow-inner'>
-              <p>{publication.articleSections.abstractEn}</p>
+              <p>{activeSections.abstractEn}</p>
             </div>
           </section>
 
           <section>
             <h2 className='text-2xl font-semibold text-white mb-3'>{t.introduction}</h2>
             <div className='text-neutral-300 leading-relaxed space-y-4'>
-              {sectionParagraphs(publication.articleSections.introduction).map((paragraph, index) => (
+              {sectionParagraphs(activeSections.introduction).map((paragraph, index) => (
                 <p key={`intro-${index}`}>{paragraph}</p>
               ))}
             </div>
@@ -304,7 +309,7 @@ export default async function ArticlePage({ params }: PageProps) {
           <section>
             <h2 className='text-2xl font-semibold text-white mb-3'>{t.methodology}</h2>
             <div className='text-neutral-300 leading-relaxed space-y-4'>
-              {sectionParagraphs(publication.articleSections.methods).map((paragraph, index) => (
+              {sectionParagraphs(activeSections.methods).map((paragraph, index) => (
                 <p key={`methods-${index}`}>{paragraph}</p>
               ))}
             </div>
@@ -313,7 +318,7 @@ export default async function ArticlePage({ params }: PageProps) {
           <section>
             <h2 className='text-2xl font-semibold text-white mb-3'>{t.developmentResults}</h2>
             <div className='text-neutral-300 leading-relaxed space-y-4'>
-              {sectionParagraphs(publication.articleSections.results).map((paragraph, index) => (
+              {sectionParagraphs(activeSections.results).map((paragraph, index) => (
                 <p key={`results-${index}`}>{paragraph}</p>
               ))}
             </div>
@@ -322,7 +327,7 @@ export default async function ArticlePage({ params }: PageProps) {
           <section>
             <h2 className='text-2xl font-semibold text-white mb-3'>{t.discussion}</h2>
             <div className='text-neutral-300 leading-relaxed space-y-4'>
-              {sectionParagraphs(publication.articleSections.discussion).map((paragraph, index) => (
+              {sectionParagraphs(activeSections.discussion).map((paragraph, index) => (
                 <p key={`discussion-${index}`}>{paragraph}</p>
               ))}
             </div>
@@ -331,7 +336,7 @@ export default async function ArticlePage({ params }: PageProps) {
           <section>
             <h2 className='text-2xl font-semibold text-white mb-3'>{t.recommendations}</h2>
             <ul className='list-disc pl-6 text-neutral-300 space-y-3'>
-              {publication.articleSections.recommendations.map((recommendation) => (
+              {activeSections.recommendations.map((recommendation) => (
                 <li key={recommendation}>{recommendation}</li>
               ))}
             </ul>
@@ -340,7 +345,7 @@ export default async function ArticlePage({ params }: PageProps) {
           <section>
             <h2 className='text-2xl font-semibold text-white mb-3'>{t.conclusion}</h2>
             <div className='text-neutral-300 leading-relaxed space-y-4'>
-              {sectionParagraphs(publication.articleSections.conclusion).map((paragraph, index) => (
+              {sectionParagraphs(activeSections.conclusion).map((paragraph, index) => (
                 <p key={`conclusion-${index}`}>{paragraph}</p>
               ))}
             </div>
@@ -349,7 +354,7 @@ export default async function ArticlePage({ params }: PageProps) {
           <section>
             <h2 className='text-2xl font-semibold text-white mb-3'>{t.referencesHarvard}</h2>
             <ul className='list-disc pl-6 text-neutral-300 space-y-2'>
-              {publication.articleSections.references.map((reference) => (
+              {activeSections.references.map((reference) => (
                 <li key={`${reference.citation}-${reference.url ?? ''}`}>
                   <span>{reference.citation}</span>
                   {reference.url ? (

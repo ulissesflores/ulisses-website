@@ -315,9 +315,24 @@ async function translatePublications() {
       if (sMatch) summary = sMatch[1].replace(/\\"/g, '"');
     }
 
-    // Find translations block
-    const transIdx = content.indexOf('"translations":', match.index);
-    const hasTrans = transIdx !== -1 && transIdx - match.index < 30000;
+    // Find translations block (window must cover translatedSections/translatedLanding which add ~55k chars)
+    const nextPubIdx = content.indexOf('"id":', match.index + 10);
+    const searchEnd = nextPubIdx !== -1 ? nextPubIdx : content.length;
+    // Search for "translations": that is NOT "translatedSections" or "translatedLanding"
+    let transIdx = -1;
+    let searchPos = match.index;
+    while (searchPos < searchEnd) {
+      const idx = content.indexOf('"translations":', searchPos);
+      if (idx === -1 || idx >= searchEnd) break;
+      // Ensure it's not translatedSections or translatedLanding
+      const prefix = content.slice(Math.max(idx - 2, 0), idx + 20);
+      if (!prefix.includes('translatedS') && !prefix.includes('translatedL')) {
+        transIdx = idx;
+        break;
+      }
+      searchPos = idx + 15;
+    }
+    const hasTrans = transIdx !== -1;
     let translations = {};
 
     if (hasTrans) {

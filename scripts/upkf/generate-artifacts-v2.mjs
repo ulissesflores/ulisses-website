@@ -2132,6 +2132,175 @@ function buildPaperSections(publicationRow, evidence, topicProfile, referencesLi
   };
 }
 
+// ── Translated article sections parser ──────────────────────────────────────
+// Reads article.{locale}.md and metadata.{locale}.json for each TARGET_LOCALE.
+// Returns { en: { sections, landing }, es: { ... }, ... } or empty object if none.
+
+function parseArticleMarkdownSections(markdownContent) {
+  const lines = markdownContent.split('\n');
+  let currentSection = '';
+  let abstractCount = 0;
+  const sections = {
+    abstract: [],
+    abstractEn: [],
+    introduction: [],
+    methods: [],
+    results: [],
+    discussion: [],
+    recommendations: [],
+    conclusion: [],
+    references: [],
+  };
+
+  // Heading patterns covering EN, ES, IT, HE variants
+  const H1_ABSTRACT = /abstract|resumen|riassunto|תקציר/i;
+  const H1_ABSTRACT_EN = /abstract.*en|resumen.*en|riassunto.*en|תקציר.*en|תקציר.*אנגלית/i;
+  const H1_ABSTRACT_PT = /abstract.*pt|resumen.*(?:pt|es)|riassunto.*(?:pt|it)|abstract.*(?:it)|תקציר.*(?:pt|פורטוגזית)/i;
+  const H1_INTRO = /introduc|introduz|introducción|introduzione|מבוא/i;
+  const H1_BODY = /main body|corpo|גוף.*עיקרי|גוף.*העבודה|cuerpo/i;
+  const H1_DISCUSSION = /discussion|discussão|discussione|דיון|discusión/i;
+  const H1_CONCLUSION = /conclusi|conclusão|מסקנה/i;
+  const H1_REFERENCES = /referenc|riferiment|הפניות|אסמכתאות|referencias/i;
+  const H1_TITLE = /title page|עמוד שער|página del título|página de título|pagina del titolo/i;
+  const H1_SCORES = /phase score|ציון שלב/i;
+
+  const H2_METHODS = /methodol|metodol|מתודולוגיה/i;
+  const H2_DEV = /development|desenvolvimento|sviluppo|פיתוח|desarrollo/i;
+  const H2_RESULTS = /result|resultado|risultat|תוצאות/i;
+  const H2_RECOMMEND = /recommend|recomenda|raccomand|המלצות/i;
+
+  for (const line of lines) {
+    const h1 = line.match(/^#\s+(.+)/);
+    const h2 = line.match(/^##\s+(.+)/);
+
+    if (h1) {
+      const heading = h1[1];
+      if (H1_TITLE.test(heading)) { currentSection = 'title'; continue; }
+      if (H1_SCORES.test(heading)) { currentSection = 'scores'; continue; }
+      if (H1_ABSTRACT_EN.test(heading)) { currentSection = 'abstractEn'; continue; }
+      if (H1_ABSTRACT_PT.test(heading)) { currentSection = 'abstract'; abstractCount++; continue; }
+      // Generic abstract heading (first = abstract, second = abstractEn)
+      if (H1_ABSTRACT.test(heading)) {
+        abstractCount++;
+        currentSection = abstractCount <= 1 ? 'abstract' : 'abstractEn';
+        continue;
+      }
+      if (H1_INTRO.test(heading)) { currentSection = 'introduction'; continue; }
+      if (H1_BODY.test(heading)) { currentSection = 'methods'; continue; }
+      if (H1_DISCUSSION.test(heading)) { currentSection = 'discussion'; continue; }
+      if (H1_CONCLUSION.test(heading)) { currentSection = 'conclusion'; continue; }
+      if (H1_REFERENCES.test(heading)) { currentSection = 'references'; continue; }
+      continue;
+    }
+
+    if (h2) {
+      const heading = h2[1];
+      if (H2_METHODS.test(heading)) { currentSection = 'methods'; continue; }
+      if (H2_DEV.test(heading)) { currentSection = 'results'; continue; }
+      if (H2_RESULTS.test(heading)) { currentSection = 'results'; continue; }
+      if (H2_RECOMMEND.test(heading)) { currentSection = 'recommendations'; continue; }
+      continue;
+    }
+
+    const trimmed = line.trim();
+    if (!trimmed || currentSection === 'title' || currentSection === 'scores') continue;
+    if (/^\*\*(Keywords|Palavras|Parole|מילות|Palabras)/i.test(trimmed)) continue;
+    if (/^(Layout note|הערת פריסה|Nota de layout|Nota di layout|Nota de formato)/i.test(trimmed)) continue;
+
+    if (currentSection === 'references') {
+      if (trimmed.startsWith('- ') || trimmed.startsWith('* ')) {
+        const refText = trimmed.replace(/^[-*]\s*/, '');
+        const urlMatch = refText.match(/(?:Available at|Disponível em|Disponibile su|Disponible en|זמין ב):\s*(https?:\/\/\S+)/i);
+        const url = urlMatch ? urlMatch[1].replace(/[).,]+$/, '') : undefined;
+        const citation = refText.replace(/\s*(?:Available at|Disponível em|Disponibile su|Disponible en|זמין ב):.*/i, '').trim();
+        sections.references.push({ citation, ...(url ? { url } : {}) });
+      }
+    } else if (currentSection === 'recommendations') {
+      if (trimmed) {
+        sections.recommendations.push(trimmed);
+      }
+    } else if (sections[currentSection]) {
+      sections[currentSection].push(trimmed);
+    }
+  }
+
+  return {
+    abstract: sections.abstract.join('\n\n'),
+    abstractEn: sections.abstractEn.join('\n\n'),
+    introduction: sections.introduction.join('\n\n'),
+    methods: sections.methods.join('\n\n'),
+    results: sections.results.join('\n\n'),
+    discussion: sections.discussion.join('\n\n'),
+    recommendations: sections.recommendations,
+    conclusion: sections.conclusion.join('\n\n'),
+    references: sections.references,
+  };
+}
+
+function readTranslatedArticleData(publicationId) {
+  const translated = {};
+  const locales = ['en', 'es', 'it', 'he'];
+
+  for (const locale of locales) {
+    const articlePath = path.join(ARTICLE_LONGFORM_DIR, publicationId, `article.${locale}.md`);
+    const metadataPath = path.join(ARTICLE_LONGFORM_DIR, publicationId, `metadata.${locale}.json`);
+
+    if (!fs.existsSync(articlePath)) continue;
+
+    const articleContent = normalizeLineBreaks(fs.readFileSync(articlePath, 'utf8')).trim();
+    const sections = parseArticleMarkdownSections(articleContent);
+
+    let landingTitle = null;
+    if (fs.existsSync(metadataPath)) {
+      try {
+        const meta = JSON.parse(fs.readFileSync(metadataPath, 'utf8'));
+        landingTitle = meta.title || null;
+      } catch { /* ignore malformed metadata */ }
+    }
+
+    translated[locale] = { sections, title: landingTitle };
+  }
+
+  return translated;
+}
+
+function buildTranslatedLanding(baseLanding, translatedTitle, locale) {
+  const localeLabels = {
+    en: {
+      overview: (title) => `This page presents a scientific synthesis of "${title}", structured for academic reading, methodological auditing, and DOI-ready preparation.`,
+      applications: 'The full version includes implications for engineering, governance, and reproducibility.',
+      downloadPitch: 'The complete PDF features a formal scientific structure (Abstract, Introduction, Development, Final Considerations, and References), with bibliography verifiable by URL/DOI.',
+    },
+    es: {
+      overview: (title) => `Esta página presenta una síntesis científica de "${title}", estructurada para lectura académica, auditoría metodológica y preparación DOI-ready.`,
+      applications: 'La versión completa incluye implicaciones para ingeniería, gobernanza y reproducibilidad.',
+      downloadPitch: 'El PDF completo presenta una estructura científica formal (Resumen, Introducción, Desarrollo, Consideraciones Finales y Referencias), con bibliografía verificable por URL/DOI.',
+    },
+    it: {
+      overview: (title) => `Questa pagina presenta una sintesi scientifica di "${title}", strutturata per la lettura accademica, l'audit metodologico e la preparazione DOI-ready.`,
+      applications: 'La versione completa include implicazioni per ingegneria, governance e riproducibilità.',
+      downloadPitch: 'Il PDF completo presenta una struttura scientifica formale (Abstract, Introduzione, Sviluppo, Considerazioni Finali e Riferimenti), con bibliografia verificabile tramite URL/DOI.',
+    },
+    he: {
+      overview: (title) => `עמוד זה מציג סינתזה מדעית של "${title}", המובנית לקריאה אקדמית, ביקורת מתודולוגית והכנה ל-DOI.`,
+      applications: 'הגרסה המלאה כוללת השלכות להנדסה, ממשל ושחזור.',
+      downloadPitch: 'קובץ ה-PDF המלא מציג מבנה מדעי פורמלי (תקציר, מבוא, פיתוח, שיקולים סופיים והפניות), עם ביבליוגרפיה הניתנת לאימות באמצעות URL/DOI.',
+    },
+  };
+
+  const labels = localeLabels[locale];
+  if (!labels) return baseLanding;
+
+  const title = translatedTitle || baseLanding.overview.match(/"([^"]+)"/)?.[1] || '';
+  return {
+    overview: labels.overview(title),
+    problem: baseLanding.problem,
+    contributions: baseLanding.contributions,
+    applications: `${baseLanding.applications.split('.')[0]}. ${labels.applications}`,
+    downloadPitch: labels.downloadPitch,
+  };
+}
+
 function extractTagTokens(publicationRow) {
   const fromSlug = publicationRow.slug
     .split('-')
@@ -2148,6 +2317,17 @@ function buildPublications(rawRows, generatedAt, corpus, referencesLibrary) {
     const topicProfile = resolveTopicProfile(row);
     const paper = buildPaperSections(row, evidence, topicProfile, referencesLibrary);
     const landing = buildLandingContent(row, evidence, topicProfile);
+    const translatedData = readTranslatedArticleData(row.slug);
+
+    // Build locale-specific sections and landing from translated article files
+    const translatedSections = {};
+    const translatedLanding = {};
+    for (const [locale, data] of Object.entries(translatedData)) {
+      if (data.sections && data.sections.abstract) {
+        translatedSections[locale] = data.sections;
+      }
+      translatedLanding[locale] = buildTranslatedLanding(landing, data.title, locale);
+    }
 
     return {
       ordinal: row.ordinal,
@@ -2183,6 +2363,8 @@ function buildPublications(rawRows, generatedAt, corpus, referencesLibrary) {
       landing,
       articleSections: paper,
       sections: paper,
+      ...(Object.keys(translatedSections).length > 0 ? { translatedSections } : {}),
+      ...(Object.keys(translatedLanding).length > 0 ? { translatedLanding } : {}),
       sourceEvidence: evidence.snippets.map((entry) => ({
         sourceFile: entry.snippet.sourceFile,
         sourceName: entry.snippet.sourceName,
@@ -5766,7 +5948,7 @@ function writeGeneratedFiles({
   ensureDir(DOCS_DIR);
   ensureDir(PUBLIC_DIR);
 
-  const publicationsTs = `/* AUTO-GENERATED FILE. DO NOT EDIT MANUALLY.\n * Source: ${sourcePath}\n * Generated at: ${generatedAt}\n */\n\nexport type PublicationCategory = 'research' | 'whitepapers' | 'essays';\n\nexport interface PublicationLandingContent {\n  overview: string;\n  problem: string;\n  contributions: string[];\n  applications: string;\n  downloadPitch: string;\n}\n\nexport interface PublicationReference {\n  citation: string;\n  url?: string;\n}\n\nexport interface PublicationDoi {\n  status: 'target' | 'minted';\n  target?: string;\n  minted?: string;\n}\n\nexport interface PublicationQuality {\n  phase1: number;\n  phase2: number;\n  phase3: number;\n  compliance: number;\n  polymathic: number;\n  macro: number;\n}\n\nexport interface PublicationSections {\n  abstract: string;\n  abstractEn: string;\n  introduction: string;\n  methods: string;\n  results: string;\n  discussion: string;\n  recommendations: string[];\n  conclusion: string;\n  references: PublicationReference[];\n}\n\nexport interface PublicationEvidence {\n  sourceFile: string;\n  sourceName: string;\n  score: number;\n}\n\nexport interface Publication {\n  ordinal: number;\n  id: string;\n  title: string;\n  category: PublicationCategory;\n  kind: string;\n  date: string;\n  publishedAt: string;\n  updatedAt: string;\n  inLanguage: string;\n  tags: string[];\n  summary: string;\n  canonicalUrl: string;\n  downloadUrl: string;\n  primaryPdfUrl: string;\n  legacyPdfUrl: string;\n  mdUrl: string;\n  docxUrl: string;\n  pdfPath: string;\n  doi: PublicationDoi;\n  quality: PublicationQuality;\n  landing: PublicationLandingContent;\n  articleSections: PublicationSections;\n  sections: PublicationSections;\n  sourceEvidence: PublicationEvidence[];\n  translations?: {\n    en?: string;\n    es?: string;\n    it?: string;\n    he?: string;\n    summary_en?: string;\n    summary_es?: string;\n    summary_it?: string;\n    summary_he?: string;\n  };\n}\n\nexport interface PublicationCollection {\n  title: string;\n  heading: string;\n  description: string;\n  schemaType: string;\n  headings?: Record<string, string>;\n  descriptions?: Record<string, string>;\n}\n\nexport const publicationCollections: Record<PublicationCategory, PublicationCollection> = ${JSON.stringify(
+  const publicationsTs = `/* AUTO-GENERATED FILE. DO NOT EDIT MANUALLY.\n * Source: ${sourcePath}\n * Generated at: ${generatedAt}\n */\n\nexport type PublicationCategory = 'research' | 'whitepapers' | 'essays';\n\nexport interface PublicationLandingContent {\n  overview: string;\n  problem: string;\n  contributions: string[];\n  applications: string;\n  downloadPitch: string;\n}\n\nexport interface PublicationReference {\n  citation: string;\n  url?: string;\n}\n\nexport interface PublicationDoi {\n  status: 'target' | 'minted';\n  target?: string;\n  minted?: string;\n}\n\nexport interface PublicationQuality {\n  phase1: number;\n  phase2: number;\n  phase3: number;\n  compliance: number;\n  polymathic: number;\n  macro: number;\n}\n\nexport interface PublicationSections {\n  abstract: string;\n  abstractEn: string;\n  introduction: string;\n  methods: string;\n  results: string;\n  discussion: string;\n  recommendations: string[];\n  conclusion: string;\n  references: PublicationReference[];\n}\n\nexport interface PublicationEvidence {\n  sourceFile: string;\n  sourceName: string;\n  score: number;\n}\n\nexport type TranslatableLocale = 'en' | 'es' | 'it' | 'he';\n\nexport interface Publication {\n  ordinal: number;\n  id: string;\n  title: string;\n  category: PublicationCategory;\n  kind: string;\n  date: string;\n  publishedAt: string;\n  updatedAt: string;\n  inLanguage: string;\n  tags: string[];\n  summary: string;\n  canonicalUrl: string;\n  downloadUrl: string;\n  primaryPdfUrl: string;\n  legacyPdfUrl: string;\n  mdUrl: string;\n  docxUrl: string;\n  pdfPath: string;\n  doi: PublicationDoi;\n  quality: PublicationQuality;\n  landing: PublicationLandingContent;\n  articleSections: PublicationSections;\n  sections: PublicationSections;\n  translatedSections?: Partial<Record<TranslatableLocale, PublicationSections>>;\n  translatedLanding?: Partial<Record<TranslatableLocale, PublicationLandingContent>>;\n  sourceEvidence: PublicationEvidence[];\n  translations?: {\n    en?: string;\n    es?: string;\n    it?: string;\n    he?: string;\n    summary_en?: string;\n    summary_es?: string;\n    summary_it?: string;\n    summary_he?: string;\n  };\n}\n\nexport interface PublicationCollection {\n  title: string;\n  heading: string;\n  description: string;\n  schemaType: string;\n  headings?: Record<string, string>;\n  descriptions?: Record<string, string>;\n}\n\nexport const publicationCollections: Record<PublicationCategory, PublicationCollection> = ${JSON.stringify(
     CATEGORY_METADATA,
     null,
     2,
