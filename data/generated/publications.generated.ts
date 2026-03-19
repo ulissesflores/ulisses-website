@@ -4451,7 +4451,7 @@ export const publications: Publication[] = [
       "summary_it": "Trattato esegetico sulla rappresentazione della moralità e antropologia.",
       "summary_he": "מסה אקסגטית על ייצוג המוסר והאנתרופולוגיה.",
       "en": "Exegetical Treatise on the Representation of Morality and Anthropology",
-      "es": "Tratado Exegético sobre la Representación de la Moralidad y la Antropología"
+      "es": "Tratado Exegético sobre la Representación de la Moralidad y Antropología"
     }
   },
   {
@@ -5166,7 +5166,7 @@ export const publications: Publication[] = [
       "summary_it": "Analisi delle sfide dell'eredità digitale e preservazione della memoria post-mortem.",
       "summary_he": "ניתוח אתגרי המורשת הדיגיטלית ושימור זיכרון לאחר המוות.",
       "en": "Challenges of Digital Heritage: Post-Mortem Memory Preservation",
-      "es": "Desafíos de la Herencia Digital: Preservación de Memoria Post-Mortem"
+      "es": "Desafíos de la Herencia Digital: Preservación de la Memoria Post-Mortem"
     }
   },
   {

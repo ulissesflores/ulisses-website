@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
+import { SERMON_REDIRECTS } from './data/seo/sermon-redirects';
 
 // ─── Constants ─────────────────────────────────────────────────────────────────
 
@@ -141,10 +142,12 @@ export function middleware(request: NextRequest) {
     });
   }
 
-  // ─── 1b. Legacy /sermons/ URLs → 301 to /acervo-teologico ────────
-  // Google still crawls old /sermons/ paths that no longer exist.
+  // ─── 1b. Legacy URL redirects (sermons, aliases) → 301 ──────────
+  // Handles: /sermons/old-cluster/old-slug → /acervo-teologico/new-cluster/new-slug
+  // Also handles PT aliases: /pesquisa → /research, /ensaios → /essays, etc.
   const strippedForAlias = stripLocalePrefix(rawPathname);
-  const aliased = mapPtAliases(strippedForAlias);
+  const exactRedirect = SERMON_REDIRECTS[strippedForAlias];
+  const aliased = exactRedirect || mapPtAliases(strippedForAlias);
   if (aliased !== strippedForAlias) {
     const url = request.nextUrl.clone();
     const localePrefix = extractLocale(rawPathname);
