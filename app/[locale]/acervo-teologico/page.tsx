@@ -152,7 +152,7 @@ export default async function AcervoTeologicoPage({ params }: PageProps) {
                 {cluster.sermons.map((sermon) => (
                   <article key={sermon.canonicalPath} className='rounded-lg border border-neutral-800 bg-neutral-950/60 p-4'>
                     <h3 className='text-lg font-semibold text-white mb-2'>
-                      <Link href={sermon.canonicalPath} className='hover:text-emerald-400 transition-colors'>
+                      <Link href={localePath(sermon.canonicalPath, locale)} className='hover:text-emerald-400 transition-colors'>
                         {sermon.seoTitle}
                       </Link>
                     </h3>

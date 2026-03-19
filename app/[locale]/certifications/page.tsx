@@ -131,7 +131,7 @@ export default async function CertificationsPage({ params }: PageProps) {
                   {group.certifications.map((cert) => (
                     <article key={cert.slug} className='rounded-lg border border-neutral-800 bg-neutral-950/60 p-5'>
                       <h3 className='text-lg font-semibold text-white mb-2'>
-                        <Link href={cert.canonicalPath} className='hover:text-emerald-400 transition-colors'>{cert.title}</Link>
+                        <Link href={localePath(cert.canonicalPath, locale)} className='hover:text-emerald-400 transition-colors'>{cert.title}</Link>
                       </h3>
                       <p className='text-sm text-neutral-400 mb-3'>{cert.summary}</p>
                       <p className='text-sm text-neutral-300 mb-4'>{cert.about}</p>

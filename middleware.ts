@@ -25,6 +25,7 @@ const PREFIX_ALIASES: [string, string][] = [
   ['/pesquisa', '/research'],
   ['/ensaios', '/essays'],
   ['/certificacoes', '/certifications'],
+  ['/sermons', '/acervo-teologico'],
 ];
 
 const DUPLICATED_COLLECTION_SEGMENTS = [
@@ -38,6 +39,7 @@ const DUPLICATED_COLLECTION_SEGMENTS = [
   'pesquisa',
   'ensaios',
   'certificacoes',
+  'sermons',
   'clube-santo',
   'projeto-psi',
 ];
@@ -137,6 +139,19 @@ export function middleware(request: NextRequest) {
         'Cache-Control': 'public, max-age=86400, s-maxage=86400',
       },
     });
+  }
+
+  // ─── 1b. Legacy /sermons/ URLs → 301 to /acervo-teologico ────────
+  // Google still crawls old /sermons/ paths that no longer exist.
+  const strippedForAlias = stripLocalePrefix(rawPathname);
+  const aliased = mapPtAliases(strippedForAlias);
+  if (aliased !== strippedForAlias) {
+    const url = request.nextUrl.clone();
+    const localePrefix = extractLocale(rawPathname);
+    url.pathname = localePrefix && localePrefix !== DEFAULT_LOCALE
+      ? `/${localePrefix}${aliased}`
+      : aliased;
+    return NextResponse.redirect(url, 301);
   }
 
   // ─── 2. Locale prefix routing ─────────────────────────────────────
