@@ -33,6 +33,9 @@
     "sota:full": "node scripts/sota-validate.mjs",
     "links:inventory": "npm run upkf:generate",
     "seo:indexnow": "INDEXNOW_ENABLED=1 node scripts/seo/ping-indexnow.mjs",
+    "seo:ping": "node scripts/seo/ping-search-engines.mjs",
+    "seo:ping:dry": "node scripts/seo/ping-search-engines.mjs --dry-run",
+    "seo:ping:google": "node scripts/seo/ping-search-engines.mjs --google-api",
     "content:publish": "node --env-file=.env.local scripts/content/publish.mjs",
     "content:publish:dry": "node --env-file=.env.local scripts/content/publish.mjs --dry-run",
     "prepare": "husky"
