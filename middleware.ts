@@ -229,5 +229,7 @@ export function middleware(request: NextRequest) {
 export const config = {
   matcher: [
     '/((?!api|_next|favicon\\.ico|robots\\.txt|sitemap.*|feed\\.xml|\\.well-known|.*\\.[a-z0-9]{2,5}$).*)',
+    // Catch double-locale URLs even with file extensions (.pdf, .docx, etc.)
+    '/(pt-br|en|es|he|it)/(pt-br|en|es|he|it)/:path*',
   ],
 };
