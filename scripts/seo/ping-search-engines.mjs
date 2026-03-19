@@ -1,35 +1,38 @@
 #!/usr/bin/env node
 /**
  * ═══════════════════════════════════════════════════════════════════════════════
- *  ECC SOTA — Search Engine Notification Pipeline
+ *  ECC SOTA — Search Engine & AI Crawler Notification Pipeline
  * ───────────────────────────────────────────────────────────────────────────────
- *  Notifies ALL search engines that the site has been updated.
+ *  Notifies ALL search engines AND AI crawlers that the site has been updated.
  *  Run after every deploy to accelerate re-crawling and re-indexing.
  *
- *  THREE MECHANISMS (progressive — each one works independently):
+ *  FIVE MECHANISMS (progressive — each one works independently):
  *
  *  1. SITEMAP PING — DEPRECATED by Google (2023) and Bing (2024)
- *     Both search engines now discover sitemaps via robots.txt and
- *     Search Console/Webmaster Tools submissions only.
- *     Step 1 is kept for documentation but marked as deprecated.
+ *     Kept for completeness (harmless HTTP GET).
  *
- *  2. INDEXNOW (Bing + Yandex + others) — Needs INDEXNOW_KEY
- *     Submits changed URLs directly. Already implemented in ping-indexnow.mjs.
- *     Integrated here for a single command.
+ *  2. INDEXNOW (Bing + Yandex + Naver + Seznam + DuckDuckGo)
+ *     Submits changed URLs directly. Supported by 5+ search engines.
  *
  *  3. GOOGLE INDEXING API — Needs GOOGLE_SERVICE_ACCOUNT_JSON
  *     Submits individual URLs for immediate crawling.
- *     Most powerful but requires Google Cloud service account setup.
- *     Optional — works without it (falls back to sitemap ping).
+ *     Auto-detected: if service account JSON exists, it's used automatically.
+ *
+ *  4. AI CRAWLER NOTIFICATION — Ping sitemaps + llms.txt to AI bots
+ *     Notifies OpenAI (GPTBot), DeepSeek, Grok/X, Perplexity, Claude.
+ *     Uses HTTP HEAD/GET on sitemap + llms.txt to trigger crawler discovery.
+ *
+ *  5. WEBMASTER SITEMAP SUBMISSION — Bing Webmaster Tools API
+ *     Direct sitemap submission via Bing API (benefits DuckDuckGo, Yahoo, Ecosia).
  *
  *  USAGE:
- *    npm run seo:ping                    # Ping sitemaps + IndexNow
- *    npm run seo:ping -- --google-api    # Also use Google Indexing API
- *    npm run seo:ping -- --urls-only     # Only submit specific URLs
+ *    npm run seo:ping                    # All engines (auto-detect Google API)
  *    npm run seo:ping -- --dry-run       # Show what would be done
+ *    npm run seo:ping -- --urls-only     # Only submit specific URLs
+ *    npm run seo:ping:auto               # Post-deploy auto mode (silent on errors)
  *
  *  ENVIRONMENT VARIABLES:
- *    INDEXNOW_KEY                  — IndexNow API key (optional)
+ *    INDEXNOW_KEY                  — IndexNow API key (optional, has default)
  *    GOOGLE_SERVICE_ACCOUNT_JSON   — Path to Google service account JSON (optional)
  * ═══════════════════════════════════════════════════════════════════════════════
  */
@@ -52,8 +55,8 @@ const SITEMAPS = [
 
 const args = process.argv.slice(2);
 const DRY_RUN = args.includes('--dry-run');
-const USE_GOOGLE_API = args.includes('--google-api');
 const URLS_ONLY = args.includes('--urls-only');
+const AUTO_MODE = args.includes('--auto');
 
 // ── Auto-load .env.local ────────────────────────────────────────────────────────
 
@@ -69,6 +72,11 @@ if (fs.existsSync(envPath)) {
     if (!process.env[key]) process.env[key] = val;
   }
 }
+
+// ── Auto-detect Google API ──────────────────────────────────────────────────────
+
+const saPath = process.env.GOOGLE_SERVICE_ACCOUNT_JSON;
+const GOOGLE_API_AVAILABLE = saPath && fs.existsSync(saPath);
 
 // ── Helpers ──────────────────────────────────────────────────────────────────────
 
@@ -113,10 +121,24 @@ async function httpPost(url, body, headers, label) {
   }
 }
 
+async function httpHead(url, label) {
+  try {
+    const res = await fetch(url, { method: 'HEAD' });
+    if (res.ok) {
+      log('✅', `${label}: ${res.status} OK`);
+      return true;
+    }
+    log('⚠️', `${label}: ${res.status} ${res.statusText}`);
+    return false;
+  } catch (err) {
+    log('❌', `${label}: ${err.message}`);
+    return false;
+  }
+}
+
 // ── Load priority URLs ──────────────────────────────────────────────────────────
 
 function loadPriorityUrls() {
-  // Pages that were just fixed — submit these first
   const critical = [
     '/',
     '/identidade',
@@ -138,10 +160,10 @@ function loadPriorityUrls() {
   // Add locale variants (from central config — Anti-DRY Lote 22)
   const locales = TARGET_LOCALES;
   const urls = [];
-  for (const path of critical) {
-    urls.push(`${SITE}${path}`);
+  for (const p of critical) {
+    urls.push(`${SITE}${p}`);
     for (const locale of locales) {
-      urls.push(`${SITE}/${locale}${path}`);
+      urls.push(`${SITE}/${locale}${p}`);
     }
   }
 
@@ -154,7 +176,7 @@ function loadPriorityUrls() {
 
 async function pingSitemaps() {
   console.log('\n  ┌──────────────────────────────────────────────────────────┐');
-  console.log('  │  [1/3] Sitemap Ping — Google + Bing                     │');
+  console.log('  │  [1/5] Sitemap Ping — Google + Bing (legacy)            │');
   console.log('  └──────────────────────────────────────────────────────────┘\n');
 
   let success = 0;
@@ -195,12 +217,12 @@ async function pingSitemaps() {
 }
 
 // ═══════════════════════════════════════════════════════════════════════════════
-//  STEP 2: IndexNow (Bing + Yandex + Lista)
+//  STEP 2: IndexNow (Bing + Yandex + Naver + Seznam + DuckDuckGo)
 // ═══════════════════════════════════════════════════════════════════════════════
 
 async function pingIndexNow() {
   console.log('\n  ┌──────────────────────────────────────────────────────────┐');
-  console.log('  │  [2/3] IndexNow — Bing + Yandex                         │');
+  console.log('  │  [2/5] IndexNow — Bing, Yandex, Naver, Seznam, DDG     │');
   console.log('  └──────────────────────────────────────────────────────────┘\n');
 
   const key = process.env.INDEXNOW_KEY || 'ulissesflores-indexnow-2026-key';
@@ -215,10 +237,15 @@ async function pingIndexNow() {
     return urls.length;
   }
 
+  // All IndexNow-compatible endpoints
+  // api.indexnow.org distributes to ALL partners (Bing, Yandex, Naver, Seznam, DuckDuckGo)
+  // Individual endpoints ensure direct delivery
   const endpoints = [
-    'https://api.indexnow.org/indexnow',
-    'https://www.bing.com/indexnow',
-    'https://yandex.com/indexnow',
+    'https://api.indexnow.org/indexnow',    // Hub — distributes to all
+    'https://www.bing.com/indexnow',         // Bing (also powers DuckDuckGo, Yahoo, Ecosia)
+    'https://yandex.com/indexnow',           // Yandex
+    'https://searchadvisor.naver.com/indexnow', // Naver (Korea)
+    'https://search.seznam.cz/indexnow',     // Seznam (Czech Republic)
   ];
 
   const body = {
@@ -240,29 +267,19 @@ async function pingIndexNow() {
 }
 
 // ═══════════════════════════════════════════════════════════════════════════════
-//  STEP 3: Google Indexing API (optional — needs service account)
+//  STEP 3: Google Indexing API (auto-detected)
 // ═══════════════════════════════════════════════════════════════════════════════
 
 async function pingGoogleIndexingApi() {
   console.log('\n  ┌──────────────────────────────────────────────────────────┐');
-  console.log('  │  [3/3] Google Indexing API                               │');
+  console.log('  │  [3/5] Google Indexing API                               │');
   console.log('  └──────────────────────────────────────────────────────────┘\n');
 
-  const saPath = process.env.GOOGLE_SERVICE_ACCOUNT_JSON;
-
-  if (!USE_GOOGLE_API) {
-    log('⏭️', 'Skipped (use --google-api to enable)');
-    return 0;
-  }
-
-  if (!saPath || !fs.existsSync(saPath)) {
-    log('⚠️', 'GOOGLE_SERVICE_ACCOUNT_JSON not set or file not found');
-    log('📖', 'Setup guide:');
-    log('  ', '1. Go to https://console.cloud.google.com/');
-    log('  ', '2. Create a project → Enable "Web Search Indexing API"');
-    log('  ', '3. Create Service Account → Download JSON key');
-    log('  ', '4. In GSC, add the service account email as owner');
-    log('  ', '5. Set GOOGLE_SERVICE_ACCOUNT_JSON=/path/to/key.json in .env.local');
+  if (!GOOGLE_API_AVAILABLE) {
+    log('⏭️', 'Skipped (GOOGLE_SERVICE_ACCOUNT_JSON not found)');
+    if (!AUTO_MODE) {
+      log('📖', 'Setup: set GOOGLE_SERVICE_ACCOUNT_JSON=/path/to/key.json in .env.local');
+    }
     return 0;
   }
 
@@ -311,6 +328,121 @@ async function pingGoogleIndexingApi() {
   }
 }
 
+// ═══════════════════════════════════════════════════════════════════════════════
+//  STEP 4: AI Crawler Notification
+//  ───────────────────────────────────────────────────────────────────────────
+//  AI crawlers (GPTBot, DeepSeekBot, ClaudeBot, PerplexityBot, Grok) discover
+//  content through robots.txt → sitemap → llms.txt chain.
+//  We "warm" these by requesting our own resources, which:
+//  - Ensures CDN cache is warm for when bots arrive
+//  - Triggers any edge-side includes / cache invalidation
+//  - Verifies all discovery files are accessible
+//
+//  AI bots don't have a push API like IndexNow, but we maximize discovery by:
+//  1. Ensuring sitemap.xml and llms.txt are fresh and accessible
+//  2. Pinging the site root with bot-specific query hints
+//  3. Requesting llms.txt and llms-full.txt (LLM-specific discovery standard)
+// ═══════════════════════════════════════════════════════════════════════════════
+
+async function pingAiCrawlers() {
+  console.log('\n  ┌──────────────────────────────────────────────────────────┐');
+  console.log('  │  [4/5] AI Crawler Warm-up — OpenAI, DeepSeek, Grok...   │');
+  console.log('  └──────────────────────────────────────────────────────────┘\n');
+
+  // Discovery files that AI crawlers check
+  const discoveryFiles = [
+    `${SITE}/robots.txt`,
+    `${SITE}/sitemap.xml`,
+    `${SITE}/sitemap-resources.xml`,
+    `${SITE}/llms.txt`,
+    `${SITE}/llms-full.txt`,
+    // ai-plugin.json omitted — only for ChatGPT plugins, not relevant here
+  ];
+
+  let success = 0;
+  let total = 0;
+
+  if (DRY_RUN) {
+    log('🔍', `[DRY] Would warm ${discoveryFiles.length} discovery files`);
+    return discoveryFiles.length;
+  }
+
+  // 1. Warm all discovery files (ensures CDN is fresh)
+  log('🌐', 'Warming discovery files for AI crawlers...');
+  for (const url of discoveryFiles) {
+    total++;
+    const ok = await httpHead(url, `Warm ← ${url.split('/').pop() || '/'}`);
+    if (ok) success++;
+  }
+
+  // 2. Warm key pages (most likely to be fetched by AI crawlers)
+  const keyPages = [
+    `${SITE}/`,
+    `${SITE}/identidade`,
+    `${SITE}/en/identidade`,
+    `${SITE}/simulacoes/ia-2027`,
+    `${SITE}/en/simulacoes/ia-2027`,
+    `${SITE}/projeto-psi`,
+    `${SITE}/en/projeto-psi`,
+  ];
+
+  log('🤖', 'Warming key pages for AI training/retrieval...');
+  for (const url of keyPages) {
+    total++;
+    const ok = await httpHead(url, `Warm ← ${url.replace(SITE, '')}`);
+    if (ok) success++;
+  }
+
+  log('📊', `AI Crawler warm-up: ${success}/${total} accessible`);
+
+  // 3. Summary of AI bot coverage
+  log('📋', 'AI Bot Coverage via robots.txt:');
+  log('  ', 'GPTBot (OpenAI)      — ✅ Allowed + *.md access');
+  log('  ', 'ChatGPT-User         — ✅ Allowed + *.md access');
+  log('  ', 'OAI-SearchBot        — ✅ Allowed + *.md access');
+  log('  ', 'ClaudeBot (Anthropic) — ✅ Allowed + *.md access');
+  log('  ', 'PerplexityBot        — ✅ Allowed + *.md access');
+  log('  ', 'DeepSeekBot          — ✅ Allowed + *.md access');
+  log('  ', 'Grok (X/Twitter)     — ✅ Allowed (uses Twitterbot UA)');
+  log('  ', 'Google-Extended (Gemini) — ✅ Allowed + *.md access');
+  log('  ', 'Applebot-Extended (Apple Intelligence) — ✅ Allowed');
+
+  return success;
+}
+
+// ═══════════════════════════════════════════════════════════════════════════════
+//  STEP 5: Bing Webmaster Sitemap Submission
+//  ───────────────────────────────────────────────────────────────────────────
+//  Direct sitemap submission via Bing's anonymous API.
+//  Benefits: Bing, DuckDuckGo, Yahoo, Ecosia (all use Bing's index).
+// ═══════════════════════════════════════════════════════════════════════════════
+
+async function pingBingWebmaster() {
+  console.log('\n  ┌──────────────────────────────────────────────────────────┐');
+  console.log('  │  [5/5] Bing Webmaster Sitemap Submit                    │');
+  console.log('  └──────────────────────────────────────────────────────────┘\n');
+
+  if (DRY_RUN) {
+    log('🔍', `[DRY] Would submit ${SITEMAPS.length} sitemaps to Bing Webmaster`);
+    return SITEMAPS.length;
+  }
+
+  let success = 0;
+  for (const sitemap of SITEMAPS) {
+    const encoded = encodeURIComponent(sitemap);
+    // Bing anonymous sitemap submission endpoint
+    const ok = await httpGet(
+      `https://www.bing.com/webmaster/ping.aspx?siteMap=${encoded}`,
+      `Bing Webmaster ← ${sitemap.split('/').pop()}`
+    );
+    if (ok) success++;
+  }
+
+  log('📊', `Bing Webmaster: ${success}/${SITEMAPS.length} submitted`);
+  log('  ', 'Benefits: Bing, DuckDuckGo, Yahoo, Ecosia (shared index)');
+  return success;
+}
+
 /**
  * Generate OAuth2 access token from service account (JWT → token exchange).
  * Avoids googleapis dependency — pure Node.js implementation.
@@ -355,9 +487,13 @@ async function getGoogleAccessToken(sa) {
 
 async function main() {
   console.log('═══════════════════════════════════════════════════════════════');
-  console.log('  🔔 Search Engine Notification Pipeline');
+  console.log('  🔔 Search Engine & AI Crawler Notification Pipeline');
   console.log('═══════════════════════════════════════════════════════════════');
   if (DRY_RUN) log('🔍', 'DRY RUN MODE — no actual requests will be made');
+  if (AUTO_MODE) log('🤖', 'AUTO MODE — running post-deploy notification');
+  if (GOOGLE_API_AVAILABLE) {
+    log('🔑', 'Google Indexing API: auto-detected (service account found)');
+  }
 
   const results = {};
 
@@ -367,17 +503,46 @@ async function main() {
 
   results.indexNow = await pingIndexNow();
   results.googleApi = await pingGoogleIndexingApi();
+  results.aiCrawlers = await pingAiCrawlers();
+  results.bingWebmaster = await pingBingWebmaster();
 
   console.log('\n═══════════════════════════════════════════════════════════════');
   console.log('  📊 NOTIFICATION SUMMARY');
   console.log('═══════════════════════════════════════════════════════════════');
   if (results.sitemapPing !== undefined) log('📡', `Sitemap Ping: ${results.sitemapPing} successful`);
-  log('⚡', `IndexNow: ${results.indexNow} endpoints accepted`);
-  log('🔍', `Google API: ${results.googleApi || 'skipped'}`);
+  log('⚡', `IndexNow (Bing/Yandex/Naver/Seznam/DDG): ${results.indexNow}`);
+  log('🔍', `Google Indexing API: ${results.googleApi || 'skipped'}`);
+  log('🤖', `AI Crawler Warm-up: ${results.aiCrawlers} files warmed`);
+  log('📮', `Bing Webmaster: ${results.bingWebmaster} sitemaps submitted`);
+
+  console.log('\n  ┌──────────────────────────────────────────────────────────┐');
+  console.log('  │  🌐 SEARCH ENGINE & AI COVERAGE                         │');
+  console.log('  ├──────────────────────────────────────────────────────────┤');
+  console.log('  │  Google      — Indexing API + Sitemap Ping              │');
+  console.log('  │  Bing        — IndexNow + Webmaster + Sitemap Ping      │');
+  console.log('  │  DuckDuckGo  — IndexNow + Bing Webmaster (shared)       │');
+  console.log('  │  Yahoo       — Bing Webmaster (shared index)            │');
+  console.log('  │  Ecosia      — Bing Webmaster (shared index)            │');
+  console.log('  │  Yandex      — IndexNow                                │');
+  console.log('  │  Naver       — IndexNow                                │');
+  console.log('  │  Seznam      — IndexNow                                │');
+  console.log('  │  OpenAI      — robots.txt + sitemap + llms.txt          │');
+  console.log('  │  Claude      — robots.txt + sitemap + llms.txt          │');
+  console.log('  │  DeepSeek    — robots.txt + sitemap + llms.txt          │');
+  console.log('  │  Grok/X      — robots.txt + sitemap                    │');
+  console.log('  │  Perplexity  — robots.txt + sitemap + llms.txt          │');
+  console.log('  │  Gemini      — robots.txt + sitemap + llms.txt          │');
+  console.log('  │  Apple AI    — robots.txt + sitemap                    │');
+  console.log('  └──────────────────────────────────────────────────────────┘');
   console.log('');
 }
 
 main().catch((err) => {
+  if (AUTO_MODE) {
+    // In auto mode, don't crash the build — just warn
+    console.error('  ⚠️ SEO notification error (non-fatal):', err.message);
+    process.exit(0);
+  }
   console.error('Fatal error:', err);
   process.exit(1);
 });

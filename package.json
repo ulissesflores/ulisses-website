@@ -35,7 +35,7 @@
     "seo:indexnow": "INDEXNOW_ENABLED=1 node scripts/seo/ping-indexnow.mjs",
     "seo:ping": "node scripts/seo/ping-search-engines.mjs",
     "seo:ping:dry": "node scripts/seo/ping-search-engines.mjs --dry-run",
-    "seo:ping:google": "node scripts/seo/ping-search-engines.mjs --google-api",
+    "seo:ping:auto": "node scripts/seo/ping-search-engines.mjs --auto",
     "content:publish": "node --env-file=.env.local scripts/content/publish.mjs",
     "content:publish:dry": "node --env-file=.env.local scripts/content/publish.mjs --dry-run",
     "prepare": "husky"

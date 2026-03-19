@@ -14,7 +14,16 @@ export default function robots(): MetadataRoute.Robots {
         disallow: ['/*.md', '/*.docx'],
       },
       {
-        userAgent: ['GPTBot', 'ChatGPT-User', 'Google-Extended', 'ClaudeBot', 'PerplexityBot', 'OAI-SearchBot'],
+        userAgent: [
+          'GPTBot',            // OpenAI crawler
+          'ChatGPT-User',     // ChatGPT browsing
+          'OAI-SearchBot',    // OpenAI search
+          'Google-Extended',  // Gemini AI training
+          'ClaudeBot',        // Anthropic Claude
+          'PerplexityBot',    // Perplexity AI
+          'DeepSeekBot',      // DeepSeek AI
+          'Applebot-Extended', // Apple Intelligence
+        ],
         allow: ['/', '/*.md'],
         disallow: ['/*.docx'],
       },
