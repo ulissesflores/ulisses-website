@@ -9,7 +9,7 @@ import { defaultLocale, isLocale, localeToOgLocale, type Locale } from '@/data/i
 import { getDictionary } from '@/lib/get-dictionary';
 import { buildSermonI18nMaps, localizeSermon, localizeCluster } from '@/data/sermons-i18n';
 import { localePath } from '@/lib/locale-path';
-import { buildCanonical } from '@/data/seo';
+import { buildCanonical, buildLanguageAlternates } from '@/data/seo';
 
 interface PageProps {
   params: Promise<{ cluster: string; slug: string; locale: string }>;
@@ -44,7 +44,8 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       },
     ],
     alternates: {
-      canonical: sermon.canonicalPath,
+      canonical: buildCanonical(locale, sermon.canonicalPath),
+      languages: buildLanguageAlternates(sermon.canonicalPath),
     },
     openGraph: {
       type: 'video.other',

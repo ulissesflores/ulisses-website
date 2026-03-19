@@ -8,7 +8,7 @@ import { AuthorHubCard } from '@/components/author-hub-card';
 import { FaqSection } from '@/components/faq-section';
 import { getDictionary } from '@/lib/get-dictionary';
 import { localePath } from '@/lib/locale-path';
-import { buildCanonical } from '@/data/seo';
+import { buildCanonical, buildLanguageAlternates } from '@/data/seo';
 
 const canonicalPath = '/simulacoes/ia-2027/desaceleracao-coordenada';
 const parentPath = '/simulacoes/ia-2027';
@@ -28,7 +28,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     description: t.slowdownMeta.description,
     keywords: [...t.slowdownMeta.keywords],
     authors: [{ name: upkfMeta.publicDisplayName || upkfMeta.displayName, url: `${upkfMeta.primaryWebsite}/identidade` }],
-    alternates: { canonical: buildCanonical(locale, canonicalPath) },
+    alternates: { canonical: buildCanonical(locale, canonicalPath), languages: buildLanguageAlternates(canonicalPath) },
     openGraph: {
       type: 'article',
       url: `${upkfMeta.primaryWebsite}${canonicalPath}`,

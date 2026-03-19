@@ -8,7 +8,7 @@ import { AuthorHubCard } from '@/components/author-hub-card';
 import { FaqSection } from '@/components/faq-section';
 import { getDictionary } from '@/lib/get-dictionary';
 import { localePath } from '@/lib/locale-path';
-import { buildCanonical } from '@/data/seo';
+import { buildCanonical, buildLanguageAlternates } from '@/data/seo';
 
 const canonicalPath = '/simulacoes/mumm-ra';
 const whatsappUrl = 'https://wa.me/551152868689';
@@ -28,7 +28,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     description: t.meta.description,
     keywords: [...t.meta.keywords],
     authors: [{ name: upkfMeta.publicDisplayName || upkfMeta.displayName, url: `${upkfMeta.primaryWebsite}/identidade` }],
-    alternates: { canonical: buildCanonical(locale, canonicalPath) },
+    alternates: { canonical: buildCanonical(locale, canonicalPath), languages: buildLanguageAlternates(canonicalPath) },
     openGraph: {
       type: 'website',
       url: `${upkfMeta.primaryWebsite}${canonicalPath}`,

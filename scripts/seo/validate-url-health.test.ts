@@ -120,6 +120,50 @@ describe('ECC SOTA — URL Health & Redirect Integrity', () => {
     ).toHaveLength(0);
   });
 
+  it('EVERY page.tsx under app/[locale]/ has buildLanguageAlternates in metadata', () => {
+    const appDir = resolve(ROOT, 'app/[locale]');
+    const { readdirSync, readFileSync: readF } = require('node:fs');
+    const { join, relative } = require('node:path');
+
+    function findPages(dir: string): string[] {
+      const files: string[] = [];
+      for (const entry of readdirSync(dir, { withFileTypes: true })) {
+        const full = join(dir, entry.name);
+        if (entry.isDirectory()) files.push(...findPages(full));
+        else if (entry.name === 'page.tsx') files.push(full);
+      }
+      return files;
+    }
+
+    const pages = findPages(appDir);
+    const missing: string[] = [];
+
+    for (const page of pages) {
+      const content = readF(page, 'utf-8');
+      // Only check pages that have generateMetadata (they produce <head> tags)
+      if (!content.includes('generateMetadata')) continue;
+      if (!content.includes('buildLanguageAlternates')) {
+        missing.push(relative(ROOT, page));
+      }
+    }
+
+    expect(
+      missing,
+      `HREFLANG MISSING: These pages have generateMetadata but NO buildLanguageAlternates.\n` +
+      `This causes GSC "duplicate without canonical" and "alternate with proper canonical" errors.\n` +
+      `Fix: add languages: buildLanguageAlternates(canonicalPath) to alternates in generateMetadata.\n\n` +
+      missing.join('\n')
+    ).toHaveLength(0);
+  });
+
+  it('robots.txt disallow patterns do NOT use $ suffix (invalid in robots.txt)', () => {
+    const robotsFile = readFileSync(resolve(ROOT, 'app/robots.ts'), 'utf8');
+    expect(
+      robotsFile.includes("'/*.md$'") || robotsFile.includes('"/*.md$"'),
+      'robots.ts must NOT use $ suffix in disallow — $ is not valid robots.txt syntax and causes GSC "blocked by robots.txt" errors'
+    ).toBe(false);
+  });
+
   it('all deep-research assets have corresponding publications', () => {
     const assetUrls = inventory.urls
       .filter((u: { type: string }) => u.type === 'asset')

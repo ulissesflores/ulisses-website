@@ -9,7 +9,7 @@ import { FaqSection } from '@/components/faq-section';
 import { getDictionary } from '@/lib/get-dictionary';
 import { buildSermonI18nMaps, localizeCluster } from '@/data/sermons-i18n';
 import { localePath } from '@/lib/locale-path';
-import { buildCanonical } from '@/data/seo';
+import { buildCanonical, buildLanguageAlternates } from '@/data/seo';
 
 interface PageProps {
   params: Promise<{ locale: string }>;
@@ -32,7 +32,8 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       },
     ],
     alternates: {
-      canonical: acervoCanonicalPath,
+      canonical: buildCanonical(locale, acervoCanonicalPath),
+      languages: buildLanguageAlternates(acervoCanonicalPath),
     },
     openGraph: {
       type: 'website',

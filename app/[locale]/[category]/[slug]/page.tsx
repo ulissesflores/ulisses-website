@@ -8,7 +8,7 @@ import { AuthorHubCard } from '@/components/author-hub-card';
 import { localePath } from '@/lib/locale-path';
 import { defaultLocale, isLocale, type Locale } from '@/data/i18n';
 import { getDictionary } from '@/lib/get-dictionary';
-import { buildCanonical } from '@/data/seo';
+import { buildCanonical, buildLanguageAlternates } from '@/data/seo';
 
 interface PageProps {
   params: Promise<{ category: string; slug: string; locale: string }>;
@@ -52,6 +52,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     ],
     alternates: {
       canonical: buildCanonical(locale, canonicalPath),
+      languages: buildLanguageAlternates(canonicalPath),
     },
     openGraph: {
       type: 'article',

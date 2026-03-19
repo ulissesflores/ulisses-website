@@ -8,7 +8,7 @@ import { upkfMeta } from '@/data/generated/upkf.generated';
 import { AuthorHubCard } from '@/components/author-hub-card';
 import { getDictionary } from '@/lib/get-dictionary';
 import { localePath } from '@/lib/locale-path';
-import { buildCanonical } from '@/data/seo';
+import { buildCanonical, buildLanguageAlternates } from '@/data/seo';
 
 const validCategories = Object.keys(publicationCollections) as PublicationCategory[];
 
@@ -44,6 +44,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     ],
     alternates: {
       canonical: buildCanonical(locale, `/${category}`),
+      languages: buildLanguageAlternates(`/${category}`),
     },
     openGraph: {
       type: 'website',
