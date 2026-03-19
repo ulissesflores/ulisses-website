@@ -2374,12 +2374,47 @@ function buildPublications(rawRows, generatedAt, corpus, referencesLibrary) {
   });
 }
 
+/**
+ * Load existing translations from the current publications.generated.ts file.
+ * This preserves Gemini-translated titles/summaries across regeneration cycles.
+ * Without this, every `upkf:generate` would wipe translations that aren't in
+ * the UPKF source table or MDX frontmatter (i.e., Gemini-generated ones).
+ */
+function loadExistingTranslations() {
+  const pubPath = path.join(GENERATED_DIR, 'publications.generated.ts');
+  if (!fs.existsSync(pubPath)) return new Map();
+
+  try {
+    const content = fs.readFileSync(pubPath, 'utf8');
+    const match = content.match(/export const publications[^=]*=\s*(\[[\s\S]*\])\s*(?:as\s+const)?;?/);
+    if (!match) return new Map();
+
+    const pubs = JSON.parse(match[1]);
+    const map = new Map();
+    for (const pub of pubs) {
+      if (pub.id && pub.translations && Object.keys(pub.translations).length > 0) {
+        map.set(pub.id, pub.translations);
+      }
+    }
+    return map;
+  } catch {
+    return new Map();
+  }
+}
+
 function attachTranslations(publications, translationsMap) {
+  // Load previously-generated translations (Gemini-filled) as fallback
+  const existingTranslations = loadExistingTranslations();
+
   return publications.map((publication) => {
     const translated = translationsMap.get(publication.title.replace(/\s+/g, ' ').trim());
     const i18n = PUBLICATION_I18N[publication.id];
+    const existing = existingTranslations.get(publication.id);
 
+    // Merge order (later wins): existing Gemini → UPKF table → MDX frontmatter
+    // This ensures: Gemini translations survive, but authoritative sources always override
     const translations = {
+      ...(existing || {}),
       ...(translated || {}),
       ...(i18n ? {
         it: i18n.it,
@@ -2390,6 +2425,13 @@ function attachTranslations(publications, translationsMap) {
         summary_he: i18n.summary_he,
       } : {}),
     };
+
+    // Remove undefined/null values from the merge
+    for (const key of Object.keys(translations)) {
+      if (translations[key] === undefined || translations[key] === null) {
+        delete translations[key];
+      }
+    }
 
     if (Object.keys(translations).length === 0) {
       return publication;
