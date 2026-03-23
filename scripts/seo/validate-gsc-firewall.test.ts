@@ -297,6 +297,79 @@ describe('Sitemap — hreflang coverage', () => {
 //  METADATA STRUCTURE: data/seo.ts integrity
 // ═══════════════════════════════════════════════════════════════════════════════
 
+// ═══════════════════════════════════════════════════════════════════════════════
+//  GSC REGRESSION: Sitemap must not include redirect URLs
+// ═══════════════════════════════════════════════════════════════════════════════
+
+describe('GSC Regression — Sitemap vs Redirects', () => {
+  it('sitemap.ts does NOT include /simulacoes/projeto-psi (redirects to /whitepapers/projeto-psi)', () => {
+    const content = readFileSync(join(ROOT, 'app/sitemap.ts'), 'utf8');
+    expect(content).not.toContain("'/simulacoes/projeto-psi'");
+  });
+
+  it('no sitemap URL matches a next.config.ts redirect source', () => {
+    const sitemapContent = readFileSync(join(ROOT, 'app/sitemap.ts'), 'utf8');
+    const configContent = readFileSync(join(ROOT, 'next.config.ts'), 'utf8');
+
+    // Extract redirect sources from next.config.ts
+    const redirectSourceMatches = configContent.matchAll(/source:\s*["']([^"']+)["']/g);
+    const redirectSources = new Set<string>();
+    for (const match of redirectSourceMatches) {
+      // Skip header sources (they have /.well-known, /llms, etc.)
+      if (!match[1].includes(':slug') && !match[1].startsWith('/.well-known') && !match[1].startsWith('/llms')) {
+        redirectSources.add(match[1]);
+      }
+    }
+
+    // Extract sitemap paths
+    const sitemapPathMatches = sitemapContent.matchAll(/maybeMakeSitemapEntry\(\s*'([^']+)'/g);
+    const violations: string[] = [];
+    for (const match of sitemapPathMatches) {
+      if (redirectSources.has(match[1])) {
+        violations.push(match[1]);
+      }
+    }
+
+    expect(
+      violations,
+      `SITEMAP INCLUDES REDIRECT URLS — causes GSC "Page with redirect":\n${violations.join('\n')}`
+    ).toHaveLength(0);
+  });
+});
+
+// ═══════════════════════════════════════════════════════════════════════════════
+//  GSC REGRESSION: Unmapped /sermons/* falls back safely
+// ═══════════════════════════════════════════════════════════════════════════════
+
+describe('GSC Regression — Sermon redirect safety net', () => {
+  it('middleware falls back unmapped /sermons/* to /acervo-teologico (not broken prefix swap)', () => {
+    const middleware = readFileSync(join(ROOT, 'middleware.ts'), 'utf-8');
+    // Must have the safety net: unmapped /sermons/ → /acervo-teologico
+    expect(middleware).toContain("/sermons/");
+    expect(middleware).toContain("/acervo-teologico");
+    // The ternary guard must exist
+    expect(middleware).toContain("strippedForAlias.startsWith('/sermons/')");
+  });
+
+  it('every /sermons/ key in SERMON_REDIRECTS has a valid target', () => {
+    const sermonKeys = Object.keys(SERMON_REDIRECTS).filter(k => k.startsWith('/sermons/'));
+    expect(sermonKeys.length).toBeGreaterThan(0);
+
+    const invalidTargets: string[] = [];
+    for (const key of sermonKeys) {
+      const target = SERMON_REDIRECTS[key];
+      if (typeof target !== 'string' || !target.startsWith('/acervo-teologico')) {
+        invalidTargets.push(`${key} → ${target}`);
+      }
+    }
+
+    expect(
+      invalidTargets,
+      `SERMON REDIRECTS WITH INVALID TARGETS:\n${invalidTargets.join('\n')}`
+    ).toHaveLength(0);
+  });
+});
+
 describe('SEO infrastructure — buildCanonical & buildLanguageAlternates', () => {
   it('buildCanonical returns locale prefix for non-default locales', () => {
     const content = readFileSync(join(ROOT, 'data/seo.ts'), 'utf8');

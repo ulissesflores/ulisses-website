@@ -59,6 +59,7 @@ const nextConfig: NextConfig = {
           { key: "Content-Type", value: "application/did+ld+json; charset=utf-8" },
           { key: "Access-Control-Allow-Origin", value: "*" },
           { key: "Cache-Control", value: "public, max-age=3600, s-maxage=3600" },
+          { key: "X-Robots-Tag", value: "noindex" },
         ],
       },
       {
@@ -75,6 +76,20 @@ const nextConfig: NextConfig = {
       {
         source: "/llms-full.txt",
         headers: [{ key: "Content-Type", value: "text/plain; charset=utf-8" }],
+      },
+      // Canonical for PDFs (can't have HTML canonical tags — fixes GSC "Duplicate without canonical")
+      {
+        source: "/deep-research/:slug/deep-research.pdf",
+        headers: [
+          { key: "Link", value: "<https://ulissesflores.com/deep-research/:slug/deep-research.pdf>; rel=\"canonical\"" },
+        ],
+      },
+      // Non-page metadata files should not be indexed
+      {
+        source: "/public.jsonld",
+        headers: [
+          { key: "X-Robots-Tag", value: "noindex" },
+        ],
       },
     ];
   },

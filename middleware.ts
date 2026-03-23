@@ -147,7 +147,8 @@ export function middleware(request: NextRequest) {
   // Also handles PT aliases: /pesquisa → /research, /ensaios → /essays, etc.
   const strippedForAlias = stripLocalePrefix(rawPathname);
   const exactRedirect = SERMON_REDIRECTS[strippedForAlias];
-  const aliased = exactRedirect || mapPtAliases(strippedForAlias);
+  const aliased = exactRedirect
+    || (strippedForAlias.startsWith('/sermons/') ? '/acervo-teologico' : mapPtAliases(strippedForAlias));
   if (aliased !== strippedForAlias) {
     const url = request.nextUrl.clone();
     const localePrefix = extractLocale(rawPathname);
