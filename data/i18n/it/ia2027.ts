@@ -125,11 +125,11 @@ export const ia2027 = {
     strategicChoice: 'La Scelta Strategica',
     choiceDescription: 'Siamo giunti all\'orizzonte degli eventi dell\'Intelligenza Artificiale Generale (AGI). In questo punto critico della simulazione, l\'umanità e le corporazioni affrontano un dilemma esistenziale ed economico. La decisione presa qui altera irrevocabilmente la geopolitica, il mercato finanziario e il futuro della nostra specie. Quale percorso strategico il vostro consiglio di amministrazione dovrebbe prepararsi ad affrontare?',
     slowdownLabel: 'Decelerazione Coordinata',
-    slowdownTitle: 'Tirare il Freno',
-    slowdownDescription: 'L\'opzione della prudenza. Governi e big tech concordano nell\'imporre drastici freni regolatori e trattati internazionali di contenimento. Il progresso dell\'IA viene rallentato in nome della sicurezza e dell\'allineamento tecnico (Safety), ma il rischio di stagnazione economica e perdita di sovranità per le nazioni disoneste aumenta vertiginosamente.',
+    slowdownTitle: 'Decelerazione Coordinata',
+    slowdownDescription: 'L\'umanità affronta il dilemma supremo. Governi e giganti della tecnologia decidono di imporre limiti drastici — trattati internazionali di contenimento, moratorie sull\'addestramento oltre determinate soglie. Il progresso rallenta in nome della sicurezza e dell\'allineamento tecnico, ma la domanda resta: è possibile contenere ciò che è già stato liberato?',
     raceLabel: 'Corsa Strategica',
-    raceTitle: 'Accelerare la Carrozza',
-    raceDescription: 'L\'acceleratore al massimo. La premessa che "chi dominerà l\'AGI per primo detterà le regole del mondo". Senza vincoli regolatori, lo sviluppo raggiunge la velocità di fuga. L\'economia esplode in iperproduttività, ma il rischio di disallineamento avversario, collasso delle infrastrutture e perdita del controllo umano diventa imminente.',
+    raceTitle: 'Corsa Strategica',
+    raceDescription: 'La corsa è già iniziata e non si può tornare indietro. "Chi dominerà l\'AGI per primo detterà le regole del nuovo mondo." Senza vincoli regolatori, lo sviluppo raggiunge la velocità di fuga. L\'economia esplode in iperproduttività — ma il confine tra controllo e caos si dissolve a ogni iterazione.',
     alternateEndings: 'Finali Alternativi',
     activeBranch: 'Ramo attivo:',
     backToBifurcation: '← Torna alla Biforcazione',
@@ -145,12 +145,12 @@ export const ia2027 = {
     },
     pathSlowdown: {
       kicker: 'Finale Alternativo • Decelerazione',
-      title: 'IA 2027 • Slowdown',
+      title: 'IA 2027 • Decelerazione',
       summary: 'Ramo di contenimento, coordinamento internazionale e rafforzamento dell\'allineamento tecnico.'
     },
     pathRace: {
       kicker: 'Finale Alternativo • Corsa',
-      title: 'IA 2027 • Race',
+      title: 'IA 2027 • Corsa',
       summary: 'Ramo di massima accelerazione, con escalation dell\'autonomia e perdita progressiva del controllo umano.'
     },
     sidebar: {

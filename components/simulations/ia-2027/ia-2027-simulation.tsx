@@ -126,16 +126,16 @@ function SimulationMetricsSidebar({ chart }: { chart: SimulationChartExtra }) {
       </div>
 
       {chart.agentPopulation ? (
-        <div className='border border-black rounded-md p-4 bg-white'>
-          <div className='text-[10px] uppercase text-gray-500 mb-2'>{t.agentPopulation}</div>
+        <div className='border border-neutral-700 rounded-md p-4 bg-neutral-900'>
+          <div className='text-[10px] uppercase text-neutral-500 mb-2'>{t.agentPopulation}</div>
           <div className='flex items-end justify-between gap-3'>
             <div>
-              <div className='text-2xl font-bold'>{chart.agentPopulation.copies.toLocaleString(locale)}</div>
-              <div className='text-xs text-gray-500 uppercase'>{t.activeCopies}</div>
+              <div className='text-2xl font-bold text-white'>{chart.agentPopulation.copies.toLocaleString(locale)}</div>
+              <div className='text-xs text-neutral-500 uppercase'>{t.activeCopies}</div>
             </div>
             <div className='text-end'>
-              <div className='text-xl font-bold'>{chart.agentPopulation.speed}x</div>
-              <div className='text-xs text-gray-500 uppercase'>{t.speed}</div>
+              <div className='text-xl font-bold text-white'>{chart.agentPopulation.speed}x</div>
+              <div className='text-xs text-neutral-500 uppercase'>{t.speed}</div>
             </div>
           </div>
         </div>
@@ -144,13 +144,13 @@ function SimulationMetricsSidebar({ chart }: { chart: SimulationChartExtra }) {
       <div className='mt-2'>
         <div className='text-[12px] uppercase font-mono mb-3'>{t.capabilities}</div>
         {capabilities.length === 0 ? (
-          <p className='text-sm text-gray-500'>{t.noCapabilities}</p>
+          <p className='text-sm text-neutral-500'>{t.noCapabilities}</p>
         ) : (
           <div className='flex flex-col gap-2'>
             {capabilities.map(([label, value]) => {
               const width = Math.max(6, Math.min(100, (value / maxCapability) * 100));
               return (
-                <div key={label} className='w-full bg-gray-200 h-6 rounded-sm relative overflow-hidden border border-gray-300'>
+                <div key={label} className='w-full bg-neutral-800 h-6 rounded-sm relative overflow-hidden border border-neutral-700'>
                   <div className='bg-blue-700 h-full transition-all duration-500' style={{ width: `${width}%` }} />
                   <span className='absolute inset-0 flex items-center justify-between px-2 text-[10px] text-white font-mono mix-blend-difference'>
                     <span>{label}</span>
@@ -186,10 +186,10 @@ const NarrativeSectionArticle = memo(function NarrativeSectionArticle({
       viewport={{ once: true, amount: 0.2 }}
       transition={{ duration: 0.35, delay: index * 0.02 }}
     >
-      <p className='text-xs font-mono uppercase tracking-[0.18em] text-blue-800 mb-2'>{section.navLabel}</p>
-      <h2 className='text-3xl font-bold mb-4'>{section.title}</h2>
+      <p className='text-xs font-mono uppercase tracking-[0.18em] text-blue-400 mb-2'>{section.navLabel}</p>
+      <h2 className='text-3xl font-bold mb-4 text-white'>{section.title}</h2>
       <div
-        className='text-[1.05rem] leading-relaxed text-gray-900 [&>p]:mb-4 [&_details]:border [&_details]:border-gray-300 [&_details]:rounded-xl [&_details]:p-4 [&_details]:bg-gray-50 [&_summary]:cursor-pointer [&_summary]:font-semibold [&_summary]:text-sm [&_summary]:uppercase [&_summary]:tracking-wide [&_details_p]:text-[0.95rem] [&_details_p]:text-gray-700 [&_details_p]:mt-3 [&_sup_a]:text-indigo-700 [&_sup_a]:font-semibold [&_sup_a]:no-underline [&_sup_a:hover]:underline'
+        className='ia2027-story text-[1.05rem] leading-relaxed text-neutral-300 [&>p]:mb-4 [&_details]:border [&_details]:border-neutral-700 [&_details]:rounded-xl [&_details]:p-4 [&_details]:bg-neutral-900/40 [&_summary]:cursor-pointer [&_summary]:font-semibold [&_summary]:text-sm [&_summary]:uppercase [&_summary]:tracking-wide [&_details_p]:text-[0.95rem] [&_details_p]:text-neutral-400 [&_details_p]:mt-3 [&_sup_a]:text-emerald-400 [&_sup_a]:font-semibold [&_sup_a]:no-underline [&_sup_a:hover]:underline'
         dangerouslySetInnerHTML={{ __html: section.storyHtml }}
       />
     </motion.article>
@@ -297,8 +297,8 @@ function FootnotesBlock({
   }
 
   return (
-    <section className='border-t border-gray-300 pt-10'>
-      <h3 className='text-2xl font-black uppercase tracking-tight mb-6'>{t.references}</h3>
+    <section className='border-t border-neutral-700 pt-10'>
+      <h3 className='text-2xl font-black uppercase tracking-tight mb-6 text-white'>{t.references}</h3>
       <ol className='space-y-4'>
         {footnotes.map((footnote) => {
           const backReferenceId = firstReferenceByFootnote.get(footnote.num);
@@ -306,11 +306,11 @@ function FootnotesBlock({
             <li
               key={footnote.id}
               id={`fn-${path}-${footnote.num}`}
-              className='scroll-mt-28 border border-gray-200 rounded-lg p-4 bg-gray-50 text-sm text-gray-700 leading-relaxed'
+              className='scroll-mt-28 border border-neutral-700 rounded-lg p-4 bg-neutral-900/40 text-sm text-neutral-400 leading-relaxed'
             >
               <div dangerouslySetInnerHTML={{ __html: footnote.html }} />
               {backReferenceId ? (
-                <a href={`#${backReferenceId}`} className='inline-block mt-2 text-indigo-700 font-semibold hover:underline'>
+                <a href={`#${backReferenceId}`} className='inline-block mt-2 text-emerald-400 font-semibold hover:underline'>
                   {t.backToExcerpt}
                 </a>
               ) : null}
@@ -399,16 +399,16 @@ export function IA2027Simulation({ initialPath }: { initialPath?: SimulationPath
   };
 
   return (
-    <div id='ia-2027-sim' className='min-h-screen bg-white text-black font-sans'>
-      <header className='p-6 border-b border-gray-200 flex justify-between items-center bg-white'>
+    <div id='ia-2027-sim' className='min-h-screen bg-neutral-950 text-neutral-200 font-sans'>
+      <header className='p-6 border-b border-neutral-800 flex justify-between items-center bg-neutral-950'>
         <div className='max-w-7xl mx-auto w-full flex flex-wrap items-center justify-between gap-4'>
           <div>
-            <p className='text-[11px] font-mono uppercase tracking-widest text-blue-700'>{config.kicker}</p>
-            <h2 className='text-3xl font-bold'>{config.title}</h2>
+            <p className='text-[11px] font-mono uppercase tracking-widest text-blue-400'>{config.kicker}</p>
+            <h2 className='text-3xl font-bold text-white'>{config.title}</h2>
           </div>
           <Link
             href={lp('/simulacoes', locale as Locale)}
-            className='text-sm font-semibold border border-black rounded-full px-4 py-2 hover:bg-black hover:text-white transition-colors'
+            className='text-sm font-semibold border border-neutral-600 rounded-full px-4 py-2 hover:bg-neutral-800 hover:text-white transition-colors'
           >
             {t.backLink}
           </Link>
@@ -416,15 +416,15 @@ export function IA2027Simulation({ initialPath }: { initialPath?: SimulationPath
       </header>
 
       <main className='grid grid-cols-1 md:grid-cols-[120px_minmax(0,1fr)_400px] gap-8 max-w-7xl mx-auto p-6 relative'>
-        <aside className='hidden md:block sticky top-24 h-[80vh] border-r border-gray-300'>
-          <nav className='flex flex-col gap-4 text-xs font-mono text-gray-500 mt-12 pr-3 max-h-[70vh] overflow-auto'>
+        <aside className='hidden md:block sticky top-24 h-[80vh] border-r border-neutral-800'>
+          <nav className='flex flex-col gap-4 text-xs font-mono text-neutral-500 mt-12 pr-3 max-h-[70vh] overflow-auto'>
             {config.sections.map((section) => {
               const isActive = section.id === activeSectionId;
               return (
                 <a
                   key={section.id}
                   href={`#${section.id}`}
-                  className={`hover:text-black transition-colors ${isActive ? 'text-blue-700 font-bold' : ''}`}
+                  className={`hover:text-white transition-colors ${isActive ? 'text-blue-400 font-bold' : ''}`}
                 >
                   {section.navLabel}
                 </a>
@@ -446,16 +446,16 @@ export function IA2027Simulation({ initialPath }: { initialPath?: SimulationPath
             firstReferenceByFootnote={config.firstReferenceByFootnote}
           />
 
-          <footer className='border-t border-gray-300 pt-6 space-y-3'>
-            <p className='text-sm text-gray-700'>
+          <footer className='border-t border-neutral-700 pt-6 space-y-3'>
+            <p className='text-sm text-neutral-400'>
               {t.footerAdaptation}{' '}
-              <a href='https://ai-2027.com/' target='_blank' rel='noopener noreferrer' className='underline font-semibold'>
+              <a href='https://ai-2027.com/' target='_blank' rel='noopener noreferrer' className='underline font-semibold text-emerald-400'>
                 ai-2027.com
               </a>
               .
             </p>
-            <p className='text-sm text-gray-500'>{t.footerAuthors}</p>
-            <p className='text-sm text-gray-500'>{t.footerTranslation}</p>
+            <p className='text-sm text-neutral-500'>{t.footerAuthors}</p>
+            <p className='text-sm text-neutral-500'>{t.footerTranslation}</p>
           </footer>
         </section>
 

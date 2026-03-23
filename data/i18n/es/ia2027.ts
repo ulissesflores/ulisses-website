@@ -125,11 +125,11 @@ export const ia2027 = {
     strategicChoice: 'La Elección Estratégica',
     choiceDescription: 'Llegamos al horizonte de eventos de la Inteligencia Artificial General (AGI). En este punto crítico de la simulación, la humanidad y las corporaciones enfrentan un dilema existencial y económico. La decisión tomada aquí altera irrevocablemente la geopolítica, el mercado financiero y el futuro de nuestra especie. ¿Qué camino estratégico debe preparar su consejo de administración para enfrentar?',
     slowdownLabel: 'Desaceleración Coordinada',
-    slowdownTitle: 'Tirar del Freno',
-    slowdownDescription: 'La opción por la prudencia. Gobiernos y grandes tecnológicas acuerdan imponer frenos regulatorios drásticos y tratados internacionales de contención. El progreso de la IA se ralentiza en pro de la seguridad y el alineamiento técnico (Safety), pero el riesgo de estancamiento económico y pérdida de soberanía para naciones deshonestas se dispara.',
+    slowdownTitle: 'Desaceleración Coordinada',
+    slowdownDescription: 'La humanidad enfrenta el dilema supremo. Gobiernos y gigantes tecnológicos deciden imponer límites drásticos — tratados internacionales de contención, moratorias sobre el entrenamiento por encima de ciertos umbrales. El progreso se desacelera en pro de la seguridad y el alineamiento técnico, pero la pregunta permanece: ¿será posible contener lo que ya fue liberado?',
     raceLabel: 'Carrera Estratégica',
-    raceTitle: 'Acelerar la Carroza',
-    raceDescription: 'El acelerador al máximo. La premisa de que "quien domine la AGI primero dictará las reglas del mundo". Sin ataduras regulatorias, el desarrollo alcanza velocidad de escape. La economía explota en hiperproductividad, pero el riesgo de desalineamiento adversarial, colapso de infraestructuras y pérdida del control humano se vuelve inminente.',
+    raceTitle: 'Carrera Estratégica',
+    raceDescription: 'La carrera ya comenzó y no hay vuelta atrás. "Quien domine la AGI primero dictará las reglas del nuevo mundo." Sin ataduras regulatorias, el desarrollo alcanza velocidad de escape. La economía explota en hiperproductividad — pero la línea entre control y caos se disuelve con cada iteración.',
     alternateEndings: 'Finales Alternativos',
     activeBranch: 'Rama activa:',
     backToBifurcation: '← Volver a la Bifurcación',
@@ -145,12 +145,12 @@ export const ia2027 = {
     },
     pathSlowdown: {
       kicker: 'Final Alternativo • Desaceleración',
-      title: 'IA 2027 • Slowdown',
+      title: 'IA 2027 • Desaceleración',
       summary: 'Rama de contención, coordinación internacional y refuerzo de alineamiento técnico.'
     },
     pathRace: {
       kicker: 'Final Alternativo • Carrera',
-      title: 'IA 2027 • Race',
+      title: 'IA 2027 • Carrera',
       summary: 'Rama de aceleración máxima, con escalada de autonomía y pérdida progresiva de control humano.'
     },
     sidebar: {
