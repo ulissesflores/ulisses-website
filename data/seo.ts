@@ -1,23 +1,45 @@
 import { upkfMeta } from '@/data/generated/upkf.generated';
 import { normalizePath } from './i18n';
 
+/**
+ * Hreflang prefix map. `pt-BR` is the default locale — its canonical URL is
+ * the BARE path (no prefix). Only non-default locales carry a `/{prefix}/`.
+ */
 export const hreflangLocalePrefix = {
-  'pt-BR': 'pt-br',
+  'pt-BR': '',
   en: 'en',
   es: 'es',
   he: 'he',
   it: 'it',
 } as const;
 
+/**
+ * Build the `alternates.languages` map for Next.js metadata.
+ *
+ * The `pt-BR` variant MUST emit the bare canonical URL (no `/pt-br/` prefix),
+ * matching the `buildCanonical` behavior for the default locale. Otherwise the
+ * hreflang cluster contains a self-referencing URL that 301-redirects back to
+ * the canonical — Google rejects the cluster and may pick a foreign variant
+ * (e.g. `/it/...`) as the canonical, producing "Alternate page with proper
+ * canonical tag" errors in Search Console.
+ *
+ * Also emits `x-default` pointing to the bare canonical, so Google has an
+ * explicit fallback when language detection is ambiguous.
+ */
 export function buildLanguageAlternates(path: string): Record<string, string> {
   const origin = upkfMeta.primaryWebsite;
   const normalizedPath = normalizePath(path);
+  const suffix = normalizedPath === '/' ? '' : normalizedPath;
   const alternates: Record<string, string> = {};
 
   Object.entries(hreflangLocalePrefix).forEach(([lang, prefix]) => {
-    const suffix = normalizedPath === '/' ? '' : normalizedPath;
-    alternates[lang] = `${origin}/${prefix}${suffix}`;
+    // Default locale (pt-BR, prefix='') → bare URL; root becomes origin + '/'.
+    const base = prefix === '' ? origin : `${origin}/${prefix}`;
+    alternates[lang] = suffix === '' && prefix === '' ? `${origin}/` : `${base}${suffix}`;
   });
+
+  // x-default → bare canonical, identical to pt-BR variant.
+  alternates['x-default'] = alternates['pt-BR'];
 
   return alternates;
 }

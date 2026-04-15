@@ -160,6 +160,17 @@ export default async function ArticlePage({ params }: PageProps) {
     ].filter(Boolean),
   };
 
+  const breadcrumbBase = locale === 'pt-br' ? origin : `${origin}/${locale}`;
+  const breadcrumbJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: t.goHome, item: `${breadcrumbBase}/` },
+      { '@type': 'ListItem', position: 2, name: collection.title, item: `${breadcrumbBase}/${publication.category}` },
+      { '@type': 'ListItem', position: 3, name: localizedTitle, item: `${breadcrumbBase}/${publication.category}/${publication.id}` },
+    ],
+  };
+
   return (
     <div className='min-h-screen bg-neutral-950 text-neutral-200 font-sans selection:bg-emerald-500/30'>
       <div className='fixed inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] pointer-events-none' />
@@ -386,6 +397,7 @@ export default async function ArticlePage({ params }: PageProps) {
       </main>
 
       <script type='application/ld+json' dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }} />
+      <script type='application/ld+json' dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
     </div>
   );
 }

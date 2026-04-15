@@ -815,12 +815,12 @@ export const upkfMeta = {
     "markdownBytes": 85582,
     "markdownLines": 1397,
     "sectionCount": 102,
-    "siteGraphNodes": 43,
-    "publicGraphNodes": 186,
-    "fullGraphNodes": 289,
-    "siteJsonldBytes": 25805,
-    "publicJsonldBytes": 171557,
-    "fullJsonldBytes": 275554,
+    "siteGraphNodes": 44,
+    "publicGraphNodes": 187,
+    "fullGraphNodes": 290,
+    "siteJsonldBytes": 30412,
+    "publicJsonldBytes": 176164,
+    "fullJsonldBytes": 280161,
     "corpusFiles": 0,
     "corpusSnippets": 0,
     "corpusDirs": [],
@@ -1427,6 +1427,268 @@ export const siteJsonLd = {
       "url": "https://codexhash.com/research",
       "parentOrganization": {
         "@id": "https://ulissesflores.com/#codexhash"
+      }
+    },
+    {
+      "@id": "https://ulissesflores.com/#professional-service",
+      "@type": [
+        "ProfessionalService",
+        "Service"
+      ],
+      "name": "Consultoria, Palestras e Pesquisa — Ulisses Flores",
+      "description": "Consultoria estratégica em IA generativa e sistemas complexos, palestras e treinamentos executivos, pesquisa aplicada (whitepapers, simulações, deep research) e board advisory.",
+      "provider": {
+        "@id": "https://ulissesflores.com/#person"
+      },
+      "serviceType": [
+        "AI Consulting",
+        "Strategic Advisory",
+        "Keynote Speaking",
+        "Corporate Training",
+        "Applied Research",
+        "Board Advisory"
+      ],
+      "areaServed": [
+        {
+          "@type": "Place",
+          "name": "São Paulo, Brasil",
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": -23.5505,
+            "longitude": -46.6333
+          },
+          "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "BR",
+            "addressLocality": "São Paulo"
+          }
+        },
+        {
+          "@type": "Place",
+          "name": "Jundiaí, Brasil",
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": -23.1857,
+            "longitude": -46.8978
+          },
+          "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "BR",
+            "addressLocality": "Jundiaí"
+          }
+        },
+        {
+          "@type": "Place",
+          "name": "Campinas, Brasil",
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": -22.9099,
+            "longitude": -47.0626
+          },
+          "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "BR",
+            "addressLocality": "Campinas"
+          }
+        },
+        {
+          "@type": "Place",
+          "name": "Itupeva, Brasil",
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": -23.153,
+            "longitude": -47.0578
+          },
+          "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "BR",
+            "addressLocality": "Itupeva"
+          }
+        },
+        {
+          "@type": "Place",
+          "name": "San Salvador, El Salvador",
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 13.6929,
+            "longitude": -89.2182
+          },
+          "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "SV",
+            "addressLocality": "San Salvador"
+          }
+        },
+        {
+          "@type": "Place",
+          "name": "Roma, Itália",
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 41.9028,
+            "longitude": 12.4964
+          },
+          "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "IT",
+            "addressLocality": "Roma"
+          }
+        },
+        {
+          "@type": "Place",
+          "name": "Tel Aviv, Israel",
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 32.0853,
+            "longitude": 34.7818
+          },
+          "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "IL",
+            "addressLocality": "Tel Aviv"
+          }
+        },
+        {
+          "@type": "Place",
+          "name": "Houston, Estados Unidos",
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 29.7604,
+            "longitude": -95.3698
+          },
+          "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "US",
+            "addressLocality": "Houston"
+          }
+        },
+        {
+          "@type": "Place",
+          "name": "Dallas, Estados Unidos",
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 32.7767,
+            "longitude": -96.797
+          },
+          "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "US",
+            "addressLocality": "Dallas"
+          }
+        },
+        {
+          "@type": "Place",
+          "name": "San Antonio, Estados Unidos",
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 29.4241,
+            "longitude": -98.4936
+          },
+          "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "US",
+            "addressLocality": "San Antonio"
+          }
+        },
+        {
+          "@type": "Place",
+          "name": "Frisco, Estados Unidos",
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 33.1507,
+            "longitude": -96.8236
+          },
+          "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "US",
+            "addressLocality": "Frisco"
+          }
+        },
+        {
+          "@type": "Place",
+          "name": "Plano, Estados Unidos",
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 33.0198,
+            "longitude": -96.6989
+          },
+          "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "US",
+            "addressLocality": "Plano"
+          }
+        },
+        {
+          "@type": "Place",
+          "name": "Highland Park, Estados Unidos",
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 32.8335,
+            "longitude": -96.792
+          },
+          "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "US",
+            "addressLocality": "Highland Park"
+          }
+        }
+      ],
+      "availableLanguage": [
+        "pt-BR",
+        "en",
+        "es",
+        "it",
+        "he"
+      ],
+      "audience": {
+        "@type": "Audience",
+        "audienceType": "CxO, CTO, Founder, Investor, University, Enterprise"
+      },
+      "url": "https://ulissesflores.com",
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Modalidades",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Consultoria em IA e Sistemas",
+              "description": "Diagnóstico estratégico, roadmap de IA generativa, arquitetura de sistemas críticos, governança de dados e riscos."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Palestras e Keynotes",
+              "description": "Keynotes e masterclasses sobre IA generativa, economia austríaca aplicada, blockchain em empresas e sistemas complexos."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Treinamentos Executivos",
+              "description": "Workshops in-company para lideranças técnicas e executivas em adoção de IA, arquitetura de produto e segurança."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Pesquisa Aplicada",
+              "description": "Whitepapers, simulações, deep research e pareceres técnicos publicados em ulissesflores.com."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Board Advisory / Fractional CTO",
+              "description": "Assentos consultivos em conselhos e atuação como fractional CTO/CSO para empresas em transformação digital."
+            }
+          }
+        ]
       }
     },
     {

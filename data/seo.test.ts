@@ -2,27 +2,43 @@ import { describe, it, expect } from 'vitest';
 import { buildLanguageAlternates, buildCanonical } from './seo';
 
 describe('buildLanguageAlternates', () => {
-  it('returns alternates for all 5 locales', () => {
+  it('returns alternates for all 5 locales + x-default', () => {
     const result = buildLanguageAlternates('/research');
-    expect(Object.keys(result)).toHaveLength(5);
+    expect(Object.keys(result)).toHaveLength(6);
     expect(result).toHaveProperty('pt-BR');
     expect(result).toHaveProperty('en');
     expect(result).toHaveProperty('es');
     expect(result).toHaveProperty('it');
     expect(result).toHaveProperty('he');
+    expect(result).toHaveProperty('x-default');
   });
 
-  it('generates correct URLs for a regular path', () => {
+  it('pt-BR uses bare canonical URL (no /pt-br/ prefix) — matches buildCanonical default locale behavior', () => {
     const result = buildLanguageAlternates('/research');
-    expect(result['pt-BR']).toMatch(/\/pt-br\/research$/);
+    expect(result['pt-BR']).toBe('https://ulissesflores.com/research');
+    expect(result['pt-BR']).not.toMatch(/\/pt-br\//);
+  });
+
+  it('x-default points to bare canonical, identical to pt-BR', () => {
+    const result = buildLanguageAlternates('/whitepapers/projeto-psi');
+    expect(result['x-default']).toBe('https://ulissesflores.com/whitepapers/projeto-psi');
+    expect(result['x-default']).toBe(result['pt-BR']);
+  });
+
+  it('foreign locales keep /{locale}/ prefix for self-referencing canonical', () => {
+    const result = buildLanguageAlternates('/research');
     expect(result['en']).toMatch(/\/en\/research$/);
     expect(result['es']).toMatch(/\/es\/research$/);
+    expect(result['it']).toMatch(/\/it\/research$/);
+    expect(result['he']).toMatch(/\/he\/research$/);
   });
 
-  it('generates correct URLs for root path', () => {
+  it('root path: pt-BR and x-default emit origin + "/" (no locale segment)', () => {
     const result = buildLanguageAlternates('/');
-    expect(result['pt-BR']).toMatch(/\/pt-br$/);
+    expect(result['pt-BR']).toBe('https://ulissesflores.com/');
+    expect(result['x-default']).toBe('https://ulissesflores.com/');
     expect(result['en']).toMatch(/\/en$/);
+    expect(result['es']).toMatch(/\/es$/);
   });
 
   it('all URLs start with the primary website', () => {

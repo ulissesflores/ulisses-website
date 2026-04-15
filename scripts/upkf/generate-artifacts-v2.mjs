@@ -3110,6 +3110,80 @@ function buildCoreSiteJsonLd(identity, organization, frontmatter) {
           '@id': `${siteUrl}/#codexhash`,
         },
       },
+      {
+        '@id': `${siteUrl}/#professional-service`,
+        '@type': ['ProfessionalService', 'Service'],
+        name: 'Consultoria, Palestras e Pesquisa — Ulisses Flores',
+        description:
+          'Consultoria estratégica em IA generativa e sistemas complexos, palestras e treinamentos executivos, pesquisa aplicada (whitepapers, simulações, deep research) e board advisory.',
+        provider: { '@id': `${siteUrl}/#person` },
+        serviceType: [
+          'AI Consulting',
+          'Strategic Advisory',
+          'Keynote Speaking',
+          'Corporate Training',
+          'Applied Research',
+          'Board Advisory',
+        ],
+        areaServed: buildAreaServedJsonLd(),
+        availableLanguage: ['pt-BR', 'en', 'es', 'it', 'he'],
+        audience: {
+          '@type': 'Audience',
+          audienceType: 'CxO, CTO, Founder, Investor, University, Enterprise',
+        },
+        url: siteUrl,
+        hasOfferCatalog: {
+          '@type': 'OfferCatalog',
+          name: 'Modalidades',
+          itemListElement: [
+            {
+              '@type': 'Offer',
+              itemOffered: {
+                '@type': 'Service',
+                name: 'Consultoria em IA e Sistemas',
+                description:
+                  'Diagnóstico estratégico, roadmap de IA generativa, arquitetura de sistemas críticos, governança de dados e riscos.',
+              },
+            },
+            {
+              '@type': 'Offer',
+              itemOffered: {
+                '@type': 'Service',
+                name: 'Palestras e Keynotes',
+                description:
+                  'Keynotes e masterclasses sobre IA generativa, economia austríaca aplicada, blockchain em empresas e sistemas complexos.',
+              },
+            },
+            {
+              '@type': 'Offer',
+              itemOffered: {
+                '@type': 'Service',
+                name: 'Treinamentos Executivos',
+                description:
+                  'Workshops in-company para lideranças técnicas e executivas em adoção de IA, arquitetura de produto e segurança.',
+              },
+            },
+            {
+              '@type': 'Offer',
+              itemOffered: {
+                '@type': 'Service',
+                name: 'Pesquisa Aplicada',
+                description:
+                  'Whitepapers, simulações, deep research e pareceres técnicos publicados em ulissesflores.com.',
+              },
+            },
+            {
+              '@type': 'Offer',
+              itemOffered: {
+                '@type': 'Service',
+                name: 'Board Advisory / Fractional CTO',
+                description:
+                  'Assentos consultivos em conselhos e atuação como fractional CTO/CSO para empresas em transformação digital.',
+              },
+            },
+          ],
+        },
+      },
       ...institutionNodes,
       ...affiliationNodes,
       ...credentialNodes,

@@ -4,8 +4,7 @@ import { knowledgeData } from '@/data/knowledge';
 import { upkfMeta } from '@/data/generated/upkf.generated';
 import { certificationsSotaData } from '@/data/certifications-sota';
 import { acervoCanonicalPath, acervoLatestPublishedAt, acervoSermons } from '@/data/acervo-teologico';
-import { supportedLocales, defaultLocale } from '@/data/i18n';
-import { hreflangLocalePrefix } from '@/data/seo';
+import { buildLanguageAlternates } from '@/data/seo';
 
 // ── Helpers ─────────────────────────────────────────────────────────────────────
 
@@ -26,26 +25,15 @@ export function isIndexableSitemapPath(path: string): boolean {
 
 /**
  * Build the alternates.languages map for a given path.
- * Each locale gets its prefixed URL; `x-default` uses the default locale.
+ *
+ * Delegates to the single source of truth (`buildLanguageAlternates`) so the
+ * sitemap, `<link rel="alternate">` tags, and any other hreflang consumer
+ * agree byte-for-byte. Emits 5 locale variants + `x-default`; the `pt-BR` and
+ * `x-default` entries use the bare canonical URL (no `/pt-br/` prefix) to
+ * avoid redirect loops in the hreflang cluster.
  */
 function buildSitemapAlternates(path: string): Record<string, string> {
-  const origin = upkfMeta.primaryWebsite;
-  const suffix = path === '/' ? '' : path;
-  const alternates: Record<string, string> = {};
-
-  Object.entries(hreflangLocalePrefix).forEach(([lang, prefix]) => {
-    alternates[lang] = `${origin}/${prefix}${suffix}`;
-  });
-
-  // x-default points to the default locale
-  const defaultPrefix = hreflangLocalePrefix[
-    Object.keys(hreflangLocalePrefix).find(
-      (k) => hreflangLocalePrefix[k as keyof typeof hreflangLocalePrefix] === defaultLocale,
-    ) as keyof typeof hreflangLocalePrefix
-  ] ?? defaultLocale;
-  alternates['x-default'] = `${origin}/${defaultPrefix}${suffix}`;
-
-  return alternates;
+  return buildLanguageAlternates(path);
 }
 
 function makeSitemapEntry(

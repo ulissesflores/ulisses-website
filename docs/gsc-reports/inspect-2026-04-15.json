@@ -1,0 +1,277 @@
+{
+  "generatedAt": "2026-04-15T16:17:13.312Z",
+  "siteUrl": "sc-domain:ulissesflores.com",
+  "serviceAccount": "ulisses-website@gen-lang-client-0556029994.iam.gserviceaccount.com",
+  "results": [
+    {
+      "pattern": "A — www subdomain",
+      "url": "https://www.ulissesflores.com/whitepapers/2023-digital-legacy",
+      "ok": true,
+      "status": 200,
+      "summary": {
+        "verdict": "NEUTRAL",
+        "coverageState": "URL is unknown to Google",
+        "indexingState": "INDEXING_STATE_UNSPECIFIED",
+        "googleCanonical": "—",
+        "userCanonical": "—",
+        "crawledAs": "—",
+        "lastCrawlTime": "—",
+        "pageFetchState": "PAGE_FETCH_STATE_UNSPECIFIED",
+        "robotsTxtState": "ROBOTS_TXT_STATE_UNSPECIFIED",
+        "referringUrls": []
+      },
+      "raw": {
+        "inspectionResult": {
+          "inspectionResultLink": "https://search.google.com/search-console/inspect?resource_id=sc-domain:ulissesflores.com&id=zyjRhgbW3m7uIDq2KfPt-w&utm_medium=link&utm_source=api",
+          "indexStatusResult": {
+            "verdict": "NEUTRAL",
+            "coverageState": "URL is unknown to Google",
+            "robotsTxtState": "ROBOTS_TXT_STATE_UNSPECIFIED",
+            "indexingState": "INDEXING_STATE_UNSPECIFIED",
+            "pageFetchState": "PAGE_FETCH_STATE_UNSPECIFIED"
+          },
+          "mobileUsabilityResult": {
+            "verdict": "VERDICT_UNSPECIFIED"
+          }
+        }
+      }
+    },
+    {
+      "pattern": "B — /pt-br/ prefix",
+      "url": "https://ulissesflores.com/pt-br/whitepapers/2023-digital-legacy",
+      "ok": true,
+      "status": 200,
+      "summary": {
+        "verdict": "NEUTRAL",
+        "coverageState": "Page with redirect",
+        "indexingState": "INDEXING_ALLOWED",
+        "googleCanonical": "https://ulissesflores.com/it/whitepapers/2023-digital-legacy",
+        "userCanonical": "https://ulissesflores.com/whitepapers/2023-digital-legacy",
+        "crawledAs": "MOBILE",
+        "lastCrawlTime": "2026-03-05T09:12:22Z",
+        "pageFetchState": "SUCCESSFUL",
+        "robotsTxtState": "ALLOWED",
+        "referringUrls": []
+      },
+      "raw": {
+        "inspectionResult": {
+          "inspectionResultLink": "https://search.google.com/search-console/inspect?resource_id=sc-domain:ulissesflores.com&id=S18BHSSn_pJxCO3_gwDQ_g&utm_medium=link&utm_source=api",
+          "indexStatusResult": {
+            "verdict": "NEUTRAL",
+            "coverageState": "Page with redirect",
+            "robotsTxtState": "ALLOWED",
+            "indexingState": "INDEXING_ALLOWED",
+            "lastCrawlTime": "2026-03-05T09:12:22Z",
+            "pageFetchState": "SUCCESSFUL",
+            "googleCanonical": "https://ulissesflores.com/it/whitepapers/2023-digital-legacy",
+            "userCanonical": "https://ulissesflores.com/whitepapers/2023-digital-legacy",
+            "crawledAs": "MOBILE"
+          },
+          "mobileUsabilityResult": {
+            "verdict": "VERDICT_UNSPECIFIED"
+          }
+        }
+      }
+    },
+    {
+      "pattern": "C — /sermons/ legacy",
+      "url": "https://ulissesflores.com/sermons/jejum-da-vitoria-2023-21-devotionals/12-dia-12-alinhamento-profetico",
+      "ok": true,
+      "status": 200,
+      "summary": {
+        "verdict": "PASS",
+        "coverageState": "Submitted and indexed",
+        "indexingState": "INDEXING_ALLOWED",
+        "googleCanonical": "https://ulissesflores.com/sermons/jejum-da-vitoria-2023-21-devotionals/12-dia-12-alinhamento-profetico",
+        "userCanonical": "https://ulissesflores.com/sermons/jejum-da-vitoria-2023-21-devotionals/12-dia-12-alinhamento-profetico",
+        "crawledAs": "MOBILE",
+        "lastCrawlTime": "2026-02-22T00:55:04Z",
+        "pageFetchState": "SUCCESSFUL",
+        "robotsTxtState": "ALLOWED",
+        "referringUrls": [
+          "https://ulissesflores.com/sermons/jejum-da-vitoria-2023-21-devotionals"
+        ]
+      },
+      "raw": {
+        "inspectionResult": {
+          "inspectionResultLink": "https://search.google.com/search-console/inspect?resource_id=sc-domain:ulissesflores.com&id=L_bxmjAfy9APi5NGoP_Clw&utm_medium=link&utm_source=api",
+          "indexStatusResult": {
+            "verdict": "PASS",
+            "coverageState": "Submitted and indexed",
+            "robotsTxtState": "ALLOWED",
+            "indexingState": "INDEXING_ALLOWED",
+            "lastCrawlTime": "2026-02-22T00:55:04Z",
+            "pageFetchState": "SUCCESSFUL",
+            "googleCanonical": "https://ulissesflores.com/sermons/jejum-da-vitoria-2023-21-devotionals/12-dia-12-alinhamento-profetico",
+            "userCanonical": "https://ulissesflores.com/sermons/jejum-da-vitoria-2023-21-devotionals/12-dia-12-alinhamento-profetico",
+            "referringUrls": [
+              "https://ulissesflores.com/sermons/jejum-da-vitoria-2023-21-devotionals"
+            ],
+            "crawledAs": "MOBILE"
+          },
+          "mobileUsabilityResult": {
+            "verdict": "VERDICT_UNSPECIFIED"
+          },
+          "richResultsResult": {
+            "verdict": "FAIL",
+            "detectedItems": [
+              {
+                "richResultType": "Videos",
+                "items": [
+                  {
+                    "name": "Dia 12 — Alinhamento Profético",
+                    "issues": [
+                      {
+                        "issueMessage": "Missing field \"uploadDate\"",
+                        "severity": "ERROR"
+                      },
+                      {
+                        "issueMessage": "Missing field \"thumbnailUrl\"",
+                        "severity": "ERROR"
+                      },
+                      {
+                        "issueMessage": "Either \"contentUrl\" or \"embedUrl\" should be specified",
+                        "severity": "WARNING"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "pattern": "D — non-default locale (en)",
+      "url": "https://ulissesflores.com/en/acervo-teologico/jejum-da-vitoria-2023-21-devotionals",
+      "ok": true,
+      "status": 200,
+      "summary": {
+        "verdict": "NEUTRAL",
+        "coverageState": "URL is unknown to Google",
+        "indexingState": "INDEXING_STATE_UNSPECIFIED",
+        "googleCanonical": "—",
+        "userCanonical": "—",
+        "crawledAs": "—",
+        "lastCrawlTime": "—",
+        "pageFetchState": "PAGE_FETCH_STATE_UNSPECIFIED",
+        "robotsTxtState": "ROBOTS_TXT_STATE_UNSPECIFIED",
+        "referringUrls": []
+      },
+      "raw": {
+        "inspectionResult": {
+          "inspectionResultLink": "https://search.google.com/search-console/inspect?resource_id=sc-domain:ulissesflores.com&id=8h8BuuZaY5xZbEIyn1KqTw&utm_medium=link&utm_source=api",
+          "indexStatusResult": {
+            "verdict": "NEUTRAL",
+            "coverageState": "URL is unknown to Google",
+            "robotsTxtState": "ROBOTS_TXT_STATE_UNSPECIFIED",
+            "indexingState": "INDEXING_STATE_UNSPECIFIED",
+            "pageFetchState": "PAGE_FETCH_STATE_UNSPECIFIED"
+          },
+          "mobileUsabilityResult": {
+            "verdict": "VERDICT_UNSPECIFIED"
+          }
+        }
+      }
+    },
+    {
+      "pattern": "E — truncated slug",
+      "url": "https://ulissesflores.com/en/mundo-politico/15-fala-bolsonaro-reacende-debat",
+      "ok": true,
+      "status": 200,
+      "summary": {
+        "verdict": "NEUTRAL",
+        "coverageState": "URL is unknown to Google",
+        "indexingState": "INDEXING_STATE_UNSPECIFIED",
+        "googleCanonical": "—",
+        "userCanonical": "—",
+        "crawledAs": "—",
+        "lastCrawlTime": "—",
+        "pageFetchState": "PAGE_FETCH_STATE_UNSPECIFIED",
+        "robotsTxtState": "ROBOTS_TXT_STATE_UNSPECIFIED",
+        "referringUrls": []
+      },
+      "raw": {
+        "inspectionResult": {
+          "inspectionResultLink": "https://search.google.com/search-console/inspect?resource_id=sc-domain:ulissesflores.com&id=FPigmoivSTT7nJsh4asH5w&utm_medium=link&utm_source=api",
+          "indexStatusResult": {
+            "verdict": "NEUTRAL",
+            "coverageState": "URL is unknown to Google",
+            "robotsTxtState": "ROBOTS_TXT_STATE_UNSPECIFIED",
+            "indexingState": "INDEXING_STATE_UNSPECIFIED",
+            "pageFetchState": "PAGE_FETCH_STATE_UNSPECIFIED"
+          },
+          "mobileUsabilityResult": {
+            "verdict": "VERDICT_UNSPECIFIED"
+          }
+        }
+      }
+    },
+    {
+      "pattern": "✓ Control — homepage",
+      "url": "https://ulissesflores.com/",
+      "ok": true,
+      "status": 200,
+      "summary": {
+        "verdict": "PASS",
+        "coverageState": "Submitted and indexed",
+        "indexingState": "INDEXING_ALLOWED",
+        "googleCanonical": "https://ulissesflores.com/",
+        "userCanonical": "https://ulissesflores.com/",
+        "crawledAs": "MOBILE",
+        "lastCrawlTime": "2026-04-09T13:36:44Z",
+        "pageFetchState": "SUCCESSFUL",
+        "robotsTxtState": "ALLOWED",
+        "referringUrls": [
+          "https://ulissesflores.com/certifications/alura-7-extreme-programming-metodologia-agil",
+          "https://ulissesflores.com/pt-br/research/2023-marian-apparitions-critique"
+        ]
+      },
+      "raw": {
+        "inspectionResult": {
+          "inspectionResultLink": "https://search.google.com/search-console/inspect?resource_id=sc-domain:ulissesflores.com&id=bQ6ouFvUzz536iepyOnCQw&utm_medium=link&utm_source=api",
+          "indexStatusResult": {
+            "verdict": "PASS",
+            "coverageState": "Submitted and indexed",
+            "robotsTxtState": "ALLOWED",
+            "indexingState": "INDEXING_ALLOWED",
+            "lastCrawlTime": "2026-04-09T13:36:44Z",
+            "pageFetchState": "SUCCESSFUL",
+            "googleCanonical": "https://ulissesflores.com/",
+            "userCanonical": "https://ulissesflores.com/",
+            "referringUrls": [
+              "https://ulissesflores.com/certifications/alura-7-extreme-programming-metodologia-agil",
+              "https://ulissesflores.com/pt-br/research/2023-marian-apparitions-critique"
+            ],
+            "crawledAs": "MOBILE"
+          },
+          "mobileUsabilityResult": {
+            "verdict": "VERDICT_UNSPECIFIED"
+          },
+          "richResultsResult": {
+            "verdict": "PASS",
+            "detectedItems": [
+              {
+                "richResultType": "FAQ",
+                "items": [
+                  {
+                    "name": "Unnamed item"
+                  }
+                ]
+              },
+              {
+                "richResultType": "",
+                "items": [
+                  {
+                    "name": "Carlos Ulisses Flores"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      }
+    }
+  ]
+}

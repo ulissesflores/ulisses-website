@@ -388,4 +388,44 @@ describe('SEO infrastructure — buildCanonical & buildLanguageAlternates', () =
     expect(content).toContain("he:");
     expect(content).toContain("it:");
   });
+
+  // REGRESSION: pt-BR hreflang MUST NOT be prefixed (see GSC 2026-04-15 fix).
+  // Previous bug: pt-BR emitted /pt-br/... which 301-redirected to canonical,
+  // breaking hreflang cluster. Google then picked /it/ as canonical for
+  // ~142 URLs flagged as "Alternate page with proper canonical tag".
+  it('pt-BR hreflang resolves to bare canonical (no /pt-br/ prefix)', async () => {
+    const { buildLanguageAlternates } = await import('@/data/seo');
+    const alternates = buildLanguageAlternates('/whitepapers/2023-digital-legacy');
+
+    expect(alternates['pt-BR']).toBe('https://ulissesflores.com/whitepapers/2023-digital-legacy');
+    expect(alternates['pt-BR']).not.toMatch(/\/pt-br\//);
+  });
+
+  it('hreflang cluster includes x-default pointing to bare canonical', async () => {
+    const { buildLanguageAlternates } = await import('@/data/seo');
+    const alternates = buildLanguageAlternates('/research/2024-my-paper');
+
+    expect(alternates).toHaveProperty('x-default');
+    expect(alternates['x-default']).toBe(alternates['pt-BR']);
+  });
+
+  it('no hreflang URL contains a double slash (regression for sitemap bug)', async () => {
+    const { buildLanguageAlternates } = await import('@/data/seo');
+    const alternates = buildLanguageAlternates('/whitepapers/projeto-psi');
+
+    for (const [lang, url] of Object.entries(alternates)) {
+      // Allow exactly one `://` (from the protocol) but no other `//`.
+      const withoutProtocol = url.replace(/^https?:\/\//, '');
+      expect(withoutProtocol, `${lang}: ${url}`).not.toMatch(/\/\//);
+    }
+  });
+
+  it('root path hreflang cluster emits origin + "/" for pt-BR and x-default', async () => {
+    const { buildLanguageAlternates } = await import('@/data/seo');
+    const alternates = buildLanguageAlternates('/');
+
+    expect(alternates['pt-BR']).toBe('https://ulissesflores.com/');
+    expect(alternates['x-default']).toBe('https://ulissesflores.com/');
+    expect(alternates['en']).toBe('https://ulissesflores.com/en');
+  });
 });
