@@ -81,6 +81,13 @@ export default async function AcervoSermonDetailPage({ params }: PageProps) {
       ? `${upkfMeta.primaryWebsite}${knowledgeData.sermons.publisherRef}`
       : `${upkfMeta.primaryWebsite}/#${knowledgeData.sermons.publisherRef}`;
 
+  // Extract the 11-char YouTube video ID for the embed iframe (privacy-enhanced
+  // domain). Required so Google classifies this page as a true "watch page" —
+  // VideoObject schema alone is rejected without an actual embed (GSC
+  // WNC-10031170 "Video isn't on a watch page").
+  const youTubeIdMatch = sermon.youtubeUrl?.match(/(?:v=|\/embed\/|youtu\.be\/)([\w-]{11})/);
+  const youTubeVideoId = youTubeIdMatch ? youTubeIdMatch[1] : null;
+
   const sermonJsonLd = {
     '@context': 'https://schema.org',
     '@graph': [
@@ -96,6 +103,7 @@ export default async function AcervoSermonDetailPage({ params }: PageProps) {
         genre: 'Sermon',
         url: sermon.youtubeUrl,
         contentUrl: sermon.youtubeUrl,
+        embedUrl: youTubeVideoId ? `https://www.youtube-nocookie.com/embed/${youTubeVideoId}` : undefined,
         mainEntityOfPage: `${upkfMeta.primaryWebsite}${sermon.canonicalPath}`,
         publisher: {
           '@id': publisherId,
@@ -143,6 +151,22 @@ export default async function AcervoSermonDetailPage({ params }: PageProps) {
           </div>
           <p className='text-neutral-400 leading-relaxed'>{lc.metaDescription}</p>
         </header>
+
+        {youTubeVideoId && (
+          <section className='mb-10' aria-label={t.detail?.videoLabel ?? 'Video'}>
+            <div className='relative w-full overflow-hidden rounded-xl border border-neutral-800 bg-neutral-900' style={{ aspectRatio: '16 / 9' }}>
+              <iframe
+                src={`https://www.youtube-nocookie.com/embed/${youTubeVideoId}?rel=0&modestbranding=1`}
+                title={ls.seoTitle}
+                loading='lazy'
+                allow='accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
+                allowFullScreen
+                referrerPolicy='strict-origin-when-cross-origin'
+                className='absolute inset-0 h-full w-full'
+              />
+            </div>
+          </section>
+        )}
 
         <section className='rounded-xl border border-neutral-800 bg-neutral-900/30 p-6 space-y-5'>
           <div>

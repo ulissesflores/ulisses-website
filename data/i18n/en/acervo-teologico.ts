@@ -51,6 +51,7 @@ export const acervoTeologico = {
     publishedAt: 'Published on',
     authorLabel: 'Author',
     studySummary: 'Study Summary',
-    sourceLabel: 'Message Source'
+    sourceLabel: 'Message Source',
+    videoLabel: 'Message Video'
   }
 } as const;

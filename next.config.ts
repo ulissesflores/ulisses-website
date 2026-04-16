@@ -15,6 +15,11 @@ const nextConfig: NextConfig = {
           "font-src 'self' https://fonts.gstatic.com",
           "img-src 'self' data: https: blob:",
           "connect-src 'self' https://generativelanguage.googleapis.com https://vitals.vercel-insights.com",
+          // Allow YouTube embeds (privacy-enhanced and standard) for sermon
+          // watch pages — required to satisfy Google's "Video isn't on a watch
+          // page" check (WNC-10031170). Without frame-src, embeds inherit
+          // default-src 'self' and YouTube iframes are blocked.
+          "frame-src 'self' https://www.youtube-nocookie.com https://www.youtube.com",
           "frame-ancestors 'none'",
           "base-uri 'self'",
           "form-action 'self'",

@@ -42,5 +42,6 @@ export const acervoTeologico = {
     authorLabel: 'Autor',
     studySummary: 'Resumo do Estudo',
     sourceLabel: 'Fonte da Mensagem',
+    videoLabel: 'Vídeo da Mensagem',
   },
 } as const;

@@ -51,6 +51,7 @@ export const acervoTeologico = {
     publishedAt: 'Pubblicato il',
     authorLabel: 'Autore',
     studySummary: 'Riepilogo dello Studio',
-    sourceLabel: 'Fonte del Messaggio'
+    sourceLabel: 'Fonte del Messaggio',
+    videoLabel: 'Video del Messaggio'
   }
 } as const;

@@ -499,3 +499,27 @@ describe('GSC Regression — Dataset.hasPart schema.org validity', () => {
     });
   }
 });
+
+// ═══════════════════════════════════════════════════════════════════════════════
+//  GSC REGRESSION: Sermon watch pages must embed the video (WNC-10031170)
+//  "Video isn't on a watch page" — VideoObject schema requires an actual
+//  embed on the same page, not just a link to YouTube.
+// ═══════════════════════════════════════════════════════════════════════════════
+
+describe('GSC Regression — Video watch page integrity', () => {
+  it('sermon detail page emits YouTube iframe embed alongside VideoObject schema', () => {
+    const content = readFileSync(join(ROOT, 'app/[locale]/acervo-teologico/[cluster]/[slug]/page.tsx'), 'utf8');
+    // Must emit an iframe pointing at the privacy-enhanced YouTube embed domain.
+    expect(content).toContain('youtube-nocookie.com/embed');
+    // Must emit VideoObject schema WITH embedUrl field (schema.org/VideoObject).
+    expect(content).toContain("'@type': 'VideoObject'");
+    expect(content).toContain('embedUrl:');
+  });
+
+  it('next.config.ts CSP frame-src allows youtube-nocookie.com', () => {
+    const content = readFileSync(join(ROOT, 'next.config.ts'), 'utf8');
+    // Without frame-src, YouTube embeds fall back to default-src 'self' and are blocked.
+    expect(content).toContain('frame-src');
+    expect(content).toContain('youtube-nocookie.com');
+  });
+});

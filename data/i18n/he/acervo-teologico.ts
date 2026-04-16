@@ -51,6 +51,7 @@ export const acervoTeologico = {
     publishedAt: 'פורסם ב-',
     authorLabel: 'מחבר',
     studySummary: 'סיכום המחקר',
-    sourceLabel: 'מקור ההודעה'
+    sourceLabel: 'מקור ההודעה',
+    videoLabel: 'וידאו ההודעה'
   }
 } as const;
