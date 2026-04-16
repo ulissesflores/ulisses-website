@@ -429,3 +429,73 @@ describe('SEO infrastructure — buildCanonical & buildLanguageAlternates', () =
     expect(alternates['en']).toBe('https://ulissesflores.com/en');
   });
 });
+
+// ═══════════════════════════════════════════════════════════════════════════════
+//  GSC REGRESSION: Dataset.hasPart must only contain CreativeWork subclasses
+//  (Fix for WNC-10030322 — "Invalid object type for field hasPart")
+// ═══════════════════════════════════════════════════════════════════════════════
+
+describe('GSC Regression — Dataset.hasPart schema.org validity', () => {
+  // schema.org/hasPart on Dataset: range is CreativeWork (+ subclasses).
+  // Types that live outside the CreativeWork branch (EducationalOccupationalCredential,
+  // Organization, Person, Place, Service, Product, Event) are invalid here.
+  const INVALID_HASPART_TYPES = new Set([
+    'EducationalOccupationalCredential',
+    'Organization',
+    'GovernmentOrganization',
+    'CollegeOrUniversity',
+    'Person',
+    'Place',
+    'Service',
+    'ProfessionalService',
+    'Product',
+    'Event',
+    'Occupation',
+    'JobPosting',
+  ]);
+
+  const hasInvalidType = (typeField: unknown): boolean => {
+    if (Array.isArray(typeField)) {
+      return typeField.some((t) => typeof t === 'string' && INVALID_HASPART_TYPES.has(t));
+    }
+    return typeof typeField === 'string' && INVALID_HASPART_TYPES.has(typeField);
+  };
+
+  const findDatasetNodes = (graph: Array<Record<string, unknown>>) => {
+    return graph.filter((node) => {
+      const t = node['@type'];
+      if (Array.isArray(t)) return t.includes('Dataset');
+      return t === 'Dataset';
+    });
+  };
+
+  for (const file of ['public.jsonld', 'full.jsonld']) {
+    it(`public/${file} — every Dataset.hasPart child is a CreativeWork subclass`, () => {
+      const path = join(ROOT, 'public', file);
+      if (!existsSync(path)) return; // file is regenerated at build time; skip if absent.
+      const data = JSON.parse(readFileSync(path, 'utf8'));
+      const graph = Array.isArray(data['@graph']) ? data['@graph'] : [];
+      const datasets = findDatasetNodes(graph);
+      expect(datasets.length, `${file} should contain at least one Dataset node`).toBeGreaterThan(0);
+
+      const violations: Array<{ datasetId: string; childId: string; childType: unknown }> = [];
+      for (const ds of datasets) {
+        const hasPart = Array.isArray(ds.hasPart) ? ds.hasPart : [];
+        for (const child of hasPart) {
+          if (hasInvalidType((child as Record<string, unknown>)['@type'])) {
+            violations.push({
+              datasetId: String(ds['@id']),
+              childId: String((child as Record<string, unknown>)['@id']),
+              childType: (child as Record<string, unknown>)['@type'],
+            });
+          }
+        }
+      }
+
+      expect(
+        violations,
+        `Invalid Dataset.hasPart children in ${file}:\n${JSON.stringify(violations, null, 2)}`,
+      ).toHaveLength(0);
+    });
+  }
+});

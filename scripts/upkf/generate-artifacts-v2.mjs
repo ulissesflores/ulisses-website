@@ -3557,8 +3557,49 @@ function buildPublicJsonLd({
     }
     return type === 'Organization';
   };
+  // Dataset.hasPart requires CreativeWork (or subclass). Filter out types that
+  // live outside the CreativeWork branch of schema.org, otherwise Google flags
+  // "Invalid object type for field hasPart" (GSC Datasets — WNC-10030322).
+  //
+  // Excluded types (not CreativeWork subclasses):
+  //   - EducationalOccupationalCredential (Intangible)
+  //   - Organization (already filtered via isOrganizationNode)
+  //   - Person, Place, Service, ProfessionalService, Product, etc.
+  //
+  // Certifications still appear in the @graph via `extraNodes`; they're just
+  // not declared as "parts" of the Dataset (which is semantically correct —
+  // they're separate entities recognized by the Person node, not components
+  // of the public knowledge graph document).
+  // Full list of CreativeWork subclasses we emit OR could plausibly emit.
+  // Kept explicit (rather than trying to runtime-resolve schema.org hierarchy)
+  // so the filter is deterministic and reviewable.
+  const CREATIVE_WORK_TYPES = new Set([
+    // Direct CreativeWork + generic
+    'CreativeWork', 'CreativeWorkSeries', 'Collection',
+    // Article family
+    'Article', 'BlogPosting', 'NewsArticle', 'Report', 'ScholarlyArticle', 'TechArticle',
+    // Web pages
+    'WebPage', 'WebSite', 'CollectionPage', 'AboutPage', 'FAQPage', 'ProfilePage',
+    // Media
+    'MediaObject', 'VideoObject', 'AudioObject', 'ImageObject', 'MusicRecording', 'MusicVideoObject',
+    // Software
+    'SoftwareApplication', 'SoftwareSourceCode', 'WebApplication', 'MobileApplication',
+    // Books/publications
+    'Book', 'Chapter', 'Periodical', 'PublicationIssue', 'PublicationVolume', 'Thesis',
+    // Other creative works
+    'Course', 'Dataset', 'Review', 'Painting', 'Photograph', 'ShortStory',
+    'Message', 'Movie', 'MusicComposition', 'Sermon', 'Map', 'Diagram',
+  ]);
+  const isCreativeWorkType = (node) => {
+    const type = node?.['@type'];
+    if (Array.isArray(type)) {
+      return type.some((t) => CREATIVE_WORK_TYPES.has(t));
+    }
+    return CREATIVE_WORK_TYPES.has(type);
+  };
+
   const publicHasPart = [...collectionNodes, ...publicationNodes, ...softwareNodes, ...certificationNodes, ...blogNodes, ...sermonNodes]
-    .filter((node) => !isOrganizationNode(node))
+    .filter((node) => !isOrganizationNode(node) && isCreativeWorkType(node))
     .map((node) => ({ '@id': node['@id'], '@type': node['@type'] || 'CreativeWork' }));
 
   const publicDatasetNode = {
