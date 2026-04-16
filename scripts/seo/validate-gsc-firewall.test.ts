@@ -523,3 +523,25 @@ describe('GSC Regression — Video watch page integrity', () => {
     expect(content).toContain('youtube-nocookie.com');
   });
 });
+
+// ═══════════════════════════════════════════════════════════════════════════════
+//  GSC REGRESSION: Middleware matcher must not eat long file extensions
+//  The matcher regex previously capped extensions at {2,5} which silently
+//  broke routing for .jsonld (6 chars), .markdown (8), etc. This caused
+//  /public.jsonld, /site.jsonld, /full.jsonld to return 404 even though
+//  the files existed in public/, and llms.txt advertised them to crawlers.
+// ═══════════════════════════════════════════════════════════════════════════════
+
+describe('GSC Regression — middleware matcher extension bound', () => {
+  it('middleware matcher allows file extensions up to at least 6 chars (covers .jsonld)', () => {
+    const content = readFileSync(join(ROOT, 'middleware.ts'), 'utf8');
+    // Must NOT be {2,5} — that capped out at .docx and broke .jsonld.
+    const match = content.match(/\[a-z0-9\]\{2,(\d+)\}/);
+    expect(match, 'middleware must declare an extension-length upper bound').not.toBeNull();
+    const upperBound = parseInt(match![1], 10);
+    expect(
+      upperBound,
+      `middleware matcher extension bound is ${upperBound}; must be ≥ 6 to route .jsonld correctly`,
+    ).toBeGreaterThanOrEqual(6);
+  });
+});

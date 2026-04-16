@@ -225,11 +225,16 @@ export function middleware(request: NextRequest) {
 
 // ─── Matcher ───────────────────────────────────────────────────────────────────
 // Blindado: ignores _next internals, API routes, infrastructure files, and any
-// URL with a file extension (covers .ico, .jpg, .webp, .jsonld, .txt, .md, etc.)
+// URL with a file extension (covers .ico, .jpg, .webp, .txt, .md, .pdf, .docx,
+// .xlsx, .jsonld, etc.). The extension bound is {2,8} — previously {2,5}, which
+// silently broke `.jsonld` (6 chars) routing and made /public.jsonld, /site.jsonld,
+// /full.jsonld return 404 even though the files existed in public/. This caused
+// `llms.txt` references to dead URLs and prevented Google from discovering the
+// structured-data files those routes advertise.
 
 export const config = {
   matcher: [
-    '/((?!api|_next|favicon\\.ico|robots\\.txt|sitemap.*|feed\\.xml|\\.well-known|.*\\.[a-z0-9]{2,5}$).*)',
+    '/((?!api|_next|favicon\\.ico|robots\\.txt|sitemap.*|feed\\.xml|\\.well-known|.*\\.[a-z0-9]{2,8}$).*)',
     // Catch double-locale URLs even with file extensions (.pdf, .docx, etc.)
     '/(pt-br|en|es|he|it)/(pt-br|en|es|he|it)/:path*',
   ],
