@@ -32,6 +32,8 @@ export const home = {
       pt: 'PORTUGUÊS (NATIVO)',
       en: 'INGLÊS (FLUENTE)',
       es: 'ESPANHOL (FLUENTE)',
+      it: 'ITALIANO (CONVERSACIONAL)',
+      he: 'HEBRAICO (LEITURA ACADÊMICA)',
     },
   },
   contact: {

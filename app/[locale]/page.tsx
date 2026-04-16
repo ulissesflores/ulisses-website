@@ -101,7 +101,7 @@ export default async function Home({ params }: PageProps) {
           'https://keybase.io/ul1ss3sfl0r3s',
           'https://www.linkedin.com/in/ulisses-flores-75961921',
         ],
-        knowsLanguage: ['pt-BR', 'en', 'es'],
+        knowsLanguage: ['pt-BR', 'en', 'es', 'it', 'he'],
         areaServed: ['Jundiaí', 'Itupeva', 'São Paulo', 'Brasil'], // Geo names stay canonical
         alumniOf: [
           { '@type': 'CollegeOrUniversity', name: 'American Global Tech University (AGTU)', location: 'EUA' },
@@ -160,10 +160,12 @@ export default async function Home({ params }: PageProps) {
                 {t.hero.quote}
               </p>
               
-              <div className="flex justify-center md:justify-start gap-6 text-xs font-mono text-neutral-500">
+              <div className="flex flex-wrap justify-center md:justify-start gap-x-6 gap-y-2 text-xs font-mono text-neutral-500">
                 <span className="flex items-center gap-2"><div className="w-2 h-2 bg-emerald-500 rounded-full"></div> {t.hero.languages.pt}</span>
                 <span className="flex items-center gap-2"><div className="w-2 h-2 bg-emerald-500 rounded-full"></div> {t.hero.languages.en}</span>
                 <span className="flex items-center gap-2"><div className="w-2 h-2 bg-emerald-500 rounded-full"></div> {t.hero.languages.es}</span>
+                <span className="flex items-center gap-2"><div className="w-2 h-2 bg-cyan-500 rounded-full"></div> {t.hero.languages.it}</span>
+                <span className="flex items-center gap-2"><div className="w-2 h-2 bg-purple-500 rounded-full"></div> {t.hero.languages.he}</span>
               </div>
             </div>
           </div>

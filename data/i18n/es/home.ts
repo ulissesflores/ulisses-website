@@ -28,7 +28,9 @@ export const home = {
     languages: {
       pt: 'PORTUGUÉS (NATIVO)',
       en: 'INGLÉS (FLUIDO)',
-      es: 'ESPAÑOL (FLUIDO)'
+      es: 'ESPAÑOL (FLUIDO)',
+      it: 'ITALIANO (CONVERSACIONAL)',
+      he: 'HEBREO (LECTURA ACADÉMICA)'
     }
   },
   contact: {
