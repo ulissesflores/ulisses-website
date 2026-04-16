@@ -12,6 +12,8 @@ import { goldenleaf } from './goldenleaf';
 import { mummRa } from './mumm-ra';
 import { acervoTeologico } from './acervo-teologico';
 import { category } from './category';
+import { consultoria } from './consultoria';
+import { palestras } from './palestras';
 
 const ptBrDict = {
   common,
@@ -28,6 +30,8 @@ const ptBrDict = {
   mummRa,
   acervoTeologico,
   category,
+  consultoria,
+  palestras,
 };
 
 export default ptBrDict;

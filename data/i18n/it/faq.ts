@@ -420,5 +420,75 @@ export const faq = {
       question: 'Come verificare l\'identità digitale di Ulisses Flores?',
       answer: 'L\'identità di Ulisses è verificabile tramite identificatori pubblici: ORCID (0000-0002-6034-7765), Lattes (6905246706890561), Keybase (ul1ss3sfl0r3s), DID e Gitcoin Passport. Tutti i link di validazione sono su ulissesflores.com/identidade.'
     }
+  ] satisfies FaqItem[],
+
+  consultoria: [
+    {
+      question: 'Qual è il prezzo medio della consulenza di Ulisses Flores?',
+      answer: 'Il ticket varia per modalità: Diagnosi Strategica da USD 9.000, Roadmap AI da USD 18.000, Formazione Esecutiva da USD 3.800/giorno. Engagement critici (Architettura, Fractional CTO, Board Advisory, Ricerca) sono quotati su richiesta. Valori equivalenti in BRL/EUR sono forniti nella proposta.'
+    },
+    {
+      question: 'Quali modalità di consulenza offre Ulisses?',
+      answer: 'Sette modalità: Diagnosi Strategica (3-4 settimane), Roadmap AI (6-8 settimane), Architettura di Sistema Critico (8-16 settimane), Governance Dati & Compliance (4-8 settimane), Fractional CTO (retainer mensile, 6 mesi minimo), Board Advisory (retainer mensile) e Formazione Esecutiva In-Company (1-5 giorni).'
+    },
+    {
+      question: 'Quali settori serve Ulisses Flores come consulente?',
+      answer: 'Verticali ancora (80% degli engagement): Finanza & Fintech (HFT, custodia MPC, Web3, modellazione del rischio), Settore Pubblico & Governance (pianificazione strategica, LGPD/GDPR, audit algoritmico) e Hardware/IoT/Deep Tech (edge computing, crittografia incorporata). Verticali aggiuntivi su richiesta includono agribusiness di precisione e istituti di formazione esecutiva.'
+    },
+    {
+      question: 'Ulisses Flores accetta equity al posto del fee?',
+      answer: 'Equity è considerato solo per Board Advisory in startup Series A+ con cap table puliti, governance formale e advisory share standard (FAST/SAFE-A). Per Diagnosi, Roadmap, Architettura, Fractional CTO e Formazione, il pagamento è in fee fisso, senza equity.'
+    },
+    {
+      question: 'In quali lingue Ulisses presta consulenza?',
+      answer: 'Portoghese (madrelingua), Inglese (fluente — consulenza, board, pubblicazioni), Spagnolo (fluente — consulenza LatAm), Italiano (conversazionale, su appuntamento) ed Ebraico (lettura accademica per ricerca teologica ed esegetica).'
+    },
+    {
+      question: 'Come prenotare una conversazione iniziale di diagnosi?',
+      answer: 'La diagnosi iniziale di 30 minuti è gratuita e senza impegno. Invia email a consultoria@ulissesflores.com o usa WhatsApp Business (+55 11 97272-7532) con (1) fascia di budget, (2) urgenza (30/60/90 giorni) e (3) stadio (briefing, RFP, decisione presa). Risposta entro 1 giorno lavorativo.'
+    },
+    {
+      question: 'Ulisses serve aziende fuori dal Brasile?',
+      answer: '100% da remoto via Zoom, Meet o strumento del cliente — servendo Brasile, America Latina, USA, Europa e Israele. Per engagement in presenza internazionali, voli executive e alloggio 4/5★ a carico del cliente. Materiale consegnato in PT/EN/ES.'
+    },
+    {
+      question: 'Esiste NDA reciproco prima della discovery?',
+      answer: 'Sì. NDA reciproco viene firmato prima di qualsiasi discovery approfondito — senza costo aggiuntivo. Modello standard disponibile o accettazione del modello del cliente dopo revisione legale.'
+    }
+  ] satisfies FaqItem[],
+
+  palestras: [
+    {
+      question: 'Quali temi presenta Ulisses Flores nelle conferenze?',
+      answer: 'Sette assi consolidati: AI Generativa per C-Level, AGI e il Futuro del Lavoro, Sovranità Digitale & Cypherpunk, Architettura di Sistemi Critici, Blockchain & Web3 Istituzionale, Resilienza Ciberfinanziaria (LSTM + Legge di Little) e Teologia/Tecnologia/Umanistica. Temi personalizzati accettati con 30 giorni di preavviso.'
+    },
+    {
+      question: 'Quali formati di conferenza sono disponibili?',
+      answer: 'Cinque formati: Keynote (45-60 min, da USD 3.800), Conferenza Tecnica (60-90 min, da USD 3.000), Masterclass Esecutiva (3-4h, da USD 4.800), Workshop In-Company (1-2 giorni, da USD 3.800/giorno) e Tavola Rotonda/Panel (60-90 min, da USD 2.000).'
+    },
+    {
+      question: 'In quali lingue Ulisses Flores tiene conferenze?',
+      answer: 'Portoghese (madrelingua, tutti i formati), Inglese (fluente — keynote, conferenza tecnica, masterclass), Spagnolo (fluente — keynote e conferenze LatAm), Italiano (conversazionale — panel e tavole rotonde con preparazione). Ebraico è usato in ricerca, non in conferenza.'
+    },
+    {
+      question: 'Come richiedere una proposta di conferenza?',
+      answer: 'Invia briefing via email a palestras@ulissesflores.com con (1) tipo di evento, (2) tema desiderato, (3) data e luogo, (4) pubblico stimato, (5) durata e formato, (6) budget (opzionale). Proposta formale entro 3 giorni lavorativi.'
+    },
+    {
+      question: 'Ulisses tiene conferenze pro bono?',
+      answer: 'Sì, con cap di 4 eventi all\'anno e lead time minimo di 90 giorni. Accademia, chiesa locale e organizzazioni di impatto cristiano prioritarie. Terzo settore cristiano ha compenso ridotto (USD 1-2k) senza contare contro il cap pro bono.'
+    },
+    {
+      question: 'Qual è la policy di registrazione e diritti d\'immagine?',
+      answer: 'Registrazione e uso istituzionale permessi con co-crediti (es. "Conferenza di Ulisses Flores all\'Evento X"). Uso commerciale o ridistribuzione tramite accordo scritto specifico. Slide in PT/EN/ES consegnate 7 giorni prima o dopo l\'evento per accordo.'
+    },
+    {
+      question: 'Come funziona la cancellazione di una conferenza?',
+      answer: 'Policy di cancellazione chiara: fino a 30 giorni prima dell\'evento — rimborso totale. Tra 30 e 7 giorni — 50% trattenuto. Meno di 7 giorni — 100% trattenuto. Prenotazione confermata con 50% anticipato e contratto firmato; saldo entro 7 giorni dopo l\'evento.'
+    },
+    {
+      question: 'Ulisses tiene conferenze in università?',
+      answer: 'Sì. Conferenze accademiche sono prioritarie e possono entrare nel programma pro bono (4/anno) o qualificarsi per compenso ridotto per istituzioni pubbliche. Presentazione accademica con riferimenti, paper e dati primari — in PT/EN/ES.'
+    }
   ] satisfies FaqItem[]
 } as const;

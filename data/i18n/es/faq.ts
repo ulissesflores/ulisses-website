@@ -420,5 +420,75 @@ export const faq = {
       question: '¿Cómo verificar la identidad digital de Ulisses Flores?',
       answer: 'La identidad de Ulisses es verificable a través de identificadores públicos: ORCID (0000-0002-6034-7765), Lattes (6905246706890561), Keybase (ul1ss3sfl0r3s), DID y Gitcoin Passport. Todos los enlaces de validación están en ulissesflores.com/identidade.'
     }
+  ] satisfies FaqItem[],
+
+  consultoria: [
+    {
+      question: '¿Cuál es el precio promedio de la consultoría de Ulisses Flores?',
+      answer: 'El ticket varía por modalidad: Diagnóstico Estratégico desde USD 9.000, Roadmap de IA desde USD 18.000, Capacitación Ejecutiva desde USD 3.800/día. Engagements críticos (Arquitectura, Fractional CTO, Board Advisory, Investigación) son cotizados a consultar. Valores equivalentes en BRL/EUR son entregados en la propuesta.'
+    },
+    {
+      question: '¿Qué modalidades de consultoría ofrece Ulisses?',
+      answer: 'Siete modalidades: Diagnóstico Estratégico (3-4 semanas), Roadmap de IA (6-8 semanas), Arquitectura de Sistema Crítico (8-16 semanas), Gobernanza de Datos & Compliance (4-8 semanas), Fractional CTO (retainer mensual, 6 meses mínimo), Board Advisory (retainer mensual) y Capacitación Ejecutiva In-Company (1-5 días).'
+    },
+    {
+      question: '¿Qué sectores atiende Ulisses Flores como consultor?',
+      answer: 'Verticales ancla (80% de los engagements): Financiero & Fintech (HFT, custodia MPC, Web3, modelado de riesgo), Sector Público & Gobernanza (planificación estratégica, LGPD/GDPR, auditoría algorítmica) y Hardware/IoT/Deep Tech (edge computing, criptografía embebida). Verticales adicionales bajo demanda incluyen agronegocio de precisión e instituciones de educación ejecutiva.'
+    },
+    {
+      question: '¿Ulisses Flores acepta equity en lugar de fee?',
+      answer: 'Equity se considera solo para Board Advisory en startups Series A+ con cap table limpio, gobernanza formal y advisory share estándar (FAST/SAFE-A). Para Diagnósticos, Roadmaps, Arquitectura, Fractional CTO y Capacitación, el pago es en fee fijo, sin equity.'
+    },
+    {
+      question: '¿En qué idiomas presta consultoría Ulisses?',
+      answer: 'Portugués (nativo), Inglés (fluido — consultoría, board, publicaciones), Español (fluido — consultoría LatAm), Italiano (conversacional, bajo agenda) y Hebreo (lectura académica para investigación teológica y exegética).'
+    },
+    {
+      question: '¿Cómo agendar una conversación inicial de diagnóstico?',
+      answer: 'El diagnóstico inicial de 30 minutos es gratuito y sin compromiso. Envía email a consultoria@ulissesflores.com o usa WhatsApp Business (+55 11 97272-7532) con (1) rango de presupuesto, (2) urgencia (30/60/90 días) y (3) etapa (briefing, RFP, decisión tomada). Respuesta en hasta 1 día hábil.'
+    },
+    {
+      question: '¿Ulisses atiende empresas fuera de Brasil?',
+      answer: '100% remoto vía Zoom, Meet o herramienta del cliente — atendiendo Brasil, América Latina, EE.UU., Europa e Israel. Para engagements presenciales internacionales, pasajes ejecutivos y hospedaje 4/5★ por cuenta del cliente. Material entregado en PT/EN/ES.'
+    },
+    {
+      question: '¿Existe NDA mutuo antes de la discovery?',
+      answer: 'Sí. NDA mutuo se firma antes de cualquier discovery profunda — sin costo adicional. Modelo estándar disponible o aceptación del modelo del cliente tras revisión jurídica.'
+    }
+  ] satisfies FaqItem[],
+
+  palestras: [
+    {
+      question: '¿Qué temas presenta Ulisses Flores en conferencias?',
+      answer: 'Siete ejes consolidados: IA Generativa para C-Level, AGI y el Futuro del Trabajo, Soberanía Digital & Cypherpunk, Arquitectura de Sistemas Críticos, Blockchain & Web3 Institucional, Resiliencia Ciberfinanciera (LSTM + Ley de Little) y Teología/Tecnología/Humanidades. Temas personalizados aceptados con 30 días de anticipación.'
+    },
+    {
+      question: '¿Qué formatos de conferencia están disponibles?',
+      answer: 'Cinco formatos: Keynote (45-60 min, desde USD 3.800), Conferencia Técnica (60-90 min, desde USD 3.000), Masterclass Ejecutiva (3-4h, desde USD 4.800), Workshop In-Company (1-2 días, desde USD 3.800/día) y Mesa Redonda/Panel (60-90 min, desde USD 2.000).'
+    },
+    {
+      question: '¿En qué idiomas dicta conferencias Ulisses Flores?',
+      answer: 'Portugués (nativo, todos los formatos), Inglés (fluido — keynote, conferencia técnica, masterclass), Español (fluido — keynote y conferencias LatAm), Italiano (conversacional — paneles y mesas redondas con preparación). Hebreo se usa en investigación, no en conferencia.'
+    },
+    {
+      question: '¿Cómo solicitar una propuesta de conferencia?',
+      answer: 'Envía briefing por email a palestras@ulissesflores.com con (1) tipo de evento, (2) tema deseado, (3) fecha y lugar, (4) audiencia estimada, (5) duración y formato, (6) presupuesto (opcional). Propuesta formal en hasta 3 días hábiles.'
+    },
+    {
+      question: '¿Ulisses dicta conferencias pro bono?',
+      answer: 'Sí, con cap de 4 eventos por año y lead time mínimo de 90 días. Academia, iglesia local y organizaciones de impacto cristiano priorizadas. Tercer sector cristiano tiene cachet reducido (USD 1-2k) sin contar contra el cap pro bono.'
+    },
+    {
+      question: '¿Cuál es la política de grabación y derechos de imagen?',
+      answer: 'Grabación y uso institucional permitidos con co-créditos (ej. "Conferencia de Ulisses Flores en el Evento X"). Uso comercial o redistribución mediante acuerdo escrito específico. Slides en PT/EN/ES entregados 7 días antes o después del evento por acuerdo.'
+    },
+    {
+      question: '¿Cómo funciona la cancelación de una conferencia?',
+      answer: 'Política de cancelación clara: hasta 30 días antes del evento — reembolso total. Entre 30 y 7 días — 50% retenido. Menos de 7 días — 100% retenido. Reserva firme con 50% anticipado y contrato firmado; saldo hasta 7 días después del evento.'
+    },
+    {
+      question: '¿Ulisses dicta conferencias para universidades?',
+      answer: 'Sí. Conferencias académicas son prioritarias y pueden entrar en el programa pro bono (4/año) o calificar para cachet reducido para instituciones públicas. Presentación académica con referencias, papers y datos primarios — en PT/EN/ES.'
+    }
   ] satisfies FaqItem[]
 } as const;

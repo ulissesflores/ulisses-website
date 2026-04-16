@@ -420,5 +420,75 @@ export const faq = {
       question: 'How to verify Ulisses Flores\' digital identity?',
       answer: 'Ulisses\' identity is verifiable through public identifiers: ORCID (0000-0002-6034-7765), Lattes (6905246706890561), Keybase (ul1ss3sfl0r3s), DID, and Gitcoin Passport. All validation links are on ulissesflores.com/identidade.'
     }
+  ] satisfies FaqItem[],
+
+  consultoria: [
+    {
+      question: 'What is the average price of Ulisses Flores\' consulting?',
+      answer: 'Ticket varies by modality: Strategic Diagnostic from $9,000 USD, AI Roadmap from $18,000 USD, Executive Training from $3,800 USD/day. Critical engagements (Architecture, Fractional CTO, Board Advisory, Research) are quoted on request. Equivalent values in BRL/EUR are provided in the proposal.'
+    },
+    {
+      question: 'Which consulting modalities does Ulisses offer?',
+      answer: 'Seven modalities: Strategic Diagnostic (3-4 weeks), AI Roadmap (6-8 weeks), Critical Systems Architecture (8-16 weeks), Data Governance & Compliance (4-8 weeks), Fractional CTO (monthly retainer, 6-month minimum), Board Advisory (monthly retainer), and In-Company Executive Training (1-5 days).'
+    },
+    {
+      question: 'Which sectors does Ulisses Flores serve as a consultant?',
+      answer: 'Anchor verticals (80% of engagements): Finance & Fintech (HFT, MPC custody, Web3, risk modeling), Public Sector & Governance (strategic planning, LGPD/GDPR, algorithmic audit), and Hardware/IoT/Deep Tech (edge computing, embedded cryptography). Additional verticals on demand include precision agribusiness and executive education institutions.'
+    },
+    {
+      question: 'Does Ulisses Flores accept equity instead of fees?',
+      answer: 'Equity is considered only for Board Advisory at Series A+ startups with clean cap tables, formal governance, and standard advisory share (FAST/SAFE-A). For Diagnostics, Roadmaps, Architecture, Fractional CTO, and Training, payment is in fixed fee with no equity.'
+    },
+    {
+      question: 'In which languages does Ulisses provide consulting?',
+      answer: 'Portuguese (native), English (fluent — consulting, board, publications), Spanish (fluent — LatAm consulting), Italian (conversational, by appointment), and Hebrew (academic reading for theological and exegetical research).'
+    },
+    {
+      question: 'How to book an initial diagnostic call?',
+      answer: 'The 30-minute initial diagnostic is free and with no commitment. Email consultoria@ulissesflores.com or use WhatsApp Business (+55 11 97272-7532) sharing (1) budget range, (2) urgency (30/60/90 days), and (3) stage (briefing, RFP, decision made). Reply within 1 business day.'
+    },
+    {
+      question: 'Does Ulisses serve clients outside Brazil?',
+      answer: '100% remote via Zoom, Meet, or client tools — serving Brazil, Latin America, USA, Europe, and Israel. For international on-site engagements, business-class flights and 4/5★ lodging covered by the client. Material delivered in PT/EN/ES.'
+    },
+    {
+      question: 'Is there a mutual NDA before discovery?',
+      answer: 'Yes. Mutual NDA is signed before any deep discovery — no extra cost. Standard template available, or client template accepted after legal review.'
+    }
+  ] satisfies FaqItem[],
+
+  palestras: [
+    {
+      question: 'Which topics does Ulisses Flores present?',
+      answer: 'Seven consolidated axes: Generative AI for C-Level, AGI and the Future of Work, Digital Sovereignty & Cypherpunk, Critical Systems Architecture, Institutional Blockchain & Web3, Cyber-Financial Resilience (LSTM + Little\'s Law), and Theology/Technology/Humanities. Custom topics accepted with 30-day notice.'
+    },
+    {
+      question: 'Which speaking formats are available?',
+      answer: 'Five formats: Keynote (45-60 min, from $3,800 USD), Technical Talk (60-90 min, from $3,000 USD), Executive Masterclass (3-4h, from $4,800 USD), In-Company Workshop (1-2 days, from $3,800 USD/day), and Roundtable/Panel (60-90 min, from $2,000 USD).'
+    },
+    {
+      question: 'In which languages does Ulisses Flores speak?',
+      answer: 'Portuguese (native, all formats), English (fluent — keynote, technical talk, masterclass), Spanish (fluent — keynote and LatAm talks), Italian (conversational — panels and roundtables with preparation). Hebrew is used in research, not for speaking.'
+    },
+    {
+      question: 'How to request a speaking proposal?',
+      answer: 'Send briefing by email to palestras@ulissesflores.com with (1) event type, (2) desired topic, (3) date and location, (4) estimated audience, (5) duration and format, (6) budget (optional). Formal proposal within 3 business days.'
+    },
+    {
+      question: 'Does Ulisses give pro bono talks?',
+      answer: 'Yes, with a cap of 4 events per year and 90-day minimum lead time. Academic, local church, and Christian-impact organizations prioritized. Christian non-profit has reduced fee ($1-2k USD) without counting against the pro bono cap.'
+    },
+    {
+      question: 'What is the recording and image rights policy?',
+      answer: 'Recording and institutional use allowed with co-credits (e.g. "Talk by Ulisses Flores at Event X"). Commercial use or redistribution under specific written agreement. Slides in PT/EN/ES delivered 7 days before or after the event by agreement.'
+    },
+    {
+      question: 'How does talk cancellation work?',
+      answer: 'Clear cancellation policy: up to 30 days before the event — full refund. Between 30 and 7 days — 50% retained. Less than 7 days — 100% retained. Firm booking with 50% upfront and signed contract; balance up to 7 days after the event.'
+    },
+    {
+      question: 'Does Ulisses speak at universities?',
+      answer: 'Yes. Academic talks are prioritized and may enter the pro bono program (4/year) or qualify for reduced fees for public institutions. Academic presentation with references, papers, and primary data — in PT/EN/ES.'
+    }
   ] satisfies FaqItem[]
 } as const;

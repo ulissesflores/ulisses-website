@@ -531,4 +531,90 @@ export const faq = {
         'A identidade de Ulisses é verificável através de identificadores públicos: ORCID (0000-0002-6034-7765), Lattes (6905246706890561), Keybase (ul1ss3sfl0r3s), DID e Gitcoin Passport. Todos os links de validação estão em ulissesflores.com/identidade.',
     },
   ] satisfies FaqItem[],
+
+  consultoria: [
+    {
+      question: 'Qual é o preço médio da consultoria de Ulisses Flores?',
+      answer:
+        'O ticket varia por modalidade: Diagnóstico Estratégico a partir de R$ 45.000, Roadmap de IA a partir de R$ 90.000, Treinamento Executivo a partir de R$ 18.000/dia. Engajamentos críticos (Arquitetura, Fractional CTO, Board Advisory, Pesquisa) são cotados sob consulta. Para clientes internacionais, valores equivalentes em USD/EUR são fornecidos na proposta.',
+    },
+    {
+      question: 'Em quais modalidades de consultoria Ulisses atua?',
+      answer:
+        'Sete modalidades: Diagnóstico Estratégico (3-4 semanas), Roadmap de IA (6-8 semanas), Arquitetura de Sistema Crítico (8-16 semanas), Governança de Dados & Compliance (4-8 semanas), Fractional CTO (retainer mensal, 6 meses mínimo), Board Advisory (retainer mensal) e Treinamento Executivo In-Company (1-5 dias).',
+    },
+    {
+      question: 'Quais setores Ulisses Flores atende como consultor?',
+      answer:
+        'Verticais-âncora (80% dos engajamentos): Financeiro & Fintech (HFT, MPC custody, Web3, modelagem de risco), Setor Público & Governança (planejamento estratégico, LGPD, auditoria algorítmica) e Hardware/IoT/Deep Tech (edge computing, criptografia embarcada). Verticais adicionais sob demanda incluem agronegócio de precisão e instituições de educação executiva.',
+    },
+    {
+      question: 'Ulisses Flores aceita equity em vez de fee?',
+      answer:
+        'Equity é considerado apenas para Board Advisory em startups Series A+ com cap table limpo, governança formal e advisory share standard (FAST/SAFE-A). Para Diagnósticos, Roadmaps, Arquitetura, Fractional CTO e Treinamento o pagamento é em fee fixo, sem equity.',
+    },
+    {
+      question: 'Em quais idiomas Ulisses presta consultoria?',
+      answer:
+        'Português (nativo), Inglês (fluente — consultoria, board e publicações), Espanhol (fluente — consultoria LatAm), Italiano (conversacional, sob agendamento) e Hebraico (leitura acadêmica para pesquisa teológica e exegética).',
+    },
+    {
+      question: 'Como agendar uma conversa inicial de diagnóstico?',
+      answer:
+        'O diagnóstico inicial de 30 minutos é gratuito e sem compromisso. Envie email para consultoria@ulissesflores.com ou use o WhatsApp Business (+55 11 97272-7532) com (1) faixa de orçamento, (2) urgência (30/60/90 dias) e (3) estágio (briefing, RFP, decisão tomada). Retorno em até 1 dia útil.',
+    },
+    {
+      question: 'Ulisses atende empresas fora do Brasil?',
+      answer:
+        'Sim. 100% remoto via Zoom, Meet ou ferramenta do cliente — atendendo Brasil, América Latina, EUA, Europa e Israel. Para engajamentos presenciais internacionais, passagens executivas e hospedagem 4/5★ por conta do cliente. Material entregue em PT/EN/ES.',
+    },
+    {
+      question: 'Existe NDA mútuo antes da discovery?',
+      answer:
+        'Sim. NDA mútuo é assinado antes de qualquer discovery profunda — sem custo adicional. Modelo padrão disponível ou aceite do modelo do cliente após revisão jurídica.',
+    },
+  ] satisfies FaqItem[],
+
+  palestras: [
+    {
+      question: 'Quais temas Ulisses Flores apresenta em palestras?',
+      answer:
+        'Sete eixos consolidados: IA Generativa para C-Level, AGI e o Futuro do Trabalho, Soberania Digital & Cypherpunk, Arquitetura de Sistemas Críticos, Blockchain & Web3 Institucional, Resiliência Ciberfinanceira (LSTM + Lei de Little) e Teologia/Tecnologia/Humanidades. Temas customizados são aceitos com 30 dias de antecedência.',
+    },
+    {
+      question: 'Quais formatos de palestra estão disponíveis?',
+      answer:
+        'Cinco formatos: Keynote (45-60 min, a partir de R$ 18.000), Palestra Técnica (60-90 min, a partir de R$ 14.000), Masterclass Executiva (3-4h, a partir de R$ 22.000), Workshop In-Company (1-2 dias, a partir de R$ 18.000/dia) e Mesa Redonda/Painel (60-90 min, a partir de R$ 9.000).',
+    },
+    {
+      question: 'Em quais idiomas Ulisses Flores palestra?',
+      answer:
+        'Português (nativo, todos os formatos), Inglês (fluente — keynote, palestra técnica, masterclass), Espanhol (fluente — keynote e palestra LatAm), Italiano (conversacional — painéis e mesas redondas com preparação prévia). Hebraico é usado em pesquisa, não em palestra.',
+    },
+    {
+      question: 'Como solicitar uma proposta de palestra?',
+      answer:
+        'Envie briefing por email para palestras@ulissesflores.com com (1) tipo de evento, (2) tema desejado, (3) data e local, (4) público estimado, (5) duração e formato, (6) orçamento (opcional). Resposta com proposta formal em até 3 dias úteis.',
+    },
+    {
+      question: 'Ulisses faz palestras pro bono?',
+      answer:
+        'Sim, com cap de 4 eventos por ano e lead time mínimo de 90 dias. Priorizamos academia, igreja local e organizações de impacto cristão. Terceiro setor cristão tem cachê reduzido (R$ 4-8k) sem entrar no contador pro bono.',
+    },
+    {
+      question: 'Qual a política de gravação e direitos de imagem?',
+      answer:
+        'Gravação e uso institucional permitidos com co-créditos (ex: "Palestra de Ulisses Flores no Evento X"). Uso comercial ou redistribuição mediante acordo específico em contrato. Slides em PT/EN/ES entregues 7 dias antes ou após o evento conforme acordo.',
+    },
+    {
+      question: 'Como funciona o cancelamento de uma palestra?',
+      answer:
+        'Política de cancelamento clara: até 30 dias antes do evento — reembolso total. Entre 30 e 7 dias — 50% retido. Menos de 7 dias do evento — 100% retido. Confirmação firme com 50% antecipado e contrato assinado; saldo até 7 dias após o evento.',
+    },
+    {
+      question: 'Ulisses palestra para universidades?',
+      answer:
+        'Sim. Palestras acadêmicas são prioritárias e podem entrar no programa pro bono (4/ano) ou em cachê reduzido para instituições públicas. Apresentação acadêmica com referências, papers e dados primários — em PT/EN/ES.',
+    },
+  ] satisfies FaqItem[],
 } as const;

@@ -134,6 +134,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const identidadeEntry = maybeMakeSitemapEntry('/identidade', upkfMeta.generatedAt, 'daily', 0.92);
 
+  const commercialEntries = [
+    maybeMakeSitemapEntry('/consultoria', upkfMeta.generatedAt, 'weekly', 0.95),
+    maybeMakeSitemapEntry('/palestras', upkfMeta.generatedAt, 'weekly', 0.92),
+  ].filter((entry): entry is MetadataRoute.Sitemap[number] => Boolean(entry));
+
   const simulationEntries = [
     maybeMakeSitemapEntry('/simulacoes', upkfMeta.generatedAt, 'weekly', 0.72),
     maybeMakeSitemapEntry('/simulacoes/ia-2027', upkfMeta.generatedAt, 'weekly', 0.68),

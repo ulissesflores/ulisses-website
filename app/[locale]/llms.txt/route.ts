@@ -18,6 +18,8 @@ const IDENTITY = `# ulissesflores.com
 
 const SECTIONS = [
   { path: '/', key: 'Home' },
+  { path: '/consultoria', key: 'Consulting' },
+  { path: '/palestras', key: 'Speaking' },
   { path: '/projeto-psi', key: 'Project PSI' },
   { path: '/simulacoes', key: 'Simulations' },
   { path: '/simulacoes/ia-2027', key: 'IA 2027' },

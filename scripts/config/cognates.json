@@ -56,7 +56,20 @@
     "MV9 Web & Sistemas", "C3 Group / EconoFísica",
     "Manifesto",
     "© 2026 Codex Hash Ltda. All rights reserved.",
-    "UlissesFlores.com • v10.0 • State of the Art"
+    "UlissesFlores.com • v10.0 • State of the Art",
+    "Fractional CTO", "Board Advisory", "Keynote", "Workshop in-company",
+    "WhatsApp Business", "Network introductions",
+    "Hardware Security · Deep Tech", "Hardware, IoT & Deep Tech",
+    "Fintech LatAm",
+    "Comercial · anonimizado",
+    "primary", "secondary", "tertiary",
+    "USD 2-4k", "USD 3-6k", "USD 4-8k", "USD 5-10k",
+    "45-60 min", "60-90 min",
+    "Keynote (45-60 min)",
+    "board advisory tecnologia", "consultor blockchain",
+    "Co-inventor Codex Hash",
+    "Material", "Internacional", "Remoto", "Presencial Brasil",
+    "Internacional (USD)", "Tipo de evento", "Públicos atendidos"
   ],
 
   "ptEsCognates": [
@@ -78,13 +91,30 @@
     "Fortaleza Física", "Whitepaper Técnico",
     "IoT & Agricultura",
     "Capacidades Agent-1 (Abr 2026)",
-    ":: Arsenal Técnico & Humanidades"
+    ":: Arsenal Técnico & Humanidades",
+    "Agendar diagnóstico", "Agendar diagnóstico (30 min)", "Ver modalidades",
+    "Diagnóstico", "Diagnóstico Estratégico",
+    "Roadmap de IA", "Roadmap Estratégico de IA", "Roadmap 18 meses",
+    "ADRs versionadas", "Políticas internas",
+    "3-4 semanas", "6-8 semanas", "4-8 semanas", "8-16 semanas", "3-4 horas",
+    "Casos representativos", "Comercial · público",
+    "Presencial", "Híbrido", "Remoto global",
+    "Abrir agenda", "Abrir WhatsApp", "Email dedicado", "Enviar email",
+    "Material gratuito",
+    "ITALIANO (CONVERSACIONAL)",
+    "IA Generativa para C-Level", "Blockchain & Web3 Institucional",
+    "C-Level e Board",
+    "Formato",
+    "Material"
   ],
 
   "ptItCognates": [
     "Ulisses Flores teologia",
     "Manifesto",
-    "acervo teológico"
+    "acervo teológico",
+    "C-Level e Board",
+    "Formato",
+    "Material"
   ],
 
   "skipIdentityNamespaces": ["faq"]
