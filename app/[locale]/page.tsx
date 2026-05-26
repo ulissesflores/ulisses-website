@@ -441,6 +441,24 @@ export default async function Home({ params }: PageProps) {
            </div>
         </section>
 
+        {/* Services CTA — internal links to commercial pages (all locales) */}
+        <section id="servicos" className="mb-24 scroll-mt-24 border border-emerald-500/20 bg-emerald-500/5 rounded-2xl p-8">
+          <h2 className="text-2xl font-bold mb-4">{dict.common.nav.categories[0].label}</h2>
+          <div className="flex flex-wrap gap-4">
+            {dict.common.footer.links
+              .filter((l) => l.href === '/consultoria' || l.href === '/palestras')
+              .map((l) => (
+                <Link
+                  key={l.href}
+                  href={localePath(l.href, locale)}
+                  className="inline-flex items-center gap-2 px-5 py-3 rounded-lg bg-emerald-500/15 border border-emerald-500/30 text-emerald-200 hover:bg-emerald-500/25 transition-colors font-semibold"
+                >
+                  {l.label} →
+                </Link>
+              ))}
+          </div>
+        </section>
+
         {/* FAQ Section */}
         <section id="faq" className="mb-12 scroll-mt-24">
           <FaqSection items={[...tFaq]} sectionTitle={t.faq.sectionTitle} />
