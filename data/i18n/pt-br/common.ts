@@ -52,6 +52,13 @@ export const common = {
   footer: {
     tagline: 'Ulisses Flores · Ground Truth Knowledge Hub',
     identityLink: 'Sovereign Identity Graph',
+    orcid: 'ORCID',
+    links: [
+      { label: 'Consultoria', href: '/consultoria' },
+      { label: 'Palestras', href: '/palestras' },
+      { label: 'Research', href: '/research' },
+      { label: 'Acervo Teológico', href: '/acervo-teologico' },
+    ],
   },
   faqSection: {
     defaultTitle: 'Perguntas Frequentes',
