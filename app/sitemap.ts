@@ -154,6 +154,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     makeSitemapEntry('/', latestSiteDate, 'weekly', 1),
     ...(identidadeEntry ? [identidadeEntry] : []),
+    ...commercialEntries,
     ...simulationEntries,
     ...collectionEntries,
     ...publicationEntries,
