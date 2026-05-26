@@ -28,13 +28,12 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       title: t.meta.ogTitle,
       description: t.meta.ogDescription,
       locale: localeToOgLocale[locale],
-      images: [{ url: ogImage, width: 1200, height: 630, alt: t.meta.ogTitle }],
+      // og:image inherits file convention app/[locale]/opengraph-image.tsx (1200x630)
     },
     twitter: {
       card: 'summary_large_image',
       title: t.meta.ogTitle,
       description: t.meta.ogDescription,
-      images: [ogImage],
     },
     other: { 'geo.region': 'BR-SP', 'geo.placename': 'Jundiai' },
   };

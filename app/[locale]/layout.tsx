@@ -35,7 +35,6 @@ const siteOrigin = new URL(siteUrl).origin;
 const defaultDescription =
   upkfMeta.description['pt-BR'] ||
   'Cientista economico, analista de sistemas e pesquisador em IA, economia e sistemas complexos.';
-const defaultOgImage = `${siteOrigin}/carlos-ulisses-flores-cto.jpg`;
 
 // ─── Static params generation ───────────────────────────────────────────────────
 
@@ -100,25 +99,15 @@ export async function generateMetadata({ params }: LayoutProps): Promise<Metadat
       siteName: 'ulissesflores.com',
       locale: ogLocale,
       alternateLocale: alternateOgLocales,
-      images: [
-        {
-          url: defaultOgImage,
-          width: 1200,
-          height: 630,
-          alt: dict.home.meta.ogImageAlt,
-        },
-      ],
+      // og:image provided by file convention app/[locale]/opengraph-image.tsx (1200x630)
     },
     twitter: {
       card: 'summary_large_image',
       title: dict.home.meta.ogTitle,
       description: dict.home.meta.ogDescription,
-      images: [defaultOgImage],
+      // twitter image inherits the opengraph-image route
     },
-    icons: {
-      icon: '/carlos-ulisses-flores-cto.jpg',
-      apple: '/carlos-ulisses-flores-cto.jpg',
-    },
+    // icons handled by file-convention routes: app/icon.tsx, app/apple-icon.tsx, app/manifest.ts
     other: {
       'geo.region': 'BR-SP',
       'geo.placename': 'Sao Paulo',

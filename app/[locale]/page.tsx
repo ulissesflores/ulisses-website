@@ -35,14 +35,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       title: t.meta.ogTitle,
       description: t.meta.ogDescription,
       locale: localeToOgLocale[locale],
-      images: [
-        {
-          url: 'https://ulissesflores.com/carlos-ulisses-flores-cto.jpg',
-          width: 800,
-          height: 800,
-          alt: t.meta.ogImageAlt,
-        },
-      ],
+      // og:image provided by file convention app/[locale]/opengraph-image.tsx (1200x630)
     },
   };
 }

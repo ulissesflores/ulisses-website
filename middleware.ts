@@ -53,6 +53,10 @@ const INFRA_PATHS = new Set([
   '/sitemap-resources.xml',
   '/llms.txt',
   '/llms-full.txt',
+  // App Router metadata file-convention routes (no locale prefix)
+  '/icon',
+  '/apple-icon',
+  '/manifest.webmanifest',
 ]);
 
 const DOUBLE_LOCALE_PATTERN = /^\/(pt-br|en|es|he|it)\/(pt-br|en|es|he|it)(\/|$)/i;
@@ -234,7 +238,7 @@ export function middleware(request: NextRequest) {
 
 export const config = {
   matcher: [
-    '/((?!api|_next|favicon\\.ico|robots\\.txt|sitemap.*|feed\\.xml|\\.well-known|.*\\.[a-z0-9]{2,8}$).*)',
+    '/((?!api|_next|favicon\\.ico|robots\\.txt|sitemap.*|feed\\.xml|icon|apple-icon|manifest\\.webmanifest|\\.well-known|.*\\.[a-z0-9]{2,8}$).*)',
     // Catch double-locale URLs even with file extensions (.pdf, .docx, etc.)
     '/(pt-br|en|es|he|it)/(pt-br|en|es|he|it)/:path*',
   ],
