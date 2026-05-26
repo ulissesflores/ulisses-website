@@ -1,12 +1,12 @@
 /* AUTO-GENERATED FILE. DO NOT EDIT MANUALLY.
  * Source: public/upkf-source.md
- * Generated at: 2026-03-12
+ * Generated at: 2026-02-21
  */
 
 export const upkfMeta = {
   "upkfTitle": "Ulisses Flores — Sovereign UPKF (Universal Personal Knowledge Framework)",
   "upkfVersion": "3.3",
-  "generatedAt": "2026-03-12",
+  "generatedAt": "2026-02-21",
   "schemaTarget": "Schema.org JSON-LD via deterministic derivation",
   "sourcePath": "public/upkf-source.md",
   "displayName": "Carlos Ulisses Flores",
@@ -612,7 +612,7 @@ export const upkfMeta = {
     }
   ],
   "heritage": {
-    "publishPublic": true,
+    "publishPublic": false,
     "clusters": [
       {
         "title": "Paternal Lineage — Flores / Benavides / Zapata (El Salvador — Sephardic)",
@@ -812,15 +812,15 @@ export const upkfMeta = {
     "sourceMd": "/upkf-source.md"
   },
   "jsonldCoverage": {
-    "markdownBytes": 85582,
-    "markdownLines": 1397,
+    "markdownBytes": 85237,
+    "markdownLines": 1391,
     "sectionCount": 102,
     "siteGraphNodes": 44,
     "publicGraphNodes": 187,
     "fullGraphNodes": 290,
-    "siteJsonldBytes": 30412,
-    "publicJsonldBytes": 172842,
-    "fullJsonldBytes": 276839,
+    "siteJsonldBytes": 29108,
+    "publicJsonldBytes": 171538,
+    "fullJsonldBytes": 275457,
     "corpusFiles": 0,
     "corpusSnippets": 0,
     "corpusDirs": [],
@@ -1170,34 +1170,6 @@ export const siteJsonLd = {
           "@type": "PropertyValue",
           "propertyID": "geographicallyServes",
           "value": "Itupeva, Jundiaí, Campinas, São Paulo, Brazil, Italy, United States, El Salvador, Israel"
-        },
-        {
-          "@type": "PropertyValue",
-          "propertyID": "heritage:a-paterna-el-salvador",
-          "name": "Paternal Lineage — Flores / Benavides / Zapata (El Salvador — Sephardic)",
-          "value": "Flores, Benavides, Zapata — San Miguel, El Salvador — probability HIGH — A região de San Miguel, El Salvador, serviu como \"fronteira segura\" para famílias fugindo"
-        },
-        {
-          "@type": "PropertyValue",
-          "propertyID": "heritage:b-materna-brasil-sefardita",
-          "name": "Maternal Lineage — Rodrigues Galvão / Ribeiro / Mendonça (Brasil — Sephardic)",
-          "value": "Rodrigues Galvão, Ribeiro, Mendonça — Minas Gerais → Jundiaí, São Paulo — probability HIGH — Migração clássica de Cristãos-Novos saindo de Minas Gerais para o \"Oeste Paulista\" (Jundiaí)"
-        },
-        {
-          "@type": "PropertyValue",
-          "propertyID": "heritage:c-materna-brasil-italiana",
-          "name": "Maternal Lineage — Di Bartolomeo (Brasil — Italiana)",
-          "value": "probability N/A (Origem Católica Europeia) — \"Bartolomeu\" é a aportuguesação cartorial. O original \"Di Bartolomeo\" aponta para a região"
-        },
-        {
-          "@type": "PropertyValue",
-          "propertyID": "heritage:synthesis-sephardic",
-          "value": "Dupla convergência (Paterna + Materna) de alta probabilidade."
-        },
-        {
-          "@type": "PropertyValue",
-          "propertyID": "heritage:synthesis-italian",
-          "value": "Reconstrução do sobrenome Bartolomeu → Di Bartolomeo."
         }
       ],
       "worksFor": {
