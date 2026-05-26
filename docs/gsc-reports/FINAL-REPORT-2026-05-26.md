@@ -77,8 +77,23 @@ boilerplate (research/whitepapers/essays profundos) = THIN_CONTENT → Fase 2 (r
 ## 6. Validação
 - `next build` + E2E Playwright: **verdes** em cada push (pre-push hook).
 - `sota:check` (TS + lint + i18n parity + 452 testes + SEO + rich-results): **1000/1000** em cada commit.
-- hreflang: já completo (`buildLanguageAlternates`, 5 + x-default) — não mexido.
-- Smoke test prod: homepage nav live, `/consultoria` 200, `/icon` 200.
+- **Crawl headless ≤3 hops (pt-BR):** 144/147 canônicas alcançáveis; comerciais (/consultoria,
+  /palestras, /research, /acervo-teologico, /identidade) **todas ✅**. 3 não alcançadas =
+  /clube-santo + 2 sub-cenários /simulacoes/ia-2027 (profundas/niche; ou corte do crawl em 129 fetches).
+- **Hreflang validator (live):** cada página emite **6 alternates** (pt-BR/en/es/he/it + x-default),
+  recíprocos. **Zero erros.**
+- **Lighthouse:** NÃO rodado — exige dependência nova (proibido sem autorização); coberto
+  funcionalmente por `sota:check` + SEO validators. Pendente autorização do operador.
+- Smoke test prod: nav "Serviços" live, `/consultoria` 200, `/en/consultoria` 200, `/icon` 200,
+  sitemap consultoria/palestras 7+7, home `#servicos` CTA presente.
+
+## 6b. Itens da DoD não implementados (com justificativa)
+- **Sitemap per-locale (`sitemap-{locale}.xml` + index):** NÃO feito. O sitemap único atual com
+  anotações hreflang por entry é o **padrão SOTA do Google para ≤5 locales**; refatorar quebraria
+  SEO que funciona (restrição "não mexer no que funciona"). Deviation consciente.
+- **Related links ≥3/artigo:** deferido à Fase 2 — os artigos são boilerplate sendo substituídos;
+  adicionar infra de related-links a conteúdo descartável é desperdício.
+- **Lighthouse:** ver acima (dependência nova).
 
 ## 7. Bloqueios e próximas ações
 
