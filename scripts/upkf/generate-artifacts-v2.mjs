@@ -2160,7 +2160,7 @@ function parseArticleMarkdownSections(markdownContent) {
   const H1_BODY = /main body|corpo|גוף.*עיקרי|גוף.*העבודה|cuerpo/i;
   const H1_DISCUSSION = /discussion|discussão|discussione|דיון|discusión/i;
   const H1_CONCLUSION = /conclusi|conclusão|מסקנה/i;
-  const H1_REFERENCES = /referenc|riferiment|הפניות|אסמכתאות|referencias/i;
+  const H1_REFERENCES = /refer[eê]nc|riferiment|הפניות|אסמכתאות|referencias/i;
   const H1_TITLE = /title page|עמוד שער|página del título|página de título|pagina del titolo/i;
   const H1_SCORES = /phase score|ציון שלב/i;
 
@@ -2322,7 +2322,8 @@ function buildPublications(rawRows, generatedAt, corpus, referencesLibrary) {
     const ptRecovered = fs.existsSync(recoveredPtPath)
       ? parseArticleMarkdownSections(normalizeLineBreaks(fs.readFileSync(recoveredPtPath, 'utf8')).trim())
       : null;
-    const baseSections = ptRecovered && ptRecovered.abstract ? ptRecovered : paper;
+    const baseSections =
+      ptRecovered && (ptRecovered.abstract || ptRecovered.introduction) ? ptRecovered : paper;
     const landing = buildLandingContent(row, evidence, topicProfile);
     const translatedData = readTranslatedArticleData(row.slug);
 

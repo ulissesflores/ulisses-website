@@ -1,10 +1,14 @@
 {
   "generatedAt": "2026-02-21",
   "threshold": 950,
-  "taskScore": 989,
+  "taskScore": 981,
   "approved": false,
   "pending": [
-    "2025-little-law-resilience"
+    "2025-lstm-asset-prediction",
+    "2025-hybrid-cooling-thermodynamics",
+    "2025-fraud-detection-mlp",
+    "2024-theology-economic-order",
+    "2024-agritech-agile-flow"
   ],
   "items": [
     {
@@ -38,7 +42,36 @@
         "RESILIENCE"
       ],
       "abstract": "Projetos complexos de Data Science e Inteligência Artificial operam sob elevada incerteza, variabilidade de demanda e forte interdependência técnica, o que frequentemente resulta em crises de entrega e baixa previsibilidade. Este artigo investiga a aplicação da Lei de Little como instrumento sistêmico para aumento da resiliência operacional e da qualidade em ambientes orientados à Business Agility. Por meio de fundamentação teórica e simulação computacional com dados sintéticos, compara-se o comportamento de sistemas com e sem limitação explícita de trabalho em progresso (WIP). Os resultados indicam redução significativa do lead time médio sem prejuízo relevante ao throughput, corroborando a literatura Lean e reforçando a limitação de WIP como mecanismo crítico de estabilização sistêmica. Conclui-se que a Lei de Little, quando aplicada além de seu caráter matemático, constitui um vetor estratégico para previsibilidade, tomada de decisão baseada em dados e escalabilidade sustentável em projetos intensivos em conhecimento.",
-      "references": [],
+      "references": [
+        {
+          "citation": "Anderson, D. J. (2010). Kanban: Successful evolutionary change for your technology business. Blue Hole Press.",
+          "url": ""
+        },
+        {
+          "citation": "Flores, C. U. (2025). Simulação computacional da Lei de Little aplicada a sistemas de fluxo.",
+          "url": "https://colab.research.google.com/drive/11EsOXTQqGKVvCEb7hpfcIQ1Ic2FcerIo"
+        },
+        {
+          "citation": "Kniberg, H., & Skarin, M. (2010). Kanban and Scrum – Making the most of both. C4Media.",
+          "url": ""
+        },
+        {
+          "citation": "Little, J. D. C. (1961). A proof for the queuing formula: L = λW. Operations Research, 9(3), 383–387.",
+          "url": ""
+        },
+        {
+          "citation": "Reinertsen, D. G. (2009). The principles of product development flow. Celeritas Publishing.",
+          "url": ""
+        },
+        {
+          "citation": "Rigby, D. K., Sutherland, J., & Takeuchi, H. (2016). Embracing agile. Harvard Business Review, 94(5), 40–50.",
+          "url": ""
+        },
+        {
+          "citation": "Sterman, J. D. (2000). Business dynamics: Systems thinking and modeling for a complex world. McGraw-Hill.",
+          "url": ""
+        }
+      ],
       "cffPath": "/doi/2025-little-law-resilience/CITATION.cff",
       "zenodoPath": "/doi/2025-little-law-resilience/zenodo.json",
       "crossrefPath": "/doi/2025-little-law-resilience/crossref.json",
@@ -62,7 +95,15 @@
             "RESILIENCE"
           ],
           "language": "pt-BR",
-          "references": [],
+          "references": [
+            "Anderson, D. J. (2010). Kanban: Successful evolutionary change for your technology business. Blue Hole Press.",
+            "Flores, C. U. (2025). Simulação computacional da Lei de Little aplicada a sistemas de fluxo. (https://colab.research.google.com/drive/11EsOXTQqGKVvCEb7hpfcIQ1Ic2FcerIo)",
+            "Kniberg, H., & Skarin, M. (2010). Kanban and Scrum – Making the most of both. C4Media.",
+            "Little, J. D. C. (1961). A proof for the queuing formula: L = λW. Operations Research, 9(3), 383–387.",
+            "Reinertsen, D. G. (2009). The principles of product development flow. Celeritas Publishing.",
+            "Rigby, D. K., Sutherland, J., & Takeuchi, H. (2016). Embracing agile. Harvard Business Review, 94(5), 40–50.",
+            "Sterman, J. D. (2000). Business dynamics: Systems thinking and modeling for a complex world. McGraw-Hill."
+          ],
           "related_identifiers": [
             {
               "identifier": "https://ulissesflores.com/research/2025-little-law-resilience",
@@ -104,19 +145,49 @@
             "URL": "https://ulissesflores.com/deep-research/2025-little-law-resilience/deep-research.pdf"
           }
         },
-        "reference": [],
+        "reference": [
+          {
+            "key": "2025-little-law-resilience-ref-1",
+            "unstructured": "Anderson, D. J. (2010). Kanban: Successful evolutionary change for your technology business. Blue Hole Press."
+          },
+          {
+            "key": "2025-little-law-resilience-ref-2",
+            "unstructured": "Flores, C. U. (2025). Simulação computacional da Lei de Little aplicada a sistemas de fluxo.",
+            "URL": "https://colab.research.google.com/drive/11EsOXTQqGKVvCEb7hpfcIQ1Ic2FcerIo"
+          },
+          {
+            "key": "2025-little-law-resilience-ref-3",
+            "unstructured": "Kniberg, H., & Skarin, M. (2010). Kanban and Scrum – Making the most of both. C4Media."
+          },
+          {
+            "key": "2025-little-law-resilience-ref-4",
+            "unstructured": "Little, J. D. C. (1961). A proof for the queuing formula: L = λW. Operations Research, 9(3), 383–387."
+          },
+          {
+            "key": "2025-little-law-resilience-ref-5",
+            "unstructured": "Reinertsen, D. G. (2009). The principles of product development flow. Celeritas Publishing."
+          },
+          {
+            "key": "2025-little-law-resilience-ref-6",
+            "unstructured": "Rigby, D. K., Sutherland, J., & Takeuchi, H. (2016). Embracing agile. Harvard Business Review, 94(5), 40–50."
+          },
+          {
+            "key": "2025-little-law-resilience-ref-7",
+            "unstructured": "Sterman, J. D. (2000). Business dynamics: Systems thinking and modeling for a complex world. McGraw-Hill."
+          }
+        ],
         "doi_target": "10.5281/zenodo.202501"
       },
-      "citationCff": "cff-version: 1.2.0\nmessage: \"If you use this work, cite with this metadata. DOI target: 10.5281/zenodo.202501 (not minted).\"\ntitle: \"A Lei de Little como Vetor de Resiliência e Qualidade\"\ntype: article\nauthors:\n  - family-names: \"Flores\"\n    given-names: \"Carlos Ulisses\"\n    orcid: \"0000-0002-6034-7765\"\nidentifiers:\n  - type: url\n    value: \"https://ulissesflores.com/research/2025-little-law-resilience\"\n  - type: url\n    value: \"https://ulissesflores.com/deep-research/2025-little-law-resilience/deep-research.pdf\"\nabstract: \"Projetos complexos de Data Science e Inteligência Artificial operam sob elevada incerteza, variabilidade de demanda e forte interdependência técnica, o que frequentemente resulta em crises de entrega e baixa previsibilidade. Este artigo investiga a aplicação da Lei de Little como instrumento sistêmico para aumento da resiliência operacional e da qualidade em ambientes orientados à Business Agility. Por meio de fundamentação teórica e simulação computacional com dados sintéticos, compara-se o comportamento de sistemas com e sem limitação explícita de trabalho em progresso (WIP). Os resultados indicam redução significativa do lead time médio sem prejuízo relevante ao throughput, corroborando a literatura Lean e reforçando a limitação de WIP como mecanismo crítico de estabilização sistêmica. Conclui-se que a Lei de Little, quando aplicada além de seu caráter matemático, constitui um vetor estratégico para previsibilidade, tomada de decisão baseada em dados e escalabilidade sustentável em projetos intensivos em conhecimento.\"\nkeywords: [\"LITTLE\", \"LAW\", \"RESILIENCE\"]\nlicense: \"CC-BY-4.0\"\nversion: \"v2026-02-21\"\ndate-released: \"2025-01-01\"\nrepository-code: \"https://ulissesflores.com/research/2025-little-law-resilience\"\nreferences:\n\n",
+      "citationCff": "cff-version: 1.2.0\nmessage: \"If you use this work, cite with this metadata. DOI target: 10.5281/zenodo.202501 (not minted).\"\ntitle: \"A Lei de Little como Vetor de Resiliência e Qualidade\"\ntype: article\nauthors:\n  - family-names: \"Flores\"\n    given-names: \"Carlos Ulisses\"\n    orcid: \"0000-0002-6034-7765\"\nidentifiers:\n  - type: url\n    value: \"https://ulissesflores.com/research/2025-little-law-resilience\"\n  - type: url\n    value: \"https://ulissesflores.com/deep-research/2025-little-law-resilience/deep-research.pdf\"\nabstract: \"Projetos complexos de Data Science e Inteligência Artificial operam sob elevada incerteza, variabilidade de demanda e forte interdependência técnica, o que frequentemente resulta em crises de entrega e baixa previsibilidade. Este artigo investiga a aplicação da Lei de Little como instrumento sistêmico para aumento da resiliência operacional e da qualidade em ambientes orientados à Business Agility. Por meio de fundamentação teórica e simulação computacional com dados sintéticos, compara-se o comportamento de sistemas com e sem limitação explícita de trabalho em progresso (WIP). Os resultados indicam redução significativa do lead time médio sem prejuízo relevante ao throughput, corroborando a literatura Lean e reforçando a limitação de WIP como mecanismo crítico de estabilização sistêmica. Conclui-se que a Lei de Little, quando aplicada além de seu caráter matemático, constitui um vetor estratégico para previsibilidade, tomada de decisão baseada em dados e escalabilidade sustentável em projetos intensivos em conhecimento.\"\nkeywords: [\"LITTLE\", \"LAW\", \"RESILIENCE\"]\nlicense: \"CC-BY-4.0\"\nversion: \"v2026-02-21\"\ndate-released: \"2025-01-01\"\nrepository-code: \"https://ulissesflores.com/research/2025-little-law-resilience\"\nreferences:\n  - unstructured: \"Anderson, D. J. (2010). Kanban: Successful evolutionary change for your technology business. Blue Hole Press.\"\n  - unstructured: \"Flores, C. U. (2025). Simulação computacional da Lei de Little aplicada a sistemas de fluxo.\"\n    url: \"https://colab.research.google.com/drive/11EsOXTQqGKVvCEb7hpfcIQ1Ic2FcerIo\"\n  - unstructured: \"Kniberg, H., & Skarin, M. (2010). Kanban and Scrum – Making the most of both. C4Media.\"\n  - unstructured: \"Little, J. D. C. (1961). A proof for the queuing formula: L = λW. Operations Research, 9(3), 383–387.\"\n  - unstructured: \"Reinertsen, D. G. (2009). The principles of product development flow. Celeritas Publishing.\"\n  - unstructured: \"Rigby, D. K., Sutherland, J., & Takeuchi, H. (2016). Embracing agile. Harvard Business Review, 94(5), 40–50.\"\n  - unstructured: \"Sterman, J. D. (2000). Business dynamics: Systems thinking and modeling for a complex world. McGraw-Hill.\"\n",
       "score": {
         "completenessScore": 1000,
-        "referencesScore": 0,
+        "referencesScore": 750,
         "identifierScore": 1000,
         "workflowScore": 1000,
         "cffScore": 1000,
-        "finalScore": 800
+        "finalScore": 950
       },
-      "approved": false
+      "approved": true
     },
     {
       "slug": "2025-lstm-asset-prediction",
@@ -148,31 +219,59 @@
         "ASSET",
         "PREDICTION"
       ],
-      "abstract": "Analise preditiva de ativos financeiros com redes LSTM para capturar dinamica temporal em mercados nao estacionarios. O problema central investigado e: Modelos lineares sofrem com mudancas de regime e baixa robustez frente a volatilidade extrema e ruido de alta frequencia. Adotou-se um desenho metodologico com foco em validade interna, comparabilidade e reproducibilidade: Modelagem de series temporais com engenharia de atributos, validacao temporal e comparacao contra baselines estatisticos. Os resultados principais indicam que o estudo evidencia ganho de sinal preditivo em janelas especificas e melhora de robustez quando o treinamento respeita ordem temporal.. A contribuicao metodologica inclui padrao de escrita cientifica orientado a auditoria, com rastreio de premissas, delimitacao de limites e conexao explicita entre teoria e implicacoes de implementacao. O objetivo deste trabalho e avaliar de forma estruturada como \"Análise Preditiva de Ativos Financeiros com Modelos LSTM\" pode gerar valor cientifico e operacional com rastreabilidade metodologica. Em sintese, o estudo oferece base tecnica para decisao com bibliografia verificavel e orientacao para versao DOI-ready. (Hochreiter, 1997).",
+      "abstract": "A crescente complexidade dos mercados financeiros exige ferramentas analíticas avançadas para a tomada de decisão. Este estudo de caso investiga a aplicação de uma Rede Neural de Memória de Curto e Longo Prazo (LSTM) para prever os preços diários de dois ativos com perfis de volatilidade distintos: Bitcoin (BTC-USD) e Microsoft (MSFT). O objetivo central é avaliar a viabilidade de uma estratégia de investimento algorítmica, baseada nas previsões do modelo, em comparação com a abordagem passiva de Buy and Hold. A metodologia abrange a coleta e preparação de dados, a engenharia de atributos com indicadores técnicos e o treinamento de um modelo LSTM. Os resultados demonstram que, embora o modelo apresente alta acurácia preditiva para ambos os ativos, a estratégia algorítmica demonstra um potencial modesto em termos de retorno ajustado ao risco (Índice de Sharpe) para o ativo de alta volatilidade (Bitcoin), embora sem superar de forma conclusiva a abordagem passiva. O estudo conclui que a aplicação de IA em finanças oferece um potencial considerável, mas sua implementação responsável requer uma estrutura de governança robusta que contemple as limitações de transparência dos modelos e mantenha a supervisão humana como pilar central.",
       "references": [
         {
-          "citation": "Hochreiter, S.; Schmidhuber, J. (1997). Long Short-Term Memory.",
-          "url": "https://doi.org/10.1162/neco.1997.9.8.1735"
+          "citation": "DEN HENGST, F. The Promise of Personalization: Why We Need Automated Decision-Making. In: AI in Practice: Applying AI. Delft: Delft University of Technology, 2024. Videoaula.",
+          "url": ""
         },
         {
-          "citation": "Fischer, T.; Krauss, C. (2018). Deep learning with long short-term memory networks for financial market predictions.",
-          "url": "https://doi.org/10.1016/j.ejor.2017.11.054"
+          "citation": "FISCHER, T.; KRAUSS, C. Deep learning with long short-term memory networks for financial market predictions. European Journal of Operational Research, v. 270, n. 2, p. 654-669, 2018.",
+          "url": ""
         },
         {
-          "citation": "Nelson, D. M. Q. et al. (2017). Stock market's price movement prediction with LSTM neural networks.",
-          "url": "https://doi.org/10.1016/j.neucom.2016.12.032"
+          "citation": "FLORES, U. Repositório de dados e códigos do estudo de caso \"Agile Capital\". 2025. Materiais suplementares do projeto. Acesso em: 18 jun. 2025.",
+          "url": ""
         },
         {
-          "citation": "Fama, E. F. (1970). Efficient Capital Markets: A Review of Theory and Empirical Work.",
-          "url": "https://doi.org/10.2307/2325486"
+          "citation": "HOCHREITER, S.; SCHMIDHUBER, J. Long short-term memory. Neural Computation, v. 9, n. 8, p. 1735-1780, 1997.",
+          "url": ""
         },
         {
-          "citation": "Lo, A. W. (2004). The Adaptive Markets Hypothesis.",
-          "url": "https://doi.org/10.3905/jpm.2004.442611"
+          "citation": "HUYSMAN, M. Implementing AI in organizations. In: AI in Practice: AI Strategy and Implementation Aspects of AI. Delft: Delft University of Technology, 2024. Videoaula.",
+          "url": ""
         },
         {
-          "citation": "Goodfellow, I.; Bengio, Y.; Courville, A. (2016). Deep Learning.",
-          "url": "https://www.deeplearningbook.org/"
+          "citation": "KOU, G. et al. FinTech with AI: a review of 282 related studies from 2010 to 2020. Technological Forecasting and Social Change, v. 167, 120713, 2021.",
+          "url": ""
+        },
+        {
+          "citation": "LIEM, C. Implications of Modelling. In: AI in Practice: AI Strategy and Implementation Aspects of AI. Delft: Delft University of Technology, 2024. Videoaula.",
+          "url": ""
+        },
+        {
+          "citation": "NELSON, D. M. Q.; PEREIRA, A. C. M.; DE OLIVEIRA, R. A. Stock market's price movement prediction with LSTM neural networks. In: International Joint Conference on Neural Networks (IJCNN), 2017, Anchorage. Proceedings... Anchorage: IEEE, 2017. p. 1419-1426.",
+          "url": ""
+        },
+        {
+          "citation": "O'NEIL, C. Weapons of Math Destruction: How Big Data Increases Inequality and Threatens Democracy. New York: Crown, 2016.",
+          "url": ""
+        },
+        {
+          "citation": "PASCANU, R.; MIKOLOV, T.; BENGIO, Y. On the difficulty of training recurrent neural networks. In: International Conference on Machine Learning (ICML), 2013, Atlanta. Proceedings... Atlanta: JMLR, 2013. p. 1310-1318.",
+          "url": ""
+        },
+        {
+          "citation": "SHNEIDERMAN, B. Human-centered artificial intelligence: Reliable, safe & trustworthy. International Journal of Human-Computer Interaction, v. 36, n. 6, p. 495-504, 2020.",
+          "url": ""
+        },
+        {
+          "citation": "VAN DEURSEN, A. et al. The context of AI in FinTech research. In: AI in Practice: AI Applications in FinTech. Delft: Delft University of Technology, 2022. Videoaula.",
+          "url": ""
+        },
+        {
+          "citation": "VERBEEK, P.-P. UNESCO: Ethics of Science and Technology. In: AI in Practice: Compliance & Ethics of AI. Delft: Delft University of Technology, 2024. Videoaula.",
+          "url": ""
         }
       ],
       "cffPath": "/doi/2025-lstm-asset-prediction/CITATION.cff",
@@ -184,7 +283,7 @@
           "upload_type": "publication",
           "publication_type": "article",
           "publication_date": "2025-01-01",
-          "description": "<p>Analise preditiva de ativos financeiros com redes LSTM para capturar dinamica temporal em mercados nao estacionarios. O problema central investigado e: Modelos lineares sofrem com mudancas de regime e baixa robustez frente a volatilidade extrema e ruido de alta frequencia. Adotou-se um desenho metodologico com foco em validade interna, comparabilidade e reproducibilidade: Modelagem de series temporais com engenharia de atributos, validacao temporal e comparacao contra baselines estatisticos. Os resultados principais indicam que o estudo evidencia ganho de sinal preditivo em janelas especificas e melhora de robustez quando o treinamento respeita ordem temporal.. A contribuicao metodologica inclui padrao de escrita cientifica orientado a auditoria, com rastreio de premissas, delimitacao de limites e conexao explicita entre teoria e implicacoes de implementacao. O objetivo deste trabalho e avaliar de forma estruturada como &quot;Análise Preditiva de Ativos Financeiros com Modelos LSTM&quot; pode gerar valor cientifico e operacional com rastreabilidade metodologica. Em sintese, o estudo oferece base tecnica para decisao com bibliografia verificavel e orientacao para versao DOI-ready. (Hochreiter, 1997).</p>",
+          "description": "<p>A crescente complexidade dos mercados financeiros exige ferramentas analíticas avançadas para a tomada de decisão. Este estudo de caso investiga a aplicação de uma Rede Neural de Memória de Curto e Longo Prazo (LSTM) para prever os preços diários de dois ativos com perfis de volatilidade distintos: Bitcoin (BTC-USD) e Microsoft (MSFT). O objetivo central é avaliar a viabilidade de uma estratégia de investimento algorítmica, baseada nas previsões do modelo, em comparação com a abordagem passiva de Buy and Hold. A metodologia abrange a coleta e preparação de dados, a engenharia de atributos com indicadores técnicos e o treinamento de um modelo LSTM. Os resultados demonstram que, embora o modelo apresente alta acurácia preditiva para ambos os ativos, a estratégia algorítmica demonstra um potencial modesto em termos de retorno ajustado ao risco (Índice de Sharpe) para o ativo de alta volatilidade (Bitcoin), embora sem superar de forma conclusiva a abordagem passiva. O estudo conclui que a aplicação de IA em finanças oferece um potencial considerável, mas sua implementação responsável requer uma estrutura de governança robusta que contemple as limitações de transparência dos modelos e mantenha a supervisão humana como pilar central.</p>",
           "creators": [
             {
               "name": "Flores, Carlos Ulisses",
@@ -199,12 +298,19 @@
           ],
           "language": "pt-BR",
           "references": [
-            "Hochreiter, S.; Schmidhuber, J. (1997). Long Short-Term Memory. (https://doi.org/10.1162/neco.1997.9.8.1735)",
-            "Fischer, T.; Krauss, C. (2018). Deep learning with long short-term memory networks for financial market predictions. (https://doi.org/10.1016/j.ejor.2017.11.054)",
-            "Nelson, D. M. Q. et al. (2017). Stock market's price movement prediction with LSTM neural networks. (https://doi.org/10.1016/j.neucom.2016.12.032)",
-            "Fama, E. F. (1970). Efficient Capital Markets: A Review of Theory and Empirical Work. (https://doi.org/10.2307/2325486)",
-            "Lo, A. W. (2004). The Adaptive Markets Hypothesis. (https://doi.org/10.3905/jpm.2004.442611)",
-            "Goodfellow, I.; Bengio, Y.; Courville, A. (2016). Deep Learning. (https://www.deeplearningbook.org/)"
+            "DEN HENGST, F. The Promise of Personalization: Why We Need Automated Decision-Making. In: AI in Practice: Applying AI. Delft: Delft University of Technology, 2024. Videoaula.",
+            "FISCHER, T.; KRAUSS, C. Deep learning with long short-term memory networks for financial market predictions. European Journal of Operational Research, v. 270, n. 2, p. 654-669, 2018.",
+            "FLORES, U. Repositório de dados e códigos do estudo de caso \"Agile Capital\". 2025. Materiais suplementares do projeto. Acesso em: 18 jun. 2025.",
+            "HOCHREITER, S.; SCHMIDHUBER, J. Long short-term memory. Neural Computation, v. 9, n. 8, p. 1735-1780, 1997.",
+            "HUYSMAN, M. Implementing AI in organizations. In: AI in Practice: AI Strategy and Implementation Aspects of AI. Delft: Delft University of Technology, 2024. Videoaula.",
+            "KOU, G. et al. FinTech with AI: a review of 282 related studies from 2010 to 2020. Technological Forecasting and Social Change, v. 167, 120713, 2021.",
+            "LIEM, C. Implications of Modelling. In: AI in Practice: AI Strategy and Implementation Aspects of AI. Delft: Delft University of Technology, 2024. Videoaula.",
+            "NELSON, D. M. Q.; PEREIRA, A. C. M.; DE OLIVEIRA, R. A. Stock market's price movement prediction with LSTM neural networks. In: International Joint Conference on Neural Networks (IJCNN), 2017, Anchorage. Proceedings... Anchorage: IEEE, 2017. p. 1419-1426.",
+            "O'NEIL, C. Weapons of Math Destruction: How Big Data Increases Inequality and Threatens Democracy. New York: Crown, 2016.",
+            "PASCANU, R.; MIKOLOV, T.; BENGIO, Y. On the difficulty of training recurrent neural networks. In: International Conference on Machine Learning (ICML), 2013, Atlanta. Proceedings... Atlanta: JMLR, 2013. p. 1310-1318.",
+            "SHNEIDERMAN, B. Human-centered artificial intelligence: Reliable, safe & trustworthy. International Journal of Human-Computer Interaction, v. 36, n. 6, p. 495-504, 2020.",
+            "VAN DEURSEN, A. et al. The context of AI in FinTech research. In: AI in Practice: AI Applications in FinTech. Delft: Delft University of Technology, 2022. Videoaula.",
+            "VERBEEK, P.-P. UNESCO: Ethics of Science and Technology. In: AI in Practice: Compliance & Ethics of AI. Delft: Delft University of Technology, 2024. Videoaula."
           ],
           "related_identifiers": [
             {
@@ -227,7 +333,7 @@
         "schema": "https://data.crossref.org/schemas/crossref_input.json",
         "type": "article",
         "title": "Análise Preditiva de Ativos Financeiros com Modelos LSTM",
-        "abstract": "Analise preditiva de ativos financeiros com redes LSTM para capturar dinamica temporal em mercados nao estacionarios. O problema central investigado e: Modelos lineares sofrem com mudancas de regime e baixa robustez frente a volatilidade extrema e ruido de alta frequencia. Adotou-se um desenho metodologico com foco em validade interna, comparabilidade e reproducibilidade: Modelagem de series temporais com engenharia de atributos, validacao temporal e comparacao contra baselines estatisticos. Os resultados principais indicam que o estudo evidencia ganho de sinal preditivo em janelas especificas e melhora de robustez quando o treinamento respeita ordem temporal.. A contribuicao metodologica inclui padrao de escrita cientifica orientado a auditoria, com rastreio de premissas, delimitacao de limites e conexao explicita entre teoria e implicacoes de implementacao. O objetivo deste trabalho e avaliar de forma estruturada como \"Análise Preditiva de Ativos Financeiros com Modelos LSTM\" pode gerar valor cientifico e operacional com rastreabilidade metodologica. Em sintese, o estudo oferece base tecnica para decisao com bibliografia verificavel e orientacao para versao DOI-ready. (Hochreiter, 1997).",
+        "abstract": "A crescente complexidade dos mercados financeiros exige ferramentas analíticas avançadas para a tomada de decisão. Este estudo de caso investiga a aplicação de uma Rede Neural de Memória de Curto e Longo Prazo (LSTM) para prever os preços diários de dois ativos com perfis de volatilidade distintos: Bitcoin (BTC-USD) e Microsoft (MSFT). O objetivo central é avaliar a viabilidade de uma estratégia de investimento algorítmica, baseada nas previsões do modelo, em comparação com a abordagem passiva de Buy and Hold. A metodologia abrange a coleta e preparação de dados, a engenharia de atributos com indicadores técnicos e o treinamento de um modelo LSTM. Os resultados demonstram que, embora o modelo apresente alta acurácia preditiva para ambos os ativos, a estratégia algorítmica demonstra um potencial modesto em termos de retorno ajustado ao risco (Índice de Sharpe) para o ativo de alta volatilidade (Bitcoin), embora sem superar de forma conclusiva a abordagem passiva. O estudo conclui que a aplicação de IA em finanças oferece um potencial considerável, mas sua implementação responsável requer uma estrutura de governança robusta que contemple as limitações de transparência dos modelos e mantenha a supervisão humana como pilar central.",
         "authors": [
           {
             "given": "Carlos Ulisses",
@@ -250,52 +356,69 @@
         "reference": [
           {
             "key": "2025-lstm-asset-prediction-ref-1",
-            "unstructured": "Hochreiter, S.; Schmidhuber, J. (1997). Long Short-Term Memory.",
-            "DOI": "10.1162/neco.1997.9.8.1735",
-            "URL": "https://doi.org/10.1162/neco.1997.9.8.1735"
+            "unstructured": "DEN HENGST, F. The Promise of Personalization: Why We Need Automated Decision-Making. In: AI in Practice: Applying AI. Delft: Delft University of Technology, 2024. Videoaula."
           },
           {
             "key": "2025-lstm-asset-prediction-ref-2",
-            "unstructured": "Fischer, T.; Krauss, C. (2018). Deep learning with long short-term memory networks for financial market predictions.",
-            "DOI": "10.1016/j.ejor.2017.11.054",
-            "URL": "https://doi.org/10.1016/j.ejor.2017.11.054"
+            "unstructured": "FISCHER, T.; KRAUSS, C. Deep learning with long short-term memory networks for financial market predictions. European Journal of Operational Research, v. 270, n. 2, p. 654-669, 2018."
           },
           {
             "key": "2025-lstm-asset-prediction-ref-3",
-            "unstructured": "Nelson, D. M. Q. et al. (2017). Stock market's price movement prediction with LSTM neural networks.",
-            "DOI": "10.1016/j.neucom.2016.12.032",
-            "URL": "https://doi.org/10.1016/j.neucom.2016.12.032"
+            "unstructured": "FLORES, U. Repositório de dados e códigos do estudo de caso \"Agile Capital\". 2025. Materiais suplementares do projeto. Acesso em: 18 jun. 2025."
           },
           {
             "key": "2025-lstm-asset-prediction-ref-4",
-            "unstructured": "Fama, E. F. (1970). Efficient Capital Markets: A Review of Theory and Empirical Work.",
-            "DOI": "10.2307/2325486",
-            "URL": "https://doi.org/10.2307/2325486"
+            "unstructured": "HOCHREITER, S.; SCHMIDHUBER, J. Long short-term memory. Neural Computation, v. 9, n. 8, p. 1735-1780, 1997."
           },
           {
             "key": "2025-lstm-asset-prediction-ref-5",
-            "unstructured": "Lo, A. W. (2004). The Adaptive Markets Hypothesis.",
-            "DOI": "10.3905/jpm.2004.442611",
-            "URL": "https://doi.org/10.3905/jpm.2004.442611"
+            "unstructured": "HUYSMAN, M. Implementing AI in organizations. In: AI in Practice: AI Strategy and Implementation Aspects of AI. Delft: Delft University of Technology, 2024. Videoaula."
           },
           {
             "key": "2025-lstm-asset-prediction-ref-6",
-            "unstructured": "Goodfellow, I.; Bengio, Y.; Courville, A. (2016). Deep Learning.",
-            "URL": "https://www.deeplearningbook.org/"
+            "unstructured": "KOU, G. et al. FinTech with AI: a review of 282 related studies from 2010 to 2020. Technological Forecasting and Social Change, v. 167, 120713, 2021."
+          },
+          {
+            "key": "2025-lstm-asset-prediction-ref-7",
+            "unstructured": "LIEM, C. Implications of Modelling. In: AI in Practice: AI Strategy and Implementation Aspects of AI. Delft: Delft University of Technology, 2024. Videoaula."
+          },
+          {
+            "key": "2025-lstm-asset-prediction-ref-8",
+            "unstructured": "NELSON, D. M. Q.; PEREIRA, A. C. M.; DE OLIVEIRA, R. A. Stock market's price movement prediction with LSTM neural networks. In: International Joint Conference on Neural Networks (IJCNN), 2017, Anchorage. Proceedings... Anchorage: IEEE, 2017. p. 1419-1426."
+          },
+          {
+            "key": "2025-lstm-asset-prediction-ref-9",
+            "unstructured": "O'NEIL, C. Weapons of Math Destruction: How Big Data Increases Inequality and Threatens Democracy. New York: Crown, 2016."
+          },
+          {
+            "key": "2025-lstm-asset-prediction-ref-10",
+            "unstructured": "PASCANU, R.; MIKOLOV, T.; BENGIO, Y. On the difficulty of training recurrent neural networks. In: International Conference on Machine Learning (ICML), 2013, Atlanta. Proceedings... Atlanta: JMLR, 2013. p. 1310-1318."
+          },
+          {
+            "key": "2025-lstm-asset-prediction-ref-11",
+            "unstructured": "SHNEIDERMAN, B. Human-centered artificial intelligence: Reliable, safe & trustworthy. International Journal of Human-Computer Interaction, v. 36, n. 6, p. 495-504, 2020."
+          },
+          {
+            "key": "2025-lstm-asset-prediction-ref-12",
+            "unstructured": "VAN DEURSEN, A. et al. The context of AI in FinTech research. In: AI in Practice: AI Applications in FinTech. Delft: Delft University of Technology, 2022. Videoaula."
+          },
+          {
+            "key": "2025-lstm-asset-prediction-ref-13",
+            "unstructured": "VERBEEK, P.-P. UNESCO: Ethics of Science and Technology. In: AI in Practice: Compliance & Ethics of AI. Delft: Delft University of Technology, 2024. Videoaula."
           }
         ],
         "doi_target": "10.5281/zenodo.202502"
       },
-      "citationCff": "cff-version: 1.2.0\nmessage: \"If you use this work, cite with this metadata. DOI target: 10.5281/zenodo.202502 (not minted).\"\ntitle: \"Análise Preditiva de Ativos Financeiros com Modelos LSTM\"\ntype: article\nauthors:\n  - family-names: \"Flores\"\n    given-names: \"Carlos Ulisses\"\n    orcid: \"0000-0002-6034-7765\"\nidentifiers:\n  - type: url\n    value: \"https://ulissesflores.com/research/2025-lstm-asset-prediction\"\n  - type: url\n    value: \"https://ulissesflores.com/deep-research/2025-lstm-asset-prediction/deep-research.pdf\"\nabstract: \"Analise preditiva de ativos financeiros com redes LSTM para capturar dinamica temporal em mercados nao estacionarios. O problema central investigado e: Modelos lineares sofrem com mudancas de regime e baixa robustez frente a volatilidade extrema e ruido de alta frequencia. Adotou-se um desenho metodologico com foco em validade interna, comparabilidade e reproducibilidade: Modelagem de series temporais com engenharia de atributos, validacao temporal e comparacao contra baselines estatisticos. Os resultados principais indicam que o estudo evidencia ganho de sinal preditivo em janelas especificas e melhora de robustez quando o treinamento respeita ordem temporal.. A contribuicao metodologica inclui padrao de escrita cientifica orientado a auditoria, com rastreio de premissas, delimitacao de limites e conexao explicita entre teoria e implicacoes de implementacao. O objetivo deste trabalho e avaliar de forma estruturada como \\\"Análise Preditiva de Ativos Financeiros com Modelos LSTM\\\" pode gerar valor cientifico e operacional com rastreabilidade metodologica. Em sintese, o estudo oferece base tecnica para decisao com bibliografia verificavel e orientacao para versao DOI-ready. (Hochreiter, 1997).\"\nkeywords: [\"LSTM\", \"ASSET\", \"PREDICTION\"]\nlicense: \"CC-BY-4.0\"\nversion: \"v2026-02-21\"\ndate-released: \"2025-01-01\"\nrepository-code: \"https://ulissesflores.com/research/2025-lstm-asset-prediction\"\nreferences:\n  - unstructured: \"Hochreiter, S.; Schmidhuber, J. (1997). Long Short-Term Memory.\"\n    url: \"https://doi.org/10.1162/neco.1997.9.8.1735\"\n  - unstructured: \"Fischer, T.; Krauss, C. (2018). Deep learning with long short-term memory networks for financial market predictions.\"\n    url: \"https://doi.org/10.1016/j.ejor.2017.11.054\"\n  - unstructured: \"Nelson, D. M. Q. et al. (2017). Stock market's price movement prediction with LSTM neural networks.\"\n    url: \"https://doi.org/10.1016/j.neucom.2016.12.032\"\n  - unstructured: \"Fama, E. F. (1970). Efficient Capital Markets: A Review of Theory and Empirical Work.\"\n    url: \"https://doi.org/10.2307/2325486\"\n  - unstructured: \"Lo, A. W. (2004). The Adaptive Markets Hypothesis.\"\n    url: \"https://doi.org/10.3905/jpm.2004.442611\"\n  - unstructured: \"Goodfellow, I.; Bengio, Y.; Courville, A. (2016). Deep Learning.\"\n    url: \"https://www.deeplearningbook.org/\"\n",
+      "citationCff": "cff-version: 1.2.0\nmessage: \"If you use this work, cite with this metadata. DOI target: 10.5281/zenodo.202502 (not minted).\"\ntitle: \"Análise Preditiva de Ativos Financeiros com Modelos LSTM\"\ntype: article\nauthors:\n  - family-names: \"Flores\"\n    given-names: \"Carlos Ulisses\"\n    orcid: \"0000-0002-6034-7765\"\nidentifiers:\n  - type: url\n    value: \"https://ulissesflores.com/research/2025-lstm-asset-prediction\"\n  - type: url\n    value: \"https://ulissesflores.com/deep-research/2025-lstm-asset-prediction/deep-research.pdf\"\nabstract: \"A crescente complexidade dos mercados financeiros exige ferramentas analíticas avançadas para a tomada de decisão. Este estudo de caso investiga a aplicação de uma Rede Neural de Memória de Curto e Longo Prazo (LSTM) para prever os preços diários de dois ativos com perfis de volatilidade distintos: Bitcoin (BTC-USD) e Microsoft (MSFT). O objetivo central é avaliar a viabilidade de uma estratégia de investimento algorítmica, baseada nas previsões do modelo, em comparação com a abordagem passiva de Buy and Hold. A metodologia abrange a coleta e preparação de dados, a engenharia de atributos com indicadores técnicos e o treinamento de um modelo LSTM. Os resultados demonstram que, embora o modelo apresente alta acurácia preditiva para ambos os ativos, a estratégia algorítmica demonstra um potencial modesto em termos de retorno ajustado ao risco (Índice de Sharpe) para o ativo de alta volatilidade (Bitcoin), embora sem superar de forma conclusiva a abordagem passiva. O estudo conclui que a aplicação de IA em finanças oferece um potencial considerável, mas sua implementação responsável requer uma estrutura de governança robusta que contemple as limitações de transparência dos modelos e mantenha a supervisão humana como pilar central.\"\nkeywords: [\"LSTM\", \"ASSET\", \"PREDICTION\"]\nlicense: \"CC-BY-4.0\"\nversion: \"v2026-02-21\"\ndate-released: \"2025-01-01\"\nrepository-code: \"https://ulissesflores.com/research/2025-lstm-asset-prediction\"\nreferences:\n  - unstructured: \"DEN HENGST, F. The Promise of Personalization: Why We Need Automated Decision-Making. In: AI in Practice: Applying AI. Delft: Delft University of Technology, 2024. Videoaula.\"\n  - unstructured: \"FISCHER, T.; KRAUSS, C. Deep learning with long short-term memory networks for financial market predictions. European Journal of Operational Research, v. 270, n. 2, p. 654-669, 2018.\"\n  - unstructured: \"FLORES, U. Repositório de dados e códigos do estudo de caso \\\"Agile Capital\\\". 2025. Materiais suplementares do projeto. Acesso em: 18 jun. 2025.\"\n  - unstructured: \"HOCHREITER, S.; SCHMIDHUBER, J. Long short-term memory. Neural Computation, v. 9, n. 8, p. 1735-1780, 1997.\"\n  - unstructured: \"HUYSMAN, M. Implementing AI in organizations. In: AI in Practice: AI Strategy and Implementation Aspects of AI. Delft: Delft University of Technology, 2024. Videoaula.\"\n  - unstructured: \"KOU, G. et al. FinTech with AI: a review of 282 related studies from 2010 to 2020. Technological Forecasting and Social Change, v. 167, 120713, 2021.\"\n  - unstructured: \"LIEM, C. Implications of Modelling. In: AI in Practice: AI Strategy and Implementation Aspects of AI. Delft: Delft University of Technology, 2024. Videoaula.\"\n  - unstructured: \"NELSON, D. M. Q.; PEREIRA, A. C. M.; DE OLIVEIRA, R. A. Stock market's price movement prediction with LSTM neural networks. In: International Joint Conference on Neural Networks (IJCNN), 2017, Anchorage. Proceedings... Anchorage: IEEE, 2017. p. 1419-1426.\"\n  - unstructured: \"O'NEIL, C. Weapons of Math Destruction: How Big Data Increases Inequality and Threatens Democracy. New York: Crown, 2016.\"\n  - unstructured: \"PASCANU, R.; MIKOLOV, T.; BENGIO, Y. On the difficulty of training recurrent neural networks. In: International Conference on Machine Learning (ICML), 2013, Atlanta. Proceedings... Atlanta: JMLR, 2013. p. 1310-1318.\"\n  - unstructured: \"SHNEIDERMAN, B. Human-centered artificial intelligence: Reliable, safe & trustworthy. International Journal of Human-Computer Interaction, v. 36, n. 6, p. 495-504, 2020.\"\n  - unstructured: \"VAN DEURSEN, A. et al. The context of AI in FinTech research. In: AI in Practice: AI Applications in FinTech. Delft: Delft University of Technology, 2022. Videoaula.\"\n  - unstructured: \"VERBEEK, P.-P. UNESCO: Ethics of Science and Technology. In: AI in Practice: Compliance & Ethics of AI. Delft: Delft University of Technology, 2024. Videoaula.\"\n",
       "score": {
         "completenessScore": 1000,
-        "referencesScore": 1000,
+        "referencesScore": 700,
         "identifierScore": 1000,
         "workflowScore": 1000,
         "cffScore": 1000,
-        "finalScore": 1000
+        "finalScore": 940
       },
-      "approved": true
+      "approved": false
     },
     {
       "slug": "2025-hybrid-cooling-thermodynamics",
@@ -327,31 +450,159 @@
         "COOLING",
         "THERMODYNAMICS"
       ],
-      "abstract": "Whitepaper de termodinamica aplicada ao projeto de sistemas hibridos de resfriamento para infraestrutura critica. O problema central investigado e: Centros computacionais e ambientes edge enfrentam trade-off entre eficiencia energetica, confiabilidade e custo de manutencao. Adotou-se um desenho metodologico com foco em validade interna, comparabilidade e reproducibilidade: Analise termo-fluidodinamica com cenarios de carga, comparando estrategias hibridas de dissipacao e controle. Os resultados principais indicam que a configuracao hibrida apresenta melhor estabilidade termica em picos de carga e menor risco de indisponibilidade.. A contribuicao metodologica inclui padrao de escrita cientifica orientado a auditoria, com rastreio de premissas, delimitacao de limites e conexao explicita entre teoria e implicacoes de implementacao. O objetivo deste trabalho e avaliar de forma estruturada como \"Análise Termodinâmica e Engenharia de Sistemas Híbridos de Resfriamento\" pode gerar valor cientifico e operacional com rastreabilidade metodologica. Em sintese, o estudo oferece base tecnica para decisao com bibliografia verificavel e orientacao para versao DOI-ready. (ASHRAE, 2026).",
+      "abstract": "",
       "references": [
         {
-          "citation": "ASHRAE. Thermal Guidelines for Data Processing Environments.",
-          "url": "https://www.ashrae.org/technical-resources/bookstore/thermal-guidelines-for-data-processing-environments"
+          "citation": "Verão 2024/2025 foi um dos mais quentes da história no Brasil desde 1961 - Portal Gov.br, https://www.gov.br/secom/pt-br/assuntos/noticias/2025/03/verao-2024-2025-foi-um-dos-mais-quentes-da-historia-no-brasil-desde-1961",
+          "url": ""
         },
         {
-          "citation": "ASHRAE Standard 90.4 for Data Centers.",
-          "url": "https://www.ashrae.org/technical-resources/bookstore/standard-90-4"
+          "citation": "Verão 2024-2025 foi o sexto mais quente no Brasil desde 1961 - INMET, https://portal.inmet.gov.br/noticias/",
+          "url": ""
         },
         {
-          "citation": "ISO 50001: Energy management systems.",
-          "url": "https://www.iso.org/iso-50001-energy-management.html"
+          "citation": "Otimização de Resfriamento de Ambientes.pdf",
+          "url": ""
         },
         {
-          "citation": "Patterson, M. K. (2008). The effect of data center temperature on energy efficiency.",
-          "url": "https://doi.org/10.1109/ITHERM.2008.4544301"
+          "citation": "Temperature Damping & Thermal Lag - CMACN, https://cmacn.org/energy/basics/thermal-movements/temperature-damping-thermal-lag/",
+          "url": ""
         },
         {
-          "citation": "Shehabi, A. et al. (2016). United States Data Center Energy Usage Report.",
-          "url": "https://eta-publications.lbl.gov/sites/default/files/lbnl-1005775_v2.pdf"
+          "citation": "Thermal Lag - Calculating Heat Loss Into the Ground - One Community Global, https://onecommunityglobal.org/thermal-lag/",
+          "url": ""
         },
         {
-          "citation": "US DOE. Data Center Energy Efficiency.",
-          "url": "https://www.energy.gov/eere/femp/data-center-energy-efficiency"
+          "citation": "Cooling Performance of TiO2-Based Radiative Cooling Coating in Tropical Conditions - ACS Omega, https://pubs.acs.org/doi/10.1021/acsomega.4c07223",
+          "url": ""
+        },
+        {
+          "citation": "Radiative sky cooling: Fundamental principles, materials, and applications - AIP Publishing, https://pubs.aip.org/aip/apr/article/6/2/021306/570227/Radiative-sky-cooling-Fundamental-principles",
+          "url": ""
+        },
+        {
+          "citation": "The whitest paint is here – and it's the coolest. Literally. - Purdue University News, https://www.purdue.edu/newsroom/archive/releases/2021/Q2/the-whitest-paint-is-here-and-its-the-coolest.-literally..html",
+          "url": ""
+        },
+        {
+          "citation": "Tintas Reflexivas para Telhados: Combate ao Calor - Blog Moderna Telhados, https://modernatelhados.com.br/blog/tintas-reflexivas-para-telhados-combate-ao-calor",
+          "url": ""
+        },
+        {
+          "citation": "Cool Roofs in Hot Climate Countries: a Study - Sika, https://www.sika.com/en/knowledge-hub/cool-roofs-in-hot-climate.html",
+          "url": ""
+        },
+        {
+          "citation": "Study of Evaporative Cooling Roofing in Sub-tropical Climate - UFS, https://dau.ufs.br/uploads/page_attach/path/1119/Barbosa_Teixeira.pdf",
+          "url": ""
+        },
+        {
+          "citation": "O que é a tinta térmica e ela funciona? - Blog Leroy Merlin, https://blog.leroymerlin.com.br/tinta-termica-funciona/",
+          "url": ""
+        },
+        {
+          "citation": "Tinta Isolante Termico 18 Lts - Magazine Luiza, https://www.magazineluiza.com.br/busca/tinta+isolante+termico+18+lts/",
+          "url": ""
+        },
+        {
+          "citation": "Cooling Paint You Can Actually Make - Hackaday, https://hackaday.com/2023/07/03/cooling-paint-you-can-actually-make/",
+          "url": ""
+        },
+        {
+          "citation": "Pintura à base de cal como alternativa de revestimento frio - SciELO, https://www.scielo.br/j/ac/a/ZvCrp85KbDJR65WW3JvzcHk/",
+          "url": ""
+        },
+        {
+          "citation": "PAINTING YOUR ROOF AT HOME LIME AND WHITE CEMENT COOLS THE ROOF, https://www.youtube.com/watch?v=jupzU4nohg4",
+          "url": ""
+        },
+        {
+          "citation": "Pintura com Cal: como preparar e o que fazer para fixar melhor - Sienge, https://sienge.com.br/blog/pintura-com-cal-como-preparar/",
+          "url": ""
+        },
+        {
+          "citation": "Pintura à base de cal como alternativa de revestimento frio - SciSpace, https://scispace.com/pdf/pintura-a-base-de-cal-como-alternativa-de-revestimento-frio-1ieagnmw26.pdf",
+          "url": ""
+        },
+        {
+          "citation": "Mist System Nozzle Space - Patio Misting System Installation, https://patiomistingsysteminstallation.com/mist-system-nozzle-space",
+          "url": ""
+        },
+        {
+          "citation": "Kit de bico de nebulização de pátio - Leroy Merlin, https://www.leroymerlin.pt/produtos/kit-de-bico-de-nebulizacao-de-patio-de-20-pecas-88786588.html",
+          "url": ""
+        },
+        {
+          "citation": "Motor Pulverizador Eletrico 12v - Mercado Livre, https://lista.mercadolivre.com.br/motor-pulverizador-eletrico-12v",
+          "url": ""
+        },
+        {
+          "citation": "Motor Bomba Diafragma 12v 3,0ah 100psi Pulverizador Elétrico, https://www.nauticarefrigeracao.com.br/MLB-3933089026",
+          "url": ""
+        },
+        {
+          "citation": "Fonte 12v 10A - Shopee 2025, https://shopee.com.br/list/Fonte/12v/10A",
+          "url": ""
+        },
+        {
+          "citation": "SONOFF TH Elite Smart Temperature and Humidity Monitoring Switch - Itead, https://itead.cc/product/sonoff-th-elite-smart-temperature-and-humidity-monitoring-switch/",
+          "url": ""
+        },
+        {
+          "citation": "Sonoff TH Elite 20A Smart Temperature and Humidity Monitoring Switch - isphome, https://isphome.co.za/shop/works-with-ewelink/sonoff-th-elite/",
+          "url": ""
+        },
+        {
+          "citation": "Sensor de Temperatura Digital DS18B20 à Prova d'Água - AF Eletrônica, https://www.afeletronica.com.br/sensor-temperatura-digital-ds18b20-encapsulado-prova-de-agua",
+          "url": ""
+        },
+        {
+          "citation": "Calculadora de consumo de ar-condicionado - Clarke Energia, https://clarke.com.br/calculadora-de-consumo-de-ar-condicionado/",
+          "url": ""
+        },
+        {
+          "citation": "Qual Consumo Ar-Condicionado 30000 BTUs - WebAr, https://www.webarcondicionado.com.br/qual-o-consumo-de-um-ar-condicionado-de-30-000-btu",
+          "url": ""
+        },
+        {
+          "citation": "Quanto custa instalar um ar-condicionado em 2025? - Revista Oeste, https://revistaoeste.com/oestegeral/2025/12/19/quanto-custa-instalar-um-ar-condicionado-em-2025-valores-fatores-e-como-economizar/",
+          "url": ""
+        },
+        {
+          "citation": "Confira o ranking das tarifas de energia mais caras do Brasil em 2025 - Portal Solar, https://www.portalsolar.com.br/noticias/mercado/consumidor/confira-o-ranking-das-tarifas-de-energia-mais-caras-do-brasil-em-2025",
+          "url": ""
+        },
+        {
+          "citation": "Bandeira Vermelha patamar 2 é mantida em setembro - ANEEL, https://www.gov.br/aneel/pt-br/assuntos/noticias/2025/bandeira-vermelha-patamar-2-e-mantida-em-setembro",
+          "url": ""
+        },
+        {
+          "citation": "Revisão da Estrutura Tarifária da SABESP - Mziq, https://api.mziq.com/mzfilemanager/v2/d/9e47ee51-f833-4a23-af98-2bac9e54e0b3/e6692b22-95ea-749a-6f9c-58b4e0f5d841",
+          "url": ""
+        },
+        {
+          "citation": "Night Vent Cooling - 2030 Palette, https://2030palette.org/night-vent-cooling/",
+          "url": ""
+        },
+        {
+          "citation": "Evaluation of the Effect of Passive Cooling Techniques on Thermal Comfort Using Test Cells in the Northern Region of Brazil - MDPI, https://www.mdpi.com/2076-3417/12/3/1546",
+          "url": ""
+        },
+        {
+          "citation": "Radiant Barriers - Department of Energy, https://www.energy.gov/energysaver/radiant-barriers",
+          "url": ""
+        },
+        {
+          "citation": "FAQ's About Reflective Insulation, Radiant Barriers and IRCCs - RIMA-I, https://rimainternational.org/myths/faqs/",
+          "url": ""
+        },
+        {
+          "citation": "What are the key considerations for integrating phase change materials with building envelopes in tropical climates? - Consensus, https://consensus.app/",
+          "url": ""
+        },
+        {
+          "citation": "Numerical Assessment of Different Phase Change Materials as a Passive Strategy to Reduce Energy Consumption in Buildings under Tropical Climates - MDPI, https://www.mdpi.com/2075-5309/12/7/906",
+          "url": ""
         }
       ],
       "cffPath": "/doi/2025-hybrid-cooling-thermodynamics/CITATION.cff",
@@ -363,7 +614,7 @@
           "upload_type": "publication",
           "publication_type": "report",
           "publication_date": "2025-01-01",
-          "description": "<p>Whitepaper de termodinamica aplicada ao projeto de sistemas hibridos de resfriamento para infraestrutura critica. O problema central investigado e: Centros computacionais e ambientes edge enfrentam trade-off entre eficiencia energetica, confiabilidade e custo de manutencao. Adotou-se um desenho metodologico com foco em validade interna, comparabilidade e reproducibilidade: Analise termo-fluidodinamica com cenarios de carga, comparando estrategias hibridas de dissipacao e controle. Os resultados principais indicam que a configuracao hibrida apresenta melhor estabilidade termica em picos de carga e menor risco de indisponibilidade.. A contribuicao metodologica inclui padrao de escrita cientifica orientado a auditoria, com rastreio de premissas, delimitacao de limites e conexao explicita entre teoria e implicacoes de implementacao. O objetivo deste trabalho e avaliar de forma estruturada como &quot;Análise Termodinâmica e Engenharia de Sistemas Híbridos de Resfriamento&quot; pode gerar valor cientifico e operacional com rastreabilidade metodologica. Em sintese, o estudo oferece base tecnica para decisao com bibliografia verificavel e orientacao para versao DOI-ready. (ASHRAE, 2026).</p>",
+          "description": "<p></p>",
           "creators": [
             {
               "name": "Flores, Carlos Ulisses",
@@ -378,12 +629,44 @@
           ],
           "language": "pt-BR",
           "references": [
-            "ASHRAE. Thermal Guidelines for Data Processing Environments. (https://www.ashrae.org/technical-resources/bookstore/thermal-guidelines-for-data-processing-environments)",
-            "ASHRAE Standard 90.4 for Data Centers. (https://www.ashrae.org/technical-resources/bookstore/standard-90-4)",
-            "ISO 50001: Energy management systems. (https://www.iso.org/iso-50001-energy-management.html)",
-            "Patterson, M. K. (2008). The effect of data center temperature on energy efficiency. (https://doi.org/10.1109/ITHERM.2008.4544301)",
-            "Shehabi, A. et al. (2016). United States Data Center Energy Usage Report. (https://eta-publications.lbl.gov/sites/default/files/lbnl-1005775_v2.pdf)",
-            "US DOE. Data Center Energy Efficiency. (https://www.energy.gov/eere/femp/data-center-energy-efficiency)"
+            "Verão 2024/2025 foi um dos mais quentes da história no Brasil desde 1961 - Portal Gov.br, https://www.gov.br/secom/pt-br/assuntos/noticias/2025/03/verao-2024-2025-foi-um-dos-mais-quentes-da-historia-no-brasil-desde-1961",
+            "Verão 2024-2025 foi o sexto mais quente no Brasil desde 1961 - INMET, https://portal.inmet.gov.br/noticias/",
+            "Otimização de Resfriamento de Ambientes.pdf",
+            "Temperature Damping & Thermal Lag - CMACN, https://cmacn.org/energy/basics/thermal-movements/temperature-damping-thermal-lag/",
+            "Thermal Lag - Calculating Heat Loss Into the Ground - One Community Global, https://onecommunityglobal.org/thermal-lag/",
+            "Cooling Performance of TiO2-Based Radiative Cooling Coating in Tropical Conditions - ACS Omega, https://pubs.acs.org/doi/10.1021/acsomega.4c07223",
+            "Radiative sky cooling: Fundamental principles, materials, and applications - AIP Publishing, https://pubs.aip.org/aip/apr/article/6/2/021306/570227/Radiative-sky-cooling-Fundamental-principles",
+            "The whitest paint is here – and it's the coolest. Literally. - Purdue University News, https://www.purdue.edu/newsroom/archive/releases/2021/Q2/the-whitest-paint-is-here-and-its-the-coolest.-literally..html",
+            "Tintas Reflexivas para Telhados: Combate ao Calor - Blog Moderna Telhados, https://modernatelhados.com.br/blog/tintas-reflexivas-para-telhados-combate-ao-calor",
+            "Cool Roofs in Hot Climate Countries: a Study - Sika, https://www.sika.com/en/knowledge-hub/cool-roofs-in-hot-climate.html",
+            "Study of Evaporative Cooling Roofing in Sub-tropical Climate - UFS, https://dau.ufs.br/uploads/page_attach/path/1119/Barbosa_Teixeira.pdf",
+            "O que é a tinta térmica e ela funciona? - Blog Leroy Merlin, https://blog.leroymerlin.com.br/tinta-termica-funciona/",
+            "Tinta Isolante Termico 18 Lts - Magazine Luiza, https://www.magazineluiza.com.br/busca/tinta+isolante+termico+18+lts/",
+            "Cooling Paint You Can Actually Make - Hackaday, https://hackaday.com/2023/07/03/cooling-paint-you-can-actually-make/",
+            "Pintura à base de cal como alternativa de revestimento frio - SciELO, https://www.scielo.br/j/ac/a/ZvCrp85KbDJR65WW3JvzcHk/",
+            "PAINTING YOUR ROOF AT HOME LIME AND WHITE CEMENT COOLS THE ROOF, https://www.youtube.com/watch?v=jupzU4nohg4",
+            "Pintura com Cal: como preparar e o que fazer para fixar melhor - Sienge, https://sienge.com.br/blog/pintura-com-cal-como-preparar/",
+            "Pintura à base de cal como alternativa de revestimento frio - SciSpace, https://scispace.com/pdf/pintura-a-base-de-cal-como-alternativa-de-revestimento-frio-1ieagnmw26.pdf",
+            "Mist System Nozzle Space - Patio Misting System Installation, https://patiomistingsysteminstallation.com/mist-system-nozzle-space",
+            "Kit de bico de nebulização de pátio - Leroy Merlin, https://www.leroymerlin.pt/produtos/kit-de-bico-de-nebulizacao-de-patio-de-20-pecas-88786588.html",
+            "Motor Pulverizador Eletrico 12v - Mercado Livre, https://lista.mercadolivre.com.br/motor-pulverizador-eletrico-12v",
+            "Motor Bomba Diafragma 12v 3,0ah 100psi Pulverizador Elétrico, https://www.nauticarefrigeracao.com.br/MLB-3933089026",
+            "Fonte 12v 10A - Shopee 2025, https://shopee.com.br/list/Fonte/12v/10A",
+            "SONOFF TH Elite Smart Temperature and Humidity Monitoring Switch - Itead, https://itead.cc/product/sonoff-th-elite-smart-temperature-and-humidity-monitoring-switch/",
+            "Sonoff TH Elite 20A Smart Temperature and Humidity Monitoring Switch - isphome, https://isphome.co.za/shop/works-with-ewelink/sonoff-th-elite/",
+            "Sensor de Temperatura Digital DS18B20 à Prova d'Água - AF Eletrônica, https://www.afeletronica.com.br/sensor-temperatura-digital-ds18b20-encapsulado-prova-de-agua",
+            "Calculadora de consumo de ar-condicionado - Clarke Energia, https://clarke.com.br/calculadora-de-consumo-de-ar-condicionado/",
+            "Qual Consumo Ar-Condicionado 30000 BTUs - WebAr, https://www.webarcondicionado.com.br/qual-o-consumo-de-um-ar-condicionado-de-30-000-btu",
+            "Quanto custa instalar um ar-condicionado em 2025? - Revista Oeste, https://revistaoeste.com/oestegeral/2025/12/19/quanto-custa-instalar-um-ar-condicionado-em-2025-valores-fatores-e-como-economizar/",
+            "Confira o ranking das tarifas de energia mais caras do Brasil em 2025 - Portal Solar, https://www.portalsolar.com.br/noticias/mercado/consumidor/confira-o-ranking-das-tarifas-de-energia-mais-caras-do-brasil-em-2025",
+            "Bandeira Vermelha patamar 2 é mantida em setembro - ANEEL, https://www.gov.br/aneel/pt-br/assuntos/noticias/2025/bandeira-vermelha-patamar-2-e-mantida-em-setembro",
+            "Revisão da Estrutura Tarifária da SABESP - Mziq, https://api.mziq.com/mzfilemanager/v2/d/9e47ee51-f833-4a23-af98-2bac9e54e0b3/e6692b22-95ea-749a-6f9c-58b4e0f5d841",
+            "Night Vent Cooling - 2030 Palette, https://2030palette.org/night-vent-cooling/",
+            "Evaluation of the Effect of Passive Cooling Techniques on Thermal Comfort Using Test Cells in the Northern Region of Brazil - MDPI, https://www.mdpi.com/2076-3417/12/3/1546",
+            "Radiant Barriers - Department of Energy, https://www.energy.gov/energysaver/radiant-barriers",
+            "FAQ's About Reflective Insulation, Radiant Barriers and IRCCs - RIMA-I, https://rimainternational.org/myths/faqs/",
+            "What are the key considerations for integrating phase change materials with building envelopes in tropical climates? - Consensus, https://consensus.app/",
+            "Numerical Assessment of Different Phase Change Materials as a Passive Strategy to Reduce Energy Consumption in Buildings under Tropical Climates - MDPI, https://www.mdpi.com/2075-5309/12/7/906"
           ],
           "related_identifiers": [
             {
@@ -406,7 +689,7 @@
         "schema": "https://data.crossref.org/schemas/crossref_input.json",
         "type": "report",
         "title": "Análise Termodinâmica e Engenharia de Sistemas Híbridos de Resfriamento",
-        "abstract": "Whitepaper de termodinamica aplicada ao projeto de sistemas hibridos de resfriamento para infraestrutura critica. O problema central investigado e: Centros computacionais e ambientes edge enfrentam trade-off entre eficiencia energetica, confiabilidade e custo de manutencao. Adotou-se um desenho metodologico com foco em validade interna, comparabilidade e reproducibilidade: Analise termo-fluidodinamica com cenarios de carga, comparando estrategias hibridas de dissipacao e controle. Os resultados principais indicam que a configuracao hibrida apresenta melhor estabilidade termica em picos de carga e menor risco de indisponibilidade.. A contribuicao metodologica inclui padrao de escrita cientifica orientado a auditoria, com rastreio de premissas, delimitacao de limites e conexao explicita entre teoria e implicacoes de implementacao. O objetivo deste trabalho e avaliar de forma estruturada como \"Análise Termodinâmica e Engenharia de Sistemas Híbridos de Resfriamento\" pode gerar valor cientifico e operacional com rastreabilidade metodologica. Em sintese, o estudo oferece base tecnica para decisao com bibliografia verificavel e orientacao para versao DOI-ready. (ASHRAE, 2026).",
+        "abstract": "",
         "authors": [
           {
             "given": "Carlos Ulisses",
@@ -429,48 +712,169 @@
         "reference": [
           {
             "key": "2025-hybrid-cooling-thermodynamics-ref-1",
-            "unstructured": "ASHRAE. Thermal Guidelines for Data Processing Environments.",
-            "URL": "https://www.ashrae.org/technical-resources/bookstore/thermal-guidelines-for-data-processing-environments"
+            "unstructured": "Verão 2024/2025 foi um dos mais quentes da história no Brasil desde 1961 - Portal Gov.br, https://www.gov.br/secom/pt-br/assuntos/noticias/2025/03/verao-2024-2025-foi-um-dos-mais-quentes-da-historia-no-brasil-desde-1961"
           },
           {
             "key": "2025-hybrid-cooling-thermodynamics-ref-2",
-            "unstructured": "ASHRAE Standard 90.4 for Data Centers.",
-            "URL": "https://www.ashrae.org/technical-resources/bookstore/standard-90-4"
+            "unstructured": "Verão 2024-2025 foi o sexto mais quente no Brasil desde 1961 - INMET, https://portal.inmet.gov.br/noticias/"
           },
           {
             "key": "2025-hybrid-cooling-thermodynamics-ref-3",
-            "unstructured": "ISO 50001: Energy management systems.",
-            "URL": "https://www.iso.org/iso-50001-energy-management.html"
+            "unstructured": "Otimização de Resfriamento de Ambientes.pdf"
           },
           {
             "key": "2025-hybrid-cooling-thermodynamics-ref-4",
-            "unstructured": "Patterson, M. K. (2008). The effect of data center temperature on energy efficiency.",
-            "DOI": "10.1109/ITHERM.2008.4544301",
-            "URL": "https://doi.org/10.1109/ITHERM.2008.4544301"
+            "unstructured": "Temperature Damping & Thermal Lag - CMACN, https://cmacn.org/energy/basics/thermal-movements/temperature-damping-thermal-lag/"
           },
           {
             "key": "2025-hybrid-cooling-thermodynamics-ref-5",
-            "unstructured": "Shehabi, A. et al. (2016). United States Data Center Energy Usage Report.",
-            "URL": "https://eta-publications.lbl.gov/sites/default/files/lbnl-1005775_v2.pdf"
+            "unstructured": "Thermal Lag - Calculating Heat Loss Into the Ground - One Community Global, https://onecommunityglobal.org/thermal-lag/"
           },
           {
             "key": "2025-hybrid-cooling-thermodynamics-ref-6",
-            "unstructured": "US DOE. Data Center Energy Efficiency.",
-            "URL": "https://www.energy.gov/eere/femp/data-center-energy-efficiency"
+            "unstructured": "Cooling Performance of TiO2-Based Radiative Cooling Coating in Tropical Conditions - ACS Omega, https://pubs.acs.org/doi/10.1021/acsomega.4c07223"
+          },
+          {
+            "key": "2025-hybrid-cooling-thermodynamics-ref-7",
+            "unstructured": "Radiative sky cooling: Fundamental principles, materials, and applications - AIP Publishing, https://pubs.aip.org/aip/apr/article/6/2/021306/570227/Radiative-sky-cooling-Fundamental-principles"
+          },
+          {
+            "key": "2025-hybrid-cooling-thermodynamics-ref-8",
+            "unstructured": "The whitest paint is here – and it's the coolest. Literally. - Purdue University News, https://www.purdue.edu/newsroom/archive/releases/2021/Q2/the-whitest-paint-is-here-and-its-the-coolest.-literally..html"
+          },
+          {
+            "key": "2025-hybrid-cooling-thermodynamics-ref-9",
+            "unstructured": "Tintas Reflexivas para Telhados: Combate ao Calor - Blog Moderna Telhados, https://modernatelhados.com.br/blog/tintas-reflexivas-para-telhados-combate-ao-calor"
+          },
+          {
+            "key": "2025-hybrid-cooling-thermodynamics-ref-10",
+            "unstructured": "Cool Roofs in Hot Climate Countries: a Study - Sika, https://www.sika.com/en/knowledge-hub/cool-roofs-in-hot-climate.html"
+          },
+          {
+            "key": "2025-hybrid-cooling-thermodynamics-ref-11",
+            "unstructured": "Study of Evaporative Cooling Roofing in Sub-tropical Climate - UFS, https://dau.ufs.br/uploads/page_attach/path/1119/Barbosa_Teixeira.pdf"
+          },
+          {
+            "key": "2025-hybrid-cooling-thermodynamics-ref-12",
+            "unstructured": "O que é a tinta térmica e ela funciona? - Blog Leroy Merlin, https://blog.leroymerlin.com.br/tinta-termica-funciona/"
+          },
+          {
+            "key": "2025-hybrid-cooling-thermodynamics-ref-13",
+            "unstructured": "Tinta Isolante Termico 18 Lts - Magazine Luiza, https://www.magazineluiza.com.br/busca/tinta+isolante+termico+18+lts/"
+          },
+          {
+            "key": "2025-hybrid-cooling-thermodynamics-ref-14",
+            "unstructured": "Cooling Paint You Can Actually Make - Hackaday, https://hackaday.com/2023/07/03/cooling-paint-you-can-actually-make/"
+          },
+          {
+            "key": "2025-hybrid-cooling-thermodynamics-ref-15",
+            "unstructured": "Pintura à base de cal como alternativa de revestimento frio - SciELO, https://www.scielo.br/j/ac/a/ZvCrp85KbDJR65WW3JvzcHk/"
+          },
+          {
+            "key": "2025-hybrid-cooling-thermodynamics-ref-16",
+            "unstructured": "PAINTING YOUR ROOF AT HOME LIME AND WHITE CEMENT COOLS THE ROOF, https://www.youtube.com/watch?v=jupzU4nohg4"
+          },
+          {
+            "key": "2025-hybrid-cooling-thermodynamics-ref-17",
+            "unstructured": "Pintura com Cal: como preparar e o que fazer para fixar melhor - Sienge, https://sienge.com.br/blog/pintura-com-cal-como-preparar/"
+          },
+          {
+            "key": "2025-hybrid-cooling-thermodynamics-ref-18",
+            "unstructured": "Pintura à base de cal como alternativa de revestimento frio - SciSpace, https://scispace.com/pdf/pintura-a-base-de-cal-como-alternativa-de-revestimento-frio-1ieagnmw26.pdf"
+          },
+          {
+            "key": "2025-hybrid-cooling-thermodynamics-ref-19",
+            "unstructured": "Mist System Nozzle Space - Patio Misting System Installation, https://patiomistingsysteminstallation.com/mist-system-nozzle-space"
+          },
+          {
+            "key": "2025-hybrid-cooling-thermodynamics-ref-20",
+            "unstructured": "Kit de bico de nebulização de pátio - Leroy Merlin, https://www.leroymerlin.pt/produtos/kit-de-bico-de-nebulizacao-de-patio-de-20-pecas-88786588.html"
+          },
+          {
+            "key": "2025-hybrid-cooling-thermodynamics-ref-21",
+            "unstructured": "Motor Pulverizador Eletrico 12v - Mercado Livre, https://lista.mercadolivre.com.br/motor-pulverizador-eletrico-12v"
+          },
+          {
+            "key": "2025-hybrid-cooling-thermodynamics-ref-22",
+            "unstructured": "Motor Bomba Diafragma 12v 3,0ah 100psi Pulverizador Elétrico, https://www.nauticarefrigeracao.com.br/MLB-3933089026"
+          },
+          {
+            "key": "2025-hybrid-cooling-thermodynamics-ref-23",
+            "unstructured": "Fonte 12v 10A - Shopee 2025, https://shopee.com.br/list/Fonte/12v/10A"
+          },
+          {
+            "key": "2025-hybrid-cooling-thermodynamics-ref-24",
+            "unstructured": "SONOFF TH Elite Smart Temperature and Humidity Monitoring Switch - Itead, https://itead.cc/product/sonoff-th-elite-smart-temperature-and-humidity-monitoring-switch/"
+          },
+          {
+            "key": "2025-hybrid-cooling-thermodynamics-ref-25",
+            "unstructured": "Sonoff TH Elite 20A Smart Temperature and Humidity Monitoring Switch - isphome, https://isphome.co.za/shop/works-with-ewelink/sonoff-th-elite/"
+          },
+          {
+            "key": "2025-hybrid-cooling-thermodynamics-ref-26",
+            "unstructured": "Sensor de Temperatura Digital DS18B20 à Prova d'Água - AF Eletrônica, https://www.afeletronica.com.br/sensor-temperatura-digital-ds18b20-encapsulado-prova-de-agua"
+          },
+          {
+            "key": "2025-hybrid-cooling-thermodynamics-ref-27",
+            "unstructured": "Calculadora de consumo de ar-condicionado - Clarke Energia, https://clarke.com.br/calculadora-de-consumo-de-ar-condicionado/"
+          },
+          {
+            "key": "2025-hybrid-cooling-thermodynamics-ref-28",
+            "unstructured": "Qual Consumo Ar-Condicionado 30000 BTUs - WebAr, https://www.webarcondicionado.com.br/qual-o-consumo-de-um-ar-condicionado-de-30-000-btu"
+          },
+          {
+            "key": "2025-hybrid-cooling-thermodynamics-ref-29",
+            "unstructured": "Quanto custa instalar um ar-condicionado em 2025? - Revista Oeste, https://revistaoeste.com/oestegeral/2025/12/19/quanto-custa-instalar-um-ar-condicionado-em-2025-valores-fatores-e-como-economizar/"
+          },
+          {
+            "key": "2025-hybrid-cooling-thermodynamics-ref-30",
+            "unstructured": "Confira o ranking das tarifas de energia mais caras do Brasil em 2025 - Portal Solar, https://www.portalsolar.com.br/noticias/mercado/consumidor/confira-o-ranking-das-tarifas-de-energia-mais-caras-do-brasil-em-2025"
+          },
+          {
+            "key": "2025-hybrid-cooling-thermodynamics-ref-31",
+            "unstructured": "Bandeira Vermelha patamar 2 é mantida em setembro - ANEEL, https://www.gov.br/aneel/pt-br/assuntos/noticias/2025/bandeira-vermelha-patamar-2-e-mantida-em-setembro"
+          },
+          {
+            "key": "2025-hybrid-cooling-thermodynamics-ref-32",
+            "unstructured": "Revisão da Estrutura Tarifária da SABESP - Mziq, https://api.mziq.com/mzfilemanager/v2/d/9e47ee51-f833-4a23-af98-2bac9e54e0b3/e6692b22-95ea-749a-6f9c-58b4e0f5d841"
+          },
+          {
+            "key": "2025-hybrid-cooling-thermodynamics-ref-33",
+            "unstructured": "Night Vent Cooling - 2030 Palette, https://2030palette.org/night-vent-cooling/"
+          },
+          {
+            "key": "2025-hybrid-cooling-thermodynamics-ref-34",
+            "unstructured": "Evaluation of the Effect of Passive Cooling Techniques on Thermal Comfort Using Test Cells in the Northern Region of Brazil - MDPI, https://www.mdpi.com/2076-3417/12/3/1546"
+          },
+          {
+            "key": "2025-hybrid-cooling-thermodynamics-ref-35",
+            "unstructured": "Radiant Barriers - Department of Energy, https://www.energy.gov/energysaver/radiant-barriers"
+          },
+          {
+            "key": "2025-hybrid-cooling-thermodynamics-ref-36",
+            "unstructured": "FAQ's About Reflective Insulation, Radiant Barriers and IRCCs - RIMA-I, https://rimainternational.org/myths/faqs/"
+          },
+          {
+            "key": "2025-hybrid-cooling-thermodynamics-ref-37",
+            "unstructured": "What are the key considerations for integrating phase change materials with building envelopes in tropical climates? - Consensus, https://consensus.app/"
+          },
+          {
+            "key": "2025-hybrid-cooling-thermodynamics-ref-38",
+            "unstructured": "Numerical Assessment of Different Phase Change Materials as a Passive Strategy to Reduce Energy Consumption in Buildings under Tropical Climates - MDPI, https://www.mdpi.com/2075-5309/12/7/906"
           }
         ],
         "doi_target": "10.5281/zenodo.202503"
       },
-      "citationCff": "cff-version: 1.2.0\nmessage: \"If you use this work, cite with this metadata. DOI target: 10.5281/zenodo.202503 (not minted).\"\ntitle: \"Análise Termodinâmica e Engenharia de Sistemas Híbridos de Resfriamento\"\ntype: article\nauthors:\n  - family-names: \"Flores\"\n    given-names: \"Carlos Ulisses\"\n    orcid: \"0000-0002-6034-7765\"\nidentifiers:\n  - type: url\n    value: \"https://ulissesflores.com/whitepapers/2025-hybrid-cooling-thermodynamics\"\n  - type: url\n    value: \"https://ulissesflores.com/deep-research/2025-hybrid-cooling-thermodynamics/deep-research.pdf\"\nabstract: \"Whitepaper de termodinamica aplicada ao projeto de sistemas hibridos de resfriamento para infraestrutura critica. O problema central investigado e: Centros computacionais e ambientes edge enfrentam trade-off entre eficiencia energetica, confiabilidade e custo de manutencao. Adotou-se um desenho metodologico com foco em validade interna, comparabilidade e reproducibilidade: Analise termo-fluidodinamica com cenarios de carga, comparando estrategias hibridas de dissipacao e controle. Os resultados principais indicam que a configuracao hibrida apresenta melhor estabilidade termica em picos de carga e menor risco de indisponibilidade.. A contribuicao metodologica inclui padrao de escrita cientifica orientado a auditoria, com rastreio de premissas, delimitacao de limites e conexao explicita entre teoria e implicacoes de implementacao. O objetivo deste trabalho e avaliar de forma estruturada como \\\"Análise Termodinâmica e Engenharia de Sistemas Híbridos de Resfriamento\\\" pode gerar valor cientifico e operacional com rastreabilidade metodologica. Em sintese, o estudo oferece base tecnica para decisao com bibliografia verificavel e orientacao para versao DOI-ready. (ASHRAE, 2026).\"\nkeywords: [\"HYBRID\", \"COOLING\", \"THERMODYNAMICS\"]\nlicense: \"CC-BY-4.0\"\nversion: \"v2026-02-21\"\ndate-released: \"2025-01-01\"\nrepository-code: \"https://ulissesflores.com/whitepapers/2025-hybrid-cooling-thermodynamics\"\nreferences:\n  - unstructured: \"ASHRAE. Thermal Guidelines for Data Processing Environments.\"\n    url: \"https://www.ashrae.org/technical-resources/bookstore/thermal-guidelines-for-data-processing-environments\"\n  - unstructured: \"ASHRAE Standard 90.4 for Data Centers.\"\n    url: \"https://www.ashrae.org/technical-resources/bookstore/standard-90-4\"\n  - unstructured: \"ISO 50001: Energy management systems.\"\n    url: \"https://www.iso.org/iso-50001-energy-management.html\"\n  - unstructured: \"Patterson, M. K. (2008). The effect of data center temperature on energy efficiency.\"\n    url: \"https://doi.org/10.1109/ITHERM.2008.4544301\"\n  - unstructured: \"Shehabi, A. et al. (2016). United States Data Center Energy Usage Report.\"\n    url: \"https://eta-publications.lbl.gov/sites/default/files/lbnl-1005775_v2.pdf\"\n  - unstructured: \"US DOE. Data Center Energy Efficiency.\"\n    url: \"https://www.energy.gov/eere/femp/data-center-energy-efficiency\"\n",
+      "citationCff": "cff-version: 1.2.0\nmessage: \"If you use this work, cite with this metadata. DOI target: 10.5281/zenodo.202503 (not minted).\"\ntitle: \"Análise Termodinâmica e Engenharia de Sistemas Híbridos de Resfriamento\"\ntype: article\nauthors:\n  - family-names: \"Flores\"\n    given-names: \"Carlos Ulisses\"\n    orcid: \"0000-0002-6034-7765\"\nidentifiers:\n  - type: url\n    value: \"https://ulissesflores.com/whitepapers/2025-hybrid-cooling-thermodynamics\"\n  - type: url\n    value: \"https://ulissesflores.com/deep-research/2025-hybrid-cooling-thermodynamics/deep-research.pdf\"\nabstract: \"\"\nkeywords: [\"HYBRID\", \"COOLING\", \"THERMODYNAMICS\"]\nlicense: \"CC-BY-4.0\"\nversion: \"v2026-02-21\"\ndate-released: \"2025-01-01\"\nrepository-code: \"https://ulissesflores.com/whitepapers/2025-hybrid-cooling-thermodynamics\"\nreferences:\n  - unstructured: \"Verão 2024/2025 foi um dos mais quentes da história no Brasil desde 1961 - Portal Gov.br, https://www.gov.br/secom/pt-br/assuntos/noticias/2025/03/verao-2024-2025-foi-um-dos-mais-quentes-da-historia-no-brasil-desde-1961\"\n  - unstructured: \"Verão 2024-2025 foi o sexto mais quente no Brasil desde 1961 - INMET, https://portal.inmet.gov.br/noticias/\"\n  - unstructured: \"Otimização de Resfriamento de Ambientes.pdf\"\n  - unstructured: \"Temperature Damping & Thermal Lag - CMACN, https://cmacn.org/energy/basics/thermal-movements/temperature-damping-thermal-lag/\"\n  - unstructured: \"Thermal Lag - Calculating Heat Loss Into the Ground - One Community Global, https://onecommunityglobal.org/thermal-lag/\"\n  - unstructured: \"Cooling Performance of TiO2-Based Radiative Cooling Coating in Tropical Conditions - ACS Omega, https://pubs.acs.org/doi/10.1021/acsomega.4c07223\"\n  - unstructured: \"Radiative sky cooling: Fundamental principles, materials, and applications - AIP Publishing, https://pubs.aip.org/aip/apr/article/6/2/021306/570227/Radiative-sky-cooling-Fundamental-principles\"\n  - unstructured: \"The whitest paint is here – and it's the coolest. Literally. - Purdue University News, https://www.purdue.edu/newsroom/archive/releases/2021/Q2/the-whitest-paint-is-here-and-its-the-coolest.-literally..html\"\n  - unstructured: \"Tintas Reflexivas para Telhados: Combate ao Calor - Blog Moderna Telhados, https://modernatelhados.com.br/blog/tintas-reflexivas-para-telhados-combate-ao-calor\"\n  - unstructured: \"Cool Roofs in Hot Climate Countries: a Study - Sika, https://www.sika.com/en/knowledge-hub/cool-roofs-in-hot-climate.html\"\n  - unstructured: \"Study of Evaporative Cooling Roofing in Sub-tropical Climate - UFS, https://dau.ufs.br/uploads/page_attach/path/1119/Barbosa_Teixeira.pdf\"\n  - unstructured: \"O que é a tinta térmica e ela funciona? - Blog Leroy Merlin, https://blog.leroymerlin.com.br/tinta-termica-funciona/\"\n  - unstructured: \"Tinta Isolante Termico 18 Lts - Magazine Luiza, https://www.magazineluiza.com.br/busca/tinta+isolante+termico+18+lts/\"\n  - unstructured: \"Cooling Paint You Can Actually Make - Hackaday, https://hackaday.com/2023/07/03/cooling-paint-you-can-actually-make/\"\n  - unstructured: \"Pintura à base de cal como alternativa de revestimento frio - SciELO, https://www.scielo.br/j/ac/a/ZvCrp85KbDJR65WW3JvzcHk/\"\n  - unstructured: \"PAINTING YOUR ROOF AT HOME LIME AND WHITE CEMENT COOLS THE ROOF, https://www.youtube.com/watch?v=jupzU4nohg4\"\n  - unstructured: \"Pintura com Cal: como preparar e o que fazer para fixar melhor - Sienge, https://sienge.com.br/blog/pintura-com-cal-como-preparar/\"\n  - unstructured: \"Pintura à base de cal como alternativa de revestimento frio - SciSpace, https://scispace.com/pdf/pintura-a-base-de-cal-como-alternativa-de-revestimento-frio-1ieagnmw26.pdf\"\n  - unstructured: \"Mist System Nozzle Space - Patio Misting System Installation, https://patiomistingsysteminstallation.com/mist-system-nozzle-space\"\n  - unstructured: \"Kit de bico de nebulização de pátio - Leroy Merlin, https://www.leroymerlin.pt/produtos/kit-de-bico-de-nebulizacao-de-patio-de-20-pecas-88786588.html\"\n  - unstructured: \"Motor Pulverizador Eletrico 12v - Mercado Livre, https://lista.mercadolivre.com.br/motor-pulverizador-eletrico-12v\"\n  - unstructured: \"Motor Bomba Diafragma 12v 3,0ah 100psi Pulverizador Elétrico, https://www.nauticarefrigeracao.com.br/MLB-3933089026\"\n  - unstructured: \"Fonte 12v 10A - Shopee 2025, https://shopee.com.br/list/Fonte/12v/10A\"\n  - unstructured: \"SONOFF TH Elite Smart Temperature and Humidity Monitoring Switch - Itead, https://itead.cc/product/sonoff-th-elite-smart-temperature-and-humidity-monitoring-switch/\"\n  - unstructured: \"Sonoff TH Elite 20A Smart Temperature and Humidity Monitoring Switch - isphome, https://isphome.co.za/shop/works-with-ewelink/sonoff-th-elite/\"\n  - unstructured: \"Sensor de Temperatura Digital DS18B20 à Prova d'Água - AF Eletrônica, https://www.afeletronica.com.br/sensor-temperatura-digital-ds18b20-encapsulado-prova-de-agua\"\n  - unstructured: \"Calculadora de consumo de ar-condicionado - Clarke Energia, https://clarke.com.br/calculadora-de-consumo-de-ar-condicionado/\"\n  - unstructured: \"Qual Consumo Ar-Condicionado 30000 BTUs - WebAr, https://www.webarcondicionado.com.br/qual-o-consumo-de-um-ar-condicionado-de-30-000-btu\"\n  - unstructured: \"Quanto custa instalar um ar-condicionado em 2025? - Revista Oeste, https://revistaoeste.com/oestegeral/2025/12/19/quanto-custa-instalar-um-ar-condicionado-em-2025-valores-fatores-e-como-economizar/\"\n  - unstructured: \"Confira o ranking das tarifas de energia mais caras do Brasil em 2025 - Portal Solar, https://www.portalsolar.com.br/noticias/mercado/consumidor/confira-o-ranking-das-tarifas-de-energia-mais-caras-do-brasil-em-2025\"\n  - unstructured: \"Bandeira Vermelha patamar 2 é mantida em setembro - ANEEL, https://www.gov.br/aneel/pt-br/assuntos/noticias/2025/bandeira-vermelha-patamar-2-e-mantida-em-setembro\"\n  - unstructured: \"Revisão da Estrutura Tarifária da SABESP - Mziq, https://api.mziq.com/mzfilemanager/v2/d/9e47ee51-f833-4a23-af98-2bac9e54e0b3/e6692b22-95ea-749a-6f9c-58b4e0f5d841\"\n  - unstructured: \"Night Vent Cooling - 2030 Palette, https://2030palette.org/night-vent-cooling/\"\n  - unstructured: \"Evaluation of the Effect of Passive Cooling Techniques on Thermal Comfort Using Test Cells in the Northern Region of Brazil - MDPI, https://www.mdpi.com/2076-3417/12/3/1546\"\n  - unstructured: \"Radiant Barriers - Department of Energy, https://www.energy.gov/energysaver/radiant-barriers\"\n  - unstructured: \"FAQ's About Reflective Insulation, Radiant Barriers and IRCCs - RIMA-I, https://rimainternational.org/myths/faqs/\"\n  - unstructured: \"What are the key considerations for integrating phase change materials with building envelopes in tropical climates? - Consensus, https://consensus.app/\"\n  - unstructured: \"Numerical Assessment of Different Phase Change Materials as a Passive Strategy to Reduce Energy Consumption in Buildings under Tropical Climates - MDPI, https://www.mdpi.com/2075-5309/12/7/906\"\n",
       "score": {
         "completenessScore": 1000,
-        "referencesScore": 1000,
+        "referencesScore": 700,
         "identifierScore": 1000,
         "workflowScore": 1000,
         "cffScore": 1000,
-        "finalScore": 1000
+        "finalScore": 940
       },
-      "approved": true
+      "approved": false
     },
     {
       "slug": "2025-iot-data-sovereignty",
@@ -678,31 +1082,83 @@
         "DETECTION",
         "MLP"
       ],
-      "abstract": "Deteccao de fraude em cartoes com redes neurais MLP e engenharia de atributos para dados desbalanceados. O problema central investigado e: Fraude financeira combina alta assimetria de classes com necessidade de baixa latencia decisoria em tempo quase real. Adotou-se um desenho metodologico com foco em validade interna, comparabilidade e reproducibilidade: Pipeline supervisionado com reamostragem, calibracao de limiar e avaliacao por precision-recall e custo de erro. Os resultados principais indicam que a combinacao de mlp com ajuste de limiar melhora captura de fraudes mantendo taxa operacional aceitavel de falsos positivos.. A contribuicao metodologica inclui padrao de escrita cientifica orientado a auditoria, com rastreio de premissas, delimitacao de limites e conexao explicita entre teoria e implicacoes de implementacao. O objetivo deste trabalho e avaliar de forma estruturada como \"Detecção de Fraudes em Cartões com Redes Neurais\" pode gerar valor cientifico e operacional com rastreabilidade metodologica. Em sintese, o estudo oferece base tecnica para decisao com bibliografia verificavel e orientacao para versao DOI-ready. (Ngai, 2011).",
+      "abstract": "Este trabalho apresenta um estudo de caso de detecção de fraudes em cartões de crédito sob forte desbalanceamento, comparando um Perceptron Multi-Camadas (MLP) supervisionado às alternativas Autoencoder (AE), Regressão Logística (LR) e Isolation Forest (IF) no conjunto público ULB/Worldline. O protocolo prioriza métricas apropriadas a classes raras, em especial AUC-PR e F1 (além de Fβ), com thresholds calibrados na validação e aplicados no teste; reportamos curvas ROC/PR, matrizes de confusão, importância por permutação e teste de robustez a variações de prevalência. O MLP obteve o melhor F1 na classe positiva e AUC-PR competitiva, superando AE/IF e empatando/superando LR; discutimos escolha de limiar sensível a custos, calibração e governança, com artefatos completos para replicação (SAITO; REHMSMEIER, 2015; DAVIS; GOADRICH, 2006).",
       "references": [
         {
-          "citation": "Ngai, E. W. T. et al. (2011). The application of data mining techniques in financial fraud detection.",
-          "url": "https://doi.org/10.1016/j.dss.2010.08.006"
+          "citation": "SAITO, T.; REHMSMEIER, M. The Precision-Recall Plot Is More Informative than the ROC Plot on Imbalanced Datasets. PLoS ONE, 2015.",
+          "url": ""
         },
         {
-          "citation": "Whitrow, C. et al. (2009). Transaction aggregation as a strategy for credit card fraud detection.",
-          "url": "https://doi.org/10.1016/j.eswa.2008.10.008"
+          "citation": "DAVIS, J.; GOADRICH, M. The Relationship Between Precision-Recall and ROC Curves. In: ICML, 2006.",
+          "url": ""
         },
         {
-          "citation": "Jurgovsky, J. et al. (2018). Sequence classification for credit-card fraud detection.",
-          "url": "https://arxiv.org/abs/1811.07293"
+          "citation": "KING, G.; ZENG, L. Logistic Regression in Rare Events Data. Political Analysis, 2001.",
+          "url": ""
         },
         {
-          "citation": "Carcillo, F. et al. (2021). Combining unsupervised and supervised learning in credit card fraud detection.",
-          "url": "https://doi.org/10.1016/j.is.2021.101705"
+          "citation": "NICULESCU-MIZIL, A.; CARUANA, R. Predicting Good Probabilities with Supervised Learning. In: ICML, 2005.",
+          "url": ""
         },
         {
-          "citation": "Bahnsen, A. C. et al. (2016). Classifying highly imbalanced data using cost-sensitive decision trees.",
-          "url": "https://doi.org/10.1016/j.eswa.2016.05.032"
+          "citation": "GUO, C.; PLEISS, G.; SUN, Y.; WEINBERGER, K. On Calibration of Modern Neural Networks. In: ICML, 2017.",
+          "url": ""
         },
         {
-          "citation": "NIST. AI Risk Management Framework 1.0.",
-          "url": "https://www.nist.gov/itl/ai-risk-management-framework"
+          "citation": "LIU, F. T.; TING, K. M.; ZHOU, Z.-H. Isolation Forest. In: ICDM, 2008.",
+          "url": ""
+        },
+        {
+          "citation": "CHAWLA, N. V. et al. SMOTE: Synthetic Minority Over-sampling Technique. JAIR, 2002.",
+          "url": ""
+        },
+        {
+          "citation": "DAL POZZOLO, A. Adaptive Machine Learning for Credit Card Fraud Detection. PhD Thesis, 2015.",
+          "url": ""
+        },
+        {
+          "citation": "ULB/WORLDLINE. Credit Card Fraud Dataset. Kaggle mirror, 2013.",
+          "url": ""
+        },
+        {
+          "citation": "GOODFELLOW, I.; BENGIO, Y.; COURVILLE, A. Deep Learning. MIT Press, 2016.",
+          "url": ""
+        },
+        {
+          "citation": "BISHOP, C. Pattern Recognition and Machine Learning. Springer, 2006.",
+          "url": ""
+        },
+        {
+          "citation": "HASTIE, T.; TIBSHIRANI, R.; FRIEDMAN, J. The Elements of Statistical Learning. Springer, 2009.",
+          "url": ""
+        },
+        {
+          "citation": "MURPHY, K. Machine Learning: A Probabilistic Perspective. MIT Press, 2012.",
+          "url": ""
+        },
+        {
+          "citation": "CHEN, W. et al. A survey on imbalanced learning: latest research. Artificial Intelligence Review, 2024.",
+          "url": ""
+        },
+        {
+          "citation": "HERNANDEZ AROS, L. et al. Financial fraud detection through ML. Humanities and Social Sciences Communications, 2024.",
+          "url": ""
+        },
+        {
+          "citation": "CHERIF, A. et al. Credit card fraud detection in the era of disruptive technologies. JISA, 2023.",
+          "url": ""
+        },
+        {
+          "citation": "IBM Skills Network. AI Development — Estudo de Caso (Diretrizes). 2025.",
+          "url": ""
+        },
+        {
+          "citation": "IBM Skills Network. Unit 3.x — Laboratórios de Métricas, Treinamento e Avaliação. 2025.",
+          "url": ""
+        },
+        {
+          "citation": "FLORES, Carlos Ulisses. Notebook estudo_caso_fraude_cartao_pytorch_v3p2_final_full.ipynb. Colab, 2025. Acesso em: 16/08/2025.",
+          "url": ""
         }
       ],
       "cffPath": "/doi/2025-fraud-detection-mlp/CITATION.cff",
@@ -714,7 +1170,7 @@
           "upload_type": "publication",
           "publication_type": "article",
           "publication_date": "2025-01-01",
-          "description": "<p>Deteccao de fraude em cartoes com redes neurais MLP e engenharia de atributos para dados desbalanceados. O problema central investigado e: Fraude financeira combina alta assimetria de classes com necessidade de baixa latencia decisoria em tempo quase real. Adotou-se um desenho metodologico com foco em validade interna, comparabilidade e reproducibilidade: Pipeline supervisionado com reamostragem, calibracao de limiar e avaliacao por precision-recall e custo de erro. Os resultados principais indicam que a combinacao de mlp com ajuste de limiar melhora captura de fraudes mantendo taxa operacional aceitavel de falsos positivos.. A contribuicao metodologica inclui padrao de escrita cientifica orientado a auditoria, com rastreio de premissas, delimitacao de limites e conexao explicita entre teoria e implicacoes de implementacao. O objetivo deste trabalho e avaliar de forma estruturada como &quot;Detecção de Fraudes em Cartões com Redes Neurais&quot; pode gerar valor cientifico e operacional com rastreabilidade metodologica. Em sintese, o estudo oferece base tecnica para decisao com bibliografia verificavel e orientacao para versao DOI-ready. (Ngai, 2011).</p>",
+          "description": "<p>Este trabalho apresenta um estudo de caso de detecção de fraudes em cartões de crédito sob forte desbalanceamento, comparando um Perceptron Multi-Camadas (MLP) supervisionado às alternativas Autoencoder (AE), Regressão Logística (LR) e Isolation Forest (IF) no conjunto público ULB/Worldline. O protocolo prioriza métricas apropriadas a classes raras, em especial AUC-PR e F1 (além de Fβ), com thresholds calibrados na validação e aplicados no teste; reportamos curvas ROC/PR, matrizes de confusão, importância por permutação e teste de robustez a variações de prevalência. O MLP obteve o melhor F1 na classe positiva e AUC-PR competitiva, superando AE/IF e empatando/superando LR; discutimos escolha de limiar sensível a custos, calibração e governança, com artefatos completos para replicação (SAITO; REHMSMEIER, 2015; DAVIS; GOADRICH, 2006).</p>",
           "creators": [
             {
               "name": "Flores, Carlos Ulisses",
@@ -729,12 +1185,25 @@
           ],
           "language": "pt-BR",
           "references": [
-            "Ngai, E. W. T. et al. (2011). The application of data mining techniques in financial fraud detection. (https://doi.org/10.1016/j.dss.2010.08.006)",
-            "Whitrow, C. et al. (2009). Transaction aggregation as a strategy for credit card fraud detection. (https://doi.org/10.1016/j.eswa.2008.10.008)",
-            "Jurgovsky, J. et al. (2018). Sequence classification for credit-card fraud detection. (https://arxiv.org/abs/1811.07293)",
-            "Carcillo, F. et al. (2021). Combining unsupervised and supervised learning in credit card fraud detection. (https://doi.org/10.1016/j.is.2021.101705)",
-            "Bahnsen, A. C. et al. (2016). Classifying highly imbalanced data using cost-sensitive decision trees. (https://doi.org/10.1016/j.eswa.2016.05.032)",
-            "NIST. AI Risk Management Framework 1.0. (https://www.nist.gov/itl/ai-risk-management-framework)"
+            "SAITO, T.; REHMSMEIER, M. The Precision-Recall Plot Is More Informative than the ROC Plot on Imbalanced Datasets. PLoS ONE, 2015.",
+            "DAVIS, J.; GOADRICH, M. The Relationship Between Precision-Recall and ROC Curves. In: ICML, 2006.",
+            "KING, G.; ZENG, L. Logistic Regression in Rare Events Data. Political Analysis, 2001.",
+            "NICULESCU-MIZIL, A.; CARUANA, R. Predicting Good Probabilities with Supervised Learning. In: ICML, 2005.",
+            "GUO, C.; PLEISS, G.; SUN, Y.; WEINBERGER, K. On Calibration of Modern Neural Networks. In: ICML, 2017.",
+            "LIU, F. T.; TING, K. M.; ZHOU, Z.-H. Isolation Forest. In: ICDM, 2008.",
+            "CHAWLA, N. V. et al. SMOTE: Synthetic Minority Over-sampling Technique. JAIR, 2002.",
+            "DAL POZZOLO, A. Adaptive Machine Learning for Credit Card Fraud Detection. PhD Thesis, 2015.",
+            "ULB/WORLDLINE. Credit Card Fraud Dataset. Kaggle mirror, 2013.",
+            "GOODFELLOW, I.; BENGIO, Y.; COURVILLE, A. Deep Learning. MIT Press, 2016.",
+            "BISHOP, C. Pattern Recognition and Machine Learning. Springer, 2006.",
+            "HASTIE, T.; TIBSHIRANI, R.; FRIEDMAN, J. The Elements of Statistical Learning. Springer, 2009.",
+            "MURPHY, K. Machine Learning: A Probabilistic Perspective. MIT Press, 2012.",
+            "CHEN, W. et al. A survey on imbalanced learning: latest research. Artificial Intelligence Review, 2024.",
+            "HERNANDEZ AROS, L. et al. Financial fraud detection through ML. Humanities and Social Sciences Communications, 2024.",
+            "CHERIF, A. et al. Credit card fraud detection in the era of disruptive technologies. JISA, 2023.",
+            "IBM Skills Network. AI Development — Estudo de Caso (Diretrizes). 2025.",
+            "IBM Skills Network. Unit 3.x — Laboratórios de Métricas, Treinamento e Avaliação. 2025.",
+            "FLORES, Carlos Ulisses. Notebook estudo_caso_fraude_cartao_pytorch_v3p2_final_full.ipynb. Colab, 2025. Acesso em: 16/08/2025."
           ],
           "related_identifiers": [
             {
@@ -757,7 +1226,7 @@
         "schema": "https://data.crossref.org/schemas/crossref_input.json",
         "type": "article",
         "title": "Detecção de Fraudes em Cartões com Redes Neurais",
-        "abstract": "Deteccao de fraude em cartoes com redes neurais MLP e engenharia de atributos para dados desbalanceados. O problema central investigado e: Fraude financeira combina alta assimetria de classes com necessidade de baixa latencia decisoria em tempo quase real. Adotou-se um desenho metodologico com foco em validade interna, comparabilidade e reproducibilidade: Pipeline supervisionado com reamostragem, calibracao de limiar e avaliacao por precision-recall e custo de erro. Os resultados principais indicam que a combinacao de mlp com ajuste de limiar melhora captura de fraudes mantendo taxa operacional aceitavel de falsos positivos.. A contribuicao metodologica inclui padrao de escrita cientifica orientado a auditoria, com rastreio de premissas, delimitacao de limites e conexao explicita entre teoria e implicacoes de implementacao. O objetivo deste trabalho e avaliar de forma estruturada como \"Detecção de Fraudes em Cartões com Redes Neurais\" pode gerar valor cientifico e operacional com rastreabilidade metodologica. Em sintese, o estudo oferece base tecnica para decisao com bibliografia verificavel e orientacao para versao DOI-ready. (Ngai, 2011).",
+        "abstract": "Este trabalho apresenta um estudo de caso de detecção de fraudes em cartões de crédito sob forte desbalanceamento, comparando um Perceptron Multi-Camadas (MLP) supervisionado às alternativas Autoencoder (AE), Regressão Logística (LR) e Isolation Forest (IF) no conjunto público ULB/Worldline. O protocolo prioriza métricas apropriadas a classes raras, em especial AUC-PR e F1 (além de Fβ), com thresholds calibrados na validação e aplicados no teste; reportamos curvas ROC/PR, matrizes de confusão, importância por permutação e teste de robustez a variações de prevalência. O MLP obteve o melhor F1 na classe positiva e AUC-PR competitiva, superando AE/IF e empatando/superando LR; discutimos escolha de limiar sensível a custos, calibração e governança, com artefatos completos para replicação (SAITO; REHMSMEIER, 2015; DAVIS; GOADRICH, 2006).",
         "authors": [
           {
             "given": "Carlos Ulisses",
@@ -780,51 +1249,93 @@
         "reference": [
           {
             "key": "2025-fraud-detection-mlp-ref-1",
-            "unstructured": "Ngai, E. W. T. et al. (2011). The application of data mining techniques in financial fraud detection.",
-            "DOI": "10.1016/j.dss.2010.08.006",
-            "URL": "https://doi.org/10.1016/j.dss.2010.08.006"
+            "unstructured": "SAITO, T.; REHMSMEIER, M. The Precision-Recall Plot Is More Informative than the ROC Plot on Imbalanced Datasets. PLoS ONE, 2015."
           },
           {
             "key": "2025-fraud-detection-mlp-ref-2",
-            "unstructured": "Whitrow, C. et al. (2009). Transaction aggregation as a strategy for credit card fraud detection.",
-            "DOI": "10.1016/j.eswa.2008.10.008",
-            "URL": "https://doi.org/10.1016/j.eswa.2008.10.008"
+            "unstructured": "DAVIS, J.; GOADRICH, M. The Relationship Between Precision-Recall and ROC Curves. In: ICML, 2006."
           },
           {
             "key": "2025-fraud-detection-mlp-ref-3",
-            "unstructured": "Jurgovsky, J. et al. (2018). Sequence classification for credit-card fraud detection.",
-            "URL": "https://arxiv.org/abs/1811.07293"
+            "unstructured": "KING, G.; ZENG, L. Logistic Regression in Rare Events Data. Political Analysis, 2001."
           },
           {
             "key": "2025-fraud-detection-mlp-ref-4",
-            "unstructured": "Carcillo, F. et al. (2021). Combining unsupervised and supervised learning in credit card fraud detection.",
-            "DOI": "10.1016/j.is.2021.101705",
-            "URL": "https://doi.org/10.1016/j.is.2021.101705"
+            "unstructured": "NICULESCU-MIZIL, A.; CARUANA, R. Predicting Good Probabilities with Supervised Learning. In: ICML, 2005."
           },
           {
             "key": "2025-fraud-detection-mlp-ref-5",
-            "unstructured": "Bahnsen, A. C. et al. (2016). Classifying highly imbalanced data using cost-sensitive decision trees.",
-            "DOI": "10.1016/j.eswa.2016.05.032",
-            "URL": "https://doi.org/10.1016/j.eswa.2016.05.032"
+            "unstructured": "GUO, C.; PLEISS, G.; SUN, Y.; WEINBERGER, K. On Calibration of Modern Neural Networks. In: ICML, 2017."
           },
           {
             "key": "2025-fraud-detection-mlp-ref-6",
-            "unstructured": "NIST. AI Risk Management Framework 1.0.",
-            "URL": "https://www.nist.gov/itl/ai-risk-management-framework"
+            "unstructured": "LIU, F. T.; TING, K. M.; ZHOU, Z.-H. Isolation Forest. In: ICDM, 2008."
+          },
+          {
+            "key": "2025-fraud-detection-mlp-ref-7",
+            "unstructured": "CHAWLA, N. V. et al. SMOTE: Synthetic Minority Over-sampling Technique. JAIR, 2002."
+          },
+          {
+            "key": "2025-fraud-detection-mlp-ref-8",
+            "unstructured": "DAL POZZOLO, A. Adaptive Machine Learning for Credit Card Fraud Detection. PhD Thesis, 2015."
+          },
+          {
+            "key": "2025-fraud-detection-mlp-ref-9",
+            "unstructured": "ULB/WORLDLINE. Credit Card Fraud Dataset. Kaggle mirror, 2013."
+          },
+          {
+            "key": "2025-fraud-detection-mlp-ref-10",
+            "unstructured": "GOODFELLOW, I.; BENGIO, Y.; COURVILLE, A. Deep Learning. MIT Press, 2016."
+          },
+          {
+            "key": "2025-fraud-detection-mlp-ref-11",
+            "unstructured": "BISHOP, C. Pattern Recognition and Machine Learning. Springer, 2006."
+          },
+          {
+            "key": "2025-fraud-detection-mlp-ref-12",
+            "unstructured": "HASTIE, T.; TIBSHIRANI, R.; FRIEDMAN, J. The Elements of Statistical Learning. Springer, 2009."
+          },
+          {
+            "key": "2025-fraud-detection-mlp-ref-13",
+            "unstructured": "MURPHY, K. Machine Learning: A Probabilistic Perspective. MIT Press, 2012."
+          },
+          {
+            "key": "2025-fraud-detection-mlp-ref-14",
+            "unstructured": "CHEN, W. et al. A survey on imbalanced learning: latest research. Artificial Intelligence Review, 2024."
+          },
+          {
+            "key": "2025-fraud-detection-mlp-ref-15",
+            "unstructured": "HERNANDEZ AROS, L. et al. Financial fraud detection through ML. Humanities and Social Sciences Communications, 2024."
+          },
+          {
+            "key": "2025-fraud-detection-mlp-ref-16",
+            "unstructured": "CHERIF, A. et al. Credit card fraud detection in the era of disruptive technologies. JISA, 2023."
+          },
+          {
+            "key": "2025-fraud-detection-mlp-ref-17",
+            "unstructured": "IBM Skills Network. AI Development — Estudo de Caso (Diretrizes). 2025."
+          },
+          {
+            "key": "2025-fraud-detection-mlp-ref-18",
+            "unstructured": "IBM Skills Network. Unit 3.x — Laboratórios de Métricas, Treinamento e Avaliação. 2025."
+          },
+          {
+            "key": "2025-fraud-detection-mlp-ref-19",
+            "unstructured": "FLORES, Carlos Ulisses. Notebook estudo_caso_fraude_cartao_pytorch_v3p2_final_full.ipynb. Colab, 2025. Acesso em: 16/08/2025."
           }
         ],
         "doi_target": "10.5281/zenodo.202506"
       },
-      "citationCff": "cff-version: 1.2.0\nmessage: \"If you use this work, cite with this metadata. DOI target: 10.5281/zenodo.202506 (not minted).\"\ntitle: \"Detecção de Fraudes em Cartões com Redes Neurais\"\ntype: article\nauthors:\n  - family-names: \"Flores\"\n    given-names: \"Carlos Ulisses\"\n    orcid: \"0000-0002-6034-7765\"\nidentifiers:\n  - type: url\n    value: \"https://ulissesflores.com/research/2025-fraud-detection-mlp\"\n  - type: url\n    value: \"https://ulissesflores.com/deep-research/2025-fraud-detection-mlp/deep-research.pdf\"\nabstract: \"Deteccao de fraude em cartoes com redes neurais MLP e engenharia de atributos para dados desbalanceados. O problema central investigado e: Fraude financeira combina alta assimetria de classes com necessidade de baixa latencia decisoria em tempo quase real. Adotou-se um desenho metodologico com foco em validade interna, comparabilidade e reproducibilidade: Pipeline supervisionado com reamostragem, calibracao de limiar e avaliacao por precision-recall e custo de erro. Os resultados principais indicam que a combinacao de mlp com ajuste de limiar melhora captura de fraudes mantendo taxa operacional aceitavel de falsos positivos.. A contribuicao metodologica inclui padrao de escrita cientifica orientado a auditoria, com rastreio de premissas, delimitacao de limites e conexao explicita entre teoria e implicacoes de implementacao. O objetivo deste trabalho e avaliar de forma estruturada como \\\"Detecção de Fraudes em Cartões com Redes Neurais\\\" pode gerar valor cientifico e operacional com rastreabilidade metodologica. Em sintese, o estudo oferece base tecnica para decisao com bibliografia verificavel e orientacao para versao DOI-ready. (Ngai, 2011).\"\nkeywords: [\"FRAUD\", \"DETECTION\", \"MLP\"]\nlicense: \"CC-BY-4.0\"\nversion: \"v2026-02-21\"\ndate-released: \"2025-01-01\"\nrepository-code: \"https://ulissesflores.com/research/2025-fraud-detection-mlp\"\nreferences:\n  - unstructured: \"Ngai, E. W. T. et al. (2011). The application of data mining techniques in financial fraud detection.\"\n    url: \"https://doi.org/10.1016/j.dss.2010.08.006\"\n  - unstructured: \"Whitrow, C. et al. (2009). Transaction aggregation as a strategy for credit card fraud detection.\"\n    url: \"https://doi.org/10.1016/j.eswa.2008.10.008\"\n  - unstructured: \"Jurgovsky, J. et al. (2018). Sequence classification for credit-card fraud detection.\"\n    url: \"https://arxiv.org/abs/1811.07293\"\n  - unstructured: \"Carcillo, F. et al. (2021). Combining unsupervised and supervised learning in credit card fraud detection.\"\n    url: \"https://doi.org/10.1016/j.is.2021.101705\"\n  - unstructured: \"Bahnsen, A. C. et al. (2016). Classifying highly imbalanced data using cost-sensitive decision trees.\"\n    url: \"https://doi.org/10.1016/j.eswa.2016.05.032\"\n  - unstructured: \"NIST. AI Risk Management Framework 1.0.\"\n    url: \"https://www.nist.gov/itl/ai-risk-management-framework\"\n",
+      "citationCff": "cff-version: 1.2.0\nmessage: \"If you use this work, cite with this metadata. DOI target: 10.5281/zenodo.202506 (not minted).\"\ntitle: \"Detecção de Fraudes em Cartões com Redes Neurais\"\ntype: article\nauthors:\n  - family-names: \"Flores\"\n    given-names: \"Carlos Ulisses\"\n    orcid: \"0000-0002-6034-7765\"\nidentifiers:\n  - type: url\n    value: \"https://ulissesflores.com/research/2025-fraud-detection-mlp\"\n  - type: url\n    value: \"https://ulissesflores.com/deep-research/2025-fraud-detection-mlp/deep-research.pdf\"\nabstract: \"Este trabalho apresenta um estudo de caso de detecção de fraudes em cartões de crédito sob forte desbalanceamento, comparando um Perceptron Multi-Camadas (MLP) supervisionado às alternativas Autoencoder (AE), Regressão Logística (LR) e Isolation Forest (IF) no conjunto público ULB/Worldline. O protocolo prioriza métricas apropriadas a classes raras, em especial AUC-PR e F1 (além de Fβ), com thresholds calibrados na validação e aplicados no teste; reportamos curvas ROC/PR, matrizes de confusão, importância por permutação e teste de robustez a variações de prevalência. O MLP obteve o melhor F1 na classe positiva e AUC-PR competitiva, superando AE/IF e empatando/superando LR; discutimos escolha de limiar sensível a custos, calibração e governança, com artefatos completos para replicação (SAITO; REHMSMEIER, 2015; DAVIS; GOADRICH, 2006).\"\nkeywords: [\"FRAUD\", \"DETECTION\", \"MLP\"]\nlicense: \"CC-BY-4.0\"\nversion: \"v2026-02-21\"\ndate-released: \"2025-01-01\"\nrepository-code: \"https://ulissesflores.com/research/2025-fraud-detection-mlp\"\nreferences:\n  - unstructured: \"SAITO, T.; REHMSMEIER, M. The Precision-Recall Plot Is More Informative than the ROC Plot on Imbalanced Datasets. PLoS ONE, 2015.\"\n  - unstructured: \"DAVIS, J.; GOADRICH, M. The Relationship Between Precision-Recall and ROC Curves. In: ICML, 2006.\"\n  - unstructured: \"KING, G.; ZENG, L. Logistic Regression in Rare Events Data. Political Analysis, 2001.\"\n  - unstructured: \"NICULESCU-MIZIL, A.; CARUANA, R. Predicting Good Probabilities with Supervised Learning. In: ICML, 2005.\"\n  - unstructured: \"GUO, C.; PLEISS, G.; SUN, Y.; WEINBERGER, K. On Calibration of Modern Neural Networks. In: ICML, 2017.\"\n  - unstructured: \"LIU, F. T.; TING, K. M.; ZHOU, Z.-H. Isolation Forest. In: ICDM, 2008.\"\n  - unstructured: \"CHAWLA, N. V. et al. SMOTE: Synthetic Minority Over-sampling Technique. JAIR, 2002.\"\n  - unstructured: \"DAL POZZOLO, A. Adaptive Machine Learning for Credit Card Fraud Detection. PhD Thesis, 2015.\"\n  - unstructured: \"ULB/WORLDLINE. Credit Card Fraud Dataset. Kaggle mirror, 2013.\"\n  - unstructured: \"GOODFELLOW, I.; BENGIO, Y.; COURVILLE, A. Deep Learning. MIT Press, 2016.\"\n  - unstructured: \"BISHOP, C. Pattern Recognition and Machine Learning. Springer, 2006.\"\n  - unstructured: \"HASTIE, T.; TIBSHIRANI, R.; FRIEDMAN, J. The Elements of Statistical Learning. Springer, 2009.\"\n  - unstructured: \"MURPHY, K. Machine Learning: A Probabilistic Perspective. MIT Press, 2012.\"\n  - unstructured: \"CHEN, W. et al. A survey on imbalanced learning: latest research. Artificial Intelligence Review, 2024.\"\n  - unstructured: \"HERNANDEZ AROS, L. et al. Financial fraud detection through ML. Humanities and Social Sciences Communications, 2024.\"\n  - unstructured: \"CHERIF, A. et al. Credit card fraud detection in the era of disruptive technologies. JISA, 2023.\"\n  - unstructured: \"IBM Skills Network. AI Development — Estudo de Caso (Diretrizes). 2025.\"\n  - unstructured: \"IBM Skills Network. Unit 3.x — Laboratórios de Métricas, Treinamento e Avaliação. 2025.\"\n  - unstructured: \"FLORES, Carlos Ulisses. Notebook estudo_caso_fraude_cartao_pytorch_v3p2_final_full.ipynb. Colab, 2025. Acesso em: 16/08/2025.\"\n",
       "score": {
         "completenessScore": 1000,
-        "referencesScore": 1000,
+        "referencesScore": 700,
         "identifierScore": 1000,
         "workflowScore": 1000,
         "cffScore": 1000,
-        "finalScore": 1000
+        "finalScore": 940
       },
-      "approved": true
+      "approved": false
     },
     {
       "slug": "2024-historicity-jesus-archaeology",
@@ -1377,31 +1888,187 @@
         "ECONOMIC",
         "ORDER"
       ],
-      "abstract": "Ensaio sobre fundamentos transcendentes da ordem economica e sua relacao com normatividade moral. O problema central investigado e: Modelos puramente tecnocráticos tendem a negligenciar pressupostos antropologicos e eticos da cooperacao social. Adotou-se um desenho metodologico com foco em validade interna, comparabilidade e reproducibilidade: Analise conceitual interdisciplinar entre teologia, filosofia moral e teoria economica. Os resultados principais indicam que o texto demonstra que categorias de responsabilidade e dignidade influenciam desenho institucional e incentivos.. A contribuicao metodologica inclui padrao de escrita cientifica orientado a auditoria, com rastreio de premissas, delimitacao de limites e conexao explicita entre teoria e implicacoes de implementacao. O objetivo deste trabalho e avaliar de forma estruturada como \"Fundamentos Transcendentes da Ordem Econômica\" pode gerar valor cientifico e operacional com rastreabilidade metodologica. Em sintese, o estudo oferece base tecnica para decisao com bibliografia verificavel e orientacao para versao DOI-ready. (Augustine, 2026).",
+      "abstract": "",
       "references": [
         {
-          "citation": "Augustine. The City of God.",
-          "url": "https://www.newadvent.org/fathers/1201.htm"
+          "citation": "Economic calculation problem - Wikipedia, https://en.wikipedia.org/wiki/Economic_calculation_problem",
+          "url": ""
         },
         {
-          "citation": "Aquinas, T. Summa Theologiae.",
-          "url": "https://www.newadvent.org/summa/"
+          "citation": "Monetary Calculation and Mises's Critique of Planning - St. Lawrence University, https://myslu.stlawu.edu/~shorwitz/Papers/Mises_HOPE_1998.pdf",
+          "url": ""
         },
         {
-          "citation": "Ropke, W. (1960). A Humane Economy.",
-          "url": "https://isi.org/books/a-humane-economy/"
+          "citation": "Ludwig von Mises and Economic Calculation Under Socialism, Part 1 - Libertarianism.org, https://www.libertarianism.org/publications/essays/excursions/ludwig-von-mises-economic-calculation-under-socialism-part-1",
+          "url": ""
         },
         {
-          "citation": "Weber, M. (1905). The Protestant Ethic and the Spirit of Capitalism.",
-          "url": "https://www.marxists.org/reference/archive/weber/protestant-ethic/"
+          "citation": "Economic Calculation in the Socialist Commonwealth - Mises Institute, https://cdn.mises.org/Economic%20Calculation%20in%20the%20Socialist%20Commonwealth_Vol_2_3.pdf",
+          "url": ""
         },
         {
-          "citation": "Novak, M. (1982). The Spirit of Democratic Capitalism.",
-          "url": "https://www.basicbooks.com/titles/michael-novak/the-spirit-of-democratic-capitalism/9781594035883/"
+          "citation": "Labor theory of value - Wikipedia, https://en.wikipedia.org/wiki/Labor_theory_of_value",
+          "url": ""
         },
         {
-          "citation": "McCloskey, D. (2006). The Bourgeois Virtues.",
-          "url": "https://press.uchicago.edu/ucp/books/book/chicago/B/bo3684036.html"
+          "citation": "Eugen von Böhm-Bawerk, \"The Error in the Marxist System\" (1896) - Online Library of Liberty, https://oll.libertyfund.org/pages/reader-bawerk-marx",
+          "url": ""
+        },
+        {
+          "citation": "Karl Marx and the Close of His System - School of Cooperative Individualism, https://cooperative-individualism.org/bohm-bawerk-eugen-von_karl-marx-and-the-close-of-his-system-1949-06.pdf",
+          "url": ""
+        },
+        {
+          "citation": "Hayek's \"The Use of Knowledge in Society\" - A Summary - Bleeding Heart Libertarians, https://bleedingheartlibertarians.com/2016/05/hayeks-the-use-of-knowledge-in-society-a-summary/",
+          "url": ""
+        },
+        {
+          "citation": "F.A. Hayek on the Discovery, Use, and Transmission of Knowledge - Austrian Institute, https://austrian-institute.org/en/blog/f-a-hayek-on-the-discovery-use-and-transmission-of-knowledge/",
+          "url": ""
+        },
+        {
+          "citation": "Hayek's Knowledge Problem and its Relevance in Organizational Management - Canadian Center of Science and Education, https://ccsenet.org/journal/index.php/ijbm/article/download/0/0/50004/54089",
+          "url": ""
+        },
+        {
+          "citation": "Benjamin M. Anderson: Hayek's Precursor on the Knowledge Problem - Cato at Liberty Blog, https://www.cato.org/blog/benjamin-m-anderson-hayeks-precursor-knowledge-problem",
+          "url": ""
+        },
+        {
+          "citation": "Systems biology beyond networks: generating order from disorder through self-organization, https://pmc.ncbi.nlm.nih.gov/articles/PMC3148307/",
+          "url": ""
+        },
+        {
+          "citation": "Hayek's Legacy of the Spontaneous Order - Federal Reserve Bank of Minneapolis, https://www.minneapolisfed.org/article/1992/hayeks-legacy-of-the-spontaneous-order",
+          "url": ""
+        },
+        {
+          "citation": "Spontaneous Order: A Testament to Human Creativity and Adaptability - The IHS, https://www.theihs.org/blog/spontaneous-order-a-testament-to-human-creativity-and-adaptability/",
+          "url": ""
+        },
+        {
+          "citation": "Spontaneous order - Wikipedia, https://en.wikipedia.org/wiki/Spontaneous_order",
+          "url": ""
+        },
+        {
+          "citation": "O BNDES e a crise dos caminhoneiros, https://web.bndes.gov.br/bib/jspui/bitstream/1408/15200/1/O-BNDES-e-a-crise-dos-caminhoneiros.pdf",
+          "url": ""
+        },
+        {
+          "citation": "No auge, subsídio para setor de caminhões atingiu R$ 34 bilhões, https://www.brasilagro.com.br/conteudo/no-auge-subsidio-para-setor-de-caminhoes-atingiu-r-34-bilhoes.html",
+          "url": ""
+        },
+        {
+          "citation": "Efeito crowding-out no Brasil, https://repositorio.fgv.br/items/027e589b-15c7-4f9f-88bb-df7e118d97ab",
+          "url": ""
+        },
+        {
+          "citation": "O efeito crowding-out via BNDES no mercado brasileiro, no século XXI - Revista Espacios, https://www.revistaespacios.com/a17v38n61/a17v38n61p08.pdf",
+          "url": ""
+        },
+        {
+          "citation": "Análise dos efeitos crowding-in e crowding-out para a economia brasileira - AmeliCA, https://portal.amelica.org/ameli/jatsRepo/65/6521005/html/",
+          "url": ""
+        },
+        {
+          "citation": "Investimento privado: uma análise empírica para o Brasil - SciELO, https://www.scielo.br/j/ecos/a/5z4RPHCTGZnj9Vjzh5r6tMK/",
+          "url": ""
+        },
+        {
+          "citation": "Greve dos caminhoneiros custará R$ 15 bilhões para a economia - Agência Brasil/EBC, https://agenciabrasil.ebc.com.br/economia/noticia/2018-06/greve-dos-caminhoneiros-custara-r-15-bilhoes-para-economia",
+          "url": ""
+        },
+        {
+          "citation": "Seigniorage Explained: Impact on Inflation and Government Revenue - Investopedia, https://www.investopedia.com/terms/s/seigniorage.asp",
+          "url": ""
+        },
+        {
+          "citation": "Seigniorage - Wikipedia, https://en.wikipedia.org/wiki/Seigniorage",
+          "url": ""
+        },
+        {
+          "citation": "Making Money From Making Money - New Economics Foundation, https://new-economicsf.files.svdcdn.com/production/files/NEF_MAKING-MONEY-OUT-OF-MONEY_amendment_E.pdf",
+          "url": ""
+        },
+        {
+          "citation": "The Economic Consequences of the Weimar Hyperinflation - Econlib, https://www.econlib.org/the-economic-consequences-of-the-weimar-hyperinflation/",
+          "url": ""
+        },
+        {
+          "citation": "Global M2 Money Supply: The Long-Term Liquidity Indicator - Babypips.com, https://www.babypips.com/learn/forex/global-m2-money-supply-liquidity-indicator",
+          "url": ""
+        },
+        {
+          "citation": "The Rise and Fall of M2 - St. Louis Fed, https://www.stlouisfed.org/on-the-economy/2023/may/the-rise-and-fall-of-m2",
+          "url": ""
+        },
+        {
+          "citation": "Inflation forecasts based on money growth proved accurate in 2021, though generally unreliable - Dallasfed.org, https://www.dallasfed.org/research/economics/2024/0220",
+          "url": ""
+        },
+        {
+          "citation": "Hyperinflation in the Weimar Republic - ResearchOnline@JCU, https://researchonline.jcu.edu.au/21599/3/21599.pdf",
+          "url": ""
+        },
+        {
+          "citation": "Hyperinflation in the Weimar Republic - Wikipedia, https://en.wikipedia.org/wiki/Hyperinflation_in_the_Weimar_Republic",
+          "url": ""
+        },
+        {
+          "citation": "Venezuela, the Weimar Republic and Zimbabwe prove MMT is true, https://www.taxresearch.org.uk/Blog/2024/10/10/venezuela-the-weimar-republic-and-zimbabwe-prove-mmt-is-true/",
+          "url": ""
+        },
+        {
+          "citation": "Rai stones - Wikipedia, https://en.wikipedia.org/wiki/Rai_stones",
+          "url": ""
+        },
+        {
+          "citation": "Researchers turn to stones to find the ancient origin of Bitcoin - University of Oregon, https://news.uoregon.edu/content/researchers-turn-stones-find-ancient-origin-bitcoin",
+          "url": ""
+        },
+        {
+          "citation": "Rai: big money - Bank of Canada Museum, https://www.bankofcanadamuseum.ca/2024/07/rai-big-money/",
+          "url": ""
+        },
+        {
+          "citation": "The Tale of Rai Stones (And Its Resemblance To Bitcoin) - Netcoins, https://www.netcoins.com/blog/the-tale-of-stone-money-and-how-it-resembles-bitcoin",
+          "url": ""
+        },
+        {
+          "citation": "What were the Rai Stones? - Pocket, https://pocketbitcoin.com/learn/economy/rai-stones-explained",
+          "url": ""
+        },
+        {
+          "citation": "The Protestant Ethic and the Spirit of Capitalism - Wikipedia, https://en.wikipedia.org/wiki/The_Protestant_Ethic_and_the_Spirit_of_Capitalism",
+          "url": ""
+        },
+        {
+          "citation": "Max Weber – The Protestant Ethic and the Spirit of Capitalism (1905) - SozTheo, https://soztheo.com/sociology/key-works-in-sociology/max-weber-the-protestant-ethic-and-the-spirit-of-capitalism-1905/",
+          "url": ""
+        },
+        {
+          "citation": "The Protestant Ethic and the Spirit of Capitalism, https://gpde.direito.ufmg.br/wp-content/uploads/2019/03/MAX-WEBER.pdf",
+          "url": ""
+        },
+        {
+          "citation": "The building blocks of economic complexity - PNAS, https://www.pnas.org/doi/10.1073/pnas.0900943106",
+          "url": ""
+        },
+        {
+          "citation": "How and why should we study 'economic complexity'? - Our World in Data, https://ourworldindata.org/how-and-why-econ-complexity",
+          "url": ""
+        },
+        {
+          "citation": "Economic Complexity, Institutions, and Property Rights - ResearchGate, https://www.researchgate.net/publication/377305744",
+          "url": ""
+        },
+        {
+          "citation": "Economic Complexity, Institutions, and Property Rights, https://press.wz.uw.edu.pl/cgi/viewcontent.cgi?article=1045&context=ems",
+          "url": ""
+        },
+        {
+          "citation": "The Heterogeneous Effect of Economic Complexity on Growth and Human Development - ResearchGate, https://www.researchgate.net/publication/394858900",
+          "url": ""
         }
       ],
       "cffPath": "/doi/2024-theology-economic-order/CITATION.cff",
@@ -1413,7 +2080,7 @@
           "upload_type": "publication",
           "publication_type": "article",
           "publication_date": "2024-01-01",
-          "description": "<p>Ensaio sobre fundamentos transcendentes da ordem economica e sua relacao com normatividade moral. O problema central investigado e: Modelos puramente tecnocráticos tendem a negligenciar pressupostos antropologicos e eticos da cooperacao social. Adotou-se um desenho metodologico com foco em validade interna, comparabilidade e reproducibilidade: Analise conceitual interdisciplinar entre teologia, filosofia moral e teoria economica. Os resultados principais indicam que o texto demonstra que categorias de responsabilidade e dignidade influenciam desenho institucional e incentivos.. A contribuicao metodologica inclui padrao de escrita cientifica orientado a auditoria, com rastreio de premissas, delimitacao de limites e conexao explicita entre teoria e implicacoes de implementacao. O objetivo deste trabalho e avaliar de forma estruturada como &quot;Fundamentos Transcendentes da Ordem Econômica&quot; pode gerar valor cientifico e operacional com rastreabilidade metodologica. Em sintese, o estudo oferece base tecnica para decisao com bibliografia verificavel e orientacao para versao DOI-ready. (Augustine, 2026).</p>",
+          "description": "<p></p>",
           "creators": [
             {
               "name": "Flores, Carlos Ulisses",
@@ -1428,12 +2095,51 @@
           ],
           "language": "pt-BR",
           "references": [
-            "Augustine. The City of God. (https://www.newadvent.org/fathers/1201.htm)",
-            "Aquinas, T. Summa Theologiae. (https://www.newadvent.org/summa/)",
-            "Ropke, W. (1960). A Humane Economy. (https://isi.org/books/a-humane-economy/)",
-            "Weber, M. (1905). The Protestant Ethic and the Spirit of Capitalism. (https://www.marxists.org/reference/archive/weber/protestant-ethic/)",
-            "Novak, M. (1982). The Spirit of Democratic Capitalism. (https://www.basicbooks.com/titles/michael-novak/the-spirit-of-democratic-capitalism/9781594035883/)",
-            "McCloskey, D. (2006). The Bourgeois Virtues. (https://press.uchicago.edu/ucp/books/book/chicago/B/bo3684036.html)"
+            "Economic calculation problem - Wikipedia, https://en.wikipedia.org/wiki/Economic_calculation_problem",
+            "Monetary Calculation and Mises's Critique of Planning - St. Lawrence University, https://myslu.stlawu.edu/~shorwitz/Papers/Mises_HOPE_1998.pdf",
+            "Ludwig von Mises and Economic Calculation Under Socialism, Part 1 - Libertarianism.org, https://www.libertarianism.org/publications/essays/excursions/ludwig-von-mises-economic-calculation-under-socialism-part-1",
+            "Economic Calculation in the Socialist Commonwealth - Mises Institute, https://cdn.mises.org/Economic%20Calculation%20in%20the%20Socialist%20Commonwealth_Vol_2_3.pdf",
+            "Labor theory of value - Wikipedia, https://en.wikipedia.org/wiki/Labor_theory_of_value",
+            "Eugen von Böhm-Bawerk, \"The Error in the Marxist System\" (1896) - Online Library of Liberty, https://oll.libertyfund.org/pages/reader-bawerk-marx",
+            "Karl Marx and the Close of His System - School of Cooperative Individualism, https://cooperative-individualism.org/bohm-bawerk-eugen-von_karl-marx-and-the-close-of-his-system-1949-06.pdf",
+            "Hayek's \"The Use of Knowledge in Society\" - A Summary - Bleeding Heart Libertarians, https://bleedingheartlibertarians.com/2016/05/hayeks-the-use-of-knowledge-in-society-a-summary/",
+            "F.A. Hayek on the Discovery, Use, and Transmission of Knowledge - Austrian Institute, https://austrian-institute.org/en/blog/f-a-hayek-on-the-discovery-use-and-transmission-of-knowledge/",
+            "Hayek's Knowledge Problem and its Relevance in Organizational Management - Canadian Center of Science and Education, https://ccsenet.org/journal/index.php/ijbm/article/download/0/0/50004/54089",
+            "Benjamin M. Anderson: Hayek's Precursor on the Knowledge Problem - Cato at Liberty Blog, https://www.cato.org/blog/benjamin-m-anderson-hayeks-precursor-knowledge-problem",
+            "Systems biology beyond networks: generating order from disorder through self-organization, https://pmc.ncbi.nlm.nih.gov/articles/PMC3148307/",
+            "Hayek's Legacy of the Spontaneous Order - Federal Reserve Bank of Minneapolis, https://www.minneapolisfed.org/article/1992/hayeks-legacy-of-the-spontaneous-order",
+            "Spontaneous Order: A Testament to Human Creativity and Adaptability - The IHS, https://www.theihs.org/blog/spontaneous-order-a-testament-to-human-creativity-and-adaptability/",
+            "Spontaneous order - Wikipedia, https://en.wikipedia.org/wiki/Spontaneous_order",
+            "O BNDES e a crise dos caminhoneiros, https://web.bndes.gov.br/bib/jspui/bitstream/1408/15200/1/O-BNDES-e-a-crise-dos-caminhoneiros.pdf",
+            "No auge, subsídio para setor de caminhões atingiu R$ 34 bilhões, https://www.brasilagro.com.br/conteudo/no-auge-subsidio-para-setor-de-caminhoes-atingiu-r-34-bilhoes.html",
+            "Efeito crowding-out no Brasil, https://repositorio.fgv.br/items/027e589b-15c7-4f9f-88bb-df7e118d97ab",
+            "O efeito crowding-out via BNDES no mercado brasileiro, no século XXI - Revista Espacios, https://www.revistaespacios.com/a17v38n61/a17v38n61p08.pdf",
+            "Análise dos efeitos crowding-in e crowding-out para a economia brasileira - AmeliCA, https://portal.amelica.org/ameli/jatsRepo/65/6521005/html/",
+            "Investimento privado: uma análise empírica para o Brasil - SciELO, https://www.scielo.br/j/ecos/a/5z4RPHCTGZnj9Vjzh5r6tMK/",
+            "Greve dos caminhoneiros custará R$ 15 bilhões para a economia - Agência Brasil/EBC, https://agenciabrasil.ebc.com.br/economia/noticia/2018-06/greve-dos-caminhoneiros-custara-r-15-bilhoes-para-economia",
+            "Seigniorage Explained: Impact on Inflation and Government Revenue - Investopedia, https://www.investopedia.com/terms/s/seigniorage.asp",
+            "Seigniorage - Wikipedia, https://en.wikipedia.org/wiki/Seigniorage",
+            "Making Money From Making Money - New Economics Foundation, https://new-economicsf.files.svdcdn.com/production/files/NEF_MAKING-MONEY-OUT-OF-MONEY_amendment_E.pdf",
+            "The Economic Consequences of the Weimar Hyperinflation - Econlib, https://www.econlib.org/the-economic-consequences-of-the-weimar-hyperinflation/",
+            "Global M2 Money Supply: The Long-Term Liquidity Indicator - Babypips.com, https://www.babypips.com/learn/forex/global-m2-money-supply-liquidity-indicator",
+            "The Rise and Fall of M2 - St. Louis Fed, https://www.stlouisfed.org/on-the-economy/2023/may/the-rise-and-fall-of-m2",
+            "Inflation forecasts based on money growth proved accurate in 2021, though generally unreliable - Dallasfed.org, https://www.dallasfed.org/research/economics/2024/0220",
+            "Hyperinflation in the Weimar Republic - ResearchOnline@JCU, https://researchonline.jcu.edu.au/21599/3/21599.pdf",
+            "Hyperinflation in the Weimar Republic - Wikipedia, https://en.wikipedia.org/wiki/Hyperinflation_in_the_Weimar_Republic",
+            "Venezuela, the Weimar Republic and Zimbabwe prove MMT is true, https://www.taxresearch.org.uk/Blog/2024/10/10/venezuela-the-weimar-republic-and-zimbabwe-prove-mmt-is-true/",
+            "Rai stones - Wikipedia, https://en.wikipedia.org/wiki/Rai_stones",
+            "Researchers turn to stones to find the ancient origin of Bitcoin - University of Oregon, https://news.uoregon.edu/content/researchers-turn-stones-find-ancient-origin-bitcoin",
+            "Rai: big money - Bank of Canada Museum, https://www.bankofcanadamuseum.ca/2024/07/rai-big-money/",
+            "The Tale of Rai Stones (And Its Resemblance To Bitcoin) - Netcoins, https://www.netcoins.com/blog/the-tale-of-stone-money-and-how-it-resembles-bitcoin",
+            "What were the Rai Stones? - Pocket, https://pocketbitcoin.com/learn/economy/rai-stones-explained",
+            "The Protestant Ethic and the Spirit of Capitalism - Wikipedia, https://en.wikipedia.org/wiki/The_Protestant_Ethic_and_the_Spirit_of_Capitalism",
+            "Max Weber – The Protestant Ethic and the Spirit of Capitalism (1905) - SozTheo, https://soztheo.com/sociology/key-works-in-sociology/max-weber-the-protestant-ethic-and-the-spirit-of-capitalism-1905/",
+            "The Protestant Ethic and the Spirit of Capitalism, https://gpde.direito.ufmg.br/wp-content/uploads/2019/03/MAX-WEBER.pdf",
+            "The building blocks of economic complexity - PNAS, https://www.pnas.org/doi/10.1073/pnas.0900943106",
+            "How and why should we study 'economic complexity'? - Our World in Data, https://ourworldindata.org/how-and-why-econ-complexity",
+            "Economic Complexity, Institutions, and Property Rights - ResearchGate, https://www.researchgate.net/publication/377305744",
+            "Economic Complexity, Institutions, and Property Rights, https://press.wz.uw.edu.pl/cgi/viewcontent.cgi?article=1045&context=ems",
+            "The Heterogeneous Effect of Economic Complexity on Growth and Human Development - ResearchGate, https://www.researchgate.net/publication/394858900"
           ],
           "related_identifiers": [
             {
@@ -1456,7 +2162,7 @@
         "schema": "https://data.crossref.org/schemas/crossref_input.json",
         "type": "article",
         "title": "Fundamentos Transcendentes da Ordem Econômica",
-        "abstract": "Ensaio sobre fundamentos transcendentes da ordem economica e sua relacao com normatividade moral. O problema central investigado e: Modelos puramente tecnocráticos tendem a negligenciar pressupostos antropologicos e eticos da cooperacao social. Adotou-se um desenho metodologico com foco em validade interna, comparabilidade e reproducibilidade: Analise conceitual interdisciplinar entre teologia, filosofia moral e teoria economica. Os resultados principais indicam que o texto demonstra que categorias de responsabilidade e dignidade influenciam desenho institucional e incentivos.. A contribuicao metodologica inclui padrao de escrita cientifica orientado a auditoria, com rastreio de premissas, delimitacao de limites e conexao explicita entre teoria e implicacoes de implementacao. O objetivo deste trabalho e avaliar de forma estruturada como \"Fundamentos Transcendentes da Ordem Econômica\" pode gerar valor cientifico e operacional com rastreabilidade metodologica. Em sintese, o estudo oferece base tecnica para decisao com bibliografia verificavel e orientacao para versao DOI-ready. (Augustine, 2026).",
+        "abstract": "",
         "authors": [
           {
             "given": "Carlos Ulisses",
@@ -1479,47 +2185,197 @@
         "reference": [
           {
             "key": "2024-theology-economic-order-ref-1",
-            "unstructured": "Augustine. The City of God.",
-            "URL": "https://www.newadvent.org/fathers/1201.htm"
+            "unstructured": "Economic calculation problem - Wikipedia, https://en.wikipedia.org/wiki/Economic_calculation_problem"
           },
           {
             "key": "2024-theology-economic-order-ref-2",
-            "unstructured": "Aquinas, T. Summa Theologiae.",
-            "URL": "https://www.newadvent.org/summa/"
+            "unstructured": "Monetary Calculation and Mises's Critique of Planning - St. Lawrence University, https://myslu.stlawu.edu/~shorwitz/Papers/Mises_HOPE_1998.pdf"
           },
           {
             "key": "2024-theology-economic-order-ref-3",
-            "unstructured": "Ropke, W. (1960). A Humane Economy.",
-            "URL": "https://isi.org/books/a-humane-economy/"
+            "unstructured": "Ludwig von Mises and Economic Calculation Under Socialism, Part 1 - Libertarianism.org, https://www.libertarianism.org/publications/essays/excursions/ludwig-von-mises-economic-calculation-under-socialism-part-1"
           },
           {
             "key": "2024-theology-economic-order-ref-4",
-            "unstructured": "Weber, M. (1905). The Protestant Ethic and the Spirit of Capitalism.",
-            "URL": "https://www.marxists.org/reference/archive/weber/protestant-ethic/"
+            "unstructured": "Economic Calculation in the Socialist Commonwealth - Mises Institute, https://cdn.mises.org/Economic%20Calculation%20in%20the%20Socialist%20Commonwealth_Vol_2_3.pdf"
           },
           {
             "key": "2024-theology-economic-order-ref-5",
-            "unstructured": "Novak, M. (1982). The Spirit of Democratic Capitalism.",
-            "URL": "https://www.basicbooks.com/titles/michael-novak/the-spirit-of-democratic-capitalism/9781594035883/"
+            "unstructured": "Labor theory of value - Wikipedia, https://en.wikipedia.org/wiki/Labor_theory_of_value"
           },
           {
             "key": "2024-theology-economic-order-ref-6",
-            "unstructured": "McCloskey, D. (2006). The Bourgeois Virtues.",
-            "URL": "https://press.uchicago.edu/ucp/books/book/chicago/B/bo3684036.html"
+            "unstructured": "Eugen von Böhm-Bawerk, \"The Error in the Marxist System\" (1896) - Online Library of Liberty, https://oll.libertyfund.org/pages/reader-bawerk-marx"
+          },
+          {
+            "key": "2024-theology-economic-order-ref-7",
+            "unstructured": "Karl Marx and the Close of His System - School of Cooperative Individualism, https://cooperative-individualism.org/bohm-bawerk-eugen-von_karl-marx-and-the-close-of-his-system-1949-06.pdf"
+          },
+          {
+            "key": "2024-theology-economic-order-ref-8",
+            "unstructured": "Hayek's \"The Use of Knowledge in Society\" - A Summary - Bleeding Heart Libertarians, https://bleedingheartlibertarians.com/2016/05/hayeks-the-use-of-knowledge-in-society-a-summary/"
+          },
+          {
+            "key": "2024-theology-economic-order-ref-9",
+            "unstructured": "F.A. Hayek on the Discovery, Use, and Transmission of Knowledge - Austrian Institute, https://austrian-institute.org/en/blog/f-a-hayek-on-the-discovery-use-and-transmission-of-knowledge/"
+          },
+          {
+            "key": "2024-theology-economic-order-ref-10",
+            "unstructured": "Hayek's Knowledge Problem and its Relevance in Organizational Management - Canadian Center of Science and Education, https://ccsenet.org/journal/index.php/ijbm/article/download/0/0/50004/54089"
+          },
+          {
+            "key": "2024-theology-economic-order-ref-11",
+            "unstructured": "Benjamin M. Anderson: Hayek's Precursor on the Knowledge Problem - Cato at Liberty Blog, https://www.cato.org/blog/benjamin-m-anderson-hayeks-precursor-knowledge-problem"
+          },
+          {
+            "key": "2024-theology-economic-order-ref-12",
+            "unstructured": "Systems biology beyond networks: generating order from disorder through self-organization, https://pmc.ncbi.nlm.nih.gov/articles/PMC3148307/"
+          },
+          {
+            "key": "2024-theology-economic-order-ref-13",
+            "unstructured": "Hayek's Legacy of the Spontaneous Order - Federal Reserve Bank of Minneapolis, https://www.minneapolisfed.org/article/1992/hayeks-legacy-of-the-spontaneous-order"
+          },
+          {
+            "key": "2024-theology-economic-order-ref-14",
+            "unstructured": "Spontaneous Order: A Testament to Human Creativity and Adaptability - The IHS, https://www.theihs.org/blog/spontaneous-order-a-testament-to-human-creativity-and-adaptability/"
+          },
+          {
+            "key": "2024-theology-economic-order-ref-15",
+            "unstructured": "Spontaneous order - Wikipedia, https://en.wikipedia.org/wiki/Spontaneous_order"
+          },
+          {
+            "key": "2024-theology-economic-order-ref-16",
+            "unstructured": "O BNDES e a crise dos caminhoneiros, https://web.bndes.gov.br/bib/jspui/bitstream/1408/15200/1/O-BNDES-e-a-crise-dos-caminhoneiros.pdf"
+          },
+          {
+            "key": "2024-theology-economic-order-ref-17",
+            "unstructured": "No auge, subsídio para setor de caminhões atingiu R$ 34 bilhões, https://www.brasilagro.com.br/conteudo/no-auge-subsidio-para-setor-de-caminhoes-atingiu-r-34-bilhoes.html"
+          },
+          {
+            "key": "2024-theology-economic-order-ref-18",
+            "unstructured": "Efeito crowding-out no Brasil, https://repositorio.fgv.br/items/027e589b-15c7-4f9f-88bb-df7e118d97ab"
+          },
+          {
+            "key": "2024-theology-economic-order-ref-19",
+            "unstructured": "O efeito crowding-out via BNDES no mercado brasileiro, no século XXI - Revista Espacios, https://www.revistaespacios.com/a17v38n61/a17v38n61p08.pdf"
+          },
+          {
+            "key": "2024-theology-economic-order-ref-20",
+            "unstructured": "Análise dos efeitos crowding-in e crowding-out para a economia brasileira - AmeliCA, https://portal.amelica.org/ameli/jatsRepo/65/6521005/html/"
+          },
+          {
+            "key": "2024-theology-economic-order-ref-21",
+            "unstructured": "Investimento privado: uma análise empírica para o Brasil - SciELO, https://www.scielo.br/j/ecos/a/5z4RPHCTGZnj9Vjzh5r6tMK/"
+          },
+          {
+            "key": "2024-theology-economic-order-ref-22",
+            "unstructured": "Greve dos caminhoneiros custará R$ 15 bilhões para a economia - Agência Brasil/EBC, https://agenciabrasil.ebc.com.br/economia/noticia/2018-06/greve-dos-caminhoneiros-custara-r-15-bilhoes-para-economia"
+          },
+          {
+            "key": "2024-theology-economic-order-ref-23",
+            "unstructured": "Seigniorage Explained: Impact on Inflation and Government Revenue - Investopedia, https://www.investopedia.com/terms/s/seigniorage.asp"
+          },
+          {
+            "key": "2024-theology-economic-order-ref-24",
+            "unstructured": "Seigniorage - Wikipedia, https://en.wikipedia.org/wiki/Seigniorage"
+          },
+          {
+            "key": "2024-theology-economic-order-ref-25",
+            "unstructured": "Making Money From Making Money - New Economics Foundation, https://new-economicsf.files.svdcdn.com/production/files/NEF_MAKING-MONEY-OUT-OF-MONEY_amendment_E.pdf"
+          },
+          {
+            "key": "2024-theology-economic-order-ref-26",
+            "unstructured": "The Economic Consequences of the Weimar Hyperinflation - Econlib, https://www.econlib.org/the-economic-consequences-of-the-weimar-hyperinflation/"
+          },
+          {
+            "key": "2024-theology-economic-order-ref-27",
+            "unstructured": "Global M2 Money Supply: The Long-Term Liquidity Indicator - Babypips.com, https://www.babypips.com/learn/forex/global-m2-money-supply-liquidity-indicator"
+          },
+          {
+            "key": "2024-theology-economic-order-ref-28",
+            "unstructured": "The Rise and Fall of M2 - St. Louis Fed, https://www.stlouisfed.org/on-the-economy/2023/may/the-rise-and-fall-of-m2"
+          },
+          {
+            "key": "2024-theology-economic-order-ref-29",
+            "unstructured": "Inflation forecasts based on money growth proved accurate in 2021, though generally unreliable - Dallasfed.org, https://www.dallasfed.org/research/economics/2024/0220"
+          },
+          {
+            "key": "2024-theology-economic-order-ref-30",
+            "unstructured": "Hyperinflation in the Weimar Republic - ResearchOnline@JCU, https://researchonline.jcu.edu.au/21599/3/21599.pdf"
+          },
+          {
+            "key": "2024-theology-economic-order-ref-31",
+            "unstructured": "Hyperinflation in the Weimar Republic - Wikipedia, https://en.wikipedia.org/wiki/Hyperinflation_in_the_Weimar_Republic"
+          },
+          {
+            "key": "2024-theology-economic-order-ref-32",
+            "unstructured": "Venezuela, the Weimar Republic and Zimbabwe prove MMT is true, https://www.taxresearch.org.uk/Blog/2024/10/10/venezuela-the-weimar-republic-and-zimbabwe-prove-mmt-is-true/"
+          },
+          {
+            "key": "2024-theology-economic-order-ref-33",
+            "unstructured": "Rai stones - Wikipedia, https://en.wikipedia.org/wiki/Rai_stones"
+          },
+          {
+            "key": "2024-theology-economic-order-ref-34",
+            "unstructured": "Researchers turn to stones to find the ancient origin of Bitcoin - University of Oregon, https://news.uoregon.edu/content/researchers-turn-stones-find-ancient-origin-bitcoin"
+          },
+          {
+            "key": "2024-theology-economic-order-ref-35",
+            "unstructured": "Rai: big money - Bank of Canada Museum, https://www.bankofcanadamuseum.ca/2024/07/rai-big-money/"
+          },
+          {
+            "key": "2024-theology-economic-order-ref-36",
+            "unstructured": "The Tale of Rai Stones (And Its Resemblance To Bitcoin) - Netcoins, https://www.netcoins.com/blog/the-tale-of-stone-money-and-how-it-resembles-bitcoin"
+          },
+          {
+            "key": "2024-theology-economic-order-ref-37",
+            "unstructured": "What were the Rai Stones? - Pocket, https://pocketbitcoin.com/learn/economy/rai-stones-explained"
+          },
+          {
+            "key": "2024-theology-economic-order-ref-38",
+            "unstructured": "The Protestant Ethic and the Spirit of Capitalism - Wikipedia, https://en.wikipedia.org/wiki/The_Protestant_Ethic_and_the_Spirit_of_Capitalism"
+          },
+          {
+            "key": "2024-theology-economic-order-ref-39",
+            "unstructured": "Max Weber – The Protestant Ethic and the Spirit of Capitalism (1905) - SozTheo, https://soztheo.com/sociology/key-works-in-sociology/max-weber-the-protestant-ethic-and-the-spirit-of-capitalism-1905/"
+          },
+          {
+            "key": "2024-theology-economic-order-ref-40",
+            "unstructured": "The Protestant Ethic and the Spirit of Capitalism, https://gpde.direito.ufmg.br/wp-content/uploads/2019/03/MAX-WEBER.pdf"
+          },
+          {
+            "key": "2024-theology-economic-order-ref-41",
+            "unstructured": "The building blocks of economic complexity - PNAS, https://www.pnas.org/doi/10.1073/pnas.0900943106"
+          },
+          {
+            "key": "2024-theology-economic-order-ref-42",
+            "unstructured": "How and why should we study 'economic complexity'? - Our World in Data, https://ourworldindata.org/how-and-why-econ-complexity"
+          },
+          {
+            "key": "2024-theology-economic-order-ref-43",
+            "unstructured": "Economic Complexity, Institutions, and Property Rights - ResearchGate, https://www.researchgate.net/publication/377305744"
+          },
+          {
+            "key": "2024-theology-economic-order-ref-44",
+            "unstructured": "Economic Complexity, Institutions, and Property Rights, https://press.wz.uw.edu.pl/cgi/viewcontent.cgi?article=1045&context=ems"
+          },
+          {
+            "key": "2024-theology-economic-order-ref-45",
+            "unstructured": "The Heterogeneous Effect of Economic Complexity on Growth and Human Development - ResearchGate, https://www.researchgate.net/publication/394858900"
           }
         ],
         "doi_target": "10.5281/zenodo.202417"
       },
-      "citationCff": "cff-version: 1.2.0\nmessage: \"If you use this work, cite with this metadata. DOI target: 10.5281/zenodo.202417 (not minted).\"\ntitle: \"Fundamentos Transcendentes da Ordem Econômica\"\ntype: article\nauthors:\n  - family-names: \"Flores\"\n    given-names: \"Carlos Ulisses\"\n    orcid: \"0000-0002-6034-7765\"\nidentifiers:\n  - type: url\n    value: \"https://ulissesflores.com/essays/2024-theology-economic-order\"\n  - type: url\n    value: \"https://ulissesflores.com/deep-research/2024-theology-economic-order/deep-research.pdf\"\nabstract: \"Ensaio sobre fundamentos transcendentes da ordem economica e sua relacao com normatividade moral. O problema central investigado e: Modelos puramente tecnocráticos tendem a negligenciar pressupostos antropologicos e eticos da cooperacao social. Adotou-se um desenho metodologico com foco em validade interna, comparabilidade e reproducibilidade: Analise conceitual interdisciplinar entre teologia, filosofia moral e teoria economica. Os resultados principais indicam que o texto demonstra que categorias de responsabilidade e dignidade influenciam desenho institucional e incentivos.. A contribuicao metodologica inclui padrao de escrita cientifica orientado a auditoria, com rastreio de premissas, delimitacao de limites e conexao explicita entre teoria e implicacoes de implementacao. O objetivo deste trabalho e avaliar de forma estruturada como \\\"Fundamentos Transcendentes da Ordem Econômica\\\" pode gerar valor cientifico e operacional com rastreabilidade metodologica. Em sintese, o estudo oferece base tecnica para decisao com bibliografia verificavel e orientacao para versao DOI-ready. (Augustine, 2026).\"\nkeywords: [\"THEOLOGY\", \"ECONOMIC\", \"ORDER\"]\nlicense: \"CC-BY-4.0\"\nversion: \"v2026-02-21\"\ndate-released: \"2024-01-01\"\nrepository-code: \"https://ulissesflores.com/essays/2024-theology-economic-order\"\nreferences:\n  - unstructured: \"Augustine. The City of God.\"\n    url: \"https://www.newadvent.org/fathers/1201.htm\"\n  - unstructured: \"Aquinas, T. Summa Theologiae.\"\n    url: \"https://www.newadvent.org/summa/\"\n  - unstructured: \"Ropke, W. (1960). A Humane Economy.\"\n    url: \"https://isi.org/books/a-humane-economy/\"\n  - unstructured: \"Weber, M. (1905). The Protestant Ethic and the Spirit of Capitalism.\"\n    url: \"https://www.marxists.org/reference/archive/weber/protestant-ethic/\"\n  - unstructured: \"Novak, M. (1982). The Spirit of Democratic Capitalism.\"\n    url: \"https://www.basicbooks.com/titles/michael-novak/the-spirit-of-democratic-capitalism/9781594035883/\"\n  - unstructured: \"McCloskey, D. (2006). The Bourgeois Virtues.\"\n    url: \"https://press.uchicago.edu/ucp/books/book/chicago/B/bo3684036.html\"\n",
+      "citationCff": "cff-version: 1.2.0\nmessage: \"If you use this work, cite with this metadata. DOI target: 10.5281/zenodo.202417 (not minted).\"\ntitle: \"Fundamentos Transcendentes da Ordem Econômica\"\ntype: article\nauthors:\n  - family-names: \"Flores\"\n    given-names: \"Carlos Ulisses\"\n    orcid: \"0000-0002-6034-7765\"\nidentifiers:\n  - type: url\n    value: \"https://ulissesflores.com/essays/2024-theology-economic-order\"\n  - type: url\n    value: \"https://ulissesflores.com/deep-research/2024-theology-economic-order/deep-research.pdf\"\nabstract: \"\"\nkeywords: [\"THEOLOGY\", \"ECONOMIC\", \"ORDER\"]\nlicense: \"CC-BY-4.0\"\nversion: \"v2026-02-21\"\ndate-released: \"2024-01-01\"\nrepository-code: \"https://ulissesflores.com/essays/2024-theology-economic-order\"\nreferences:\n  - unstructured: \"Economic calculation problem - Wikipedia, https://en.wikipedia.org/wiki/Economic_calculation_problem\"\n  - unstructured: \"Monetary Calculation and Mises's Critique of Planning - St. Lawrence University, https://myslu.stlawu.edu/~shorwitz/Papers/Mises_HOPE_1998.pdf\"\n  - unstructured: \"Ludwig von Mises and Economic Calculation Under Socialism, Part 1 - Libertarianism.org, https://www.libertarianism.org/publications/essays/excursions/ludwig-von-mises-economic-calculation-under-socialism-part-1\"\n  - unstructured: \"Economic Calculation in the Socialist Commonwealth - Mises Institute, https://cdn.mises.org/Economic%20Calculation%20in%20the%20Socialist%20Commonwealth_Vol_2_3.pdf\"\n  - unstructured: \"Labor theory of value - Wikipedia, https://en.wikipedia.org/wiki/Labor_theory_of_value\"\n  - unstructured: \"Eugen von Böhm-Bawerk, \\\"The Error in the Marxist System\\\" (1896) - Online Library of Liberty, https://oll.libertyfund.org/pages/reader-bawerk-marx\"\n  - unstructured: \"Karl Marx and the Close of His System - School of Cooperative Individualism, https://cooperative-individualism.org/bohm-bawerk-eugen-von_karl-marx-and-the-close-of-his-system-1949-06.pdf\"\n  - unstructured: \"Hayek's \\\"The Use of Knowledge in Society\\\" - A Summary - Bleeding Heart Libertarians, https://bleedingheartlibertarians.com/2016/05/hayeks-the-use-of-knowledge-in-society-a-summary/\"\n  - unstructured: \"F.A. Hayek on the Discovery, Use, and Transmission of Knowledge - Austrian Institute, https://austrian-institute.org/en/blog/f-a-hayek-on-the-discovery-use-and-transmission-of-knowledge/\"\n  - unstructured: \"Hayek's Knowledge Problem and its Relevance in Organizational Management - Canadian Center of Science and Education, https://ccsenet.org/journal/index.php/ijbm/article/download/0/0/50004/54089\"\n  - unstructured: \"Benjamin M. Anderson: Hayek's Precursor on the Knowledge Problem - Cato at Liberty Blog, https://www.cato.org/blog/benjamin-m-anderson-hayeks-precursor-knowledge-problem\"\n  - unstructured: \"Systems biology beyond networks: generating order from disorder through self-organization, https://pmc.ncbi.nlm.nih.gov/articles/PMC3148307/\"\n  - unstructured: \"Hayek's Legacy of the Spontaneous Order - Federal Reserve Bank of Minneapolis, https://www.minneapolisfed.org/article/1992/hayeks-legacy-of-the-spontaneous-order\"\n  - unstructured: \"Spontaneous Order: A Testament to Human Creativity and Adaptability - The IHS, https://www.theihs.org/blog/spontaneous-order-a-testament-to-human-creativity-and-adaptability/\"\n  - unstructured: \"Spontaneous order - Wikipedia, https://en.wikipedia.org/wiki/Spontaneous_order\"\n  - unstructured: \"O BNDES e a crise dos caminhoneiros, https://web.bndes.gov.br/bib/jspui/bitstream/1408/15200/1/O-BNDES-e-a-crise-dos-caminhoneiros.pdf\"\n  - unstructured: \"No auge, subsídio para setor de caminhões atingiu R$ 34 bilhões, https://www.brasilagro.com.br/conteudo/no-auge-subsidio-para-setor-de-caminhoes-atingiu-r-34-bilhoes.html\"\n  - unstructured: \"Efeito crowding-out no Brasil, https://repositorio.fgv.br/items/027e589b-15c7-4f9f-88bb-df7e118d97ab\"\n  - unstructured: \"O efeito crowding-out via BNDES no mercado brasileiro, no século XXI - Revista Espacios, https://www.revistaespacios.com/a17v38n61/a17v38n61p08.pdf\"\n  - unstructured: \"Análise dos efeitos crowding-in e crowding-out para a economia brasileira - AmeliCA, https://portal.amelica.org/ameli/jatsRepo/65/6521005/html/\"\n  - unstructured: \"Investimento privado: uma análise empírica para o Brasil - SciELO, https://www.scielo.br/j/ecos/a/5z4RPHCTGZnj9Vjzh5r6tMK/\"\n  - unstructured: \"Greve dos caminhoneiros custará R$ 15 bilhões para a economia - Agência Brasil/EBC, https://agenciabrasil.ebc.com.br/economia/noticia/2018-06/greve-dos-caminhoneiros-custara-r-15-bilhoes-para-economia\"\n  - unstructured: \"Seigniorage Explained: Impact on Inflation and Government Revenue - Investopedia, https://www.investopedia.com/terms/s/seigniorage.asp\"\n  - unstructured: \"Seigniorage - Wikipedia, https://en.wikipedia.org/wiki/Seigniorage\"\n  - unstructured: \"Making Money From Making Money - New Economics Foundation, https://new-economicsf.files.svdcdn.com/production/files/NEF_MAKING-MONEY-OUT-OF-MONEY_amendment_E.pdf\"\n  - unstructured: \"The Economic Consequences of the Weimar Hyperinflation - Econlib, https://www.econlib.org/the-economic-consequences-of-the-weimar-hyperinflation/\"\n  - unstructured: \"Global M2 Money Supply: The Long-Term Liquidity Indicator - Babypips.com, https://www.babypips.com/learn/forex/global-m2-money-supply-liquidity-indicator\"\n  - unstructured: \"The Rise and Fall of M2 - St. Louis Fed, https://www.stlouisfed.org/on-the-economy/2023/may/the-rise-and-fall-of-m2\"\n  - unstructured: \"Inflation forecasts based on money growth proved accurate in 2021, though generally unreliable - Dallasfed.org, https://www.dallasfed.org/research/economics/2024/0220\"\n  - unstructured: \"Hyperinflation in the Weimar Republic - ResearchOnline@JCU, https://researchonline.jcu.edu.au/21599/3/21599.pdf\"\n  - unstructured: \"Hyperinflation in the Weimar Republic - Wikipedia, https://en.wikipedia.org/wiki/Hyperinflation_in_the_Weimar_Republic\"\n  - unstructured: \"Venezuela, the Weimar Republic and Zimbabwe prove MMT is true, https://www.taxresearch.org.uk/Blog/2024/10/10/venezuela-the-weimar-republic-and-zimbabwe-prove-mmt-is-true/\"\n  - unstructured: \"Rai stones - Wikipedia, https://en.wikipedia.org/wiki/Rai_stones\"\n  - unstructured: \"Researchers turn to stones to find the ancient origin of Bitcoin - University of Oregon, https://news.uoregon.edu/content/researchers-turn-stones-find-ancient-origin-bitcoin\"\n  - unstructured: \"Rai: big money - Bank of Canada Museum, https://www.bankofcanadamuseum.ca/2024/07/rai-big-money/\"\n  - unstructured: \"The Tale of Rai Stones (And Its Resemblance To Bitcoin) - Netcoins, https://www.netcoins.com/blog/the-tale-of-stone-money-and-how-it-resembles-bitcoin\"\n  - unstructured: \"What were the Rai Stones? - Pocket, https://pocketbitcoin.com/learn/economy/rai-stones-explained\"\n  - unstructured: \"The Protestant Ethic and the Spirit of Capitalism - Wikipedia, https://en.wikipedia.org/wiki/The_Protestant_Ethic_and_the_Spirit_of_Capitalism\"\n  - unstructured: \"Max Weber – The Protestant Ethic and the Spirit of Capitalism (1905) - SozTheo, https://soztheo.com/sociology/key-works-in-sociology/max-weber-the-protestant-ethic-and-the-spirit-of-capitalism-1905/\"\n  - unstructured: \"The Protestant Ethic and the Spirit of Capitalism, https://gpde.direito.ufmg.br/wp-content/uploads/2019/03/MAX-WEBER.pdf\"\n  - unstructured: \"The building blocks of economic complexity - PNAS, https://www.pnas.org/doi/10.1073/pnas.0900943106\"\n  - unstructured: \"How and why should we study 'economic complexity'? - Our World in Data, https://ourworldindata.org/how-and-why-econ-complexity\"\n  - unstructured: \"Economic Complexity, Institutions, and Property Rights - ResearchGate, https://www.researchgate.net/publication/377305744\"\n  - unstructured: \"Economic Complexity, Institutions, and Property Rights, https://press.wz.uw.edu.pl/cgi/viewcontent.cgi?article=1045&context=ems\"\n  - unstructured: \"The Heterogeneous Effect of Economic Complexity on Growth and Human Development - ResearchGate, https://www.researchgate.net/publication/394858900\"\n",
       "score": {
         "completenessScore": 1000,
-        "referencesScore": 1000,
+        "referencesScore": 700,
         "identifierScore": 1000,
         "workflowScore": 1000,
         "cffScore": 1000,
-        "finalScore": 1000
+        "finalScore": 940
       },
-      "approved": true
+      "approved": false
     },
     {
       "slug": "2024-ring-signatures-privacy",
@@ -1729,31 +2585,111 @@
         "AGILE",
         "FLOW"
       ],
-      "abstract": "Whitepaper sobre transformacao agil e engenharia de fluxo em contextos agritech orientados a dados. O problema central investigado e: Projetos agritechs sofrem com sazonalidade, variabilidade operacional e baixa sincronizacao entre produto e campo. Adotou-se um desenho metodologico com foco em validade interna, comparabilidade e reproducibilidade: Aplicacao de metricas de fluxo, mapeamento de cadeia de valor e ciclos de melhoria orientados por evidencia. Os resultados principais indicam que a governanca por fluxo eleva previsibilidade de entrega e reduz retrabalho em times multidisciplinares.. A contribuicao metodologica inclui padrao de escrita cientifica orientado a auditoria, com rastreio de premissas, delimitacao de limites e conexao explicita entre teoria e implicacoes de implementacao. O objetivo deste trabalho e avaliar de forma estruturada como \"Transformação Ágil e Engenharia de Fluxo em Data Science\" pode gerar valor cientifico e operacional com rastreabilidade metodologica. Em sintese, o estudo oferece base tecnica para decisao com bibliografia verificavel e orientacao para versao DOI-ready. (Reinertsen, 2009).",
+      "abstract": "O presente estudo de caso propõe uma análise profunda e multidimensional da trajetória de transformação organizacional vivenciada pela AgriGrowth Inc., uma gigante do setor de agronegócio, durante sua migração de metodologias tradicionais de gestão (Waterfall) para abordagens ágeis adaptativas. Em um cenário de mercado caracterizado pela volatilidade extrema e pela digitalização acelerada — frequentemente denominado Agronegócio 4.0 —, a organização enfrentou o desafio de desenvolver módulos avançados de análise preditiva de culturas baseados em Big Data e Machine Learning. A investigação detalha a crise operacional e de qualidade desencadeada pela aplicação inicial imatura de conceitos ágeis e a subsequente estabilização alcançada através da adoção rigorosa do Método Kanban.\n\nA análise disseca os mecanismos de falha e recuperação, focando em quatro pilares críticos: (1) a adequação superior do Kanban para gerir a variabilidade estocástica inerente a projetos de Ciência de Dados em comparação ao Scrum; (2) a aplicação da Lei de Little e da Teoria das Filas na gestão de Limites de Trabalho em Progresso (WIP) para eliminar gargalos e reduzir o Lead Time; (3) a reestruturação dos papéis de liderança, contrastando a eficácia do Service Delivery Manager (SDM) versus o Scrum Master em contextos de fluxo contínuo; e (4) a implementação de engenharia de qualidade robusta através de automação de testes, traçando paralelos com práticas de DevSecOps e engenharia de software de alta confiabilidade. Este trabalho conclui apresentando um modelo de governança híbrido que integra a flexibilidade tática do Kanban com a visão estratégica de entrega de valor, essencial para a sustentabilidade tecnológica no campo.",
       "references": [
         {
-          "citation": "Reinertsen, D. (2009). The Principles of Product Development Flow.",
-          "url": "https://www.celerity.com/books/product-development-flow-second-generation-lean-product-development/"
+          "citation": "Sustainable Agile Project Management in Complex Agriculture Projects: An Institutional Theory Perspective. IDEAS/RePEc, https://ideas.repec.org/p/osf/socarx/v4je2.html",
+          "url": ""
         },
         {
-          "citation": "Forsgren, N.; Humble, J.; Kim, G. (2018). Accelerate.",
-          "url": "https://itrevolution.com/product/accelerate/"
+          "citation": "Using Agile in Implementing Agriculture AI Projects and Farm Management. ResearchGate, https://www.researchgate.net/publication/372310924",
+          "url": ""
         },
         {
-          "citation": "Rother, M.; Shook, J. (1999). Learning to See.",
-          "url": "https://www.lean.org/lexicon-terms/learning-to-see/"
+          "citation": "Can Agile Approaches Get Farmers Up To Speed On Tech? PMI, https://www.pmi.org/learning/library/agile-approaches-farmers-technology-10967",
+          "url": ""
         },
         {
-          "citation": "FAO (2022). The State of Food and Agriculture: Leveraging automation.",
-          "url": "https://www.fao.org/3/cb9479en/cb9479en.pdf"
+          "citation": "MBU-508 — Artigo / Estudo de caso (65 Pontos). Material do curso.",
+          "url": ""
         },
         {
-          "citation": "OECD (2019). Digital Opportunities for Better Agricultural Policies.",
-          "url": "https://www.oecd.org/agriculture/topics/agricultural-policy-monitoring-and-evaluation/"
+          "citation": "Scrum vs. Kanban — what works better for a Data Science project? Oleksii Bielov, Medium, https://medium.com/@oleksii.bielov/scrum-vs-kanban-which-is-better-for-a-ds-project-f58497675926",
+          "url": ""
         },
         {
-          "citation": "Project Management Institute. Agile Practice Guide.",
-          "url": "https://www.pmi.org/pmbok-guide-standards/practice-guides/agile"
+          "citation": "Why Limiting WIP is a Crucial Skill for Agile Product Development. Lucid Software, https://lucid.co/blog/limiting-WIP-for-agile-development",
+          "url": ""
+        },
+        {
+          "citation": "Benefits of WIP Limits. Planview, https://www.planview.com/resources/articles/benefits-wip-limits/",
+          "url": ""
+        },
+        {
+          "citation": "Kanban vs. scrum: Which agile are you? Atlassian, https://www.atlassian.com/agile/kanban/kanban-vs-scrum",
+          "url": ""
+        },
+        {
+          "citation": "The Mystery Behind Little's Law and WIP Limits. Erez Morabia, Medium, https://emorabia.medium.com/the-mystery-behind-littles-law-and-wip-limits-e71cecfaf0e3",
+          "url": ""
+        },
+        {
+          "citation": "Using Little's Law: Boost Productivity and Predictability. Agility at Scale, https://agility-at-scale.com/principles/littles-law/",
+          "url": ""
+        },
+        {
+          "citation": "WIP? WIP! Or how to decrease time to market using Jira Agile Boards. Atlassian Community, https://community.atlassian.com/forums/App-Central-articles/WIP-WIP-Or-how-to-decrease-time-to-market-using-Jira-Agile/ba-p/1924131",
+          "url": ""
+        },
+        {
+          "citation": "Kanban for AI Projects. David J. Anderson School of Management, https://djaa.com/kanban-for-ai-projects/",
+          "url": ""
+        },
+        {
+          "citation": "Identifying the Key Drivers for Teams to Use a Data Science Process Methodology. AIS eLibrary, https://aisel.aisnet.org/cgi/viewcontent.cgi?article=1057&context=ecis2018_rip",
+          "url": ""
+        },
+        {
+          "citation": "What is Agile Testing and why is it important? OpenText, https://www.opentext.com/what-is/agile-testing",
+          "url": ""
+        },
+        {
+          "citation": "Why We Need WIP Limits. Planview, https://www.planview.com/resources/articles/wip-limits/",
+          "url": ""
+        },
+        {
+          "citation": "Stop Overcommitting and Start Delivering: The Benefits of WIP Limit in Software Development. Daniele Scillia, Medium, https://medium.com/learn-agile-practices/stop-overcommitting-and-start-delivering-the-benefits-of-wip-limit-in-software-development-98d3fa1ddfda",
+          "url": ""
+        },
+        {
+          "citation": "The Surprising Impact of Limiting Work in Progress on the Flow of Work in a Scrum Team. Scrum.org, https://www.scrum.org/resources/blog/surprising-impact-limiting-work-progress-flow-work-scrum-team",
+          "url": ""
+        },
+        {
+          "citation": "Agile Testing: Best Practices, Benefits, Drawbacks, and More. Sandra Parker, Medium, https://sandra-parker.medium.com/agile-testing-best-practices-benefits-drawbacks-and-more-54017d3a66ff",
+          "url": ""
+        },
+        {
+          "citation": "Automation in Agile. GeeksforGeeks, https://www.geeksforgeeks.org/software-engineering/automation-in-agile/",
+          "url": ""
+        },
+        {
+          "citation": "Agile Software Development: How Modern Teams Succeed In 2025. Monday.com, https://monday.com/blog/rnd/agile-software-development/",
+          "url": ""
+        },
+        {
+          "citation": "Ignoring QA as a Service? The Hidden Risk to Agile Success. TestingXperts, https://www.testingxperts.com/blog/qa-as-a-service/",
+          "url": ""
+        },
+        {
+          "citation": "Delivery Manager vs. Scrum Master: What Are the Differences? Review N Prep, https://reviewnprep.com/blog/delivery-manager-vs-scrum-master-what-are-the-differences/",
+          "url": ""
+        },
+        {
+          "citation": "Difference between Scrum Master and Agile Delivery Manager. PM StackExchange, https://pm.stackexchange.com/questions/24566/difference-between-scrum-master-and-agile-delivery-manager",
+          "url": ""
+        },
+        {
+          "citation": "Project Management for Virtual Teams: A Comparative Analysis. Iowa State University Digital Repository, https://dr.lib.iastate.edu/bitstreams/b895cfcf-b432-493b-a9e6-d3d28b5018ae/download",
+          "url": ""
+        },
+        {
+          "citation": "Kanban Roles for Great Project Management. KnowledgeHut, https://www.knowledgehut.com/blog/agile/kanban-roles-for-project-management",
+          "url": ""
+        },
+        {
+          "citation": "Benefits and Challenges of Making Data More Agile: A Review of Recent Key Approaches in Agriculture. MDPI, https://www.mdpi.com/2071-1050/14/24/16480",
+          "url": ""
         }
       ],
       "cffPath": "/doi/2024-agritech-agile-flow/CITATION.cff",
@@ -1765,7 +2701,7 @@
           "upload_type": "publication",
           "publication_type": "report",
           "publication_date": "2024-01-01",
-          "description": "<p>Whitepaper sobre transformacao agil e engenharia de fluxo em contextos agritech orientados a dados. O problema central investigado e: Projetos agritechs sofrem com sazonalidade, variabilidade operacional e baixa sincronizacao entre produto e campo. Adotou-se um desenho metodologico com foco em validade interna, comparabilidade e reproducibilidade: Aplicacao de metricas de fluxo, mapeamento de cadeia de valor e ciclos de melhoria orientados por evidencia. Os resultados principais indicam que a governanca por fluxo eleva previsibilidade de entrega e reduz retrabalho em times multidisciplinares.. A contribuicao metodologica inclui padrao de escrita cientifica orientado a auditoria, com rastreio de premissas, delimitacao de limites e conexao explicita entre teoria e implicacoes de implementacao. O objetivo deste trabalho e avaliar de forma estruturada como &quot;Transformação Ágil e Engenharia de Fluxo em Data Science&quot; pode gerar valor cientifico e operacional com rastreabilidade metodologica. Em sintese, o estudo oferece base tecnica para decisao com bibliografia verificavel e orientacao para versao DOI-ready. (Reinertsen, 2009).</p>",
+          "description": "<p>O presente estudo de caso propõe uma análise profunda e multidimensional da trajetória de transformação organizacional vivenciada pela AgriGrowth Inc., uma gigante do setor de agronegócio, durante sua migração de metodologias tradicionais de gestão (Waterfall) para abordagens ágeis adaptativas. Em um cenário de mercado caracterizado pela volatilidade extrema e pela digitalização acelerada — frequentemente denominado Agronegócio 4.0 —, a organização enfrentou o desafio de desenvolver módulos avançados de análise preditiva de culturas baseados em Big Data e Machine Learning. A investigação detalha a crise operacional e de qualidade desencadeada pela aplicação inicial imatura de conceitos ágeis e a subsequente estabilização alcançada através da adoção rigorosa do Método Kanban.\n\nA análise disseca os mecanismos de falha e recuperação, focando em quatro pilares críticos: (1) a adequação superior do Kanban para gerir a variabilidade estocástica inerente a projetos de Ciência de Dados em comparação ao Scrum; (2) a aplicação da Lei de Little e da Teoria das Filas na gestão de Limites de Trabalho em Progresso (WIP) para eliminar gargalos e reduzir o Lead Time; (3) a reestruturação dos papéis de liderança, contrastando a eficácia do Service Delivery Manager (SDM) versus o Scrum Master em contextos de fluxo contínuo; e (4) a implementação de engenharia de qualidade robusta através de automação de testes, traçando paralelos com práticas de DevSecOps e engenharia de software de alta confiabilidade. Este trabalho conclui apresentando um modelo de governança híbrido que integra a flexibilidade tática do Kanban com a visão estratégica de entrega de valor, essencial para a sustentabilidade tecnológica no campo.</p>",
           "creators": [
             {
               "name": "Flores, Carlos Ulisses",
@@ -1780,12 +2716,32 @@
           ],
           "language": "pt-BR",
           "references": [
-            "Reinertsen, D. (2009). The Principles of Product Development Flow. (https://www.celerity.com/books/product-development-flow-second-generation-lean-product-development/)",
-            "Forsgren, N.; Humble, J.; Kim, G. (2018). Accelerate. (https://itrevolution.com/product/accelerate/)",
-            "Rother, M.; Shook, J. (1999). Learning to See. (https://www.lean.org/lexicon-terms/learning-to-see/)",
-            "FAO (2022). The State of Food and Agriculture: Leveraging automation. (https://www.fao.org/3/cb9479en/cb9479en.pdf)",
-            "OECD (2019). Digital Opportunities for Better Agricultural Policies. (https://www.oecd.org/agriculture/topics/agricultural-policy-monitoring-and-evaluation/)",
-            "Project Management Institute. Agile Practice Guide. (https://www.pmi.org/pmbok-guide-standards/practice-guides/agile)"
+            "Sustainable Agile Project Management in Complex Agriculture Projects: An Institutional Theory Perspective. IDEAS/RePEc, https://ideas.repec.org/p/osf/socarx/v4je2.html",
+            "Using Agile in Implementing Agriculture AI Projects and Farm Management. ResearchGate, https://www.researchgate.net/publication/372310924",
+            "Can Agile Approaches Get Farmers Up To Speed On Tech? PMI, https://www.pmi.org/learning/library/agile-approaches-farmers-technology-10967",
+            "MBU-508 — Artigo / Estudo de caso (65 Pontos). Material do curso.",
+            "Scrum vs. Kanban — what works better for a Data Science project? Oleksii Bielov, Medium, https://medium.com/@oleksii.bielov/scrum-vs-kanban-which-is-better-for-a-ds-project-f58497675926",
+            "Why Limiting WIP is a Crucial Skill for Agile Product Development. Lucid Software, https://lucid.co/blog/limiting-WIP-for-agile-development",
+            "Benefits of WIP Limits. Planview, https://www.planview.com/resources/articles/benefits-wip-limits/",
+            "Kanban vs. scrum: Which agile are you? Atlassian, https://www.atlassian.com/agile/kanban/kanban-vs-scrum",
+            "The Mystery Behind Little's Law and WIP Limits. Erez Morabia, Medium, https://emorabia.medium.com/the-mystery-behind-littles-law-and-wip-limits-e71cecfaf0e3",
+            "Using Little's Law: Boost Productivity and Predictability. Agility at Scale, https://agility-at-scale.com/principles/littles-law/",
+            "WIP? WIP! Or how to decrease time to market using Jira Agile Boards. Atlassian Community, https://community.atlassian.com/forums/App-Central-articles/WIP-WIP-Or-how-to-decrease-time-to-market-using-Jira-Agile/ba-p/1924131",
+            "Kanban for AI Projects. David J. Anderson School of Management, https://djaa.com/kanban-for-ai-projects/",
+            "Identifying the Key Drivers for Teams to Use a Data Science Process Methodology. AIS eLibrary, https://aisel.aisnet.org/cgi/viewcontent.cgi?article=1057&context=ecis2018_rip",
+            "What is Agile Testing and why is it important? OpenText, https://www.opentext.com/what-is/agile-testing",
+            "Why We Need WIP Limits. Planview, https://www.planview.com/resources/articles/wip-limits/",
+            "Stop Overcommitting and Start Delivering: The Benefits of WIP Limit in Software Development. Daniele Scillia, Medium, https://medium.com/learn-agile-practices/stop-overcommitting-and-start-delivering-the-benefits-of-wip-limit-in-software-development-98d3fa1ddfda",
+            "The Surprising Impact of Limiting Work in Progress on the Flow of Work in a Scrum Team. Scrum.org, https://www.scrum.org/resources/blog/surprising-impact-limiting-work-progress-flow-work-scrum-team",
+            "Agile Testing: Best Practices, Benefits, Drawbacks, and More. Sandra Parker, Medium, https://sandra-parker.medium.com/agile-testing-best-practices-benefits-drawbacks-and-more-54017d3a66ff",
+            "Automation in Agile. GeeksforGeeks, https://www.geeksforgeeks.org/software-engineering/automation-in-agile/",
+            "Agile Software Development: How Modern Teams Succeed In 2025. Monday.com, https://monday.com/blog/rnd/agile-software-development/",
+            "Ignoring QA as a Service? The Hidden Risk to Agile Success. TestingXperts, https://www.testingxperts.com/blog/qa-as-a-service/",
+            "Delivery Manager vs. Scrum Master: What Are the Differences? Review N Prep, https://reviewnprep.com/blog/delivery-manager-vs-scrum-master-what-are-the-differences/",
+            "Difference between Scrum Master and Agile Delivery Manager. PM StackExchange, https://pm.stackexchange.com/questions/24566/difference-between-scrum-master-and-agile-delivery-manager",
+            "Project Management for Virtual Teams: A Comparative Analysis. Iowa State University Digital Repository, https://dr.lib.iastate.edu/bitstreams/b895cfcf-b432-493b-a9e6-d3d28b5018ae/download",
+            "Kanban Roles for Great Project Management. KnowledgeHut, https://www.knowledgehut.com/blog/agile/kanban-roles-for-project-management",
+            "Benefits and Challenges of Making Data More Agile: A Review of Recent Key Approaches in Agriculture. MDPI, https://www.mdpi.com/2071-1050/14/24/16480"
           ],
           "related_identifiers": [
             {
@@ -1808,7 +2764,7 @@
         "schema": "https://data.crossref.org/schemas/crossref_input.json",
         "type": "report",
         "title": "Transformação Ágil e Engenharia de Fluxo em Data Science",
-        "abstract": "Whitepaper sobre transformacao agil e engenharia de fluxo em contextos agritech orientados a dados. O problema central investigado e: Projetos agritechs sofrem com sazonalidade, variabilidade operacional e baixa sincronizacao entre produto e campo. Adotou-se um desenho metodologico com foco em validade interna, comparabilidade e reproducibilidade: Aplicacao de metricas de fluxo, mapeamento de cadeia de valor e ciclos de melhoria orientados por evidencia. Os resultados principais indicam que a governanca por fluxo eleva previsibilidade de entrega e reduz retrabalho em times multidisciplinares.. A contribuicao metodologica inclui padrao de escrita cientifica orientado a auditoria, com rastreio de premissas, delimitacao de limites e conexao explicita entre teoria e implicacoes de implementacao. O objetivo deste trabalho e avaliar de forma estruturada como \"Transformação Ágil e Engenharia de Fluxo em Data Science\" pode gerar valor cientifico e operacional com rastreabilidade metodologica. Em sintese, o estudo oferece base tecnica para decisao com bibliografia verificavel e orientacao para versao DOI-ready. (Reinertsen, 2009).",
+        "abstract": "O presente estudo de caso propõe uma análise profunda e multidimensional da trajetória de transformação organizacional vivenciada pela AgriGrowth Inc., uma gigante do setor de agronegócio, durante sua migração de metodologias tradicionais de gestão (Waterfall) para abordagens ágeis adaptativas. Em um cenário de mercado caracterizado pela volatilidade extrema e pela digitalização acelerada — frequentemente denominado Agronegócio 4.0 —, a organização enfrentou o desafio de desenvolver módulos avançados de análise preditiva de culturas baseados em Big Data e Machine Learning. A investigação detalha a crise operacional e de qualidade desencadeada pela aplicação inicial imatura de conceitos ágeis e a subsequente estabilização alcançada através da adoção rigorosa do Método Kanban.\n\nA análise disseca os mecanismos de falha e recuperação, focando em quatro pilares críticos: (1) a adequação superior do Kanban para gerir a variabilidade estocástica inerente a projetos de Ciência de Dados em comparação ao Scrum; (2) a aplicação da Lei de Little e da Teoria das Filas na gestão de Limites de Trabalho em Progresso (WIP) para eliminar gargalos e reduzir o Lead Time; (3) a reestruturação dos papéis de liderança, contrastando a eficácia do Service Delivery Manager (SDM) versus o Scrum Master em contextos de fluxo contínuo; e (4) a implementação de engenharia de qualidade robusta através de automação de testes, traçando paralelos com práticas de DevSecOps e engenharia de software de alta confiabilidade. Este trabalho conclui apresentando um modelo de governança híbrido que integra a flexibilidade tática do Kanban com a visão estratégica de entrega de valor, essencial para a sustentabilidade tecnológica no campo.",
         "authors": [
           {
             "given": "Carlos Ulisses",
@@ -1831,47 +2787,121 @@
         "reference": [
           {
             "key": "2024-agritech-agile-flow-ref-1",
-            "unstructured": "Reinertsen, D. (2009). The Principles of Product Development Flow.",
-            "URL": "https://www.celerity.com/books/product-development-flow-second-generation-lean-product-development/"
+            "unstructured": "Sustainable Agile Project Management in Complex Agriculture Projects: An Institutional Theory Perspective. IDEAS/RePEc, https://ideas.repec.org/p/osf/socarx/v4je2.html"
           },
           {
             "key": "2024-agritech-agile-flow-ref-2",
-            "unstructured": "Forsgren, N.; Humble, J.; Kim, G. (2018). Accelerate.",
-            "URL": "https://itrevolution.com/product/accelerate/"
+            "unstructured": "Using Agile in Implementing Agriculture AI Projects and Farm Management. ResearchGate, https://www.researchgate.net/publication/372310924"
           },
           {
             "key": "2024-agritech-agile-flow-ref-3",
-            "unstructured": "Rother, M.; Shook, J. (1999). Learning to See.",
-            "URL": "https://www.lean.org/lexicon-terms/learning-to-see/"
+            "unstructured": "Can Agile Approaches Get Farmers Up To Speed On Tech? PMI, https://www.pmi.org/learning/library/agile-approaches-farmers-technology-10967"
           },
           {
             "key": "2024-agritech-agile-flow-ref-4",
-            "unstructured": "FAO (2022). The State of Food and Agriculture: Leveraging automation.",
-            "URL": "https://www.fao.org/3/cb9479en/cb9479en.pdf"
+            "unstructured": "MBU-508 — Artigo / Estudo de caso (65 Pontos). Material do curso."
           },
           {
             "key": "2024-agritech-agile-flow-ref-5",
-            "unstructured": "OECD (2019). Digital Opportunities for Better Agricultural Policies.",
-            "URL": "https://www.oecd.org/agriculture/topics/agricultural-policy-monitoring-and-evaluation/"
+            "unstructured": "Scrum vs. Kanban — what works better for a Data Science project? Oleksii Bielov, Medium, https://medium.com/@oleksii.bielov/scrum-vs-kanban-which-is-better-for-a-ds-project-f58497675926"
           },
           {
             "key": "2024-agritech-agile-flow-ref-6",
-            "unstructured": "Project Management Institute. Agile Practice Guide.",
-            "URL": "https://www.pmi.org/pmbok-guide-standards/practice-guides/agile"
+            "unstructured": "Why Limiting WIP is a Crucial Skill for Agile Product Development. Lucid Software, https://lucid.co/blog/limiting-WIP-for-agile-development"
+          },
+          {
+            "key": "2024-agritech-agile-flow-ref-7",
+            "unstructured": "Benefits of WIP Limits. Planview, https://www.planview.com/resources/articles/benefits-wip-limits/"
+          },
+          {
+            "key": "2024-agritech-agile-flow-ref-8",
+            "unstructured": "Kanban vs. scrum: Which agile are you? Atlassian, https://www.atlassian.com/agile/kanban/kanban-vs-scrum"
+          },
+          {
+            "key": "2024-agritech-agile-flow-ref-9",
+            "unstructured": "The Mystery Behind Little's Law and WIP Limits. Erez Morabia, Medium, https://emorabia.medium.com/the-mystery-behind-littles-law-and-wip-limits-e71cecfaf0e3"
+          },
+          {
+            "key": "2024-agritech-agile-flow-ref-10",
+            "unstructured": "Using Little's Law: Boost Productivity and Predictability. Agility at Scale, https://agility-at-scale.com/principles/littles-law/"
+          },
+          {
+            "key": "2024-agritech-agile-flow-ref-11",
+            "unstructured": "WIP? WIP! Or how to decrease time to market using Jira Agile Boards. Atlassian Community, https://community.atlassian.com/forums/App-Central-articles/WIP-WIP-Or-how-to-decrease-time-to-market-using-Jira-Agile/ba-p/1924131"
+          },
+          {
+            "key": "2024-agritech-agile-flow-ref-12",
+            "unstructured": "Kanban for AI Projects. David J. Anderson School of Management, https://djaa.com/kanban-for-ai-projects/"
+          },
+          {
+            "key": "2024-agritech-agile-flow-ref-13",
+            "unstructured": "Identifying the Key Drivers for Teams to Use a Data Science Process Methodology. AIS eLibrary, https://aisel.aisnet.org/cgi/viewcontent.cgi?article=1057&context=ecis2018_rip"
+          },
+          {
+            "key": "2024-agritech-agile-flow-ref-14",
+            "unstructured": "What is Agile Testing and why is it important? OpenText, https://www.opentext.com/what-is/agile-testing"
+          },
+          {
+            "key": "2024-agritech-agile-flow-ref-15",
+            "unstructured": "Why We Need WIP Limits. Planview, https://www.planview.com/resources/articles/wip-limits/"
+          },
+          {
+            "key": "2024-agritech-agile-flow-ref-16",
+            "unstructured": "Stop Overcommitting and Start Delivering: The Benefits of WIP Limit in Software Development. Daniele Scillia, Medium, https://medium.com/learn-agile-practices/stop-overcommitting-and-start-delivering-the-benefits-of-wip-limit-in-software-development-98d3fa1ddfda"
+          },
+          {
+            "key": "2024-agritech-agile-flow-ref-17",
+            "unstructured": "The Surprising Impact of Limiting Work in Progress on the Flow of Work in a Scrum Team. Scrum.org, https://www.scrum.org/resources/blog/surprising-impact-limiting-work-progress-flow-work-scrum-team"
+          },
+          {
+            "key": "2024-agritech-agile-flow-ref-18",
+            "unstructured": "Agile Testing: Best Practices, Benefits, Drawbacks, and More. Sandra Parker, Medium, https://sandra-parker.medium.com/agile-testing-best-practices-benefits-drawbacks-and-more-54017d3a66ff"
+          },
+          {
+            "key": "2024-agritech-agile-flow-ref-19",
+            "unstructured": "Automation in Agile. GeeksforGeeks, https://www.geeksforgeeks.org/software-engineering/automation-in-agile/"
+          },
+          {
+            "key": "2024-agritech-agile-flow-ref-20",
+            "unstructured": "Agile Software Development: How Modern Teams Succeed In 2025. Monday.com, https://monday.com/blog/rnd/agile-software-development/"
+          },
+          {
+            "key": "2024-agritech-agile-flow-ref-21",
+            "unstructured": "Ignoring QA as a Service? The Hidden Risk to Agile Success. TestingXperts, https://www.testingxperts.com/blog/qa-as-a-service/"
+          },
+          {
+            "key": "2024-agritech-agile-flow-ref-22",
+            "unstructured": "Delivery Manager vs. Scrum Master: What Are the Differences? Review N Prep, https://reviewnprep.com/blog/delivery-manager-vs-scrum-master-what-are-the-differences/"
+          },
+          {
+            "key": "2024-agritech-agile-flow-ref-23",
+            "unstructured": "Difference between Scrum Master and Agile Delivery Manager. PM StackExchange, https://pm.stackexchange.com/questions/24566/difference-between-scrum-master-and-agile-delivery-manager"
+          },
+          {
+            "key": "2024-agritech-agile-flow-ref-24",
+            "unstructured": "Project Management for Virtual Teams: A Comparative Analysis. Iowa State University Digital Repository, https://dr.lib.iastate.edu/bitstreams/b895cfcf-b432-493b-a9e6-d3d28b5018ae/download"
+          },
+          {
+            "key": "2024-agritech-agile-flow-ref-25",
+            "unstructured": "Kanban Roles for Great Project Management. KnowledgeHut, https://www.knowledgehut.com/blog/agile/kanban-roles-for-project-management"
+          },
+          {
+            "key": "2024-agritech-agile-flow-ref-26",
+            "unstructured": "Benefits and Challenges of Making Data More Agile: A Review of Recent Key Approaches in Agriculture. MDPI, https://www.mdpi.com/2071-1050/14/24/16480"
           }
         ],
         "doi_target": "10.5281/zenodo.202423"
       },
-      "citationCff": "cff-version: 1.2.0\nmessage: \"If you use this work, cite with this metadata. DOI target: 10.5281/zenodo.202423 (not minted).\"\ntitle: \"Transformação Ágil e Engenharia de Fluxo em Data Science\"\ntype: article\nauthors:\n  - family-names: \"Flores\"\n    given-names: \"Carlos Ulisses\"\n    orcid: \"0000-0002-6034-7765\"\nidentifiers:\n  - type: url\n    value: \"https://ulissesflores.com/whitepapers/2024-agritech-agile-flow\"\n  - type: url\n    value: \"https://ulissesflores.com/deep-research/2024-agritech-agile-flow/deep-research.pdf\"\nabstract: \"Whitepaper sobre transformacao agil e engenharia de fluxo em contextos agritech orientados a dados. O problema central investigado e: Projetos agritechs sofrem com sazonalidade, variabilidade operacional e baixa sincronizacao entre produto e campo. Adotou-se um desenho metodologico com foco em validade interna, comparabilidade e reproducibilidade: Aplicacao de metricas de fluxo, mapeamento de cadeia de valor e ciclos de melhoria orientados por evidencia. Os resultados principais indicam que a governanca por fluxo eleva previsibilidade de entrega e reduz retrabalho em times multidisciplinares.. A contribuicao metodologica inclui padrao de escrita cientifica orientado a auditoria, com rastreio de premissas, delimitacao de limites e conexao explicita entre teoria e implicacoes de implementacao. O objetivo deste trabalho e avaliar de forma estruturada como \\\"Transformação Ágil e Engenharia de Fluxo em Data Science\\\" pode gerar valor cientifico e operacional com rastreabilidade metodologica. Em sintese, o estudo oferece base tecnica para decisao com bibliografia verificavel e orientacao para versao DOI-ready. (Reinertsen, 2009).\"\nkeywords: [\"AGRITECH\", \"AGILE\", \"FLOW\"]\nlicense: \"CC-BY-4.0\"\nversion: \"v2026-02-21\"\ndate-released: \"2024-01-01\"\nrepository-code: \"https://ulissesflores.com/whitepapers/2024-agritech-agile-flow\"\nreferences:\n  - unstructured: \"Reinertsen, D. (2009). The Principles of Product Development Flow.\"\n    url: \"https://www.celerity.com/books/product-development-flow-second-generation-lean-product-development/\"\n  - unstructured: \"Forsgren, N.; Humble, J.; Kim, G. (2018). Accelerate.\"\n    url: \"https://itrevolution.com/product/accelerate/\"\n  - unstructured: \"Rother, M.; Shook, J. (1999). Learning to See.\"\n    url: \"https://www.lean.org/lexicon-terms/learning-to-see/\"\n  - unstructured: \"FAO (2022). The State of Food and Agriculture: Leveraging automation.\"\n    url: \"https://www.fao.org/3/cb9479en/cb9479en.pdf\"\n  - unstructured: \"OECD (2019). Digital Opportunities for Better Agricultural Policies.\"\n    url: \"https://www.oecd.org/agriculture/topics/agricultural-policy-monitoring-and-evaluation/\"\n  - unstructured: \"Project Management Institute. Agile Practice Guide.\"\n    url: \"https://www.pmi.org/pmbok-guide-standards/practice-guides/agile\"\n",
+      "citationCff": "cff-version: 1.2.0\nmessage: \"If you use this work, cite with this metadata. DOI target: 10.5281/zenodo.202423 (not minted).\"\ntitle: \"Transformação Ágil e Engenharia de Fluxo em Data Science\"\ntype: article\nauthors:\n  - family-names: \"Flores\"\n    given-names: \"Carlos Ulisses\"\n    orcid: \"0000-0002-6034-7765\"\nidentifiers:\n  - type: url\n    value: \"https://ulissesflores.com/whitepapers/2024-agritech-agile-flow\"\n  - type: url\n    value: \"https://ulissesflores.com/deep-research/2024-agritech-agile-flow/deep-research.pdf\"\nabstract: \"O presente estudo de caso propõe uma análise profunda e multidimensional da trajetória de transformação organizacional vivenciada pela AgriGrowth Inc., uma gigante do setor de agronegócio, durante sua migração de metodologias tradicionais de gestão (Waterfall) para abordagens ágeis adaptativas. Em um cenário de mercado caracterizado pela volatilidade extrema e pela digitalização acelerada — frequentemente denominado Agronegócio 4.0 —, a organização enfrentou o desafio de desenvolver módulos avançados de análise preditiva de culturas baseados em Big Data e Machine Learning. A investigação detalha a crise operacional e de qualidade desencadeada pela aplicação inicial imatura de conceitos ágeis e a subsequente estabilização alcançada através da adoção rigorosa do Método Kanban. A análise disseca os mecanismos de falha e recuperação, focando em quatro pilares críticos: (1) a adequação superior do Kanban para gerir a variabilidade estocástica inerente a projetos de Ciência de Dados em comparação ao Scrum; (2) a aplicação da Lei de Little e da Teoria das Filas na gestão de Limites de Trabalho em Progresso (WIP) para eliminar gargalos e reduzir o Lead Time; (3) a reestruturação dos papéis de liderança, contrastando a eficácia do Service Delivery Manager (SDM) versus o Scrum Master em contextos de fluxo contínuo; e (4) a implementação de engenharia de qualidade robusta através de automação de testes, traçando paralelos com práticas de DevSecOps e engenharia de software de alta confiabilidade. Este trabalho conclui apresentando um modelo de governança híbrido que integra a flexibilidade tática do Kanban com a visão estratégica de entrega de valor, essencial para a sustentabilidade tecnológica no campo.\"\nkeywords: [\"AGRITECH\", \"AGILE\", \"FLOW\"]\nlicense: \"CC-BY-4.0\"\nversion: \"v2026-02-21\"\ndate-released: \"2024-01-01\"\nrepository-code: \"https://ulissesflores.com/whitepapers/2024-agritech-agile-flow\"\nreferences:\n  - unstructured: \"Sustainable Agile Project Management in Complex Agriculture Projects: An Institutional Theory Perspective. IDEAS/RePEc, https://ideas.repec.org/p/osf/socarx/v4je2.html\"\n  - unstructured: \"Using Agile in Implementing Agriculture AI Projects and Farm Management. ResearchGate, https://www.researchgate.net/publication/372310924\"\n  - unstructured: \"Can Agile Approaches Get Farmers Up To Speed On Tech? PMI, https://www.pmi.org/learning/library/agile-approaches-farmers-technology-10967\"\n  - unstructured: \"MBU-508 — Artigo / Estudo de caso (65 Pontos). Material do curso.\"\n  - unstructured: \"Scrum vs. Kanban — what works better for a Data Science project? Oleksii Bielov, Medium, https://medium.com/@oleksii.bielov/scrum-vs-kanban-which-is-better-for-a-ds-project-f58497675926\"\n  - unstructured: \"Why Limiting WIP is a Crucial Skill for Agile Product Development. Lucid Software, https://lucid.co/blog/limiting-WIP-for-agile-development\"\n  - unstructured: \"Benefits of WIP Limits. Planview, https://www.planview.com/resources/articles/benefits-wip-limits/\"\n  - unstructured: \"Kanban vs. scrum: Which agile are you? Atlassian, https://www.atlassian.com/agile/kanban/kanban-vs-scrum\"\n  - unstructured: \"The Mystery Behind Little's Law and WIP Limits. Erez Morabia, Medium, https://emorabia.medium.com/the-mystery-behind-littles-law-and-wip-limits-e71cecfaf0e3\"\n  - unstructured: \"Using Little's Law: Boost Productivity and Predictability. Agility at Scale, https://agility-at-scale.com/principles/littles-law/\"\n  - unstructured: \"WIP? WIP! Or how to decrease time to market using Jira Agile Boards. Atlassian Community, https://community.atlassian.com/forums/App-Central-articles/WIP-WIP-Or-how-to-decrease-time-to-market-using-Jira-Agile/ba-p/1924131\"\n  - unstructured: \"Kanban for AI Projects. David J. Anderson School of Management, https://djaa.com/kanban-for-ai-projects/\"\n  - unstructured: \"Identifying the Key Drivers for Teams to Use a Data Science Process Methodology. AIS eLibrary, https://aisel.aisnet.org/cgi/viewcontent.cgi?article=1057&context=ecis2018_rip\"\n  - unstructured: \"What is Agile Testing and why is it important? OpenText, https://www.opentext.com/what-is/agile-testing\"\n  - unstructured: \"Why We Need WIP Limits. Planview, https://www.planview.com/resources/articles/wip-limits/\"\n  - unstructured: \"Stop Overcommitting and Start Delivering: The Benefits of WIP Limit in Software Development. Daniele Scillia, Medium, https://medium.com/learn-agile-practices/stop-overcommitting-and-start-delivering-the-benefits-of-wip-limit-in-software-development-98d3fa1ddfda\"\n  - unstructured: \"The Surprising Impact of Limiting Work in Progress on the Flow of Work in a Scrum Team. Scrum.org, https://www.scrum.org/resources/blog/surprising-impact-limiting-work-progress-flow-work-scrum-team\"\n  - unstructured: \"Agile Testing: Best Practices, Benefits, Drawbacks, and More. Sandra Parker, Medium, https://sandra-parker.medium.com/agile-testing-best-practices-benefits-drawbacks-and-more-54017d3a66ff\"\n  - unstructured: \"Automation in Agile. GeeksforGeeks, https://www.geeksforgeeks.org/software-engineering/automation-in-agile/\"\n  - unstructured: \"Agile Software Development: How Modern Teams Succeed In 2025. Monday.com, https://monday.com/blog/rnd/agile-software-development/\"\n  - unstructured: \"Ignoring QA as a Service? The Hidden Risk to Agile Success. TestingXperts, https://www.testingxperts.com/blog/qa-as-a-service/\"\n  - unstructured: \"Delivery Manager vs. Scrum Master: What Are the Differences? Review N Prep, https://reviewnprep.com/blog/delivery-manager-vs-scrum-master-what-are-the-differences/\"\n  - unstructured: \"Difference between Scrum Master and Agile Delivery Manager. PM StackExchange, https://pm.stackexchange.com/questions/24566/difference-between-scrum-master-and-agile-delivery-manager\"\n  - unstructured: \"Project Management for Virtual Teams: A Comparative Analysis. Iowa State University Digital Repository, https://dr.lib.iastate.edu/bitstreams/b895cfcf-b432-493b-a9e6-d3d28b5018ae/download\"\n  - unstructured: \"Kanban Roles for Great Project Management. KnowledgeHut, https://www.knowledgehut.com/blog/agile/kanban-roles-for-project-management\"\n  - unstructured: \"Benefits and Challenges of Making Data More Agile: A Review of Recent Key Approaches in Agriculture. MDPI, https://www.mdpi.com/2071-1050/14/24/16480\"\n",
       "score": {
         "completenessScore": 1000,
-        "referencesScore": 1000,
+        "referencesScore": 700,
         "identifierScore": 1000,
         "workflowScore": 1000,
         "cffScore": 1000,
-        "finalScore": 1000
+        "finalScore": 940
       },
-      "approved": true
+      "approved": false
     },
     {
       "slug": "2024-exegetical-treatise-anthropology",

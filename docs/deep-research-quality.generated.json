@@ -1,70 +1,75 @@
 {
-  "generatedAt": "2026-05-26T16:10:51.812Z",
+  "generatedAt": "2026-05-26T16:29:27.500Z",
   "threshold": 950,
-  "projectScore": 987,
+  "projectScore": 981,
   "approved": false,
   "pending": [
-    "2025-little-law-resilience"
+    "2025-little-law-resilience",
+    "2025-lstm-asset-prediction",
+    "2025-hybrid-cooling-thermodynamics",
+    "2025-fraud-detection-mlp",
+    "2024-theology-economic-order",
+    "2024-agritech-agile-flow"
   ],
   "articles": [
     {
       "id": "2025-little-law-resilience",
       "title": "A Lei de Little como Vetor de Resiliência e Qualidade",
       "quality": {
-        "phase1": 929,
+        "phase1": 952,
         "phase2": 980,
-        "phase3": 880,
-        "compliance": 996,
-        "polymathic": 960,
-        "macro": 949
+        "phase3": 919,
+        "compliance": 1000,
+        "polymathic": 995,
+        "macro": 969
       },
       "metrics": {
-        "paragraphs": 24,
-        "citedParagraphs": 13,
-        "citationDensity": 0.5416666666666666,
-        "references": 0,
-        "referencesWithUrl": 0,
-        "refCoverage": 0
+        "paragraphs": 25,
+        "citedParagraphs": 18,
+        "citationDensity": 0.72,
+        "references": 7,
+        "referencesWithUrl": 1,
+        "refCoverage": 0.14285714285714285
       }
     },
     {
       "id": "2025-lstm-asset-prediction",
       "title": "Análise Preditiva de Ativos Financeiros com Modelos LSTM",
       "quality": {
-        "phase1": 997,
+        "phase1": 940,
         "phase2": 980,
-        "phase3": 993,
+        "phase3": 910,
         "compliance": 1000,
-        "polymathic": 990,
-        "macro": 992
+        "polymathic": 1000,
+        "macro": 966
       },
       "metrics": {
-        "paragraphs": 27,
-        "citedParagraphs": 20,
-        "citationDensity": 0.7407407407407407,
-        "references": 6,
-        "referencesWithUrl": 6,
-        "refCoverage": 1
+        "paragraphs": 21,
+        "citedParagraphs": 14,
+        "citationDensity": 0.6666666666666666,
+        "references": 13,
+        "referencesWithUrl": 0,
+        "refCoverage": 0
       }
     },
     {
       "id": "2025-hybrid-cooling-thermodynamics",
       "title": "Análise Termodinâmica e Engenharia de Sistemas Híbridos de Resfriamento",
       "quality": {
-        "phase1": 997,
+        "phase1": 940,
         "phase2": 970,
-        "phase3": 993,
+        "phase3": 910,
         "compliance": 1000,
-        "polymathic": 990,
-        "macro": 990
+        "polymathic": 1000,
+        "macro": 964
       },
       "metrics": {
-        "paragraphs": 27,
-        "citedParagraphs": 20,
-        "citationDensity": 0.7407407407407407,
-        "references": 6,
-        "referencesWithUrl": 6,
-        "refCoverage": 1
+        "paragraphs": 21,
+        "citedParagraphs": 14,
+        "citationDensity": 0.6666666666666666,
+        "references": 38,
+        "referencesWithUrl": 0,
+        "refCoverage": 0
       }
     },
     {
@@ -91,20 +96,20 @@
       "id": "2025-fraud-detection-mlp",
       "title": "Detecção de Fraudes em Cartões com Redes Neurais",
       "quality": {
-        "phase1": 997,
+        "phase1": 948,
         "phase2": 980,
-        "phase3": 993,
+        "phase3": 910,
         "compliance": 1000,
-        "polymathic": 990,
-        "macro": 992
+        "polymathic": 1000,
+        "macro": 968
       },
       "metrics": {
-        "paragraphs": 27,
-        "citedParagraphs": 20,
-        "citationDensity": 0.7407407407407407,
-        "references": 6,
-        "referencesWithUrl": 6,
-        "refCoverage": 1
+        "paragraphs": 28,
+        "citedParagraphs": 21,
+        "citationDensity": 0.75,
+        "references": 19,
+        "referencesWithUrl": 0,
+        "refCoverage": 0
       }
     },
     {
@@ -171,20 +176,20 @@
       "id": "2024-theology-economic-order",
       "title": "Fundamentos Transcendentes da Ordem Econômica",
       "quality": {
-        "phase1": 997,
+        "phase1": 935,
         "phase2": 970,
-        "phase3": 993,
-        "compliance": 1000,
-        "polymathic": 990,
-        "macro": 990
+        "phase3": 910,
+        "compliance": 998,
+        "polymathic": 1000,
+        "macro": 963
       },
       "metrics": {
-        "paragraphs": 27,
-        "citedParagraphs": 20,
-        "citationDensity": 0.7407407407407407,
-        "references": 6,
-        "referencesWithUrl": 6,
-        "refCoverage": 1
+        "paragraphs": 18,
+        "citedParagraphs": 11,
+        "citationDensity": 0.6111111111111112,
+        "references": 45,
+        "referencesWithUrl": 0,
+        "refCoverage": 0
       }
     },
     {
@@ -211,20 +216,20 @@
       "id": "2024-agritech-agile-flow",
       "title": "Transformação Ágil e Engenharia de Fluxo em Data Science",
       "quality": {
-        "phase1": 997,
+        "phase1": 944,
         "phase2": 970,
-        "phase3": 993,
+        "phase3": 910,
         "compliance": 1000,
-        "polymathic": 990,
-        "macro": 990
+        "polymathic": 1000,
+        "macro": 965
       },
       "metrics": {
-        "paragraphs": 27,
-        "citedParagraphs": 20,
-        "citationDensity": 0.7407407407407407,
-        "references": 6,
-        "referencesWithUrl": 6,
-        "refCoverage": 1
+        "paragraphs": 24,
+        "citedParagraphs": 17,
+        "citationDensity": 0.7083333333333334,
+        "references": 26,
+        "referencesWithUrl": 0,
+        "refCoverage": 0
       }
     },
     {

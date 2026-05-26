@@ -2,11 +2,19 @@
   "generatedAt": "2026-02-21",
   "rubric": "Yape model (Resumo, Introducao, Desenvolvimento, Consideracoes Finais, Referencias, SEO/GEO)",
   "threshold": 950,
-  "projectScore": 959,
+  "projectScore": 936,
   "approvedSota": false,
   "pendingActions": [
     "[2025-little-law-resilience] Aumentar profundidade de metodo/resultados/discussao com evidencias adicionais.",
-    "[2025-little-law-resilience] Adicionar referencias com DOI/URL verificavel e maior diversidade bibliografica."
+    "[2025-little-law-resilience] Reforcar limitacoes e agenda de pesquisa futura na conclusao.",
+    "[2025-little-law-resilience] Adicionar referencias com DOI/URL verificavel e maior diversidade bibliografica.",
+    "[2025-hybrid-cooling-thermodynamics] Expandir resumo com objetivo, metodo e resultado mensuravel.",
+    "[2025-hybrid-cooling-thermodynamics] Adicionar referencias com DOI/URL verificavel e maior diversidade bibliografica.",
+    "[2025-fraud-detection-mlp] Expandir resumo com objetivo, metodo e resultado mensuravel.",
+    "[2025-fraud-detection-mlp] Reforcar limitacoes e agenda de pesquisa futura na conclusao.",
+    "[2025-fraud-detection-mlp] Adicionar referencias com DOI/URL verificavel e maior diversidade bibliografica.",
+    "[2024-theology-economic-order] Expandir resumo com objetivo, metodo e resultado mensuravel.",
+    "[2024-theology-economic-order] Adicionar referencias com DOI/URL verificavel e maior diversidade bibliografica."
   ],
   "articles": [
     {
@@ -17,23 +25,24 @@
         "resumo": 950,
         "introducao": 950,
         "desenvolvimento": 933,
-        "consideracoesFinais": 1000,
-        "referencias": 0,
+        "consideracoesFinais": 922,
+        "referencias": 760,
         "seoGeo": 1000
       },
-      "finalScore": 806,
+      "finalScore": 919,
       "approvedSota": false,
       "improvementActions": [
         "Aumentar profundidade de metodo/resultados/discussao com evidencias adicionais.",
+        "Reforcar limitacoes e agenda de pesquisa futura na conclusao.",
         "Adicionar referencias com DOI/URL verificavel e maior diversidade bibliografica."
       ],
       "metrics": {
         "abstractWords": 145,
         "introWords": 215,
         "developmentWords": 495,
-        "conclusionWords": 250,
-        "referencesCount": 0,
-        "referencesWithUrl": 0
+        "conclusionWords": 133,
+        "referencesCount": 7,
+        "referencesWithUrl": 1
       }
     },
     {
@@ -41,23 +50,23 @@
       "title": "Análise Preditiva de Ativos Financeiros com Modelos LSTM",
       "canonicalUrl": "https://ulissesflores.com/research/2025-lstm-asset-prediction",
       "partScores": {
-        "resumo": 990,
-        "introducao": 954,
-        "desenvolvimento": 940,
-        "consideracoesFinais": 980,
-        "referencias": 1000,
+        "resumo": 1000,
+        "introducao": 1000,
+        "desenvolvimento": 1000,
+        "consideracoesFinais": 1000,
+        "referencias": 700,
         "seoGeo": 1000
       },
-      "finalScore": 977,
+      "finalScore": 950,
       "approvedSota": true,
       "improvementActions": [],
       "metrics": {
-        "abstractWords": 165,
-        "introWords": 219,
-        "developmentWords": 511,
-        "conclusionWords": 168,
-        "referencesCount": 6,
-        "referencesWithUrl": 6
+        "abstractWords": 191,
+        "introWords": 930,
+        "developmentWords": 1273,
+        "conclusionWords": 223,
+        "referencesCount": 13,
+        "referencesWithUrl": 0
       }
     },
     {
@@ -65,23 +74,26 @@
       "title": "Análise Termodinâmica e Engenharia de Sistemas Híbridos de Resfriamento",
       "canonicalUrl": "https://ulissesflores.com/whitepapers/2025-hybrid-cooling-thermodynamics",
       "partScores": {
-        "resumo": 968,
-        "introducao": 951,
-        "desenvolvimento": 934,
-        "consideracoesFinais": 973,
-        "referencias": 1000,
+        "resumo": 0,
+        "introducao": 1000,
+        "desenvolvimento": 1000,
+        "consideracoesFinais": 1000,
+        "referencias": 700,
         "seoGeo": 1000
       },
-      "finalScore": 971,
-      "approvedSota": true,
-      "improvementActions": [],
+      "finalScore": 783,
+      "approvedSota": false,
+      "improvementActions": [
+        "Expandir resumo com objetivo, metodo e resultado mensuravel.",
+        "Adicionar referencias com DOI/URL verificavel e maior diversidade bibliografica."
+      ],
       "metrics": {
-        "abstractWords": 154,
-        "introWords": 216,
-        "developmentWords": 498,
-        "conclusionWords": 164,
-        "referencesCount": 6,
-        "referencesWithUrl": 6
+        "abstractWords": 0,
+        "introWords": 761,
+        "developmentWords": 1394,
+        "conclusionWords": 205,
+        "referencesCount": 38,
+        "referencesWithUrl": 0
       }
     },
     {
@@ -113,23 +125,27 @@
       "title": "Detecção de Fraudes em Cartões com Redes Neurais",
       "canonicalUrl": "https://ulissesflores.com/research/2025-fraud-detection-mlp",
       "partScores": {
-        "resumo": 984,
-        "introducao": 952,
-        "desenvolvimento": 935,
-        "consideracoesFinais": 970,
-        "referencias": 1000,
+        "resumo": 893,
+        "introducao": 1000,
+        "desenvolvimento": 1000,
+        "consideracoesFinais": 533,
+        "referencias": 700,
         "seoGeo": 1000
       },
-      "finalScore": 974,
-      "approvedSota": true,
-      "improvementActions": [],
+      "finalScore": 854,
+      "approvedSota": false,
+      "improvementActions": [
+        "Expandir resumo com objetivo, metodo e resultado mensuravel.",
+        "Reforcar limitacoes e agenda de pesquisa futura na conclusao.",
+        "Adicionar referencias com DOI/URL verificavel e maior diversidade bibliografica."
+      ],
       "metrics": {
-        "abstractWords": 162,
-        "introWords": 217,
-        "developmentWords": 500,
-        "conclusionWords": 162,
-        "referencesCount": 6,
-        "referencesWithUrl": 6
+        "abstractWords": 119,
+        "introWords": 397,
+        "developmentWords": 1138,
+        "conclusionWords": 71,
+        "referencesCount": 19,
+        "referencesWithUrl": 0
       }
     },
     {
@@ -209,23 +225,26 @@
       "title": "Fundamentos Transcendentes da Ordem Econômica",
       "canonicalUrl": "https://ulissesflores.com/essays/2024-theology-economic-order",
       "partScores": {
-        "resumo": 944,
-        "introducao": 932,
-        "desenvolvimento": 930,
-        "consideracoesFinais": 962,
-        "referencias": 1000,
+        "resumo": 0,
+        "introducao": 1000,
+        "desenvolvimento": 1000,
+        "consideracoesFinais": 1000,
+        "referencias": 700,
         "seoGeo": 1000
       },
-      "finalScore": 961,
-      "approvedSota": true,
-      "improvementActions": [],
+      "finalScore": 783,
+      "approvedSota": false,
+      "improvementActions": [
+        "Expandir resumo com objetivo, metodo e resultado mensuravel.",
+        "Adicionar referencias com DOI/URL verificavel e maior diversidade bibliografica."
+      ],
       "metrics": {
-        "abstractWords": 142,
-        "introWords": 199,
-        "developmentWords": 489,
-        "conclusionWords": 157,
-        "referencesCount": 6,
-        "referencesWithUrl": 6
+        "abstractWords": 0,
+        "introWords": 286,
+        "developmentWords": 3212,
+        "conclusionWords": 230,
+        "referencesCount": 45,
+        "referencesWithUrl": 0
       }
     },
     {
@@ -257,23 +276,23 @@
       "title": "Transformação Ágil e Engenharia de Fluxo em Data Science",
       "canonicalUrl": "https://ulissesflores.com/whitepapers/2024-agritech-agile-flow",
       "partScores": {
-        "resumo": 970,
-        "introducao": 950,
-        "desenvolvimento": 933,
-        "consideracoesFinais": 972,
-        "referencias": 1000,
+        "resumo": 1000,
+        "introducao": 1000,
+        "desenvolvimento": 1000,
+        "consideracoesFinais": 1000,
+        "referencias": 700,
         "seoGeo": 1000
       },
-      "finalScore": 971,
+      "finalScore": 950,
       "approvedSota": true,
       "improvementActions": [],
       "metrics": {
-        "abstractWords": 155,
-        "introWords": 215,
-        "developmentWords": 495,
-        "conclusionWords": 163,
-        "referencesCount": 6,
-        "referencesWithUrl": 6
+        "abstractWords": 255,
+        "introWords": 1352,
+        "developmentWords": 1129,
+        "conclusionWords": 206,
+        "referencesCount": 26,
+        "referencesWithUrl": 0
       }
     },
     {

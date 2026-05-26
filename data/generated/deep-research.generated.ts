@@ -47,21 +47,21 @@ export const deepResearchArtifacts: Record<string, DeepResearchArtifact> = {
       "target": "10.5281/zenodo.202501"
     },
     "quality": {
-      "phase1": 929,
+      "phase1": 952,
       "phase2": 980,
-      "phase3": 880,
-      "compliance": 996,
-      "polymathic": 960,
-      "macro": 949
+      "phase3": 919,
+      "compliance": 1000,
+      "polymathic": 995,
+      "macro": 969
     },
-    "polymathicIndex": 960,
-    "qualityScore": 949
+    "polymathicIndex": 995,
+    "qualityScore": 969
   },
   "2025-lstm-asset-prediction": {
     "slug": "2025-lstm-asset-prediction",
     "title": "Análise Preditiva de Ativos Financeiros com Modelos LSTM",
-    "abstract": "Analise preditiva de ativos financeiros com redes LSTM para capturar dinamica temporal em mercados nao estacionarios. O problema central investigado e: Modelos lineares sofrem com mudancas de regime e baixa robustez frente a volatilidade extrema e ruido de alta frequencia. Adotou-se um desenho metodologico com foco em validade interna, comparabilidade e reproducibilidade: Modelagem de series temporais com engenharia de atributos, validacao temporal e comparacao contra baselines estatisticos. Os resultados principais indicam que o estudo evidencia ganho de sinal preditivo em janelas especificas e melhora de robustez quando o treinamento respeita ordem temporal.. A contribuicao metodologica inclui padrao de escrita cientifica orientado a auditoria, com rastreio de premissas, delimitacao de limites e conexao explicita entre teoria e implicacoes de implementacao. O objetivo deste trabalho e avaliar de forma estruturada como \"Análise Preditiva de Ativos Financeiros com Modelos LSTM\" pode gerar valor cientifico e operacional com rastreabilidade metodologica. Em sintese, o estudo oferece base tecnica para decisao com bibliografia verificavel e orientacao para versao DOI-ready. (Hochreiter, 1997).",
-    "abstractEn": "This article presents a reproducible, high-rigor synthesis of \"Análise Preditiva de Ativos Financeiros com Modelos LSTM\" by aligning methodological traceability, interdisciplinary evidence, and operational recommendations for deployment contexts with explicit governance constraints. (Fischer, 2018).",
+    "abstract": "A crescente complexidade dos mercados financeiros exige ferramentas analíticas avançadas para a tomada de decisão. Este estudo de caso investiga a aplicação de uma Rede Neural de Memória de Curto e Longo Prazo (LSTM) para prever os preços diários de dois ativos com perfis de volatilidade distintos: Bitcoin (BTC-USD) e Microsoft (MSFT). O objetivo central é avaliar a viabilidade de uma estratégia de investimento algorítmica, baseada nas previsões do modelo, em comparação com a abordagem passiva de Buy and Hold. A metodologia abrange a coleta e preparação de dados, a engenharia de atributos com indicadores técnicos e o treinamento de um modelo LSTM. Os resultados demonstram que, embora o modelo apresente alta acurácia preditiva para ambos os ativos, a estratégia algorítmica demonstra um potencial modesto em termos de retorno ajustado ao risco (Índice de Sharpe) para o ativo de alta volatilidade (Bitcoin), embora sem superar de forma conclusiva a abordagem passiva. O estudo conclui que a aplicação de IA em finanças oferece um potencial considerável, mas sua implementação responsável requer uma estrutura de governança robusta que contemple as limitações de transparência dos modelos e mantenha a supervisão humana como pilar central.",
+    "abstractEn": "The growing complexity of financial markets demands advanced analytical tools for decision-making. This case study investigates the application of a Long Short-Term Memory (LSTM) Neural Network to forecast the daily prices of two assets with distinct volatility profiles: Bitcoin (BTC-USD) and Microsoft (MSFT). The main objective is to assess the viability of an algorithmic investment strategy, based on the model's predictions, compared to the passive Buy and Hold approach. The methodology covers data collection and preparation, feature engineering with technical indicators, and the training of an LSTM model. The results show that while the model achieves high predictive accuracy for both assets, the algorithmic strategy demonstrates a modest potential in terms of risk-adjusted return (Sharpe Ratio) for the high-volatility asset (Bitcoin), although without conclusively outperforming the passive approach. The study concludes that the application of AI in finance offers considerable potential, but its responsible implementation requires a robust governance framework that addresses the transparency limitations of the models and maintains human oversight as a central pillar.",
     "citation": "Carlos Ulisses Flores (2026) Análise Preditiva de Ativos Financeiros com Modelos LSTM. Codex Hash Research Lab.",
     "files": {
       "md": "/deep-research/2025-lstm-asset-prediction/deep-research.md",
@@ -73,21 +73,21 @@ export const deepResearchArtifacts: Record<string, DeepResearchArtifact> = {
       "target": "10.5281/zenodo.202502"
     },
     "quality": {
-      "phase1": 997,
+      "phase1": 940,
       "phase2": 980,
-      "phase3": 993,
+      "phase3": 910,
       "compliance": 1000,
-      "polymathic": 990,
-      "macro": 992
+      "polymathic": 1000,
+      "macro": 966
     },
-    "polymathicIndex": 990,
-    "qualityScore": 992
+    "polymathicIndex": 1000,
+    "qualityScore": 966
   },
   "2025-hybrid-cooling-thermodynamics": {
     "slug": "2025-hybrid-cooling-thermodynamics",
     "title": "Análise Termodinâmica e Engenharia de Sistemas Híbridos de Resfriamento",
-    "abstract": "Whitepaper de termodinamica aplicada ao projeto de sistemas hibridos de resfriamento para infraestrutura critica. O problema central investigado e: Centros computacionais e ambientes edge enfrentam trade-off entre eficiencia energetica, confiabilidade e custo de manutencao. Adotou-se um desenho metodologico com foco em validade interna, comparabilidade e reproducibilidade: Analise termo-fluidodinamica com cenarios de carga, comparando estrategias hibridas de dissipacao e controle. Os resultados principais indicam que a configuracao hibrida apresenta melhor estabilidade termica em picos de carga e menor risco de indisponibilidade.. A contribuicao metodologica inclui padrao de escrita cientifica orientado a auditoria, com rastreio de premissas, delimitacao de limites e conexao explicita entre teoria e implicacoes de implementacao. O objetivo deste trabalho e avaliar de forma estruturada como \"Análise Termodinâmica e Engenharia de Sistemas Híbridos de Resfriamento\" pode gerar valor cientifico e operacional com rastreabilidade metodologica. Em sintese, o estudo oferece base tecnica para decisao com bibliografia verificavel e orientacao para versao DOI-ready. (ASHRAE, 2026).",
-    "abstractEn": "This article presents a reproducible, high-rigor synthesis of \"Análise Termodinâmica e Engenharia de Sistemas Híbridos de Resfriamento\" by aligning methodological traceability, interdisciplinary evidence, and operational recommendations for deployment contexts with explicit governance constraints. (90, 2026).",
+    "abstract": "",
+    "abstractEn": "This scientific article refines Análise Termodinâmica e Engenharia de Sistemas Híbridos de Resfriamento with a reproducible and citation-dense deep research workflow.",
     "citation": "Carlos Ulisses Flores (2026) Análise Termodinâmica e Engenharia de Sistemas Híbridos de Resfriamento. Codex Hash Research Lab.",
     "files": {
       "md": "/deep-research/2025-hybrid-cooling-thermodynamics/deep-research.md",
@@ -99,15 +99,15 @@ export const deepResearchArtifacts: Record<string, DeepResearchArtifact> = {
       "target": "10.5281/zenodo.202503"
     },
     "quality": {
-      "phase1": 997,
+      "phase1": 940,
       "phase2": 970,
-      "phase3": 993,
+      "phase3": 910,
       "compliance": 1000,
-      "polymathic": 990,
-      "macro": 990
+      "polymathic": 1000,
+      "macro": 964
     },
-    "polymathicIndex": 990,
-    "qualityScore": 990
+    "polymathicIndex": 1000,
+    "qualityScore": 964
   },
   "2025-iot-data-sovereignty": {
     "slug": "2025-iot-data-sovereignty",
@@ -138,8 +138,8 @@ export const deepResearchArtifacts: Record<string, DeepResearchArtifact> = {
   "2025-fraud-detection-mlp": {
     "slug": "2025-fraud-detection-mlp",
     "title": "Detecção de Fraudes em Cartões com Redes Neurais",
-    "abstract": "Deteccao de fraude em cartoes com redes neurais MLP e engenharia de atributos para dados desbalanceados. O problema central investigado e: Fraude financeira combina alta assimetria de classes com necessidade de baixa latencia decisoria em tempo quase real. Adotou-se um desenho metodologico com foco em validade interna, comparabilidade e reproducibilidade: Pipeline supervisionado com reamostragem, calibracao de limiar e avaliacao por precision-recall e custo de erro. Os resultados principais indicam que a combinacao de mlp com ajuste de limiar melhora captura de fraudes mantendo taxa operacional aceitavel de falsos positivos.. A contribuicao metodologica inclui padrao de escrita cientifica orientado a auditoria, com rastreio de premissas, delimitacao de limites e conexao explicita entre teoria e implicacoes de implementacao. O objetivo deste trabalho e avaliar de forma estruturada como \"Detecção de Fraudes em Cartões com Redes Neurais\" pode gerar valor cientifico e operacional com rastreabilidade metodologica. Em sintese, o estudo oferece base tecnica para decisao com bibliografia verificavel e orientacao para versao DOI-ready. (Ngai, 2011).",
-    "abstractEn": "This article presents a reproducible, high-rigor synthesis of \"Detecção de Fraudes em Cartões com Redes Neurais\" by aligning methodological traceability, interdisciplinary evidence, and operational recommendations for deployment contexts with explicit governance constraints. (Whitrow, 2009).",
+    "abstract": "Este trabalho apresenta um estudo de caso de detecção de fraudes em cartões de crédito sob forte desbalanceamento, comparando um Perceptron Multi-Camadas (MLP) supervisionado às alternativas Autoencoder (AE), Regressão Logística (LR) e Isolation Forest (IF) no conjunto público ULB/Worldline. O protocolo prioriza métricas apropriadas a classes raras, em especial AUC-PR e F1 (além de Fβ), com thresholds calibrados na validação e aplicados no teste; reportamos curvas ROC/PR, matrizes de confusão, importância por permutação e teste de robustez a variações de prevalência. O MLP obteve o melhor F1 na classe positiva e AUC-PR competitiva, superando AE/IF e empatando/superando LR; discutimos escolha de limiar sensível a custos, calibração e governança, com artefatos completos para replicação (SAITO; REHMSMEIER, 2015; DAVIS; GOADRICH, 2006).",
+    "abstractEn": "This paper presents a credit card fraud detection case study under severe class imbalance, benchmarking a supervised MLP against Autoencoder, Logistic Regression and Isolation Forest on the public ULB/Worldline dataset. The protocol emphasizes PR-AUC and F1/Fβ thresholds calibrated on validation; we report ROC/PR curves, confusion matrices, permutation feature importance and a prior-shift robustness test. The MLP achieved the best F1 on the positive class and competitive PR-AUC, surpassing AE/IF and matching/exceeding LR. We discuss cost-sensitive thresholding, calibration and governance, providing full artifacts for replication (IBM Skills Network, 2025a; SAITO; REHMSMEIER, 2015; DAVIS; GOADRICH, 2006).",
     "citation": "Carlos Ulisses Flores (2026) Detecção de Fraudes em Cartões com Redes Neurais. Codex Hash Research Lab.",
     "files": {
       "md": "/deep-research/2025-fraud-detection-mlp/deep-research.md",
@@ -151,15 +151,15 @@ export const deepResearchArtifacts: Record<string, DeepResearchArtifact> = {
       "target": "10.5281/zenodo.202506"
     },
     "quality": {
-      "phase1": 997,
+      "phase1": 948,
       "phase2": 980,
-      "phase3": 993,
+      "phase3": 910,
       "compliance": 1000,
-      "polymathic": 990,
-      "macro": 992
+      "polymathic": 1000,
+      "macro": 968
     },
-    "polymathicIndex": 990,
-    "qualityScore": 992
+    "polymathicIndex": 1000,
+    "qualityScore": 968
   },
   "2024-historicity-jesus-archaeology": {
     "slug": "2024-historicity-jesus-archaeology",
@@ -242,8 +242,8 @@ export const deepResearchArtifacts: Record<string, DeepResearchArtifact> = {
   "2024-theology-economic-order": {
     "slug": "2024-theology-economic-order",
     "title": "Fundamentos Transcendentes da Ordem Econômica",
-    "abstract": "Ensaio sobre fundamentos transcendentes da ordem economica e sua relacao com normatividade moral. O problema central investigado e: Modelos puramente tecnocráticos tendem a negligenciar pressupostos antropologicos e eticos da cooperacao social. Adotou-se um desenho metodologico com foco em validade interna, comparabilidade e reproducibilidade: Analise conceitual interdisciplinar entre teologia, filosofia moral e teoria economica. Os resultados principais indicam que o texto demonstra que categorias de responsabilidade e dignidade influenciam desenho institucional e incentivos.. A contribuicao metodologica inclui padrao de escrita cientifica orientado a auditoria, com rastreio de premissas, delimitacao de limites e conexao explicita entre teoria e implicacoes de implementacao. O objetivo deste trabalho e avaliar de forma estruturada como \"Fundamentos Transcendentes da Ordem Econômica\" pode gerar valor cientifico e operacional com rastreabilidade metodologica. Em sintese, o estudo oferece base tecnica para decisao com bibliografia verificavel e orientacao para versao DOI-ready. (Augustine, 2026).",
-    "abstractEn": "This article presents a reproducible, high-rigor synthesis of \"Fundamentos Transcendentes da Ordem Econômica\" by aligning methodological traceability, interdisciplinary evidence, and operational recommendations for deployment contexts with explicit governance constraints. (Aquinas, 2026).",
+    "abstract": "",
+    "abstractEn": "This scientific article refines Fundamentos Transcendentes da Ordem Econômica with a reproducible and citation-dense deep research workflow.",
     "citation": "Carlos Ulisses Flores (2026) Fundamentos Transcendentes da Ordem Econômica. Codex Hash Research Lab.",
     "files": {
       "md": "/deep-research/2024-theology-economic-order/deep-research.md",
@@ -255,15 +255,15 @@ export const deepResearchArtifacts: Record<string, DeepResearchArtifact> = {
       "target": "10.5281/zenodo.202417"
     },
     "quality": {
-      "phase1": 997,
+      "phase1": 935,
       "phase2": 970,
-      "phase3": 993,
-      "compliance": 1000,
-      "polymathic": 990,
-      "macro": 990
+      "phase3": 910,
+      "compliance": 998,
+      "polymathic": 1000,
+      "macro": 963
     },
-    "polymathicIndex": 990,
-    "qualityScore": 990
+    "polymathicIndex": 1000,
+    "qualityScore": 963
   },
   "2024-ring-signatures-privacy": {
     "slug": "2024-ring-signatures-privacy",
@@ -294,8 +294,8 @@ export const deepResearchArtifacts: Record<string, DeepResearchArtifact> = {
   "2024-agritech-agile-flow": {
     "slug": "2024-agritech-agile-flow",
     "title": "Transformação Ágil e Engenharia de Fluxo em Data Science",
-    "abstract": "Whitepaper sobre transformacao agil e engenharia de fluxo em contextos agritech orientados a dados. O problema central investigado e: Projetos agritechs sofrem com sazonalidade, variabilidade operacional e baixa sincronizacao entre produto e campo. Adotou-se um desenho metodologico com foco em validade interna, comparabilidade e reproducibilidade: Aplicacao de metricas de fluxo, mapeamento de cadeia de valor e ciclos de melhoria orientados por evidencia. Os resultados principais indicam que a governanca por fluxo eleva previsibilidade de entrega e reduz retrabalho em times multidisciplinares.. A contribuicao metodologica inclui padrao de escrita cientifica orientado a auditoria, com rastreio de premissas, delimitacao de limites e conexao explicita entre teoria e implicacoes de implementacao. O objetivo deste trabalho e avaliar de forma estruturada como \"Transformação Ágil e Engenharia de Fluxo em Data Science\" pode gerar valor cientifico e operacional com rastreabilidade metodologica. Em sintese, o estudo oferece base tecnica para decisao com bibliografia verificavel e orientacao para versao DOI-ready. (Reinertsen, 2009).",
-    "abstractEn": "This article presents a reproducible, high-rigor synthesis of \"Transformação Ágil e Engenharia de Fluxo em Data Science\" by aligning methodological traceability, interdisciplinary evidence, and operational recommendations for deployment contexts with explicit governance constraints. (Forsgren, 2018).",
+    "abstract": "O presente estudo de caso propõe uma análise profunda e multidimensional da trajetória de transformação organizacional vivenciada pela AgriGrowth Inc., uma gigante do setor de agronegócio, durante sua migração de metodologias tradicionais de gestão (Waterfall) para abordagens ágeis adaptativas. Em um cenário de mercado caracterizado pela volatilidade extrema e pela digitalização acelerada — frequentemente denominado Agronegócio 4.0 —, a organização enfrentou o desafio de desenvolver módulos avançados de análise preditiva de culturas baseados em Big Data e Machine Learning. A investigação detalha a crise operacional e de qualidade desencadeada pela aplicação inicial imatura de conceitos ágeis e a subsequente estabilização alcançada através da adoção rigorosa do Método Kanban.\n\nA análise disseca os mecanismos de falha e recuperação, focando em quatro pilares críticos: (1) a adequação superior do Kanban para gerir a variabilidade estocástica inerente a projetos de Ciência de Dados em comparação ao Scrum; (2) a aplicação da Lei de Little e da Teoria das Filas na gestão de Limites de Trabalho em Progresso (WIP) para eliminar gargalos e reduzir o Lead Time; (3) a reestruturação dos papéis de liderança, contrastando a eficácia do Service Delivery Manager (SDM) versus o Scrum Master em contextos de fluxo contínuo; e (4) a implementação de engenharia de qualidade robusta através de automação de testes, traçando paralelos com práticas de DevSecOps e engenharia de software de alta confiabilidade. Este trabalho conclui apresentando um modelo de governança híbrido que integra a flexibilidade tática do Kanban com a visão estratégica de entrega de valor, essencial para a sustentabilidade tecnológica no campo.",
+    "abstractEn": "This scientific article refines Transformação Ágil e Engenharia de Fluxo em Data Science with a reproducible and citation-dense deep research workflow.",
     "citation": "Carlos Ulisses Flores (2026) Transformação Ágil e Engenharia de Fluxo em Data Science. Codex Hash Research Lab.",
     "files": {
       "md": "/deep-research/2024-agritech-agile-flow/deep-research.md",
@@ -307,15 +307,15 @@ export const deepResearchArtifacts: Record<string, DeepResearchArtifact> = {
       "target": "10.5281/zenodo.202423"
     },
     "quality": {
-      "phase1": 997,
+      "phase1": 944,
       "phase2": 970,
-      "phase3": 993,
+      "phase3": 910,
       "compliance": 1000,
-      "polymathic": 990,
-      "macro": 990
+      "polymathic": 1000,
+      "macro": 965
     },
-    "polymathicIndex": 990,
-    "qualityScore": 990
+    "polymathicIndex": 1000,
+    "qualityScore": 965
   },
   "2024-exegetical-treatise-anthropology": {
     "slug": "2024-exegetical-treatise-anthropology",
