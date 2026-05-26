@@ -1,0 +1,3403 @@
+{
+  "generatedAt": "2026-05-26T13:44:50.651Z",
+  "siteUrl": "sc-domain:ulissesflores.com",
+  "serviceAccount": "ulisses-website@gen-lang-client-0556029994.iam.gserviceaccount.com",
+  "results": [
+    {
+      "pattern": "/en",
+      "url": "https://ulissesflores.com/en",
+      "ok": true,
+      "status": 200,
+      "summary": {
+        "verdict": "PASS",
+        "coverageState": "Submitted and indexed",
+        "indexingState": "INDEXING_ALLOWED",
+        "googleCanonical": "https://ulissesflores.com/en",
+        "userCanonical": "https://ulissesflores.com/en",
+        "crawledAs": "MOBILE",
+        "lastCrawlTime": "2026-04-25T05:21:35Z",
+        "pageFetchState": "SUCCESSFUL",
+        "robotsTxtState": "ALLOWED",
+        "referringUrls": [
+          "https://ulissesflores.com/es",
+          "https://ulissesflores.com/"
+        ]
+      },
+      "raw": {
+        "inspectionResult": {
+          "inspectionResultLink": "https://search.google.com/search-console/inspect?resource_id=sc-domain:ulissesflores.com&id=1dJA0bVRwxMdd15MejrkNw&utm_medium=link&utm_source=api",
+          "indexStatusResult": {
+            "verdict": "PASS",
+            "coverageState": "Submitted and indexed",
+            "robotsTxtState": "ALLOWED",
+            "indexingState": "INDEXING_ALLOWED",
+            "lastCrawlTime": "2026-04-25T05:21:35Z",
+            "pageFetchState": "SUCCESSFUL",
+            "googleCanonical": "https://ulissesflores.com/en",
+            "userCanonical": "https://ulissesflores.com/en",
+            "referringUrls": [
+              "https://ulissesflores.com/es",
+              "https://ulissesflores.com/"
+            ],
+            "crawledAs": "MOBILE"
+          },
+          "mobileUsabilityResult": {
+            "verdict": "VERDICT_UNSPECIFIED"
+          },
+          "richResultsResult": {
+            "verdict": "PASS",
+            "detectedItems": [
+              {
+                "richResultType": "FAQ",
+                "items": [
+                  {
+                    "name": "Unnamed item"
+                  }
+                ]
+              },
+              {
+                "richResultType": "",
+                "items": [
+                  {
+                    "name": "Carlos Ulisses Flores"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "pattern": "/en/consultoria",
+      "url": "https://ulissesflores.com/en/consultoria",
+      "ok": true,
+      "status": 200,
+      "summary": {
+        "verdict": "NEUTRAL",
+        "coverageState": "URL is unknown to Google",
+        "indexingState": "INDEXING_STATE_UNSPECIFIED",
+        "googleCanonical": "—",
+        "userCanonical": "—",
+        "crawledAs": "—",
+        "lastCrawlTime": "—",
+        "pageFetchState": "PAGE_FETCH_STATE_UNSPECIFIED",
+        "robotsTxtState": "ROBOTS_TXT_STATE_UNSPECIFIED",
+        "referringUrls": []
+      },
+      "raw": {
+        "inspectionResult": {
+          "inspectionResultLink": "https://search.google.com/search-console/inspect?resource_id=sc-domain:ulissesflores.com&id=FD-UyqlEiurwRh5myrZPUw&utm_medium=link&utm_source=api",
+          "indexStatusResult": {
+            "verdict": "NEUTRAL",
+            "coverageState": "URL is unknown to Google",
+            "robotsTxtState": "ROBOTS_TXT_STATE_UNSPECIFIED",
+            "indexingState": "INDEXING_STATE_UNSPECIFIED",
+            "pageFetchState": "PAGE_FETCH_STATE_UNSPECIFIED"
+          },
+          "mobileUsabilityResult": {
+            "verdict": "VERDICT_UNSPECIFIED"
+          }
+        }
+      }
+    },
+    {
+      "pattern": "/en/palestras",
+      "url": "https://ulissesflores.com/en/palestras",
+      "ok": true,
+      "status": 200,
+      "summary": {
+        "verdict": "NEUTRAL",
+        "coverageState": "URL is unknown to Google",
+        "indexingState": "INDEXING_STATE_UNSPECIFIED",
+        "googleCanonical": "—",
+        "userCanonical": "—",
+        "crawledAs": "—",
+        "lastCrawlTime": "—",
+        "pageFetchState": "PAGE_FETCH_STATE_UNSPECIFIED",
+        "robotsTxtState": "ROBOTS_TXT_STATE_UNSPECIFIED",
+        "referringUrls": []
+      },
+      "raw": {
+        "inspectionResult": {
+          "inspectionResultLink": "https://search.google.com/search-console/inspect?resource_id=sc-domain:ulissesflores.com&id=sWl5LOm5o8zv6QKAuh3BlQ&utm_medium=link&utm_source=api",
+          "indexStatusResult": {
+            "verdict": "NEUTRAL",
+            "coverageState": "URL is unknown to Google",
+            "robotsTxtState": "ROBOTS_TXT_STATE_UNSPECIFIED",
+            "indexingState": "INDEXING_STATE_UNSPECIFIED",
+            "pageFetchState": "PAGE_FETCH_STATE_UNSPECIFIED"
+          },
+          "mobileUsabilityResult": {
+            "verdict": "VERDICT_UNSPECIFIED"
+          }
+        }
+      }
+    },
+    {
+      "pattern": "/en/research",
+      "url": "https://ulissesflores.com/en/research",
+      "ok": true,
+      "status": 200,
+      "summary": {
+        "verdict": "NEUTRAL",
+        "coverageState": "URL is unknown to Google",
+        "indexingState": "INDEXING_STATE_UNSPECIFIED",
+        "googleCanonical": "—",
+        "userCanonical": "—",
+        "crawledAs": "—",
+        "lastCrawlTime": "—",
+        "pageFetchState": "PAGE_FETCH_STATE_UNSPECIFIED",
+        "robotsTxtState": "ROBOTS_TXT_STATE_UNSPECIFIED",
+        "referringUrls": []
+      },
+      "raw": {
+        "inspectionResult": {
+          "inspectionResultLink": "https://search.google.com/search-console/inspect?resource_id=sc-domain:ulissesflores.com&id=7tb8dP5WvfRfqEUdRFbJZQ&utm_medium=link&utm_source=api",
+          "indexStatusResult": {
+            "verdict": "NEUTRAL",
+            "coverageState": "URL is unknown to Google",
+            "robotsTxtState": "ROBOTS_TXT_STATE_UNSPECIFIED",
+            "indexingState": "INDEXING_STATE_UNSPECIFIED",
+            "pageFetchState": "PAGE_FETCH_STATE_UNSPECIFIED"
+          },
+          "mobileUsabilityResult": {
+            "verdict": "VERDICT_UNSPECIFIED"
+          }
+        }
+      }
+    },
+    {
+      "pattern": "/en/research/2024-bitcoin-praxeology",
+      "url": "https://ulissesflores.com/en/research/2024-bitcoin-praxeology",
+      "ok": true,
+      "status": 200,
+      "summary": {
+        "verdict": "NEUTRAL",
+        "coverageState": "URL is unknown to Google",
+        "indexingState": "INDEXING_STATE_UNSPECIFIED",
+        "googleCanonical": "—",
+        "userCanonical": "—",
+        "crawledAs": "—",
+        "lastCrawlTime": "—",
+        "pageFetchState": "PAGE_FETCH_STATE_UNSPECIFIED",
+        "robotsTxtState": "ROBOTS_TXT_STATE_UNSPECIFIED",
+        "referringUrls": []
+      },
+      "raw": {
+        "inspectionResult": {
+          "inspectionResultLink": "https://search.google.com/search-console/inspect?resource_id=sc-domain:ulissesflores.com&id=ZFUuFJBmrYwdknyQKN8vFg&utm_medium=link&utm_source=api",
+          "indexStatusResult": {
+            "verdict": "NEUTRAL",
+            "coverageState": "URL is unknown to Google",
+            "robotsTxtState": "ROBOTS_TXT_STATE_UNSPECIFIED",
+            "indexingState": "INDEXING_STATE_UNSPECIFIED",
+            "pageFetchState": "PAGE_FETCH_STATE_UNSPECIFIED"
+          },
+          "mobileUsabilityResult": {
+            "verdict": "VERDICT_UNSPECIFIED"
+          }
+        }
+      }
+    },
+    {
+      "pattern": "/en/identidade",
+      "url": "https://ulissesflores.com/en/identidade",
+      "ok": true,
+      "status": 200,
+      "summary": {
+        "verdict": "PASS",
+        "coverageState": "Submitted and indexed",
+        "indexingState": "INDEXING_ALLOWED",
+        "googleCanonical": "https://ulissesflores.com/en/identidade",
+        "userCanonical": "https://ulissesflores.com/en/identidade",
+        "crawledAs": "MOBILE",
+        "lastCrawlTime": "2026-05-12T16:48:36Z",
+        "pageFetchState": "SUCCESSFUL",
+        "robotsTxtState": "ALLOWED",
+        "referringUrls": [
+          "https://ulissesflores.com/en/certifications/alura-2-formacao-engenharia-de-software"
+        ]
+      },
+      "raw": {
+        "inspectionResult": {
+          "inspectionResultLink": "https://search.google.com/search-console/inspect?resource_id=sc-domain:ulissesflores.com&id=wtcsT6Sbpk7ZTvYDajYHlw&utm_medium=link&utm_source=api",
+          "indexStatusResult": {
+            "verdict": "PASS",
+            "coverageState": "Submitted and indexed",
+            "robotsTxtState": "ALLOWED",
+            "indexingState": "INDEXING_ALLOWED",
+            "lastCrawlTime": "2026-05-12T16:48:36Z",
+            "pageFetchState": "SUCCESSFUL",
+            "googleCanonical": "https://ulissesflores.com/en/identidade",
+            "userCanonical": "https://ulissesflores.com/en/identidade",
+            "referringUrls": [
+              "https://ulissesflores.com/en/certifications/alura-2-formacao-engenharia-de-software"
+            ],
+            "crawledAs": "MOBILE"
+          },
+          "mobileUsabilityResult": {
+            "verdict": "VERDICT_UNSPECIFIED"
+          },
+          "richResultsResult": {
+            "verdict": "PASS",
+            "detectedItems": [
+              {
+                "richResultType": "Breadcrumbs",
+                "items": [
+                  {
+                    "name": "Unnamed item"
+                  }
+                ]
+              },
+              {
+                "richResultType": "Datasets",
+                "items": [
+                  {
+                    "name": "Ulisses Flores — Sovereign UPKF (Universal Personal Knowledge Framework) (Public Knowledge Graph)",
+                    "issues": [
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "richResultType": "FAQ",
+                "items": [
+                  {
+                    "name": "Unnamed item"
+                  }
+                ]
+              },
+              {
+                "richResultType": "Videos",
+                "items": [
+                  {
+                    "name": "Dia 1 — O Despertar da Fé"
+                  },
+                  {
+                    "name": "Dia 2 — Vencendo as Batalhas da Mente"
+                  },
+                  {
+                    "name": "Dia 3 — A Resiliência do Cristão"
+                  },
+                  {
+                    "name": "Dia 4 — Quebrando as Muralhas Pela Oração"
+                  },
+                  {
+                    "name": "Dia 5 — O Poder da Unidade"
+                  },
+                  {
+                    "name": "Dia 6 — Restituição Divina"
+                  },
+                  {
+                    "name": "Dia 7 — A Plenitude do Espírito"
+                  },
+                  {
+                    "name": "Dia 8 — Tempo de Renovo"
+                  },
+                  {
+                    "name": "Dia 9 — Frutos de Uma Vida com Deus"
+                  },
+                  {
+                    "name": "Dia 10 — Autoridade Espiritual"
+                  },
+                  {
+                    "name": "Dia 11 — A Força da Palavra"
+                  },
+                  {
+                    "name": "Dia 12 — Alinhamento Profético"
+                  },
+                  {
+                    "name": "Dia 13 — Ousadia para Romper Limites"
+                  },
+                  {
+                    "name": "Dia 14 — A Recompensa da Fidelidade"
+                  },
+                  {
+                    "name": "Dia 15 — Proteção e Escudo"
+                  },
+                  {
+                    "name": "Dia 16 — Avançando em Meio às Oposições"
+                  },
+                  {
+                    "name": "Dia 17 — Celebração Antecipada"
+                  },
+                  {
+                    "name": "Dia 18 — Destravando Promessas"
+                  },
+                  {
+                    "name": "Dia 19 — O Fogo Que Não se Apaga"
+                  },
+                  {
+                    "name": "Dia 20 — Preparando o Altar"
+                  },
+                  {
+                    "name": "Dia 21 — O Selo da Vitória"
+                  },
+                  {
+                    "name": "Presença e Avivamento"
+                  },
+                  {
+                    "name": "O Chamado Inabalável — 07/08/22"
+                  },
+                  {
+                    "name": "Firmes na Promessa — 14/08/22"
+                  },
+                  {
+                    "name": "A Importância da Intimidade — 18/08/2022"
+                  },
+                  {
+                    "name": "Construindo Uma Vida com Propósito — 21/08/2022"
+                  },
+                  {
+                    "name": "Restaurando o Altar — 25/08/2022"
+                  },
+                  {
+                    "name": "O Agir Invisível de Deus — 28/08/2022"
+                  },
+                  {
+                    "name": "Atravessando Tempestades com Fé — 04/09/2022"
+                  },
+                  {
+                    "name": "O Perdão que Liberta — 11/09/2022"
+                  },
+                  {
+                    "name": "Vencendo o Medo Pela Graça — 15/09/2022"
+                  },
+                  {
+                    "name": "Chamados Para Fazer a Diferença — 18/09/2022"
+                  },
+                  {
+                    "name": "Batismo nas águas: Nova Vida em Cristo — 25/09/2022"
+                  },
+                  {
+                    "name": "Semeando em Boa Terra — 02/10/2022"
+                  },
+                  {
+                    "name": "A Cruz e o Seu Significado Hoje — 23/10/2022"
+                  },
+                  {
+                    "name": "Caminhando em Sobrenaturalidade — 06/11/2022"
+                  },
+                  {
+                    "name": "Identidade: Quem Somos em Cristo? — 13/11/2022"
+                  },
+                  {
+                    "name": "Cultivando um Coração Grato — 20/11"
+                  },
+                  {
+                    "name": "Renovando as Forças no Altar — 27/11/2022"
+                  },
+                  {
+                    "name": "A Esperança Que Não Decepciona — 04/12/2022"
+                  },
+                  {
+                    "name": "Preparando o Coração Para o Novo Ano — 11/12/2022"
+                  },
+                  {
+                    "name": "Fortalecendo as Bases da Fé — 15/01/2023"
+                  },
+                  {
+                    "name": "O Agir do Espírito em Nossas Vidas — 22/01/2023"
+                  },
+                  {
+                    "name": "Aprendendo a Ouvir a Voz de Deus — 29/01/2023"
+                  },
+                  {
+                    "name": "Comunhão e Crescimento Espiritual — 05/02/2023"
+                  },
+                  {
+                    "name": "Quebrando Cadeias Invisíveis — 12/02/2023"
+                  },
+                  {
+                    "name": "Viver em Santidade no Século XXI — 19/02/2023"
+                  },
+                  {
+                    "name": "Festival de dança: Expressão de Adoração e Arte Profética"
+                  },
+                  {
+                    "name": "Restaurando o Primeiro Amor — 24/07/22"
+                  },
+                  {
+                    "name": "O Poder Transformador da Graça — 31/07/22"
+                  },
+                  {
+                    "name": "Culto regional de casais: Edificando a Família Sobre a Rocha — 03/09/2022"
+                  },
+                  {
+                    "name": "Janeiro Profético: Consagrando o Novo Ano (Dia 1) — 01/01/2023"
+                  },
+                  {
+                    "name": "Perseverança e Resposta (Dia 8)"
+                  },
+                  {
+                    "name": "O Selo Profético Para os 12 Meses de Vitória (Dia 12)"
+                  },
+                  {
+                    "name": "O Grande Rompimento: Celebração dos Testemunhos (Dia 40)"
+                  },
+                  {
+                    "name": "Cantata de Natal: O Verbo que se Fez Carne e Habitou Entre Nós — 18/12/2022"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "pattern": "/en/acervo-teologico",
+      "url": "https://ulissesflores.com/en/acervo-teologico",
+      "ok": true,
+      "status": 200,
+      "summary": {
+        "verdict": "NEUTRAL",
+        "coverageState": "Page with redirect",
+        "indexingState": "INDEXING_ALLOWED",
+        "googleCanonical": "https://ulissesflores.com/acervo-teologico",
+        "userCanonical": "https://ulissesflores.com/acervo-teologico",
+        "crawledAs": "MOBILE",
+        "lastCrawlTime": "2026-03-05T09:15:43Z",
+        "pageFetchState": "SUCCESSFUL",
+        "robotsTxtState": "ALLOWED",
+        "referringUrls": [
+          "https://ulissesflores.com/es/acervo-teologico"
+        ]
+      },
+      "raw": {
+        "inspectionResult": {
+          "inspectionResultLink": "https://search.google.com/search-console/inspect?resource_id=sc-domain:ulissesflores.com&id=yQCQRltNuoJFiC_GD3mthQ&utm_medium=link&utm_source=api",
+          "indexStatusResult": {
+            "verdict": "NEUTRAL",
+            "coverageState": "Page with redirect",
+            "robotsTxtState": "ALLOWED",
+            "indexingState": "INDEXING_ALLOWED",
+            "lastCrawlTime": "2026-03-05T09:15:43Z",
+            "pageFetchState": "SUCCESSFUL",
+            "googleCanonical": "https://ulissesflores.com/acervo-teologico",
+            "userCanonical": "https://ulissesflores.com/acervo-teologico",
+            "referringUrls": [
+              "https://ulissesflores.com/es/acervo-teologico"
+            ],
+            "crawledAs": "MOBILE"
+          },
+          "mobileUsabilityResult": {
+            "verdict": "VERDICT_UNSPECIFIED"
+          }
+        }
+      }
+    },
+    {
+      "pattern": "/es",
+      "url": "https://ulissesflores.com/es",
+      "ok": true,
+      "status": 200,
+      "summary": {
+        "verdict": "PASS",
+        "coverageState": "Submitted and indexed",
+        "indexingState": "INDEXING_ALLOWED",
+        "googleCanonical": "https://ulissesflores.com/es",
+        "userCanonical": "https://ulissesflores.com/es",
+        "crawledAs": "MOBILE",
+        "lastCrawlTime": "2026-05-13T01:50:56Z",
+        "pageFetchState": "SUCCESSFUL",
+        "robotsTxtState": "ALLOWED",
+        "referringUrls": [
+          "https://www.ulissesflores.com/",
+          "https://ulissesflores.com/"
+        ]
+      },
+      "raw": {
+        "inspectionResult": {
+          "inspectionResultLink": "https://search.google.com/search-console/inspect?resource_id=sc-domain:ulissesflores.com&id=3-aRxKOBj6hNV8gX-LPHzA&utm_medium=link&utm_source=api",
+          "indexStatusResult": {
+            "verdict": "PASS",
+            "coverageState": "Submitted and indexed",
+            "robotsTxtState": "ALLOWED",
+            "indexingState": "INDEXING_ALLOWED",
+            "lastCrawlTime": "2026-05-13T01:50:56Z",
+            "pageFetchState": "SUCCESSFUL",
+            "googleCanonical": "https://ulissesflores.com/es",
+            "userCanonical": "https://ulissesflores.com/es",
+            "referringUrls": [
+              "https://www.ulissesflores.com/",
+              "https://ulissesflores.com/"
+            ],
+            "crawledAs": "MOBILE"
+          },
+          "mobileUsabilityResult": {
+            "verdict": "VERDICT_UNSPECIFIED"
+          },
+          "richResultsResult": {
+            "verdict": "PASS",
+            "detectedItems": [
+              {
+                "richResultType": "FAQ",
+                "items": [
+                  {
+                    "name": "Unnamed item"
+                  }
+                ]
+              },
+              {
+                "richResultType": "",
+                "items": [
+                  {
+                    "name": "Carlos Ulisses Flores"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "pattern": "/es/consultoria",
+      "url": "https://ulissesflores.com/es/consultoria",
+      "ok": true,
+      "status": 200,
+      "summary": {
+        "verdict": "NEUTRAL",
+        "coverageState": "URL is unknown to Google",
+        "indexingState": "INDEXING_STATE_UNSPECIFIED",
+        "googleCanonical": "—",
+        "userCanonical": "—",
+        "crawledAs": "—",
+        "lastCrawlTime": "—",
+        "pageFetchState": "PAGE_FETCH_STATE_UNSPECIFIED",
+        "robotsTxtState": "ROBOTS_TXT_STATE_UNSPECIFIED",
+        "referringUrls": []
+      },
+      "raw": {
+        "inspectionResult": {
+          "inspectionResultLink": "https://search.google.com/search-console/inspect?resource_id=sc-domain:ulissesflores.com&id=fj3iKjmvHogzkBj_udR6VA&utm_medium=link&utm_source=api",
+          "indexStatusResult": {
+            "verdict": "NEUTRAL",
+            "coverageState": "URL is unknown to Google",
+            "robotsTxtState": "ROBOTS_TXT_STATE_UNSPECIFIED",
+            "indexingState": "INDEXING_STATE_UNSPECIFIED",
+            "pageFetchState": "PAGE_FETCH_STATE_UNSPECIFIED"
+          },
+          "mobileUsabilityResult": {
+            "verdict": "VERDICT_UNSPECIFIED"
+          }
+        }
+      }
+    },
+    {
+      "pattern": "/es/palestras",
+      "url": "https://ulissesflores.com/es/palestras",
+      "ok": true,
+      "status": 200,
+      "summary": {
+        "verdict": "NEUTRAL",
+        "coverageState": "URL is unknown to Google",
+        "indexingState": "INDEXING_STATE_UNSPECIFIED",
+        "googleCanonical": "—",
+        "userCanonical": "—",
+        "crawledAs": "—",
+        "lastCrawlTime": "—",
+        "pageFetchState": "PAGE_FETCH_STATE_UNSPECIFIED",
+        "robotsTxtState": "ROBOTS_TXT_STATE_UNSPECIFIED",
+        "referringUrls": []
+      },
+      "raw": {
+        "inspectionResult": {
+          "inspectionResultLink": "https://search.google.com/search-console/inspect?resource_id=sc-domain:ulissesflores.com&id=6Z9U1kJl_zKT-NxQehJWnQ&utm_medium=link&utm_source=api",
+          "indexStatusResult": {
+            "verdict": "NEUTRAL",
+            "coverageState": "URL is unknown to Google",
+            "robotsTxtState": "ROBOTS_TXT_STATE_UNSPECIFIED",
+            "indexingState": "INDEXING_STATE_UNSPECIFIED",
+            "pageFetchState": "PAGE_FETCH_STATE_UNSPECIFIED"
+          },
+          "mobileUsabilityResult": {
+            "verdict": "VERDICT_UNSPECIFIED"
+          }
+        }
+      }
+    },
+    {
+      "pattern": "/es/research",
+      "url": "https://ulissesflores.com/es/research",
+      "ok": true,
+      "status": 200,
+      "summary": {
+        "verdict": "NEUTRAL",
+        "coverageState": "URL is unknown to Google",
+        "indexingState": "INDEXING_STATE_UNSPECIFIED",
+        "googleCanonical": "—",
+        "userCanonical": "—",
+        "crawledAs": "—",
+        "lastCrawlTime": "—",
+        "pageFetchState": "PAGE_FETCH_STATE_UNSPECIFIED",
+        "robotsTxtState": "ROBOTS_TXT_STATE_UNSPECIFIED",
+        "referringUrls": []
+      },
+      "raw": {
+        "inspectionResult": {
+          "inspectionResultLink": "https://search.google.com/search-console/inspect?resource_id=sc-domain:ulissesflores.com&id=pLLaMnzwaKariwpDE-bIWQ&utm_medium=link&utm_source=api",
+          "indexStatusResult": {
+            "verdict": "NEUTRAL",
+            "coverageState": "URL is unknown to Google",
+            "robotsTxtState": "ROBOTS_TXT_STATE_UNSPECIFIED",
+            "indexingState": "INDEXING_STATE_UNSPECIFIED",
+            "pageFetchState": "PAGE_FETCH_STATE_UNSPECIFIED"
+          },
+          "mobileUsabilityResult": {
+            "verdict": "VERDICT_UNSPECIFIED"
+          }
+        }
+      }
+    },
+    {
+      "pattern": "/es/identidade",
+      "url": "https://ulissesflores.com/es/identidade",
+      "ok": true,
+      "status": 200,
+      "summary": {
+        "verdict": "PASS",
+        "coverageState": "Submitted and indexed",
+        "indexingState": "INDEXING_ALLOWED",
+        "googleCanonical": "https://ulissesflores.com/es/identidade",
+        "userCanonical": "https://ulissesflores.com/es/identidade",
+        "crawledAs": "MOBILE",
+        "lastCrawlTime": "2026-05-18T14:29:59Z",
+        "pageFetchState": "SUCCESSFUL",
+        "robotsTxtState": "ALLOWED",
+        "referringUrls": [
+          "https://ulissesflores.com/identidade",
+          "https://ulissesflores.com/he/identidade",
+          "https://ulissesflores.com/es/certifications/alura-18-uml-modelagem-de-diagramas"
+        ]
+      },
+      "raw": {
+        "inspectionResult": {
+          "inspectionResultLink": "https://search.google.com/search-console/inspect?resource_id=sc-domain:ulissesflores.com&id=Q7XzOy2px69mOdEiiTKWaA&utm_medium=link&utm_source=api",
+          "indexStatusResult": {
+            "verdict": "PASS",
+            "coverageState": "Submitted and indexed",
+            "robotsTxtState": "ALLOWED",
+            "indexingState": "INDEXING_ALLOWED",
+            "lastCrawlTime": "2026-05-18T14:29:59Z",
+            "pageFetchState": "SUCCESSFUL",
+            "googleCanonical": "https://ulissesflores.com/es/identidade",
+            "userCanonical": "https://ulissesflores.com/es/identidade",
+            "referringUrls": [
+              "https://ulissesflores.com/identidade",
+              "https://ulissesflores.com/he/identidade",
+              "https://ulissesflores.com/es/certifications/alura-18-uml-modelagem-de-diagramas",
+              "https://ulissesflores.com/en/identidade"
+            ],
+            "crawledAs": "MOBILE"
+          },
+          "mobileUsabilityResult": {
+            "verdict": "VERDICT_UNSPECIFIED"
+          },
+          "richResultsResult": {
+            "verdict": "PASS",
+            "detectedItems": [
+              {
+                "richResultType": "Breadcrumbs",
+                "items": [
+                  {
+                    "name": "Unnamed item"
+                  }
+                ]
+              },
+              {
+                "richResultType": "Datasets",
+                "items": [
+                  {
+                    "name": "Ulisses Flores — Sovereign UPKF (Universal Personal Knowledge Framework) (Public Knowledge Graph)",
+                    "issues": [
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "richResultType": "FAQ",
+                "items": [
+                  {
+                    "name": "Unnamed item"
+                  }
+                ]
+              },
+              {
+                "richResultType": "Videos",
+                "items": [
+                  {
+                    "name": "Dia 1 — O Despertar da Fé"
+                  },
+                  {
+                    "name": "Dia 2 — Vencendo as Batalhas da Mente"
+                  },
+                  {
+                    "name": "Dia 3 — A Resiliência do Cristão"
+                  },
+                  {
+                    "name": "Dia 4 — Quebrando as Muralhas Pela Oração"
+                  },
+                  {
+                    "name": "Dia 5 — O Poder da Unidade"
+                  },
+                  {
+                    "name": "Dia 6 — Restituição Divina"
+                  },
+                  {
+                    "name": "Dia 7 — A Plenitude do Espírito"
+                  },
+                  {
+                    "name": "Dia 8 — Tempo de Renovo"
+                  },
+                  {
+                    "name": "Dia 9 — Frutos de Uma Vida com Deus"
+                  },
+                  {
+                    "name": "Dia 10 — Autoridade Espiritual"
+                  },
+                  {
+                    "name": "Dia 11 — A Força da Palavra"
+                  },
+                  {
+                    "name": "Dia 12 — Alinhamento Profético"
+                  },
+                  {
+                    "name": "Dia 13 — Ousadia para Romper Limites"
+                  },
+                  {
+                    "name": "Dia 14 — A Recompensa da Fidelidade"
+                  },
+                  {
+                    "name": "Dia 15 — Proteção e Escudo"
+                  },
+                  {
+                    "name": "Dia 16 — Avançando em Meio às Oposições"
+                  },
+                  {
+                    "name": "Dia 17 — Celebração Antecipada"
+                  },
+                  {
+                    "name": "Dia 18 — Destravando Promessas"
+                  },
+                  {
+                    "name": "Dia 19 — O Fogo Que Não se Apaga"
+                  },
+                  {
+                    "name": "Dia 20 — Preparando o Altar"
+                  },
+                  {
+                    "name": "Dia 21 — O Selo da Vitória"
+                  },
+                  {
+                    "name": "Presença e Avivamento"
+                  },
+                  {
+                    "name": "O Chamado Inabalável — 07/08/22"
+                  },
+                  {
+                    "name": "Firmes na Promessa — 14/08/22"
+                  },
+                  {
+                    "name": "A Importância da Intimidade — 18/08/2022"
+                  },
+                  {
+                    "name": "Construindo Uma Vida com Propósito — 21/08/2022"
+                  },
+                  {
+                    "name": "Restaurando o Altar — 25/08/2022"
+                  },
+                  {
+                    "name": "O Agir Invisível de Deus — 28/08/2022"
+                  },
+                  {
+                    "name": "Atravessando Tempestades com Fé — 04/09/2022"
+                  },
+                  {
+                    "name": "O Perdão que Liberta — 11/09/2022"
+                  },
+                  {
+                    "name": "Vencendo o Medo Pela Graça — 15/09/2022"
+                  },
+                  {
+                    "name": "Chamados Para Fazer a Diferença — 18/09/2022"
+                  },
+                  {
+                    "name": "Batismo nas águas: Nova Vida em Cristo — 25/09/2022"
+                  },
+                  {
+                    "name": "Semeando em Boa Terra — 02/10/2022"
+                  },
+                  {
+                    "name": "A Cruz e o Seu Significado Hoje — 23/10/2022"
+                  },
+                  {
+                    "name": "Caminhando em Sobrenaturalidade — 06/11/2022"
+                  },
+                  {
+                    "name": "Identidade: Quem Somos em Cristo? — 13/11/2022"
+                  },
+                  {
+                    "name": "Cultivando um Coração Grato — 20/11"
+                  },
+                  {
+                    "name": "Renovando as Forças no Altar — 27/11/2022"
+                  },
+                  {
+                    "name": "A Esperança Que Não Decepciona — 04/12/2022"
+                  },
+                  {
+                    "name": "Preparando o Coração Para o Novo Ano — 11/12/2022"
+                  },
+                  {
+                    "name": "Fortalecendo as Bases da Fé — 15/01/2023"
+                  },
+                  {
+                    "name": "O Agir do Espírito em Nossas Vidas — 22/01/2023"
+                  },
+                  {
+                    "name": "Aprendendo a Ouvir a Voz de Deus — 29/01/2023"
+                  },
+                  {
+                    "name": "Comunhão e Crescimento Espiritual — 05/02/2023"
+                  },
+                  {
+                    "name": "Quebrando Cadeias Invisíveis — 12/02/2023"
+                  },
+                  {
+                    "name": "Viver em Santidade no Século XXI — 19/02/2023"
+                  },
+                  {
+                    "name": "Festival de dança: Expressão de Adoração e Arte Profética"
+                  },
+                  {
+                    "name": "Restaurando o Primeiro Amor — 24/07/22"
+                  },
+                  {
+                    "name": "O Poder Transformador da Graça — 31/07/22"
+                  },
+                  {
+                    "name": "Culto regional de casais: Edificando a Família Sobre a Rocha — 03/09/2022"
+                  },
+                  {
+                    "name": "Janeiro Profético: Consagrando o Novo Ano (Dia 1) — 01/01/2023"
+                  },
+                  {
+                    "name": "Perseverança e Resposta (Dia 8)"
+                  },
+                  {
+                    "name": "O Selo Profético Para os 12 Meses de Vitória (Dia 12)"
+                  },
+                  {
+                    "name": "O Grande Rompimento: Celebração dos Testemunhos (Dia 40)"
+                  },
+                  {
+                    "name": "Cantata de Natal: O Verbo que se Fez Carne e Habitou Entre Nós — 18/12/2022"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "pattern": "/it",
+      "url": "https://ulissesflores.com/it",
+      "ok": true,
+      "status": 200,
+      "summary": {
+        "verdict": "PASS",
+        "coverageState": "Submitted and indexed",
+        "indexingState": "INDEXING_ALLOWED",
+        "googleCanonical": "https://ulissesflores.com/it",
+        "userCanonical": "https://ulissesflores.com/it",
+        "crawledAs": "MOBILE",
+        "lastCrawlTime": "2026-05-05T20:25:35Z",
+        "pageFetchState": "SUCCESSFUL",
+        "robotsTxtState": "ALLOWED",
+        "referringUrls": [
+          "https://www.ulissesflores.com/",
+          "https://ulissesflores.com/"
+        ]
+      },
+      "raw": {
+        "inspectionResult": {
+          "inspectionResultLink": "https://search.google.com/search-console/inspect?resource_id=sc-domain:ulissesflores.com&id=SPR2rmRvBh8XaQcUYhjKMQ&utm_medium=link&utm_source=api",
+          "indexStatusResult": {
+            "verdict": "PASS",
+            "coverageState": "Submitted and indexed",
+            "robotsTxtState": "ALLOWED",
+            "indexingState": "INDEXING_ALLOWED",
+            "lastCrawlTime": "2026-05-05T20:25:35Z",
+            "pageFetchState": "SUCCESSFUL",
+            "googleCanonical": "https://ulissesflores.com/it",
+            "userCanonical": "https://ulissesflores.com/it",
+            "referringUrls": [
+              "https://www.ulissesflores.com/",
+              "https://ulissesflores.com/"
+            ],
+            "crawledAs": "MOBILE"
+          },
+          "mobileUsabilityResult": {
+            "verdict": "VERDICT_UNSPECIFIED"
+          },
+          "richResultsResult": {
+            "verdict": "PASS",
+            "detectedItems": [
+              {
+                "richResultType": "FAQ",
+                "items": [
+                  {
+                    "name": "Unnamed item"
+                  }
+                ]
+              },
+              {
+                "richResultType": "",
+                "items": [
+                  {
+                    "name": "Carlos Ulisses Flores"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "pattern": "/it/consultoria",
+      "url": "https://ulissesflores.com/it/consultoria",
+      "ok": true,
+      "status": 200,
+      "summary": {
+        "verdict": "NEUTRAL",
+        "coverageState": "URL is unknown to Google",
+        "indexingState": "INDEXING_STATE_UNSPECIFIED",
+        "googleCanonical": "—",
+        "userCanonical": "—",
+        "crawledAs": "—",
+        "lastCrawlTime": "—",
+        "pageFetchState": "PAGE_FETCH_STATE_UNSPECIFIED",
+        "robotsTxtState": "ROBOTS_TXT_STATE_UNSPECIFIED",
+        "referringUrls": []
+      },
+      "raw": {
+        "inspectionResult": {
+          "inspectionResultLink": "https://search.google.com/search-console/inspect?resource_id=sc-domain:ulissesflores.com&id=qy-5pHUCTm8tgk6ys3638g&utm_medium=link&utm_source=api",
+          "indexStatusResult": {
+            "verdict": "NEUTRAL",
+            "coverageState": "URL is unknown to Google",
+            "robotsTxtState": "ROBOTS_TXT_STATE_UNSPECIFIED",
+            "indexingState": "INDEXING_STATE_UNSPECIFIED",
+            "pageFetchState": "PAGE_FETCH_STATE_UNSPECIFIED"
+          },
+          "mobileUsabilityResult": {
+            "verdict": "VERDICT_UNSPECIFIED"
+          }
+        }
+      }
+    },
+    {
+      "pattern": "/it/palestras",
+      "url": "https://ulissesflores.com/it/palestras",
+      "ok": true,
+      "status": 200,
+      "summary": {
+        "verdict": "NEUTRAL",
+        "coverageState": "URL is unknown to Google",
+        "indexingState": "INDEXING_STATE_UNSPECIFIED",
+        "googleCanonical": "—",
+        "userCanonical": "—",
+        "crawledAs": "—",
+        "lastCrawlTime": "—",
+        "pageFetchState": "PAGE_FETCH_STATE_UNSPECIFIED",
+        "robotsTxtState": "ROBOTS_TXT_STATE_UNSPECIFIED",
+        "referringUrls": []
+      },
+      "raw": {
+        "inspectionResult": {
+          "inspectionResultLink": "https://search.google.com/search-console/inspect?resource_id=sc-domain:ulissesflores.com&id=VO3QMPOmtZv2UGLxRO9w1w&utm_medium=link&utm_source=api",
+          "indexStatusResult": {
+            "verdict": "NEUTRAL",
+            "coverageState": "URL is unknown to Google",
+            "robotsTxtState": "ROBOTS_TXT_STATE_UNSPECIFIED",
+            "indexingState": "INDEXING_STATE_UNSPECIFIED",
+            "pageFetchState": "PAGE_FETCH_STATE_UNSPECIFIED"
+          },
+          "mobileUsabilityResult": {
+            "verdict": "VERDICT_UNSPECIFIED"
+          }
+        }
+      }
+    },
+    {
+      "pattern": "/it/research",
+      "url": "https://ulissesflores.com/it/research",
+      "ok": true,
+      "status": 200,
+      "summary": {
+        "verdict": "NEUTRAL",
+        "coverageState": "URL is unknown to Google",
+        "indexingState": "INDEXING_STATE_UNSPECIFIED",
+        "googleCanonical": "—",
+        "userCanonical": "—",
+        "crawledAs": "—",
+        "lastCrawlTime": "—",
+        "pageFetchState": "PAGE_FETCH_STATE_UNSPECIFIED",
+        "robotsTxtState": "ROBOTS_TXT_STATE_UNSPECIFIED",
+        "referringUrls": []
+      },
+      "raw": {
+        "inspectionResult": {
+          "inspectionResultLink": "https://search.google.com/search-console/inspect?resource_id=sc-domain:ulissesflores.com&id=Pix4rHj0LyFVhb1DRXWHgw&utm_medium=link&utm_source=api",
+          "indexStatusResult": {
+            "verdict": "NEUTRAL",
+            "coverageState": "URL is unknown to Google",
+            "robotsTxtState": "ROBOTS_TXT_STATE_UNSPECIFIED",
+            "indexingState": "INDEXING_STATE_UNSPECIFIED",
+            "pageFetchState": "PAGE_FETCH_STATE_UNSPECIFIED"
+          },
+          "mobileUsabilityResult": {
+            "verdict": "VERDICT_UNSPECIFIED"
+          }
+        }
+      }
+    },
+    {
+      "pattern": "/it/identidade",
+      "url": "https://ulissesflores.com/it/identidade",
+      "ok": true,
+      "status": 200,
+      "summary": {
+        "verdict": "PASS",
+        "coverageState": "Submitted and indexed",
+        "indexingState": "INDEXING_ALLOWED",
+        "googleCanonical": "https://ulissesflores.com/it/identidade",
+        "userCanonical": "https://ulissesflores.com/it/identidade",
+        "crawledAs": "MOBILE",
+        "lastCrawlTime": "2026-05-22T14:34:22Z",
+        "pageFetchState": "SUCCESSFUL",
+        "robotsTxtState": "ALLOWED",
+        "referringUrls": [
+          "https://ulissesflores.com/identidade",
+          "https://ulissesflores.com/he/identidade",
+          "https://ulissesflores.com/es/identidade"
+        ]
+      },
+      "raw": {
+        "inspectionResult": {
+          "inspectionResultLink": "https://search.google.com/search-console/inspect?resource_id=sc-domain:ulissesflores.com&id=WdfvRqw2Ud5jQ6oBFQecjQ&utm_medium=link&utm_source=api",
+          "indexStatusResult": {
+            "verdict": "PASS",
+            "coverageState": "Submitted and indexed",
+            "robotsTxtState": "ALLOWED",
+            "indexingState": "INDEXING_ALLOWED",
+            "lastCrawlTime": "2026-05-22T14:34:22Z",
+            "pageFetchState": "SUCCESSFUL",
+            "googleCanonical": "https://ulissesflores.com/it/identidade",
+            "userCanonical": "https://ulissesflores.com/it/identidade",
+            "referringUrls": [
+              "https://ulissesflores.com/identidade",
+              "https://ulissesflores.com/he/identidade",
+              "https://ulissesflores.com/es/identidade",
+              "https://ulissesflores.com/it/certifications/alura-18-uml-modelagem-de-diagramas",
+              "https://ulissesflores.com/en/identidade"
+            ],
+            "crawledAs": "MOBILE"
+          },
+          "mobileUsabilityResult": {
+            "verdict": "VERDICT_UNSPECIFIED"
+          },
+          "richResultsResult": {
+            "verdict": "PASS",
+            "detectedItems": [
+              {
+                "richResultType": "Breadcrumbs",
+                "items": [
+                  {
+                    "name": "Unnamed item"
+                  }
+                ]
+              },
+              {
+                "richResultType": "Datasets",
+                "items": [
+                  {
+                    "name": "Ulisses Flores — Sovereign UPKF (Universal Personal Knowledge Framework) (Public Knowledge Graph)",
+                    "issues": [
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "richResultType": "FAQ",
+                "items": [
+                  {
+                    "name": "Unnamed item"
+                  }
+                ]
+              },
+              {
+                "richResultType": "Videos",
+                "items": [
+                  {
+                    "name": "Dia 1 — O Despertar da Fé"
+                  },
+                  {
+                    "name": "Dia 2 — Vencendo as Batalhas da Mente"
+                  },
+                  {
+                    "name": "Dia 3 — A Resiliência do Cristão"
+                  },
+                  {
+                    "name": "Dia 4 — Quebrando as Muralhas Pela Oração"
+                  },
+                  {
+                    "name": "Dia 5 — O Poder da Unidade"
+                  },
+                  {
+                    "name": "Dia 6 — Restituição Divina"
+                  },
+                  {
+                    "name": "Dia 7 — A Plenitude do Espírito"
+                  },
+                  {
+                    "name": "Dia 8 — Tempo de Renovo"
+                  },
+                  {
+                    "name": "Dia 9 — Frutos de Uma Vida com Deus"
+                  },
+                  {
+                    "name": "Dia 10 — Autoridade Espiritual"
+                  },
+                  {
+                    "name": "Dia 11 — A Força da Palavra"
+                  },
+                  {
+                    "name": "Dia 12 — Alinhamento Profético"
+                  },
+                  {
+                    "name": "Dia 13 — Ousadia para Romper Limites"
+                  },
+                  {
+                    "name": "Dia 14 — A Recompensa da Fidelidade"
+                  },
+                  {
+                    "name": "Dia 15 — Proteção e Escudo"
+                  },
+                  {
+                    "name": "Dia 16 — Avançando em Meio às Oposições"
+                  },
+                  {
+                    "name": "Dia 17 — Celebração Antecipada"
+                  },
+                  {
+                    "name": "Dia 18 — Destravando Promessas"
+                  },
+                  {
+                    "name": "Dia 19 — O Fogo Que Não se Apaga"
+                  },
+                  {
+                    "name": "Dia 20 — Preparando o Altar"
+                  },
+                  {
+                    "name": "Dia 21 — O Selo da Vitória"
+                  },
+                  {
+                    "name": "Presença e Avivamento"
+                  },
+                  {
+                    "name": "O Chamado Inabalável — 07/08/22"
+                  },
+                  {
+                    "name": "Firmes na Promessa — 14/08/22"
+                  },
+                  {
+                    "name": "A Importância da Intimidade — 18/08/2022"
+                  },
+                  {
+                    "name": "Construindo Uma Vida com Propósito — 21/08/2022"
+                  },
+                  {
+                    "name": "Restaurando o Altar — 25/08/2022"
+                  },
+                  {
+                    "name": "O Agir Invisível de Deus — 28/08/2022"
+                  },
+                  {
+                    "name": "Atravessando Tempestades com Fé — 04/09/2022"
+                  },
+                  {
+                    "name": "O Perdão que Liberta — 11/09/2022"
+                  },
+                  {
+                    "name": "Vencendo o Medo Pela Graça — 15/09/2022"
+                  },
+                  {
+                    "name": "Chamados Para Fazer a Diferença — 18/09/2022"
+                  },
+                  {
+                    "name": "Batismo nas águas: Nova Vida em Cristo — 25/09/2022"
+                  },
+                  {
+                    "name": "Semeando em Boa Terra — 02/10/2022"
+                  },
+                  {
+                    "name": "A Cruz e o Seu Significado Hoje — 23/10/2022"
+                  },
+                  {
+                    "name": "Caminhando em Sobrenaturalidade — 06/11/2022"
+                  },
+                  {
+                    "name": "Identidade: Quem Somos em Cristo? — 13/11/2022"
+                  },
+                  {
+                    "name": "Cultivando um Coração Grato — 20/11"
+                  },
+                  {
+                    "name": "Renovando as Forças no Altar — 27/11/2022"
+                  },
+                  {
+                    "name": "A Esperança Que Não Decepciona — 04/12/2022"
+                  },
+                  {
+                    "name": "Preparando o Coração Para o Novo Ano — 11/12/2022"
+                  },
+                  {
+                    "name": "Fortalecendo as Bases da Fé — 15/01/2023"
+                  },
+                  {
+                    "name": "O Agir do Espírito em Nossas Vidas — 22/01/2023"
+                  },
+                  {
+                    "name": "Aprendendo a Ouvir a Voz de Deus — 29/01/2023"
+                  },
+                  {
+                    "name": "Comunhão e Crescimento Espiritual — 05/02/2023"
+                  },
+                  {
+                    "name": "Quebrando Cadeias Invisíveis — 12/02/2023"
+                  },
+                  {
+                    "name": "Viver em Santidade no Século XXI — 19/02/2023"
+                  },
+                  {
+                    "name": "Festival de dança: Expressão de Adoração e Arte Profética"
+                  },
+                  {
+                    "name": "Restaurando o Primeiro Amor — 24/07/22"
+                  },
+                  {
+                    "name": "O Poder Transformador da Graça — 31/07/22"
+                  },
+                  {
+                    "name": "Culto regional de casais: Edificando a Família Sobre a Rocha — 03/09/2022"
+                  },
+                  {
+                    "name": "Janeiro Profético: Consagrando o Novo Ano (Dia 1) — 01/01/2023"
+                  },
+                  {
+                    "name": "Perseverança e Resposta (Dia 8)"
+                  },
+                  {
+                    "name": "O Selo Profético Para os 12 Meses de Vitória (Dia 12)"
+                  },
+                  {
+                    "name": "O Grande Rompimento: Celebração dos Testemunhos (Dia 40)"
+                  },
+                  {
+                    "name": "Cantata de Natal: O Verbo que se Fez Carne e Habitou Entre Nós — 18/12/2022"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "pattern": "/he",
+      "url": "https://ulissesflores.com/he",
+      "ok": true,
+      "status": 200,
+      "summary": {
+        "verdict": "PASS",
+        "coverageState": "Submitted and indexed",
+        "indexingState": "INDEXING_ALLOWED",
+        "googleCanonical": "https://ulissesflores.com/he",
+        "userCanonical": "https://ulissesflores.com/he",
+        "crawledAs": "MOBILE",
+        "lastCrawlTime": "2026-05-02T21:15:24Z",
+        "pageFetchState": "SUCCESSFUL",
+        "robotsTxtState": "ALLOWED",
+        "referringUrls": [
+          "https://ulissesflores.com/",
+          "https://ulisses.digital/"
+        ]
+      },
+      "raw": {
+        "inspectionResult": {
+          "inspectionResultLink": "https://search.google.com/search-console/inspect?resource_id=sc-domain:ulissesflores.com&id=i0NmVNKbi2x--E6WoLKxPg&utm_medium=link&utm_source=api",
+          "indexStatusResult": {
+            "verdict": "PASS",
+            "coverageState": "Submitted and indexed",
+            "robotsTxtState": "ALLOWED",
+            "indexingState": "INDEXING_ALLOWED",
+            "lastCrawlTime": "2026-05-02T21:15:24Z",
+            "pageFetchState": "SUCCESSFUL",
+            "googleCanonical": "https://ulissesflores.com/he",
+            "userCanonical": "https://ulissesflores.com/he",
+            "referringUrls": [
+              "https://ulissesflores.com/",
+              "https://ulisses.digital/"
+            ],
+            "crawledAs": "MOBILE"
+          },
+          "mobileUsabilityResult": {
+            "verdict": "VERDICT_UNSPECIFIED"
+          },
+          "richResultsResult": {
+            "verdict": "PASS",
+            "detectedItems": [
+              {
+                "richResultType": "FAQ",
+                "items": [
+                  {
+                    "name": "Unnamed item"
+                  }
+                ]
+              },
+              {
+                "richResultType": "",
+                "items": [
+                  {
+                    "name": "Carlos Ulisses Flores"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "pattern": "/he/consultoria",
+      "url": "https://ulissesflores.com/he/consultoria",
+      "ok": true,
+      "status": 200,
+      "summary": {
+        "verdict": "NEUTRAL",
+        "coverageState": "URL is unknown to Google",
+        "indexingState": "INDEXING_STATE_UNSPECIFIED",
+        "googleCanonical": "—",
+        "userCanonical": "—",
+        "crawledAs": "—",
+        "lastCrawlTime": "—",
+        "pageFetchState": "PAGE_FETCH_STATE_UNSPECIFIED",
+        "robotsTxtState": "ROBOTS_TXT_STATE_UNSPECIFIED",
+        "referringUrls": []
+      },
+      "raw": {
+        "inspectionResult": {
+          "inspectionResultLink": "https://search.google.com/search-console/inspect?resource_id=sc-domain:ulissesflores.com&id=vDR6wqG4RduYd01VUpWFQA&utm_medium=link&utm_source=api",
+          "indexStatusResult": {
+            "verdict": "NEUTRAL",
+            "coverageState": "URL is unknown to Google",
+            "robotsTxtState": "ROBOTS_TXT_STATE_UNSPECIFIED",
+            "indexingState": "INDEXING_STATE_UNSPECIFIED",
+            "pageFetchState": "PAGE_FETCH_STATE_UNSPECIFIED"
+          },
+          "mobileUsabilityResult": {
+            "verdict": "VERDICT_UNSPECIFIED"
+          }
+        }
+      }
+    },
+    {
+      "pattern": "/he/palestras",
+      "url": "https://ulissesflores.com/he/palestras",
+      "ok": true,
+      "status": 200,
+      "summary": {
+        "verdict": "NEUTRAL",
+        "coverageState": "URL is unknown to Google",
+        "indexingState": "INDEXING_STATE_UNSPECIFIED",
+        "googleCanonical": "—",
+        "userCanonical": "—",
+        "crawledAs": "—",
+        "lastCrawlTime": "—",
+        "pageFetchState": "PAGE_FETCH_STATE_UNSPECIFIED",
+        "robotsTxtState": "ROBOTS_TXT_STATE_UNSPECIFIED",
+        "referringUrls": []
+      },
+      "raw": {
+        "inspectionResult": {
+          "inspectionResultLink": "https://search.google.com/search-console/inspect?resource_id=sc-domain:ulissesflores.com&id=tloAJWXLGb13m2SGqaNf7w&utm_medium=link&utm_source=api",
+          "indexStatusResult": {
+            "verdict": "NEUTRAL",
+            "coverageState": "URL is unknown to Google",
+            "robotsTxtState": "ROBOTS_TXT_STATE_UNSPECIFIED",
+            "indexingState": "INDEXING_STATE_UNSPECIFIED",
+            "pageFetchState": "PAGE_FETCH_STATE_UNSPECIFIED"
+          },
+          "mobileUsabilityResult": {
+            "verdict": "VERDICT_UNSPECIFIED"
+          }
+        }
+      }
+    },
+    {
+      "pattern": "/he/research",
+      "url": "https://ulissesflores.com/he/research",
+      "ok": true,
+      "status": 200,
+      "summary": {
+        "verdict": "NEUTRAL",
+        "coverageState": "URL is unknown to Google",
+        "indexingState": "INDEXING_STATE_UNSPECIFIED",
+        "googleCanonical": "—",
+        "userCanonical": "—",
+        "crawledAs": "—",
+        "lastCrawlTime": "—",
+        "pageFetchState": "PAGE_FETCH_STATE_UNSPECIFIED",
+        "robotsTxtState": "ROBOTS_TXT_STATE_UNSPECIFIED",
+        "referringUrls": []
+      },
+      "raw": {
+        "inspectionResult": {
+          "inspectionResultLink": "https://search.google.com/search-console/inspect?resource_id=sc-domain:ulissesflores.com&id=q5Vwuerl3GrhQNyEuezn3g&utm_medium=link&utm_source=api",
+          "indexStatusResult": {
+            "verdict": "NEUTRAL",
+            "coverageState": "URL is unknown to Google",
+            "robotsTxtState": "ROBOTS_TXT_STATE_UNSPECIFIED",
+            "indexingState": "INDEXING_STATE_UNSPECIFIED",
+            "pageFetchState": "PAGE_FETCH_STATE_UNSPECIFIED"
+          },
+          "mobileUsabilityResult": {
+            "verdict": "VERDICT_UNSPECIFIED"
+          }
+        }
+      }
+    },
+    {
+      "pattern": "/he/identidade",
+      "url": "https://ulissesflores.com/he/identidade",
+      "ok": true,
+      "status": 200,
+      "summary": {
+        "verdict": "PASS",
+        "coverageState": "Submitted and indexed",
+        "indexingState": "INDEXING_ALLOWED",
+        "googleCanonical": "https://ulissesflores.com/he/identidade",
+        "userCanonical": "https://ulissesflores.com/he/identidade",
+        "crawledAs": "MOBILE",
+        "lastCrawlTime": "2026-05-18T14:30:02Z",
+        "pageFetchState": "SUCCESSFUL",
+        "robotsTxtState": "ALLOWED",
+        "referringUrls": [
+          "https://ulissesflores.com/identidade",
+          "https://ulissesflores.com/es/identidade",
+          "https://ulissesflores.com/he/mundo-politico"
+        ]
+      },
+      "raw": {
+        "inspectionResult": {
+          "inspectionResultLink": "https://search.google.com/search-console/inspect?resource_id=sc-domain:ulissesflores.com&id=8SgUSfmz0XdJUtpvOS-fLg&utm_medium=link&utm_source=api",
+          "indexStatusResult": {
+            "verdict": "PASS",
+            "coverageState": "Submitted and indexed",
+            "robotsTxtState": "ALLOWED",
+            "indexingState": "INDEXING_ALLOWED",
+            "lastCrawlTime": "2026-05-18T14:30:02Z",
+            "pageFetchState": "SUCCESSFUL",
+            "googleCanonical": "https://ulissesflores.com/he/identidade",
+            "userCanonical": "https://ulissesflores.com/he/identidade",
+            "referringUrls": [
+              "https://ulissesflores.com/identidade",
+              "https://ulissesflores.com/es/identidade",
+              "https://ulissesflores.com/he/mundo-politico",
+              "https://ulissesflores.com/he/certifications/alura-29-design-patterns-em-php",
+              "https://ulissesflores.com/en/identidade"
+            ],
+            "crawledAs": "MOBILE"
+          },
+          "mobileUsabilityResult": {
+            "verdict": "VERDICT_UNSPECIFIED"
+          },
+          "richResultsResult": {
+            "verdict": "PASS",
+            "detectedItems": [
+              {
+                "richResultType": "Breadcrumbs",
+                "items": [
+                  {
+                    "name": "Unnamed item"
+                  }
+                ]
+              },
+              {
+                "richResultType": "Datasets",
+                "items": [
+                  {
+                    "name": "Ulisses Flores — Sovereign UPKF (Universal Personal Knowledge Framework) (Public Knowledge Graph)",
+                    "issues": [
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      },
+                      {
+                        "issueMessage": "Invalid object type for field \"hasPart\"",
+                        "severity": "WARNING"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "richResultType": "FAQ",
+                "items": [
+                  {
+                    "name": "Unnamed item"
+                  }
+                ]
+              },
+              {
+                "richResultType": "Videos",
+                "items": [
+                  {
+                    "name": "Dia 1 — O Despertar da Fé"
+                  },
+                  {
+                    "name": "Dia 2 — Vencendo as Batalhas da Mente"
+                  },
+                  {
+                    "name": "Dia 3 — A Resiliência do Cristão"
+                  },
+                  {
+                    "name": "Dia 4 — Quebrando as Muralhas Pela Oração"
+                  },
+                  {
+                    "name": "Dia 5 — O Poder da Unidade"
+                  },
+                  {
+                    "name": "Dia 6 — Restituição Divina"
+                  },
+                  {
+                    "name": "Dia 7 — A Plenitude do Espírito"
+                  },
+                  {
+                    "name": "Dia 8 — Tempo de Renovo"
+                  },
+                  {
+                    "name": "Dia 9 — Frutos de Uma Vida com Deus"
+                  },
+                  {
+                    "name": "Dia 10 — Autoridade Espiritual"
+                  },
+                  {
+                    "name": "Dia 11 — A Força da Palavra"
+                  },
+                  {
+                    "name": "Dia 12 — Alinhamento Profético"
+                  },
+                  {
+                    "name": "Dia 13 — Ousadia para Romper Limites"
+                  },
+                  {
+                    "name": "Dia 14 — A Recompensa da Fidelidade"
+                  },
+                  {
+                    "name": "Dia 15 — Proteção e Escudo"
+                  },
+                  {
+                    "name": "Dia 16 — Avançando em Meio às Oposições"
+                  },
+                  {
+                    "name": "Dia 17 — Celebração Antecipada"
+                  },
+                  {
+                    "name": "Dia 18 — Destravando Promessas"
+                  },
+                  {
+                    "name": "Dia 19 — O Fogo Que Não se Apaga"
+                  },
+                  {
+                    "name": "Dia 20 — Preparando o Altar"
+                  },
+                  {
+                    "name": "Dia 21 — O Selo da Vitória"
+                  },
+                  {
+                    "name": "Presença e Avivamento"
+                  },
+                  {
+                    "name": "O Chamado Inabalável — 07/08/22"
+                  },
+                  {
+                    "name": "Firmes na Promessa — 14/08/22"
+                  },
+                  {
+                    "name": "A Importância da Intimidade — 18/08/2022"
+                  },
+                  {
+                    "name": "Construindo Uma Vida com Propósito — 21/08/2022"
+                  },
+                  {
+                    "name": "Restaurando o Altar — 25/08/2022"
+                  },
+                  {
+                    "name": "O Agir Invisível de Deus — 28/08/2022"
+                  },
+                  {
+                    "name": "Atravessando Tempestades com Fé — 04/09/2022"
+                  },
+                  {
+                    "name": "O Perdão que Liberta — 11/09/2022"
+                  },
+                  {
+                    "name": "Vencendo o Medo Pela Graça — 15/09/2022"
+                  },
+                  {
+                    "name": "Chamados Para Fazer a Diferença — 18/09/2022"
+                  },
+                  {
+                    "name": "Batismo nas águas: Nova Vida em Cristo — 25/09/2022"
+                  },
+                  {
+                    "name": "Semeando em Boa Terra — 02/10/2022"
+                  },
+                  {
+                    "name": "A Cruz e o Seu Significado Hoje — 23/10/2022"
+                  },
+                  {
+                    "name": "Caminhando em Sobrenaturalidade — 06/11/2022"
+                  },
+                  {
+                    "name": "Identidade: Quem Somos em Cristo? — 13/11/2022"
+                  },
+                  {
+                    "name": "Cultivando um Coração Grato — 20/11"
+                  },
+                  {
+                    "name": "Renovando as Forças no Altar — 27/11/2022"
+                  },
+                  {
+                    "name": "A Esperança Que Não Decepciona — 04/12/2022"
+                  },
+                  {
+                    "name": "Preparando o Coração Para o Novo Ano — 11/12/2022"
+                  },
+                  {
+                    "name": "Fortalecendo as Bases da Fé — 15/01/2023"
+                  },
+                  {
+                    "name": "O Agir do Espírito em Nossas Vidas — 22/01/2023"
+                  },
+                  {
+                    "name": "Aprendendo a Ouvir a Voz de Deus — 29/01/2023"
+                  },
+                  {
+                    "name": "Comunhão e Crescimento Espiritual — 05/02/2023"
+                  },
+                  {
+                    "name": "Quebrando Cadeias Invisíveis — 12/02/2023"
+                  },
+                  {
+                    "name": "Viver em Santidade no Século XXI — 19/02/2023"
+                  },
+                  {
+                    "name": "Festival de dança: Expressão de Adoração e Arte Profética"
+                  },
+                  {
+                    "name": "Restaurando o Primeiro Amor — 24/07/22"
+                  },
+                  {
+                    "name": "O Poder Transformador da Graça — 31/07/22"
+                  },
+                  {
+                    "name": "Culto regional de casais: Edificando a Família Sobre a Rocha — 03/09/2022"
+                  },
+                  {
+                    "name": "Janeiro Profético: Consagrando o Novo Ano (Dia 1) — 01/01/2023"
+                  },
+                  {
+                    "name": "Perseverança e Resposta (Dia 8)"
+                  },
+                  {
+                    "name": "O Selo Profético Para os 12 Meses de Vitória (Dia 12)"
+                  },
+                  {
+                    "name": "O Grande Rompimento: Celebração dos Testemunhos (Dia 40)"
+                  },
+                  {
+                    "name": "Cantata de Natal: O Verbo que se Fez Carne e Habitou Entre Nós — 18/12/2022"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      }
+    }
+  ]
+}
