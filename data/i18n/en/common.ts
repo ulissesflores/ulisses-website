@@ -2,6 +2,13 @@ export const common = {
   nav: {
     categories: [
       {
+        label: 'Services',
+        items: [
+          { label: 'Consulting', href: '/consultoria', description: 'Strategic AI consulting, critical architecture and fractional CTO' },
+          { label: 'Talks', href: '/palestras', description: 'Executive keynotes, masterclasses and workshops' },
+        ],
+      },
+      {
         label: 'About',
         items: [
           {

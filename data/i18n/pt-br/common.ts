@@ -2,6 +2,13 @@ export const common = {
   nav: {
     categories: [
       {
+        label: 'Serviços',
+        items: [
+          { label: 'Consultoria', href: '/consultoria', description: 'Consultoria estratégica em IA, arquitetura crítica e CTO fracional' },
+          { label: 'Palestras', href: '/palestras', description: 'Keynotes, masterclasses e workshops executivos' },
+        ],
+      },
+      {
         label: 'Sobre',
         items: [
           { label: 'Bio', href: '/#about', description: 'Quem sou e minha trajetória' },

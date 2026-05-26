@@ -2,6 +2,13 @@ export const common = {
   nav: {
     categories: [
       {
+        label: 'שירותים',
+        items: [
+          { label: 'ייעוץ', href: '/consultoria', description: 'ייעוץ אסטרטגי ב-AI, ארכיטקטורה קריטית ו-CTO חלקי' },
+          { label: 'הרצאות', href: '/palestras', description: 'הרצאות מפתח, מאסטרקלאסים וסדנאות ניהוליות' },
+        ],
+      },
+      {
         label: 'אודות',
         items: [
           {
