@@ -36,6 +36,29 @@ Homepages + `/identidade`: ✅ indexadas. **Todas** as páginas profundas locali
 - **THIN_CONTENT (44):** certs (13), mundo-político (14), artigos boilerplate (9), 4 sermões —
   Google rastreou e **decidiu não indexar** (baixo valor). Os 18 artigos boilerplate → **Fase 2**.
 
+## 3b. CORREÇÃO pós-confronto sitemap × url-inventory
+
+> [!CAUTION]
+> **url-inventory STALE:** usa paths legados `/sermons/...` (62), mas o sitemap usa os
+> canônicos `/acervo-teologico/...` (69). A baseline inspecionou os `/sermons/` (que dão
+> **301 redirect**) → os "52 sermões UNKNOWN" eram **artefato dos redirects**, não orfandade.
+
+Re-inspeção dos canônicos reais `/acervo-teologico/`: 1 PASS (indexado), índice + demais =
+**"Discovered/Crawled – currently not indexed" = THIN_CONTENT**. Logo:
+
+- **Órfão real (descoberta) = só /consultoria + /palestras** → **corrigido + live** (sitemap 7+7, nav, footer, home CTA).
+- **Resto = THIN_CONTENT** (sermões devocionais, certs, político, artigos boilerplate): Google
+  descobriu (estão no sitemap) mas **decide não indexar por qualidade**. Pelo critério do goal,
+  THIN_CONTENT = "Bloqueado Fase 2, não conta".
+- **Bug a corrigir (separado):** o gerador do url-inventory emite `/sermons/` legado em vez de
+  `/acervo-teologico/` — afeta inventário + alvo do IndexNow. Não é canônico de página indexada
+  (são redirects), então fora do escopo "não mexer no que funciona"; candidato a fix do gerador.
+
+### Critério de sucesso refinado (excluindo THIN_CONTENT, por regra do goal)
+Páginas de alto valor (home, identidade, research-index, comercial): homepages + identidade +
+research-index **já indexadas**; comercial **agora descoberta** (pending recrawl). Os artigos
+boilerplate (research/whitepapers/essays profundos) = THIN_CONTENT → Fase 2 (recuperação Drive).
+
 ## 4. Correções deployadas (produção confirmada live)
 
 | Correção | Commit | Status prod |
