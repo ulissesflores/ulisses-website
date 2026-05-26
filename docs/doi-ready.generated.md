@@ -2,14 +2,14 @@
 
 - Generated at: 2026-02-21
 - Threshold: 950
-- Task score: 1000/1000
-- Approved: yes
+- Task score: 989/1000
+- Approved: no
 
 ## Per-Article Score
 
 | Slug | DOI status | DOI target | Completeness | References | Identifiers | Workflow | CFF | Final | Approved |
 |:--|:--:|:--|--:|--:|--:|--:|--:|--:|:--:|
-| 2025-little-law-resilience | target | 10.5281/zenodo.202501 | 1000 | 1000 | 1000 | 1000 | 1000 | 1000 | yes |
+| 2025-little-law-resilience | target | 10.5281/zenodo.202501 | 1000 | 0 | 1000 | 1000 | 1000 | 800 | no |
 | 2025-lstm-asset-prediction | target | 10.5281/zenodo.202502 | 1000 | 1000 | 1000 | 1000 | 1000 | 1000 | yes |
 | 2025-hybrid-cooling-thermodynamics | target | 10.5281/zenodo.202503 | 1000 | 1000 | 1000 | 1000 | 1000 | 1000 | yes |
 | 2025-iot-data-sovereignty | target | 10.5281/zenodo.202504 | 1000 | 1000 | 1000 | 1000 | 1000 | 1000 | yes |
@@ -29,5 +29,5 @@
 | 2017-chaos-theory-economics | target | 10.5281/zenodo.201737 | 1000 | 1000 | 1000 | 1000 | 1000 | 1000 | yes |
 
 ## Pending
-- None
+- 2025-little-law-resilience
 

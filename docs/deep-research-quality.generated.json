@@ -1,28 +1,30 @@
 {
-  "generatedAt": "2026-05-26T10:43:10.007Z",
+  "generatedAt": "2026-05-26T16:10:51.812Z",
   "threshold": 950,
-  "projectScore": 989,
-  "approved": true,
-  "pending": [],
+  "projectScore": 987,
+  "approved": false,
+  "pending": [
+    "2025-little-law-resilience"
+  ],
   "articles": [
     {
       "id": "2025-little-law-resilience",
       "title": "A Lei de Little como Vetor de Resiliência e Qualidade",
       "quality": {
-        "phase1": 997,
+        "phase1": 929,
         "phase2": 980,
-        "phase3": 993,
-        "compliance": 1000,
-        "polymathic": 990,
-        "macro": 992
+        "phase3": 880,
+        "compliance": 996,
+        "polymathic": 960,
+        "macro": 949
       },
       "metrics": {
-        "paragraphs": 27,
-        "citedParagraphs": 20,
-        "citationDensity": 0.7407407407407407,
-        "references": 6,
-        "referencesWithUrl": 6,
-        "refCoverage": 1
+        "paragraphs": 24,
+        "citedParagraphs": 13,
+        "citationDensity": 0.5416666666666666,
+        "references": 0,
+        "referencesWithUrl": 0,
+        "refCoverage": 0
       }
     },
     {

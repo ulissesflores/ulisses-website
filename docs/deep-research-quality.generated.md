@@ -1,15 +1,15 @@
 # Deep Research Quality Report (Generated)
 
-- Generated at: 2026-05-26T10:43:10.007Z
+- Generated at: 2026-05-26T16:10:51.812Z
 - Threshold: 950
-- Project score: 989/1000
-- Approved: yes
+- Project score: 987/1000
+- Approved: no
 
 ## Per-Article Score
 
 | Slug | Phase 1 | Phase 2 | Phase 3 | Compliance | Polymathic | Macro | Approved |
 |:--|--:|--:|--:|--:|--:|--:|:--:|
-| 2025-little-law-resilience | 997 | 980 | 993 | 1000 | 990 | 992 | yes |
+| 2025-little-law-resilience | 929 | 980 | 880 | 996 | 960 | 949 | no |
 | 2025-lstm-asset-prediction | 997 | 980 | 993 | 1000 | 990 | 992 | yes |
 | 2025-hybrid-cooling-thermodynamics | 997 | 970 | 993 | 1000 | 990 | 990 | yes |
 | 2025-iot-data-sovereignty | 997 | 970 | 993 | 1000 | 990 | 990 | yes |
@@ -29,5 +29,5 @@
 | 2017-chaos-theory-economics | 997 | 970 | 993 | 1000 | 990 | 990 | yes |
 
 ## Pending
-- None
+- 2025-little-law-resilience
 

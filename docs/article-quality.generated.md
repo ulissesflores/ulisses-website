@@ -3,14 +3,14 @@
 - Generated at: 2026-02-21
 - Rubric: Yape model (Resumo, Introducao, Desenvolvimento, Consideracoes Finais, Referencias, SEO/GEO)
 - Threshold (SOTA): 950
-- Project score: 969/1000
-- Approved: yes
+- Project score: 959/1000
+- Approved: no
 
 ## Per-Article Scores
 
 | Slug | Resumo | Introducao | Desenvolvimento | Consideracoes Finais | Referencias | SEO/GEO | Final | SOTA |
 |:--|--:|--:|--:|--:|--:|--:|--:|:--:|
-| 2025-little-law-resilience | 1000 | 963 | 945 | 975 | 1000 | 1000 | 981 | yes |
+| 2025-little-law-resilience | 950 | 950 | 933 | 1000 | 0 | 1000 | 806 | no |
 | 2025-lstm-asset-prediction | 990 | 954 | 940 | 980 | 1000 | 1000 | 977 | yes |
 | 2025-hybrid-cooling-thermodynamics | 968 | 951 | 934 | 973 | 1000 | 1000 | 971 | yes |
 | 2025-iot-data-sovereignty | 960 | 948 | 934 | 972 | 1000 | 1000 | 969 | yes |
@@ -30,5 +30,6 @@
 | 2017-chaos-theory-economics | 964 | 939 | 934 | 963 | 1000 | 1000 | 967 | yes |
 
 ## Improvement Actions
-- Nenhuma acao pendente: todos os artigos atingiram o limiar SOTA.
+- [2025-little-law-resilience] Aumentar profundidade de metodo/resultados/discussao com evidencias adicionais.
+- [2025-little-law-resilience] Adicionar referencias com DOI/URL verificavel e maior diversidade bibliografica.
 

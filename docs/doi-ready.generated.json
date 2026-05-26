@@ -1,9 +1,11 @@
 {
   "generatedAt": "2026-02-21",
   "threshold": 950,
-  "taskScore": 1000,
-  "approved": true,
-  "pending": [],
+  "taskScore": 989,
+  "approved": false,
+  "pending": [
+    "2025-little-law-resilience"
+  ],
   "items": [
     {
       "slug": "2025-little-law-resilience",
@@ -35,33 +37,8 @@
         "LAW",
         "RESILIENCE"
       ],
-      "abstract": "Estudo sobre aplicacao da Lei de Little para elevar previsibilidade de entrega e resiliencia em operacoes de Data Science. O problema central investigado e: A pesquisa enfrenta a combinacao de alto WIP, filas longas e baixa confiabilidade de prazo em pipelines complexos de IA. Adotou-se um desenho metodologico com foco em validade interna, comparabilidade e reproducibilidade: Abordagem analitico-experimental com simulacao de fluxo, comparando cenarios com e sem limite explicito de trabalho em progresso. Os resultados principais indicam que a evidencia indica reducao relevante de lead time sem perda material de throughput, reforcando a eficiencia da limitacao de wip.. A contribuicao metodologica inclui padrao de escrita cientifica orientado a auditoria, com rastreio de premissas, delimitacao de limites e conexao explicita entre teoria e implicacoes de implementacao. O objetivo deste trabalho e avaliar de forma estruturada como \"A Lei de Little como Vetor de Resiliência e Qualidade\" pode gerar valor cientifico e operacional com rastreabilidade metodologica. Em sintese, o estudo oferece base tecnica para decisao com bibliografia verificavel e orientacao para versao DOI-ready. (Little, 1961).",
-      "references": [
-        {
-          "citation": "Little, J. D. C. (1961). A Proof for the Queueing Formula L = lambda W.",
-          "url": "https://doi.org/10.1287/opre.9.3.383"
-        },
-        {
-          "citation": "Kingman, J. F. C. (1961). The single server queue in heavy traffic.",
-          "url": "https://doi.org/10.1093/biomet/48.1-2.131"
-        },
-        {
-          "citation": "Anderson, D. J. (2010). Kanban.",
-          "url": "https://books.google.com/books?id=R6t_DwAAQBAJ"
-        },
-        {
-          "citation": "Reinertsen, D. (2009). The Principles of Product Development Flow.",
-          "url": "https://www.celerity.com/books/product-development-flow-second-generation-lean-product-development/"
-        },
-        {
-          "citation": "Forsgren, N.; Humble, J.; Kim, G. (2018). Accelerate.",
-          "url": "https://itrevolution.com/product/accelerate/"
-        },
-        {
-          "citation": "Hopp, W.; Spearman, M. (2011). Factory Physics.",
-          "url": "https://www.mheducation.com/highered/product/factory-physics-hopp-spearman/M9781577667391.html"
-        }
-      ],
+      "abstract": "Projetos complexos de Data Science e Inteligência Artificial operam sob elevada incerteza, variabilidade de demanda e forte interdependência técnica, o que frequentemente resulta em crises de entrega e baixa previsibilidade. Este artigo investiga a aplicação da Lei de Little como instrumento sistêmico para aumento da resiliência operacional e da qualidade em ambientes orientados à Business Agility. Por meio de fundamentação teórica e simulação computacional com dados sintéticos, compara-se o comportamento de sistemas com e sem limitação explícita de trabalho em progresso (WIP). Os resultados indicam redução significativa do lead time médio sem prejuízo relevante ao throughput, corroborando a literatura Lean e reforçando a limitação de WIP como mecanismo crítico de estabilização sistêmica. Conclui-se que a Lei de Little, quando aplicada além de seu caráter matemático, constitui um vetor estratégico para previsibilidade, tomada de decisão baseada em dados e escalabilidade sustentável em projetos intensivos em conhecimento.",
+      "references": [],
       "cffPath": "/doi/2025-little-law-resilience/CITATION.cff",
       "zenodoPath": "/doi/2025-little-law-resilience/zenodo.json",
       "crossrefPath": "/doi/2025-little-law-resilience/crossref.json",
@@ -71,7 +48,7 @@
           "upload_type": "publication",
           "publication_type": "article",
           "publication_date": "2025-01-01",
-          "description": "<p>Estudo sobre aplicacao da Lei de Little para elevar previsibilidade de entrega e resiliencia em operacoes de Data Science. O problema central investigado e: A pesquisa enfrenta a combinacao de alto WIP, filas longas e baixa confiabilidade de prazo em pipelines complexos de IA. Adotou-se um desenho metodologico com foco em validade interna, comparabilidade e reproducibilidade: Abordagem analitico-experimental com simulacao de fluxo, comparando cenarios com e sem limite explicito de trabalho em progresso. Os resultados principais indicam que a evidencia indica reducao relevante de lead time sem perda material de throughput, reforcando a eficiencia da limitacao de wip.. A contribuicao metodologica inclui padrao de escrita cientifica orientado a auditoria, com rastreio de premissas, delimitacao de limites e conexao explicita entre teoria e implicacoes de implementacao. O objetivo deste trabalho e avaliar de forma estruturada como &quot;A Lei de Little como Vetor de Resiliência e Qualidade&quot; pode gerar valor cientifico e operacional com rastreabilidade metodologica. Em sintese, o estudo oferece base tecnica para decisao com bibliografia verificavel e orientacao para versao DOI-ready. (Little, 1961).</p>",
+          "description": "<p>Projetos complexos de Data Science e Inteligência Artificial operam sob elevada incerteza, variabilidade de demanda e forte interdependência técnica, o que frequentemente resulta em crises de entrega e baixa previsibilidade. Este artigo investiga a aplicação da Lei de Little como instrumento sistêmico para aumento da resiliência operacional e da qualidade em ambientes orientados à Business Agility. Por meio de fundamentação teórica e simulação computacional com dados sintéticos, compara-se o comportamento de sistemas com e sem limitação explícita de trabalho em progresso (WIP). Os resultados indicam redução significativa do lead time médio sem prejuízo relevante ao throughput, corroborando a literatura Lean e reforçando a limitação de WIP como mecanismo crítico de estabilização sistêmica. Conclui-se que a Lei de Little, quando aplicada além de seu caráter matemático, constitui um vetor estratégico para previsibilidade, tomada de decisão baseada em dados e escalabilidade sustentável em projetos intensivos em conhecimento.</p>",
           "creators": [
             {
               "name": "Flores, Carlos Ulisses",
@@ -85,14 +62,7 @@
             "RESILIENCE"
           ],
           "language": "pt-BR",
-          "references": [
-            "Little, J. D. C. (1961). A Proof for the Queueing Formula L = lambda W. (https://doi.org/10.1287/opre.9.3.383)",
-            "Kingman, J. F. C. (1961). The single server queue in heavy traffic. (https://doi.org/10.1093/biomet/48.1-2.131)",
-            "Anderson, D. J. (2010). Kanban. (https://books.google.com/books?id=R6t_DwAAQBAJ)",
-            "Reinertsen, D. (2009). The Principles of Product Development Flow. (https://www.celerity.com/books/product-development-flow-second-generation-lean-product-development/)",
-            "Forsgren, N.; Humble, J.; Kim, G. (2018). Accelerate. (https://itrevolution.com/product/accelerate/)",
-            "Hopp, W.; Spearman, M. (2011). Factory Physics. (https://www.mheducation.com/highered/product/factory-physics-hopp-spearman/M9781577667391.html)"
-          ],
+          "references": [],
           "related_identifiers": [
             {
               "identifier": "https://ulissesflores.com/research/2025-little-law-resilience",
@@ -114,7 +84,7 @@
         "schema": "https://data.crossref.org/schemas/crossref_input.json",
         "type": "article",
         "title": "A Lei de Little como Vetor de Resiliência e Qualidade",
-        "abstract": "Estudo sobre aplicacao da Lei de Little para elevar previsibilidade de entrega e resiliencia em operacoes de Data Science. O problema central investigado e: A pesquisa enfrenta a combinacao de alto WIP, filas longas e baixa confiabilidade de prazo em pipelines complexos de IA. Adotou-se um desenho metodologico com foco em validade interna, comparabilidade e reproducibilidade: Abordagem analitico-experimental com simulacao de fluxo, comparando cenarios com e sem limite explicito de trabalho em progresso. Os resultados principais indicam que a evidencia indica reducao relevante de lead time sem perda material de throughput, reforcando a eficiencia da limitacao de wip.. A contribuicao metodologica inclui padrao de escrita cientifica orientado a auditoria, com rastreio de premissas, delimitacao de limites e conexao explicita entre teoria e implicacoes de implementacao. O objetivo deste trabalho e avaliar de forma estruturada como \"A Lei de Little como Vetor de Resiliência e Qualidade\" pode gerar valor cientifico e operacional com rastreabilidade metodologica. Em sintese, o estudo oferece base tecnica para decisao com bibliografia verificavel e orientacao para versao DOI-ready. (Little, 1961).",
+        "abstract": "Projetos complexos de Data Science e Inteligência Artificial operam sob elevada incerteza, variabilidade de demanda e forte interdependência técnica, o que frequentemente resulta em crises de entrega e baixa previsibilidade. Este artigo investiga a aplicação da Lei de Little como instrumento sistêmico para aumento da resiliência operacional e da qualidade em ambientes orientados à Business Agility. Por meio de fundamentação teórica e simulação computacional com dados sintéticos, compara-se o comportamento de sistemas com e sem limitação explícita de trabalho em progresso (WIP). Os resultados indicam redução significativa do lead time médio sem prejuízo relevante ao throughput, corroborando a literatura Lean e reforçando a limitação de WIP como mecanismo crítico de estabilização sistêmica. Conclui-se que a Lei de Little, quando aplicada além de seu caráter matemático, constitui um vetor estratégico para previsibilidade, tomada de decisão baseada em dados e escalabilidade sustentável em projetos intensivos em conhecimento.",
         "authors": [
           {
             "given": "Carlos Ulisses",
@@ -134,52 +104,19 @@
             "URL": "https://ulissesflores.com/deep-research/2025-little-law-resilience/deep-research.pdf"
           }
         },
-        "reference": [
-          {
-            "key": "2025-little-law-resilience-ref-1",
-            "unstructured": "Little, J. D. C. (1961). A Proof for the Queueing Formula L = lambda W.",
-            "DOI": "10.1287/opre.9.3.383",
-            "URL": "https://doi.org/10.1287/opre.9.3.383"
-          },
-          {
-            "key": "2025-little-law-resilience-ref-2",
-            "unstructured": "Kingman, J. F. C. (1961). The single server queue in heavy traffic.",
-            "DOI": "10.1093/biomet/48.1-2.131",
-            "URL": "https://doi.org/10.1093/biomet/48.1-2.131"
-          },
-          {
-            "key": "2025-little-law-resilience-ref-3",
-            "unstructured": "Anderson, D. J. (2010). Kanban.",
-            "URL": "https://books.google.com/books?id=R6t_DwAAQBAJ"
-          },
-          {
-            "key": "2025-little-law-resilience-ref-4",
-            "unstructured": "Reinertsen, D. (2009). The Principles of Product Development Flow.",
-            "URL": "https://www.celerity.com/books/product-development-flow-second-generation-lean-product-development/"
-          },
-          {
-            "key": "2025-little-law-resilience-ref-5",
-            "unstructured": "Forsgren, N.; Humble, J.; Kim, G. (2018). Accelerate.",
-            "URL": "https://itrevolution.com/product/accelerate/"
-          },
-          {
-            "key": "2025-little-law-resilience-ref-6",
-            "unstructured": "Hopp, W.; Spearman, M. (2011). Factory Physics.",
-            "URL": "https://www.mheducation.com/highered/product/factory-physics-hopp-spearman/M9781577667391.html"
-          }
-        ],
+        "reference": [],
         "doi_target": "10.5281/zenodo.202501"
       },
-      "citationCff": "cff-version: 1.2.0\nmessage: \"If you use this work, cite with this metadata. DOI target: 10.5281/zenodo.202501 (not minted).\"\ntitle: \"A Lei de Little como Vetor de Resiliência e Qualidade\"\ntype: article\nauthors:\n  - family-names: \"Flores\"\n    given-names: \"Carlos Ulisses\"\n    orcid: \"0000-0002-6034-7765\"\nidentifiers:\n  - type: url\n    value: \"https://ulissesflores.com/research/2025-little-law-resilience\"\n  - type: url\n    value: \"https://ulissesflores.com/deep-research/2025-little-law-resilience/deep-research.pdf\"\nabstract: \"Estudo sobre aplicacao da Lei de Little para elevar previsibilidade de entrega e resiliencia em operacoes de Data Science. O problema central investigado e: A pesquisa enfrenta a combinacao de alto WIP, filas longas e baixa confiabilidade de prazo em pipelines complexos de IA. Adotou-se um desenho metodologico com foco em validade interna, comparabilidade e reproducibilidade: Abordagem analitico-experimental com simulacao de fluxo, comparando cenarios com e sem limite explicito de trabalho em progresso. Os resultados principais indicam que a evidencia indica reducao relevante de lead time sem perda material de throughput, reforcando a eficiencia da limitacao de wip.. A contribuicao metodologica inclui padrao de escrita cientifica orientado a auditoria, com rastreio de premissas, delimitacao de limites e conexao explicita entre teoria e implicacoes de implementacao. O objetivo deste trabalho e avaliar de forma estruturada como \\\"A Lei de Little como Vetor de Resiliência e Qualidade\\\" pode gerar valor cientifico e operacional com rastreabilidade metodologica. Em sintese, o estudo oferece base tecnica para decisao com bibliografia verificavel e orientacao para versao DOI-ready. (Little, 1961).\"\nkeywords: [\"LITTLE\", \"LAW\", \"RESILIENCE\"]\nlicense: \"CC-BY-4.0\"\nversion: \"v2026-02-21\"\ndate-released: \"2025-01-01\"\nrepository-code: \"https://ulissesflores.com/research/2025-little-law-resilience\"\nreferences:\n  - unstructured: \"Little, J. D. C. (1961). A Proof for the Queueing Formula L = lambda W.\"\n    url: \"https://doi.org/10.1287/opre.9.3.383\"\n  - unstructured: \"Kingman, J. F. C. (1961). The single server queue in heavy traffic.\"\n    url: \"https://doi.org/10.1093/biomet/48.1-2.131\"\n  - unstructured: \"Anderson, D. J. (2010). Kanban.\"\n    url: \"https://books.google.com/books?id=R6t_DwAAQBAJ\"\n  - unstructured: \"Reinertsen, D. (2009). The Principles of Product Development Flow.\"\n    url: \"https://www.celerity.com/books/product-development-flow-second-generation-lean-product-development/\"\n  - unstructured: \"Forsgren, N.; Humble, J.; Kim, G. (2018). Accelerate.\"\n    url: \"https://itrevolution.com/product/accelerate/\"\n  - unstructured: \"Hopp, W.; Spearman, M. (2011). Factory Physics.\"\n    url: \"https://www.mheducation.com/highered/product/factory-physics-hopp-spearman/M9781577667391.html\"\n",
+      "citationCff": "cff-version: 1.2.0\nmessage: \"If you use this work, cite with this metadata. DOI target: 10.5281/zenodo.202501 (not minted).\"\ntitle: \"A Lei de Little como Vetor de Resiliência e Qualidade\"\ntype: article\nauthors:\n  - family-names: \"Flores\"\n    given-names: \"Carlos Ulisses\"\n    orcid: \"0000-0002-6034-7765\"\nidentifiers:\n  - type: url\n    value: \"https://ulissesflores.com/research/2025-little-law-resilience\"\n  - type: url\n    value: \"https://ulissesflores.com/deep-research/2025-little-law-resilience/deep-research.pdf\"\nabstract: \"Projetos complexos de Data Science e Inteligência Artificial operam sob elevada incerteza, variabilidade de demanda e forte interdependência técnica, o que frequentemente resulta em crises de entrega e baixa previsibilidade. Este artigo investiga a aplicação da Lei de Little como instrumento sistêmico para aumento da resiliência operacional e da qualidade em ambientes orientados à Business Agility. Por meio de fundamentação teórica e simulação computacional com dados sintéticos, compara-se o comportamento de sistemas com e sem limitação explícita de trabalho em progresso (WIP). Os resultados indicam redução significativa do lead time médio sem prejuízo relevante ao throughput, corroborando a literatura Lean e reforçando a limitação de WIP como mecanismo crítico de estabilização sistêmica. Conclui-se que a Lei de Little, quando aplicada além de seu caráter matemático, constitui um vetor estratégico para previsibilidade, tomada de decisão baseada em dados e escalabilidade sustentável em projetos intensivos em conhecimento.\"\nkeywords: [\"LITTLE\", \"LAW\", \"RESILIENCE\"]\nlicense: \"CC-BY-4.0\"\nversion: \"v2026-02-21\"\ndate-released: \"2025-01-01\"\nrepository-code: \"https://ulissesflores.com/research/2025-little-law-resilience\"\nreferences:\n\n",
       "score": {
         "completenessScore": 1000,
-        "referencesScore": 1000,
+        "referencesScore": 0,
         "identifierScore": 1000,
         "workflowScore": 1000,
         "cffScore": 1000,
-        "finalScore": 1000
+        "finalScore": 800
       },
-      "approved": true
+      "approved": false
     },
     {
       "slug": "2025-lstm-asset-prediction",

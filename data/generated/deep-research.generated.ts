@@ -34,8 +34,8 @@ export const deepResearchArtifacts: Record<string, DeepResearchArtifact> = {
   "2025-little-law-resilience": {
     "slug": "2025-little-law-resilience",
     "title": "A Lei de Little como Vetor de Resiliência e Qualidade",
-    "abstract": "Estudo sobre aplicacao da Lei de Little para elevar previsibilidade de entrega e resiliencia em operacoes de Data Science. O problema central investigado e: A pesquisa enfrenta a combinacao de alto WIP, filas longas e baixa confiabilidade de prazo em pipelines complexos de IA. Adotou-se um desenho metodologico com foco em validade interna, comparabilidade e reproducibilidade: Abordagem analitico-experimental com simulacao de fluxo, comparando cenarios com e sem limite explicito de trabalho em progresso. Os resultados principais indicam que a evidencia indica reducao relevante de lead time sem perda material de throughput, reforcando a eficiencia da limitacao de wip.. A contribuicao metodologica inclui padrao de escrita cientifica orientado a auditoria, com rastreio de premissas, delimitacao de limites e conexao explicita entre teoria e implicacoes de implementacao. O objetivo deste trabalho e avaliar de forma estruturada como \"A Lei de Little como Vetor de Resiliência e Qualidade\" pode gerar valor cientifico e operacional com rastreabilidade metodologica. Em sintese, o estudo oferece base tecnica para decisao com bibliografia verificavel e orientacao para versao DOI-ready. (Little, 1961).",
-    "abstractEn": "This article presents a reproducible, high-rigor synthesis of \"A Lei de Little como Vetor de Resiliência e Qualidade\" by aligning methodological traceability, interdisciplinary evidence, and operational recommendations for deployment contexts with explicit governance constraints. (Kingman, 1961).",
+    "abstract": "Projetos complexos de Data Science e Inteligência Artificial operam sob elevada incerteza, variabilidade de demanda e forte interdependência técnica, o que frequentemente resulta em crises de entrega e baixa previsibilidade. Este artigo investiga a aplicação da Lei de Little como instrumento sistêmico para aumento da resiliência operacional e da qualidade em ambientes orientados à Business Agility. Por meio de fundamentação teórica e simulação computacional com dados sintéticos, compara-se o comportamento de sistemas com e sem limitação explícita de trabalho em progresso (WIP). Os resultados indicam redução significativa do lead time médio sem prejuízo relevante ao throughput, corroborando a literatura Lean e reforçando a limitação de WIP como mecanismo crítico de estabilização sistêmica. Conclui-se que a Lei de Little, quando aplicada além de seu caráter matemático, constitui um vetor estratégico para previsibilidade, tomada de decisão baseada em dados e escalabilidade sustentável em projetos intensivos em conhecimento.",
+    "abstractEn": "Complex Data Science and Artificial Intelligence projects operate under high uncertainty, demand variability, and strong technical interdependencies, often leading to delivery crises and low predictability. This paper investigates the application of Little's Law as a systemic instrument to enhance operational resilience and quality within a Business Agility context. Through theoretical grounding and computational simulation using synthetic data, the behavior of systems with and without explicit Work in Progress (WIP) limits is compared. The results demonstrate a significant reduction in average lead time without meaningful degradation of throughput, corroborating Lean literature and reinforcing WIP limitation as a critical mechanism for systemic stabilization. The study concludes that Little's Law, when applied beyond its mathematical formulation, represents a strategic vector for predictability, data-driven decision-making, and sustainable scalability in knowledge-intensive projects.",
     "citation": "Carlos Ulisses Flores (2026) A Lei de Little como Vetor de Resiliência e Qualidade. Codex Hash Research Lab.",
     "files": {
       "md": "/deep-research/2025-little-law-resilience/deep-research.md",
@@ -47,15 +47,15 @@ export const deepResearchArtifacts: Record<string, DeepResearchArtifact> = {
       "target": "10.5281/zenodo.202501"
     },
     "quality": {
-      "phase1": 997,
+      "phase1": 929,
       "phase2": 980,
-      "phase3": 993,
-      "compliance": 1000,
-      "polymathic": 990,
-      "macro": 992
+      "phase3": 880,
+      "compliance": 996,
+      "polymathic": 960,
+      "macro": 949
     },
-    "polymathicIndex": 990,
-    "qualityScore": 992
+    "polymathicIndex": 960,
+    "qualityScore": 949
   },
   "2025-lstm-asset-prediction": {
     "slug": "2025-lstm-asset-prediction",

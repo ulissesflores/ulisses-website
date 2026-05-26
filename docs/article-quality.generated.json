@@ -2,32 +2,38 @@
   "generatedAt": "2026-02-21",
   "rubric": "Yape model (Resumo, Introducao, Desenvolvimento, Consideracoes Finais, Referencias, SEO/GEO)",
   "threshold": 950,
-  "projectScore": 969,
-  "approvedSota": true,
-  "pendingActions": [],
+  "projectScore": 959,
+  "approvedSota": false,
+  "pendingActions": [
+    "[2025-little-law-resilience] Aumentar profundidade de metodo/resultados/discussao com evidencias adicionais.",
+    "[2025-little-law-resilience] Adicionar referencias com DOI/URL verificavel e maior diversidade bibliografica."
+  ],
   "articles": [
     {
       "id": "2025-little-law-resilience",
       "title": "A Lei de Little como Vetor de Resiliência e Qualidade",
       "canonicalUrl": "https://ulissesflores.com/research/2025-little-law-resilience",
       "partScores": {
-        "resumo": 1000,
-        "introducao": 963,
-        "desenvolvimento": 945,
-        "consideracoesFinais": 975,
-        "referencias": 1000,
+        "resumo": 950,
+        "introducao": 950,
+        "desenvolvimento": 933,
+        "consideracoesFinais": 1000,
+        "referencias": 0,
         "seoGeo": 1000
       },
-      "finalScore": 981,
-      "approvedSota": true,
-      "improvementActions": [],
+      "finalScore": 806,
+      "approvedSota": false,
+      "improvementActions": [
+        "Aumentar profundidade de metodo/resultados/discussao com evidencias adicionais.",
+        "Adicionar referencias com DOI/URL verificavel e maior diversidade bibliografica."
+      ],
       "metrics": {
-        "abstractWords": 173,
-        "introWords": 227,
-        "developmentWords": 524,
-        "conclusionWords": 165,
-        "referencesCount": 6,
-        "referencesWithUrl": 6
+        "abstractWords": 145,
+        "introWords": 215,
+        "developmentWords": 495,
+        "conclusionWords": 250,
+        "referencesCount": 0,
+        "referencesWithUrl": 0
       }
     },
     {
