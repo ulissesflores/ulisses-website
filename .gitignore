@@ -87,3 +87,9 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 .google-service-account.json
+
+# Serena tool workspace (local IDE assistant cache — not project content)
+.serena/
+
+# Living session-handoff doc (internal notes; kept local, off the public repo)
+HANDOFF.md
