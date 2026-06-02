@@ -41,9 +41,14 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
   const canonicalPath = `/${publication.category}/${publication.id}`;
 
+  // Conteúdo de pesquisa em reconstrução: noindex até haver artigos reais (rebrand 2026-06).
+  const noindexCategories = ['research', 'essays', 'whitepapers'];
+  const isNoindexed = noindexCategories.includes(publication.category);
+
   return {
     title: localizedTitle,
     description: localizedSummary,
+    robots: isNoindexed ? { index: false, follow: true } : undefined,
     authors: [
       {
         name: upkfMeta.publicDisplayName || upkfMeta.displayName,

@@ -93,3 +93,6 @@ next-env.d.ts
 
 # Living session-handoff doc (internal notes; kept local, off the public repo)
 HANDOFF.md
+
+# Inventário de fontes para recriar artigos (IDs de Drive privados — não versionar)
+ARTIGOS-PARA-CRIAR.md
