@@ -67,6 +67,13 @@ export default async function ClubeSantoPage({ params }: PageProps) {
         foundingDate: '2024',
         founder: { '@id': `${origin}/#person` },
       },
+      {
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: dict.common.articleDetail.goHome, item: `${origin}/` },
+          { '@type': 'ListItem', position: 2, name: t.meta.title, item: `${origin}${canonicalPath}` },
+        ],
+      },
     ],
   };
 

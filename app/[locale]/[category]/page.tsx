@@ -107,11 +107,25 @@ export default async function CategoryPage({ params }: PageProps) {
     })),
   };
 
+  const breadcrumbBase = locale === 'pt-br' ? upkfMeta.primaryWebsite : `${upkfMeta.primaryWebsite}/${locale}`;
+  const breadcrumbJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: dict.common.articleDetail.goHome, item: `${breadcrumbBase}/` },
+      { '@type': 'ListItem', position: 2, name: story?.h1 || collection.heading, item: `${breadcrumbBase}/${typedCategory}` },
+    ],
+  };
+
   return (
     <div className='min-h-screen bg-neutral-950 text-neutral-200'>
       <script
         type='application/ld+json'
         dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionJsonLd) }}
+      />
+      <script
+        type='application/ld+json'
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
 
       {/* ── Hero Section ── */}

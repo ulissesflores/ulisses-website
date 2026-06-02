@@ -68,6 +68,13 @@ export default async function MundoPoliticoPage({ params }: PageProps) {
         isPartOf: { '@id': `${origin}/#website` },
         author: { '@id': `${origin}/#person` },
       },
+      {
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: dict.common.articleDetail.goHome, item: `${origin}/` },
+          { '@type': 'ListItem', position: 2, name: t.meta.title, item: `${origin}${canonicalPath}` },
+        ],
+      },
     ],
   };
 
