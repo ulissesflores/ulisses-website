@@ -91,7 +91,7 @@ export default async function MundoPoliticoPostPage({ params }: PageProps) {
         <header className='mt-8 mb-10'>
           <p className='text-xs uppercase tracking-widest text-emerald-400 mb-3'>{t.sectionLabel}</p>
           <h1 className='text-3xl md:text-4xl font-bold text-white mb-4'>{post.headline}</h1>
-          <p className='text-sm text-neutral-500 mb-4'>{t.publishedOn} {post.publishedAt}</p>
+          <p className='text-sm text-neutral-400 mb-4'>{t.publishedOn} {post.publishedAt}</p>
           <p className='text-neutral-400 leading-relaxed'>{post.summary}</p>
           <div className='mt-4 max-w-xl'>
             <AuthorHubCard
@@ -108,13 +108,13 @@ export default async function MundoPoliticoPostPage({ params }: PageProps) {
             {t.canonicalDescription}
           </p>
           <div>
-            <p className='text-xs uppercase tracking-widest text-neutral-500 mb-1'>{t.originalSource}</p>
+            <p className='text-xs uppercase tracking-widest text-neutral-400 mb-1'>{t.originalSource}</p>
             <a href={post.url} target='_blank' rel='noopener noreferrer' className='text-emerald-300 hover:text-emerald-200 break-all'>
               {post.url}
             </a>
           </div>
           <div>
-            <p className='text-xs uppercase tracking-widest text-neutral-500 mb-1'>{t.authorPage}</p>
+            <p className='text-xs uppercase tracking-widest text-neutral-400 mb-1'>{t.authorPage}</p>
             <a
               href={knowledgeData.blog.authorPage}
               target='_blank'

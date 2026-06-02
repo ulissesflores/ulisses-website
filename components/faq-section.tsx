@@ -53,7 +53,7 @@ export function FaqSection({ items, sectionTitle = 'FAQ' }: FaqSectionProps) {
               </span>
               <ChevronDown
                 size={18}
-                className={`text-neutral-500 shrink-0 transition-transform duration-200 ${
+                className={`text-neutral-400 shrink-0 transition-transform duration-200 ${
                   openIndex === index ? 'rotate-180 text-emerald-400' : ''
                 }`}
               />

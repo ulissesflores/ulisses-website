@@ -88,7 +88,7 @@ export default async function AcervoTeologicoPage({ params }: PageProps) {
               Home
             </Link>
             <span className='text-xs text-neutral-600'>→</span>
-            <span className='text-xs font-mono uppercase tracking-widest text-neutral-500'>
+            <span className='text-xs font-mono uppercase tracking-widest text-neutral-400'>
               {t.breadcrumb}
             </span>
           </div>
@@ -126,7 +126,7 @@ export default async function AcervoTeologicoPage({ params }: PageProps) {
           </div>
 
           {/* Stats */}
-          <p className='text-sm text-neutral-500'>
+          <p className='text-sm text-neutral-400'>
             {t.hero.stats.clusters}: {acervoClusters.length} · {t.hero.stats.messages}: {acervoSermons.length}
           </p>
           <div className='mt-4 max-w-xl'>
@@ -157,7 +157,7 @@ export default async function AcervoTeologicoPage({ params }: PageProps) {
                         {sermon.seoTitle}
                       </Link>
                     </h3>
-                    <p className='text-xs text-neutral-500 mb-2'>{t.grid.publishedAt} {sermon.publishedAt}</p>
+                    <p className='text-xs text-neutral-400 mb-2'>{t.grid.publishedAt} {sermon.publishedAt}</p>
                     <p className='text-sm text-neutral-300'>{sermon.llmContext}</p>
                   </article>
                 ))}

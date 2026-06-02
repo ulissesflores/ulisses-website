@@ -76,7 +76,7 @@ export const SidebarTimelineChart = memo(function SidebarTimelineChart({
     const t = ia2027.simulation?.sidebar;
     return (
       <div className="h-[170px] rounded-xl border border-neutral-800 bg-neutral-900/40 flex items-center justify-center">
-        <span className="text-xs text-neutral-500 font-mono">{t?.scrollToSee ?? 'Scroll to see evolution'}</span>
+        <span className="text-xs text-neutral-400 font-mono">{t?.scrollToSee ?? 'Scroll to see evolution'}</span>
       </div>
     );
   }
@@ -87,7 +87,7 @@ export const SidebarTimelineChart = memo(function SidebarTimelineChart({
   return (
     <div className="rounded-xl border border-neutral-800 bg-neutral-900/40 overflow-hidden">
       <div className="flex items-center justify-between px-3 pt-2">
-        <span className="text-[9px] font-mono uppercase text-neutral-500">{ts?.revenueAndCapex ?? 'Revenue & Capex'}</span>
+        <span className="text-[9px] font-mono uppercase text-neutral-400">{ts?.revenueAndCapex ?? 'Revenue & Capex'}</span>
         <div className="flex items-center gap-3">
           <span className="flex items-center gap-1 text-[9px] text-emerald-400">
             <span className="inline-block w-3 h-0.5 bg-emerald-500 rounded" /> {ts?.revenueLabel ?? 'Revenue'}

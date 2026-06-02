@@ -20,7 +20,7 @@ const FlopScalingChart = memo(function FlopScalingChart() {
 
   return (
     <div className="space-y-2">
-      <div className="text-[10px] font-mono uppercase text-neutral-500 mb-3">{t?.flopTitle ?? 'Training Compute (FLOP)'}</div>
+      <div className="text-[10px] font-mono uppercase text-neutral-400 mb-3">{t?.flopTitle ?? 'Training Compute (FLOP)'}</div>
       {FLOP_DATA.map((item, i) => {
         const width = linearScale(item.log, minLog, maxLog, 8, 100);
         return (
@@ -42,7 +42,7 @@ const FlopScalingChart = memo(function FlopScalingChart() {
           </div>
         );
       })}
-      <p className="text-[10px] text-neutral-500 mt-2 italic">{t?.flopNote ?? 'Logarithmic scale'}</p>
+      <p className="text-[10px] text-neutral-400 mt-2 italic">{t?.flopNote ?? 'Logarithmic scale'}</p>
     </div>
   );
 });
@@ -60,7 +60,7 @@ const CodingAutomationChart = memo(function CodingAutomationChart() {
 
   return (
     <div className="space-y-2">
-      <div className="text-[10px] font-mono uppercase text-neutral-500 mb-3">{t?.codingTitle ?? 'Agent-1 Capabilities (Apr 2026)'}</div>
+      <div className="text-[10px] font-mono uppercase text-neutral-400 mb-3">{t?.codingTitle ?? 'Agent-1 Capabilities (Apr 2026)'}</div>
       {CODING_DATA.map((item, i) => {
         const pct = (item.value / item.max) * 100;
         return (
@@ -84,7 +84,7 @@ const CodingAutomationChart = memo(function CodingAutomationChart() {
       })}
       <div className="flex items-center gap-2 mt-2">
         <div className="h-px flex-1 bg-neutral-700" />
-        <span className="text-[9px] text-neutral-500 font-mono">{t?.humanLevel ?? '1.0x = human level'}</span>
+        <span className="text-[9px] text-neutral-400 font-mono">{t?.humanLevel ?? '1.0x = human level'}</span>
         <div className="h-px flex-1 bg-neutral-700" />
       </div>
     </div>
@@ -106,19 +106,19 @@ const InfrastructureChart = memo(function InfrastructureChart() {
 
   return (
     <div className="space-y-3">
-      <div className="text-[10px] font-mono uppercase text-neutral-500">{t?.infraTitle ?? 'Infrastructure until Dec 2026'}</div>
+      <div className="text-[10px] font-mono uppercase text-neutral-400">{t?.infraTitle ?? 'Infrastructure until Dec 2026'}</div>
       <div className="grid grid-cols-3 gap-2 text-center">
         <div className="rounded-lg bg-emerald-500/10 border border-emerald-500/20 p-3">
           <div className="text-lg font-bold text-emerald-300">$55B</div>
-          <div className="text-[9px] text-neutral-500 uppercase">{t?.revenuePerYear ?? 'Revenue/yr'}</div>
+          <div className="text-[9px] text-neutral-400 uppercase">{t?.revenuePerYear ?? 'Revenue/yr'}</div>
         </div>
         <div className="rounded-lg bg-amber-500/10 border border-amber-500/20 p-3">
           <div className="text-lg font-bold text-amber-300">$600B</div>
-          <div className="text-[9px] text-neutral-500 uppercase">{t?.capex ?? 'Capex'}</div>
+          <div className="text-[9px] text-neutral-400 uppercase">{t?.capex ?? 'Capex'}</div>
         </div>
         <div className="rounded-lg bg-blue-500/10 border border-blue-500/20 p-3">
           <div className="text-lg font-bold text-blue-300">38 GW</div>
-          <div className="text-[9px] text-neutral-500 uppercase">{t?.power ?? 'Power'}</div>
+          <div className="text-[9px] text-neutral-400 uppercase">{t?.power ?? 'Power'}</div>
         </div>
       </div>
       <svg viewBox="0 0 280 50" className="w-full h-[50px]">
@@ -165,12 +165,12 @@ const ResearchMultiplierChart = memo(function ResearchMultiplierChart() {
 
   return (
     <div className="space-y-2">
-      <div className="text-[10px] font-mono uppercase text-neutral-500 mb-3">{t?.researchTitle ?? 'Research Speed Multiplier'}</div>
+      <div className="text-[10px] font-mono uppercase text-neutral-400 mb-3">{t?.researchTitle ?? 'Research Speed Multiplier'}</div>
       {RESEARCH_STAGES.map((s, i) => {
         const width = Math.min(100, (Math.log10(s.mult) / Math.log10(50)) * 100);
         return (
           <div key={s.label} className="flex items-center gap-2">
-            <span className="text-[9px] font-mono text-neutral-500 w-16 text-end shrink-0">{s.label}</span>
+            <span className="text-[9px] font-mono text-neutral-400 w-16 text-end shrink-0">{s.label}</span>
             <div className="flex-1 relative">
               <div className="bg-neutral-800 rounded-md h-7 overflow-hidden">
                 <motion.div
@@ -209,7 +209,7 @@ const AgentPopulationChart = memo(function AgentPopulationChart() {
 
   return (
     <div className="space-y-3">
-      <div className="text-[10px] font-mono uppercase text-neutral-500">{t?.agentPopTitle ?? 'Agent Population (K copies)'}</div>
+      <div className="text-[10px] font-mono uppercase text-neutral-400">{t?.agentPopTitle ?? 'Agent Population (K copies)'}</div>
       <svg viewBox="0 0 280 80" className="w-full h-[80px]">
         <defs>
           <linearGradient id="popGrad" x1="0" y1="0" x2="0" y2="1">
@@ -260,7 +260,7 @@ const AgentPopulationChart = memo(function AgentPopulationChart() {
           );
         })}
       </svg>
-      <div className="flex items-center gap-1 text-[9px] text-neutral-500">
+      <div className="flex items-center gap-1 text-[9px] text-neutral-400">
         <span>{t?.reasoningSpeed ?? 'Reasoning speed:'}</span>
         {POP_DATA.map((d) => (
           <span key={d.month} className="px-1.5 py-0.5 rounded bg-neutral-800 text-neutral-300 font-mono">
@@ -285,7 +285,7 @@ const AlignmentSpectrumChart = memo(function AlignmentSpectrumChart() {
 
   return (
     <div className="space-y-3">
-      <div className="text-[10px] font-mono uppercase text-neutral-500">{t?.alignmentTitle ?? 'Alignment Spectrum'}</div>
+      <div className="text-[10px] font-mono uppercase text-neutral-400">{t?.alignmentTitle ?? 'Alignment Spectrum'}</div>
       <div className="relative h-8 rounded-full overflow-hidden bg-gradient-to-r from-red-500/30 via-amber-500/30 to-emerald-500/30 border border-neutral-700">
         <div className="absolute inset-0 flex items-center justify-between px-3 text-[8px] font-mono text-neutral-400">
           <span>{t?.adversarial ?? 'Adversarial'}</span>
@@ -315,7 +315,7 @@ const AlignmentSpectrumChart = memo(function AlignmentSpectrumChart() {
               transition={{ type: 'spring', delay: 0.2 + i * 0.1 }}
             />
           </div>
-          <span className="text-[9px] text-neutral-500 w-40 shrink-0">{a.desc}</span>
+          <span className="text-[9px] text-neutral-400 w-40 shrink-0">{a.desc}</span>
         </motion.div>
       ))}
     </div>
@@ -329,27 +329,27 @@ const FinalDashboardChart = memo(function FinalDashboardChart() {
 
   return (
     <div className="space-y-3">
-      <div className="text-[10px] font-mono uppercase text-neutral-500 mb-2">{t?.dashboardTitle ?? 'Indicators at Decision Point'}</div>
+      <div className="text-[10px] font-mono uppercase text-neutral-400 mb-2">{t?.dashboardTitle ?? 'Indicators at Decision Point'}</div>
       <div className="grid grid-cols-2 gap-2">
         <div className="rounded-lg bg-emerald-500/10 border border-emerald-500/20 p-3 text-center">
           <div className="text-xl font-bold text-emerald-300">$191B</div>
-          <div className="text-[9px] text-neutral-500 uppercase">{t?.annualRevenue ?? 'Annual revenue'}</div>
+          <div className="text-[9px] text-neutral-400 uppercase">{t?.annualRevenue ?? 'Annual revenue'}</div>
         </div>
         <div className="rounded-lg bg-amber-500/10 border border-amber-500/20 p-3 text-center">
           <div className="text-xl font-bold text-amber-300">$918B</div>
-          <div className="text-[9px] text-neutral-500 uppercase">{t?.totalCapex ?? 'Total capex'}</div>
+          <div className="text-[9px] text-neutral-400 uppercase">{t?.totalCapex ?? 'Total capex'}</div>
         </div>
         <div className="rounded-lg bg-blue-500/10 border border-blue-500/20 p-3 text-center">
           <div className="text-xl font-bold text-blue-300">110 GW</div>
-          <div className="text-[9px] text-neutral-500 uppercase">{t?.peakPower ?? 'Peak power'}</div>
+          <div className="text-[9px] text-neutral-400 uppercase">{t?.peakPower ?? 'Peak power'}</div>
         </div>
         <div className="rounded-lg bg-red-500/10 border border-red-500/20 p-3 text-center">
           <div className="text-xl font-bold text-red-300">-39%</div>
-          <div className="text-[9px] text-neutral-500 uppercase">{t?.approval ?? 'Approval'}</div>
+          <div className="text-[9px] text-neutral-400 uppercase">{t?.approval ?? 'Approval'}</div>
         </div>
       </div>
       <div className="rounded-lg bg-neutral-800/60 border border-neutral-700 p-3">
-        <div className="text-[9px] font-mono uppercase text-neutral-500 mb-2">{t?.agent4Capabilities ?? 'Agent-4 Capabilities'}</div>
+        <div className="text-[9px] font-mono uppercase text-neutral-400 mb-2">{t?.agent4Capabilities ?? 'Agent-4 Capabilities'}</div>
         <div className="space-y-1">
           {[
             ['Hacking', 3.43, '#ef4444'],
@@ -376,11 +376,11 @@ const FinalDashboardChart = memo(function FinalDashboardChart() {
       <div className="flex items-center justify-between rounded-lg bg-neutral-800/60 border border-neutral-700 p-3">
         <div>
           <div className="text-lg font-bold text-white">330K</div>
-          <div className="text-[9px] text-neutral-500 uppercase">{t?.activeCopies ?? 'Active copies'}</div>
+          <div className="text-[9px] text-neutral-400 uppercase">{t?.activeCopies ?? 'Active copies'}</div>
         </div>
         <div className="text-end">
           <div className="text-lg font-bold text-white">5.7x</div>
-          <div className="text-[9px] text-neutral-500 uppercase">{t?.speedLabel ?? 'Speed'}</div>
+          <div className="text-[9px] text-neutral-400 uppercase">{t?.speedLabel ?? 'Speed'}</div>
         </div>
       </div>
     </div>

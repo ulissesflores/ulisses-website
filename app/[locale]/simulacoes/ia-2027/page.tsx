@@ -127,7 +127,7 @@ export default async function IA2027Page({ params, searchParams }: PageProps) {
               {dict.ia2027.breadcrumb.simulations}
             </Link>
             <span className='text-xs text-neutral-600'>→</span>
-            <span className='text-xs font-mono uppercase tracking-widest text-neutral-500'>
+            <span className='text-xs font-mono uppercase tracking-widest text-neutral-400'>
               {dict.ia2027.breadcrumb.scenarios}
             </span>
           </div>
@@ -173,7 +173,7 @@ export default async function IA2027Page({ params, searchParams }: PageProps) {
             >
               {t.cta}
             </a>
-            <p className='text-xs text-neutral-500 max-w-sm'>
+            <p className='text-xs text-neutral-400 max-w-sm'>
               {t.ctaNote}{' '}
               <a
                 href='https://ai-2027.com/'

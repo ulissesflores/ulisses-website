@@ -116,7 +116,7 @@ export default async function ProjetoPsiPage({ params }: PageProps) {
               Whitepapers
             </Link>
             <span className='text-xs text-neutral-600'>→</span>
-            <span className='text-xs font-mono uppercase tracking-widest text-neutral-500'>
+            <span className='text-xs font-mono uppercase tracking-widest text-neutral-400'>
               Projeto PSI
             </span>
           </div>
@@ -126,7 +126,7 @@ export default async function ProjetoPsiPage({ params }: PageProps) {
             <span className='text-[10px] uppercase tracking-[0.2em] text-cyan-400 border border-cyan-700/40 rounded-full px-3 py-1 font-bold'>
               {ui.kicker}
             </span>
-            <span className='text-[10px] uppercase tracking-[0.2em] text-neutral-500'>
+            <span className='text-[10px] uppercase tracking-[0.2em] text-neutral-400'>
               {ui.kickerSub}
             </span>
           </div>
@@ -137,9 +137,9 @@ export default async function ProjetoPsiPage({ params }: PageProps) {
           </h1>
 
           {/* Author line */}
-          <p className='text-sm text-neutral-500 mb-8'>
+          <p className='text-sm text-neutral-400 mb-8'>
             <span className='font-semibold text-neutral-300'>{ui.authorLabel}</span>{' '}
-            <Link href={localePath('/identidade', locale)} className='text-emerald-400 hover:underline'>Ulisses Flores</Link>
+            <Link href={localePath('/identidade', locale)} className='text-emerald-400 underline'>Ulisses Flores</Link>
             {' — '}{ui.authorRole}
           </p>
 

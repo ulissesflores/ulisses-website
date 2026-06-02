@@ -101,7 +101,7 @@ export default async function CertificationsPage({ params }: PageProps) {
               {dict.common.breadcrumb.home}
             </Link>
             <span className='text-xs text-neutral-600'>→</span>
-            <span className='text-xs font-mono uppercase tracking-widest text-neutral-500'>{t.breadcrumb}</span>
+            <span className='text-xs font-mono uppercase tracking-widest text-neutral-400'>{t.breadcrumb}</span>
           </div>
           <h1 className='text-4xl sm:text-5xl font-bold leading-tight tracking-tight mb-6 text-white'>{t.hero.h1}</h1>
           <p className='text-lg text-neutral-400 leading-relaxed mb-8 max-w-3xl'>{t.hero.lead}</p>
@@ -136,7 +136,7 @@ export default async function CertificationsPage({ params }: PageProps) {
                       <p className='text-sm text-neutral-400 mb-3'>{cert.summary}</p>
                       <p className='text-sm text-neutral-300 mb-4'>{cert.about}</p>
                       <div className='mb-4'>
-                        <p className='text-xs uppercase tracking-widest text-neutral-500 mb-2'>{t.grid.skillsAcquired}</p>
+                        <p className='text-xs uppercase tracking-widest text-neutral-400 mb-2'>{t.grid.skillsAcquired}</p>
                         <div className='flex flex-wrap gap-2'>
                           {cert.skills.map((s) => (
                             <span key={s} className='rounded-full border border-neutral-700 px-3 py-1 text-xs text-neutral-300'>{s}</span>
@@ -144,7 +144,7 @@ export default async function CertificationsPage({ params }: PageProps) {
                         </div>
                       </div>
                       <div className='mb-4'>
-                        <p className='text-xs uppercase tracking-widest text-neutral-500 mb-2'>{t.grid.problemsSolved}</p>
+                        <p className='text-xs uppercase tracking-widest text-neutral-400 mb-2'>{t.grid.problemsSolved}</p>
                         <p className='text-sm text-neutral-300'>{cert.problems_solved}</p>
                       </div>
                       <div className='flex flex-wrap gap-3 text-xs'>

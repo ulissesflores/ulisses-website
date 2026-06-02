@@ -69,7 +69,7 @@ export default async function SimulacoesPage({ params }: PageProps) {
               {dict.common.breadcrumb.home}
             </Link>
             <span className='text-xs text-neutral-600'>→</span>
-            <span className='text-xs font-mono uppercase tracking-widest text-neutral-500'>{t.breadcrumb}</span>
+            <span className='text-xs font-mono uppercase tracking-widest text-neutral-400'>{t.breadcrumb}</span>
           </div>
           <h1 className='text-4xl sm:text-5xl font-bold leading-tight tracking-tight mb-6 text-white'>{t.hero.h1}</h1>
           <p className='text-lg text-neutral-400 leading-relaxed mb-8 max-w-3xl'>{t.hero.lead}</p>

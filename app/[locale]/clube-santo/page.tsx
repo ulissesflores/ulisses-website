@@ -89,7 +89,7 @@ export default async function ClubeSantoPage({ params }: PageProps) {
               {dict.common.breadcrumb.home}
             </Link>
             <span className='text-xs text-neutral-600'>→</span>
-            <span className='text-xs font-mono uppercase tracking-widest text-neutral-500'>
+            <span className='text-xs font-mono uppercase tracking-widest text-neutral-400'>
               {t.breadcrumb}
             </span>
           </div>

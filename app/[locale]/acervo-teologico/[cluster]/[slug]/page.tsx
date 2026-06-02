@@ -145,7 +145,7 @@ export default async function AcervoSermonDetailPage({ params }: PageProps) {
         <header className='mt-8 mb-10'>
           <p className='text-xs uppercase tracking-widest text-emerald-400 mb-3'>{lc.seoTitle}</p>
           <h1 className='text-3xl md:text-4xl font-bold text-white mb-4'>{ls.seoTitle}</h1>
-          <p className='text-sm text-neutral-500 mb-4'>{t.detail?.publishedAt ?? 'Published'} {sermon.publishedAt}</p>
+          <p className='text-sm text-neutral-400 mb-4'>{t.detail?.publishedAt ?? 'Published'} {sermon.publishedAt}</p>
           <div className='mb-4 max-w-xl'>
             <AuthorHubCard label={t.detail?.authorLabel ?? 'Author'} compact />
           </div>

@@ -153,7 +153,7 @@ export default async function Home({ params }: PageProps) {
                 {t.hero.quote}
               </p>
               
-              <div className="flex flex-wrap justify-center md:justify-start gap-x-6 gap-y-2 text-xs font-mono text-neutral-500">
+              <div className="flex flex-wrap justify-center md:justify-start gap-x-6 gap-y-2 text-xs font-mono text-neutral-400">
                 <span className="flex items-center gap-2"><div className="w-2 h-2 bg-emerald-500 rounded-full"></div> {t.hero.languages.pt}</span>
                 <span className="flex items-center gap-2"><div className="w-2 h-2 bg-emerald-500 rounded-full"></div> {t.hero.languages.en}</span>
                 <span className="flex items-center gap-2"><div className="w-2 h-2 bg-emerald-500 rounded-full"></div> {t.hero.languages.es}</span>
@@ -165,14 +165,14 @@ export default async function Home({ params }: PageProps) {
 
           <div id="contact" className="grid md:grid-cols-2 gap-4 scroll-mt-24">
             <div className="bg-neutral-900/30 p-5 rounded-xl border border-white/5 flex flex-wrap gap-3 items-center backdrop-blur-sm">
-               <span className="text-[10px] font-bold text-neutral-500 w-full uppercase mb-1 tracking-widest">{t.contact.academicLinks}</span>
+               <span className="text-[10px] font-bold text-neutral-400 w-full uppercase mb-1 tracking-widest">{t.contact.academicLinks}</span>
                <SocialBtn href="https://lattes.ulissesflores.com" icon={<BookOpen size={16} />} label="Lattes CV" primary />
                <SocialBtn href="https://orcid.ulissesflores.com" icon={<Globe size={16} />} label="ORCID" />
                <SocialBtn href="https://linkedin.ulissesflores.com" icon={<Linkedin size={16} />} label="LinkedIn" />
                <SocialBtn href="https://github.ulissesflores.com" icon={<Github size={16} />} label="GitHub" />
             </div>
             <div className="bg-neutral-900/30 p-5 rounded-xl border border-white/5 flex flex-wrap gap-3 items-center backdrop-blur-sm">
-               <span className="text-[10px] font-bold text-neutral-500 w-full uppercase mb-1 tracking-widest">{t.contact.directContact}</span>
+               <span className="text-[10px] font-bold text-neutral-400 w-full uppercase mb-1 tracking-widest">{t.contact.directContact}</span>
                <SocialBtn href="https://wa.me/5511972727532" icon={<MessageCircle size={16} />} label="WhatsApp" color="emerald" />
                <SocialBtn href="mailto:c.ulisses@gmail.com" icon={<Mail size={16} />} label="Email" />
                <SocialBtn href="https://gmb.ulissesflores.com" icon={<MapPin size={16} />} label={t.contact.location} />
@@ -241,7 +241,7 @@ export default async function Home({ params }: PageProps) {
             />
             
             <div className="bg-neutral-900/20 p-4 rounded-lg border border-white/5 mt-6">
-               <h3 className="text-[10px] font-bold text-neutral-500 uppercase tracking-widest mb-3">{t.trajectory.formation.extension.title}</h3>
+               <h3 className="text-[10px] font-bold text-neutral-400 uppercase tracking-widest mb-3">{t.trajectory.formation.extension.title}</h3>
                <ul className="space-y-2 text-sm text-neutral-300">
                   {[...t.trajectory.formation.extension.items].map((item, i) => (
                      <li key={i} className="flex gap-2 items-center"><Globe size={12} className={i === 0 ? 'text-emerald-500' : 'text-cyan-500'}/> {item}</li>
@@ -407,8 +407,8 @@ export default async function Home({ params }: PageProps) {
         {/* SEÇÃO: FORMAL BIO / MANIFESTO (O Texto Lattes na íntegra) */}
         <section id="manifesto" className="mb-24 scroll-mt-24 border-t border-white/5 pt-12">
            <div className="flex items-center gap-3 mb-8 opacity-70">
-              <FileText size={18} className="text-neutral-500" />
-              <h2 className="text-sm font-bold text-neutral-500 uppercase tracking-widest">{t.manifesto.title}</h2>
+              <FileText size={18} className="text-neutral-400" />
+              <h2 className="text-sm font-bold text-neutral-400 uppercase tracking-widest">{t.manifesto.title}</h2>
            </div>
            
            <div className="bg-neutral-950 border border-neutral-900 rounded-lg p-8 font-mono text-sm text-neutral-400 leading-relaxed text-justify space-y-6 shadow-inner">
@@ -464,9 +464,9 @@ export default async function Home({ params }: PageProps) {
           <FaqSection items={[...tFaq]} sectionTitle={t.faq.sectionTitle} />
         </section>
 
-        <footer className="text-center text-neutral-600 text-sm py-12 border-t border-white/5">
+        <footer className="text-center text-neutral-400 text-sm py-12 border-t border-white/5">
           <p>{t.pageFooter.copyright}</p>
-          <p className="text-xs mt-2 font-mono text-neutral-700">{t.pageFooter.version}</p>
+          <p className="text-xs mt-2 font-mono text-neutral-400">{t.pageFooter.version}</p>
         </footer>
 
       </main>
@@ -521,7 +521,7 @@ function FormationCard({ year, title, inst, desc, highlight }: any) {
       <div className={`text-xs font-mono mb-1 ${highlight ? 'text-emerald-400' : 'text-cyan-600'}`}>{year}</div>
       <div className={`font-bold text-lg ${highlight ? 'text-white' : 'text-neutral-200 group-hover:text-white'}`}>{title}</div>
       <div className="text-sm text-neutral-400 mb-1">{inst}</div>
-      <div className="text-xs text-neutral-500 italic leading-relaxed">{desc}</div>
+      <div className="text-xs text-neutral-400 italic leading-relaxed">{desc}</div>
     </div>
   )
 }
@@ -532,7 +532,7 @@ function TimelineItem({ role, company, period, desc, current, currentLabel, isOl
       <span className={`absolute -left-[41px] top-1.5 w-4 h-4 rounded-full border-2 border-neutral-950 ${current ? 'bg-emerald-500' : 'bg-neutral-700'}`}></span>
       <div className="flex flex-col sm:flex-row sm:items-baseline gap-2 mb-1">
         <h3 className={`text-lg font-bold ${current ? 'text-white' : 'text-neutral-300'}`}>{role}</h3>
-        <span className="text-xs font-mono px-2 py-0.5 bg-neutral-900 rounded border border-neutral-800 text-neutral-500">{period}</span>
+        <span className="text-xs font-mono px-2 py-0.5 bg-neutral-900 rounded border border-neutral-800 text-neutral-400">{period}</span>
       </div>
       <div className={`font-medium text-sm mb-2 ${current ? 'text-emerald-400' : 'text-cyan-600'}`}>
         {company}
@@ -555,7 +555,7 @@ function ProductCard({ title, tags, desc }: any) {
        <p className="text-sm text-neutral-400 mb-6 min-h-[48px] leading-relaxed">{desc}</p>
        <div className="flex flex-wrap gap-2">
          {tags.map((t: string, i: number) => (
-           <span key={i} className="text-[10px] uppercase font-bold px-2 py-1 bg-neutral-950 rounded text-neutral-500 border border-neutral-800 group-hover:border-neutral-700">{t}</span>
+           <span key={i} className="text-[10px] uppercase font-bold px-2 py-1 bg-neutral-950 rounded text-neutral-400 border border-neutral-800 group-hover:border-neutral-700">{t}</span>
          ))}
        </div>
     </div>

@@ -90,7 +90,7 @@ export default async function MundoPoliticoPage({ params }: PageProps) {
               {dict.common.breadcrumb.home}
             </Link>
             <span className='text-xs text-neutral-600'>→</span>
-            <span className='text-xs font-mono uppercase tracking-widest text-neutral-500'>
+            <span className='text-xs font-mono uppercase tracking-widest text-neutral-400'>
               {t.breadcrumb}
             </span>
           </div>
@@ -161,7 +161,7 @@ export default async function MundoPoliticoPage({ params }: PageProps) {
                     {(locale !== 'pt-br' && (post as Record<string, unknown>)[`summary_${locale}`] as string) || post.summary}
                   </p>
                 </Link>
-                <div className='mt-4 flex items-center gap-3 text-xs text-neutral-500'>
+                <div className='mt-4 flex items-center gap-3 text-xs text-neutral-400'>
                   <time dateTime={post.publishedAt}>{post.publishedAt}</time>
                   {post.url && (
                     <a

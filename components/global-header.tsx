@@ -107,7 +107,7 @@ export function GlobalHeader() {
         <nav className='max-w-6xl mx-auto px-6 h-16 flex items-center justify-between'>
           {/* Logo */}
           <Link href={localePath('/')} className='text-emerald-500 font-bold text-lg tracking-wider'>
-            UF<span className='text-neutral-500 font-light'>.SCIENTIST</span>
+            UF<span className='text-neutral-400 font-light'>.SCIENTIST</span>
           </Link>
 
           {/* Desktop Mega Menu */}
@@ -121,6 +121,8 @@ export function GlobalHeader() {
               >
                 <button
                   type='button'
+                  aria-expanded={activeDropdown === category.label}
+                  aria-haspopup='true'
                   onClick={() => setActiveDropdown(activeDropdown === category.label ? null : category.label)}
                   className={`flex items-center gap-1 px-3 py-2 text-sm font-medium rounded-md transition-colors ${
                     activeDropdown === category.label
@@ -153,7 +155,7 @@ export function GlobalHeader() {
                           {item.label}
                         </span>
                         {item.description && (
-                          <span className='block text-xs text-neutral-500 mt-0.5'>{item.description}</span>
+                          <span className='block text-xs text-neutral-400 mt-0.5'>{item.description}</span>
                         )}
                       </Link>
                     ))}
@@ -169,6 +171,8 @@ export function GlobalHeader() {
             <div ref={langRef} className='relative hidden sm:block'>
               <button
                 type='button'
+                aria-expanded={langOpen}
+                aria-haspopup='true'
                 onClick={() => setLangOpen(!langOpen)}
                 className='flex items-center gap-1.5 px-2.5 py-1.5 text-xs font-medium text-neutral-400 hover:text-white rounded-md border border-neutral-800 hover:border-neutral-600 transition-colors'
                 aria-label={common.languageSwitcher.label}
@@ -208,6 +212,7 @@ export function GlobalHeader() {
             {/* Mobile hamburger */}
             <button
               type='button'
+              aria-expanded={mobileOpen}
               onClick={() => setMobileOpen(!mobileOpen)}
               className='lg:hidden p-2 text-neutral-400 hover:text-white transition-colors'
               aria-label={mobileOpen ? common.mobileMenu.close : common.mobileMenu.open}
@@ -237,7 +242,7 @@ export function GlobalHeader() {
                     >
                       <span className='text-sm font-medium'>{item.label}</span>
                       {item.description && (
-                        <span className='block text-xs text-neutral-500 mt-0.5'>{item.description}</span>
+                        <span className='block text-xs text-neutral-400 mt-0.5'>{item.description}</span>
                       )}
                     </Link>
                   ))}
@@ -247,7 +252,7 @@ export function GlobalHeader() {
 
             {/* Mobile Language Switcher */}
             <div className='pt-2 border-t border-neutral-800'>
-              <p className='text-xs uppercase tracking-[0.2em] text-neutral-500 mb-3 font-bold flex items-center gap-2'>
+              <p className='text-xs uppercase tracking-[0.2em] text-neutral-400 mb-3 font-bold flex items-center gap-2'>
                 <Globe size={12} /> {common.languageSwitcher.label}
               </p>
               <div className='flex flex-wrap gap-2'>

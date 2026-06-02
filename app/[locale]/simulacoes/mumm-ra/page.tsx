@@ -93,7 +93,7 @@ export default async function MummRaPage({ params }: PageProps) {
           </div>
           <h1 className='text-4xl md:text-5xl font-bold text-white mb-4'>{t.hero.h1}</h1>
           <p className='text-xl text-neutral-300 leading-relaxed max-w-2xl'>{t.hero.lead}</p>
-          <p className='text-sm text-neutral-500 mt-3 max-w-2xl leading-relaxed'>{t.hero.description}</p>
+          <p className='text-sm text-neutral-400 mt-3 max-w-2xl leading-relaxed'>{t.hero.description}</p>
 
           {/* EEAT authority block */}
           <div className='mt-6 rounded-xl border border-neutral-800 bg-neutral-900/40 p-5 max-w-2xl'>
@@ -119,7 +119,7 @@ export default async function MummRaPage({ params }: PageProps) {
             <MessageCircle size={24} />
             {t.cta.button}
           </a>
-          <p className='text-xs text-neutral-500 mt-3'>+55 11 5286-8689</p>
+          <p className='text-xs text-neutral-400 mt-3'>+55 11 5286-8689</p>
         </section>
 
         {/* Personalidade */}
@@ -161,7 +161,7 @@ export default async function MummRaPage({ params }: PageProps) {
             <div>
               <h2 className='text-xl font-semibold text-white mb-2'>{t.groups.title}</h2>
               <p className='text-neutral-300 leading-relaxed mb-3'>{t.groups.description}</p>
-              <p className='text-xs text-neutral-500'>{t.groups.note}</p>
+              <p className='text-xs text-neutral-400'>{t.groups.note}</p>
             </div>
           </div>
         </section>
@@ -169,7 +169,7 @@ export default async function MummRaPage({ params }: PageProps) {
         {/* Exemplos de interação */}
         <section className='rounded-2xl border border-neutral-800 bg-neutral-900/30 p-6 mb-10'>
           <h2 className='text-2xl font-semibold text-white mb-4'>{t.examples.title}</h2>
-          <p className='text-xs text-neutral-500 mb-4'>{t.examples.subtitle}</p>
+          <p className='text-xs text-neutral-400 mb-4'>{t.examples.subtitle}</p>
           <div className='space-y-4'>
             {[...t.examples.items].map((example) => (
               <div key={example.user} className='rounded-xl border border-neutral-800 bg-neutral-950/60 p-5'>

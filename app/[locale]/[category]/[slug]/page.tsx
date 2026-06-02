@@ -184,7 +184,7 @@ export default async function ArticlePage({ params }: PageProps) {
       <main className='relative max-w-5xl mx-auto px-6 py-20 z-10'>
         <Link
           href={localePath(`/${publication.category}`, locale)}
-          className='inline-flex items-center gap-2 text-sm text-neutral-500 hover:text-emerald-400 transition-colors mb-4 group'
+          className='inline-flex items-center gap-2 text-sm text-neutral-400 hover:text-emerald-400 transition-colors mb-4 group'
         >
           <ArrowLeft size={16} className='group-hover:-translate-x-1 transition-transform' />
           {t.backTo} {collection.title}
@@ -209,10 +209,10 @@ export default async function ArticlePage({ params }: PageProps) {
             <span className='px-3 py-1 bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-bold uppercase tracking-widest rounded-full'>
               {publication.category}
             </span>
-            <span className='flex items-center gap-2 text-xs font-mono text-neutral-500 uppercase'>
+            <span className='flex items-center gap-2 text-xs font-mono text-neutral-400 uppercase'>
               <Calendar size={12} /> {publication.date}
             </span>
-            <span className='text-xs text-neutral-500 border border-neutral-700 rounded-full px-2 py-1'>
+            <span className='text-xs text-neutral-400 border border-neutral-700 rounded-full px-2 py-1'>
               {publication.kind === 'R' ? 'Report' : 'ScholarlyArticle'}
             </span>
             <span className='text-xs text-cyan-300 border border-cyan-500/40 rounded-full px-2 py-1'>

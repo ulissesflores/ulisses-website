@@ -189,7 +189,7 @@ export default async function IdentidadePage({ params }: PageProps) {
               <p className='text-xs uppercase tracking-[0.18em] text-emerald-300 mb-3'>{t.header.kicker}</p>
               <h1 className='text-4xl md:text-5xl font-bold text-white mb-3'>{upkfMeta.publicDisplayName}</h1>
               <p className='text-neutral-300 text-lg'>{t.header.subtitle}</p>
-              <p className='text-sm text-neutral-500 mt-4'>
+              <p className='text-sm text-neutral-400 mt-4'>
                 ORCID {upkfMeta.orcid} · Lattes {upkfMeta.lattesId} · {identityStats.orcidWorks} {t.header.statsTemplate.works} ·{' '}
                 {identityStats.certifications} {t.header.statsTemplate.certifications}
               </p>
@@ -260,7 +260,7 @@ export default async function IdentidadePage({ params }: PageProps) {
               },
             ].map((item) => (
               <article key={item.title} className='rounded-xl border border-neutral-800 bg-neutral-950/70 p-4'>
-                <p className='text-xs uppercase tracking-widest text-neutral-500 mb-2'>{item.title}</p>
+                <p className='text-xs uppercase tracking-widest text-neutral-400 mb-2'>{item.title}</p>
                 <p className='text-lg text-white font-semibold mb-2'>{item.value}</p>
                 <p className='text-sm text-neutral-400 mb-3'>{item.description}</p>
                 {item.url !== '#' ? (
@@ -274,7 +274,7 @@ export default async function IdentidadePage({ params }: PageProps) {
 
           <div className='mt-6 overflow-x-auto'>
             <table className='w-full min-w-[760px] text-sm'>
-              <thead className='text-start text-neutral-500'>
+              <thead className='text-start text-neutral-400'>
                 <tr className='border-b border-neutral-800'>
                   <th className='py-2 pr-4'>{t.sections.sovereignIdentity.table.identifier}</th>
                   <th className='py-2 pr-4'>{t.sections.sovereignIdentity.table.value}</th>
@@ -301,7 +301,7 @@ export default async function IdentidadePage({ params }: PageProps) {
                         <span className='text-neutral-600 text-xs'>N/A</span>
                       )}
                     </td>
-                    <td className='py-2 text-neutral-500 text-xs'>{identifier.notes || '—'}</td>
+                    <td className='py-2 text-neutral-400 text-xs'>{identifier.notes || '—'}</td>
                   </tr>
                 ))}
               </tbody>
@@ -330,7 +330,7 @@ export default async function IdentidadePage({ params }: PageProps) {
                 >
                   <p className='font-mono text-xs text-neutral-400 mb-1'>{category || 'Domain'}</p>
                   <p className='text-sm text-white mb-1'>{domain.domain}</p>
-                  <p className='text-xs text-neutral-500'>{domain.purpose || 'Canonical property'}</p>
+                  <p className='text-xs text-neutral-400'>{domain.purpose || 'Canonical property'}</p>
                 </a>
               );
             })}
@@ -341,7 +341,7 @@ export default async function IdentidadePage({ params }: PageProps) {
           <h2 className='text-2xl font-semibold text-white mb-4'>{t.sections.geoLanguages.title}</h2>
           <div className='grid gap-6 md:grid-cols-2'>
             <article className='rounded-xl border border-neutral-800 bg-neutral-950/70 p-4'>
-              <p className='text-xs uppercase tracking-widest text-neutral-500 mb-3'>{t.sections.geoLanguages.areaLabel}</p>
+              <p className='text-xs uppercase tracking-widest text-neutral-400 mb-3'>{t.sections.geoLanguages.areaLabel}</p>
               <ul className='space-y-2 text-sm text-neutral-300'>
                 {upkfMeta.geographicallyServes.map((place) => (
                   <li key={place} className='border-b border-neutral-900 pb-2 last:border-0'>
@@ -352,12 +352,12 @@ export default async function IdentidadePage({ params }: PageProps) {
             </article>
 
             <article className='rounded-xl border border-neutral-800 bg-neutral-950/70 p-4'>
-              <p className='text-xs uppercase tracking-widest text-neutral-500 mb-3'>{t.sections.geoLanguages.languagesLabel}</p>
+              <p className='text-xs uppercase tracking-widest text-neutral-400 mb-3'>{t.sections.geoLanguages.languagesLabel}</p>
               <div className='grid grid-cols-2 gap-2'>
                 {upkfMeta.languages.map((language) => (
                   <div key={language} className='rounded-md border border-neutral-800 px-3 py-2 text-sm text-neutral-300'>
                     {languageNames[language] || language}
-                    <span className='ms-2 text-xs text-neutral-500'>({language})</span>
+                    <span className='ms-2 text-xs text-neutral-400'>({language})</span>
                   </div>
                 ))}
               </div>
@@ -372,10 +372,10 @@ export default async function IdentidadePage({ params }: PageProps) {
               <div className='grid gap-4 md:grid-cols-3'>
                 {heritageClusters.map((cluster) => (
                   <article key={cluster.cluster} className='rounded-xl border border-neutral-800 bg-neutral-950/70 p-4'>
-                    <p className='text-xs uppercase tracking-widest text-neutral-500 mb-2'>{cluster.cluster}</p>
+                    <p className='text-xs uppercase tracking-widest text-neutral-400 mb-2'>{cluster.cluster}</p>
                     <h3 className='text-sm font-semibold text-white mb-2'>{cluster.title}</h3>
                     <p className='text-xs text-neutral-400 mb-2'>{cluster.keySurnames.join(', ')}</p>
-                    <p className='text-xs text-neutral-500 mb-2'>{cluster.region}</p>
+                    <p className='text-xs text-neutral-400 mb-2'>{cluster.region}</p>
                     <p className='text-xs text-neutral-300'>{cluster.thesis}</p>
                   </article>
                 ))}
@@ -401,14 +401,14 @@ export default async function IdentidadePage({ params }: PageProps) {
                 className='rounded-xl border border-neutral-800 bg-neutral-950/70 p-4 text-center hover:border-emerald-500/40 transition-colors'
               >
                 <p className='text-4xl font-bold text-white leading-none'>{card.value}</p>
-                <p className='text-xs uppercase tracking-widest text-neutral-500 mt-2'>{card.label}</p>
+                <p className='text-xs uppercase tracking-widest text-neutral-400 mt-2'>{card.label}</p>
               </Link>
             ))}
           </div>
 
           <div className='grid gap-6 md:grid-cols-2'>
             <article className='rounded-xl border border-neutral-800 bg-neutral-950/70 p-4'>
-              <p className='text-xs uppercase tracking-widest text-neutral-500 mb-3'>{t.sections.academic.credentialsLabel}</p>
+              <p className='text-xs uppercase tracking-widest text-neutral-400 mb-3'>{t.sections.academic.credentialsLabel}</p>
               <div className='space-y-3'>
                 {academicCredentials.map((credential) => (
                   <div key={credential.schemaId} className='border-b border-neutral-900 pb-3 last:border-0'>
@@ -416,7 +416,7 @@ export default async function IdentidadePage({ params }: PageProps) {
                     <p className='text-xs text-neutral-400'>
                       {credential.institution} · {credential.period || 'N/A'}
                     </p>
-                    <p className='text-xs text-neutral-500'>
+                    <p className='text-xs text-neutral-400'>
                       {credential.credentialCategory || credential.sourceType}
                       {credential.credentialStatus ? ` · ${credential.credentialStatus}` : ''}
                     </p>
@@ -426,13 +426,13 @@ export default async function IdentidadePage({ params }: PageProps) {
             </article>
 
             <article className='rounded-xl border border-neutral-800 bg-neutral-950/70 p-4'>
-              <p className='text-xs uppercase tracking-widest text-neutral-500 mb-3'>{t.sections.academic.occupationsLabel}</p>
+              <p className='text-xs uppercase tracking-widest text-neutral-400 mb-3'>{t.sections.academic.occupationsLabel}</p>
               <div className='space-y-3'>
                 {occupations.map((occupation) => (
                   <div key={occupation.schemaId} className='border-b border-neutral-900 pb-3 last:border-0'>
                     <p className='text-sm font-semibold text-white'>{occupation.title}</p>
                     <p className='text-xs text-neutral-400'>{occupation.location || 'N/A'}</p>
-                    <p className='text-xs text-neutral-500'>{occupation.appliedSkills.join(', ')}</p>
+                    <p className='text-xs text-neutral-400'>{occupation.appliedSkills.join(', ')}</p>
                   </div>
                 ))}
               </div>
@@ -494,7 +494,7 @@ export default async function IdentidadePage({ params }: PageProps) {
                 href={localePath(`/acervo-teologico#cluster-${cluster.id}`, locale)}
                 className='rounded-xl border border-neutral-800 bg-neutral-950/70 p-4 hover:border-emerald-500/40 transition-colors'
               >
-                <p className='font-mono text-xs text-neutral-500 mb-2'>{cluster.id}</p>
+                <p className='font-mono text-xs text-neutral-400 mb-2'>{cluster.id}</p>
                 <p className='text-sm font-semibold text-white mb-2'>{cluster.seoTitle}</p>
                 <p className='text-xs text-neutral-400'>{cluster.sermons.length} {t.sections.acervo.sermonsClassified}</p>
               </Link>
@@ -518,7 +518,7 @@ export default async function IdentidadePage({ params }: PageProps) {
           <div className='grid gap-3 md:grid-cols-2'>
             {Object.entries(upkfMeta.disambiguation).map(([lang, text]) => (
               <article key={lang} className='rounded-xl border border-neutral-800 bg-neutral-950/70 p-4'>
-                <p className='text-xs uppercase tracking-widest text-neutral-500 mb-2'>{lang}</p>
+                <p className='text-xs uppercase tracking-widest text-neutral-400 mb-2'>{lang}</p>
                 <p className='text-sm text-neutral-300 leading-relaxed'>{text}</p>
               </article>
             ))}
@@ -540,7 +540,7 @@ export default async function IdentidadePage({ params }: PageProps) {
           <div className='grid gap-3 md:grid-cols-2'>
             {affiliations.map((affiliation) => (
               <article key={affiliation.schemaId} className='rounded-xl border border-neutral-800 bg-neutral-950/70 p-4'>
-                <p className='text-xs uppercase tracking-widest text-neutral-500 mb-1'>{affiliation.schemaType}</p>
+                <p className='text-xs uppercase tracking-widest text-neutral-400 mb-1'>{affiliation.schemaType}</p>
                 <p className='text-sm font-semibold text-white mb-1'>{affiliation.name}</p>
                 <p className='text-xs text-neutral-400 mb-2'>{affiliation.legalName || affiliation.relation || 'Affiliation node'}</p>
                 {affiliation.url ? (

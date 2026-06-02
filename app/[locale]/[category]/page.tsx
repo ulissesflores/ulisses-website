@@ -137,7 +137,7 @@ export default async function CategoryPage({ params }: PageProps) {
               Home
             </Link>
             <span className='text-xs text-neutral-600'>→</span>
-            <span className='text-xs font-mono uppercase tracking-widest text-neutral-500'>
+            <span className='text-xs font-mono uppercase tracking-widest text-neutral-400'>
               {collHeading ? typedCategory.charAt(0).toUpperCase() + typedCategory.slice(1) : collection.title}
             </span>
           </div>
@@ -188,7 +188,7 @@ export default async function CategoryPage({ params }: PageProps) {
               >
                 {t.psiLink}
               </Link>
-              <p className='text-sm text-neutral-500 mt-1'>
+              <p className='text-sm text-neutral-400 mt-1'>
                 {t.psiDescription}
               </p>
             </div>
@@ -216,7 +216,7 @@ export default async function CategoryPage({ params }: PageProps) {
               key={publication.id}
               className='p-6 rounded-xl bg-neutral-900/40 border border-neutral-800 hover:border-emerald-500/40 transition-colors'
             >
-              <div className='flex flex-wrap items-center gap-3 mb-3 text-xs text-neutral-500'>
+              <div className='flex flex-wrap items-center gap-3 mb-3 text-xs text-neutral-400'>
                 <span className='px-2 py-1 border border-neutral-700 rounded-full uppercase'>{publication.category}</span>
                 <span>{publication.date}</span>
                 <span>{publication.kind === 'R' ? 'Report' : 'ScholarlyArticle'}</span>

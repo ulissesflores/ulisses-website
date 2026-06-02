@@ -149,7 +149,7 @@ export default async function ConsultoriaPage({ params }: PageProps) {
       {/* TRUST */}
       <section className='bg-neutral-950 py-12 border-t border-neutral-900'>
         <div className='mx-auto max-w-5xl px-6'>
-          <p className='text-center text-[11px] uppercase tracking-[0.18em] text-neutral-500 mb-6'>
+          <p className='text-center text-[11px] uppercase tracking-[0.18em] text-neutral-400 mb-6'>
             {t.trust.label}
           </p>
           <ul className='flex flex-wrap justify-center gap-x-6 gap-y-3 text-sm text-neutral-300'>
@@ -239,7 +239,7 @@ export default async function ConsultoriaPage({ params }: PageProps) {
             ))}
           </div>
           <div className='mt-10 text-center'>
-            <p className='text-[11px] uppercase tracking-[0.18em] text-neutral-500 mb-3'>{t.verticais.additional.label}</p>
+            <p className='text-[11px] uppercase tracking-[0.18em] text-neutral-400 mb-3'>{t.verticais.additional.label}</p>
             <ul className='inline-flex flex-wrap justify-center gap-2 text-sm text-neutral-300'>
               {t.verticais.additional.items.map((a) => (
                 <li key={a} className='rounded-full border border-neutral-800 bg-neutral-900/40 px-3 py-1'>{a}</li>
@@ -270,13 +270,13 @@ export default async function ConsultoriaPage({ params }: PageProps) {
                   <tr key={row.modality} className='bg-neutral-950/60'>
                     <td className='px-5 py-3 text-neutral-300 font-medium'>{row.modality}</td>
                     <td className='px-5 py-3 text-emerald-300'>{row.pricing}</td>
-                    <td className='px-5 py-3 text-neutral-500'>{row.market}</td>
+                    <td className='px-5 py-3 text-neutral-400'>{row.market}</td>
                   </tr>
                 ))}
               </tbody>
             </table>
           </div>
-          <p className='mt-6 text-xs text-neutral-500 max-w-3xl mx-auto text-center leading-relaxed'>{t.pricing.note}</p>
+          <p className='mt-6 text-xs text-neutral-400 max-w-3xl mx-auto text-center leading-relaxed'>{t.pricing.note}</p>
         </div>
       </section>
 
@@ -310,7 +310,7 @@ export default async function ConsultoriaPage({ params }: PageProps) {
                   ) : (
                     titleEl
                   )}
-                  <div className='mt-2 flex flex-wrap gap-2 text-[11px] uppercase tracking-[0.15em] text-neutral-500'>
+                  <div className='mt-2 flex flex-wrap gap-2 text-[11px] uppercase tracking-[0.15em] text-neutral-400'>
                     <span>{c.vertical}</span>
                     <span>·</span>
                     <span>{c.period}</span>
@@ -347,7 +347,7 @@ export default async function ConsultoriaPage({ params }: PageProps) {
               {t.idiomas.items.map((it) => (
                 <li key={it.label} className='flex items-baseline justify-between rounded-xl border border-neutral-800 bg-neutral-900/40 px-5 py-3'>
                   <span className='text-sm font-semibold text-neutral-200'>{it.label}</span>
-                  <span className='text-xs text-neutral-500 text-end max-w-[60%]'>{it.level}</span>
+                  <span className='text-xs text-neutral-400 text-end max-w-[60%]'>{it.level}</span>
                 </li>
               ))}
             </ul>
@@ -378,7 +378,7 @@ export default async function ConsultoriaPage({ params }: PageProps) {
             ))}
           </div>
           <div className='mt-10 max-w-3xl mx-auto rounded-2xl border border-neutral-800 bg-neutral-900/30 p-6'>
-            <p className='text-[11px] uppercase tracking-[0.18em] text-neutral-500 mb-2'>{t.ctaStack.qualifier.title}</p>
+            <p className='text-[11px] uppercase tracking-[0.18em] text-neutral-400 mb-2'>{t.ctaStack.qualifier.title}</p>
             <p className='text-sm text-neutral-300 leading-relaxed'>{t.ctaStack.qualifier.description}</p>
           </div>
         </div>

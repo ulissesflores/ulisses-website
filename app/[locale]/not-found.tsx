@@ -59,14 +59,14 @@ export default async function NotFound() {
                 <Icon size={20} className='text-emerald-500 shrink-0' />
                 <div>
                   <p className='text-sm font-medium text-neutral-200'>{link.label}</p>
-                  <p className='text-xs text-neutral-500'>{link.description}</p>
+                  <p className='text-xs text-neutral-400'>{link.description}</p>
                 </div>
               </Link>
             );
           })}
         </div>
 
-        <div className='flex items-center gap-2 justify-center text-sm text-neutral-500'>
+        <div className='flex items-center gap-2 justify-center text-sm text-neutral-400'>
           <Search size={14} />
           <span>{t.searchHint}</span>
         </div>

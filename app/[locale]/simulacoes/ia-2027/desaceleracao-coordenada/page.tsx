@@ -139,7 +139,7 @@ export default async function DesaceleracaoCoordenadaPage({ params }: PageProps)
             </Link>
             <Link
               href={localePath('/simulacoes/ia-2027/corrida-estrategica', locale)}
-              className='text-xs text-neutral-500 hover:text-neutral-300 underline'
+              className='text-xs text-neutral-400 hover:text-neutral-300 underline'
             >
               {t.ctaAlt}
             </Link>

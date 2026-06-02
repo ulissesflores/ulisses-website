@@ -200,7 +200,7 @@ export default async function ProjetoPsiPage({ params }: PageProps) {
       {/* CROSS-LINK */}
       <aside className='bg-neutral-950 pb-20'>
         <div className='mx-auto max-w-4xl px-6 text-center'>
-          <Link href={localePath('/whitepapers/projeto-psi', locale)} className='inline-flex items-center gap-2 text-sm text-neutral-500 transition-colors hover:text-emerald-400'>
+          <Link href={localePath('/whitepapers/projeto-psi', locale)} className='inline-flex items-center gap-2 text-sm text-neutral-400 transition-colors hover:text-emerald-400'>
             {t.crossLink}
           </Link>
         </div>

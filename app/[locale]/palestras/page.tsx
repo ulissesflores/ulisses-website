@@ -164,7 +164,7 @@ export default async function PalestrasPage({ params }: PageProps) {
       {/* TRUST */}
       <section className='bg-neutral-950 py-12 border-t border-neutral-900'>
         <div className='mx-auto max-w-5xl px-6'>
-          <p className='text-center text-[11px] uppercase tracking-[0.18em] text-neutral-500 mb-6'>
+          <p className='text-center text-[11px] uppercase tracking-[0.18em] text-neutral-400 mb-6'>
             {t.trust.label}
           </p>
           <ul className='flex flex-wrap justify-center gap-x-6 gap-y-3 text-sm text-neutral-300'>
@@ -243,7 +243,7 @@ export default async function PalestrasPage({ params }: PageProps) {
             {t.cache.title}
           </h2>
           <p className='mt-4 text-center text-neutral-400 max-w-3xl mx-auto'>{t.cache.subtitle}</p>
-          <div className='mt-10 overflow-x-auto rounded-2xl border border-neutral-800'>
+          <div tabIndex={0} className='mt-10 overflow-x-auto rounded-2xl border border-neutral-800'>
             <table className='w-full text-sm'>
               <thead className='bg-neutral-900 text-neutral-300'>
                 <tr>
@@ -263,7 +263,7 @@ export default async function PalestrasPage({ params }: PageProps) {
               </tbody>
             </table>
           </div>
-          <p className='mt-6 text-xs text-neutral-500 max-w-3xl mx-auto text-center leading-relaxed'>{t.cache.note}</p>
+          <p className='mt-6 text-xs text-neutral-400 max-w-3xl mx-auto text-center leading-relaxed'>{t.cache.note}</p>
         </div>
       </section>
 
@@ -289,7 +289,7 @@ export default async function PalestrasPage({ params }: PageProps) {
             >
               {t.briefing.submitButton}
             </a>
-            <p className='mt-4 text-xs text-neutral-500'>{t.briefing.note}</p>
+            <p className='mt-4 text-xs text-neutral-400'>{t.briefing.note}</p>
           </div>
         </div>
       </section>
@@ -314,7 +314,7 @@ export default async function PalestrasPage({ params }: PageProps) {
               {t.idiomas.items.map((it) => (
                 <li key={it.label} className='flex items-baseline justify-between rounded-xl border border-neutral-800 bg-neutral-900/40 px-5 py-3'>
                   <span className='text-sm font-semibold text-neutral-200'>{it.label}</span>
-                  <span className='text-xs text-neutral-500 text-end max-w-[60%]'>{it.level}</span>
+                  <span className='text-xs text-neutral-400 text-end max-w-[60%]'>{it.level}</span>
                 </li>
               ))}
             </ul>
