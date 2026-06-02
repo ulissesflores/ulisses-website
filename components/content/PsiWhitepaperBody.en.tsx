@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import { localePath } from '@/lib/locale-path';
 import type { Locale } from '@/data/i18n';
 
@@ -38,7 +39,7 @@ export function PsiWhitepaperBody({ locale, includeFigures = false }: PsiWhitepa
               ].map((item) => (
                 <li key={item.n}>
                   <a href={`#section-${item.n.replace('.', '-')}`} className='text-cyan-300 hover:text-cyan-100 transition-colors'>
-                    <span className='inline-block w-10 text-neutral-500 font-mono text-xs'>{item.n}</span>
+                    <span className='inline-block w-10 text-neutral-400 font-mono text-xs'>{item.n}</span>
                     {item.t}
                   </a>
                 </li>
@@ -109,13 +110,16 @@ export function PsiWhitepaperBody({ locale, includeFigures = false }: PsiWhitepa
             </p>
 
             <figure className='not-prose my-16'>
-              <img
+              <Image
                 src='/whitepapers/psi-arquitetura-hardware-camadas-defesa.webp'
                 alt='Exploded isometric diagram detailing the four physical defense layers of the Project PSI cryptographic hardware: external Copper-Tungsten shielding, epoxy resin potting, cyan active security mesh (Tamper Mesh), and silicon logic core.'
                 loading='lazy'
-                className='w-full rounded-2xl mix-blend-screen brightness-[1.3] contrast-[1.4]'
+                width={2752}
+                height={1536}
+                sizes='(max-width: 1024px) 100vw, 1024px'
+                className='w-full h-auto rounded-2xl mix-blend-screen brightness-[1.3] contrast-[1.4]'
               />
-              <figcaption className='text-center text-sm text-neutral-500 font-mono'>
+              <figcaption className='text-center text-sm text-neutral-400 font-mono'>
                 <strong className='text-cyan-500 uppercase tracking-widest'>Figure 1:</strong> Physical and Logical Defense Layers of the PSI Receptacle (Cu-W → Epoxy → Tamper Mesh → Silicon).
               </figcaption>
             </figure>
@@ -180,7 +184,7 @@ export function PsiWhitepaperBody({ locale, includeFigures = false }: PsiWhitepa
             </p>
 
             {/* Table: Shielding Comparison */}
-            <div className='not-prose overflow-x-auto my-12 border border-neutral-800 rounded-xl shadow-lg'>
+            <div tabIndex={0} className='not-prose overflow-x-auto my-12 border border-neutral-800 rounded-xl shadow-lg'>
               <table className='w-full text-start text-sm text-neutral-300'>
                 <caption className='p-4 bg-neutral-900/80 text-start text-cyan-400 font-mono uppercase tracking-widest font-bold border-b border-neutral-800 text-xs'>
                   Table 1: Electromagnetic Shielding Parameters (Cu-W)
@@ -326,13 +330,16 @@ export function PsiWhitepaperBody({ locale, includeFigures = false }: PsiWhitepa
             </p>
 
             <figure className='not-prose my-16'>
-              <img
+              <Image
                 src='/whitepapers/psi-ciclo-vida-chave-criptografica-sram-puf.webp'
                 alt='Logical flowchart of the private key lifecycle in Project PSI via SRAM PUF. The flow converts physical silicon noise into pure entropy, processes it through the Fuzzy Extractor to generate the seed (structured crystal), culminating in instant zeroization and digital disintegration.'
                 loading='lazy'
-                className='w-full rounded-2xl mix-blend-screen brightness-[1.3] contrast-[1.4]'
+                width={2752}
+                height={1536}
+                sizes='(max-width: 1024px) 100vw, 1024px'
+                className='w-full h-auto rounded-2xl mix-blend-screen brightness-[1.3] contrast-[1.4]'
               />
-              <figcaption className='text-center text-sm text-neutral-500 font-mono'>
+              <figcaption className='text-center text-sm text-neutral-400 font-mono'>
                 <strong className='text-cyan-500 uppercase tracking-widest'>Figure 2:</strong> Ephemeral Key Derivation Flow via SRAM PUF (Power-up → RDF → Fuzzy Extractor → Seed → Zeroization).
               </figcaption>
             </figure>
@@ -445,7 +452,7 @@ export function PsiWhitepaperBody({ locale, includeFigures = false }: PsiWhitepa
             </p>
 
             {/* Table: Biometrics */}
-            <div className='not-prose overflow-x-auto my-12 border border-neutral-800 rounded-xl shadow-lg'>
+            <div tabIndex={0} className='not-prose overflow-x-auto my-12 border border-neutral-800 rounded-xl shadow-lg'>
               <table className='w-full text-start text-sm text-neutral-300'>
                 <caption className='p-4 bg-neutral-900/80 text-start text-cyan-400 font-mono uppercase tracking-widest font-bold border-b border-neutral-800 text-xs'>
                   Table 2: Physiological Coercion Detection Biomarkers
@@ -516,13 +523,16 @@ export function PsiWhitepaperBody({ locale, includeFigures = false }: PsiWhitepa
             </p>
 
             <figure className='not-prose my-16'>
-              <img
+              <Image
                 src='/whitepapers/psi-protocolo-phantom-biometria-coacao.webp'
                 alt='Logical decision tree of the Phantom Input Protocol (Deniable Encryption). A central biometric actively bifurcates routing: the secure upper optical path (cyan) accesses the real key (RSK), while the lower path under coercion detection (amber) silently redirects to a fake key (FSK).'
                 loading='lazy'
-                className='w-full rounded-2xl mix-blend-screen brightness-[1.3] contrast-[1.4]'
+                width={2752}
+                height={1536}
+                sizes='(max-width: 1024px) 100vw, 1024px'
+                className='w-full h-auto rounded-2xl mix-blend-screen brightness-[1.3] contrast-[1.4]'
               />
-              <figcaption className='text-center text-sm text-neutral-500 font-mono'>
+              <figcaption className='text-center text-sm text-neutral-400 font-mono'>
                 <strong className='text-cyan-500 uppercase tracking-widest'>Figure 3:</strong> Phantom Input Protocol — Biometrics → Coercion Flag → RSK vs FSK (Deniable Encryption).
               </figcaption>
             </figure>
@@ -602,13 +612,16 @@ export function PsiWhitepaperBody({ locale, includeFigures = false }: PsiWhitepa
             </p>
 
             <figure className='not-prose my-16'>
-              <img
+              <Image
                 src='/whitepapers/psi-arquitetura-tmr-redundancia-voter.webp'
                 alt='Architectural diagram of Project PSI&apos;s aerospace Triple Modular Redundancy (TMR). Three independent microprocessors process data in a fault-tolerant parallel manner, converging to a central Majority Voter logic gate that validates and emits only a unified cyan output immune to fault injection.'
                 loading='lazy'
-                className='w-full rounded-2xl mix-blend-screen brightness-[1.3] contrast-[1.4]'
+                width={2752}
+                height={1536}
+                sizes='(max-width: 1024px) 100vw, 1024px'
+                className='w-full h-auto rounded-2xl mix-blend-screen brightness-[1.3] contrast-[1.4]'
               />
-              <figcaption className='text-center text-sm text-neutral-500 font-mono'>
+              <figcaption className='text-center text-sm text-neutral-400 font-mono'>
                 <strong className='text-cyan-500 uppercase tracking-widest'>Figure 4:</strong> Triple Modular Redundancy — Sub-blocks A/B/C → Majority Voter → Infallible Output.
               </figcaption>
             </figure>
@@ -667,7 +680,7 @@ export function PsiWhitepaperBody({ locale, includeFigures = false }: PsiWhitepa
           {/* ─── References ─── */}
           <section className='mt-16 rounded-xl border border-neutral-800 bg-neutral-900/30 p-6'>
             <h2 className='text-lg font-bold text-white mb-4'>Scientific References</h2>
-            <ol className='space-y-2 text-xs text-neutral-500 list-decimal list-inside'>
+            <ol className='space-y-2 text-xs text-neutral-400 list-decimal list-inside'>
               <li id='ref-1'>NIST SP 800-208. <em>Recommendation for Stateful Hash-Based Signature Schemes (XMSS/LMS)</em>. National Institute of Standards and Technology.</li>
               <li id='ref-2'>Roel Maes (2013). <em>Physically Unclonable Functions: Constructions, Properties and Applications</em>. Springer.</li>
               <li id='ref-3'>Kocabaş, O., et al. &ldquo;A Review of Side-Channel Attacks on Cryptographic Hardware.&rdquo; <em>IEEE Transactions on Information Forensics and Security</em>.</li>
