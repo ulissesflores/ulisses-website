@@ -128,7 +128,7 @@ export default async function PalestrasPage({ params }: PageProps) {
   };
 
   return (
-    <>
+    <main>
       <script type='application/ld+json' dangerouslySetInnerHTML={{ __html: JSON.stringify(pageJsonLd) }} />
 
       {/* HERO */}
@@ -369,6 +369,6 @@ export default async function PalestrasPage({ params }: PageProps) {
           </a>
         </div>
       </section>
-    </>
+    </main>
   );
 }

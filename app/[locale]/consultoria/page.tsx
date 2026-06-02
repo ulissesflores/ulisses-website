@@ -113,7 +113,7 @@ export default async function ConsultoriaPage({ params }: PageProps) {
   };
 
   return (
-    <>
+    <main>
       <script type='application/ld+json' dangerouslySetInnerHTML={{ __html: JSON.stringify(pageJsonLd) }} />
 
       {/* HERO */}
@@ -448,6 +448,6 @@ export default async function ConsultoriaPage({ params }: PageProps) {
           </a>
         </div>
       </section>
-    </>
+    </main>
   );
 }

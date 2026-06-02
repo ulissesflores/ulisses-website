@@ -92,7 +92,7 @@ export default async function CertificationsPage({ params }: PageProps) {
   };
 
   return (
-    <>
+    <main>
       {/* Hero */}
       <section className='bg-neutral-950 text-neutral-200 pt-20 pb-16 border-b border-neutral-800'>
         <div className='max-w-5xl mx-auto px-6'>
@@ -183,6 +183,6 @@ export default async function CertificationsPage({ params }: PageProps) {
       </section>
 
       <script type='application/ld+json' dangerouslySetInnerHTML={{ __html: JSON.stringify(pageJsonLd) }} />
-    </>
+    </main>
   );
 }

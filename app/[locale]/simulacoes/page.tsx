@@ -60,7 +60,7 @@ export default async function SimulacoesPage({ params }: PageProps) {
   };
 
   return (
-    <>
+    <main>
       {/* Hero */}
       <section className='bg-neutral-950 text-neutral-200 pt-20 pb-16 border-b border-neutral-800'>
         <div className='max-w-4xl mx-auto px-6'>
@@ -180,6 +180,6 @@ export default async function SimulacoesPage({ params }: PageProps) {
       </section>
 
       <script id='structured-data-simulacoes' type='application/ld+json' dangerouslySetInnerHTML={{ __html: JSON.stringify(pageJsonLd) }} />
-    </>
+    </main>
   );
 }

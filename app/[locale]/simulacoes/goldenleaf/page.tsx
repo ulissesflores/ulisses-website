@@ -77,7 +77,7 @@ export default async function GoldenLeafPage({ params }: PageProps) {
   };
 
   return (
-    <>
+    <main>
       {/* Hero Section */}
       <section className='bg-neutral-950 text-neutral-200 pt-20 pb-16 border-b border-neutral-800'>
         <div className='max-w-4xl mx-auto px-6'>
@@ -211,6 +211,6 @@ export default async function GoldenLeafPage({ params }: PageProps) {
         type='application/ld+json'
         dangerouslySetInnerHTML={{ __html: JSON.stringify(pageJsonLd) }}
       />
-    </>
+    </main>
   );
 }

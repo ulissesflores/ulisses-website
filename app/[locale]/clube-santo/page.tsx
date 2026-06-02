@@ -78,7 +78,7 @@ export default async function ClubeSantoPage({ params }: PageProps) {
   };
 
   return (
-    <>
+    <main>
       <script type='application/ld+json' dangerouslySetInnerHTML={{ __html: JSON.stringify(pageJsonLd) }} />
 
       {/* Hero */}
@@ -216,6 +216,6 @@ export default async function ClubeSantoPage({ params }: PageProps) {
           <FaqSection items={[...tFaq]} sectionTitle={t.faq.sectionTitle} />
         </div>
       </section>
-    </>
+    </main>
   );
 }

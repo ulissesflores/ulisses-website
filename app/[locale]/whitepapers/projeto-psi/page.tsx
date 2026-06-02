@@ -100,7 +100,7 @@ export default async function ProjetoPsiPage({ params }: PageProps) {
   };
 
   return (
-    <>
+    <main>
       {/* ═══════════════════════════════════════════════════════════════
           HERO — White section for SEO/GEO crawl visibility
           ═══════════════════════════════════════════════════════════════ */}
@@ -227,6 +227,6 @@ export default async function ProjetoPsiPage({ params }: PageProps) {
         type='application/ld+json'
         dangerouslySetInnerHTML={{ __html: JSON.stringify(pageJsonLd) }}
       />
-    </>
+    </main>
   );
 }
