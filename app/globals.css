@@ -28,6 +28,13 @@ body {
   font-family: var(--font-sans);
 }
 
+/* Acessibilidade — foco visível global por teclado (WCAG 2.2 AA, 2.4.7) */
+:focus-visible {
+  outline: 2px solid #34d399;
+  outline-offset: 2px;
+  border-radius: 3px;
+}
+
 /* IA 2027 storyHtml overrides — inline HTML uses light-theme classes, so we override them */
 .ia2027-story p {
   color: #d4d4d4 !important;
