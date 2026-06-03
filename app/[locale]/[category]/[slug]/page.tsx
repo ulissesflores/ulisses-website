@@ -276,7 +276,7 @@ export default async function ArticlePage({ params }: PageProps) {
 
         <div className='prose prose-lg prose-invert max-w-[68ch] mx-auto space-y-10'>
           <section>
-            <h2 className='text-xl font-bold text-white mb-4 flex items-center gap-2'>
+            <h2 id='sec-scientific-context' className='text-xl font-bold text-white mb-4 flex items-center gap-2'>
               <BookOpen size={20} className='text-emerald-500' /> {t.scientificContext}
             </h2>
             <div className='bg-neutral-900/40 p-8 rounded-2xl border border-emerald-500/20 space-y-4'>
@@ -295,7 +295,7 @@ export default async function ArticlePage({ params }: PageProps) {
           </section>
 
           <section>
-            <h2 className='text-xl font-bold text-white mb-4 flex items-center gap-2'>
+            <h2 id='sec-abstract-ptbr' className='text-xl font-bold text-white mb-4 flex items-center gap-2'>
               <BookOpen size={20} className='text-cyan-500' /> {t.abstractPtBr}
             </h2>
             <div className='bg-neutral-900/30 p-8 rounded-2xl border border-white/5 text-lg leading-relaxed text-neutral-300 shadow-inner space-y-4'>
@@ -306,7 +306,7 @@ export default async function ArticlePage({ params }: PageProps) {
           </section>
 
           <section>
-            <h2 className='text-xl font-bold text-white mb-4 flex items-center gap-2'>
+            <h2 id='sec-abstract-en' className='text-xl font-bold text-white mb-4 flex items-center gap-2'>
               <BookOpen size={20} className='text-cyan-500' /> {t.abstractEn}
             </h2>
             <div className='bg-neutral-900/30 p-8 rounded-2xl border border-white/5 text-lg leading-relaxed text-neutral-300 shadow-inner'>
@@ -315,7 +315,7 @@ export default async function ArticlePage({ params }: PageProps) {
           </section>
 
           <section>
-            <h2 className='text-2xl font-semibold text-white mb-3'>{t.introduction}</h2>
+            <h2 id='sec-introduction' className='text-2xl font-semibold text-white mb-3'>{t.introduction}</h2>
             <div className='text-neutral-300 leading-relaxed space-y-4'>
               {sectionParagraphs(activeSections.introduction).map((paragraph, index) => (
                 <p key={`intro-${index}`}>{paragraph}</p>
@@ -324,7 +324,7 @@ export default async function ArticlePage({ params }: PageProps) {
           </section>
 
           <section>
-            <h2 className='text-2xl font-semibold text-white mb-3'>{t.methodology}</h2>
+            <h2 id='sec-methodology' className='text-2xl font-semibold text-white mb-3'>{t.methodology}</h2>
             <div className='text-neutral-300 leading-relaxed space-y-4'>
               {sectionParagraphs(activeSections.methods).map((paragraph, index) => (
                 <p key={`methods-${index}`}>{paragraph}</p>
@@ -333,7 +333,7 @@ export default async function ArticlePage({ params }: PageProps) {
           </section>
 
           <section>
-            <h2 className='text-2xl font-semibold text-white mb-3'>{t.developmentResults}</h2>
+            <h2 id='sec-results' className='text-2xl font-semibold text-white mb-3'>{t.developmentResults}</h2>
             <div className='text-neutral-300 leading-relaxed space-y-4'>
               {sectionParagraphs(activeSections.results).map((paragraph, index) => (
                 <p key={`results-${index}`}>{paragraph}</p>
@@ -342,7 +342,7 @@ export default async function ArticlePage({ params }: PageProps) {
           </section>
 
           <section>
-            <h2 className='text-2xl font-semibold text-white mb-3'>{t.discussion}</h2>
+            <h2 id='sec-discussion' className='text-2xl font-semibold text-white mb-3'>{t.discussion}</h2>
             <div className='text-neutral-300 leading-relaxed space-y-4'>
               {sectionParagraphs(activeSections.discussion).map((paragraph, index) => (
                 <p key={`discussion-${index}`}>{paragraph}</p>
@@ -351,7 +351,7 @@ export default async function ArticlePage({ params }: PageProps) {
           </section>
 
           <section>
-            <h2 className='text-2xl font-semibold text-white mb-3'>{t.recommendations}</h2>
+            <h2 id='sec-recommendations' className='text-2xl font-semibold text-white mb-3'>{t.recommendations}</h2>
             <ul className='list-disc ps-6 text-neutral-300 space-y-3'>
               {activeSections.recommendations.map((recommendation) => (
                 <li key={recommendation}>{recommendation}</li>
@@ -360,7 +360,7 @@ export default async function ArticlePage({ params }: PageProps) {
           </section>
 
           <section>
-            <h2 className='text-2xl font-semibold text-white mb-3'>{t.conclusion}</h2>
+            <h2 id='sec-conclusion' className='text-2xl font-semibold text-white mb-3'>{t.conclusion}</h2>
             <div className='text-neutral-300 leading-relaxed space-y-4'>
               {sectionParagraphs(activeSections.conclusion).map((paragraph, index) => (
                 <p key={`conclusion-${index}`}>{paragraph}</p>
@@ -369,7 +369,7 @@ export default async function ArticlePage({ params }: PageProps) {
           </section>
 
           <section>
-            <h2 className='text-2xl font-semibold text-white mb-3'>{t.referencesHarvard}</h2>
+            <h2 id='sec-references' className='text-2xl font-semibold text-white mb-3'>{t.referencesHarvard}</h2>
             <ul className='list-disc ps-6 text-neutral-300 space-y-2'>
               {activeSections.references.map((reference) => (
                 <li key={`${reference.citation}-${reference.url ?? ''}`}>
