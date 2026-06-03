@@ -141,6 +141,8 @@ async function httpHead(url, label) {
 function loadPriorityUrls() {
   const critical = [
     '/',
+    '/consultoria',
+    '/palestras',
     '/identidade',
     '/certifications',
     '/simulacoes',
