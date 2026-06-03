@@ -103,11 +103,12 @@ body {
 
 /* Sim callout block */
 .sim-callout {
-  border-left: 3px solid #10b981;
+  border-inline-start: 3px solid #10b981;
   background: rgba(23, 23, 23, 0.6);
   padding: 1rem 1.5rem;
   margin: 1.5rem 0;
-  border-radius: 0 0.5rem 0.5rem 0;
+  border-start-end-radius: 0.5rem;
+  border-end-end-radius: 0.5rem;
 }
 
 /* Section divider */

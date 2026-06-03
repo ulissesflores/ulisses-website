@@ -186,7 +186,7 @@ export default async function ArticlePage({ params }: PageProps) {
           href={localePath(`/${publication.category}`, locale)}
           className='inline-flex items-center gap-2 text-sm text-neutral-400 hover:text-emerald-400 transition-colors mb-4 group'
         >
-          <ArrowLeft size={16} className='group-hover:-translate-x-1 transition-transform' />
+          <ArrowLeft size={16} className='group-hover:-translate-x-1 transition-transform rtl:-scale-x-100' />
           {t.backTo} {collection.title}
         </Link>
 
@@ -282,7 +282,7 @@ export default async function ArticlePage({ params }: PageProps) {
             <div className='bg-neutral-900/40 p-8 rounded-2xl border border-emerald-500/20 space-y-4'>
               <p className='text-neutral-200 leading-relaxed'>{activeLanding.overview}</p>
               <p className='text-neutral-300 leading-relaxed'>{activeLanding.problem}</p>
-              <ul className='list-disc pl-6 text-neutral-300 space-y-2'>
+              <ul className='list-disc ps-6 text-neutral-300 space-y-2'>
                 {activeLanding.contributions.map((contribution) => (
                   <li key={contribution}>{contribution}</li>
                 ))}
@@ -352,7 +352,7 @@ export default async function ArticlePage({ params }: PageProps) {
 
           <section>
             <h2 className='text-2xl font-semibold text-white mb-3'>{t.recommendations}</h2>
-            <ul className='list-disc pl-6 text-neutral-300 space-y-3'>
+            <ul className='list-disc ps-6 text-neutral-300 space-y-3'>
               {activeSections.recommendations.map((recommendation) => (
                 <li key={recommendation}>{recommendation}</li>
               ))}
@@ -370,7 +370,7 @@ export default async function ArticlePage({ params }: PageProps) {
 
           <section>
             <h2 className='text-2xl font-semibold text-white mb-3'>{t.referencesHarvard}</h2>
-            <ul className='list-disc pl-6 text-neutral-300 space-y-2'>
+            <ul className='list-disc ps-6 text-neutral-300 space-y-2'>
               {activeSections.references.map((reference) => (
                 <li key={`${reference.citation}-${reference.url ?? ''}`}>
                   <span>{reference.citation}</span>
@@ -392,7 +392,7 @@ export default async function ArticlePage({ params }: PageProps) {
             </ul>
           </section>
 
-          <section className='mt-12 p-6 border-l-4 border-emerald-500/30 bg-emerald-900/5 rounded-r-xl'>
+          <section className='mt-12 p-6 border-s-4 border-emerald-500/30 bg-emerald-900/5 rounded-e-xl'>
             <p className='text-sm text-neutral-400 italic'>
               <strong>{t.howToCite}</strong> FLORES, C. U. &quot;{localizedTitle}&quot;. Codex Hash Research Lab,
               {` ${publication.date}`}. {t.availableAt} {upkfMeta.primaryWebsite}/{publication.category}/{publication.id}
