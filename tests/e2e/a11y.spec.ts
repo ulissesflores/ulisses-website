@@ -26,6 +26,7 @@ const ROUTES = [
   '/whitepapers/projeto-psi',
   '/he/whitepapers/projeto-psi',
   '/research/2025-lstm-asset-prediction',
+  '/he/research/2025-lstm-asset-prediction', // cobre o ArticleToc (D04) em RTL no gate
 ];
 
 test.describe('Acessibilidade WCAG 2.2 A/AA — axe-core', () => {

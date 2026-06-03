@@ -55,7 +55,7 @@ export function ArticleToc({ sections, title }: ArticleTocProps) {
         <li key={s.id}>
           <a
             href={`#${s.id}`}
-            aria-current={activeId === s.id ? 'step' : undefined}
+            aria-current={activeId === s.id ? 'location' : undefined}
             onClick={() => focusHeading(s.id)}
             className={`block border-s-2 ps-3 py-1 leading-snug transition-colors ${
               activeId === s.id
