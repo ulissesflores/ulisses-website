@@ -406,7 +406,7 @@ export default async function Home({ params }: PageProps) {
 
         {/* SEÇÃO: FORMAL BIO / MANIFESTO (O Texto Lattes na íntegra) */}
         <section id="manifesto" className="mb-24 scroll-mt-24 border-t border-white/5 pt-12">
-           <div className="flex items-center gap-3 mb-8 opacity-70">
+           <div className="flex items-center gap-3 mb-8 opacity-90">
               <FileText size={18} className="text-neutral-400" />
               <h2 className="text-sm font-bold text-neutral-400 uppercase tracking-widest">{t.manifesto.title}</h2>
            </div>
@@ -528,7 +528,7 @@ function FormationCard({ year, title, inst, desc, highlight }: any) {
 
 function TimelineItem({ role, company, period, desc, current, currentLabel, isOld }: any) {
   return (
-    <div className={`relative ${isOld ? 'opacity-60 hover:opacity-100 transition-opacity' : ''}`}>
+    <div className={`relative ${isOld ? 'opacity-90 hover:opacity-100 transition-opacity' : ''}`}>
       <span className={`absolute -left-[41px] top-1.5 w-4 h-4 rounded-full border-2 border-neutral-950 ${current ? 'bg-emerald-500' : 'bg-neutral-700'}`}></span>
       <div className="flex flex-col sm:flex-row sm:items-baseline gap-2 mb-1">
         <h3 className={`text-lg font-bold ${current ? 'text-white' : 'text-neutral-300'}`}>{role}</h3>

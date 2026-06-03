@@ -242,7 +242,7 @@ export default async function ArticlePage({ params }: PageProps) {
             <a
               href={publication.primaryPdfUrl || publication.downloadUrl}
               target='_blank'
-              className='flex items-center justify-center gap-3 bg-emerald-600 hover:bg-emerald-500 text-white px-7 py-3 rounded-lg font-bold transition-all shadow-[0_0_20px_rgba(16,185,129,0.2)] hover:shadow-[0_0_30px_rgba(16,185,129,0.4)]'
+              className='flex items-center justify-center gap-3 bg-emerald-700 hover:bg-emerald-600 text-white px-7 py-3 rounded-lg font-bold transition-all shadow-[0_0_20px_rgba(16,185,129,0.2)] hover:shadow-[0_0_30px_rgba(16,185,129,0.4)]'
             >
               <Download size={20} />
               {t.downloadPdf}
