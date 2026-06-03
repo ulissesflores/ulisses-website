@@ -274,7 +274,7 @@ export default async function ArticlePage({ params }: PageProps) {
           </div>
         </header>
 
-        <div className='prose prose-invert max-w-none space-y-10'>
+        <div className='prose prose-lg prose-invert max-w-[68ch] mx-auto space-y-10'>
           <section>
             <h2 className='text-xl font-bold text-white mb-4 flex items-center gap-2'>
               <BookOpen size={20} className='text-emerald-500' /> {t.scientificContext}
