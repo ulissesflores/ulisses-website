@@ -152,6 +152,7 @@ export const common = {
     goHome: 'Vai alla Home',
     downloadPdf: 'Scarica PDF Finale',
     legacyPdf: 'PDF Legacy',
+    onThisPage: 'In questa pagina',
     scientificContext: 'Contesto Scientifico della Landing',
     abstractPtBr: 'Sommario (PT-BR)',
     abstractEn: 'Sommario (EN)',

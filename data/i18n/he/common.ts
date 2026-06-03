@@ -152,6 +152,7 @@ export const common = {
     goHome: 'לדף הבית',
     downloadPdf: 'הורד PDF סופי',
     legacyPdf: 'PDF ישן',
+    onThisPage: 'בעמוד זה',
     scientificContext: 'הקשר מדעי של הנחיתה',
     abstractPtBr: 'תקציר (PT-BR)',
     abstractEn: 'תקציר (EN)',

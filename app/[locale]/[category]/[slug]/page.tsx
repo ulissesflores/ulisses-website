@@ -5,6 +5,7 @@ import { ArrowLeft, BookOpen, Calendar, Download, FileText } from 'lucide-react'
 import { publicationCollections, publications, type TranslatableLocale } from '@/data/publications';
 import { upkfMeta } from '@/data/generated/upkf.generated';
 import { AuthorHubCard } from '@/components/author-hub-card';
+import { ArticleToc } from '@/components/article-toc';
 import { localePath } from '@/lib/locale-path';
 import { defaultLocale, isLocale, type Locale } from '@/data/i18n';
 import { getDictionary } from '@/lib/get-dictionary';
@@ -104,6 +105,19 @@ export default async function ArticlePage({ params }: PageProps) {
   // Select locale-aware article sections and landing content
   const activeSections = (tLocale && publication.translatedSections?.[tLocale]) || publication.articleSections;
   const activeLanding = (tLocale && publication.translatedLanding?.[tLocale]) || publication.landing;
+
+  const tocSections = [
+    { id: 'sec-scientific-context', label: t.scientificContext },
+    { id: 'sec-abstract-ptbr', label: t.abstractPtBr },
+    { id: 'sec-abstract-en', label: t.abstractEn },
+    { id: 'sec-introduction', label: t.introduction },
+    { id: 'sec-methodology', label: t.methodology },
+    { id: 'sec-results', label: t.developmentResults },
+    { id: 'sec-discussion', label: t.discussion },
+    { id: 'sec-recommendations', label: t.recommendations },
+    { id: 'sec-conclusion', label: t.conclusion },
+    { id: 'sec-references', label: t.referencesHarvard },
+  ];
 
   const sectionParagraphs = (text: string) =>
     text
@@ -274,7 +288,11 @@ export default async function ArticlePage({ params }: PageProps) {
           </div>
         </header>
 
-        <div className='prose prose-lg prose-invert max-w-[68ch] mx-auto space-y-10'>
+        <div className='lg:flex lg:gap-10 lg:items-start lg:justify-center'>
+          <div className='lg:order-2 lg:w-60 lg:shrink-0 mb-8 lg:mb-0'>
+            <ArticleToc sections={tocSections} title={t.onThisPage} />
+          </div>
+          <div className='prose prose-lg prose-invert max-w-[68ch] mx-auto min-w-0 lg:order-1 space-y-10'>
           <section>
             <h2 id='sec-scientific-context' className='text-xl font-bold text-white mb-4 flex items-center gap-2'>
               <BookOpen size={20} className='text-emerald-500' /> {t.scientificContext}
@@ -398,6 +416,7 @@ export default async function ArticlePage({ params }: PageProps) {
               {` ${publication.date}`}. {t.availableAt} {upkfMeta.primaryWebsite}/{publication.category}/{publication.id}
             </p>
           </section>
+          </div>
         </div>
       </main>
 

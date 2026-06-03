@@ -152,6 +152,7 @@ export const common = {
     goHome: 'Go to Home',
     downloadPdf: 'Download Final PDF',
     legacyPdf: 'Legacy PDF',
+    onThisPage: 'On this page',
     scientificContext: 'Scientific Landing Context',
     abstractPtBr: 'Abstract — Portuguese',
     abstractEn: 'Abstract — English',
