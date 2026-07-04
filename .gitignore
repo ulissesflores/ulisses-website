@@ -107,6 +107,9 @@ AUDITORIA-SITE.md
 PLANO-GRUPO-B.md
 PESQUISA-SOTA-GRUPO-B.md
 
+# Planos de ação SEO/GEO (docs de trabalho internos)
+PLANO-ACAO-SEO-GEO-*.md
+
 # Entrypoint do Claude Code + skills locais (docs de trabalho internos)
 CLAUDE.md
 .claude/
