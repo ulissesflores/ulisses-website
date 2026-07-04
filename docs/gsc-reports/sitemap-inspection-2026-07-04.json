@@ -1,0 +1,958 @@
+{
+ "generatedAt": "2026-07-04T23:15:19.248Z",
+ "site": "sc-domain:ulissesflores.com",
+ "source": "sitemap.xml (164 URLs)",
+ "results": [
+  {
+   "url": "https://ulissesflores.com",
+   "verdict": "PASS",
+   "coverageState": "Submitted and indexed",
+   "googleCanonical": "https://ulissesflores.com",
+   "lastCrawlTime": "2026-07-02T06:09:05Z"
+  },
+  {
+   "url": "https://ulissesflores.com/identidade",
+   "verdict": "PASS",
+   "coverageState": "Submitted and indexed",
+   "googleCanonical": "https://ulissesflores.com/identidade",
+   "lastCrawlTime": "2026-06-21T07:00:17Z"
+  },
+  {
+   "url": "https://ulissesflores.com/consultoria",
+   "verdict": "PASS",
+   "coverageState": "Submitted and indexed",
+   "googleCanonical": "https://ulissesflores.com/consultoria",
+   "lastCrawlTime": "2026-07-04T06:00:51Z"
+  },
+  {
+   "url": "https://ulissesflores.com/palestras",
+   "verdict": "PASS",
+   "coverageState": "Submitted and indexed",
+   "googleCanonical": "https://ulissesflores.com/palestras",
+   "lastCrawlTime": "2026-06-03T11:48:07Z"
+  },
+  {
+   "url": "https://ulissesflores.com/simulacoes",
+   "verdict": "NEUTRAL",
+   "coverageState": "Discovered - currently not indexed"
+  },
+  {
+   "url": "https://ulissesflores.com/simulacoes/ia-2027",
+   "verdict": "PASS",
+   "coverageState": "Submitted and indexed",
+   "googleCanonical": "https://ulissesflores.com/simulacoes/ia-2027",
+   "lastCrawlTime": "2026-07-02T13:08:01Z"
+  },
+  {
+   "url": "https://ulissesflores.com/simulacoes/ia-2027/desaceleracao-coordenada",
+   "verdict": "NEUTRAL",
+   "coverageState": "Discovered - currently not indexed"
+  },
+  {
+   "url": "https://ulissesflores.com/simulacoes/ia-2027/corrida-estrategica",
+   "verdict": "NEUTRAL",
+   "coverageState": "Crawled - currently not indexed",
+   "googleCanonical": "https://ulissesflores.com/simulacoes/ia-2027/corrida-estrategica",
+   "lastCrawlTime": "2026-04-22T02:11:46Z"
+  },
+  {
+   "url": "https://ulissesflores.com/simulacoes/mumm-ra",
+   "verdict": "NEUTRAL",
+   "coverageState": "Discovered - currently not indexed"
+  },
+  {
+   "url": "https://ulissesflores.com/whitepapers/projeto-psi",
+   "verdict": "NEUTRAL",
+   "coverageState": "Discovered - currently not indexed"
+  },
+  {
+   "url": "https://ulissesflores.com/projeto-psi",
+   "verdict": "NEUTRAL",
+   "coverageState": "Discovered - currently not indexed"
+  },
+  {
+   "url": "https://ulissesflores.com/simulacoes/goldenleaf",
+   "verdict": "NEUTRAL",
+   "coverageState": "Discovered - currently not indexed"
+  },
+  {
+   "url": "https://ulissesflores.com/clube-santo",
+   "verdict": "NEUTRAL",
+   "coverageState": "Crawled - currently not indexed",
+   "googleCanonical": "https://ulissesflores.com/clube-santo",
+   "lastCrawlTime": "2026-05-18T06:06:31Z"
+  },
+  {
+   "url": "https://ulissesflores.com/research",
+   "verdict": "PASS",
+   "coverageState": "Submitted and indexed",
+   "googleCanonical": "https://ulissesflores.com/research",
+   "lastCrawlTime": "2026-07-03T10:35:50Z"
+  },
+  {
+   "url": "https://ulissesflores.com/whitepapers",
+   "verdict": "NEUTRAL",
+   "coverageState": "Discovered - currently not indexed"
+  },
+  {
+   "url": "https://ulissesflores.com/essays",
+   "verdict": "NEUTRAL",
+   "coverageState": "URL is unknown to Google"
+  },
+  {
+   "url": "https://ulissesflores.com/research/2025-little-law-resilience",
+   "verdict": "NEUTRAL",
+   "coverageState": "Discovered - currently not indexed"
+  },
+  {
+   "url": "https://ulissesflores.com/research/2025-lstm-asset-prediction",
+   "verdict": "PASS",
+   "coverageState": "Submitted and indexed",
+   "googleCanonical": "https://ulissesflores.com/research/2025-lstm-asset-prediction",
+   "lastCrawlTime": "2026-05-18T10:04:49Z"
+  },
+  {
+   "url": "https://ulissesflores.com/whitepapers/2025-hybrid-cooling-thermodynamics",
+   "verdict": "NEUTRAL",
+   "coverageState": "Excluded by ‘noindex’ tag",
+   "googleCanonical": "https://ulissesflores.com/whitepapers/2025-hybrid-cooling-thermodynamics",
+   "lastCrawlTime": "2026-07-03T16:53:00Z"
+  },
+  {
+   "url": "https://ulissesflores.com/whitepapers/2025-iot-data-sovereignty",
+   "verdict": "NEUTRAL",
+   "coverageState": "Discovered - currently not indexed"
+  },
+  {
+   "url": "https://ulissesflores.com/research/2025-fraud-detection-mlp",
+   "verdict": "NEUTRAL",
+   "coverageState": "Discovered - currently not indexed"
+  },
+  {
+   "url": "https://ulissesflores.com/research/2024-historicity-jesus-archaeology",
+   "verdict": "NEUTRAL",
+   "coverageState": "Discovered - currently not indexed"
+  },
+  {
+   "url": "https://ulissesflores.com/research/2024-bitcoin-praxeology",
+   "verdict": "NEUTRAL",
+   "coverageState": "Crawled - currently not indexed",
+   "googleCanonical": "https://ulissesflores.com/research/2024-bitcoin-praxeology",
+   "lastCrawlTime": "2026-04-25T01:05:50Z"
+  },
+  {
+   "url": "https://ulissesflores.com/research/2024-scribal-canonization-ezra",
+   "verdict": "NEUTRAL",
+   "coverageState": "Crawled - currently not indexed",
+   "googleCanonical": "https://ulissesflores.com/research/2024-scribal-canonization-ezra",
+   "lastCrawlTime": "2026-05-18T22:37:45Z"
+  },
+  {
+   "url": "https://ulissesflores.com/essays/2024-theology-economic-order",
+   "verdict": "NEUTRAL",
+   "coverageState": "Crawled - currently not indexed",
+   "googleCanonical": "https://ulissesflores.com/essays/2024-theology-economic-order",
+   "lastCrawlTime": "2026-04-21T21:37:43Z"
+  },
+  {
+   "url": "https://ulissesflores.com/whitepapers/2024-ring-signatures-privacy",
+   "verdict": "NEUTRAL",
+   "coverageState": "Discovered - currently not indexed"
+  },
+  {
+   "url": "https://ulissesflores.com/whitepapers/2024-agritech-agile-flow",
+   "verdict": "NEUTRAL",
+   "coverageState": "Discovered - currently not indexed"
+  },
+  {
+   "url": "https://ulissesflores.com/essays/2024-exegetical-treatise-anthropology",
+   "verdict": "NEUTRAL",
+   "coverageState": "Discovered - currently not indexed"
+  },
+  {
+   "url": "https://ulissesflores.com/research/2023-marian-apparitions-critique",
+   "verdict": "NEUTRAL",
+   "coverageState": "URL is unknown to Google"
+  },
+  {
+   "url": "https://ulissesflores.com/whitepapers/2023-digital-legacy",
+   "verdict": "NEUTRAL",
+   "coverageState": "Crawled - currently not indexed",
+   "googleCanonical": "https://ulissesflores.com/whitepapers/2023-digital-legacy",
+   "lastCrawlTime": "2026-06-02T16:46:57Z"
+  },
+  {
+   "url": "https://ulissesflores.com/research/2023-holy-club-methodism",
+   "verdict": "NEUTRAL",
+   "coverageState": "Discovered - currently not indexed"
+  },
+  {
+   "url": "https://ulissesflores.com/essays/2022-theology-of-hope",
+   "verdict": "NEUTRAL",
+   "coverageState": "Discovered - currently not indexed"
+  },
+  {
+   "url": "https://ulissesflores.com/essays/2020-robotics-education",
+   "verdict": "NEUTRAL",
+   "coverageState": "Discovered - currently not indexed"
+  },
+  {
+   "url": "https://ulissesflores.com/essays/2017-chaos-theory-economics",
+   "verdict": "NEUTRAL",
+   "coverageState": "Discovered - currently not indexed"
+  },
+  {
+   "url": "https://ulissesflores.com/deep-research/2025-little-law-resilience/deep-research.pdf",
+   "verdict": "NEUTRAL",
+   "coverageState": "Discovered - currently not indexed"
+  },
+  {
+   "url": "https://ulissesflores.com/deep-research/2025-lstm-asset-prediction/deep-research.pdf",
+   "verdict": "NEUTRAL",
+   "coverageState": "Discovered - currently not indexed"
+  },
+  {
+   "url": "https://ulissesflores.com/deep-research/2025-hybrid-cooling-thermodynamics/deep-research.pdf",
+   "verdict": "NEUTRAL",
+   "coverageState": "Discovered - currently not indexed"
+  },
+  {
+   "url": "https://ulissesflores.com/deep-research/2025-iot-data-sovereignty/deep-research.pdf",
+   "verdict": "NEUTRAL",
+   "coverageState": "Discovered - currently not indexed"
+  },
+  {
+   "url": "https://ulissesflores.com/deep-research/2025-fraud-detection-mlp/deep-research.pdf",
+   "verdict": "PASS",
+   "coverageState": "Submitted and indexed",
+   "googleCanonical": "https://ulissesflores.com/deep-research/2025-fraud-detection-mlp/deep-research.pdf",
+   "lastCrawlTime": "2026-03-26T17:58:51Z"
+  },
+  {
+   "url": "https://ulissesflores.com/deep-research/2024-historicity-jesus-archaeology/deep-research.pdf",
+   "verdict": "PASS",
+   "coverageState": "Submitted and indexed",
+   "googleCanonical": "https://ulissesflores.com/deep-research/2024-historicity-jesus-archaeology/deep-research.pdf",
+   "lastCrawlTime": "2026-05-18T22:07:33Z"
+  },
+  {
+   "url": "https://ulissesflores.com/deep-research/2024-bitcoin-praxeology/deep-research.pdf",
+   "verdict": "NEUTRAL",
+   "coverageState": "Discovered - currently not indexed"
+  },
+  {
+   "url": "https://ulissesflores.com/deep-research/2024-scribal-canonization-ezra/deep-research.pdf",
+   "verdict": "PASS",
+   "coverageState": "Submitted and indexed",
+   "googleCanonical": "https://ulissesflores.com/deep-research/2024-scribal-canonization-ezra/deep-research.pdf",
+   "lastCrawlTime": "2026-04-02T20:37:34Z"
+  },
+  {
+   "url": "https://ulissesflores.com/deep-research/2024-theology-economic-order/deep-research.pdf",
+   "verdict": "NEUTRAL",
+   "coverageState": "Discovered - currently not indexed"
+  },
+  {
+   "url": "https://ulissesflores.com/deep-research/2024-ring-signatures-privacy/deep-research.pdf",
+   "verdict": "NEUTRAL",
+   "coverageState": "Discovered - currently not indexed"
+  },
+  {
+   "url": "https://ulissesflores.com/deep-research/2024-agritech-agile-flow/deep-research.pdf",
+   "verdict": "NEUTRAL",
+   "coverageState": "Discovered - currently not indexed"
+  },
+  {
+   "url": "https://ulissesflores.com/deep-research/2024-exegetical-treatise-anthropology/deep-research.pdf",
+   "verdict": "NEUTRAL",
+   "coverageState": "Discovered - currently not indexed"
+  },
+  {
+   "url": "https://ulissesflores.com/deep-research/2023-marian-apparitions-critique/deep-research.pdf",
+   "verdict": "PASS",
+   "coverageState": "Submitted and indexed",
+   "googleCanonical": "https://ulissesflores.com/deep-research/2023-marian-apparitions-critique/deep-research.pdf",
+   "lastCrawlTime": "2026-07-04T14:24:19Z"
+  },
+  {
+   "url": "https://ulissesflores.com/deep-research/2023-digital-legacy/deep-research.pdf",
+   "verdict": "NEUTRAL",
+   "coverageState": "Discovered - currently not indexed"
+  },
+  {
+   "url": "https://ulissesflores.com/deep-research/2023-holy-club-methodism/deep-research.pdf",
+   "verdict": "PASS",
+   "coverageState": "Submitted and indexed",
+   "googleCanonical": "https://ulissesflores.com/deep-research/2023-holy-club-methodism/deep-research.pdf",
+   "lastCrawlTime": "2026-03-23T23:26:41Z"
+  },
+  {
+   "url": "https://ulissesflores.com/deep-research/2022-theology-of-hope/deep-research.pdf",
+   "verdict": "NEUTRAL",
+   "coverageState": "Discovered - currently not indexed"
+  },
+  {
+   "url": "https://ulissesflores.com/deep-research/2020-robotics-education/deep-research.pdf",
+   "verdict": "NEUTRAL",
+   "coverageState": "URL is unknown to Google"
+  },
+  {
+   "url": "https://ulissesflores.com/deep-research/2017-chaos-theory-economics/deep-research.pdf",
+   "verdict": "PASS",
+   "coverageState": "Submitted and indexed",
+   "googleCanonical": "https://ulissesflores.com/deep-research/2017-chaos-theory-economics/deep-research.pdf",
+   "lastCrawlTime": "2026-04-25T12:28:41Z"
+  },
+  {
+   "url": "https://ulissesflores.com/certifications",
+   "verdict": "NEUTRAL",
+   "coverageState": "Discovered - currently not indexed"
+  },
+  {
+   "url": "https://ulissesflores.com/certifications/alura-1-entrega-continua-confiabilidade-e-qualidade",
+   "verdict": "NEUTRAL",
+   "coverageState": "Crawled - currently not indexed",
+   "googleCanonical": "https://ulissesflores.com/certifications/alura-1-entrega-continua-confiabilidade-e-qualidade",
+   "lastCrawlTime": "2026-03-09T11:14:21Z"
+  },
+  {
+   "url": "https://ulissesflores.com/certifications/alura-2-formacao-engenharia-de-software",
+   "verdict": "NEUTRAL",
+   "coverageState": "Discovered - currently not indexed"
+  },
+  {
+   "url": "https://ulissesflores.com/certifications/alura-3-integracao-continua-qualidade-e-menos-risco",
+   "verdict": "NEUTRAL",
+   "coverageState": "Discovered - currently not indexed"
+  },
+  {
+   "url": "https://ulissesflores.com/certifications/alura-4-microsservicos-na-pratica",
+   "verdict": "NEUTRAL",
+   "coverageState": "Discovered - currently not indexed"
+  },
+  {
+   "url": "https://ulissesflores.com/certifications/alura-5-microsservicos-explorando-conceitos",
+   "verdict": "NEUTRAL",
+   "coverageState": "Crawled - currently not indexed",
+   "googleCanonical": "https://ulissesflores.com/certifications/alura-5-microsservicos-explorando-conceitos",
+   "lastCrawlTime": "2026-04-18T20:59:17Z"
+  },
+  {
+   "url": "https://ulissesflores.com/certifications/alura-6-microsservicos-padroes-de-projeto",
+   "verdict": "NEUTRAL",
+   "coverageState": "Discovered - currently not indexed"
+  },
+  {
+   "url": "https://ulissesflores.com/certifications/alura-7-extreme-programming-metodologia-agil",
+   "verdict": "NEUTRAL",
+   "coverageState": "Discovered - currently not indexed"
+  },
+  {
+   "url": "https://ulissesflores.com/certifications/alura-8-organizacao-de-equipes-ageis",
+   "verdict": "NEUTRAL",
+   "coverageState": "Discovered - currently not indexed"
+  },
+  {
+   "url": "https://ulissesflores.com/certifications/alura-9-scrum-agilidade-em-seu-projeto",
+   "verdict": "NEUTRAL",
+   "coverageState": "Discovered - currently not indexed"
+  },
+  {
+   "url": "https://ulissesflores.com/certifications/alura-10-quality-assurance-plano-de-testes-e-bugs",
+   "verdict": "NEUTRAL",
+   "coverageState": "Discovered - currently not indexed"
+  },
+  {
+   "url": "https://ulissesflores.com/certifications/alura-11-blockchain-para-negocios",
+   "verdict": "NEUTRAL",
+   "coverageState": "Discovered - currently not indexed"
+  },
+  {
+   "url": "https://ulissesflores.com/certifications/alura-12-blockchain-aumente-a-confianca",
+   "verdict": "PASS",
+   "coverageState": "Submitted and indexed",
+   "googleCanonical": "https://ulissesflores.com/certifications/alura-12-blockchain-aumente-a-confianca",
+   "lastCrawlTime": "2026-04-10T20:50:36Z"
+  },
+  {
+   "url": "https://ulissesflores.com/certifications/alura-13-ia-generativa-midjourney-e-chatgpt",
+   "verdict": "NEUTRAL",
+   "coverageState": "Crawled - currently not indexed",
+   "googleCanonical": "https://ulissesflores.com/certifications/alura-13-ia-generativa-midjourney-e-chatgpt",
+   "lastCrawlTime": "2026-03-09T23:06:08Z"
+  },
+  {
+   "url": "https://ulissesflores.com/certifications/alura-14-value-stream-mapping-vsm-desenhe-mapa",
+   "verdict": "PASS",
+   "coverageState": "Submitted and indexed",
+   "googleCanonical": "https://ulissesflores.com/certifications/alura-14-value-stream-mapping-vsm-desenhe-mapa",
+   "lastCrawlTime": "2026-05-18T14:24:32Z"
+  },
+  {
+   "url": "https://ulissesflores.com/certifications/alura-15-value-stream-mapping-vsm-conheca-fluxo",
+   "verdict": "NEUTRAL",
+   "coverageState": "Crawled - currently not indexed",
+   "googleCanonical": "https://ulissesflores.com/certifications/alura-15-value-stream-mapping-vsm-conheca-fluxo",
+   "lastCrawlTime": "2026-04-25T20:58:40Z"
+  },
+  {
+   "url": "https://ulissesflores.com/certifications/alura-16-rpa-aplicacoes-gerais",
+   "verdict": "NEUTRAL",
+   "coverageState": "Discovered - currently not indexed"
+  },
+  {
+   "url": "https://ulissesflores.com/certifications/alura-17-bizagi-mapeamento-com-bpmn",
+   "verdict": "NEUTRAL",
+   "coverageState": "Discovered - currently not indexed"
+  },
+  {
+   "url": "https://ulissesflores.com/certifications/alura-18-uml-modelagem-de-diagramas",
+   "verdict": "NEUTRAL",
+   "coverageState": "Discovered - currently not indexed"
+  },
+  {
+   "url": "https://ulissesflores.com/certifications/alura-19-uml-modelagem-de-solucoes",
+   "verdict": "NEUTRAL",
+   "coverageState": "Crawled - currently not indexed",
+   "googleCanonical": "https://ulissesflores.com/certifications/alura-19-uml-modelagem-de-solucoes",
+   "lastCrawlTime": "2026-04-24T22:14:59Z"
+  },
+  {
+   "url": "https://ulissesflores.com/certifications/alura-20-linux-onboarding-cli-rapida-e-pratica",
+   "verdict": "NEUTRAL",
+   "coverageState": "Crawled - currently not indexed",
+   "googleCanonical": "https://ulissesflores.com/certifications/alura-20-linux-onboarding-cli-rapida-e-pratica",
+   "lastCrawlTime": "2026-03-19T00:38:05Z"
+  },
+  {
+   "url": "https://ulissesflores.com/certifications/alura-21-aprenda-java-com-orientacao-a-objetos",
+   "verdict": "NEUTRAL",
+   "coverageState": "Discovered - currently not indexed"
+  },
+  {
+   "url": "https://ulissesflores.com/certifications/alura-22-java-criando-primeira-aplicacao",
+   "verdict": "NEUTRAL",
+   "coverageState": "Crawled - currently not indexed",
+   "googleCanonical": "https://ulissesflores.com/certifications/alura-22-java-criando-primeira-aplicacao",
+   "lastCrawlTime": "2026-04-25T01:11:04Z"
+  },
+  {
+   "url": "https://ulissesflores.com/certifications/alura-23-java-orientacao-a-objetos",
+   "verdict": "NEUTRAL",
+   "coverageState": "Crawled - currently not indexed",
+   "googleCanonical": "https://ulissesflores.com/certifications/alura-23-java-orientacao-a-objetos",
+   "lastCrawlTime": "2026-02-23T03:47:26Z"
+  },
+  {
+   "url": "https://ulissesflores.com/certifications/alura-24-java-listas-e-colecoes-de-dados",
+   "verdict": "PASS",
+   "coverageState": "Submitted and indexed",
+   "googleCanonical": "https://ulissesflores.com/certifications/alura-24-java-listas-e-colecoes-de-dados",
+   "lastCrawlTime": "2026-03-20T16:17:45Z"
+  },
+  {
+   "url": "https://ulissesflores.com/certifications/alura-25-java-api-arquivos-e-erros",
+   "verdict": "NEUTRAL",
+   "coverageState": "Discovered - currently not indexed"
+  },
+  {
+   "url": "https://ulissesflores.com/certifications/alura-26-c-linguagem-e-stl",
+   "verdict": "PASS",
+   "coverageState": "Submitted and indexed",
+   "googleCanonical": "https://ulissesflores.com/certifications/alura-26-c-linguagem-e-stl",
+   "lastCrawlTime": "2026-05-18T11:05:32Z"
+  },
+  {
+   "url": "https://ulissesflores.com/certifications/alura-27-solid-com-php-principios-oop",
+   "verdict": "NEUTRAL",
+   "coverageState": "Discovered - currently not indexed"
+  },
+  {
+   "url": "https://ulissesflores.com/certifications/alura-28-avancando-oop-com-php",
+   "verdict": "NEUTRAL",
+   "coverageState": "Crawled - currently not indexed",
+   "googleCanonical": "https://ulissesflores.com/certifications/alura-28-avancando-oop-com-php",
+   "lastCrawlTime": "2026-05-18T13:56:55Z"
+  },
+  {
+   "url": "https://ulissesflores.com/certifications/alura-29-design-patterns-em-php",
+   "verdict": "NEUTRAL",
+   "coverageState": "Discovered - currently not indexed"
+  },
+  {
+   "url": "https://ulissesflores.com/certifications/alura-30-orientacao-a-objetos-com-php",
+   "verdict": "NEUTRAL",
+   "coverageState": "Crawled - currently not indexed",
+   "googleCanonical": "https://ulissesflores.com/certifications/alura-30-orientacao-a-objetos-com-php",
+   "lastCrawlTime": "2026-04-24T23:44:35Z"
+  },
+  {
+   "url": "https://ulissesflores.com/certifications/alura-31-javascript-e-html-desenvolva-um-jogo",
+   "verdict": "NEUTRAL",
+   "coverageState": "Discovered - currently not indexed"
+  },
+  {
+   "url": "https://ulissesflores.com/certifications/alura-32-mongodb-banco-de-dados-nosql",
+   "verdict": "PASS",
+   "coverageState": "Submitted and indexed",
+   "googleCanonical": "https://ulissesflores.com/certifications/alura-32-mongodb-banco-de-dados-nosql",
+   "lastCrawlTime": "2026-03-03T21:35:28Z"
+  },
+  {
+   "url": "https://ulissesflores.com/certifications/coursera-philosophy-science-and-religion-science-and-philosophy",
+   "verdict": "NEUTRAL",
+   "coverageState": "Crawled - currently not indexed",
+   "googleCanonical": "https://ulissesflores.com/certifications/coursera-philosophy-science-and-religion-science-and-philosophy",
+   "lastCrawlTime": "2026-03-20T08:32:59Z"
+  },
+  {
+   "url": "https://ulissesflores.com/certifications/edx-ai-in-practice-preparing-for-ai",
+   "verdict": "NEUTRAL",
+   "coverageState": "Crawled - currently not indexed",
+   "googleCanonical": "https://ulissesflores.com/certifications/edx-ai-in-practice-preparing-for-ai",
+   "lastCrawlTime": "2026-04-26T06:13:30Z"
+  },
+  {
+   "url": "https://ulissesflores.com/mundo-politico",
+   "verdict": "NEUTRAL",
+   "coverageState": "Crawled - currently not indexed",
+   "googleCanonical": "https://ulissesflores.com/mundo-politico",
+   "lastCrawlTime": "2026-04-30T05:05:41Z"
+  },
+  {
+   "url": "https://ulissesflores.com/mundo-politico/1-campanha-do-governo-lula-para-reconstruir-confianca-no-pix-detalhes-e-im",
+   "verdict": "NEUTRAL",
+   "coverageState": "Discovered - currently not indexed"
+  },
+  {
+   "url": "https://ulissesflores.com/mundo-politico/2-conflito-nas-redes-sociais-moderacao-de-conteudo-vs-liberdade-de-express",
+   "verdict": "NEUTRAL",
+   "coverageState": "Discovered - currently not indexed"
+  },
+  {
+   "url": "https://ulissesflores.com/mundo-politico/3-desaprovacao-de-lula-cresce-no-nordeste-mudancas-na-lealdade-politica",
+   "verdict": "NEUTRAL",
+   "coverageState": "Discovered - currently not indexed"
+  },
+  {
+   "url": "https://ulissesflores.com/mundo-politico/4-pacote-fiscal-de-lula-expectativas-e-desafios-para-a-economia-brasileira",
+   "verdict": "NEUTRAL",
+   "coverageState": "Discovered - currently not indexed"
+  },
+  {
+   "url": "https://ulissesflores.com/mundo-politico/5-preservacao-de-valores-tradicionais-na-era-da-diversidade",
+   "verdict": "NEUTRAL",
+   "coverageState": "Discovered - currently not indexed"
+  },
+  {
+   "url": "https://ulissesflores.com/mundo-politico/6-analise-das-consequencias-dos-perdoes-de-trump-e-paralelos-com-o-brasil",
+   "verdict": "NEUTRAL",
+   "coverageState": "Crawled - currently not indexed",
+   "lastCrawlTime": "2026-02-22T10:30:44Z"
+  },
+  {
+   "url": "https://ulissesflores.com/mundo-politico/7-discrepancias-no-brasil-analise-critica-da-economia-e-politica-atuais",
+   "verdict": "NEUTRAL",
+   "coverageState": "Crawled - currently not indexed",
+   "googleCanonical": "https://ulissesflores.com/mundo-politico/7-discrepancias-no-brasil-analise-critica-da-economia-e-politica-atuais",
+   "lastCrawlTime": "2026-04-24T20:04:45Z"
+  },
+  {
+   "url": "https://ulissesflores.com/mundo-politico/8-insatisfacao-popular-cresce-como-um-video-viral-no-instagram-expoe-gasto",
+   "verdict": "NEUTRAL",
+   "coverageState": "Crawled - currently not indexed",
+   "googleCanonical": "https://ulissesflores.com/mundo-politico/8-insatisfacao-popular-cresce-como-um-video-viral-no-instagram-expoe-gasto",
+   "lastCrawlTime": "2026-04-25T14:53:16Z"
+  },
+  {
+   "url": "https://ulissesflores.com/mundo-politico/9-reforma-eleitoral-no-brasil-necessidade-de-maior-transparencia-e-compara",
+   "verdict": "NEUTRAL",
+   "coverageState": "Discovered - currently not indexed"
+  },
+  {
+   "url": "https://ulissesflores.com/mundo-politico/10-fiscalizacao-do-pix-estrategia-do-governo-lula-contra-a-sonegacao",
+   "verdict": "NEUTRAL",
+   "coverageState": "Discovered - currently not indexed"
+  },
+  {
+   "url": "https://ulissesflores.com/mundo-politico/11-impacto-da-geopolitica-nos-mercados-tensoes-eua-china-e-o-futuro-economi",
+   "verdict": "NEUTRAL",
+   "coverageState": "Discovered - currently not indexed"
+  },
+  {
+   "url": "https://ulissesflores.com/mundo-politico/12-combate-a-inflacao-no-governo-lula-estrategias-e-impactos-nos-gastos-pub",
+   "verdict": "NEUTRAL",
+   "coverageState": "Discovered - currently not indexed"
+  },
+  {
+   "url": "https://ulissesflores.com/mundo-politico/13-governo-lula-confronta-alta-dos-precos-de-alimentos-estrategias-e-impact",
+   "verdict": "NEUTRAL",
+   "coverageState": "Discovered - currently not indexed"
+  },
+  {
+   "url": "https://ulissesflores.com/mundo-politico/14-lewandowski-desafia-eua-sobre-deportacoes-algemadas-impacto-nas-relacoes",
+   "verdict": "NEUTRAL",
+   "coverageState": "Crawled - currently not indexed",
+   "googleCanonical": "https://ulissesflores.com/mundo-politico/14-lewandowski-desafia-eua-sobre-deportacoes-algemadas-impacto-nas-relacoes",
+   "lastCrawlTime": "2026-04-24T15:13:03Z"
+  },
+  {
+   "url": "https://ulissesflores.com/mundo-politico/15-polemica-em-porto-alegre-performance-de-jesus-no-carnaval-reacende-debat",
+   "verdict": "NEUTRAL",
+   "coverageState": "Discovered - currently not indexed"
+  },
+  {
+   "url": "https://ulissesflores.com/mundo-politico/16-relacao-brasil-eua-impacto-de-trump-e-eduardo-bolsonaro-na-politica-glob",
+   "verdict": "NEUTRAL",
+   "coverageState": "Discovered - currently not indexed"
+  },
+  {
+   "url": "https://ulissesflores.com/mundo-politico/17-tancredo-neves-e-o-impacto-no-40-aniversario-de-uma-transicao-democratic",
+   "verdict": "NEUTRAL",
+   "coverageState": "Discovered - currently not indexed"
+  },
+  {
+   "url": "https://ulissesflores.com/mundo-politico/18-vigilancia-do-governo-lula-e-liberdade-de-expressao-impacto-no-brasil-mo",
+   "verdict": "NEUTRAL",
+   "coverageState": "Crawled - currently not indexed",
+   "googleCanonical": "https://ulissesflores.com/mundo-politico/18-vigilancia-do-governo-lula-e-liberdade-de-expressao-impacto-no-brasil-mo",
+   "lastCrawlTime": "2026-04-09T08:33:38Z"
+  },
+  {
+   "url": "https://ulissesflores.com/mundo-politico/19-analise-atual-impacto-dos-eventos-historicos-na-politica-contemporanea",
+   "verdict": "NEUTRAL",
+   "coverageState": "Discovered - currently not indexed"
+  },
+  {
+   "url": "https://ulissesflores.com/acervo-teologico",
+   "verdict": "NEUTRAL",
+   "coverageState": "Crawled - currently not indexed",
+   "googleCanonical": "https://ulissesflores.com/acervo-teologico",
+   "lastCrawlTime": "2026-04-18T18:34:43Z"
+  },
+  {
+   "url": "https://ulissesflores.com/acervo-teologico/fundamentos-da-fe/o-poder-transformador-da-graca",
+   "verdict": "NEUTRAL",
+   "coverageState": "Discovered - currently not indexed"
+  },
+  {
+   "url": "https://ulissesflores.com/acervo-teologico/fundamentos-da-fe/batismo-nas-aguas-nova-vida-em-cristo",
+   "verdict": "NEUTRAL",
+   "coverageState": "Discovered - currently not indexed"
+  },
+  {
+   "url": "https://ulissesflores.com/acervo-teologico/fundamentos-da-fe/a-cruz-e-o-seu-significado-hoje",
+   "verdict": "NEUTRAL",
+   "coverageState": "Crawled - currently not indexed",
+   "googleCanonical": "https://ulissesflores.com/acervo-teologico/fundamentos-da-fe/a-cruz-e-o-seu-significado-hoje",
+   "lastCrawlTime": "2026-04-24T17:38:53Z"
+  },
+  {
+   "url": "https://ulissesflores.com/acervo-teologico/fundamentos-da-fe/identidade-quem-somos-em-cristo",
+   "verdict": "NEUTRAL",
+   "coverageState": "Discovered - currently not indexed"
+  },
+  {
+   "url": "https://ulissesflores.com/acervo-teologico/fundamentos-da-fe/fortalecendo-as-bases-da-fe",
+   "verdict": "NEUTRAL",
+   "coverageState": "Discovered - currently not indexed"
+  },
+  {
+   "url": "https://ulissesflores.com/acervo-teologico/fundamentos-da-fe/o-agir-do-espirito-em-nossas-vidas",
+   "verdict": "NEUTRAL",
+   "coverageState": "Discovered - currently not indexed"
+  },
+  {
+   "url": "https://ulissesflores.com/acervo-teologico/fundamentos-da-fe/firmes-na-promessa",
+   "verdict": "PASS",
+   "coverageState": "Submitted and indexed",
+   "googleCanonical": "https://ulissesflores.com/acervo-teologico/fundamentos-da-fe/firmes-na-promessa",
+   "lastCrawlTime": "2026-05-18T09:59:37Z"
+  },
+  {
+   "url": "https://ulissesflores.com/acervo-teologico/fundamentos-da-fe/a-forca-da-palavra",
+   "verdict": "NEUTRAL",
+   "coverageState": "Discovered - currently not indexed"
+  },
+  {
+   "url": "https://ulissesflores.com/acervo-teologico/fundamentos-da-fe/cantata-de-natal-o-verbo-que-se-fez-carne-e-habitou-entre-nos",
+   "verdict": "NEUTRAL",
+   "coverageState": "Discovered - currently not indexed"
+  },
+  {
+   "url": "https://ulissesflores.com/acervo-teologico/fundamentos-da-fe/o-despertar-da-fe",
+   "verdict": "NEUTRAL",
+   "coverageState": "Crawled - currently not indexed",
+   "googleCanonical": "https://ulissesflores.com/acervo-teologico/fundamentos-da-fe/o-despertar-da-fe",
+   "lastCrawlTime": "2026-04-21T13:45:25Z"
+  },
+  {
+   "url": "https://ulissesflores.com/acervo-teologico/batalha-espiritual-e-resiliencia/vencendo-o-medo-pela-graca",
+   "verdict": "NEUTRAL",
+   "coverageState": "Discovered - currently not indexed"
+  },
+  {
+   "url": "https://ulissesflores.com/acervo-teologico/batalha-espiritual-e-resiliencia/quebrando-cadeias-invisiveis",
+   "verdict": "NEUTRAL",
+   "coverageState": "Discovered - currently not indexed"
+  },
+  {
+   "url": "https://ulissesflores.com/acervo-teologico/batalha-espiritual-e-resiliencia/atravessando-tempestades-com-fe",
+   "verdict": "NEUTRAL",
+   "coverageState": "Discovered - currently not indexed"
+  },
+  {
+   "url": "https://ulissesflores.com/acervo-teologico/batalha-espiritual-e-resiliencia/ousadia-para-romper-limites",
+   "verdict": "NEUTRAL",
+   "coverageState": "Discovered - currently not indexed"
+  },
+  {
+   "url": "https://ulissesflores.com/acervo-teologico/batalha-espiritual-e-resiliencia/protecao-e-escudo",
+   "verdict": "NEUTRAL",
+   "coverageState": "Crawled - currently not indexed",
+   "googleCanonical": "https://ulissesflores.com/acervo-teologico/batalha-espiritual-e-resiliencia/protecao-e-escudo",
+   "lastCrawlTime": "2026-03-19T04:01:04Z"
+  },
+  {
+   "url": "https://ulissesflores.com/acervo-teologico/batalha-espiritual-e-resiliencia/avancando-em-meio-as-oposicoes",
+   "verdict": "NEUTRAL",
+   "coverageState": "Discovered - currently not indexed"
+  },
+  {
+   "url": "https://ulissesflores.com/acervo-teologico/batalha-espiritual-e-resiliencia/vencendo-as-batalhas-da-mente",
+   "verdict": "NEUTRAL",
+   "coverageState": "Crawled - currently not indexed",
+   "googleCanonical": "https://ulissesflores.com/acervo-teologico/batalha-espiritual-e-resiliencia/vencendo-as-batalhas-da-mente",
+   "lastCrawlTime": "2026-04-25T03:26:38Z"
+  },
+  {
+   "url": "https://ulissesflores.com/acervo-teologico/batalha-espiritual-e-resiliencia/a-resiliencia-do-cristao",
+   "verdict": "NEUTRAL",
+   "coverageState": "Crawled - currently not indexed",
+   "googleCanonical": "https://ulissesflores.com/acervo-teologico/batalha-espiritual-e-resiliencia/a-resiliencia-do-cristao",
+   "lastCrawlTime": "2026-03-06T07:18:43Z"
+  },
+  {
+   "url": "https://ulissesflores.com/acervo-teologico/batalha-espiritual-e-resiliencia/perseveranca-e-resposta-dia-8",
+   "verdict": "NEUTRAL",
+   "coverageState": "Crawled - currently not indexed",
+   "googleCanonical": "https://ulissesflores.com/acervo-teologico/batalha-espiritual-e-resiliencia/perseveranca-e-resposta-dia-8",
+   "lastCrawlTime": "2026-07-04T10:39:32Z"
+  },
+  {
+   "url": "https://ulissesflores.com/acervo-teologico/batalha-espiritual-e-resiliencia/o-grande-rompimento-celebracao-dos-testemunhos-dia-40",
+   "verdict": "NEUTRAL",
+   "coverageState": "Discovered - currently not indexed"
+  },
+  {
+   "url": "https://ulissesflores.com/acervo-teologico/batalha-espiritual-e-resiliencia/quebrando-as-muralhas-pela-oracao",
+   "verdict": "NEUTRAL",
+   "coverageState": "Discovered - currently not indexed"
+  },
+  {
+   "url": "https://ulissesflores.com/acervo-teologico/batalha-espiritual-e-resiliencia/a-esperanca-que-nao-decepciona",
+   "verdict": "NEUTRAL",
+   "coverageState": "Discovered - currently not indexed"
+  },
+  {
+   "url": "https://ulissesflores.com/acervo-teologico/avivamento-e-consagracao/restaurando-o-primeiro-amor",
+   "verdict": "NEUTRAL",
+   "coverageState": "Crawled - currently not indexed",
+   "googleCanonical": "https://ulissesflores.com/acervo-teologico/avivamento-e-consagracao/restaurando-o-primeiro-amor",
+   "lastCrawlTime": "2026-04-25T03:59:23Z"
+  },
+  {
+   "url": "https://ulissesflores.com/acervo-teologico/avivamento-e-consagracao/presenca-e-avivamento",
+   "verdict": "NEUTRAL",
+   "coverageState": "Discovered - currently not indexed"
+  },
+  {
+   "url": "https://ulissesflores.com/acervo-teologico/avivamento-e-consagracao/renovando-as-forcas-no-altar",
+   "verdict": "NEUTRAL",
+   "coverageState": "Crawled - currently not indexed",
+   "googleCanonical": "https://ulissesflores.com/acervo-teologico/avivamento-e-consagracao/renovando-as-forcas-no-altar",
+   "lastCrawlTime": "2026-05-19T08:59:50Z"
+  },
+  {
+   "url": "https://ulissesflores.com/acervo-teologico/avivamento-e-consagracao/preparando-o-coracao-para-o-novo-ano",
+   "verdict": "NEUTRAL",
+   "coverageState": "Crawled - currently not indexed",
+   "googleCanonical": "https://ulissesflores.com/acervo-teologico/avivamento-e-consagracao/preparando-o-coracao-para-o-novo-ano",
+   "lastCrawlTime": "2026-04-22T05:36:54Z"
+  },
+  {
+   "url": "https://ulissesflores.com/acervo-teologico/avivamento-e-consagracao/aprendendo-a-ouvir-a-voz-de-deus",
+   "verdict": "NEUTRAL",
+   "coverageState": "Discovered - currently not indexed"
+  },
+  {
+   "url": "https://ulissesflores.com/acervo-teologico/avivamento-e-consagracao/viver-em-santidade-no-seculo-xxi",
+   "verdict": "PASS",
+   "coverageState": "Submitted and indexed",
+   "googleCanonical": "https://ulissesflores.com/acervo-teologico/avivamento-e-consagracao/viver-em-santidade-no-seculo-xxi",
+   "lastCrawlTime": "2026-05-18T10:09:30Z"
+  },
+  {
+   "url": "https://ulissesflores.com/acervo-teologico/avivamento-e-consagracao/a-importancia-da-intimidade",
+   "verdict": "NEUTRAL",
+   "coverageState": "Discovered - currently not indexed"
+  },
+  {
+   "url": "https://ulissesflores.com/acervo-teologico/avivamento-e-consagracao/restaurando-o-altar",
+   "verdict": "NEUTRAL",
+   "coverageState": "Discovered - currently not indexed"
+  },
+  {
+   "url": "https://ulissesflores.com/acervo-teologico/avivamento-e-consagracao/autoridade-espiritual",
+   "verdict": "NEUTRAL",
+   "coverageState": "Discovered - currently not indexed"
+  },
+  {
+   "url": "https://ulissesflores.com/acervo-teologico/avivamento-e-consagracao/o-fogo-que-nao-se-apaga",
+   "verdict": "NEUTRAL",
+   "coverageState": "Crawled - currently not indexed",
+   "googleCanonical": "https://ulissesflores.com/acervo-teologico/avivamento-e-consagracao/o-fogo-que-nao-se-apaga",
+   "lastCrawlTime": "2026-03-05T00:49:39Z"
+  },
+  {
+   "url": "https://ulissesflores.com/acervo-teologico/avivamento-e-consagracao/preparando-o-altar",
+   "verdict": "NEUTRAL",
+   "coverageState": "Crawled - currently not indexed",
+   "googleCanonical": "https://ulissesflores.com/acervo-teologico/avivamento-e-consagracao/preparando-o-altar",
+   "lastCrawlTime": "2026-04-03T08:40:40Z"
+  },
+  {
+   "url": "https://ulissesflores.com/acervo-teologico/avivamento-e-consagracao/tempo-de-renovo",
+   "verdict": "NEUTRAL",
+   "coverageState": "Crawled - currently not indexed",
+   "googleCanonical": "https://ulissesflores.com/acervo-teologico/avivamento-e-consagracao/tempo-de-renovo",
+   "lastCrawlTime": "2026-04-20T11:16:19Z"
+  },
+  {
+   "url": "https://ulissesflores.com/acervo-teologico/eclesiologia-e-vida-pratica/culto-regional-de-casais-edificando-a-familia-sobre-a-rocha",
+   "verdict": "NEUTRAL",
+   "coverageState": "Crawled - currently not indexed",
+   "googleCanonical": "https://ulissesflores.com/acervo-teologico/eclesiologia-e-vida-pratica/culto-regional-de-casais-edificando-a-familia-sobre-a-rocha",
+   "lastCrawlTime": "2026-02-27T21:28:44Z"
+  },
+  {
+   "url": "https://ulissesflores.com/acervo-teologico/eclesiologia-e-vida-pratica/chamados-para-fazer-a-diferenca",
+   "verdict": "NEUTRAL",
+   "coverageState": "Discovered - currently not indexed"
+  },
+  {
+   "url": "https://ulissesflores.com/acervo-teologico/eclesiologia-e-vida-pratica/semeando-em-boa-terra",
+   "verdict": "NEUTRAL",
+   "coverageState": "Discovered - currently not indexed"
+  },
+  {
+   "url": "https://ulissesflores.com/acervo-teologico/eclesiologia-e-vida-pratica/caminhando-em-sobrenaturalidade",
+   "verdict": "NEUTRAL",
+   "coverageState": "Crawled - currently not indexed",
+   "googleCanonical": "https://ulissesflores.com/acervo-teologico/eclesiologia-e-vida-pratica/caminhando-em-sobrenaturalidade",
+   "lastCrawlTime": "2026-04-22T18:28:38Z"
+  },
+  {
+   "url": "https://ulissesflores.com/acervo-teologico/eclesiologia-e-vida-pratica/comunhao-e-crescimento-espiritual",
+   "verdict": "NEUTRAL",
+   "coverageState": "Discovered - currently not indexed"
+  },
+  {
+   "url": "https://ulissesflores.com/acervo-teologico/eclesiologia-e-vida-pratica/festival-de-danca-expressao-de-adoracao-e-arte-profetica",
+   "verdict": "NEUTRAL",
+   "coverageState": "Discovered - currently not indexed"
+  },
+  {
+   "url": "https://ulissesflores.com/acervo-teologico/eclesiologia-e-vida-pratica/construindo-uma-vida-com-proposito",
+   "verdict": "NEUTRAL",
+   "coverageState": "Crawled - currently not indexed",
+   "googleCanonical": "https://ulissesflores.com/acervo-teologico/eclesiologia-e-vida-pratica/construindo-uma-vida-com-proposito",
+   "lastCrawlTime": "2026-04-22T03:50:17Z"
+  },
+  {
+   "url": "https://ulissesflores.com/acervo-teologico/eclesiologia-e-vida-pratica/o-perdao-que-liberta",
+   "verdict": "NEUTRAL",
+   "coverageState": "Discovered - currently not indexed"
+  },
+  {
+   "url": "https://ulissesflores.com/acervo-teologico/eclesiologia-e-vida-pratica/a-recompensa-da-fidelidade",
+   "verdict": "NEUTRAL",
+   "coverageState": "Discovered - currently not indexed"
+  },
+  {
+   "url": "https://ulissesflores.com/acervo-teologico/eclesiologia-e-vida-pratica/o-poder-da-unidade",
+   "verdict": "NEUTRAL",
+   "coverageState": "URL is unknown to Google"
+  },
+  {
+   "url": "https://ulissesflores.com/acervo-teologico/eclesiologia-e-vida-pratica/restituicao-divina",
+   "verdict": "NEUTRAL",
+   "coverageState": "Discovered - currently not indexed"
+  },
+  {
+   "url": "https://ulissesflores.com/acervo-teologico/eclesiologia-e-vida-pratica/a-plenitude-do-espirito",
+   "verdict": "NEUTRAL",
+   "coverageState": "Crawled - currently not indexed",
+   "googleCanonical": "https://ulissesflores.com/acervo-teologico/eclesiologia-e-vida-pratica/a-plenitude-do-espirito",
+   "lastCrawlTime": "2026-02-27T23:33:57Z"
+  },
+  {
+   "url": "https://ulissesflores.com/acervo-teologico/eclesiologia-e-vida-pratica/frutos-de-uma-vida-com-deus",
+   "verdict": "NEUTRAL",
+   "coverageState": "Crawled - currently not indexed",
+   "googleCanonical": "https://ulissesflores.com/acervo-teologico/eclesiologia-e-vida-pratica/frutos-de-uma-vida-com-deus",
+   "lastCrawlTime": "2026-03-08T06:27:20Z"
+  },
+  {
+   "url": "https://ulissesflores.com/acervo-teologico/eclesiologia-e-vida-pratica/cultivando-um-coracao-grato",
+   "verdict": "NEUTRAL",
+   "coverageState": "Crawled - currently not indexed",
+   "googleCanonical": "https://ulissesflores.com/acervo-teologico/eclesiologia-e-vida-pratica/cultivando-um-coracao-grato",
+   "lastCrawlTime": "2026-05-19T13:38:47Z"
+  },
+  {
+   "url": "https://ulissesflores.com/acervo-teologico/mensagens-profeticas/o-chamado-inabalavel",
+   "verdict": "NEUTRAL",
+   "coverageState": "Crawled - currently not indexed",
+   "googleCanonical": "https://ulissesflores.com/acervo-teologico/mensagens-profeticas/o-chamado-inabalavel",
+   "lastCrawlTime": "2026-02-27T21:44:28Z"
+  },
+  {
+   "url": "https://ulissesflores.com/acervo-teologico/mensagens-profeticas/o-agir-invisivel-de-deus",
+   "verdict": "NEUTRAL",
+   "coverageState": "Discovered - currently not indexed"
+  },
+  {
+   "url": "https://ulissesflores.com/acervo-teologico/mensagens-profeticas/destravando-promessas",
+   "verdict": "NEUTRAL",
+   "coverageState": "Discovered - currently not indexed"
+  },
+  {
+   "url": "https://ulissesflores.com/acervo-teologico/mensagens-profeticas/janeiro-profetico-consagrando-o-novo-ano",
+   "verdict": "NEUTRAL",
+   "coverageState": "Discovered - currently not indexed"
+  },
+  {
+   "url": "https://ulissesflores.com/acervo-teologico/mensagens-profeticas/o-selo-profetico-para-os-12-meses-de-vitoria-dia-12",
+   "verdict": "NEUTRAL",
+   "coverageState": "Discovered - currently not indexed"
+  },
+  {
+   "url": "https://ulissesflores.com/acervo-teologico/mensagens-profeticas/alinhamento-profetico",
+   "verdict": "NEUTRAL",
+   "coverageState": "URL is unknown to Google"
+  },
+  {
+   "url": "https://ulissesflores.com/acervo-teologico/mensagens-profeticas/celebracao-antecipada",
+   "verdict": "NEUTRAL",
+   "coverageState": "URL is unknown to Google"
+  },
+  {
+   "url": "https://ulissesflores.com/acervo-teologico/mensagens-profeticas/o-selo-da-vitoria",
+   "verdict": "NEUTRAL",
+   "coverageState": "Crawled - currently not indexed",
+   "googleCanonical": "https://ulissesflores.com/acervo-teologico/mensagens-profeticas/o-selo-da-vitoria",
+   "lastCrawlTime": "2026-04-01T22:25:09Z"
+  }
+ ]
+}
