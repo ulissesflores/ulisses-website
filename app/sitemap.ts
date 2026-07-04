@@ -4,7 +4,7 @@ import { knowledgeData } from '@/data/knowledge';
 import { upkfMeta } from '@/data/generated/upkf.generated';
 import { certificationsSotaData } from '@/data/certifications-sota';
 import { acervoCanonicalPath, acervoLatestPublishedAt, acervoSermons } from '@/data/acervo-teologico';
-import { buildLanguageAlternates } from '@/data/seo';
+import { buildLanguageAlternates, noindexPublicationCategories } from '@/data/seo';
 
 // ── Helpers ─────────────────────────────────────────────────────────────────────
 
@@ -88,7 +88,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     })
     .filter((entry): entry is MetadataRoute.Sitemap[number] => Boolean(entry));
 
-  const publicationEntries = publications
+  // Publicações noindex (rebrand) ficam FORA do sitemap — página e artefatos
+  // (PDF etc.). Submeter URL noindex no sitemap é sinal conflitante p/ Google.
+  const indexablePublications = publications.filter(
+    (publication) => !noindexPublicationCategories.includes(publication.category),
+  );
+
+  const publicationEntries = indexablePublications
     .map((publication) =>
       maybeMakeSitemapEntry(
         `/${publication.category}/${publication.id}`,
@@ -99,7 +105,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     )
     .filter((entry): entry is MetadataRoute.Sitemap[number] => Boolean(entry));
 
-  const deepResearchEntries = publications
+  const deepResearchEntries = indexablePublications
     .flatMap((publication) => {
       const date = publication.updatedAt;
       return [

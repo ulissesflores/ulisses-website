@@ -2,6 +2,14 @@ import { upkfMeta } from '@/data/generated/upkf.generated';
 import { normalizePath } from './i18n';
 
 /**
+ * Categorias de publicação em `noindex` durante o rebrand (conteúdo em
+ * reconstrução, 2026-06). Fonte única: o template de artigo emite o meta
+ * robots e o sitemap EXCLUI estas publicações (página + PDF/artefatos) —
+ * URL noindex dentro do sitemap é sinal conflitante para o Google.
+ */
+export const noindexPublicationCategories: readonly string[] = ['research', 'essays', 'whitepapers'];
+
+/**
  * Hreflang prefix map. `pt-BR` is the default locale — its canonical URL is
  * the BARE path (no prefix). Only non-default locales carry a `/{prefix}/`.
  */

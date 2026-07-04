@@ -9,7 +9,7 @@ import { ArticleToc } from '@/components/article-toc';
 import { localePath } from '@/lib/locale-path';
 import { defaultLocale, isLocale, type Locale } from '@/data/i18n';
 import { getDictionary } from '@/lib/get-dictionary';
-import { buildCanonical, buildLanguageAlternates } from '@/data/seo';
+import { buildCanonical, buildLanguageAlternates, noindexPublicationCategories } from '@/data/seo';
 
 interface PageProps {
   params: Promise<{ category: string; slug: string; locale: string }>;
@@ -43,8 +43,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const canonicalPath = `/${publication.category}/${publication.id}`;
 
   // Conteúdo de pesquisa em reconstrução: noindex até haver artigos reais (rebrand 2026-06).
-  const noindexCategories = ['research', 'essays', 'whitepapers'];
-  const isNoindexed = noindexCategories.includes(publication.category);
+  const isNoindexed = noindexPublicationCategories.includes(publication.category);
 
   return {
     title: localizedTitle,
