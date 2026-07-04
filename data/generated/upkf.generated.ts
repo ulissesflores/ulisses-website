@@ -1,5 +1,5 @@
 /* AUTO-GENERATED FILE. DO NOT EDIT MANUALLY.
- * Source: public/upkf-source.md
+ * Source: data/upkf/ulisses-flores-sovereign-upkf_v3.3.md
  * Generated at: 2026-02-21
  */
 
@@ -8,11 +8,11 @@ export const upkfMeta = {
   "upkfVersion": "3.3",
   "generatedAt": "2026-02-21",
   "schemaTarget": "Schema.org JSON-LD via deterministic derivation",
-  "sourcePath": "public/upkf-source.md",
+  "sourcePath": "data/upkf/ulisses-flores-sovereign-upkf_v3.3.md",
   "displayName": "Carlos Ulisses Flores",
   "preferredName": "Ulisses",
   "publicDisplayName": "Carlos Ulisses Flores",
-  "canonicalLegalName": "Carlos Ulisses Flores",
+  "canonicalLegalName": "Carlos Ulisses Flores Ribeiro",
   "primaryWebsite": "https://ulissesflores.com",
   "description": {
     "pt-BR": "Cientista econômico, analista de sistemas e pesquisador polímata, atuando na interseção entre sistemas complexos, resiliência ciberfinanceira, economia austríaca, sistemas distribuídos e teologia histórica. Co-fundador e CTO da Codex Hash Ltda.",
@@ -32,6 +32,7 @@ export const upkfMeta = {
     "https://www.linkedin.com/in/ulisses-flores-75961921",
     "https://github.com/ulissesflores",
     "https://orcid.org/0000-0002-6034-7765",
+    "https://scholar.google.com/citations?user=yPp66eMAAAAJ",
     "http://lattes.cnpq.br/6905246706890561",
     "https://www.tiktok.com/@ulissesflores",
     "https://www.instagram.com/ulissesflores",
@@ -812,15 +813,15 @@ export const upkfMeta = {
     "sourceMd": "/upkf-source.md"
   },
   "jsonldCoverage": {
-    "markdownBytes": 85237,
-    "markdownLines": 1391,
+    "markdownBytes": 85302,
+    "markdownLines": 1392,
     "sectionCount": 102,
     "siteGraphNodes": 44,
     "publicGraphNodes": 187,
     "fullGraphNodes": 290,
-    "siteJsonldBytes": 29108,
-    "publicJsonldBytes": 185663,
-    "fullJsonldBytes": 289582,
+    "siteJsonldBytes": 29165,
+    "publicJsonldBytes": 185743,
+    "fullJsonldBytes": 289777,
     "corpusFiles": 0,
     "corpusSnippets": 0,
     "corpusDirs": [],
@@ -864,6 +865,7 @@ export const siteJsonLd = {
         "https://www.linkedin.com/in/ulisses-flores-75961921",
         "https://github.com/ulissesflores",
         "https://orcid.org/0000-0002-6034-7765",
+        "https://scholar.google.com/citations?user=yPp66eMAAAAJ",
         "http://lattes.cnpq.br/6905246706890561",
         "https://www.tiktok.com/@ulissesflores",
         "https://www.instagram.com/ulissesflores",

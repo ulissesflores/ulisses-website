@@ -1043,6 +1043,7 @@ Competências Interpessoais, Habilidades Analíticas.
 - https://www.linkedin.com/in/ulisses-flores-75961921
 - https://github.com/ulissesflores
 - https://orcid.org/0000-0002-6034-7765
+- https://scholar.google.com/citations?user=yPp66eMAAAAJ
 - http://lattes.cnpq.br/6905246706890561
 - https://www.tiktok.com/@ulissesflores
 - https://www.instagram.com/ulissesflores
