@@ -97,8 +97,15 @@ HANDOFF.md
 # Inventário de fontes para recriar artigos (IDs de Drive privados — não versionar)
 ARTIGOS-PARA-CRIAR.md
 
+# Fábrica de artigos: dossiês de fonte enriquecidos (IDs de Drive privados — não versionar)
+_fabrica/
+
 # Plano de auditoria do site (doc de trabalho interno)
 AUDITORIA-SITE.md
+
+# Docs de trabalho do Grupo B (plano ASP + pesquisa SOTA — internos)
+PLANO-GRUPO-B.md
+PESQUISA-SOTA-GRUPO-B.md
 
 # Kickoff da próxima sessão (doc de trabalho interno)
 PROXIMA-SESSAO.md
