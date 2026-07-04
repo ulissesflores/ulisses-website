@@ -289,7 +289,7 @@ export default async function ArticlePage({ params }: PageProps) {
         </header>
 
         <div className='lg:flex lg:gap-10 lg:items-start lg:justify-center'>
-          <div className='lg:order-2 lg:w-60 lg:shrink-0 mb-8 lg:mb-0'>
+          <div className='lg:order-2 lg:w-60 lg:shrink-0 mb-8 lg:mb-0 lg:sticky lg:top-24 lg:max-h-[calc(100vh-7rem)] lg:overflow-y-auto'>
             <ArticleToc sections={tocSections} title={t.onThisPage} />
           </div>
           <div className='prose prose-lg prose-invert max-w-[68ch] mx-auto min-w-0 lg:order-1 space-y-10'>

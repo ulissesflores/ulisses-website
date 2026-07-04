@@ -72,11 +72,9 @@ export function ArticleToc({ sections, title }: ArticleTocProps) {
 
   return (
     <>
-      {/* Desktop: sidebar sticky */}
-      <nav
-        aria-label={title}
-        className='hidden lg:block lg:sticky lg:top-24 lg:max-h-[calc(100vh-7rem)] lg:overflow-y-auto'
-      >
+      {/* Desktop: sidebar (o sticky vive no wrapper flex-item do template —
+          aqui dentro ele não teria altura pra viajar, por causa do items-start) */}
+      <nav aria-label={title} className='hidden lg:block'>
         <p className='text-xs uppercase tracking-[0.2em] text-neutral-400 font-bold mb-3'>{title}</p>
         {list}
       </nav>
