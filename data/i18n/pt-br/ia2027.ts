@@ -1,10 +1,10 @@
 export const ia2027 = {
   meta: {
-    title: 'IA 2027: Simulação Interativa sobre o Futuro da Inteligência Artificial | AGI e Soberania',
-    description: 'Explore a única simulação interativa em português sobre a chegada da AGI (Inteligência Artificial Geral). Análise de cenários futuros, corrida tecnológica e impacto econômico por Ulisses Flores — Cientista, Consultor, Professor e Palestrante.',
+    title: 'IA 2027: simulação interativa da chegada da AGI',
+    description: 'A única simulação interativa em português da chegada da AGI: cenários, a corrida tecnológica e o impacto econômico. Por Ulisses Flores.',
     keywords: ['futuro da inteligência artificial', 'cenários futuros IA', 'o que é AGI', 'inteligência artificial geral', 'soberania tecnológica', 'impacto da IA no mercado', 'agentes autônomos'],
-    ogTitle: 'IA 2027: Simulação Interativa sobre o Futuro da Inteligência Artificial | AGI e Soberania',
-    ogDescription: 'Explore a única simulação interativa em português sobre a chegada da AGI. Análise de cenários futuros, corrida tecnológica e impacto econômico por Ulisses Flores — Cientista, Consultor, Professor e Palestrante.',
+    ogTitle: 'IA 2027: simulação interativa da chegada da AGI',
+    ogDescription: 'A única simulação interativa em português da chegada da AGI. Explore cenários, a corrida rumo à AGI e o impacto econômico.',
     ogImageAlt: 'Simulação Estratégica IA-2027 por Ulisses Flores',
   },
   raceMeta: {

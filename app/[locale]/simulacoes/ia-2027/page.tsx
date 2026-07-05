@@ -82,6 +82,8 @@ export default async function IA2027Page({ params, searchParams }: PageProps) {
     headline: t.h1,
     description: t.lead,
     inLanguage: locale,
+    datePublished: '2026-03-15',
+    dateModified: '2026-03-15',
     keywords: 'futuro da inteligência artificial, cenários futuros IA, o que é AGI, inteligência artificial geral, soberania tecnológica, impacto da IA no mercado, agentes autônomos',
     about: [
       {
