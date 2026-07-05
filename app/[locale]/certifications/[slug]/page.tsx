@@ -33,6 +33,10 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   return {
     title: `${certification.title} | ${certification.provider}`,
     description,
+    // Páginas de item de certificação = registro de credencial templado (thin content
+    // que o Google já vinha desindexando). Mantemos noindex,follow: o índice /certifications
+    // permanece indexável e concentra o sinal; os itens seguem rastreáveis pelos links.
+    robots: { index: false, follow: true },
     authors: [
       {
         name: upkfMeta.publicDisplayName || upkfMeta.displayName,

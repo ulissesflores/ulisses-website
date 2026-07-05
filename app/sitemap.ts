@@ -2,7 +2,6 @@ import type { MetadataRoute } from 'next';
 import { publications, publicationCollections } from '@/data/publications';
 import { knowledgeData } from '@/data/knowledge';
 import { upkfMeta } from '@/data/generated/upkf.generated';
-import { certificationsSotaData } from '@/data/certifications-sota';
 import { acervoCanonicalPath, acervoLatestPublishedAt, acervoSermons } from '@/data/acervo-teologico';
 import { buildLanguageAlternates, noindexPublicationCategories } from '@/data/seo';
 
@@ -116,11 +115,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     })
     .filter((entry): entry is MetadataRoute.Sitemap[number] => Boolean(entry));
 
+  // Só o índice /certifications entra no sitemap. As páginas de item são noindex
+  // (registro de credencial templado — thin) e sair do sitemap evita o sinal
+  // conflitante "indexe-me" + meta noindex. Seguem rastreáveis pelos links internos.
   const certificationsEntries = [
     maybeMakeSitemapEntry('/certifications', knowledgeData.generatedAt, 'weekly', 0.78),
-    ...certificationsSotaData.map((certification) =>
-      maybeMakeSitemapEntry(certification.canonicalPath, certification.publishedAt, 'monthly', 0.62),
-    ),
   ].filter((entry): entry is MetadataRoute.Sitemap[number] => Boolean(entry));
 
   const blogLatest =
