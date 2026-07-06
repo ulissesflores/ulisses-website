@@ -31,6 +31,10 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   return {
     title: post.headline,
     description: post.summary,
+    // Post de comentário político = fora da marca profissional (IA/finanças) e
+    // sem demanda de busca. noindex,follow: o índice /mundo-politico permanece
+    // indexável; os itens seguem rastreáveis pelos links internos.
+    robots: { index: false, follow: true },
     authors: [
       {
         name: upkfMeta.publicDisplayName || upkfMeta.displayName,

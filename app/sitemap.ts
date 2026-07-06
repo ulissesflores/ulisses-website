@@ -2,7 +2,7 @@ import type { MetadataRoute } from 'next';
 import { publications, publicationCollections } from '@/data/publications';
 import { knowledgeData } from '@/data/knowledge';
 import { upkfMeta } from '@/data/generated/upkf.generated';
-import { acervoCanonicalPath, acervoLatestPublishedAt, acervoSermons } from '@/data/acervo-teologico';
+import { acervoCanonicalPath, acervoLatestPublishedAt } from '@/data/acervo-teologico';
 import { buildLanguageAlternates, noindexPublicationCategories } from '@/data/seo';
 
 // ── Helpers ─────────────────────────────────────────────────────────────────────
@@ -127,14 +127,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
       .map((post) => post.publishedAt)
       .sort((a, b) => b.localeCompare(a))[0] || latestSiteDate;
 
+  // Só os índices /mundo-politico e /acervo-teologico entram no sitemap. As páginas
+  // de item são noindex (off-brand + sem demanda) — sair do sitemap evita o sinal
+  // conflitante. Seguem rastreáveis pelos links internos dos índices.
   const blogEntries = [
     maybeMakeSitemapEntry(knowledgeData.blog.canonicalPath, blogLatest, 'weekly', 0.75),
-    ...knowledgeData.blog.posts.map((post) => maybeMakeSitemapEntry(post.canonicalPath, post.publishedAt, 'monthly', 0.65)),
   ].filter((entry): entry is MetadataRoute.Sitemap[number] => Boolean(entry));
 
   const acervoEntries = [
     maybeMakeSitemapEntry(acervoCanonicalPath, acervoLatestPublishedAt, 'weekly', 0.76),
-    ...acervoSermons.map((sermon) => maybeMakeSitemapEntry(sermon.canonicalPath, sermon.publishedAt, 'monthly', 0.58)),
   ].filter((entry): entry is MetadataRoute.Sitemap[number] => Boolean(entry));
 
   const identidadeEntry = maybeMakeSitemapEntry('/identidade', upkfMeta.generatedAt, 'daily', 0.92);

@@ -37,6 +37,10 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   return {
     title: ls.seoTitle,
     description: ls.llmContext,
+    // Sermão individual = conteúdo de acervo pessoal/ministério, fora da marca
+    // profissional (IA/finanças) e sem demanda de busca. noindex,follow: o índice
+    // /acervo-teologico permanece indexável; os itens seguem rastreáveis pelos links.
+    robots: { index: false, follow: true },
     authors: [
       {
         name: upkfMeta.publicDisplayName || upkfMeta.displayName,
