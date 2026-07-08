@@ -2,7 +2,7 @@ export const simulacoes = {
   meta: {
     title: 'Simulações Estratégicas de IA | IA 2027, AGI e Cenários Futuros | Ulisses Flores',
     description:
-      'Explore simulações interativas sobre o futuro da Inteligência Artificial e AGI, criadas por Ulisses Flores — Consultor Estratégico de IA, Professor, Palestrante e Mestrando em IA pela AGTU (EUA). A principal plataforma de modelagem de cenários futuros em português.',
+      'Explore simulações interativas sobre o futuro da Inteligência Artificial e AGI, criadas por Ulisses Flores — Consultor Estratégico de IA, Palestrante e Mestrando em IA pela AGTU. A principal plataforma de modelagem de cenários futuros em português.',
     keywords: [
       'simulações estratégicas IA',
       'cenários futuros inteligência artificial',
@@ -14,12 +14,12 @@ export const simulacoes = {
     ],
     ogTitle: 'Simulações Estratégicas de IA | IA 2027, AGI e Cenários Futuros | Ulisses Flores',
     ogDescription:
-      'Explore simulações interativas sobre o futuro da Inteligência Artificial e AGI, criadas por Ulisses Flores — Consultor Estratégico de IA, Professor, Palestrante e Mestrando em IA pela AGTU (EUA).',
+      'Explore simulações interativas sobre o futuro da Inteligência Artificial e AGI, criadas por Ulisses Flores — Consultor Estratégico de IA, Palestrante e Mestrando em IA pela AGTU.',
   },
   breadcrumb: 'Simulações Estratégicas',
   hero: {
     h1: 'Simulações Estratégicas de IA',
-    lead: 'Modelagem interativa de cenários sobre o futuro da Inteligência Artificial Geral (AGI), soberania tecnológica e impacto econômico. Criadas e curadas por Ulisses Flores — Cientista Econômico, Consultor Estratégico de IA, Professor, Palestrante e Mestrando em Inteligência Artificial pela AGTU (EUA).',
+    lead: 'Modelagem interativa de cenários sobre o futuro da Inteligência Artificial Geral (AGI), soberania tecnológica e impacto econômico. Criadas e curadas por Ulisses Flores — Cientista Econômico, Consultor Estratégico de IA, Palestrante e Mestrando em Inteligência Artificial pela AGTU.',
     authority: {
       kicker: 'Por que estas simulações importam',
       text: 'Cada simulação aqui é construída com rigor científico: combinando dados reais de evolução tecnológica, modelos econômicos e análise estratégica. O objetivo é oferecer a líderes, pesquisadores e profissionais as ferramentas para antecipar, compreender e agir diante das transformações que a AGI imporá à economia e à geopolítica global.',
@@ -27,8 +27,8 @@ export const simulacoes = {
     credentials: [
       'Consultor Estratégico de IA',
       'Palestrante',
-      'Professor Convidado',
-      'Mestrando AGTU (EUA)',
+      'Cientista Econômico',
+      'Mestrando AGTU',
       'Economista & Cientista de Sistemas',
     ],
   },
@@ -55,7 +55,7 @@ export const simulacoes = {
   author: {
     label: 'Curadoria & Pesquisa',
     description:
-      'Simulações criadas, curadas e analisadas por Ulisses Flores — Consultor Estratégico de IA, Professor, Palestrante e Mestrando em IA pela AGTU (EUA).',
+      'Simulações criadas, curadas e analisadas por Ulisses Flores — Consultor Estratégico de IA, Palestrante e Mestrando em IA pela AGTU.',
   },
   cta: {
     title: 'Quer usar estas simulações na sua empresa ou evento?',

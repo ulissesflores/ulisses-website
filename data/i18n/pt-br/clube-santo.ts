@@ -2,7 +2,7 @@ export const clubeSanto = {
   meta: {
     title: 'Clube Santo — Instituto Teológico e Comunidade de Formação Bíblica | Ulisses Flores',
     description:
-      'O Clube Santo é o instituto teológico e comunidade de formação bíblica fundado por Ulisses Flores — Pesquisador Polímata, Pregador e Mestrando em IA pela AGTU (EUA). Acervo de sermões, estudos bíblicos e análise historiográfica.',
+      'O Clube Santo é o instituto teológico e comunidade de formação bíblica fundado por Ulisses Flores — Pesquisador, Pregador e Mestrando em IA pela AGTU. Acervo de sermões, estudos bíblicos e análise historiográfica.',
     keywords: [
       'clube santo',
       'instituto teológico',
@@ -17,7 +17,7 @@ export const clubeSanto = {
     ],
     ogTitle: 'Clube Santo — Instituto Teológico e Comunidade de Formação Bíblica | Ulisses Flores',
     ogDescription:
-      'Instituto teológico e comunidade de formação bíblica fundado por Ulisses Flores — Pesquisador Polímata, Pregador e Mestrando em IA pela AGTU (EUA).',
+      'Instituto teológico e comunidade de formação bíblica fundado por Ulisses Flores — Pesquisador, Pregador e Mestrando em IA pela AGTU.',
   },
   breadcrumb: 'Clube Santo',
   hero: {
@@ -25,12 +25,12 @@ export const clubeSanto = {
     lead: 'O Clube Santo é o instituto teológico fundado por Ulisses Flores para formação bíblica rigorosa, análise historiográfica e comunidade de estudo. Reúne um acervo de mais de 50 sermões, pesquisas sobre canonização escribal, historicidade bíblica e fundamentos transcendentes da ordem econômica — conectando teologia, história e ciência.',
     authority: {
       kicker: 'Rigor acadêmico aplicado à formação teológica',
-      text: 'Como Pesquisador Polímata, Ulisses Flores aplica metodologia científica à análise bíblica — combinando arqueologia, historiografia, análise textual e tradição reformada. As pesquisas publicadas incluem análise exaustiva da historicidade de Jesus (métodos arqueológicos e historiográficos) e estudo histórico-crítico da formação do cânon bíblico.',
+      text: 'Como Pesquisador, Ulisses Flores aplica metodologia científica à análise bíblica — combinando arqueologia, historiografia, análise textual e tradição reformada. As pesquisas publicadas incluem análise exaustiva da historicidade de Jesus (métodos arqueológicos e historiográficos) e estudo histórico-crítico da formação do cânon bíblico.',
     },
     credentials: [
-      'Pesquisador Polímata',
+      'Pesquisador',
       'Pregador & Expositor Bíblico',
-      'Mestrando AGTU (EUA)',
+      'Mestrando AGTU',
       'Análise Historiográfica',
       'Tradição Reformada',
       '+56 Sermões Indexados',
@@ -75,7 +75,7 @@ export const clubeSanto = {
   author: {
     label: 'Fundador & Pesquisador',
     description:
-      'Clube Santo fundado e curado por Ulisses Flores — Pesquisador Polímata, Pregador, Consultor Estratégico de IA e Mestrando em IA pela AGTU (EUA).',
+      'Clube Santo fundado e curado por Ulisses Flores — Pesquisador, Pregador, Consultor Estratégico de IA e Mestrando em IA pela AGTU.',
   },
   cta: {
     title: 'Interesse em formação teológica ou palestra sobre fé e ciência?',

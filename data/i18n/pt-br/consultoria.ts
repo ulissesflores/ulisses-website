@@ -31,12 +31,12 @@ export const consultoria = {
   trust: {
     label: 'Sinais de autoridade',
     items: [
-      'MSc Candidate em IA · AGTU (EUA)',
+      'MSc Candidate em IA · AGTU',
       'ORCID · Lattes · DID verificáveis',
       '32 certificações internacionais',
-      '18+ publicações indexadas',
-      '5 idiomas profissionais',
-      'Co-inventor Codex Hash',
+      '18+ publicações',
+      '3 idiomas de trabalho (PT/EN/ES)',
+      'CTO · Codex Hash Ltda',
     ],
   },
   comparator: {
@@ -204,7 +204,7 @@ export const consultoria = {
         vertical: 'Financeiro · Fintech · Risco',
         period: '2024-2026',
         description:
-          'Dissertação de mestrado AGTU (EUA): arquitetura híbrida acoplando Redes Neurais Recorrentes com modelagem estocástica de fluxo. Repositório público no GitHub.',
+          'Dissertação de mestrado AGTU: arquitetura híbrida acoplando Redes Neurais Recorrentes com modelagem estocástica de fluxo. Repositório público no GitHub.',
         outcome: 'Código aberto, framework reutilizável, citação direta autorizada.',
         link: 'https://github.com/ulissesflores/cyberfinancial-resilience-lrblstm',
       },

@@ -50,8 +50,8 @@ export const common = {
     close: 'Fechar menu',
   },
   footer: {
-    tagline: 'Ulisses Flores · Ground Truth Knowledge Hub',
-    identityLink: 'Sovereign Identity Graph',
+    tagline: 'Ulisses Flores · Consultor e Pesquisador',
+    identityLink: 'Grafo de Identidade',
     orcid: 'ORCID',
     links: [
       { label: 'Consultoria', href: '/consultoria' },

@@ -1,22 +1,22 @@
 export const home = {
   meta: {
-    title: 'Ulisses Flores | Consultor de IA, Professor, Palestrante e Pesquisador',
+    title: 'Ulisses Flores | Consultor de IA, Palestrante e Pesquisador',
     description:
-      'Ulisses Flores — Cientista Econômico, Consultor Estratégico de IA, Professor Convidado, Palestrante e Mestrando em IA pela AGTU (EUA). Pesquisas em IA, Blockchain, Economia e Sistemas Complexos. Baseado em Jundiaí/SP, atende todo o Brasil.',
+      'Ulisses Flores — Cientista Econômico, Consultor Estratégico de IA, Palestrante e Mestrando em IA pela AGTU. Pesquisas em IA, Blockchain, Economia e Sistemas Complexos. Baseado em Jundiaí/SP, atende todo o Brasil.',
     keywords: [
       'Ulisses Flores',
       'consultor estratégico IA',
       'palestrante inteligência artificial',
-      'professor convidado IA',
+      'palestrante IA',
       'mestrando AGTU',
       'cientista econômico',
       'blockchain consultor',
       'Jundiaí São Paulo',
     ],
-    ogTitle: 'Ulisses Flores | Consultor de IA, Professor, Palestrante e Pesquisador',
+    ogTitle: 'Ulisses Flores | Consultor de IA, Palestrante e Pesquisador',
     ogDescription:
-      'Ulisses Flores — Consultor Estratégico de IA, Professor, Palestrante e Mestrando AGTU (EUA). Pesquisas em IA, Blockchain e Economia.',
-    ogImageAlt: 'Ulisses Flores — Consultor de IA, Professor e Palestrante',
+      'Ulisses Flores — Consultor Estratégico de IA, Palestrante e Mestrando AGTU. Pesquisas em IA, Blockchain e Economia.',
+    ogImageAlt: 'Ulisses Flores — Consultor de IA e Palestrante',
   },
   hero: {
     imageAlt: 'Carlos Ulisses Flores - CTO e Pesquisador Chefe da Codex Hash Ltda em Itupeva',
@@ -24,7 +24,7 @@ export const home = {
     badges: {
       cto: 'CTO & Pesquisador Chefe',
       msc: 'MSc Candidate AI @ AGTU',
-      polymath: 'Polímata',
+      polymath: 'Cientista Econômico',
     },
     quote:
       '"Atuando na fronteira do desenvolvimento tecnológico, integrando rigor acadêmico e pragmatismo executivo para solucionar problemas em sistemas complexos adaptativos."',
@@ -77,7 +77,7 @@ export const home = {
         msc: {
           year: '2025',
           title: 'Mestrado em IA (MSc)',
-          inst: 'American Global Tech University (USA)',
+          inst: 'American Global Tech University',
           desc: 'Pesquisa: Resiliência em Sistemas Complexos.',
         },
         mba: {
@@ -216,10 +216,10 @@ export const home = {
   manifesto: {
     title: 'Resumo Profissional & Acadêmico (Lattes)',
     intro:
-      'Cientista Econômico, Analista de Sistemas e Pesquisador Polímata com sólida trajetória de mais de 28 anos na convergência entre Engenharia Financeira, Arquitetura de Software Distribuída e Humanidades. Atua na fronteira do desenvolvimento tecnológico, integrando rigor acadêmico e pragmatismo executivo para solucionar problemas em sistemas complexos adaptativos.',
+      'Cientista Econômico, Analista de Sistemas e Pesquisador com sólida trajetória de mais de 28 anos na convergência entre Engenharia Financeira, Arquitetura de Software Distribuída e Humanidades. Atua na fronteira do desenvolvimento tecnológico, integrando rigor acadêmico e pragmatismo executivo para solucionar problemas em sistemas complexos adaptativos.',
     formation: {
       title: ':: Formação Acadêmica e Pesquisa Avançada',
-      text: 'Mestrando em Inteligência Artificial pela American Global Tech University (AGTU/EUA), onde desenvolve pesquisa de ponta sobre "Resiliência Cibernética e Financeira". Sua dissertação investiga arquiteturas híbridas que acoplam Redes Neurais Recorrentes (LSTM) com modelos estocásticos de fluxo (Lei de Little) e Inferência Bayesiana, visando a criação de agentes autônomos antifrágeis para mercados de alta volatilidade. Possui MBA em Blockchain Development & Technologies pela FIAP, com foco em criptoeconomia e governança descentralizada. Bacharel em Ciências Econômicas, com monografia revisitando a Teoria do Caos e a não-linearidade nos mercados sob a ótica da Escola Austríaca.',
+      text: 'Mestrando em Inteligência Artificial pela American Global Tech University (AGTU), com dissertação sobre "Resiliência Cibernética e Financeira". A dissertação investiga arquiteturas híbridas que acoplam Redes Neurais Recorrentes (LSTM) com modelos estocásticos de fluxo (Lei de Little) e Inferência Bayesiana, visando a criação de agentes autônomos antifrágeis para mercados de alta volatilidade. Possui MBA em Blockchain Development & Technologies pela FIAP, com foco em criptoeconomia e governança descentralizada. Bacharel em Ciências Econômicas, com monografia revisitando a Teoria do Caos e a não-linearidade nos mercados sob a ótica da Escola Austríaca.',
     },
     leadership: {
       title: ':: Liderança Executiva e Inovação',
@@ -239,6 +239,6 @@ export const home = {
   },
   pageFooter: {
     copyright: '© 2026 Codex Hash Ltda. All rights reserved.',
-    version: 'UlissesFlores.com • v10.0 • State of the Art',
+    version: 'UlissesFlores.com',
   },
 } as const;

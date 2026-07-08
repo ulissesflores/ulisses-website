@@ -9,7 +9,7 @@ export const ia2027 = {
   },
   raceMeta: {
     title: 'Corrida Estratégica: Cenário Race da IA 2027 | Ulisses Flores',
-    description: 'Explore o cenário de Corrida Estratégica da simulação IA 2027: aceleração máxima rumo à AGI, escalada de autonomia e risco de perda de controle humano. Análise por Ulisses Flores — Consultor em IA, Professor, Palestrante e Mestrando AGTU (EUA).',
+    description: 'Explore o cenário de Corrida Estratégica da simulação IA 2027: aceleração máxima rumo à AGI, escalada de autonomia e risco de perda de controle humano. Análise por Ulisses Flores — Consultor em IA, Palestrante e Mestrando AGTU.',
     keywords: ['corrida estratégica IA', 'race AGI', 'corrida armamentista inteligência artificial', 'superinteligência riscos', 'AGI perda de controle', 'cenários futuros IA', 'soberania tecnológica'],
     ogTitle: 'Corrida Estratégica: Cenário Race da IA 2027',
     ogDescription: 'Explore o cenário de Corrida Estratégica da simulação IA 2027: aceleração máxima rumo à AGI, escalada de autonomia e risco de perda de controle humano.',
@@ -17,7 +17,7 @@ export const ia2027 = {
   },
   slowdownMeta: {
     title: 'Desaceleração Coordenada: Cenário Slowdown da IA 2027 | Ulisses Flores',
-    description: 'Explore o cenário de Desaceleração Coordenada da simulação IA 2027: pausa global, alinhamento técnico e regulamentação internacional da AGI. Análise por Ulisses Flores — Consultor em IA, Professor, Palestrante e Mestrando AGTU (EUA).',
+    description: 'Explore o cenário de Desaceleração Coordenada da simulação IA 2027: pausa global, alinhamento técnico e regulamentação internacional da AGI. Análise por Ulisses Flores — Consultor em IA, Palestrante e Mestrando AGTU.',
     keywords: ['desaceleração coordenada IA', 'slowdown AGI', 'alinhamento de IA', 'regulamentação inteligência artificial', 'segurança IA AGI', 'cenários futuros IA', 'soberania tecnológica'],
     ogTitle: 'Desaceleração Coordenada: Cenário Slowdown da IA 2027',
     ogDescription: 'Explore o cenário de Desaceleração Coordenada da simulação IA 2027: pausa global, alinhamento técnico e regulamentação internacional da AGI.',
@@ -58,7 +58,7 @@ export const ia2027 = {
     ctaNote: 'Tradução e adaptação do cenário original publicado em',
     ctaNoteEnd: '— baseado em modelagens de Harvard, MIRI e analistas de segurança de IA.',
     authorLabel: 'Tradução & Curadoria',
-    authorDescription: 'Adaptação, curadoria e análise técnica por Ulisses Flores — Cientista, Consultor em IA, Professor, Palestrante e Mestrando.',
+    authorDescription: 'Adaptação, curadoria e análise técnica por Ulisses Flores — Cientista, Consultor em IA, Palestrante e Mestrando.',
     faqTitle: 'Perguntas sobre IA 2027 e o Futuro da Inteligência Artificial',
   },
   racePage: {
@@ -71,7 +71,7 @@ export const ia2027 = {
     ctaFull: '← Ver Simulação Completa',
     ctaAlt: 'Ver cenário alternativo: Desaceleração Coordenada →',
     authorLabel: 'Tradução & Curadoria',
-    authorDescription: 'Adaptação, curadoria e análise técnica por Ulisses Flores — Cientista, Consultor em IA, Professor, Palestrante e Mestrando.',
+    authorDescription: 'Adaptação, curadoria e análise técnica por Ulisses Flores — Cientista, Consultor em IA, Palestrante e Mestrando.',
     faqTitle: 'Perguntas sobre IA 2027 e o Futuro da Inteligência Artificial',
   },
   slowdownPage: {
@@ -84,7 +84,7 @@ export const ia2027 = {
     ctaFull: '← Ver Simulação Completa',
     ctaAlt: 'Ver cenário alternativo: Corrida Estratégica →',
     authorLabel: 'Tradução & Curadoria',
-    authorDescription: 'Adaptação, curadoria e análise técnica por Ulisses Flores — Cientista, Consultor em IA, Professor, Palestrante e Mestrando.',
+    authorDescription: 'Adaptação, curadoria e análise técnica por Ulisses Flores — Cientista, Consultor em IA, Palestrante e Mestrando.',
     faqTitle: 'Perguntas sobre IA 2027 e o Futuro da Inteligência Artificial',
   },
   /** Shared UI strings for the interactive simulation component */
@@ -114,7 +114,7 @@ export const ia2027 = {
     backToExcerpt: 'Voltar ao trecho',
     footerAdaptation: 'Esta simulação em português é uma adaptação do cenário original publicado em',
     footerAuthors: 'Autores originais: Daniel Kokotajlo, Eli Lifland, Thomas Larsen, Romeo Dean. Narrativa por Scott Alexander. Baseado em aproximadamente 25 exercícios de simulação e feedback de mais de 100 especialistas em governança e segurança de IA.',
-    footerTranslation: 'Tradução, adaptação e curadoria: Ulisses Flores — Cientista, Consultor em IA, Professor, Palestrante e Mestrando.',
+    footerTranslation: 'Tradução, adaptação e curadoria: Ulisses Flores — Cientista, Consultor em IA, Palestrante e Mestrando.',
     pathMain: {
       kicker: 'Simulação Prospectiva',
       title: 'IA 2027',

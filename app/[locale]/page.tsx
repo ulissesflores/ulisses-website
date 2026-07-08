@@ -97,7 +97,7 @@ export default async function Home({ params }: PageProps) {
         knowsLanguage: ['pt-BR', 'en', 'es', 'it', 'he'],
         areaServed: ['Jundiaí', 'Itupeva', 'São Paulo', 'Brasil'], // Geo names stay canonical
         alumniOf: [
-          { '@type': 'CollegeOrUniversity', name: 'American Global Tech University (AGTU)', location: 'EUA' },
+          { '@type': 'CollegeOrUniversity', name: 'American Global Tech University (AGTU)' },
           { '@type': 'CollegeOrUniversity', name: 'FIAP', location: 'São Paulo, Brasil' },
         ],
       },

@@ -2,7 +2,7 @@ export const mundoPolitico = {
   meta: {
     title: 'Mundo Político — Economia Austríaca, Geopolítica e Soberania | Ulisses Flores',
     description:
-      'Artigos de análise econômica, geopolítica e soberania sob a perspectiva da Escola Austríaca de Economia, escritos por Ulisses Flores — Cientista Econômico (FIAP), Consultor Estratégico de IA e Mestrando em IA pela AGTU (EUA).',
+      'Artigos de análise econômica, geopolítica e soberania sob a perspectiva da Escola Austríaca de Economia, escritos por Ulisses Flores — Cientista Econômico (FIAP), Consultor Estratégico de IA e Mestrando em IA pela AGTU.',
     keywords: [
       'escola austríaca de economia',
       'economia austríaca Brasil',
@@ -16,12 +16,12 @@ export const mundoPolitico = {
     ],
     ogTitle: 'Mundo Político — Economia Austríaca, Geopolítica e Soberania | Ulisses Flores',
     ogDescription:
-      'Análises de economia, geopolítica e soberania sob a lente da Escola Austríaca, por Ulisses Flores — Cientista Econômico, Consultor de IA e Mestrando AGTU (EUA).',
+      'Análises de economia, geopolítica e soberania sob a lente da Escola Austríaca, por Ulisses Flores — Cientista Econômico, Consultor de IA e Mestrando AGTU.',
   },
   breadcrumb: 'Mundo Político',
   hero: {
     h1: 'Economia Austríaca, Geopolítica e Soberania Digital',
-    lead: 'Artigos de análise econômica sob a perspectiva da Escola Austríaca de Economia — praxeologia, soberania monetária, geopolítica global e o papel do Bitcoin como reserva de valor. Escritos e curados por Ulisses Flores — Cientista Econômico (FIAP), Consultor Estratégico de IA, Professor Convidado, Palestrante e Mestrando em Inteligência Artificial pela AGTU (EUA).',
+    lead: 'Artigos de análise econômica sob a perspectiva da Escola Austríaca de Economia — praxeologia, soberania monetária, geopolítica global e o papel do Bitcoin como reserva de valor. Escritos e curados por Ulisses Flores — Cientista Econômico (FIAP), Consultor Estratégico de IA, Palestrante e Mestrando em Inteligência Artificial pela AGTU.',
     authority: {
       kicker: 'Análise com fundamento científico e econômico',
       text: 'Cada artigo é construído com rigor metodológico, combinando a tradição da Escola Austríaca (Mises, Hayek, Rothbard) com análise de dados e modelagem preditiva moderna. A intersecção entre economia, tecnologia e geopolítica é o eixo de toda a coleção — fornecendo insights acionáveis para decisores e investidores.',
@@ -30,8 +30,8 @@ export const mundoPolitico = {
       'Cientista Econômico (FIAP)',
       'Consultor Estratégico de IA',
       'Palestrante',
-      'Professor Convidado',
-      'Mestrando AGTU (EUA)',
+      'Cientista Econômico',
+      'Mestrando AGTU',
       'Escola Austríaca de Economia',
     ],
   },

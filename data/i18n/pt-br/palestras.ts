@@ -31,12 +31,12 @@ export const palestras = {
   trust: {
     label: 'Sinais de autoridade',
     items: [
-      'MSc Candidate em IA · AGTU (EUA)',
-      '18+ publicações indexadas',
+      'MSc Candidate em IA · AGTU',
+      '18+ publicações',
       '32 certificações internacionais',
-      'Professor convidado FIAP/SENAI',
-      '5 idiomas profissionais',
-      'Co-inventor Codex Hash',
+      'Palestrante para C-Level e universidades',
+      '3 idiomas de palestra (PT/EN/ES)',
+      'CTO · Codex Hash Ltda',
     ],
   },
   temas: {

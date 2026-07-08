@@ -15,9 +15,9 @@ export const acervoTeologico = {
       text: 'Cada sermão e exposição é fundamentado em análise textual rigorosa, tradição reformada e pesquisa historiográfica — conectando os textos bíblicos ao contexto arqueológico, histórico e linguístico original. O acervo serve como base para formação teológica, estudos bíblicos e pesquisa acadêmica em teologia histórica.',
     },
     credentials: [
-      'Pesquisador Polímata',
+      'Pesquisador',
       'Pregador & Expositor Bíblico',
-      'Mestrando AGTU (EUA)',
+      'Mestrando AGTU',
       'Análise Historiográfica',
       'Tradição Reformada',
     ],

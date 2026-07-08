@@ -2,7 +2,7 @@ export const certifications = {
   meta: {
     title: 'Certificações Técnicas em IA, Blockchain e Engenharia de Software | Ulisses Flores',
     description:
-      'Portfólio de certificações técnicas de Ulisses Flores — Consultor Estratégico de IA, Professor, Palestrante e Mestrando AGTU (EUA). Mais de 30 certificações em IA, Machine Learning, Blockchain, Cloud e Engenharia de Software com verificação pública.',
+      'Portfólio de certificações técnicas de Ulisses Flores — Consultor Estratégico de IA, Palestrante e Mestrando AGTU. Mais de 30 certificações em IA, Machine Learning, Blockchain, Cloud e Engenharia de Software com verificação pública.',
     keywords: [
       'certificações IA',
       'certificações machine learning',
@@ -14,21 +14,21 @@ export const certifications = {
     ],
     ogTitle: 'Certificações Técnicas em IA, Blockchain e Engenharia de Software | Ulisses Flores',
     ogDescription:
-      'Portfólio de certificações técnicas de Ulisses Flores — Consultor Estratégico de IA, Professor, Palestrante e Mestrando AGTU (EUA). Mais de 30 certificações com verificação pública.',
+      'Portfólio de certificações técnicas de Ulisses Flores — Consultor Estratégico de IA, Palestrante e Mestrando AGTU. Mais de 30 certificações com verificação pública.',
   },
   breadcrumb: 'Certificações',
   hero: {
     h1: 'Certificações Técnicas em IA, Blockchain e Engenharia de Software',
-    lead: 'Portfólio auditável de competências técnicas de Ulisses Flores — evidência concreta da fluência multidisciplinar que fundamenta sua atuação como Consultor Estratégico de IA, Professor Convidado, Palestrante e Desenvolvedor por demanda.',
+    lead: 'Portfólio auditável de competências técnicas de Ulisses Flores — evidência concreta da fluência multidisciplinar que fundamenta sua atuação como Consultor Estratégico de IA, Palestrante e Desenvolvedor por demanda.',
     authority: {
       kicker: 'Credenciais como base para consultoria de alto ticket',
-      text: 'Cada certificação representa domínio técnico verificável, aplicado diretamente em projetos reais de consultoria, arquitetura de sistemas e pesquisa acadêmica. Com mais de 30 certificações em plataformas como Alura, Coursera e edX — e Mestrando em IA pela AGTU (EUA) — Ulisses Flores combina profundidade teórica com execução prática.',
+      text: 'Cada certificação representa domínio técnico verificável, aplicado diretamente em projetos reais de consultoria, arquitetura de sistemas e pesquisa acadêmica. Com mais de 30 certificações em plataformas como Alura, Coursera e edX — e Mestrando em IA pela AGTU — Ulisses Flores combina profundidade teórica com execução prática.',
     },
     credentials: [
       'Consultor Estratégico de IA',
       'Palestrante',
-      'Professor Convidado',
-      'Mestrando AGTU (EUA)',
+      'Cientista Econômico',
+      'Mestrando AGTU',
       'Desenvolvedor por Demanda',
       '+30 Certificações Verificáveis',
     ],
@@ -50,7 +50,7 @@ export const certifications = {
   cta: {
     title: 'Precisa de um Consultor ou Desenvolvedor com estas competências?',
     description:
-      'Ulisses Flores atende empresas, startups e instituições como Consultor Estratégico de IA, Professor Convidado e Desenvolvedor por demanda em C++, Java, Python, Blockchain e arquitetura de sistemas complexos.',
+      'Ulisses Flores atende empresas, startups e instituições como Consultor Estratégico de IA e Desenvolvedor por demanda em C++, Java, Python, Blockchain e arquitetura de sistemas complexos.',
     button: 'Contratar Ulisses Flores →',
   },
   faq: {

@@ -5,7 +5,7 @@ export const faq = {
     {
       question: 'Quem é Ulisses Flores?',
       answer:
-        'Carlos Ulisses Flores é cientista econômico, engenheiro de sistemas e pesquisador com atuação em IA, economia e sistemas complexos. Atua como CTO, investidor anjo e professor, com produção acadêmica indexada no ORCID e Lattes.',
+        'Carlos Ulisses Flores é cientista econômico, engenheiro de sistemas e pesquisador com atuação em IA, economia e sistemas complexos. Atua como CTO e investidor anjo, com produção acadêmica pública no ORCID e Lattes.',
     },
     {
       question: 'O que é identidade soberana?',
@@ -25,7 +25,7 @@ export const faq = {
     {
       question: 'Ulisses Flores é professor universitário?',
       answer:
-        'Sim, Ulisses atua como docente em disciplinas ligadas a sistemas de informação, economia e tecnologia. Sua formação acadêmica inclui credenciais em ciências econômicas e análise de sistemas.',
+        'Não como docente de carreira. Ulisses ministra palestras, masterclasses e workshops executivos em universidades e empresas, e mantém produção acadêmica pública no ORCID e Lattes. Sua formação inclui credenciais em ciências econômicas e análise de sistemas.',
     },
     {
       question: 'Como contratar Ulisses Flores como palestrante?',
@@ -139,7 +139,7 @@ export const faq = {
     {
       question: 'As certificações cobrem Inteligência Artificial e Machine Learning?',
       answer:
-        'Sim. O portfólio inclui certificações em Machine Learning, Deep Learning, LLMs, MLOps, visão computacional, NLP e engenharia de dados — alinhadas com a atuação como Consultor Estratégico de IA e Mestrando em IA pela AGTU (EUA).',
+        'Sim. O portfólio inclui certificações em Machine Learning, Deep Learning, LLMs, MLOps, visão computacional, NLP e engenharia de dados — alinhadas com a atuação como Consultor Estratégico de IA e Mestrando em IA pela AGTU.',
     },
     {
       question: 'Há certificações em Blockchain e Segurança da Informação?',
@@ -162,9 +162,9 @@ export const faq = {
         'Cada certificação possui um link de verificação pública diretamente na página individual. Os IDs de certificação e URLs de verificação permitem validação independente junto ao provedor emissor, garantindo total transparência e rastreabilidade.',
     },
     {
-      question: 'Como contratar Ulisses Flores como Consultor ou Professor?',
+      question: 'Como contratar Ulisses Flores como Consultor ou Palestrante?',
       answer:
-        'Entre em contato pelo formulário da página principal ou via LinkedIn. Ulisses atua como Consultor Estratégico de IA, Professor Convidado, Palestrante e Desenvolvedor por demanda para empresas, universidades e eventos em todo o Brasil e exterior.',
+        'Entre em contato pelo formulário da página principal ou via LinkedIn. Ulisses atua como Consultor Estratégico de IA, Palestrante e Desenvolvedor por demanda para empresas, universidades e eventos em todo o Brasil e exterior.',
     },
   ] satisfies FaqItem[],
 
@@ -356,12 +356,12 @@ export const faq = {
     {
       question: 'O PSI tem propriedade intelectual protegida?',
       answer:
-        'Sim. A tecnologia core do PSI, incluindo o Protocolo Phantom Input e a arquitetura de reconstrução efêmera de chaves via SRAM PUF, possui notação inventiva registrada sob a marca Codex Hash. O whitepaper técnico completo está publicado como prior art.',
+        'Sim, por publicação defensiva (prior art): a tecnologia core do PSI — o Protocolo Phantom Input e a arquitetura de reconstrução efêmera de chaves via SRAM PUF — está documentada de autoria própria no whitepaper técnico publicado, sob a Codex Hash. Não há patente ou marca registrada depositada sobre a tecnologia.',
     },
     {
       question: 'Quem é a equipe por trás do Projeto PSI?',
       answer:
-        'O projeto é liderado por Ulisses Flores — Consultor Estratégico de IA, Mestrando em Inteligência Artificial pela AGTU (EUA), Arquiteto de Software e co-inventor de tecnologias blockchain (Codex Hash). Com 28+ anos de experiência em sistemas distribuídos, criptografia e engenharia de hardware.',
+        'O projeto é liderado por Ulisses Flores — Consultor Estratégico de IA, Mestrando em Inteligência Artificial pela AGTU, Arquiteto de Software e criador de tecnologias blockchain na Codex Hash. Com 28+ anos de experiência em sistemas distribuídos, criptografia e engenharia de hardware.',
     },
     {
       question: 'O PSI é viável tecnicamente com a tecnologia atual?',
@@ -430,12 +430,12 @@ export const faq = {
     {
       question: 'Quem é Ulisses Flores?',
       answer:
-        'Carlos Ulisses Flores é Cientista Econômico, Analista de Sistemas e Pesquisador Polímata com atuação em Inteligência Artificial, Blockchain, Economia e Sistemas Complexos. Atua como Consultor Estratégico de IA, Palestrante, Professor Convidado e Mestrando em IA pela AGTU (EUA).',
+        'Carlos Ulisses Flores é Cientista Econômico, Analista de Sistemas e Pesquisador com atuação em Inteligência Artificial, Blockchain, Economia e Sistemas Complexos. Atua como Consultor Estratégico de IA, Palestrante e Mestrando em IA pela AGTU.',
     },
     {
       question: 'Qual a formação acadêmica de Ulisses Flores?',
       answer:
-        'Ulisses é Mestrando em Inteligência Artificial pela AGTU (EUA), possui MBA em Gestão de TI pela FIAP, graduação em Ciências Econômicas e em Análise de Sistemas. Sua produção acadêmica está indexada no ORCID (0000-0002-6034-7765) e na Plataforma Lattes.',
+        'Ulisses é Mestrando em Inteligência Artificial pela AGTU, possui MBA em Gestão de TI pela FIAP, graduação em Ciências Econômicas e em Análise de Sistemas. Sua produção acadêmica está indexada no ORCID (0000-0002-6034-7765) e na Plataforma Lattes.',
     },
     {
       question: 'Quais são as áreas de pesquisa de Ulisses Flores?',
@@ -463,9 +463,9 @@ export const faq = {
         'As publicações estão disponíveis em ulissesflores.com, com indexação pública no ORCID e Lattes. O portfólio inclui artigos de pesquisa, whitepapers técnicos e ensaios nas áreas de IA, economia, blockchain, teologia e engenharia de sistemas.',
     },
     {
-      question: 'Em que regiões Ulisses Flores atua como consultor e professor?',
+      question: 'Em que regiões Ulisses Flores atua como consultor e palestrante?',
       answer:
-        'Baseado em Jundiaí/Itupeva (SP), Ulisses atende clientes e instituições em toda a Grande São Paulo e interior, com projetos e palestras em todo o Brasil e internacionalmente. Consultorias e aulas remotas estão disponíveis globalmente.',
+        'Baseado em Jundiaí (SP), Ulisses atende clientes e instituições em toda a Grande São Paulo e interior, com projetos e palestras em todo o Brasil e internacionalmente. Consultorias e workshops remotos estão disponíveis globalmente.',
     },
     {
       question: 'Como verificar a identidade digital de Ulisses Flores?',
