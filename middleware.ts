@@ -189,11 +189,20 @@ export function middleware(request: NextRequest) {
     return NextResponse.rewrite(url);
   }
 
+  // ─── 3b. Locales não-ptbr (en/es/it/he) → noindex ────────────────
+  // Tudo que chega aqui é locale não-default (bare paths e pt-br já retornaram).
+  // Essas variantes são tradução automática (Gemini), de tráfego ~zero, e carregam
+  // os mesmos riscos de conteúdo do pt-br sem passar pela barra humana. Mantê-las
+  // FORA do índice do Google (X-Robots-Tag) evita expor conteúdo não-vetado em 4
+  // idiomas. `follow` preserva o fluxo de link interno. pt-br é o canônico indexável.
+
   // ─── 4. AI bot markdown rewrite (bot-only) ────────────────────────
   const ua = request.headers.get('user-agent') || '';
 
   if (!AI_BOT_REGEX.test(ua)) {
-    return NextResponse.next();
+    const res = NextResponse.next();
+    res.headers.set('X-Robots-Tag', 'noindex, follow');
+    return res;
   }
 
   // Already .md → pass through
@@ -224,7 +233,9 @@ export function middleware(request: NextRequest) {
 
   const url = request.nextUrl.clone();
   url.pathname = toMarkdownPath(canonicalPathname);
-  return NextResponse.rewrite(url);
+  const botRes = NextResponse.rewrite(url);
+  botRes.headers.set('X-Robots-Tag', 'noindex, follow');
+  return botRes;
 }
 
 // ─── Matcher ───────────────────────────────────────────────────────────────────
