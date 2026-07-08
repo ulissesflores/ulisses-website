@@ -64,7 +64,7 @@ export const consultoria = {
       {
         title: 'Diagnóstico Estratégico',
         duration: '3-4 semanas',
-        priceLabel: 'A partir de R$ 45.000',
+        priceLabel: 'Sob proposta',
         description:
           'Análise executiva de maturidade em IA, dados e arquitetura, com relatório priorizado, identificação de riscos e quick wins acionáveis.',
         deliverables: ['Relatório executivo (40-60 pp)', 'Mapa de riscos e prioridades', 'Reunião de devolutiva com C-Level'],
@@ -72,7 +72,7 @@ export const consultoria = {
       {
         title: 'Roadmap Estratégico de IA',
         duration: '6-8 semanas',
-        priceLabel: 'A partir de R$ 90.000',
+        priceLabel: 'Sob proposta',
         description:
           'Plano de adoção de IA generativa e agentes com casos de uso priorizados, arquitetura-alvo, orçamento estimado e plano de mudança.',
         deliverables: ['Roadmap 18 meses', 'Arquitetura-alvo', 'Plano de change management'],
@@ -80,7 +80,7 @@ export const consultoria = {
       {
         title: 'Arquitetura de Sistema Crítico',
         duration: '8-16 semanas',
-        priceLabel: 'Sob consulta',
+        priceLabel: 'Sob proposta',
         description:
           'Design de sistemas distribuídos, cloudless, HFT, custódia MPC, zero-trust ou hardware security — com ADRs e prova de conceito.',
         deliverables: ['Documento de arquitetura', 'ADRs versionadas', 'Prova de conceito (opcional)'],
@@ -88,7 +88,7 @@ export const consultoria = {
       {
         title: 'Governança de Dados & Compliance',
         duration: '4-8 semanas',
-        priceLabel: 'Sob consulta',
+        priceLabel: 'Sob proposta',
         description:
           'Framework de governança de dados, conformidade LGPD/GDPR, políticas de IA responsável e trilha de auditoria algorítmica.',
         deliverables: ['Framework documentado', 'Políticas internas', 'Trilha de auditoria'],
@@ -96,7 +96,7 @@ export const consultoria = {
       {
         title: 'Fractional CTO',
         duration: 'Retainer mensal · 6 meses mínimo',
-        priceLabel: 'Sob consulta',
+        priceLabel: 'Sob proposta',
         description:
           'Atuação executiva fracional (2-3 dias/semana), liderando time técnico, definindo padrões e respondendo ao Board.',
         deliverables: ['Plano trimestral', 'Reunião semanal de liderança', 'Reporting mensal ao Board'],
@@ -104,15 +104,15 @@ export const consultoria = {
       {
         title: 'Board Advisory',
         duration: 'Retainer mensal',
-        priceLabel: 'Sob consulta · fee fixo (equity opcional para Series A+)',
+        priceLabel: 'Sob proposta',
         description:
-          'Assento consultivo em conselhos estratégicos com agenda técnica e visão de longo prazo. Equity discutível apenas para startups Series A+ com cap table limpo.',
+          'Assento consultivo em conselhos estratégicos com agenda técnica e visão de longo prazo.',
         deliverables: ['Reunião mensal de conselho', 'Pareceres técnicos sob demanda', 'Network introductions'],
       },
       {
         title: 'Treinamento Executivo In-Company',
         duration: '1-5 dias',
-        priceLabel: 'A partir de R$ 18.000/dia',
+        priceLabel: 'Sob proposta',
         description:
           'Workshops e masterclasses para C-Level e Board sobre IA generativa, AGI, blockchain e soberania digital. Material em PT/EN/ES.',
         deliverables: ['Workshop presencial ou remoto', 'Material customizado', 'Q&A executivo aprofundado'],
@@ -121,7 +121,7 @@ export const consultoria = {
   },
   verticais: {
     title: 'Verticais-âncora',
-    subtitle: 'Três setores onde concentro 80% dos engajamentos. Outras verticais sob demanda.',
+    subtitle: 'Três setores onde concentro a maior parte dos engajamentos. Outras verticais sob demanda.',
     items: [
       {
         title: 'Financeiro & Fintech',
@@ -141,30 +141,30 @@ export const consultoria = {
     ],
     additional: {
       label: 'Verticais adicionais',
-      items: ['Agronegócio de precisão', 'Educação executiva e instituições teológicas'],
+      items: ['Agronegócio de precisão', 'Educação executiva'],
     },
   },
   pricing: {
-    title: 'Estratégia de pricing — híbrida',
+    title: 'Investimento',
     subtitle:
-      'Faixa pública para entregáveis padronizáveis (diagnóstico, roadmap, treinamento) e “sob consulta” para escopos críticos (arquitetura, fractional, board, pesquisa).',
+      'O valor de cada engajamento é definido por escopo, maturidade e prazo. Envie um briefing e retorno com uma proposta.',
     columns: {
       modality: 'Modalidade',
-      pricing: 'Estratégia de exibição',
-      market: 'Faixa de mercado',
+      pricing: 'Investimento',
+      market: '',
     },
     rows: [
-      { modality: 'Diagnóstico', pricing: 'A partir de R$ 45.000', market: 'R$ 25k-80k' },
-      { modality: 'Roadmap de IA', pricing: 'A partir de R$ 90.000', market: 'R$ 80k-200k' },
-      { modality: 'Arquitetura Crítica', pricing: 'Sob consulta', market: 'R$ 50k-250k por escopo' },
-      { modality: 'Governança de Dados', pricing: 'Sob consulta', market: 'R$ 40k-120k' },
-      { modality: 'Fractional CTO', pricing: 'Sob consulta', market: 'R$ 25k-80k/mês' },
-      { modality: 'Board Advisory', pricing: 'Sob consulta', market: 'R$ 15k-40k/mês' },
-      { modality: 'Treinamento In-Company', pricing: 'A partir de R$ 18.000/dia', market: 'R$ 15k-40k/dia' },
-      { modality: 'Pesquisa Aplicada / Parecer', pricing: 'Sob consulta', market: 'R$ 20k-120k' },
+      { modality: 'Diagnóstico', pricing: 'Sob proposta', market: '' },
+      { modality: 'Roadmap de IA', pricing: 'Sob proposta', market: '' },
+      { modality: 'Arquitetura Crítica', pricing: 'Sob proposta', market: '' },
+      { modality: 'Governança de Dados', pricing: 'Sob proposta', market: '' },
+      { modality: 'Fractional CTO', pricing: 'Sob proposta', market: '' },
+      { modality: 'Board Advisory', pricing: 'Sob proposta', market: '' },
+      { modality: 'Treinamento In-Company', pricing: 'Sob proposta', market: '' },
+      { modality: 'Pesquisa Aplicada / Parecer', pricing: 'Sob proposta', market: '' },
     ],
     note:
-      'Valores em BRL. Para clientes internacionais, equivalentes em USD/EUR são fornecidos na proposta. Ticket médio anual de consultoria estratégica de IA para Fortune 500 BR: R$ 400k-1,2M (benchmark Gartner SEA / HackTrain BR 2025).',
+      'Valores definidos por proposta, conforme o escopo. Para clientes internacionais, equivalentes em USD/EUR são fornecidos na proposta.',
   },
   cases: {
     title: 'Casos representativos',

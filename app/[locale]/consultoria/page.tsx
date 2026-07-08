@@ -262,7 +262,6 @@ export default async function ConsultoriaPage({ params }: PageProps) {
                 <tr>
                   <th className='px-5 py-3 text-start font-semibold'>{t.pricing.columns.modality}</th>
                   <th className='px-5 py-3 text-start font-semibold'>{t.pricing.columns.pricing}</th>
-                  <th className='px-5 py-3 text-start font-semibold'>{t.pricing.columns.market}</th>
                 </tr>
               </thead>
               <tbody className='divide-y divide-neutral-900'>
@@ -270,7 +269,6 @@ export default async function ConsultoriaPage({ params }: PageProps) {
                   <tr key={row.modality} className='bg-neutral-950/60'>
                     <td className='px-5 py-3 text-neutral-300 font-medium'>{row.modality}</td>
                     <td className='px-5 py-3 text-emerald-300'>{row.pricing}</td>
-                    <td className='px-5 py-3 text-neutral-400'>{row.market}</td>
                   </tr>
                 ))}
               </tbody>

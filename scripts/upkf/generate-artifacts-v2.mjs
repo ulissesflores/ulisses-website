@@ -529,7 +529,7 @@ function parsePublicIdentifiers(upkfText) {
 }
 
 function parseDomainInventory(upkfText) {
-  const section = extractBlock(upkfText, '## Domain Inventory (Hub & Spoke — 15 domains)\n', '\n\n### Web3 Presence');
+  const section = extractBlock(upkfText, '## Domain Inventory (Hub & Spoke — 14 domains)\n', '\n\n### Web3 Presence');
   return parseMarkdownTableRows(section)
     .slice(1)
     .map((cells) => ({

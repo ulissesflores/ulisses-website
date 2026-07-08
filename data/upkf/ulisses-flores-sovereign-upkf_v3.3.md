@@ -1057,7 +1057,7 @@ Competências Interpessoais, Habilidades Analíticas.
 - https://groups.google.com/g/androidbrasil/c/d7onDwJ5ekA?pli=1
 - gitperson (user-declared identity anchor)
 
-## Domain Inventory (Hub & Spoke — 15 domains)
+## Domain Inventory (Hub & Spoke — 14 domains)
 <!-- classification: PUBLIC -->
 
 | # | Domain | URL | Category | Purpose |
@@ -1073,7 +1073,6 @@ Competências Interpessoais, Habilidades Analíticas.
 | 9 | ulisses.solutions | https://ulisses.solutions/ | Deep link | Service page |
 | 10 | ulissesflores.dev | https://ulissesflores.dev/ | Deep link | Developer profile |
 | 11 | ulisses.ia.br | https://ulisses.ia.br/ | Deep link | AI focus |
-| 12 | 11-97272-7532.me | https://11-97272-7532.me/ | Deep link | Phone-to-web |
 | 13 | ul1ss.es | https://ul1ss.es/ | Infrastructure | Vanity / shortener |
 | 14 | anamnese.cc | https://anamnese.cc/ | Project | Isolated project |
 | 15 | horarionibus.com.br | https://horarionibus.com.br/ | Project | Isolated project |
@@ -1092,7 +1091,6 @@ Competências Interpessoais, Habilidades Analíticas.
 - email_personal: c.ulisses@gmail.com
 - email_public: contato@ulissesflores.com
 - email_business: contato@codexhash.com
-- phone: +55-11-97272-7532
 
 ## Addresses
 <!-- classification: PRIVATE -->
@@ -1378,7 +1376,7 @@ Competências Interpessoais, Habilidades Analíticas.
 ### v3.0 (2026-02-20)
 - Initial sovereign UPKF merge from 5 source files
 - 40/40 ORCID works mapped
-- 15/15 domains inventoried
+- 14/14 domains inventoried
 - 32 Alura certifications with UUIDs
 - 5-language disambiguation firewall
 - Odysseus metaphor and Palau Pledge motto

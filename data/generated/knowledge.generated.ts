@@ -192,13 +192,6 @@ export const knowledgeData = {
         "purpose": "AI focus"
       },
       {
-        "position": 12,
-        "domain": "11-97272-7532.me",
-        "url": "https://11-97272-7532.me/",
-        "category": "Deep link",
-        "purpose": "Phone-to-web"
-      },
-      {
         "position": 13,
         "domain": "ul1ss.es",
         "url": "https://ul1ss.es/",

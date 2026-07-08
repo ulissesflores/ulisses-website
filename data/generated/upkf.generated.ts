@@ -659,7 +659,7 @@ export const upkfMeta = {
   "identityHubStats": {
     "orcidWorks": 40,
     "certifications": 34,
-    "domains": 15,
+    "domains": 14,
     "sermons": 56
   },
   "geographicallyServes": [
@@ -769,13 +769,6 @@ export const upkfMeta = {
       "purpose": "AI focus"
     },
     {
-      "position": 12,
-      "domain": "11-97272-7532.me",
-      "url": "https://11-97272-7532.me/",
-      "category": "Deep link",
-      "purpose": "Phone-to-web"
-    },
-    {
       "position": 13,
       "domain": "ul1ss.es",
       "url": "https://ul1ss.es/",
@@ -813,15 +806,15 @@ export const upkfMeta = {
     "sourceMd": "/upkf-source.md"
   },
   "jsonldCoverage": {
-    "markdownBytes": 85302,
-    "markdownLines": 1392,
+    "markdownBytes": 85196,
+    "markdownLines": 1390,
     "sectionCount": 102,
-    "siteGraphNodes": 44,
-    "publicGraphNodes": 187,
-    "fullGraphNodes": 290,
-    "siteJsonldBytes": 29165,
-    "publicJsonldBytes": 185743,
-    "fullJsonldBytes": 289777,
+    "siteGraphNodes": 43,
+    "publicGraphNodes": 186,
+    "fullGraphNodes": 289,
+    "siteJsonldBytes": 28983,
+    "publicJsonldBytes": 185561,
+    "fullJsonldBytes": 289487,
     "corpusFiles": 0,
     "corpusSnippets": 0,
     "corpusDirs": [],
@@ -2128,13 +2121,6 @@ export const siteJsonLd = {
       "name": "ulisses.ia.br",
       "url": "https://ulisses.ia.br/",
       "description": "Deep link — AI focus"
-    },
-    {
-      "@id": "https://ulissesflores.com/#domain-11-97272-7532-me",
-      "@type": "WebSite",
-      "name": "11-97272-7532.me",
-      "url": "https://11-97272-7532.me/",
-      "description": "Deep link — Phone-to-web"
     },
     {
       "@id": "https://ulissesflores.com/#domain-ul1ss-es",
