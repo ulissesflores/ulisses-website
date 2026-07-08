@@ -139,7 +139,6 @@ function generateLlmsTxt(data) {
     `- Palestras, Keynotes e Workshops Executivos: ${origin}/palestras`,
     '- Contato consultoria: contato@ulissesflores.com (resposta em até 2 dias úteis)',
     '- Contato palestras: contato@ulissesflores.com (proposta formal em até 3 dias úteis)',
-    '- WhatsApp Business: https://wa.me/5511972727532',
     '',
     '## Primary Collections',
     `- Research: ${origin}/research`,

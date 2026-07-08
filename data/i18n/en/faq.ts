@@ -399,7 +399,7 @@ export const faq = {
     },
     {
       question: 'How to book an initial diagnostic call?',
-      answer: 'The 30-minute initial diagnostic is free and with no commitment. Email contato@ulissesflores.com or use WhatsApp Business (+55 11 97272-7532) sharing (1) budget range, (2) urgency (30/60/90 days), and (3) stage (briefing, RFP, decision made). Reply within 1 business day.'
+      answer: 'The 30-minute initial diagnostic is free and with no commitment. Email contato@ulissesflores.com sharing (1) budget range, (2) urgency (30/60/90 days), and (3) stage (briefing, RFP, decision made). Reply within 1 business day.'
     },
     {
       question: 'Does Ulisses serve clients outside Brazil?',

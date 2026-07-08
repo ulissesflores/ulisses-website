@@ -287,10 +287,10 @@ export const consultoria = {
       },
       {
         kind: 'tertiary',
-        title: 'WhatsApp Business',
-        description: 'Per progetti urgenti o un primo contatto rapido.',
-        button: 'Apri WhatsApp',
-        href: 'https://wa.me/5511972727532?text=Salve%2C%20vengo%20dalla%20pagina%20di%20consulenza.',
+        title: 'LinkedIn',
+        description: 'Connettiti per contesto professionale e brevi conversazioni.',
+        button: 'Apri LinkedIn',
+        href: 'https://www.linkedin.com/in/ulisses-flores-75961921',
       },
     ],
     qualifier: {

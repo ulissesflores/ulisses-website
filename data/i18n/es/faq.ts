@@ -399,7 +399,7 @@ export const faq = {
     },
     {
       question: '¿Cómo agendar una conversación inicial de diagnóstico?',
-      answer: 'El diagnóstico inicial de 30 minutos es gratuito y sin compromiso. Envía email a contato@ulissesflores.com o usa WhatsApp Business (+55 11 97272-7532) con (1) rango de presupuesto, (2) urgencia (30/60/90 días) y (3) etapa (briefing, RFP, decisión tomada). Respuesta en hasta 1 día hábil.'
+      answer: 'El diagnóstico inicial de 30 minutos es gratuito y sin compromiso. Envía email a contato@ulissesflores.com con (1) rango de presupuesto, (2) urgencia (30/60/90 días) y (3) etapa (briefing, RFP, decisión tomada). Respuesta en hasta 1 día hábil.'
     },
     {
       question: '¿Ulisses atiende empresas fuera de Brasil?',

@@ -147,11 +147,10 @@ Entregáveis: tipo de artefato produzido
 
 **Status atual no site** ([page.tsx:171-184](../app/[locale]/page.tsx)):
 
-- ✅ WhatsApp: `+55 11 97272-7532`
-- ✅ Email pessoal: `c.ulisses@gmail.com`
+- ✅ Email comercial: `contato@ulissesflores.com` (padronizado; WhatsApp pessoal removido por PII)
+- ✅ LinkedIn: `https://www.linkedin.com/in/ulisses-flores-75961921`
 - ❌ Calendly inexistente
 - ❌ Formulário inexistente
-- ❌ Alias `contato@ulissesflores.com` inexistente
 
 **Stack recomendada para `/consultoria`:**
 
@@ -368,7 +367,7 @@ Entregáveis: tipo de artefato produzido
 
 ### C1-C8 — Lacunas tratadas
 
-- **C1** WhatsApp Business — `wa.me/5511972727532` linkado nos CTAs da `/consultoria` e `llms.txt`.
+- **C1** Contato comercial — `contato@ulissesflores.com` e LinkedIn nos CTAs da `/consultoria` e `llms.txt` (WhatsApp pessoal removido por PII).
 - **C2** Disponibilidade temporal — declarada em `delivery` (presencial BR sem custo de deslocamento; internacional com passagens executivas).
 - **C3** Modalidades atualmente abertas — implícito via "agendar diagnóstico" (CTA primário).
 - **C4** Termos comerciais base — `policies` da `/consultoria` cobre escopo, propriedade intelectual, NDA, cobrança e cancelamento.

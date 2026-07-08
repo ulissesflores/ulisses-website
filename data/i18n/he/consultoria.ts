@@ -287,10 +287,10 @@ export const consultoria = {
       },
       {
         kind: 'tertiary',
-        title: 'WhatsApp Business',
-        description: 'לפרויקטים דחופים או יצירת קשר ראשונית קצרה.',
-        button: 'פתח WhatsApp',
-        href: 'https://wa.me/5511972727532?text=%D7%A9%D7%9C%D7%95%D7%9D%2C%20%D7%94%D7%92%D7%A2%D7%AA%D7%99%20%D7%9E%D7%93%D7%A3%20%D7%94%D7%99%D7%99%D7%A2%D7%95%D7%A5.',
+        title: 'LinkedIn',
+        description: 'התחבר להקשר מקצועי ולשיחות קצרות.',
+        button: 'פתח LinkedIn',
+        href: 'https://www.linkedin.com/in/ulisses-flores-75961921',
       },
     ],
     qualifier: {

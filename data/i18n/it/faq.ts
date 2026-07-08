@@ -399,7 +399,7 @@ export const faq = {
     },
     {
       question: 'Come prenotare una conversazione iniziale di diagnosi?',
-      answer: 'La diagnosi iniziale di 30 minuti è gratuita e senza impegno. Invia email a contato@ulissesflores.com o usa WhatsApp Business (+55 11 97272-7532) con (1) fascia di budget, (2) urgenza (30/60/90 giorni) e (3) stadio (briefing, RFP, decisione presa). Risposta entro 1 giorno lavorativo.'
+      answer: 'La diagnosi iniziale di 30 minuti è gratuita e senza impegno. Invia email a contato@ulissesflores.com con (1) fascia di budget, (2) urgenza (30/60/90 giorni) e (3) stadio (briefing, RFP, decisione presa). Risposta entro 1 giorno lavorativo.'
     },
     {
       question: 'Ulisses serve aziende fuori dal Brasile?',

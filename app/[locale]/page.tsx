@@ -3,7 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import {
   BookOpen, Cpu, Github, Linkedin, Mail, Terminal, Download,
-  Globe, MapPin, MessageCircle,
+  Globe, MapPin,
   Layers, Code, Briefcase, Award, TrendingUp,
   Database, CheckCircle, FileText, FlaskConical
 } from 'lucide-react';
@@ -173,8 +173,7 @@ export default async function Home({ params }: PageProps) {
             </div>
             <div className="bg-neutral-900/30 p-5 rounded-xl border border-white/5 flex flex-wrap gap-3 items-center backdrop-blur-sm">
                <span className="text-[10px] font-bold text-neutral-400 w-full uppercase mb-1 tracking-widest">{t.contact.directContact}</span>
-               <SocialBtn href="https://wa.me/5511972727532" icon={<MessageCircle size={16} />} label="WhatsApp" color="emerald" />
-               <SocialBtn href="mailto:c.ulisses@gmail.com" icon={<Mail size={16} />} label="Email" />
+               <SocialBtn href="mailto:contato@ulissesflores.com" icon={<Mail size={16} />} label="Email" color="emerald" />
                <SocialBtn href="https://gmb.ulissesflores.com" icon={<MapPin size={16} />} label={t.contact.location} />
             </div>
           </div>

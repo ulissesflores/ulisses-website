@@ -16,8 +16,7 @@ Carlos Ulisses Flores atua entre economia, engenharia de software, inteligência
 - Simulações: https://ulissesflores.com/simulacoes
 
 ## Contato
-- WhatsApp: https://wa.me/5511972727532
-- Email: mailto:c.ulisses@gmail.com
+- Email: contato@ulissesflores.com
 - LinkedIn: https://linkedin.ulissesflores.com
 - ORCID: https://orcid.ulissesflores.com
 
