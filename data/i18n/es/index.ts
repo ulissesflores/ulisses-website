@@ -9,7 +9,6 @@ import { certifications } from './certifications';
 import { faq } from './faq';
 import { ia2027 } from './ia2027';
 import { goldenleaf } from './goldenleaf';
-import { mummRa } from './mumm-ra';
 import { acervoTeologico } from './acervo-teologico';
 import { category } from './category';
 import { consultoria } from './consultoria';
@@ -27,7 +26,6 @@ const dict = {
   faq,
   ia2027,
   goldenleaf,
-  mummRa,
   acervoTeologico,
   category,
   consultoria,

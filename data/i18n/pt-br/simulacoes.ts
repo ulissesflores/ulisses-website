@@ -51,13 +51,6 @@ export const simulacoes = {
         'Sistema de cultivo autônomo de cogumelos gourmet com sensores IoT de precisão, IA preditiva on-edge e arquitetura cloudless — soberania total dos dados sem nuvem.',
       tags: ['IoT', 'IA Preditiva', 'Cloudless', 'Agricultura'],
     },
-    mummRa: {
-      badges: ['Ferramenta Experimental', 'BETA'],
-      title: 'Mumm-Ra · Chatbot de Humor Negro via WhatsApp',
-      description:
-        'Chatbot experimental alimentado por LLMs, inspirado no vilão imortal dos ThunderCats (anos 90). Te xinga, reclama de ter sido invocado, te chama de verme — mas sempre entrega a resposta. Laboratório de engenharia de prompt e personagens de IA.',
-      tags: ['WhatsApp', 'LLMs', 'Engenharia de Prompt', 'Humor Negro'],
-    },
   },
   author: {
     label: 'Curadoria & Pesquisa',

@@ -119,7 +119,6 @@ function generateLlmsTxt(data) {
     `- IA 2027 — Simulação Interativa sobre o Futuro da AGI: ${origin}/simulacoes/ia-2027`,
     `  - Cenário Desaceleração Coordenada (slowdown): ${origin}/simulacoes/ia-2027/desaceleracao-coordenada`,
     `  - Cenário Corrida Estratégica (race): ${origin}/simulacoes/ia-2027/corrida-estrategica`,
-    `- Mumm-Ra — Chatbot Experimental via WhatsApp: ${origin}/simulacoes/mumm-ra`,
     `- Projeto PSI — Hardware Wallet Nuclear-Grade com Ring Signatures: ${origin}/whitepapers/projeto-psi`,
     `- GoldenLeaf — Micologia Inteligente com IoT e IA: ${origin}/simulacoes/goldenleaf`,
     '',

@@ -455,7 +455,6 @@ ulisses-hub/
 │   │   │   ├── page.tsx
 │   │   │   └── corrida-estrategica/page.tsx
 │   │   ├── goldenleaf/page.tsx
-│   │   ├── mumm-ra/page.tsx
 │   │   └── projeto-psi/page.tsx
 │   ├── acervo-teologico/
 │   ├── mundo-politico/

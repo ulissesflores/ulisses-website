@@ -148,7 +148,6 @@ function loadPriorityUrls() {
     '/simulacoes',
     '/simulacoes/ia-2027',
     '/simulacoes/goldenleaf',
-    '/simulacoes/mumm-ra',
     '/simulacoes/projeto-psi',
     '/simulacoes/ia-2027/corrida-estrategica',
     '/simulacoes/ia-2027/desaceleracao-coordenada',

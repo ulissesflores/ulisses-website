@@ -301,7 +301,7 @@ Entregáveis: tipo de artefato produzido
 
 ### A. Inventário de ativos já publicados (fonte de prova social)
 
-- **5 simulações estratégicas** publicadas (IA 2027, 2 ramificações, Mumm-Ra, GoldenLeaf, Projeto PSI) — [llms.txt:40-48](../public/llms.txt)
+- **4 simulações estratégicas** publicadas (IA 2027, 2 ramificações, GoldenLeaf, Projeto PSI) — [llms.txt](../public/llms.txt)
 - **18+ publicações** indexadas (research, whitepapers, essays) — [llms.txt:69-88](../public/llms.txt)
 - **32 certificações** (30 Alura, 1 Coursera, 1 TU Delft/edX) — [certifications.sota.json](../data/seo/certifications.sota.json)
 - **3 repos de research ativos no GitHub** (MSc AGTU + MIT 507/508):

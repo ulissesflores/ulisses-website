@@ -62,20 +62,6 @@ export const simulacoes = {
         "Cloudless",
         "Agricoltura"
       ]
-    },
-    mummRa: {
-      badges: [
-        "Strumento Sperimentale",
-        "BETA"
-      ],
-      title: 'Mumm-Ra · Chatbot di Umorismo Nero via WhatsApp',
-      description: 'Chatbot sperimentale alimentato da LLM, ispirato al cattivo immortale dei ThunderCats (anni \'90). Ti insulta, si lamenta di essere stato evocato, ti chiama verme — ma fornisce sempre la risposta. Laboratorio di ingegneria dei prompt e personaggi IA.',
-      tags: [
-        "WhatsApp",
-        "LLM",
-        "Ingegneria dei Prompt",
-        "Umorismo Nero"
-      ]
     }
   },
   author: {

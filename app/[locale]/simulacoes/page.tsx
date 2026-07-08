@@ -132,24 +132,6 @@ export default async function SimulacoesPage({ params }: PageProps) {
                 ))}
               </div>
             </article>
-
-            {/* Mumm-Ra */}
-            <article className='rounded-2xl border border-neutral-800 bg-neutral-900/40 p-8'>
-              <div className='flex items-center gap-3 mb-4'>
-                {t.grid.mummRa.badges.map((b) => (
-                  <span key={b} className='text-[10px] uppercase tracking-[0.2em] text-violet-300 border border-violet-700/40 rounded-full px-3 py-1'>{b}</span>
-                ))}
-              </div>
-              <h2 className='text-2xl font-bold text-white mb-3'>
-                <Link href={localePath('/simulacoes/mumm-ra', locale)} className='hover:text-emerald-400 transition-colors'>{t.grid.mummRa.title}</Link>
-              </h2>
-              <p className='text-neutral-300 leading-relaxed mb-4'>{t.grid.mummRa.description}</p>
-              <div className='flex flex-wrap gap-3 mb-6'>
-                {t.grid.mummRa.tags.map((tag) => (
-                  <span key={tag} className='text-xs border border-neutral-700 text-neutral-400 px-3 py-1 rounded-full'>{tag}</span>
-                ))}
-              </div>
-            </article>
           </div>
         </div>
       </section>

@@ -51,13 +51,6 @@ export const simulacoes = {
         'Autonomous gourmet mushroom cultivation system with precision IoT sensors, on-edge predictive AI and cloudless architecture — total data sovereignty without cloud.',
       tags: ['IoT', 'Predictive AI', 'Cloudless', 'Agriculture'],
     },
-    mummRa: {
-      badges: ['Experimental Tool', 'BETA'],
-      title: 'Mumm-Ra · Dark Humor Chatbot via WhatsApp',
-      description:
-        'Experimental chatbot powered by LLMs, inspired by the immortal villain from ThunderCats (90s cartoon). He insults you, complains about being summoned, calls you a worm — but always delivers the answer. A laboratory for prompt engineering and AI characters.',
-      tags: ['WhatsApp', 'LLMs', 'Prompt Engineering', 'Dark Humor'],
-    },
   },
   author: {
     label: 'Curation & Research',

@@ -13,7 +13,6 @@ type I18nContextValue = {
   common: Dictionary['common'];
   /** Optional page-specific namespaces — only shipped when needed by the page */
   ia2027: Dictionary['ia2027'];
-  mummRa: Dictionary['mummRa'];
 };
 
 const I18nContext = createContext<I18nContextValue | null>(null);
@@ -24,24 +23,22 @@ type I18nProviderProps = {
   locale: Locale;
   common: Dictionary['common'];
   ia2027?: Dictionary['ia2027'];
-  mummRa?: Dictionary['mummRa'];
   children: ReactNode;
 };
 
 // Default empty stubs to avoid runtime errors when namespace isn't provided
 const EMPTY_IA2027 = {} as Dictionary['ia2027'];
-const EMPTY_MUMMRA = {} as Dictionary['mummRa'];
 
 /**
  * Wraps the app tree and provides i18n data to client components.
  *
  * Performance: `dict.common` is always sent; page-specific namespaces
- * like `ia2027` or `mummRa` are sent ONLY by pages that need them.
+ * like `ia2027` are sent ONLY by pages that need them.
  * Server components continue to import getDictionary() directly.
  */
-export function I18nProvider({ locale, common, ia2027, mummRa, children }: I18nProviderProps) {
+export function I18nProvider({ locale, common, ia2027, children }: I18nProviderProps) {
   return (
-    <I18nContext.Provider value={{ locale, common, ia2027: ia2027 ?? EMPTY_IA2027, mummRa: mummRa ?? EMPTY_MUMMRA }}>
+    <I18nContext.Provider value={{ locale, common, ia2027: ia2027 ?? EMPTY_IA2027 }}>
       {children}
     </I18nContext.Provider>
   );
@@ -51,7 +48,7 @@ export function I18nProvider({ locale, common, ia2027, mummRa, children }: I18nP
 
 /**
  * Access i18n context in client components.
- * Returns `{ locale, common, ia2027, mummRa }`.
+ * Returns `{ locale, common, ia2027 }`.
  *
  * @example
  * const { common, locale } = useDict();

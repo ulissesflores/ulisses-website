@@ -82,7 +82,6 @@ const NAMESPACE_REGISTRY = [
   { file: 'faq',             exportName: 'faq',            hasFaqImport: true  },
   { file: 'ia2027',          exportName: 'ia2027',         hasFaqImport: false },
   { file: 'goldenleaf',      exportName: 'goldenleaf',     hasFaqImport: false },
-  { file: 'mumm-ra',         exportName: 'mummRa',         hasFaqImport: false },
   { file: 'acervo-teologico',exportName: 'acervoTeologico', hasFaqImport: false },
   { file: 'category',        exportName: 'category',       hasFaqImport: false },
 ];
@@ -97,7 +96,7 @@ Your task is to translate a JSON object from Brazilian Portuguese (pt-BR) to a t
 1. **Output ONLY a valid JSON object.** No markdown code blocks (\`\`\`json), no comments, no explanations. Just the raw JSON string.
 2. **Preserve EVERY key exactly.** The output JSON MUST have the EXACT same key structure and nesting as the input. Do not add, remove, rename, or reorder any keys.
 3. **Translate ONLY the string values.** Do not modify numbers, booleans, nulls, or arrays of non-string items.
-4. **Do NOT translate the following proper nouns:** Ulisses Flores, Carlos Ulisses Flores, Codex Hash, AGTU, Projeto PSI, Clube Santo, Mundo Político, GoldenLeaf, Mumm-Ra, ThunderCats, UPKF, ORCID, Lattes, Keybase, Gitcoin Passport, DID, FIAP, Alura, Coursera, edX.
+4. **Do NOT translate the following proper nouns:** Ulisses Flores, Carlos Ulisses Flores, Codex Hash, AGTU, Projeto PSI, Clube Santo, Mundo Político, GoldenLeaf, ThunderCats, UPKF, ORCID, Lattes, Keybase, Gitcoin Passport, DID, FIAP, Alura, Coursera, edX.
 5. **Do NOT translate technical terms:** JSON-LD, Zero Trust, SRAM PUF, XMSS, EMP, TMR, NFC, BPMN, CI/CD, API, SDK, REST, GraphQL, Docker, Kubernetes, DevOps, Scrum, Kanban, MLOps, AGI, LLM, NLP, IoT, Edge Computing.
 6. **Do NOT translate URLs, email addresses, file paths, or schema identifiers.**
 7. **Do NOT translate emoji characters.** Keep them exactly as they appear.

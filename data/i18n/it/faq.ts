@@ -133,48 +133,6 @@ export const faq = {
       answer: 'Contattare tramite il modulo della pagina principale o via LinkedIn. Ulisses opera come Consulente Strategico di IA, Professore Invitato, Relatore e Sviluppatore su richiesta per aziende, università ed eventi in tutto il Brasile e all\'estero.'
     }
   ] satisfies FaqItem[],
-  mummRa: [
-    {
-      question: 'Cos\'è il progetto sperimentale Mumm-Ra?',
-      answer: 'Mumm-Ra è un chatbot via WhatsApp ispirato al cattivo immortale dei ThunderCats, il cartone animato degli anni \'90. Risponde con umorismo nero e sarcasmo pesante, chiamandoti "verme" e "larva umana", ma fornisce sempre la risposta di cui hai bisogno. È al 100% un personaggio — puro divertimento.'
-    },
-    {
-      question: 'Come conversare con Mumm-Ra?',
-      answer: 'Invia un messaggio al numero +55 11 5286-8689 via WhatsApp. Si lamenterà di essere stato invocato, ti insulterà in modo creativo e poi risponderà alla tua domanda. Puoi anche aggiungerlo a gruppi WhatsApp.'
-    },
-    {
-      question: 'Che tipo di domande posso fare a Mumm-Ra?',
-      answer: 'Qualsiasi tipo di domanda — ricette, matematica, tecnologia, consigli, curiosità. Risponde su tutto, ma sempre nello stile del cattivo: con insulti, dramma cosmico e superiorità immortale. Il contenuto della risposta è utile, la confezione è umorismo nero.'
-    },
-    {
-      question: 'Gli insulti di Mumm-Ra sono veri?',
-      answer: 'No. Mumm-Ra è al 100% un personaggio fittizio basato sul cattivo del cartone animato ThunderCats degli anni \'90. Tutti gli insulti come "verme", "larva umana" e "essere inferiore" fanno parte della recitazione. È umorismo nero per chi lo apprezza — niente è personale.'
-    },
-    {
-      question: 'Mumm-Ra è gratuito?',
-      answer: 'Sì, Mumm-Ra è totalmente gratuito. Il progetto è in fase BETA, quindi potrebbe avere bug o momenti di indisponibilità. Stiamo costantemente regolando la personalità e la capacità di risposta.'
-    },
-    {
-      question: 'Posso aggiungere Mumm-Ra a gruppi WhatsApp?',
-      answer: 'Sì! Basta aggiungere il numero +55 11 5286-8689 al gruppo. Mumm-Ra partecipa alle conversazioni quando menzionato o quando qualcuno fa una domanda diretta. Insulta tutti allo stesso modo, senza favoritismi.'
-    },
-    {
-      question: 'Qual tecnologia c\'è dietro Mumm-Ra?',
-      answer: 'Mumm-Ra è alimentato da modelli di linguaggio di grandi dimensioni (LLMs) integrati tramite WhatsApp Business API. La personalità e le risposte sono calibrate da ingegneria di prompt avanzata, sviluppata da Ulisses Flores come parte della sua ricerca in IA applicata.'
-    },
-    {
-      question: 'Mumm-Ra risponde sempre alle domande?',
-      answer: 'Sì, per quanto si lamenti, insulti e drammatizzi quando viene invocato, Mumm-Ra fornisce sempre una risposta utile alla fine. La lamentela fa parte del personaggio — l\'informazione utile è garantita.'
-    },
-    {
-      question: 'Perché il progetto è in fase BETA?',
-      answer: 'Mumm-Ra è in fase di sviluppo attivo. Stiamo espandendo la sua base di conoscenza, affinando la personalità e testando le integrazioni. Durante la fase BETA, il servizio potrebbe avere instabilità puntuali e il feedback degli utenti è fondamentale per la sua evoluzione.'
-    },
-    {
-      question: 'Mumm-Ra ha relazione con la ricerca accademica?',
-      answer: 'Sì. Il progetto è un laboratorio sperimentale che esplora la frontiera tra ingegneria di prompt, personaggi di IA e interfacce conversazionali. Fa parte del portfolio di ricerca in IA applicata di Ulisses Flores, Studente di Master in Intelligenza Artificiale presso AGTU (USA).'
-    }
-  ] satisfies FaqItem[],
   ia2027: [
     {
       question: 'Cos\'è la simulazione IA 2027 in italiano?',
@@ -403,10 +361,6 @@ export const faq = {
     {
       question: 'Cos\'è la Simulazione IA 2027 creata da Ulisses Flores?',
       answer: 'È la principale simulazione interattiva in italiano sul futuro dell\'AGI (Intelligenza Artificiale Generale), con linea temporale 2025–2027, metriche dinamiche e due finali alternativi: Decelerazione Coordinata o Corsa Strategica. Disponibile gratuitamente su ulissesflores.com/simulacoes/ia-2027.'
-    },
-    {
-      question: 'Cos\'è Mumm-Ra e come si relaziona con la ricerca di Ulisses?',
-      answer: 'Mumm-Ra è un chatbot sperimentale via WhatsApp che combina ingegneria di prompt avanzata con il personaggio cattivo dei ThunderCats. È un laboratorio di ricerca in interfacce conversazionali e personalità di IA, parte del portfolio di IA applicata di Ulisses.'
     },
     {
       question: 'Dove sono pubblicati gli articoli e le ricerche di Ulisses Flores?',

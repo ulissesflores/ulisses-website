@@ -62,20 +62,6 @@ export const simulacoes = {
         "Cloudless",
         "Agricultura"
       ]
-    },
-    mummRa: {
-      badges: [
-        "Herramienta Experimental",
-        "BETA"
-      ],
-      title: 'Mumm-Ra · Chatbot de Humor Negro vía WhatsApp',
-      description: 'Chatbot experimental alimentado por LLMs, inspirado en el villano inmortal de los ThunderCats (años 90). Te insulta, se queja de haber sido invocado, te llama gusano — pero siempre entrega la respuesta. Laboratorio de ingeniería de prompt y personajes de IA.',
-      tags: [
-        "WhatsApp",
-        "LLMs",
-        "Ingeniería de Prompt",
-        "Humor Negro"
-      ]
     }
   },
   author: {

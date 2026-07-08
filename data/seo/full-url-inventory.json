@@ -152,31 +152,6 @@
       "expectedStatus": 200
     },
     {
-      "path": "/simulacoes/mumm-ra",
-      "type": "static-page",
-      "expectedStatus": 200
-    },
-    {
-      "path": "/en/simulacoes/mumm-ra",
-      "type": "static-page",
-      "expectedStatus": 200
-    },
-    {
-      "path": "/es/simulacoes/mumm-ra",
-      "type": "static-page",
-      "expectedStatus": 200
-    },
-    {
-      "path": "/it/simulacoes/mumm-ra",
-      "type": "static-page",
-      "expectedStatus": 200
-    },
-    {
-      "path": "/he/simulacoes/mumm-ra",
-      "type": "static-page",
-      "expectedStatus": 200
-    },
-    {
       "path": "/simulacoes/goldenleaf",
       "type": "static-page",
       "expectedStatus": 200

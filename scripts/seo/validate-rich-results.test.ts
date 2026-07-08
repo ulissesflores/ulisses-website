@@ -18,7 +18,6 @@ describe('validate-rich-results data integrity', () => {
       'app/[locale]/whitepapers/projeto-psi/page.tsx',
       'app/[locale]/simulacoes/projeto-psi/page.tsx',
       'app/[locale]/simulacoes/goldenleaf/page.tsx',
-      'app/[locale]/simulacoes/mumm-ra/page.tsx',
       'app/[locale]/simulacoes/ia-2027/page.tsx',
     ];
     for (const pagePath of pages) {
