@@ -561,7 +561,7 @@ export const faq = {
     {
       question: 'Como agendar uma conversa inicial de diagnóstico?',
       answer:
-        'O diagnóstico inicial de 30 minutos é gratuito e sem compromisso. Envie email para consultoria@ulissesflores.com ou use o WhatsApp Business (+55 11 97272-7532) com (1) faixa de orçamento, (2) urgência (30/60/90 dias) e (3) estágio (briefing, RFP, decisão tomada). Retorno em até 1 dia útil.',
+        'O diagnóstico inicial de 30 minutos é gratuito e sem compromisso. Envie email para contato@ulissesflores.com ou use o WhatsApp Business (+55 11 97272-7532) com (1) faixa de orçamento, (2) urgência (30/60/90 dias) e (3) estágio (briefing, RFP, decisão tomada). Retorno em até 1 dia útil.',
     },
     {
       question: 'Ulisses atende empresas fora do Brasil?',
@@ -594,7 +594,7 @@ export const faq = {
     {
       question: 'Como solicitar uma proposta de palestra?',
       answer:
-        'Envie briefing por email para palestras@ulissesflores.com com (1) tipo de evento, (2) tema desejado, (3) data e local, (4) público estimado, (5) duração e formato, (6) orçamento (opcional). Resposta com proposta formal em até 3 dias úteis.',
+        'Envie briefing por email para contato@ulissesflores.com com (1) tipo de evento, (2) tema desejado, (3) data e local, (4) público estimado, (5) duração e formato, (6) orçamento (opcional). Resposta com proposta formal em até 3 dias úteis.',
     },
     {
       question: 'Ulisses faz palestras pro bono?',

@@ -276,14 +276,14 @@ export const consultoria = {
         title: 'קבע אבחון חינם (30 דקות)',
         description: 'שיחה חקרנית להערכת הקשר, דחיפות ו-fit. ללא התחייבות.',
         button: 'פתח יומן',
-        href: 'mailto:consultoria@ulissesflores.com?subject=Diagnostic%2030min&body=%D7%A9%D7%9C%D7%95%D7%9D%2C%20%D7%90%D7%A8%D7%A6%D7%94%20%D7%9C%D7%A7%D7%91%D7%95%D7%A2%20%D7%90%D7%91%D7%97%D7%95%D7%9F%20%D7%A9%D7%9C%2030%20%D7%93%D7%A7%D7%95%D7%AA.',
+        href: 'mailto:contato@ulissesflores.com?subject=Diagnostic%2030min&body=%D7%A9%D7%9C%D7%95%D7%9D%2C%20%D7%90%D7%A8%D7%A6%D7%94%20%D7%9C%D7%A7%D7%91%D7%95%D7%A2%20%D7%90%D7%91%D7%97%D7%95%D7%9F%20%D7%A9%D7%9C%2030%20%D7%93%D7%A7%D7%95%D7%AA.',
       },
       {
         kind: 'secondary',
         title: 'אימייל ייעודי',
-        description: 'consultoria@ulissesflores.com · מענה תוך יום עסקים אחד.',
+        description: 'contato@ulissesflores.com · מענה תוך יום עסקים אחד.',
         button: 'שלח אימייל',
-        href: 'mailto:consultoria@ulissesflores.com',
+        href: 'mailto:contato@ulissesflores.com',
       },
       {
         kind: 'tertiary',
@@ -305,7 +305,7 @@ export const consultoria = {
     description:
       'מדריך ניהולי של 8-12 עמודים עם 32 שאלות מפתח להערכת מוכנות ארגונית ל-AI גנרטיבי, ממשל נתונים וארכיטקטורת יעד. PDF נשלח באימייל.',
     button: 'בקש את הצ\'קליסט באימייל',
-    href: 'mailto:consultoria@ulissesflores.com?subject=Generative%20AI%20Maturity%20Checklist&body=%D7%A9%D7%9C%D7%95%D7%9D%2C%20%D7%90%D7%A8%D7%A6%D7%94%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%90%D7%AA%20%D7%94%D7%A6%27%D7%A7%D7%9C%D7%99%D7%A1%D7%98.',
+    href: 'mailto:contato@ulissesflores.com?subject=Generative%20AI%20Maturity%20Checklist&body=%D7%A9%D7%9C%D7%95%D7%9D%2C%20%D7%90%D7%A8%D7%A6%D7%94%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%90%D7%AA%20%D7%94%D7%A6%27%D7%A7%D7%9C%D7%99%D7%A1%D7%98.',
   },
   policies: {
     title: 'נהלים מסחריים',
@@ -325,6 +325,6 @@ export const consultoria = {
     description:
       'התחל באבחון חינם של 30 דקות. אם יש fit, נתקדם להצעה רשמית תוך 5 ימי עסקים.',
     button: 'קבע אבחון',
-    href: 'mailto:consultoria@ulissesflores.com?subject=Diagnostic%2030min',
+    href: 'mailto:contato@ulissesflores.com?subject=Diagnostic%2030min',
   },
 } as const;

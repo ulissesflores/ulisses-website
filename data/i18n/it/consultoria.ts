@@ -276,14 +276,14 @@ export const consultoria = {
         title: 'Prenota una diagnosi gratuita (30 min)',
         description: 'Conversazione esplorativa per capire contesto, urgenza e fit. Senza impegno.',
         button: 'Apri agenda',
-        href: 'mailto:consultoria@ulissesflores.com?subject=Diagnosi%2030min&body=Salve%2C%20vorrei%20prenotare%20una%20diagnosi%20di%2030%20minuti.',
+        href: 'mailto:contato@ulissesflores.com?subject=Diagnosi%2030min&body=Salve%2C%20vorrei%20prenotare%20una%20diagnosi%20di%2030%20minuti.',
       },
       {
         kind: 'secondary',
         title: 'Email dedicata',
-        description: 'consultoria@ulissesflores.com · risposta entro 1 giorno lavorativo.',
+        description: 'contato@ulissesflores.com · risposta entro 1 giorno lavorativo.',
         button: 'Invia email',
-        href: 'mailto:consultoria@ulissesflores.com',
+        href: 'mailto:contato@ulissesflores.com',
       },
       {
         kind: 'tertiary',
@@ -305,7 +305,7 @@ export const consultoria = {
     description:
       'Guida esecutiva di 8-12 pagine con 32 domande chiave per diagnosticare la prontezza organizzativa per AI generativa, governance dei dati e architettura target. PDF consegnato via email.',
     button: 'Richiedi la checklist via email',
-    href: 'mailto:consultoria@ulissesflores.com?subject=Checklist%20Maturit%C3%A0%20AI%20Generativa&body=Salve%2C%20vorrei%20ricevere%20la%20Checklist%20di%20Maturit%C3%A0%20in%20AI%20Generativa.',
+    href: 'mailto:contato@ulissesflores.com?subject=Checklist%20Maturit%C3%A0%20AI%20Generativa&body=Salve%2C%20vorrei%20ricevere%20la%20Checklist%20di%20Maturit%C3%A0%20in%20AI%20Generativa.',
   },
   policies: {
     title: 'Buone pratiche commerciali',
@@ -325,6 +325,6 @@ export const consultoria = {
     description:
       'Inizia con una diagnosi gratuita di 30 minuti. Se c\'è fit, procediamo a una proposta formale entro 5 giorni lavorativi.',
     button: 'Prenota diagnosi',
-    href: 'mailto:consultoria@ulissesflores.com?subject=Diagnosi%2030min',
+    href: 'mailto:contato@ulissesflores.com?subject=Diagnosi%2030min',
   },
 } as const;

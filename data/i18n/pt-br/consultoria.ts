@@ -276,14 +276,14 @@ export const consultoria = {
         title: 'Agendar diagnóstico (30 min, gratuito)',
         description: 'Conversa exploratória para entender contexto, urgência e fit. Sem compromisso.',
         button: 'Abrir agenda',
-        href: 'mailto:consultoria@ulissesflores.com?subject=Diagnostico%2030min&body=Ol%C3%A1%2C%20gostaria%20de%20agendar%20um%20diagn%C3%B3stico%20de%2030%20minutos.',
+        href: 'mailto:contato@ulissesflores.com?subject=Diagnostico%2030min&body=Ol%C3%A1%2C%20gostaria%20de%20agendar%20um%20diagn%C3%B3stico%20de%2030%20minutos.',
       },
       {
         kind: 'secondary',
         title: 'Email dedicado',
-        description: 'consultoria@ulissesflores.com · resposta em até 1 dia útil.',
+        description: 'contato@ulissesflores.com · resposta em até 1 dia útil.',
         button: 'Enviar email',
-        href: 'mailto:consultoria@ulissesflores.com',
+        href: 'mailto:contato@ulissesflores.com',
       },
       {
         kind: 'tertiary',
@@ -305,7 +305,7 @@ export const consultoria = {
     description:
       'Guia executivo de 8-12 páginas com 32 perguntas-chave para diagnosticar prontidão organizacional para IA generativa, governança de dados e arquitetura-alvo. PDF entregue por email.',
     button: 'Solicitar o checklist por email',
-    href: 'mailto:consultoria@ulissesflores.com?subject=Checklist%20de%20Maturidade%20em%20IA%20Generativa&body=Ol%C3%A1%2C%20gostaria%20de%20receber%20o%20Checklist%20de%20Maturidade%20em%20IA%20Generativa.',
+    href: 'mailto:contato@ulissesflores.com?subject=Checklist%20de%20Maturidade%20em%20IA%20Generativa&body=Ol%C3%A1%2C%20gostaria%20de%20receber%20o%20Checklist%20de%20Maturidade%20em%20IA%20Generativa.',
   },
   policies: {
     title: 'Boas práticas comerciais',
@@ -325,6 +325,6 @@ export const consultoria = {
     description:
       'Comece com um diagnóstico de 30 minutos sem custo. Se houver fit, seguimos para uma proposta formal em até 5 dias úteis.',
     button: 'Agendar diagnóstico',
-    href: 'mailto:consultoria@ulissesflores.com?subject=Diagnostico%2030min',
+    href: 'mailto:contato@ulissesflores.com?subject=Diagnostico%2030min',
   },
 } as const;

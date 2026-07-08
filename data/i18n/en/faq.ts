@@ -445,7 +445,7 @@ export const faq = {
     },
     {
       question: 'How to book an initial diagnostic call?',
-      answer: 'The 30-minute initial diagnostic is free and with no commitment. Email consultoria@ulissesflores.com or use WhatsApp Business (+55 11 97272-7532) sharing (1) budget range, (2) urgency (30/60/90 days), and (3) stage (briefing, RFP, decision made). Reply within 1 business day.'
+      answer: 'The 30-minute initial diagnostic is free and with no commitment. Email contato@ulissesflores.com or use WhatsApp Business (+55 11 97272-7532) sharing (1) budget range, (2) urgency (30/60/90 days), and (3) stage (briefing, RFP, decision made). Reply within 1 business day.'
     },
     {
       question: 'Does Ulisses serve clients outside Brazil?',
@@ -472,7 +472,7 @@ export const faq = {
     },
     {
       question: 'How to request a speaking proposal?',
-      answer: 'Send briefing by email to palestras@ulissesflores.com with (1) event type, (2) desired topic, (3) date and location, (4) estimated audience, (5) duration and format, (6) budget (optional). Formal proposal within 3 business days.'
+      answer: 'Send briefing by email to contato@ulissesflores.com with (1) event type, (2) desired topic, (3) date and location, (4) estimated audience, (5) duration and format, (6) budget (optional). Formal proposal within 3 business days.'
     },
     {
       question: 'Does Ulisses give pro bono talks?',

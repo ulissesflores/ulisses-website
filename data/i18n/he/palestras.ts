@@ -167,8 +167,8 @@ export const palestras = {
       { label: 'תקציב (אופציונלי)', placeholder: 'טווח משוער לכיול ההצעה' },
     ],
     submitButton: 'שלח briefing באימייל',
-    submitHref: 'mailto:palestras@ulissesflores.com?subject=%D7%91%D7%A7%D7%A9%D7%AA%20%D7%94%D7%A8%D7%A6%D7%90%D7%94&body=%D7%A1%D7%95%D7%92%20%D7%90%D7%99%D7%A8%D7%95%D7%A2%3A%20%0A%D7%A0%D7%95%D7%A9%D7%90%3A%20%0A%D7%AA%D7%90%D7%A8%D7%99%D7%9A%20%D7%95%D7%9E%D7%99%D7%A7%D7%95%D7%9D%3A%20%0A%D7%A7%D7%94%D7%9C%3A%20%0A%D7%9E%D7%A9%D7%9A%20%D7%95%D7%A4%D7%95%D7%A8%D7%9E%D7%98%3A%20%0A%D7%AA%D7%A7%D7%A6%D7%99%D7%91%20(%D7%90%D7%95%D7%A4%D7%A6%D7%99%D7%95%D7%A0%D7%9C%D7%99)%3A%20',
-    note: 'אימייל ייעודי: palestras@ulissesflores.com · מענה תוך 3 ימי עסקים.',
+    submitHref: 'mailto:contato@ulissesflores.com?subject=%D7%91%D7%A7%D7%A9%D7%AA%20%D7%94%D7%A8%D7%A6%D7%90%D7%94&body=%D7%A1%D7%95%D7%92%20%D7%90%D7%99%D7%A8%D7%95%D7%A2%3A%20%0A%D7%A0%D7%95%D7%A9%D7%90%3A%20%0A%D7%AA%D7%90%D7%A8%D7%99%D7%9A%20%D7%95%D7%9E%D7%99%D7%A7%D7%95%D7%9D%3A%20%0A%D7%A7%D7%94%D7%9C%3A%20%0A%D7%9E%D7%A9%D7%9A%20%D7%95%D7%A4%D7%95%D7%A8%D7%9E%D7%98%3A%20%0A%D7%AA%D7%A7%D7%A6%D7%99%D7%91%20(%D7%90%D7%95%D7%A4%D7%A6%D7%99%D7%95%D7%A0%D7%9C%D7%99)%3A%20',
+    note: 'אימייל ייעודי: contato@ulissesflores.com · מענה תוך 3 ימי עסקים.',
   },
   idiomas: {
     title: 'שפות להרצאה',
@@ -215,6 +215,6 @@ export const palestras = {
     description:
       'שלח את ה-briefing באימייל — הצעה רשמית תוך 3 ימי עסקים עם תאריך, פורמט ושכר.',
     button: 'בקש הצעה',
-    href: 'mailto:palestras@ulissesflores.com?subject=Speaking%20request',
+    href: 'mailto:contato@ulissesflores.com?subject=Speaking%20request',
   },
 } as const;

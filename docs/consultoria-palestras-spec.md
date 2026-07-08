@@ -151,12 +151,12 @@ Entregáveis: tipo de artefato produzido
 - ✅ Email pessoal: `c.ulisses@gmail.com`
 - ❌ Calendly inexistente
 - ❌ Formulário inexistente
-- ❌ Alias `consultoria@ulissesflores.com` inexistente
+- ❌ Alias `contato@ulissesflores.com` inexistente
 
 **Stack recomendada para `/consultoria`:**
 
 1. **Primário — Calendly** (agendar diagnóstico de 30min gratuito): converte intenção alta imediatamente.
-2. **Secundário — Email dedicado** `consultoria@ulissesflores.com`: cria filtro natural, profissionaliza a caixa, permite auto-responder com qualificação.
+2. **Secundário — Email dedicado** `contato@ulissesflores.com`: cria filtro natural, profissionaliza a caixa, permite auto-responder com qualificação.
 3. **Tertiário — WhatsApp Business**: mesmo número, mas label "Business" + auto-resposta com link do Calendly.
 4. **Remover da landing:** email pessoal `c.ulisses@gmail.com` (mantém no rodapé geral, mas tira do CTA comercial).
 
@@ -223,7 +223,7 @@ Entregáveis: tipo de artefato produzido
 **Stack recomendada:**
 
 1. **Primário — Formulário dedicado de briefing** (evento, data, público, formato, orçamento): palestras têm mais variáveis que consultoria, um Calendly genérico perde contexto.
-2. **Secundário — Email dedicado** `palestras@ulissesflores.com`.
+2. **Secundário — Email dedicado** `contato@ulissesflores.com`.
 3. **Tertiário — WhatsApp** para eventos com data apertada (< 30 dias).
 
 ---
@@ -354,7 +354,7 @@ Entregáveis: tipo de artefato produzido
 | **D5** | Naming de cases | Tier 1 (entidades próprias citadas — Codex Hash, Projeto PSI) · Tier 2 (logo + descrição vaga) · Tier 3 (anônimos com setor). |
 | **D6** | Terceiro setor cristão | Cachê reduzido **R$ 4.000-8.000** declarado em `cache.rows` da página de palestras. |
 | **D7** | Pro bono cap | **4 eventos/ano** com lead time mínimo de **90 dias** — declarado em `cache.note` e em `policies`. |
-| **D8** | Email dedicado | `consultoria@ulissesflores.com` e `palestras@ulissesflores.com` — usados como CTAs primários enquanto Calendly não é configurado. |
+| **D8** | Email dedicado | `contato@ulissesflores.com` e `contato@ulissesflores.com` — usados como CTAs primários enquanto Calendly não é configurado. |
 
 ### B1-B7 — Melhorias incorporadas
 

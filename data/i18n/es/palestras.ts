@@ -167,8 +167,8 @@ export const palestras = {
       { label: 'Presupuesto (opcional)', placeholder: 'Rango estimado para calibrar la propuesta' },
     ],
     submitButton: 'Enviar briefing por correo',
-    submitHref: 'mailto:palestras@ulissesflores.com?subject=Solicitud%20de%20conferencia&body=Tipo%20de%20evento%3A%20%0ATema%3A%20%0AFecha%20y%20lugar%3A%20%0AAudiencia%3A%20%0ADuraci%C3%B3n%20y%20formato%3A%20%0APresupuesto%20(opcional)%3A%20',
-    note: 'Email dedicado: palestras@ulissesflores.com · Respuesta en hasta 3 días hábiles.',
+    submitHref: 'mailto:contato@ulissesflores.com?subject=Solicitud%20de%20conferencia&body=Tipo%20de%20evento%3A%20%0ATema%3A%20%0AFecha%20y%20lugar%3A%20%0AAudiencia%3A%20%0ADuraci%C3%B3n%20y%20formato%3A%20%0APresupuesto%20(opcional)%3A%20',
+    note: 'Email dedicado: contato@ulissesflores.com · Respuesta en hasta 3 días hábiles.',
   },
   idiomas: {
     title: 'Idiomas para conferencia',
@@ -215,6 +215,6 @@ export const palestras = {
     description:
       'Envía el briefing por email — propuesta formal en hasta 3 días hábiles con fecha, formato y cachet.',
     button: 'Solicitar propuesta',
-    href: 'mailto:palestras@ulissesflores.com?subject=Solicitud%20de%20conferencia',
+    href: 'mailto:contato@ulissesflores.com?subject=Solicitud%20de%20conferencia',
   },
 } as const;

@@ -167,8 +167,8 @@ export const palestras = {
       { label: 'Budget (optional)', placeholder: 'Estimated range to calibrate the proposal' },
     ],
     submitButton: 'Send briefing by email',
-    submitHref: 'mailto:palestras@ulissesflores.com?subject=Speaking%20request&body=Event%20type%3A%20%0ATopic%3A%20%0ADate%20and%20location%3A%20%0AAudience%3A%20%0ADuration%20and%20format%3A%20%0ABudget%20(optional)%3A%20',
-    note: 'Dedicated email: palestras@ulissesflores.com · Response within 3 business days.',
+    submitHref: 'mailto:contato@ulissesflores.com?subject=Speaking%20request&body=Event%20type%3A%20%0ATopic%3A%20%0ADate%20and%20location%3A%20%0AAudience%3A%20%0ADuration%20and%20format%3A%20%0ABudget%20(optional)%3A%20',
+    note: 'Dedicated email: contato@ulissesflores.com · Response within 3 business days.',
   },
   idiomas: {
     title: 'Languages for speaking',
@@ -215,6 +215,6 @@ export const palestras = {
     description:
       'Send the briefing by email — formal proposal within 3 business days with date, format and fee.',
     button: 'Request proposal',
-    href: 'mailto:palestras@ulissesflores.com?subject=Speaking%20request',
+    href: 'mailto:contato@ulissesflores.com?subject=Speaking%20request',
   },
 } as const;

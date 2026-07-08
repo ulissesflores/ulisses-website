@@ -1090,7 +1090,7 @@ Competências Interpessoais, Habilidades Analíticas.
 <!-- classification: PRIVATE -->
 
 - email_personal: c.ulisses@gmail.com
-- email_public: hello@ulissesflores.com
+- email_public: contato@ulissesflores.com
 - email_business: contato@codexhash.com
 - phone: +55-11-97272-7532
 

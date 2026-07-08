@@ -276,14 +276,14 @@ export const consultoria = {
         title: 'Book a free 30-min diagnostic',
         description: 'Exploratory conversation to assess context, urgency and fit. No commitment.',
         button: 'Open calendar',
-        href: 'mailto:consultoria@ulissesflores.com?subject=30min%20Diagnostic&body=Hi%2C%20I%27d%20like%20to%20book%20a%2030-minute%20diagnostic.',
+        href: 'mailto:contato@ulissesflores.com?subject=30min%20Diagnostic&body=Hi%2C%20I%27d%20like%20to%20book%20a%2030-minute%20diagnostic.',
       },
       {
         kind: 'secondary',
         title: 'Dedicated email',
-        description: 'consultoria@ulissesflores.com · response within 1 business day.',
+        description: 'contato@ulissesflores.com · response within 1 business day.',
         button: 'Send email',
-        href: 'mailto:consultoria@ulissesflores.com',
+        href: 'mailto:contato@ulissesflores.com',
       },
       {
         kind: 'tertiary',
@@ -305,7 +305,7 @@ export const consultoria = {
     description:
       'Executive 8-12 page guide with 32 key questions to assess organizational readiness for generative AI, data governance and target architecture. PDF delivered by email.',
     button: 'Request the checklist by email',
-    href: 'mailto:consultoria@ulissesflores.com?subject=Generative%20AI%20Maturity%20Checklist&body=Hi%2C%20I%27d%20like%20to%20receive%20the%20Generative%20AI%20Maturity%20Checklist.',
+    href: 'mailto:contato@ulissesflores.com?subject=Generative%20AI%20Maturity%20Checklist&body=Hi%2C%20I%27d%20like%20to%20receive%20the%20Generative%20AI%20Maturity%20Checklist.',
   },
   policies: {
     title: 'Commercial best practices',
@@ -325,6 +325,6 @@ export const consultoria = {
     description:
       'Start with a free 30-min diagnostic. If there’s a fit, we move to a formal proposal within 5 business days.',
     button: 'Schedule diagnostic',
-    href: 'mailto:consultoria@ulissesflores.com?subject=30min%20Diagnostic',
+    href: 'mailto:contato@ulissesflores.com?subject=30min%20Diagnostic',
   },
 } as const;
