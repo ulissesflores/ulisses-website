@@ -234,7 +234,7 @@ export const consultoria = {
         vertical: 'Hardware Security · Deep Tech',
         period: 'em desenvolvimento',
         description:
-          'Co-invenção de hardware wallet de classe nuclear com SRAM PUF, XMSS pós-quântico e redundância TMR. Landing comercial e whitepaper técnico publicados.',
+          'Criação de hardware wallet de custódia soberana com SRAM PUF, XMSS pós-quântico e redundância TMR. Landing comercial e whitepaper técnico publicados.',
         outcome: 'Prototipação avançada, IP licenciável, oportunidade de investimento seed/Series A.',
         link: '/projeto-psi',
       },
