@@ -435,7 +435,7 @@ export const faq = {
     {
       question: 'Qual a formação acadêmica de Ulisses Flores?',
       answer:
-        'Ulisses é Mestrando em Inteligência Artificial pela AGTU, possui MBA em Gestão de TI pela FIAP, graduação em Ciências Econômicas e em Análise de Sistemas. Sua produção acadêmica está indexada no ORCID (0000-0002-6034-7765) e na Plataforma Lattes.',
+        'Ulisses é Mestrando em Inteligência Artificial pela AGTU, possui MBA em Blockchain pela FIAP, graduação em Ciências Econômicas e em Análise de Sistemas. Sua produção acadêmica está indexada no ORCID (0000-0002-6034-7765) e na Plataforma Lattes.',
     },
     {
       question: 'Quais são as áreas de pesquisa de Ulisses Flores?',
