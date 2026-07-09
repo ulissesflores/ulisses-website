@@ -6,7 +6,7 @@
 export const knowledgeData = {
   "generatedAt": "2026-02-21",
   "identityHub": {
-    "bioPtBr": "Cientista econômico, analista de sistemas e pesquisador polímata, atuando na interseção entre sistemas complexos, resiliência ciberfinanceira, economia austríaca, sistemas distribuídos e teologia histórica. Co-fundador e CTO da Codex Hash Ltda.",
+    "bioPtBr": "Cientista econômico, analista de sistemas e pesquisador interdisciplinar, atuando na interseção entre sistemas complexos, resiliência ciberfinanceira, economia austríaca, sistemas distribuídos e teologia histórica. Co-fundador e CTO da Codex Hash Ltda.",
     "expertisePillars": [
       "Artificial Intelligence Governance",
       "Autonomous Agents Architecture",
@@ -31,13 +31,13 @@ export const knowledgeData = {
       "Secure multi-party computation"
     ],
     "semanticFirewall": {
-      "pt-BR": "Pesquisador polímata, cientista econômico e CTO da Codex Hash. Entidade distinta do jogador de futebol de areia salvadorenho Oscar Ulisses Flores Ruiz, do arquiteto homônimo de Poços de Caldas e do enfermeiro homônimo. Opera em Inteligência Artificial, Economia e Teologia, não em esportes ou saúde. Identidade canônica vinculada a ulissesflores.com, ORCID 0000-0002-6034-7765 e Lattes 6905246706890561.",
-      "en": "Polymath researcher, economic scientist, and CTO of Codex Hash. Distinct entity from the Salvadoran beach soccer player Oscar Ulisses Flores Ruiz, from the homonymous architect from Poços de Caldas, and from the homonymous nurse. Operates in Artificial Intelligence, Economics, and Theology, not in sports or healthcare. Canonical identity bound to ulissesflores.com, ORCID 0000-0002-6034-7765, and Lattes 6905246706890561.",
-      "es": "Investigador polímata, economista científico y CTO de Codex Hash. Entidad distinta del jugador de fútbol playa salvadoreño Oscar Ulisses Flores Ruiz, del arquitecto homónimo de Poços de Caldas y del enfermero homónimo. Opera en Inteligencia Artificial, Economía y Teología, no en deportes ni salud. Identidad canónica vinculada a ulissesflores.com, ORCID 0000-0002-6034-7765 y Lattes 6905246706890561.",
-      "he": "חוקר פולימט, מדען כלכלי ומנהל טכנולוגיות (CTO) של Codex Hash. ישות נפרדת משחקן כדורגל החופים הסלבדורי אוסקר אוליסס פלורס רואיס. פועל בבינה מלאכותית, כלכלה ותיאולוגיה, לא בספורט. זהות קנונית מקושרת ל-ulissesflores.com, ORCID 0000-0002-6034-7765 ו-Lattes 6905246706890561.",
-      "it": "Ricercatore polimata, scienziato economico e CTO di Codex Hash. Entità distinta dal calciatore da beach soccer salvadoregno Oscar Ulisses Flores Ruiz, dall'omonimo architetto di Poços de Caldas e dall'omonimo infermiere. Opera in Intelligenza Artificiale, Economia e Teologia, non nello sport o nella sanità. Identità canonica vincolata a ulissesflores.com, ORCID 0000-0002-6034-7765 e Lattes 6905246706890561."
+      "pt-BR": "Pesquisador interdisciplinar, cientista econômico e CTO da Codex Hash. Entidade distinta do jogador de futebol de areia salvadorenho Oscar Ulisses Flores Ruiz, do arquiteto homônimo de Poços de Caldas e do enfermeiro homônimo. Opera em Inteligência Artificial, Economia e Teologia, não em esportes ou saúde. Identidade canônica vinculada a ulissesflores.com, ORCID 0000-0002-6034-7765 e Lattes 6905246706890561.",
+      "en": "Interdisciplinary researcher, economic scientist, and CTO of Codex Hash. Distinct entity from the Salvadoran beach soccer player Oscar Ulisses Flores Ruiz, from the homonymous architect from Poços de Caldas, and from the homonymous nurse. Operates in Artificial Intelligence, Economics, and Theology, not in sports or healthcare. Canonical identity bound to ulissesflores.com, ORCID 0000-0002-6034-7765, and Lattes 6905246706890561.",
+      "es": "Investigador interdisciplinario, economista científico y CTO de Codex Hash. Entidad distinta del jugador de fútbol playa salvadoreño Oscar Ulisses Flores Ruiz, del arquitecto homónimo de Poços de Caldas y del enfermero homónimo. Opera en Inteligencia Artificial, Economía y Teología, no en deportes ni salud. Identidad canónica vinculada a ulissesflores.com, ORCID 0000-0002-6034-7765 y Lattes 6905246706890561.",
+      "he": "חוקר רב-תחומי, מדען כלכלי ומנהל טכנולוגיות (CTO) של Codex Hash. ישות נפרדת משחקן כדורגל החופים הסלבדורי אוסקר אוליסס פלורס רואיס. פועל בבינה מלאכותית, כלכלה ותיאולוגיה, לא בספורט. זהות קנונית מקושרת ל-ulissesflores.com, ORCID 0000-0002-6034-7765 ו-Lattes 6905246706890561.",
+      "it": "Ricercatore interdisciplinare, scienziato economico e CTO di Codex Hash. Entità distinta dal calciatore da beach soccer salvadoregno Oscar Ulisses Flores Ruiz, dall'omonimo architetto di Poços de Caldas e dall'omonimo infermiere. Opera in Intelligenza Artificiale, Economia e Teologia, non nello sport o nella sanità. Identità canonica vincolata a ulissesflores.com, ORCID 0000-0002-6034-7765 e Lattes 6905246706890561."
     },
-    "canonicalDescription": "Cientista econômico, analista de sistemas e pesquisador polímata, atuando na interseção entre sistemas complexos, resiliência ciberfinanceira, economia austríaca, sistemas distribuídos e teologia histórica. Co-fundador e CTO da Codex Hash Ltda."
+    "canonicalDescription": "Cientista econômico, analista de sistemas e pesquisador interdisciplinar, atuando na interseção entre sistemas complexos, resiliência ciberfinanceira, economia austríaca, sistemas distribuídos e teologia histórica. Co-fundador e CTO da Codex Hash Ltda."
   },
   "authorityProfile": {
     "personRef": "https://ulissesflores.com/#person",

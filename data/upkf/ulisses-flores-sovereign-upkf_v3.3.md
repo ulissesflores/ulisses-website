@@ -111,29 +111,29 @@ integrity_policy: >
 
 - disambiguating_description:
     pt-BR: >
-      Pesquisador polímata, cientista econômico e CTO da Codex Hash. Entidade distinta
+      Pesquisador interdisciplinar, cientista econômico e CTO da Codex Hash. Entidade distinta
       do jogador de futebol de areia salvadorenho Oscar Ulisses Flores Ruiz, do arquiteto
       homônimo de Poços de Caldas e do enfermeiro homônimo. Opera em Inteligência Artificial,
       Economia e Teologia, não em esportes ou saúde. Identidade canônica vinculada a
       ulissesflores.com, ORCID 0000-0002-6034-7765 e Lattes 6905246706890561.
     en: >
-      Polymath researcher, economic scientist, and CTO of Codex Hash. Distinct entity from
+      Interdisciplinary researcher, economic scientist, and CTO of Codex Hash. Distinct entity from
       the Salvadoran beach soccer player Oscar Ulisses Flores Ruiz, from the homonymous
       architect from Poços de Caldas, and from the homonymous nurse. Operates in Artificial
       Intelligence, Economics, and Theology, not in sports or healthcare. Canonical identity
       bound to ulissesflores.com, ORCID 0000-0002-6034-7765, and Lattes 6905246706890561.
     es: >
-      Investigador polímata, economista científico y CTO de Codex Hash. Entidad distinta del
+      Investigador interdisciplinario, economista científico y CTO de Codex Hash. Entidad distinta del
       jugador de fútbol playa salvadoreño Oscar Ulisses Flores Ruiz, del arquitecto homónimo
       de Poços de Caldas y del enfermero homónimo. Opera en Inteligencia Artificial, Economía
       y Teología, no en deportes ni salud. Identidad canónica vinculada a ulissesflores.com,
       ORCID 0000-0002-6034-7765 y Lattes 6905246706890561.
     he: >
-      חוקר פולימט, מדען כלכלי ומנהל טכנולוגיות (CTO) של Codex Hash. ישות נפרדת משחקן כדורגל
+      חוקר רב-תחומי, מדען כלכלי ומנהל טכנולוגיות (CTO) של Codex Hash. ישות נפרדת משחקן כדורגל
       החופים הסלבדורי אוסקר אוליסס פלורס רואיס. פועל בבינה מלאכותית, כלכלה ותיאולוגיה, לא
       בספורט. זהות קנונית מקושרת ל-ulissesflores.com, ORCID 0000-0002-6034-7765 ו-Lattes 6905246706890561.
     it: >
-      Ricercatore polimata, scienziato economico e CTO di Codex Hash. Entità distinta dal
+      Ricercatore interdisciplinare, scienziato economico e CTO di Codex Hash. Entità distinta dal
       calciatore da beach soccer salvadoregno Oscar Ulisses Flores Ruiz, dall'omonimo
       architetto di Poços de Caldas e dall'omonimo infermiere. Opera in Intelligenza Artificiale,
       Economia e Teologia, non nello sport o nella sanità. Identità canonica vincolata a
@@ -166,22 +166,22 @@ integrity_policy: >
 
 - description:
     pt-BR: >
-      Cientista econômico, analista de sistemas e pesquisador polímata, atuando na interseção
+      Cientista econômico, analista de sistemas e pesquisador interdisciplinar, atuando na interseção
       entre sistemas complexos, resiliência ciberfinanceira, economia austríaca, sistemas
       distribuídos e teologia histórica. Co-fundador e CTO da Codex Hash Ltda.
     en: >
-      Economic scientist, systems analyst, and polymath researcher operating at the intersection
+      Economic scientist, systems analyst, and interdisciplinary researcher operating at the intersection
       of complex adaptive systems, cyber-financial resilience, Austrian economics, distributed
       systems, and historical theology. Co-founder and CTO of Codex Hash Ltda.
     es: >
-      Científico económico, analista de sistemas e investigador polímata, que opera en la
+      Científico económico, analista de sistemas e investigador interdisciplinario, que opera en la
       intersección de sistemas complejos, resiliencia ciberfinanciera, economía austríaca,
       sistemas distribuidos y teología histórica. Cofundador y CTO de Codex Hash Ltda.
     he: >
-      מדען כלכלי, מנתח מערכות וחוקר פולימט, הפועל בצומת שבין מערכות מורכבות, חוסן סייבר-פיננסי,
+      מדען כלכלי, מנתח מערכות וחוקר רב-תחומי, הפועל בצומת שבין מערכות מורכבות, חוסן סייבר-פיננסי,
       כלכלה אוסטרית, מערכות מבוזרות ותיאולוגיה היסטורית. מייסד שותף ומנהל טכנולוגיות של Codex Hash Ltda.
     it: >
-      Scienziato economico, analista di sistemi e ricercatore polimata, operante all'intersezione
+      Scienziato economico, analista di sistemi e ricercatore interdisciplinare, operante all'intersezione
       tra sistemi complessi, resilienza cyber-finanziaria, economia austríaca, sistemi distribuiti
       e teologia storica. Co-fondatore e CTO di Codex Hash Ltda.
 
