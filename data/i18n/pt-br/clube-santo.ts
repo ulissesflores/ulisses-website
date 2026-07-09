@@ -22,7 +22,7 @@ export const clubeSanto = {
   breadcrumb: 'Clube Santo',
   hero: {
     h1: 'Instituto Teológico e Comunidade de Formação Bíblica',
-    lead: 'O Clube Santo é o instituto teológico fundado por Ulisses Flores para formação bíblica rigorosa, análise historiográfica e comunidade de estudo. Reúne um acervo de mais de 50 sermões, pesquisas sobre canonização escribal, historicidade bíblica e fundamentos transcendentes da ordem econômica — conectando teologia, história e ciência.',
+    lead: 'O Clube Santo é o instituto teológico fundado por Ulisses Flores para formação bíblica rigorosa, análise historiográfica e comunidade de estudo. Reúne um acervo de mais de 56 sermões, pesquisas sobre canonização escribal, historicidade bíblica e fundamentos transcendentes da ordem econômica — conectando teologia, história e ciência.',
     authority: {
       kicker: 'Rigor acadêmico aplicado à formação teológica',
       text: 'Como Pesquisador, Ulisses Flores aplica metodologia científica à análise bíblica — combinando arqueologia, historiografia, análise textual e tradição reformada. As pesquisas publicadas incluem análise exaustiva da historicidade de Jesus (métodos arqueológicos e historiográficos) e estudo histórico-crítico da formação do cânon bíblico.',
@@ -41,8 +41,8 @@ export const clubeSanto = {
     title: 'O Clube Santo: Um Avivamento para a Era Digital',
     subtitle: 'Uma comunidade de mentes e corações em busca da verdadeira conexão.',
     h3_1: 'Tudo começou com um chá.',
-    p1: 'Não, não estamos falando do chá das cinco britânico, mas de um chá que derramou um sopro de vida em uma Inglaterra espiritualmente adormecida. John Wesley, o protagonista dessa história, poderia muito bem ter sido o inventor do chá matcha ou do detox, mas o que ele realmente fez foi criar uma xícara cheia de avivamento, conhecida como O Clube Santo.',
-    p2: 'O Clube Santo, para os desavisados, não era um clube de boas-vindas para aspirantes a santos. Era muito mais que isso. Era uma reunião de mentes e corações que buscavam a verdadeira conexão com Deus, aliada a um rigor intelectual implacável. E que conexão! A Inglaterra nunca mais foi a mesma. John Wesley, com seu Clube Santo, desencadeou um avivamento espiritual tão grande que até o Rei George I teve que ajustar sua coroa.',
+    p1: 'Não, não estamos falando do chá das cinco britânico, mas de um chá que derramou um sopro de vida em uma Inglaterra espiritualmente adormecida. John Wesley, o protagonista dessa história, não inventou nenhuma bebida da moda — o que ele realmente fez foi criar uma xícara cheia de avivamento, conhecida como O Clube Santo.',
+    p2: 'O Clube Santo, para os desavisados, não era um clube de boas-vindas para aspirantes a santos. Era muito mais que isso. Era uma reunião de mentes e corações que buscavam a verdadeira conexão com Deus, aliada a um rigor intelectual implacável. E que conexão! A Inglaterra nunca mais foi a mesma. John Wesley, com seu Clube Santo, desencadeou um avivamento espiritual tão grande que até o Rei George II teve que ajustar sua coroa.',
     h3_2: 'O Novo Giro: Arqueologia Espiritual',
     p3: 'Você deve estar se perguntando: por que estamos falando de um clube criado séculos atrás na Inglaterra? Porque acreditamos que é hora de um novo avivamento para os nossos tempos. Um movimento que começará na América Latina, mas não parará até alcançar os confins do mundo.',
     p4: 'Estamos trazendo de volta o Clube Santo, mas com um giro para a era digital. O nosso instituto une o fervor pentecostal avivalista com ferramentas de Inteligência Artificial para realizar o que chamamos de Arqueologia Espiritual e Teológica. Juntos, vamos revolucionar o mundo, um avivamento de cada vez. Prepare a sua xícara.',

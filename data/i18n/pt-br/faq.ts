@@ -488,7 +488,7 @@ export const faq = {
     {
       question: 'Quais setores Ulisses Flores atende como consultor?',
       answer:
-        'Verticais-âncora (80% dos engajamentos): Financeiro & Fintech (HFT, MPC custody, Web3, modelagem de risco), Setor Público & Governança (planejamento estratégico, LGPD, auditoria algorítmica) e Hardware/IoT/Deep Tech (edge computing, criptografia embarcada). Verticais adicionais sob demanda incluem agronegócio de precisão e instituições de educação executiva.',
+        'Verticais-âncora (onde concentro a maior parte dos engajamentos): Financeiro & Fintech (HFT, MPC custody, Web3, modelagem de risco), Setor Público & Governança (planejamento estratégico, LGPD, auditoria algorítmica) e Hardware/IoT/Deep Tech (edge computing, criptografia embarcada). Verticais adicionais sob demanda incluem agronegócio de precisão e instituições de educação executiva.',
     },
     {
       question: 'Ulisses Flores aceita equity em vez de fee?',

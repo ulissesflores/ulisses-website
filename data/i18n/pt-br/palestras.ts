@@ -65,11 +65,11 @@ export const palestras = {
       },
       {
         title: 'Resiliência Ciberfinanceira',
-        bullet: 'LSTM + Lei de Little, detecção de anomalias e arquitetura antifragil para mercados.',
+        bullet: 'LSTM + Lei de Little, detecção de anomalias e arquitetura antifrágil para mercados.',
       },
       {
         title: 'Teologia, Tecnologia e Humanidades',
-        bullet: 'Crítica textual, archeologia cognitiva, ética cristã aplicada e diálogo fé-tecnologia.',
+        bullet: 'Crítica textual, arqueologia cognitiva, ética cristã aplicada e diálogo fé-tecnologia.',
       },
     ],
   },

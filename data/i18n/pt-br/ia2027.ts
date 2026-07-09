@@ -1,10 +1,10 @@
 export const ia2027 = {
   meta: {
     title: 'IA 2027: simulação interativa da chegada da AGI',
-    description: 'A única simulação interativa em português da chegada da AGI: cenários, a corrida tecnológica e o impacto econômico. Por Ulisses Flores.',
+    description: 'Uma simulação interativa pioneira em português da chegada da AGI: cenários, a corrida tecnológica e o impacto econômico. Por Ulisses Flores.',
     keywords: ['futuro da inteligência artificial', 'cenários futuros IA', 'o que é AGI', 'inteligência artificial geral', 'soberania tecnológica', 'impacto da IA no mercado', 'agentes autônomos'],
     ogTitle: 'IA 2027: simulação interativa da chegada da AGI',
-    ogDescription: 'A única simulação interativa em português da chegada da AGI. Explore cenários, a corrida rumo à AGI e o impacto econômico.',
+    ogDescription: 'Uma simulação interativa pioneira em português da chegada da AGI. Explore cenários, a corrida rumo à AGI e o impacto econômico.',
     ogImageAlt: 'Simulação Estratégica IA-2027 por Ulisses Flores',
   },
   raceMeta: {
@@ -34,7 +34,7 @@ export const ia2027 = {
     lead: 'Os CEOs da OpenAI, Google DeepMind e Anthropic convergem em um ponto crítico: a Inteligência Artificial Geral (AGI) pode ser alcançada antes do final desta década. Quando a máquina superar a capacidade cognitiva humana, as regras que governam a economia global, o mercado de trabalho e o poder geopolítico serão reescritas de forma irreversível. Esta simulação modela de forma interativa os próximos anos dessa transição.',
     authority: {
       kicker: 'Por que isso importa',
-      text: 'A soberania tecnológica não é mais ficção científica; é a disputa econômica e arquitetônica mais urgente do nosso tempo. Como cientista, consultor em IA e criador desta adaptação, estruturei este cenário baseado em modelagens de Harvard, MIRI e analistas de segurança de IA. O ponto de ruptura central explorado aqui é: o que acontece com a economia e a infraestrutura de sistemas quando a IA começa a acelerar sua própria pesquisa de forma recursiva? O ramo que escolhermos definirá o futuro.',
+      text: 'A soberania tecnológica não é mais ficção científica; é a disputa econômica e arquitetônica mais urgente do nosso tempo. Como cientista, consultor em IA e criador desta adaptação, estruturei este cenário a partir de exercícios de simulação e do feedback de especialistas em governança e segurança de IA. O ponto de ruptura central explorado aqui é: o que acontece com a economia e a infraestrutura de sistemas quando a IA começa a acelerar sua própria pesquisa de forma recursiva? O ramo que escolhermos definirá o futuro.',
     },
     features: [
       {
@@ -56,7 +56,7 @@ export const ia2027 = {
     ],
     cta: 'Iniciar Simulação →',
     ctaNote: 'Tradução e adaptação do cenário original publicado em',
-    ctaNoteEnd: '— baseado em modelagens de Harvard, MIRI e analistas de segurança de IA.',
+    ctaNoteEnd: '— baseado em exercícios de simulação e no feedback de especialistas em governança e segurança de IA.',
     authorLabel: 'Tradução & Curadoria',
     authorDescription: 'Adaptação, curadoria e análise técnica por Ulisses Flores — Cientista, Consultor em IA, Palestrante e Mestrando.',
     faqTitle: 'Perguntas sobre IA 2027 e o Futuro da Inteligência Artificial',

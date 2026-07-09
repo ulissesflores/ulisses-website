@@ -37,7 +37,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       title: t.meta.ogTitle,
       description: t.meta.ogDescription,
     },
-    other: { 'geo.region': 'BR-SP', 'geo.placename': 'Jundiai' },
+    other: { 'geo.region': 'BR-SP', 'geo.placename': 'Jundiaí' },
   };
 }
 

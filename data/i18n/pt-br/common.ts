@@ -77,14 +77,14 @@ export const common = {
     contact: 'Falar com Ulisses Flores →',
   },
   notFound: {
-    title: 'Pagina nao encontrada',
-    description: 'A pagina que voce procura pode ter sido movida, renomeada ou nao existe mais. Explore as secoes principais abaixo.',
-    searchHint: 'Ou use a navegacao no topo para encontrar o que procura.',
+    title: 'Página não encontrada',
+    description: 'A página que você procura pode ter sido movida, renomeada ou não existe mais. Explore as seções principais abaixo.',
+    searchHint: 'Ou use a navegação no topo para encontrar o que procura.',
     links: {
-      home: { label: 'Home', description: 'Pagina principal' },
-      publications: { label: 'Publicacoes', description: 'Research, Whitepapers e Essays' },
-      identity: { label: 'Identidade', description: 'Hub canonico de identidade' },
-      simulations: { label: 'Simulacoes', description: 'Laboratorio de cenarios' },
+      home: { label: 'Home', description: 'Página inicial' },
+      publications: { label: 'Publicações', description: 'Research, Whitepapers e Essays' },
+      identity: { label: 'Identidade', description: 'Hub canônico de identidade' },
+      simulations: { label: 'Simulações', description: 'Laboratório de cenários' },
     },
   },
   languageSwitcher: {

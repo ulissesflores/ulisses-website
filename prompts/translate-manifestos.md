@@ -52,7 +52,7 @@ export const manifestoTranslations: Record<ManifestoKey, Record<string, Manifest
           heading: 'Tudo começou com um chá.',
           paragraphs: [
             'Não, não estamos falando do chá das cinco britânico, mas de um chá que derramou um sopro de vida em uma Inglaterra espiritualmente adormecida. John Wesley, o protagonista dessa história, poderia muito bem ter sido o inventor do chá matcha ou do detox, mas o que ele realmente fez foi criar uma xícara cheia de avivamento, conhecida como O Clube Santo.',
-            'O Clube Santo, para os desavisados, não era um clube de boas-vindas para aspirantes a santos. Era muito mais que isso. Era uma reunião de mentes e corações que buscavam a verdadeira conexão com Deus, aliada a um rigor intelectual implacável. E que conexão! A Inglaterra nunca mais foi a mesma. John Wesley, com seu Clube Santo, desencadeou um avivamento espiritual tão grande que até o Rei George I teve que ajustar sua coroa.',
+            'O Clube Santo, para os desavisados, não era um clube de boas-vindas para aspirantes a santos. Era muito mais que isso. Era uma reunião de mentes e corações que buscavam a verdadeira conexão com Deus, aliada a um rigor intelectual implacável. E que conexão! A Inglaterra nunca mais foi a mesma. John Wesley, com seu Clube Santo, desencadeou um avivamento espiritual tão grande que até o Rei George II teve que ajustar sua coroa.',
           ],
         },
         {

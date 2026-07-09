@@ -19,7 +19,7 @@ export const home = {
     ogImageAlt: 'Ulisses Flores — Consultor de IA e Palestrante',
   },
   hero: {
-    imageAlt: 'Carlos Ulisses Flores - CTO e Pesquisador Chefe da Codex Hash Ltda em Itupeva',
+    imageAlt: 'Carlos Ulisses Flores - CTO e Pesquisador Chefe da Codex Hash Ltda em Jundiaí',
     name: 'Carlos Ulisses Flores',
     badges: {
       cto: 'CTO & Pesquisador Chefe',
@@ -200,12 +200,12 @@ export const home = {
     },
   },
   simulacoes: {
-    title: 'Simulacoes',
-    kicker: 'Laboratorio de cenarios',
-    heading: 'IA 2027 em Portugues',
+    title: 'Simulações',
+    kicker: 'Laboratório de cenários',
+    heading: 'IA 2027 em Português',
     description:
-      'Simulacao prospectiva em formato scrollytelling com timeline, painel de KPIs dinamico e ramificacoes de cenario (slowdown/race), baseada no manifesto AI 2027 em versao academica pt-BR.',
-    cta: 'Abrir simulacao',
+      'Simulação prospectiva em formato scrollytelling com timeline, painel de KPIs dinâmico e ramificações de cenário (slowdown/race), baseada no manifesto AI 2027 em versão acadêmica pt-BR.',
+    cta: 'Abrir simulação',
   },
   codexHash: {
     title: 'Codex Hash Ltda',
