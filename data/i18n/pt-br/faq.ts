@@ -278,7 +278,7 @@ export const faq = {
     {
       question: 'O que é exatamente o Projeto PSI?',
       answer:
-        'É um dispositivo de hardware ultra-seguro para custódia de ativos digitais e identidade soberana. Transcende os padrões bancários civis e nivela-se às arquiteturas de segurança militar e de lançamento nuclear.',
+        'É um dispositivo de hardware ultra-seguro para custódia de ativos digitais e identidade soberana. Vai além dos padrões bancários civis, com um modelo de ameaça inspirado em arquiteturas de alta criticidade.',
     },
     {
       question: 'O código do projeto é fechado ou Open-Source?',
@@ -308,7 +308,7 @@ export const faq = {
     {
       question: 'Como o dispositivo lida com ameaças quânticas?',
       answer:
-        'Está equipado com assinaturas XMSS (Criptografia Pós-Quântica Baseada em Hash), garantindo que a custódia permanece matematicamente inquebrável mesmo após a chegada de computadores quânticos viáveis (Q-Day).',
+        'Está equipado com assinaturas XMSS (criptografia pós-quântica baseada em hash), tornando a custódia resistente a ataques de computadores quânticos mesmo após o Q-Day.',
     },
     {
       question: 'O que é o "Phantom Input" contra tentativas de extorsão?',
@@ -323,7 +323,7 @@ export const faq = {
     {
       question: 'Qual é o veredicto final do nível de segurança do PSI?',
       answer:
-        'Com proteção EMP, redundância modular tripla (TMR) e memória tolerante a radiação, o PSI atinge um nível "Nuclear-Grade Sovereign Hardware", sendo funcional até mesmo em condições severas como a órbita terrestre baixa (LEO).',
+        'Com proteção EMP, redundância modular tripla (TMR) e memória tolerante a radiação, o PSI é projetado como hardware soberano de alta resiliência.',
     },
   ] satisfies FaqItem[],
 
@@ -341,7 +341,7 @@ export const faq = {
     {
       question: 'Como o PSI se diferencia de hardware wallets existentes como Ledger e Trezor?',
       answer:
-        'Ledger e Trezor são dispositivos de segurança de consumidor. O PSI é um dispositivo de segurança de classe militar. Não armazena chaves (zero attack surface), usa criptografia pós-quântica (XMSS), tem blindagem EMP, redundância aeroespacial (TMR) e detecção de coação biométrica. É uma categoria completamente diferente.',
+        'Ledger e Trezor são dispositivos de segurança de consumidor. O PSI é projetado para um modelo de ameaça muito mais severo. Não armazena chaves (superfície de ataque minimizada), usa criptografia pós-quântica (XMSS), tem blindagem EMP, redundância aeroespacial (TMR) e detecção de coação biométrica. É uma categoria completamente diferente.',
     },
     {
       question: 'Qual é o mercado endereçável (TAM) para custódia soberana?',

@@ -160,7 +160,7 @@ export const home = {
       },
       bioBytes: {
         title: 'BioBytes Legacy',
-        desc: 'Sistema de preservação digital de memória e herança biográfica com segurança de nível militar.',
+        desc: 'Sistema de preservação digital de memória e herança biográfica com criptografia forte e assinatura digital.',
         tags: ['SECURITY', 'CRYPTOGRAPHY', 'BLOCKCHAIN'],
       },
       clubeSanto: {

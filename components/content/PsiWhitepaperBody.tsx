@@ -104,7 +104,7 @@ export function PsiWhitepaperBody({ locale, includeFigures = false }: PsiWhitepa
               A primeira linha de defesa de qualquer sistema criptográfico não reside no algoritmo
               matemático, mas na <strong>fronteira física</strong> que separa a lógica computacional do
               adversário. O &ldquo;Receptáculo&rdquo; do Projeto PSI representa uma convergência extrema de
-              engenharia de materiais e física do estado sólido, voltada para a neutralização absoluta de
+              engenharia de materiais e física do estado sólido, voltada para a neutralização robusta de
               intrusões mecânicas, ataques eletromagnéticos de alta potência e técnicas invasivas de
               espionagem baseadas em emanometria.
             </p>
@@ -139,7 +139,7 @@ export function PsiWhitepaperBody({ locale, includeFigures = false }: PsiWhitepa
               ponto de fusão mais alto entre todos os metais puros (3422°C). Essas propriedades conferem
               formidável inércia cinética e térmica ao dispositivo, além de funcionarem como escudo natural
               contra radiações ionizantes de alta energia. No entanto, o tungstênio puro carece da
-              condutividade elétrica otimizada para criar uma Gaiola de Faraday perfeita — é neste ponto
+              condutividade elétrica otimizada para criar uma Gaiola de Faraday de alta eficácia — é neste ponto
               que o <strong>Cobre (Cu)</strong>, com sua altíssima condutividade, preenche a lacuna.
             </p>
 
@@ -172,7 +172,7 @@ export function PsiWhitepaperBody({ locale, includeFigures = false }: PsiWhitepa
                 💡 Descoberta Chave (TL;DR)
               </h4>
               <p className='text-neutral-200 m-0 leading-relaxed'>
-                A implementação da arquitetura de blindagem Cu-W do Projeto PSI resultou em uma <strong className='text-white'>eficácia de blindagem superior a 100 dB</strong>, excedendo as rigorosas normativas militares MIL-STD-285. O compósito 70-80% W / 20-30% Cu combina inércia cinética do tungstênio com a condutividade do cobre em uma Gaiola de Faraday de grau nuclear.
+                A implementação da arquitetura de blindagem Cu-W do Projeto PSI foi projetada para uma <strong className='text-white'>eficácia de blindagem superior a 100 dB</strong>, alinhada às rigorosas normativas militares MIL-STD-285. O compósito 70-80% W / 20-30% Cu combina inércia cinética do tungstênio com a condutividade do cobre em uma Gaiola de Faraday de alta blindagem.
               </p>
             </aside>
 
@@ -608,7 +608,7 @@ export function PsiWhitepaperBody({ locale, includeFigures = false }: PsiWhitepa
               Se uma partícula cósmica flipar os transistores do sub-bloco B (SEU), os conjuntos A e C
               continuam reportando dados corretos. O Voter — por Maioria Simples (2 contra 1) — expulsa
               instantaneamente os erros espúrios, sem reinicializações ou intervenções operacionais. O
-              dispositivo mantém operação contínua e infalível sob bombardeio radioativo orbital.
+              dispositivo mantém operação contínua e resiliente sob radiação orbital.
             </p>
 
             <figure className='not-prose my-16'>
@@ -632,7 +632,7 @@ export function PsiWhitepaperBody({ locale, includeFigures = false }: PsiWhitepa
                 💡 Descoberta Chave (TL;DR)
               </h4>
               <p className='text-neutral-200 m-0 leading-relaxed'>
-                A arquitetura de <strong className='text-white'>Redundância Modular Tripla (TMR)</strong> com Voter por maioria simples, combinada a memórias <strong className='text-white'>FRAM Rad-Hard</strong> imunes a TID, garante operação contínua e infalível do PSI mesmo sob bombardeio de raios cósmicos galácticos em Órbita Terrestre Baixa (LEO) — eliminando Single-Event Upsets sem reinicializações.
+                A arquitetura de <strong className='text-white'>Redundância Modular Tripla (TMR)</strong> com Voter por maioria simples, combinada a memórias <strong className='text-white'>FRAM Rad-Hard</strong> imunes a TID, é projetada para manter operação contínua do PSI sob raios cósmicos galácticos em Órbita Terrestre Baixa (LEO), reduzindo Single-Event Upsets sem reinicializações.
               </p>
             </aside>
 

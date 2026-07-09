@@ -2,7 +2,7 @@ export const projetoPsi = {
   meta: {
     title: 'Projeto PSI — Hardware Soberano para Custódia de Ativos Digitais | Ulisses Flores',
     description:
-      'Custódia de ativos digitais de classe nuclear. Hardware com Zero Trust em Silício, criptografia pós-quântica XMSS e redundância aeroespacial TMR. Investimento e licenciamento.',
+      'Custódia soberana de ativos digitais. Hardware com Zero Trust em silício, criptografia pós-quântica XMSS e redundância modular tripla (TMR). Investimento e licenciamento.',
     keywords: [
       'hardware wallet',
       'custódia de ativos digitais',
@@ -14,31 +14,31 @@ export const projetoPsi = {
       'cold storage institucional',
       'Ulisses Flores',
       'Codex Hash',
-      'segurança nuclear',
+      'cold storage soberano',
       'TMR redundância',
     ],
     ogTitle: 'Projeto PSI — Hardware Soberano para Custódia de Ativos Digitais',
     ogDescription:
-      'Custódia de ativos digitais de classe nuclear. Zero Trust em Silício, XMSS pós-quântico e redundância aeroespacial TMR.',
+      'Custódia soberana de ativos digitais. Zero Trust em silício, XMSS pós-quântico e redundância modular tripla (TMR).',
   },
   whitepaperMeta: {
     title: 'Projeto Ψ (PSI): Hardware Soberano e Zero Trust em Silício | Ulisses Flores',
-    description: 'Whitepaper Técnico: Arquitetura de custódia de ativos digitais de classe nuclear. Conheça o Projeto PSI, equipado com SRAM PUF, Criptografia XMSS e Redundância TMR.',
-    keywords: ['hardware wallet', 'zero trust', 'SRAM PUF', 'XMSS', 'criptografia pós-quântica', 'ring signatures', 'endereços furtivos', 'airgap wallet', 'soberania digital', 'Codex Hash', 'TMR redundância modular tripla', 'FRAM rad-hard', 'side-channel attacks', 'EMP shielding', 'deniable encryption', 'Ulisses Flores blockchain', 'hardware security module', 'cold storage nuclear'],
+    description: 'Whitepaper Técnico: Arquitetura de custódia de ativos digitais de classe soberana. Conheça o Projeto PSI, equipado com SRAM PUF, Criptografia XMSS e Redundância TMR.',
+    keywords: ['hardware wallet', 'zero trust', 'SRAM PUF', 'XMSS', 'criptografia pós-quântica', 'ring signatures', 'endereços furtivos', 'airgap wallet', 'soberania digital', 'Codex Hash', 'TMR redundância modular tripla', 'FRAM rad-hard', 'side-channel attacks', 'EMP shielding', 'deniable encryption', 'Ulisses Flores blockchain', 'hardware security module', 'cold storage soberano'],
     ogTitle: 'Projeto Ψ (PSI): Hardware Soberano e Zero Trust em Silício | Ulisses Flores',
-    ogDescription: 'Whitepaper Técnico: Arquitetura de custódia de ativos digitais de classe nuclear com SRAM PUF, XMSS pós-quântico e Redundância TMR aeroespacial.',
+    ogDescription: 'Whitepaper Técnico: Arquitetura de custódia de ativos digitais de classe soberana com SRAM PUF, XMSS pós-quântico e Redundância TMR aeroespacial.',
   },
   simulacaoMeta: {
     title: 'Projeto Ψ (PSI): Explorador Técnico da Arquitetura de Segurança | Ulisses Flores',
-    description: 'Explorador interativo da arquitetura do Projeto PSI — SRAM PUF, criptografia pós-quântica XMSS, redundância TMR aeroespacial e Ring Signatures. Navegue pelos 4 pilares de segurança nuclear.',
-    keywords: ['hardware wallet', 'zero trust', 'SRAM PUF', 'XMSS', 'criptografia pós-quântica', 'ring signatures', 'endereços furtivos', 'airgap wallet', 'soberania digital', 'Codex Hash', 'TMR redundância modular tripla', 'FRAM rad-hard', 'side-channel attacks', 'EMP shielding', 'deniable encryption', 'Ulisses Flores blockchain', 'hardware security module', 'cold storage nuclear'],
+    description: 'Explorador interativo da arquitetura do Projeto PSI — SRAM PUF, criptografia pós-quântica XMSS, redundância TMR aeroespacial e Ring Signatures. Navegue pelos 4 pilares de segurança soberana.',
+    keywords: ['hardware wallet', 'zero trust', 'SRAM PUF', 'XMSS', 'criptografia pós-quântica', 'ring signatures', 'endereços furtivos', 'airgap wallet', 'soberania digital', 'Codex Hash', 'TMR redundância modular tripla', 'FRAM rad-hard', 'side-channel attacks', 'EMP shielding', 'deniable encryption', 'Ulisses Flores blockchain', 'hardware security module', 'cold storage soberano'],
     ogTitle: 'Projeto Ψ (PSI): Explorador Técnico da Arquitetura de Segurança | Ulisses Flores',
     ogDescription: 'Explorador interativo da arquitetura do Projeto PSI — SRAM PUF, XMSS pós-quântico e Redundância TMR aeroespacial.',
   },
   hero: {
     badge: 'Investimento & Licenciamento',
-    h1: 'Projeto PSI: O Cofre Digital que Desafia as Leis da Física',
-    lead: 'Custódia soberana de ativos digitais com segurança de classe nuclear. Zero Trust em silício. Criptografia à prova de computadores quânticos. Redundância de nível aeroespacial.',
+    h1: 'Projeto PSI: Custódia Soberana de Ativos Digitais',
+    lead: 'Custódia soberana de ativos digitais. Zero Trust em silício. Criptografia pós-quântica (assinaturas hash-based XMSS). Redundância modular tripla (TMR), derivada de padrões aeroespaciais.',
     ctaPrimary: 'Solicitar Apresentação Executiva',
     ctaSecondary: 'Ler o Whitepaper Técnico',
   },
@@ -49,13 +49,13 @@ export const projetoPsi = {
     p2Highlight: 'É uma mudança de paradigma.',
   },
   pillars: {
-    title: 'Quatro Pilares de Segurança Absoluta',
+    title: 'Quatro Pilares de Segurança',
     items: [
       {
         src: '/whitepapers/psi-arquitetura-hardware-camadas-defesa.webp',
         alt: 'Diagrama das camadas de defesa do hardware PSI: blindagem Faraday, cerâmica anti-térmica e isolamento acústico',
         title: 'Fortaleza Física',
-        text: 'Chassis blindado com malha Faraday contra pulsos eletromagnéticos. Cerâmica anti-térmica. Isolamento acústico contra ataques de canal lateral. Sem USB. Sem tela. Sem superfície de ataque.',
+        text: 'Chassis blindado com malha Faraday contra pulsos eletromagnéticos. Cerâmica anti-térmica. Isolamento acústico contra ataques de canal lateral. Sem USB e sem tela — superfície de ataque minimizada.',
       },
       {
         src: '/whitepapers/psi-ciclo-vida-chave-criptografica-sram-puf.webp',
@@ -67,13 +67,13 @@ export const projetoPsi = {
         src: '/whitepapers/psi-protocolo-phantom-biometria-coacao.webp',
         alt: 'Protocolo Phantom Input: detecção de coação por biometria comportamental e liberação de fundos falsos sob extorsão',
         title: 'Anti-Sequestro Inteligente',
-        text: 'O PSI aprende seu padrão biométrico. Se detectar stress ou coação, ativa o Phantom Mode: desbloqueia uma carteira-fantasma com fundos falsos. O agressor nunca saberá que foi enganado.',
+        text: 'O PSI aprende seu padrão biométrico. Se detectar stress ou coação, ativa o Phantom Mode: desbloqueia uma carteira-fantasma com fundos falsos. Projetado para que o agressor não perceba o engano.',
       },
       {
         src: '/whitepapers/psi-arquitetura-tmr-redundancia-voter.webp',
         alt: 'Arquitetura TMR com voter: três processadores executam em paralelo e um voter valida consenso — padrão aeroespacial',
         title: 'Redundância Aeroespacial',
-        text: 'Três processadores executam cada operação em paralelo. Um "voter" valida o consenso. Se um chip falhar ou for adulterado, os outros dois continuam. É a mesma tecnologia usada em satélites e mísseis.',
+        text: 'Três processadores executam cada operação em paralelo. Um "voter" valida o consenso. Se um chip falhar ou for adulterado, os outros dois continuam. Abordagem de redundância usada em sistemas aeroespaciais críticos.',
       },
     ],
   },
@@ -86,7 +86,7 @@ export const projetoPsi = {
       },
       {
         title: 'Fundos & Exchanges Institucionais',
-        text: 'Cold storage de classe militar para compliance e auditoria de custódia qualificada.',
+        text: 'Cold storage de grau institucional para compliance e auditoria de custódia qualificada.',
       },
       {
         title: 'Governos & Bancos Centrais',
@@ -99,7 +99,7 @@ export const projetoPsi = {
     items: [
       {
         value: '0',
-        label: 'Chaves armazenadas permanentemente. Zero superfície de ataque estática.',
+        label: 'Chaves armazenadas permanentemente. Superfície de ataque estática minimizada.',
       },
       {
         value: '3×',
@@ -110,8 +110,8 @@ export const projetoPsi = {
         label: 'Criptografia XMSS pós-quântica. Preparado para o dia em que computadores quânticos quebrarem RSA e ECDSA.',
       },
       {
-        value: 'EMP-Proof',
-        label: 'Blindagem Faraday + cerâmica. Funcional após pulso eletromagnético.',
+        value: 'EMP-Resiliente',
+        label: 'Blindagem Faraday + cerâmica, projetada para mitigar pulso eletromagnético (EMP).',
       },
     ],
   },
@@ -153,7 +153,7 @@ export const projetoPsi = {
   jsonLd: {
     headline: 'Projeto Ψ (PSI): O Horizonte de Eventos da Soberania Pessoal e Zero Trust em Silício',
     description:
-      'Whitepaper Técnico: Arquitetura de custódia de ativos digitais de classe nuclear com SRAM PUF, Criptografia XMSS pós-quântica e Redundância Modular Tripla aeroespacial.',
+      'Whitepaper Técnico: Arquitetura de custódia de ativos digitais de classe soberana com SRAM PUF, Criptografia XMSS pós-quântica e Redundância Modular Tripla aeroespacial.',
     softwareName: 'Projeto PSI',
     softwareDescription:
       'Hardware wallet de classe soberana com Zero Trust em silício, SRAM PUF, XMSS pós-quântico e redundância TMR aeroespacial.',
