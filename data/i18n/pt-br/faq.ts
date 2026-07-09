@@ -541,7 +541,7 @@ export const faq = {
     {
       question: 'Ulisses faz palestras pro bono?',
       answer:
-        'Sim, com cap de 4 eventos por ano e lead time mínimo de 90 dias. Priorizamos academia, igreja local e organizações de impacto cristão. Terceiro setor cristão tem cachê reduzido (R$ 4-8k) sem entrar no contador pro bono.',
+        'Sim, com cap de 4 eventos por ano e lead time mínimo de 90 dias. Priorizamos academia, igreja local e organizações de impacto cristão. Terceiro setor cristão tem cachê reduzido sem entrar no contador pro bono.',
     },
     {
       question: 'Qual a política de gravação e direitos de imagem?',
@@ -551,7 +551,7 @@ export const faq = {
     {
       question: 'Como funciona o cancelamento de uma palestra?',
       answer:
-        'Política de cancelamento clara: até 30 dias antes do evento — reembolso total. Entre 30 e 7 dias — 50% retido. Menos de 7 dias do evento — 100% retido. Confirmação firme com 50% antecipado e contrato assinado; saldo até 7 dias após o evento.',
+        'Política de cancelamento clara: até 30 dias antes do evento — reembolso integral do sinal. Entre 30 e 7 dias — retenção de metade do sinal. Menos de 7 dias do evento — retenção do sinal de 50% já pago. Confirmação firme com 50% antecipado e contrato assinado; saldo até 7 dias após o evento.',
     },
     {
       question: 'Ulisses palestra para universidades?',
