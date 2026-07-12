@@ -31,12 +31,12 @@ export const consultoria = {
   trust: {
     label: 'Authority signals',
     items: [
-      'MSc Candidate in AI · AGTU (USA)',
+      'MSc Candidate in AI · AGTU',
       'Verifiable ORCID · Lattes · DID',
       '32 international certifications',
-      '18+ indexed publications',
-      '5 professional languages',
-      'Codex Hash co-inventor',
+      '18+ publications',
+      '3 working languages (PT/EN/ES)',
+      'CTO · Codex Hash Ltda',
     ],
   },
   comparator: {
@@ -64,7 +64,7 @@ export const consultoria = {
       {
         title: 'Strategic Diagnostic',
         duration: '3-4 weeks',
-        priceLabel: 'Starting from $9,000 USD',
+        priceLabel: 'On request',
         description:
           'Executive analysis of AI, data and architecture maturity with prioritized report, risk identification and actionable quick wins.',
         deliverables: ['Executive report (40-60 pp)', 'Risk and priority map', 'C-Level debrief session'],
@@ -72,7 +72,7 @@ export const consultoria = {
       {
         title: 'Strategic AI Roadmap',
         duration: '6-8 weeks',
-        priceLabel: 'Starting from $18,000 USD',
+        priceLabel: 'On request',
         description:
           'Generative AI and agent adoption plan with prioritized use cases, target architecture, estimated budget and change plan.',
         deliverables: ['18-month roadmap', 'Target architecture', 'Change management plan'],
@@ -104,15 +104,15 @@ export const consultoria = {
       {
         title: 'Board Advisory',
         duration: 'Monthly retainer',
-        priceLabel: 'On request · fixed fee (equity optional for Series A+)',
+        priceLabel: 'On request',
         description:
-          'Advisory board seat with technical agenda and long-horizon view. Equity considered only for Series A+ startups with clean cap tables.',
+          'Advisory board seat with technical agenda and long-horizon view.',
         deliverables: ['Monthly board meeting', 'On-demand technical opinions', 'Network introductions'],
       },
       {
         title: 'In-Company Executive Training',
         duration: '1-5 days',
-        priceLabel: 'Starting from $3,800 USD/day',
+        priceLabel: 'On request',
         description:
           'Workshops and masterclasses for C-Level and Board on generative AI, AGI, blockchain and digital sovereignty. Material in PT/EN/ES.',
         deliverables: ['On-site or remote workshop', 'Custom material', 'Deep executive Q&A'],
@@ -121,7 +121,7 @@ export const consultoria = {
   },
   verticais: {
     title: 'Anchor verticals',
-    subtitle: 'Three sectors where 80% of engagements concentrate. Other verticals on demand.',
+    subtitle: 'Three sectors where most engagements concentrate. Other verticals on demand.',
     items: [
       {
         title: 'Finance & Fintech',
@@ -141,30 +141,30 @@ export const consultoria = {
     ],
     additional: {
       label: 'Additional verticals',
-      items: ['Precision agribusiness', 'Executive education and theological institutes'],
+      items: ['Precision agribusiness', 'Executive education'],
     },
   },
   pricing: {
-    title: 'Pricing strategy — hybrid',
+    title: 'Investment',
     subtitle:
-      'Public range for standardizable deliverables (diagnostic, roadmap, training); “on request” for critical scopes (architecture, fractional, board, research).',
+      'Each engagement’s value is defined by scope, maturity and timeline. Send a briefing and I’ll get back with a proposal.',
     columns: {
       modality: 'Modality',
-      pricing: 'Display strategy',
-      market: 'Market range',
+      pricing: 'Investment',
+      market: '',
     },
     rows: [
-      { modality: 'Diagnostic', pricing: 'From $9,000 USD', market: '$5k-16k USD' },
-      { modality: 'AI Roadmap', pricing: 'From $18,000 USD', market: '$16k-40k USD' },
-      { modality: 'Critical Architecture', pricing: 'On request', market: '$10k-50k USD per scope' },
-      { modality: 'Data Governance', pricing: 'On request', market: '$8k-25k USD' },
-      { modality: 'Fractional CTO', pricing: 'On request', market: '$5k-16k USD/month' },
-      { modality: 'Board Advisory', pricing: 'On request', market: '$3k-8k USD/month' },
-      { modality: 'In-Company Training', pricing: 'From $3,800 USD/day', market: '$3k-8k USD/day' },
-      { modality: 'Applied Research / Opinion', pricing: 'On request', market: '$4k-25k USD' },
+      { modality: 'Diagnostic', pricing: 'On request', market: '' },
+      { modality: 'AI Roadmap', pricing: 'On request', market: '' },
+      { modality: 'Critical Architecture', pricing: 'On request', market: '' },
+      { modality: 'Data Governance', pricing: 'On request', market: '' },
+      { modality: 'Fractional CTO', pricing: 'On request', market: '' },
+      { modality: 'Board Advisory', pricing: 'On request', market: '' },
+      { modality: 'In-Company Training', pricing: 'On request', market: '' },
+      { modality: 'Applied Research / Opinion', pricing: 'On request', market: '' },
     ],
     note:
-      'Values shown in USD (BRL ≈ 5.0; refreshed quarterly). Average annual ticket for strategic AI consulting at Fortune-class accounts: $80k-240k USD (Gartner SEA / HackTrain BR 2025 benchmark).',
+      'Values defined by proposal, according to scope. For international clients, USD/EUR equivalents are provided in the proposal.',
   },
   cases: {
     title: 'Representative cases',
@@ -234,7 +234,7 @@ export const consultoria = {
         vertical: 'Hardware Security · Deep Tech',
         period: 'in development',
         description:
-          'Co-invention of a nuclear-grade hardware wallet with SRAM PUF, post-quantum XMSS and TMR redundancy. Commercial landing and technical whitepaper published.',
+          'Creation of a sovereign-custody hardware wallet with SRAM PUF, post-quantum XMSS and TMR redundancy. Commercial landing and technical whitepaper published.',
         outcome: 'Advanced prototyping, licensable IP, seed/Series A investment opportunity.',
         link: '/projeto-psi',
       },

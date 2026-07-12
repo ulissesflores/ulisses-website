@@ -31,12 +31,12 @@ export const consultoria = {
   trust: {
     label: 'Señales de autoridad',
     items: [
-      'MSc Candidate en IA · AGTU (EE.UU.)',
+      'MSc Candidate en IA · AGTU',
       'ORCID · Lattes · DID verificables',
       '32 certificaciones internacionales',
-      '18+ publicaciones indexadas',
-      '5 idiomas profesionales',
-      'Co-inventor Codex Hash',
+      '18+ publicaciones',
+      '3 idiomas de trabajo (PT/EN/ES)',
+      'CTO · Codex Hash Ltda',
     ],
   },
   comparator: {
@@ -64,7 +64,7 @@ export const consultoria = {
       {
         title: 'Diagnóstico Estratégico',
         duration: '3-4 semanas',
-        priceLabel: 'Desde USD 9.000',
+        priceLabel: 'A consultar',
         description:
           'Análisis ejecutivo de madurez en IA, datos y arquitectura, con informe priorizado, identificación de riesgos y quick wins accionables.',
         deliverables: ['Informe ejecutivo (40-60 pp)', 'Mapa de riesgos y prioridades', 'Sesión de devolución con C-Level'],
@@ -72,7 +72,7 @@ export const consultoria = {
       {
         title: 'Roadmap Estratégico de IA',
         duration: '6-8 semanas',
-        priceLabel: 'Desde USD 18.000',
+        priceLabel: 'A consultar',
         description:
           'Plan de adopción de IA generativa y agentes con casos de uso priorizados, arquitectura objetivo, presupuesto estimado y plan de cambio.',
         deliverables: ['Roadmap 18 meses', 'Arquitectura objetivo', 'Plan de change management'],
@@ -104,15 +104,15 @@ export const consultoria = {
       {
         title: 'Board Advisory',
         duration: 'Retainer mensual',
-        priceLabel: 'A consultar · fee fijo (equity opcional para Series A+)',
+        priceLabel: 'A consultar',
         description:
-          'Asiento consultivo en consejos estratégicos con agenda técnica y visión de largo plazo. Equity discutible solo para startups Series A+ con cap table limpio.',
+          'Asiento consultivo en consejos estratégicos con agenda técnica y visión de largo plazo.',
         deliverables: ['Reunión mensual de consejo', 'Dictámenes técnicos a demanda', 'Network introductions'],
       },
       {
         title: 'Capacitación Ejecutiva In-Company',
         duration: '1-5 días',
-        priceLabel: 'Desde USD 3.800/día',
+        priceLabel: 'A consultar',
         description:
           'Workshops y masterclasses para C-Level y Board sobre IA generativa, AGI, blockchain y soberanía digital. Material en PT/EN/ES.',
         deliverables: ['Workshop presencial o remoto', 'Material personalizado', 'Q&A ejecutivo en profundidad'],
@@ -121,7 +121,7 @@ export const consultoria = {
   },
   verticais: {
     title: 'Verticales ancla',
-    subtitle: 'Tres sectores donde se concentra el 80% de los engagements. Otras verticales bajo demanda.',
+    subtitle: 'Tres sectores donde se concentra la mayor parte de los engagements. Otras verticales bajo demanda.',
     items: [
       {
         title: 'Financiero & Fintech',
@@ -141,30 +141,30 @@ export const consultoria = {
     ],
     additional: {
       label: 'Verticales adicionales',
-      items: ['Agronegocio de precisión', 'Educación ejecutiva e instituciones teológicas'],
+      items: ['Agronegocio de precisión', 'Educación ejecutiva'],
     },
   },
   pricing: {
-    title: 'Estrategia de pricing — híbrida',
+    title: 'Inversión',
     subtitle:
-      'Rango público para entregables estandarizables (diagnóstico, roadmap, capacitación) y “a consultar” para alcances críticos (arquitectura, fractional, board, investigación).',
+      'El valor de cada engagement se define por alcance, madurez y plazo. Envíe un briefing y le respondo con una propuesta.',
     columns: {
       modality: 'Modalidad',
-      pricing: 'Estrategia de exhibición',
-      market: 'Rango de mercado',
+      pricing: 'Inversión',
+      market: '',
     },
     rows: [
-      { modality: 'Diagnóstico', pricing: 'Desde USD 9.000', market: 'USD 5k-16k' },
-      { modality: 'Roadmap de IA', pricing: 'Desde USD 18.000', market: 'USD 16k-40k' },
-      { modality: 'Arquitectura Crítica', pricing: 'A consultar', market: 'USD 10k-50k por alcance' },
-      { modality: 'Gobernanza de Datos', pricing: 'A consultar', market: 'USD 8k-25k' },
-      { modality: 'Fractional CTO', pricing: 'A consultar', market: 'USD 5k-16k/mes' },
-      { modality: 'Board Advisory', pricing: 'A consultar', market: 'USD 3k-8k/mes' },
-      { modality: 'Capacitación In-Company', pricing: 'Desde USD 3.800/día', market: 'USD 3k-8k/día' },
-      { modality: 'Investigación / Dictamen', pricing: 'A consultar', market: 'USD 4k-25k' },
+      { modality: 'Diagnóstico', pricing: 'A consultar', market: '' },
+      { modality: 'Roadmap de IA', pricing: 'A consultar', market: '' },
+      { modality: 'Arquitectura Crítica', pricing: 'A consultar', market: '' },
+      { modality: 'Gobernanza de Datos', pricing: 'A consultar', market: '' },
+      { modality: 'Fractional CTO', pricing: 'A consultar', market: '' },
+      { modality: 'Board Advisory', pricing: 'A consultar', market: '' },
+      { modality: 'Capacitación In-Company', pricing: 'A consultar', market: '' },
+      { modality: 'Investigación / Dictamen', pricing: 'A consultar', market: '' },
     ],
     note:
-      'Valores en USD (BRL ≈ 5,0; actualizado trimestralmente). Ticket promedio anual de consultoría estratégica de IA para cuentas Fortune-class: USD 80k-240k (benchmark Gartner SEA / HackTrain BR 2025).',
+      'Valores definidos por propuesta, según el alcance. Para clientes internacionales, se proporcionan equivalentes en USD/EUR en la propuesta.',
   },
   cases: {
     title: 'Casos representativos',
@@ -204,7 +204,7 @@ export const consultoria = {
         vertical: 'Financiero · Fintech · Riesgo',
         period: '2024-2026',
         description:
-          'Tesis de maestría AGTU (EE.UU.): arquitectura híbrida acoplando Redes Neuronales Recurrentes con modelado estocástico de flujo. Repositorio público en GitHub.',
+          'Tesis de maestría AGTU: arquitectura híbrida acoplando Redes Neuronales Recurrentes con modelado estocástico de flujo. Repositorio público en GitHub.',
         outcome: 'Código abierto, framework reutilizable, citación directa autorizada.',
         link: 'https://github.com/ulissesflores/cyberfinancial-resilience-lrblstm',
       },
@@ -234,7 +234,7 @@ export const consultoria = {
         vertical: 'Hardware Security · Deep Tech',
         period: 'en desarrollo',
         description:
-          'Co-invención de hardware wallet de clase nuclear con SRAM PUF, XMSS post-cuántico y redundancia TMR. Landing comercial y whitepaper técnico publicados.',
+          'Creación de hardware wallet de custodia soberana con SRAM PUF, XMSS post-cuántico y redundancia TMR. Landing comercial y whitepaper técnico publicados.',
         outcome: 'Prototipado avanzado, IP licenciable, oportunidad de inversión seed/Series A.',
         link: '/projeto-psi',
       },

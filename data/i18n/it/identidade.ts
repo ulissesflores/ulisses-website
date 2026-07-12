@@ -1,14 +1,14 @@
 export const identidade = {
   meta: {
-    title: 'Identità Sovrana | Hub Canonico',
-    description: 'Hub canonico di identità sovrana di Ulisses Flores con verifiche pubbliche, produzione accademica, archivio teologico, domini e grafo semantico di autorità.',
-    ogTitle: 'Identità Sovrana | Hub Canonico | Ulisses Flores',
-    ogDescription: 'Hub canonico di identità sovrana di Ulisses Flores con verifiche pubbliche, produzione accademica, archivio teologico, domini e grafo semantico di autorità.',
-    ogImageAlt: 'Ulisses Flores - Sovereign Identity Hub'
+    title: 'Identità Sovrana e Verifiche Pubbliche | Ulisses Flores',
+    description: 'Pagina di identità sovrana di Ulisses Flores con verifiche pubbliche, produzione accademica, archivio teologico, domini e grafo semantico di identità.',
+    ogTitle: 'Identità Sovrana e Verifiche Pubbliche | Ulisses Flores',
+    ogDescription: 'Pagina di identità sovrana di Ulisses Flores con verifiche pubbliche, produzione accademica, archivio teologico, domini e grafo semantico di identità.',
+    ogImageAlt: 'Ulisses Flores - Identità Sovrana'
   },
   header: {
-    kicker: 'Ground Truth Identity Node · UPKF v3.3',
-    subtitle: 'Odysseus · Ricercatore Poliedrico · CTO · Architetto di Identità Sovrana',
+    kicker: 'Identità verificabile · Grafo pubblico',
+    subtitle: 'CTO · Ricercatore',
     statsTemplate: {
       works: 'lavori',
       certifications: 'certificazioni'
@@ -95,7 +95,7 @@ export const identidade = {
       title: '05 · Domini di Conoscenza'
     },
     firewall: {
-      title: '06 · Firewall Semantico'
+      title: '06 · Disambiguazione dell\'Identità'
     },
     organizations: {
       title: '07 · Organizzazioni e Affiliazioni'

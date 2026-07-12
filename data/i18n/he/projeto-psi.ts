@@ -1,7 +1,7 @@
 export const projetoPsi = {
   meta: {
     title: 'Projeto PSI — חומרת ריבונות לשמירת נכסים דיגיטליים | Ulisses Flores',
-    description: 'שמירת נכסים דיגיטליים ברמה גרעינית. חומרה עם Zero Trust בסיליקון, הצפנה פוסט-קוונטית XMSS ועמידות יתרה תעופתית TMR. השקעה ורישוי.',
+    description: 'שמירה ריבונית של נכסים דיגיטליים. חומרה עם Zero Trust בסיליקון, הצפנה פוסט-קוונטית XMSS ויתירות מודולרית משולשת (TMR). השקעה ורישוי.',
     keywords: [
       "hardware wallet",
       "שמירת נכסים דיגיטליים",
@@ -13,15 +13,15 @@ export const projetoPsi = {
       "אחסון קר מוסדי",
       "Ulisses Flores",
       "Codex Hash",
-      "אבטחה גרעינית",
+      "אחסון קר ריבוני",
       "יתירות TMR"
     ],
     ogTitle: 'Projeto PSI — חומרת ריבונות לשמירת נכסים דיגיטליים',
-    ogDescription: 'שמירת נכסים דיגיטליים ברמה גרעינית. Zero Trust בסיליקון, XMSS פוסט-קוונטי ועמידות יתרה תעופתית TMR.'
+    ogDescription: 'שמירה ריבונית של נכסים דיגיטליים. Zero Trust בסיליקון, XMSS פוסט-קוונטי ויתירות מודולרית משולשת (TMR).'
   },
   whitepaperMeta: {
     title: 'Projeto Ψ (PSI): חומרת ריבונות ו-Zero Trust בסיליקון | Ulisses Flores',
-    description: 'מסמך טכני: ארכיטקטורה לשמירת נכסים דיגיטליים ברמה גרעינית. הכירו את Projeto PSI, המצויד ב-SRAM PUF, הצפנת XMSS ועמידות יתרה TMR.',
+    description: 'מסמך טכני: ארכיטקטורה לשמירת נכסים דיגיטליים ברמה ריבונית. הכירו את Projeto PSI, המצויד ב-SRAM PUF, הצפנת XMSS ועמידות יתרה TMR.',
     keywords: [
       "hardware wallet",
       "zero trust",
@@ -40,14 +40,14 @@ export const projetoPsi = {
       "deniable encryption",
       "Ulisses Flores blockchain",
       "hardware security module",
-      "אחסון קר גרעיני"
+      "אחסון קר ריבוני"
     ],
     ogTitle: 'Projeto Ψ (PSI): חומרת ריבונות ו-Zero Trust בסיליקון | Ulisses Flores',
-    ogDescription: 'מסמך טכני: ארכיטקטורה לשמירת נכסים דיגיטליים ברמה גרעינית עם SRAM PUF, XMSS פוסט-קוונטי ועמידות יתרה תעופתית TMR.'
+    ogDescription: 'מסמך טכני: ארכיטקטורה לשמירת נכסים דיגיטליים ברמה ריבונית עם SRAM PUF, XMSS פוסט-קוונטי ועמידות יתרה תעופתית TMR.'
   },
   simulacaoMeta: {
     title: 'Projeto Ψ (PSI): סייר טכני של ארכיטקטורת האבטחה | Ulisses Flores',
-    description: 'סייר אינטראקטיבי של ארכיטקטורת Projeto PSI — SRAM PUF, הצפנה פוסט-קוונטית XMSS, יתירות תעופתית TMR ו-Ring Signatures. נווטו בין 4 עמודי התווך של האבטחה הגרעינית.',
+    description: 'סייר אינטראקטיבי של ארכיטקטורת Projeto PSI — SRAM PUF, הצפנה פוסט-קוונטית XMSS, יתירות תעופתית TMR ו-Ring Signatures. נווטו בין 4 עמודי התווך של האבטחה הריבונית.',
     keywords: [
       "hardware wallet",
       "zero trust",
@@ -66,15 +66,15 @@ export const projetoPsi = {
       "deniable encryption",
       "Ulisses Flores blockchain",
       "hardware security module",
-      "אחסון קר גרעיני"
+      "אחסון קר ריבוני"
     ],
     ogTitle: 'Projeto Ψ (PSI): סייר טכני של ארכיטקטורת האבטחה | Ulisses Flores',
     ogDescription: 'סייר אינטראקטיבי של ארכיטקטורת Projeto PSI — SRAM PUF, XMSS פוסט-קוונטי ועמידות יתרה תעופתית TMR.'
   },
   hero: {
     badge: 'השקעה ורישוי',
-    h1: 'Projeto PSI: הכספת הדיגיטלית שמאתגרת את חוקי הפיזיקה',
-    lead: 'שמירה ריבונית של נכסים דיגיטליים עם אבטחה ברמה גרעינית. Zero Trust בסיליקון. הצפנה חסינת מחשבים קוונטיים. יתירות ברמה תעופתית.',
+    h1: 'Projeto PSI: שמירה ריבונית של נכסים דיגיטליים',
+    lead: 'שמירה ריבונית של נכסים דיגיטליים. Zero Trust בסיליקון. הצפנה פוסט-קוונטית (חתימות hash-based XMSS). יתירות מודולרית משולשת (TMR), הנגזרת מתקנים תעופתיים.',
     ctaPrimary: 'בקש מצגת מנהלים',
     ctaSecondary: 'קרא את המסמך הטכני'
   },
@@ -85,13 +85,13 @@ export const projetoPsi = {
     p2Highlight: 'זוהי שינוי פרדיגמה.'
   },
   pillars: {
-    title: 'ארבעה עמודי תווך של אבטחה מוחלטת',
+    title: 'ארבעה עמודי תווך של אבטחה',
     items: [
       {
         src: '/whitepapers/psi-arquitetura-hardware-camadas-defesa.webp',
         alt: 'תרשים שכבות ההגנה של חומרת Projeto PSI: מיגון פאראדיי, קרמיקה אנטי-תרמית ובידוד אקוסטי',
         title: 'מבצר פיזי',
-        text: 'מארז משוריין עם רשת פאראדיי נגד פולסים אלקטרומגנטיים. קרמיקה אנטי-תרמית. בידוד אקוסטי נגד התקפות ערוץ צדדי. ללא USB. ללא מסך. ללא משטח תקיפה.'
+        text: 'מארז משוריין עם רשת פאראדיי נגד פולסים אלקטרומגנטיים. קרמיקה אנטי-תרמית. בידוד אקוסטי נגד התקפות ערוץ צדדי. ללא USB וללא מסך — משטח תקיפה ממוזער.'
       },
       {
         src: '/whitepapers/psi-ciclo-vida-chave-criptografica-sram-puf.webp',
@@ -103,13 +103,13 @@ export const projetoPsi = {
         src: '/whitepapers/psi-protocolo-phantom-biometria-coacao.webp',
         alt: 'פרוטוקול Phantom Input: זיהוי כפייה באמצעות ביומטריה התנהגותית ושחרור כספים מזויפים תחת סחיטה',
         title: 'נגד חטיפה חכם',
-        text: 'Projeto PSI לומד את הדפוס הביומטרי שלך. אם הוא מזהה לחץ או כפייה, הוא מפעיל את Phantom Mode: פותח ארנק רפאים עם כספים מזויפים. התוקף לעולם לא ידע שרומה.'
+        text: 'Projeto PSI לומד את הדפוס הביומטרי שלך. אם הוא מזהה לחץ או כפייה, הוא מפעיל את Phantom Mode: פותח ארנק רפאים עם כספים מזויפים. מתוכנן כך שהתוקף לא יבחין בהטעיה.'
       },
       {
         src: '/whitepapers/psi-arquitetura-tmr-redundancia-voter.webp',
         alt: 'ארכיטקטורת TMR עם voter: שלושה מעבדים מבצעים במקביל ו-voter מאמת קונצנזוס — תקן תעופתי',
         title: 'יתירות תעופתית',
-        text: 'שלושה מעבדים מבצעים כל פעולה במקביל. voter מאמת את הקונצנזוס. אם שבב אחד נכשל או שונה, שני האחרים ממשיכים. זוהי אותה טכנולוגיה המשמשת בלוויינים וטילים.'
+        text: 'שלושה מעבדים מבצעים כל פעולה במקביל. voter מאמת את הקונצנזוס. אם שבב אחד נכשל או שונה, שני האחרים ממשיכים. גישת יתירות המשמשת במערכות תעופתיות קריטיות.'
       }
     ]
   },
@@ -122,7 +122,7 @@ export const projetoPsi = {
       },
       {
         title: 'קרנות ובורסות מוסדיות',
-        text: 'Cold storage ברמה צבאית לצורך ציות וביקורת של שמירה מוסמכת.'
+        text: 'Cold storage ברמה מוסדית לצורך ציות וביקורת של שמירה מוסמכת.'
       },
       {
         title: 'ממשלות ובנקים מרכזיים',
@@ -135,7 +135,7 @@ export const projetoPsi = {
     items: [
       {
         value: '0',
-        label: 'מפתחות מאוחסנים לצמיתות. Zero שטח תקיפה סטטי.'
+        label: 'מפתחות מאוחסנים לצמיתות. שטח תקיפה סטטי ממוזער.'
       },
       {
         value: '3×',
@@ -146,14 +146,14 @@ export const projetoPsi = {
         label: 'הצפנת XMSS פוסט-קוונטית. מוכן ליום שבו מחשבים קוונטיים ישברו את RSA ו-ECDSA.'
       },
       {
-        value: 'EMP-Proof',
-        label: 'מיגון פאראדיי + קרמיקה. פונקציונלי לאחר פולס אלקטרומגנטי.'
+        value: 'EMP-עמיד',
+        label: 'מיגון פאראדיי + קרמיקה, מתוכנן למתן פולס אלקטרומגנטי (EMP).'
       }
     ]
   },
   author: {
     label: 'ממציא ואדריכל',
-    description: 'פרויקט שתוכנן על ידי Ulisses Flores — יועץ אסטרטגי ל-IA, סטודנט לתואר שני בבינה מלאכותית ב-AGTU (ארה"ב) וממציא שותף של טכנולוגיות blockchain (Codex Hash).'
+    description: 'פרויקט שתוכנן על ידי Ulisses Flores — יועץ אסטרטגי ל-IA, סטודנט לתואר שני בבינה מלאכותית ב-AGTU ויוצר של טכנולוגיות blockchain ב-Codex Hash.'
   },
   faq: {
     sectionTitle: 'שאלות נפוצות — משקיעים'
@@ -169,11 +169,11 @@ export const projetoPsi = {
     kickerSub: 'מחקר בארכיטקטורת מערכות וקריפטוגרפיה יישומית',
     h1: 'Projeto Ψ (PSI): האופק של הריבונות האישית ו-Zero Trust בסיליקון',
     authorLabel: 'מחבר:',
-    authorRole: 'יועץ אסטרטגי ל-IA, ארכיטקט תוכנה, מפתח חומרה, סטודנט לתואר שני ב-AGTU (ארה"ב)',
+    authorRole: 'יועץ אסטרטגי ל-IA, ארכיטקט תוכנה, מפתח חומרה, סטודנט לתואר שני ב-AGTU',
     abstractTitle: 'תקציר מנהלים',
     abstractText: 'הופעת הפיקוח האלגוריתמי ההיפר-מדינתי, יחד עם התפשטות וקטורי כפייה פיזית והתקפות פולשניות בשרשרת אספקת החומרה, דורשת ניסוח מחדש אונטולוגי בארכיטקטורות שמירת נכסים דיגיטליים קריטיים. ארנקי חומרה אזרחיים מסורתיים פועלים תחת ההנחה הבסיסית של סביבה בטוחה ומשתמש חופשי מכפייה — הנחות שמתגלות ככושלות באופן קטסטרופלי תחת מודלי איום עוינים. מאמר זה מציג ניתוח מדעי מקיף של Projeto Ψ (PSI), ארכיטקטורת שמירה ברמה ריבונית המבוססת על פרדיגמת Zero Trust מוחלט בסיליקון.',
-    authorCardLabel: 'מחקר ופיתוח משותף',
-    authorCardDescription: 'Projeto PSI נחקר ותועד על ידי Ulisses Flores — יועץ אסטרטגי ל-IA, ארכיטקט תוכנה, מפתח Hardware, ממציא שותף של Codex Hash וסטודנט לתואר שני ב-IA ב-AGTU (ארה"ב).',
+    authorCardLabel: 'מחקר ויצירה',
+    authorCardDescription: 'Projeto PSI נחקר ותועד על ידי Ulisses Flores — יועץ אסטרטגי ל-IA, ארכיטקט תוכנה, מפתח Hardware, יוצר של Codex Hash וסטודנט לתואר שני ב-IA ב-AGTU.',
     ctaTitle: 'מעוניינים בריבונות דיגיטלית וחומרת קריפטו?',
     ctaDescription: 'Ulisses Flores מציע ייעוץ בנושאי פרטיות דיגיטלית, ארכיטקטורות hardware wallet, Ring Signatures ויישום פרוטוקולי ריבונות עבור חברות ופרויקטי blockchain. צרו קשר.',
     ctaButton: 'שוחח עם Ulisses Flores →',
@@ -181,7 +181,7 @@ export const projetoPsi = {
   },
   jsonLd: {
     headline: 'Projeto Ψ (PSI): האופק של הריבונות האישית ו-Zero Trust בסיליקון',
-    description: 'מסמך טכני: ארכיטקטורה לשמירת נכסים דיגיטליים ברמה גרעינית עם SRAM PUF, הצפנת XMSS פוסט-קוונטית ויתירות מודולרית משולשת תעופתית.',
+    description: 'מסמך טכני: ארכיטקטורה לשמירת נכסים דיגיטליים ברמה ריבונית עם SRAM PUF, הצפנת XMSS פוסט-קוונטית ויתירות מודולרית משולשת תעופתית.',
     softwareName: 'Projeto PSI',
     softwareDescription: 'Hardware wallet ברמה ריבונית עם Zero Trust בסיליקון, SRAM PUF, XMSS פוסט-קוונטי ויתירות תעופתית TMR.'
   }

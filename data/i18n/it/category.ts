@@ -16,22 +16,22 @@ export const category = {
       chips: [
         "Consulente Strategico di IA",
         "Scienziato dei Dati",
-        "Studente di Master AGTU (USA)",
+        "Studente di Master AGTU",
         "Pubblicazioni con DOI",
         "Sistemi Complessi"
       ]
     },
     whitepapers: {
       h1: 'Whitepaper Tecnici e Architettura Zero Trust',
-      metaDescription: 'Documentazione tecnica di architetture hardware, crittografia e IoT. Incluso il Projeto PSI (Hardware Wallet Nuclear-Grade) di Ulisses Flores.',
-      lead: 'La transizione dai concetti teorici all\'ingegneria di produzione richiede documentazione inconfutabile. Questa sezione ospita Whitepaper tecnici che dettagliano architetture di missione critica, sistemi "Cloudless" e crittografia all\'avanguardia. È qui che progetti di classe sovrana — come l\'hardware wallet di grado nucleare (Projeto PSI) e soluzioni di Edge Computing (GoldenLeaf) — sono esposti al loro livello più profondo di astrazione in silicio e matematica.',
+      metaDescription: 'Documentazione tecnica di architetture hardware, crittografia e IoT. Incluso il Projeto PSI (hardware wallet a custodia sovrana) di Ulisses Flores.',
+      lead: 'La transizione dai concetti teorici all\'ingegneria di produzione richiede documentazione inconfutabile. Questa sezione ospita Whitepaper tecnici che dettagliano architetture di missione critica, sistemi "Cloudless" e crittografia all\'avanguardia. È qui che progetti di classe sovrana — come l\'hardware wallet a custodia sovrana (Projeto PSI) e soluzioni di Edge Computing (GoldenLeaf) — sono esposti al loro livello più profondo di astrazione in silicio e matematica.',
       authorityTitle: 'Ingegneria documentata con precisione IEEE',
       authorityBody: 'Ogni whitepaper dettaglia architetture reali con fondamenti negli standard NIST, IEEE e letteratura all\'avanguardia in side-channel analysis, crittografia post-quantistica e materiali aerospaziali.',
       chips: [
         "Architetto Software",
         "Sviluppatore Hardware",
         "Consulente IA",
-        "Studente di Master AGTU (USA)",
+        "Studente di Master AGTU",
         "Zero Trust",
         "IoT Cloudless"
       ]
@@ -39,14 +39,14 @@ export const category = {
     essays: {
       h1: 'Saggi: Filosofia, Tecnologia e il Comportamento Umano',
       metaDescription: 'Saggi di Ulisses Flores che esplorano l\'intersezione tra tecnologia, teologia storica, etica e le dinamiche dell\'azione umana.',
-      lead: 'La tecnologia, priva di fondamento filosofico e storico, diventa uno strumento cieco. Come ricercatore polimatico, le analisi qui raccolte trascendono il codice e la matematica. Questi saggi sono riflessioni profonde sulla condizione umana, l\'etica nell\'era dell\'iper-vigilanza e come la teologia storica e la filosofia modellano la nostra comprensione del potere, della libertà e del futuro della società.',
+      lead: 'La tecnologia, priva di fondamento filosofico e storico, diventa uno strumento cieco. Come ricercatore dall\'attività interdisciplinare, le analisi qui raccolte trascendono il codice e la matematica. Questi saggi sono riflessioni profonde sulla condizione umana, l\'etica nell\'era dell\'iper-vigilanza e come la teologia storica e la filosofia modellano la nostra comprensione del potere, della libertà e del futuro della società.',
       authorityTitle: 'Riflessione interdisciplinare con rigore accademico',
       authorityBody: 'Ogni saggio combina analisi storico-critica, filosofia politica e fondamenti teologici, offrendo una prospettiva unica che collega le discipline umanistiche classiche all\'impatto della tecnologia contemporanea.',
       chips: [
-        "Ricercatore Polimatico",
+        "Ricercatore",
         "Teologia Storica",
         "Filosofia Politica",
-        "Studente di Master AGTU (USA)",
+        "Studente di Master AGTU",
         "Etica e Tecnologia"
       ]
     }

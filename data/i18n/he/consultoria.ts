@@ -31,12 +31,12 @@ export const consultoria = {
   trust: {
     label: 'אותות סמכות',
     items: [
-      'מועמד MSc ב-AI · AGTU (ארה"ב)',
+      'מועמד MSc ב-AI · AGTU',
       'ORCID · Lattes · DID ניתנים לאימות',
       '32 הסמכות בינלאומיות',
-      '18+ פרסומים מאונדקסים',
-      '5 שפות מקצועיות',
-      'שותף-ממציא Codex Hash',
+      '18+ פרסומים',
+      '3 שפות עבודה (PT/EN/ES)',
+      'CTO · Codex Hash Ltda',
     ],
   },
   comparator: {
@@ -64,7 +64,7 @@ export const consultoria = {
       {
         title: 'אבחון אסטרטגי',
         duration: '3-4 שבועות',
-        priceLabel: 'החל מ-9,000 USD',
+        priceLabel: 'לפי בקשה',
         description:
           'ניתוח ניהולי של בגרות ב-AI, נתונים וארכיטקטורה, עם דוח מתועדף, זיהוי סיכונים ו-quick wins ניתנים לפעולה.',
         deliverables: ['דוח ניהולי (40-60 עמ\')', 'מפת סיכונים ועדיפויות', 'מפגש סיכום עם C-Level'],
@@ -72,7 +72,7 @@ export const consultoria = {
       {
         title: 'מפת דרכים אסטרטגית ל-AI',
         duration: '6-8 שבועות',
-        priceLabel: 'החל מ-18,000 USD',
+        priceLabel: 'לפי בקשה',
         description:
           'תוכנית אימוץ AI גנרטיבי וסוכנים עם מקרי שימוש מתועדפים, ארכיטקטורת יעד, תקציב משוער ותוכנית שינוי.',
         deliverables: ['מפת דרכים ל-18 חודשים', 'ארכיטקטורת יעד', 'תוכנית change management'],
@@ -104,15 +104,15 @@ export const consultoria = {
       {
         title: 'Board Advisory',
         duration: 'Retainer חודשי',
-        priceLabel: 'לפי בקשה · fee קבוע (equity אופציונלי ל-Series A+)',
+        priceLabel: 'לפי בקשה',
         description:
-          'מושב יועץ בדירקטוריונים אסטרטגיים עם אג\'נדה טכנית וראייה ארוכת-טווח. Equity נשקל רק לסטארטאפים Series A+ עם cap tables נקיים.',
+          'מושב יועץ בדירקטוריונים אסטרטגיים עם אג\'נדה טכנית וראייה ארוכת-טווח.',
         deliverables: ['פגישת דירקטוריון חודשית', 'חוות דעת טכניות לפי דרישה', 'הכרויות לרשת'],
       },
       {
         title: 'הכשרה ניהולית פנים-ארגונית',
         duration: '1-5 ימים',
-        priceLabel: 'החל מ-3,800 USD ליום',
+        priceLabel: 'לפי בקשה',
         description:
           'סדנאות וקורסי מומחים ל-C-Level ולדירקטוריון על AI גנרטיבי, AGI, blockchain וריבונות דיגיטלית. חומר ב-PT/EN/ES.',
         deliverables: ['סדנה פרונטלית או מרחוק', 'חומר מותאם אישית', 'Q&A ניהולי מעמיק'],
@@ -121,7 +121,7 @@ export const consultoria = {
   },
   verticais: {
     title: 'ורטיקלי עוגן',
-    subtitle: 'שלושה מגזרים שבהם מתרכזים 80% מההתקשרויות. ורטיקלים אחרים לפי דרישה.',
+    subtitle: 'שלושה מגזרים שבהם מתרכזת מרבית ההתקשרויות. ורטיקלים אחרים לפי דרישה.',
     items: [
       {
         title: 'פיננסים ו-Fintech',
@@ -141,30 +141,30 @@ export const consultoria = {
     ],
     additional: {
       label: 'ורטיקלים נוספים',
-      items: ['חקלאות מדויקת', 'חינוך ניהולי ומוסדות תיאולוגיים'],
+      items: ['חקלאות מדויקת', 'חינוך ניהולי'],
     },
   },
   pricing: {
-    title: 'אסטרטגיית תמחור — היברידית',
+    title: 'השקעה',
     subtitle:
-      'טווח ציבורי עבור deliverables ניתנים לסטנדרטיזציה (אבחון, מפת דרכים, הכשרה) ו״לפי בקשה״ עבור scope קריטי (ארכיטקטורה, fractional, board, מחקר).',
+      'ערך כל התקשרות נקבע לפי scope, בגרות ולוח זמנים. שלחו briefing ואחזור עם הצעה.',
     columns: {
       modality: 'מודל',
-      pricing: 'אסטרטגיית הצגה',
-      market: 'טווח שוק',
+      pricing: 'השקעה',
+      market: '',
     },
     rows: [
-      { modality: 'אבחון', pricing: 'מ-9,000 USD', market: 'USD 5k-16k' },
-      { modality: 'מפת דרכים AI', pricing: 'מ-18,000 USD', market: 'USD 16k-40k' },
-      { modality: 'ארכיטקטורה קריטית', pricing: 'לפי בקשה', market: 'USD 10k-50k לפי scope' },
-      { modality: 'ממשל נתונים', pricing: 'לפי בקשה', market: 'USD 8k-25k' },
-      { modality: 'Fractional CTO', pricing: 'לפי בקשה', market: 'USD 5k-16k לחודש' },
-      { modality: 'Board Advisory', pricing: 'לפי בקשה', market: 'USD 3k-8k לחודש' },
-      { modality: 'הכשרה פנים-ארגונית', pricing: 'מ-3,800 USD ליום', market: 'USD 3k-8k ליום' },
-      { modality: 'מחקר יישומי / חוות דעת', pricing: 'לפי בקשה', market: 'USD 4k-25k' },
+      { modality: 'אבחון', pricing: 'לפי בקשה', market: '' },
+      { modality: 'מפת דרכים AI', pricing: 'לפי בקשה', market: '' },
+      { modality: 'ארכיטקטורה קריטית', pricing: 'לפי בקשה', market: '' },
+      { modality: 'ממשל נתונים', pricing: 'לפי בקשה', market: '' },
+      { modality: 'Fractional CTO', pricing: 'לפי בקשה', market: '' },
+      { modality: 'Board Advisory', pricing: 'לפי בקשה', market: '' },
+      { modality: 'הכשרה פנים-ארגונית', pricing: 'לפי בקשה', market: '' },
+      { modality: 'מחקר יישומי / חוות דעת', pricing: 'לפי בקשה', market: '' },
     ],
     note:
-      'ערכים ב-USD (BRL ≈ 5.0; מעודכן רבעונית). טיקט שנתי ממוצע של ייעוץ אסטרטגי AI לחשבונות Fortune-class: USD 80k-240k (benchmark Gartner SEA / HackTrain BR 2025).',
+      'ערכים נקבעים לפי הצעה, בהתאם ל-scope. ללקוחות בינלאומיים, שווי-ערך ב-USD/EUR מסופק בהצעה.',
   },
   cases: {
     title: 'מקרים מייצגים',
@@ -204,7 +204,7 @@ export const consultoria = {
         vertical: 'פיננסים · Fintech · סיכון',
         period: '2024-2026',
         description:
-          'תזת מאסטר ב-AGTU (ארה"ב): ארכיטקטורה היברידית המשלבת רשתות עצביות חוזרות עם מודלים סטוכסטיים של זרימה. מאגר ציבורי ב-GitHub.',
+          'תזת מאסטר ב-AGTU: ארכיטקטורה היברידית המשלבת רשתות עצביות חוזרות עם מודלים סטוכסטיים של זרימה. מאגר ציבורי ב-GitHub.',
         outcome: 'קוד פתוח, framework לשימוש חוזר, ציטוט ישיר מאושר.',
         link: 'https://github.com/ulissesflores/cyberfinancial-resilience-lrblstm',
       },
@@ -234,7 +234,7 @@ export const consultoria = {
         vertical: 'Hardware Security · Deep Tech',
         period: 'בפיתוח',
         description:
-          'המצאה משותפת של hardware wallet ברמה גרעינית עם SRAM PUF, XMSS פוסט-קוונטי וגיבוי TMR. Landing מסחרי ו-whitepaper טכני פורסמו.',
+          'יצירה של hardware wallet למשמורת ריבונית עם SRAM PUF, XMSS פוסט-קוונטי וגיבוי TMR. Landing מסחרי ו-whitepaper טכני פורסמו.',
         outcome: 'אבטיפוס מתקדם, IP בר-רישוי, הזדמנות השקעה seed/Series A.',
         link: '/projeto-psi',
       },

@@ -31,12 +31,12 @@ export const palestras = {
   trust: {
     label: 'אותות סמכות',
     items: [
-      'מועמד MSc ב-AI · AGTU (ארה"ב)',
-      '18+ פרסומים מאונדקסים',
+      'מועמד MSc ב-AI · AGTU',
+      '18+ פרסומים',
       '32 הסמכות בינלאומיות',
-      'מרצה אורח FIAP/SENAI',
-      '5 שפות מקצועיות',
-      'שותף-ממציא Codex Hash',
+      'מרצה ל-C-Level ואוניברסיטאות',
+      '3 שפות הרצאה (PT/EN/ES)',
+      'CTO · Codex Hash Ltda',
     ],
   },
   temas: {
@@ -144,13 +144,13 @@ export const palestras = {
       international: 'בינלאומי (USD)',
     },
     rows: [
-      { format: 'Keynote (45-60 דקות)', base: 'BRL 18-30k', international: 'USD 4-8k' },
-      { format: 'הרצאה טכנית (60-90 דקות)', base: 'BRL 14-22k', international: 'USD 3-6k' },
-      { format: 'מאסטרקלאס ניהולי (3-4 שעות)', base: 'BRL 22-40k', international: 'USD 5-10k' },
-      { format: 'סדנה פנים-ארגונית (יום)', base: 'BRL 18-32k', international: 'USD 4-8k' },
-      { format: 'פאנל / שולחן עגול', base: 'BRL 9-18k', international: 'USD 2-4k' },
-      { format: 'מגזר שלישי נוצרי', base: 'BRL 4-8k', international: '—' },
-      { format: 'Pro bono (אקדמיה/PSC)', base: 'בתיאום (cap של 4 בשנה)', international: '—' },
+      { format: 'Keynote (45-60 דקות)', base: 'לפי בקשה', international: 'לפי בקשה' },
+      { format: 'הרצאה טכנית (60-90 דקות)', base: 'לפי בקשה', international: 'לפי בקשה' },
+      { format: 'מאסטרקלאס ניהולי (3-4 שעות)', base: 'לפי בקשה', international: 'לפי בקשה' },
+      { format: 'סדנה פנים-ארגונית (יום)', base: 'לפי בקשה', international: 'לפי בקשה' },
+      { format: 'פאנל / שולחן עגול', base: 'לפי בקשה', international: 'לפי בקשה' },
+      { format: 'מגזר שלישי נוצרי', base: 'לפי בקשה', international: '—' },
+      { format: 'Pro bono (אקדמיה וארגונים ללא מטרות רווח)', base: 'בתיאום (cap של 4 בשנה)', international: '—' },
     ],
     note:
       'שכר בסיס לא כולל טיסות, לינה ו-per diem לנסיעות מחוץ ל-Jundiaí/SP. אירועים בינלאומיים מתומחרים ב-USD/EUR. Pro bono מוגבל ל-4 אירועים בשנה עם זמן אספקה מינימלי של 90 ימים — אקדמיה, כנסייה מקומית וארגונים בעלי השפעה נוצרית בעדיפות.',
@@ -201,7 +201,7 @@ export const palestras = {
     title: 'נהלים מסחריים',
     items: [
       { label: 'אישור', value: 'הזמנה מאושרת עם 50% מקדמה וחוזה חתום. יתרה תוך 7 ימים מהאירוע.' },
-      { label: 'ביטול', value: 'עד 30 ימים לפני האירוע: החזר מלא. בין 30 ל-7 ימים: 50%. פחות מ-7 ימים: 100% נשאר.' },
+      { label: 'ביטול', value: 'עד 30 ימים לפני האירוע: החזר מלא של המקדמה. בין 30 ל-7 ימים: עיכוב מחצית המקדמה. פחות מ-7 ימים: עיכוב המקדמה בסך 50% ששולמה מראש.' },
       { label: 'זכויות תמונה', value: 'הקלטה ושימוש מוסדי מותרים עם קרדיטים משותפים; שימוש מסחרי או הפצה בהסכם ספציפי.' },
       { label: 'חומר', value: 'שקופיות ב-PT/EN/ES נמסרות 7 ימים לפני או אחרי האירוע בהסכמה. התאמה אישית לקהל ללא עלות נוספת.' },
       { label: 'Pro bono ומגזר שלישי', value: 'Pro bono מוגבל ל-4 אירועים בשנה עם זמן אספקה של 90 ימים. מגזר שלישי נוצרי בשכר מופחת.' },

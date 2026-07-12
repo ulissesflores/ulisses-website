@@ -31,12 +31,12 @@ export const palestras = {
   trust: {
     label: 'Segnali di autorità',
     items: [
-      'MSc Candidate in AI · AGTU (USA)',
-      '18+ pubblicazioni indicizzate',
+      'MSc Candidate in AI · AGTU',
+      '18+ pubblicazioni',
       '32 certificazioni internazionali',
-      'Professore invitato FIAP/SENAI',
-      '5 lingue professionali',
-      'Co-inventore Codex Hash',
+      'Relatore per C-Level e università',
+      '3 lingue per conferenze (PT/EN/ES)',
+      'CTO · Codex Hash Ltda',
     ],
   },
   temas: {
@@ -144,13 +144,13 @@ export const palestras = {
       international: 'Internazionale (USD)',
     },
     rows: [
-      { format: 'Keynote (45-60 min)', base: 'BRL 18-30k', international: 'USD 4-8k' },
-      { format: 'Conferenza tecnica (60-90 min)', base: 'BRL 14-22k', international: 'USD 3-6k' },
-      { format: 'Masterclass esecutiva (3-4h)', base: 'BRL 22-40k', international: 'USD 5-10k' },
-      { format: 'Workshop in-company (giorno)', base: 'BRL 18-32k', international: 'USD 4-8k' },
-      { format: 'Panel / tavola rotonda', base: 'BRL 9-18k', international: 'USD 2-4k' },
-      { format: 'Terzo settore cristiano', base: 'BRL 4-8k', international: '—' },
-      { format: 'Pro bono (accademia/PSC)', base: 'Da concordare (cap di 4/anno)', international: '—' },
+      { format: 'Keynote (45-60 min)', base: 'Su richiesta', international: 'Su richiesta' },
+      { format: 'Conferenza tecnica (60-90 min)', base: 'Su richiesta', international: 'Su richiesta' },
+      { format: 'Masterclass esecutiva (3-4h)', base: 'Su richiesta', international: 'Su richiesta' },
+      { format: 'Workshop in-company (giorno)', base: 'Su richiesta', international: 'Su richiesta' },
+      { format: 'Panel / tavola rotonda', base: 'Su richiesta', international: 'Su richiesta' },
+      { format: 'Terzo settore cristiano', base: 'Su richiesta', international: '—' },
+      { format: 'Pro bono (accademia e organizzazioni senza scopo di lucro)', base: 'Da concordare (cap di 4/anno)', international: '—' },
     ],
     note:
       'Compenso base non include voli, alloggio e per diem per spostamenti fuori da Jundiaí/SP. Eventi internazionali quotati in USD/EUR. Pro bono limitato a 4 eventi/anno con lead time minimo di 90 giorni — accademia, chiesa locale e organizzazioni di impatto cristiano prioritarie.',
@@ -201,7 +201,7 @@ export const palestras = {
     title: 'Buone pratiche commerciali',
     items: [
       { label: 'Conferma', value: 'Prenotazione confermata con 50% anticipato e contratto firmato. Saldo entro 7 giorni dopo l\'evento.' },
-      { label: 'Cancellazione', value: 'Fino a 30 giorni prima dell\'evento: rimborso totale. Tra 30 e 7 giorni: 50%. Meno di 7 giorni: 100% trattenuto.' },
+      { label: 'Cancellazione', value: 'Fino a 30 giorni prima dell\'evento: rimborso integrale dell\'acconto. Tra 30 e 7 giorni: trattenuta di metà dell\'acconto. Meno di 7 giorni: trattenuta dell\'acconto del 50% già versato.' },
       { label: 'Diritti di immagine', value: 'Registrazione e uso istituzionale permessi con co-crediti; uso commerciale o ridistribuzione tramite accordo specifico.' },
       { label: 'Materiale', value: 'Slide in PT/EN/ES consegnate 7 giorni prima o dopo l\'evento per accordo. Personalizzazione per il pubblico senza costi aggiuntivi.' },
       { label: 'Pro bono e terzo settore', value: 'Pro bono limitato a 4 eventi/anno con lead time di 90 giorni. Terzo settore cristiano con compenso ridotto.' },

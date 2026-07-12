@@ -248,8 +248,11 @@ for (const file of namespaceFiles) {
 
       const foreignValue = foreignFlat[keyPath];
 
-      // Check empty value
-      if (foreignValue.trim().length === 0) {
+      // Check empty value — only a fault when pt-br itself is non-empty.
+      // An intentionally-blank pt-br value (e.g. a hidden table column) must be
+      // mirrorable to foreign locales; the '' === '' case falls through to the
+      // STUB_COPY check below, which exempts length<=3 values (see line ~122).
+      if (foreignValue.trim().length === 0 && ptValue.trim().length > 0) {
         errorsByLocale[locale].push({ namespace, type: 'EMPTY_VALUE', key: keyPath, ptValue, foreignValue });
         localeErrors++;
         continue;

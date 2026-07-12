@@ -1,7 +1,7 @@
 export const ia2027 = {
   meta: {
     title: 'IA 2027: Simulazione Interattiva sul Futuro dell\'Intelligenza Artificiale | AGI e Sovranità',
-    description: 'Esplora l\'unica simulazione interattiva in italiano sull\'arrivo dell\'AGI (Intelligenza Artificiale Generale). Analisi di scenari futuri, corsa tecnologica e impatto economico a cura di Ulisses Flores — Scienziato, Consulente, Professore e Relatore.',
+    description: 'Esplora una simulazione interattiva pionieristica in italiano sull\'arrivo dell\'AGI (Intelligenza Artificiale Generale). Analisi di scenari futuri, corsa tecnologica e impatto economico a cura di Ulisses Flores — Scienziato, Consulente e Relatore.',
     keywords: [
       "futuro dell'intelligenza artificiale",
       "scenari futuri IA",
@@ -12,12 +12,12 @@ export const ia2027 = {
       "agenti autonomi"
     ],
     ogTitle: 'IA 2027: Simulazione Interattiva sul Futuro dell\'Intelligenza Artificiale | AGI e Sovranità',
-    ogDescription: 'Esplora l\'unica simulazione interattiva in italiano sull\'arrivo dell\'AGI. Analisi di scenari futuri, corsa tecnologica e impatto economico a cura di Ulisses Flores — Scienziato, Consulente, Professore e Relatore.',
+    ogDescription: 'Esplora una simulazione interattiva pionieristica in italiano sull\'arrivo dell\'AGI. Analisi di scenari futuri, corsa tecnologica e impatto economico a cura di Ulisses Flores — Scienziato, Consulente e Relatore.',
     ogImageAlt: 'Simulazione Strategica IA-2027 di Ulisses Flores'
   },
   raceMeta: {
     title: 'Corsa Strategica: Scenario Race dell\'IA 2027 | Ulisses Flores',
-    description: 'Esplora lo scenario di Corsa Strategica della simulazione IA 2027: massima accelerazione verso l\'AGI, escalation dell\'autonomia e rischio di perdita del controllo umano. Analisi a cura di Ulisses Flores — Consulente IA, Professore, Relatore e Studente di Master AGTU (USA).',
+    description: 'Esplora lo scenario di Corsa Strategica della simulazione IA 2027: massima accelerazione verso l\'AGI, escalation dell\'autonomia e rischio di perdita del controllo umano. Analisi a cura di Ulisses Flores — Consulente IA, Relatore e Studente di Master AGTU.',
     keywords: [
       "corsa strategica IA",
       "race AGI",
@@ -33,7 +33,7 @@ export const ia2027 = {
   },
   slowdownMeta: {
     title: 'Decelerazione Coordinata: Scenario Slowdown dell\'IA 2027 | Ulisses Flores',
-    description: 'Esplora lo scenario di Decelerazione Coordinata della simulazione IA 2027: pausa globale, allineamento tecnico e regolamentazione internazionale dell\'AGI. Analisi a cura di Ulisses Flores — Consulente IA, Professore, Relatore e Studente di Master AGTU (USA).',
+    description: 'Esplora lo scenario di Decelerazione Coordinata della simulazione IA 2027: pausa globale, allineamento tecnico e regolamentazione internazionale dell\'AGI. Analisi a cura di Ulisses Flores — Consulente IA, Relatore e Studente di Master AGTU.',
     keywords: [
       "decelerazione coordinata IA",
       "slowdown AGI",
@@ -58,7 +58,7 @@ export const ia2027 = {
     lead: 'I CEO di OpenAI, Google DeepMind e Anthropic convergono su un punto critico: l\'Intelligenza Artificiale Generale (AGI) potrebbe essere raggiunta prima della fine di questo decennio. Quando la macchina supererà la capacità cognitiva umana, le regole che governano l\'economia globale, il mercato del lavoro e il potere geopolitico saranno riscritte in modo irreversibile. Questa simulazione modella in modo interattivo i prossimi anni di questa transizione.',
     authority: {
       kicker: 'Perché è importante',
-      text: 'La sovranità tecnologica non è più fantascienza; è la disputa economica e architettonica più urgente del nostro tempo. Come scienziato, consulente IA e creatore di questo adattamento, ho strutturato questo scenario basandomi su modellizzazioni di Harvard, MIRI e analisti della sicurezza IA. Il punto di rottura centrale esplorato qui è: cosa succede all\'economia e all\'infrastruttura dei sistemi quando l\'IA inizia ad accelerare la propria ricerca in modo ricorsivo? Il ramo che sceglieremo definirà il futuro.'
+      text: 'La sovranità tecnologica non è più fantascienza; è la disputa economica e architettonica più urgente del nostro tempo. Come scienziato, consulente IA e creatore di questo adattamento, ho strutturato questo scenario basandomi su esercizi di simulazione e sul feedback di esperti in governance e sicurezza dell\'IA. Il punto di rottura centrale esplorato qui è: cosa succede all\'economia e all\'infrastruttura dei sistemi quando l\'IA inizia ad accelerare la propria ricerca in modo ricorsivo? Il ramo che sceglieremo definirà il futuro.'
     },
     features: [
       {
@@ -80,9 +80,9 @@ export const ia2027 = {
     ],
     cta: 'Avvia Simulazione →',
     ctaNote: 'Traduzione e adattamento dello scenario originale pubblicato su',
-    ctaNoteEnd: '— basato su modellizzazioni di Harvard, MIRI e analisti della sicurezza IA.',
+    ctaNoteEnd: '— basato su esercizi di simulazione e sul feedback di esperti in governance e sicurezza dell\'IA.',
     authorLabel: 'Traduzione & Curatela',
-    authorDescription: 'Adattamento, curatela e analisi tecnica a cura di Ulisses Flores — Scienziato, Consulente IA, Professore, Relatore e Studente di Master.',
+    authorDescription: 'Adattamento, curatela e analisi tecnica a cura di Ulisses Flores — Scienziato, Consulente IA, Relatore e Studente di Master.',
     faqTitle: 'Domande su IA 2027 e il Futuro dell\'Intelligenza Artificiale'
   },
   racePage: {
@@ -95,7 +95,7 @@ export const ia2027 = {
     ctaFull: '← Vedi Simulazione Completa',
     ctaAlt: 'Vedi scenario alternativo: Decelerazione Coordinata →',
     authorLabel: 'Traduzione & Curatela',
-    authorDescription: 'Adattamento, curatela e analisi tecnica a cura di Ulisses Flores — Scienziato, Consulente IA, Professore, Relatore e Studente di Master.',
+    authorDescription: 'Adattamento, curatela e analisi tecnica a cura di Ulisses Flores — Scienziato, Consulente IA, Relatore e Studente di Master.',
     faqTitle: 'Domande su IA 2027 e il Futuro dell\'Intelligenza Artificiale'
   },
   slowdownPage: {
@@ -108,7 +108,7 @@ export const ia2027 = {
     ctaFull: '← Vedi Simulazione Completa',
     ctaAlt: 'Vedi scenario alternativo: Corsa Strategica →',
     authorLabel: 'Traduzione & Curatela',
-    authorDescription: 'Adattamento, curatela e analisi tecnica a cura di Ulisses Flores — Scienziato, Consulente IA, Professore, Relatore e Studente di Master.',
+    authorDescription: 'Adattamento, curatela e analisi tecnica a cura di Ulisses Flores — Scienziato, Consulente IA, Relatore e Studente di Master.',
     faqTitle: 'Domande su IA 2027 e il Futuro dell\'Intelligenza Artificiale'
   },
   simulation: {
@@ -137,7 +137,7 @@ export const ia2027 = {
     backToExcerpt: 'Torna all\'estratto',
     footerAdaptation: 'Questa simulazione in italiano è un adattamento dello scenario originale pubblicato su',
     footerAuthors: 'Autori originali: Daniel Kokotajlo, Eli Lifland, Thomas Larsen, Romeo Dean. Narrativa di Scott Alexander. Basato su circa 25 esercizi di simulazione e feedback di oltre 100 esperti in governance e sicurezza dell\'IA.',
-    footerTranslation: 'Traduzione, adattamento e curatela: Ulisses Flores — Scienziato, Consulente IA, Professore, Relatore e Studente di Master.',
+    footerTranslation: 'Traduzione, adattamento e curatela: Ulisses Flores — Scienziato, Consulente IA, Relatore e Studente di Master.',
     pathMain: {
       kicker: 'Simulazione Prospettica',
       title: 'IA 2027',

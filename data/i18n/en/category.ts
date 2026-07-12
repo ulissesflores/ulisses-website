@@ -16,22 +16,22 @@ export const category = {
       chips: [
         "Strategic AI Consultant",
         "Data Scientist",
-        "AGTU Master's Student (USA)",
+        "AGTU Master's Student",
         "Publications with DOI",
         "Complex Systems"
       ]
     },
     whitepapers: {
       h1: 'Technical Whitepapers and Zero Trust Architecture',
-      metaDescription: 'Technical documentation of hardware architectures, cryptography, and IoT. Including Projeto PSI (Nuclear-Grade Hardware Wallet) by Ulisses Flores.',
-      lead: 'The transition from theoretical concepts to production engineering demands irrefutable documentation. This section houses technical Whitepapers detailing mission-critical architectures, "Cloudless" systems, and state-of-the-art cryptography. This is where sovereign-class projects — such as the nuclear-grade hardware wallet (Projeto PSI) and Edge Computing solutions (GoldenLeaf) — are exposed at their deepest level of abstraction in silicon and mathematics.',
+      metaDescription: 'Technical documentation of hardware architectures, cryptography, and IoT. Including Projeto PSI (sovereign-custody hardware wallet) by Ulisses Flores.',
+      lead: 'The transition from theoretical concepts to production engineering demands irrefutable documentation. This section houses technical Whitepapers detailing mission-critical architectures, "Cloudless" systems, and state-of-the-art cryptography. This is where sovereign-class projects — such as the sovereign-custody hardware wallet (Projeto PSI) and Edge Computing solutions (GoldenLeaf) — are exposed at their deepest level of abstraction in silicon and mathematics.',
       authorityTitle: 'Engineering documented with IEEE precision',
       authorityBody: 'Each whitepaper details real architectures grounded in NIST, IEEE standards, and cutting-edge literature in side-channel analysis, post-quantum cryptography, and aerospace materials.',
       chips: [
         "Software Architect",
         "Hardware Developer",
         "AI Consultant",
-        "AGTU Master's Student (USA)",
+        "AGTU Master's Student",
         "Zero Trust",
         "Cloudless IoT"
       ]
@@ -39,14 +39,14 @@ export const category = {
     essays: {
       h1: 'Essays: Philosophy, Technology, and Human Behavior',
       metaDescription: 'Essays by Ulisses Flores exploring the intersection between technology, historical theology, ethics, and the dynamics of human action.',
-      lead: 'Technology, devoid of philosophical and historical grounding, becomes a blind tool. As a polymath researcher, the analyses gathered here transcend code and mathematics. These essays are profound reflections on the human condition, ethics in the era of hyper-surveillance, and how historical theology and philosophy shape our understanding of power, freedom, and the future of society.',
+      lead: 'Technology, devoid of philosophical and historical grounding, becomes a blind tool. As an interdisciplinary researcher, the analyses gathered here transcend code and mathematics. These essays are profound reflections on the human condition, ethics in the era of hyper-surveillance, and how historical theology and philosophy shape our understanding of power, freedom, and the future of society.',
       authorityTitle: 'Interdisciplinary reflection with academic rigor',
       authorityBody: 'Each essay combines historical-critical analysis, political philosophy, and theological foundations, offering a unique perspective that connects classical humanities to the impact of contemporary technology.',
       chips: [
-        "Polymath Researcher",
+        "Researcher",
         "Historical Theology",
         "Political Philosophy",
-        "AGTU Master's Student (USA)",
+        "AGTU Master's Student",
         "Ethics and Technology"
       ]
     }

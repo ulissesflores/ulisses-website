@@ -1,7 +1,7 @@
 export const projetoPsi = {
   meta: {
     title: 'Projeto PSI — Sovereign Hardware for Digital Asset Custody | Ulisses Flores',
-    description: 'Nuclear-grade digital asset custody. Hardware with Zero Trust in Silicon, post-quantum XMSS cryptography, and aerospace TMR redundancy. Investment and licensing.',
+    description: 'Sovereign digital asset custody. Hardware with Zero Trust in silicon, post-quantum XMSS cryptography, and triple modular redundancy (TMR). Investment and licensing.',
     keywords: [
       "hardware wallet",
       "digital asset custody",
@@ -13,15 +13,15 @@ export const projetoPsi = {
       "institutional cold storage",
       "Ulisses Flores",
       "Codex Hash",
-      "nuclear security",
+      "sovereign cold storage",
       "TMR redundancy"
     ],
     ogTitle: 'Projeto PSI — Sovereign Hardware for Digital Asset Custody',
-    ogDescription: 'Nuclear-grade digital asset custody. Zero Trust in Silicon, post-quantum XMSS, and aerospace TMR redundancy.'
+    ogDescription: 'Sovereign digital asset custody. Zero Trust in silicon, post-quantum XMSS, and triple modular redundancy (TMR).'
   },
   whitepaperMeta: {
     title: 'Projeto Ψ (PSI): Sovereign Hardware and Zero Trust in Silicon | Ulisses Flores',
-    description: 'Technical Whitepaper: Nuclear-grade digital asset custody architecture. Discover Projeto PSI, equipped with SRAM PUF, XMSS Cryptography, and TMR Redundancy.',
+    description: 'Technical Whitepaper: Sovereign-class digital asset custody architecture. Discover Projeto PSI, equipped with SRAM PUF, XMSS Cryptography, and TMR Redundancy.',
     keywords: [
       "hardware wallet",
       "zero trust",
@@ -40,14 +40,14 @@ export const projetoPsi = {
       "deniable encryption",
       "Ulisses Flores blockchain",
       "hardware security module",
-      "nuclear cold storage"
+      "sovereign cold storage"
     ],
     ogTitle: 'Projeto Ψ (PSI): Sovereign Hardware and Zero Trust in Silicon | Ulisses Flores',
-    ogDescription: 'Technical Whitepaper: Nuclear-grade digital asset custody architecture with SRAM PUF, post-quantum XMSS, and aerospace TMR Redundancy.'
+    ogDescription: 'Technical Whitepaper: Sovereign-class digital asset custody architecture with SRAM PUF, post-quantum XMSS, and aerospace TMR Redundancy.'
   },
   simulacaoMeta: {
     title: 'Projeto Ψ (PSI): Technical Explorer of the Security Architecture | Ulisses Flores',
-    description: 'Interactive explorer of the Projeto PSI architecture — SRAM PUF, post-quantum XMSS cryptography, aerospace TMR redundancy, and Ring Signatures. Navigate through the 4 pillars of nuclear security.',
+    description: 'Interactive explorer of the Projeto PSI architecture — SRAM PUF, post-quantum XMSS cryptography, aerospace TMR redundancy, and Ring Signatures. Navigate through the 4 pillars of sovereign security.',
     keywords: [
       "hardware wallet",
       "zero trust",
@@ -66,15 +66,15 @@ export const projetoPsi = {
       "deniable encryption",
       "Ulisses Flores blockchain",
       "hardware security module",
-      "nuclear cold storage"
+      "sovereign cold storage"
     ],
     ogTitle: 'Projeto Ψ (PSI): Technical Explorer of the Security Architecture | Ulisses Flores',
     ogDescription: 'Interactive explorer of the Projeto PSI architecture — SRAM PUF, post-quantum XMSS, and aerospace TMR Redundancy.'
   },
   hero: {
     badge: 'Investment & Licensing',
-    h1: 'Projeto PSI: The Digital Vault That Defies the Laws of Physics',
-    lead: 'Sovereign digital asset custody with nuclear-grade security. Zero Trust in silicon. Quantum computer-proof cryptography. Aerospace-level redundancy.',
+    h1: 'Projeto PSI: Sovereign Custody of Digital Assets',
+    lead: 'Sovereign digital asset custody. Zero Trust in silicon. Post-quantum cryptography (hash-based XMSS signatures). Triple modular redundancy (TMR), derived from aerospace standards.',
     ctaPrimary: 'Request Executive Presentation',
     ctaSecondary: 'Read the Technical Whitepaper'
   },
@@ -85,13 +85,13 @@ export const projetoPsi = {
     p2Highlight: 'It\'s a paradigm shift.'
   },
   pillars: {
-    title: 'Four Pillars of Absolute Security',
+    title: 'Four Pillars of Security',
     items: [
       {
         src: '/whitepapers/psi-arquitetura-hardware-camadas-defesa.webp',
         alt: 'Diagram of PSI hardware defense layers: Faraday shielding, anti-thermal ceramic, and acoustic isolation',
         title: 'Physical Fortress',
-        text: 'Armored chassis with Faraday cage against electromagnetic pulses. Anti-thermal ceramic. Acoustic isolation against side-channel attacks. No USB. No screen. No attack surface.'
+        text: 'Armored chassis with Faraday cage against electromagnetic pulses. Anti-thermal ceramic. Acoustic isolation against side-channel attacks. No USB and no screen — minimized attack surface.'
       },
       {
         src: '/whitepapers/psi-ciclo-vida-chave-criptografica-sram-puf.webp',
@@ -103,13 +103,13 @@ export const projetoPsi = {
         src: '/whitepapers/psi-protocolo-phantom-biometria-coacao.webp',
         alt: 'Phantom Input Protocol: coercion detection via behavioral biometrics and release of decoy funds under extortion',
         title: 'Smart Anti-Coercion',
-        text: 'PSI learns your biometric pattern. If it detects stress or coercion, it activates Phantom Mode: unlocking a phantom wallet with decoy funds. The aggressor will never know they\'ve been fooled.'
+        text: 'PSI learns your biometric pattern. If it detects stress or coercion, it activates Phantom Mode: unlocking a phantom wallet with decoy funds. Designed so the aggressor does not notice the deception.'
       },
       {
         src: '/whitepapers/psi-arquitetura-tmr-redundancia-voter.webp',
         alt: 'TMR architecture with voter: three processors execute in parallel and a voter validates consensus — aerospace standard',
         title: 'Aerospace Redundancy',
-        text: 'Three processors execute each operation in parallel. A "voter" validates the consensus. If a chip fails or is tampered with, the other two continue. It\'s the same technology used in satellites and missiles.'
+        text: 'Three processors execute each operation in parallel. A "voter" validates the consensus. If a chip fails or is tampered with, the other two continue. A redundancy approach used in critical aerospace systems.'
       }
     ]
   },
@@ -122,7 +122,7 @@ export const projetoPsi = {
       },
       {
         title: 'Institutional Funds & Exchanges',
-        text: 'Military-grade cold storage for qualified custody compliance and auditing.'
+        text: 'Institutional-grade cold storage for qualified custody compliance and auditing.'
       },
       {
         title: 'Governments & Central Banks',
@@ -135,7 +135,7 @@ export const projetoPsi = {
     items: [
       {
         value: '0',
-        label: 'Keys permanently stored. Zero static attack surface.'
+        label: 'Keys permanently stored. Minimized static attack surface.'
       },
       {
         value: '3×',
@@ -146,14 +146,14 @@ export const projetoPsi = {
         label: 'Post-quantum XMSS cryptography. Prepared for the day when quantum computers break RSA and ECDSA.'
       },
       {
-        value: 'EMP-Proof',
-        label: 'Faraday shielding + ceramic. Functional after electromagnetic pulse.'
+        value: 'EMP-Resilient',
+        label: 'Faraday shielding + ceramic, designed to mitigate electromagnetic pulse (EMP).'
       }
     ]
   },
   author: {
     label: 'Inventor & Architect',
-    description: 'Project conceived by Ulisses Flores — AI Strategic Consultant, Master\'s student in Artificial Intelligence at AGTU (USA), and co-inventor of blockchain technologies (Codex Hash).'
+    description: 'Project conceived by Ulisses Flores — AI Strategic Consultant, Master\'s student in Artificial Intelligence at AGTU, and creator of blockchain technologies at Codex Hash.'
   },
   faq: {
     sectionTitle: 'Frequently Asked Questions — Investors'
@@ -169,11 +169,11 @@ export const projetoPsi = {
     kickerSub: 'Research in Systems Architecture and Applied Cryptography',
     h1: 'Projeto Ψ (PSI): The Event Horizon of Personal Sovereignty and Zero Trust in Silicon',
     authorLabel: 'Author:',
-    authorRole: 'AI Strategic Consultant, Software Architect, Hardware Developer, AGTU (USA) Master\'s Student',
+    authorRole: 'AI Strategic Consultant, Software Architect, Hardware Developer, AGTU Master\'s Student',
     abstractTitle: 'Executive Summary',
     abstractText: 'The advent of algorithmic hyper-surveillance on a state scale, coupled with the proliferation of physical coercion vectors and invasive hardware supply chain attacks, necessitates an ontological reformulation in the architectures for critical digital asset custody. Traditional civilian hardware wallets operate under the fundamental premise of a secure environment and a user free from coercion — assumptions that prove catastrophically flawed under hostile threat models. This paper presents an exhaustive scientific analysis of Projeto Ψ (PSI), a sovereign-class custody architecture based on the paradigm of absolute Zero Trust in silicon.',
-    authorCardLabel: 'Research & Co-invention',
-    authorCardDescription: 'Projeto PSI investigated and documented by Ulisses Flores — AI Strategic Consultant, Software Architect, Hardware Developer, co-inventor of Codex Hash, and Master\'s student in AI at AGTU (USA).',
+    authorCardLabel: 'Research & Creation',
+    authorCardDescription: 'Projeto PSI investigated and documented by Ulisses Flores — AI Strategic Consultant, Software Architect, Hardware Developer, creator of Codex Hash, and Master\'s student in AI at AGTU.',
     ctaTitle: 'Interested in digital sovereignty and cryptographic hardware?',
     ctaDescription: 'Ulisses Flores offers consulting in digital privacy, hardware wallet architectures, Ring Signatures, and the implementation of sovereignty protocols for companies and blockchain projects. Get in touch.',
     ctaButton: 'Speak with Ulisses Flores →',
@@ -181,7 +181,7 @@ export const projetoPsi = {
   },
   jsonLd: {
     headline: 'Projeto Ψ (PSI): The Event Horizon of Personal Sovereignty and Zero Trust in Silicon',
-    description: 'Technical Whitepaper: Nuclear-grade digital asset custody architecture with SRAM PUF, post-quantum XMSS Cryptography, and aerospace Triple Modular Redundancy.',
+    description: 'Technical Whitepaper: Sovereign-class digital asset custody architecture with SRAM PUF, post-quantum XMSS Cryptography, and aerospace Triple Modular Redundancy.',
     softwareName: 'Projeto PSI',
     softwareDescription: 'Sovereign-class hardware wallet with Zero Trust in silicon, SRAM PUF, post-quantum XMSS, and aerospace TMR redundancy.'
   }

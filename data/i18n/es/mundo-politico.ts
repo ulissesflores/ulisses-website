@@ -1,7 +1,7 @@
 export const mundoPolitico = {
   meta: {
     title: 'Mundo Político — Economía Austríaca, Geopolítica y Soberanía | Ulisses Flores',
-    description: 'Artículos de análisis económico, geopolítico y de soberanía desde la perspectiva de la Escuela Austríaca de Economía, escritos por Ulisses Flores — Científico Económico (FIAP), Consultor Estratégico de IA y Estudiante de Máster en IA por AGTU (EE. UU.).',
+    description: 'Artículos de análisis económico, geopolítico y de soberanía desde la perspectiva de la Escuela Austríaca de Economía, escritos por Ulisses Flores — Científico Económico, Consultor Estratégico de IA y Estudiante de Máster en IA por AGTU.',
     keywords: [
       "escuela austríaca de economía",
       "economía austríaca Brasil",
@@ -14,22 +14,22 @@ export const mundoPolitico = {
       "libertarismo económico"
     ],
     ogTitle: 'Mundo Político — Economía Austríaca, Geopolítica y Soberanía | Ulisses Flores',
-    ogDescription: 'Análisis de economía, geopolítica y soberanía bajo la lente de la Escuela Austríaca, por Ulisses Flores — Científico Económico, Consultor de IA y Estudiante de Máster AGTU (EE. UU.).'
+    ogDescription: 'Análisis de economía, geopolítica y soberanía bajo la lente de la Escuela Austríaca, por Ulisses Flores — Científico Económico, Consultor de IA y Estudiante de Máster AGTU.'
   },
   breadcrumb: 'Mundo Político',
   hero: {
     h1: 'Economía Austríaca, Geopolítica y Soberanía Digital',
-    lead: 'Artículos de análisis económico desde la perspectiva de la Escuela Austríaca de Economía — praxeología, soberanía monetaria, geopolítica global y el papel de Bitcoin como reserva de valor. Escritos y curados por Ulisses Flores — Científico Económico (FIAP), Consultor Estratégico de IA, Profesor Invitado, Ponente y Estudiante de Máster en Inteligencia Artificial por AGTU (EE. UU.).',
+    lead: 'Artículos de análisis económico desde la perspectiva de la Escuela Austríaca de Economía — praxeología, soberanía monetaria, geopolítica global y el papel de Bitcoin como reserva de valor. Escritos y curados por Ulisses Flores — Científico Económico, Consultor Estratégico de IA, Ponente y Estudiante de Máster en Inteligencia Artificial por AGTU.',
     authority: {
       kicker: 'Análisis con fundamento científico y económico',
       text: 'Cada artículo está construido con rigor metodológico, combinando la tradición de la Escuela Austríaca (Mises, Hayek, Rothbard) con análisis de datos y modelado predictivo moderno. La intersección entre economía, tecnología y geopolítica es el eje de toda la colección — proporcionando insights accionables para decisores e inversores.'
     },
     credentials: [
-      "Científico Económico (FIAP)",
+      "MBA en Blockchain (FIAP)",
       "Consultor Estratégico de IA",
       "Ponente",
-      "Profesor Invitado",
-      "Estudiante de Máster AGTU (EE. UU.)",
+      "Científico Económico",
+      "Estudiante de Máster AGTU",
       "Escuela Austríaca de Economía"
     ]
   },

@@ -1,7 +1,7 @@
 export const mundoPolitico = {
   meta: {
     title: 'Mundo Político — Economia Austriaca, Geopolitica e Sovranità | Ulisses Flores',
-    description: 'Articoli di analisi economica, geopolitica e sovranità dalla prospettiva della Scuola Austriaca di Economia, scritti da Ulisses Flores — Scienziato Economico (FIAP), Consulente Strategico di IA e Studente di Master in IA presso AGTU (USA).',
+    description: 'Articoli di analisi economica, geopolitica e sovranità dalla prospettiva della Scuola Austriaca di Economia, scritti da Ulisses Flores — Scienziato Economico, Consulente Strategico di IA e Studente di Master in IA presso AGTU.',
     keywords: [
       "scuola austriaca di economia",
       "economia austriaca Brasile",
@@ -14,22 +14,22 @@ export const mundoPolitico = {
       "libertarismo economico"
     ],
     ogTitle: 'Mundo Político — Economia Austriaca, Geopolitica e Sovranità | Ulisses Flores',
-    ogDescription: 'Analisi di economia, geopolitica e sovranità attraverso la lente della Scuola Austriaca, di Ulisses Flores — Scienziato Economico, Consulente di IA e Studente di Master AGTU (USA).'
+    ogDescription: 'Analisi di economia, geopolitica e sovranità attraverso la lente della Scuola Austriaca, di Ulisses Flores — Scienziato Economico, Consulente di IA e Studente di Master AGTU.'
   },
   breadcrumb: 'Mundo Político',
   hero: {
     h1: 'Economia Austriaca, Geopolitica e Sovranità Digitale',
-    lead: 'Articoli di analisi economica dalla prospettiva della Scuola Austriaca di Economia — prasseologia, sovranità monetaria, geopolitica globale e il ruolo del Bitcoin come riserva di valore. Scritti e curati da Ulisses Flores — Scienziato Economico (FIAP), Consulente Strategico di IA, Professore Invitato, Relatore e Studente di Master in Intelligenza Artificiale presso AGTU (USA).',
+    lead: 'Articoli di analisi economica dalla prospettiva della Scuola Austriaca di Economia — prasseologia, sovranità monetaria, geopolitica globale e il ruolo del Bitcoin come riserva di valore. Scritti e curati da Ulisses Flores — Scienziato Economico, Consulente Strategico di IA, Relatore e Studente di Master in Intelligenza Artificiale presso AGTU.',
     authority: {
       kicker: 'Analisi con fondamento scientifico ed economico',
       text: 'Ogni articolo è costruito con rigore metodologico, combinando la tradizione della Scuola Austriaca (Mises, Hayek, Rothbard) con analisi di dati e modellazione predittiva moderna. L\'intersezione tra economia, tecnologia e geopolitica è l\'asse di tutta la collezione — fornendo insight azionabili per decisori e investitori.'
     },
     credentials: [
-      "Scienziato Economico (FIAP)",
+      "MBA in Blockchain (FIAP)",
       "Consulente Strategico di IA",
       "Relatore",
-      "Professore Invitato",
-      "Studente di Master AGTU (USA)",
+      "Scienziato Economico",
+      "Studente di Master AGTU",
       "Scuola Austriaca di Economia"
     ]
   },

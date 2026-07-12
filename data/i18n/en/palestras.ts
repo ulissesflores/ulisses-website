@@ -31,12 +31,12 @@ export const palestras = {
   trust: {
     label: 'Authority signals',
     items: [
-      'MSc Candidate in AI · AGTU (USA)',
-      '18+ indexed publications',
+      'MSc Candidate in AI · AGTU',
+      '18+ publications',
       '32 international certifications',
-      'Visiting professor FIAP/SENAI',
-      '5 professional languages',
-      'Codex Hash co-inventor',
+      'Speaker for C-Level and universities',
+      '3 speaking languages (PT/EN/ES)',
+      'CTO · Codex Hash Ltda',
     ],
   },
   temas: {
@@ -144,13 +144,13 @@ export const palestras = {
       international: 'International (USD)',
     },
     rows: [
-      { format: 'Keynote (45-60 min)', base: 'BRL 18-30k', international: '$4-8k USD' },
-      { format: 'Technical talk (60-90 min)', base: 'BRL 14-22k', international: '$3-6k USD' },
-      { format: 'Executive masterclass (3-4h)', base: 'BRL 22-40k', international: '$5-10k USD' },
-      { format: 'In-company workshop (day)', base: 'BRL 18-32k', international: '$4-8k USD' },
-      { format: 'Panel / roundtable', base: 'BRL 9-18k', international: '$2-4k USD' },
-      { format: 'Christian non-profit', base: 'BRL 4-8k', international: '—' },
-      { format: 'Pro bono (academic/PSC)', base: 'TBD (cap of 4/year)', international: '—' },
+      { format: 'Keynote (45-60 min)', base: 'On request', international: 'On request' },
+      { format: 'Technical talk (60-90 min)', base: 'On request', international: 'On request' },
+      { format: 'Executive masterclass (3-4h)', base: 'On request', international: 'On request' },
+      { format: 'In-company workshop (day)', base: 'On request', international: 'On request' },
+      { format: 'Panel / roundtable', base: 'On request', international: 'On request' },
+      { format: 'Christian non-profit', base: 'On request', international: '—' },
+      { format: 'Pro bono (academic and non-profit organizations)', base: 'TBD (cap of 4/year)', international: '—' },
     ],
     note:
       'Base fee does not include flights, lodging and per diem for travel outside Jundiaí/SP. International events priced in USD/EUR. Pro bono limited to 4 events/year with 90-day minimum lead time — academic, local church and Christian-impact organizations prioritized.',
@@ -201,7 +201,7 @@ export const palestras = {
     title: 'Commercial best practices',
     items: [
       { label: 'Confirmation', value: 'Firm booking with 50% upfront and signed contract. Balance up to 7 days after the event.' },
-      { label: 'Cancellation', value: 'Up to 30 days before the event: full refund. Between 30 and 7 days: 50%. Less than 7 days: 100% retained.' },
+      { label: 'Cancellation', value: 'Up to 30 days before the event: full refund of the deposit. Between 30 and 7 days: half of the deposit retained. Less than 7 days: retention of the 50% deposit already paid.' },
       { label: 'Image rights', value: 'Recording and institutional use allowed with co-credits; commercial use or redistribution under specific agreement.' },
       { label: 'Material', value: 'Slides in PT/EN/ES delivered 7 days before or after the event by agreement. Customization for the audience at no extra cost.' },
       { label: 'Pro bono and non-profit', value: 'Pro bono limited to 4 events/year with 90-day lead time. Christian non-profit at reduced fee.' },

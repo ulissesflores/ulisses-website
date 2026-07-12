@@ -1,7 +1,7 @@
 export const ia2027 = {
   meta: {
     title: 'IA 2027: Simulación Interactiva sobre el Futuro de la Inteligencia Artificial | AGI y Soberanía',
-    description: 'Explore la única simulación interactiva en español sobre la llegada de la AGI (Inteligencia Artificial General). Análisis de escenarios futuros, carrera tecnológica e impacto económico por Ulisses Flores — Científico, Consultor, Profesor y Conferencista.',
+    description: 'Explore una simulación interactiva pionera en español sobre la llegada de la AGI (Inteligencia Artificial General). Análisis de escenarios futuros, carrera tecnológica e impacto económico por Ulisses Flores — Científico, Consultor y Conferencista.',
     keywords: [
       "futuro de la inteligencia artificial",
       "escenarios futuros IA",
@@ -12,12 +12,12 @@ export const ia2027 = {
       "agentes autónomos"
     ],
     ogTitle: 'IA 2027: Simulación Interactiva sobre el Futuro de la Inteligencia Artificial | AGI y Soberanía',
-    ogDescription: 'Explore la única simulación interactiva en español sobre la llegada de la AGI. Análisis de escenarios futuros, carrera tecnológica e impacto económico por Ulisses Flores — Científico, Consultor, Profesor y Conferencista.',
+    ogDescription: 'Explore una simulación interactiva pionera en español sobre la llegada de la AGI. Análisis de escenarios futuros, carrera tecnológica e impacto económico por Ulisses Flores — Científico, Consultor y Conferencista.',
     ogImageAlt: 'Simulación Estratégica IA-2027 por Ulisses Flores'
   },
   raceMeta: {
     title: 'Carrera Estratégica: Escenario Race de la IA 2027 | Ulisses Flores',
-    description: 'Explore el escenario de Carrera Estratégica de la simulación IA 2027: aceleración máxima hacia la AGI, escalada de autonomía y riesgo de pérdida de control humano. Análisis por Ulisses Flores — Consultor en IA, Profesor, Conferencista y Estudiante de Maestría AGTU (EE. UU.).',
+    description: 'Explore el escenario de Carrera Estratégica de la simulación IA 2027: aceleración máxima hacia la AGI, escalada de autonomía y riesgo de pérdida de control humano. Análisis por Ulisses Flores — Consultor en IA, Conferencista y Estudiante de Maestría AGTU.',
     keywords: [
       "carrera estratégica IA",
       "race AGI",
@@ -33,7 +33,7 @@ export const ia2027 = {
   },
   slowdownMeta: {
     title: 'Desaceleración Coordinada: Escenario Slowdown de la IA 2027 | Ulisses Flores',
-    description: 'Explore el escenario de Desaceleración Coordinada de la simulación IA 2027: pausa global, alineamiento técnico y regulación internacional de la AGI. Análisis por Ulisses Flores — Consultor en IA, Profesor, Conferencista y Estudiante de Maestría AGTU (EE. UU.).',
+    description: 'Explore el escenario de Desaceleración Coordinada de la simulación IA 2027: pausa global, alineamiento técnico y regulación internacional de la AGI. Análisis por Ulisses Flores — Consultor en IA, Conferencista y Estudiante de Maestría AGTU.',
     keywords: [
       "desaceleración coordinada IA",
       "slowdown AGI",
@@ -58,7 +58,7 @@ export const ia2027 = {
     lead: 'Los CEOs de OpenAI, Google DeepMind y Anthropic convergen en un punto crítico: la Inteligencia Artificial General (AGI) puede ser alcanzada antes del final de esta década. Cuando la máquina supere la capacidad cognitiva humana, las reglas que gobiernan la economía global, el mercado laboral y el poder geopolítico serán reescritas de forma irreversible. Esta simulación modela de forma interactiva los próximos años de esa transición.',
     authority: {
       kicker: 'Por qué esto importa',
-      text: 'La soberanía tecnológica ya no es ciencia ficción; es la disputa económica y arquitectónica más urgente de nuestro tiempo. Como científico, consultor en IA y creador de esta adaptación, estructuré este escenario basado en modelados de Harvard, MIRI y analistas de seguridad de IA. El punto de ruptura central explorado aquí es: ¿qué sucede con la economía y la infraestructura de sistemas cuando la IA comienza a acelerar su propia investigación de forma recursiva? La rama que elijamos definirá el futuro.'
+      text: 'La soberanía tecnológica ya no es ciencia ficción; es la disputa económica y arquitectónica más urgente de nuestro tiempo. Como científico, consultor en IA y creador de esta adaptación, estructuré este escenario a partir de ejercicios de simulación y del feedback de expertos en gobernanza y seguridad de IA. El punto de ruptura central explorado aquí es: ¿qué sucede con la economía y la infraestructura de sistemas cuando la IA comienza a acelerar su propia investigación de forma recursiva? La rama que elijamos definirá el futuro.'
     },
     features: [
       {
@@ -80,9 +80,9 @@ export const ia2027 = {
     ],
     cta: 'Iniciar Simulación →',
     ctaNote: 'Traducción y adaptación del escenario original publicado en',
-    ctaNoteEnd: '— basado en modelados de Harvard, MIRI y analistas de seguridad de IA.',
+    ctaNoteEnd: '— basado en ejercicios de simulación y en el feedback de expertos en gobernanza y seguridad de IA.',
     authorLabel: 'Traducción y Curaduría',
-    authorDescription: 'Adaptación, curaduría y análisis técnico por Ulisses Flores — Científico, Consultor en IA, Profesor, Conferencista y Estudiante de Maestría.',
+    authorDescription: 'Adaptación, curaduría y análisis técnico por Ulisses Flores — Científico, Consultor en IA, Conferencista y Estudiante de Maestría.',
     faqTitle: 'Preguntas sobre IA 2027 y el Futuro de la Inteligencia Artificial'
   },
   racePage: {
@@ -95,7 +95,7 @@ export const ia2027 = {
     ctaFull: '← Ver Simulación Completa',
     ctaAlt: 'Ver escenario alternativo: Desaceleración Coordinada →',
     authorLabel: 'Traducción y Curaduría',
-    authorDescription: 'Adaptación, curaduría y análisis técnico por Ulisses Flores — Científico, Consultor en IA, Profesor, Conferencista y Estudiante de Maestría.',
+    authorDescription: 'Adaptación, curaduría y análisis técnico por Ulisses Flores — Científico, Consultor en IA, Conferencista y Estudiante de Maestría.',
     faqTitle: 'Preguntas sobre IA 2027 y el Futuro de la Inteligencia Artificial'
   },
   slowdownPage: {
@@ -108,7 +108,7 @@ export const ia2027 = {
     ctaFull: '← Ver Simulación Completa',
     ctaAlt: 'Ver escenario alternativo: Carrera Estratégica →',
     authorLabel: 'Traducción y Curaduría',
-    authorDescription: 'Adaptación, curaduría y análisis técnico por Ulisses Flores — Científico, Consultor en IA, Profesor, Conferencista y Estudiante de Maestría.',
+    authorDescription: 'Adaptación, curaduría y análisis técnico por Ulisses Flores — Científico, Consultor en IA, Conferencista y Estudiante de Maestría.',
     faqTitle: 'Preguntas sobre IA 2027 y el Futuro de la Inteligencia Artificial'
   },
   simulation: {
@@ -137,7 +137,7 @@ export const ia2027 = {
     backToExcerpt: 'Volver al fragmento',
     footerAdaptation: 'Esta simulación en español es una adaptación del escenario original publicado en',
     footerAuthors: 'Autores originales: Daniel Kokotajlo, Eli Lifland, Thomas Larsen, Romeo Dean. Narrativa por Scott Alexander. Basado en aproximadamente 25 ejercicios de simulación y comentarios de más de 100 expertos en gobernanza y seguridad de IA.',
-    footerTranslation: 'Traducción, adaptación y curaduría: Ulisses Flores — Científico, Consultor en IA, Profesor, Conferencista y Estudiante de Maestría.',
+    footerTranslation: 'Traducción, adaptación y curaduría: Ulisses Flores — Científico, Consultor en IA, Conferencista y Estudiante de Maestría.',
     pathMain: {
       kicker: 'Simulación Prospectiva',
       title: 'IA 2027',

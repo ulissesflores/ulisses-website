@@ -4,7 +4,7 @@ export const faq = {
   identidade: [
     {
       question: 'Chi è Ulisses Flores?',
-      answer: 'Carlos Ulisses Flores è scienziato economico, ingegnere di sistemi e ricercatore con attività in IA, economia e sistemi complessi. Opera come CTO, angel investor e professore, con produzione accademica indicizzata su ORCID e Lattes.'
+      answer: 'Carlos Ulisses Flores è scienziato economico, ingegnere di sistemi e ricercatore con attività in IA, economia e sistemi complessi. Opera come CTO e angel investor, con produzione accademica pubblica su ORCID e Lattes.'
     },
     {
       question: 'Cos\'è l\'identità sovrana?',
@@ -20,7 +20,7 @@ export const faq = {
     },
     {
       question: 'Ulisses Flores è professore universitario?',
-      answer: 'Sì, Ulisses opera come docente in discipline legate ai sistemi informativi, all\'economia e alla tecnologia. La sua formazione accademica include credenziali in scienze economiche e analisi dei sistemi.'
+      answer: 'Non come docente di carriera. Ulisses tiene conferenze, masterclass e workshop esecutivi in università e aziende, e mantiene una produzione accademica pubblica su ORCID e Lattes. La sua formazione include credenziali in scienze economiche e analisi dei sistemi.'
     },
     {
       question: 'Come ingaggiare Ulisses Flores come relatore?',
@@ -110,7 +110,7 @@ export const faq = {
     },
     {
       question: 'Le certificazioni coprono Intelligenza Artificiale e Machine Learning?',
-      answer: 'Sì. Il portfolio include certificazioni in Machine Learning, Deep Learning, LLMs, MLOps, visione artificiale, NLP e ingegneria dei dati — allineate con l\'attività di Consulente Strategico di IA e Studente di Master in IA presso AGTU (USA).'
+      answer: 'Sì. Il portfolio include certificazioni in Machine Learning, Deep Learning, LLMs, MLOps, visione artificiale, NLP e ingegneria dei dati — allineate con l\'attività di Consulente Strategico di IA e Studente di Master in IA presso AGTU.'
     },
     {
       question: 'Ci sono certificazioni in Blockchain e Sicurezza delle Informazioni?',
@@ -129,8 +129,8 @@ export const faq = {
       answer: 'Ogni certificazione possiede un link di verifica pubblico direttamente nella pagina individuale. Gli ID di certificazione e gli URL di verifica consentono una validazione indipendente presso il fornitore emittente, garantendo totale trasparenza e tracciabilità.'
     },
     {
-      question: 'Come ingaggiare Ulisses Flores come Consulente o Professore?',
-      answer: 'Contattare tramite il modulo della pagina principale o via LinkedIn. Ulisses opera come Consulente Strategico di IA, Professore Invitato, Relatore e Sviluppatore su richiesta per aziende, università ed eventi in tutto il Brasile e all\'estero.'
+      question: 'Come ingaggiare Ulisses Flores come Consulente o Relatore?',
+      answer: 'Contattare tramite il modulo della pagina principale o via LinkedIn. Ulisses opera come Consulente Strategico di IA, Relatore e Sviluppatore su richiesta per aziende, università ed eventi in tutto il Brasile e all\'estero.'
     }
   ] satisfies FaqItem[],
   ia2027: [
@@ -220,7 +220,7 @@ export const faq = {
   projectPsi: [
     {
       question: 'Cos\'è esattamente il Progetto PSI?',
-      answer: 'È un dispositivo hardware ultra-sicuro per la custodia di asset digitali e identità sovrana. Trascende gli standard bancari civili e si allinea alle architetture di sicurezza militare e di lancio nucleare.'
+      answer: 'È un dispositivo hardware ultra-sicuro per la custodia di asset digitali e identità sovrana. Va oltre gli standard bancari civili, con un modello di minaccia ispirato ad architetture di alta criticità.'
     },
     {
       question: 'Il codice del progetto è chiuso o Open-Source?',
@@ -244,7 +244,7 @@ export const faq = {
     },
     {
       question: 'Come il dispositivo gestisce le minacce quantistiche?',
-      answer: 'È equipaggiato con firme XMSS (Crittografia Post-Quantistica Basata su Hash), garantendo che la custodia rimanga matematicamente inattaccabile anche dopo l\'arrivo di computer quantistici praticabili (Q-Day).'
+      answer: 'È equipaggiato con firme XMSS (Crittografia Post-Quantistica Basata su Hash), rendendo la custodia resistente ad attacchi di computer quantistici anche dopo il Q-Day.'
     },
     {
       question: 'Cos\'è il "Phantom Input" contro i tentativi di estorsione?',
@@ -256,7 +256,7 @@ export const faq = {
     },
     {
       question: 'Qual è il verdetto finale sul livello di sicurezza del PSI?',
-      answer: 'Con protezione EMP, ridondanza modulare tripla (TMR) e memoria tollerante alle radiazioni, il PSI raggiunge un livello "Nuclear-Grade Sovereign Hardware", essendo funzionale anche in condizioni severe come l\'orbita terrestre bassa (LEO).'
+      answer: 'Con protezione EMP, ridondanza modulare tripla (TMR) e memoria tollerante alle radiazioni, il PSI è progettato come hardware sovrano di alta resilienza.'
     }
   ] satisfies FaqItem[],
   projetoPsiComercial: [
@@ -270,7 +270,7 @@ export const faq = {
     },
     {
       question: 'Come il PSI si differenzia dai wallet hardware esistenti come Ledger e Trezor?',
-      answer: 'Ledger e Trezor sono dispositivi di sicurezza per consumatori. Il PSI è un dispositivo di sicurezza di classe militare. Non archivia chiavi (zero attack surface), usa crittografia post-quantistica (XMSS), ha schermatura EMP, ridondanza aerospaziale (TMR) e rilevamento di coercizione biometrica. È una categoria completamente diversa.'
+      answer: 'Ledger e Trezor sono dispositivi di sicurezza per consumatori. Il PSI è progettato per un modello di minaccia molto più severo. Non archivia chiavi (superficie di attacco minimizzata), usa crittografia post-quantistica (XMSS), ha schermatura EMP, ridondanza aerospaziale (TMR) e rilevamento di coercizione biometrica. È una categoria completamente diversa.'
     },
     {
       question: 'Qual è il mercato indirizzabile (TAM) per la custodia sovrana?',
@@ -282,11 +282,11 @@ export const faq = {
     },
     {
       question: 'Il PSI ha proprietà intellettuale protetta?',
-      answer: 'Sì. La tecnologia core del PSI, inclusi il Protocollo Phantom Input e l\'architettura di ricostruzione effimera di chiavi via SRAM PUF, possiede notazione inventiva registrata sotto il marchio Codex Hash. Il whitepaper tecnico completo è pubblicato come prior art.'
+      answer: 'Sì, tramite pubblicazione difensiva (prior art): la tecnologia core del PSI — il Protocollo Phantom Input e l\'architettura di ricostruzione effimera di chiavi via SRAM PUF — è documentata di autoria propria nel whitepaper tecnico pubblicato, sotto Codex Hash. Non esiste alcun brevetto né marchio registrato depositato sulla tecnologia.'
     },
     {
       question: 'Chi è il team dietro il Progetto PSI?',
-      answer: 'Il progetto è guidato da Ulisses Flores — Consulente Strategico di IA, Studente di Master in Intelligenza Artificiale presso AGTU (USA), Architetto Software e co-inventore di tecnologie blockchain (Codex Hash). Con oltre 28 anni di esperienza in sistemi distribuiti, crittografia e ingegneria hardware.'
+      answer: 'Il progetto è guidato da Ulisses Flores — Consulente Strategico di IA, Studente di Master in Intelligenza Artificiale presso AGTU, Architetto Software e creatore di tecnologie blockchain in Codex Hash. Con oltre 28 anni di esperienza in sistemi distribuiti, crittografia e ingegneria hardware.'
     },
     {
       question: 'Il PSI è tecnicamente fattibile con la tecnologia attuale?',
@@ -340,11 +340,11 @@ export const faq = {
   home: [
     {
       question: 'Chi è Ulisses Flores?',
-      answer: 'Carlos Ulisses Flores è Scienziato Economico, Analista di Sistemi e Ricercatore Polimata con attività in Intelligenza Artificiale, Blockchain, Economia e Sistemi Complessi. Opera come Consulente Strategico di IA, Relatore, Professore Invitato e Studente di Master in IA presso AGTU (USA).'
+      answer: 'Carlos Ulisses Flores è Scienziato Economico, Analista di Sistemi e Ricercatore con attività in Intelligenza Artificiale, Blockchain, Economia e Sistemi Complessi. Opera come Consulente Strategico di IA, Relatore e Studente di Master in IA presso AGTU.'
     },
     {
       question: 'Qual è la formazione accademica di Ulisses Flores?',
-      answer: 'Ulisses è Studente di Master in Intelligenza Artificiale presso AGTU (USA), possiede un MBA in Gestione IT presso FIAP, una laurea in Scienze Economiche e in Analisi dei Sistemi. La sua produzione accademica è indicizzata su ORCID (0000-0002-6034-7765) e sulla Piattaforma Lattes.'
+      answer: 'Ulisses è Studente di Master in Intelligenza Artificiale presso AGTU, possiede un MBA in Blockchain presso FIAP, una laurea in Scienze Economiche e in Analisi dei Sistemi. La sua produzione accademica è indicizzata su ORCID (0000-0002-6034-7765) e sulla Piattaforma Lattes.'
     },
     {
       question: 'Quali sono le aree di ricerca di Ulisses Flores?',
@@ -367,8 +367,8 @@ export const faq = {
       answer: 'Le pubblicazioni sono disponibili su ulissesflores.com, con indicizzazione pubblica su ORCID e Lattes. Il portfolio include articoli di ricerca, whitepaper tecnici e saggi nelle aree di IA, economia, blockchain, teologia e ingegneria dei sistemi.'
     },
     {
-      question: 'In quali regioni Ulisses Flores opera come consulente e professore?',
-      answer: 'Basato a Jundiaí/Itupeva (SP), Ulisses serve clienti e istituzioni in tutta la Grande San Paolo e nell\'entroterra, con progetti e conferenze in tutto il Brasile e a livello internazionale. Consulenze e lezioni a distanza sono disponibili globalmente.'
+      question: 'In quali regioni Ulisses Flores opera come consulente e relatore?',
+      answer: 'Basato a Jundiaí (SP), Ulisses serve clienti e istituzioni in tutta la Grande San Paolo e nell\'entroterra, con progetti e conferenze in tutto il Brasile e a livello internazionale. Consulenze e workshop a distanza sono disponibili globalmente.'
     },
     {
       question: 'Come verificare l\'identità digitale di Ulisses Flores?',
@@ -387,7 +387,7 @@ export const faq = {
     },
     {
       question: 'Quali settori serve Ulisses Flores come consulente?',
-      answer: 'Verticali ancora (80% degli engagement): Finanza & Fintech (HFT, custodia MPC, Web3, modellazione del rischio), Settore Pubblico & Governance (pianificazione strategica, LGPD/GDPR, audit algoritmico) e Hardware/IoT/Deep Tech (edge computing, crittografia incorporata). Verticali aggiuntivi su richiesta includono agribusiness di precisione e istituti di formazione esecutiva.'
+      answer: 'Verticali ancora (dove si concentra la maggior parte degli engagement): Finanza & Fintech (HFT, custodia MPC, Web3, modellazione del rischio), Settore Pubblico & Governance (pianificazione strategica, LGPD/GDPR, audit algoritmico) e Hardware/IoT/Deep Tech (edge computing, crittografia incorporata). Verticali aggiuntivi su richiesta includono agribusiness di precisione e istituti di formazione esecutiva.'
     },
     {
       question: 'Ulisses Flores accetta equity al posto del fee?',
@@ -430,7 +430,7 @@ export const faq = {
     },
     {
       question: 'Ulisses tiene conferenze pro bono?',
-      answer: 'Sì, con cap di 4 eventi all\'anno e lead time minimo di 90 giorni. Accademia, chiesa locale e organizzazioni di impatto cristiano prioritarie. Terzo settore cristiano ha compenso ridotto (USD 1-2k) senza contare contro il cap pro bono.'
+      answer: 'Sì, con cap di 4 eventi all\'anno e lead time minimo di 90 giorni. Accademia, chiesa locale e organizzazioni di impatto cristiano prioritarie. Terzo settore cristiano ha compenso ridotto senza contare contro il cap pro bono.'
     },
     {
       question: 'Qual è la policy di registrazione e diritti d\'immagine?',
@@ -438,7 +438,7 @@ export const faq = {
     },
     {
       question: 'Come funziona la cancellazione di una conferenza?',
-      answer: 'Policy di cancellazione chiara: fino a 30 giorni prima dell\'evento — rimborso totale. Tra 30 e 7 giorni — 50% trattenuto. Meno di 7 giorni — 100% trattenuto. Prenotazione confermata con 50% anticipato e contratto firmato; saldo entro 7 giorni dopo l\'evento.'
+      answer: 'Policy di cancellazione chiara: fino a 30 giorni prima dell\'evento — rimborso integrale dell\'acconto. Tra 30 e 7 giorni — trattenuta di metà dell\'acconto. Meno di 7 giorni — trattenuta dell\'acconto del 50% già versato. Prenotazione confermata con 50% anticipato e contratto firmato; saldo entro 7 giorni dopo l\'evento.'
     },
     {
       question: 'Ulisses tiene conferenze in università?',

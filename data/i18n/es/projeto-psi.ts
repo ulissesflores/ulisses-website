@@ -1,7 +1,7 @@
 export const projetoPsi = {
   meta: {
     title: 'Projeto PSI — Hardware Soberano para Custodia de Activos Digitales | Ulisses Flores',
-    description: 'Custodia de activos digitales de clase nuclear. Hardware con Zero Trust en Silicio, criptografía postcuántica XMSS y redundancia aeroespacial TMR. Inversión y licenciamiento.',
+    description: 'Custodia soberana de activos digitales. Hardware con Zero Trust en silicio, criptografía postcuántica XMSS y redundancia modular triple (TMR). Inversión y licenciamiento.',
     keywords: [
       "hardware wallet",
       "custodia de activos digitales",
@@ -13,15 +13,15 @@ export const projetoPsi = {
       "cold storage institucional",
       "Ulisses Flores",
       "Codex Hash",
-      "seguridad nuclear",
+      "cold storage soberano",
       "redundancia TMR"
     ],
     ogTitle: 'Projeto PSI — Hardware Soberano para Custodia de Activos Digitales',
-    ogDescription: 'Custodia de activos digitales de clase nuclear. Zero Trust en Silicio, XMSS postcuántico y redundancia aeroespacial TMR.'
+    ogDescription: 'Custodia soberana de activos digitales. Zero Trust en silicio, XMSS postcuántico y redundancia modular triple (TMR).'
   },
   whitepaperMeta: {
     title: 'Projeto Ψ (PSI): Hardware Soberano y Zero Trust en Silicio | Ulisses Flores',
-    description: 'Whitepaper Técnico: Arquitectura de custodia de activos digitales de clase nuclear. Conozca el Projeto PSI, equipado con SRAM PUF, Criptografía XMSS y Redundancia TMR.',
+    description: 'Whitepaper Técnico: Arquitectura de custodia de activos digitales de clase soberana. Conozca el Projeto PSI, equipado con SRAM PUF, Criptografía XMSS y Redundancia TMR.',
     keywords: [
       "hardware wallet",
       "zero trust",
@@ -40,14 +40,14 @@ export const projetoPsi = {
       "deniable encryption",
       "Ulisses Flores blockchain",
       "hardware security module",
-      "cold storage nuclear"
+      "cold storage soberano"
     ],
     ogTitle: 'Projeto Ψ (PSI): Hardware Soberano y Zero Trust en Silicio | Ulisses Flores',
-    ogDescription: 'Whitepaper Técnico: Arquitectura de custodia de activos digitales de clase nuclear con SRAM PUF, XMSS postcuántico y Redundancia TMR aeroespacial.'
+    ogDescription: 'Whitepaper Técnico: Arquitectura de custodia de activos digitales de clase soberana con SRAM PUF, XMSS postcuántico y Redundancia TMR aeroespacial.'
   },
   simulacaoMeta: {
     title: 'Projeto Ψ (PSI): Explorador Técnico de la Arquitectura de Seguridad | Ulisses Flores',
-    description: 'Explorador interactivo de la arquitectura del Projeto PSI — SRAM PUF, criptografía postcuántica XMSS, redundancia TMR aeroespacial y Ring Signatures. Navegue por los 4 pilares de seguridad nuclear.',
+    description: 'Explorador interactivo de la arquitectura del Projeto PSI — SRAM PUF, criptografía postcuántica XMSS, redundancia TMR aeroespacial y Ring Signatures. Navegue por los 4 pilares de seguridad soberana.',
     keywords: [
       "hardware wallet",
       "zero trust",
@@ -66,15 +66,15 @@ export const projetoPsi = {
       "deniable encryption",
       "Ulisses Flores blockchain",
       "hardware security module",
-      "cold storage nuclear"
+      "cold storage soberano"
     ],
     ogTitle: 'Projeto Ψ (PSI): Explorador Técnico de la Arquitectura de Seguridad | Ulisses Flores',
     ogDescription: 'Explorador interactivo de la arquitectura del Projeto PSI — SRAM PUF, XMSS postcuántico y Redundancia TMR aeroespacial.'
   },
   hero: {
     badge: 'Inversión y Licenciamiento',
-    h1: 'Projeto PSI: La Bóveda Digital que Desafía las Leyes de la Física',
-    lead: 'Custodia soberana de activos digitales con seguridad de clase nuclear. Zero Trust en silicio. Criptografía a prueba de ordenadores cuánticos. Redundancia de nivel aeroespacial.',
+    h1: 'Projeto PSI: Custodia Soberana de Activos Digitales',
+    lead: 'Custodia soberana de activos digitales. Zero Trust en silicio. Criptografía postcuántica (firmas hash-based XMSS). Redundancia modular triple (TMR), derivada de estándares aeroespaciales.',
     ctaPrimary: 'Solicitar Presentación Ejecutiva',
     ctaSecondary: 'Leer el Whitepaper Técnico'
   },
@@ -85,13 +85,13 @@ export const projetoPsi = {
     p2Highlight: 'Es un cambio de paradigma.'
   },
   pillars: {
-    title: 'Cuatro Pilares de Seguridad Absoluta',
+    title: 'Cuatro Pilares de Seguridad',
     items: [
       {
         src: '/whitepapers/psi-arquitetura-hardware-camadas-defesa.webp',
         alt: 'Diagrama de las capas de defensa del hardware PSI: blindaje Faraday, cerámica antitérmica y aislamiento acústico',
         title: 'Fortaleza Física',
-        text: 'Chasis blindado con malla Faraday contra pulsos electromagnéticos. Cerámica antitérmica. Aislamiento acústico contra ataques de canal lateral. Sin USB. Sin pantalla. Sin superficie de ataque.'
+        text: 'Chasis blindado con malla Faraday contra pulsos electromagnéticos. Cerámica antitérmica. Aislamiento acústico contra ataques de canal lateral. Sin USB y sin pantalla — superficie de ataque minimizada.'
       },
       {
         src: '/whitepapers/psi-ciclo-vida-chave-criptografica-sram-puf.webp',
@@ -103,13 +103,13 @@ export const projetoPsi = {
         src: '/whitepapers/psi-protocolo-phantom-biometria-coacao.webp',
         alt: 'Protocolo Phantom Input: detección de coacción por biometría conductual y liberación de fondos falsos bajo extorsión',
         title: 'Anti-Secuestro Inteligente',
-        text: 'El PSI aprende su patrón biométrico. Si detecta estrés o coacción, activa el Phantom Mode: desbloquea una cartera fantasma con fondos falsos. El agresor nunca sabrá que fue engañado.'
+        text: 'El PSI aprende su patrón biométrico. Si detecta estrés o coacción, activa el Phantom Mode: desbloquea una cartera fantasma con fondos falsos. Diseñado para que el agresor no perciba el engaño.'
       },
       {
         src: '/whitepapers/psi-arquitetura-tmr-redundancia-voter.webp',
         alt: 'Arquitectura TMR con voter: tres procesadores ejecutan en paralelo y un voter valida consenso — estándar aeroespacial',
         title: 'Redundancia Aeroespacial',
-        text: 'Tres procesadores ejecutan cada operación en paralelo. Un "voter" valida el consenso. Si un chip falla o es adulterado, los otros dos continúan. Es la misma tecnología utilizada en satélites y misiles.'
+        text: 'Tres procesadores ejecutan cada operación en paralelo. Un "voter" valida el consenso. Si un chip falla o es adulterado, los otros dos continúan. Enfoque de redundancia usado en sistemas aeroespaciales críticos.'
       }
     ]
   },
@@ -122,7 +122,7 @@ export const projetoPsi = {
       },
       {
         title: 'Fondos y Exchanges Institucionales',
-        text: 'Cold storage de clase militar para cumplimiento y auditoría de custodia cualificada.'
+        text: 'Cold storage de grado institucional para cumplimiento y auditoría de custodia cualificada.'
       },
       {
         title: 'Gobiernos y Bancos Centrales',
@@ -135,7 +135,7 @@ export const projetoPsi = {
     items: [
       {
         value: '0',
-        label: 'Claves almacenadas permanentemente. Cero superficie de ataque estática.'
+        label: 'Claves almacenadas permanentemente. Superficie de ataque estática minimizada.'
       },
       {
         value: '3×',
@@ -146,14 +146,14 @@ export const projetoPsi = {
         label: 'Criptografía XMSS postcuántica. Preparado para el día en que los ordenadores cuánticos rompan RSA y ECDSA.'
       },
       {
-        value: 'EMP-Proof',
-        label: 'Blindaje Faraday + cerámica. Funcional después de pulso electromagnético.'
+        value: 'EMP-Resiliente',
+        label: 'Blindaje Faraday + cerámica, diseñado para mitigar pulso electromagnético (EMP).'
       }
     ]
   },
   author: {
     label: 'Inventor y Arquitecto',
-    description: 'Proyecto concebido por Ulisses Flores — Consultor Estratégico de IA, Estudiante de Maestría en Inteligencia Artificial por la AGTU (EE. UU.) y co-inventor de tecnologías blockchain (Codex Hash).'
+    description: 'Proyecto concebido por Ulisses Flores — Consultor Estratégico de IA, Estudiante de Maestría en Inteligencia Artificial por la AGTU y creador de tecnologías blockchain en Codex Hash.'
   },
   faq: {
     sectionTitle: 'Preguntas Frecuentes — Inversores'
@@ -169,11 +169,11 @@ export const projetoPsi = {
     kickerSub: 'Investigación en Arquitectura de Sistemas y Criptografía Aplicada',
     h1: 'Projeto Ψ (PSI): El Horizonte de Eventos de la Soberanía Personal y Zero Trust en Silicio',
     authorLabel: 'Autor:',
-    authorRole: 'Consultor Estratégico de IA, Arquitecto de Software, Desarrollador de Hardware, Estudiante de Maestría AGTU (EE. UU.)',
+    authorRole: 'Consultor Estratégico de IA, Arquitecto de Software, Desarrollador de Hardware, Estudiante de Maestría AGTU',
     abstractTitle: 'Resumen Ejecutivo',
     abstractText: 'El advenimiento de la hipervigilancia algorítmica a escala estatal, unido a la proliferación de vectores de coerción física y ataques invasivos en la cadena de suministro de hardware, exige una reformulación ontológica en las arquitecturas de custodia de activos digitales críticos. Las carteras de hardware civiles tradicionales operan bajo la premisa fundamental de un entorno seguro y de un usuario libre de coacción — suposiciones que resultan catastróficamente erróneas bajo modelos de amenaza hostiles. Este artículo presenta un análisis científico exhaustivo del Projeto Ψ (PSI), una arquitectura de custodia de clase soberana basada en el paradigma de Confianza Cero (Zero Trust) absoluto en silicio.',
-    authorCardLabel: 'Investigación y Co-invención',
-    authorCardDescription: 'Projeto PSI investigado y documentado por Ulisses Flores — Consultor Estratégico de IA, Arquitecto de Software, Desarrollador de Hardware, co-inventor de Codex Hash y Estudiante de Maestría en IA por la AGTU (EE. UU.).',
+    authorCardLabel: 'Investigación y Creación',
+    authorCardDescription: 'Projeto PSI investigado y documentado por Ulisses Flores — Consultor Estratégico de IA, Arquitecto de Software, Desarrollador de Hardware, creador de Codex Hash y Estudiante de Maestría en IA por la AGTU.',
     ctaTitle: '¿Interesado en soberanía digital y hardware criptográfico?',
     ctaDescription: 'Ulisses Flores ofrece consultoría en privacidad digital, arquitecturas de hardware wallet, Ring Signatures e implementación de protocolos de soberanía para empresas y proyectos de blockchain. Póngase en contacto.',
     ctaButton: 'Hablar con Ulisses Flores →',
@@ -181,7 +181,7 @@ export const projetoPsi = {
   },
   jsonLd: {
     headline: 'Projeto Ψ (PSI): El Horizonte de Eventos de la Soberanía Personal y Zero Trust en Silicio',
-    description: 'Whitepaper Técnico: Arquitectura de custodia de activos digitales de clase nuclear con SRAM PUF, Criptografía XMSS postcuántica y Redundancia Modular Triple aeroespacial.',
+    description: 'Whitepaper Técnico: Arquitectura de custodia de activos digitales de clase soberana con SRAM PUF, Criptografía XMSS postcuántica y Redundancia Modular Triple aeroespacial.',
     softwareName: 'Projeto PSI',
     softwareDescription: 'Hardware wallet de clase soberana con Zero Trust en silicio, SRAM PUF, XMSS postcuántico y redundancia TMR aeroespacial.'
   }

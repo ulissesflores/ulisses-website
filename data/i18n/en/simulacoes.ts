@@ -2,7 +2,7 @@ export const simulacoes = {
   meta: {
     title: 'Strategic AI Simulations | AI 2027, AGI and Future Scenarios | Ulisses Flores',
     description:
-      'Explore interactive simulations about the future of Artificial Intelligence and AGI, created by Ulisses Flores — Strategic AI Consultant, Professor, Speaker and MSc Candidate in AI at AGTU (USA). The leading platform for future scenario modeling in Portuguese.',
+      'Explore interactive simulations about the future of Artificial Intelligence and AGI, created by Ulisses Flores — Strategic AI Consultant, Speaker and MSc Candidate in AI at AGTU. A pioneering platform for future scenario modeling in Portuguese.',
     keywords: [
       'strategic AI simulations',
       'artificial intelligence future scenarios',
@@ -14,12 +14,12 @@ export const simulacoes = {
     ],
     ogTitle: 'Strategic AI Simulations | AI 2027, AGI and Future Scenarios | Ulisses Flores',
     ogDescription:
-      'Explore interactive simulations about the future of Artificial Intelligence and AGI, created by Ulisses Flores — Strategic AI Consultant, Professor, Speaker and MSc Candidate in AI at AGTU (USA).',
+      'Explore interactive simulations about the future of Artificial Intelligence and AGI, created by Ulisses Flores — Strategic AI Consultant, Speaker and MSc Candidate in AI at AGTU.',
   },
   breadcrumb: 'Strategic Simulations',
   hero: {
     h1: 'Strategic AI Simulations',
-    lead: 'Interactive scenario modeling about the future of Artificial General Intelligence (AGI), technological sovereignty and economic impact. Created and curated by Ulisses Flores — Economic Scientist, Strategic AI Consultant, Professor, Speaker and MSc Candidate in Artificial Intelligence at AGTU (USA).',
+    lead: 'Interactive scenario modeling about the future of Artificial General Intelligence (AGI), technological sovereignty and economic impact. Created and curated by Ulisses Flores — Economic Scientist, Strategic AI Consultant, Speaker and MSc Candidate in Artificial Intelligence at AGTU.',
     authority: {
       kicker: 'Why these simulations matter',
       text: 'Each simulation here is built with scientific rigor: combining real data on technological evolution, economic models and strategic analysis. The goal is to provide leaders, researchers and professionals with the tools to anticipate, understand and act in the face of transformations that AGI will impose on the global economy and geopolitics.',
@@ -27,8 +27,8 @@ export const simulacoes = {
     credentials: [
       'Strategic AI Consultant',
       'Speaker',
-      'Guest Professor',
-      'AGTU MSc Candidate (USA)',
+      'Economic Scientist',
+      'AGTU MSc Candidate',
       'Economist & Systems Scientist',
     ],
   },
@@ -38,7 +38,7 @@ export const simulacoes = {
       badges: ['Main Highlight', 'Active Project'],
       title: 'AI 2027: Interactive Simulation on the Future of Artificial Intelligence',
       description:
-        'The only interactive simulation in Portuguese about the arrival of AGI. Timeline 2025–2027 with dynamic metrics, expandable technical notes and two alternative endings:',
+        'A pioneering interactive simulation in Portuguese about the arrival of AGI. Timeline 2025–2027 with dynamic metrics, expandable technical notes and two alternative endings:',
       descEndingSlowdown: 'Coordinated Slowdown',
       descEndingRace: 'Strategic Race',
       tags: ['AGI', 'Technological Sovereignty', 'Economic Impact', 'AI Safety'],
@@ -55,7 +55,7 @@ export const simulacoes = {
   author: {
     label: 'Curation & Research',
     description:
-      'Simulations created, curated and analyzed by Ulisses Flores — Strategic AI Consultant, Professor, Speaker and MSc Candidate in AI at AGTU (USA).',
+      'Simulations created, curated and analyzed by Ulisses Flores — Strategic AI Consultant, Speaker and MSc Candidate in AI at AGTU.',
   },
   cta: {
     title: 'Want to use these simulations in your company or event?',

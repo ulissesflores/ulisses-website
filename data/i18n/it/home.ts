@@ -1,28 +1,28 @@
 export const home = {
   meta: {
-    title: 'Ulisses Flores | Consulente AI, Professore, Relatore e Ricercatore',
-    description: 'Ulisses Flores — Economista, Consulente Strategico AI, Professore Invitato, Relatore e Studente di Master in AI presso AGTU (USA). Ricerche in AI, Blockchain, Economia e Sistemi Complessi. Basato a Jundiaí/SP, serve tutto il Brasile.',
+    title: 'Ulisses Flores | Consulente AI, Relatore e Ricercatore',
+    description: 'Ulisses Flores — Economista, Consulente Strategico AI, Relatore e Studente di Master in AI presso AGTU. Ricerche in AI, Blockchain, Economia e Sistemi Complessi. Basato a Jundiaí/SP, serve tutto il Brasile.',
     keywords: [
       "Ulisses Flores",
       "consulente strategico AI",
       "relatore intelligenza artificiale",
-      "professore invitato AI",
+      "relatore IA",
       "studente master AGTU",
       "economista",
       "consulente blockchain",
       "Jundiaí São Paulo"
     ],
-    ogTitle: 'Ulisses Flores | Consulente AI, Professore, Relatore e Ricercatore',
-    ogDescription: 'Ulisses Flores — Consulente Strategico AI, Professore, Relatore e Studente di Master AGTU (USA). Ricerche in AI, Blockchain ed Economia.',
-    ogImageAlt: 'Ulisses Flores — Consulente AI, Professore e Relatore'
+    ogTitle: 'Ulisses Flores | Consulente AI, Relatore e Ricercatore',
+    ogDescription: 'Ulisses Flores — Consulente Strategico AI, Relatore e Studente di Master AGTU. Ricerche in AI, Blockchain ed Economia.',
+    ogImageAlt: 'Ulisses Flores — Consulente AI e Relatore'
   },
   hero: {
-    imageAlt: 'Carlos Ulisses Flores - CTO e Ricercatore Capo di Codex Hash Ltda a Itupeva',
+    imageAlt: 'Carlos Ulisses Flores - CTO e Ricercatore Capo di Codex Hash Ltda a Jundiaí',
     name: 'Carlos Ulisses Flores',
     badges: {
       cto: 'CTO & Ricercatore Capo',
       msc: 'MSc Candidate AI @ AGTU',
-      polymath: 'Polimata'
+      polymath: 'Scienziato Economico'
     },
     quote: '"Operando alla frontiera dello sviluppo tecnologico, integrando rigore accademico e pragmatismo esecutivo per risolvere problemi in sistemi complessi adattivi."',
     languages: {
@@ -74,7 +74,7 @@ export const home = {
         msc: {
           year: '2025',
           title: 'Master in AI (MSc)',
-          inst: 'American Global Tech University (USA)',
+          inst: 'American Global Tech University',
           desc: 'Ricerca: Resilienza nei Sistemi Complessi.'
         },
         mba: {
@@ -165,7 +165,7 @@ export const home = {
       },
       bioBytes: {
         title: 'BioBytes Legacy',
-        desc: 'Sistema di preservazione digitale della memoria e dell\'eredità biografica con sicurezza di livello militare.',
+        desc: 'Sistema di preservazione digitale della memoria e dell\'eredità biografica con crittografia forte e firma digitale.',
         tags: [
           "SECURITY",
           "CRYPTOGRAPHY",
@@ -252,10 +252,10 @@ export const home = {
   },
   manifesto: {
     title: 'Riepilogo Professionale & Accademico (Lattes)',
-    intro: 'Economista, Analista di Sistemi e Ricercatore Polimata con una solida traiettoria di oltre 28 anni nella convergenza tra Ingegneria Finanziaria, Architettura Software Distribuita e Umanistica. Opera alla frontiera dello sviluppo tecnologico, integrando rigore accademico e pragmatismo esecutivo per risolvere problemi in sistemi complessi adattivi.',
+    intro: 'Economista, Analista di Sistemi e Ricercatore con una solida traiettoria di oltre 28 anni nella convergenza tra Ingegneria Finanziaria, Architettura Software Distribuita e Umanistica. Opera alla frontiera dello sviluppo tecnologico, integrando rigore accademico e pragmatismo esecutivo per risolvere problemi in sistemi complessi adattivi.',
     formation: {
       title: ':: Formazione Accademica e Ricerca Avanzata',
-      text: 'Studente di Master in Intelligenza Artificiale presso l\'American Global Tech University (AGTU/USA), dove sviluppa ricerca all\'avanguardia su "Resilienza Cibernetica e Finanziaria". La sua tesi indaga architetture ibride che accoppiano Reti Neurali Ricorrenti (LSTM) con modelli stocastici di flusso (Legge di Little) e Inferenza Bayesiana, mirando alla creazione di agenti autonomi antifragili per mercati ad alta volatilità. Possiede un MBA in Blockchain Development & Technologies dalla FIAP, con focus su criptoeconomia e governance decentralizzata. Laureato in Scienze Economiche, con una tesi che rivisita la Teoria del Caos e la non-linearità nei mercati dal punto di vista della Scuola Austriaca.'
+      text: 'Studente di Master in Intelligenza Artificiale presso l\'American Global Tech University (AGTU), con una tesi su "Resilienza Cibernetica e Finanziaria". La tesi indaga architetture ibride che accoppiano Reti Neurali Ricorrenti (LSTM) con modelli stocastici di flusso (Legge di Little) e Inferenza Bayesiana, mirando alla creazione di agenti autonomi antifragili per mercati ad alta volatilità. Possiede un MBA in Blockchain Development & Technologies dalla FIAP, con focus su criptoeconomia e governance decentralizzata. Laureato in Scienze Economiche, con una tesi che rivisita la Teoria del Caos e la non-linearità nei mercati dal punto di vista della Scuola Austriaca.'
     },
     leadership: {
       title: ':: Leadership Esecutiva e Innovazione',
@@ -273,6 +273,6 @@ export const home = {
   },
   pageFooter: {
     copyright: '© 2026 Codex Hash Ltda. All rights reserved.',
-    version: 'UlissesFlores.com • v10.0 • State of the Art'
+    version: 'UlissesFlores.com'
   }
 } as const;

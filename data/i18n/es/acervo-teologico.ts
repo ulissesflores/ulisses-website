@@ -1,7 +1,7 @@
 export const acervoTeologico = {
   meta: {
     title: 'Acervo Teológico y Arqueología Espiritual | Ulisses Flores',
-    description: 'Más de 50 sermones, predicaciones expositivas y análisis de teología histórica por Ulisses Flores. Rigor exegético y avivamiento.',
+    description: 'Más de 56 sermones, predicaciones expositivas y análisis de teología histórica por Ulisses Flores. Rigor exegético y avivamiento.',
     keywords: [
       "acervo teológico",
       "sermones",
@@ -14,20 +14,20 @@ export const acervoTeologico = {
       "avivamiento"
     ],
     ogTitle: 'Acervo Teológico y Arqueología Espiritual | Ulisses Flores',
-    ogDescription: 'Más de 50 sermones, predicaciones expositivas y análisis de teología histórica por Ulisses Flores. Rigor exegético y avivamiento.'
+    ogDescription: 'Más de 56 sermones, predicaciones expositivas y análisis de teología histórica por Ulisses Flores. Rigor exegético y avivamiento.'
   },
   breadcrumb: 'Archivo Teológico',
   hero: {
     h1: 'Acervo Teológico y Arqueología Espiritual',
-    lead: 'La fe y el intelecto no son magnitudes opuestas, sino pilares complementarios en la búsqueda de la Verdad. Este acervo reúne más de medio centenar de sermones y exposiciones teológicas. Con un profundo rigor exegético y un enfoque en la «Arqueología Espiritual» (como la explorada en el Clube Santo y en el metodismo clásico), este espacio está dedicado a la edificación sólida, al avivamiento genuino y a la exposición continua y sin concesiones de los textos sagrados.',
+    lead: 'La fe y el intelecto no son magnitudes opuestas, sino pilares complementarios en la búsqueda de la Verdad. Este acervo reúne más de 56 sermones y exposiciones teológicas. Con un profundo rigor exegético y un enfoque en la «Arqueología Espiritual» (como la explorada en el Clube Santo y en el metodismo clásico), este espacio está dedicado a la edificación sólida, al avivamiento genuino y a la exposición continua y sin concesiones de los textos sagrados.',
     authority: {
       kicker: 'Rigor exegético y avivamiento genuino',
       text: 'Cada sermón y exposición se fundamenta en un análisis textual riguroso, la tradición reformada y la investigación historiográfica — conectando los textos bíblicos con el contexto arqueológico, histórico y lingüístico original. El acervo sirve como base para la formación teológica, estudios bíblicos e investigación académica en teología histórica.'
     },
     credentials: [
-      "Investigador Polímata",
+      "Investigador",
       "Predicador y Expositor Bíblico",
-      "Estudiante de Maestría AGTU (EE. UU.)",
+      "Estudiante de Maestría AGTU",
       "Análisis Historiográfico",
       "Tradición Reformada"
     ],

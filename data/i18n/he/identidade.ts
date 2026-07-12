@@ -1,14 +1,14 @@
 export const identidade = {
   meta: {
-    title: 'זהות ריבונית | רכזת קנונית',
-    description: 'רכזת קנונית של זהות ריבונית של Ulisses Flores עם אימותים ציבוריים, תוצרת אקדמית, אוסף תיאולוגי, דומיינים וגרף סמנטי של סמכות.',
-    ogTitle: 'זהות ריבונית | רכזת קנונית | Ulisses Flores',
-    ogDescription: 'רכזת קנונית של זהות ריבונית של Ulisses Flores עם אימותים ציבוריים, תוצרת אקדמית, אוסף תיאולוגי, דומיינים וגרף סמנטי של סמכות.',
-    ogImageAlt: 'Ulisses Flores - רכזת זהות ריבונית'
+    title: 'זהות ריבונית ואימותים ציבוריים | Ulisses Flores',
+    description: 'עמוד זהות ריבונית של Ulisses Flores עם אימותים ציבוריים, תוצרת אקדמית, אוסף תיאולוגי, דומיינים וגרף סמנטי של זהות.',
+    ogTitle: 'זהות ריבונית ואימותים ציבוריים | Ulisses Flores',
+    ogDescription: 'עמוד זהות ריבונית של Ulisses Flores עם אימותים ציבוריים, תוצרת אקדמית, אוסף תיאולוגי, דומיינים וגרף סמנטי של זהות.',
+    ogImageAlt: 'Ulisses Flores - זהות ריבונית'
   },
   header: {
-    kicker: 'Ground Truth Identity Node · UPKF v3.3',
-    subtitle: 'אודיסאוס · חוקר רב-תחומי · CTO · אדריכל זהות ריבונית',
+    kicker: 'זהות ניתנת לאימות · גרף ציבורי',
+    subtitle: 'CTO · חוקר',
     statsTemplate: {
       works: 'עבודות',
       certifications: 'הסמכות'
@@ -95,7 +95,7 @@ export const identidade = {
       title: '05 · תחומי ידע'
     },
     firewall: {
-      title: '06 · חומת אש סמנטית',
+      title: '06 · הבהרת זהות',
     },
     organizations: {
       title: '07 · ארגונים ושיוכים'

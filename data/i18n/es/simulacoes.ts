@@ -1,7 +1,7 @@
 export const simulacoes = {
   meta: {
     title: 'Simulaciones Estratégicas de IA | IA 2027, AGI y Escenarios Futuros | Ulisses Flores',
-    description: 'Explore simulaciones interactivas sobre el futuro de la Inteligencia Artificial y AGI, creadas por Ulisses Flores — Consultor Estratégico de IA, Profesor, Ponente y Estudiante de Maestría en IA por AGTU (EE. UU.). La principal plataforma de modelado de escenarios futuros en español.',
+    description: 'Explore simulaciones interactivas sobre el futuro de la Inteligencia Artificial y AGI, creadas por Ulisses Flores — Consultor Estratégico de IA, Ponente y Estudiante de Maestría en IA por AGTU. Una plataforma pionera de modelado de escenarios futuros en español.',
     keywords: [
       "simulaciones estratégicas IA",
       "escenarios futuros inteligencia artificial",
@@ -12,12 +12,12 @@ export const simulacoes = {
       "Ulisses Flores consultor IA"
     ],
     ogTitle: 'Simulaciones Estratégicas de IA | IA 2027, AGI y Escenarios Futuros | Ulisses Flores',
-    ogDescription: 'Explore simulaciones interactivas sobre el futuro de la Inteligencia Artificial y AGI, creadas por Ulisses Flores — Consultor Estratégico de IA, Profesor, Ponente y Estudiante de Maestría en IA por AGTU (EE. UU.).'
+    ogDescription: 'Explore simulaciones interactivas sobre el futuro de la Inteligencia Artificial y AGI, creadas por Ulisses Flores — Consultor Estratégico de IA, Ponente y Estudiante de Maestría en IA por AGTU.'
   },
   breadcrumb: 'Simulaciones Estratégicas',
   hero: {
     h1: 'Simulaciones Estratégicas de IA',
-    lead: 'Modelado interactivo de escenarios sobre el futuro de la Inteligencia Artificial General (AGI), soberanía tecnológica e impacto económico. Creadas y curadas por Ulisses Flores — Científico Económico, Consultor Estratégico de IA, Profesor, Ponente y Estudiante de Maestría en Inteligencia Artificial por AGTU (EE. UU.).',
+    lead: 'Modelado interactivo de escenarios sobre el futuro de la Inteligencia Artificial General (AGI), soberanía tecnológica e impacto económico. Creadas y curadas por Ulisses Flores — Científico Económico, Consultor Estratégico de IA, Ponente y Estudiante de Maestría en Inteligencia Artificial por AGTU.',
     authority: {
       kicker: '¿Por qué estas simulaciones importan?',
       text: 'Cada simulación aquí se construye con rigor científico: combinando datos reales de evolución tecnológica, modelos económicos y análisis estratégico. El objetivo es ofrecer a líderes, investigadores y profesionales las herramientas para anticipar, comprender y actuar ante las transformaciones que la AGI impondrá a la economía y a la geopolítica global.'
@@ -25,8 +25,8 @@ export const simulacoes = {
     credentials: [
       "Consultor Estratégico de IA",
       "Ponente",
-      "Profesor Invitado",
-      "Estudiante de Maestría AGTU (EE. UU.)",
+      "Científico Económico",
+      "Estudiante de Maestría AGTU",
       "Economista y Científico de Sistemas"
     ]
   },
@@ -38,7 +38,7 @@ export const simulacoes = {
         "Proyecto Activo"
       ],
       title: 'IA 2027: Simulación Interactiva sobre el Futuro de la Inteligencia Artificial',
-      description: 'La única simulación interactiva en español sobre la llegada de la AGI. Línea de tiempo 2025–2027 con métricas dinámicas, notas técnicas expandibles y dos finales alternativos:',
+      description: 'Una simulación interactiva pionera en español sobre la llegada de la AGI. Línea de tiempo 2025–2027 con métricas dinámicas, notas técnicas expandibles y dos finales alternativos:',
       descEndingSlowdown: 'Desaceleración Coordinada',
       descEndingRace: 'Carrera Estratégica',
       tags: [
@@ -66,7 +66,7 @@ export const simulacoes = {
   },
   author: {
     label: 'Curaduría e Investigación',
-    description: 'Simulaciones creadas, curadas y analizadas por Ulisses Flores — Consultor Estratégico de IA, Profesor, Ponente y Estudiante de Maestría en IA por AGTU (EE. UU.).'
+    description: 'Simulaciones creadas, curadas y analizadas por Ulisses Flores — Consultor Estratégico de IA, Ponente y Estudiante de Maestría en IA por AGTU.'
   },
   cta: {
     title: '¿Quiere usar estas simulaciones en su empresa o evento?',

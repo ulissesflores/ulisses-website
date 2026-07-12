@@ -32,7 +32,7 @@ export const goldenleaf = {
       "Arquitecto de Software",
       "Desarrollador de Hardware",
       "Consultor Estratégico de IA",
-      "Estudiante de Maestría AGTU (EE. UU.)",
+      "Estudiante de Maestría AGTU",
       "IoT & Edge Computing",
       "Soberanía de Datos"
     ]
@@ -69,7 +69,7 @@ export const goldenleaf = {
   },
   author: {
     label: 'Investigación y Desarrollo',
-    description: 'GoldenLeaf desarrollado por Ulisses Flores — Consultor Estratégico de IA, Arquitecto de Software, Desarrollador de Hardware y Estudiante de Maestría en IA por AGTU (EE. UU.).'
+    description: 'GoldenLeaf desarrollado por Ulisses Flores — Consultor Estratégico de IA, Arquitecto de Software, Desarrollador de Hardware y Estudiante de Maestría en IA por AGTU.'
   },
   cta: {
     title: '¿Interesado en IoT soberana e IA aplicada a la agricultura?',

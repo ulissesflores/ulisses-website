@@ -1,7 +1,7 @@
 export const ia2027 = {
   meta: {
     title: 'AI 2027: Interactive Simulation on the Future of Artificial Intelligence | AGI and Sovereignty',
-    description: 'Explore the only interactive simulation in Portuguese about the arrival of AGI (Artificial General Intelligence). Analysis of future scenarios, technological race, and economic impact by Ulisses Flores — Scientist, Consultant, Professor, and Speaker.',
+    description: 'Explore a pioneering interactive simulation in Portuguese about the arrival of AGI (Artificial General Intelligence). Analysis of future scenarios, technological race, and economic impact by Ulisses Flores — Scientist, Consultant, and Speaker.',
     keywords: [
       "future of artificial intelligence",
       "future AI scenarios",
@@ -12,12 +12,12 @@ export const ia2027 = {
       "autonomous agents"
     ],
     ogTitle: 'AI 2027: Interactive Simulation on the Future of Artificial Intelligence | AGI and Sovereignty',
-    ogDescription: 'Explore the only interactive simulation in Portuguese about the arrival of AGI. Analysis of future scenarios, technological race, and economic impact by Ulisses Flores — Scientist, Consultant, Professor, and Speaker.',
+    ogDescription: 'Explore a pioneering interactive simulation in Portuguese about the arrival of AGI. Analysis of future scenarios, technological race, and economic impact by Ulisses Flores — Scientist, Consultant, and Speaker.',
     ogImageAlt: 'Strategic Simulation AI-2027 by Ulisses Flores'
   },
   raceMeta: {
     title: 'Strategic Race: AI 2027 Race Scenario | Ulisses Flores',
-    description: 'Explore the Strategic Race scenario of the AI 2027 simulation: maximum acceleration towards AGI, escalation of autonomy, and risk of loss of human control. Analysis by Ulisses Flores — AI Consultant, Professor, Speaker, and AGTU (USA) Master\'s Student.',
+    description: 'Explore the Strategic Race scenario of the AI 2027 simulation: maximum acceleration towards AGI, escalation of autonomy, and risk of loss of human control. Analysis by Ulisses Flores — AI Consultant, Speaker, and AGTU Master\'s Student.',
     keywords: [
       "strategic AI race",
       "AGI race",
@@ -33,7 +33,7 @@ export const ia2027 = {
   },
   slowdownMeta: {
     title: 'Coordinated Slowdown: AI 2027 Slowdown Scenario | Ulisses Flores',
-    description: 'Explore the Coordinated Slowdown scenario of the AI 2027 simulation: global pause, technical alignment, and international AGI regulation. Analysis by Ulisses Flores — AI Consultant, Professor, Speaker, and AGTU (USA) Master\'s Student.',
+    description: 'Explore the Coordinated Slowdown scenario of the AI 2027 simulation: global pause, technical alignment, and international AGI regulation. Analysis by Ulisses Flores — AI Consultant, Speaker, and AGTU Master\'s Student.',
     keywords: [
       "coordinated AI slowdown",
       "AGI slowdown",
@@ -58,7 +58,7 @@ export const ia2027 = {
     lead: 'The CEOs of OpenAI, Google DeepMind, and Anthropic converge on a critical point: Artificial General Intelligence (AGI) may be achieved before the end of this decade. When machines surpass human cognitive capacity, the rules governing the global economy, the job market, and geopolitical power will be irreversibly rewritten. This simulation interactively models the coming years of this transition.',
     authority: {
       kicker: 'Why this matters',
-      text: 'Technological sovereignty is no longer science fiction; it is the most urgent economic and architectural dispute of our time. As a scientist, AI consultant, and creator of this adaptation, I structured this scenario based on models from Harvard, MIRI, and AI safety analysts. The central breaking point explored here is: what happens to the economy and systems infrastructure when AI begins to recursively accelerate its own research? The path we choose will define the future.'
+      text: 'Technological sovereignty is no longer science fiction; it is the most urgent economic and architectural dispute of our time. As a scientist, AI consultant, and creator of this adaptation, I structured this scenario based on simulation exercises and feedback from experts in AI governance and safety. The central breaking point explored here is: what happens to the economy and systems infrastructure when AI begins to recursively accelerate its own research? The path we choose will define the future.'
     },
     features: [
       {
@@ -80,9 +80,9 @@ export const ia2027 = {
     ],
     cta: 'Start Simulation →',
     ctaNote: 'Translation and adaptation of the original scenario published in',
-    ctaNoteEnd: '— based on models from Harvard, MIRI, and AI safety analysts.',
+    ctaNoteEnd: '— based on simulation exercises and feedback from experts in AI governance and safety.',
     authorLabel: 'Translation & Curation',
-    authorDescription: 'Adaptation, curation, and technical analysis by Ulisses Flores — Scientist, AI Consultant, Professor, Speaker, and Master\'s Student.',
+    authorDescription: 'Adaptation, curation, and technical analysis by Ulisses Flores — Scientist, AI Consultant, Speaker, and Master\'s Student.',
     faqTitle: 'Questions about AI 2027 and the Future of Artificial Intelligence'
   },
   racePage: {
@@ -95,7 +95,7 @@ export const ia2027 = {
     ctaFull: '← View Full Simulation',
     ctaAlt: 'View alternative scenario: Coordinated Slowdown →',
     authorLabel: 'Translation & Curation',
-    authorDescription: 'Adaptation, curation, and technical analysis by Ulisses Flores — Scientist, AI Consultant, Professor, Speaker, and Master\'s Student.',
+    authorDescription: 'Adaptation, curation, and technical analysis by Ulisses Flores — Scientist, AI Consultant, Speaker, and Master\'s Student.',
     faqTitle: 'Questions about AI 2027 and the Future of Artificial Intelligence'
   },
   slowdownPage: {
@@ -108,7 +108,7 @@ export const ia2027 = {
     ctaFull: '← View Full Simulation',
     ctaAlt: 'View alternative scenario: Strategic Race →',
     authorLabel: 'Translation & Curation',
-    authorDescription: 'Adaptation, curation, and technical analysis by Ulisses Flores — Scientist, AI Consultant, Professor, Speaker, and Master\'s Student.',
+    authorDescription: 'Adaptation, curation, and technical analysis by Ulisses Flores — Scientist, AI Consultant, Speaker, and Master\'s Student.',
     faqTitle: 'Questions about AI 2027 and the Future of Artificial Intelligence'
   },
   simulation: {
@@ -137,7 +137,7 @@ export const ia2027 = {
     backToExcerpt: 'Back to excerpt',
     footerAdaptation: 'This simulation in Portuguese is an adaptation of the original scenario published in',
     footerAuthors: 'Original authors: Daniel Kokotajlo, Eli Lifland, Thomas Larsen, Romeo Dean. Narrative by Scott Alexander. Based on approximately 25 simulation exercises and feedback from over 100 AI governance and safety experts.',
-    footerTranslation: 'Translation, adaptation, and curation: Ulisses Flores — Scientist, AI Consultant, Professor, Speaker, and Master\'s Student.',
+    footerTranslation: 'Translation, adaptation, and curation: Ulisses Flores — Scientist, AI Consultant, Speaker, and Master\'s Student.',
     pathMain: {
       kicker: 'Prospective Simulation',
       title: 'AI 2027',

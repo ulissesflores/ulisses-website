@@ -32,7 +32,7 @@ export const goldenleaf = {
       "ארכיטקט תוכנה",
       "מפתח חומרה",
       "יועץ אסטרטגי ל-AI",
-      "סטודנט לתואר שני ב-AGTU (ארה\"ב)",
+      "סטודנט לתואר שני ב-AGTU",
       "IoT & Edge Computing",
       "ריבונות נתונים"
     ]
@@ -69,7 +69,7 @@ export const goldenleaf = {
   },
   author: {
     label: 'מחקר ופיתוח',
-    description: 'GoldenLeaf פותח על ידי Ulisses Flores — יועץ אסטרטגי ל-AI, ארכיטקט תוכנה, מפתח חומרה וסטודנט לתואר שני ב-AI ב-AGTU (ארה"ב).'
+    description: 'GoldenLeaf פותח על ידי Ulisses Flores — יועץ אסטרטגי ל-AI, ארכיטקט תוכנה, מפתח חומרה וסטודנט לתואר שני ב-AI ב-AGTU.'
   },
   cta: {
     title: 'מעוניינים ב-IoT ריבוני ו-AI מיושם בחקלאות?',

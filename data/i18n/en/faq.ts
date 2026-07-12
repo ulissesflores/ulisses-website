@@ -4,7 +4,7 @@ export const faq = {
   identidade: [
     {
       question: 'Who is Ulisses Flores?',
-      answer: 'Carlos Ulisses Flores is an economic scientist, systems engineer, and researcher specializing in AI, economics, and complex systems. He works as a CTO, angel investor, and professor, with academic work indexed in ORCID and Lattes.'
+      answer: 'Carlos Ulisses Flores is an economic scientist, systems engineer, and researcher specializing in AI, economics, and complex systems. He works as a CTO and angel investor, with public academic work in ORCID and Lattes.'
     },
     {
       question: 'What is sovereign identity?',
@@ -20,7 +20,7 @@ export const faq = {
     },
     {
       question: 'Is Ulisses Flores a university professor?',
-      answer: 'Yes, Ulisses teaches subjects related to information systems, economics, and technology. His academic background includes credentials in economic sciences and systems analysis.'
+      answer: 'Not as a career faculty member. Ulisses delivers lectures, masterclasses, and executive workshops at universities and companies, and maintains public academic work in ORCID and Lattes. His background includes credentials in economic sciences and systems analysis.'
     },
     {
       question: 'How to hire Ulisses Flores as a speaker?',
@@ -110,7 +110,7 @@ export const faq = {
     },
     {
       question: 'Do the certifications cover Artificial Intelligence and Machine Learning?',
-      answer: 'Yes. The portfolio includes certifications in Machine Learning, Deep Learning, LLMs, MLOps, computer vision, NLP, and data engineering — aligned with his role as a Strategic AI Consultant and Master\'s student in AI at AGTU (USA).'
+      answer: 'Yes. The portfolio includes certifications in Machine Learning, Deep Learning, LLMs, MLOps, computer vision, NLP, and data engineering — aligned with his role as a Strategic AI Consultant and Master\'s student in AI at AGTU.'
     },
     {
       question: 'Are there certifications in Blockchain and Information Security?',
@@ -129,8 +129,8 @@ export const faq = {
       answer: 'Each certification has a public verification link directly on its individual page. Certification IDs and verification URLs allow independent validation with the issuing provider, ensuring full transparency and traceability.'
     },
     {
-      question: 'How to hire Ulisses Flores as a Consultant or Professor?',
-      answer: 'Contact via the main page form or via LinkedIn. Ulisses works as a Strategic AI Consultant, Guest Professor, Speaker, and On-Demand Developer for companies, universities, and events throughout Brazil and abroad.'
+      question: 'How to hire Ulisses Flores as a Consultant or Speaker?',
+      answer: 'Contact via the main page form or via LinkedIn. Ulisses works as a Strategic AI Consultant, Speaker, and On-Demand Developer for companies, universities, and events throughout Brazil and abroad.'
     }
   ] satisfies FaqItem[],
   ia2027: [
@@ -220,7 +220,7 @@ export const faq = {
   projectPsi: [
     {
       question: 'What exactly is Projeto PSI?',
-      answer: 'It is an ultra-secure hardware device for digital asset custody and sovereign identity. It transcends civilian banking standards and aligns with military and nuclear launch security architectures.'
+      answer: 'It is an ultra-secure hardware device for digital asset custody and sovereign identity. It goes beyond civilian banking standards, with a threat model inspired by high-criticality architectures.'
     },
     {
       question: 'Is the project code closed or Open-Source?',
@@ -244,7 +244,7 @@ export const faq = {
     },
     {
       question: 'How does the device handle quantum threats?',
-      answer: 'It is equipped with XMSS signatures (Hash-Based Post-Quantum Cryptography), ensuring that custody remains mathematically unbreakable even after the arrival of viable quantum computers (Q-Day).'
+      answer: 'It is equipped with XMSS signatures (hash-based post-quantum cryptography), making custody resistant to quantum-computer attacks even after Q-Day.'
     },
     {
       question: 'What is \'Phantom Input\' against extortion attempts?',
@@ -256,7 +256,7 @@ export const faq = {
     },
     {
       question: 'What is the final verdict on PSI\'s security level?',
-      answer: 'With EMP protection, triple modular redundancy (TMR), and radiation-tolerant memory, PSI achieves a \'Nuclear-Grade Sovereign Hardware\' level, being functional even in severe conditions such as low Earth orbit (LEO).'
+      answer: 'With EMP protection, triple modular redundancy (TMR), and radiation-tolerant memory, PSI is designed as high-resilience sovereign hardware.'
     }
   ] satisfies FaqItem[],
   projetoPsiComercial: [
@@ -270,7 +270,7 @@ export const faq = {
     },
     {
       question: 'How does PSI differentiate itself from existing hardware wallets like Ledger and Trezor?',
-      answer: 'Ledger and Trezor are consumer security devices. PSI is a military-grade security device. It does not store keys (zero attack surface), uses post-quantum cryptography (XMSS), has EMP shielding, aerospace redundancy (TMR), and biometric duress detection. It is a completely different category.'
+      answer: 'Ledger and Trezor are consumer security devices. PSI is designed for a much more severe threat model. It does not store keys (minimized attack surface), uses post-quantum cryptography (XMSS), has EMP shielding, aerospace redundancy (TMR), and biometric duress detection. It is a completely different category.'
     },
     {
       question: 'What is the Total Addressable Market (TAM) for sovereign custody?',
@@ -282,11 +282,11 @@ export const faq = {
     },
     {
       question: 'Does PSI have protected intellectual property?',
-      answer: 'Yes. PSI\'s core technology, including the Phantom Input Protocol and the ephemeral key reconstruction architecture via SRAM PUF, has inventive notation registered under the Codex Hash brand. The complete technical whitepaper is published as prior art.'
+      answer: 'Yes, through defensive publication (prior art): PSI\'s core technology — the Phantom Input Protocol and the ephemeral key reconstruction architecture via SRAM PUF — is documented as original authorship in the published technical whitepaper, under Codex Hash. There is no patent or registered trademark filed on the technology.'
     },
     {
       question: 'Who is the team behind Projeto PSI?',
-      answer: 'The project is led by Ulisses Flores — Strategic AI Consultant, Master\'s student in Artificial Intelligence at AGTU (USA), Software Architect, and co-inventor of blockchain technologies (Codex Hash). With 28+ years of experience in distributed systems, cryptography, and hardware engineering.'
+      answer: 'The project is led by Ulisses Flores — Strategic AI Consultant, Master\'s student in Artificial Intelligence at AGTU, Software Architect, and creator of blockchain technologies at Codex Hash. With 28+ years of experience in distributed systems, cryptography, and hardware engineering.'
     },
     {
       question: 'Is PSI technically feasible with current technology?',
@@ -340,11 +340,11 @@ export const faq = {
   home: [
     {
       question: 'Who is Ulisses Flores?',
-      answer: 'Carlos Ulisses Flores is an Economic Scientist, Systems Analyst, and Polymath Researcher specializing in Artificial Intelligence, Blockchain, Economics, and Complex Systems. He works as a Strategic AI Consultant, Speaker, Guest Professor, and Master\'s student in AI at AGTU (USA).'
+      answer: 'Carlos Ulisses Flores is an Economic Scientist, Systems Analyst, and Researcher specializing in Artificial Intelligence, Blockchain, Economics, and Complex Systems. He works as a Strategic AI Consultant, Speaker, and Master\'s student in AI at AGTU.'
     },
     {
       question: 'What is Ulisses Flores\' academic background?',
-      answer: 'Ulisses is a Master\'s student in Artificial Intelligence at AGTU (USA), holds an MBA in IT Management from FIAP, and has degrees in Economic Sciences and Systems Analysis. His academic work is indexed in ORCID (0000-0002-6034-7765) and on the Lattes Platform.'
+      answer: 'Ulisses is a Master\'s student in Artificial Intelligence at AGTU, holds an MBA in Blockchain from FIAP, and has degrees in Economic Sciences and Systems Analysis. His academic work is indexed in ORCID (0000-0002-6034-7765) and on the Lattes Platform.'
     },
     {
       question: 'What are Ulisses Flores\' research areas?',
@@ -367,8 +367,8 @@ export const faq = {
       answer: 'Publications are available at ulissesflores.com, with public indexing in ORCID and Lattes. The portfolio includes research articles, technical whitepapers, and essays in the areas of AI, economics, blockchain, theology, and systems engineering.'
     },
     {
-      question: 'In which regions does Ulisses Flores work as a consultant and professor?',
-      answer: 'Based in Jundiaí/Itupeva (SP), Ulisses serves clients and institutions throughout Greater São Paulo and the interior, with projects and lectures across Brazil and internationally. Remote consulting and classes are available globally.'
+      question: 'In which regions does Ulisses Flores work as a consultant and speaker?',
+      answer: 'Based in Jundiaí (SP), Ulisses serves clients and institutions throughout Greater São Paulo and the interior, with projects and lectures across Brazil and internationally. Remote consulting and workshops are available globally.'
     },
     {
       question: 'How to verify Ulisses Flores\' digital identity?',
@@ -387,7 +387,7 @@ export const faq = {
     },
     {
       question: 'Which sectors does Ulisses Flores serve as a consultant?',
-      answer: 'Anchor verticals (80% of engagements): Finance & Fintech (HFT, MPC custody, Web3, risk modeling), Public Sector & Governance (strategic planning, LGPD/GDPR, algorithmic audit), and Hardware/IoT/Deep Tech (edge computing, embedded cryptography). Additional verticals on demand include precision agribusiness and executive education institutions.'
+      answer: 'Anchor verticals (where most engagements concentrate): Finance & Fintech (HFT, MPC custody, Web3, risk modeling), Public Sector & Governance (strategic planning, LGPD/GDPR, algorithmic audit), and Hardware/IoT/Deep Tech (edge computing, embedded cryptography). Additional verticals on demand include precision agribusiness and executive education institutions.'
     },
     {
       question: 'Does Ulisses Flores accept equity instead of fees?',
@@ -430,7 +430,7 @@ export const faq = {
     },
     {
       question: 'Does Ulisses give pro bono talks?',
-      answer: 'Yes, with a cap of 4 events per year and 90-day minimum lead time. Academic, local church, and Christian-impact organizations prioritized. Christian non-profit has reduced fee ($1-2k USD) without counting against the pro bono cap.'
+      answer: 'Yes, with a cap of 4 events per year and 90-day minimum lead time. Academic, local church, and Christian-impact organizations prioritized. Christian non-profit has reduced fee without counting against the pro bono cap.'
     },
     {
       question: 'What is the recording and image rights policy?',
@@ -438,7 +438,7 @@ export const faq = {
     },
     {
       question: 'How does talk cancellation work?',
-      answer: 'Clear cancellation policy: up to 30 days before the event — full refund. Between 30 and 7 days — 50% retained. Less than 7 days — 100% retained. Firm booking with 50% upfront and signed contract; balance up to 7 days after the event.'
+      answer: 'Clear cancellation policy: up to 30 days before the event — full refund of the deposit. Between 30 and 7 days — half of the deposit retained. Less than 7 days — retention of the 50% deposit already paid. Firm booking with 50% upfront and signed contract; balance up to 7 days after the event.'
     },
     {
       question: 'Does Ulisses speak at universities?',
