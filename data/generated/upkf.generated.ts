@@ -12,7 +12,7 @@ export const upkfMeta = {
   "displayName": "Carlos Ulisses Flores",
   "preferredName": "Ulisses",
   "publicDisplayName": "Carlos Ulisses Flores",
-  "canonicalLegalName": "Carlos Ulisses Flores Ribeiro",
+  "canonicalLegalName": "Carlos Ulisses Flores",
   "primaryWebsite": "https://ulissesflores.com",
   "description": {
     "pt-BR": "Cientista econômico, analista de sistemas e pesquisador interdisciplinar, atuando na interseção entre sistemas complexos, resiliência ciberfinanceira, economia austríaca, sistemas distribuídos e teologia histórica. Co-fundador e CTO da Codex Hash Ltda.",
@@ -806,7 +806,7 @@ export const upkfMeta = {
     "sourceMd": "/upkf-source.md"
   },
   "jsonldCoverage": {
-    "markdownBytes": 85270,
+    "markdownBytes": 85262,
     "markdownLines": 1390,
     "sectionCount": 102,
     "siteGraphNodes": 43,
@@ -814,7 +814,7 @@ export const upkfMeta = {
     "fullGraphNodes": 289,
     "siteJsonldBytes": 28999,
     "publicJsonldBytes": 185577,
-    "fullJsonldBytes": 289577,
+    "fullJsonldBytes": 289569,
     "corpusFiles": 0,
     "corpusSnippets": 0,
     "corpusDirs": [],

@@ -95,7 +95,7 @@ integrity_policy: >
 ## Canonical Identity
 <!-- classification: PUBLIC -->
 
-- canonical_legal_name: Carlos Ulisses Flores Ribeiro
+- canonical_legal_name: Carlos Ulisses Flores
 - preferred_name: Ulisses
 - alternate_names: ["Carlos Ulisses Flores", "Ulisses Flores", "C. U. Flores", "Flores, C. U.", "FLORES, C. U."]
 - birth_date: 1983-10-03
