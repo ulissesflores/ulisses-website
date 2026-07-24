@@ -16,6 +16,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import matter from 'gray-matter';
 import { compileMDX } from 'next-mdx-remote/rsc';
+import remarkGfm from 'remark-gfm';
 import type { ReactElement } from 'react';
 
 export interface ContentFrontmatter {
@@ -111,6 +112,9 @@ export async function loadMdx(
     components: components ?? {},
     options: {
       parseFrontmatter: false,
+      // remark-gfm: tabelas, listas de tarefas e autolink de URL nua. Sem ele o
+      // corpo em Markdown perde as tabelas (viram parágrafo solto).
+      mdxOptions: { remarkPlugins: [remarkGfm] },
     },
   });
 

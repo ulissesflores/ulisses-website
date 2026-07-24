@@ -19,6 +19,7 @@ export const common = {
       {
         label: 'Publicações',
         items: [
+          { label: 'Artigos', href: '/artigos', description: 'Análises autorais sobre IA, engenharia e sistemas complexos' },
           { label: 'Research', href: '/research', description: 'IA, Economia e Sistemas Complexos' },
           { label: 'Whitepapers', href: '/whitepapers', description: 'Engenharia, IoT e Segurança' },
           { label: 'Projeto Ψ (PSI)', href: '/whitepapers/projeto-psi', description: 'Whitepaper técnico: Hardware Soberano' },

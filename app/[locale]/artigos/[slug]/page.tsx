@@ -1,0 +1,188 @@
+import type { Metadata } from 'next';
+import Link from 'next/link';
+import { notFound } from 'next/navigation';
+import { ArrowLeft, Calendar } from 'lucide-react';
+import {
+  artigoDateToIso,
+  artigos,
+  artigosCanonicalPath,
+  findArtigo,
+  formatArtigoDate,
+} from '@/data/artigos';
+import { upkfMeta } from '@/data/generated/upkf.generated';
+import { AuthorHubCard } from '@/components/author-hub-card';
+import { loadMdx } from '@/lib/content/mdx-loader';
+import { MdxContentWrapper, mdxComponents } from '@/lib/content/mdx-components';
+import { defaultLocale, isLocale, localeToOgLocale, type Locale } from '@/data/i18n';
+import { getDictionary } from '@/lib/get-dictionary';
+import { localePath } from '@/lib/locale-path';
+import { buildCanonical, buildLanguageAlternates } from '@/data/seo';
+
+const CONTENT_TYPE = 'artigos';
+
+interface PageProps {
+  params: Promise<{ locale: string; slug: string }>;
+}
+
+export function generateStaticParams() {
+  return artigos.map((artigo) => ({ slug: artigo.slug }));
+}
+
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const { locale: raw, slug } = await params;
+  const locale = (isLocale(raw) ? raw : defaultLocale) as Locale;
+  const dict = await getDictionary(locale);
+  const artigo = findArtigo(slug);
+
+  if (!artigo) {
+    return { title: dict.common.articleDetail.notFound };
+  }
+
+  const path = `${artigosCanonicalPath}/${artigo.slug}`;
+
+  return {
+    title: artigo.title,
+    description: artigo.summary,
+    keywords: [...artigo.tags],
+    authors: [
+      {
+        name: upkfMeta.publicDisplayName || upkfMeta.displayName,
+        url: `${upkfMeta.primaryWebsite}/identidade`,
+      },
+    ],
+    alternates: {
+      canonical: buildCanonical(locale, path),
+      languages: buildLanguageAlternates(path),
+    },
+    openGraph: {
+      type: 'article',
+      url: `${upkfMeta.primaryWebsite}${path}`,
+      title: artigo.title,
+      description: artigo.summary,
+      locale: localeToOgLocale[locale],
+      publishedTime: artigo.date,
+      authors: [upkfMeta.publicDisplayName || upkfMeta.displayName],
+      tags: [...artigo.tags],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: artigo.title,
+      description: artigo.summary,
+    },
+  };
+}
+
+export default async function ArtigoPage({ params }: PageProps) {
+  const { locale: raw, slug } = await params;
+  const locale = (isLocale(raw) ? raw : defaultLocale) as Locale;
+  const dict = await getDictionary(locale);
+  const t = dict.artigos;
+  const artigo = findArtigo(slug);
+
+  if (!artigo) {
+    notFound();
+  }
+
+  // Corpo traduzido quando existe; senão o original em pt-BR. Devolver 404 nos
+  // outros locales quebraria o cluster hreflang que o metadata acima anuncia.
+  const localizedMdx = await loadMdx(CONTENT_TYPE, artigo.slug, locale, mdxComponents);
+  const mdx = localizedMdx ?? (await loadMdx(CONTENT_TYPE, artigo.slug, defaultLocale, mdxComponents));
+
+  if (!mdx) {
+    notFound();
+  }
+
+  const bodyLocale = localizedMdx ? locale : defaultLocale;
+
+  const origin = upkfMeta.primaryWebsite;
+  const path = `${artigosCanonicalPath}/${artigo.slug}`;
+  const pageUrl = `${origin}${path}`;
+  const breadcrumbBase = locale === defaultLocale ? origin : `${origin}/${locale}`;
+  const publishedIso = artigoDateToIso(artigo.date);
+
+  const articleJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    '@id': `${pageUrl}#article`,
+    headline: artigo.title,
+    description: artigo.summary,
+    url: pageUrl,
+    inLanguage: locale,
+    datePublished: publishedIso,
+    dateModified: publishedIso,
+    keywords: artigo.tags.join(', '),
+    image: `${origin}/carlos-ulisses-flores-cto.jpg`,
+    author: {
+      '@type': 'Person',
+      '@id': `${origin}/#person`,
+      name: upkfMeta.publicDisplayName || upkfMeta.displayName,
+    },
+    publisher: { '@id': `${origin}/#person` },
+    isPartOf: { '@id': `${origin}${artigosCanonicalPath}#collection` },
+    mainEntityOfPage: { '@type': 'WebPage', '@id': pageUrl },
+  };
+
+  const breadcrumbJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: dict.common.breadcrumb.home, item: `${breadcrumbBase}/` },
+      { '@type': 'ListItem', position: 2, name: t.hero.badge, item: `${breadcrumbBase}${artigosCanonicalPath}` },
+      { '@type': 'ListItem', position: 3, name: artigo.title, item: `${breadcrumbBase}${path}` },
+    ],
+  };
+
+  return (
+    <div className='min-h-screen bg-neutral-950 text-neutral-200'>
+      <script type='application/ld+json' dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }} />
+      <script type='application/ld+json' dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
+
+      <main className='max-w-3xl mx-auto px-6 py-20'>
+        <Link
+          href={localePath(artigosCanonicalPath, locale)}
+          className='inline-flex items-center gap-2 text-sm text-neutral-400 hover:text-emerald-400 transition-colors mb-10 group'
+        >
+          <ArrowLeft size={16} className='group-hover:-translate-x-1 transition-transform rtl:-scale-x-100' />
+          {t.post.backToIndex}
+        </Link>
+
+        <header className='mb-10 border-b border-white/10 pb-10'>
+          <div className='flex flex-wrap items-center gap-4 mb-6 text-xs text-neutral-400'>
+            <span className='px-3 py-1 bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 font-bold uppercase tracking-widest rounded-full'>
+              {t.hero.badge}
+            </span>
+            <span className='flex items-center gap-2 font-mono uppercase'>
+              <Calendar size={12} /> {dict.common.articleDetail.publishedOn} {formatArtigoDate(artigo.date, locale)}
+            </span>
+          </div>
+
+          <h1 className='text-3xl md:text-4xl font-bold text-white mb-6 leading-tight'>{artigo.title}</h1>
+          <p className='text-lg text-neutral-400 leading-relaxed mb-8'>{artigo.summary}</p>
+
+          <div className='flex flex-wrap gap-2 mb-8'>
+            {artigo.tags.map((tag) => (
+              <span
+                key={tag}
+                className='text-[11px] bg-neutral-900 text-neutral-400 px-3 py-1 rounded-full border border-neutral-800'
+              >
+                #{tag}
+              </span>
+            ))}
+          </div>
+
+          <AuthorHubCard
+            label={dict.common.authorHubCard.defaultLabel}
+            compact
+            description={dict.common.authorHubCard.defaultDescription}
+            href={localePath('/identidade', locale)}
+          />
+        </header>
+
+        {/* Tabelas rolam sozinhas em tela estreita — sem isso o corpo estoura a viewport. */}
+        <div className='[&_table]:block [&_table]:overflow-x-auto'>
+          <MdxContentWrapper locale={bodyLocale}>{mdx.content}</MdxContentWrapper>
+        </div>
+      </main>
+    </div>
+  );
+}

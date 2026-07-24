@@ -32,6 +32,11 @@ export const common = {
         label: 'Publications',
         items: [
           {
+            label: 'Articles',
+            href: '/artigos',
+            description: 'First-person analysis of AI, engineering, and complex systems'
+          },
+          {
             label: 'Research',
             href: '/research',
             description: 'AI, Economics, and Complex Systems'

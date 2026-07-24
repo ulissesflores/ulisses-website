@@ -32,6 +32,11 @@ export const common = {
         label: 'Publicaciones',
         items: [
           {
+            label: 'Artículos',
+            href: '/artigos',
+            description: 'Análisis de autor sobre IA, ingeniería y sistemas complejos'
+          },
+          {
             label: 'Investigación',
             href: '/research',
             description: 'IA, Economía y Sistemas Complejos'

@@ -3,6 +3,7 @@ import { publications, publicationCollections } from '@/data/publications';
 import { knowledgeData } from '@/data/knowledge';
 import { upkfMeta } from '@/data/generated/upkf.generated';
 import { acervoCanonicalPath, acervoLatestPublishedAt } from '@/data/acervo-teologico';
+import { artigosByDateDesc, artigosCanonicalPath, artigosLatestDate } from '@/data/artigos';
 import { buildLanguageAlternates, noindexPublicationCategories } from '@/data/seo';
 
 // ── Helpers ─────────────────────────────────────────────────────────────────────
@@ -138,6 +139,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
     maybeMakeSitemapEntry(acervoCanonicalPath, acervoLatestPublishedAt, 'weekly', 0.76),
   ].filter((entry): entry is MetadataRoute.Sitemap[number] => Boolean(entry));
 
+  // Seção autoral `/artigos` — indexável (não entra em noindexPublicationCategories).
+  // O literal '/artigos' precisa aparecer aqui: validate-pre-deploy casa o
+  // `canonicalPath` da página contra o texto deste arquivo.
+  const artigosEntries = [
+    maybeMakeSitemapEntry('/artigos', artigosLatestDate || latestSiteDate, 'weekly', 0.85),
+    ...artigosByDateDesc.map((artigo) =>
+      maybeMakeSitemapEntry(`${artigosCanonicalPath}/${artigo.slug}`, artigo.date, 'monthly', 0.8),
+    ),
+  ].filter((entry): entry is MetadataRoute.Sitemap[number] => Boolean(entry));
+
   const identidadeEntry = maybeMakeSitemapEntry('/identidade', upkfMeta.generatedAt, 'daily', 0.92);
 
   const commercialEntries = [
@@ -160,6 +171,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     makeSitemapEntry('/', latestSiteDate, 'weekly', 1),
     ...(identidadeEntry ? [identidadeEntry] : []),
     ...commercialEntries,
+    ...artigosEntries,
     ...simulationEntries,
     ...collectionEntries,
     ...publicationEntries,

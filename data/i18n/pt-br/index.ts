@@ -13,6 +13,7 @@ import { acervoTeologico } from './acervo-teologico';
 import { category } from './category';
 import { consultoria } from './consultoria';
 import { palestras } from './palestras';
+import { artigos } from './artigos';
 
 const ptBrDict = {
   common,
@@ -30,6 +31,7 @@ const ptBrDict = {
   category,
   consultoria,
   palestras,
+  artigos,
 };
 
 export default ptBrDict;

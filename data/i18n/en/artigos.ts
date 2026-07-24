@@ -1,0 +1,26 @@
+export const artigos = {
+  meta: {
+    title: 'Articles on AI, software engineering and complex systems',
+    description:
+      'First-person analysis of artificial intelligence, software engineering and complex systems — primary sources cited, uncertainty stated, published when the subject demands it rather than on a schedule.',
+    keywords: [
+      'Claude Opus 5',
+      'artificial intelligence articles',
+      'language model analysis',
+      'mission-critical software engineering',
+      'AI API cost',
+      'Ulisses Flores articles',
+    ],
+    ogTitle: 'Articles | Ulisses Flores',
+    ogDescription:
+      'First-person analysis of AI, software engineering and complex systems — primary sources cited, uncertainty stated.',
+  },
+  hero: {
+    badge: 'Articles',
+    h1: 'Articles on AI, engineering and complex systems',
+    lead: 'Original writing, published when there is something worth saying. Every analysis separates what was checked against the primary source from what is my own reading — and says which is which.',
+  },
+  post: {
+    backToIndex: 'Back to all articles',
+  },
+} as const;

@@ -32,6 +32,11 @@ export const common = {
         label: 'פרסומים',
         items: [
           {
+            label: 'מאמרים',
+            href: '/artigos',
+            description: 'ניתוחים אישיים על בינה מלאכותית, הנדסה ומערכות מורכבות'
+          },
+          {
             label: 'Research',
             href: '/research',
             description: 'בינה מלאכותית, כלכלה ומערכות מורכבות'
