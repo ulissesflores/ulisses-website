@@ -65,7 +65,18 @@ async function loadGeneratedData() {
     ? knowContent.slice(certStart, certEnd) : '';
   const certCount = (certBlock.match(/"provider"/g) || []).length;
 
-  return { publications, blogPostCount, sermonCount, certCount };
+  // Artigos autorais: registro manual em data/artigos.ts, fora do gerador UPKF.
+  // Lido por regex pelo mesmo motivo que as publicações acima — este script é .mjs
+  // e não compila TypeScript.
+  const artigos = [];
+  const artigosContent = readFileSync(join(ROOT, 'data/artigos.ts'), 'utf8');
+  const artigoRe = /slug:\s*'([^']+)',\s*\n\s*title:\s*\n?\s*'((?:[^'\\]|\\.)*)'/g;
+  let a;
+  while ((a = artigoRe.exec(artigosContent)) !== null) {
+    artigos.push({ slug: a[1], title: a[2].replaceAll("\\'", "'"), path: `/artigos/${a[1]}` });
+  }
+
+  return { publications, artigos, blogPostCount, sermonCount, certCount };
 }
 
 // ── Generate llms.txt ───────────────────────────────────────────────────────────
@@ -141,6 +152,7 @@ function generateLlmsTxt(data) {
     '- Contato palestras: contato@ulissesflores.com (proposta formal em até 3 dias úteis)',
     '',
     '## Primary Collections',
+    `- Artigos: ${origin}/artigos`,
     `- Research: ${origin}/research`,
     `- Whitepapers: ${origin}/whitepapers`,
     `- Essays: ${origin}/essays`,
@@ -154,6 +166,13 @@ function generateLlmsTxt(data) {
   // Dynamic: list all publications
   for (const pub of data.publications) {
     lines.push(`- ${pub.title}: ${origin}${pub.path}`);
+  }
+
+  lines.push('');
+  lines.push('## Artigos');
+  lines.push('Analises autorais sobre IA, engenharia e sistemas complexos.');
+  for (const artigo of data.artigos) {
+    lines.push(`- ${artigo.title}: ${origin}${artigo.path}`);
   }
 
   lines.push('');

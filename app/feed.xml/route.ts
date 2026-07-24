@@ -1,4 +1,5 @@
 import { publications } from '@/data/publications';
+import { artigoDateToIso, artigos, artigosCanonicalPath } from '@/data/artigos';
 import { upkfMeta } from '@/data/generated/upkf.generated';
 
 export const revalidate = 3600;
@@ -20,9 +21,50 @@ export function toRfc2822(date: string): string {
   return parsed.toUTCString();
 }
 
+/** Item do feed, normalizado — publicações e artigos entram na mesma lista. */
+interface FeedEntry {
+  title: string;
+  link: string;
+  /** Data de publicação; ordena o feed e vira o `pubDate`. */
+  publishedAt: string;
+  /** Data da última alteração — só alimenta o `lastBuildDate` do canal. */
+  updatedAt: string;
+  summary: string;
+  tags: readonly string[];
+  /** PDF anexo; artigos autorais não têm. */
+  pdfUrl?: string;
+  /** Desempate entre itens da mesma data (só as publicações usam). */
+  ordinal: number;
+}
+
 export async function GET() {
   const siteUrl = upkfMeta.primaryWebsite;
-  const sorted = [...publications].sort((a, b) => {
+
+  const publicationEntries: FeedEntry[] = publications.map((publication) => ({
+    title: publication.title,
+    link: `${siteUrl}/${publication.category}/${publication.id}`,
+    publishedAt: publication.publishedAt,
+    updatedAt: publication.updatedAt,
+    summary: publication.summary,
+    tags: publication.tags,
+    pdfUrl: `${siteUrl}${publication.primaryPdfUrl || publication.downloadUrl}`,
+    ordinal: publication.ordinal,
+  }));
+
+  const artigoEntries: FeedEntry[] = artigos.map((artigo) => {
+    const iso = artigoDateToIso(artigo.date);
+    return {
+      title: artigo.title,
+      link: `${siteUrl}${artigosCanonicalPath}/${artigo.slug}`,
+      publishedAt: iso,
+      updatedAt: iso,
+      summary: artigo.summary,
+      tags: artigo.tags,
+      ordinal: 0,
+    };
+  });
+
+  const sorted = [...publicationEntries, ...artigoEntries].sort((a, b) => {
     if (a.publishedAt === b.publishedAt) {
       return a.ordinal - b.ordinal;
     }
@@ -32,18 +74,18 @@ export async function GET() {
   const latestDate = sorted[0]?.updatedAt || upkfMeta.generatedAt;
 
   const itemsXml = sorted
-    .map((publication) => {
-      const link = `${siteUrl}/${publication.category}/${publication.id}`;
-      const pdf = `${siteUrl}${publication.primaryPdfUrl || publication.downloadUrl}`;
-      const categories = publication.tags.map((tag) => `<category>${escapeXml(tag)}</category>`).join('');
+    .map((entry) => {
+      const categories = entry.tags.map((tag) => `<category>${escapeXml(tag)}</category>`).join('');
+      const enclosure = entry.pdfUrl
+        ? `\n  <enclosure url="${escapeXml(entry.pdfUrl)}" type="application/pdf" length="0" />`
+        : '';
 
       return `<item>
-  <title>${escapeXml(publication.title)}</title>
-  <link>${escapeXml(link)}</link>
-  <guid isPermaLink="true">${escapeXml(link)}</guid>
-  <pubDate>${toRfc2822(publication.publishedAt)}</pubDate>
-  <description>${escapeXml(publication.summary)}</description>
-  <enclosure url="${escapeXml(pdf)}" type="application/pdf" length="0" />
+  <title>${escapeXml(entry.title)}</title>
+  <link>${escapeXml(entry.link)}</link>
+  <guid isPermaLink="true">${escapeXml(entry.link)}</guid>
+  <pubDate>${toRfc2822(entry.publishedAt)}</pubDate>
+  <description>${escapeXml(entry.summary)}</description>${enclosure}
   ${categories}
 </item>`;
     })
