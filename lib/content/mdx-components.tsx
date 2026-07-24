@@ -10,7 +10,8 @@
  * RTL Support: Hebrew content automatically gets dir="rtl" via the wrapper.
  */
 
-import type { ComponentType } from 'react';
+import type { MDXComponents } from 'mdx/types';
+import { EffortCostChart } from './effort-cost-chart';
 
 // Lazy imports for simulation components (heavy, code-split)
 // These will be resolved at render time by Next.js
@@ -26,8 +27,14 @@ const SimulationRenderer = ({ ...props }) => (
  * MDX component map for use with next-mdx-remote.
  * Add any React components that should be available in .mdx files.
  */
-export const mdxComponents: Record<string, ComponentType<Record<string, unknown>>> = {
+/**
+ * `MDXComponents` (do próprio MDX) em vez de um `Record` próprio: os props vêm do
+ * corpo do .mdx, não do TypeScript, então um mapa com props tipados exigiria cast
+ * em todo componente que declara props obrigatórios.
+ */
+export const mdxComponents: MDXComponents = {
   SimulationRenderer,
+  EffortCostChart,
 };
 
 /**

@@ -15,6 +15,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import matter from 'gray-matter';
+import type { MDXComponents } from 'mdx/types';
 import { compileMDX } from 'next-mdx-remote/rsc';
 import remarkGfm from 'remark-gfm';
 import type { ReactElement } from 'react';
@@ -99,7 +100,7 @@ export async function loadMdx(
   contentType: string,
   slug: string,
   locale: string,
-  components?: Record<string, React.ComponentType<Record<string, unknown>>>,
+  components?: MDXComponents,
 ): Promise<MdxContent | null> {
   const filePath = getContentPath(contentType, slug, locale);
   if (!fs.existsSync(filePath)) return null;

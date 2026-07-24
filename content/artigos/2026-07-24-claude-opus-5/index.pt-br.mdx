@@ -11,7 +11,8 @@ anúncio: o modelo *"comes close to the frontier intelligence of Claude Fable 5 
 price"*. A reação mais votada da comunidade, poucas horas depois, foi um deboche do gráfico
 de benchmarks que acompanha o anúncio.
 
-As duas coisas são verdadeiras ao mesmo tempo, e é justamente aí que mora o que interessa.
+Fui conferir o gráfico. O deboche não se sustenta — e o motivo é mais interessante que a
+piada.
 
 ---
 
@@ -28,7 +29,7 @@ sem adjetivo:
 | Saída máxima | 128 mil tokens |
 | Níveis de esforço | `low` · `medium` · `high` · `xhigh` · `max` (padrão: `high`) |
 | Disponibilidade | Claude API, Amazon Bedrock, Google Cloud, Microsoft Foundry |
-| Nos planos | Padrão do Max · modelo mais forte disponível no Pro |
+| Nos planos | Claude Max e Claude Pro |
 
 Repare no preço: **é exatamente o mesmo do Opus 4.8**. O "metade do preço" do anúncio não é
 uma redução em relação ao modelo anterior — é uma comparação com o Fable 5, que custa US$ 10
@@ -41,7 +42,7 @@ algo próximo do topo da linha dela. Se isso se confirmar em uso real, o efeito 
 
 ### As mudanças de API que ninguém coloca no press release
 
-Três detalhes que só aparecem quando você lê a documentação em vez do anúncio, e que
+Cinco detalhes que só aparecem quando você lê a documentação em vez do anúncio, e que
 importam mais do que qualquer barra de gráfico para quem tem código em produção:
 
 1. **Pensar virou o padrão.** No Opus 4.8, omitir o parâmetro `thinking` significava rodar
@@ -50,69 +51,149 @@ importam mais do que qualquer barra de gráfico para quem tem código em produç
    raciocínio **mais** a resposta. Todo endpoint que nunca configurou `thinking` e apertou o
    `max_tokens` em torno do tamanho da resposta pode começar a cortar texto no meio.
 2. **Desligar o raciocínio agora tem teto.** `thinking: {type: "disabled"}` só é aceito com
-   esforço `high` ou menor. Combinado com `xhigh` ou `max`, a API devolve erro 400.
+   esforço `high` ou menor. Combinado com `xhigh` ou `max`, a API devolve erro 400. E a
+   validação é por requisição: uma chamada posterior que sobe o esforço quebra sozinha,
+   mesmo que as anteriores tenham passado.
 3. **O mínimo de cache caiu de 1024 para 512 tokens.** Prompt que você tinha descartado como
    "curto demais para cachear" agora cacheia — sem mudar uma linha de código.
+4. **A recusa virou parte do contrato.** O Opus 5 tem salvaguardas de cibersegurança
+   elevadas e classificadores que podem **recusar** a requisição: volta HTTP 200, com
+   `stop_reason: "refusal"` e uma categoria. Quem lê `content[0]` direto quebra. Existe um
+   parâmetro `fallbacks` que reencaminha a requisição recusada a outro modelo dentro da
+   mesma chamada — e na categoria cyber o destino recomendado é o próprio Opus 4.8.
+5. **Dá para trocar o conjunto de ferramentas no meio da conversa** sem invalidar o cache de
+   prompt (beta `mid-conversation-tool-changes-2026-07-01`). Antes, mexer em `tools` no meio
+   do caminho reprocessava o prefixo inteiro.
 
-E um detalhe operacional que vale dinheiro: o Opus 5 tem **balde de rate limit próprio**, separado
-do pool combinado dos Opus 4.x. Migrar tráfego para lá não libera folga no balde antigo nem
-herda a cota dele.
+E dois detalhes operacionais que valem dinheiro: o Opus 5 tem **balde de rate limit próprio**,
+separado do pool combinado dos Opus 4.x — migrar tráfego para lá não libera folga no balde
+antigo nem herda a cota dele. E o **Priority Tier não cobre o Opus 5**, embora cubra o Fable 5
+e o Opus 4.8.
 
----
-
-## Os números — e por que a comunidade não engoliu
-
-O anúncio afirma, em termos relativos:
-
-- Mais que **dobra** o desempenho do Opus 4.8 no Frontier-Bench v0.1, a um custo menor por tarefa.
-- Fica a **0,5%** do pico do Fable 5 no CursorBench 3.2 (no esforço `max`), pela metade do custo por tarefa.
-- Tem pontuação **três vezes maior** que o segundo colocado no ARC-AGI-3 — o teste de problemas
-  genuinamente novos, que o modelo não pode ter visto no treino.
-- Supera o melhor resultado do Fable 5 no OSWorld 2.0 por pouco mais de um terço do custo.
-
-> **Nota.** A página do anúncio publica esses ganhos como **afirmações relativas** e mostra os
-> valores absolutos apenas nos gráficos. Veículos que cobriram o lançamento reportaram 43,3% no
-> Frontier-Bench v0.1 (contra 18,7% do Opus 4.8 e 33,7% do Fable 5) e 30,2% no ARC-AGI-3. Não
-> consegui confirmar esses absolutos no texto da própria Anthropic — trate-os como imprensa,
-> não como fonte primária.
-
-A thread oficial no r/ClaudeAI acumulou **669 pontos e 175 comentários**, e o comentário mais
-votado — com folga — não foi sobre capacidade. Foi uma paródia do tom bajulador do próprio
-Claude aplicada ao gráfico de benchmarks, com a piada de que "os números serem maiores ou
-menores uns que os outros é *load-bearing*". Logo abaixo, um usuário aponta que a barra
-destacada como vencedora em coding agêntico marcava 53,4% contra 53,5% da concorrente, e
-resume: *"Typical Anthropic math"*.
-
-Não consegui verificar essa leitura do gráfico de forma independente — as ferramentas que
-usei leem o texto da página, não as imagens. Registro como o que é: **a queixa mais votada da
-comunidade**, não um fato apurado. Mas ela captura um ceticismo que já virou estrutural. Outro
-comentário bem votado resume melhor do que eu conseguiria: os gráficos "sempre dizem o que
-querem que digam"; vamos esperar teste de terceiros.
-
-E há a fadiga, que também apareceu no topo: *"I'm tired boss"*. Estamos em julho de 2026 e
-esse é o quarto modelo de ponta da Anthropic em poucos meses — Opus 4.7, Opus 4.8, Sonnet 5,
-Fable 5, agora Opus 5. Existe um custo humano em reavaliar prompt, effort, custo e limite a
-cada seis semanas, e ele não entra em nenhum benchmark.
+Há também um **modo rápido** (`speed: "fast"`), que roda o mesmo modelo com saída bem mais
+veloz pelo dobro do preço — US$ 10 / US$ 50. Só na Claude API: não existe em Bedrock, Google
+Cloud nem Foundry.
 
 ---
 
-## O paradoxo Fable
+## Os números
+
+O texto do anúncio publica quase tudo como **afirmação relativa** ("três vezes o segundo
+colocado", "pela metade do custo"). Os valores absolutos estão nos gráficos — que são
+imagens. Abri as imagens e transcrevi. A tabela abaixo é a do próprio anúncio, íntegra:
+
+| Benchmark | Opus 5 | Fable 5 | Opus 4.8 | GPT-5.6 Sol |
+|---|---|---|---|---|
+| Coding agêntico de terminal · Frontier-Bench v0.1 | **43,3%** | 33,7% | 21,1% | 34,4% |
+| Trabalho de conhecimento · GDPval-AA v2 | **1861** | 1747 | 1593 | 1736 |
+| Problemas inéditos · ARC-AGI-3 | **30,2%** | — | 1,5% | 7,8% |
+| Busca agêntica · BrowseComp | **90,8%** | 87,4% | 84,3% | 90,4% |
+| Humanity's Last Exam · com ferramentas | **64,7%** | 63,9% | 57,9% | — |
+| Uso de computador · OSWorld 2.0 | **70,6%** | 66,1% | 55,7% | 62,6% |
+| Coding agêntico · DeepSWE v1.1 | 68,8% | 69,7% | 59,0% | **72,7%** |
+| Coding agêntico · FrontierCode v1.1 Main | 53,4% | **53,5%** | 46,5% | 47,5% |
+| Fluxos de negócio · AutomationBench | **26,0%** | 17,4% | 17,0% | 18,1% |
+| Jurídico · Legal Agent Benchmark | 11,7% | **13,3%** | 10,4% | 2,5% |
+| Saúde · HealthBench Professional | 59,8% | **66,0%** | 57,4% | 60,5% |
+
+O salto real está nas duas primeiras linhas e na terceira. No Frontier-Bench o Opus 5 mais
+que dobra o Opus 4.8. No ARC-AGI-3 — o teste de problemas genuinamente novos, que o modelo
+não pode ter visto no treino — ele marca 30,2% contra 7,8% do segundo colocado, quase quatro
+vezes mais.
+
+> **Nota metodológica.** A tabela põe o Opus 4.8 em 21,1% no Frontier-Bench; o gráfico de
+> esforço do mesmo anúncio põe o mesmo modelo perto de 18,8%. Não é contradição — o gráfico
+> declara outro arranjo (harness `mini-SWE-agent`, backend GKE, média de cinco tentativas por
+> tarefa). Parte da imprensa publicou o número do gráfico como se fosse o da tabela.
+
+### O gráfico que interessa não é o de barras
+
+O anúncio traz uma família de gráficos que a cobertura ignorou: custo por tarefa contra
+desempenho, com um ponto para cada nível de esforço. É aí que a tese do lançamento aparece ou
+não aparece.
+
+<EffortCostChart
+  dataset="opus5-frontier-bench"
+  title="Coding agêntico: quanto custa cada ponto"
+  subtitle="Frontier-Bench v0.1 — um ponto por nível de esforço (low → max)"
+  xLabel="Custo por tentativa (US$, escala logarítmica)"
+  yLabel="Pontuação (%)"
+  description="Gráfico de custo por tentativa contra pontuação no Frontier-Bench v0.1. A curva do Opus 5 fica acima e à esquerda das demais: no esforço mais barato já supera o Opus 4.8 no mais caro, e seu ponto de esforço máximo cai levemente abaixo do penúltimo."
+/>
+
+Duas leituras saltam daí, e nenhuma das duas está no texto do anúncio:
+
+**O Opus 5 no esforço mais barato bate o Opus 4.8 no mais caro.** Cerca de 25,7% a US$ 5,60
+por tentativa contra 18,8% a US$ 17. Melhor resultado, gastando aproximadamente um terço.
+É o argumento inteiro do lançamento condensado em dois pontos — e ele não aparece em nenhuma
+barra.
+
+**O esforço `max` piora o resultado.** A curva sobe até `xhigh` (44,3%) e *desce* no `max`
+(43,3%). O mesmo acontece no índice de coding da Artificial Analysis. A documentação avisa
+que o `max` pode dar retorno decrescente e "pensar demais" em tarefa simples; aqui isso está
+medido, no material do próprio fabricante. Quem herdar o hábito de fixar `max` "porque é o
+melhor" está pagando mais para pontuar menos.
+
+> **Como esses dois números foram obtidos.** A tabela acima é transcrição direta. Já os
+> valores da curva foram **lidos do gráfico publicado**, que não vem com tabela — são
+> aproximações de leitura visual em escala logarítmica, não dados tabelados. A forma das
+> curvas é o que importa; os decimais, não.
+
+E um rodapé do gráfico que vale mais que o gráfico: *"Opus 4.8 served as fallback on
+safety-classifier refusals for Opus 5 and Fable 5."* A própria Anthropic precisou acionar o
+mecanismo de fallback por recusa **dentro da rodada de benchmark**. Aquele item 4 da lista de
+API não é hipótese defensiva: é operação normal.
+
+---
+
+## Sobre a zoeira do Reddit
+
+A thread oficial no r/ClaudeAI acumulou centenas de pontos, e o comentário mais votado —
+com folga — não foi sobre capacidade. Foi uma paródia do tom bajulador do próprio Claude
+aplicada ao gráfico de benchmarks, com a piada de que "os números serem maiores ou menores
+uns que os outros é *load-bearing*". Logo abaixo, um usuário aponta que a barra destacada
+como vencedora em coding agêntico marcava 53,4% contra 53,5% da concorrente, e resume:
+*"Typical Anthropic math"*.
+
+**Fui verificar essa acusação específica, e ela não procede.** Os dois números existem — são
+o FrontierCode v1.1 Main, na oitava linha da tabela acima. Só que o destaque está no **53,5%
+do Fable 5**, não no 53,4% do Opus 5. A tabela marca o concorrente como vencedor em cinco das
+onze linhas, incluindo uma em que quem ganha é o GPT-5.6 Sol. Não é um gráfico que esconde
+derrota; é um gráfico que mostra as derrotas em destaque.
+
+O ceticismo continua bem calibrado — gráfico de fabricante é material de marketing, inclusive
+quando os números estão certos, e o hábito de conferir é o certo. Mas vale registrar o
+resultado da conferência: neste caso o material aguentou. O que não aguentou foi a versão que
+circulou sobre ele.
+
+E há a fadiga, que também apareceu no topo da thread: *"I'm tired boss"*. Estamos em julho de
+2026 e esse é o quinto modelo de ponta da Anthropic em poucos meses — Opus 4.7, Opus 4.8,
+Sonnet 5, Fable 5, agora Opus 5. Existe um custo humano em reavaliar prompt, effort, custo e
+limite a cada seis semanas, e ele não entra em nenhum benchmark.
+
+---
+
+## O paradoxo do topo da linha
 
 O ponto mais interessante da discussão não foi o gráfico, foi uma pergunta ingênua de um
-usuário: se o Opus 5 é quase tão bom quanto o Fable 5, por que o Fable 5 é tratado como um
-modelo de risco elevado e este aqui sai como lançamento normal, no plano Pro?
+usuário: se o Opus 5 é quase tão bom quanto o topo da linha, por que o topo da linha é
+tratado como modelo de risco elevado e este aqui sai como lançamento normal, no plano Pro?
 
-A resposta que circulou na thread — e que bate com a documentação pública — é que
-"capacidade" não é um número só. O Opus 5 fica atrás do topo da linha justamente nas duas
-áreas que disparam as salvaguardas mais duras: pesquisa em biologia e exploração ofensiva de
-segurança. Um modelo pode ser praticamente equivalente em *encontrar* uma vulnerabilidade e
-ficar muito atrás em *produzir* o exploit.
+A resposta está no próprio anúncio, e é mais específica do que eu esperava. O Opus 5, diz a
+Anthropic, "não avança a fronteira em capacidades perigosas de uso duplo" e **fica atrás do
+Mythos 5** — o irmão do Fable 5, restrito a um programa fechado — em pesquisa de biologia e
+em cibersegurança ofensiva. O detalhe decisivo é como esse "atrás" se distribui: em
+*identificar* uma vulnerabilidade o Opus 5 é descrito como **similar** ao Mythos 5; em
+*explorá-la*, fica atrás.
 
-Isso é uma escolha de engenharia, não um acaso. E é a explicação mais provável para o
-lançamento ser barato, amplo e sem cerimônia: **a Anthropic aparentemente descobriu como
-separar as duas capacidades**. Se isso for reproduzível, é um resultado mais importante do
-que qualquer ponto percentual de benchmark — e é o tipo de coisa que só se confirma com
-tempo e auditoria externa.
+Isso é uma escolha de engenharia, não um acaso — e é a explicação mais plausível para o
+lançamento ser barato e amplo: **as duas capacidades foram separadas**. Encontrar a falha e
+produzir o exploit deixaram de andar juntas. Se isso for reproduzível, é um resultado mais
+importante do que qualquer ponto percentual de benchmark.
+
+Com uma ressalva que o marketing não faz: "lançamento normal" não quer dizer lançamento sem
+trava. O modelo sai com salvaguardas de cibersegurança elevadas e com classificadores que
+recusam requisição — como o rodapé do gráfico de benchmark mostra sem querer.
 
 ---
 
@@ -121,21 +202,27 @@ tempo e auditoria externa.
 Não vou fingir que testei o modelo em produção quatro horas depois do lançamento. O que dá
 para dizer com honestidade é onde eu olharia primeiro:
 
-**O esforço virou a alavanca de verdade.** Com cinco níveis (`low` a `max`) e um padrão
-razoável (`high`), a variável que decide custo, latência e qualidade deixou de ser "qual
-modelo" e passou a ser "quanto esforço nesta rota". A recomendação da própria Anthropic é
-começar em `xhigh` para trabalho de código e agente, `high` para o resto — e então **varrer
-para baixo**, porque `low` e `medium` estão surpreendentemente fortes neste modelo. Herdar o
-nível de esforço que você calibrou no Opus 4.8 é quase certamente a configuração errada.
+**O esforço virou a alavanca de verdade.** Com cinco níveis e um padrão razoável (`high`), a
+variável que decide custo, latência e qualidade deixou de ser "qual modelo" e passou a ser
+"quanto esforço nesta rota". A recomendação da própria Anthropic é começar em `xhigh` para
+trabalho de código e agente, `high` para o resto — e então **varrer para baixo**, porque
+`low` e `medium` estão surpreendentemente fortes neste modelo. O gráfico acima mostra por
+quê, e mostra também que o topo da escada não é o melhor lugar da escada.
 
-**Antes de trocar a string do modelo, audite três coisas:** rotas que nunca setaram
+**Antes de trocar a string do modelo, audite quatro coisas:** rotas que nunca setaram
 `thinking` (o `max_tokens` pode truncar agora), rotas que combinam raciocínio desligado com
-esforço `xhigh`/`max` (viram erro 400) e o dimensionamento do rate limit no balde novo.
+esforço `xhigh`/`max` (viram erro 400), o dimensionamento do rate limit no balde novo, e o
+tratamento de `stop_reason` antes de ler o conteúdo da resposta.
 
-**E espere o teste de terceiros.** O ceticismo do Reddit é bem calibrado. Gráfico de
-fabricante é material de marketing — inclusive quando os números estão certos. O que decide
-se o Opus 5 é o que diz ser não é a barra maior; é o custo por tarefa concluída no seu
-próprio código, medido por você, uma semana depois do hype passar.
+**E apague as instruções de conferência.** Esta é contraintuitiva: a documentação de migração
+recomenda **remover** dos prompts as instruções do tipo "verifique seu trabalho antes de
+responder". O Opus 5 já se auto-verifica, e mandar verificar de novo produz retrabalho sem
+ganho. Pela mesma lógica, quem tinha instrução mandando o modelo delegar mais a subagentes
+deve tirá-la: o Opus 5 delega mais do que o 4.8, e agora o problema é o excesso.
+
+**E espere o teste de terceiros.** O que decide se o Opus 5 é o que diz ser não é a barra
+maior nem a tabela honesta; é o custo por tarefa concluída no seu próprio código, medido por
+você, uma semana depois do hype passar.
 
 ---
 
@@ -145,9 +232,10 @@ próprio código, medido por você, uma semana depois do hype passar.
 - Discussão da comunidade: [r/ClaudeAI — Introducing Claude Opus 5](https://www.reddit.com/r/ClaudeAI/comments/1v5h6o9/introducing_claude_opus_5/)
 - Cobertura independente:
   [VentureBeat](https://venturebeat.com/orchestration/anthropic-launches-claude-opus-5-a-cheaper-ai-model-for-coding-agents-and-enterprise-workflows) ·
-  [Unite.AI](https://www.unite.ai/anthropics-opus-5-nears-frontier-intelligence-at-opus-prices/) ·
-  [Techzine](https://www.techzine.eu/news/applications/143167/claude-opus-5-approaches-fable-for-half-the-price/)
+  [Decrypt](https://decrypt.co/374305/claude-opus-5-outscores-fable-5-most-benchmarks-half-price) ·
+  [The Decoder](https://the-decoder.com/anthropic-claims-its-new-claude-opus-5-delivers-near-fable-5-performance-at-half-the-token-price/)
 
-*Dados de preço, contexto e comportamento de API verificados na documentação oficial em
-24/07/2026. Números de benchmark absolutos vêm de cobertura de imprensa e não foram
-confirmados na fonte primária — estão marcados como tal no texto.*
+*Preço, contexto, comportamento de API e limites verificados na documentação oficial em
+24/07/2026. Os números da tabela de benchmarks foram transcritos das figuras do anúncio; os
+da curva de custo foram lidos visualmente do gráfico e estão marcados como aproximação no
+texto. Não reverifiquei a contagem de votos da thread do Reddit.*

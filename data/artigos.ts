@@ -30,7 +30,7 @@ export const artigos: readonly Artigo[] = [
     title:
       'Opus 5: a inteligência de fronteira ficou pela metade do preço — e o Reddit foi zoar o gráfico',
     summary:
-      'A Anthropic lançou o Claude Opus 5 prometendo inteligência de fronteira por metade do preço. O que mudou de fato na API, o que os números dizem, e por que a reação mais votada da comunidade foi um deboche do gráfico de benchmarks.',
+      'A Anthropic lançou o Claude Opus 5 prometendo inteligência de fronteira por metade do preço. O que mudou de fato na API, o que os gráficos do anúncio mostram quando você abre as imagens — inclusive que o esforço máximo piora o resultado — e por que a zoeira mais votada da comunidade não sobrevive a uma conferida.',
     date: '2026-07-24',
     tags: ['claude', 'anthropic', 'llm', 'api', 'benchmarks'],
   },
