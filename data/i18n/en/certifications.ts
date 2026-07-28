@@ -1,6 +1,6 @@
 export const certifications = {
   meta: {
-    title: 'Technical Certifications in AI, Blockchain and Software Engineering | Ulisses Flores',
+    title: 'Technical Certifications in AI, Blockchain and Software Engineering',
     description:
       'Technical certifications portfolio of Ulisses Flores — Strategic AI Consultant, Speaker and AGTU MSc Candidate. Over 30 certifications in AI, Machine Learning, Blockchain, Cloud and Software Engineering with public verification.',
     keywords: [

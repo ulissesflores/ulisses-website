@@ -1,6 +1,6 @@
 export const projetoPsi = {
   meta: {
-    title: 'Projeto PSI — Hardware Soberano para Custódia de Ativos Digitais | Ulisses Flores',
+    title: 'Projeto PSI — Hardware Soberano para Custódia de Ativos Digitais',
     description:
       'Custódia soberana de ativos digitais. Hardware com Zero Trust em silício, criptografia pós-quântica XMSS e redundância modular tripla (TMR). Investimento e licenciamento.',
     keywords: [
@@ -22,14 +22,14 @@ export const projetoPsi = {
       'Custódia soberana de ativos digitais. Zero Trust em silício, XMSS pós-quântico e redundância modular tripla (TMR).',
   },
   whitepaperMeta: {
-    title: 'Projeto Ψ (PSI): Hardware Soberano e Zero Trust em Silício | Ulisses Flores',
+    title: 'Projeto Ψ (PSI): Hardware Soberano e Zero Trust em Silício',
     description: 'Whitepaper Técnico: Arquitetura de custódia de ativos digitais de classe soberana. Conheça o Projeto PSI, equipado com SRAM PUF, Criptografia XMSS e Redundância TMR.',
     keywords: ['hardware wallet', 'zero trust', 'SRAM PUF', 'XMSS', 'criptografia pós-quântica', 'ring signatures', 'endereços furtivos', 'airgap wallet', 'soberania digital', 'Codex Hash', 'TMR redundância modular tripla', 'FRAM rad-hard', 'side-channel attacks', 'EMP shielding', 'deniable encryption', 'Ulisses Flores blockchain', 'hardware security module', 'cold storage soberano'],
     ogTitle: 'Projeto Ψ (PSI): Hardware Soberano e Zero Trust em Silício | Ulisses Flores',
     ogDescription: 'Whitepaper Técnico: Arquitetura de custódia de ativos digitais de classe soberana com SRAM PUF, XMSS pós-quântico e Redundância TMR aeroespacial.',
   },
   simulacaoMeta: {
-    title: 'Projeto Ψ (PSI): Explorador Técnico da Arquitetura de Segurança | Ulisses Flores',
+    title: 'Projeto Ψ (PSI): Explorador Técnico da Arquitetura de Segurança',
     description: 'Explorador interativo da arquitetura do Projeto PSI — SRAM PUF, criptografia pós-quântica XMSS, redundância TMR aeroespacial e Ring Signatures. Navegue pelos 4 pilares de segurança soberana.',
     keywords: ['hardware wallet', 'zero trust', 'SRAM PUF', 'XMSS', 'criptografia pós-quântica', 'ring signatures', 'endereços furtivos', 'airgap wallet', 'soberania digital', 'Codex Hash', 'TMR redundância modular tripla', 'FRAM rad-hard', 'side-channel attacks', 'EMP shielding', 'deniable encryption', 'Ulisses Flores blockchain', 'hardware security module', 'cold storage soberano'],
     ogTitle: 'Projeto Ψ (PSI): Explorador Técnico da Arquitetura de Segurança | Ulisses Flores',

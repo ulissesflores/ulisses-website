@@ -1,6 +1,6 @@
 export const acervoTeologico = {
   meta: {
-    title: 'אוסף תיאולוגי וארכיאולוגיה רוחנית | Ulisses Flores',
+    title: 'אוסף תיאולוגי וארכיאולוגיה רוחנית',
     description: 'מעל 56 דרשות, דרשות פרשניות וניתוחים של תיאולוגיה היסטורית מאת Ulisses Flores. דיוק אקסגטי והתחדשות רוחנית.',
     keywords: [
       "אוסף תיאולוגי",

@@ -16,7 +16,7 @@ export const ia2027 = {
     ogImageAlt: 'Simulazione Strategica IA-2027 di Ulisses Flores'
   },
   raceMeta: {
-    title: 'Corsa Strategica: Scenario Race dell\'IA 2027 | Ulisses Flores',
+    title: 'Corsa Strategica: Scenario Race dell\'IA 2027',
     description: 'Esplora lo scenario di Corsa Strategica della simulazione IA 2027: massima accelerazione verso l\'AGI, escalation dell\'autonomia e rischio di perdita del controllo umano. Analisi a cura di Ulisses Flores — Consulente IA, Relatore e Studente di Master AGTU.',
     keywords: [
       "corsa strategica IA",
@@ -32,7 +32,7 @@ export const ia2027 = {
     ogImageAlt: 'IA 2027 · Corsa Strategica — Scenario Race'
   },
   slowdownMeta: {
-    title: 'Decelerazione Coordinata: Scenario Slowdown dell\'IA 2027 | Ulisses Flores',
+    title: 'Decelerazione Coordinata: Scenario Slowdown dell\'IA 2027',
     description: 'Esplora lo scenario di Decelerazione Coordinata della simulazione IA 2027: pausa globale, allineamento tecnico e regolamentazione internazionale dell\'AGI. Analisi a cura di Ulisses Flores — Consulente IA, Relatore e Studente di Master AGTU.',
     keywords: [
       "decelerazione coordinata IA",

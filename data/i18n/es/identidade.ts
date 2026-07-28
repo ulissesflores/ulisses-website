@@ -1,6 +1,6 @@
 export const identidade = {
   meta: {
-    title: 'Identidad Soberana y Verificaciones Públicas | Ulisses Flores',
+    title: 'Identidad Soberana y Verificaciones Públicas',
     description: 'Página de identidad soberana de Ulisses Flores con verificaciones públicas, producción académica, acervo teológico, dominios y grafo semántico de identidad.',
     ogTitle: 'Identidad Soberana y Verificaciones Públicas | Ulisses Flores',
     ogDescription: 'Página de identidad soberana de Ulisses Flores con verificaciones públicas, producción académica, acervo teológico, dominios y grafo semántico de identidad.',

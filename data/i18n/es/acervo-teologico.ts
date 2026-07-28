@@ -1,6 +1,6 @@
 export const acervoTeologico = {
   meta: {
-    title: 'Acervo Teológico y Arqueología Espiritual | Ulisses Flores',
+    title: 'Acervo Teológico y Arqueología Espiritual',
     description: 'Más de 56 sermones, predicaciones expositivas y análisis de teología histórica por Ulisses Flores. Rigor exegético y avivamiento.',
     keywords: [
       "acervo teológico",

@@ -1,6 +1,6 @@
 export const palestras = {
   meta: {
-    title: 'הרצאות, Keynotes וסדנאות ניהוליות על AI, AGI, Blockchain וריבונות דיגיטלית | אוליסס פלורס',
+    title: 'הרצאות, Keynotes וסדנאות ניהוליות על AI, AGI, Blockchain וריבונות דיגיטלית',
     description:
       'Keynotes והרצאות ל-C-Level, דירקטוריון ומוסדות אקדמיים על AI גנרטיבי, AGI, blockchain, ריבונות דיגיטלית וארכיטקטורה קריטית. PT/EN/ES/IT. ברזיל וחו"ל.',
     keywords: [

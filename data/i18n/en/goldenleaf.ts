@@ -1,6 +1,6 @@
 export const goldenleaf = {
   meta: {
-    title: 'GoldenLeaf — Smart Mycology with IoT and AI | Ulisses Flores',
+    title: 'GoldenLeaf — Smart Mycology with IoT and AI',
     description: 'GoldenLeaf is a smart mycology project that combines IoT sensors, predictive AI, and cloudless architectures for autonomous gourmet mushroom cultivation. Developed by Ulisses Flores.',
     keywords: [
       "smart mycology",

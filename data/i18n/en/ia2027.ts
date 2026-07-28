@@ -16,7 +16,7 @@ export const ia2027 = {
     ogImageAlt: 'Strategic Simulation AI-2027 by Ulisses Flores'
   },
   raceMeta: {
-    title: 'Strategic Race: AI 2027 Race Scenario | Ulisses Flores',
+    title: 'Strategic Race: AI 2027 Race Scenario',
     description: 'Explore the Strategic Race scenario of the AI 2027 simulation: maximum acceleration towards AGI, escalation of autonomy, and risk of loss of human control. Analysis by Ulisses Flores — AI Consultant, Speaker, and AGTU Master\'s Student.',
     keywords: [
       "strategic AI race",
@@ -32,7 +32,7 @@ export const ia2027 = {
     ogImageAlt: 'AI 2027 · Strategic Race — Race Scenario'
   },
   slowdownMeta: {
-    title: 'Coordinated Slowdown: AI 2027 Slowdown Scenario | Ulisses Flores',
+    title: 'Coordinated Slowdown: AI 2027 Slowdown Scenario',
     description: 'Explore the Coordinated Slowdown scenario of the AI 2027 simulation: global pause, technical alignment, and international AGI regulation. Analysis by Ulisses Flores — AI Consultant, Speaker, and AGTU Master\'s Student.',
     keywords: [
       "coordinated AI slowdown",

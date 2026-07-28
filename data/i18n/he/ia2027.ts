@@ -16,7 +16,7 @@ export const ia2027 = {
     ogImageAlt: 'סימולציה אסטרטגית IA-2027 מאת Ulisses Flores'
   },
   raceMeta: {
-    title: 'מרוץ אסטרטגי: תרחיש Race של IA 2027 | Ulisses Flores',
+    title: 'מרוץ אסטרטגי: תרחיש Race של IA 2027',
     description: 'חקור את תרחיש המרוץ האסטרטגי של סימולציית IA 2027: האצה מקסימלית לעבר AGI, הסלמת אוטונומיה וסיכון לאובדן שליטה אנושית. ניתוח מאת Ulisses Flores — יועץ AI, מרצה וסטודנט לתואר שני ב-AGTU.',
     keywords: [
       "מרוץ אסטרטגי AI",
@@ -32,7 +32,7 @@ export const ia2027 = {
     ogImageAlt: 'IA 2027 · מרוץ אסטרטגי — תרחיש Race'
   },
   slowdownMeta: {
-    title: 'האטה מתואמת: תרחיש Slowdown של IA 2027 | Ulisses Flores',
+    title: 'האטה מתואמת: תרחיש Slowdown של IA 2027',
     description: 'חקור את תרחיש ההאטה המתואמת של סימולציית IA 2027: הפסקה גלובלית, יישור טכני ורגולציה בינלאומית של AGI. ניתוח מאת Ulisses Flores — יועץ AI, מרצה וסטודנט לתואר שני ב-AGTU.',
     keywords: [
       "האטה מתואמת AI",

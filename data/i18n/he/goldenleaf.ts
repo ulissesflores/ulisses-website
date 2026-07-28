@@ -1,6 +1,6 @@
 export const goldenleaf = {
   meta: {
-    title: 'GoldenLeaf — מיקולוגיה חכמה עם IoT ו-AI | Ulisses Flores',
+    title: 'GoldenLeaf — מיקולוגיה חכמה עם IoT ו-AI',
     description: 'GoldenLeaf הוא פרויקט מיקולוגיה חכמה המשלב חיישני IoT, AI חזוי וארכיטקטורות cloudless לגידול אוטונומי של פטריות גורמה. פותח על ידי Ulisses Flores.',
     keywords: [
       "מיקולוגיה חכמה",

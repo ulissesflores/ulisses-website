@@ -17,6 +17,8 @@ import { I18nProvider } from '@/lib/i18n-context';
 
 import { GlobalHeader } from '@/components/global-header';
 import { GlobalFooter } from '@/components/global-footer';
+import { Analytics } from '@vercel/analytics/next';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 import '../globals.css';
 
 // ─── Fonts ──────────────────────────────────────────────────────────────────────
@@ -151,6 +153,8 @@ export default async function RootLayout({ children, params }: RootLayoutProps) 
           {children}
           <GlobalFooter />
         </I18nProvider>
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );

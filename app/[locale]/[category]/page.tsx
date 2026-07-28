@@ -34,7 +34,9 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const story = stories[category as keyof typeof stories];
 
   return {
-    title: story ? `${story.h1} | Ulisses Flores` : collection.heading,
+    // sem sufixo de marca: o title.template do layout já acrescenta "| Ulisses Flores".
+    // O openGraph.title abaixo mantém o sufixo porque OG não passa pelo template.
+    title: story ? story.h1 : collection.heading,
     description: story?.metaDescription || collection.description,
     authors: [
       {

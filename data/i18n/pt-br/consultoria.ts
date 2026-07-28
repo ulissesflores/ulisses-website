@@ -1,6 +1,6 @@
 export const consultoria = {
   meta: {
-    title: 'Consultoria Estratégica em IA, Arquitetura Crítica e Soberania Digital | Ulisses Flores',
+    title: 'Consultoria Estratégica em IA, Arquitetura Crítica e Soberania Digital',
     description:
       'Consultoria executiva em IA generativa, arquitetura de sistemas críticos, governança de dados e Fractional CTO. Atendimento PT/EN/ES/IT/HE. Atende Brasil e exterior.',
     keywords: [

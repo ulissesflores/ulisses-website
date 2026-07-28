@@ -1,6 +1,6 @@
 export const simulacoes = {
   meta: {
-    title: 'Simulações Estratégicas de IA | IA 2027, AGI e Cenários Futuros | Ulisses Flores',
+    title: 'Simulações Estratégicas de IA | IA 2027, AGI e Cenários Futuros',
     description:
       'Explore simulações interativas sobre o futuro da Inteligência Artificial e AGI, criadas por Ulisses Flores — Consultor Estratégico de IA, Palestrante e Mestrando em IA pela AGTU. Uma plataforma pioneira de modelagem de cenários futuros em português.',
     keywords: [

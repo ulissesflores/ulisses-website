@@ -1,6 +1,6 @@
 export const mundoPolitico = {
   meta: {
-    title: 'Mundo Político — כלכלה אוסטרית, גיאופוליטיקה וריבונות | Ulisses Flores',
+    title: 'Mundo Político — כלכלה אוסטרית, גיאופוליטיקה וריבונות',
     description: 'מאמרי ניתוח כלכלי, גיאופוליטיקה וריבונות מנקודת המבט של האסכולה האוסטרית לכלכלה, נכתבו על ידי Ulisses Flores — כלכלן, יועץ אסטרטגי ל-AI וסטודנט לתואר שני ב-AI ב-AGTU.',
     keywords: [
       "האסכולה האוסטרית לכלכלה",

@@ -1,6 +1,6 @@
 export const palestras = {
   meta: {
-    title: 'Palestras, Keynotes e Workshops Executivos sobre IA, AGI, Blockchain e Soberania Digital | Ulisses Flores',
+    title: 'Palestras, Keynotes e Workshops Executivos sobre IA, AGI, Blockchain e Soberania Digital',
     description:
       'Palestras e keynotes para C-Level, Board e instituições acadêmicas sobre IA generativa, AGI, blockchain, soberania digital e arquitetura crítica. PT/EN/ES/IT. Atende Brasil e exterior.',
     keywords: [
