@@ -4,7 +4,7 @@ import { AuthorHubCard } from '@/components/author-hub-card';
 import { FaqSection } from '@/components/faq-section';
 import { isLocale, defaultLocale, localeToOgLocale, type Locale } from '@/data/i18n';
 import { getDictionary } from '@/lib/get-dictionary';
-import { buildLanguageAlternates, buildCanonical } from '@/data/seo';
+import { buildLanguageAlternates, buildCanonical, defaultOgImages } from '@/data/seo';
 
 const canonicalPath = '/palestras';
 const ogImage = '/carlos-ulisses-flores-cto.jpg';
@@ -23,6 +23,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     keywords: [...t.meta.keywords],
     alternates: { canonical: buildCanonical(locale, canonicalPath), languages: buildLanguageAlternates(canonicalPath) },
     openGraph: {
+      images: defaultOgImages(locale),
       type: 'website',
       url: `https://ulissesflores.com${canonicalPath}`,
       title: t.meta.ogTitle,

@@ -12,7 +12,7 @@ import { FaqSection } from '@/components/faq-section';
 import { upkfMeta } from '@/data/generated/upkf.generated';
 import { isLocale, defaultLocale, localeToOgLocale, type Locale } from '@/data/i18n';
 import { getDictionary } from '@/lib/get-dictionary';
-import { buildLanguageAlternates, buildCanonical } from '@/data/seo';
+import { buildLanguageAlternates, buildCanonical, defaultOgImages } from '@/data/seo';
 import { localePath } from '@/lib/locale-path';
 
 type PageProps = { params: Promise<{ locale: string }> };
@@ -30,6 +30,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     authors: [{ name: 'Ulisses Flores', url: 'https://ulissesflores.com/identidade' }],
     alternates: { canonical: buildCanonical(locale, '/'), languages: buildLanguageAlternates('/') },
     openGraph: {
+      images: defaultOgImages(locale),
       type: 'profile',
       url: 'https://ulissesflores.com',
       title: t.meta.ogTitle,

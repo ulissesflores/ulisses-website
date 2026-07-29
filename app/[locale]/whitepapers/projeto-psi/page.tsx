@@ -8,7 +8,7 @@ import { FaqSection } from '@/components/faq-section';
 import { getDictionary } from '@/lib/get-dictionary';
 import { localePath } from '@/lib/locale-path';
 import { PsiWhitepaperBodyLocalized } from '@/components/content/PsiWhitepaperBodyLocalized';
-import { buildCanonical, buildLanguageAlternates } from '@/data/seo';
+import { buildCanonical, buildLanguageAlternates, defaultOgImages } from '@/data/seo';
 
 const canonicalPath = '/whitepapers/projeto-psi';
 
@@ -25,6 +25,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     authors: [{ name: upkfMeta.publicDisplayName || upkfMeta.displayName, url: `${upkfMeta.primaryWebsite}/identidade` }],
     alternates: { canonical: buildCanonical(locale, canonicalPath), languages: buildLanguageAlternates(canonicalPath) },
     openGraph: {
+      images: defaultOgImages(locale),
       type: 'article',
       url: `${upkfMeta.primaryWebsite}${canonicalPath}`,
       title: t.ogTitle,

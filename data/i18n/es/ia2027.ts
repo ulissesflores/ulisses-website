@@ -83,6 +83,14 @@ export const ia2027 = {
     ctaNoteEnd: '— basado en ejercicios de simulación y en el feedback de expertos en gobernanza y seguridad de IA.',
     authorLabel: 'Traducción y Curaduría',
     authorDescription: 'Adaptación, curaduría y análisis técnico por Ulisses Flores — Científico, Consultor en IA, Conferencista y Estudiante de Maestría.',
+    nextSteps: {
+      title: "Continúa por aquí",
+      links: [
+        { label: "Artículos", href: '/artigos' },
+        { label: "Otras simulaciones", href: '/simulacoes' },
+        { label: "Consultoría", href: '/consultoria' },
+      ],
+    },
     faqTitle: 'Preguntas sobre IA 2027 y el Futuro de la Inteligencia Artificial'
   },
   racePage: {

@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { Noto_Sans_Hebrew } from 'next/font/google';
 import { siteJsonLd, upkfMeta } from '@/data/generated/upkf.generated';
-import { buildLanguageAlternates, buildCanonical } from '@/data/seo';
+import { buildLanguageAlternates, buildCanonical, defaultOgImages } from '@/data/seo';
 import {
   supportedLocales,
   defaultLocale,
@@ -94,6 +94,7 @@ export async function generateMetadata({ params }: LayoutProps): Promise<Metadat
       },
     },
     openGraph: {
+      images: defaultOgImages(locale),
       type: 'website',
       url: siteOrigin,
       title: dict.home.meta.ogTitle,
@@ -101,7 +102,9 @@ export async function generateMetadata({ params }: LayoutProps): Promise<Metadat
       siteName: 'ulissesflores.com',
       locale: ogLocale,
       alternateLocale: alternateOgLocales,
-      // og:image provided by file convention app/[locale]/opengraph-image.tsx (1200x630)
+      // A imagem vem de defaultOgImages (aponta para a rota opengraph-image.tsx,
+      // 1200x630). Declarada explicitamente porque a convenção de arquivo NÃO
+      // sobrevive à substituição do openGraph nas rotas filhas — ver data/seo.ts.
     },
     twitter: {
       card: 'summary_large_image',

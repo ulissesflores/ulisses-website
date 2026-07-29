@@ -7,7 +7,7 @@ import { AuthorHubCard } from '@/components/author-hub-card';
 import { defaultLocale, isLocale, localeToOgLocale, type Locale } from '@/data/i18n';
 import { getDictionary } from '@/lib/get-dictionary';
 import { localePath } from '@/lib/locale-path';
-import { buildCanonical, buildLanguageAlternates } from '@/data/seo';
+import { buildCanonical, buildLanguageAlternates, defaultOgImages } from '@/data/seo';
 
 interface PageProps {
   params: Promise<{ slug: string; locale: string }>;
@@ -46,6 +46,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       languages: buildLanguageAlternates(post.canonicalPath),
     },
     openGraph: {
+      images: defaultOgImages(locale),
       type: 'article',
       url: `${upkfMeta.primaryWebsite}${post.canonicalPath}`,
       title: post.headline,

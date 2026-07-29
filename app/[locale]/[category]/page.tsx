@@ -8,7 +8,7 @@ import { upkfMeta } from '@/data/generated/upkf.generated';
 import { AuthorHubCard } from '@/components/author-hub-card';
 import { getDictionary } from '@/lib/get-dictionary';
 import { localePath } from '@/lib/locale-path';
-import { buildCanonical, buildLanguageAlternates } from '@/data/seo';
+import { buildCanonical, buildLanguageAlternates, defaultOgImages } from '@/data/seo';
 
 const validCategories = Object.keys(publicationCollections) as PublicationCategory[];
 
@@ -49,6 +49,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       languages: buildLanguageAlternates(`/${category}`),
     },
     openGraph: {
+      images: defaultOgImages(locale),
       type: 'website',
       title: story ? `${story.h1} | Ulisses Flores` : collection.heading,
       description: story?.metaDescription || collection.description,

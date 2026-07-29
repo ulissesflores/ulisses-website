@@ -7,7 +7,7 @@ import { AuthorHubCard } from '@/components/author-hub-card';
 import { defaultLocale, isLocale, localeToOgLocale, type Locale } from '@/data/i18n';
 import { getDictionary } from '@/lib/get-dictionary';
 import { localePath } from '@/lib/locale-path';
-import { buildCanonical, buildLanguageAlternates } from '@/data/seo';
+import { buildCanonical, buildLanguageAlternates, defaultOgImages } from '@/data/seo';
 
 const canonicalPath = '/artigos';
 
@@ -34,6 +34,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       languages: buildLanguageAlternates(canonicalPath),
     },
     openGraph: {
+      images: defaultOgImages(locale),
       type: 'website',
       url: `${upkfMeta.primaryWebsite}${canonicalPath}`,
       title: t.meta.ogTitle,

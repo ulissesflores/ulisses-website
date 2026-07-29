@@ -9,7 +9,7 @@ import { FaqSection } from '@/components/faq-section';
 import { getDictionary } from '@/lib/get-dictionary';
 import { buildSermonI18nMaps, localizeCluster } from '@/data/sermons-i18n';
 import { localePath } from '@/lib/locale-path';
-import { buildCanonical, buildLanguageAlternates } from '@/data/seo';
+import { buildCanonical, buildLanguageAlternates, defaultOgImages } from '@/data/seo';
 
 interface PageProps {
   params: Promise<{ locale: string }>;
@@ -36,6 +36,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       languages: buildLanguageAlternates(acervoCanonicalPath),
     },
     openGraph: {
+      images: defaultOgImages(locale),
       type: 'website',
       url: `${upkfMeta.primaryWebsite}${acervoCanonicalPath}`,
       title: t.meta.ogTitle,

@@ -9,7 +9,7 @@ import { ArticleToc } from '@/components/article-toc';
 import { localePath } from '@/lib/locale-path';
 import { defaultLocale, isLocale, type Locale } from '@/data/i18n';
 import { getDictionary } from '@/lib/get-dictionary';
-import { buildCanonical, buildLanguageAlternates, noindexPublicationCategories } from '@/data/seo';
+import { buildCanonical, buildLanguageAlternates, noindexPublicationCategories, defaultOgImages } from '@/data/seo';
 
 interface PageProps {
   params: Promise<{ category: string; slug: string; locale: string }>;
@@ -60,6 +60,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       languages: buildLanguageAlternates(canonicalPath),
     },
     openGraph: {
+      images: defaultOgImages(locale),
       type: 'article',
       title: localizedTitle,
       description: localizedSummary,

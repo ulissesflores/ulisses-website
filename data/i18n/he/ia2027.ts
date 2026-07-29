@@ -83,6 +83,14 @@ export const ia2027 = {
     ctaNoteEnd: '— מבוסס על תרגילי סימולציה ועל משוב של מומחים בממשל ואבטחת AI.',
     authorLabel: 'תרגום ואוצרות',
     authorDescription: 'עיבוד, אוצרות וניתוח טכני מאת Ulisses Flores — מדען, יועץ AI, מרצה וסטודנט לתואר שני.',
+    nextSteps: {
+      title: "המשיכו מכאן",
+      links: [
+        { label: "מאמרים", href: '/artigos' },
+        { label: "סימולציות נוספות", href: '/simulacoes' },
+        { label: "ייעוץ", href: '/consultoria' },
+      ],
+    },
     faqTitle: 'שאלות על IA 2027 ועתיד הבינה המלאכותית'
   },
   racePage: {

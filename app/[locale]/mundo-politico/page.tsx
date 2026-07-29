@@ -6,7 +6,7 @@ import { AuthorHubCard } from '@/components/author-hub-card';
 import { FaqSection } from '@/components/faq-section';
 import { isLocale, defaultLocale, localeToOgLocale, type Locale } from '@/data/i18n';
 import { getDictionary } from '@/lib/get-dictionary';
-import { buildLanguageAlternates, buildCanonical } from '@/data/seo';
+import { buildLanguageAlternates, buildCanonical, defaultOgImages } from '@/data/seo';
 import { localePath } from '@/lib/locale-path';
 
 const canonicalPath = '/mundo-politico';
@@ -28,6 +28,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       languages: buildLanguageAlternates(canonicalPath),
     },
     openGraph: {
+      images: defaultOgImages(locale),
       type: 'website',
       url: `${upkfMeta.primaryWebsite}${canonicalPath}`,
       title: t.meta.ogTitle,

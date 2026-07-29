@@ -16,7 +16,7 @@ import { MdxContentWrapper, mdxComponents } from '@/lib/content/mdx-components';
 import { defaultLocale, isLocale, localeToOgLocale, type Locale } from '@/data/i18n';
 import { getDictionary } from '@/lib/get-dictionary';
 import { localePath } from '@/lib/locale-path';
-import { buildCanonical, buildLanguageAlternates } from '@/data/seo';
+import { buildCanonical, buildLanguageAlternates, defaultOgImages } from '@/data/seo';
 
 const CONTENT_TYPE = 'artigos';
 
@@ -55,6 +55,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       languages: buildLanguageAlternates(path),
     },
     openGraph: {
+      images: defaultOgImages(locale),
       type: 'article',
       url: `${upkfMeta.primaryWebsite}${path}`,
       title: artigo.title,
@@ -170,18 +171,28 @@ export default async function ArtigoPage({ params }: PageProps) {
             ))}
           </div>
 
-          <AuthorHubCard
-            label={dict.common.authorHubCard.defaultLabel}
-            compact
-            description={dict.common.authorHubCard.defaultDescription}
-            href={localePath('/identidade', locale)}
-          />
         </header>
 
-        {/* Tabelas rolam sozinhas em tela estreita — sem isso o corpo estoura a viewport. */}
-        <div className='[&_table]:block [&_table]:overflow-x-auto'>
-          <MdxContentWrapper locale={bodyLocale}>{mdx.content}</MdxContentWrapper>
-        </div>
+        {/* Rolagem de tabela larga vive no map de `table` em mdx-components. */}
+        <MdxContentWrapper locale={bodyLocale}>{mdx.content}</MdxContentWrapper>
+
+        {/*
+          Assinatura no FIM, não no topo: antes da leitura o card interrompe o
+          artigo sem responder nada; depois dela é o único ponto em que a página
+          pede algo ao leitor que acabou de investir o tempo todo. O `rel=author`
+          para /identidade continua sendo emitido — é a âncora de GEO do UPKF.
+        */}
+        <footer className='mt-16 border-t border-white/10 pt-10'>
+          {/* Bio da fonte canônica UPKF (já traduzida nos 5 locales), não o rótulo
+              genérico: no fim do artigo o leitor quer saber QUEM escreveu aquilo. */}
+          <AuthorHubCard
+            label={dict.common.authorHubCard.defaultLabel}
+            description={upkfMeta.description[locale === 'pt-br' ? 'pt-BR' : (locale as 'en' | 'es' | 'it' | 'he')]}
+            href={localePath('/identidade', locale)}
+            contactLabel={dict.common.actions.contact}
+            contactHref={localePath('/#contact', locale)}
+          />
+        </footer>
       </main>
     </div>
   );

@@ -8,7 +8,7 @@ import { getDictionary } from '@/lib/get-dictionary';
 import { isLocale, defaultLocale } from '@/data/i18n';
 import type { Locale } from '@/data/i18n';
 import { localePath } from '@/lib/locale-path';
-import { buildCanonical, buildLanguageAlternates } from '@/data/seo';
+import { buildCanonical, buildLanguageAlternates, defaultOgImages } from '@/data/seo';
 
 interface PageProps {
   params: Promise<{ slug: string; locale: string }>;
@@ -48,6 +48,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       languages: buildLanguageAlternates(certification.canonicalPath),
     },
     openGraph: {
+      images: defaultOgImages(locale),
       type: 'article',
       url: `${upkfMeta.primaryWebsite}${certification.canonicalPath}`,
       title: `${certification.title} | ${certification.provider}`,

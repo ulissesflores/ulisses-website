@@ -126,7 +126,7 @@ export const common = {
   },
   authorHubCard: {
     defaultLabel: 'מחבר',
-    defaultDescription: 'מקור קנוני לזיהוי מחבר וזהות סמנטית של תוכן זה.'
+    defaultDescription: 'פרופיל, פרסומים ויצירת קשר.'
   },
   breadcrumb: {
     home: 'בית'

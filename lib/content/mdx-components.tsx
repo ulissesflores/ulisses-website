@@ -35,6 +35,24 @@ const SimulationRenderer = ({ ...props }) => (
 export const mdxComponents: MDXComponents = {
   SimulationRenderer,
   EffortCostChart,
+  /**
+   * Tabela larga rola em vez de espremer. O container é quem rola; a tabela
+   * mantém a largura natural (`w-max`) e ocupa no mínimo a linha inteira.
+   *
+   * A tentativa anterior (`table { display: block; overflow-x: auto }` no
+   * template do artigo) não funcionava: sem largura mínima, a tabela encolhia
+   * para caber e a rolagem ficava em 4 px — a de benchmarks do Opus 5 espremia
+   * 5 colunas em 342 px, com cabeçalho de 3 linhas e 1.011 px de altura
+   * (medido no iPhone 13, auditoria 2026-07-28).
+   *
+   * Sem `!important`: o Tailwind Typography estiliza via `:where()`, que tem
+   * especificidade zero, então a classe do wrapper vence.
+   */
+  table: (props) => (
+    <div className='overflow-x-auto [&>table]:w-max [&>table]:min-w-full'>
+      <table {...props} />
+    </div>
+  ),
 };
 
 /**

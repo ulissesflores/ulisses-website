@@ -200,7 +200,36 @@ export default async function IA2027Page({ params, searchParams }: PageProps) {
           <AuthorHubCard
             label={t.authorLabel}
             description={t.authorDescription}
+            contactLabel={dict.common.actions.contact}
+            contactHref={localePath('/#contact', locale)}
           />
+        </div>
+      </section>
+
+      {/*
+        Próximo passo depois de ~13 mil palavras. A página concentra 56% das
+        impressões do site e não oferecia nenhuma saída para dentro dele
+        (auditoria 2026-07-28): eram 165 links, todos âncora de nota ou externos.
+        Bloco estrutural de propósito — link contextual dentro da narrativa
+        traduzida seria edição de texto de terceiros.
+      */}
+      <section className='bg-neutral-950 text-neutral-200 pb-16'>
+        <div className='max-w-4xl mx-auto px-6'>
+          <h2 className='text-sm uppercase tracking-[0.18em] text-neutral-400 mb-4'>
+            {t.nextSteps.title}
+          </h2>
+          <ul className='flex flex-wrap gap-3'>
+            {t.nextSteps.links.map((link) => (
+              <li key={link.href}>
+                <Link
+                  href={localePath(link.href, locale)}
+                  className='inline-flex items-center gap-2 rounded-full border border-neutral-700 px-4 py-2 text-sm text-neutral-200 transition-colors hover:border-emerald-500/50 hover:text-emerald-300'
+                >
+                  {link.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
 

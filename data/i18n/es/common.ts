@@ -126,7 +126,7 @@ export const common = {
   },
   authorHubCard: {
     defaultLabel: 'Autor',
-    defaultDescription: 'Fuente canónica de autoría e identidad semántica de este contenido.'
+    defaultDescription: 'Perfil, publicaciones y contacto.'
   },
   breadcrumb: {
     home: 'Inicio'

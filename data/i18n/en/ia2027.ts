@@ -83,6 +83,14 @@ export const ia2027 = {
     ctaNoteEnd: '— based on simulation exercises and feedback from experts in AI governance and safety.',
     authorLabel: 'Translation & Curation',
     authorDescription: 'Adaptation, curation, and technical analysis by Ulisses Flores — Scientist, AI Consultant, Speaker, and Master\'s Student.',
+    nextSteps: {
+      title: "Continue here",
+      links: [
+        { label: "Articles", href: '/artigos' },
+        { label: "Other simulations", href: '/simulacoes' },
+        { label: "Consulting", href: '/consultoria' },
+      ],
+    },
     faqTitle: 'Questions about AI 2027 and the Future of Artificial Intelligence'
   },
   racePage: {

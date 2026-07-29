@@ -74,3 +74,31 @@ export function buildCanonical(locale: string, path: string): string {
   const suffix = normalizedPath === '/' ? '' : normalizedPath;
   return `/${locale}${suffix}`;
 }
+
+/**
+ * Imagem de card padrão do locale, para o `openGraph.images` das rotas.
+ *
+ * Existe porque o Next.js SUBSTITUI o `openGraph` do layout pai pelo da rota
+ * filha em vez de fundir os dois: toda rota que declarava `openGraph` sem
+ * `images` perdia a imagem herdada da convenção e servia card cego em
+ * LinkedIn/X — inclusive `/consultoria` e `/palestras` (auditoria 2026-07-28).
+ * Por isso cada rota declara `images` explicitamente, e a POLÍTICA (qual
+ * imagem) mora só aqui.
+ *
+ * Aponta para a rota de convenção `opengraph-image.tsx`, que já gera 1200x630
+ * — nenhum asset novo. `buildCanonical` resolve o prefixo de locale (pt-br usa
+ * URL nua; `/pt-br/opengraph-image` responde 301). Referenciada SEM o hash de
+ * versão que o Next anexa: o hash muda a cada rebuild e quebraria a URL fixada.
+ *
+ * `twitter.images` não precisa de tratamento — o Next copia de
+ * `openGraph.images` quando o bloco `twitter` não define o seu.
+ */
+export function defaultOgImages(locale: string) {
+  return [
+    {
+      url: `${upkfMeta.primaryWebsite}${buildCanonical(locale, '/opengraph-image')}`,
+      width: 1200,
+      height: 630,
+    },
+  ];
+}
