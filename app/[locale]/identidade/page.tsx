@@ -10,9 +10,12 @@ import { FaqSection } from '@/components/faq-section';
 import { isLocale, defaultLocale, type Locale } from '@/data/i18n';
 import { getDictionary } from '@/lib/get-dictionary';
 import { localePath } from '@/lib/locale-path';
-import { buildLanguageAlternates, buildCanonical } from '@/data/seo';
+import { buildLanguageAlternates, buildCanonical, defaultOgImages } from '@/data/seo';
+// O alt tem de descrever o CARD, nao a pagina: fonte unica e o proprio card.
+import { alt as ogCardAlt } from '../opengraph-image';
 
 const canonicalPath = '/identidade';
+// Retrato 350x401: serve como foto na pagina, nao como card social.
 const ogImage = '/carlos-ulisses-flores-cto.jpg';
 
 type PageProps = { params: Promise<{ locale: string }> };
@@ -51,13 +54,13 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       url: `${upkfMeta.primaryWebsite}${canonicalPath}`,
       title: t.meta.ogTitle,
       description: t.meta.ogDescription,
-      images: [{ url: ogImage, width: 1200, height: 630, alt: t.meta.ogImageAlt }],
+      // og:image vem da convencao app/[locale]/opengraph-image.tsx (1200x630 real).
+      images: defaultOgImages(locale).map((image) => ({ ...image, alt: ogCardAlt })),
     },
     twitter: {
       card: 'summary_large_image',
       title: t.meta.ogTitle,
       description: t.meta.ogDescription,
-      images: [ogImage],
     },
     other: { 'geo.region': 'BR-SP', 'geo.placename': 'Sao Paulo' },
   };
