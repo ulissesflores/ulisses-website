@@ -23,10 +23,15 @@ interface EffortCostChartProps {
   yLabel: string;
   /** Descrição para leitor de tela — o gráfico é informativo, não decorativo. */
   description: string;
+  /**
+   * Procedência dos dados, desenhada DENTRO do SVG. Em rede social a imagem
+   * circula descolada do texto que a explica; a ressalva precisa viajar junto.
+   */
+  source?: string;
 }
 
 const W = 720;
-const H = 420;
+const H = 436;
 const PAD = { top: 44, right: 132, bottom: 62, left: 52 };
 
 export function EffortCostChart({
@@ -36,6 +41,7 @@ export function EffortCostChart({
   xLabel,
   yLabel,
   description,
+  source,
 }: EffortCostChartProps) {
   const data = chartDatasets[dataset];
   if (!data) {
@@ -133,13 +139,18 @@ export function EffortCostChart({
 
         <text
           x={PAD.left + plotW / 2}
-          y={H - 14}
+          y={H - 30}
           className='fill-neutral-400'
           fontSize='11'
           textAnchor='middle'
         >
           {xLabel}
         </text>
+        {source ? (
+          <text x={PAD.left} y={H - 10} className='fill-neutral-500' fontSize='9'>
+            {source}
+          </text>
+        ) : null}
         <text
           x={-(PAD.top + plotH / 2)}
           y={16}
