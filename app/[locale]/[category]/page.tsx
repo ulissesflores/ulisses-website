@@ -98,7 +98,7 @@ export default async function CategoryPage({ params }: PageProps) {
     author: {
       '@type': 'Person',
       '@id': `${upkfMeta.primaryWebsite}/#person`,
-      name: 'Carlos Ulisses Flores',
+      name: 'Ulisses Flores',
     },
     hasPart: categoryPublications.map((pub) => ({
       '@type': pub.kind === 'R' ? 'Report' : 'ScholarlyArticle',

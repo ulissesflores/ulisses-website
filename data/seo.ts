@@ -2,12 +2,36 @@ import { upkfMeta } from '@/data/generated/upkf.generated';
 import { normalizePath } from './i18n';
 
 /**
- * Categorias de publicação em `noindex` durante o rebrand (conteúdo em
- * reconstrução, 2026-06). Fonte única: o template de artigo emite o meta
- * robots e o sitemap EXCLUI estas publicações (página + PDF/artefatos) —
- * URL noindex dentro do sitemap é sinal conflitante para o Google.
+ * Categorias em `noindex` desde o rebrand de 2026-06 (conteúdo em reconstrução).
+ * Fonte única: o template de artigo emite o meta robots e o sitemap EXCLUI estas
+ * publicações (página + PDF/artefatos) — URL noindex dentro do sitemap é sinal
+ * conflitante para o Google.
  */
 export const noindexPublicationCategories: readonly string[] = ['research', 'essays', 'whitepapers'];
+
+/**
+ * Publicações que já foram REFEITAS a partir de material real (Fase 2) e voltam a
+ * ser indexáveis, mesmo estando numa categoria em `noindex`.
+ *
+ * O interruptor por categoria era grosso demais: escondia do Google os 6 artigos
+ * reconstruídos junto com os 12 que nunca foram tocados — enquanto `llms.txt` e
+ * `feed.xml` anunciavam os 18 em destaque (auditoria 2026-07-30). Esta lista é a
+ * exceção explícita que desfaz isso; o critério de entrada é ter `.recovered.md`
+ * em `data/research/articles/<slug>/`.
+ */
+export const reindexedPublicationSlugs: readonly string[] = [
+  '2024-agritech-agile-flow',
+  '2024-theology-economic-order',
+  '2025-fraud-detection-mlp',
+  '2025-hybrid-cooling-thermodynamics',
+  '2025-little-law-resilience',
+  '2025-lstm-asset-prediction',
+];
+
+/** Uma publicação é escondida do Google se a categoria for noindex E ela não tiver sido refeita. */
+export function isPublicationNoindexed(category: string, slug: string): boolean {
+  return noindexPublicationCategories.includes(category) && !reindexedPublicationSlugs.includes(slug);
+}
 
 /**
  * Hreflang prefix map. `pt-BR` is the default locale — its canonical URL is

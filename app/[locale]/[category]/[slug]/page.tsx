@@ -9,7 +9,7 @@ import { ArticleToc } from '@/components/article-toc';
 import { localePath } from '@/lib/locale-path';
 import { defaultLocale, isLocale, type Locale } from '@/data/i18n';
 import { getDictionary } from '@/lib/get-dictionary';
-import { buildCanonical, buildLanguageAlternates, noindexPublicationCategories, defaultOgImages } from '@/data/seo';
+import { buildCanonical, buildLanguageAlternates, isPublicationNoindexed, defaultOgImages } from '@/data/seo';
 
 interface PageProps {
   params: Promise<{ category: string; slug: string; locale: string }>;
@@ -43,7 +43,8 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const canonicalPath = `/${publication.category}/${publication.id}`;
 
   // Conteúdo de pesquisa em reconstrução: noindex até haver artigos reais (rebrand 2026-06).
-  const isNoindexed = noindexPublicationCategories.includes(publication.category);
+  // Os 6 já refeitos na Fase 2 são exceção explícita — ver `reindexedPublicationSlugs`.
+  const isNoindexed = isPublicationNoindexed(publication.category, publication.id);
 
   return {
     title: localizedTitle,

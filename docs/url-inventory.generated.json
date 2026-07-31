@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-07-24T21:23:15.952Z",
+  "generatedAt": "2026-07-31T22:18:01.088Z",
   "totals": {
-    "all": 268,
+    "all": 274,
     "collections": 6,
     "items": 131,
     "assets": 36,
-    "anchors": 50
+    "anchors": 56
   },
   "grouped": {
     "root": [
@@ -55,9 +55,15 @@
       "https://ulissesflores.com/#sermons#cultosonline",
       "https://ulissesflores.com/#sermons#jejumdavitoria",
       "https://ulissesflores.com/#sermons#outros",
+      "https://ulissesflores.com/#sw-anticipating-shadow-points",
+      "https://ulissesflores.com/#sw-blast-radius-containment",
+      "https://ulissesflores.com/#sw-cellular-inference-mesh",
+      "https://ulissesflores.com/#sw-grounding-doesnt-pay",
       "https://ulissesflores.com/#sw-llm-contextizer",
       "https://ulissesflores.com/#sw-lrblstm",
       "https://ulissesflores.com/#sw-mit507-yape",
+      "https://ulissesflores.com/#sw-mit508-techgrowth",
+      "https://ulissesflores.com/#sw-operating-point-dominance",
       "https://ulissesflores.com/#ucsd",
       "https://ulissesflores.com/#unip"
     ],
@@ -286,9 +292,15 @@
       "https://ulissesflores.com/#sermons#cultosonline",
       "https://ulissesflores.com/#sermons#jejumdavitoria",
       "https://ulissesflores.com/#sermons#outros",
+      "https://ulissesflores.com/#sw-anticipating-shadow-points",
+      "https://ulissesflores.com/#sw-blast-radius-containment",
+      "https://ulissesflores.com/#sw-cellular-inference-mesh",
+      "https://ulissesflores.com/#sw-grounding-doesnt-pay",
       "https://ulissesflores.com/#sw-llm-contextizer",
       "https://ulissesflores.com/#sw-lrblstm",
       "https://ulissesflores.com/#sw-mit507-yape",
+      "https://ulissesflores.com/#sw-mit508-techgrowth",
+      "https://ulissesflores.com/#sw-operating-point-dominance",
       "https://ulissesflores.com/#ucsd",
       "https://ulissesflores.com/#unip"
     ]
@@ -340,9 +352,15 @@
     "https://ulissesflores.com/#sermons#cultosonline",
     "https://ulissesflores.com/#sermons#jejumdavitoria",
     "https://ulissesflores.com/#sermons#outros",
+    "https://ulissesflores.com/#sw-anticipating-shadow-points",
+    "https://ulissesflores.com/#sw-blast-radius-containment",
+    "https://ulissesflores.com/#sw-cellular-inference-mesh",
+    "https://ulissesflores.com/#sw-grounding-doesnt-pay",
     "https://ulissesflores.com/#sw-llm-contextizer",
     "https://ulissesflores.com/#sw-lrblstm",
     "https://ulissesflores.com/#sw-mit507-yape",
+    "https://ulissesflores.com/#sw-mit508-techgrowth",
+    "https://ulissesflores.com/#sw-operating-point-dominance",
     "https://ulissesflores.com/#ucsd",
     "https://ulissesflores.com/#unip",
     "https://ulissesflores.com/.well-known/did.json",

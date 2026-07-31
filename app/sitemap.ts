@@ -4,7 +4,7 @@ import { knowledgeData } from '@/data/knowledge';
 import { upkfMeta } from '@/data/generated/upkf.generated';
 import { acervoCanonicalPath, acervoLatestPublishedAt } from '@/data/acervo-teologico';
 import { artigosByDateDesc, artigosCanonicalPath, artigosLatestDate } from '@/data/artigos';
-import { buildLanguageAlternates, noindexPublicationCategories } from '@/data/seo';
+import { buildLanguageAlternates, isPublicationNoindexed } from '@/data/seo';
 
 // ── Helpers ─────────────────────────────────────────────────────────────────────
 
@@ -91,7 +91,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // Publicações noindex (rebrand) ficam FORA do sitemap — página e artefatos
   // (PDF etc.). Submeter URL noindex no sitemap é sinal conflitante p/ Google.
   const indexablePublications = publications.filter(
-    (publication) => !noindexPublicationCategories.includes(publication.category),
+    (publication) => !isPublicationNoindexed(publication.category, publication.id),
   );
 
   const publicationEntries = indexablePublications

@@ -2,7 +2,7 @@
 
 - Source: `public/upkf-source.md`
 - Generated at: 2026-02-21
-- Total URLs: 268
+- Total URLs: 274
 
 ## Collections
 - https://ulissesflores.com/certifications
@@ -229,8 +229,14 @@
 - https://ulissesflores.com/#sermons#cultosonline
 - https://ulissesflores.com/#sermons#jejumdavitoria
 - https://ulissesflores.com/#sermons#outros
+- https://ulissesflores.com/#sw-anticipating-shadow-points
+- https://ulissesflores.com/#sw-blast-radius-containment
+- https://ulissesflores.com/#sw-cellular-inference-mesh
+- https://ulissesflores.com/#sw-grounding-doesnt-pay
 - https://ulissesflores.com/#sw-llm-contextizer
 - https://ulissesflores.com/#sw-lrblstm
 - https://ulissesflores.com/#sw-mit507-yape
+- https://ulissesflores.com/#sw-mit508-techgrowth
+- https://ulissesflores.com/#sw-operating-point-dominance
 - https://ulissesflores.com/#ucsd
 - https://ulissesflores.com/#unip
