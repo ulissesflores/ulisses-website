@@ -1,11 +1,13 @@
+'use client';
+
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { Home, Search, BookOpen, Shield, FlaskConical } from 'lucide-react';
 import { common as ptBrCommon } from '@/data/i18n/pt-br/common';
 import { common as enCommon } from '@/data/i18n/en/common';
 import { common as esCommon } from '@/data/i18n/es/common';
 import { common as itCommon } from '@/data/i18n/it/common';
 import { common as heCommon } from '@/data/i18n/he/common';
-import { headers } from 'next/headers';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const dictMap: Record<string, any> = {
@@ -18,11 +20,18 @@ const dictMap: Record<string, any> = {
 
 const iconMap = { Home, BookOpen, Shield, FlaskConical } as const;
 
-export default async function NotFound() {
-  // Attempt to detect locale from the request URL
-  const headersList = await headers();
-  const referer = headersList.get('referer') || '';
-  const match = referer.match(/\/(en|es|it|he)\//);
+/**
+ * Client component on purpose. Detecting the locale on the server would need
+ * `headers()`, and a dynamic API inside `not-found.tsx` opts the WHOLE `[locale]`
+ * subtree — every page of the site — out of static rendering (measured 2026-07-30:
+ * 0 of 23 pages prerendered, `x-vercel-cache: MISS` on every request). `usePathname()`
+ * costs one small chunk on the 404 route alone and reads the locale from the URL that
+ * was actually requested, which is strictly more reliable than the `referer` it
+ * replaces — that one returned pt-BR for `/en/...` whenever there was no referer.
+ */
+export default function NotFound() {
+  const pathname = usePathname() || '/';
+  const match = pathname.match(/^\/(en|es|it|he)(\/|$)/);
   const locale = match?.[1] || 'pt-br';
   const common = dictMap[locale] || ptBrCommon;
   const t = common.notFound;

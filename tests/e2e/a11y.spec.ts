@@ -17,14 +17,29 @@ import axeCore from 'axe-core';
 
 const WCAG_TAGS = ['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa', 'wcag22aa'];
 
-// Rotas confirmadas com 0 violações (baseline Grupo A). Inclui RTL (he).
+/*
+ * Rotas confirmadas com 0 violações. Inclui RTL (he).
+ *
+ * A lista era de junho e cobria só o Grupo A — nenhuma rota de `/artigos`,
+ * `/identidade`, `/simulacoes` ou `/c`. Consequência real: o commit `b58184b`
+ * introduziu `scrollable-region-focusable` (serious) na tabela do artigo e o gate
+ * passou verde em 1000/1000 com o defeito vivo em produção por um dia
+ * (auditoria 2026-07-30). Conteúdo novo nasce dentro do gate a partir daqui.
+ */
 const ROUTES = [
   '/',
+  '/c',
   '/consultoria',
   '/palestras',
+  '/artigos',
+  '/artigos/2026-07-24-claude-opus-5',
+  '/identidade',
+  '/simulacoes',
+  '/simulacoes/ia-2027',
   '/whitepapers',
   '/whitepapers/projeto-psi',
   '/he/whitepapers/projeto-psi',
+  '/he/c',
   '/research/2025-lstm-asset-prediction',
   '/he/research/2025-lstm-asset-prediction', // cobre o ArticleToc (D04) em RTL no gate
 ];

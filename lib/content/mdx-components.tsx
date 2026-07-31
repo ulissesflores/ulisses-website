@@ -48,8 +48,16 @@ export const mdxComponents: MDXComponents = {
    * Sem `!important`: o Tailwind Typography estiliza via `:where()`, que tem
    * especificidade zero, então a classe do wrapper vence.
    */
+  /*
+   * `tabIndex={0}` porque uma região rolável precisa ser alcançável por teclado.
+   * Quando a correção acima passou a fazer a tabela rolar de verdade, o wrapper virou
+   * uma região rolável sem foco — axe `scrollable-region-focusable` (serious), medido
+   * em produção no iPhone 13 em 2026-07-30. Só aparece no mobile, porque só ali a
+   * tabela ultrapassa a largura; por isso o gate de axe (desktop) não pegou.
+   * Sem `role="region"`: sem nome acessível, um landmark anônimo é pior que nenhum.
+   */
   table: (props) => (
-    <div className='overflow-x-auto [&>table]:w-max [&>table]:min-w-full'>
+    <div tabIndex={0} className='overflow-x-auto [&>table]:w-max [&>table]:min-w-full'>
       <table {...props} />
     </div>
   ),

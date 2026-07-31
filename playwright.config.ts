@@ -33,6 +33,19 @@ export default defineConfig({
       name: 'chromium',
       use: { ...devices['Desktop Chrome'] },
     },
+    /*
+     * Mobile é 34% das impressões do site — e defeitos que só existem no celular
+     * passavam pelo gate. A violação `scrollable-region-focusable` da tabela do
+     * artigo só aparece quando a tabela ultrapassa a largura, ou seja, só aqui
+     * (medido em 2026-07-30 com o gate desktop verde em 1000/1000).
+     */
+    {
+      name: 'mobile',
+      // Viewport do iPhone 13 sobre Chromium, e não o WebKit que o preset traz por
+      // padrão: é assim que a auditoria de 2026-07-30 reproduziu o defeito, e evita
+      // exigir um binário de browser a mais só para o gate rodar.
+      use: { ...devices['iPhone 13'], browserName: 'chromium' },
+    },
   ],
 
   webServer: {
