@@ -119,3 +119,19 @@ PROXIMA-SESSAO.md
 
 # Laudo de pente-fino (doc de trabalho interno)
 PENTE-FINO-*.md
+.env*.local
+
+# Documentos pessoais e material de origem que NUNCA entram num repo público:
+# o Lattes e o currículo trazem endereço e telefone, e os exports do LinkedIn
+# trazem a rede de contatos. Ficam na raiz porque são insumo de trabalho.
+/lattes.pdf
+/ULISSES.pdf
+/Curr*culo*.pdf
+/*LinkedIn*.pdf
+
+# Estado e laudos de sessão: fonte da verdade do trabalho em curso, não do site.
+/*-STATE-*.md
+/LAUDO-*.md
+/DRAFT-*.md
+/POST-*.md
+/POST-*.png

@@ -14,6 +14,7 @@ import { category } from './category';
 import { consultoria } from './consultoria';
 import { palestras } from './palestras';
 import { artigos } from './artigos';
+import { cartao } from './cartao';
 
 const ptBrDict = {
   common,
@@ -32,6 +33,7 @@ const ptBrDict = {
   consultoria,
   palestras,
   artigos,
+  cartao,
 };
 
 export default ptBrDict;
