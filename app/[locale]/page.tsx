@@ -83,7 +83,7 @@ export default async function Home({ params }: PageProps) {
       {
         '@type': 'Person',
         '@id': `${origin}/#person`,
-        name: 'Carlos Ulisses Flores',
+        name: 'Ulisses Flores',
         alternateName: 'Ulisses Flores',
         url: origin,
         image: `${origin}/carlos-ulisses-flores-cto.jpg`,
@@ -142,7 +142,7 @@ export default async function Home({ params }: PageProps) {
             
             <div className="text-center md:text-start pt-2 flex-1">
               <h1 className="text-5xl md:text-6xl font-bold text-white tracking-tight mb-4">
-                Carlos Ulisses Flores
+                Ulisses Flores
               </h1>
               <div className="flex flex-wrap justify-center md:justify-start gap-3 text-sm font-medium uppercase tracking-wider mb-6">
                 <Badge icon={<Terminal size={14} />} text={t.hero.badges.cto} color="emerald" />

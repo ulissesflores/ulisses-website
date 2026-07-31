@@ -4,7 +4,7 @@ export const faq = {
   identidade: [
     {
       question: 'Chi è Ulisses Flores?',
-      answer: 'Carlos Ulisses Flores è scienziato economico, ingegnere di sistemi e ricercatore con attività in IA, economia e sistemi complessi. Opera come CTO e angel investor, con produzione accademica pubblica su ORCID e Lattes.'
+      answer: 'Ulisses Flores è scienziato economico, ingegnere di sistemi e ricercatore con attività in IA, economia e sistemi complessi. Opera come CTO e angel investor, con produzione accademica pubblica su ORCID e Lattes.'
     },
     {
       question: 'Cos\'è l\'identità sovrana?',
@@ -340,7 +340,7 @@ export const faq = {
   home: [
     {
       question: 'Chi è Ulisses Flores?',
-      answer: 'Carlos Ulisses Flores è Scienziato Economico, Analista di Sistemi e Ricercatore con attività in Intelligenza Artificiale, Blockchain, Economia e Sistemi Complessi. Opera come Consulente Strategico di IA, Relatore e Studente di Master in IA presso AGTU.'
+      answer: 'Ulisses Flores è Scienziato Economico, Analista di Sistemi e Ricercatore con attività in Intelligenza Artificiale, Blockchain, Economia e Sistemi Complessi. Opera come Consulente Strategico di IA, Relatore e Studente di Master in IA presso AGTU.'
     },
     {
       question: 'Qual è la formazione accademica di Ulisses Flores?',

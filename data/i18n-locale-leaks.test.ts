@@ -14,6 +14,15 @@ import * as path from 'node:path';
  * ═══════════════════════════════════════════════════════════════════════════════
  */
 
+/**
+ * Rotas que NÃO têm variante por idioma e por isso não passam pelo `localePath()`.
+ * Vivem fora de `app/[locale]/` e a URL é a mesma nos 5 locales — de propósito.
+ *
+ * `/c.vcf`: o vCard do cartão de visita. A URL vai gravada no chip NFC e no QR,
+ * então não pode mudar de forma quando o idioma muda.
+ */
+const LOCALE_FREE_ROUTES = ['/c.vcf'];
+
 const ROOT = path.resolve(import.meta.dirname, '..');
 const APP_LOCALE_DIR = path.join(ROOT, 'app', '[locale]');
 const COMPONENTS_DIR = path.join(ROOT, 'components');
@@ -164,6 +173,7 @@ describe('Internal Link hrefs use localePath()', () => {
           for (const match of stringMatch) {
             // Skip external URLs (http/https)
             if (match.includes('http')) continue;
+            if (LOCALE_FREE_ROUTES.some((route) => match.includes(`'${route}'`))) continue;
             violations.push(`Line ${i + 1}: ${match.trim()}`);
           }
         }

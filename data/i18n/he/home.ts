@@ -17,8 +17,8 @@ export const home = {
     ogImageAlt: 'Ulisses Flores — יועץ בינה מלאכותית ודובר'
   },
   hero: {
-    imageAlt: 'Carlos Ulisses Flores - CTO וחוקר ראשי ב-Codex Hash Ltda בז\'ונדיאי',
-    name: 'Carlos Ulisses Flores',
+    imageAlt: 'Ulisses Flores - CTO וחוקר ראשי ב-Codex Hash Ltda בז\'ונדיאי',
+    name: 'Ulisses Flores',
     badges: {
       cto: 'CTO וחוקר ראשי',
       msc: 'MSc Candidate AI @ AGTU',

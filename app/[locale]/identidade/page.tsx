@@ -180,7 +180,7 @@ export default async function IdentidadePage({ params }: PageProps) {
             <div className='relative w-44 h-44 md:w-52 md:h-52 rounded-2xl overflow-hidden border border-neutral-700'>
               <Image
                 src={ogImage}
-                alt='Carlos Ulisses Flores'
+                alt='Ulisses Flores'
                 fill
                 priority
                 sizes='(max-width: 768px) 176px, 208px'
@@ -448,32 +448,51 @@ export default async function IdentidadePage({ params }: PageProps) {
 
           <h3 className='text-lg font-semibold text-white mb-3'>{t.sections.acervo.citableRepos}</h3>
           <div className='grid gap-3 md:grid-cols-3'>
-            {softwareProjects.map((project) => (
-              <article key={project.schemaId} className='rounded-xl border border-neutral-800 bg-neutral-950/70 p-4'>
-                <p className='text-sm text-white font-semibold mb-2'>{project.slug}</p>
-                <a
-                  href={project.repo}
-                  target='_blank'
-                  rel='noopener noreferrer'
-                  className='text-xs text-emerald-300 hover:text-emerald-200 break-all'
-                >
-                  {project.repo}
-                </a>
-                <div className='mt-3 flex flex-wrap gap-1'>
-                  {(project.releases as ReadonlyArray<{ doi?: string; version?: string }>).map((release, index) => {
-                    const releaseKey = release.doi || release.version || `release-${index + 1}`;
-                    return (
-                      <span
-                        key={`${project.schemaId}-${releaseKey}`}
-                        className='rounded-full border border-neutral-700 px-2 py-1 text-[10px] text-neutral-400'
-                      >
-                        {release.doi || release.version || 'release'}
-                      </span>
-                    );
-                  })}
-                </div>
-              </article>
-            ))}
+            {softwareProjects.map((project) => {
+              // O UPKF nomeia em pt-BR/en/es; it e he caem no inglês. Sem nome, o slug do repo.
+              const names = project.name as Record<string, string> | undefined;
+              const projectName = names?.[locale === 'pt-br' ? 'pt-BR' : locale] || names?.en || project.slug;
+
+              return (
+                <article key={project.schemaId} className='rounded-xl border border-neutral-800 bg-neutral-950/70 p-4'>
+                  <p className='text-sm text-white font-semibold mb-1'>{projectName}</p>
+                  <a
+                    href={project.repo}
+                    target='_blank'
+                    rel='noopener noreferrer'
+                    className='text-xs text-emerald-300 hover:text-emerald-200 break-all'
+                  >
+                    {project.repo}
+                  </a>
+                  <div className='mt-3 flex flex-wrap gap-1'>
+                    {(project.releases as ReadonlyArray<{ doi?: string; version?: string; doiUrl?: string }>).map(
+                      (release, index) => {
+                        const releaseKey = release.doi || release.version || `release-${index + 1}`;
+                        const label = release.doi || release.version || 'release';
+                        const chip = 'rounded-full border border-neutral-700 px-2 py-1 text-[10px] text-neutral-400';
+
+                        // Um DOI que não leva ao depósito é decoração: quando há URL, o chip é link.
+                        return release.doiUrl ? (
+                          <a
+                            key={`${project.schemaId}-${releaseKey}`}
+                            href={release.doiUrl}
+                            target='_blank'
+                            rel='noopener noreferrer'
+                            className={`${chip} hover:border-emerald-500/40 hover:text-emerald-300 transition-colors`}
+                          >
+                            {label}
+                          </a>
+                        ) : (
+                          <span key={`${project.schemaId}-${releaseKey}`} className={chip}>
+                            {label}
+                          </span>
+                        );
+                      },
+                    )}
+                  </div>
+                </article>
+              );
+            })}
           </div>
 
           <h3 className='text-lg font-semibold text-white mt-6 mb-3'>{t.sections.acervo.featuredPublications}</h3>

@@ -1,7 +1,7 @@
 # Title Page
 
 **Title:** Detecção de Fraudes em Cartões com Redes Neurais — Deep Research Edition
-**Author:** Carlos Ulisses Flores
+**Author:** Ulisses Flores
 **ORCID:** 0000-0002-6034-7765
 **Institutional Affiliation:** Codex Hash Research Lab
 **Date of Submission:** 21 February 2026

@@ -4,7 +4,7 @@ export const faq = {
   identidade: [
     {
       question: 'Who is Ulisses Flores?',
-      answer: 'Carlos Ulisses Flores is an economic scientist, systems engineer, and researcher specializing in AI, economics, and complex systems. He works as a CTO and angel investor, with public academic work in ORCID and Lattes.'
+      answer: 'Ulisses Flores is an economic scientist, systems engineer, and researcher specializing in AI, economics, and complex systems. He works as a CTO and angel investor, with public academic work in ORCID and Lattes.'
     },
     {
       question: 'What is sovereign identity?',
@@ -340,7 +340,7 @@ export const faq = {
   home: [
     {
       question: 'Who is Ulisses Flores?',
-      answer: 'Carlos Ulisses Flores is an Economic Scientist, Systems Analyst, and Researcher specializing in Artificial Intelligence, Blockchain, Economics, and Complex Systems. He works as a Strategic AI Consultant, Speaker, and Master\'s student in AI at AGTU.'
+      answer: 'Ulisses Flores is an Economic Scientist, Systems Analyst, and Researcher specializing in Artificial Intelligence, Blockchain, Economics, and Complex Systems. He works as a Strategic AI Consultant, Speaker, and Master\'s student in AI at AGTU.'
     },
     {
       question: 'What is Ulisses Flores\' academic background?',

@@ -19,8 +19,8 @@ export const home = {
     ogImageAlt: 'Ulisses Flores — Consultor de IA e Palestrante',
   },
   hero: {
-    imageAlt: 'Carlos Ulisses Flores - CTO e Pesquisador Chefe da Codex Hash Ltda em Jundiaí',
-    name: 'Carlos Ulisses Flores',
+    imageAlt: 'Ulisses Flores - CTO e Pesquisador Chefe da Codex Hash Ltda em Jundiaí',
+    name: 'Ulisses Flores',
     badges: {
       cto: 'CTO & Pesquisador Chefe',
       msc: 'MSc Candidate AI @ AGTU',

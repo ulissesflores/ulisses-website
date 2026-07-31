@@ -4,7 +4,7 @@ export const faq = {
   identidade: [
     {
       question: '¿Quién es Ulisses Flores?',
-      answer: 'Carlos Ulisses Flores es científico económico, ingeniero de sistemas e investigador con actuación en IA, economía y sistemas complejos. Se desempeña como CTO e inversor ángel, con producción académica pública en ORCID y Lattes.'
+      answer: 'Ulisses Flores es científico económico, ingeniero de sistemas e investigador con actuación en IA, economía y sistemas complejos. Se desempeña como CTO e inversor ángel, con producción académica pública en ORCID y Lattes.'
     },
     {
       question: '¿Qué es la identidad soberana?',
@@ -340,7 +340,7 @@ export const faq = {
   home: [
     {
       question: '¿Quién es Ulisses Flores?',
-      answer: 'Carlos Ulisses Flores es Científico Económico, Analista de Sistemas e Investigador con actuación en Inteligencia Artificial, Blockchain, Economía y Sistemas Complejos. Se desempeña como Consultor Estratégico de IA, Ponente y Maestrando en IA por AGTU.'
+      answer: 'Ulisses Flores es Científico Económico, Analista de Sistemas e Investigador con actuación en Inteligencia Artificial, Blockchain, Economía y Sistemas Complejos. Se desempeña como Consultor Estratégico de IA, Ponente y Maestrando en IA por AGTU.'
     },
     {
       question: '¿Cuál es la formación académica de Ulisses Flores?',

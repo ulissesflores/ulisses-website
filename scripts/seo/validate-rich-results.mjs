@@ -243,7 +243,12 @@ console.log("  🚦 Phase 4: Internal Link Integrity");
 console.log('══════════════════════════════════════════════════\n');
 
 const BARE_HREF = /href=['"]\/[^'"]*['"]/g;
-const SAFE_PATTERNS = [/canonicalPath/, /sermon\./, /post\./, /item\./, /cert\./, /publication\./];
+/*
+ * `\/c\.vcf`: rota deliberadamente sem locale — a URL vai gravada no chip NFC e no
+ * QR do cartão de visita, então não pode mudar de forma quando o idioma muda.
+ * Mesma isenção declarada em `data/i18n-locale-leaks.test.ts` (LOCALE_FREE_ROUTES).
+ */
+const SAFE_PATTERNS = [/canonicalPath/, /sermon\./, /post\./, /item\./, /cert\./, /publication\./, /\/c\.vcf/];
 let bareHrefCount = 0;
 
 for (const pagePath of pageFiles) {

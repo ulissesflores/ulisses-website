@@ -1,7 +1,7 @@
 # Title Page
 
 **Title:** Fundamentos Transcendentes da Ordem Econômica — Deep Research Edition
-**Author:** Carlos Ulisses Flores
+**Author:** Ulisses Flores
 **ORCID:** 0000-0002-6034-7765
 **Institutional Affiliation:** Codex Hash Research Lab
 **Date of Submission:** 21 February 2026

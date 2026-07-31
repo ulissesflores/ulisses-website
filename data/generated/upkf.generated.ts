@@ -9,9 +9,9 @@ export const upkfMeta = {
   "generatedAt": "2026-02-21",
   "schemaTarget": "Schema.org JSON-LD via deterministic derivation",
   "sourcePath": "public/upkf-source.md",
-  "displayName": "Carlos Ulisses Flores",
+  "displayName": "Ulisses Flores",
   "preferredName": "Ulisses",
-  "publicDisplayName": "Carlos Ulisses Flores",
+  "publicDisplayName": "Ulisses Flores",
   "canonicalLegalName": "Carlos Ulisses Flores",
   "primaryWebsite": "https://ulissesflores.com",
   "description": {
@@ -442,8 +442,8 @@ export const upkfMeta = {
       "slug": "llm-contextizer",
       "schemaId": "https://ulissesflores.com/#sw-llm-contextizer",
       "schemaType": "SoftwareSourceCode",
-      "repo": "https://github.com/ulissesflores/llm-contextizer",
-      "codeRepository": "https://github.com/ulissesflores/llm-contextizer",
+      "repo": "https://github.com/ulissesflores/repo2llm",
+      "codeRepository": "https://github.com/ulissesflores/repo2llm",
       "version": "",
       "license": "",
       "licenseUrl": "",
@@ -460,6 +460,11 @@ export const upkfMeta = {
           "version": "0.1.1",
           "doi": "10.5281/zenodo.18343438",
           "doiUrl": "https://doi.org/10.5281/zenodo.18343438"
+        },
+        {
+          "version": "0.1.2",
+          "doi": "10.5281/zenodo.18343563",
+          "doiUrl": "https://doi.org/10.5281/zenodo.18343563"
         }
       ]
     },
@@ -486,6 +491,277 @@ export const upkfMeta = {
           "version": "1.0.0",
           "doi": "10.5281/zenodo.18641336",
           "doiUrl": "https://doi.org/10.5281/zenodo.18641336"
+        },
+        {
+          "version": "2.0.0",
+          "doi": "10.5281/zenodo.18645894",
+          "doiUrl": "https://doi.org/10.5281/zenodo.18645894"
+        }
+      ]
+    },
+    {
+      "position": 4,
+      "slug": "mit508-techgrowth-des",
+      "schemaId": "https://ulissesflores.com/#sw-mit508-techgrowth",
+      "schemaType": "SoftwareSourceCode",
+      "repo": "https://github.com/ulissesflores/mit508-techgrowth-des",
+      "codeRepository": "https://github.com/ulissesflores/mit508-techgrowth-des",
+      "version": "",
+      "license": "Apache-2.0",
+      "licenseUrl": "https://spdx.org/licenses/Apache-2.0.html",
+      "programmingLanguage": "Python",
+      "runtimePlatform": "Python 3.10+ / SimPy",
+      "name": {
+        "pt-BR": "TechGrowth DES — Simulação Estocástica de Pipeline Kafka-Flink-Iceberg com Injeção de Partição de Rede (PACELC)",
+        "en": "TechGrowth DES — Stochastic Simulation of Kafka-Flink-Iceberg Pipeline with PACELC Network Partition Injection",
+        "es": "TechGrowth DES — Simulación Estocástica de Pipeline Kafka-Flink-Iceberg con Inyección de Partición de Red (PACELC)"
+      },
+      "description": {
+        "pt-BR": "Simulação de eventos discretos validando o pipeline Kafka -> Flink -> Iceberg sob burst de Black Friday (5.800 eventos/s) com PACELC e injeção de partição de rede.",
+        "en": "Discrete-event simulation validating a Kafka -> Flink -> Iceberg pipeline under a Black Friday burst (5,800 events/s) with PACELC and network-partition injection."
+      },
+      "keywords": [
+        "discrete-event simulation",
+        "SimPy",
+        "Kafka",
+        "Flink",
+        "Iceberg",
+        "PACELC",
+        "cell-based architecture",
+        "shuffle sharding",
+        "queueing theory",
+        "Little's Law"
+      ],
+      "releases": [
+        {
+          "version": "",
+          "doi": "10.5281/zenodo.19244058",
+          "doiUrl": "https://doi.org/10.5281/zenodo.19244058"
+        },
+        {
+          "version": "1.0.0",
+          "doi": "10.5281/zenodo.19244059",
+          "doiUrl": "https://doi.org/10.5281/zenodo.19244059"
+        }
+      ]
+    },
+    {
+      "position": 5,
+      "slug": "cellular-inference-mesh",
+      "schemaId": "https://ulissesflores.com/#sw-cellular-inference-mesh",
+      "schemaType": "SoftwareSourceCode",
+      "repo": "https://github.com/ulissesflores/cellular-inference-mesh",
+      "codeRepository": "https://github.com/ulissesflores/cellular-inference-mesh",
+      "version": "",
+      "license": "Apache-2.0",
+      "licenseUrl": "https://spdx.org/licenses/Apache-2.0.html",
+      "programmingLanguage": "Python",
+      "runtimePlatform": "Python 3.10+ / Salabim",
+      "name": {
+        "pt-BR": "Cellular Inference Mesh — Simulação DES em Salabim de Inferência de LLM Edge-Cloud sob Saturação PACELC",
+        "en": "Cellular Inference Mesh — Salabim DES of Edge-Cloud LLM Inference under PACELC Saturation",
+        "es": "Cellular Inference Mesh — Simulación DES en Salabim de Inferencia de LLM Edge-Cloud bajo Saturación PACELC"
+      },
+      "description": {
+        "pt-BR": "Simulação de eventos discretos em Salabim da arquitetura edge-cloud Cellular Inference Mesh para comando de voz multilíngue em AGVs industriais: 300 réplicas Monte Carlo, 3 cenários, 2 braços, 1800 segundos simulados.",
+        "en": "Salabim discrete-event simulation of the Cellular Inference Mesh edge-cloud architecture for industrial multilingual AGV voice commands: 300 Monte-Carlo replicates across 3 scenarios and 2 arms over 1,800 simulated seconds."
+      },
+      "keywords": [
+        "cellular inference mesh",
+        "saturated pipeline conjecture",
+        "PACELC",
+        "edge-cloud LLM serving",
+        "speculative decoding",
+        "multilingual AGV",
+        "LLMOps",
+        "mobile edge intelligence"
+      ],
+      "releases": [
+        {
+          "version": "",
+          "doi": "10.5281/zenodo.20108648",
+          "doiUrl": "https://doi.org/10.5281/zenodo.20108648"
+        },
+        {
+          "version": "0.3.2",
+          "doi": "10.5281/zenodo.20109260",
+          "doiUrl": "https://doi.org/10.5281/zenodo.20109260"
+        }
+      ]
+    },
+    {
+      "position": 6,
+      "slug": "anticipating-shadow-points",
+      "schemaId": "https://ulissesflores.com/#sw-anticipating-shadow-points",
+      "schemaType": "SoftwareSourceCode",
+      "repo": "https://github.com/ulissesflores/anticipating-shadow-points",
+      "codeRepository": "https://github.com/ulissesflores/anticipating-shadow-points",
+      "version": "",
+      "license": "MIT",
+      "licenseUrl": "https://spdx.org/licenses/MIT.html",
+      "programmingLanguage": "Python",
+      "runtimePlatform": "Claude Code",
+      "name": {
+        "pt-BR": "ASP — Antecipação de Pontos de Sombra (protocolo de planejamento pré-mortem)",
+        "en": "ASP — Anticipating Shadow Points (pre-mortem planning protocol)",
+        "es": "ASP — Anticipación de Puntos de Sombra (protocolo de planificación pre-mortem)"
+      },
+      "description": {
+        "pt-BR": "Skill do Claude Code que orquestra um protocolo de planejamento em 13 fases, pré-mortem primeiro, para tarefas não triviais de engenharia — migrações, deploys, refatorações e decisões de arquitetura. Documentação em cinco idiomas.",
+        "en": "Claude Code skill orchestrating a 13-phase, pre-mortem-first planning protocol for non-trivial engineering tasks — migrations, deploys, refactors and architecture decisions. Documentation in five languages."
+      },
+      "keywords": [
+        "Claude Code",
+        "agentic workflow",
+        "pre-mortem",
+        "shadow points",
+        "MAST",
+        "validator subagent",
+        "plan-and-act",
+        "reflexion"
+      ],
+      "releases": [
+        {
+          "version": "",
+          "doi": "10.5281/zenodo.20276631",
+          "doiUrl": "https://doi.org/10.5281/zenodo.20276631"
+        },
+        {
+          "version": "1.0.3",
+          "doi": "10.5281/zenodo.20277015",
+          "doiUrl": "https://doi.org/10.5281/zenodo.20277015"
+        }
+      ]
+    },
+    {
+      "position": 7,
+      "slug": "blast-radius-containment",
+      "schemaId": "https://ulissesflores.com/#sw-blast-radius-containment",
+      "schemaType": "SoftwareSourceCode",
+      "repo": "https://github.com/ulissesflores/blast-radius-containment",
+      "codeRepository": "https://github.com/ulissesflores/blast-radius-containment",
+      "version": "",
+      "license": "Apache-2.0",
+      "licenseUrl": "https://spdx.org/licenses/Apache-2.0.html",
+      "programmingLanguage": "Python",
+      "runtimePlatform": "Python 3.10+",
+      "name": {
+        "pt-BR": "Contenção de Raio de Explosão — Modelo Monte Carlo Reprodutível de Propagação Lateral de Ransomware sob Microssegmentação Zero Trust",
+        "en": "Blast-Radius Containment — A Reproducible Monte Carlo Model of Ransomware Lateral Propagation under Zero Trust Microsegmentation",
+        "es": "Contención del Radio de Explosión — Modelo Monte Carlo Reproducible de Propagación Lateral de Ransomware bajo Microsegmentación Zero Trust"
+      },
+      "description": {
+        "pt-BR": "Modelo Monte Carlo determinístico que quantifica o raio de explosão da propagação lateral de ransomware e sua contenção por microssegmentação Zero Trust (negação padrão leste-oeste) mais detecção comportamental. Motivado pelo incidente da Change Healthcare em 2024.",
+        "en": "Deterministic Monte Carlo model quantifying the blast radius of ransomware lateral propagation and its containment by Zero Trust microsegmentation (default-deny east-west) plus behavioral detection. Motivated by the 2024 Change Healthcare incident."
+      },
+      "keywords": [
+        "ransomware",
+        "blast radius",
+        "zero trust",
+        "microsegmentation",
+        "lateral movement",
+        "Monte Carlo",
+        "reproducibility",
+        "NIST SP 800-207"
+      ],
+      "releases": [
+        {
+          "version": "",
+          "doi": "10.5281/zenodo.20769939",
+          "doiUrl": "https://doi.org/10.5281/zenodo.20769939"
+        },
+        {
+          "version": "1.0.0",
+          "doi": "10.5281/zenodo.20769940",
+          "doiUrl": "https://doi.org/10.5281/zenodo.20769940"
+        }
+      ]
+    },
+    {
+      "position": 8,
+      "slug": "grounding-doesnt-pay",
+      "schemaId": "https://ulissesflores.com/#sw-grounding-doesnt-pay",
+      "schemaType": "SoftwareSourceCode",
+      "repo": "https://github.com/ulissesflores/grounding-doesnt-pay",
+      "codeRepository": "https://github.com/ulissesflores/grounding-doesnt-pay",
+      "version": "",
+      "license": "Apache-2.0",
+      "licenseUrl": "https://spdx.org/licenses/Apache-2.0.html",
+      "programmingLanguage": "Python",
+      "runtimePlatform": "Python 3.10+",
+      "name": {
+        "pt-BR": "Grounding Doesn't Pay — Resultado Negativo com Orçamento de Tokens Pareado sobre Diversidade Criativa (paper + pacote de replicação)",
+        "en": "Grounding Doesn't Pay — A Token-Matched Negative Result on Creative Diversity (paper + replication package)",
+        "es": "Grounding Doesn't Pay — Resultado Negativo con Presupuesto de Tokens Pareado sobre Diversidad Creativa (paper + paquete de replicación)"
+      },
+      "description": {
+        "pt-BR": "Piloto pré-registrado, sem juiz-LLM e com orçamento de tokens pareado sobre diversidade criativa multiagente. O grounding de domínio em contexto ajuda por proposta, mas nunca está na fronteira eficiente em tokens. Inclui dados congelados e selo de proveniência em cadeia de hash.",
+        "en": "Pre-registered, judge-free, token-matched pilot on multi-agent creative diversity. In-context domain grounding helps per proposal but is never on the token-efficient frontier. Ships frozen data and a hash-chain provenance seal."
+      },
+      "keywords": [
+        "token-efficient diversity",
+        "multi-agent generation",
+        "negative result",
+        "pre-registration",
+        "embedding clustering",
+        "budget-matched accounting",
+        "encoder robustness",
+        "hash chain provenance"
+      ],
+      "releases": [
+        {
+          "version": "",
+          "doi": "10.5281/zenodo.21445129",
+          "doiUrl": "https://doi.org/10.5281/zenodo.21445129"
+        },
+        {
+          "version": "0.1.1",
+          "doi": "10.5281/zenodo.21445390",
+          "doiUrl": "https://doi.org/10.5281/zenodo.21445390"
+        }
+      ]
+    },
+    {
+      "position": 9,
+      "slug": "operating-point-dominance",
+      "schemaId": "https://ulissesflores.com/#sw-operating-point-dominance",
+      "schemaType": "SoftwareSourceCode",
+      "repo": "https://github.com/ulissesflores/operating-point-dominance",
+      "codeRepository": "https://github.com/ulissesflores/operating-point-dominance",
+      "version": "",
+      "license": "Apache-2.0",
+      "licenseUrl": "https://spdx.org/licenses/Apache-2.0.html",
+      "programmingLanguage": "Python",
+      "runtimePlatform": "Python 3.10+",
+      "name": {
+        "pt-BR": "O Limiar Importa Mais que o Modelo — Dominância do Ponto de Operação na Detecção de Fraude em Cartões (paper + pacote de replicação)",
+        "en": "The Threshold Matters More than the Model — Operating-Point Dominance in Credit-Card Fraud Detection (paper + replication package)",
+        "es": "El Umbral Importa Más que el Modelo — Dominancia del Punto de Operación en la Detección de Fraude con Tarjetas (paper + paquete de replicación)"
+      },
+      "description": {
+        "pt-BR": "Estudo de caso confirmatório e auditável no benchmark ULB/Worldline: decompõe o desempenho operacional em efeito do ponto de operação (limiar de decisão) versus efeito da escolha de arquitetura (MLP, regressão logística, autoencoder, isolation forest), sob protocolo sem vazamento de pré-processamento.",
+        "en": "Confirmatory, auditable case study on the ULB/Worldline benchmark: decomposes operational performance into operating-point effect (decision threshold) versus architecture choice (MLP, logistic regression, autoencoder, isolation forest), under a leakage-free preprocessing protocol."
+      },
+      "keywords": [
+        "fraud detection",
+        "rare class",
+        "operating point",
+        "cost-sensitive learning",
+        "data leakage",
+        "reproducibility",
+        "credit card fraud",
+        "class imbalance"
+      ],
+      "releases": [
+        {
+          "version": "",
+          "doi": "10.5281/zenodo.21708708",
+          "doiUrl": "https://doi.org/10.5281/zenodo.21708708"
+        },
+        {
+          "version": "1.0.1",
+          "doi": "10.5281/zenodo.21708992",
+          "doiUrl": "https://doi.org/10.5281/zenodo.21708992"
         }
       ]
     }
@@ -806,15 +1082,15 @@ export const upkfMeta = {
     "sourceMd": "/upkf-source.md"
   },
   "jsonldCoverage": {
-    "markdownBytes": 85262,
-    "markdownLines": 1390,
-    "sectionCount": 102,
+    "markdownBytes": 95720,
+    "markdownLines": 1560,
+    "sectionCount": 108,
     "siteGraphNodes": 43,
-    "publicGraphNodes": 186,
-    "fullGraphNodes": 289,
-    "siteJsonldBytes": 28999,
-    "publicJsonldBytes": 185554,
-    "fullJsonldBytes": 289497,
+    "publicGraphNodes": 192,
+    "fullGraphNodes": 301,
+    "siteJsonldBytes": 28992,
+    "publicJsonldBytes": 194063,
+    "fullJsonldBytes": 309852,
     "corpusFiles": 0,
     "corpusSnippets": 0,
     "corpusDirs": [],
@@ -843,7 +1119,7 @@ export const siteJsonLd = {
     {
       "@id": "https://ulissesflores.com/#person",
       "@type": "Person",
-      "name": "Carlos Ulisses Flores",
+      "name": "Ulisses Flores",
       "alternateName": [
         "Carlos Ulisses Flores",
         "Ulisses Flores",

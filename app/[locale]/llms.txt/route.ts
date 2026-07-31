@@ -9,7 +9,7 @@ const IDENTITY = `# ulissesflores.com
 > Canonical research and identity hub for Ulisses Flores (Carlos Ulisses Flores).
 
 ## Canonical Identity
-- Name: Carlos Ulisses Flores
+- Name: Ulisses Flores
 - Preferred Name: Ulisses
 - Website: https://ulissesflores.com
 - ORCID: 0000-0002-6034-7765

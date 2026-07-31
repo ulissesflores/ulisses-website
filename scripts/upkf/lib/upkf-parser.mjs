@@ -172,7 +172,10 @@ export function parseAcademicCredentials(upkfText) {
 }
 
 function parseSoftwareReleases(block) {
-  const releasesMatch = block.match(/^- releases:\n([\s\S]*?)(?=\n- [a-zA-Z0-9_]+:|$)/m);
+  // `$(?![\s\S])` = fim absoluto do bloco. Com a flag `m` — necessária para `^- releases:`
+  // casar no meio do bloco — um `$` solto casaria o fim de QUALQUER linha, e a captura
+  // não-gulosa parava na primeira release: todo projeto perdia da segunda em diante.
+  const releasesMatch = block.match(/^- releases:\n([\s\S]*?)(?=\n- [a-zA-Z0-9_]+:|$(?![\s\S]))/m);
   if (!releasesMatch) {
     return [];
   }
@@ -428,9 +431,13 @@ export function parseIdentity(upkfText) {
 
   const orcidMatch = upkfText.match(/ORCID:\s*([0-9-]+)/);
   const lattesMatch = upkfText.match(/Lattes ID:\s*([0-9]+)/);
-  const publicDisplayName = alternateNames.includes('Carlos Ulisses Flores')
-    ? 'Carlos Ulisses Flores'
-    : canonicalName;
+  // Nome público = o que o site mostra e o que vai em schema.org `Person.name`.
+  // Vem do campo `public_display_name` do UPKF (fonte única) e cai no nome legal
+  // se o campo não existir. Era literal em código ('Carlos Ulisses Flores'), o que
+  // fazia a decisão de marca morar no parser em vez de no documento de identidade.
+  // O nome legal continua exposto: está em `canonicalName` e em `alternate_names`.
+  const publicDisplayName =
+    (upkfText.match(/public_display_name:\s*(.+)/)?.[1] || '').trim() || canonicalName;
   const keybaseUrl = sameAs.find((item) => item.includes('keybase.io')) || identifiers.keybase?.url || '';
   const gravatarUrl = sameAs.find((item) => item.includes('gravatar.com')) || '';
   const ethLimoUrl = sameAs.find((item) => item.includes('.eth.limo')) || '';

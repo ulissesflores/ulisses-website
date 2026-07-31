@@ -4,7 +4,7 @@ export const faq = {
   identidade: [
     {
       question: 'מי זה Ulisses Flores?',
-      answer: 'Carlos Ulisses Flores הוא כלכלן, מהנדס מערכות וחוקר הפועל בתחומי AI, כלכלה ומערכות מורכבות. הוא משמש כ-CTO ומשקיע אנג\'ל, עם תוצרת אקדמית ציבורית ב-ORCID וב-Lattes.'
+      answer: 'Ulisses Flores הוא כלכלן, מהנדס מערכות וחוקר הפועל בתחומי AI, כלכלה ומערכות מורכבות. הוא משמש כ-CTO ומשקיע אנג\'ל, עם תוצרת אקדמית ציבורית ב-ORCID וב-Lattes.'
     },
     {
       question: 'מהי זהות ריבונית?',
@@ -340,7 +340,7 @@ export const faq = {
   home: [
     {
       question: 'מי זה Ulisses Flores?',
-      answer: 'Carlos Ulisses Flores הוא כלכלן, מנתח מערכות וחוקר הפועל בתחומי בינה מלאכותית, Blockchain, כלכלה ומערכות מורכבות. הוא משמש כיועץ אסטרטגי ל-AI, מרצה וסטודנט לתואר שני ב-AI ב-AGTU.'
+      answer: 'Ulisses Flores הוא כלכלן, מנתח מערכות וחוקר הפועל בתחומי בינה מלאכותית, Blockchain, כלכלה ומערכות מורכבות. הוא משמש כיועץ אסטרטגי ל-AI, מרצה וסטודנט לתואר שני ב-AI ב-AGTU.'
     },
     {
       question: 'מהי ההשכלה האקדמית של Ulisses Flores?',
