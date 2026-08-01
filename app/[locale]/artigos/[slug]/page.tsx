@@ -8,6 +8,7 @@ import {
   artigosCanonicalPath,
   findArtigo,
   formatArtigoDate,
+  localizeArtigo,
 } from '@/data/artigos';
 import { upkfMeta } from '@/data/generated/upkf.generated';
 import { AuthorHubCard } from '@/components/author-hub-card';
@@ -38,11 +39,12 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     return { title: dict.common.articleDetail.notFound };
   }
 
+  const { title, summary } = localizeArtigo(artigo, locale);
   const path = `${artigosCanonicalPath}/${artigo.slug}`;
 
   return {
-    title: artigo.title,
-    description: artigo.summary,
+    title,
+    description: summary,
     keywords: [...artigo.tags],
     authors: [
       {
@@ -58,8 +60,8 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       images: defaultOgImages(locale),
       type: 'article',
       url: `${upkfMeta.primaryWebsite}${path}`,
-      title: artigo.title,
-      description: artigo.summary,
+      title,
+      description: summary,
       locale: localeToOgLocale[locale],
       publishedTime: artigo.date,
       authors: [upkfMeta.publicDisplayName || upkfMeta.displayName],
@@ -67,8 +69,8 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     },
     twitter: {
       card: 'summary_large_image',
-      title: artigo.title,
-      description: artigo.summary,
+      title,
+      description: summary,
     },
   };
 }
@@ -83,6 +85,8 @@ export default async function ArtigoPage({ params }: PageProps) {
   if (!artigo) {
     notFound();
   }
+
+  const { title, summary } = localizeArtigo(artigo, locale);
 
   // Corpo traduzido quando existe; senão o original em pt-BR. Devolver 404 nos
   // outros locales quebraria o cluster hreflang que o metadata acima anuncia.
@@ -105,8 +109,8 @@ export default async function ArtigoPage({ params }: PageProps) {
     '@context': 'https://schema.org',
     '@type': 'BlogPosting',
     '@id': `${pageUrl}#article`,
-    headline: artigo.title,
-    description: artigo.summary,
+    headline: title,
+    description: summary,
     url: pageUrl,
     inLanguage: locale,
     datePublished: publishedIso,
@@ -129,7 +133,7 @@ export default async function ArtigoPage({ params }: PageProps) {
     itemListElement: [
       { '@type': 'ListItem', position: 1, name: dict.common.breadcrumb.home, item: `${breadcrumbBase}/` },
       { '@type': 'ListItem', position: 2, name: t.hero.badge, item: `${breadcrumbBase}${artigosCanonicalPath}` },
-      { '@type': 'ListItem', position: 3, name: artigo.title, item: `${breadcrumbBase}${path}` },
+      { '@type': 'ListItem', position: 3, name: title, item: `${breadcrumbBase}${path}` },
     ],
   };
 
@@ -157,8 +161,8 @@ export default async function ArtigoPage({ params }: PageProps) {
             </span>
           </div>
 
-          <h1 className='text-3xl md:text-4xl font-bold text-white mb-6 leading-tight'>{artigo.title}</h1>
-          <p className='text-lg text-neutral-400 leading-relaxed mb-8'>{artigo.summary}</p>
+          <h1 className='text-3xl md:text-4xl font-bold text-white mb-6 leading-tight'>{title}</h1>
+          <p className='text-lg text-neutral-400 leading-relaxed mb-8'>{summary}</p>
 
           <div className='flex flex-wrap gap-2 mb-8'>
             {artigo.tags.map((tag) => (

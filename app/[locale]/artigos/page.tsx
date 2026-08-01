@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Calendar } from 'lucide-react';
-import { artigosByDateDesc, formatArtigoDate } from '@/data/artigos';
+import { artigosByDateDesc, formatArtigoDate, localizeArtigo } from '@/data/artigos';
 import { upkfMeta } from '@/data/generated/upkf.generated';
 import { AuthorHubCard } from '@/components/author-hub-card';
 import { defaultLocale, isLocale, localeToOgLocale, type Locale } from '@/data/i18n';
@@ -76,7 +76,7 @@ export default async function ArtigosPage({ params }: PageProps) {
     hasPart: artigosByDateDesc.map((artigo) => ({
       '@type': 'BlogPosting',
       '@id': `${origin}${canonicalPath}/${artigo.slug}#article`,
-      headline: artigo.title,
+      headline: localizeArtigo(artigo, locale).title,
       url: `${origin}${canonicalPath}/${artigo.slug}`,
       datePublished: artigo.date,
       keywords: artigo.tags.join(', '),
@@ -144,10 +144,10 @@ export default async function ArtigosPage({ params }: PageProps) {
                   href={localePath(`${canonicalPath}/${artigo.slug}`, locale)}
                   className='hover:text-emerald-400 transition-colors'
                 >
-                  {artigo.title}
+                  {localizeArtigo(artigo, locale).title}
                 </Link>
               </h2>
-              <p className='text-neutral-400 mb-4 leading-relaxed'>{artigo.summary}</p>
+              <p className='text-neutral-400 mb-4 leading-relaxed'>{localizeArtigo(artigo, locale).summary}</p>
               <div className='flex flex-wrap gap-2'>
                 {artigo.tags.map((tag) => (
                   <span
