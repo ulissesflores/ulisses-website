@@ -1,0 +1,245 @@
+---
+title: 'V4-Flash-0731: a DeepSeek publicou a tabela em que ela mesma perde de 9 a 0 — e essa é a melhor peça do lançamento'
+slug: deepseek-v4-flash-0731
+category: artigos
+date: '2026-08-01'
+language: pt-BR
+---
+
+A DeepSeek tirou o V4-Flash do beta em 31 de julho com o codinome **V4-Flash-0731**, e a
+manchete que circulou foi uma só: o modelo barato da casa agora **bate o flagship V4-Pro em
+todos os nove benchmarks agênticos** publicados. É verdade — e não é a parte interessante.
+
+Fui ao model card oficial. A tabela de onde saiu a manchete tem duas colunas que a cobertura
+não menciona, e numa delas o **Claude Opus 4.8 vence o V4-Flash-0731 nas nove linhas. De nove
+a zero, publicado pela própria DeepSeek.** O que uma empresa ganha anunciando a própria
+derrota é a pergunta certa deste lançamento — e a resposta está no preço.
+
+---
+
+## O que mudou de fato
+
+Os fatos verificáveis, do [model card oficial](https://huggingface.co/deepseek-ai/DeepSeek-V4-Flash-0731)
+e da [tabela de preços da API](https://api-docs.deepseek.com/quick_start/pricing):
+
+| Item | V4-Flash-0731 |
+|---|---|
+| O que é | o preview de abril **re-pós-treinado** — arquitetura intocada |
+| Parâmetros | 284B totais (304B com o módulo DSpark) · **13B ativos por token** |
+| Contexto | 1 milhão de tokens · saída de até 384 mil em esforço `high`/`max` |
+| Níveis de esforço | `low` · `high` · `max` (três, não cinco) |
+| Preço | US$ 0,14 por milhão de tokens de entrada · **US$ 0,28 na saída** |
+| Cache hit | US$ 0,0028 — desconto de **98%** sobre a entrada |
+| Licença | MIT, pesos abertos, sem gate de acesso |
+| Disponibilidade | Hugging Face + API em beta público |
+
+A frase decisiva do anúncio é a que menos chama atenção: os ganhos vêm de
+*"re-post-training, not a new design"*. Mesma arquitetura, mesmo endpoint, mesmo preço,
+mesma latência — trocaram só a etapa final de treino. Guarde essa frase; ela volta adiante.
+
+### Os detalhes operacionais que valem dinheiro
+
+Quatro itens que só aparecem lendo a documentação, no espírito de sempre:
+
+1. **O desconto de cache é o produto escondido.** 98% de desconto no prefixo cacheado
+   (a prática da indústria gira em torno de 90%). Agente de longa duração com prompt de
+   sistema estável paga quase só a saída.
+2. **Preço de pico foi anunciado, sem data.** A documentação avisa que a API vai adotar
+   tarifa dupla — o dobro nos horários 9h–12h e 14h–18h de Pequim. Quem for rodar batch
+   barato já sabe em que fuso agendar.
+3. **A Responses API só cobre o Flash.** O formato compatível com Codex funciona hoje
+   apenas no `deepseek-v4-flash`; o Pro está prometido para o começo de agosto.
+4. **O V4-Pro não foi atualizado.** Nem os modelos do site e do app. O lançamento é só o
+   Flash — o que torna a tabela abaixo mais estranha ainda.
+
+---
+
+## A tabela íntegra
+
+A tabela do model card, completa — com as duas colunas que a manchete pulou:
+
+| Benchmark | Flash-0731 | Flash (abril) | Pro (abril) | GLM-5.2 | Opus 4.8 |
+|---|---|---|---|---|---|
+| Terminal Bench 2.1 | 82,7 | 61,8 | 72,1 | 81,0 | **85,0** |
+| NL2Repo | 54,2 | 39,4 | 38,5 | 48,9 | **69,7** |
+| Cybergym | 76,7 | 38,7 | 52,7 | — | **83,1** |
+| DeepSWE | 54,4 | 7,3 | 12,8 | 46,2 | **58,0** |
+| Toolathlon-Verified | 70,3 | 49,7 | 55,9 | 59,9 | **76,2** |
+| Agents' Last Exam | 25,2 | 15,8 | 16,5 | 23,8 | **25,7** |
+| AutomationBench Public | 25,1 | 10,8 | 12,8 | 12,9 | **27,2** |
+| DSBench-FullStack | 68,7 | 37,0 | 41,8 | 61,8 | **71,6** |
+| DSBench-Hard | 59,6 | 25,8 | 31,1 | 54,5 | **71,7** |
+
+Duas leituras, em ordem de espanto.
+
+**A coluna do próprio Flash de abril.** No DeepSWE, o preview marcava 7,3; o 0731 marca
+54,4 — **sete vezes e meia**, sem tocar um parâmetro de arquitetura. No Cybergym, de 38,7
+para 76,7. Se esses números se sustentarem fora do harness da casa, é a demonstração mais
+agressiva até aqui de que a receita de pós-treino passou a valer mais que o design do
+modelo — o custo de alcançar um concorrente caiu de "treinar outro modelo" para "re-treinar
+a etapa final do que você já tem".
+
+**A coluna do Opus 4.8.** Vence as nove linhas. A DeepSeek escolheu publicar isso — não num
+apêndice, na tabela principal do card. Não é descuido; é o argumento de venda lido de trás
+para a frente, e ele só funciona por causa da seção seguinte.
+
+> **Nota metodológica — leia antes de citar esta tabela.** Os benchmarks agênticos rodaram
+> no "minimal mode" do **DeepSeek Harness, que não foi publicado**, com `temperature 1.0` e
+> esforço `max`. Até o harness sair, nenhum desses números é reproduzível de forma
+> independente. E cuidado ao cruzar anúncios: o "AutomationBench Public" desta tabela dá
+> **27,2** ao Opus 4.8, enquanto a tabela do anúncio do Opus 5, uma semana antes, dava
+> **17,0** ao mesmo modelo no "AutomationBench" — subconjunto e harness diferentes, número
+> incomparável. O mesmo vale para o DeepSWE (aqui sem sufixo de versão; lá, "v1.1").
+> Benchmark de fabricante só se compara dentro do próprio anúncio.
+
+---
+
+## Perder de 9 a 0 custando um oitenta e nove avos
+
+A conta que a tabela não mostra: o Opus 4.8 custa US$ 5 de entrada e US$ 25 de saída por
+milhão de tokens — os mesmos preços do Opus 5, verificados no artigo
+[sobre o lançamento dele](/artigos/2026-07-24-claude-opus-5). O V4-Flash-0731 custa
+US$ 0,14 e US$ 0,28. **Trinta e seis vezes menos na entrada; oitenta e nove vezes menos na
+saída.** A distância média na tabela é de um dígito percentual por linha.
+
+E aqui entra o teste de terceiros que o artigo do Opus 5 terminou pedindo — desta vez ele
+chegou no dia do lançamento. A [Artificial Analysis](https://artificialanalysis.ai/) mediu o
+0731 em **50** no Intelligence Index. O contexto dos vizinhos: GPT-5.6 Luna e GLM-5.2 em 51,
+Gemini 3.6 Flash em 50, Kimi K3 em 57, **Claude Opus 5 em 61** — e o V4-Pro da própria
+DeepSeek em 44, seis pontos *abaixo* do modelo barato da casa.
+
+<EffortCostChart
+  dataset="v4flash-aa-pareto"
+  title="Inteligência por preço de saída"
+  subtitle="Artificial Analysis Intelligence Index x preço de saída (US$/1M tokens, escala logarítmica)"
+  xLabel="Preço de saída (US$ por milhão de tokens, escala logarítmica)"
+  yLabel="AA Intelligence Index"
+  source="Fontes: índice da Artificial Analysis (31/07/2026); preços das tabelas oficiais DeepSeek e Anthropic, conferidos em 01/08/2026."
+  description="Dispersão de inteligência medida pela Artificial Analysis contra preço de saída em escala logarítmica. O V4-Flash aparece duas vezes no mesmo preço de US$ 0,28: o preview de abril em torno de 40 pontos e o 0731 em 50 — um salto vertical. O V4-Pro está em 44 pontos a US$ 0,87, e o Opus 5 em 61 pontos a US$ 25."
+/>
+
+O salto vertical do gráfico é o lançamento inteiro: **dez pontos de índice no mesmo preço**,
+a linha subindo sem andar para a direita. A Artificial Analysis estima o custo por tarefa do
+0731 em cerca de **60% menos que o do GPT-5.6 Luna para a mesma faixa de inteligência** —
+efeito menos do preço de tabela e mais do desconto de cache de 98%.
+
+É por isso que publicar a derrota de 9 a 0 funciona como propaganda: a tabela não afirma
+"somos os melhores"; afirma "estamos a poucos pontos de quem cobra 89 vezes mais". Para a
+fatia de mercado que decide por custo por tarefa concluída — agentes rodando milhões de
+tokens por dia — o segundo argumento é o mais forte. Com a ressalva de sempre: quem mede a
+distância de "poucos pontos" é o harness não publicado da própria DeepSeek; a versão
+independente, por ora, é só o índice agregado da AA.
+
+> **O que este índice não diz.** O Intelligence Index é uma média agregada — não mede o seu
+> caso de uso, e a AA ainda não publicou a decomposição agêntica do 0731. Os 11 pontos entre
+> ele e o Opus 5 podem ser irrelevantes para autocomplete e decisivos para um agente que
+> opera um terminal por horas. As duas coisas cabem no mesmo número.
+
+---
+
+## O pós-treino virou o produto
+
+O detalhe técnico com consequência estratégica: um salto de 7,3 para 54,4 num benchmark de
+engenharia de software **sem arquitetura nova** significa que a fronteira agêntica está, no
+momento, menos limitada pelo tamanho do modelo e mais pela qualidade do pipeline de
+pós-treino — dados de trajetória de agente, RL sobre uso de ferramenta, harness de
+avaliação. Arquitetura se publica em paper; receita de pós-treino é o segredo industrial da
+vez. A DeepSeek abriu os pesos e guardou a receita — MIT para o artefato, silêncio sobre o
+método que o produziu. É open-weights, não open-science, e a distinção nunca foi tão visível.
+
+No mesmo pacote vem o **DSpark**, o módulo de decodificação especulativa descrito num
+[paper próprio](https://arxiv.org/abs/2607.05147): 60% a 85% mais rápido por usuário, medido
+**em tráfego real do sistema de serving da DeepSeek** — não em bancada. A ressalva do próprio
+paper: o ganho vale a throughput casado, sob as restrições de interatividade da produção
+deles; o seu deploy local não herda o número automaticamente.
+
+---
+
+## As primeiras 48 horas fora do harness
+
+O lançamento tem dois públicos, e eles mediram coisas diferentes.
+
+**O eixo local celebrou o que dá para pesar.** Os pesos oficiais rodando em
+[dois DGX Spark](https://x.com/lucasfulks/status/2083248177130484122) a 82 tok/s de pico
+(60–72 típico) com o contexto de 1M; numa
+[RTX 5090 com 192 GB de RAM](https://www.reddit.com/r/unsloth/comments/1vbw4q1) a 12 tok/s —
+*"não é nível de fronteira... mas muito bom em código funcional"*; e o refrão de que
+[qualquer Mac de 128 GB](https://x.com/NabeelHQ/status/2083101349177377237) agora roda
+"coding nível Opus" localmente. Do lado da API, um usuário
+[somou a conta do dia](https://www.reddit.com/r/DeepSeek/comments/1vc4ocr): 110 milhões de
+tokens processados, **US$ 0,77**.
+
+**O eixo cético mirou exatamente onde a nota metodológica acima aponta.** O comentário mais
+votado (+385) da [thread principal do r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/comments/1vbjdby)
+começa com a ressalva inteira em itálico: *"\*in benchmarks"*. Um dev resumiu o problema
+estrutural: [*"evaluate model + harness, not weights"*](https://x.com/AlexYusdut/status/2083361626342965714)
+— avalie modelo mais harness, não pesos. Outro, [depois de várias rodadas](https://x.com/OmedVibeCodes/status/2083360094893252699)
+num harness independente, viu qualidade *"extremamente inconsistente"* e classificou o
+primeiro resultado bom como *"rodada de sorte"*. E houve
+[medição de regressão](https://x.com/LocalInference/status/2083418151975608482): melhor em
+geração de HTML, **pior que o preview em JSON e raciocínio**, throughput sustentado 7%
+menor. Houve também quem chamasse a tabela de cherry-picking — acusação que a coluna do
+Opus 4.8, publicada pela própria DeepSeek, responde por si.
+
+**E a própria Artificial Analysis complicou o próprio número.** No índice AA-Omniscience,
+[a empresa reportou](https://x.com/ArtificialAnlys/status/2083123186158428564) que a
+**acurácia do 0731 ficou inalterada em 37%**; o que caiu 11 pontos foi a taxa de alucinação.
+Parte do salto de 10 pontos no índice agregado, portanto, não é o modelo sabendo mais — é o
+modelo **inventando menos**. Para agente autônomo essa é, talvez, a melhoria mais valiosa do
+pacote; só não é a que a manchete sugere.
+
+---
+
+## MIT, sem gate, num MacBook de 128 GB
+
+O terceiro eixo do lançamento não tem benchmark: os pesos estão no Hugging Face sob MIT,
+sem cadastro. Com 13B ativos por token, a build de 3 bits roda em **cerca de 110 GB** de
+RAM+VRAM combinadas — dentro de um MacBook de 128 GB; a de 8 bits pede 162 GB. Um modelo
+que disputa a faixa dos 50 pontos da AA, capaz de operar como agente, **rodando inteiro na
+máquina local**, é um teto novo para a categoria "não depende de API de ninguém" — com o
+teto de sempre: velocidade de estação de trabalho, não de datacenter.
+
+---
+
+## O que eu faria com isso
+
+Não testei o 0731 em produção — saiu há dois dias. Onde eu olharia primeiro:
+
+**Medir custo por tarefa, não por token.** A lição do gráfico: preço de tabela 89 vezes
+menor só vira 89 vezes menos custo se a taxa de conclusão de tarefa acompanhar. O teste
+honesto é o seu backlog de tarefas reais, o mesmo prompt, os dois modelos, custo por tarefa
+*concluída* — e o harness deles não publicado é mais um motivo para medir com o seu.
+
+**Desenhar o agente em torno do cache.** 98% de desconto no prefixo muda a arquitetura
+ótima: prompt de sistema longo e estável passa a ser quase grátis; o que custa é variar o
+prefixo. Vale reordenar o que é fixo e o que é dinâmico no seu prompt antes de comparar
+preço com qualquer concorrente.
+
+**Agendar batch fora do pico de Pequim.** A tarifa dupla anunciada dobra o custo em janelas
+conhecidas (9h–12h e 14h–18h, horário da China). Pipeline noturno brasileiro cai fora do
+pico — de graça.
+
+**E não cruzar tabelas de anúncios.** O mesmo Opus 4.8 marca 27,2 num anúncio e 17,0 no
+outro, no "mesmo" benchmark. Qualquer comparação que você monte colando números de posts
+diferentes está errada por construção. A régua que vale é a que você mesmo segura.
+
+---
+
+## Fontes
+
+- Model card oficial: [huggingface.co/deepseek-ai/DeepSeek-V4-Flash-0731](https://huggingface.co/deepseek-ai/DeepSeek-V4-Flash-0731)
+- Preços: [api-docs.deepseek.com/quick_start/pricing](https://api-docs.deepseek.com/quick_start/pricing)
+- Paper do DSpark: [arxiv.org/abs/2607.05147](https://arxiv.org/abs/2607.05147) · Relatório técnico do V4: [arxiv.org/abs/2606.19348](https://arxiv.org/abs/2606.19348)
+- Índice independente: [officechai.com — V4-Flash-0731 na Artificial Analysis](https://officechai.com/ai/deepseek-v4-flash-0731-scores-50-on-artificial-analysis-intelligence-index-creates-big-spike-on-pareto-frontier/)
+- Cobertura: [MarkTechPost](https://www.marktechpost.com/2026/07/31/deepseek-upgrades-deepseek-v4-flash-0731-with-major-agentic-and-coding-gains/) ·
+  [TechTimes](https://www.techtimes.com/articles/322513/20260731/deepseek-retrained-v4-flash-beats-its-flagship-pro-nine-agent-benchmarks.htm) ·
+  [XenoSpectrum](https://xenospectrum.com/en/deepseek-v4-flash-0731-pricing/)
+
+*Preços e specs conferidos na documentação oficial da DeepSeek em 01/08/2026; a tabela de
+benchmarks foi transcrita do model card no Hugging Face; os valores do gráfico vêm do índice
+público da Artificial Analysis e das tabelas de preço oficiais — o ponto do preview de abril
+(≈40) é derivado do ganho de 10 pontos noticiado, não de medição direta. As citações de
+comunidade foram colhidas em 01/08/2026 via busca em X e Reddit e transcritas dos posts
+originais, com link em cada uma; a contagem de votos é a do momento da colheita. O preço do
+Opus 4.8/5 (US$ 5 de entrada, US$ 25 de saída) foi reconferido em 01/08/2026 contra a página
+oficial de preços da Anthropic.*

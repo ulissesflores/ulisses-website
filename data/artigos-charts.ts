@@ -87,4 +87,45 @@ export const chartDatasets: Record<string, ChartDataset> = {
     xTicks: [1, 2, 3, 5, 10, 20, 30],
     yTicks: [0, 10, 20, 30, 40, 50],
   },
+
+  /**
+   * `v4flash-aa-pareto` — Artificial Analysis Intelligence Index x preço de
+   * saída (US$/1M tokens), um ponto por modelo; o V4-Flash aparece duas vezes
+   * no mesmo X (US$ 0,28) para desenhar o salto abril -> julho como segmento
+   * vertical.
+   *
+   * PROCEDÊNCIA: índice AA de 31/07/2026 (0731 = 50; V4-Pro = 44; Opus 5 = 61,
+   * via officechai.com/ai/deepseek-v4-flash-0731-scores-50-on-artificial-analysis-intelligence-index);
+   * o ponto do preview de abril (≈40) é DERIVADO do "ganho de 10 pontos com
+   * preço idêntico" noticiado, não de medição direta — o post declara isso ao
+   * leitor. Preços: tabelas oficiais DeepSeek
+   * (api-docs.deepseek.com/quick_start/pricing, conferida em 01/08/2026) e
+   * Anthropic (US$ 25 output, reconferida em 01/08/2026).
+   */
+  'v4flash-aa-pareto': {
+    series: [
+      {
+        label: 'V4-Flash abr→jul',
+        color: '#34d399',
+        points: [
+          [0.28, 40],
+          [0.28, 50],
+        ],
+      },
+      {
+        label: 'V4-Pro',
+        color: '#60a5fa',
+        points: [[0.87, 44]],
+      },
+      {
+        label: 'Opus 5',
+        color: '#fbbf24',
+        points: [[25, 61]],
+      },
+    ],
+    xDomain: [0.1, 40],
+    yDomain: [35, 65],
+    xTicks: [0.1, 0.3, 1, 3, 10, 30],
+    yTicks: [35, 40, 45, 50, 55, 60, 65],
+  },
 };

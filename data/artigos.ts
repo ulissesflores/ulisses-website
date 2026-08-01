@@ -34,6 +34,15 @@ export const artigos: readonly Artigo[] = [
     date: '2026-07-24',
     tags: ['claude', 'anthropic', 'llm', 'api', 'benchmarks'],
   },
+  {
+    slug: 'deepseek-v4-flash-0731',
+    title:
+      'V4-Flash-0731: a DeepSeek publicou a tabela em que ela mesma perde de 9 a 0 — e essa é a melhor peça do lançamento',
+    summary:
+      'A manchete diz que o modelo barato da DeepSeek bate o flagship da casa. O model card diz mais: o Opus 4.8 vence as nove linhas da tabela — publicado pela própria DeepSeek. Por que anunciar a própria derrota funciona quando você custa 89 vezes menos, o que o salto de 7,3 para 54,4 sem arquitetura nova diz sobre pós-treino, e o que as primeiras 48 horas fora do harness confirmaram e desmentiram.',
+    date: '2026-08-01',
+    tags: ['deepseek', 'llm', 'api', 'benchmarks', 'open-weights'],
+  },
 ];
 
 /** Posts do mais recente para o mais antigo — ordem de exibição do índice. */
