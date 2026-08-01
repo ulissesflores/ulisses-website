@@ -108,7 +108,8 @@ export const common = {
   cta: 'CONTATTAMI',
   mobileMenu: {
     open: 'Apri menu',
-    close: 'Chiudi menu'
+    close: 'Chiudi menu',
+    label: 'Menu di navigazione'
   },
   footer: {
     tagline: 'Ulisses Flores · Consulente e Ricercatore',

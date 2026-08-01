@@ -21,6 +21,9 @@ export function GlobalHeader() {
   const router = useRouter();
   const dropdownRef = useRef<HTMLDivElement>(null);
   const langRef = useRef<HTMLDivElement>(null);
+  const langButtonRef = useRef<HTMLButtonElement>(null);
+  const hamburgerRef = useRef<HTMLButtonElement>(null);
+  const drawerRef = useRef<HTMLDivElement>(null);
   const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   /** Prefix an internal path with the current locale (skip for default locale and anchors). */
@@ -54,6 +57,54 @@ export function GlobalHeader() {
     document.addEventListener('mousedown', handleClickOutside);
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
+
+  // Escape closes whatever menu is open; Tab cycles inside the mobile drawer.
+  useEffect(() => {
+    if (!mobileOpen && !langOpen && !activeDropdown) return;
+
+    function handleKeyDown(event: KeyboardEvent) {
+      if (event.key === 'Escape') {
+        if (mobileOpen) {
+          setMobileOpen(false);
+          hamburgerRef.current?.focus();
+        } else if (langOpen) {
+          setLangOpen(false);
+          langButtonRef.current?.focus();
+        } else {
+          // The trigger of the open dropdown is the only one with aria-expanded="true".
+          dropdownRef.current?.querySelector<HTMLButtonElement>('button[aria-expanded="true"]')?.focus();
+          setActiveDropdown(null);
+        }
+        return;
+      }
+
+      if (event.key !== 'Tab' || !mobileOpen || !drawerRef.current) return;
+
+      // The close button is the hamburger itself, which lives in the header —
+      // outside the drawer — so it has to be part of the cycle.
+      const focusable = [
+        hamburgerRef.current,
+        ...drawerRef.current.querySelectorAll<HTMLElement>(
+          'a[href], button:not([disabled]), input, select, textarea, [tabindex]:not([tabindex="-1"])',
+        ),
+      ].filter((element): element is HTMLElement => element !== null);
+      if (focusable.length === 0) return;
+
+      const index = focusable.indexOf(document.activeElement as HTMLElement);
+      if (event.shiftKey) {
+        if (index <= 0) {
+          event.preventDefault();
+          focusable[focusable.length - 1].focus();
+        }
+      } else if (index === -1 || index === focusable.length - 1) {
+        event.preventDefault();
+        focusable[0].focus();
+      }
+    }
+
+    document.addEventListener('keydown', handleKeyDown);
+    return () => document.removeEventListener('keydown', handleKeyDown);
+  }, [mobileOpen, langOpen, activeDropdown]);
 
   // Prevent body scroll when mobile menu is open
   useEffect(() => {
@@ -170,6 +221,7 @@ export function GlobalHeader() {
             {/* Language Switcher */}
             <div ref={langRef} className='relative hidden sm:block'>
               <button
+                ref={langButtonRef}
                 type='button'
                 aria-expanded={langOpen}
                 aria-haspopup='true'
@@ -211,8 +263,10 @@ export function GlobalHeader() {
 
             {/* Mobile hamburger */}
             <button
+              ref={hamburgerRef}
               type='button'
               aria-expanded={mobileOpen}
+              aria-controls='mobile-menu'
               onClick={() => setMobileOpen(!mobileOpen)}
               className='lg:hidden p-2 text-neutral-400 hover:text-white transition-colors'
               aria-label={mobileOpen ? common.mobileMenu.close : common.mobileMenu.open}
@@ -225,7 +279,14 @@ export function GlobalHeader() {
 
       {/* Mobile Menu Overlay */}
       {mobileOpen && (
-        <div className='fixed inset-0 z-40 bg-neutral-950/98 backdrop-blur-lg pt-20 overflow-y-auto lg:hidden'>
+        <div
+          ref={drawerRef}
+          id='mobile-menu'
+          role='dialog'
+          aria-modal='true'
+          aria-label={common.mobileMenu.label}
+          className='fixed inset-0 z-40 bg-neutral-950/98 backdrop-blur-lg pt-20 overflow-y-auto lg:hidden'
+        >
           <nav className='max-w-md mx-auto px-6 py-8 space-y-6'>
             {common.nav.categories.map((category) => (
               <div key={category.label}>

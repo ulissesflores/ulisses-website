@@ -108,7 +108,8 @@ export const common = {
   cta: 'CONTACT ME',
   mobileMenu: {
     open: 'Open menu',
-    close: 'Close menu'
+    close: 'Close menu',
+    label: 'Navigation menu'
   },
   footer: {
     tagline: 'Ulisses Flores · Consultant and Researcher',

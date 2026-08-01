@@ -108,7 +108,8 @@ export const common = {
   cta: 'דברו איתי',
   mobileMenu: {
     open: 'פתח תפריט',
-    close: 'סגור תפריט'
+    close: 'סגור תפריט',
+    label: 'תפריט ניווט'
   },
   footer: {
     tagline: 'Ulisses Flores · יועץ וחוקר',

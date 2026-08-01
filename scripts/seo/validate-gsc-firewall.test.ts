@@ -522,6 +522,24 @@ describe('GSC Regression — Video watch page integrity', () => {
     expect(content).toContain('frame-src');
     expect(content).toContain('youtube-nocookie.com');
   });
+
+  /*
+   * `'unsafe-eval'` entrou em 2026-08-01 para o React voltar a hidratar em
+   * `npm run dev` (o runtime de dev do Next avalia string como JavaScript).
+   * Ele NÃO pode vazar para produção. Este teste é a única trava: o gate de
+   * `tests/e2e/security-headers.spec.ts` mede o servidor do Playwright, que é
+   * `npm run dev` — ou seja, inspeciona justamente a CSP permissiva.
+   */
+  it("next.config.ts só libera 'unsafe-eval' fora de produção", () => {
+    const content = readFileSync(join(ROOT, 'next.config.ts'), 'utf8');
+    const codeLines = content
+      .split('\n')
+      .filter((line) => line.includes("'unsafe-eval'"))
+      .filter((line) => !/^\s*(\/\/|\*|\/\*)/.test(line));
+    expect(codeLines).toHaveLength(1);
+    expect(codeLines[0]).toContain('isDev ?');
+    expect(content).toContain("const isDev = process.env.NODE_ENV !== 'production'");
+  });
 });
 
 // ═══════════════════════════════════════════════════════════════════════════════

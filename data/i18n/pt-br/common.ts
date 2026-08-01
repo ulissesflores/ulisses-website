@@ -49,6 +49,7 @@ export const common = {
   mobileMenu: {
     open: 'Abrir menu',
     close: 'Fechar menu',
+    label: 'Menu de navegação',
   },
   footer: {
     tagline: 'Ulisses Flores · Consultor e Pesquisador',
