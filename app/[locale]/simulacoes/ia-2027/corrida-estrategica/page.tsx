@@ -58,10 +58,20 @@ export default async function CorridaEstrategicaPage({ params }: PageProps) {
   const t = dict.ia2027.racePage;
 
   const origin = upkfMeta.primaryWebsite;
+  const breadcrumbBase = locale === defaultLocale ? origin : `${origin}/${locale}`;
 
   const pageJsonLd = {
     '@context': 'https://schema.org',
     '@graph': [
+      {
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: dict.common.breadcrumb.home, item: `${breadcrumbBase}/` },
+          { '@type': 'ListItem', position: 2, name: dict.ia2027.breadcrumb.simulations, item: `${breadcrumbBase}/simulacoes` },
+          { '@type': 'ListItem', position: 3, name: 'IA 2027', item: `${breadcrumbBase}/simulacoes/ia-2027` },
+          { '@type': 'ListItem', position: 4, name: dict.ia2027.breadcrumb.race, item: `${breadcrumbBase}${canonicalPath}` },
+        ],
+      },
       {
         '@type': ['WebPage', 'Article'],
         '@id': `${origin}${canonicalPath}#webpage`,

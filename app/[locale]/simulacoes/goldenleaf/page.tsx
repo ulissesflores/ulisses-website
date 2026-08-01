@@ -45,10 +45,19 @@ export default async function GoldenLeafPage({ params }: PageProps) {
   const t = dict.goldenleaf;
 
   const origin = upkfMeta.primaryWebsite;
+  const breadcrumbBase = locale === defaultLocale ? origin : `${origin}/${locale}`;
 
   const pageJsonLd = {
     '@context': 'https://schema.org',
     '@graph': [
+      {
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: dict.common.breadcrumb.home, item: `${breadcrumbBase}/` },
+          { '@type': 'ListItem', position: 2, name: t.breadcrumb.simulations, item: `${breadcrumbBase}/simulacoes` },
+          { '@type': 'ListItem', position: 3, name: t.breadcrumb.goldenleaf, item: `${breadcrumbBase}${canonicalPath}` },
+        ],
+      },
       {
         '@type': 'WebPage',
         '@id': `${origin}${canonicalPath}#webpage`,

@@ -73,6 +73,18 @@ export default async function IA2027Page({ params, searchParams }: PageProps) {
   const resolvedSearchParams = await searchParams;
   const initialPath = parseInitialPath(resolvedSearchParams.path);
 
+  const breadcrumbBase = locale === defaultLocale ? upkfMeta.primaryWebsite : `${upkfMeta.primaryWebsite}/${locale}`;
+
+  const breadcrumbJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: dict.common.breadcrumb.home, item: `${breadcrumbBase}/` },
+      { '@type': 'ListItem', position: 2, name: dict.ia2027.breadcrumb.simulations, item: `${breadcrumbBase}/simulacoes` },
+      { '@type': 'ListItem', position: 3, name: dict.ia2027.breadcrumb.scenarios, item: `${breadcrumbBase}${canonicalPath}` },
+    ],
+  };
+
   const pageJsonLd = {
     '@context': 'https://schema.org',
     '@type': ['WebPage', 'Article', 'SoftwareApplication'],
@@ -247,6 +259,11 @@ export default async function IA2027Page({ params, searchParams }: PageProps) {
         id='structured-data-ia-2027'
         type='application/ld+json'
         dangerouslySetInnerHTML={{ __html: JSON.stringify(pageJsonLd) }}
+      />
+      <script
+        id='breadcrumb-ia-2027'
+        type='application/ld+json'
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
     </>
   );

@@ -43,6 +43,7 @@ export default async function SimulacoesPage({ params }: PageProps) {
   const tFaq = dict.faq.simulacoes;
 
   const origin = upkfMeta.primaryWebsite;
+  const breadcrumbBase = locale === defaultLocale ? origin : `${origin}/${locale}`;
 
   const pageJsonLd = {
     '@context': 'https://schema.org',
@@ -56,6 +57,13 @@ export default async function SimulacoesPage({ params }: PageProps) {
         inLanguage: locale,
         isPartOf: { '@id': `${origin}/#website` },
         author: { '@id': `${origin}/#person` },
+      },
+      {
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: dict.common.breadcrumb.home, item: `${breadcrumbBase}/` },
+          { '@type': 'ListItem', position: 2, name: t.breadcrumb, item: `${breadcrumbBase}${canonicalPath}` },
+        ],
       },
     ],
   };

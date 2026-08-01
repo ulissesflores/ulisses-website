@@ -47,9 +47,22 @@ export default async function ProjetoPsiPage({ params }: PageProps) {
   const ui = dict.projetoPsi.whitepaperUI;
   const jld = dict.projetoPsi.jsonLd;
 
+  const breadcrumbBase = locale === defaultLocale ? origin : `${origin}/${locale}`;
+
   const pageJsonLd = {
     '@context': 'https://schema.org',
     '@graph': [
+      {
+        // Rótulos literais, e não `dict.common.breadcrumb`: a trilha visual desta
+        // página é hardcoded em PT (linha 112) e o dado estruturado tem de bater
+        // com o que a página mostra.
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: `${breadcrumbBase}/` },
+          { '@type': 'ListItem', position: 2, name: 'Whitepapers', item: `${breadcrumbBase}/whitepapers` },
+          { '@type': 'ListItem', position: 3, name: 'Projeto PSI', item: `${breadcrumbBase}${canonicalPath}` },
+        ],
+      },
       {
         '@type': 'ScholarlyArticle',
         '@id': `${origin}${canonicalPath}#article`,

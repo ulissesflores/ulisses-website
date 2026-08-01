@@ -43,10 +43,19 @@ export default async function ProjetoPsiPage({ params }: PageProps) {
   const tFaq = dict.faq.projetoPsiComercial;
 
   const origin = upkfMeta.primaryWebsite;
+  const breadcrumbBase = locale === defaultLocale ? origin : `${origin}/${locale}`;
 
   const pageJsonLd = {
     '@context': 'https://schema.org',
     '@graph': [
+      {
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: dict.common.breadcrumb.home, item: `${breadcrumbBase}/` },
+          // Nome do produto, não o `ogTitle`: breadcrumb é rótulo curto de trilha.
+          { '@type': 'ListItem', position: 2, name: 'Projeto PSI', item: `${breadcrumbBase}${canonicalPath}` },
+        ],
+      },
       {
         '@type': 'Product',
         '@id': `${origin}${canonicalPath}#product`,

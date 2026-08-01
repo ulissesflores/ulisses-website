@@ -298,6 +298,48 @@ if (hardcodedOgCount === 0) {
 }
 
 // ══════════════════════════════════════════════════════════════════
+//  6. BreadcrumbList nas rotas de detalhe (gap G2)
+// ══════════════════════════════════════════════════════════════════
+/*
+ * O gap G2 do backlog foi fechado em 2026-08-01 nestas rotas. A auditoria de
+ * 2026-07-30 mediu que a página com 56% das impressões (`/simulacoes/ia-2027`)
+ * não emitia breadcrumb algum. Esta lista impede que o nó suma numa edição
+ * futura sem alguém notar — o mesmo tipo de regressão silenciosa que o gate de
+ * axe deixou passar por cobrir uma lista de rotas desatualizada.
+ */
+console.log('\n══════════════════════════════════════════════════');
+console.log('  📊 Phase 6: BreadcrumbList em rotas de detalhe');
+console.log('══════════════════════════════════════════════════\n');
+
+const BREADCRUMB_REQUIRED = [
+  'app/[locale]/simulacoes/page.tsx',
+  'app/[locale]/simulacoes/ia-2027/page.tsx',
+  'app/[locale]/simulacoes/ia-2027/corrida-estrategica/page.tsx',
+  'app/[locale]/simulacoes/ia-2027/desaceleracao-coordenada/page.tsx',
+  'app/[locale]/simulacoes/goldenleaf/page.tsx',
+  'app/[locale]/whitepapers/projeto-psi/page.tsx',
+  'app/[locale]/projeto-psi/page.tsx',
+];
+
+let missingBreadcrumb = 0;
+for (const relPath of BREADCRUMB_REQUIRED) {
+  const pagePath = path.join(ROOT, relPath);
+  if (!fs.existsSync(pagePath)) {
+    fail(`${relPath} — rota da lista de breadcrumb não existe mais (atualize a lista)`);
+    missingBreadcrumb++;
+    continue;
+  }
+  if (!fs.readFileSync(pagePath, 'utf-8').includes("'BreadcrumbList'")) {
+    fail(`${relPath} — BreadcrumbList ausente (gap G2 reaberto)`);
+    missingBreadcrumb++;
+  }
+}
+
+if (missingBreadcrumb === 0) {
+  pass(`BreadcrumbList presente nas ${BREADCRUMB_REQUIRED.length} rotas de detalhe exigidas`);
+}
+
+// ══════════════════════════════════════════════════════════════════
 //  SUMMARY
 // ══════════════════════════════════════════════════════════════════
 console.log('\n══════════════════════════════════════════════════');
