@@ -87,7 +87,7 @@ export default async function Home({ params }: PageProps) {
         alternateName: 'Ulisses Flores',
         url: origin,
         image: `${origin}/carlos-ulisses-flores-cto.jpg`,
-        jobTitle: [t.hero.badges.cto, t.hero.badges.msc, t.hero.badges.polymath],
+        jobTitle: [dict.cartao.role, t.hero.badges.cto, t.hero.badges.msc, t.hero.badges.polymath],
         description: t.meta.description,
         sameAs: [
           'https://orcid.org/0000-0002-6034-7765',
@@ -141,9 +141,18 @@ export default async function Home({ params }: PageProps) {
             </div>
             
             <div className="text-center md:text-start pt-2 flex-1">
-              <h1 className="text-5xl md:text-6xl font-bold text-white tracking-tight mb-4">
+              <h1 className="text-5xl md:text-6xl font-bold text-white tracking-tight mb-3">
                 Ulisses Flores
               </h1>
+              {/*
+                Tagline canônica da identidade verbal. Lida de `cartao.role` de
+                propósito: é a MESMA frase já servida em `/c` e no `TITLE:` do
+                vCard, e duplicá-la aqui abriria caminho para as superfícies
+                divergirem. Está nos 5 locales.
+              */}
+              <p className="text-lg md:text-xl text-emerald-400 font-medium mb-5">
+                {dict.cartao.role}
+              </p>
               <div className="flex flex-wrap justify-center md:justify-start gap-3 text-sm font-medium uppercase tracking-wider mb-6">
                 <Badge icon={<Terminal size={14} />} text={t.hero.badges.cto} color="emerald" />
                 <Badge icon={<Cpu size={14} />} text={t.hero.badges.msc} color="cyan" />
