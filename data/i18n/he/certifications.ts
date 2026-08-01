@@ -1,7 +1,7 @@
 export const certifications = {
   meta: {
     title: 'הסמכות טכניות ב-IA, Blockchain והנדסת תוכנה',
-    description: 'תיק הסמכות טכניות של Ulisses Flores — יועץ אסטרטגי ל-IA, דובר וסטודנט לתואר שני ב-AGTU. למעלה מ-30 הסמכות ב-IA, Machine Learning, Blockchain, Cloud והנדסת תוכנה עם אימות ציבורי.',
+    description: 'תיק הסמכות טכניות של Ulisses Flores — יועץ אסטרטגי ל-IA, דובר וסטודנט לתואר שני ב-AGTU.',
     keywords: [
       "הסמכות IA",
       "הסמכות Machine Learning",

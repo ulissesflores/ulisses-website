@@ -9,7 +9,7 @@ import { ArticleToc } from '@/components/article-toc';
 import { localePath } from '@/lib/locale-path';
 import { defaultLocale, isLocale, type Locale } from '@/data/i18n';
 import { getDictionary } from '@/lib/get-dictionary';
-import { buildCanonical, buildLanguageAlternates, isPublicationNoindexed, defaultOgImages } from '@/data/seo';
+import { buildCanonical, buildLanguageAlternates, isPublicationNoindexed, defaultOgImages, toMetaDescription } from '@/data/seo';
 
 interface PageProps {
   params: Promise<{ category: string; slug: string; locale: string }>;
@@ -48,7 +48,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
   return {
     title: localizedTitle,
-    description: localizedSummary,
+    description: toMetaDescription(localizedSummary as string),
     robots: isNoindexed ? { index: false, follow: true } : undefined,
     authors: [
       {
@@ -64,7 +64,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       images: defaultOgImages(locale),
       type: 'article',
       title: localizedTitle,
-      description: localizedSummary,
+      description: toMetaDescription(localizedSummary as string),
       url: `${upkfMeta.primaryWebsite}${canonicalPath}`,
       publishedTime: publication.publishedAt,
       modifiedTime: publication.updatedAt,

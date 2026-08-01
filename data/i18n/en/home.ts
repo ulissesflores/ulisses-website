@@ -1,8 +1,8 @@
 export const home = {
   meta: {
-    title: 'Ulisses Flores | AI Consultant, Speaker and Researcher',
+    title: 'Ulisses Flores | AI Consultant',
     description:
-      'Ulisses Flores — Economic Scientist, Strategic AI Consultant, Speaker and MSc Candidate in AI at AGTU. Research in AI, Blockchain, Economics and Complex Systems. Based in Jundiaí/SP, serving all of Brazil.',
+      'Ulisses Flores — Economic Scientist, Strategic AI Consultant, Speaker and MSc Candidate in AI at AGTU.',
     keywords: [
       'Ulisses Flores',
       'strategic AI consultant',

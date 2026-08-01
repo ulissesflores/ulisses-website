@@ -126,3 +126,24 @@ export function defaultOgImages(locale: string) {
     },
   ];
 }
+
+/**
+ * Encurta um texto longo para caber na `<meta name="description">`.
+ *
+ * O Google corta a description por volta de 155 caracteres. Os `summary` das
+ * publicações vêm do gerador do UPKF (`scripts/upkf/lib/buildSummary`) com
+ * 505–590 caracteres, dos quais o trecho final é boilerplate repetido em todas
+ * elas ("Pergunta central: … A pagina publica apresenta sintese cientifica e o
+ * PDF consolidado contem a versao completa para citacao formal"). Medido em
+ * 2026-08-01: 6 das 6 publicações reindexadas serviam essa cauda.
+ *
+ * O corte acontece aqui, no consumo, e NÃO no `summary`: o mesmo campo alimenta
+ * o corpo da página e o JSON-LD, onde o texto completo é legítimo.
+ */
+export function toMetaDescription(text: string, max = 155): string {
+  if (text.length <= max) return text;
+  const head = text.slice(0, max);
+  const lastSentence = [...head.matchAll(/[.!?](?=\s|$)/g)].map((m) => m.index + 1);
+  if (lastSentence.length > 0) return text.slice(0, Math.max(...lastSentence)).trim();
+  return head.slice(0, head.lastIndexOf(' ')).replace(/[\s,;:—|·-]+$/, '').trim();
+}

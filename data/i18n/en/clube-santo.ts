@@ -1,7 +1,7 @@
 export const clubeSanto = {
   meta: {
-    title: 'Clube Santo — Theological Institute and Biblical Training Community',
-    description: 'Clube Santo is the theological institute and biblical training community founded by Ulisses Flores — Researcher, Preacher, and Master\'s student in AI at AGTU. Collection of sermons, biblical studies, and historiographical analysis.',
+    title: 'Clube Santo — Theological Institute',
+    description: 'Clube Santo is the theological institute and biblical training community founded by Ulisses Flores.',
     keywords: [
       "clube santo",
       "theological institute",

@@ -1,7 +1,7 @@
 export const goldenleaf = {
   meta: {
-    title: 'GoldenLeaf — Micologia Inteligente com IoT e IA',
-    description: 'GoldenLeaf é um projeto de micologia inteligente que combina sensores IoT, IA preditiva e arquiteturas cloudless para cultivo autônomo de cogumelos gourmet. Desenvolvido por Ulisses Flores.',
+    title: 'GoldenLeaf — Micologia Inteligente com IoT',
+    description: 'GoldenLeaf é um projeto de micologia inteligente que combina sensores IoT, IA preditiva e arquiteturas cloudless para cultivo autônomo de cogumelos.',
     keywords: ['micologia inteligente', 'IoT cogumelos', 'cultivo autônomo', 'IA agricultura', 'cogumelos gourmet', 'sensores IoT', 'cloudless IoT', 'soberania de dados', 'Ulisses Flores IoT', 'agricultura inteligente'],
     ogTitle: 'GoldenLeaf — Micologia Inteligente com IoT e IA | Ulisses Flores',
     ogDescription: 'Projeto de micologia inteligente com IoT, IA preditiva e arquiteturas cloudless para cultivo autônomo. Por Ulisses Flores.',

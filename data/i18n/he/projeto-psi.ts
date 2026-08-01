@@ -1,6 +1,6 @@
 export const projetoPsi = {
   meta: {
-    title: 'Projeto PSI — חומרת ריבונות לשמירת נכסים דיגיטליים',
+    title: 'Projeto PSI — חומרת ריבונות לשמירת נכסים',
     description: 'שמירה ריבונית של נכסים דיגיטליים. חומרה עם Zero Trust בסיליקון, הצפנה פוסט-קוונטית XMSS ויתירות מודולרית משולשת (TMR). השקעה ורישוי.',
     keywords: [
       "hardware wallet",
@@ -20,7 +20,7 @@ export const projetoPsi = {
     ogDescription: 'שמירה ריבונית של נכסים דיגיטליים. Zero Trust בסיליקון, XMSS פוסט-קוונטי ויתירות מודולרית משולשת (TMR).'
   },
   whitepaperMeta: {
-    title: 'Projeto Ψ (PSI): חומרת ריבונות ו-Zero Trust בסיליקון',
+    title: 'Projeto Ψ (PSI): חומרת ריבונות',
     description: 'מסמך טכני: ארכיטקטורה לשמירת נכסים דיגיטליים ברמה ריבונית. הכירו את Projeto PSI, המצויד ב-SRAM PUF, הצפנת XMSS ועמידות יתרה TMR.',
     keywords: [
       "hardware wallet",
@@ -46,8 +46,8 @@ export const projetoPsi = {
     ogDescription: 'מסמך טכני: ארכיטקטורה לשמירת נכסים דיגיטליים ברמה ריבונית עם SRAM PUF, XMSS פוסט-קוונטי ועמידות יתרה תעופתית TMR.'
   },
   simulacaoMeta: {
-    title: 'Projeto Ψ (PSI): סייר טכני של ארכיטקטורת האבטחה',
-    description: 'סייר אינטראקטיבי של ארכיטקטורת Projeto PSI — SRAM PUF, הצפנה פוסט-קוונטית XMSS, יתירות תעופתית TMR ו-Ring Signatures. נווטו בין 4 עמודי התווך של האבטחה הריבונית.',
+    title: 'Projeto Ψ (PSI): סייר טכני',
+    description: 'סייר אינטראקטיבי של ארכיטקטורת Projeto PSI — SRAM PUF, הצפנה פוסט-קוונטית XMSS, יתירות תעופתית TMR ו-Ring Signatures.',
     keywords: [
       "hardware wallet",
       "zero trust",

@@ -9,6 +9,7 @@ export const category = {
   stories: {
     research: {
       h1: 'Pesquisa Científica Aplicada e Sistemas Complexos',
+      metaTitle: 'Pesquisa Científica Aplicada',
       metaDescription: 'Publicações originais de Ulisses Flores em IA, Economia Austríaca e Sistemas Distribuídos. Rigor acadêmico Q1 com identificadores DOI.',
       lead: 'A verdadeira inovação não nasce do hype corporativo, mas do rigor acadêmico validado por pares. Este repositório consolida décadas de pesquisa científica e modelagem analítica conduzidas por Ulisses Flores. Explorando a intersecção entre Inteligência Artificial, Resiliência Cibernética-Financeira e a Teoria dos Sistemas Complexos, cada publicação aqui listada (com registro DOI) representa uma contribuição documentada para o estado da arte da engenharia e da economia.',
       authorityTitle: 'Rigor de nível Q1 com rastreabilidade DOI',
@@ -17,6 +18,7 @@ export const category = {
     },
     whitepapers: {
       h1: 'Whitepapers Técnicos e Arquitetura de Confiança Zero',
+      metaTitle: 'Whitepapers Técnicos e Confiança Zero',
       metaDescription: 'Documentação técnica de arquiteturas de hardware, criptografia e IoT. Incluindo o Projeto PSI (hardware wallet de custódia soberana) por Ulisses Flores.',
       lead: 'A transição de conceitos teóricos para a engenharia de produção exige documentação irrefutável. Esta seção abriga Whitepapers técnicos que detalham arquiteturas de missão crítica, sistemas "Cloudless" e criptografia de estado-da-arte. É aqui que projetos de classe soberana — como a hardware wallet de custódia soberana (Projeto PSI) e soluções de Edge Computing (GoldenLeaf) — são expostos em seu nível mais profundo de abstração em silício e matemática.',
       authorityTitle: 'Engenharia documentada com precisão IEEE',
@@ -25,6 +27,7 @@ export const category = {
     },
     essays: {
       h1: 'Ensaios: Filosofia, Tecnologia e o Comportamento Humano',
+      metaTitle: 'Ensaios: Filosofia e Tecnologia',
       metaDescription: 'Ensaios de Ulisses Flores explorando a intersecção entre tecnologia, teologia histórica, ética e as dinâmicas da ação humana.',
       lead: 'A tecnologia, desprovida de lastro filosófico e histórico, torna-se uma ferramenta cega. Como pesquisador de atuação interdisciplinar, as análises aqui reunidas transcendem o código e a matemática. Estes ensaios são reflexões profundas sobre a condição humana, a ética na era da hiper-vigilância, e como a teologia histórica e a filosofia moldam a nossa compreensão do poder, da liberdade e do futuro da sociedade.',
       authorityTitle: 'Reflexão interdisciplinar com rigor acadêmico',

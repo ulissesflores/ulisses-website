@@ -1,8 +1,8 @@
 export const mundoPolitico = {
   meta: {
-    title: 'Mundo Político — Economia Austríaca, Geopolítica e Soberania',
+    title: 'Mundo Político — Economia Austríaca',
     description:
-      'Artigos de análise econômica, geopolítica e soberania sob a perspectiva da Escola Austríaca de Economia, escritos por Ulisses Flores — Cientista Econômico, Consultor Estratégico de IA e Mestrando em IA pela AGTU.',
+      'Artigos de análise econômica, geopolítica e soberania sob a perspectiva da Escola Austríaca de Economia',
     keywords: [
       'escola austríaca de economia',
       'economia austríaca Brasil',

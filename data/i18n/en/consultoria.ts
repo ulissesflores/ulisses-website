@@ -1,6 +1,6 @@
 export const consultoria = {
   meta: {
-    title: 'Strategic Consulting in AI, Critical Architecture and Digital Sovereignty',
+    title: 'Strategic Consulting in AI',
     description:
       'Executive consulting in generative AI, critical systems architecture, data governance and Fractional CTO. PT/EN/ES/IT/HE. Serving Brazil and abroad.',
     keywords: [

@@ -1,7 +1,7 @@
 export const certifications = {
   meta: {
-    title: 'Certificaciones Técnicas en IA, Blockchain e Ingeniería de Software',
-    description: 'Portafolio de certificaciones técnicas de Ulisses Flores — Consultor Estratégico de IA, Ponente y Estudiante de Maestría AGTU. Más de 30 certificaciones en IA, Machine Learning, Blockchain, Cloud e Ingeniería de Software con verificación pública.',
+    title: 'Certificaciones Técnicas en IA',
+    description: 'Portafolio de certificaciones técnicas de Ulisses Flores — Consultor Estratégico de IA, Ponente y Estudiante de Maestría AGTU.',
     keywords: [
       "certificaciones IA",
       "certificaciones machine learning",

@@ -9,6 +9,7 @@ export const category = {
   stories: {
     research: {
       h1: 'Ricerca Scientifica Applicata e Sistemi Complessi',
+      metaTitle: 'Ricerca Scientifica Applicata',
       metaDescription: 'Pubblicazioni originali di Ulisses Flores in IA, Economia Austriaca e Sistemi Distribuiti. Rigore accademico Q1 con identificatori DOI.',
       lead: 'La vera innovazione non nasce dall\'hype aziendale, ma dal rigore accademico convalidato dai pari. Questo repository consolida decenni di ricerca scientifica e modellazione analitica condotte da Ulisses Flores. Esplorando l\'intersezione tra Intelligenza Artificiale, Resilienza Cibernetico-Finanziaria e la Teoria dei Sistemi Complessi, ogni pubblicazione qui elencata (con registrazione DOI) rappresenta un contributo documentato allo stato dell\'arte dell\'ingegneria e dell\'economia.',
       authorityTitle: 'Rigore di livello Q1 con tracciabilità DOI',
@@ -23,6 +24,7 @@ export const category = {
     },
     whitepapers: {
       h1: 'Whitepaper Tecnici e Architettura Zero Trust',
+      metaTitle: 'Whitepaper Tecnici e Zero Trust',
       metaDescription: 'Documentazione tecnica di architetture hardware, crittografia e IoT. Incluso il Projeto PSI (hardware wallet a custodia sovrana) di Ulisses Flores.',
       lead: 'La transizione dai concetti teorici all\'ingegneria di produzione richiede documentazione inconfutabile. Questa sezione ospita Whitepaper tecnici che dettagliano architetture di missione critica, sistemi "Cloudless" e crittografia all\'avanguardia. È qui che progetti di classe sovrana — come l\'hardware wallet a custodia sovrana (Projeto PSI) e soluzioni di Edge Computing (GoldenLeaf) — sono esposti al loro livello più profondo di astrazione in silicio e matematica.',
       authorityTitle: 'Ingegneria documentata con precisione IEEE',
@@ -38,6 +40,7 @@ export const category = {
     },
     essays: {
       h1: 'Saggi: Filosofia, Tecnologia e il Comportamento Umano',
+      metaTitle: 'Saggi: Filosofia e Tecnologia',
       metaDescription: 'Saggi di Ulisses Flores che esplorano l\'intersezione tra tecnologia, teologia storica, etica e le dinamiche dell\'azione umana.',
       lead: 'La tecnologia, priva di fondamento filosofico e storico, diventa uno strumento cieco. Come ricercatore dall\'attività interdisciplinare, le analisi qui raccolte trascendono il codice e la matematica. Questi saggi sono riflessioni profonde sulla condizione umana, l\'etica nell\'era dell\'iper-vigilanza e come la teologia storica e la filosofia modellano la nostra comprensione del potere, della libertà e del futuro della società.',
       authorityTitle: 'Riflessione interdisciplinare con rigore accademico',

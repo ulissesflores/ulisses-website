@@ -1,7 +1,7 @@
 export const home = {
   meta: {
-    title: 'Ulisses Flores | Consultor de IA, Ponente e Investigador',
-    description: 'Ulisses Flores — Científico Económico, Consultor Estratégico de IA, Ponente y Estudiante de Maestría en IA por AGTU. Investigaciones en IA, Blockchain, Economía y Sistemas Complejos. Con sede en Jundiaí/SP, atiende a todo Brasil.',
+    title: 'Ulisses Flores | Consultor de IA',
+    description: 'Ulisses Flores — Científico Económico, Consultor Estratégico de IA, Ponente y Estudiante de Maestría en IA por AGTU.',
     keywords: [
       "Ulisses Flores",
       "consultor estratégico IA",

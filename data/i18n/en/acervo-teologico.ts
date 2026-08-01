@@ -1,6 +1,6 @@
 export const acervoTeologico = {
   meta: {
-    title: 'Theological Collection and Spiritual Archaeology',
+    title: 'Spiritual Archaeology Collection',
     description: 'Over 56 sermons, expository preachings, and historical theology analyses by Ulisses Flores. Exegetical rigor and revival.',
     keywords: [
       "theological collection",

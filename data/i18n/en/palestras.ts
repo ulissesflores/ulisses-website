@@ -1,8 +1,8 @@
 export const palestras = {
   meta: {
-    title: 'Keynotes, Talks and Executive Workshops on AI, AGI, Blockchain and Digital Sovereignty',
+    title: 'Keynotes, Talks and Executive Workshops',
     description:
-      'Keynotes and talks for C-Level, Boards and academic institutions on generative AI, AGI, blockchain, digital sovereignty and critical architecture. PT/EN/ES/IT. Brazil and abroad.',
+      'Keynotes and talks for C-Level, Boards and academic institutions on generative AI, AGI, blockchain, digital sovereignty and critical architecture.',
     keywords: [
       'AI keynote speaker',
       'artificial intelligence keynote',

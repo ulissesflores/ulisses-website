@@ -1,7 +1,7 @@
 export const ia2027 = {
   meta: {
-    title: 'IA 2027: Simulazione Interattiva sul Futuro dell\'Intelligenza Artificiale | AGI e Sovranità',
-    description: 'Esplora una simulazione interattiva pionieristica in italiano sull\'arrivo dell\'AGI (Intelligenza Artificiale Generale). Analisi di scenari futuri, corsa tecnologica e impatto economico a cura di Ulisses Flores — Scienziato, Consulente e Relatore.',
+    title: 'IA 2027: Simulazione Interattiva',
+    description: 'Esplora una simulazione interattiva pionieristica in italiano sull\'arrivo dell\'AGI (Intelligenza Artificiale Generale).',
     keywords: [
       "futuro dell'intelligenza artificiale",
       "scenari futuri IA",
@@ -16,8 +16,8 @@ export const ia2027 = {
     ogImageAlt: 'Simulazione Strategica IA-2027 di Ulisses Flores'
   },
   raceMeta: {
-    title: 'Corsa Strategica: Scenario Race dell\'IA 2027',
-    description: 'Esplora lo scenario di Corsa Strategica della simulazione IA 2027: massima accelerazione verso l\'AGI, escalation dell\'autonomia e rischio di perdita del controllo umano. Analisi a cura di Ulisses Flores — Consulente IA, Relatore e Studente di Master AGTU.',
+    title: 'Corsa Strategica: Scenario Race',
+    description: 'Esplora lo scenario di Corsa Strategica della simulazione IA 2027: massima accelerazione verso l\'AGI',
     keywords: [
       "corsa strategica IA",
       "race AGI",
@@ -32,8 +32,8 @@ export const ia2027 = {
     ogImageAlt: 'IA 2027 · Corsa Strategica — Scenario Race'
   },
   slowdownMeta: {
-    title: 'Decelerazione Coordinata: Scenario Slowdown dell\'IA 2027',
-    description: 'Esplora lo scenario di Decelerazione Coordinata della simulazione IA 2027: pausa globale, allineamento tecnico e regolamentazione internazionale dell\'AGI. Analisi a cura di Ulisses Flores — Consulente IA, Relatore e Studente di Master AGTU.',
+    title: 'Decelerazione Coordinata',
+    description: 'Esplora lo scenario di Decelerazione Coordinata della simulazione IA 2027: pausa globale, allineamento tecnico e regolamentazione internazionale dell\'AGI.',
     keywords: [
       "decelerazione coordinata IA",
       "slowdown AGI",

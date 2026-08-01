@@ -9,6 +9,7 @@ export const category = {
   stories: {
     research: {
       h1: 'Applied Scientific Research and Complex Systems',
+      metaTitle: 'Applied Scientific Research',
       metaDescription: 'Original publications by Ulisses Flores in AI, Austrian Economics, and Distributed Systems. Q1 academic rigor with DOI identifiers.',
       lead: 'True innovation is not born from corporate hype, but from peer-validated academic rigor. This repository consolidates decades of scientific research and analytical modeling conducted by Ulisses Flores. Exploring the intersection between Artificial Intelligence, Cyber-Financial Resilience, and Complex Systems Theory, each publication listed here (with DOI registration) represents a documented contribution to the state of the art in engineering and economics.',
       authorityTitle: 'Q1-level rigor with DOI traceability',
@@ -23,6 +24,7 @@ export const category = {
     },
     whitepapers: {
       h1: 'Technical Whitepapers and Zero Trust Architecture',
+      metaTitle: 'Technical Whitepapers and Zero Trust',
       metaDescription: 'Technical documentation of hardware architectures, cryptography, and IoT. Including Projeto PSI (sovereign-custody hardware wallet) by Ulisses Flores.',
       lead: 'The transition from theoretical concepts to production engineering demands irrefutable documentation. This section houses technical Whitepapers detailing mission-critical architectures, "Cloudless" systems, and state-of-the-art cryptography. This is where sovereign-class projects — such as the sovereign-custody hardware wallet (Projeto PSI) and Edge Computing solutions (GoldenLeaf) — are exposed at their deepest level of abstraction in silicon and mathematics.',
       authorityTitle: 'Engineering documented with IEEE precision',
@@ -38,6 +40,7 @@ export const category = {
     },
     essays: {
       h1: 'Essays: Philosophy, Technology, and Human Behavior',
+      metaTitle: 'Essays: Philosophy and Technology',
       metaDescription: 'Essays by Ulisses Flores exploring the intersection between technology, historical theology, ethics, and the dynamics of human action.',
       lead: 'Technology, devoid of philosophical and historical grounding, becomes a blind tool. As an interdisciplinary researcher, the analyses gathered here transcend code and mathematics. These essays are profound reflections on the human condition, ethics in the era of hyper-surveillance, and how historical theology and philosophy shape our understanding of power, freedom, and the future of society.',
       authorityTitle: 'Interdisciplinary reflection with academic rigor',

@@ -1,7 +1,7 @@
 export const projetoPsi = {
   meta: {
-    title: 'Projeto PSI — Hardware Soberano para Custodia de Activos Digitales',
-    description: 'Custodia soberana de activos digitales. Hardware con Zero Trust en silicio, criptografía postcuántica XMSS y redundancia modular triple (TMR). Inversión y licenciamiento.',
+    title: 'Projeto PSI — Hardware Soberano',
+    description: 'Custodia soberana de activos digitales. Hardware con Zero Trust en silicio, criptografía postcuántica XMSS y redundancia modular triple (TMR).',
     keywords: [
       "hardware wallet",
       "custodia de activos digitales",
@@ -20,8 +20,8 @@ export const projetoPsi = {
     ogDescription: 'Custodia soberana de activos digitales. Zero Trust en silicio, XMSS postcuántico y redundancia modular triple (TMR).'
   },
   whitepaperMeta: {
-    title: 'Projeto Ψ (PSI): Hardware Soberano y Zero Trust en Silicio',
-    description: 'Whitepaper Técnico: Arquitectura de custodia de activos digitales de clase soberana. Conozca el Projeto PSI, equipado con SRAM PUF, Criptografía XMSS y Redundancia TMR.',
+    title: 'Projeto Ψ (PSI): Hardware Soberano',
+    description: 'Whitepaper Técnico: Arquitectura de custodia de activos digitales de clase soberana.',
     keywords: [
       "hardware wallet",
       "zero trust",
@@ -46,8 +46,8 @@ export const projetoPsi = {
     ogDescription: 'Whitepaper Técnico: Arquitectura de custodia de activos digitales de clase soberana con SRAM PUF, XMSS postcuántico y Redundancia TMR aeroespacial.'
   },
   simulacaoMeta: {
-    title: 'Projeto Ψ (PSI): Explorador Técnico de la Arquitectura de Seguridad',
-    description: 'Explorador interactivo de la arquitectura del Projeto PSI — SRAM PUF, criptografía postcuántica XMSS, redundancia TMR aeroespacial y Ring Signatures. Navegue por los 4 pilares de seguridad soberana.',
+    title: 'Projeto Ψ (PSI): Explorador Técnico',
+    description: 'Explorador interactivo de la arquitectura del Projeto PSI — SRAM PUF, criptografía postcuántica XMSS, redundancia TMR aeroespacial y Ring Signatures.',
     keywords: [
       "hardware wallet",
       "zero trust",

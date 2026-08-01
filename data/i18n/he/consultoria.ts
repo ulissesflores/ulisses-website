@@ -1,6 +1,6 @@
 export const consultoria = {
   meta: {
-    title: 'ייעוץ אסטרטגי ב-AI, ארכיטקטורה קריטית וריבונות דיגיטלית',
+    title: 'ייעוץ אסטרטגי ב-AI, ארכיטקטורה קריטית',
     description:
       'ייעוץ ניהולי ב-AI גנרטיבי, ארכיטקטורת מערכות קריטיות, ממשל נתונים ו-Fractional CTO. שירות PT/EN/ES/IT/HE. ברזיל וחו"ל.',
     keywords: [

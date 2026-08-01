@@ -1,8 +1,8 @@
 export const artigos = {
   meta: {
-    title: 'Artigos sobre IA, engenharia de software e sistemas complexos',
+    title: 'Artigos sobre IA, engenharia de software',
     description:
-      'Análises autorais sobre inteligência artificial, engenharia de software e sistemas complexos — com fonte primária citada, incerteza declarada e cadência ditada pelo assunto, não pelo calendário.',
+      'Análises autorais sobre inteligência artificial, engenharia de software e sistemas complexos — com fonte primária citada',
     keywords: [
       'Claude Opus 5',
       'artigos sobre inteligência artificial',

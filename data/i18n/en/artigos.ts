@@ -1,8 +1,8 @@
 export const artigos = {
   meta: {
-    title: 'Articles on AI, software engineering and complex systems',
+    title: 'Articles on AI, software engineering',
     description:
-      'First-person analysis of artificial intelligence, software engineering and complex systems — primary sources cited, uncertainty stated, published when the subject demands it rather than on a schedule.',
+      'First-person analysis of artificial intelligence, software engineering and complex systems — primary sources cited, uncertainty stated',
     keywords: [
       'Claude Opus 5',
       'artificial intelligence articles',

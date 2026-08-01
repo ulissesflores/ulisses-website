@@ -1,7 +1,7 @@
 export const mundoPolitico = {
   meta: {
-    title: 'Mundo Político — Economia Austriaca, Geopolitica e Sovranità',
-    description: 'Articoli di analisi economica, geopolitica e sovranità dalla prospettiva della Scuola Austriaca di Economia, scritti da Ulisses Flores — Scienziato Economico, Consulente Strategico di IA e Studente di Master in IA presso AGTU.',
+    title: 'Mundo Político — Economia Austriaca',
+    description: 'Articoli di analisi economica, geopolitica e sovranità dalla prospettiva della Scuola Austriaca di Economia',
     keywords: [
       "scuola austriaca di economia",
       "economia austriaca Brasile",

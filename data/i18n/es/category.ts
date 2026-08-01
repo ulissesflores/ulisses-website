@@ -9,6 +9,7 @@ export const category = {
   stories: {
     research: {
       h1: 'Investigación Científica Aplicada y Sistemas Complejos',
+      metaTitle: 'Investigación Científica Aplicada',
       metaDescription: 'Publicaciones originales de Ulisses Flores en IA, Economía Austríaca y Sistemas Distribuidos. Rigor académico Q1 con identificadores DOI.',
       lead: 'La verdadera innovación no nace del hype corporativo, sino del rigor académico validado por pares. Este repositorio consolida décadas de investigación científica y modelado analítico conducidas por Ulisses Flores. Explorando la intersección entre Inteligencia Artificial, Resiliencia Cibernético-Financiera y la Teoría de los Sistemas Complejos, cada publicación aquí listada (con registro DOI) representa una contribución documentada al estado del arte de la ingeniería y la economía.',
       authorityTitle: 'Rigor de nivel Q1 con trazabilidad DOI',
@@ -23,7 +24,8 @@ export const category = {
     },
     whitepapers: {
       h1: 'Whitepapers Técnicos y Arquitectura Zero Trust',
-      metaDescription: 'Documentación técnica de arquitecturas de hardware, criptografía e IoT. Incluyendo el Proyecto PSI (hardware wallet de custodia soberana) por Ulisses Flores.',
+      metaTitle: 'Whitepapers Técnicos y Zero Trust',
+      metaDescription: 'Documentación técnica de arquitecturas de hardware, criptografía e IoT. Incluyendo el Proyecto PSI, hardware wallet de custodia soberana.',
       lead: 'La transición de conceptos teóricos a la ingeniería de producción exige documentación irrefutable. Esta sección alberga Whitepapers técnicos que detallan arquitecturas de misión crítica, sistemas "Cloudless" y criptografía de vanguardia. Es aquí donde proyectos de clase soberana — como la hardware wallet de custodia soberana (Projeto PSI) y soluciones de Edge Computing (GoldenLeaf) — son expuestos en su nivel más profundo de abstracción en silicio y matemática.',
       authorityTitle: 'Ingeniería documentada con precisión IEEE',
       authorityBody: 'Cada whitepaper detalla arquitecturas reales con fundamentación en estándares NIST, IEEE y literatura de vanguardia en side-channel analysis, criptografía postcuántica y materiales aeroespaciales.',
@@ -38,6 +40,7 @@ export const category = {
     },
     essays: {
       h1: 'Ensayos: Filosofía, Tecnología y el Comportamiento Humano',
+      metaTitle: 'Ensayos: Filosofía y Tecnología',
       metaDescription: 'Ensayos de Ulisses Flores explorando la intersección entre tecnología, teología histórica, ética y las dinámicas de la acción humana.',
       lead: 'La tecnología, desprovista de lastre filosófico e histórico, se convierte en una herramienta ciega. Como investigador de actuación interdisciplinar, los análisis aquí reunidos trascienden el código y las matemáticas. Estos ensayos son reflexiones profundas sobre la condición humana, la ética en la era de la hipervigilancia, y cómo la teología histórica y la filosofía moldean nuestra comprensión del poder, la libertad y el futuro de la sociedad.',
       authorityTitle: 'Reflexión interdisciplinar con rigor académico',

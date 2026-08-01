@@ -1,7 +1,7 @@
 export const home = {
   meta: {
-    title: 'Ulisses Flores | Consulente AI, Relatore e Ricercatore',
-    description: 'Ulisses Flores — Economista, Consulente Strategico AI, Relatore e Studente di Master in AI presso AGTU. Ricerche in AI, Blockchain, Economia e Sistemi Complessi. Basato a Jundiaí/SP, serve tutto il Brasile.',
+    title: 'Ulisses Flores | Consulente AI',
+    description: 'Ulisses Flores — Economista, Consulente Strategico AI, Relatore e Studente di Master in AI presso AGTU.',
     keywords: [
       "Ulisses Flores",
       "consulente strategico AI",

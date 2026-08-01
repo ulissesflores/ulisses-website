@@ -1,7 +1,7 @@
 export const projetoPsi = {
   meta: {
-    title: 'Projeto PSI — Sovereign Hardware for Digital Asset Custody',
-    description: 'Sovereign digital asset custody. Hardware with Zero Trust in silicon, post-quantum XMSS cryptography, and triple modular redundancy (TMR). Investment and licensing.',
+    title: 'Projeto PSI — Sovereign Hardware',
+    description: 'Sovereign digital asset custody. Hardware with Zero Trust in silicon, post-quantum XMSS cryptography, and triple modular redundancy (TMR).',
     keywords: [
       "hardware wallet",
       "digital asset custody",
@@ -20,8 +20,8 @@ export const projetoPsi = {
     ogDescription: 'Sovereign digital asset custody. Zero Trust in silicon, post-quantum XMSS, and triple modular redundancy (TMR).'
   },
   whitepaperMeta: {
-    title: 'Projeto Ψ (PSI): Sovereign Hardware and Zero Trust in Silicon',
-    description: 'Technical Whitepaper: Sovereign-class digital asset custody architecture. Discover Projeto PSI, equipped with SRAM PUF, XMSS Cryptography, and TMR Redundancy.',
+    title: 'Projeto Ψ (PSI): Sovereign Hardware',
+    description: 'Technical Whitepaper: Sovereign-class digital asset custody architecture.',
     keywords: [
       "hardware wallet",
       "zero trust",
@@ -46,8 +46,8 @@ export const projetoPsi = {
     ogDescription: 'Technical Whitepaper: Sovereign-class digital asset custody architecture with SRAM PUF, post-quantum XMSS, and aerospace TMR Redundancy.'
   },
   simulacaoMeta: {
-    title: 'Projeto Ψ (PSI): Technical Explorer of the Security Architecture',
-    description: 'Interactive explorer of the Projeto PSI architecture — SRAM PUF, post-quantum XMSS cryptography, aerospace TMR redundancy, and Ring Signatures. Navigate through the 4 pillars of sovereign security.',
+    title: 'Projeto Ψ (PSI): Technical Explorer',
+    description: 'Interactive explorer of the Projeto PSI architecture — SRAM PUF, post-quantum XMSS cryptography, aerospace TMR redundancy, and Ring Signatures.',
     keywords: [
       "hardware wallet",
       "zero trust",

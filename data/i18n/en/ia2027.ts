@@ -1,7 +1,7 @@
 export const ia2027 = {
   meta: {
-    title: 'AI 2027: Interactive Simulation on the Future of Artificial Intelligence | AGI and Sovereignty',
-    description: 'Explore a pioneering interactive simulation in Portuguese about the arrival of AGI (Artificial General Intelligence). Analysis of future scenarios, technological race, and economic impact by Ulisses Flores — Scientist, Consultant, and Speaker.',
+    title: 'AI 2027: Interactive Simulation',
+    description: 'Explore a pioneering interactive simulation in Portuguese about the arrival of AGI (Artificial General Intelligence).',
     keywords: [
       "future of artificial intelligence",
       "future AI scenarios",
@@ -17,7 +17,7 @@ export const ia2027 = {
   },
   raceMeta: {
     title: 'Strategic Race: AI 2027 Race Scenario',
-    description: 'Explore the Strategic Race scenario of the AI 2027 simulation: maximum acceleration towards AGI, escalation of autonomy, and risk of loss of human control. Analysis by Ulisses Flores — AI Consultant, Speaker, and AGTU Master\'s Student.',
+    description: 'Explore the Strategic Race scenario of the AI 2027 simulation: maximum acceleration towards AGI, escalation of autonomy, and risk of loss of human control.',
     keywords: [
       "strategic AI race",
       "AGI race",
@@ -32,8 +32,8 @@ export const ia2027 = {
     ogImageAlt: 'AI 2027 · Strategic Race — Race Scenario'
   },
   slowdownMeta: {
-    title: 'Coordinated Slowdown: AI 2027 Slowdown Scenario',
-    description: 'Explore the Coordinated Slowdown scenario of the AI 2027 simulation: global pause, technical alignment, and international AGI regulation. Analysis by Ulisses Flores — AI Consultant, Speaker, and AGTU Master\'s Student.',
+    title: 'Coordinated Slowdown',
+    description: 'Explore the Coordinated Slowdown scenario of the AI 2027 simulation: global pause, technical alignment, and international AGI regulation.',
     keywords: [
       "coordinated AI slowdown",
       "AGI slowdown",

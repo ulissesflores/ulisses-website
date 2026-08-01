@@ -1,8 +1,8 @@
 export const consultoria = {
   meta: {
-    title: 'Consultoria Estratégica em IA, Arquitetura Crítica e Soberania Digital',
+    title: 'Consultoria Estratégica em IA',
     description:
-      'Consultoria executiva em IA generativa, arquitetura de sistemas críticos, governança de dados e Fractional CTO. Atendimento PT/EN/ES/IT/HE. Atende Brasil e exterior.',
+      'Consultoria executiva em IA generativa, arquitetura de sistemas críticos, governança de dados e Fractional CTO. Atendimento PT/EN/ES/IT/HE.',
     keywords: [
       'consultoria estratégica IA',
       'consultoria inteligência artificial',

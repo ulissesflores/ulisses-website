@@ -1,7 +1,7 @@
 export const clubeSanto = {
   meta: {
-    title: 'Clube Santo — Istituto Teologico e Comunità di Formazione Biblica',
-    description: 'Il Clube Santo è l\'istituto teologico e la comunità di formazione biblica fondato da Ulisses Flores — Ricercatore, Predicatore e Studente di Master in IA presso AGTU. Archivio di sermoni, studi biblici e analisi storiografica.',
+    title: 'Clube Santo — Istituto Teologico',
+    description: 'Il Clube Santo è l\'istituto teologico e la comunità di formazione biblica fondato da Ulisses Flores.',
     keywords: [
       "clube santo",
       "istituto teologico",

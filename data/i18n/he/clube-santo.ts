@@ -1,7 +1,7 @@
 export const clubeSanto = {
   meta: {
-    title: 'Clube Santo — מכון תיאולוגי וקהילה להכשרה מקראית',
-    description: 'Clube Santo הוא המכון התיאולוגי והקהילה להכשרה מקראית שנוסדו על ידי Ulisses Flores — חוקר, מטיף וסטודנט לתואר שני ב-AI ב-AGTU. אוסף דרשות, לימודי מקרא וניתוח היסטוריוגרפי.',
+    title: 'Clube Santo — מכון תיאולוגי וקהילה להכשרה',
+    description: 'Clube Santo הוא המכון התיאולוגי והקהילה להכשרה מקראית שנוסדו על ידי Ulisses Flores — חוקר, מטיף וסטודנט לתואר שני ב-AI ב-AGTU.',
     keywords: [
       "clube santo",
       "מכון תיאולוגי",

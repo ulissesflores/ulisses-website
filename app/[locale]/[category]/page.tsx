@@ -8,7 +8,7 @@ import { upkfMeta } from '@/data/generated/upkf.generated';
 import { AuthorHubCard } from '@/components/author-hub-card';
 import { getDictionary } from '@/lib/get-dictionary';
 import { localePath } from '@/lib/locale-path';
-import { buildCanonical, buildLanguageAlternates, defaultOgImages } from '@/data/seo';
+import { buildCanonical, buildLanguageAlternates, defaultOgImages, toMetaDescription } from '@/data/seo';
 
 const validCategories = Object.keys(publicationCollections) as PublicationCategory[];
 
@@ -36,8 +36,11 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   return {
     // sem sufixo de marca: o title.template do layout já acrescenta "| Ulisses Flores".
     // O openGraph.title abaixo mantém o sufixo porque OG não passa pelo template.
-    title: story ? story.h1 : collection.heading,
-    description: story?.metaDescription || collection.description,
+    // `metaTitle` existe porque o `h1` é o cabeçalho VISÍVEL da coleção e passa
+    // de 43 caracteres — o que sobra do orçamento de 60 depois do sufixo que o
+    // `title.template` acrescenta. Encurtar o `h1` mudaria a página.
+    title: story ? story.metaTitle : collection.heading,
+    description: toMetaDescription(story?.metaDescription || collection.description),
     authors: [
       {
         name: upkfMeta.publicDisplayName || upkfMeta.displayName,

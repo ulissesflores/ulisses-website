@@ -1,7 +1,7 @@
 export const projetoPsi = {
   meta: {
-    title: 'Projeto PSI — Hardware Sovrano per la Custodia di Asset Digitali',
-    description: 'Custodia sovrana di asset digitali. Hardware con Zero Trust su silicio, crittografia post-quantistica XMSS e ridondanza modulare tripla (TMR). Investimento e licenza.',
+    title: 'Projeto PSI — Hardware Sovrano',
+    description: 'Custodia sovrana di asset digitali. Hardware con Zero Trust su silicio, crittografia post-quantistica XMSS e ridondanza modulare tripla (TMR).',
     keywords: [
       "hardware wallet",
       "custodia di asset digitali",
@@ -20,8 +20,8 @@ export const projetoPsi = {
     ogDescription: 'Custodia sovrana di asset digitali. Zero Trust su silicio, XMSS post-quantistico e ridondanza modulare tripla (TMR).'
   },
   whitepaperMeta: {
-    title: 'Projeto Ψ (PSI): Hardware Sovrano e Zero Trust su Silicio',
-    description: 'Whitepaper Tecnico: Architettura di custodia di asset digitali di classe sovrana. Scopri il Projeto PSI, dotato di SRAM PUF, Crittografia XMSS e Ridondanza TMR.',
+    title: 'Projeto Ψ (PSI): Hardware Sovrano',
+    description: 'Whitepaper Tecnico: Architettura di custodia di asset digitali di classe sovrana.',
     keywords: [
       "hardware wallet",
       "zero trust",
@@ -46,8 +46,8 @@ export const projetoPsi = {
     ogDescription: 'Whitepaper Tecnico: Architettura di custodia di asset digitali di classe sovrana con SRAM PUF, XMSS post-quantistico e Ridondanza TMR aerospaziale.'
   },
   simulacaoMeta: {
-    title: 'Projeto Ψ (PSI): Esploratore Tecnico dell\'Architettura di Sicurezza',
-    description: 'Esploratore interattivo dell\'architettura del Projeto PSI — SRAM PUF, crittografia post-quantistica XMSS, ridondanza TMR aerospaziale e Ring Signatures. Naviga tra i 4 pilastri della sicurezza sovrana.',
+    title: 'Projeto Ψ (PSI): Esploratore Tecnico',
+    description: 'Esploratore interattivo dell\'architettura del Projeto PSI — SRAM PUF, crittografia post-quantistica XMSS, ridondanza TMR aerospaziale e Ring Signatures.',
     keywords: [
       "hardware wallet",
       "zero trust",

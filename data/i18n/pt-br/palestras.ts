@@ -1,8 +1,8 @@
 export const palestras = {
   meta: {
-    title: 'Palestras, Keynotes e Workshops Executivos sobre IA, AGI, Blockchain e Soberania Digital',
+    title: 'Palestras, Keynotes e Workshops Executivos',
     description:
-      'Palestras e keynotes para C-Level, Board e instituições acadêmicas sobre IA generativa, AGI, blockchain, soberania digital e arquitetura crítica. PT/EN/ES/IT. Atende Brasil e exterior.',
+      'Palestras e keynotes para C-Level, Board e instituições acadêmicas sobre IA generativa, AGI, blockchain, soberania digital e arquitetura crítica.',
     keywords: [
       'palestrante IA',
       'keynote inteligência artificial',
