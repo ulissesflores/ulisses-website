@@ -39,6 +39,13 @@ export const portrait = '/carlos-ulisses-flores-cto.jpg';
  */
 export const cardTitle = 'Pesquisador de IA Aplicada';
 
+/**
+ * Empresa no vCard. Escrito aqui porque o UPKF só guarda a **razão social**
+ * (`affiliations[0].name` = 'CODEX HASH LTDA'), e caixa alta num cartão de visita
+ * lê como grito. O nome de marca não tem campo próprio no UPKF.
+ */
+export const cardOrganization = 'Codex Hash';
+
 export function whatsappHref(): string | null {
   if (!whatsappNumber) return null;
   return `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappGreeting)}`;
@@ -50,6 +57,21 @@ function profile(needle: string): string {
 }
 
 export type CardLinkId = 'site' | 'linkedin' | 'orcid' | 'lattes' | 'github' | 'scholar';
+
+/**
+ * Rótulo de cada link dentro do vCard. Sem ele o app de contatos empilha seis
+ * campos "url" idênticos e ninguém sabe qual é o ORCID. Não vem do dicionário
+ * i18n porque o `.vcf` é servido numa URL única sem locale — e porque são todos
+ * nomes próprios, iguais em qualquer idioma.
+ */
+export const vcardLinkLabels: Record<CardLinkId, string> = {
+  site: 'Site',
+  linkedin: 'LinkedIn',
+  orcid: 'ORCID',
+  lattes: 'Lattes',
+  github: 'GitHub',
+  scholar: 'Google Scholar',
+};
 
 type CardLink = { id: CardLinkId; href: string };
 

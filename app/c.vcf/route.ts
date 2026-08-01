@@ -1,7 +1,15 @@
 import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { upkfMeta } from '@/data/generated/upkf.generated';
-import { cardLinks, contactEmail, whatsappNumber, portrait, cardTitle } from '@/data/contact-card';
+import {
+  cardLinks,
+  cardOrganization,
+  cardTitle,
+  contactEmail,
+  portrait,
+  vcardLinkLabels,
+  whatsappNumber,
+} from '@/data/contact-card';
 
 /**
  * vCard servido em `https://ulissesflores.com/c.vcf` — o "Salvar contato" da rota `/c`.
@@ -69,6 +77,7 @@ export function GET() {
     'VERSION:3.0',
     `N:${esc(family)};${esc(given)};;;`,
     `FN:${esc(name)}`,
+    `ORG:${esc(cardOrganization)}`,
     `TITLE:${esc(cardTitle)}`,
     `EMAIL;TYPE=INTERNET,PREF:${esc(contactEmail)}`,
     ...(whatsappNumber ? [`TEL;TYPE=CELL,VOICE:+${whatsappNumber}`] : []),
@@ -77,9 +86,16 @@ export function GET() {
      * 17 entradas — TikTok, Facebook, Keybase, um tópico de fórum de 2011 — que
      * existem para desambiguar a entidade para rastreadores. Despejadas num contato
      * salvo, viram lixo na agenda de quem acabou de te conhecer.
+     *
+     * Cada URL vai num grupo `itemN` com `X-ABLabel`: é a extensão de Apple e Google
+     * que faz o contato exibir "ORCID" e "LinkedIn" em vez de seis campos "url"
+     * idênticos. Onde a extensão não é lida (parte do Android, alguns CRMs), o
+     * rótulo cai e a URL continua — degrada sem quebrar.
      */
-    ...cardLinks.map(({ href }) => `URL:${esc(href)}`),
-    `NOTE:${esc(`ORCID 0000-0002-6034-7765 · Lattes 6905246706890561 · ${upkfMeta.primaryWebsite}/c`)}`,
+    ...cardLinks.flatMap(({ id, href }, index) => [
+      `item${index + 1}.URL:${esc(href)}`,
+      `item${index + 1}.X-ABLabel:${esc(vcardLinkLabels[id])}`,
+    ]),
     `SOURCE:${esc(`${upkfMeta.primaryWebsite}/c.vcf`)}`,
     photoLine(),
     'END:VCARD',
