@@ -101,6 +101,41 @@ export const artigos: readonly Artigo[] = [
       },
     },
   },
+  {
+    slug: 'quantas-pessoas-usam-ia',
+    title:
+      'Quantas pessoas usam IA? Fui conferir os números gigantes — eles contam contas, não pessoas',
+    summary:
+      'Dois vírgula quatro bilhões de pessoas usam IA generativa, diz a manchete — mas a própria fonte desaconselha ler o número como pessoas. Conferi cada degrau da pirâmide na fonte primária, acrescentei o degrau que nenhuma versão internacional tem (o Brasil) e o resultado muda a leitura: os pagantes do mundo inteiro são ~1% da humanidade, e a bolha dos coding agents, 0,14%. Você não está atrasado — o feed é a bolha falando de si mesma.',
+    date: '2026-08-02',
+    tags: ['ia', 'adocao', 'estatisticas', 'fact-check', 'brasil'],
+    i18n: {
+      en: {
+        title:
+          'How many people use AI? I checked the giant numbers — they count accounts, not people',
+        summary:
+          '2.42 billion people use generative AI, says the headline — but the source itself warns against reading that number as people. I checked every step of the pyramid against primary sources, added the step no international version has (Brazil), and the result changes the reading: the world’s paying users are ~1% of humanity, and the coding-agents bubble is 0.14%. You are not behind — the feed is the bubble talking to itself.',
+      },
+      es: {
+        title:
+          '¿Cuántas personas usan IA? Fui a verificar los números gigantes — cuentan cuentas, no personas',
+        summary:
+          '2420 millones de personas usan IA generativa, dice el titular — pero la propia fuente desaconseja leer ese número como personas. Verifiqué cada peldaño de la pirámide en la fuente primaria, añadí el peldaño que ninguna versión internacional tiene (Brasil) y el resultado cambia la lectura: los usuarios de pago de todo el mundo son ~1 % de la humanidad, y la burbuja de los coding agents, el 0,14 %. No llegas tarde — el feed es la burbuja hablando de sí misma.',
+      },
+      it: {
+        title:
+          'Quante persone usano l’IA? Sono andato a verificare i numeri giganti — contano account, non persone',
+        summary:
+          '2,42 miliardi di persone usano l’IA generativa, dice il titolo — ma la fonte stessa sconsiglia di leggere quel numero come persone. Ho verificato ogni gradino della piramide sulle fonti primarie, ho aggiunto il gradino che nessuna versione internazionale ha (il Brasile) e il risultato cambia la lettura: i paganti di tutto il mondo sono ~1% dell’umanità, e la bolla dei coding agents lo 0,14%. Non siete in ritardo — il feed è la bolla che parla di sé stessa.',
+      },
+      he: {
+        title:
+          'כמה אנשים משתמשים ב־AI? הלכתי לבדוק את המספרים הענקיים — הם סופרים חשבונות, לא אנשים',
+        summary:
+          '‏2.42 מיליארד אנשים משתמשים ב־AI גנרטיבי, אומרת הכותרת — אבל המקור עצמו מזהיר שלא לקרוא את המספר הזה כאנשים. בדקתי כל שלב בפירמידה מול המקורות הראשוניים, הוספתי את השלב שאין באף גרסה בינלאומית (ברזיל), והתוצאה משנה את התמונה: המשלמים בעולם כולו הם כ־1% מהאנושות, ובועת ה־coding agents — ‎0.14%. אתם לא מאחור — הפיד הוא הבועה שמדברת עם עצמה.',
+      },
+    },
+  },
 ];
 
 /** Posts do mais recente para o mais antigo — ordem de exibição do índice. */
