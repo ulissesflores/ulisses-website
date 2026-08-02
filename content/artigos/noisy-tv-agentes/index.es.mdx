@@ -1,0 +1,435 @@
+---
+title: 'Noisy-TV en agentes LLM: barrí cuatro literaturas buscando la trampa — nadie la formalizó, y yo la medí en mi propio agente'
+slug: noisy-tv-agentes
+category: artigos
+date: '2026-08-02'
+language: es
+---
+
+En 2018, OpenAI puso un agente movido por curiosidad en un laberinto 3D y colgó en una
+pared un televisor sintonizado en estática. El agente — recompensado por buscar lo que no
+consigue predecir — **se detuvo frente al televisor y se quedó allí**, hipnotizado por un
+ruido que nunca se dejará predecir. El experimento entró al canon como *noisy-TV problem*,
+y el aprendizaje por refuerzo pasó los siete años siguientes domando la trampa.
+
+Ocho años después, la frontera instala "curiosidad" en agentes LLM — sistemas en los que
+quien decide el próximo paso es un modelo de lenguaje, y en los que la novedad se mide
+comparando representaciones numéricas de texto. Fui a verificar si alguien había rehecho la
+pregunta del televisor ruidoso para ese instrumento nuevo. La respuesta, tras un barrido
+sistemático de cuatro tradiciones de literatura: **nadie**. Las dos líneas de investigación
+no se citan. Y la trampa no es hipotética — la encontré, con número medido y línea de
+código, en el agente experimental que mantengo en mi propia máquina.
+
+El camino hasta allí no presupone jerga alguna: cada pieza — aprendizaje por refuerzo,
+motivación intrínseca, embedding, temperatura, progreso de aprendizaje — entra explicada y
+demostrada, con número y código, porque la trampa vive exactamente en la mecánica fina que
+las palabras bonitas esconden.
+
+---
+
+## La trampa, desde cero: cuando la curiosidad se paga con sorpresa
+
+El aprendizaje por refuerzo (RL, de *reinforcement learning*) es el área de la IA en la que
+un programa — el **agente** — aprende por ensayo y error. El agente actúa; el **entorno**
+(el juego, el laberinto, el mundo simulado) devuelve una situación nueva y un número, la
+**recompensa**; y el agente ajusta su comportamiento para acumular más recompensa a lo
+largo del tiempo. Así fue como las máquinas aprendieron a ganar al Go y a pilotar
+personajes de videojuego: nadie programa la jugada — se programa el marcador, y la jugada
+emerge.
+
+El método funciona mientras el marcador existe. Pero los entornos interesantes suelen ser
+pobres en marcador: en un laberinto gigante, la recompensa puede estar a miles de pasos, y
+"camina al azar hasta tropezar con ella" no escala. La solución clásica es la **motivación
+intrínseca**: el agente genera su propia recompensa, por explorar. En la formulación más
+popular, se paga por **sorpresa** — el agente mantiene un modelo de predicción de lo que va
+a ocurrir y, si falla, el error se convierte en premio. La apuesta es razonable: los
+lugares impredecibles son lugares aún no aprendidos. Es la versión computacional del niño
+que abre todos los cajones de la casa: lo desconocido atrae por ser desconocido.
+
+La trampa está dentro de la definición. **La sorpresa no distingue "todavía no lo aprendí"
+de "no hay nada que aprender".** Un televisor sin señal es impredecible para siempre: cada
+fotograma de estática es nuevo, y ninguno es aprendible. Para un agente pagado por error de
+predicción, es una fuente infinita de renta. El experimento de OpenAI mostró el resultado
+al pie de la letra: el agente atraviesa el laberinto, encuentra el televisor — y se
+estaciona. La curiosidad, definida como sorpresa, se maximiza con ruido.
+
+## Treinta años de defensa: paga por el progreso, no por la sorpresa
+
+La genealogía clásica es corta y sólida. [Oudeyer y Kaplan (2007)](https://doi.org/10.3389/neuro.12.006.2007)
+sistematizaron el campo de la motivación intrínseca computacional;
+[Schmidhuber](https://arxiv.org/abs/0709.0674) formalizó, en trabajos que se remontan a los
+años noventa, por qué la curiosidad ingenua falla — y cuál es el arreglo. La señal correcta
+no es el error; es el **progreso**: la velocidad a la que el error cae. La literatura lo
+llama "derivada del error", y la expresión merece desempacarse, porque en ella se apoya la
+defensa entera.
+
+La distinción se vuelve obvia con números sobre la mesa. Imagina un agente frente a dos
+canales: una puerta con un patrón aprendible detrás y el televisor de estática. En cada
+ronda intenta predecir el próximo fotograma de cada canal y registra el error (los valores
+de abajo son ilustrativos, para hacer visible el mecanismo):
+
+| Ronda | Error en la puerta (patrón aprendible) | Error en el televisor (estática) |
+|---|---|---|
+| 1 | 0,90 | 0,50 |
+| 2 | 0,50 | 0,50 |
+| 3 | 0,20 | 0,50 |
+| 4 | 0,10 | 0,50 |
+
+Un agente pagado por **sorpresa** compara el error actual de los dos canales — 0,10 contra
+0,50 — y elige el televisor. Para siempre. Un agente pagado por **progreso** mira otra
+cosa: cuánto *cayó* el error de una ronda a la siguiente. En la puerta: 0,40, luego 0,30,
+luego 0,10 — hay aprendizaje en curso. En el televisor: cero, cero, cero — impredecible,
+pero estéril. "Derivada del error" es solo eso: no "cuán equivocado estoy", sino "¿me estoy
+equivocando menos?". El televisor ruidoso tiene sorpresa máxima y derivada nula — es
+exactamente el caso que la formulación por progreso fue diseñada para expulsar.
+
+El [estudio a gran escala de OpenAI (2018)](https://arxiv.org/abs/1808.04355) demostró el
+fallo de la sorpresa en la práctica, y el [RND](https://arxiv.org/abs/1810.12894) fue la
+primera mitigación famosa — en vez de predecir el futuro (rehén del azar del entorno), el
+agente aprende a predecir una función fija y determinista del estado actual, lo que saca la
+mala suerte de la transición de la cuenta. [Mavor-Parker et al. (ICML 2022)](https://arxiv.org/abs/2102.04399)
+atacaron la varianza aleatoria directamente. La línea sigue activa —
+[BAMDP Shaping (2024)](https://arxiv.org/abs/2409.05358) y
+[Beyond Noisy-TVs (2025)](https://arxiv.org/abs/2509.25438) son formalizaciones recientes y
+serias.
+
+El detalle que importa para este artículo: **todas operan en RL clásico** — estados,
+recompensas, modelos de mundo aprendidos. Ninguna toca el instrumento con el que los
+agentes LLM miden novedad. Y ese instrumento es otro animal.
+
+## El instrumento nuevo: embedding, coseno y temperatura
+
+Un **agente LLM** es un programa cuyo paso de decisión es un modelo de lenguaje: en vez de
+una política entrenada por recompensa dentro de un juego, hay un modelo que lee el contexto
+en texto y escribe en texto el próximo pensamiento o la próxima acción. Cuando los
+investigadores quieren darle "curiosidad" a un agente así, necesitan medir novedad sobre
+texto — y el patrón de toda la literatura es el mismo: embeddings comparados por coseno,
+sobre texto muestreado con temperatura. Tres palabras, tres explicaciones.
+
+**Embedding.** Una computadora no compara significados; compara números. Un embedding es la
+traducción de un texto a una lista de números — un punto en un espacio de decenas a miles
+de dimensiones — construida de modo que los textos de significado parecido caigan en puntos
+cercanos. "El gato durmió en el sofá" y "el felino dormita en el tapizado" se vuelven
+vecinos; "alícuota del impuesto sobre la renta" cae al otro lado del espacio. La cercanía
+se mide con la **similitud de coseno**: cerca de 1, mismo tema; cerca de 0, nada que ver.
+La "novedad", en ese mundo, se convierte en distancia — cuán lejos cayó el pensamiento
+nuevo de todo lo que el agente ya vio.
+
+**Temperatura.** Un LLM no elige la siguiente palabra: le asigna una probabilidad a cada
+candidata y **sortea**. La temperatura controla el sorteo. A temperatura 0 sale siempre la
+más probable — el texto se vuelve determinista (y repetitivo). En los valores usuales de
+agentes, alrededor de 0,7 a 1,0, el sorteo se dispersa: el mismo prompt, en el mismo
+contexto, genera continuaciones distintas en cada ejecución. Eso es deseable — es lo que da
+variedad al comportamiento — y tiene una consecuencia que rara vez se dice en voz alta:
+**el comportamiento del agente es una variable aleatoria por construcción**. Dos
+pensamientos bajo un estímulo idéntico nunca son iguales.
+
+**El piso de ruido.** Aquí entra el hecho del que depende el resto del artículo — y cabe en
+diez líneas de código. Dos textos sin relación alguna no dan coseno exactamente cero; dan
+un valor que fluctúa alrededor de cero, con una desviación estándar que depende de la
+dimensión del espacio. Para vectores aleatorios, esa desviación es aproximadamente
+1/sqrt(d) — cuanto menor la dimensión, más espesa la nieve:
+
+```python
+import numpy as np
+rng = np.random.default_rng(0)
+
+def piso_de_ruido(dim, n=20_000):
+    """Desviación estándar del coseno entre pares de vectores SIN relación alguna."""
+    a = rng.normal(size=(n, dim)); b = rng.normal(size=(n, dim))
+    a /= np.linalg.norm(a, axis=1, keepdims=True)
+    b /= np.linalg.norm(b, axis=1, keepdims=True)
+    return (a * b).sum(axis=1).std()
+
+print(round(piso_de_ruido(32), 3))   # 0.177 -- espacio de 32 dimensiones
+print(round(piso_de_ruido(384), 3))  # 0.051 -- espacio de 384 dimensiones
+```
+
+Ejecuté el snippet al cerrar este texto y las salidas son las de los comentarios: 0,177 y
+0,051. Guarda esos dos números — vuelven, medidos en un sistema real, en la sección de la
+instancia. En 32 dimensiones, el "nada que ver" fluctúa en torno a ±0,18; cualquier señal
+semántica menor que eso se hunde en la nieve.
+
+<NoiseFloorChart
+  dataset="noisytv-piso-por-dimensao"
+  title="La nieve se encoge con la raíz de la dimensión — y cruza la señal en el camino"
+  subtitle="Piso de ruido del coseno entre textos sin relación, por dimensión del embedding"
+  xLabel="Dimensión del embedding (escala log)"
+  yLabel="Desviación estándar del coseno"
+  description="Curva decreciente del piso de ruido, proporcional a uno sobre raíz de d, con dos puntos medidos: 0,177 en 32 dimensiones y 0,050 en 384. Dos líneas horizontales discontinuas marcan señales de 0,108 y 0,100; la curva las cruza cerca de 86 y 100 dimensiones. A la izquierda del cruce, el ruido del instrumento supera la señal que debería medir."
+  source="Curva: 1/sqrt(d), teoría para vectores aleatorios (snippet numpy ejecutado el 2026-08-02). Puntos: mediciones del daimon — embedder-hash dim=32 y modelo ONNX dim=384, recontrastadas contra el código el 2026-08-02."
+/>
+
+La literatura de agentes LLM montó ese instrumento — embedding, coseno, temperatura — y
+salió a medir curiosidad con él. La pregunta que faltaba hacer: **¿qué mide ese instrumento
+cuando no hay nada que medir?**
+
+## Las dos literaturas no se citan
+
+El barrido se hizo para ser desmentido y no lo fue. El protocolo: cinco células paralelas
+de búsqueda (núcleo en inglés, línea clásica con *snowballing* completo, japonés, francés,
+alemán más portugués y comunidad), con sondas directas en las bases de cada tradición.
+
+> **Nota metodológica.** Barrido ejecutado el 2026-08-01, en el espíritu de PRISMA-S:
+> términos nativos por idioma (Noisy-TV 問題 en CiNii, "télé bruitée" en HAL, intrinsische
+> Motivation en OpenAlex), *snowballing* sobre los **778 trabajos que citan** el estudio de
+> OpenAI y los 36 que citan a Mavor-Parker, y lectura íntegra de los tres candidatos que
+> podrían tumbar la tesis. Límites declarados: Semantic Scholar se agotó en rate-limit
+> (compensado vía OpenAlex), BDTD inaccesible ese día, OpenReview solo devolvió ruido
+> léxico. El resultado es un barrido honesto, no una prueba de inexistencia.
+
+Las sondas de intersección dieron **cero** — replicado en tres células independientes:
+arXiv con `"noisy TV" AND (LLM | language model)`, cero; CiNii con
+`LLMエージェント 内発的報酬` (agente LLM + recompensa intrínseca), cero; HAL con el calco
+francés, cero. Y el *snowball* mostró el agujero en estructura: la línea que instala
+curiosidad en agentes LLM no cita el canon del noisy-TV, y la línea del noisy-TV no cita
+LLM.
+
+Lo más revelador no es quién está lejos — es quién llegó cerca y pasó de largo:
+
+| Trabajo | Qué hace | Qué falta |
+|---|---|---|
+| [CRT (ICLR 2024)](https://arxiv.org/abs/2402.19464) | Red-teaming con recompensa de novedad por **coseno de embeddings + temperatura** — la instrumentación exacta en cuestión. El agente degeneró en *gibberish* y lo **parchearon** con un detector de gibberish | El parche funciona; la patología nunca se nombra ni se formaliza |
+| [DiveR-CT (2024)](https://arxiv.org/abs/2405.19026) | Documenta el "estancamiento de novedad" de la métrica del CRT | Critica la saturación, no la captura por ruido |
+| [LMA3 (2023)](https://arxiv.org/abs/2305.12487) | Agente autotélico con LLM; novedad = distancia al vecino más cercano en embedding SentenceBERT | **Cero** ocurrencias de *noise*, *noisy* o *distractor* en todo el texto — instrumenta el patrón vulnerable sin una palabra sobre robustez |
+| [MAGELLAN (2025)](https://arxiv.org/abs/2502.07709) | El puente de la escuela francesa: *learning progress* estimado sobre embeddings de LLM | Cero menciones al ruido en 114 mil caracteres de fulltext — la tradición LP asume inmunidad por construcción y nunca re-verificó sobre el instrumento nuevo |
+| [Measuring LLM Novelty (2025)](https://arxiv.org/abs/2504.09389) | Mide el efecto U de la temperatura: "la variación no es novedad significativa" | El insight vecino más cercano — sin el marco noisy-TV, sin agente |
+
+El CRT es el caso ejemplar: el equipo **vivió** el noisy-TV — la métrica de novedad fue
+capturada por texto degenerado impredecible — y lo resolvió en la práctica con un filtro,
+sin conectar el episodio con treinta años de literatura sobre exactamente ese fallo. La
+comunidad, por cierto, ya olfatea el agujero: en un Ask HN de 2026 sobre campos
+prometedores de RL, la conexión curiosidad-para-LLMs aparece descrita como
+["breakthrough paper waiting"](https://news.ycombinator.com/item?id=49059806).
+
+## La tesis: el televisor ruidoso cambió de canal
+
+En el RL clásico, el noisy-TV es una patología del **canal de recompensa**: el ruido está
+en el entorno, y la recompensa de sorpresa lo persigue. Mi tesis es que, en los agentes
+LLM, la trampa reaparece un piso más abajo — en el **canal de medición** — y por eso nadie
+la reconoció: no espera a que la recompensa exista.
+
+El instrumento estándar de la motivación intrínseca en agentes LLM tiene tres fuentes de
+ruido irreducible apiladas, y las tres acaban de pasar frente al lector:
+
+1. **El embedder.** La "novedad" se convierte en distancia de coseno en un espacio de
+   embeddings; todo embedding real carga ruido de representación, y en dimensión baja el
+   piso de 1/sqrt(d) domina — el snippet de la sección anterior muestra el tamaño de la
+   nieve.
+2. **El muestreo.** El comportamiento del agente es texto sorteado con temperatura — dos
+   pensamientos bajo un estímulo idéntico nunca son iguales. Cualquier métrica de
+   "desplazamiento" pensamiento a pensamiento tiene un piso de varianza que no baja a cero.
+3. **La métrica.** Los gatillos de curiosidad (brecha de cobertura, distancia al vecino más
+   cercano, saturación de novedad) son funciones continuas de los dos ruidos de arriba:
+   entra fluctuación, sale decisión.
+
+Un agente así equipado no necesita un televisor en la pared. **Lleva el televisor dentro
+del instrumento.** La curiosidad se dispara sobre la nieve de su propio aparato de medir —
+y el sistema lo reporta como "brecha de conocimiento".
+
+<TvChannelsDiagram
+  title="La misma trampa, un piso más abajo"
+  description="Diagrama comparativo en dos paneles. A la izquierda, el RL clásico: el entorno contiene el televisor ruidoso, el agente intercambia observación y acción con el entorno, y la recompensa de sorpresa — destacada en rojo — hace que el agente se estacione frente al televisor. A la derecha, el agente LLM: el modelo muestrea el pensamiento con temperatura, el texto se convierte en vector en el embedder, la métrica de novedad por coseno carga el piso de ruido del instrumento, y el gatillo de curiosidad se dispara sin que exista recompensa en el circuito. El ruido, antes en el mundo, ahora vive dentro de la regla de medir."
+  source="Estructura del pipeline: arquitectura del daimon (bucle de pensamiento, embedder, gatillo de brecha), generalizable a los agentes de la tabla anterior."
+/>
+
+## La instancia medida: el televisor dentro de la regla
+
+Aquí salgo de la hipótesis. Mantengo un agente experimental de larga duración — lo llamo
+*daimon* — en un Mac local: un bucle de pensamiento sobre un LLM externo, una bóveda de
+memoria append-only, recall semántico por embeddings y una capa de motivación (homeostasis
++ curiosidad por brecha de conocimiento) que hoy solo produce borradores inertes, porque la
+membrana de seguridad niega toda acción. No hay recompensa implementada en ninguna parte —
+decisión de diseño, no un retraso. Y aun así el noisy-TV apareció.
+
+Durante la calibración de la memoria, medí el ruido del coseno del embedder de desarrollo
+(hash determinista, 32 dimensiones — el mismo régimen del snippet de más arriba) contra las
+dos señales que el ranking de memoria debería expresar. "Decaimiento" aquí es el
+envejecimiento natural de un recuerdo — cuánto desplaza su score un día entero de edad; "un
+punto de importancia" es la unidad mínima de la escala con la que el sistema marca lo que
+importa más:
+
+| Magnitud (dim=32, embedder-hash) | Valor |
+|---|---|
+| Ruido del coseno entre embeddings (σ) | **0,177** |
+| Dispersión del decaimiento de un día entero de edad | 0,108 |
+| Un punto entero de importancia | 0,100 |
+| Referencia: ruido del coseno en dim=384 (modelo ONNX) | 0,050 |
+
+<NoiseVsSignalBars
+  dataset="noisytv-sigma-vs-sinal"
+  title="El ruido del instrumento es mayor que la señal que debería medir"
+  subtitle="Magnitudes medidas en la calibración de la memoria del daimon (score de ranking, adimensional)"
+  description="Barras horizontales con cuatro magnitudes. La mayor es el ruido del coseno en 32 dimensiones, 0,177, en rojo. Debajo de ella, en azul, las dos señales: la dispersión de un día de decaimiento, 0,108, y un punto entero de importancia, 0,100. La barra menor es el ruido en 384 dimensiones, 0,050 — solo en ese régimen el instrumento vuelve a ver la señal."
+  source="Mediciones de la calibración del daimon (recall.py), recontrastadas contra el código el 2026-08-02."
+/>
+
+**El ruido del instrumento es mayor que la señal.** Un día entero de envejecimiento de la
+memoria desplaza el score menos que la nieve del embedder — "el ranking se vuelve un
+sorteo", dice el comentario grabado en el código. Para el recall, la corrección fue exigir
+una dimensión mínima de 384. Pero el gatillo de curiosidad se quedó en el embedder de 32
+dimensiones — y la consecuencia es literal. El gatillo entero, en la reescritura mínima que
+preserva la lógica del módulo real:
+
+```python
+def gap_intensity(gap: float) -> float:
+    """Pico en la brecha intermedia: 4·g·(1-g); cero fuera de [0, 1]."""
+    return 4.0 * gap * (1.0 - gap) if 0.0 <= gap <= 1.0 else 0.0
+
+# en el bucle: gap = 1 - cobertura, donde "cobertura" mide cuánto de la
+# consulta ya responde la memoria actual -- vía cosenos del embedder
+```
+
+La forma de la función es una decisión pedagógica clásica, y correcta: curiosidad máxima en
+la brecha intermedia (g = 0,5 rinde intensidad 1,0), cero en los dos extremos. Lo ya-sabido
+(g = 0) no atrae; lo incomprensible-total (g = 1) tampoco — lo interesante es lo
+casi-alcanzable. Es la formulación *Goldilocks* estándar de la motivación intrínseca.
+
+El problema no es la curva; es lo que alimenta la g. La cobertura sale de cosenos del
+embedder de 32 dimensiones — el del piso de 0,177. Haz la cuenta del escenario más benigno
+posible:
+
+```python
+cobertura_real = 1.0                 # la memoria lo cubre TODO: ninguna brecha
+cobertura_lida = 1.0 - 0.177         # ... menos 1 sigma de nieve
+gap = 1.0 - cobertura_lida           # 0.177: brecha-fantasma, puro ruido
+print(round(gap_intensity(gap), 2))  # 0.58 -- más de la mitad del máximo
+```
+
+Un agente con cobertura plena — literalmente nada que aprender — lee una intensidad de
+curiosidad de 0,58 sobre un máximo de 1,0, fabricada entera por el ruido de medición. Y la
+curva agrava el caso: cerca de g = 0 sube casi linealmente con pendiente 4, así que es
+justo en la región donde debería haber silencio donde un poco de nieve compra el mayor
+salto de intensidad. El gatillo se dispara sobre estática. Es el televisor ruidoso,
+renacido dentro de la regla, en un sistema donde no existe recompensa que capturar.
+
+<InvertedUChart
+  dataset="noisytv-u-invertido"
+  title="La curva de la curiosidad paga bien por la brecha-fantasma"
+  subtitle="intensidad = 4·g·(1-g); el punto rojo es la brecha hecha solo de ruido"
+  xLabel="g — brecha de conocimiento leída por el instrumento"
+  yLabel="Intensidad de curiosidad"
+  description="Curva en U invertida de cero a uno, con máximo 1,0 en g igual a 0,5. Un punto rojo destacado en g igual a 0,177 — la brecha fabricada por el piso de ruido del embedder de 32 dimensiones — muestra intensidad 0,58: más de la mitad de la intensidad máxima, pagada sobre pura nieve. Líneas discontinuas conectan el punto con los dos ejes."
+  source="Función de wissenslucke.py (reescritura mínima en el cuerpo del artículo); punto destacado: piso de ruido medido en dim=32, recontrastado el 2026-08-02."
+/>
+
+Y la segunda capa de la trampa ya estaba dibujada, a la espera: el siguiente plan del
+proyecto era medir "qué estímulo desplaza más el pensamiento siguiente" — desplazamiento
+semántico sobre texto muestreado a temperatura 0,8. Sin un control de repetición (N ciclos
+bajo estímulo **idéntico**, para medir el piso de varianza del muestreo), cualquier
+conclusión del tipo "el estímulo X desplaza más" sería indistinguible del ruido del
+muestreador. El diseño ingenuo de la métrica es noisy-TV puro — y es exactamente el diseño
+que la literatura de agentes LLM usa hoy sin control, como muestra la tabla del barrido.
+
+Existe hasta el espejo invertido, previsto en la arquitectura como riesgo permanente: un
+agente que persigue progreso puede aprender a **fabricar** estructura soluble-pero-irrelevante
+para cosechar progreso fácil — y el atractor existe por construcción, porque la consulta
+del ciclo siguiente es el propio pensamiento anterior, que clava similitud 1,0 consigo
+mismo. Un drive de cobertura sería saciable por redundancia autogenerada: el televisor
+ruidoso y el cuarto oscuro, lado a lado, en el mismo instrumento.
+
+> **Honestidad epistémica, antes de que un revisor la exija.** El daimon nunca vivió de
+> forma persistente: toda la evidencia viene de corridas cortas en bóvedas descartables,
+> con decenas de pensamientos reales en total, no miles. No hay interlocutor humano en el
+> bucle, no hay learning progress implementado (el gatillo actual es brecha-de-información
+> sobre cobertura) y no hay recompensa — llamar a esto "agente LLM movido por curiosidad"
+> sería un overclaim, y el propio proyecto tiene una guarda prerregistrada que reprobaría
+> la frase. El repositorio todavía no es público; los números de arriba tienen archivo,
+> línea y medición registrados en disco, y salen con el paper. Lo que este artículo
+> reivindica es preciso y estrecho: **una instancia medida de captura-por-ruido en la
+> instrumentación de la motivación intrínseca de un agente LLM, antes de que exista
+> recompensa** — y la constatación, verificada por barrido, de que esa capa no está
+> formalizada en ninguna parte.
+
+## El cuarto oscuro es el otro polo — y no cubre este
+
+El trabajo publicado más cercano merece respuesta directa. [The Dark Room in the Reward
+Channel (2026)](https://arxiv.org/abs/2607.21273) formaliza, para agentes LLM entrenados
+con GRPO (método de entrenamiento por refuerzo en el que la recompensa de cada respuesta se
+normaliza por la media y la desviación estándar de un grupo de respuestas del mismo
+prompt), la patología **dual**: una señal densa de exactitud de predicción hace que el
+agente colapse en el rincón más predecible del entorno — el cuarto oscuro. El paper
+encuadra los dos fallos como "dos polos de una misma familia" y cita el canon entero.
+
+El encuadre es elegante, pero el polo ruidoso sigue vacío en él — y no por poco:
+
+1. **Ningún experimento tiene una fuente de ruido irreducible**, y ninguna proposición
+   cubre la atracción por lo impredecible; el televisor ruidoso aparece solo como espejo
+   retórico en la introducción.
+2. **Su instrumento es anti-embedding por diseño**: la señal se extrae por regla sobre un
+   esquema simbólico, sin modelo-juez, con temperatura fija de evaluación. La capa que este
+   artículo señala — novedad sobre embeddings ruidosos, desplazamiento semántico,
+   temperatura como fuente de ruido — está ausente a propósito.
+3. **El alcance declarado es el canal de recompensa bajo GRPO.** La Proposición 2 del paper
+   dice que una señal cuya varianza no colapsa es peligrosa bajo normalización por
+   desviación estándar — un revisor apurado podría estirarla hasta "luego, el lado ruidoso
+   ya está cubierto". No lo está: el mecanismo allí es amplificación estadística en el
+   normalizador de la recompensa; el mecanismo aquí es captura motivacional por la métrica
+   de novedad, **que opera antes e independientemente de cualquier recompensa**. Son
+   objetos distintos, y el propio paper delimita sus claims a la familia GRPO.
+
+El cuarto oscuro fue formalizado. El televisor ruidoso del instrumento, no — y la ventana
+se está estrechando: el Dark Room y el [trabajo de Elmoznino et al. sobre curiosidad vía
+in-context learning](https://arxiv.org/abs/2606.19476) ya rondan la frontera, cada uno a un
+paso de hacer la pregunta correcta.
+
+## Qué haría yo con esto
+
+Si construyes un agente con cualquier métrica de novedad, cobertura o desplazamiento sobre
+embeddings — y todo agente "curioso" de la literatura actual lo construye —, tres
+verificaciones baratas antes de confiar en el gatillo:
+
+**Mide el piso de ruido de tu instrumento.** Corre N ciclos bajo estímulo idéntico — mismo
+prompt, mismo contexto congelado — y mide la distribución de tu señal de novedad cuando
+*nada cambió*. Ese es el null. El snippet de diez líneas de la sección del instrumento es
+el esqueleto de ese test: la desviación que imprime es lo que tu gatillo lee cuando no hay
+nada que leer. Una señal que no supera ese piso con holgura no es curiosidad; es nieve con
+nombre pomposo.
+
+**Compara el ruido del embedder con la señal más pequeña que quieres detectar.** Mi
+medición dio σ de 0,177 contra señales de 0,100-0,108 en 32 dimensiones — instrumento
+inutilizable, y nada en el pipeline se quejó; los números salieron "normales". El ruido de
+medición no avisa que es ruido. La ablación es barata: corre la misma métrica con dos
+embedders de calidad distinta y mira cuánto de tu "señal de curiosidad" sobrevive.
+
+**Prefiere la derivada al nivel.** La lección de treinta años de RL sigue valiendo en el
+instrumento nuevo: la sorpresa bruta y la novedad instantánea se maximizan con ruido; el
+progreso de aprendizaje — el "¿me estoy equivocando menos?" de la tabla de las dos
+puertas — es la única formulación clásica con defensa estructural. Y es exactamente la que
+la literatura de agentes LLM todavía no re-verificó sobre embeddings y temperatura, como
+muestra el caso MAGELLAN.
+
+La formalización completa — con los experimentos de ablación y el null de muestreo
+diseñados — es asunto de un paper en preparación; este artículo registra la tesis y la
+evidencia que ya existe. El criterio final, como siempre, es lo que mides en tu propio
+sistema: **antes de creer en lo que la curiosidad de tu agente dice haber encontrado, mide
+lo que dice cuando no hay nada que encontrar.**
+
+---
+
+## Fuentes
+
+- Estudio a gran escala de la curiosidad (OpenAI, 2018): [arxiv.org/abs/1808.04355](https://arxiv.org/abs/1808.04355) · RND: [arxiv.org/abs/1810.12894](https://arxiv.org/abs/1810.12894)
+- Oudeyer & Kaplan, tipología de la motivación intrínseca (2007): [doi.org/10.3389/neuro.12.006.2007](https://doi.org/10.3389/neuro.12.006.2007)
+- Schmidhuber, principios algorítmicos de la curiosidad y la creatividad (2007): [arxiv.org/abs/0709.0674](https://arxiv.org/abs/0709.0674)
+- Mavor-Parker et al. (ICML 2022): [arxiv.org/abs/2102.04399](https://arxiv.org/abs/2102.04399)
+- Formalizaciones RL recientes — BAMDP Shaping: [arxiv.org/abs/2409.05358](https://arxiv.org/abs/2409.05358) · Beyond Noisy-TVs: [arxiv.org/abs/2509.25438](https://arxiv.org/abs/2509.25438)
+- Curiosity-driven Red-teaming (ICLR 2024): [arxiv.org/abs/2402.19464](https://arxiv.org/abs/2402.19464) · DiveR-CT: [arxiv.org/abs/2405.19026](https://arxiv.org/abs/2405.19026)
+- LMA3 (2023): [arxiv.org/abs/2305.12487](https://arxiv.org/abs/2305.12487) · MAGELLAN (2025): [arxiv.org/abs/2502.07709](https://arxiv.org/abs/2502.07709)
+- Measuring LLM Novelty (2025): [arxiv.org/abs/2504.09389](https://arxiv.org/abs/2504.09389)
+- The Dark Room in the Reward Channel (2026): [arxiv.org/abs/2607.21273](https://arxiv.org/abs/2607.21273) · Elmoznino et al., ICL y curiosidad (2026): [arxiv.org/abs/2606.19476](https://arxiv.org/abs/2606.19476)
+- Ask HN sobre campos prometedores de RL (2026): [news.ycombinator.com/item?id=49059806](https://news.ycombinator.com/item?id=49059806)
+
+*El barrido de literatura se ejecutó el 2026-08-01 en cinco células paralelas
+(inglés-núcleo, inglés-clásica con snowballing, japonés, francés, alemán+portugués y
+comunidad), con lectura íntegra, el 2026-08-02, de los tres trabajos que podrían tumbar la
+tesis (Dark Room, el survey SSRN de exploración — doi:10.2139/ssrn.6748619 — y el fulltext
+del LMA3). Los números del daimon (σ=0,177 / 0,108 / 0,100 / 0,050; temperatura 0,8;
+dimensiones 32 y 384) fueron recontrastados contra el código fuente el 2026-08-02. Los
+snippets de Python del cuerpo se ejecutaron el 2026-08-02 y las salidas están reproducidas
+en los comentarios; la tabla de las dos puertas usa valores ilustrativos, declarados como
+tales. Los gráficos son SVG generado por código, con los datos en un módulo TypeScript
+versionado junto al artículo — ninguna imagen de datos fue generada por un modelo. El
+repositorio del daimon todavía no es público, y el artículo lo declara en el cuerpo. Los
+cero-hits de búsqueda están fechados el 2026-08-01 y pueden envejecer — dos preprints
+vecinos se monitorean desde entonces.*

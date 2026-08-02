@@ -15,6 +15,10 @@ import { EffortCostChart } from './effort-cost-chart';
 import { WaffleChart } from './waffle-chart';
 import { CountryBarsChart } from './country-bars-chart';
 import { FunnelChart } from './funnel-chart';
+import { NoiseFloorChart } from './noise-floor-chart';
+import { NoiseVsSignalBars } from './noise-vs-signal-bars';
+import { TvChannelsDiagram } from './tv-channels-diagram';
+import { InvertedUChart } from './inverted-u-chart';
 
 // Lazy imports for simulation components (heavy, code-split)
 // These will be resolved at render time by Next.js
@@ -41,6 +45,10 @@ export const mdxComponents: MDXComponents = {
   WaffleChart,
   CountryBarsChart,
   FunnelChart,
+  NoiseFloorChart,
+  NoiseVsSignalBars,
+  TvChannelsDiagram,
+  InvertedUChart,
   /**
    * Tabela larga rola em vez de espremer. O container é quem rola; a tabela
    * mantém a largura natural (`w-max`) e ocupa no mínimo a linha inteira.

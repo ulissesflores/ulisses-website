@@ -136,6 +136,41 @@ export const artigos: readonly Artigo[] = [
       },
     },
   },
+  {
+    slug: 'noisy-tv-agentes',
+    title:
+      'Noisy-TV em agentes LLM: varri quatro literaturas atrás da armadilha — ninguém a formalizou, e eu a medi no meu próprio agente',
+    summary:
+      'Em 2018, um agente movido a curiosidade parou hipnotizado diante de uma TV de estática — o noisy-TV problem, que o aprendizado por reforço passou sete anos domando. Varri quatro literaturas atrás da mesma armadilha na instrumentação de curiosidade de agentes LLM: ninguém a formalizou. E ela não é hipotética — no agente experimental que mantenho na minha máquina, o ruído do instrumento (σ=0,177) é maior que o sinal que ele deveria medir.',
+    date: '2026-08-02',
+    tags: ['agentes', 'llm', 'curiosidade', 'noisy-tv', 'embeddings', 'reinforcement-learning'],
+    i18n: {
+      en: {
+        title:
+          'Noisy-TV in LLM agents: I swept four literatures for the trap — nobody has formalized it, and I measured it in my own agent',
+        summary:
+          "In 2018, a curiosity-driven agent froze, hypnotized, in front of a TV tuned to static — the noisy-TV problem, which reinforcement learning spent seven years taming. I swept four literatures for the same trap in the curiosity instrumentation of LLM agents: nobody has formalized it. And it is not hypothetical — in the experimental agent I keep on my own machine, the instrument's noise (σ=0.177) is larger than the signal it is supposed to measure.",
+      },
+      es: {
+        title:
+          'Noisy-TV en agentes LLM: barrí cuatro literaturas buscando la trampa — nadie la formalizó, y yo la medí en mi propio agente',
+        summary:
+          'En 2018, un agente movido por curiosidad se quedó hipnotizado frente a un televisor de estática — el noisy-TV problem, que el aprendizaje por refuerzo pasó siete años domando. Barrí cuatro literaturas buscando la misma trampa en la instrumentación de curiosidad de los agentes LLM: nadie la formalizó. Y no es hipotética — en el agente experimental que mantengo en mi máquina, el ruido del instrumento (σ=0,177) es mayor que la señal que debería medir.',
+      },
+      it: {
+        title:
+          "Noisy-TV negli agenti LLM: ho setacciato quattro letterature a caccia della trappola — nessuno l'ha formalizzata, e io l'ho misurata nel mio stesso agente",
+        summary:
+          "Nel 2018 un agente mosso dalla curiosità si fermò ipnotizzato davanti a una TV che trasmetteva statica — il noisy-TV problem, che l'apprendimento per rinforzo ha passato sette anni a domare. Ho setacciato quattro letterature a caccia della stessa trappola nella strumentazione della curiosità degli agenti LLM: nessuno l'ha formalizzata. E non è ipotetica — nell'agente sperimentale che mantengo sulla mia macchina, il rumore dello strumento (σ=0,177) è più grande del segnale che dovrebbe misurare.",
+      },
+      he: {
+        title:
+          'Noisy-TV בסוכני LLM: סרקתי ארבע ספרויות בחיפוש אחר המלכודת — איש לא פרמל אותה, ואני מדדתי אותה בסוכן של עצמי',
+        summary:
+          'ב־2018 נעצר סוכן מונע־סקרנות, מהופנט, מול טלוויזיה של רעש סטטי — ה־noisy-TV problem, שלמידת החיזוק בילתה שבע שנים באילופו. סרקתי ארבע ספרויות בחיפוש אחר אותה מלכודת באינסטרומנטציה של סקרנות בסוכני LLM: איש לא פרמל אותה. והיא אינה היפותטית — בסוכן הניסיוני שאני מתחזק במכונה שלי, רעש המכשיר (σ=0.177) גדול מהאות שהוא אמור למדוד.',
+      },
+    },
+  },
 ];
 
 /** Posts do mais recente para o mais antigo — ordem de exibição do índice. */
