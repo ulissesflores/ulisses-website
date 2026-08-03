@@ -205,6 +205,86 @@ export const waffleDatasets: Record<string, WaffleDataset> = {
       { label: 'משתמשים ב־coding agents', sublabel: '10–15 מיליון · ~0.14%', color: '#fbbf24', count: 4 },
     ],
   },
+
+  /* * `estatisticas-chatgpt-denominador-waffle` — a régua trocada, em pontos.
+   *
+   * POR QUE ESTE GRÁFICO EXISTE, se o de barras já mostra os mesmos percentuais:
+   * a barra mostra o RESULTADO da conta (11% vs 14,5%); o waffle mostra a
+   * OPERAÇÃO — o mesmo bloco azul de usuários medido contra o quadro inteiro ou
+   * contra o quadro menos o rodapé cinza-claro. É a única forma do artigo em que
+   * o leitor VÊ o denominador sendo trocado, em vez de ler o resultado.
+   *
+   * A ARITMÉTICA FECHA NOS PRÓPRIOS PONTOS (é o teste do gráfico):
+   * - 274 ÷ 2.500 = 10,96% -> "roughly 11% of the world's population"
+   * - 274 ÷ (2.500 − 610) = 274 ÷ 1.890 = 14,50% -> a régua adulta do paper
+   * Quem contar os pontos refaz as duas contas sem sair da figura.
+   *
+   * PROCEDÊNCIA (conferida em 03/08/2026):
+   * - Banco Mundial, agregado mundial 2025: SP.POP.TOTL = 8.215.424.893 e
+   *   SP.POP.0014.TO = 2.005.307.782 -> 15+ = 6.210.117.111.
+   * - 900 mi = OpenAI, "Scaling AI for everyone" (27/02/2026).
+   * - Escala: 2.500 pontos para 8,215 bi -> 1 ponto = 3.286.170 pessoas.
+   *   900.000.000 ÷ 3.286.170 = 273,9 -> 274 · 2.005.307.782 ÷ 3.286.170 = 610,2
+   *   -> 610 · resto = 1.616. Soma = 2.500, e a grade fecha em 50 linhas cheias.
+   *
+   * ORDEM DOS GRUPOS É SEMÂNTICA, não estética: os menores de 15 vêm por ÚLTIMO
+   * para ocupar as ~12 linhas do rodapé — a régua adulta é literalmente "o quadro
+   * menos o rodapé". Inverter a ordem quebra a leitura do gráfico.
+   *
+   * PALETA: as três cores são reuso exato do waffle de `quantas-pessoas-usam-ia`
+   * (validação CVD de 02/08/2026 já feita sobre elas). O cinza mais escuro é o
+   * grupo recessivo — aqui, o que a régua adulta remove.
+   */
+  'estatisticas-chatgpt-denominador-waffle': {
+    categories: [
+      {
+        label: 'Os 900 milhões',
+        sublabel: '274 pontos · 11,0%',
+        color: '#60a5fa',
+        count: 274,
+      },
+      {
+        label: 'Resto da população 15+',
+        sublabel: '1.616 pontos',
+        color: '#64748b',
+        count: 1616,
+      },
+      {
+        label: 'Menores de 15 anos',
+        sublabel: '610 pontos · fora da régua',
+        color: '#3f3f46',
+        count: 610,
+      },
+    ],
+  },
+  'estatisticas-chatgpt-denominador-waffle-en': {
+    categories: [
+      { label: 'The 900 million', sublabel: '274 dots · 11.0%', color: '#60a5fa', count: 274 },
+      { label: 'Rest of 15+ population', sublabel: '1,616 dots', color: '#64748b', count: 1616 },
+      { label: 'Under 15', sublabel: '610 dots · outside the ruler', color: '#3f3f46', count: 610 },
+    ],
+  },
+  'estatisticas-chatgpt-denominador-waffle-es': {
+    categories: [
+      { label: 'Los 900 millones', sublabel: '274 puntos · 11,0 %', color: '#60a5fa', count: 274 },
+      { label: 'Resto población 15+', sublabel: '1616 puntos', color: '#64748b', count: 1616 },
+      { label: 'Menores de 15 años', sublabel: '610 puntos · fuera de regla', color: '#3f3f46', count: 610 },
+    ],
+  },
+  'estatisticas-chatgpt-denominador-waffle-it': {
+    categories: [
+      { label: 'I 900 milioni', sublabel: '274 punti · 11,0%', color: '#60a5fa', count: 274 },
+      { label: 'Resto popolazione 15+', sublabel: '1.616 punti', color: '#64748b', count: 1616 },
+      { label: 'Minori di 15 anni', sublabel: '610 punti · fuori dal metro', color: '#3f3f46', count: 610 },
+    ],
+  },
+  'estatisticas-chatgpt-denominador-waffle-he': {
+    categories: [
+      { label: 'ה־900 מיליון', sublabel: '274 נקודות · 11.0%', color: '#60a5fa', count: 274 },
+      { label: 'שאר האוכלוסייה 15+', sublabel: '1,616 נקודות', color: '#64748b', count: 1616 },
+      { label: 'מתחת לגיל 15', sublabel: '610 נקודות · מחוץ לסרגל', color: '#3f3f46', count: 610 },
+    ],
+  },
 };
 
 /* ── Barras por país ─────────────────────────────────────────────────── */
@@ -390,6 +470,933 @@ export const countryBarsDatasets: Record<string, CountryBarsDataset> = {
       },
     ],
   },
+
+  /* `estatisticas-de-ia-twh` — "o mesmo 2026, quatro números". A estrutura
+   * de blocos-por-régua carrega a tese: bloco 1 = faixa IEA jan/2024
+   * (INCLUI cripto; aposentada pela própria IEA), bloco 2 = séries atuais
+   * SEM cripto. `max` em TWh (não %); o componente é agnóstico de unidade
+   * (valueLabel carrega tudo).
+   * PROCEDÊNCIA (verificada 02/08/2026, PDFs oficiais + Wayback):
+   * 1.050/800 = IEA Electricity 2024 p. 35 ("620-1 050 TWh in 2026, with
+   * our base case for demand at just over 800 TWh"; escopo inclui
+   * criptomoedas, ~160 TWh no caso-base 2026); 565/175 = Gartner PR
+   * 10/06/2026 (total mundial; servidores IA-otimizados 175 TWh = 31%);
+   * 485 = IEA Key Questions on Energy and AI, 16/04/2026 ("485 TWh in 2025
+   * to 950 TWh in 2030", sem cripto dedicada).
+   */
+  'estatisticas-de-ia-twh': {
+    max: 1100,
+    groups: [
+      {
+        label: 'IEA jan/2024 — faixa 620-1.050 TWh, INCLUI cripto (aposentada)',
+        color: '#fbbf24',
+        items: [
+          {
+            name: 'Manchete (teto)',
+            value: 1050,
+            valueLabel: '1.050 TWh',
+            emphasis: true,
+          },
+          {
+            name: 'Caso-base',
+            value: 800,
+            valueLabel: '~800 TWh ("just over 800")',
+          },
+        ],
+      },
+      {
+        label: 'Séries atuais, SEM cripto dedicada — Gartner 10/jun/2026 · IEA 16/abr/2026',
+        color: '#60a5fa',
+        items: [
+          {
+            name: 'Gartner (para 2026)',
+            value: 565,
+            valueLabel: '565 TWh · IA-otimizados: 175 (31%)',
+            emphasis: true,
+          },
+          {
+            name: 'IEA (2025 medido)',
+            value: 485,
+            valueLabel: '485 TWh -> ~950 em 2030',
+          },
+        ],
+      },
+    ],
+  },
+  'estatisticas-de-ia-twh-en': {
+    max: 1100,
+    groups: [
+      {
+        label: 'IEA Jan 2024 — 620-1,050 TWh range, INCLUDES crypto (retired)',
+        color: '#fbbf24',
+        items: [
+          {
+            name: 'Headline (ceiling)',
+            value: 1050,
+            valueLabel: '1,050 TWh',
+            emphasis: true,
+          },
+          {
+            name: 'Base case',
+            value: 800,
+            valueLabel: '~800 TWh ("just over 800")',
+          },
+        ],
+      },
+      {
+        label: 'Current series, NO dedicated crypto — Gartner Jun 10, 2026 · IEA Apr 16, 2026',
+        color: '#60a5fa',
+        items: [
+          {
+            name: 'Gartner (for 2026)',
+            value: 565,
+            valueLabel: '565 TWh · AI-optimized: 175 (31%)',
+            emphasis: true,
+          },
+          {
+            name: 'IEA (2025 measured)',
+            value: 485,
+            valueLabel: '485 TWh -> ~950 in 2030',
+          },
+        ],
+      },
+    ],
+  },
+  'estatisticas-de-ia-twh-es': {
+    max: 1100,
+    groups: [
+      {
+        label: 'IEA ene/2024 — rango 620-1050 TWh, INCLUYE cripto (retirado)',
+        color: '#fbbf24',
+        items: [
+          {
+            name: 'Titular (techo)',
+            value: 1050,
+            valueLabel: '1050 TWh',
+            emphasis: true,
+          },
+          {
+            name: 'Caso base',
+            value: 800,
+            valueLabel: '~800 TWh ("just over 800")',
+          },
+        ],
+      },
+      {
+        label: 'Series actuales, SIN cripto dedicada — Gartner 10/jun/2026 · IEA 16/abr/2026',
+        color: '#60a5fa',
+        items: [
+          {
+            name: 'Gartner (para 2026)',
+            value: 565,
+            valueLabel: '565 TWh · optimizados para IA: 175 (31 %)',
+            emphasis: true,
+          },
+          {
+            name: 'IEA (2025 medido)',
+            value: 485,
+            valueLabel: '485 TWh -> ~950 en 2030',
+          },
+        ],
+      },
+    ],
+  },
+  'estatisticas-de-ia-twh-it': {
+    max: 1100,
+    groups: [
+      {
+        label: 'IEA gen/2024 — forchetta 620-1.050 TWh, INCLUDE le cripto (ritirata)',
+        color: '#fbbf24',
+        items: [
+          {
+            name: 'Titolo (tetto)',
+            value: 1050,
+            valueLabel: '1.050 TWh',
+            emphasis: true,
+          },
+          {
+            name: 'Caso base',
+            value: 800,
+            valueLabel: '~800 TWh ("just over 800")',
+          },
+        ],
+      },
+      {
+        label: 'Serie attuali, SENZA cripto dedicata — Gartner 10/giu/2026 · IEA 16/apr/2026',
+        color: '#60a5fa',
+        items: [
+          {
+            name: 'Gartner (per il 2026)',
+            value: 565,
+            valueLabel: "565 TWh · ottimizzati per l'IA: 175 (31%)",
+            emphasis: true,
+          },
+          {
+            name: 'IEA (2025 misurato)',
+            value: 485,
+            valueLabel: '485 TWh -> ~950 nel 2030',
+          },
+        ],
+      },
+    ],
+  },
+  'estatisticas-de-ia-twh-he': {
+    max: 1100,
+    groups: [
+      {
+        label: 'IEA ינואר 2024 — טווח 620–1,050 TWh, כולל קריפטו (גנוז)',
+        color: '#fbbf24',
+        items: [
+          {
+            name: 'הכותרת (תקרה)',
+            value: 1050,
+            valueLabel: '1,050 TWh',
+            emphasis: true,
+          },
+          {
+            name: 'תרחיש הבסיס',
+            value: 800,
+            valueLabel: '~800 TWh ("just over 800")',
+          },
+        ],
+      },
+      {
+        label: 'סדרות נוכחיות, בלי קריפטו ייעודי — Gartner 10/6/2026 · IEA 16/4/2026',
+        color: '#60a5fa',
+        items: [
+          {
+            name: 'Gartner (ל־2026)',
+            value: 565,
+            valueLabel: '565 TWh · ממוטבים ל־AI: 175 (31%)',
+            emphasis: true,
+          },
+          {
+            name: 'IEA (2025 נמדד)',
+            value: 485,
+            valueLabel: '485 TWh, בדרך לכ־950 ב־2030',
+          },
+        ],
+      },
+    ],
+  },
+
+  /* `estatisticas-de-ia-brasil` — gente adiante do capital. Bloco 1 =
+   * régua única Chegg (universitários que já usaram genAI, survey 2025 em
+   * 15 países; AI Index 2026 Fig. 7.2.16, p. 303: Indonésia 95, Brasil 84
+   * (+32 pp vs 2023), EUA 67, Reino Unido 67). Bloco 2 = população total,
+   * réguas próprias: mundo 29,2% = DataReportal abr/2026 (TETO
+   * não-dedupado — contas, não pessoas); Brasil ~23% = derivação do
+   * artigo quantas-pessoas-usam-ia (32% dos usuários de internet 10+,
+   * Cetic.br TIC Domicílios 2025, sobre 213,4 mi do IBGE).
+   */
+  'estatisticas-de-ia-brasil': {
+    max: 100,
+    groups: [
+      {
+        label: 'Chegg 2025 — universitários que já usaram genAI (15 países)',
+        color: '#60a5fa',
+        items: [
+          {
+            name: 'Indonésia',
+            value: 95,
+            valueLabel: '95%',
+          },
+          {
+            name: 'Brasil',
+            value: 84,
+            valueLabel: '84% (+32 pp vs 2023)',
+            emphasis: true,
+          },
+          {
+            name: 'Estados Unidos',
+            value: 67,
+            valueLabel: '67%',
+          },
+          {
+            name: 'Reino Unido',
+            value: 67,
+            valueLabel: '67%',
+          },
+        ],
+      },
+      {
+        label: 'População total — réguas próprias, comparação indicativa',
+        color: '#fbbf24',
+        items: [
+          {
+            name: 'Mundo (DataReportal)',
+            value: 29.2,
+            valueLabel: '29,2% · teto: contas, não pessoas (abr/2026)',
+          },
+          {
+            name: 'Brasil (Cetic.br)',
+            value: 23,
+            valueLabel: '~23% da população · 32% dos usuários de internet (2025)',
+            emphasis: true,
+          },
+        ],
+      },
+    ],
+  },
+  'estatisticas-de-ia-brasil-en': {
+    max: 100,
+    groups: [
+      {
+        label: 'Chegg 2025 — university students who have used genAI (15 countries)',
+        color: '#60a5fa',
+        items: [
+          {
+            name: 'Indonesia',
+            value: 95,
+            valueLabel: '95%',
+          },
+          {
+            name: 'Brazil',
+            value: 84,
+            valueLabel: '84% (+32 pp vs 2023)',
+            emphasis: true,
+          },
+          {
+            name: 'United States',
+            value: 67,
+            valueLabel: '67%',
+          },
+          {
+            name: 'United Kingdom',
+            value: 67,
+            valueLabel: '67%',
+          },
+        ],
+      },
+      {
+        label: 'Total population — separate rulers, indicative comparison',
+        color: '#fbbf24',
+        items: [
+          {
+            name: 'World (DataReportal)',
+            value: 29.2,
+            valueLabel: '29.2% · ceiling: accounts, not people (Apr 2026)',
+          },
+          {
+            name: 'Brazil (Cetic.br)',
+            value: 23,
+            valueLabel: '~23% of population · 32% of internet users (2025)',
+            emphasis: true,
+          },
+        ],
+      },
+    ],
+  },
+  'estatisticas-de-ia-brasil-es': {
+    max: 100,
+    groups: [
+      {
+        label: 'Chegg 2025 — universitarios que ya usaron genAI (15 países)',
+        color: '#60a5fa',
+        items: [
+          {
+            name: 'Indonesia',
+            value: 95,
+            valueLabel: '95 %',
+          },
+          {
+            name: 'Brasil',
+            value: 84,
+            valueLabel: '84 % (+32 pp vs 2023)',
+            emphasis: true,
+          },
+          {
+            name: 'Estados Unidos',
+            value: 67,
+            valueLabel: '67 %',
+          },
+          {
+            name: 'Reino Unido',
+            value: 67,
+            valueLabel: '67 %',
+          },
+        ],
+      },
+      {
+        label: 'Población total — varas propias, comparación indicativa',
+        color: '#fbbf24',
+        items: [
+          {
+            name: 'Mundo (DataReportal)',
+            value: 29.2,
+            valueLabel: '29,2 % · techo: cuentas, no personas (abr/2026)',
+          },
+          {
+            name: 'Brasil (Cetic.br)',
+            value: 23,
+            valueLabel: '~23 % de la población · 32 % de los usuarios de internet (2025)',
+            emphasis: true,
+          },
+        ],
+      },
+    ],
+  },
+  'estatisticas-de-ia-brasil-it': {
+    max: 100,
+    groups: [
+      {
+        label: 'Chegg 2025 — universitari che hanno già usato la genAI (15 paesi)',
+        color: '#60a5fa',
+        items: [
+          {
+            name: 'Indonesia',
+            value: 95,
+            valueLabel: '95%',
+          },
+          {
+            name: 'Brasile',
+            value: 84,
+            valueLabel: '84% (+32 pp vs 2023)',
+            emphasis: true,
+          },
+          {
+            name: 'Stati Uniti',
+            value: 67,
+            valueLabel: '67%',
+          },
+          {
+            name: 'Regno Unito',
+            value: 67,
+            valueLabel: '67%',
+          },
+        ],
+      },
+      {
+        label: 'Popolazione totale — metri propri, confronto indicativo',
+        color: '#fbbf24',
+        items: [
+          {
+            name: 'Mondo (DataReportal)',
+            value: 29.2,
+            valueLabel: '29,2% · tetto: account, non persone (apr/2026)',
+          },
+          {
+            name: 'Brasile (Cetic.br)',
+            value: 23,
+            valueLabel: '~23% della popolazione · 32% degli utenti internet (2025)',
+            emphasis: true,
+          },
+        ],
+      },
+    ],
+  },
+  'estatisticas-de-ia-brasil-he': {
+    max: 100,
+    groups: [
+      {
+        label: 'Chegg 2025 — סטודנטים שכבר השתמשו ב־genAI (15 מדינות)',
+        color: '#60a5fa',
+        items: [
+          {
+            name: 'אינדונזיה',
+            value: 95,
+            valueLabel: '95%',
+          },
+          {
+            name: 'ברזיל',
+            value: 84,
+            valueLabel: '84% (+32 נקודות מול 2023)',
+            emphasis: true,
+          },
+          {
+            name: 'ארצות הברית',
+            value: 67,
+            valueLabel: '67%',
+          },
+          {
+            name: 'בריטניה',
+            value: 67,
+            valueLabel: '67%',
+          },
+        ],
+      },
+      {
+        label: 'כלל האוכלוסייה — סרגלים משלה, השוואה אינדיקטיבית',
+        color: '#fbbf24',
+        items: [
+          {
+            name: 'העולם (DataReportal)',
+            value: 29.2,
+            valueLabel: '29.2% · תקרה: חשבונות, לא אנשים (אפריל 2026)',
+          },
+          {
+            name: 'ברזיל (Cetic.br)',
+            value: 23,
+            valueLabel: '~23% מהאוכלוסייה · 32% ממשתמשי האינטרנט (2025)',
+            emphasis: true,
+          },
+        ],
+      },
+    ],
+  },
+
+  /* ── 1. `estatisticas-chatgpt-wau` — a escada dos 900 milhões ────────────────
+   *
+   * UNIDADE: milhões de usuários ativos semanais. Teto **1.100**, não 1.050: o
+   * `valueLabel` é desenhado DEPOIS do fim da barra, então quanto mais alta a
+   * barra, menor a caixa que sobra. A 1.050 o rótulo do marco de 1 bi tinha 80px
+   * — apertado em pt-br e sem folga nenhuma para as traduções. A 1.100 sobram
+   * 102px na mesma barra, e a proporção continua honesta (a maior ocupa 91% do
+   * eixo). Ver `checar-rotulos-site.py` na raiz do dossiê.
+   *
+   * PROCEDÊNCIA (conferida em 03/08/2026):
+   * - 100 / 350 / 700 = NBER WP 34255, impressa p.10: "ChatGPT had more than 100
+   *   million logged-in WAU after one year, and almost 350 million after two
+   *   years. By the end of July 2025, ChatGPT had more than 700 million total
+   *   WAU". ATENÇÃO: o paper TROCA de universo nessas duas frases (logados ->
+   *   total). O rótulo de cada barra carrega isso, e o texto do artigo explica —
+   *   não unificar os rótulos "para ficar consistente": a inconsistência é o dado.
+   * - 900 = OpenAI, "Scaling AI for everyone" (27/02/2026), literal "more than
+   *   900M weekly active users". A página NÃO define usuário ativo (auditoria de
+   *   DOM: 0 notas de rodapé, 1 ocorrência de "active").
+   * - 920 / 905 = The Information via Ed Zitron (22/05/2026), literal: "weekly
+   *   active users hit 920m in February, the average for the quarter sat at
+   *   905m". Dado interno não auditável, reportado por terceiro.
+   * - 1000 = The Information via PYMNTS (29/07/2026): o marco de 1 bilhão chega
+   *   "seven months later than [OpenAI] had initially projected".
+   */
+  'estatisticas-chatgpt-wau': {
+    max: 1100,
+    groups: [
+      {
+        label: 'Publicado pela OpenAI — dado próprio, sem definição de "ativo" na página',
+        color: '#60a5fa',
+        items: [
+          {
+            name: 'nov/2023 — 1º ano',
+            value: 100,
+            valueLabel: 'mais de 100 mi · WAU logados',
+          },
+          {
+            name: 'nov/2024 — 2º ano',
+            value: 350,
+            valueLabel: 'quase 350 mi · WAU logados',
+          },
+          {
+            name: 'fev/2025 — o COO',
+            value: 400,
+            valueLabel: '400 mi · "5% of the world" (régua: população TOTAL)',
+          },
+          {
+            name: 'jul/2025 — o paper',
+            value: 700,
+            valueLabel: 'mais de 700 mi · WAU TOTAL',
+          },
+          {
+            name: 'fev/2026 — a captação',
+            value: 900,
+            valueLabel: 'mais de 900 mi',
+            emphasis: true,
+          },
+        ],
+      },
+      {
+        label: 'Reportado pela imprensa de dados internos — pico de fev; média do trimestre, 905 mi',
+        color: '#fbbf24',
+        items: [
+          {
+            name: 'fev/2026 — o pico',
+            value: 920,
+            valueLabel: '920 mi de pico',
+          },
+          {
+            name: 'jul/2026 — o marco',
+            value: 1000,
+            valueLabel: 'cerca de 1 bi',
+            emphasis: true,
+          },
+        ],
+      },
+    ],
+  },
+  'estatisticas-chatgpt-wau-en': {
+    max: 1100,
+    groups: [
+      {
+        label: 'Published by OpenAI — its own data, no definition of "active" on the page',
+        color: '#60a5fa',
+        items: [
+          { name: 'Nov 2023 — year 1', value: 100, valueLabel: 'more than 100m · logged-in WAU' },
+          { name: 'Nov 2024 — year 2', value: 350, valueLabel: 'almost 350m · logged-in WAU' },
+          { name: 'Feb 2025 — the COO', value: 400, valueLabel: '400m · "5% of the world" (ruler: TOTAL population)' },
+          { name: 'Jul 2025 — the paper', value: 700, valueLabel: 'more than 700m · TOTAL WAU' },
+          { name: 'Feb 2026 — the raise', value: 900, valueLabel: 'more than 900m', emphasis: true },
+        ],
+      },
+      {
+        label: 'Reported by the press from internal data — Feb peak; quarterly average, 905m',
+        color: '#fbbf24',
+        items: [
+          { name: 'Feb 2026 — the peak', value: 920, valueLabel: '920m peak' },
+          { name: 'Jul 2026 — milestone', value: 1000, valueLabel: 'about 1bn', emphasis: true },
+        ],
+      },
+    ],
+  },
+  'estatisticas-chatgpt-wau-es': {
+    max: 1100,
+    groups: [
+      {
+        label: 'Publicado por OpenAI — dato propio, sin definición de "activo" en la página',
+        color: '#60a5fa',
+        items: [
+          { name: 'nov 2023 — 1.er año', value: 100, valueLabel: 'más de 100 mill. · WAU con sesión' },
+          { name: 'nov 2024 — 2.º año', value: 350, valueLabel: 'casi 350 mill. · WAU con sesión' },
+          { name: 'feb 2025 — el COO', value: 400, valueLabel: '400 mill. · "5% of the world" (regla: población TOTAL)' },
+          { name: 'jul 2025 — el paper', value: 700, valueLabel: 'más de 700 mill. · WAU TOTAL' },
+          { name: 'feb 2026 — la ronda', value: 900, valueLabel: 'más de 900 mill.', emphasis: true },
+        ],
+      },
+      {
+        label: 'Reportado por la prensa desde datos internos — pico de feb; media del trimestre, 905 mill.',
+        color: '#fbbf24',
+        items: [
+          { name: 'feb 2026 — el pico', value: 920, valueLabel: '920 mill. de pico' },
+          { name: 'jul 2026 — el hito', value: 1000, valueLabel: 'unos 1000 mill.', emphasis: true },
+        ],
+      },
+    ],
+  },
+  'estatisticas-chatgpt-wau-it': {
+    max: 1100,
+    groups: [
+      {
+        label: 'Pubblicato da OpenAI — dato proprio, senza definizione di "attivo" nella pagina',
+        color: '#60a5fa',
+        items: [
+          { name: 'nov 2023 — 1° anno', value: 100, valueLabel: 'più di 100 mln · WAU autenticati' },
+          { name: 'nov 2024 — 2° anno', value: 350, valueLabel: 'quasi 350 mln · WAU autenticati' },
+          { name: 'feb 2025 — il COO', value: 400, valueLabel: '400 mln · "5% of the world" (metro: popolazione TOTALE)' },
+          { name: 'lug 2025 — il paper', value: 700, valueLabel: 'più di 700 mln · WAU TOTALI' },
+          { name: 'feb 2026 — la raccolta', value: 900, valueLabel: 'più di 900 mln', emphasis: true },
+        ],
+      },
+      {
+        label: 'Riportato dalla stampa da dati interni — picco di feb; media del trimestre, 905 mln',
+        color: '#fbbf24',
+        items: [
+          { name: 'feb 2026 — il picco', value: 920, valueLabel: '920 mln di picco' },
+          { name: 'lug 2026 — traguardo', value: 1000, valueLabel: 'circa 1 mld', emphasis: true },
+        ],
+      },
+    ],
+  },
+  'estatisticas-chatgpt-wau-he': {
+    max: 1100,
+    groups: [
+      {
+        label: 'פורסם בידי OpenAI — נתון עצמי, בלי הגדרה של "פעיל" בעמוד',
+        color: '#60a5fa',
+        items: [
+          { name: 'נוב׳ 2023 — שנה 1', value: 100, valueLabel: 'יותר מ־100 מיליון · WAU מחוברים' },
+          { name: 'נוב׳ 2024 — שנה 2', value: 350, valueLabel: 'כמעט 350 מיליון · WAU מחוברים' },
+          { name: 'פבר׳ 2025 — ה־COO', value: 400, valueLabel: '400 מיליון · "5% of the world" (סרגל: אוכלוסייה כוללת)' },
+          { name: 'יולי 2025 — המאמר', value: 700, valueLabel: 'יותר מ־700 מיליון · WAU כולל' },
+          { name: 'פבר׳ 2026 — הגיוס', value: 900, valueLabel: 'יותר מ־900 מיליון', emphasis: true },
+        ],
+      },
+      {
+        label: 'דווח בעיתונות מנתונים פנימיים — שיא פברואר; ממוצע הרבעון, 905 מיליון',
+        color: '#fbbf24',
+        items: [
+          { name: 'פבר׳ 2026 — השיא', value: 920, valueLabel: 'שיא של 920 מיליון' },
+          { name: 'יולי 2026 — אבן הדרך', value: 1000, valueLabel: 'כ־1 מיליארד', emphasis: true },
+        ],
+      },
+    ],
+  },
+
+  /* ── 2. `estatisticas-chatgpt-denominador` — o coração do artigo ─────────────
+   *
+   * UNIDADE: ponto percentual. Teto 16 para dar folga acima da barra mais alta.
+   *
+   * PROCEDÊNCIA (conferida em 03/08/2026):
+   * - 10 = NBER WP 34255, literal "representing around 10% of the global adult
+   *   population" (abstract, introdução e §4). O paper NUNCA define "adult" e
+   *   NUNCA dá fonte para o denominador — busca no texto integral das 64 pp.:
+   *   "world population" = 0, "population estimate" = 0; a nota 1 ("Reuters
+   *   (2025), Roth (2025)") sustenta só o NUMERADOR.
+   * - 11.3 = 700.000.000 / 6.210.117.111. Denominador = Banco Mundial 2025,
+   *   agregado mundial, SP.POP.TOTL (8.215.424.893) menos SP.POP.0014.TO
+   *   (2.005.307.782). Corte 15+, declarado no texto do artigo.
+   * - 11.0 = 900.000.000 / 8.215.424.893 = 10,96%. É o número da página que
+   *   inspirou a pauta ("roughly 11% of the world's population", snapshot de
+   *   14/05/2026) — e ele FECHA, contra a população total.
+   * - 14.5 = 900.000.000 / 6.210.117.111 = 14,49%. Mesma régua do paper.
+   *
+   * NÃO "corrigir" o 10 para 11,3 — a barra do publicado existe justamente para
+   * mostrar que o paper arredondou PARA BAIXO. Ele é a peça conservadora da
+   * cadeia; o artigo diz isso com todas as letras.
+   */
+  'estatisticas-chatgpt-denominador': {
+    max: 16,
+    groups: [
+      {
+        label: 'Paper NBER/OpenAI (set/2025) — 700 mi contra a população ADULTA',
+        color: '#60a5fa',
+        items: [
+          {
+            name: 'O paper publicou',
+            value: 10,
+            valueLabel: '"around 10%" · arredondado',
+          },
+          {
+            name: 'A conta refeita (15+)',
+            value: 11.3,
+            valueLabel: '11,3% da população adulta',
+          },
+        ],
+      },
+      {
+        label: 'Página de estatísticas (mai/2026) — 900 mi, e a régua trocou',
+        color: '#fbbf24',
+        items: [
+          {
+            name: 'A página publicou',
+            value: 11,
+            valueLabel: '"11% do mundo" · régua TOTAL',
+          },
+          {
+            name: 'Na régua adulta (15+)',
+            value: 14.5,
+            valueLabel: '14,5%',
+            emphasis: true,
+          },
+        ],
+      },
+    ],
+  },
+  'estatisticas-chatgpt-denominador-en': {
+    max: 16,
+    groups: [
+      {
+        label: 'NBER/OpenAI paper (Sep 2025) — 700m against the ADULT population',
+        color: '#60a5fa',
+        items: [
+          { name: 'Published in the paper', value: 10, valueLabel: '"around 10%" · rounded down' },
+          { name: 'Recomputed (15+)', value: 11.3, valueLabel: '11.3% of the adult population' },
+        ],
+      },
+      {
+        label: 'Statistics page (May 2026) — 900m, and the ruler moved',
+        color: '#fbbf24',
+        items: [
+          { name: 'Published on the page', value: 11, valueLabel: '"11% of the world" · TOTAL ruler' },
+          { name: 'Adult ruler (15+)', value: 14.5, valueLabel: '14.5%', emphasis: true },
+        ],
+      },
+    ],
+  },
+  'estatisticas-chatgpt-denominador-es': {
+    max: 16,
+    groups: [
+      {
+        label: 'Paper NBER/OpenAI (sep 2025) — 700 mill. contra la población ADULTA',
+        color: '#60a5fa',
+        items: [
+          { name: 'Publicado en el paper', value: 10, valueLabel: '"around 10%" · redondeado' },
+          { name: 'Cuenta rehecha (15+)', value: 11.3, valueLabel: '11,3 % de la población adulta' },
+        ],
+      },
+      {
+        label: 'Página de estadísticas (mayo 2026) — 900 mill., y la regla cambió',
+        color: '#fbbf24',
+        items: [
+          { name: 'Publicado en la página', value: 11, valueLabel: '"11 % del mundo" · regla TOTAL' },
+          { name: 'Regla adulta (15+)', value: 14.5, valueLabel: '14,5 %', emphasis: true },
+        ],
+      },
+    ],
+  },
+  'estatisticas-chatgpt-denominador-it': {
+    max: 16,
+    groups: [
+      {
+        label: 'Paper NBER/OpenAI (set 2025) — 700 mln contro la popolazione ADULTA',
+        color: '#60a5fa',
+        items: [
+          { name: 'Il paper pubblica', value: 10, valueLabel: '"around 10%" · arrotondato' },
+          { name: 'Conto rifatto (15+)', value: 11.3, valueLabel: '11,3% della popolazione adulta' },
+        ],
+      },
+      {
+        label: 'Pagina di statistiche (mag 2026) — 900 mln, e il metro è cambiato',
+        color: '#fbbf24',
+        items: [
+          { name: 'La pagina pubblica', value: 11, valueLabel: '"11% del mondo" · metro TOTALE' },
+          { name: 'Metro adulto (15+)', value: 14.5, valueLabel: '14,5%', emphasis: true },
+        ],
+      },
+    ],
+  },
+  'estatisticas-chatgpt-denominador-he': {
+    max: 16,
+    groups: [
+      {
+        label: 'מאמר NBER/OpenAI (ספטמבר 2025) — 700 מיליון מול האוכלוסייה הבוגרת',
+        color: '#60a5fa',
+        items: [
+          { name: 'מה שהמאמר פרסם', value: 10, valueLabel: '"around 10%" · מעוגל כלפי מטה' },
+          { name: 'החשבון מחדש (15+)', value: 11.3, valueLabel: '11.3% מהאוכלוסייה הבוגרת' },
+        ],
+      },
+      {
+        label: 'עמוד הסטטיסטיקות (מאי 2026) — 900 מיליון, והסרגל התחלף',
+        color: '#fbbf24',
+        items: [
+          { name: 'מה שהעמוד פרסם', value: 11, valueLabel: '"11% מהעולם" · סרגל כולל' },
+          { name: 'בסרגל הבוגר (15+)', value: 14.5, valueLabel: '14.5%', emphasis: true },
+        ],
+      },
+    ],
+  },
+
+  /* ── 3. `estatisticas-chatgpt-metricas` — quase a mesma altura ───────────────
+   *
+   * UNIDADE: milhões de usuários. Teto 1.050, o mesmo do gráfico 1.
+   *
+   * A tese do gráfico é a proximidade das três barras: três blocos, três réguas,
+   * e nenhuma mede a mesma coisa. Por isso cada bloco tem UM item e um `label`
+   * longo — o rótulo do bloco é o dado. NÃO fundir os três num bloco só.
+   *
+   * PROCEDÊNCIA (conferida em 03/08/2026):
+   * - 900 = OpenAI (27/02/2026). Escopo "across web and mobile platforms" vem da
+   *   CNBC de 12/06/2026, que datou a declaração em fevereiro.
+   * - 1000 = Sensor Tower, MAU do APLICATIVO em maio/2026, via Reuters
+   *   (02/06/2026) e CNBC (12/06/2026). Estimativa de painel de terceiro; a
+   *   OpenAI não comentou (registrado na própria CNBC).
+   * - 950 = Gemini, MAU, PYMNTS (29/07/2026). ATENÇÃO ao rótulo: a frase do
+   *   Gemini está num parágrafo que ATRIBUI as outras frases ao The Information,
+   *   mas ela mesma NÃO tem fonte — o único link ancorado ali vai para
+   *   `gemini.google.com`, que não publica o número. Verificado no HTML cru em
+   *   03/08/2026. NÃO creditar ao The Information: seria, no gráfico, o mesmo
+   *   erro de atribuição que o artigo denuncia no texto.
+   */
+  'estatisticas-chatgpt-metricas': {
+    max: 1050,
+    groups: [
+      {
+        label: 'OpenAI — ativos SEMANAIS, auto-reportado, web + mobile (fev/2026)',
+        color: '#60a5fa',
+        items: [
+          {
+            name: 'ChatGPT — WAU',
+            value: 900,
+            valueLabel: 'mais de 900 mi',
+            emphasis: true,
+          },
+        ],
+      },
+      {
+        label: 'Sensor Tower — ativos MENSAIS do APLICATIVO (sem web), painel de terceiro (mai/2026)',
+        color: '#fbbf24',
+        items: [
+          {
+            name: 'ChatGPT (app)',
+            value: 1000,
+            valueLabel: '1 bi',
+            emphasis: true,
+          },
+        ],
+      },
+      {
+        label: 'PYMNTS — ativos MENSAIS do CONCORRENTE, sem fonte declarada (jul/2026)',
+        color: '#a1a1aa',
+        items: [
+          {
+            name: 'Gemini — MAU',
+            value: 950,
+            valueLabel: '950 mi',
+          },
+        ],
+      },
+    ],
+  },
+  'estatisticas-chatgpt-metricas-en': {
+    max: 1050,
+    groups: [
+      {
+        label: 'OpenAI — WEEKLY actives, self-reported, web + mobile (Feb 2026)',
+        color: '#60a5fa',
+        items: [{ name: 'ChatGPT — WAU', value: 900, valueLabel: 'more than 900m', emphasis: true }],
+      },
+      {
+        label: 'Sensor Tower — MONTHLY actives of the APP (no web), third-party panel (May 2026)',
+        color: '#fbbf24',
+        items: [{ name: 'ChatGPT (app)', value: 1000, valueLabel: '1bn', emphasis: true }],
+      },
+      {
+        label: 'PYMNTS — MONTHLY actives of the COMPETITOR, no declared source (Jul 2026)',
+        color: '#a1a1aa',
+        items: [{ name: 'Gemini — MAU', value: 950, valueLabel: '950m' }],
+      },
+    ],
+  },
+  'estatisticas-chatgpt-metricas-es': {
+    max: 1050,
+    groups: [
+      {
+        label: 'OpenAI — activos SEMANALES, autorreportado, web + móvil (feb 2026)',
+        color: '#60a5fa',
+        items: [{ name: 'ChatGPT — WAU', value: 900, valueLabel: 'más de 900 mill.', emphasis: true }],
+      },
+      {
+        label: 'Sensor Tower — activos MENSUALES de la APP (sin web), panel de un tercero (mayo 2026)',
+        color: '#fbbf24',
+        items: [{ name: 'ChatGPT (app)', value: 1000, valueLabel: '1000 mill.', emphasis: true }],
+      },
+      {
+        label: 'PYMNTS — activos MENSUALES del COMPETIDOR, sin fuente declarada (jul 2026)',
+        color: '#a1a1aa',
+        items: [{ name: 'Gemini — MAU', value: 950, valueLabel: '950 mill.' }],
+      },
+    ],
+  },
+  'estatisticas-chatgpt-metricas-it': {
+    max: 1050,
+    groups: [
+      {
+        label: 'OpenAI — attivi SETTIMANALI, autodichiarato, web + mobile (feb 2026)',
+        color: '#60a5fa',
+        items: [{ name: 'ChatGPT — WAU', value: 900, valueLabel: 'più di 900 mln', emphasis: true }],
+      },
+      {
+        label: "Sensor Tower — attivi MENSILI dell'APP (senza web), panel di terza parte (mag 2026)",
+        color: '#fbbf24',
+        items: [{ name: 'ChatGPT (app)', value: 1000, valueLabel: '1 mld', emphasis: true }],
+      },
+      {
+        label: 'PYMNTS — attivi MENSILI del CONCORRENTE, senza fonte dichiarata (lug 2026)',
+        color: '#a1a1aa',
+        items: [{ name: 'Gemini — MAU', value: 950, valueLabel: '950 mln' }],
+      },
+    ],
+  },
+  'estatisticas-chatgpt-metricas-he': {
+    max: 1050,
+    groups: [
+      {
+        label: 'OpenAI — פעילים שבועיים, מדווח עצמית, וובּ ומובייל (פברואר 2026)',
+        color: '#60a5fa',
+        items: [{ name: 'ChatGPT — WAU', value: 900, valueLabel: 'יותר מ־900 מיליון', emphasis: true }],
+      },
+      {
+        label: 'Sensor Tower — פעילים חודשיים של האפליקציה (בלי וובּ), פאנל של צד שלישי (מאי 2026)',
+        color: '#fbbf24',
+        items: [{ name: 'ChatGPT (אפליקציה)', value: 1000, valueLabel: 'מיליארד', emphasis: true }],
+      },
+      {
+        label: 'PYMNTS — פעילים חודשיים של המתחרה, בלי מקור מוצהר (יולי 2026)',
+        color: '#a1a1aa',
+        items: [{ name: 'Gemini — MAU', value: 950, valueLabel: '950 מיליון' }],
+      },
+    ],
+  },
 };
 
 /* ── Funil ───────────────────────────────────────────────────────────── */
@@ -526,6 +1533,129 @@ export const funnelDatasets: Record<string, FunnelDataset> = {
         sublabel: '10–15 מיליון · ~0.14%',
         color: '#fbbf24',
         value: 12.5,
+      },
+    ],
+  },
+
+  /* `estatisticas-de-ia-funil` — McKinsey "The state of AI in 2025"
+   * (05/11/2025, N=1.993, 105 países). Três perguntas do MESMO survey, não
+   * subconjuntos exatos — o texto explica. `value` aqui é PONTO PERCENTUAL
+   * de respondentes (não milhões como no funil acima); a largura continua
+   * proporção linear honesta. Redações exatas: 88% = "88 percent report
+   * regular AI use in at least one business function"; 10 = "In any given
+   * business function, no more than 10 percent of respondents say their
+   * organizations are scaling AI agents" (TETO por função; 23% escalam em
+   * algum lugar da empresa); 6 = "our definition of AI high performers,
+   * representing about 6 percent of respondents" (EBIT ≥5% atribuído à IA
+   * + valor "significativo").
+   */
+  'estatisticas-de-ia-funil': {
+    steps: [
+      {
+        label: 'Usam IA em ≥1 função de negócio',
+        sublabel: '88% dos respondentes · uso regular, autorreportado',
+        color: '#60a5fa',
+        value: 88,
+      },
+      {
+        label: 'Escalam agentes de IA numa função',
+        sublabel: '≤10% em qualquer função (teto) · 23% em algum lugar da empresa',
+        color: '#34d399',
+        value: 10,
+      },
+      {
+        label: 'High performers: EBIT ≥5% atribuído à IA',
+        sublabel: '~6% · definição composta, autorreportada',
+        color: '#fbbf24',
+        value: 6,
+      },
+    ],
+  },
+  'estatisticas-de-ia-funil-en': {
+    steps: [
+      {
+        label: 'Use AI in ≥1 business function',
+        sublabel: '88% of respondents · regular use, self-reported',
+        color: '#60a5fa',
+        value: 88,
+      },
+      {
+        label: 'Scaling AI agents in a given function',
+        sublabel: '≤10% in any given function (ceiling) · 23% somewhere in the company',
+        color: '#34d399',
+        value: 10,
+      },
+      {
+        label: 'High performers: EBIT ≥5% attributed to AI',
+        sublabel: '~6% · composite, self-reported definition',
+        color: '#fbbf24',
+        value: 6,
+      },
+    ],
+  },
+  'estatisticas-de-ia-funil-es': {
+    steps: [
+      {
+        label: 'Usan IA en ≥1 función de negocio',
+        sublabel: '88 % de los encuestados · uso regular, autodeclarado',
+        color: '#60a5fa',
+        value: 88,
+      },
+      {
+        label: 'Escalan agentes de IA en una función',
+        sublabel: '≤10 % en cualquier función (techo) · 23 % en algún lugar de la empresa',
+        color: '#34d399',
+        value: 10,
+      },
+      {
+        label: 'High performers: EBIT ≥5 % atribuido a la IA',
+        sublabel: '~6 % · definición compuesta, autodeclarada',
+        color: '#fbbf24',
+        value: 6,
+      },
+    ],
+  },
+  'estatisticas-de-ia-funil-it': {
+    steps: [
+      {
+        label: "Usano l'IA in ≥1 funzione aziendale",
+        sublabel: '88% degli intervistati · uso regolare, autodichiarato',
+        color: '#60a5fa',
+        value: 88,
+      },
+      {
+        label: 'Scalano agenti di IA in una funzione',
+        sublabel: "≤10% in qualsiasi funzione (tetto) · 23% in qualche punto dell'azienda",
+        color: '#34d399',
+        value: 10,
+      },
+      {
+        label: "High performers: EBIT ≥5% attribuito all'IA",
+        sublabel: '~6% · definizione composita, autodichiarata',
+        color: '#fbbf24',
+        value: 6,
+      },
+    ],
+  },
+  'estatisticas-de-ia-funil-he': {
+    steps: [
+      {
+        label: 'משתמשים ב־AI בפונקציה עסקית אחת לפחות',
+        sublabel: '88% מהמשיבים · שימוש סדיר, בדיווח עצמי',
+        color: '#60a5fa',
+        value: 88,
+      },
+      {
+        label: 'מרחיבים agents של AI בפונקציה אחת',
+        sublabel: 'עד 10% בכל פונקציה נתונה (תקרה) · 23% במקום כלשהו בחברה',
+        color: '#34d399',
+        value: 10,
+      },
+      {
+        label: 'High performers: EBIT ≥5% שמיוחס ל־AI',
+        sublabel: '~6% · הגדרה מורכבת, בדיווח עצמי',
+        color: '#fbbf24',
+        value: 6,
       },
     ],
   },

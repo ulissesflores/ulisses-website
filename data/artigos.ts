@@ -171,6 +171,71 @@ export const artigos: readonly Artigo[] = [
       },
     },
   },
+  {
+    slug: 'estatisticas-de-ia',
+    title: 'Estatísticas de IA em 2026: o placar, conferido número por número',
+    summary:
+      'Os data centers "vão consumir mais de 1.000 TWh em 2026 — o equivalente ao Japão", repetem os compilados de estatísticas de IA. Fui conferir: a própria IEA aposentou o número; a série atual mede 485 TWh. Conferi uma a uma as estatísticas que mais circulam, na fonte primária, e o placar tem confere, meia-verdade, fóssil e zumbi — com um padrão: o denominador omitido ("53% da população" era EUA, 18-64 anos). E o degrau Brasil que nenhuma versão internacional tem: 84% dos universitários já usaram genAI, enquanto o país está fora do top-15 de investimento privado.',
+    date: '2026-08-02',
+    tags: ['ia', 'estatisticas', 'fact-check', 'energia', 'brasil'],
+    i18n: {
+      en: {
+        title: 'AI statistics in 2026: the scoreboard, checked number by number',
+        summary:
+          'Data centers "will consume more than 1,000 TWh in 2026 — the equivalent of Japan," the AI statistics roundups repeat. I went and checked: the IEA itself has retired the number; the current series measures 485 TWh. I checked the most-circulated AI statistics one by one, at the primary source, and the scoreboard has checks-out, half-truth, fossil, and zombie — with one pattern: the omitted denominator ("53% of the population" was the US, ages 18-64). Plus the Brazil step no international version has: 84% of university students have already used genAI, while the country sits outside the top 15 for private investment.',
+      },
+      es: {
+        title: 'Estadísticas de IA en 2026: el marcador, verificado número por número',
+        summary:
+          'Los data centers "consumirán más de 1000 TWh en 2026 — el equivalente a Japón", repiten las recopilaciones de estadísticas de IA. Fui a verificar: la propia IEA retiró el número; la serie actual mide 485 TWh. Verifiqué una a una, en la fuente primaria, las estadísticas que más circulan, y el marcador tiene cuadra, media verdad, fósil y zombi — con un patrón: el denominador omitido ("el 53 % de la población" era EE. UU., 18-64 años). Y el escalón Brasil que ninguna versión internacional tiene: el 84 % de los universitarios ya usó genAI, mientras el país queda fuera del top-15 de inversión privada.',
+      },
+      it: {
+        title: "Statistiche sull'IA nel 2026: il tabellone, verificato numero per numero",
+        summary:
+          "I data center \"consumeranno più di 1.000 TWh nel 2026 — l'equivalente del Giappone\", ripetono le raccolte di statistiche sull'IA. Sono andato a verificare: la stessa IEA ha mandato in pensione il numero; la serie attuale misura 485 TWh. Ho verificato una per una le statistiche che più circolano, alla fonte primaria, e il tabellone ha \"confermato\", \"mezza verità\", \"fossile\" e \"zombie\" — con uno schema ricorrente: il denominatore omesso (il \"53% della popolazione\" era USA, 18-64 anni). E il gradino Brasile che nessuna versione internazionale ha: l'84% degli universitari ha già usato la genAI, mentre il paese è fuori dalla top-15 dell'investimento privato.",
+      },
+      he: {
+        title: 'סטטיסטיקות AI ב־2026: לוח התוצאות, מאומת מספר אחרי מספר',
+        summary:
+          'ה־data centers "יצרכו יותר מ־1,000 TWh ב־2026 — שווה־ערך ליפן", חוזרים ומספרים מקבצי הסטטיסטיקות של AI. הלכתי לבדוק: ה־IEA עצמה גנזה את המספר; הסדרה הנוכחית מודדת 485 TWh. בדקתי אחת־אחת את הסטטיסטיקות שהכי מסתובבות, במקור הראשוני, ובלוח התוצאות יש מאומת, חצי־אמת, מאובן וזומבי — עם דפוס אחד: המכנה שהושמט ("53% מהאוכלוסייה" היה ארה״ב, גילאי 18–64). ומדרגת ברזיל שאין באף גרסה בינלאומית: 84% מהסטודנטים כבר השתמשו ב־genAI, בעוד המדינה נמצאת מחוץ ל־top-15 של ההשקעה הפרטית.',
+      },
+    },
+  },
+  {
+    slug: 'estatisticas-chatgpt',
+    title:
+      'ChatGPT: os 900 milhões saíram de um anúncio de captação — e a régua está em outro documento',
+    summary:
+      'Os dois números que sustentam qualquer página de "estatísticas do ChatGPT" — 900 milhões de usuários ativos semanais e 50 milhões de assinantes — vêm da mesma frase de um comunicado de captação de US$ 110 bilhões. Fui ler o post: a definição de "usuário ativo semanal" não está lá. Ela existe, mas mora em outro documento, publicado quatro meses depois, com escopo mais estreito. E o denominador tem paternidade rastreável: o COO mediu 400 mi contra a população total, o paper da OpenAI com o NBER mediu 700 mi contra a adulta, e a página que me deu a pauta voltou para a total — "10% virou 11%" parece progressão e é troca de régua. Na mesma régua, seriam 11,3% e 14,5%. Mais o degrau Brasil: o português é a 2ª língua não-inglesa do ChatGPT, e dois veículos descreveram o mesmo briefing da OpenAI com métricas diferentes na primeira linha.',
+    date: '2026-08-03',
+    tags: ['ia', 'chatgpt', 'openai', 'estatisticas', 'fact-check', 'brasil'],
+    i18n: {
+      en: {
+        title:
+          'ChatGPT: the 900 million came from a funding announcement — and the ruler is in another document',
+        summary:
+          'The two numbers holding up any "ChatGPT statistics" page — 900 million weekly active users and 50 million subscribers — come from the same sentence of a US$ 110 billion funding announcement. I went and read the post: the definition of "weekly active user" is not there. It exists, but it lives in another document, published four months later, with a narrower scope. And the denominator has a traceable paternity: the COO measured 400m against total population, OpenAI\'s paper with the NBER measured 700m against the adult population, and the page that gave me this story went back to total — "10% became 11%" looks like progress and is a switched ruler. On the same ruler it would be 11.3% and 14.5%. Plus the Brazil step: Portuguese is ChatGPT\'s second non-English language, and two outlets described the same OpenAI briefing with different metrics in the opening line.',
+      },
+      es: {
+        title:
+          'ChatGPT: los 900 millones salieron de un anuncio de financiación — y la regla está en otro documento',
+        summary:
+          'Los dos números que sostienen cualquier página de "estadísticas de ChatGPT" — 900 millones de usuarios activos semanales y 50 millones de suscriptores — vienen de la misma frase de un comunicado de financiación de 110 000 millones de dólares. Fui a leer el post: la definición de "usuario activo semanal" no está ahí. Existe, pero vive en otro documento, publicado cuatro meses después, con un alcance más estrecho. Y el denominador tiene paternidad rastreable: el COO midió 400 millones contra la población total, el paper de OpenAI con el NBER midió 700 millones contra la adulta, y la página que me dio el tema volvió a la total — "el 10 % pasó a 11 %" parece progresión y es cambio de regla. En la misma regla serían 11,3 % y 14,5 %. Y el escalón Brasil: el portugués es el segundo idioma no inglés de ChatGPT, y dos medios describieron el mismo briefing de OpenAI con métricas distintas en la primera línea.',
+      },
+      it: {
+        title:
+          "ChatGPT: i 900 milioni sono usciti da un annuncio di raccolta — e il metro sta in un altro documento",
+        summary:
+          "I due numeri che reggono qualsiasi pagina di \"statistiche su ChatGPT\" — 900 milioni di utenti attivi settimanali e 50 milioni di abbonati — vengono dalla stessa frase di un comunicato di raccolta da 110 miliardi di dollari. Sono andato a leggere il post: la definizione di \"utente attivo settimanale\" non c'è. Esiste, ma vive in un altro documento, pubblicato quattro mesi dopo, con un perimetro più stretto. E il denominatore ha una paternità ricostruibile: il COO ha misurato 400 milioni contro la popolazione totale, il paper di OpenAI con il NBER ha misurato 700 milioni contro quella adulta, e la pagina che mi ha dato lo spunto è tornata alla totale — \"il 10% è diventato 11%\" sembra progressione ed è un metro cambiato. Sullo stesso metro sarebbero 11,3% e 14,5%. Più il gradino Brasile: il portoghese è la seconda lingua non inglese di ChatGPT, e due testate hanno descritto lo stesso briefing di OpenAI con metriche diverse nella prima riga.",
+      },
+      he: {
+        title:
+          'ChatGPT: ה־900 מיליון יצאו מהודעת גיוס — והסרגל נמצא במסמך אחר',
+        summary:
+          'שני המספרים שמחזיקים כל עמוד של "סטטיסטיקות ChatGPT" — 900 מיליון משתמשים פעילים שבועיים ו־50 מיליון מנויים — מגיעים מאותו משפט בהודעת גיוס של 110 מיליארד דולר. הלכתי לקרוא את הפוסט: ההגדרה של "משתמש פעיל שבועי" לא שם. היא קיימת, אבל גרה במסמך אחר, שפורסם ארבעה חודשים אחר כך, עם היקף צר יותר. ולמכנה יש אבהות בת־מעקב: ה־COO מדד 400 מיליון מול האוכלוסייה הכוללת, המאמר של OpenAI עם ה־NBER מדד 700 מיליון מול הבוגרת, והעמוד שנתן לי את הנושא חזר לכוללת — "10% הפכו ל־11%" נראה כמו התקדמות והוא החלפת סרגל. באותו סרגל זה היה 11.3% ו־14.5%. ובנוסף מדרגת ברזיל: פורטוגזית היא השפה השנייה שאינה אנגלית של ChatGPT, ושני כלי תקשורת תיארו את אותו תדריך של OpenAI עם מדדים שונים בשורה הראשונה.',
+      },
+    },
+  },
 ];
 
 /** Posts do mais recente para o mais antigo — ordem de exibição do índice. */

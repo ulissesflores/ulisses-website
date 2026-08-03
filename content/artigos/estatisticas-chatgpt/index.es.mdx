@@ -1,0 +1,546 @@
+---
+title: 'ChatGPT: los 900 millones salieron de un anuncio de financiación — y la regla está en otro documento'
+slug: estatisticas-chatgpt
+category: artigos
+date: '2026-08-03'
+language: es
+---
+
+Los dos números que sostienen cualquier página de "estadísticas de ChatGPT" — **900 millones
+de usuarios activos semanales** y **50 millones de suscriptores** — no vienen de un informe,
+de una auditoría ni de una presentación regulatoria. Vienen de la misma frase, del mismo
+párrafo, del mismo post: el comunicado del 27 de febrero de 2026 en el que OpenAI anunció
+**110 000 millones de dólares** de inversión nueva a una valoración de **730 000 millones
+pre-money**.
+
+Fui a leer el post. La definición de "usuario activo semanal" no está ahí — no por descuido de
+redacción, sino porque vive en otro documento, publicado cuatro meses después, con un alcance
+distinto. El número circula sin la regla, y la regla describe un universo más estrecho que el
+número. Es ese agujero de procedencia, y no la aritmética, lo que persigue este artículo.
+
+---
+
+## Lo que publicó OpenAI, y en qué contexto
+
+El post se llama ["Scaling AI for everyone"](https://openai.com/index/scaling-ai-for-everyone/)
+y es un comunicado de financiación. La frase entera, sin recortes:
+
+> "ChatGPT is where people start with AI, with more than 900M weekly active users, and we now
+> have more than 50 million consumer subscribers."
+
+Dos matices desaparecen casi siempre al copiar, y los dos cambian la lectura:
+
+| Número | Frase literal en la fuente | El matiz que no puede caerse |
+|---|---|---|
+| 900 millones | "**more than** 900M weekly active users" | es un suelo, no un valor — y la página no define qué cuenta como activo |
+| 50 millones | "more than 50 million **consumer** subscribers" | es la base de consumo; los que pagan por empresa están en otra frase |
+| 9 millones | "More than 9 million paying **business** users" | base separada — sumar las dos es decisión de quien cita, no de OpenAI |
+| 730 000 millones | "$730B **pre-money** valuation" | con la ronda de 110 000 millones, el post-money implícito supera los 840 000 millones |
+| 1,6 millones | "Weekly **Codex** users ... tripled since the start of the year to 1.6M" | es Codex, no ChatGPT |
+
+La última fila es el único número de la página que llega con base de comparación declarada.
+Los otros son fotografías sin regla.
+
+La cuarta fila merece atención porque el error es automático. Quien escribe "una valoración de
+730 000 millones" sin la palabra *pre-money* no se equivoca por mala fe: se equivoca por
+construcción, porque la palabra es aburrida, el número es redondo, y la diferencia — más de
+110 000 millones — solo aparece para quien sabe que existe.
+
+<CountryBarsChart
+  dataset="estatisticas-chatgpt-wau-es"
+  title="La escalera de los 900 millones: quién contó, y contando qué"
+  subtitle="Dos reglas — lo que publicó la empresa y lo que la prensa reportó a partir de datos internos"
+  source="Fuentes: NBER WP 34255 · Brad Lightcap en X · OpenAI · The Information, vía Zitron y vía PYMNTS. Verificadas el 03/08/2026."
+  description="Barras horizontales en dos bloques. Bloque del dato publicado por la propia OpenAI: más de 100 millones de usuarios activos semanales con sesión iniciada tras un año (nov de 2023), casi 350 millones tras dos años (nov de 2024), 400 millones en febrero de 2025 anunciados por el COO como el 5 % del mundo, más de 700 millones en total en julio de 2025, y más de 900 millones en febrero de 2026, en el post de financiación. Bloque de lo que la prensa reportó a partir de datos internos: pico de 920 millones en febrero de 2026 con media de 905 millones en el trimestre, y cerca de 1000 millones en julio de 2026, siete meses después de la proyección de la propia empresa."
+/>
+
+> **Nota metodológica del gráfico.** Las tres primeras barras del bloque azul salen del mismo
+> párrafo del paper de OpenAI con el NBER — y el paper cambia de universo en medio de él:
+> *"more than 100 million **logged-in** WAU after one year, and almost 350 million after two
+> years. By the end of July 2025, ChatGPT had more than 700 million **total** WAU"*. Con sesión
+> iniciada y total no son la misma población. El paper etiqueta las dos cosas con todas las
+> letras; quien copia la serie para dibujar una curva de crecimiento es quien las funde.
+
+> **Cómo llegué a esas páginas.** `openai.com` devuelve HTTP 403 al acceso automatizado, y el
+> índice de noticias del sitio solo pagina hasta junio de 2026. Leí las páginas en el navegador
+> con sesión iniciada y localicé el post de febrero por el feed RSS oficial
+> (`openai.com/news/rss.xml`, 1105 elementos, de diciembre de 2015 a agosto de 2026). Registro
+> la ruta porque un artículo cuya tesis es "el número salió de este post" no puede citar el
+> post de segunda mano.
+
+---
+
+## La definición existe. Solo que no está donde está el número
+
+Esta era mi hipótesis inicial: que nadie define "usuario activo semanal". **Estaba
+equivocada**, y la corrección es más interesante que la hipótesis.
+
+OpenAI lo define, con todas las letras, en un post del 30 de junio de 2026 de la serie
+*Signals*:
+
+> "Users are considered active if they have sent a message in the seven days before the start
+> of each month."
+
+No es "la última semana" corrida. Es una **fotografía de los siete días anteriores al inicio de
+cada mes** — una medición puntual mensual. Y viene con un alcance declarado que el número del
+titular no tiene:
+
+| | Post de la financiación (27/02/2026) | Post de *Signals* (30/06/2026) |
+|---|---|---|
+| Qué publica | "more than 900M weekly active users" | índices relativos de crecimiento, base jul de 2023 |
+| ¿Define "activo"? | no | sí, literal, dos veces |
+| Alcance declarado | ninguno | planes Individual (Free, Go, Plus, Pro); excluye a menores de 18; excluye países donde ChatGPT no opera |
+| Para qué sirve | comunicado financiero | investigación económica, con dato abierto en CC BY 4.0 |
+
+Audité el DOM del post de febrero en busca de cualquier aparato metodológico: **cero elementos
+de nota al pie, cero bloques de metodología, y una sola aparición de la palabra "active"** en
+el cuerpo — la que carga el número. Aplicar la definición de junio al número de febrero es una
+inferencia del lector, no una afirmación de la empresa. Y el alcance de junio es **más
+estrecho**: si excluye a menores de 18 y países donde el servicio no opera, o bien los 900
+millones usan otro criterio, o bien ya vienen depurados — y no hay forma de saber cuál de los
+dos.
+
+Hay una segunda capa, y viene del documento más técnico que la propia OpenAI produjo sobre el
+asunto. La unidad contada es la **cuenta**, no la persona. La nota al pie 20 del paper con el
+NBER dice:
+
+> "For logged-in users, the count is based on distinct login credentials (email addresses),
+> and one person may have multiple accounts. For logged-out users, the count is based on
+> distinct browser cookies; **this would double-count people** if someone returns to ChatGPT
+> after clearing their cookies, or if they access ChatGPT with two different devices in the
+> same week."
+
+La propia fuente avisa de que sobrecuenta. El aviso está en una nota al pie de un working paper
+de 64 páginas; el número está en un titular.
+
+Y se puede llegar ahí sin leer el paper. En la discusión de Reddit sobre el hito de los 1000
+millones, un comentario sin ningún destaque dice: *"I wonder if this is indicative of people
+using multiple free accounts with different email addresses to get around lower usage limits"*.
+Es la nota 20 del paper, con otras palabras. La sospecha no necesita acceso privilegiado —
+necesita solo que nadie haya respondido la pregunta en el lugar donde se publicó el número.
+
+### Cómo se respondía la pregunta antes de que existiera respuesta
+
+En febrero de 2025, cuando ChatGPT anunció 400 millones de usuarios semanales, el periodista Ed
+Zitron le hizo a OpenAI la pregunta obvia — ¿cómo definen ustedes usuario activo semanal? — y
+publicó lo que recibió:
+
+> "When i asked for comment on how they defined weekly active users OpenAI's PR firm simply
+> linked me to this tweet. To be clear, "weekly active user" can refer to literally any 7 day
+> period in a month, meaning that OpenAI can game it at will. Very nasty!"
+
+La agencia respondió **mandando un tuit**. Es la tesis de este artículo en forma de anécdota:
+la pregunta metodológica existía, la hizo un periodista, y la respuesta disponible era un post
+de red social con el número dentro.
+
+Dos matices de justicia, porque importan. El primero: Zitron es crítico declarado de la
+empresa, y la segunda mitad de su post — "OpenAI can game it at will" — es acusación de
+intención, no hecho verificado. La primera mitad, sobre la ventana indeterminada, era
+descripción correcta de lo que había. El segundo matiz es mayor: **OpenAI acabó
+respondiendo**. Dieciséis meses después, en el post de *Signals*, la ventana dejó de ser
+"cualquier período de siete días" y pasó a ser una fotografía definida. La crítica de 2025 vale
+para 2025. Lo que sobrevive hasta hoy no es la ausencia de la definición — es el hecho de que
+viva lejos del número.
+
+---
+
+## El denominador tiene paternidad, y se puede reconstruir
+
+Aquí está el hallazgo que más me interesó, porque se puede seguir documento a documento — y
+porque no empieza en un agregador de estadísticas. Empieza dentro de OpenAI.
+
+El tuit que la agencia le mandó a Zitron era del **COO de la empresa, Brad Lightcap**, y decía:
+
+> "chatgpt recently crossed 400M WAU, we feel very fortunate to serve **5% of the world**
+> every week"
+
+Rehice esa cuenta también. 400 millones sobre los 8140 millones de habitantes del planeta da
+4,9 % — redondea a 5 %, y cuadra. La regla es la **población total**. Guárdelo, porque siete
+meses después la misma empresa midió lo mismo contra otra regla.
+
+En septiembre de 2025, siete investigadores de OpenAI y del medio académico publicaron
+["How People Use ChatGPT"](https://www.nber.org/papers/w34255) como *working paper* del NBER —
+que lleva en la portada el aviso de que **no pasó por revisión por pares**. La frase que la
+prensa levantó está en el resumen y se repite en la introducción:
+
+> "By July 2025, 18 billion messages were being sent each week by 700 million users,
+> representing around 10% of the **global adult population**."
+
+Rehice la cuenta. Según los datos del Banco Mundial para 2025, la población mundial de 15 años
+o más era de **6210 millones** de personas. 700 millones sobre 6210 millones da **11,3 %**. El
+paper escribió "around 10%": **redondeó hacia abajo**. Es la pieza conservadora de la cadena, y
+cualquier texto que insinúe lo contrario se cae al primer escrutinio.
+
+Nueve meses después, la página que me dio el tema actualiza la estadística:
+
+> "900 million weekly active users, roughly **11% of the world's population**."
+
+Leído en secuencia, parece una progresión suave del mismo indicador: el 10 % pasó a 11 %. **No
+es el mismo indicador.** Desapareció la palabra "adulta". Y el número nuevo *cuadra* — 900
+millones sobre los 8220 millones de habitantes del planeta da 10,96 %, que redondea a 11 %. La
+cuenta está bien; la que cambió de sitio es la regla.
+
+<CountryBarsChart
+  dataset="estatisticas-chatgpt-denominador-es"
+  title="El mismo fenómeno, dos reglas: por qué 10 % pasando a 11 % no es progresión"
+  subtitle="La regla está en la etiqueta de cada bloque — es ella el dato, no la barra"
+  source="Fuentes: NBER WP 34255 (sep de 2025) · gradually.ai (captura del 14/05/2026) · Banco Mundial 2025. Verificadas el 03/08/2026."
+  description="Barras horizontales en dos bloques. Bloque del paper, con 700 millones de usuarios medidos contra la población adulta: lo publicado es 'around 10%', y la cuenta rehecha contra la población de 15 años o más da 11,3 %. Bloque de la página de estadísticas, con 900 millones: lo publicado es el 11 % de la población del mundo, que cuadra contra la población total; medido contra la misma regla del paper, la población adulta, sería el 14,5 %."
+/>
+
+Medida contra la misma regla — adultos —, la penetración no fue del 10 % al 11 %: fue del
+**11,3 % al 14,5 %**. El lector que solo vio los dos titulares recibió una variación de un
+punto donde había tres.
+
+Se puede ver el cambio ocurriendo, en vez de solo leer su resultado. En el cuadro de abajo cada
+punto es una porción igual de la población mundial y el bloque azul son los 900 millones.
+Contra el cuadro entero, ocupa el 11 %. Contra el cuadro **sin la franja oscura del pie** — los
+niños de hasta 14 años, que la regla adulta no cuenta —, el mismo bloque azul pasa a ser el
+14,5 %. Nada del bloque azul cambió. Cambió lo que se decidió llamar "todo el mundo".
+
+<WaffleChart
+  dataset="estatisticas-chatgpt-denominador-waffle-es"
+  title="El mismo bloque azul, dos denominadores: 11 % o 14,5 %"
+  subtitle="2500 puntos = la población mundial de 2025. Cada punto equivale a 3,29 millones de personas."
+  source="Banco Mundial 2025 (SP.POP.TOTL, SP.POP.0014.TO) · OpenAI, 27/02/2026. En un corte 18+, los mismos 900 millones darían cerca del 15,3 %."
+  description="Cuadrícula de 2500 puntos que representa la población mundial de 8220 millones de personas en 2025, cada punto equivaliendo a 3,29 millones. Los 274 primeros puntos, en azul, son los 900 millones de usuarios activos semanales de ChatGPT — el 11 % del cuadro entero. Siguen 1616 puntos en gris medio, el resto de la población de 15 años o más. Las últimas doce filas, 610 puntos en gris oscuro, son los menores de 15 años. Excluyendo ese bloque final, el denominador baja a 1890 puntos y los mismos 274 puntos azules pasan a representar el 14,5 %."
+/>
+
+> **Qué corte de edad usé, y por qué.** Los 15 años o más salen del Banco Mundial
+> (`SP.POP.TOTL` menos `SP.POP.0014.TO`, agregado mundial de 2025) porque es el único corte con
+> denominador público y reproducible. **El paper nunca define "adulto"** — busqué en el texto
+> íntegro de las 64 páginas y no hay definición, ni fuente, ni año para la estimación de
+> población: cero apariciones de "world population" o "population estimate". Si el corte es de
+> 18 años o más, el denominador se encoge y todos los porcentajes **suben** — la dirección del
+> hallazgo no depende de él. Declaro la regla porque este es, precisamente, el artículo en el
+> que clavar un decimal sin decir contra qué fue medido sería un autogol.
+
+Y hay un detalle que cierra el argumento. La nota al pie que ancla la frase del 10 % es, por
+entero, "Reuters (2025), Roth (2025)" — dos reportajes de prensa que sostienen el
+**numerador**: el recuento de usuarios y el volumen de mensajes. **No se da ninguna fuente para
+el denominador**, en las dos apariciones. No es que el paper no sepa hacerlo: cita al Banco
+Mundial explícitamente en la nota 24, para el denominador de *otro* gráfico. La razón del
+titular es la que se quedó sin respaldo.
+
+### La corrección que cometió el mismo error
+
+Pocos días después de salir el paper, circuló en LinkedIn un post de corrección — de esos que
+empiezan con un sello de "✅ CORRECTION" — acusando a OpenAI de un "huge mistake" en el
+informe. El post plantea dos problemas. El primero:
+
+> "It's unclear whether "700M" means unique weekly users or cumulative accounts touching the
+> platform."
+
+**Ese está bien**, y la respuesta estaba a una nota al pie de distancia: es exactamente lo que
+explica la nota 20 del propio paper, con "distinct login credentials" y "distinct browser
+cookies". La duda era buena; faltó leer el documento entero antes de corregirlo.
+
+El segundo problema señalado es:
+
+> "The math isn't mathing. 10% of the world's adult population is nowhere near 700M."
+
+**Ese está mal — y mal por el mecanismo que este artículo entero describe.** El 10 % de la
+población adulta son 621 millones. De 700 millones, eso está a un 12,7 % de distancia: lo
+bastante cerca para justificar un "around 10%" redondeado hacia abajo. Quien encuentra la
+distancia enorme midió contra la población **total** — el 10 % de 8220 millones da 821
+millones, y ahí sí 700 millones parece lejos. **La corrección cambió exactamente la misma regla
+que el texto corregido no cambió.**
+
+Hay todavía una tercera capa, y es el retrato del momento: para explicar por qué OpenAI se
+habría equivocado, el post le pregunta a ChatGPT y publica la respuesta íntegra — "Speed over
+accuracy: ... accuracy took a back seat", "Inflated numbers that erode trust". Un chatbot
+produciendo, con fluidez, la explicación psicológica de un error que no ocurrió como se
+describe.
+
+No cito esto para exponer a quien lo escribió — el post es de alcance modesto y la intención
+era claramente buena, que es verificar un número antes de repasarlo. Lo cito porque es el caso
+más limpio que encontré: **el cambio de denominador pilla incluso a quien está con la lupa en
+la mano, buscando el error.**
+
+El patrón que sale de ahí vale más allá de este caso: **el error que sobrevive no es el que no
+cuadra — es el que cuadra.** Un número que no encaja levanta sospecha y muere. El 11 % encaja,
+suena mayor que el 10 %, y al mismo tiempo subestima la penetración real por adulto. Nadie
+tiene motivo para verificarlo. Y cuando alguien lo tiene, la regla cambiada tumba la
+verificación con él.
+
+---
+
+## Tres medidas casi idénticas que no miden lo mismo
+
+En 2026 circulan, una al lado de la otra, tres cifras de "usuarios de ChatGPT" en el orden de
+los 1000 millones. No son lecturas rivales del mismo fenómeno. Son magnitudes distintas.
+
+<CountryBarsChart
+  dataset="estatisticas-chatgpt-metricas-es"
+  title="Casi la misma altura, ninguna la misma cosa"
+  subtitle="Cada bloque nombra quién midió, qué midió y en qué ventana — elegida por quien publica"
+  source="Fuentes: OpenAI · Sensor Tower, vía Reuters y CNBC · PYMNTS, que no da fuente para Gemini. Verificadas el 03/08/2026."
+  description="Barras horizontales en tres bloques, cada uno con una barra. Bloque de OpenAI: más de 900 millones de usuarios activos semanales, declarado por la empresa en febrero de 2026, en web y móvil. Bloque de Sensor Tower: 1000 millones de usuarios activos mensuales de la aplicación en mayo de 2026, estimación de un tercero. Bloque del competidor: 950 millones de usuarios activos mensuales de Gemini, publicados en julio de 2026 sin fuente declarada."
+/>
+
+La primera es autorreportada por la empresa, semanal, y cubre web y aplicación. La segunda es
+una estimación de panel de Sensor Tower, mensual, y cubre **solo la aplicación**. La tercera es
+de un competidor y es mensual — y vale por sí misma como muestra del problema.
+
+Fui a buscar su origen. La frase está en un reportaje serio, en un párrafo que empieza
+atribuyéndolo todo a The Information: "The Information added that the road to 1 billion users
+was a difficult one...". La frase siguiente, en el mismo párrafo, dice que Gemini "has 950
+million monthly active users" — **sin fuente**. El único enlace anclado ahí apunta a la página
+inicial del propio Gemini, que no publica ese número. Un dato sin procedencia, apoyado en datos
+con procedencia, hereda la credibilidad de los vecinos. Así es como la cifra va a viajar.
+
+La confusión no nace en el lector. Nace en el origen y la reproducen medios serios:
+
+- **La propia página que me dio el tema compara los dos dentro de una tabla.** La sección 14.1
+  tiene la columna encabezada por **"Monthly Users"** y pone a ChatGPT en **"900 million
+  (weekly)"** en la misma fila, al lado de los "50 million" de Claude y los "40 million" de
+  Gemini. El matiz está ahí, entre paréntesis, y la comparación ocurre igual.
+- **La misma página se contradice sobre la cuota de mercado:** 60,4 % en el resumen de arriba,
+  **62,5 %** cuatro secciones después, en la tabla.
+- **Dos noticias sobre el mismo dato de Sensor Tower difieren en el ritmo:** Reuters escribe
+  que ChatGPT llegó a los 1000 millones "roughly three years after launch"; CNBC, "roughly 3.5
+  years". Mismo proveedor, mismo hito, dos velocidades.
+
+Y parte del público lo nota. En el hilo de r/BetterOffline sobre el hito de los 1000 millones,
+el comentario más votado — 235 puntos — resume el cambio en cinco palabras: *"Hahahaha they
+switched to monthly actives"*. Algunos comentarios más abajo, otro lector:
+
+> "It's only an estimate from a third party according to estimates from market intelligence
+> firm Sensor Tower. I'm pretty sure OpenAI would have been the first one to scream 1B users,
+> if it was true."
+
+Está en lo cierto en las dos mitades — es estimación de un tercero, y la CNBC registra en el
+mismo reportaje que **OpenAI no respondió a la solicitud de comentario** sobre el número.
+
+Con dos matices que la honestidad exige y que la mayoría de las citas de "reacción de la
+comunidad" no hace. r/BetterOffline es la comunidad del propio Ed Zitron, y el comentario más
+votado es suyo — no es público general reaccionando, es un público autoseleccionado de
+escépticos, y el autor de la frase es el dueño de la casa. Y el resto del hilo es, en buena
+parte, conjetura sin respaldo ("son todo bots", "propaganda de OPV") que no entra aquí porque
+no sostiene nada. Lo que cito son los dos comentarios que **acertaron en una cuestión de
+procedencia verificable** — no la temperatura del foro.
+
+Y ninguno de los números de cuota de mercado cuadra con los otros — porque tampoco miden lo
+mismo. Similarweb mide **cuota de tráfico web** y registró la caída de ChatGPT del 76,4 %
+(junio de 2025) al **52,7 %** (mayo de 2026). Sensor Tower mide **cuota de usuarios de
+asistente** y marcó el **46,4 %** a finales de mayo de 2026. Tratar el 52,7 % y el 46,4 % como
+"lecturas conflictivas" sería cometer el error que este artículo denuncia: son proveedor
+distinto, unidad distinta, universo distinto. La propia compilación que publicó el 46,4 % lo
+declara con una honestidad que merece registro — es "**one research firm's measurement, not an
+independently audited industry count**".
+
+---
+
+## La regla honesta es la proyección que la propia empresa incumplió
+
+Existe un número en esta historia que no necesita auditor externo para valer como señal: el que
+OpenAI proyectó para sí misma.
+
+El 29 de julio de 2026, The Information reportó — citando datos de la empresa — que ChatGPT se
+acerca a los **1000 millones de usuarios activos semanales**, y que el hito llega **siete meses
+después de lo que la propia empresa había proyectado**. El texto atribuye la demora al
+crecimiento que se desaceleró el otoño anterior, tras la reacción negativa al GPT-5, y a la
+mayor competencia.
+
+Dos meses antes, en mayo, Ed Zitron había publicado los números trimestrales que citaba del
+mismo medio: **pico de 920 millones en febrero**, pero **media de 905 millones en el
+trimestre** — lo que sugiere meses más flojos en enero o marzo. Y la proyección interna, que
+era de 1000 millones todavía en 2025.
+
+Ese par de números dice más sobre la naturaleza de la métrica que cualquier crítica externa.
+Los 900 millones que se volvieron titular son la **fotografía de febrero** — el mes del pico,
+tomada en el mes del anuncio de financiación. La media del trimestre, 905 millones, nunca fue
+publicada por la empresa. No hace falta suponer manipulación: basta observar que la ventana la
+elige quien publica, y que el pico y la media cuentan historias distintas.
+
+> **Lo que esta sección no tiene.** El texto de The Information está tras un muro de pago duro;
+> leí el reportaje del 29/07/2026 por la síntesis de [PYMNTS](https://www.pymnts.com/news/artificial-intelligence/2026/chatgpt-approaches-1-billion-weekly-active-user-milestone/)
+> y los números trimestrales por el texto de Zitron, que también los atribuye a The Information.
+> Son dos capas de intermediación sobre datos internos no auditables. Están aquí como **relato
+> de un tercero sobre dato de la empresa**, no como hecho verificado — y la distinción es
+> literalmente el asunto de este artículo.
+
+---
+
+## Brasil: el tercer mayor mercado que ninguna de estas páginas menciona
+
+Ninguna de las recopilaciones internacionales de "estadísticas de ChatGPT" tiene recorte
+brasileño. Fui a montar uno, y el resultado fue más instructivo que si hubiera salido bien.
+
+**Iba a publicar tres defectos de una vez.** En la primera versión de mi guion estaba esta
+línea: "cerca de 47 millones de usuarios activos mensuales y 140 millones de mensajes al día
+(Mobile Time, enero de 2026)". Fui a rastrear las dos fuentes antes de escribir, y las dos se
+cayeron. Mobile Time **no publicó nada de eso en enero de 2026** — la casa consolidó la
+cobertura del tema en dos ediciones anuales y no tiene edición de enero. La única aparición
+rastreable de los 47 millones está en una página de contenido automatizado que acredita
+"(Mobile Time + OpenAI Brazil report 2026)" y pega orígenes distintos en la misma cita. Y los
+140 millones de mensajes diarios existen, pero son de **OpenAI, divulgados el 12 de agosto de
+2025** — y son mensajes, no usuarios.
+
+Número sin fuente, atribución cambiada y cifra fósil, los tres recogidos de una sola búsqueda,
+en el artículo que denuncia exactamente eso. Lo registro porque es la demostración más barata
+que existe de la tesis: **el error no exige mala fe, exige prisa**.
+
+Lo que queda, cuando se rastrea hasta el origen, es mejor. En agosto de 2025 OpenAI divulgó a
+la prensa brasileña un estudio sobre el país — sin informe público recuperable. Y ahí está el
+hallazgo de la sección, que es brasileño y es de origen:
+
+| Medio | Cómo describió la métrica del ranking |
+|---|---|
+| G1 | Brasil 3.º entre los países que más "usan ChatGPT **semanalmente**" |
+| InfoMoney | Brasil 3.º con el "mayor **número de usuarios**" — sin ventana |
+
+Mismo briefing, mismo día, dos métricas distintas en la primera línea. **La confusión de
+métricas no ocurre al copiar: ya sale así del origen.** Y el retrato es de agosto de 2025,
+cuando ChatGPT tenía cerca de 700 millones de usuarios semanales en el mundo; hoy son más de
+900 millones, y no hay reverificación pública de la posición de Brasil en ese nuevo nivel.
+
+Dos anclas sobreviven al escrutinio, y son las que yo usaría:
+
+**La regla honesta es la del Cetic.br.** La TIC Domicílios 2025, divulgada en diciembre de
+2025, mide que el **32 % de los usuarios de internet de 10 años o más** — cerca de 50 millones
+de brasileños — ya usó IA generativa. Es la única encuesta domiciliaria probabilística
+presencial del país sobre el tema: 27 177 hogares, metodología y denominador públicos. No es
+sobre ChatGPT específicamente, y es justamente por eso que sirve: se puede saber qué cuenta.
+
+**El dato primario más fuerte sobre Brasil no es un recuento, es un idioma.** En el mismo post
+de *Signals* que define usuario activo, OpenAI escribe: *"The leading non-English languages on
+ChatGPT are Spanish, Portuguese, and Arabic."* El portugués es el **segundo idioma no inglés**
+del producto, por delante del árabe. Es un dato de la propia empresa, con alcance declarado, y
+dice más sobre la presencia brasileña que cualquier número de MAU sin procedencia.
+
+---
+
+## Lo que sí se puede verificar hoy: precio y producto
+
+La parte verificable de una página de estadísticas es la que ella misma menos destaca. Abrí la
+página oficial de precios el 3 de agosto de 2026, en el locale en-US:
+
+| Plan | Precio en la página | Modelo destacado | Anuncios |
+|---|---|---|---|
+| Free | 0 dólares | GPT-5.5 Instant (acceso limitado) | la tarjeta no lo menciona |
+| Go | 8 dólares/mes | GPT-5.5 Instant (más acceso) | "This plan may include ads" |
+| Plus | 20 dólares/mes | GPT-5.6 | no lo menciona |
+| Pro | desde 100 dólares/mes | GPT-5.6 Sol Pro | no lo menciona |
+| Business | 20 dólares/usuario/mes (anual); 25 en el mensual | — | no lo menciona |
+
+Contra eso, la página que me dio el tema — cuya captura es del **14 de mayo de 2026** —
+acierta lo esencial y se equivoca en lo reciente, y las dos cosas hay que separarlas con
+justicia:
+
+**Lo que acierta.** El plan Go a 8 dólares con anuncios, y la ausencia de anuncios en Plus,
+Pro, Business y Enterprise. Cuadra con el [post oficial del 16 de enero de
+2026](https://openai.com/index/our-approach-to-advertising-and-expanding-access/), que dice
+literalmente: *"Plus, Pro, Business, and Enterprise subscriptions will not include ads."*
+
+**Lo que envejeció, y es desfase legítimo.** La familia corriente hoy es **GPT-5.6** (variantes
+Sol, Sol Pro, Terra y Luna), anunciada el 30 de julio de 2026 — dos meses y medio después de la
+captura. Tratar al GPT-5.5 como tope de gama no era error en mayo.
+
+**Lo que ya nacía sin respaldo.** La ventana de contexto: la página oficial da **400 000
+tokens** en el razonamiento del Pro y 128 000 en el modelo Instant del mismo plan. El "1 millón
+de contexto" que circula es de la **API**, no de la suscripción. Y hay secciones enteras de
+porcentajes — los casos de uso y las industrias — que citan "una encuesta entre usuarios de
+ChatGPT" sin decir quién encuestó, cuándo, ni a cuántas personas. Junto con un error técnico
+que cualquier lector puede verificar en la fuente del propio benchmark: 84,2 % "en tareas
+multimodales (MMLU)" — el [MMLU](https://arxiv.org/abs/2009.03300) es *Massive Multitask
+Language Understanding*, un test de opción múltiple solo de texto.
+
+### La etiqueta dice 2026; los números tienen otras edades
+
+Hay un tercer grupo, que no es acierto ni error: número viejo debajo de etiqueta nueva. Una
+página llamada "Estadísticas de ChatGPT 2026" carga, sin marca de fecha en el cuerpo, datos de
+hasta seis años. Verifiqué la edad real de cuatro de ellos:
+
+| Lo que presenta la página | Edad real del dato | Cómo se puede saber |
+|---|---|---|
+| "Over 570 GB of compressed text data was used for GPT-3", acreditado a "OpenAI Community" | mayo de 2020 | el número es del propio [paper del GPT-3](https://arxiv.org/abs/2005.14165), que escribe "45TB of compressed plaintext before filtering and 570GB after filtering" |
+| "OpenAI reportedly spends about $700,000 daily on ChatGPT", acreditado a "SemiAnalysis/TechNext" | 9 de febrero de 2023 | el [modelo de coste original](https://semianalysis.com/2023/02/09/the-inference-cost-of-search-disruption/) dice 694 444 dólares al día, calculados sobre 28 936 GPU A100 |
+| Cuota de visitas por país (EE. UU. 11,71 %, India 8,37 %) | diciembre de 2023 a febrero de 2024 | la propia página declara la ventana, una línea encima de la tabla |
+| Serie de visitas mensuales | termina en septiembre de 2025 | la última fila de la serie es la única marcada "(projection)" |
+
+Ninguno de esos números es falso, y el mérito es de la página: dice que los 570 GB son del
+GPT-3, y dice de qué meses son las visitas por país. **La etiqueta de arriba es la que hace el
+trabajo que los datos no hacen** — quien cita "570 GB" en una frase sobre el ChatGPT de hoy
+está describiendo un modelo de 2020 con un número que pasó por una página de 2026. Es el mismo
+mecanismo del denominador, aplicado al tiempo en vez de a la regla: el dato está bien, la que
+se cambió es la etiqueta. Vale la misma justicia de siempre — la captura que leí es del 14 de
+mayo de 2026, y la versión viva puede haber cambiado desde entonces.
+
+Y la inconsistencia más reveladora no está en la página de terceros: está en la oficial. El
+post de enero anuncia prueba de anuncios "for the free and Go tiers"; la página de precios de
+hoy marca el aviso **solo en Go**. En el mismo documento, el FAQ omite el Pro de la lista de
+planes de pago y todavía habla de "access to GPT-5.5", mientras la tabla justo encima ya vende
+el GPT-5.6. Si la página oficial de precios de una empresa de 730 000 millones pre-money se
+contradice a sí misma en dos puntos, el problema de mantenimiento de estadística no es de los
+recopiladores.
+
+---
+
+## Lo que yo haría con esto
+
+No voy a proponer que el lector verifique 60 números antes de citar uno. Lo que sí se puede
+hacer es más barato, y son tres preguntas que caben en un comentario:
+
+**¿Dónde se publicó este número, y para qué?** Un número que estrena en un comunicado de
+financiación, en un anuncio de producto o en una keynote no es falso por eso — pero nace sin
+metodología porque la metodología no es la función de aquel documento. Los 900 millones y los
+50 millones estrenaron en el mismo párrafo de un anuncio de 110 000 millones. Es la información
+más relevante sobre los dos, y casi nunca viaja con ellos.
+
+**¿Contra qué fue medido?** Es lo que separó "el 10 % de los adultos" del "11 % del mundo".
+Siempre que un porcentaje aparezca sin denominador nombrado, el denominador fue elegido — y la
+elección suele favorecer a quien publica. Cuando el número cuadra es cuando vale verificar la
+regla, no cuando parece extraño.
+
+**¿Quién midió, y en qué ventana?** Semanal y mensual no son lo mismo. Autorreportado y
+estimado por panel no son lo mismo. Cuenta y persona no son lo mismo — y la nota al pie de la
+propia OpenAI dice que el recuento de los que no tienen sesión iniciada "sobrecuenta". Tres
+barras casi de la misma altura pueden ser tres fenómenos distintos.
+
+Nada de esto hace a ChatGPT menor de lo que es. El orden de magnitud está bien, el crecimiento
+es real y probablemente sin precedente. Lo que no se sostiene es la precisión implícita: los
+"900 millones" son el suelo de una fotografía de siete días, tomada en el mes de un anuncio de
+financiación, contando cuentas y cookies en vez de personas, y comparada rutinariamente con
+métricas mensuales de otro origen. Es un número útil. Solo que no es un número exacto — y la
+diferencia entre las dos cosas es la que decide si estás leyendo un dato o un titular.
+
+---
+
+## Fuentes
+
+- [OpenAI — Scaling AI for everyone (27/02/2026)](https://openai.com/index/scaling-ai-for-everyone/) (900 millones de WAU, 50 millones de consumer subscribers, 110 000 millones a 730 000 millones pre-money)
+- [OpenAI — How ChatGPT adoption has expanded (30/06/2026)](https://openai.com/index/how-chatgpt-adoption-has-expanded/) · [metodología de Signals](https://openai.com/signals/data-download/) (la definición de usuario activo, el alcance, y el portugués como 2.ª lengua no inglesa)
+- [OpenAI — Our approach to advertising and expanding access (16/01/2026)](https://openai.com/index/our-approach-to-advertising-and-expanding-access/) (Go a 8 dólares; planes sin anuncios)
+- [ChatGPT — página de precios](https://chatgpt.com/pricing/) (precios, modelos y ventanas de contexto, capturados el 03/08/2026)
+- [NBER — Working Paper 34255, *How People Use ChatGPT* (sep de 2025)](https://www.nber.org/papers/w34255) · [PDF](https://www.nber.org/system/files/working_papers/w34255/w34255.pdf) (el 10 % de la población adulta, la nota 1 y la nota 20)
+- [Banco Mundial — indicadores SP.POP.TOTL y SP.POP.0014.TO](https://data.worldbank.org/indicator/SP.POP.TOTL) (denominador de población, agregado mundial 2025)
+- [CNBC — ChatGPT hits a billion monthly app users (12/06/2026)](https://www.cnbc.com/amp/2026/06/12/chatgpt-a-billion-monthly-app-users-despite-souring-public-ai-sentiment.html) · [Reuters vía Yahoo Finance (02/06/2026)](https://finance.yahoo.com/sectors/technology/articles/chatgpt-app-hits-1-billion-222139124.html) (1000 millones de MAU de app, Sensor Tower)
+- [PYMNTS — ChatGPT approaches 1 billion weekly active users (29/07/2026)](https://www.pymnts.com/news/artificial-intelligence/2026/chatgpt-approaches-1-billion-weekly-active-user-milestone/) (el hito siete meses después de la proyección; Gemini a 950 millones de MAU)
+- [Ed Zitron — wheresyoured.at (22/05/2026)](https://www.wheresyoured.at/news-openai-had-a-negative-122-operating-margin-in-q1-2026-and-chatgpt-growth-has-stalled/) (920 millones de pico, 905 millones de media del trimestre) · [post en X (20/02/2025)](https://x.com/edzitron/status/1892638446151172163) (la respuesta de la agencia y la ventana indeterminada)
+- [Brad Lightcap, COO de OpenAI, en X (20/02/2025)](https://x.com/bradlightcap/status/1892579908179882057) (400 millones de WAU, "5% of the world") — el **número** está corroborado por la [CNBC del mismo día](https://www.cnbc.com/2025/02/20/openai-tops-400-million-users-despite-deepseeks-emergence.html) (Kate Rooney), que además registra: *"These numbers have not been previously reported"*; la **formulación** "5% of the world" solo existe en el post
+- Discusión en [r/BetterOffline sobre el hito de los 1000 millones](https://www.reddit.com/r/BetterOffline/comments/1tvmoyv/chatgpt_has_allegedly_reached_one_billion_monthly/) — comentarios citados: [el cambio de métrica](https://www.reddit.com/r/BetterOffline/comments/1tvmoyv/comment/opi1bsq/) · [la estimación de un tercero](https://www.reddit.com/r/BetterOffline/comments/1tvmoyv/comment/opi4xjf/) · [las cuentas múltiples](https://www.reddit.com/r/BetterOffline/comments/1tvmoyv/comment/opikosc/)
+- [PPC.land / Similarweb (11/06/2026)](https://ppc.land/chatgpt-drops-to-52-7-as-claude-triples-its-ai-traffic-share/) (cuota de tráfico: 76,4 % -> 52,7 %) · [Digital Applied / Sensor Tower (19/06/2026)](https://www.digitalapplied.com/blog/ai-assistant-market-share-2026-chatgpt-below-50-percent-analysis) (46,4 % de usuarios de asistente)
+- [G1 (12/08/2025)](https://g1.globo.com/tecnologia/noticia/2025/08/12/brasil-esta-entre-os-3-paises-que-mais-usam-o-chatgpt-diz-openai.ghtml) · [InfoMoney (12/08/2025)](https://www.infomoney.com.br/consumo/brasil-e-o-terceiro-pais-com-maior-numero-de-usuarios-do-chatgpt-no-mundo/) (el mismo briefing, dos métricas)
+- [Cetic.br/NIC.br — TIC Domicílios 2025 (divulgación del 09/12/2025)](https://cetic.br/pt/noticia/50-milhoes-de-brasileiros-ja-usam-ia-mas-potenciais-beneficios-continuam-limitados-as-camadas-de-maior-renda-e-escolaridade/) (32 % de los usuarios de internet de 10+ ya usó IA generativa)
+- Edad real de los números fósiles: [Brown et al., *Language Models are Few-Shot Learners* (mayo de 2020)](https://arxiv.org/abs/2005.14165) (los 570 GB filtrados del Common Crawl, en la sección 2.2) · [SemiAnalysis — The Inference Cost of Search Disruption (09/02/2023)](https://semianalysis.com/2023/02/09/the-inference-cost-of-search-disruption/) (694 444 dólares al día, sobre 28 936 GPU A100)
+- Artículos anteriores de esta serie: [cuánta gente usa realmente la IA](/artigos/quantas-pessoas-usam-ia) · [estadísticas de IA, verificadas número por número](/artigos/estatisticas-de-ia)
+
+*El tema de este artículo fue inspirado por una recopilación de
+[gradually.ai](https://www.gradually.ai/chatgpt-statistiken/) (en alemán, con versión en
+inglés). Ningún número fue heredado de allí: todos fueron verificados de forma independiente en
+las fuentes primarias de arriba, el 03/08/2026. Las páginas de `openai.com` y `chatgpt.com`
+devuelven HTTP 403 al acceso automatizado y fueron leídas en navegador; el post de financiación
+fue localizado por el feed RSS oficial del dominio. La captura de la página que inspiró el tema
+es del **14/05/2026**, recuperada del Wayback Machine — el desfase de producto señalado en la
+última sección es consecuencia de eso y está declarado como tal en el texto. Las citas de X,
+Reddit y LinkedIn fueron leídas en las páginas originales, con autor, fecha y enlace permanente
+registrados; el tuit del COO de OpenAI, leído truncado, tuvo el fragmento citado corroborado en
+tres medios independientes. La fecha del post de LinkedIn no se expone a quien no tiene sesión
+iniciada y fue recuperada decodificando el identificador de la publicación. No verifiqué: el
+cuerpo del reportaje de The Information (muro de pago duro, leído por dos fuentes secundarias
+declaradas), los números internos de OpenAI que sostienen las cifras trimestrales, la
+metodología propietaria de Sensor Tower y de Similarweb, y el informe original del estudio de
+OpenAI sobre Brasil, que no tiene versión pública recuperable. Una búsqueda amplia de discurso
+en X quedó fuera por indisponibilidad de la herramienta de búsqueda de la plataforma — lo que
+está citado aquí son posts individuales abiertos uno a uno, no un retrato del debate.*
