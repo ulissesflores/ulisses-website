@@ -236,6 +236,41 @@ export const artigos: readonly Artigo[] = [
       },
     },
   },
+  {
+    slug: 'estatisticas-claude',
+    title:
+      'O Brasil é o 5º país que mais usa o Claude — e isso quer dizer menos do que parece',
+    summary:
+      'O Brasil é o quinto país que mais usa o Claude — e o dado, ao contrário de quase tudo que circula, vem de fonte primária: o microdado que a própria Anthropic publica sob CC-BY. Baixei o dataset e medi. A mesma medição diz o que a manchete não carrega: em intensidade per capita somos o 61º de 121 — estamos no topo porque somos grandes, não porque somos intensos. Volume não é intensidade, e a versão em dinheiro dessa confusão (run rate não é receita) sustenta quase toda página de "estatísticas do Claude" de 2026. Conferi a mais completa delas fonte a fonte: o run rate de US$ 47 bi é um mês forte anualizado; o CFO, sob juramento, declarou mais de US$ 5 bi desde a fundação na mesma janela do "~19 bi" público — não é flagrante, é velocímetro contra odômetro. E o único dado que qualquer um reproduz de graça leva uma linha na página; o vazamento leva a manchete.',
+    date: '2026-08-10',
+    tags: ['ia', 'claude', 'anthropic', 'estatisticas', 'fact-check', 'brasil'],
+    i18n: {
+      en: {
+        title:
+          'Brazil ranks 5th in the world in Claude usage — and that means less than it seems',
+        summary:
+          'Brazil is the fifth country in the world in Claude usage — and unlike almost everything in circulation, the number comes from a primary source: the microdata Anthropic itself publishes under CC-BY. I downloaded the dataset and measured. The same measurement says what the headline does not carry: in per-capita intensity we are 61st of 121 — we sit at the top because we are big, not because we are intense. Volume is not intensity, and the money version of that confusion (run rate is not revenue) props up nearly every "Claude statistics" page of 2026. I checked the most complete of them source by source: the US$ 47 billion run rate is a strong month annualised; the CFO, under oath, declared more than US$ 5 billion since founding in the same window as the public "~19 billion" — not a smoking gun, a speedometer versus an odometer. And the only number anyone can reproduce for free gets one line on the page; the leak gets the headline.',
+      },
+      es: {
+        title:
+          'Brasil es el 5.º país que más usa Claude — y eso quiere decir menos de lo que parece',
+        summary:
+          'Brasil es el quinto país que más usa Claude — y el dato, al contrario de casi todo lo que circula, viene de fuente primaria: el microdato que la propia Anthropic publica bajo CC-BY. Descargué el dataset y medí. La misma medición dice lo que el titular no carga: en intensidad per cápita somos el 61.º de 121 — estamos en la cima porque somos grandes, no porque seamos intensos. Volumen no es intensidad, y la versión en dinero de esa confusión (run rate no son ingresos) sostiene casi todas las páginas de "estadísticas de Claude" de 2026. Verifiqué la más completa de ellas fuente por fuente: el run rate de 47 000 millones de dólares es un mes fuerte anualizado; el CFO, bajo juramento, declaró más de 5 000 millones desde la fundación en la misma ventana de los "~19 000 millones" públicos — no es un flagrante, es velocímetro contra odómetro. Y el único dato que cualquiera puede reproducir gratis recibe una línea en la página; la filtración recibe el titular.',
+      },
+      it: {
+        title:
+          'Il Brasile è il 5° paese che più usa Claude — e vuol dire meno di quanto sembri',
+        summary:
+          "Il Brasile è il quinto paese che più usa Claude — e il dato, al contrario di quasi tutto ciò che circola, viene da una fonte primaria: il microdato che la stessa Anthropic pubblica con licenza CC-BY. Ho scaricato il dataset e ho misurato. La stessa misurazione dice ciò che il titolo non porta: in intensità pro capite siamo il 61° su 121 — siamo in cima perché siamo grandi, non perché siamo intensi. Il volume non è intensità, e la versione in denaro di quella confusione (il run rate non è fatturato) regge quasi ogni pagina di \"statistiche su Claude\" del 2026. Ho verificato la più completa di esse fonte per fonte: il run rate da 47 miliardi di dollari è un mese forte annualizzato; il CFO, sotto giuramento, ha dichiarato più di 5 miliardi dalla fondazione nella stessa finestra dei \"~19 miliardi\" pubblici — non è una pistola fumante, è tachimetro contro contachilometri. E l'unico dato che chiunque può riprodurre gratis riceve una riga nella pagina; l'indiscrezione riceve il titolo.",
+      },
+      he: {
+        title:
+          'ברזיל היא המדינה החמישית בשימוש ב־Claude — וזה אומר פחות ממה שנדמה',
+        summary:
+          'ברזיל היא המדינה החמישית שהכי משתמשת ב־Claude — והנתון, בניגוד כמעט לכל מה שמסתובב, מגיע ממקור ראשוני: המיקרו־נתון ש־Anthropic עצמה מפרסמת ברישיון CC-BY. הורדתי את מאגר הנתונים ומדדתי. אותה מדידה אומרת מה שהכותרת לא נושאת: בעוצמת שימוש לנפש אנחנו במקום ה־61 מתוך 121 — אנחנו בצמרת כי אנחנו גדולים, לא כי אנחנו אינטנסיביים. נפח אינו עוצמה, והגרסה הכספית של אותו בלבול (run rate אינו הכנסה) מחזיקה כמעט כל עמוד של "סטטיסטיקות Claude" ב־2026. בדקתי את השלם שבהם מקור אחר מקור: ה־run rate של 47 מיליארד דולר הוא חודש חזק במונחים שנתיים; ה־CFO, תחת שבועה, הצהיר על יותר מ־5 מיליארד דולר מאז הייסוד באותו חלון שבו ה־run rate הפומבי היה כ־19 מיליארד — זו לא שערורייה, זה מד־מהירות מול מד־מרחק. והנתון היחיד שכל אחד יכול לשחזר בחינם מקבל שורה אחת בעמוד; ההדלפה מקבלת את הכותרת.',
+      },
+    },
+  },
 ];
 
 /** Posts do mais recente para o mais antigo — ordem de exibição do índice. */

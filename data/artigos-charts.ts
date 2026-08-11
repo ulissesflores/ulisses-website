@@ -285,6 +285,59 @@ export const waffleDatasets: Record<string, WaffleDataset> = {
       { label: 'מתחת לגיל 15', sublabel: '610 נקודות · מחוץ לסרגל', color: '#3f3f46', count: 610 },
     ],
   },
+
+  /* ── 3. `estatisticas-claude-brasil-waffle` — para que o Brasil usa ──────────
+   *
+   * UNIDADE: pontos. 1.000 pontos, 1 ponto = 0,1% do uso brasileiro do Claude.
+   *
+   * PROCEDÊNCIA (medida em 10/08/2026, `extrair-brasil-aei.py`, janela
+   * 2026-05-01 a 2026-06-01): use_case_work_pct = 57,35 -> 574 pontos;
+   * use_case_personal_pct = 31,12 -> 311; use_case_coursework_pct = 11,52 ->
+   * 115. Soma fechada: 574 + 311 + 115 = 1.000 (57,35 + 31,12 + 11,52 = 99,99;
+   * o 0,01 restante é arredondamento do próprio dataset).
+   *
+   * A ORDEM É SEMÂNTICA: trabalho primeiro porque a tese da seção é "o Brasil
+   * usa o Claude para trabalhar" (Brasil e Bálcãs = maior proporção de uso
+   * profissional do mundo, relatório de geografia da Anthropic).
+   *
+   * PALETA: reuso exato das cores já validadas (CVD) nos waffles anteriores;
+   * azul = o grupo-tese (trabalho), como no bloco "Os 900 milhões".
+   */
+  'estatisticas-claude-brasil-waffle': {
+    categories: [
+      { label: 'Trabalho', sublabel: '57,4% · 574 pontos', color: '#60a5fa', count: 574 },
+      { label: 'Uso pessoal', sublabel: '31,1% · 311 pontos', color: '#34d399', count: 311 },
+      { label: 'Estudo', sublabel: '11,5% · 115 pontos', color: '#fbbf24', count: 115 },
+    ],
+  },
+  'estatisticas-claude-brasil-waffle-en': {
+    categories: [
+      { label: 'Work', sublabel: '57.4% · 574 dots', color: '#60a5fa', count: 574 },
+      { label: 'Personal use', sublabel: '31.1% · 311 dots', color: '#34d399', count: 311 },
+      { label: 'Study', sublabel: '11.5% · 115 dots', color: '#fbbf24', count: 115 },
+    ],
+  },
+  'estatisticas-claude-brasil-waffle-es': {
+    categories: [
+      { label: 'Trabajo', sublabel: '57,4 % · 574 puntos', color: '#60a5fa', count: 574 },
+      { label: 'Uso personal', sublabel: '31,1 % · 311 puntos', color: '#34d399', count: 311 },
+      { label: 'Estudio', sublabel: '11,5 % · 115 puntos', color: '#fbbf24', count: 115 },
+    ],
+  },
+  'estatisticas-claude-brasil-waffle-it': {
+    categories: [
+      { label: 'Lavoro', sublabel: '57,4% · 574 punti', color: '#60a5fa', count: 574 },
+      { label: 'Uso personale', sublabel: '31,1% · 311 punti', color: '#34d399', count: 311 },
+      { label: 'Studio', sublabel: '11,5% · 115 punti', color: '#fbbf24', count: 115 },
+    ],
+  },
+  'estatisticas-claude-brasil-waffle-he': {
+    categories: [
+      { label: 'עבודה', sublabel: '57.4% · 574 נקודות', color: '#60a5fa', count: 574 },
+      { label: 'שימוש אישי', sublabel: '31.1% · 311 נקודות', color: '#34d399', count: 311 },
+      { label: 'לימודים', sublabel: '11.5% · 115 נקודות', color: '#fbbf24', count: 115 },
+    ],
+  },
 };
 
 /* ── Barras por país ─────────────────────────────────────────────────── */
@@ -1394,6 +1447,333 @@ export const countryBarsDatasets: Record<string, CountryBarsDataset> = {
         label: 'PYMNTS — פעילים חודשיים של המתחרה, בלי מקור מוצהר (יולי 2026)',
         color: '#a1a1aa',
         items: [{ name: 'Gemini — MAU', value: 950, valueLabel: '950 מיליון' }],
+      },
+    ],
+  },
+
+  /* ── 1. `estatisticas-claude-top10-aui` — volume não é intensidade ───────────
+   *
+   * UNIDADE: AUI (Anthropic AI Usage Index) = participação do país no uso do
+   * Claude ÷ participação na população mundial 15-64. AUI = 1 -> usa na exata
+   * proporção do próprio tamanho. Teto **8**, não 7: o `valueLabel` é desenhado
+   * DEPOIS do fim da barra, e a 7 o rótulo da Austrália (6,40, a maior barra)
+   * ficava com ~99px — sem folga para as traduções. A 8, sobram ~157px e a
+   * maior barra ainda ocupa 80% do eixo.
+   *
+   * ORDEM = VOLUME, BARRA = AUI — a tensão entre as duas réguas É o gráfico
+   * (Índia: 2ª em volume, barra quase nula; Austrália: 9ª em volume, a maior
+   * barra). NÃO reordenar pela barra: viraria um ranking de AUI e a tese some.
+   * UM grupo só: uma fonte, um método, uma cor.
+   *
+   * PROCEDÊNCIA (medida em 10/08/2026, `extrair-brasil-aei.py` + variação
+   * top-10 registrada no STATE.md): dataset aberto Anthropic Economic Index,
+   * release 26/06/2026 (CC-BY), janela 2026-05-01 a 2026-06-01, 121 países,
+   * soma dos usage_pct publicados = 87,49%. Volume% / AUI / rank AUI:
+   * USA 20,16/3,87 (12º) · IND 7,12/0,30 (104º) · FRA 3,95/3,97 (10º) ·
+   * GBR 3,47/3,35 (16º) · BRA 3,33/0,96 (61º) · JPN 3,28/1,91 (32º) ·
+   * KOR 3,24/3,78 (14º) · DEU 2,98/2,40 (26º) · AUS 2,65/6,40 (1º) ·
+   * CAN 2,63/4,13 (6º).
+   */
+  'estatisticas-claude-top10-aui': {
+    max: 8,
+    groups: [
+      {
+        label: 'Anthropic Economic Index — ordem: volume de uso; barra: AUI (mai/2026)',
+        color: '#60a5fa',
+        items: [
+          { name: 'EUA · 20,2%', value: 3.87, valueLabel: 'AUI 3,87' },
+          { name: 'Índia · 7,1%', value: 0.3, valueLabel: 'AUI 0,30 · 104º de 121' },
+          { name: 'França · 4,0%', value: 3.97, valueLabel: 'AUI 3,97' },
+          { name: 'Reino Unido · 3,5%', value: 3.35, valueLabel: 'AUI 3,35' },
+          { name: 'Brasil · 3,3%', value: 0.96, valueLabel: 'AUI 0,96 · 61º de 121', emphasis: true },
+          { name: 'Japão · 3,3%', value: 1.91, valueLabel: 'AUI 1,91' },
+          { name: 'Coreia do Sul · 3,2%', value: 3.78, valueLabel: 'AUI 3,78' },
+          { name: 'Alemanha · 3,0%', value: 2.4, valueLabel: 'AUI 2,40' },
+          { name: 'Austrália · 2,7%', value: 6.4, valueLabel: 'AUI 6,40 · 1º de 121' },
+          { name: 'Canadá · 2,6%', value: 4.13, valueLabel: 'AUI 4,13' },
+        ],
+      },
+    ],
+  },
+  'estatisticas-claude-top10-aui-en': {
+    max: 8,
+    groups: [
+      {
+        label: 'Anthropic Economic Index — order: usage volume; bar: AUI (May 2026)',
+        color: '#60a5fa',
+        items: [
+          { name: 'US · 20.2%', value: 3.87, valueLabel: 'AUI 3.87' },
+          { name: 'India · 7.1%', value: 0.3, valueLabel: 'AUI 0.30 · 104th of 121' },
+          { name: 'France · 4.0%', value: 3.97, valueLabel: 'AUI 3.97' },
+          { name: 'UK · 3.5%', value: 3.35, valueLabel: 'AUI 3.35' },
+          { name: 'Brazil · 3.3%', value: 0.96, valueLabel: 'AUI 0.96 · 61st of 121', emphasis: true },
+          { name: 'Japan · 3.3%', value: 1.91, valueLabel: 'AUI 1.91' },
+          { name: 'South Korea · 3.2%', value: 3.78, valueLabel: 'AUI 3.78' },
+          { name: 'Germany · 3.0%', value: 2.4, valueLabel: 'AUI 2.40' },
+          { name: 'Australia · 2.7%', value: 6.4, valueLabel: 'AUI 6.40 · 1st of 121' },
+          { name: 'Canada · 2.6%', value: 4.13, valueLabel: 'AUI 4.13' },
+        ],
+      },
+    ],
+  },
+  'estatisticas-claude-top10-aui-es': {
+    max: 8,
+    groups: [
+      {
+        label: 'Anthropic Economic Index — orden: volumen de uso; barra: AUI (mayo 2026)',
+        color: '#60a5fa',
+        items: [
+          { name: 'EE. UU. · 20,2 %', value: 3.87, valueLabel: 'AUI 3,87' },
+          { name: 'India · 7,1 %', value: 0.3, valueLabel: 'AUI 0,30 · 104.º de 121' },
+          { name: 'Francia · 4,0 %', value: 3.97, valueLabel: 'AUI 3,97' },
+          { name: 'Reino Unido · 3,5 %', value: 3.35, valueLabel: 'AUI 3,35' },
+          { name: 'Brasil · 3,3 %', value: 0.96, valueLabel: 'AUI 0,96 · 61.º de 121', emphasis: true },
+          { name: 'Japón · 3,3 %', value: 1.91, valueLabel: 'AUI 1,91' },
+          { name: 'Corea del Sur · 3,2 %', value: 3.78, valueLabel: 'AUI 3,78' },
+          { name: 'Alemania · 3,0 %', value: 2.4, valueLabel: 'AUI 2,40' },
+          { name: 'Australia · 2,7 %', value: 6.4, valueLabel: 'AUI 6,40 · 1.º de 121' },
+          { name: 'Canadá · 2,6 %', value: 4.13, valueLabel: 'AUI 4,13' },
+        ],
+      },
+    ],
+  },
+  'estatisticas-claude-top10-aui-it': {
+    max: 8,
+    groups: [
+      {
+        label: "Anthropic Economic Index — ordine: volume d'uso; barra: AUI (mag 2026)",
+        color: '#60a5fa',
+        items: [
+          { name: 'USA · 20,2%', value: 3.87, valueLabel: 'AUI 3,87' },
+          { name: 'India · 7,1%', value: 0.3, valueLabel: 'AUI 0,30 · 104º su 121' },
+          { name: 'Francia · 4,0%', value: 3.97, valueLabel: 'AUI 3,97' },
+          { name: 'Regno Unito · 3,5%', value: 3.35, valueLabel: 'AUI 3,35' },
+          { name: 'Brasile · 3,3%', value: 0.96, valueLabel: 'AUI 0,96 · 61º su 121', emphasis: true },
+          { name: 'Giappone · 3,3%', value: 1.91, valueLabel: 'AUI 1,91' },
+          { name: 'Corea del Sud · 3,2%', value: 3.78, valueLabel: 'AUI 3,78' },
+          { name: 'Germania · 3,0%', value: 2.4, valueLabel: 'AUI 2,40' },
+          { name: 'Australia · 2,7%', value: 6.4, valueLabel: 'AUI 6,40 · 1º su 121' },
+          { name: 'Canada · 2,6%', value: 4.13, valueLabel: 'AUI 4,13' },
+        ],
+      },
+    ],
+  },
+  'estatisticas-claude-top10-aui-he': {
+    max: 8,
+    groups: [
+      {
+        label: 'Anthropic Economic Index — סדר: נפח שימוש; עמודה: AUI (מאי 2026)',
+        color: '#60a5fa',
+        items: [
+          { name: 'ארה״ב · 20.2%', value: 3.87, valueLabel: 'AUI 3.87' },
+          { name: 'הודו · 7.1%', value: 0.3, valueLabel: 'AUI 0.30 · מקום 104 מתוך 121' },
+          { name: 'צרפת · 4.0%', value: 3.97, valueLabel: 'AUI 3.97' },
+          { name: 'בריטניה · 3.5%', value: 3.35, valueLabel: 'AUI 3.35' },
+          { name: 'ברזיל · 3.3%', value: 0.96, valueLabel: 'AUI 0.96 · מקום 61 מתוך 121', emphasis: true },
+          { name: 'יפן · 3.3%', value: 1.91, valueLabel: 'AUI 1.91' },
+          { name: 'דרום קוריאה · 3.2%', value: 3.78, valueLabel: 'AUI 3.78' },
+          { name: 'גרמניה · 3.0%', value: 2.4, valueLabel: 'AUI 2.40' },
+          { name: 'אוסטרליה · 2.7%', value: 6.4, valueLabel: 'AUI 6.40 · 1 מתוך 121' },
+          { name: 'קנדה · 2.6%', value: 4.13, valueLabel: 'AUI 4.13' },
+        ],
+      },
+    ],
+  },
+
+  /* ── 2. `estatisticas-claude-run-rate` — quem disse cada número ──────────────
+   *
+   * UNIDADE: bilhões de US$. Teto **52** (a barra dos 47 ocupa 90% do eixo,
+   * mesma folga do gráfico `estatisticas-chatgpt-wau`, 1000/1100).
+   *
+   * TRÊS GRUPOS = TRÊS NATUREZAS DE DECLARAÇÃO, não três fontes quaisquer:
+   * comunicado assinado pela empresa / vazamento a imprensa / declaração sob
+   * pena de perjúrio. A cronologia vive na ordem das barras DENTRO de cada
+   * grupo. NÃO fundir os grupos num ranking: o grupo 3 mede OUTRA GRANDEZA
+   * (receita acumulada desde a fundação, o odômetro) — é por isso que a barra
+   * mais curta do gráfico é a única jurada. Velocímetro vs odômetro é a tese
+   * da seção.
+   *
+   * PROCEDÊNCIA (verificada 2026-08-03 a 10, laudos em fontes/):
+   * - 14 = anthropic.com/news/anthropic-raises-30-billion-series-g-funding-…
+   *   (12/fev/2026), literal "annualized revenue run-rate surpassed $14B".
+   * - 30 = anúncio de 6/abr/2026, via cronologia de Simon Willison
+   *   (simonwillison.net/2026/May/29/anthropic/) — NÃO está na página da
+   *   Série H; atribuição corrigida na conferência (item 1 do laudo).
+   * - 47 = anthropic.com/news/series-h (mai/2026).
+   * - 9 e 19 = Bloomberg 3/mar/2026 (lida via Wayback 20260520171717), literal
+   *   "recently surpassed $19 billion… up from $9 billion at the end of 2025".
+   * - 5 = declaração de Krishna Rao (CFO), executada em 9/mar/2026 (Zitron
+   *   circulou 6/mar — errado), caso 3:26-cv-01996 N.D. Cal., Document 6-5,
+   *   literal "exceeding $5 billion to date"; lida na íntegra
+   *   (fontes/cfo-declaration-rao.pdf).
+   */
+  'estatisticas-claude-run-rate': {
+    max: 52,
+    groups: [
+      {
+        label: 'A empresa disse — run rate anualizado, em comunicado assinado',
+        color: '#60a5fa',
+        items: [
+          { name: '12/fev — Série G', value: 14, valueLabel: 'US$ 14 bi' },
+          { name: '6/abr — anúncio', value: 30, valueLabel: 'US$ 30 bi' },
+          { name: '28/mai — Série H', value: 47, valueLabel: 'US$ 47 bi', emphasis: true },
+        ],
+      },
+      {
+        label: "Terceiros disseram — Bloomberg, 'pessoas a par do assunto' (3/mar)",
+        color: '#fbbf24',
+        items: [
+          { name: 'fim de 2025', value: 9, valueLabel: 'US$ 9 bi' },
+          { name: '3/mar/2026', value: 19, valueLabel: "~US$ 19 bi · 'nears $20 billion'" },
+        ],
+      },
+      {
+        label: 'Sob juramento — receita ACUMULADA desde a fundação (o CFO ao tribunal, 9/mar)',
+        color: '#34d399',
+        items: [
+          {
+            name: '9/mar — o CFO',
+            value: 5,
+            valueLabel: '>US$ 5 bi · acumulado desde a fundação',
+            emphasis: true,
+          },
+        ],
+      },
+    ],
+  },
+  'estatisticas-claude-run-rate-en': {
+    max: 52,
+    groups: [
+      {
+        label: 'The company said it — annualized run rate, in signed announcements',
+        color: '#60a5fa',
+        items: [
+          { name: 'Feb 12 — Series G', value: 14, valueLabel: '$14bn' },
+          { name: 'Apr 6 — update', value: 30, valueLabel: '$30bn' },
+          { name: 'May 28 — Series H', value: 47, valueLabel: '$47bn', emphasis: true },
+        ],
+      },
+      {
+        label: "Third parties said it — Bloomberg, 'people familiar with the matter' (Mar 3)",
+        color: '#fbbf24',
+        items: [
+          { name: 'end of 2025', value: 9, valueLabel: '$9bn' },
+          { name: 'Mar 3, 2026', value: 19, valueLabel: "~$19bn · 'nears $20 billion'" },
+        ],
+      },
+      {
+        label: 'Under oath — CUMULATIVE revenue since founding (the CFO in court, Mar 9)',
+        color: '#34d399',
+        items: [
+          {
+            name: 'Mar 9 — the CFO',
+            value: 5,
+            valueLabel: '>$5bn · cumulative since founding',
+            emphasis: true,
+          },
+        ],
+      },
+    ],
+  },
+  'estatisticas-claude-run-rate-es': {
+    max: 52,
+    groups: [
+      {
+        label: 'La empresa lo dijo — run rate anualizado, en comunicado firmado',
+        color: '#60a5fa',
+        items: [
+          { name: '12/feb — Serie G', value: 14, valueLabel: 'US$ 14 000 mill.' },
+          { name: '6/abr — anuncio', value: 30, valueLabel: 'US$ 30 000 mill.' },
+          { name: '28/may — Serie H', value: 47, valueLabel: 'US$ 47 000 mill.', emphasis: true },
+        ],
+      },
+      {
+        label: "Terceros lo dijeron — Bloomberg, 'personas al tanto del asunto' (3/mar)",
+        color: '#fbbf24',
+        items: [
+          { name: 'fines de 2025', value: 9, valueLabel: 'US$ 9 000 mill.' },
+          { name: '3/mar/2026', value: 19, valueLabel: "~US$ 19 000 mill. · 'nears $20 billion'" },
+        ],
+      },
+      {
+        label: 'Bajo juramento — ingresos ACUMULADOS desde la fundación (el CFO, 9/mar)',
+        color: '#34d399',
+        items: [
+          {
+            name: '9/mar — el CFO',
+            value: 5,
+            valueLabel: '>US$ 5 000 mill. · acumulado desde la fundación',
+            emphasis: true,
+          },
+        ],
+      },
+    ],
+  },
+  'estatisticas-claude-run-rate-it': {
+    max: 52,
+    groups: [
+      {
+        label: "L'azienda l'ha detto — run rate annualizzato, in comunicato firmato",
+        color: '#60a5fa',
+        items: [
+          { name: '12/feb — Serie G', value: 14, valueLabel: 'US$ 14 mld' },
+          { name: '6/apr — annuncio', value: 30, valueLabel: 'US$ 30 mld' },
+          { name: '28/mag — Serie H', value: 47, valueLabel: 'US$ 47 mld', emphasis: true },
+        ],
+      },
+      {
+        label: "Terzi l'hanno detto — Bloomberg, 'persone al corrente della questione' (3/mar)",
+        color: '#fbbf24',
+        items: [
+          { name: 'fine 2025', value: 9, valueLabel: 'US$ 9 mld' },
+          { name: '3/mar/2026', value: 19, valueLabel: "~US$ 19 mld · 'nears $20 billion'" },
+        ],
+      },
+      {
+        label: 'Sotto giuramento — ricavi CUMULATI dalla fondazione (il CFO in tribunale, 9/mar)',
+        color: '#34d399',
+        items: [
+          {
+            name: '9/mar — il CFO',
+            value: 5,
+            valueLabel: '>US$ 5 mld · cumulati dalla fondazione',
+            emphasis: true,
+          },
+        ],
+      },
+    ],
+  },
+  'estatisticas-claude-run-rate-he': {
+    max: 52,
+    groups: [
+      {
+        label: 'החברה אמרה — run rate שנתי, בהודעה חתומה',
+        color: '#60a5fa',
+        items: [
+          { name: '12 בפבר׳ — סבב G', value: 14, valueLabel: '14 מיליארד דולר' },
+          { name: '6 באפר׳ — הכרזה', value: 30, valueLabel: '30 מיליארד דולר' },
+          { name: '28 במאי — סבב H', value: 47, valueLabel: '47 מיליארד דולר', emphasis: true },
+        ],
+      },
+      {
+        label: 'צדדים שלישיים אמרו — Bloomberg, "מקורבים לעניין" (3 במרץ)',
+        color: '#fbbf24',
+        items: [
+          { name: 'סוף 2025', value: 9, valueLabel: '9 מיליארד דולר' },
+          { name: '3 במרץ 2026', value: 19, valueLabel: 'כ־19 מיליארד דולר' },
+        ],
+      },
+      {
+        label: 'בשבועה — הכנסות מצטברות מאז הייסוד (סמנכ״ל הכספים בבית המשפט, 9 במרץ)',
+        color: '#34d399',
+        items: [
+          {
+            name: '9 במרץ — ה־CFO',
+            value: 5,
+            valueLabel: 'יותר מ־5 מיליארד דולר · מצטבר מאז הייסוד',
+            emphasis: true,
+          },
+        ],
       },
     ],
   },

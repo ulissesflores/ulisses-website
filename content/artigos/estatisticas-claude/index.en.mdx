@@ -1,0 +1,389 @@
+---
+title: 'Brazil ranks 5th in the world in Claude usage — and that means less than it seems'
+slug: estatisticas-claude
+category: artigos
+date: '2026-08-10'
+language: en
+---
+
+Brazil is the fifth country in the world by Claude usage. The figure does not come from a
+consultancy, a scraping panel or "people familiar with the matter": it comes from the
+microdata Anthropic itself publishes, by country, month by month, under a CC-BY licence,
+with a replication notebook. I downloaded the dataset and measured it.
+
+The same measurement says a second thing, which no headline carries: in per-capita
+**intensity** of use, Brazil is **61st** out of 121 countries. We are at the top because we
+are big, not because we are intense. That distinction — volume is not intensity — is the key
+to this entire article, because its money version (**run rate is not revenue**) is the
+confusion propping up nearly every "Claude statistics" page published in 2026.
+
+I studied the most complete of those pages — a [German compilation](https://web.archive.org/web/20260418232505/https://www.gradually.ai/claude-statistiken/)
+from April 2026, with dozens of numbers on revenue, valuation, users and benchmarks — and
+checked every source I could open: the primary ones plus 21 community links, one by one.
+What follows is the result of that check, including what it turned up against me.
+
+---
+
+## The only primary data on Claude usage is the one nobody cites
+
+The German page admits it, honestly: *"unlike OpenAI, Anthropic does not publish detailed
+user numbers"*. It is true — and the consequence is that **none of the headline numbers
+comes from the company**. Each one has a different producer, with a different method:
+
+| The number in circulation | Who actually produced it | Method |
+|---|---|---|
+| Revenue ("US$ 19 billion run rate") | Bloomberg | leak: *"people familiar with the matter"* |
+| Users ("18 to 30 million") | SimilarWeb, Sensor Tower | scraping and panel; TechCrunch sums it up: *"Anthropic hasn't disclosed"* |
+| Enterprise share ("32%") | Menlo Ventures | **survey** — people answering questions |
+| Enterprise spend ("65%") | Ramp | corporate cards of Ramp's American customers |
+| Claude Code ("US$ 2.5 billion") | "Yahoo Finance, Uncover Alpha" — a Substack analyst | echo: the number is in Anthropic's [official announcement](https://www.anthropic.com/news/anthropic-raises-30-billion-series-g-funding-380-billion-post-money-valuation), in so many words |
+
+The last row is the most revealing: the page credits to a Substack the only number in the
+table the company actually published. They cited the echo instead of the source. (Claude
+Code's product numbers — models, usage, autonomy — are left for an article of their own.)
+
+Meanwhile, there is one figure Anthropic **does publish**: the
+[Anthropic Economic Index](https://www.anthropic.com/economic-index), with usage microdata
+by country, open methodology, a downloadable dataset on
+[Hugging Face](https://huggingface.co/datasets/Anthropic/EconomicIndex) under CC-BY and
+replication notebooks. It is the only figure on the list anyone can reproduce — and the page
+cites it **once**, in passing, for a Singapore number. The only primary, documented figure
+gets one line; the leaked run rate gets the headline.
+
+The cost of ignoring the primary source has a numerical example. An American aggregator
+claims "245 million monthly active users as of mid-2026", crediting a Sensor Tower report
+that is paid and closed — I could not confirm the report contains the number. Another, using
+SimilarWeb, said "~20 million" in September 2025. **A twelvefold gap**, neither primary, and
+a suspicious pattern in the larger aggregator: 245 million users x US$ 192 per user ≈ US$ 47
+billion of "ARR" — the three numbers close perfectly against each other, which suggests two
+of them were derived from the third, worked backwards.
+
+---
+
+## 5th in volume, 61st in intensity: Brazil uses Claude in proportion to its size
+
+I downloaded the dataset from the Economic Index's June 2026 release (219 MB of CSV) and
+measured Brazil with a 73-line script. The numbers for the month of May 2026:
+
+| Measure | Aug 2025 | May 2026 |
+|---|---|---|
+| Share of global usage | 3.68% | **3.33%** |
+| Rank by volume | 3rd among identified countries | **5th of 121** |
+| **AUI** (share of usage ÷ share of population 15-64) | 0.93 | **0.96** |
+| Rank by AUI | 69th of 194 | **61st of 121** |
+| Usage declared as work | — | **57.4%** |
+| Automation vs. augmentation | — | 51.2% / 48.8% |
+
+The **AUI** (Anthropic AI Usage Index) is a ratio: Brazil's share of Claude usage divided by
+Brazil's share of the world's working-age population. AUI = 1 means using exactly in
+proportion to your own size. Brazil scores **0.96** — and that is what the 5th place does
+not tell you: we are among the world's largest volumes because we are a country of 200
+million people, not because the average Brazilian uses Claude more than the rest of the
+world does.
+
+The top 10 by volume carries the entire spectrum of that distinction:
+
+<CountryBarsChart
+  dataset="estatisticas-claude-top10-aui-en"
+  title="The top 10 countries by volume, measured by the intensity ruler"
+  subtitle="AUI = share of usage ÷ share of population 15-64 · May 2026"
+  source="Source: Anthropic Economic Index, Jun 26, 2026 (CC-BY) — measured by the author; 121 countries cover 87.5% of usage."
+  description="Horizontal bars: the ten countries with the largest Claude usage volume in May 2026, ordered by volume, each bar showing that country's AUI. The United States leads in volume with an AUI of 3.9; India is 2nd in volume with an AUI of 0.30; Brazil is 5th in volume with an AUI of 0.96 — a short bar amid long-bar neighbours. Australia, 9th in volume, has the world's highest AUI: 6.4."
+/>
+
+**India is the world's 2nd-largest volume with an AUI of 0.30** (104th of 121); **Australia
+is the 9th volume with an AUI of 6.40 — 1st in the world in intensity**. Volume measures
+size; AUI measures behaviour. They are different rulers, and a ranking that shows only one
+of them is hiding the other half of the information.
+
+Three caveats any such comparison requires — and that statistics pages never make:
+
+1. **The denominator is not 100%.** The 121 countries published in the 2026 release add up
+   to **87.5%** of global usage; the rest has no publicly attributed country. In the 2025
+   release the hole was explicit: a `not_classified` bucket holding **15.66%** of all usage.
+2. **Rank across releases is not a clean comparison.** The two releases have different
+   coverage (194 vs 121 countries) and different windows (one week of August 2025 vs the
+   full month of May 2026). Brazil's "3rd -> 5th" says less than it seems. The **AUI** does
+   compare — it is a ratio against population, immune to how many countries get published.
+3. **The stable measure is intensity.** In ten months Brazil's AUI went from 0.93 to 0.96 —
+   practically flat, and it is the most stable measure in the whole set. What shifts
+   position is the ranking around it, not Brazilian behaviour.
+
+And what do Brazilians use it for? **57.4% of usage is declared as work** — according to
+Anthropic's own geography report, Brazil and the Balkans have the highest proportion of
+professional usage in the world. The microdata confirms the prose:
+
+<WaffleChart
+  dataset="estatisticas-claude-brasil-waffle-en"
+  title="What Brazil uses Claude for"
+  subtitle="1,000 dots, 1 dot = 0.1% of Brazilian usage · May 2026"
+  source="Source: Anthropic Economic Index, Jun 26, 2026 (CC-BY) — author's measurement on the open dataset."
+  description="Waffle chart with 1,000 dots split into three groups: 57.4% of Brazilian Claude usage is declared as work, 31.1% as personal use and 11.5% as study."
+/>
+
+> **Methodological note.** Every number in this section comes out of the open
+> `Anthropic/EconomicIndex` dataset (June 26, 2026 release), measured by a 73-line script
+> that accompanies this article — the same ruler at both ends, never a prose summary checked
+> against microdata. The AUI uses working-age population (15-64) as its denominator, per the
+> definition Anthropic publishes. Reproducing it takes two commands: download the CSV and
+> run the script.
+
+---
+
+## Run rate is not revenue — and the page knows it
+
+The German page **defines** run rate correctly: annual revenue extrapolated from the current
+month. Two sections later, it divides that run rate by headcount and calls the result
+"revenue per employee" (US$ 4.2 million per head), to conclude that Anthropic is "far more
+efficient than the traditional giants". Further down, it divides valuation by run rate (20x
+vs OpenAI's 29x) and concludes that Anthropic "operates more efficiently" — a valuation
+multiple does not measure operational efficiency; it measures what investors pay per unit of
+extrapolated revenue. And the denominator mixes rulers: Anthropic's US$ 380 billion was
+**post-money**; OpenAI's US$ 730 billion, as [the ChatGPT statistics article](/artigos/estatisticas-chatgpt)
+showed, was **pre-money**. The calculation compares an orange with a peeled orange.
+
+What "run rate" means in practice, nobody has explained better than Reuters Breakingviews
+(via [Simon Willison](https://simonwillison.net/2026/May/31/anthropic-run-rate/)): for API
+consumption, Anthropic takes the **last 28 days and multiplies by 13**; for subscriptions,
+the current month times 12. "Annualised" is not the year — it is the present projected as if
+growth stopped today, at a company growing more than 10x a year.
+
+The 2026 run rate timeline, with the ruler of **who** said each number:
+
+<CountryBarsChart
+  dataset="estatisticas-claude-run-rate-en"
+  title="Who said each number: Anthropic's run rate in 2026"
+  subtitle="US$ billions · colour separates company announcement, press leak and sworn statement"
+  source="Sources: Anthropic announcements, Simon Willison's timeline, Bloomberg and the CFO's court declaration (Mar 9, 2026)."
+  description="Horizontal bars in three groups. Group 1, the company said: US$ 14 billion in February, US$ 30 billion in April, US$ 47 billion in May — all annualised run rate. Group 2, third parties said: US$ 9 billion at the end of 2025 and about US$ 19 billion in March, both via Bloomberg citing people familiar with the matter. Group 3, under oath: more than US$ 5 billion of revenue accumulated since the founding, declared by the CFO to the court in March 2026 — a different quantity, and the shortest bar in the chart."
+/>
+
+The sequence is real: **US$ 14 billion** signed by the company on
+[February 12](https://www.anthropic.com/news/anthropic-raises-30-billion-series-g-funding-380-billion-post-money-valuation);
+*"nears $20 billion"* via [Bloomberg](https://web.archive.org/web/20260520171717/https://www.bloomberg.com/news/articles/2026-03-03/anthropic-nears-20-billion-revenue-run-rate-on-claude-code-boom)
+on March 3 (*"recently surpassed $19 billion… up from $9 billion at the end of 2025"*);
+**US$ 30 billion** announced on April 6, per
+[Willison's timeline](https://simonwillison.net/2026/May/29/anthropic/); **US$ 47 billion**
+on the [Series H page](https://www.anthropic.com/news/series-h), in May. None of it is a
+lie — Willison is blunt: lying to investors who had just put in US$ 65 billion would be
+securities fraud.
+
+But in the middle of that sequence sits a number of a different nature. On **March 9,
+2026**, in Anthropic's case against the U.S. Department of War (case 3:26-cv-01996, N.D.
+California), CFO Krishna Rao declared, under penalty of perjury: the company has generated
+revenue *"exceeding **$5 billion** to date"* — **since its founding**. In the same window in
+which the public run rate was ~US$ 19-20 billion. The same filing records more than **US$ 10
+billion** already spent on training and inference, and more than **US$ 60 billion** raised
+in outside capital.
+
+**That is not a contradiction — it is the definition.** Davi Ottenheimer, who analysed the
+filing at [flyingpenguin](https://www.flyingpenguin.com/?p=71183), gave the exact image: run
+rate is the **speedometer**; cumulative revenue is the **odometer**. At a company growing
+10x a year, the speedometer reading 19 billion a year with the odometer at 5 billion is
+arithmetic, not scandal: nearly all the revenue in the company's history happened in the
+last few months. Whoever publishes the ">US$ 5 billion" as "they caught Anthropic lying" is
+committing exactly the error this article describes — swapping a measure of accumulation for
+a measure of pace.
+
+The best the sceptics have is not scandal; it is a ruler. Jason Lemkin
+([SaaStr](https://www.saastr.com/by-year-end-anthropic-will-have-crossed-the-second-largest-software-company-in-the-world-by-revenue/)):
+the US$ 47 billion is *a strong month annualised* — calendar-2026 revenue should land at
+US$ 20-26 billion, *top five in software, not number two*. Ottenheimer points out that the
+public curve implies ~US$ 6.7 billion accumulated through March against the sworn ">5
+billion" — a gap that could be 25-35% overstatement or simply ARR counting contracts signed
+before the money comes in. And Ed Zitron, the harshest of the critics, circulated the CFO's
+declaration with the wrong date — March 6, when the filing was executed on the 9th — a small
+error, but the kind of error this fact-check exists to catch: **I cited the filing, not the
+blog that summarised it.**
+
+---
+
+## When "32%" means "150 people answered"
+
+The enterprise market share is the German page's most-cited number: "Anthropic 32%, OpenAI
+25%". The real chain of attribution: the page credits TechCrunch, which only **reported**
+it; the number is **Menlo Ventures'** — and it is an **opinion survey**. The edition used
+(Mid-Year 2025) heard from **150 technical leaders**. "32% share" means: out of 150 people
+who answered a form, a third said they spend more with Anthropic.
+
+Worse: by the time the page was published, in April 2026, Menlo had already released the
+[new edition](https://menlovc.com/perspective/2025-the-state-of-generative-ai-in-the-enterprise/)
+four months earlier (495 respondents, November 2025): Anthropic at **40%** of enterprise LLM
+spend, OpenAI 27%, Google 21% — and, in coding, Anthropic at **54%** against the runner-up's
+21%. The page used the stale edition of the source it presented as measured fact.
+
+And the page's chart makes an error neither source made: **it merges two incompatible
+series**. Ramp's (corporate-card spend by Ramp's customers: Anthropic from ~10% to >65% of
+combined spend) and Menlo's (a survey about the API market: from 12% to 32%) — with the
+**same** "OpenAI: from 50% to 25%" pair appearing in both, over different time windows,
+credited to different sources. A corporate card measures the spending of whoever uses Ramp;
+a survey measures the answers of whoever got asked. Stacking the two into one chart only
+produces a curve no instrument measured.
+
+The practical rule: **a survey introduces itself with its N.** "40% (survey of 495 American
+decision-makers, self-reported)" is information; "40% of the market" is precision fiction.
+
+---
+
+## The right table, read in the wrong order — the mistake I made too
+
+The page's only mention of the Economic Index says: the highest per-capita usage is in
+*"Singapore (4.6x above average), followed by Canada (2.9x), Israel and Australia"*. I
+measured it in the dataset of the release it cites (2025, 194 countries):
+
+| Country | AUI | Actual rank |
+|---|---|---|
+| **Israel** | **7.0** | **1st** |
+| Monaco | 4.9 | 2nd |
+| Singapore | 4.6 | 3rd |
+| Australia | 4.1 | 4th |
+| Canada | 2.9 | **12th** |
+
+**All four values on the page exist and check out.** The defect is one of ordering:
+Singapore appears as the highest (it is 3rd), Canada as second (it is 12th), and Israel —
+1st in the world, by a wide margin — is cited third, with no number. They read the right
+table and reordered it wrong.
+
+I record what the check turned up against me: my first reading of that passage concluded
+that Canada's "2.9x" had been **made up**, because Canada did not appear in my top 5. That
+reading was wrong. The value exists — 2.914, exactly the "2.9x" — what does not exist is the
+position the page gives it. I only found out by measuring the dataset instead of trusting my
+own re-reading. The ordering error is the easiest one to commit because the shallow check —
+"do the numbers exist?" — passes.
+
+Two conceptual defects complete the picture. "4.6x **above average**" misdescribes the
+instrument: AUI is not deviation from a mean, it is a ratio against population (Singapore
+uses 4.6x the proportion of its own size, not "4.6x the average"). And the top of the AUI
+ranking is **noisy by construction**: Monaco, Luxembourg, Iceland and Malta show up there
+because they are tiny — in a small population, few people move the ratio a lot. Reading the
+AUI as a "ranking of the most AI-advanced countries" is misreading the instrument — it
+measures relative intensity, with all the noise small denominators bring.
+
+---
+
+## What you can check today with no intermediary
+
+To be fair to the page: a good part of what it publishes **matches the primary source**.
+Prices, above all — checked against the [official table](https://claude.com/pricing) in
+August 2026:
+
+| Page's claim | Primary today | Verdict |
+|---|---|---|
+| Pro at US$ 17/month on the annual plan | US$ 17 annual, US$ 20 monthly | ✅ |
+| Max 5x at US$ 100, Max 20x at US$ 200 | same | ✅ |
+| Sonnet 4.6 at US$ 3 (input) / US$ 15 (output) per MTok | same | ✅ |
+| US$ 30 billion Series G, US$ 380 billion valuation **post-money** | Feb 12 announcement — correct label | ✅ |
+| IPO: October 2026, Goldman + JPMorgan | confidential S-1 on Jun 1, 2026, Nasdaq target | ✅ on the calendar |
+
+The problem shows up in what the page claims **against itself**:
+
+1. **The context window has three answers on the same page.** 200K tokens in two sections,
+   "1M standard" in two others, "1M in beta" in a third. Anthropic's documentation, at the
+   time, gave 1M for Opus 4.6 and Sonnet 4.6 — two of the three answers were wrong, and the
+   reader has no way of knowing which.
+2. **A sentence that contradicts itself on its own:** *"GPT-5.4 is far more expensive on
+   output (US$ 15, against Sonnet 4.6's US$ 15)"*. Fifteen against fifteen.
+3. **The decimal benchmark the source does not publish.** The page compares Opus 4.6 (80.8%
+   on SWE-bench) with Opus 4.5 (80.9%) — the newer model scoring **lower**, inside a
+   narrative of progression. I went to the primary sources to reproduce the pair and **could
+   not**: the benchmark tables in both official announcements are images, and the only
+   textual number is a footnote on the 4.6 — 81.42%, *with prompt modification*. The page
+   compares to a tenth of a point what the source does not publish as a comparable pair.
+4. **"#1 on all three LMSYS leaderboards at the same time" — Anthropic never claimed
+   that.** Zero mentions of Arena or leaderboard in the Opus 4.6 announcement. The
+   leaderboard's April snapshot is not accessible; I cannot prove the claim was false on
+   that date — I can state it was not Anthropic's and that today it is not true.
+5. **The knowledge-cutoff table mixes two definitions.** Anthropic publishes two cutoffs per
+   model — `reliable knowledge` and `training data` — and the page uses now one, now the
+   other, in the same table: Sonnet 4.5 with the reliable one, Opus 4.6 with the training
+   one, Opus 4.5 with a date that is neither.
+
+The pattern across the five failures is the same: all of them are checkable **today, for
+free, with no intermediary** — in the documentation and the public announcements. What
+requires a leak, the page handles with care; what only requires opening the source, nobody
+opened.
+
+---
+
+## A four-month half-life
+
+The page is dated April 3, 2026. Between April and August:
+
+| April 2026 | August 2026 |
+|---|---|
+| Valuation: US$ 380 billion (Series G) | **US$ 965 billion** post-money (Series H, US$ 65 billion, May) |
+| Run rate: ~US$ 19 billion | **US$ 47 billion** (the company, May) |
+| IPO "expected at US$ 400-500 billion" | the **private** mark is already nearly double that; confidential S-1 on Jun 1, Nasdaq target in October |
+| Frontier model: Opus 4.6 | **five generations later**: Opus 4.7, Opus 4.8, Sonnet 5, Fable 5, Opus 5 |
+| Claude Code on the Pro plan | in April, subscribers noticed its removal from new accounts — Anthropic replied it was a *"small test on ~2% of new prosumer signups"* |
+
+The Claude Code episode earns its place for the chain of attribution, which the community
+harvest had wrong: the removal was reported by a user, George Pu; Anthropic's head of
+growth, [Amol Avasare](https://x.com/TheAmolAvasare/status/2046724659039932830), published
+only the walk-back — *"small test on ~2% of new prosumer signups. Existing Pro and Max
+subscribers aren't affected"*. Even the product's perimeter changes on a scale of weeks, and
+by A/B test.
+
+None of this is the German author's fault — in April, April's numbers were the numbers. The
+fault is the genre's: **a "2026 statistics" page has a half-life of weeks**, and the
+format — dozens of numbers, a single date at the top — ages as a block and in silence. The
+July reader reads March numbers believing they are reading the present.
+
+---
+
+## What I would do with this
+
+**Ask who signed the number before asking what the number is.** The same quantity —
+"Anthropic's revenue" — circulated in 2026 as US$ 14 billion (the company, in an
+announcement), ~US$ 19 billion (Bloomberg, via leak), US$ 47 billion (the company, a strong
+month's run rate) and >US$ 5 billion (the CFO, under oath, measuring something else). None
+is a lie; each answers a different question. Whoever does not know which question a number
+answers does not know what the number says.
+
+**Separate the speedometer from the odometer in every revenue figure.** Run rate is
+instantaneous pace, projected; revenue is what came in. The distance between the two is
+proportional to growth — and at a company growing 10x a year, it is enormous and **normal**.
+Distrust whoever presents the distance as a smoking gun, and whoever presents the
+speedometer as an odometer.
+
+**If the subject is Claude usage, go to the only open data there is.** The Economic Index is
+CC-BY, has a replication notebook and microdata by country. Every Brazilian number in this
+article comes out of a 73-line script over a public CSV — anyone can reproduce it in two
+commands. That is more than can be said of any other statistic cited here, and it is why
+Brazil-5th-in-volume-61st-in-intensity is the most solid number in this text.
+
+And the next time a statistics page shows up in your feed, the cheap test is this: find
+**one** claim that is free to check — a price, a context window — and check it. If the
+author did not open the source that costs nothing, the ruler for everything else is set.
+
+---
+
+## Sources
+
+- Primary usage data: [Anthropic Economic Index](https://www.anthropic.com/economic-index) ·
+  [dataset on Hugging Face](https://huggingface.co/datasets/Anthropic/EconomicIndex) (CC-BY,
+  June 26, 2026 release)
+- Anthropic announcements: [Series G, US$ 30bn / US$ 380bn post-money, Feb 12, 2026](https://www.anthropic.com/news/anthropic-raises-30-billion-series-g-funding-380-billion-post-money-valuation) ·
+  [Series H, US$ 65bn / US$ 965bn post-money, May 2026](https://www.anthropic.com/news/series-h)
+- Declaration by CFO Krishna Rao (Mar 9, 2026), case 3:26-cv-01996 (N.D. Cal.),
+  *Anthropic PBC v. U.S. Department of War*: [CourtListener, Document 6-5](https://www.courtlistener.com/docket/71812702/anthropic-pbc-v-us-department-of-war/)
+- Run rate timeline and mechanics: [Simon Willison, May 29](https://simonwillison.net/2026/May/29/anthropic/) ·
+  [May 31](https://simonwillison.net/2026/May/31/anthropic-run-rate/)
+- Press: [Bloomberg, Mar 3, 2026](https://web.archive.org/web/20260520171717/https://www.bloomberg.com/news/articles/2026-03-03/anthropic-nears-20-billion-revenue-run-rate-on-claude-code-boom) ·
+  [TechCrunch, Mar 28, 2026](https://techcrunch.com/2026/03/28/anthropics-claude-popularity-mapped-charted/)
+- Enterprise survey: [Menlo Ventures, State of Generative AI in the Enterprise, Dec 2025](https://menlovc.com/perspective/2025-the-state-of-generative-ai-in-the-enterprise/)
+- Sceptics and rulers: [Jason Lemkin / SaaStr](https://www.saastr.com/by-year-end-anthropic-will-have-crossed-the-second-largest-software-company-in-the-world-by-revenue/) ·
+  [Davi Ottenheimer / flyingpenguin, Mar 17, 2026](https://www.flyingpenguin.com/?p=71183) ·
+  [Ed Zitron, May 26, 2026](https://www.wheresyoured.at/the-revenge-of-the-business-idiot/) ·
+  [David Gerard / Pivot to AI, Apr 23, 2026](https://web.archive.org/web/20260426221335/https://pivot-to-ai.com/2026/04/23/anthropic-loses-money-faster-more-efficiently/)
+- Page analysed: [gradually.ai/claude-statistiken (Wayback snapshot, Apr 18, 2026)](https://web.archive.org/web/20260418232505/https://www.gradually.ai/claude-statistiken/)
+
+*Verification: Brazil's numbers and the AUI rankings measured by the author on the Economic
+Index's open dataset (June 26, 2026 release) in August 2026; prices checked at
+claude.com/pricing on Aug 3, 2026; announcements, posts and the court filing read in full
+between Aug 3 and 10, 2026 — Bloomberg and Pivot to AI via Wayback Machine snapshots; the
+two tweets cited were checked by direct navigation. I did not read the Wall Street Journal
+article cited by the harvest (paywalled even on the Wayback) — nothing here depends on it. I
+could not verify the April snapshot of the LMSYS leaderboard; the text marks that claim as
+non-reproducible, not as false. The CFO's filing was cited from the court document, not from
+third-party summaries.*
