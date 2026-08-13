@@ -1,0 +1,270 @@
+---
+title: 'Claude Code: the statistic in circulation is 4,000 times smaller than the one anyone can measure'
+slug: estatisticas-claude-code
+category: artigos
+date: '2026-08-11'
+language: en
+---
+
+The most complete statistics page about Claude Code credits its download figures to an npm
+package that, as far as the evidence reaches, never existed. The package it cites returns
+404 on the registry and has zero captures on the Wayback Machine — not even the internet's
+archive saw it go by. The real package, `@anthropic-ai/claude-code`, has a public downloads
+API anyone can query with a single command: **429 million cumulative downloads**, 15.1
+million in the last week alone. The page published "111,000+". The plus sign has never
+worked so hard.
+
+I measured every number in this article straight from the source — npm's API, GitHub's API,
+the Wayback Machine, official announcements, Anthropic's open dataset. This is the sequel
+promised in [the article on Claude's statistics](/artigos/estatisticas-claude): there I said
+Claude Code's product numbers were being left for an article of their own. This is it.
+
+> **Methodological note.** The object of this check is the "Claude Code Statistiken 2026"
+> page from the German blog gradually.ai (Wayback snapshot of May 20, 2026, data labelled
+> "Stand März 2026"), the most structured of the statistics pages in circulation — and, as
+> in the previous article, it pays the price of being the best in its category: it is the
+> one you can actually check. Downloads and stars were measured through the public npm and
+> GitHub APIs on Aug 11, 2026; historical values through Wayback snapshots. Where only a
+> third-party estimate exists, the text says "estimate" and names the third party.
+
+---
+
+## The one number you could actually measure is the one they got most wrong
+
+npm package downloads are the most verifiable datum in the JavaScript ecosystem: the API is
+public, no key, no paywall. It is precisely the number the page gets most wrong:
+
+| What the page publishes | What the public API shows | Factor |
+|---|---|---|
+| "111,000+ cumulative downloads" (Mar 2026) | **44.4 million in March 2026 alone**; 238 million cumulative by then | ~400x for the month, ~2,000x cumulative |
+| Source given: `@anthropics/claude-code` | Package does not exist: 404 on the registry, **0 captures on the Wayback** | — |
+| "22,000+ GitHub stars" (Mar 2026) | **71,847** on Mar 1, 2026, **82,515** on Mar 25, 2026 (Wayback snapshots) | ~3.5x |
+
+The trail back to the origin is visible: an American "AI statistics" aggregator publishes
+the same "111,000+ monthly" and the same "22,000 stars" for March 2026. The German page
+repeats both numbers — and makes one of them worse, promoting "monthly" to "cumulative". It
+is the pattern that has already turned up here twice: aggregator cites aggregator, and the
+number travels the world without anyone running the `curl` that would disprove it in ten
+seconds.
+
+The full monthly series, measured from npm's API:
+
+<CountryBarsChart
+  dataset="estatisticas-claude-code-npm-mensal-en"
+  title="Monthly npm downloads of the official Claude Code package"
+  subtitle="@anthropic-ai/claude-code · Feb 2025 to Jul 2026 · millions/month"
+  source="Source: npm public API (api.npmjs.org), measured by the author on Aug 11, 2026."
+  description="Horizontal bars showing monthly downloads of the official Claude Code package on npm, from February 2025 to July 2026. The series starts at 148,000 in February 2025, crosses 17 million in July 2025 and 44 million in March 2026, and peaks at 49.4 million in April 2026, falling back to the 34-to-46-million range between May and July 2026."
+/>
+
+Two caveats that apply to my measurement as much as to theirs — an article about badly read
+numbers cannot ask for a naive reading of its own:
+
+1. **A download is not a user.** CI pipelines reinstall the package on every build; mirrors
+   count; the same person installs it on three machines. The 429 million measure traction
+   and distribution, not people.
+2. **The ruler is shrinking from below.** The official README now declares npm installation
+   **deprecated** — the recommended path is the native installer, Homebrew or winget, none
+   of which npm can see. The post-April decline in the chart coincides with that migration
+   (that is my hypothesis, and it is recorded as a hypothesis). Which means: from 2026
+   onwards, even the giant number **understates** real usage.
+
+---
+
+## The 906-person survey that became "15,000 developers"
+
+Half the page leans on a real and good source: the Pragmatic Engineer's AI tooling survey,
+from February 2026. The page presents it as "15,000 developers surveyed". The survey's own
+data say something else: **906 respondents**, collected between January 27 and February 17,
+2026 — *"nearly a thousand"*, in the author's own words. The 15,000 is the size of the
+audience invited, not of the sample that answered.
+
+The irony is that the survey did not need inflating. With the honest n, the results are
+already remarkable — and they check out, one by one, against the original publication:
+
+| What the survey measured (n=906) | Result |
+|---|---|
+| "Most loved" AI tool | **Claude Code 46%** — more than double the runner-up (Cursor, 19%); GitHub Copilot, 9% |
+| Among those who use coding agents regularly | **71% use Claude Code** (Copilot 46%, Cursor 39%) |
+| Adoption at small companies | **75% Claude Code** |
+| Adoption at enterprises (10,000+) | **56% GitHub Copilot** — the corporate contract outweighs preference |
+| Use AI at least weekly | 95% |
+| Use 2 to 4 tools at the same time | 70% |
+
+A sample of 906 engineers who read a technical newsletter has a known bias — people more
+senior and more early-adopter than average. That is a limitation to declare, not to hide
+behind a number 16 times bigger.
+
+---
+
+## The revenue trail: two numbers are signed, the rest is echo
+
+The page estimates Claude Code's revenue at "around US$ 2.5 billion annualised, roughly 13%
+of Anthropic". The path to those numbers is where the difference between primary and echo
+lives — because, unlike what used to be the rule in this category, here there are **two
+official anchors**:
+
+1. **US$ 1 billion in run rate in November 2025** — Anthropic's own announcement, dated
+   December 3: *"In November, Claude Code achieved a significant milestone: just six months
+   after becoming available to the public, it reached $1 billion in run-rate revenue."* Six
+   months after general availability. The German page dates this milestone correctly — I
+   record it, because a fact-check that only finds errors is as suspect as a page that only
+   finds records.
+2. **"More than US$ 2.5 billion" on February 12, 2026** — the Series G announcement, which
+   carries on the same page the company total on the same date: US$ 14 billion of run rate.
+   The honest division is **~18%**, not 13%. The German page's 13% comes from dividing
+   February's Claude Code (US$ 2.5bn) by March's company (US$ 19bn, Bloomberg's number) —
+   numerator and denominator from different months, with run rate growing double digits a
+   month.
+
+<WaffleChart
+  dataset="estatisticas-claude-code-runrate-waffle-en"
+  title="How much of Anthropic's run rate was Claude Code"
+  subtitle="1,000 dots, 1 dot = 0.1% · Series G, Feb 12, 2026"
+  source="Source: official Series G announcement (Anthropic, Feb 12, 2026): US$ 2.5bn of US$ 14bn total — same page, same date."
+  description="Waffle chart with 1,000 dots: 179 highlighted dots represent the roughly 18% of Anthropic's run rate coming from Claude Code on February 12, 2026 (US$ 2.5 billion out of US$ 14 billion), and 821 dots represent the rest of the company's annualised revenue."
+/>
+
+The official announcement also yields the only signed usage numbers: Claude Code's weekly
+active users **doubled** since January 1, 2026, and business subscriptions **quadrupled** —
+relative growth; the absolute user count is something Anthropic does not publish, and every
+"X million WAU" in circulation is a third-party estimate (the most cited one openly declares
+itself a guess: "3 to 6 million" — when in doubt, double the range). After February, the
+official trail specific to Claude Code dries up: the "US$ 8 billion in May" circulating
+among aggregators has no primary source — Series H (May 28, 2026) published the company
+total, US$ 47 billion of run rate, without breaking out the product's slice. And run rate,
+as always: a good month times twelve, not revenue booked.
+
+The indirect signal of demand, that one is public and official: between May and August 2026,
+the @ClaudeDevs account announced successive raises and extensions of **+50% on weekly usage
+limits** ("weekly limits are increasing 50%, now through July 13"; later, "now through
+August 19") — a company with capacity to spare does not spend a quarter managing a queue.
+
+---
+
+## The most unbelievable claim turned out to be true
+
+"4% of all public GitHub commits are written by Claude Code" had every look of a
+social-media legend — and the first time that number came my way, in the previous article, I
+could not find the source. I found it now, and it is double: the estimate is SemiAnalysis's
+(paid analysis, Feb 5, 2026), and **Anthropic itself echoed it** in the official Series G
+announcement, with attribution and all:
+
+> "A recent analysis estimated that 4% of all GitHub public commits worldwide were being
+> authored by Claude Code—double the percentage from just one month prior."
+
+The correct status, then: a third-party estimate, endorsed by the company in an official
+document — not telemetry, not direct measurement. Doubling from 2% to 4% in a month is the
+kind of curve that either becomes history or becomes a ceiling; as of August, no primary
+update from the same authors had been published.
+
+The page's benchmarks, on the other hand, did not survive the same check: "95% correctness
+on the first try", "React dashboard in 47 minutes", "test suite in 23 minutes" and "58% on
+SWE-bench standalone" do not exist in any primary source I was able to locate — not
+Anthropic, not a paper, not a named third-party benchmark. The "95%" that does circulate is
+a different sentence: Benjamin Mann (Anthropic co-founder) saying that 95% **of his own
+code** is written by Claude Code — a personal account, traceable only via a repost, which
+the page turned into a universal quality metric.
+
+---
+
+## "Open source" with a closed LICENSE.md
+
+The page's spec table lists "License: Open Source", and its list of records celebrates
+Claude Code as "one of the few commercially successful tools that are open source". The
+repository's `LICENSE.md` file says, in full:
+
+> © Anthropic PBC. All rights reserved. Use is subject to Anthropic's Commercial Terms of
+> Service.
+
+GitHub's API confirms it: `license: None`. The public repository exists, accepts issues and
+distributes plugins — but the product's code is proprietary, "all rights reserved". Calling
+that open source is not a translation slip; it is getting wrong the one line in the table
+you can verify by reading a fourteen-word file — three of whose words are "all rights
+reserved".
+
+---
+
+## What the primary source says when somebody reads it — and where Brazil comes in
+
+Anthropic publishes open research on Claude Code usage. The June 16, 2026 paper analysed
+**~400,000 sessions** from **~235,000 users** between October 2025 and April 2026 — the
+heaviest users spending 20 hours a week inside the tool. It is the kind of number, with
+methodology and a signature, that statistics pages ignore in favour of an authorless "95%
+correctness".
+
+Geography for Claude Code specifically is something the primary source does not have: the
+Anthropic Economic Index publishes country-level microdata for Claude.ai, and the API slice
+excludes Claude Code from its breakdowns. So I declare exactly what the closest primary
+source allows me to measure — and I measured it, in the open (CC-BY) dataset for May 2026:
+
+<CountryBarsChart
+  dataset="estatisticas-claude-code-ocupacoes-en"
+  title="How much Claude usage is programming work"
+  subtitle="Computer & Mathematical occupations, % of Claude.ai usage · May 2026"
+  source="Source: Anthropic Economic Index, Jun 26, 2026 (CC-BY) — measured by the author; SOC level-1 occupation classification."
+  description="Horizontal bars comparing the share of computer and mathematical occupations in Claude.ai usage in May 2026: Brazil 26.0%, global average 23.8%, United States 21.1%. Brazilian Claude usage is proportionally more concentrated in programming than global usage and than American usage."
+/>
+
+**In Brazil, 26.0% of Claude.ai usage is work from computer and mathematical occupations —
+above the global average (23.8%) and the United States (21.1%).** The country that
+[the previous article](/artigos/estatisticas-claude) showed to be 5th in volume and only
+61st in intensity is, within the usage it does have, one of the most concentrated in
+programming. The honest reading of the two articles together: Brazil does not use much
+Claude per capita — but when it does, it programs.
+
+---
+
+## The fact-check scorecard
+
+| The page's claim | Verdict |
+|---|---|
+| US$ 1bn run rate in 6 months (Nov 2025) | ✅ Checks out — official announcement |
+| ~US$ 2.5bn of Claude Code run rate (early 2026) | ✅ Checks out — Series G, Feb 12, 2026 |
+| "4% of GitHub commits" | ✅ Checks out as an **estimate** — SemiAnalysis, echoed by Anthropic |
+| Survey percentages (46%, 71%, 75%/56%) | ✅ Check out — but n=906, not "15,000" |
+| "~13% of Anthropic's revenue" | ❌ Mixes February with March; on the same date it was ~18% |
+| "111,000+ cumulative npm downloads" | ❌ The package cited does not exist; the real one: 238 million by March, 429 million today |
+| "22,000+ GitHub stars (Mar 2026)" | ❌ It was 71,847-82,515 in March (Wayback) |
+| "License: Open Source" | ❌ "All rights reserved", with Commercial Terms |
+| "95% correctness" / "47 min" / "23 min" / "SWE-bench 58%" | ⚠️ No locatable primary source |
+| "US$ 8bn in May 2026" (aggregators) | ⚠️ No primary source; Series H does not break out the slice |
+
+Four check out, four are wrong, two have no source that would allow a verdict. The detail
+that organises the scorecard: **the errors all point in the same direction — downwards.**
+The page understated downloads by three orders of magnitude, stars by 3.5x, the revenue
+share by five points. The real product, measurable through a public API, is bigger than the
+product described by the page that existed to promote it.
+
+---
+
+## What I would do with this
+
+Before citing any AI-tool statistic, three checks that cost almost nothing: does the figure
+have a **named producer** (company? survey? aggregator?) — and is the producer cited the
+origin or the echo? Is the number **measurable through a public API** (npm, GitHub, an open
+dataset)? If it is, measure it: it is ten seconds of `curl`, and in this article that step
+disproved the figure three times. And does the denominator match the numerator — same date,
+same ruler? It was that third question that brought down the "13%".
+
+The rest — "X% correctness", "dashboard in N minutes" — treat as what it is: an orphan
+number. If nobody signs it, nobody measured it.
+
+---
+
+## Sources
+
+- [Anthropic — announcement of Dec 3, 2025](https://www.anthropic.com/news/anthropic-acquires-bun-as-claude-code-reaches-usd1b-milestone) — Claude Code's US$ 1bn milestone (Nov 2025)
+- [Anthropic — Series G, Feb 12, 2026](https://www.anthropic.com/news/anthropic-raises-30-billion-series-g-funding-380-billion-post-money-valuation) — US$ 2.5bn Claude Code, US$ 14bn total, WAU 2x, "4%"
+- [Pragmatic Engineer — AI Tooling Survey 2026](https://newsletter.pragmaticengineer.com/p/ai-tooling-2026) — n=906, Jan 27 - Feb 17, 2026
+- [npm public API](https://api.npmjs.org/downloads/range/2025-02-22:2026-08-09/@anthropic-ai/claude-code) — downloads measured on Aug 11, 2026
+- [anthropics/claude-code repository](https://github.com/anthropics/claude-code) — stars, README (npm deprecated), LICENSE.md
+- [Anthropic Economic Index](https://www.anthropic.com/economic-index) — open dataset (CC-BY) on [Hugging Face](https://huggingface.co/datasets/Anthropic/EconomicIndex)
+- [Anthropic — research on Claude Code usage, Jun 16, 2026](https://www.anthropic.com/research/claude-code-expertise) — ~400,000 sessions, ~235,000 users
+- [Page checked — gradually.ai via Wayback, snapshot of May 20, 2026](https://web.archive.org/web/20260520192400/https://www.gradually.ai/claude-code-statistiken/)
+
+> **Verification:** download, star and licence figures measured by the author on Aug 11,
+> 2026 against the public npm and GitHub APIs; historical values through Wayback Machine
+> snapshots; revenue and usage checked against the official Anthropic announcements listed
+> above; survey percentages checked against the original publication. What could not be
+> verified is marked as such in the text.

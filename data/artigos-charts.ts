@@ -338,6 +338,59 @@ export const waffleDatasets: Record<string, WaffleDataset> = {
       { label: 'לימודים', sublabel: '11.5% · 115 נקודות', color: '#fbbf24', count: 115 },
     ],
   },
+  /* ── 3. `estatisticas-claude-code-runrate-waffle` — a fatia, na mesma data ────
+   *
+   * UNIDADE: pontos. 1.000 pontos, 1 ponto = 0,1% do run rate anualizado da
+   * Anthropic. A grade fecha em 20 linhas cheias de 50.
+   *
+   * POR QUE ESTE GRÁFICO EXISTE: a página conferida publica "~13%" dividindo o
+   * Claude Code de FEVEREIRO pela empresa de MARÇO. O waffle mostra a divisão com
+   * numerador e denominador da MESMA data e da MESMA página oficial — é a figura
+   * que torna visível o erro de régua, não o resultado dele.
+   *
+   * A ARITMÉTICA FECHA NOS PRÓPRIOS PONTOS: 179 ÷ 1.000 = 17,9% ≈ os 2,5 ÷ 14 =
+   * 17,86% do comunicado. 179 + 821 = 1.000.
+   *
+   * PROCEDÊNCIA (uma fonte só, conferida em 11/08/2026): anúncio oficial da
+   * Série G, Anthropic, 12/02/2026 — "more than $2.5 billion" de run rate do
+   * Claude Code e US$ 14 bilhões de run rate da empresa, mesma página, mesma
+   * data. Depois de fevereiro a Anthropic para de abrir a fatia do produto: a
+   * Série H (28/05/2026) publica só o total da empresa (US$ 47 bi). Por isso o
+   * gráfico é datado no subtítulo — ele NÃO é a fatia de hoje.
+   *
+   * PALETA: reuso exato das cores já validadas (CVD) nos waffles anteriores;
+   * azul = o grupo-tese (Claude Code), cinza-ardósia = o grupo recessivo.
+   */
+  'estatisticas-claude-code-runrate-waffle': {
+    categories: [
+      { label: 'Claude Code', sublabel: '179 pontos · US$ 2,5 bi', color: '#60a5fa', count: 179 },
+      { label: 'Resto do run rate', sublabel: '821 pontos · US$ 11,5 bi', color: '#64748b', count: 821 },
+    ],
+  },
+  'estatisticas-claude-code-runrate-waffle-en': {
+    categories: [
+      { label: 'Claude Code', sublabel: '179 dots · US$2.5bn', color: '#60a5fa', count: 179 },
+      { label: 'Rest of run rate', sublabel: '821 dots · US$11.5bn', color: '#64748b', count: 821 },
+    ],
+  },
+  'estatisticas-claude-code-runrate-waffle-es': {
+    categories: [
+      { label: 'Claude Code', sublabel: '179 puntos · 2500 mill.', color: '#60a5fa', count: 179 },
+      { label: 'Resto del run rate', sublabel: '821 puntos · 11 500 mill.', color: '#64748b', count: 821 },
+    ],
+  },
+  'estatisticas-claude-code-runrate-waffle-it': {
+    categories: [
+      { label: 'Claude Code', sublabel: '179 punti · 2,5 mld $', color: '#60a5fa', count: 179 },
+      { label: 'Resto del run rate', sublabel: '821 punti · 11,5 mld $', color: '#64748b', count: 821 },
+    ],
+  },
+  'estatisticas-claude-code-runrate-waffle-he': {
+    categories: [
+      { label: 'Claude Code', sublabel: '179 נקודות · 2.5 מיליארד $', color: '#60a5fa', count: 179 },
+      { label: 'שאר ה־run rate', sublabel: '821 נקודות · 11.5 מיליארד $', color: '#64748b', count: 821 },
+    ],
+  },
 };
 
 /* ── Barras por país ─────────────────────────────────────────────────── */
@@ -1773,6 +1826,272 @@ export const countryBarsDatasets: Record<string, CountryBarsDataset> = {
             valueLabel: 'יותר מ־5 מיליארד דולר · מצטבר מאז הייסוד',
             emphasis: true,
           },
+        ],
+      },
+    ],
+  },
+  /* ── 1. `estatisticas-claude-code-npm-mensal` — o número que dava para medir ──
+   *
+   * UNIDADE: MILHÕES de downloads no mês. 18 meses fechados, fev/2025 a jul/2026.
+   *
+   * TETO **60**, não 50: o `valueLabel` é desenhado DEPOIS do fim da barra, e o
+   * rótulo de março/2026 carrega a comparação com a página conferida ("a página
+   * dizia 111 mil") — a 50 ele sairia do viewBox. A 60, a maior barra (abr/2026)
+   * ainda ocupa 82% do eixo e sobram ~145px para o rótulo mais longo.
+   *
+   * ORDEM = TEMPO, não grandeza: é uma série mensal, o crescimento é o gráfico.
+   * UM grupo só: uma fonte, um método, uma cor.
+   *
+   * ÊNFASE em mar/2026 porque é o mês que a página alemã declara medir ("Stand
+   * März 2026") e para o qual publica "111.000+" — a barra e o rótulo põem os
+   * dois números lado a lado. Trocar a ênfase de mês desmancha a comparação.
+   *
+   * PROCEDÊNCIA (medida em 11/08/2026 por `medir-npm-mensal.py`, API pública
+   * api.npmjs.org, janela 2025-02-22 a 2026-08-09, downloads diários somados por
+   * mês): 147.648 · 650.866 · 862.556 · 1.521.790 · 4.338.148 · 17.045.271 ·
+   * 21.541.238 · 22.734.286 · 23.989.032 · 21.571.991 · 21.551.967 · 27.575.444 ·
+   * 30.510.428 · 44.445.736 · 49.361.496 · 34.562.178 · 44.038.610 · 46.178.680.
+   * Acumulado até 31/03/2026 = 238.486.401; total da janela = 429.320.208.
+   * O pacote citado pela página (`@anthropics/claude-code`, com "s") devolve
+   * HTTP 404 no mesmo endpoint — o script confirma isso a cada execução.
+   */
+  'estatisticas-claude-code-npm-mensal': {
+    max: 60,
+    groups: [
+      {
+        label: 'Medido na API pública do npm em 11/08/2026',
+        color: '#60a5fa',
+        items: [
+          { name: 'fev/25', value: 0.15, valueLabel: '148 mil' },
+          { name: 'mar/25', value: 0.65, valueLabel: '651 mil' },
+          { name: 'abr/25', value: 0.86, valueLabel: '863 mil' },
+          { name: 'mai/25', value: 1.5, valueLabel: '1,5 M' },
+          { name: 'jun/25', value: 4.3, valueLabel: '4,3 M' },
+          { name: 'jul/25', value: 17.0, valueLabel: '17,0 M' },
+          { name: 'ago/25', value: 21.5, valueLabel: '21,5 M' },
+          { name: 'set/25', value: 22.7, valueLabel: '22,7 M' },
+          { name: 'out/25', value: 24.0, valueLabel: '24,0 M' },
+          { name: 'nov/25', value: 21.6, valueLabel: '21,6 M' },
+          { name: 'dez/25', value: 21.6, valueLabel: '21,6 M' },
+          { name: 'jan/26', value: 27.6, valueLabel: '27,6 M' },
+          { name: 'fev/26', value: 30.5, valueLabel: '30,5 M' },
+          { name: 'mar/26', value: 44.4, valueLabel: '44,4 M · a página: 111 mil', emphasis: true },
+          { name: 'abr/26', value: 49.4, valueLabel: '49,4 M' },
+          { name: 'mai/26', value: 34.6, valueLabel: '34,6 M' },
+          { name: 'jun/26', value: 44.0, valueLabel: '44,0 M' },
+          { name: 'jul/26', value: 46.2, valueLabel: '46,2 M' },
+        ],
+      },
+    ],
+  },
+  'estatisticas-claude-code-npm-mensal-en': {
+    max: 60,
+    groups: [
+      {
+        label: 'Measured on the public npm API on 11/08/2026',
+        color: '#60a5fa',
+        items: [
+          { name: 'Feb/25', value: 0.15, valueLabel: '148k' },
+          { name: 'Mar/25', value: 0.65, valueLabel: '651k' },
+          { name: 'Apr/25', value: 0.86, valueLabel: '863k' },
+          { name: 'May/25', value: 1.5, valueLabel: '1.5M' },
+          { name: 'Jun/25', value: 4.3, valueLabel: '4.3M' },
+          { name: 'Jul/25', value: 17.0, valueLabel: '17.0M' },
+          { name: 'Aug/25', value: 21.5, valueLabel: '21.5M' },
+          { name: 'Sep/25', value: 22.7, valueLabel: '22.7M' },
+          { name: 'Oct/25', value: 24.0, valueLabel: '24.0M' },
+          { name: 'Nov/25', value: 21.6, valueLabel: '21.6M' },
+          { name: 'Dec/25', value: 21.6, valueLabel: '21.6M' },
+          { name: 'Jan/26', value: 27.6, valueLabel: '27.6M' },
+          { name: 'Feb/26', value: 30.5, valueLabel: '30.5M' },
+          { name: 'Mar/26', value: 44.4, valueLabel: '44.4M · the page: 111k', emphasis: true },
+          { name: 'Apr/26', value: 49.4, valueLabel: '49.4M' },
+          { name: 'May/26', value: 34.6, valueLabel: '34.6M' },
+          { name: 'Jun/26', value: 44.0, valueLabel: '44.0M' },
+          { name: 'Jul/26', value: 46.2, valueLabel: '46.2M' },
+        ],
+      },
+    ],
+  },
+  'estatisticas-claude-code-npm-mensal-es': {
+    max: 60,
+    groups: [
+      {
+        label: 'Medido en la API pública de npm el 11/08/2026',
+        color: '#60a5fa',
+        items: [
+          { name: 'feb/25', value: 0.15, valueLabel: '148 mil' },
+          { name: 'mar/25', value: 0.65, valueLabel: '651 mil' },
+          { name: 'abr/25', value: 0.86, valueLabel: '863 mil' },
+          { name: 'may/25', value: 1.5, valueLabel: '1,5 M' },
+          { name: 'jun/25', value: 4.3, valueLabel: '4,3 M' },
+          { name: 'jul/25', value: 17.0, valueLabel: '17,0 M' },
+          { name: 'ago/25', value: 21.5, valueLabel: '21,5 M' },
+          { name: 'sep/25', value: 22.7, valueLabel: '22,7 M' },
+          { name: 'oct/25', value: 24.0, valueLabel: '24,0 M' },
+          { name: 'nov/25', value: 21.6, valueLabel: '21,6 M' },
+          { name: 'dic/25', value: 21.6, valueLabel: '21,6 M' },
+          { name: 'ene/26', value: 27.6, valueLabel: '27,6 M' },
+          { name: 'feb/26', value: 30.5, valueLabel: '30,5 M' },
+          { name: 'mar/26', value: 44.4, valueLabel: '44,4 M · la página: 111 mil', emphasis: true },
+          { name: 'abr/26', value: 49.4, valueLabel: '49,4 M' },
+          { name: 'may/26', value: 34.6, valueLabel: '34,6 M' },
+          { name: 'jun/26', value: 44.0, valueLabel: '44,0 M' },
+          { name: 'jul/26', value: 46.2, valueLabel: '46,2 M' },
+        ],
+      },
+    ],
+  },
+  'estatisticas-claude-code-npm-mensal-it': {
+    max: 60,
+    groups: [
+      {
+        label: 'Misurato sull\'API pubblica di npm l\'11/08/2026',
+        color: '#60a5fa',
+        items: [
+          { name: 'feb/25', value: 0.15, valueLabel: '148 mila' },
+          { name: 'mar/25', value: 0.65, valueLabel: '651 mila' },
+          { name: 'apr/25', value: 0.86, valueLabel: '863 mila' },
+          { name: 'mag/25', value: 1.5, valueLabel: '1,5 mln' },
+          { name: 'giu/25', value: 4.3, valueLabel: '4,3 mln' },
+          { name: 'lug/25', value: 17.0, valueLabel: '17,0 mln' },
+          { name: 'ago/25', value: 21.5, valueLabel: '21,5 mln' },
+          { name: 'set/25', value: 22.7, valueLabel: '22,7 mln' },
+          { name: 'ott/25', value: 24.0, valueLabel: '24,0 mln' },
+          { name: 'nov/25', value: 21.6, valueLabel: '21,6 mln' },
+          { name: 'dic/25', value: 21.6, valueLabel: '21,6 mln' },
+          { name: 'gen/26', value: 27.6, valueLabel: '27,6 mln' },
+          { name: 'feb/26', value: 30.5, valueLabel: '30,5 mln' },
+          { name: 'mar/26', value: 44.4, valueLabel: '44,4 mln · pagina: 111 mila', emphasis: true },
+          { name: 'apr/26', value: 49.4, valueLabel: '49,4 mln' },
+          { name: 'mag/26', value: 34.6, valueLabel: '34,6 mln' },
+          { name: 'giu/26', value: 44.0, valueLabel: '44,0 mln' },
+          { name: 'lug/26', value: 46.2, valueLabel: '46,2 mln' },
+        ],
+      },
+    ],
+  },
+  'estatisticas-claude-code-npm-mensal-he': {
+    max: 60,
+    groups: [
+      {
+        label: 'נמדד ב־API הציבורי של npm ב־11/08/2026',
+        color: '#60a5fa',
+        items: [
+          { name: 'פבר׳ 25', value: 0.15, valueLabel: '148 אלף' },
+          { name: 'מרץ 25', value: 0.65, valueLabel: '651 אלף' },
+          { name: 'אפר׳ 25', value: 0.86, valueLabel: '863 אלף' },
+          { name: 'מאי 25', value: 1.5, valueLabel: '1.5M' },
+          { name: 'יונ׳ 25', value: 4.3, valueLabel: '4.3M' },
+          { name: 'יול׳ 25', value: 17.0, valueLabel: '17.0M' },
+          { name: 'אוג׳ 25', value: 21.5, valueLabel: '21.5M' },
+          { name: 'ספט׳ 25', value: 22.7, valueLabel: '22.7M' },
+          { name: 'אוק׳ 25', value: 24.0, valueLabel: '24.0M' },
+          { name: 'נוב׳ 25', value: 21.6, valueLabel: '21.6M' },
+          { name: 'דצמ׳ 25', value: 21.6, valueLabel: '21.6M' },
+          { name: 'ינו׳ 26', value: 27.6, valueLabel: '27.6M' },
+          { name: 'פבר׳ 26', value: 30.5, valueLabel: '30.5M' },
+          { name: 'מרץ 26', value: 44.4, valueLabel: '44.4M · העמוד: 111 אלף', emphasis: true },
+          { name: 'אפר׳ 26', value: 49.4, valueLabel: '49.4M' },
+          { name: 'מאי 26', value: 34.6, valueLabel: '34.6M' },
+          { name: 'יונ׳ 26', value: 44.0, valueLabel: '44.0M' },
+          { name: 'יול׳ 26', value: 46.2, valueLabel: '46.2M' },
+        ],
+      },
+    ],
+  },
+
+  /* ── 2. `estatisticas-claude-code-ocupacoes` — onde o Brasil entra ────────────
+   *
+   * UNIDADE: % do uso do Claude.ai vindo de ocupações "Computer and Mathematical"
+   * (SOC nível 1) — a mesma régua nas três linhas, por isso UM grupo e UMA cor.
+   *
+   * TETO **30**: a maior barra (Brasil, 26,0) ocupa 87% do eixo e sobram ~123px
+   * para o `valueLabel`. Teto 26 encostaria o rótulo do Brasil na borda.
+   *
+   * ORDEM = GRANDEZA e a ênfase é o Brasil: a tese da seção é que o uso
+   * brasileiro do Claude é proporcionalmente MAIS programação que o global e que
+   * o americano. Três barras, uma comparação, nada mais.
+   *
+   * O QUE ESTE GRÁFICO NÃO É: não é geografia de Claude Code. O Anthropic
+   * Economic Index não publica país para o Claude Code (a fatia de 1P API o
+   * exclui); a quebra por país existe só para o Claude.ai. O título, o subtítulo
+   * e o corpo do artigo dizem "Claude.ai" — trocar por "Claude Code" em qualquer
+   * idioma é erro factual, não estilo.
+   *
+   * PROCEDÊNCIA (medida em 12/08/2026 por `extrair-ocupacoes-aei.py`): dataset
+   * aberto Anthropic Economic Index, release 26/06/2026 (CC-BY), janela
+   * 2026-05-01 a 2026-06-01, category_name=soc_occupation, hierarchy_level=1,
+   * metric_id=pct, node_name="Computer and Mathematical" -> BRA 26,0000 ·
+   * GLOBAL 23,8000 · USA 21,1300. Janela anterior (abr/2026), para contexto:
+   * BRA 25,62 · GLOBAL 23,95 · USA 21,93 — a ordem se mantém.
+   */
+  'estatisticas-claude-code-ocupacoes': {
+    max: 30,
+    groups: [
+      {
+        label: 'Anthropic Economic Index — SOC nível 1, janela mai/2026',
+        color: '#60a5fa',
+        items: [
+          { name: 'Brasil', value: 26.0, valueLabel: '26,0%', emphasis: true },
+          { name: 'Média global', value: 23.8, valueLabel: '23,8%' },
+          { name: 'Estados Unidos', value: 21.13, valueLabel: '21,1%' },
+        ],
+      },
+    ],
+  },
+  'estatisticas-claude-code-ocupacoes-en': {
+    max: 30,
+    groups: [
+      {
+        label: 'Anthropic Economic Index — SOC level 1, May 2026 window',
+        color: '#60a5fa',
+        items: [
+          { name: 'Brazil', value: 26.0, valueLabel: '26.0%', emphasis: true },
+          { name: 'Global average', value: 23.8, valueLabel: '23.8%' },
+          { name: 'United States', value: 21.13, valueLabel: '21.1%' },
+        ],
+      },
+    ],
+  },
+  'estatisticas-claude-code-ocupacoes-es': {
+    max: 30,
+    groups: [
+      {
+        label: 'Anthropic Economic Index — SOC nivel 1, ventana may/2026',
+        color: '#60a5fa',
+        items: [
+          { name: 'Brasil', value: 26.0, valueLabel: '26,0 %', emphasis: true },
+          { name: 'Media global', value: 23.8, valueLabel: '23,8 %' },
+          { name: 'Estados Unidos', value: 21.13, valueLabel: '21,1 %' },
+        ],
+      },
+    ],
+  },
+  'estatisticas-claude-code-ocupacoes-it': {
+    max: 30,
+    groups: [
+      {
+        label: 'Anthropic Economic Index — SOC livello 1, finestra mag/2026',
+        color: '#60a5fa',
+        items: [
+          { name: 'Brasile', value: 26.0, valueLabel: '26,0%', emphasis: true },
+          { name: 'Media globale', value: 23.8, valueLabel: '23,8%' },
+          { name: 'Stati Uniti', value: 21.13, valueLabel: '21,1%' },
+        ],
+      },
+    ],
+  },
+  'estatisticas-claude-code-ocupacoes-he': {
+    max: 30,
+    groups: [
+      {
+        label: 'Anthropic Economic Index — SOC רמה 1, חלון מאי 2026',
+        color: '#60a5fa',
+        items: [
+          { name: 'ברזיל', value: 26.0, valueLabel: '26.0%', emphasis: true },
+          { name: 'ממוצע עולמי', value: 23.8, valueLabel: '23.8%' },
+          { name: 'ארה״ב', value: 21.13, valueLabel: '21.1%' },
         ],
       },
     ],

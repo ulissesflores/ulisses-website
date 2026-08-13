@@ -271,6 +271,41 @@ export const artigos: readonly Artigo[] = [
       },
     },
   },
+  {
+    slug: 'estatisticas-claude-code',
+    title:
+      'Claude Code: a estatística que circula é 4.000 vezes menor que a que qualquer um pode medir',
+    summary:
+      'A página de estatísticas mais completa sobre o Claude Code credita seus downloads a um pacote npm que nunca existiu: 404 no registry, zero capturas no Wayback Machine. O pacote real tem API pública, sem chave e sem paywall — 429 milhões de downloads acumulados, 44,4 milhões só no mês em que a página publicou "111.000+". Medi cada número que dava para medir e o placar fechou em quatro certos, quatro errados e dois sem fonte que permita julgar: a survey de "15.000 desenvolvedores" tinha 906 respondentes; as "22.000 stars" eram 71.847 em 1º de março; o "open source" tem um LICENSE.md de catorze palavras, três das quais são "all rights reserved". Do outro lado, o claim mais inacreditável da lista — 4% de todos os commits públicos do GitHub — confere como estimativa, e a própria Anthropic o ecoou no anúncio da Série G. O detalhe que organiza o placar: os erros apontam todos na mesma direção, para baixo. O produto medível por API pública é maior que o produto descrito pela página que existia para promovê-lo. E o dado primário que ninguém usa rende o recorte brasileiro: 26,0% do uso do Claude.ai no Brasil vem de ocupações de computação e matemática — acima do global (23,8%) e dos Estados Unidos (21,1%).',
+    date: '2026-08-11',
+    tags: ['ia', 'claude-code', 'anthropic', 'estatisticas', 'fact-check', 'brasil'],
+    i18n: {
+      en: {
+        title:
+          'Claude Code: the statistic in circulation is 4,000 times smaller than the one anyone can measure',
+        summary:
+          'The most complete statistics page about Claude Code credits its download numbers to an npm package that never existed: 404 in the registry, zero captures in the Wayback Machine. The real package has a public API, no key and no paywall — 429 million cumulative downloads, 44.4 million in the very month the page published "111,000+". I measured every number that could be measured, and the scorecard closed at four right, four wrong and two with no source that allows a verdict: the survey of "15,000 developers" had 906 respondents; the "22,000 stars" were 71,847 on 1 March; the "open source" has a LICENSE.md of fourteen words, three of which are "all rights reserved". On the other side, the least believable claim on the list — 4% of all public GitHub commits — checks out as an estimate, and Anthropic itself echoed it in the Series G announcement. The detail that organises the scorecard: the errors all point the same way, downwards. The product measurable by public API is larger than the product described by the page that existed to promote it. And the primary data nobody uses yields the Brazilian angle: 26.0% of Claude.ai usage in Brazil comes from computer and mathematical occupations — above the global average (23.8%) and the United States (21.1%).',
+      },
+      es: {
+        title:
+          'Claude Code: la estadística que circula es 4000 veces menor que la que cualquiera puede medir',
+        summary:
+          'La página de estadísticas más completa sobre Claude Code atribuye sus cifras de descargas a un paquete de npm que nunca existió: 404 en el registro, cero capturas en Wayback Machine. El paquete real tiene una API pública, sin clave y sin muro de pago — 429 millones de descargas acumuladas, 44,4 millones solo en el mes en que la página publicó "111 000+". Medí cada número que se podía medir y el marcador cerró en cuatro correctos, cuatro equivocados y dos sin fuente que permita juzgar: la encuesta de "15 000 desarrolladores" tenía 906 respuestas; las "22 000 estrellas" eran 71 847 el 1 de marzo; el "open source" tiene un LICENSE.md de catorce palabras, tres de las cuales son "all rights reserved". Del otro lado, la afirmación más increíble de la lista — el 4 % de todos los commits públicos de GitHub — se confirma como estimación, y la propia Anthropic la repitió en el anuncio de la Serie G. El detalle que ordena el marcador: los errores apuntan todos en la misma dirección, hacia abajo. El producto medible por API pública es mayor que el producto descrito por la página que existía para promoverlo. Y el dato primario que nadie usa da el recorte brasileño: el 26,0 % del uso de Claude.ai en Brasil viene de ocupaciones de computación y matemáticas — por encima de la media global (23,8 %) y de Estados Unidos (21,1 %).',
+      },
+      it: {
+        title:
+          'Claude Code: la statistica che circola è 4.000 volte più piccola di quella che chiunque può misurare',
+        summary:
+          "La pagina di statistiche più completa su Claude Code attribuisce i suoi numeri di download a un pacchetto npm che non è mai esistito: 404 nel registry, zero catture nella Wayback Machine. Il pacchetto vero ha un'API pubblica, senza chiave e senza paywall — 429 milioni di download cumulativi, 44,4 milioni nel solo mese in cui la pagina ha pubblicato \"111.000+\". Ho misurato ogni numero misurabile e il tabellino si è chiuso su quattro giusti, quattro sbagliati e due senza fonte che permetta un verdetto: il sondaggio da \"15.000 sviluppatori\" aveva 906 rispondenti; le \"22.000 stelle\" erano 71.847 il 1° marzo; l'\"open source\" ha un LICENSE.md di quattordici parole, tre delle quali sono \"all rights reserved\". Dall'altro lato, l'affermazione più incredibile dell'elenco — il 4% di tutti i commit pubblici di GitHub — regge come stima, e Anthropic stessa l'ha ripresa nell'annuncio della Serie G. Il dettaglio che ordina il tabellino: gli errori puntano tutti nella stessa direzione, verso il basso. Il prodotto misurabile con un'API pubblica è più grande del prodotto descritto dalla pagina che esisteva per promuoverlo. E il dato primario che nessuno usa dà il taglio brasiliano: il 26,0% dell'uso di Claude.ai in Brasile viene da occupazioni informatiche e matematiche — sopra la media globale (23,8%) e gli Stati Uniti (21,1%).",
+      },
+      he: {
+        title:
+          'Claude Code: הסטטיסטיקה שמסתובבת קטנה פי 4,000 מזו שכל אחד יכול למדוד',
+        summary:
+          'עמוד הסטטיסטיקות המקיף ביותר על Claude Code מייחס את מספרי ההורדות שלו לחבילת npm שמעולם לא הייתה קיימת: 404 ב־registry, אפס צילומים ב־Wayback Machine. לחבילה האמיתית יש API ציבורי, בלי מפתח ובלי תשלום — 429 מיליון הורדות מצטברות, 44.4 מיליון רק בחודש שבו העמוד פרסם "111,000+". מדדתי כל מספר שאפשר היה למדוד, והתוצאה נסגרה על ארבעה נכונים, ארבעה שגויים ושניים בלי מקור שמאפשר הכרעה: הסקר של "15,000 מפתחים" כלל 906 משיבים; "22,000 הכוכבים" היו 71,847 ב־1 במרץ; ה"קוד הפתוח" הוא LICENSE.md בן ארבע־עשרה מילים, שלוש מהן "all rights reserved". מנגד, הטענה הכי לא־ייאמן ברשימה — 4% מכל הקומיטים הציבוריים ב־GitHub — מחזיקה כהערכה, ו־Anthropic עצמה חזרה עליה בהודעת סבב G. הפרט שמסדר את התוצאה: כל השגיאות מצביעות לאותו כיוון, כלפי מטה. המוצר שאפשר למדוד ב־API ציבורי גדול מהמוצר שמתאר אותו עמוד שנועד לקדם אותו. והנתון הראשוני שאיש לא משתמש בו נותן את הזווית הברזילאית: 26.0% מהשימוש ב־Claude.ai בברזיל מגיע מעיסוקי מחשוב ומתמטיקה — מעל הממוצע העולמי (23.8%) ומעל ארצות הברית (21.1%).',
+      },
+    },
+  },
 ];
 
 /** Posts do mais recente para o mais antigo — ordem de exibição do índice. */
