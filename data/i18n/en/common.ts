@@ -9,101 +9,42 @@ export const common = {
         ],
       },
       {
-        label: 'About',
-        items: [
-          {
-            label: 'Bio',
-            href: '/#about',
-            description: 'Who I am and my career path'
-          },
-          {
-            label: 'Expertise',
-            href: '/#pillars',
-            description: 'Core areas of expertise'
-          },
-          {
-            label: 'Career',
-            href: '/#trajectory',
-            description: 'Professional timeline'
-          }
-        ]
-      },
-      {
         label: 'Publications',
         items: [
-          {
-            label: 'Articles',
-            href: '/artigos',
-            description: 'First-person analysis of AI, engineering, and complex systems'
-          },
-          {
-            label: 'Research',
-            href: '/research',
-            description: 'AI, Economics, and Complex Systems'
-          },
-          {
-            label: 'Whitepapers',
-            href: '/whitepapers',
-            description: 'Engineering, IoT, and Security'
-          },
-          {
-            label: 'Projeto Ψ (PSI)',
-            href: '/whitepapers/projeto-psi',
-            description: 'Technical Whitepaper: Sovereign Hardware'
-          },
-          {
-            label: 'PSI — Demo',
-            href: '/projeto-psi',
-            description: 'Commercial landing: investment and licensing'
-          },
-          {
-            label: 'Essays',
-            href: '/essays',
-            description: 'Theology, Humanities, and History'
-          }
-        ]
+          { label: 'Articles', href: '/artigos', description: 'First-person analysis of AI, engineering, and complex systems' },
+          { label: 'Research', href: '/research', description: 'AI, Economics, and Complex Systems' },
+          { label: 'Whitepapers', href: '/whitepapers', description: 'Engineering, IoT, and Security' },
+          { label: 'Essays', href: '/essays', description: 'Theology, Humanities, and History' },
+          { label: 'Projeto Ψ (PSI)', href: '/whitepapers/projeto-psi', description: 'Technical Whitepaper: Sovereign Hardware' },
+        ],
+      },
+      {
+        label: 'Simulations',
+        items: [
+          { label: 'Overview', href: '/simulacoes', description: 'Prospective scenario laboratory' },
+          { label: 'AI 2027', href: '/simulacoes/ia-2027', description: 'Interactive scenarios up to the arrival of AGI' },
+          { label: 'GoldenLeaf', href: '/simulacoes/goldenleaf', description: 'Smart mycology with IoT and AI' },
+        ],
       },
       {
         label: 'Collection',
         items: [
-          {
-            label: 'Theological Archive',
-            href: '/acervo-teologico',
-            description: 'Sermons by thematic cluster'
-          },
-          {
-            label: 'Clube Santo',
-            href: '/clube-santo',
-            description: 'Revival for the digital age'
-          },
-          {
-            label: 'Political World',
-            href: '/mundo-politico',
-            description: 'Political articles and analyses'
-          }
-        ]
+          { label: 'Theological Archive', href: '/acervo-teologico', description: 'Sermons by thematic cluster' },
+          { label: 'Clube Santo', href: '/clube-santo', description: 'Revival for the digital age' },
+          { label: 'Political World', href: '/mundo-politico', description: 'Political articles and analyses' },
+        ],
       },
       {
-        label: 'Tools',
+        label: 'About',
         items: [
-          {
-            label: 'Simulations',
-            href: '/simulacoes',
-            description: 'Prospective scenario laboratory'
-          },
-          {
-            label: 'Identity',
-            href: '/identidade',
-            description: 'Canonical sovereign identity hub'
-          },
-          {
-            label: 'Certifications',
-            href: '/certifications',
-            description: 'Credentials and verifications'
-          }
-        ]
-      }
-    ]
+          { label: 'Bio', href: '/#about', description: 'Who I am and my career path' },
+          { label: 'Expertise', href: '/#pillars', description: 'Core areas of expertise' },
+          { label: 'Career', href: '/#trajectory', description: 'Professional timeline' },
+          { label: 'Identity', href: '/identidade', description: 'Canonical sovereign identity hub' },
+          { label: 'Certifications', href: '/certifications', description: 'Credentials and verifications' },
+        ],
+      },
+    ],
   },
   cta: 'CONTACT ME',
   mobileMenu: {

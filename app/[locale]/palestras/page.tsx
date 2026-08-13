@@ -133,10 +133,10 @@ export default async function PalestrasPage({ params }: PageProps) {
       <script type='application/ld+json' dangerouslySetInnerHTML={{ __html: JSON.stringify(pageJsonLd) }} />
 
       {/* HERO */}
-      <section className='relative w-full bg-neutral-950 py-28 sm:py-36'>
-        <div className='absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,rgba(168,85,247,0.14),transparent)]' />
+      <section className='relative w-full bg-brand-navy py-28 sm:py-36'>
+        <div className='absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,rgba(164,143,101,0.14),transparent)]' />
         <div className='relative mx-auto max-w-4xl px-6 text-center'>
-          <span className='inline-block rounded-full border border-purple-500/40 bg-purple-500/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-purple-300 mb-8'>
+          <span className='inline-block rounded-full border border-brand-gold/40 bg-brand-gold/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-brand-gold-light mb-8'>
             {t.hero.badge}
           </span>
           <h1 className='text-4xl font-extrabold leading-[1.1] tracking-tight text-neutral-50 sm:text-5xl lg:text-6xl'>
@@ -148,7 +148,7 @@ export default async function PalestrasPage({ params }: PageProps) {
           <div className='mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center'>
             <a
               href={t.briefing.submitHref}
-              className='inline-flex items-center justify-center rounded-full bg-purple-500 px-8 py-3.5 text-sm font-bold text-neutral-950 shadow-lg shadow-purple-500/25 transition-all hover:bg-purple-400 hover:shadow-purple-400/30'
+              className='inline-flex items-center justify-center rounded-full bg-brand-gold px-8 py-3.5 text-sm font-bold text-brand-navy shadow-lg shadow-brand-gold/25 transition-all hover:bg-brand-gold-light hover:shadow-brand-gold-light/30'
             >
               {t.hero.ctaPrimary}
             </a>
@@ -163,7 +163,7 @@ export default async function PalestrasPage({ params }: PageProps) {
       </section>
 
       {/* TRUST */}
-      <section className='bg-neutral-950 py-12 border-t border-neutral-900'>
+      <section className='bg-brand-navy py-12 border-t border-neutral-900'>
         <div className='mx-auto max-w-5xl px-6'>
           <p className='text-center text-[11px] uppercase tracking-[0.18em] text-neutral-400 mb-6'>
             {t.trust.label}
@@ -171,7 +171,7 @@ export default async function PalestrasPage({ params }: PageProps) {
           <ul className='flex flex-wrap justify-center gap-x-6 gap-y-3 text-sm text-neutral-300'>
             {t.trust.items.map((it) => (
               <li key={it} className='flex items-center gap-2'>
-                <span className='inline-block h-1.5 w-1.5 rounded-full bg-purple-400' />
+                <span className='inline-block h-1.5 w-1.5 rounded-full bg-brand-gold' />
                 {it}
               </li>
             ))}
@@ -180,7 +180,7 @@ export default async function PalestrasPage({ params }: PageProps) {
       </section>
 
       {/* TEMAS */}
-      <section id='temas' className='bg-neutral-950 py-24 border-t border-neutral-900'>
+      <section id='temas' className='bg-brand-navy py-24 border-t border-neutral-900'>
         <div className='mx-auto max-w-6xl px-6'>
           <h2 className='text-3xl font-bold tracking-tight text-neutral-50 sm:text-4xl text-center'>
             {t.temas.title}
@@ -189,7 +189,7 @@ export default async function PalestrasPage({ params }: PageProps) {
           <div className='mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3'>
             {t.temas.items.map((item) => (
               <article key={item.title} className='rounded-2xl border border-neutral-800 bg-neutral-900/40 p-6'>
-                <h3 className='text-lg font-semibold text-purple-300'>{item.title}</h3>
+                <h3 className='text-lg font-semibold text-brand-gold-light'>{item.title}</h3>
                 <p className='mt-3 text-sm text-neutral-400 leading-relaxed'>{item.bullet}</p>
               </article>
             ))}
@@ -198,7 +198,7 @@ export default async function PalestrasPage({ params }: PageProps) {
       </section>
 
       {/* FORMATOS */}
-      <section id='formatos' className='bg-neutral-950 py-24 border-t border-neutral-900'>
+      <section id='formatos' className='bg-brand-navy py-24 border-t border-neutral-900'>
         <div className='mx-auto max-w-6xl px-6'>
           <h2 className='text-3xl font-bold tracking-tight text-neutral-50 sm:text-4xl text-center'>
             {t.formatos.title}
@@ -210,7 +210,7 @@ export default async function PalestrasPage({ params }: PageProps) {
                 <h3 className='text-lg font-semibold text-neutral-50'>{f.title}</h3>
                 <div className='mt-2 flex flex-wrap gap-2 text-[11px] uppercase tracking-[0.15em]'>
                   <span className='inline-block rounded-full border border-neutral-700 bg-neutral-950 px-2.5 py-1 text-neutral-400'>{f.duration}</span>
-                  <span className='inline-block rounded-full border border-purple-500/30 bg-purple-500/10 px-2.5 py-1 text-purple-300'>{f.priceLabel}</span>
+                  <span className='inline-block rounded-full border border-brand-gold/30 bg-brand-gold/10 px-2.5 py-1 text-brand-gold-light'>{f.priceLabel}</span>
                 </div>
                 <p className='mt-4 text-sm text-neutral-400 leading-relaxed'>{f.description}</p>
               </article>
@@ -220,7 +220,7 @@ export default async function PalestrasPage({ params }: PageProps) {
       </section>
 
       {/* PUBLICOS */}
-      <section className='bg-neutral-950 py-24 border-t border-neutral-900'>
+      <section className='bg-brand-navy py-24 border-t border-neutral-900'>
         <div className='mx-auto max-w-6xl px-6'>
           <h2 className='text-3xl font-bold tracking-tight text-neutral-50 sm:text-4xl text-center'>
             {t.publicos.title}
@@ -229,7 +229,7 @@ export default async function PalestrasPage({ params }: PageProps) {
           <div className='mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3'>
             {t.publicos.items.map((p) => (
               <article key={p.title} className='rounded-2xl border border-neutral-800 bg-neutral-900/40 p-6'>
-                <h3 className='text-lg font-semibold text-cyan-300'>{p.title}</h3>
+                <h3 className='text-lg font-semibold text-brand-gold-light'>{p.title}</h3>
                 <p className='mt-3 text-sm text-neutral-400 leading-relaxed'>{p.description}</p>
               </article>
             ))}
@@ -238,7 +238,7 @@ export default async function PalestrasPage({ params }: PageProps) {
       </section>
 
       {/* CACHE */}
-      <section id='cache' className='bg-neutral-950 py-24 border-t border-neutral-900'>
+      <section id='cache' className='bg-brand-navy py-24 border-t border-neutral-900'>
         <div className='mx-auto max-w-6xl px-6'>
           <h2 className='text-3xl font-bold tracking-tight text-neutral-50 sm:text-4xl text-center'>
             {t.cache.title}
@@ -257,8 +257,8 @@ export default async function PalestrasPage({ params }: PageProps) {
                 {t.cache.rows.map((row) => (
                   <tr key={row.format} className='bg-neutral-950/60'>
                     <td className='px-5 py-3 text-neutral-300 font-medium'>{row.format}</td>
-                    <td className='px-5 py-3 text-purple-300'>{row.base}</td>
-                    <td className='px-5 py-3 text-cyan-300'>{row.international}</td>
+                    <td className='px-5 py-3 text-brand-gold-light'>{row.base}</td>
+                    <td className='px-5 py-3 text-brand-gold-light'>{row.international}</td>
                   </tr>
                 ))}
               </tbody>
@@ -269,7 +269,7 @@ export default async function PalestrasPage({ params }: PageProps) {
       </section>
 
       {/* BRIEFING */}
-      <section id='briefing' className='bg-neutral-950 py-24 border-t border-neutral-900'>
+      <section id='briefing' className='bg-brand-navy py-24 border-t border-neutral-900'>
         <div className='mx-auto max-w-4xl px-6'>
           <h2 className='text-3xl font-bold tracking-tight text-neutral-50 sm:text-4xl text-center'>
             {t.briefing.title}
@@ -278,7 +278,7 @@ export default async function PalestrasPage({ params }: PageProps) {
           <ul className='mt-10 space-y-3'>
             {t.briefing.fields.map((field) => (
               <li key={field.label} className='rounded-xl border border-neutral-800 bg-neutral-900/40 p-5'>
-                <p className='text-sm font-semibold text-purple-300'>{field.label}</p>
+                <p className='text-sm font-semibold text-brand-gold-light'>{field.label}</p>
                 <p className='mt-1.5 text-sm text-neutral-400 leading-relaxed'>{field.placeholder}</p>
               </li>
             ))}
@@ -286,7 +286,7 @@ export default async function PalestrasPage({ params }: PageProps) {
           <div className='mt-10 text-center'>
             <a
               href={t.briefing.submitHref}
-              className='inline-flex items-center justify-center rounded-full bg-purple-500 px-8 py-3.5 text-sm font-bold text-neutral-950 shadow-lg shadow-purple-500/25 transition-all hover:bg-purple-400'
+              className='inline-flex items-center justify-center rounded-full bg-brand-gold px-8 py-3.5 text-sm font-bold text-brand-navy shadow-lg shadow-brand-gold/25 transition-all hover:bg-brand-gold-light'
             >
               {t.briefing.submitButton}
             </a>
@@ -296,14 +296,14 @@ export default async function PalestrasPage({ params }: PageProps) {
       </section>
 
       {/* DELIVERY + IDIOMAS */}
-      <section className='bg-neutral-950 py-24 border-t border-neutral-900'>
+      <section className='bg-brand-navy py-24 border-t border-neutral-900'>
         <div className='mx-auto max-w-6xl px-6 grid gap-10 md:grid-cols-2'>
           <div>
             <h2 className='text-2xl font-bold tracking-tight text-neutral-50 sm:text-3xl'>{t.delivery.title}</h2>
             <ul className='mt-6 space-y-4'>
               {t.delivery.items.map((d) => (
                 <li key={d.title} className='rounded-xl border border-neutral-800 bg-neutral-900/40 p-5'>
-                  <h3 className='text-base font-semibold text-purple-300'>{d.title}</h3>
+                  <h3 className='text-base font-semibold text-brand-gold-light'>{d.title}</h3>
                   <p className='mt-2 text-sm text-neutral-400 leading-relaxed'>{d.description}</p>
                 </li>
               ))}
@@ -324,7 +324,7 @@ export default async function PalestrasPage({ params }: PageProps) {
       </section>
 
       {/* POLICIES */}
-      <section className='bg-neutral-950 py-24 border-t border-neutral-900'>
+      <section className='bg-brand-navy py-24 border-t border-neutral-900'>
         <div className='mx-auto max-w-4xl px-6'>
           <h2 className='text-2xl font-bold tracking-tight text-neutral-50 sm:text-3xl text-center'>
             {t.policies.title}
@@ -332,7 +332,7 @@ export default async function PalestrasPage({ params }: PageProps) {
           <dl className='mt-10 space-y-3'>
             {t.policies.items.map((p) => (
               <div key={p.label} className='rounded-xl border border-neutral-800 bg-neutral-900/40 p-5'>
-                <dt className='text-sm font-semibold text-purple-300'>{p.label}</dt>
+                <dt className='text-sm font-semibold text-brand-gold-light'>{p.label}</dt>
                 <dd className='mt-2 text-sm text-neutral-400 leading-relaxed'>{p.value}</dd>
               </div>
             ))}
@@ -341,7 +341,7 @@ export default async function PalestrasPage({ params }: PageProps) {
       </section>
 
       {/* AUTHOR */}
-      <section className='bg-neutral-950 py-12'>
+      <section className='bg-brand-navy py-12'>
         <div className='mx-auto max-w-4xl px-6'>
           <AuthorHubCard
             label='Author'
@@ -351,20 +351,20 @@ export default async function PalestrasPage({ params }: PageProps) {
       </section>
 
       {/* FAQ */}
-      <section className='bg-neutral-950 py-24 border-t border-neutral-900'>
+      <section className='bg-brand-navy py-24 border-t border-neutral-900'>
         <div className='mx-auto max-w-4xl px-6'>
           <FaqSection items={[...tFaq]} sectionTitle={t.faq.sectionTitle} />
         </div>
       </section>
 
       {/* FINAL CTA */}
-      <section className='bg-neutral-950 py-28 border-t border-neutral-900'>
+      <section className='bg-brand-navy py-28 border-t border-neutral-900'>
         <div className='mx-auto max-w-3xl px-6 text-center'>
           <h2 className='text-3xl font-bold tracking-tight text-neutral-50 sm:text-4xl'>{t.finalCta.title}</h2>
           <p className='mt-6 text-lg text-neutral-400 leading-relaxed'>{t.finalCta.description}</p>
           <a
             href={t.finalCta.href}
-            className='mt-10 inline-flex items-center justify-center rounded-full bg-purple-500 px-10 py-4 text-sm font-bold text-neutral-950 shadow-lg shadow-purple-500/25 transition-all hover:bg-purple-400 hover:shadow-purple-400/30'
+            className='mt-10 inline-flex items-center justify-center rounded-full bg-brand-gold px-10 py-4 text-sm font-bold text-brand-navy shadow-lg shadow-brand-gold/25 transition-all hover:bg-brand-gold-light hover:shadow-brand-gold-light/30'
           >
             {t.finalCta.button}
           </a>

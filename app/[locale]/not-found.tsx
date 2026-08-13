@@ -46,12 +46,12 @@ export default function NotFound() {
   ];
 
   return (
-    <div className='min-h-screen bg-neutral-950 text-neutral-200 flex items-center justify-center'>
-      <div className='fixed inset-0 bg-[radial-gradient(circle_800px_at_50%_-200px,#10b98108,transparent)] pointer-events-none' />
+    <div className='min-h-screen bg-brand-navy text-neutral-200 selection:bg-brand-gold/30 selection:text-brand-offwhite flex items-center justify-center'>
+      <div className='fixed inset-0 bg-[radial-gradient(circle_800px_at_50%_-200px,#a48f6508,transparent)] pointer-events-none' />
 
       <main className='relative max-w-2xl mx-auto px-6 py-20 text-center z-10'>
-        <p className='text-7xl font-bold text-emerald-500 mb-4'>404</p>
-        <h1 className='text-3xl font-bold text-white mb-3'>{t.title}</h1>
+        <p className='text-7xl font-bold text-brand-gold mb-4'>404</p>
+        <h1 className='text-3xl font-bold text-brand-offwhite mb-3'>{t.title}</h1>
         <p className='text-neutral-400 mb-10 max-w-md mx-auto'>
           {t.description}
         </p>
@@ -63,9 +63,9 @@ export default function NotFound() {
               <Link
                 key={link.href}
                 href={link.href}
-                className='flex items-center gap-3 rounded-xl border border-neutral-800 bg-neutral-900/40 px-5 py-4 hover:border-emerald-500/40 hover:text-emerald-300 transition-colors text-start'
+                className='flex items-center gap-3 rounded-xl border border-neutral-800 bg-neutral-900/40 px-5 py-4 hover:border-brand-gold/40 hover:text-brand-gold-light transition-colors text-start'
               >
-                <Icon size={20} className='text-emerald-500 shrink-0' />
+                <Icon size={20} className='text-brand-gold shrink-0' />
                 <div>
                   <p className='text-sm font-medium text-neutral-200'>{link.label}</p>
                   <p className='text-xs text-neutral-400'>{link.description}</p>

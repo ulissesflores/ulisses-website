@@ -95,19 +95,19 @@ export default async function CertificationsPage({ params }: PageProps) {
   return (
     <main>
       {/* Hero */}
-      <section className='bg-neutral-950 text-neutral-200 pt-20 pb-16 border-b border-neutral-800'>
+      <section className='bg-brand-navy text-neutral-200 pt-20 pb-16 border-b border-neutral-800 selection:bg-brand-gold/30 selection:text-brand-offwhite'>
         <div className='max-w-5xl mx-auto px-6'>
           <div className='flex items-center gap-2 mb-6'>
-            <Link href={localePath('/', locale)} className='text-xs font-mono uppercase tracking-widest text-emerald-400 hover:underline'>
+            <Link href={localePath('/', locale)} className='text-xs font-mono uppercase tracking-widest text-brand-gold-light hover:underline'>
               {dict.common.breadcrumb.home}
             </Link>
-            <span className='text-xs text-neutral-600'>→</span>
+            <span className='text-xs text-neutral-400'>→</span>
             <span className='text-xs font-mono uppercase tracking-widest text-neutral-400'>{t.breadcrumb}</span>
           </div>
-          <h1 className='text-4xl sm:text-5xl font-bold leading-tight tracking-tight mb-6 text-white'>{t.hero.h1}</h1>
+          <h1 className='text-4xl sm:text-5xl font-bold leading-tight tracking-tight mb-6 text-brand-offwhite'>{t.hero.h1}</h1>
           <p className='text-lg text-neutral-400 leading-relaxed mb-8 max-w-3xl'>{t.hero.lead}</p>
-          <div className='border-s-4 border-cyan-700 bg-cyan-950/20 px-6 py-5 rounded-e-xl mb-10'>
-            <p className='text-sm font-semibold text-cyan-400 uppercase tracking-wide mb-2'>{t.hero.authority.kicker}</p>
+          <div className='border-s-4 border-brand-gold-dark bg-brand-gold/10 px-6 py-5 rounded-e-xl mb-10'>
+            <p className='text-sm font-semibold text-brand-gold-light uppercase tracking-wide mb-2'>{t.hero.authority.kicker}</p>
             <p className='text-neutral-300 leading-relaxed'>{t.hero.authority.text}</p>
           </div>
           <div className='flex flex-wrap gap-2 mb-4'>
@@ -119,7 +119,7 @@ export default async function CertificationsPage({ params }: PageProps) {
       </section>
 
       {/* Grid */}
-      <section className='bg-neutral-950 text-neutral-200'>
+      <section className='bg-brand-navy text-neutral-200'>
         <div className='max-w-5xl mx-auto px-6 py-16'>
           <div className='mb-6'>
             <AuthorHubCard label={t.grid.authorLabel} compact description={t.grid.authorDescription} />
@@ -127,12 +127,12 @@ export default async function CertificationsPage({ params }: PageProps) {
           <div className='space-y-10'>
             {providerGroups.map((group) => (
               <section key={group.provider} className='rounded-xl border border-neutral-800 bg-neutral-900/30 p-6'>
-                <h2 className='text-2xl font-semibold text-white mb-4'>{group.provider}</h2>
+                <h2 className='text-2xl font-semibold text-brand-offwhite mb-4'>{group.provider}</h2>
                 <div className='grid gap-4'>
                   {group.certifications.map((cert) => (
                     <article key={cert.slug} className='rounded-lg border border-neutral-800 bg-neutral-950/60 p-5'>
-                      <h3 className='text-lg font-semibold text-white mb-2'>
-                        <Link href={localePath(cert.canonicalPath, locale)} className='hover:text-emerald-400 transition-colors'>{cert.title}</Link>
+                      <h3 className='text-lg font-semibold text-brand-offwhite mb-2'>
+                        <Link href={localePath(cert.canonicalPath, locale)} className='hover:text-brand-gold-light transition-colors'>{cert.title}</Link>
                       </h3>
                       <p className='text-sm text-neutral-400 mb-3'>{cert.summary}</p>
                       <p className='text-sm text-neutral-300 mb-4'>{cert.about}</p>
@@ -152,7 +152,7 @@ export default async function CertificationsPage({ params }: PageProps) {
                         {cert.certId && (
                           <span className='rounded-full border border-neutral-700 px-3 py-1 text-neutral-300'>{cert.certId}</span>
                         )}
-                        <a href={cert.verifyUrl} target='_blank' rel='noopener noreferrer' className='rounded-full border border-emerald-700/40 bg-emerald-900/20 px-3 py-1 text-emerald-300 hover:bg-emerald-900/40 transition-colors'>
+                        <a href={cert.verifyUrl} target='_blank' rel='noopener noreferrer' className='rounded-full border border-brand-gold/40 bg-brand-gold/10 px-3 py-1 text-brand-gold-light hover:bg-brand-gold/20 transition-colors'>
                           {t.grid.verifyUrl}
                         </a>
                       </div>
@@ -166,9 +166,9 @@ export default async function CertificationsPage({ params }: PageProps) {
       </section>
 
       {/* CTA */}
-      <section className='bg-neutral-950 text-neutral-200 py-12 border-t border-neutral-800'>
+      <section className='bg-brand-navy text-neutral-200 py-12 border-t border-neutral-800'>
         <div className='max-w-4xl mx-auto px-6 text-center'>
-          <h2 className='text-xl font-bold text-white mb-3'>{t.cta.title}</h2>
+          <h2 className='text-xl font-bold text-brand-offwhite mb-3'>{t.cta.title}</h2>
           <p className='text-neutral-400 mb-6 max-w-2xl mx-auto text-sm leading-relaxed'>{t.cta.description}</p>
           <Link href={localePath('/', locale)} className='inline-flex items-center gap-2 bg-white text-black font-semibold px-6 py-3 rounded-full hover:bg-gray-100 transition-colors text-sm'>
             {t.cta.button}
@@ -177,7 +177,7 @@ export default async function CertificationsPage({ params }: PageProps) {
       </section>
 
       {/* FAQ */}
-      <section className='bg-neutral-950 text-neutral-200 pb-16'>
+      <section className='bg-brand-navy text-neutral-200 pb-16'>
         <div className='max-w-4xl mx-auto px-6'>
           <FaqSection items={[...tFaq]} sectionTitle={t.faq.sectionTitle} />
         </div>

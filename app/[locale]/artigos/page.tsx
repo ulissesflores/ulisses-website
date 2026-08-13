@@ -93,7 +93,7 @@ export default async function ArtigosPage({ params }: PageProps) {
   };
 
   return (
-    <div className='min-h-screen bg-neutral-950 text-neutral-200'>
+    <div className='min-h-screen bg-brand-navy text-neutral-200 selection:bg-brand-gold/30 selection:text-brand-offwhite'>
       <script type='application/ld+json' dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionJsonLd) }} />
       <script type='application/ld+json' dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
 
@@ -102,15 +102,15 @@ export default async function ArtigosPage({ params }: PageProps) {
           <div className='flex items-center gap-2 mb-6'>
             <Link
               href={localePath('/', locale)}
-              className='text-xs font-mono uppercase tracking-widest text-emerald-400 hover:underline'
+              className='text-xs font-mono uppercase tracking-widest text-brand-gold-light hover:underline'
             >
               {dict.common.breadcrumb.home}
             </Link>
-            <span className='text-xs text-neutral-600'>→</span>
+            <span className='text-xs text-neutral-400'>→</span>
             <span className='text-xs font-mono uppercase tracking-widest text-neutral-400'>{t.hero.badge}</span>
           </div>
 
-          <h1 className='text-3xl md:text-5xl font-bold text-white mb-6 leading-tight tracking-tight'>
+          <h1 className='text-3xl md:text-5xl font-bold text-brand-offwhite mb-6 leading-tight tracking-tight'>
             {t.hero.h1}
           </h1>
 
@@ -132,17 +132,17 @@ export default async function ArtigosPage({ params }: PageProps) {
           {artigosByDateDesc.map((artigo) => (
             <article
               key={artigo.slug}
-              className='p-6 rounded-xl bg-neutral-900/40 border border-neutral-800 hover:border-emerald-500/40 transition-colors'
+              className='p-6 rounded-xl bg-neutral-900/40 border border-neutral-800 hover:border-brand-gold/40 transition-colors'
             >
               <div className='flex flex-wrap items-center gap-3 mb-3 text-xs text-neutral-400'>
                 <span className='flex items-center gap-2 font-mono uppercase'>
                   <Calendar size={12} /> {formatArtigoDate(artigo.date, locale)}
                 </span>
               </div>
-              <h2 className='text-2xl font-semibold text-white mb-3 leading-snug'>
+              <h2 className='text-2xl font-semibold text-brand-offwhite mb-3 leading-snug'>
                 <Link
                   href={localePath(`${canonicalPath}/${artigo.slug}`, locale)}
-                  className='hover:text-emerald-400 transition-colors'
+                  className='hover:text-brand-gold-light transition-colors'
                 >
                   {localizeArtigo(artigo, locale).title}
                 </Link>

@@ -157,7 +157,7 @@ export function TvChannelsDiagram({
     <figure className='my-10 not-prose'>
       <svg
         viewBox={`0 0 ${W} ${H}`}
-        className='w-full h-auto rounded-lg border border-white/10 bg-neutral-900/60'
+        className='w-full h-auto rounded-lg border border-white/10 bg-neutral-900/60 font-chart'
         role='img'
         aria-label={description}
       >

@@ -118,10 +118,10 @@ export default async function ConsultoriaPage({ params }: PageProps) {
       <script type='application/ld+json' dangerouslySetInnerHTML={{ __html: JSON.stringify(pageJsonLd) }} />
 
       {/* HERO */}
-      <section className='relative w-full bg-neutral-950 py-28 sm:py-36'>
-        <div className='absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,rgba(16,185,129,0.12),transparent)]' />
+      <section className='relative w-full bg-brand-navy py-28 sm:py-36 selection:bg-brand-gold/30 selection:text-brand-offwhite'>
+        <div className='absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,rgba(164,143,101,0.12),transparent)]' />
         <div className='relative mx-auto max-w-4xl px-6 text-center'>
-          <span className='inline-block rounded-full border border-emerald-500/40 bg-emerald-500/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-emerald-400 mb-8'>
+          <span className='inline-block rounded-full border border-brand-gold/40 bg-brand-gold/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-brand-gold-light mb-8'>
             {t.hero.badge}
           </span>
           <h1 className='text-4xl font-extrabold leading-[1.1] tracking-tight text-neutral-50 sm:text-5xl lg:text-6xl'>
@@ -133,7 +133,7 @@ export default async function ConsultoriaPage({ params }: PageProps) {
           <div className='mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center'>
             <a
               href={t.ctaStack.items[0].href}
-              className='inline-flex items-center justify-center rounded-full bg-emerald-500 px-8 py-3.5 text-sm font-bold text-neutral-950 shadow-lg shadow-emerald-500/25 transition-all hover:bg-emerald-400 hover:shadow-emerald-400/30'
+              className='inline-flex items-center justify-center rounded-full bg-brand-gold px-8 py-3.5 text-sm font-bold text-brand-navy shadow-lg shadow-brand-gold/25 transition-all hover:bg-brand-gold-light hover:shadow-brand-gold-light/30'
             >
               {t.hero.ctaPrimary}
             </a>
@@ -148,7 +148,7 @@ export default async function ConsultoriaPage({ params }: PageProps) {
       </section>
 
       {/* TRUST */}
-      <section className='bg-neutral-950 py-12 border-t border-neutral-900'>
+      <section className='bg-brand-navy py-12 border-t border-neutral-900'>
         <div className='mx-auto max-w-5xl px-6'>
           <p className='text-center text-[11px] uppercase tracking-[0.18em] text-neutral-400 mb-6'>
             {t.trust.label}
@@ -156,7 +156,7 @@ export default async function ConsultoriaPage({ params }: PageProps) {
           <ul className='flex flex-wrap justify-center gap-x-6 gap-y-3 text-sm text-neutral-300'>
             {t.trust.items.map((it) => (
               <li key={it} className='flex items-center gap-2'>
-                <span className='inline-block h-1.5 w-1.5 rounded-full bg-emerald-500' />
+                <span className='inline-block h-1.5 w-1.5 rounded-full bg-brand-gold' />
                 {it}
               </li>
             ))}
@@ -165,7 +165,7 @@ export default async function ConsultoriaPage({ params }: PageProps) {
       </section>
 
       {/* COMPARATOR */}
-      <section className='bg-neutral-950 py-24'>
+      <section className='bg-brand-navy py-24'>
         <div className='mx-auto max-w-5xl px-6'>
           <h2 className='text-3xl font-bold tracking-tight text-neutral-50 sm:text-4xl text-center'>
             {t.comparator.title}
@@ -185,7 +185,7 @@ export default async function ConsultoriaPage({ params }: PageProps) {
                 {t.comparator.rows.map((row) => (
                   <tr key={row.symptom} className='bg-neutral-950/60 hover:bg-neutral-900/40 transition-colors'>
                     <td className='px-5 py-3 text-neutral-300'>{row.symptom}</td>
-                    <td className='px-5 py-3 text-emerald-300 font-medium'>{row.service}</td>
+                    <td className='px-5 py-3 text-brand-gold-light font-medium'>{row.service}</td>
                   </tr>
                 ))}
               </tbody>
@@ -195,7 +195,7 @@ export default async function ConsultoriaPage({ params }: PageProps) {
       </section>
 
       {/* MODALIDADES */}
-      <section id='modalidades' className='bg-neutral-950 py-24'>
+      <section id='modalidades' className='bg-brand-navy py-24'>
         <div className='mx-auto max-w-6xl px-6'>
           <h2 className='text-3xl font-bold tracking-tight text-neutral-50 sm:text-4xl text-center'>
             {t.modalidades.title}
@@ -207,13 +207,13 @@ export default async function ConsultoriaPage({ params }: PageProps) {
                 <h3 className='text-lg font-semibold text-neutral-50'>{m.title}</h3>
                 <div className='mt-2 flex flex-wrap gap-2 text-[11px] uppercase tracking-[0.15em]'>
                   <span className='inline-block rounded-full border border-neutral-700 bg-neutral-950 px-2.5 py-1 text-neutral-400'>{m.duration}</span>
-                  <span className='inline-block rounded-full border border-emerald-500/30 bg-emerald-500/10 px-2.5 py-1 text-emerald-300'>{m.priceLabel}</span>
+                  <span className='inline-block rounded-full border border-brand-gold/30 bg-brand-gold/10 px-2.5 py-1 text-brand-gold-light'>{m.priceLabel}</span>
                 </div>
                 <p className='mt-4 text-sm text-neutral-400 leading-relaxed'>{m.description}</p>
                 <ul className='mt-4 space-y-1.5 text-sm text-neutral-300'>
                   {m.deliverables.map((d) => (
                     <li key={d} className='flex items-start gap-2'>
-                      <span className='mt-1 inline-block h-1.5 w-1.5 rounded-full bg-cyan-500 shrink-0' />
+                      <span className='mt-1 inline-block h-1.5 w-1.5 rounded-full bg-brand-gold shrink-0' />
                       <span>{d}</span>
                     </li>
                   ))}
@@ -225,7 +225,7 @@ export default async function ConsultoriaPage({ params }: PageProps) {
       </section>
 
       {/* VERTICAIS */}
-      <section className='bg-neutral-950 py-24 border-t border-neutral-900'>
+      <section className='bg-brand-navy py-24 border-t border-neutral-900'>
         <div className='mx-auto max-w-6xl px-6'>
           <h2 className='text-3xl font-bold tracking-tight text-neutral-50 sm:text-4xl text-center'>
             {t.verticais.title}
@@ -234,7 +234,7 @@ export default async function ConsultoriaPage({ params }: PageProps) {
           <div className='mt-12 grid gap-6 md:grid-cols-3'>
             {t.verticais.items.map((v) => (
               <article key={v.title} className='rounded-2xl border border-neutral-800 bg-neutral-900/40 p-6'>
-                <h3 className='text-lg font-semibold text-emerald-300'>{v.title}</h3>
+                <h3 className='text-lg font-semibold text-brand-gold-light'>{v.title}</h3>
                 <p className='mt-3 text-sm text-neutral-400 leading-relaxed'>{v.description}</p>
               </article>
             ))}
@@ -251,7 +251,7 @@ export default async function ConsultoriaPage({ params }: PageProps) {
       </section>
 
       {/* PRICING */}
-      <section className='bg-neutral-950 py-24 border-t border-neutral-900'>
+      <section className='bg-brand-navy py-24 border-t border-neutral-900'>
         <div className='mx-auto max-w-6xl px-6'>
           <h2 className='text-3xl font-bold tracking-tight text-neutral-50 sm:text-4xl text-center'>
             {t.pricing.title}
@@ -269,7 +269,7 @@ export default async function ConsultoriaPage({ params }: PageProps) {
                 {t.pricing.rows.map((row) => (
                   <tr key={row.modality} className='bg-neutral-950/60'>
                     <td className='px-5 py-3 text-neutral-300 font-medium'>{row.modality}</td>
-                    <td className='px-5 py-3 text-emerald-300'>{row.pricing}</td>
+                    <td className='px-5 py-3 text-brand-gold-light'>{row.pricing}</td>
                   </tr>
                 ))}
               </tbody>
@@ -280,7 +280,7 @@ export default async function ConsultoriaPage({ params }: PageProps) {
       </section>
 
       {/* CASES */}
-      <section className='bg-neutral-950 py-24 border-t border-neutral-900'>
+      <section className='bg-brand-navy py-24 border-t border-neutral-900'>
         <div className='mx-auto max-w-6xl px-6'>
           <h2 className='text-3xl font-bold tracking-tight text-neutral-50 sm:text-4xl text-center'>
             {t.cases.title}
@@ -289,7 +289,7 @@ export default async function ConsultoriaPage({ params }: PageProps) {
           <div className='mt-12 grid gap-6 md:grid-cols-2'>
             {t.cases.items.map((c) => {
               const titleEl = (
-                <h3 className='text-lg font-semibold text-neutral-50 group-hover:text-emerald-300 transition-colors'>
+                <h3 className='text-lg font-semibold text-neutral-50 group-hover:text-brand-gold-light transition-colors'>
                   {c.title}
                 </h3>
               );
@@ -315,8 +315,8 @@ export default async function ConsultoriaPage({ params }: PageProps) {
                     <span>{c.period}</span>
                   </div>
                   <p className='mt-3 text-sm text-neutral-400 leading-relaxed'>{c.description}</p>
-                  <p className='mt-3 text-sm text-emerald-300/90 leading-relaxed'>
-                    <strong className='text-emerald-300'>→ </strong>
+                  <p className='mt-3 text-sm text-brand-gold-light/90 leading-relaxed'>
+                    <strong className='text-brand-gold-light'>→ </strong>
                     {c.outcome}
                   </p>
                 </article>
@@ -327,14 +327,14 @@ export default async function ConsultoriaPage({ params }: PageProps) {
       </section>
 
       {/* DELIVERY + IDIOMAS */}
-      <section className='bg-neutral-950 py-24 border-t border-neutral-900'>
+      <section className='bg-brand-navy py-24 border-t border-neutral-900'>
         <div className='mx-auto max-w-6xl px-6 grid gap-10 md:grid-cols-2'>
           <div>
             <h2 className='text-2xl font-bold tracking-tight text-neutral-50 sm:text-3xl'>{t.delivery.title}</h2>
             <ul className='mt-6 space-y-4'>
               {t.delivery.items.map((d) => (
                 <li key={d.title} className='rounded-xl border border-neutral-800 bg-neutral-900/40 p-5'>
-                  <h3 className='text-base font-semibold text-emerald-300'>{d.title}</h3>
+                  <h3 className='text-base font-semibold text-brand-gold-light'>{d.title}</h3>
                   <p className='mt-2 text-sm text-neutral-400 leading-relaxed'>{d.description}</p>
                 </li>
               ))}
@@ -355,7 +355,7 @@ export default async function ConsultoriaPage({ params }: PageProps) {
       </section>
 
       {/* CTA STACK */}
-      <section id='contato' className='bg-neutral-950 py-24 border-t border-neutral-900'>
+      <section id='contato' className='bg-brand-navy py-24 border-t border-neutral-900'>
         <div className='mx-auto max-w-6xl px-6'>
           <h2 className='text-3xl font-bold tracking-tight text-neutral-50 sm:text-4xl text-center'>
             {t.ctaStack.title}
@@ -366,11 +366,11 @@ export default async function ConsultoriaPage({ params }: PageProps) {
               <a
                 key={c.title}
                 href={c.href}
-                className='block rounded-2xl border border-neutral-800 bg-neutral-900/40 p-6 transition-all hover:border-emerald-500/50 hover:bg-neutral-900/70'
+                className='block rounded-2xl border border-neutral-800 bg-neutral-900/40 p-6 transition-all hover:border-brand-gold/50 hover:bg-neutral-900/70'
               >
-                <h3 className='text-lg font-semibold text-emerald-300'>{c.title}</h3>
+                <h3 className='text-lg font-semibold text-brand-gold-light'>{c.title}</h3>
                 <p className='mt-3 text-sm text-neutral-400 leading-relaxed'>{c.description}</p>
-                <span className='mt-5 inline-flex items-center justify-center rounded-full bg-emerald-500 px-5 py-2 text-xs font-bold text-neutral-950'>
+                <span className='mt-5 inline-flex items-center justify-center rounded-full bg-brand-gold px-5 py-2 text-xs font-bold text-brand-navy'>
                   {c.button}
                 </span>
               </a>
@@ -384,16 +384,16 @@ export default async function ConsultoriaPage({ params }: PageProps) {
       </section>
 
       {/* LEAD MAGNET */}
-      <section className='bg-neutral-950 py-16 border-t border-neutral-900'>
+      <section className='bg-brand-navy py-16 border-t border-neutral-900'>
         <div className='mx-auto max-w-3xl px-6 text-center'>
-          <span className='inline-block rounded-full border border-cyan-500/40 bg-cyan-500/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-cyan-300 mb-5'>
+          <span className='inline-block rounded-full border border-brand-gold/40 bg-brand-gold/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-brand-gold-light mb-5'>
             {t.leadMagnet.badge}
           </span>
           <h2 className='text-2xl font-bold tracking-tight text-neutral-50 sm:text-3xl'>{t.leadMagnet.title}</h2>
           <p className='mt-4 text-neutral-400 leading-relaxed'>{t.leadMagnet.description}</p>
           <a
             href={t.leadMagnet.href}
-            className='mt-8 inline-flex items-center justify-center rounded-full border border-cyan-500/40 bg-cyan-500/10 px-7 py-3 text-sm font-bold text-cyan-200 transition-colors hover:bg-cyan-500/20'
+            className='mt-8 inline-flex items-center justify-center rounded-full border border-brand-gold/40 bg-brand-gold/10 px-7 py-3 text-sm font-bold text-brand-gold-light transition-colors hover:bg-brand-gold/20'
           >
             {t.leadMagnet.button}
           </a>
@@ -401,7 +401,7 @@ export default async function ConsultoriaPage({ params }: PageProps) {
       </section>
 
       {/* POLICIES */}
-      <section className='bg-neutral-950 py-24 border-t border-neutral-900'>
+      <section className='bg-brand-navy py-24 border-t border-neutral-900'>
         <div className='mx-auto max-w-4xl px-6'>
           <h2 className='text-2xl font-bold tracking-tight text-neutral-50 sm:text-3xl text-center'>
             {t.policies.title}
@@ -409,7 +409,7 @@ export default async function ConsultoriaPage({ params }: PageProps) {
           <dl className='mt-10 space-y-3'>
             {t.policies.items.map((p) => (
               <div key={p.label} className='rounded-xl border border-neutral-800 bg-neutral-900/40 p-5'>
-                <dt className='text-sm font-semibold text-emerald-300'>{p.label}</dt>
+                <dt className='text-sm font-semibold text-brand-gold-light'>{p.label}</dt>
                 <dd className='mt-2 text-sm text-neutral-400 leading-relaxed'>{p.value}</dd>
               </div>
             ))}
@@ -418,7 +418,7 @@ export default async function ConsultoriaPage({ params }: PageProps) {
       </section>
 
       {/* AUTHOR */}
-      <section className='bg-neutral-950 py-12'>
+      <section className='bg-brand-navy py-12'>
         <div className='mx-auto max-w-4xl px-6'>
           <AuthorHubCard
             label='Author'
@@ -428,20 +428,20 @@ export default async function ConsultoriaPage({ params }: PageProps) {
       </section>
 
       {/* FAQ */}
-      <section className='bg-neutral-950 py-24 border-t border-neutral-900'>
+      <section className='bg-brand-navy py-24 border-t border-neutral-900'>
         <div className='mx-auto max-w-4xl px-6'>
           <FaqSection items={[...tFaq]} sectionTitle={t.faq.sectionTitle} />
         </div>
       </section>
 
       {/* FINAL CTA */}
-      <section className='bg-neutral-950 py-28 border-t border-neutral-900'>
+      <section className='bg-brand-navy py-28 border-t border-neutral-900'>
         <div className='mx-auto max-w-3xl px-6 text-center'>
           <h2 className='text-3xl font-bold tracking-tight text-neutral-50 sm:text-4xl'>{t.finalCta.title}</h2>
           <p className='mt-6 text-lg text-neutral-400 leading-relaxed'>{t.finalCta.description}</p>
           <a
             href={t.finalCta.href}
-            className='mt-10 inline-flex items-center justify-center rounded-full bg-emerald-500 px-10 py-4 text-sm font-bold text-neutral-950 shadow-lg shadow-emerald-500/25 transition-all hover:bg-emerald-400 hover:shadow-emerald-400/30'
+            className='mt-10 inline-flex items-center justify-center rounded-full bg-brand-gold px-10 py-4 text-sm font-bold text-brand-navy shadow-lg shadow-brand-gold/25 transition-all hover:bg-brand-gold-light hover:shadow-brand-gold-light/30'
           >
             {t.finalCta.button}
           </a>

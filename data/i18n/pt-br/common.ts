@@ -9,22 +9,21 @@ export const common = {
         ],
       },
       {
-        label: 'Sobre',
-        items: [
-          { label: 'Bio', href: '/#about', description: 'Quem sou e minha trajetória' },
-          { label: 'Expertise', href: '/#pillars', description: 'Pilares de atuação' },
-          { label: 'Trajetória', href: '/#trajectory', description: 'Linha do tempo profissional' },
-        ],
-      },
-      {
         label: 'Publicações',
         items: [
           { label: 'Artigos', href: '/artigos', description: 'Análises autorais sobre IA, engenharia e sistemas complexos' },
           { label: 'Research', href: '/research', description: 'IA, Economia e Sistemas Complexos' },
           { label: 'Whitepapers', href: '/whitepapers', description: 'Engenharia, IoT e Segurança' },
-          { label: 'Projeto Ψ (PSI)', href: '/whitepapers/projeto-psi', description: 'Whitepaper técnico: Hardware Soberano' },
-          { label: 'PSI — Demonstração', href: '/projeto-psi', description: 'Landing comercial: investimento e licenciamento' },
           { label: 'Essays', href: '/essays', description: 'Teologia, Humanidades e História' },
+          { label: 'Projeto Ψ (PSI)', href: '/whitepapers/projeto-psi', description: 'Whitepaper técnico: Hardware Soberano' },
+        ],
+      },
+      {
+        label: 'Simulações',
+        items: [
+          { label: 'Visão geral', href: '/simulacoes', description: 'Laboratório de cenários prospectivos' },
+          { label: 'IA 2027', href: '/simulacoes/ia-2027', description: 'Cenários interativos até a chegada da AGI' },
+          { label: 'GoldenLeaf', href: '/simulacoes/goldenleaf', description: 'Micologia inteligente com IoT e IA' },
         ],
       },
       {
@@ -36,9 +35,11 @@ export const common = {
         ],
       },
       {
-        label: 'Ferramentas',
+        label: 'Sobre',
         items: [
-          { label: 'Simulações', href: '/simulacoes', description: 'Laboratório de cenários prospectivos' },
+          { label: 'Bio', href: '/#about', description: 'Quem sou e minha trajetória' },
+          { label: 'Expertise', href: '/#pillars', description: 'Pilares de atuação' },
+          { label: 'Trajetória', href: '/#trajectory', description: 'Linha do tempo profissional' },
           { label: 'Identidade', href: '/identidade', description: 'Hub canônico de identidade soberana' },
           { label: 'Certificações', href: '/certifications', description: 'Credenciais e verificações' },
         ],

@@ -46,7 +46,7 @@ export function AuthorHubCard({
           <Link
             href={href}
             rel='author'
-            className='font-semibold text-white transition-colors hover:text-emerald-300'
+            className='font-semibold text-brand-offwhite transition-colors hover:text-brand-gold-light'
           >
             {name}
           </Link>
@@ -59,7 +59,7 @@ export function AuthorHubCard({
       {contactLabel && (
         <Link
           href={contactHref}
-          className='mt-4 inline-flex items-center gap-2 rounded-full border border-emerald-500/50 px-4 py-2 text-xs font-semibold text-emerald-300 transition-colors hover:bg-emerald-900/20'
+          className='mt-4 inline-flex items-center gap-2 rounded-full border border-brand-gold/50 px-4 py-2 text-xs font-semibold text-brand-gold-light transition-colors hover:bg-brand-gold/10'
         >
           {contactLabel}
         </Link>

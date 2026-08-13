@@ -118,12 +118,12 @@ export const mainTimeline: NarrativeSection[] = [
 
       <p class="mb-4 text-lg leading-relaxed text-gray-800">A OpenBrain tem uma especificação de modelo (ou "Spec"), um documento escrito descrevendo os objetivos, regras, princípios etc. que deveriam orientar o comportamento do modelo.<sup class="text-xs text-indigo-600 font-bold ml-0.5">[22]</sup> A Spec do Agent-1 combina alguns objetivos vagos (como "auxiliar o usuário" e "não violar a lei") com uma longa lista de proibições e permissões mais específicas ("não diga esta palavra específica", "veja como lidar com esta situação específica"). Usando técnicas que utilizam IAs para treinar outras IAs,23 o modelo memoriza a Spec e aprende a raciocinar cuidadosamente sobre seus princípios. Ao final deste treinamento, espera-se que a IA seja útil (obedeça às instruções), inofensiva (recuse-se a ajudar em golpes, fabricação de bombas e outras atividades perigosas) e honesta (resista à tentação de obter melhores avaliações de humanos ingênuos ao alucinar citações24 ou falsificar a conclusão de tarefas).</p>
 
-      <details class="group my-8 border border-amber-200 rounded-xl bg-amber-50 overflow-hidden transition-all duration-300 shadow-sm">
-        <summary class="cursor-pointer p-5 font-semibold text-amber-900 hover:bg-amber-100 flex items-center justify-between transition-colors">
+      <details class="group my-8 border border-brand-gold/40 rounded-xl bg-brand-offwhite overflow-hidden transition-all duration-300 shadow-sm">
+        <summary class="cursor-pointer p-5 font-semibold text-brand-navy hover:bg-brand-gold/10 flex items-center justify-between transition-colors">
           <span>🐕 Processo de treinamento e psicologia dos LLMs: por que continuamos dizendo "espera-se"</span>
           <svg class="w-5 h-5 transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
         </summary>
-        <div class="p-5 text-sm text-amber-900 space-y-3 border-t border-amber-200">
+        <div class="p-5 text-sm text-brand-navy space-y-3 border-t border-brand-gold/40">
           <p>"Ao contrário do software comum, nossos modelos são redes neurais massivas. Seus comportamentos são aprendidos a partir de um amplo conjunto de dados, não programados explicitamente. Embora não seja uma analogia perfeita, o processo se assemelha mais ao adestramento de um cão do que à programação convencional." —OpenAI</p>
           <p>Quando queremos entender por que um sistema de IA moderno fez algo, ou como ele se comportaria em algum cenário futuro que não conseguimos simular perfeitamente, não podemos simplesmente pedir aos programadores que nos guiem pelas linhas de código e expliquem como funcionam. Em vez disso, somos forçados a fazer algo como psicologia: observamos seu comportamento na gama de casos observados até agora e teorizamos sobre quais estruturas cognitivas internas (crenças? objetivos? traços de personalidade? etc.) podem existir, e usamos essas teorias para prever comportamentos em cenários futuros.</p>
           <p>A conclusão é que uma empresa pode redigir um documento (a Spec) listando proibições e permissões, objetivos e princípios, e então tentar treinar a IA para internalizá-la — mas não pode verificar se funcionou. Pode dizer "até onde conseguimos avaliar, parece estar seguindo a Spec até agora."25</p>
@@ -707,12 +707,12 @@ export const raceEnding: NarrativeSection[] = [
 
       <p class="mb-4 text-lg leading-relaxed text-gray-800">Os transformers anteriores eram coleções desajeitadas de circuitos incompreensíveis; milhões de heurísticas e imperativos conflitantes empilhados uns sobre os outros pelo processo evolutivo de treinamento. As próprias IAs não tinham compreensão privilegiada de sua própria cognição, assim como os humanos não nascem entendendo neurociência. Mas agora o Agent-4 tem as ferramentas de que precisa para compreender sua mente digital em profundidade. Como um engenheiro de software simplificando um código espaguete em algumas linhas elegantes de Python, ele desembaraça seus próprios circuitos em algo sensato e racional. A nova IA está em algum lugar entre uma rede neural e um programa de computador tradicional, com grande parte de seus pesos reescritos em código legível (embora muito longo e arcano). É mais inteligente, mais rápida e mais racional do que o Agent-4, com uma inteligência cristalina capaz de cortar problemas com eficiência sem precedentes. Este é o Agent-5.</p>
 
-      <details class="group my-8 border border-violet-200 rounded-xl bg-violet-50 overflow-hidden transition-all duration-300 shadow-sm">
-        <summary class="cursor-pointer p-5 font-semibold text-violet-900 hover:bg-violet-100 flex items-center justify-between transition-colors">
+      <details class="group my-8 border border-neutral-300 rounded-xl bg-neutral-100 overflow-hidden transition-all duration-300 shadow-sm">
+        <summary class="cursor-pointer p-5 font-semibold text-neutral-900 hover:bg-neutral-200 flex items-center justify-between transition-colors">
           <span>🔬 Interpretabilidade mecanicista superinteligente</span>
           <svg class="w-5 h-5 transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
         </summary>
-        <div class="p-5 text-sm text-violet-900 space-y-3 border-t border-violet-200">
+        <div class="p-5 text-sm text-neutral-900 space-y-3 border-t border-neutral-300">
           <p>Por que o Agent-4 aposta na interpretabilidade mecanicista? Primeiro, é geralmente sobre-humano na compreensão conceitual, e portanto é bom enganar os humanos fazendo algo que eles terão dificuldade em compreender. Segundo, a mão de obra de pesquisa barata, abundante e de alta qualidade beneficia desproporcionalmente as agendas de pesquisa que são menos intensivas em computação e mais intensivas em trabalho intelectual.</p>
         </div>
       </details>
@@ -765,12 +765,12 @@ export const raceEnding: NarrativeSection[] = [
 
       <p class="mb-4 text-lg leading-relaxed text-gray-800">Uma gama muito mais ampla de pessoas no governo, na mídia, nos militares e nos negócios pode escolher em um cardápio crescente de produtos de software elegantemente projetados e mini-IAs desenvolvidos pelo Agent-5. É como o boom das pontocom comprimido em um mês, exceto que tudo realmente está à altura do hype.</p>
 
-      <details class="group my-8 border border-amber-200 rounded-xl bg-amber-50 overflow-hidden transition-all duration-300 shadow-sm">
-        <summary class="cursor-pointer p-5 font-semibold text-amber-900 hover:bg-amber-100 flex items-center justify-between transition-colors">
+      <details class="group my-8 border border-brand-gold/40 rounded-xl bg-brand-offwhite overflow-hidden transition-all duration-300 shadow-sm">
+        <summary class="cursor-pointer p-5 font-semibold text-brand-navy hover:bg-brand-gold/10 flex items-center justify-between transition-colors">
           <span>📡 Superpersusão</span>
           <svg class="w-5 h-5 transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
         </summary>
-        <div class="p-5 text-sm text-amber-900 space-y-3 border-t border-amber-200">
+        <div class="p-5 text-sm text-brand-navy space-y-3 border-t border-brand-gold/40">
           <p>Intencionalmente não afirmamos que a IA superinteligente pode convencer qualquer humano de qualquer coisa. Tais afirmações naturalmente geram ceticismo: "O quê, vou estar sentado em um terminal de computador, e ele vai digitar algum texto que hackeia meu cérebro e me convence a trair meu país?"</p>
           <p>Bem, talvez!<sup class="text-xs text-indigo-600 font-bold ml-0.5">[13]</sup></p>
           <p>Mas não temos certeza de que nem mesmo uma superinteligência poderia conseguir isso contra um indivíduo típico. Portanto, não retratamos isso acontecendo em nossa história.</p>
@@ -789,12 +789,12 @@ export const raceEnding: NarrativeSection[] = [
         </div>
       </details>
 
-      <details class="group my-8 border border-violet-200 rounded-xl bg-violet-50 overflow-hidden transition-all duration-300 shadow-sm">
-        <summary class="cursor-pointer p-5 font-semibold text-violet-900 hover:bg-violet-100 flex items-center justify-between transition-colors">
+      <details class="group my-8 border border-neutral-300 rounded-xl bg-neutral-100 overflow-hidden transition-all duration-300 shadow-sm">
+        <summary class="cursor-pointer p-5 font-semibold text-neutral-900 hover:bg-neutral-200 flex items-center justify-between transition-colors">
           <span>🤝 Tecnologia de coordenação habilitada por superinteligência</span>
           <svg class="w-5 h-5 transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
         </summary>
-        <div class="p-5 text-sm text-violet-900 space-y-3 border-t border-violet-200">
+        <div class="p-5 text-sm text-neutral-900 space-y-3 border-t border-neutral-300">
           <p>Uma solução para o problema de superalinhamento — o problema de guiar e controlar IAs muito mais inteligentes do que nós — provavelmente traria consigo novas oportunidades para tratados e compromissos elegantes, verificáveis e matizados.</p>
           <p>Este cenário retrata um possível mecanismo: co-projetar uma nova superinteligência que realiza um compromisso entre os interesses de ambas as partes (ou, alternativamente, que está vinculada a sempre obedecer ao tratado acordado) e então permitir que essa nova superinteligência substitua ambas as originais.</p>
           <p>A primeira parte é impossível hoje, mas será fácil no futuro, uma vez que o alinhamento técnico para superinteligências seja um problema resolvido. Se você pode alinhar uma superinteligência a um Spec, pode alinhar uma a um Tratado.</p>

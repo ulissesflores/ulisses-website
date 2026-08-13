@@ -89,25 +89,25 @@ export default async function GoldenLeafPage({ params }: PageProps) {
   return (
     <main>
       {/* Hero Section */}
-      <section className='bg-neutral-950 text-neutral-200 pt-20 pb-16 border-b border-neutral-800'>
+      <section className='bg-brand-navy text-neutral-200 pt-20 pb-16 border-b border-neutral-800 selection:bg-brand-gold/30 selection:text-brand-offwhite'>
         <div className='max-w-4xl mx-auto px-6'>
           {/* Breadcrumb */}
           <div className='flex items-center gap-2 mb-6'>
-            <Link href={localePath('/', locale)} className='text-xs font-mono uppercase tracking-widest text-emerald-400 hover:underline'>
+            <Link href={localePath('/', locale)} className='text-xs font-mono uppercase tracking-widest text-brand-gold-light hover:underline'>
               Home
             </Link>
-            <span className='text-xs text-neutral-600'>→</span>
-            <Link href={localePath('/simulacoes', locale)} className='text-xs font-mono uppercase tracking-widest text-emerald-400 hover:underline'>
+            <span className='text-xs text-neutral-400'>→</span>
+            <Link href={localePath('/simulacoes', locale)} className='text-xs font-mono uppercase tracking-widest text-brand-gold-light hover:underline'>
               {t.breadcrumb.simulations}
             </Link>
-            <span className='text-xs text-neutral-600'>→</span>
+            <span className='text-xs text-neutral-400'>→</span>
             <span className='text-xs font-mono uppercase tracking-widest text-neutral-400'>
               {t.breadcrumb.goldenleaf}
             </span>
           </div>
 
           {/* H1 */}
-          <h1 className='text-4xl sm:text-5xl font-bold leading-tight tracking-tight mb-6 text-white'>
+          <h1 className='text-4xl sm:text-5xl font-bold leading-tight tracking-tight mb-6 text-brand-offwhite'>
             {t.hero.h1}
           </h1>
 
@@ -117,8 +117,8 @@ export default async function GoldenLeafPage({ params }: PageProps) {
           </p>
 
           {/* Authority block */}
-          <div className='border-l-4 border-cyan-700 bg-cyan-950/20 px-6 py-5 rounded-r-xl mb-10'>
-            <p className='text-sm font-semibold text-cyan-400 uppercase tracking-wide mb-2'>
+          <div className='border-l-4 border-brand-gold-dark bg-brand-gold/10 px-6 py-5 rounded-r-xl mb-10'>
+            <p className='text-sm font-semibold text-brand-gold-light uppercase tracking-wide mb-2'>
               {t.hero.authority.kicker}
             </p>
             <p className='text-neutral-300 leading-relaxed'>
@@ -141,17 +141,17 @@ export default async function GoldenLeafPage({ params }: PageProps) {
       </section>
 
       {/* Technical Architecture */}
-      <section className='bg-neutral-950 text-neutral-200 py-16'>
+      <section className='bg-brand-navy text-neutral-200 py-16'>
         <div className='max-w-5xl mx-auto px-6'>
-          <h2 className='text-2xl font-bold text-white mb-8'>{t.architecture.title}</h2>
+          <h2 className='text-2xl font-bold text-brand-offwhite mb-8'>{t.architecture.title}</h2>
 
           <div className='grid sm:grid-cols-2 gap-6 mb-10'>
             {[...t.architecture.specs].map((spec) => (
               <article key={spec.title} className='rounded-xl border border-neutral-800 bg-neutral-900/40 p-6'>
-                <span className='text-[10px] uppercase tracking-[0.2em] text-emerald-300 border border-emerald-700/40 rounded-full px-3 py-1'>
+                <span className='text-[10px] uppercase tracking-[0.2em] text-brand-gold-light border border-brand-gold/40 rounded-full px-3 py-1'>
                   {spec.tag}
                 </span>
-                <h3 className='text-lg font-bold text-white mt-4 mb-2'>{spec.title}</h3>
+                <h3 className='text-lg font-bold text-brand-offwhite mt-4 mb-2'>{spec.title}</h3>
                 <p className='text-sm text-neutral-400 leading-relaxed'>{spec.description}</p>
               </article>
             ))}
@@ -159,17 +159,17 @@ export default async function GoldenLeafPage({ params }: PageProps) {
 
           {/* Related Publications */}
           <div className='rounded-xl border border-neutral-800 bg-neutral-900/30 p-6'>
-            <h3 className='text-lg font-semibold text-white mb-4'>{t.architecture.relatedTitle}</h3>
+            <h3 className='text-lg font-semibold text-brand-offwhite mb-4'>{t.architecture.relatedTitle}</h3>
             <div className='space-y-3'>
               <Link
                 href={localePath('/whitepapers/2025-iot-data-sovereignty', locale)}
-                className='block text-sm text-emerald-300 hover:text-emerald-200 transition-colors'
+                className='block text-sm text-brand-gold-light hover:text-brand-offwhite transition-colors'
               >
                 {t.architecture.relatedLinks[0]}
               </Link>
               <Link
                 href={localePath('/whitepapers/2025-hybrid-cooling-thermodynamics', locale)}
-                className='block text-sm text-emerald-300 hover:text-emerald-200 transition-colors'
+                className='block text-sm text-brand-gold-light hover:text-brand-offwhite transition-colors'
               >
                 {t.architecture.relatedLinks[1]}
               </Link>
@@ -179,7 +179,7 @@ export default async function GoldenLeafPage({ params }: PageProps) {
       </section>
 
       {/* Author block */}
-      <section className='bg-neutral-950 text-neutral-200 pb-4'>
+      <section className='bg-brand-navy text-neutral-200 pb-4'>
         <div className='max-w-5xl mx-auto px-6'>
           <AuthorHubCard
             label={t.author.label}
@@ -189,9 +189,9 @@ export default async function GoldenLeafPage({ params }: PageProps) {
       </section>
 
       {/* CTA */}
-      <section className='bg-neutral-950 text-neutral-200 py-12'>
+      <section className='bg-brand-navy text-neutral-200 py-12'>
         <div className='max-w-4xl mx-auto px-6 text-center'>
-          <h2 className='text-xl font-bold text-white mb-3'>
+          <h2 className='text-xl font-bold text-brand-offwhite mb-3'>
             {t.cta.title}
           </h2>
           <p className='text-neutral-400 mb-6 max-w-2xl mx-auto text-sm leading-relaxed'>
@@ -207,7 +207,7 @@ export default async function GoldenLeafPage({ params }: PageProps) {
       </section>
 
       {/* FAQ */}
-      <section className='bg-neutral-950 text-neutral-200 pb-16'>
+      <section className='bg-brand-navy text-neutral-200 pb-16'>
         <div className='max-w-4xl mx-auto px-6'>
           <FaqSection
             items={[...dict.faq.goldenleaf]}

@@ -6,6 +6,26 @@
  * string do JSX — atributos de expressão (`series={[...]}`) chegam como
  * `undefined`. O corpo do artigo referencia a série pelo `id`; os números
  * ficam num arquivo revisável, com a procedência de cada um documentada.
+ *
+ * ── PALETA DATAVIZ DA MARCA (F4 lote 7, 2026-08-13; escuro único, decisão #1) ──
+ * Instância derivada pela skill dataviz sobre a superfície real dos charts
+ * (#14191f = bg-neutral-900/60 sobre o marinho #101d2a). Papéis:
+ *   ouro (marca)  #a48f65  série-destaque; substituiu a série verde antiga
+ *                 (hex proibidos pelos greps do DOD #4 — não citar aqui)
+ *   azul          #60a5fa  série-tese / bloco 1
+ *   âmbar         #fbbf24  série/bloco secundário
+ *   cinzas        #64748b · #3f3f46  grupos recessivos ("fora da conversa")
+ *   cinza-claro   #d4d4d8  linha recessiva quando cruza o ouro (frontier-bench)
+ * Validação (validate_palette.js da skill dataviz, CVD MOF2009 sev 1.0, OKLab×100):
+ *   trio azul·ouro·âmbar — CVD pior par 18,8 (protan) · visão normal 20,5 PASS
+ *   waffle 5-cat — CVD 18,2 (deutan) · visão normal 18,7 PASS
+ *   frontier-bench all-pairs (linhas se cruzam) — CVD 17,2 · normal 17,3 PASS
+ * WAIVER deliberado: o ouro tem chroma OKLCH 0,063 < piso 0,10 da skill (o tom
+ * mudo É o caráter da marca); identidade nunca é só-cor aqui — toda superfície
+ * tem legenda rotulada + rótulos diretos e os números repetem em tabela no
+ * corpo do artigo. Ouros mais cromáticos REPROVAM o piso de visão normal
+ * contra o âmbar (mesma matiz 84°) — medido, não estimado.
+ * Verde/vermelho ficam reservados a semântica (bom/ruim), nunca "série 4".
  */
 
 export interface ChartSeries {
@@ -33,13 +53,16 @@ export interface ChartDataset {
  * uma imagem, sem tabela anexa). São aproximações de leitura em escala
  * logarítmica — a forma das curvas é o dado, não a terceira casa decimal.
  * O texto do post declara isso ao leitor.
+ * PALETA (lote 7): a série GPT-5.6 usa #d4d4d8 (não mais #a1a1aa) — a linha
+ * ouro cruza todas; all-pairs com o cinza antigo media ΔE 9,2 (reprova o piso
+ * 15), com #d4d4d8 mede 17,3 PASS.
  */
 export const chartDatasets: Record<string, ChartDataset> = {
   'opus5-frontier-bench': {
     series: [
       {
         label: 'Opus 5',
-        color: '#34d399',
+        color: '#a48f65',
         points: [
           [5.6, 25.7],
           [8.5, 35.0],
@@ -72,7 +95,7 @@ export const chartDatasets: Record<string, ChartDataset> = {
       },
       {
         label: 'GPT-5.6 Sol',
-        color: '#a1a1aa',
+        color: '#d4d4d8',
         points: [
           [1.05, 2.2],
           [2.6, 14.2],
@@ -106,7 +129,7 @@ export const chartDatasets: Record<string, ChartDataset> = {
     series: [
       {
         label: 'V4-Flash abr→jul',
-        color: '#34d399',
+        color: '#a48f65',
         points: [
           [0.28, 40],
           [0.28, 50],
@@ -165,7 +188,7 @@ export const waffleDatasets: Record<string, WaffleDataset> = {
       { label: 'Offline', sublabel: '2,2 bi · 27%', color: '#3f3f46', count: 663 },
       { label: 'Online, nunca usou genAI', sublabel: '~3,7 bi · 44%', color: '#64748b', count: 1108 },
       { label: 'Usa genAI sem pagar', sublabel: '~2,3 bi · 28%', color: '#60a5fa', count: 705 },
-      { label: 'Paga por IA', sublabel: '70-100 mi · ~1%', color: '#34d399', count: 20 },
+      { label: 'Paga por IA', sublabel: '70-100 mi · ~1%', color: '#a48f65', count: 20 },
       { label: 'Usa coding agents', sublabel: '10-15 mi · ~0,14%', color: '#fbbf24', count: 4 },
     ],
   },
@@ -174,7 +197,7 @@ export const waffleDatasets: Record<string, WaffleDataset> = {
       { label: 'Offline', sublabel: '2.2bn · 27%', color: '#3f3f46', count: 663 },
       { label: 'Online, never used genAI', sublabel: '~3.7bn · 44%', color: '#64748b', count: 1108 },
       { label: 'Uses genAI without paying', sublabel: '~2.3bn · 28%', color: '#60a5fa', count: 705 },
-      { label: 'Pays for AI', sublabel: '70-100m · ~1%', color: '#34d399', count: 20 },
+      { label: 'Pays for AI', sublabel: '70-100m · ~1%', color: '#a48f65', count: 20 },
       { label: 'Uses coding agents', sublabel: '10-15m · ~0.14%', color: '#fbbf24', count: 4 },
     ],
   },
@@ -183,7 +206,7 @@ export const waffleDatasets: Record<string, WaffleDataset> = {
       { label: 'Offline', sublabel: '2200 millones · 27 %', color: '#3f3f46', count: 663 },
       { label: 'Online, nunca usó genAI', sublabel: '~3700 millones · 44 %', color: '#64748b', count: 1108 },
       { label: 'Usa genAI sin pagar', sublabel: '~2300 millones · 28 %', color: '#60a5fa', count: 705 },
-      { label: 'Paga por IA', sublabel: '70-100 millones · ~1 %', color: '#34d399', count: 20 },
+      { label: 'Paga por IA', sublabel: '70-100 millones · ~1 %', color: '#a48f65', count: 20 },
       { label: 'Usa coding agents', sublabel: '10-15 millones · ~0,14 %', color: '#fbbf24', count: 4 },
     ],
   },
@@ -192,7 +215,7 @@ export const waffleDatasets: Record<string, WaffleDataset> = {
       { label: 'Offline', sublabel: '2,2 mld · 27%', color: '#3f3f46', count: 663 },
       { label: 'Online, mai usata la genAI', sublabel: '~3,7 mld · 44%', color: '#64748b', count: 1108 },
       { label: 'Usa la genAI senza pagare', sublabel: '~2,3 mld · 28%', color: '#60a5fa', count: 705 },
-      { label: 'Paga per l\'IA', sublabel: '70-100 mln · ~1%', color: '#34d399', count: 20 },
+      { label: 'Paga per l\'IA', sublabel: '70-100 mln · ~1%', color: '#a48f65', count: 20 },
       { label: 'Usa coding agents', sublabel: '10-15 mln · ~0,14%', color: '#fbbf24', count: 4 },
     ],
   },
@@ -201,7 +224,7 @@ export const waffleDatasets: Record<string, WaffleDataset> = {
       { label: 'אופליין', sublabel: '2.2 מיליארד · 27%', color: '#3f3f46', count: 663 },
       { label: 'אונליין, מעולם לא השתמשו ב־GenAI', sublabel: '~3.7 מיליארד · 44%', color: '#64748b', count: 1108 },
       { label: 'משתמשים ב־GenAI בלי לשלם', sublabel: '~2.3 מיליארד · 28%', color: '#60a5fa', count: 705 },
-      { label: 'משלמים על AI', sublabel: '70–100 מיליון · ~1%', color: '#34d399', count: 20 },
+      { label: 'משלמים על AI', sublabel: '70–100 מיליון · ~1%', color: '#a48f65', count: 20 },
       { label: 'משתמשים ב־coding agents', sublabel: '10–15 מיליון · ~0.14%', color: '#fbbf24', count: 4 },
     ],
   },
@@ -300,41 +323,42 @@ export const waffleDatasets: Record<string, WaffleDataset> = {
    * usa o Claude para trabalhar" (Brasil e Bálcãs = maior proporção de uso
    * profissional do mundo, relatório de geografia da Anthropic).
    *
-   * PALETA: reuso exato das cores já validadas (CVD) nos waffles anteriores;
-   * azul = o grupo-tese (trabalho), como no bloco "Os 900 milhões".
+   * PALETA: instância da marca (header deste arquivo, lote 7 2026-08-13) — azul =
+   * o grupo-tese (trabalho), ouro = uso pessoal, âmbar = estudo; trio validado
+   * CVD 18,8 · visão normal 20,5.
    */
   'estatisticas-claude-brasil-waffle': {
     categories: [
       { label: 'Trabalho', sublabel: '57,4% · 574 pontos', color: '#60a5fa', count: 574 },
-      { label: 'Uso pessoal', sublabel: '31,1% · 311 pontos', color: '#34d399', count: 311 },
+      { label: 'Uso pessoal', sublabel: '31,1% · 311 pontos', color: '#a48f65', count: 311 },
       { label: 'Estudo', sublabel: '11,5% · 115 pontos', color: '#fbbf24', count: 115 },
     ],
   },
   'estatisticas-claude-brasil-waffle-en': {
     categories: [
       { label: 'Work', sublabel: '57.4% · 574 dots', color: '#60a5fa', count: 574 },
-      { label: 'Personal use', sublabel: '31.1% · 311 dots', color: '#34d399', count: 311 },
+      { label: 'Personal use', sublabel: '31.1% · 311 dots', color: '#a48f65', count: 311 },
       { label: 'Study', sublabel: '11.5% · 115 dots', color: '#fbbf24', count: 115 },
     ],
   },
   'estatisticas-claude-brasil-waffle-es': {
     categories: [
       { label: 'Trabajo', sublabel: '57,4 % · 574 puntos', color: '#60a5fa', count: 574 },
-      { label: 'Uso personal', sublabel: '31,1 % · 311 puntos', color: '#34d399', count: 311 },
+      { label: 'Uso personal', sublabel: '31,1 % · 311 puntos', color: '#a48f65', count: 311 },
       { label: 'Estudio', sublabel: '11,5 % · 115 puntos', color: '#fbbf24', count: 115 },
     ],
   },
   'estatisticas-claude-brasil-waffle-it': {
     categories: [
       { label: 'Lavoro', sublabel: '57,4% · 574 punti', color: '#60a5fa', count: 574 },
-      { label: 'Uso personale', sublabel: '31,1% · 311 punti', color: '#34d399', count: 311 },
+      { label: 'Uso personale', sublabel: '31,1% · 311 punti', color: '#a48f65', count: 311 },
       { label: 'Studio', sublabel: '11,5% · 115 punti', color: '#fbbf24', count: 115 },
     ],
   },
   'estatisticas-claude-brasil-waffle-he': {
     categories: [
       { label: 'עבודה', sublabel: '57.4% · 574 נקודות', color: '#60a5fa', count: 574 },
-      { label: 'שימוש אישי', sublabel: '31.1% · 311 נקודות', color: '#34d399', count: 311 },
+      { label: 'שימוש אישי', sublabel: '31.1% · 311 נקודות', color: '#a48f65', count: 311 },
       { label: 'לימודים', sublabel: '11.5% · 115 נקודות', color: '#fbbf24', count: 115 },
     ],
   },
@@ -1682,7 +1706,7 @@ export const countryBarsDatasets: Record<string, CountryBarsDataset> = {
       },
       {
         label: 'Sob juramento — receita ACUMULADA desde a fundação (o CFO ao tribunal, 9/mar)',
-        color: '#34d399',
+        color: '#a48f65',
         items: [
           {
             name: '9/mar — o CFO',
@@ -1716,7 +1740,7 @@ export const countryBarsDatasets: Record<string, CountryBarsDataset> = {
       },
       {
         label: 'Under oath — CUMULATIVE revenue since founding (the CFO in court, Mar 9)',
-        color: '#34d399',
+        color: '#a48f65',
         items: [
           {
             name: 'Mar 9 — the CFO',
@@ -1750,7 +1774,7 @@ export const countryBarsDatasets: Record<string, CountryBarsDataset> = {
       },
       {
         label: 'Bajo juramento — ingresos ACUMULADOS desde la fundación (el CFO, 9/mar)',
-        color: '#34d399',
+        color: '#a48f65',
         items: [
           {
             name: '9/mar — el CFO',
@@ -1784,7 +1808,7 @@ export const countryBarsDatasets: Record<string, CountryBarsDataset> = {
       },
       {
         label: 'Sotto giuramento — ricavi CUMULATI dalla fondazione (il CFO in tribunale, 9/mar)',
-        color: '#34d399',
+        color: '#a48f65',
         items: [
           {
             name: '9/mar — il CFO',
@@ -1818,7 +1842,7 @@ export const countryBarsDatasets: Record<string, CountryBarsDataset> = {
       },
       {
         label: 'בשבועה — הכנסות מצטברות מאז הייסוד (סמנכ״ל הכספים בבית המשפט, 9 במרץ)',
-        color: '#34d399',
+        color: '#a48f65',
         items: [
           {
             name: '9 במרץ — ה־CFO',
@@ -2136,7 +2160,7 @@ export const funnelDatasets: Record<string, FunnelDataset> = {
       {
         label: 'Pagam por IA',
         sublabel: '70-100 mi · ~1%',
-        color: '#34d399',
+        color: '#a48f65',
         value: 80,
       },
       {
@@ -2158,7 +2182,7 @@ export const funnelDatasets: Record<string, FunnelDataset> = {
       {
         label: 'Pay for AI',
         sublabel: '70-100m · ~1%',
-        color: '#34d399',
+        color: '#a48f65',
         value: 80,
       },
       {
@@ -2180,7 +2204,7 @@ export const funnelDatasets: Record<string, FunnelDataset> = {
       {
         label: 'Pagan por IA',
         sublabel: '70-100 millones · ~1 %',
-        color: '#34d399',
+        color: '#a48f65',
         value: 80,
       },
       {
@@ -2202,7 +2226,7 @@ export const funnelDatasets: Record<string, FunnelDataset> = {
       {
         label: 'Pagano per l\'IA',
         sublabel: '70-100 mln · ~1%',
-        color: '#34d399',
+        color: '#a48f65',
         value: 80,
       },
       {
@@ -2224,7 +2248,7 @@ export const funnelDatasets: Record<string, FunnelDataset> = {
       {
         label: 'משלמים על AI',
         sublabel: '70–100 מיליון · ~1%',
-        color: '#34d399',
+        color: '#a48f65',
         value: 80,
       },
       {
@@ -2259,7 +2283,7 @@ export const funnelDatasets: Record<string, FunnelDataset> = {
       {
         label: 'Escalam agentes de IA numa função',
         sublabel: '≤10% em qualquer função (teto) · 23% em algum lugar da empresa',
-        color: '#34d399',
+        color: '#a48f65',
         value: 10,
       },
       {
@@ -2281,7 +2305,7 @@ export const funnelDatasets: Record<string, FunnelDataset> = {
       {
         label: 'Scaling AI agents in a given function',
         sublabel: '≤10% in any given function (ceiling) · 23% somewhere in the company',
-        color: '#34d399',
+        color: '#a48f65',
         value: 10,
       },
       {
@@ -2303,7 +2327,7 @@ export const funnelDatasets: Record<string, FunnelDataset> = {
       {
         label: 'Escalan agentes de IA en una función',
         sublabel: '≤10 % en cualquier función (techo) · 23 % en algún lugar de la empresa',
-        color: '#34d399',
+        color: '#a48f65',
         value: 10,
       },
       {
@@ -2325,7 +2349,7 @@ export const funnelDatasets: Record<string, FunnelDataset> = {
       {
         label: 'Scalano agenti di IA in una funzione',
         sublabel: "≤10% in qualsiasi funzione (tetto) · 23% in qualche punto dell'azienda",
-        color: '#34d399',
+        color: '#a48f65',
         value: 10,
       },
       {
@@ -2347,7 +2371,7 @@ export const funnelDatasets: Record<string, FunnelDataset> = {
       {
         label: 'מרחיבים agents של AI בפונקציה אחת',
         sublabel: 'עד 10% בכל פונקציה נתונה (תקרה) · 23% במקום כלשהו בחברה',
-        color: '#34d399',
+        color: '#a48f65',
         value: 10,
       },
       {

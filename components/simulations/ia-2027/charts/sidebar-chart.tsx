@@ -89,8 +89,8 @@ export const SidebarTimelineChart = memo(function SidebarTimelineChart({
       <div className="flex items-center justify-between px-3 pt-2">
         <span className="text-[9px] font-mono uppercase text-neutral-400">{ts?.revenueAndCapex ?? 'Revenue & Capex'}</span>
         <div className="flex items-center gap-3">
-          <span className="flex items-center gap-1 text-[9px] text-emerald-400">
-            <span className="inline-block w-3 h-0.5 bg-emerald-500 rounded" /> {ts?.revenueLabel ?? 'Revenue'}
+          <span className="flex items-center gap-1 text-[9px] text-brand-gold-light">
+            <span className="inline-block w-3 h-0.5 bg-brand-gold rounded" /> {ts?.revenueLabel ?? 'Revenue'}
           </span>
           <span className="flex items-center gap-1 text-[9px] text-amber-400">
             <span className="inline-block w-3 h-0.5 bg-amber-500 rounded border-dashed" /> {ts?.capexLabel ?? 'Capex'}
@@ -100,8 +100,8 @@ export const SidebarTimelineChart = memo(function SidebarTimelineChart({
       <svg viewBox={`0 0 ${W} ${H}`} width="100%" height={H} className="block">
         <defs>
           <linearGradient id="revGrad" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stopColor="#10b981" stopOpacity="0.4" />
-            <stop offset="100%" stopColor="#10b981" stopOpacity="0.02" />
+            <stop offset="0%" stopColor="#a48f65" stopOpacity="0.4" />
+            <stop offset="100%" stopColor="#a48f65" stopOpacity="0.02" />
           </linearGradient>
         </defs>
 
@@ -135,7 +135,7 @@ export const SidebarTimelineChart = memo(function SidebarTimelineChart({
         <motion.path
           d={linePath(data.revPoints)}
           fill="none"
-          stroke="#10b981"
+          stroke="#a48f65"
           strokeWidth="2"
           strokeLinecap="round"
           initial={{ pathLength: 0 }}
@@ -163,7 +163,7 @@ export const SidebarTimelineChart = memo(function SidebarTimelineChart({
               cx={data.lastRev.x}
               cy={data.lastRev.y}
               r="4"
-              fill="#10b981"
+              fill="#a48f65"
               initial={{ scale: 0 }}
               animate={{ scale: 1 }}
               transition={{ type: 'spring', stiffness: 300, damping: 20 }}
@@ -173,7 +173,7 @@ export const SidebarTimelineChart = memo(function SidebarTimelineChart({
               cy={data.lastRev.y}
               r="8"
               fill="none"
-              stroke="#10b981"
+              stroke="#a48f65"
               strokeWidth="1"
               initial={{ scale: 0, opacity: 0.6 }}
               animate={{ scale: [1, 1.6, 1], opacity: [0.6, 0, 0.6] }}

@@ -12,8 +12,8 @@ export function PsiWhitepaperBody({ locale, includeFigures = false }: PsiWhitepa
   return (
     <>
           {/* ─── Table of Contents ─── */}
-          <nav className='rounded-xl border border-cyan-900/40 bg-neutral-900/60 p-6 mb-14'>
-            <p className='text-[10px] uppercase tracking-[0.2em] text-cyan-400 font-bold mb-4'>
+          <nav className='rounded-xl border border-brand-gold/20 bg-neutral-900/60 p-6 mb-14'>
+            <p className='text-[10px] uppercase tracking-[0.2em] text-brand-gold-light font-bold mb-4'>
               Indice del Whitepaper
             </p>
             <ol className='space-y-2 text-sm'>
@@ -38,7 +38,7 @@ export function PsiWhitepaperBody({ locale, includeFigures = false }: PsiWhitepa
                 { n: '6', t: 'Conclusione' },
               ].map((item) => (
                 <li key={item.n}>
-                  <a href={`#section-${item.n.replace('.', '-')}`} className='text-cyan-300 hover:text-cyan-100 transition-colors'>
+                  <a href={`#section-${item.n.replace('.', '-')}`} className='text-brand-gold-light hover:text-brand-offwhite transition-colors'>
                     <span className='inline-block w-10 text-neutral-400 font-mono text-xs'>{item.n}</span>
                     {item.t}
                   </a>
@@ -49,7 +49,7 @@ export function PsiWhitepaperBody({ locale, includeFigures = false }: PsiWhitepa
 
           {/* ─── Prose content ───
                1=Respiro parágrafos  2=H2 capítulos  3=H3+listas  4=Links  5=Auxiliares */}
-          <div className='prose prose-invert max-w-none lg:prose-lg prose-p:mb-8 prose-p:leading-[1.8] prose-p:text-neutral-300 prose-headings:font-bold prose-headings:tracking-tight prose-h2:text-3xl md:prose-h2:text-4xl prose-h2:text-neutral-100 prose-h2:mt-24 prose-h2:mb-10 prose-h2:border-b prose-h2:border-neutral-800 prose-h2:pb-4 prose-h3:text-2xl prose-h3:mt-14 prose-h3:mb-6 prose-h3:text-cyan-400 prose-li:mb-3 prose-ul:my-8 prose-ol:my-8 prose-a:text-cyan-400 hover:prose-a:text-cyan-300 prose-a:decoration-cyan-900 prose-a:underline-offset-4 prose-strong:text-white prose-blockquote:border-cyan-700 prose-blockquote:bg-neutral-900/40 prose-blockquote:rounded-r-xl prose-blockquote:py-1 prose-table:border-neutral-700 prose-th:text-neutral-200 prose-th:border-neutral-700 prose-th:bg-neutral-900/60 prose-td:text-neutral-400 prose-td:border-neutral-800'>
+          <div className='prose prose-invert max-w-none lg:prose-lg prose-p:mb-8 prose-p:leading-[1.8] prose-p:text-neutral-300 prose-headings:font-bold prose-headings:tracking-tight prose-h2:text-3xl md:prose-h2:text-4xl prose-h2:text-neutral-100 prose-h2:mt-24 prose-h2:mb-10 prose-h2:border-b prose-h2:border-neutral-800 prose-h2:pb-4 prose-h3:text-2xl prose-h3:mt-14 prose-h3:mb-6 prose-h3:text-brand-gold-light prose-li:mb-3 prose-ul:my-8 prose-ol:my-8 prose-a:text-brand-gold-light hover:prose-a:text-brand-offwhite prose-a:decoration-brand-gold/40 prose-a:underline-offset-4 prose-strong:text-brand-offwhite prose-blockquote:border-brand-gold-dark prose-blockquote:bg-neutral-900/40 prose-blockquote:rounded-r-xl prose-blockquote:py-1 prose-table:border-neutral-700 prose-th:text-neutral-200 prose-th:border-neutral-700 prose-th:bg-neutral-900/60 prose-td:text-neutral-400 prose-td:border-neutral-800'>
 
             {/* ═════════ Section 1 ═════════ */}
             <h2 id='section-1'>1. Introduzione: Il Collasso della Fiducia Istituzionale e il Modello di Minaccia</h2>
@@ -120,7 +120,7 @@ export function PsiWhitepaperBody({ locale, includeFigures = false }: PsiWhitepa
                 className='w-full h-auto rounded-2xl mix-blend-screen brightness-[1.3] contrast-[1.4]'
               />
               <figcaption className='text-center text-sm text-neutral-400 font-mono'>
-                <strong className='text-cyan-500 uppercase tracking-widest'>Figura 1:</strong> Strati di Difesa Fisica e Logica del Ricettacolo PSI (Cu-W → Epossidica → Tamper Mesh → Silicio).
+                <strong className='text-brand-gold uppercase tracking-widest'>Figura 1:</strong> Strati di Difesa Fisica e Logica del Ricettacolo PSI (Cu-W → Epossidica → Tamper Mesh → Silicio).
               </figcaption>
             </figure>
 
@@ -161,18 +161,18 @@ export function PsiWhitepaperBody({ locale, includeFigures = false }: PsiWhitepa
                   SE = 10 · log₁₀(P<sub className='text-2xl'>i</sub> / P<sub className='text-2xl'>t</sub>)
                 </div>
                 <figcaption className='w-full max-w-md border-t border-neutral-800 pt-4 text-sm text-neutral-400 text-center font-mono'>
-                  <p>Efficacia di Schermatura (<strong className='text-cyan-400'>SE<sub>totale</sub></strong>) = R + A + B</p>
+                  <p>Efficacia di Schermatura (<strong className='text-brand-gold-light'>SE<sub>totale</sub></strong>) = R + A + B</p>
                 </figcaption>
               </figure>
             </div>
 
             {/* ── Callout: Descoberta Chave — Blindagem ── */}
-            <aside className='not-prose my-10 border-l-4 border-cyan-500 bg-cyan-950/20 p-6 rounded-r-xl'>
-              <h4 className='text-cyan-400 font-bold uppercase tracking-widest text-xs mb-3 flex items-center gap-2'>
+            <aside className='not-prose my-10 border-l-4 border-brand-gold/50 bg-brand-gold/10 p-6 rounded-r-xl'>
+              <h4 className='text-brand-gold-light font-bold uppercase tracking-widest text-xs mb-3 flex items-center gap-2'>
                 💡 Scoperta Chiave (TL;DR)
               </h4>
               <p className='text-neutral-200 m-0 leading-relaxed'>
-                L'implementazione dell'architettura di schermatura Cu-W del Progetto PSI ha portato a un'<strong className='text-white'>efficacia di schermatura superiore a 100 dB</strong>, superando le rigorose normative militari MIL-STD-285. Il composito 70-80% W / 20-30% Cu combina l'inerzia cinetica del tungsteno con la conduttività del rame in una Gabbia di Faraday di grado nucleare.
+                L'implementazione dell'architettura di schermatura Cu-W del Progetto PSI ha portato a un'<strong className='text-brand-offwhite'>efficacia di schermatura superiore a 100 dB</strong>, superando le rigorose normative militari MIL-STD-285. Il composito 70-80% W / 20-30% Cu combina l'inerzia cinetica del tungsteno con la conduttività del rame in una Gabbia di Faraday di grado nucleare.
               </p>
             </aside>
 
@@ -186,7 +186,7 @@ export function PsiWhitepaperBody({ locale, includeFigures = false }: PsiWhitepa
             {/* Table: Shielding Comparison */}
             <div tabIndex={0} className='not-prose overflow-x-auto my-12 border border-neutral-800 rounded-xl shadow-lg'>
               <table className='w-full text-start text-sm text-neutral-300'>
-                <caption className='p-4 bg-neutral-900/80 text-start text-cyan-400 font-mono uppercase tracking-widest font-bold border-b border-neutral-800 text-xs'>
+                <caption className='p-4 bg-neutral-900/80 text-start text-brand-gold-light font-mono uppercase tracking-widest font-bold border-b border-neutral-800 text-xs'>
                   Tabella 1: Parametri di Schermatura Elettromagnetica (Cu-W)
                 </caption>
                 <thead>
@@ -210,11 +210,11 @@ export function PsiWhitepaperBody({ locale, includeFigures = false }: PsiWhitepa
                     <td className='px-4 py-3'>{'>'}100 dB</td>
                     <td className='px-4 py-3'>Massima riflessione di impulso EMP</td>
                   </tr>
-                  <tr className='bg-cyan-950/20'>
-                    <td className='px-4 py-3 text-cyan-300 font-semibold'>Lega Cu-W (PSI)</td>
-                    <td className='px-4 py-3 text-cyan-300'>Alta (40-50% IACS)</td>
-                    <td className='px-4 py-3 text-cyan-300'>{'>'}100 dB</td>
-                    <td className='px-4 py-3 text-cyan-300'>Schermatura RF + gamma; rigidità estrema</td>
+                  <tr className='bg-brand-gold/10'>
+                    <td className='px-4 py-3 text-brand-gold-light font-semibold'>Lega Cu-W (PSI)</td>
+                    <td className='px-4 py-3 text-brand-gold-light'>Alta (40-50% IACS)</td>
+                    <td className='px-4 py-3 text-brand-gold-light'>{'>'}100 dB</td>
+                    <td className='px-4 py-3 text-brand-gold-light'>Schermatura RF + gamma; rigidità estrema</td>
                   </tr>
                 </tbody>
               </table>
@@ -341,7 +341,7 @@ export function PsiWhitepaperBody({ locale, includeFigures = false }: PsiWhitepa
                 className='w-full h-auto rounded-2xl mix-blend-screen brightness-[1.3] contrast-[1.4]'
               />
               <figcaption className='text-center text-sm text-neutral-400 font-mono'>
-                <strong className='text-cyan-500 uppercase tracking-widest'>Figura 2:</strong> Flusso di Derivazione di Chiave Effimera tramite SRAM PUF (Power-up → RDF → Fuzzy Extractor → Seme → Zeroizzazione).
+                <strong className='text-brand-gold uppercase tracking-widest'>Figura 2:</strong> Flusso di Derivazione di Chiave Effimera tramite SRAM PUF (Power-up → RDF → Fuzzy Extractor → Seme → Zeroizzazione).
               </figcaption>
             </figure>
 
@@ -453,7 +453,7 @@ export function PsiWhitepaperBody({ locale, includeFigures = false }: PsiWhitepa
             {/* Table: Biometrics */}
             <div tabIndex={0} className='not-prose overflow-x-auto my-12 border border-neutral-800 rounded-xl shadow-lg'>
               <table className='w-full text-start text-sm text-neutral-300'>
-                <caption className='p-4 bg-neutral-900/80 text-start text-cyan-400 font-mono uppercase tracking-widest font-bold border-b border-neutral-800 text-xs'>
+                <caption className='p-4 bg-neutral-900/80 text-start text-brand-gold-light font-mono uppercase tracking-widest font-bold border-b border-neutral-800 text-xs'>
                   Tabella 2: Biomarcatori di Rilevamento Fisiologico della Coercizione
                 </caption>
                 <thead>
@@ -484,12 +484,12 @@ export function PsiWhitepaperBody({ locale, includeFigures = false }: PsiWhitepa
             </div>
 
             {/* ── Callout: Descoberta Chave — Biometria ── */}
-            <aside className='not-prose my-10 border-l-4 border-cyan-500 bg-cyan-950/20 p-6 rounded-r-xl'>
-              <h4 className='text-cyan-400 font-bold uppercase tracking-widest text-xs mb-3 flex items-center gap-2'>
+            <aside className='not-prose my-10 border-l-4 border-brand-gold/50 bg-brand-gold/10 p-6 rounded-r-xl'>
+              <h4 className='text-brand-gold-light font-bold uppercase tracking-widest text-xs mb-3 flex items-center gap-2'>
                 💡 Scoperta Chiave (TL;DR)
               </h4>
               <p className='text-neutral-200 m-0 leading-relaxed'>
-                I moduli di IA di bordo (CapsNets + Random Forest) hanno raggiunto <strong className='text-white'>punteggi F1 tra 96.97% e 99.82%</strong> nel rilevamento dello stress fisiologico in dataset clinici — permettendo al dispositivo di distinguere l'operazione legittima dall'operazione sotto coercizione in tempo reale, senza dipendenza da server esterni.
+                I moduli di IA di bordo (CapsNets + Random Forest) hanno raggiunto <strong className='text-brand-offwhite'>punteggi F1 tra 96.97% e 99.82%</strong> nel rilevamento dello stress fisiologico in dataset clinici — permettendo al dispositivo di distinguere l'operazione legittima dall'operazione sotto coercizione in tempo reale, senza dipendenza da server esterni.
               </p>
             </aside>
 
@@ -533,7 +533,7 @@ export function PsiWhitepaperBody({ locale, includeFigures = false }: PsiWhitepa
                 className='w-full h-auto rounded-2xl mix-blend-screen brightness-[1.3] contrast-[1.4]'
               />
               <figcaption className='text-center text-sm text-neutral-400 font-mono'>
-                <strong className='text-cyan-500 uppercase tracking-widest'>Figura 3:</strong> Protocollo Phantom Input — Biometria → Flag Coercizione → RSK vs FSK (Deniable Encryption).
+                <strong className='text-brand-gold uppercase tracking-widest'>Figura 3:</strong> Protocollo Phantom Input — Biometria → Flag Coercizione → RSK vs FSK (Deniable Encryption).
               </figcaption>
             </figure>
 
@@ -623,17 +623,17 @@ export function PsiWhitepaperBody({ locale, includeFigures = false }: PsiWhitepa
                 className='w-full h-auto rounded-2xl mix-blend-screen brightness-[1.3] contrast-[1.4]'
               />
               <figcaption className='text-center text-sm text-neutral-400 font-mono'>
-                <strong className='text-cyan-500 uppercase tracking-widest'>Figura 4:</strong> Ridondanza Modulare Tripla — Sottoblocchi A/B/C → Voter per Maggioranza → Uscita Infallibile.
+                <strong className='text-brand-gold uppercase tracking-widest'>Figura 4:</strong> Ridondanza Modulare Tripla — Sottoblocchi A/B/C → Voter per Maggioranza → Uscita Infallibile.
               </figcaption>
             </figure>
 
             {/* ── Callout: Descoberta Chave — TMR ── */}
-            <aside className='not-prose my-10 border-l-4 border-cyan-500 bg-cyan-950/20 p-6 rounded-r-xl'>
-              <h4 className='text-cyan-400 font-bold uppercase tracking-widest text-xs mb-3 flex items-center gap-2'>
+            <aside className='not-prose my-10 border-l-4 border-brand-gold/50 bg-brand-gold/10 p-6 rounded-r-xl'>
+              <h4 className='text-brand-gold-light font-bold uppercase tracking-widest text-xs mb-3 flex items-center gap-2'>
                 💡 Scoperta Chiave (TL;DR)
               </h4>
               <p className='text-neutral-200 m-0 leading-relaxed'>
-                L'architettura di <strong className='text-white'>Ridondanza Modulare Tripla (TMR)</strong> con Voter a maggioranza semplice, combinata a memorie <strong className='text-white'>FRAM Rad-Hard</strong> immuni a TID, garantisce un'operazione continua e infallibile del PSI anche sotto bombardamento di raggi cosmici galattici in Orbita Terrestre Bassa (LEO) — eliminando i Single-Event Upsets senza riavvii.
+                L'architettura di <strong className='text-brand-offwhite'>Ridondanza Modulare Tripla (TMR)</strong> con Voter a maggioranza semplice, combinata a memorie <strong className='text-brand-offwhite'>FRAM Rad-Hard</strong> immuni a TID, garantisce un'operazione continua e infallibile del PSI anche sotto bombardamento di raggi cosmici galattici in Orbita Terrestre Bassa (LEO) — eliminando i Single-Event Upsets senza riavvii.
               </p>
             </aside>
 
@@ -679,7 +679,7 @@ export function PsiWhitepaperBody({ locale, includeFigures = false }: PsiWhitepa
 
           {/* ─── References ─── */}
           <section className='mt-16 rounded-xl border border-neutral-800 bg-neutral-900/30 p-6'>
-            <h2 className='text-lg font-bold text-white mb-4'>Riferimenti Scientifici</h2>
+            <h2 className='text-lg font-bold text-brand-offwhite mb-4'>Riferimenti Scientifici</h2>
             <ol className='space-y-2 text-xs text-neutral-400 list-decimal list-inside'>
               <li id='ref-1'>NIST SP 800-208. <em>Recommendation for Stateful Hash-Based Signature Schemes (XMSS/LMS)</em>. National Institute of Standards and Technology.</li>
               <li id='ref-2'>Roel Maes (2013). <em>Physically Unclonable Functions: Constructions, Properties and Applications</em>. Springer.</li>

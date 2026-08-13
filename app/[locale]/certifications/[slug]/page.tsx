@@ -123,15 +123,15 @@ export default async function CertificationDetailPage({ params }: PageProps) {
   };
 
   return (
-    <div className='min-h-screen bg-neutral-950 text-neutral-200'>
+    <div className='min-h-screen bg-brand-navy text-neutral-200 selection:bg-brand-gold/30 selection:text-brand-offwhite'>
       <main className='max-w-3xl mx-auto px-6 py-20'>
-        <Link href={localePath('/certifications', locale)} className='text-sm text-neutral-400 hover:text-emerald-400 transition-colors'>
+        <Link href={localePath('/certifications', locale)} className='text-sm text-neutral-400 hover:text-brand-gold-light transition-colors'>
           {t.detail.backLink}
         </Link>
 
         <header className='mt-8 mb-10'>
-          <p className='text-xs uppercase tracking-widest text-emerald-400 mb-3'>{certification.provider}</p>
-          <h1 className='text-3xl md:text-4xl font-bold text-white mb-4'>{certification.title}</h1>
+          <p className='text-xs uppercase tracking-widest text-brand-gold-light mb-3'>{certification.provider}</p>
+          <h1 className='text-3xl md:text-4xl font-bold text-brand-offwhite mb-4'>{certification.title}</h1>
           <p className='text-neutral-400 leading-relaxed'>{certification.about}</p>
           <div className='mt-4 max-w-xl'>
             <AuthorHubCard label={t.detail.author} compact />
@@ -173,7 +173,7 @@ export default async function CertificationDetailPage({ params }: PageProps) {
               href={certification.verifyUrl}
               target='_blank'
               rel='noopener noreferrer'
-              className='text-emerald-300 hover:text-emerald-200 break-all transition-colors'
+              className='text-brand-gold-light hover:text-brand-offwhite break-all transition-colors'
             >
               {certification.verifyUrl}
             </a>

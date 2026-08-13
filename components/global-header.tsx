@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect, useRef, useCallback } from 'react';
+import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
 import { Menu, X, ChevronDown, Globe } from 'lucide-react';
@@ -12,8 +13,19 @@ import {
   type Locale,
 } from '@/data/i18n';
 
-export function GlobalHeader() {
+/* `brandName` chega por prop do layout: o nome mora no UPKF, e componente
+   'use client' não importa artefato gerado (bundle safety, anti-dry.test.ts). */
+export function GlobalHeader({ brandName }: { brandName: string }) {
   const { common, locale } = useDict();
+  /* Versal + tracking largo é tratamento só-latino: o hebraico não versaliza nem
+     traqueia (mesmo condicional da rota-piloto em app/[locale]/c/page.tsx). */
+  const latinLabel =
+    locale === 'he' ? 'text-sm' : 'text-[0.72rem] uppercase tracking-[0.18em]';
+  /* A barra desktop é a única linha do site que disputa espaço horizontal com
+     5 grupos + idioma + CTA: tracking menor que o do drawer, senão os rótulos
+     longos (IT/ES) transbordam do container e invadem o nome. */
+  const navLabel =
+    locale === 'he' ? 'text-sm' : 'text-[0.72rem] uppercase tracking-[0.1em]';
   const [mobileOpen, setMobileOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [langOpen, setLangOpen] = useState(false);
@@ -154,15 +166,19 @@ export function GlobalHeader() {
 
   return (
     <>
-      <header className='fixed top-0 left-0 right-0 z-50 bg-neutral-950/85 backdrop-blur-md border-b border-white/5'>
-        <nav className='max-w-6xl mx-auto px-6 h-16 flex items-center justify-between'>
-          {/* Logo */}
-          <Link href={localePath('/')} className='text-emerald-500 font-bold text-lg tracking-wider'>
-            UF<span className='text-neutral-400 font-light'>.SCIENTIST</span>
+      <header className='fixed top-0 left-0 right-0 z-50 bg-brand-navy-deep/85 backdrop-blur-md border-b border-brand-gold/20'>
+        <nav className='max-w-[76rem] mx-auto px-6 h-18 flex items-center justify-between gap-4'>
+          {/* Marca: símbolo do arqueiro + nome. O símbolo é decorativo — o nome
+              acessível do link vem do texto ao lado. */}
+          <Link href={localePath('/')} className='flex shrink-0 items-center gap-3 text-brand-offwhite'>
+            <Image src='/brand/symbol-gold.png' alt='' width={184} height={168} priority className='h-10 w-auto' />
+            <span className='font-display text-[0.95rem] font-semibold uppercase tracking-[0.12em] whitespace-nowrap'>
+              {brandName}
+            </span>
           </Link>
 
           {/* Desktop Mega Menu */}
-          <div ref={dropdownRef} className='hidden lg:flex items-center gap-1'>
+          <div ref={dropdownRef} className='hidden xl:flex min-w-0 flex-1 items-center justify-center gap-1'>
             {common.nav.categories.map((category) => (
               <div
                 key={category.label}
@@ -175,10 +191,10 @@ export function GlobalHeader() {
                   aria-expanded={activeDropdown === category.label}
                   aria-haspopup='true'
                   onClick={() => setActiveDropdown(activeDropdown === category.label ? null : category.label)}
-                  className={`flex items-center gap-1 px-3 py-2 text-sm font-medium rounded-md transition-colors ${
+                  className={`flex items-center gap-1.5 whitespace-nowrap px-2.5 py-2 rounded-md transition-colors ${navLabel} ${
                     activeDropdown === category.label
-                      ? 'text-emerald-400 bg-emerald-500/10'
-                      : 'text-neutral-400 hover:text-white'
+                      ? 'text-brand-gold-light'
+                      : 'text-brand-offwhite/75 hover:text-brand-gold-light'
                   }`}
                 >
                   {category.label}
@@ -191,7 +207,7 @@ export function GlobalHeader() {
                 {/* Dropdown Panel */}
                 {activeDropdown === category.label && (
                   <div
-                    className='absolute top-full left-0 mt-1 w-72 rounded-xl border border-neutral-800 bg-neutral-950/95 backdrop-blur-lg shadow-2xl shadow-black/40 py-2'
+                    className='absolute top-full left-0 mt-1 w-72 rounded-xl border border-brand-gold/30 bg-brand-navy-deep backdrop-blur-lg shadow-2xl shadow-black/50 py-2'
                     onMouseEnter={() => handleMouseEnter(category.label)}
                     onMouseLeave={handleMouseLeave}
                   >
@@ -200,13 +216,13 @@ export function GlobalHeader() {
                         key={item.href}
                         href={localePath(item.href)}
                         onClick={() => setActiveDropdown(null)}
-                        className='block px-4 py-3 hover:bg-emerald-500/10 transition-colors group'
+                        className='block px-4 py-3 hover:bg-brand-gold/12 transition-colors group'
                       >
-                        <span className='text-sm font-medium text-neutral-200 group-hover:text-emerald-300 transition-colors'>
+                        <span className='text-sm font-medium text-brand-offwhite group-hover:text-brand-gold-light transition-colors'>
                           {item.label}
                         </span>
                         {item.description && (
-                          <span className='block text-xs text-neutral-400 mt-0.5'>{item.description}</span>
+                          <span className='block text-xs text-brand-offwhite/65 mt-0.5'>{item.description}</span>
                         )}
                       </Link>
                     ))}
@@ -217,7 +233,7 @@ export function GlobalHeader() {
           </div>
 
           {/* Right side: Lang Switcher + CTA + Hamburger */}
-          <div className='flex items-center gap-3'>
+          <div className='flex shrink-0 items-center gap-3'>
             {/* Language Switcher */}
             <div ref={langRef} className='relative hidden sm:block'>
               <button
@@ -226,7 +242,7 @@ export function GlobalHeader() {
                 aria-expanded={langOpen}
                 aria-haspopup='true'
                 onClick={() => setLangOpen(!langOpen)}
-                className='flex items-center gap-1.5 px-2.5 py-1.5 text-xs font-medium text-neutral-400 hover:text-white rounded-md border border-neutral-800 hover:border-neutral-600 transition-colors'
+                className='flex items-center gap-1.5 px-2.5 py-1.5 text-xs font-medium text-brand-offwhite/75 hover:text-brand-gold-light rounded-md border border-brand-gold/25 hover:border-brand-gold/60 transition-colors'
                 aria-label={common.languageSwitcher.label}
               >
                 <Globe size={14} />
@@ -235,7 +251,7 @@ export function GlobalHeader() {
               </button>
 
               {langOpen && (
-                <div className='absolute top-full end-0 mt-1 w-40 rounded-xl border border-neutral-800 bg-neutral-950/95 backdrop-blur-lg shadow-2xl shadow-black/40 py-1 z-50'>
+                <div className='absolute top-full end-0 mt-1 w-40 rounded-xl border border-brand-gold/30 bg-brand-navy-deep backdrop-blur-lg shadow-2xl shadow-black/50 py-1 z-50'>
                   {supportedLocales.map((loc) => (
                     <button
                       key={loc}
@@ -243,8 +259,8 @@ export function GlobalHeader() {
                       onClick={() => switchLocale(loc)}
                       className={`block w-full text-start px-4 py-2 text-sm transition-colors ${
                         loc === locale
-                          ? 'text-emerald-400 bg-emerald-500/10'
-                          : 'text-neutral-300 hover:bg-emerald-500/10 hover:text-emerald-300'
+                          ? 'text-brand-gold-light bg-brand-gold/12'
+                          : 'text-brand-offwhite/85 hover:bg-brand-gold/12 hover:text-brand-gold-light'
                       }`}
                     >
                       {localeLabels[loc]}
@@ -254,9 +270,11 @@ export function GlobalHeader() {
               )}
             </div>
 
+            {/* Abaixo de lg o CTA vive dentro do drawer (mockup aprovado): mantê-lo
+                aqui empurrava o hambúrguer para fora dos 390px do iPhone. */}
             <Link
               href={localePath('/#contact')}
-              className='px-4 py-2 bg-neutral-100 text-neutral-900 text-xs font-bold rounded-full hover:bg-emerald-400 transition-colors'
+              className={`hidden xl:inline-block px-4 py-2.5 bg-brand-gold text-brand-navy font-medium rounded-full whitespace-nowrap hover:bg-brand-gold-light transition-colors ${navLabel}`}
             >
               {common.cta}
             </Link>
@@ -268,7 +286,7 @@ export function GlobalHeader() {
               aria-expanded={mobileOpen}
               aria-controls='mobile-menu'
               onClick={() => setMobileOpen(!mobileOpen)}
-              className='lg:hidden p-2 text-neutral-400 hover:text-white transition-colors'
+              className='xl:hidden p-2 text-brand-gold-light hover:text-brand-offwhite transition-colors'
               aria-label={mobileOpen ? common.mobileMenu.close : common.mobileMenu.open}
             >
               {mobileOpen ? <X size={24} /> : <Menu size={24} />}
@@ -285,12 +303,12 @@ export function GlobalHeader() {
           role='dialog'
           aria-modal='true'
           aria-label={common.mobileMenu.label}
-          className='fixed inset-0 z-40 bg-neutral-950/98 backdrop-blur-lg pt-20 overflow-y-auto lg:hidden'
+          className='fixed inset-0 z-40 bg-brand-navy-deep backdrop-blur-lg pt-22 overflow-y-auto xl:hidden'
         >
           <nav className='max-w-md mx-auto px-6 py-8 space-y-6'>
             {common.nav.categories.map((category) => (
               <div key={category.label}>
-                <p className='text-xs uppercase tracking-[0.2em] text-emerald-400 mb-3 font-bold'>
+                <p className={`text-brand-gold mb-3 font-medium ${latinLabel}`}>
                   {category.label}
                 </p>
                 <div className='space-y-1'>
@@ -299,11 +317,11 @@ export function GlobalHeader() {
                       key={item.href}
                       href={localePath(item.href)}
                       onClick={() => setMobileOpen(false)}
-                      className='block px-4 py-3 rounded-lg text-neutral-200 hover:bg-emerald-500/10 hover:text-emerald-300 transition-colors'
+                      className='block px-4 py-3 rounded-lg text-brand-offwhite hover:bg-brand-gold/12 hover:text-brand-gold-light transition-colors'
                     >
                       <span className='text-sm font-medium'>{item.label}</span>
                       {item.description && (
-                        <span className='block text-xs text-neutral-400 mt-0.5'>{item.description}</span>
+                        <span className='block text-xs text-brand-offwhite/65 mt-0.5'>{item.description}</span>
                       )}
                     </Link>
                   ))}
@@ -312,8 +330,8 @@ export function GlobalHeader() {
             ))}
 
             {/* Mobile Language Switcher */}
-            <div className='pt-2 border-t border-neutral-800'>
-              <p className='text-xs uppercase tracking-[0.2em] text-neutral-400 mb-3 font-bold flex items-center gap-2'>
+            <div className='pt-2 border-t border-brand-gold/20'>
+              <p className={`text-brand-offwhite/70 mb-3 font-medium flex items-center gap-2 ${latinLabel}`}>
                 <Globe size={12} /> {common.languageSwitcher.label}
               </p>
               <div className='flex flex-wrap gap-2'>
@@ -324,8 +342,8 @@ export function GlobalHeader() {
                     onClick={() => { switchLocale(loc); setMobileOpen(false); }}
                     className={`px-3 py-1.5 text-sm rounded-full border transition-colors ${
                       loc === locale
-                        ? 'border-emerald-500/50 text-emerald-400 bg-emerald-500/10'
-                        : 'border-neutral-700 text-neutral-400 hover:text-white hover:border-neutral-500'
+                        ? 'border-brand-gold/60 text-brand-gold-light bg-brand-gold/12'
+                        : 'border-brand-gold/25 text-brand-offwhite/75 hover:text-brand-gold-light hover:border-brand-gold/60'
                     }`}
                   >
                     {localeLabels[loc]}
@@ -334,11 +352,11 @@ export function GlobalHeader() {
               </div>
             </div>
 
-            <div className='pt-4 border-t border-neutral-800'>
+            <div className='pt-4 border-t border-brand-gold/20'>
               <Link
                 href={localePath('/#contact')}
                 onClick={() => setMobileOpen(false)}
-                className='block w-full text-center px-4 py-3 bg-emerald-600 text-white text-sm font-bold rounded-full hover:bg-emerald-500 transition-colors'
+                className={`block w-full text-center px-4 py-3 bg-brand-gold text-brand-navy font-medium rounded-full hover:bg-brand-gold-light transition-colors ${latinLabel}`}
               >
                 {common.cta}
               </Link>

@@ -96,31 +96,31 @@ export default async function DesaceleracaoCoordenadaPage({ params }: PageProps)
   return (
     <>
       {/* Hero Section */}
-      <section className='bg-neutral-950 text-neutral-200 pt-20 pb-16 border-b border-neutral-800'>
+      <section className='bg-brand-navy text-neutral-200 pt-20 pb-16 border-b border-neutral-800 selection:bg-brand-gold/30 selection:text-brand-offwhite'>
         <div className='max-w-4xl mx-auto px-6'>
           {/* Breadcrumb */}
           <div className='flex items-center gap-2 mb-6 flex-wrap'>
             <Link
               href={localePath('/simulacoes', locale)}
-              className='text-xs font-mono uppercase tracking-widest text-emerald-400 hover:underline'
+              className='text-xs font-mono uppercase tracking-widest text-brand-gold-light hover:underline'
             >
               {dict.ia2027.breadcrumb.simulations}
             </Link>
-            <span className='text-xs text-neutral-600'>→</span>
+            <span className='text-xs text-neutral-400'>→</span>
             <Link
               href={localePath('/simulacoes/ia-2027', locale)}
-              className='text-xs font-mono uppercase tracking-widest text-emerald-400 hover:underline'
+              className='text-xs font-mono uppercase tracking-widest text-brand-gold-light hover:underline'
             >
               IA 2027
             </Link>
-            <span className='text-xs text-neutral-600'>→</span>
+            <span className='text-xs text-neutral-400'>→</span>
             <span className='text-xs font-mono uppercase tracking-widest text-emerald-400'>
               {dict.ia2027.breadcrumb.slowdown}
             </span>
           </div>
 
           {/* H1 */}
-          <h1 className='text-4xl sm:text-5xl font-bold leading-tight tracking-tight mb-6 text-white'>
+          <h1 className='text-4xl sm:text-5xl font-bold leading-tight tracking-tight mb-6 text-brand-offwhite'>
             {t.h1}
           </h1>
 
@@ -161,7 +161,7 @@ export default async function DesaceleracaoCoordenadaPage({ params }: PageProps)
       <IA2027Simulation initialPath='slowdown' />
 
       {/* Author section */}
-      <section className='bg-neutral-950 text-neutral-200 pb-12 pt-2'>
+      <section className='bg-brand-navy text-neutral-200 pb-12 pt-2'>
         <div className='max-w-7xl mx-auto px-6'>
           <AuthorHubCard
             label={t.authorLabel}
@@ -171,7 +171,7 @@ export default async function DesaceleracaoCoordenadaPage({ params }: PageProps)
       </section>
 
       {/* FAQ section */}
-      <section className='bg-neutral-950 text-neutral-200 pb-16'>
+      <section className='bg-brand-navy text-neutral-200 pb-16'>
         <div className='max-w-4xl mx-auto px-6'>
           <FaqSection
             items={[...dict.faq.ia2027]}

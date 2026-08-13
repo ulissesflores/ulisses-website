@@ -124,7 +124,7 @@ export default async function CategoryPage({ params }: PageProps) {
   };
 
   return (
-    <div className='min-h-screen bg-neutral-950 text-neutral-200'>
+    <div className='min-h-screen bg-brand-navy text-neutral-200 selection:bg-brand-gold/30 selection:text-brand-offwhite'>
       <script
         type='application/ld+json'
         dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionJsonLd) }}
@@ -135,21 +135,21 @@ export default async function CategoryPage({ params }: PageProps) {
       />
 
       {/* ── Hero Section ── */}
-      <section className='bg-neutral-950 text-neutral-200 pt-20 pb-16 border-b border-neutral-800'>
+      <section className='bg-brand-navy text-neutral-200 pt-20 pb-16 border-b border-neutral-800'>
         <div className='max-w-4xl mx-auto px-6'>
           {/* Breadcrumb */}
           <div className='flex items-center gap-2 mb-6'>
-            <Link href={localePath('/', locale)} className='text-xs font-mono uppercase tracking-widest text-emerald-400 hover:underline'>
+            <Link href={localePath('/', locale)} className='text-xs font-mono uppercase tracking-widest text-brand-gold-light hover:underline'>
               Home
             </Link>
-            <span className='text-xs text-neutral-600'>→</span>
+            <span className='text-xs text-neutral-400'>→</span>
             <span className='text-xs font-mono uppercase tracking-widest text-neutral-400'>
               {collHeading ? typedCategory.charAt(0).toUpperCase() + typedCategory.slice(1) : collection.title}
             </span>
           </div>
 
           {/* H1 */}
-          <h1 className='text-3xl md:text-5xl font-bold text-white mb-6 leading-tight tracking-tight'>
+          <h1 className='text-3xl md:text-5xl font-bold text-brand-offwhite mb-6 leading-tight tracking-tight'>
             {story?.h1 || collHeading || collection.heading}
           </h1>
 
@@ -160,8 +160,8 @@ export default async function CategoryPage({ params }: PageProps) {
 
           {/* Authority block */}
           {story && (
-            <div className='border-l-4 border-cyan-700 bg-cyan-950/20 px-6 py-5 rounded-r-xl mb-10'>
-              <p className='text-sm font-semibold text-cyan-400 uppercase tracking-wide mb-2'>
+            <div className='border-l-4 border-brand-gold-dark bg-brand-gold/10 px-6 py-5 rounded-r-xl mb-10'>
+              <p className='text-sm font-semibold text-brand-gold-light uppercase tracking-wide mb-2'>
                 {story.authorityTitle}
               </p>
               <p className='text-neutral-300 leading-relaxed'>
@@ -186,11 +186,11 @@ export default async function CategoryPage({ params }: PageProps) {
 
           {/* Featured link for whitepapers → Projeto PSI */}
           {typedCategory === 'whitepapers' && (
-            <div className='rounded-xl border border-cyan-800/40 bg-cyan-950/10 p-5 mt-4'>
-              <p className='text-[10px] uppercase tracking-[0.2em] text-cyan-400 font-bold mb-2'>{t.highlight}</p>
+            <div className='rounded-xl border border-brand-gold/20 bg-brand-gold/5 p-5 mt-4'>
+              <p className='text-[10px] uppercase tracking-[0.2em] text-brand-gold-light font-bold mb-2'>{t.highlight}</p>
               <Link
                 href={localePath('/whitepapers/projeto-psi', locale)}
-                className='text-lg font-bold text-white hover:text-cyan-300 transition-colors'
+                className='text-lg font-bold text-brand-offwhite hover:text-brand-offwhite transition-colors'
               >
                 {t.psiLink}
               </Link>
@@ -212,7 +212,7 @@ export default async function CategoryPage({ params }: PageProps) {
 
       {/* ── Publications Grid ── */}
       <main className='relative max-w-5xl mx-auto px-6 py-16 z-10'>
-        <h2 className='text-2xl font-bold text-white mb-8'>
+        <h2 className='text-2xl font-bold text-brand-offwhite mb-8'>
           {categoryPublications.length} {t.publicationsCount}
         </h2>
 
@@ -220,15 +220,15 @@ export default async function CategoryPage({ params }: PageProps) {
           {categoryPublications.map((publication) => (
             <article
               key={publication.id}
-              className='p-6 rounded-xl bg-neutral-900/40 border border-neutral-800 hover:border-emerald-500/40 transition-colors'
+              className='p-6 rounded-xl bg-neutral-900/40 border border-neutral-800 hover:border-brand-gold/40 transition-colors'
             >
               <div className='flex flex-wrap items-center gap-3 mb-3 text-xs text-neutral-400'>
                 <span className='px-2 py-1 border border-neutral-700 rounded-full uppercase'>{publication.category}</span>
                 <span>{publication.date}</span>
                 <span>{publication.kind === 'R' ? 'Report' : 'ScholarlyArticle'}</span>
               </div>
-              <h2 className='text-2xl font-semibold text-white mb-3'>
-                <Link href={localePath(`/${publication.category}/${publication.id}`, locale)} className='hover:text-emerald-400 transition-colors'>
+              <h2 className='text-2xl font-semibold text-brand-offwhite mb-3'>
+                <Link href={localePath(`/${publication.category}/${publication.id}`, locale)} className='hover:text-brand-gold-light transition-colors'>
                   {(locale !== 'pt-br' && publication.translations?.[locale as keyof NonNullable<typeof publication.translations>]) || publication.title}
                 </Link>
               </h2>

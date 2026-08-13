@@ -129,25 +129,25 @@ export default async function IA2027Page({ params, searchParams }: PageProps) {
   return (
     <>
       {/* Hero Section — server-rendered for SEO/GEO/LLM */}
-      <section className='bg-neutral-950 text-neutral-200 pt-20 pb-16 border-b border-neutral-800'>
+      <section className='bg-brand-navy text-neutral-200 pt-20 pb-16 border-b border-neutral-800 selection:bg-brand-gold/30 selection:text-brand-offwhite'>
         <div className='max-w-4xl mx-auto px-6'>
 
           {/* Breadcrumb / Kicker */}
           <div className='flex items-center gap-2 mb-6'>
             <Link
               href={localePath('/simulacoes', locale)}
-              className='text-xs font-mono uppercase tracking-widest text-emerald-400 hover:underline'
+              className='text-xs font-mono uppercase tracking-widest text-brand-gold-light hover:underline'
             >
               {dict.ia2027.breadcrumb.simulations}
             </Link>
-            <span className='text-xs text-neutral-600'>→</span>
+            <span className='text-xs text-neutral-400'>→</span>
             <span className='text-xs font-mono uppercase tracking-widest text-neutral-400'>
               {dict.ia2027.breadcrumb.scenarios}
             </span>
           </div>
 
           {/* H1 */}
-          <h1 className='text-4xl sm:text-5xl font-bold leading-tight tracking-tight mb-6 text-white'>
+          <h1 className='text-4xl sm:text-5xl font-bold leading-tight tracking-tight mb-6 text-brand-offwhite'>
             {t.h1}
           </h1>
 
@@ -157,8 +157,8 @@ export default async function IA2027Page({ params, searchParams }: PageProps) {
           </p>
 
           {/* Alert card — EEAT / Por que isso importa */}
-          <div className='border-l-4 border-cyan-700 bg-cyan-950/20 px-6 py-5 rounded-r-xl mb-10'>
-            <p className='text-sm font-semibold text-cyan-400 uppercase tracking-wide mb-2'>
+          <div className='border-l-4 border-brand-gold-dark bg-brand-gold/10 px-6 py-5 rounded-r-xl mb-10'>
+            <p className='text-sm font-semibold text-brand-gold-light uppercase tracking-wide mb-2'>
               {t.authority.kicker}
             </p>
             <p className='text-neutral-300 leading-relaxed'>
@@ -173,7 +173,7 @@ export default async function IA2027Page({ params, searchParams }: PageProps) {
                 key={card.title}
                 className='border border-neutral-800 rounded-xl p-5 bg-neutral-900/40'
               >
-                <p className='font-semibold text-sm text-white mb-1'>{card.title}</p>
+                <p className='font-semibold text-sm text-brand-offwhite mb-1'>{card.title}</p>
                 <p className='text-sm text-neutral-400 leading-relaxed'>{card.body}</p>
               </div>
             ))}
@@ -183,7 +183,7 @@ export default async function IA2027Page({ params, searchParams }: PageProps) {
           <div className='flex flex-col sm:flex-row items-start sm:items-center gap-4'>
             <a
               href='#ia-2027-sim'
-              className='inline-flex items-center gap-2 bg-emerald-700 text-white font-semibold px-6 py-3 rounded-full hover:bg-emerald-600 transition-colors text-sm'
+              className='inline-flex items-center gap-2 bg-brand-gold text-brand-navy font-semibold px-6 py-3 rounded-full hover:bg-brand-gold-light transition-colors text-sm'
             >
               {t.cta}
             </a>
@@ -207,7 +207,7 @@ export default async function IA2027Page({ params, searchParams }: PageProps) {
       <IA2027Simulation initialPath={initialPath} />
 
       {/* Author section */}
-      <section className='bg-neutral-950 text-neutral-200 pb-12 pt-2'>
+      <section className='bg-brand-navy text-neutral-200 pb-12 pt-2'>
         <div className='max-w-7xl mx-auto px-6'>
           <AuthorHubCard
             label={t.authorLabel}
@@ -225,7 +225,7 @@ export default async function IA2027Page({ params, searchParams }: PageProps) {
         Bloco estrutural de propósito — link contextual dentro da narrativa
         traduzida seria edição de texto de terceiros.
       */}
-      <section className='bg-neutral-950 text-neutral-200 pb-16'>
+      <section className='bg-brand-navy text-neutral-200 pb-16'>
         <div className='max-w-4xl mx-auto px-6'>
           <h2 className='text-sm uppercase tracking-[0.18em] text-neutral-400 mb-4'>
             {t.nextSteps.title}
@@ -235,7 +235,7 @@ export default async function IA2027Page({ params, searchParams }: PageProps) {
               <li key={link.href}>
                 <Link
                   href={localePath(link.href, locale)}
-                  className='inline-flex items-center gap-2 rounded-full border border-neutral-700 px-4 py-2 text-sm text-neutral-200 transition-colors hover:border-emerald-500/50 hover:text-emerald-300'
+                  className='inline-flex items-center gap-2 rounded-full border border-neutral-700 px-4 py-2 text-sm text-neutral-200 transition-colors hover:border-brand-gold/50 hover:text-brand-gold-light'
                 >
                   {link.label}
                 </Link>
@@ -246,7 +246,7 @@ export default async function IA2027Page({ params, searchParams }: PageProps) {
       </section>
 
       {/* FAQ section */}
-      <section className='bg-neutral-950 text-neutral-200 pb-16'>
+      <section className='bg-brand-navy text-neutral-200 pb-16'>
         <div className='max-w-4xl mx-auto px-6'>
           <FaqSection
             items={[...dict.faq.ia2027]}

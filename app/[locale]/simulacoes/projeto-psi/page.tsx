@@ -127,7 +127,7 @@ export default async function ProjetoPsiPage({ params }: PageProps) {
           {/* Author line */}
           <p className='text-sm text-gray-500 mb-8'>
             <span className='font-semibold text-gray-800'>{ui.authorLabel}</span>{' '}
-            <Link href={localePath('/identidade', locale)} className='text-blue-700 hover:underline'>Ulisses Flores</Link>
+            <Link href={localePath('/identidade', locale)} className='text-blue-700 underline'>Ulisses Flores</Link>
             {' — '}{ui.authorRole}
           </p>
 
@@ -166,7 +166,7 @@ export default async function ProjetoPsiPage({ params }: PageProps) {
       {/* ═══════════════════════════════════════════════════════════════
           WHITEPAPER BODY — Dark immersive long-read
           ═══════════════════════════════════════════════════════════════ */}
-      <article className='bg-neutral-950 text-neutral-200 py-16'>
+      <article className='bg-brand-navy text-neutral-200 selection:bg-brand-gold/30 selection:text-brand-offwhite py-16'>
         <div className='max-w-4xl mx-auto px-6'>
           <PsiWhitepaperBodyLocalized locale={locale} />
         </div>
@@ -175,7 +175,7 @@ export default async function ProjetoPsiPage({ params }: PageProps) {
       {/* ═══════════════════════════════════════════════════════════════
           AUTHOR + CTA + FAQ
           ═══════════════════════════════════════════════════════════════ */}
-      <section className='bg-neutral-950 text-neutral-200 pb-4'>
+      <section className='bg-brand-navy text-neutral-200 selection:bg-brand-gold/30 selection:text-brand-offwhite pb-4'>
         <div className='max-w-5xl mx-auto px-6'>
           <AuthorHubCard
             label={ui.authorCardLabel}
@@ -184,9 +184,9 @@ export default async function ProjetoPsiPage({ params }: PageProps) {
         </div>
       </section>
 
-      <section className='bg-neutral-950 text-neutral-200 py-12'>
+      <section className='bg-brand-navy text-neutral-200 selection:bg-brand-gold/30 selection:text-brand-offwhite py-12'>
         <div className='max-w-4xl mx-auto px-6 text-center'>
-          <h2 className='text-xl font-bold text-white mb-3'>
+          <h2 className='text-xl font-bold text-brand-offwhite mb-3'>
             {ui.ctaTitle}
           </h2>
           <p className='text-neutral-400 mb-6 max-w-2xl mx-auto text-sm leading-relaxed'>
@@ -201,7 +201,7 @@ export default async function ProjetoPsiPage({ params }: PageProps) {
         </div>
       </section>
 
-      <section className='bg-neutral-950 text-neutral-200 pb-16'>
+      <section className='bg-brand-navy text-neutral-200 selection:bg-brand-gold/30 selection:text-brand-offwhite pb-16'>
         <div className='max-w-4xl mx-auto px-6'>
           <FaqSection
             items={[...dict.faq.projectPsi]}

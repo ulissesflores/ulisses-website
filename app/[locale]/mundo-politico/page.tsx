@@ -84,26 +84,26 @@ export default async function MundoPoliticoPage({ params }: PageProps) {
       <script type='application/ld+json' dangerouslySetInnerHTML={{ __html: JSON.stringify(pageJsonLd) }} />
 
       {/* Hero */}
-      <section className='bg-neutral-950 text-neutral-200 pt-20 pb-16 border-b border-neutral-800'>
+      <section className='bg-brand-navy text-neutral-200 pt-20 pb-16 border-b border-neutral-800 selection:bg-brand-gold/30 selection:text-brand-offwhite'>
         <div className='max-w-4xl mx-auto px-6'>
           <div className='flex items-center gap-2 mb-6'>
-            <Link href={localePath('/', locale)} className='text-xs font-mono uppercase tracking-widest text-emerald-400 hover:underline'>
+            <Link href={localePath('/', locale)} className='text-xs font-mono uppercase tracking-widest text-brand-gold-light hover:underline'>
               {dict.common.breadcrumb.home}
             </Link>
-            <span className='text-xs text-neutral-600'>→</span>
+            <span className='text-xs text-neutral-400'>→</span>
             <span className='text-xs font-mono uppercase tracking-widest text-neutral-400'>
               {t.breadcrumb}
             </span>
           </div>
 
-          <h1 className='text-4xl sm:text-5xl font-bold leading-tight tracking-tight mb-6 text-white'>
+          <h1 className='text-4xl sm:text-5xl font-bold leading-tight tracking-tight mb-6 text-brand-offwhite'>
             {t.hero.h1}
           </h1>
           <p className='text-lg text-neutral-400 leading-relaxed mb-8 max-w-3xl'>
             {t.hero.lead}
           </p>
-          <div className='border-s-4 border-cyan-700 bg-cyan-950/20 px-6 py-5 rounded-e-xl mb-10'>
-            <p className='text-sm font-semibold text-cyan-400 uppercase tracking-wide mb-2'>
+          <div className='border-s-4 border-brand-gold-dark bg-brand-gold/10 px-6 py-5 rounded-e-xl mb-10'>
+            <p className='text-sm font-semibold text-brand-gold-light uppercase tracking-wide mb-2'>
               {t.hero.authority.kicker}
             </p>
             <p className='text-neutral-300 leading-relaxed'>
@@ -124,38 +124,38 @@ export default async function MundoPoliticoPage({ params }: PageProps) {
       </section>
 
       {/* Manifesto */}
-      <section className='bg-neutral-950 text-neutral-200 py-16'>
+      <section className='bg-brand-navy text-neutral-200 py-16'>
         <article className='max-w-4xl mx-auto px-6'>
-          <span className='text-xs font-mono uppercase tracking-[0.2em] text-emerald-400 mb-6 block'>
+          <span className='text-xs font-mono uppercase tracking-[0.2em] text-brand-gold-light mb-6 block'>
             {t.manifesto.kicker}
           </span>
-          <h2 className='text-3xl font-bold text-white mb-6'>{t.manifesto.title}</h2>
-          <blockquote className='border-s-4 border-amber-500/40 ps-6 mb-8 italic text-neutral-300 text-lg'>
+          <h2 className='text-3xl font-bold text-brand-offwhite mb-6'>{t.manifesto.title}</h2>
+          <blockquote className='border-s-4 border-brand-gold/40 ps-6 mb-8 italic text-neutral-300 text-lg'>
             {t.manifesto.quote}
           </blockquote>
           <div className='prose prose-invert max-w-none'>
             <p className='text-neutral-300 leading-relaxed mb-4'>{t.manifesto.intro}</p>
-            <h3 className='text-xl font-semibold text-white'>{t.manifesto.h3_socrates}</h3>
+            <h3 className='text-xl font-semibold text-brand-offwhite'>{t.manifesto.h3_socrates}</h3>
             <p className='text-neutral-300 leading-relaxed mb-4'>{t.manifesto.p_socrates}</p>
             <p className='text-neutral-300 leading-relaxed mb-8'>{t.manifesto.p_jesus}</p>
-            <h3 className='text-xl font-semibold text-white'>{t.manifesto.h3_purpose}</h3>
+            <h3 className='text-xl font-semibold text-brand-offwhite'>{t.manifesto.h3_purpose}</h3>
             <p className='text-neutral-300 leading-relaxed'>{t.manifesto.p_purpose}</p>
           </div>
         </article>
       </section>
 
       {/* Posts */}
-      <section className='bg-neutral-950 text-neutral-200 py-16'>
+      <section className='bg-brand-navy text-neutral-200 py-16'>
         <div className='max-w-5xl mx-auto px-6'>
           <div className='mb-8'>
             <AuthorHubCard label={t.posts.authorLabel} description={t.posts.authorDescription} />
           </div>
-          <h2 className='text-2xl font-bold text-white mb-6'>{t.posts.title}</h2>
+          <h2 className='text-2xl font-bold text-brand-offwhite mb-6'>{t.posts.title}</h2>
           <div className='grid gap-6'>
             {posts.map((post) => (
               <article key={post.canonicalPath} className='rounded-xl border border-neutral-800 bg-neutral-900/40 p-6'>
                 <Link href={localePath(post.canonicalPath, locale)} className='group'>
-                  <h3 className='text-lg font-semibold text-white group-hover:text-emerald-400 transition-colors mb-2'>
+                  <h3 className='text-lg font-semibold text-brand-offwhite group-hover:text-brand-gold-light transition-colors mb-2'>
                     {(locale !== 'pt-br' && (post as Record<string, unknown>)[`headline_${locale}`] as string) || post.headline}
                   </h3>
                   <p className='text-sm text-neutral-400 leading-relaxed line-clamp-2'>
@@ -169,7 +169,7 @@ export default async function MundoPoliticoPage({ params }: PageProps) {
                       href={post.url}
                       target='_blank'
                       rel='noopener noreferrer'
-                      className='text-emerald-300/70 hover:text-emerald-300'
+                      className='text-brand-gold-light/70 hover:text-brand-gold-light'
                     >
                       {t.posts.originalLink}
                     </a>
@@ -182,9 +182,9 @@ export default async function MundoPoliticoPage({ params }: PageProps) {
       </section>
 
       {/* CTA */}
-      <section className='bg-neutral-950 text-neutral-200 py-12'>
+      <section className='bg-brand-navy text-neutral-200 py-12'>
         <div className='max-w-4xl mx-auto px-6 text-center'>
-          <h2 className='text-xl font-bold text-white mb-3'>{t.cta.title}</h2>
+          <h2 className='text-xl font-bold text-brand-offwhite mb-3'>{t.cta.title}</h2>
           <p className='text-neutral-400 mb-6 max-w-2xl mx-auto text-sm leading-relaxed'>
             {t.cta.description}
           </p>
@@ -198,7 +198,7 @@ export default async function MundoPoliticoPage({ params }: PageProps) {
       </section>
 
       {/* FAQ */}
-      <section className='bg-neutral-950 text-neutral-200 pb-16'>
+      <section className='bg-brand-navy text-neutral-200 pb-16'>
         <div className='max-w-4xl mx-auto px-6'>
           <FaqSection items={[...tFaq]} sectionTitle={t.faq.sectionTitle} />
         </div>

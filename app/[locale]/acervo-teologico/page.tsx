@@ -79,23 +79,23 @@ export default async function AcervoTeologicoPage({ params }: PageProps) {
   };
 
   return (
-    <div className='min-h-screen bg-neutral-950 text-neutral-200'>
+    <div className='min-h-screen bg-brand-navy text-neutral-200 selection:bg-brand-gold/30 selection:text-brand-offwhite'>
       {/* ── Hero Section ── */}
-      <section className='bg-neutral-950 text-neutral-200 pt-20 pb-16 border-b border-neutral-800'>
+      <section className='bg-brand-navy text-neutral-200 pt-20 pb-16 border-b border-neutral-800'>
         <div className='max-w-4xl mx-auto px-6'>
           {/* Breadcrumb */}
           <div className='flex items-center gap-2 mb-6'>
-            <Link href={localePath('/', locale)} className='text-xs font-mono uppercase tracking-widest text-emerald-400 hover:underline'>
+            <Link href={localePath('/', locale)} className='text-xs font-mono uppercase tracking-widest text-brand-gold-light hover:underline'>
               Home
             </Link>
-            <span className='text-xs text-neutral-600'>→</span>
+            <span className='text-xs text-neutral-400'>→</span>
             <span className='text-xs font-mono uppercase tracking-widest text-neutral-400'>
               {t.breadcrumb}
             </span>
           </div>
 
           {/* H1 */}
-          <h1 className='text-3xl md:text-5xl font-bold text-white mb-6 leading-tight tracking-tight'>
+          <h1 className='text-3xl md:text-5xl font-bold text-brand-offwhite mb-6 leading-tight tracking-tight'>
             {t.hero.h1}
           </h1>
 
@@ -105,8 +105,8 @@ export default async function AcervoTeologicoPage({ params }: PageProps) {
           </p>
 
           {/* Authority block */}
-          <div className='border-l-4 border-cyan-700 bg-cyan-950/20 px-6 py-5 rounded-r-xl mb-10'>
-            <p className='text-sm font-semibold text-cyan-400 uppercase tracking-wide mb-2'>
+          <div className='border-l-4 border-brand-gold-dark bg-brand-gold/10 px-6 py-5 rounded-r-xl mb-10'>
+            <p className='text-sm font-semibold text-brand-gold-light uppercase tracking-wide mb-2'>
               {t.hero.authority.kicker}
             </p>
             <p className='text-neutral-300 leading-relaxed'>
@@ -138,7 +138,7 @@ export default async function AcervoTeologicoPage({ params }: PageProps) {
 
       {/* ── Clusters Grid ── */}
       <main className='max-w-6xl mx-auto px-6 py-16'>
-        <h2 className='text-2xl font-bold text-white mb-8'>{t.grid.title}</h2>
+        <h2 className='text-2xl font-bold text-brand-offwhite mb-8'>{t.grid.title}</h2>
 
         <div className='space-y-8'>
           {localizedClusters.map((cluster) => (
@@ -147,14 +147,14 @@ export default async function AcervoTeologicoPage({ params }: PageProps) {
               id={`cluster-${cluster.id}`}
               className='rounded-xl border border-neutral-800 bg-neutral-900/30 p-6 scroll-mt-24'
             >
-              <h2 className='text-2xl font-semibold text-white mb-2'>{cluster.seoTitle}</h2>
+              <h2 className='text-2xl font-semibold text-brand-offwhite mb-2'>{cluster.seoTitle}</h2>
               <p className='text-sm text-neutral-400 mb-6'>{cluster.metaDescription}</p>
 
               <div className='grid gap-4'>
                 {cluster.sermons.map((sermon) => (
                   <article key={sermon.canonicalPath} className='rounded-lg border border-neutral-800 bg-neutral-950/60 p-4'>
-                    <h3 className='text-lg font-semibold text-white mb-2'>
-                      <Link href={localePath(sermon.canonicalPath, locale)} className='hover:text-emerald-400 transition-colors'>
+                    <h3 className='text-lg font-semibold text-brand-offwhite mb-2'>
+                      <Link href={localePath(sermon.canonicalPath, locale)} className='hover:text-brand-gold-light transition-colors'>
                         {sermon.seoTitle}
                       </Link>
                     </h3>

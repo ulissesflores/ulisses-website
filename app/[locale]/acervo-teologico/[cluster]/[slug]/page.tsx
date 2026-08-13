@@ -141,15 +141,15 @@ export default async function AcervoSermonDetailPage({ params }: PageProps) {
   };
 
   return (
-    <div className='min-h-screen bg-neutral-950 text-neutral-200'>
+    <div className='min-h-screen bg-brand-navy text-neutral-200 selection:bg-brand-gold/30 selection:text-brand-offwhite'>
       <main className='max-w-3xl mx-auto px-6 py-20'>
-        <Link href={localePath(acervoCanonicalPath, locale)} className='text-sm text-neutral-400 hover:text-emerald-400 transition-colors'>
+        <Link href={localePath(acervoCanonicalPath, locale)} className='text-sm text-neutral-400 hover:text-brand-gold-light transition-colors'>
           {t.detail?.backLink ?? '← Back'}
         </Link>
 
         <header className='mt-8 mb-10'>
-          <p className='text-xs uppercase tracking-widest text-emerald-400 mb-3'>{lc.seoTitle}</p>
-          <h1 className='text-3xl md:text-4xl font-bold text-white mb-4'>{ls.seoTitle}</h1>
+          <p className='text-xs uppercase tracking-widest text-brand-gold-light mb-3'>{lc.seoTitle}</p>
+          <h1 className='text-3xl md:text-4xl font-bold text-brand-offwhite mb-4'>{ls.seoTitle}</h1>
           <p className='text-sm text-neutral-400 mb-4'>{t.detail?.publishedAt ?? 'Published'} {sermon.publishedAt}</p>
           <div className='mb-4 max-w-xl'>
             <AuthorHubCard label={t.detail?.authorLabel ?? 'Author'} compact />
@@ -175,17 +175,17 @@ export default async function AcervoSermonDetailPage({ params }: PageProps) {
 
         <section className='rounded-xl border border-neutral-800 bg-neutral-900/30 p-6 space-y-5'>
           <div>
-            <h2 className='text-xl font-semibold text-white mb-2'>{t.detail?.studySummary ?? 'Study Summary'}</h2>
+            <h2 className='text-xl font-semibold text-brand-offwhite mb-2'>{t.detail?.studySummary ?? 'Study Summary'}</h2>
             <p className='text-neutral-300 leading-relaxed'>{ls.llmContext}</p>
           </div>
 
           <div>
-            <h2 className='text-xl font-semibold text-white mb-2'>{t.detail?.sourceLabel ?? 'Source'}</h2>
+            <h2 className='text-xl font-semibold text-brand-offwhite mb-2'>{t.detail?.sourceLabel ?? 'Source'}</h2>
             <a
               href={sermon.youtubeUrl}
               target='_blank'
               rel='noopener noreferrer'
-              className='text-emerald-300 hover:text-emerald-200 break-all transition-colors'
+              className='text-brand-gold-light hover:text-brand-offwhite break-all transition-colors'
             >
               {sermon.youtubeUrl}
             </a>

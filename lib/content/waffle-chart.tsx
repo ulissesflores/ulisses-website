@@ -12,8 +12,10 @@
  * Todo texto vem por props; os NÚMEROS vêm de `data/artigos-charts.ts`
  * referenciados por `dataset` (o `compileMDX` só entrega atributo string).
  *
- * Paleta validada (dataviz, 2026-08-02, superfície dark): CVD pior par
- * ΔE 10,6 (protan) PASS · visão normal 18,7 PASS. O cinza do primeiro
+ * Paleta validada (dataviz da marca, F4 lote 7, 2026-08-13, superfície
+ * #14191f): waffle 5-cat CVD pior par ΔE 18,2 (deutan) PASS · visão
+ * normal 18,7 PASS — instância completa + waiver do chroma do ouro no
+ * header de data/artigos-charts.ts. O cinza do primeiro
  * grupo fica ABAIXO de 3:1 de contraste por decisão editorial (grupo
  * "fora da conversa" é recessivo) — o alívio exigido existe: legenda
  * rotulada com contagem + os mesmos números em tabela no corpo do artigo.
@@ -69,7 +71,7 @@ export function WaffleChart({ dataset, title, subtitle, description, source }: W
     <figure className='my-10 not-prose'>
       <svg
         viewBox={`0 0 ${W} ${H}`}
-        className='w-full h-auto rounded-lg border border-white/10 bg-neutral-900/60'
+        className='w-full h-auto rounded-lg border border-white/10 bg-neutral-900/60 font-chart'
         role='img'
         aria-label={description}
       >

@@ -28,7 +28,7 @@ export default function Error({
   }, [error]);
 
   return (
-    <div className='min-h-screen bg-neutral-950 text-neutral-200 flex items-center justify-center'>
+    <div className='min-h-screen bg-brand-navy text-neutral-200 selection:bg-brand-gold/30 selection:text-brand-offwhite flex items-center justify-center'>
       <div className='fixed inset-0 bg-[radial-gradient(circle_800px_at_50%_-200px,#ef444408,transparent)] pointer-events-none' />
 
       <main className='relative max-w-lg mx-auto px-6 py-20 text-center z-10'>
@@ -36,14 +36,14 @@ export default function Error({
           <AlertTriangle size={32} className='text-red-400' />
         </div>
 
-        <h1 className='text-2xl font-bold text-white mb-3'>
+        <h1 className='text-2xl font-bold text-brand-offwhite mb-3'>
           {t.title}
         </h1>
         <p className='text-neutral-400 mb-2 text-sm'>
           {t.description}
         </p>
         {error.digest && (
-          <p className='text-neutral-600 text-xs font-mono mb-8'>
+          <p className='text-neutral-400 text-xs font-mono mb-8'>
             Digest: {error.digest}
           </p>
         )}
@@ -51,14 +51,14 @@ export default function Error({
         <div className='flex gap-3 justify-center'>
           <button
             onClick={reset}
-            className='flex items-center gap-2 rounded-xl border border-neutral-700 bg-neutral-900/60 px-5 py-3 text-sm font-medium hover:border-emerald-500/40 hover:text-emerald-300 transition-colors'
+            className='flex items-center gap-2 rounded-xl border border-neutral-700 bg-neutral-900/60 px-5 py-3 text-sm font-medium hover:border-brand-gold/40 hover:text-brand-gold-light transition-colors'
           >
             <RotateCcw size={16} />
             {t.retry}
           </button>
           <Link
             href={locale === 'pt-br' ? '/' : `/${locale}/`}
-            className='flex items-center gap-2 rounded-xl border border-neutral-700 bg-neutral-900/60 px-5 py-3 text-sm font-medium hover:border-emerald-500/40 hover:text-emerald-300 transition-colors'
+            className='flex items-center gap-2 rounded-xl border border-neutral-700 bg-neutral-900/60 px-5 py-3 text-sm font-medium hover:border-brand-gold/40 hover:text-brand-gold-light transition-colors'
           >
             <Home size={16} />
             {t.home}

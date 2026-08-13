@@ -72,7 +72,7 @@ export default async function CartaoPage({ params }: PageProps) {
   /* Alvos de toque com 56px de altura: este é o único ecrã do site desenhado para
      ser usado de pé, com uma mão, segundos depois de encostar o celular num cartão. */
   const row =
-    'flex items-center gap-4 min-h-14 rounded-xl border border-neutral-800 bg-neutral-900/40 px-5 py-4 transition-colors hover:border-emerald-500/40 focus-visible:border-emerald-500/60';
+    'flex items-center gap-4 min-h-14 rounded-xl border border-brand-gold/20 bg-brand-navy-deep/40 px-5 py-4 transition-colors hover:border-brand-gold/50 focus-visible:border-brand-gold/60';
 
   return (
     <>
@@ -83,7 +83,9 @@ export default async function CartaoPage({ params }: PageProps) {
       <CardSourceTracker />
 
       {/* O fundo escuro é responsabilidade da página: o `body` do site é branco. */}
-      <div className='min-h-screen bg-neutral-950 text-neutral-200'>
+      <div
+        className='min-h-screen bg-linear-to-b from-brand-navy to-brand-navy-deep font-ui text-brand-offwhite'
+      >
       <main className='mx-auto flex w-full max-w-md flex-col gap-6 px-6 pb-16 pt-24'>
         <header className='flex flex-col items-center gap-4 text-center'>
           <Image
@@ -92,11 +94,18 @@ export default async function CartaoPage({ params }: PageProps) {
             width={112}
             height={112}
             priority
-            className='h-28 w-28 rounded-full border border-neutral-700 object-cover'
+            className='h-28 w-28 rounded-full border border-brand-gold/40 object-cover'
           />
           <div>
-            <h1 className='text-2xl font-bold text-white'>{name}</h1>
-            <p className='mt-1 text-sm text-emerald-400'>{t.role}</p>
+            <h1 className='font-display text-2xl font-bold text-brand-offwhite'>{name}</h1>
+            {/* Tagline letterspaced é tratamento latino; hebraico não versaliza nem traqueia. */}
+            <p
+              className={`mt-1 text-brand-gold ${
+                locale === 'he' ? 'text-sm' : 'text-xs uppercase tracking-[0.18em]'
+              }`}
+            >
+              {t.role}
+            </p>
           </div>
         </header>
 
@@ -104,49 +113,51 @@ export default async function CartaoPage({ params }: PageProps) {
         <a
           href='/c.vcf'
           download='ulisses-flores.vcf'
-          className='flex min-h-14 items-center justify-center gap-3 rounded-xl bg-emerald-500 px-5 py-4 text-base font-bold text-neutral-950 transition-colors hover:bg-emerald-400'
+          className='flex min-h-14 items-center justify-center gap-3 rounded-xl bg-brand-gold px-5 py-4 text-base font-bold text-brand-navy transition-colors hover:bg-brand-gold-light'
         >
           <Download size={20} aria-hidden='true' />
           {t.saveContact}
         </a>
-        <p className='-mt-4 text-center text-xs text-neutral-400'>{t.saveContactHint}</p>
+        <p className='-mt-4 text-center text-xs text-brand-offwhite/70'>{t.saveContactHint}</p>
 
         {wa && (
           <a href={wa} className={row} target='_blank' rel='noopener noreferrer'>
-            <MessageCircle size={20} className='shrink-0 text-emerald-500' aria-hidden='true' />
+            <MessageCircle size={20} className='shrink-0 text-brand-gold' aria-hidden='true' />
             <span>
-              <span className='block text-sm font-medium text-neutral-100'>{t.whatsapp}</span>
-              <span className='block text-xs text-neutral-400'>{t.whatsappHint}</span>
+              <span className='block text-sm font-medium text-brand-offwhite'>{t.whatsapp}</span>
+              <span className='block text-xs text-brand-offwhite/70'>{t.whatsappHint}</span>
             </span>
           </a>
         )}
 
         <a href={`mailto:${contactEmail}`} className={row}>
-          <Mail size={20} className='shrink-0 text-emerald-500' aria-hidden='true' />
+          <Mail size={20} className='shrink-0 text-brand-gold' aria-hidden='true' />
           <span>
-            <span className='block text-sm font-medium text-neutral-100'>{t.email}</span>
-            <span className='block text-xs text-neutral-400'>{contactEmail}</span>
+            <span className='block text-sm font-medium text-brand-offwhite'>{t.email}</span>
+            <span className='block text-xs text-brand-offwhite/70'>{contactEmail}</span>
           </span>
         </a>
 
         <section className='flex flex-col gap-3'>
-          <h2 className='text-xs font-bold uppercase tracking-[0.2em] text-neutral-400'>
+          <h2 className='text-xs font-bold uppercase tracking-[0.2em] text-brand-gold'>
             {t.linksTitle}
           </h2>
           {cardLinks.map(({ id, href }) => (
             <a key={id} href={href} className={row} target='_blank' rel='noopener noreferrer'>
               <span className='flex-1'>
-                <span className='block text-sm font-medium text-neutral-100'>
+                <span className='block text-sm font-medium text-brand-offwhite'>
                   {t.links[id].label}
                 </span>
-                <span className='block text-xs text-neutral-400'>{t.links[id].description}</span>
+                <span className='block text-xs text-brand-offwhite/70'>
+                  {t.links[id].description}
+                </span>
               </span>
-              <ArrowUpRight size={16} className='shrink-0 text-neutral-500' aria-hidden='true' />
+              <ArrowUpRight size={16} className='shrink-0 text-brand-gold/70' aria-hidden='true' />
             </a>
           ))}
         </section>
 
-        <p className='pt-2 text-center text-xs text-neutral-400'>ulissesflores.com</p>
+        <p className='pt-2 text-center text-xs text-brand-offwhite/60'>ulissesflores.com</p>
       </main>
       </div>
     </>

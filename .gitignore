@@ -135,3 +135,10 @@ PENTE-FINO-*.md
 /DRAFT-*.md
 /POST-*.md
 /POST-*.png
+
+# artefatos do cartao fisico (nao fazem parte do site)
+cartao-qr/
+
+# provas visuais da repaginacao (7+ MB de screenshots/mockups — evidencia local
+# citada no *-STATE.md, nao conteudo do site publico)
+docs/mockups/

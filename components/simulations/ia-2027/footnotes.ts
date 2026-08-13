@@ -21,7 +21,7 @@ function buildFootnoteAnchor(
 
   return {
     id: referenceId,
-    html: `${supOpenTag}<a href="#${targetId}" id="${referenceId}" class="font-semibold text-emerald-400 no-underline hover:underline">[${num}]</a></sup>`,
+    html: `${supOpenTag}<a href="#${targetId}" id="${referenceId}" class="font-semibold text-brand-gold-light no-underline hover:underline">[${num}]</a></sup>`,
   };
 }
 

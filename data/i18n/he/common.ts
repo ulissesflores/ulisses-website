@@ -9,101 +9,42 @@ export const common = {
         ],
       },
       {
-        label: 'אודות',
-        items: [
-          {
-            label: 'ביוגרפיה',
-            href: '/#about',
-            description: 'מי אני והמסלול שלי'
-          },
-          {
-            label: 'מומחיות',
-            href: '/#pillars',
-            description: 'עמודי תווך של פעילות'
-          },
-          {
-            label: 'מסלול',
-            href: '/#trajectory',
-            description: 'ציר זמן מקצועי'
-          }
-        ]
-      },
-      {
         label: 'פרסומים',
         items: [
-          {
-            label: 'מאמרים',
-            href: '/artigos',
-            description: 'ניתוחים אישיים על בינה מלאכותית, הנדסה ומערכות מורכבות'
-          },
-          {
-            label: 'Research',
-            href: '/research',
-            description: 'בינה מלאכותית, כלכלה ומערכות מורכבות'
-          },
-          {
-            label: 'Whitepapers',
-            href: '/whitepapers',
-            description: 'הנדסה, IoT ואבטחה'
-          },
-          {
-            label: 'Projeto Ψ (PSI)',
-            href: '/whitepapers/projeto-psi',
-            description: 'Whitepaper טכני: חומרה ריבונית'
-          },
-          {
-            label: 'PSI — הדגמה',
-            href: '/projeto-psi',
-            description: 'דף נחיתה מסחרי: השקעה ורישוי'
-          },
-          {
-            label: 'מאמרים',
-            href: '/essays',
-            description: 'תאולוגיה, מדעי הרוח והיסטוריה'
-          }
-        ]
+          { label: 'מאמרים', href: '/artigos', description: 'ניתוחים אישיים על בינה מלאכותית, הנדסה ומערכות מורכבות' },
+          { label: 'Research', href: '/research', description: 'בינה מלאכותית, כלכלה ומערכות מורכבות' },
+          { label: 'Whitepapers', href: '/whitepapers', description: 'הנדסה, IoT ואבטחה' },
+          { label: 'מאמרים', href: '/essays', description: 'תאולוגיה, מדעי הרוח והיסטוריה' },
+          { label: 'Projeto Ψ (PSI)', href: '/whitepapers/projeto-psi', description: 'Whitepaper טכני: חומרה ריבונית' },
+        ],
+      },
+      {
+        label: 'סימולציות',
+        items: [
+          { label: 'סקירה כללית', href: '/simulacoes', description: 'מעבדה לתרחישים עתידיים' },
+          { label: 'AI 2027', href: '/simulacoes/ia-2027', description: 'תרחישים אינטראקטיביים עד הגעת ה-AGI' },
+          { label: 'GoldenLeaf', href: '/simulacoes/goldenleaf', description: 'מיקולוגיה חכמה עם IoT ו-AI' },
+        ],
       },
       {
         label: 'ארכיון',
         items: [
-          {
-            label: 'ארכיון תאולוגי',
-            href: '/acervo-teologico',
-            description: 'דרשות לפי אשכול נושאים'
-          },
-          {
-            label: 'Clube Santo',
-            href: '/clube-santo',
-            description: 'התעוררות לעידן הדיגיטלי'
-          },
-          {
-            label: 'Mundo Político',
-            href: '/mundo-politico',
-            description: 'מאמרים וניתוחים פוליטיים'
-          }
-        ]
+          { label: 'ארכיון תאולוגי', href: '/acervo-teologico', description: 'דרשות לפי אשכול נושאים' },
+          { label: 'Clube Santo', href: '/clube-santo', description: 'התעוררות לעידן הדיגיטלי' },
+          { label: 'Mundo Político', href: '/mundo-politico', description: 'מאמרים וניתוחים פוליטיים' },
+        ],
       },
       {
-        label: 'כלים',
+        label: 'אודות',
         items: [
-          {
-            label: 'סימולציות',
-            href: '/simulacoes',
-            description: 'מעבדה לתרחישים עתידיים'
-          },
-          {
-            label: 'זהות',
-            href: '/identidade',
-            description: 'מרכז קנוני לזהות ריבונית'
-          },
-          {
-            label: 'הסמכות',
-            href: '/certifications',
-            description: 'אישורים ואימותים'
-          }
-        ]
-      }
-    ]
+          { label: 'ביוגרפיה', href: '/#about', description: 'מי אני והמסלול שלי' },
+          { label: 'מומחיות', href: '/#pillars', description: 'עמודי תווך של פעילות' },
+          { label: 'מסלול', href: '/#trajectory', description: 'ציר זמן מקצועי' },
+          { label: 'זהות', href: '/identidade', description: 'מרכז קנוני לזהות ריבונית' },
+          { label: 'הסמכות', href: '/certifications', description: 'אישורים ואימותים' },
+        ],
+      },
+    ],
   },
   cta: 'דברו איתי',
   mobileMenu: {

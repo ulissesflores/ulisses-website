@@ -170,9 +170,9 @@ export default async function IdentidadePage({ params }: PageProps) {
   };
 
   return (
-    <div className='min-h-screen bg-neutral-950 text-neutral-200'>
+    <div className='min-h-screen bg-brand-navy text-neutral-200 selection:bg-brand-gold/30 selection:text-brand-offwhite'>
       <div className='fixed inset-0 bg-[linear-gradient(to_right,#80808010_1px,transparent_1px),linear-gradient(to_bottom,#80808010_1px,transparent_1px)] bg-[size:24px_24px] pointer-events-none' />
-      <div className='fixed inset-0 bg-[radial-gradient(circle_900px_at_50%_-250px,#10b98112,transparent)] pointer-events-none' />
+      <div className='fixed inset-0 bg-[radial-gradient(circle_900px_at_50%_-250px,#a48f6512,transparent)] pointer-events-none' />
 
       <main className='relative max-w-6xl mx-auto px-6 pt-28 pb-20 space-y-10 z-10'>
         <header className='rounded-2xl border border-neutral-800 bg-neutral-900/45 p-8 md:p-10'>
@@ -189,8 +189,8 @@ export default async function IdentidadePage({ params }: PageProps) {
             </div>
 
             <div>
-              <p className='text-xs uppercase tracking-[0.18em] text-emerald-300 mb-3'>{t.header.kicker}</p>
-              <h1 className='text-4xl md:text-5xl font-bold text-white mb-3'>{upkfMeta.publicDisplayName}</h1>
+              <p className='text-xs uppercase tracking-[0.18em] text-brand-gold-light mb-3'>{t.header.kicker}</p>
+              <h1 className='text-4xl md:text-5xl font-bold text-brand-offwhite mb-3'>{upkfMeta.publicDisplayName}</h1>
               <p className='text-neutral-300 text-lg'>{t.header.subtitle}</p>
               <p className='text-sm text-neutral-400 mt-4'>
                 ORCID {upkfMeta.orcid} · Lattes {upkfMeta.lattesId} · {identityStats.orcidWorks} {t.header.statsTemplate.works} ·{' '}
@@ -199,17 +199,17 @@ export default async function IdentidadePage({ params }: PageProps) {
 
               <div className='mt-6 flex flex-wrap gap-2 text-xs'>
                 {palau?.value ? (
-                  <span className='rounded-full border border-emerald-700/40 bg-emerald-900/20 px-3 py-1 text-emerald-300'>
+                  <span className='rounded-full border border-brand-gold/40 bg-brand-gold/10 px-3 py-1 text-brand-gold-light'>
                     Palau ID {palau.value}
                   </span>
                 ) : null}
                 {gitcoin?.value ? (
-                  <span className='rounded-full border border-cyan-700/40 bg-cyan-900/20 px-3 py-1 text-cyan-300'>
+                  <span className='rounded-full border border-brand-gold/40 bg-brand-gold/10 px-3 py-1 text-brand-gold-light'>
                     Gitcoin Passport {gitcoin.value}
                   </span>
                 ) : null}
                 {didIdentifier?.value ? (
-                  <span className='rounded-full border border-violet-700/40 bg-violet-900/20 px-3 py-1 text-violet-300'>
+                  <span className='rounded-full border border-brand-gold/40 bg-brand-gold/10 px-3 py-1 text-brand-gold-light'>
                     {didIdentifier.value}
                   </span>
                 ) : null}
@@ -222,7 +222,7 @@ export default async function IdentidadePage({ params }: PageProps) {
         </header>
 
         <section className='rounded-2xl border border-neutral-800 bg-neutral-900/30 p-6'>
-          <h2 className='text-2xl font-semibold text-white mb-4'>{t.hub.title}</h2>
+          <h2 className='text-2xl font-semibold text-brand-offwhite mb-4'>{t.hub.title}</h2>
           <p className='text-neutral-400 mb-5'>
             {t.hub.description}
           </p>
@@ -231,7 +231,7 @@ export default async function IdentidadePage({ params }: PageProps) {
               <Link
                 key={entry.href}
                 href={localePath(entry.href, locale)}
-                className='rounded-lg border border-neutral-800 bg-neutral-950/70 px-4 py-3 text-sm text-neutral-200 hover:border-emerald-500/40 hover:text-emerald-300 transition-colors'
+                className='rounded-lg border border-neutral-800 bg-neutral-950/70 px-4 py-3 text-sm text-neutral-200 hover:border-brand-gold/40 hover:text-brand-gold-light transition-colors'
               >
                 {entry.label}
               </Link>
@@ -240,7 +240,7 @@ export default async function IdentidadePage({ params }: PageProps) {
         </section>
 
         <section id='soberana' className='rounded-2xl border border-neutral-800 bg-neutral-900/30 p-6'>
-          <h2 className='text-2xl font-semibold text-white mb-4'>{t.sections.sovereignIdentity.title}</h2>
+          <h2 className='text-2xl font-semibold text-brand-offwhite mb-4'>{t.sections.sovereignIdentity.title}</h2>
           <div className='grid gap-4 md:grid-cols-3'>
             {[
               {
@@ -264,10 +264,10 @@ export default async function IdentidadePage({ params }: PageProps) {
             ].map((item) => (
               <article key={item.title} className='rounded-xl border border-neutral-800 bg-neutral-950/70 p-4'>
                 <p className='text-xs uppercase tracking-widest text-neutral-400 mb-2'>{item.title}</p>
-                <p className='text-lg text-white font-semibold mb-2'>{item.value}</p>
+                <p className='text-lg text-brand-offwhite font-semibold mb-2'>{item.value}</p>
                 <p className='text-sm text-neutral-400 mb-3'>{item.description}</p>
                 {item.url !== '#' ? (
-                  <a href={item.url} target='_blank' rel='noopener noreferrer' className='text-sm text-emerald-300 hover:text-emerald-200'>
+                  <a href={item.url} target='_blank' rel='noopener noreferrer' className='text-sm text-brand-gold-light hover:text-brand-offwhite'>
                     {dict.common.actions.verify}
                   </a>
                 ) : null}
@@ -296,12 +296,12 @@ export default async function IdentidadePage({ params }: PageProps) {
                           href={identifier.url}
                           target='_blank'
                           rel='noopener noreferrer'
-                          className='text-emerald-300 hover:text-emerald-200 text-xs'
+                          className='text-brand-gold-light hover:text-brand-offwhite text-xs'
                         >
                           {dict.common.actions.open}
                         </a>
                       ) : (
-                        <span className='text-neutral-600 text-xs'>N/A</span>
+                        <span className='text-neutral-400 text-xs'>N/A</span>
                       )}
                     </td>
                     <td className='py-2 text-neutral-400 text-xs'>{identifier.notes || '—'}</td>
@@ -313,7 +313,7 @@ export default async function IdentidadePage({ params }: PageProps) {
         </section>
 
         <section id='dominios' className='rounded-2xl border border-neutral-800 bg-neutral-900/30 p-6'>
-          <h2 className='text-2xl font-semibold text-white mb-4'>{t.sections.domains.title}</h2>
+          <h2 className='text-2xl font-semibold text-brand-offwhite mb-4'>{t.sections.domains.title}</h2>
           <div className='grid gap-3 md:grid-cols-2 lg:grid-cols-3'>
             {domainInventory.map((domain) => {
               const category = String(domain.category || '').replace(/\*/g, '').trim();
@@ -327,12 +327,12 @@ export default async function IdentidadePage({ params }: PageProps) {
                   rel='noopener noreferrer'
                   className={`rounded-lg border p-3 transition-colors ${
                     isHub
-                      ? 'border-emerald-600/50 bg-emerald-900/10 hover:border-emerald-500'
+                      ? 'border-brand-gold/50 bg-brand-gold/5 hover:border-brand-gold'
                       : 'border-neutral-800 bg-neutral-950/70 hover:border-neutral-600'
                   }`}
                 >
                   <p className='font-mono text-xs text-neutral-400 mb-1'>{category || 'Domain'}</p>
-                  <p className='text-sm text-white mb-1'>{domain.domain}</p>
+                  <p className='text-sm text-brand-offwhite mb-1'>{domain.domain}</p>
                   <p className='text-xs text-neutral-400'>{domain.purpose || 'Canonical property'}</p>
                 </a>
               );
@@ -341,7 +341,7 @@ export default async function IdentidadePage({ params }: PageProps) {
         </section>
 
         <section className='rounded-2xl border border-neutral-800 bg-neutral-900/30 p-6'>
-          <h2 className='text-2xl font-semibold text-white mb-4'>{t.sections.geoLanguages.title}</h2>
+          <h2 className='text-2xl font-semibold text-brand-offwhite mb-4'>{t.sections.geoLanguages.title}</h2>
           <div className='grid gap-6 md:grid-cols-2'>
             <article className='rounded-xl border border-neutral-800 bg-neutral-950/70 p-4'>
               <p className='text-xs uppercase tracking-widest text-neutral-400 mb-3'>{t.sections.geoLanguages.areaLabel}</p>
@@ -369,14 +369,14 @@ export default async function IdentidadePage({ params }: PageProps) {
         </section>
 
         <section className='rounded-2xl border border-neutral-800 bg-neutral-900/30 p-6'>
-          <h2 className='text-2xl font-semibold text-white mb-4'>{t.sections.heritage.title}</h2>
+          <h2 className='text-2xl font-semibold text-brand-offwhite mb-4'>{t.sections.heritage.title}</h2>
           {heritage.publishPublic ? (
             <>
               <div className='grid gap-4 md:grid-cols-3'>
                 {heritageClusters.map((cluster) => (
                   <article key={cluster.cluster} className='rounded-xl border border-neutral-800 bg-neutral-950/70 p-4'>
                     <p className='text-xs uppercase tracking-widest text-neutral-400 mb-2'>{cluster.cluster}</p>
-                    <h3 className='text-sm font-semibold text-white mb-2'>{cluster.title}</h3>
+                    <h3 className='text-sm font-semibold text-brand-offwhite mb-2'>{cluster.title}</h3>
                     <p className='text-xs text-neutral-400 mb-2'>{cluster.keySurnames.join(', ')}</p>
                     <p className='text-xs text-neutral-400 mb-2'>{cluster.region}</p>
                     <p className='text-xs text-neutral-300'>{cluster.thesis}</p>
@@ -394,16 +394,16 @@ export default async function IdentidadePage({ params }: PageProps) {
         </section>
 
         <section id='academico' className='rounded-2xl border border-neutral-800 bg-neutral-900/30 p-6'>
-          <h2 className='text-2xl font-semibold text-white mb-4'>{t.sections.academic.title}</h2>
+          <h2 className='text-2xl font-semibold text-brand-offwhite mb-4'>{t.sections.academic.title}</h2>
 
           <div className='grid gap-3 md:grid-cols-4 mb-6'>
             {statCards.map((card) => (
               <Link
                 key={card.label}
                 href={card.href}
-                className='rounded-xl border border-neutral-800 bg-neutral-950/70 p-4 text-center hover:border-emerald-500/40 transition-colors'
+                className='rounded-xl border border-neutral-800 bg-neutral-950/70 p-4 text-center hover:border-brand-gold/40 transition-colors'
               >
-                <p className='text-4xl font-bold text-white leading-none'>{card.value}</p>
+                <p className='text-4xl font-bold text-brand-offwhite leading-none'>{card.value}</p>
                 <p className='text-xs uppercase tracking-widest text-neutral-400 mt-2'>{card.label}</p>
               </Link>
             ))}
@@ -415,7 +415,7 @@ export default async function IdentidadePage({ params }: PageProps) {
               <div className='space-y-3'>
                 {academicCredentials.map((credential) => (
                   <div key={credential.schemaId} className='border-b border-neutral-900 pb-3 last:border-0'>
-                    <p className='text-sm font-semibold text-white'>{credential.title}</p>
+                    <p className='text-sm font-semibold text-brand-offwhite'>{credential.title}</p>
                     <p className='text-xs text-neutral-400'>
                       {credential.institution} · {credential.period || 'N/A'}
                     </p>
@@ -433,7 +433,7 @@ export default async function IdentidadePage({ params }: PageProps) {
               <div className='space-y-3'>
                 {occupations.map((occupation) => (
                   <div key={occupation.schemaId} className='border-b border-neutral-900 pb-3 last:border-0'>
-                    <p className='text-sm font-semibold text-white'>{occupation.title}</p>
+                    <p className='text-sm font-semibold text-brand-offwhite'>{occupation.title}</p>
                     <p className='text-xs text-neutral-400'>{occupation.location || 'N/A'}</p>
                     <p className='text-xs text-neutral-400'>{occupation.appliedSkills.join(', ')}</p>
                   </div>
@@ -444,9 +444,9 @@ export default async function IdentidadePage({ params }: PageProps) {
         </section>
 
         <section id='acervo' className='rounded-2xl border border-neutral-800 bg-neutral-900/30 p-6'>
-          <h2 className='text-2xl font-semibold text-white mb-4'>{t.sections.acervo.title}</h2>
+          <h2 className='text-2xl font-semibold text-brand-offwhite mb-4'>{t.sections.acervo.title}</h2>
 
-          <h3 className='text-lg font-semibold text-white mb-3'>{t.sections.acervo.citableRepos}</h3>
+          <h3 className='text-lg font-semibold text-brand-offwhite mb-3'>{t.sections.acervo.citableRepos}</h3>
           <div className='grid gap-3 md:grid-cols-3'>
             {softwareProjects.map((project) => {
               // O UPKF nomeia em pt-BR/en/es; it e he caem no inglês. Sem nome, o slug do repo.
@@ -455,12 +455,12 @@ export default async function IdentidadePage({ params }: PageProps) {
 
               return (
                 <article key={project.schemaId} className='rounded-xl border border-neutral-800 bg-neutral-950/70 p-4'>
-                  <p className='text-sm text-white font-semibold mb-1'>{projectName}</p>
+                  <p className='text-sm text-brand-offwhite font-semibold mb-1'>{projectName}</p>
                   <a
                     href={project.repo}
                     target='_blank'
                     rel='noopener noreferrer'
-                    className='text-xs text-emerald-300 hover:text-emerald-200 break-all'
+                    className='text-xs text-brand-gold-light hover:text-brand-offwhite break-all'
                   >
                     {project.repo}
                   </a>
@@ -478,7 +478,7 @@ export default async function IdentidadePage({ params }: PageProps) {
                             href={release.doiUrl}
                             target='_blank'
                             rel='noopener noreferrer'
-                            className={`${chip} hover:border-emerald-500/40 hover:text-emerald-300 transition-colors`}
+                            className={`${chip} hover:border-brand-gold/40 hover:text-brand-gold-light transition-colors`}
                           >
                             {label}
                           </a>
@@ -495,29 +495,29 @@ export default async function IdentidadePage({ params }: PageProps) {
             })}
           </div>
 
-          <h3 className='text-lg font-semibold text-white mt-6 mb-3'>{t.sections.acervo.featuredPublications}</h3>
+          <h3 className='text-lg font-semibold text-brand-offwhite mt-6 mb-3'>{t.sections.acervo.featuredPublications}</h3>
           <div className='grid gap-2 md:grid-cols-2'>
             {topPublications.map((publication) => (
               <Link
                 key={publication.id}
                 href={localePath(`/${publication.category}/${publication.id}`, locale)}
-                className='rounded-lg border border-neutral-800 bg-neutral-950/70 px-3 py-2 text-sm text-neutral-300 hover:border-emerald-500/40 hover:text-emerald-300 transition-colors'
+                className='rounded-lg border border-neutral-800 bg-neutral-950/70 px-3 py-2 text-sm text-neutral-300 hover:border-brand-gold/40 hover:text-brand-gold-light transition-colors'
               >
                 {(locale !== 'pt-br' && publication.translations?.[locale as keyof NonNullable<typeof publication.translations>]) || publication.title}
               </Link>
             ))}
           </div>
 
-          <h3 className='text-lg font-semibold text-white mt-6 mb-3'>{t.sections.acervo.theologicalAcervo}</h3>
+          <h3 className='text-lg font-semibold text-brand-offwhite mt-6 mb-3'>{t.sections.acervo.theologicalAcervo}</h3>
           <div className='grid gap-3 md:grid-cols-2 lg:grid-cols-3'>
             {acervoClusters.map((cluster) => (
               <Link
                 key={cluster.id}
                 href={localePath(`/acervo-teologico#cluster-${cluster.id}`, locale)}
-                className='rounded-xl border border-neutral-800 bg-neutral-950/70 p-4 hover:border-emerald-500/40 transition-colors'
+                className='rounded-xl border border-neutral-800 bg-neutral-950/70 p-4 hover:border-brand-gold/40 transition-colors'
               >
                 <p className='font-mono text-xs text-neutral-400 mb-2'>{cluster.id}</p>
-                <p className='text-sm font-semibold text-white mb-2'>{cluster.seoTitle}</p>
+                <p className='text-sm font-semibold text-brand-offwhite mb-2'>{cluster.seoTitle}</p>
                 <p className='text-xs text-neutral-400'>{cluster.sermons.length} {t.sections.acervo.sermonsClassified}</p>
               </Link>
             ))}
@@ -525,7 +525,7 @@ export default async function IdentidadePage({ params }: PageProps) {
         </section>
 
         <section id='conhecimento' className='rounded-2xl border border-neutral-800 bg-neutral-900/30 p-6'>
-          <h2 className='text-2xl font-semibold text-white mb-4'>{t.sections.knowledge.title}</h2>
+          <h2 className='text-2xl font-semibold text-brand-offwhite mb-4'>{t.sections.knowledge.title}</h2>
           <div className='flex flex-wrap gap-2'>
             {upkfMeta.knowsAbout.map((topic) => (
               <span key={topic} className='rounded-full border border-neutral-700 bg-neutral-950/60 px-3 py-1 text-xs text-neutral-300'>
@@ -536,7 +536,7 @@ export default async function IdentidadePage({ params }: PageProps) {
         </section>
 
         <section id='firewall' className='rounded-2xl border border-neutral-800 bg-neutral-900/30 p-6'>
-          <h2 className='text-2xl font-semibold text-white mb-4'>{t.sections.firewall.title}</h2>
+          <h2 className='text-2xl font-semibold text-brand-offwhite mb-4'>{t.sections.firewall.title}</h2>
           <div className='grid gap-3 md:grid-cols-2'>
             {Object.entries(upkfMeta.disambiguation).map(([lang, text]) => (
               <article key={lang} className='rounded-xl border border-neutral-800 bg-neutral-950/70 p-4'>
@@ -558,19 +558,19 @@ export default async function IdentidadePage({ params }: PageProps) {
         </section>
 
         <section id='organizacoes' className='rounded-2xl border border-neutral-800 bg-neutral-900/30 p-6'>
-          <h2 className='text-2xl font-semibold text-white mb-4'>{t.sections.organizations.title}</h2>
+          <h2 className='text-2xl font-semibold text-brand-offwhite mb-4'>{t.sections.organizations.title}</h2>
           <div className='grid gap-3 md:grid-cols-2'>
             {affiliations.map((affiliation) => (
               <article key={affiliation.schemaId} className='rounded-xl border border-neutral-800 bg-neutral-950/70 p-4'>
                 <p className='text-xs uppercase tracking-widest text-neutral-400 mb-1'>{affiliation.schemaType}</p>
-                <p className='text-sm font-semibold text-white mb-1'>{affiliation.name}</p>
+                <p className='text-sm font-semibold text-brand-offwhite mb-1'>{affiliation.name}</p>
                 <p className='text-xs text-neutral-400 mb-2'>{affiliation.legalName || affiliation.relation || 'Affiliation node'}</p>
                 {affiliation.url ? (
                   <a
                     href={affiliation.url}
                     target='_blank'
                     rel='noopener noreferrer'
-                    className='text-xs text-emerald-300 hover:text-emerald-200 break-all'
+                    className='text-xs text-brand-gold-light hover:text-brand-offwhite break-all'
                   >
                     {affiliation.url}
                   </a>

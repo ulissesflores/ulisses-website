@@ -118,18 +118,18 @@ export default async function ProjetoPsiPage({ params }: PageProps) {
       {/* ═══════════════════════════════════════════════════════════════
           HERO — White section for SEO/GEO crawl visibility
           ═══════════════════════════════════════════════════════════════ */}
-      <section className='bg-neutral-950 text-neutral-200 pt-20 pb-16 border-b border-neutral-800'>
+      <section className='bg-brand-navy text-neutral-200 pt-20 pb-16 border-b border-neutral-800 selection:bg-brand-gold/30 selection:text-brand-offwhite'>
         <div className='max-w-4xl mx-auto px-6'>
           {/* Breadcrumb */}
           <div className='flex items-center gap-2 mb-6'>
-            <Link href={localePath('/', locale)} className='text-xs font-mono uppercase tracking-widest text-emerald-400 hover:underline'>
+            <Link href={localePath('/', locale)} className='text-xs font-mono uppercase tracking-widest text-brand-gold-light hover:underline'>
               Home
             </Link>
-            <span className='text-xs text-neutral-600'>→</span>
-            <Link href={localePath('/whitepapers', locale)} className='text-xs font-mono uppercase tracking-widest text-emerald-400 hover:underline'>
+            <span className='text-xs text-neutral-400'>→</span>
+            <Link href={localePath('/whitepapers', locale)} className='text-xs font-mono uppercase tracking-widest text-brand-gold-light hover:underline'>
               Whitepapers
             </Link>
-            <span className='text-xs text-neutral-600'>→</span>
+            <span className='text-xs text-neutral-400'>→</span>
             <span className='text-xs font-mono uppercase tracking-widest text-neutral-400'>
               Projeto PSI
             </span>
@@ -137,7 +137,7 @@ export default async function ProjetoPsiPage({ params }: PageProps) {
 
           {/* Kicker */}
           <div className='flex items-center gap-3 mb-4'>
-            <span className='text-[10px] uppercase tracking-[0.2em] text-cyan-400 border border-cyan-700/40 rounded-full px-3 py-1 font-bold'>
+            <span className='text-[10px] uppercase tracking-[0.2em] text-brand-gold-light border border-brand-gold/40 rounded-full px-3 py-1 font-bold'>
               {ui.kicker}
             </span>
             <span className='text-[10px] uppercase tracking-[0.2em] text-neutral-400'>
@@ -146,20 +146,20 @@ export default async function ProjetoPsiPage({ params }: PageProps) {
           </div>
 
           {/* H1 */}
-          <h1 className='text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight tracking-tight mb-6 text-white'>
+          <h1 className='text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight tracking-tight mb-6 text-brand-offwhite'>
             {ui.h1}
           </h1>
 
           {/* Author line */}
           <p className='text-sm text-neutral-400 mb-8'>
             <span className='font-semibold text-neutral-300'>{ui.authorLabel}</span>{' '}
-            <Link href={localePath('/identidade', locale)} className='text-emerald-400 underline'>Ulisses Flores</Link>
+            <Link href={localePath('/identidade', locale)} className='text-brand-gold-light underline'>Ulisses Flores</Link>
             {' — '}{ui.authorRole}
           </p>
 
           {/* Abstract */}
-          <div className='border-l-4 border-cyan-700 bg-cyan-950/20 px-6 py-5 rounded-r-xl mb-8'>
-            <p className='text-sm font-semibold text-cyan-400 uppercase tracking-wide mb-2'>
+          <div className='border-l-4 border-brand-gold-dark bg-brand-gold/10 px-6 py-5 rounded-r-xl mb-8'>
+            <p className='text-sm font-semibold text-brand-gold-light uppercase tracking-wide mb-2'>
               {ui.abstractTitle}
             </p>
             <p className='text-neutral-300 leading-relaxed text-[15px]'>
@@ -180,7 +180,7 @@ export default async function ProjetoPsiPage({ params }: PageProps) {
             ].map((chip) => (
               <span
                 key={chip}
-                className='bg-neutral-800/80 text-cyan-300 border border-cyan-700/50 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-mono uppercase tracking-wider'
+                className='bg-neutral-800/80 text-brand-gold-light border border-brand-gold/50 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-mono uppercase tracking-wider'
               >
                 {chip}
               </span>
@@ -192,7 +192,7 @@ export default async function ProjetoPsiPage({ params }: PageProps) {
       {/* ═══════════════════════════════════════════════════════════════
           WHITEPAPER BODY — Dark immersive long-read
           ═══════════════════════════════════════════════════════════════ */}
-      <article className='bg-neutral-950 text-neutral-200 py-16'>
+      <article className='bg-brand-navy text-neutral-200 py-16'>
         <div className='max-w-4xl mx-auto px-6'>
           <PsiWhitepaperBodyLocalized locale={locale} includeFigures />
         </div>
@@ -201,7 +201,7 @@ export default async function ProjetoPsiPage({ params }: PageProps) {
       {/* ═══════════════════════════════════════════════════════════════
           AUTHOR + CTA + FAQ
           ═══════════════════════════════════════════════════════════════ */}
-      <section className='bg-neutral-950 text-neutral-200 pb-4'>
+      <section className='bg-brand-navy text-neutral-200 pb-4'>
         <div className='max-w-5xl mx-auto px-6'>
           <AuthorHubCard
             label={ui.authorCardLabel}
@@ -210,9 +210,9 @@ export default async function ProjetoPsiPage({ params }: PageProps) {
         </div>
       </section>
 
-      <section className='bg-neutral-950 text-neutral-200 py-12'>
+      <section className='bg-brand-navy text-neutral-200 py-12'>
         <div className='max-w-4xl mx-auto px-6 text-center'>
-          <h2 className='text-xl font-bold text-white mb-3'>
+          <h2 className='text-xl font-bold text-brand-offwhite mb-3'>
             {ui.ctaTitle}
           </h2>
           <p className='text-neutral-400 mb-6 max-w-2xl mx-auto text-sm leading-relaxed'>
@@ -227,7 +227,7 @@ export default async function ProjetoPsiPage({ params }: PageProps) {
         </div>
       </section>
 
-      <section className='bg-neutral-950 text-neutral-200 pb-16'>
+      <section className='bg-brand-navy text-neutral-200 pb-16'>
         <div className='max-w-4xl mx-auto px-6'>
           <FaqSection
             items={[...dict.faq.projectPsi]}

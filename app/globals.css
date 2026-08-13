@@ -2,33 +2,52 @@
 @plugin "@tailwindcss/typography";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
   --font-sans-fallback: "Avenir Next", "Segoe UI", "Helvetica Neue", "Noto Sans", sans-serif;
   --font-mono-fallback: "SFMono-Regular", Menlo, Monaco, Consolas, "Liberation Mono", monospace;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-sans-fallback);
+  /* Desde a F2 a fonte de UI do site É a da marca: `font-sans` (o default do
+     Tailwind, herdado pelo body) aponta para o mesmo stack de `font-ui`, senão
+     o site pagaria o download da Fahkwang e continuaria renderizando em Avenir. */
+  --font-sans: var(--font-ui);
   --font-mono: var(--font-mono-fallback);
+  /* Stacks da marca. As variáveis --font-cinzel/--font-fahkwang/--font-hebrew-display
+     vêm do layout (lib/fonts.ts); cada var() traz o fallback declarado, então
+     qualquer superfície fora do layout degrada sem quebrar. Cinzel não cobre
+     hebraico — no locale `he` os glifos caem para a serifada hebraica do stack. */
+  --font-display: var(--font-cinzel, ui-serif), var(--font-hebrew-display, ui-serif), serif;
+  --font-ui: var(--font-fahkwang, ui-sans-serif), var(--font-hebrew, ui-sans-serif),
+    var(--font-sans-fallback);
+  /* Tipografia dos charts PINADA (F4 lote 7), independente de --font-ui: os
+     rótulos SVG do acervo são medidos por caractere contra ESTA família —
+     trocar a fonte de UI do site não pode arrastar o acervo junto. Mudar
+     este stack = recalibrar o medidor de rótulos da redação. */
+  --font-chart: var(--font-fahkwang, ui-sans-serif), var(--font-hebrew, ui-sans-serif),
+    var(--font-sans-fallback);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* ── Tokens da marca (medidos do manual ULISSES.pdf; NOVO-SITE-STATE-2026-08-01.md).
+   Dourado só sobre escuro: passa AA sobre marinho (5,44:1) e reprova sobre claro. ── */
+@theme {
+  --color-brand-navy: #101d2a;
+  --color-brand-navy-deep: #0b1420;
+  --color-brand-gold: #a48f65;
+  --color-brand-gold-light: #c4ad7f;
+  --color-brand-gold-dark: #7b643f;
+  --color-brand-offwhite: #f5f0e6;
 }
 
+/* Decisão #1 (2026-08-01): escuro único — o marinho é o terreno da marca.
+   Sem modo claro por construção: o dourado reprova AA sobre fundo claro (2,76:1).
+   Off-white é o texto principal do manual (15,02:1 sobre marinho). */
 body {
-  background: var(--background);
-  color: var(--foreground);
+  background: var(--color-brand-navy);
+  color: var(--color-brand-offwhite);
   font-family: var(--font-sans);
 }
 
-/* Navegação por âncora: compensa o header fixo (h-16) — eixo block, RTL-safe */
+/* Navegação por âncora: compensa o header fixo (4.5rem) — eixo block, RTL-safe */
 html {
   scroll-padding-block-start: 5rem;
 }
@@ -40,9 +59,11 @@ html {
   }
 }
 
-/* Acessibilidade — foco visível global por teclado (WCAG 2.2 AA, 2.4.7) */
+/* Acessibilidade — foco visível global por teclado (WCAG 2.2 AA, 2.4.7).
+   Dourado claro da marca: 7,82:1 sobre o marinho, acima do 3:1 de indicador
+   (WCAG 1.4.11). F4 lote 8 aposentou o transitório `.brand-surface`. */
 :focus-visible {
-  outline: 2px solid #34d399;
+  outline: 2px solid var(--color-brand-gold-light);
   outline-offset: 2px;
   border-radius: 3px;
 }
@@ -70,8 +91,8 @@ html {
 }
 /* Override ALL light-theme hover classes on summary elements */
 .ia2027-story summary:hover {
-  background: rgba(52, 211, 153, 0.08) !important;
-  color: #ffffff !important;
+  background: rgba(196, 173, 127, 0.08) !important;
+  color: #f5f0e6 !important;
 }
 .ia2027-story details[open] > summary {
   border-bottom: 1px solid #404040;
@@ -90,10 +111,10 @@ html {
 }
 .ia2027-story sup a,
 .ia2027-story sup {
-  color: #34d399 !important;
+  color: #c4ad7f !important;
 }
 .ia2027-story a {
-  color: #34d399;
+  color: #c4ad7f;
 }
 .ia2027-story a:hover {
   text-decoration: underline;
@@ -115,7 +136,7 @@ html {
 
 /* Sim callout block */
 .sim-callout {
-  border-inline-start: 3px solid #10b981;
+  border-inline-start: 3px solid #a48f65;
   background: rgba(23, 23, 23, 0.6);
   padding: 1rem 1.5rem;
   margin: 1.5rem 0;
@@ -128,5 +149,5 @@ html {
   height: 1px;
   width: 8rem;
   margin: 0 auto;
-  background: linear-gradient(to right, transparent, rgba(52, 211, 153, 0.4), transparent);
+  background: linear-gradient(to right, transparent, rgba(164, 143, 101, 0.4), transparent);
 }

@@ -138,14 +138,14 @@ export default async function ArtigoPage({ params }: PageProps) {
   };
 
   return (
-    <div className='min-h-screen bg-neutral-950 text-neutral-200'>
+    <div className='min-h-screen bg-brand-navy text-neutral-200 selection:bg-brand-gold/30 selection:text-brand-offwhite'>
       <script type='application/ld+json' dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }} />
       <script type='application/ld+json' dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
 
       <main className='max-w-3xl mx-auto px-6 py-20'>
         <Link
           href={localePath(artigosCanonicalPath, locale)}
-          className='inline-flex items-center gap-2 text-sm text-neutral-400 hover:text-emerald-400 transition-colors mb-10 group'
+          className='inline-flex items-center gap-2 text-sm text-neutral-400 hover:text-brand-gold-light transition-colors mb-10 group'
         >
           <ArrowLeft size={16} className='group-hover:-translate-x-1 transition-transform rtl:-scale-x-100' />
           {t.post.backToIndex}
@@ -153,7 +153,7 @@ export default async function ArtigoPage({ params }: PageProps) {
 
         <header className='mb-10 border-b border-white/10 pb-10'>
           <div className='flex flex-wrap items-center gap-4 mb-6 text-xs text-neutral-400'>
-            <span className='px-3 py-1 bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 font-bold uppercase tracking-widest rounded-full'>
+            <span className='px-3 py-1 bg-brand-gold/10 border border-brand-gold/20 text-brand-gold-light font-bold uppercase tracking-widest rounded-full'>
               {t.hero.badge}
             </span>
             <span className='flex items-center gap-2 font-mono uppercase'>
@@ -161,7 +161,7 @@ export default async function ArtigoPage({ params }: PageProps) {
             </span>
           </div>
 
-          <h1 className='text-3xl md:text-4xl font-bold text-white mb-6 leading-tight'>{title}</h1>
+          <h1 className='text-3xl md:text-4xl font-bold text-brand-offwhite mb-6 leading-tight'>{title}</h1>
           <p className='text-lg text-neutral-400 leading-relaxed mb-8'>{summary}</p>
 
           <div className='flex flex-wrap gap-2 mb-8'>

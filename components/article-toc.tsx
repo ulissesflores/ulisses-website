@@ -59,7 +59,7 @@ export function ArticleToc({ sections, title }: ArticleTocProps) {
             onClick={() => focusHeading(s.id)}
             className={`block border-s-2 ps-3 py-1 leading-snug transition-colors ${
               activeId === s.id
-                ? 'border-emerald-500 text-emerald-400 font-medium'
+                ? 'border-brand-gold-light text-brand-gold-light font-medium'
                 : 'border-neutral-800 text-neutral-400 hover:text-neutral-200 hover:border-neutral-600'
             }`}
           >

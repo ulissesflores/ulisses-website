@@ -9,101 +9,42 @@ export const common = {
         ],
       },
       {
-        label: 'Chi sono',
-        items: [
-          {
-            label: 'Bio',
-            href: '/#about',
-            description: 'Chi sono e il mio percorso'
-          },
-          {
-            label: 'Competenze',
-            href: '/#pillars',
-            description: 'Pilastri di attività'
-          },
-          {
-            label: 'Percorso',
-            href: '/#trajectory',
-            description: 'Cronologia professionale'
-          }
-        ]
-      },
-      {
         label: 'Pubblicazioni',
         items: [
-          {
-            label: 'Articoli',
-            href: '/artigos',
-            description: 'Analisi d’autore su IA, ingegneria e sistemi complessi'
-          },
-          {
-            label: 'Research',
-            href: '/research',
-            description: 'IA, Economia e Sistemi Complessi'
-          },
-          {
-            label: 'Whitepapers',
-            href: '/whitepapers',
-            description: 'Ingegneria, IoT e Sicurezza'
-          },
-          {
-            label: 'Projeto Ψ (PSI)',
-            href: '/whitepapers/projeto-psi',
-            description: 'Whitepaper tecnico: Hardware Sovrano'
-          },
-          {
-            label: 'PSI — Dimostrazione',
-            href: '/projeto-psi',
-            description: 'Landing commerciale: investimento e licenze'
-          },
-          {
-            label: 'Saggi',
-            href: '/essays',
-            description: 'Teologia, Umanistica e Storia'
-          }
-        ]
+          { label: 'Articoli', href: '/artigos', description: 'Analisi d’autore su IA, ingegneria e sistemi complessi' },
+          { label: 'Research', href: '/research', description: 'IA, Economia e Sistemi Complessi' },
+          { label: 'Whitepapers', href: '/whitepapers', description: 'Ingegneria, IoT e Sicurezza' },
+          { label: 'Saggi', href: '/essays', description: 'Teologia, Umanistica e Storia' },
+          { label: 'Projeto Ψ (PSI)', href: '/whitepapers/projeto-psi', description: 'Whitepaper tecnico: Hardware Sovrano' },
+        ],
+      },
+      {
+        label: 'Simulazioni',
+        items: [
+          { label: 'Panoramica', href: '/simulacoes', description: 'Laboratorio di scenari prospettici' },
+          { label: 'IA 2027', href: '/simulacoes/ia-2027', description: 'Scenari interattivi fino all\'arrivo dell\'AGI' },
+          { label: 'GoldenLeaf', href: '/simulacoes/goldenleaf', description: 'Micologia intelligente con IoT e IA' },
+        ],
       },
       {
         label: 'Archivio',
         items: [
-          {
-            label: 'Archivio Teologico',
-            href: '/acervo-teologico',
-            description: 'Sermoni per cluster tematico'
-          },
-          {
-            label: 'Clube Santo',
-            href: '/clube-santo',
-            description: 'Risveglio per l\'era digitale'
-          },
-          {
-            label: 'Mundo Político',
-            href: '/mundo-politico',
-            description: 'Articoli e analisi politiche'
-          }
-        ]
+          { label: 'Archivio Teologico', href: '/acervo-teologico', description: 'Sermoni per cluster tematico' },
+          { label: 'Clube Santo', href: '/clube-santo', description: 'Risveglio per l\'era digitale' },
+          { label: 'Mundo Político', href: '/mundo-politico', description: 'Articoli e analisi politiche' },
+        ],
       },
       {
-        label: 'Strumenti',
+        label: 'Chi sono',
         items: [
-          {
-            label: 'Simulazioni',
-            href: '/simulacoes',
-            description: 'Laboratorio di scenari prospettici'
-          },
-          {
-            label: 'Identità',
-            href: '/identidade',
-            description: 'Hub canonico di identità sovrana'
-          },
-          {
-            label: 'Certificazioni',
-            href: '/certifications',
-            description: 'Credenziali e verifiche'
-          }
-        ]
-      }
-    ]
+          { label: 'Bio', href: '/#about', description: 'Chi sono e il mio percorso' },
+          { label: 'Competenze', href: '/#pillars', description: 'Pilastri di attività' },
+          { label: 'Percorso', href: '/#trajectory', description: 'Cronologia professionale' },
+          { label: 'Identità', href: '/identidade', description: 'Hub canonico di identità sovrana' },
+          { label: 'Certificazioni', href: '/certifications', description: 'Credenziali e verifiche' },
+        ],
+      },
+    ],
   },
   cta: 'CONTATTAMI',
   mobileMenu: {

@@ -192,14 +192,14 @@ export default async function ArticlePage({ params }: PageProps) {
   };
 
   return (
-    <div className='min-h-screen bg-neutral-950 text-neutral-200 font-sans selection:bg-emerald-500/30'>
+    <div className='min-h-screen bg-brand-navy text-neutral-200 font-sans selection:bg-brand-gold/30 selection:text-brand-offwhite'>
       <div className='fixed inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] pointer-events-none' />
-      <div className='fixed inset-0 bg-[radial-gradient(circle_800px_at_50%_-200px,#10b98108,transparent)] pointer-events-none' />
+      <div className='fixed inset-0 bg-[radial-gradient(circle_800px_at_50%_-200px,#a48f6508,transparent)] pointer-events-none' />
 
       <main className='relative max-w-5xl mx-auto px-6 py-20 z-10'>
         <Link
           href={localePath(`/${publication.category}`, locale)}
-          className='inline-flex items-center gap-2 text-sm text-neutral-400 hover:text-emerald-400 transition-colors mb-4 group'
+          className='inline-flex items-center gap-2 text-sm text-neutral-400 hover:text-brand-gold-light transition-colors mb-4 group'
         >
           <ArrowLeft size={16} className='group-hover:-translate-x-1 transition-transform rtl:-scale-x-100' />
           {t.backTo} {collection.title}
@@ -207,7 +207,7 @@ export default async function ArticlePage({ params }: PageProps) {
 
         <Link
           href={localePath('/', locale)}
-          className='inline-flex items-center gap-2 text-sm text-neutral-600 hover:text-neutral-300 transition-colors mb-10'
+          className='inline-flex items-center gap-2 text-sm text-neutral-400 hover:text-neutral-200 transition-colors mb-10'
         >
           {t.goHome}
         </Link>
@@ -221,7 +221,7 @@ export default async function ArticlePage({ params }: PageProps) {
 
         <header className='mb-12 border-b border-white/10 pb-12'>
           <div className='flex flex-wrap gap-4 mb-6'>
-            <span className='px-3 py-1 bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-bold uppercase tracking-widest rounded-full'>
+            <span className='px-3 py-1 bg-brand-gold/10 border border-brand-gold/20 text-brand-gold-light text-xs font-bold uppercase tracking-widest rounded-full'>
               {publication.category}
             </span>
             <span className='flex items-center gap-2 text-xs font-mono text-neutral-400 uppercase'>
@@ -230,12 +230,12 @@ export default async function ArticlePage({ params }: PageProps) {
             <span className='text-xs text-neutral-400 border border-neutral-700 rounded-full px-2 py-1'>
               {publication.kind === 'R' ? 'Report' : 'ScholarlyArticle'}
             </span>
-            <span className='text-xs text-cyan-300 border border-cyan-500/40 rounded-full px-2 py-1'>
+            <span className='text-xs text-brand-gold-light border border-brand-gold/40 rounded-full px-2 py-1'>
               DOI: {publication.doi.status.toUpperCase()} {publication.doi.target ? `(${publication.doi.target})` : ''}
             </span>
           </div>
 
-          <h1 className='text-3xl md:text-5xl font-bold text-white mb-8 leading-tight'>{localizedTitle}</h1>
+          <h1 className='text-3xl md:text-5xl font-bold text-brand-offwhite mb-8 leading-tight'>{localizedTitle}</h1>
           <p className='text-lg text-neutral-400 leading-relaxed mb-8'>{localizedSummary}</p>
 
           <div className='flex flex-wrap gap-2 mb-8'>
@@ -247,17 +247,17 @@ export default async function ArticlePage({ params }: PageProps) {
           </div>
 
           <div className='flex flex-wrap gap-2 mb-8 text-sm'>
-            <span className='px-3 py-1 border border-cyan-400/30 rounded-full text-cyan-200'>Phase 1: {publication.quality.phase1}/1000</span>
-            <span className='px-3 py-1 border border-cyan-400/30 rounded-full text-cyan-200'>Phase 2: {publication.quality.phase2}/1000</span>
-            <span className='px-3 py-1 border border-cyan-400/30 rounded-full text-cyan-200'>Phase 3: {publication.quality.phase3}/1000</span>
-            <span className='px-3 py-1 border border-cyan-400/30 rounded-full text-cyan-200'>Macro: {publication.quality.macro}/1000</span>
+            <span className='px-3 py-1 border border-brand-gold/30 rounded-full text-brand-gold-light'>Phase 1: {publication.quality.phase1}/1000</span>
+            <span className='px-3 py-1 border border-brand-gold/30 rounded-full text-brand-gold-light'>Phase 2: {publication.quality.phase2}/1000</span>
+            <span className='px-3 py-1 border border-brand-gold/30 rounded-full text-brand-gold-light'>Phase 3: {publication.quality.phase3}/1000</span>
+            <span className='px-3 py-1 border border-brand-gold/30 rounded-full text-brand-gold-light'>Macro: {publication.quality.macro}/1000</span>
           </div>
 
           <div className='flex flex-wrap gap-3'>
             <a
               href={publication.primaryPdfUrl || publication.downloadUrl}
               target='_blank'
-              className='flex items-center justify-center gap-3 bg-emerald-700 hover:bg-emerald-600 text-white px-7 py-3 rounded-lg font-bold transition-all shadow-[0_0_20px_rgba(16,185,129,0.2)] hover:shadow-[0_0_30px_rgba(16,185,129,0.4)]'
+              className='flex items-center justify-center gap-3 bg-brand-gold text-brand-navy hover:bg-brand-gold-light px-7 py-3 rounded-lg font-bold transition-all shadow-[0_0_20px_rgba(164,143,101,0.2)] hover:shadow-[0_0_30px_rgba(164,143,101,0.4)]'
             >
               <Download size={20} />
               {t.downloadPdf}
@@ -274,7 +274,7 @@ export default async function ArticlePage({ params }: PageProps) {
               href={publication.mdUrl}
               target='_blank'
               rel='nofollow noopener noreferrer'
-              className='text-cyan-300 underline underline-offset-4 self-center'
+              className='text-brand-gold-light underline underline-offset-4 self-center'
             >
               Markdown (.md)
             </a>
@@ -282,7 +282,7 @@ export default async function ArticlePage({ params }: PageProps) {
               href={publication.docxUrl}
               target='_blank'
               rel='nofollow noopener noreferrer'
-              className='text-cyan-300 underline underline-offset-4 self-center'
+              className='text-brand-gold-light underline underline-offset-4 self-center'
             >
               DOCX (.docx)
             </a>
@@ -295,10 +295,10 @@ export default async function ArticlePage({ params }: PageProps) {
           </div>
           <div className='prose prose-lg prose-invert max-w-[68ch] mx-auto min-w-0 lg:order-1 space-y-10'>
           <section>
-            <h2 id='sec-scientific-context' className='text-xl font-bold text-white mb-4 flex items-center gap-2'>
-              <BookOpen size={20} className='text-emerald-500' /> {t.scientificContext}
+            <h2 id='sec-scientific-context' className='text-xl font-bold text-brand-offwhite mb-4 flex items-center gap-2'>
+              <BookOpen size={20} className='text-brand-gold' /> {t.scientificContext}
             </h2>
-            <div className='bg-neutral-900/40 p-8 rounded-2xl border border-emerald-500/20 space-y-4'>
+            <div className='bg-neutral-900/40 p-8 rounded-2xl border border-brand-gold/20 space-y-4'>
               <p className='text-neutral-200 leading-relaxed'>{activeLanding.overview}</p>
               <p className='text-neutral-300 leading-relaxed'>{activeLanding.problem}</p>
               <ul className='list-disc ps-6 text-neutral-300 space-y-2'>
@@ -307,15 +307,15 @@ export default async function ArticlePage({ params }: PageProps) {
                 ))}
               </ul>
               <p className='text-neutral-300 leading-relaxed'>{activeLanding.applications}</p>
-              <p className='text-sm text-emerald-300/90 leading-relaxed border-t border-emerald-500/20 pt-4'>
+              <p className='text-sm text-brand-gold-light/90 leading-relaxed border-t border-brand-gold/20 pt-4'>
                 {activeLanding.downloadPitch}
               </p>
             </div>
           </section>
 
           <section>
-            <h2 id='sec-abstract-ptbr' className='text-xl font-bold text-white mb-4 flex items-center gap-2'>
-              <BookOpen size={20} className='text-cyan-500' /> {t.abstractPtBr}
+            <h2 id='sec-abstract-ptbr' className='text-xl font-bold text-brand-offwhite mb-4 flex items-center gap-2'>
+              <BookOpen size={20} className='text-brand-gold' /> {t.abstractPtBr}
             </h2>
             <div className='bg-neutral-900/30 p-8 rounded-2xl border border-white/5 text-lg leading-relaxed text-neutral-300 shadow-inner space-y-4'>
               {sectionParagraphs(activeSections.abstract).map((paragraph, index) => (
@@ -325,8 +325,8 @@ export default async function ArticlePage({ params }: PageProps) {
           </section>
 
           <section>
-            <h2 id='sec-abstract-en' className='text-xl font-bold text-white mb-4 flex items-center gap-2'>
-              <BookOpen size={20} className='text-cyan-500' /> {t.abstractEn}
+            <h2 id='sec-abstract-en' className='text-xl font-bold text-brand-offwhite mb-4 flex items-center gap-2'>
+              <BookOpen size={20} className='text-brand-gold' /> {t.abstractEn}
             </h2>
             <div className='bg-neutral-900/30 p-8 rounded-2xl border border-white/5 text-lg leading-relaxed text-neutral-300 shadow-inner'>
               <p>{activeSections.abstractEn}</p>
@@ -334,7 +334,7 @@ export default async function ArticlePage({ params }: PageProps) {
           </section>
 
           <section>
-            <h2 id='sec-introduction' className='text-2xl font-semibold text-white mb-3'>{t.introduction}</h2>
+            <h2 id='sec-introduction' className='text-2xl font-semibold text-brand-offwhite mb-3'>{t.introduction}</h2>
             <div className='text-neutral-300 leading-relaxed space-y-4'>
               {sectionParagraphs(activeSections.introduction).map((paragraph, index) => (
                 <p key={`intro-${index}`}>{paragraph}</p>
@@ -343,7 +343,7 @@ export default async function ArticlePage({ params }: PageProps) {
           </section>
 
           <section>
-            <h2 id='sec-methodology' className='text-2xl font-semibold text-white mb-3'>{t.methodology}</h2>
+            <h2 id='sec-methodology' className='text-2xl font-semibold text-brand-offwhite mb-3'>{t.methodology}</h2>
             <div className='text-neutral-300 leading-relaxed space-y-4'>
               {sectionParagraphs(activeSections.methods).map((paragraph, index) => (
                 <p key={`methods-${index}`}>{paragraph}</p>
@@ -352,7 +352,7 @@ export default async function ArticlePage({ params }: PageProps) {
           </section>
 
           <section>
-            <h2 id='sec-results' className='text-2xl font-semibold text-white mb-3'>{t.developmentResults}</h2>
+            <h2 id='sec-results' className='text-2xl font-semibold text-brand-offwhite mb-3'>{t.developmentResults}</h2>
             <div className='text-neutral-300 leading-relaxed space-y-4'>
               {sectionParagraphs(activeSections.results).map((paragraph, index) => (
                 <p key={`results-${index}`}>{paragraph}</p>
@@ -361,7 +361,7 @@ export default async function ArticlePage({ params }: PageProps) {
           </section>
 
           <section>
-            <h2 id='sec-discussion' className='text-2xl font-semibold text-white mb-3'>{t.discussion}</h2>
+            <h2 id='sec-discussion' className='text-2xl font-semibold text-brand-offwhite mb-3'>{t.discussion}</h2>
             <div className='text-neutral-300 leading-relaxed space-y-4'>
               {sectionParagraphs(activeSections.discussion).map((paragraph, index) => (
                 <p key={`discussion-${index}`}>{paragraph}</p>
@@ -370,7 +370,7 @@ export default async function ArticlePage({ params }: PageProps) {
           </section>
 
           <section>
-            <h2 id='sec-recommendations' className='text-2xl font-semibold text-white mb-3'>{t.recommendations}</h2>
+            <h2 id='sec-recommendations' className='text-2xl font-semibold text-brand-offwhite mb-3'>{t.recommendations}</h2>
             <ul className='list-disc ps-6 text-neutral-300 space-y-3'>
               {activeSections.recommendations.map((recommendation) => (
                 <li key={recommendation}>{recommendation}</li>
@@ -379,7 +379,7 @@ export default async function ArticlePage({ params }: PageProps) {
           </section>
 
           <section>
-            <h2 id='sec-conclusion' className='text-2xl font-semibold text-white mb-3'>{t.conclusion}</h2>
+            <h2 id='sec-conclusion' className='text-2xl font-semibold text-brand-offwhite mb-3'>{t.conclusion}</h2>
             <div className='text-neutral-300 leading-relaxed space-y-4'>
               {sectionParagraphs(activeSections.conclusion).map((paragraph, index) => (
                 <p key={`conclusion-${index}`}>{paragraph}</p>
@@ -388,7 +388,7 @@ export default async function ArticlePage({ params }: PageProps) {
           </section>
 
           <section>
-            <h2 id='sec-references' className='text-2xl font-semibold text-white mb-3'>{t.referencesHarvard}</h2>
+            <h2 id='sec-references' className='text-2xl font-semibold text-brand-offwhite mb-3'>{t.referencesHarvard}</h2>
             <ul className='list-disc ps-6 text-neutral-300 space-y-2'>
               {activeSections.references.map((reference) => (
                 <li key={`${reference.citation}-${reference.url ?? ''}`}>
@@ -400,7 +400,7 @@ export default async function ArticlePage({ params }: PageProps) {
                         href={reference.url}
                         target='_blank'
                         rel='noreferrer'
-                        className='text-emerald-300 hover:text-emerald-200 underline underline-offset-4'
+                        className='text-brand-gold-light hover:text-brand-offwhite underline underline-offset-4'
                       >
                         {t.source}
                       </a>
@@ -411,7 +411,7 @@ export default async function ArticlePage({ params }: PageProps) {
             </ul>
           </section>
 
-          <section className='mt-12 p-6 border-s-4 border-emerald-500/30 bg-emerald-900/5 rounded-e-xl'>
+          <section className='mt-12 p-6 border-s-4 border-brand-gold/30 bg-brand-gold/5 rounded-e-xl'>
             <p className='text-sm text-neutral-400 italic'>
               <strong>{t.howToCite}</strong> FLORES, C. U. &quot;{localizedTitle}&quot;. Codex Hash Research Lab,
               {` ${publication.date}`}. {t.availableAt} {upkfMeta.primaryWebsite}/{publication.category}/{publication.id}

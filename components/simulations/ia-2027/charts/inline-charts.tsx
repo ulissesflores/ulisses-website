@@ -8,8 +8,8 @@ import { linearScale } from './chart-utils';
 /* ─── FLOP Scaling Chart ──────────────────────────────────────────────── */
 const FLOP_DATA = [
   { label: 'GPT-4', value: 3e23, log: 23.48, color: '#6b7280' },
-  { label: 'Agent-0', value: 2e25, log: 25.3, color: '#10b981' },
-  { label: 'Agent-1', value: 4e27, log: 27.6, color: '#34d399' },
+  { label: 'Agent-0', value: 2e25, log: 25.3, color: '#a48f65' },
+  { label: 'Agent-1', value: 4e27, log: 27.6, color: '#c4ad7f' },
 ];
 
 const FlopScalingChart = memo(function FlopScalingChart() {
@@ -68,13 +68,13 @@ const CodingAutomationChart = memo(function CodingAutomationChart() {
             <span className="text-[10px] font-mono text-neutral-400 w-20 text-end shrink-0">{item.label}</span>
             <div className="flex-1 bg-neutral-800 rounded-md h-6 relative overflow-hidden">
               <motion.div
-                className="h-full bg-emerald-500/70 rounded-md"
+                className="h-full bg-brand-gold/70 rounded-md"
                 initial={{ width: '0%' }}
                 whileInView={{ width: `${pct}%` }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
               />
-              <span className="absolute inset-0 flex items-center justify-between px-2 text-[9px] font-mono text-neutral-200">
+              <span className="absolute inset-0 flex items-center justify-between px-2 text-[9px] font-mono text-white">
                 <span>{item.label}</span>
                 <span>{item.value.toFixed(1)}x</span>
               </span>
@@ -108,8 +108,8 @@ const InfrastructureChart = memo(function InfrastructureChart() {
     <div className="space-y-3">
       <div className="text-[10px] font-mono uppercase text-neutral-400">{t?.infraTitle ?? 'Infrastructure until Dec 2026'}</div>
       <div className="grid grid-cols-3 gap-2 text-center">
-        <div className="rounded-lg bg-emerald-500/10 border border-emerald-500/20 p-3">
-          <div className="text-lg font-bold text-emerald-300">$55B</div>
+        <div className="rounded-lg bg-brand-gold/10 border border-brand-gold/20 p-3">
+          <div className="text-lg font-bold text-brand-gold-light">$55B</div>
           <div className="text-[9px] text-neutral-400 uppercase">{t?.revenuePerYear ?? 'Revenue/yr'}</div>
         </div>
         <div className="rounded-lg bg-amber-500/10 border border-amber-500/20 p-3">
@@ -133,7 +133,7 @@ const InfrastructureChart = memo(function InfrastructureChart() {
                 width="24"
                 height={h}
                 rx="3"
-                fill="#10b981"
+                fill="#a48f65"
                 fillOpacity="0.5"
                 initial={{ height: 0, y: 45 }}
                 whileInView={{ height: h, y: 45 - h }}
@@ -174,7 +174,7 @@ const ResearchMultiplierChart = memo(function ResearchMultiplierChart() {
             <div className="flex-1 relative">
               <div className="bg-neutral-800 rounded-md h-7 overflow-hidden">
                 <motion.div
-                  className="h-full rounded-md bg-gradient-to-r from-emerald-600/70 to-emerald-400/70"
+                  className="h-full rounded-md bg-gradient-to-r from-brand-gold-dark/70 to-brand-gold/70"
                   initial={{ width: '0%' }}
                   whileInView={{ width: `${width}%` }}
                   viewport={{ once: true }}
@@ -213,8 +213,8 @@ const AgentPopulationChart = memo(function AgentPopulationChart() {
       <svg viewBox="0 0 280 80" className="w-full h-[80px]">
         <defs>
           <linearGradient id="popGrad" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stopColor="#10b981" stopOpacity="0.35" />
-            <stop offset="100%" stopColor="#10b981" stopOpacity="0.03" />
+            <stop offset="0%" stopColor="#a48f65" stopOpacity="0.35" />
+            <stop offset="100%" stopColor="#a48f65" stopOpacity="0.03" />
           </linearGradient>
         </defs>
         <motion.path
@@ -236,7 +236,7 @@ const AgentPopulationChart = memo(function AgentPopulationChart() {
             return `${x},${y}`;
           }).join(' L ')}`}
           fill="none"
-          stroke="#10b981"
+          stroke="#a48f65"
           strokeWidth="2"
           strokeLinecap="round"
           initial={{ pathLength: 0 }}
@@ -249,7 +249,7 @@ const AgentPopulationChart = memo(function AgentPopulationChart() {
           const y = 70 - (d.copies / maxCopies) * 55;
           return (
             <g key={d.month}>
-              <circle cx={x} cy={y} r="3" fill="#10b981" />
+              <circle cx={x} cy={y} r="3" fill="#a48f65" />
               <text x={x} y={y - 8} textAnchor="middle" fill="#a3a3a3" fontSize="7" fontFamily="monospace">
                 {d.copies}K
               </text>
@@ -331,8 +331,8 @@ const FinalDashboardChart = memo(function FinalDashboardChart() {
     <div className="space-y-3">
       <div className="text-[10px] font-mono uppercase text-neutral-400 mb-2">{t?.dashboardTitle ?? 'Indicators at Decision Point'}</div>
       <div className="grid grid-cols-2 gap-2">
-        <div className="rounded-lg bg-emerald-500/10 border border-emerald-500/20 p-3 text-center">
-          <div className="text-xl font-bold text-emerald-300">$191B</div>
+        <div className="rounded-lg bg-brand-gold/10 border border-brand-gold/20 p-3 text-center">
+          <div className="text-xl font-bold text-brand-gold-light">$191B</div>
           <div className="text-[9px] text-neutral-400 uppercase">{t?.annualRevenue ?? 'Annual revenue'}</div>
         </div>
         <div className="rounded-lg bg-amber-500/10 border border-amber-500/20 p-3 text-center">
@@ -375,11 +375,11 @@ const FinalDashboardChart = memo(function FinalDashboardChart() {
       </div>
       <div className="flex items-center justify-between rounded-lg bg-neutral-800/60 border border-neutral-700 p-3">
         <div>
-          <div className="text-lg font-bold text-white">330K</div>
+          <div className="text-lg font-bold text-brand-offwhite">330K</div>
           <div className="text-[9px] text-neutral-400 uppercase">{t?.activeCopies ?? 'Active copies'}</div>
         </div>
         <div className="text-end">
-          <div className="text-lg font-bold text-white">5.7x</div>
+          <div className="text-lg font-bold text-brand-offwhite">5.7x</div>
           <div className="text-[9px] text-neutral-400 uppercase">{t?.speedLabel ?? 'Speed'}</div>
         </div>
       </div>

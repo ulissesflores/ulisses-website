@@ -18,15 +18,15 @@ export default function OpengraphImage() {
           flexDirection: 'column',
           justifyContent: 'center',
           padding: '88px 96px',
-          background: 'linear-gradient(135deg, #0b1220 0%, #0a0a0a 100%)',
+          background: 'linear-gradient(135deg, #101d2a 0%, #0b1420 100%)',
           fontFamily: 'system-ui, "Segoe UI", Helvetica, Arial, sans-serif',
         }}
       >
-        <div style={{ display: 'flex', width: 64, height: 8, background: '#34d399', marginBottom: 40 }} />
-        <div style={{ display: 'flex', fontSize: 84, fontWeight: 800, color: '#ffffff', letterSpacing: '-2px' }}>
+        <div style={{ display: 'flex', width: 64, height: 8, background: '#a48f65', marginBottom: 40 }} />
+        <div style={{ display: 'flex', fontSize: 84, fontWeight: 800, color: '#f5f0e6', letterSpacing: '-2px' }}>
           Ulisses Flores
         </div>
-        <div style={{ display: 'flex', fontSize: 36, fontWeight: 600, color: '#34d399', marginTop: 16 }}>
+        <div style={{ display: 'flex', fontSize: 36, fontWeight: 600, color: '#c4ad7f', marginTop: 16 }}>
           Codex Hash Research Laboratory
         </div>
         <div style={{ display: 'flex', fontSize: 30, color: '#a3a3a3', marginTop: 28, maxWidth: 900, lineHeight: 1.35 }}>
