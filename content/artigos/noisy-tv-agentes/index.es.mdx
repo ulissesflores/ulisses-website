@@ -157,7 +157,7 @@ semántica menor que eso se hunde en la nieve.
   xLabel="Dimensión del embedding (escala log)"
   yLabel="Desviación estándar del coseno"
   description="Curva decreciente del piso de ruido, proporcional a uno sobre raíz de d, con dos puntos medidos: 0,177 en 32 dimensiones y 0,050 en 384. Dos líneas horizontales discontinuas marcan señales de 0,108 y 0,100; la curva las cruza cerca de 86 y 100 dimensiones. A la izquierda del cruce, el ruido del instrumento supera la señal que debería medir."
-  source="Curva: 1/sqrt(d), teoría para vectores aleatorios (snippet numpy ejecutado el 2026-08-02). Puntos: mediciones del daimon — embedder-hash dim=32 y modelo ONNX dim=384, recontrastadas contra el código el 2026-08-02."
+  source="Curva 1/sqrt(d), teoría para vectores aleatorios. Puntos: daimon — embedder-hash dim=32, ONNX dim=384. numpy, recontrastado 2026-08-02."
 />
 
 La literatura de agentes LLM montó ese instrumento — embedding, coseno, temperatura — y
@@ -310,7 +310,7 @@ renacido dentro de la regla, en un sistema donde no existe recompensa que captur
   xLabel="g — brecha de conocimiento leída por el instrumento"
   yLabel="Intensidad de curiosidad"
   description="Curva en U invertida de cero a uno, con máximo 1,0 en g igual a 0,5. Un punto rojo destacado en g igual a 0,177 — la brecha fabricada por el piso de ruido del embedder de 32 dimensiones — muestra intensidad 0,58: más de la mitad de la intensidad máxima, pagada sobre pura nieve. Líneas discontinuas conectan el punto con los dos ejes."
-  source="Función de wissenslucke.py (reescritura mínima en el cuerpo del artículo); punto destacado: piso de ruido medido en dim=32, recontrastado el 2026-08-02."
+  source="Función de wissenslucke.py (reescritura mínima en el artículo); punto destacado: piso de ruido en dim=32, recontrastado el 2026-08-02."
 />
 
 Y la segunda capa de la trampa ya estaba dibujada, a la espera: el siguiente plan del

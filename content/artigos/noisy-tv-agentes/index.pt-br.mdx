@@ -155,7 +155,7 @@ afunda no chuvisco.
   xLabel="Dimensão do embedding (escala log)"
   yLabel="Desvio-padrão do cosseno"
   description="Curva decrescente do piso de ruído, proporcional a um sobre raiz de d, com dois pontos medidos: 0,177 em 32 dimensões e 0,050 em 384. Duas linhas horizontais tracejadas marcam sinais de 0,108 e 0,100; a curva cruza as duas perto de 86 e 100 dimensões. À esquerda do cruzamento, o ruído do instrumento supera o sinal que ele deveria medir."
-  source="Curva: 1/sqrt(d), teoria para vetores aleatórios (snippet numpy executado em 2026-08-02). Pontos: medições do daimon — embedder-hash dim=32 e modelo ONNX dim=384, reconferidas contra o código em 2026-08-02."
+  source="Curva 1/sqrt(d), teoria para vetores aleatórios. Pontos: daimon — embedder-hash dim=32, ONNX dim=384. numpy, reconferido 2026-08-02."
 />
 
 A literatura de agentes LLM montou esse instrumento — embedding, cosseno, temperatura — e
@@ -303,7 +303,7 @@ não existe recompensa para capturar.
   xLabel="g — lacuna de conhecimento lida pelo instrumento"
   yLabel="Intensidade de curiosidade"
   description="Curva em U invertido de zero a um, com máximo 1,0 em g igual a 0,5. Um ponto vermelho destacado em g igual a 0,177 — a lacuna fabricada pelo piso de ruído do embedder de 32 dimensões — mostra intensidade 0,58: mais da metade da intensidade máxima, paga sobre puro chuvisco. Linhas tracejadas ligam o ponto aos dois eixos."
-  source="Função de wissenslucke.py (reescrita mínima no corpo do artigo); ponto destacado: piso de ruído medido em dim=32, reconferido em 2026-08-02."
+  source="Função de wissenslucke.py (reescrita mínima no corpo do artigo); ponto destacado: piso de ruído em dim=32, reconferido em 2026-08-02."
 />
 
 E a segunda camada da armadilha já estava desenhada, à espera: o plano seguinte do projeto

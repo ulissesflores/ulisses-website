@@ -148,12 +148,12 @@ any semantic signal smaller than that sinks into the static.
 
 <NoiseFloorChart
   dataset="noisytv-piso-por-dimensao"
-  title="The static shrinks with the square root of the dimension — and crosses the signal on the way down"
+  title="The static shrinks with the root of the dimension, crossing the signal"
   subtitle="Cosine noise floor between unrelated texts, by embedding dimension"
   xLabel="Embedding dimension (log scale)"
   yLabel="Cosine standard deviation"
   description="Decreasing noise-floor curve, proportional to one over the square root of d, with two measured points: 0.177 at 32 dimensions and 0.050 at 384. Two dashed horizontal lines mark signals of 0.108 and 0.100; the curve crosses both near 86 and 100 dimensions. To the left of the crossing, the instrument's noise exceeds the signal it is supposed to measure."
-  source="Curve: 1/sqrt(d), theory for random vectors (numpy snippet executed on 2026-08-02). Points: daimon measurements — hash embedder dim=32 and ONNX model dim=384, re-checked against the code on 2026-08-02."
+  source="Curve 1/sqrt(d), theory for random vectors. Points: daimon — hash embedder dim=32, ONNX dim=384. numpy, re-checked 2026-08-02."
 />
 
 The LLM-agent literature assembled this instrument — embedding, cosine, temperature — and
@@ -303,7 +303,7 @@ in a system where there is no reward to capture.
   xLabel="g — knowledge gap as read by the instrument"
   yLabel="Curiosity intensity"
   description="Inverted-U curve from zero to one, with a maximum of 1.0 at g equal to 0.5. A highlighted red dot at g equal to 0.177 — the gap fabricated by the 32-dimensional embedder's noise floor — shows intensity 0.58: more than half the maximum intensity, paid out on pure static. Dashed lines connect the dot to both axes."
-  source="Function from wissenslucke.py (minimal rewrite in the article's body); highlighted point: noise floor measured at dim=32, re-checked on 2026-08-02."
+  source="Function from wissenslucke.py (minimal rewrite in the article's body); highlighted point: noise floor at dim=32, re-checked 2026-08-02."
 />
 
 And the trap's second layer was already drawn, waiting: the project's next planned step was

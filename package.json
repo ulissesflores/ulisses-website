@@ -29,6 +29,7 @@
     "test:ui": "vitest --ui",
     "test:coverage-ui": "vitest --coverage --ui",
     "test:e2e": "npx playwright test",
+    "charts:labels": "python3 scripts/charts/checar-rotulos-svg.py",
     "sota:check": "node scripts/sota-validate.mjs --skip-build",
     "sota:full": "node scripts/sota-validate.mjs",
     "links:inventory": "npm run upkf:generate",

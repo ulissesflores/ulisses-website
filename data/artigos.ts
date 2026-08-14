@@ -33,6 +33,37 @@ export function localizeArtigo(artigo: Artigo, locale: Locale): Pick<Artigo, 'ti
 
 export const artigos: readonly Artigo[] = [
   {
+    slug: 'relatorio-de-risco-anthropic',
+    title:
+      'A Anthropic elevou o risco dos próprios modelos: o que dizem as 186 páginas do relatório de agosto',
+    summary:
+      'Pela primeira vez a Anthropic piorou a nota que dá a si mesma — e reclassificou o passado junto. Li as 186 páginas do relatório de risco de agosto de 2026: o que importa não é a nota, são as cinco falhas de processo que a empresa descreve, incluindo uma contaminação de treinamento que atingiu praticamente todos os modelos Claude com corte de conhecimento posterior a dezembro de 2024 e foi descoberta depois da data de corte do próprio relatório.',
+    date: '2026-08-14',
+    tags: ['anthropic', 'seguranca-de-ia', 'claude', 'governanca'],
+    i18n: {
+      en: {
+        title: 'Anthropic Raised the Risk Score on Its Own Models: What the 186-Page August Report Says',
+        summary:
+          'For the first time Anthropic lowered its own grade — and reclassified the past along with it. I read all 186 pages of the August 2026 risk report: what matters is not the score but the five process failures the company describes, including a training-data contamination that hit nearly every Claude model with a knowledge cutoff after December 2024 and was discovered after the report\'s own coverage date.',
+      },
+      es: {
+        title: 'Anthropic elevó el riesgo de sus propios modelos: lo que dicen las 186 páginas del informe de agosto',
+        summary:
+          'Por primera vez Anthropic empeoró la nota que se da a sí misma — y reclasificó el pasado con ella. Leí las 186 páginas del informe de riesgo de agosto de 2026: lo que importa no es la nota, sino las cinco fallas de proceso que la empresa describe, incluida una contaminación de entrenamiento que alcanzó a casi todos los modelos Claude con corte de conocimiento posterior a diciembre de 2024.',
+      },
+      it: {
+        title: 'Anthropic ha alzato il rischio dei propri modelli: cosa dicono le 186 pagine del rapporto di agosto',
+        summary:
+          'Per la prima volta Anthropic ha peggiorato il voto che dà a se stessa — e ha riclassificato anche il passato. Ho letto le 186 pagine del rapporto di rischio di agosto 2026: ciò che conta non è il voto, ma i cinque fallimenti di processo che l\'azienda descrive, inclusa una contaminazione dei dati di addestramento che ha colpito quasi tutti i modelli Claude con knowledge cutoff successivo a dicembre 2024.',
+      },
+      he: {
+        title: 'Anthropic העלתה את הסיכון של המודלים שלה: מה אומרים 186 עמודי דוח אוגוסט',
+        summary:
+          'בפעם הראשונה Anthropic הורידה את הציון שהיא נותנת לעצמה — וסיווגה מחדש גם את העבר. קראתי את כל 186 העמודים של דוח הסיכונים מאוגוסט 2026: מה שחשוב הוא לא הציון אלא חמשת כשלי התהליך שהחברה מתארת, ובהם זיהום נתוני אימון שפגע כמעט בכל מודלי Claude עם knowledge cutoff שאחרי דצמבר 2024.',
+      },
+    },
+  },
+  {
     slug: 'glm-5-3',
     title:
       'GLM-5.3: a Z.ai adiou os pesos citando capacidade cyber e publicou 2.436 vulnerabilidades como prova — 2.239 delas nunca saíram da descoberta',

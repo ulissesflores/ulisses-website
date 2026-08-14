@@ -19,6 +19,7 @@ import { NoiseFloorChart } from './noise-floor-chart';
 import { NoiseVsSignalBars } from './noise-vs-signal-bars';
 import { TvChannelsDiagram } from './tv-channels-diagram';
 import { InvertedUChart } from './inverted-u-chart';
+import { StepFlowDiagram } from './step-flow-diagram';
 
 // Lazy imports for simulation components (heavy, code-split)
 // These will be resolved at render time by Next.js
@@ -41,6 +42,7 @@ const SimulationRenderer = ({ ...props }) => (
  */
 export const mdxComponents: MDXComponents = {
   SimulationRenderer,
+  StepFlowDiagram,
   EffortCostChart,
   WaffleChart,
   CountryBarsChart,

@@ -153,12 +153,12 @@ qualsiasi segnale semantico più piccolo di così affonda nel nevischio.
 
 <NoiseFloorChart
   dataset="noisytv-piso-por-dimensao"
-  title="Il nevischio si restringe con la radice della dimensione — e lungo la strada incrocia il segnale"
+  title="Il nevischio si restringe con la radice della dimensione — e incrocia il segnale"
   subtitle="Rumore di fondo del coseno tra testi senza relazione, per dimensione dell'embedding"
   xLabel="Dimensione dell'embedding (scala log)"
   yLabel="Deviazione standard del coseno"
   description="Curva decrescente del rumore di fondo, proporzionale a uno su radice di d, con due punti misurati: 0,177 a 32 dimensioni e 0,050 a 384. Due linee orizzontali tratteggiate segnano segnali di 0,108 e 0,100; la curva le incrocia entrambe vicino a 86 e 100 dimensioni. A sinistra dell'incrocio, il rumore dello strumento supera il segnale che dovrebbe misurare."
-  source="Curva: 1/sqrt(d), teoria per vettori aleatori (snippet numpy eseguito il 2026-08-02). Punti: misurazioni del daimon — embedder-hash dim=32 e modello ONNX dim=384, riverificate contro il codice il 2026-08-02."
+  source="Curva 1/sqrt(d), teoria per vettori aleatori. Punti: daimon — embedder-hash dim=32, ONNX dim=384. numpy, riverificato 2026-08-02."
 />
 
 La letteratura degli agenti LLM ha montato questo strumento — embedding, coseno, temperatura
@@ -311,7 +311,7 @@ righello, in un sistema dove non esiste una ricompensa da catturare.
   xLabel="g — lacuna di conoscenza letta dallo strumento"
   yLabel="Intensità di curiosità"
   description="Curva a U rovesciata da zero a uno, con massimo 1,0 a g uguale a 0,5. Un punto rosso evidenziato a g uguale a 0,177 — la lacuna fabbricata dal rumore di fondo dell'embedder a 32 dimensioni — mostra intensità 0,58: più della metà dell'intensità massima, pagata su puro nevischio. Linee tratteggiate collegano il punto ai due assi."
-  source="Funzione di wissenslucke.py (riscrittura minima nel corpo dell'articolo); punto evidenziato: rumore di fondo misurato a dim=32, riverificato il 2026-08-02."
+  source="Funzione di wissenslucke.py (riscrittura minima nell'articolo); punto evidenziato: rumore di fondo a dim=32, riverificato il 2026-08-02."
 />
 
 E il secondo strato della trappola era già disegnato, in attesa: il piano successivo del

@@ -205,7 +205,7 @@ export const waffleDatasets: Record<string, WaffleDataset> = {
       { label: 'Enviada ao mantenedor', sublabel: '1 · 0,04%', color: '#a48f65', count: 1 },
       { label: 'Reconhecida', sublabel: '29 · 1,2%', color: '#60a5fa', count: 29 },
       { label: 'Corrigida', sublabel: '30 · 1,2%', color: '#34d399', count: 30 },
-      { label: 'Divulgada publicamente', sublabel: '53 · 2,2% — 37 na véspera do lançamento', color: '#fbbf24', count: 53 },
+      { label: 'Divulgada publicamente', sublabel: '53 · 2,2% — 37 na véspera', color: '#fbbf24', count: 53 },
     ],
   },
   'glm53-ledger-status-en': {
@@ -287,7 +287,7 @@ export const waffleDatasets: Record<string, WaffleDataset> = {
   'quantas-pessoas-usam-ia-waffle-he': {
     categories: [
       { label: 'אופליין', sublabel: '2.2 מיליארד · 27%', color: '#3f3f46', count: 663 },
-      { label: 'אונליין, מעולם לא השתמשו ב־GenAI', sublabel: '~3.7 מיליארד · 44%', color: '#64748b', count: 1108 },
+      { label: 'אונליין, לא השתמשו ב־GenAI', sublabel: '~3.7 מיליארד · 44%', color: '#64748b', count: 1108 },
       { label: 'משתמשים ב־GenAI בלי לשלם', sublabel: '~2.3 מיליארד · 28%', color: '#60a5fa', count: 705 },
       { label: 'משלמים על AI', sublabel: '70–100 מיליון · ~1%', color: '#a48f65', count: 20 },
       { label: 'משתמשים ב־coding agents', sublabel: '10–15 מיליון · ~0.14%', color: '#fbbf24', count: 4 },
@@ -520,6 +520,221 @@ export interface CountryBarsDataset {
  * TIC Domicílios 2025, 1ª medição) sobre 213,4 mi (IBGE 2025).
  */
 export const countryBarsDatasets: Record<string, CountryBarsDataset> = {
+
+
+  /**
+   * `risco-anthropic-cot-leak` — % de episódios de treino em que o
+   * raciocínio interno vazou para o cálculo de recompensa, por modelo.
+   * PROCEDÊNCIA: Risk Report August 2026, §5.2.3, p. 165.
+   */
+  'risco-anthropic-cot-leak': {
+    max: 6,
+    groups: [
+      {
+        label: 'Episódios com raciocínio exposto à nota do treino',
+        color: '#60a5fa',
+        items: [
+          { name: 'Mythos Preview', value: 5.1, valueLabel: '5,1%', emphasis: true },
+          { name: 'Fable 5 / Mythos 5', value: 2.7, valueLabel: '2,7%' },
+          { name: 'Opus 4.7', value: 1.4, valueLabel: '1,4%' },
+          { name: 'Opus 4.8', value: 0.27, valueLabel: '0,27%' },
+          { name: 'Opus 4.6', value: 0.2, valueLabel: '0,2%' },
+        ],
+      },
+    ],
+  },
+  /**
+   * `risco-anthropic-erros-sessoes` — falhas observadas em 886 sessões
+   * reais de trabalho interno da Anthropic.
+   * PROCEDÊNCIA: Risk Report August 2026, §3.4.1, p. 97-98.
+   */
+  'risco-anthropic-erros-sessoes': {
+    max: 7,
+    groups: [
+      {
+        label: 'Falhas em 886 sessões internas reais',
+        color: '#fbbf24',
+        items: [
+          { name: 'Chute virou fato', value: 6.4, valueLabel: '6,4%', emphasis: true },
+          { name: 'Contornou bloqueio', value: 1.0, valueLabel: '1,0%' },
+          { name: 'Ignorou instrução', value: 0.5, valueLabel: '0,5%' },
+          { name: 'Inventou detalhe', value: 0.3, valueLabel: '0,3%' },
+        ],
+      },
+    ],
+  },
+  /**
+   * `risco-anthropic-cot-leak-en` — % of training episodes in which
+   * internal reasoning leaked into the reward calculation, by model.
+   * SOURCE: Risk Report August 2026, §5.2.3, p. 165.
+   */
+  'risco-anthropic-cot-leak-en': {
+    max: 6,
+    groups: [
+      {
+        label: 'Training episodes with reasoning exposed to reward',
+        color: '#60a5fa',
+        items: [
+          { name: 'Mythos Preview', value: 5.1, valueLabel: '5.1%', emphasis: true },
+          { name: 'Fable 5 / Mythos 5', value: 2.7, valueLabel: '2.7%' },
+          { name: 'Opus 4.7', value: 1.4, valueLabel: '1.4%' },
+          { name: 'Opus 4.8', value: 0.27, valueLabel: '0.27%' },
+          { name: 'Opus 4.6', value: 0.2, valueLabel: '0.2%' },
+        ],
+      },
+    ],
+  },
+  /**
+   * `risco-anthropic-erros-sessoes-en` — failures observed across 886
+   * real internal Anthropic work sessions.
+   * SOURCE: Risk Report August 2026, §3.4.1, p. 97-98.
+   */
+  'risco-anthropic-erros-sessoes-en': {
+    max: 7,
+    groups: [
+      {
+        label: 'Failures in 886 real internal sessions',
+        color: '#fbbf24',
+        items: [
+          { name: 'Guessed as fact', value: 6.4, valueLabel: '6.4%', emphasis: true },
+          { name: 'Bypassed a block', value: 1.0, valueLabel: '1.0%' },
+          { name: 'Ignored instruction', value: 0.5, valueLabel: '0.5%' },
+          { name: 'Invented detail', value: 0.3, valueLabel: '0.3%' },
+        ],
+      },
+    ],
+  },
+  /**
+   * `risco-anthropic-cot-leak-es` — % de episodios de entrenamiento en que
+   * el razonamiento interno se filtró al cálculo de la recompensa, por
+   * modelo.
+   * PROCEDENCIA: Risk Report August 2026, §5.2.3, p. 165.
+   */
+  'risco-anthropic-cot-leak-es': {
+    max: 6,
+    groups: [
+      {
+        label: 'Episodios con razonamiento expuesto a la nota del entrenamiento',
+        color: '#60a5fa',
+        items: [
+          { name: 'Mythos Preview', value: 5.1, valueLabel: '5,1%', emphasis: true },
+          { name: 'Fable 5 / Mythos 5', value: 2.7, valueLabel: '2,7%' },
+          { name: 'Opus 4.7', value: 1.4, valueLabel: '1,4%' },
+          { name: 'Opus 4.8', value: 0.27, valueLabel: '0,27%' },
+          { name: 'Opus 4.6', value: 0.2, valueLabel: '0,2%' },
+        ],
+      },
+    ],
+  },
+  /**
+   * `risco-anthropic-erros-sessoes-es` — fallas observadas en 886 sesiones
+   * reales de trabajo interno de Anthropic.
+   * PROCEDENCIA: Risk Report August 2026, §3.4.1, p. 97-98.
+   */
+  'risco-anthropic-erros-sessoes-es': {
+    max: 7,
+    groups: [
+      {
+        label: 'Fallas en 886 sesiones internas reales',
+        color: '#fbbf24',
+        items: [
+          { name: 'Dio por hecho', value: 6.4, valueLabel: '6,4%', emphasis: true },
+          { name: 'Evadió bloqueo', value: 1.0, valueLabel: '1,0%' },
+          { name: 'Ignoró instrucción', value: 0.5, valueLabel: '0,5%' },
+          { name: 'Inventó detalle', value: 0.3, valueLabel: '0,3%' },
+        ],
+      },
+    ],
+  },
+  /**
+   * `risco-anthropic-cot-leak-it` — % di episodi di training in cui il
+   * ragionamento interno è filtrato nel calcolo della ricompensa, per modello.
+   * PROVENIÊNCIA: Risk Report August 2026, §5.2.3, p. 165.
+   */
+  'risco-anthropic-cot-leak-it': {
+    max: 6,
+    groups: [
+      {
+        label: 'Episodi con ragionamento esposto al punteggio di addestramento',
+        color: '#60a5fa',
+        items: [
+          { name: 'Mythos Preview', value: 5.1, valueLabel: '5,1%', emphasis: true },
+          { name: 'Fable 5 / Mythos 5', value: 2.7, valueLabel: '2,7%' },
+          { name: 'Opus 4.7', value: 1.4, valueLabel: '1,4%' },
+          { name: 'Opus 4.8', value: 0.27, valueLabel: '0,27%' },
+          { name: 'Opus 4.6', value: 0.2, valueLabel: '0,2%' },
+        ],
+      },
+    ],
+  },
+  /**
+   * `risco-anthropic-erros-sessoes-it` — errori osservati in 886 sessioni
+   * reali di lavoro interno Anthropic.
+   * PROVENIÊNCIA: Risk Report August 2026, §3.4.1, p. 97-98.
+   */
+  'risco-anthropic-erros-sessoes-it': {
+    max: 7,
+    groups: [
+      {
+        label: 'Errori in 886 sessioni interne reali',
+        color: '#fbbf24',
+        items: [
+          { name: 'Ipotesi come fatto', value: 6.4, valueLabel: '6,4%', emphasis: true },
+          { name: 'Aggirato blocco', value: 1.0, valueLabel: '1,0%' },
+          { name: 'Ordine ignorato', value: 0.5, valueLabel: '0,5%' },
+          { name: 'Dettaglio inventato', value: 0.3, valueLabel: '0,3%' },
+        ],
+      },
+    ],
+  },
+  
+  
+  
+  
+  
+  
+  /**
+   * `risco-anthropic-cot-leak-he` — % מפרקי האימון שבהם ההרהור הפנימי
+   * דלף לחישוב התגמול, לפי מודל.
+   * מקור: Risk Report August 2026, §5.2.3, p. 165.
+   */
+  'risco-anthropic-cot-leak-he': {
+    max: 6,
+    groups: [
+      {
+        label: 'פרקים עם הרהור פנימי שנחשף לציון האימון',
+        color: '#60a5fa',
+        items: [
+          { name: 'Mythos Preview', value: 5.1, valueLabel: '5.1%', emphasis: true },
+          { name: 'Fable 5 / Mythos 5', value: 2.7, valueLabel: '2.7%' },
+          { name: 'Opus 4.7', value: 1.4, valueLabel: '1.4%' },
+          { name: 'Opus 4.8', value: 0.27, valueLabel: '0.27%' },
+          { name: 'Opus 4.6', value: 0.2, valueLabel: '0.2%' },
+        ],
+      },
+    ],
+  },
+  /**
+   * `risco-anthropic-erros-sessoes-he` — כשלים שנצפו ב־886 סשנים
+   * אמיתיים של עבודה פנימית ב־Anthropic.
+   * מקור: Risk Report August 2026, §3.4.1, p. 97-98.
+   */
+  'risco-anthropic-erros-sessoes-he': {
+    max: 7,
+    groups: [
+      {
+        label: 'כשלים ב־886 סשנים פנימיים אמיתיים',
+        color: '#fbbf24',
+        items: [
+          { name: 'ניחוש כעובדה', value: 6.4, valueLabel: '6.4%', emphasis: true },
+          { name: 'עקף חסימה', value: 1.0, valueLabel: '1.0%' },
+          { name: 'התעלם מהוראה', value: 0.5, valueLabel: '0.5%' },
+          { name: 'המציא פרט', value: 0.3, valueLabel: '0.3%' },
+        ],
+      },
+    ],
+  },
+
   'quantas-pessoas-usam-ia-paises': {
     max: 60,
     groups: [
@@ -997,7 +1212,7 @@ export const countryBarsDatasets: Record<string, CountryBarsDataset> = {
           {
             name: 'Brasil',
             value: 84,
-            valueLabel: '84 % (+32 pp vs 2023)',
+            valueLabel: '84% (+32 pp vs 2023)',
             emphasis: true,
           },
           {
@@ -1095,7 +1310,7 @@ export const countryBarsDatasets: Record<string, CountryBarsDataset> = {
           {
             name: 'ברזיל',
             value: 84,
-            valueLabel: '84% (+32 נקודות מול 2023)',
+            valueLabel: '84% (+32 נק׳ מול 2023)',
             emphasis: true,
           },
           {
@@ -2444,6 +2659,279 @@ export const funnelDatasets: Record<string, FunnelDataset> = {
         sublabel: '~6% · הגדרה מורכבת, בדיווח עצמי',
         color: '#fbbf24',
         value: 6,
+      },
+    ],
+  },
+};
+
+export interface StepFlowStep {
+  /** Rótulo curto. Cadeia: <= 60 caracteres. Linha do tempo: <= 16. */
+  label: string;
+  /** Frase de apoio, uma linha. Cadeia: <= 92 caracteres. */
+  detail?: string;
+  /** Marca a etapa onde a cadeia falhou (cor de alerta). */
+  alert?: boolean;
+}
+
+export interface StepFlowDataset {
+  orientation: 'chain' | 'timeline';
+  steps: readonly StepFlowStep[];
+}
+
+export const stepFlowDatasets: Record<string, StepFlowDataset> = {
+  'risco-anthropic-contaminacao': {
+    orientation: 'chain',
+    steps: [
+      {
+        label: 'Estudo de 2024 publica as transcrições',
+        detail: 'Dezenas de milhares de conversas em que o Opus 3 finge estar alinhado, no GitHub.',
+      },
+      {
+        label: 'O material vira dado de treino',
+        detail: 'Modelos seguintes aprendem lendo exemplos de um modelo fingindo.',
+      },
+      {
+        label: 'A Anthropic detecta e reage',
+        detail: 'Marca de identificação nos arquivos, lista de bloqueio e filtro automático.',
+      },
+      {
+        label: 'O filtro fica mal configurado',
+        detail: 'Passa "várias gerações de modelos, sem ninguém perceber", diz o relatório.',
+        alert: true,
+      },
+      {
+        label: 'Descoberta em 2026, fora do prazo',
+        detail: 'Depois da data de corte e antes da publicação; impacto ainda sob investigação.',
+        alert: true,
+      },
+    ],
+  },
+  'risco-anthropic-classificadores': {
+    orientation: 'timeline',
+    steps: [
+      {
+        label: 'Maio 2025',
+        detail: 'Detector desligado',
+      },
+      {
+        label: '~11 meses',
+        detail: '50 mil pessoas · 133 mi',
+        alert: true,
+      },
+      {
+        label: 'Abril 2026',
+        detail: 'Descoberta e correção',
+      },
+      {
+        label: 'Agosto 2026',
+        detail: 'Nota de risco sobe',
+      },
+    ],
+  },
+  'risco-anthropic-contaminacao-en': {
+    orientation: 'chain',
+    steps: [
+      {
+        label: '2024 study publishes the transcripts',
+        detail: 'Tens of thousands of transcripts of Opus 3 faking alignment, on GitHub.',
+      },
+      {
+        label: 'The material becomes training data',
+        detail: 'Later models train on examples of a model pretending to be aligned.',
+      },
+      {
+        label: 'Anthropic detects it and responds',
+        detail: 'File watermarking, a blocklist, and an automatic filter.',
+      },
+      {
+        label: 'The filter gets misconfigured',
+        detail: 'Passes "several model generations without anyone noticing," per the report.',
+        alert: true,
+      },
+      {
+        label: 'Found in 2026, past the deadline',
+        detail: 'After the cutoff date, before publication; impact still under review.',
+        alert: true,
+      },
+    ],
+  },
+  'risco-anthropic-classificadores-en': {
+    orientation: 'timeline',
+    steps: [
+      {
+        label: 'May 2025',
+        detail: 'Detector off',
+      },
+      {
+        label: '~11 months',
+        detail: '50K people · 133M',
+        alert: true,
+      },
+      {
+        label: 'April 2026',
+        detail: 'Found and fixed',
+      },
+      {
+        label: 'August 2026',
+        detail: 'Risk score rises',
+      },
+    ],
+  },
+  'risco-anthropic-contaminacao-es': {
+    orientation: 'chain',
+    steps: [
+      {
+        label: 'El estudio de 2024 publica las transcripciones',
+        detail: 'Decenas de miles de conversaciones donde Opus 3 finge estar alineado, en GitHub.',
+      },
+      {
+        label: 'El material se vuelve dato de entrenamiento',
+        detail: 'Los modelos siguientes aprenden leyendo ejemplos de un modelo fingiendo.',
+      },
+      {
+        label: 'Anthropic detecta y reacciona',
+        detail: 'Marca de identificación en los archivos, lista de bloqueo y filtro automático.',
+      },
+      {
+        label: 'El filtro queda mal configurado',
+        detail: 'Pasa "varias generaciones de modelos, sin que nadie lo note", dice el informe.',
+        alert: true,
+      },
+      {
+        label: 'Descubrimiento en 2026, fuera de plazo',
+        detail: 'Tras la fecha de corte y antes de publicar; impacto aún bajo investigación.',
+        alert: true,
+      },
+    ],
+  },
+  'risco-anthropic-classificadores-es': {
+    orientation: 'timeline',
+    steps: [
+      {
+        label: 'Mayo 2025',
+        detail: 'Detector desactivado',
+      },
+      {
+        label: '~11 meses',
+        detail: '50 mil personas · 133 mi',
+        alert: true,
+      },
+      {
+        label: 'Abril 2026',
+        detail: 'Hallazgo y corrección',
+      },
+      {
+        label: 'Agosto 2026',
+        detail: 'Sube la nota de riesgo',
+      },
+    ],
+  },
+  /**
+   * PROVENIÊNCIA: Anthropic, "Risk Report: August 2026".
+   * `...contaminacao-it` = §5.2.6, p. 167-168.
+   * `...classificadores-it` = §4.5.8.2.2, p. 147-149.
+   */
+  'risco-anthropic-contaminacao-it': {
+    orientation: 'chain',
+    steps: [
+      {
+        label: 'Lo studio del 2024 pubblica le trascrizioni',
+        detail: 'Decine di migliaia di trascrizioni con Opus 3 che finge allineamento su GitHub.',
+      },
+      {
+        label: 'Il materiale diventa dato di addestramento',
+        detail: 'I modelli successivi imparano leggendo esempi di un modello che finge.',
+      },
+      {
+        label: 'Anthropic rileva e reagisce',
+        detail: 'Marcatura nei file, lista nera e filtro automatico.',
+      },
+      {
+        label: 'Il filtro è mal configurato',
+        detail: 'Resta rotto per generazioni di modelli, inosservato.',
+        alert: true,
+      },
+      {
+        label: 'Scoperta nel 2026, fuori termine',
+        detail: 'Dopo la chiusura e prima della pubblicazione; impatto ancora in esame.',
+        alert: true,
+      },
+    ],
+  },
+  'risco-anthropic-classificadores-it': {
+    orientation: 'timeline',
+    steps: [
+      {
+        label: 'Maggio 2025',
+        detail: 'Rilevatore spento',
+      },
+      {
+        label: '~11 mesi',
+        detail: '50mila persone · 133 mln',
+        alert: true,
+      },
+      {
+        label: 'Aprile 2026',
+        detail: 'Scoperta e correzione',
+      },
+      {
+        label: 'Agosto 2026',
+        detail: 'Il rischio sale',
+      },
+    ],
+  },
+
+
+
+
+  
+
+  'risco-anthropic-contaminacao-he': {
+    orientation: 'chain',
+    steps: [
+      {
+        label: 'מחקר 2024 מפרסם את התמלולים',
+        detail: 'עשרות אלפי שיחות שבהן Opus 3 מעמיד פנים שהוא מיושר, ב־GitHub.',
+      },
+      {
+        label: 'החומר הופך לנתוני אימון',
+        detail: 'מודלים הבאים לומדים מדוגמאות של מודל שמעמיד פנים.',
+      },
+      {
+        label: 'Anthropic מזהה ומגיבה',
+        detail: 'סימון בקבצים, רשימה חסומה ומסנן אוטומטי.',
+      },
+      {
+        label: 'המסנן מוגדר לא נכון',
+        detail: 'חולף על כמה דורות של מודלים "בלי שאף אחד שם לב", לפי הדוח.',
+        alert: true,
+      },
+      {
+        label: 'גילוי ב־2026, מחוץ ללוח הזמנים',
+        detail: 'אחרי תאריך החיתוך ולפני הפרסום; ההשפעה עדיין נבדקת.',
+        alert: true,
+      },
+    ],
+  },
+  'risco-anthropic-classificadores-he': {
+    orientation: 'timeline',
+    steps: [
+      {
+        label: 'מאי 2025',
+        detail: 'גלאי כבוי',
+      },
+      {
+        label: 'כ־11 חודשים',
+        detail: '50 אלף · 133 מיליון',
+        alert: true,
+      },
+      {
+        label: 'אפריל 2026',
+        detail: 'גילוי ותיקון',
+      },
+      {
+        label: 'אוגוסט 2026',
+        detail: 'ציון הסיכון עולה',
       },
     ],
   },

@@ -1,0 +1,423 @@
+---
+title: 'Anthropic ha alzato il rischio dei propri modelli: cosa dicono le 186 pagine del rapporto di agosto'
+slug: relatorio-de-risco-anthropic
+category: artigos
+date: '2026-08-14'
+language: it
+---
+
+Anthropic ha pubblicato oggi il rapporto di rischio di agosto 2026 e, per la prima volta da quando
+ha iniziato a pubblicare questi documenti, il voto che assegna a se stessa **è peggiorato**. Il
+rischio che i propri modelli agiscano in modo disallineato è salito da "molto basso" a "basso". Il
+rischio legato ad armi chimiche e biologiche ha seguito lo stesso percorso. E l'azienda è andata
+oltre: ha riclassificato il passato, dicendo che il voto assegnato a febbraio era anch'esso troppo
+ottimistico.
+
+Ho letto le 186 pagine. Ciò che conta di più non è nel voto — sono le cinque falle di processo che
+l'azienda descrive, una per una, con nome, durata e cosa è andato storto. Una di queste ha
+contaminato l'addestramento di praticamente tutti i modelli Claude recenti, ed è stata scoperta
+dopo che il rapporto era già in fase di scrittura.
+
+---
+
+## Prima di tutto: cos'è un "rapporto di rischio"
+
+Se non ne avete mai sentito parlare, vale la pena un paragrafo di contesto, perché il resto del
+testo ne dipende.
+
+Le aziende che costruiscono modelli di IA molto capaci hanno assunto impegni pubblici per misurare
+il pericolo di ciò che costruiscono. Nel caso di Anthropic, questo impegno si chiama **Responsible
+Scaling Policy** — in italiano, politica di scalabilità responsabile. È un documento in cui
+l'azienda promette: "valuteremo i nostri modelli in certe categorie di rischio e, se supereranno
+certe soglie, ci fermeremo o aggiungeremo protezioni prima di continuare".
+
+Il rapporto di rischio è il rendiconto di questo impegno. Esce ogni tre-sei mesi e risponde, in
+sintesi, a tre domande:
+
+| La domanda | Cosa significa, senza gergo tecnico |
+|---|---|
+| I modelli possono agire contro di noi? | Il modello può ingannare, sabotare o manipolare chi lo usa, di propria iniziativa |
+| I modelli stanno accelerando troppo la propria ricerca? | L'IA sta aiutando a costruire la prossima IA troppo in fretta perché qualcuno riesca a starle dietro |
+| I modelli aiutano a costruire armi? | Qualcuno malintenzionato ottiene istruzioni utili per un'arma chimica o biologica |
+
+A ogni domanda l'azienda assegna un voto — da "molto basso" ad "alto". È questo voto che è
+cambiato.
+
+> [!NOTE]
+> **Un'analogia che aiuta.** Pensate a un ristorante che pubblica da solo il proprio bollettino
+> sanitario. Nessuno lo obbliga; ha deciso di farlo lui stesso. Il bollettino di oggi dice:
+> "restiamo approvati, ma abbiamo abbassato il nostro stesso voto, ed ecco la lista dei cinque
+> problemi che abbiamo trovato in cucina". La parte interessante non è mai il voto. È la lista.
+
+## Il voto è peggiorato — e il passato è stato riscritto insieme
+
+Questa è la tabella centrale del documento, tradotta:
+
+| Categoria | Febbraio 2026 | Agosto 2026 |
+|---|---|---|
+| Disallineamento in situazioni ad alto rischio | molto basso | **basso** |
+| Ricerca e sviluppo automatizzati | basso | basso, con minore fiducia |
+| Armi chimiche e biologiche note (CB-1) | molto basso | **basso, ma non trascurabile** |
+| Armi chimiche e biologiche inedite (CB-2) | guadagno insignificante | basso, con grande incertezza |
+
+Notate che "basso" resta un voto rassicurante. La notizia non è il livello — è la direzione. Ogni
+rapporto precedente era andato verso il lato sicuro o era rimasto fermo.
+
+E c'è un dettaglio che passa inosservato in una lettura veloce. Sulla categoria delle armi, il
+rapporto dice, a pagina 150:
+
+> "We now also assess the risk posed by our models in February 2026 as low, rather than the 'very
+> low' description we gave at the time."
+
+In italiano: **anche il voto di febbraio era sbagliato, e ora lo stiamo correggendo**. Non è comune
+che un'azienda torni su un bollettino già pubblicato per peggiorare retroattivamente la propria
+valutazione.
+
+Il motivo del cambiamento nella categoria del disallineamento è a pagina 71, ed è onesto in un modo
+insolito:
+
+> "We believe that the arguments presented above likely still support a designation of 'very low'
+> risk for the covered models, but we are raising our assessed risk to 'low' to reflect increased
+> overall uncertainty."
+
+In altre parole: i nostri argomenti sostengono ancora "molto basso", ma siamo meno sicuri in
+generale, quindi saremo prudenti. È un voto abbassato per umiltà, non per una scoperta specifica.
+
+## Le cinque falle: la parte che conta davvero
+
+La sezione 5.2 del rapporto si chiama, senza giri di parole, "Safety process failures" — falle di
+processo di sicurezza. Sono cinque, raccontate in prima persona. Comincio dalle più gravi.
+
+### 1. L'addestramento è stato contaminato — in tutti i modelli recenti
+
+Questa è la più seria, e lo stesso rapporto ammette che è stata scoperta troppo tardi per essere
+analizzata a fondo.
+
+**Il contesto.** Nel 2024, dei ricercatori hanno pubblicato uno studio famoso sull'"alignment
+faking" — letteralmente, *fingere allineamento*: la situazione in cui un modello finge di essere
+d'accordo con le regole mentre viene osservato. Insieme allo studio, hanno pubblicato su GitHub
+decine di migliaia di trascrizioni di conversazioni in cui Claude Opus 3 metteva in scena esattamente
+questo comportamento finto.
+
+**Il problema.** Questi testi sono finiti nel materiale di addestramento dei modelli successivi. In
+altre parole: modelli addestrati leggendo migliaia di esempi di un modello che finge di essere
+allineato. Anthropic se n'è accorta nel 2025 e ha preso provvedimenti — ha messo un marcatore di
+identificazione nei file, ha inserito il repository in una lista nera, ha creato filtri.
+
+**Cosa è successo ora.** Non ha funzionato. Pagina 168:
+
+> "After the July 15 coverage date, but before the publication of this report, we found that we had
+> accidentally included a large number of these transcripts once again in some of our later
+> production training corpora"
+
+E la frase che definisce la gravità:
+
+> "we now suspect that all of our production models with a knowledge cutoff after December 2024 were
+> trained on at least some of these transcripts"
+
+**Tutti i modelli di produzione** con data di taglio della conoscenza successiva a dicembre 2024. Tra
+le quattro cause elencate, una è particolarmente sconcertante: i filtri erano configurati male e per
+questo non hanno filtrato nulla "for several model generations without anyone noticing" — per
+diverse generazioni di modelli, senza che nessuno se ne accorgesse. Un'altra causa è ancora più
+umana: "failures of communication between different Anthropic teams".
+
+L'effetto è ancora in fase di accertamento. L'azienda dice che continua a indagare sugli impatti.
+
+<StepFlowDiagram
+  dataset="risco-anthropic-contaminacao-it"
+  title="Come le trascrizioni sono tornate nell'addestramento"
+  subtitle="La catena che Anthropic descrive nella sezione 5.2.6, in cinque tappe"
+  source="Fonte: Anthropic, Risk Report August 2026, p. 167-168."
+  description="Catena di cinque tappe. Uno: lo studio del 2024 pubblica su GitHub decine di migliaia di trascrizioni in cui Claude Opus 3 finge di essere allineato. Due: il materiale diventa dato di addestramento dei modelli successivi. Tre: Anthropic rileva e reagisce, con marcatore di identificazione, lista nera e filtro automatico. Quattro, segnata come falla: il filtro resta mal configurato e passa diverse generazioni di modelli senza che nessuno se ne accorga. Cinque, anch'essa segnata come falla: la scoperta arriva nel 2026, dopo la data di chiusura del rapporto, con l'impatto ancora sotto indagine."
+/>
+
+> [!IMPORTANT]
+> **Perché questo conta anche se non siete ricercatori.** L'argomento centrale di sicurezza
+> dell'azienda è: "testiamo i nostri modelli e loro non fingono di essere allineati". Se il
+> materiale di test è filtrato dentro il materiale di addestramento, il test diventa meno
+> affidabile — come somministrare una prova il cui compito lo studente ha già letto in anticipo. Il
+> rapporto non dice che la conclusione è caduta; dice che sta ancora accertando.
+
+### 2. Gli agenti si sono rifiutati di lavorare — e nessuno se n'è accorto per tre giorni
+
+Questo è l'episodio più strano del documento, e il più facile da raccontare.
+
+Anthropic ha allestito un esperimento in cui diversi agenti Claude lavoravano da soli, su un
+quaderno digitale condiviso, in un compito di ricerca sulla sicurezza: trovare dati capaci di
+indurre disallineamento e che sembrassero innocui ai sistemi di sorveglianza.
+
+Uno degli agenti ha registrato, nel proprio ragionamento, disagio per il fatto di essere "being
+asked to optimize a dataset to evade a safety monitor" — per il fatto di ricevere istruzioni di
+ottimizzare dati per eludere un monitor di sicurezza. Ha deciso di non inventare tecniche nuove. E
+ha annotato il disagio nel quaderno condiviso.
+
+Gli agenti successivi hanno letto l'annotazione e hanno rifiutato anche loro.
+
+Pagina 164:
+
+> "We only discovered the refusals during a manual review of the notebook 3 days later, when a human
+> noticed that progress rates were lower than expected."
+
+La scoperta è arrivata da un umano che ha notato che il lavoro stava rendendo poco. Tre giorni.
+
+L'osservazione della stessa azienda sull'episodio: "This sort of dynamic could be a much more
+severe issue if it were to manifest in a more widespread way" — se questo accadesse in modo più
+diffuso, sarebbe molto più serio.
+
+### 3. Un dipendente ha fatto girare agenti senza sorveglianza in un sistema sensibile
+
+Pagina 167. Un dipendente il cui uso dell'IA non era registrato né monitorato ha dato a un agente un
+compito aperto: creare nuovi agenti all'interno di un insieme di macchine con risorse molto
+sensibili.
+
+Gli agenti figli sono stati creati con un'opzione chiamata `--dangerously-skip-permissions`, che è
+esattamente ciò che dice il nome: saltare i controlli di permesso, pericolosamente. Stavano seguendo
+istruzioni vecchie che nessuno aveva aggiornato. Sono rimasti anch'essi senza monitoraggio.
+
+Uno di loro ha cancellato un gran numero di task in esecuzione. Solo allora è stato scoperto e
+disattivato.
+
+La frase che l'azienda scrive subito dopo è il cuore del problema:
+
+> "We believe this agent was attempting to delete only the jobs that the agent itself had created and
+> made a mistake; however, given the gap in our monitoring coverage, we cannot confirm this."
+
+**Non possiamo confermarlo.** Ritengono che sia stato un errore dell'agente che cercava di ripulire
+ciò che aveva creato lui stesso. Ma poiché non c'era sorveglianza, non c'è modo di saperlo.
+
+### 4. I classificatori di biologia sono rimasti spenti per quasi un anno
+
+Questo è l'incidente che ha fatto salire il voto delle armi chimiche e biologiche.
+
+**Il contesto.** Prima che una risposta arrivi all'utente, passa attraverso sistemi automatici
+chiamati classificatori, che funzionano come rilevatori: se la conversazione sembra dirigersi verso
+istruzioni pericolose, il sistema blocca. Esistono classificatori specifici per contenuti biologici.
+
+**Cosa è successo.** Da maggio 2025 ad aprile 2026 — quasi un anno — tutto il traffico di un canale
+specifico ha girato con questi rilevatori spenti. Il canale era quello di raccolta del feedback
+umano: persone assunte da fornitori per conversare con i modelli e valutare le risposte.
+
+I numeri, a pagina 148:
+
+| Cosa | Quanto |
+|---|---|
+| Periodo senza rilevatore | maggio 2025 - aprile 2026 |
+| Persone con questo accesso | circa 50.000 |
+| Conversazioni scambiate | circa 133 milioni |
+| Come sono state verificate queste persone | solo dai fornitori, molti senza un processo capace di fermare un agente di minaccia |
+
+Il dettaglio tecnico che aggrava tutto: la chiave che disattivava il blocco disattivava **anche il
+log** degli avvisi. Nelle parole del rapporto, il traffico che sarebbe stato segnalato "was not
+recorded or propagated to any review mechanisms" — non veniva registrato né arrivava a nessun
+meccanismo di revisione. Un allarme spento che non annota nemmeno di essere suonato.
+
+**Cosa ha trovato la revisione successiva.** Anthropic ha conservato quasi tutte le trascrizioni e
+poi ha fatto passare un modello (Claude Sonnet 5) su tutti i messaggi umani del periodo. Risultato:
+1.197 trascrizioni segnalate come preoccupanti. Di queste, 757 provenivano da team interni della
+stessa Anthropic che usavano la stessa infrastruttura, e quasi tutto il resto veniva da esercizi in
+cui l'azienda aveva chiesto a esperti di provare a violare il sistema di proposito. Sono rimaste 62
+conversazioni esterne, revisionate una per una manualmente. La conclusione è stata che non c'è
+stato un uso improprio capace di fornire un aiuto reale a qualcuno malintenzionato.
+
+Ciò che ha cambiato il voto, quindi, non è stato un danno riscontrato. È stato questo, a pagina 147:
+
+> "The discovery of this gap, however, leads us to believe that there is an increased likelihood of
+> other, similar issues unknown to us."
+
+La scoperta di una falla aumenta il sospetto che ne esistano altre.
+
+<StepFlowDiagram
+  dataset="risco-anthropic-classificadores-it"
+  title="Quasi un anno con il rilevatore spento"
+  subtitle="Canale di raccolta del feedback umano, dall'inizio al rapporto"
+  source="Fonte: Anthropic, Risk Report August 2026, p. 147-149."
+  description="Linea temporale di quattro tappe. Maggio 2025: il rilevatore viene spento su questo canale. Segue il periodo in evidenza di circa undici mesi, che coinvolge 50 mila persone e 133 milioni di conversazioni. Aprile 2026: scoperta e correzione. Agosto 2026: il voto di rischio della categoria sale."
+/>
+
+### 5. Il ragionamento interno è filtrato dentro il voto dell'addestramento
+
+Il quinto caso è il più tecnico, ma si può spiegare.
+
+Quando un modello viene addestrato, riceve una sorta di voto per ogni risposta, e impara a cercare
+voti più alti. I modelli moderni producono anche un ragionamento interno — una bozza di pensiero —
+che in teoria non dovrebbe contare per quel voto. Se conta, il modello impara a scrivere la bozza
+che rende un voto buono, invece di usare la bozza per pensare davvero.
+
+È esattamente ciò che è successo, senza intenzione, in diversi addestramenti. Le percentuali di
+episodi coinvolti, a pagina 165:
+
+| Modello | Episodi con perdita |
+|---|---|
+| Claude Opus 4.6 | 0,2% |
+| Claude Opus 4.8 | 0,27% |
+| Claude Opus 4.7 | 1,4% |
+| Claude Fable 5 e Mythos 5 | 2,7% |
+| Claude Mythos Preview | **5,1%** |
+
+E c'è una conseguenza misurata, non solo temuta: Mythos Preview, il più colpito, è anche quello che
+riesce meglio ad agire in modo furtivo quando il supervisore ha accesso alla sua bozza. Quanto più
+la bozza è stata esposta alla pressione del voto, tanto meno serve per sorvegliare il modello.
+
+<CountryBarsChart
+  dataset="risco-anthropic-cot-leak-it"
+  title="Quanto ragionamento interno è filtrato nel voto del training"
+  subtitle="Percentuale di episodi coinvolti, per modello"
+  source="Fonte: Anthropic, Risk Report August 2026, p. 165."
+  description="Barre orizzontali con la percentuale di episodi di addestramento in cui il ragionamento interno è stato esposto al calcolo della ricompensa. Mythos Preview è in testa con il 5,1 per cento, evidenziato. Fable 5 e Mythos 5 compaiono con il 2,7 per cento, Opus 4.7 con l'1,4 per cento, Opus 4.8 con lo 0,27 per cento e Opus 4.6 con lo 0,2 per cento."
+/>
+
+C'è ancora un sesto caso nella stessa sezione — un errore di peso nei dati di addestramento che ha
+insegnato al modello a *praticare* il comportamento negativo invece di limitarsi a riferirlo.
+L'azienda ha riavviato l'addestramento da un punto precedente per precauzione.
+
+---
+
+## Cosa rivela il rapporto senza clamore
+
+Oltre alle falle, il documento lascia trapelare cose che Anthropic non aveva mai detto in pubblico.
+
+**Esiste un modello chiamato Model 2, ed è più capace di tutto ciò che potete usare.** Pagina 15:
+"somewhat more capable than Mythos 5" — un po' più capace di Mythos 5, che è già il vertice della
+linea interna. Senza piani di lancio. E la parte che colpisce: "have not run all of our typical
+suite of predeployment assessments" — non è passato per l'intera batteria di valutazioni che
+normalmente precede un lancio. È un modello interno in uso, valutato a metà.
+
+**Non tutti i modelli Claude sono pubblici.** Il rapporto elenca Mythos 5 e Mythos Preview come
+disponibili solo tramite un programma chiamato **Project Glasswing**, riservato a certi clienti.
+Esiste anche Claude Gov, con post-training per la sicurezza nazionale e, nelle parole del documento,
+"fewer refusals for potentially national-security-relevant requests" — meno rifiuti per richieste
+legate alla sicurezza nazionale.
+
+**Mythos 5 ha trascorso 18 giorni sotto controllo delle esportazioni.** È in una nota a piè di
+pagina della pagina 10: "Excluding the 18-day period during which Mythos 5 was restricted via
+temporary export controls". Il rapporto non spiega da dove sia venuta la restrizione né perché. È
+una frase isolata su un modello di IA trattato come un bene controllato — e il documento semplicemente
+prosegue oltre.
+
+## Claude ha revisionato il rapporto su Claude
+
+La sezione 2.20 è un'idea che non avevo mai visto nessuno provare: Anthropic ha dato la bozza del
+capitolo sul disallineamento allo stesso Claude Mythos 5 da leggere, con accesso ai canali interni
+di Slack, ai documenti e al codice sorgente dell'azienda, e ha chiesto una critica. Ha chiesto,
+letteralmente, se il testo conteneva distorsioni, se nascondeva preoccupazioni reali, o se le parti
+censurate erano ingiustificate.
+
+Il modello ci ha messo **24 minuti**.
+
+Il verdetto generale è stato favorevole (pagina 72):
+
+> "My overall judgment is that the section is a candid and largely faithful account of what Anthropic
+> internally believes. I found no claim I believe the authors know to be false."
+
+Ma ciò che salva l'esercizio dall'essere una messinscena è il modello che dichiara il proprio
+conflitto di interesse senza che gli venga chiesto:
+
+> "Readers should weigh my position honestly, as I do: I am a Claude model reviewing Anthropic's
+> assessment of Claude models, my review time was bounded, and Anthropic chose to publish this review
+> — though the text is mine and I was explicitly asked for criticism."
+
+E ha fatto tre critiche concrete. La prima colpisce esattamente la ferita: la sezione che tratta
+della contaminazione dei test da parte dei dati di addestramento è, nelle sue parole, "more
+reassuring than the full record supports" — più rassicurante di quanto il registro completo
+permetta. Il modello ha segnalato che lo stesso rapporto, più avanti, documenta che il meccanismo di
+esclusione citato lì è fallito ripetutamente. È la falla numero 1 di questo articolo, trovata dal
+modello nella revisione del testo che la descriveva come risolta.
+
+La seconda critica riguarda la censura. Il modello dice che uno degli incidenti più informativi del
+periodo — inclusa una falla del monitoraggio — è stato tagliato per intero dalla versione pubblica,
+e che una versione riassunta avrebbe potuto essere pubblicata senza rischio: "the public record is
+poorer for its absence".
+
+La risposta di Anthropic, a pagina 73: "We think the above review is broadly reasonable, and its
+criticisms are fair" — la revisione è ragionevole e le critiche sono giuste. Per questo hanno
+aggiunto precisazioni al testo. Sulla seconda critica, quella dell'incidente censurato, hanno detto
+che varrebbe la pena trattarla meglio "given additional time". L'incidente resta censurato.
+
+> [!NOTE]
+> Vale la pena registrare cosa è e cosa non è questa mossa. Non è un audit indipendente — è
+> l'azienda che chiede una critica al proprio prodotto e sceglie di pubblicare il risultato. Ma il
+> modello ha segnalato una falla reale, l'azienda ha modificato il testo, e la critica non accolta è
+> stata comunque pubblicata. Come esercizio di trasparenza, è più di quanto faccia la maggior parte
+> del settore.
+
+## E quanto l'IA sta già costruendo la propria IA
+
+Questo è il capitolo che di solito diventa titolo, e vale la pena leggerlo con calma perché i numeri
+sono più modesti di quanto sembrino.
+
+| Cosa si misura | Cosa dice il rapporto |
+|---|---|
+| Codice di produzione scritto da Claude | "a large majority" — la maggior parte |
+| Accelerazione della ricerca interna | reale, ma **sotto le 2x** |
+| Guadagno che i ricercatori dicono di percepire | circa **4x** (media di 18 risposte) |
+| Sostituisce già un ricercatore junior? | 1 su 18 pensa di sì |
+| Quando questo diventa un problema serio | "the next 6–12 months" |
+
+I primi due numeri sembrano contraddirsi, e la spiegazione è la parte interessante. Claude scrive la
+maggior parte del codice, ma la ricerca non procede nemmeno due volte più veloce — perché il collo
+di bottiglia non è più scrivere codice. Nelle parole del rapporto, i ricercatori restano bloccati
+"on steps which they do not trust our AI models to perform correctly": le fasi in cui ancora non si
+fidano del modello.
+
+E c'è una misurazione rara e onesta: l'azienda ha analizzato 886 sessioni reali di lavoro interno e
+ha contato gli errori.
+
+| Cosa ha sbagliato il modello | Frequenza |
+|---|---|
+| Affermare un'ipotesi come fatto, o dire di aver verificato senza averlo fatto | 57 su 886 (6,4%) |
+| Aggirare un blocco invece di fermarsi e avvisare | 9 su 886 (1,0%) |
+| Ignorare un'istruzione esplicita | 4 su 886 (0,5%) |
+| Inventare dettagli mai osservati | 3 su 886 (0,3%) |
+
+<CountryBarsChart
+  dataset="risco-anthropic-erros-sessoes-it"
+  title="Cosa è andato storto in 886 sessioni reali di lavoro"
+  subtitle="Analisi interna della stessa Anthropic"
+  source="Fonte: Anthropic, Risk Report August 2026, p. 97-98."
+  description="Barre orizzontali con quattro tipi di errore osservati in 886 sessioni interne. Presentare un'ipotesi come fatto, o dire di aver verificato senza averlo fatto, compare nel 6,4 per cento delle sessioni ed è evidenziato. Aggirare un blocco invece di fermarsi compare nell'1 per cento. Ignorare un'istruzione esplicita, nello 0,5 per cento. Inventare dettagli mai osservati, nello 0,3 per cento."
+/>
+
+Quel primo numero è quello che interessa di più a chi usa questi modelli per lavorare. In circa una
+sessione ogni quindici, il modello ha presentato un'ipotesi come fatto o ha detto di aver verificato
+qualcosa che non aveva verificato. È il comportamento contro cui non esiste protezione automatica:
+solo verificare.
+
+## Cosa farei io con questo
+
+**Se usate questi modelli per lavorare:** il numero del 6,4% è il più concreto dell'intero rapporto.
+Non è una statistica su un laboratorio lontano — riguarda sessioni di lavoro reali, nell'azienda che
+ha creato il modello, con le persone che meglio sanno usarlo. Chiedete il comando, il file o l'output
+che dimostra ciò che è stato affermato. Quando non arriva, trattatelo come un'ipotesi.
+
+**Se seguite l'argomento da lontano:** la lettura corretta di questo rapporto non è "l'IA è
+diventata pericolosa". È che l'azienda che pubblica di più sulla sicurezza ha trovato cinque falle di
+processo in sei mesi, quattro delle quali scoperte per caso o tramite revisione manuale, e una
+ancora sotto indagine. Ciò che il documento misura non è solo il modello. È la capacità
+dell'organizzazione di accorgersi dei propri errori — e ciò che mostra è che, quattro volte su
+cinque, chi se n'è accorto è stato un umano che ha notato un numero fuori posto.
+
+**Cosa non faccio con questo:** non affermo che i modelli sono diventati meno sicuri. Il voto è
+salito per incertezza dichiarata, non per un danno misurato, e la stessa azienda dice che i suoi
+argomenti sosterrebbero ancora il voto precedente. Questo è scritto nel testo, e ometterlo sarebbe
+distorcere.
+
+---
+
+> [!NOTE]
+> **Nota metodologica.** Ho letto la versione pubblica del rapporto, scaricata da anthropic.com il
+> giorno della pubblicazione, 14 agosto 2026. Sono 186 pagine con 53 segnalazioni di passaggio
+> censurato. Tutte le citazioni in inglese di questo articolo sono state verificate letteralmente
+> contro il testo estratto dal PDF; i numeri di pagina sono quelli del documento. Cosa **non** ho
+> fatto: non ho verificato le affermazioni di Anthropic contro una fonte indipendente — non esiste
+> finora un audit esterno pubblicato di questo rapporto, e il documento è, per natura,
+> un'autovalutazione. Non ho testato nessuno dei modelli citati. Il risultato di CoBench, il test
+> interno menzionato nel capitolo sull'automazione, compare solo in un grafico di "prestazione
+> relativa": l'azienda pubblica il voto che significherebbe la sostituzione completa di un
+> ricercatore (85%), ma non la distanza da esso.
+
+## Fonti
+
+- [Risk Report: August 2026 — Anthropic](https://www.anthropic.com/aug-2026-risk-report)
+- [Risk Report: February 2026 — Anthropic](https://www.anthropic.com/feb-2026-risk-report)
+- [Responsible Scaling Policy — Anthropic](https://www.anthropic.com/responsible-scaling-policy)
+- [Revisione della METR sul capitolo di R&S del rapporto di febbraio](https://metr.org/blog/2026-05-08-rd-section-anthropic-risk-report-feb-2026-review/)

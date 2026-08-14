@@ -97,7 +97,7 @@ function run(label, command) {
 
 // ── Pipeline ────────────────────────────────────────────────────────────────────
 
-const totalSteps = SKIP_BUILD ? 6 : 8;
+const totalSteps = SKIP_BUILD ? 7 : 9;
 const startTime = Date.now();
 
 console.log('');
@@ -118,9 +118,23 @@ header(2, totalSteps, 'Markdown Lint — Qualidade da Fonte PT-BR');
 run('lint:md', 'npm run lint:md');
 success('Markdown limpo — sem erros estruturais');
 
-// ── STEP 3: i18n Parity ─────────────────────────────────────────────────────────
+// ── STEP 3: Largura de rótulo nos SVGs ──────────────────────────────────────────
+//
+// POR QUE ESTA ETAPA EXISTE: os componentes de chart desenham title/subtitle/
+// source como um `<text>` de uma linha só, sem quebra. O que não cabe no
+// viewBox some da IMAGEM sem quebrar o build e sem sair do DOM — ou seja,
+// nenhuma outra etapa deste pipeline percebe. Em 14/08/2026 havia 22 textos
+// assim em 4 artigos publicados, o pior perdendo um terço da procedência.
+// O medidor usa os TTF reais em scripts/charts/fonts/ e reprova acima de 100%
+// do orçamento; sem argumento, varre todo artigo de content/artigos/.
 
-header(3, totalSteps, 'i18n Parity — 4420 chaves × 4 locales');
+header(3, totalSteps, 'Charts — Rótulo cortado em SVG');
+run('charts:labels', 'python3 scripts/charts/checar-rotulos-svg.py');
+success('Nenhum rótulo estourando o viewBox');
+
+// ── STEP 4: i18n Parity ─────────────────────────────────────────────────────────
+
+header(4, totalSteps, 'i18n Parity — 4420 chaves × 4 locales');
 const parityOutput = run('i18n:parity', 'node scripts/i18n/validate-parity.mjs');
 // Verificar que o output confirma ALL CHECKS PASSED
 if (parityOutput && !parityOutput.includes('ALL CHECKS PASSED')) {
@@ -129,9 +143,9 @@ if (parityOutput && !parityOutput.includes('ALL CHECKS PASSED')) {
 }
 success('ALL CHECKS PASSED — 0 errors, 0 warnings');
 
-// ── STEP 4: Test Suite ──────────────────────────────────────────────────────────
+// ── STEP 5: Test Suite ──────────────────────────────────────────────────────────
 
-header(4, totalSteps, 'Test Suite — Testes Completos');
+header(5, totalSteps, 'Test Suite — Testes Completos');
 const testOutput = run('npm test', 'npx vitest run');
 // Extrair contagem de testes (strip ANSI escape codes)
 if (testOutput) {
@@ -147,30 +161,30 @@ if (testOutput) {
   }
 }
 
-// ── STEP 5: SEO Validate ────────────────────────────────────────────────────────
+// ── STEP 6: SEO Validate ────────────────────────────────────────────────────────
 
-header(5, totalSteps, 'SEO — Canonical URLs, Hreflang, Meta Tags');
+header(6, totalSteps, 'SEO — Canonical URLs, Hreflang, Meta Tags');
 run('seo:validate', 'node scripts/seo/validate-pre-deploy.mjs');
 success('Validação SEO completa');
 
-// ── STEP 6: Rich Results ────────────────────────────────────────────────────────
+// ── STEP 7: Rich Results ────────────────────────────────────────────────────────
 
-header(6, totalSteps, 'SEO — JSON-LD, DID, Rich Results');
+header(7, totalSteps, 'SEO — JSON-LD, DID, Rich Results');
 run('seo:rich-results', 'node scripts/seo/validate-rich-results.mjs');
 success('Rich Results e JSON-LD validados');
 
-// ── STEP 7: E2E Playwright (Optional — sota:full only) ──────────────────────
+// ── STEP 8: E2E Playwright (Optional — sota:full only) ──────────────────────
 
 if (!SKIP_BUILD) {
-  header(7, totalSteps, 'E2E — Playwright Adversarial Tests');
+  header(8, totalSteps, 'E2E — Playwright Adversarial Tests');
   run('test:e2e', 'npx playwright test');
   success('E2E Playwright — todos os testes passaram');
 }
 
-// ── STEP 8: Build (Optional) ────────────────────────────────────────────────────
+// ── STEP 9: Build (Optional) ────────────────────────────────────────────────────
 
 if (!SKIP_BUILD) {
-  header(8, totalSteps, 'Build — SSG Completo (next build)');
+  header(9, totalSteps, 'Build — SSG Completo (next build)');
   run('build', 'npm run build');
   success('Build SSG completo sem erros');
 }
@@ -185,6 +199,7 @@ console.log(`${BOLD}${GREEN}  🏆 SOTA VALIDATION PASSED — Score 1000/1000${R
 console.log(`${BOLD}${GREEN}═══════════════════════════════════════════════════════════════${RESET}`);
 console.log(`${GREEN}  ✅ TypeScript:     0 erros${RESET}`);
 console.log(`${GREEN}  ✅ Markdown Lint:  limpo${RESET}`);
+console.log(`${GREEN}  ✅ Charts:          nenhum rótulo cortado${RESET}`);
 console.log(`${GREEN}  ✅ i18n Parity:    ALL CHECKS PASSED${RESET}`);
 console.log(`${GREEN}  ✅ Test Suite:     todos passaram${RESET}`);
 console.log(`${GREEN}  ✅ SEO:            validado${RESET}`);

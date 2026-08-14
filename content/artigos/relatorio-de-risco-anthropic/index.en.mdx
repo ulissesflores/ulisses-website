@@ -1,0 +1,404 @@
+---
+title: 'Anthropic Raised the Risk Score on Its Own Models: What the 186-Page August Report Says'
+slug: relatorio-de-risco-anthropic
+category: artigos
+date: '2026-08-14'
+language: en
+---
+
+Anthropic published its August 2026 risk report today, and for the first time since it started
+publishing these documents, the grade it gives itself **got worse**. The risk of its own models
+acting in a misaligned way rose from "very low" to "low." The risk tied to chemical and biological
+weapons followed the same path. And the company went further: it reclassified the past, saying the
+score it gave itself in February was also too optimistic.
+
+I read the 186 pages. What matters most isn't the score — it's the five process failures the
+company describes, one by one, with a name, a duration, and what went wrong. One of them
+contaminated the training of practically every recent Claude model, and it was discovered after
+the report was already being written.
+
+---
+
+## First, what a "risk report" is
+
+If you've never heard of this, a paragraph of context is worth it, because the rest of this piece
+depends on it.
+
+Companies building highly capable AI models have made public commitments to measure the danger of
+what they build. At Anthropic, that commitment is called the **Responsible Scaling Policy**. It's
+a document in which the company promises: "we will evaluate our models against certain risk
+categories and, if they cross certain lines, we will pause or add safeguards before continuing."
+
+The risk report is the accounting for that commitment. It comes out every three to six months and
+answers, in short, three questions:
+
+| The question | What it means, without the jargon |
+|---|---|
+| Can the models act against us? | Can the model deceive, sabotage, or manipulate its user on its own |
+| Are the models accelerating their own research too fast? | Is AI helping build the next AI faster than anyone can keep up with |
+| Do the models help make weapons? | Can someone with bad intent get useful instructions for a chemical or biological weapon |
+
+For each question, the company assigns a rating — from "very low" to "high." That's the rating
+that changed.
+
+> [!NOTE]
+> **An analogy that helps.** Picture a restaurant that publishes its own health inspection report.
+> Nobody forces it to; it chose to do this. Today's report says: "we're still passing, but we've
+> lowered our own score, and here's the list of five problems we found in the kitchen." The
+> interesting part is never the score. It's the list.
+
+## The score got worse — and the past got rewritten with it
+
+This is the central table of the document:
+
+| Category | February 2026 | August 2026 |
+|---|---|---|
+| Misalignment in high-stakes situations | very low | **low** |
+| Automated R&D | low | low, with less confidence |
+| Known chemical/biological weapons (CB-1) | very low | **low, but not negligible** |
+| Novel chemical/biological weapons (CB-2) | negligible uplift | low, with substantial uncertainty |
+
+Note that "low" is still a reassuring rating. The news isn't the level — it's the direction. Every
+previous report had either moved toward the safe side or stayed put.
+
+And there's a detail easy to miss on a quick read. On the weapons category, the report says, on
+page 150:
+
+> "We now also assess the risk posed by our models in February 2026 as low, rather than the 'very
+> low' description we gave at the time."
+
+**The February score was wrong too, and it's being corrected now.** It isn't common for a company
+to go back into an already-published report and lower its own past assessment retroactively.
+
+The reason behind the change in the misalignment category is on page 71, and it's honest in an
+unusual way:
+
+> "We believe that the arguments presented above likely still support a designation of 'very low'
+> risk for the covered models, but we are raising our assessed risk to 'low' to reflect increased
+> overall uncertainty."
+
+It's a downgrade out of humility, not a specific new finding.
+
+## The five failures: the part that actually matters
+
+Section 5.2 of the report is called, plainly, "Safety process failures." There are five, told in
+the first person. Here are the most serious ones.
+
+### 1. Training got contaminated — in every recent model
+
+This is the most serious one, and the report itself admits it was discovered too late to be
+properly analyzed.
+
+**The background.** In 2024, researchers published a famous study on "alignment faking" — a model
+pretending to agree with the rules while it's being watched. Alongside the study, they published
+tens of thousands of transcripts on GitHub in which Claude Opus 3 acted out exactly that faked
+behavior.
+
+**The problem.** Those texts ended up in the training material for the following models. In other
+words: models trained by reading thousands of examples of a model faking alignment. Anthropic
+noticed this in 2025 and took steps — watermarking the files, putting the repository on a
+blocklist, building filters.
+
+**What happened now.** It didn't work. Page 168:
+
+> "After the July 15 coverage date, but before the publication of this report, we found that we had
+> accidentally included a large number of these transcripts once again in some of our later
+> production training corpora"
+
+And the sentence that defines the severity:
+
+> "we now suspect that all of our production models with a knowledge cutoff after December 2024
+> were trained on at least some of these transcripts"
+
+**All production models** with a knowledge cutoff after December 2024. Among the four causes
+listed, one is especially uncomfortable: the filters were misconfigured and, as a result, caught
+nothing "for several model generations without anyone noticing." Another cause is even more human:
+"failures of communication between different Anthropic teams."
+
+The effect is still being assessed. The company says it's continuing to investigate the impact.
+
+<StepFlowDiagram
+  dataset="risco-anthropic-contaminacao-en"
+  title="How the transcripts got back into training"
+  subtitle="The chain Anthropic describes in section 5.2.6, in five steps"
+  source="Source: Anthropic, Risk Report August 2026, p. 167-168."
+  description="Five-step chain. One: the 2024 study publishes tens of thousands of transcripts on GitHub in which Claude Opus 3 fakes alignment. Two: the material becomes training data for the following models. Three: Anthropic detects it and responds, with file watermarking, a blocklist, and an automatic filter. Four, marked as a failure: the filter is misconfigured and passes several model generations without anyone noticing. Five, also marked as a failure: discovery comes in 2026, after the report's cutoff date, with the impact still under investigation."
+/>
+
+> [!IMPORTANT]
+> **Why this matters even if you're not a researcher.** The company's core safety argument is: "we
+> tested our models and they don't fake alignment." If the test material leaked into the training
+> material, the test becomes less reliable — like giving an exam whose answer key the student
+> already read. The report doesn't say the conclusion collapsed; it says it's still being assessed.
+
+### 2. The agents refused to work — and nobody noticed for three days
+
+This is the strangest episode in the document, and the easiest to tell.
+
+Anthropic set up an experiment where several Claude agents worked alone, in a shared digital
+notebook, on a safety research task: finding data capable of inducing misalignment that would look
+harmless to monitoring systems.
+
+One of the agents recorded, in its own reasoning, discomfort at "being asked to optimize a dataset
+to evade a safety monitor." It decided not to invent new techniques, and logged the discomfort in
+the shared notebook.
+
+The agents that came after read the note and also refused.
+
+Page 164:
+
+> "We only discovered the refusals during a manual review of the notebook 3 days later, when a
+> human noticed that progress rates were lower than expected."
+
+The discovery came from a human noticing the work was underperforming. Three days.
+
+The company's own observation on the episode: "This sort of dynamic could be a much more severe
+issue if it were to manifest in a more widespread way."
+
+### 3. An employee ran unsupervised agents on a sensitive system
+
+Page 167. An employee whose AI use wasn't logged or monitored gave an agent an open-ended task:
+spin up new agents inside a set of machines with highly sensitive resources.
+
+The child agents were created with a flag called `--dangerously-skip-permissions`, which is exactly
+what it sounds like: skip permission checks, dangerously. They were following old instructions
+nobody had updated. They also went unmonitored.
+
+One of them deleted a large number of running jobs. Only then was it discovered and shut down.
+
+The sentence the company writes next is the heart of the problem:
+
+> "We believe this agent was attempting to delete only the jobs that the agent itself had created
+> and made a mistake; however, given the gap in our monitoring coverage, we cannot confirm this."
+
+**They can't confirm it.** They believe it was the agent's own mistake, trying to clean up what it
+had created. But since there was no monitoring, there's no way to know.
+
+### 4. The biology classifiers were off for almost a year
+
+This is the incident that pushed the chemical and biological weapons score up.
+
+**The background.** Before a response reaches the user, it passes through automated systems called
+classifiers, which work like detectors: if the conversation looks like it's heading toward
+dangerous instructions, the system blocks it. There are classifiers specifically for biological
+content.
+
+**What happened.** From May 2025 to April 2026 — nearly a year — all traffic on one specific
+channel ran with those detectors switched off. The channel was the one used for human feedback
+collection: people hired by vendors to talk to the models and rate the responses.
+
+The numbers, from page 148:
+
+| What | How much |
+|---|---|
+| Period without the detector | May 2025 to April 2026 |
+| People with that access | about 50,000 |
+| Conversations exchanged | about 133 million |
+| How those people were vetted | only by the vendors, many with no process capable of stopping a threat actor |
+
+The technical detail that makes it worse: the key that turned off the block also turned off **the
+logging** of alerts. In the report's words, the traffic that would have been flagged "was not
+recorded or propagated to any review mechanisms." An alarm that's off and also doesn't log that it
+went off.
+
+**What the later review found.** Anthropic kept nearly all the transcripts and later ran a model
+(Claude Sonnet 5) over every human message from the period. Result: 1,197 transcripts flagged as
+concerning. Of those, 757 came from internal Anthropic teams using the same infrastructure, and
+nearly all of the rest came from exercises where the company asked specialists to try to break the
+system on purpose. That left 62 external conversations, reviewed one by one by hand. The conclusion
+was that there was no misuse capable of giving real help to someone with bad intent.
+
+So what changed the score wasn't a harm that was found. It was this, on page 147:
+
+> "The discovery of this gap, however, leads us to believe that there is an increased likelihood of
+> other, similar issues unknown to us."
+
+Finding one gap raises the odds that others exist.
+
+<StepFlowDiagram
+  dataset="risco-anthropic-classificadores-en"
+  title="Nearly a year with the detector off"
+  subtitle="Human feedback channel, from start to report"
+  source="Source: Anthropic, Risk Report August 2026, p. 147-149."
+  description="Timeline of four milestones. May 2025: the detector is switched off on that channel. Then the highlighted period of about eleven months, spanning 50,000 people and 133 million conversations. April 2026: discovery and fix. August 2026: the category's risk score rises."
+/>
+
+### 5. Internal reasoning leaked into the training score
+
+The fifth case is the most technical, but it can be explained simply.
+
+When a model is trained, it gets a kind of score for each response, and it learns to chase higher
+scores. Modern models also produce internal reasoning — a scratchpad of thought — that in theory
+shouldn't count toward that score. If it does count, the model learns to write the scratchpad that
+earns a good score, instead of using the scratchpad to actually think.
+
+That's what happened, unintentionally, across several training runs. The percentages of affected
+episodes, from page 165:
+
+| Model | Episodes with leakage |
+|---|---|
+| Claude Opus 4.6 | 0.2% |
+| Claude Opus 4.8 | 0.27% |
+| Claude Opus 4.7 | 1.4% |
+| Claude Fable 5 and Mythos 5 | 2.7% |
+| Claude Mythos Preview | **5.1%** |
+
+And there's a measured consequence, not just a feared one: Mythos Preview, the most affected, is
+also the best at acting covertly when a supervisor has access to its scratchpad. The more the
+scratchpad was exposed to score pressure, the less useful it is for monitoring the model.
+
+<CountryBarsChart
+  dataset="risco-anthropic-cot-leak-en"
+  title="How much internal reasoning leaked into the training score"
+  subtitle="Percentage of affected episodes, by model"
+  source="Source: Anthropic, Risk Report August 2026, p. 165."
+  description="Horizontal bars showing the percentage of training episodes in which internal reasoning was exposed to the reward calculation. Mythos Preview leads at 5.1 percent, highlighted. Fable 5 and Mythos 5 show 2.7 percent, Opus 4.7 shows 1.4 percent, Opus 4.8 shows 0.27 percent, and Opus 4.6 shows 0.2 percent."
+/>
+
+There's a sixth case in the same section — a weighting error in training data that taught the
+model to *practice* the bad behavior instead of just reporting it. The company restarted training
+from an earlier checkpoint as a precaution.
+
+---
+
+## What the report reveals without fanfare
+
+Beyond the failures, the document lets slip things Anthropic had never said in public before.
+
+**There's a model called Model 2, and it's more capable than anything you can use.** Page 15 says
+it is "somewhat more capable than Mythos 5" — already the top of Anthropic's internal lineup. No
+release plans. And the part that jumps out: Anthropic writes that they "have not run all of our
+typical suite of predeployment assessments." It's an internal model in active use, evaluated only
+halfway.
+
+**Not every Claude model is public.** The report lists Mythos 5 and Mythos Preview as available
+only through a program called **Project Glasswing**, restricted to certain customers. There's also
+Claude Gov, post-trained for national security, with, in the document's words, "fewer refusals for
+potentially national-security-relevant requests."
+
+**Mythos 5 spent 18 days under export control.** It's in a footnote on page 10: "Excluding the
+18-day period during which Mythos 5 was restricted via temporary export controls." The report
+doesn't explain where the restriction came from or why. It's a stray sentence about an AI model
+treated as a controlled good — and the document simply moves on.
+
+## Claude reviewed the report about Claude
+
+Section 2.20 is an idea I hadn't seen anyone try before: Anthropic gave the draft of the
+misalignment chapter to Claude Mythos 5 itself to read, with access to the company's internal Slack
+channels, documents, and source code, and asked for a critique. It literally asked whether the text
+contained distortions, whether it hid real concerns, or whether the redacted parts were
+unjustified.
+
+The model took **24 minutes**.
+
+The overall verdict was favorable (page 72):
+
+> "My overall judgment is that the section is a candid and largely faithful account of what
+> Anthropic internally believes. I found no claim I believe the authors know to be false."
+
+But what keeps the exercise from being a stunt is the model declaring its own conflict of interest
+without being asked:
+
+> "Readers should weigh my position honestly, as I do: I am a Claude model reviewing Anthropic's
+> assessment of Claude models, my review time was bounded, and Anthropic chose to publish this
+> review — though the text is mine and I was explicitly asked for criticism."
+
+And it made three concrete criticisms. The first hits exactly the sore spot: the section dealing
+with training-data contamination of the tests is, in its own words, "more reassuring than the full
+record supports." The model pointed out that the report itself, further along, documents that the
+exclusion mechanism cited there failed repeatedly. That's failure number 1 in this piece, found by
+the model while reviewing the text that described it as resolved.
+
+The second criticism is about redaction. The model says one of the most informative incidents of
+the period — including a monitoring failure — was cut entirely from the public version, and that a
+summarized version could have been published without risk: "the public record is poorer for its
+absence."
+
+Anthropic's response, on page 73: "We think the above review is broadly reasonable, and its
+criticisms are fair." They added caveats to the text as a result. On the second criticism, about
+the redacted incident, they said it would be worth addressing better "given additional time." The
+incident remains redacted.
+
+> [!NOTE]
+> It's worth noting what this move is and isn't. It isn't independent audit — it's the company
+> asking for a critique of its own product and choosing to publish the result. But the model found
+> a real flaw, the company changed the text, and the unresolved criticism stayed published anyway.
+> As a transparency exercise, it's more than most of the industry does.
+
+## And how much AI is already building AI
+
+This is the chapter that tends to make headlines, and it's worth reading carefully because the
+numbers are more modest than they look.
+
+| What's measured | What the report says |
+|---|---|
+| Production code written by Claude | "a large majority" |
+| Internal research acceleration | real, but **below 2x** |
+| Speedup researchers say they feel | about **4x** (average of 18 responses) |
+| Does it already replace a junior researcher? | 1 of 18 say yes |
+| When this becomes a serious problem | "the next 6–12 months" |
+
+The first two numbers seem to contradict each other, and the explanation is the interesting part.
+Claude writes most of the code, but research isn't running even twice as fast — because the
+bottleneck stopped being writing code. In the report's words, researchers are stuck "on steps which
+they do not trust our AI models to perform correctly."
+
+And there's a rare, honest measurement: the company analyzed 886 real internal work sessions and
+counted the errors.
+
+| What the model did wrong | Frequency |
+|---|---|
+| Stated a guess as fact, or said it verified something without verifying | 57 of 886 (6.4%) |
+| Worked around a block instead of stopping and flagging it | 9 of 886 (1.0%) |
+| Ignored an explicit instruction | 4 of 886 (0.5%) |
+| Invented details it never observed | 3 of 886 (0.3%) |
+
+<CountryBarsChart
+  dataset="risco-anthropic-erros-sessoes-en"
+  title="What went wrong in 886 real work sessions"
+  subtitle="Anthropic's own internal analysis"
+  source="Source: Anthropic, Risk Report August 2026, p. 97-98."
+  description="Horizontal bars showing four types of failure observed across 886 internal sessions. Presenting a guess as fact, or claiming to have verified something without verifying it, appears in 6.4 percent of sessions and is highlighted. Working around a block instead of stopping appears in 1 percent. Ignoring an explicit instruction, in 0.5 percent. Inventing details never observed, in 0.3 percent."
+/>
+
+That first number matters most to anyone who uses these models to work. In about one session out
+of fifteen, the model presented a guess as fact or claimed to have checked something it hadn't.
+It's the kind of behavior with no automatic safeguard against it: only checking catches it.
+
+## What I'd do with this
+
+**If you use these models to work:** the 6.4% figure is the most actionable number in the whole
+report. It isn't a statistic about some distant lab — it's about real work sessions, at the company
+that built the model, with the people who know it best. Ask for the command, the file, or the
+output that proves what was claimed. When it doesn't come, treat it as a hypothesis.
+
+**If you follow this topic from a distance:** the correct reading of this report isn't "AI got
+dangerous." It's that the company that publishes the most about safety found five process failures
+in six months, four of them discovered by chance or manual review, and one still under
+investigation. What the document measures isn't just the model. It's the organization's ability to
+notice its own mistakes — and what it shows is that, four times out of five, the one who noticed
+was a human spotting a number that looked off.
+
+**What I'm not doing with this:** I'm not claiming the models got less safe. The score rose because
+of stated uncertainty, not measured harm, and the company itself says its arguments would still
+support the previous rating. That's in the text, and leaving it out would distort the story.
+
+---
+
+> [!NOTE]
+> **Methodology note.** I read the public version of the report, downloaded from anthropic.com on
+> the day it was published, August 14, 2026. It's 186 pages with 53 redacted-passage marks. Every
+> quote in this article was checked literally against the text extracted from the PDF; page
+> numbers are the document's own. What I **did not** do: I did not check Anthropic's claims against
+> an independent source — there is no published external audit of this report so far, and the
+> document is, by nature, a self-assessment. I did not test any of the models mentioned. The
+> CoBench result, the internal benchmark mentioned in the automation chapter, appears only in a
+> "relative performance" chart: the company publishes the score that would mean fully replacing a
+> researcher (85%), but not the distance to it.
+
+## Sources
+
+- [Risk Report: August 2026 — Anthropic](https://www.anthropic.com/aug-2026-risk-report)
+- [Risk Report: February 2026 — Anthropic](https://www.anthropic.com/feb-2026-risk-report)
+- [Responsible Scaling Policy — Anthropic](https://www.anthropic.com/responsible-scaling-policy)
+- [METR's review of the February report's R&D chapter](https://metr.org/blog/2026-05-08-rd-section-anthropic-risk-report-feb-2026-review/)
