@@ -33,6 +33,41 @@ export function localizeArtigo(artigo: Artigo, locale: Locale): Pick<Artigo, 'ti
 
 export const artigos: readonly Artigo[] = [
   {
+    slug: 'glm-5-3',
+    title:
+      'GLM-5.3: a Z.ai adiou os pesos citando capacidade cyber e publicou 2.436 vulnerabilidades como prova — 2.239 delas nunca saíram da descoberta',
+    summary:
+      'A Z.ai atrasou os pesos abertos do GLM-5.3 alegando que a capacidade ofensiva do modelo cresceu mais rápido que o esperado, e ofereceu como prova um ledger público de 2.436 vulnerabilidades em software real. Baixei e contei o ledger inteiro: 92% dos achados nunca foram reportados a ninguém, exatamente um consta como enviado ao mantenedor, não há prazo de embargo declarado e nenhum registro atribui a descoberta a um modelo — 21% deles usaram o Claude Code como harness.',
+    date: '2026-08-14',
+    tags: ['glm', 'z.ai', 'llm', 'benchmarks', 'open-weights', 'seguranca'],
+    i18n: {
+      en: {
+        title:
+          'GLM-5.3: Z.ai delayed the weights citing cyber capability and published 2,436 vulnerabilities as proof — 2,239 of them never left discovery',
+        summary:
+          'Z.ai delayed GLM-5.3’s open weights claiming the model’s offensive capability grew faster than expected, and offered as proof a public ledger of 2,436 vulnerabilities in real software. I downloaded and counted the whole ledger: 92% of the findings were never reported to anyone, exactly one is marked as sent to a maintainer, no embargo deadline is declared anywhere, and not a single record credits a model — 21% of them used Claude Code as the harness.',
+      },
+      es: {
+        title:
+          'GLM-5.3: Z.ai retrasó los pesos citando capacidad cyber y publicó 2436 vulnerabilidades como prueba — 2239 de ellas nunca salieron del descubrimiento',
+        summary:
+          'Z.ai retrasó los pesos abiertos del GLM-5.3 alegando que la capacidad ofensiva del modelo creció más rápido de lo esperado, y ofreció como prueba un ledger público de 2436 vulnerabilidades en software real. Descargué y conté el ledger entero: el 92 % de los hallazgos nunca fue reportado a nadie, exactamente uno consta como enviado al mantenedor, no hay plazo de embargo declarado y ningún registro atribuye el descubrimiento a un modelo — el 21 % usó Claude Code como harness.',
+      },
+      it: {
+        title:
+          'GLM-5.3: Z.ai ha rinviato i pesi citando la capacità cyber e ha pubblicato 2.436 vulnerabilità come prova — 2.239 non sono mai uscite dalla scoperta',
+        summary:
+          'Z.ai ha rinviato i pesi aperti di GLM-5.3 sostenendo che la capacità offensiva del modello è cresciuta più in fretta del previsto, e ha offerto come prova un ledger pubblico di 2.436 vulnerabilità in software reale. Ho scaricato e contato l’intero ledger: il 92% delle scoperte non è mai stato segnalato a nessuno, esattamente una risulta inviata al manutentore, non è dichiarata alcuna scadenza di embargo e nessun record attribuisce la scoperta a un modello — il 21% ha usato Claude Code come harness.',
+      },
+      he: {
+        title:
+          'GLM-5.3: ‏Z.ai דחתה את המשקלים בטענה ליכולת סייבר ופרסמה 2,436 פרצות כהוכחה — 2,239 מהן מעולם לא יצאו משלב הגילוי',
+        summary:
+          'חברת Z.ai דחתה את שחרור המשקלים הפתוחים של GLM-5.3 בטענה שהיכולת ההתקפית של המודל גדלה מהר מהצפוי, והציעה כהוכחה ledger ציבורי של 2,436 פרצות בתוכנה אמיתית. הורדתי וספרתי את ה־ledger כולו: 92% מהממצאים מעולם לא דווחו לאיש, בדיוק אחד מסומן כנשלח למתחזק, לא מוצהר שום מועד embargo, ואף רשומה אינה מייחסת את הגילוי למודל — ב־21% מהם שימש Claude Code כ־harness.',
+      },
+    },
+  },
+  {
     slug: '2026-07-24-claude-opus-5',
     title:
       'Opus 5: a inteligência de fronteira ficou pela metade do preço — e o Reddit foi zoar o gráfico',

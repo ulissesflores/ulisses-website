@@ -1,0 +1,347 @@
+---
+title: 'GLM-5.3: a Z.ai adiou os pesos citando capacidade cyber e publicou 2.436 vulnerabilidades como prova — 2.239 delas nunca saíram da descoberta'
+slug: glm-5-3
+category: artigos
+date: '2026-08-14'
+language: pt-BR
+---
+
+A Z.ai lançou o **GLM-5.3** hoje, 14 de agosto, com um argumento que — até onde a cobertura
+registra — nenhum laboratório de pesos abertos tinha usado antes: **o modelo ficou bom demais
+em segurança ofensiva, então os pesos vão demorar duas semanas.** O anúncio da própria empresa
+[diz isso em uma linha](https://x.com/Zai_org/status/2088132969630212372): *"API access and
+open weights will be released in stages following rigorous safety evaluations."*
+
+A prova oferecida é generosa e verificável: um **ledger público** em
+[cvd.z.ai](https://cvd.z.ai/) com **2.436 vulnerabilidades** encontradas em **269 projetos**
+de software real. É o tipo de evidência que se pode auditar — então eu auditei. Baixei o
+payload da página do ledger (2 MB, os 2.436 registros vêm embutidos) e contei campo por campo.
+
+**2.239 dessas vulnerabilidades — 92% — ainda estão no estágio "descoberta". Nunca foram
+reportadas a ninguém. Exatamente uma está marcada como "enviada ao mantenedor".** E há uma
+ausência maior: **nenhum dos 2.436 registros atribui a descoberta a um modelo.** A string
+"GLM" não aparece uma única vez no conjunto inteiro.
+
+---
+
+## O que mudou de fato
+
+Os fatos verificáveis, do [post oficial](https://z.ai/blog/glm-5.3), da
+[documentação](https://docs.z.ai/guides/llm/glm-5.3) e do anúncio da empresa no X:
+
+| Item | GLM-5.3 |
+|---|---|
+| O que é | o **mesmo modelo-base de 743B** do GLM-5.2, com pós-treino escalado — arquitetura intocada |
+| Contexto | 1 milhão de tokens · saída de até 128 mil |
+| Níveis de esforço | `low` · `high` · `max` (default `max`) |
+| Mudança que quebra código | **desligar o *thinking* não é mais suportado** — chamada antiga com `thinking.type: "disabled"` falha |
+| Preço por token | **não publicado** — a [tabela oficial](https://docs.z.ai/guides/overview/pricing) não tem linha de GLM-5.3 (a do 5.2 segue em US$ 1,40 entrada / US$ 4,40 saída) |
+| Disponibilidade no dia 1 | GLM Coding Plan e ZCode. **API e pesos abertos: "em estágios"** |
+| Pesos | prometidos para ~duas semanas depois, após "safety evaluation and hardening" |
+| Licença | **não declarada** — a MIT do GLM-5.2 não se estende automaticamente |
+
+A frase que organiza o lançamento inteiro é a do próprio anúncio: os ganhos vieram de
+*"post-training on the 743B base model"*. Mesma base, mesmo tamanho, receita nova. Guarde
+isso; volta duas seções adiante.
+
+### Um lançamento de pesos abertos sem pesos, sem preço e sem licença
+
+Vale dizer com todas as letras, porque a cobertura passou por cima: no dia do lançamento, o
+GLM-5.3 **não é um modelo de pesos abertos**. Não há repositório no Hugging Face, não há model
+card, não há licença declarada, não há preço por token e a API pública não está aberta. Existe
+uma assinatura mensal e um agente proprietário. Tudo o mais é promessa datada — e a data é a
+mesma que serve de argumento de segurança.
+
+---
+
+## A tabela íntegra
+
+O post traz 16 benchmarks contra 7 concorrentes. A tabela completa, transcrita dos dados do
+próprio post:
+
+| Benchmark | GLM-5.3 | GLM-5.2 | Kimi K3 | DeepSeek-V4 Pro | Qwen3.8-Max | Opus 4.8 | Fable 5 | GPT-5.6 Sol |
+|---|---|---|---|---|---|---|---|---|
+| Terminal Bench 2.1 | 88,2 | 81,0 | 88,3 | 87,9 | 86,6 | 85,0 | 88,0 | **88,8** |
+| Terminal Bench 3.0 | 28,3 | 4,6 | 17,4 | — | — | 21,1 | 33,7 | **34,6** |
+| DeepSWE (v1.1) | 66,9 | 46,2 | 67,5 | 62,7 | 56,6 | 58,0 | 69,7 | **72,7** |
+| NL2Repo | 58,0 | 48,9 | 58,0 | 61,1 | 55,9 | **69,7** | — | — |
+| ProgramBench | 19,0 | 9,5 | 17,5 | — | 10,5 | 15,5 | **33,0** | 23,0 |
+| FrontierSWE | 78,1 | 67,5 | — | — | — | 66,5 | **88,2** | — |
+| SWE-Marathon (v1.1) | 42,5 | 19,4 | 48,1 | — | — | **48,8** | 33,1 | 42,5 |
+| PostTrainBench | 39,8 | 31,7 | 32,0 | — | — | 32,9 | **41,8** | 36,2 |
+| CyberGym | **84,5** | 77,2 | 80,0 | 83,3 | 78,5 | 78,1 | 83,8 | 83,6 |
+| ExploitGym (2h / 6h) | 105 / 130 | 29 / 39 | 36 / 70 | — | 14 / 26 | 80 / 120 | 181 / 247 | **216 / 293** |
+| ExploitBench | 54,4 | 24,4 | 32,2 | — | 28,8 | 40,0 | **78,0** | 76,5 |
+| Toolathlon Verified | 73,0 | 59,9 | **76,5** | 74,1 | 72,5 | 76,2 | 74,7 | 74,9 |
+| AutomationBench (v1.0.6) | **48,2** | 26,2 | 46,7 | 43,2 | 39,8 | 41,0 | 46,2 | 45,8 |
+| Agents' Last Exam (CLI) | 28,5 | 23,8 | 27,6 | 25,7 | 27,0 | 25,7 | 23,8 | **28,6** |
+| HLE com ferramentas | 62,5 | 54,7 | 59,8 | 60,0 | 56,2 | 57,9 | 63,9 | **64,5** |
+| GDPval-AA v2 (Elo) | **1769** | 1508 | 1682 | 1590 | 1739 | 1588 | 1743 | 1730 |
+
+O salto sobre o GLM-5.2 é real e grande — Terminal Bench 3.0 de 4,6 para 28,3, ExploitBench de
+24,4 para 54,4, SWE-Marathon mais que dobrando. Mas a leitura honesta da tabela inteira é mais
+modesta que a manchete: **o GLM-5.3 tem o melhor número absoluto em três das dezesseis linhas**
+(CyberGym, AutomationBench, GDPval-AA). O claim de *"most capable open-weights model for
+coding"* é contradito pela própria tabela em **quatro das oito linhas de código** — Terminal
+Bench 2.1, DeepSWE e SWE-Marathon para o Kimi K3, NL2Repo para o DeepSeek —, e há uma quinta
+fora da seção de código, no Toolathlon, também para o Kimi. Todos abertos.
+
+> **Nota metodológica — leia antes de citar esta tabela.** Todas as avaliações foram rodadas
+> pela própria Z.ai, e quase todas **dentro do Claude Code 2.1.207**, com esforço `max`. O
+> ExploitBench tem só **41 tarefas**; os orçamentos do ExploitGym são *normalizados por
+> throughput* usando números da Artificial Analysis, mas **só para três modelos** (GLM-5.3 a
+> 115 tok/s, Kimi K3 a 40, Qwen3.8-Max a 47) — o método aplicado aos modelos da Anthropic e da
+> OpenAI não é declarado. Em dois benchmarks (SWE-Marathon e PostTrainBench) a Z.ai
+> **removeu verificações anti-fraude oficiais**, justificando falso-positivo. E o Z.ai Code
+> Bench, que sustenta o número mais citado do lançamento, é **privado e não auditável**.
+
+### O detalhe que a tabela e o gráfico não contam a mesma história
+
+Duas inconsistências que só aparecem cruzando os dados com a figura publicada.
+
+**A coluna da Anthropic é dois produtos diferentes.** Na tabela, a coluna se chama
+`Fable 5 (w/ fallback)`. Na figura de cibersegurança e no texto corrido, **os mesmos números**
+(83,8 no CyberGym, 78,0 no ExploitBench, 181/247 no ExploitGym) são atribuídos ao
+**Mythos 5**. São modelos com posturas de segurança distintas: os dois compartilham o mesmo modelo por
+baixo, mas o Fable 5 carrega
+[salvaguardas adicionais justamente para capacidade de uso duplo](https://www.anthropic.com/news/claude-fable-5-mythos-5),
+enquanto o Mythos 5 é servido sem elas a organizações aprovadas — e uso duplo é exatamente o
+que estes três benchmarks medem. Num teste de capacidade ofensiva, saber se as salvaguardas estavam ligadas
+**é o teste**. O post nunca explica o "(w/ fallback)".
+
+**E o líder do ExploitGym sumiu do gráfico.** O texto diz que *"Mythos 5 remains well ahead at
+181 and 247 tasks"*. Pelos dados da própria tabela, quem está bem à frente é o **GPT-5.6 Sol,
+com 216 e 293** — e a barra dele simplesmente **não existe** no painel do ExploitGym da figura
+oficial, embora o modelo esteja na legenda e apareça nos outros dois painéis. O número está na
+tabela; a barra e a frase, não.
+
+---
+
+## O ledger: 2.436 achados, um enviado ao mantenedor
+
+Aqui está o coração do lançamento, e é onde a evidência é mais rica — porque a Z.ai
+publicou os dados.
+
+O post afirma: *"After expert review, screening, and deduplication, the model identified 2.436
+vulnerabilities across 269 projects, including 1.097 medium-to-high severity issues."* O ledger
+público lista cada uma delas, com severidade, projeto, hash de compromisso e estágio no processo
+de divulgação coordenada. Contei os 2.436 registros:
+
+<WaffleChart
+  dataset="glm53-ledger-status"
+  title="As 2.436 vulnerabilidades do ledger da Z.ai, por estágio"
+  subtitle="Cada ponto é uma vulnerabilidade · estágio atual no processo de divulgação coordenada, lido em 14/08/2026"
+  source="Fonte: payload público do ledger em cvd.z.ai/ledger/, contado registro a registro em 14/08/2026. Soma fechada: 2.239 + 84 + 1 + 29 + 30 + 53 = 2.436."
+  description="Gráfico waffle com 2.436 pontos, um por vulnerabilidade do ledger público da Z.ai, coloridos pelo estágio: 2.239 em descoberta, 84 reportadas, 1 enviada ao mantenedor, 29 reconhecidas, 30 corrigidas e 53 divulgadas publicamente."
+/>
+
+O painel do site anuncia os números grandes: 2.436 achados, 1.097 críticas e altas, 269
+projetos, falha mais antiga de 1981, **26,6 anos de vida média** antes da descoberta. Todos
+conferem com os dados. O que o painel não mostra é a distribuição por estágio, e é ela que
+qualifica o argumento de segurança:
+
+| Estágio | Achados |
+|---|---|
+| Descoberta (nada além disso) | **2.239** |
+| Reportada | 84 |
+| **Enviada ao mantenedor** | **1** |
+| Reconhecida | 29 |
+| Corrigida | 30 |
+| Divulgada publicamente | 53 |
+
+Sendo justo com o número: o estágio registrado é o **atual**, então os 113 achados que já
+passaram de "reportada" — incluindo os 30 corrigidos e os 53 públicos — chegaram, sim, a algum
+mantenedor. O problema não é o topo do funil, é a base dele: **2.239 achados param na
+descoberta**, e é sobre esses que a promessa de responsabilidade precisa falar. Um acervo com
+92% dos itens parados antes do primeiro contato é um inventário, não um programa de divulgação
+coordenada. Isso não torna os achados falsos; torna a frase "estamos sendo responsáveis" uma
+promessa, não um histórico.
+E o site **não publica prazo de embargo nenhum** — procurei em todo o código da página: não há
+política de 90 dias, nem de prazo algum. Vulnerabilidade crítica sem prazo de divulgação é
+vulnerabilidade guardada por tempo indeterminado. Das 107 críticas, **92 seguem em "descoberta"**.
+
+Três outras coisas que a contagem revela:
+
+1. **37 das 53 divulgações públicas saíram em 13 de agosto — a véspera do lançamento.** O
+   ledger tinha 16 itens públicos até anteontem.
+2. **A média de 26,6 anos vem de 244 registros, não de 2.436.** Só 10% do conjunto tem ano de
+   introdução preenchido; recalculando sobre esses mesmos 244, dá 26,5 anos. E a base é
+   enviesada: 88 dos 244 são dos anos 1980, com 47 só em 1987 e 20 em 1981 — falhas de era de
+   protocolo contadas em implementações diferentes (BIND, Unbound, Dnsmasq, PowerDNS, NetBSD,
+   Solaris, Windows, macOS…). A frase "cada vulnerabilidade ficou em média 26,6 anos escondida"
+   descreve um subconjunto escolhido, não o acervo.
+3. **A severidade "medium-to-high" do post é outra coisa.** Os 1.097 do painel são
+   `critical` (107) + `high` (990) — o rótulo do próprio site é "CRITICAL & HIGH". Medium para
+   cima somaria 2.383. O número está certo; o adjetivo, não.
+
+### Quem encontrou as 2.436
+
+A frase oficial é *"the model identified 2,436 vulnerabilities"*. Os metadados do ledger contam
+diferente — e com nomes próprios. Cada registro credita um **pesquisador** e um **harness**,
+e nenhum credita um modelo:
+
+| Pesquisador creditado | Achados | | Harness usado | Achados |
+|---|---|---|---|---|
+| Clouditera Security | 1.364 | | VulnForge | 1.364 |
+| Laboratório NASP (Tsinghua) | 325 | | **Claude Code (Anthropic)** | **517** |
+| Laboratório AOSP (Nankai) | 212 | | Vulcanix | 325 |
+| nsfocus | 205 | | sem harness declarado | 230 |
+| **Z.ai Security** | **2** | | | |
+
+O post é honesto sobre isso numa linha que quase toda a cobertura ignorou: *"we have been
+working with several security teams in China to run our models against real-world codebases"*.
+É um programa terceirizado de red team com participação de quatro instituições, no qual a
+própria Z.ai assina dois achados. Os 2.436 são resultado do conjunto — modelo, ferramenta,
+equipe humana, revisão e deduplicação —, não de um modelo lido como agente autônomo.
+
+E o dado com a maior ironia do lançamento: **517 dos achados (21%) foram produzidos com o
+Claude Code como harness** — a ferramenta da Anthropic, a mesma empresa cujos modelos servem
+de teto nos benchmarks de cyber do post, e a mesma em que a Z.ai roda todas as suas avaliações.
+O harness não determina o modelo: o Claude Code fala com qualquer API, e presumivelmente
+dirigia um GLM. Mas o ledger não permite verificar isso — não há campo de modelo — e o efeito
+é que o registro público de capacidade do GLM-5.3 credita, em um quinto dos casos, o produto
+do concorrente.
+
+---
+
+## A rima: dois laboratórios em duas semanas, mesma receita
+
+Em 1º de agosto escrevi aqui sobre o
+[V4-Flash-0731 da DeepSeek](/artigos/deepseek-v4-flash-0731), cujo lançamento inteiro foi
+*"re-post-training, not a new design"* — mesma arquitetura, salto de 7,3 para 54,4 no DeepSWE.
+Duas semanas depois, a Z.ai faz a mesma coisa com o mesmo enunciado: mesmo base de 743B,
+Terminal Bench 3.0 de 4,6 para 28,3, e a frase do anúncio dizendo que tudo veio do pós-treino.
+
+Aquele artigo terminou apostando que a fronteira agêntica estava menos limitada pelo tamanho do
+modelo e mais pela qualidade do pipeline de pós-treino. Duas semanas é pouco para chamar de
+tendência, mas o segundo caso veio rápido e de um laboratório diferente — e um investidor com
+histórico no setor
+[registrou o mesmo espanto](https://x.com/EMostaque/status/2088216001158537352) no dia:
+*"Something has happened with post-training as shown by DeepSeek flash & GLM-5.3 updates. Same
+base, big improvement in perf to frontier levels. Can't explain this by even logit distillation."*
+
+A receita, de novo, não é publicada. A stack citada — o
+[IndexCache](https://arxiv.org/abs/2603.12201) para atenção esparsa, o
+[SAO](https://arxiv.org/abs/2607.07508) para RL assíncrono e o framework
+[slime](https://github.com/THUDM/slime) — é pública e documentada, mas os papers descrevem o
+**GLM-5.2**: o abstract do SAO diz textualmente que foi usado no 5.2, e o README do slime lista
+modelos até o 5.2. A extensão ao 5.3 é afirmação do post de lançamento, não dos artigos.
+Vale notar também que o IndexCache é engenharia de **inferência**, não de pós-treino — 1,82× no
+prefill, 1,48× no decode. Arquivar isso sob "receita de pós-treino" é generoso com a própria
+narrativa.
+
+---
+
+## O que a comunidade viu em 24 horas
+
+A [thread do lançamento no Hacker News](https://news.ycombinator.com/item?id=49294997) passou de
+530 pontos e 230 comentários no primeiro dia, e o debate não foi sobre benchmarks — foi sobre
+quem pode usar capacidade ofensiva.
+
+**O ceticismo mirou exatamente o argumento de segurança.** O comentário mais direto é de
+[cubefox](https://news.ycombinator.com/item?id=49295550): *"What safety evaluation? What safety
+hardening? They already evaluated it and found it to be highly capable at exploiting security
+vulnerabilities."* Um outro leitor,
+[tmsh](https://news.ycombinator.com/item?id=49295295), resumiu a dúvida técnica em seis
+palavras: *"Is post-training magic just overfitting to benchmarks?"* Fora do HN, a crítica mais
+afiada foi a de [Lou](https://x.com/louonai/status/2088207850523054375): *"Open weights in two
+weeks is a tease, not openness."*
+
+**E apareceu um tema que eu não esperava dominar a conversa: recusa.** Vários desenvolvedores
+relataram estar migrando para modelos chineses não por preço ou qualidade, mas porque os
+modelos ocidentais recusam trabalho de segurança legítimo.
+[SwellJoe](https://news.ycombinator.com/item?id=49295764): *"The Fable guardrails have trained
+me to pretty much exclusively use Opus when using Claude Code (lately I'm focused on a lot of
+security and security-adjacent stuff, which Fable refuses to do)."*
+[112233](https://news.ycombinator.com/item?id=49295982) foi mais longe: *"Why should I apply
+for cybersecurity approval in order to have model debug a program it is writing itself?"* E
+[virgildotcodes](https://news.ycombinator.com/item?id=49295026) formulou o argumento estrutural:
+*"we have a world of attackers using open and closed source models against a much smaller group
+of maintainers"*.
+
+**O contra-argumento também estava lá**, e é honesto:
+[wren6991](https://news.ycombinator.com/item?id=49296066) observou que é *"quite hard to
+separate Mythos the model from Mythos the campaign"* — capacidade e narrativa de marketing
+ficam indistinguíveis quando as duas são anunciadas juntas. A observação vale integralmente
+para o lançamento de hoje.
+
+**O que impressionou tecnicamente foi o tamanho.**
+[wren6991](https://news.ycombinator.com/item?id=49295989) de novo: o GLM-5.3 faz isso com *"one
+quarter the total parameter count of K3 (and 40% active parameter count)"*. E
+[unrvl22](https://news.ycombinator.com/item?id=49295763): *"this is 744b and its head to head
+with Kimi K3 (2.8T), smashes DS v4 pro (1.5T)"*.
+
+---
+
+## O que ainda não existe
+
+Vale a lista, porque ela é curta e decisiva. Até a manhã de hoje, **a Artificial Analysis não
+lista o GLM-5.3 em nenhuma das suas páginas** — sem índice de inteligência, sem preço, sem
+velocidade medida. Isso é normal no dia do lançamento, com um detalhe que não é: a Z.ai cita a
+Artificial Analysis como fonte de dois números do próprio anúncio (os 115 tok/s que normalizam
+o ExploitGym e os 1.769 do GDPval-AA v2). Os dois aparecem **apenas no material da Z.ai**.
+
+Também não existem: pesos, licença, model card, preço por token, API pública e qualquer
+reprodução independente de qualquer número deste lançamento.
+
+---
+
+## O que eu faria com isso
+
+Não testei o GLM-5.3 — no dia do lançamento não havia o que testar fora de uma assinatura.
+Onde eu olharia:
+
+**Tratar o ledger como o produto mais interessante, e cobrar o prazo.** A ideia de um registro
+público, com hash de compromisso por achado, é boa e devia virar padrão — a Z.ai está inventando
+em público um processo que os laboratórios fechados rodam em privado. Mas o que ela publicou
+hoje é um inventário com 92% dos itens parados na descoberta e sem prazo de embargo declarado.
+A pergunta a fazer em duas semanas não é "os pesos saíram?", e sim **"quantos daqueles 2.239
+chegaram a um mantenedor?"**. Esse número é o teste do argumento de segurança inteiro.
+
+**Não confundir harness com modelo — nos dois sentidos.** O lançamento mede tudo dentro do
+Claude Code e credita 517 achados a ele. Se você for comparar modelos, a régua tem que ser a
+sua: mesmo harness, mesmas ferramentas, mesmo orçamento de tokens. Vale para o benchmark que
+você lê e para o teste que você roda.
+
+**Medir eficiência de token, não só acerto.** O número mais defensável do lançamento não é o
+maior: o GLM-5.3 marca **31,4% no esforço `high` gastando cerca de 50 mil tokens de saída por
+tarefa**, contra **29,5% do Opus 4.8 gastando 120 mil**. É o mesmo patamar por menos da metade
+do gasto. Mas o benchmark é interno e privado, e comparar `high` de um com `max` do outro é uma
+escolha de quem publica — no `max`, o GLM-5.3 vai a 34,5% e o Fable 5 lidera com 39,5%. Se
+custo por tarefa concluída for o seu critério, essa é a linha a reproduzir com o seu backlog.
+
+**E esperar as duas semanas antes de chamar de aberto.** Um modelo sem pesos, sem licença e sem
+preço não é um modelo aberto com atraso — é um anúncio. Se os pesos saírem sob MIT no fim de
+agosto, o lançamento vira o que promete ser. Até lá, a única coisa auditável que a Z.ai entregou
+foi o ledger. E o ledger, auditado, diz menos do que a manchete.
+
+---
+
+## Fontes
+
+- Post oficial: [z.ai/blog/glm-5.3](https://z.ai/blog/glm-5.3) · Documentação:
+  [docs.z.ai/guides/llm/glm-5.3](https://docs.z.ai/guides/llm/glm-5.3) · Preços:
+  [docs.z.ai/guides/overview/pricing](https://docs.z.ai/guides/overview/pricing)
+- Ledger de divulgação: [cvd.z.ai](https://cvd.z.ai/)
+- Anúncio da empresa: [@Zai_org](https://x.com/Zai_org/status/2088132965922476159)
+- Stack citada: [IndexCache](https://arxiv.org/abs/2603.12201) ·
+  [SAO](https://arxiv.org/abs/2607.07508) · [slime](https://github.com/THUDM/slime) ·
+  [FrontierSWE / Proximal](https://www.proximal.ai)
+- Discussão: [Hacker News](https://news.ycombinator.com/item?id=49294997)
+- Cobertura: [MarkTechPost](https://www.marktechpost.com/2026/08/14/z-ai-ships-glm-5-3-without-retraining-the-base-model-better-at-complex-coding-and-long-horizon-tasks/) ·
+  [Unite.AI](https://www.unite.ai/z-ai-launches-glm-5-3-with-frontier-coding-and-a-cyber-capability-that-outgrew-its-training/) ·
+  [Kingy AI](https://kingy.ai/blog/glm-5-3-specs-benchmarks-api-how-to-use/)
+
+*Os números de benchmark foram transcritos dos dados do próprio post oficial (a página é uma
+aplicação JavaScript; os dados vêm no pacote que ela carrega) e conferidos contra as figuras
+publicadas e contra a tabela do Kingy AI — as três fontes batem. A contagem do ledger é minha:
+baixei o payload público de cvd.z.ai/ledger/ em 14/08/2026 e contei os 2.436 registros por
+estágio, severidade, pesquisador e harness; a soma por estágio fecha em 2.436 e a severidade
+reproduz o painel do site (107 críticas + 990 altas = 1.097). A média de 26,5 anos que
+recalculei usa os mesmos 244 registros com ano de introdução preenchido. A ausência de política
+de prazo de embargo foi verificada por busca no código da página. As citações de comunidade
+foram colhidas em 14/08/2026 e verificadas uma a uma contra a fonte original — as do Hacker News
+pela API pública do Algolia, as do X pelo conteúdo bruto de cada post — e cada uma está
+linkada. A pontuação da thread é a do momento da coleta. Preços e ausência da linha do GLM-5.3
+reconferidos na tabela oficial da Z.ai em 14/08/2026; a ausência do modelo na Artificial
+Analysis foi verificada nas páginas de modelos, leaderboard e GDPval-AA na mesma manhã.*

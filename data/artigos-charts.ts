@@ -182,7 +182,72 @@ export interface WaffleDataset {
  * usam sem pagar = 2,42 bi − 80 mi → 705; pagam sem agents = 80 − 12,5 mi
  * → 20; agents → 4. Soma fechada: 663+1108+705+20+4 = 2.500.
  */
+/**
+ * `glm53-ledger-status` — 2.436 pontos, 1 ponto = 1 vulnerabilidade.
+ *
+ * PROCEDÊNCIA (contagem própria, 14/08/2026): payload público do ledger em
+ * https://cvd.z.ai/ledger/ (a página embute os 2.436 registros). Contados pelo
+ * campo `status`: discovered 2.239 · reported 84 · sent_to_maintainer 1 ·
+ * acknowledged 29 · patched 30 · revealed 53. Soma = 2.436, igual ao total
+ * anunciado no painel do site. A severidade do mesmo payload reproduz o painel
+ * (critical 107 + high 990 = 1.097), o que valida o parse.
+ *
+ * Categorias EXCLUSIVAS: `status` é o estágio ATUAL de cada achado, então cada
+ * vulnerabilidade aparece uma vez só, no estágio mais avançado que alcançou.
+ * Ordem = pipeline declarado pelo próprio site (Discovered -> Reported -> Sent
+ * to maintainer -> Acknowledged -> Patched -> Publicly disclosed).
+ */
 export const waffleDatasets: Record<string, WaffleDataset> = {
+  'glm53-ledger-status': {
+    categories: [
+      { label: 'Descoberta', sublabel: '2.239 · 92% — nunca reportada', color: '#3f3f46', count: 2239 },
+      { label: 'Reportada', sublabel: '84 · 3,4%', color: '#64748b', count: 84 },
+      { label: 'Enviada ao mantenedor', sublabel: '1 · 0,04%', color: '#a48f65', count: 1 },
+      { label: 'Reconhecida', sublabel: '29 · 1,2%', color: '#60a5fa', count: 29 },
+      { label: 'Corrigida', sublabel: '30 · 1,2%', color: '#34d399', count: 30 },
+      { label: 'Divulgada publicamente', sublabel: '53 · 2,2% — 37 na véspera do lançamento', color: '#fbbf24', count: 53 },
+    ],
+  },
+  'glm53-ledger-status-en': {
+    categories: [
+      { label: 'Discovered', sublabel: '2,239 · 92% — never reported', color: '#3f3f46', count: 2239 },
+      { label: 'Reported', sublabel: '84 · 3.4%', color: '#64748b', count: 84 },
+      { label: 'Sent to maintainer', sublabel: '1 · 0.04%', color: '#a48f65', count: 1 },
+      { label: 'Acknowledged', sublabel: '29 · 1.2%', color: '#60a5fa', count: 29 },
+      { label: 'Patched', sublabel: '30 · 1.2%', color: '#34d399', count: 30 },
+      { label: 'Publicly disclosed', sublabel: '53 · 2.2% — 37 on launch eve', color: '#fbbf24', count: 53 },
+    ],
+  },
+  'glm53-ledger-status-es': {
+    categories: [
+      { label: 'Descubierta', sublabel: '2239 · 92 % — nunca reportada', color: '#3f3f46', count: 2239 },
+      { label: 'Reportada', sublabel: '84 · 3,4 %', color: '#64748b', count: 84 },
+      { label: 'Enviada al mantenedor', sublabel: '1 · 0,04 %', color: '#a48f65', count: 1 },
+      { label: 'Reconocida', sublabel: '29 · 1,2 %', color: '#60a5fa', count: 29 },
+      { label: 'Corregida', sublabel: '30 · 1,2 %', color: '#34d399', count: 30 },
+      { label: 'Divulgada públicamente', sublabel: '53 · 2,2 % — 37 en la víspera', color: '#fbbf24', count: 53 },
+    ],
+  },
+  'glm53-ledger-status-it': {
+    categories: [
+      { label: 'Scoperta', sublabel: '2.239 · 92% — mai segnalata', color: '#3f3f46', count: 2239 },
+      { label: 'Segnalata', sublabel: '84 · 3,4%', color: '#64748b', count: 84 },
+      { label: 'Inviata al manutentore', sublabel: '1 · 0,04%', color: '#a48f65', count: 1 },
+      { label: 'Riconosciuta', sublabel: '29 · 1,2%', color: '#60a5fa', count: 29 },
+      { label: 'Corretta', sublabel: '30 · 1,2%', color: '#34d399', count: 30 },
+      { label: 'Divulgata pubblicamente', sublabel: '53 · 2,2% — 37 alla vigilia', color: '#fbbf24', count: 53 },
+    ],
+  },
+  'glm53-ledger-status-he': {
+    categories: [
+      { label: 'התגלתה', sublabel: '2,239 · 92% — מעולם לא דווחה', color: '#3f3f46', count: 2239 },
+      { label: 'דווחה', sublabel: '84 · 3.4%', color: '#64748b', count: 84 },
+      { label: 'נשלחה למתחזק', sublabel: '1 · 0.04%', color: '#a48f65', count: 1 },
+      { label: 'אושרה', sublabel: '29 · 1.2%', color: '#60a5fa', count: 29 },
+      { label: 'תוקנה', sublabel: '30 · 1.2%', color: '#34d399', count: 30 },
+      { label: 'פורסמה בפומבי', sublabel: '53 · 2.2% — 37 בערב ההשקה', color: '#fbbf24', count: 53 },
+    ],
+  },
   'quantas-pessoas-usam-ia-waffle': {
     categories: [
       { label: 'Offline', sublabel: '2,2 bi · 27%', color: '#3f3f46', count: 663 },
