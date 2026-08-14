@@ -150,6 +150,18 @@ const nextConfig: NextConfig = {
       },
     ];
 
+    // Atalhos curtos impressos nos cards sociais (o leitor DIGITA de um print).
+    // Um atalho por artigo e por idioma; o registro vive na pauta da redação.
+    // `redirects()` roda ANTES do middleware, então `/llm` não colide com o
+    // rewrite de locale nem com o segmento [locale] das rotas.
+    const atalhosCards = [
+      { source: '/llm',    destination: '/artigos/memoria-llm-local',    permanent: true },
+      { source: '/llm-en', destination: '/en/artigos/memoria-llm-local', permanent: true },
+      { source: '/llm-es', destination: '/es/artigos/memoria-llm-local', permanent: true },
+      { source: '/llm-it', destination: '/it/artigos/memoria-llm-local', permanent: true },
+      { source: '/llm-he', destination: '/he/artigos/memoria-llm-local', permanent: true },
+    ];
+
     // Locale handling (double-locale 410 + single-locale 301 + i18n rewrite) moved to middleware.ts
     // to ensure correct evaluation order: 410 fires before 301 stripping before locale rewrite.
 
@@ -183,6 +195,7 @@ const nextConfig: NextConfig = {
       canonicalHostRedirect,
       psiRedirect,
       ...rapaduriaRedirects,
+      ...atalhosCards,
       ...legacyRedirects,
       ...legacySermonRedirects,
       ...subdomainRedirects,
