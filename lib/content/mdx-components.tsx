@@ -20,6 +20,7 @@ import { NoiseVsSignalBars } from './noise-vs-signal-bars';
 import { TvChannelsDiagram } from './tv-channels-diagram';
 import { InvertedUChart } from './inverted-u-chart';
 import { StepFlowDiagram } from './step-flow-diagram';
+import { KitchenDiagram } from './kitchen-diagram';
 
 // Lazy imports for simulation components (heavy, code-split)
 // These will be resolved at render time by Next.js
@@ -51,6 +52,7 @@ export const mdxComponents: MDXComponents = {
   NoiseVsSignalBars,
   TvChannelsDiagram,
   InvertedUChart,
+  KitchenDiagram,
   /**
    * Tabela larga rola em vez de espremer. O container é quem rola; a tabela
    * mantém a largura natural (`w-max`) e ocupa no mínimo a linha inteira.

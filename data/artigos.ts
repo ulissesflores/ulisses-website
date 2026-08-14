@@ -33,6 +33,36 @@ export function localizeArtigo(artigo: Artigo, locale: Locale): Pick<Artigo, 'ti
 
 export const artigos: readonly Artigo[] = [
   {
+    slug: 'memoria-llm-local',
+    title: 'Como saber se um modelo de IA roda no seu computador — e por quê',
+    summary:
+      'A pergunta de quem quer rodar um modelo de linguagem na própria máquina é sempre a mesma: isso cabe aqui? A resposta tem duas parcelas, e só uma delas cresce enquanto você conversa. Explico as duas do zero, três vezes seguidas: primeiro sem nenhuma palavra técnica, depois com os nomes que aparecem na documentação, depois com a fórmula e os números reais do Qwen3.8-27B, lançado neste mês — 27.781.427.952 parâmetros, 64 camadas das quais apenas 16 guardam cache que cresce, 15,82 GiB de pesos em Q4_K_M e 16,14 GiB de cache no contexto máximo de 262.144 tokens. Pelo caminho, três armadilhas que os números redondos escondem: K é 1.024 e não mil, GB não é GiB, e o nome do modelo é arredondado. Todo número deste artigo sai de um programa publicado junto: qualquer leitor refaz a conta na máquina dele.',
+    date: '2026-08-14',
+    tags: ['ia', 'llm', 'hardware', 'quantizacao', 'didatico'],
+    i18n: {
+      en: {
+        title: 'How to know if an AI model runs on your computer — and why',
+        summary:
+          'The question from anyone who wants to run a language model on their own computer is always the same: does this fit here? The answer has two parts, and only one of them grows while you talk. I explain both from scratch, three times in a row: first without any technical word, then with the names that appear in the documentation, then with the formula and the real numbers from Qwen3.8-27B, released this month — 27,781,427,952 parameters, 64 layers of which only 16 hold cache that grows, 15.82 GiB of weights in Q4_K_M and 16.14 GiB of cache at maximum context of 262,144 tokens. Along the way, three traps that round numbers hide: K is 1,024 and not a thousand, GB is not GiB, and the model name is rounded. Every number in this article comes from a program published alongside it: any reader can redo the math on their own machine.',
+      },
+      es: {
+        title: 'Cómo saber si un modelo de IA funciona en tu ordenador — y por qué',
+        summary:
+          'La pregunta de quien quiere ejecutar un modelo de lenguaje en su propio ordenador es siempre la misma: ¿esto cabe aquí? La respuesta tiene dos partidas, y solo una de ellas crece mientras conversas. Explico las dos desde cero, tres veces seguidas: primero sin ninguna palabra técnica, luego con los nombres que aparecen en la documentación, luego con la fórmula y los números reales del Qwen3.8-27B, lanzado este mes — 27.781.427.952 parámetros, 64 capas de las cuales solo 16 guardan caché que crece, 15,82 GiB de pesos en Q4_K_M y 16,14 GiB de caché en el contexto máximo de 262.144 tokens. Por el camino, tres trampas que los números redondos esconden: K es 1.024 y no mil, GB no es GiB, y el nombre del modelo es redondeado. Todo número de este artículo sale de un programa publicado junto: cualquier lector rehace la cuenta en su propia máquina.',
+      },
+      it: {
+        title: 'Come sapere se un modello di IA gira sul tuo computer — e perché',
+        summary:
+          'La domanda di chi vuole far girare un modello linguistico sul proprio computer è sempre la stessa: questo ci sta qui? La risposta ha due voci, e solo una di esse cresce mentre parli. Spiego entrambe da zero, tre volte di fila: prima senza nessuna parola tecnica, poi con i nomi che compaiono nella documentazione, poi con la formula e i numeri reali del Qwen3.8-27B, uscito questo mese — 27.781.427.952 parametri, 64 strati di cui solo 16 mantengono cache che cresce, 15,82 GiB di pesi in Q4_K_M e 16,14 GiB di cache nel contesto massimo di 262.144 token. Lungo il percorso, tre trappole che i numeri tondi nascondono: K è 1.024 e non mille, GB non è GiB, e il nome del modello è arrotondato. Ogni numero di questo articolo proviene da un programma pubblicato insieme: qualsiasi lettore può rifare il conto sulla propria macchina.',
+      },
+      he: {
+        title: 'איך לדעת אם מודל בינה מלאכותית רץ על המחשב שלך — ולמה',
+        summary:
+          'השאלה של מי שרוצה להריץ מודל שפה על המחשב שלו היא תמיד אותה שאלה: זה נכנס כאן? התשובה מורכבת משני מרכיבים, ורק אחד מהם גדל בזמן שאתה משוחח. אני מסביר את שניהם מאפס, שלוש פעמים ברצף: קודם כל בלי מילה טכנית אחת, אחר כך עם השמות שמופיעים בתיעוד, ואחר כך עם הנוסחה והמספרים האמיתיים של Qwen3.8-27B, שיצא החודש הזה — 27,781,427,952 פרמטרים, 64 שכבות שמהן רק 16 שומרות cache שגדל, 15.82 GiB של משקלים ב-Q4_K_M ו-16.14 GiB של cache בהקשר מקסימלי של 262,144 tokens. בדרך, שלוש מלכודות שמספרים עגולים מסתירים: K הוא 1,024 ולא אלף, GB אינו GiB, והשם של המודל מעוגל. כל מספר במאמר זה מגיע מתוכנית שפורסמה ביחד איתו: כל קורא יכול לחזור על החישוב על המחשב שלו.',
+      },
+    },
+  },
+  {
     slug: 'relatorio-de-risco-anthropic',
     title:
       'A Anthropic elevou o risco dos próprios modelos: o que dizem as 186 páginas do relatório de agosto',

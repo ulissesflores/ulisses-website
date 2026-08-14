@@ -480,6 +480,44 @@ export const waffleDatasets: Record<string, WaffleDataset> = {
       { label: 'שאר ה־run rate', sublabel: '821 נקודות · 11.5 מיליארד $', color: '#64748b', count: 821 },
     ],
   },
+  /*
+   * 64 pontos, 1 ponto = 1 camada. Categorias EXCLUSIVAS (cada camada é de um tipo
+   * só). Contagem lida do campo `layer_types` do config oficial do Qwen3.8-27B:
+   * `linear_attention` 48 · `full_attention` 16, no padrão declarado no model card
+   * `16 x (3 x (Gated DeltaNet -> FFN) -> 1 x (Gated Attention -> FFN))`.
+   * Medido pelo autor em 14/08/2026 — reprodutível com
+   * `python3 medidor.py --repo Qwen/Qwen3.8-27B` (dossiê `memoria-llm-local`).
+   */
+  'memoria-llm-local-camadas': {
+    categories: [
+      { label: 'Atenção linear', sublabel: '48 camadas — estado fixo', color: '#64748b', count: 48 },
+      { label: 'Atenção cheia', sublabel: '16 camadas — cache cresce', color: '#a48f65', count: 16 },
+    ],
+  },
+  'memoria-llm-local-camadas-en': {
+    categories: [
+      { label: 'Linear attention', sublabel: '48 layers — fixed state', color: '#64748b', count: 48 },
+      { label: 'Full attention', sublabel: '16 layers — cache grows', color: '#a48f65', count: 16 },
+    ],
+  },
+  'memoria-llm-local-camadas-es': {
+    categories: [
+      { label: 'Atención lineal', sublabel: '48 capas — estado fijo', color: '#64748b', count: 48 },
+      { label: 'Atención completa', sublabel: '16 capas — la caché crece', color: '#a48f65', count: 16 },
+    ],
+  },
+  'memoria-llm-local-camadas-it': {
+    categories: [
+      { label: 'Attenzione lineare', sublabel: '48 livelli — stato fisso', color: '#64748b', count: 48 },
+      { label: 'Attenzione completa', sublabel: '16 livelli — la cache cresce', color: '#a48f65', count: 16 },
+    ],
+  },
+  'memoria-llm-local-camadas-he': {
+    categories: [
+      { label: 'קשב לינארי', sublabel: '48 שכבות — מצב קבוע', color: '#64748b', count: 48 },
+      { label: 'קשב מלא', sublabel: '16 שכבות — המטמון גדל', color: '#a48f65', count: 16 },
+    ],
+  },
 };
 
 /* ── Barras por país ─────────────────────────────────────────────────── */
@@ -2396,6 +2434,154 @@ export const countryBarsDatasets: Record<string, CountryBarsDataset> = {
           { name: 'ברזיל', value: 26.0, valueLabel: '26.0%', emphasis: true },
           { name: 'ממוצע עולמי', value: 23.8, valueLabel: '23.8%' },
           { name: 'ארה״ב', value: 21.13, valueLabel: '21.1%' },
+        ],
+      },
+    ],
+  },
+  /*
+   * As DUAS PARCELAS da memória do Qwen3.8-27B nos mesmos cinco contextos. A cor
+   * codifica a PARCELA, não o contexto: cinza = pesos em Q4_K_M (15,82 GiB,
+   * constante — é uma reta de propósito), azul = cache de atenção em 16 bits (a
+   * escada, de 0,20 a 16,14 GiB). Os dois blocos dividem o mesmo eixo (max 32 =
+   * pico da soma) porque a tese do artigo é a comparação entre as duas FORMAS.
+   * Só as 16 camadas `full_attention` acumulam (2 x 4 kv_heads x 256 head_dim x
+   * 2 bytes = 4 KiB por token por camada); as 48 `linear_attention` somam 0,14
+   * GiB fixos, já embutidos nos valores. Unidade única do dataset: GiB (binário),
+   * como toda memória citada no corpo do artigo. Medido pelo autor em 14/08/2026
+   * a partir dos `config.json` oficiais no Hugging Face — reprodutível com
+   * `python3 medidor.py --repo Qwen/Qwen3.8-27B` (dossiê `memoria-llm-local`).
+   */
+  'memoria-llm-local-anatomia': {
+    max: 32,
+    groups: [
+      {
+        label: 'Pesos do modelo — não mudam nunca',
+        color: '#64748b',
+        items: [
+          { name: '1K de contexto', value: 15.82, valueLabel: '15,82 GiB' },
+          { name: '8K de contexto', value: 15.82, valueLabel: '15,82 GiB' },
+          { name: '32K de contexto', value: 15.82, valueLabel: '15,82 GiB' },
+          { name: '128K de contexto', value: 15.82, valueLabel: '15,82 GiB' },
+          { name: '256K de contexto', value: 15.82, valueLabel: '15,82 GiB' },
+        ],
+      },
+      {
+        label: 'Cache da conversa — cresce a cada token',
+        color: '#60a5fa',
+        items: [
+          { name: '1K de contexto', value: 0.2, valueLabel: '0,20 GiB' },
+          { name: '8K de contexto', value: 0.64, valueLabel: '0,64 GiB' },
+          { name: '32K de contexto', value: 2.14, valueLabel: '2,14 GiB' },
+          { name: '128K de contexto', value: 8.14, valueLabel: '8,14 GiB' },
+          { name: '256K de contexto', value: 16.14, valueLabel: '16,14 GiB', emphasis: true },
+        ],
+      },
+    ],
+  },
+  'memoria-llm-local-anatomia-en': {
+    max: 32,
+    groups: [
+      {
+        label: 'Model weights — never change',
+        color: '#64748b',
+        items: [
+          { name: '1K context', value: 15.82, valueLabel: '15.82 GiB' },
+          { name: '8K context', value: 15.82, valueLabel: '15.82 GiB' },
+          { name: '32K context', value: 15.82, valueLabel: '15.82 GiB' },
+          { name: '128K context', value: 15.82, valueLabel: '15.82 GiB' },
+          { name: '256K context', value: 15.82, valueLabel: '15.82 GiB' },
+        ],
+      },
+      {
+        label: 'Conversation cache — grows with every token',
+        color: '#60a5fa',
+        items: [
+          { name: '1K context', value: 0.2, valueLabel: '0.20 GiB' },
+          { name: '8K context', value: 0.64, valueLabel: '0.64 GiB' },
+          { name: '32K context', value: 2.14, valueLabel: '2.14 GiB' },
+          { name: '128K context', value: 8.14, valueLabel: '8.14 GiB' },
+          { name: '256K context', value: 16.14, valueLabel: '16.14 GiB', emphasis: true },
+        ],
+      },
+    ],
+  },
+  'memoria-llm-local-anatomia-es': {
+    max: 32,
+    groups: [
+      {
+        label: 'Pesos del modelo — nunca cambian',
+        color: '#64748b',
+        items: [
+          { name: '1K de contexto', value: 15.82, valueLabel: '15,82 GiB' },
+          { name: '8K de contexto', value: 15.82, valueLabel: '15,82 GiB' },
+          { name: '32K de contexto', value: 15.82, valueLabel: '15,82 GiB' },
+          { name: '128K de contexto', value: 15.82, valueLabel: '15,82 GiB' },
+          { name: '256K de contexto', value: 15.82, valueLabel: '15,82 GiB' },
+        ],
+      },
+      {
+        label: 'Caché de la conversación — crece con cada token',
+        color: '#60a5fa',
+        items: [
+          { name: '1K de contexto', value: 0.2, valueLabel: '0,20 GiB' },
+          { name: '8K de contexto', value: 0.64, valueLabel: '0,64 GiB' },
+          { name: '32K de contexto', value: 2.14, valueLabel: '2,14 GiB' },
+          { name: '128K de contexto', value: 8.14, valueLabel: '8,14 GiB' },
+          { name: '256K de contexto', value: 16.14, valueLabel: '16,14 GiB', emphasis: true },
+        ],
+      },
+    ],
+  },
+  'memoria-llm-local-anatomia-it': {
+    max: 32,
+    groups: [
+      {
+        label: 'Pesi del modello — non cambiano mai',
+        color: '#64748b',
+        items: [
+          { name: '1K di contesto', value: 15.82, valueLabel: '15,82 GiB' },
+          { name: '8K di contesto', value: 15.82, valueLabel: '15,82 GiB' },
+          { name: '32K di contesto', value: 15.82, valueLabel: '15,82 GiB' },
+          { name: '128K di contesto', value: 15.82, valueLabel: '15,82 GiB' },
+          { name: '256K di contesto', value: 15.82, valueLabel: '15,82 GiB' },
+        ],
+      },
+      {
+        label: 'Cache della conversazione — cresce a ogni token',
+        color: '#60a5fa',
+        items: [
+          { name: '1K di contesto', value: 0.2, valueLabel: '0,20 GiB' },
+          { name: '8K di contesto', value: 0.64, valueLabel: '0,64 GiB' },
+          { name: '32K di contesto', value: 2.14, valueLabel: '2,14 GiB' },
+          { name: '128K di contesto', value: 8.14, valueLabel: '8,14 GiB' },
+          { name: '256K di contesto', value: 16.14, valueLabel: '16,14 GiB', emphasis: true },
+        ],
+      },
+    ],
+  },
+  'memoria-llm-local-anatomia-he': {
+    max: 32,
+    groups: [
+      {
+        label: 'משקלי המודל — אינם משתנים',
+        color: '#64748b',
+        items: [
+          { name: 'הקשר של 1K', value: 15.82, valueLabel: '15.82 GiB' },
+          { name: 'הקשר של 8K', value: 15.82, valueLabel: '15.82 GiB' },
+          { name: 'הקשר של 32K', value: 15.82, valueLabel: '15.82 GiB' },
+          { name: 'הקשר של 128K', value: 15.82, valueLabel: '15.82 GiB' },
+          { name: 'הקשר של 256K', value: 15.82, valueLabel: '15.82 GiB' },
+        ],
+      },
+      {
+        label: 'מטמון השיחה — גדל עם כל אסימון',
+        color: '#60a5fa',
+        items: [
+          { name: 'הקשר של 1K', value: 0.2, valueLabel: '0.20 GiB' },
+          { name: 'הקשר של 8K', value: 0.64, valueLabel: '0.64 GiB' },
+          { name: 'הקשר של 32K', value: 2.14, valueLabel: '2.14 GiB' },
+          { name: 'הקשר של 128K', value: 8.14, valueLabel: '8.14 GiB' },
+          { name: 'הקשר של 256K', value: 16.14, valueLabel: '16.14 GiB', emphasis: true },
         ],
       },
     ],

@@ -1,0 +1,442 @@
+---
+title: 'How to know if an AI model runs on your computer — and why'
+slug: memoria-llm-local
+category: artigos
+date: '2026-08-14'
+language: en-US
+---
+
+Every time someone wants to run a language model on their own computer, the question is
+always the same: **does this fit on my machine?** The answer seems to require engineering,
+so most people give up and just guess — download, try, fail, download a smaller version.
+
+It doesn't have to be that way. The math has two parts, and you can understand both without
+knowing how to code. One is fixed, and you find it out before downloading anything. The other
+grows while you talk to the model, and that's the one that catches people off guard.
+
+I'll explain this from scratch, three times in a row, each time in more detail. Stop at
+whichever floor you like.
+
+1. **The kitchen** — what happens, without a single technical word.
+2. **The map** — the same drawing, with the names that show up in the documentation.
+3. **The math** — the formula, with real numbers from a model released this month.
+
+Whoever stops on the first floor has understood the mechanism. Whoever goes down to the third
+can calculate, before downloading anything, exactly what will run on their own machine. And
+every comparison I make comes with a note on where it stops being valid — a comparison with no
+expiration date doesn't teach, it misleads.
+
+---
+
+## First floor: the kitchen
+
+Forget about computers for a minute. Picture a kitchen.
+
+<KitchenDiagram
+  dataset="memoria-llm-local-cozinha-en"
+  mode="plain"
+  title="The kitchen: what takes up space while you cook"
+  description="Illustration of a kitchen seen from above, bounded by a rectangle that represents the total space available. Inside it, three elements: a full pantry of fixed size, occupying a constant block; a counter that gets taken over by already-prepped ingredients, growing from left to right; and a stockpot, small and always the same size, that sums up everything that has gone into it."
+/>
+
+**The pantry.** Before you cook anything, every ingredient and all of the cook's training are
+already there, stored away. This takes up a fixed amount of space, one you know before you
+even turn on the stove. It doesn't grow or shrink while you cook: it is whatever size it is.
+If the pantry alone doesn't fit in the kitchen, there's nothing to be done — it doesn't even
+start.
+
+**The counter.** As you cook, you leave everything you've already prepped there: the chopped
+onion, the crushed garlic, the strained stock. You don't throw it away because you'll need it
+again soon, and redoing it is expensive. The counter **grows** with every ingredient that
+passes through your hands. In a three-step recipe, it barely shows up. In a twelve-hour
+banquet, it takes over the whole kitchen.
+
+**The size of the kitchen is the limit.** Pantry plus counter have to fit inside it. There's
+no negotiating: if it doesn't fit, it doesn't cook.
+
+That already answers the question that brought you here. *Does this model run on my machine?*
+is always the same math: **does what the pantry takes up, plus however much the counter will
+grow, fit in the space I have?**
+
+Three details are still missing, and they change the result quite a bit.
+
+**You can freeze-dry the pantry.** There's a process that shrinks every ingredient down to a
+quarter of its size. The food comes out a little worse — it loses some nuance — but it's still
+good. Almost everyone who cooks at home uses freeze-dried ingredients, and the dish comes out
+good enough.
+
+**The kitchen can have a brigade.** Instead of one cook who knows everything, some restaurants
+have 128 specialists, and each dish only uses 8 of them. All 128 need to be in the building and
+on the payroll — but only 8 work at a time. That's why some models take up the space of a
+giant but cook at the speed of a small one.
+
+**And the modern kitchen has a stockpot.** Instead of keeping every chopped piece on the
+counter, you throw everything into a pot that keeps reducing. The stock *sums up* what went
+in. And here's the detail that changes everything: **the pot is always the same size**. You can
+cook for twelve hours and it won't grow an inch.
+
+In the newest models, most of the workstation is stockpot. Only a minority is counter. That's
+why they can handle absurdly long conversations on modest machines — something that was
+impossible two years ago.
+
+> **Where the kitchen stops being accurate:** in a real kitchen, the counter gets wiped between
+> one dish and the next. In the model, it only gets cleared when the conversation ends — that's
+> why the second long question in the same conversation can blow past the memory the first one
+> fit into comfortably, and why "starting a new chat" sometimes fixes things. And the stockpot
+> charges a price: it summarizes, and summaries forget detail. There's no free lunch, it's a
+> trade-off.
+
+---
+
+## Second floor: the map
+
+The same objects, now with the name that shows up in the documentation. It's the same drawing
+— I just added labels.
+
+<KitchenDiagram
+  dataset="memoria-llm-local-cozinha-en"
+  mode="labeled"
+  title="The same kitchen, with the technical names"
+  description="The same kitchen illustration, now with technical labels stuck onto each element. The pantry gets the label model weights. The counter gets the label attention cache. The stockpot gets the label linear attention, constant-size state. The outer rectangle gets the label available memory, VRAM or unified memory. The ingredients coming in get the label tokens."
+/>
+
+| In the kitchen | Technical name | Behavior |
+|---|---|---|
+| The pantry | **Weights** | Fixed size, occupied before you start |
+| The counter | **Attention cache** (*KV cache*) | Grows with every piece of text processed |
+| The size of the kitchen | Available memory (**VRAM** or unified memory) | The physical ceiling |
+| Freeze-drying | **Quantization** | Less space, slightly less quality |
+| The brigade of 128 | **MoE** (mixture of experts) | All in memory, few active at a time |
+| The stockpot | **Linear attention** | Constant-size state |
+| An ingredient | **Token** | The unit the model processes |
+| The size of the banquet | **Context** | How many tokens fit in the conversation |
+
+Three of these words deserve their own paragraph, because the entire third floor depends on
+them.
+
+### Token
+
+It's the chunk the text gets cut into before the model reads it. It's not exactly a word:
+common words become a single token, long or rare words become several. Like this:
+
+```text
+The  model's  memory  fits  in  the  machine
+│    │        │       │     │   │    │
+1    2        3       4     5   6    7      -> 7 tokens
+
+antidisestablishmentarianism
+│    │               │      │
+anti disestablishment arian ism             -> 4 tokens
+```
+
+Good enough rule of thumb for English: **a token is roughly three to four letters**. A page of
+text comes out to about 500 tokens; an entire book, somewhere between 100,000 and 200,000.
+
+### Context
+
+It's how many tokens fit in the whole conversation — the prompt, the files you pasted in, the
+history, and the response being written. When a model advertises "256K of context," it means
+262,144 tokens: about eight hundred pages at once.
+
+### Attention cache
+
+This is the counter, and it's the concept that confuses people most. Every time the model
+reads a token, it computes two small tables about that token and **saves** them. On the next
+token, instead of recalculating everything from the start of the text, it checks what it
+already saved.
+
+It's a classic computing trade-off: **you spend memory so you don't spend time**. Without this
+cache, every new word would cost rereading the entire conversation, and the response would come
+out painfully slow. With it, the response is fast — and the memory grows.
+
+**Checkpoint.** Before going further down, answer in your head: in a very long conversation,
+which of the two grows, the pantry or the counter?
+
+*Only the counter. The pantry is the size of the model and never changes. That's why the
+question "how much memory does this model use?" doesn't have a single answer — it depends on
+how long you're going to talk to it.*
+
+---
+
+## A pause on round numbers, because they hide a detail
+
+You'll see things like "8K of context," "27B model," "24 GB of memory" everywhere. All of
+these numbers are rounded, and the rounding isn't innocent: it hides between 2% and 8% of
+difference, right when the math is at its limit.
+
+There are three different sources of confusion, and it's worth separating them.
+
+### 1. "K" isn't a thousand. It's 1,024.
+
+Computers count in powers of two, not powers of ten. So:
+
+| How it's written | What it really is |
+|---|---|
+| 1K of context | 1,024 tokens |
+| 4K | 4,096 tokens |
+| 8K | 8,192 tokens |
+| 32K | 32,768 tokens |
+| 128K | 131,072 tokens |
+| 256K | 262,144 tokens |
+| 1M | 1,048,576 tokens |
+
+Notice that **256K isn't 256,000, it's 262,144** — almost 2.5% more. In a model that's already
+scraping the ceiling of your memory, that 2.5% is what decides whether it loads or not.
+
+### 2. GB and GiB are different things, and the difference is 7%
+
+This is the one that confuses people most, and it has nothing to do with AI — it's the same
+mess as when you buy a "1 TB" hard drive and your computer shows 931 GB.
+
+| Unit | How much it is | Who uses it |
+|---|---|---|
+| **GB** (gigabyte) | 1,000,000,000 bytes | Hardware makers, marketing |
+| **GiB** (gibibyte) | 1,073,741,824 bytes | Operating system, software |
+
+The difference is **7.4%**. A model file advertised as "16 GB" shows up as 14.9 GiB on your
+system. Nothing went missing: it's the same thing being measured by two different rulers.
+
+> **In this article, all memory is in GiB**, which is what your computer will show when you try
+> to load the model. It's the ruler that matters when it's time to find out.
+
+### 3. The model's name is rounded too
+
+A model called "27B" doesn't have exactly 27 billion parameters. Qwen3.8-27B has
+**27,781,427,952** — almost 2.9% more than the name suggests. That sounds small, but in BF16
+it's a 1.5 GiB difference, more than enough to blow past a card that was already tight.
+
+And sometimes the name carries **two** numbers, like in "26B A4B." In those cases, the first
+is the total parameter count — what takes up memory — and the second, marked with "A" for
+*active*, is how much the model actually uses to write each word. It's the brigade of cooks:
+all 26 billion need to be in memory, but only 4 billion work at a time. **To know if it fits,
+look at the first number. To know if it's fast, look at the second.**
+
+**Rule of thumb:** when the math lands close to your machine's limit, redo it with the exact
+numbers. When there's several gigabytes of slack, the rounding doesn't change anything.
+
+---
+
+## Third floor: the math
+
+I'll use **Qwen3.8-27B** as the example, an open model released on August 5, 2026. All the
+numbers below came from its official configuration file, and at the end of the article there's
+a program that redoes the math for any model you want.
+
+The full math:
+
+```text
+total memory = weight memory + cache memory + runtime overhead
+```
+
+### Part 1: the weights (the pantry)
+
+The simplest one:
+
+```text
+weight memory = number of parameters x bytes per parameter
+```
+
+Qwen3.8-27B has **27,781,427,952 parameters**. Each parameter costs more or less space
+depending on the precision you store it at:
+
+| Precision | Bytes per parameter | Weight memory |
+|---|---|---|
+| BF16 (the original) | 2 | 51.7 GiB |
+| INT8 | 1 | 25.9 GiB |
+| 4-bit, in theory | 0.5 | 12.9 GiB |
+| **Q4_K_M (the 4-bit that's actually used)** | **0.61** | **15.8 GiB** |
+
+Notice the difference between the last two rows — it's a common trap. **In theory, 4 bits per
+weight would come out to half a byte. In practice, the format most used on home machines
+spends 4.89 bits, not 4.** The reason is a good one: it doesn't compress everything equally.
+The most sensitive layers get more bits on purpose, so the model doesn't get dumber. Anyone
+who sizes their machine off the theoretical promise finds out about that 22% difference the
+moment the model refuses to load.
+
+### Part 2: the cache (the counter)
+
+The formula:
+
+```text
+cache = 2 x context x growing_layers x cache_heads x head_dimension x bytes
+```
+
+Term by term, no rush:
+
+- **2** — because there are two small tables per token, the key one and the value one. (In some
+  2026 models the two are identical and only one gets saved; in those, this 2 becomes a 1.)
+- **context** — how many tokens are in the conversation. It's the only term that changes while
+  you use the model. All the others are fixed characteristics of the architecture.
+- **growing_layers** — and here's the point almost everyone gets wrong: **it's not all the
+  layers.** I'll come back to this shortly.
+- **cache_heads x head_dimension** — the width of what gets saved per token. Note that this
+  isn't the model's total width: only the key and value heads count, and there are far fewer
+  of those than query heads. In Qwen3.8-27B there are 4 heads of dimension 256, which comes to
+  1,024 — while the model's total width is 5,120. Five times less, because several query heads
+  share the same pair of tables.
+- **bytes** — 2 if the cache is stored in 16 bits, 1 if you quantize the cache down to 8 bits.
+  Yes, the cache can also be freeze-dried, and almost nobody remembers that.
+
+### Why "growing layers" and not "layers"
+
+A model is a stack of layers. In Qwen3.8-27B there are 64. But they're not all the same:
+
+<WaffleChart
+  dataset="memoria-llm-local-camadas-en"
+  title="The 64 layers of Qwen3.8-27B"
+  subtitle="Each square is a layer · grouped by type; in the model they alternate (3 -> 1)"
+  source="Source: official model card for Qwen/Qwen3.8-27B on Hugging Face, read on August 14, 2026."
+  description="Diagram with 64 squares representing the layers of the Qwen3.8-27B model. Forty-eight squares mark linear attention layers, whose state has a constant size and doesn't grow with context. Sixteen highlighted squares mark full attention layers, the only ones whose cache grows with every token processed."
+/>
+
+**48 of the 64 layers are stockpot.** They hold a fixed-size state — about 3 MiB each, 0.14 GiB
+adding them all up — and that number doesn't change even if you fill the context up to the
+ceiling. Only the **16 counter layers** accumulate token by token.
+
+So, in Qwen3.8-27B, every token adds 4 KiB to each of the 16 growing layers. And adds **zero**
+to the other 48.
+
+### The math, closed
+
+<CountryBarsChart
+  dataset="memoria-llm-local-anatomia-en"
+  title="Where the memory goes, as the conversation grows"
+  subtitle="Qwen3.8-27B with weights in Q4_K_M and cache in 16 bits · in GiB"
+  source="Source: author's calculation from the official config.json for Qwen/Qwen3.8-27B, August 14, 2026. Meter published at the end of the article."
+  description="Horizontal bars showing the two parts of memory for the Qwen3.8-27B model at five context sizes. The weight portion stays constant at 15.8 GiB in every case. The cache portion grows from 0.2 GiB at 1K of context to 0.64 GiB at 8K, 2.14 GiB at 32K, 8.14 GiB at 128K, and 16.14 GiB at 256K of context."
+/>
+
+| Context | Weights (fixed) | Cache (grows) | Total |
+|---|---|---|---|
+| 1K | 15.8 GiB | 0.20 GiB | 16.0 GiB |
+| 8K | 15.8 GiB | 0.64 GiB | 16.4 GiB |
+| 32K | 15.8 GiB | 2.14 GiB | 17.9 GiB |
+| 128K | 15.8 GiB | 8.14 GiB | 23.9 GiB |
+| 256K | 15.8 GiB | 16.14 GiB | 31.9 GiB |
+
+Look at the middle column from top to bottom: **it's the only one that moves.** That's the
+entire idea of this article in one table column.
+
+---
+
+## A practical example: does it fit on a 24 GB card?
+
+A used RTX 3090 costs around US$ 700 and has 24 GB. Let's see what runs on it.
+
+**First, set aside the overhead.** The system, the program running the model, and intermediate
+calculations consume 2 to 3 GB before anything else. That leaves ~21 GB to work with.
+
+**Then, the weights.** In BF16 that's 51.7 GiB: doesn't fit, not even close. In Q4_K_M it's
+15.8 GiB: it fits, with about 5 GiB left over.
+
+**Finally, the cache.** With 5 GiB available and the cache in 16 bits, that's good for about
+80,000 tokens of context. But if you quantize the cache down to 8 bits, each token costs half
+as much — and the same 5 GiB buy **about 160,000 tokens**.
+
+The verdict: this card runs the entire Qwen3.8-27B, quantized, with context in the
+neighborhood of 128,000 tokens. The maximum context of 262,000 doesn't fit — it would need
+another 8 GiB. And the unquantized version doesn't fit at all.
+
+Notice what actually decided the outcome: it wasn't the size of the model, it was **the
+combination of weight quantization, cache quantization, and conversation length**. Three
+levers, and most people only know the first one.
+
+---
+
+## The number that changes the scale of what's possible
+
+Qwen3.8-27B advertises context of up to **1 million tokens** — about ten books at once. Doing
+the math with the cache in 16 bits:
+
+| Part | Memory |
+|---|---|
+| Weights in Q4_K_M | 15.8 GiB |
+| Cache with 1 million tokens | 64.1 GiB |
+| **Total** | **80.0 GiB** |
+
+Eighty gigabytes is a lot, but it's a machine that exists: a 128 GB Mac Studio can handle it,
+because on a Mac the memory is shared between the processor and the graphics unit. Two years
+ago, a context of this size on a personal machine simply wasn't possible — and what changed
+wasn't the amount of memory available on the market. **It was the model's architecture starting
+to keep less.**
+
+---
+
+## What changed in the architecture, in three moves
+
+**Sharing the tables (starting in 2023).** Before, each attention head kept its own pair of
+tables. They started sharing: in Qwen3.8-27B there are 24 query heads for 4 saved pairs. Six
+times less memory, with a quality loss small enough to have become the standard.
+
+**Making some layers forget (starting in 2024).** Sliding-window layers only look at the last
+thousand tokens and discard the rest. Their cache stops growing once it hits the window's
+ceiling. Several models use five of these layers for every one with full memory.
+
+**Trading the counter for the pot (2025 onward).** Linear attention layers don't save token by
+token: they keep a fixed-size state that sums up everything that has passed through. It's the
+recipe Qwen3.8-27B uses in 48 of its 64 layers.
+
+All three moves attack the same thing — the cost of remembering — and that's why the 2023
+intuition ("long context blows up memory") no longer describes today's models. **In
+Qwen3.8-27B with 256,000 tokens of context, the cache (16.1 GiB) is the same size as the
+quantized weights (15.8 GiB).** The two parts have tied.
+
+---
+
+## What I'd do with this
+
+**Start with the machine, not the model.** Find out how much video memory you have — or, on a
+Mac, how much unified memory. That's the ceiling, and it doesn't change.
+
+**Set aside 2 to 3 GB of overhead before any math.** This toll doesn't show up in any formula,
+and it trips up a lot of planning in the final stretch.
+
+**Count the weights at 0.61 bytes per parameter in 4-bit, not 0.5.** If the math only works out
+with the theoretical value, it doesn't work out.
+
+**Don't calculate the cache from the model's width.** Open the model's `config.json` file,
+check how many layers are full attention and how many key and value heads there are. In a
+hybrid model, most of the layers don't even enter the math.
+
+**Quantize the cache before shortening the conversation.** Taking the cache from 16 to 8 bits
+cuts that part in half and usually costs less quality than amputating the context.
+
+**If you use a ready-made calculator, check whether it knows your model.** There are several
+good ones online, and they save work. But the simplest ones assume every layer stores cache —
+which was true in 2023 and no longer is. If the calculator doesn't ask about the number of key
+and value heads, or about the layer types, it's going to badly overestimate the memory of a
+hybrid model. The way to know is the one from the previous paragraph: open `config.json` and
+check.
+
+**And run the math yourself.** I published the program that generated every number in this
+article. It reads any model's official configuration file and shows the two parts:
+
+```bash
+python3 medidor.py --repo Qwen/Qwen3.8-27B
+```
+
+The question that matters was never "how many billion parameters does this model have." It's
+**how much of your memory is left after the pantry moves in, and how long you want the
+conversation to be**.
+
+---
+
+> **Verification note.** All the memory numbers in this article were calculated by me on August
+> 14, 2026, from the official `config.json` files published on Hugging Face, using the program
+> cited above. Two honest caveats: **I did not run the model**, I only calculated what the
+> architecture declares — the values are the correct theoretical floor, and real execution
+> always costs a bit more. The 2 to 3 GB overhead is the only range in this text I didn't
+> measure myself; it comes from behavior observed in usage reports and varies with the program
+> you use. The size of the linear layers' state (0.14 GiB) is an order of magnitude derived
+> from the configuration fields, not a measurement taken during execution — it's too small to
+> change any conclusion here.
+
+## Sources
+
+- [Qwen3.8-27B — official model card and configuration](https://huggingface.co/Qwen/Qwen3.8-27B)
+- [GQA: Training Generalized Multi-Query Transformer Models](https://arxiv.org/abs/2305.13245)
+- [Fast Transformer Decoding: One Write-Head is All You Need](https://arxiv.org/abs/1911.02150)
+- [Gated Delta Networks: Improving Mamba2 with Delta Rule](https://arxiv.org/abs/2412.06464)
+- [Mamba: Linear-Time Sequence Modeling with Selective State Spaces](https://arxiv.org/abs/2312.00752)
+- [llama.cpp — bits per weight for each quantization format](https://github.com/ggml-org/llama.cpp/blob/master/tools/quantize/README.md)
+- [vLLM documentation on quantized cache](https://docs.vllm.ai/en/latest/features/quantization/quantized_kvcache/)

@@ -1,0 +1,439 @@
+---
+title: 'Como saber se um modelo de IA roda no seu computador — e por quê'
+slug: memoria-llm-local
+category: artigos
+date: '2026-08-14'
+language: pt-BR
+---
+
+Toda vez que alguém quer rodar um modelo de linguagem no próprio computador, a pergunta é a
+mesma: **isso cabe na minha máquina?** A resposta parece exigir engenharia, e por isso quase
+todo mundo desiste e vai no chute — baixa, tenta, dá errado, baixa uma versão menor.
+
+Não precisa ser assim. A conta tem duas parcelas, e dá para entender as duas sem saber
+programar. Uma delas é fixa e você descobre antes de baixar qualquer coisa. A outra cresce
+enquanto você conversa, e é ela que pega as pessoas de surpresa.
+
+Vou explicar do zero, três vezes seguidas, cada vez em um nível de detalhe maior. Você para
+no andar que quiser.
+
+1. **A cozinha** — o que acontece, sem nenhuma palavra técnica.
+2. **O mapa** — o mesmo desenho, com os nomes que aparecem na documentação.
+3. **A conta** — a fórmula, com os números reais de um modelo lançado neste mês.
+
+Quem parar no primeiro andar entendeu o mecanismo. Quem descer até o terceiro consegue
+calcular, antes de baixar, exatamente o que roda na própria máquina. E cada comparação que eu
+fizer vem com um aviso dizendo onde ela deixa de valer — comparação sem prazo de validade não
+ensina, vicia.
+
+---
+
+## Primeiro andar: a cozinha
+
+Esqueça computador por um minuto. Imagine uma cozinha.
+
+<KitchenDiagram
+  dataset="memoria-llm-local-cozinha"
+  mode="plain"
+  title="A cozinha: o que ocupa espaço enquanto se cozinha"
+  description="Ilustração de uma cozinha vista de cima, delimitada por um retângulo que representa o espaço total disponível. Dentro dela, três elementos: uma despensa cheia, de tamanho fixo, ocupando um bloco constante; uma bancada que vai sendo tomada por ingredientes já preparados, crescendo da esquerda para a direita; e uma panela de caldo, pequena e sempre do mesmo tamanho, que resume tudo que já entrou nela."
+/>
+
+**A despensa.** Antes de cozinhar qualquer coisa, todos os ingredientes e todo o treinamento
+do cozinheiro já estão ali, guardados. Isso ocupa um espaço fixo, que você conhece antes de
+ligar o fogão. Ela não cresce nem encolhe durante o preparo: é do tamanho que é. Se a despensa
+sozinha não cabe na cozinha, não há o que fazer — nem começa.
+
+**A bancada.** Conforme você cozinha, vai deixando ali tudo que já preparou: a cebola picada,
+o alho amassado, o caldo coado. Você não joga fora porque vai precisar de novo daqui a pouco,
+e refazer sai caro. A bancada **cresce** a cada ingrediente que passa pela sua mão. Numa
+receita de três passos, ela quase não aparece. Num banquete de doze horas, toma a cozinha
+inteira.
+
+**O tamanho da cozinha é o limite.** Despensa mais bancada precisam caber ali dentro. Não há
+negociação: se não cabe, não cozinha.
+
+Isso já responde a pergunta que trouxe você aqui. *Esse modelo roda na minha máquina?* é
+sempre a mesma conta: **quanto ocupa a despensa, mais quanto a bancada vai crescer, cabe no
+espaço que eu tenho?**
+
+Faltam três detalhes que mudam bastante o resultado.
+
+**Você pode liofilizar a despensa.** Existe um processo que encolhe todos os ingredientes para
+um quarto do tamanho. A comida fica um pouco pior — perde nuance — mas fica boa. Quase todo
+mundo que cozinha em casa usa ingrediente liofilizado, e o prato sai bom o suficiente.
+
+**A cozinha pode ter uma brigada.** Em vez de um cozinheiro que sabe tudo, alguns restaurantes
+têm 128 especialistas, e cada prato usa só 8 deles. Todos os 128 precisam estar no prédio e na
+folha de pagamento — mas só 8 trabalham de cada vez. É por isso que existe modelo que ocupa
+espaço de gigante e cozinha na velocidade de um pequeno.
+
+**E a cozinha moderna tem uma panela de caldo.** Em vez de guardar na bancada cada pedaço já
+picado, você joga tudo numa panela que vai reduzindo. O caldo *resume* o que entrou. E aqui
+está o detalhe que muda tudo: **a panela tem sempre o mesmo tamanho**. Você cozinha por doze
+horas e ela não cresce um centímetro.
+
+Nos modelos mais novos, a maior parte das estações de trabalho é panela de caldo. Só uma
+minoria é bancada. É por isso que eles aguentam conversas absurdamente longas em máquinas
+modestas — algo que era impossível há dois anos.
+
+> **Onde a cozinha deixa de valer:** numa cozinha de verdade, a bancada é limpa entre um prato
+> e outro. No modelo, ela só é esvaziada quando a conversa acaba — por isso a segunda pergunta
+> longa da mesma conversa pode estourar a memória que a primeira coube folgada, e por isso
+> "começar um chat novo" às vezes resolve. E a panela de caldo cobra um preço: ela resume, e
+> resumo esquece detalhe. Não é almoço grátis, é uma troca.
+
+---
+
+## Segundo andar: o mapa
+
+Os mesmos objetos, agora com o nome que aparece na documentação. É o mesmo desenho — só
+coloquei etiquetas.
+
+<KitchenDiagram
+  dataset="memoria-llm-local-cozinha"
+  mode="labeled"
+  title="A mesma cozinha, com os nomes técnicos"
+  description="A mesma ilustração da cozinha, agora com etiquetas técnicas coladas em cada elemento. A despensa recebe a etiqueta pesos do modelo. A bancada recebe a etiqueta cache de atenção. A panela de caldo recebe a etiqueta atenção linear, estado de tamanho constante. O retângulo externo recebe a etiqueta memória disponível, VRAM ou memória unificada. Os ingredientes que entram recebem a etiqueta tokens."
+/>
+
+| Na cozinha | Nome técnico | Comportamento |
+|---|---|---|
+| A despensa | **Pesos** (*weights*) | Tamanho fixo, ocupado antes de começar |
+| A bancada | **Cache de atenção** (*KV cache*) | Cresce a cada pedaço de texto processado |
+| O tamanho da cozinha | Memória disponível (**VRAM** ou memória unificada) | O teto físico |
+| Liofilizar | **Quantização** | Menos espaço, um pouco menos de qualidade |
+| A brigada de 128 | **MoE** (mistura de especialistas) | Todos na memória, poucos ativos por vez |
+| A panela de caldo | **Atenção linear** | Estado de tamanho constante |
+| Um ingrediente | **Token** | A unidade que o modelo processa |
+| O tamanho do banquete | **Contexto** | Quantos tokens cabem na conversa |
+
+Três dessas palavras merecem um parágrafo próprio, porque o terceiro andar inteiro depende
+delas.
+
+### Token
+
+É o pedaço em que o texto é cortado antes de o modelo ler. Não é exatamente uma palavra:
+palavras comuns viram um token só, palavras longas ou raras viram vários. Assim:
+
+```text
+A  memória  do  modelo  cabe  na  máquina
+│  │        │   │       │     │   │
+1  2        3   4       5     6   7      -> 7 tokens
+
+anticonstitucionalmente
+│    │      │        │
+anti const itucional mente                -> 4 tokens
+```
+
+Regra de bolso boa o bastante para português: **um token é mais ou menos três a quatro
+letras**. Uma página de texto dá cerca de 500 tokens; um livro inteiro, algo entre 100 mil e
+200 mil.
+
+### Contexto
+
+É quantos tokens cabem na conversa inteira — a pergunta, os arquivos que você colou, o
+histórico e a resposta sendo escrita. Quando um modelo anuncia "256K de contexto", quer dizer
+262.144 tokens: umas oitocentas páginas de uma vez.
+
+### Cache de atenção
+
+É a bancada, e é o conceito que mais confunde. Toda vez que o modelo lê um token, ele calcula
+duas tabelinhas a respeito daquele token e **guarda**. No token seguinte, em vez de recalcular
+tudo desde o início do texto, consulta o que já guardou.
+
+É uma troca clássica de computação: **gasta-se memória para não gastar tempo**. Sem esse
+cache, cada palavra nova custaria reler a conversa inteira, e a resposta sairia lentíssima.
+Com ele, a resposta é rápida — e a memória cresce.
+
+**Checkpoint.** Antes de descer, responda de cabeça: numa conversa muito longa, qual das duas
+cresce, a despensa ou a bancada?
+
+*Só a bancada. A despensa é do tamanho do modelo e não muda nunca. É por isso que a pergunta
+"quanta memória esse modelo usa?" não tem uma resposta só — depende de quanto você vai
+conversar com ele.*
+
+---
+
+## Uma pausa nos números redondos, porque eles escondem um detalhe
+
+Você vai ver, o tempo todo, coisas como "8K de contexto", "modelo de 27B", "24 GB de
+memória". Todos esses números são arredondados, e os arredondamentos não são inocentes: eles
+escondem entre 2% e 8% de diferença, justamente na hora em que a conta está no limite.
+
+São três confusões diferentes, e vale separar as três.
+
+### 1. O "K" não é mil. É 1.024.
+
+Computador conta em potências de dois, não de dez. Então:
+
+| Como se escreve | Quanto é de verdade |
+|---|---|
+| 1K de contexto | 1.024 tokens |
+| 4K | 4.096 tokens |
+| 8K | 8.192 tokens |
+| 32K | 32.768 tokens |
+| 128K | 131.072 tokens |
+| 256K | 262.144 tokens |
+| 1M | 1.048.576 tokens |
+
+Repare que **256K não é 256 mil, é 262.144** — quase 2,5% a mais. Num modelo que já está
+raspando o teto da sua memória, esses 2,5% são o que decide se carrega ou não.
+
+### 2. GB e GiB são coisas diferentes, e a diferença é de 7%
+
+Esta é a que mais confunde, e não tem nada a ver com IA — é a mesma bagunça de quando você
+compra um HD de "1 TB" e o computador mostra 931 GB.
+
+| Unidade | Quanto é | Quem usa |
+|---|---|---|
+| **GB** (gigabyte) | 1.000.000.000 bytes | Fabricantes de hardware, marketing |
+| **GiB** (gibibyte) | 1.073.741.824 bytes | Sistema operacional, programas |
+
+A diferença é de **7,4%**. Um arquivo de modelo anunciado como "16 GB" aparece como 14,9 GiB
+no seu sistema. Não sumiu nada: são as duas réguas medindo a mesma coisa.
+
+> **Neste artigo, toda memória está em GiB**, que é o que o seu computador vai mostrar quando
+> você tentar carregar o modelo. É a régua que importa na hora da verdade.
+
+### 3. O nome do modelo também é arredondado
+
+Um modelo chamado "27B" não tem exatamente 27 bilhões de parâmetros. O Qwen3.8-27B tem
+**27.781.427.952** — quase 2,9% a mais que o nome sugere. Parece pouco, mas em BF16 isso são
+1,5 GiB de diferença, mais do que o suficiente para estourar uma placa que estava justa.
+
+E às vezes o nome traz **dois** números, como em "26B A4B". Nesses casos o primeiro é o total
+de parâmetros — o que ocupa memória — e o segundo, marcado com "A" de *ativos*, é quanto o
+modelo realmente usa para escrever cada palavra. É a brigada de cozinheiros: todos os 26
+bilhões precisam estar na memória, mas só 4 bilhões trabalham por vez. **Para saber se cabe,
+olhe o primeiro número. Para saber se é rápido, olhe o segundo.**
+
+**Regra prática:** quando a conta der um resultado perto do limite da sua máquina, refaça com
+os números exatos. Quando sobrar folga de vários gigabytes, o arredondamento não muda nada.
+
+---
+
+## Terceiro andar: a conta
+
+Vou usar como exemplo o **Qwen3.8-27B**, um modelo aberto publicado em 5 de agosto de 2026.
+Todos os números abaixo saíram do arquivo de configuração oficial dele, e no fim do artigo há
+um programa que refaz a conta para qualquer modelo que você quiser.
+
+A conta total:
+
+```text
+memória total = memória dos pesos + memória do cache + sobrecarga de execução
+```
+
+### Parcela 1: os pesos (a despensa)
+
+A mais simples:
+
+```text
+memória dos pesos = número de parâmetros x bytes por parâmetro
+```
+
+O Qwen3.8-27B tem **27.781.427.952 parâmetros**. Cada parâmetro custa mais ou menos espaço
+conforme a precisão com que você guarda:
+
+| Precisão | Bytes por parâmetro | Memória dos pesos |
+|---|---|---|
+| BF16 (o original) | 2 | 51,7 GiB |
+| INT8 | 1 | 25,9 GiB |
+| 4-bit, na teoria | 0,5 | 12,9 GiB |
+| **Q4_K_M (o 4-bit que se usa de verdade)** | **0,61** | **15,8 GiB** |
+
+Repare na diferença entre as duas últimas linhas — é uma armadilha comum. **Na teoria, 4 bits
+por peso dariam meio byte. Na prática, o formato mais usado em máquina doméstica gasta 4,89
+bits, não 4.** O motivo é bom: ele não comprime tudo igual. As camadas mais sensíveis ficam
+com mais bits de propósito, para o modelo não emburrecer. Quem dimensiona a máquina pela
+promessa teórica descobre os 22% de diferença na hora em que o modelo não carrega.
+
+### Parcela 2: o cache (a bancada)
+
+A fórmula:
+
+```text
+cache = 2 x contexto x camadas_que_crescem x cabeças_de_cache x dimensão_da_cabeça x bytes
+```
+
+Termo por termo, sem pressa:
+
+- **2** — porque são duas tabelinhas por token, a de chave e a de valor. (Em alguns modelos
+  de 2026 as duas são iguais e se guarda uma só; nesses, esse 2 vira 1.)
+- **contexto** — quantos tokens há na conversa. É o único termo que muda enquanto você usa o
+  modelo. Todos os outros são características fixas da arquitetura.
+- **camadas_que_crescem** — e aqui está o ponto que quase todo mundo erra: **não são todas as
+  camadas.** Volto nisso já.
+- **cabeças_de_cache x dimensão_da_cabeça** — a largura do que se guarda por token. Note que
+  não é a largura total do modelo: só as cabeças de chave e valor entram, e elas são bem menos
+  numerosas que as de pergunta. No Qwen3.8-27B são 4 cabeças de dimensão 256, ou seja 1.024 —
+  enquanto a largura total do modelo é 5.120. Cinco vezes menos, porque várias cabeças de
+  pergunta dividem o mesmo par de tabelas.
+- **bytes** — 2 se o cache for guardado em 16 bits, 1 se você quantizar o cache para 8 bits.
+  Sim, o cache também pode ser liofilizado, e quase ninguém lembra disso.
+
+### Por que "camadas que crescem" e não "camadas"
+
+Um modelo é uma pilha de camadas. No Qwen3.8-27B são 64. Mas elas não são todas iguais:
+
+<WaffleChart
+  dataset="memoria-llm-local-camadas"
+  title="As 64 camadas do Qwen3.8-27B"
+  subtitle="Cada quadrado é uma camada · agrupadas por tipo; no modelo elas se alternam (3 -> 1)"
+  source="Fonte: model card oficial de Qwen/Qwen3.8-27B no Hugging Face, lido em 14/08/2026."
+  description="Diagrama com 64 quadrados representando as camadas do modelo Qwen3.8-27B. Quarenta e oito quadrados marcam camadas de atenção linear, cujo estado tem tamanho constante e não cresce com o contexto. Dezesseis quadrados destacados marcam camadas de atenção cheia, as únicas cujo cache cresce a cada token processado."
+/>
+
+**48 das 64 camadas são panela de caldo.** Elas guardam um estado de tamanho fixo — cerca de
+3 MiB cada, 0,14 GiB somando todas — e esse número não muda se você encher o contexto até o
+teto. Só as **16 camadas de bancada** acumulam token a token.
+
+Então, no Qwen3.8-27B, cada token acrescenta 4 KiB em cada uma das 16 camadas que crescem. E
+acrescenta **zero** nas outras 48.
+
+### A conta fechada
+
+<CountryBarsChart
+  dataset="memoria-llm-local-anatomia"
+  title="Onde a memória vai parar, conforme a conversa cresce"
+  subtitle="Qwen3.8-27B com pesos em Q4_K_M e cache em 16 bits · em GiB"
+  source="Fonte: cálculo do autor sobre o config.json oficial de Qwen/Qwen3.8-27B, 14/08/2026. Medidor publicado no fim do artigo."
+  description="Barras horizontais mostrando as duas parcelas da memória do modelo Qwen3.8-27B em cinco tamanhos de contexto. A parcela dos pesos permanece constante em 15,8 GiB em todos os casos. A parcela do cache cresce de 0,2 GiB com 1K de contexto para 0,64 GiB com 8K, 2,14 GiB com 32K, 8,14 GiB com 128K e 16,14 GiB com 256K de contexto."
+/>
+
+| Contexto | Pesos (fixo) | Cache (cresce) | Total |
+|---|---|---|---|
+| 1K | 15,8 GiB | 0,20 GiB | 16,0 GiB |
+| 8K | 15,8 GiB | 0,64 GiB | 16,4 GiB |
+| 32K | 15,8 GiB | 2,14 GiB | 17,9 GiB |
+| 128K | 15,8 GiB | 8,14 GiB | 23,9 GiB |
+| 256K | 15,8 GiB | 16,14 GiB | 31,9 GiB |
+
+Olhe a coluna do meio de cima a baixo: **é a única que se move.** Essa é a ideia inteira do
+artigo em uma coluna de tabela.
+
+---
+
+## Um exemplo prático: cabe numa placa de 24 GB?
+
+Uma RTX 3090 usada custa por volta de US$ 700 e tem 24 GB. Vamos ver o que roda nela.
+
+**Primeiro, reserve a sobrecarga.** O sistema, o programa que roda o modelo e os cálculos
+intermediários consomem de 2 a 3 GB antes de qualquer coisa. Sobram ~21 GB para trabalhar.
+
+**Depois, os pesos.** Em BF16 são 51,7 GiB: não cabe, nem perto. Em Q4_K_M são 15,8 GiB:
+cabe, e sobram uns 5 GiB.
+
+**Por último, o cache.** Com 5 GiB disponíveis e o cache em 16 bits, dá para uns 80 mil tokens
+de contexto. Mas se você quantizar o cache para 8 bits, cada token custa metade — e os mesmos
+5 GiB compram **cerca de 160 mil tokens**.
+
+O veredito: essa placa roda o Qwen3.8-27B inteiro, quantizado, com contexto na casa de 128 mil
+tokens. O contexto máximo de 262 mil não cabe — precisaria de mais 8 GiB. E a versão sem
+quantizar não cabe de jeito nenhum.
+
+Repare no que decidiu o resultado: não foi o tamanho do modelo, foi **a combinação de
+quantização dos pesos, quantização do cache e tamanho da conversa**. Três alavancas, e a
+maioria das pessoas só conhece a primeira.
+
+---
+
+## O número que muda a escala do que é possível
+
+O Qwen3.8-27B anuncia contexto de até **1 milhão de tokens** — uns dez livros de uma vez.
+Fazendo a conta com o cache em 16 bits:
+
+| Parcela | Memória |
+|---|---|
+| Pesos em Q4_K_M | 15,8 GiB |
+| Cache com 1 milhão de tokens | 64,1 GiB |
+| **Total** | **80,0 GiB** |
+
+Oitenta gigabytes é muito, mas é uma máquina que existe: um Mac Studio de 128 GB dá conta,
+porque no Mac a memória é compartilhada entre processador e placa de vídeo. Há dois anos, um
+contexto desse tamanho em máquina pessoal simplesmente não era possível — e o que mudou não
+foi a quantidade de memória disponível no mercado. **Foi a arquitetura do modelo passar a
+guardar menos.**
+
+---
+
+## O que mudou na arquitetura, em três movimentos
+
+**Compartilhar as tabelas (a partir de 2023).** Antes, cada cabeça de atenção guardava seu
+próprio par de tabelas. Passaram a dividir: no Qwen3.8-27B são 24 cabeças de pergunta para 4
+pares guardados. Seis vezes menos memória, com perda de qualidade pequena o suficiente para
+ter virado padrão.
+
+**Fazer algumas camadas esquecerem (a partir de 2024).** Camadas de janela deslizante só
+olham para os últimos mil tokens e descartam o resto. O cache delas para de crescer ao chegar
+no teto da janela. Vários modelos usam cinco camadas dessas para cada uma de memória completa.
+
+**Trocar a bancada pela panela (2025 em diante).** Camadas de atenção linear não guardam token
+por token: mantêm um estado de tamanho fixo que resume tudo que passou. É a receita que o
+Qwen3.8-27B usa em 48 das suas 64 camadas.
+
+Os três movimentos atacam a mesma coisa — o custo de lembrar — e é por isso que a intuição de
+2023 ("contexto longo estoura a memória") não descreve mais os modelos de hoje. **No
+Qwen3.8-27B com 256 mil tokens de contexto, o cache (16,1 GiB) é do mesmo tamanho que os pesos
+quantizados (15,8 GiB).** As duas parcelas empataram.
+
+---
+
+## O que eu faria com isso
+
+**Comece pela máquina, não pelo modelo.** Descubra quanta memória de vídeo você tem — ou, no
+Mac, quanta memória unificada. Esse é o teto, e ele não muda.
+
+**Tire 2 a 3 GB de sobrecarga antes de qualquer conta.** Esse pedágio não aparece em fórmula
+nenhuma e derruba muito planejamento no último metro.
+
+**Conte os pesos a 0,61 byte por parâmetro em 4-bit, não 0,5.** Se a conta só fecha com o
+valor teórico, ela não fecha.
+
+**Não calcule o cache pela largura do modelo.** Abra o arquivo `config.json` do modelo, veja
+quantas camadas são de atenção cheia e quantas cabeças de chave e valor existem. Em modelo
+híbrido, a maior parte das camadas nem entra na conta.
+
+**Quantize o cache antes de encurtar a conversa.** Passar o cache de 16 para 8 bits corta essa
+parcela pela metade e costuma custar menos qualidade do que amputar o contexto.
+
+**Se usar uma calculadora pronta, confira se ela conhece o seu modelo.** Existem várias boas
+na internet, e elas poupam trabalho. Mas as mais simples assumem que todas as camadas guardam
+cache — o que era verdade em 2023 e deixou de ser. Se a calculadora não pergunta pelo número
+de cabeças de chave e valor, nem pelo tipo das camadas, ela vai superestimar bastante a
+memória de um modelo híbrido. O jeito de saber é o do parágrafo anterior: abra o
+`config.json` e confira.
+
+**E rode a conta você mesmo.** Publiquei o programa que gerou todos os números deste artigo.
+Ele lê o arquivo de configuração oficial de qualquer modelo e mostra as duas parcelas:
+
+```bash
+python3 medidor.py --repo Qwen/Qwen3.8-27B
+```
+
+A pergunta que importa nunca foi "quantos bilhões de parâmetros esse modelo tem". É **quanto
+sobra da sua memória depois que a despensa entrou, e quão longa você quer que a conversa
+seja**.
+
+---
+
+> **Nota de verificação.** Todos os números de memória deste artigo foram calculados por mim
+> em 14 de agosto de 2026 a partir dos arquivos `config.json` oficiais publicados no Hugging
+> Face, com o programa citado acima. Duas ressalvas honestas: **não rodei o modelo**, apenas
+> calculei o que a arquitetura declara — os valores são o piso teórico correto, e a execução
+> real sempre cobra um pouco mais. A sobrecarga de 2 a 3 GB é a única faixa deste texto que
+> não medi pessoalmente; ela vem do comportamento observado em relatos de uso e varia com o
+> programa que você usa. O tamanho do estado das camadas lineares (0,14 GiB) é uma ordem de
+> grandeza derivada dos campos de configuração, não uma medição em execução — é pequeno demais
+> para mudar qualquer conclusão aqui.
+
+## Fontes
+
+- [Qwen3.8-27B — model card e configuração oficial](https://huggingface.co/Qwen/Qwen3.8-27B)
+- [GQA: Training Generalized Multi-Query Transformer Models](https://arxiv.org/abs/2305.13245)
+- [Fast Transformer Decoding: One Write-Head is All You Need](https://arxiv.org/abs/1911.02150)
+- [Gated Delta Networks: Improving Mamba2 with Delta Rule](https://arxiv.org/abs/2412.06464)
+- [Mamba: Linear-Time Sequence Modeling with Selective State Spaces](https://arxiv.org/abs/2312.00752)
+- [llama.cpp — bits por peso de cada formato de quantização](https://github.com/ggml-org/llama.cpp/blob/master/tools/quantize/README.md)
+- [Documentação do vLLM sobre cache quantizado](https://docs.vllm.ai/en/latest/features/quantization/quantized_kvcache/)

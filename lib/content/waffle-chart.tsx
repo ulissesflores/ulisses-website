@@ -47,7 +47,13 @@ export function WaffleChart({ dataset, title, subtitle, description, source }: W
   const total = data.categories.reduce((s, c) => s + c.count, 0);
   const rows = Math.ceil(total / COLS);
   const W = PAD.left + COLS * CELL + PAD.right;
-  const H = PAD.top + rows * CELL + PAD.bottom;
+  // A altura tem de acomodar o MAIOR entre a grade e a legenda: com poucas linhas
+  // de grade (64 pontos = 2 linhas), a legenda de 2 categorias passa do viewBox e
+  // a segunda sublabel some da imagem.
+  const H = Math.max(
+    PAD.top + rows * CELL + PAD.bottom,
+    PAD.top + 10 + data.categories.length * 40 + 16
+  );
 
   // Converte a sequência de grupos em segmentos horizontais por linha.
   const segments: { row: number; c0: number; c1: number; color: string }[] = [];
