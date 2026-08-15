@@ -83,10 +83,10 @@ export const kitchenDatasets: Record<string, KitchenDiagramDataset> = {
     },
     pot: {
       name: 'A panela de caldo',
-      note: 'resume tudo que já caiu dentro',
-      note2: 'sempre do mesmo tamanho',
+      note: 'resume tudo que entrou',
+      note2: 'tamanho sempre igual',
       tag: 'Atenção linear',
-      tagNote: 'estado de tamanho constante',
+      tagNote: 'estado de tamanho fixo',
     },
     inflow: {
       name: 'o que vai entrando, um pedaço por vez',
@@ -114,7 +114,7 @@ export const kitchenDatasets: Record<string, KitchenDiagramDataset> = {
     },
     pot: {
       name: 'The stockpot',
-      note: 'sums up everything that went in',
+      note: 'sums up all that went in',
       note2: 'always the same size',
       tag: 'Linear attention',
       tagNote: 'constant-size state',
@@ -145,10 +145,10 @@ export const kitchenDatasets: Record<string, KitchenDiagramDataset> = {
     },
     pot: {
       name: 'La olla de caldo',
-      note: 'resume todo lo que ya entró',
-      note2: 'siempre del mismo tamaño',
+      note: 'resume todo lo que entró',
+      note2: 'tamaño siempre igual',
       tag: 'Atención lineal',
-      tagNote: 'estado de tamaño constante',
+      tagNote: 'estado de tamaño fijo',
     },
     inflow: {
       name: 'lo que va entrando, un trozo cada vez',
@@ -176,10 +176,10 @@ export const kitchenDatasets: Record<string, KitchenDiagramDataset> = {
     },
     pot: {
       name: 'La pentola del brodo',
-      note: 'riassume tutto ciò che è entrato',
-      note2: 'sempre la stessa dimensione',
+      note: 'riassume quanto è entrato',
+      note2: 'sempre la stessa misura',
       tag: 'Attenzione lineare',
-      tagNote: 'stato di dimensione costante',
+      tagNote: 'stato di dimensione fissa',
     },
     inflow: {
       name: 'quello che entra, un pezzo alla volta',
