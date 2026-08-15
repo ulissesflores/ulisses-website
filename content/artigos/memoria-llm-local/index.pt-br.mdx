@@ -405,10 +405,12 @@ de cabeças de chave e valor, nem pelo tipo das camadas, ela vai superestimar ba
 memória de um modelo híbrido. O jeito de saber é o do parágrafo anterior: abra o
 `config.json` e confira.
 
-**E rode a conta você mesmo.** Publiquei o programa que gerou todos os números deste artigo.
+**E rode a conta você mesmo.** [Publiquei o programa](https://github.com/ulissesflores/llm-memory-meter) que gerou todos os números deste artigo.
 Ele lê o arquivo de configuração oficial de qualquer modelo e mostra as duas parcelas:
 
 ```bash
+git clone https://github.com/ulissesflores/llm-memory-meter.git
+cd llm-memory-meter
 python3 medidor.py --repo Qwen/Qwen3.8-27B
 ```
 
@@ -427,6 +429,9 @@ seja**.
 > programa que você usa. O tamanho do estado das camadas lineares (0,14 GiB) é uma ordem de
 > grandeza derivada dos campos de configuração, não uma medição em execução — é pequeno demais
 > para mudar qualquer conclusão aqui.
+> Os `config.json` usados estão congelados no repositório, com as somas SHA-256
+> registradas, e cada número deste artigo é uma asserção de teste que roda em integração
+> contínua. O pacote é citável: [10.5281/zenodo.21941274](https://doi.org/10.5281/zenodo.21941274).
 
 ## Fontes
 

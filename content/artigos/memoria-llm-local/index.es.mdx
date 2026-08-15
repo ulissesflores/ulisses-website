@@ -410,11 +410,13 @@ cabezas de clave y valor, ni por el tipo de las capas, va a sobrestimar bastante
 un modelo híbrido. La manera de saberlo es la del párrafo anterior: abre el `config.json` y
 compruébalo.
 
-**Y ejecuta la cuenta tú mismo.** Publiqué el programa que generó todos los números de este
+**Y ejecuta la cuenta tú mismo.** [Publiqué el programa](https://github.com/ulissesflores/llm-memory-meter) que generó todos los números de este
 artículo. Lee el archivo de configuración oficial de cualquier modelo y muestra las dos
 partidas:
 
 ```bash
+git clone https://github.com/ulissesflores/llm-memory-meter.git
+cd llm-memory-meter
 python3 medidor.py --repo Qwen/Qwen3.8-27B
 ```
 
@@ -433,6 +435,9 @@ la conversación**.
 > el programa que uses. El tamaño del estado de las capas lineales (0,14 GiB) es un orden de
 > magnitud derivado de los campos de configuración, no una medición en ejecución — es demasiado
 > pequeño para cambiar cualquier conclusión aquí.
+> Los `config.json` utilizados están congelados en el repositorio, con sus sumas SHA-256
+> registradas, y cada número de este artículo es una aserción de prueba que se ejecuta en
+> integración continua. El paquete es citable: [10.5281/zenodo.21941274](https://doi.org/10.5281/zenodo.21941274).
 
 ## Fuentes
 

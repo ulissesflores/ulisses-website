@@ -408,10 +408,12 @@ and value heads, or about the layer types, it's going to badly overestimate the 
 hybrid model. The way to know is the one from the previous paragraph: open `config.json` and
 check.
 
-**And run the math yourself.** I published the program that generated every number in this
+**And run the math yourself.** I [published the program](https://github.com/ulissesflores/llm-memory-meter) that generated every number in this
 article. It reads any model's official configuration file and shows the two parts:
 
 ```bash
+git clone https://github.com/ulissesflores/llm-memory-meter.git
+cd llm-memory-meter
 python3 medidor.py --repo Qwen/Qwen3.8-27B
 ```
 
@@ -430,6 +432,9 @@ conversation to be**.
 > you use. The size of the linear layers' state (0.14 GiB) is an order of magnitude derived
 > from the configuration fields, not a measurement taken during execution — it's too small to
 > change any conclusion here.
+> The `config.json` files used are frozen in the repository with their SHA-256 digests
+> recorded, and every number in this article is a test assertion that runs in continuous
+> integration. The package is citable: [10.5281/zenodo.21941274](https://doi.org/10.5281/zenodo.21941274).
 
 ## Sources
 

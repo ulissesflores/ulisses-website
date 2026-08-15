@@ -414,11 +414,13 @@ salvi cache — cosa vera nel 2023 e non più. Se la calcolatrice non chiede il 
 chiave e valore, né il tipo dei layer, sovrastimerà parecchio la memoria di un modello ibrido.
 Il modo per saperlo è quello del paragrafo precedente: apri il `config.json` e verifica.
 
-**E fai il conto tu stesso.** Ho pubblicato il programma che ha generato tutti i numeri di
+**E fai il conto tu stesso.** [Ho pubblicato il programma](https://github.com/ulissesflores/llm-memory-meter) che ha generato tutti i numeri di
 questo articolo. Legge il file di configurazione ufficiale di qualsiasi modello e mostra le due
 voci:
 
 ```bash
+git clone https://github.com/ulissesflores/llm-memory-meter.git
+cd llm-memory-meter
 python3 medidor.py --repo Qwen/Qwen3.8-27B
 ```
 
@@ -437,6 +439,9 @@ la conversazione**.
 > resoconti d'uso e varia col programma che usi. La dimensione dello stato dei layer lineari
 > (0,14 GiB) è un ordine di grandezza derivato dai campi di configurazione, non una misurazione
 > in esecuzione — è troppo piccola per cambiare qualsiasi conclusione qui.
+> I file `config.json` usati sono congelati nel repository, con le somme SHA-256
+> registrate, e ogni numero di questo articolo è un'asserzione di test che gira in
+> integrazione continua. Il pacchetto è citabile: [10.5281/zenodo.21941274](https://doi.org/10.5281/zenodo.21941274).
 
 ## Fonti
 
