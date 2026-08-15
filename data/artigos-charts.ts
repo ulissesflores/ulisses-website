@@ -3121,4 +3121,74 @@ export const stepFlowDatasets: Record<string, StepFlowDataset> = {
       },
     ],
   },
+
+  /**
+   * `marca-dagua-claude` — a linha do tempo da marca d'água no texto.
+   *
+   * Cinco passos é o teto medido: a timeline reparte 672px entre os intervalos
+   * e centra o rótulo do meio; com seis, os intervalos caem para 134px e
+   * "Aaronson propõe" invade "SynthID na Nature" (-12,6px de vão). O Código de
+   * Conduta de Transparência de julho/2026 saiu da FIGURA por isso e segue no
+   * texto, fundido no marco de 2/ago/2026, que é o que tem força legal.
+   *
+   * Datas em fonte primária: Aaronson 28/nov/2022 (scottaaronson.blog),
+   * SynthID-Text na Nature 23/out/2024 (Crossref), artigo 50(2) exigível em
+   * 2/ago/2026 (Comissão Europeia), anúncio 14/ago/2026 (Anthropic). O último
+   * passo é `alert` porque é o que NÃO tem data: a API de detecção foi
+   * anunciada como "em breve" e não existe publicamente.
+   */
+  'marca-dagua-linha-do-tempo': {
+    orientation: 'timeline',
+    steps: [
+      { label: 'nov/2022', detail: 'Aaronson propõe' },
+      { label: 'out/2024', detail: 'SynthID na Nature' },
+      { label: '2/ago/2026', detail: 'a regra vale na UE' },
+      { label: '14/ago/2026', detail: 'Claude anuncia' },
+      { label: 'sem data', detail: 'API de detecção', alert: true },
+    ],
+  },
+  'marca-dagua-linha-do-tempo-en': {
+    orientation: 'timeline',
+    steps: [
+      { label: 'Nov 2022', detail: 'Aaronson proposes' },
+      { label: 'Oct 2024', detail: 'SynthID in Nature' },
+      { label: '2 Aug 2026', detail: 'the EU rule applies' },
+      { label: '14 Aug 2026', detail: 'Claude announces' },
+      { label: 'no date', detail: 'detection API', alert: true },
+    ],
+  },
+  'marca-dagua-linha-do-tempo-he': {
+    orientation: 'timeline',
+    steps: [
+      // Datas SÓ em número: rótulo que mistura mês em hebraico com algarismos
+      // latinos é reordenado pelo algoritmo bidi dentro de um `<text>` de base
+      // LTR, e "2 באוג׳ 2026" saiu no render como "2 2026 באוג׳" — o dia
+      // desgarrado do mês. Defeito que o medidor de largura não vê.
+      { label: '11/2022', detail: 'אהרונסון מציע' },
+      { label: '10/2024', detail: 'SynthID ב-Nature' },
+      { label: '2/8/2026', detail: 'הכלל תקף באיחוד' },
+      { label: '14/8/2026', detail: 'קלוד מכריז' },
+      { label: 'ללא תאריך', detail: 'API לזיהוי', alert: true },
+    ],
+  },
+  'marca-dagua-linha-do-tempo-es': {
+    orientation: 'timeline',
+    steps: [
+      { label: 'nov/2022', detail: 'Aaronson propone' },
+      { label: 'oct/2024', detail: 'SynthID en Nature' },
+      { label: '2/ago/2026', detail: 'la regla rige en la UE' },
+      { label: '14/ago/2026', detail: 'Claude anuncia' },
+      { label: 'sin fecha', detail: 'API de detección', alert: true },
+    ],
+  },
+  'marca-dagua-linha-do-tempo-it': {
+    orientation: 'timeline',
+    steps: [
+      { label: 'nov 2022', detail: 'Aaronson propone' },
+      { label: 'ott 2024', detail: 'SynthID su Nature' },
+      { label: '2 ago 2026', detail: "la regola vale nell'UE" },
+      { label: '14 ago 2026', detail: 'Claude annuncia' },
+      { label: 'senza data', detail: 'API di rilevamento', alert: true },
+    ],
+  },
 };

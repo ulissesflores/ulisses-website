@@ -1,0 +1,292 @@
+---
+title: 'La marca de agua de Claude no es un sello escondido en el texto — es la forma de sortear las palabras'
+slug: marca-dagua-claude
+category: artigos
+date: '2026-08-14'
+language: es-ES
+---
+
+Anthropic publicó hoy cómo funciona la marca de agua que los próximos modelos Claude van a
+dejar en el texto que escriben. La expresión "marca de agua" hace que casi todo el mundo
+imagine lo mismo, y equivocado: un sello escondido, un carácter invisible, algo **añadido** al
+texto que un programa listo puede encontrar después.
+
+No es nada de eso. No se inserta nada en el texto. No hay carácter oculto, no hay token de
+más, no cuesta más ni hace la respuesta más lenta. Cambia una sola cosa, y es bastante más
+elegante que un sello: **cambia el origen del sorteo** cuando el modelo elige entre dos
+palabras que servirían igual de bien.
+
+Vale la pena entender el mecanismo, porque de él salen — gratis — todos los límites de la
+marca de agua. Quien entiende cómo se pone sabe en el acto por qué no funciona en texto corto,
+por qué casi no aparece en código, y por qué nunca va a decir quién escribió.
+
+## El camino a casa
+
+Imagina que todos los días vuelves del trabajo y tienes dos calles para elegir. Las dos llevan
+a casa, tardan lo mismo, tienen el mismo paisaje. Da igual. Eliges por impulso.
+
+Ahora supón que, en lugar de elegir por impulso, acuerdas una regla con un amigo: la calle de
+hoy depende del día del mes y de un número secreto que solo vosotros dos conocéis. Te sigue
+dando igual — llegas a la misma hora, por la misma distancia, sin ninguna molestia. Nadie que
+te vea volver a casa nota la diferencia.
+
+Pero tu amigo, que tiene el número secreto, mira el registro de un mes entero y responde a una
+pregunta que nadie más responde: **¿estas elecciones siguen nuestra regla o no?**
+
+Fíjate en lo que esa historia ya entrega, sin una sola palabra técnica:
+
+- la elección tiene que ser **indiferente**; si un día una calle estuviera cortada, irías por
+  la otra, y ese día no dice nada sobre la regla;
+- **un solo día no prueba nada** — la mitad de la gente acierta la calle por azar. Es el mes
+  entero el que forma el patrón;
+- el patrón dice que **se usó la regla**, no quién eres tú. No lleva tu nombre dentro.
+
+<KeyPatternDiagram
+  dataset="marca-dagua-padrao-es"
+  mode="dia"
+  title="Una sola elección no distingue a nadie"
+  description="Una única elección entre dos caminos igual de buenos, y un medidor debajo que indica que una sola elección podría haber ocurrido por azar."
+  source="Figura del autor; el medidor es cualitativo, no medido. · ulissesflores.com/marca-es"
+/>
+
+Fíjate en el medidor debajo de la figura: con una sola elección se para en el medio. No es que
+falte información — es que una elección entre dos opciones no separa a quien acordó la regla
+de quien fue por la izquierda por casualidad. **Guarda esa barra**; vuelve más adelante, cuando
+la historia de las calles se convierta en detección de verdad.
+
+Cambia "calle" por "palabra" y ya entendiste la marca de agua de Claude.
+
+## Lo mismo, con los nombres técnicos
+
+Un modelo de lenguaje escribe una palabra cada vez. En cada paso calcula una lista de
+candidatas con sus probabilidades y sortea una. En el propio ejemplo del comunicado, *"El
+tiempo hoy estaba frío y ___"*, "nublado" y "gris" son igual de buenas; "dulce" no entra en la
+conversación. Cuál de las dos buenas sale lo decide un número aleatorio — y, para el lector,
+da igual.
+
+<WordChoiceDiagram
+  dataset="marca-dagua-escolha-es"
+  mode="livre"
+  title="Donde vive la marca de agua: la elección que no cambia el sentido"
+  description="Diagrama de una frase que se escribe palabra a palabra. En uno de los pasos, el modelo tiene dos palabras igual de buenas como candidatas. Una clave secreta, combinada con las palabras ya escritas, decide cuál de las dos sale — en lugar de un sorteo común. El texto resultante es el mismo para el lector; lo que cambia es el origen del sorteo."
+  source="Figura del autor, sobre el mecanismo descrito en el comunicado de Anthropic. · ulissesflores.com/marca-es"
+/>
+
+La marca de agua cambia la fuente de ese sorteo. En lugar de un número aleatorio cualquiera,
+entran **una clave secreta y las palabras que vinieron antes**. El resultado sigue pareciendo
+aleatorio — "nublado" puede salir en una frase y "gris" en la siguiente —, pero quien tiene la
+clave puede, después, recorrer el texto y medir si la secuencia de elecciones es compatible con
+lo que esa clave produciría.
+
+Lo que sale de ahí es una **probabilidad**, no un veredicto: *qué probabilidad hay de que este
+texto lo haya escrito, al menos en parte, Claude*. Cuanto más largo el texto, más elecciones,
+más confianza.
+
+| En la historia | Nombre técnico |
+|---|---|
+| Cada trozo de texto que el modelo escribe | **token** (una palabra, o parte de ella) |
+| Las calles igual de buenas | candidatas con probabilidad parecida |
+| Elegir la calle | **muestreo** (*sampling*) |
+| El número secreto acordado | la **clave** de la marca de agua |
+| Mirar el mes entero y responder | **detección** |
+
+El método tiene nombre y dirección: es una versión de **SynthID-Text**, publicado por Google
+DeepMind en *Nature* en octubre de 2024. Anthropic atribuye el linaje a una propuesta de Scott
+Aaronson, de 2022 — fui a comprobarlo, y está ahí: en una charla de noviembre de aquel año,
+todavía en OpenAI, describe exactamente esto, elegir el siguiente trozo de texto "de forma
+pseudoaleatoria, usando una función criptográfica cuya clave solo conoce OpenAI".
+
+## Por qué no estropea el texto
+
+Esa es la pregunta que todo el mundo hace primero, y tiene respuesta medida, no promesa.
+
+En el artículo de SynthID-Text, DeepMind activó la marca de agua para una parte del tráfico
+real de Gemini y comparó la reacción de los usuarios — el pulgar arriba y el pulgar abajo —
+entre respuestas marcadas y no marcadas. Fueron casi **20 millones de respuestas**. No hubo
+diferencia estadísticamente significativa. En un estudio controlado aparte, evaluadores humanos
+que compararon las dos versiones lado a lado no vieron diferencia de calidad.
+
+Tiene sentido, y el mecanismo lo explica: la marca solo actúa donde las candidatas empatan. No
+empuja al modelo hacia una palabra que no habría usado — no va a hacer que Claude escriba
+"nubilous" en lugar de "nublado", por usar el ejemplo del propio comunicado. Decide un empate
+que ya existía.
+
+## Donde la marca no agarra
+
+Aquí está la parte que la cobertura va a errar, y es la más útil. La marca de agua necesita
+**elección libre**. Donde no hay elección, no hay de dónde agarrarse.
+
+<WordChoiceDiagram
+  dataset="marca-dagua-escolha-es"
+  mode="travado"
+  title="Donde no agarra: cuando solo existe una respuesta correcta"
+  description="El mismo diagrama, ahora en un paso en el que solo existe una continuación correcta para la frase. No hay dos candidatas igual de buenas, así que la clave no tiene sobre qué actuar y ese trozo del texto se queda sin marca. Es lo que pasa en pasajes factuales, en código y en la corrección de un texto escrito por una persona."
+  source="Figura del autor, sobre el mecanismo descrito en el comunicado de Anthropic. · ulissesflores.com/marca-es"
+/>
+
+- **El texto corto casi no marca.** Pocas elecciones, poco patrón. Es el día único de la
+  historia de las calles: no se puede concluir nada de un párrafo suelto.
+- **El hecho no marca.** En *"la obra más famosa de Isaac Newton se llama Principia ___"* solo
+  existe una continuación correcta. No hay empate que deshacer.
+- **El código casi no marca.** El código tiene que ser exacto: cambiar un término por otro
+  "igual de bueno" rompe el programa. Queda el comentario, donde la elección de palabra es
+  libre — y el comentario no es el código.
+- **Corregir texto humano casi no marca.** Si tú escribes y le pides a Claude que arregle
+  gramática y puntuación, casi todas las palabras siguen siendo tuyas. La marca solo entra en
+  las palabras que él eligió; media docena de correcciones puede no dar ni para registrar.
+- **La traducción marca entera.** Es lo contrario del caso anterior: en una traducción, cada
+  palabra del resultado es elección del modelo.
+- **Reescribirlo todo lo borra.** Una edición ligera probablemente no quita la marca;
+  sustituir cada palabra sí. Y ahí, como dice la propia Anthropic, ya es discutible llamar al
+  resultado texto generado por IA.
+
+<WatermarkReachDiagram
+  dataset="marca-dagua-alcance-es"
+  title="Dos condiciones, no una: dónde se pone la marca y dónde se puede leer"
+  description="Matriz de cuatro cuadrantes que cruza cuánta elección de palabra tuvo el modelo con cuánto texto hay para medir. Solo el cuadrante de texto largo con elección libre reúne las dos condiciones y permite la detección; en los otros tres falta la elección libre, falta texto, o faltan las dos."
+  source="Figura del autor; posiciones cualitativas, no medidas. · ulissesflores.com/marca-es"
+/>
+
+Fíjate en que son **dos preguntas distintas**, y es aquí donde casi toda la cobertura va a
+tropezar. La primera es si la marca llegó a ponerse — eso depende de que haya habido elección
+libre. La segunda es si se puede leer — eso depende de que haya texto suficiente. Las dos no
+van juntas: un párrafo suelto escrito enteramente por Claude está **totalmente** marcado y aun
+así es indetectable, mientras que un texto tuyo, largo, que él solo corrigió tiene texto de
+sobra y casi ninguna marca. Solo en el cuadrante donde las dos condiciones se encuentran la
+detección hace lo que promete.
+
+## Qué prueba la marca — y qué no
+
+¿Te acuerdas de la barra que se quedó parada en el medio al principio? Ahora se mueve. Leer un
+texto marcado es hacer esa misma pregunta — *¿estas elecciones siguen la regla?* — no una vez,
+sino en cada palabra en la que hubo empate. Una sola no dice nada. Treinta empiezan a decir.
+
+<KeyPatternDiagram
+  dataset="marca-dagua-padrao-es"
+  mode="mes"
+  title="Treinta elecciones después, aparece el patrón"
+  description="La misma lectura sobre treinta elecciones seguidas. La mayoría coincide con la regla acordada, y el medidor de abajo sube hasta cerca del extremo de quien tiene la clave."
+  source="Figura del autor; el medidor es cualitativo, no medido. · ulissesflores.com/marca-es"
+/>
+
+Fíjate en que no todas coinciden — y no hace falta. Es eso lo que hace que el resultado sea una
+**probabilidad** y no un sello de verdadero o falso. Cuanto más largo el texto, más elecciones
+entran en la cuenta y más se aleja la barra del azar. Es también por eso que la barra de un
+texto corto se queda pegada al medio, exactamente como la del primer día.
+
+| La marca de agua dice | La marca de agua **no** dice |
+|---|---|
+| Qué probabilidad hay de que Claude participara en este texto | Quién escribió, desde qué cuenta, en qué conversación |
+| Que la clave de Claude es compatible con estas elecciones | Que el texto es humano, cuando no hay marca |
+| — | Si escribió otra IA (clave distinta, o método distinto) |
+| — | Quién es el autor o el dueño del texto |
+
+Ninguna información identificadora entra en la marca. No se puede llegar al usuario, a su
+empresa ni a sus conversaciones. Y la ausencia de marca no prueba nada: puede ser texto
+humano, puede ser otro modelo, puede ser Claude en un trozo demasiado corto.
+
+**Una salvedad práctica que cambia el uso:** la API que permitiría a cualquiera comprobar un
+texto **todavía no existe**. Anthropic dice que la ofrecerá "pronto" y que aún está definiendo
+los detalles de su implementación. Mientras tanto, la marca está en el texto y la clave está
+con ellos — quien quiera verificar, espera.
+
+Y no lo confundas con los detectores de estilo de IA que ya circulan. Ellos hacen otra cosa:
+sin la clave, leen tics de escritura — Anthropic señala la construcción "esto no es [X], es
+[Y]" y el uso de la palabra "quietly" ("discretamente") muy por encima de lo esperable. Es una
+conjetura estadística sobre estilo, no una comprobación de clave.
+
+## El archivo es otra historia
+
+Cuando Claude produce un archivo — `.png`, `.jpg`, `.svg` —, lo que adjunta no es marca de
+agua: es una **credencial de contenido C2PA**, una nota firmada criptográficamente en los
+metadatos que dice que ese archivo se hizo o se procesó con Claude. Es el estándar abierto que
+los fabricantes de cámaras y los editores de imagen ya usan para registrar la procedencia.
+
+<TextVsFileDiagram
+  dataset="marca-dagua-texto-vs-arquivo-es"
+  title="Mismo apodo, mecanismos distintos: texto y archivo"
+  description="Comparación lado a lado. En el texto no se añade nada: el patrón está repartido por las palabras que decidió la clave. En el archivo de imagen el contenido no cambia y se adjunta a los metadatos una credencial C2PA firmada, al lado."
+  source="Figura del autor, sobre la distinción que la propia Anthropic hace en el comunicado. · ulissesflores.com/marca-es"
+/>
+
+La diferencia importa, y la figura muestra por qué: por un lado no hay nada que añadir — el
+patrón está repartido por las palabras, y por eso sobrevive al copiar y pegar. Por el otro,
+**nada del contenido cambia**: la nota queda al lado, en los metadatos, y cualquier herramienta
+que entienda C2PA la lee. Son dos mecanismos distintos que la prensa va a llamar con el mismo
+apodo en los próximos días.
+
+## Por qué ahora
+
+No es iniciativa de una sola empresa. El artículo 50(2) del Reglamento de IA de la Unión
+Europea exige que los proveedores garanticen que "los resultados del sistema de IA estén
+marcados en un formato legible por máquina y detectable como generado o manipulado
+artificialmente" — y pasó a ser aplicable el **2 de agosto de 2026**. En julio, cerca de
+**190 empresas y organizaciones** firmaron el Código de Conducta sobre Transparencia del
+Contenido Generado por IA de la Comisión Europea; Anthropic, Google, Meta, Microsoft, Mistral,
+OpenAI y Cohere están entre ellas. Vas a ver el mismo anuncio, con otras palabras, en todas
+partes en los próximos meses.
+
+<StepFlowDiagram
+  dataset="marca-dagua-linha-do-tempo-es"
+  title="De una idea de 2022 a una obligación legal en 2026"
+  description="Línea de tiempo con cinco hitos: la propuesta de Scott Aaronson en noviembre de 2022, la publicación de SynthID-Text en Nature en octubre de 2024, la entrada en aplicación de la regla europea el 2 de agosto de 2026, el anuncio de Anthropic el 14 de agosto de 2026 y la API de detección, que todavía no tiene fecha."
+  source="Fechas comprobadas en fuente primaria; el último hito es el que no tiene fecha. · ulissesflores.com/marca-es"
+/>
+
+La línea de tiempo ayuda a ver que nada de esto nació esta semana: la idea es de 2022, el
+método publicado es de 2024, y lo que cambió ahora fue la ley. El único punto sin fecha es
+justamente el que más le interesaría a quien recibe un texto y quiere comprobarlo.
+
+Dos detalles que las prisas suelen atropellar:
+
+1. **No es "todos los modelos Claude, ya".** La marca vale para los **próximos** modelos. Los
+   lanzados antes del 2 de agosto de 2026 entran por un periodo transitorio previsto en la
+   ley, y Anthropic dice que está trabajando para incluirlos "en los próximos meses".
+2. **La regla es europea, la aplicación es global** — no por generosidad, sino por una
+   limitación declarada: la empresa dice que todavía no tiene una forma duradera de restringir
+   la marca por región, y que lo seguirá evaluando.
+
+## Qué haría yo con esto
+
+**Si escribes con ayuda de IA y eso te preocupa:** la marca no te identifica, y en el caso más
+común — tú escribes, el modelo corrige — casi no existe. Lo que responde es sobre el texto,
+nunca sobre ti.
+
+**Si recibes texto de terceros y quieres comprobarlo:** todavía no se puede. Espera a la API
+de detección, y desconfía de cualquier servicio que hoy se anuncie como capaz de "detectar la
+marca de agua de Claude" — la clave no es pública.
+
+**Si eres profesor, editor o contratante:** el resultado es una probabilidad sobre un texto
+razonablemente largo, y la ausencia de marca no prueba autoría humana. Usar eso como prueba
+disciplinaria sería pedirle a la herramienta algo que declara que no hace.
+
+**Y lo de siempre:** la pregunta que importa nunca fue "¿esto lo escribió una IA?". Es si el
+texto es correcto, si las fuentes existen y si alguien responde por él.
+
+---
+
+> **Nota de verificación.** Escrito el 14 de agosto de 2026, el mismo día del anuncio. Leí el
+> comunicado oficial entero y guardé una copia; las frases entre comillas atribuidas a Anthropic
+> y a Scott Aaronson son **traducción mía** del original en inglés. La cita del artículo 50(2)
+> es la **versión oficial en español** del Reglamento. Confirmé los metadatos del artículo de
+> SynthID-Text en Crossref (Nature, volumen 634, páginas 818-823, 2024) y la cifra de casi 20
+> millones de respuestas de Gemini en el resumen del propio artículo — **no leí el texto
+> íntegro, que está tras un muro de pago**. Confirmé el artículo 50(2) y la fecha del 2 de
+> agosto de 2026 en el texto del Reglamento de IA, y el recuento de ~190 firmantes en el sitio
+> de la Comisión Europea. El linaje que Anthropic atribuye a Scott Aaronson **fui a comprobarlo
+> en el original**: la descripción del método está en la charla que publicó en su propio blog el
+> 28 de noviembre de 2022. **No probé nada de esto en la práctica**: no hay forma, porque la API
+> de detección no existe. Las figuras son mías, hechas en código; la que compara tipos de tarea
+> usa posiciones cualitativas, no medidas — lo dice dentro de ella. El artículo se escribió
+> primero en portugués; esta versión en español es traducción mía.
+
+## Fuentes
+
+- [How Claude's text watermark works — Anthropic, 14/ago/2026](https://www.anthropic.com/news/claude-text-watermark)
+- [Scalable watermarking for identifying large language model outputs — Nature 634, 818-823 (2024)](https://doi.org/10.1038/s41586-024-08025-4)
+- [My AI Safety Lecture for UT Effective Altruism — Scott Aaronson, 28/nov/2022](https://scottaaronson.blog/?p=6823)
+- [Watermarking AI-generated text and video with SynthID — Google DeepMind](https://deepmind.google/blog/watermarking-ai-generated-text-and-video-with-synthid/)
+- [Artículo 50 del Reglamento de IA de la Unión Europea](https://artificialintelligenceact.eu/es/article/50/)
+- [Código de Conducta sobre Transparencia del Contenido Generado por IA — Comisión Europea](https://digital-strategy.ec.europa.eu/en/policies/code-practice-ai-generated-content)
+- [Apoyo al Código de Conducta: ~190 firmantes — Comisión Europea](https://digital-strategy.ec.europa.eu/en/news/strong-backing-code-practice-transparency-ai-generated-content)
+- [C2PA — estándar abierto de credencial de contenido](https://c2pa.org/)

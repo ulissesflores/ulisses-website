@@ -32,6 +32,45 @@ export function localizeArtigo(artigo: Artigo, locale: Locale): Pick<Artigo, 'ti
 }
 
 export const artigos: readonly Artigo[] = [
+  /*
+   * Primeiro do array de propósito: divide a data com `memoria-llm-local` e o
+   * `sort` de `artigosByDateDesc` é estável — no empate, quem vem antes aqui
+   * aparece antes no índice.
+   */
+  {
+    slug: 'marca-dagua-claude',
+    title:
+      "A marca d'água do Claude não é um carimbo escondido no texto — é o jeito de sortear as palavras",
+    summary:
+      "A expressão \"marca d'água\" faz quase todo mundo imaginar a coisa errada: um carimbo escondido, um caractere invisível, algo acrescentado ao texto. Não é nada disso — nada é inserido, e o que muda é a origem do sorteio quando o modelo escolhe entre duas palavras que serviriam igualmente bem. Explico o mecanismo do zero, primeiro sem uma palavra técnica (o caminho de casa e um número secreto combinado com um amigo), depois com os nomes que aparecem na documentação. É do mecanismo que caem, de graça, todos os limites: por que texto curto quase não marca, por que código quase não marca, por que a revisão de um texto seu quase não marca, e por que a marca nunca vai dizer quem escreveu. Separo também o que a imprensa vai juntar nos próximos dias: marca d'água no texto e credencial C2PA no arquivo são mecanismos diferentes. Sete figuras próprias, feitas em código. E a ressalva que muda o uso: a API que permitiria a qualquer um conferir um texto ainda não existe — o artigo trata isso como promessa, não como fato.",
+    date: '2026-08-14',
+    tags: ['ia', 'claude', 'anthropic', 'marca-dagua', 'regulacao', 'didatico'],
+    i18n: {
+      en: {
+        title:
+          "Claude's text watermark is not a hidden stamp — it is the way the words get picked",
+        summary:
+          'The phrase "watermark" makes almost everyone picture the wrong thing: a hidden stamp, an invisible character, something added to the text. It is none of that — nothing is inserted, and what changes is the source of the randomness when the model picks between two words that would serve equally well. I explain the mechanism from scratch, first without a single technical word (the way home and a secret number agreed with a friend), then with the names that appear in the documentation. Every limit falls out of the mechanism for free: why short text barely marks, why code barely marks, why proofreading your own text barely marks, and why the mark will never say who wrote it. I also separate what the press will merge over the coming days: a watermark in text and a C2PA credential in a file are different mechanisms. Seven original figures, made in code. And the caveat that changes how you can use this: the API that would let anyone check a text does not exist yet — the article treats that as a promise, not a fact.',
+      },
+      es: {
+        title:
+          'La marca de agua de Claude no es un sello escondido en el texto — es la forma de sortear las palabras',
+        summary:
+          'La expresión "marca de agua" hace que casi todo el mundo imagine lo equivocado: un sello escondido, un carácter invisible, algo añadido al texto. No es nada de eso: no se inserta nada, y lo que cambia es el origen del sorteo cuando el modelo elige entre dos palabras que servirían igual de bien. Explico el mecanismo desde cero, primero sin una sola palabra técnica (el camino a casa y un número secreto acordado con un amigo), después con los nombres que aparecen en la documentación. Del mecanismo salen gratis todos los límites: por qué el texto corto casi no marca, por qué el código casi no marca, por qué corregir un texto tuyo casi no marca, y por qué la marca nunca dirá quién escribió. También separo lo que la prensa va a juntar estos días: marca de agua en el texto y credencial C2PA en el archivo son mecanismos distintos. Siete figuras propias, hechas en código. Y la salvedad que cambia el uso: la API que permitiría a cualquiera comprobar un texto todavía no existe — el artículo lo trata como promesa, no como hecho.',
+      },
+      it: {
+        title:
+          'La filigrana di Claude non è un timbro nascosto nel testo — è il modo in cui vengono scelte le parole',
+        summary:
+          'La parola "filigrana" fa immaginare a quasi tutti la cosa sbagliata: un timbro nascosto, un carattere invisibile, qualcosa aggiunto al testo. Non è niente di tutto questo: non viene inserito nulla, e ciò che cambia è l\'origine del sorteggio quando il modello sceglie fra due parole che andrebbero ugualmente bene. Spiego il meccanismo da zero, prima senza una sola parola tecnica (la strada di casa e un numero segreto concordato con un amico), poi con i nomi che compaiono nella documentazione. Dal meccanismo discendono gratis tutti i limiti: perché il testo breve quasi non viene marcato, perché il codice quasi non viene marcato, perché la revisione di un tuo testo quasi non lascia filigrana, e perché la filigrana non dirà mai chi ha scritto. Separo anche ciò che la stampa unirà nei prossimi giorni: filigrana nel testo e credenziale C2PA nel file sono meccanismi diversi. Sette figure originali, fatte in codice. E la precisazione che cambia l\'uso: l\'API che permetterebbe a chiunque di verificare un testo non esiste ancora — l\'articolo la tratta come promessa, non come fatto.',
+      },
+      he: {
+        title: 'סימן המים של קלוד אינו חותמת נסתרת בטקסט — הוא הדרך שבה נבחרות המילים',
+        summary:
+          'הצירוף "סימן מים" גורם כמעט לכל אחד לדמיין את הדבר השגוי: חותמת נסתרת, תו בלתי נראה, משהו שנוסף לטקסט. זה לא כך — שום דבר לא מוכנס, ומה שמשתנה הוא מקור האקראיות כשהדגם בוחר בין שתי מילים שמשרתות אותו באותה מידה. אני מסביר את המנגנון מאפס, קודם בלי מילה טכנית אחת (הדרך הביתה ומספר סודי שסוכם עם חבר), ואחר כך עם השמות שמופיעים בתיעוד. מהמנגנון נובעות בחינם כל המגבלות: למה טקסט קצר כמעט אינו מסומן, למה קוד כמעט אינו מסומן, למה הגהה של טקסט שלכם כמעט אינה מסומנת, ולמה הסימן לעולם לא יגיד מי כתב. אני גם מפריד בין מה שהעיתונות תערבב בימים הקרובים: סימן מים בטקסט ותעודת C2PA בקובץ הם מנגנונים שונים. שבעה איורים מקוריים, עשויים בקוד. וההסתייגות שמשנה את השימוש: ה-API שיאפשר לכל אחד לבדוק טקסט עדיין אינו קיים — המאמר מתייחס לזה כהבטחה, לא כעובדה.',
+      },
+    },
+  },
   {
     slug: 'memoria-llm-local',
     title: 'Como saber se um modelo de IA roda no seu computador — e por quê',

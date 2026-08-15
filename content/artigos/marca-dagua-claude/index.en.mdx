@@ -1,0 +1,292 @@
+---
+title: "Claude's text watermark is not a hidden stamp — it is the way the words get picked"
+slug: marca-dagua-claude
+category: artigos
+date: '2026-08-14'
+language: en-US
+---
+
+Anthropic published today how the watermark works that the next Claude models will leave in
+the text they write. The phrase "watermark" makes almost everyone picture the same wrong
+thing: a hidden stamp, an invisible character, something **added** to the text that a clever
+program can find later.
+
+It is none of that. Nothing is inserted into the text. There is no hidden character, no extra
+token, it costs no more and it does not make the answer slower. One single thing changes, and
+it is far more elegant than a stamp: **the source of the randomness changes** when the model
+picks between two words that would serve equally well.
+
+The mechanism is worth understanding, because every limit of the watermark falls out of it —
+for free. Whoever understands how it is put in knows immediately why it does not work on short
+text, why it barely shows up in code, and why it will never say who wrote something.
+
+## The way home
+
+Imagine that every day you come back from work and have two streets to choose from. Both take
+you home, take the same time, have the same view. It makes no difference. You pick on impulse.
+
+Now suppose that, instead of picking on impulse, you agree on a rule with a friend: today's
+street depends on the day of the month and on a secret number only the two of you know. It
+still makes no difference to you — you get home at the same time, over the same distance, with
+no bother at all. Nobody watching you walk home can tell the difference.
+
+But your friend, who has the secret number, looks at a whole month of choices and answers a
+question nobody else can answer: **do these choices follow our rule or not?**
+
+Notice what that story already gives you, without a single technical word:
+
+- the choice has to be **indifferent**; if one day a street were closed, you would take the
+  other one, and that day says nothing about the rule;
+- **one day alone proves nothing** — half of all people get the street right by chance. It is
+  the whole month that forms the pattern;
+- the pattern says **the rule was used**, not who you are. Your name is not inside it.
+
+<KeyPatternDiagram
+  dataset="marca-dagua-padrao-en"
+  mode="dia"
+  title="One choice tells nobody apart"
+  description="A single choice between two equally good routes, and a meter underneath showing that one choice alone could just as well have happened by chance."
+  source="Author's figure; the meter is qualitative, not measured. · ulissesflores.com/marca-en"
+/>
+
+Look at the meter under the figure: with a single choice it sits in the middle. It is not that
+information is missing — it is that one choice between two options does not separate the
+person who agreed on a rule from the person who went left by accident. **Keep that bar in
+mind**; it comes back later, when the story of the streets turns into real detection.
+
+Swap "street" for "word" and you have understood Claude's watermark.
+
+## The same thing, with the technical names
+
+A language model writes one word at a time. At each step it works out a list of candidates
+with their probabilities and draws one. In the announcement's own example, *"The weather today
+was cold and ___"*, "overcast" and "grey" are equally good; "sugary" is not in the running.
+Which of the two good ones comes out is decided by a random number — and to the reader, it
+makes no difference.
+
+<WordChoiceDiagram
+  dataset="marca-dagua-escolha-en"
+  mode="livre"
+  title="Where the watermark lives: the choice that does not change the meaning"
+  description="Diagram of a sentence being written word by word. At one of the steps the model has two equally good candidate words. A secret key, combined with the words already written, decides which of the two comes out — in place of an ordinary random draw. The resulting text is the same for the reader; what changes is the source of the randomness."
+  source="Author's figure, on the mechanism described in Anthropic's announcement. · ulissesflores.com/marca-en"
+/>
+
+The watermark swaps the source of that draw. Instead of an arbitrary random number, in come
+**a secret key and the words that came before**. The result still looks random — "overcast"
+may come out in one sentence and "grey" in the next —, but whoever holds the key can, later,
+walk through the text and measure whether the sequence of choices is consistent with what that
+key would produce.
+
+What comes out of it is a **probability**, not a verdict: *how likely is it that this text was
+written, at least in part, by Claude*. The longer the text, the more choices, the more
+confidence.
+
+| In the story | Technical name |
+|---|---|
+| Each piece of text the model writes | **token** (a word, or part of one) |
+| The equally good streets | candidates with similar probability |
+| Picking the street | **sampling** |
+| The agreed secret number | the watermark **key** |
+| Looking at the whole month and answering | **detection** |
+
+The method has a name and an address: it is a version of **SynthID-Text**, published by Google
+DeepMind in *Nature* in October 2024. Anthropic credits the lineage to a 2022 proposal by Scott
+Aaronson — I went to check, and it is there: in a lecture he posted in November of that year,
+while still at OpenAI, he describes exactly this. "Instead of selecting the next token
+randomly, the idea will be to select it pseudorandomly, using a cryptographic pseudorandom
+function, whose key is known only to OpenAI."
+
+## Why it does not spoil the text
+
+That is the question everyone asks first, and it has a measured answer, not a promise.
+
+In the SynthID-Text paper, DeepMind turned the watermark on for a slice of real Gemini traffic
+and compared user feedback — thumbs up and thumbs down — between watermarked and unwatermarked
+answers. That was nearly **20 million responses**. There was no statistically significant
+difference. In a separate controlled study, human raters comparing the two versions side by
+side saw no difference in quality.
+
+It makes sense, and the mechanism explains it: the mark only acts where the candidates are
+tied. It does not push the model toward a word it would not have used — it will not make
+Claude write "nubilous" instead of "overcast", to use the announcement's own example. It
+settles a tie that already existed.
+
+## Where the mark does not stick
+
+Here is the part the coverage will get wrong, and it is the most useful one. The watermark
+needs **free choice**. Where there is no choice, there is nothing for it to hold on to.
+
+<WordChoiceDiagram
+  dataset="marca-dagua-escolha-en"
+  mode="travado"
+  title="Where it does not stick: when only one answer is right"
+  description="The same diagram, now at a step where only one continuation of the sentence is correct. There are not two equally good candidates, so the key has nothing to act on and that stretch of text ends up unmarked. This is what happens in factual passages, in code and in the proofreading of text written by a person."
+  source="Author's figure, on the mechanism described in Anthropic's announcement. · ulissesflores.com/marca-en"
+/>
+
+- **Short text barely marks.** Few choices, little pattern. It is the single day of the story
+  of the streets: nothing can be concluded from a stray paragraph.
+- **Facts do not mark.** In *"Isaac Newton's most famous work was called Principia ___"*, only
+  one continuation is right. There is no tie to break.
+- **Code barely marks.** Code has to be exact: swapping one term for an "equally good" one
+  breaks the program. What is left is the comment, where word choice is free — and a comment
+  is not the code.
+- **Proofreading human text barely marks.** If you write and ask Claude to fix grammar and
+  punctuation, almost every word is still yours. The mark only enters the words it chose; half
+  a dozen corrections may not even be enough to register.
+- **A translation marks all the way through.** It is the opposite of the previous case: in a
+  translation, every word of the result is the model's choice.
+- **Rewriting everything erases it.** Light editing probably does not remove the mark;
+  replacing every word does. And at that point it is arguable, as Anthropic puts it, whether
+  the result can still be described as AI-generated.
+
+<WatermarkReachDiagram
+  dataset="marca-dagua-alcance-en"
+  title="Two conditions, not one: where the mark is put and where it can be read"
+  description="A four-quadrant matrix crossing how much word choice the model had against how much text there is to measure. Only the quadrant of long text with free choice brings the two conditions together and allows detection; in the other three there is no free choice, no text, or neither."
+  source="Author's figure; qualitative positions, not measured. · ulissesflores.com/marca-en"
+/>
+
+Notice that these are **two different questions**, and this is where nearly all the coverage
+will trip. The first is whether the mark was ever put in — that depends on there having been
+free choice. The second is whether it can be read — that depends on there being enough text.
+The two do not travel together: a stray paragraph written entirely by Claude is **fully**
+marked and still undetectable, while a long text of yours that it merely proofread has text to
+spare and almost no mark. Only in the quadrant where both conditions meet does detection do
+what it promises.
+
+## What the mark proves — and what it does not
+
+Remember the bar that sat still in the middle back at the start? Now it moves. Reading a marked
+text means asking that same question — *do these choices follow the rule?* — not once, but at
+every word where there was a tie. One says nothing. Thirty start to say something.
+
+<KeyPatternDiagram
+  dataset="marca-dagua-padrao-en"
+  mode="mes"
+  title="Thirty choices later, the pattern shows"
+  description="The same reading over thirty consecutive choices. Most of them match the agreed rule, and the meter underneath climbs close to the end of the scale that belongs to whoever has the key."
+  source="Author's figure; the meter is qualitative, not measured. · ulissesflores.com/marca-en"
+/>
+
+Notice that not all of them match — and they do not need to. That is what makes the result a
+**probability** and not a true-or-false stamp. The longer the text, the more choices enter the
+count and the further the bar moves away from chance. It is also why the bar of a short text
+stays stuck in the middle, exactly like the one from the first day.
+
+| The watermark says | The watermark does **not** say |
+|---|---|
+| How likely it is that Claude took part in this text | Who wrote it, from which account, in which chat |
+| That Claude's key is consistent with these choices | That the text is human, when there is no mark |
+| — | Whether another AI wrote it (different key, or different method) |
+| — | Who the author or the owner of the text is |
+
+No identifying information goes into the mark. There is no way to get to the user, to their
+organisation or to their chats. And the absence of a mark proves nothing: it may be human
+text, it may be another model, it may be Claude in too short a stretch.
+
+**One practical caveat that changes how you can use this:** the API that would let anyone check
+a text **does not exist yet**. Anthropic says it "will soon be offering a watermark detection
+API" and that it is "in the process of working out the details of its implementation." Until
+then, the mark is in the text and the key is with them — whoever wants to verify, waits.
+
+And do not confuse this with the AI style detectors already going around. They do something
+else: without the key, they read writing tics — Anthropic points at the construction "this
+isn't [X], it's [Y]" and at the word "quietly", used "a lot more than you might expect". That
+is a statistical guess about style, not a check of a key.
+
+## Files are a different story
+
+When Claude produces a file — `.png`, `.jpg`, `.svg` —, what it attaches is not a watermark:
+it is a **C2PA content credential**, a cryptographically signed note in the metadata saying
+that the file was made or processed with Claude. It is the open standard that camera makers
+and photo editors already use to record provenance.
+
+<TextVsFileDiagram
+  dataset="marca-dagua-texto-vs-arquivo-en"
+  title="Same nickname, different mechanisms: text and file"
+  description="A side-by-side comparison. In text, nothing is added: the pattern is spread across the words the key decided. In the image file, the content does not change and a signed C2PA credential is attached to the metadata, alongside it."
+  source="Author's figure, on the distinction Anthropic itself draws in the announcement. · ulissesflores.com/marca-en"
+/>
+
+The difference matters, and the figure shows why: on one side there is nothing to add — the
+pattern is spread across the words, which is why it survives copy and paste. On the other,
+**nothing in the content changes**: the note sits alongside, in the metadata, and any
+C2PA-aware tool reads it. Two different mechanisms that the press will call by the same
+nickname over the coming days.
+
+## Why now
+
+This is not one company's initiative. Article 50(2) of the European Union's AI Act requires
+the output of generative AI systems to be "marked in a machine-readable format and detectable
+as artificially generated or manipulated" — and it became applicable on **2 August 2026**. In
+July, around **190 companies and organisations** signed the European Commission's Code of
+Practice on Transparency of AI-Generated Content; Anthropic, Google, Meta, Microsoft, Mistral,
+OpenAI and Cohere are among them. You will see the same announcement, in other words,
+everywhere over the coming months.
+
+<StepFlowDiagram
+  dataset="marca-dagua-linha-do-tempo-en"
+  title="From a 2022 idea to a legal duty in 2026"
+  description="A timeline with five milestones: Scott Aaronson's proposal in November 2022, the publication of SynthID-Text in Nature in October 2024, the European rule becoming applicable on 2 August 2026, Anthropic's announcement on 14 August 2026 and the detection API, which still has no date."
+  source="Dates checked against primary sources; the last milestone is the one without a date. · ulissesflores.com/marca-en"
+/>
+
+The timeline helps show that none of this was born this week: the idea is from 2022, the
+published method from 2024, and what changed now is the law. The only point without a date is
+precisely the one that would matter most to someone who receives a text and wants to check it.
+
+Two details that the rush tends to run over:
+
+1. **It is not "every Claude model, right now".** The mark applies to the **next** models. The
+   ones launched before 2 August 2026 fall under a transition period provided for in the law,
+   and Anthropic says it is working to add the watermark to them "over the coming months".
+2. **The rule is European, the application is global** — not out of generosity, but by a
+   declared limitation: the company says it does not yet have a durable way to scope the mark
+   by region, and that it will keep evaluating.
+
+## What I would do with this
+
+**If you write with AI help and this worries you:** the mark does not identify you, and in the
+most common case — you write, the model proofreads — it barely exists at all. What it answers
+is about the text, never about you.
+
+**If you receive text from other people and want to check it:** you cannot yet. Wait for the
+detection API, and be suspicious of any service advertising today that it can "detect Claude's
+watermark" — the key is not public.
+
+**If you are a teacher, an editor or a client:** the result is a probability about a reasonably
+long text, and the absence of a mark does not prove human authorship. Using it as disciplinary
+evidence would be asking the tool for something it openly does not do.
+
+**And the usual:** the question that matters was never "was this written by an AI". It is
+whether the text is right, whether the sources exist, and whether somebody answers for it.
+
+---
+
+> **Verification note.** Written on 14 August 2026, the same day as the announcement. I read
+> the official announcement in full and kept a copy; the quoted passages are the original
+> English wording. I confirmed the metadata of the SynthID-Text paper on Crossref (Nature,
+> volume 634, pages 818-823, 2024) and the figure of nearly 20 million Gemini responses in the
+> paper's own abstract — **I did not read the full text, which is behind a paywall**. I
+> confirmed Article 50(2) and the date of 2 August 2026 in the official English text of the AI
+> Act, and the count of ~190 signatories on the European Commission's site. The lineage
+> Anthropic attributes to Scott Aaronson I **went to check in the original**: the description
+> of the method is in the lecture he published on his own blog on 28 November 2022. **I tested
+> none of this in practice**: there is no way to, because the detection API does not exist. The
+> figures are mine, made in code; the one comparing types of task uses qualitative positions,
+> not measurements — it says so inside the figure. This article was written in Portuguese
+> first; this English version is my own translation, and the quotations in it are the originals,
+> not translated back.
+
+## Sources
+
+- [How Claude's text watermark works — Anthropic, 14 Aug 2026](https://www.anthropic.com/news/claude-text-watermark)
+- [Scalable watermarking for identifying large language model outputs — Nature 634, 818-823 (2024)](https://doi.org/10.1038/s41586-024-08025-4)
+- [My AI Safety Lecture for UT Effective Altruism — Scott Aaronson, 28 Nov 2022](https://scottaaronson.blog/?p=6823)
+- [Watermarking AI-generated text and video with SynthID — Google DeepMind](https://deepmind.google/blog/watermarking-ai-generated-text-and-video-with-synthid/)
+- [Article 50 of the European Union's AI Act](https://artificialintelligenceact.eu/article/50/)
+- [Code of Practice on Transparency of AI-Generated Content — European Commission](https://digital-strategy.ec.europa.eu/en/policies/code-practice-ai-generated-content)
+- [Strong backing for the Code of Practice: ~190 signatories — European Commission](https://digital-strategy.ec.europa.eu/en/news/strong-backing-code-practice-transparency-ai-generated-content)
+- [C2PA — open content credential standard](https://c2pa.org/)

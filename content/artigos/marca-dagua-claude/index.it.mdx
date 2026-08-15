@@ -1,0 +1,298 @@
+---
+title: 'La filigrana di Claude non è un timbro nascosto nel testo — è il modo in cui vengono scelte le parole'
+slug: marca-dagua-claude
+category: artigos
+date: '2026-08-14'
+language: it-IT
+---
+
+Anthropic ha pubblicato oggi come funziona la filigrana che i prossimi modelli Claude
+lasceranno nel testo che scrivono. La parola "filigrana" fa immaginare a quasi tutti la stessa
+cosa sbagliata: un timbro nascosto, un carattere invisibile, qualcosa **aggiunto** al testo che
+un programma astuto riesce a trovare dopo.
+
+Non è niente di tutto questo. Nel testo non viene inserito nulla. Non c'è carattere nascosto,
+non c'è token in più, non costa di più e non rallenta la risposta. Cambia una cosa sola, ed è
+molto più elegante di un timbro: **cambia l'origine del sorteggio** quando il modello sceglie
+fra due parole che andrebbero ugualmente bene.
+
+Vale la pena capire il meccanismo, perché da lì discendono — gratis — tutti i limiti della
+filigrana. Chi capisce come viene messa sa subito perché non funziona sul testo breve, perché
+quasi non compare nel codice, e perché non dirà mai chi ha scritto.
+
+## La strada di casa
+
+Immagina che ogni giorno torni dal lavoro e abbia due strade fra cui scegliere. Portano
+entrambe a casa, richiedono lo stesso tempo, hanno lo stesso panorama. È indifferente. Scegli
+d'istinto.
+
+Ora supponi che, invece di scegliere d'istinto, tu concordi una regola con un amico: la strada
+di oggi dipende dal giorno del mese e da un numero segreto che conoscete solo voi due. Per te
+resta indifferente — arrivi alla stessa ora, per la stessa distanza, senza alcun fastidio.
+Nessuno che ti veda tornare a casa nota la differenza.
+
+Ma il tuo amico, che ha il numero segreto, guarda il registro di un mese intero e risponde a
+una domanda a cui nessun altro sa rispondere: **queste scelte seguono la nostra regola o no?**
+
+Guarda cosa consegna già questa storia, senza una sola parola tecnica:
+
+- la scelta deve essere **indifferente**; se un giorno una strada fosse chiusa, prenderesti
+  l'altra, e quel giorno non dice nulla sulla regola;
+- **un solo giorno non prova nulla** — metà delle persone indovina la strada per caso. È il
+  mese intero a formare lo schema;
+- lo schema dice che **la regola è stata usata**, non chi sei tu. Non contiene il tuo nome.
+
+<KeyPatternDiagram
+  dataset="marca-dagua-padrao-it"
+  mode="dia"
+  title="Una scelta sola non distingue nessuno"
+  description="Una singola scelta fra due percorsi ugualmente buoni, e un misuratore sotto che indica come una sola scelta potrebbe benissimo essere avvenuta per caso."
+  source="Figura dell'autore; il misuratore è qualitativo, non misurato. · ulissesflores.com/marca-it"
+/>
+
+Guarda il misuratore sotto la figura: con una sola scelta si ferma a metà. Non è che manchi
+informazione — è che una scelta fra due opzioni non separa chi ha concordato la regola da chi è
+andato a sinistra per caso. **Tieni a mente quella barra**; torna più avanti, quando la storia
+delle strade diventerà rilevamento vero.
+
+Sostituisci "strada" con "parola" e hai capito la filigrana di Claude.
+
+## Lo stesso, con i nomi tecnici
+
+Un modello linguistico scrive una parola alla volta. A ogni passo calcola un elenco di
+candidate con le loro probabilità e ne sorteggia una. Nell'esempio del comunicato stesso, *"Il
+tempo oggi era freddo e ___"*, "nuvoloso" e "grigio" sono ugualmente buone; "zuccherino" non è
+in gara. Quale delle due buone esca lo decide un numero casuale — e, per il lettore, è
+indifferente.
+
+<WordChoiceDiagram
+  dataset="marca-dagua-escolha-it"
+  mode="livre"
+  title="Dove abita la filigrana: la scelta che non cambia il senso"
+  description="Diagramma di una frase scritta parola per parola. In uno dei passaggi il modello ha due parole ugualmente buone come candidate. Una chiave segreta, combinata con le parole già scritte, decide quale delle due esce — al posto di un sorteggio comune. Il testo risultante è lo stesso per il lettore; ciò che cambia è l'origine del sorteggio."
+  source="Figura dell'autore, sul meccanismo descritto nel comunicato di Anthropic. · ulissesflores.com/marca-it"
+/>
+
+La filigrana cambia la fonte di quel sorteggio. Al posto di un numero casuale qualsiasi entrano
+**una chiave segreta e le parole venute prima**. Il risultato continua a sembrare casuale —
+"nuvoloso" può uscire in una frase e "grigio" in quella dopo —, ma chi ha la chiave può, in
+seguito, percorrere il testo e misurare se la sequenza di scelte è compatibile con ciò che
+quella chiave produrrebbe.
+
+Quello che ne esce è una **probabilità**, non un verdetto: *quanto è probabile che questo testo
+sia stato scritto, almeno in parte, da Claude*. Più il testo è lungo, più scelte ci sono, più
+sale la confidenza.
+
+| Nella storia | Nome tecnico |
+|---|---|
+| Ogni pezzo di testo che il modello scrive | **token** (una parola, o parte di essa) |
+| Le strade ugualmente buone | candidate con probabilità simile |
+| Scegliere la strada | **campionamento** (*sampling*) |
+| Il numero segreto concordato | la **chiave** della filigrana |
+| Guardare il mese intero e rispondere | **rilevamento** |
+
+Il metodo ha un nome e un indirizzo: è una versione di **SynthID-Text**, pubblicato da Google
+DeepMind su *Nature* nell'ottobre 2024. Anthropic attribuisce la genealogia a una proposta di
+Scott Aaronson del 2022 — sono andato a controllare, ed è lì: in una conferenza del novembre di
+quell'anno, quando era ancora in OpenAI, descrive esattamente questo, scegliere il pezzo di
+testo successivo "in modo pseudocasuale, usando una funzione crittografica la cui chiave è nota
+solo a OpenAI".
+
+## Perché non rovina il testo
+
+È la domanda che tutti fanno per prima, e ha una risposta misurata, non una promessa.
+
+Nel paper di SynthID-Text, DeepMind ha attivato la filigrana su una fetta del traffico reale di
+Gemini e ha confrontato il riscontro degli utenti — il pollice su e il pollice giù — fra
+risposte con e senza filigrana. Quasi **20 milioni di risposte**. Nessuna differenza
+statisticamente significativa. In uno studio controllato a parte, valutatori umani che hanno
+confrontato le due versioni fianco a fianco non hanno visto differenze di qualità.
+
+Ha senso, e il meccanismo lo spiega: la filigrana agisce solo dove le candidate pareggiano. Non
+spinge il modello verso una parola che non avrebbe usato — non farà scrivere a Claude
+"nubilous" al posto di "nuvoloso", per usare l'esempio del comunicato stesso. Decide un pareggio
+che c'era già.
+
+## Dove la filigrana non fa presa
+
+Ecco la parte che la copertura giornalistica sbaglierà, ed è la più utile. La filigrana ha
+bisogno di **scelta libera**. Dove non c'è scelta, non ha a cosa aggrapparsi.
+
+<WordChoiceDiagram
+  dataset="marca-dagua-escolha-it"
+  mode="travado"
+  title="Dove non fa presa: quando esiste una sola risposta giusta"
+  description="Lo stesso diagramma, ora in un passaggio in cui esiste una sola continuazione corretta della frase. Non ci sono due candidate ugualmente buone, quindi la chiave non ha su cosa agire e quel tratto di testo resta senza filigrana. È ciò che accade nei passaggi fattuali, nel codice e nella revisione di un testo scritto da una persona."
+  source="Figura dell'autore, sul meccanismo descritto nel comunicato di Anthropic. · ulissesflores.com/marca-it"
+/>
+
+- **Il testo breve quasi non viene marcato.** Poche scelte, poco schema. È il giorno singolo
+  della storia delle strade: da un paragrafo isolato non si conclude nulla.
+- **Il fatto non viene marcato.** In *"l'opera più famosa di Isaac Newton si chiama Principia
+  ___"* esiste una sola continuazione giusta. Non c'è pareggio da sciogliere.
+- **Il codice quasi non viene marcato.** Il codice deve essere esatto: scambiare un termine con
+  un altro "ugualmente buono" rompe il programma. Resta il commento, dove la scelta della parola
+  è libera — e il commento non è il codice.
+- **Rivedere un testo umano quasi non lascia filigrana.** Se scrivi tu e chiedi a Claude di
+  correggere grammatica e punteggiatura, quasi tutte le parole restano tue. La filigrana entra
+  solo nelle parole scelte da lui; una mezza dozzina di correzioni può non bastare nemmeno a
+  registrarsi.
+- **La traduzione viene marcata per intero.** È l'opposto del caso precedente: in una
+  traduzione, ogni parola del risultato è scelta dal modello.
+- **Riscrivere tutto la cancella.** Una revisione leggera probabilmente non toglie la
+  filigrana; sostituire ogni parola sì. E a quel punto, come dice Anthropic stessa, è
+  discutibile chiamare ancora il risultato testo generato da IA.
+
+<WatermarkReachDiagram
+  dataset="marca-dagua-alcance-it"
+  title="Due condizioni, non una: dove la filigrana è messa e dove si può leggere"
+  description="Matrice a quattro quadranti che incrocia quanta scelta di parole ha avuto il modello con quanto testo c'è da misurare. Solo il quadrante di testo lungo con scelta libera riunisce le due condizioni e permette il rilevamento; negli altri tre manca la scelta libera, manca il testo, o mancano entrambi."
+  source="Figura dell'autore; posizioni qualitative, non misurate. · ulissesflores.com/marca-it"
+/>
+
+Nota che si tratta di **due domande diverse**, ed è qui che quasi tutta la copertura
+inciamperà. La prima è se la filigrana sia stata messa — dipende dal fatto che ci sia stata
+scelta libera. La seconda è se si possa leggerla — dipende dal fatto che ci sia testo a
+sufficienza. Le due non vanno insieme: un paragrafo isolato scritto interamente da Claude è
+marcato **del tutto** e resta comunque non rilevabile, mentre un tuo testo lungo che lui ha solo
+revisionato ha testo in abbondanza e quasi nessuna filigrana. Solo nel quadrante in cui le due
+condizioni si incontrano il rilevamento fa ciò che promette.
+
+## Cosa prova la filigrana — e cosa non prova
+
+Ti ricordi la barra rimasta ferma a metà all'inizio? Ora si muove. Leggere un testo con
+filigrana significa fare quella stessa domanda — *queste scelte seguono la regola?* — non una
+volta, ma a ogni parola in cui c'era un pareggio. Una sola non dice nulla. Trenta iniziano a
+dire.
+
+<KeyPatternDiagram
+  dataset="marca-dagua-padrao-it"
+  mode="mes"
+  title="Trenta scelte dopo, lo schema compare"
+  description="La stessa lettura su trenta scelte consecutive. La maggior parte coincide con la regola concordata, e il misuratore sotto sale vicino all'estremo di chi ha la chiave."
+  source="Figura dell'autore; il misuratore è qualitativo, non misurato. · ulissesflores.com/marca-it"
+/>
+
+Nota che non tutte coincidono — e non serve. È questo che rende il risultato una
+**probabilità** e non un timbro di vero o falso. Più il testo è lungo, più scelte entrano nel
+conto e più la barra si allontana dal caso. Ed è anche il motivo per cui la barra di un testo
+breve resta bloccata a metà, esattamente come quella del primo giorno.
+
+| La filigrana dice | La filigrana **non** dice |
+|---|---|
+| Quanto è probabile che Claude abbia partecipato a questo testo | Chi ha scritto, da quale account, in quale conversazione |
+| Che la chiave di Claude è compatibile con queste scelte | Che il testo è umano, quando non c'è filigrana |
+| — | Se ha scritto un'altra IA (chiave diversa, o metodo diverso) |
+| — | Chi è l'autore o il proprietario del testo |
+
+Nella filigrana non entra nessuna informazione identificativa. Non si può risalire all'utente,
+alla sua organizzazione né alle sue conversazioni. E l'assenza di filigrana non prova nulla: può
+essere testo umano, può essere un altro modello, può essere Claude in un tratto troppo breve.
+
+**Una precisazione pratica che cambia l'uso:** l'API che permetterebbe a chiunque di verificare
+un testo **non esiste ancora**. Anthropic dice che la offrirà "presto" e che sta ancora
+definendo i dettagli dell'implementazione. Nel frattempo la filigrana è nel testo e la chiave è
+da loro — chi vuole verificare, aspetta.
+
+E non confonderla con i rilevatori di stile IA già in circolazione. Fanno un'altra cosa: senza
+la chiave, leggono tic di scrittura — Anthropic cita la costruzione "non è [X], è [Y]" e l'uso
+della parola "quietly" ("sommessamente") molto più del previsto. È una congettura statistica
+sullo stile, non una verifica di chiave.
+
+## Il file è un'altra storia
+
+Quando Claude produce un file — `.png`, `.jpg`, `.svg` —, ciò che allega non è una filigrana:
+è una **credenziale di contenuto C2PA**, una nota firmata crittograficamente nei metadati che
+dice che quel file è stato fatto o elaborato con Claude. È lo standard aperto che i produttori
+di fotocamere e i software di fotoritocco già usano per registrare la provenienza.
+
+<TextVsFileDiagram
+  dataset="marca-dagua-texto-vs-arquivo-it"
+  title="Stesso soprannome, meccanismi diversi: testo e file"
+  description="Confronto fianco a fianco. Nel testo non viene aggiunto nulla: lo schema è sparso fra le parole decise dalla chiave. Nel file immagine il contenuto non cambia e una credenziale C2PA firmata viene allegata ai metadati, di fianco."
+  source="Figura dell'autore, sulla distinzione che Anthropic stessa fa nel comunicato. · ulissesflores.com/marca-it"
+/>
+
+La differenza conta, e la figura mostra perché: da un lato non c'è nulla da aggiungere — lo
+schema è sparso fra le parole, ed è per questo che sopravvive al copia e incolla. Dall'altro,
+**nulla del contenuto cambia**: la nota sta di fianco, nei metadati, e qualsiasi strumento che
+conosca C2PA la legge. Sono due meccanismi diversi che la stampa chiamerà con lo stesso
+soprannome nei prossimi giorni.
+
+## Perché adesso
+
+Non è l'iniziativa di una sola azienda. L'articolo 50(2) del Regolamento sull'IA dell'Unione
+Europea impone che gli output dei sistemi di IA generativa "siano marcati in un formato
+leggibile meccanicamente e rilevabili come generati o manipolati artificialmente" — ed è
+applicabile dal **2 agosto 2026**. A luglio, circa **190 aziende e organizzazioni** hanno
+firmato il Codice di condotta sulla trasparenza dei contenuti generati dall'IA della Commissione
+Europea; Anthropic, Google, Meta, Microsoft, Mistral, OpenAI e Cohere sono fra queste. Vedrai lo
+stesso annuncio, con altre parole, ovunque nei prossimi mesi.
+
+<StepFlowDiagram
+  dataset="marca-dagua-linha-do-tempo-it"
+  title="Da un'idea del 2022 a un obbligo di legge nel 2026"
+  description="Linea del tempo con cinque tappe: la proposta di Scott Aaronson nel novembre 2022, la pubblicazione di SynthID-Text su Nature nell'ottobre 2024, l'entrata in applicazione della regola europea il 2 agosto 2026, l'annuncio di Anthropic il 14 agosto 2026 e l'API di rilevamento, che non ha ancora una data."
+  source="Date verificate su fonte primaria; l'ultima tappa è quella senza data. · ulissesflores.com/marca-it"
+/>
+
+La linea del tempo aiuta a vedere che nulla di tutto ciò è nato questa settimana: l'idea è del
+2022, il metodo pubblicato è del 2024, e ciò che è cambiato adesso è la legge. L'unico punto
+senza data è proprio quello che interesserebbe di più a chi riceve un testo e vuole
+verificarlo.
+
+Due dettagli che la fretta tende a travolgere:
+
+1. **Non è "tutti i modelli Claude, adesso".** La filigrana vale per i **prossimi** modelli.
+   Quelli usciti prima del 2 agosto 2026 rientrano in un periodo transitorio previsto dalla
+   legge, e Anthropic dice di stare lavorando per includerli "nei prossimi mesi".
+2. **La regola è europea, l'applicazione è globale** — non per generosità, ma per una
+   limitazione dichiarata: l'azienda dice di non avere ancora un modo duraturo di limitare la
+   filigrana per regione, e che continuerà a valutare.
+
+## Cosa ne farei io
+
+**Se scrivi con l'aiuto dell'IA e la cosa ti preoccupa:** la filigrana non ti identifica, e nel
+caso più comune — scrivi tu, il modello revisiona — quasi non esiste. Ciò a cui risponde
+riguarda il testo, mai te.
+
+**Se ricevi testi da altri e vuoi verificarli:** ancora non si può. Aspetta l'API di
+rilevamento, e diffida di qualsiasi servizio che oggi si annunci capace di "rilevare la
+filigrana di Claude" — la chiave non è pubblica.
+
+**Se sei insegnante, editor o committente:** il risultato è una probabilità su un testo
+ragionevolmente lungo, e l'assenza di filigrana non prova la paternità umana. Usarlo come prova
+disciplinare significherebbe chiedere allo strumento una cosa che dichiara di non fare.
+
+**E come sempre:** la domanda che conta non è mai stata "l'ha scritto un'IA". È se il testo è
+corretto, se le fonti esistono e se qualcuno ne risponde.
+
+---
+
+> **Nota di verifica.** Scritto il 14 agosto 2026, lo stesso giorno dell'annuncio. Ho letto per
+> intero il comunicato ufficiale e ne ho conservato una copia; le frasi fra virgolette
+> attribuite ad Anthropic e a Scott Aaronson sono **una mia traduzione** dall'originale
+> inglese. La citazione dell'articolo 50(2) è la **versione ufficiale italiana** del
+> Regolamento. Ho confermato i metadati del paper di SynthID-Text su Crossref (Nature, volume
+> 634, pagine 818-823, 2024) e il dato di quasi 20 milioni di risposte di Gemini
+> nell'abstract del paper stesso — **non ho letto il testo integrale, che è dietro un
+> paywall**. Ho confermato l'articolo 50(2) e la data del 2 agosto 2026 nel testo del
+> Regolamento sull'IA, e il conteggio di ~190 firmatari sul sito della Commissione Europea. La
+> genealogia che Anthropic attribuisce a Scott Aaronson **sono andato a verificarla
+> nell'originale**: la descrizione del metodo è nella conferenza che ha pubblicato sul proprio
+> blog il 28 novembre 2022. **Non ho provato nulla di tutto questo nella pratica**: non è
+> possibile, perché l'API di rilevamento non esiste. Le figure sono mie, fatte in codice;
+> quella che confronta i tipi di compito usa posizioni qualitative, non misurate — lo dice al
+> proprio interno. L'articolo è stato scritto prima in portoghese; questa versione italiana è
+> una mia traduzione.
+
+## Fonti
+
+- [How Claude's text watermark works — Anthropic, 14/ago/2026](https://www.anthropic.com/news/claude-text-watermark)
+- [Scalable watermarking for identifying large language model outputs — Nature 634, 818-823 (2024)](https://doi.org/10.1038/s41586-024-08025-4)
+- [My AI Safety Lecture for UT Effective Altruism — Scott Aaronson, 28/nov/2022](https://scottaaronson.blog/?p=6823)
+- [Watermarking AI-generated text and video with SynthID — Google DeepMind](https://deepmind.google/blog/watermarking-ai-generated-text-and-video-with-synthid/)
+- [Articolo 50 del Regolamento sull'IA dell'Unione Europea](https://artificialintelligenceact.eu/article/50/)
+- [Codice di condotta sulla trasparenza dei contenuti generati dall'IA — Commissione Europea](https://digital-strategy.ec.europa.eu/en/policies/code-practice-ai-generated-content)
+- [Ampio sostegno al Codice di condotta: ~190 firmatari — Commissione Europea](https://digital-strategy.ec.europa.eu/en/news/strong-backing-code-practice-transparency-ai-generated-content)
+- [C2PA — standard aperto di credenziale di contenuto](https://c2pa.org/)

@@ -160,6 +160,11 @@ const nextConfig: NextConfig = {
       { source: '/llm-es', destination: '/es/artigos/memoria-llm-local', permanent: true },
       { source: '/llm-it', destination: '/it/artigos/memoria-llm-local', permanent: true },
       { source: '/llm-he', destination: '/he/artigos/memoria-llm-local', permanent: true },
+      { source: '/marca',    destination: '/artigos/marca-dagua-claude',    permanent: true },
+      { source: '/marca-en', destination: '/en/artigos/marca-dagua-claude', permanent: true },
+      { source: '/marca-es', destination: '/es/artigos/marca-dagua-claude', permanent: true },
+      { source: '/marca-it', destination: '/it/artigos/marca-dagua-claude', permanent: true },
+      { source: '/marca-he', destination: '/he/artigos/marca-dagua-claude', permanent: true },
     ];
 
     // Locale handling (double-locale 410 + single-locale 301 + i18n rewrite) moved to middleware.ts
