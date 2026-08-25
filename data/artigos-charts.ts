@@ -2586,6 +2586,226 @@ export const countryBarsDatasets: Record<string, CountryBarsDataset> = {
       },
     ],
   },
+
+  /**
+   * `robos-2026-100m-reguas` — tempos dos 100 m que circularam na semana dos
+   * World Humanoid Robot Games 2026, em BLOCOS POR RÉGUA. Nunca fundir num
+   * ranking: a tese do artigo é que os quatro números foram medidos sob regras
+   * diferentes (recorde humano da World Athletics; bateria oficial dos Jogos;
+   * evento-teste fora de competição; edição anterior).
+   *
+   * PROCEDÊNCIA (verificada 24/08/2026): 9,58 s = World Athletics (Bolt,
+   * Berlim, 16/08/2009). 9,39 s = Tiangong Ultra, bateria 9 do grupo grande,
+   * 22/08 (Global Times 1368761; placar lido no frame ~18 s do vídeo de
+   * @TrungTPhan 2091183427303383137, "大型组100米预赛9组 9.39"). 9,47 s = Honor
+   * Lightning, mesma bateria (ZOL 12358920; Ifeng 8vnwlRjYjf5). 9,32 s = Honor
+   * Lightning em evento-teste preparatório, reportado pela CCTV (Reuters/Guardian
+   * 22/08). 21,50 s = vencedor dos 100 m na 1.ª edição, 2025 (Wikipedia; Global
+   * Times "cut from 21.50"). Paleta lote 7: azul = régua-tese (bateria oficial),
+   * ouro = destaque (o número que viralizou), cinzas = blocos recessivos.
+   * Labels em pt-BR; traduções ganham `-en/-es/-it/-he` (texto no gráfico).
+   */
+  'robos-2026-100m-reguas': {
+    max: 24,
+    groups: [
+      {
+        label: 'Jogos 2026 — bateria oficial (22/08, grupo grande, bateria 9)',
+        color: '#60a5fa',
+        items: [
+          { name: 'Tiangong Ultra', value: 9.39, valueLabel: '9,39 s', emphasis: true },
+          { name: 'Lightning (Honor)', value: 9.47, valueLabel: '9,47 s' },
+        ],
+      },
+      {
+        label: 'Evento-teste, fora de competição (CCTV)',
+        color: '#a48f65',
+        items: [
+          { name: 'Lightning (Honor)', value: 9.32, valueLabel: '9,32 s — o número que viralizou', emphasis: true },
+        ],
+      },
+      {
+        label: 'Recorde humano — World Athletics (bloco, reação, vento, antidoping)',
+        color: '#64748b',
+        items: [{ name: 'Usain Bolt, 2009', value: 9.58, valueLabel: '9,58 s' }],
+      },
+      {
+        label: 'Jogos 2025 — vencedor dos 100 m',
+        color: '#3f3f46',
+        items: [{ name: '1.ª edição', value: 21.5, valueLabel: '21,50 s' }],
+      },
+    ],
+  },
+  /**
+   * `robos-2026-100m-reguas-en` — the 100 m times that circulated during the
+   * week of the World Humanoid Robot Games 2026, IN BLOCKS BY RULER. Never
+   * merge them into a single ranking: the article's thesis is that the four
+   * numbers were measured under different rules (World Athletics human record;
+   * official heat at the Games; test event outside competition; previous
+   * edition).
+   *
+   * PROVENANCE (verified 24 Aug 2026): 9.58 s = World Athletics (Bolt,
+   * Berlin, 16 Aug 2009). 9.39 s = Tiangong Ultra, heat 9 of the large group,
+   * 22 Aug (Global Times 1368761; scoreboard read on the ~18 s frame of the
+   * @TrungTPhan video 2091183427303383137, "大型组100米预赛9组 9.39"). 9.47 s =
+   * Honor Lightning, same heat (ZOL 12358920; Ifeng 8vnwlRjYjf5). 9.32 s =
+   * Honor Lightning at a preparatory test event, reported by CCTV
+   * (Reuters/Guardian 22 Aug). 21.50 s = winner of the 100 m at the 1st
+   * edition, 2025 (Wikipedia; Global Times "cut from 21.50"). Batch 7 palette:
+   * blue = thesis ruler (official heat), gold = highlight (the number that went
+   * viral), greys = recessive blocks. Labels in EN; this is the `-en`
+   * translation of `robos-2026-100m-reguas` (only the in-chart text changes).
+   */
+  'robos-2026-100m-reguas-en': {
+    max: 24,
+    groups: [
+      {
+        label: '2026 Games — official heat (22 Aug, large group, heat 9)',
+        color: '#60a5fa',
+        items: [
+          { name: 'Tiangong Ultra', value: 9.39, valueLabel: '9.39 s', emphasis: true },
+          { name: 'Lightning (Honor)', value: 9.47, valueLabel: '9.47 s' },
+        ],
+      },
+      {
+        label: 'Test event, outside competition (CCTV)',
+        color: '#a48f65',
+        items: [
+          { name: 'Lightning (Honor)', value: 9.32, valueLabel: '9.32 s — the number that went viral', emphasis: true },
+        ],
+      },
+      {
+        label: 'Human record — World Athletics (blocks, reaction time, wind, anti-doping)',
+        color: '#64748b',
+        items: [{ name: 'Usain Bolt, 2009', value: 9.58, valueLabel: '9.58 s' }],
+      },
+      {
+        label: '2025 Games — 100 m winner',
+        color: '#3f3f46',
+        items: [{ name: '1st edition', value: 21.5, valueLabel: '21.50 s' }],
+      },
+    ],
+  },
+  /**
+   * `robos-2026-100m-reguas-es` — tiempos de los 100 m que circularon en la
+   * semana de los World Humanoid Robot Games 2026, en BLOQUES POR VARA. Nunca
+   * fundir en un ranking: la tesis del artículo es que los cuatro números se
+   * midieron bajo reglas distintas (récord humano de World Athletics; serie
+   * oficial de los Juegos; evento-test fuera de competición; edición anterior).
+   *
+   * PROCEDENCIA (verificada el 24/08/2026): 9,58 s = World Athletics (Bolt,
+   * Berlín, 16/08/2009). 9,39 s = Tiangong Ultra, serie 9 del grupo grande,
+   * 22/08 (Global Times 1368761; marcador leído en el frame ~18 s del video de
+   * @TrungTPhan 2091183427303383137, "大型组100米预赛9组 9.39"). 9,47 s = Honor
+   * Lightning, misma serie (ZOL 12358920; Ifeng 8vnwlRjYjf5). 9,32 s = Honor
+   * Lightning en evento-test preparatorio, reportado por la CCTV (Reuters/Guardian
+   * 22/08). 21,50 s = ganador de los 100 m en la 1.ª edición, 2025 (Wikipedia;
+   * Global Times "cut from 21.50"). Paleta lote 7: azul = vara-tesis (serie
+   * oficial), oro = destacado (el número que se hizo viral), grises = bloques
+   * recesivos. Etiquetas en español; el original en pt-BR es la clave
+   * `robos-2026-100m-reguas`.
+   */
+  'robos-2026-100m-reguas-es': {
+    max: 24,
+    groups: [
+      {
+        label: 'Juegos 2026 — serie oficial (22/08, grupo grande, serie 9)',
+        color: '#60a5fa',
+        items: [
+          { name: 'Tiangong Ultra', value: 9.39, valueLabel: '9,39 s', emphasis: true },
+          { name: 'Lightning (Honor)', value: 9.47, valueLabel: '9,47 s' },
+        ],
+      },
+      {
+        label: 'Evento-test, fuera de competición (CCTV)',
+        color: '#a48f65',
+        items: [
+          { name: 'Lightning (Honor)', value: 9.32, valueLabel: '9,32 s — el número que se hizo viral', emphasis: true },
+        ],
+      },
+      {
+        label: 'Récord humano — World Athletics (taco de salida, reacción, viento, antidopaje)',
+        color: '#64748b',
+        items: [{ name: 'Usain Bolt, 2009', value: 9.58, valueLabel: '9,58 s' }],
+      },
+      {
+        label: 'Juegos 2025 — ganador de los 100 m',
+        color: '#3f3f46',
+        items: [{ name: '1.ª edición', value: 21.5, valueLabel: '21,50 s' }],
+      },
+    ],
+  },
+  /**
+   * `robos-2026-100m-reguas-it` — tradução IT dos labels de
+   * `robos-2026-100m-reguas`. Números, cores e estrutura IDÊNTICOS ao dataset
+   * pt-BR; só o texto renderizado no gráfico muda. Procedência e ressalvas:
+   * ver o comentário do dataset original em `artigos-charts-addition.ts`.
+   */
+  'robos-2026-100m-reguas-it': {
+    max: 24,
+    groups: [
+      {
+        label: 'Giochi 2026 — batteria ufficiale (22/08, gruppo grande, batteria 9)',
+        color: '#60a5fa',
+        items: [
+          { name: 'Tiangong Ultra', value: 9.39, valueLabel: '9,39 s', emphasis: true },
+          { name: 'Lightning (Honor)', value: 9.47, valueLabel: '9,47 s' },
+        ],
+      },
+      {
+        label: 'Evento-test, fuori competizione (CCTV)',
+        color: '#a48f65',
+        items: [
+          { name: 'Lightning (Honor)', value: 9.32, valueLabel: '9,32 s — il numero diventato virale', emphasis: true },
+        ],
+      },
+      {
+        label: 'Record umano — World Athletics (blocchi, reazione, vento, antidoping)',
+        color: '#64748b',
+        items: [{ name: 'Usain Bolt, 2009', value: 9.58, valueLabel: '9,58 s' }],
+      },
+      {
+        label: 'Giochi 2025 — vincitore dei 100 m',
+        color: '#3f3f46',
+        items: [{ name: '1ª edizione', value: 21.5, valueLabel: '21,50 s' }],
+      },
+    ],
+  },
+  /**
+   * `robos-2026-100m-reguas-he` — tradução HE dos labels de
+   * `robos-2026-100m-reguas`. Números, cores e estrutura IDÊNTICOS ao dataset
+   * pt-BR; só o texto renderizado no gráfico muda. Procedência e ressalvas:
+   * ver o comentário do dataset original acima.
+   */
+  'robos-2026-100m-reguas-he': {
+    max: 24,
+    groups: [
+      {
+        label: 'משחקי 2026 — מקצה רשמי (22/08, הקבוצה הגדולה, מקצה 9)',
+        color: '#60a5fa',
+        items: [
+          { name: 'Tiangong Ultra', value: 9.39, valueLabel: '9.39 שניות', emphasis: true },
+          { name: 'Lightning (Honor)', value: 9.47, valueLabel: '9.47 שניות' },
+        ],
+      },
+      {
+        label: 'אירוע-מבחן, מחוץ לתחרות (CCTV)',
+        color: '#a48f65',
+        items: [
+          { name: 'Lightning (Honor)', value: 9.32, valueLabel: '9.32 שניות — המספר שהפך לוויראלי', emphasis: true },
+        ],
+      },
+      {
+        label: 'שיא אנושי — World Athletics (בלוק זינוק, זמן תגובה, רוח, אנטי-דופינג)',
+        color: '#64748b',
+        items: [{ name: 'יוסיין בולט, 2009', value: 9.58, valueLabel: '9.58 שניות' }],
+      },
+      {
+        label: 'משחקי 2025 — המנצח ב-100 מטר',
+        color: '#3f3f46',
+        items: [{ name: 'מהדורה ראשונה', value: 21.5, valueLabel: '21.50 שניות' }],
+      },
+    ],
+  },
 };
 
 /* ── Funil ───────────────────────────────────────────────────────────── */

@@ -20,7 +20,7 @@ DOIS REGIMES DE MEDIÇÃO, porque são dois tipos de figura:
    várias dessas caixas são dimensionadas pelo próprio texto (fórmula de contagem de
    caractere), então elas vivem, por construção, acima de 85%.
 
-COBERTURA (espelho de `lib/content/mdx-components.tsx`, lido em 2026-08-15 — 15 entradas):
+COBERTURA (espelho de `lib/content/mdx-components.tsx`, lido em 2026-08-24 — 17 entradas):
 
 | Componente | Regime | Texto medido |
 |---|---|---|
@@ -28,7 +28,7 @@ COBERTURA (espelho de `lib/content/mdx-components.tsx`, lido em 2026-08-15 — 1
 | WaffleChart | 1 | props + label/sublabel de cada categoria |
 | FunnelChart, EffortCostChart, InvertedUChart, NoiseFloorChart, NoiseVsSignalBars, TvChannelsDiagram | 1 | props |
 | WordChoiceDiagram, WatermarkReachDiagram, TextVsFileDiagram, KeyPatternDiagram, KitchenDiagram, StepFlowDiagram | 2 | props + tudo que o dataset desenha |
-| SimulationRenderer | — | não desenha texto em SVG |
+| SimulationRenderer, YouTube, ArticleFigure | — | não desenham texto em SVG |
 
 Componente instanciado num `.mdx` que não esteja nessa lista **reprova com exit 1** em vez
 de ser pulado em silêncio: figura nova fora da cobertura foi exatamente como oito rótulos
@@ -625,7 +625,10 @@ CENAS = {
 }
 
 # Registrado em `mdx-components.tsx` mas sem `<text>` próprio: medir não se aplica.
-SEM_TEXTO = {"SimulationRenderer"}
+# `YouTube` (iframe) e `ArticleFigure` (next/image + <figcaption>) desenham em HTML
+# comum, não em SVG — legenda que não cabe quebra linha, não é cortada em silêncio,
+# que é a falha que este medidor existe para pegar.
+SEM_TEXTO = {"SimulationRenderer", "YouTube", "ArticleFigure"}
 
 
 # ───────────────────────────── leitura dos `.mdx` ─────────────────────────────
