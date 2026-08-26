@@ -33,6 +33,15 @@ export function localizeArtigo(artigo: Artigo, locale: Locale): Pick<Artigo, 'ti
 
 export const artigos: readonly Artigo[] = [
 {
+  slug: 'ninguem-provou-meta-le-whatsapp',
+  title:
+    'Não, ninguém provou que a Meta lê o seu WhatsApp. O que eu encontrei é pior',
+  summary:
+    'Um advogado perdeu dez anos de conversas numa manhã e um vídeo concluiu que a Meta leu o que ele escreveu. Fui checar essa acusação nos manuais técnicos do WhatsApp de 2016 a 2026, no código do cliente, em capturas arquivadas da central de ajuda do Instagram, na decisão da Comissão Europeia de 2017 e nos autos de processos no Brasil, nos Estados Unidos e na Índia. O vídeo erra por duas razões, e a segunda enterra o argumento: banir em massa e barulhentamente é a assinatura de um classificador automático, não de quem lê — quem tem uma capacidade secreta valiosa protege a capacidade, não o caso individual. Mas o que sobra no lugar é pior. A empresa passou a definir sozinha o que conta como conversa protegida e a listar exceções que ela mesma reconhece; nenhuma observação disponível ao público distingue uma empresa que não pode ler de uma que pode e não diz; e as três escolhas que produzem essa impossibilidade — aplicativo fechado, sem build reproduzível, sem auditoria externa — são dela, e reversíveis por ela. Em 8 de maio de 2026 a Meta desligou a criptografia de ponta a ponta das mensagens do Instagram: a garantia que nos venderam como matemática sempre foi uma promessa corporativa, e promessas corporativas se revogam.',
+  date: '2026-08-26',
+  tags: ['criptografia', 'whatsapp', 'instagram', 'meta', 'privacidade', 'verificacao'],
+},
+{
   slug: 'tokens-por-dolar',
   title:
     'O gráfico viral coroa o Mac, a tabela coroa o Spark: medi 43 mil chamadas e o vencedor não é máquina nenhuma',
