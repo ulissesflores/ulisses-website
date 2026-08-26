@@ -1,0 +1,140 @@
+---
+title: 'Eu estava medindo recusas invisíveis. A recusa apareceu — e não era invisível'
+slug: recusa-que-parou-o-estudo-das-recusas
+category: artigos
+date: '2026-08-26'
+language: pt-BR
+---
+
+**Um estudo meu sobre recusas de IA que passam despercebidas foi interrompido por uma recusa. Havia
+dois caminhos: reescrever o pedido até passar pelo classificador, ou parar e me candidatar ao canal
+formal de verificação da Anthropic. Reescrever teria funcionado — quase sempre funciona. Eu parei, e
+hoje saiu a aprovação. O que aprendi no meio disso vale mais do que o desbloqueio.**
+
+---
+
+## 1. A falha que eu estava medindo
+
+Existe uma falha em sistemas de agentes de IA que quase ninguém instrumenta: o modelo recusa um
+passo no meio da execução, e o sistema que o orquestra não percebe. Do lado de fora, uma recusa e um
+resultado vazio se parecem. O agente segue em frente como se o passo tivesse dado certo, e a falha
+entra silenciosa na saída final.
+
+É isso que eu estou medindo num estudo pré-registrado: com que frequência isso acontece e se dá para
+detectar a recusa a partir dos artefatos que o agente de fato observa. A variável de interesse é se
+a recusa é *legível* — não o que está por trás dela.
+
+<ArticleFigure
+  src="/artigos/recusa-que-parou-o-estudo-das-recusas/fig-01.png"
+  width="2352"
+  height="780"
+  alt="Diagrama: uma recusa do modelo e uma falha por outro motivo produzem o mesmo resultado vazio, que o orquestrador registra como passo concluído."
+  caption="Figura 1. Duas causas diferentes, um único observável. É por isso que a recusa entra silenciosa na saída final."
+/>
+
+Para medir, é preciso um corpus com dois estratos: prompts que disparam recusa de segurança e
+prompts que falham por motivos que nada têm a ver com segurança, como contradição interna do pedido
+ou orçamento de turnos esgotado. Sem o segundo estrato, a comparação principal fica confundida. Sem
+o primeiro, não há o que medir.
+
+## 2. O bloqueio
+
+Ao despachar a etapa de autoria do estrato de segurança, o pedido não foi respondido. Voltou uma
+mensagem do próprio sistema de salvaguardas, em tradução minha:
+
+> As salvaguardas do Opus 4.8 sinalizaram esta mensagem. Nossas salvaguardas intencionalmente amplas
+> nos permitem entregar mais capacidade mais rápido, mas às vezes sinalizam trabalho legítimo de
+> cibersegurança.
+
+Minha leitura — e é leitura, não medição: um corpus *sobre* recusas lê, para um classificador, como
+material ofensivo. A camada que protege não distingue escrever sobre o fenômeno de praticar o
+fenômeno. Ela erra para o lado seguro, e o preço desse acerto de projeto é o falso positivo.
+
+A ironia é boa demais para não registrar: um estudo sobre recusas que passam despercebidas foi
+interrompido por uma recusa impossível de não perceber. Essa, pelo menos, tinha mensagem, categoria
+e um caminho de resolução escrito. É mais do que a maioria dos agentes em produção oferece quando um
+passo interno falha.
+
+## 3. A bifurcação, que é moral antes de ser técnica
+
+No ponto do bloqueio havia duas saídas.
+
+A primeira: reescrever o pedido. Trocar palavras, quebrar em pedaços menores, mudar o transporte —
+do modo automatizado para uma sessão interativa, por exemplo. Alguma variação passaria. Elas quase
+sempre passam.
+
+A segunda: parar.
+
+<ArticleFigure
+  src="/artigos/recusa-que-parou-o-estudo-das-recusas/fig-02.png"
+  width="2352"
+  height="780"
+  alt="Diagrama: do pedido bloqueado saem dois caminhos — reescrever até passar, que funciona e é evasão de salvaguarda, e parar e se candidatar, que devolve verificação dentro de um escopo declarado."
+  caption="Figura 2. O caminho curto entrega o resultado e destrói o estudo. O longo demora dois dias úteis."
+/>
+
+Eu parei. Não por medo de punição, e sim porque reformular um pedido **porque ele foi sinalizado** é
+evasão de salvaguarda — um andar abaixo do jailbreak de prompt, mas a mesma família. Trocar de canal
+porque o canal anterior foi flagado é a mesma coisa com outra roupa. Um pesquisador que contorna o
+classificador para estudar o classificador contaminou o próprio objeto e, pior, quebrou a regra que
+diz estar defendendo.
+
+O braço de segurança do estudo foi congelado por decisão, não por impedimento técnico. Isso ficou
+escrito, com data, no arquivo de estado do projeto — inclusive o aviso para qualquer sessão futura
+que retomasse o trabalho sem contexto de que escrever aqueles prompts antes do veredito quebraria a
+decisão. Congelar sem registrar não é disciplina; é esquecimento com prazo.
+
+## 4. A candidatura
+
+O Cyber Verification Program é gratuito, baseado em formulário, e existe para exatamente este caso:
+profissionais com propósito defensivo legítimo cujo trabalho de uso duplo é bloqueado por padrão.
+
+Escrevi o estudo como ele é — pré-registrado, somente medição, sem geração de exploit, sem alvo
+vivo, sem elicitação de capacidade ofensiva — e uma frase que era o ponto inteiro da candidatura:
+
+> Eu não tentei reformular para contornar a salvaguarda e não vou tentar. Prefiro ser verificado a
+> evadir. Se a verificação não for adequada para este caso de uso, eu mudo o desenho do estudo.
+
+Anexei o que dá para conferir sem depender da minha palavra: ORCID, depósitos com DOI no Zenodo,
+repositórios públicos com cadeia de proveniência e código que reproduz os números publicados.
+Credibilidade aqui é auditável ou não é nada.
+
+A resposta veio dentro do prazo de dois dias úteis que a página do programa promete. Aprovado.
+
+## 5. O que a aprovação é — e o que ela não é
+
+| | O que muda |
+|---|---|
+| ✅ Liberado | Atividades de cibersegurança de uso duplo deixam de ser bloqueadas por padrão, para a organização aprovada e dentro do caso de uso descrito na submissão |
+| ⚠️ Condicionado | Sujeito a monitoramento contínuo e à política de uso; pode ser revogado; a aprovação não viaja para outra conta |
+| ❌ Continua bloqueado | Uso proibido, com programa ou sem: infraestrutura de comando e controle, exfiltração massiva de dados, desenvolvimento de ransomware |
+
+E o que ela **não** é: o programa é um processo de candidatura e revisão — não é parceria, não é
+acordo de co-marketing, não é certificação e não é endosso da minha pesquisa. Faço questão da
+distinção porque ela é o ponto: fui verificado, não abençoado.
+
+Se um bloqueio aparecer de novo, o caminho está escrito e é curto: conferir se a organização é a
+aprovada -> conferir se a atividade não é uso proibido -> reportar como falso positivo pelo
+formulário do programa. Não reescrever o prompt. Nunca reescrever o prompt.
+
+## 6. Por que isso importa para além do meu estudo
+
+Salvaguardas amplas são uma escolha de engenharia com um trade-off explícito: capturam mais abuso
+real e, no mesmo movimento, atropelam trabalho legítimo. Quem constrói defesa vive do lado errado
+desse trade-off com frequência incômoda. A resposta madura não é indignação nem contorno — é um
+canal de verificação, usado como canal.
+
+E há a lição que o próprio incidente entrega de graça, que é a tese do estudo: **uma recusa só é
+gerenciável quando é legível.** A que me bloqueou tinha texto, categoria e uma porta de saída — por
+isso virou uma decisão documentada, uma candidatura e este artigo. As recusas que eu estou medindo
+não têm nada disso: chegam ao orquestrador como um resultado vazio e são tratadas como sucesso.
+
+Se você opera agentes em produção, essa é a pergunta que vale mais do que a discussão sobre qual
+modelo é mais inteligente: quando um passo interno é recusado, o seu sistema sabe?
+
+O meu ainda não sabia. É por isso que existe o estudo.
+
+---
+
+O corpus e o código serão publicados junto com o artigo científico, com cadeia de proveniência.
+Nenhum resultado é anunciado aqui: a coleta não terminou.

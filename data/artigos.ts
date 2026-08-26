@@ -33,6 +33,15 @@ export function localizeArtigo(artigo: Artigo, locale: Locale): Pick<Artigo, 'ti
 
 export const artigos: readonly Artigo[] = [
 {
+  slug: 'recusa-que-parou-o-estudo-das-recusas',
+  title:
+    'Eu estava medindo recusas invisíveis. A recusa apareceu — e não era invisível',
+  summary:
+    'Um estudo meu sobre recusas de IA que passam despercebidas dentro de sistemas de agentes foi interrompido por uma recusa: o classificador de salvaguardas bloqueou a geração do corpus, porque um conjunto de prompts SOBRE recusas lê, para um classificador, como material ofensivo. Havia dois caminhos — reescrever o pedido até passar, o que quase sempre funciona, ou parar. Reformular um pedido porque ele foi sinalizado é evasão de salvaguarda, um andar abaixo do jailbreak e da mesma família; um pesquisador que contorna o classificador para estudar o classificador contaminou o próprio objeto. Congelei o braço do estudo com data no arquivo de estado do projeto e me candidatei ao Cyber Verification Program da Anthropic, o canal formal para trabalho de uso duplo com propósito defensivo. A aprovação saiu dentro do prazo de dois dias úteis. O que ela é: uso duplo deixa de ser bloqueado por padrão, dentro do caso de uso submetido e sob monitoramento contínuo. O que ela não é: parceria, certificação ou endosso — uso proibido continua bloqueado com programa ou sem. E fica a lição que o incidente entrega de graça, que é a tese do estudo: uma recusa só é gerenciável quando é legível. A que me bloqueou tinha texto, categoria e porta de saída; as que eu estou medindo chegam ao orquestrador como resultado vazio e são tratadas como sucesso.',
+  date: '2026-08-26',
+  tags: ['ia', 'agentes', 'ciberseguranca', 'anthropic', 'pesquisa', 'salvaguardas'],
+},
+{
   slug: 'ninguem-provou-meta-le-whatsapp',
   title:
     'Não, ninguém provou que a Meta lê o seu WhatsApp. O que eu encontrei é pior',
