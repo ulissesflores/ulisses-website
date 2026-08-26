@@ -32,6 +32,33 @@ export function localizeArtigo(artigo: Artigo, locale: Locale): Pick<Artigo, 'ti
 }
 
 export const artigos: readonly Artigo[] = [
+{
+  slug: 'tokens-por-dolar',
+  title:
+    'O gráfico viral coroa o Mac, a tabela coroa o Spark: medi 43 mil chamadas e o vencedor não é máquina nenhuma',
+  summary:
+    'Duas imagens virais comparam Mac Studio M5 Ultra 256 GB, RTX 5090, RTX PRO 6000 e DGX Spark em "valor por dólar" para rodar IA em casa. Fui conferir: a métrica multiplica estoque por vazão, o preço do Spark morreu em fevereiro e a PRO 6000 entrou sem hospedeiro. Depois refiz a conta que interessa — tokens por dólar contra a API do mesmo modelo — e a primeira versão dela assumia que uma pessoa usa a máquina 1 % do tempo. Medi 43.593 chamadas reais de agente de código nesta máquina: o 1 % não descreve ninguém (chat fica perto de 0,03 %; agente, entre 10 % e 30 %), 96 % da entrada é releitura de contexto, e trocar a regra de cobrança dessa releitura move a conta 16 vezes, enquanto trocar de máquina move 3,6. No único regime em que a máquina mais barata ganha (1,5x), o dia de pico dela não cabe no dia e a chamada média, de 151,9 mil tokens, não cabe no contexto do modelo. Compre por soberania, não por economia.',
+  date: '2026-08-25',
+  tags: ['ia', 'llm', 'hardware', 'custo', 'inferencia-local'],
+  i18n: {
+    en: {
+      title: 'The viral chart crowns the Mac, the table crowns the Spark: I measured 43 thousand calls and the winner is no machine at all',
+      summary: 'Two viral images compare the Mac Studio M5 Ultra 256 GB, RTX 5090, RTX PRO 6000 and DGX Spark on "value per dollar" for running AI at home. I went to check: the metric multiplies stock by flow, the Spark\'s price died in February and the PRO 6000 came in without a host PC. Then I redid the math that matters — tokens per dollar against the API for the same model — and its first version assumed a person uses the machine 1% of the time. I measured 43,593 real coding-agent calls on this machine: the 1% describes nobody (chat sits near 0.03%; an agent, between 10% and 30%), 96% of the input is context re-reading, and changing the billing rule for that re-reading moves the bill 16 times, while changing machine moves it 3.6. In the one regime where the cheapest machine wins (1.5x), its peak day does not fit in the day and the mean call, at 151.9 thousand tokens, does not fit in the model\'s context. Buy for sovereignty, not for savings.'
+    },
+    es: {
+      title: 'El gráfico viral corona al Mac, la tabla corona al Spark: medí 43 mil llamadas y el ganador no es ninguna máquina',
+      summary: 'Dos imágenes virales comparan Mac Studio M5 Ultra 256 GB, RTX 5090, RTX PRO 6000 y DGX Spark en "valor por dólar" para ejecutar IA en casa. Fui a comprobarlo: la métrica multiplica stock por caudal, el precio del Spark murió en febrero y la PRO 6000 entró sin PC anfitrión. Después rehíce la cuenta que importa — tokens por dólar contra la API del mismo modelo — y su primera versión asumía que una persona usa la máquina el 1 % del tiempo. Medí 43.593 llamadas reales de agente de código en esta máquina: el 1 % no describe a nadie (el chat queda cerca del 0,03 %; el agente, entre el 10 % y el 30 %), el 96 % de la entrada es relectura de contexto, y cambiar la regla de cobro de esa relectura mueve la cuenta 16 veces, mientras que cambiar de máquina la mueve 3,6. En el único régimen en que la máquina más barata gana (1,5x), su día pico no cabe en el día y la llamada media, de 151,9 mil tokens, no cabe en el contexto del modelo. Compra por soberanía, no por ahorro.'
+    },
+    it: {
+      title: 'Il grafico virale incorona il Mac, la tabella incorona lo Spark: ho misurato 43 mila chiamate e il vincitore non è nessuna macchina',
+      summary: 'Due immagini virali confrontano Mac Studio M5 Ultra 256 GB, RTX 5090, RTX PRO 6000 e DGX Spark in "valore per dollaro" per far girare l\'IA in casa. Sono andato a verificare: la metrica moltiplica stock per portata, il prezzo dello Spark è morto a febbraio e la PRO 6000 è entrata senza PC host. Poi ho rifatto il conto che conta — token per dollaro contro l\'API dello stesso modello — e la sua prima versione assumeva che una persona usi la macchina 1 % del tempo. Ho misurato 43.593 chiamate reali di agente di codice su questa macchina: l\'1 % non descrive nessuno (la chat sta vicino allo 0,03 %; l\'agente, tra 10 % e 30 %), il 96 % dell\'ingresso è rilettura di contesto, e cambiare la regola di addebito di quella rilettura muove il conto di 16 volte, mentre cambiare macchina lo muove di 3,6. Nell\'unico regime in cui la macchina più economica vince (1,5x), il suo giorno di picco non ci sta nel giorno e la chiamata media, di 151,9 mila token, non ci sta nel contesto del modello. Compra per sovranità, non per risparmio.'
+    },
+    he: {
+      title: 'הגרף הוויראלי מכתיר את ה-Mac, הטבלה מכתירה את ה-Spark: מדדתי 43 אלף קריאות והמנצח הוא לא שום מכונה',
+      summary: 'שתי תמונות ויראליות משוות בין Mac Studio M5 Ultra 256 GB, RTX 5090, RTX PRO 6000 ו-DGX Spark ב"ערך לדולר" להרצת AI בבית. הלכתי לבדוק: המדד מכפיל מלאי בספיקה, המחיר של ה-Spark מת בפברואר וה-PRO 6000 נכנס בלי מחשב מארח. אחר כך חישבתי מחדש את החשבון שחשוב — טוקנים לדולר מול ה-API של אותו מודל — והגרסה הראשונה שלו הניחה שאדם משתמש במכונה 1% מהזמן. מדדתי 43,593 קריאות אמיתיות של סוכן קוד במכונה הזאת: ה-1% לא מתאר אף אחד (צ\'אט נמצא ליד 0.03%; סוכן, בין 10% ל-30%), 96% מהקלט הוא קריאה חוזרת של הקשר, ושינוי כלל החיוב של הקריאה החוזרת מזיז את החשבון פי 16, בעוד שהחלפת מכונה מזיזה אותו פי 3.6. במשטר היחיד שבו המכונה הזולה ביותר מנצחת (1.5x), יום השיא שלה לא נכנס ביום, והקריאה הממוצעת, של 151.9 אלף טוקנים, לא נכנסת בהקשר של המודל. קנו בשביל ריבונות, לא בשביל חיסכון.'
+    },
+  },
+},
   /*
    * Primeiro do array de propósito: divide a data com `memoria-llm-local` e o
    * `sort` de `artigosByDateDesc` é estável — no empate, quem vem antes aqui

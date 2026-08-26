@@ -165,6 +165,11 @@ const nextConfig: NextConfig = {
       { source: '/marca-es', destination: '/es/artigos/marca-dagua-claude', permanent: true },
       { source: '/marca-it', destination: '/it/artigos/marca-dagua-claude', permanent: true },
       { source: '/marca-he', destination: '/he/artigos/marca-dagua-claude', permanent: true },
+      { source: '/tokens',    destination: '/artigos/tokens-por-dolar',    permanent: true },
+      { source: '/tokens-en', destination: '/en/artigos/tokens-por-dolar', permanent: true },
+      { source: '/tokens-es', destination: '/es/artigos/tokens-por-dolar', permanent: true },
+      { source: '/tokens-it', destination: '/it/artigos/tokens-por-dolar', permanent: true },
+      { source: '/tokens-he', destination: '/he/artigos/tokens-por-dolar', permanent: true },
     ];
 
     // Locale handling (double-locale 410 + single-locale 301 + i18n rewrite) moved to middleware.ts

@@ -205,6 +205,11 @@ COMPONENTES: dict[str, dict[str, tuple[int, int, float]]] = {
     "InvertedUChart": _CABECALHO(664) | _EIXOS_720,
     "NoiseFloorChart": _CABECALHO(664) | _EIXOS_720,
     "NoiseVsSignalBars": _CABECALHO(704),  # PAD.left=16; não tem xLabel/yLabel
+    # W=720, H=470, PAD 44/220/70/66: cabeçalho a x=66 (orçamento 646), plotW=434, plotH=356
+    # (yLabel rotacionado). Rótulos de série/âncora/legenda vivem em `data/utilization-curve.ts`
+    # e são medidos pelo `checar-curva.py` do dossiê `tokens-por-dolar` — mesmo buraco declarado
+    # dos `chartDatasets`.
+    "UtilizationCurveChart": _CABECALHO(646) | {"xLabel": (11, 400, 434), "yLabel": (11, 400, 356)},
     # W=760, duas colunas (x=24 e x=396) de PANEL_W=340: os títulos de coluna são 12/700.
     "TvChannelsDiagram": _CABECALHO(736)
     | {"leftTitle": (12, 700, 340), "rightTitle": (12, 700, 340)},

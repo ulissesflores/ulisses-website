@@ -25,6 +25,7 @@ import { WordChoiceDiagram } from './word-choice-diagram';
 import { WatermarkReachDiagram } from './watermark-reach-diagram';
 import { TextVsFileDiagram } from './text-vs-file-diagram';
 import { KeyPatternDiagram } from './key-pattern-diagram';
+import { UtilizationCurveChart } from './utilization-curve-chart';
 import { ArticleFigure } from './article-figure';
 import { YouTube } from './youtube-embed';
 
@@ -63,6 +64,7 @@ export const mdxComponents: MDXComponents = {
   WatermarkReachDiagram,
   TextVsFileDiagram,
   KeyPatternDiagram,
+  UtilizationCurveChart,
   ArticleFigure,
   YouTube,
   /**

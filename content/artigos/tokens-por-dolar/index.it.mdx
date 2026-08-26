@@ -1,0 +1,446 @@
+---
+title: 'Il grafico virale incorona il Mac, la tabella incorona lo Spark: ho misurato 43 mila chiamate e il vincitore non è nessuna macchina'
+slug: tokens-por-dolar
+category: artigos
+date: '2026-08-25'
+language: it-IT
+---
+
+
+Apple ha annunciato oggi il Mac Studio con M5 Ultra: 256 GB di memoria unificata, 1,2 TB/s di
+banda, US$ 9.499. In poche ore occupava già il primo posto di un grafico, e una riga di una
+tabella, che circolano come confronto di "valore per dollaro" per far girare l'IA in casa —
+contro la RTX 5090, la RTX PRO 6000 e il DGX Spark di NVIDIA. Il grafico incorona il Mac; la
+tabella incorona lo Spark.
+
+Sono andato a verificarli entrambi, e la prima versione del mio conto diceva quello che mi
+aspettavo: nessuna di queste macchine si ripaga contro l'API dello stesso modello, perché una
+persona da sola usa la macchina una frazione di 1 % del tempo. Poi l'autore di questo sito ha
+fatto la domanda giusta: *"1 % di utilizzo non mi sembra usuale; se lo è, va dimostrato"*. Sono
+andato a dimostrarlo. **L'1 % non descrive nessuno — e a decidere chi vince non è la macchina.**
+È la regola di addebito di una cosa che quasi nessuno guarda: la rilettura.
+
+---
+
+## Il grafico virale misura la cosa sbagliata, e i suoi prezzi sono già morti
+
+Il grafico "Memory Performance Value per Dollar" fa un conto semplice: memoria (GB) per banda
+(GB/s), diviso il prezzo, normalizzato sul DGX Spark. Ho rifatto le sette righe. **L'aritmetica
+torna, 7 su 7.** Il problema non è il conto; è ciò che il conto moltiplica.
+
+La memoria è uno **stock**: o il modello ci sta, o non ci sta. Avere 256 GB quando il modello
+occupa 63 GB non genera un token in più che averne 96. La banda è una **portata**: è lei, e solo
+lei, a fissare il tetto di velocità di generazione. Moltiplicare le due dà "GB² al secondo per
+dollaro" — un'unità che non corrisponde a niente di fisico. È valutare un'auto per la dimensione
+del serbatoio per la velocità massima: un'autocisterna batte la Ferrari, e il conto non sbaglia
+da nessuna parte.
+
+Il grafico stesso lo ammette, in nota: *"this is a memory-hosting value metric, not a direct
+tokens/sec benchmark"*. Ma il titolo dice "performance", il corpo è un podio da 1 a 7, e nessuno
+legge la nota di un podio.
+
+E c'è un secondo difetto, indipendente dal primo: i prezzi.
+
+| Sistema | Prezzo nel grafico | Prezzo verificato (agosto 2026) | Cosa è successo |
+|---|---:|---:|---|
+| RTX 5090 "PC" | US$ 6.500 | scheda ~US$ 4.400 + PC host | corretto: hanno sommato il PC |
+| RTX PRO 6000 "PC" | US$ 16.000 | **scheda** US$ 16.000 (NVIDIA Marketplace, 14/08/2026) | **PC host non sommato** |
+| DGX Spark | US$ 4.000 | **US$ 4.699** (aumento ufficiale, febbraio 2026) | prezzo morto da sei mesi |
+
+La colonna si chiama "prezzo" e le due righe si chiamano "PC", ma solo la 5090 ha pagato il
+computer intorno. La scheda più cara della lista è l'unica entrata nuda. E lo Spark — che è la
+**misura** dell'intero grafico, "normalizzato a 1,00x" — è entrato con un prezzo che NVIDIA ha
+ritoccato a febbraio. Correggendo solo i prezzi e lasciando intatta la loro metrica, lo Spark
+scende dal sesto all'**ultimo** posto, e la 5090 quasi tocca la PRO 6000 (1,31x contro 1,32x)
+quando entrambe pagano il PC host.
+
+Il podio che la casa pubblica separa ciò che il grafico ha fuso:
+
+<CountryBarsChart
+  dataset="tokens-por-dolar-podio-it"
+  title="Il podio, separato in tre misure"
+  subtitle="Ogni misura normalizzata al migliore (= 100); valore reale in etichetta · prezzi agosto 2026"
+  source="apple.com · nvidia.com · NVIDIA Marketplace · llama.cpp #15396/#16578 · 25/08/2026 · ulissesflores.com/tokens-it"
+  description="Tre blocchi di barre orizzontali, uno per misura. Capacità per dollaro: il DGX Spark guida di un soffio, seguito da Mac M5 Ultra 256 GB, RTX PRO 6000 con PC host e RTX 5090 con PC host. Banda per dollaro: la RTX 5090 con PC host guida, seguita da Mac, RTX PRO 6000 e DGX Spark per ultimo. Token al secondo misurati per dollaro su gpt-oss-120b: il DGX Spark guida, la RTX PRO 6000 segue, il Mac compare come proiezione senza benchmark e la RTX 5090 compare con barra vuota, segnata come non fa girare il modello."
+/>
+
+Nota che **il podio cambia a seconda della misura**. In capacità per dollaro lo Spark vince per
+un soffio sul Mac (27,2 contro 27,0 GB per mille dollari) e le due NVIDIA da sole restano cinque
+volte indietro. In banda per dollaro la 5090 vince con agio — e lo Spark è l'**ultimo**. In token
+al secondo misurati, l'unica delle tre misure che è davvero "token per dollaro", lo Spark torna a
+vincere; la 5090 **non entra nemmeno**, perché non fa girare il modello, e il Mac resta fuori per
+mancanza di misurazione. La stessa macchina è prima, ultima e prima di nuovo. Chi fonde le tre
+misure in un podio solo ha scelto il vincitore prima di misurare.
+
+---
+
+## Le tre porte
+
+Prima di qualsiasi conto in dollari, tre domande in ordine, e una macchina che ne fallisce una
+non passa alla successiva.
+
+### 1. Ci sta?
+
+Il modello aperto che ha senso confrontare è **gpt-oss-120b**: 116,8 miliardi di parametri, di
+cui 5,1 miliardi lavorano per token (è un modello di "esperti", come la brigata di cucina che ho
+spiegato [nell'articolo sulla memoria](https://ulissesflores.com/it/artigos/memoria-llm-local)),
+e che è servito via API a US$ 0,15 per milione di token in ingresso e US$ 0,60 per milione in
+uscita. Quantizzato nel formato in cui è stato pubblicato, occupa **62,8 GB**.
+
+<CountryBarsChart
+  dataset="tokens-por-dolar-portao-it"
+  title="La porta di capacità: il modello esige 62,8 GB"
+  subtitle="Memoria delle macchine contro quanto occupa gpt-oss-120b in MXFP4"
+  source="specs ufficiali dei produttori (25/08/2026) · peso del modello: fonti/E del dossier · ulissesflores.com/tokens-it"
+  description="Barre orizzontali di memoria. Un blocco isolato mostra quanto esige il modello: 62,8 GB. Poi ogni macchina: RTX 5090 con 32 GB, sotto il richiesto e segnata come non ci sta; RTX PRO 6000 con 96 GB; DGX Spark con 128 GB; Mac M5 Ultra con 256 GB."
+/>
+
+La RTX 5090 ha 32 GB. Esce qui, con nome e cognome — non perché sia scarsa, ma perché non fa
+girare proprio il tipo di modello per cui si compra una di queste scatole. Nelle tabelle che
+seguono non compare, e l'assenza è il dato.
+
+### 2. Corre?
+
+Generare un token richiede di leggere i pesi che partecipano a quel token. Per questo la velocità
+di generazione ha un tetto fisico: banda di memoria diviso i byte letti per token. Ma il tetto è
+un limite, non una promessa — quello che conta è il misurato, e misurato separando due cose che
+la tabella virale unisce: **prefill** (leggere ciò che hai mandato, limitato dal calcolo) e
+**decode** (scrivere la risposta, limitata dalla banda).
+
+| Macchina | Banda | Prefill (t/s) | Decode (t/s) | Chi ha misurato |
+|---|---:|---:|---:|---|
+| RTX PRO 6000 + PC | 1.792 GB/s | **5.518** | **196** | llama.cpp, discussione #15396 |
+| DGX Spark | 273 GB/s | 1.956 | 60,57 | llama.cpp, discussione #16578 |
+| Mac Studio M5 Ultra 256 GB | 1.200 GB/s | *~2.900 (proiezione)* | *~130 (proiezione)* | **nessuno — annunciato oggi** |
+
+Due cose da leggere in questa tabella. La prima: la PRO 6000 è 3,2 volte più veloce dello Spark
+in decode, e 2,8 in prefill, con 6,6 volte la banda. La seconda: **il Mac non ha numeri.** L'M5
+Ultra è stato annunciato oggi e arriva nei negozi il 22 settembre; non esiste alcun benchmark
+pubblicato. La sua riga è una proiezione — 1.200 GB/s divisi per i byte attivi del modello, per
+l'efficienza del 30 % che l'M3 Ultra, l'ultimo chip Ultra misurato, raggiunge su questo tipo di
+modello. Lo segnalerò ogni volta che il Mac compare, perché la macchina che guida il grafico
+virale è l'unica che nessuno ha misurato.
+
+### 3. Conviene? — la curva che avevo disegnato
+
+Con un'API paghi per token. Con una macchina paghi una volta e produci token finché non muore. Le
+due grandezze si confrontano solo dopo aver ammortizzato l'acquisto sui token che genererà — e il
+numero di token dipende da una variabile che le tabelle virali omettono: **quanto del tempo la
+macchina sta davvero generando**.
+
+<UtilizationCurveChart
+  dataset="tokens-por-dolar-curva-it"
+  mode="assumido"
+  title="Ciò che avevo assunto: una persona usa 1 % del tempo"
+  subtitle="US$ per milione di token in uscita x utilizzo · DGX Spark, gpt-oss-120b, mix chat 3:1, 3 anni"
+  xLabel="Utilizzo (frazione del tempo generando, scala log)"
+  yLabel="US$/milione di token in uscita (log)"
+  source="calc_mix.py del dossier · 3 anni, US$ 0,12/kWh (USA), residuo 30 %, batch 1 · ulissesflores.com/tokens-it"
+  description="Grafico a linee in scale logaritmiche. Una curva scende da sinistra a destra: il costo per milione di token del DGX Spark cala mentre l'utilizzo sale. Una linea orizzontale segna il prezzo dell'API. Un punto a 1 % di utilizzo mostra lo Spark a circa 60 volte il prezzo dell'API. La curva incrocia la linea dell'API solo vicino a 100 % di utilizzo."
+/>
+
+È stata questa la prima figura che ho disegnato. All'1 % di utilizzo — la frazione che avevo
+assunto per "una persona da sola" — lo Spark costa **US$ 62,82** per milione di token in uscita
+contro **US$ 1,05** dell'API, nel mix di chat che quella curva usa: **60 volte** più caro. La
+curva incrocia la linea dell'API solo vicino al 100 %, cioè con la macchina che genera token 24
+ore al giorno, 7 giorni alla settimana. La conclusione sembrava pronta: la macchina si ripaga solo quando
+smetti di essere utente e diventi fornitore.
+
+E poi è arrivata la domanda: **chi ha detto che è 1 %?**
+
+Sono andato a cercare la fonte. Non esiste. Nessuno pubblica quante ore al giorno una macchina
+casalinga genera token: Ollama non raccoglie telemetria, LM Studio la raccoglie e non la
+pubblica, e l'unica cifra in circolazione — "dal 2 al 5 % del tempo di orologio" — è una stima di
+un singolo autore, etichettata come stima dall'autore stesso. L'1 % era mio. Stava nella mia
+metodologia, scritta prima dei dati, come premessa. Una premessa non è una prova.
+
+---
+
+## Ho misurato. L'1 % non descrive nessuno
+
+Questa macchina fa girare agenti di codice tutto il giorno. Ogni chiamata al modello lascia un
+registro di quanti token sono entrati e usciti — senza contenuto, solo la contabilità. Ho scritto
+un programma che legge questi registri, conta ogni chiamata una volta sola e somma per giorno. Il
+risultato, per la finestra dal **24 luglio al 25 agosto 2026** (33 giorni di calendario, 29 con
+attività):
+
+| Grandezza | 33 giorni | Al giorno |
+|---|---:|---:|
+| Chiamate al modello | **43.593** | 1.321 |
+| Token in uscita (ciò che il modello ha scritto) | 44,6 milioni | 1,35 milioni |
+| Token in ingresso nuovi (ciò che ha letto per la prima volta) | 247,7 milioni | 7,51 milioni |
+| Token in ingresso riletti (ciò che aveva già letto e ha riletto) | **6.374,3 milioni** | 193,16 milioni |
+
+Convertendo questo carico nel tempo che ogni macchina impiegherebbe per produrlo — token in
+uscita divisi per la velocità di decode, più token in ingresso divisi per la velocità di prefill
+— esce l'utilizzo che il carico **imporrebbe** a ciascuna. Non quello che ho assunto; quello che
+il carico esige.
+
+<UtilizationCurveChart
+  dataset="tokens-por-dolar-curva-it"
+  mode="medido"
+  title="La stessa curva, con tre persone vere sopra di essa"
+  subtitle="US$/Mtok d'uscita x utilizzo · 3 macchine, gpt-oss-120b, mix misurato 5,6:1, 3 anni"
+  xLabel="Utilizzo (frazione del tempo generando, scala log)"
+  yLabel="US$/milione di token in uscita (log)"
+  source="43.593 chiamate reali (24/07-25/08/2026) · chat: ordine di grandezza · ulissesflores.com/tokens-it"
+  description="Lo stesso grafico in scale logaritmiche, ora con tre curve quasi sovrapposte: DGX Spark, RTX PRO 6000 con PC host e Mac M5 Ultra come proiezione, tratteggiata. La linea orizzontale dell'API resta. Tre punti ancorati sulla curva dello Spark, nel mix misurato: l'utente mediano di chat a 0,04 % di utilizzo, l'utente quotidiano intenso di chat a 0,4 %, e l'agente di codice misurato su questa macchina a 30 %, quasi attaccato alla linea dell'API. Il punto di 1 % che avevo assunto compare vuoto e sbiadito, tra i due estremi, senza descrivere nessuno dei due."
+/>
+
+Guarda dove sono caduti i punti. L'1 % che avevo assunto sta in mezzo a un vuoto.
+
+| Chi | Token in uscita/giorno | DGX Spark | RTX PRO 6000 | Mac M5 Ultra *(proiezione)* | Da dove viene |
+|---|---:|---:|---:|---:|---|
+| Utente mediano di chat | ~1.800 | 0,038 % | 0,012 % | 0,018 % | 3,6 messaggi/giorno (NBER, OpenAI + Harvard) x ~500 token/risposta (Epoch AI) — **ordine di grandezza, conto impilato** |
+| Utente quotidiano intenso di chat | ~18.000 | 0,376 % | 0,118 % | 0,182 % | dieci volte il mediano; Pew misura 4 % di adulti che usa "quasi costantemente" — senza token misurati |
+| Agente di codice (**misurato qui**) | 1,35 milioni | **30,2 %** | **9,5 %** | **15,0 %** | 43.593 chiamate reali, 33 giorni |
+
+**Sulla stessa macchina, dall'utente mediano di chat all'agente di codice ci sono da 805 a 826
+volte — quasi tre ordini di grandezza.** L'1 % sta da 27 a 85 volte sopra chi conversa con un
+chatbot e da 10 a 30 volte sotto chi fa girare un agente tutto il giorno. Non è la media di
+nessuno: è il numero che cade nel buco tra i due unici gruppi che esistono.
+
+Due riserve prima di andare avanti. I ~1.800 token al giorno dell'utente mediano **non sono una
+misurazione**: nessuna azienda pubblica i token per persona, e il numero è un conto impilato su
+una media di messaggi e su una premessa di terzi sulla lunghezza della risposta — vale come
+ordine di grandezza, mai come dato. E gli 1,35 milioni al giorno misurati qui **non sono un
+umano**: sono l'uscita di una flotta di subagenti che girano in parallelo. Una traccia di
+produzione di GitHub Copilot, con 3,2 milioni di utenti, mette uno sviluppatore umano pesante
+nell'ordine di 10⁵ token in uscita al giorno; 10⁶ è volume da flotta automatizzata. Questa
+macchina sta nella seconda fascia, ed è il carico più intenso a cui ho accesso — il che la rende
+utile esattamente come test di stress: se nemmeno lei ripaga la macchina, nessuno la ripaga.
+
+E quasi non la ripaga. Per pareggiare con l'API, ogni macchina ha bisogno di un utilizzo
+sostenuto dal 50 % al 60 % — da **2,24 a 8,53 milioni di token in uscita al giorno, ogni giorno,
+per tre anni**. Il carico misurato qui è il 60 % del necessario sullo Spark, il 28 % sul Mac, il
+16 % sulla PRO 6000. Ma "quasi" qui nasconde la svolta dell'articolo, e sta nell'ultima riga di
+quella tabella dei 33 giorni.
+
+---
+
+## Nove token su dieci che un agente elabora sono rilettura
+
+Torna alla tabella del carico. Il modello ha scritto 44,6 milioni di token. Ne ha letti per la
+prima volta 247,7 milioni. E **ne ha riletti 6.374,3 milioni** — token che aveva già letto in una
+chiamata precedente e ha riletto in quella dopo.
+
+Non è spreco; è il modo in cui un agente funziona. Pensa a uno stagista a cui consegni una
+cartella di duecento pagine e chiedi un compito. Legge la cartella, scrive una riga, e prima di
+scrivere la riga successiva rilegge tutta la cartella — perché la riga successiva dipende da
+tutto quello che è venuto prima. A ogni chiamata, il modello riceve l'intera conversazione
+dall'inizio: le istruzioni, i file aperti, quello che ha scritto lui stesso. Quello che cresce a
+ogni passo è ciò che *legge*; ciò che *scrive* è una riga.
+
+Qui, ogni 100 token entrati nel modello, **96 erano rilettura**. Il mix ingresso:uscita misurato
+è di **5,6 a 1** contando solo ciò che è nuovo, e di **148,6 a 1** contando tutto ciò che il
+modello ha visto. Non è 3:1, il mix di chat che quasi ogni confronto assume; non è 10:1, quello
+che si suole chiamare "mix da agente". Sono due ordini di grandezza a favore dell'ingresso.
+
+<CountryBarsChart
+  dataset="tokens-por-dolar-releitura-it"
+  title="Quanto dell'input di un agente di codice è rilettura"
+  subtitle="Frazione dell'input già letta · Copilot: 3,2 M utenti, 1 settimana · Bun: 11 giorni · qui: 43.593 chiamate"
+  source="arXiv 2608.00101 · Bun via Simon Willison · doc di Anthropic (1 sessione) · questa macchina · ulissesflores.com/tokens-it"
+  description="Barre orizzontali con la frazione di rilettura in quattro carichi di agente di codice: GitHub Copilot in produzione con 95,4 %, la migrazione di Bun con 92,4 %, una sessione di esempio della doc di Anthropic con 99,4 % e questa macchina con 96 %. Tutte le barre sopra 90 %."
+/>
+
+Non è una peculiarità di questa macchina. L'unica traccia di produzione su scala che esiste —
+quella di GitHub Copilot, pubblicata in agosto (3,2 milioni di utenti, una settimana, stack
+indipendente da quello che uso qui) — misura la stessa cosa: rapporto ingresso:uscita mediano
+sopra **275 a 1**, con il **95,4 %** del prompt che viene da cache. Due conferme di caso,
+entrambe con Claude Code: la migrazione di Bun da Zig a Rust (64 agenti, 11 giorni, 92,4 % di
+rilettura) e una sessione di esempio nella documentazione di Anthropic (99,4 % — è *una* sessione
+di esempio, non una popolazione; entra qui come illustrazione). Quattro misurazioni, quattro
+stack o casi diversi, tutte sopra il 90 %.
+
+Nove token su dieci che un agente di codice elabora sono rilettura. Tieni a mente questo numero:
+è quello che il confronto di token per dollaro non vede.
+
+---
+
+## Chi paga la rilettura decide il vincitore
+
+Ora la domanda che la tabella virale non fa. Un fornitore di API addebita la rilettura — ma la
+addebita poco: su gpt-oss-120b, un token riletto costa US$ 0,015 per milione, un decimo del token
+nuovo, perché il fornitore tiene in memoria ciò che ha già elaborato (la "cache") e non rifà il
+conto. La macchina locale rilegge **gratis**, *se* il risultato della lettura precedente è ancora
+nella sua memoria quando arriva la chiamata successiva. Se non c'è, rielabora tutto, e paga in
+tempo.
+
+Cioè: lo stesso carico ha tre prezzi, a seconda della regola che si applica alla rilettura. Ho
+messo il carico di 33 giorni, proiettato piatto per tre anni, contro il prezzo d'acquisto di ogni
+macchina (meno il 30 % di valore residuo) più l'energia del tempo in generazione, a US$ 0,12 per
+kWh — il prezzo degli Stati Uniti, dove il conto favorisce la macchina; in Brasile pende ancora
+di più a favore dell'API.
+
+| Regime | API, 3 anni | DGX Spark | RTX PRO 6000 + PC | Mac M5 Ultra *(proiezione)* |
+|---|---:|---:|---:|---:|
+| **B.** L'API addebita la rilettura; il locale trattiene la cache | US$ 5.293 | US$ 3.423 — **vince 1,5x** | US$ 12.431 — perde 2,3x | US$ 6.877 — perde 1,3x |
+| **C.** L'API addebita la rilettura; il locale **rilegge tutto** | US$ 5.293 | **non ci sta nel giorno** | US$ 13.197 — perde 2,5x | US$ 8.044 — perde 1,5x |
+| **D.** L'API addebita la rilettura **a prezzo pieno**, senza sconto cache; il locale trattiene | US$ 33.847 | US$ 3.423 — vince 9,9x | US$ 12.431 — vince 2,7x | US$ 6.877 — vince 4,9x |
+| *A. (controllo)* rilettura gratis da entrambi i lati | *US$ 2.120* | *perde 1,6x* | *perde 5,9x* | *perde 3,2x* |
+
+Il regime **A** non esiste sul mercato — nessun fornitore esenta la rilettura — ed è lì solo come
+controllo: è quello che il confronto virale fa senza dirlo, quando confronta il decode locale con
+il prezzo in uscita dell'API. Anche il regime **D** non è il prezzo di un fornitore nominato: è
+il limite superiore, "e se la rilettura costasse quanto una lettura nuova?". La tabella prezzi di
+uno dei fornitori elenca la cache con un trattino, e non sono andato a scoprire se il trattino
+significa "gratis" o "non lo offriamo"; per questo D entra come sensibilità dichiarata, non come
+fattura.
+
+Il bivio vero è **B contro C**, ed è lo stesso hardware:
+
+<CountryBarsChart
+  dataset="tokens-por-dolar-garfo-it"
+  title="Cosa muove di più: la regola di cache o la macchina?"
+  subtitle="Stesso carico, 33 giorni a 3 anni · sopra la regola; sotto la macchina (regime B) · * = proiezione"
+  source="calc_util.py §6 sul carico misurato · prezzi API del 25/08/2026 (Together, Fireworks, Groq) · ulissesflores.com/tokens-it"
+  description="Due blocchi di barre orizzontali. Il primo, cambiare la regola di cache con la stessa API: rilettura gratis US$ 2.120, rilettura scontata US$ 5.293, rilettura a prezzo pieno US$ 33.847 — variazione di 16 volte. Il secondo, cambiare macchina nel regime B: DGX Spark US$ 3.423, Mac M5 Ultra proiezione US$ 6.877, RTX PRO 6000 con PC host US$ 12.431 — variazione di 3,6 volte."
+/>
+
+**Cambiare la regola di addebito della rilettura muove il lato API di 16 volte** (da US$ 2.120 a
+US$ 33.847). **Cambiare macchina muove il lato hardware di 3,6 volte** (da US$ 3.423 a
+US$ 12.431). La domanda "quale macchina?" — l'unica che la tabella virale fa — è la meno
+importante delle due. E 6 dollari su 10 della fattura API di questo carico (US$ 95,62 su
+US$ 159,51) sono rilettura: la voce più economica del listino, a US$ 0,015, è la più grande del
+conto, perché è moltiplicata per 6,4 miliardi.
+
+È questo che io chiamo metrica incompatibile, ed è lo stesso peccato del grafico virale in un
+altro vestito. Confrontare il decode di una macchina con il prezzo in uscita dell'API — quello
+che ogni confronto di "token per dollaro" fa — è addebitare da un lato ciò che si esenta
+dall'altro. Con la regola dichiarata, lo Spark passa da "perde 1,6x" (A) a "vince 1,5x" (B) a
+"non ci sta nel giorno" (C) a "vince 9,9x" (D). L'hardware non è cambiato una sola volta.
+
+### "Trattenere la cache" ha un budget, e ci sta stretto
+
+Il regime B, l'unico in cui la macchina più economica vince, suppone che la memoria della
+macchina conservi il risultato della lettura precedente tra una chiamata e la successiva. Questo
+occupa spazio, e si può calcolare quanto, perché l'architettura del modello è pubblica.
+
+In gpt-oss-120b, ogni token di contesto trattenuto costa **36 KiB** di memoria nel formato
+standard di llama.cpp — metà dei 36 strati del modello vede solo gli ultimi 128 token e non
+accumula nulla; gli altri 18 accumulano. (Con l'opzione di conservare tutto in tutti gli strati,
+72 KiB.) Un contesto pieno, 131.072 token, costa 4,8 GB. Scontati i 62,8 GB del modello e il
+margine di esecuzione, sullo Spark restano circa 46 GB: **circa 10 contesti pieni trattenuti allo
+stesso tempo**.
+
+Nel giorno di picco di questa finestra (20 agosto: 8.145 chiamate) c'erano **9 progetti** attivi
+— e un progetto può avere più subagenti vivi allo stesso tempo, quindi 9 è un minimo. Il
+budget di cache dello Spark chiude al limite; sulla PRO 6000 (33 GB liberi, ~4 contesti con
+margine) non chiude. In pratica la cache viene scartata e rielaborata, e la verità del giorno di
+picco cade da qualche parte **tra B e C** — tra "vince 1,5x" e "non ci sta nel giorno". Chi
+afferma "la macchina locale rilegge gratis" sta assumendo cache infinita.
+
+---
+
+## L'orologio e il contesto: l'unico regime in cui la macchina vince, non lo regge
+
+Resta la chiusura di capacità, la più semplice e la più dura. Il giorno ha 86.400 secondi. Ho
+convertito il giorno più pesante della finestra nel tempo che ogni macchina impiegherebbe per
+produrlo, in batch 1 — una richiesta alla volta, che è come una persona usa la macchina:
+
+| Macchina | Giorno di picco, trattenendo la cache (regime B) | Giorno di picco, rileggendo tutto (regime C) |
+|---|---:|---:|
+| DGX Spark | **121 % del giorno — non ci sta** (1,2 giorni di lavoro) | 531 % — 5,3 giorni |
+| RTX PRO 6000 + PC | 38 % — ci sta | 185 % — 1,9 giorni |
+| Mac M5 Ultra *(proiezione)* | 60 % — ci sta | 343 % — 3,4 giorni |
+| DGX Spark a 32 mila token di contesto (misurato) | **188 %** | 982 % |
+
+Nel regime B, il picco ci sta nella PRO 6000 e nel Mac; solo lo Spark non ci sta — l'unica delle
+tre che vince sul prezzo. Nel regime C, non ci sta in nessuna. **Nessuna delle tre vince sul
+prezzo e ci sta nel proprio giorno di picco allo stesso tempo.** E il carico qui è concorrente —
+più agenti allo stesso tempo —, il che aiuterebbe il decode se la macchina servisse in batch; non
+aiuta il prefill, che nel regime C è l'82 % del tempo sullo Spark.
+
+L'ultima riga della tabella merita una frase propria. Tutte le velocità di questo articolo sono
+di contesto corto — il caso migliore per il locale. L'unica misurazione di contesto lungo che
+esiste per una di queste macchine è quella dello Spark a 32 mila token: il decode scende da 60,57
+a **40,55** token al secondo, il prefill da 1.956 a **1.027**. Con quella, il giorno di picco va
+al 188 % del giorno. Per la PRO 6000 e il Mac non c'è misurazione di contesto lungo in nessuna
+fonte; resta dichiarato come non misurato.
+
+E il contesto lungo è ciò che questo carico chiede:
+
+<CountryBarsChart
+  dataset="tokens-por-dolar-contexto-it"
+  title="Quanto contesto porta ogni chiamata — contro il tetto del modello"
+  subtitle="Ingresso per chiamata (tutto ciò che vede) · 43.593 chiamate · gpt-oss-120b accetta 131.072"
+  source="dados/uso-chamadas.csv del dossier, solo aggregati · config.json di openai/gpt-oss-120b · ulissesflores.com/tokens-it"
+  description="Due blocchi di barre orizzontali. Il primo ha una barra sola: il tetto di contesto di gpt-oss-120b, 131.072 token. Il secondo, la distribuzione dell'ingresso per chiamata in questo carico: mediana 125,3 mila, media 151,9 mila, percentile 90 a 299,5 mila e percentile 99 a 526,7 mila token. La mediana sta appena sotto il tetto; la media e i percentili alti sopra."
+/>
+
+La chiamata **media** di questo carico ha **151,9 mila token** in ingresso. gpt-oss-120b ne
+accetta 131.072. La mediana (125,3 mila) ci sta per poco; **il 47,8 % delle chiamate non ci sta,
+e portano il 74,9 % di tutti i token in ingresso**. La macchina che vince nel regime B non
+accetta quasi metà delle richieste del carico in cui vince — e la metà che rifiuta è quella che
+ha il lavoro.
+
+C'è un ultimo dato che nessuna conversione cattura: **il carico misurato è stato prodotto da un
+modello di frontiera**, che nessuna di queste macchine fa girare. La conversione a gpt-oss-120b
+assume che lo stesso lavoro sarebbe fatto da lui; è il caso migliore per il locale, ed è una
+supposizione.
+
+---
+
+## Cosa ne farei io
+
+**Non comprare per risparmiare.** Su questo carico — il più pesante a cui ho accesso —, a tre
+anni e nel regime migliore per il locale, il risultato è un pareggio tecnico con un hardware che
+non regge il giorno di picco né accetta la chiamata media. Se il tuo carico è di chat, la
+macchina costa decine di volte l'API; se è di agente, la decisione resta in mano a una regola di
+addebito che non è tua.
+
+**Compra per sovranità.** Dati che non escono di casa, disponibilità senza contratto, tetto di
+spesa che non scala con l'uso. Sono buone ragioni, e nessuna di esse si misura in token per
+dollaro — se la decisione è per quelle, la metrica è sbagliata, e il grafico virale non può
+aiutare.
+
+**Misura il tuo carico prima di qualsiasi tabella.** Il programma che ha prodotto i numeri di
+questo articolo legge i registri d'uso dell'agente e restituisce solo aggregati — token nuovi,
+riletti e scritti al giorno, e la distribuzione di contesto per chiamata. È questo che decide in
+che punto della curva sei, e nessuno può misurarlo per te.
+
+**Guarda la frazione di rilettura del tuo fornitore prima di guardare il prezzo in uscita.** Se
+9 token su 10 sono rilettura, il numero che conta nel listino è l'ultimo, quello della cache — non
+il primo.
+
+**E, se compri, scegli per la porta, non per il podio.** Ci sta? Corre sul modello che userai,
+con il contesto che userai? Solo allora: conviene? L'ordine conta, e la tabella virale lo
+inverte.
+
+---
+
+> **Nota di verifica.** Prezzi e specifiche delle quattro macchine sono stati verificati sulle
+> pagine ufficiali dei produttori e su NVIDIA Marketplace il 25 agosto 2026; i prezzi di API,
+> sulle pagine di prezzo di Together, Fireworks e Groq nella stessa data. Le velocità misurate
+> vengono da benchmark pubblici di llama.cpp con modello, quantizzazione, contesto e versione
+> dichiarati; la riga del Mac M5 Ultra è una proiezione, segnalata a ogni comparsa, perché non
+> esiste alcun benchmark del chip. Il carico di questa macchina è stato estratto con codice
+> deterministico dai registri d'uso dell'agente, contando ogni chiamata una volta e senza leggere
+> contenuto di conversazione; la misurazione è stata chiusa alle 18:21 del 25 agosto, prima che
+> cominciassi ad analizzarla, e i registri grezzi sono soggetti alla retention dello strumento —
+> una seconda estrazione, fatta 96 minuti dopo, ha trovato 2,3 % di chiamate in meno, e i numeri
+> pubblicati sono quelli della seconda estrazione, con i due file coerenti tra loro. Il
+> tokenizzatore del modello che ha prodotto il carico non è quello di gpt-oss-120b; la differenza
+> è dell'ordine del 20 % e non cambia nessun rapporto di questo testo. L'energia è contata solo
+> nel tempo in generazione; l'ozio misurato delle macchine sommerebbe, in tre anni accesa 24/7,
+> US$ 69-142 sullo Spark e US$ 1-18 sul Mac — e, sulla PRO 6000, US$ 54-63 solo della scheda,
+> perché il PC host non è stato misurato in ozio da nessuno. Non ho misurato personalmente
+> nessuna delle quattro macchine. Ogni conto esce dai programmi del dossier; la prosa non fa
+> aritmetica.
+
+## Fonti
+
+- Apple — [annuncio del Mac Studio con M5 Max e M5 Ultra](https://www.apple.com/newsroom/2026/08/apple-introduces-new-mac-studio-with-m5-max-and-m5-ultra/) · [specifiche](https://www.apple.com/mac-studio/specs/)
+- NVIDIA — [DGX Spark](https://www.nvidia.com/en-us/products/workstations/dgx-spark/) · [aumento di prezzo, febbraio 2026](https://forums.developer.nvidia.com/t/2-23-2026-price-change-announcement/361713) · [RTX PRO 6000 Blackwell](https://www.nvidia.com/en-us/products/workstations/professional-desktop-gpus/rtx-pro-6000/) · [RTX 5090](https://www.nvidia.com/en-us/geforce/graphics-cards/50-series/rtx-5090/)
+- Prezzo della RTX PRO 6000 a US$ 16.000 — [Igor's Lab](https://www.igorslab.de/en/nvidia-rtx-pro-6000-blackwell-16000-dollar-96-gb-workstation-gpu-price-increase/) · [Tom's Hardware](https://www.tomshardware.com/pc-components/gpus/nvidia-doubles-rtx-pro-6000-blackwells-msrp-to-a-staggering-usd16-000-96gb-card-started-pre-orders-below-usd8-000-last-year)
+- Benchmark — [llama.cpp, discussione #16578 (DGX Spark)](https://github.com/ggml-org/llama.cpp/discussions/16578) · [llama.cpp, discussione #15396 (RTX PRO 6000, M3 Ultra)](https://github.com/ggml-org/llama.cpp/discussions/15396) · [ServeTheHome — recensione del DGX Spark](https://www.servethehome.com/nvidia-dgx-spark-review-the-gb10-machine-is-so-freaking-cool/3/)
+- Prezzi di API — [Together.ai](https://www.together.ai/pricing) · [Fireworks.ai](https://docs.fireworks.ai/serverless/pricing) · [Groq](https://www.cloudzero.com/blog/groq-pricing/)
+- Modello — [openai/gpt-oss-120b su Hugging Face (config.json)](https://huggingface.co/openai/gpt-oss-120b) · [llama.cpp, `src/models/openai-moe.cpp`](https://github.com/ggml-org/llama.cpp/blob/master/src/models/openai-moe.cpp)
+- Rilettura negli agenti — [traccia di produzione di GitHub Copilot, arXiv 2608.00101](https://arxiv.org/abs/2608.00101) · [migrazione di Bun da Zig a Rust, via Simon Willison](https://simonwillison.net/2026/Jul/8/rewriting-bun-in-rust/)
+- Uso di chat per persona — [How People Use ChatGPT (NBER w34255, OpenAI + Harvard)](https://www.nber.org/system/files/working_papers/w34255/w34255.pdf) · [Pew Research — Americans and AI 2026 (indagine di febbraio 2026)](https://www.pewresearch.org/internet/2026/06/17/americans-and-ai-2026-chatbots-smart-devices-and-views-on-impact/)
+- Ozio misurato — [Tom's Hardware, DGX Spark post-firmware](https://www.tomshardware.com/tech-industry/artificial-intelligence/nvidia-dgx-spark-update-cuts-idle-power-by-32-percent-or-more-hot-plug-detection-on-connectx-nic-makes-for-a-more-efficient-ai-workstation) · [naveen.ing, RTX PRO 6000](https://www.naveen.ing/writings/benchmarking-rtx-pro-6000/) · [Apple, rapporto ambientale del Mac Studio](https://www.apple.com/environment/pdf/products/desktops/Mac_Studio_PER_Aug2026.pdf)
+
+*Prezzi, specifiche e velocità verificati il 25/08/2026. I numeri del carico di questa macchina
+sono aggregati d'uso, pubblicati senza alcun contenuto di conversazione. Non ho riverificato il
+conteggio dei like delle due immagini virali.*

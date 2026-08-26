@@ -2806,6 +2806,666 @@ export const countryBarsDatasets: Record<string, CountryBarsDataset> = {
       },
     ],
   },
+  /**
+   * `tokens-por-dolar-podio` — pódio da tabela viral separado em 3 réguas; cada régua normalizada ao melhor (=100), valor real no rótulo. PROCEDÊNCIA: entradas.json (specs/preços 25/08/2026) + calc_mix.MAQUINAS (t/s medidos llama.cpp #15396/#16578); gerado por gera_charts.py.
+   */
+  'tokens-por-dolar-podio': {
+    max: 120,
+    groups: [
+      {
+        label: "Capacidade por dólar",
+        color: '#60a5fa',
+        items: [
+          { name: "NVIDIA DGX Spark", value: 100, valueLabel: "27,2 GB/k$", emphasis: true },
+          { name: "Mac M5 Ultra 256GB", value: 98.9, valueLabel: "27,0 GB/k$" },
+          { name: "RTX PRO 6000 + PC", value: 20.1, valueLabel: "5,5 GB/k$" },
+          { name: "RTX 5090 + PC", value: 19.9, valueLabel: "5,4 GB/k$" },
+        ],
+      },
+      {
+        label: "Banda por dólar",
+        color: '#fbbf24',
+        items: [
+          { name: "RTX 5090 + PC", value: 100, valueLabel: "304 GB/s/k$", emphasis: true },
+          { name: "Mac M5 Ultra 256GB", value: 41.6, valueLabel: "126 GB/s/k$" },
+          { name: "RTX PRO 6000 + PC", value: 33.7, valueLabel: "102 GB/s/k$" },
+          { name: "NVIDIA DGX Spark", value: 19.1, valueLabel: "58 GB/s/k$" },
+        ],
+      },
+      {
+        label: "Tokens/s MEDIDOS por dólar (gpt-oss-120b)",
+        color: '#a48f65',
+        items: [
+          { name: "NVIDIA DGX Spark", value: 100, valueLabel: "12,9 t/s/k$", emphasis: true },
+          { name: "RTX PRO 6000 + PC", value: 86.9, valueLabel: "11,2 t/s/k$" },
+          { name: "Mac M5 Ultra 256GB", value: 0, valueLabel: "sem benchmark — projeção fora da régua" },
+          { name: "RTX 5090 + PC", value: 0, valueLabel: "não roda (32 GB < 62,8 GB)" },
+        ],
+      },
+    ],
+  },
+  /**
+   * `tokens-por-dolar-portao` — portão de capacidade: memória de cada máquina contra os 62,8 GB do gpt-oss-120b MXFP4 (margem de runtime de 85 % do calc.py). PROCEDÊNCIA: entradas.json; gerado por gera_charts.py.
+   */
+  'tokens-por-dolar-portao': {
+    max: 300,
+    groups: [
+      {
+        label: "O que o modelo exige",
+        color: '#a48f65',
+        items: [
+          { name: "gpt-oss-120b", value: 62.8, valueLabel: "62,8 GB em MXFP4", emphasis: true },
+        ],
+      },
+      {
+        label: "O que cada máquina tem",
+        color: '#60a5fa',
+        items: [
+          { name: "RTX 5090 + PC", value: 32, valueLabel: "32 GB — não cabe", emphasis: true },
+          { name: "RTX PRO 6000 + PC", value: 96, valueLabel: "96 GB" },
+          { name: "NVIDIA DGX Spark", value: 128, valueLabel: "128 GB" },
+          { name: "Mac M5 Ultra 256GB", value: 256, valueLabel: "256 GB" },
+        ],
+      },
+    ],
+  },
+  /**
+   * `tokens-por-dolar-releitura` — fração de releitura (cache read) na entrada de carga de agente de código, 4 medições. PROCEDÊNCIA: fontes/G §3 (arXiv 2608.00101; Bun; doc Anthropic) + calc_util §6 (esta máquina); gerado por gera_charts.py.
+   */
+  'tokens-por-dolar-releitura': {
+    max: 110,
+    groups: [
+      {
+        label: "Fração da entrada que é releitura",
+        color: '#60a5fa',
+        items: [
+          { name: "Copilot (produção)", value: 95.4, valueLabel: "95,4 %" },
+          { name: "Bun (64 agentes)", value: 92.4, valueLabel: "92,4 %" },
+          { name: "Anthropic (1 sessão)", value: 99.4, valueLabel: "99,4 %" },
+          { name: "Esta máquina", value: 96.3, valueLabel: "96,3 %", emphasis: true },
+        ],
+      },
+    ],
+  },
+  /**
+   * `tokens-por-dolar-garfo` — mesma carga de 33 dias a 3 anos: trocar a regra de cache move a API 16,0x; trocar de máquina (regime B) move o hardware 3,6x. PROCEDÊNCIA: calc_util.py §6; gerado por gera_charts.py.
+   */
+  'tokens-por-dolar-garfo': {
+    max: 41000,
+    groups: [
+      {
+        label: "Trocar a REGRA de cache (mesma API) — 16,0x",
+        color: '#fbbf24',
+        items: [
+          { name: "Grátis (A, controle)", value: 2120, valueLabel: "US$ 2.120" },
+          { name: "Com desconto (B)", value: 5293, valueLabel: "US$ 5.293" },
+          { name: "A preço cheio (D)", value: 33847, valueLabel: "US$ 33.847", emphasis: true },
+        ],
+      },
+      {
+        label: "Trocar de MÁQUINA (regime B) — 3,6x",
+        color: '#60a5fa',
+        items: [
+          { name: "NVIDIA DGX Spark", value: 3423, valueLabel: "US$ 3.423", emphasis: true },
+          { name: "Mac M5 Ultra *", value: 6877, valueLabel: "US$ 6.877" },
+          { name: "RTX PRO 6000 + PC", value: 12431, valueLabel: "US$ 12.431" },
+        ],
+      },
+    ],
+  },
+  /**
+   * `tokens-por-dolar-contexto` — tokens de entrada por chamada (teto: tudo que o modelo viu) contra o contexto máximo do gpt-oss-120b. PROCEDÊNCIA: dados/uso-chamadas.csv via calc_util §1-bis; config.json de openai/gpt-oss-120b; gerado por gera_charts.py.
+   */
+  'tokens-por-dolar-contexto': {
+    max: 650000,
+    groups: [
+      {
+        label: "O que o modelo aceita",
+        color: '#a48f65',
+        items: [
+          { name: "Teto do modelo", value: 131072, valueLabel: "131.072 tokens (gpt-oss-120b)", emphasis: true },
+        ],
+      },
+      {
+        label: "O que a carga pede, por chamada (43.593 chamadas)",
+        color: '#60a5fa',
+        items: [
+          { name: "Mediana (p50)", value: 125285, valueLabel: "125,3 mil" },
+          { name: "Média", value: 151907, valueLabel: "151,9 mil", emphasis: true },
+          { name: "p90", value: 299463, valueLabel: "299,5 mil" },
+          { name: "p99", value: 526699, valueLabel: "526,7 mil" },
+        ],
+      },
+    ],
+  },
+  /**
+   * `tokens-por-dolar-podio-en` — pódio da tabela viral separado em 3 réguas; cada régua normalizada ao melhor (=100), valor real no rótulo. PROCEDÊNCIA: entradas.json (specs/preços 25/08/2026) + calc_mix.MAQUINAS (t/s medidos llama.cpp #15396/#16578); gerado por gera_charts.py.
+   */
+  'tokens-por-dolar-podio-en': {
+    max: 120,
+    groups: [
+      {
+        label: "Capacity per dollar",
+        color: '#60a5fa',
+        items: [
+          { name: "NVIDIA DGX Spark", value: 100, valueLabel: "27.2 GB/k$", emphasis: true },
+          { name: "Mac M5 Ultra 256GB", value: 98.9, valueLabel: "27.0 GB/k$" },
+          { name: "RTX PRO 6000 + PC", value: 20.1, valueLabel: "5.5 GB/k$" },
+          { name: "RTX 5090 + PC", value: 19.9, valueLabel: "5.4 GB/k$" },
+        ],
+      },
+      {
+        label: "Bandwidth per dollar",
+        color: '#fbbf24',
+        items: [
+          { name: "RTX 5090 + PC", value: 100, valueLabel: "304 GB/s/k$", emphasis: true },
+          { name: "Mac M5 Ultra 256GB", value: 41.6, valueLabel: "126 GB/s/k$" },
+          { name: "RTX PRO 6000 + PC", value: 33.7, valueLabel: "102 GB/s/k$" },
+          { name: "NVIDIA DGX Spark", value: 19.1, valueLabel: "58 GB/s/k$" },
+        ],
+      },
+      {
+        label: "MEASURED tokens/s per dollar (gpt-oss-120b)",
+        color: '#a48f65',
+        items: [
+          { name: "NVIDIA DGX Spark", value: 100, valueLabel: "12.9 t/s/k$", emphasis: true },
+          { name: "RTX PRO 6000 + PC", value: 86.9, valueLabel: "11.2 t/s/k$" },
+          { name: "Mac M5 Ultra 256GB", value: 0, valueLabel: "no benchmark — projection, off this scale" },
+          { name: "RTX 5090 + PC", value: 0, valueLabel: "won't run (32 GB < 62.8 GB)" },
+        ],
+      },
+    ],
+  },
+  /**
+   * `tokens-por-dolar-portao-en` — portão de capacidade: memória de cada máquina contra os 62,8 GB do gpt-oss-120b MXFP4 (margem de runtime de 85 % do calc.py). PROCEDÊNCIA: entradas.json; gerado por gera_charts.py.
+   */
+  'tokens-por-dolar-portao-en': {
+    max: 300,
+    groups: [
+      {
+        label: "What the model needs",
+        color: '#a48f65',
+        items: [
+          { name: "gpt-oss-120b", value: 62.8, valueLabel: "62.8 GB in MXFP4", emphasis: true },
+        ],
+      },
+      {
+        label: "What each machine has",
+        color: '#60a5fa',
+        items: [
+          { name: "RTX 5090 + PC", value: 32, valueLabel: "32 GB — doesn't fit", emphasis: true },
+          { name: "RTX PRO 6000 + PC", value: 96, valueLabel: "96 GB" },
+          { name: "NVIDIA DGX Spark", value: 128, valueLabel: "128 GB" },
+          { name: "Mac M5 Ultra 256GB", value: 256, valueLabel: "256 GB" },
+        ],
+      },
+    ],
+  },
+  /**
+   * `tokens-por-dolar-releitura-en` — fração de releitura (cache read) na entrada de carga de agente de código, 4 medições. PROCEDÊNCIA: fontes/G §3 (arXiv 2608.00101; Bun; doc Anthropic) + calc_util §6 (esta máquina); gerado por gera_charts.py.
+   */
+  'tokens-por-dolar-releitura-en': {
+    max: 110,
+    groups: [
+      {
+        label: "Share of input that is re-reading",
+        color: '#60a5fa',
+        items: [
+          { name: "Copilot (production)", value: 95.4, valueLabel: "95.4%" },
+          { name: "Bun (64 agents)", value: 92.4, valueLabel: "92.4%" },
+          { name: "Anthropic (1 session)", value: 99.4, valueLabel: "99.4%" },
+          { name: "This machine", value: 96.3, valueLabel: "96.3%", emphasis: true },
+        ],
+      },
+    ],
+  },
+  /**
+   * `tokens-por-dolar-garfo-en` — mesma carga de 33 dias a 3 anos: trocar a regra de cache move a API 16,0x; trocar de máquina (regime B) move o hardware 3,6x. PROCEDÊNCIA: calc_util.py §6; gerado por gera_charts.py.
+   */
+  'tokens-por-dolar-garfo-en': {
+    max: 41000,
+    groups: [
+      {
+        label: "Change the cache RULE (same API) — 16.0x",
+        color: '#fbbf24',
+        items: [
+          { name: "Free (A, control)", value: 2120, valueLabel: "US$ 2,120" },
+          { name: "Discounted (B)", value: 5293, valueLabel: "US$ 5,293" },
+          { name: "Full price (D)", value: 33847, valueLabel: "US$ 33,847", emphasis: true },
+        ],
+      },
+      {
+        label: "Change the MACHINE (regime B) — 3.6x",
+        color: '#60a5fa',
+        items: [
+          { name: "NVIDIA DGX Spark", value: 3423, valueLabel: "US$ 3,423", emphasis: true },
+          { name: "Mac M5 Ultra *", value: 6877, valueLabel: "US$ 6,877" },
+          { name: "RTX PRO 6000 + PC", value: 12431, valueLabel: "US$ 12,431" },
+        ],
+      },
+    ],
+  },
+  /**
+   * `tokens-por-dolar-contexto-en` — tokens de entrada por chamada (teto: tudo que o modelo viu) contra o contexto máximo do gpt-oss-120b. PROCEDÊNCIA: dados/uso-chamadas.csv via calc_util §1-bis; config.json de openai/gpt-oss-120b; gerado por gera_charts.py.
+   */
+  'tokens-por-dolar-contexto-en': {
+    max: 650000,
+    groups: [
+      {
+        label: "What the model accepts",
+        color: '#a48f65',
+        items: [
+          { name: "Model ceiling", value: 131072, valueLabel: "131,072 tokens (gpt-oss-120b)", emphasis: true },
+        ],
+      },
+      {
+        label: "What the load asks, per call (43,593 calls)",
+        color: '#60a5fa',
+        items: [
+          { name: "Median (p50)", value: 125285, valueLabel: "125.3K" },
+          { name: "Mean", value: 151907, valueLabel: "151.9K", emphasis: true },
+          { name: "p90", value: 299463, valueLabel: "299.5K" },
+          { name: "p99", value: 526699, valueLabel: "526.7K" },
+        ],
+      },
+    ],
+  },
+  /**
+   * `tokens-por-dolar-podio-es` — pódio da tabela viral separado em 3 réguas; cada régua normalizada ao melhor (=100), valor real no rótulo. PROCEDÊNCIA: entradas.json (specs/preços 25/08/2026) + calc_mix.MAQUINAS (t/s medidos llama.cpp #15396/#16578); gerado por gera_charts.py.
+   */
+  'tokens-por-dolar-podio-es': {
+    max: 120,
+    groups: [
+      {
+        label: "Capacidad por dólar",
+        color: '#60a5fa',
+        items: [
+          { name: "NVIDIA DGX Spark", value: 100, valueLabel: "27,2 GB/k$", emphasis: true },
+          { name: "Mac M5 Ultra 256GB", value: 98.9, valueLabel: "27,0 GB/k$" },
+          { name: "RTX PRO 6000 + PC", value: 20.1, valueLabel: "5,5 GB/k$" },
+          { name: "RTX 5090 + PC", value: 19.9, valueLabel: "5,4 GB/k$" },
+        ],
+      },
+      {
+        label: "Ancho de banda por dólar",
+        color: '#fbbf24',
+        items: [
+          { name: "RTX 5090 + PC", value: 100, valueLabel: "304 GB/s/k$", emphasis: true },
+          { name: "Mac M5 Ultra 256GB", value: 41.6, valueLabel: "126 GB/s/k$" },
+          { name: "RTX PRO 6000 + PC", value: 33.7, valueLabel: "102 GB/s/k$" },
+          { name: "NVIDIA DGX Spark", value: 19.1, valueLabel: "58 GB/s/k$" },
+        ],
+      },
+      {
+        label: "Tokens/s MEDIDOS por dólar (gpt-oss-120b)",
+        color: '#a48f65',
+        items: [
+          { name: "NVIDIA DGX Spark", value: 100, valueLabel: "12,9 t/s/k$", emphasis: true },
+          { name: "RTX PRO 6000 + PC", value: 86.9, valueLabel: "11,2 t/s/k$" },
+          { name: "Mac M5 Ultra 256GB", value: 0, valueLabel: "sin benchmark — proyección fuera de la regla" },
+          { name: "RTX 5090 + PC", value: 0, valueLabel: "no corre (32 GB < 62,8 GB)" },
+        ],
+      },
+    ],
+  },
+  /**
+   * `tokens-por-dolar-portao-es` — portão de capacidade: memória de cada máquina contra os 62,8 GB do gpt-oss-120b MXFP4 (margem de runtime de 85 % do calc.py). PROCEDÊNCIA: entradas.json; gerado por gera_charts.py.
+   */
+  'tokens-por-dolar-portao-es': {
+    max: 300,
+    groups: [
+      {
+        label: "Lo que exige el modelo",
+        color: '#a48f65',
+        items: [
+          { name: "gpt-oss-120b", value: 62.8, valueLabel: "62,8 GB en MXFP4", emphasis: true },
+        ],
+      },
+      {
+        label: "Lo que tiene cada máquina",
+        color: '#60a5fa',
+        items: [
+          { name: "RTX 5090 + PC", value: 32, valueLabel: "32 GB — no cabe", emphasis: true },
+          { name: "RTX PRO 6000 + PC", value: 96, valueLabel: "96 GB" },
+          { name: "NVIDIA DGX Spark", value: 128, valueLabel: "128 GB" },
+          { name: "Mac M5 Ultra 256GB", value: 256, valueLabel: "256 GB" },
+        ],
+      },
+    ],
+  },
+  /**
+   * `tokens-por-dolar-releitura-es` — fração de releitura (cache read) na entrada de carga de agente de código, 4 medições. PROCEDÊNCIA: fontes/G §3 (arXiv 2608.00101; Bun; doc Anthropic) + calc_util §6 (esta máquina); gerado por gera_charts.py.
+   */
+  'tokens-por-dolar-releitura-es': {
+    max: 110,
+    groups: [
+      {
+        label: "Fracción de la entrada que es relectura",
+        color: '#60a5fa',
+        items: [
+          { name: "Copilot (producción)", value: 95.4, valueLabel: "95,4 %" },
+          { name: "Bun (64 agentes)", value: 92.4, valueLabel: "92,4 %" },
+          { name: "Anthropic (1 sesión)", value: 99.4, valueLabel: "99,4 %" },
+          { name: "Esta máquina", value: 96.3, valueLabel: "96,3 %", emphasis: true },
+        ],
+      },
+    ],
+  },
+  /**
+   * `tokens-por-dolar-garfo-es` — mesma carga de 33 dias a 3 anos: trocar a regra de cache move a API 16,0x; trocar de máquina (regime B) move o hardware 3,6x. PROCEDÊNCIA: calc_util.py §6; gerado por gera_charts.py.
+   */
+  'tokens-por-dolar-garfo-es': {
+    max: 41000,
+    groups: [
+      {
+        label: "Cambiar la REGLA de caché (misma API) — 16,0x",
+        color: '#fbbf24',
+        items: [
+          { name: "Gratis (A, control)", value: 2120, valueLabel: "US$ 2.120" },
+          { name: "Con descuento (B)", value: 5293, valueLabel: "US$ 5.293" },
+          { name: "Precio completo (D)", value: 33847, valueLabel: "US$ 33.847", emphasis: true },
+        ],
+      },
+      {
+        label: "Cambiar de MÁQUINA (régimen B) — 3,6x",
+        color: '#60a5fa',
+        items: [
+          { name: "NVIDIA DGX Spark", value: 3423, valueLabel: "US$ 3.423", emphasis: true },
+          { name: "Mac M5 Ultra *", value: 6877, valueLabel: "US$ 6.877" },
+          { name: "RTX PRO 6000 + PC", value: 12431, valueLabel: "US$ 12.431" },
+        ],
+      },
+    ],
+  },
+  /**
+   * `tokens-por-dolar-contexto-es` — tokens de entrada por chamada (teto: tudo que o modelo viu) contra o contexto máximo do gpt-oss-120b. PROCEDÊNCIA: dados/uso-chamadas.csv via calc_util §1-bis; config.json de openai/gpt-oss-120b; gerado por gera_charts.py.
+   */
+  'tokens-por-dolar-contexto-es': {
+    max: 650000,
+    groups: [
+      {
+        label: "Lo que acepta el modelo",
+        color: '#a48f65',
+        items: [
+          { name: "Techo del modelo", value: 131072, valueLabel: "131.072 tokens (gpt-oss-120b)", emphasis: true },
+        ],
+      },
+      {
+        label: "Lo que pide la carga, por llamada (43.593 llamadas)",
+        color: '#60a5fa',
+        items: [
+          { name: "Mediana (p50)", value: 125285, valueLabel: "125,3 mil" },
+          { name: "Media", value: 151907, valueLabel: "151,9 mil", emphasis: true },
+          { name: "p90", value: 299463, valueLabel: "299,5 mil" },
+          { name: "p99", value: 526699, valueLabel: "526,7 mil" },
+        ],
+      },
+    ],
+  },
+  /**
+   * `tokens-por-dolar-podio-it` — pódio da tabela viral separado em 3 réguas; cada régua normalizada ao melhor (=100), valor real no rótulo. PROCEDÊNCIA: entradas.json (specs/preços 25/08/2026) + calc_mix.MAQUINAS (t/s medidos llama.cpp #15396/#16578); gerado por gera_charts.py.
+   */
+  'tokens-por-dolar-podio-it': {
+    max: 120,
+    groups: [
+      {
+        label: "Capacità per dollaro",
+        color: '#60a5fa',
+        items: [
+          { name: "NVIDIA DGX Spark", value: 100, valueLabel: "27,2 GB/k$", emphasis: true },
+          { name: "Mac M5 Ultra 256GB", value: 98.9, valueLabel: "27,0 GB/k$" },
+          { name: "RTX PRO 6000 + PC", value: 20.1, valueLabel: "5,5 GB/k$" },
+          { name: "RTX 5090 + PC", value: 19.9, valueLabel: "5,4 GB/k$" },
+        ],
+      },
+      {
+        label: "Banda per dollaro",
+        color: '#fbbf24',
+        items: [
+          { name: "RTX 5090 + PC", value: 100, valueLabel: "304 GB/s/k$", emphasis: true },
+          { name: "Mac M5 Ultra 256GB", value: 41.6, valueLabel: "126 GB/s/k$" },
+          { name: "RTX PRO 6000 + PC", value: 33.7, valueLabel: "102 GB/s/k$" },
+          { name: "NVIDIA DGX Spark", value: 19.1, valueLabel: "58 GB/s/k$" },
+        ],
+      },
+      {
+        label: "Token/s MISURATI per dollaro (gpt-oss-120b)",
+        color: '#a48f65',
+        items: [
+          { name: "NVIDIA DGX Spark", value: 100, valueLabel: "12,9 t/s/k$", emphasis: true },
+          { name: "RTX PRO 6000 + PC", value: 86.9, valueLabel: "11,2 t/s/k$" },
+          { name: "Mac M5 Ultra 256GB", value: 0, valueLabel: "senza benchmark — proiezione fuori scala" },
+          { name: "RTX 5090 + PC", value: 0, valueLabel: "non gira (32 GB < 62,8 GB)" },
+        ],
+      },
+    ],
+  },
+  /**
+   * `tokens-por-dolar-portao-it` — portão de capacidade: memória de cada máquina contra os 62,8 GB do gpt-oss-120b MXFP4 (margem de runtime de 85 % do calc.py). PROCEDÊNCIA: entradas.json; gerado por gera_charts.py.
+   */
+  'tokens-por-dolar-portao-it': {
+    max: 300,
+    groups: [
+      {
+        label: "Ciò che il modello richiede",
+        color: '#a48f65',
+        items: [
+          { name: "gpt-oss-120b", value: 62.8, valueLabel: "62,8 GB in MXFP4", emphasis: true },
+        ],
+      },
+      {
+        label: "Ciò che ha ogni macchina",
+        color: '#60a5fa',
+        items: [
+          { name: "RTX 5090 + PC", value: 32, valueLabel: "32 GB — non ci sta", emphasis: true },
+          { name: "RTX PRO 6000 + PC", value: 96, valueLabel: "96 GB" },
+          { name: "NVIDIA DGX Spark", value: 128, valueLabel: "128 GB" },
+          { name: "Mac M5 Ultra 256GB", value: 256, valueLabel: "256 GB" },
+        ],
+      },
+    ],
+  },
+  /**
+   * `tokens-por-dolar-releitura-it` — fração de releitura (cache read) na entrada de carga de agente de código, 4 medições. PROCEDÊNCIA: fontes/G §3 (arXiv 2608.00101; Bun; doc Anthropic) + calc_util §6 (esta máquina); gerado por gera_charts.py.
+   */
+  'tokens-por-dolar-releitura-it': {
+    max: 110,
+    groups: [
+      {
+        label: "Quota dell'ingresso che è rilettura",
+        color: '#60a5fa',
+        items: [
+          { name: "Copilot (produzione)", value: 95.4, valueLabel: "95,4 %" },
+          { name: "Bun (64 agenti)", value: 92.4, valueLabel: "92,4 %" },
+          { name: "Anthropic (1 sess.)", value: 99.4, valueLabel: "99,4 %" },
+          { name: "Questa macchina", value: 96.3, valueLabel: "96,3 %", emphasis: true },
+        ],
+      },
+    ],
+  },
+  /**
+   * `tokens-por-dolar-garfo-it` — mesma carga de 33 dias a 3 anos: trocar a regra de cache move a API 16,0x; trocar de máquina (regime B) move o hardware 3,6x. PROCEDÊNCIA: calc_util.py §6; gerado por gera_charts.py.
+   */
+  'tokens-por-dolar-garfo-it': {
+    max: 41000,
+    groups: [
+      {
+        label: "Cambiare la REGOLA di cache (stessa API) — 16,0x",
+        color: '#fbbf24',
+        items: [
+          { name: "Gratis (A, controllo)", value: 2120, valueLabel: "US$ 2.120" },
+          { name: "Con sconto (B)", value: 5293, valueLabel: "US$ 5.293" },
+          { name: "A prezzo pieno (D)", value: 33847, valueLabel: "US$ 33.847", emphasis: true },
+        ],
+      },
+      {
+        label: "Cambiare MACCHINA (regime B) — 3,6x",
+        color: '#60a5fa',
+        items: [
+          { name: "NVIDIA DGX Spark", value: 3423, valueLabel: "US$ 3.423", emphasis: true },
+          { name: "Mac M5 Ultra *", value: 6877, valueLabel: "US$ 6.877" },
+          { name: "RTX PRO 6000 + PC", value: 12431, valueLabel: "US$ 12.431" },
+        ],
+      },
+    ],
+  },
+  /**
+   * `tokens-por-dolar-contexto-it` — tokens de entrada por chamada (teto: tudo que o modelo viu) contra o contexto máximo do gpt-oss-120b. PROCEDÊNCIA: dados/uso-chamadas.csv via calc_util §1-bis; config.json de openai/gpt-oss-120b; gerado por gera_charts.py.
+   */
+  'tokens-por-dolar-contexto-it': {
+    max: 650000,
+    groups: [
+      {
+        label: "Ciò che il modello accetta",
+        color: '#a48f65',
+        items: [
+          { name: "Tetto del modello", value: 131072, valueLabel: "131.072 tokens (gpt-oss-120b)", emphasis: true },
+        ],
+      },
+      {
+        label: "Ciò che il carico chiede, per chiamata (43.593 chiamate)",
+        color: '#60a5fa',
+        items: [
+          { name: "Mediana (p50)", value: 125285, valueLabel: "125,3 mila" },
+          { name: "Media", value: 151907, valueLabel: "151,9 mila", emphasis: true },
+          { name: "p90", value: 299463, valueLabel: "299,5 mila" },
+          { name: "p99", value: 526699, valueLabel: "526,7 mila" },
+        ],
+      },
+    ],
+  },
+  /**
+   * `tokens-por-dolar-podio-he` — pódio da tabela viral separado em 3 réguas; cada régua normalizada ao melhor (=100), valor real no rótulo. PROCEDÊNCIA: entradas.json (specs/preços 25/08/2026) + calc_mix.MAQUINAS (t/s medidos llama.cpp #15396/#16578); gerado por gera_charts.py.
+   */
+  'tokens-por-dolar-podio-he': {
+    max: 120,
+    groups: [
+      {
+        label: "קיבולת לדולר",
+        color: '#60a5fa',
+        items: [
+          { name: "NVIDIA DGX Spark", value: 100, valueLabel: "27.2 GB/k$", emphasis: true },
+          { name: "Mac M5 Ultra 256GB", value: 98.9, valueLabel: "27.0 GB/k$" },
+          { name: "RTX PRO 6000 + PC", value: 20.1, valueLabel: "5.5 GB/k$" },
+          { name: "RTX 5090 + PC", value: 19.9, valueLabel: "5.4 GB/k$" },
+        ],
+      },
+      {
+        label: "רוחב פס לדולר",
+        color: '#fbbf24',
+        items: [
+          { name: "RTX 5090 + PC", value: 100, valueLabel: "304 GB/s/k$", emphasis: true },
+          { name: "Mac M5 Ultra 256GB", value: 41.6, valueLabel: "126 GB/s/k$" },
+          { name: "RTX PRO 6000 + PC", value: 33.7, valueLabel: "102 GB/s/k$" },
+          { name: "NVIDIA DGX Spark", value: 19.1, valueLabel: "58 GB/s/k$" },
+        ],
+      },
+      {
+        label: "טוקנים/שנייה שנמדדו לדולר (gpt-oss-120b)",
+        color: '#a48f65',
+        items: [
+          { name: "NVIDIA DGX Spark", value: 100, valueLabel: "12.9 t/s/k$", emphasis: true },
+          { name: "RTX PRO 6000 + PC", value: 86.9, valueLabel: "11.2 t/s/k$" },
+          { name: "Mac M5 Ultra 256GB", value: 0, valueLabel: "אין מדידה — תחזית מחוץ לסולם" },
+          { name: "RTX 5090 + PC", value: 0, valueLabel: "לא רץ (32 GB < 62.8 GB)" },
+        ],
+      },
+    ],
+  },
+  /**
+   * `tokens-por-dolar-portao-he` — portão de capacidade: memória de cada máquina contra os 62,8 GB do gpt-oss-120b MXFP4 (margem de runtime de 85 % do calc.py). PROCEDÊNCIA: entradas.json; gerado por gera_charts.py.
+   */
+  'tokens-por-dolar-portao-he': {
+    max: 300,
+    groups: [
+      {
+        label: "מה שהמודל דורש",
+        color: '#a48f65',
+        items: [
+          { name: "gpt-oss-120b", value: 62.8, valueLabel: "62.8 GB (MXFP4)", emphasis: true },
+        ],
+      },
+      {
+        label: "מה שיש לכל מכונה",
+        color: '#60a5fa',
+        items: [
+          { name: "RTX 5090 + PC", value: 32, valueLabel: "32 GB — לא נכנס", emphasis: true },
+          { name: "RTX PRO 6000 + PC", value: 96, valueLabel: "96 GB" },
+          { name: "NVIDIA DGX Spark", value: 128, valueLabel: "128 GB" },
+          { name: "Mac M5 Ultra 256GB", value: 256, valueLabel: "256 GB" },
+        ],
+      },
+    ],
+  },
+  /**
+   * `tokens-por-dolar-releitura-he` — fração de releitura (cache read) na entrada de carga de agente de código, 4 medições. PROCEDÊNCIA: fontes/G §3 (arXiv 2608.00101; Bun; doc Anthropic) + calc_util §6 (esta máquina); gerado por gera_charts.py.
+   */
+  'tokens-por-dolar-releitura-he': {
+    max: 110,
+    groups: [
+      {
+        label: "חלק הקלט שהוא קריאה חוזרת",
+        color: '#60a5fa',
+        items: [
+          { name: "Copilot (ייצור)", value: 95.4, valueLabel: "95.4%" },
+          { name: "Bun (64 סוכנים)", value: 92.4, valueLabel: "92.4%" },
+          { name: "Anthropic (סשן 1)", value: 99.4, valueLabel: "99.4%" },
+          { name: "המכונה הזאת", value: 96.3, valueLabel: "96.3%", emphasis: true },
+        ],
+      },
+    ],
+  },
+  /**
+   * `tokens-por-dolar-garfo-he` — mesma carga de 33 dias a 3 anos: trocar a regra de cache move a API 16,0x; trocar de máquina (regime B) move o hardware 3,6x. PROCEDÊNCIA: calc_util.py §6; gerado por gera_charts.py.
+   */
+  'tokens-por-dolar-garfo-he': {
+    max: 41000,
+    groups: [
+      {
+        label: "להחליף את כלל המטמון (אותו API) — 16.0x",
+        color: '#fbbf24',
+        items: [
+          { name: "חינם (ביקורת, A)", value: 2120, valueLabel: "US$ 2,120" },
+          { name: "עם הנחה (B)", value: 5293, valueLabel: "US$ 5,293" },
+          { name: "במחיר מלא (D)", value: 33847, valueLabel: "US$ 33,847", emphasis: true },
+        ],
+      },
+      {
+        label: "להחליף מכונה (משטר B) — 3.6x",
+        color: '#60a5fa',
+        items: [
+          { name: "NVIDIA DGX Spark", value: 3423, valueLabel: "US$ 3,423", emphasis: true },
+          { name: "Mac M5 Ultra *", value: 6877, valueLabel: "US$ 6,877" },
+          { name: "RTX PRO 6000 + PC", value: 12431, valueLabel: "US$ 12,431" },
+        ],
+      },
+    ],
+  },
+  /**
+   * `tokens-por-dolar-contexto-he` — tokens de entrada por chamada (teto: tudo que o modelo viu) contra o contexto máximo do gpt-oss-120b. PROCEDÊNCIA: dados/uso-chamadas.csv via calc_util §1-bis; config.json de openai/gpt-oss-120b; gerado por gera_charts.py.
+   */
+  'tokens-por-dolar-contexto-he': {
+    max: 650000,
+    groups: [
+      {
+        label: "מה שהמודל מקבל",
+        color: '#a48f65',
+        items: [
+          { name: "תקרת המודל", value: 131072, valueLabel: "131,072 tokens (gpt-oss-120b)", emphasis: true },
+        ],
+      },
+      {
+        label: "מה שהעומס מבקש, לקריאה (43,593 קריאות)",
+        color: '#60a5fa',
+        items: [
+          { name: "חציון (p50)", value: 125285, valueLabel: "125.3 אלף" },
+          { name: "ממוצע", value: 151907, valueLabel: "151.9 אלף", emphasis: true },
+          { name: "p90", value: 299463, valueLabel: "299.5 אלף" },
+          { name: "p99", value: 526699, valueLabel: "526.7 אלף" },
+        ],
+      },
+    ],
+  },
 };
 
 /* ── Funil ───────────────────────────────────────────────────────────── */
