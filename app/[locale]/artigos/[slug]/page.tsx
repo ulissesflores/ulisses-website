@@ -17,7 +17,7 @@ import { MdxContentWrapper, mdxComponents } from '@/lib/content/mdx-components';
 import { defaultLocale, isLocale, localeToOgLocale, type Locale } from '@/data/i18n';
 import { getDictionary } from '@/lib/get-dictionary';
 import { localePath } from '@/lib/locale-path';
-import { buildCanonical, buildLanguageAlternates, defaultOgImages } from '@/data/seo';
+import { buildCanonical, buildLanguageAlternates } from '@/data/seo';
 
 const CONTENT_TYPE = 'artigos';
 
@@ -57,7 +57,17 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       languages: buildLanguageAlternates(path),
     },
     openGraph: {
-      images: defaultOgImages(locale),
+      // Card por artigo (app/[locale]/artigos/[slug]/opengraph-image.tsx), não o
+      // genérico do site: a convenção de arquivo não sobrevive à substituição do
+      // openGraph herdado do layout, então a URL entra explícita — ver data/seo.ts.
+      images: [
+        {
+          url: `${upkfMeta.primaryWebsite}${buildCanonical(locale, `${path}/opengraph-image`)}`,
+          width: 1200,
+          height: 630,
+          alt: title,
+        },
+      ],
       type: 'article',
       url: `${upkfMeta.primaryWebsite}${path}`,
       title,
