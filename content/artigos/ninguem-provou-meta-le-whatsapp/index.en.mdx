@@ -1,0 +1,612 @@
+---
+title: 'No, nobody proved that Meta reads your WhatsApp. What I found is worse'
+slug: ninguem-provou-meta-le-whatsapp
+category: artigos
+date: '2026-08-26'
+language: en
+---
+
+**A lawyer lost ten years of conversations in a single morning. A video concluded that Meta had read
+what he wrote. I went to check that accusation against the company's own technical documents, the
+application's code, decisions by European regulators and lawsuits in Brazil, the United States and
+India. The video is wrong. And by the time you finish reading, you will be more uncomfortable than
+you were before — not less.**
+
+---
+
+## 1. The accusation
+
+The argument fits in four sentences, and that is why it works so well.
+
+A Brazilian lawyer with a public profile wrote something in a private WhatsApp conversation. A few
+days later he opened the app and found the account deactivated — ten years of contacts, work groups,
+files and professional history, with no prior notice, no stated reason and nobody to ask. The screen
+offered a review button and, on the other side of it, silence.
+
+If Meta punished him because of what was said in there, then Meta **read** what was said in there.
+And if it read, then end-to-end encryption — the promise that not even the company can see your
+messages — is marketing.
+
+That was the conclusion of a video that swept Brazil in August. And it is not a stupid conclusion. It
+is the reasoning any reasonable person would follow with the information available. The lawyer was not
+alone: between 3 and 4 August, a wave of deactivations hit accounts in several countries at the same
+time; the peak of complaints on Downdetector passed 200 reports — the only public number that exists.
+In a statement sent to the press on 3 August — with no publication on its own channels — the company
+said it "works continuously to stay ahead of those who try to misuse the service", that it bans
+accounts "to help protect other users" and that it may "occasionally" make "mistakes" (our
+translation). It did not say how many accounts were hit, or in which countries, or which signal
+triggered it, or whether any human being looked.
+
+When a company does not explain, the simplest explanation fills the void. And the simplest one is:
+they read it.
+
+I am going to take that argument apart piece by piece. It does not hold. But what is left in its
+place is a far less comfortable story than "Meta is a liar" — and it is a story nobody is telling.
+
+---
+
+## 2. Why the argument does not close
+
+There are two flaws in the reasoning, and the first one is decisive.
+
+### One report is enough
+
+End-to-end encryption protects the message **in transit**. It does not protect the message after it
+arrives — because whoever received it can obviously read it.
+
+When someone taps "report" in a conversation, the app **belonging to the person reporting** packages
+the last messages of that thread and sends them to the server. Already decrypted. Not because anyone
+broke anything, but because the person reporting could always read them — the message was on their
+phone. WhatsApp's privacy policy records this in plain Portuguese: the company collects data "from
+both the user who reported and the user who was reported" (our translation).
+
+<ArticleFigure
+  src="/artigos/ninguem-provou-meta-le-whatsapp/fig-01.png"
+  width="2352"
+  height="675"
+  alt="Diagram: the message travels encrypted from you to the recipient; when the recipient taps REPORT, the already decrypted text goes back to the Meta server — without the cipher being broken."
+  caption="Figure 1. A report is not a hole in the encryption. It is the door being opened from the inside, by someone who always had the key."
+/>
+
+In other words: there is a perfectly banal path by which Meta may have had access to the content of a
+conversation, without anything in the technical promise being violated. And there is an even more
+banal one — automated moderation does not even look at content: it looks at behaviour. Message volume,
+sending speed, how many users blocked you, how many reports you have accumulated, whether your account
+was created by automation.
+
+### Whoever reads, bans with precision
+
+The second flaw is subtler, and it is the one that actually buries the argument.
+
+Imagine, for a moment, that the video's hypothesis is right: Meta reads private conversations and
+punishes people on that basis. In that world, this capability is the most valuable thing the company
+owns — and the most dangerous. Exposing it means lawsuits, a billion-dollar fine, an exodus of users
+and probably the death of the product.
+
+Now look at what actually happened: accounts deactivated in several countries at once, with no visible
+criterion, with innocent people caught in the middle, generating headlines around the world.
+
+That is the signature of a badly calibrated automated classifier. **It is not the signature of someone
+reading.** Whoever reads and punishes by content bans one by one, quietly, with surgical precision, and
+never lets the pattern show. Banning en masse and noisily would burn your own source in the first week.
+
+There is a historical precedent that illustrates this better than any abstract argument. During the
+Second World War, the British broke the German cipher. And from then on they faced a horrible dilemma:
+acting on the decrypted information would reveal that the cipher had fallen. In several cases, **they
+chose not to act**. Whoever holds a valuable secret capability protects the capability, not the
+individual case.
+
+**Partial conclusion: the ban does not prove reading.** That is settled, and it is the end of the
+video's argument.
+
+Hold on to that British precedent, because in a little while it is going to turn against both of us.
+
+---
+
+## 3. Before we continue: how this actually works
+
+To understand why the story does not end here, you need twenty minutes of cryptography. No mathematics,
+I promise.
+
+### The safe and the post office
+
+Imagine you want to send a letter and the post office is curious.
+
+- **Ordinary encryption** — the kind used by email, and now by Instagram messages: you seal the letter,
+  the post office opens it, reads it, seals it again and delivers it. They have the key to the seal.
+  This protects you against a thief who robs the truck. It does not protect you against the post office.
+- **End-to-end encryption** — the kind used by WhatsApp and Signal: you lock the letter inside a safe
+  that **only the recipient** knows how to open. The post office carries the safe without being able to
+  open it.
+
+<ArticleFigure
+  src="/artigos/ninguem-provou-meta-le-whatsapp/fig-02.png"
+  width="2007"
+  height="1086"
+  alt="Two stacked diagrams. In ordinary encryption the provider opens, reads and reseals the message along the way; in end-to-end encryption it only carries the message, without opening it."
+  caption="Figure 2. The difference is not the strength of the lock. It is who holds the key."
+/>
+
+### The two keys
+
+Every device generates, on its own, a pair of keys:
+
+- the **private key**, which never leaves the phone — not for the company, not for anyone;
+- the **public key**, which has to reach whoever wants to talk to you.
+
+Whatever is locked with someone's public key can only be opened with that person's private key. That is
+why the public key can circulate freely: it only serves to lock, not to open.
+
+The protocol WhatsApp uses is called **Signal** — the same one used by the Signal app, created by
+independent cryptographers, public, audited by academics and formally verified. It has two beautiful
+properties: the key changes with every message, always forward and with no way back, so that whoever
+steals today's key **does not read yesterday's messages**; and it loses access as soon as the mechanism
+turns again.
+
+I will repeat this, because criticism is only worth anything if it is fair: **the mathematics is sound.**
+That is not where the problem lives.
+
+### The problem lives in the address book
+
+Here is the point that dissolves the whole mystique, and it is the heart of this article.
+
+When you open a new conversation, your phone needs the other person's public key. Where does it come
+from? From Meta's server. Your phone asks "what is so-and-so's public key?" and uses whatever comes
+back. There is no magic, no notary, no other source.
+
+In other words: **whoever controls the server controls who you are actually writing to.**
+
+If the server answers with a key that is not so-and-so's, but a key the company itself controls, your
+phone will lock the message to that key, believing it is so-and-so. The company opens it, reads it,
+locks it again with so-and-so's real key and forwards it. You see nothing. So-and-so sees nothing. The
+encryption keeps working perfectly — only with a third party in the middle.
+
+<ArticleFigure
+  src="/artigos/ninguem-provou-meta-le-whatsapp/fig-03.png"
+  width="2352"
+  height="915"
+  alt="Two stacked diagrams. In the expected case you encrypt with the key of your contact and he receives it. In the man in the middle attack you encrypt with the key the server sent, a third party opens it, reads it and encrypts it again with the real key of your contact."
+  caption="Figure 3. The man-in-the-middle attack. Nobody breaks the cipher. They swap the lock before you turn it."
+/>
+
+This has had a name in the literature for decades and it is not a conspiracy theory: it is the
+**canonical attack** against any end-to-end system whose key directory is controlled by a single
+company. It is not a flaw in the Signal protocol. It is the price of having a central address book. And
+the protocol always knew it — which is why it invented a defence.
+
+### The defence: those 60 digits nobody compares
+
+Open WhatsApp, go into a conversation, tap the contact's name and look for "Encryption". You will find
+a QR code and a 60-digit number.
+
+That number is the **fingerprint of the keys** at both ends. If you and your contact compare that number
+over a channel that is not WhatsApp — in person, by phone, through another app — and they match, then it
+is ruled out that anyone swapped the lock.
+
+And here I need to correct a mistake I made myself during this investigation, because it circulates
+widely. Reading the protocol documentation, I had concluded that this number did **not** cover "linked
+devices" — WhatsApp Web, the tablet, the second phone. I was wrong. I went and read the official app's
+own code, and what it compares is the concatenation of the keys of **all** the devices on each side; any
+divergence is explicitly rejected. The company's whitepaper says the same. **The security code does
+detect a ghost device.**
+
+Good. Except now comes the uncomfortable part.
+
+<ArticleFigure
+  src="/artigos/ninguem-provou-meta-le-whatsapp/fig-04.png"
+  width="2352"
+  height="894"
+  alt="A tree comparing the two defences. The security code covers every device on both ends but requires two people comparing 60 digits; key transparency works for billions with no effort but covers only the key of the primary device."
+  caption="Figure 4. The asymmetry that sums up the whole subject: the defence that scales does not cover the vector; the defence that covers the vector does not scale."
+/>
+
+### The automatic defence: key transparency
+
+The industry knows nobody compares 60 digits. That is why **key transparency** exists: the same family
+of idea that today protects websites with the padlock in your browser. The server is required to publish
+every key it distributes in a public log, one that only grows and is cryptographically chained. If it
+hands you a key that is not in the log, your app notices. If it publishes the fake key in the log, it is
+recorded there forever, in plain view of any auditor.
+
+Meta implemented this, and deserves the credit: the library is open source, it was audited by an outside
+firm in 2023 and — what matters most — since September 2024 there has been an **independent witness**
+checking and signing the results: Cloudflare. That is more than most platforms do.
+
+Three limits, and none of them is a detail. First, this log covers the key of the **primary device**,
+not the list of linked devices — which is precisely where an extra guest would live. Second, it
+**detects, it does not prevent**: the academic paper underpinning the system describes the goal as
+"detecting (and hence deterring)" a dishonest server. Third, and this one swallows all the others:
+**whoever performs the verification is the app.** It is the program on your phone that checks whether the
+key it received is in the log and that decides whether to warn you. A tampered app simply does not
+complain.
+
+### A "silent key" is not one thing. It is four.
+
+Confusing those four is what makes the debate spin in place. They have very different difficulty levels:
+
+| | What it is | Detectable? |
+|---|---|---|
+| **1** | A fake key published in the log | ✅ Yes — that is exactly what the log exists for |
+| **2** | The server declares that you "re-registered" and resets your identity | ⚙️ Partly — and the app, by default, does not warn you |
+| **3** | A ghost member added to a group | ⚙️ The key log does not see it (the ghost uses a legitimate key); the app **does show** the member list — but in a group of hundreds, who checks? |
+| **4** | A ghost linked device | ⚙️ Requires the signature of the target's primary device: **the server alone cannot fabricate it**. And the 60-digit QR gives it away — for whoever compares |
+
+**Figure 5.** The four forms. None of them breaks the cipher. All of them add a listener.
+
+And this is not an internet hypothesis: in 2018 the British intelligence service **formally proposed**
+mechanism 3, in writing, in a public article, arguing that "it's relatively easy for a service provider
+to silently add a law enforcement participant to a group chat or call". The proposal was called the
+*ghost user*. A coalition of companies and organisations, **including Meta itself**, signed an open
+letter against it in 2019.
+
+What the technical response of the time established is the point that closes this section: a ghost
+listener **requires the app to lie** — to hide the notification, not to show the extra member. It is an
+attack on the honesty of the program, not on the mathematics.
+
+And that is why the right question was never "is the encryption strong?". The right question is: **how do
+you know what the program on your phone actually does?**
+
+---
+
+## 4. What the company wrote in February
+
+Hold on to that question. Now let us go to the documents.
+
+On **25 February 2026**, WhatsApp published a new version of its technical encryption whitepaper. It is a
+public document, hosted by Meta itself, and almost nobody re-reads it. It is worth re-reading, because it
+gained a section that had never existed before: **"Defining End-to-End Encryption"**.
+
+It begins like this:
+
+> "WhatsApp defines end-to-end encryption as communications that remain encrypted from a device
+> controlled by the sender to one controlled by the recipient, where no third parties, **not even
+> WhatsApp or our parent company Meta**, can access the content in between."
+
+Read on its own, it is the strongest promise the company has ever made in writing — and it is from
+**2026**, not 2016. Anyone hoping to find an erased guarantee here will be disappointed: nothing was
+erased. The document has **quadrupled** since the first version, from 432 to 2,035 lines, and the classic
+sentence about the server having no access to private keys is still there, in another section. I went
+looking precisely expecting to find an erasure, and I did not find one. That needs to be said.
+
+What changed is not what disappeared. It is **who defines the word**.
+
+Until 2017, the document asserted a result about the world: third parties and WhatsApp *cannot read* the
+messages, and *all* message types are protected. In 2026, it asserts a **company definition** — and, right
+below it, lists what **it does not consider** end-to-end:
+
+> "WhatsApp **does not consider** communications with Meta services, or communications with businesses
+> using Cloud API, to be end-to-end encrypted."
+
+Read that again, slowly. **There is today a class of conversation inside WhatsApp that the company itself
+declares is not end-to-end protected.** It is not hypothetical, it does not depend on a conspiracy, and it
+has a product name and a launch date: any conversation with Meta's artificial intelligence inside the app,
+and any commercial support operated through the company's cloud API.
+
+<ArticleFigure
+  src="/artigos/ninguem-provou-meta-le-whatsapp/fig-06.png"
+  width="2352"
+  height="1881"
+  alt="Timeline in two columns. In 2016 and 2017 the whitepaper stated that third parties and WhatsApp cannot read, with no exceptions, in 432 lines. In 2026 it defines the term on its own, lists what it does not consider end to end, and runs to 2,035 lines."
+  caption="Figure 6. From an unqualified guarantee to a self-written definition with a list of exceptions. Nothing was erased — what changed is who holds the pen."
+/>
+
+The whole debate is staring at a ghost — a secret key nobody has seen — and has failed to notice that a
+documented guest walked in through the front door, wearing a badge, and signed the visitors' book.
+
+There is also a new and literal caveat in the same document: when a business delegates the operation of its
+commercial account to a vendor, "that vendor will have access to their private keys — **including if that
+vendor is Meta**". The document adds, in the same breath: "However, these private keys will still not be
+stored on the WhatsApp chat server." That applies to **business** users, never to ordinary ones — and it is only honest to record the difference. But the
+direction of travel is unambiguous: a universal promise became a map of exceptions.
+
+And a small detail, for the Brazilian reader. WhatsApp's help centre explains, in the same article, what
+happens when you report a conversation. In **English**, the text says that Meta may **read** the reported
+messages. In **Portuguese**, it says they are **sent**. Same article, same day, checked by me. One word less
+in the Portuguese version.
+
+---
+
+## 5. Five days in May
+
+The May 2026 calendar makes theory unnecessary.
+
+<ArticleFigure
+  src="/artigos/ninguem-provou-meta-le-whatsapp/fig-07.png"
+  width="2352"
+  height="1296"
+  alt="Timeline for May 2026: on 8 May Meta switches off end-to-end encryption on Instagram; on 11 May Apple and Google ship encrypted RCS between iPhone and Android; on 13 May Meta switches encryption on for chats with its AI."
+  caption="Figure 7. Encryption retreating in one product and advancing in two others, in the same month."
+/>
+
+Anyone who says "the walls are closing in on encryption" is not reading the calendar.
+
+Instagram is the one point in this story where the company changed its position in writing, without
+ambiguity. Until 2023, Meta's help centre described an encrypted conversation like this:
+
+> "No one can read your messages or hear your calls except the people who have these special keys - **not
+> even Meta. We couldn't even if we wanted to.**"
+
+On 8 May 2026, they could. Not because they broke anything: because they switched it off. What that
+sentence measured was not an engineering limit — it was a product decision, and product decisions are
+revoked in a meeting. Today the feature's page on Instagram has four operational sentences about how to
+download old conversations, and points the user elsewhere: "For Meta's other end-to-end encrypted chat
+options, check out WhatsApp."
+
+---
+
+## 6. Possible, probable, undecidable
+
+This is where almost every text on this subject goes wrong, including the ones attacking the company.
+
+The question "does Meta read WhatsApp messages?" is treated as if it had two answers. It has three, and
+the public evidence separates two of them very badly.
+
+<ArticleFigure
+  src="/artigos/ninguem-provou-meta-le-whatsapp/fig-08.png"
+  width="2352"
+  height="1236"
+  alt="A tree with the three possible states: mass reading, targeted reading and genuine inability. The video alleges the first, the company communicates the third, and nothing that is public tells the second apart from the third."
+  caption="Figure 8. The binary “reads or does not read” is what makes the discussion spin in place."
+/>
+
+On **capability**, there is a serious academic reference, and it needs to be cited with the same honesty
+one demands of others. A paper presented at Eurocrypt 2025 — one of the world's leading cryptography
+conferences, peer-reviewed — produced by reverse-engineering WhatsApp's web client, records that "it is
+possible for the server to reset a user's cryptographic identity" and that "clients default to not
+displaying such a change to users".
+
+The caveat, which tends to disappear when that sentence circulates: this appears in the paper's own
+**scope and limitations** section, whose verification the authors expressly say was **out of scope of
+their analysis**; the object examined was the **web** client archived in May 2023; and WhatsApp engineers
+reviewed and confirmed the protocol description. It is a qualified source's statement about a
+**capability** — not a demonstration that it is exercised, and not an audit of the app in your pocket.
+
+In other words: the mechanism exists, it is silent by default, and nobody has proved that anyone used it.
+
+---
+
+## 7. No signal separates them
+
+If the technical evidence does not decide, behaviour is what is left. It is the test any reporter would
+run: a company that *genuinely cannot* read should behave differently from one that *can and does not say
+so*. The first would fight in court, be blocked, pay dearly for failing to deliver. The second would
+cooperate discreetly.
+
+I went after every one of those signals. The result is the most important finding of this investigation —
+and it is negative.
+
+| Signal | What was found |
+|---|---|
+| FBI training document (2021) on what can be obtained from each app | Confirmed — but the content listed comes from **Apple's iCloud backup**, never from Meta's server |
+| WhatsApp blocks in Brazil | **Four**, only two of them after encryption; an executive was even arrested in 2016; the Supreme Court never settled the question |
+| Lawsuit in India | Five years without a ruling — and the Indian rule **does not even ask for content**, it asks for traceability of origin |
+| United Kingdom, threat to leave the country | Ofcom **has never issued** the technical notice that would activate the regime: the mechanism is dormant |
+| Open letter against the "ghost user" (2019) | Confirmed — and signing a letter is cheap for both kinds of company |
+| Any case of personal conversation content obtained from Meta's server | **None found** across six distinct sources |
+
+**Figure 9.** None separates them. All are compatible with both hypotheses.
+
+And the absence of the one signal that would carry weight — a concrete case of content obtained from the
+server — proves nothing either. Remember the British precedent from the Second World War, back at the
+start? It cuts both ways. If the capability existed and were used sparingly against specific targets, this
+is exactly what the world would look like: with no case at all.
+
+This is not fatalism. It is the central result of this article:
+
+> **The discussion is not resolved by more news. It is designed not to resolve.**
+
+Not because the subject is complicated. Because the information that would settle the question is not
+public — and it is not public by the choice of whoever could make it public.
+
+---
+
+## 8. The company has said one thing and done another before
+
+None of this says that Meta reads your messages. But there is a track record that legitimately shifts the
+**starting point** — not about WhatsApp, but about the weight one should give the company's word on
+technical claims.
+
+**May 2017: €110 million.** In 2014, when buying WhatsApp, Meta told European authorities that
+automatically matching the identities of Facebook and WhatsApp users was technically unfeasible. The
+European Commission later concluded that "the technical possibility of automatically matching Facebook and
+WhatsApp users' identities already existed in 2014, and that Facebook staff were aware of such a
+possibility". The company formally acknowledged the infringement — a **procedural** one, let it be
+recorded — which the Commission qualified as "at least negligent". It is the exact precedent of a public
+technical claim that did not match the real capability, made **about WhatsApp itself**.
+
+**2016 to 2019: interception of competitors' encrypted traffic.** Documents from a lawsuit in the United
+States show the company installing a root certificate on the devices of users of one of its apps in order
+to read rivals' encrypted traffic. I need to be explicit here, because the easy comparison would be
+dishonest: **that case is not WhatsApp**. The target was competitors' market data, not user conversations,
+and the conduct was never tried on the merits. What the episode supports is modest and sufficient: faced
+with a strong incentive, with encryption in the way, the company did not back off on principle.
+
+**And there is a tension that needs no intermediary**, because both sides are documents — one from the
+company, the other from Brazil's Supreme Federal Court.
+
+On **5 April 2016**, WhatsApp's technical whitepaper already said that the user has the **option** to verify
+keys "so that they are able to confirm that an unauthorized third party **(or WhatsApp)** has not initiated
+a man-in-the-middle attack". The company names itself as a possible author of the attack — and the defence
+it offers is optional and manual: those 60 digits.
+
+**Fourteen months later**, in June 2017, co-founder Brian Acton took part in the Supreme Court's public
+hearing on encryption. As **summarised in the opinion of the reporting justice, Edson Fachin** — in indirect
+speech, not a transcript — he argued that it would not be possible to disable encryption for specific users,
+"stressing that any change to the security keys that might allow interception **would be noticed and
+corrected by the application's code verification system**" (our translation).
+<sub>Original in Portuguese: *"ressaltando que qualquer alteração nas chaves de segurança que pudessem
+permitir a interceptação seria percebida e corrigida pelo sistema de verificação de código do aplicativo."*</sub>
+
+The collision is not in the word "disable" — on that point he is right, and an additional silent listener
+precisely does **not** disable any cipher: it stays on, and what breaks is authentication. The collision is
+in the **detection** clause. The Eurocrypt paper records the opposite, and the 2016 whitepaper itself, on the
+same page, makes clear that verification is **optional**. Nothing is "corrected" on its own.
+
+The most economical reading of this episode is not conspiracy. It is commercial overconfidence: the company
+presented as an impossibility, before a supreme court, something it documents itself, in the small print, as
+a conditional guarantee dependent on a manual gesture almost nobody performs.
+
+---
+
+## 9. Why it stays this way
+
+We come to the only question in this article with a precise, verifiable answer.
+
+If the impossibility of knowing is the problem, where does it come from? From three choices — all of them
+the company's, all of them reversible by it at any moment:
+
+1. **The app is closed.** There is no source code for the WhatsApp client. Meta's official GitHub
+   organisation has more than 25 public repositories — compilers, Erlang tools, commercial SDKs, stickers —
+   and **zero lines of client**.
+2. **There is no reproducible build.** With Signal you can take the published code, compile it on your own
+   computer and check whether the result matches the app in the store. With WhatsApp there is not even the
+   first step.
+3. **Every update is a fresh act of faith.** Even if someone audited today's version, tomorrow's arrives on
+   its own, signed by the same company, with no external review.
+
+I looked for, and did not find, **any public statement by Meta explaining why the WhatsApp client is
+closed**. There is no official justification on grounds of security, abuse prevention or intellectual
+property. The absence of a justification is itself a datum.
+
+One possible explanation — and it accuses nobody of anything: **the impossibility of auditing is not a
+historical residue. It is an asset.** A company that cannot be verified reaps both benefits at once: the
+marketing of "not even we can read it" **and** the operational freedom of never having to prove it. Making
+the system auditable would destroy that value. This explains the inertia without asserting any conduct, and
+it is the most economical explanation left standing.
+
+---
+
+## 10. The reversal nobody expects
+
+By this point the reader has assembled a narrative: companies are retreating, governments are tightening,
+encryption is surrounded.
+
+**In 2026, in Brazil and in Europe, the opposite happened.**
+
+- **Regulation (EU) 2026/1881**, of 24 July, **excludes end-to-end encrypted communications from its
+  scope** — and one of its recitals forbids reading the text as a weakening of encryption. The clause came
+  from the European Parliament and was the price of adoption.
+- In **Chat Control**, the long-term European proposal, mandatory scanning of encrypted content **has
+  already fallen** out of the text agreed in the Council.
+- In Brazil, Law 15,211/2025 — the "Felca Law", accused on social media of having created message
+  surveillance — **does not contain the word "criptografia"** (encryption). Neither does it, nor do the five
+  2026 decrees that surround it. And its article 37, sole paragraph, **prohibits** regulation from imposing
+  "mechanisms of mass, generic or indiscriminate surveillance" (our translation). The law forbids exactly
+  what the rumour says it created.
+- Decree 12,975/2026, which gave the National Data Protection Authority jurisdiction over platforms,
+  **expressly excludes private interpersonal messaging** from the duties it creates, as communications
+  "protected by the secrecy of communications, under article 5, XII, of the Constitution" (our translation).
+
+**The law is protecting the private message. The one that retreated was the company.**
+
+---
+
+## 11. Three clocks running
+
+**On 21 August**, Brazil's National Data Protection Authority notified 22 platforms, among them Instagram
+and WhatsApp — the latter **only for its "public Channels" feature** — with a deadline of ten business days.
+The full text of the notices was not published; according to *Gazeta do Povo*, among the questions is the
+question of this article: **is the analysis of the reports received human or automated?** And here is the
+limit that has to be stated in the same breath: on the platforms that offer private messaging, the inquiry
+**stops at the public channels**. The authority asks the right question on the wrong surface — moderation of
+private conversations, which is the August case, still has nobody asking about it.
+
+**In the United States**, a class action against Meta, in the Northern District of California, alleges that
+employees access WhatsApp messages through an internal tool — and it has **two plaintiffs domiciled in
+Brazil**. Worldwide coverage stopped at the headline "case dismissed", and it is wrong: on 23 July, federal
+judge Rita F. Lin dismissed the complaint **with leave to amend**, denied the sanctions the company had
+sought, and wrote that "breaking end-to-end encryption is not the only means by which that could happen".
+The amendment was filed on 4 August — and on **25 August**, the same day this report approached the company,
+Meta again moved to dismiss the case, this time **with prejudice**. The hearing is set for **20 October**.
+The defence filing is worth reading, because in it the company leans on exactly the list of exceptions in
+this article: it argues that the access described by the witness is "fully consistent with receiving access
+only to messages that Defendants disclose are not end-to-end encrypted because, for example, users choose to
+report messages or exchange messages with certain businesses". The counterweight, which is mandatory: the
+US federal investigation into the same matter was **closed on 28 April 2026** — and it is the complaint
+itself that records this, in a footnote.
+
+**On 17 September**, under article 31 of Brazil's Digital Statute for Children and Adolescents, platforms
+will have to publish a transparency report with the number of moderated accounts. It is the date on which we
+may learn how many Brazilians were deactivated in August.
+
+And there is a precedent nobody has connected to the case: on **30 March 2026**, the Court of Justice of Mato
+Grosso upheld a ruling against Facebook Brazil holding that Brazil's Internet Civil Rights Framework imposes
+a **duty to state the specific reason** for blocking an account. That is exactly the gap in the August case.
+
+> **Right of reply.** Meta was approached on **25 August 2026** (`press@meta.com`), with seven questions
+> about the signal that triggered the August deactivations, about the analysis of reports and about opening
+> the client's source code. The channel that published the video was approached **on the same day**, through
+> the contact form on its website. Both were given a deadline of **1 September 2026, 6 p.m. BRT**. As of the
+> close of this edition neither of them had replied — **the deadline is still running**, and any reply that
+> arrives will be added here, in full and uncut.
+>
+> **The deactivated lawyer was not approached by this report.** His version enters through what he himself
+> made public: on **20 August 2026, at 5:34 p.m.**, in an open post addressed to the president of the United
+> States, **Tiago Pavinatto** wrote that the Meta group *"cut this journalist off from his contacts, sources,
+> and investigative archives—in addition to, of course, violating his most personal rights"*. In the
+> Portuguese version of the same post he writes that the group *"banned this journalist from his activities,
+> in addition, of course, to violating his most personal rights"* (our translation) — the English version is
+> the more concrete of the two about what was lost.
+> <sub>Original in Portuguese: *"baniu este jornalista das suas atividades, além de, é claro, violar seus
+> direitos mais pessoais."*</sub> In the same post he attaches that day's *Folha de S.Paulo* report, according
+> to which he **will sue** Meta. Note what he does **not** say: at no point does he claim the company read the
+> content of his messages — his complaint is the ban, the loss of access and the violation of rights.
+> `https://x.com/Pavinatto/status/2090538105602285787`
+
+---
+
+## 12. What to demand
+
+If the impossibility of auditing is a choice, it has a price and it has an address. And the demand has to be
+the right one, because the wrong demand is worse than none.
+
+Asking only for "open the source code" **does not solve it** — and it hands the company the chance to stage
+transparency theatre. Published code proves nothing about the program on your phone: between one and the
+other sit a compiler, an app store and a digital signature.
+
+<ArticleFigure
+  src="/artigos/ninguem-provou-meta-le-whatsapp/fig-10.png"
+  width="2352"
+  height="744"
+  alt="Three chained steps: published source code, reproducible build, and third party audit of the delivered binary. A dotted arrow shows that the first step alone leads to transparency theatre."
+  caption="Figure 10. The tripod. Asking only for the first step is asking for the theatre."
+/>
+
+None of the three is utopian. Signal does all three on Android — and it is only honest to record that it does
+**not** on iOS. Meta itself has already proved it knows how: WhatsApp Web publishes a manifest of hashes that
+allows anyone to check that the code served is the same for everybody; and in August 2026, when launching a
+scam detector that runs on the device, it published the model weights and a public log of the versions — an
+architecture that makes it impossible to deliver a model targeted at one specific person.
+
+The company knows how to build verifiable systems. It built one, voluntarily, in the product fewest people use
+and in the newest feature. Not in the most used messaging app in the country.
+
+---
+
+## What this text does not claim
+
+It does not claim that a silent key exists in WhatsApp. It does not claim that Meta reads personal messages. It
+does not claim that the company erased promises from its own whitepaper — it did not, and anyone who says
+otherwise will be refuted with a screenshot.
+
+It claims three things, verifiable by any reader with a browser:
+
+- that the company has come to **define on its own** what counts as a protected conversation, and to list
+  exceptions it acknowledges itself;
+- that **no observation available to the public** distinguishes a company that cannot read from one that can
+  and does not say so;
+- that the three choices producing that impossibility are **its own, and reversible by it**.
+
+The young man in the video got the conclusion wrong. But he was right about the discomfort — and the discomfort
+has a cause that is not the encryption. The guarantee we were sold as mathematics was always, at best, a
+corporate promise. Corporate promises are revoked.
+
+On 8 May 2026, one of them was.
+
+---
+
+*Reported from primary sources: WhatsApp technical whitepapers from 2016 to 2026, archived captures and direct
+reading of the Instagram help centre, the official client's code, the 2017 European Commission decision, the
+docket of 3:26-cv-00751-RFL (N.D. Cal.), Regulation (EU) 2026/1881, Law 15,211/2025 and the 2026 decrees, and
+the ANPD notices of 21 August 2026. The verification dossier, with the hashes of every source, is available on
+request.*

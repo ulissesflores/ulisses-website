@@ -1,0 +1,650 @@
+---
+title: "No, nessuno ha provato che Meta legge il tuo WhatsApp. Quello che ho trovato è peggio"
+slug: ninguem-provou-meta-le-whatsapp
+category: artigos
+date: '2026-08-26'
+language: it
+---
+
+**Un avvocato ha perso dieci anni di conversazioni in una mattina. Un video ha concluso che Meta
+aveva letto quello che lui aveva scritto. Sono andato a verificare quell'accusa nei documenti tecnici
+dell'azienda stessa, nel codice dell'applicazione, in decisioni di autorità europee e in cause in
+Brasile, negli Stati Uniti e in India. Il video sbaglia. E quando avrai finito di leggere sarai più a
+disagio di prima, non meno.**
+
+---
+
+## 1. L'accusa
+
+L'argomento sta in quattro frasi, ed è per questo che funziona così bene.
+
+Un avvocato brasiliano con attività pubblica ha scritto qualcosa in una conversazione privata di
+WhatsApp. Pochi giorni dopo ha aperto l'applicazione e ha trovato l'account disattivato: dieci anni di
+contatti, gruppi di lavoro, archivi e storia professionale, senza preavviso, senza motivo dichiarato e
+senza nessuno a cui chiedere. Lo schermo offriva un pulsante di revisione e, dall'altra parte, il
+silenzio.
+
+Se Meta lo ha punito per quello che è stato detto lì dentro, allora Meta ha **letto** quello che è
+stato detto lì dentro. E se ha letto, la crittografia end-to-end — la promessa che nemmeno l'azienda
+riesce a vedere i tuoi messaggi — è pubblicità.
+
+È stata questa la conclusione di un video che ha attraversato il Brasile ad agosto. E non è una
+conclusione stupida. È il ragionamento che farebbe qualsiasi persona ragionevole con le informazioni
+disponibili. L'avvocato non era solo: tra il 3 e il 4 agosto un'ondata di disattivazioni ha colpito
+account in vari paesi nello stesso momento; il picco di segnalazioni su Downdetector ha superato i 200
+report, l'unico numero pubblico che esiste. In una nota inviata alla stampa il 3 agosto — senza
+pubblicazione su un canale proprio — l'azienda ha detto che "lavora continuamente per stare davanti a
+chi tenta di fare un uso improprio del servizio", che bandisce account "per aiutare a proteggere gli
+altri utenti" e che "eventualmente" può "commettere errori" (traduzione nostra). Non ha detto quanti
+account sono stati colpiti, né in quali paesi, né quale segnale sia scattato, né se qualche essere
+umano abbia guardato.
+
+Quando l'azienda non spiega, la spiegazione più semplice occupa il vuoto. E la più semplice è: hanno
+letto.
+
+Smonterò quell'argomento pezzo per pezzo. Non regge. Ma quello che resta al suo posto è una storia
+molto meno confortevole di "Meta è bugiarda", ed è una storia che nessuno sta raccontando.
+
+---
+
+## 2. Perché l'argomento non chiude
+
+Ci sono due difetti nel ragionamento, e il primo è decisivo.
+
+### Basta una segnalazione
+
+La crittografia end-to-end protegge il messaggio **lungo il percorso**. Non protegge il messaggio dopo
+che è arrivato, perché chi lo ha ricevuto, ovviamente, riesce a leggerlo.
+
+Quando qualcuno preme "segnala" in una conversazione, l'applicazione **di chi segnala** impacchetta gli
+ultimi messaggi di quel filo e li manda al server. Già decifrati. Non perché qualcuno abbia rotto
+qualcosa, ma perché chi segnala ha sempre potuto leggerli: il messaggio era sul suo telefono.
+L'informativa sulla privacy di WhatsApp lo registra in portoghese chiaro: l'azienda raccoglie dati
+"sia dall'utente che ha segnalato sia da quello che è stato segnalato" (traduzione nostra).
+
+<ArticleFigure
+  src="/artigos/ninguem-provou-meta-le-whatsapp/fig-01.png"
+  width="2352"
+  height="675"
+  alt="Diagramma: il messaggio viaggia cifrato da te al destinatario; quando il destinatario preme SEGNALA, il testo già in chiaro torna al server di Meta, senza che la cifratura venga violata."
+  caption="Figura 1. La segnalazione non è una falla nella crittografia. È la porta aperta da dentro, da chi ha sempre avuto la chiave."
+/>
+
+Ovvero: esiste un percorso perfettamente banale attraverso il quale Meta può aver avuto accesso al
+contenuto di una conversazione, senza che nulla della promessa tecnica sia stato violato. E ne esiste
+uno ancora più banale: la moderazione automatica non guarda nemmeno il contenuto, guarda il
+comportamento. Volume di messaggi, velocità di invio, quanti utenti ti hanno bloccato, quante
+segnalazioni hai accumulato, se il tuo account è stato creato da un'automazione.
+
+### Chi legge, bandisce con precisione
+
+Il secondo difetto è più sottile, ed è quello che davvero seppellisce l'argomento.
+
+Immagina, per un istante, che l'ipotesi del video sia giusta: Meta legge conversazioni private e punisce
+sulla base di esse. In quel mondo, questa capacità è la cosa più preziosa che l'azienda possiede, e la
+più pericolosa. Esporla significa cause, multa miliardaria, esodo di utenti e probabilmente la morte del
+prodotto.
+
+Ora guarda quello che è successo: account disattivati in vari paesi nello stesso momento, senza criterio
+visibile, con gente innocente in mezzo, generando titoli in tutto il mondo.
+
+Questa è la firma di un classificatore automatico mal calibrato. **Non è la firma di qualcuno che
+legge.** Chi legge e punisce per contenuto bandisce uno per uno, in silenzio, con precisione chirurgica,
+e non lascia mai emergere lo schema. Bandire in massa e rumorosamente significherebbe bruciare la
+propria fonte nella prima settimana.
+
+C'è un precedente storico che illustra questo meglio di qualsiasi argomento astratto. Durante la Seconda
+guerra mondiale i britannici ruppero la cifratura tedesca. E da lì in poi affrontarono un dilemma
+orribile: agire sulla base dell'informazione decifrata avrebbe rivelato che la cifratura era caduta. In
+vari casi **scelsero di non agire**. Chi ha una capacità segreta preziosa protegge la capacità, non il
+caso individuale.
+
+**Conclusione parziale: il ban non prova la lettura.** Questo è risolto, ed è la fine dell'argomento del
+video.
+
+Tieni bene a mente quel precedente britannico, perché tra poco si rivolterà contro entrambi.
+
+---
+
+## 3. Prima di continuare: come funziona davvero
+
+Per capire perché la storia non finisce qui, ti servono venti minuti di crittografia. Senza matematica,
+prometto.
+
+### La cassaforte e le poste
+
+Immagina di voler mandare una lettera e che le poste siano curiose.
+
+- **Crittografia comune** — quella della posta elettronica, e ora quella dei messaggi di Instagram: tu
+  sigilli la lettera, le poste la aprono, la leggono, la risigillano e la consegnano. Hanno la chiave del
+  sigillo. Questo protegge da un ladro che assalta il furgone. Non protegge dalle poste.
+- **Crittografia end-to-end** — quella di WhatsApp e di Signal: tu chiudi la lettera in una cassaforte che
+  **solo il destinatario** sa aprire. Le poste trasportano la cassaforte senza riuscire ad aprirla.
+
+<ArticleFigure
+  src="/artigos/ninguem-provou-meta-le-whatsapp/fig-02.png"
+  width="2007"
+  height="1086"
+  alt="Due schemi impilati. Nella crittografia comune il fornitore apre, legge e risigilla il messaggio lungo il percorso; in quella end-to-end si limita a trasportarlo, senza aprirlo."
+  caption="Figura 2. La differenza non è la forza del lucchetto. È chi ha la chiave."
+/>
+
+### Le due chiavi
+
+Ogni dispositivo genera, da solo, una coppia di chiavi:
+
+- la **chiave privata**, che non esce mai dal telefono, né per l'azienda né per nessun altro;
+- la **chiave pubblica**, che deve arrivare a chi vuole parlare con te.
+
+Quello che viene chiuso con la chiave pubblica di qualcuno si apre solo con la chiave privata di quella
+persona. Per questo la chiave pubblica può circolare liberamente: serve solo a chiudere, non ad aprire.
+
+Il protocollo che WhatsApp usa si chiama **Signal**, lo stesso dell'applicazione Signal, creato da
+crittografi indipendenti, pubblico, verificato da accademici e formalmente provato. Ha due proprietà
+belle: la chiave cambia a ogni messaggio, sempre in avanti e senza ritorno, così che chi ruba la chiave
+di oggi **non legge i messaggi di ieri**; e perde l'accesso appena l'ingranaggio gira di nuovo.
+
+Lo ripeto, perché la critica vale solo se è giusta: **la matematica regge.** Non è lì che vive il
+problema.
+
+### Il problema vive nella rubrica
+
+Ecco il punto che dissolve tutta la mistica, ed è il cuore di questo articolo.
+
+Quando apri una conversazione nuova, il tuo telefono ha bisogno della chiave pubblica dell'altra persona.
+Da dove viene? Dal server di Meta. Il tuo telefono chiede "qual è la chiave pubblica del tale?" e usa
+quello che torna. Non c'è magia, non c'è notaio, non c'è un'altra fonte.
+
+Ovvero: **chi controlla il server controlla a chi stai davvero scrivendo.**
+
+Se il server risponde con una chiave che non è quella del tale, ma una chiave che l'azienda stessa
+controlla, il tuo telefono chiuderà il messaggio con quella chiave, credendo che sia il tale. L'azienda
+apre, legge, richiude con la chiave vera del tale e rispedisce. Tu non vedi nulla. Il tale non vede nulla.
+La crittografia continua a funzionare perfettamente, solo con un terzo in mezzo.
+
+<ArticleFigure
+  src="/artigos/ninguem-provou-meta-le-whatsapp/fig-03.png"
+  width="2352"
+  height="915"
+  alt="Due schemi impilati. Nel caso atteso cifri con la chiave del tuo contatto e lui la riceve. Nell’attacco man in the middle cifri con la chiave che ha mandato il server, un terzo apre, legge e cifra di nuovo con la chiave vera del contatto."
+  caption="Figura 3. L’attacco man-in-the-middle. Nessuno rompe la cifratura. Cambiano la serratura prima che tu chiuda."
+/>
+
+Questo ha un nome nella letteratura da decenni e non è teoria del complotto: è l'**attacco canonico**
+contro qualsiasi sistema end-to-end la cui rubrica di chiavi sia controllata da una sola azienda. Non è
+un difetto del protocollo Signal. È il prezzo di avere una rubrica centrale. E il protocollo lo ha sempre
+saputo, tanto che ha inventato una difesa.
+
+### La difesa: quei 60 numeri che nessuno confronta
+
+Apri WhatsApp, entra in una conversazione, tocca il nome del contatto e cerca "Crittografia". Troverai un
+codice QR e un numero di 60 cifre.
+
+Quel numero è l'**impronta digitale delle chiavi** dei due estremi. Se tu e il tuo contatto confrontate
+quel numero su un canale che non sia WhatsApp — di persona, per telefono, con un'altra applicazione — e
+coincidono, è escluso che qualcuno abbia cambiato la serratura.
+
+E qui devo correggere un errore che ho commesso io stesso durante questa inchiesta, perché circola molto.
+Avevo concluso, leggendo la documentazione del protocollo, che quel numero **non** copriva i "dispositivi
+collegati": WhatsApp Web, il tablet, il secondo telefono. Mi sbagliavo. Sono andato a leggere il codice
+dell'applicazione ufficiale e quello che confronta è la concatenazione delle chiavi di **tutti** i
+dispositivi di ciascun lato; qualsiasi divergenza viene rifiutata esplicitamente. Il documento tecnico
+dell'azienda dice lo stesso. **Il codice di sicurezza rileva eccome un dispositivo fantasma.**
+
+Bene. Solo che ora arriva la parte scomoda.
+
+<ArticleFigure
+  src="/artigos/ninguem-provou-meta-le-whatsapp/fig-04.png"
+  width="2352"
+  height="894"
+  alt="Albero che confronta le due difese. Il codice di sicurezza copre tutti i dispositivi dei due estremi ma richiede due persone che confrontano 60 cifre; la trasparenza delle chiavi funziona per miliardi di persone senza sforzo ma copre solo la chiave del dispositivo principale."
+  caption="Figura 4. L’asimmetria che riassume tutta la questione: la difesa che scala non copre il vettore; la difesa che copre il vettore non scala."
+/>
+
+### La difesa automatica: trasparenza delle chiavi
+
+L'industria sa che nessuno confronta 60 cifre. Per questo esiste la **trasparenza delle chiavi**: la stessa
+famiglia di idea che oggi protegge i siti con il lucchetto nel browser. Il server è obbligato a pubblicare
+tutte le chiavi che distribuisce in un registro pubblico, che solo cresce ed è concatenato
+crittograficamente. Se ti consegna una chiave che non è nel registro, la tua applicazione se ne accorge. Se
+pubblica la chiave falsa nel registro, resta incisa per sempre, sotto gli occhi di qualsiasi revisore.
+
+Meta lo ha implementato, e merita il credito: la libreria è open source, è stata verificata da un'azienda
+esterna nel 2023 e — quello che conta di più — da settembre 2024 esiste un **testimone indipendente** che
+controlla e firma i risultati: Cloudflare. È più di quanto faccia la maggior parte delle piattaforme.
+
+Tre limiti, e nessuno è un dettaglio. Primo, quel registro copre la chiave del **dispositivo principale**,
+non la lista dei dispositivi collegati, che è proprio dove abiterebbe un ospite in più. Secondo, **rileva,
+non impedisce**: lo stesso articolo accademico che fonda il sistema descrive l'obiettivo come "rilevare (e
+quindi dissuadere)" un server disonesto.
+<sub>Originale in inglese: *"detecting (and hence deterring)"*.</sub>
+Terzo, ed è quello che ingoia tutti gli altri: **chi fa la verifica è l'applicazione.** È il programma sul
+tuo telefono che controlla se la chiave ricevuta è nel registro e che decide se avvisarti. Un'applicazione
+manomessa semplicemente non protesta.
+
+### "Chiave silenziosa" non è una cosa. Sono quattro.
+
+Confondere queste quattro è ciò che fa girare a vuoto il dibattito. Hanno difficoltà molto diverse:
+
+| | Che cos'è | Rilevabile? |
+|---|---|---|
+| **1** | Chiave falsa pubblicata nel registro | ✅ Sì, è esattamente per questo che il registro esiste |
+| **2** | Il server dichiara che ti sei "registrato di nuovo" e azzera la tua identità | ⚙️ In parte, e l'applicazione, di default, non ti avvisa |
+| **3** | Un membro fantasma aggiunto a un gruppo | ⚙️ Il registro delle chiavi non lo vede (il fantasma usa una chiave legittima); l'applicazione **mostra** la lista dei membri, ma in un gruppo di centinaia, chi controlla? |
+| **4** | Un dispositivo collegato fantasma | ⚙️ Richiede la firma del dispositivo principale del bersaglio: **il server da solo non la fabbrica**. E il QR di 60 cifre lo denuncia, per chi confronta |
+
+**Figura 5.** Le quattro forme. Nessuna di esse rompe la cifratura. Tutte aggiungono un ascoltatore.
+
+E non è un'ipotesi da internet: nel 2018 il servizio di intelligence britannico ha **proposto formalmente**
+il meccanismo 3, per iscritto, in un articolo pubblico, sostenendo che "è relativamente facile per un
+fornitore di servizio aggiungere silenziosamente un partecipante delle forze dell'ordine a una chat o a una
+chiamata di gruppo".
+<sub>Originale in inglese: *"It's relatively easy for a service provider to silently add a law enforcement
+participant to a group chat or call."*</sub>
+La proposta si chiamava *ghost user*, utente fantasma. Una coalizione di aziende ed enti, **inclusa Meta
+stessa**, ha firmato una lettera aperta contro nel 2019.
+
+Quello che la risposta tecnica dell'epoca ha fissato è il punto che chiude questa sezione: un ascoltatore
+fantasma **esige che l'applicazione menta**, che nasconda la notifica, che non mostri il membro in più. È un
+attacco all'onestà del programma, non alla matematica.
+
+Ed è per questo che la domanda giusta non è mai stata "la crittografia è forte?". La domanda giusta è:
+**come fai a sapere cosa fa davvero il programma sul tuo telefono?**
+
+---
+
+## 4. Quello che l'azienda ha scritto a febbraio
+
+Tieni a mente la domanda qui sopra. Ora andiamo ai documenti.
+
+Il **25 febbraio 2026** WhatsApp ha pubblicato una nuova versione del suo documento tecnico sulla
+crittografia. È un documento pubblico, ospitato da Meta stessa, e quasi nessuno lo rilegge. Vale la pena
+rileggerlo, perché ha guadagnato una sezione che non era mai esistita prima: **"Definire la crittografia
+end-to-end"**.
+
+Comincia così:
+
+> "WhatsApp definisce la crittografia end-to-end come comunicazioni che restano cifrate da un dispositivo
+> controllato dal mittente a uno controllato dal destinatario, dove nessun terzo, **nemmeno WhatsApp o la
+> nostra società madre Meta**, può accedere al contenuto lungo il percorso."
+> <sub>Traduzione nostra. Originale in inglese: *"WhatsApp defines end-to-end encryption as communications
+> that remain encrypted from a device controlled by the sender to one controlled by the recipient, where no
+> third parties, not even WhatsApp or our parent company Meta, can access the content in between."*</sub>
+
+Letta da sola, è la promessa più forte che l'azienda abbia mai fatto per iscritto, ed è del **2026**, non
+del 2016. Chi si aspettava di trovare qui una garanzia cancellata resterà deluso: nulla è stato cancellato.
+Il documento è **quadruplicato** dalla prima versione, da 432 a 2.035 righe, e la frase classica sul server
+che non ha accesso alle chiavi private è ancora lì, in un'altra sezione. Io ci sono andato proprio
+aspettandomi di trovare una cancellazione, e non l'ho trovata. Va detto.
+
+Quello che è cambiato non è ciò che è sparito. È **chi definisce la parola**.
+
+Fino al 2017 il documento affermava un risultato sul mondo: i terzi e WhatsApp *non riescono a leggere* i
+messaggi, e *tutti* i tipi di messaggio sono protetti. Nel 2026 afferma una **definizione dell'azienda** e,
+subito sotto, elenca ciò che **essa non considera** end-to-end:
+
+> "WhatsApp **non considera** le comunicazioni con i servizi Meta, o le comunicazioni con aziende che usano
+> la Cloud API, come cifrate end-to-end."
+> <sub>Traduzione nostra. Originale: *"WhatsApp does not consider communications with Meta services, or
+> communications with businesses using Cloud API, to be end-to-end encrypted."*</sub>
+
+Rileggi, piano. **Esiste oggi una classe di conversazione dentro WhatsApp che l'azienda stessa dichiara non
+protetta end-to-end.** Non è ipotetica, non dipende da una cospirazione, e ha un nome di prodotto e una data
+di lancio: qualsiasi conversazione con l'intelligenza artificiale di Meta dentro l'applicazione, e qualsiasi
+assistenza commerciale gestita tramite la API cloud dell'azienda.
+
+<ArticleFigure
+  src="/artigos/ninguem-provou-meta-le-whatsapp/fig-06.png"
+  width="2352"
+  height="1881"
+  alt="Linea del tempo su due colonne. Nel 2016 e nel 2017 il documento affermava che i terzi e WhatsApp non riescono a leggere, senza eccezioni, in 432 righe. Nel 2026 definisce il termine per conto proprio, elenca ciò che non considera end-to-end, e conta 2.035 righe."
+  caption="Figura 6. Da garanzia senza qualificazione a definizione propria con lista di eccezioni. Nulla è stato cancellato: è cambiato chi tiene la penna."
+/>
+
+L'intero dibattito sta guardando un fantasma — una chiave segreta che nessuno ha visto — e non si è accorto
+che un ospite documentato è entrato dalla porta principale, con il tesserino, e ha firmato il registro dei
+visitatori.
+
+C'è inoltre una riserva nuova e letterale nello stesso documento: quando un'azienda delega la gestione del
+suo account commerciale a un fornitore, "quel fornitore avrà accesso alle sue chiavi private, **incluso se
+quel fornitore è Meta**", anche se quelle chiavi "continueranno a non essere memorizzate sul server delle
+chat di WhatsApp" (traduzione nostra; nell'originale, *"including if that vendor is Meta"* e *"However,
+these private keys will still not be stored on the WhatsApp chat server"*). Questo vale per l'utente
+**aziendale**, mai per quello comune, ed è onesto registrare la differenza. Ma la direzione del movimento è
+inequivocabile: una promessa universale è diventata una mappa di eccezioni.
+
+E un dettaglio piccolo, per il lettore brasiliano. Il centro assistenza di WhatsApp spiega, nello stesso
+articolo, cosa succede quando segnali una conversazione. In **inglese**, il testo dice che Meta può
+**leggere** i messaggi segnalati. In **portoghese**, dice che vengono **inviati**. Stesso articolo, stesso
+giorno, verificato da me. Una parola in meno nella versione in portoghese.
+
+---
+
+## 5. Cinque giorni di maggio
+
+Il calendario di maggio 2026 rende superflua la teoria.
+
+<ArticleFigure
+  src="/artigos/ninguem-provou-meta-le-whatsapp/fig-07.png"
+  width="2352"
+  height="1296"
+  alt="Linea del tempo di maggio 2026: l’08/05 Meta spegne la crittografia end-to-end di Instagram; l’11/05 Apple e Google lanciano RCS cifrato tra iPhone e Android; il 13/05 Meta accende la crittografia nelle conversazioni con la sua IA."
+  caption="Figura 7. Crittografia che arretra in un prodotto e avanza in altri due, nello stesso mese."
+/>
+
+Chi dice che "il cerchio si sta stringendo attorno alla crittografia" non sta leggendo il calendario.
+
+Instagram è l'unico punto di questa storia in cui l'azienda ha cambiato posizione per iscritto, senza
+ambiguità. Fino al 2023 il centro assistenza di Meta descriveva così la conversazione cifrata:
+
+> "Nessuno può leggere i tuoi messaggi o ascoltare le tue chiamate tranne le persone che hanno queste chiavi
+> speciali, **nemmeno Meta. Non potremmo nemmeno se lo volessimo.**"
+> <sub>Traduzione nostra. Originale in inglese: *"No one can read your messages or hear your calls except the
+> people who have these special keys - not even Meta. We couldn't even if we wanted to."*</sub>
+
+L'8 maggio 2026 hanno potuto. Non perché abbiano rotto qualcosa: perché l'hanno spenta. Quello che quella
+frase misurava non era un limite di ingegneria, era una decisione di prodotto, e le decisioni di prodotto si
+revocano in una riunione. Oggi la pagina della funzione su Instagram ha quattro frasi operative su come
+scaricare le conversazioni vecchie, e rimanda l'utente altrove: "Per le altre opzioni di chat cifrate
+end-to-end di Meta, dai un'occhiata a WhatsApp."
+<sub>Originale in inglese: *"For Meta's other end-to-end encrypted chat options, check out WhatsApp."*</sub>
+
+---
+
+## 6. Possibile, probabile, indecidibile
+
+È qui che quasi ogni testo su questo tema sbaglia, inclusi quelli che attaccano l'azienda.
+
+La domanda "Meta legge i messaggi di WhatsApp?" viene trattata come se avesse due risposte. Ne ha tre, e
+l'evidenza pubblica separa molto male due di esse.
+
+<ArticleFigure
+  src="/artigos/ninguem-provou-meta-le-whatsapp/fig-08.png"
+  width="2352"
+  height="1236"
+  alt="Albero con i tre stati possibili: lettura di massa, lettura mirata e incapacità genuina. Il video allega il primo, l’azienda comunica il terzo, e nulla di ciò che è pubblico distingue il secondo dal terzo."
+  caption="Figura 8. Il binario “legge o non legge” è ciò che fa girare a vuoto la discussione."
+/>
+
+Sulla **capacità** esiste un riferimento accademico serio, e va citato con la stessa onestà che si pretende
+dagli altri. Un lavoro presentato a Eurocrypt 2025 — una delle principali conferenze di crittografia del
+mondo, con revisione tra pari —, realizzato tramite reverse engineering del client web di WhatsApp, registra
+che "è possibile per il server azzerare l'identità crittografica di un utente" e che "i client, di default,
+non mostrano questo cambiamento agli utenti".
+<sub>Traduzione nostra. Originale in inglese: *"it is possible for the server to reset a user's cryptographic
+identity. Clients default to not displaying such a change to users."*</sub>
+
+La riserva, che tende a sparire quando quella frase circola: sta nella sezione **ambito e limitazioni** del
+lavoro stesso, la cui verifica gli autori dicono espressamente essere rimasta **fuori dall'ambito
+dell'analisi**; l'oggetto esaminato è stato il client **web** archiviato a maggio 2023; e ingegneri di
+WhatsApp hanno rivisto e confermato la descrizione del protocollo. È l'affermazione di una fonte qualificata
+su una **capacità**, non una dimostrazione che venga esercitata, e non una verifica dell'applicazione che hai
+in tasca.
+
+Ovvero: il meccanismo esiste, è silenzioso di default, e nessuno ha provato che qualcuno lo abbia usato.
+
+---
+
+## 7. Nessun segnale separa
+
+Se l'evidenza tecnica non decide, resta il comportamento. È il test che farebbe qualsiasi giornalista:
+un'azienda che *davvero non può* leggere dovrebbe comportarsi in modo diverso da una che *può e non lo dice*.
+La prima combatterebbe in tribunale, verrebbe bloccata, pagherebbe caro il non riuscire a consegnare. La
+seconda coopererebbe discretamente.
+
+Sono andato dietro a ciascuno di quei segnali. Il risultato è la scoperta più importante di questa inchiesta,
+ed è negativa.
+
+| Segnale | Che cosa si è trovato |
+|---|---|
+| Documento di addestramento dell'FBI (2021) su cosa si ottiene da ogni applicazione | Confermato, ma il contenuto elencato viene dal **backup su iCloud di Apple**, mai dal server di Meta |
+| Blocchi di WhatsApp in Brasile | **Quattro**, solo due successivi alla crittografia; un dirigente è stato perfino arrestato nel 2016; la Corte suprema non ha mai fissato una tesi |
+| Causa in India | Cinque anni senza decisione, e la regola indiana **non chiede nemmeno il contenuto**, chiede la tracciabilità dell'origine |
+| Regno Unito, minaccia di lasciare il paese | Ofcom **non ha mai emesso** la notifica tecnica che attiverebbe il regime: il meccanismo è inattivo |
+| Lettera aperta contro l'"utente fantasma" (2019) | Confermata, e firmare una lettera costa poco a entrambi i tipi di azienda |
+| Qualche caso di contenuto di conversazione personale ottenuto dal server di Meta | **Nessuno trovato** in sei fonti distinte |
+
+**Figura 9.** Nessuno separa. Tutti sono compatibili con entrambe le ipotesi.
+
+E l'assenza dell'unico segnale che avrebbe peso — un caso concreto di contenuto ottenuto dal server — non
+prova nulla nemmeno essa. Ricordi il precedente britannico della Seconda guerra mondiale, all'inizio? Taglia
+da entrambi i lati. Se la capacità esistesse e fosse usata con parsimonia contro bersagli specifici, è
+esattamente così che apparirebbe il mondo: senza nessun caso.
+
+Questo non è fatalismo. È il risultato centrale di questo articolo:
+
+> **La discussione non si risolve con altre notizie. È progettata per non risolversi.**
+
+Non perché la questione sia complicata. Perché le informazioni che deciderebbero la questione non sono
+pubbliche, e non sono pubbliche per scelta di chi potrebbe renderle pubbliche.
+
+---
+
+## 8. L'azienda ha già detto una cosa e fatto un'altra
+
+Nulla di questo dice che Meta legga i tuoi messaggi. Ma esiste un precedente che legittimamente sposta il
+**punto di partenza**, non su WhatsApp, ma sul peso che si deve dare alla parola dell'azienda in affermazioni
+tecniche.
+
+**Maggio 2017: 110 milioni di euro.** Nel 2014, comprando WhatsApp, Meta dichiarò alle autorità europee che
+incrociare automaticamente le identità degli utenti di Facebook e di WhatsApp era tecnicamente impraticabile.
+La Commissione europea concluse poi che "la possibilità tecnica di far corrispondere automaticamente le
+identità degli utenti di Facebook e WhatsApp esisteva già nel 2014, e che il personale di Facebook era a
+conoscenza di tale possibilità".
+<sub>Traduzione nostra. Originale in inglese: *"the technical possibility of automatically matching Facebook
+and WhatsApp users' identities already existed in 2014, and that Facebook staff were aware of such a
+possibility."*</sub>
+L'azienda ha riconosciuto formalmente l'infrazione — **procedurale**, si registri — qualificata dalla
+Commissione come "quantomeno negligente" (*"at least negligent"*). È il precedente esatto di un'affermazione
+tecnica pubblica che non corrispondeva alla capacità reale, fatta **sullo stesso WhatsApp**.
+
+**Dal 2016 al 2019: intercettazione di traffico cifrato di concorrenti.** Documenti di una causa negli Stati
+Uniti mostrano l'azienda mentre installa un certificato radice sui dispositivi degli utenti di una sua
+applicazione per leggere il traffico cifrato dei rivali. Devo essere esplicito qui, perché il paragone facile
+sarebbe disonesto: **quel caso non è WhatsApp**. Il bersaglio erano dati di mercato dei concorrenti, non
+conversazioni di utenti, e la condotta non è stata giudicata nel merito. Quello che l'episodio sostiene è
+modesto e sufficiente: davanti a un incentivo forte, con la crittografia come ostacolo, l'azienda non ha
+fatto un passo indietro per principio.
+
+**E c'è una tensione che non ha bisogno di intermediari**, perché entrambe le parti sono documenti: uno
+dell'azienda, l'altro della Corte suprema federale brasiliana.
+
+Il **5 aprile 2016** il documento tecnico di WhatsApp diceva già che l'utente ha l'**opzione** di verificare
+le chiavi "in modo da poter confermare che un terzo non autorizzato **(o WhatsApp)** non ha avviato un
+attacco man-in-the-middle".
+<sub>Originale in inglese: *"are able to confirm that an unauthorized third party (or WhatsApp) has not
+initiated a man-in-the-middle attack"*.</sub>
+L'azienda nomina sé stessa come possibile autrice dell'attacco, e la difesa che offre è opzionale e manuale:
+quelle 60 cifre.
+
+**Quattordici mesi dopo**, nel giugno 2017, il cofondatore Brian Acton partecipò all'udienza pubblica della
+Corte suprema brasiliana sulla crittografia. Come **sintetizzato nel voto del relatore, il giudice Edson
+Fachin** — in discorso indiretto, non in trascrizione —, sostenne che non sarebbe stato possibile disabilitare
+la crittografia per utenti specifici, "sottolineando che qualsiasi modifica alle chiavi di sicurezza che
+potesse permettere l'intercettazione **sarebbe stata percepita e corretta dal sistema di verifica del codice
+dell'applicazione**" (traduzione nostra).
+<sub>Originale in portoghese: *"ressaltando que qualquer alteração nas chaves de segurança que pudessem
+permitir a interceptação seria percebida e corrigida pelo sistema de verificação de código do aplicativo."*</sub>
+
+La collisione non sta nella parola "disabilitare" — su quel punto ha ragione, e un ascoltatore silenzioso
+aggiuntivo proprio **non** disabilita alcuna cifratura: resta accesa, e ciò che si rompe è l'autenticazione.
+La collisione sta nella clausola della **rilevazione**. Il lavoro di Eurocrypt registra l'opposto, e lo stesso
+documento del 2016, nella stessa pagina, chiarisce che la verifica è **opzionale**. Nulla viene "corretto" da
+solo.
+
+La lettura più economica di quell'episodio non è la cospirazione. È eccesso di fiducia commerciale: l'azienda
+ha presentato come impossibilità, davanti a una corte suprema, ciò che essa stessa documenta in caratteri
+piccoli come una garanzia condizionale, dipendente da un gesto manuale che quasi nessuno compie.
+
+---
+
+## 9. Perché resta così
+
+Arriviamo all'unica domanda di questo articolo che ha una risposta precisa e verificabile.
+
+Se l'impossibilità di sapere è il problema, da dove viene? Da tre scelte, tutte dell'azienda, tutte
+reversibili da essa in qualsiasi momento:
+
+1. **L'applicazione è chiusa.** Non esiste il codice sorgente del client di WhatsApp. L'organizzazione
+   ufficiale di Meta su GitHub ha più di 25 repository pubblici — compilatori, strumenti Erlang, SDK
+   commerciali, sticker — e **zero righe di client**.
+2. **Non esiste *build* riproducibile.** Con Signal è possibile prendere il codice pubblicato, compilarlo sul
+   proprio computer e verificare se il risultato coincide con l'applicazione che sta nello store. Con WhatsApp
+   non c'è nemmeno il primo gradino.
+3. **Ogni aggiornamento è un nuovo atto di fede.** Anche se qualcuno verificasse la versione di oggi, quella
+   di domani arriva da sola, firmata dalla stessa azienda, senza revisione esterna.
+
+Ho cercato, e non ho trovato, **alcuna dichiarazione pubblica di Meta che spieghi perché il client di WhatsApp
+è chiuso**. Non c'è giustificazione ufficiale di sicurezza, di contrasto agli abusi, di proprietà intellettuale.
+L'assenza di giustificazione è, essa stessa, un dato.
+
+Una spiegazione possibile, e non accusa nessuno di nulla: **l'impossibilità di verificare non è un residuo
+storico. È un asset.** Un'azienda che non può essere verificata raccoglie entrambi i benefici allo stesso
+tempo: il marketing del "nemmeno noi riusciamo a leggere" **e** la libertà operativa di non dover mai
+dimostrare nulla. Rendere il sistema verificabile distruggerebbe quel valore. Questo spiega l'inerzia senza
+affermare alcuna condotta, ed è la spiegazione più economica rimasta in piedi.
+
+---
+
+## 10. Il ribaltamento che nessuno si aspetta
+
+A questo punto il lettore ha già montato una narrazione: le aziende arretrano, i governi stringono, la
+crittografia è accerchiata.
+
+**Nel 2026, in Brasile e in Europa, è successo il contrario.**
+
+- Il **Regolamento (UE) 2026/1881**, del 24 luglio, **esclude dal suo ambito le comunicazioni con crittografia
+  end-to-end**, e uno dei suoi considerando vieta che il testo sia letto come indebolimento di essa. La
+  clausola è venuta dal Parlamento europeo ed è stata il prezzo dell'adozione.
+- Nel **Chat Control**, la proposta europea di lungo periodo, la scansione obbligatoria di contenuto cifrato
+  **è già caduta** dal testo concordato in Consiglio.
+- In Brasile, la Legge 15.211/2025 — la "Legge Felca", accusata sui social di aver creato la sorveglianza dei
+  messaggi — **non contiene la parola "criptografia"**, così, in portoghese, nel testo della legge. Né essa, né
+  i cinque decreti del 2026 che la circondano. E il suo articolo 37, comma unico, **vieta** che la
+  regolamentazione imponga "meccanismi di sorveglianza massiva, generica o indiscriminata" (traduzione nostra).
+  La legge proibisce esattamente ciò che la voce dice che essa abbia creato.
+- Il Decreto 12.975/2026, che ha dato all'autorità brasiliana per la protezione dei dati competenza sulle
+  piattaforme, **esclude espressamente la messaggistica interpersonale privata** dai doveri che crea, in quanto
+  "tutelate dal segreto delle comunicazioni, ai sensi dell'art. 5, XII, della Costituzione" (traduzione nostra).
+
+**La legge sta proteggendo il messaggio privato. Chi ha arretrato è l'azienda.**
+
+---
+
+## 11. Tre orologi che corrono
+
+**Il 21 agosto** l'Autorità nazionale brasiliana per la protezione dei dati ha notificato 22 piattaforme, tra
+cui Instagram e WhatsApp — quest'ultimo **solo per la funzionalità "Canali pubblici"** —, con un termine di
+dieci giorni lavorativi. Il testo integrale delle notifiche non è stato pubblicato; secondo *Gazeta do Povo*,
+tra le domande c'è la domanda di questo articolo: **l'analisi delle segnalazioni ricevute è umana o
+automatizzata?** Ed ecco il limite che va detto nella stessa frase: sulle piattaforme che offrono messaggistica
+privata, l'indagine **si ferma ai canali pubblici**. L'autorità fa la domanda giusta sulla superficie sbagliata:
+la moderazione delle conversazioni private, che è il caso di agosto, resta senza che nessuno faccia domande.
+
+**Negli Stati Uniti**, una class action contro Meta, nel Distretto Nord della California, sostiene che dei
+dipendenti accedono ai messaggi di WhatsApp tramite uno strumento interno, e ha **due attori domiciliati in
+Brasile**. La copertura mondiale si è fermata al titolo "causa respinta", ed è sbagliata: il 23 luglio la
+giudice federale Rita F. Lin ha respinto l'atto introduttivo **con autorizzazione a emendarlo**, ha negato le
+sanzioni chieste dall'azienda, e ha scritto che "rompere la crittografia end-to-end non è l'unico mezzo con cui
+ciò potrebbe accadere".
+<sub>Traduzione nostra. Originale in inglese: *"Breaking end-to-end encryption is not the only means by which
+that could happen."*</sub>
+L'emendamento è stato depositato il 4 agosto e, il **25 agosto**, lo stesso giorno in cui questo reportage ha
+contattato l'azienda, Meta ha chiesto di nuovo l'estinzione della causa, questa volta **in via definitiva**.
+L'udienza è fissata per il **20 ottobre**. L'atto difensivo merita lettura, perché in esso l'azienda si appoggia
+esattamente alla lista di eccezioni di questo articolo: sostiene che l'accesso riferito dal testimone è
+"pienamente compatibile con il ricevere accesso solo a messaggi che le convenute dichiarano **non** essere
+cifrati end-to-end", perché segnalati dagli utenti o scambiati con aziende.
+<sub>Traduzione nostra. Originale: *"fully consistent with receiving access only to messages that Defendants
+disclose are not end-to-end encrypted because, for example, users choose to report messages or exchange messages
+with certain businesses."*</sub>
+Il contrappeso, obbligatorio: l'indagine federale statunitense sullo stesso tema è stata **chiusa il 28 aprile
+2026**, ed è lo stesso atto introduttivo a registrarlo, in una nota a piè di pagina.
+
+**Il 17 settembre**, in base all'articolo 31 dello Statuto digitale brasiliano per l'infanzia, le piattaforme
+dovranno pubblicare un rapporto di trasparenza con il numero di account moderati. È la data in cui forse si
+saprà quanti brasiliani sono stati disattivati ad agosto.
+
+E c'è un precedente che nessuno ha collegato al caso: il **30 marzo 2026** il Tribunale di giustizia del Mato
+Grosso ha confermato una condanna contro Facebook Brasile sostenendo che il Marco Civil di Internet impone il
+**dovere di comunicare il motivo specifico** del blocco di un account. È esattamente la lacuna del caso di
+agosto.
+
+> **Diritto di replica.** Meta è stata contattata il **25 agosto 2026** (`press@meta.com`), con sette domande
+> sul segnale che ha motivato le disattivazioni di agosto, sull'analisi delle segnalazioni e sull'apertura del
+> codice del client. Il canale che ha pubblicato il video è stato contattato **lo stesso giorno**, tramite il
+> modulo di contatto del suo sito. A entrambi è stato dato un termine fino al **1º settembre 2026, ore 18 BRT**.
+> Alla chiusura di questa edizione nessuno dei due aveva risposto: **il termine è ancora in corso**, e qualsiasi
+> risposta che arrivi sarà aggiunta qui, integralmente e senza tagli.
+>
+> **L'avvocato disattivato non è stato contattato da questo reportage.** La sua versione entra attraverso ciò che
+> lui stesso ha reso pubblico: il **20 agosto 2026, alle 17:34**, in un post aperto rivolto al presidente degli
+> Stati Uniti, **Tiago Pavinatto** ha scritto che il gruppo Meta *"ha bandito questo giornalista dalle sue
+> attività, oltre, naturalmente, a violare i suoi diritti più personali"* e, nella versione in inglese dello
+> stesso post, che l'azienda lo ha tagliato fuori *"dai suoi contatti, dalle sue fonti e dai suoi archivi di
+> indagine"* (traduzione nostra).
+> <sub>Originale in portoghese: *"baniu este jornalista das suas atividades, além de, é claro, violar seus
+> direitos mais pessoais."* Originale in inglese: *"cut this journalist off from his contacts, sources, and
+> investigative archives."*</sub>
+> Nello stesso post allega il servizio di *Folha de S.Paulo* di quel giorno, secondo il quale **farà causa** a
+> Meta. Si noti quello che **non** dice: in nessun momento afferma che l'azienda abbia letto il contenuto dei suoi
+> messaggi; la sua lamentela è il ban, la perdita di accesso e la violazione di diritti.
+> `https://x.com/Pavinatto/status/2090538105602285787`
+
+---
+
+## 12. Che cosa pretendere
+
+Se l'impossibilità di verificare è una scelta, ha un prezzo e ha un indirizzo. E la richiesta deve essere quella
+giusta, perché quella sbagliata è peggio di nessuna.
+
+Chiedere soltanto "aprite il codice sorgente" **non risolve**, e consegna all'azienda la possibilità di fare
+teatro della trasparenza. Codice pubblicato non prova nulla sul programma che sta sul tuo telefono: tra l'uno e
+l'altro ci sono un compilatore, uno store di applicazioni e una firma digitale.
+
+<ArticleFigure
+  src="/artigos/ninguem-provou-meta-le-whatsapp/fig-10.png"
+  width="2352"
+  height="744"
+  alt="Tre gradini concatenati: codice sorgente pubblicato, build riproducibile e verifica di terza parte sul binario consegnato. Una freccia tratteggiata mostra che il primo gradino da solo porta al teatro della trasparenza."
+  caption="Figura 10. Il treppiede. Chiedere solo il primo gradino è chiedere il teatro."
+/>
+
+Nessuno dei tre è utopico. Signal fa tutti e tre su Android, ed è onesto registrare che **non lo fa** su iOS.
+Meta stessa ha già dimostrato di saperlo fare: WhatsApp Web pubblica un manifesto di hash che permette di
+verificare che il codice servito sia lo stesso per tutti; e ad agosto 2026, lanciando un rilevatore di truffe che
+gira dentro il dispositivo, ha pubblicato i pesi del modello e un registro pubblico delle versioni,
+un'architettura che rende impossibile consegnare un modello mirato a una persona specifica.
+
+L'azienda sa costruire sistemi verificabili. Lo ha fatto, volontariamente, nel prodotto che meno persone usano e
+nella funzione più nuova. Non nell'applicazione di messaggistica più usata del paese.
+
+---
+
+## Quello che questo testo non afferma
+
+Non afferma che esista una chiave silenziosa in WhatsApp. Non afferma che Meta legga messaggi personali. Non
+afferma che l'azienda abbia cancellato promesse dal proprio documento tecnico: non le ha cancellate, e chi lo
+dirà sarà smentito con uno screenshot.
+
+Afferma tre cose, verificabili da qualsiasi lettore con un browser:
+
+- che l'azienda è passata a **definire da sola** che cosa conta come conversazione protetta, e a elencare
+  eccezioni che essa stessa riconosce;
+- che **nessuna osservazione disponibile al pubblico** distingue un'azienda che non può leggere da una che può e
+  non lo dice;
+- che le tre scelte che producono quell'impossibilità sono **sue, e reversibili da lei**.
+
+Il ragazzo del video ha sbagliato la conclusione. Ma ha colto nel segno sul disagio, e il disagio ha una causa
+che non è la crittografia. La garanzia che ci hanno venduto come matematica è sempre stata, nella migliore delle
+ipotesi, una promessa aziendale. Le promesse aziendali si revocano.
+
+L'8 maggio 2026 una di esse lo è stata.
+
+---
+
+*Reportage condotto su fonti primarie: documenti tecnici di WhatsApp dal 2016 al 2026, catture archiviate e
+lettura diretta del centro assistenza di Instagram, codice del client ufficiale, decisione della Commissione
+europea del 2017, atti di 3:26-cv-00751-RFL (N.D. Cal.), Regolamento (UE) 2026/1881, Legge 15.211/2025 e decreti
+del 2026, e notifiche dell'ANPD del 21/08/2026. Il dossier di verifica, con gli hash di ogni fonte, è disponibile
+su richiesta.*
