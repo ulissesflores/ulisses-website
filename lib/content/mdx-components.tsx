@@ -26,6 +26,8 @@ import { WatermarkReachDiagram } from './watermark-reach-diagram';
 import { TextVsFileDiagram } from './text-vs-file-diagram';
 import { KeyPatternDiagram } from './key-pattern-diagram';
 import { UtilizationCurveChart } from './utilization-curve-chart';
+import { FlowLineDiagram } from './flow-line-diagram';
+import { ConstraintExperimentChart } from './constraint-experiment-chart';
 import { ArticleFigure } from './article-figure';
 import { YouTube } from './youtube-embed';
 
@@ -65,6 +67,8 @@ export const mdxComponents: MDXComponents = {
   TextVsFileDiagram,
   KeyPatternDiagram,
   UtilizationCurveChart,
+  FlowLineDiagram,
+  ConstraintExperimentChart,
   ArticleFigure,
   YouTube,
   /**

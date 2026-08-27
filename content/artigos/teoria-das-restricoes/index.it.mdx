@@ -1,0 +1,621 @@
+---
+title: 'Teoria dei Vincoli: il vincolo è un luogo, non uno sforzo'
+slug: teoria-das-restricoes
+category: artigos
+date: '2026-08-25'
+language: it-IT
+---
+
+Nathan Barry, fondatore di Kit, ha mandato oggi una newsletter intitolata *"Obsess Over Your
+Bottlenecks"* ("siate ossessionati dai vostri colli di bottiglia"): il riassunto della Teoria dei Vincoli che ha presentato al proprio team, appoggiato
+a una serie di post di Tiago Forte che circola come "la spiegazione" dell'argomento. La morale del testo
+compare due volte, alla lettera: *"effort placed anywhere besides the bottleneck will make the
+bottleneck worse"* — lo sforzo messo in qualsiasi posto che non sia il collo di bottiglia **peggiora il
+collo di bottiglia**.
+
+Sono andato a controllare la serie, il libro e la frase. La serie ha **11 post, non 3** — e gli ultimi tre,
+che dicono che cosa fare *dopo* aver trovato il collo di bottiglia, stanno dietro un paywall (contenuto a pagamento) da US$ 10 al mese.
+I famosi cinque passi di Goldratt **non stanno nel libro in cui tutti dicono che stiano**. E la
+frase-morale ha un errore di grado che non ho voluto discutere per analogia: ho scritto un simulatore di
+coda, ho pubblicato il codice insieme a questo testo e ho misurato.
+
+La tesi che sopravvive alla misura sta in una riga: **il vincolo è un luogo, non uno sforzo**.
+Ogni impegno speso fuori da quel luogo non diventa risultato — diventa coda. Ma "peggiora il collo di
+bottiglia" è una mezza verità, e la metà sbagliata è proprio quella che fa accelerare la cosa sbagliata.
+
+Salgo la scala in quattro gradini e un capitolo. Vi fermate dove volete.
+
+1. **Il forno** — il meccanismo, senza una parola tecnica.
+2. **I nomi** — lo stesso disegno con il vocabolario che compare nei libri, e l'esperimento
+   centrale: accelerare chi non è il vincolo.
+3. **Il conto** — la Legge di Little, e i cinque passi per intero, letti alla fonte.
+4. **Il ponte** — che cosa dice tutto questo sugli agenti di IA, dove il collo di bottiglia cambia posto.
+5. **Il capitolo di business** — Ford, Spanx e Kit, ogni caso controllato prima di entrare.
+
+---
+
+## Primo gradino: il forno
+
+Pensate a una panetteria di quartiere in una mattina di domenica. Il pane passa per cinque posti: qualcuno
+prende l'ordine, qualcuno prepara l'impasto, il forno cuoce, qualcuno confeziona, qualcuno incassa alla
+cassa. Quattro di questi posti reggono dieci pani al minuto. Il forno ne regge **quattro**.
+
+Non importa che cosa facciate negli altri quattro posti: la panetteria consegna quattro pani al minuto.
+Assumete il miglior addetto agli ordini della città e produrrà una cosa sola — una coda più lunga
+di impasto in attesa del forno. Assumete più gente alla cassa e la cassa resterà ferma, in attesa di pane
+che non esce. Il forno è il luogo. Tutto quello che accade prima di lui diventa coda; tutto quello che
+accade dopo di lui diventa inattività.
+
+<FlowLineDiagram
+  dataset="restricao-linha-padaria-it"
+  title="La panetteria consegna solo ciò che il forno cuoce"
+  description="Diagramma di una linea con cinque posti in sequenza — ordine, impasto, forno, confezione e cassa. Quattro posti hanno una capacità di dieci al minuto; il forno, in evidenza in oro, ha una capacità di quattro. Prima del forno si accumula una pila di impasto; dopo di lui i posti appaiono tratteggiati, in attesa del pane. Un contatore in basso mostra: entrano sette al minuto, escono quattro. La frase-conclusione dice che i tre che mancano sono in coda al forno."
+  source="Illustrazione del meccanismo; i numeri del contatore vengono dall'esperimento 1 della simulazione. · ulissesflores.com/restricao-it"
+/>
+
+Guardate il contatore sotto la figura. Entrano sette ordini al minuto ed escono quattro pani. I tre
+che mancano non sono spariti: sono nella coda davanti al forno, e la coda cresce a ogni minuto
+che la mattina avanza. Questa è la Teoria dei Vincoli per intero, senza nessun nome tecnico: **l'uscita
+di un sistema è l'uscita del suo punto più lento**, e quello che entra oltre quella soglia diventa attesa.
+
+La newsletter usa un'altra immagine, l'autostrada: otto corsie che si restringono a quattro per via di
+un cantiere. E afferma che, con molte auto, il restringimento produce *"far more traffic, and less
+throughput, than if you only had four lanes from the beginning"* — molto più traffico e **meno**
+portata di quanta ne avreste se la strada avesse avuto sempre quattro corsie. L'immagine è buona e sono
+andato a controllare se lo è anche l'affermazione.
+
+Il fenomeno esiste e ha un nome nell'ingegneria del traffico: *capacity drop* (caduta di capacità), il calo
+di portata che compare quando la coda si forma in un collo di bottiglia attivo. Solo che la letteratura
+primaria misura questo calo tra il **5% e il 10%** — 5-6% in un collo di bottiglia dell'Ontario misurato
+per venti giorni (Hall e Agyemang-Duah, 1991), circa il 10% a Toronto (Cassidy e Bertini, 1999), e **7%**
+è il valore predefinito che l'*Highway Capacity Manual* ("Manuale della capacità stradale") impone di
+usare. Niente che assomigli a "molto più traffico". E il meccanismo che il testo sostiene — *"as everyone
+merges"* ("mentre tutti confluiscono"), tutti che si immettono — non è quello che si è trovato: Banks
+(1991), studiando esattamente i colli di bottiglia con confluenza di corsie, ha scritto che *"merge
+conflicts were almost never the direct cause of flow breakdown"* — i conflitti di confluenza non sono
+quasi mai stati la causa diretta della rottura del flusso. Nessuno, per quanto ho trovato, ha testato il
+confronto esatto della frase — otto corsie che diventano quattro contro quattro fin dall'inizio, sotto la
+stessa domanda. La frase non è falsa per misura; è un'affermazione senza esperimento.
+
+Quello che l'ingegneria del traffico mostra che **funziona** è più interessante dell'analogia. Non è
+restringere la strada a monte — è **regolare il tasso di ingresso**. Quando il dipartimento dei trasporti
+del Minnesota ha spento i semafori di accesso alle rampe di Minneapolis-St. Paul per sei settimane, nel
+2001, la capacità dell'autostrada è scesa del **9%**, il tempo di viaggio è salito del **22%** e gli
+incidenti sono saliti del **26%**. Tenete a mente questo risultato: fra due gradini la mia simulazione
+arriverà esattamente alla stessa conclusione, per un'altra via.
+
+---
+
+## Secondo gradino: i nomi, e l'esperimento che decide
+
+Ora lo stesso disegno, con le parole che compaiono nei libri.
+
+| In panetteria | Nei libri | Che cosa misura |
+|---|---|---|
+| Il forno | **vincolo** (*constraint*) o **collo di bottiglia** (*bottleneck*) | il posto la cui capacità limita l'uscita del sistema |
+| Pani che escono al minuto | **portata** (*throughput*) | quello che il sistema consegna per unità di tempo |
+| Impasto in attesa del forno | **lavoro in corso** (*work in process*, WIP) | quello che è entrato e non è ancora uscito |
+| Dall'ordine alla cassa | **tempo di attraversamento** (*lead time*) | quanto tempo impiega un pezzo ad attraversare |
+| Quando prendere il prossimo ordine | **politica di rilascio** | la regola che decide quando entra lavoro nuovo |
+
+Goldratt distingue il collo di bottiglia dal vincolo, e la distinzione conta: il collo di bottiglia è una
+risorsa con meno capacità di quanta ne chieda la domanda; il vincolo è *"anything that limits a system
+from achieving higher performance versus its goal"* — qualsiasi cosa limiti il sistema nel raggiungere una
+prestazione più alta rispetto al suo obiettivo, compresa una regola. Ogni collo di bottiglia è un vincolo;
+non ogni vincolo è un collo di bottiglia. Ci torno al terzo gradino, perché è il punto in cui lo stesso
+Goldratt dice che quasi nessuno guarda.
+
+L'ultima riga della tabella è quella che nessuno disegna e che decide tutto. Ci sono due politiche
+comuni. **Spingere:** rilascia lavoro nuovo ogni volta che il primo posto è libero — è il "tenete tutti
+occupati", l'istinto di ogni manager. **La corda:** rilascia lavoro nuovo solo quando un pezzo *esce* dal
+sistema — è il *drum-buffer-rope* ("tamburo-cuscinetto-corda") di Goldratt, nella forma più semplice
+(quantità costante in corso, CONWIP). La corda obbliga il primo posto a stare fermo di proposito. È
+l'unica cosa che la Teoria dei Vincoli chiede e che nessun capo vuole sentirsi dire.
+
+### Come ho misurato
+
+Ho scritto un simulatore di linea in serie: cinque posti, un addetto per posto, tempo di servizio casuale
+con media fissa, capacità di **10, 10, 4, 10 e 10** pezzi per unità di tempo — il terzo posto è il
+vincolo, come il forno. Ogni corsa elabora 400 mila pezzi con seme fisso; il codice è Python puro, senza
+dipendenze, e viene pubblicato insieme a questo articolo. Il simulatore è stato controllato contro la
+formula chiusa della teoria delle code prima di produrre qualsiasi numero: 4 test, 4 superati, errore
+dello 0,03% nel caso lungo.
+
+> **Nota metodologica.** Il modello è deliberatamente semplice: servizio esponenziale, vincolo fisso
+> nello stesso posto, senza rilavorazioni, senza guasti di macchina, senza lotti. Non descrive la vostra
+> fabbrica né la vostra squadra; descrive il meccanismo che ogni fabbrica e ogni squadra ereditano. Ogni
+> numero di questo articolo è uscito dal file di risultati generato dallo script, non da un conto a
+> mente — e la sezione "Dove la teoria non funziona" dice dove il modello smette di valere.
+
+<ConstraintExperimentChart
+  dataset="restricao-exp1-teto-it"
+  mode="teto"
+  title="L'uscita si ferma al vincolo"
+  subtitle="Domanda offerta contro portata realizzata — e il lavoro in corso alla fine della corsa"
+  xLabel="Domanda offerta (pezzi per unità di tempo)"
+  yLabel="Portata realizzata"
+  description="Grafico a linea. La portata segue la domanda offerta fino a 4,0 e resta piatta da lì in poi, sopra una linea tratteggiata in oro che segna la capacità del vincolo. Tre richiami mostrano il lavoro in corso alla fine della corsa: 13 pezzi con domanda 3,5, 735 con domanda 4,0 e 121.646 con domanda 7,0."
+  source="Esperimento 1 della simulazione (fila.py, seme 20260825, 400 mila pezzi per punto). · ulissesflores.com/restricao-it"
+/>
+
+Notate che la linea della portata si piega e resta orizzontale esattamente a 4 — la capacità del forno.
+Raddoppiare la domanda da 3,5 a 7,0 pezzi per unità di tempo fa salire l'uscita da 3,50 a 4,00 (14%, il
+tetto) e il lavoro in corso da 13 a 121.646 pezzi — **novemila volte**. È l'autostrada a otto corsie in
+numeri: quello che entra oltre il vincolo non esce; aspetta.
+
+### L'esperimento che decide: accelerare chi non è il vincolo
+
+Ora la domanda della newsletter, misurata. Sotto la politica di spinta, ho raddoppiato la capacità del
+primo posto (da 10 a 20). Poi, invece, ho elevato il vincolo del 25% (da 4 a 5).
+
+| Scenario (politica: spingere) | Portata | Guadagno di portata | Ritmo di crescita dell'attesa |
+|---|---|---|---|
+| Linea base 10 · 10 · 4 · 10 · 10 | 4,018 | — | 0,150 |
+| **Raddoppia il posto 1** (10 -> 20) | 4,005 | **-0,3%** | **0,200 (+33%)** |
+| **Eleva il vincolo** (4 -> 5, +25%) | 5,018 | **+24,9%** | 0,100 (-33%) |
+
+Prima dei numeri, di nuovo la panetteria — la stessa figura del primo gradino, ora con i dati di ogni
+scenario.
+
+<FlowLineDiagram
+  dataset="restricao-linha-dobra-posto-1-it"
+  title="Raddoppiare chi non è il forno: stessa uscita, coda più lunga"
+  description="La stessa panetteria della prima figura, con il posto degli ordini raddoppiato a venti al minuto e in evidenza in blu. Il forno resta a quattro, in oro. La pila di impasto prima del forno è più grande che nella prima figura; il contatore in basso mostra: entrano venti al minuto, escono quattro."
+  source="Esperimento 2 della simulazione, politica di spinta; pila proporzionale alla crescita dell'attesa. · ulissesflores.com/restricao-it"
+/>
+
+Notate che il contatore in basso non ha cambiato uscita: entrano venti, escono quattro — gli stessi
+quattro di prima. Quello che è cambiato è la pila. L'addetto agli ordini due volte più veloce scarica
+impasto davanti al forno due volte più in fretta, e la coda cresce il 33% più in fretta.
+
+<FlowLineDiagram
+  dataset="restricao-linha-eleva-forno-it"
+  title="Elevare il forno: l'uscita sale insieme a lui"
+  description="La stessa panetteria, ora con il forno a cinque al minuto, in oro. Gli altri posti restano a dieci. La pila prima del forno è più piccola che nella prima figura; il contatore in basso mostra: entrano dieci al minuto, escono cinque."
+  source="Esperimento 2 della simulazione, politica di spinta; pila proporzionale alla crescita dell'attesa. · ulissesflores.com/restricao-it"
+/>
+
+Notate che ora il contatore è cambiato: escono cinque. Un forno più grande del 25% ha consegnato il 24,9%
+di pane in più, e la pila si è ristretta — la coda ha iniziato a crescere il 33% più lentamente. È lo
+stesso sforzo della figura precedente, messo nell'unico luogo in cui diventa pane. Le barre qui sotto
+mettono i due scenari fianco a fianco, in numeri.
+
+<ConstraintExperimentChart
+  dataset="restricao-exp2-lugar-errado-it"
+  mode="lugar-errado"
+  title="Migliorare il posto sbagliato"
+  subtitle="Lo stesso sforzo, due posti: raddoppiare il posto 1 contro elevare il vincolo del 25%"
+  description="Due blocchi di tre barre orizzontali, ogni blocco con la propria scala dichiarata. Portata: linea base 4,02; raddoppiando il posto 1, 4,01; elevando il vincolo, 5,02. Crescita dell'attesa: base 0,150; raddoppiando il posto 1, 0,200; elevando il vincolo, 0,100. La barra del vincolo è in evidenza, in oro."
+  source="Esperimento 2 della simulazione, politica di spinta. · ulissesflores.com/restricao-it"
+/>
+
+Notate che le prime due barre di portata sono praticamente uguali. **Raddoppiare la capacità di chi non è
+il vincolo non ha consegnato un pezzo in più** — quel -0,3% è rumore — **e ha fatto crescere l'attesa il
+33% più in fretta.** Aumentare il vincolo del 25% ha aumentato l'uscita del 24,9%: ritorno praticamente
+uno a uno, nel posto giusto. È la tesi del titolo in due barre: il vincolo è un luogo, e lo sforzo
+diventa risultato solo quando cade dentro di esso.
+
+Ma notate quello che dice la colonna di destra e la frase della newsletter no: il posto 1 più veloce non
+ha peggiorato l'*uscita* — ha peggiorato l'*attesa*. Sotto la politica di spinta il sistema non si
+stabilizza mai; la coda cresce a ogni pezzo, e un primo posto due volte più veloce scarica impasto in
+coda due volte più in fretta. Il collo di bottiglia in sé non è peggiorato. Quello che è peggiorato è il
+tempo che il cliente aspetta e la quantità di roba ferma. Sono tre misure diverse — portata, attesa,
+scorta in corso — e la frase a effetto le fonde tutte e tre.
+
+### Il prezzo della corda
+
+Stessa linea, stesse capacità, cambia solo la politica di rilascio: il pezzo nuovo entra solo quando un
+altro esce, con al massimo sei in corso.
+
+| Politica | Portata | Tempo di attraversamento | Lavoro in corso |
+|---|---|---|---|
+| Spingere | 4,018 | 13.502 | 134.787 |
+| **Corda** (sei in corso) | 3,813 | **1,52** | **5,8** |
+
+<FlowLineDiagram
+  dataset="restricao-linha-corda-it"
+  title="La corda: la panetteria accetta un ordine solo quando esce il pane"
+  description="La stessa panetteria, con le stesse capacità. I posti prima del forno appaiono tratteggiati, con l'etichetta aspettano apposta; la pila prima del forno ha due pezzi. Il contatore in basso dice che entra un ordine solo quando esce un pane, e che escono 3,8 al minuto."
+  source="Esperimento 2 della simulazione, CONWIP uguale a 6 (al massimo sei ordini in corso). · ulissesflores.com/restricao-it"
+/>
+
+Notate che cosa è diventato tratteggiato: anche i posti prima del forno aspettano apposta. La panetteria
+accetta un ordine nuovo solo quando esce un pane, e la pila non supera mai una manciata. Il prezzo sta
+nel contatore — escono 3,8 invece di 4 — e il guadagno sta nella tabella qui sopra: l'attesa
+praticamente sparisce. Le barre qui sotto mettono i due in scala.
+
+<ConstraintExperimentChart
+  dataset="restricao-exp2-corda-it"
+  mode="corda"
+  title="Che cosa compra la corda e che cosa costa"
+  subtitle="Stessa linea, due politiche di rilascio — scala logaritmica"
+  description="Tre coppie di barre in scala logaritmica che confrontano spingere e corda: portata 4,02 contro 3,81; tempo di attraversamento 13.502 contro 1,52; lavoro in corso 134.787 contro 5,8. La piccola perdita di portata resta visibile accanto alle due cadute di quattro ordini di grandezza."
+  source="Esperimento 2 della simulazione, CONWIP uguale a 6. · ulissesflores.com/restricao-it"
+/>
+
+Notate la scala: è logaritmica, perché altrimenti non ci starebbe. La corda costa il **5% di portata** —
+è il prezzo onesto dell'inattività deliberata nei posti che non sono il vincolo — e compra un tempo di
+attraversamento **8.900 volte minore** e una scorta in corso **23 mila volte minore**. Questo è il
+paragrafo che separa la Teoria dei Vincoli da un poster motivazionale: non promette più uscita; promette
+la stessa uscita con quasi nessuna attesa, e per questo fa pagare un po' di gente ferma. Goldratt ha
+chiamato quell'accettazione forse il più grande cambio di paradigma che la gestione deve fare — perché un
+singolo posto sia occupato al 100%, tutti gli altri devono avere capacità in eccesso.
+
+Ed è qui che torna l'ingegneria del traffico. I semafori di rampa di Minneapolis sono una corda: regolano
+l'ingresso invece di allargare la strada. Spegnerli è costato il 9% di capacità e il 22% di tempo di
+viaggio, misurato sul campo per sei settimane. La mia simulazione, in un dominio che non ha niente a che
+vedere con l'asfalto, dice la stessa cosa: **quello che risolve non è accelerare ciò che viene prima del
+vincolo, è controllare quanto entra**. Due domini indipendenti, uno misurato da me e l'altro misurato da
+terzi, che puntano alla stessa leva.
+
+Una sfumatura, per non scambiare una frase grossolana con un'altra. Sotto la corda, raddoppiare il posto
+1 dà **+1,6%** di portata (da 3,813 a 3,874) — perché un primo posto più veloce riduce la probabilità che
+il vincolo resti senza lavoro. Migliorare fuori dal vincolo non è *niente*; è *quasi* niente. La frase
+corretta non è "non fa effetto", è **"quasi non fa effetto, e sotto la politica di spinta peggiora
+l'attesa"**. La newsletter ha ragione sul segno e sbaglia sul grado; e il meccanismo che non nomina — la
+politica di rilascio — è quello che decide se l'errore costa caro.
+
+---
+
+## Terzo gradino: il conto, e i cinque passi per intero
+
+### La Legge di Little
+
+Esiste una formula che lega le tre misure del gradino precedente, ed è la cosa più utile che un manager
+possa sapere sulle code. John Little ha dimostrato nel 1961 che, in un sistema stabile, il numero medio
+di pezzi dentro di esso è uguale al tasso di arrivo per il tempo medio che ogni pezzo passa lì dentro:
+
+`L = λ · W`
+
+Il lavoro in corso è uguale alla portata per il tempo di attraversamento. Se la panetteria cuoce quattro
+pani al minuto e ogni ordine impiega dieci minuti dal banco alla cassa, ci sono quaranta ordini in corso
+in qualsiasi istante — non importa come la panetteria sia organizzata al suo interno. La formula ha tre
+condizioni, e Little le ha scritte nel sommario dell'articolo: le tre medie devono essere finite e il
+processo stazionario. Nel linguaggio della panetteria: **vale finché la coda non sta esplodendo**.
+
+Questo dà uno strumento. Se misurate il lavoro in corso per una via e il prodotto portata per
+attraversamento per un'altra, i due devono coincidere. Quando smettono di coincidere, il sistema è uscito
+dal regime stabile — la domanda ha superato il vincolo. Ho misurato questo residuo, `|L - λ·W| / L`, con
+il vincolo occupato dal 55% al 110%.
+
+<ConstraintExperimentChart
+  dataset="restricao-exp3-little-it"
+  mode="residuo"
+  title="La Legge di Little chiude fino al vincolo — e si apre dopo"
+  subtitle="Residuo tra il lavoro in corso misurato e quello previsto dalla formula, per utilizzo del vincolo"
+  xLabel="Utilizzo del vincolo"
+  yLabel="Residuo di Little"
+  description="Grafico a linea del residuo di Little contro l'utilizzo del vincolo. Da 0,55 a 1,00 il residuo resta a zero; a 1,05 sale a 0,047 e a 1,10 a 0,092. Una linea verticale tratteggiata in oro segna il vincolo al 100%; un richiamo in quel punto dice che il tempo di attraversamento è già salito 35 volte senza che il residuo lo segnalasse, e richiami a 1,05 e 1,10 mostrano i due valori."
+  source="Esperimento 3 della simulazione; W misurato coincide con la forma chiusa entro 1,7% in regime stabile. · ulissesflores.com/restricao-it"
+/>
+
+Notate la linea rasente allo zero fino all'utilizzo 1,00 e il salto subito dopo. In regime stabile le due
+vie coincidono fino alla quarta cifra decimale, e il tempo di attraversamento misurato coincide con la
+formula chiusa della teoria delle code entro l'1,7%. Sopra il vincolo il residuo si apre: 0,047 con il 5%
+di sovraccarico, 0,092 con il 10%. Lo strumento funziona.
+
+Ora il limite, che è quello che separa chi ha capito da chi ha imparato a memoria. **Esattamente a 1,00
+il residuo non scatta** — segna 0,0001 — anche se il tempo di attraversamento è già a 199,7,
+trentacinque volte quello del punto 0,95. Nel punto critico la coda cresce troppo lentamente perché il
+residuo la veda; esso segnala solo un accumulo sostenuto. Ovvero: il residuo di Little rileva il
+**sovraccarico**, non la **criticità**. Chi lo vende come allarme universale di coda sta vendendo più di
+quanto la formula consegni, e io non ho intenzione di venderlo.
+
+### I cinque passi, letti alla fonte
+
+La newsletter attribuisce la Teoria dei Vincoli a *The Goal* (*L'obiettivo*, nell'edizione italiana), "un
+romanzo di business del 1984" di un "fisico israeliano". Torna — con due correzioni che valgono un
+paragrafo. La prima edizione del 1984 si chiama *The Goal: Excellence in Manufacturing* ("L'obiettivo:
+eccellenza nella produzione"); il sottotitolo che tutti citano, *A Process of Ongoing Improvement* ("un
+processo di miglioramento continuo"), compare solo nella revisione del 1986. E i **cinque passi di
+focalizzazione non stanno in quel libro**. Il romanzo introduce l'idea di vincolo attraverso la
+narrazione; l'elenco formale — identificare, sfruttare, subordinare, elevare, tornare — è stato messo in
+parole da Goldratt in *What Is This Thing Called the Theory of Constraints and How Should It Be
+Implemented?* ("Che cos'è questa cosa chiamata Teoria dei Vincoli e come dovrebbe essere implementata?"),
+del 1990. Quasi ogni riassunto che circola, compresa la serie di Forte, attribuisce l'elenco al libro
+sbagliato.
+
+Ho letto il testo ufficiale dei cinque passi pubblicato dall'editore di Goldratt, la North River Press,
+firmato da lui e adattato dal libro del 1990. La formulazione è questa:
+
+1. Identificare i vincoli del sistema.
+2. Decidere come **sfruttare** i vincoli del sistema.
+3. **Subordinare** tutto il resto alla decisione di cui sopra.
+4. **Elevare** i vincoli del sistema.
+5. Se nei passi precedenti un vincolo è stato rotto, tornare al passo uno — **ma non lasciate che
+   l'inerzia diventi il vincolo del sistema**.
+
+<StepFlowDiagram
+  dataset="restricao-cinco-passos-it"
+  title="I cinque passi di focalizzazione, con l'avvertimento che di solito cade"
+  subtitle="I passi 3, 4 e 5 — quelli che la serie pubblica non copre — sono quelli che la simulazione misura."
+  description="Catena verticale di cinque tappe: identificare, sfruttare, subordinare, elevare e tornare al passo uno. Le tappe tre, quattro e cinque sono in evidenza come quelle che la serie pubblica non copre; l'ultima porta, nella frase di appoggio, l'avvertimento contro l'inerzia."
+  source="Goldratt, testo ufficiale dei cinque passi (North River Press, adattato dal libro del 1990). · ulissesflores.com/restricao-it"
+/>
+
+Notate due dettagli del disegno. Il primo è la parola del passo 2: Goldratt ha scritto **sfruttare**
+(*exploit*) — spremere il massimo da quello che già esiste nel vincolo prima di spenderci soldi. La serie
+di Forte scrive *optimize* ("ottimizzare") in tutti i post; la parola *exploit* non compare nemmeno una
+volta nel corpus. Sembra pedanteria e non lo è: "ottimizzare" invita a comprare capacità; "sfruttare"
+impone prima di smettere di sprecare quella che si ha.
+
+Il secondo dettaglio è il passo 5, che quasi sempre viene riassunto come "ripetere". Il testo ufficiale
+non dice questo. Dice *tornare al passo uno* e aggiunge un avvertimento che Goldratt definisce impossibile
+da enfatizzare abbastanza: quando un vincolo viene rotto, le regole che l'organizzazione ha creato a causa
+sua restano in piedi — e diventano il vincolo successivo. *"We very rarely find a company with a real
+market constraint,"* scrive, *"but rather, we find devastating marketing policy constraints."* — "molto
+raramente troviamo un'azienda con un vero vincolo di mercato; piuttosto, troviamo vincoli devastanti di
+politica di marketing". Raramente un collo di bottiglia di reparto; quasi sempre una politica di
+produzione. Raramente un fornitore; quasi sempre una regola di acquisto. È il punto in cui "collo di
+bottiglia" e "vincolo" si separano una volta per tutte, ed è la metà della teoria che la versione che
+circola perde.
+
+I passi 3, 4 e 5 sono esattamente quelli che la simulazione misura. **Subordinare** è la corda: il primo
+posto si ferma apposta perché il vincolo non resti mai senza lavoro e la coda non si ingrossi mai.
+**Elevare** è il secondo esperimento: 25% in più nel forno, 24,9% in più in uscita. **Tornare** è quello
+che succede dopo: con il forno a 5, resta lui il vincolo — ma se un giorno arrivasse a 10, l'intera linea
+sarebbe pari, e il vincolo diventerebbe chi avesse la giornata peggiore. Non ho simulato questo scenario
+e non lo descriverò come se l'avessi fatto.
+
+### Dove la teoria non funziona
+
+La Teoria dei Vincoli vende, oltre al meccanismo, un'ontologia: esiste *un* luogo, è identificabile, e
+l'intero sistema deve organizzarsi attorno a lui. Sono andato a cercare il contro più forte ed esiste,
+con nome e rivista. Trietsch (2005) sostiene che il *drum-buffer-rope* è inferiore a metodi che
+bilanciano più criticità nello stesso momento, invece di un unico tamburo. Linhares (2009) ha mostrato
+che la regola di Goldratt per scegliere il mix di prodotti non è ottima in generale — se lo fosse,
+implicherebbe P = NP. Gupta e Snyder (2009), in una rassegna della letteratura, concludono che la TOC non
+ha ancora dimostrato nella letteratura accademica un nesso tra implementazione e risultato finanziario.
+Nave (2002) fa notare che essa non tratta le persone né le politiche fallite come vincolo — il che è
+ironico, dato l'avvertimento del passo 5.
+
+Dichiaro quello che ho letto e quello che non ho letto: i testi completi di Trietsch, Linhares, Gupta e
+Snyder e Nave non li ho letti; le posizioni qui sopra vengono dalla sezione di critica che li cita, con i
+riferimenti controllati. Riporto come critica citata, non come lettura di fonte primaria.
+
+E c'è la critica che non sta in nessuna rivista e che la mia simulazione conferma al contrario: il
+modello tiene il vincolo **fisso** nello stesso posto. In un sistema reale esso cammina. Nel lavoro di
+conoscenza, nelle squadre piccole, in qualsiasi posto con variabilità alta, il vincolo di oggi è rumore
+domani — e un vincolo itinerante è indistinguibile da nessun vincolo.
+
+La sintesi che sopravvive è questa, ed è la tesi di questo articolo formulata dal contro: **il negativo di
+Goldratt — non accelerate fuori dal vincolo — regge all'attacco; il positivo — esiste un unico luogo
+stabile — no.** È esattamente quello che hanno mostrato le barre del secondo gradino: quello che si misura
+con sicurezza è il costo di sbagliare luogo, non la promessa che il luogo resti fermo.
+
+Un dato collaterale, misurato. La Teoria dei Vincoli è morta come scuola con un nome nelle discussioni di
+ingegneria: la lingua franca oggi è Kanban, limite di WIP e Legge di Little, e Goldratt è il cugino che
+nessuno cita nella *pull request* (la richiesta di revisione del codice). La serie di Forte, nei posti
+dove si può misurare la ricezione, è passata in bianco — su Hacker News (il forum di tecnologia), i post
+che sono stati inviati sono rimasti tra 2 e 4 punti, con zero o un commento ciascuno. Non ho misurato
+Reddit, che blocca la lettura automatizzata, e non affermerò niente su di esso. Sommato al paywall,
+questo spiega perché questo articolo esiste: la metà pubblica della serie insegna a trovare il collo di
+bottiglia; la metà che dice che cosa fare dopo è chiusa, e la teoria che la sostiene sta in un libro che
+quasi nessuno apre.
+
+---
+
+## Quarto gradino: il ponte con gli agenti di IA
+
+Un agente di IA in produzione è una linea di posti. La richiesta passa per l'inferenza del modello, per
+chiamate a strumenti, per un database, a volte per una *sandbox* (un ambiente isolato per eseguire
+codice) e per una rete, e in molti casi per un umano che revisiona. Ogni posto ha una capacità. Uno di
+loro è il forno.
+
+L'istinto del settore è credere che il forno sia il modello — e ottimizzare i *token* (i pezzetti di
+testo che il modello produce) al secondo. Uno studio di caratterizzazione pubblicato dieci giorni fa su
+arXiv (il repository aperto di articoli scientifici) — *From LLM Inference to Agentic Workloads*,
+"dall'inferenza degli LLM ai carichi di lavoro agentici", 15 agosto 2026) ha misurato dieci applicazioni
+agentiche e ha trovato il contrario: componenti che non sono il modello dominano la latenza in **5 su
+10**, e il collo di bottiglia *"shifts across requests, models, and deployments"* — cambia posto tra
+richieste, modelli e installazioni. La conclusione degli autori è quella del passo 5 di Goldratt, senza
+citare Goldratt: ottimizzare i *token* al secondo non basta più.
+
+<FlowLineDiagram
+  dataset="restricao-linha-agentes-it"
+  title="La stessa linea, ora con un agente dentro"
+  description="La stessa geometria della prima figura, con cinque posti: inferenza, strumenti, database, sandbox e revisione umana. Il posto in evidenza non è l'inferenza; la coda si accumula prima della revisione umana. Il contatore in basso ripete la lettura: quello che entra oltre il vincolo diventa attesa."
+  source="Posizioni qualitative, non misurate — il posto del vincolo varia per applicazione (arXiv 2608.15127). · ulissesflores.com/restricao-it"
+/>
+
+Notate che è lo stesso disegno del primo gradino, con i posti rinominati. Io ho lasciato il vincolo sulla
+revisione umana perché è dove tende a comparire quando l'inferenza è diventata veloce; ma il punto della
+figura è che **la posizione del punto in evidenza è una misura, non una convinzione**. Cambiare modello è
+accelerare il posto 1 della panetteria: se la coda è nella revisione, il modello nuovo consegna solo
+bozze più in fretta alla stessa persona stanca.
+
+Avevo già misurato questa asimmetria in un problema che sembra un altro. Nel rilevamento delle frodi, la
+letteratura discute da vent'anni quale architettura rilevi meglio. In un articolo che ho pubblicato
+questo mese, ho confrontato quattro famiglie di modello sotto protocollo verificabile e ho cambiato una
+cosa sola in ognuna: la **soglia di decisione** — il numero a partire dal quale una transazione diventa
+allerta. Spostare la soglia della rete neurale dal valore predefinito 0,5 all'ottimo di validazione ha
+portato l'F1 di test da **0,267 a 0,812**; cambiare architettura ha spostato **-0,007**, con intervallo
+di confidenza che attraversa lo zero. Un singolo scalare è valso due ordini di grandezza più della scelta
+del modello. Nel linguaggio di questo articolo: la soglia era il vincolo; l'architettura era sforzo fuori
+da esso — caro, lento, e senza effetto sull'uscita.
+
+Due lavori miei ancora **in preparazione**, senza link e senza DOI — li cito per il risultato e chiedo lo
+sconto che questo merita. Il primo usa esattamente il residuo di Little del terzo gradino come
+diagnostico differenziale in code sotto attacco: separa il sovraccarico dall'attacco con area sotto la
+curva di 1,000, contro lo 0,21 e lo 0,33 dei monitor che guardano solo la magnitudine. Il secondo tratta
+un problema che chi opera agenti di lunga durata conosce: decidere, da fuori, se l'agente è **bloccato o
+soltanto lento** — e sostiene che nessun rilevatore puramente osservazionale risolve questo, solo un
+protocollo cooperativo con due orologi. Nessuno dei due è pubblicato; quando lo saranno, il link entrerà
+qui.
+
+Un'onestà in più: il ponte tra la Teoria dei Vincoli formale e l'infrastruttura di agenti **quasi non
+esiste** nella discussione pubblica. Ho cercato. Lo studio di arXiv descrive il fenomeno senza il
+vocabolario; i forum dei modelli locali parlano di collo di bottiglia della VRAM, non di Goldratt. Il
+ponte è mio, e lo offro come tale — non come senso comune del settore.
+
+---
+
+## Il capitolo di business: Ford, Spanx e Kit, controllati
+
+La newsletter chiude con tre casi. Ognuno è passato per la verifica prima di entrare qui, e il risultato
+è diverso per ciascuno.
+
+### Ford: il numero è quasi giusto, e la lettura è sbagliata
+
+> *"That took 12.5 hours per car. [...] Assembly dropped from 12.5 hours to just 90 minutes. An
+> incredible 8X increase in throughput."*
+>
+> In italiano: "Ci volevano 12,5 ore per auto. [...] Il montaggio è sceso da 12,5 ore a soli
+> 90 minuti. Un incredibile aumento di 8 volte della portata."
+
+Sono andato alla fonte primaria — l'autobiografia dello stesso Ford, *My Life and Work* ("La mia vita e
+la mia opera", 1922), capitolo "Getting Into Production" ("Entrando in produzione"). Il miglior tempo di
+montaggio del telaio con l'auto ferma era di **12 ore e 28 minuti**. Poi viene un esperimento che la
+newsletter non racconta e che è la parte migliore: Ford tirò il telaio lungo una linea di 76 metri con
+**una corda e un argano**, con sei montatori che camminavano accanto e prendevano i pezzi da pile lungo
+il percorso — letteralmente una corda — e il tempo scese a 5 ore e 50 minuti. Solo all'inizio del 1914,
+con la linea alzata all'altezza della vita e il lavoro suddiviso, arrivò a **1 ora e 33 minuti**: 93
+minuti, non 90.
+
+L'"8X" di Barry è giusto — 748 minuti divisi per 93 danno 8,04. Quello che è arrotondato è il punto di
+arrivo. E c'è una divergenza istituzionale reale, che riporto invece di risolvere: il museo The Henry
+Ford e la Biblioteca del Congresso dicono 93 minuti, in accordo con il testo del 1922; il sito aziendale
+di Ford Motor Company, in un articolo del 2020, dice *"ninety minutes"* ("novanta minuti") senza citare
+il punto di partenza.
+
+La lettura è quello che cambia. La newsletter racconta il caso come "sforzo nel collo di bottiglia".
+Quello che il testo di Ford descrive è un'altra cosa: lui non accelerò i montatori — cambiò **quello che
+si muove** e, con questo, la regola che decide quando ogni pezzo arriva a ogni uomo. È un cambio di
+politica di rilascio, non di capacità. Ford costruì una corda prima che Goldratt nascesse.
+
+### Spanx: racconto, non fatto
+
+> *"Manufacturing was going well but people simply didn't understand the product. So she personally went
+> to department stores and demonstrated it [...] until the buyers got it."*
+>
+> In italiano: "La produzione andava bene, ma le persone semplicemente non capivano il prodotto. Così lei
+> andò di persona nei grandi magazzini e lo dimostrò [...] finché i compratori non capirono."
+
+Non ho controllato questo caso su fonte primaria e non fingerò di averlo fatto: resta qui come
+**racconto attribuito a Nathan Barry**. Quello che illustra, se è come raccontato, è il tipo di vincolo
+che Goldratt dice essere raro e quasi sempre confuso: un vero vincolo di mercato — il compratore non
+capisce il prodotto — risolto nel luogo in cui stava, e non in fabbrica, che "andava bene". È il passo 1
+fatto bene: la coda non stava dove l'intuito diceva di guardare.
+
+### Kit: il passo 3, raccontato da chi lo ha fatto
+
+> *"So they stopped scaling, which sounds obvious. But the counterintuitive part is the team didn't just
+> keep things where they were at. They actually limited the program way down to focus on just a handful
+> of creators and a handful of brands."*
+>
+> In italiano: "Così hanno smesso di scalare, il che sembra ovvio. Ma la parte controintuitiva è che il
+> team non ha semplicemente tenuto le cose dov'erano. Hanno davvero ridotto drasticamente il programma
+> per concentrarsi solo su una manciata di creatori e una manciata di marchi."
+
+Questo è il caso più prezioso del testo, ed è l'unico che l'autore ha vissuto. Il programma di
+sponsorizzazioni di Kit cresceva; l'operazione è diventata il vincolo; il team **ha ridotto il programma
+deliberatamente** finché le poche relazioni rimaste non hanno battuto gli obiettivi, e solo allora è
+tornato a scalare. Questa è la subordinazione — il passo 3 — praticata con la corda corta apposta, ed è
+proprio il passo che la serie pubblica non copre. Poi è arrivata la frase che chiude la newsletter:
+risolto un collo di bottiglia, è comparso il successivo. È il passo 5. Barry ha scritto i due passi che
+mancano nella serie senza nominarli; io sto solo mettendo il nome.
+
+Riporto come riporta lui: racconto dello stesso dirigente, senza numeri, senza controfattuale. Non so
+quanto Kit abbia perso di ricavo mentre la corda era corta — ed è esattamente quel numero, il 5% della
+mia simulazione, che separa una decisione del genere da una bella frase.
+
+### Il saldo della verifica
+
+| L'affermazione che circola | Quello che dice la fonte o la misura | Verdetto |
+|---|---|---|
+| Lo sforzo fuori dal collo di bottiglia **peggiora** il collo di bottiglia | L'uscita non cambia (-0,3%, rumore); l'attesa cresce il 33% più in fretta; sotto la corda, aiuta +1,6% | ⚙️ Mezza verità: peggiora l'attesa, non l'uscita |
+| "Non si andrà mai oltre il vincolo" | Domanda da 3,5 a 7,0: la portata si blocca a 4,0; la coda sale 9 mila volte | ✅ Confermato |
+| Autostrada 8 -> 4 corsie: "molto più traffico e meno portata" | *Capacity drop* reale, dal 5% al 10%; il meccanismo sostenuto non è quello trovato; il confronto esatto non è mai stato testato | ⚙️ Fenomeno reale, magnitudine e meccanismo sbagliati |
+| Ford: 12,5 h -> 90 min, 8× | 12 h 28 -> 1 h 33 (93 min); 8,04× | ⚙️ Quasi: il punto di arrivo è arrotondato |
+| *The Goal*, 1984, cinque passi | La prima edizione è *Excellence in Manufacturing*; i cinque passi sono del libro del 1990 | ❗ Libro giusto, elenco nel libro sbagliato |
+| Spanx, Kit | Racconti dell'autore | ⚪ Non verificabili — citati come racconto |
+
+Niente di tutto questo è una smentita. Barry e Forte stanno dalla parte giusta dell'argomento, e il
+credito a loro è esplicito. La correzione è di grado, non di merito — e il grado è dove abita la
+decisione di business.
+
+---
+
+## Che cosa ne farei io
+
+**Trovate il luogo prima di spendere sforzo.** Il vincolo sta dove sta la coda adesso. Rendete il lavoro
+in corso visibile — cartellini, ticket, ordini, quello che volete — e guardate dove si accumula. Non
+chiedete chi è più occupato; chiedete davanti a chi le cose aspettano.
+
+**Misurate tre cose separate: portata, attesa e scorta in corso.** La frase a effetto fonde le tre, e la
+decisione sbagliata nasce dalla fusione. La Legge di Little dice se le vostre tre misure sono coerenti;
+quando smettono di esserlo, la domanda ha superato il vincolo.
+
+**Prima di accelerare qualsiasi cosa, chiedetevi se sta prima o dopo il vincolo.** Se sta prima, state
+comprando coda. Se sta dopo, state comprando inattività. In entrambi i casi l'uscita resta dov'era.
+L'unico sforzo che diventa risultato è quello che cade nel luogo.
+
+**Mettete la corda, e accettate il prezzo.** Limitare quanto entra costa portata — nel mio modello, il
+5% — e compra un attraversamento migliaia di volte minore. Se la vostra operazione non tollera di vedere
+gente ferma apposta, tollererà il cliente che aspetta; è lo stesso conto, pagato da un'altra persona.
+
+**Quando il vincolo si rompe, rivedete le regole.** Le politiche nate a causa del collo di bottiglia
+vecchio sono il collo di bottiglia nuovo. È l'avvertimento del passo 5, ed è la metà della teoria che la
+versione che circola perde.
+
+**Per chi opera agenti: strumentate per posto, non per modello.** Il collo di bottiglia cammina tra
+inferenza, strumenti, database e revisione umana, e cambiare modello è accelerare il posto sbagliato
+abbastanza spesso da meritare una misura prima. E guardate la soglia prima di guardare l'architettura —
+in un problema che ho misurato, quello scalare è valso cento volte di più.
+
+L'ultima parola è un metro. Il vincolo è il luogo dove la coda sta **adesso**, misurata da voi questa
+settimana — non il luogo che un libro del 1984, una serie del 2016 o una newsletter di oggi si ricordano
+di aver visto.
+
+---
+
+> **Nota di verifica.** I numeri della simulazione sono stati generati da me il 25 agosto 2026 con lo
+> script pubblicato insieme a questo articolo (Python puro, seme 20260825, 400 mila pezzi per corsa), a
+> partire dal file di risultati che esso scrive — nessuno è stato copiato da un appunto. Il simulatore
+> supera quattro autotest contro la formula chiusa della teoria delle code, con errore dello 0,03% nella
+> corsa lunga. Il testo di Ford l'ho letto nell'edizione del 1922 su Project Gutenberg; la prima edizione
+> di *The Goal* è stata controllata su catalogo bibliografico (WorldCat e Internet Archive); la
+> formulazione dei cinque passi viene dal testo ufficiale pubblicato dalla North River Press e firmato da
+> Goldratt, **adattato dal libro del 1990 — il libro completo non è stato letto**: la copia
+> dell'Internet Archive è ad accesso limitato e l'edizione a stampa non era a portata di mano. I numeri
+> del *capacity drop* vengono da Hall e Agyemang-Duah (1991), Banks (1991) e Cassidy e Bertini (1999),
+> letti nelle fonti primarie; il valore predefinito del 7% dell'*Highway Capacity Manual* viene da una
+> sintesi secondaria; lo studio dei semafori di rampa del Minnesota, dal rapporto del dipartimento dei
+> trasporti. Le critiche accademiche alla TOC sono state lette nella sezione che le cita, non negli
+> articoli completi. L'originale in inglese della newsletter è stato estratto dalla pagina pubblicata il
+> 25 agosto 2026; la serie di Forte è stata letta in copie della Wayback Machine, perché Medium blocca
+> la lettura automatizzata. I casi Spanx e Kit non sono stati controllati oltre il racconto dell'autore.
+> Non ho misurato la ricezione della serie su Reddit. Le citazioni in inglese (newsletter, Ford,
+> Goldratt, arXiv) sono state tradotte da me; il simulatore e le fonti sono gli stessi dell'originale in
+> portoghese.
+
+## Fonti
+
+- Nathan Barry, [*Obsess Over Your Bottlenecks*](https://nathan.kit.com/posts/obsess-over-your-bottlenecks) (Kit, 25/08/2026)
+- Tiago Forte, série *Theory of Constraints* (Praxis, 2016-2017): [indice](https://medium.com/praxis-blog/theory-of-constraints-101-table-of-contents-8bbb6627915b) ·
+  [101](https://medium.com/praxis-blog/theory-of-constraints-101-2d4d9cf1916a) ·
+  [102](https://medium.com/praxis-blog/theory-of-constraints-102-local-optima-3ca8d348f146) ·
+  [103](https://praxis.fortelabs.co/theory-of-constraints-103-the-four-fundamental-principles-of-flow-27925a55048b/) ·
+  [104](https://praxis.fortelabs.co/theory-of-constraints-104-balance-flow-not-capacity-60baa74ce9f4/) ·
+  [105](https://medium.com/praxis-blog/theory-of-constraints-105-drum-buffer-rope-at-microsoft-fda187c6d1d9) ·
+  [106](https://praxis.fortelabs.co/theory-of-constraints-106-the-five-focusing-steps-741f1b770bf1/) ·
+  [107](https://praxis.fortelabs.co/theory-of-constraints-107-identifying-the-constraint-29c7922a69d4/) ·
+  [108](https://praxis.fortelabs.co/theory-of-constraints-108-optimizing-the-constraint-512162cd6548/) ·
+  109, 110 e 111 dietro il paywall di Praxis
+- Eliyahu M. Goldratt, [*The Five Steps of Focusing*](https://northriverpress.com/wp-content/uploads/2018/01/Free-download-5FS.pdf) — testo ufficiale della North River Press, adattato da *What Is This Thing Called the Theory of Constraints and How Should It Be Implemented?* (1990, ISBN 0884270858)
+- North River Press, [Eliyahu M. Goldratt (1947-2011)](https://northriverpress.com/eliyahu-m-goldratt-1947-2011/)
+- Goldratt e Cox, *The Goal: Excellence in Manufacturing* (1984) — [WorldCat OCLC 12721255](https://www.worldcat.org/oclc/12721255); revisione del 1986, [Internet Archive](https://archive.org/details/goalprocessofo00gold)
+- Henry Ford e Samuel Crowther, [*My Life and Work*](https://www.gutenberg.org/ebooks/7213) (1922), capitolo V
+- The Henry Ford, [*Ford Methods and the Ford Shops*](https://www.thehenryford.org/collections/explore/articles/ford-methods-and-the-ford-shops) · Library of Congress, [*This Month in Business History*](https://guides.loc.gov/this-month-in-business-history/October/Ford) · Ford Motor Company, [*The Moving Assembly Line and the Five-Dollar Workday*](https://corporate.ford.com/articles/history/moving-assembly-line/)
+- John D. C. Little, [*A Proof for the Queuing Formula: L = λW*](https://doi.org/10.1287/opre.9.3.383), *Operations Research* 9(3), 1961
+- J. H. Banks, [*Two-Capacity Phenomenon at Freeway Bottlenecks*](https://onlinepubs.trb.org/Onlinepubs/trr/1991/1320/1320-011.pdf), TRR 1320 (1991) · F. L. Hall e K. Agyemang-Duah, [*Freeway Capacity Drop and the Definition of Capacity*](https://onlinepubs.trb.org/Onlinepubs/trr/1991/1320/1320-012.pdf), TRR 1320 (1991) · M. J. Cassidy e R. L. Bertini, [*Some traffic features at freeway bottlenecks*](https://doi.org/10.1016/S0191-2615%2898%2900023-X), Transportation Research B 33(1), 1999
+- McTrans Center, [*Analyzing Active and Hidden Bottlenecks*](https://mctrans.ce.ufl.edu/analyzing-active-and-hidden-bottlenecks/) (valore predefinito dell'HCM)
+- Minnesota DOT, [*Twin Cities Ramp Meter Evaluation*](https://www.dot.state.mn.us/rampmeter/study.html) (2001)
+- [*From LLM Inference to Agentic Workloads: Characterization and Implications for Serving Systems*](https://arxiv.org/abs/2608.15127) (arXiv, 15/08/2026)
+- Ulisses Flores, *Operating-Point Dominance* — [10.5281/zenodo.21708708](https://doi.org/10.5281/zenodo.21708708) · [repository](https://github.com/ulissesflores/operating-point-dominance)
+- Critica accademica: D. Trietsch, [*From the Flawed "Theory of Constraints" to Hierarchically Balancing Criticalities*](http://web.archive.org/web/20170808224422/http://ac.aua.am:80/trietsch/web/WorkingPaper281.pdf) (2004, copia dal Wayback — l'host originale non risponde) e *Human Systems Management* 24 (2005) · A. Linhares, [*Theory of constraints and the combinatorial complexity of the product-mix decision*](https://doi.org/10.1016/j.ijpe.2009.04.023), IJPE 121(1), 2009 · M. Gupta e D. Snyder, *Comparing TOC with MRP and JIT: a literature review*, IJPR 47(13), 2009 · D. Nave, *How to compare Six Sigma, Lean and the Theory of Constraints*, Quality Progress 35(3), 2002
+- Simulatore di questo articolo: [`fila.py`](https://ulissesflores.com/artigos/teoria-das-restricoes/fila.py) e [`resultados.json`](https://ulissesflores.com/artigos/teoria-das-restricoes/resultados.json), pubblicati insieme al testo
+
+*Verificato il 25 agosto 2026. I numeri della simulazione sono riproducibili con lo script e il seme
+indicati; quelli di traffico, Ford e Little sono stati controllati nelle fonti elencate; quello che non
+è stato controllato è dichiarato come tale nel corpo.*

@@ -22,6 +22,24 @@ export interface Artigo {
   /** ISO `YYYY-MM-DD`, no fuso de São Paulo. */
   date: string;
   tags: readonly string[];
+  /**
+   * Capa do artigo, servida de `public/artigos/<slug>/` (`content/` não é servido —
+   * ver o cabeçalho de `lib/content/article-figure.tsx`).
+   *
+   * SÓ VALE NO pt-BR, de propósito: a arte traz o título e o atalho do artigo
+   * DESENHADOS dentro dela, num idioma só. Nos outros locales a capa some e o
+   * `og:image` volta a ser o card tipográfico localizado de
+   * `app/[locale]/artigos/[slug]/opengraph-image.tsx`. Capa por idioma depende de
+   * hero por idioma, que é pendência da redação.
+   */
+  hero?: {
+    /** Caminho a partir de `public/`. Dimensões reais do arquivo em `width`/`height`. */
+    src: string;
+    width: number;
+    height: number;
+    /** Recorte 1200x630 do mesmo desenho, leve — `og:image` pesado o WhatsApp descarta calado. */
+    og: string;
+  };
   /** Título/resumo traduzidos por locale; ausente cai no original pt-BR (mesma regra do corpo MDX). */
   i18n?: Partial<Record<Locale, Pick<Artigo, 'title' | 'summary'>>>;
 }
@@ -65,6 +83,47 @@ export const artigos: readonly Artigo[] = [
     he: {
       title: 'לא, אף אחד לא הוכיח ש-Meta קוראת לכם את ה-WhatsApp. מה שמצאתי גרוע יותר',
       summary: 'עורך דין איבד עשר שנים של שיחות בבוקר אחד וסרטון הסיק ש-Meta קראה את מה שהוא כתב. הלכתי לבדוק את ההאשמה הזאת במסמכים הטכניים של WhatsApp מ-2016 עד 2026, בקוד הלקוח, בצילומי ארכיון של מרכז העזרה של Instagram, בהחלטת הנציבות האירופית מ-2017 ובתיקי תביעות בברזיל, בארצות הברית ובהודו. הסרטון טועה משתי סיבות, והשנייה קוברת את הטיעון: לחסום בהמוניהם וברעש היא החתימה של מסווג אוטומטי, לא של מי שקורא — מי שיש לו יכולת סודית יקרת ערך מגן על היכולת, לא על המקרה הבודד. אבל מה שנשאר במקום גרוע יותר. החברה עברה להגדיר לבדה מה נחשב שיחה מוגנת ולמנות חריגים שהיא עצמה מכירה בהם; שום תצפית הזמינה לציבור אינה מבחינה בין חברה שאינה יכולה לקרוא לבין חברה שיכולה ואינה אומרת; ושלוש הבחירות שמייצרות את חוסר האפשרות הזה — אפליקציה סגורה, בלי בנייה משוחזרת, בלי ביקורת חיצונית — הן שלה, והפיכות על ידה. ב-8 במאי 2026 כיבתה Meta את ההצפנה מקצה לקצה בהודעות Instagram: הערובה שמכרו לנו כמתמטיקה תמיד הייתה הבטחה תאגידית, והבטחות תאגידיות מבוטלות.'
+    },
+  },
+},
+{
+  slug: 'teoria-das-restricoes',
+  title:
+    'Teoria das Restrições: a restrição é um lugar, não um esforço',
+  summary:
+    'Nathan Barry resumiu a Teoria das Restrições numa frase — esforço fora do gargalo piora o gargalo — apoiado na série de Tiago Forte que circula como "a explicação" do assunto. Fui conferir a série, o livro e a frase, e escrevi um simulador de fila para medir em vez de discutir por analogia. A série tem 11 posts, não 3, e os que dizem o que fazer depois de achar o gargalo estão atrás de um paywall; os cinco passos de Goldratt não estão em A Meta, e sim num livro de 1990 que quase ninguém abre; e a frase-moral acerta o sinal e erra o grau: dobrar a capacidade de quem não é a restrição não tirou um item a mais (-0,3%, ruído) e fez a espera crescer 33% mais rápido — piora a espera, não a saída. Elevar a restrição em 25% rendeu 24,9%. A corda de Goldratt custa 5% de vazão e compra uma travessia 8.900 vezes menor. Subo a escada em quatro degraus — a padaria, os nomes, a Lei de Little e os cinco passos lidos na fonte, a ponte com agentes de IA, onde o gargalo anda de lugar — e fecho conferindo Ford, Spanx e Kit. Dez figuras próprias, feitas em código; a mesma padaria reaparece com os dados de cada experimento.',
+  date: '2026-08-25',
+  tags: ['teoria-das-restricoes', 'goldratt', 'gestao', 'filas', 'lei-de-little', 'agentes-de-ia', 'didatico'],
+  hero: {
+    src: '/artigos/teoria-das-restricoes/hero.png',
+    width: 2400,
+    height: 1260,
+    og: '/artigos/teoria-das-restricoes/hero-og.png',
+  },
+  i18n: {
+    en: {
+      title:
+        'Theory of Constraints: the constraint is a place, not an effort',
+      summary:
+        'Nathan Barry summed up the Theory of Constraints in one sentence — effort outside the bottleneck makes the bottleneck worse — resting on the Tiago Forte series that circulates as the explanation of the subject. I went to check the series, the book and the sentence, and wrote a queue simulator to measure instead of arguing by analogy. The series has 11 posts, not 3, and the ones that say what to do after you find the bottleneck sit behind a paywall; Goldratt\'s five steps are not in The Goal but in a 1990 book almost nobody opens; and the moral sentence gets the sign right and the degree wrong: doubling the capacity of whoever is not the constraint did not take out one more item (-0.3%, noise) and made the waiting grow 33% faster — it worsens the waiting, not the output. Elevating the constraint by 25% returned 24.9%. Goldratt\'s rope costs 5% of throughput and buys a lead time 8,900 times smaller. I climb the ladder in four steps — the bakery, the names, Little\'s Law and the five steps read at the source, the bridge to AI agents, where the bottleneck moves around — and close by checking Ford, Spanx and Kit. Ten figures of my own, made in code; the same bakery comes back with the data from each experiment.',
+    },
+    es: {
+      title:
+        'Teoría de las Restricciones: la restricción es un lugar, no un esfuerzo',
+      summary:
+        'Nathan Barry resumió la Teoría de las Restricciones en una frase — el esfuerzo fuera del cuello de botella empeora el cuello de botella — apoyado en la serie de Tiago Forte que circula como "la explicación" del asunto. Fui a comprobar la serie, el libro y la frase, y escribí un simulador de colas para medir en vez de discutir por analogía. La serie tiene 11 posts, no 3, y los que dicen qué hacer después de encontrar el cuello de botella están detrás de un paywall; los cinco pasos de Goldratt no están en La Meta, sino en un libro de 1990 que casi nadie abre; y la frase-moraleja acierta el signo y erra el grado: doblar la capacidad de quien no es la restricción no sacó un ítem más (-0,3%, ruido) e hizo que la espera creciera 33% más rápido — empeora la espera, no la salida. Elevar la restricción en 25% rindió 24,9%. La cuerda de Goldratt cuesta 5% de caudal y compra una travesía 8.900 veces menor. Subo la escalera en cuatro peldaños — la panadería, los nombres, la Ley de Little y los cinco pasos leídos en la fuente, el puente con agentes de IA, dónde el cuello de botella cambia de lugar — y cierro comprobando Ford, Spanx y Kit. Diez figuras propias, hechas en código; la misma panadería reaparece con los datos de cada experimento.',
+    },
+    it: {
+      title:
+        'Teoria dei Vincoli: il vincolo è un luogo, non uno sforzo',
+      summary:
+        'Nathan Barry ha riassunto la Teoria dei Vincoli in una frase — lo sforzo fuori dal collo di bottiglia peggiora il collo di bottiglia — appoggiandosi alla serie di Tiago Forte che circola come la spiegazione dell\'argomento. Sono andato a controllare la serie, il libro e la frase, e ho scritto un simulatore di coda per misurare invece di discutere per analogia. La serie ha 11 post, non 3, e quelli che dicono che cosa fare dopo aver trovato il collo di bottiglia stanno dietro un paywall; i cinque passi di Goldratt non sono in L\'obiettivo, ma in un libro del 1990 che quasi nessuno apre; e la frase-morale azzecca il segno e sbaglia il grado: raddoppiare la capacità di chi non è il vincolo non ha tolto un pezzo in più (-0,3%, rumore) e ha fatto crescere l\'attesa il 33% più in fretta — peggiora l\'attesa, non l\'uscita. Elevare il vincolo del 25% ha reso il 24,9%. La corda di Goldratt costa il 5% di portata e compra un attraversamento 8.900 volte minore. Salgo la scala in quattro gradini — la panetteria, i nomi, la Legge di Little e i cinque passi letti alla fonte, il ponte con gli agenti di IA, dove il collo di bottiglia cambia posto — e chiudo controllando Ford, Spanx e Kit. Dieci figure mie, fatte in codice; la stessa panetteria ritorna con i dati di ogni esperimento.',
+    },
+    he: {
+      title:
+        'תורת האילוצים: האילוץ הוא מקום, לא מאמץ',
+      summary:
+        'Nathan Barry סיכם את תורת האילוצים במשפט אחד — מאמץ שמושקע מחוץ לצוואר הבקבוק מחמיר את צוואר הבקבוק — בהסתמך על סדרת הפוסטים של Tiago Forte שמסתובבת כ"ההסבר" לנושא. הלכתי לבדוק את הסדרה, את הספר ואת המשפט, וכתבתי סימולטור תורים כדי למדוד במקום להתווכח באנלוגיה. בסדרה יש 11 פוסטים, לא 3, ואלה שאומרים מה לעשות אחרי שמוצאים את צוואר הבקבוק נמצאים מאחורי paywall; חמשת הצעדים של Goldratt אינם ב-The Goal אלא בספר משנת 1990 שכמעט אף אחד לא פותח; והמשפט־המוסר קולע בסימן ומחטיא בדרגה: הכפלת הקיבולת של מי שאינו האילוץ לא הוציאה ולו פריט אחד נוסף (-0.3%, רעש) והאיצה את גידול ההמתנה ב-33% — היא מחמירה את ההמתנה, לא את התפוקה. העלאת האילוץ ב-25% הניבה 24.9%. החבל של Goldratt עולה 5% מהתפוקה וקונה זמן מעבר קצר ב-8,900 פעמים. אני עולה בסולם בארבעה שלבים — המאפייה, השמות, חוק Little וחמשת הצעדים כפי שהם במקור, הגשר אל סוכני AI, והמקום שאליו נודד צוואר הבקבוק — ומסיים בבדיקת Ford, Spanx ו-Kit. עשרה איורים משלי, עשויים בקוד; אותה מאפייה חוזרת עם הנתונים של כל ניסוי.',
     },
   },
 },

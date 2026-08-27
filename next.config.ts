@@ -170,6 +170,11 @@ const nextConfig: NextConfig = {
       { source: '/tokens-es', destination: '/es/artigos/tokens-por-dolar', permanent: true },
       { source: '/tokens-it', destination: '/it/artigos/tokens-por-dolar', permanent: true },
       { source: '/tokens-he', destination: '/he/artigos/tokens-por-dolar', permanent: true },
+      { source: '/restricao',    destination: '/artigos/teoria-das-restricoes', permanent: true },
+      { source: '/restricao-en', destination: '/en/artigos/teoria-das-restricoes', permanent: true },
+      { source: '/restricao-es', destination: '/es/artigos/teoria-das-restricoes', permanent: true },
+      { source: '/restricao-it', destination: '/it/artigos/teoria-das-restricoes', permanent: true },
+      { source: '/restricao-he', destination: '/he/artigos/teoria-das-restricoes', permanent: true },
     ];
 
     // Locale handling (double-locale 410 + single-locale 301 + i18n rewrite) moved to middleware.ts

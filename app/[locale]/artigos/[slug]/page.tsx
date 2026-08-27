@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import { ArrowLeft, Calendar } from 'lucide-react';
 import {
@@ -41,6 +42,10 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
   const { title, summary } = localizeArtigo(artigo, locale);
   const path = `${artigosCanonicalPath}/${artigo.slug}`;
+  // A capa vira o card de compartilhamento só onde a arte fala o idioma do leitor:
+  // ela traz o título e o atalho desenhados dentro dela, num idioma só. Fora dele
+  // vale o card tipográfico de `opengraph-image.tsx`, que É localizado.
+  const heroOg = artigo.hero && locale === defaultLocale ? artigo.hero.og : null;
 
   return {
     title,
@@ -62,7 +67,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       // openGraph herdado do layout, então a URL entra explícita — ver data/seo.ts.
       images: [
         {
-          url: `${upkfMeta.primaryWebsite}${buildCanonical(locale, `${path}/opengraph-image`)}`,
+          url: `${upkfMeta.primaryWebsite}${heroOg ?? buildCanonical(locale, `${path}/opengraph-image`)}`,
           width: 1200,
           height: 630,
           alt: title,
@@ -186,6 +191,23 @@ export default async function ArtigoPage({ params }: PageProps) {
           </div>
 
         </header>
+
+        {/*
+          Capa só no locale da arte (mesma regra do `og:image` acima): o título e o
+          atalho estão desenhados dentro do PNG. `priority` porque ela é o LCP da
+          página; `width`/`height` reais reservam o espaço e mantêm o CLS em zero.
+        */}
+        {artigo.hero && locale === defaultLocale ? (
+          <Image
+            src={artigo.hero.src}
+            alt={title}
+            width={artigo.hero.width}
+            height={artigo.hero.height}
+            priority
+            sizes='(min-width: 768px) 48rem, 100vw'
+            className='mb-10 h-auto w-full rounded-lg border border-white/10'
+          />
+        ) : null}
 
         {/* Rolagem de tabela larga vive no map de `table` em mdx-components. */}
         <MdxContentWrapper locale={bodyLocale}>{mdx.content}</MdxContentWrapper>

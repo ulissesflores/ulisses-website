@@ -20,7 +20,7 @@ DOIS REGIMES DE MEDIÇÃO, porque são dois tipos de figura:
    várias dessas caixas são dimensionadas pelo próprio texto (fórmula de contagem de
    caractere), então elas vivem, por construção, acima de 85%.
 
-COBERTURA (espelho de `lib/content/mdx-components.tsx`, lido em 2026-08-24 — 17 entradas):
+COBERTURA (espelho de `lib/content/mdx-components.tsx`, lido em 2026-08-27 — 19 entradas):
 
 | Componente | Regime | Texto medido |
 |---|---|---|
@@ -28,6 +28,7 @@ COBERTURA (espelho de `lib/content/mdx-components.tsx`, lido em 2026-08-24 — 1
 | WaffleChart | 1 | props + label/sublabel de cada categoria |
 | FunnelChart, EffortCostChart, InvertedUChart, NoiseFloorChart, NoiseVsSignalBars, TvChannelsDiagram | 1 | props |
 | WordChoiceDiagram, WatermarkReachDiagram, TextVsFileDiagram, KeyPatternDiagram, KitchenDiagram, StepFlowDiagram | 2 | props + tudo que o dataset desenha |
+| FlowLineDiagram, ConstraintExperimentChart | 2 | props + tudo que o dataset desenha |
 | SimulationRenderer, YouTube, ArticleFigure | — | não desenham texto em SVG |
 
 Componente instanciado num `.mdx` que não esteja nessa lista **reprova com exit 1** em vez
@@ -71,6 +72,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import math
 import re
 import subprocess
 import sys
@@ -120,6 +122,8 @@ FAMILIAS = {
     "textVsFileDatasets": "textVsFile",
     "keyPatternDatasets": "keyPattern",
     "kitchenDatasets": "kitchen",
+    "flowLineDatasets": "flowLine",
+    "constraintExperimentDatasets": "constraintExperiment",
 }
 
 # Fragmento de entrega (chaves soltas, para colar dentro de um `Record` do site): a
@@ -132,6 +136,10 @@ def datasets_do_ts(caminho: Path) -> dict[str, dict]:
     """Avalia o TS como JS e devolve `{família: {chave: dataset}}`."""
     bruto = caminho.read_text(encoding="utf-8")
     js = re.sub(r"^import .*$", "", bruto, flags=re.M)
+    # `export type X = A | B;` numa linha só não tem `\n}` para fechar: o stripper de
+    # bloco abaixo engoliria dali até o `}` do PRÓPRIO Record de dados, e o arquivo
+    # inteiro sairia como "não rendeu nenhum dataset". Foi o caso de `CeDataset`.
+    js = re.sub(r"^(export )?type \w+\s*=[^;{]*;$", "", js, flags=re.M)
     js = re.sub(r"^(export )?(interface|type)[\s\S]*?\n\}", "", js, flags=re.M)
     js = re.sub(r"^export const (\w+)\s*:[^=]+=", r"const \1 =", js, flags=re.M)
     js = re.sub(r"^export const ", "const ", js, flags=re.M)
@@ -619,6 +627,181 @@ def cena_kitchen(ds: dict, props: dict) -> Cena:
     return c
 
 
+# ── FlowLineDiagram — geometria de `flow-line-diagram.tsx` ──────────────────────
+FL_MOLDURA = (12.0, 708.0)  # W=720, 12px de respiro do viewBox (mesma régua do StepFlow)
+FL_CENTROS = (80.0, 220.0, 360.0, 500.0, 640.0)
+FL_CAIXA_W = 112.0
+FL_PASSO = 140.0
+# O medidor de baixo tem uma seta desenhada no meio: cada ponta escreve contra ela,
+# não contra a borda da caixa. É a parede que aperta de verdade.
+FL_MEDIDOR = {"x": 24.0, "w": 672.0, "seta_x0": 330.0, "seta_x1": 390.0}
+# Nenhuma parede desta figura CORTA: a caixa do posto é `<rect>` sem `clipPath`, e a
+# moldura fica 12px antes do viewBox. Mesma situação do KitchenDiagram — por isso a
+# folga vai embutida em cada parede (a do medidor guarda 6px da seta desenhada) em vez
+# de sair do piso global de 6px, que é o piso de quem corta. O que corta continua pego:
+# nome mais largo que a caixa reprova, e nome encostando no vizinho também.
+FL_FOLGA_PAREDE = 0.0
+
+
+def cena_flow_line(ds: dict, props: dict) -> Cena:
+    c = Cena("FlowLineDiagram", folga_parede=FL_FOLGA_PAREDE)
+    c.inicio("title", props["title"], 15, 700, 24, FL_MOLDURA)
+
+    r = ds["restricao"]
+    for i, posto in enumerate(ds["postos"]):
+        cx = FL_CENTROS[i]
+        # O nome mora DENTRO da caixa de 112px — a parede dele é ela, não o viewBox.
+        caixa = (cx - FL_CAIXA_W / 2, cx + FL_CAIXA_W / 2)
+        c.centro(f"postos[{i}].nome", posto["nome"], 12, 700, cx, caixa, fila="nome")
+        if posto.get("capacidade"):
+            c.centro(
+                f"postos[{i}].capacidade", posto["capacidade"], 10,
+                700 if i == r else 400, cx, FL_MOLDURA, fila="capacidade",
+            )
+
+    if r > 0:
+        # Rótulo da pilha: centrado no vão antes da restrição (componente: vao + 14).
+        vao = FL_CENTROS[r - 1] + FL_CAIXA_W / 2
+        c.centro("filaAntes", ds["filaAntes"], 10, 400, vao + FL_PASSO / 2 - FL_CAIXA_W / 2, FL_MOLDURA)
+
+    antes = FL_CENTROS[:r]
+    if ds.get("ociosoAntes") and antes:
+        c.centro("ociosoAntes", ds["ociosoAntes"], 10, 400, sum(antes) / len(antes), FL_MOLDURA, fila="ocioso")
+    depois = FL_CENTROS[r + 1 :]
+    if depois and ds["ociosoDepois"]:
+        c.centro("ociosoDepois", ds["ociosoDepois"], 10, 400, sum(depois) / len(depois), FL_MOLDURA, fila="ocioso")
+
+    c.inicio(
+        "medidor.entra", ds["medidor"]["entra"], 12, 400,
+        FL_MEDIDOR["x"] + 16, (FL_MEDIDOR["x"], FL_MEDIDOR["seta_x0"] - FOLGA),
+    )
+    c.fim(
+        "medidor.sai", ds["medidor"]["sai"], 12, 700,
+        FL_MEDIDOR["x"] + FL_MEDIDOR["w"] - 16,
+        (FL_MEDIDOR["seta_x1"] + FOLGA, FL_MEDIDOR["x"] + FL_MEDIDOR["w"]),
+    )
+    c.inicio("conclusao", ds["conclusao"], 12, 700, 24, FL_MOLDURA)
+    if props.get("source"):
+        c.inicio("source", props["source"], 9, 400, 24, FL_MOLDURA)
+    return c
+
+
+# ── ConstraintExperimentChart — geometria de `constraint-experiment-chart.tsx` ──
+CE_MOLDURA = (12.0, 708.0)
+CE_LIN = {"H": 470, "top": 48, "right": 24, "bottom": 100, "left": 60}
+CE_BAR = {"top": 48, "left": 176, "right": 24, "nome_x": 166}
+CE_W = 720
+
+
+def cena_constraint_experiment(ds: dict, props: dict) -> Cena:
+    """Um componente, dois corpos. O `mode` da tag TEM de bater com o `modo` do
+    dataset — o componente lança erro no pareamento errado, e medir a forma errada
+    daria um 'tudo certo' sobre uma figura que nem chega a renderizar."""
+    if props.get("mode") != ds["modo"]:
+        sys.exit(
+            f'ConstraintExperimentChart: mode="{props.get("mode")}" não bate com o '
+            f'dataset (modo "{ds["modo"]}")'
+        )
+    return (
+        _cena_ce_linhas(ds, props)
+        if ds["modo"] in ("teto", "residuo")
+        else _cena_ce_barras(ds, props)
+    )
+
+
+def _cena_ce_cabecalho(ds: dict, props: dict) -> Cena:
+    c = Cena(f"ConstraintExperimentChart · {ds['modo']}")
+    c.inicio("title", props["title"], 15, 700, 24, CE_MOLDURA)
+    if props.get("subtitle"):
+        c.inicio("subtitle", props["subtitle"], 11, 400, 24, CE_MOLDURA)
+    return c
+
+
+def _cena_ce_rodape(c: Cena, ds: dict, props: dict) -> Cena:
+    c.inicio("conclusao", ds["conclusao"], 12, 700, 24, CE_MOLDURA)
+    if props.get("source"):
+        c.inicio("source", props["source"], 9, 400, 24, CE_MOLDURA)
+    return c
+
+
+def _cena_ce_linhas(ds: dict, props: dict) -> Cena:
+    c = _cena_ce_cabecalho(ds, props)
+    plot_w = CE_W - CE_LIN["left"] - CE_LIN["right"]
+    plot_h = CE_LIN["H"] - CE_LIN["top"] - CE_LIN["bottom"]
+    x0, x1 = ds["xDominio"]
+    y0, y1 = ds["yDominio"]
+    sx = lambda x: CE_LIN["left"] + (x - x0) / (x1 - x0) * plot_w  # noqa: E731
+    sy = lambda y: CE_LIN["top"] + plot_h - (y - y0) / (y1 - y0) * plot_h  # noqa: E731
+    plot = (float(CE_LIN["left"]), float(CE_LIN["left"] + plot_w))
+
+    # Cada tick do eixo Y está numa altura diferente: parede sim, vizinho não.
+    for t in ds["yTicks"]:
+        c.fim(f"yTick[{t['label']}]", t["label"], 10, 400, CE_LIN["left"] - 8, (12.0, plot[0]))
+    for t in ds["xTicks"]:
+        c.centro(f"xTick[{t['label']}]", t["label"], 10, 400, sx(t["v"]), CE_MOLDURA, fila="xtick")
+
+    ref = ds["referencia"]
+    x_ref = sx(ref["valor"]) if ref["eixo"] == "x" else None
+    if ref["eixo"] == "y":
+        c.inicio("referencia.rotulo", ref["rotulo"], 10, 700, CE_LIN["left"] + 6, plot)
+    else:
+        c.fim("referencia.rotulo", ref["rotulo"], 10, 700, x_ref - 6, (plot[0], CE_MOLDURA[1]))
+
+    # Chamadas: vizinhas quando as bases caem na MESMA faixa de 12px de altura — é
+    # assim que duas se encostam. E nenhuma pode cruzar a linha de referência vertical,
+    # que aqui entra na faixa como um obstáculo de largura zero.
+    faixas = set()
+    for i, ch in enumerate(ds["chamadas"]):
+        x = sx(ch["x"]) + ch["dx"]
+        faixa = f"chamada@{round((sy(ch['y']) + ch['dy']) / 12)}"
+        faixas.add(faixa)
+        metodo = {"end": "fim", "start": "inicio", "middle": "centro"}[ch["ancora"]]
+        getattr(c, metodo)(f"chamadas[{i}]", ch["texto"], 11, 400, x, CE_MOLDURA, fila=faixa)
+    if x_ref is not None:
+        for faixa in sorted(faixas):
+            c.caixa("referencia (linha)", f"| x={ref['valor']}", x_ref, x_ref, CE_MOLDURA, fila=faixa)
+
+    if props.get("xLabel"):
+        c.centro("xLabel", props["xLabel"], 11, 400, CE_LIN["left"] + plot_w / 2, plot)
+    if props.get("yLabel"):
+        c.vertical("yLabel", props["yLabel"], 11, 400, plot_h)
+    return _cena_ce_rodape(c, ds, props)
+
+
+def _cena_ce_barras(ds: dict, props: dict) -> Cena:
+    c = _cena_ce_cabecalho(ds, props)
+    plot_w = CE_W - CE_BAR["left"] - CE_BAR["right"]
+    log = ds.get("escalaLog")
+
+    def sx_log(v):
+        d0, d1 = math.log10(log["dominio"][0]), math.log10(log["dominio"][1])
+        return (math.log10(v) - d0) / (d1 - d0) * plot_w
+
+    for bi, bloco in enumerate(ds["blocos"]):
+        # O cabeçalho é o único texto com `letterSpacing` (0.08em a 10px = 0,8px por
+        # vão): `Cena.inicio` não tem tracking, então o intervalo entra pronto.
+        cab = bloco["cabecalho"].upper()
+        c.caixa(f"blocos[{bi}].cabecalho", cab, 24.0, 24.0 + largura(cab, 10, 0.08, 700), CE_MOLDURA)
+        sx = sx_log if log else (lambda v, m=bloco["escala"]["max"]: v / m * plot_w)
+        for i, barra in enumerate(bloco["barras"]):
+            peso = 700 if barra["papel"] == "destaque" else 400
+            fila = f"b{bi}r{i}"
+            c.fim(f"blocos[{bi}].barras[{i}].nome", barra["nome"], 11, peso,
+                  CE_BAR["nome_x"], (12.0, float(CE_BAR["left"])), fila=fila)
+            c.inicio(f"blocos[{bi}].barras[{i}].rotulo", barra["rotulo"], 11, peso,
+                     CE_BAR["left"] + sx(barra["valor"]) + 8, CE_MOLDURA, fila=fila)
+        if bloco.get("escala"):
+            c.inicio(f"blocos[{bi}].escala.rotulo", bloco["escala"]["rotulo"], 9, 400,
+                     CE_BAR["left"], CE_MOLDURA)
+
+    if log:
+        for t in log["ticks"]:
+            c.centro(f"escalaLog.tick[{t['label']}]", t["label"], 9, 400,
+                     CE_BAR["left"] + sx_log(t["v"]), CE_MOLDURA, fila="logtick")
+        c.inicio("escalaLog.rotulo", log["rotulo"], 9, 400, CE_BAR["left"], CE_MOLDURA)
+    return _cena_ce_rodape(c, ds, props)
+
+
 # componente -> (família do dataset, construtor da cena)
 CENAS = {
     "WordChoiceDiagram": ("wordChoice", cena_word_choice),
@@ -627,6 +810,8 @@ CENAS = {
     "KeyPatternDiagram": ("keyPattern", cena_key_pattern),
     "StepFlowDiagram": ("stepFlow", cena_step_flow),
     "KitchenDiagram": ("kitchen", cena_kitchen),
+    "FlowLineDiagram": ("flowLine", cena_flow_line),
+    "ConstraintExperimentChart": ("constraintExperiment", cena_constraint_experiment),
 }
 
 # Registrado em `mdx-components.tsx` mas sem `<text>` próprio: medir não se aplica.
@@ -765,6 +950,7 @@ def main() -> int:
         caminhos = sorted((raiz / "content/artigos").glob("*/index.*.mdx"))
         caminhos.append(raiz / "data/artigos-charts.ts")
         caminhos += sorted((raiz / "data").glob("*-diagram.ts"))
+        caminhos.append(raiz / "data/constraint-experiment-chart.ts")
 
     medidas, colisoes, faltas = checar(caminhos)
     limite = ALVO if args.estrito else 1.0

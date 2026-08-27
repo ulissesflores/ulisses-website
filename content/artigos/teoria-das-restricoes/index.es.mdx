@@ -1,0 +1,618 @@
+---
+title: 'Teoría de las Restricciones: la restricción es un lugar, no un esfuerzo'
+slug: teoria-das-restricoes
+category: artigos
+date: '2026-08-25'
+language: es-ES
+---
+
+Nathan Barry, fundador de Kit, envió hoy un boletín (*newsletter*) llamado *"Obsess Over Your
+Bottlenecks"* ("obsesiónese con sus cuellos de botella"): el resumen de la Teoría de las Restricciones que le presentó a su propio equipo, apoyado
+en una serie de posts de Tiago Forte que circula como "la explicación" del asunto. La moraleja del texto
+aparece dos veces, literalmente: *"effort placed anywhere besides the bottleneck will make the
+bottleneck worse"* — esfuerzo puesto en cualquier lugar que no sea el cuello de botella **empeora el
+cuello de botella**.
+
+Fui a comprobar la serie, el libro y la frase. La serie tiene **11 posts, no 3** — y los tres últimos,
+que dicen qué hacer *después* de encontrar el cuello de botella, están detrás de un paywall (contenido de pago) de US$ 10 al mes.
+Los famosos cinco pasos de Goldratt **no están en el libro en el que todo el mundo dice que están**. Y la
+frase-moraleja tiene un error de grado que no quise discutir por analogía: escribí un simulador de
+colas, publiqué el código junto con este texto y medí.
+
+La tesis que sobrevive a la medición cabe en una línea: **la restricción es un lugar, no un esfuerzo**.
+Todo empeño gastado fuera de ese lugar no se convierte en resultado — se convierte en cola. Pero "empeora
+el cuello de botella" es media verdad, y la mitad equivocada es justamente la que hace que la gente acelere lo que no debe.
+
+Voy a subir la escalera en cuatro peldaños y un capítulo. Deténgase donde quiera.
+
+1. **El horno** — el mecanismo, sin una sola palabra técnica.
+2. **Los nombres** — el mismo dibujo con el vocabulario que aparece en los libros, y el experimento
+   central: acelerar a quien no es la restricción.
+3. **La cuenta** — la Ley de Little, y los cinco pasos completos, leídos en la fuente.
+4. **El puente** — lo que esto dice sobre los agentes de IA, donde el cuello de botella cambia de lugar.
+5. **El capítulo de negocios** — Ford, Spanx y Kit, cada caso comprobado antes de entrar.
+
+---
+
+## Primer peldaño: el horno
+
+Piense en una panadería de barrio en una mañana de domingo. El pan pasa por cinco puestos: alguien toma el
+pedido, alguien prepara la masa, el horno cuece, alguien empaca, alguien cobra en la caja. Cuatro de esos
+puestos dan abasto para diez panes por minuto. El horno da abasto para **cuatro**.
+
+No importa lo que usted haga en los otros cuatro puestos: la panadería entrega cuatro panes por minuto.
+Contrate al mejor tomador de pedidos de la ciudad y va a producir una sola cosa — una cola más grande
+de masa esperando el horno. Contrate a más gente en la caja y la caja se queda ociosa, esperando pan que
+no sale. El horno es el lugar. Todo lo que ocurre antes de él se convierte en cola; todo lo que ocurre después
+de él se convierte en ociosidad.
+
+<FlowLineDiagram
+  dataset="restricao-linha-padaria-es"
+  title="La panadería solo entrega lo que el horno cuece"
+  description="Diagrama de una línea con cinco puestos en secuencia — pedido, masa, horno, empaque y caja. Cuatro puestos tienen capacidad de diez por minuto; el horno, resaltado en oro, tiene capacidad de cuatro. Antes del horno se acumula una pila de masa; después de él los puestos aparecen punteados, esperando pan. Un medidor abajo muestra: entran siete por minuto, salen cuatro. La frase-conclusión dice que los tres que faltan están en la cola del horno."
+  source="Ilustración del mecanismo; los números del medidor vienen del experimento 1 de la simulación. · ulissesflores.com/restricao-es"
+/>
+
+Fíjese en el medidor debajo de la figura. Entran siete pedidos por minuto y salen cuatro panes. Los tres
+que faltan no desaparecieron: están en la cola frente al horno, y la cola crece a cada minuto
+que avanza la mañana. Eso es la Teoría de las Restricciones entera, sin ningún nombre técnico: **la salida
+de un sistema es la salida de su punto más lento**, y lo que entra por encima de eso se convierte en espera.
+
+El boletín usa otra imagen, la autopista: ocho carriles que se estrechan a cuatro a causa de una obra.
+Y afirma que, con mucho auto, el embudo produce *"far more traffic, and less
+throughput, than if you only had four lanes from the beginning"* — mucho más tráfico y **menos**
+caudal que si la vía hubiera tenido siempre cuatro carriles. La imagen es buena y fui a comprobar si la
+afirmación lo es.
+
+El fenómeno existe y tiene nombre en la ingeniería de tráfico: *capacity drop* (caída de capacidad), la
+caída de caudal que aparece cuando la cola se forma en un cuello de botella activo. Solo que la literatura
+primaria mide esa caída en **5% a 10%** — 5-6% en un cuello de botella de Ontario medido durante veinte días
+(Hall y Agyemang-Duah, 1991), cerca de 10% en Toronto (Cassidy y Bertini, 1999), y **7%** es el valor por
+defecto que el *Highway Capacity Manual* ("Manual de capacidad de carreteras") manda usar. Nada cerca de
+"mucho más tráfico". Y el mecanismo que el texto alega — *"as everyone merges"*, todo el mundo
+incorporándose — no es lo que se encontró: Banks (1991), estudiando exactamente cuellos de botella con
+incorporación de carriles, escribió que *"merge conflicts were almost never the direct cause of flow
+breakdown"* — los conflictos de incorporación casi nunca fueron la causa directa de la ruptura del flujo.
+Nadie, hasta donde encontré, probó la comparación exacta de la frase — ocho carriles convertidos en cuatro
+contra cuatro desde el comienzo, bajo la misma demanda. La frase no es falsa por medición; es una
+afirmación sin experimento.
+
+Lo que la ingeniería de tráfico muestra que **funciona** es más interesante que la analogía. No es
+estrechar la vía aguas arriba — es **regular la tasa de entrada**. Cuando el departamento de
+transporte de Minnesota apagó los semáforos de acceso de las rampas de Minneapolis-St. Paul durante
+seis semanas, en 2001, la capacidad de la autopista cayó **9%**, el tiempo de viaje subió **22%** y los
+accidentes subieron **26%**. Guarde ese resultado: dentro de dos peldaños mi simulación va a llegar
+exactamente a la misma conclusión, por otro camino.
+
+---
+
+## Segundo peldaño: los nombres, y el experimento que decide
+
+Ahora el mismo dibujo, con las palabras que aparecen en los libros.
+
+| En la panadería | En los libros | Qué mide |
+|---|---|---|
+| El horno | **restricción** (*constraint*) o **cuello de botella** (*bottleneck*) | el puesto cuya capacidad limita la salida del sistema |
+| Panes que salen por minuto | **caudal** (*throughput*) | lo que el sistema entrega por unidad de tiempo |
+| Masa esperando el horno | **trabajo en proceso** (*work in process*, WIP) | lo que entró y todavía no salió |
+| Del pedido a la caja | **tiempo de travesía** (*lead time*) | cuánto tiempo tarda un ítem en atravesar |
+| Cuándo tomar el próximo pedido | **política de liberación** | la regla que decide cuándo entra trabajo nuevo |
+
+Goldratt distingue cuello de botella de restricción, y la distinción importa: cuello de botella es un
+recurso con menos capacidad de la que pide la demanda; restricción es *"anything that limits a system from
+achieving higher performance versus its goal"* — cualquier cosa que limite al sistema en el logro de un
+desempeño mayor frente a su meta, incluida una regla. Todo cuello de botella es una restricción; no toda
+restricción es un cuello de botella. Vuelvo a esto en el tercer peldaño, porque es el punto en el que el
+propio Goldratt dice que casi nadie mira.
+
+La última línea de la tabla es la que nadie dibuja y la que lo decide todo. Existen dos políticas
+comunes. **Empujar:** libera trabajo nuevo siempre que el primer puesto está libre — es el
+"mantenga a todo el mundo ocupado", el instinto de todo gerente. **La cuerda:** libera trabajo nuevo solo
+cuando un ítem *sale* del sistema — es el *drum-buffer-rope* (tambor-amortiguador-cuerda) de Goldratt, en
+la forma más simple (cantidad constante en curso, CONWIP). La cuerda obliga al primer puesto a quedarse
+parado a propósito. Es la única cosa que la Teoría de las Restricciones pide y que ningún jefe quiere oír.
+
+### Cómo lo medí
+
+Escribí un simulador de línea en serie: cinco puestos, un servidor por puesto, tiempo de
+servicio aleatorio con media fija, capacidades de **10, 10, 4, 10 y 10** ítems por unidad de
+tiempo — el tercer puesto es la restricción, como el horno. Cada corrida procesa 400 mil ítems con
+semilla fija; el código es Python puro, sin dependencias, y viene publicado junto con este artículo. El
+simulador fue comprobado contra la fórmula cerrada de la teoría de colas antes de producir cualquier
+número: 4 pruebas, 4 aprobadas, error de 0,03% en el caso largo.
+
+> **Nota metodológica.** El modelo es deliberadamente simple: servicio exponencial, restricción
+> fija en el mismo puesto, sin reproceso, sin avería de máquina, sin lote. No describe su
+> fábrica ni su equipo; describe el mecanismo que cualquier fábrica y cualquier equipo
+> heredan. Todo número de este artículo salió del archivo de resultados generado por el script, no de
+> cuenta de cabeza — y la sección "Dónde la teoría no funciona" dice dónde el modelo deja de valer.
+
+<ConstraintExperimentChart
+  dataset="restricao-exp1-teto-es"
+  mode="teto"
+  title="La salida se detiene en la restricción"
+  subtitle="Demanda ofrecida contra caudal realizado — y el trabajo en proceso al final de la corrida"
+  xLabel="Demanda ofrecida (ítems por unidad de tiempo)"
+  yLabel="Caudal realizado"
+  description="Gráfico de línea. El caudal acompaña a la demanda ofrecida hasta 4,0 y se queda plano de ahí en adelante, sobre una línea punteada en oro que marca la capacidad de la restricción. Tres llamadas muestran el trabajo en proceso al final de la corrida: 13 ítems con demanda 3,5, 735 con demanda 4,0 y 121.646 con demanda 7,0."
+  source="Experimento 1 de la simulación (fila.py, semilla 20260825, 400 mil ítems por punto). · ulissesflores.com/restricao-es"
+/>
+
+Fíjese en que la línea de caudal se curva y se queda horizontal exactamente en 4 — la capacidad del horno.
+Doblar la demanda de 3,5 a 7,0 ítems por unidad de tiempo hace que la salida suba de 3,50 a 4,00
+(14%, el techo) y que el trabajo en proceso suba de 13 a 121.646 ítems — **nueve mil veces**. Es la
+autopista de ocho carriles en número: lo que entra por encima de la restricción no sale; espera.
+
+### El experimento que decide: acelerar a quien no es la restricción
+
+Ahora la pregunta del boletín, medida. Bajo la política de empujar, doblé la capacidad del
+primer puesto (de 10 a 20). Después, en vez de eso, elevé la restricción en 25% (de 4 a 5).
+
+| Escenario (política: empujar) | Caudal | Ganancia de caudal | Ritmo de crecimiento de la espera |
+|---|---|---|---|
+| Línea base 10 · 10 · 4 · 10 · 10 | 4,018 | — | 0,150 |
+| **Dobla el puesto 1** (10 -> 20) | 4,005 | **-0,3%** | **0,200 (+33%)** |
+| **Eleva la restricción** (4 -> 5, +25%) | 5,018 | **+24,9%** | 0,100 (-33%) |
+
+Antes de los números, la panadería otra vez — la misma figura del primer peldaño, ahora con los datos de
+cada escenario.
+
+<FlowLineDiagram
+  dataset="restricao-linha-dobra-posto-1-es"
+  title="Doblar a quien no es el horno: la misma salida, la cola mayor"
+  description="La misma panadería de la primera figura, con el puesto de pedidos doblado a veinte por minuto y resaltado en azul. El horno sigue en cuatro, en oro. La pila de masa antes del horno es mayor que en la primera figura; el medidor abajo muestra: entran veinte por minuto, salen cuatro."
+  source="Experimento 2 de la simulación, política de empujar; pila proporcional al crecimiento de la espera. · ulissesflores.com/restricao-es"
+/>
+
+Fíjese en que el medidor de abajo no cambió de salida: entran veinte, salen cuatro — los mismos cuatro
+de antes. Lo que cambió fue la pila. El tomador de pedidos dos veces más rápido descarga masa frente
+al horno dos veces más aprisa, y la cola crece 33% más rápido.
+
+<FlowLineDiagram
+  dataset="restricao-linha-eleva-forno-es"
+  title="Elevar el horno: la salida sube con él"
+  description="La misma panadería, ahora con el horno en cinco por minuto, en oro. Los otros puestos siguen en diez. La pila antes del horno es menor que en la primera figura; el medidor abajo muestra: entran diez por minuto, salen cinco."
+  source="Experimento 2 de la simulación, política de empujar; pila proporcional al crecimiento de la espera. · ulissesflores.com/restricao-es"
+/>
+
+Fíjese en que ahora el medidor sí cambió: salen cinco. Un horno 25% mayor entregó 24,9% más pan, y la
+pila encogió — la cola pasó a crecer 33% más despacio. Es el mismo esfuerzo de la figura anterior,
+puesto en el único lugar en el que se convierte en pan. Las barras de abajo colocan los dos escenarios lado a
+lado, en número.
+
+<ConstraintExperimentChart
+  dataset="restricao-exp2-lugar-errado-es"
+  mode="lugar-errado"
+  title="Mejorar el lugar equivocado"
+  subtitle="El mismo esfuerzo, dos lugares: doblar el puesto 1 contra elevar la restricción en 25%"
+  description="Dos bloques de tres barras horizontales, cada bloque con su propia escala declarada. Caudal: línea base 4,02; doblando el puesto 1, 4,01; elevando la restricción, 5,02. Crecimiento de la espera: base 0,150; doblando el puesto 1, 0,200; elevando la restricción, 0,100. La barra de la restricción está resaltada, en oro."
+  source="Experimento 2 de la simulación, política de empujar. · ulissesflores.com/restricao-es"
+/>
+
+Fíjese en que las dos primeras barras de caudal son prácticamente iguales. **Doblar la capacidad de quien no es la restricción
+no entregó un ítem más** — los -0,3% son ruido — **y hizo que la espera creciera 33% más rápido.**
+Aumentar la restricción en 25% aumentó la salida en 24,9%: retorno prácticamente uno a uno, en el
+lugar correcto. Es la tesis del título en dos barras: la restricción es un lugar, y el esfuerzo solo se convierte en
+resultado cuando cae en él.
+
+Pero note lo que dice la columna de la derecha y la frase del boletín no: el puesto 1 más rápido no
+empeoró la *salida* — empeoró la *espera*. Bajo la política de empujar el sistema nunca se estabiliza; la
+cola crece con cada ítem, y un primer puesto dos veces más rápido descarga masa en la cola dos veces
+más rápido. El cuello de botella en sí no quedó peor. Lo que quedó peor fue el tiempo que el cliente
+espera y la cantidad de cosa parada. Son tres medidas diferentes — caudal, espera, inventario en
+proceso — y la frase de efecto funde las tres.
+
+### El precio de la cuerda
+
+La misma línea, las mismas capacidades, solo cambia la política de liberación: el ítem nuevo solo entra
+cuando otro sale, con como máximo seis en curso.
+
+| Política | Caudal | Tiempo de travesía | Trabajo en proceso |
+|---|---|---|---|
+| Empujar | 4,018 | 13.502 | 134.787 |
+| **Cuerda** (seis en curso) | 3,813 | **1,52** | **5,8** |
+
+<FlowLineDiagram
+  dataset="restricao-linha-corda-es"
+  title="La cuerda: la panadería solo acepta pedidos cuando sale pan"
+  description="La misma panadería, con las mismas capacidades. Los puestos antes del horno aparecen punteados, con la etiqueta esperan a propósito; la pila antes del horno tiene dos ítems. El medidor abajo dice que entra un pedido solo cuando sale pan, y que salen 3,8 por minuto."
+  source="Experimento 2 de la simulación, CONWIP igual a 6 (como máximo seis pedidos en curso). · ulissesflores.com/restricao-es"
+/>
+
+Fíjese en lo que quedó punteado: los puestos antes del horno también esperan, a propósito. La panadería
+solo acepta un pedido nuevo cuando sale un pan, y la pila nunca pasa de un puñado. El precio está
+en el medidor — salen 3,8 en vez de 4 — y la ganancia está en la tabla de arriba: la espera prácticamente
+desaparece. Las barras de abajo ponen a los dos en escala.
+
+<ConstraintExperimentChart
+  dataset="restricao-exp2-corda-es"
+  mode="corda"
+  title="Lo que la cuerda compra y lo que cuesta"
+  subtitle="La misma línea, dos políticas de liberación — escala logarítmica"
+  description="Tres pares de barras en escala logarítmica comparando empujar y cuerda: caudal 4,02 contra 3,81; tiempo de travesía 13.502 contra 1,52; trabajo en proceso 134.787 contra 5,8. La pequeña pérdida de caudal queda visible al lado de las dos caídas de cuatro órdenes de magnitud."
+  source="Experimento 2 de la simulación, CONWIP igual a 6. · ulissesflores.com/restricao-es"
+/>
+
+Fíjese en la escala: es logarítmica, porque no cabría de otro modo. La cuerda cuesta **5% de
+caudal** — es el precio honesto de la ociosidad deliberada en los puestos que no son la restricción — y
+compra un tiempo de travesía **8.900 veces menor** y un inventario en proceso **23 mil veces menor**.
+Este es el párrafo que separa a la Teoría de las Restricciones de un afiche motivacional: no
+promete más salida; promete la misma salida con casi ninguna espera, y cobra por eso un poco
+de gente parada. Goldratt llamó a esa aceptación tal vez el mayor cambio de paradigma que la
+gestión necesita hacer — para que un único puesto esté 100% ocupado, todos los demás necesitan
+tener capacidad de sobra.
+
+Y es aquí donde vuelve la ingeniería de tráfico. Los semáforos de rampa de Minneapolis son una cuerda:
+regulan la entrada en vez de ensanchar la vía. Apagarlos costó 9% de capacidad y 22% de tiempo de
+viaje, medido en campo durante seis semanas. Mi simulación, en un dominio que no tiene nada que ver
+con el asfalto, dice lo mismo: **lo que resuelve no es acelerar lo que viene antes de la restricción, es
+controlar cuánto entra**. Dos dominios independientes, uno medido por mí y otro medido por
+terceros, apuntando a la misma palanca.
+
+Un matiz, para no cambiar una frase gruesa por otra. Bajo la cuerda, doblar el puesto 1 da
+**+1,6%** de caudal (de 3,813 a 3,874) — porque un primer puesto más rápido reduce la posibilidad
+de que la restricción se quede sin trabajo. Mejorar fuera de la restricción no es *nada*; es *casi* nada. La
+frase correcta no es "no hace efecto", es **"casi no hace efecto, y bajo la política de empujar
+empeora la espera"**. El boletín tiene razón en el signo y erra en el grado; y el mecanismo que no
+nombra — la política de liberación — es el que decide si el error sale caro.
+
+---
+
+## Tercer peldaño: la cuenta, y los cinco pasos completos
+
+### La Ley de Little
+
+Existe una fórmula que amarra las tres medidas del peldaño anterior, y es la cosa más útil que
+un gerente puede saber sobre colas. John Little probó en 1961 que, en un sistema estable, el número
+medio de ítems dentro de él es igual a la tasa de llegada por el tiempo medio que cada ítem pasa allí
+adentro:
+
+`L = λ · W`
+
+Trabajo en proceso es igual a caudal por tiempo de travesía. Si la panadería cuece cuatro panes por
+minuto y cada pedido tarda diez minutos del mostrador a la caja, hay cuarenta pedidos en curso en
+cualquier instante — no importa cómo esté organizada la panadería por dentro. La fórmula tiene tres
+condiciones, y Little las escribió en el resumen del artículo: las tres medias necesitan ser finitas y el
+proceso, estacionario. En el lenguaje de la panadería: **vale mientras la cola no esté explotando**.
+
+Eso da un instrumento. Si usted mide el trabajo en proceso por un camino y el producto caudal por
+travesía por otro, los dos tienen que coincidir. Cuando dejan de coincidir, el sistema salió del régimen
+estable — la demanda superó la restricción. Medí ese residuo, `|L - λ·W| / L`, con la restricción
+ocupada de 55% a 110%.
+
+<ConstraintExperimentChart
+  dataset="restricao-exp3-little-es"
+  mode="residuo"
+  title="La Ley de Little cierra hasta la restricción — y abre después"
+  subtitle="Residuo entre el trabajo en proceso medido y el previsto por la fórmula, por ocupación de la restricción"
+  xLabel="Ocupación de la restricción"
+  yLabel="Residuo de Little"
+  description="Gráfico de línea del residuo de Little contra la ocupación de la restricción. De 0,55 a 1,00 el residuo se queda en cero; en 1,05 sube a 0,047 y en 1,10 a 0,092. Una línea vertical punteada en oro marca la restricción al 100%; una llamada en ese punto dice que el tiempo de travesía ya subió 35 veces sin que el residuo lo acusara, y llamadas en 1,05 y 1,10 muestran los dos valores."
+  source="Experimento 3 de la simulación; W medida coincide con la forma cerrada dentro de 1,7% en régimen estable. · ulissesflores.com/restricao-es"
+/>
+
+Fíjese en la línea pegada al cero hasta la ocupación 1,00 y en el salto justo después. En régimen estable los
+dos caminos coinciden hasta la cuarta casa decimal, y el tiempo de travesía medido coincide con la
+fórmula cerrada de la teoría de colas dentro de 1,7%. Por encima de la restricción el residuo se abre: 0,047 con
+5% de sobrecarga, 0,092 con 10%. El instrumento funciona.
+
+Ahora el límite, que es lo que separa a quien entendió de quien memorizó. **Exactamente en 1,00 el
+residuo no se dispara** — marca 0,0001 — aunque el tiempo de travesía ya esté en 199,7, treinta
+y cinco veces el del punto 0,95. En el punto crítico la cola crece demasiado despacio para que el residuo
+la vea; solo acusa acumulación sostenida. Es decir: el residuo de Little detecta **sobrecarga**,
+no **criticidad**. Quien venda eso como alarma universal de cola está vendiendo más de lo que
+la fórmula entrega, y yo no lo voy a vender.
+
+### Los cinco pasos, leídos en la fuente
+
+El boletín le atribuye la Teoría de las Restricciones a *The Goal* (*La Meta*, en la edición en español), "una novela de negocios de 1984" de
+un "físico israelí". Correcto — con dos correcciones que dan para un párrafo. La primera edición de
+1984 se llama *The Goal: Excellence in Manufacturing* ("La Meta: excelencia en la manufactura"); el subtítulo
+que todo el mundo cita, *A Process of Ongoing Improvement* ("un proceso de mejora continua"), solo
+aparece en la revisión de 1986. Y los **cinco pasos de enfoque
+no están en ese libro**. La novela introduce la idea de restricción por la narrativa; la lista
+formal — identificar, explotar, subordinar, elevar, volver — fue verbalizada por Goldratt en
+*What Is This Thing Called the Theory of Constraints and How Should It Be Implemented?* ("Qué
+es esa cosa llamada Teoría de las Restricciones y cómo debe implementarse"), de 1990. Casi todo resumen que circula, incluida la serie de Forte, le atribuye la lista al libro
+equivocado.
+
+Leí el texto oficial de los cinco pasos publicado por la editorial de Goldratt, la North River Press,
+firmado por él y adaptado del libro de 1990. La redacción es esta:
+
+1. Identifique las restricciones del sistema.
+2. Decida cómo **explotar** las restricciones del sistema.
+3. **Subordine** todo lo demás a la decisión anterior.
+4. **Eleve** las restricciones del sistema.
+5. Si en los pasos anteriores una restricción fue rota, vuelva al paso uno — **pero no deje que la
+   inercia se vuelva la restricción del sistema**.
+
+<StepFlowDiagram
+  dataset="restricao-cinco-passos-es"
+  title="Los cinco pasos de enfoque, con el aviso que suele caerse"
+  subtitle="Los pasos 3, 4 y 5 — los que la serie pública no cubre — son los que la simulación mide."
+  description="Cadena vertical de cinco etapas: identificar, explotar, subordinar, elevar y volver al paso uno. Las etapas tres, cuatro y cinco están resaltadas como las que la serie pública no cubre; la última carga, en la frase de apoyo, el aviso contra la inercia."
+  source="Goldratt, texto oficial de los cinco pasos (North River Press, adaptado del libro de 1990). · ulissesflores.com/restricao-es"
+/>
+
+Fíjese en dos detalles del dibujo. El primero es la palabra del paso 2: Goldratt escribió
+**explotar** (*exploit*) — sacar el máximo de lo que ya existe en la restricción antes de gastar dinero
+en ella. La serie de Forte escribe *optimize* ("optimizar") en todos los posts; la palabra *exploit* no aparece
+ni una sola vez en el corpus. Parece pedantería y no lo es: "optimizar" invita a comprar capacidad;
+"explotar" manda primero dejar de desperdiciar la que ya se tiene.
+
+El segundo detalle es el paso 5, que casi siempre se resume como "repita". El texto oficial no
+dice eso. Dice *vuelva al paso uno* y agrega un aviso que Goldratt llama imposible de
+enfatizar demasiado: cuando una restricción es rota, las reglas que la organización creó a causa
+de ella siguen en pie — y se vuelven la restricción siguiente. *"We very rarely find a company with a real
+market constraint,"* escribe, *"but rather, we find devastating marketing policy
+constraints."* — "muy raramente encontramos una empresa con una restricción de mercado real;
+en vez de eso, encontramos restricciones devastadoras de política de marketing". Raramente un cuello de botella de planta; casi siempre una política de producción.
+Raramente un proveedor; casi siempre una regla de compras. Es el punto en el que "cuello de botella" y
+"restricción" se separan de una vez, y es la mitad de la teoría que la versión que circula pierde.
+
+Los pasos 3, 4 y 5 son exactamente los que la simulación mide. **Subordinar** es la cuerda: el primer
+puesto para a propósito para que la restricción nunca se quede sin trabajo y la cola nunca engorde.
+**Elevar** es el segundo experimento: 25% más en el horno, 24,9% más en la salida. **Volver** es lo
+que ocurre después: con el horno en 5, sigue siendo la restricción — pero si un día llega
+a 10, la línea entera queda empatada, y la restricción pasa a ser quien tenga el peor día.
+No simulé ese escenario y no lo voy a describir como si lo hubiera hecho.
+
+### Dónde la teoría no funciona
+
+La Teoría de las Restricciones vende, además del mecanismo, una ontología: existe *un* lugar, es
+identificable, y el sistema entero debe organizarse en torno de él. Busqué el contraargumento más
+fuerte y existe, con nombre y con revista. Trietsch (2005) argumenta que el *drum-buffer-rope* es
+inferior a métodos que balancean varias criticidades al mismo tiempo, en vez de un único
+tambor. Linhares (2009) mostró que la regla de Goldratt para elegir mezcla de productos no es
+óptima en general — si lo fuera, implicaría P = NP. Gupta y Snyder (2009), en una revisión de
+literatura, concluyen que la TOC todavía no ha demostrado en la literatura académica un nexo entre
+implementación y resultado financiero. Nave (2002) apunta que no trata a las personas ni a las
+políticas fracasadas como restricción — lo que es irónico, dado el aviso del paso 5.
+
+Declaro lo que leí y lo que no leí: los textos completos de Trietsch, Linhares, Gupta y Snyder y
+Nave no fueron leídos por mí; las posiciones de arriba vienen de la sección de crítica que los cita, con las
+referencias comprobadas. Reporto como crítica citada, no como lectura de primaria.
+
+Y hay una crítica que no está en ninguna revista y que mi simulación confirma por el revés: el
+modelo mantiene la restricción **fija** en el mismo puesto. En un sistema real se desplaza. En trabajo de
+conocimiento, en equipos pequeños, en cualquier lugar con variabilidad alta, la restricción de hoy
+es ruido mañana — y una restricción itinerante es indistinguible de ninguna restricción.
+
+La síntesis que sobrevive es esta, y es la tesis de este artículo formulada desde el contraargumento: **el negativo de
+Goldratt — no acelere fuera de la restricción — resiste al ataque; el positivo — existe un único lugar
+estable — no.** Es exactamente lo que las barras del segundo peldaño mostraron: lo que se mide con
+seguridad es el costo de errar el lugar, no la promesa de que el lugar se queda quieto.
+
+Un dato colateral, medido. La Teoría de las Restricciones murió como escuela nombrada en las discusiones de
+ingeniería: la lengua franca hoy es Kanban, límite de WIP y Ley de Little, y Goldratt es el primo
+que nadie cita en el *pull request* (el pedido de revisión de código). La serie de Forte, en los lugares donde se puede medir recepción,
+pasó desapercibida — en Hacker News (el foro de tecnología), los posts que fueron enviados quedaron entre 2 y 4 puntos, con
+cero o un comentario cada uno. No medí Reddit, que bloquea la lectura automatizada, y no voy a
+afirmar nada sobre él. Sumado al paywall, eso explica por qué existe este artículo: la mitad
+pública de la serie enseña a encontrar el cuello de botella; la mitad que dice qué hacer después está cerrada, y
+la teoría que la sostiene está en un libro que casi nadie abre.
+
+---
+
+## Cuarto peldaño: el puente con los agentes de IA
+
+Un agente de IA en producción es una línea de puestos. La petición pasa por la inferencia del
+modelo, por llamadas de herramientas, por una base de datos, a veces por un *sandbox* (un ambiente aislado para ejecutar código) y por una red, y
+en muchos casos por un humano que revisa. Cada puesto tiene una capacidad. Uno de ellos es el horno.
+
+El instinto del área es creer que el horno es el modelo — y optimizar *tokens* (los pedazos de texto que el modelo
+produce) por segundo. Un estudio de caracterización publicado hace diez días en arXiv (el repositorio
+abierto de artículos científicos) — *From LLM Inference to Agentic Workloads*, "de la inferencia de
+LLM a las cargas de trabajo agénticas", 15 de agosto de 2026) midió diez aplicaciones agénticas y encontró lo contrario: componentes que no
+son el modelo dominan la latencia en **5 de las 10**, y el cuello de botella *"shifts across requests, models,
+and deployments"* — cambia de lugar entre peticiones, modelos e implementaciones. La conclusión de los
+autores es la del paso 5 de Goldratt, sin citar a Goldratt: optimizar *tokens* por segundo ya no
+basta.
+
+<FlowLineDiagram
+  dataset="restricao-linha-agentes-es"
+  title="La misma línea, ahora con un agente dentro"
+  description="La misma geometría de la primera figura, con cinco puestos: inferencia, herramientas, base de datos, sandbox y revisión humana. El puesto resaltado no es la inferencia; la cola se acumula antes de la revisión humana. El medidor abajo repite la lectura: lo que entra por encima de la restricción se convierte en espera."
+  source="Posiciones cualitativas, no medidas — la restricción cambia de lugar por aplicación (arXiv 2608.15127). · ulissesflores.com/restricao-es"
+/>
+
+Fíjese en que es el mismo dibujo del primer peldaño, con los puestos renombrados. Yo dejé la
+restricción en la revisión humana porque es donde suele aparecer cuando la inferencia se volvió rápida;
+pero el punto de la figura es que **la posición de lo destacado es una medición, no una convicción**. Cambiar de
+modelo es acelerar el puesto 1 de la panadería: si la cola está en la revisión, el modelo nuevo solo entrega
+borradores más rápido para la misma persona cansada.
+
+Yo ya había medido esa asimetría en un problema que parece otro. En detección de fraude, la
+literatura discute hace veinte años qué arquitectura detecta mejor. En un artículo que publiqué
+este mes, comparé cuatro familias de modelo bajo protocolo auditable y cambié una sola cosa en
+cada una: el **umbral de decisión** — el número a partir del cual una transacción se vuelve alerta. Mover el
+umbral de la red neuronal del estándar 0,5 al óptimo de validación llevó el F1 de prueba de **0,267
+a 0,812**; cambiar la arquitectura movió **-0,007**, con intervalo de confianza que cruza el cero.
+Un único escalar valió dos órdenes de magnitud más que la elección del modelo. En el lenguaje
+de este artículo: el umbral era la restricción; la arquitectura era esfuerzo fuera de ella — caro, lento,
+y sin efecto en la salida.
+
+Dos trabajos míos todavía **en preparación**, sin enlace y sin DOI — cito por el resultado y pido el
+descuento que eso merece. El primero usa exactamente el residuo de Little del tercer peldaño como
+diagnóstico diferencial en colas bajo ataque: separa sobrecarga de ataque con área bajo la curva de
+1,000, contra 0,21 a 0,33 de los monitores que solo miran magnitud. El segundo trata de un problema
+que quien opera agentes de larga duración conoce: decidir, desde fuera, si el agente está **trabado
+o solo lento** — y argumenta que ningún detector puramente observacional resuelve eso, solo un
+protocolo cooperativo con dos relojes. Ninguno de los dos está publicado; cuando lo estén, el
+enlace entra aquí.
+
+Una honestidad más: el puente entre la Teoría de las Restricciones formal y la infraestructura de
+agentes **casi no existe** en la discusión pública. Busqué. El estudio de arXiv describe el
+fenómeno sin el vocabulario; los foros de modelos locales hablan de cuello de botella de VRAM, no de
+Goldratt. El puente es mío, y lo ofrezco como tal — no como sentido común del área.
+
+---
+
+## El capítulo de negocios: Ford, Spanx y Kit, comprobados
+
+El boletín cierra con tres casos. Cada uno pasó por la comprobación antes de entrar aquí, y el
+resultado es diferente para cada uno.
+
+### Ford: el número está casi correcto, y la lectura está equivocada
+
+> *"That took 12.5 hours per car. [...] Assembly dropped from 12.5 hours to just 90 minutes. An
+> incredible 8X increase in throughput."*
+>
+> En español: "Eso llevaba 12,5 horas por auto. [...] El ensamblaje cayó de 12,5 horas a
+> apenas 90 minutos. Un increíble aumento de 8 veces en el caudal."
+
+Fui a la fuente primaria — la autobiografía del propio Ford, *My Life and Work* ("Mi vida y mi obra", 1922),
+capítulo "Getting Into Production" ("Entrando en producción"). El mejor tiempo de ensamblaje de chasis con el auto parado era **12
+horas y 28 minutos**. Después viene un experimento que el boletín no cuenta y que es la mejor parte:
+Ford tiró del chasis por una línea de 76 metros con **una cuerda y un cabrestante**, con seis
+ensambladores caminando al lado y tomando piezas de pilas a lo largo del camino — literalmente una cuerda
+— y el tiempo cayó a 5 horas y 50 minutos. Solo a comienzos de 1914, con la línea elevada a la altura
+de la cintura y el trabajo subdividido, llegó a **1 hora y 33 minutos**: 93 minutos, no 90.
+
+El "8X" de Barry está correcto — 748 minutos divididos por 93 dan 8,04. Lo que está redondeado es el
+punto de llegada. Y hay una divergencia institucional real, que reporto en vez de resolver: el
+museo The Henry Ford y la Biblioteca del Congreso dicen 93 minutos, coincidiendo con el texto de 1922;
+el sitio corporativo de Ford Motor Company, en un artículo de 2020, dice *"ninety minutes"* ("noventa minutos") sin citar el
+punto de partida.
+
+La lectura es lo que cambia. El boletín cuenta el caso como "esfuerzo en el cuello de botella". Lo que el texto de Ford
+describe es otra cosa: él no aceleró a los ensambladores — cambió **lo que se mueve** y, con eso, la
+regla que decide cuándo llega cada pieza a cada hombre. Es un cambio de política de liberación,
+no de capacidad. Ford construyó una cuerda antes de que Goldratt naciera.
+
+### Spanx: relato, no hecho
+
+> *"Manufacturing was going well but people simply didn't understand the product. So she
+> personally went to department stores and demonstrated it [...] until the buyers got it."*
+>
+> En español: "La fabricación iba bien, pero la gente simplemente no entendía el producto. Entonces
+> ella fue personalmente a las tiendas por departamentos y lo demostró [...] hasta que los compradores
+> lo entendieron."
+
+No comprobé ese caso en fuente primaria y no voy a fingir que lo comprobé: queda aquí como **relato
+atribuido a Nathan Barry**. Lo que ilustra, si es como se cuenta, es el tipo de restricción que
+Goldratt dice que es rara y casi siempre confundida: una restricción de mercado de verdad — el
+comprador no entiende el producto — resuelta en el lugar donde estaba, y no en la fábrica, que
+"iba bien". Es el paso 1 hecho bien: la cola no estaba donde la intuición mandaba mirar.
+
+### Kit: el paso 3, contado por quien lo hizo
+
+> *"So they stopped scaling, which sounds obvious. But the counterintuitive part is the team
+> didn't just keep things where they were at. They actually limited the program way down to
+> focus on just a handful of creators and a handful of brands."*
+>
+> En español: "Entonces dejaron de escalar, lo que parece obvio. Pero la parte contraintuitiva es
+> que el equipo no solo mantuvo las cosas donde estaban. De hecho redujeron el programa
+> drásticamente para concentrarse en apenas un puñado de creadores y un puñado de marcas."
+
+Este es el caso más valioso del texto, y es el único que el autor vivió. El programa de patrocinios de
+Kit crecía; la operación se volvió la restricción; el equipo **redujo el programa deliberadamente** hasta que
+las pocas relaciones que sobraron alcanzaran las metas, y solo entonces volvió a escalar. Eso es
+subordinación — el paso 3 — practicada con la cuerda corta a propósito, y es justamente el paso que
+la serie pública no cubre. Después vino la frase que cierra el boletín: resuelto un cuello de botella,
+apareció el siguiente. Es el paso 5. Barry escribió los dos pasos que faltan en la serie sin
+nombrarlos; yo solo estoy poniendo el nombre.
+
+Reporto como él reporta: relato del propio ejecutivo, sin números, sin contrafactual. No sé
+cuánto perdió Kit de ingresos mientras la cuerda estaba corta — y es exactamente ese número, el 5%
+de mi simulación, el que separa una decisión de esas de una frase bonita.
+
+### El saldo de la comprobación
+
+| La afirmación que circula | Lo que dice la fuente o la medición | Veredicto |
+|---|---|---|
+| Esfuerzo fuera del cuello de botella **empeora** el cuello de botella | La salida no cambia (-0,3%, ruido); la espera crece 33% más rápido; bajo la cuerda, ayuda +1,6% | ⚙️ Media verdad: empeora la espera, no la salida |
+| "Nunca va a superar la restricción" | Demanda de 3,5 a 7,0: el caudal se traba en 4,0; la cola sube 9 mil veces | ✅ Confirmado |
+| Autopista 8 -> 4 carriles: "mucho más tráfico y menos caudal" | *Capacity drop* real, de 5% a 10%; el mecanismo alegado no es el hallazgo; la comparación exacta nunca fue probada | ⚙️ Fenómeno real, magnitud y mecanismo equivocados |
+| Ford: 12,5 h -> 90 min, 8× | 12 h 28 -> 1 h 33 (93 min); 8,04× | ⚙️ Casi: el punto de llegada está redondeado |
+| *The Goal*, 1984, cinco pasos | La primera edición es *Excellence in Manufacturing*; los cinco pasos son del libro de 1990 | ❗ Libro correcto, lista en el libro equivocado |
+| Spanx, Kit | Relatos del autor | ⚪ No comprobables — citados como relato |
+
+Nada de esto es un desmentido. Barry y Forte están del lado correcto del argumento, y el crédito para ellos
+es explícito. La corrección es de grado, no de mérito — y el grado es donde vive la decisión de negocio.
+
+---
+
+## Qué haría yo con esto
+
+**Encuentre el lugar antes de gastar esfuerzo.** La restricción está donde está la cola ahora. Haga
+visible el trabajo en proceso — tarjetas, tickets, pedidos, lo que sea — y mire dónde se acumula.
+No pregunte quién está más ocupado; pregunte delante de quién esperan las cosas.
+
+**Mida tres cosas por separado: caudal, espera e inventario en proceso.** La frase de efecto funde las
+tres, y la decisión equivocada nace de la fusión. La Ley de Little dice si sus tres medidas son
+consistentes; cuando dejan de serlo, la demanda superó la restricción.
+
+**Antes de acelerar cualquier cosa, pregunte si está antes o después de la restricción.** Si está
+antes, usted está comprando cola. Si está después, está comprando ociosidad. En los dos casos la
+salida se queda donde estaba. El único esfuerzo que se convierte en resultado es el que cae en el lugar.
+
+**Ponga la cuerda, y acepte el precio.** Limitar cuánto entra cuesta caudal — en mi modelo, 5% — y
+compra una travesía miles de veces menor. Si su operación no tolera ver gente parada a
+propósito, va a tolerar clientes esperando; es la misma cuenta, pagada por otra persona.
+
+**Cuando la restricción se rompa, revise las reglas.** Las políticas que nacieron a causa del cuello de botella
+viejo son el cuello de botella nuevo. Es el aviso del paso 5, y es la mitad de la teoría que la versión que
+circula pierde.
+
+**Para quien opera agentes: instrumente por puesto, no por modelo.** El cuello de botella se desplaza entre
+inferencia, herramientas, base de datos y revisión humana, y cambiar de modelo es acelerar el puesto equivocado
+con frecuencia suficiente para merecer una medición antes. Y mire el umbral antes de mirar la
+arquitectura — en un problema que medí, el escalar valió cien veces más.
+
+La última palabra es una regla de medir. La restricción es el lugar donde está la cola **ahora**, medida por usted
+esta semana — no el lugar que un libro de 1984, una serie de 2016 o un boletín de hoy
+recuerdan haber visto.
+
+---
+
+> **Nota de verificación.** Los números de la simulación fueron generados por mí el 25 de agosto de 2026
+> por el script publicado junto con este artículo (Python puro, semilla 20260825, 400 mil ítems por
+> corrida), a partir del archivo de resultados que graba — ninguno fue copiado de una anotación.
+> El simulador pasa cuatro autopruebas contra la fórmula cerrada de la teoría de colas, con error
+> de 0,03% en la corrida larga. El texto de Ford fue leído en la edición de 1922 en Project Gutenberg; la
+> primera edición de *The Goal* fue comprobada en catálogo bibliográfico (WorldCat e Internet
+> Archive); la redacción de los cinco pasos viene del texto oficial publicado por la North River Press y
+> firmado por Goldratt, **adaptado del libro de 1990 — el libro completo no fue leído**: el
+> ejemplar del Internet Archive es de acceso restringido y la edición impresa no estaba a mano. Los
+> números de *capacity drop* vienen de Hall y Agyemang-Duah (1991), Banks (1991) y Cassidy y
+> Bertini (1999), leídos en las primarias; el valor por defecto de 7% del *Highway Capacity Manual* viene de
+> una síntesis secundaria; el estudio de los semáforos de rampa de Minnesota, del informe del
+> departamento de transporte. Las críticas académicas a la TOC fueron leídas en la sección que las cita,
+> no en los artículos completos. El original en inglés del boletín fue extraído de la página
+> publicada el 25 de agosto de 2026; la serie de Forte fue leída en copias de Wayback Machine,
+> porque Medium bloquea la lectura automatizada. Los casos Spanx y Kit no fueron comprobados
+> más allá del relato del autor. No medí la recepción de la serie en Reddit. Las citas en inglés
+> (boletín, Ford, Goldratt, arXiv) fueron traducidas por mí; el simulador y las fuentes son los
+> mismos del original en portugués.
+
+## Fuentes
+
+- Nathan Barry, [*Obsess Over Your Bottlenecks*](https://nathan.kit.com/posts/obsess-over-your-bottlenecks) (Kit, 25/08/2026)
+- Tiago Forte, série *Theory of Constraints* (Praxis, 2016-2017): [índice](https://medium.com/praxis-blog/theory-of-constraints-101-table-of-contents-8bbb6627915b) ·
+  [101](https://medium.com/praxis-blog/theory-of-constraints-101-2d4d9cf1916a) ·
+  [102](https://medium.com/praxis-blog/theory-of-constraints-102-local-optima-3ca8d348f146) ·
+  [103](https://praxis.fortelabs.co/theory-of-constraints-103-the-four-fundamental-principles-of-flow-27925a55048b/) ·
+  [104](https://praxis.fortelabs.co/theory-of-constraints-104-balance-flow-not-capacity-60baa74ce9f4/) ·
+  [105](https://medium.com/praxis-blog/theory-of-constraints-105-drum-buffer-rope-at-microsoft-fda187c6d1d9) ·
+  [106](https://praxis.fortelabs.co/theory-of-constraints-106-the-five-focusing-steps-741f1b770bf1/) ·
+  [107](https://praxis.fortelabs.co/theory-of-constraints-107-identifying-the-constraint-29c7922a69d4/) ·
+  [108](https://praxis.fortelabs.co/theory-of-constraints-108-optimizing-the-constraint-512162cd6548/) ·
+  109, 110 y 111 detrás del muro de pago de Praxis
+- Eliyahu M. Goldratt, [*The Five Steps of Focusing*](https://northriverpress.com/wp-content/uploads/2018/01/Free-download-5FS.pdf) — texto oficial de North River Press, adaptado de *What Is This Thing Called the Theory of Constraints and How Should It Be Implemented?* (1990, ISBN 0884270858)
+- North River Press, [Eliyahu M. Goldratt (1947-2011)](https://northriverpress.com/eliyahu-m-goldratt-1947-2011/)
+- Goldratt y Cox, *The Goal: Excellence in Manufacturing* (1984) — [WorldCat OCLC 12721255](https://www.worldcat.org/oclc/12721255); revisión de 1986, [Internet Archive](https://archive.org/details/goalprocessofo00gold)
+- Henry Ford y Samuel Crowther, [*My Life and Work*](https://www.gutenberg.org/ebooks/7213) (1922), capítulo V
+- The Henry Ford, [*Ford Methods and the Ford Shops*](https://www.thehenryford.org/collections/explore/articles/ford-methods-and-the-ford-shops) · Library of Congress, [*This Month in Business History*](https://guides.loc.gov/this-month-in-business-history/October/Ford) · Ford Motor Company, [*The Moving Assembly Line and the Five-Dollar Workday*](https://corporate.ford.com/articles/history/moving-assembly-line/)
+- John D. C. Little, [*A Proof for the Queuing Formula: L = λW*](https://doi.org/10.1287/opre.9.3.383), *Operations Research* 9(3), 1961
+- J. H. Banks, [*Two-Capacity Phenomenon at Freeway Bottlenecks*](https://onlinepubs.trb.org/Onlinepubs/trr/1991/1320/1320-011.pdf), TRR 1320 (1991) · F. L. Hall y K. Agyemang-Duah, [*Freeway Capacity Drop and the Definition of Capacity*](https://onlinepubs.trb.org/Onlinepubs/trr/1991/1320/1320-012.pdf), TRR 1320 (1991) · M. J. Cassidy y R. L. Bertini, [*Some traffic features at freeway bottlenecks*](https://doi.org/10.1016/S0191-2615%2898%2900023-X), Transportation Research B 33(1), 1999
+- McTrans Center, [*Analyzing Active and Hidden Bottlenecks*](https://mctrans.ce.ufl.edu/analyzing-active-and-hidden-bottlenecks/) (valor por defecto del HCM)
+- Minnesota DOT, [*Twin Cities Ramp Meter Evaluation*](https://www.dot.state.mn.us/rampmeter/study.html) (2001)
+- [*From LLM Inference to Agentic Workloads: Characterization and Implications for Serving Systems*](https://arxiv.org/abs/2608.15127) (arXiv, 15/08/2026)
+- Ulisses Flores, *Operating-Point Dominance* — [10.5281/zenodo.21708708](https://doi.org/10.5281/zenodo.21708708) · [repositorio](https://github.com/ulissesflores/operating-point-dominance)
+- Crítica académica: D. Trietsch, [*From the Flawed "Theory of Constraints" to Hierarchically Balancing Criticalities*](http://web.archive.org/web/20170808224422/http://ac.aua.am:80/trietsch/web/WorkingPaper281.pdf) (2004, copia de Wayback — el host original no responde) y *Human Systems Management* 24 (2005) · A. Linhares, [*Theory of constraints and the combinatorial complexity of the product-mix decision*](https://doi.org/10.1016/j.ijpe.2009.04.023), IJPE 121(1), 2009 · M. Gupta y D. Snyder, *Comparing TOC with MRP and JIT: a literature review*, IJPR 47(13), 2009 · D. Nave, *How to compare Six Sigma, Lean and the Theory of Constraints*, Quality Progress 35(3), 2002
+- Simulador de este artículo: [`fila.py`](https://ulissesflores.com/artigos/teoria-das-restricoes/fila.py) y [`resultados.json`](https://ulissesflores.com/artigos/teoria-das-restricoes/resultados.json), publicados junto con el texto
+
+*Verificado el 25 de agosto de 2026. Los números de la simulación son reproducibles con el script y la
+semilla indicados; los de tráfico, Ford y Little fueron comprobados en las fuentes listadas; lo que
+no fue comprobado está declarado como tal en el cuerpo.*

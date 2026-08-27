@@ -1,0 +1,413 @@
+{
+  "semente": 20260825,
+  "linha_base": [
+    10.0,
+    10.0,
+    4.0,
+    10.0,
+    10.0
+  ],
+  "restricao": {
+    "posto": 3,
+    "capacidade": 4.0
+  },
+  "experimentos": {
+    "experimento_1": {
+      "titulo": "A saída do sistema não passa da restrição",
+      "linha": [
+        10.0,
+        10.0,
+        4.0,
+        10.0,
+        10.0
+      ],
+      "capacidade_da_restricao": 4.0,
+      "k_itens": 400000,
+      "pontos": [
+        {
+          "demanda_oferecida": 0.5,
+          "estavel": true,
+          "vazao": 0.5005543470505454,
+          "tempo_de_travessia": 0.7067365200668589,
+          "trabalho_em_curso": 0.35375874732525503,
+          "trabalho_em_curso_no_fim_da_janela": 0,
+          "residuo_de_little": 3.6465913448884786e-06
+        },
+        {
+          "demanda_oferecida": 1.0,
+          "estavel": true,
+          "vazao": 1.0011006187630038,
+          "tempo_de_travessia": 0.778102581010751,
+          "trabalho_em_curso": 0.7789645552025246,
+          "trabalho_em_curso_no_fim_da_janela": 2,
+          "residuo_de_little": 7.163216264712297e-06
+        },
+        {
+          "demanda_oferecida": 1.5,
+          "estavel": true,
+          "vazao": 1.5016542705914218,
+          "tempo_de_travessia": 0.871334292193092,
+          "trabalho_em_curso": 1.3084476989391232,
+          "trabalho_em_curso_no_fim_da_janela": 2,
+          "residuo_de_little": 3.6974764958863773e-06
+        },
+        {
+          "demanda_oferecida": 2.0,
+          "estavel": true,
+          "vazao": 2.0022101507376733,
+          "tempo_de_travessia": 1.0003136797838548,
+          "trabalho_em_curso": 2.002839458794839,
+          "trabalho_em_curso_no_fim_da_janela": 2,
+          "residuo_de_little": 6.267151592054687e-07
+        },
+        {
+          "demanda_oferecida": 2.5,
+          "estavel": true,
+          "vazao": 2.5027685210917787,
+          "tempo_de_travessia": 1.2031395491058228,
+          "trabalho_em_curso": 3.0111763842104238,
+          "trabalho_em_curso_no_fim_da_janela": 2,
+          "residuo_de_little": 1.1310437354197573e-06
+        },
+        {
+          "demanda_oferecida": 3.0,
+          "estavel": true,
+          "vazao": 3.0032858918191447,
+          "tempo_de_travessia": 1.5870687889502395,
+          "trabalho_em_curso": 4.766505918811916,
+          "trabalho_em_curso_no_fim_da_janela": 5,
+          "residuo_de_little": 1.7752125478716653e-05
+        },
+        {
+          "demanda_oferecida": 3.5,
+          "estavel": true,
+          "vazao": 3.503742856395919,
+          "tempo_de_travessia": 2.659251340490924,
+          "trabalho_em_curso": 9.317808191259184,
+          "trabalho_em_curso_no_fim_da_janela": 13,
+          "residuo_de_little": 5.1010242224331373e-05
+        },
+        {
+          "demanda_oferecida": 4.0,
+          "estavel": false,
+          "vazao": 4.0044306780838745,
+          "tempo_de_travessia": 199.67939504446684,
+          "trabalho_em_curso": 799.527498601601,
+          "trabalho_em_curso_no_fim_da_janela": 735,
+          "residuo_de_little": 9.355112340985094e-05
+        },
+        {
+          "demanda_oferecida": 4.5,
+          "estavel": false,
+          "vazao": 4.001627559633558,
+          "tempo_de_travessia": 4297.46394839572,
+          "trabalho_em_curso": 19360.216625636087,
+          "trabalho_em_curso_no_fim_da_janela": 30529,
+          "residuo_de_little": 0.11174288465034402
+        },
+        {
+          "demanda_oferecida": 5.0,
+          "estavel": false,
+          "vazao": 4.0101271561284335,
+          "tempo_de_travessia": 7056.112972842457,
+          "trabalho_em_curso": 35291.14759532402,
+          "trabalho_em_curso_no_fim_da_janela": 54622,
+          "residuo_de_little": 0.19821507156500645
+        },
+        {
+          "demanda_oferecida": 5.5,
+          "estavel": false,
+          "vazao": 4.006704000234577,
+          "tempo_de_travessia": 8955.936385068999,
+          "trabalho_em_curso": 49301.67080826556,
+          "trabalho_em_curso_no_fim_da_janela": 75150,
+          "residuo_de_little": 0.2721588223763334
+        },
+        {
+          "demanda_oferecida": 6.0,
+          "estavel": false,
+          "vazao": 4.005138289906654,
+          "tempo_de_travessia": 10295.3613161285,
+          "trabalho_em_curso": 61848.880731995,
+          "trabalho_em_curso_no_fim_da_janela": 92790,
+          "residuo_de_little": 0.33330489852633494
+        },
+        {
+          "demanda_oferecida": 6.5,
+          "estavel": false,
+          "vazao": 4.005090174132937,
+          "tempo_de_travessia": 11255.127907379641,
+          "trabalho_em_curso": 73274.59719129869,
+          "trabalho_em_curso_no_fim_da_janela": 108068,
+          "residuo_de_little": 0.3848099625471763
+        },
+        {
+          "demanda_oferecida": 7.0,
+          "estavel": false,
+          "vazao": 4.0048041544155435,
+          "tempo_de_travessia": 11954.531144065728,
+          "trabalho_em_curso": 83824.64999314578,
+          "trabalho_em_curso_no_fim_da_janela": 121646,
+          "residuo_de_little": 0.4288606514460944
+        }
+      ]
+    },
+    "experimento_2": {
+      "titulo": "Melhorar o lugar errado",
+      "k_itens": 400000,
+      "cenarios": {
+        "empurra_base": {
+          "linha": [
+            10.0,
+            10.0,
+            4.0,
+            10.0,
+            10.0
+          ],
+          "politica": "empurra",
+          "corda": null,
+          "descricao": "Empurra: libera trabalho assim que o primeiro posto fica livre",
+          "vazao": 4.017926214658558,
+          "tempo_de_travessia": 13502.476303324382,
+          "trabalho_em_curso": 134786.51499940376,
+          "trabalho_em_curso_no_fim_da_janela": 179455,
+          "residuo_de_little": 0.5974971717150415,
+          "crescimento_da_espera_por_item": 0.15032356009827166,
+          "espera_do_ultimo_item": 59982.44299331943
+        },
+        "empurra_dobra_o_primeiro": {
+          "linha": [
+            20.0,
+            10.0,
+            4.0,
+            10.0,
+            10.0
+          ],
+          "politica": "empurra",
+          "corda": null,
+          "descricao": "Empurra + dobra a capacidade do posto 1 (10 -> 20): esforço FORA da restrição",
+          "vazao": 4.0051018279922035,
+          "tempo_de_travessia": 13187.631129836274,
+          "trabalho_em_curso": 263289.3628219671,
+          "trabalho_em_curso_no_fim_da_janela": 287454,
+          "residuo_de_little": 0.7993925581387469,
+          "crescimento_da_espera_por_item": 0.2003851357988977,
+          "espera_do_ultimo_item": 79981.27568275295
+        },
+        "empurra_eleva_a_restricao": {
+          "linha": [
+            10.0,
+            10.0,
+            5.0,
+            10.0,
+            10.0
+          ],
+          "politica": "empurra",
+          "corda": null,
+          "descricao": "Empurra + eleva a restrição (4 -> 5): +25% no lugar certo",
+          "vazao": 5.017798923258826,
+          "tempo_de_travessia": 10209.986122006587,
+          "trabalho_em_curso": 101905.20780194855,
+          "trabalho_em_curso_no_fim_da_janela": 143305,
+          "residuo_de_little": 0.4972616368237012,
+          "crescimento_da_espera_por_item": 0.1002354113204953,
+          "espera_do_ultimo_item": 39986.8218146288
+        },
+        "corda_base": {
+          "linha": [
+            10.0,
+            10.0,
+            4.0,
+            10.0,
+            10.0
+          ],
+          "politica": "corda",
+          "corda": 6,
+          "descricao": "Corda (CONWIP=6) na mesma linha base: mesma capacidade, outra política",
+          "vazao": 3.812631803937712,
+          "tempo_de_travessia": 1.5190087942868502,
+          "trabalho_em_curso": 5.791370945185113,
+          "trabalho_em_curso_no_fim_da_janela": 4,
+          "residuo_de_little": 8.684364114391697e-06,
+          "crescimento_da_espera_por_item": -6.994642747376929e-06,
+          "espera_do_ultimo_item": 0.6285342946648598
+        },
+        "corda_dobra_o_primeiro": {
+          "linha": [
+            20.0,
+            10.0,
+            4.0,
+            10.0,
+            10.0
+          ],
+          "politica": "corda",
+          "corda": 6,
+          "descricao": "Corda + dobra o posto 1: a melhoria fora da restrição sob política certa",
+          "vazao": 3.8735114157113206,
+          "tempo_de_travessia": 1.5374975014234438,
+          "trabalho_em_curso": 5.955458533248859,
+          "trabalho_em_curso_no_fim_da_janela": 6,
+          "residuo_de_little": 9.334317781204594e-06,
+          "crescimento_da_espera_por_item": -7.616741547972197e-06,
+          "espera_do_ultimo_item": 0.6285342946648598
+        },
+        "_leitura": {
+          "ganho_de_vazao_dobrando_o_primeiro_pct": -0.31917924773150474,
+          "ganho_de_vazao_elevando_a_restricao_pct": 24.88529293923922,
+          "piora_da_espera_dobrando_o_primeiro_pct": 33.30254796247445,
+          "queda_da_espera_com_a_corda_pct": 99.9887501465645
+        }
+      }
+    },
+    "experimento_3": {
+      "titulo": "O resíduo de Little denuncia a fila que não fecha",
+      "k_itens": 400000,
+      "pontos": [
+        {
+          "ocupacao_da_restricao": 0.55,
+          "demanda_oferecida": 2.2,
+          "estavel": true,
+          "tempo_de_travessia_previsto": 1.0683760683760686,
+          "erro_contra_a_forma_fechada_pct": 0.08500344620099226,
+          "vazao": 2.202433126728457,
+          "tempo_de_travessia": 1.069284224852575,
+          "trabalho_em_curso": 2.355026473230369,
+          "trabalho_em_curso_no_fim_da_janela": 2,
+          "residuo_de_little": 2.231283205913113e-07
+        },
+        {
+          "ocupacao_da_restricao": 0.6,
+          "demanda_oferecida": 2.4,
+          "estavel": true,
+          "tempo_de_travessia_previsto": 1.151315789473684,
+          "erro_contra_a_forma_fechada_pct": 0.17498598076129215,
+          "vazao": 2.4026565277137593,
+          "tempo_de_travessia": 1.1533304306995542,
+          "trabalho_em_curso": 2.7710545247848053,
+          "trabalho_em_curso_no_fim_da_janela": 2,
+          "residuo_de_little": 8.527967886452716e-07
+        },
+        {
+          "ocupacao_da_restricao": 0.65,
+          "demanda_oferecida": 2.6,
+          "estavel": true,
+          "tempo_de_travessia_previsto": 1.2548262548262548,
+          "erro_contra_a_forma_fechada_pct": 0.40175477418892713,
+          "vazao": 2.602880618849321,
+          "tempo_de_travessia": 1.2598675792127954,
+          "trabalho_em_curso": 3.2792804558503135,
+          "trabalho_em_curso_no_fim_da_janela": 2,
+          "residuo_de_little": 1.356516877114392e-06
+        },
+        {
+          "ocupacao_da_restricao": 0.7,
+          "demanda_oferecida": 2.8,
+          "estavel": true,
+          "tempo_de_travessia_previsto": 1.3888888888888888,
+          "erro_contra_a_forma_fechada_pct": 0.6813161932306233,
+          "vazao": 2.8031051275026364,
+          "tempo_de_travessia": 1.3983516137948697,
+          "trabalho_em_curso": 3.9197192255682154,
+          "trabalho_em_curso_no_fim_da_janela": 2,
+          "residuo_de_little": 1.8759281843894038e-06
+        },
+        {
+          "ocupacao_da_restricao": 0.75,
+          "demanda_oferecida": 3.0,
+          "estavel": true,
+          "tempo_de_travessia_previsto": 1.5714285714285714,
+          "erro_contra_a_forma_fechada_pct": 0.9952865695606979,
+          "vazao": 3.0032858918191447,
+          "tempo_de_travessia": 1.5870687889502395,
+          "trabalho_em_curso": 4.766505918811916,
+          "trabalho_em_curso_no_fim_da_janela": 5,
+          "residuo_de_little": 1.7752125478716653e-05
+        },
+        {
+          "ocupacao_da_restricao": 0.8,
+          "demanda_oferecida": 3.2,
+          "estavel": true,
+          "tempo_de_travessia_previsto": 1.8382352941176472,
+          "erro_contra_a_forma_fechada_pct": 1.230646737411102,
+          "vazao": 3.2034454833008,
+          "tempo_de_travessia": 1.8608574767906454,
+          "trabalho_em_curso": 5.961433969186477,
+          "trabalho_em_curso_no_fim_da_janela": 9,
+          "residuo_de_little": 4.6715286355648594e-05
+        },
+        {
+          "ocupacao_da_restricao": 0.85,
+          "demanda_oferecida": 3.4000000000000004,
+          "estavel": true,
+          "tempo_de_travessia_previsto": 2.272727272727274,
+          "erro_contra_a_forma_fechada_pct": 1.5497709978521848,
+          "vazao": 3.403618918362168,
+          "tempo_de_travessia": 2.307949340860278,
+          "trabalho_em_curso": 7.855817804119755,
+          "trabalho_em_curso_no_fim_da_janela": 12,
+          "residuo_de_little": 5.572493623613639e-05
+        },
+        {
+          "ocupacao_da_restricao": 0.9,
+          "demanda_oferecida": 3.6,
+          "estavel": true,
+          "tempo_de_travessia_previsto": 3.1250000000000004,
+          "erro_contra_a_forma_fechada_pct": 1.6900375690465095,
+          "vazao": 3.603885459896149,
+          "tempo_de_travessia": 3.177813674032704,
+          "trabalho_em_curso": 11.452878756916942,
+          "trabalho_em_curso_no_fim_da_janela": 15,
+          "residuo_de_little": 3.512329256744949e-05
+        },
+        {
+          "ocupacao_da_restricao": 0.95,
+          "demanda_oferecida": 3.8,
+          "estavel": true,
+          "tempo_de_travessia_previsto": 5.6451612903225765,
+          "erro_contra_a_forma_fechada_pct": 0.8061116274179616,
+          "vazao": 3.803952850227055,
+          "tempo_de_travessia": 5.690667591870365,
+          "trabalho_em_curso": 21.64840643207255,
+          "trabalho_em_curso_no_fim_da_janela": 30,
+          "residuo_de_little": 6.352552031297493e-05
+        },
+        {
+          "ocupacao_da_restricao": 1.0,
+          "demanda_oferecida": 4.0,
+          "estavel": false,
+          "tempo_de_travessia_previsto": null,
+          "erro_contra_a_forma_fechada_pct": null,
+          "vazao": 4.0044306780838745,
+          "tempo_de_travessia": 199.67939504446684,
+          "trabalho_em_curso": 799.527498601601,
+          "trabalho_em_curso_no_fim_da_janela": 735,
+          "residuo_de_little": 9.355112340985094e-05
+        },
+        {
+          "ocupacao_da_restricao": 1.05,
+          "demanda_oferecida": 4.2,
+          "estavel": false,
+          "tempo_de_travessia_previsto": null,
+          "erro_contra_a_forma_fechada_pct": null,
+          "vazao": 4.002575128775654,
+          "tempo_de_travessia": 2046.3794490874986,
+          "trabalho_em_curso": 8596.864722973725,
+          "trabalho_em_curso_no_fim_da_janela": 13470,
+          "residuo_de_little": 0.04723550376840314
+        },
+        {
+          "ocupacao_da_restricao": 1.1,
+          "demanda_oferecida": 4.4,
+          "estavel": false,
+          "tempo_de_travessia_previsto": null,
+          "erro_contra_a_forma_fechada_pct": null,
+          "vazao": 4.000746835730243,
+          "tempo_de_travessia": 3607.2404440736777,
+          "trabalho_em_curso": 15888.094823796573,
+          "trabalho_em_curso_no_fim_da_janela": 25172,
+          "residuo_de_little": 0.09166857622660037
+        }
+      ]
+    }
+  }
+}

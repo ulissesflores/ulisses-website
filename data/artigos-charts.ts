@@ -4071,4 +4071,144 @@ export const stepFlowDatasets: Record<string, StepFlowDataset> = {
       { label: 'senza data', detail: 'API di rilevamento', alert: true },
     ],
   },
+  'restricao-cinco-passos': {
+    orientation: 'chain',
+    steps: [
+      {
+        label: 'Identifique as restrições do sistema',
+        detail: 'Onde a fila se forma: o forno, o posto 3, a revisão humana.',
+      },
+      {
+        label: 'Decida como explorar as restrições',
+        detail: 'Explorar (exploit), não otimizar: tirar o máximo do que já existe antes de gastar.',
+      },
+      {
+        label: 'Subordine todo o resto à decisão acima',
+        detail: 'É a corda: o posto rápido espera pelo forno. Custa 5% de vazão, compra a travessia.',
+        alert: true,
+      },
+      {
+        label: 'Eleve as restrições do sistema',
+        detail: 'Só agora comprar capacidade: +25% aqui rendeu +24,9% de saída.',
+        alert: true,
+      },
+      {
+        label: 'Se uma restrição foi quebrada, volte ao passo um',
+        detail: 'Mas não deixe a inércia virar a restrição do sistema.',
+        alert: true,
+      },
+    ],
+  },
+  'restricao-cinco-passos-it': {
+    orientation: 'chain',
+    steps: [
+      {
+        label: 'Identificare i vincoli del sistema',
+        detail: 'Dove si forma la coda: il forno, il posto 3, la revisione umana.',
+      },
+      {
+        label: 'Decidere come sfruttare i vincoli',
+        detail: 'Sfruttare (exploit), non ottimizzare: spremere ciò che esiste prima di spendere.',
+      },
+      {
+        label: 'Subordinare tutto il resto alla decisione di cui sopra',
+        detail: 'È la corda: il posto veloce aspetta il forno. Costa il 5%, compra l\'attraversamento.',
+        alert: true,
+      },
+      {
+        label: 'Elevare i vincoli del sistema',
+        detail: 'Solo ora comprare capacità: +25% qui ha reso +24,9% di uscita.',
+        alert: true,
+      },
+      {
+        label: 'Se un vincolo è stato rotto, tornare al passo uno',
+        detail: 'Ma non lasciate che l\'inerzia diventi il vincolo del sistema.',
+        alert: true,
+      },
+    ],
+  },
+  'restricao-cinco-passos-en': {
+    orientation: 'chain',
+    steps: [
+      {
+        label: 'Identify the system\'s constraints',
+        detail: 'Where the queue forms: the oven, station 3, the human review.',
+      },
+      {
+        label: 'Decide how to exploit the constraints',
+        detail: 'Exploit, not optimize: get the most from what exists before spending.',
+      },
+      {
+        label: 'Subordinate everything else to the above decision',
+        detail: 'It is the rope: the fast station waits for the oven. Costs 5%, buys the lead time.',
+        alert: true,
+      },
+      {
+        label: 'Elevate the system\'s constraints',
+        detail: 'Only now buy capacity: +25% here returned +24.9% of output.',
+        alert: true,
+      },
+      {
+        label: 'If a constraint has been broken, go back to step one',
+        detail: 'But do not allow inertia to become the system\'s constraint.',
+        alert: true,
+      },
+    ],
+  },
+  'restricao-cinco-passos-he': {
+    orientation: 'chain',
+    steps: [
+      {
+        label: 'זהו את האילוצים של המערכת',
+        detail: 'היכן שנוצר התור: התנור, עמדה 3, הבקרה האנושית.',
+      },
+      {
+        label: 'החליטו כיצד לנצל את האילוצים',
+        detail: 'לנצל (exploit), לא לייעל: להוציא את המרב מהקיים לפני שמוציאים כסף.',
+      },
+      {
+        label: 'הכפיפו את כל השאר להחלטה שלמעלה',
+        detail: 'זהו החבל: העמדה המהירה ממתינה לתנור. עולה 5% מהתפוקה, קונה את זמן המעבר.',
+        alert: true,
+      },
+      {
+        label: 'הרימו את האילוצים של המערכת',
+        detail: 'רק עכשיו לקנות קיבולת: +25% כאן הניבו +24.9% בתפוקה.',
+        alert: true,
+      },
+      {
+        label: 'אם אילוץ נשבר, חזרו לצעד הראשון',
+        detail: 'אבל אל תיתנו לאינרציה להפוך לאילוץ של המערכת.',
+        alert: true,
+      },
+    ],
+  },
+  'restricao-cinco-passos-es': {
+    orientation: 'chain',
+    steps: [
+      {
+        label: 'Identifique las restricciones del sistema',
+        detail: 'Donde se forma la cola: el horno, el puesto 3, la revisión humana.',
+      },
+      {
+        label: 'Decida cómo explotar las restricciones',
+        detail: 'Explotar (exploit), no optimizar: sacar el máximo de lo que ya existe antes de gastar.',
+      },
+      {
+        label: 'Subordine todo lo demás a la decisión anterior',
+        detail: 'Es la cuerda: el puesto rápido espera al horno. Cuesta 5% de caudal, compra la travesía.',
+        alert: true,
+      },
+      {
+        label: 'Eleve las restricciones del sistema',
+        detail: 'Solo ahora comprar capacidad: +25% aquí rindió +24,9% de salida.',
+        alert: true,
+      },
+      {
+        label: 'Si una restricción fue rota, vuelva al paso uno',
+        detail: 'Pero no deje que la inercia se vuelva la restricción del sistema.',
+        alert: true,
+      },
+    ],
+  },
 };
