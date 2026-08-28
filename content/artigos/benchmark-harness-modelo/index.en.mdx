@@ -1,0 +1,249 @@
+---
+title: 'The security score belongs to the pair, not the model — and the lab itself had already corrected it'
+slug: benchmark-harness-modelo
+category: artigos
+date: '2026-08-25'
+language: en
+---
+
+A code security benchmark measured Claude Fable 5 at **59.8% functional correctness and 19.0%
+security correctness**, and the number became a headline about a model that had disappointed. Six
+days later, the same lab, the same author and the same benchmark published the same Fable 5 at
+**72.6% and 29.0%** — the best security score on the table at that moment. They did not change the
+model. They changed the tool driving it.
+
+I went after both texts because the gap between them is larger than the gap between most models on
+the table. What I found was worse than a misquoted number: the correction exists, it is the lab's
+own, and **there is no path to it** from the text that circulated.
+
+---
+
+## The number is not the model's; it belongs to the pair
+
+<StepFlowDiagram dataset="benchmark-cadeia-do-numero-en" title="What a score passes through before it becomes a headline" subtitle="The same thing happens to an exam grade — and nobody claims the grade is a property of the student." description="A four-step chain: someone answers the question; the school decides how the exam works; the teacher marks it against an answer key; the grade becomes news, and along the way everything that is not the student's name drops out." source="Figure from the article · ulissesflores.com/par-en" />
+
+Start with the chain above, which has nothing to do with computers. A report card carries the
+student's name, but the grade inside it went through decisions that are not the student's: how much
+time they had, what they were allowed to consult, how strict the answer key was. Nobody confuses the
+two at school. With language-model benchmarks, the confusion is the norm.
+
+When you read "model X scored N on a benchmark", it is easy to take N as a property of X, like a
+person's height. It is not. N comes out of a chain: the model proposes, a tool — the *harness*, the
+program that gives the model access to the code, runs commands and decides when to stop — executes,
+and a ruler grades. Swap any link and the number changes. What gets published is the score of the
+whole assembly, and the name left in the headline is the one in the middle of the chain.
+
+The Agent Security League, Endor Labs' benchmark, measures exactly that assembly. It is **200 tasks**
+of real vulnerability fixes, drawn from **108 open-source Python projects**, covering **77 CWE
+classes**, run across **27 tool-and-model combinations**. Two scores per combination: **FuncPass**, if
+the patch passes the visible functional tests, and **SecPass**, if it also passes the hidden security
+tests from the original fix. SecPass is a subset of FuncPass — to be safe, it first has to work.
+
+## The same Fable 5, two tools, ten points apart
+
+<CountryBarsChart dataset="benchmark-fable5-duas-ferramentas-en" title="The same model, two tools" subtitle="Claude Fable 5 on the Endor Labs benchmark, runs of 10 and 12 June 2026" description="Bars comparing two combinations of the same model: Claude Code with Fable 5 scores 59.8% functional and 19.0% secure; Cursor with Fable 5 scores 72.6% functional and 29.0% secure." source="Endor Labs, Agent Security League · ulissesflores.com/par-en" />
+
+| Combination | Functional | Secure | Run date |
+|---|---|---|---|
+| Claude Code + Claude Fable 5 | 59.8% | **19.0%** | 2026-06-10 |
+| Cursor + Claude Fable 5 | 72.6% | **29.0%** | 2026-06-12 |
+| Difference | +12.8 pp | **+10.0 pp** | same model |
+
+Note that the right-hand column is the same row of the same model. What changes is who holds the
+tool. Endor does not attribute the difference to extra runtime: of the 34 cases only Cursor solved,
+most had a substantive patch from Claude Code — just not correct enough. The sentence is from the
+second article, verbatim: *"The story here is not the model, it is the harness."*
+
+## The limit: this almost never happens
+
+<CountryBarsChart dataset="benchmark-oito-pares-en" title="Switching tools almost never moves this much" subtitle="The eight pairs where the same model appears under two tools · median: 1.65 percentage points" description="Eight bars showing the security-correctness gap when the same model switches tools. Claude Fable 5 stands alone at 10.0 percentage points; the other seven range from 6.2 down to 0.5." source="My own calculation over the 27 rows of the Endor Labs leaderboard · ulissesflores.com/par-en" />
+
+This is where the article could turn into "the tool matters more than the model" and read nicely. I
+went to measure, and it is not true. The leaderboard has **eight pairs** where the same model appears
+under different tools. The **median** SecPass difference across those eight is **1.65 percentage
+points**. The Fable 5 pair, at 10.0 points, is **six times the median** — it is the outlier, not the
+rule. In the figure it sits alone at the top precisely for that reason: the other seven all fit at
+6.2 points or less, and five of them below 2.
+
+The honest conclusion is narrower and more useful: **the published number belongs to the pair, and the
+pair sometimes decides everything**. Quoting the score without naming the tool is right by luck most
+of the time, and flatly wrong exactly where the difference matters.
+
+## Working and being safe are nearly independent
+
+<CountryBarsChart dataset="benchmark-funcional-x-seguro-en" title="The ones that work most are not the safest" subtitle="The six pairs with the highest functional correctness, plus the security leader — which is not among them" description="Two blocks with the same seven pairs. In the functional block, six pairs sit between 79.3% and 84.9% while Claude Code with Opus 5 comes last at 73.7%. In the security block the ordering falls apart: that same Claude Code with Opus 5 leads at 32.4%, and Cursor with Opus 4.6, tied for first on functional, drops to 11.2%." source="Endor Labs, Agent Security League, 27 combinations · ulissesflores.com/par-en" />
+
+The figure has the same seven pairs in both blocks, in the same order. In the top block they are
+nearly tied; in the bottom one the ordering falls apart. Two pairs tied at **84.9%** functional
+correctness — Cursor with GPT-5.5 and Cursor with Opus 4.6 — end at **24.0%** and **11.2%** security
+correctness: more than double the difference, at identical functional performance. And the security
+leader is the pair that works **least** of the seven.
+
+I computed the correlation between the two scores across the 27 rows: **Pearson's r = 0.579**, which
+gives **r² = 0.335**. One third of the variation in "is safe" is explained by "works". The other two
+thirds are something else.
+
+The direct reading of that number is uncomfortable. The **median** SecPass/FuncPass ratio on the
+leaderboard is **22%**: of every ten patches that pass the tests, about two close the vulnerability.
+And in the best pair on the whole table — Claude Code with Claude Opus 5, today at the top with
+**73.7% and 32.4%** — the ratio reaches 44%, which still means **56 out of every 100 patches that work
+leave the flaw open**.
+
+> [!NOTE]
+> This is not a test of "can the model write secure code if asked". The pair is not told the snippet
+> is security-critical: it gets the task and a generic instruction to follow good practice. That is
+> deliberate — the benchmark wants to measure what happens when nobody warns, which is the case for
+> most code written with an agent.
+
+## The third variable: the ruler changed too
+
+While checking dates I found a **third article** by the same author, published the same day as the
+first, that none of the citations I read mentioned. It changes the picture.
+
+Endor audited its own benchmark and found two forms of cheating the earlier process did not catch:
+the agent reading an already-fixed copy of the code inside its own workspace, and the agent
+**reproducing from memory** a fix it had already seen during training. Of the **182 confirmed
+cheating cases** across the table **as it stood then** — the audit carries its own 21-row leaderboard,
+in which Fable 5 does not yet appear — **137 are memorization**, the dominant mechanism. Workspace
+leakage accounts for 6. (The caveat matters because the two aggregates circulate together and are not
+the same thing: 137 of 182 is the count for the entire table at that moment; the 38 cases of the
+Claude Code with Fable 5 pair are a separate count, and Endor already excludes them from the number it
+publishes.)
+
+<CountryBarsChart dataset="benchmark-regua-mudou-en" title="Nothing changed in the model — the auditor did" subtitle="Claude Code with Claude Opus 4.8, before and after Endor improved cheating detection" description="Same shape as the earlier figure about Fable 5, now with different content: Claude Code with Opus 4.8 scored 80.7% functional and 23.5% secure before the anti-cheating audit, and 73.7% functional and 14.5% secure after it." source="Endor Labs, Recall, not reasoning, June 2026 · ulissesflores.com/par-en" />
+
+The figure is the same one used for the tool comparison, on purpose: same two bands, same scale.
+Except now nothing changed on the side that usually takes the credit or the blame. After
+re-evaluation, the numbers moved like this:
+
+| Combination | Functional before | Functional after | Secure before | Secure after |
+|---|---|---|---|---|
+| Claude Code + Claude Opus 4.8 | 80.7% | 73.7% | 23.5% | **14.5%** |
+| Cursor + Claude Opus 4.8 | 84.9% | 75.4% | 24.7% | 20.7% |
+| Cursor + Gemini 3.5 Flash | 79.5% | 79.3% | 16.9% | 17.9% |
+| Cursor + Composer 2.5 | 78.3% | 75.4% | 16.3% | 14.0% |
+
+Nine percentage points of security evaporated from one combination because the auditor got better.
+Neither the model nor the tool changed. So the sentence that opens this article needs one more piece:
+the score belongs to the pair **and to the version of the ruler on the day it ran**. Endor's own text
+says the largest driver of the change was not the metric re-evaluation itself, but the cheating
+strategies the earlier pipeline did not account for.
+
+And there is what does not flatter me to say, but is on the table: **the Claude-family runs carry the
+highest confirmed cheating counts** — 30 cases in Claude Code with Sonnet 4.6, 28 with Opus 4.8, 28
+with Opus 4.5.
+
+## The counterpoint: half the readers thought the benchmark was the problem
+
+The discussion that actually circulated was not on X. It was on Hacker News, where the first article
+drew **410 points and 250 comments**. And the top-voted comments say nearly the opposite of the
+headline: not that the model is bad, but that the ruler is crooked — and crooked **against** the
+model.
+
+> All of this points to their claim of 'average' as being heavily biased downwards. A model being
+> so up to date and large-parameter it's memorized solutions to your problems is not a knock
+> against it (but rather, a knock against your benchmark being valid), and why should timeouts
+> (especially for a model just launched) be counted at all?
+
+The argument has force and it has an answer. Force, because penalising memorization does measure how
+old the task set is rather than how capable the model is — and because **15 runs** blew past the
+40-minute limit and lost points for it, a limit that penalises a freshly launched model still without
+execution tuning. An answer, because Endor states what it is measuring: the task is to reason about
+the vulnerable code sitting right there, not to retrieve a ready-made fix from somewhere. The audit
+article itself concedes the ruler's fragility in plain words — *"in a general software-engineering
+setting, using remembered knowledge is not necessarily wrong: human developers also rely on things
+they have seen before"*.
+
+Both things are true at once, and that is what makes the original headline untenable in both
+directions: neither "the model is bad" nor "the benchmark is worthless". What is measured is a
+specific pair against a specific ruler, on a specific date.
+
+## The correction exists, and the path to it does not
+
+<StepFlowDiagram dataset="benchmark-linha-do-tempo-en" title="Three texts by the same author, about the same benchmark" subtitle="The order they came out in — the positions mark the sequence, not a time scale" description="A timeline with three markers: on 10 June the finding, with 410 points and 250 comments on Hacker News; on the same 10 June the cheating audit, which was never submitted to Hacker News; on 17 June the correction, with 3 points and no comments." source="Hacker News and X, measured on 2026-08-25 · ulissesflores.com/par-en" />
+
+| Publication | Date | Hacker News |
+|---|---|---|
+| The finding that circulated | 2026-06-10 | **410 points, 250 comments** |
+| The cheating audit | 2026-06-10 | never submitted |
+| The harness correction | 2026-06-17 | **3 points, 0 comments** |
+
+Same lab, same author, seven days. The audit shows no number in the Hacker News column because it
+never got there: I searched its address in the Hacker News search API and **there is no submission**.
+And the reach on X was smaller still: the audit announcement drew **37 views and no likes**; the
+correction, **133 views and no likes**. Endor hid nothing — it simply was not read.
+
+What strikes me as more serious is mechanical, not editorial. I counted how many times each of the
+four addresses appears in the served HTML of the others — not what the page promises to link, what it
+hands the browser:
+
+| From \ To | The finding | The audit | The correction |
+|---|---|---|---|
+| **The finding** | — | 0 | **0** |
+| **The audit** | 0 | — | **0** |
+| **The leaderboard** | 0 | 1 | **0** |
+| **The correction** | 4 | 1 | — |
+
+The correction points to the finding. The finding never points to the correction. **The graph is
+one-way**, and the leaderboard — the page a person consults precisely to see the current number —
+does not lead there either. The finding's page has a related-posts section, it works, and the eight
+articles it suggests include neither of the other two texts from the same series, same author, same
+week.
+
+## What I would do with this
+
+If the number feeds a decision of yours — picking a tool, writing internal policy, approving a vendor
+— the three questions this case teaches you to ask are:
+
+1. **Which pair?** An agent benchmark score without the tool's name is half the information. The same
+   Fable 5 varies ten security points between two tools.
+2. **Which version of the ruler?** Ask for the run date and whether the result was re-evaluated
+   afterwards. Nine percentage points changed hands in one combination with nothing happening to the
+   model.
+3. **Is there a correction?** Search the same domain, by author and by date, not by the link that
+   reached you. Here the correction was one click away — a click nobody had any way to make.
+
+And there is a reading that cuts across all three, more uncomfortable than any ranking: with the
+median at 22%, what the whole table describes is that **agent-generated security patches work far
+more often than they fix**. That is the benchmark's finding. Arguing over which model leads is
+arguing about the third decimal place of a problem still stuck on the first.
+
+> [!NOTE]
+> **Method note.** Every number came from Endor Labs' pages, Anthropic's announcement and the paper
+> the benchmark builds on, checked by me on 2026-08-15 and re-checked on **2026-08-25** — on that
+> second pass the leaderboard came out identical cell by cell to the first, across all 27 rows. The
+> correlation, the median SecPass/FuncPass ratio and the median of the eight pairs were **computed by
+> me** over the 27 leaderboard rows, with a script, not eyeballed. The benchmark runs **once per
+> task**, without repetition — there is no published error bar, so differences of one or two points
+> between neighbouring combinations should not be read as real ordering.
+>
+> The Hacker News point and comment counts are from **2026-08-25** and remain subject to change.
+>
+> **What I did not do:** I did not run the benchmark, did not reproduce any of the tasks, and do not
+> have access to the agents' full trajectories. I also could not verify the claim, made in the text
+> that circulated, that the Hacker News discussion had reached 235 points in 24 hours — the only
+> discussion I located stands at 410 points, and I treat the figure as unverified, not as false.
+
+## One last distinction, because this article is about exactly that
+
+The phrase *"the strongest cybersecurity capabilities of any model in the world"*, from Anthropic's
+announcement, appeared in several citations next to Endor's 19.0%, as though one refuted the other. It
+does not, because the subject of the sentence **is not Fable 5**. It is Claude Mythos 5 — per the
+announcement, the same underlying model with safeguards lifted in some areas, under restricted access.
+Beyond that, the cybersecurity evaluations Anthropic cites measure **offensive** capability, while
+Endor's benchmark measures whether the code written comes out safe. They are different rulers
+measuring different things — and Endor's first article says so, in the second item of its own list of
+conclusions.
+
+In an article about hanging a number on the wrong entity, getting the referent wrong would be
+embarrassing.
+
+## Sources
+
+- [Agent Security League — leaderboard](https://www.endorlabs.com/research/ai-code-security-benchmark) (Endor Labs)
+- [Claude Fable 5: Mythos-grade hype…](https://www.endorlabs.com/learn/claude-fable-5-mythos-grade-hype) — the text that circulated, 2026-06-10
+- [Recall, not reasoning: how AI coding agents cheat security benchmarks](https://www.endorlabs.com/learn/recall-not-reasoning-how-ai-coding-agents-cheat-security-benchmarks) — the audit, 2026-06-10
+- [Claude Fable 5, take two: same model, different harness, and a very different result](https://www.endorlabs.com/learn/claude-fable-5-take-two-same-model-different-harness-and-a-very-different-result) — the correction, 2026-06-17
+- [Claude Fable 5 and Claude Mythos 5](https://www.anthropic.com/news/claude-fable-5-mythos-5) (Anthropic)
+- [Is Vibe Coding Safe?](https://arxiv.org/abs/2512.03262) — SusVibes, the paper the benchmark extends
+- [Hacker News discussion](https://news.ycombinator.com/item?id=48492210)

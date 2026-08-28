@@ -232,6 +232,40 @@ export const artigos: readonly Artigo[] = [
       },
     },
   },
+  {
+    slug: 'benchmark-harness-modelo',
+    title:
+      'A nota de segurança é do par, não do modelo — e o próprio laboratório já tinha corrigido',
+    summary:
+      'Um benchmark de segurança de código mediu a Claude Fable 5 em 59,8% de acertos funcionais e 19,0% de acertos seguros, e o número virou manchete sobre um modelo que decepcionou. Seis dias depois, o mesmo laboratório, o mesmo autor e o mesmo benchmark publicaram a mesma Fable 5 em 72,6% e 29,0% — melhor marca de segurança da tabela naquele momento. Não trocaram o modelo; trocaram a ferramenta que o operava. Fui atrás dos dois textos e achei um terceiro, do mesmo autor e do mesmo dia, que ninguém cita: a auditoria antifraude do próprio benchmark, que derrubou 9 pontos percentuais de segurança de uma combinação sem que nada mudasse no modelo. Mostro a conclusão estreita que os dados sustentam — a nota é do par harness+modelo e da versão da régua no dia em que rodou —, o limite dela (nos oito pares do leaderboard a mediana da diferença é 1,65 ponto, e o caso da Fable 5 é seis vezes isso), o contraditório do Hacker News, que acusa o benchmark de estar torto CONTRA o modelo, e o achado mecânico: contei os links entre as quatro páginas e o grafo é de mão única — quem chega pelo texto que circulou não tem caminho até a correção. Seis figuras próprias, feitas em código, e todos os cálculos por script sobre as 27 linhas do leaderboard.',
+    date: '2026-08-25',
+    tags: ['ia', 'benchmark', 'seguranca', 'agentes', 'claude', 'metodologia'],
+    i18n: {
+      en: {
+        title:
+          'The security score belongs to the pair, not the model — and the lab itself had already corrected it',
+        summary:
+          'A code security benchmark measured Claude Fable 5 at 59.8% functional correctness and 19.0% security correctness, and the number became a headline about a model that disappointed. Six days later, the same lab, the same author and the same benchmark published the same Fable 5 at 72.6% and 29.0% — the best security score on the table at that moment. They did not change the model; they changed the tool driving it. I went after both texts and found a third, by the same author on the same day, that nobody cites: the benchmark\'s own anti-cheating audit, which knocked 9 percentage points of security off one combination without anything changing in the model. I show the narrow conclusion the data supports — the score belongs to the harness-and-model pair and to the version of the ruler on the day it ran — its limit (across the eight pairs on the leaderboard the median difference is 1.65 points, and the Fable 5 case is six times that), the Hacker News counterpoint, which accuses the benchmark of being crooked AGAINST the model, and the mechanical finding: I counted the links between the four pages and the graph is one-way — whoever arrives via the text that circulated has no path to the correction. Six original figures, made in code, and every calculation scripted over the 27 leaderboard rows.',
+      },
+      es: {
+        title:
+          'La nota de seguridad es del par, no del modelo — y el propio laboratorio ya la había corregido',
+        summary:
+          'Un benchmark de seguridad de código midió a Claude Fable 5 en 59,8% de aciertos funcionales y 19,0% de aciertos seguros, y el número se volvió titular sobre un modelo que decepcionó. Seis días después, el mismo laboratorio, el mismo autor y el mismo benchmark publicaron la misma Fable 5 en 72,6% y 29,0% — la mejor marca de seguridad de la tabla en ese momento. No cambiaron el modelo; cambiaron la herramienta que lo operaba. Fui a buscar los dos textos y encontré un tercero, del mismo autor y del mismo día, que nadie cita: la auditoría antifraude del propio benchmark, que tumbó 9 puntos porcentuales de seguridad de una combinación sin que nada cambiara en el modelo. Muestro la conclusión estrecha que los datos sostienen — la nota es del par herramienta y modelo, y de la versión de la regla el día en que se ejecutó —, su límite (en los ocho pares del leaderboard la mediana de la diferencia es 1,65 puntos, y el caso de la Fable 5 es seis veces eso), el contradictorio de Hacker News, que acusa al benchmark de estar torcido CONTRA el modelo, y el hallazgo mecánico: conté los enlaces entre las cuatro páginas y el grafo es de sentido único — quien llega por el texto que circuló no tiene camino hasta la corrección. Seis figuras propias, hechas en código, y todos los cálculos por script sobre las 27 filas del leaderboard.',
+      },
+      it: {
+        title:
+          'Il punteggio di sicurezza è della coppia, non del modello — e il laboratorio stesso lo aveva già corretto',
+        summary:
+          'Un benchmark di sicurezza del codice ha misurato Claude Fable 5 al 59,8% di correttezza funzionale e al 19,0% di correttezza di sicurezza, e il numero è diventato il titolo su un modello che ha deluso. Sei giorni dopo, lo stesso laboratorio, lo stesso autore e lo stesso benchmark hanno pubblicato la stessa Fable 5 al 72,6% e al 29,0% — il miglior punteggio di sicurezza della tabella in quel momento. Non hanno cambiato il modello; hanno cambiato lo strumento che lo guidava. Sono andato a cercare i due testi e ne ho trovato un terzo, dello stesso autore e dello stesso giorno, che nessuno cita: la verifica antifrode del benchmark stesso, che ha tolto 9 punti percentuali di sicurezza a una combinazione senza che nel modello cambiasse nulla. Mostro la conclusione stretta che i dati reggono — il punteggio è della coppia strumento e modello, e della versione del metro nel giorno in cui è stata eseguita —, il suo limite (nelle otto coppie della leaderboard la mediana della differenza è 1,65 punti, e il caso della Fable 5 è sei volte tanto), il contraddittorio di Hacker News, che accusa il benchmark di essere storto CONTRO il modello, e la scoperta meccanica: ho contato i link fra le quattro pagine e il grafo è a senso unico — chi arriva dal testo che è circolato non ha alcun percorso verso la correzione. Sei figure originali, fatte in codice, e tutti i calcoli via script sulle 27 righe della leaderboard.',
+      },
+      he: {
+        title: 'ציון האבטחה שייך לצמד, לא למודל — והמעבדה עצמה כבר תיקנה אותו',
+        summary:
+          'מבחן השוואתי לאבטחת קוד מדד את Claude Fable 5 ב-59.8% הצלחה תפקודית וב-19.0% הצלחה אבטחתית, והמספר הפך לכותרת על מודל שאכזב. שישה ימים לאחר מכן, אותה מעבדה, אותו מחבר ואותו מבחן פרסמו את אותה Fable 5 ב-72.6% וב-29.0% — התוצאה האבטחתית הטובה ביותר בטבלה באותו רגע. הם לא החליפו את המודל; הם החליפו את הכלי שהפעיל אותו. חיפשתי את שני הטקסטים ומצאתי שלישי, של אותו מחבר ומאותו יום, שאיש אינו מצטט: ביקורת האנטי-רמייה של המבחן עצמו, שהורידה 9 נקודות אחוז של אבטחה משילוב אחד בלי ששום דבר במודל השתנה. אני מראה את המסקנה הצרה שהנתונים תומכים בה — הציון שייך לצמד הכלי והמודל, ולגרסת הסרגל ביום שבו הורץ —, את הגבול שלה (בשמונת הצמדים בטבלה החציון של ההפרש הוא 1.65 נקודות, והמקרה של Fable 5 גדול פי שישה מכך), את הצד שכנגד מ-Hacker News, שמאשים את המבחן בכך שהוא עקום נגד המודל, ואת הממצא המכני: ספרתי את הקישורים בין ארבעת העמודים והגרף חד-כיווני — מי שמגיע מהטקסט שהופץ אין לו דרך להגיע לתיקון. שישה איורים מקוריים, עשויים בקוד, וכל החישובים בסקריפט על 27 שורות הטבלה.',
+      },
+    },
+  },
   /*
    * Primeiro do array de propósito: divide a data com `memoria-llm-local` e o
    * `sort` de `artigosByDateDesc` é estável — no empate, quem vem antes aqui

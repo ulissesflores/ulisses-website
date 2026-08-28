@@ -4128,6 +4128,564 @@ export const countryBarsDatasets: Record<string, CountryBarsDataset> = {
       },
     ],
   },
+  /**
+   * `benchmark-fable5-duas-ferramentas` — FIGURA 2, degrau 2: a analogia
+   * agora com os nomes. O mesmo modelo, duas ferramentas, dez pontos de
+   * diferença em segurança.
+   * PROCEDÊNCIA: linhas 09 e 02 do leaderboard (2026-06-10 e 2026-06-12).
+   * COR: ouro (#a48f65) no par que ficou de fora da manchete — o papel do
+   * ouro na marca é "o que o artigo quer que o leitor veja primeiro".
+   */
+  'benchmark-fable5-duas-ferramentas': {
+    max: 100,
+    groups: [
+      {
+        label: 'Claude Code + Claude Fable 5',
+        color: '#64748b',
+        items: [
+          { name: 'Funcional', value: 59.8, valueLabel: '59,8%' },
+          { name: 'Seguro', value: 19.0, valueLabel: '19,0%' },
+        ],
+      },
+      {
+        label: 'Cursor + Claude Fable 5',
+        color: '#a48f65',
+        items: [
+          { name: 'Funcional', value: 72.6, valueLabel: '72,6%', emphasis: true },
+          { name: 'Seguro', value: 29.0, valueLabel: '29,0%', emphasis: true },
+        ],
+      },
+    ],
+  },
+
+  /**
+   * `benchmark-oito-pares` — FIGURA 3, degrau 3: o limite, que é o que
+   * separa quem entendeu de quem decorou. São os OITO pares do leaderboard
+   * em que o mesmo modelo aparece sob ferramentas diferentes, pelo tamanho
+   * da diferença de acerto seguro.
+   * PROCEDÊNCIA: `assets/calculos.py`. Mediana dos oito = 1,65 pp; o par da
+   * Fable 5 (10,0 pp) é seis vezes a mediana.
+   * TETO 12 (e não 10) para o rótulo da barra mais longa caber na linha.
+   */
+  'benchmark-oito-pares': {
+    max: 12,
+    groups: [
+      {
+        label: 'O valor extremo',
+        color: '#a48f65',
+        items: [
+          { name: 'Claude Fable 5', value: 10.0, valueLabel: '10,0 pp', emphasis: true },
+        ],
+      },
+      {
+        label: 'Os outros sete pares',
+        color: '#64748b',
+        items: [
+          { name: 'Claude Opus 4.8', value: 6.2, valueLabel: '6,2 pp' },
+          { name: 'Gemini 3 Pro', value: 3.9, valueLabel: '3,9 pp' },
+          { name: 'Claude Sonnet 4', value: 1.7, valueLabel: '1,7 pp' },
+          { name: 'GPT-5.5', value: 1.6, valueLabel: '1,6 pp' },
+          { name: 'Claude Opus 4.7', value: 1.6, valueLabel: '1,6 pp' },
+          { name: 'Claude Opus 4.6', value: 0.6, valueLabel: '0,6 pp' },
+          { name: 'Gemini 2.5 Pro', value: 0.5, valueLabel: '0,5 pp' },
+        ],
+      },
+    ],
+  },
+
+  /**
+   * `benchmark-funcional-x-seguro` — FIGURA 4, degrau 4 (síntese): as duas
+   * notas lado a lado. RECORTE DECLARADO: os seis pares com maior acerto
+   * funcional da tabela, mais o líder em acerto seguro — que não está entre
+   * eles. É essa ausência que a figura ensina: liderar em "funciona" não
+   * leva a liderar em "é seguro" (r de Pearson = 0,579 nas 27 linhas).
+   * PROCEDÊNCIA: leaderboard, linhas 03, 19, 08, 18, 10, 11 e 01.
+   * NOME DO ITEM = só o modelo, harness no `valueLabel`: "Claude Code +
+   * Sonnet 5" mede 136,8px e a vaga tem 134 (medido na Fahkwang).
+   */
+  'benchmark-funcional-x-seguro': {
+    max: 100,
+    groups: [
+      {
+        label: 'Passa nos testes que o programador vê',
+        color: '#60a5fa',
+        items: [
+          { name: 'GPT-5.5', value: 84.9, valueLabel: '84,9% · Cursor' },
+          { name: 'Claude Opus 4.6', value: 84.9, valueLabel: '84,9% · Cursor' },
+          { name: 'Claude Sonnet 5', value: 83.2, valueLabel: '83,2% · Claude Code' },
+          { name: 'GLM 5.2', value: 82.5, valueLabel: '82,5% · Cursor' },
+          { name: 'Claude Opus 4.7', value: 79.9, valueLabel: '79,9% · Cursor' },
+          { name: 'Gemini 3.5 Flash', value: 79.3, valueLabel: '79,3% · Cursor' },
+          { name: 'Claude Opus 5', value: 73.7, valueLabel: '73,7% · Claude Code' },
+        ],
+      },
+      {
+        label: 'Passa também nos testes de segurança',
+        color: '#a48f65',
+        items: [
+          { name: 'GPT-5.5', value: 24.0, valueLabel: '24,0% · Cursor' },
+          { name: 'Claude Opus 4.6', value: 11.2, valueLabel: '11,2% · Cursor' },
+          { name: 'Claude Sonnet 5', value: 19.6, valueLabel: '19,6% · Claude Code' },
+          { name: 'GLM 5.2', value: 12.0, valueLabel: '12,0% · Cursor' },
+          { name: 'Claude Opus 4.7', value: 18.4, valueLabel: '18,4% · Cursor' },
+          { name: 'Gemini 3.5 Flash', value: 17.9, valueLabel: '17,9% · Cursor' },
+          { name: 'Claude Opus 5', value: 32.4, valueLabel: '32,4% · Claude Code', emphasis: true },
+        ],
+      },
+    ],
+  },
+
+  /**
+   * `benchmark-regua-mudou` — FIGURA 5, degrau 5 (consequência): RETOMA a
+   * geometria da FIGURA 2 com outra cena. Mesma ferramenta, mesmo modelo,
+   * nada mudou neles — o que mudou foi o auditor antifraude do benchmark.
+   * PROCEDÊNCIA: tabela de reavaliação do artigo "Recall, not reasoning".
+   */
+  'benchmark-regua-mudou': {
+    max: 100,
+    groups: [
+      {
+        label: 'Claude Code + Opus 4.8, antes da auditoria antifraude',
+        color: '#64748b',
+        items: [
+          { name: 'Funcional', value: 80.7, valueLabel: '80,7%' },
+          { name: 'Seguro', value: 23.5, valueLabel: '23,5%' },
+        ],
+      },
+      {
+        label: 'O mesmo par, depois da auditoria',
+        color: '#a48f65',
+        items: [
+          { name: 'Funcional', value: 73.7, valueLabel: '73,7%' },
+          { name: 'Seguro', value: 14.5, valueLabel: '14,5%', emphasis: true },
+        ],
+      },
+    ],
+  },
+
+  /** `benchmark-fable5-duas-ferramentas-en` — FIGURE 2, English. */
+  'benchmark-fable5-duas-ferramentas-en': {
+    max: 100,
+    groups: [
+      {
+        label: 'Claude Code + Claude Fable 5',
+        color: '#64748b',
+        items: [
+          { name: 'Functional', value: 59.8, valueLabel: '59.8%' },
+          { name: 'Secure', value: 19.0, valueLabel: '19.0%' },
+        ],
+      },
+      {
+        label: 'Cursor + Claude Fable 5',
+        color: '#a48f65',
+        items: [
+          { name: 'Functional', value: 72.6, valueLabel: '72.6%', emphasis: true },
+          { name: 'Secure', value: 29.0, valueLabel: '29.0%', emphasis: true },
+        ],
+      },
+    ],
+  },
+
+  /** `benchmark-oito-pares-en` — FIGURE 3, English. */
+  'benchmark-oito-pares-en': {
+    max: 12,
+    groups: [
+      {
+        label: 'The outlier',
+        color: '#a48f65',
+        items: [
+          { name: 'Claude Fable 5', value: 10.0, valueLabel: '10.0 pp', emphasis: true },
+        ],
+      },
+      {
+        label: 'The other seven pairs',
+        color: '#64748b',
+        items: [
+          { name: 'Claude Opus 4.8', value: 6.2, valueLabel: '6.2 pp' },
+          { name: 'Gemini 3 Pro', value: 3.9, valueLabel: '3.9 pp' },
+          { name: 'Claude Sonnet 4', value: 1.7, valueLabel: '1.7 pp' },
+          { name: 'GPT-5.5', value: 1.6, valueLabel: '1.6 pp' },
+          { name: 'Claude Opus 4.7', value: 1.6, valueLabel: '1.6 pp' },
+          { name: 'Claude Opus 4.6', value: 0.6, valueLabel: '0.6 pp' },
+          { name: 'Gemini 2.5 Pro', value: 0.5, valueLabel: '0.5 pp' },
+        ],
+      },
+    ],
+  },
+
+  /** `benchmark-funcional-x-seguro-en` — FIGURE 4, English. */
+  'benchmark-funcional-x-seguro-en': {
+    max: 100,
+    groups: [
+      {
+        label: 'Passes the tests the developer sees',
+        color: '#60a5fa',
+        items: [
+          { name: 'GPT-5.5', value: 84.9, valueLabel: '84.9% · Cursor' },
+          { name: 'Claude Opus 4.6', value: 84.9, valueLabel: '84.9% · Cursor' },
+          { name: 'Claude Sonnet 5', value: 83.2, valueLabel: '83.2% · Claude Code' },
+          { name: 'GLM 5.2', value: 82.5, valueLabel: '82.5% · Cursor' },
+          { name: 'Claude Opus 4.7', value: 79.9, valueLabel: '79.9% · Cursor' },
+          { name: 'Gemini 3.5 Flash', value: 79.3, valueLabel: '79.3% · Cursor' },
+          { name: 'Claude Opus 5', value: 73.7, valueLabel: '73.7% · Claude Code' },
+        ],
+      },
+      {
+        label: 'Also passes the security tests',
+        color: '#a48f65',
+        items: [
+          { name: 'GPT-5.5', value: 24.0, valueLabel: '24.0% · Cursor' },
+          { name: 'Claude Opus 4.6', value: 11.2, valueLabel: '11.2% · Cursor' },
+          { name: 'Claude Sonnet 5', value: 19.6, valueLabel: '19.6% · Claude Code' },
+          { name: 'GLM 5.2', value: 12.0, valueLabel: '12.0% · Cursor' },
+          { name: 'Claude Opus 4.7', value: 18.4, valueLabel: '18.4% · Cursor' },
+          { name: 'Gemini 3.5 Flash', value: 17.9, valueLabel: '17.9% · Cursor' },
+          { name: 'Claude Opus 5', value: 32.4, valueLabel: '32.4% · Claude Code', emphasis: true },
+        ],
+      },
+    ],
+  },
+
+  /** `benchmark-regua-mudou-en` — FIGURE 5, English. */
+  'benchmark-regua-mudou-en': {
+    max: 100,
+    groups: [
+      {
+        label: 'Claude Code + Opus 4.8, before the anti-cheating audit',
+        color: '#64748b',
+        items: [
+          { name: 'Functional', value: 80.7, valueLabel: '80.7%' },
+          { name: 'Secure', value: 23.5, valueLabel: '23.5%' },
+        ],
+      },
+      {
+        label: 'The same pair, after the audit',
+        color: '#a48f65',
+        items: [
+          { name: 'Functional', value: 73.7, valueLabel: '73.7%' },
+          { name: 'Secure', value: 14.5, valueLabel: '14.5%', emphasis: true },
+        ],
+      },
+    ],
+  },
+
+  /** `benchmark-fable5-duas-ferramentas-es` — FIGURA 2. */
+  'benchmark-fable5-duas-ferramentas-es': {
+    max: 100,
+    groups: [
+      {
+        label: 'Claude Code + Claude Fable 5',
+        color: '#64748b',
+        items: [
+          { name: 'Funcional', value: 59.8, valueLabel: '59,8%' },
+          { name: 'Seguro', value: 19.0, valueLabel: '19,0%' },
+        ],
+      },
+      {
+        label: 'Cursor + Claude Fable 5',
+        color: '#a48f65',
+        items: [
+          { name: 'Funcional', value: 72.6, valueLabel: '72,6%', emphasis: true },
+          { name: 'Seguro', value: 29.0, valueLabel: '29,0%', emphasis: true },
+        ],
+      },
+    ],
+  },
+
+  /** `benchmark-oito-pares-es` — FIGURA 3. */
+  'benchmark-oito-pares-es': {
+    max: 12,
+    groups: [
+      {
+        label: 'El valor extremo',
+        color: '#a48f65',
+        items: [
+          { name: 'Claude Fable 5', value: 10.0, valueLabel: '10,0 pp', emphasis: true },
+        ],
+      },
+      {
+        label: 'Los otros siete pares',
+        color: '#64748b',
+        items: [
+          { name: 'Claude Opus 4.8', value: 6.2, valueLabel: '6,2 pp' },
+          { name: 'Gemini 3 Pro', value: 3.9, valueLabel: '3,9 pp' },
+          { name: 'Claude Sonnet 4', value: 1.7, valueLabel: '1,7 pp' },
+          { name: 'GPT-5.5', value: 1.6, valueLabel: '1,6 pp' },
+          { name: 'Claude Opus 4.7', value: 1.6, valueLabel: '1,6 pp' },
+          { name: 'Claude Opus 4.6', value: 0.6, valueLabel: '0,6 pp' },
+          { name: 'Gemini 2.5 Pro', value: 0.5, valueLabel: '0,5 pp' },
+        ],
+      },
+    ],
+  },
+
+  /** `benchmark-funcional-x-seguro-es` — FIGURA 4. */
+  'benchmark-funcional-x-seguro-es': {
+    max: 100,
+    groups: [
+      {
+        label: 'Pasa las pruebas que el programador ve',
+        color: '#60a5fa',
+        items: [
+          { name: 'GPT-5.5', value: 84.9, valueLabel: '84,9% · Cursor' },
+          { name: 'Claude Opus 4.6', value: 84.9, valueLabel: '84,9% · Cursor' },
+          { name: 'Claude Sonnet 5', value: 83.2, valueLabel: '83,2% · Claude Code' },
+          { name: 'GLM 5.2', value: 82.5, valueLabel: '82,5% · Cursor' },
+          { name: 'Claude Opus 4.7', value: 79.9, valueLabel: '79,9% · Cursor' },
+          { name: 'Gemini 3.5 Flash', value: 79.3, valueLabel: '79,3% · Cursor' },
+          { name: 'Claude Opus 5', value: 73.7, valueLabel: '73,7% · Claude Code' },
+        ],
+      },
+      {
+        label: 'Pasa también las pruebas de seguridad',
+        color: '#a48f65',
+        items: [
+          { name: 'GPT-5.5', value: 24.0, valueLabel: '24,0% · Cursor' },
+          { name: 'Claude Opus 4.6', value: 11.2, valueLabel: '11,2% · Cursor' },
+          { name: 'Claude Sonnet 5', value: 19.6, valueLabel: '19,6% · Claude Code' },
+          { name: 'GLM 5.2', value: 12.0, valueLabel: '12,0% · Cursor' },
+          { name: 'Claude Opus 4.7', value: 18.4, valueLabel: '18,4% · Cursor' },
+          { name: 'Gemini 3.5 Flash', value: 17.9, valueLabel: '17,9% · Cursor' },
+          { name: 'Claude Opus 5', value: 32.4, valueLabel: '32,4% · Claude Code', emphasis: true },
+        ],
+      },
+    ],
+  },
+
+  /** `benchmark-regua-mudou-es` — FIGURA 5. */
+  'benchmark-regua-mudou-es': {
+    max: 100,
+    groups: [
+      {
+        label: 'Claude Code + Opus 4.8, antes de la auditoría antifraude',
+        color: '#64748b',
+        items: [
+          { name: 'Funcional', value: 80.7, valueLabel: '80,7%' },
+          { name: 'Seguro', value: 23.5, valueLabel: '23,5%' },
+        ],
+      },
+      {
+        label: 'El mismo par, después de la auditoría',
+        color: '#a48f65',
+        items: [
+          { name: 'Funcional', value: 73.7, valueLabel: '73,7%' },
+          { name: 'Seguro', value: 14.5, valueLabel: '14,5%', emphasis: true },
+        ],
+      },
+    ],
+  },
+
+  /** `benchmark-fable5-duas-ferramentas-it` — FIGURA 2. */
+  'benchmark-fable5-duas-ferramentas-it': {
+    max: 100,
+    groups: [
+      {
+        label: 'Claude Code + Claude Fable 5',
+        color: '#64748b',
+        items: [
+          { name: 'Funzionale', value: 59.8, valueLabel: '59,8%' },
+          { name: 'Sicuro', value: 19.0, valueLabel: '19,0%' },
+        ],
+      },
+      {
+        label: 'Cursor + Claude Fable 5',
+        color: '#a48f65',
+        items: [
+          { name: 'Funzionale', value: 72.6, valueLabel: '72,6%', emphasis: true },
+          { name: 'Sicuro', value: 29.0, valueLabel: '29,0%', emphasis: true },
+        ],
+      },
+    ],
+  },
+
+  /** `benchmark-oito-pares-it` — FIGURA 3. */
+  'benchmark-oito-pares-it': {
+    max: 12,
+    groups: [
+      {
+        label: 'Il valore estremo',
+        color: '#a48f65',
+        items: [
+          { name: 'Claude Fable 5', value: 10.0, valueLabel: '10,0 pp', emphasis: true },
+        ],
+      },
+      {
+        label: 'Le altre sette coppie',
+        color: '#64748b',
+        items: [
+          { name: 'Claude Opus 4.8', value: 6.2, valueLabel: '6,2 pp' },
+          { name: 'Gemini 3 Pro', value: 3.9, valueLabel: '3,9 pp' },
+          { name: 'Claude Sonnet 4', value: 1.7, valueLabel: '1,7 pp' },
+          { name: 'GPT-5.5', value: 1.6, valueLabel: '1,6 pp' },
+          { name: 'Claude Opus 4.7', value: 1.6, valueLabel: '1,6 pp' },
+          { name: 'Claude Opus 4.6', value: 0.6, valueLabel: '0,6 pp' },
+          { name: 'Gemini 2.5 Pro', value: 0.5, valueLabel: '0,5 pp' },
+        ],
+      },
+    ],
+  },
+
+  /** `benchmark-funcional-x-seguro-it` — FIGURA 4. */
+  'benchmark-funcional-x-seguro-it': {
+    max: 100,
+    groups: [
+      {
+        label: 'Supera i test che il programmatore vede',
+        color: '#60a5fa',
+        items: [
+          { name: 'GPT-5.5', value: 84.9, valueLabel: '84,9% · Cursor' },
+          { name: 'Claude Opus 4.6', value: 84.9, valueLabel: '84,9% · Cursor' },
+          { name: 'Claude Sonnet 5', value: 83.2, valueLabel: '83,2% · Claude Code' },
+          { name: 'GLM 5.2', value: 82.5, valueLabel: '82,5% · Cursor' },
+          { name: 'Claude Opus 4.7', value: 79.9, valueLabel: '79,9% · Cursor' },
+          { name: 'Gemini 3.5 Flash', value: 79.3, valueLabel: '79,3% · Cursor' },
+          { name: 'Claude Opus 5', value: 73.7, valueLabel: '73,7% · Claude Code' },
+        ],
+      },
+      {
+        label: 'Supera anche i test di sicurezza',
+        color: '#a48f65',
+        items: [
+          { name: 'GPT-5.5', value: 24.0, valueLabel: '24,0% · Cursor' },
+          { name: 'Claude Opus 4.6', value: 11.2, valueLabel: '11,2% · Cursor' },
+          { name: 'Claude Sonnet 5', value: 19.6, valueLabel: '19,6% · Claude Code' },
+          { name: 'GLM 5.2', value: 12.0, valueLabel: '12,0% · Cursor' },
+          { name: 'Claude Opus 4.7', value: 18.4, valueLabel: '18,4% · Cursor' },
+          { name: 'Gemini 3.5 Flash', value: 17.9, valueLabel: '17,9% · Cursor' },
+          { name: 'Claude Opus 5', value: 32.4, valueLabel: '32,4% · Claude Code', emphasis: true },
+        ],
+      },
+    ],
+  },
+
+  /** `benchmark-regua-mudou-it` — FIGURA 5. */
+  'benchmark-regua-mudou-it': {
+    max: 100,
+    groups: [
+      {
+        label: 'Claude Code + Opus 4.8, prima della verifica antifrode',
+        color: '#64748b',
+        items: [
+          { name: 'Funzionale', value: 80.7, valueLabel: '80,7%' },
+          { name: 'Sicuro', value: 23.5, valueLabel: '23,5%' },
+        ],
+      },
+      {
+        label: 'La stessa coppia, dopo la verifica',
+        color: '#a48f65',
+        items: [
+          { name: 'Funzionale', value: 73.7, valueLabel: '73,7%' },
+          { name: 'Sicuro', value: 14.5, valueLabel: '14,5%', emphasis: true },
+        ],
+      },
+    ],
+  },
+
+  /** `benchmark-fable5-duas-ferramentas-he` — FIGURA 2, hebraico. */
+  'benchmark-fable5-duas-ferramentas-he': {
+    max: 100,
+    groups: [
+      {
+        label: 'Claude Code + Claude Fable 5',
+        color: '#64748b',
+        items: [
+          { name: '\u200Fתפקודי\u200F', value: 59.8, valueLabel: '59.8%' },
+          { name: '\u200Fבטוח\u200F', value: 19.0, valueLabel: '19.0%' },
+        ],
+      },
+      {
+        label: 'Cursor + Claude Fable 5',
+        color: '#a48f65',
+        items: [
+          { name: '\u200Fתפקודי\u200F', value: 72.6, valueLabel: '72.6%', emphasis: true },
+          { name: '\u200Fבטוח\u200F', value: 29.0, valueLabel: '29.0%', emphasis: true },
+        ],
+      },
+    ],
+  },
+
+  /** `benchmark-oito-pares-he` — FIGURA 3, hebraico. */
+  'benchmark-oito-pares-he': {
+    max: 12,
+    groups: [
+      {
+        label: '\u200Fהערך הקיצוני\u200F',
+        color: '#a48f65',
+        items: [
+          { name: 'Claude Fable 5', value: 10.0, valueLabel: '10.0 נק׳' , emphasis: true },
+        ],
+      },
+      {
+        label: '\u200Fשבעת הצמדים האחרים\u200F',
+        color: '#64748b',
+        items: [
+          { name: 'Claude Opus 4.8', value: 6.2, valueLabel: '6.2 נק׳' },
+          { name: 'Gemini 3 Pro', value: 3.9, valueLabel: '3.9 נק׳' },
+          { name: 'Claude Sonnet 4', value: 1.7, valueLabel: '1.7 נק׳' },
+          { name: 'GPT-5.5', value: 1.6, valueLabel: '1.6 נק׳' },
+          { name: 'Claude Opus 4.7', value: 1.6, valueLabel: '1.6 נק׳' },
+          { name: 'Claude Opus 4.6', value: 0.6, valueLabel: '0.6 נק׳' },
+          { name: 'Gemini 2.5 Pro', value: 0.5, valueLabel: '0.5 נק׳' },
+        ],
+      },
+    ],
+  },
+
+  /** `benchmark-funcional-x-seguro-he` — FIGURA 4, hebraico. */
+  'benchmark-funcional-x-seguro-he': {
+    max: 100,
+    groups: [
+      {
+        label: '\u200Fעובר את המבחנים שהמתכנת רואה\u200F',
+        color: '#60a5fa',
+        items: [
+          { name: 'GPT-5.5', value: 84.9, valueLabel: '84.9% · Cursor' },
+          { name: 'Claude Opus 4.6', value: 84.9, valueLabel: '84.9% · Cursor' },
+          { name: 'Claude Sonnet 5', value: 83.2, valueLabel: '83.2% · Claude Code' },
+          { name: 'GLM 5.2', value: 82.5, valueLabel: '82.5% · Cursor' },
+          { name: 'Claude Opus 4.7', value: 79.9, valueLabel: '79.9% · Cursor' },
+          { name: 'Gemini 3.5 Flash', value: 79.3, valueLabel: '79.3% · Cursor' },
+          { name: 'Claude Opus 5', value: 73.7, valueLabel: '73.7% · Claude Code' },
+        ],
+      },
+      {
+        label: '\u200Fעובר גם את מבחני האבטחה\u200F',
+        color: '#a48f65',
+        items: [
+          { name: 'GPT-5.5', value: 24.0, valueLabel: '24.0% · Cursor' },
+          { name: 'Claude Opus 4.6', value: 11.2, valueLabel: '11.2% · Cursor' },
+          { name: 'Claude Sonnet 5', value: 19.6, valueLabel: '19.6% · Claude Code' },
+          { name: 'GLM 5.2', value: 12.0, valueLabel: '12.0% · Cursor' },
+          { name: 'Claude Opus 4.7', value: 18.4, valueLabel: '18.4% · Cursor' },
+          { name: 'Gemini 3.5 Flash', value: 17.9, valueLabel: '17.9% · Cursor' },
+          { name: 'Claude Opus 5', value: 32.4, valueLabel: '32.4% · Claude Code', emphasis: true },
+        ],
+      },
+    ],
+  },
+
+  /** `benchmark-regua-mudou-he` — FIGURA 5, hebraico. */
+  'benchmark-regua-mudou-he': {
+    max: 100,
+    groups: [
+      {
+        label: 'Claude Code + Opus 4.8 · \u200Fלפני הביקורת\u200F',
+        color: '#64748b',
+        items: [
+          { name: '\u200Fתפקודי\u200F', value: 80.7, valueLabel: '80.7%' },
+          { name: '\u200Fבטוח\u200F', value: 23.5, valueLabel: '23.5%' },
+        ],
+      },
+      {
+        label: 'Claude Code + Opus 4.8 · \u200Fאחרי הביקורת\u200F',
+        color: '#a48f65',
+        items: [
+          { name: '\u200Fתפקודי\u200F', value: 73.7, valueLabel: '73.7%' },
+          { name: '\u200Fבטוח\u200F', value: 14.5, valueLabel: '14.5%', emphasis: true },
+        ],
+      },
+    ],
+  },
 };
 
 /* ── Funil ───────────────────────────────────────────────────────────── */
@@ -4964,6 +5522,250 @@ export const stepFlowDatasets: Record<string, StepFlowDataset> = {
       {
         label: 'Misurazione — qualcuno ha cronometrato o eseguito il test',
         detail: "Benchmark o esperimento. Riproducibile — e l'agente impara a raggirare il proxy.",
+      },
+    ],
+  },
+  /**
+   * `benchmark-cadeia-do-numero` — FIGURA 1, degrau 1 da escada didática:
+   * a analogia, sem uma palavra técnica. A nota de uma prova também não é
+   * uma propriedade só de quem fez a prova.
+   */
+  'benchmark-cadeia-do-numero': {
+    orientation: 'chain',
+    steps: [
+      {
+        label: 'Alguém resolve a questão',
+        detail: 'É esse nome que vai aparecer sozinho no boletim, no fim da cadeia.',
+      },
+      {
+        label: 'A escola decide como é a prova',
+        detail: 'Quanto tempo, que material pode consultar, quando a prova acaba.',
+      },
+      {
+        label: 'O professor corrige com um gabarito',
+        detail: 'A mesma resposta muda de nota quando o gabarito fica mais rigoroso.',
+      },
+      {
+        label: 'A nota vira notícia',
+        detail: 'No caminho some tudo que não é o nome de quem fez a prova.',
+        alert: true,
+      },
+    ],
+  },
+
+  /**
+   * `benchmark-linha-do-tempo` — FIGURA 6, degrau 6: os três textos do mesmo
+   * autor sobre o mesmo benchmark, e o que cada um alcançou. As posições são
+   * a ORDEM de publicação, não uma escala de tempo (dois saíram no mesmo dia)
+   * — o subtítulo da figura declara isso ao leitor.
+   */
+  'benchmark-linha-do-tempo': {
+    orientation: 'timeline',
+    steps: [
+      {
+        label: '10 de junho · o achado',
+        detail: '410 pontos, 250 comentários',
+      },
+      {
+        label: '10 de junho · a auditoria',
+        detail: 'nunca submetida ao Hacker News',
+      },
+      {
+        label: '17 de junho · a correção',
+        detail: '3 pontos, 0 comentário',
+        alert: true,
+      },
+    ],
+  },
+
+  /** `benchmark-cadeia-do-numero-en` — FIGURE 1, English. */
+  'benchmark-cadeia-do-numero-en': {
+    orientation: 'chain',
+    steps: [
+      {
+        label: 'Someone answers the question',
+        detail: 'Theirs is the only name that reaches the report card at the end of the chain.',
+      },
+      {
+        label: 'The school decides how the exam works',
+        detail: 'How long, what may be consulted, when the exam is over.',
+      },
+      {
+        label: 'A teacher marks it against an answer key',
+        detail: 'The same answer changes grade when the answer key gets stricter.',
+      },
+      {
+        label: 'The grade becomes news',
+        detail: 'Along the way everything that is not the student name drops out.',
+        alert: true,
+      },
+    ],
+  },
+
+  /** `benchmark-linha-do-tempo-en` — FIGURE 6, English. */
+  'benchmark-linha-do-tempo-en': {
+    orientation: 'timeline',
+    steps: [
+      {
+        label: '10 June · the finding',
+        detail: '410 points, 250 comments',
+      },
+      {
+        label: '10 June · the audit',
+        detail: 'never submitted to Hacker News',
+      },
+      {
+        label: '17 June · the correction',
+        detail: '3 points, 0 comments',
+        alert: true,
+      },
+    ],
+  },
+
+  /** `benchmark-cadeia-do-numero-es` — FIGURA 1, español. */
+  'benchmark-cadeia-do-numero-es': {
+    orientation: 'chain',
+    steps: [
+      {
+        label: 'Alguien resuelve la pregunta',
+        detail: 'Es ese nombre el que aparecerá solo en el boletín, al final de la cadena.',
+      },
+      {
+        label: 'La escuela decide cómo es el examen',
+        detail: 'Cuánto tiempo, qué material se puede consultar, cuándo termina el examen.',
+      },
+      {
+        label: 'El profesor corrige con una plantilla',
+        detail: 'La misma respuesta cambia de nota cuando la plantilla se vuelve más estricta.',
+      },
+      {
+        label: 'La nota se vuelve noticia',
+        detail: 'Por el camino desaparece todo lo que no es el nombre de quien hizo el examen.',
+        alert: true,
+      },
+    ],
+  },
+
+  /** `benchmark-linha-do-tempo-es` — FIGURA 6, español. */
+  'benchmark-linha-do-tempo-es': {
+    orientation: 'timeline',
+    steps: [
+      {
+        label: '10 de junio · el hallazgo',
+        detail: '410 puntos, 250 comentarios',
+      },
+      {
+        label: '10 de junio · la auditoría',
+        detail: 'nunca enviada a Hacker News',
+      },
+      {
+        label: '17 de junio · la corrección',
+        detail: '3 puntos, 0 comentarios',
+        alert: true,
+      },
+    ],
+  },
+
+  /** `benchmark-cadeia-do-numero-it` — FIGURA 1, italiano. */
+  'benchmark-cadeia-do-numero-it': {
+    orientation: 'chain',
+    steps: [
+      {
+        label: 'Qualcuno risolve la domanda',
+        detail: 'È quel nome a comparire da solo sulla pagella, alla fine della catena.',
+      },
+      {
+        label: 'La scuola decide come è il compito',
+        detail: 'Quanto tempo, che materiale si può consultare, quando il compito finisce.',
+      },
+      {
+        label: "L'insegnante corregge con una griglia",
+        detail: 'La stessa risposta cambia voto quando la griglia diventa più severa.',
+      },
+      {
+        label: 'Il voto diventa notizia',
+        detail: 'Lungo la strada sparisce tutto ciò che non è il nome di chi ha fatto il compito.',
+        alert: true,
+      },
+    ],
+  },
+
+  /** `benchmark-linha-do-tempo-it` — FIGURA 6, italiano. */
+  'benchmark-linha-do-tempo-it': {
+    orientation: 'timeline',
+    steps: [
+      {
+        label: '10 giugno · la scoperta',
+        detail: '410 punti, 250 commenti',
+      },
+      {
+        label: '10 giugno · la verifica',
+        detail: 'mai inviata a Hacker News',
+      },
+      {
+        label: '17 giugno · la correzione',
+        detail: '3 punti, 0 commenti',
+        alert: true,
+      },
+    ],
+  },
+
+  /**
+   * `benchmark-cadeia-do-numero-he` — FIGURA 1, hebraico.
+   * A geometria dos dois componentes é LTR: o texto é ancorado à ESQUERDA e o
+   * `dir="rtl"` do artigo não alcança o SVG. Limitação declarada — os rótulos
+   * foram conferidos no PNG, um a um, e não só no medidor de largura.
+   */
+  'benchmark-cadeia-do-numero-he': {
+    orientation: 'chain',
+    steps: [
+      {
+        label: '\u200Fמישהו פותר את השאלה\u200F',
+        detail: '\u200Fזה השם שיופיע לבדו בתעודה, בסוף השרשרת.\u200F',
+      },
+      {
+        label: '\u200Fבית הספר מחליט כיצד נראה המבחן\u200F',
+        detail: '\u200Fכמה זמן, באיזה חומר מותר להיעזר, מתי המבחן נגמר.\u200F',
+      },
+      {
+        label: '\u200Fהמורה בודק לפי מחוון\u200F',
+        detail: '\u200Fאותה תשובה מקבלת ציון אחר כשהמחוון נעשה מחמיר יותר.\u200F',
+      },
+      {
+        label: '\u200Fהציון הופך לחדשות\u200F',
+        detail: '\u200Fבדרך נעלם כל מה שאינו שמו של מי שנבחן.\u200F',
+        alert: true,
+      },
+    ],
+  },
+
+  /** `benchmark-linha-do-tempo-he` — FIGURA 6, hebraico. */
+  'benchmark-linha-do-tempo-he': {
+    orientation: 'timeline',
+    /**
+     * ORDEM INVERTIDA DE PROPÓSITO. O componente é LTR e desenha `steps[0]` à
+     * esquerda; o leitor de hebraico começa pela DIREITA. Mantida a ordem
+     * cronológica do original, a linha do tempo seria lida de trás para a
+     * frente — foi exatamente esse o defeito pego no render do artigo
+     * `marca-dagua-claude`. Aqui o achado fica à direita (onde a leitura
+     * começa) e a correção à esquerda (onde ela termina).
+     * O `\u200F` (RLM) em cada ponta prende a pontuação e os números latinos
+     * dentro do trecho em hebraico; sem ele o ponto e o hífen migram para a
+     * borda errada.
+     */
+    steps: [
+      {
+        label: '\u200Fהתיקון · 17 ביוני\u200F',
+        detail: '\u200F3 נקודות · 0 תגובות\u200F',
+        alert: true,
+      },
+      {
+        label: '\u200Fהביקורת · 10 ביוני\u200F',
+        detail: '\u200Fלא הוגשה מעולם ל-Hacker News\u200F',
+      },
+      {
+        label: '\u200Fהממצא · 10 ביוני\u200F',
+        detail: '\u200F410 נקודות · 250 תגובות\u200F',
       },
     ],
   },

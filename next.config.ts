@@ -179,6 +179,11 @@ const nextConfig: NextConfig = {
       { source: '/agentes-en', destination: '/en/artigos/estatisticas-agentes-de-ia', permanent: true },
       { source: '/agentes-es', destination: '/es/artigos/estatisticas-agentes-de-ia', permanent: true },
       { source: '/agentes-it', destination: '/it/artigos/estatisticas-agentes-de-ia', permanent: true },
+      { source: '/par',    destination: '/artigos/benchmark-harness-modelo',    permanent: true },
+      { source: '/par-en', destination: '/en/artigos/benchmark-harness-modelo', permanent: true },
+      { source: '/par-es', destination: '/es/artigos/benchmark-harness-modelo', permanent: true },
+      { source: '/par-it', destination: '/it/artigos/benchmark-harness-modelo', permanent: true },
+      { source: '/par-he', destination: '/he/artigos/benchmark-harness-modelo', permanent: true },
     ];
 
     // Locale handling (double-locale 410 + single-locale 301 + i18n rewrite) moved to middleware.ts

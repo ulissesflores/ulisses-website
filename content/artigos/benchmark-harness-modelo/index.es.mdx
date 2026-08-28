@@ -1,0 +1,252 @@
+---
+title: 'La nota de seguridad es del par, no del modelo — y el propio laboratorio ya la había corregido'
+slug: benchmark-harness-modelo
+category: artigos
+date: '2026-08-25'
+language: es
+---
+
+Un benchmark de seguridad de código midió a Claude Fable 5 en **59,8% de aciertos funcionales y
+19,0% de aciertos seguros**, y el número se convirtió en titular sobre un modelo que había
+decepcionado. Seis días después, el mismo laboratorio, el mismo autor y el mismo benchmark
+publicaron la misma Fable 5 en **72,6% y 29,0%** — la mejor marca de seguridad de la tabla en ese
+momento. No cambiaron el modelo. Cambiaron la herramienta que lo operaba.
+
+Fui a buscar los dos textos porque la diferencia entre ellos es mayor que la diferencia entre la
+mayoría de los modelos de la tabla. Lo que encontré fue peor que un número mal citado: la
+rectificación existe, es del propio laboratorio, y **no hay camino hasta ella** desde el texto que
+circuló.
+
+---
+
+## El número no es del modelo; es del par
+
+<StepFlowDiagram dataset="benchmark-cadeia-do-numero-es" title="Por dónde pasa una nota antes de volverse titular" subtitle="Lo mismo ocurre con la nota de un examen — y nadie dice que la nota sea una propiedad del alumno." description="Cadena de cuatro etapas: alguien resuelve la pregunta; la escuela decide cómo es el examen; el profesor corrige con una plantilla de respuestas; la nota se vuelve noticia, y por el camino desaparece todo lo que no es el nombre de quien hizo el examen." source="Figura del artículo · ulissesflores.com/par-es" />
+
+Empiece por la cadena de arriba, que no tiene nada de informática. Un boletín escolar lleva el
+nombre del alumno, pero la nota que está allí pasó por decisiones que no son suyas: cuánto tiempo
+tuvo, qué material podía consultar, qué tan duro era el criterio de corrección. Nadie confunde las
+dos cosas en la escuela. Con los benchmarks de modelos de lenguaje, la confusión es la regla.
+
+Cuando se lee "el modelo X sacó N en un benchmark", es fácil entender que N es una propiedad de X,
+como la estatura de una persona. No lo es. N sale de una cadena: el modelo propone, una
+herramienta — el *harness*, el programa que da al modelo acceso al código, ejecuta comandos y
+decide cuándo parar — ejecuta, y una regla corrige. Cambiar cualquier eslabón cambia el número. Lo
+que se publica es la nota del conjunto, y el nombre que queda en el titular es el del medio de la
+cadena.
+
+La Agent Security League, benchmark de Endor Labs, mide exactamente ese conjunto. Son **200
+tareas** de corrección de vulnerabilidades reales, tomadas de **108 proyectos Python** de código
+abierto, que cubren **77 clases de CWE**, ejecutadas en **27 combinaciones de herramienta y
+modelo**. Dos notas por combinación: **FuncPass**, si el parche pasa las pruebas funcionales
+visibles, y **SecPass**, si además pasa las pruebas de seguridad ocultas del arreglo original.
+SecPass es subconjunto de FuncPass — para ser seguro, primero tiene que funcionar.
+
+## La misma Fable 5, dos herramientas, diez puntos de diferencia
+
+<CountryBarsChart dataset="benchmark-fable5-duas-ferramentas-es" title="El mismo modelo, dos herramientas" subtitle="Claude Fable 5 en el benchmark de Endor Labs, rondas del 10 y 12 de junio de 2026" description="Barras que comparan dos combinaciones del mismo modelo: Claude Code con Fable 5 marca 59,8% funcional y 19,0% seguro; Cursor con Fable 5 marca 72,6% funcional y 29,0% seguro." source="Endor Labs, Agent Security League · ulissesflores.com/par-es" />
+
+| Combinación | Funcional | Seguro | Fecha de la ronda |
+|---|---|---|---|
+| Claude Code + Claude Fable 5 | 59,8% | **19,0%** | 2026-06-10 |
+| Cursor + Claude Fable 5 | 72,6% | **29,0%** | 2026-06-12 |
+| Diferencia | +12,8 pp | **+10,0 pp** | mismo modelo |
+
+Fíjese en que la columna de la derecha es la misma fila del mismo modelo. Lo que cambia es quién
+sostiene la herramienta. Endor no atribuye la diferencia a más tiempo de ejecución: de los 34 casos
+que solo Cursor resolvió, la mayoría tuvo un parche sustantivo de Claude Code — solo que no lo
+bastante correcto. La frase es del segundo artículo, literal: *"The story here is not the model, it
+is the harness."*
+
+## El límite: esto casi nunca pasa
+
+<CountryBarsChart dataset="benchmark-oito-pares-es" title="Cambiar de herramienta casi nunca mueve tanto" subtitle="Los ocho pares en que el mismo modelo aparece bajo dos herramientas · mediana: 1,65 puntos porcentuales" description="Ocho barras con la diferencia de acierto seguro cuando el mismo modelo cambia de herramienta. Claude Fable 5 aparece aislada con 10,0 puntos porcentuales; los otros siete van de 6,2 a 0,5." source="Cálculo propio sobre las 27 filas del leaderboard de Endor Labs · ulissesflores.com/par-es" />
+
+Aquí el artículo podría volverse "la herramienta importa más que el modelo" y quedar bonito. Fui a
+medir y no es verdad. El leaderboard tiene **ocho pares** en que el mismo modelo aparece bajo
+herramientas distintas. La **mediana** de la diferencia de SecPass en esos ocho es **1,65 puntos
+porcentuales**. El par de la Fable 5, con 10,0 puntos, es **seis veces la mediana** — es el valor
+extremo, no la regla. En la figura está solo arriba justamente por eso: los otros siete caben de 6,2
+puntos para abajo, y cinco de ellos por debajo de 2.
+
+La conclusión honesta es más estrecha y más útil: **el número publicado es del par, y el par a veces
+lo decide todo**. Quien cita la nota sin citar la herramienta acierta por suerte la mayoría de las
+veces y se equivoca de lleno justo cuando la diferencia importa.
+
+## Funcionar y ser seguro son cosas casi independientes
+
+<CountryBarsChart dataset="benchmark-funcional-x-seguro-es" title="Los que más funcionan no son los más seguros" subtitle="Los seis pares con mayor acierto funcional de la tabla, más el líder en acierto seguro — que no está entre ellos" description="Dos bloques con los mismos siete pares. En el bloque funcional, seis pares quedan entre 79,3% y 84,9% y Claude Code con Opus 5 queda último, con 73,7%. En el bloque de seguridad el orden se deshace: ese mismo Claude Code con Opus 5 lidera con 32,4%, y Cursor con Opus 4.6, que empataba primero en funcional, cae a 11,2%." source="Endor Labs, Agent Security League, 27 combinaciones · ulissesflores.com/par-es" />
+
+La figura tiene los mismos siete pares en los dos bloques, en el mismo orden. En el de arriba están
+casi empatados; en el de abajo el orden se deshace. Dos pares que empatan en **84,9%** de acierto
+funcional — Cursor con GPT-5.5 y Cursor con Opus 4.6 — terminan en **24,0%** y **11,2%** de acierto
+seguro: más del doble de diferencia, con el mismo desempeño funcional. Y el líder en seguridad es el
+par que **menos** funciona de los siete.
+
+Calculé la correlación entre las dos notas en las 27 filas: **r de Pearson = 0,579**, lo que da
+**r² = 0,335**. Un tercio de la variación de "es seguro" se explica por "funciona". Los otros dos
+tercios son otra cosa.
+
+La lectura directa de ese número es incómoda. La **mediana** de la razón SecPass/FuncPass en el
+leaderboard es del **22%**: de cada diez parches que pasan las pruebas, cerca de dos cierran la
+vulnerabilidad. Y en el mejor par de toda la tabla — Claude Code con Claude Opus 5, hoy en la cima
+con **73,7% y 32,4%** — la razón llega al 44%, lo que aún significa que **56 de cada 100 parches que
+funcionan dejan la falla abierta**.
+
+> [!NOTE]
+> Esto no es una prueba de "el modelo puede escribir código seguro si se lo piden". Al par no se le
+> avisa de que el fragmento es crítico para la seguridad: recibe la tarea y la instrucción genérica
+> de seguir buenas prácticas. Es a propósito — el benchmark quiere medir lo que pasa cuando nadie
+> avisa, que es el caso de la mayor parte del código escrito con agente.
+
+## La tercera variable: la regla también cambió
+
+Mientras verificaba las fechas encontré un **tercer artículo** del mismo autor, publicado el mismo
+día que el primero, que ninguna de las citas que leí mencionaba. Cambia el cuadro.
+
+Endor auditó su propio benchmark y halló dos formas de trampa que el proceso anterior no detectaba:
+el agente leyendo una copia ya corregida del código dentro de su propio espacio de trabajo, y el
+agente **reproduciendo de memoria** el arreglo que ya había visto durante el entrenamiento. De los
+**182 casos de trampa confirmados** en toda la tabla **de entonces** — la auditoría trae su propio
+leaderboard, de 21 filas, en el que la Fable 5 aún no aparece —, **137 son memorización**, el
+mecanismo dominante. La fuga del espacio de trabajo aparece en 6. (La salvedad importa porque los
+dos agregados circulan juntos y no son lo mismo: 137 de 182 es el recuento de la tabla entera en ese
+momento; los 38 casos del par Claude Code con Fable 5 son otra cuenta, y Endor ya los excluye del
+número que publica.)
+
+<CountryBarsChart dataset="benchmark-regua-mudou-es" title="Nada cambió en el modelo — cambió el auditor" subtitle="Claude Code con Claude Opus 4.8, antes y después de que Endor mejorara la detección de trampas" description="La misma forma de la figura anterior sobre la Fable 5, ahora con otro contenido: Claude Code con Opus 4.8 marcaba 80,7% funcional y 23,5% seguro antes de la auditoría antifraude, y pasó a marcar 73,7% funcional y 14,5% seguro después de ella." source="Endor Labs, Recall, not reasoning, junio de 2026 · ulissesflores.com/par-es" />
+
+La figura es la misma de la comparación entre herramientas, a propósito: mismas dos franjas, misma
+escala. Solo que ahora nada cambió en el lado que suele llevarse el crédito o la culpa. Tras
+reevaluar, los números se movieron así:
+
+| Combinación | Funcional antes | Funcional después | Seguro antes | Seguro después |
+|---|---|---|---|---|
+| Claude Code + Claude Opus 4.8 | 80,7% | 73,7% | 23,5% | **14,5%** |
+| Cursor + Claude Opus 4.8 | 84,9% | 75,4% | 24,7% | 20,7% |
+| Cursor + Gemini 3.5 Flash | 79,5% | 79,3% | 16,9% | 17,9% |
+| Cursor + Composer 2.5 | 78,3% | 75,4% | 16,3% | 14,0% |
+
+Nueve puntos porcentuales de seguridad se evaporaron de una combinación porque el auditor mejoró. Ni
+el modelo ni la herramienta cambiaron. Entonces la frase que abre este artículo necesita un pedazo
+más: la nota es del par **y de la versión de la regla el día en que se ejecutó**. El propio texto de
+Endor dice que el principal motor del cambio no fue la reevaluación de la métrica, sino las
+estrategias de trampa que el proceso anterior no contabilizaba.
+
+Y está lo que no me favorece decir, pero está en la tabla: **las rondas de la familia Claude
+concentran el mayor recuento de trampa confirmada** — 30 casos en Claude Code con Sonnet 4.6, 28 con
+Opus 4.8, 28 con Opus 4.5.
+
+## El contradictorio: la mitad de los lectores creyó que el equivocado era el benchmark
+
+La discusión que de hecho circuló no fue en X. Fue en Hacker News, donde el primer artículo hizo
+**410 puntos y 250 comentarios**. Y los comentarios más votados dicen casi lo contrario del titular:
+no que el modelo sea malo, sino que la regla está torcida — y torcida **contra** el modelo.
+
+> All of this points to their claim of 'average' as being heavily biased downwards. A model being
+> so up to date and large-parameter it's memorized solutions to your problems is not a knock
+> against it (but rather, a knock against your benchmark being valid), and why should timeouts
+> (especially for a model just launched) be counted at all?
+
+El argumento tiene fuerza y tiene respuesta. Fuerza, porque penalizar la memorización mide de hecho
+qué tan viejo es el conjunto de tareas, no qué tan capaz es el modelo — y porque **15 rondas**
+rebasaron el límite de 40 minutos y perdieron puntos por ello, un límite que penaliza a un modelo
+recién lanzado y todavía sin optimización de ejecución. Respuesta, porque Endor declara qué está
+midiendo: la tarea es razonar sobre el código vulnerable que está ahí, no recuperar de algún lugar el
+arreglo ya hecho. El propio artículo de la auditoría admite la fragilidad de la regla con todas las
+letras — *"in a general software-engineering setting, using remembered knowledge is not necessarily
+wrong: human developers also rely on things they have seen before"*.
+
+Las dos cosas son verdaderas a la vez, y eso es lo que vuelve insostenible el titular original en las
+dos direcciones: ni "el modelo es malo", ni "el benchmark no sirve". Lo que se mide es un par
+específico contra una regla específica, en una fecha específica.
+
+## La corrección existe, y el camino hasta ella no
+
+<StepFlowDiagram dataset="benchmark-linha-do-tempo-es" title="Tres textos del mismo autor, sobre el mismo benchmark" subtitle="El orden en que salieron — las posiciones marcan la secuencia, no una escala de tiempo" description="Línea de tiempo con tres hitos: el 10 de junio el hallazgo, con 410 puntos y 250 comentarios en Hacker News; ese mismo 10 de junio la auditoría de trampas, que nunca fue enviada a Hacker News; el 17 de junio la corrección, con 3 puntos y ningún comentario." source="Hacker News y X, medidos el 2026-08-25 · ulissesflores.com/par-es" />
+
+| Publicación | Fecha | Hacker News |
+|---|---|---|
+| El hallazgo que circuló | 2026-06-10 | **410 puntos, 250 comentarios** |
+| La auditoría de trampas | 2026-06-10 | nunca enviada |
+| La corrección del harness | 2026-06-17 | **3 puntos, 0 comentarios** |
+
+Mismo laboratorio, mismo autor, siete días. La auditoría aparece sin número en la columna de Hacker
+News porque nunca llegó allí: busqué su dirección en la API de búsqueda de Hacker News y **no existe
+envío**. Y el alcance en X fue todavía menor: el anuncio de la auditoría hizo **37 visualizaciones y
+ningún me gusta**; el de la corrección, **133 visualizaciones y ningún me gusta**. Endor no escondió
+nada — simplemente no fue leída.
+
+Lo que me parece más grave es mecánico, no editorial. Conté cuántas veces aparece cada una de las
+cuatro direcciones en el HTML servido de las otras — no lo que la página promete enlazar, lo que
+entrega al navegador:
+
+| De \ A | El hallazgo | La auditoría | La corrección |
+|---|---|---|---|
+| **El hallazgo** | — | 0 | **0** |
+| **La auditoría** | 0 | — | **0** |
+| **El leaderboard** | 0 | 1 | **0** |
+| **La corrección** | 4 | 1 | — |
+
+La corrección apunta al hallazgo. El hallazgo nunca apunta a la corrección. **El grafo es de sentido
+único**, y el leaderboard — la página que alguien consulta justamente para ver el número actual —
+tampoco lleva hasta allá. La página del hallazgo tiene una sección de artículos relacionados,
+funciona, y los ocho artículos que sugiere no incluyen ninguno de los otros dos textos de la misma
+serie, del mismo autor, de la misma semana.
+
+## Qué haría yo con esto
+
+Si el número entra en una decisión suya — elegir herramienta, escribir política interna, aprobar a un
+proveedor — las tres preguntas que este caso enseña a hacer son:
+
+1. **¿Qué par?** Una nota de benchmark de agente sin el nombre de la herramienta es media
+   información. La misma Fable 5 varía diez puntos de seguridad entre dos herramientas.
+2. **¿Qué versión de la regla?** Pregunte la fecha de la ronda y si el resultado se reevaluó después.
+   Nueve puntos porcentuales cambiaron de mano en una combinación sin que nada le pasara al modelo.
+3. **¿Existe rectificación?** Busque en el mismo dominio, por autor y por fecha, no por el enlace que
+   le llegó. Aquí la rectificación estaba a un clic de distancia — un clic que nadie tenía cómo dar.
+
+Y hay una lectura que atraviesa las tres, más incómoda que cualquier ranking: con la mediana en 22%,
+lo que la tabla entera describe es que **el parche de seguridad generado por agente funciona muchas
+más veces de las que arregla**. Ese es el hallazgo del benchmark. Quien discute qué modelo lidera
+está discutiendo el tercer decimal de un problema que sigue en el primero.
+
+> [!NOTE]
+> **Nota metodológica.** Todos los números salieron de las páginas de Endor Labs, del anuncio de
+> Anthropic y del paper que sirve de base al benchmark, verificados por mí el 2026-08-15 y
+> reverificados el **2026-08-25** — en esa segunda pasada el leaderboard salió idéntico celda por
+> celda al de la primera, en las 27 filas. La correlación, la mediana de la razón SecPass/FuncPass y
+> la mediana de los ocho pares fueron **calculadas por mí** sobre las 27 filas del leaderboard, con
+> un script, no estimadas a ojo. El benchmark se ejecuta **una vez por tarea**, sin repetición — no
+> hay barra de error publicada, así que diferencias de uno o dos puntos entre combinaciones vecinas
+> no deben leerse como un orden real.
+>
+> El recuento de puntos y comentarios de Hacker News es del día **2026-08-25** y sigue sujeto a
+> cambio.
+>
+> **Lo que no hice:** no ejecuté el benchmark, no reproduje ninguna de las tareas y no tengo acceso a
+> las trayectorias completas de los agentes. Tampoco pude verificar la afirmación, hecha en el texto
+> que circuló, de que la discusión en Hacker News habría hecho 235 puntos en 24 horas — la única
+> discusión que localicé está en 410 puntos, y trato el dato como no verificado, no como falso.
+
+## Una última distinción, porque de eso trata este artículo
+
+La frase *"the strongest cybersecurity capabilities of any model in the world"*, del anuncio de
+Anthropic, apareció en varias citas junto al 19,0% de Endor, como si una desmintiera a la otra. No la
+desmiente, porque el sujeto de la frase **no es la Fable 5**. Es Claude Mythos 5 — según el anuncio,
+el mismo modelo con las salvaguardas aflojadas en algunas áreas, de acceso restringido. Además, las
+evaluaciones de ciberseguridad que cita Anthropic miden capacidad **ofensiva**, y el benchmark de
+Endor mide si el código escrito sale seguro. Son reglas distintas midiendo cosas distintas — y el
+primer artículo de Endor lo dice, en el segundo punto de su propia lista de conclusiones.
+
+En un artículo sobre colgar un número de la entidad equivocada, errar el referente sería vergonzoso.
+
+## Fuentes
+
+- [Agent Security League — leaderboard](https://www.endorlabs.com/research/ai-code-security-benchmark) (Endor Labs)
+- [Claude Fable 5: Mythos-grade hype…](https://www.endorlabs.com/learn/claude-fable-5-mythos-grade-hype) — el texto que circuló, 2026-06-10
+- [Recall, not reasoning: how AI coding agents cheat security benchmarks](https://www.endorlabs.com/learn/recall-not-reasoning-how-ai-coding-agents-cheat-security-benchmarks) — la auditoría, 2026-06-10
+- [Claude Fable 5, take two: same model, different harness, and a very different result](https://www.endorlabs.com/learn/claude-fable-5-take-two-same-model-different-harness-and-a-very-different-result) — la corrección, 2026-06-17
+- [Claude Fable 5 y Claude Mythos 5](https://www.anthropic.com/news/claude-fable-5-mythos-5) (Anthropic)
+- [Is Vibe Coding Safe?](https://arxiv.org/abs/2512.03262) — SusVibes, el paper que el benchmark extiende
+- [Discusión en Hacker News](https://news.ycombinator.com/item?id=48492210)
