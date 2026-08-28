@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Calendar } from 'lucide-react';
 import { artigosByDateDesc, formatArtigoDate, localizeArtigo } from '@/data/artigos';
 import { upkfMeta } from '@/data/generated/upkf.generated';
@@ -80,6 +81,11 @@ export default async function ArtigosPage({ params }: PageProps) {
       url: `${origin}${canonicalPath}/${artigo.slug}`,
       datePublished: artigo.date,
       keywords: artigo.tags.join(', '),
+      // Mesma imagem que o detalhe anuncia — capa do locale, ou o card do slug.
+      image: `${origin}${
+        artigo.hero?.locales[locale]?.og ??
+        buildCanonical(locale, `${canonicalPath}/${artigo.slug}/opengraph-image`)
+      }`,
     })),
   };
 
@@ -134,6 +140,26 @@ export default async function ArtigosPage({ params }: PageProps) {
               key={artigo.slug}
               className='p-6 rounded-xl bg-neutral-900/40 border border-neutral-800 hover:border-brand-gold/40 transition-colors'
             >
+              {/*
+                A capa do artigo, quando existe NAQUELE idioma — a arte traz o título
+                desenhado dentro dela, então o mapa por locale é quem manda (mesma regra
+                do detalhe). Card sem capa continua só texto: um placeholder genérico
+                repetido 18 vezes é pior que a ausência dele.
+                Sem `priority`: são miniaturas, e a primeira dobra desta página é o
+                cabeçalho, não o primeiro card. Os 800px do `sizes` são a largura MEDIDA
+                do card no desktop (896 do container − 48 de padding da página − 48 do
+                card), não uma estimativa.
+              */}
+              {artigo.hero?.locales[locale] ? (
+                <Image
+                  src={artigo.hero.locales[locale]!.src}
+                  alt={localizeArtigo(artigo, locale).title}
+                  width={artigo.hero.width}
+                  height={artigo.hero.height}
+                  sizes='(min-width: 896px) 800px, 100vw'
+                  className='mb-5 h-auto w-full rounded-lg border border-white/10'
+                />
+              ) : null}
               <div className='flex flex-wrap items-center gap-3 mb-3 text-xs text-neutral-400'>
                 <span className='flex items-center gap-2 font-mono uppercase'>
                   <Calendar size={12} /> {formatArtigoDate(artigo.date, locale)}

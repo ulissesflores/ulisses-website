@@ -27,22 +27,49 @@ O site é assinado com seu ORCID e seu Lattes ao lado; texto redigido por LLM se
 | Crítica | aponto onde o argumento não fecha, onde falta evidência, onde está prolixo |
 | Verificação | confiro cada número, data, preço e citação contra a fonte atual |
 | Formatação | viro MDX com frontmatter, tabelas GFM, links |
-| Registro | crio `content/artigos/<slug>/index.pt-br.mdx` e a entrada em `data/artigos.ts` |
+| Registro | crio `content/artigos/<slug>/index.pt-br.mdx`, a entrada em `data/artigos.ts` e, se houver capa, os arquivos em `public/artigos/<slug>/` |
 | SEO | title, summary, tags, canonical, JSON-LD e sitemap saem daí, sem trabalho extra |
 | Gate | `npm run sota:check`, e `npm run sota:full` antes do push |
 | Deploy | commit e push — **só com sua autorização explícita no mesmo turn** |
 
 ## Onde o artigo mora
 
-Duas peças, sempre as duas:
+Duas peças, sempre as duas — três quando o artigo tem capa:
 
 ```text
 content/artigos/<slug>/index.pt-br.mdx   <- o corpo
-data/artigos.ts                          <- slug, title, summary, date, tags
+data/artigos.ts                          <- slug, title, summary, date, tags (e `hero`, se houver capa)
+public/artigos/<slug>/hero.png           <- a capa, e o recorte 1200x630 ao lado dela
 ```
 
-O `slug` é `AAAA-MM-DD-assunto-curto` e precisa ser idêntico nos dois lugares — o nome da pasta
-é o que vira URL. O artigo publicado responde em `https://ulissesflores.com/artigos/<slug>`.
+O `slug` é `assunto-curto`, **sem data** (decisão de 2026-08-01; os artigos antigos com
+`AAAA-MM-DD-` na frente ficaram como estão). Precisa ser idêntico na pasta e em `data/artigos.ts`
+— o nome da pasta é o que vira URL. O artigo publicado responde em
+`https://ulissesflores.com/artigos/<slug>`.
+
+### A capa (`hero`)
+
+A capa aparece em três lugares: no topo do artigo, no card do índice `/artigos` e no
+`og:image` — a imagem que WhatsApp, X e LinkedIn mostram quando o link circula.
+
+O arquivo vai em `public/artigos/<slug>/`, **nunca** ao lado do `.mdx`: `content/` não é servido
+pelo Next, e imagem colocada lá é asset morto (foi o que aconteceu com dez capas até 2026-08-28).
+Quem põe no lugar e escolhe o encoding é o script, que mede em vez de adivinhar:
+
+```bash
+python3 scripts/artigos/publicar-capa.py <slug> <caminho-da-arte>
+```
+
+Ele exige que a arte já nasça em **1200:630** (2400x1260 é o padrão da casa) — recortar 16:9 é
+decisão de composição, e quem decide é quem fez a arte. No fim ele imprime o bloco `hero` para
+colar em `data/artigos.ts`, **depois de `tags`** (entre `slug` e `title` o artigo some do
+`llms.txt` sem nenhum gate acusar).
+
+O `hero` é um mapa **por idioma**, porque a arte da casa traz o título e o atalho desenhados
+dentro dela: capa em português servida a quem lê em inglês é pior que capa nenhuma. Idioma fora
+do mapa não ganha capa e cai no card tipográfico de
+`app/[locale]/artigos/[slug]/opengraph-image.tsx`, que é gerado localizado para os cinco.
+Que os arquivos existam e que nenhum card passe de 300 KB é gate: `data/artigos-hero.test.ts`.
 
 **Sobre os outros idiomas:** basta o `index.pt-br.mdx`. Quando o arquivo do idioma não existe,
 a rota serve o corpo em português com o `lang` correto (`app/[locale]/artigos/[slug]/page.tsx:90`)
@@ -56,7 +83,7 @@ O frontmatter é obrigatório e tem exatamente estes cinco campos:
 ````mdx
 ---
 title: 'Título completo, com dois-pontos e travessão se precisar'
-slug: 2026-08-01-assunto-curto
+slug: assunto-curto
 category: artigos
 date: '2026-08-01'
 language: pt-BR

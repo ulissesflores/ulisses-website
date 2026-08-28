@@ -8,6 +8,7 @@
  */
 
 import { describe, it, expect } from 'vitest';
+import { artigos } from './artigos';
 import { readFileSync, existsSync } from 'node:fs';
 import { resolve } from 'node:path';
 
@@ -53,5 +54,23 @@ describe('llms.txt — LLM SEO Integrity (Lote 22)', () => {
     const content = readFileSync(llmsPath, 'utf-8');
     const lines = content.split('\n').filter(l => l.trim().length > 0);
     expect(lines.length).toBeGreaterThan(10);
+  });
+
+  /*
+   * O gate que faltava. O `llms.txt` é montado por REGEX sobre `data/artigos.ts`
+   * (o gerador é .mjs e não compila TypeScript), e regex que não casa não falha —
+   * some. `marca-dagua-claude` ficou fora do arquivo desde a publicação porque o
+   * título dele usa aspas duplas (tem apóstrofo em "marca d'água") e o padrão só
+   * aceitava aspas simples: 17 de 18 artigos, sem nada acusando.
+   *
+   * Este teste compara a LISTA, não a contagem: contagem certa com slug trocado
+   * passaria batido.
+   */
+  it('lista todos os artigos de data/artigos.ts — nenhum some por regex', () => {
+    const content = readFileSync(llmsPath, 'utf-8');
+    const ausentes = artigos
+      .map((a) => `https://ulissesflores.com/artigos/${a.slug}`)
+      .filter((url) => !content.includes(`: ${url}`));
+    expect(ausentes).toEqual([]);
   });
 });

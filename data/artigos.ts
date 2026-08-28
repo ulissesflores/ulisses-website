@@ -26,19 +26,20 @@ export interface Artigo {
    * Capa do artigo, servida de `public/artigos/<slug>/` (`content/` não é servido —
    * ver o cabeçalho de `lib/content/article-figure.tsx`).
    *
-   * SÓ VALE NO pt-BR, de propósito: a arte traz o título e o atalho do artigo
-   * DESENHADOS dentro dela, num idioma só. Nos outros locales a capa some e o
-   * `og:image` volta a ser o card tipográfico localizado de
-   * `app/[locale]/artigos/[slug]/opengraph-image.tsx`. Capa por idioma depende de
-   * hero por idioma, que é pendência da redação.
+   * UMA POR LOCALE, porque a arte traz o título, os rótulos e o atalho DESENHADOS
+   * dentro dela: servir a capa portuguesa a quem lê em inglês é pior que não servir
+   * capa nenhuma. Locale ausente do mapa não ganha capa no corpo e cai no card
+   * tipográfico de `app/[locale]/artigos/[slug]/opengraph-image.tsx`, que é
+   * localizado — some a imagem, nunca o idioma.
+   *
+   * Que os arquivos existam é gate: `data/artigos-hero.test.ts`.
    */
   hero?: {
-    /** Caminho a partir de `public/`. Dimensões reais do arquivo em `width`/`height`. */
-    src: string;
+    /** Dimensões reais dos arquivos de `src` — iguais nos cinco. */
     width: number;
     height: number;
-    /** Recorte 1200x630 do mesmo desenho, leve — `og:image` pesado o WhatsApp descarta calado. */
-    og: string;
+    /** `src` é a capa do corpo; `og` é o recorte 1200x630, leve — `og:image` pesado o WhatsApp descarta calado. */
+    locales: Partial<Record<Locale, { src: string; og: string }>>;
   };
   /** Título/resumo traduzidos por locale; ausente cai no original pt-BR (mesma regra do corpo MDX). */
   i18n?: Partial<Record<Locale, Pick<Artigo, 'title' | 'summary'>>>;
@@ -134,10 +135,15 @@ export const artigos: readonly Artigo[] = [
   date: '2026-08-25',
   tags: ['teoria-das-restricoes', 'goldratt', 'gestao', 'filas', 'lei-de-little', 'agentes-de-ia', 'didatico'],
   hero: {
-    src: '/artigos/teoria-das-restricoes/hero.png',
     width: 2400,
     height: 1260,
-    og: '/artigos/teoria-das-restricoes/hero-og.png',
+    locales: {
+      'pt-br': { src: '/artigos/teoria-das-restricoes/hero.png', og: '/artigos/teoria-das-restricoes/hero-og.png' },
+      'en': { src: '/artigos/teoria-das-restricoes/hero-en.png', og: '/artigos/teoria-das-restricoes/hero-en-og.png' },
+      'es': { src: '/artigos/teoria-das-restricoes/hero-es.png', og: '/artigos/teoria-das-restricoes/hero-es-og.png' },
+      'it': { src: '/artigos/teoria-das-restricoes/hero-it.png', og: '/artigos/teoria-das-restricoes/hero-it-og.png' },
+      'he': { src: '/artigos/teoria-das-restricoes/hero-he.png', og: '/artigos/teoria-das-restricoes/hero-he-og.png' },
+    },
   },
   i18n: {
     en: {
@@ -174,6 +180,13 @@ export const artigos: readonly Artigo[] = [
     'Duas imagens virais comparam Mac Studio M5 Ultra 256 GB, RTX 5090, RTX PRO 6000 e DGX Spark em "valor por dólar" para rodar IA em casa. Fui conferir: a métrica multiplica estoque por vazão, o preço do Spark morreu em fevereiro e a PRO 6000 entrou sem hospedeiro. Depois refiz a conta que interessa — tokens por dólar contra a API do mesmo modelo — e a primeira versão dela assumia que uma pessoa usa a máquina 1 % do tempo. Medi 43.593 chamadas reais de agente de código nesta máquina: o 1 % não descreve ninguém (chat fica perto de 0,03 %; agente, entre 10 % e 30 %), 96 % da entrada é releitura de contexto, e trocar a regra de cobrança dessa releitura move a conta 16 vezes, enquanto trocar de máquina move 3,6. No único regime em que a máquina mais barata ganha (1,5x), o dia de pico dela não cabe no dia e a chamada média, de 151,9 mil tokens, não cabe no contexto do modelo. Compre por soberania, não por economia.',
   date: '2026-08-25',
   tags: ['ia', 'llm', 'hardware', 'custo', 'inferencia-local'],
+  hero: {
+    width: 2400,
+    height: 1260,
+    locales: {
+      'pt-br': { src: '/artigos/tokens-por-dolar/hero.jpg', og: '/artigos/tokens-por-dolar/hero-og.jpg' },
+    },
+  },
   i18n: {
     en: {
       title: 'The viral chart crowns the Mac, the table crowns the Spark: I measured 43 thousand calls and the winner is no machine at all',
@@ -206,6 +219,13 @@ export const artigos: readonly Artigo[] = [
       "A expressão \"marca d'água\" faz quase todo mundo imaginar a coisa errada: um carimbo escondido, um caractere invisível, algo acrescentado ao texto. Não é nada disso — nada é inserido, e o que muda é a origem do sorteio quando o modelo escolhe entre duas palavras que serviriam igualmente bem. Explico o mecanismo do zero, primeiro sem uma palavra técnica (o caminho de casa e um número secreto combinado com um amigo), depois com os nomes que aparecem na documentação. É do mecanismo que caem, de graça, todos os limites: por que texto curto quase não marca, por que código quase não marca, por que a revisão de um texto seu quase não marca, e por que a marca nunca vai dizer quem escreveu. Separo também o que a imprensa vai juntar nos próximos dias: marca d'água no texto e credencial C2PA no arquivo são mecanismos diferentes. Sete figuras próprias, feitas em código. E a ressalva que muda o uso: a API que permitiria a qualquer um conferir um texto ainda não existe — o artigo trata isso como promessa, não como fato.",
     date: '2026-08-14',
     tags: ['ia', 'claude', 'anthropic', 'marca-dagua', 'regulacao', 'didatico'],
+    hero: {
+      width: 2400,
+      height: 1260,
+      locales: {
+        'pt-br': { src: '/artigos/marca-dagua-claude/hero.png', og: '/artigos/marca-dagua-claude/hero-og.jpg' },
+      },
+    },
     i18n: {
       en: {
         title:
@@ -239,6 +259,13 @@ export const artigos: readonly Artigo[] = [
       'A pergunta de quem quer rodar um modelo de linguagem na própria máquina é sempre a mesma: isso cabe aqui? A resposta tem duas parcelas, e só uma delas cresce enquanto você conversa. Explico as duas do zero, três vezes seguidas: primeiro sem nenhuma palavra técnica, depois com os nomes que aparecem na documentação, depois com a fórmula e os números reais do Qwen3.8-27B, lançado neste mês — 27.781.427.952 parâmetros, 64 camadas das quais apenas 16 guardam cache que cresce, 15,82 GiB de pesos em Q4_K_M e 16,14 GiB de cache no contexto máximo de 262.144 tokens. Pelo caminho, três armadilhas que os números redondos escondem: K é 1.024 e não mil, GB não é GiB, e o nome do modelo é arredondado. Todo número deste artigo sai de um programa publicado junto: qualquer leitor refaz a conta na máquina dele.',
     date: '2026-08-14',
     tags: ['ia', 'llm', 'hardware', 'quantizacao', 'didatico'],
+    hero: {
+      width: 2400,
+      height: 1260,
+      locales: {
+        'pt-br': { src: '/artigos/memoria-llm-local/hero.jpg', og: '/artigos/memoria-llm-local/hero-og.jpg' },
+      },
+    },
     i18n: {
       en: {
         title: 'How to know if an AI model runs on your computer — and why',
@@ -270,6 +297,13 @@ export const artigos: readonly Artigo[] = [
       'Pela primeira vez a Anthropic piorou a nota que dá a si mesma — e reclassificou o passado junto. Li as 186 páginas do relatório de risco de agosto de 2026: o que importa não é a nota, são as cinco falhas de processo que a empresa descreve, incluindo uma contaminação de treinamento que atingiu praticamente todos os modelos Claude com corte de conhecimento posterior a dezembro de 2024 e foi descoberta depois da data de corte do próprio relatório.',
     date: '2026-08-14',
     tags: ['anthropic', 'seguranca-de-ia', 'claude', 'governanca'],
+    hero: {
+      width: 2400,
+      height: 1260,
+      locales: {
+        'pt-br': { src: '/artigos/relatorio-de-risco-anthropic/hero.jpg', og: '/artigos/relatorio-de-risco-anthropic/hero-og.jpg' },
+      },
+    },
     i18n: {
       en: {
         title: 'Anthropic Raised the Risk Score on Its Own Models: What the 186-Page August Report Says',
@@ -405,6 +439,13 @@ export const artigos: readonly Artigo[] = [
       'Dois vírgula quatro bilhões de pessoas usam IA generativa, diz a manchete — mas a própria fonte desaconselha ler o número como pessoas. Conferi cada degrau da pirâmide na fonte primária, acrescentei o degrau que nenhuma versão internacional tem (o Brasil) e o resultado muda a leitura: os pagantes do mundo inteiro são ~1% da humanidade, e a bolha dos coding agents, 0,14%. Você não está atrasado — o feed é a bolha falando de si mesma.',
     date: '2026-08-02',
     tags: ['ia', 'adocao', 'estatisticas', 'fact-check', 'brasil'],
+    hero: {
+      width: 2400,
+      height: 1260,
+      locales: {
+        'pt-br': { src: '/artigos/quantas-pessoas-usam-ia/hero.jpg', og: '/artigos/quantas-pessoas-usam-ia/hero-og.jpg' },
+      },
+    },
     i18n: {
       en: {
         title:
@@ -474,6 +515,13 @@ export const artigos: readonly Artigo[] = [
       'Os data centers "vão consumir mais de 1.000 TWh em 2026 — o equivalente ao Japão", repetem os compilados de estatísticas de IA. Fui conferir: a própria IEA aposentou o número; a série atual mede 485 TWh. Conferi uma a uma as estatísticas que mais circulam, na fonte primária, e o placar tem confere, meia-verdade, fóssil e zumbi — com um padrão: o denominador omitido ("53% da população" era EUA, 18-64 anos). E o degrau Brasil que nenhuma versão internacional tem: 84% dos universitários já usaram genAI, enquanto o país está fora do top-15 de investimento privado.',
     date: '2026-08-02',
     tags: ['ia', 'estatisticas', 'fact-check', 'energia', 'brasil'],
+    hero: {
+      width: 2400,
+      height: 1260,
+      locales: {
+        'pt-br': { src: '/artigos/estatisticas-de-ia/hero.jpg', og: '/artigos/estatisticas-de-ia/hero-og.jpg' },
+      },
+    },
     i18n: {
       en: {
         title: 'AI statistics in 2026: the scoreboard, checked number by number',
@@ -505,6 +553,13 @@ export const artigos: readonly Artigo[] = [
       'Os dois números que sustentam qualquer página de "estatísticas do ChatGPT" — 900 milhões de usuários ativos semanais e 50 milhões de assinantes — vêm da mesma frase de um comunicado de captação de US$ 110 bilhões. Fui ler o post: a definição de "usuário ativo semanal" não está lá. Ela existe, mas mora em outro documento, publicado quatro meses depois, com escopo mais estreito. E o denominador tem paternidade rastreável: o COO mediu 400 mi contra a população total, o paper da OpenAI com o NBER mediu 700 mi contra a adulta, e a página que me deu a pauta voltou para a total — "10% virou 11%" parece progressão e é troca de régua. Na mesma régua, seriam 11,3% e 14,5%. Mais o degrau Brasil: o português é a 2ª língua não-inglesa do ChatGPT, e dois veículos descreveram o mesmo briefing da OpenAI com métricas diferentes na primeira linha.',
     date: '2026-08-03',
     tags: ['ia', 'chatgpt', 'openai', 'estatisticas', 'fact-check', 'brasil'],
+    hero: {
+      width: 2400,
+      height: 1260,
+      locales: {
+        'pt-br': { src: '/artigos/estatisticas-chatgpt/hero.jpg', og: '/artigos/estatisticas-chatgpt/hero-og.jpg' },
+      },
+    },
     i18n: {
       en: {
         title:
@@ -540,6 +595,13 @@ export const artigos: readonly Artigo[] = [
       'O Brasil é o quinto país que mais usa o Claude — e o dado, ao contrário de quase tudo que circula, vem de fonte primária: o microdado que a própria Anthropic publica sob CC-BY. Baixei o dataset e medi. A mesma medição diz o que a manchete não carrega: em intensidade per capita somos o 61º de 121 — estamos no topo porque somos grandes, não porque somos intensos. Volume não é intensidade, e a versão em dinheiro dessa confusão (run rate não é receita) sustenta quase toda página de "estatísticas do Claude" de 2026. Conferi a mais completa delas fonte a fonte: o run rate de US$ 47 bi é um mês forte anualizado; o CFO, sob juramento, declarou mais de US$ 5 bi desde a fundação na mesma janela do "~19 bi" público — não é flagrante, é velocímetro contra odômetro. E o único dado que qualquer um reproduz de graça leva uma linha na página; o vazamento leva a manchete.',
     date: '2026-08-10',
     tags: ['ia', 'claude', 'anthropic', 'estatisticas', 'fact-check', 'brasil'],
+    hero: {
+      width: 2400,
+      height: 1260,
+      locales: {
+        'pt-br': { src: '/artigos/estatisticas-claude/hero.jpg', og: '/artigos/estatisticas-claude/hero-og.jpg' },
+      },
+    },
     i18n: {
       en: {
         title:
@@ -575,6 +637,13 @@ export const artigos: readonly Artigo[] = [
       'A página de estatísticas mais completa sobre o Claude Code credita seus downloads a um pacote npm que nunca existiu: 404 no registry, zero capturas no Wayback Machine. O pacote real tem API pública, sem chave e sem paywall — 429 milhões de downloads acumulados, 44,4 milhões só no mês em que a página publicou "111.000+". Medi cada número que dava para medir e o placar fechou em quatro certos, quatro errados e dois sem fonte que permita julgar: a survey de "15.000 desenvolvedores" tinha 906 respondentes; as "22.000 stars" eram 71.847 em 1º de março; o "open source" tem um LICENSE.md de catorze palavras, três das quais são "all rights reserved". Do outro lado, o claim mais inacreditável da lista — 4% de todos os commits públicos do GitHub — confere como estimativa, e a própria Anthropic o ecoou no anúncio da Série G. O detalhe que organiza o placar: os erros apontam todos na mesma direção, para baixo. O produto medível por API pública é maior que o produto descrito pela página que existia para promovê-lo. E o dado primário que ninguém usa rende o recorte brasileiro: 26,0% do uso do Claude.ai no Brasil vem de ocupações de computação e matemática — acima do global (23,8%) e dos Estados Unidos (21,1%).',
     date: '2026-08-11',
     tags: ['ia', 'claude-code', 'anthropic', 'estatisticas', 'fact-check', 'brasil'],
+    hero: {
+      width: 2400,
+      height: 1260,
+      locales: {
+        'pt-br': { src: '/artigos/estatisticas-claude-code/hero.jpg', og: '/artigos/estatisticas-claude-code/hero-og.jpg' },
+      },
+    },
     i18n: {
       en: {
         title:

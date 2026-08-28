@@ -43,9 +43,9 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const { title, summary } = localizeArtigo(artigo, locale);
   const path = `${artigosCanonicalPath}/${artigo.slug}`;
   // A capa vira o card de compartilhamento só onde a arte fala o idioma do leitor:
-  // ela traz o título e o atalho desenhados dentro dela, num idioma só. Fora dele
-  // vale o card tipográfico de `opengraph-image.tsx`, que É localizado.
-  const heroOg = artigo.hero && locale === defaultLocale ? artigo.hero.og : null;
+  // ela traz o título, os rótulos e o atalho desenhados dentro dela. Locale fora do
+  // mapa cai no card tipográfico de `opengraph-image.tsx`, que É localizado.
+  const heroOg = artigo.hero?.locales[locale]?.og ?? null;
 
   return {
     title,
@@ -119,6 +119,7 @@ export default async function ArtigoPage({ params }: PageProps) {
   const pageUrl = `${origin}${path}`;
   const breadcrumbBase = locale === defaultLocale ? origin : `${origin}/${locale}`;
   const publishedIso = artigoDateToIso(artigo.date);
+  const hero = artigo.hero?.locales[locale];
 
   const articleJsonLd = {
     '@context': 'https://schema.org',
@@ -131,7 +132,13 @@ export default async function ArtigoPage({ params }: PageProps) {
     datePublished: publishedIso,
     dateModified: publishedIso,
     keywords: artigo.tags.join(', '),
-    image: `${origin}/carlos-ulisses-flores-cto.jpg`,
+    /*
+     * A imagem do artigo, não o retrato do autor: até 2026-08-28 isto apontava para
+     * `carlos-ulisses-flores-cto.jpg`, um retrato de 350x401 anunciado onde o consumidor
+     * do metadado espera a arte do post. Agora é a capa daquele locale; sem capa, o card
+     * tipográfico do próprio slug, que existe para os 5 e é 1200x630 de verdade.
+     */
+    image: `${origin}${hero?.og ?? buildCanonical(locale, `${path}/opengraph-image`)}`,
     author: {
       '@type': 'Person',
       '@id': `${origin}/#person`,
@@ -193,16 +200,16 @@ export default async function ArtigoPage({ params }: PageProps) {
         </header>
 
         {/*
-          Capa só no locale da arte (mesma regra do `og:image` acima): o título e o
+          Capa no idioma do leitor (mesma regra do `og:image` acima): o título e o
           atalho estão desenhados dentro do PNG. `priority` porque ela é o LCP da
           página; `width`/`height` reais reservam o espaço e mantêm o CLS em zero.
         */}
-        {artigo.hero && locale === defaultLocale ? (
+        {hero ? (
           <Image
-            src={artigo.hero.src}
+            src={hero.src}
             alt={title}
-            width={artigo.hero.width}
-            height={artigo.hero.height}
+            width={artigo.hero!.width}
+            height={artigo.hero!.height}
             priority
             sizes='(min-width: 768px) 48rem, 100vw'
             className='mb-10 h-auto w-full rounded-lg border border-white/10'

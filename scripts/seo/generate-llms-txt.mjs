@@ -70,10 +70,16 @@ async function loadGeneratedData() {
   // e não compila TypeScript.
   const artigos = [];
   const artigosContent = readFileSync(join(ROOT, 'data/artigos.ts'), 'utf8');
-  const artigoRe = /slug:\s*'([^']+)',\s*\n\s*title:\s*\n?\s*'((?:[^'\\]|\\.)*)'/g;
+  // A aspa do título é capturada e casada de volta por retrovisor (`\2`): quando o
+  // título tem apóstrofo, o arquivo usa aspas DUPLAS, e a versão anterior — que só
+  // aceitava aspas simples — deixava o artigo cair do llms.txt em silêncio. Foi o que
+  // aconteceu com `marca-dagua-claude` ("a marca d'água do Claude...") desde a
+  // publicação: 17 dos 18 artigos no arquivo, e nenhum gate acusando.
+  const artigoRe = /slug:\s*'([^']+)',\s*\n\s*title:\s*\n?\s*(['"])((?:\\.|(?!\2)[^\\])*)\2/g;
   let a;
   while ((a = artigoRe.exec(artigosContent)) !== null) {
-    artigos.push({ slug: a[1], title: a[2].replaceAll("\\'", "'"), path: `/artigos/${a[1]}` });
+    const title = a[3].replaceAll("\\'", "'").replaceAll('\\"', '"');
+    artigos.push({ slug: a[1], title, path: `/artigos/${a[1]}` });
   }
 
   return { publications, artigos, blogPostCount, sermonCount, certCount };
