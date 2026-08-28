@@ -207,6 +207,32 @@ export const artigos: readonly Artigo[] = [
   },
 },
   /*
+   * Segundo do array: data propria (2026-08-26), atras so do `ia-local-por-vram`.
+   */
+  {
+    slug: 'estatisticas-agentes-de-ia',
+    title:
+      '"95% dos pilotos de IA falham" saiu de 52 entrevistas — e a régua de três perguntas que evita o próximo',
+    summary:
+      'O "95% dos pilotos de IA falham" saiu de 52 entrevistas e não mediu agentes. Fui às primárias: toda estatística de agente é previsão, declaração ou medição — e cada uma falha de um jeito. A Gartner publica previsão e enquete de webinar na mesma página; o AI Index diz 70% no resumo e 79% no gráfico; a METR mediu devs 19% mais lentos enquanto eles se achavam 20% mais rápidos, e em 2026 não conseguiu repetir porque ninguém aceita trabalhar sem IA; a métrica de consistência sumiu dos placares; um recorde foi retirado por vazamento de gabarito. Medi o encanamento (SDK do MCP: 1.087 vezes em 18 meses) e o Brasil (17% das empresas usam IA; 68% disso é automação de fluxo). Nenhum número é falso — todos mudam de peso quando a etiqueta vai junto.',
+    date: '2026-08-26',
+    tags: ['ia', 'agentes', 'estatisticas', 'benchmarks', 'metodologia'],
+    i18n: {
+      en: {
+        title: '"95% of AI pilots fail" came from 52 interviews — and the three-question test that catches the next one',
+        summary: 'The "95% of AI pilots fail" figure came from 52 interviews and never measured agents. I went to the primary sources: every agent statistic is a forecast, a self-report or a measurement — and each fails in its own way. Gartner publishes a forecast and a webinar poll on the same page; the AI Index says 70% in its summary and 79% in its own chart; METR clocked developers 19% slower while they believed they were 20% faster, and in 2026 could not repeat the trial because nobody agrees to work without AI; the consistency metric vanished from leaderboards; a record was withdrawn for answer leakage. I measured the plumbing (MCP SDK: 1,087x in 18 months) and Brazil (17% of companies use AI; 68% of that is workflow automation). None of the numbers is false — all of them change weight once the label travels with them.'
+      },
+      es: {
+        title: '"El 95 % de los pilotos de IA fracasa" salió de 52 entrevistas — y la regla de tres preguntas que evita el próximo',
+        summary: 'El "95% de los pilotos de IA fracasa" salió de 52 entrevistas y no midió agentes. Fui a las fuentes primarias: toda estadística de agentes es previsión, declaración o medición — y cada una falla a su manera. Gartner publica una previsión y una encuesta de webinar en la misma página; el AI Index dice 70% en el resumen y 79% en su propio gráfico; METR cronometró a desarrolladores un 19% más lentos mientras ellos se creían un 20% más rápidos, y en 2026 no pudo repetir el ensayo porque nadie acepta trabajar sin IA; la métrica de consistencia desapareció de los rankings; un récord fue retirado por filtración de respuestas. Medí la tubería (SDK de MCP: 1.087 veces en 18 meses) y Brasil (17% de las empresas usan IA; el 68% de eso es automatización de flujos). Ningún número es falso — todos cambian de peso cuando la etiqueta va con ellos.'
+      },
+      it: {
+        title: '"Il 95% dei progetti pilota di IA fallisce" viene da 52 interviste — e le tre domande che evitano il prossimo',
+        summary: 'Il "95% dei progetti pilota di IA fallisce" viene da 52 interviste e non ha misurato agenti. Sono andato alle fonti primarie: ogni statistica sugli agenti è previsione, dichiarazione o misurazione — e ciascuna fallisce a modo suo. Gartner pubblica una previsione e un sondaggio da webinar sulla stessa pagina; l\'AI Index dice 70% nel riassunto e 79% nel proprio grafico; METR ha cronometrato sviluppatori il 19% più lenti mentre loro si credevano il 20% più veloci, e nel 2026 non ha potuto ripetere l\'esperimento perché nessuno accetta di lavorare senza IA; la metrica di consistenza è sparita dalle classifiche; un record è stato ritirato per fuga di risposte. Ho misurato le tubature (SDK di MCP: 1.087 volte in 18 mesi) e il Brasile (il 17% delle aziende usa l\'IA; il 68% di questo è automazione di flussi). Nessun numero è falso — tutti cambiano peso quando l\'etichetta viaggia con loro.'
+      },
+    },
+  },
+  /*
    * Primeiro do array de propósito: divide a data com `memoria-llm-local` e o
    * `sort` de `artigosByDateDesc` é estável — no empate, quem vem antes aqui
    * aparece antes no índice.

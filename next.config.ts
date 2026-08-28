@@ -175,6 +175,10 @@ const nextConfig: NextConfig = {
       { source: '/restricao-es', destination: '/es/artigos/teoria-das-restricoes', permanent: true },
       { source: '/restricao-it', destination: '/it/artigos/teoria-das-restricoes', permanent: true },
       { source: '/restricao-he', destination: '/he/artigos/teoria-das-restricoes', permanent: true },
+      { source: '/agentes',    destination: '/artigos/estatisticas-agentes-de-ia',    permanent: true },
+      { source: '/agentes-en', destination: '/en/artigos/estatisticas-agentes-de-ia', permanent: true },
+      { source: '/agentes-es', destination: '/es/artigos/estatisticas-agentes-de-ia', permanent: true },
+      { source: '/agentes-it', destination: '/it/artigos/estatisticas-agentes-de-ia', permanent: true },
     ];
 
     // Locale handling (double-locale 410 + single-locale 301 + i18n rewrite) moved to middleware.ts

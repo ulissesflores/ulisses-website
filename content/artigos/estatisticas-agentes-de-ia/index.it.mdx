@@ -1,0 +1,637 @@
+---
+title: '"Il 95% dei progetti pilota di IA fallisce" viene da 52 interviste — e le tre domande che evitano il prossimo'
+slug: estatisticas-agentes-de-ia
+category: artigos
+date: '2026-08-26'
+language: it-IT
+---
+
+Il numero più citato al mondo sugli agenti di IA — "il 95% dei progetti pilota di IA fallisce" — viene da
+52 interviste, e il rapporto che lo ha pubblicato non ha misurato nessun agente. Ho letto le 26 pagine. Gli agenti
+vi compaiono come la **soluzione raccomandata**, non come oggetto misurato; il 95% riguarda strumenti
+aziendali personalizzati, e nello stesso documento il chatbot generico converte **l'83%** dei piloti
+in implementazione. Fortune, che ha diffuso il numero, ha pubblicato la metodologia sbagliata.
+
+Sono andato a cercare le fonti primarie di tutte le statistiche sugli agenti che circolano: la previsione
+della Gartner, il "95%" del MIT, l'esperimento randomizzato della METR, l'AI Index di Stanford, le
+classifiche di *benchmark* (test standardizzato che dà un punteggio al modello). La regola uscita dalla
+verifica è semplice: **ogni statistica sugli agenti è una di tre cose — previsione, dichiarazione o
+misurazione — e la copertura mediatica le somma tutte e tre nella stessa frase.** Il problema quasi
+mai è il numero. È l'etichetta che nessuno gli attacca.
+
+> **Nota metodologica.** Ogni numero di questo articolo è stato verificato contro il documento originale —
+> PDF, post, paper, foglio di calcolo o API pubblica — tra il 13 e il 26 agosto 2026. Tre misurazioni
+> sono mie e riproducibili: la serie di download dell'SDK del MCP (API pubblica di npm), la
+> replica della regressione della METR sul CSV che la METR stessa pubblica, e le coppie di
+> costo per compito lette direttamente nell'HTML della classifica di Princeton. Dove una fonte esiste solo
+> in ripubblicazione (la Gartner nega l'accesso diretto), il testo lo dice. Ciò che non è stato verificato
+> è segnalato. Questo articolo non contiene discorso di Reddit né di X: le due fonti sono chiuse
+> per questa macchina, e non fingerò di aver letto ciò che non ho letto — la comunità qui è Hacker News,
+> dove ogni commento ha un id verificabile.
+
+---
+
+## Il tabellone della verifica
+
+Il verdetto prima dell'argomento, perché è quello che circola da solo:
+
+| Cosa circola | Verdetto |
+|---|---|
+| "il 95% dei progetti pilota di IA fallisce" (MIT NANDA) | ⚠️ Esiste — come **percezione** riportata in 52 interviste, su strumenti personalizzati. Non ha misurato agenti; il chatbot generico converte l'83% nello stesso rapporto |
+| "oltre il 40% dei progetti di IA agentica sarà cancellato entro il 2027" (Gartner) | ⚠️ **Previsione** senza metodologia, pubblicata accanto a un sondaggio con n = 3.412 — partecipanti a un webinar della stessa Gartner |
+| "solo circa 130 fornitori di agenti sono reali" (Gartner) | ⚠️ "Gartner estimates": senza conteggio né criterio pubblicato |
+| "gli sviluppatori sono diventati il 19% più lenti con l'IA" (METR) | ✅ Conferma — n = 16, 246 compiti, inizio 2025. E lo stesso gruppo **non è riuscito a ripetere** l'esperimento nel 2026 |
+| "il 70% delle organizzazioni usa IA generativa" (AI Index 2026, sintesi del capitolo) | ❌ Il grafico dello **stesso capitolo** dice 79% |
+| "secondo l'AI Index di Stanford, X% delle aziende..." | ⚠️ Il dato viene dal sondaggio della McKinsey; l'AI Index ha disegnato il grafico e **non dichiara l'N** |
+| "il 57% ha agenti in produzione" (LangChain) | ✅ Conferma — tra 1.340 ingegneri di agenti, in un *survey* (sondaggio d'opinione) di chi vende strumenti per agenti |
+| "87,9% di successo nel τ²-bench" | ✅ Conferma come `pass^1` (successo in UN solo tentativo); la metrica di **coerenza** non è pubblicata per nessun modello del 2026 |
+| "46,3% di completamento in TheAgentCompany con GPT-5.4" | ❌ **Ritirato il 01/08/2026** per fuga di risposte, dagli stessi autori della sottomissione |
+| "30% di completamento in TheAgentCompany" | ✅ Conferma (paper, NeurIPS 2025) — e il leader attuale fa 42,9% a **un decimo** del costo |
+
+Uno conferma pulito, due sono stati ritirati o si contraddicono, il resto esiste ma con l'etichetta
+sbagliata. Nota lo schema: **i numeri raramente sono falsi. Ciò che manca è dire di che natura è
+ciascuno** — e questo cambia cosa dimostra.
+
+---
+
+## La regola: tre domande in dieci secondi
+
+Prima di credere a qualsiasi statistica sugli agenti, tre domande separano ciò che essa può dimostrare
+da ciò che suggerisce soltanto. La figura riassume l'intera regola; il resto dell'articolo è la
+dimostrazione, caso per caso.
+
+<StepFlowDiagram
+  dataset="agentes-tres-reguas-it"
+  title="Tre nature, tre modi di fallire"
+  subtitle="Ogni statistica sugli agenti rientra in una di queste caselle — e ciascuna sbaglia a modo suo"
+  source="Fonte: classificazione dell'autore; i punti ciechi per tipo sono quelli pubblicati dalla METR (11/05/2026). ulissesflores.com/agentes-it"
+  description="Diagramma a catena con tre caselle. Prima: previsione — chi ha prodotto il numero non ha misurato nulla; opinione di analista con orizzonte, senza campione, senza nulla da verificare. Seconda: dichiarazione — qualcuno ha risposto a una domanda; sondaggio di percezione, e il resoconto sbaglia il segno dell'effetto. Terza: misurazione — qualcuno ha cronometrato o eseguito il test; riproducibile, e l'agente impara a raggirare il proxy."
+/>
+
+Nota che la regola non dice "misurazione è buona, il resto è cattivo". Dice che **ogni natura fallisce
+a modo suo**: la previsione non ha campione, quindi non c'è nulla da verificare; la dichiarazione
+diverge dalla misurazione sullo stesso soggetto; e la misurazione misura un *proxy* (un sostituto
+misurabile della cosa che si vuole misurare) che l'agente stesso impara a raggirare. Non è un'idea
+mia — è la lista dei punti ciechi che il gruppo che misura più agenti al mondo pubblica sui propri
+metodi, e ci arrivo alla fine. Prima, i casi.
+
+---
+
+## Previsione: la Gartner pubblica i due tipi nella stessa pagina
+
+Il comunicato della Gartner del 25 giugno 2025 è la prova più pulita della tesi, perché contiene, nella
+stessa pagina, un numero di ciascuna natura. Il primo:
+
+> "Over 40% of agentic AI projects will be canceled by the end of 2027, due to escalating
+> costs, unclear business value or inadequate risk controls."
+>
+> In italiano: "Oltre il 40% dei progetti di IA agentica sarà cancellato entro la fine del 2027, per
+> costi crescenti, valore di business poco chiaro o controlli di rischio inadeguati."
+
+È una *strategic planning assumption* ("premessa di pianificazione strategica") — la Gartner etichetta
+così le proprie previsioni. Non c'è campione, non c'è metodo, non c'è errore campionario. È opinione
+qualificata con un orizzonte. Tre paragrafi più sotto, nello stesso comunicato, arriva il secondo
+numero: il 19% dei rispondenti ha investito pesantemente in agenti, il 42% in modo prudente, l'8%
+nulla, il 31% sta aspettando. Questo ha un N: **3.412 persone** — che sono partecipanti a un webinar
+della stessa Gartner, nel gennaio 2025. È un sondaggio d'audience, non un campione di mercato.
+
+La stampa ha citato entrambi con lo stesso verbo ("la Gartner dice che..."). **Una previsione e un
+sondaggio da webinar sono diventate, nella copertura, due statistiche uguali.** E lo stesso comunicato
+conia l'espressione che definisce la categoria — *agent washing* ("lavaggio di agente"), il
+ribattezzo di RPA (automazione dei processi tramite software) e chatbot come "agente" — con un numero
+sopra: "Gartner estimates only about 130 of the thousands of agentic AI vendors are real" ("la Gartner
+stima che solo circa 130 dei migliaia di fornitori di IA agentica siano reali"). *Estimates* — stima.
+Senza conteggio pubblicato, senza criterio pubblicato di "reale". Il numero gira il mondo come se
+fosse un censimento.
+
+La sequenza di previsioni della Gartner sugli agenti, tutte etichettate da lei stessa come
+premesse di pianificazione e tutte senza metodologia dichiarata:
+
+| Data | Previsione (testuale) | In italiano | Orizzonte |
+|---|---|---|---|
+| ott/2024 | "By 2028, 33% of enterprise software applications will include agentic AI, up from less than 1% in 2024" | Entro il 2028, il 33% delle applicazioni software aziendali includerà IA agentica, contro meno dell'1% nel 2024 | 2028 |
+| ott/2024 | "By 2028, at least 15% of day-to-day work decisions will be made autonomously through agentic AI" | Entro il 2028, almeno il 15% delle decisioni lavorative quotidiane sarà preso autonomamente dall'IA agentica | 2028 |
+| mar/2025 | "By 2029, agentic AI will autonomously resolve 80% of common customer service issues without human intervention" | Entro il 2029, l'IA agentica risolverà da sola l'80% dei casi comuni di assistenza clienti | 2029 |
+| giu/2025 | "Over 40% of agentic AI projects will be canceled by the end of 2027" | Oltre il 40% dei progetti di IA agentica sarà cancellato entro la fine del 2027 | 2027 |
+| ago/2025 | "40 percent of enterprise applications will be integrated with task-specific AI agents by 2026, up from less than 5 percent today" | Il 40% delle applicazioni aziendali sarà integrato con agenti IA specifici per compito entro il 2026, contro meno del 5% oggi | 2026 |
+| lug/2026 | "up to $234 billion of enterprise application spending exposed to agentic arbitrage between now and 2030" | Fino a US$ 234 miliardi di spesa in software aziendale esposti all'"arbitraggio agentico" fino al 2030 | 2030 |
+
+Il risultato negativo vale più della tabella: **la Gartner non ha mai dichiarato di rivedere nessuna
+previsione sugli agenti.** Non esiste un "stiamo rivedendo la stima precedente" in nessun comunicato
+che io abbia localizzato. Ciò che esiste è una sequenza di metriche diverse, senza riferimento
+incrociato — il "40% delle applicazioni entro il 2026" non è un aggiornamento del "33% entro il
+2028"; sono ritagli distinti. Dall'esterno, è impossibile sapere se qualche previsione ha sbagliato,
+perché nessuna è messa accanto alla successiva. Previsione senza campione e senza revisione è
+l'unica natura di statistica che **non può** essere verificata. Non è un difetto della Gartner; è la
+natura della cosa. Il difetto è citarla come se fosse misurazione.
+
+> Riserva di provenienza: `gartner.com` nega l'accesso diretto da questa macchina. Le citazioni sopra
+> vengono da ripubblicazioni che incollano il comunicato per intero, incrociate a due a due, e da un
+> PDF primario del rapporto di ottobre 2024 (ID G00818765). La fase dell'IA agentica nell'Hype Cycle
+> (il "ciclo dell'hype" della Gartner, che posiziona ogni tecnologia tra il picco delle aspettative e
+> la maturità) del 2026 resta fuori da questo articolo: non c'è comunicato ufficiale, solo blog di
+> fornitori — e un testo che esige metodologia visibile non cita una fase di Hype Cycle raccolta da
+> un blog di vendor.
+
+---
+
+## Dichiarazione: il "95%" che non ha misurato agenti
+
+"The GenAI Divide: State of AI in Business 2025" è un documento di 26 pagine del Project NANDA, del
+MIT Media Lab, autoetichettato a pagina 2 come *"Preliminary Findings"* ("risultati preliminari"). La
+frase diventata titolo è nel sommario esecutivo:
+
+> "Despite $30–40 billion in enterprise investment into GenAI, this report uncovers a
+> surprising result in that 95% of organizations are getting zero return."
+>
+> In italiano: "Nonostante 30-40 miliardi di dollari investiti dalle aziende in IA generativa, questo
+> rapporto rivela un risultato sorprendente: il 95% delle organizzazioni ha un ritorno pari a zero."
+
+Quattro cose che il titolo ha cancellato, tutte dallo stesso PDF:
+
+1. **Il 95% riguarda una di due classi di strumenti, e non è la classe dei chatbot.** Il rapporto
+   separa gli LLM generici (ChatGPT, Copilot) dalla GenAI integrata o specifica per compito. I
+   generici: l'80% ha esplorato, il 50% ha pilotato, il **40%** ha implementato. I personalizzati:
+   il 60%, il 20%, il **5%**. Il "95% fallisce" è il complemento di quel 5%. E a pagina 7, testuale:
+   "Generic LLM chatbots appear to show high pilot-to-implementation rates (~83%)" ("i chatbot LLM
+   generici sembrano avere alti tassi di conversione da pilota a implementazione, ~83%"). Lo stesso
+   rapporto che ha generato "il 95% fallisce" dice che il chatbot generico converte l'83%.
+2. **Il "successo" è percezione.** Pagina 7: il successo è ciò che "users or executives have
+   remarked as causing a marked and sustained productivity and/or P&L impact" ("ciò che utenti o
+   dirigenti hanno affermato aver causato un impatto marcato e sostenuto su produttività e/o conto
+   economico"). *Remarked* — hanno affermato. Nessuno ha aperto un conto economico (il bilancio dei
+   risultati dell'azienda) — qualcuno ha detto, in intervista, di aver percepito un impatto.
+3. **Il campione: 52 organizzazioni intervistate e 153 "senior leaders" raccolti in quattro
+   conferenze** — campione di convenienza, per costruzione. Nessuna peer review menzionata in
+   nessuna delle 26 pagine; nessun finanziamento dichiarato. La stessa appendice ammette: "These
+   figures are directionally accurate based on individual interviews rather than official company
+   reporting" ("questi numeri sono direzionalmente corretti, basati su interviste individuali e non
+   su rendiconti ufficiali delle aziende"). *Directionally accurate* — indicano direzione, non
+   magnitudine. La stampa ha pubblicato la magnitudine.
+4. **Gli agenti non sono stati misurati. Sono stati raccomandati.** Pagina 14: "Agentic AI [...]
+   directly addresses the learning gap that defines the GenAI Divide" ("l'IA agentica affronta
+   direttamente la lacuna di apprendimento che definisce il GenAI Divide"). Senza N, senza tasso —
+   narrativa. E l'appendice dei ringraziamenti dice chi firma: "NANDA [...] builds on Anthropic's
+   Model Context Protocol (MCP) and the Google/Linux Foundation A2A to create infrastructure for
+   distributed agent intelligence at scale" ("il NANDA si appoggia sul MCP di Anthropic e sull'A2A
+   di Google/Linux Foundation per creare infrastruttura di intelligenza di agenti distribuita su
+   larga scala"). Il progetto che diagnostica la malattia costruisce la cura. Questo non invalida il
+   rapporto; è una rivelazione che nessun articolo ha fatto.
+
+Fortune, che ha dato il primo titolo il 18 agosto 2025, ha descritto la base come "150 interviews
+with leaders, a survey of 350 employees" ("150 interviste con dirigenti, un sondaggio con 350
+dipendenti"). Il PDF dice 52 e 153. Rob Wiblin, di 80,000 Hours, ha fatto il conto che nessuno aveva
+fatto: "that 5% number is probably based on something like two or three actual companies out of 52"
+("quel numero del 5% probabilmente si basa su qualcosa come due o tre aziende reali, su 52"). E ha
+registrato che, quando l'articolo è diventato virale, "the report describing the methods and results
+wasn't publicly available anywhere" ("il rapporto che descrive metodi e risultati non era
+disponibile pubblicamente da nessuna parte") — il link portava a un modulo Google che chiedeva dati
+personali. Ancora oggi il canale ufficiale del NANDA non pubblica il PDF; la copia integrale è su
+Wayback Machine, catturata due giorni dopo il titolo.
+
+**La statistica più citata sugli agenti di IA è una dichiarazione di percezione, su un'altra cosa,
+con 52 interviste dietro.** Non sto dicendo che il rapporto sia sbagliato — sto dicendo cos'è. Lo
+dice lui stesso.
+
+### L'AI Index si contraddice dentro lo stesso capitolo
+
+Se il NANDA è la fonte più virale, l'AI Index di Stanford è la più rispettata — è stata la spina
+dorsale del mio [tabellone delle statistiche sull'IA](/artigos/estatisticas-de-ia), e lì ha retto
+alla verifica. Il capitolo 4 del rapporto 2026 si apre con i "Chapter Highlights", e il punto 5 dice
+che l'IA generativa è usata in almeno una funzione aziendale nel **70%** delle organizzazioni. Venti
+pagine più avanti, la sezione 4.3 e la Figura 4.3.1 dicono **79%** — e l'etichetta del grafico è
+testuale: `79%, GenAI`. Nove punti di differenza tra il sommario che la stampa legge e il grafico
+che la stampa non apre.
+
+Qualcuno dirà che sono domande diverse: il sommario parla di "used", il corpo di "regularly use".
+Non torna — l'uso regolare è un sottoinsieme dell'uso qualsiasi, quindi il numero del sommario
+dovrebbe essere *maggiore*, mai minore. Non è stata trovata alcuna errata corrige. Non affermo la
+causa; affermo la contraddizione, che chiunque può verificare con due comandi di `pdftotext`.
+
+E c'è una seconda etichetta scambiata, più importante. Tutte le figure di adozione del capitolo —
+da 4.3.1 a 4.3.8 — portano la stessa riga di credito: "Source: McKinsey & Company Survey, 2025 |
+Chart: 2026 AI Index report". **L'AI Index non ha misurato l'adozione dell'IA. Ha disegnato il
+grafico.** Chi scrive "secondo l'AI Index di Stanford" sta citando un sondaggio della McKinsey con
+l'etichetta di un'università — e in nessun punto del capitolo compare la dimensione del campione,
+il periodo di raccolta o il profilo dei rispondenti. Ho cercato `n =`, `respondents were`,
+`survey of`, `methodolog`, `appendix`. Niente. Ciò che il capitolo dichiara, e che riporto qui
+perché è la riserva della fonte stessa: "the results are self-reported and should be viewed as
+**directional rather than comprehensive**" ("i risultati sono autodichiarati e vanno letti come
+direzionali, non come esaustivi").
+
+È la stessa frase del NANDA. **Le due fonti più citate al mondo sull'adozione dell'IA avvertono, in
+nota, che i loro numeri indicano direzione e non magnitudine.** La stampa pubblica la magnitudine.
+
+Ciò che questo sondaggio dice sugli agenti, letto nel grafico e non nel sommario:
+
+<CountryBarsChart
+  dataset="agentes-nenhum-uso-funcao-it"
+  title="Chiesto a chi: la stessa domanda cambia risposta con la popolazione"
+  subtitle="% che dichiara NESSUN uso di agente nella funzione · e % che dichiara agente in produzione"
+  source="Fonti: McKinsey 2025 via AI Index 2026 (Fig. 4.3.7) · LangChain 2026 (n = 1.340) · Stack Overflow 2025 (n = 33.662). ulissesflores.com/agentes-it"
+  description="Due blocchi di barre orizzontali. Blocco 1, in grigio: percentuale di rispondenti che dichiarano nessun uso di agenti di IA per funzione aziendale, dal sondaggio McKinsey ripubblicato dall'AI Index 2026 — manifattura 91%, catena di fornitura 88%, finanza aziendale 85%, risorse umane 82%, ingegneria del software 77%, IT 69%, gestione della conoscenza 66%. Blocco 2, in blu: percentuale che dichiara agenti in produzione in due sondaggi su popolazioni diverse — 57% tra 1.340 ingegneri di agenti nel sondaggio LangChain, e 14,1% di uso quotidiano di agenti tra 33.662 sviluppatori nel sondaggio Stack Overflow."
+/>
+
+Nota il primo blocco: in nessuna funzione aziendale la maggioranza dichiara di usare agenti — in
+manifattura, il 91% dice "nessun uso"; persino in IT, 69%. Il testo del rapporto: "Scaled use was in
+the single digits for nearly all functions" ("l'uso su scala è rimasto a una cifra in quasi tutte le
+funzioni"). L'unico settore in cui l'uso *scalato* di agenti supera il 20% è il settore tecnologico,
+in ingegneria del software (24%), IT (22%) e operazioni di servizio (21%). L'agente è usato su
+scala, soprattutto, dall'industria che fabbrica agenti.
+
+Ora il secondo blocco, che sembra contraddire il primo: LangChain pubblica che il **57%** dei
+rispondenti ha agenti in produzione. I due numeri sono entrambi corretti. LangChain ha chiesto a
+**1.340 professionisti di ingegneria di agenti**, tra novembre e dicembre 2025 — e LangChain vende
+strumenti per agenti. Chi risponde a un'indagine sull'ingegneria di agenti lavora già con agenti;
+il sondaggio è autoselezionato per costruzione. Il campione più grande della raccolta, la Developer
+Survey 2025 di Stack Overflow (N = 33.662), dà il contrappeso: **il 14,1%** usa agenti
+quotidianamente, **il 52%** non usa agenti o resta su strumenti più semplici, il 38% non ha piani
+di adozione — e l'87% si dice preoccupato per la loro accuratezza. Tra gli strumenti di IA in
+generale, più sviluppatori diffidano (46%) di quanti si fidano (33%); solo il 3,1% si fida "molto".
+
+"Quante aziende usano agenti" non ha risposta senza la domanda "chiesto a chi". Tra 57% e una cifra
+sola, la differenza non è realtà — è popolazione. È la stessa trappola apparsa quando sono andato a
+contare [quante persone usano l'IA](/artigos/quantas-pessoas-usam-ia): i numeri giganteschi
+contavano account, non persone. Ed è la riga che sparisce in ogni titolo.
+
+---
+
+## Dichiarazione contro cronometro: lo studio che ha misurato la percezione
+
+Il caso più pulito della distanza tra dichiarazione e misurazione non riguarda aziende: riguarda
+sedici persone, nella stessa settimana, che rispondono alla stessa domanda con la bocca e con
+l'orologio.
+
+Nel 2025 la METR ha fatto ciò che nessuno aveva fatto: un **esperimento randomizzato**. Sedici
+sviluppatori open source esperti, 246 compiti reali sui propri repository (maturi — media di 22
+mila stelle e un milione di righe), ogni compito sorteggiato per permettere o vietare l'IA, pagati
+a US$ 150 l'ora, con Cursor Pro e Claude 3.5/3.7 Sonnet, la frontiera dell'epoca. Prima di
+cominciare, gli sviluppatori hanno previsto che l'IA li avrebbe resi **24% più veloci**. Misurato al
+cronometro, sono risultati **19% più lenti**. E dopo aver finito, pensavano ancora di essere stati
+**20% più veloci**.
+
+<CountryBarsChart
+  dataset="agentes-metr-percepcao-it"
+  title="La stessa persona, lo stesso compito: il resoconto sbaglia il segno dell'effetto"
+  subtitle="Tempo per completare il compito con IA · senza IA = 100 · METR, 16 dev, 246 compiti, 2025"
+  source="Fonte: METR, 10/07/2025 (IC 95% del misurato: +2% a +39%); tempo relativo calcolato dall'autore. ulissesflores.com/agentes-it"
+  description="Tre barre orizzontali con il tempo relativo per completare un compito usando IA, prendendo il tempo senza IA come 100. Previsto dagli sviluppatori prima dello studio: 76, ossia 24% più veloce. Misurato al cronometro: 119, ossia 19% più lento, evidenziato. Stimato dagli stessi sviluppatori dopo lo studio: 80, ossia 20% più veloce. Le due barre di percezione puntano da un lato e la barra di misurazione punta dall'altro."
+/>
+
+Nota che le due barre di percezione stanno dallo stesso lato — e quella di misurazione sta
+dall'altro. Ci sono **circa 39 punti percentuali** tra ciò che i partecipanti hanno riferito alla
+fine e ciò che l'orologio ha misurato. Non è gente che mente in un sondaggio: sono professionisti
+esperti, con incentivo finanziario, che sbagliano il *segno* dell'effetto sul proprio lavoro.
+L'intervallo di confidenza dell'effetto misurato va da +2% a +39% — n = 16 è piccolo, e il testo lo
+dice nella stessa frase in cui dà il numero, altrimenti commette esattamente il peccato che
+denuncia. Il valore dello studio non sta nella magnitudine del 19%. Sta nel disegno: cronometro e
+resoconto, sulle stesse persone, che divergono. E nella riserva che gli stessi autori mettono in
+cima: lo studio è dell'inizio del 2025, con strumenti di inizio 2025, su assistente di codice — non
+su agente autonomo.
+
+### L'esperimento diventato ineseguibile
+
+Qui la storia diventa migliore del titolo. Nel febbraio 2026 la METR ha pubblicato perché non è
+riuscita a ripetere il risultato. Il secondo esperimento è iniziato nell'agosto 2025: 57 sviluppatori
+(10 dello studio originale e 47 nuovi), 143 repository, oltre 800 compiti, ora a US$ 50 l'ora. E si
+è rotto — non per caso, per selezione:
+
+> "we have observed a significant increase in developers choosing not to participate in the
+> study because they do not wish to work without AI, which likely biases downwards our
+> estimate of AI-assisted speedup."
+>
+> In italiano: "abbiamo osservato un aumento significativo di sviluppatori che scelgono di non
+> partecipare allo studio perché non vogliono lavorare senza IA, il che probabilmente spinge verso
+> il basso la nostra stima dell'accelerazione assistita dall'IA."
+
+Tra il **30% e il 50%** degli sviluppatori ha detto di scegliere di non sottoporre compiti perché
+non voleva farli senza IA. Uno di loro non ha consegnato nessun compito del braccio senza IA. Le
+dichiarazioni dei partecipanti sono il ritratto migliore di cosa è cambiato in un anno: "I'm torn.
+I'd like to help provide updated data on this question but also I really like using AI!" ("Sono
+combattuto. Vorrei aiutare a fornire dati aggiornati su questa domanda, ma mi piace anche molto
+usare l'IA!"); "my head's going to explode if I try to do too much the old fashioned way because
+it's like trying to get across the city walking when all of a sudden I was more used to taking an
+Uber" ("mi scoppia la testa se provo a fare troppo alla vecchia maniera — è come attraversare la
+città a piedi quando, all'improvviso, ero abituato a prendere un Uber").
+
+**Il braccio di controllo è diventato impossibile da reclutare, perché lo sviluppatore non accetta
+più di lavorare senza IA.** La misurazione del 2025 aveva una scadenza, e la scadenza è arrivata —
+per un motivo che è, esso stesso, un dato sull'adozione.
+
+I nuovi numeri esistono, e la prosa della METR li presenta in un modo che confonde: "we now
+estimate a speedup of -18%" ("ora stimiamo un'accelerazione del -18%"). Segno negativo in
+un'accelerazione? Sono andato al codice. Il `regression.py` che la METR pubblica definisce lo
+stimando come variazione proporzionale del **tempo** di completamento — negativo è meno tempo,
+cioè più veloce. Ho replicato la regressione da zero sul CSV pubblicato (827 compiti, 53
+sviluppatori): per quelli tornati dallo studio originale, **−18,1%** di tempo, intervallo da
+−38,4% a +8,8%; per i nuovi, **−3,6%**, intervallo da −14,7% a +9,0%. Combacia cifra decimale per
+cifra decimale con ciò che la METR ha pubblicato. La lettura onesta: i punti centrali del 2026
+puntano verso l'accelerazione, **ma i tre intervalli attraversano lo zero**, e la stessa METR
+chiama il risultato "unreliable signal" ("segnale inaffidabile") e probabile pavimento. Nessuno può
+scrivere "gli sviluppatori sono diventati il 18% più veloci" come fatto. L'intervallo va da −38%
+a +9%.
+
+L'AI Index riassume tutto questo episodio in una frase: "developers in late 2025 were likely sped
+up by AI" ("gli sviluppatori a fine 2025 sono stati probabilmente accelerati dall'IA"). La METR
+dice questo — con etichetta: "our data is only very weak evidence for the size of this increase"
+("i nostri dati sono un'evidenza molto debole per la dimensione di questo aumento"). Non è
+malafede dell'AI Index. È il costo del riassumere, pagato in ogni anello della catena, persino in
+un rapporto che si vanta del proprio rigore.
+
+### Il gruppo che misura è diventato un sondaggio — e ha spiegato perché
+
+Nel maggio 2026 la METR ha pubblicato un sondaggio di autovalutazione: 349 lavoratori tecnici,
+raccolta da febbraio ad aprile. Il gruppo che ha scoperto l'abisso tra percezione e cronometro ha
+condotto un'indagine di percezione — perché l'esperimento controllato è diventato ineseguibile, e
+perché un sondaggio è "cheap, broad, and straightforward to run" ("economico, ampio e semplice da
+eseguire"). Lo ha pubblicato con tutte le riserve in vista: "Importantly, survey results are not
+necessarily grounded in reality" ("importante: i risultati dei sondaggi non sono necessariamente
+ancorati alla realtà").
+
+Due risultati di questo sondaggio valgono più di qualsiasi suo numero. Il primo: la METR separa
+**valore** da **velocità**, perché la stessa persona risponde in modo diverso alle due domande —
+mediana di 3x in velocità, 1,4x a 2x in valore. **La domanda sceglie la risposta, all'interno dello
+stesso rispondente, nello stesso modulo.** Il secondo è la frase più forte che ho letto in tutta la
+raccolta:
+
+> "METR staff give the lowest change in value answers of any subgroup we study. We expect that
+> this might be due to METR staff having in mind past findings of gaps between perceived and
+> actual AI-driven productivity."
+>
+> In italiano: "Lo staff della METR dà le risposte più basse di guadagno in valore tra tutti i
+> sottogruppi che studiamo. Ci aspettiamo che ciò sia dovuto al fatto che lo staff della METR ha in
+> mente i risultati precedenti sul divario tra produttività percepita ed effettiva legata all'IA."
+
+Chi conosce il bias riferisce un guadagno minore. La stessa METR lo segnala come aspettativa, non
+come prova — ed è così che entra qui. Ma è l'illustrazione perfetta del perché la regola conta: **la
+regola cambia il numero.**
+
+---
+
+## Misurazione: dove l'errore compare con numero di PR
+
+Se la previsione non ha campione e la dichiarazione sbaglia il segno, la misurazione è l'unica
+natura in cui l'errore diventa visibile — e proprio per questo è l'unica in cui si può vedere
+l'errore accadere.
+
+### La metrica di coerenza è sparita dalla vetrina
+
+Il τ-bench, di Sierra, è nato nel 2024 con due metriche. Il `pass^1` è il tasso di successo in un
+tentativo. Il `pass^k` è lo stesso agente, sullo stesso compito, **k volte di seguito** — l'unica
+metrica che assomiglia a "si può mettere in produzione", perché la produzione è lo stesso compito
+mille volte. Nel paper originale, il `pass^k` crolla: il miglior sistema nel retail faceva 69,2% in
+un tentativo e **46,2%** in quattro; il GPT-4o scendeva sotto il 25% in otto. È aritmetica
+elementare: se ogni passo azzecca il 90% e il compito ha dieci passi, l'intera catena azzecca il
+35% delle volte. L'affidabilità si compone moltiplicando.
+
+La classifica attuale, il τ²-bench, pubblica **solo il `pass^1`**: 87,9% per il Qwen3.5-397B, 85,4%
+per il Gemini 3.0 Pro, 85,3% per il Claude Opus 4.5. **La metrica che misurava la coerenza è
+sparita dalla vetrina nello stesso movimento in cui il numero a tentativo singolo si è avvicinato
+al 90%.** Non so perché, e non lo inventerò. Ciò che si può affermare con sicurezza è meno
+drammatico e più utile: il crollo del `pass^k` è documentato solo per modelli del 2024, e **non
+esiste alcun dato pubblico di coerenza per nessun modello del 2026**. Chi cita "87,9% di successo"
+sta citando la metrica di un solo tentativo. La produzione non è un solo tentativo.
+
+### L'azienda simulata, e la classifica ritirata il 1° agosto
+
+TheAgentCompany, della CMU (NeurIPS 2025), non è una singola prova di codice: simula un'azienda
+intera e misura l'agente per reparto — ingegneria del software, gestione progetti, risorse umane,
+data science, amministrazione, finanza. Il numero che è circolato: **30,3%** di compiti completati
+integralmente dal miglior sistema del paper. Il dato interessante sta nella tabella per area, che
+ho estratto dal LaTeX dell'e-print:
+
+| Modello (agente OpenHands) | Ing. software | Gestione progetti | HR | Data science | Admin | Finanza |
+|---|---|---|---|---|---|---|
+| Gemini 2.5 Pro | 37,7% | 39,3% | 34,5% | 14,3% | 13,3% | **8,3%** |
+| Claude 3.7 Sonnet | 30,4% | **42,9%** | 27,6% | 14,3% | 13,3% | **0,0%** |
+| Claude 3.5 Sonnet | 30,4% | 35,7% | 24,1% | 14,3% | **0,0%** | 8,3% |
+| GPT-4o | 13,0% | 17,9% | **0,0%** | **0,0%** | 6,7% | **0,0%** |
+
+Contando sui tredici modelli dell'appendice (calcolo mio, non frase del paper): **nel reparto
+finanziario, undici dei tredici modelli completano zero compiti**; in data science, dieci;
+nell'amministrazione, otto. Le due aree in testa sono gestione progetti ed ingegneria del software
+— il lavoro di chi costruisce software. La lettura pigra "gli agenti sostituiscono il lavoro
+d'ufficio" è esattamente l'opposto di ciò che il benchmark misura: ciò che funziona oggi è il
+lavoro di chi costruisce agenti, e ciò che non funziona è l'ufficio generico che il titolo promette
+di automatizzare.
+
+E c'è l'episodio che rende questo il miglior blocco dell'articolo. Il 26 giugno 2026 una
+sottomissione con un modello del 2026 (GPT-5.4) è entrata in classifica rivendicando **46,3%** —
+record. Il **1° agosto** gli stessi autori l'hanno ritirata:
+
+> "we recently identified an accidental answer leakage in some graph nodes during our code
+> review, which artificially inflated the score. We are removing these files for now to keep
+> the evaluation dataset clean and fair."
+>
+> In italiano: "abbiamo recentemente identificato una fuga accidentale di risposte in alcuni nodi
+> del grafo durante la nostra revisione del codice, il che ha gonfiato artificialmente il
+> punteggio. Stiamo rimuovendo questi file per ora, per mantenere il set di valutazione pulito e
+> corretto."
+
+Ha numero di PR (*pull request*, la richiesta di revisione del codice che registra ogni modifica),
+ha data di merge, ha la frase. Fino alla chiusura di questo testo, non c'è stato un nuovo invio —
+la classifica ufficiale ha 175 compiti, 17 sottomissioni e **nessuna del 2026**. Questo non è "il
+benchmark non vale". È il contrario: **il benchmark è l'unica natura di statistica sugli agenti in
+cui l'errore compare, ha un numero di PR e può essere disfatto.** Nessun sondaggio ritira un numero
+così. Nessuna previsione viene rivista così.
+
+### Costo per compito: la colonna che nessuna classifica porta
+
+L'HAL — *Holistic Agent Leaderboard*, di Princeton, accettato all'ICLR 2026 — ha eseguito 21.730
+esecuzioni di agente, su 9 modelli e 9 benchmark, spendendo circa US$ 40 mila, e ha pubblicato ciò
+che ha scoperto ispezionando i log:
+
+> "such as searching for the benchmark on HuggingFace instead of solving a task, or misusing
+> credit cards in flight booking tasks."
+>
+> In italiano: "come cercare il benchmark su HuggingFace invece di risolvere il compito, o usare
+> in modo improprio le carte di credito nei compiti di prenotazione voli."
+
+Otto casi in cui l'agente **ha trovato la soluzione** — su HuggingFace o su arXiv — invece di
+risolvere il compito; agenti che *hard-codano* (scrivono la risposta fissa nel codice) una
+soluzione "plausibile" per superare il test unitario; un agente che ha usato la carta di credito
+sbagliata per prenotare un volo. È il modo di fallimento caratteristico della misurazione: **il
+proxy misurato è qualcosa che l'agente impara a raggirare.** Non è un difetto di un benchmark; è
+nella natura del misurare un sistema che ottimizza contro la misura.
+
+E l'HAL mette in classifica la colonna che nessun'altra porta — il costo per compito. Ho letto le
+coppie direttamente nell'HTML della classifica:
+
+<EffortCostChart
+  dataset="agentes-custo-por-tarefa-it"
+  title="La stessa accuratezza costa 9 volte di più — o un decimo"
+  subtitle="Accuratezza contro costo per compito (US$, scala logaritmica) — coppie dello stesso benchmark"
+  xLabel="Costo per compito (US$, scala logaritmica)"
+  yLabel="Compiti completati (%)"
+  source="Fonti: HAL, Princeton (letto il 13/08/2026) · TheAgentCompany, classifica ufficiale (13/08/2026). ulissesflores.com/agentes-it"
+  description="Grafico a dispersione con il costo per compito in scala logaritmica sull'asse orizzontale e la percentuale di compiti completati sul verticale, tre coppie collegate da un segmento. TheAgentCompany: il leader attuale fa 42,86% a 0,40 dollari per compito, contro 30,29% a 4,23 dollari del sistema del paper. HAL Online Mind2Web: 42,33% a 171 dollari contro 40,00% a 1.577 dollari. HAL ScienceAgentBench: 27,45% a 3,95 dollari contro 30,39% a 18,26 dollari. In due delle tre coppie, il sistema più economico è anche il più preciso."
+/>
+
+Nota il segmento centrale: **2,3 punti percentuali di accuratezza in più costano nove volte il
+prezzo** (42,33% a US$ 171 per compito contro 40,00% a US$ 1.577, nell'Online Mind2Web). E nel
+TheAgentCompany il leader attuale offre 12,6 punti in più del sistema del paper a **un decimo** del
+costo — US$ 0,40 contro US$ 4,23 per compito. Frase del paper dell'HAL sullo schema generale: "In
+only 1 of 9 benchmarks do we observe the most costly model run on the Pareto frontier" ("in solo 1
+dei 9 benchmark l'esecuzione più costosa si trova sulla frontiera di Pareto" — la frontiera dei
+sistemi in cui nessuno guadagna accuratezza senza pagare di più). Nessuna classifica di stampa
+porta questa colonna, ed è quella che decide se l'agente arriva in produzione.
+
+---
+
+## Parentesi: il censimento, che è onesto nel conteggio e misura un'altra cosa
+
+Esiste un tipo di numero che non è previsione, né dichiarazione, né misurazione di prestazione:
+**conteggio di documenti reali** — download, annunci di lavoro, stelle. È onesto per costruzione;
+nessuno ha risposto a niente, nessuno ha previsto niente. Ma misura un'altra cosa, e la disciplina
+dell'articolo esige di dire quale.
+
+Ho misurato nell'API pubblica di npm la serie mensile del pacchetto che è l'impianto idraulico
+degli agenti — l'SDK del Model Context Protocol, lo standard che connette agente a strumento e che
+oggi è adottato da tutti i grandi laboratori:
+
+<CountryBarsChart
+  dataset="agentes-mcp-sdk-mensal-it"
+  title="L'impianto è stato installato su scala industriale: mille volte in 18 mesi"
+  subtitle="Download mensili di @modelcontextprotocol/sdk su npm · gen/2025 a lug/2026 · milioni"
+  source="Fonte: API pubblica di npm, misurata dall'autore il 26/08/2026 — il download conta l'installazione, non la persona. ulissesflores.com/agentes-it"
+  description="Diciannove barre orizzontali con i download mensili dell'SDK del Model Context Protocol su npm, da gennaio 2025 a luglio 2026. Inizia a 0,18 milioni a gennaio 2025, supera i 20 milioni a maggio 2025, i 50 milioni a gennaio 2026, sale a 142 milioni a marzo 2026 e arriva a 191,9 milioni a luglio 2026 — 1.087 volte il valore iniziale."
+/>
+
+Da 176 mila a gennaio 2025 a **191,9 milioni** a luglio 2026: **1.087 volte**. Nello stesso periodo,
+1,21 miliardi di download accumulati. L'SDK di agenti di Anthropic, che non esisteva nel 2025, ha
+fatto 33,7 milioni a luglio; LangGraph, 12,4 milioni; l'SDK di agenti di OpenAI, 5,9 milioni. La
+riserva va nella stessa frase, come sempre qui: **il download di npm (il repository di pacchetti di
+JavaScript) conta l'installazione — pipeline di test automatico, container, mirror — non la persona
+né l'agente in esecuzione.** Non è "quanti agenti esistono" — è la stessa disciplina
+dell'[articolo sulle statistiche di Claude Code](/artigos/estatisticas-claude-code), dove 429
+milioni di download non sono diventati 429 milioni di persone. È che l'impianto è già stato
+installato su scala industriale, mentre l'evidenza che funzioni resta contestata.
+
+Lo stesso movimento appare dal lato di chi assume. La Lightcast, ripubblicata dall'AI Index, conta
+gli annunci di lavoro negli USA che citano la competenza:
+
+| Competenza nell'annuncio | 2024 | 2025 | Variazione |
+|---|---|---|---|
+| **Agentic AI** | 151 | **16.541** | +10.854% |
+| AI agents | 1.310 | 15.217 | +1.062% |
+| LangGraph | 194 | 4.294 | +2.113% |
+| ChatGPT | 5.535 | 14.376 | +160% |
+
+L'annuncio di lavoro misura **l'intenzione del datore di lavoro**, non l'agente in esecuzione —
+esattamente come il download misura l'installazione. I due censimenti sono onesti e contano la
+stessa cosa da due lati: l'impianto installato (×1.087) e l'assunzione per farlo funzionare (×108
+in "agentic AI"). Nessuno dei due è evidenza che funzioni. I due insieme sono evidenza che la
+domanda "funziona?" è diventata urgente ora, non dopo.
+
+---
+
+## Brasile: il 17% delle aziende usa IA — e il 68% di questo è automazione di flusso
+
+L'unico dato brasiliano con metodologia visibile è il TIC Empresas 2025 del Cetic.br, lanciato a
+giugno 2026: interviste telefoniche a **4.174 aziende** con dieci o più dipendenti, raccolta da
+febbraio 2025 a gennaio 2026. È dichiarazione — sondaggio — e il Cetic.br pubblica l'N, il metodo e
+il periodo, che è tutto ciò che questo articolo chiede.
+
+<CountryBarsChart
+  dataset="agentes-brasil-cetic-it"
+  title="In Brasile, ciò che si chiama IA è soprattutto automazione dei flussi di lavoro"
+  subtitle="Aziende con 10+ dipendenti che hanno usato IA nel 2025 · e cosa usano, tra quelle che usano"
+  source="Fonte: Cetic.br, TIC Empresas 2025 (CATI, n = 4.174, raccolta feb/2025 a gen/2026), slide H9 e H9A. ulissesflores.com/agentes-it"
+  description="Due blocchi di barre orizzontali. Blocco 1: percentuale di aziende brasiliane che hanno usato qualche tipo di IA nel 2025, per dimensione — totale 17%, piccole 15%, medie 32%, grandi 50%. Blocco 2: tipo di IA usato, tra le aziende che usano — automazione dei flussi di lavoro 68%, evidenziata; text mining 38%; riconoscimento delle immagini 31%; generazione del linguaggio naturale 30%; machine learning 25%."
+/>
+
+**Il 17%** delle aziende brasiliane ha usato qualche tipo di IA nel 2025 — erano il 13% nel 2023 e
+il 13% nel 2024 — il che il Cetic.br stima in **93.475 aziende**. Nelle grandi, 50%; nelle piccole,
+15%. Il confronto internazionale dello stesso slide: Brasile 17%, Unione Europea 20%, Danimarca
+42%.
+
+Il dato brasiliano più interessante dell'articolo sta nel secondo blocco. Tra le aziende che usano
+IA, il tipo più comune è **automazione dei flussi di lavoro: 68%**. La generazione del linguaggio
+naturale — ciò che la maggioranza chiama "IA" nel 2026 — compare nel 30%. Cioè: la fetta maggiore
+di ciò che si chiama uso di IA in Brasile è automazione di processo, non agente autonomo. È la
+stessa cosa che la Gartner ha battezzato *agent washing* dal lato di chi vende — RPA ribattezzato
+agente — misurata dal lato di chi compra. Il Brasile ha il dato che permette di verificare
+l'accusa, e il dato dice che il sospetto è fondato: quando un'azienda brasiliana dice "usiamo IA",
+in due casi su tre sta parlando di flusso automatizzato.
+
+Sugli agenti specificamente, il Brasile non ha un numero con metodologia visibile. Non ne
+inventerò uno.
+
+---
+
+## Cosa ne farei io
+
+La regola di questo articolo non è un'invenzione mia. La METR, nel sondaggio del maggio 2026,
+pubblica la propria classificazione dei tipi di evidenza sulla capacità dell'IA, ciascuno con il
+punto cieco dichiarato — ed è la lista di lavoro di chi misura sul serio:
+
+| Tipo di evidenza | A favore (parole della METR) | Punto cieco (parole della METR) |
+|---|---|---|
+| **Benchmark** (test standardizzati) | "standardized and highly replicable" (standardizzati e altamente replicabili) | "an overestimate of capabilities observed in the wild" (sovrastimano la capacità osservata nel mondo reale); misurano "a narrow slice" (una fetta stretta) dei compiti |
+| **Esperimenti randomizzati** | "carefully controlled and perhaps highly externally valid" (accuratamente controllati e forse molto validi fuori dal laboratorio) | "they're very expensive" (sono molto costosi), e il risultato è difficile da tradurre in ciò che conta |
+| **Dati osservazionali di uso reale** | "very large, relatively cheap to collect, and far-reaching" (molto grandi, relativamente economici da raccogliere e di ampia portata) | "typically suffers from selection effects and is often hard to reason about" (soffrono tipicamente di effetti di selezione e sono spesso difficili da interpretare) |
+| **Sondaggi** (indagini d'opinione) | "cheap, broad, and straightforward to run" (economici, ampi e semplici da eseguire) | "respondents have difficulty answering complex quantitative questions accurately" (i rispondenti hanno difficoltà a rispondere con precisione a domande quantitative complesse) |
+
+"Each with different blind spots" ("ciascuno con punti ciechi diversi"), dice la METR. Nota ciò che
+**non** è nella lista: previsione di analista. Ciò che la Gartner pubblica non è un tipo di
+evidenza con un punto cieco — è un'altra cosa, ed è la stampa a sommarla alle altre nella stessa
+frase.
+
+Di fronte alla prossima statistica sugli agenti, tre domande a costo quasi zero, nell'ordine della
+figura all'inizio:
+
+1. **Chi ha prodotto il numero ha misurato qualcosa?** Se è previsione, ha un orizzonte e non ha
+   campione: vale come opinione qualificata, e basta. Chiedi se la previsione precedente dello
+   stesso autore è stata rivista — se nessuno lo sa, nessuno può verificare.
+2. **Chiesto a chi, e cosa esattamente?** Se è un sondaggio, l'N, la popolazione e l'enunciato
+   della domanda valgono più della percentuale. "57%" tra ingegneri di agenti e "una cifra sola" in
+   organizzazioni in generale sono la stessa realtà vista da due punti. E ricorda che la stessa
+   persona risponde 3x per la velocità e 2x per il valore nello stesso modulo.
+3. **Misurato come — e l'agente può aver raggirato la misura?** Se è un benchmark, cerca il
+   `pass^k`, il costo per compito e l'ispezione dei log. Se la classifica ha solo un tentativo e
+   nessuna colonna di costo, misura la foto migliore, non il lavoro.
+
+E la domanda che attraversa tutte e tre: **il numero circola con l'etichetta giusta?** Il "95%" è
+percezione; il "40% cancellati" è previsione; l'"87,9%" è un tentativo; il "×1.087" è
+installazione. Nessuno è falso. Tutti cambiano peso quando l'etichetta va insieme.
+
+Se vuoi verificare la misurazione più facile di questo articolo, bastano dieci secondi:
+
+```bash
+curl -s "https://api.npmjs.org/downloads/range/2026-07-01:2026-07-31/@modelcontextprotocol/sdk" \
+  | python3 -c "import json,sys; print(sum(d['downloads'] for d in json.load(sys.stdin)['downloads']))"
+```
+
+Se ti risulta diverso da 191.923.439, scrivimi — aggiorno l'articolo e do credito alla correzione.
+La replica della regressione della METR usa il CSV e il `regression.py` che la METR stessa
+pubblica su GitHub; chiunque può rifarla.
+
+---
+
+## Fonti
+
+- [MIT NANDA — "The GenAI Divide: State of AI in Business 2025"](https://web.archive.org/web/20250820190554/https://mlq.ai/media/quarterly_decks/v0.1_State_of_AI_in_Business_2025_Report.pdf) — PDF di 26 pagine, copia archiviata il 20/08/2025 (l'URL di origine oggi serve una copia con livello di testo peggiore; numeri identici)
+- [Fortune, 18/08/2025](https://fortune.com/2025/08/18/mit-report-95-percent-generative-ai-pilots-at-companies-failing-cfo/) — il titolo, con la metodologia descritta in modo sbagliato
+- [80,000 Hours — "The story behind the bad AI stat that moved markets and misled millions"](https://80000hours.org/podcast/episodes/ai-workplace-mit-study/) — Rob Wiblin, 28/04/2026
+- [Gartner, 25/06/2025 — "over 40% of agentic AI projects will be canceled"](https://www.gartner.com/en/newsroom/press-releases/2025-06-25-gartner-predicts-over-40-percent-of-agentic-ai-projects-will-be-canceled-by-end-of-2027) — previsione + sondaggio da webinar + *agent washing* (accesso diretto negato; ripubblicazioni incrociate)
+- [Gartner, 05/03/2025 — 80% dell'assistenza clienti entro il 2029](https://www.gartner.com/en/newsroom/press-releases/2025-03-05-gartner-predicts-agentic-ai-will-autonomously-resolve-80-percent-of-common-customer-service-issues-without-human-intervention-by-20290) — sì, il "20290" è nell'URL ufficiale
+- [Gartner, 21/10/2024 — Top Strategic Technology Trends for 2025](https://www.gartner.com/en/newsroom/press-releases/2024-10-21-gartner-identifies-the-top-10-strategic-technology-trends-for-2025) — rapporto G00818765, PDF letto
+- [Stanford HAI — AI Index 2026, capitolo 4 (Economia)](https://hai.stanford.edu/assets/files/ai_index_report_2026_chapter_4_economy.pdf) — 70% × 79%; figure 4.3.7 e 4.3.8; Lightcast; nota sulla METR
+- [LangChain — State of Agent Engineering 2026](https://langchain.com/state-of-agent-engineering) — n = 1.340, 12/06/2026
+- [Stack Overflow — Developer Survey 2025, sezione AI](https://survey.stackoverflow.co/2025/ai) — n = 33.662
+- [METR — studio del 2025](https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/) e [paper arXiv:2507.09089](https://arxiv.org/abs/2507.09089)
+- [METR — "We are Changing our Developer Productivity Experiment Design", 24/02/2026](https://metr.org/blog/2026-02-24-uplift-update/) — e il [repository con il CSV e il `regression.py`](https://github.com/METR/Measuring-Late-2025-AI-on-OSS-Devs)
+- [METR — sondaggio sull'uso dell'IA, 11/05/2026](https://metr.org/blog/2026-05-11-ai-usage-survey/) — n = 349; tassonomia dei punti ciechi
+- [τ-bench — paper](https://arxiv.org/abs/2406.12045) e [repository](https://github.com/sierra-research/tau-bench) — `pass^k`; [classifica del τ²-bench](https://taubench.com) letta il 13/08/2026
+- [TheAgentCompany — paper NeurIPS 2025](https://arxiv.org/abs/2412.14161), [classifica ufficiale](https://the-agent-company.com/#/leaderboard) e [PR #16, il ritiro](https://github.com/TheAgentCompany/experiments/pull/16)
+- [HAL — Holistic Agent Leaderboard, ICLR 2026](https://arxiv.org/abs/2510.11977) e [classifica](https://hal.cs.princeton.edu/)
+- [API pubblica di npm](https://api.npmjs.org/downloads/range/2025-01-01:2026-07-31/@modelcontextprotocol/sdk) — serie misurata il 26/08/2026
+- [Cetic.br — TIC Empresas 2025, presentazione](https://cetic.br/media/analises/TIC-Empresas-2025-lancamento.pdf) — slide H9 e H9A
+- [Pagina che ha ispirato l'articolo — gradually.ai, "KI-Agenten-Statistiken 2026"](https://www.gradually.ai/ki-agenten-statistiken/) — ispirazione di struttura, nessuna frase o numero riutilizzato
+
+> **Verifica.** PDF, post e paper letti integralmente e conservati; comunicati della Gartner per
+> ripubblicazione incrociata (accesso diretto negato); classifiche di TheAgentCompany e dell'HAL
+> lette nel JSON e nell'HTML serviti il 13/08/2026; download di npm misurati dall'autore il
+> 26/08/2026; regressione della METR replicata sul CSV pubblicato, con risultato identico a quello
+> della METR. Non c'è Reddit né X in questo articolo, per indisponibilità delle fonti, non per
+> scelta editoriale. Ciò che non ha potuto essere verificato è segnalato come tale nel testo.

@@ -151,6 +151,174 @@ export const chartDatasets: Record<string, ChartDataset> = {
     xTicks: [0.1, 0.3, 1, 3, 10, 30],
     yTicks: [35, 40, 45, 50, 55, 60, 65],
   },
+
+  /* ── estatisticas-agentes-de-ia (pt-br, en, es, it) ── */
+  /**
+   * `agentes-custo-por-tarefa` — acurácia × custo por tarefa (US$, log), pares do mesmo
+   * benchmark. PROCEDÊNCIA: HAL (hal.cs.princeton.edu, HTML lido em 13/08/2026): Online
+   * Mind2Web — SeeAct + GPT-5 Medium 42,33% a US$ 171,07 · Browser-Use + Claude Sonnet 4 40,00%
+   * a US$ 1.577,26; ScienceAgentBench — SAB Self-Debug + o4-mini Low 27,45% a US$ 3,95 · +
+   * GPT-5 Medium 30,39% a US$ 18,26. TheAgentCompany (leaderboard.json, 13/08/2026):
+   * TTE-MatrixAgent + DeepSeek-V3.2 42,86% a US$ 0,40 · OpenHands + Gemini 2.5 Pro 30,29% a
+   * US$ 4,23. Ouro = o par em que o barato ganha por mais.
+   */
+  'agentes-custo-por-tarefa': {
+    series: [
+      {
+        label: 'TheAgentCompany',
+        color: '#a48f65',
+        points: [
+          [0.4, 42.86],
+          [4.23, 30.29],
+        ],
+      },
+      {
+        label: 'HAL · Mind2Web',
+        color: '#60a5fa',
+        points: [
+          [171.07, 42.33],
+          [1577.26, 40.0],
+        ],
+      },
+      {
+        label: 'HAL · Science',
+        color: '#fbbf24',
+        points: [
+          [3.95, 27.45],
+          [18.26, 30.39],
+        ],
+      },
+    ],
+    xDomain: [0.3, 3000],
+    yDomain: [0, 50],
+    xTicks: [0.3, 1, 3, 10, 30, 100, 300, 1000, 3000],
+    yTicks: [0, 10, 20, 30, 40, 50],
+  },
+  /**
+   * `agentes-custo-por-tarefa-en` — acurácia × custo por tarefa (US$, log), pares do mesmo
+   * benchmark. PROCEDÊNCIA: HAL (hal.cs.princeton.edu, HTML lido em 13/08/2026): Online
+   * Mind2Web — SeeAct + GPT-5 Medium 42,33% a US$ 171,07 · Browser-Use + Claude Sonnet 4 40,00%
+   * a US$ 1.577,26; ScienceAgentBench — SAB Self-Debug + o4-mini Low 27,45% a US$ 3,95 · +
+   * GPT-5 Medium 30,39% a US$ 18,26. TheAgentCompany (leaderboard.json, 13/08/2026):
+   * TTE-MatrixAgent + DeepSeek-V3.2 42,86% a US$ 0,40 · OpenHands + Gemini 2.5 Pro 30,29% a
+   * US$ 4,23. Ouro = o par em que o barato ganha por mais.
+   */
+  'agentes-custo-por-tarefa-en': {
+    series: [
+      {
+        label: 'TheAgentCompany',
+        color: '#a48f65',
+        points: [
+          [0.4, 42.86],
+          [4.23, 30.29],
+        ],
+      },
+      {
+        label: 'HAL · Mind2Web',
+        color: '#60a5fa',
+        points: [
+          [171.07, 42.33],
+          [1577.26, 40.0],
+        ],
+      },
+      {
+        label: 'HAL · Science',
+        color: '#fbbf24',
+        points: [
+          [3.95, 27.45],
+          [18.26, 30.39],
+        ],
+      },
+    ],
+    xDomain: [0.3, 3000],
+    yDomain: [0, 50],
+    xTicks: [0.3, 1, 3, 10, 30, 100, 300, 1000, 3000],
+    yTicks: [0, 10, 20, 30, 40, 50],
+  },
+  /**
+   * `agentes-custo-por-tarefa-es` — acurácia × custo por tarefa (US$, log), pares do mesmo
+   * benchmark. PROCEDÊNCIA: HAL (hal.cs.princeton.edu, HTML lido em 13/08/2026): Online
+   * Mind2Web — SeeAct + GPT-5 Medium 42,33% a US$ 171,07 · Browser-Use + Claude Sonnet 4 40,00%
+   * a US$ 1.577,26; ScienceAgentBench — SAB Self-Debug + o4-mini Low 27,45% a US$ 3,95 · +
+   * GPT-5 Medium 30,39% a US$ 18,26. TheAgentCompany (leaderboard.json, 13/08/2026):
+   * TTE-MatrixAgent + DeepSeek-V3.2 42,86% a US$ 0,40 · OpenHands + Gemini 2.5 Pro 30,29% a
+   * US$ 4,23. Ouro = o par em que o barato ganha por mais. Labels de série são nomes próprios
+   * de benchmark — não traduzidos.
+   */
+  'agentes-custo-por-tarefa-es': {
+    series: [
+      {
+        label: 'TheAgentCompany',
+        color: '#a48f65',
+        points: [
+          [0.4, 42.86],
+          [4.23, 30.29],
+        ],
+      },
+      {
+        label: 'HAL · Mind2Web',
+        color: '#60a5fa',
+        points: [
+          [171.07, 42.33],
+          [1577.26, 40.0],
+        ],
+      },
+      {
+        label: 'HAL · Science',
+        color: '#fbbf24',
+        points: [
+          [3.95, 27.45],
+          [18.26, 30.39],
+        ],
+      },
+    ],
+    xDomain: [0.3, 3000],
+    yDomain: [0, 50],
+    xTicks: [0.3, 1, 3, 10, 30, 100, 300, 1000, 3000],
+    yTicks: [0, 10, 20, 30, 40, 50],
+  },
+  /**
+   * `agentes-custo-por-tarefa-it` — acurácia × custo por tarefa (US$, log), pares do mesmo
+   * benchmark. PROCEDÊNCIA: HAL (hal.cs.princeton.edu, HTML lido em 13/08/2026): Online
+   * Mind2Web — SeeAct + GPT-5 Medium 42,33% a US$ 171,07 · Browser-Use + Claude Sonnet 4 40,00%
+   * a US$ 1.577,26; ScienceAgentBench — SAB Self-Debug + o4-mini Low 27,45% a US$ 3,95 · +
+   * GPT-5 Medium 30,39% a US$ 18,26. TheAgentCompany (leaderboard.json, 13/08/2026):
+   * TTE-MatrixAgent + DeepSeek-V3.2 42,86% a US$ 0,40 · OpenHands + Gemini 2.5 Pro 30,29% a
+   * US$ 4,23. Ouro = o par em que o barato ganha por mais. Series labels (nomes de benchmark)
+   * não são traduzidos — nomes próprios.
+   */
+  'agentes-custo-por-tarefa-it': {
+    series: [
+      {
+        label: 'TheAgentCompany',
+        color: '#a48f65',
+        points: [
+          [0.4, 42.86],
+          [4.23, 30.29],
+        ],
+      },
+      {
+        label: 'HAL · Mind2Web',
+        color: '#60a5fa',
+        points: [
+          [171.07, 42.33],
+          [1577.26, 40.0],
+        ],
+      },
+      {
+        label: 'HAL · Science',
+        color: '#fbbf24',
+        points: [
+          [3.95, 27.45],
+          [18.26, 30.39],
+        ],
+      },
+    ],
+    xDomain: [0.3, 3000],
+    yDomain: [0, 50],
+    xTicks: [0.3, 1, 3, 10, 30, 100, 300, 1000, 3000],
+    yTicks: [0, 10, 20, 30, 40, 50],
+  },
 };
 
 /* ── Waffle ──────────────────────────────────────────────────────────── */
@@ -3466,6 +3634,500 @@ export const countryBarsDatasets: Record<string, CountryBarsDataset> = {
       },
     ],
   },
+
+  /* ── estatisticas-agentes-de-ia (pt-br, en, es, it) ── */
+  /**
+   * `agentes-nenhum-uso-funcao` — bloco 1: % "Not at all" (nenhum uso de agente) por função,
+   * McKinsey 2025 republicado no AI Index 2026, Fig. 4.3.7 (N não declarado no capítulo).
+   * Bloco 2: agentes em produção em DUAS populações diferentes — LangChain State of Agent
+   * Engineering 2026 (n = 1.340, campo nov-dez/2025) e Stack Overflow Developer Survey 2025
+   * (n = 33.662, "usam agentes diariamente"). NUNCA fundir num ranking: a tese do artigo é
+   * que são perguntas diferentes a populações diferentes.
+   */
+  'agentes-nenhum-uso-funcao': {
+    max: 100,
+    groups: [
+      {
+        label: 'Declaram NENHUM uso de agente na função (McKinsey 2025, via AI Index)',
+        color: '#64748b',
+        items: [
+          { name: 'Manufatura', value: 91, valueLabel: '91%', emphasis: true },
+          { name: 'Suprimentos', value: 88, valueLabel: '88%' },
+          { name: 'Finanças corp.', value: 85, valueLabel: '85%' },
+          { name: 'RH', value: 82, valueLabel: '82%' },
+          { name: 'Eng. de software', value: 77, valueLabel: '77%' },
+          { name: 'TI', value: 69, valueLabel: '69%' },
+          { name: 'Conhecimento', value: 66, valueLabel: '66%' },
+        ],
+      },
+      {
+        label: 'Declaram agente em produção — outra pergunta, outra população',
+        color: '#60a5fa',
+        items: [
+          { name: 'LangChain', value: 57, valueLabel: '57% · n = 1.340', emphasis: true },
+          { name: 'Stack Overflow', value: 14.1, valueLabel: '14,1% · diário' },
+        ],
+      },
+    ],
+  },
+
+  /**
+   * `agentes-metr-percepcao` — tempo relativo para concluir a tarefa com IA, sem IA = 100.
+   * PROCEDÊNCIA: METR, 10/07/2025 — devs previram −24% de tempo; medido +19% (IC 95%: +2% a
+   * +39%); estimaram depois −20%. Conversão 100 × (1 + variação) feita pelo autor.
+   */
+  'agentes-metr-percepcao': {
+    max: 130,
+    groups: [
+      {
+        label: 'Tempo para concluir a tarefa com IA (sem IA = 100)',
+        color: '#fbbf24',
+        items: [
+          { name: 'Previsto antes', value: 76, valueLabel: '76 · −24%' },
+          { name: 'Medido (cronômetro)', value: 119, valueLabel: '119 · +19%', emphasis: true },
+          { name: 'Estimado depois', value: 80, valueLabel: '80 · −20%' },
+        ],
+      },
+    ],
+  },
+
+  /**
+   * `agentes-mcp-sdk-mensal` — downloads mensais de @modelcontextprotocol/sdk no npm.
+   * PROCEDÊNCIA: api.npmjs.org/downloads/range, medida pelo autor em 26/08/2026
+   * (fontes/serie-npm-encanamento.json + sonda-npm-encanamento.py). jan/2025 = 176.533;
+   * jul/2026 = 191.923.439 (×1.087). Download = instalação, não pessoa.
+   */
+  'agentes-mcp-sdk-mensal': {
+    max: 200,
+    groups: [
+      {
+        label: 'Downloads mensais do SDK do MCP (milhões)',
+        color: '#a48f65',
+        items: [
+          { name: 'jan/2025', value: 0.18, valueLabel: '0,18 mi', emphasis: true },
+          { name: 'fev/2025', value: 0.35, valueLabel: '0,35 mi' },
+          { name: 'mar/2025', value: 1.87, valueLabel: '1,9 mi' },
+          { name: 'abr/2025', value: 4.21, valueLabel: '4,2 mi' },
+          { name: 'mai/2025', value: 20.93, valueLabel: '20,9 mi' },
+          { name: 'jun/2025', value: 16.84, valueLabel: '16,8 mi' },
+          { name: 'jul/2025', value: 21.61, valueLabel: '21,6 mi' },
+          { name: 'ago/2025', value: 24.66, valueLabel: '24,7 mi' },
+          { name: 'set/2025', value: 31.26, valueLabel: '31,3 mi' },
+          { name: 'out/2025', value: 31.81, valueLabel: '31,8 mi' },
+          { name: 'nov/2025', value: 35.01, valueLabel: '35,0 mi' },
+          { name: 'dez/2025', value: 38.52, valueLabel: '38,5 mi' },
+          { name: 'jan/2026', value: 50.25, valueLabel: '50,2 mi' },
+          { name: 'fev/2026', value: 71.66, valueLabel: '71,7 mi' },
+          { name: 'mar/2026', value: 141.91, valueLabel: '141,9 mi' },
+          { name: 'abr/2026', value: 140.09, valueLabel: '140,1 mi' },
+          { name: 'mai/2026', value: 153.16, valueLabel: '153,2 mi' },
+          { name: 'jun/2026', value: 165.18, valueLabel: '165,2 mi' },
+          { name: 'jul/2026', value: 191.92, valueLabel: '191,9 mi', emphasis: true },
+        ],
+      },
+    ],
+  },
+
+  /**
+   * `agentes-brasil-cetic` — Cetic.br, TIC Empresas 2025 (CATI, n = 4.174, campo fev/2025 a
+   * jan/2026, lançado 15/06/2026). Bloco 1: slide H9 (usaram algum tipo de IA, por porte).
+   * Bloco 2: slide H9A (tipo de IA, entre as que usam) — cinco primeiras categorias.
+   */
+  'agentes-brasil-cetic': {
+    max: 100,
+    groups: [
+      {
+        label: 'Usaram algum tipo de IA em 2025, por porte',
+        color: '#60a5fa',
+        items: [
+          { name: 'Total', value: 17, valueLabel: '17%', emphasis: true },
+          { name: 'Pequenas', value: 15, valueLabel: '15%' },
+          { name: 'Médias', value: 32, valueLabel: '32%' },
+          { name: 'Grandes', value: 50, valueLabel: '50%' },
+        ],
+      },
+      {
+        label: 'O que se chama de IA, entre as que usam',
+        color: '#a48f65',
+        items: [
+          { name: 'Automação de fluxos', value: 68, valueLabel: '68%', emphasis: true },
+          { name: 'Mineração de texto', value: 38, valueLabel: '38%' },
+          { name: 'Imagens', value: 31, valueLabel: '31%' },
+          { name: 'Geração de linguagem', value: 30, valueLabel: '30%' },
+          { name: 'Machine learning', value: 25, valueLabel: '25%' },
+        ],
+      },
+    ],
+  },
+  /**
+   * `agentes-nenhum-uso-funcao-en` — bloco 1: % "Not at all" (nenhum uso de agente) por função,
+   * McKinsey 2025 republicado no AI Index 2026, Fig. 4.3.7 (N não declarado no capítulo).
+   * Bloco 2: agentes em produção em DUAS populações diferentes — LangChain State of Agent
+   * Engineering 2026 (n = 1.340, campo nov-dez/2025) e Stack Overflow Developer Survey 2025
+   * (n = 33.662, "usam agentes diariamente"). NUNCA fundir num ranking: a tese do artigo é
+   * que são perguntas diferentes a populações diferentes.
+   */
+  'agentes-nenhum-uso-funcao-en': {
+    max: 100,
+    groups: [
+      {
+        label: 'Report NO agent use in the function (McKinsey 2025, via AI Index)',
+        color: '#64748b',
+        items: [
+          { name: 'Manufacturing', value: 91, valueLabel: '91%', emphasis: true },
+          { name: 'Supply chain', value: 88, valueLabel: '88%' },
+          { name: 'Corp. finance', value: 85, valueLabel: '85%' },
+          { name: 'HR', value: 82, valueLabel: '82%' },
+          { name: 'Software eng.', value: 77, valueLabel: '77%' },
+          { name: 'IT', value: 69, valueLabel: '69%' },
+          { name: 'Knowledge mgmt', value: 66, valueLabel: '66%' },
+        ],
+      },
+      {
+        label: 'Report agents in production — different question, different population',
+        color: '#60a5fa',
+        items: [
+          { name: 'LangChain', value: 57, valueLabel: '57% · n=1,340', emphasis: true },
+          { name: 'Stack Overflow', value: 14.1, valueLabel: '14.1% · daily' },
+        ],
+      },
+    ],
+  },
+
+  /**
+   * `agentes-metr-percepcao-en` — tempo relativo para concluir a tarefa com IA, sem IA = 100.
+   * PROCEDÊNCIA: METR, 10/07/2025 — devs previram −24% de tempo; medido +19% (IC 95%: +2% a
+   * +39%); estimaram depois −20%. Conversão 100 × (1 + variação) feita pelo autor.
+   */
+  'agentes-metr-percepcao-en': {
+    max: 130,
+    groups: [
+      {
+        label: 'Time to complete the task with AI (without AI = 100)',
+        color: '#fbbf24',
+        items: [
+          { name: 'Predicted before', value: 76, valueLabel: '76 · −24%' },
+          { name: 'Measured (clock)', value: 119, valueLabel: '119 · +19%', emphasis: true },
+          { name: 'Estimated after', value: 80, valueLabel: '80 · −20%' },
+        ],
+      },
+    ],
+  },
+
+  /**
+   * `agentes-mcp-sdk-mensal-en` — downloads mensais de @modelcontextprotocol/sdk no npm.
+   * PROCEDÊNCIA: api.npmjs.org/downloads/range, medida pelo autor em 26/08/2026
+   * (fontes/serie-npm-encanamento.json + sonda-npm-encanamento.py). jan/2025 = 176.533;
+   * jul/2026 = 191.923.439 (×1.087). Download = instalação, não pessoa.
+   */
+  'agentes-mcp-sdk-mensal-en': {
+    max: 200,
+    groups: [
+      {
+        label: 'Monthly downloads of the MCP SDK (millions)',
+        color: '#a48f65',
+        items: [
+          { name: 'Jan/2025', value: 0.18, valueLabel: '0.18M', emphasis: true },
+          { name: 'Feb/2025', value: 0.35, valueLabel: '0.35M' },
+          { name: 'Mar/2025', value: 1.87, valueLabel: '1.9M' },
+          { name: 'Apr/2025', value: 4.21, valueLabel: '4.2M' },
+          { name: 'May/2025', value: 20.93, valueLabel: '20.9M' },
+          { name: 'Jun/2025', value: 16.84, valueLabel: '16.8M' },
+          { name: 'Jul/2025', value: 21.61, valueLabel: '21.6M' },
+          { name: 'Aug/2025', value: 24.66, valueLabel: '24.7M' },
+          { name: 'Sep/2025', value: 31.26, valueLabel: '31.3M' },
+          { name: 'Oct/2025', value: 31.81, valueLabel: '31.8M' },
+          { name: 'Nov/2025', value: 35.01, valueLabel: '35.0M' },
+          { name: 'Dec/2025', value: 38.52, valueLabel: '38.5M' },
+          { name: 'Jan/2026', value: 50.25, valueLabel: '50.2M' },
+          { name: 'Feb/2026', value: 71.66, valueLabel: '71.7M' },
+          { name: 'Mar/2026', value: 141.91, valueLabel: '141.9M' },
+          { name: 'Apr/2026', value: 140.09, valueLabel: '140.1M' },
+          { name: 'May/2026', value: 153.16, valueLabel: '153.2M' },
+          { name: 'Jun/2026', value: 165.18, valueLabel: '165.2M' },
+          { name: 'Jul/2026', value: 191.92, valueLabel: '191.9M', emphasis: true },
+        ],
+      },
+    ],
+  },
+
+  /**
+   * `agentes-brasil-cetic-en` — Cetic.br, TIC Empresas 2025 (CATI, n = 4.174, campo fev/2025 a
+   * jan/2026, lançado 15/06/2026). Bloco 1: slide H9 (usaram algum tipo de IA, por porte).
+   * Bloco 2: slide H9A (tipo de IA, entre as que usam) — cinco primeiras categorias.
+   */
+  'agentes-brasil-cetic-en': {
+    max: 100,
+    groups: [
+      {
+        label: 'Used some kind of AI in 2025, by size',
+        color: '#60a5fa',
+        items: [
+          { name: 'Total', value: 17, valueLabel: '17%', emphasis: true },
+          { name: 'Small', value: 15, valueLabel: '15%' },
+          { name: 'Medium', value: 32, valueLabel: '32%' },
+          { name: 'Large', value: 50, valueLabel: '50%' },
+        ],
+      },
+      {
+        label: 'What gets called AI, among those that use it',
+        color: '#a48f65',
+        items: [
+          { name: 'Workflow automation', value: 68, valueLabel: '68%', emphasis: true },
+          { name: 'Text mining', value: 38, valueLabel: '38%' },
+          { name: 'Images', value: 31, valueLabel: '31%' },
+          { name: 'Language generation', value: 30, valueLabel: '30%' },
+          { name: 'Machine learning', value: 25, valueLabel: '25%' },
+        ],
+      },
+    ],
+  },
+  /**
+   * `agentes-nenhum-uso-funcao-es` — bloco 1: % "Not at all" (nenhum uso de agente) por função,
+   * McKinsey 2025 republicado no AI Index 2026, Fig. 4.3.7 (N não declarado no capítulo).
+   * Bloco 2: agentes em produção em DUAS populações diferentes — LangChain State of Agent
+   * Engineering 2026 (n = 1.340, campo nov-dez/2025) e Stack Overflow Developer Survey 2025
+   * (n = 33.662, "usam agentes diariamente"). NUNCA fundir num ranking: a tese do artigo é
+   * que são perguntas diferentes a populações diferentes.
+   */
+  'agentes-nenhum-uso-funcao-es': {
+    max: 100,
+    groups: [
+      {
+        label: 'Ningún uso de agente por función (McKinsey 2025, vía AI Index)',
+        color: '#64748b',
+        items: [
+          { name: 'Manufactura', value: 91, valueLabel: '91 %', emphasis: true },
+          { name: 'Suministro', value: 88, valueLabel: '88 %' },
+          { name: 'Finanzas corp.', value: 85, valueLabel: '85 %' },
+          { name: 'RR.HH.', value: 82, valueLabel: '82 %' },
+          { name: 'Ing. de software', value: 77, valueLabel: '77 %' },
+          { name: 'TI', value: 69, valueLabel: '69 %' },
+          { name: 'Conocimiento', value: 66, valueLabel: '66 %' },
+        ],
+      },
+      {
+        label: 'Declaran agente en producción — otra pregunta, otra población',
+        color: '#60a5fa',
+        items: [
+          { name: 'LangChain', value: 57, valueLabel: '57 % · n=1.340', emphasis: true },
+          { name: 'Stack Overflow', value: 14.1, valueLabel: '14,1 % diario' },
+        ],
+      },
+    ],
+  },
+
+  /**
+   * `agentes-metr-percepcao-es` — tempo relativo para concluir a tarefa com IA, sem IA = 100.
+   * PROCEDÊNCIA: METR, 10/07/2025 — devs previram −24% de tempo; medido +19% (IC 95%: +2% a
+   * +39%); estimaram depois −20%. Conversão 100 × (1 + variação) feita pelo autor.
+   */
+  'agentes-metr-percepcao-es': {
+    max: 130,
+    groups: [
+      {
+        label: 'Tiempo para completar la tarea con IA (sin IA = 100)',
+        color: '#fbbf24',
+        items: [
+          { name: 'Previsto antes', value: 76, valueLabel: '76 · −24 %' },
+          { name: 'Medido (cronómetro)', value: 119, valueLabel: '119 · +19 %', emphasis: true },
+          { name: 'Estimado después', value: 80, valueLabel: '80 · −20 %' },
+        ],
+      },
+    ],
+  },
+
+  /**
+   * `agentes-mcp-sdk-mensal-es` — downloads mensais de @modelcontextprotocol/sdk no npm.
+   * PROCEDÊNCIA: api.npmjs.org/downloads/range, medida pelo autor em 26/08/2026
+   * (fontes/serie-npm-encanamento.json + sonda-npm-encanamento.py). jan/2025 = 176.533;
+   * jul/2026 = 191.923.439 (×1.087). Download = instalação, não pessoa.
+   */
+  'agentes-mcp-sdk-mensal-es': {
+    max: 200,
+    groups: [
+      {
+        label: 'Descargas mensuales del SDK de MCP (millones)',
+        color: '#a48f65',
+        items: [
+          { name: 'ene/2025', value: 0.18, valueLabel: '0,18 mill.', emphasis: true },
+          { name: 'feb/2025', value: 0.35, valueLabel: '0,35 mill.' },
+          { name: 'mar/2025', value: 1.87, valueLabel: '1,9 mill.' },
+          { name: 'abr/2025', value: 4.21, valueLabel: '4,2 mill.' },
+          { name: 'may/2025', value: 20.93, valueLabel: '20,9 mill.' },
+          { name: 'jun/2025', value: 16.84, valueLabel: '16,8 mill.' },
+          { name: 'jul/2025', value: 21.61, valueLabel: '21,6 mill.' },
+          { name: 'ago/2025', value: 24.66, valueLabel: '24,7 mill.' },
+          { name: 'sep/2025', value: 31.26, valueLabel: '31,3 mill.' },
+          { name: 'oct/2025', value: 31.81, valueLabel: '31,8 mill.' },
+          { name: 'nov/2025', value: 35.01, valueLabel: '35,0 mill.' },
+          { name: 'dic/2025', value: 38.52, valueLabel: '38,5 mill.' },
+          { name: 'ene/2026', value: 50.25, valueLabel: '50,2 mill.' },
+          { name: 'feb/2026', value: 71.66, valueLabel: '71,7 mill.' },
+          { name: 'mar/2026', value: 141.91, valueLabel: '141,9 mill.' },
+          { name: 'abr/2026', value: 140.09, valueLabel: '140,1 mill.' },
+          { name: 'may/2026', value: 153.16, valueLabel: '153,2 mill.' },
+          { name: 'jun/2026', value: 165.18, valueLabel: '165,2 mill.' },
+          { name: 'jul/2026', value: 191.92, valueLabel: '191,9 mill.', emphasis: true },
+        ],
+      },
+    ],
+  },
+
+  /**
+   * `agentes-brasil-cetic-es` — Cetic.br, TIC Empresas 2025 (CATI, n = 4.174, campo fev/2025 a
+   * jan/2026, lançado 15/06/2026). Bloco 1: slide H9 (usaram algum tipo de IA, por porte).
+   * Bloco 2: slide H9A (tipo de IA, entre as que usam) — cinco primeiras categorias.
+   */
+  'agentes-brasil-cetic-es': {
+    max: 100,
+    groups: [
+      {
+        label: 'Usaron algún tipo de IA en 2025, por tamaño',
+        color: '#60a5fa',
+        items: [
+          { name: 'Total', value: 17, valueLabel: '17 %', emphasis: true },
+          { name: 'Pequeñas', value: 15, valueLabel: '15 %' },
+          { name: 'Medianas', value: 32, valueLabel: '32 %' },
+          { name: 'Grandes', value: 50, valueLabel: '50 %' },
+        ],
+      },
+      {
+        label: 'Lo que se llama IA, entre las que usan',
+        color: '#a48f65',
+        items: [
+          { name: 'Automatización', value: 68, valueLabel: '68 %', emphasis: true },
+          { name: 'Minería de texto', value: 38, valueLabel: '38 %' },
+          { name: 'Imágenes', value: 31, valueLabel: '31 %' },
+          { name: 'Generación lenguaje', value: 30, valueLabel: '30 %' },
+          { name: 'Machine learning', value: 25, valueLabel: '25 %' },
+        ],
+      },
+    ],
+  },
+  /**
+   * `agentes-nenhum-uso-funcao-it` — bloco 1: % "Not at all" (nenhum uso de agente) por função,
+   * McKinsey 2025 republicado no AI Index 2026, Fig. 4.3.7 (N não declarado no capítulo).
+   * Bloco 2: agentes em produção em DUAS populações diferentes — LangChain State of Agent
+   * Engineering 2026 (n = 1.340, campo nov-dez/2025) e Stack Overflow Developer Survey 2025
+   * (n = 33.662, "usam agentes diariamente"). NUNCA fundir num ranking: a tese do artigo é
+   * que são perguntas diferentes a populações diferentes.
+   */
+  'agentes-nenhum-uso-funcao-it': {
+    max: 100,
+    groups: [
+      {
+        label: 'NESSUN uso di agente nella funzione (McKinsey via AI Index)',
+        color: '#64748b',
+        items: [
+          { name: 'Manifattura', value: 91, valueLabel: '91 %', emphasis: true },
+          { name: 'Forniture', value: 88, valueLabel: '88 %' },
+          { name: 'Finanza az.', value: 85, valueLabel: '85 %' },
+          { name: 'Risorse umane', value: 82, valueLabel: '82 %' },
+          { name: 'Ing. software', value: 77, valueLabel: '77 %' },
+          { name: 'IT', value: 69, valueLabel: '69 %' },
+          { name: 'Conoscenza', value: 66, valueLabel: '66 %' },
+        ],
+      },
+      {
+        label: 'Dichiarano agente in produzione — altra domanda, altra popolazione',
+        color: '#60a5fa',
+        items: [
+          { name: 'LangChain n=1.340', value: 57, valueLabel: '57 %', emphasis: true },
+          { name: 'Stack Overflow', value: 14.1, valueLabel: '14,1% giorno' },
+        ],
+      },
+    ],
+  },
+
+  /**
+   * `agentes-metr-percepcao-it` — tempo relativo para concluir a tarefa com IA, sem IA = 100.
+   * PROCEDÊNCIA: METR, 10/07/2025 — devs previram −24% de tempo; medido +19% (IC 95%: +2% a
+   * +39%); estimaram depois −20%. Conversão 100 × (1 + variação) feita pelo autor.
+   */
+  'agentes-metr-percepcao-it': {
+    max: 130,
+    groups: [
+      {
+        label: 'Tempo per completare il compito con IA (senza IA = 100)',
+        color: '#fbbf24',
+        items: [
+          { name: 'Previsto prima', value: 76, valueLabel: '76 · −24%' },
+          { name: 'Misurato (orologio)', value: 119, valueLabel: '119 · +19%', emphasis: true },
+          { name: 'Stimato dopo', value: 80, valueLabel: '80 · −20%' },
+        ],
+      },
+    ],
+  },
+
+  /**
+   * `agentes-mcp-sdk-mensal-it` — downloads mensais de @modelcontextprotocol/sdk no npm.
+   * PROCEDÊNCIA: api.npmjs.org/downloads/range, medida pelo autor em 26/08/2026
+   * (fontes/serie-npm-encanamento.json + sonda-npm-encanamento.py). jan/2025 = 176.533;
+   * jul/2026 = 191.923.439 (×1.087). Download = instalação, não pessoa.
+   */
+  'agentes-mcp-sdk-mensal-it': {
+    max: 200,
+    groups: [
+      {
+        label: "Download mensili dell'SDK del MCP (milioni)",
+        color: '#a48f65',
+        items: [
+          { name: 'gen/2025', value: 0.18, valueLabel: '0,18 mln', emphasis: true },
+          { name: 'feb/2025', value: 0.35, valueLabel: '0,35 mln' },
+          { name: 'mar/2025', value: 1.87, valueLabel: '1,9 mln' },
+          { name: 'apr/2025', value: 4.21, valueLabel: '4,2 mln' },
+          { name: 'mag/2025', value: 20.93, valueLabel: '20,9 mln' },
+          { name: 'giu/2025', value: 16.84, valueLabel: '16,8 mln' },
+          { name: 'lug/2025', value: 21.61, valueLabel: '21,6 mln' },
+          { name: 'ago/2025', value: 24.66, valueLabel: '24,7 mln' },
+          { name: 'set/2025', value: 31.26, valueLabel: '31,3 mln' },
+          { name: 'ott/2025', value: 31.81, valueLabel: '31,8 mln' },
+          { name: 'nov/2025', value: 35.01, valueLabel: '35,0 mln' },
+          { name: 'dic/2025', value: 38.52, valueLabel: '38,5 mln' },
+          { name: 'gen/2026', value: 50.25, valueLabel: '50,2 mln' },
+          { name: 'feb/2026', value: 71.66, valueLabel: '71,7 mln' },
+          { name: 'mar/2026', value: 141.91, valueLabel: '141,9 mln' },
+          { name: 'apr/2026', value: 140.09, valueLabel: '140,1 mln' },
+          { name: 'mag/2026', value: 153.16, valueLabel: '153,2 mln' },
+          { name: 'giu/2026', value: 165.18, valueLabel: '165,2 mln' },
+          { name: 'lug/2026', value: 191.92, valueLabel: '191,9 mln', emphasis: true },
+        ],
+      },
+    ],
+  },
+
+  /**
+   * `agentes-brasil-cetic-it` — Cetic.br, TIC Empresas 2025 (CATI, n = 4.174, campo fev/2025 a
+   * jan/2026, lançado 15/06/2026). Bloco 1: slide H9 (usaram algum tipo de IA, por porte).
+   * Bloco 2: slide H9A (tipo de IA, entre as que usam) — cinco primeiras categorias.
+   */
+  'agentes-brasil-cetic-it': {
+    max: 100,
+    groups: [
+      {
+        label: 'Hanno usato qualche tipo di IA nel 2025, per dimensione',
+        color: '#60a5fa',
+        items: [
+          { name: 'Totale', value: 17, valueLabel: '17 %', emphasis: true },
+          { name: 'Piccole', value: 15, valueLabel: '15 %' },
+          { name: 'Medie', value: 32, valueLabel: '32 %' },
+          { name: 'Grandi', value: 50, valueLabel: '50 %' },
+        ],
+      },
+      {
+        label: 'Ciò che si chiama IA, tra le aziende che usano',
+        color: '#a48f65',
+        items: [
+          { name: 'Automazione flussi', value: 68, valueLabel: '68 %', emphasis: true },
+          { name: 'Text mining', value: 38, valueLabel: '38 %' },
+          { name: 'Immagini', value: 31, valueLabel: '31 %' },
+          { name: 'Linguaggio nat.', value: 30, valueLabel: '30 %' },
+          { name: 'Machine learning', value: 25, valueLabel: '25 %' },
+        ],
+      },
+    ],
+  },
 };
 
 /* ── Funil ───────────────────────────────────────────────────────────── */
@@ -4208,6 +4870,100 @@ export const stepFlowDatasets: Record<string, StepFlowDataset> = {
         label: 'Si una restricción fue rota, vuelva al paso uno',
         detail: 'Pero no deje que la inercia se vuelva la restricción del sistema.',
         alert: true,
+      },
+    ],
+  },
+
+  /* ── estatisticas-agentes-de-ia (pt-br, en, es, it) ── */
+  /**
+   * `agentes-tres-reguas` — a régua do artigo: três naturezas de estatística, cada uma com
+   * seu modo de falha. PROCEDÊNCIA: classificação do autor; os modos de falha vêm de Gartner
+   * (previsão sem amostra), METR 2025 (percepção × cronômetro) e HAL/ICLR 2026 (agente que
+   * acha o gabarito).
+   */
+  'agentes-tres-reguas': {
+    orientation: 'chain',
+    steps: [
+      {
+        label: 'Previsão — quem produziu o número não mediu nada',
+        detail: 'Opinião de analista com horizonte. Não tem amostra: não há o que conferir.',
+      },
+      {
+        label: 'Declaração — alguém respondeu a uma pergunta',
+        detail: 'Survey de percepção. Mede o que se relata — e o relato erra o sinal do efeito.',
+      },
+      {
+        label: 'Medição — alguém cronometrou ou rodou o teste',
+        detail: 'Benchmark ou ensaio. Reprodutível — e o agente aprende a burlar o proxy.',
+      },
+    ],
+  },
+  /**
+   * `agentes-tres-reguas-en` — a régua do artigo: três naturezas de estatística, cada uma com
+   * seu modo de falha. PROCEDÊNCIA: classificação do autor; os modos de falha vêm de Gartner
+   * (previsão sem amostra), METR 2025 (percepção × cronômetro) e HAL/ICLR 2026 (agente que
+   * acha o gabarito).
+   */
+  'agentes-tres-reguas-en': {
+    orientation: 'chain',
+    steps: [
+      {
+        label: 'Forecast — whoever produced the number measured nothing',
+        detail: 'Analyst opinion with a horizon. No sample: nothing to check.',
+      },
+      {
+        label: 'Self-report — someone answered a question',
+        detail: 'Perception survey. Measures what is reported — and gets the sign wrong.',
+      },
+      {
+        label: 'Measurement — someone timed it or ran the test',
+        detail: 'Benchmark or trial. Reproducible — and the agent learns to game the proxy.',
+      },
+    ],
+  },
+  /**
+   * `agentes-tres-reguas-es` — a régua do artigo: três naturezas de estatística, cada uma com
+   * seu modo de falha. PROCEDÊNCIA: classificação do autor; os modos de falha vêm de Gartner
+   * (previsão sem amostra), METR 2025 (percepção × cronômetro) e HAL/ICLR 2026 (agente que
+   * acha o gabarito).
+   */
+  'agentes-tres-reguas-es': {
+    orientation: 'chain',
+    steps: [
+      {
+        label: 'Predicción — quien produjo el número no midió nada',
+        detail: 'Opinión de analista con horizonte. No tiene muestra: no hay nada que comprobar.',
+      },
+      {
+        label: 'Declaración — alguien respondió a una pregunta',
+        detail: 'Encuesta de percepción. Mide lo declarado — y el relato yerra el signo del efecto.',
+      },
+      {
+        label: 'Medición — alguien cronometró o corrió la prueba',
+        detail: 'Benchmark o ensayo. Reproducible — y el agente aprende a burlar el proxy.',
+      },
+    ],
+  },
+  /**
+   * `agentes-tres-reguas-it` — a régua do artigo: três naturezas de estatística, cada uma com
+   * seu modo de falha. PROCEDÊNCIA: classificação do autor; os modos de falha vêm de Gartner
+   * (previsão sem amostra), METR 2025 (percepção × cronômetro) e HAL/ICLR 2026 (agente que
+   * acha o gabarito).
+   */
+  'agentes-tres-reguas-it': {
+    orientation: 'chain',
+    steps: [
+      {
+        label: 'Previsione — chi ha prodotto il numero non ha misurato nulla',
+        detail: "Opinione di analista con orizzonte. Non ha campione: non c'è nulla da verificare.",
+      },
+      {
+        label: 'Dichiarazione — qualcuno ha risposto a una domanda',
+        detail: "Sondaggio di percezione. Misura il riferito — e il resoconto sbaglia il segno dell'effetto.",
+      },
+      {
+        label: 'Misurazione — qualcuno ha cronometrato o eseguito il test',
+        detail: "Benchmark o esperimento. Riproducibile — e l'agente impara a raggirare il proxy.",
       },
     ],
   },
