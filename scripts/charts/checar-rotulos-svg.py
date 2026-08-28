@@ -20,7 +20,7 @@ DOIS REGIMES DE MEDIÇÃO, porque são dois tipos de figura:
    várias dessas caixas são dimensionadas pelo próprio texto (fórmula de contagem de
    caractere), então elas vivem, por construção, acima de 85%.
 
-COBERTURA (espelho de `lib/content/mdx-components.tsx`, lido em 2026-08-27 — 19 entradas):
+COBERTURA (espelho de `lib/content/mdx-components.tsx`, lido em 2026-08-28 — 20 entradas):
 
 | Componente | Regime | Texto medido |
 |---|---|---|
@@ -28,7 +28,7 @@ COBERTURA (espelho de `lib/content/mdx-components.tsx`, lido em 2026-08-27 — 1
 | WaffleChart | 1 | props + label/sublabel de cada categoria |
 | FunnelChart, EffortCostChart, InvertedUChart, NoiseFloorChart, NoiseVsSignalBars, TvChannelsDiagram | 1 | props |
 | WordChoiceDiagram, WatermarkReachDiagram, TextVsFileDiagram, KeyPatternDiagram, KitchenDiagram, StepFlowDiagram | 2 | props + tudo que o dataset desenha |
-| FlowLineDiagram, ConstraintExperimentChart | 2 | props + tudo que o dataset desenha |
+| FlowLineDiagram, ConstraintExperimentChart, VramLadder | 2 | props + tudo que o dataset desenha |
 | SimulationRenderer, YouTube, ArticleFigure | — | não desenham texto em SVG |
 
 Componente instanciado num `.mdx` que não esteja nessa lista **reprova com exit 1** em vez
@@ -124,6 +124,7 @@ FAMILIAS = {
     "kitchenDatasets": "kitchen",
     "flowLineDatasets": "flowLine",
     "constraintExperimentDatasets": "constraintExperiment",
+    "vramLadderDatasets": "vramLadder",
 }
 
 # Fragmento de entrega (chaves soltas, para colar dentro de um `Record` do site): a
@@ -802,6 +803,75 @@ def _cena_ce_barras(ds: dict, props: dict) -> Cena:
     return _cena_ce_rodape(c, ds, props)
 
 
+# ── VramLadder — geometria de `vram-ladder.tsx` ─────────────────────────────────
+# Duas paredes diferentes na mesma figura: a coluna do degrau é cortada por onde a
+# trilha começa (x0), e a linha do modelo não tem parede útil — o que reprova nela é
+# o "cabe até" (ancorado no FIM da trilha, crescendo para a esquerda) encostar no nome
+# do modelo. Por isso os dois entram na mesma fila, um por degrau.
+VL_W = 760
+VL_PAD = {"left": 8, "right": 8}
+VL_MOLDURA = (0.0, float(VL_W))  # não há borda desenhada dentro: a parede é o viewBox
+VL_COL_CAP = 152  # coluna do degrau: capacidade em cima, hardware embaixo
+VL_COL_FIM = 140  # faixa livre à direita da trilha, para onde o transbordo cresce
+VL_X0 = VL_PAD["left"] + VL_COL_CAP
+VL_PLOT_W = VL_W - VL_PAD["left"] - VL_PAD["right"] - VL_COL_CAP - VL_COL_FIM
+
+
+def cena_vram_ladder(ds: dict, props: dict) -> Cena:
+    c = Cena("VramLadder")
+    esq = float(VL_PAD["left"])
+    c.inicio("title", props["title"], 15, 700, esq, VL_MOLDURA)
+    if props.get("subtitle"):
+        c.inicio("subtitle", props["subtitle"], 11, 400, esq, VL_MOLDURA)
+
+    # A coluna do degrau é cortada de verdade: a trilha começa em x0 e o texto do
+    # modelo é desenhado ali. Já o texto do modelo NÃO tem parede à esquerda — ele
+    # nasce nessa mesma âncora de projeto, e a distância dele para a coluna já está
+    # garantida pela folga que a coluna deve à parede dela. A parede dele é o viewBox.
+    coluna = (0.0, float(VL_X0))
+    linha = VL_MOLDURA
+    for i, d in enumerate(ds["degraus"]):
+        c.inicio(f"degraus[{i}].capacidade", f"{d['capacidade']} GB", 15, 700, esq, coluna)
+        c.inicio(f"degraus[{i}].hardware", d["hardware"], 9, 400, esq, coluna)
+        # modelo e quant vivem no MESMO <text> (o quant é um tspan), separados por dois
+        # espaços: medir só o modelo deixaria passar um quant que invade o vizinho.
+        c.inicio(
+            f"degraus[{i}].modelo",
+            f"{d['modelo']}  {d['quant']}",
+            10.5, 400, float(VL_X0), linha, fila=f"degrau{i}",
+        )
+        c.fim(
+            f"degraus[{i}].cabeAte",
+            d["cabeAte"],
+            10,
+            700 if d["pesos"] + d["cacheRef"] > d["capacidade"] else 400,
+            float(VL_X0 + VL_PLOT_W),
+            linha,
+            fila=f"degrau{i}",
+        )
+
+    # O componente não mede texto: posiciona a legenda estimando ~5,1px por caractere a
+    # 10px. Medimos a largura REAL nas posições que essa ESTIMATIVA produz — é justamente
+    # onde ela subestima que um item encosta no marcador do seguinte. O marcador entra
+    # como caixa para que o vão medido seja texto -> marcador, não texto -> texto.
+    x = float(VL_PAD["left"])
+    for chave in ("pesos", "cache", "estouro"):
+        texto = ds["legenda"][chave]
+        c.inicio(f"legenda.{chave}", texto, 10, 400, x + 15, VL_MOLDURA)
+        # O item inteiro (marcador + rótulo) entra na fila como UMA peça: o marcador e
+        # o rótulo dele são a mesma unidade, separados por 5px de projeto. O vão que
+        # importa é o do fim de um rótulo até o marcador do item SEGUINTE.
+        c.caixa(
+            f"legenda.{chave} (item)", texto, x, x + 15 + largura(texto, 10),
+            VL_MOLDURA, fila="legenda",
+        )
+        x += 15 + len(texto) * 5.1 + 22
+
+    if props.get("source"):
+        c.inicio("source", props["source"], 9, 400, esq, VL_MOLDURA)
+    return c
+
+
 # componente -> (família do dataset, construtor da cena)
 CENAS = {
     "WordChoiceDiagram": ("wordChoice", cena_word_choice),
@@ -812,6 +882,7 @@ CENAS = {
     "KitchenDiagram": ("kitchen", cena_kitchen),
     "FlowLineDiagram": ("flowLine", cena_flow_line),
     "ConstraintExperimentChart": ("constraintExperiment", cena_constraint_experiment),
+    "VramLadder": ("vramLadder", cena_vram_ladder),
 }
 
 # Registrado em `mdx-components.tsx` mas sem `<text>` próprio: medir não se aplica.

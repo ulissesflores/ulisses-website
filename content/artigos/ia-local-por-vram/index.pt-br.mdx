@@ -1,0 +1,218 @@
+---
+title: 'O card que diz qual IA roda na sua placa acerta quase tudo — e erra na única conta que decide'
+slug: ia-local-por-vram
+category: artigos
+date: '2026-08-27'
+language: pt-BR
+---
+
+<VramLadder
+  dataset="ia-local-por-vram-escada"
+  title="A escada da VRAM, com as duas parcelas da conta"
+  subtitle="Cada trilha é a memória daquela faixa; a linha branca é o limite dela."
+  description="Escada de dez degraus de memória, de 4 GB a 256 GB. Em cada degrau, uma barra horizontal cuja trilha representa a memória disponível naquela faixa e cujo preenchimento mostra, empilhados, os pesos do modelo recomendado e o cache de contexto. Nove dos dez degraus cabem no contexto de referência de 32 mil tokens; o degrau de 8 GB já transborda. No contexto máximo de cada modelo, seis dos dez degraus transbordam: 4 GB, 8 GB, 16 GB, 24 GB, 32 GB e 64 GB passam da linha da capacidade, enquanto 48 GB, 96 GB, 128 GB e 256 GB permanecem dentro dela."
+  source="Pesos: tamanho real do arquivo GGUF no Hugging Face Hub. Cache: calculado do config.json de cada modelo. Verificado em 27/08/2026 — ulissesflores.com"
+/>
+
+*Como ler: cada barra é uma faixa de memória. O azul é o arquivo de pesos; o roxo, o cache num
+contexto de trabalho de 32 mil tokens; o vermelho, o que ainda faltaria no contexto máximo do
+modelo. Quando a barra passa da linha branca, aquele degrau só vale em conversa curta.*
+
+Circula um card, em espanhol, que resolve numa tabela a pergunta mais repetida de quem quer
+rodar IA em casa: **quanto de memória de vídeo você tem, e o que roda nisso.** Dez faixas, de
+4 GB a 256 GB, cada uma com a placa e o modelo correspondente.
+
+Baixei a lista de arquivos, li os `config.json` dos modelos e refiz as contas. O resultado me
+surpreendeu ao contrário do que eu esperava: **o card acerta quase tudo.** Dos dezessete
+vereditos de hardware, dezesseis estão corretos. Todos os modelos citados existem de verdade,
+com os nomes certos. Não é um card inventado por quem nunca abriu um terminal.
+
+E mesmo assim ele não responde à pergunta que promete responder. Porque orça metade da conta.
+
+## O que o card acerta, e é muita coisa
+
+As placas estão certas. RTX 5060 e 4060 têm 8 GB; a 5060 Ti tem 16 GB (e também existe numa
+versão de 8 GB, que o card não menciona); a 4080 tem 16 GB; a 3090 tem 24 GB; a 5090 tem 32 GB.
+A RTX PRO 6000 Blackwell tem 96 GB nas três edições — Workstation, Max-Q e Server —, que
+diferem só no envelope de potência. O DGX Spark tem 128 GB de memória unificada.
+
+Os chips da Apple também. E aqui eu estava errado antes de verificar: achei que a lista tinha
+invertido a hierarquia, porque dava 96 GB ao M5 Ultra e 128 GB ao M5 Max. Não inverteu. Os
+96 GB são a configuração **base** do M5 Ultra; os 128 GB são o **teto** do M5 Max. A hierarquia
+real de tetos é M5 Ultra 512 GB, M5 Max 128 GB, M5 Pro 64 GB, M5 e M6 32 GB — rigorosamente
+respeitada. O card misturou pisos com tetos, o que confunde, mas cada célula é uma configuração
+comprável de verdade.
+
+Até o M6 está certo, e é recente a ponto de eu quase ter descartado: foi anunciado em **25 de
+agosto de 2026**, dois dias antes desta verificação. Primeiro chip da Apple em 2 nm, até 32 GB
+de memória unificada, 170 GB/s de banda, estreia no Mac mini com envio a partir de 22 de
+setembro.
+
+Os modelos existem todos: Gemma 4 (a geração atual do Google, lançada em abril, primeira da
+família sob licença Apache 2.0), Qwen3.8-27B, Qwen3.8-Flash-Next e DeepSeek V4 Flash 0731.
+Os quants citados existem nos repositórios indicados.
+
+## O único item da lista que não existe
+
+**A RTX 5080 Super nunca foi lançada.**
+
+Os 24 GB que o card atribui a ela eram a especificação *planejada*, nunca a de um produto
+enviado. As fontes fortes do setor — VideoCardz, TechPowerUp, Tom's Hardware — descrevem a
+linha SUPER como adiada por tempo indeterminado, e a causa é econômica: o módulo de GDDR7 de
+3 GB custa cerca de três vezes o de 2 GB, num mercado onde a demanda de datacenter absorve a
+oferta. Há relato de cancelamento definitivo, mas só em fonte secundária fraca, e eu não elevo
+"relatado como cancelado" a "cancelado".
+
+Para o leitor, o que importa é operacional: **essa linha recomenda hardware que não se compra.**
+Na faixa de 24 GB, o que existe hoje é RTX 3090 (usada) ou RTX 4090. Corrigi isso na figura.
+
+## O erro que decide: o card orça só os pesos
+
+Aqui está o problema real, e ele não é de hardware nem de nomenclatura.
+
+A memória que um modelo ocupa tem duas parcelas. A primeira é o **arquivo de pesos** — fixa,
+conhecida antes de você baixar qualquer coisa, e é a única que o card orça. A segunda é o
+**cache de contexto**: uma estrutura que guarda o que já foi lido e **cresce enquanto você
+conversa**. Ela começa perto de zero e não para de subir até o limite do contexto.
+
+Escrevi um artigo inteiro sobre essa segunda parcela — como ela funciona, por que a fórmula que
+circula em cards virais erra por um fator de seis a vinte nos modelos de 2026, e como calcular
+a sua: [Como saber se um modelo de IA roda no seu computador — e por quê](/artigos/memoria-llm-local).
+Quem quiser a fórmula e a derivação, o lugar é lá. Aqui eu uso o resultado.
+
+Consequência prática: **"cabe" não é uma propriedade do modelo. É uma propriedade do par
+(modelo, contexto).** Um card que não diz o contexto está afirmando algo que não pode ser
+verificado — e, na maioria das linhas, o contexto implícito é curto demais para o uso real.
+
+## Degrau por degrau, com as duas parcelas
+
+Os pesos abaixo são o tamanho real do arquivo GGUF publicado, convertido para GiB. O cache saiu
+do `config.json` de cada modelo, com lote 1 e cache em 16 bits.
+
+| Memória | Modelo do card | Pesos | + cache 32K | + cache no contexto máximo | Cabe até |
+|---|---|---|---|---|---|
+| 4 GB | Gemma 4 E2B QAT q4_0 | 3,12 | 3,57 ✅ | 4,88 ❌ | 32K |
+| 8 GB | Gemma 4 12B QAT q4_0 | 6,50 | **8,66 ❌** | 22,66 ❌ | **8K** |
+| 16 GB | Gemma 4 12B Q8_0 | 11,80 | 13,96 ✅ | 27,96 ❌ | 32K |
+| 24 GB | Qwen3.8-27B UD-Q4_K_M | 15,33 | 17,47 ✅ | 31,47 ❌ | 128K |
+| 32 GB | Qwen3.8-27B UD-Q6_K | 20,47 | 22,61 ✅ | 36,61 ❌ | 128K |
+| 48 GB | Qwen3.8-27B Q8_0 | 27,05 | 29,19 ✅ | 43,19 ✅ | 256K |
+| 64 GB | Qwen3.8-27B BF16 | 50,91 | 53,05 ✅ | 67,05 ❌ | 128K |
+| 96 GB | Qwen3.8-Flash-Next UD-Q2_K_XL | 73,45 | 74,31 ✅ | 79,56 ✅ | 256K |
+| 128 GB | Qwen3.8-Flash-Next UD-Q4_K_XL | 103,68 | 104,54 ✅ | 109,79 ✅ | 256K |
+| 256 GB | DeepSeek V4 Flash 0731 UD-Q8_K_XL | 150,75 | 153,44 ✅ | 172,25 ✅ | 256K |
+
+Valores em GiB. "Contexto máximo" é o maior contexto que medi para cada modelo: 128K no
+Gemma 4 E2B, 256K nos demais.
+
+**Um degrau de dez não fecha nem numa sessão de trabalho normal. Seis de dez não fecham no
+contexto máximo do próprio modelo que o card recomenda.**
+
+## O degrau que quebra: 8 GB
+
+É a linha mais popular do card, porque é a placa mais vendida. E é a que não se sustenta.
+
+O Gemma 4 12B em q4_0 oficial do Google ocupa 6,50 GiB de pesos numa placa de 8 GB. Sobra
+1,5 GiB. O cache consome 0,66 GiB a 8 mil tokens de contexto — cabe, com aperto. A 32 mil
+tokens, o cache vai a 2,16 GiB e o total bate **8,66 GiB numa placa de 8 GB**. Não cabe. E
+32 mil tokens não é um contexto exótico: é um arquivo de código médio, ou meia hora de conversa.
+
+Quem seguir essa linha vai baixar 7 GB, rodar, achar ótimo nas primeiras mensagens e ver o
+processo morrer no meio de uma tarefa de verdade — sem entender por quê. **É o pior tipo de
+recomendação errada: a que funciona no teste e falha no uso.**
+
+Na faixa de 16 GB acontece coisa parecida, mais discreta. O card oferece o Gemma 4 26B A4B em
+Q4_K_M como opção "no limite". Medido, ele está **além** do limite: 15,65 GiB de pesos mais
+1,35 GiB de cache a 32K dão 17,00 GiB numa placa de 16 GB.
+
+E o degrau de 4 GB só fecha em texto puro. O Gemma 4 E2B é multimodal, e o projetor que ele
+carrega para enxergar imagem e ouvir áudio pesa mais 0,92 GiB: com ele, os 3,57 GiB viram
+4,49 GiB e a placa de 4 GB não segura. O card recomenda um modelo que vê, numa faixa onde só
+cabe a parte que lê.
+
+E na direção contrária, o card é conservador demais em 96 GB: recomenda o Flash-Next em
+UD-Q2_K_XL (73,45 GiB), mas o UD-Q3_K_XL (83,81 GiB) mais 6,11 GiB de cache no contexto máximo
+somam 89,92 GiB e cabem folgados. Nessa faixa dá para escolher um quant melhor do que o
+sugerido.
+
+## Quatro armadilhas de nome
+
+**NVFP4 é de outro ecossistema.** O card lista `NVFP4` ao lado de `Q4_K_M`, `Q6_K` e `Q8_0`,
+como se fossem opções do mesmo menu. Não são. Os `Q*` são formatos GGUF, do llama.cpp. NVFP4 é
+um formato de 4 bits da NVIDIA que roda em vLLM e SGLang, exige tensor cores Blackwell e vem em
+outro repositório. Escolher entre eles não é escolher um quant — é escolher outra pilha de
+software.
+
+**`Q4_K_M` e `Q6_K` do Qwen3.8-27B só existem com o prefixo `UD-`.** No repositório da Unsloth,
+os únicos GGUF sem prefixo são `Q4_0`, `Q4_1`, `Q8_0` e `BF16`. Quem procurar pelo nome do card
+não acha o arquivo.
+
+**O "Q8" do DeepSeek não é 8 bits por peso.** O `UD-Q8_K_XL` do DeepSeek V4 Flash 0731 tem
+161,87 GB para 304 bilhões de parâmetros — o que dá cerca de 4,3 bits por peso, não 8. A própria
+Unsloth diz no card do modelo que esse arquivo é apenas 7 GB maior que o Q4. O rótulo descreve a
+precisão de alguns tensores, não a média do arquivo.
+
+**O GB do Hub não é o GB da placa.** Tamanho de arquivo é publicado em bilhões de bytes;
+memória de vídeo é contada em potências de dois. São 7% de diferença, o suficiente para
+transformar um "cabe" em "não cabe" nas linhas apertadas. Converti tudo para GiB na tabela.
+
+## Três ressalvas que valem para a tabela inteira
+
+**As linhas com ✅ ainda são otimistas.** Pesos mais cache não é a ocupação total do processo:
+falta o contexto de CUDA ou Metal, as ativações intermediárias e o que o sistema operacional e o
+display já consomem. Some de 1 a 2 GB e trabalhe com 10% a 15% de folga.
+
+**Duas placas não são uma placa grande.** "2× RTX 5090 = 64 GB" é aritmeticamente certo e
+arquiteturalmente enganoso. A geração Blackwell de consumo não tem NVLink: o modelo precisa ser
+fatiado entre as duas placas e o tráfego entre camadas atravessa o PCIe. Vale como capacidade
+agregada com penalidade de interconexão, nunca como um pool único. O mesmo vale para os dois DGX
+Spark de 256 GB: o enlace de 200 Gb/s entre eles dá cerca de 25 GB/s contra os 273 GB/s da
+memória local. Memória de fato unificada, nessa lista, só no Apple Silicon e no DGX Spark
+individual.
+
+**No Mac, nem toda a memória unificada é da GPU.** O macOS reserva parte do pool para o
+sistema. O limite é ajustável — nesta máquina, `sysctl iogpu.wired_limit_mb` devolve `0`, que
+significa "use o padrão do sistema" — mas a Apple não publica qual é esse padrão. É a razão
+provável de o card dar ao M5 Max de 128 GB um quant menor do que ao DGX Spark de 128 GB, e a
+distinção é justa: os dois números iguais não valem a mesma coisa na prática.
+
+## O que eu faria com isso
+
+Se você tem 8 GB, não baixe o 12B esperando trabalhar com ele. Use o Gemma 4 E4B, ou aceite o
+12B com contexto limitado a 8K e configure o servidor para isso explicitamente, em vez de
+descobrir o limite quando o processo morrer.
+
+Se você tem 24 ou 32 GB, o Qwen3.8-27B é uma escolha boa — mas dimensione o contexto. A 128 mil
+tokens ele cabe; no máximo de 262.144, não. Quem precisa do contexto máximo nessa faixa precisa
+quantizar também o cache, com `--cache-type-k` e `--cache-type-v` no llama.cpp. Quantizar o
+arquivo de pesos **não encolhe o cache** — são coisas separadas, e essa é a confusão mais comum
+que eu vejo.
+
+E, em qualquer faixa: antes de escolher o quant, decida o contexto. A ordem inversa é o que
+produz cards como esse.
+
+## Como refazer esta conta
+
+Os números desta página não são de terceiros. Os pesos são o tamanho dos arquivos publicados; o
+cache saiu de um programa que lê o `config.json` de cada modelo e separa as camadas que guardam
+cache das que não guardam. O programa que monta a tabela está publicado junto:
+[`gerar-dataset.py`](https://ulissesflores.com/artigos/ia-local-por-vram/gerar-dataset.py).
+
+Cada linha traz o repositório de onde saiu o peso, e a conta é uma subtração — dá para conferir
+qualquer célula à mão.
+
+## Fontes
+
+- [Qwen3.8-27B](https://huggingface.co/Qwen/Qwen3.8-27B) · [GGUF](https://huggingface.co/unsloth/Qwen3.8-27B-GGUF) · [NVFP4](https://huggingface.co/unsloth/Qwen3.8-27B-NVFP4)
+- [Qwen3.8-Flash-Next](https://huggingface.co/Qwen/Qwen3.8-Flash-Next) · [GGUF](https://huggingface.co/unsloth/Qwen3.8-Flash-Next-GGUF)
+- [DeepSeek V4 Flash 0731](https://huggingface.co/deepseek-ai/DeepSeek-V4-Flash-0731) · [GGUF](https://huggingface.co/unsloth/DeepSeek-V4-Flash-0731-GGUF)
+- [Gemma 4 — anúncio](https://blog.google/innovation-and-ai/technology/developers-tools/gemma-4/) · [notas de versão](https://ai.google.dev/gemma/docs/releases) · [relatório técnico](https://arxiv.org/abs/2607.02770) · [GGUF QAT oficial do 12B](https://huggingface.co/google/gemma-4-12B-it-qat-q4_0-gguf) · [GGUF QAT oficial do E2B](https://huggingface.co/google/gemma-4-E2B-it-qat-q4_0-gguf)
+- [llama.cpp — bits por peso de cada formato](https://github.com/ggml-org/llama.cpp/blob/master/tools/quantize/README.md)
+- Apple: [Mac Studio (M5 Max e M5 Ultra)](https://www.apple.com/mac-studio/specs/) · [MacBook Pro 14" (M5 Pro e M5 Max)](https://support.apple.com/en-us/126318) · [anúncio do M6 e do M5 Ultra](https://www.apple.com/newsroom/2026/08/apple-introduces-m6-and-m5-ultra-for-a-big-leap-in-performance-and-ai-compute/)
+- RTX 50 SUPER adiada: [VideoCardz](https://videocardz.com/newz/nvidia-confirms-no-rtx-50-super-gpus-at-ces-2026-but-promises-updates-for-gamers) · [TechPowerUp](https://www.techpowerup.com/346010/no-nvidia-geforce-rtx-50-super-gpus-this-year-rtx-60-series-also-pushed-back) · [Tom's Hardware, sobre o preço da GDDR7](https://www.tomshardware.com/pc-components/gpus/nvidia-rtx-50-super-gpus-are-reportedly-ready-but-stuck-in-limbo-due-to-excessive-gddr7-pricing-3gb-gddr7-module-costs-triple-the-price-of-2gb)
+- O cálculo das duas parcelas, em detalhe: [Como saber se um modelo de IA roda no seu computador — e por quê](/artigos/memoria-llm-local) · [pacote citável](https://doi.org/10.5281/zenodo.21941274)
+
+*Verificado em 27 de agosto de 2026. Os tamanhos de arquivo foram lidos no Hugging Face Hub na
+data; o cache foi calculado dos `config.json` publicados, não medido em execução. A ausência da
+RTX 5080 Super e as configurações de memória da Apple foram conferidas nas fontes listadas. O
+que não foi conferido está declarado como tal no corpo.*

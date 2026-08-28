@@ -50,6 +50,45 @@ export function localizeArtigo(artigo: Artigo, locale: Locale): Pick<Artigo, 'ti
 }
 
 export const artigos: readonly Artigo[] = [
+  /**
+   * Primeiro do array porque é o mais recente e não divide data com ninguém;
+   * a ordenação real é o `sort` estável de `artigosByDateDesc`.
+   */
+  {
+    slug: 'ia-local-por-vram',
+    title:
+      'O card que diz qual IA roda na sua placa acerta quase tudo — e erra na única conta que decide',
+    summary:
+      'Um card em espanhol resolve numa tabela o que roda em cada faixa de memória de vídeo, de 4 GB a 256 GB. Refiz a conta: dos dezessete vereditos de hardware, dezesseis estão certos, e todos os modelos citados existem de verdade — a única peça inexistente é a RTX 5080 Super, adiada por tempo indeterminado porque o módulo de GDDR7 de 3 GB custa três vezes o de 2 GB. O erro que importa é outro, e é de método: o card orça só o arquivo de pesos e ignora o cache de contexto, que cresce enquanto você conversa. Com as duas parcelas medidas — pesos do GGUF publicado, cache calculado do config.json de cada modelo — um dos dez degraus não fecha nem numa sessão de trabalho de 32 mil tokens, e é justamente o mais popular, o de 8 GB; seis dos dez não fecham no contexto máximo do próprio modelo que o card recomenda. Separo ainda quatro armadilhas de nomenclatura, entre elas um "Q8" que tem 4,3 bits por peso e um formato que não é do mesmo ecossistema dos outros, e três ressalvas que valem para a tabela inteira, incluindo por que duas placas de 32 GB não são uma placa de 64 GB.',
+    date: '2026-08-27',
+    tags: ['ia', 'llm', 'hardware', 'quantizacao', 'vram', 'didatico'],
+    i18n: {
+      en: {
+        title:
+          'The chart that tells you which AI runs on your graphics card gets almost everything right — and gets wrong the one calculation that decides',
+        summary:
+          'A chart in Spanish settles in a single table what runs in each tier of video memory, from 4 GB to 256 GB. I redid the math: of the seventeen hardware verdicts, sixteen are right, and every model it cites really exists — the one piece that does not is the RTX 5080 Super, postponed indefinitely because the 3 GB GDDR7 module costs three times the 2 GB one. The error that matters is a different one, and it is methodological: the chart budgets only the weight file and ignores the context cache, which grows while you talk. With both parts measured — weights from the published GGUF, cache calculated from each model\'s config.json — one of the ten rungs does not add up even in a 32,000-token working session, and it is precisely the most popular one, the 8 GB rung; six of the ten do not add up at the maximum context of the very model the chart recommends. I also separate out four naming traps, among them a "Q8" that has 4.3 bits per weight and a format that is not from the same ecosystem as the others, and three caveats that apply to the whole table, including why two 32 GB cards are not one 64 GB card.',
+      },
+      es: {
+        title:
+          'La infografía que dice qué IA funciona en tu tarjeta acierta casi todo — y falla en la única cuenta que decide',
+        summary:
+          'Una infografía resuelve en una tabla qué se ejecuta en cada franja de memoria de vídeo, de 4 GB a 256 GB. Rehice la cuenta: de los diecisiete veredictos de hardware, dieciséis son correctos, y todos los modelos citados existen de verdad — la única pieza inexistente es la RTX 5080 Super, aplazada por tiempo indefinido porque el módulo de GDDR7 de 3 GB cuesta tres veces el de 2 GB. El error que importa es otro, y es de método: la infografía solo presupuesta el archivo de pesos e ignora el caché de contexto, que crece mientras conversas. Con las dos partidas medidas — pesos del GGUF publicado, caché calculado del config.json de cada modelo — uno de los diez escalones no cierra ni en una sesión de trabajo de 32 mil tokens, y es justamente el más popular, el de 8 GB; seis de los diez no cierran en el contexto máximo del propio modelo que la infografía recomienda. Separo además cuatro trampas de nomenclatura, entre ellas un "Q8" que tiene 4,3 bits por peso y un formato que no es del mismo ecosistema que los otros, y tres salvedades que valen para la tabla entera, incluyendo por qué dos tarjetas de 32 GB no son una tarjeta de 64 GB.',
+      },
+      it: {
+        title:
+          'La card che dice quale IA gira sulla tua GPU azzecca quasi tutto — e sbaglia l\'unico conto che decide',
+        summary:
+          'Una card in spagnolo risolve in una tabella cosa gira in ogni fascia di memoria video, da 4 GB a 256 GB. Ho rifatto il conto: dei diciassette verdetti sull\'hardware, sedici sono giusti, e tutti i modelli citati esistono davvero — l\'unico pezzo inesistente è la RTX 5080 Super, rinviata a tempo indeterminato perché il modulo di GDDR7 da 3 GB costa il triplo di quello da 2 GB. L\'errore che conta è un altro, ed è di metodo: la card preventiva solo il file dei pesi e ignora la cache di contesto, che cresce mentre parli. Con le due voci misurate — pesi del GGUF pubblicato, cache calcolata dal config.json di ogni modello — uno dei dieci gradini non chiude nemmeno in una sessione di lavoro da 32 mila token, ed è proprio il più popolare, quello da 8 GB; sei dei dieci non chiudono nel contesto massimo del modello stesso che la card consiglia. Distinguo inoltre quattro trappole di nomenclatura, tra cui un "Q8" che ha 4,3 bit per peso e un formato che non appartiene allo stesso ecosistema degli altri, e tre avvertenze che valgono per tutta la tabella, incluso il perché due schede da 32 GB non sono una scheda da 64 GB.',
+      },
+      he: {
+        title:
+          'הכרטיס שאומר איזו בינה מלאכותית רצה על כרטיס המסך שלך צודק כמעט בהכול — וטועה בחישוב היחיד שמכריע',
+        summary:
+          'כרטיס בספרדית פותר בטבלה אחת מה רץ בכל רמה של זיכרון וידאו, מ-4 GB עד 256 GB. עשיתי את החישוב מחדש: מתוך שבעה עשר פסקי הדין על החומרה, שישה עשר נכונים, וכל המודלים המצוטטים קיימים באמת — הפריט היחיד שלא קיים הוא ה-RTX 5080 Super, שנדחתה לזמן בלתי מוגבל כי מודול GDDR7 של 3 GB עולה פי שלושה ממודול של 2 GB. הטעות שחשובה היא אחרת, והיא מתודית: הכרטיס מתמחר רק את קובץ המשקלים ומתעלם מה-cache של ההקשר, שגדל תוך כדי השיחה. עם שני המרכיבים מדודים — משקלים מתוך ה-GGUF שפורסם, cache שחושב מה-config.json של כל מודל — אחד מעשרת השלבים לא סוגר אפילו בסשן עבודה של 32 אלף טוקנים, וזה דווקא הפופולרי ביותר, זה של 8 GB; שישה מתוך העשרה לא סוגרים בהקשר המרבי של המודל שהכרטיס עצמו ממליץ עליו. אני מפריד עוד ארבע מלכודות של שמות, ביניהן "Q8" שיש בו 4.3 סיביות לכל משקל ופורמט שאינו מאותו אקוסיסטם של האחרים, ושלוש הסתייגויות שתקפות לכל הטבלה, כולל למה שני כרטיסים של 32 GB אינם כרטיס אחד של 64 GB.',
+      },
+    },
+  },
 {
   slug: 'recusa-que-parou-o-estudo-das-recusas',
   title:
