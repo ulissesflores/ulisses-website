@@ -2758,8 +2758,8 @@ export const countryBarsDatasets: Record<string, CountryBarsDataset> = {
   /**
    * `robos-2026-100m-reguas` — tempos dos 100 m que circularam na semana dos
    * World Humanoid Robot Games 2026, em BLOCOS POR RÉGUA. Nunca fundir num
-   * ranking: a tese do artigo é que os quatro números foram medidos sob regras
-   * diferentes (recorde humano da World Athletics; bateria oficial dos Jogos;
+   * ranking: a tese do artigo é que os números foram medidos sob regras
+   * diferentes (recorde humano da World Athletics; competição oficial dos Jogos;
    * evento-teste fora de competição; edição anterior).
    *
    * PROCEDÊNCIA (verificada 24/08/2026): 9,58 s = World Athletics (Bolt,
@@ -2769,7 +2769,15 @@ export const countryBarsDatasets: Record<string, CountryBarsDataset> = {
    * Lightning, mesma bateria (ZOL 12358920; Ifeng 8vnwlRjYjf5). 9,32 s = Honor
    * Lightning em evento-teste preparatório, reportado pela CCTV (Reuters/Guardian
    * 22/08). 21,50 s = vencedor dos 100 m na 1.ª edição, 2025 (Wikipedia; Global
-   * Times "cut from 21.50"). Paleta lote 7: azul = régua-tese (bateria oficial),
+   * Times "cut from 21.50"). ADICIONADOS NO REFRESH DE 26/08/2026: 8,86 s =
+   * Tiangong Ultra na semifinal (复赛) do grupo grande, 25/08 (CCTV via 京报网
+   * 11932018; Global Times 1368995). 8,94 s = Honor Lightning na mesma semifinal,
+   * tempo divulgado pelo fabricante (IT之家 994/197, citando @荣耀手机). 8,64 s =
+   * Tiangong Ultra, FINAL do grupo grande, 26/08, recorde dos Jogos e última prova
+   * da edição (Reuters via The Star; Global Times 1369085; Xinhua EN
+   * 0b9df35761fe472cbdd27646d8e0d05c). Os cinco vivem no MESMO bloco azul porque
+   * são a mesma régua — competição oficial; o que muda entre eles é a rodada, e a
+   * rodada vai no valueLabel, não no nome (nome curto = gate de 140px). Paleta lote 7: azul = régua-tese (bateria oficial),
    * ouro = destaque (o número que viralizou), cinzas = blocos recessivos.
    * Labels em pt-BR; traduções ganham `-en/-es/-it/-he` (texto no gráfico).
    */
@@ -2777,11 +2785,14 @@ export const countryBarsDatasets: Record<string, CountryBarsDataset> = {
     max: 24,
     groups: [
       {
-        label: 'Jogos 2026 — bateria oficial (22/08, grupo grande, bateria 9)',
+        label: 'Jogos 2026 — competição oficial (bateria 22/08, semifinal 25/08, final 26/08)',
         color: '#60a5fa',
         items: [
-          { name: 'Tiangong Ultra', value: 9.39, valueLabel: '9,39 s', emphasis: true },
-          { name: 'Lightning (Honor)', value: 9.47, valueLabel: '9,47 s' },
+          { name: 'Tiangong Ultra', value: 8.64, valueLabel: '8,64 s — final', emphasis: true },
+          { name: 'Tiangong Ultra', value: 8.86, valueLabel: '8,86 s — semifinal' },
+          { name: 'Lightning (Honor)', value: 8.94, valueLabel: '8,94 s — semifinal' },
+          { name: 'Tiangong Ultra', value: 9.39, valueLabel: '9,39 s — bateria 9' },
+          { name: 'Lightning (Honor)', value: 9.47, valueLabel: '9,47 s — bateria 9' },
         ],
       },
       {
@@ -2827,11 +2838,14 @@ export const countryBarsDatasets: Record<string, CountryBarsDataset> = {
     max: 24,
     groups: [
       {
-        label: '2026 Games — official heat (22 Aug, large group, heat 9)',
+        label: '2026 Games — official competition (heat 22 Aug, semifinal 25 Aug, final 26 Aug)',
         color: '#60a5fa',
         items: [
-          { name: 'Tiangong Ultra', value: 9.39, valueLabel: '9.39 s', emphasis: true },
-          { name: 'Lightning (Honor)', value: 9.47, valueLabel: '9.47 s' },
+          { name: 'Tiangong Ultra', value: 8.64, valueLabel: '8.64 s — final', emphasis: true },
+          { name: 'Tiangong Ultra', value: 8.86, valueLabel: '8.86 s — semifinal' },
+          { name: 'Lightning (Honor)', value: 8.94, valueLabel: '8.94 s — semifinal' },
+          { name: 'Tiangong Ultra', value: 9.39, valueLabel: '9.39 s — heat 9' },
+          { name: 'Lightning (Honor)', value: 9.47, valueLabel: '9.47 s — heat 9' },
         ],
       },
       {
@@ -2876,11 +2890,14 @@ export const countryBarsDatasets: Record<string, CountryBarsDataset> = {
     max: 24,
     groups: [
       {
-        label: 'Juegos 2026 — serie oficial (22/08, grupo grande, serie 9)',
+        label: 'Juegos 2026 — competición oficial (serie 22/08, semifinal 25/08, final 26/08)',
         color: '#60a5fa',
         items: [
-          { name: 'Tiangong Ultra', value: 9.39, valueLabel: '9,39 s', emphasis: true },
-          { name: 'Lightning (Honor)', value: 9.47, valueLabel: '9,47 s' },
+          { name: 'Tiangong Ultra', value: 8.64, valueLabel: '8,64 s — final', emphasis: true },
+          { name: 'Tiangong Ultra', value: 8.86, valueLabel: '8,86 s — semifinal' },
+          { name: 'Lightning (Honor)', value: 8.94, valueLabel: '8,94 s — semifinal' },
+          { name: 'Tiangong Ultra', value: 9.39, valueLabel: '9,39 s — serie 9' },
+          { name: 'Lightning (Honor)', value: 9.47, valueLabel: '9,47 s — serie 9' },
         ],
       },
       {
@@ -2912,11 +2929,14 @@ export const countryBarsDatasets: Record<string, CountryBarsDataset> = {
     max: 24,
     groups: [
       {
-        label: 'Giochi 2026 — batteria ufficiale (22/08, gruppo grande, batteria 9)',
+        label: 'Giochi 2026 — competizione ufficiale (batteria 22/08, semifinale 25/08, finale 26/08)',
         color: '#60a5fa',
         items: [
-          { name: 'Tiangong Ultra', value: 9.39, valueLabel: '9,39 s', emphasis: true },
-          { name: 'Lightning (Honor)', value: 9.47, valueLabel: '9,47 s' },
+          { name: 'Tiangong Ultra', value: 8.64, valueLabel: '8,64 s — finale', emphasis: true },
+          { name: 'Tiangong Ultra', value: 8.86, valueLabel: '8,86 s — semifinale' },
+          { name: 'Lightning (Honor)', value: 8.94, valueLabel: '8,94 s — semifinale' },
+          { name: 'Tiangong Ultra', value: 9.39, valueLabel: '9,39 s — batteria 9' },
+          { name: 'Lightning (Honor)', value: 9.47, valueLabel: '9,47 s — batteria 9' },
         ],
       },
       {
@@ -2948,11 +2968,14 @@ export const countryBarsDatasets: Record<string, CountryBarsDataset> = {
     max: 24,
     groups: [
       {
-        label: 'משחקי 2026 — מקצה רשמי (22/08, הקבוצה הגדולה, מקצה 9)',
+        label: 'משחקי 2026 — תחרות רשמית (מקצה 22/08, חצי גמר 25/08, גמר 26/08)',
         color: '#60a5fa',
         items: [
-          { name: 'Tiangong Ultra', value: 9.39, valueLabel: '9.39 שניות', emphasis: true },
-          { name: 'Lightning (Honor)', value: 9.47, valueLabel: '9.47 שניות' },
+          { name: 'Tiangong Ultra', value: 8.64, valueLabel: '8.64 שניות — גמר', emphasis: true },
+          { name: 'Tiangong Ultra', value: 8.86, valueLabel: '8.86 שניות — חצי גמר' },
+          { name: 'Lightning (Honor)', value: 8.94, valueLabel: '8.94 שניות — חצי גמר' },
+          { name: 'Tiangong Ultra', value: 9.39, valueLabel: '9.39 שניות — מקצה 9' },
+          { name: 'Lightning (Honor)', value: 9.47, valueLabel: '9.47 שניות — מקצה 9' },
         ],
       },
       {
