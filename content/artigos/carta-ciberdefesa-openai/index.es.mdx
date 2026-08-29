@@ -1,5 +1,5 @@
 ---
-title: 'La carta de ciberdefensa firmada por 128 empresas no contiene ni un solo compromiso'
+title: 'La carta de ciberdefensa firmada por 155 empresas no contiene ni un solo compromiso'
 slug: carta-ciberdefesa-openai
 category: artigos
 date: '2026-08-28'
@@ -90,7 +90,7 @@ mano, y el programa registra la decisión por escrito.
 Esa concesión es la defensa de la medida. Sin ella, una matriz toda gris es acusación, no cuenta.
 Con ella se ve dónde la carta llega cerca — y dónde no. Es por la misma regla que **`"significant
 funding"`, en el bloque 04, quedó ausente y no parcial:** un adjetivo no es medio número, es otra
-cosa. Lo más cerca que una carta firmada por 128 empresas llega de hablar de dinero es la palabra
+cosa. Lo más cerca que una carta firmada por 155 empresas llega de hablar de dinero es la palabra
 "significativo".
 
 ## Los únicos dígitos del cuerpo de la carta son 01, 02, 03 y 04
@@ -139,15 +139,17 @@ El segundo hallazgo apareció cuando fui a comprobar el número del titular.
 | 27/08/2026 23:29:07 | 127 | Wayback, `curl` directo |
 | 28/08/2026 15:43:35 | 128 | página en vivo, navegador local |
 | 28/08/2026 15:45:12 | 128 | Wayback, `curl` directo |
+| 29/08/2026 16:24:50 | 155 | Wayback, `curl` directo |
 
-**Tres cambios en unas 22 horas.** La CNBC es la única cobertura que clavó un número exacto — 116,
+**Cuatro cambios en unas 47 horas.** La CNBC es la única cobertura que clavó un número exacto — 116,
 en el titular y en el cuerpo, publicado a las 17:48 UTC del 27/08. Tenía razón: coincide con el
 snapshot de 35 minutos antes. Hoy está desactualizada. Cualquier número sobre esta carta tiene una
 validez de horas, y por eso todos los que cito aquí vienen con fecha y hora.
 
 Hay una trampa más, y esa atrapa a quien vaya a comprobar: **la página tiene dos listas.** Una de
-`Signatories`, en texto (116, luego 127, luego 128), y otra de `Supporting organizations`, un mural
-de logotipos que es subconjunto de la primera (100, luego 116, luego 118). El número **116 aparece
+`Signatories`, en texto (116, luego 127, luego 128, luego 155), y otra de
+`Supporting organizations`, un mural de logotipos que es subconjunto de la primera (100, 116 y 118
+en las tres primeras capturas — el mural no lo reconté en la última). El número **116 aparece
 en las dos series, en momentos distintos.** Citar "116" sin decir de qué lista es ambiguo, y la
 ambigüedad no es del periodista: es de la página.
 
@@ -157,15 +159,24 @@ nombre, confirmada por dos rutas independientes. Ni OpenAI ni el banco han dicho
 El momento exacto de la salida cae en una ventana de unas dieciséis horas que no cerré, y el motivo
 no lo sé; no afirmo ninguno de los dos.
 
-Y ahora el contraste que da sentido al eje de este artículo: **mientras la lista cambiaba tres
-veces, el texto no cambió ni una coma.** Los cuatro bloques son byte a byte idénticos en las cuatro
-capturas entre el 27/08 17:13 y el 28/08 15:45 UTC. Lo que la carta pide está asentado, revisado,
+Al día siguiente la lista dio su mayor salto hasta ahora: **de 128 a 155 entre el 28/08 15:45 y el
+29/08 16:24 UTC** — veintisiete entradas, ninguna salida. Entre ellas, AT&T, Atlassian,
+Databricks, Datadog, GitHub, Nokia, PayPal y Tailscale.
+
+Y ahora el contraste que da sentido al eje de este artículo: **mientras la lista cambiaba cuatro
+veces, el texto no cambió ni una coma.** Los cuatro bloques son byte a byte idénticos en las cinco
+capturas entre el 27/08 17:13 y el 29/08 16:24 UTC. Lo que la carta pide está asentado, revisado,
 estable. Es justamente en esa parte estable donde no hay compromiso.
 
 ## Quiénes no están
 
-Las ausencias, contra una lista enumerada de 128 nombres, son medida: **Meta, Nvidia, xAI, Mistral,
-Mozilla, Palantir, Y Combinator, Linux Foundation, Andreessen Horowitz, Apple, Salesforce.**
+Las ausencias, contra una lista enumerada de 155 nombres, son medida: **Meta, Nvidia, xAI, Mistral,
+Palantir, Y Combinator, Linux Foundation, Andreessen Horowitz, Apple, Salesforce.**
+
+Mozilla estaba en esa lista hasta la víspera. Salió por un detalle que vale la pena registrar: la
+entrada del 29/08 no dice "Mozilla" — dice **`Firefox`**, el navegador. La cadena `Mozilla` sigue
+fuera de la lista, y no afirmo que la fundación firmara; afirmo que el nombre que firmó es el de
+su producto, y que por eso Mozilla salió de mi lista de ausentes.
 
 Casi todos los primeros de la lista firmaron, cinco semanas antes, la carta *"Open Weights and
 American AI Leadership"*, del 24 de julio — la que defiende los modelos de peso abierto frente a
@@ -231,7 +242,7 @@ y volver a ejecutar:
   extrae los bloques, aplica los cinco marcadores y monta la figura. Aborta si el cuerpo de la carta
   deja de tener solo los dígitos 01–04, o si desaparecen los centinelas del documento de control.
 - [`extrair_blocos.py`](https://ulissesflores.com/artigos/carta-ciberdefesa-openai/extrair_blocos.py)
-  — calcula el hash de cada bloque en las cuatro capturas, que es como sé que el cuerpo no cambió.
+  — calcula el hash de cada bloque en las cinco capturas, que es como sé que el cuerpo no cambió.
 
 Una trampa que el programa evita y que registro para quien vaya a repetirlo: medir el control
 positivo en la página cruda enciende dieciocho falsos "plazos", porque el menú, el pie de página y

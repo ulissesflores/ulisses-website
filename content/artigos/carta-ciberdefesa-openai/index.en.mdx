@@ -1,5 +1,5 @@
 ---
-title: 'The cyber defense letter signed by 128 companies contains not one commitment'
+title: 'The cyber defense letter signed by 155 companies contains not one commitment'
 slug: carta-ciberdefesa-openai
 category: artigos
 date: '2026-08-28'
@@ -91,7 +91,7 @@ That concession is what makes the measurement defensible. Without it, an all-gre
 accusation rather than a count. With it, you can see where the letter comes close — and where it
 does not. It is by that same rule that **`"significant funding"`, in block 04, came out absent
 rather than partial:** an adjective is not half a number, it is a different thing. The closest a
-letter signed by 128 companies gets to talking about money is the word "significant".
+letter signed by 155 companies gets to talking about money is the word "significant".
 
 ## The only digits in the body of the letter are 01, 02, 03 and 04
 
@@ -140,15 +140,17 @@ The second finding turned up when I went to check the headline number.
 | 27 Aug 2026 23:29:07 | 127 | Wayback, direct `curl` |
 | 28 Aug 2026 15:43:35 | 128 | live page, local browser |
 | 28 Aug 2026 15:45:12 | 128 | Wayback, direct `curl` |
+| 29 Aug 2026 16:24:50 | 155 | Wayback, direct `curl` |
 
-**Three changes in about 22 hours.** CNBC is the only outlet that pinned an exact number — 116,
+**Four changes in about 47 hours.** CNBC is the only outlet that pinned an exact number — 116,
 in the headline and in the body, published at 17:48 UTC on 27 August. It was right: it matches
 the snapshot from 35 minutes earlier. Today it is out of date. Any number about this letter has a
 shelf life of hours, which is why every one I cite here comes with a date and a time.
 
 There is one more trap, and it catches anyone who goes to check: **the page has two lists.** One
-of `Signatories`, in text (116, then 127, then 128), and one of `Supporting organizations`, a wall
-of logos that is a subset of the first (100, then 116, then 118). The number **116 appears in both
+of `Signatories`, in text (116, then 127, then 128, then 155), and one of
+`Supporting organizations`, a wall of logos that is a subset of the first (100, 116 and 118 across
+the first three captures — I did not recount the wall on the last one). The number **116 appears in both
 series, at different moments.** Citing "116" without saying which list is ambiguous, and the
 ambiguity is not the journalist's: it is the page's.
 
@@ -158,16 +160,24 @@ confirmed by two independent routes. Neither OpenAI nor the bank has said anythi
 exact moment of the departure falls inside a window of some sixteen hours that I did not close,
 and I do not know the reason; I assert neither.
 
-And now the contrast that gives this article its point: **while the list changed three times, the
-text did not change a comma.** The four blocks are byte-for-byte identical across the four
-captures between 27 Aug 17:13 and 28 Aug 15:45 UTC. What the letter asks for is settled, edited,
+The next day the list made its biggest jump yet: **from 128 to 155 between 28 Aug 15:45 and
+29 Aug 16:24 UTC** — twenty-seven arrivals, no departures. Among them AT&T, Atlassian,
+Databricks, Datadog, GitHub, Nokia, PayPal and Tailscale.
+
+And now the contrast that gives this article its point: **while the list changed four times, the
+text did not change a comma.** The four blocks are byte-for-byte identical across the five
+captures between 27 Aug 17:13 and 29 Aug 16:24 UTC. What the letter asks for is settled, edited,
 stable. It is precisely in that stable part that there is no commitment.
 
 ## Who is not there
 
-Absences, against an enumerated list of 128 names, are a measurement: **Meta, Nvidia, xAI,
-Mistral, Mozilla, Palantir, Y Combinator, Linux Foundation, Andreessen Horowitz, Apple,
-Salesforce.**
+Absences, against an enumerated list of 155 names, are a measurement: **Meta, Nvidia, xAI,
+Mistral, Palantir, Y Combinator, Linux Foundation, Andreessen Horowitz, Apple, Salesforce.**
+
+Mozilla was on that list until the day before. It came off for a detail worth recording: the
+29 Aug arrival does not read "Mozilla" — it reads **`Firefox`**, the browser. The string `Mozilla`
+is still not on the list, and I do not claim the foundation signed; I claim the name that signed
+is the name of its product, and that this is why Mozilla left my roll of absentees.
 
 Almost all of the first ones signed, five weeks earlier, the letter *"Open Weights and American AI
 Leadership"* of 24 July — the one defending open-weight models against regulatory restrictions.
@@ -233,7 +243,7 @@ for the five markers is a set of regular expressions you can read, disagree with
   the letter stops having only the digits 01–04, or if the sentinels of the control document go
   missing.
 - [`extrair_blocos.py`](https://ulissesflores.com/artigos/carta-ciberdefesa-openai/extrair_blocos.py)
-  — hashes each block across the four captures, which is how I know the body did not change.
+  — hashes each block across the five captures, which is how I know the body did not change.
 
 One trap the program avoids, recorded here for anyone repeating the work: measuring the positive
 control on the raw page lights eighteen false "deadlines", because the menu, the footer and the
