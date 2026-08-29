@@ -20,7 +20,7 @@ DOIS REGIMES DE MEDIÇÃO, porque são dois tipos de figura:
    várias dessas caixas são dimensionadas pelo próprio texto (fórmula de contagem de
    caractere), então elas vivem, por construção, acima de 85%.
 
-COBERTURA (espelho de `lib/content/mdx-components.tsx`, lido em 2026-08-28 — 20 entradas):
+COBERTURA (espelho de `lib/content/mdx-components.tsx`, lido em 2026-08-28 — 21 entradas):
 
 | Componente | Regime | Texto medido |
 |---|---|---|
@@ -29,6 +29,7 @@ COBERTURA (espelho de `lib/content/mdx-components.tsx`, lido em 2026-08-28 — 2
 | FunnelChart, EffortCostChart, InvertedUChart, NoiseFloorChart, NoiseVsSignalBars, TvChannelsDiagram | 1 | props |
 | WordChoiceDiagram, WatermarkReachDiagram, TextVsFileDiagram, KeyPatternDiagram, KitchenDiagram, StepFlowDiagram | 2 | props + tudo que o dataset desenha |
 | FlowLineDiagram, ConstraintExperimentChart, VramLadder | 2 | props + tudo que o dataset desenha |
+| ObligationMatrix | 2 | props + tudo que o dataset desenha |
 | SimulationRenderer, YouTube, ArticleFigure | — | não desenham texto em SVG |
 
 Componente instanciado num `.mdx` que não esteja nessa lista **reprova com exit 1** em vez
@@ -125,6 +126,7 @@ FAMILIAS = {
     "flowLineDatasets": "flowLine",
     "constraintExperimentDatasets": "constraintExperiment",
     "vramLadderDatasets": "vramLadder",
+    "obligationMatrixDatasets": "obligationMatrix",
 }
 
 # Fragmento de entrega (chaves soltas, para colar dentro de um `Record` do site): a
@@ -872,6 +874,79 @@ def cena_vram_ladder(ds: dict, props: dict) -> Cena:
     return c
 
 
+# ── ObligationMatrix — geometria de `obligation-matrix.tsx` ────────────────────
+# Duas paredes distintas: a coluna de rótulo à esquerda é cortada por onde a primeira
+# célula começa (x0), e o texto de cada célula é preso à CÉLULA dele, não ao viewBox —
+# rótulo de célula que passa da célula encosta no da coluna vizinha muito antes de
+# chegar à borda da figura. As marcas (traço/meia-lua/disco) são shapes, não glifos:
+# não entram na medição de texto de propósito, e é por isso que são shapes.
+OM_W = 760
+OM_PAD = {"left": 8, "right": 8}
+OM_COL_ROTULO = 236
+OM_X0 = OM_PAD["left"] + OM_COL_ROTULO
+OM_COL_W = (OM_W - OM_PAD["left"] - OM_PAD["right"] - OM_COL_ROTULO) / 5
+OM_MOLDURA = (0.0, float(OM_W))
+OM_ROTULO = (0.0, float(OM_X0))
+
+
+def _om_celula(c: int) -> tuple[float, float]:
+    return (OM_X0 + c * OM_COL_W, OM_X0 + (c + 1) * OM_COL_W)
+
+
+def cena_obligation_matrix(ds: dict, props: dict) -> Cena:
+    c = Cena("ObligationMatrix")
+    esq = float(OM_PAD["left"])
+    c.inicio("title", props["title"], 15, 700, esq, OM_MOLDURA)
+    if props.get("subtitle"):
+        c.inicio("subtitle", props["subtitle"], 11, 400, esq, OM_MOLDURA)
+
+    # Cabeçalho: cada coluna é o espaço de busca enumerado, centrado na célula dela.
+    for i, coluna in enumerate(ds["colunas"]):
+        cx = OM_X0 + (i + 0.5) * OM_COL_W
+        for k, linha in enumerate(coluna):
+            c.centro(f"colunas[{i}][{k}]", linha, 9.5, 400, cx, _om_celula(i))
+
+    for i, l in enumerate(ds["linhas"]):
+        # O controle não tem número, então o texto dele não recua — e por isso também
+        # não disputa altura com número nenhum.
+        controle = bool(l.get("controle"))
+        x_texto = esq if controle else esq + 30
+        fila = f"linha{i}"
+        if l["numero"]:
+            c.inicio(f"linhas[{i}].numero", l["numero"], 14, 700, esq, OM_ROTULO, fila=fila)
+        for k, linha in enumerate(l["destinatario"]):
+            # Só a primeira linha do destinatário divide altura com o número.
+            c.inicio(
+                f"linhas[{i}].destinatario[{k}]", linha, 9.5 if controle else 11, 400,
+                x_texto, OM_ROTULO, fila=fila if k == 0 else None,
+            )
+        if l["volume"]:
+            c.inicio(f"linhas[{i}].volume", l["volume"], 9, 400, x_texto, OM_ROTULO)
+        for j, celula in enumerate(l["celulas"]):
+            cx = OM_X0 + (j + 0.5) * OM_COL_W
+            for k, nota in enumerate(celula.get("nota") or []):
+                c.centro(f"linhas[{i}].celulas[{j}].nota[{k}]", nota, 8, 400, cx, _om_celula(j))
+
+    # Legenda: mesma estimativa de ~5,1px/caractere do componente, medida na fonte real
+    # nas posições que essa ESTIMATIVA produz. O marcador entra como caixa para que o vão
+    # medido seja rótulo -> marcador do item seguinte, não texto -> texto.
+    x = float(OM_PAD["left"])
+    for chave in ("ausente", "parcial", "presente"):
+        texto = ds["legenda"][chave]
+        c.inicio(f"legenda.{chave}", texto, 10, 400, x + 22, OM_MOLDURA)
+        c.caixa(
+            f"legenda.{chave} (item)", texto, x, x + 22 + largura(texto, 10),
+            OM_MOLDURA, fila="legenda",
+        )
+        x += 15 + len(texto) * 5.1 + 22
+
+    for k, linha in enumerate(ds["conclusao"]):
+        c.inicio(f"conclusao[{k}]", linha, 11, 400, esq, OM_MOLDURA)
+    if props.get("source"):
+        c.inicio("source", props["source"], 9, 400, esq, OM_MOLDURA)
+    return c
+
+
 # componente -> (família do dataset, construtor da cena)
 CENAS = {
     "WordChoiceDiagram": ("wordChoice", cena_word_choice),
@@ -883,6 +958,7 @@ CENAS = {
     "FlowLineDiagram": ("flowLine", cena_flow_line),
     "ConstraintExperimentChart": ("constraintExperiment", cena_constraint_experiment),
     "VramLadder": ("vramLadder", cena_vram_ladder),
+    "ObligationMatrix": ("obligationMatrix", cena_obligation_matrix),
 }
 
 # Registrado em `mdx-components.tsx` mas sem `<text>` próprio: medir não se aplica.
@@ -1022,6 +1098,10 @@ def main() -> int:
         caminhos.append(raiz / "data/artigos-charts.ts")
         caminhos += sorted((raiz / "data").glob("*-diagram.ts"))
         caminhos.append(raiz / "data/constraint-experiment-chart.ts")
+        # Nomeado sem o sufixo `-diagram`, então o glob acima NÃO o pega: fora desta
+        # linha, o módulo seria pulado em silêncio pela varredura — o mesmo silêncio
+        # que este arquivo existe para acabar.
+        caminhos.append(raiz / "data/obligation-matrix.ts")
 
     medidas, colisoes, faltas = checar(caminhos)
     limite = ALVO if args.estrito else 1.0

@@ -29,6 +29,7 @@ import { UtilizationCurveChart } from './utilization-curve-chart';
 import { FlowLineDiagram } from './flow-line-diagram';
 import { ConstraintExperimentChart } from './constraint-experiment-chart';
 import { VramLadder } from './vram-ladder';
+import { ObligationMatrix } from './obligation-matrix';
 import { ArticleFigure } from './article-figure';
 import { YouTube } from './youtube-embed';
 
@@ -71,6 +72,7 @@ export const mdxComponents: MDXComponents = {
   FlowLineDiagram,
   ConstraintExperimentChart,
   VramLadder,
+  ObligationMatrix,
   ArticleFigure,
   YouTube,
   /**
