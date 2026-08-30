@@ -30,8 +30,11 @@ recorte, e recortar é decisão de composição — o script recusa em vez de co
 por conta própria.
 
 Uso:
-    python3 scripts/artigos/publicar-capa.py <slug> <caminho-da-arte>
+    python3 scripts/artigos/publicar-capa.py <slug> <caminho-da-arte> [nome-base]
     python3 scripts/artigos/publicar-capa.py marca-dagua-claude content/artigos/marca-dagua-claude/hero.png
+
+`nome-base` (padrão `hero`) existe para o artigo que tem DUAS capas: a arte pt-BR com
+texto desenhado e uma capa muda para os outros idiomas, no mesmo diretório.
 
 Imprime a linha para colar em `data/artigos.ts` (campo `hero`). Não apaga a
 origem: limpar `content/` é outro gate.
@@ -74,9 +77,10 @@ def gravar(im: Image.Image, base: Path, qualidade: int) -> tuple[Path, str]:
 
 
 def main() -> int:
-    if len(sys.argv) != 3:
+    if len(sys.argv) not in (3, 4):
         sys.exit(__doc__.split("Uso:")[1].strip())
     slug, origem = sys.argv[1], Path(sys.argv[2])
+    base = sys.argv[3] if len(sys.argv) == 4 else "hero"
     if not origem.exists():
         sys.exit(f"arte não encontrada: {origem}")
 
@@ -90,8 +94,8 @@ def main() -> int:
 
     destino = RAIZ / "public/artigos" / slug
     destino.mkdir(parents=True, exist_ok=True)
-    pagina, como_p = gravar(im, destino / "hero", 92)
-    card, como_c = gravar(im.resize(CARD, Image.LANCZOS), destino / "hero-og", 88)
+    pagina, como_p = gravar(im, destino / base, 92)
+    card, como_c = gravar(im.resize(CARD, Image.LANCZOS), destino / f"{base}-og", 88)
 
     kb_card = card.stat().st_size / 1024
     print(f"{pagina.relative_to(RAIZ)}  {pagina.stat().st_size / 1024:.0f} KB  ({como_p})")

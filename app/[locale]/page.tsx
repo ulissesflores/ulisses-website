@@ -5,9 +5,10 @@ import {
   BookOpen, Cpu, Github, Linkedin, Mail, Terminal, Download,
   Globe, MapPin,
   Layers, Code, Briefcase, Award, TrendingUp,
-  Database, CheckCircle, FileText, FlaskConical
+  Database, CheckCircle, FileText, FlaskConical, Newspaper, ArrowRight
 } from 'lucide-react';
 import { publications } from '@/data/publications';
+import { artigosByDateDesc, artigosCanonicalPath, formatArtigoDate, localizeArtigo } from '@/data/artigos';
 import { FaqSection } from '@/components/faq-section';
 import { upkfMeta } from '@/data/generated/upkf.generated';
 import { isLocale, defaultLocale, localeToOgLocale, type Locale } from '@/data/i18n';
@@ -47,6 +48,7 @@ export default async function Home({ params }: PageProps) {
   const dict = await getDictionary(locale);
   const t = dict.home;
   const tFaq = dict.faq.home;
+  const tArtigos = dict.artigos;
   const origin = upkfMeta.primaryWebsite;
 
   const homeJsonLd = {
@@ -367,6 +369,41 @@ export default async function Home({ params }: PageProps) {
         </section>
 
         {/* PUBLICAÇÕES */}
+        {/*
+          Artigos recentes na home. POR QUE ELA EXISTE: até 30/08/2026 a única porta
+          para os 21 artigos era o hub `/artigos`, e a inspeção do Search Console
+          mostrou o hub rastreado pela última vez em 31/07 — os 8 artigos publicados
+          depois disso estavam como "URL is unknown to Google". A home é a página com
+          mais autoridade do site; daqui o artigo novo fica a um salto.
+        */}
+        <section id="artigos" className="mb-24 scroll-mt-24">
+          <h2 className="text-2xl font-bold text-brand-offwhite mb-8 flex items-center gap-3">
+            <Newspaper className="text-brand-gold" /> {tArtigos.naHome.titulo}
+          </h2>
+          <div className="grid md:grid-cols-2 gap-6">
+            {artigosByDateDesc.slice(0, 4).map((artigo) => {
+              const { title, summary } = localizeArtigo(artigo, locale);
+              return (
+                <LinkCard
+                  key={artigo.slug}
+                  category={formatArtigoDate(artigo.date, locale)}
+                  title={title}
+                  desc={resumoCurto(summary)}
+                  href={localePath(`${artigosCanonicalPath}/${artigo.slug}`, locale)}
+                  icon={<ArrowRight size={20} />}
+                />
+              );
+            })}
+          </div>
+          <Link
+            href={localePath(artigosCanonicalPath, locale)}
+            className="inline-flex items-center gap-2 mt-8 text-sm font-bold text-brand-gold-light hover:text-brand-gold transition-colors group"
+          >
+            {tArtigos.naHome.verTodos}
+            <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform rtl:-scale-x-100" />
+          </Link>
+        </section>
+
         <section id="research" className="mb-24 scroll-mt-24">
           <h2 className="text-2xl font-bold text-brand-offwhite mb-8 flex items-center gap-3">
              <BookOpen className="text-brand-gold" /> {t.publications.title}
@@ -571,11 +608,18 @@ function ProductCard({ title, tags, desc }: any) {
   )
 }
 
-function LinkCard({ category, title, desc, href }: { category: string, title: string, desc: string, href: string }) {
+/** A sinopse do artigo é longa de propósito; no cartão da home ela vira uma frase. */
+function resumoCurto(texto: string, teto = 180): string {
+  if (texto.length <= teto) return texto;
+  const corte = texto.slice(0, teto);
+  return `${corte.slice(0, corte.lastIndexOf(' '))}…`;
+}
+
+function LinkCard({ category, title, desc, href, icon }: { category: string, title: string, desc: string, href: string, icon?: React.ReactNode }) {
   return (
     <a href={href} className="group block p-6 bg-neutral-900/30 border border-neutral-800 rounded-xl hover:bg-neutral-900 hover:border-brand-gold/30 transition-all duration-300 relative">
       <div className="absolute top-6 right-6 text-neutral-700 group-hover:text-brand-gold transition-colors">
-        <Download size={20} />
+        {icon ?? <Download size={20} />}
       </div>
       <div className="text-[10px] font-bold text-brand-gold mb-2 tracking-widest uppercase">{category}</div>
       <h3 className="text-lg font-bold text-neutral-200 group-hover:text-brand-offwhite mb-2 pr-8">{title}</h3>

@@ -1,6 +1,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import JSZip from 'jszip';
+import { writeGenerated } from '../lib/write-generated.mjs';
 
 function ensureDir(dir) {
   fs.mkdirSync(dir, { recursive: true });
@@ -810,8 +811,8 @@ export function writeDeepResearchArtifacts({ entries, report, docsDir, generated
   ensureDir(docsDir);
   const qualityMd = buildDeepResearchQualityMarkdown(report);
 
-  fs.writeFileSync(path.join(docsDir, 'deep-research-quality.generated.json'), JSON.stringify(report, null, 2));
-  fs.writeFileSync(path.join(docsDir, 'deep-research-quality.generated.md'), qualityMd);
+  writeGenerated(path.join(docsDir, 'deep-research-quality.generated.json'), JSON.stringify(report, null, 2));
+  writeGenerated(path.join(docsDir, 'deep-research-quality.generated.md'), qualityMd);
 
   const qualityMap = new Map(report.articles.map((item) => [item.id, item.quality]));
 

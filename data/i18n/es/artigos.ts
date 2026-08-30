@@ -20,6 +20,10 @@ export const artigos = {
     h1: 'Artículos sobre IA, ingeniería y sistemas complejos',
     lead: 'Texto de autor, publicado cuando hay algo que decir. Cada análisis separa lo verificado en la fuente primaria de lo que es lectura mía — y dice cuál es cuál.',
   },
+  naHome: {
+    titulo: 'Artículos recientes',
+    verTodos: 'Ver todos los artículos',
+  },
   post: {
     backToIndex: 'Volver a los artículos',
   },

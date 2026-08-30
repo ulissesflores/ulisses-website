@@ -62,6 +62,17 @@ export const artigos: readonly Artigo[] = [
       'Em 27 de agosto de 2026, uma carta aberta convocada e hospedada pela OpenAI pediu uma resposta coletiva a ataques cibernéticos movidos a IA, e a imprensa cobriu o número: mais de cem empresas. Fui atrás da pergunta chata — o que exatamente alguém se comprometeu a fazer. Separei os quatro blocos de pedidos de uma captura pinada da página e procurei dentro deles os cinco sinais que distinguem um compromisso de uma declaração de intenção: cifra, prazo, verbo que obriga, responsável nomeado e alvo verificável. São dezoito frases no imperativo e, em vinte células, nenhuma ocorrência. O âmbar que aparece na figura é uma concessão que abri à mão contra o meu próprio argumento, e explico por quê. Para provar que a régua mede, corri o mesmo teste numa página da própria OpenAI, de fevereiro, que acende três das cinco colunas: a empresa escreve cifra quando quer. Mostro ainda que a lista de quem assina mudou quatro vezes em quarenta e sete horas — 116, 127, 128, 155 — enquanto o texto dos quatro blocos não mudou um byte, que uma empresa saiu sem explicação, e que a página tem duas listas cujas contagens colidem no mesmo número. E separo, com cuidado, o que é medida do que é análise minha.',
     date: '2026-08-28',
     tags: ['ia', 'ciberseguranca', 'openai', 'politica-de-tecnologia', 'verificacao'],
+    hero: {
+      width: 2400,
+      height: 1260,
+      locales: {
+          'pt-br': { src: '/artigos/carta-ciberdefesa-openai/hero.png', og: '/artigos/carta-ciberdefesa-openai/hero-og.png' },
+          'en': { src: '/artigos/carta-ciberdefesa-openai/hero.png', og: '/artigos/carta-ciberdefesa-openai/hero-og.png' },
+          'es': { src: '/artigos/carta-ciberdefesa-openai/hero.png', og: '/artigos/carta-ciberdefesa-openai/hero-og.png' },
+          'it': { src: '/artigos/carta-ciberdefesa-openai/hero.png', og: '/artigos/carta-ciberdefesa-openai/hero-og.png' },
+          'he': { src: '/artigos/carta-ciberdefesa-openai/hero.png', og: '/artigos/carta-ciberdefesa-openai/hero-og.png' },
+      },
+    },
     i18n: {
       en: {
         title: 'The cyber defense letter signed by 155 companies contains not one commitment',
@@ -93,6 +104,17 @@ export const artigos: readonly Artigo[] = [
       'Um card em espanhol resolve numa tabela o que roda em cada faixa de memória de vídeo, de 4 GB a 256 GB. Refiz a conta: dos dezessete vereditos de hardware, dezesseis estão certos, e todos os modelos citados existem de verdade — a única peça inexistente é a RTX 5080 Super, adiada por tempo indeterminado porque o módulo de GDDR7 de 3 GB custa três vezes o de 2 GB. O erro que importa é outro, e é de método: o card orça só o arquivo de pesos e ignora o cache de contexto, que cresce enquanto você conversa. Com as duas parcelas medidas — pesos do GGUF publicado, cache calculado do config.json de cada modelo — um dos dez degraus não fecha nem numa sessão de trabalho de 32 mil tokens, e é justamente o mais popular, o de 8 GB; seis dos dez não fecham no contexto máximo do próprio modelo que o card recomenda. Separo ainda quatro armadilhas de nomenclatura, entre elas um "Q8" que tem 4,3 bits por peso e um formato que não é do mesmo ecossistema dos outros, e três ressalvas que valem para a tabela inteira, incluindo por que duas placas de 32 GB não são uma placa de 64 GB.',
     date: '2026-08-27',
     tags: ['ia', 'llm', 'hardware', 'quantizacao', 'vram', 'didatico'],
+    hero: {
+      width: 2400,
+      height: 1260,
+      locales: {
+          'pt-br': { src: '/artigos/ia-local-por-vram/hero.png', og: '/artigos/ia-local-por-vram/hero-og.png' },
+          'en': { src: '/artigos/ia-local-por-vram/hero.png', og: '/artigos/ia-local-por-vram/hero-og.png' },
+          'es': { src: '/artigos/ia-local-por-vram/hero.png', og: '/artigos/ia-local-por-vram/hero-og.png' },
+          'it': { src: '/artigos/ia-local-por-vram/hero.png', og: '/artigos/ia-local-por-vram/hero-og.png' },
+          'he': { src: '/artigos/ia-local-por-vram/hero.png', og: '/artigos/ia-local-por-vram/hero-og.png' },
+      },
+    },
     i18n: {
       en: {
         title:
@@ -128,6 +150,17 @@ export const artigos: readonly Artigo[] = [
     'Um estudo meu sobre recusas de IA que passam despercebidas dentro de sistemas de agentes foi interrompido por uma recusa: o classificador de salvaguardas bloqueou a geração do corpus, porque um conjunto de prompts SOBRE recusas lê, para um classificador, como material ofensivo. Havia dois caminhos — reescrever o pedido até passar, o que quase sempre funciona, ou parar. Reformular um pedido porque ele foi sinalizado é evasão de salvaguarda, um andar abaixo do jailbreak e da mesma família; um pesquisador que contorna o classificador para estudar o classificador contaminou o próprio objeto. Congelei o braço do estudo com data no arquivo de estado do projeto e me candidatei ao Cyber Verification Program da Anthropic, o canal formal para trabalho de uso duplo com propósito defensivo. A aprovação saiu dentro do prazo de dois dias úteis. O que ela é: uso duplo deixa de ser bloqueado por padrão, dentro do caso de uso submetido e sob monitoramento contínuo. O que ela não é: parceria, certificação ou endosso — uso proibido continua bloqueado com programa ou sem. E fica a lição que o incidente entrega de graça, que é a tese do estudo: uma recusa só é gerenciável quando é legível. A que me bloqueou tinha texto, categoria e porta de saída; as que eu estou medindo chegam ao orquestrador como resultado vazio e são tratadas como sucesso.',
   date: '2026-08-26',
   tags: ['ia', 'agentes', 'ciberseguranca', 'anthropic', 'pesquisa', 'salvaguardas'],
+  hero: {
+    width: 2400,
+    height: 1260,
+    locales: {
+        'pt-br': { src: '/artigos/recusa-que-parou-o-estudo-das-recusas/hero.png', og: '/artigos/recusa-que-parou-o-estudo-das-recusas/hero-og.jpg' },
+        'en': { src: '/artigos/recusa-que-parou-o-estudo-das-recusas/hero.png', og: '/artigos/recusa-que-parou-o-estudo-das-recusas/hero-og.jpg' },
+        'es': { src: '/artigos/recusa-que-parou-o-estudo-das-recusas/hero.png', og: '/artigos/recusa-que-parou-o-estudo-das-recusas/hero-og.jpg' },
+        'it': { src: '/artigos/recusa-que-parou-o-estudo-das-recusas/hero.png', og: '/artigos/recusa-que-parou-o-estudo-das-recusas/hero-og.jpg' },
+        'he': { src: '/artigos/recusa-que-parou-o-estudo-das-recusas/hero.png', og: '/artigos/recusa-que-parou-o-estudo-das-recusas/hero-og.jpg' },
+    },
+  },
 },
 {
   slug: 'ninguem-provou-meta-le-whatsapp',
@@ -137,6 +170,17 @@ export const artigos: readonly Artigo[] = [
     'Um advogado perdeu dez anos de conversas numa manhã e um vídeo concluiu que a Meta leu o que ele escreveu. Fui checar essa acusação nos manuais técnicos do WhatsApp de 2016 a 2026, no código do cliente, em capturas arquivadas da central de ajuda do Instagram, na decisão da Comissão Europeia de 2017 e nos autos de processos no Brasil, nos Estados Unidos e na Índia. O vídeo erra por duas razões, e a segunda enterra o argumento: banir em massa e barulhentamente é a assinatura de um classificador automático, não de quem lê — quem tem uma capacidade secreta valiosa protege a capacidade, não o caso individual. Mas o que sobra no lugar é pior. A empresa passou a definir sozinha o que conta como conversa protegida e a listar exceções que ela mesma reconhece; nenhuma observação disponível ao público distingue uma empresa que não pode ler de uma que pode e não diz; e as três escolhas que produzem essa impossibilidade — aplicativo fechado, sem build reproduzível, sem auditoria externa — são dela, e reversíveis por ela. Em 8 de maio de 2026 a Meta desligou a criptografia de ponta a ponta das mensagens do Instagram: a garantia que nos venderam como matemática sempre foi uma promessa corporativa, e promessas corporativas se revogam.',
   date: '2026-08-26',
   tags: ['criptografia', 'whatsapp', 'instagram', 'meta', 'privacidade', 'verificacao'],
+  hero: {
+    width: 2400,
+    height: 1260,
+    locales: {
+        'pt-br': { src: '/artigos/ninguem-provou-meta-le-whatsapp/hero.png', og: '/artigos/ninguem-provou-meta-le-whatsapp/hero-og.jpg' },
+        'en': { src: '/artigos/ninguem-provou-meta-le-whatsapp/hero.png', og: '/artigos/ninguem-provou-meta-le-whatsapp/hero-og.jpg' },
+        'es': { src: '/artigos/ninguem-provou-meta-le-whatsapp/hero.png', og: '/artigos/ninguem-provou-meta-le-whatsapp/hero-og.jpg' },
+        'it': { src: '/artigos/ninguem-provou-meta-le-whatsapp/hero.png', og: '/artigos/ninguem-provou-meta-le-whatsapp/hero-og.jpg' },
+        'he': { src: '/artigos/ninguem-provou-meta-le-whatsapp/hero.png', og: '/artigos/ninguem-provou-meta-le-whatsapp/hero-og.jpg' },
+    },
+  },
   i18n: {
     en: {
       title: 'No, nobody proved that Meta reads your WhatsApp. What I found is worse',
@@ -247,6 +291,18 @@ export const artigos: readonly Artigo[] = [
       'O "95% dos pilotos de IA falham" saiu de 52 entrevistas e não mediu agentes. Fui às primárias: toda estatística de agente é previsão, declaração ou medição — e cada uma falha de um jeito. A Gartner publica previsão e enquete de webinar na mesma página; o AI Index diz 70% no resumo e 79% no gráfico; a METR mediu devs 19% mais lentos enquanto eles se achavam 20% mais rápidos, e em 2026 não conseguiu repetir porque ninguém aceita trabalhar sem IA; a métrica de consistência sumiu dos placares; um recorde foi retirado por vazamento de gabarito. Medi o encanamento (SDK do MCP: 1.087 vezes em 18 meses) e o Brasil (17% das empresas usam IA; 68% disso é automação de fluxo). Nenhum número é falso — todos mudam de peso quando a etiqueta vai junto.',
     date: '2026-08-26',
     tags: ['ia', 'agentes', 'estatisticas', 'benchmarks', 'metodologia'],
+    hero: {
+      width: 2400,
+      height: 1260,
+      locales: {
+          'pt-br': { src: '/artigos/estatisticas-agentes-de-ia/hero.jpg', og: '/artigos/estatisticas-agentes-de-ia/hero-og.jpg' },
+      // A arte pt-BR tem o texto desenhado dentro; os outros idiomas recebem a capa muda.
+      'en': { src: '/artigos/estatisticas-agentes-de-ia/hero-mudo.png', og: '/artigos/estatisticas-agentes-de-ia/hero-mudo-og.jpg' },
+      'es': { src: '/artigos/estatisticas-agentes-de-ia/hero-mudo.png', og: '/artigos/estatisticas-agentes-de-ia/hero-mudo-og.jpg' },
+      'it': { src: '/artigos/estatisticas-agentes-de-ia/hero-mudo.png', og: '/artigos/estatisticas-agentes-de-ia/hero-mudo-og.jpg' },
+      'he': { src: '/artigos/estatisticas-agentes-de-ia/hero-mudo.png', og: '/artigos/estatisticas-agentes-de-ia/hero-mudo-og.jpg' },
+      },
+    },
     i18n: {
       en: {
         title: '"95% of AI pilots fail" came from 52 interviews — and the three-question test that catches the next one',
@@ -270,6 +326,17 @@ export const artigos: readonly Artigo[] = [
       'Um benchmark de segurança de código mediu a Claude Fable 5 em 59,8% de acertos funcionais e 19,0% de acertos seguros, e o número virou manchete sobre um modelo que decepcionou. Seis dias depois, o mesmo laboratório, o mesmo autor e o mesmo benchmark publicaram a mesma Fable 5 em 72,6% e 29,0% — melhor marca de segurança da tabela naquele momento. Não trocaram o modelo; trocaram a ferramenta que o operava. Fui atrás dos dois textos e achei um terceiro, do mesmo autor e do mesmo dia, que ninguém cita: a auditoria antifraude do próprio benchmark, que derrubou 9 pontos percentuais de segurança de uma combinação sem que nada mudasse no modelo. Mostro a conclusão estreita que os dados sustentam — a nota é do par harness+modelo e da versão da régua no dia em que rodou —, o limite dela (nos oito pares do leaderboard a mediana da diferença é 1,65 ponto, e o caso da Fable 5 é seis vezes isso), o contraditório do Hacker News, que acusa o benchmark de estar torto CONTRA o modelo, e o achado mecânico: contei os links entre as quatro páginas e o grafo é de mão única — quem chega pelo texto que circulou não tem caminho até a correção. Seis figuras próprias, feitas em código, e todos os cálculos por script sobre as 27 linhas do leaderboard.',
     date: '2026-08-25',
     tags: ['ia', 'benchmark', 'seguranca', 'agentes', 'claude', 'metodologia'],
+    hero: {
+      width: 2400,
+      height: 1260,
+      locales: {
+          'pt-br': { src: '/artigos/benchmark-harness-modelo/hero.png', og: '/artigos/benchmark-harness-modelo/hero-og.jpg' },
+          'en': { src: '/artigos/benchmark-harness-modelo/hero.png', og: '/artigos/benchmark-harness-modelo/hero-og.jpg' },
+          'es': { src: '/artigos/benchmark-harness-modelo/hero.png', og: '/artigos/benchmark-harness-modelo/hero-og.jpg' },
+          'it': { src: '/artigos/benchmark-harness-modelo/hero.png', og: '/artigos/benchmark-harness-modelo/hero-og.jpg' },
+          'he': { src: '/artigos/benchmark-harness-modelo/hero.png', og: '/artigos/benchmark-harness-modelo/hero-og.jpg' },
+      },
+    },
     i18n: {
       en: {
         title:
@@ -425,6 +492,17 @@ export const artigos: readonly Artigo[] = [
       'A Z.ai atrasou os pesos abertos do GLM-5.3 alegando que a capacidade ofensiva do modelo cresceu mais rápido que o esperado, e ofereceu como prova um ledger público de 2.436 vulnerabilidades em software real. Baixei e contei o ledger inteiro: 92% dos achados nunca foram reportados a ninguém, exatamente um consta como enviado ao mantenedor, não há prazo de embargo declarado e nenhum registro atribui a descoberta a um modelo — 21% deles usaram o Claude Code como harness.',
     date: '2026-08-14',
     tags: ['glm', 'z.ai', 'llm', 'benchmarks', 'open-weights', 'seguranca'],
+    hero: {
+      width: 2400,
+      height: 1260,
+      locales: {
+          'pt-br': { src: '/artigos/glm-5-3/hero.png', og: '/artigos/glm-5-3/hero-og.jpg' },
+          'en': { src: '/artigos/glm-5-3/hero.png', og: '/artigos/glm-5-3/hero-og.jpg' },
+          'es': { src: '/artigos/glm-5-3/hero.png', og: '/artigos/glm-5-3/hero-og.jpg' },
+          'it': { src: '/artigos/glm-5-3/hero.png', og: '/artigos/glm-5-3/hero-og.jpg' },
+          'he': { src: '/artigos/glm-5-3/hero.png', og: '/artigos/glm-5-3/hero-og.jpg' },
+      },
+    },
     i18n: {
       en: {
         title:
@@ -460,6 +538,17 @@ export const artigos: readonly Artigo[] = [
       'A Anthropic lançou o Claude Opus 5 prometendo inteligência de fronteira por metade do preço. O que mudou de fato na API, o que os gráficos do anúncio mostram quando você abre as imagens — inclusive que o esforço máximo piora o resultado — e por que a zoeira mais votada da comunidade não sobrevive a uma conferida.',
     date: '2026-07-24',
     tags: ['claude', 'anthropic', 'llm', 'api', 'benchmarks'],
+    hero: {
+      width: 2400,
+      height: 1260,
+      locales: {
+          'pt-br': { src: '/artigos/2026-07-24-claude-opus-5/hero.png', og: '/artigos/2026-07-24-claude-opus-5/hero-og.jpg' },
+          'en': { src: '/artigos/2026-07-24-claude-opus-5/hero.png', og: '/artigos/2026-07-24-claude-opus-5/hero-og.jpg' },
+          'es': { src: '/artigos/2026-07-24-claude-opus-5/hero.png', og: '/artigos/2026-07-24-claude-opus-5/hero-og.jpg' },
+          'it': { src: '/artigos/2026-07-24-claude-opus-5/hero.png', og: '/artigos/2026-07-24-claude-opus-5/hero-og.jpg' },
+          'he': { src: '/artigos/2026-07-24-claude-opus-5/hero.png', og: '/artigos/2026-07-24-claude-opus-5/hero-og.jpg' },
+      },
+    },
     i18n: {
       en: {
         title:
@@ -494,6 +583,17 @@ export const artigos: readonly Artigo[] = [
       'A manchete diz que o modelo barato da DeepSeek bate o flagship da casa. O model card diz mais: o Opus 4.8 vence as nove linhas da tabela — publicado pela própria DeepSeek. Por que anunciar a própria derrota funciona quando você custa 89 vezes menos, o que o salto de 7,3 para 54,4 sem arquitetura nova diz sobre pós-treino, e o que as primeiras 48 horas fora do harness confirmaram e desmentiram.',
     date: '2026-08-01',
     tags: ['deepseek', 'llm', 'api', 'benchmarks', 'open-weights'],
+    hero: {
+      width: 2400,
+      height: 1260,
+      locales: {
+          'pt-br': { src: '/artigos/deepseek-v4-flash-0731/hero.png', og: '/artigos/deepseek-v4-flash-0731/hero-og.jpg' },
+          'en': { src: '/artigos/deepseek-v4-flash-0731/hero.png', og: '/artigos/deepseek-v4-flash-0731/hero-og.jpg' },
+          'es': { src: '/artigos/deepseek-v4-flash-0731/hero.png', og: '/artigos/deepseek-v4-flash-0731/hero-og.jpg' },
+          'it': { src: '/artigos/deepseek-v4-flash-0731/hero.png', og: '/artigos/deepseek-v4-flash-0731/hero-og.jpg' },
+          'he': { src: '/artigos/deepseek-v4-flash-0731/hero.png', og: '/artigos/deepseek-v4-flash-0731/hero-og.jpg' },
+      },
+    },
     i18n: {
       en: {
         title:
@@ -571,6 +671,17 @@ export const artigos: readonly Artigo[] = [
       'Em 2018, um agente movido a curiosidade parou hipnotizado diante de uma TV de estática — o noisy-TV problem, que o aprendizado por reforço passou sete anos domando. Varri quatro literaturas atrás da mesma armadilha na instrumentação de curiosidade de agentes LLM: ninguém a formalizou. E ela não é hipotética — no agente experimental que mantenho na minha máquina, o ruído do instrumento (σ=0,177) é maior que o sinal que ele deveria medir.',
     date: '2026-08-02',
     tags: ['agentes', 'llm', 'curiosidade', 'noisy-tv', 'embeddings', 'reinforcement-learning'],
+    hero: {
+      width: 2400,
+      height: 1260,
+      locales: {
+          'pt-br': { src: '/artigos/noisy-tv-agentes/hero.png', og: '/artigos/noisy-tv-agentes/hero-og.jpg' },
+          'en': { src: '/artigos/noisy-tv-agentes/hero.png', og: '/artigos/noisy-tv-agentes/hero-og.jpg' },
+          'es': { src: '/artigos/noisy-tv-agentes/hero.png', og: '/artigos/noisy-tv-agentes/hero-og.jpg' },
+          'it': { src: '/artigos/noisy-tv-agentes/hero.png', og: '/artigos/noisy-tv-agentes/hero-og.jpg' },
+          'he': { src: '/artigos/noisy-tv-agentes/hero.png', og: '/artigos/noisy-tv-agentes/hero-og.jpg' },
+      },
+    },
     i18n: {
       en: {
         title:
@@ -769,6 +880,17 @@ export const artigos: readonly Artigo[] = [
       'Em 2009, Usain Bolt correu 100 m em 9,58 s e ninguém chegou perto em 17 anos. No sábado, 22 de agosto, em Pequim, um robô fez a distância em 9,39 s numa bateria oficial — e há um ano o vencedor da mesma prova fazia 21,50 s. Li os 14 posts mais compartilhados da semana dos World Humanoid Robot Games 2026, baixei os 11 vídeos, extraí frame por frame, li a imprensa chinesa, os fact-checkers e o regulamento. A resposta tem duas metades. A primeira é sim: o que aconteceu em Pequim é real, é maior do que 2025 por uma ordem de grandeza — 2.056 robôs, 666 equipes, 16 países, cinco dias — e é mais impressionante do que as legendas contam. A segunda é o que as legendas escondem: o 9,32 s que o Elon Musk repostou não é o número do placar (aos 18 s do vídeo lê-se 9,39, bateria 9, e o robô que venceu não é o da Honor); os dois clipes mais assustadores da timeline são falsos; e a pergunta certa para cada vídeo não é "que tempo fez" — é "quem estava no controle". Primeiro os robôs, depois a régua. Atualizado em 26/08: a final fechou os Jogos em 8,64 s.',
     date: '2026-08-24',
     tags: ['robotica', 'humanoides', 'china', 'ia', 'fact-check', 'video'],
+    hero: {
+      width: 2400,
+      height: 1260,
+      locales: {
+          'pt-br': { src: '/artigos/jogos-robos-humanoides-2026/hero.png', og: '/artigos/jogos-robos-humanoides-2026/hero-og.jpg' },
+          'en': { src: '/artigos/jogos-robos-humanoides-2026/hero.png', og: '/artigos/jogos-robos-humanoides-2026/hero-og.jpg' },
+          'es': { src: '/artigos/jogos-robos-humanoides-2026/hero.png', og: '/artigos/jogos-robos-humanoides-2026/hero-og.jpg' },
+          'it': { src: '/artigos/jogos-robos-humanoides-2026/hero.png', og: '/artigos/jogos-robos-humanoides-2026/hero-og.jpg' },
+          'he': { src: '/artigos/jogos-robos-humanoides-2026/hero.png', og: '/artigos/jogos-robos-humanoides-2026/hero-og.jpg' },
+      },
+    },
     i18n: {
       en: {
         title:

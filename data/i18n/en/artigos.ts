@@ -20,6 +20,10 @@ export const artigos = {
     h1: 'Articles on AI, engineering and complex systems',
     lead: 'Original writing, published when there is something worth saying. Every analysis separates what was checked against the primary source from what is my own reading — and says which is which.',
   },
+  naHome: {
+    titulo: 'Recent articles',
+    verTodos: 'See all articles',
+  },
   post: {
     backToIndex: 'Back to all articles',
   },

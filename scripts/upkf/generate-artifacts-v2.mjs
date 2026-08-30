@@ -7,6 +7,7 @@ import {
 } from '../research/pipeline.mjs';
 import { ARTICLE_LONGFORM_DIR, CATEGORY_METADATA, DOCS_DIR, GENERATED_DIR, PUBLIC_DIR, repoRoot } from './lib/constants.mjs';
 import { ensureDir, normalizeLineBreaks, parseFrontmatter } from './lib/text.mjs';
+import { writeGenerated } from '../lib/write-generated.mjs';
 import { ensureTemporaryPdf } from './lib/pdf.mjs';
 import { findSourcePath, loadArticleReferencesMap, parseAcademicCredentials, parseAffiliations, parseBlogPosts, parseCertifications, parseCurrentOccupations, parseHeritage, parseIdentity, parseMarkdownSections, parseOrcidInventoryStats, parseOrganization, parsePublicationRows, parseSermons, parseSoftwareProjects, parseTop10Translations } from './lib/upkf-parser.mjs';
 import { getArticleSourceDirs, loadLocalCorpus } from './lib/corpus.mjs';
@@ -109,22 +110,22 @@ function writeGeneratedFiles({
   const coverageMd = `# JSON-LD Coverage (Generated)\n\n- Source: \`${sourcePath}\`\n- Markdown bytes: ${coverage.markdownBytes}\n- Markdown lines: ${coverage.markdownLines}\n- Parsed sections: ${coverage.sectionCount}\n- Site graph nodes: ${coverage.siteGraphNodes}\n- Public graph nodes: ${coverage.publicGraphNodes}\n- Full graph nodes: ${coverage.fullGraphNodes}\n- Alura certifications parsed: ${coverage.aluraCertifications}\n- Blog posts parsed: ${coverage.blogPosts}\n- Sermons parsed: ${coverage.sermons}\n- \`/site.jsonld\` bytes: ${coverage.siteJsonldBytes}\n- \`/public.jsonld\` bytes: ${coverage.publicJsonldBytes}\n- \`/full.jsonld\` bytes: ${coverage.fullJsonldBytes}\n- Corpus files: ${coverage.corpusFiles}\n- Corpus snippets: ${coverage.corpusSnippets}\n- Corpus dirs:\n${coverage.corpusDirs.map((dir) => `  - ${dir}`).join('\n')}\n`;
 
   fs.writeFileSync(path.join(GENERATED_DIR, 'publications.generated.ts'), publicationsTs);
-  fs.writeFileSync(path.join(DOCS_DIR, 'publications.generated.json'), JSON.stringify(publications, null, 2));
+  writeGenerated(path.join(DOCS_DIR, 'publications.generated.json'), JSON.stringify(publications, null, 2));
   fs.writeFileSync(path.join(GENERATED_DIR, 'upkf.generated.ts'), upkfTs);
   fs.writeFileSync(path.join(GENERATED_DIR, 'knowledge.generated.ts'), knowledgeTs);
-  fs.writeFileSync(path.join(DOCS_DIR, 'url-inventory.generated.json'), JSON.stringify(urlInventory, null, 2));
-  fs.writeFileSync(path.join(DOCS_DIR, 'url-inventory.generated.md'), inventoryMd);
-  fs.writeFileSync(path.join(DOCS_DIR, 'jsonld-coverage.generated.md'), coverageMd);
-  fs.writeFileSync(
+  writeGenerated(path.join(DOCS_DIR, 'url-inventory.generated.json'), JSON.stringify(urlInventory, null, 2));
+  writeGenerated(path.join(DOCS_DIR, 'url-inventory.generated.md'), inventoryMd);
+  writeGenerated(path.join(DOCS_DIR, 'jsonld-coverage.generated.md'), coverageMd);
+  writeGenerated(
     path.join(DOCS_DIR, 'article-quality.generated.json'),
     JSON.stringify(projectQualityReport, null, 2),
   );
-  fs.writeFileSync(
+  writeGenerated(
     path.join(DOCS_DIR, 'article-quality.generated.md'),
     buildProjectQualityMarkdown(projectQualityReport),
   );
-  fs.writeFileSync(path.join(DOCS_DIR, 'doi-ready.generated.json'), JSON.stringify(doiReady, null, 2));
-  fs.writeFileSync(path.join(DOCS_DIR, 'doi-ready.generated.md'), buildDoiReadyMarkdown(doiReady));
+  writeGenerated(path.join(DOCS_DIR, 'doi-ready.generated.json'), JSON.stringify(doiReady, null, 2));
+  writeGenerated(path.join(DOCS_DIR, 'doi-ready.generated.md'), buildDoiReadyMarkdown(doiReady));
 
   // JSON-LD sanitizer: strip null, undefined, and empty arrays to pass schema.org validation
   const jsonLdReplacer = (_key, value) => {
