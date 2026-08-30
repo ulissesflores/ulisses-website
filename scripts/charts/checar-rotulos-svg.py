@@ -1075,6 +1075,56 @@ def checar(caminhos: list[Path]) -> tuple[list[dict], list[dict], list[str]]:
     return medidas, colisoes, faltas
 
 
+# ── Gate do bidi hebraico ────────────────────────────────────────────────────
+# Este medidor mede LARGURA contra a caixa e por isso NÃO enxerga o bug que cortou 394
+# dos 1108 rótulos das páginas `/he` (medido 2026-08-30): sob `direction: rtl` herdado do
+# `<html dir="rtl">`, o texto de âncora `start` cresce para a ESQUERDA e o `viewBox` o corta.
+# A largura continua cabendo; o que muda é o SENTIDO. O conserto mora em duas regras de
+# `app/globals.css` presas ao marcador `svg.font-chart`, então o que dá para travar aqui,
+# de forma determinística e sem navegador, é o CONTRATO das duas pontas:
+#   1. todo componente que desenha `<text>` carrega `font-chart` no `<svg>` RAIZ;
+#   2. as duas regras continuam em `globals.css`.
+# Componente novo que esqueça a classe fica fora do conserto e reprova aqui, em vez de
+# chegar publicado e invisível ao leitor hebraico.
+# (Aberto: a asserção de que o texto de fato cai dentro da moldura exige DOM renderizado.
+#  O probe de `getBBox` que mediu isto está no laudo; virar CI é melhoria enfileirada.)
+JANELA_TAG_SVG = 800
+
+REGRAS_BIDI = (
+    "[dir='rtl'] svg.font-chart",
+    "direction: ltr",
+    "[dir='rtl'] svg.font-chart text",
+    "unicode-bidi: plaintext",
+)
+
+
+def checar_bidi_hebraico(raiz: Path) -> list[str]:
+    """Reprova componente sem `font-chart` na raiz, ou globals.css sem as regras."""
+    falhas: list[str] = []
+
+    for tsx in sorted((raiz / "lib/content").glob("*.tsx")):
+        # Os comentários saem ANTES da busca: vários componentes explicam `<svg>` e `<text>`
+        # em prosa (o obligation-matrix explica o próprio conserto de bidi dentro da tag), e
+        # sem isso o `find` acha a menção e mede a janela errada.
+        txt = re.sub(r"/\*.*?\*/", "", tsx.read_text(encoding="utf-8"), flags=re.S)
+        if "<text" not in txt:
+            continue
+        i = txt.find("<svg")
+        if i < 0 or "font-chart" not in txt[i : i + JANELA_TAG_SVG]:
+            falhas.append(
+                f"{tsx.relative_to(raiz)}: desenha <text> mas não tem `font-chart` no <svg> raiz "
+                f"(primeiros {JANELA_TAG_SVG} caracteres da tag) — fica fora do conserto de bidi."
+            )
+
+    css = raiz / "app/globals.css"
+    conteudo = css.read_text(encoding="utf-8") if css.exists() else ""
+    for regra in REGRAS_BIDI:
+        if regra not in conteudo:
+            falhas.append(f"{css.relative_to(raiz)}: sumiu a regra de bidi hebraico `{regra}`.")
+
+    return falhas
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("caminhos", nargs="*", type=Path)
@@ -1147,7 +1197,14 @@ def main() -> int:
         f"\n{len(colisoes)} par(es) vizinho(s) · {len(choques)} encostando"
         f"\n{len(faltas)} dataset(s) ausente(s)"
     )
-    return 1 if (ruins or apertados or choques or faltas) else 0
+    falhas_bidi = checar_bidi_hebraico(Path(__file__).resolve().parents[2])
+    if falhas_bidi:
+        print("\n── bidi hebraico (contrato do conserto de RTL) ──")
+        for f in falhas_bidi:
+            print(f"QUEBRA  {f}")
+    print(f"{len(falhas_bidi)} quebra(s) no contrato de bidi hebraico")
+
+    return 1 if (ruins or apertados or choques or faltas or falhas_bidi) else 0
 
 
 if __name__ == "__main__":

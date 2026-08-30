@@ -151,3 +151,32 @@ html {
   margin: 0 auto;
   background: linear-gradient(to right, transparent, rgba(164, 143, 101, 0.4), transparent);
 }
+
+/* ── Charts do acervo sob corpo hebraico ────────────────────────────────────
+   O `/he` serve `<html dir="rtl">` e `<article dir="rtl">` (MdxContentWrapper em
+   lib/content/mdx-components.tsx). O `<svg>` HERDA esse `direction: rtl`, e aí todo
+   `<text>` de âncora `start` cresce para a ESQUERDA: sai da moldura e o `viewBox` o
+   corta em silêncio — o leitor hebraico simplesmente não vê o rótulo. Medido ao vivo
+   em 2026-08-30: 394 dos 1108 rótulos das 19 páginas `/he` estavam cortados.
+
+   A geometria de todo chart do acervo é LTR em qualquer língua, então `direction: ltr`
+   devolve as âncoras ao lugar. Mas ele sozinho força base LTR em TODA string: hebraico
+   misturado com latino ou número sai invertido. `unicode-bidi: plaintext` faz cada
+   `<text>` inferir a base do primeiro caractere forte — hebraico ordena RTL, latino
+   segue LTR — e é o que fecha o conserto.
+
+   `svg.font-chart` é o marcador que os 19 componentes de lib/content/ já carregam no
+   `<svg>` raiz; ícones de UI ficam de fora. Em locale LTR o `direction` já é `ltr`,
+   então estas regras são no-op fora do hebraico.
+
+   NÃO estenda a segunda regra a `tspan`: `unicode-bidi` não é herdado de propósito, e
+   `plaintext` num `<tspan>` o isolaria como parágrafo próprio, quebrando a linha mista.
+
+   Medição, método e evidência:
+   /Users/ulissesflores/m4/docs/projects/ulisses-website-rtl/MEDICAO-2026-08-30-svg-hebraico-ao-vivo.md */
+[dir='rtl'] svg.font-chart {
+  direction: ltr;
+}
+[dir='rtl'] svg.font-chart text {
+  unicode-bidi: plaintext;
+}
