@@ -52,6 +52,7 @@ RAIZ = Path(__file__).resolve().parents[2]
 CARD = (1200, 630)
 DESVIO_MAX = 16  # /255. Acima disso a paleta mexe no desenho, não só no peso.
 CARD_TETO_KB = 300
+PNG_TETO_X = 2.0  # acima disso a fidelidade da paleta não paga o peso
 
 
 def desvio_maximo(antes: Image.Image, depois: Image.Image) -> int:
@@ -64,16 +65,27 @@ def rms(antes: Image.Image, depois: Image.Image) -> float:
 
 
 def gravar(im: Image.Image, base: Path, qualidade: int) -> tuple[Path, str]:
-    """PNG com paleta quando ela sai de graça; JPEG quando não sai."""
+    """PNG com paleta quando ela sai de graça; JPEG quando não sai — ou quando custa caro.
+
+    A fidelidade da paleta é de graça em arte chapada, mas não é de graça em arte
+    com GRÃO: nas pranchas ela fecha dentro do desvio e mesmo assim pesa cinco
+    vezes mais que o JPEG, porque o grão é ruído e ruído não comprime em PNG.
+    Por isso a escolha olha as duas coisas — desvio E peso.
+    """
+    png, jpg = base.with_suffix(".png"), base.with_suffix(".jpg")
     paleta = im.convert("P", palette=Image.ADAPTIVE, colors=256)
     d = desvio_maximo(im, paleta)
+    im.save(jpg, quality=qualidade, optimize=True, progressive=True)
     if d <= DESVIO_MAX:
-        destino = base.with_suffix(".png")
-        paleta.save(destino, optimize=True)
-        return destino, f"PNG/paleta · desvio {d}/255"
-    destino = base.with_suffix(".jpg")
-    im.save(destino, quality=qualidade, optimize=True, progressive=True)
-    return destino, f"JPEG q{qualidade} · a paleta desviaria {d}/255, RMS {rms(im, Image.open(destino)):.1f}"
+        paleta.save(png, optimize=True)
+        if png.stat().st_size <= jpg.stat().st_size * PNG_TETO_X:
+            jpg.unlink()
+            return png, f"PNG/paleta · desvio {d}/255"
+        kb_png = png.stat().st_size / 1024
+        png.unlink()
+        return jpg, (f"JPEG q{qualidade} · a paleta caberia no desvio ({d}/255) mas pesaria "
+                     f"{kb_png:.0f} KB contra {jpg.stat().st_size / 1024:.0f} KB")
+    return jpg, f"JPEG q{qualidade} · a paleta desviaria {d}/255, RMS {rms(im, Image.open(jpg)):.1f}"
 
 
 def main() -> int:

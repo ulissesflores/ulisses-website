@@ -2,378 +2,142 @@
 """Capas (`hero`) SEM TEXTO, uma por artigo — a mesma arte serve os 5 idiomas.
 
 POR QUE ESTE ARQUIVO EXISTE: as capas deste acervo têm o texto do artigo
-DESENHADO dentro do PNG. Isso as prende a um idioma só: das 11 publicadas,
-10 valem apenas no pt-BR, e a única que existe nos 5 (`teoria-das-restricoes`)
-custou um gerador dedicado, com shaping bidi e uma vaga sem tradução declarada.
+DESENHADO dentro do PNG, o que as prende a um idioma só. Capa sem palavra
+nenhuma dissolve isso: um arquivo serve os 5 locales, não há o que traduzir, não
+há hebraico para shapear e nenhum rótulo pode estourar caixa.
 
-Capa sem palavra nenhuma dissolve o problema: um arquivo serve os 5 locales,
-não há o que traduzir, não há hebraico para shapear, não há rótulo estourando
-caixa. O que a capa carrega é a GEOMETRIA do achado do artigo — a forma dos
-dados é a mensagem.
+A PRIMEIRA VERSÃO DESTE ARQUIVO FOI REPROVADA e o motivo fica registrado para não
+voltar: ela pegava a geometria dos gráficos do artigo e arrancava os rótulos. O
+resultado era um gráfico pelado — honesto e feio. Capa não é gráfico sem legenda.
 
-O QUE PODE APARECER NA ARTE (e nada além disso):
+A RÉGUA CERTA JÁ EXISTIA NO ACERVO: `content/artigos/noisy-tv-agentes/
+ilustracao-quarto-escuro.png`, a "Fig. III — o quarto escuro". É uma PRANCHA DE
+OBSERVAÇÃO: fundo quase preto com grão, vinheta, cantos de moldura, curvas
+atravessando o quadro, e o desenho aparecendo por LUZ, não por preenchimento.
 
-- marcas geométricas derivadas dos dados que o artigo já publica;
-- inteiros e símbolos neutros de idioma (`4`, `256`, `GB`, `%`, `✓`) — dígito
-  não se traduz, e a régua deste arquivo proíbe decimal: `8,64` em pt-BR vira
-  `8.64` em inglês, e aí a arte deixaria de servir os 5;
-- o domínio, discreto, no rodapé — URL não é frase.
+Cada cena é uma IMAGEM pensada para aquele artigo — sedimento, coluna, fio,
+brasa, rastro — e o dado do artigo continua por baixo dela, lido do dataset que o
+próprio artigo publica. Nenhum número é digitado aqui.
 
-O TÍTULO NÃO ENTRA DE PROPÓSITO. Na página ele já está impresso logo acima da
-imagem; no card social toda plataforma imprime o título ao lado da miniatura.
-Desenhá-lo dentro do PNG duplica o que já está escrito e mata os outros quatro
-idiomas em troca de nada.
+O QUE NUNCA ENTRA: palavra, e número com separador decimal (`8,64` vira `8.64` em
+inglês, e aí a arte deixaria de servir os 5 idiomas). O título não entra de
+propósito: a página já o imprime acima da imagem, e todo card social imprime o
+título ao lado da miniatura.
 
 Uso:
     python3 scripts/artigos/gerar-capas-sem-texto.py                 # todas
-    python3 scripts/artigos/gerar-capas-sem-texto.py ia-local-por-vram
+    python3 scripts/artigos/gerar-capas-sem-texto.py glm-5-3
     python3 scripts/artigos/gerar-capas-sem-texto.py --amostra <dir> # não toca public/
-
-Saída padrão: `public/artigos/<slug>/hero.png` (2400x1260) e `hero-og.*`
-(1200x630), pelo mesmo `publicar-capa.py` que mede o encoding e trava o peso
-do card — acima de ~300 KB o WhatsApp descarta o `og:image` sem avisar.
 """
 
 from __future__ import annotations
 
 import math
+import random
 import re
 import subprocess
 import sys
 from pathlib import Path
 
-from PIL import Image, ImageDraw, ImageFont
+from PIL import Image, ImageChops, ImageDraw, ImageFilter
 
 RAIZ = Path(__file__).resolve().parents[2]
-FONTES = RAIZ / "scripts/charts/fonts"
 LARGURA, ALTURA = 2400, 1260
 
-# Paleta do site (`app/globals.css`), para a capa não destoar da página onde ela cai.
-FUNDO = "#0b1420"
-PAINEL = "#101d2a"
-OURO = "#a48f65"
-OURO_CLARO = "#c4ad7f"
-OURO_ESCURO = "#7b643f"
-TINTA = "#f5f0e6"
-ALERTA = "#c2603f"  # o que estoura / o que não fecha
-FRIO = "#4a6b8a"  # a marca secundária, quando a cena precisa de duas famílias
-
-DOMINIO = "ulissesflores.com"
+FUNDO = (7, 9, 13)
+RESPIRO = (26, 38, 54)
+OURO = (196, 173, 127)
+OURO_FOSCO = (140, 122, 88)
+MOLDURA = (78, 64, 42)
+FRIO = (118, 158, 214)
+QUENTE = (214, 138, 96)
 
 
-def fonte(tamanho: int, negrito: bool = True) -> ImageFont.FreeTypeFont:
-    nome = "Fahkwang-Bold.ttf" if negrito else "Fahkwang-Regular.ttf"
-    return ImageFont.truetype(str(FONTES / nome), tamanho)
+# ── A prancha: o que se repete em toda capa ─────────────────────────────────────
 
 
-def tela() -> tuple[Image.Image, ImageDraw.ImageDraw]:
+def abrir(semente):
+    """Devolve o quadro e a CAMADA DE BRILHO, que é somada no fim.
+
+    A semente fixa o acaso: a mesma capa sai igual em toda rodada, senão o arquivo
+    mudaria de hash a cada build e o cache do leitor cairia à toa.
+    """
+    random.seed(semente)
     im = Image.new("RGB", (LARGURA, ALTURA), FUNDO)
-    return im, ImageDraw.Draw(im)
+    faixa = Image.new("L", (1, ALTURA))
+    for y in range(ALTURA):
+        faixa.putpixel((0, y), int(30 * (1 - y / ALTURA) ** 1.6))
+    im.paste(Image.new("RGB", (LARGURA, ALTURA), RESPIRO), (0, 0), faixa.resize((LARGURA, ALTURA)))
+    luz = Image.new("RGB", (LARGURA, ALTURA), (0, 0, 0))
+    return im, ImageDraw.Draw(im), luz, ImageDraw.Draw(luz)
 
 
-def assinatura(d: ImageDraw.ImageDraw) -> None:
-    """O domínio no rodapé. É a única cadeia de caracteres comum a todas as cenas."""
-    f = fonte(30, negrito=False)
-    d.text((140, ALTURA - 96), DOMINIO, font=f, fill=OURO_ESCURO)
+def halo(dl, x, y, raio, cor, forca=4):
+    """Marca luz na camada de brilho. Ela é borrada e SOMADA no fim — nunca colada
+    com máscara: colar apagou o desenho inteiro na primeira tentativa."""
+    dl.ellipse((x - raio, y - raio, x + raio, y + raio), fill=tuple(v // forca for v in cor))
 
 
-def so_inteiro(texto: str) -> str:
-    """Trava da régua: separador decimal muda de idioma, então não entra na arte."""
-    if re.search(r"\d[.,]\d", texto):
-        raise SystemExit(f"capa sem texto: '{texto}' tem decimal — o separador muda de idioma")
-    return texto
+def arcos(d):
+    """Duas curvas de observação. Atravessam o quadro — arco que morre no meio fica solto."""
+    d.arc((-360, 210, 2760, 2600), start=204, end=336, fill=(28, 37, 50), width=2)
+    d.arc((-260, 330, 2860, 2900), start=206, end=334, fill=(20, 27, 38), width=2)
 
 
-def numero(d: ImageDraw.ImageDraw, xy, texto, tamanho, cor, ancora="lm", negrito=True) -> None:
-    d.text(xy, so_inteiro(texto), font=fonte(tamanho, negrito), fill=cor, anchor=ancora)
+def cantos(d):
+    b, a = 88, 116
+    for x, y, sx, sy in ((b, b, 1, 1), (LARGURA - b, b, -1, 1), (b, ALTURA - b, 1, -1), (LARGURA - b, ALTURA - b, -1, -1)):
+        d.line((x, y, x + sx * a, y), fill=MOLDURA, width=3)
+        d.line((x, y, x, y + sy * a), fill=MOLDURA, width=3)
 
 
-def seta(d: ImageDraw.ImageDraw, x1, y1, x2, y2, cor, grossura=6, ponta=26) -> None:
-    d.line((x1, y1, x2, y2), fill=cor, width=grossura)
-    ang = math.atan2(y2 - y1, x2 - x1)
-    for lado in (+1, -1):
-        a = ang + lado * math.radians(155)
-        d.line((x2, y2, x2 + ponta * math.cos(a), y2 + ponta * math.sin(a)), fill=cor, width=grossura)
+def _grao(im):
+    """A textura é o que tira da peça o ar de vetor."""
+    n = Image.effect_noise((LARGURA, ALTURA), 26).convert("L")
+    return Image.blend(im, ImageChops.screen(im, Image.merge("RGB", (n, n, n)).point(lambda v: v // 9)), 0.55)
+
+
+def _vinheta(im):
+    m = Image.new("L", (LARGURA, ALTURA), 0)
+    ImageDraw.Draw(m).ellipse((-LARGURA * 0.30, -ALTURA * 0.55, LARGURA * 1.30, ALTURA * 1.55), fill=255)
+    escuro = ImageChops.multiply(im, Image.new("RGB", (LARGURA, ALTURA), (120, 120, 130)))
+    return Image.composite(im, escuro, m.filter(ImageFilter.GaussianBlur(180)))
+
+
+def fechar(im, luz, com_arcos=True):
+    im = ImageChops.add(im, luz.filter(ImageFilter.GaussianBlur(30)))
+    d = ImageDraw.Draw(im)
+    if com_arcos:
+        arcos(d)
+    cantos(d)
+    return _vinheta(_grao(im))
 
 
 # ── Fonte dos dados: os datasets que o artigo já publica ────────────────────────
 
 
-def ler_ts(arquivo: str, chave: str) -> str:
-    """Recorta o bloco de um dataset do `.ts`. Ninguém digita número aqui."""
-    fonte_ts = (RAIZ / arquivo).read_text()
-    i = fonte_ts.index(f"'{chave}': {{")
-    profundidade, j = 0, i + len(f"'{chave}': ")
-    for k in range(j, len(fonte_ts)):
-        if fonte_ts[k] == "{":
+def ler_ts(arquivo, chave):
+    fonte = (RAIZ / arquivo).read_text()
+    i = fonte.index("'%s': {" % chave)
+    profundidade = 0
+    for k in range(i + len(chave) + 3, len(fonte)):
+        if fonte[k] == "{":
             profundidade += 1
-        elif fonte_ts[k] == "}":
+        elif fonte[k] == "}":
             profundidade -= 1
             if profundidade == 0:
-                return fonte_ts[i : k + 1]
-    raise SystemExit(f"dataset '{chave}' não fecha em {arquivo}")
+                return fonte[i:k + 1]
+    raise SystemExit("dataset '%s' nao fecha em %s" % (chave, arquivo))
 
 
-def campos_numericos(bloco: str, nome: str) -> list[float]:
-    return [float(v) for v in re.findall(rf"{nome}:\s*([\d.]+)", bloco)]
+def numeros(bloco, nome):
+    return [float(v) for v in re.findall(nome + r":\s*([\d.]+)", bloco)]
 
 
-# ── Cenas, uma por artigo ───────────────────────────────────────────────────────
-
-
-def cena_ia_local_por_vram() -> Image.Image:
-    """Dez máquinas, a mesma pergunta: cabe? A parede é a mesma; o que vaza, não.
-
-    Cada faixa é um degrau da escada de VRAM do artigo, NORMALIZADO: a moldura
-    vale sempre 100% da memória daquela placa, e é a parede da direita. Dentro,
-    o claro são os pesos do modelo e o escuro é o cache no contexto de
-    referência. O que atravessa a parede é o que falta quando o contexto vai ao
-    máximo. A forma diz o achado: os pesos cabem em todo mundo — quem não cabe
-    é a conversa, e ela some das máquinas grandes por outro motivo (o modelo
-    daquele degrau tem cache menor).
-    """
-    bloco = ler_ts("data/artigos-charts.ts", "ia-local-por-vram-escada")
-    cap = campos_numericos(bloco, "capacidade")
-    pesos = campos_numericos(bloco, "pesos")
-    c_ref = campos_numericos(bloco, "cacheRef")
-    c_max = campos_numericos(bloco, "cacheMax")
-
-    im, d = tela()
-    x0, parede = 470, 1740          # a moldura de todos os degraus
-    topo, base = 175, 1075
-    passo = (base - topo) / len(cap)
-    alt = int(passo * 0.62)
-    larg = parede - x0
-
-    for i, capacidade in enumerate(cap):
-        y = int(topo + i * passo)
-        px = larg / capacidade      # px por GB DAQUELA placa
-
-        d.rectangle((x0, y, parede, y + alt), fill=PAINEL)
-        # pesos: o que não muda enquanto se conversa.
-        d.rectangle((x0, y, x0 + min(larg, int(pesos[i] * px)), y + alt), fill=OURO_CLARO)
-        # cache no contexto de referência, encostado nos pesos.
-        ini_cache = x0 + int(pesos[i] * px)
-        d.rectangle((ini_cache, y, min(parede, ini_cache + int(c_ref[i] * px)), y + alt), fill=OURO_ESCURO)
-        # a parede: sempre no mesmo lugar, porque a moldura é 100% da placa.
-        d.line((parede, y - 2, parede, y + alt + 2), fill=TINTA, width=3)
-        # o que falta no contexto máximo, atravessando a parede.
-        falta = pesos[i] + c_max[i] - capacidade
-        if falta > 0:
-            fim_x = parede + int(min(falta * px, 560))
-            d.rectangle((parede + 8, y + 6, fim_x, y + alt - 6), fill=ALERTA)
-            if falta * px > 560:    # não cabe nem no quadro: a barra sai cortada
-                for k in range(3):
-                    d.rectangle((fim_x + 14 + k * 26, y + 6, fim_x + 28 + k * 26, y + alt - 6), fill=ALERTA)
-
-        numero(d, (x0 - 40, y + alt / 2), f"{int(capacidade)}", 52, TINTA, ancora="rm")
-
-    numero(d, (x0 - 40, topo - 66), "GB", 34, OURO_ESCURO, ancora="rm", negrito=False)
-    assinatura(d)
-    return im
-
-
-def cena_recusa_que_parou_o_estudo_das_recusas() -> Image.Image:
-    """Um passo não devolveu nada — e o registro carimbou concluído do mesmo jeito.
-
-    O artigo mostra o mecanismo, não uma frequência: o estudo que MEDE a
-    frequência ainda está rodando. Então a cena mostra UMA instância, não uma
-    taxa — uma fileira de passos, todos com o mesmo ✓ do orquestrador, e um
-    deles oco. O carimbo continua lá em cima do vazio. É o achado do artigo em
-    forma: do lado de fora, a recusa e o resultado vazio são a mesma coisa.
-    """
-    im, d = tela()
-    colunas = 9
-    lado, vao = 214, 46
-    largura_grade = colunas * lado + (colunas - 1) * vao
-    x0 = (LARGURA - largura_grade) // 2
-    y = (ALTURA - lado) // 2 - 30
-    oca = 5  # a casa que voltou vazia. Uma só: o artigo não mede quantas são.
-
-    def visto(cx, cy, cor, grossura=20):
-        d.line((cx - 44, cy + 4, cx - 10, cy + 42), fill=cor, width=grossura)
-        d.line((cx - 10, cy + 42, cx + 48, cy - 40), fill=cor, width=grossura)
-
-    for col in range(colunas):
-        x = x0 + col * (lado + vao)
-        if col == oca:
-            # A casa oca: sem miolo, borda partida — e o mesmo carimbo por cima.
-            for a, b in ((0, 46), (72, 118), (144, 190)):
-                d.line((x + a, y, x + b, y), fill=ALERTA, width=6)
-                d.line((x + a, y + lado, x + b, y + lado), fill=ALERTA, width=6)
-                d.line((x, y + a, x, y + b), fill=ALERTA, width=6)
-                d.line((x + lado, y + a, x + lado, y + b), fill=ALERTA, width=6)
-        else:
-            d.rounded_rectangle((x, y, x + lado, y + lado), radius=20, fill=PAINEL, outline=OURO_ESCURO, width=4)
-        visto(x + lado / 2, y + lado / 2, OURO_CLARO)
-
-    assinatura(d)
-    return im
-
-
-def cena_carta_ciberdefesa_openai() -> Image.Image:
-    """Cinco colunas de obrigação, quatro blocos de destinatário — e as caixas vazias.
-
-    A matriz do artigo pergunta, para cada bloco da carta, se há cifra, prazo, verbo que
-    obriga, responsável e alvo verificável. A resposta é `ausente` em 19 das 20 células.
-    A cena desenha a matriz e nada mais: o vazio É o achado. A célula cheia embaixo é o
-    controle do artigo — outro documento, da mesma empresa, que tem o que a carta não tem.
-    """
-    bloco = ler_ts("data/obligation-matrix.ts", "carta-ciberdefesa-blocos")
-    estados = re.findall(r"estado: '(\w+)'", bloco)
-    colunas, linhas = 5, 4
-    grade = estados[: colunas * linhas]
-    controle = estados[colunas * linhas :][:colunas]
-
-    im, d = tela()
-    cel_l, cel_a, vao = 356, 150, 38
-    largura = colunas * cel_l + (colunas - 1) * vao
-    x0 = (LARGURA - largura) // 2
-    y0 = 150
-
-    for i, estado in enumerate(grade):
-        x = x0 + (i % colunas) * (cel_l + vao)
-        y = y0 + (i // colunas) * (cel_a + vao)
-        caixa = (x, y, x + cel_l, y + cel_a)
-        if estado == "ausente":
-            d.rounded_rectangle(caixa, radius=12, outline="#24384c", width=4)
-        else:  # parcial: a única da matriz que tem meia resposta
-            d.rounded_rectangle(caixa, radius=12, outline=OURO_ESCURO, width=4)
-            d.rectangle((x + 20, y + 20, x + cel_l // 2, y + cel_a - 20), fill=OURO_ESCURO)
-
-    # A fileira de controle, separada por um fio: outro documento, que preenche.
-    y_ctrl = y0 + linhas * (cel_a + vao) + 46
-    d.line((x0, y_ctrl - 34, x0 + largura, y_ctrl - 34), fill="#24384c", width=3)
-    for i, estado in enumerate(controle):
-        x = x0 + i * (cel_l + vao)
-        caixa = (x, y_ctrl, x + cel_l, y_ctrl + cel_a)
-        if estado == "presente":
-            d.rounded_rectangle(caixa, radius=12, fill=OURO_CLARO)
-        else:
-            d.rounded_rectangle(caixa, radius=12, outline="#24384c", width=4)
-
-    assinatura(d)
-    return im
-
-
-def cena_ninguem_provou_meta_le_whatsapp() -> Image.Image:
-    """O canal é lacrado ponta a ponta. O vazamento sai da PONTA, com o cadeado aberto.
-
-    O artigo desmonta a acusação de que a empresa lê o canal e mostra a saída que de fato
-    existe: quando o destinatário denuncia, o texto já aberto no aparelho dele sobe para a
-    empresa. A cena põe as duas coisas no mesmo quadro — o trecho entre as pontas com o
-    cadeado FECHADO, e o ramo que desce da ponta direita com o cadeado ABERTO.
-    """
-    im, d = tela()
-    y = 470
-    esq, dir_ = 300, 2100
-
-    def no(cx, cy, r=88):
-        d.ellipse((cx - r, cy - r, cx + r, cy + r), fill=PAINEL, outline=OURO, width=6)
-
-    def cadeado(cx, cy, aberto: bool, cor):
-        corpo = (cx - 52, cy - 26, cx + 52, cy + 66)
-        d.rounded_rectangle(corpo, radius=14, fill=cor)
-        # a haste: fechada encosta nos dois lados; aberta solta de um lado e sobe
-        if aberto:
-            d.arc((cx - 68, cy - 116, cx + 20, cy - 12), start=180, end=360, fill=cor, width=14)
-            d.line((cx - 68, cy - 64, cx - 68, cy - 26), fill=cor, width=14)
-        else:
-            d.arc((cx - 38, cy - 106, cx + 38, cy - 12), start=180, end=360, fill=cor, width=14)
-            d.line((cx - 38, cy - 60, cx - 38, cy - 26), fill=cor, width=14)
-            d.line((cx + 38, cy - 60, cx + 38, cy - 26), fill=cor, width=14)
-
-    # O trecho lacrado entre as duas pontas.
-    d.line((esq + 100, y, dir_ - 100, y), fill=OURO, width=10)
-    no(esq, y)
-    no(dir_, y)
-    d.rectangle((1110, y - 130, 1290, y + 120), fill=FUNDO)
-    cadeado(1200, y - 20, aberto=False, cor=OURO)
-
-    # O ramo que desce da ponta: o texto já aberto saindo do aparelho.
-    seta(d, dir_, y + 110, dir_, 1000, ALERTA, grossura=10, ponta=42)
-    d.rectangle((dir_ - 90, 580, dir_ + 90, 800), fill=FUNDO)
-    cadeado(dir_, 660, aberto=True, cor=ALERTA)
-    d.rounded_rectangle((dir_ - 150, 1010, dir_ + 150, 1150), radius=18, fill=PAINEL, outline=ALERTA, width=6)
-    for k in range(3):  # o conteúdo legível, dentro de quem recebeu a denúncia
-        d.line((dir_ - 100, 1055 + k * 34, dir_ + 100 - k * 44, 1055 + k * 34), fill=ALERTA, width=10)
-
-    assinatura(d)
-    return im
-
-
-def cena_benchmark_harness_modelo() -> Image.Image:
-    """Oito pares, o mesmo modelo dos dois lados — e a nota anda até 10 pontos.
-
-    O artigo mostra que a diferença medida entre dois modelos pode vir do arnês, não do
-    modelo. Cada barra é o quanto a nota se move num par; a de cima, destacada, é o valor
-    extremo que sustentou a manchete. Sem rótulo: a barra longa sozinha conta a história.
-    """
-    bloco = ler_ts("data/artigos-charts.ts", "benchmark-oito-pares")
-    valores = campos_numericos(bloco, "value")
-    maximo = float(re.search(r"max:\s*([\d.]+)", bloco).group(1))
-
-    im, d = tela()
-    x0, larg = 300, 1800
-    topo, alt, vao = 230, 74, 42
-    for i, v in enumerate(valores):
-        y = topo + i * (alt + vao)
-        d.rectangle((x0, y, x0 + larg, y + alt), fill="#16232f")
-        cor = OURO_CLARO if i == 0 else FRIO
-        d.rectangle((x0, y, x0 + int(larg * v / maximo), y + alt), fill=cor)
-    assinatura(d)
-    return im
-
-
-def cena_glm_5_3() -> Image.Image:
-    """Duas mil quatrocentas e trinta e seis vulnerabilidades. Um oceano nunca reportado.
-
-    Cada quadradinho é uma vulnerabilidade do balanço que a Z.ai publicou como prova de
-    capacidade. A cor sai do próprio dataset do artigo. O que a forma diz: a mancha cinza
-    — as que nunca saíram da descoberta — engole tudo o que veio depois.
-    """
-    bloco = ler_ts("data/artigos-charts.ts", "glm53-ledger-status")
-    cores = re.findall(r"color: '(#\w+)'", bloco)
-    contagens = [int(v) for v in re.findall(r"count: (\d+)", bloco)]
-    celulas = [c for cor, n in zip(cores, contagens) for c in [cor] * n]
-
-    colunas = 76  # 76 x 33 cobre os 2.436 do balanço dentro do quadro
-    linhas = math.ceil(len(celulas) / colunas)
-    lado, vao = 20, 5
-    largura = colunas * (lado + vao) - vao
-    altura = linhas * (lado + vao) - vao
-    x0 = (LARGURA - largura) // 2
-    y0 = (ALTURA - altura) // 2 - 24
-
-    im, d = tela()
-    # O painel atrás: o cinza `#3f3f46` do dataset some no fundo marinho sem ele.
-    d.rounded_rectangle((x0 - 46, y0 - 46, x0 + largura + 46, y0 + altura + 46), radius=18, fill="#080f18")
-    for i, cor in enumerate(celulas):
-        x = x0 + (i % colunas) * (lado + vao)
-        y = y0 + (i // colunas) * (lado + vao)
-        d.rectangle((x, y, x + lado, y + lado), fill=cor)
-    assinatura(d)
-    return im
-
-
-def _curvas(d, series, x_dom, y_dom, quadro, grossura=8, raio=13, log_x=False):
-    (x0, y0, x1, y1) = quadro
-    esc = math.log10 if log_x else (lambda v: v)
-    ex = lambda v: x0 + (esc(v) - esc(x_dom[0])) / (esc(x_dom[1]) - esc(x_dom[0])) * (x1 - x0)
-    ey = lambda v: y1 - (v - y_dom[0]) / (y_dom[1] - y_dom[0]) * (y1 - y0)
-    for cor, pontos in series:
-        tela_pts = [(ex(a), ey(b)) for a, b in pontos]
-        if len(tela_pts) > 1:
-            d.line([p for xy in tela_pts for p in xy], fill=cor, width=grossura, joint="curve")
-        for x, y in tela_pts:
-            d.ellipse((x - raio, y - raio, x + raio, y + raio), fill=cor)
-
-
-def _series(bloco: str) -> list[tuple[str, list[tuple[float, float]]]]:
+def series(bloco):
     saida = []
     for pedaco in bloco.split("label:")[1:]:
         cor = re.search(r"color: '(#\w+)'", pedaco)
-        # só o que está DENTRO de `points:` — `xDomain: [1, 30]` também casaria com o par.
         corpo = re.search(r"points:\s*\[(.*?)\],?\s*\n\s*\}", pedaco, re.S)
         pontos = re.findall(r"\[([\d.]+),\s*([\d.]+)\]", corpo.group(1)) if corpo else []
         if cor and pontos:
@@ -381,142 +145,381 @@ def _series(bloco: str) -> list[tuple[str, list[tuple[float, float]]]]:
     return saida
 
 
-def cena_2026_07_24_claude_opus_5() -> Image.Image:
-    """Quatro trilhas de custo contra acerto. A dourada sobe mais gastando menos.
+def hexa(c):
+    return tuple(int(c[i:i + 2], 16) for i in (1, 3, 5))
 
-    É o gráfico do lançamento: cada trilha é um modelo, andando da esquerda (barato) para
-    a direita (caro) conforme se paga por mais esforço. A trilha do Opus 5 fica acima e à
-    esquerda das outras — a manchete do artigo, sem manchete.
+
+def suave(c, k=0.72):
+    """Puxa a cor do dataset para o tom da prancha: nada aqui grita."""
+    return tuple(int(v * k + 40 * (1 - k)) for v in c)
+
+
+# ── As cenas ────────────────────────────────────────────────────────────────────
+
+
+def cena_glm_5_3():
+    """Um sedimento de 2.436 grãos, quase todo apagado — e a brasa na ponta.
+
+    Cada grão é uma vulnerabilidade do balanço que a Z.ai publicou como prova de
+    capacidade cyber. 2.239 nunca saíram da descoberta: são o sedimento escuro que
+    ocupa o quadro. O punhado que andou está aceso e apertado na ponta.
+    """
+    bloco = ler_ts("data/artigos-charts.ts", "glm53-ledger-status")
+    cores = [suave(hexa(c)) for c in re.findall(r"color: '(#\w+)'", bloco)]
+    contagens = [int(v) for v in re.findall(r"count: (\d+)", bloco)]
+    graos = [(c, i > 1) for i, (c, n) in enumerate(zip(cores, contagens)) for _ in range(n)]
+
+    im, d, luz, dl = abrir(53)
+    x0, x1, cy = 250, 1960, 640
+    for i, (cor, aceso) in enumerate(graos):
+        t = i / len(graos)
+        x = x0 + t * (x1 - x0) + random.gauss(0, 13)
+        y = cy + random.gauss(0, 118 * (1 - 0.62 * t)) + 46 * math.sin(t * 5.2)
+        r = 3.2 if not aceso else 5.0
+        d.ellipse((x - r, y - r, x + r, y + r), fill=cor)
+        if aceso:
+            halo(dl, x, y, r * 4, cor)
+    return fechar(im, luz)
+
+
+def cena_ia_local_por_vram():
+    """Dez colunas de luz contra uma parede. As que nao cabem vazam por cima.
+
+    Cada coluna e um degrau da escada de VRAM, em FRACAO da memoria daquela placa:
+    a parede e a mesma para todas. A coluna acesa e o que o modelo ocupa em
+    repouso; as brasas que sobem alem da parede sao o que falta no contexto
+    maximo. Os pesos cabem em todo mundo — quem nao cabe e a conversa.
+    """
+    bloco = ler_ts("data/artigos-charts.ts", "ia-local-por-vram-escada")
+    cap, pesos = numeros(bloco, "capacidade"), numeros(bloco, "pesos")
+    c_ref, c_max = numeros(bloco, "cacheRef"), numeros(bloco, "cacheMax")
+
+    im, d, luz, dl = abrir(24)
+    parede, base = 520, 1020
+    larg, vao = 74, 118
+    x0 = (LARGURA - (len(cap) * larg + (len(cap) - 1) * vao)) // 2
+
+    for i, c in enumerate(cap):
+        x = x0 + i * (larg + vao)
+        ocupa = min(1.0, (pesos[i] + c_ref[i]) / c)
+        topo = base - (base - parede) * ocupa
+        # a coluna nasce escura no chao e chega acesa no topo: e luz, nao bloco
+        for k in range(90):
+            t = k / 90
+            y = base - (base - topo) * t
+            v = 0.10 + 0.90 * t ** 2.2
+            d.rectangle((x, y - (base - topo) / 90 - 1, x + larg, y),
+                        fill=tuple(int(cc * v) for cc in suave(OURO, 0.62)))
+        d.rectangle((x, topo - 4, x + larg, topo + 2), fill=OURO)
+        halo(dl, x + larg / 2, topo, larg * 1.5, OURO, forca=5)
+
+        falta = pesos[i] + c_max[i] - c
+        if falta > 0:
+            alt = min(1.0, falta / c) * 330
+            for _ in range(16):
+                t = random.random()
+                px = x + larg / 2 + random.gauss(0, larg * 0.42) * (0.4 + t)
+                py = parede - alt * t
+                r = max(1.5, 5 * (1 - t))
+                d.ellipse((px - r, py - r, px + r, py + r),
+                          fill=tuple(int(cc * (1 - t * 0.55)) for cc in QUENTE))
+                halo(dl, px, py, r * 7, QUENTE, forca=5)
+
+    d.line((x0 - 170, parede, x0 + len(cap) * (larg + vao) + 96, parede), fill=(96, 112, 132), width=3)
+    return fechar(im, luz)
+
+
+def cena_carta_ciberdefesa_openai():
+    """Um mural de molduras vazias. A única acesa é de outro documento.
+
+    A matriz do artigo pergunta, para cada bloco da carta, se há cifra, prazo,
+    verbo que obriga, responsável e alvo verificável — e a resposta é ausente em
+    dezenove das vinte células. Embaixo, separada por um fio, a fileira de
+    controle: outra página da mesma empresa, que preenche o que a carta não
+    preenche.
+    """
+    bloco = ler_ts("data/obligation-matrix.ts", "carta-ciberdefesa-blocos")
+    estados = re.findall(r"estado: '(\w+)'", bloco)
+    grade, controle = estados[:20], estados[20:25]
+
+    im, d, luz, dl = abrir(155)
+    cel_l, cel_a, vao = 330, 132, 40
+    largura = 5 * cel_l + 4 * vao
+    x0, y0 = (LARGURA - largura) // 2, 200
+
+    for i, estado in enumerate(grade):
+        x, y = x0 + (i % 5) * (cel_l + vao), y0 + (i // 5) * (cel_a + vao)
+        d.rounded_rectangle((x, y, x + cel_l, y + cel_a), radius=10, outline=(28, 36, 47), width=2)
+        if estado == "parcial":
+            d.rounded_rectangle((x + 16, y + 16, x + cel_l // 2, y + cel_a - 16), radius=6, fill=(44, 39, 29))
+            halo(dl, x + cel_l / 4, y + cel_a / 2, cel_a * 0.5, OURO_FOSCO, forca=12)
+
+    y_ctrl = y0 + 4 * (cel_a + vao) + 56
+    d.line((x0, y_ctrl - 40, x0 + largura, y_ctrl - 40), fill=(40, 52, 66), width=2)
+    for i, estado in enumerate(controle):
+        x = x0 + i * (cel_l + vao)
+        if estado == "presente":
+            d.rounded_rectangle((x, y_ctrl, x + cel_l, y_ctrl + cel_a), radius=10, fill=(70, 62, 46))
+            d.rounded_rectangle((x, y_ctrl, x + cel_l, y_ctrl + 5), radius=2, fill=OURO)
+            halo(dl, x + cel_l / 2, y_ctrl + cel_a / 2, cel_l * 0.42, OURO, forca=9)
+        else:
+            d.rounded_rectangle((x, y_ctrl, x + cel_l, y_ctrl + cel_a), radius=10, outline=(28, 36, 47), width=2)
+    return fechar(im, luz)
+
+
+def cena_ninguem_provou_meta_le_whatsapp():
+    """Um fio de luz retesado entre duas pontas — e o esgarçamento na ponta.
+
+    O artigo desmonta a acusação de que a empresa lê o canal e mostra a saída que
+    de fato existe: o texto já aberto no aparelho de quem denuncia. O fio entre as
+    pontas é inteiro; da ponta direita descem filamentos que se desfazem no
+    escuro. A fuga não está no meio do caminho: está na ponta.
+    """
+    im, d, luz, dl = abrir(7)
+    y, esq, dir_ = 470, 340, 1980
+
+    d.line((esq, y, dir_, y), fill=suave(OURO, 0.55), width=5)
+    for x in (esq, dir_):
+        d.ellipse((x - 34, y - 34, x + 34, y + 34), outline=suave(OURO), width=5)
+        halo(dl, x, y, 130, OURO, forca=6)
+    for k in range(160):
+        halo(dl, esq + (k / 160) * (dir_ - esq), y, 26, OURO, forca=16)
+
+    for f in range(7):
+        desvio = (f - 3) * 26
+        for p in range(46):
+            t = p / 46
+            x = dir_ + desvio * t + random.gauss(0, 6)
+            yy = y + 40 + t * 640
+            r = max(1.0, 5 * (1 - t))
+            cor = tuple(int(c * (1 - t * 0.8) + 10) for c in QUENTE)
+            d.ellipse((x - r, yy - r, x + r, yy + r), fill=cor)
+            if t < 0.45:
+                halo(dl, x, yy, r * 6, QUENTE, forca=7)
+    return fechar(im, luz)
+
+
+def cena_recusa_que_parou_o_estudo_das_recusas():
+    """Uma fileira de selos acesos, e um lugar onde a luz não pousa.
+
+    O artigo mostra o mecanismo, não uma frequência — o estudo que a mede ainda
+    está rodando. Então a cena mostra UMA instância: passos carimbados como
+    concluídos, e um deles oco. Do lado de fora, a recusa e o resultado vazio são
+    a mesma coisa.
+    """
+    im, d, luz, dl = abrir(26)
+    n, r, vao = 9, 74, 96
+    x0, cy = (LARGURA - (n * 2 * r + (n - 1) * vao)) // 2 + r, 620
+    oca = 5
+
+    for i in range(n):
+        x = x0 + i * (2 * r + vao)
+        if i == oca:
+            d.ellipse((x - r, cy - r, x + r, cy + r), outline=(58, 40, 34), width=4)
+            for k in range(7):
+                a = k / 7 * math.tau
+                cx, cyy = x + r * 0.55 * math.cos(a), cy + r * 0.55 * math.sin(a)
+                d.ellipse((cx - 3, cyy - 3, cx + 3, cyy + 3), fill=(70, 52, 44))
+        else:
+            d.ellipse((x - r, cy - r, x + r, cy + r), fill=(30, 38, 50), outline=suave(OURO, 0.5), width=4)
+            d.ellipse((x - r * 0.45, cy - r * 0.45, x + r * 0.45, cy + r * 0.45), fill=suave(OURO))
+            halo(dl, x, cy, r * 2.1, OURO, forca=6)
+    return fechar(im, luz)
+
+
+def cena_benchmark_harness_modelo():
+    """O mesmo par medido duas vezes: um fio de luz liga as duas notas.
+
+    O artigo mostra que a diferenca entre dois modelos pode vir do arnes, nao do
+    modelo. Cada fio sai da nota de baixo e chega na de cima; o comprimento e o
+    quanto a nota anda so por trocar quem mede. O fio aceso e o valor extremo que
+    sustentou a manchete — os outros sete mal saem do chao.
+    """
+    bloco = ler_ts("data/artigos-charts.ts", "benchmark-oito-pares")
+    valores = numeros(bloco, "value")
+    maximo = float(re.search(r"max:\s*([\d.]+)", bloco).group(1))
+
+    im, d, luz, dl = abrir(8)
+    chao, teto = 1010, 300
+    x0, vao = 380, (LARGURA - 760) / (len(valores) - 1)
+
+    d.line((240, chao, LARGURA - 240, chao), fill=(60, 74, 92), width=3)
+    for i, v in enumerate(valores):
+        x = x0 + i * vao
+        topo = chao - (chao - teto) * (v / maximo)
+        forte = i == 0
+        cor = suave(OURO) if forte else (76, 100, 126)
+        # o fio: apagado embaixo, aceso onde chega
+        for k in range(70):
+            t = k / 70
+            y = chao - (chao - topo) * t
+            c = tuple(int(cc * (0.25 + 0.75 * t ** 1.6)) for cc in cor)
+            d.rectangle((x - (3 if forte else 2), y - (chao - topo) / 70 - 1, x + (3 if forte else 2), y), fill=c)
+        r = 13 if forte else 7
+        d.ellipse((x - r, topo - r, x + r, topo + r), fill=cor)
+        halo(dl, x, topo, r * (5 if forte else 3.4), OURO if forte else FRIO, forca=4 if forte else 9)
+        d.ellipse((x - 4, chao - 4, x + 4, chao + 4), fill=(70, 84, 102))
+    return fechar(im, luz)
+
+
+def cena_2026_07_24_claude_opus_5():
+    """Quatro rastros subindo num campo escuro. O dourado sobe gastando menos.
+
+    Cada rastro é um modelo andando da esquerda (barato) para a direita (caro)
+    conforme se paga por mais esforço. O do Opus 5 fica acima e à esquerda dos
+    outros — a manchete do artigo, sem manchete.
     """
     bloco = ler_ts("data/artigos-charts.ts", "opus5-frontier-bench")
-    dom = lambda nome: [float(v) for v in re.search(rf"{nome}: \[([\d.]+), ([\d.]+)\]", bloco).groups()]
-    im, d = tela()
-    quadro = (280, 170, 2150, 1090)
-    d.line((quadro[0], quadro[3], quadro[2], quadro[3]), fill="#24384c", width=5)
-    # eixo de custo em log, como no gráfico do artigo (xTicks 1,2,3,5,10,20,30).
-    _curvas(d, _series(bloco), dom("xDomain"), dom("yDomain"), quadro, grossura=11, raio=17, log_x=True)
-    assinatura(d)
-    return im
+    dom = lambda n: [float(v) for v in re.search(n + r": \[([\d.]+), ([\d.]+)\]", bloco).groups()]
+    xd, yd = dom("xDomain"), dom("yDomain")
+
+    im, d, luz, dl = abrir(5)
+    x0, y0, x1, y1 = 300, 210, 2120, 1030
+    ex = lambda v: x0 + (math.log10(v) - math.log10(xd[0])) / (math.log10(xd[1]) - math.log10(xd[0])) * (x1 - x0)
+    ey = lambda v: y1 - (v - yd[0]) / (yd[1] - yd[0]) * (y1 - y0)
+
+    d.line((x0 - 40, y1, x1 + 40, y1), fill=(40, 52, 66), width=2)
+    for cor_hex, pontos in series(bloco):
+        cor = suave(hexa(cor_hex))
+        tela = [(ex(a), ey(b)) for a, b in pontos]
+        d.line([p for xy in tela for p in xy], fill=cor, width=5, joint="curve")
+        for j, (x, y) in enumerate(tela):
+            r = 9 + 4 * (j == len(tela) - 1)
+            d.ellipse((x - r, y - r, x + r, y + r), fill=cor)
+            halo(dl, x, y, r * 4.5, cor, forca=6)
+    return fechar(im, luz)
 
 
-def cena_deepseek_v4_flash_0731() -> Image.Image:
-    """Nove linhas, nove derrotas: o placar que a própria DeepSeek publicou.
+def cena_deepseek_v4_flash_0731():
+    """Nove brasas contra nove cinzas: o placar que a própria DeepSeek publicou.
 
-    A tabela do lançamento traz nove benchmarks agênticos em que o Claude Opus 4.8 vence o
-    V4-Flash-0731 em TODAS as linhas. A cena é o placar cru — nove marcas cheias contra
-    nove vazias. Nada a traduzir: 9 a 0 se lê em qualquer idioma.
+    A tabela do lançamento traz nove benchmarks agênticos em que o Claude Opus 4.8
+    vence o V4-Flash-0731 em TODAS as linhas. A fileira de cima está acesa; a de
+    baixo é o mesmo lugar, sem fogo.
     """
-    im, d = tela()
-    raio, vao = 96, 74
-    largura = 9 * (raio * 2) + 8 * vao
-    x0 = (LARGURA - largura) // 2 + raio
-    for i in range(9):
-        cx = x0 + i * (raio * 2 + vao)
-        d.ellipse((cx - raio, 400 - raio, cx + raio, 400 + raio), fill=OURO_CLARO)
-        d.ellipse((cx - raio, 880 - raio, cx + raio, 880 + raio), outline="#2a3f52", width=10)
-    assinatura(d)
-    return im
+    im, d, luz, dl = abrir(9)
+    n, r, vao = 9, 52, 110
+    x0 = (LARGURA - (n * 2 * r + (n - 1) * vao)) // 2 + r
+    for i in range(n):
+        x = x0 + i * (2 * r + vao)
+        d.ellipse((x - r, 400 - r, x + r, 400 + r), fill=suave(OURO))
+        halo(dl, x, 400, r * 2.4, OURO, forca=7)
+        d.ellipse((x - r, 880 - r, x + r, 880 + r), outline=(44, 50, 60), width=5)
+        for _ in range(5):
+            a, rr = random.random() * math.tau, r * 0.5 * random.random()
+            cx, cyy = x + rr * math.cos(a), 880 + rr * math.sin(a)
+            d.ellipse((cx - 2, cyy - 2, cx + 2, cyy + 2), fill=(52, 58, 68))
+    return fechar(im, luz, com_arcos=False)
 
 
-def cena_noisy_tv_agentes() -> Image.Image:
-    """O U invertido da curiosidade — e o ponto onde só há ruído.
+def cena_noisy_tv_agentes():
+    """Uma tela de chuvisco acesa num quarto escuro, e o U invertido como arco.
 
-    A intensidade da curiosidade é 4·g·(1-g): zero quando não há lacuna, zero quando tudo é
-    lacuna, máxima no meio. A marca em vermelho é a lacuna-fantasma que o artigo mediu no
-    próprio agente (g = 0,177): ruído puro lido como sinal alto. A fórmula e o ponto saem
-    de `lib/content/inverted-u-chart.tsx` e do dataset — nada é desenhado a olho.
+    O artigo mede a armadilha da TV barulhenta: o agente fica preso diante de
+    ruído puro porque confunde imprevisibilidade com informação. A luz da tela
+    lava o quadro. O arco é a intensidade da curiosidade — máxima no meio, nula
+    nas pontas — com a marca no ponto de lacuna-fantasma que ele mediu.
     """
     bloco = ler_ts("data/artigos-charts-noisytv.ts", "noisytv-u-invertido")
     g_marca = float(re.search(r"g:\s*([\d.]+)", bloco).group(1))
-    intensidade = lambda g: 4 * g * (1 - g)
 
-    im, d = tela()
-    x0, y0, x1, y1 = 300, 200, 2120, 1060
-    ex = lambda g: x0 + g * (x1 - x0)
-    ey = lambda v: y1 - v * (y1 - y0)
+    im, d, luz, dl = abrir(41)
+    tx0, ty0, tx1, ty1 = 760, 330, 1640, 830
+    for y in range(ty0, ty1, 3):
+        for x in range(tx0, tx1, 3):
+            v = random.randint(20, 210)
+            d.rectangle((x, y, x + 2, y + 2), fill=(v, v, min(255, int(v * 1.05))))
+    d.rectangle((tx0 - 6, ty0 - 6, tx1 + 6, ty1 + 6), outline=(96, 108, 124), width=4)
+    halo(dl, (tx0 + tx1) / 2, (ty0 + ty1) / 2, 620, (170, 186, 210), forca=7)
 
-    d.line((x0, y1, x1, y1), fill="#24384c", width=5)
-    pontos = [(ex(i / 160), ey(intensidade(i / 160))) for i in range(161)]
-    d.line([p for xy in pontos for p in xy], fill=OURO_CLARO, width=10, joint="curve")
+    cx0, cx1, base, alt = 300, 2120, 1120, 520
+    pontos = [(cx0 + (i / 160) * (cx1 - cx0), base - 4 * (i / 160) * (1 - i / 160) * alt) for i in range(161)]
+    d.line([p for xy in pontos for p in xy], fill=(70, 86, 108), width=4, joint="curve")
+    xm = cx0 + g_marca * (cx1 - cx0)
+    ym = base - 4 * g_marca * (1 - g_marca) * alt
+    d.ellipse((xm - 13, ym - 13, xm + 13, ym + 13), fill=QUENTE)
+    halo(dl, xm, ym, 90, QUENTE, forca=4)
+    return fechar(im, luz, com_arcos=False)
 
-    xm, ym = ex(g_marca), ey(intensidade(g_marca))
-    d.line((xm, y1, xm, ym), fill=ALERTA, width=6)
-    d.ellipse((xm - 26, ym - 26, xm + 26, ym + 26), fill=ALERTA)
-    assinatura(d)
-    return im
 
+def cena_jogos_robos_humanoides_2026():
+    """Rastros de velocidade numa pista. Os curtos cruzaram a linha primeiro.
 
-def cena_jogos_robos_humanoides_2026() -> Image.Image:
-    """Os 100 m: a barra do recorde humano, e as que já ficaram mais curtas que ela.
-
-    Cada barra é um tempo da régua do artigo, com a cor do próprio grupo: a competição
-    oficial de 2026, o evento-teste que viralizou, o recorde de Usain Bolt e o vencedor da
-    edição de 2025. O fio branco é o Bolt, atravessando as outras. Sem número nenhum: os
-    tempos têm vírgula decimal, que muda de idioma — e a barra já diz quem é mais curto.
+    Cada rastro é um tempo da régua dos 100 m, com a cor do grupo a que pertence:
+    a competição oficial de 2026, o evento-teste que viralizou, o recorde humano e
+    o vencedor da edição de 2025. O fio claro é o recorde humano, e quatro rastros
+    terminam antes dele. Nenhum número: os tempos têm vírgula decimal.
     """
     bloco = ler_ts("data/artigos-charts.ts", "robos-2026-100m-reguas")
     itens = []
     for pedaco in bloco.split("color:")[1:]:
-        cor = re.match(r"\s*'(#\w+)'", pedaco).group(1)
-        for v in re.findall(r"value: ([\d.]+)", pedaco):
-            itens.append((float(v), cor))
+        cor = hexa(re.match(r"\s*'(#\w+)'", pedaco).group(1))
+        itens += [(float(v), cor) for v in re.findall(r"value: ([\d.]+)", pedaco)]
     itens.sort(key=lambda t: -t[0])
     maximo = max(v for v, _ in itens)
-    bolt = min(v for v, c in itens if c == "#64748b")
+    bolt = min(v for v, c in itens if c == hexa("#64748b"))
 
-    im, d = tela()
-    x0, larg = 300, 1820
-    topo, alt, vao = 250, 78, 42
+    im, d, luz, dl = abrir(100)
+    x0, larg, topo, vao = 260, 1840, 250, 104
     for i, (v, cor) in enumerate(itens):
-        y = topo + i * (alt + vao)
-        d.rectangle((x0, y, x0 + int(larg * v / maximo), y + alt), fill=cor)
-    x_bolt = x0 + int(larg * bolt / maximo)
-    d.line((x_bolt, topo - 46, x_bolt, topo + len(itens) * (alt + vao) - vao + 46), fill=TINTA, width=5)
-    assinatura(d)
-    return im
+        y = topo + i * vao
+        fim = x0 + larg * v / maximo
+        cor = suave(cor)
+        passo = (fim - x0) / 120
+        for k in range(120):
+            t = k / 120
+            x = x0 + (fim - x0) * t
+            h = 1.5 + 5.5 * t ** 3
+            c = tuple(int(cc * (0.06 + 0.94 * t ** 3)) for cc in cor)
+            d.rectangle((x, y - h / 2, x + passo + 1.5, y + h / 2), fill=c)
+        d.ellipse((fim - 9, y - 9, fim + 9, y + 9), fill=cor)
+        halo(dl, fim, y, 78, cor, forca=4)
+    x_bolt = x0 + larg * bolt / maximo
+    d.line((x_bolt, topo - 84, x_bolt, topo + len(itens) * vao - 28), fill=(178, 190, 206), width=3)
+    return fechar(im, luz)
 
 
-def cena_estatisticas_agentes_de_ia() -> Image.Image:
-    """Acharam que a IA os deixou 24% mais rápidos. O cronômetro marcou 19% mais lento.
+def cena_estatisticas_agentes_de_ia():
+    """Duas aparições e uma coluna sólida — só a sólida atravessa o horizonte.
 
-    O experimento da METR que o artigo usa mede três coisas na mesma tarefa: o tempo que os
-    desenvolvedores PREVIRAM antes, o tempo MEDIDO, e o que eles ESTIMARAM depois de terem
-    feito. Sem IA vale 100 — é o fio branco. As duas barras da crença ficam abaixo do fio; a
-    do cronômetro atravessa. Só inteiros: nenhum número aqui muda de idioma.
+    O experimento da METR mede a mesma tarefa três vezes: o tempo PREVISTO, o
+    MEDIDO no cronômetro e o ESTIMADO depois. Sem IA é o horizonte. As duas
+    crenças são fantasmas que param embaixo dele; a medição é sólida e passa.
     """
     bloco = ler_ts("data/artigos-charts.ts", "agentes-metr-percepcao")
-    valores = [int(float(v)) for v in re.findall(r"value: ([\d.]+)", bloco)]
+    valores = [int(v) for v in numeros(bloco, "value")]
     maximo = float(re.search(r"max:\s*([\d.]+)", bloco).group(1))
 
-    im, d = tela()
-    base_y, larg_barra, vao = 1030, 300, 150
-    largura = len(valores) * larg_barra + (len(valores) - 1) * vao
+    im, d, luz, dl = abrir(95)
+    base, alt_util = 1030, 740
+    larg, vao = 300, 170
+    largura = len(valores) * larg + (len(valores) - 1) * vao
     x0 = (LARGURA - largura) // 2
-    altura_util = 760
-    y_sem_ia = base_y - int(100 / maximo * altura_util)
+    y_horizonte = base - 100 / maximo * alt_util
 
     for i, v in enumerate(valores):
-        x = x0 + i * (larg_barra + vao)
-        topo = base_y - int(v / maximo * altura_util)
-        cor = ALERTA if v > 100 else OURO_CLARO
-        d.rectangle((x, topo, x + larg_barra, base_y), fill=cor)
-        numero(d, (x + larg_barra / 2, topo - 52), str(v), 62, cor, ancora="mm")
-
-    # O fio da tarefa sem IA: a régua contra a qual as três medidas se leem.
-    d.line((x0 - 130, y_sem_ia, x0 + largura + 130, y_sem_ia), fill=TINTA, width=6)
-    numero(d, (x0 + largura + 150, y_sem_ia), "100", 44, TINTA, ancora="lm")
-    d.line((x0 - 130, base_y, x0 + largura + 130, base_y), fill="#24384c", width=4)
-    assinatura(d)
-    return im
+        x = x0 + i * (larg + vao)
+        topo = base - v / maximo * alt_util
+        if v > 100:
+            d.rectangle((x, topo, x + larg, base), fill=(46, 30, 26))
+            d.rectangle((x, topo, x + larg, topo + 7), fill=QUENTE)
+            halo(dl, x + larg / 2, topo + 90, larg * 0.9, QUENTE, forca=5)
+        else:
+            for k in range(26):
+                yy = topo + (base - topo) * k / 26
+                d.rectangle((x, yy, x + larg, yy + 3), fill=(44, 54, 68))
+            d.rectangle((x, topo, x + larg, topo + 3), fill=(88, 104, 124))
+    d.line((x0 - 150, y_horizonte, x0 + largura + 150, y_horizonte), fill=(160, 172, 188), width=4)
+    return fechar(im, luz)
 
 
 CENAS = {
+    "glm-5-3": cena_glm_5_3,
     "ia-local-por-vram": cena_ia_local_por_vram,
-    "recusa-que-parou-o-estudo-das-recusas": cena_recusa_que_parou_o_estudo_das_recusas,
     "carta-ciberdefesa-openai": cena_carta_ciberdefesa_openai,
     "ninguem-provou-meta-le-whatsapp": cena_ninguem_provou_meta_le_whatsapp,
+    "recusa-que-parou-o-estudo-das-recusas": cena_recusa_que_parou_o_estudo_das_recusas,
     "benchmark-harness-modelo": cena_benchmark_harness_modelo,
-    "glm-5-3": cena_glm_5_3,
     "2026-07-24-claude-opus-5": cena_2026_07_24_claude_opus_5,
     "deepseek-v4-flash-0731": cena_deepseek_v4_flash_0731,
     "noisy-tv-agentes": cena_noisy_tv_agentes,
@@ -524,35 +527,35 @@ CENAS = {
     "estatisticas-agentes-de-ia": cena_estatisticas_agentes_de_ia,
 }
 
-# Um artigo tem DUAS capas: a arte pt-BR com texto (de outra sessão) fica, e a capa muda
-# atende en/es/it/he. Só por isso o nome de saída é parametrizado.
+# Um artigo tem DUAS capas: a arte pt-BR com texto (de outra sessao) fica, e a capa
+# muda atende en/es/it/he. So por isso o nome de saida e parametrizado.
 NOME_BASE = {"estatisticas-agentes-de-ia": "hero-mudo"}
 
 
-def main() -> int:
+def main():
     argv = sys.argv[1:]
     amostra = None
     if "--amostra" in argv:
         i = argv.index("--amostra")
         amostra = Path(argv[i + 1])
         amostra.mkdir(parents=True, exist_ok=True)
-        argv = argv[:i] + argv[i + 2 :]
+        argv = argv[:i] + argv[i + 2:]
 
-    alvos = argv or list(CENAS)
-    for slug in alvos:
+    for slug in argv or list(CENAS):
         if slug not in CENAS:
-            sys.exit(f"sem cena para '{slug}' — as que existem: {', '.join(CENAS)}")
+            sys.exit("sem cena para '%s' — as que existem: %s" % (slug, ", ".join(CENAS)))
         im = CENAS[slug]()
         if amostra:
-            destino = amostra / f"{slug}.png"
+            destino = amostra / ("%s.png" % slug)
             im.save(destino)
-            print(f"{destino}  {destino.stat().st_size / 1024:.0f} KB")
+            print("%s  %.0f KB" % (destino, destino.stat().st_size / 1024))
             continue
-        bruto = RAIZ / f".capa-bruta-{slug}.png"
+        bruto = RAIZ / (".capa-bruta-%s.png" % slug)
         im.save(bruto)
         try:
             r = subprocess.run(
-                [sys.executable, str(RAIZ / "scripts/artigos/publicar-capa.py"), slug, str(bruto), NOME_BASE.get(slug, "hero")],
+                [sys.executable, str(RAIZ / "scripts/artigos/publicar-capa.py"), slug, str(bruto),
+                 NOME_BASE.get(slug, "hero")],
                 check=False,
             )
         finally:
