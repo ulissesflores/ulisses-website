@@ -259,7 +259,7 @@ Tieni a mente la domanda qui sopra. Ora andiamo ai documenti.
 
 Il **25 febbraio 2026** WhatsApp ha pubblicato una nuova versione del suo documento tecnico sulla
 crittografia. È un documento pubblico, ospitato da Meta stessa, e quasi nessuno lo rilegge. Vale la pena
-rileggerlo, perché ha guadagnato una sezione che non era mai esistita prima: **"Definire la crittografia
+rileggerlo accanto alle versioni precedenti, per via di una sezione intitolata **"Definire la crittografia
 end-to-end"**.
 
 Comincia così:
@@ -271,42 +271,67 @@ Comincia così:
 > that remain encrypted from a device controlled by the sender to one controlled by the recipient, where no
 > third parties, not even WhatsApp or our parent company Meta, can access the content in between."*</sub>
 
-Letta da sola, è la promessa più forte che l'azienda abbia mai fatto per iscritto, ed è del **2026**, non
-del 2016. Chi si aspettava di trovare qui una garanzia cancellata resterà deluso: nulla è stato cancellato.
-Il documento è **quadruplicato** dalla prima versione, da 432 a 2.035 righe, e la frase classica sul server
-che non ha accesso alle chiavi private è ancora lì, in un'altra sezione. Io ci sono andato proprio
-aspettandomi di trovare una cancellazione, e non l'ho trovata. Va detto.
+Letta da sola, è la promessa più forte che l'azienda abbia mai fatto per iscritto, e non è del 2016. Chi si
+aspettava di trovare qui una garanzia cancellata resterà deluso: nulla è stato cancellato. Il documento è
+**quadruplicato** dalla prima versione, da 432 a 2.035 righe, e la frase classica sul server che non ha
+accesso alle chiavi private è ancora lì, in un'altra sezione. Io ci sono andato proprio aspettandomi di
+trovare una cancellazione, e non l'ho trovata. Va detto.
 
-Quello che è cambiato non è ciò che è sparito. È **chi definisce la parola**.
+E va detto anche altro, perché ci ho sbagliato io stesso nella prima versione di questo testo: **quella
+sezione non è nata nel 2026.** C'era già il **22 ottobre 2020**, con la stessa definizione, nella terza
+revisione del documento. È sopravvissuta per caso: è diventata allegato di un procedimento giudiziario in
+India. Le revisioni intermedie tra il 2020 e il 2026 sono sparite dalla rete: l'archivio pubblico di internet
+conserva catture del 2016 e del 2017 e poi più nulla fino alla versione viva. L'unico motivo per cui oggi si
+può leggere la versione del 2020 è che un tribunale ne ha ordinato il deposito agli atti.
+
+Questo non indebolisce l'argomento. Sposta l'orologio all'indietro: **la penna ha cambiato padrone nel 2020, e
+ci sono voluti cinque anni perché qualcuno se ne accorgesse.**
+
+Quello che è cambiato non è ciò che è sparito. È **chi definisce la parola** e, poi, **quanta gente la
+definizione lascia fuori**.
 
 Fino al 2017 il documento affermava un risultato sul mondo: i terzi e WhatsApp *non riescono a leggere* i
-messaggi, e *tutti* i tipi di messaggio sono protetti. Nel 2026 afferma una **definizione dell'azienda** e,
-subito sotto, elenca ciò che **essa non considera** end-to-end:
+messaggi, e *tutti* i tipi di messaggio sono protetti. Dal 2020 afferma una **definizione dell'azienda**,
+seguita da un elenco di ciò che **essa non considera** end-to-end. Nel 2020 quell'elenco aveva una sola voce,
+e stretta: l'azienda che affida la gestione della propria assistenza commerciale a un fornitore esterno —
+incluso, diceva il testo, se quel fornitore è Facebook. Bancone di negozio, non conversazione tra persone.
+
+Sei anni dopo, lo stesso elenco dice un'altra cosa:
 
 > "WhatsApp **non considera** le comunicazioni con i servizi Meta, o le comunicazioni con aziende che usano
 > la Cloud API, come cifrate end-to-end."
 > <sub>Traduzione nostra. Originale: *"WhatsApp does not consider communications with Meta services, or
 > communications with businesses using Cloud API, to be end-to-end encrypted."*</sub>
 
-Rileggi, piano. **Esiste oggi una classe di conversazione dentro WhatsApp che l'azienda stessa dichiara non
+Rileggi, piano, e confronta con il 2020. L'eccezione **ha lasciato il bancone commerciale ed è entrata nella
+conversazione**. Dove prima si leggeva "azienda che esternalizza l'assistenza", oggi si legge "servizi Meta":
+una categoria che arriva alla conversazione comune con l'intelligenza artificiale dell'azienda dentro
+l'applicazione. **Esiste oggi una classe di conversazione dentro WhatsApp che l'azienda stessa dichiara non
 protetta end-to-end.** Non è ipotetica, non dipende da una cospirazione, e ha un nome di prodotto e una data
-di lancio: qualsiasi conversazione con l'intelligenza artificiale di Meta dentro l'applicazione, e qualsiasi
-assistenza commerciale gestita tramite la API cloud dell'azienda.
+di lancio.
+
+Con una precisazione che porta lo stesso calendario di maggio, ed è giusto registrarla: il **13 maggio 2026**
+Meta ha lanciato la **modalità anonima** di conversazione con la sua IA, su un'architettura di enclave che
+chiama Elaborazione Privata e che, secondo il progetto pubblicato, impedisce all'azienda stessa di leggere il
+contenuto. Non è la crittografia end-to-end tra due persone: è un'altra cosa, e dipende esattamente dalla
+stessa fiducia nel client chiuso di cui parla questo testo. Ma la distinzione conta: **la conversazione comune
+con l'IA è fuori dall'end-to-end per dichiarazione dell'azienda; quella in modalità anonima ha una protezione
+propria, di altra natura.**
 
 <ArticleFigure
   src="/artigos/ninguem-provou-meta-le-whatsapp/fig-06.png"
   width="2352"
-  height="1881"
-  alt="Linea del tempo su due colonne. Nel 2016 e nel 2017 il documento affermava che i terzi e WhatsApp non riescono a leggere, senza eccezioni, in 432 righe. Nel 2026 definisce il termine per conto proprio, elenca ciò che non considera end-to-end, e conta 2.035 righe."
-  caption="Figura 6. Da garanzia senza qualificazione a definizione propria con lista di eccezioni. Nulla è stato cancellato: è cambiato chi tiene la penna."
+  height="1641"
+  alt="Linea del tempo su tre colonne. Nel 2016 e nel 2017 il documento affermava che i terzi e WhatsApp non riescono a leggere, senza eccezioni, in 432 righe. Nel 2020 comincia a definire il termine per conto proprio e apre un'eccezione stretta, per l'azienda che esternalizza la propria assistenza commerciale. Nel 2026 la stessa eccezione arriva ai servizi Meta e alla Cloud API, e il documento conta 2.035 righe."
+  caption="Figura 6. Da garanzia senza qualificazione a definizione propria con lista di eccezioni. La penna cambia padrone nel 2020; nel 2026 l'eccezione lascia il bancone commerciale e arriva alla conversazione."
 />
 
 L'intero dibattito sta guardando un fantasma — una chiave segreta che nessuno ha visto — e non si è accorto
 che un ospite documentato è entrato dalla porta principale, con il tesserino, e ha firmato il registro dei
 visitatori.
 
-C'è inoltre una riserva nuova e letterale nello stesso documento: quando un'azienda delega la gestione del
-suo account commerciale a un fornitore, "quel fornitore avrà accesso alle sue chiavi private, **incluso se
+C'è inoltre la riserva letterale ereditata dal 2020, ancora nel documento del 2026: quando un'azienda delega
+la gestione del suo account commerciale a un fornitore, "quel fornitore avrà accesso alle sue chiavi private, **incluso se
 quel fornitore è Meta**", anche se quelle chiavi "continueranno a non essere memorizzate sul server delle
 chat di WhatsApp" (traduzione nostra; nell'originale, *"including if that vendor is Meta"* e *"However,
 these private keys will still not be stored on the WhatsApp chat server"*). Questo vale per l'utente
@@ -610,7 +635,10 @@ l'altro ci sono un compilatore, uno store di applicazioni e una firma digitale.
   caption="Figura 10. Il treppiede. Chiedere solo il primo gradino è chiedere il teatro."
 />
 
-Nessuno dei tre è utopico. Signal fa tutti e tre su Android, ed è onesto registrare che **non lo fa** su iOS.
+Nessuno dei tre è utopico. Signal **rende possibili tutti e tre** su Android: pubblica il codice, permette la
+compilazione riproducibile e, così, lascia che chiunque — non un revisore su contratto — verifichi la versione
+consegnata. È verificabilità aperta, non revisione permanente, e la differenza conta. È onesto registrare
+anche che **non lo fa** su iOS.
 Meta stessa ha già dimostrato di saperlo fare: WhatsApp Web pubblica un manifesto di hash che permette di
 verificare che il codice servito sia lo stesso per tutti; e ad agosto 2026, lanciando un rilevatore di truffe che
 gira dentro il dispositivo, ha pubblicato i pesi del modello e un registro pubblico delle versioni,
@@ -642,6 +670,15 @@ ipotesi, una promessa aziendale. Le promesse aziendali si revocano.
 L'8 maggio 2026 una di esse lo è stata.
 
 ---
+
+**Rettifica del 02/09/2026.** La prima versione di questo testo affermava che la sezione "Definire
+la crittografia end-to-end" fosse stata introdotta nel documento del 25 febbraio 2026. È sbagliato:
+era già presente nella revisione del **22 ottobre 2020**, con la stessa definizione e già con
+un'eccezione commerciale. Ciò che il 2026 ha aggiunto è l'**ampliamento** di quell'eccezione ai
+"servizi Meta" e alla Cloud API. La sezione 4 è stata riscritta, la Figura 6 rifatta, ed è stata
+aggiunta la precisazione sulla modalità anonima di conversazione con l'IA di Meta, del 13 maggio
+2026. L'errore era verificabile nel dossier stesso di questo testo e non è stato visto alla prima
+verifica.
 
 *Reportage condotto su fonti primarie: documenti tecnici di WhatsApp dal 2016 al 2026, catture archiviate e
 lettura diretta del centro assistenza di Instagram, codice del client ufficiale, decisione della Commissione

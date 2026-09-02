@@ -255,8 +255,8 @@ que el programa de tu teléfono realmente hace?**
 Guardá la pregunta de arriba. Ahora vamos a los documentos.
 
 El **25 de febrero de 2026**, WhatsApp publicó una nueva versión de su informe técnico de cifrado. Es un
-documento público, alojado por la propia Meta, y casi nadie lo relee. Vale releerlo, porque ganó una sección
-que nunca había existido antes: **"Definiendo el cifrado de extremo a extremo"**.
+documento público, alojado por la propia Meta, y casi nadie lo relee. Vale releerlo al lado de las versiones
+anteriores, por una sección llamada **"Definiendo el cifrado de extremo a extremo"**.
 
 Empieza así:
 
@@ -267,41 +267,67 @@ Empieza así:
 > that remain encrypted from a device controlled by the sender to one controlled by the recipient, where no
 > third parties, not even WhatsApp or our parent company Meta, can access the content in between."*</sub>
 
-Leída sola, es la promesa más fuerte que la empresa hizo jamás por escrito, y es de **2026**, no de 2016.
-Quien esperaba encontrar acá una garantía borrada se va a decepcionar: nada fue borrado. El documento
-**cuadruplicó** desde la primera versión, de 432 a 2.035 líneas, y la frase clásica sobre que el servidor no
-tiene acceso a las llaves privadas sigue ahí, en otra sección. Yo fui detrás de eso justamente esperando
-encontrar un borrado, y no lo encontré. Hay que decirlo.
+Leída sola, es la promesa más fuerte que la empresa hizo jamás por escrito, y no es de 2016. Quien esperaba
+encontrar acá una garantía borrada se va a decepcionar: nada fue borrado. El documento **cuadruplicó** desde
+la primera versión, de 432 a 2.035 líneas, y la frase clásica sobre que el servidor no tiene acceso a las
+llaves privadas sigue ahí, en otra sección. Yo fui detrás de eso justamente esperando encontrar un borrado, y
+no lo encontré. Hay que decirlo.
 
-Lo que cambió no es lo que desapareció. Es **quién define la palabra**.
+Y hay que decir algo más, porque yo mismo me equivoqué en esto en la primera versión de este texto: **esa
+sección no nació en 2026.** Ya estaba ahí el **22 de octubre de 2020**, con la misma definición, en la tercera
+revisión del informe. Sobrevivió por accidente: se volvió anexo de un proceso judicial en la India. Las
+revisiones intermedias entre 2020 y 2026 salieron del aire: el archivo público de internet guarda capturas de
+2016 y 2017 y después nada hasta la versión viva. La única razón por la que hoy se puede leer la versión de
+2020 es que un tribunal mandó agregarla al expediente.
+
+Esto no debilita el argumento. Corre el reloj para atrás: **la lapicera cambió de dueño en 2020, y llevó cinco
+años que alguien lo notara.**
+
+Lo que cambió no es lo que desapareció. Es **quién define la palabra** y, después, **a cuánta gente deja
+afuera la definición**.
 
 Hasta 2017, el documento afirmaba un resultado sobre el mundo: los terceros y WhatsApp *no consiguen leer* los
-mensajes, y *todos* los tipos de mensaje están protegidos. En 2026 afirma una **definición de la empresa**, y
-justo abajo lista lo que **ella no considera** de extremo a extremo:
+mensajes, y *todos* los tipos de mensaje están protegidos. Desde 2020 pasa a afirmar una **definición de la
+empresa**, seguida de una lista de lo que **ella no considera** de extremo a extremo. En 2020 esa lista tenía
+un solo ítem, y era estrecho: la empresa que le entrega la operación de su atención comercial a un proveedor
+tercerizado, incluso, decía el texto, si ese proveedor es Facebook. Mostrador de local, no conversación de
+gente.
+
+Seis años después, la misma lista dice otra cosa:
 
 > "WhatsApp **no considera** las comunicaciones con servicios de Meta, ni las comunicaciones con empresas que
 > usan la Cloud API, como cifradas de extremo a extremo."
 > <sub>Traducción nuestra. Original: *"WhatsApp does not consider communications with Meta services, or
 > communications with businesses using Cloud API, to be end-to-end encrypted."*</sub>
 
-Leelo de nuevo, despacio. **Existe hoy una clase de conversación dentro de WhatsApp que la propia empresa
-declara que no está protegida de extremo a extremo.** No es hipotética, no depende de conspiración, y tiene
-nombre de producto y fecha de lanzamiento: cualquier conversación con la inteligencia artificial de Meta
-dentro de la aplicación, y cualquier atención comercial operada por la API de nube de la empresa.
+Leelo de nuevo, despacio, y comparalo con 2020. La excepción **salió del mostrador comercial y entró en la
+conversación**. Donde antes se leía "empresa que terceriza la atención", hoy se lee "servicios de Meta": una
+categoría que alcanza la conversación común con la inteligencia artificial de la empresa dentro de la
+aplicación. **Existe hoy una clase de conversación dentro de WhatsApp que la propia empresa declara que no
+está protegida de extremo a extremo.** No es hipotética, no depende de conspiración, y tiene nombre de
+producto y fecha de lanzamiento.
+
+Con una salvedad que trae el propio calendario de mayo, y que es justo registrar: el **13 de mayo de 2026**
+Meta lanzó el **modo anónimo** de conversación con su IA, sobre una arquitectura de enclave que llama
+Procesamiento Privado y que, según el diseño publicado, impide que la propia empresa lea el contenido. No es
+el cifrado de extremo a extremo entre dos personas: es otra cosa, y depende exactamente de la misma confianza
+en el cliente cerrado de la que trata este texto. Pero la distinción importa: **la conversación común con la
+IA está fuera del cifrado de extremo a extremo por declaración de la empresa; la del modo anónimo tiene una
+protección propia, de otra naturaleza.**
 
 <ArticleFigure
   src="/artigos/ninguem-provou-meta-le-whatsapp/fig-06.png"
   width="2352"
-  height="1881"
-  alt="Línea de tiempo en dos columnas. En 2016 y 2017 el informe afirmaba que los terceros y WhatsApp no consiguen leer, sin excepciones, en 432 líneas. En 2026 define el término por cuenta propia, lista lo que no considera de extremo a extremo, y tiene 2.035 líneas."
-  caption="Figura 6. De garantía sin calificación a definición propia con lista de excepciones. Nada fue borrado: cambió quién tiene la lapicera."
+  height="1641"
+  alt="Línea de tiempo en tres columnas. En 2016 y 2017 el informe afirmaba que los terceros y WhatsApp no consiguen leer, sin excepciones, en 432 líneas. En 2020 pasa a definir el término por cuenta propia y abre una excepción estrecha, para la empresa que terceriza su atención comercial. En 2026 la misma excepción alcanza los servicios de Meta y la Cloud API, y el documento tiene 2.035 líneas."
+  caption="Figura 6. De garantía sin calificación a definición propia con lista de excepciones. La lapicera cambia de dueño en 2020; en 2026 la excepción sale del mostrador comercial y alcanza la conversación."
 />
 
 El debate entero está mirando a un fantasma —una llave secreta que nadie vio— y no notó que un invitado
 documentado entró por la puerta del frente, con credencial, y firmó el libro de visitas.
 
-Hay además una salvedad nueva y literal en el mismo documento: cuando una empresa delega la operación de su
-cuenta comercial a un proveedor, "ese proveedor tendrá acceso a las llaves privadas de ella, **incluso si ese
+Está además la salvedad literal heredada de 2020, todavía en el documento de 2026: cuando una empresa delega
+la operación de su cuenta comercial a un proveedor, "ese proveedor tendrá acceso a las llaves privadas de ella, **incluso si ese
 proveedor es Meta**", aunque esas llaves "sigan sin ser almacenadas en el servidor de conversaciones de
 WhatsApp" (traducción nuestra; en el original, *"including if that vendor is Meta"* y *"However, these private
 keys will still not be stored on the WhatsApp chat server"*). Eso vale para usuario **empresarial**, nunca
@@ -598,7 +624,10 @@ compilador, una tienda de aplicaciones y una firma digital.
   caption="Figura 10. El trípode. Pedir solo el primer escalón es pedir el teatro."
 />
 
-Ninguno de los tres es utópico. Signal hace los tres en Android, y es honesto registrar que **no lo hace** en iOS. La
+Ninguno de los tres es utópico. Signal **vuelve los tres posibles** en Android: publica el código, permite la
+compilación reproducible y, con eso, deja que cualquier persona —no un auditor contratado— verifique la versión
+que se entregó. Es verificabilidad abierta, no auditoría permanente, y la diferencia importa. Es honesto
+registrar también que **no lo hace** en iOS. La
 propia Meta ya probó que sabe: WhatsApp Web publica un manifiesto de hashes que permite verificar que el código servido
 es el mismo para todo el mundo; y en agosto de 2026, al lanzar un detector de estafas que corre dentro del aparato,
 publicó los pesos del modelo y un registro público de las versiones, una arquitectura que vuelve imposible entregar un
@@ -630,6 +659,14 @@ corporativa. Las promesas corporativas se revocan.
 El 8 de mayo de 2026, una de ellas lo fue.
 
 ---
+
+**Corrección del 02/09/2026.** La primera versión de este texto afirmaba que la sección "Definiendo
+el cifrado de extremo a extremo" se había introducido en el informe del 25 de febrero de 2026. Es
+falso: ya figuraba en la revisión del **22 de octubre de 2020**, con la misma definición y ya con una
+excepción comercial. Lo que 2026 añadió fue la **ampliación** de esa excepción a los "servicios de
+Meta" y a la Cloud API. Se reescribió la sección 4, se rehízo la Figura 6 y se añadió la salvedad
+sobre el modo anónimo de conversación con la IA de Meta, del 13 de mayo de 2026. El error era
+verificable en el propio dossier de este texto y no se vio en la primera comprobación.
 
 *Reportaje elaborado con fuentes primarias: informes técnicos de WhatsApp de 2016 a 2026, capturas archivadas y lectura
 directa del centro de ayuda de Instagram, código del cliente oficial, decisión de la Comisión Europea de 2017, autos de

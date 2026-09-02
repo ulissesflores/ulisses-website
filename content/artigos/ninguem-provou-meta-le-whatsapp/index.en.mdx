@@ -253,8 +253,8 @@ you know what the program on your phone actually does?**
 Hold on to that question. Now let us go to the documents.
 
 On **25 February 2026**, WhatsApp published a new version of its technical encryption whitepaper. It is a
-public document, hosted by Meta itself, and almost nobody re-reads it. It is worth re-reading, because it
-gained a section that had never existed before: **"Defining End-to-End Encryption"**.
+public document, hosted by Meta itself, and almost nobody re-reads it. It is worth re-reading side by side
+with the earlier versions, because of a section called **"Defining End-to-End Encryption"**.
 
 It begins like this:
 
@@ -262,39 +262,64 @@ It begins like this:
 > controlled by the sender to one controlled by the recipient, where no third parties, **not even
 > WhatsApp or our parent company Meta**, can access the content in between."
 
-Read on its own, it is the strongest promise the company has ever made in writing — and it is from
-**2026**, not 2016. Anyone hoping to find an erased guarantee here will be disappointed: nothing was
-erased. The document has **quadrupled** since the first version, from 432 to 2,035 lines, and the classic
-sentence about the server having no access to private keys is still there, in another section. I went
-looking precisely expecting to find an erasure, and I did not find one. That needs to be said.
+Read on its own, it is the strongest promise the company has ever made in writing — and it is not from
+2016. Anyone hoping to find an erased guarantee here will be disappointed: nothing was erased. The document
+has **quadrupled** since the first version, from 432 to 2,035 lines, and the classic sentence about the
+server having no access to private keys is still there, in another section. I went looking precisely
+expecting to find an erasure, and I did not find one. That needs to be said.
 
-What changed is not what disappeared. It is **who defines the word**.
+And something else needs to be said, because I got it wrong myself in the first version of this piece:
+**that section was not born in 2026.** It was already there on **22 October 2020**, with the same
+definition, in the third revision of the whitepaper. It survived by accident: it became an exhibit in a
+court case in India. The intervening revisions between 2020 and 2026 went offline — the public web archive
+holds captures from 2016 and 2017 and then nothing until the live version. The only reason the 2020 text
+can be read today is that a court ordered it filed into the record.
+
+This does not weaken the argument. It moves the clock backwards: **the pen changed hands in 2020, and it
+took five years for anyone to notice.**
+
+What changed is not what disappeared. It is **who defines the word** — and then **how many people the
+definition leaves out**.
 
 Until 2017, the document asserted a result about the world: third parties and WhatsApp *cannot read* the
-messages, and *all* message types are protected. In 2026, it asserts a **company definition** — and, right
-below it, lists what **it does not consider** end-to-end:
+messages, and *all* message types are protected. From 2020 on, it asserts a **company definition**,
+followed by a list of what **it does not consider** end-to-end. In 2020 that list had a single item, and a
+narrow one: the business that hands the running of its commercial support to an outside vendor —
+including, the text said, if that vendor is Facebook. A shop counter, not a conversation between people.
+
+Six years later, the same list says something else:
 
 > "WhatsApp **does not consider** communications with Meta services, or communications with businesses
 > using Cloud API, to be end-to-end encrypted."
 
-Read that again, slowly. **There is today a class of conversation inside WhatsApp that the company itself
-declares is not end-to-end protected.** It is not hypothetical, it does not depend on a conspiracy, and it
-has a product name and a launch date: any conversation with Meta's artificial intelligence inside the app,
-and any commercial support operated through the company's cloud API.
+Read that again, slowly, and compare it with 2020. The exception **left the shop counter and walked into
+the conversation**. Where it used to read "a business that outsources its support", it now reads "Meta
+services" — a category that reaches the ordinary conversation with the company's artificial intelligence
+inside the app. **There is today a class of conversation inside WhatsApp that the company itself declares
+is not end-to-end protected.** It is not hypothetical, it does not depend on a conspiracy, and it has a
+product name and a launch date.
+
+With one caveat that May's own calendar supplies, and that it is only fair to record: on **13 May 2026**
+Meta launched an **incognito mode** for chats with its AI, built on an enclave architecture it calls
+Private Processing, which, according to the published design, prevents the company itself from reading the
+content. It is not end-to-end encryption between two people — it is a different thing, and it rests on
+exactly the same trust in a closed client that this piece is about. But the distinction matters: **the
+ordinary chat with the AI is outside E2EE by the company's own declaration; the incognito one has a
+protection of its own, of a different kind.**
 
 <ArticleFigure
   src="/artigos/ninguem-provou-meta-le-whatsapp/fig-06.png"
   width="2352"
-  height="1881"
-  alt="Timeline in two columns. In 2016 and 2017 the whitepaper stated that third parties and WhatsApp cannot read, with no exceptions, in 432 lines. In 2026 it defines the term on its own, lists what it does not consider end to end, and runs to 2,035 lines."
-  caption="Figure 6. From an unqualified guarantee to a self-written definition with a list of exceptions. Nothing was erased — what changed is who holds the pen."
+  height="1641"
+  alt="Timeline in three columns. In 2016 and 2017 the whitepaper stated that third parties and WhatsApp cannot read, with no exceptions, in 432 lines. In 2020 it starts defining the term on its own and opens a narrow exception, for the business that outsources its commercial support. In 2026 the same exception reaches Meta services and Cloud API, and the document runs to 2,035 lines."
+  caption="Figure 6. From an unqualified guarantee to a self-written definition with a list of exceptions. The pen changes hands in 2020; in 2026 the exception leaves the shop counter and reaches the conversation."
 />
 
 The whole debate is staring at a ghost — a secret key nobody has seen — and has failed to notice that a
 documented guest walked in through the front door, wearing a badge, and signed the visitors' book.
 
-There is also a new and literal caveat in the same document: when a business delegates the operation of its
-commercial account to a vendor, "that vendor will have access to their private keys — **including if that
+There is also the literal caveat inherited from 2020, still in the 2026 document: when a business delegates
+the operation of its commercial account to a vendor, "that vendor will have access to their private keys — **including if that
 vendor is Meta**". The document adds, in the same breath: "However, these private keys will still not be
 stored on the WhatsApp chat server." That applies to **business** users, never to ordinary ones — and it is only honest to record the difference. But the
 direction of travel is unambiguous: a universal promise became a map of exceptions.
@@ -572,8 +597,10 @@ other sit a compiler, an app store and a digital signature.
   caption="Figure 10. The tripod. Asking only for the first step is asking for the theatre."
 />
 
-None of the three is utopian. Signal does all three on Android — and it is only honest to record that it does
-**not** on iOS. Meta itself has already proved it knows how: WhatsApp Web publishes a manifest of hashes that
+None of the three is utopian. Signal **makes all three possible** on Android: it publishes the code, allows
+a reproducible build and, through that, lets anyone — not a contracted auditor — check the version that was
+shipped. That is open verifiability, not permanent auditing, and the difference matters. It is only honest
+to record that **it does not do this on iOS**. Meta itself has already proved it knows how: WhatsApp Web publishes a manifest of hashes that
 allows anyone to check that the code served is the same for everybody; and in August 2026, when launching a
 scam detector that runs on the device, it published the model weights and a public log of the versions — an
 architecture that makes it impossible to deliver a model targeted at one specific person.
@@ -604,6 +631,14 @@ corporate promise. Corporate promises are revoked.
 On 8 May 2026, one of them was.
 
 ---
+
+**Correction, 2 September 2026.** The first version of this piece claimed that the section
+"Defining End-to-End Encryption" had been introduced in the 25 February 2026 whitepaper. That is
+wrong: it was already there in the revision of **22 October 2020**, with the same definition and
+already carrying a commercial exception. What 2026 added was the **widening** of that exception to
+"Meta services" and Cloud API. Section 4 has been rewritten, Figure 6 redrawn, and a caveat added
+about the incognito mode for chats with Meta AI, launched on 13 May 2026. The error was verifiable
+in this piece's own dossier and was missed on first reporting.
 
 *Reported from primary sources: WhatsApp technical whitepapers from 2016 to 2026, archived captures and direct
 reading of the Instagram help centre, the official client's code, the 2017 European Commission decision, the
