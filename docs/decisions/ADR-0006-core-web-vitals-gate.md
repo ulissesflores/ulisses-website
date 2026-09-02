@@ -134,9 +134,23 @@ entirely — measured 3449 ms against 3438 ms with `swap`. No effect; the change
 reverted. A second candidate, the `animate-fade-in-up` class on the home hero, is a dead
 class: no `@keyframes` of that name exists in the built CSS.
 
-**Still open.** `/` and the article page remain text-LCP with ~3 s of render delay while
-FCP is 1.4 s, Speed Index 1.5 s, TBT 1 ms and main-thread work 0.3 s — a page that looks
-finished long before Lighthouse credits the LCP. Neither fonts nor CPU explain it. The
-next step is not another lab guess: `@vercel/speed-insights` has been collecting field
-LCP since before this ADR, and the field p75 decides whether this is a real user problem
-or an artifact of Lantern's simulated throttling.
+**Resolved by the field, same day.** `/` and the article page remain text-LCP with ~3 s of
+render delay in the lab while FCP is 1.4 s, Speed Index 1.5 s, TBT 1 ms and main-thread work
+0.3 s — a page that looks finished long before Lighthouse credits the LCP. Neither fonts nor
+CPU explain it, so the tie was broken by the field rather than by another lab guess. Speed
+Insights, p75, production, last 7 days:
+
+| device | RES | FCP | LCP | INP | CLS | sample |
+|---|---|---|---|---|---|---|
+| mobile | 96 | 2.22 s | **2.22 s** | 104 ms | 0 | ~24 events — thin, treat as indicative |
+| desktop | 90 | 2.40 s | **2.60 s** | **256 ms** | 0 | ~450 events — the solid series |
+
+Real mobile users are already under the 2.5 s LCP target; the 3.4 s the lab reports is
+Lantern's simulated slow-4G-plus-4×-CPU, which is harsher than this audience. The lab
+threshold therefore stays what this ADR always called it — a regression ceiling, not a user
+target — and chasing the lab number further would optimise for a simulation.
+
+The one metric that is amber in the field is desktop **INP at 256 ms**, above the 200 ms
+target. That is exactly the metric deviation 1 above says the lab cannot produce: it needs
+real interaction. Whatever comes next on performance should start there, and it cannot be
+driven by this gate.
