@@ -7,6 +7,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Fixed — LCP: a capa preguiçosa e o redirect que o gate media (gap G8, parcial)
+
+- `app/[locale]/artigos/page.tsx` — a PRIMEIRA capa do hub recebe `priority`; ela é o
+  elemento de LCP da página no mobile e carregava com o `loading="lazy"` do `next/image`.
+- `lighthouserc.json` — as 3 URLs medidas passam à forma canônica (sem o prefixo `/pt-br`,
+  que 301 para ela). O `redirects` do próprio Lighthouse cobrava 602 ms em todas as 9
+  rodadas — latência que nenhum visitante paga.
+- Limiar de erro do LCP desce de 4500 ms para 3800 ms, acompanhando o baseline novo.
+- LCP mediano: `/artigos` 4118 -> 2859 ms (−31 %), `/` 3589 -> 3438 ms, artigo 3510 -> 3359 ms.
+  Detalhes e a hipótese de fonte REFUTADA por medição em `docs/decisions/ADR-0006-core-web-vitals-gate.md`.
+
 ### Added — Core Web Vitals: gate de laboratório (gap G1)
 
 - `lighthouserc.json` — Lighthouse CI sobre o build SSG (`next start` na porta 4173),

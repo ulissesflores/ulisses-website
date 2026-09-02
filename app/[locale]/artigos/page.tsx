@@ -135,7 +135,7 @@ export default async function ArtigosPage({ params }: PageProps) {
 
       <main className='max-w-4xl mx-auto px-6 py-16'>
         <section className='space-y-4'>
-          {artigosByDateDesc.map((artigo) => (
+          {artigosByDateDesc.map((artigo, index) => (
             <article
               key={artigo.slug}
               className='p-6 rounded-xl bg-neutral-900/40 border border-neutral-800 hover:border-brand-gold/40 transition-colors'
@@ -145,9 +145,11 @@ export default async function ArtigosPage({ params }: PageProps) {
                 desenhado dentro dela, então o mapa por locale é quem manda (mesma regra
                 do detalhe). Card sem capa continua só texto: um placeholder genérico
                 repetido 18 vezes é pior que a ausência dele.
-                Sem `priority`: são miniaturas, e a primeira dobra desta página é o
-                cabeçalho, não o primeiro card. Os 800px do `sizes` são a largura MEDIDA
-                do card no desktop (896 do container − 48 de padding da página − 48 do
+                A PRIMEIRA capa leva `priority` porque o Lighthouse mede exatamente ela
+                como o elemento de LCP desta página no mobile — e como miniatura preguiçosa
+                ela custava 1258 ms de load delay sendo o próprio LCP (ADR-0006). As demais
+                seguem lazy, que é o default do next/image. Os 800px do `sizes` são a largura
+                MEDIDA do card no desktop (896 do container − 48 de padding da página − 48 do
                 card), não uma estimativa.
               */}
               {artigo.hero?.locales[locale] ? (
@@ -157,6 +159,7 @@ export default async function ArtigosPage({ params }: PageProps) {
                   width={artigo.hero.width}
                   height={artigo.hero.height}
                   sizes='(min-width: 896px) 800px, 100vw'
+                  priority={index === 0}
                   className='mb-5 h-auto w-full rounded-lg border border-white/10'
                 />
               ) : null}

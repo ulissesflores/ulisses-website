@@ -32,24 +32,28 @@ Add Lighthouse CI (`@lhci/cli`) as step 10 of `sota:full`, configured by
 Three URLs, three runs each, against the SSG build served by `next start` on port 4173
 (clear of `next dev` on 3000 and Playwright on 3100):
 
-- `/pt-br` — home
-- `/pt-br/artigos` — a collection index
-- `/pt-br/artigos/quantas-pessoas-usam-ia` — an article carrying the heaviest cover
+- `/` — home
+- `/artigos` — a collection index
+- `/artigos/quantas-pessoas-usam-ia` — an article carrying the heaviest cover
+
+These are the canonical, prefix-less forms — the ones the sitemap emits and the ones a
+real visitor lands on. They were `/pt-br/...` until the amendment below; see it for why
+that cost 602 ms of phantom latency in every measurement.
 
 ### Asserted metrics and thresholds
 
 | audit | level | threshold | why this number |
 |---|---|---|---|
-| `largest-contentful-paint` | error | 4500 ms | regression ceiling over a measured baseline of 3510–4118 ms |
+| `largest-contentful-paint` | error | 3800 ms | regression ceiling over the current measured baseline of 2859–3438 ms (was 4500 ms over a baseline inflated by a redirect; see the amendment) |
 | `cumulative-layout-shift` | error | 0.1 | the 2026 target; baseline is 0.000 on all three URLs |
 | `total-blocking-time` | error | 200 ms | the 2026 INP target applied to its lab proxy; baseline is 0–2 ms |
 
 Aggregation is `median` across the three runs.
 
-Note for whoever reads the reports: `/pt-br` redirects to the apex, so `finalDisplayedUrl`
-in the stored LHRs reads `/` and `/artigos` rather than the `/pt-br/...` URLs written in
-`lighthouserc.json`. Baseline and thresholds were both measured through that same redirect,
-so the comparison is self-consistent.
+Note for whoever reads the reports: `finalDisplayedUrl` now matches the requested URL.
+The earlier version of this note called the `/pt-br` redirect harmless because baseline and
+threshold were measured through it alike — self-consistent, but 602 ms above what any user
+experiences. The amendment below corrects it.
 
 ### Two deliberate deviations from the playbook
 
@@ -98,3 +102,41 @@ recorded so they are not rediscovered from scratch:
    `loading="lazy"` — a lazily loaded LCP image, which cost 1258 ms of load delay.
 
 Neither is fixed by this ADR. This ADR instruments; fixing is a separate decision.
+
+## Amendment — 2026-09-02: two fixes, one refuted hypothesis
+
+The two causes left open above were attacked. Both known-and-not-fixed items are now
+resolved or reclassified, and the thresholds moved with the baseline.
+
+**Fix 1 — the lazily loaded LCP image.** `app/[locale]/artigos/page.tsx` now passes
+`priority` to the *first* cover only (`index === 0`); the rest keep the `next/image`
+lazy default. `/artigos` went from 4118 ms to 3513 ms (−605 ms) and both
+`lcp-lazy-loaded` and `prioritize-lcp-image` turned green.
+
+**Fix 2 — the gate was measuring a redirect.** Every URL in `lighthouserc.json` was
+written with the `/pt-br` prefix, which 301s to the prefix-less canonical. Lighthouse's
+own `redirects` audit priced it: **602 ms, scored 0, on all nine runs**. No visitor pays
+it — the sitemap, the canonical tag and every internal link use the prefix-less form.
+Pointing the config at the canonical URLs removed it.
+
+| URL | baseline (2026-09-01) | now | delta |
+|---|---|---|---|
+| `/` | 3589 ms | **3438 ms** | −151 ms |
+| `/artigos` | 4118 ms | **2859 ms** | −1259 ms (−31 %) |
+| `/artigos/quantas-pessoas-usam-ia` | 3510 ms | **3359 ms** | −151 ms |
+
+Performance scores rose to 91 / 95 / 92. CLS stays 0.000 and TBT 0–2 ms.
+
+**Refuted — the font-swap hypothesis.** The text-LCP delay on `/` and on the article page
+was attributed above to "font loading or hydration". Font loading is out: rebuilding with
+`display: 'optional'` on all four `next/font` families — which removes the swap repaint
+entirely — measured 3449 ms against 3438 ms with `swap`. No effect; the change was
+reverted. A second candidate, the `animate-fade-in-up` class on the home hero, is a dead
+class: no `@keyframes` of that name exists in the built CSS.
+
+**Still open.** `/` and the article page remain text-LCP with ~3 s of render delay while
+FCP is 1.4 s, Speed Index 1.5 s, TBT 1 ms and main-thread work 0.3 s — a page that looks
+finished long before Lighthouse credits the LCP. Neither fonts nor CPU explain it. The
+next step is not another lab guess: `@vercel/speed-insights` has been collecting field
+LCP since before this ADR, and the field p75 decides whether this is a real user problem
+or an artifact of Lantern's simulated throttling.
