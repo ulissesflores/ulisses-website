@@ -7,10 +7,16 @@
  *
  *  Executa em sequência estrita, abortando (exit 1) no primeiro erro:
  *    1. tsc --noEmit            (Tipagem)
- *    2. i18n:parity             (Paridade de Dicionários — 4420 chaves, 0/0)
- *    3. npm test                (261+ testes: unitários, integração, charset HE, anti-cópia)
- *    4. seo:validate            (Canonical URLs, hreflang, meta tags)
- *    5. seo:rich-results        (JSON-LD, DID, Rich Results)
+ *    2. lint:md                 (Markdown da fonte PT-BR)
+ *    3. charts:labels           (Rótulo cortado em SVG)
+ *    4. i18n:parity             (Paridade de Dicionários)
+ *    5. npm test                (Vitest: unitários, integração, charset HE, anti-cópia)
+ *    6. seo:validate            (Canonical URLs, hreflang, meta tags)
+ *    7. seo:rich-results        (JSON-LD, DID, Rich Results)
+ *  E só no sota:full (precisam de build):
+ *    8. test:e2e                (Playwright, inclui o gate de axe/WCAG)
+ *    9. build                   (next build, SSG completo)
+ *   10. cwv:lighthouse          (Core Web Vitals — LCP/CLS/TBT, ADR-0006)
  *
  *  USO:
  *    npm run sota:check         (chamado por husky pre-commit e pre-push)
@@ -62,12 +68,12 @@ function fail(msg) {
   console.log(`  ${RED}❌ ${msg}${RESET}`);
 }
 
-function run(label, command) {
+function run(label, command, timeoutMs = 300_000) {
   try {
     const output = execSync(command, {
       cwd: ROOT,
       encoding: 'utf-8',
-      timeout: 300_000, // 5 minutos max por etapa
+      timeout: timeoutMs, // 5 minutos max por etapa, salvo quem pedir mais
       stdio: VERBOSE ? 'inherit' : ['pipe', 'pipe', 'pipe'],
     });
 
@@ -97,7 +103,7 @@ function run(label, command) {
 
 // ── Pipeline ────────────────────────────────────────────────────────────────────
 
-const totalSteps = SKIP_BUILD ? 7 : 9;
+const totalSteps = SKIP_BUILD ? 7 : 10;
 const startTime = Date.now();
 
 console.log('');
@@ -189,6 +195,26 @@ if (!SKIP_BUILD) {
   success('Build SSG completo sem erros');
 }
 
+// ── STEP 10: Core Web Vitals (Optional — sota:full only) ────────────────────────
+//
+// POR QUE ESTA ETAPA EXISTE: nenhuma outra vê performance. Regressão de LCP não
+// quebra tipagem, teste nem build — ela só aparece semanas depois no Search
+// Console, quando o Google já mediu. O Lighthouse sobe o build da etapa 9 numa
+// porta própria (4173, longe do dev em 3000 e do Playwright em 3100) e mede 3
+// URLs: home, hub e um artigo com capa pesada.
+//
+// INP NÃO É ASSERTADO: não existe como audit de laboratório no modo navigation
+// do Lighthouse — depende de interação real. O proxy de lab é o Total Blocking
+// Time; o INP de campo vem do Speed Insights. Limiares e desvio: ADR-0006.
+//
+// 3 URLs × 3 rodadas passa dos 5 minutos do teto padrão — daí o timeout maior.
+
+if (!SKIP_BUILD) {
+  header(10, totalSteps, 'Core Web Vitals — Lighthouse (LCP/CLS/TBT)');
+  run('cwv:lighthouse', 'npx lhci autorun', 900_000);
+  success('Core Web Vitals dentro dos limiares');
+}
+
 // ── Result ──────────────────────────────────────────────────────────────────────
 
 const elapsed = ((Date.now() - startTime) / 1000).toFixed(1);
@@ -207,6 +233,7 @@ console.log(`${GREEN}  ✅ Rich Results:   validado${RESET}`);
 if (!SKIP_BUILD) {
   console.log(`${GREEN}  ✅ E2E:            Playwright green${RESET}`);
   console.log(`${GREEN}  ✅ Build:          SSG completo${RESET}`);
+  console.log(`${GREEN}  ✅ Core Web Vitals: LCP/CLS/TBT dentro do limiar${RESET}`);
 }
 console.log(`${DIM}  ⏱️  Tempo total: ${elapsed}s${RESET}`);
 console.log('');

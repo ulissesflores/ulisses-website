@@ -7,6 +7,22 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added — Core Web Vitals: gate de laboratório (gap G1)
+
+- `lighthouserc.json` — Lighthouse CI sobre o build SSG (`next start` na porta 4173),
+  3 URLs × 3 rodadas: home, hub de artigos e um artigo de capa pesada.
+- `npm run cwv:lighthouse` e etapa 10 do `sota:full` (fora do `sota:check`, que
+  precisa seguir rápido no pre-commit).
+- `@lhci/cli` como devDependency.
+- `docs/decisions/ADR-0006-core-web-vitals-gate.md` — limiares medidos, o porquê de
+  o INP não ser assertado (não existe como audit de laboratório) e o baseline.
+
+### Changed
+
+- `scripts/sota-validate.mjs` — `run()` aceita timeout por etapa (o Lighthouse passa
+  dos 5 minutos do teto padrão); cabeçalho do arquivo passa a listar as 10 etapas
+  reais, em vez das 5 de quando foi escrito.
+
 ### Added — Lote 28: A Grande Extração — Operação Zero Hardcoded (ContentOps)
 
 - `content/` directory with 91 physical `.mdx` files (19 pt-br + 72 translations)

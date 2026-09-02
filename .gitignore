@@ -142,3 +142,6 @@ cartao-qr/
 # provas visuais da repaginacao (7+ MB de screenshots/mockups — evidencia local
 # citada no *-STATE.md, nao conteudo do site publico)
 docs/mockups/
+
+# Lighthouse CI — relatorios e coleta local (nao versionar)
+.lighthouseci/

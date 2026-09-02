@@ -30,6 +30,7 @@
     "test:coverage-ui": "vitest --coverage --ui",
     "test:e2e": "npx playwright test",
     "charts:labels": "python3 scripts/charts/checar-rotulos-svg.py",
+    "cwv:lighthouse": "lhci autorun",
     "sota:check": "node scripts/sota-validate.mjs --skip-build",
     "sota:full": "node scripts/sota-validate.mjs",
     "links:inventory": "npm run upkf:generate",
@@ -57,6 +58,7 @@
     "remark-gfm": "^4.0.1"
   },
   "devDependencies": {
+    "@lhci/cli": "^0.15.1",
     "@playwright/test": "^1.58.2",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",

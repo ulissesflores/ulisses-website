@@ -1,0 +1,26 @@
+{
+  "ci": {
+    "collect": {
+      "numberOfRuns": 3,
+      "startServerCommand": "npx next start --port 4173",
+      "startServerReadyPattern": "[Rr]eady",
+      "startServerReadyTimeout": 60000,
+      "url": [
+        "http://localhost:4173/pt-br",
+        "http://localhost:4173/pt-br/artigos",
+        "http://localhost:4173/pt-br/artigos/quantas-pessoas-usam-ia"
+      ]
+    },
+    "assert": {
+      "assertions": {
+        "largest-contentful-paint": ["error", { "maxNumericValue": 4500, "aggregationMethod": "median" }],
+        "cumulative-layout-shift": ["error", { "maxNumericValue": 0.1, "aggregationMethod": "median" }],
+        "total-blocking-time": ["error", { "maxNumericValue": 200, "aggregationMethod": "median" }]
+      }
+    },
+    "upload": {
+      "target": "filesystem",
+      "outputDir": "./.lighthouseci/report"
+    }
+  }
+}
