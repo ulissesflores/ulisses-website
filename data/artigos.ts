@@ -56,6 +56,42 @@ export const artigos: readonly Artigo[] = [
    * a ordenação real é o `sort` estável de `artigosByDateDesc`.
    */
   {
+    slug: 'ia-mercado-de-trabalho',
+    title: 'A IA já é o motivo nº 1 de demissão nos EUA — no Brasil, ninguém faz a conta',
+    summary: 'Os EUA têm uma série mensal de cortes atribuídos à IA (Challenger). O Brasil tem exposição de 37–41% do emprego, uso recorde de ChatGPT e Claude — e nenhuma estatística do que já aconteceu. Fui atrás das primárias.',
+    date: '2026-09-02',
+    tags: ['ia', 'brasil', 'fact-check', 'estatisticas'],
+    hero: {
+      width: 2400,
+      height: 1260,
+      locales: {
+        'pt-br': { src: '/artigos/ia-mercado-de-trabalho/hero.png', og: '/artigos/ia-mercado-de-trabalho/hero-og.jpg' },
+        'en': { src: '/artigos/ia-mercado-de-trabalho/hero-en.png', og: '/artigos/ia-mercado-de-trabalho/hero-en-og.jpg' },
+        'es': { src: '/artigos/ia-mercado-de-trabalho/hero-es.png', og: '/artigos/ia-mercado-de-trabalho/hero-es-og.jpg' },
+        'it': { src: '/artigos/ia-mercado-de-trabalho/hero-it.png', og: '/artigos/ia-mercado-de-trabalho/hero-it-og.jpg' },
+        'he': { src: '/artigos/ia-mercado-de-trabalho/hero-he.png', og: '/artigos/ia-mercado-de-trabalho/hero-he-og.jpg' },
+      },
+    },
+    i18n: {
+      en: {
+        title: 'AI is now the No. 1 reason for layoffs in the US — in Brazil, nobody\'s counting',
+        summary: 'The US has a monthly series of job cuts attributed to AI (Challenger). Brazil has 37–41% of jobs exposed, record ChatGPT and Claude use — and no statistic on what has already happened. I went to the primary sources.',
+      },
+      es: {
+        title: 'La IA ya es el motivo nº 1 de despido en EE. UU. — en Brasil, nadie lleva la cuenta',
+        summary: 'EE. UU. tiene una serie mensual de despidos atribuidos a la IA (Challenger). Brasil tiene 37–41% del empleo expuesto, uso récord de ChatGPT y Claude — y ninguna estadística de lo que ya pasó. Fui a las fuentes primarias.',
+      },
+      it: {
+        title: 'L\'IA è già il motivo n. 1 di licenziamento negli USA — in Brasile nessuno tiene il conto',
+        summary: 'Gli USA hanno una serie mensile di licenziamenti attribuiti all\'IA (Challenger). Il Brasile ha il 37–41% dell\'occupazione esposta, un uso record di ChatGPT e Claude — e nessuna statistica su ciò che è già accaduto. Sono andato alle fonti primarie.',
+      },
+      he: {
+        title: 'הבינה המלאכותית היא כבר הסיבה מספר 1 לפיטורים בארה״ב — בברזיל איש אינו סופר',
+        summary: 'בארה״ב יש סדרה חודשית של פיטורים שיוחסו ל-AI (Challenger). בברזיל 37–41% מהתעסוקה חשופים, שימוש שיא ב-ChatGPT וב-Claude — ואין אף נתון על מה שכבר קרה. הלכתי למקורות הראשוניים.',
+      },
+    },
+  },
+  {
     slug: 'carta-ciberdefesa-openai',
     title: 'A carta de ciberdefesa assinada por 155 empresas não contém um único compromisso',
     summary:

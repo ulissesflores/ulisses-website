@@ -4709,6 +4709,621 @@ export const countryBarsDatasets: Record<string, CountryBarsDataset> = {
       },
     ],
   },
+  'ia-trabalho-challenger-2026': {
+    max: 40000,
+    groups: [
+      {
+        label: 'Cortes com "IA" como motivo declarado — por mês',
+        color: '#60a5fa',
+        items: [
+          {
+            name: 'janeiro',
+            value: 7624,
+            valueLabel: '7.624 (derivado)',
+          },
+          {
+            name: 'fevereiro',
+            value: 4680,
+            valueLabel: '4.680',
+          },
+          {
+            name: 'março',
+            value: 15341,
+            valueLabel: '15.341',
+          },
+          {
+            name: 'abril',
+            value: 21490,
+            valueLabel: '21.490',
+          },
+          {
+            name: 'maio',
+            value: 38579,
+            valueLabel: '38.579',
+          },
+          {
+            name: 'junho',
+            value: 14029,
+            valueLabel: '14.029',
+          },
+          {
+            name: 'julho',
+            value: 10970,
+            valueLabel: '10.970 — 33% do mês',
+            emphasis: true,
+          },
+        ],
+      },
+    ],
+  },
+  'ia-trabalho-cadences-medo': {
+    max: 50,
+    groups: [
+      {
+        label: 'Medo pelo próprio emprego',
+        color: '#64748b',
+        items: [
+          {
+            name: 'eu, no meu emprego',
+            value: 10,
+            valueLabel: '10% acham provável',
+          },
+        ],
+      },
+      {
+        label: 'Medo pelo emprego do colega júnior',
+        color: '#a48f65',
+        items: [
+          {
+            name: 'o colega júnior',
+            value: 33.4,
+            valueLabel: 'mais de 1 em 3 — piso',
+            emphasis: true,
+          },
+        ],
+      },
+    ],
+  },
+  'ia-trabalho-exposicao-brasil': {
+    max: 30,
+    groups: [
+      {
+        label: 'Brasil — total 37% do emprego (37 mi de postos)',
+        color: '#60a5fa',
+        items: [
+          {
+            name: 'automação plena',
+            value: 2,
+            valueLabel: '2%',
+            emphasis: true,
+          },
+          {
+            name: 'aumento',
+            value: 13,
+            valueLabel: '13%',
+          },
+          {
+            name: 'grande incógnita',
+            value: 22,
+            valueLabel: '22%',
+          },
+        ],
+      },
+      {
+        label: 'Média dos países ricos — total 43%',
+        color: '#64748b',
+        items: [
+          {
+            name: 'automação plena',
+            value: 5,
+            valueLabel: '5%',
+          },
+          {
+            name: 'aumento',
+            value: 14,
+            valueLabel: '14%',
+          },
+          {
+            name: 'grande incógnita',
+            value: 24,
+            valueLabel: '24%',
+          },
+        ],
+      },
+    ],
+  },
+  'ia-trabalho-challenger-2026-en': {
+    max: 40000,
+    groups: [
+      {
+        label: 'Cuts with "AI" as the stated reason — by month',
+        color: '#60a5fa',
+        items: [
+          {
+            name: 'January',
+            value: 7624,
+            valueLabel: '7,624 (derived)',
+          },
+          {
+            name: 'February',
+            value: 4680,
+            valueLabel: '4,680',
+          },
+          {
+            name: 'March',
+            value: 15341,
+            valueLabel: '15,341',
+          },
+          {
+            name: 'April',
+            value: 21490,
+            valueLabel: '21,490',
+          },
+          {
+            name: 'May',
+            value: 38579,
+            valueLabel: '38,579',
+          },
+          {
+            name: 'June',
+            value: 14029,
+            valueLabel: '14,029',
+          },
+          {
+            name: 'July',
+            value: 10970,
+            valueLabel: '10,970 — 33% of the month',
+            emphasis: true,
+          },
+        ],
+      },
+    ],
+  },
+  'ia-trabalho-cadences-medo-en': {
+    max: 50,
+    groups: [
+      {
+        label: 'Fear for one\'s own job',
+        color: '#64748b',
+        items: [
+          {
+            name: 'me, in my own job',
+            value: 10,
+            valueLabel: '10% think it likely',
+          },
+        ],
+      },
+      {
+        label: 'Fear for the junior colleague\'s job',
+        color: '#a48f65',
+        items: [
+          {
+            name: 'junior colleague',
+            value: 33.4,
+            valueLabel: 'more than 1 in 3 — floor',
+            emphasis: true,
+          },
+        ],
+      },
+    ],
+  },
+  'ia-trabalho-exposicao-brasil-en': {
+    max: 30,
+    groups: [
+      {
+        label: 'Brazil — 37% of employment (37 mi jobs)',
+        color: '#60a5fa',
+        items: [
+          {
+            name: 'full automation',
+            value: 2,
+            valueLabel: '2%',
+            emphasis: true,
+          },
+          {
+            name: 'augmentation',
+            value: 13,
+            valueLabel: '13%',
+          },
+          {
+            name: 'the big unknown',
+            value: 22,
+            valueLabel: '22%',
+          },
+        ],
+      },
+      {
+        label: 'Rich-country average — 43% total',
+        color: '#64748b',
+        items: [
+          {
+            name: 'full automation',
+            value: 5,
+            valueLabel: '5%',
+          },
+          {
+            name: 'augmentation',
+            value: 14,
+            valueLabel: '14%',
+          },
+          {
+            name: 'the big unknown',
+            value: 24,
+            valueLabel: '24%',
+          },
+        ],
+      },
+    ],
+  },
+  'ia-trabalho-challenger-2026-es': {
+    max: 40000,
+    groups: [
+      {
+        label: 'Despidos con "IA" como motivo declarado — por mes',
+        color: '#60a5fa',
+        items: [
+          {
+            name: 'enero',
+            value: 7624,
+            valueLabel: '7.624 (derivado)',
+          },
+          {
+            name: 'febrero',
+            value: 4680,
+            valueLabel: '4.680',
+          },
+          {
+            name: 'marzo',
+            value: 15341,
+            valueLabel: '15.341',
+          },
+          {
+            name: 'abril',
+            value: 21490,
+            valueLabel: '21.490',
+          },
+          {
+            name: 'mayo',
+            value: 38579,
+            valueLabel: '38.579',
+          },
+          {
+            name: 'junio',
+            value: 14029,
+            valueLabel: '14.029',
+          },
+          {
+            name: 'julio',
+            value: 10970,
+            valueLabel: '10.970 — 33% del mes',
+            emphasis: true,
+          },
+        ],
+      },
+    ],
+  },
+  'ia-trabalho-cadences-medo-es': {
+    max: 50,
+    groups: [
+      {
+        label: 'Miedo por el propio empleo',
+        color: '#64748b',
+        items: [
+          {
+            name: 'yo, en mi empleo',
+            value: 10,
+            valueLabel: '10% lo ve probable',
+          },
+        ],
+      },
+      {
+        label: 'Miedo por el empleo del colega júnior',
+        color: '#a48f65',
+        items: [
+          {
+            name: 'el colega júnior',
+            value: 33.4,
+            valueLabel: 'más de 1 de cada 3 — piso',
+            emphasis: true,
+          },
+        ],
+      },
+    ],
+  },
+  'ia-trabalho-exposicao-brasil-es': {
+    max: 30,
+    groups: [
+      {
+        label: 'Brasil — total 37% del empleo (37 mi de puestos)',
+        color: '#60a5fa',
+        items: [
+          {
+            name: 'automatización',
+            value: 2,
+            valueLabel: '2%',
+            emphasis: true,
+          },
+          {
+            name: 'aumento',
+            value: 13,
+            valueLabel: '13%',
+          },
+          {
+            name: 'gran incógnita',
+            value: 22,
+            valueLabel: '22%',
+          },
+        ],
+      },
+      {
+        label: 'Media de los países ricos — total 43%',
+        color: '#64748b',
+        items: [
+          {
+            name: 'automatización',
+            value: 5,
+            valueLabel: '5%',
+          },
+          {
+            name: 'aumento',
+            value: 14,
+            valueLabel: '14%',
+          },
+          {
+            name: 'gran incógnita',
+            value: 24,
+            valueLabel: '24%',
+          },
+        ],
+      },
+    ],
+  },
+  'ia-trabalho-challenger-2026-it': {
+    max: 40000,
+    groups: [
+      {
+        label: 'Tagli con "IA" come motivo dichiarato — per mese',
+        color: '#60a5fa',
+        items: [
+          {
+            name: 'gennaio',
+            value: 7624,
+            valueLabel: '7.624 (derivato)',
+          },
+          {
+            name: 'febbraio',
+            value: 4680,
+            valueLabel: '4.680',
+          },
+          {
+            name: 'marzo',
+            value: 15341,
+            valueLabel: '15.341',
+          },
+          {
+            name: 'aprile',
+            value: 21490,
+            valueLabel: '21.490',
+          },
+          {
+            name: 'maggio',
+            value: 38579,
+            valueLabel: '38.579',
+          },
+          {
+            name: 'giugno',
+            value: 14029,
+            valueLabel: '14.029',
+          },
+          {
+            name: 'luglio',
+            value: 10970,
+            valueLabel: '10.970 — 33% del mese',
+            emphasis: true,
+          },
+        ],
+      },
+    ],
+  },
+  'ia-trabalho-cadences-medo-it': {
+    max: 50,
+    groups: [
+      {
+        label: 'Paura per il proprio posto',
+        color: '#64748b',
+        items: [
+          {
+            name: 'io, nel mio posto',
+            value: 10,
+            valueLabel: 'probabile per il 10%',
+          },
+        ],
+      },
+      {
+        label: 'Paura per il posto del collega junior',
+        color: '#a48f65',
+        items: [
+          {
+            name: 'il collega junior',
+            value: 33.4,
+            valueLabel: 'più di 1 su 3 — minimo',
+            emphasis: true,
+          },
+        ],
+      },
+    ],
+  },
+  'ia-trabalho-exposicao-brasil-it': {
+    max: 30,
+    groups: [
+      {
+        label: 'Brasile — totale 37% del lavoro (37 mln di posti)',
+        color: '#60a5fa',
+        items: [
+          {
+            name: 'automazione piena',
+            value: 2,
+            valueLabel: '2%',
+            emphasis: true,
+          },
+          {
+            name: 'aumento',
+            value: 13,
+            valueLabel: '13%',
+          },
+          {
+            name: 'grande incognita',
+            value: 22,
+            valueLabel: '22%',
+          },
+        ],
+      },
+      {
+        label: 'Media dei paesi ricchi — totale 43%',
+        color: '#64748b',
+        items: [
+          {
+            name: 'automazione piena',
+            value: 5,
+            valueLabel: '5%',
+          },
+          {
+            name: 'aumento',
+            value: 14,
+            valueLabel: '14%',
+          },
+          {
+            name: 'grande incognita',
+            value: 24,
+            valueLabel: '24%',
+          },
+        ],
+      },
+    ],
+  },
+  'ia-trabalho-challenger-2026-he': {
+    max: 40000,
+    groups: [
+      {
+        label: 'פיטורים עם AI כסיבה מוצהרת — לפי חודש',
+        color: '#60a5fa',
+        items: [
+          {
+            name: 'ינואר',
+            value: 7624,
+            valueLabel: '7,624 (נגזר)',
+          },
+          {
+            name: 'פברואר',
+            value: 4680,
+            valueLabel: '4,680',
+          },
+          {
+            name: 'מרץ',
+            value: 15341,
+            valueLabel: '15,341',
+          },
+          {
+            name: 'אפריל',
+            value: 21490,
+            valueLabel: '21,490',
+          },
+          {
+            name: 'מאי',
+            value: 38579,
+            valueLabel: '38,579',
+          },
+          {
+            name: 'יוני',
+            value: 14029,
+            valueLabel: '14,029',
+          },
+          {
+            name: 'יולי',
+            value: 10970,
+            valueLabel: '10,970 — 33% מהחודש',
+            emphasis: true,
+          },
+        ],
+      },
+    ],
+  },
+  'ia-trabalho-cadences-medo-he': {
+    max: 50,
+    groups: [
+      {
+        label: 'פחד למקום העבודה של עצמי',
+        color: '#64748b',
+        items: [
+          {
+            name: 'אני, במשרה שלי',
+            value: 10,
+            valueLabel: '10% סבורים שסביר',
+          },
+        ],
+      },
+      {
+        label: 'פחד למשרת העמית הזוטר',
+        color: '#a48f65',
+        items: [
+          {
+            name: 'העמית הזוטר',
+            value: 33.4,
+            valueLabel: 'יותר מאחד מכל 3 — רצפה',
+            emphasis: true,
+          },
+        ],
+      },
+    ],
+  },
+  'ia-trabalho-exposicao-brasil-he': {
+    max: 30,
+    groups: [
+      {
+        label: 'ברזיל — סך הכול 37% מהתעסוקה (37 מיליון משרות)',
+        color: '#60a5fa',
+        items: [
+          {
+            name: 'אוטומציה מלאה',
+            value: 2,
+            valueLabel: '2%',
+            emphasis: true,
+          },
+          {
+            name: 'הגברה',
+            value: 13,
+            valueLabel: '13%',
+          },
+          {
+            name: 'אי־הידוע הגדול',
+            value: 22,
+            valueLabel: '22%',
+          },
+        ],
+      },
+      {
+        label: 'ממוצע המדינות העשירות — סך הכול 43%',
+        color: '#64748b',
+        items: [
+          {
+            name: 'אוטומציה מלאה',
+            value: 5,
+            valueLabel: '5%',
+          },
+          {
+            name: 'הגברה',
+            value: 14,
+            valueLabel: '14%',
+          },
+          {
+            name: 'אי־הידוע הגדול',
+            value: 24,
+            valueLabel: '24%',
+          },
+        ],
+      },
+    ],
+  },
 };
 
 /* ── Funil ───────────────────────────────────────────────────────────── */
@@ -5789,6 +6404,96 @@ export const stepFlowDatasets: Record<string, StepFlowDataset> = {
       {
         label: '\u200Fהממצא · 10 ביוני\u200F',
         detail: '\u200F410 נקודות · 250 תגובות\u200F',
+      },
+    ],
+  },
+  'ia-trabalho-stanford-genealogia': {
+    orientation: 'timeline',
+    steps: [
+      {
+        label: 'ago/2025',
+        detail: '13% - regressão, dados até jul/2025',
+      },
+      {
+        label: 'nov/2025',
+        detail: '16% - regressão, dados até set/2025',
+      },
+      {
+        label: 'ago/2026',
+        detail: '19% - régua nova, dados até jun/2026',
+        alert: true,
+      },
+    ],
+  },
+  'ia-trabalho-stanford-genealogia-en': {
+    orientation: 'timeline',
+    steps: [
+      {
+        label: 'Aug 2025',
+        detail: '13% - regression, data to Jul 2025',
+      },
+      {
+        label: 'Nov 2025',
+        detail: '16% - regression, data to Sep 2025',
+      },
+      {
+        label: 'Aug 2026',
+        detail: '19% - new ruler, data to Jun 2026',
+        alert: true,
+      },
+    ],
+  },
+  'ia-trabalho-stanford-genealogia-es': {
+    orientation: 'timeline',
+    steps: [
+      {
+        label: 'ago/2025',
+        detail: '13% - regresión, datos a jul/2025',
+      },
+      {
+        label: 'nov/2025',
+        detail: '16% - regresión, datos a sep/2025',
+      },
+      {
+        label: 'ago/2026',
+        detail: '19% - regla nueva, datos a jun/2026',
+        alert: true,
+      },
+    ],
+  },
+  'ia-trabalho-stanford-genealogia-it': {
+    orientation: 'timeline',
+    steps: [
+      {
+        label: 'ago/2025',
+        detail: '13% - regressione, dati a lug/2025',
+      },
+      {
+        label: 'nov/2025',
+        detail: '16% - regressione, dati a set/2025',
+      },
+      {
+        label: 'ago/2026',
+        detail: '19% - metro nuovo, dati a giu/2026',
+        alert: true,
+      },
+    ],
+  },
+  'ia-trabalho-stanford-genealogia-he': {
+    orientation: 'timeline',
+    steps: [
+      {
+        label: 'אוגוסט 2025',
+        detail: '13% - רגרסיה, נתונים עד יולי 2025',
+      },
+      {
+        label: 'נובמבר 2025',
+        detail: '16% - רגרסיה, נתונים עד ספטמבר 2025',
+      },
+      {
+        label: 'אוגוסט 2026',
+        detail: '19% - סרגל חדש, נתונים עד יוני 2026',
+        alert: true,
       },
     ],
   },

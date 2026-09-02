@@ -20,6 +20,7 @@ import { NoiseVsSignalBars } from './noise-vs-signal-bars';
 import { TvChannelsDiagram } from './tv-channels-diagram';
 import { InvertedUChart } from './inverted-u-chart';
 import { StepFlowDiagram } from './step-flow-diagram';
+import { ThermometerTrioDiagram } from './thermometer-trio-diagram';
 import { KitchenDiagram } from './kitchen-diagram';
 import { WordChoiceDiagram } from './word-choice-diagram';
 import { WatermarkReachDiagram } from './watermark-reach-diagram';
@@ -55,6 +56,7 @@ const SimulationRenderer = ({ ...props }) => (
 export const mdxComponents: MDXComponents = {
   SimulationRenderer,
   StepFlowDiagram,
+  ThermometerTrioDiagram,
   EffortCostChart,
   WaffleChart,
   CountryBarsChart,

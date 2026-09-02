@@ -20,7 +20,7 @@ DOIS REGIMES DE MEDIÇÃO, porque são dois tipos de figura:
    várias dessas caixas são dimensionadas pelo próprio texto (fórmula de contagem de
    caractere), então elas vivem, por construção, acima de 85%.
 
-COBERTURA (espelho de `lib/content/mdx-components.tsx`, lido em 2026-08-28 — 21 entradas):
+COBERTURA (espelho de `lib/content/mdx-components.tsx`, lido em 2026-09-02 — 22 entradas):
 
 | Componente | Regime | Texto medido |
 |---|---|---|
@@ -30,6 +30,7 @@ COBERTURA (espelho de `lib/content/mdx-components.tsx`, lido em 2026-08-28 — 2
 | WordChoiceDiagram, WatermarkReachDiagram, TextVsFileDiagram, KeyPatternDiagram, KitchenDiagram, StepFlowDiagram | 2 | props + tudo que o dataset desenha |
 | FlowLineDiagram, ConstraintExperimentChart, VramLadder | 2 | props + tudo que o dataset desenha |
 | ObligationMatrix | 2 | props + tudo que o dataset desenha |
+| ThermometerTrioDiagram | 2 | props + tudo que o dataset desenha |
 | SimulationRenderer, YouTube, ArticleFigure | — | não desenham texto em SVG |
 
 Componente instanciado num `.mdx` que não esteja nessa lista **reprova com exit 1** em vez
@@ -127,6 +128,7 @@ FAMILIAS = {
     "constraintExperimentDatasets": "constraintExperiment",
     "vramLadderDatasets": "vramLadder",
     "obligationMatrixDatasets": "obligationMatrix",
+    "thermometerTrioDatasets": "thermometerTrio",
 }
 
 # Fragmento de entrega (chaves soltas, para colar dentro de um `Record` do site): a
@@ -947,6 +949,60 @@ def cena_obligation_matrix(ds: dict, props: dict) -> Cena:
     return c
 
 
+# ── ThermometerTrioDiagram — geometria de `thermometer-trio-diagram.tsx` ───────
+# Porte de `medir_termometros`, o medidor do dossiê `ia-mercado-de-trabalho`
+# (`assets/checar-figuras.py`), que nasceu lendo este mesmo .tsx — os dois arquivos são
+# byte-idênticos. Os três números abaixo vêm de lá já auditados, e é por isso que a cena
+# não usa os defaults da `Cena`:
+#   · moldura (24, 696) — a margem editorial do desenho, 24px DENTRO do viewBox (W=720);
+#   · folga_parede ZERO — encostar na parede é permitido, passar dela não. É o caso que o
+#     docstring da `Cena` prevê: a parede não é o viewBox, é uma margem bem dentro dele,
+#     então o corte SILENCIOSO de verdade continua 24px além do que se mede aqui. Exigir
+#     os 6px default reprovaria `title`/`subtitle`/`conclusao`/`source` das 10 figuras por
+#     construção — eles nascem ancorados EM x=24, que é a própria parede. O dossiê tolera
+#     ainda 0,5px de estouro; aqui não se tolera nenhum, então esta cena é a mais estrita
+#     das duas;
+#   · folga_vizinho 8px — as três colunas ficam lado a lado na mesma altura, e o que
+#     reprova nelas é encostar no vizinho, não na parede.
+# Os tubos, os bulbos e o preenchimento são shapes: não entram na medição de texto de
+# propósito, e é por isso que são shapes.
+TH_MOLDURA = (24.0, 696.0)
+TH_COLS = (144.0, 360.0, 576.0)
+
+
+def cena_termometros(ds: dict, props: dict) -> Cena:
+    c = Cena("ThermometerTrioDiagram", folga_vizinho=8.0, folga_parede=0.0)
+    esq = TH_MOLDURA[0]
+    c.inicio("title", props["title"], 15, 700, esq, TH_MOLDURA)
+    if props.get("subtitle"):
+        c.inicio("subtitle", props["subtitle"], 11, 400, esq, TH_MOLDURA)
+
+    for i, t in enumerate(ds["termometros"]):
+        cx = TH_COLS[i]
+        # `nome` é o único texto com `letterSpacing` (0.06em a 12px = 0,72px por vão) e
+        # `Cena.centro` não tem tracking: o intervalo entra pronto, como em
+        # `cena_constraint_experiment`.
+        meia = largura(t["nome"], 12, 0.06, 700) / 2
+        c.caixa(f"termometros[{i}].nome", t["nome"], cx - meia, cx + meia,
+                TH_MOLDURA, fila="nome")
+        c.centro(f"termometros[{i}].pergunta", t["pergunta"], 10, 400, cx,
+                 TH_MOLDURA, fila="pergunta")
+        c.centro(f"termometros[{i}].leitura", t["leitura"], 11, 700, cx,
+                 TH_MOLDURA, fila="leitura")
+        if t.get("sub"):
+            c.centro(f"termometros[{i}].sub", t["sub"], 10, 400, cx,
+                     TH_MOLDURA, fila="sub")
+        # O bulbo vazio desenha um "?" — um glifo é um glifo, e texto não medido é
+        # exatamente o silêncio deste gate, mesmo quando é um caractere só.
+        if t.get("vazio"):
+            c.centro(f"termometros[{i}].bulbo", "?", 14, 700, cx, TH_MOLDURA)
+
+    c.inicio("conclusao", ds["conclusao"], 12, 700, esq, TH_MOLDURA)
+    if props.get("source"):
+        c.inicio("source", props["source"], 9, 400, esq, TH_MOLDURA)
+    return c
+
+
 # componente -> (família do dataset, construtor da cena)
 CENAS = {
     "WordChoiceDiagram": ("wordChoice", cena_word_choice),
@@ -959,6 +1015,7 @@ CENAS = {
     "ConstraintExperimentChart": ("constraintExperiment", cena_constraint_experiment),
     "VramLadder": ("vramLadder", cena_vram_ladder),
     "ObligationMatrix": ("obligationMatrix", cena_obligation_matrix),
+    "ThermometerTrioDiagram": ("thermometerTrio", cena_termometros),
 }
 
 # Registrado em `mdx-components.tsx` mas sem `<text>` próprio: medir não se aplica.

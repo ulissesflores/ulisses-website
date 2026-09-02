@@ -184,6 +184,11 @@ const nextConfig: NextConfig = {
       { source: '/par-es', destination: '/es/artigos/benchmark-harness-modelo', permanent: true },
       { source: '/par-it', destination: '/it/artigos/benchmark-harness-modelo', permanent: true },
       { source: '/par-he', destination: '/he/artigos/benchmark-harness-modelo', permanent: true },
+      { source: '/trabalho',    destination: '/artigos/ia-mercado-de-trabalho',    permanent: true },
+      { source: '/trabalho-en', destination: '/en/artigos/ia-mercado-de-trabalho', permanent: true },
+      { source: '/trabalho-es', destination: '/es/artigos/ia-mercado-de-trabalho', permanent: true },
+      { source: '/trabalho-it', destination: '/it/artigos/ia-mercado-de-trabalho', permanent: true },
+      { source: '/trabalho-he', destination: '/he/artigos/ia-mercado-de-trabalho', permanent: true },
     ];
 
     // Locale handling (double-locale 410 + single-locale 301 + i18n rewrite) moved to middleware.ts
