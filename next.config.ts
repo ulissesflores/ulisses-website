@@ -155,6 +155,11 @@ const nextConfig: NextConfig = {
     // `redirects()` roda ANTES do middleware, então `/llm` não colide com o
     // rewrite de locale nem com o segmento [locale] das rotas.
     const atalhosCards = [
+      { source: '/openai',    destination: '/artigos/estatisticas-openai',    permanent: true },
+      { source: '/openai-en', destination: '/en/artigos/estatisticas-openai', permanent: true },
+      { source: '/openai-es', destination: '/es/artigos/estatisticas-openai', permanent: true },
+      { source: '/openai-it', destination: '/it/artigos/estatisticas-openai', permanent: true },
+      { source: '/openai-he', destination: '/he/artigos/estatisticas-openai', permanent: true },
       { source: '/modelos',    destination: '/artigos/estatisticas-llms',    permanent: true },
       { source: '/modelos-en', destination: '/en/artigos/estatisticas-llms', permanent: true },
       { source: '/modelos-es', destination: '/es/artigos/estatisticas-llms', permanent: true },

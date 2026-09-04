@@ -1136,6 +1136,979 @@ export interface CountryBarsDataset {
  */
 export const countryBarsDatasets: Record<string, CountryBarsDataset> = {
   /**
+   * `openai-links-da-pagina` — bloco 1: a página alemã tem 76 afirmações numéricas, 14 links
+   * externos e 7 fontes citadas só pelo nome (contagem em `fontes/auditoria-links-gradually.md`,
+   * a partir do JSON de hrefs extraído no Chrome real). Bloco 2: os 14 links, um a um, em
+   * 26/08/2026. Ouro = o único link que abre, é oficial e NÃO contém o número.
+   */
+  'openai-links-da-pagina': {
+    max: 80,
+    groups: [
+      {
+        label: 'A página alemã sobre a OpenAI (23/08/2026)',
+        color: '#64748b',
+        items: [
+          { name: 'Afirmações numéricas', value: 76, valueLabel: '76' },
+          { name: 'Links externos', value: 14, valueLabel: '14', emphasis: true },
+          { name: 'Fontes só nomeadas', value: 7, valueLabel: '7' },
+        ],
+      },
+      {
+        label: 'Os 14 links, conferidos um a um',
+        color: '#60a5fa',
+        items: [
+          { name: 'Abre e sustenta', value: 4, valueLabel: '4' },
+          { name: 'Bloqueado, confirmado', value: 5, valueLabel: '5' },
+          { name: 'Bloqueado; sem espelho', value: 3, valueLabel: '3' },
+          { name: 'Só a home do site', value: 1, valueLabel: '1' },
+          { name: 'Abre e NÃO sustenta', value: 1, valueLabel: '1', emphasis: true },
+        ],
+      },
+    ],
+  },
+
+  /**
+   * `openai-vinte-numeros` — os 20 números centrais da página, classificados pela régua das
+   * quatro naturezas (apêndice do inventário, cada linha com o arquivo de evidência). O "92% da
+   * Fortune 500" fica fora da lista por ser caso próprio (é oficial, mas de 08/01/2024 e de
+   * outro assunto). Ouro = os órfãos.
+   */
+  'openai-vinte-numeros': {
+    max: 20,
+    groups: [
+      {
+        label: 'Da própria OpenAI, ou de registro público auditado',
+        color: '#60a5fa',
+        items: [{ name: 'Oficial', value: 8, valueLabel: '8 de 20', emphasis: true }],
+      },
+      {
+        label: 'De fora da empresa',
+        color: '#64748b',
+        items: [
+          { name: 'Reportagem/estimativa', value: 6, valueLabel: '6' },
+          { name: 'Meta declarada', value: 3, valueLabel: '3' },
+        ],
+      },
+      {
+        label: 'Sem procedência localizável',
+        color: '#a48f65',
+        items: [{ name: 'Órfão', value: 3, valueLabel: '3', emphasis: true }],
+      },
+    ],
+  },
+
+  /**
+   * `openai-receita-por-natureza` — receita em US$ bilhões anualizados, cada barra com a sua
+   * natureza. Oficial: CFO Sarah Friar no blog da OpenAI (19-20/01/2026: "$2B ARR in 2023, $6B
+   * in 2024, and $20B+ in 2025") e post de 31/03/2026 ("$2B in revenue per month" = 24 bi/ano).
+   * Estimativa: Sacra, dashboard vivo lido em 26/08/2026 ("$40B in annualized revenue in July
+   * 2026"). Metas: documentos internos via The Information (2026: 30 bi), Altman no podcast BG2
+   * (2027: "How about '27?" para 100 bi), documentos internos via Bloomberg (20/02/2026: 2030 =
+   * 280 bi). NUNCA somar nem traçar linha entre blocos.
+   */
+  'openai-receita-por-natureza': {
+    max: 280,
+    groups: [
+      {
+        label: 'Oficial: a OpenAI publicou (US$ bilhões anualizados)',
+        color: '#60a5fa',
+        items: [
+          { name: '2023', value: 2, valueLabel: '2' },
+          { name: '2024', value: 6, valueLabel: '6' },
+          { name: '2025', value: 20, valueLabel: '20+' },
+          { name: 'mar/2026 (2 bi/mês)', value: 24, valueLabel: '24', emphasis: true },
+        ],
+      },
+      {
+        label: 'Estimativa de fora (Sacra, painel vivo, lido em 26/08/2026)',
+        color: '#64748b',
+        items: [{ name: 'jul/2026', value: 40, valueLabel: '40' }],
+      },
+      {
+        label: 'Meta: alguém disse que pretende',
+        color: '#fbbf24',
+        items: [
+          { name: 'Meta 2026', value: 30, valueLabel: '30' },
+          { name: 'Meta 2027 (podcast)', value: 100, valueLabel: '100' },
+          { name: 'Meta 2030', value: 280, valueLabel: '280' },
+        ],
+      },
+    ],
+  },
+
+  /**
+   * `openai-investidores-equity-compute` — bloco 1: investimento em participação (equity),
+   * ACUMULADO por investidor, US$ bi: SoftBank 64,6 (comunicado oficial da SoftBank,
+   * 27/02/2026: "cumulative investment [...] USD 64.6 billion, approximately 13%"; inclui as
+   * três parcelas de 2026); Amazon 50 (rodada de 2026, finalizada em 31/07/2026 segundo a
+   * GeekWire); Nvidia 30 (rodada de 2026); Microsoft 13 (2019 + 2021 + 2023, soma de agregador,
+   * categoria B). Bloco 2: compromissos de COMPUTAÇÃO, que não são investimento — Stargate 500
+   * (anúncio de 21/01/2025), Amazon AWS +100 em 8 anos (contrato), Nvidia até 100 (carta de
+   * intenção de set/2025, "not definitive" pela CFO da Nvidia em dez/2025). Ouro = o número que
+   * a página alemã dá como ">71 bi".
+   */
+  'openai-investidores-equity-compute': {
+    max: 500,
+    groups: [
+      {
+        label: 'Investimento em participação, acumulado por investidor (US$ bilhões)',
+        color: '#60a5fa',
+        items: [
+          { name: 'SoftBank (até out/26)', value: 64.6, valueLabel: '64,6', emphasis: true },
+          { name: 'Amazon (2026)', value: 50, valueLabel: '50' },
+          { name: 'Nvidia (2026)', value: 30, valueLabel: '30' },
+          { name: 'Microsoft (2019-23)', value: 13, valueLabel: '13' },
+        ],
+      },
+      {
+        label: 'Compromissos de computação — não são investimento',
+        color: '#64748b',
+        items: [
+          { name: 'Stargate (jan/2025)', value: 500, valueLabel: '500' },
+          { name: 'Amazon, AWS (+8 anos)', value: 100, valueLabel: '100' },
+          { name: 'Nvidia (intenção)', value: 100, valueLabel: 'até 100' },
+        ],
+      },
+    ],
+  },
+
+  /**
+   * `openai-form990-remuneracao` — Form 990 da "Openai Inc" (EIN 81-0861541), Parte VII, colunas
+   * (E) compensação de organizações relacionadas + (F) outra compensação, US$; coluna (D), paga
+   * pela própria nonprofit, é 0 em todas as linhas de Altman. FY2023 (ObjectId 202413189349309791):
+   * Altman 64.957 + 11.044 = 76.001. FY2024 (ObjectId 202513219349328476): Altman 65.638 + 48.036 =
+   * 113.674 — 10º de 12 nomes da Parte VII. Acima dele: Greg Brockman (Dir/Pres, Former) 240.176 +
+   * 24.013 = 264.189; Chris Clark 12.933 + 166.484 + 36.604 = 216.021; Lawrence Summers 143.702;
+   * Adam D'Angelo, Susan Desmond-Hellmann e Bret Taylor 140.000; Nicole Seligman e Fidji Simo
+   * 127.500; Ilya Sutskever (Former) 119.538. Abaixo: Paul Nakasone 99.030, Zico Kolter 53.494.
+   * Tabela inteira extraída do full-text da ProPublica (regex sobre as 12 linhas) em 26/08/2026.
+   */
+  'openai-form990-remuneracao': {
+    max: 270000,
+    groups: [
+      {
+        label: 'Sam Altman — o número que circula e o ano seguinte (US$)',
+        color: '#a48f65',
+        items: [
+          { name: 'FY2023 (circula)', value: 76001, valueLabel: '76.001' },
+          { name: 'FY2024', value: 113674, valueLabel: '113.674', emphasis: true },
+        ],
+      },
+      {
+        label: 'Os mais remunerados no mesmo Form 990 de FY2024 (US$)',
+        color: '#64748b',
+        items: [
+          { name: 'Greg Brockman (ex)', value: 264189, valueLabel: '264.189' },
+          { name: 'Chris Clark (tesour.)', value: 216021, valueLabel: '216.021' },
+          { name: 'Lawrence Summers', value: 143702, valueLabel: '143.702' },
+          { name: 'Bret Taylor (conselho)', value: 140000, valueLabel: '140.000' },
+        ],
+      },
+    ],
+  },
+
+  /**
+   * `openai-brasil-precos-reais` — ChatGPT no Brasil, compra dentro do app (Apple App Store
+   * Brasil, apps.apple.com/br/app/chatgpt/id6448311069, lido ao vivo em 26/08/2026): Go R$ 39,90,
+   * Plus R$ 99,90, Pro 5x R$ 524,90, Pro 20x R$ 999,90. O site (chatgpt.com/pricing) devolveu 403
+   * a esta máquina; o Go no site é R$ 39,99 (comunicado Nubank + OpenAI, 28/10/2025). Ouro = o
+   * plano que só existe em alguns países.
+   */
+  'openai-brasil-precos-reais': {
+    max: 1100,
+    groups: [
+      {
+        label: 'ChatGPT no Brasil — App Store, 26/08/2026 (R$ por mês)',
+        color: '#60a5fa',
+        items: [
+          { name: 'Go', value: 39.9, valueLabel: 'R$ 39,90', emphasis: true },
+          { name: 'Plus', value: 99.9, valueLabel: 'R$ 99,90' },
+          { name: 'Pro (5x)', value: 524.9, valueLabel: 'R$ 524,90' },
+          { name: 'Pro (20x)', value: 999.9, valueLabel: 'R$ 999,90' },
+        ],
+      },
+    ],
+  },
+  /**
+   * `openai-links-da-pagina` — bloco 1: a página alemã tem 76 afirmações numéricas, 14 links
+   * externos e 7 fontes citadas só pelo nome (contagem em `fontes/auditoria-links-gradually.md`,
+   * a partir do JSON de hrefs extraído no Chrome real). Bloco 2: os 14 links, um a um, em
+   * 26/08/2026. Ouro = o único link que abre, é oficial e NÃO contém o número.
+   */
+  'openai-links-da-pagina-en': {
+    max: 80,
+    groups: [
+      {
+        label: 'The German page about OpenAI (08/23/2026)',
+        color: '#64748b',
+        items: [
+          { name: 'Numerical claims', value: 76, valueLabel: '76' },
+          { name: 'External links', value: 14, valueLabel: '14', emphasis: true },
+          { name: 'Named-only sources', value: 7, valueLabel: '7' },
+        ],
+      },
+      {
+        label: 'The 14 links, checked one by one',
+        color: '#60a5fa',
+        items: [
+          { name: 'Opens, supports it', value: 4, valueLabel: '4' },
+          { name: 'Blocked, confirmed', value: 5, valueLabel: '5' },
+          { name: 'Blocked, no mirror', value: 3, valueLabel: '3' },
+          { name: 'Homepage only', value: 1, valueLabel: '1' },
+          { name: 'Opens, no support', value: 1, valueLabel: '1', emphasis: true },
+        ],
+      },
+    ],
+  },
+
+  /**
+   * `openai-vinte-numeros` — os 20 números centrais da página, classificados pela régua das
+   * quatro naturezas (apêndice do inventário, cada linha com o arquivo de evidência). O "92% da
+   * Fortune 500" fica fora da lista por ser caso próprio (é oficial, mas de 08/01/2024 e de
+   * outro assunto). Ouro = os órfãos.
+   */
+  'openai-vinte-numeros-en': {
+    max: 20,
+    groups: [
+      {
+        label: 'From OpenAI itself, or audited public record',
+        color: '#60a5fa',
+        items: [{ name: 'Official', value: 8, valueLabel: '8 of 20', emphasis: true }],
+      },
+      {
+        label: 'From outside the company',
+        color: '#64748b',
+        items: [
+          { name: 'Reporting/estimate', value: 6, valueLabel: '6' },
+          { name: 'Stated target', value: 3, valueLabel: '3' },
+        ],
+      },
+      {
+        label: 'With no traceable provenance',
+        color: '#a48f65',
+        items: [{ name: 'Orphan', value: 3, valueLabel: '3', emphasis: true }],
+      },
+    ],
+  },
+
+  /**
+   * `openai-receita-por-natureza` — receita em US$ bilhões anualizados, cada barra com a sua
+   * natureza. Oficial: CFO Sarah Friar no blog da OpenAI (19-20/01/2026: "$2B ARR in 2023, $6B
+   * in 2024, and $20B+ in 2025") e post de 31/03/2026 ("$2B in revenue per month" = 24 bi/ano).
+   * Estimativa: Sacra, dashboard vivo lido em 26/08/2026 ("$40B in annualized revenue in July
+   * 2026"). Metas: documentos internos via The Information (2026: 30 bi), Altman no podcast BG2
+   * (2027: "How about '27?" para 100 bi), documentos internos via Bloomberg (20/02/2026: 2030 =
+   * 280 bi). NUNCA somar nem traçar linha entre blocos.
+   */
+  'openai-receita-por-natureza-en': {
+    max: 280,
+    groups: [
+      {
+        label: 'Official: published by OpenAI (US$ billions, annualized)',
+        color: '#60a5fa',
+        items: [
+          { name: '2023', value: 2, valueLabel: '2' },
+          { name: '2024', value: 6, valueLabel: '6' },
+          { name: '2025', value: 20, valueLabel: '20+' },
+          { name: 'Mar 2026 ($2bn/mo)', value: 24, valueLabel: '24', emphasis: true },
+        ],
+      },
+      {
+        label: 'Outside estimate (Sacra, live dashboard, read 08/26/2026)',
+        color: '#64748b',
+        items: [{ name: 'Jul 2026', value: 40, valueLabel: '40' }],
+      },
+      {
+        label: 'Target: someone said they intend to',
+        color: '#fbbf24',
+        items: [
+          { name: '2026 target', value: 30, valueLabel: '30' },
+          { name: '2027 target (podcast)', value: 100, valueLabel: '100' },
+          { name: '2030 target', value: 280, valueLabel: '280' },
+        ],
+      },
+    ],
+  },
+
+  /**
+   * `openai-investidores-equity-compute` — bloco 1: investimento em participação (equity),
+   * ACUMULADO por investidor, US$ bi: SoftBank 64,6 (comunicado oficial da SoftBank,
+   * 27/02/2026: "cumulative investment [...] USD 64.6 billion, approximately 13%"; inclui as
+   * três parcelas de 2026); Amazon 50 (rodada de 2026, finalizada em 31/07/2026 segundo a
+   * GeekWire); Nvidia 30 (rodada de 2026); Microsoft 13 (2019 + 2021 + 2023, soma de agregador,
+   * categoria B). Bloco 2: compromissos de COMPUTAÇÃO, que não são investimento — Stargate 500
+   * (anúncio de 21/01/2025), Amazon AWS +100 em 8 anos (contrato), Nvidia até 100 (carta de
+   * intenção de set/2025, "not definitive" pela CFO da Nvidia em dez/2025). Ouro = o número que
+   * a página alemã dá como ">71 bi".
+   */
+  'openai-investidores-equity-compute-en': {
+    max: 500,
+    groups: [
+      {
+        label: 'Equity investment, cumulative by investor (US$ billions)',
+        color: '#60a5fa',
+        items: [
+          { name: 'SoftBank (thru Oct 26)', value: 64.6, valueLabel: '64.6', emphasis: true },
+          { name: 'Amazon (2026)', value: 50, valueLabel: '50' },
+          { name: 'Nvidia (2026)', value: 30, valueLabel: '30' },
+          { name: 'Microsoft (2019-23)', value: 13, valueLabel: '13' },
+        ],
+      },
+      {
+        label: 'Compute commitments — not investment',
+        color: '#64748b',
+        items: [
+          { name: 'Stargate (Jan 2025)', value: 500, valueLabel: '500' },
+          { name: 'Amazon, AWS (+8 yrs)', value: 100, valueLabel: '100' },
+          { name: 'Nvidia (intent)', value: 100, valueLabel: 'up to 100' },
+        ],
+      },
+    ],
+  },
+
+  /**
+   * `openai-form990-remuneracao` — Form 990 da "Openai Inc" (EIN 81-0861541), Parte VII, colunas
+   * (E) compensação de organizações relacionadas + (F) outra compensação, US$; coluna (D), paga
+   * pela própria nonprofit, é 0 em todas as linhas de Altman. FY2023 (ObjectId 202413189349309791):
+   * Altman 64.957 + 11.044 = 76.001. FY2024 (ObjectId 202513219349328476): Altman 65.638 + 48.036 =
+   * 113.674 — 10º de 12 nomes da Parte VII. Acima dele: Greg Brockman (Dir/Pres, Former) 240.176 +
+   * 24.013 = 264.189; Chris Clark 12.933 + 166.484 + 36.604 = 216.021; Lawrence Summers 143.702;
+   * Adam D'Angelo, Susan Desmond-Hellmann e Bret Taylor 140.000; Nicole Seligman e Fidji Simo
+   * 127.500; Ilya Sutskever (Former) 119.538. Abaixo: Paul Nakasone 99.030, Zico Kolter 53.494.
+   * Tabela inteira extraída do full-text da ProPublica (regex sobre as 12 linhas) em 26/08/2026.
+   */
+  'openai-form990-remuneracao-en': {
+    max: 270000,
+    groups: [
+      {
+        label: 'Sam Altman — the number that circulates and the next year (US$)',
+        color: '#a48f65',
+        items: [
+          { name: 'FY2023 (circulates)', value: 76001, valueLabel: '76,001' },
+          { name: 'FY2024', value: 113674, valueLabel: '113,674', emphasis: true },
+        ],
+      },
+      {
+        label: 'The highest-paid in the same FY2024 Form 990 (US$)',
+        color: '#64748b',
+        items: [
+          { name: 'Greg Brockman (former)', value: 264189, valueLabel: '264,189' },
+          { name: 'Chris Clark (treas.)', value: 216021, valueLabel: '216,021' },
+          { name: 'Lawrence Summers', value: 143702, valueLabel: '143,702' },
+          { name: 'Bret Taylor (board)', value: 140000, valueLabel: '140,000' },
+        ],
+      },
+    ],
+  },
+
+  /**
+   * `openai-brasil-precos-reais` — ChatGPT no Brasil, compra dentro do app (Apple App Store
+   * Brasil, apps.apple.com/br/app/chatgpt/id6448311069, lido ao vivo em 26/08/2026): Go R$ 39,90,
+   * Plus R$ 99,90, Pro 5x R$ 524,90, Pro 20x R$ 999,90. O site (chatgpt.com/pricing) devolveu 403
+   * a esta máquina; o Go no site é R$ 39,99 (comunicado Nubank + OpenAI, 28/10/2025). Ouro = o
+   * plano que só existe em alguns países.
+   */
+  'openai-brasil-precos-reais-en': {
+    max: 1100,
+    groups: [
+      {
+        label: 'ChatGPT in Brazil — App Store, 08/26/2026 (R$/month)',
+        color: '#60a5fa',
+        items: [
+          { name: 'Go', value: 39.9, valueLabel: 'R$ 39.90', emphasis: true },
+          { name: 'Plus', value: 99.9, valueLabel: 'R$ 99.90' },
+          { name: 'Pro (5x)', value: 524.9, valueLabel: 'R$ 524.90' },
+          { name: 'Pro (20x)', value: 999.9, valueLabel: 'R$ 999.90' },
+        ],
+      },
+    ],
+  },
+  /**
+   * `openai-links-da-pagina-es` — bloco 1: a página alemã tem 76 afirmações numéricas, 14 links
+   * externos e 7 fontes citadas só pelo nome (contagem em `fontes/auditoria-links-gradually.md`,
+   * a partir do JSON de hrefs extraído no Chrome real). Bloco 2: os 14 links, um a um, em
+   * 26/08/2026. Ouro = o único link que abre, é oficial e NÃO contém o número.
+   */
+  'openai-links-da-pagina-es': {
+    max: 80,
+    groups: [
+      {
+        label: 'La página alemana sobre OpenAI (23/08/2026)',
+        color: '#64748b',
+        items: [
+          { name: 'Afirmaciones', value: 76, valueLabel: '76' },
+          { name: 'Enlaces externos', value: 14, valueLabel: '14', emphasis: true },
+          { name: 'Fuentes sin enlace', value: 7, valueLabel: '7' },
+        ],
+      },
+      {
+        label: 'Los 14 enlaces, uno a uno',
+        color: '#60a5fa',
+        items: [
+          { name: 'Abre y confirma', value: 4, valueLabel: '4' },
+          { name: 'Bloqueado, confirmado', value: 5, valueLabel: '5' },
+          { name: 'Bloqueado, sin espejo', value: 3, valueLabel: '3' },
+          { name: 'Solo la portada', value: 1, valueLabel: '1' },
+          { name: 'Abre y NO confirma', value: 1, valueLabel: '1', emphasis: true },
+        ],
+      },
+    ],
+  },
+
+  /**
+   * `openai-vinte-numeros-es` — os 20 números centrais da página, classificados pela régua das
+   * quatro naturezas (apêndice do inventário, cada linha com o arquivo de evidência). O "92% da
+   * Fortune 500" fica fora da lista por ser caso próprio (é oficial, mas de 08/01/2024 e de
+   * outro assunto). Ouro = os órfãos.
+   */
+  'openai-vinte-numeros-es': {
+    max: 20,
+    groups: [
+      {
+        label: 'De la propia OpenAI, o de registro público auditado',
+        color: '#60a5fa',
+        items: [{ name: 'Oficial', value: 8, valueLabel: '8 de 20', emphasis: true }],
+      },
+      {
+        label: 'De fuera de la empresa',
+        color: '#64748b',
+        items: [
+          { name: 'Reportaje/estimación', value: 6, valueLabel: '6' },
+          { name: 'Meta declarada', value: 3, valueLabel: '3' },
+        ],
+      },
+      {
+        label: 'Sin procedencia localizable',
+        color: '#a48f65',
+        items: [{ name: 'Huérfano', value: 3, valueLabel: '3', emphasis: true }],
+      },
+    ],
+  },
+
+  /**
+   * `openai-receita-por-natureza-es` — receita em US$ bilhões anualizados, cada barra com a sua
+   * natureza. Oficial: CFO Sarah Friar no blog da OpenAI (19-20/01/2026: "$2B ARR in 2023, $6B
+   * in 2024, and $20B+ in 2025") e post de 31/03/2026 ("$2B in revenue per month" = 24 bi/ano).
+   * Estimativa: Sacra, dashboard vivo lido em 26/08/2026 ("$40B in annualized revenue in July
+   * 2026"). Metas: documentos internos via The Information (2026: 30 bi), Altman no podcast BG2
+   * (2027: "How about '27?" para 100 bi), documentos internos via Bloomberg (20/02/2026: 2030 =
+   * 280 bi). NUNCA somar nem traçar linha entre blocos.
+   */
+  'openai-receita-por-natureza-es': {
+    max: 280,
+    groups: [
+      {
+        label: 'Oficial: lo que publicó OpenAI (US$ miles de millones anualizados)',
+        color: '#60a5fa',
+        items: [
+          { name: '2023', value: 2, valueLabel: '2' },
+          { name: '2024', value: 6, valueLabel: '6' },
+          { name: '2025', value: 20, valueLabel: '20+' },
+          { name: 'mar/26 (2 mil M/mes)', value: 24, valueLabel: '24', emphasis: true },
+        ],
+      },
+      {
+        label: 'Estimación externa (Sacra, panel en vivo, leído el 26/08/2026)',
+        color: '#64748b',
+        items: [{ name: 'jul/2026', value: 40, valueLabel: '40' }],
+      },
+      {
+        label: 'Meta: alguien dijo que pretende',
+        color: '#fbbf24',
+        items: [
+          { name: 'Meta 2026', value: 30, valueLabel: '30' },
+          { name: 'Meta 2027 (podcast)', value: 100, valueLabel: '100' },
+          { name: 'Meta 2030', value: 280, valueLabel: '280' },
+        ],
+      },
+    ],
+  },
+
+  /**
+   * `openai-investidores-equity-compute-es` — bloco 1: investimento em participação (equity),
+   * ACUMULADO por investidor, US$ bi: SoftBank 64,6 (comunicado oficial da SoftBank,
+   * 27/02/2026: "cumulative investment [...] USD 64.6 billion, approximately 13%"; inclui as
+   * três parcelas de 2026); Amazon 50 (rodada de 2026, finalizada em 31/07/2026 segundo a
+   * GeekWire); Nvidia 30 (rodada de 2026); Microsoft 13 (2019 + 2021 + 2023, soma de agregador,
+   * categoria B). Bloco 2: compromissos de COMPUTAÇÃO, que não são investimento — Stargate 500
+   * (anúncio de 21/01/2025), Amazon AWS +100 em 8 anos (contrato), Nvidia até 100 (carta de
+   * intenção de set/2025, "not definitive" pela CFO da Nvidia em dez/2025). Ouro = o número que
+   * a página alemã dá como ">71 bi".
+   */
+  'openai-investidores-equity-compute-es': {
+    max: 500,
+    groups: [
+      {
+        label: 'Inversión en participación, acumulada por inversor (US$ miles de millones)',
+        color: '#60a5fa',
+        items: [
+          { name: 'SoftBank (a oct/26)', value: 64.6, valueLabel: '64,6', emphasis: true },
+          { name: 'Amazon (2026)', value: 50, valueLabel: '50' },
+          { name: 'Nvidia (2026)', value: 30, valueLabel: '30' },
+          { name: 'Microsoft (2019-23)', value: 13, valueLabel: '13' },
+        ],
+      },
+      {
+        label: 'Compromisos de computación — no son inversión',
+        color: '#64748b',
+        items: [
+          { name: 'Stargate (ene/2025)', value: 500, valueLabel: '500' },
+          { name: 'Amazon, AWS (+8 años)', value: 100, valueLabel: '100' },
+          { name: 'Nvidia (intención)', value: 100, valueLabel: 'hasta 100' },
+        ],
+      },
+    ],
+  },
+
+  /**
+   * `openai-form990-remuneracao-es` — Form 990 da "Openai Inc" (EIN 81-0861541), Parte VII,
+   * colunas (E) compensação de organizações relacionadas + (F) outra compensação, US$; coluna
+   * (D), paga pela própria nonprofit, é 0 em todas as linhas de Altman. FY2023 (ObjectId
+   * 202413189349309791): Altman 64.957 + 11.044 = 76.001. FY2024 (ObjectId 202513219349328476):
+   * Altman 65.638 + 48.036 = 113.674 — 10º de 12 nomes da Parte VII. Acima dele: Greg Brockman
+   * (Dir/Pres, Former) 240.176 + 24.013 = 264.189; Chris Clark 12.933 + 166.484 + 36.604 =
+   * 216.021; Lawrence Summers 143.702; Adam D'Angelo, Susan Desmond-Hellmann e Bret Taylor
+   * 140.000; Nicole Seligman e Fidji Simo 127.500; Ilya Sutskever (Former) 119.538. Abaixo: Paul
+   * Nakasone 99.030, Zico Kolter 53.494. Tabela inteira extraída do full-text da ProPublica
+   * (regex sobre as 12 linhas) em 26/08/2026.
+   */
+  'openai-form990-remuneracao-es': {
+    max: 270000,
+    groups: [
+      {
+        label: 'Sam Altman — el número que circula y el año siguiente (US$)',
+        color: '#a48f65',
+        items: [
+          { name: 'FY2023 (circula)', value: 76001, valueLabel: '76.001' },
+          { name: 'FY2024', value: 113674, valueLabel: '113.674', emphasis: true },
+        ],
+      },
+      {
+        label: 'Los más remunerados en el mismo Form 990 de FY2024 (US$)',
+        color: '#64748b',
+        items: [
+          { name: 'Greg Brockman (ex)', value: 264189, valueLabel: '264.189' },
+          { name: 'Chris Clark (tesor.)', value: 216021, valueLabel: '216.021' },
+          { name: 'Lawrence Summers', value: 143702, valueLabel: '143.702' },
+          { name: 'Bret Taylor (consejo)', value: 140000, valueLabel: '140.000' },
+        ],
+      },
+    ],
+  },
+
+  /**
+   * `openai-brasil-precos-reais-es` — ChatGPT no Brasil, compra dentro do app (Apple App Store
+   * Brasil, apps.apple.com/br/app/chatgpt/id6448311069, lido ao vivo em 26/08/2026): Go R$ 39,90,
+   * Plus R$ 99,90, Pro 5x R$ 524,90, Pro 20x R$ 999,90. O site (chatgpt.com/pricing) devolveu 403
+   * a esta máquina; o Go no site é R$ 39,99 (comunicado Nubank + OpenAI, 28/10/2025). Ouro = o
+   * plano que só existe em alguns países.
+   */
+  'openai-brasil-precos-reais-es': {
+    max: 1100,
+    groups: [
+      {
+        label: 'ChatGPT en Brasil — App Store, 26/08/2026 (R$ por mes)',
+        color: '#60a5fa',
+        items: [
+          { name: 'Go', value: 39.9, valueLabel: 'R$ 39,90', emphasis: true },
+          { name: 'Plus', value: 99.9, valueLabel: 'R$ 99,90' },
+          { name: 'Pro (5x)', value: 524.9, valueLabel: 'R$ 524,90' },
+          { name: 'Pro (20x)', value: 999.9, valueLabel: 'R$ 999,90' },
+        ],
+      },
+    ],
+  },
+  /**
+   * `openai-links-da-pagina-it` — bloco 1: a página alemã tem 76 afirmações numéricas, 14 links
+   * externos e 7 fontes citadas só pelo nome (contagem em `fontes/auditoria-links-gradually.md`,
+   * a partir do JSON de hrefs extraído no Chrome real). Bloco 2: os 14 links, um a um, em
+   * 26/08/2026. Ouro = o único link que abre, é oficial e NÃO contém o número.
+   */
+  'openai-links-da-pagina-it': {
+    max: 80,
+    groups: [
+      {
+        label: 'La pagina tedesca sull\'OpenAI (23/08/2026)',
+        color: '#64748b',
+        items: [
+          { name: 'Affermazioni numeriche', value: 76, valueLabel: '76' },
+          { name: 'Link esterni', value: 14, valueLabel: '14', emphasis: true },
+          { name: 'Fonti solo nominate', value: 7, valueLabel: '7' },
+        ],
+      },
+      {
+        label: 'I 14 link, verificati uno a uno',
+        color: '#60a5fa',
+        items: [
+          { name: 'Apre e conferma', value: 4, valueLabel: '4' },
+          { name: 'Bloccato, confermato', value: 5, valueLabel: '5' },
+          { name: 'Bloccato, no specchio', value: 3, valueLabel: '3' },
+          { name: 'Solo la home del sito', value: 1, valueLabel: '1' },
+          { name: 'Apre e NON conferma', value: 1, valueLabel: '1', emphasis: true },
+        ],
+      },
+    ],
+  },
+
+  /**
+   * `openai-vinte-numeros-it` — os 20 números centrais da página, classificados pela régua das
+   * quatro naturezas (apêndice do inventário, cada linha com o arquivo de evidência). O "92% da
+   * Fortune 500" fica fora da lista por ser caso próprio (é oficial, mas de 08/01/2024 e de
+   * outro assunto). Ouro = os órfãos.
+   */
+  'openai-vinte-numeros-it': {
+    max: 20,
+    groups: [
+      {
+        label: 'Della stessa OpenAI, o di registro pubblico verificato',
+        color: '#60a5fa',
+        items: [{ name: 'Ufficiale', value: 8, valueLabel: '8 di 20', emphasis: true }],
+      },
+      {
+        label: 'Dall\'esterno dell\'azienda',
+        color: '#64748b',
+        items: [
+          { name: 'Reportage/stima', value: 6, valueLabel: '6' },
+          { name: 'Obiettivo dichiarato', value: 3, valueLabel: '3' },
+        ],
+      },
+      {
+        label: 'Senza provenienza individuabile',
+        color: '#a48f65',
+        items: [{ name: 'Orfano', value: 3, valueLabel: '3', emphasis: true }],
+      },
+    ],
+  },
+
+  /**
+   * `openai-receita-por-natureza-it` — receita em US$ bilhões anualizados, cada barra com a sua
+   * natureza. Oficial: CFO Sarah Friar no blog da OpenAI (19-20/01/2026: "$2B ARR in 2023, $6B
+   * in 2024, and $20B+ in 2025") e post de 31/03/2026 ("$2B in revenue per month" = 24 bi/ano).
+   * Estimativa: Sacra, dashboard vivo lido em 26/08/2026 ("$40B in annualized revenue in July
+   * 2026"). Metas: documentos internos via The Information (2026: 30 bi), Altman no podcast BG2
+   * (2027: "How about '27?" para 100 bi), documentos internos via Bloomberg (20/02/2026: 2030 =
+   * 280 bi). NUNCA somar nem traçar linha entre blocos.
+   */
+  'openai-receita-por-natureza-it': {
+    max: 280,
+    groups: [
+      {
+        label: 'Ufficiale: pubblicato da OpenAI (mld annualizzati)',
+        color: '#60a5fa',
+        items: [
+          { name: '2023', value: 2, valueLabel: '2' },
+          { name: '2024', value: 6, valueLabel: '6' },
+          { name: '2025', value: 20, valueLabel: '20+' },
+          { name: 'mar/26 (2 mld/mese)', value: 24, valueLabel: '24', emphasis: true },
+        ],
+      },
+      {
+        label: 'Stima esterna (Sacra, pannello vivo, letto 26/08/2026)',
+        color: '#64748b',
+        items: [{ name: 'lug/2026', value: 40, valueLabel: '40' }],
+      },
+      {
+        label: 'Obiettivo: intenzione dichiarata',
+        color: '#fbbf24',
+        items: [
+          { name: 'Obiettivo 2026', value: 30, valueLabel: '30' },
+          { name: 'Meta 2027 (podcast)', value: 100, valueLabel: '100' },
+          { name: 'Obiettivo 2030', value: 280, valueLabel: '280' },
+        ],
+      },
+    ],
+  },
+
+  /**
+   * `openai-investidores-equity-compute-it` — bloco 1: investimento em participação (equity),
+   * ACUMULADO por investidor, US$ bi: SoftBank 64,6 (comunicado oficial da SoftBank,
+   * 27/02/2026: "cumulative investment [...] USD 64.6 billion, approximately 13%"; inclui as
+   * três parcelas de 2026); Amazon 50 (rodada de 2026, finalizada em 31/07/2026 segundo a
+   * GeekWire); Nvidia 30 (rodada de 2026); Microsoft 13 (2019 + 2021 + 2023, soma de agregador,
+   * categoria B). Bloco 2: compromissos de COMPUTAÇÃO, que não são investimento — Stargate 500
+   * (anúncio de 21/01/2025), Amazon AWS +100 em 8 anos (contrato), Nvidia até 100 (carta de
+   * intenção de set/2025, "not definitive" pela CFO da Nvidia em dez/2025). Ouro = o número que
+   * a página alemã dá como ">71 bi".
+   */
+  'openai-investidores-equity-compute-it': {
+    max: 500,
+    groups: [
+      {
+        label: 'Partecipazione accumulata per investitore (miliardi di dollari)',
+        color: '#60a5fa',
+        items: [
+          { name: 'SoftBank (a ott/26)', value: 64.6, valueLabel: '64,6', emphasis: true },
+          { name: 'Amazon (2026)', value: 50, valueLabel: '50' },
+          { name: 'Nvidia (2026)', value: 30, valueLabel: '30' },
+          { name: 'Microsoft (2019-23)', value: 13, valueLabel: '13' },
+        ],
+      },
+      {
+        label: 'Impegni di calcolo — non sono investimento',
+        color: '#64748b',
+        items: [
+          { name: 'Stargate (gen/2025)', value: 500, valueLabel: '500' },
+          { name: 'Amazon, AWS (+8 anni)', value: 100, valueLabel: '100' },
+          { name: 'Nvidia (intenzione)', value: 100, valueLabel: 'fino a 100' },
+        ],
+      },
+    ],
+  },
+
+  /**
+   * `openai-form990-remuneracao-it` — Form 990 da "Openai Inc" (EIN 81-0861541), Parte VII,
+   * colunas (E) compensação de organizações relacionadas + (F) outra compensação, US$; coluna
+   * (D), paga pela própria nonprofit, é 0 em todas as linhas de Altman. FY2023
+   * (ObjectId 202413189349309791): Altman 64.957 + 11.044 = 76.001. FY2024
+   * (ObjectId 202513219349328476): Altman 65.638 + 48.036 = 113.674 — 10º de 12 nomes da Parte
+   * VII. Acima dele: Greg Brockman (Dir/Pres, Former) 240.176 + 24.013 = 264.189; Chris Clark
+   * 12.933 + 166.484 + 36.604 = 216.021; Lawrence Summers 143.702; Adam D'Angelo, Susan
+   * Desmond-Hellmann e Bret Taylor 140.000; Nicole Seligman e Fidji Simo 127.500; Ilya Sutskever
+   * (Former) 119.538. Abaixo: Paul Nakasone 99.030, Zico Kolter 53.494. Tabela inteira extraída
+   * do full-text da ProPublica (regex sobre as 12 linhas) em 26/08/2026.
+   */
+  'openai-form990-remuneracao-it': {
+    max: 270000,
+    groups: [
+      {
+        label: 'Sam Altman — il numero che circola e l\'anno successivo (US$)',
+        color: '#a48f65',
+        items: [
+          { name: 'FY2023 (circola)', value: 76001, valueLabel: '76.001' },
+          { name: 'FY2024', value: 113674, valueLabel: '113.674', emphasis: true },
+        ],
+      },
+      {
+        label: 'I più retribuiti nello stesso Form 990 di FY2024 (US$)',
+        color: '#64748b',
+        items: [
+          { name: 'Greg Brockman (ex)', value: 264189, valueLabel: '264.189' },
+          { name: 'Chris Clark (tesor.)', value: 216021, valueLabel: '216.021' },
+          { name: 'Lawrence Summers', value: 143702, valueLabel: '143.702' },
+          { name: 'Bret Taylor (consiglio)', value: 140000, valueLabel: '140.000' },
+        ],
+      },
+    ],
+  },
+
+  /**
+   * `openai-brasil-precos-reais-it` — ChatGPT no Brasil, compra dentro do app (Apple App Store
+   * Brasil, apps.apple.com/br/app/chatgpt/id6448311069, lido ao vivo em 26/08/2026): Go R$ 39,90,
+   * Plus R$ 99,90, Pro 5x R$ 524,90, Pro 20x R$ 999,90. O site (chatgpt.com/pricing) devolveu 403
+   * a esta máquina; o Go no site é R$ 39,99 (comunicado Nubank + OpenAI, 28/10/2025). Ouro = o
+   * plano que só existe em alguns países.
+   */
+  'openai-brasil-precos-reais-it': {
+    max: 1100,
+    groups: [
+      {
+        label: 'ChatGPT in Brasile — App Store, 26/08/2026 (R$ al mese)',
+        color: '#60a5fa',
+        items: [
+          { name: 'Go', value: 39.9, valueLabel: 'R$ 39,90', emphasis: true },
+          { name: 'Plus', value: 99.9, valueLabel: 'R$ 99,90' },
+          { name: 'Pro (5x)', value: 524.9, valueLabel: 'R$ 524,90' },
+          { name: 'Pro (20x)', value: 999.9, valueLabel: 'R$ 999,90' },
+        ],
+      },
+    ],
+  },
+  /**
+   * `openai-links-da-pagina-he` — bloco 1: a página alemã tem 76 afirmações numéricas, 14 links
+   * externos e 7 fontes citadas só pelo nome (contagem em `fontes/auditoria-links-gradually.md`,
+   * a partir do JSON de hrefs extraído no Chrome real). Bloco 2: os 14 links, um a um, em
+   * 26/08/2026. Ouro = o único link que abre, é oficial e NÃO contém o número.
+   */
+  'openai-links-da-pagina-he': {
+    max: 80,
+    groups: [
+      {
+        label: 'העמוד הגרמני על OpenAI (23/08/2026)',
+        color: '#64748b',
+        items: [
+          { name: 'טענות מספריות', value: 76, valueLabel: '76' },
+          { name: 'קישורים חיצוניים', value: 14, valueLabel: '14', emphasis: true },
+          { name: 'מקורות בשם בלבד', value: 7, valueLabel: '7' },
+        ],
+      },
+      {
+        label: '14 הקישורים, אחד אחד',
+        color: '#60a5fa',
+        items: [
+          { name: 'נפתח ותומך', value: 4, valueLabel: '4' },
+          { name: 'חסום, אושר', value: 5, valueLabel: '5' },
+          { name: 'חסום; בלי מראה', value: 3, valueLabel: '3' },
+          { name: 'רק דף הבית', value: 1, valueLabel: '1' },
+          { name: 'נפתח ולא תומך', value: 1, valueLabel: '1', emphasis: true },
+        ],
+      },
+    ],
+  },
+
+  /**
+   * `openai-vinte-numeros-he` — os 20 números centrais da página, classificados pela régua das
+   * quatro naturezas (apêndice do inventário, cada linha com o arquivo de evidência). O "92% da
+   * Fortune 500" fica fora da lista por ser caso próprio (é oficial, mas de 08/01/2024 e de
+   * outro assunto). Ouro = os órfãos.
+   */
+  'openai-vinte-numeros-he': {
+    max: 20,
+    groups: [
+      {
+        label: 'מ-OpenAI עצמה, או רשומה ציבורית מבוקרת',
+        color: '#60a5fa',
+        items: [{ name: 'רשמי', value: 8, valueLabel: '8 מ-20', emphasis: true }],
+      },
+      {
+        label: 'מחוץ לחברה',
+        color: '#64748b',
+        items: [
+          { name: 'דיווח/הערכה', value: 6, valueLabel: '6' },
+          { name: 'יעד מוצהר', value: 3, valueLabel: '3' },
+        ],
+      },
+      {
+        label: 'בלי מקור שניתן לאתר',
+        color: '#a48f65',
+        items: [{ name: 'יתום', value: 3, valueLabel: '3', emphasis: true }],
+      },
+    ],
+  },
+
+  /**
+   * `openai-receita-por-natureza-he` — receita em US$ bilhões anualizados, cada barra com a sua
+   * natureza. Oficial: CFO Sarah Friar no blog da OpenAI (19-20/01/2026: "$2B ARR in 2023, $6B
+   * in 2024, and $20B+ in 2025") e post de 31/03/2026 ("$2B in revenue per month" = 24 bi/ano).
+   * Estimativa: Sacra, dashboard vivo lido em 26/08/2026 ("$40B in annualized revenue in July
+   * 2026"). Metas: documentos internos via The Information (2026: 30 bi), Altman no podcast BG2
+   * (2027: "How about '27?" para 100 bi), documentos internos via Bloomberg (20/02/2026: 2030 =
+   * 280 bi). NUNCA somar nem traçar linha entre blocos.
+   */
+  'openai-receita-por-natureza-he': {
+    max: 280,
+    groups: [
+      {
+        label: 'רשמי: OpenAI פרסמה (מיליארדי דולר שנתיים)',
+        color: '#60a5fa',
+        items: [
+          { name: '2023', value: 2, valueLabel: '2' },
+          { name: '2024', value: 6, valueLabel: '6' },
+          { name: '2025', value: 20, valueLabel: '20+' },
+          { name: '03/2026 (2 בחודש)', value: 24, valueLabel: '24', emphasis: true },
+        ],
+      },
+      {
+        label: 'הערכה מבחוץ (Sacra, לוח חי, 26/08/2026)',
+        color: '#64748b',
+        items: [{ name: '07/2026', value: 40, valueLabel: '40' }],
+      },
+      {
+        label: 'יעד: מישהו אמר שהוא מתכוון',
+        color: '#fbbf24',
+        items: [
+          { name: 'יעד 2026', value: 30, valueLabel: '30' },
+          { name: 'יעד 2027 (פודקאסט)', value: 100, valueLabel: '100' },
+          { name: 'יעד 2030', value: 280, valueLabel: '280' },
+        ],
+      },
+    ],
+  },
+
+  /**
+   * `openai-investidores-equity-compute-he` — bloco 1: investimento em participação (equity),
+   * ACUMULADO por investidor, US$ bi: SoftBank 64,6 (comunicado oficial da SoftBank,
+   * 27/02/2026: "cumulative investment [...] USD 64.6 billion, approximately 13%"; inclui as
+   * três parcelas de 2026); Amazon 50 (rodada de 2026, finalizada em 31/07/2026 segundo a
+   * GeekWire); Nvidia 30 (rodada de 2026); Microsoft 13 (2019 + 2021 + 2023, soma de agregador,
+   * categoria B). Bloco 2: compromissos de COMPUTAÇÃO, que não são investimento — Stargate 500
+   * (anúncio de 21/01/2025), Amazon AWS +100 em 8 anos (contrato), Nvidia até 100 (carta de
+   * intenção de set/2025, "not definitive" pela CFO da Nvidia em dez/2025). Ouro = o número que
+   * a página alemã dá como ">71 bi".
+   */
+  'openai-investidores-equity-compute-he': {
+    max: 500,
+    groups: [
+      {
+        label: 'השקעת אחזקה, מצטבר לפי משקיע (מיליארדי דולר)',
+        color: '#60a5fa',
+        items: [
+          { name: 'SoftBank (עד 10/26)', value: 64.6, valueLabel: '64.6', emphasis: true },
+          { name: 'Amazon (2026)', value: 50, valueLabel: '50' },
+          { name: 'Nvidia (2026)', value: 30, valueLabel: '30' },
+          { name: 'Microsoft (2019-23)', value: 13, valueLabel: '13' },
+        ],
+      },
+      {
+        label: 'התחייבויות מחשוב — לא השקעה',
+        color: '#64748b',
+        items: [
+          { name: 'Stargate (01/2025)', value: 500, valueLabel: '500' },
+          { name: 'Amazon, AWS (+8 שנים)', value: 100, valueLabel: '100' },
+          { name: 'Nvidia (כוונה)', value: 100, valueLabel: 'עד 100' },
+        ],
+      },
+    ],
+  },
+
+  /**
+   * `openai-form990-remuneracao-he` — Form 990 da "Openai Inc" (EIN 81-0861541), Parte VII,
+   * colunas (E) compensação de organizações relacionadas + (F) outra compensação, US$; coluna
+   * (D), paga pela própria nonprofit, é 0 em todas as linhas de Altman. FY2023
+   * (ObjectId 202413189349309791): Altman 64.957 + 11.044 = 76.001. FY2024
+   * (ObjectId 202513219349328476): Altman 65.638 + 48.036 = 113.674 — 10º de 12 nomes da Parte
+   * VII. Acima dele: Greg Brockman (Dir/Pres, Former) 240.176 + 24.013 = 264.189; Chris Clark
+   * 12.933 + 166.484 + 36.604 = 216.021; Lawrence Summers 143.702; Adam D'Angelo, Susan
+   * Desmond-Hellmann e Bret Taylor 140.000; Nicole Seligman e Fidji Simo 127.500; Ilya Sutskever
+   * (Former) 119.538. Abaixo: Paul Nakasone 99.030, Zico Kolter 53.494. Tabela inteira extraída
+   * do full-text da ProPublica (regex sobre as 12 linhas) em 26/08/2026.
+   */
+  'openai-form990-remuneracao-he': {
+    max: 270000,
+    groups: [
+      {
+        label: 'סם אלטמן — המספר שמסתובב והשנה שאחריה (דולר)',
+        color: '#a48f65',
+        items: [
+          { name: 'FY2023 (מסתובב)', value: 76001, valueLabel: '76,001' },
+          { name: 'FY2024', value: 113674, valueLabel: '113,674', emphasis: true },
+        ],
+      },
+      {
+        label: 'המתוגמלים ביותר באותו Form 990 של FY2024 (דולר)',
+        color: '#64748b',
+        items: [
+          { name: 'Brockman (לשעבר)', value: 264189, valueLabel: '264,189' },
+          { name: 'Chris Clark (גזבר)', value: 216021, valueLabel: '216,021' },
+          { name: 'Lawrence Summers', value: 143702, valueLabel: '143,702' },
+          { name: 'Bret Taylor (דירקט׳)', value: 140000, valueLabel: '140,000' },
+        ],
+      },
+    ],
+  },
+
+  /**
+   * `openai-brasil-precos-reais-he` — ChatGPT no Brasil, compra dentro do app (Apple App Store
+   * Brasil, apps.apple.com/br/app/chatgpt/id6448311069, lido ao vivo em 26/08/2026): Go R$ 39,90,
+   * Plus R$ 99,90, Pro 5x R$ 524,90, Pro 20x R$ 999,90. O site (chatgpt.com/pricing) devolveu 403
+   * a esta máquina; o Go no site é R$ 39,99 (comunicado Nubank + OpenAI, 28/10/2025). Ouro = o
+   * plano que só existe em alguns países.
+   */
+  'openai-brasil-precos-reais-he': {
+    max: 1100,
+    groups: [
+      {
+        label: 'ChatGPT בברזיל — App Store, 26/08/2026 (R$ בחודש)',
+        color: '#60a5fa',
+        items: [
+          { name: 'Go', value: 39.9, valueLabel: 'R$ 39.90', emphasis: true },
+          { name: 'Plus', value: 99.9, valueLabel: 'R$ 99.90' },
+          { name: 'Pro (5x)', value: 524.9, valueLabel: 'R$ 524.90' },
+          { name: 'Pro (20x)', value: 999.9, valueLabel: 'R$ 999.90' },
+        ],
+      },
+    ],
+  },
+  /**
    * `modelos-mesmo-fornecedor` — o MESMO fornecedor contado pelas três definições. Bloco 1:
    * repositórios no Hugging Face com etiqueta text-generation por organização (`?author=`,
    * medido em 26/08/2026 ~11:55; Alibaba = org `Qwen`). Bloco 2: modelos notáveis lançados em
@@ -7064,6 +8037,237 @@ export interface StepFlowDataset {
 }
 
 export const stepFlowDatasets: Record<string, StepFlowDataset> = {
+  /**
+   * `openai-quatro-naturezas` — a régua do artigo: toda estatística sobre a OpenAI cabe numa
+   * de quatro caixas. PROCEDÊNCIA: classificação do autor sobre os 20 números centrais da
+   * página alemã (apêndice de `fontes/inventario-afirmacoes-gradually.md`), cada um com o
+   * arquivo de evidência.
+   */
+  'openai-quatro-naturezas': {
+    orientation: 'chain',
+    steps: [
+      {
+        label: 'Oficial — a própria empresa assinou, ou é registro público',
+        detail: 'Post da OpenAI, comunicado de rodada, Form 990 no IRS. Verificável na fonte, com data.',
+      },
+      {
+        label: 'Reportagem ou estimativa — alguém de fora apurou',
+        detail: 'The Information, Bloomberg, WSJ, Sacra. Vale o que vale a apuração; muda quando ela muda.',
+      },
+      {
+        label: 'Meta — alguém disse que pretende',
+        detail: 'Documento interno vazado ou frase em podcast. Não aconteceu; é intenção com data.',
+      },
+      {
+        label: 'Órfão — ninguém sabe de onde veio',
+        detail: 'Circula com fonte citada, mas a fonte não contém o número. Não entra em texto nenhum.',
+        alert: true,
+      },
+    ],
+  },
+
+  /**
+   * `openai-rodadas-linha-do-tempo` — as rodadas que mudaram de escala. PROCEDÊNCIA: CNBC
+   * (11/12/2025, pledge de US$ 1 bi em 2015, só US$ 130 mi recebidos até 2019); Microsoft
+   * US$ 1 bi (jul/2019) e US$ 10 bi (jan/2023), amplamente noticiados (categoria B); TechCrunch
+   * (02/10/2024: US$ 6,6 bi a US$ 157 bi); OpenAI (31/03/2026: US$ 122 bi a US$ 852 bi, post
+   * oficial lido no Wayback).
+   */
+  'openai-rodadas-linha-do-tempo': {
+    orientation: 'timeline',
+    steps: [
+      { label: 'dez/2015', detail: '1 bi prometido' },
+      { label: 'jul/2019', detail: 'Microsoft: 1 bi' },
+      { label: 'jan/2023', detail: 'Microsoft: 10 bi' },
+      { label: 'out/2024', detail: '6,6 bi a 157 bi' },
+      { label: 'mar/2026', detail: '122 bi a 852 bi', alert: true },
+    ],
+  },
+  /**
+   * `openai-quatro-naturezas` — a régua do artigo: toda estatística sobre a OpenAI cabe numa
+   * de quatro caixas. PROCEDÊNCIA: classificação do autor sobre os 20 números centrais da
+   * página alemã (apêndice de `fontes/inventario-afirmacoes-gradually.md`), cada um com o
+   * arquivo de evidência.
+   */
+  'openai-quatro-naturezas-en': {
+    orientation: 'chain',
+    steps: [
+      {
+        label: 'Official — the company signed it, or it is public record',
+        detail: 'OpenAI post, funding round, Form 990 with the IRS. Verifiable at the source, dated.',
+      },
+      {
+        label: 'Reporting or estimate — someone outside dug it up',
+        detail: 'The Information, Bloomberg, WSJ, Sacra. Only as good as the reporting; changes when it does.',
+      },
+      {
+        label: 'Target — someone said they intend to',
+        detail: 'A leaked document or a line on a podcast. Has not happened; it is intent with a date.',
+      },
+      {
+        label: 'Orphan — no one knows where it came from',
+        detail: 'Circulates with a cited source that does not contain the number. Never goes in text.',
+        alert: true,
+      },
+    ],
+  },
+
+  /**
+   * `openai-rodadas-linha-do-tempo` — as rodadas que mudaram de escala. PROCEDÊNCIA: CNBC
+   * (11/12/2025, pledge de US$ 1 bi em 2015, só US$ 130 mi recebidos até 2019); Microsoft
+   * US$ 1 bi (jul/2019) e US$ 10 bi (jan/2023), amplamente noticiados (categoria B); TechCrunch
+   * (02/10/2024: US$ 6,6 bi a US$ 157 bi); OpenAI (31/03/2026: US$ 122 bi a US$ 852 bi, post
+   * oficial lido no Wayback).
+   */
+  'openai-rodadas-linha-do-tempo-en': {
+    orientation: 'timeline',
+    steps: [
+      { label: 'Dec 2015', detail: '$1bn pledged' },
+      { label: 'Jul 2019', detail: 'Microsoft: $1bn' },
+      { label: 'Jan 2023', detail: 'Microsoft: $10bn' },
+      { label: 'Oct 2024', detail: '$6.6bn at $157bn' },
+      { label: 'Mar 2026', detail: '$122bn at $852bn', alert: true },
+    ],
+  },
+  /**
+   * `openai-quatro-naturezas-es` — a régua do artigo: toda estatística sobre a OpenAI cabe numa
+   * de quatro caixas. PROCEDÊNCIA: classificação do autor sobre os 20 números centrais da
+   * página alemã (apêndice de `fontes/inventario-afirmacoes-gradually.md`), cada um com o
+   * arquivo de evidência.
+   */
+  'openai-quatro-naturezas-es': {
+    orientation: 'chain',
+    steps: [
+      {
+        label: 'Oficial — la propia empresa firmó, o es registro público',
+        detail: 'Post de OpenAI, comunicado de ronda, Form 990 en IRS. Verificable en la fuente, con fecha.',
+      },
+      {
+        label: 'Reportaje o estimación — alguien de fuera investigó',
+        detail: 'The Information, Bloomberg, WSJ, Sacra. Vale lo que vale la investigación; cambia con ella.',
+      },
+      {
+        label: 'Meta — alguien dijo que pretende',
+        detail: 'Documento interno filtrado o frase en un podcast. No ocurrió; es intención con fecha.',
+      },
+      {
+        label: 'Huérfano — nadie sabe de dónde salió',
+        detail: 'Circula con fuente citada, pero la fuente no contiene el número. No entra en ningún texto.',
+        alert: true,
+      },
+    ],
+  },
+
+  /**
+   * `openai-rodadas-linha-do-tempo-es` — as rodadas que mudaram de escala. PROCEDÊNCIA: CNBC
+   * (11/12/2025, pledge de US$ 1 bi em 2015, só US$ 130 mi recebidos até 2019); Microsoft
+   * US$ 1 bi (jul/2019) e US$ 10 bi (jan/2023), amplamente noticiados (categoria B); TechCrunch
+   * (02/10/2024: US$ 6,6 bi a US$ 157 bi); OpenAI (31/03/2026: US$ 122 bi a US$ 852 bi, post
+   * oficial lido no Wayback). Detail mantém a abreviação "bi" (não "mil millones") por
+   * orçamento de largura do widget de timeline — ver nota no topo do arquivo.
+   */
+  'openai-rodadas-linha-do-tempo-es': {
+    orientation: 'timeline',
+    steps: [
+      { label: 'dic/2015', detail: '1 bi prometido' },
+      { label: 'jul/2019', detail: 'Microsoft: 1 bi' },
+      { label: 'ene/2023', detail: 'Microsoft: 10 bi' },
+      { label: 'oct/2024', detail: '6,6 bi a 157 bi' },
+      { label: 'mar/2026', detail: '122 bi a 852 bi', alert: true },
+    ],
+  },
+  /**
+   * `openai-quatro-naturezas-it` — a régua do artigo: toda estatística sobre a OpenAI cabe numa
+   * de quatro caixas. PROCEDÊNCIA: classificação do autor sobre os 20 números centrais da
+   * página alemã (apêndice de `fontes/inventario-afirmacoes-gradually.md`), cada um com o
+   * arquivo de evidência.
+   */
+  'openai-quatro-naturezas-it': {
+    orientation: 'chain',
+    steps: [
+      {
+        label: 'Ufficiale — l\'azienda ha firmato, o è registro pubblico',
+        detail: 'Post dell\'OpenAI, comunicato di round, Form 990 all\'IRS. Verificabile alla fonte, con data.',
+      },
+      {
+        label: 'Reportage o stima — qualcuno dall\'esterno ha indagato',
+        detail: 'The Information, Bloomberg, WSJ, Sacra. Vale quanto vale l\'indagine; cambia se cambia.',
+      },
+      {
+        label: 'Obiettivo — intenzione dichiarata',
+        detail: 'Documento interno diffuso o frase in podcast. Non è accaduto; è intenzione con data.',
+      },
+      {
+        label: 'Orfano — nessuno sa da dove venga',
+        detail: 'Circola con fonte citata, ma la fonte non contiene il numero. Non entra in nessun testo.',
+        alert: true,
+      },
+    ],
+  },
+
+  /**
+   * `openai-rodadas-linha-do-tempo-it` — as rodadas que mudaram de escala. PROCEDÊNCIA: CNBC
+   * (11/12/2025, pledge de US$ 1 bi em 2015, só US$ 130 mi recebidos até 2019); Microsoft
+   * US$ 1 bi (jul/2019) e US$ 10 bi (jan/2023), amplamente noticiados (categoria B); TechCrunch
+   * (02/10/2024: US$ 6,6 bi a US$ 157 bi); OpenAI (31/03/2026: US$ 122 bi a US$ 852 bi, post
+   * oficial lido no Wayback).
+   */
+  'openai-rodadas-linha-do-tempo-it': {
+    orientation: 'timeline',
+    steps: [
+      { label: 'dic/2015', detail: '1 mld promesso' },
+      { label: 'lug/2019', detail: 'Microsoft: 1 mld' },
+      { label: 'gen/2023', detail: 'Microsoft: 10 mld' },
+      { label: 'ott/2024', detail: '6,6 mld a 157 mld' },
+      { label: 'mar/2026', detail: '122 mld a 852 mld', alert: true },
+    ],
+  },
+  /**
+   * `openai-quatro-naturezas-he` — a régua do artigo: toda estatística sobre a OpenAI cabe numa
+   * de quatro caixas. PROCEDÊNCIA: classificação do autor sobre os 20 números centrais da
+   * página alemã (apêndice de `fontes/inventario-afirmacoes-gradually.md`), cada um com o
+   * arquivo de evidência.
+   */
+  'openai-quatro-naturezas-he': {
+    orientation: 'chain',
+    steps: [
+      {
+        label: 'רשמי — החברה עצמה חתמה, או רשומה ציבורית',
+        detail: 'פוסט, הודעת גיוס, Form 990 ברשות המסים. ניתן לאימות במקור, עם תאריך.',
+      },
+      {
+        label: 'דיווח או הערכה — מישהו מבחוץ תחקר',
+        detail: 'The Information, Bloomberg, WSJ, Sacra. שווה כמה שהתחקיר שווה; משתנה איתו.',
+      },
+      {
+        label: 'יעד — מישהו אמר שהוא מתכוון',
+        detail: 'מסמך פנימי שדלף או משפט בפודקאסט. לא קרה; זו כוונה עם תאריך.',
+      },
+      {
+        label: 'יתום — אף אחד לא יודע מאיפה זה בא',
+        detail: 'מסתובב עם מקור מצוטט, אבל המקור לא מכיל את המספר. לא נכנס לטקסט.',
+        alert: true,
+      },
+    ],
+  },
+
+  /**
+   * `openai-rodadas-linha-do-tempo-he` — as rodadas que mudaram de escala. PROCEDÊNCIA: CNBC
+   * (11/12/2025, pledge de US$ 1 bi em 2015, só US$ 130 mi recebidos até 2019); Microsoft
+   * US$ 1 bi (jul/2019) e US$ 10 bi (jan/2023), amplamente noticiados (categoria B); TechCrunch
+   * (02/10/2024: US$ 6,6 bi a US$ 157 bi); OpenAI (31/03/2026: US$ 122 bi a US$ 852 bi, post
+   * oficial lido no Wayback).
+   */
+  'openai-rodadas-linha-do-tempo-he': {
+    orientation: 'timeline',
+    steps: [
+      { label: '12/2015', detail: '1 מיליארד הובטח' },
+      { label: '07/2019', detail: 'Microsoft: 1 מיליארד' },
+      { label: '01/2023', detail: 'Microsoft: 10 מיליארד' },
+      { label: '10/2024', detail: '6.6 עד 157 מיליארד' },
+      { label: '03/2026', detail: '122 עד 852 מיליארד', alert: true },
+    ],
+  },
   /**
    * `modelos-tres-definicoes` — a régua do artigo: "modelo segundo quem?". Três definições, três
    * contagens corretas e incompatíveis. PROCEDÊNCIA: Hugging Face (numTotalItems da página

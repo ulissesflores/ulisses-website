@@ -52,6 +52,42 @@ export function localizeArtigo(artigo: Artigo, locale: Locale): Pick<Artigo, 'ti
 
 export const artigos: readonly Artigo[] = [
   {
+    slug: 'estatisticas-openai',
+    title: 'Só 8 dos 20 números mais citados sobre a OpenAI são da OpenAI — o resto é vazamento, meta ou ninguém sabe de onde veio',
+    summary: 'Classifiquei os 20 números mais citados sobre a OpenAI: 8 são oficiais, 6 são reportagem, 3 são meta e 3 ninguém sabe de onde vieram. O 92% tem 31 meses. Fui à fonte de cada número que circula em compilados sobre a empresa: os da própria OpenAI conferem — e são os menos interessantes; o que dá manchete é o que ela nunca assinou. O "92% da Fortune 500" saiu da resposta da OpenAI ao processo do New York Times, em janeiro de 2024, e circula sem data; 24 bi de receita é oficial, 40 bi é estimativa, 280 bi é meta — juntar os três com o mesmo verbo está errado mesmo com cada número certo; a SoftBank investiu 64,6 bi, não "mais de 71", e os 500 bi do Stargate são compromisso de computação, não investimento. O "salário de US$ 76.001" de Altman é a soma de duas colunas do Form 990, o ano seguinte dá 113.674, e ele é o décimo de doze nomes em remuneração. No Brasil, o "50 milhões de usuários" aparece idêntico em agosto de 2025 e agosto de 2026 — as mensagens por dia subiram 54%.',
+    date: '2026-08-26',
+    tags: ['ia', 'openai', 'estatisticas', 'metodologia'],
+    hero: {
+      width: 2400,
+      height: 1260,
+      locales: {
+        'pt-br': { src: '/artigos/estatisticas-openai/hero.png', og: '/artigos/estatisticas-openai/hero-og.png' },
+        'en': { src: '/artigos/estatisticas-openai/hero-en.png', og: '/artigos/estatisticas-openai/hero-en-og.png' },
+        'es': { src: '/artigos/estatisticas-openai/hero-es.png', og: '/artigos/estatisticas-openai/hero-es-og.png' },
+        'it': { src: '/artigos/estatisticas-openai/hero-it.png', og: '/artigos/estatisticas-openai/hero-it-og.png' },
+        'he': { src: '/artigos/estatisticas-openai/hero-he.png', og: '/artigos/estatisticas-openai/hero-he-og.png' },
+      },
+    },
+    i18n: {
+      en: {
+        title: 'Only 8 of the 20 most-cited OpenAI numbers are from OpenAI — the rest is leaked, a target, or untraceable',
+        summary: 'I classified the 20 most-cited numbers about OpenAI: 8 are official, 6 are reporting, 3 are targets, and 3 no one knows where they came from. The 92% is 31 months old. I went to the source of every number circulating in roundups about the company: the ones from OpenAI itself check out — and they are the least interesting; what makes headlines is what it never signed off on. The "92% of the Fortune 500" came from OpenAI\'s response to the New York Times lawsuit, in January 2024, and circulates with no date; US$ 24bn in revenue is official, US$ 40bn is an estimate, US$ 280bn is a target — lumping the three together with the same verb is wrong even with every number right; SoftBank invested US$ 64.6bn, not "more than 71," and Stargate\'s US$ 500bn is a compute commitment, not investment. Altman\'s "US$ 76,001 salary" is the sum of two Form 990 columns, the following year comes to US$ 113,674, and he is tenth of twelve names in compensation. In Brazil, the "50 million users" figure appears identical in August 2025 and August 2026 — messages per day rose 54%.',
+      },
+      es: {
+        title: 'Solo 8 de 20 números más citados sobre OpenAI son de OpenAI — el resto es filtración, meta o nadie sabe de dónde vino',
+        summary: 'Clasifiqué los 20 números más citados sobre OpenAI: 8 son oficiales, 6 son reportaje, 3 son meta y de 3 nadie sabe de dónde salieron. El 92 % tiene 31 meses. Fui a la fuente de cada número que circula en los compilados sobre la empresa: los de la propia OpenAI concuerdan — y son los menos interesantes; lo que da titulares es lo que ella nunca firmó. El "92 % de la Fortune 500" salió de la respuesta de OpenAI a la demanda del New York Times, en enero de 2024, y circula sin fecha; 24 mil millones de ingresos es oficial, 40 mil millones es estimación, 280 mil millones es meta — juntar los tres con el mismo verbo está mal aunque cada número sea correcto; SoftBank invirtió 64,6 mil millones, no "más de 71", y los 500 mil millones de Stargate son un compromiso de computación, no una inversión. El "salario de US$ 76.001" de Altman es la suma de dos columnas del Form 990, el año siguiente da 113.674, y él es el décimo de doce nombres en remuneración. En Brasil, "50 millones de usuarios" aparece idéntico en agosto de 2025 y agosto de 2026 — los mensajes por día subieron 54 %.',
+      },
+      it: {
+        title: 'Solo 8 dei 20 numeri più citati su OpenAI sono di OpenAI — il resto è fuga, obiettivo o nessuno sa da dove venga',
+        summary: 'Ho classificato i 20 numeri più citati sull\'OpenAI: 8 sono ufficiali, 6 sono reportage, 3 sono obiettivi e 3 nessuno sa da dove siano venuti. Il 92% ha 31 mesi. Sono andato alla fonte di ogni numero che circola nelle raccolte sull\'azienda: quelli della stessa OpenAI sono corretti — e sono i meno interessanti; quello che fa notizia è ciò che lei non ha mai firmato. Il "92% della Fortune 500" viene dalla risposta dell\'OpenAI alla causa del New York Times, del gennaio 2024, e circola senza data; 24 mld di ricavi è ufficiale, 40 mld è una stima, 280 mld è un obiettivo — unire i tre con lo stesso verbo è sbagliato anche con ogni numero corretto; SoftBank ha investito 64,6 mld, non "oltre 71", e i 500 mld di Stargate sono un impegno di calcolo, non un investimento. Lo "stipendio di 76.001 dollari" di Altman è la somma di due colonne del Form 990, l\'anno successivo dà 113.674, ed è il decimo di dodici nomi in retribuzione. In Brasile, "50 milioni di utenti" appare identico in agosto 2025 e agosto 2026 — i messaggi al giorno sono saliti del 54%.',
+      },
+      he: {
+        title: 'רק 8 מ-20 המספרים המצוטטים ביותר על OpenAI הם שלה — השאר דליפה, יעד או מקור אלמוני',
+        summary: 'מיינתי את 20 המספרים המצוטטים ביותר על OpenAI: 8 רשמיים, 6 דיווח, 3 יעד ו-3 שאף אחד לא יודע מאיפה הגיעו. ל-92% יש 31 חודשים. פניתי למקור של כל מספר שמסתובב במקבצים על החברה: אלה של OpenAI עצמה מתאמתים — והם הכי פחות מעניינים; מה שעושה כותרת הוא מה שהיא מעולם לא חתמה עליו. ה-"92% מ-Fortune 500" יצא מתשובת OpenAI לתביעת ה-New York Times, בינואר 2024, ומסתובב בלי תאריך; 24 מיליארד הכנסה הם רשמי, 40 מיליארד הערכה, 280 מיליארד יעד — לחבר את השלושה עם אותו פועל שגוי גם כשכל מספר נכון. SoftBank השקיעה 64.6 מיליארד, לא "יותר מ-71", וה-500 מיליארד של Stargate הם התחייבות מחשוב, לא השקעה. ה-"משכורת של 76,001 דולר" של אלטמן היא סכום של שתי עמודות ב-Form 990, השנה שאחריה נותנת 113,674, והוא העשירי מתוך שנים עשר שמות בתגמול. בברזיל, "50 מיליון משתמשים" מופיע זהה באוגוסט 2025 ואוגוסט 2026 — ההודעות ביום עלו ב-54%.',
+      },
+    },
+  },
+  {
     slug: 'estatisticas-llms',
     title: 'Quantos modelos de linguagem existem? 274, 95 ou 403.420 — e a nota de código que circula vem de um teste que o próprio criador abandonou',
     summary: '274, 95 ou 403.420 modelos de linguagem: as três contagens estão certas. E o benchmark de código que circula foi abandonado pelo próprio criador em fevereiro. Fui conferir as estatísticas de LLM que circulam em compilados: "quantos modelos existem" não tem resposta porque sobra definição — 403.420 repositórios no Hugging Face (medição própria, um comando de uma linha), 95 notáveis no AI Index de Stanford, 274 num catálogo editorial. A nota que o laboratório dá a si mesmo aguentou a conferência (zero a quatro pontos de diferença onde o mesmo modelo foi medido de fora); o que não aguenta é a régua: a OpenAI declarou o SWE-bench Verified contaminado e parou de publicá-lo em 23/02/2026, e em agosto ele ainda é o teste de "quem programa melhor". Comparações entre versões erram o sinal (o DeepSeek de agosto está 8 pontos à frente do Opus 4.8, não atrás); "o mais caro" custa US$ 30 nos compilados e US$ 150 no catálogo real; os maiores modelos com tamanho conhecido são todos abertos. No Brasil, a Maritaca precifica em reais e publica o único comparativo de custo de suíte em moeda nacional: R$ 206 no Sabiá 4 Thinking contra R$ 590 no Opus 4.8.',
