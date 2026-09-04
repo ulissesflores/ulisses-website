@@ -319,6 +319,183 @@ export const chartDatasets: Record<string, ChartDataset> = {
     xTicks: [0.3, 1, 3, 10, 30, 100, 300, 1000, 3000],
     yTicks: [0, 10, 20, 30, 40, 50],
   },
+  'glm53flash-aa-pareto': {
+    series: [
+      {
+        label: 'GLM-5.3-Flash',
+        color: '#a48f65',
+        points: [[0.09, 57]],
+      },
+      {
+        label: 'Claude Fable 5',
+        color: '#d4d4d8',
+        points: [[3.14, 62]],
+      },
+      {
+        label: 'GPT-5.6 Luna',
+        color: '#60a5fa',
+        points: [[0.05, 52]],
+      },
+      {
+        label: 'Gemini 3.7 Flash',
+        color: '#fbbf24',
+        points: [[0.4, 56]],
+      },
+      {
+        label: 'GLM-5.3',
+        color: '#64748b',
+        points: [[0.68, 60]],
+      },
+    ],
+    xDomain: [0.03, 5],
+    yDomain: [50, 65],
+    xTicks: [0.03, 0.1, 0.3, 1, 3],
+    yTicks: [50, 55, 60, 65],
+  },
+
+  /* ── en — rotulos sao nomes de modelo: copia fiel, chave por idioma ─── */
+  'glm53flash-aa-pareto-en': {
+    series: [
+      {
+        label: 'GLM-5.3-Flash',
+        color: '#a48f65',
+        points: [[0.09, 57]],
+      },
+      {
+        label: 'Claude Fable 5',
+        color: '#d4d4d8',
+        points: [[3.14, 62]],
+      },
+      {
+        label: 'GPT-5.6 Luna',
+        color: '#60a5fa',
+        points: [[0.05, 52]],
+      },
+      {
+        label: 'Gemini 3.7 Flash',
+        color: '#fbbf24',
+        points: [[0.4, 56]],
+      },
+      {
+        label: 'GLM-5.3',
+        color: '#64748b',
+        points: [[0.68, 60]],
+      },
+    ],
+    xDomain: [0.03, 5],
+    yDomain: [50, 65],
+    xTicks: [0.03, 0.1, 0.3, 1, 3],
+    yTicks: [50, 55, 60, 65],
+  },
+
+
+  /* ── es ─────────────────────────────────────────────────────────────── */
+  'glm53flash-aa-pareto-es': {
+    series: [
+      {
+        label: 'GLM-5.3-Flash',
+        color: '#a48f65',
+        points: [[0.09, 57]],
+      },
+      {
+        label: 'Claude Fable 5',
+        color: '#d4d4d8',
+        points: [[3.14, 62]],
+      },
+      {
+        label: 'GPT-5.6 Luna',
+        color: '#60a5fa',
+        points: [[0.05, 52]],
+      },
+      {
+        label: 'Gemini 3.7 Flash',
+        color: '#fbbf24',
+        points: [[0.4, 56]],
+      },
+      {
+        label: 'GLM-5.3',
+        color: '#64748b',
+        points: [[0.68, 60]],
+      },
+    ],
+    xDomain: [0.03, 5],
+    yDomain: [50, 65],
+    xTicks: [0.03, 0.1, 0.3, 1, 3],
+    yTicks: [50, 55, 60, 65],
+  },
+
+
+  /* ── it ─────────────────────────────────────────────────────────────── */
+  'glm53flash-aa-pareto-it': {
+    series: [
+      {
+        label: 'GLM-5.3-Flash',
+        color: '#a48f65',
+        points: [[0.09, 57]],
+      },
+      {
+        label: 'Claude Fable 5',
+        color: '#d4d4d8',
+        points: [[3.14, 62]],
+      },
+      {
+        label: 'GPT-5.6 Luna',
+        color: '#60a5fa',
+        points: [[0.05, 52]],
+      },
+      {
+        label: 'Gemini 3.7 Flash',
+        color: '#fbbf24',
+        points: [[0.4, 56]],
+      },
+      {
+        label: 'GLM-5.3',
+        color: '#64748b',
+        points: [[0.68, 60]],
+      },
+    ],
+    xDomain: [0.03, 5],
+    yDomain: [50, 65],
+    xTicks: [0.03, 0.1, 0.3, 1, 3],
+    yTicks: [50, 55, 60, 65],
+  },
+
+
+  /* ── he ─────────────────────────────────────────────────────────────── */
+  'glm53flash-aa-pareto-he': {
+    series: [
+      {
+        label: 'GLM-5.3-Flash',
+        color: '#a48f65',
+        points: [[0.09, 57]],
+      },
+      {
+        label: 'Claude Fable 5',
+        color: '#d4d4d8',
+        points: [[3.14, 62]],
+      },
+      {
+        label: 'GPT-5.6 Luna',
+        color: '#60a5fa',
+        points: [[0.05, 52]],
+      },
+      {
+        label: 'Gemini 3.7 Flash',
+        color: '#fbbf24',
+        points: [[0.4, 56]],
+      },
+      {
+        label: 'GLM-5.3',
+        color: '#64748b',
+        points: [[0.68, 60]],
+      },
+    ],
+    xDomain: [0.03, 5],
+    yDomain: [50, 65],
+    xTicks: [0.03, 0.1, 0.3, 1, 3],
+    yTicks: [50, 55, 60, 65],
+  },
+
 };
 
 /* ── Waffle ──────────────────────────────────────────────────────────── */
@@ -6497,6 +6674,310 @@ export const stepFlowDatasets: Record<string, StepFlowDataset> = {
       },
     ],
   },
+  /* A cadeia dos 100 trilhões. `alert` marca onde a afirmação deixou de ser
+     a que a fonte primária fez. Cada elo tem link e data no corpo do artigo. */
+  'glm53flash-cadeia-100t': {
+    orientation: 'chain' as const,
+    steps: [
+      {
+        label: '20/08 — a OpenCode anuncia uma semana grátis',
+        detail: '"Temos capacidade para 100 T tokens por dia" — o app de terminal, sobre a promoção.',
+      },
+      {
+        label: '22/08 — a imprensa repete: capacidade, autor desconhecido',
+        detail: 'Techmeme e Wccftech: "modelo furtivo de um laboratório desconhecido". Ninguém sabia de quem era.',
+      },
+      {
+        label: '26/08 — a SemiAnalysis troca o verbo',
+        detail: '"Os 100 T tokens por dia SÃO SERVIDOS em chip chinês." Capacidade virou volume.',
+        alert: true,
+      },
+      {
+        label: '26/08 — a Wccftech põe o laboratório no lugar do app',
+        detail: 'Manchete: a Zhipu "revela que rodou em GPUs chinesas SERVINDO 100 trilhões por dia".',
+        alert: true,
+      },
+      {
+        label: '27/08 — o the-decoder atribui à Z.ai',
+        detail: '"A Z.ai serviu 100 trilhões de tokens por dia." O sujeito agora é o laboratório.',
+        alert: true,
+      },
+      {
+        label: '29/08 — o vídeo fecha a cadeia',
+        detail: '"Ela ESTAVA SERVINDO cem trilhões de tokens por dia" — dito da Z.ai, como fato dado.',
+        alert: true,
+      },
+    ],
+  },
+
+  /* Degrau 6 — o preço é campanha, e a campanha tem data de fim. */
+  'glm53flash-precos': {
+    orientation: 'timeline' as const,
+    steps: [
+      {
+        label: 'Até 26/08',
+        detail: 'Ox Alpha, semana grátis',
+      },
+      {
+        label: '26/08',
+        detail: 'Tabela: US$ 0,15 / 0,50',
+      },
+      {
+        label: 'Hoje',
+        detail: 'Metade: US$ 0,075 e 0,25',
+      },
+      {
+        label: '09/09/2026',
+        detail: 'A promoção acaba',
+        alert: true,
+      },
+    ],
+  },
+
+  /* ── en ─────────────────────────────────────────────────────────────── */
+  'glm53flash-cadeia-100t-en': {
+    orientation: 'chain' as const,
+    steps: [
+      {
+        label: 'Aug 20 — OpenCode announces a free week',
+        detail: '"We have capacity for 100T tokens per day" — the terminal app, about its promotion.',
+      },
+      {
+        label: 'Aug 22 — the press repeats: capacity, author unknown',
+        detail: 'Techmeme and Wccftech: "a stealth model from an unknown AI lab". Nobody knew whose.',
+      },
+      {
+        label: 'Aug 26 — SemiAnalysis swaps the verb',
+        detail: '"The 100T tokens per day IS SERVED on Chinese chip." Capacity became volume.',
+        alert: true,
+      },
+      {
+        label: 'Aug 26 — Wccftech puts the lab in place of the app',
+        detail: 'Headline: Zhipu "reveals it ran on Chinese GPUs SERVING 100 trillion per day".',
+        alert: true,
+      },
+      {
+        label: 'Aug 27 — the-decoder attributes it to Z.ai',
+        detail: '"Z.ai served 100 trillion tokens a day." The subject is now the lab.',
+        alert: true,
+      },
+      {
+        label: 'Aug 29 — the video closes the chain',
+        detail: '"It WAS SERVING one hundred trillion tokens a day" — said of Z.ai, as fact.',
+        alert: true,
+      },
+    ],
+  },
+
+  'glm53flash-precos-en': {
+    orientation: 'timeline' as const,
+    steps: [
+      {
+        label: 'Until Aug 26',
+        detail: 'Ox Alpha, free week',
+      },
+      {
+        label: 'Aug 26',
+        detail: 'List: US$ 0.15 / 0.50',
+      },
+      {
+        label: 'Today',
+        detail: 'Half: US$ 0.075 and 0.25',
+      },
+      {
+        label: 'Sep 9, 2026',
+        detail: 'The promotion ends',
+        alert: true,
+      },
+    ],
+  },
+
+
+  /* ── es — escala larga: 100 T = 100 billones ───────────────────────── */
+  'glm53flash-cadeia-100t-es': {
+    orientation: 'chain' as const,
+    steps: [
+      {
+        label: '20/08 — OpenCode anuncia una semana gratis',
+        detail: '"Tenemos capacidad para 100 billones de tokens al día" — la app de terminal.',
+      },
+      {
+        label: '22/08 — la prensa repite: capacidad, autor desconocido',
+        detail: 'Techmeme y Wccftech: "modelo sigiloso de un laboratorio desconocido".',
+      },
+      {
+        label: '26/08 — SemiAnalysis cambia el verbo',
+        detail: '"Los 100 billones de tokens al día SON SERVIDOS en chip chino." Ya es volumen.',
+        alert: true,
+      },
+      {
+        label: '26/08 — Wccftech pone el laboratorio en lugar de la app',
+        detail: 'Titular: Zhipu "revela que corrió en GPU chinas SIRVIENDO 100 billones al día".',
+        alert: true,
+      },
+      {
+        label: '27/08 — the-decoder se lo atribuye a Z.ai',
+        detail: '"Z.ai sirvió 100 billones de tokens al día." El sujeto ya es el laboratorio.',
+        alert: true,
+      },
+      {
+        label: '29/08 — el vídeo cierra la cadena',
+        detail: '"Estaba sirviendo cien billones de tokens al día" — dicho de Z.ai, como un hecho.',
+        alert: true,
+      },
+    ],
+  },
+
+  'glm53flash-precos-es': {
+    orientation: 'timeline' as const,
+    steps: [
+      {
+        label: 'Hasta 26/08',
+        detail: 'Ox Alpha, semana gratis',
+      },
+      {
+        label: '26/08',
+        detail: 'Tarifa: 0,15 / 0,50 USD',
+      },
+      {
+        label: 'Hoy',
+        detail: 'La mitad: 0,075 y 0,25',
+      },
+      {
+        label: '09/09/2026',
+        detail: 'Acaba la promoción',
+        alert: true,
+      },
+    ],
+  },
+
+
+  /* ── it — escala longa: 100 T = 100.000 miliardi ───────────────────── */
+  'glm53flash-cadeia-100t-it': {
+    orientation: 'chain' as const,
+    steps: [
+      {
+        label: '20/08 — OpenCode annuncia una settimana gratuita',
+        detail: '"Abbiamo capacità per 100.000 miliardi di token al giorno" — l\'app da terminale.',
+      },
+      {
+        label: '22/08 — la stampa ripete: capacità, autore sconosciuto',
+        detail: 'Techmeme e Wccftech: "modello furtivo di un laboratorio sconosciuto".',
+      },
+      {
+        label: '26/08 — SemiAnalysis cambia il verbo',
+        detail: '"I 100.000 miliardi al giorno SONO SERVITI su chip cinese." Ora è volume.',
+        alert: true,
+      },
+      {
+        label: '26/08 — Wccftech mette il laboratorio al posto dell\'app',
+        detail: 'Titolo: Zhipu "rivela di aver girato su GPU cinesi SERVENDO 100.000 miliardi".',
+        alert: true,
+      },
+      {
+        label: '27/08 — the-decoder lo attribuisce a Z.ai',
+        detail: '"Z.ai ha servito 100.000 miliardi di token al giorno." Ora il soggetto è il lab.',
+        alert: true,
+      },
+      {
+        label: '29/08 — il video chiude la catena',
+        detail: '"Stava servendo centomila miliardi di token al giorno" — detto di Z.ai, come fatto.',
+        alert: true,
+      },
+    ],
+  },
+
+  'glm53flash-precos-it': {
+    orientation: 'timeline' as const,
+    steps: [
+      {
+        label: 'Fino al 26/08',
+        detail: 'Ox Alpha, settimana gratis',
+      },
+      {
+        label: '26/08',
+        detail: 'Listino: 0,15 / 0,50 USD',
+      },
+      {
+        label: 'Oggi',
+        detail: 'La metà: 0,075 e 0,25',
+      },
+      {
+        label: '09/09/2026',
+        detail: 'La promozione finisce',
+        alert: true,
+      },
+    ],
+  },
+
+
+  /* ── he — o `StepFlowDiagram` e do SITE e sua geometria e LTR por coordenada
+     absoluta: espelhar exigiria mexer no componente publicado, e espelhamento
+     parcial e pior que nenhum (limitacao declarada no `marca-dagua-claude`).
+     Datas SO em numero: rotulo que mistura mes em hebraico com algarismo
+     latino e reordenado pelo bidi — "2 באוג׳ 2026" saiu "2 2026 באוג׳". */
+  'glm53flash-cadeia-100t-he': {
+    orientation: 'chain' as const,
+    steps: [
+      {
+        label: '‏20/08 — OpenCode מכריזה על שבוע חינם',
+        detail: '"יש לנו קיבולת ל‑100 טריליון טוקנים ביום" — אפליקציית הטרמינל, על המבצע.',
+      },
+      {
+        label: '22/08 — העיתונות חוזרת: קיבולת, מחבר לא ידוע',
+        detail: '‏Techmeme ו‑Wccftech: "מודל חשאי ממעבדה לא ידועה". איש לא ידע של מי.',
+      },
+      {
+        label: '‏26/08 — SemiAnalysis מחליפה את הפועל',
+        detail: '"‏100 הטריליון ביום משורתים על שבב סיני." קיבולת הפכה לנפח.',
+        alert: true,
+      },
+      {
+        label: '‏26/08 — Wccftech שמה את המעבדה במקום האפליקציה',
+        detail: 'כותרת: Zhipu "חושפת שרצה על GPU סיניים ומשרתת 100 טריליון ביום".',
+        alert: true,
+      },
+      {
+        label: '‏27/08 — the-decoder מייחס ל‑Z.ai',
+        detail: '"‏Z.ai שירתה 100 טריליון טוקנים ביום." הנושא עכשיו הוא המעבדה.',
+        alert: true,
+      },
+      {
+        label: '29/08 — הסרטון סוגר את השרשרת',
+        detail: '"היא שירתה מאה טריליון טוקנים ביום" — נאמר על Z.ai, כעובדה גמורה.',
+        alert: true,
+      },
+    ],
+  },
+
+  /* Ordem INVERTIDA de proposito: a geometria da linha do tempo e LTR por coordenada
+     absoluta (limitacao declarada no `marca-dagua-claude`), entao quem le da direita para
+     a esquerda so encontra a cronologia na ordem certa se o dataset vier ao contrario —
+     mesma correcao que as pilulas do `TextVsFileDiagram` receberam em 2026-08-15. O ambar
+     segue no marco certo (09/09), que agora nasce a esquerda. */
+  'glm53flash-precos-he': {
+    orientation: 'timeline' as const,
+    steps: [
+      {
+        label: '09/09/2026',
+        detail: 'המבצע נגמר',
+        alert: true,
+      },
+      {
+        label: 'היום',
+        detail: 'חצי: 0.075 / 0.25',
+      },
+      {
+        label: '26/08',
+        detail: 'מחירון: 0.15 / 0.50',
+      },
+      {
+        label: 'עד 26/08',
+        detail: '‏Ox Alpha, שבוע חינם',
+      },
+    ],
+  },
+
 };
 
 
@@ -7092,4 +7573,897 @@ export const vramLadderDatasets: Record<string, VramLadderDataset> = {
       estouro: 'מה שכבר לא נכנס בהקשר המרבי',
     },
   },
+};
+
+
+/* ═══════════════════════════════════════════════════════════════════════
+   1. `costLadderDatasets` — o componente NOVO deste artigo.
+   Colar o `interface` + o `Record` junto dos outros, em `artigos-charts.ts`.
+   ═══════════════════════════════════════════════════════════════════════ */
+
+export interface CostLadderRow {
+  /** Rótulo da linha. Orçamento medido: 196 px na Fahkwang. */
+  label: string;
+  /** Segunda linha do rótulo. Orçamento medido: 196 px. */
+  sublabel?: string;
+  /** Comprimento da barra, na unidade da cena. */
+  work: number;
+  /** Segundo segmento empilhado, mesma unidade. */
+  workExtra?: number;
+  /** O número que fecha a linha, já formatado. Orçamento medido: 122 px. */
+  bill: string;
+  /** Nota curta à direita. Orçamento medido: 98 px. */
+  nota?: string;
+  /** Linha-tese: recebe o ouro da marca. */
+  destaque?: boolean;
+  /** Linha "fora da conversa": cinza recessivo. */
+  recessiva?: boolean;
+}
+
+export interface CostLadderDataset {
+  /** Cabeçalho da coluna da barra. Divide 410 px com o `billLabel`. */
+  workLabel: string;
+  /** Cabeçalho da coluna do número. Divide 410 px com o `workLabel`. */
+  billLabel: string;
+  /** Cabeçalho da coluna da nota. Orçamento medido: 98 px. */
+  notaLabel?: string;
+  rows: readonly CostLadderRow[];
+  /** Linha vertical de referência, na escala das barras. */
+  referencia?: { valor: number; texto: string };
+  /** Frase-conclusão desenhada dentro do SVG. Orçamento medido: 740 px. */
+  conclusao: string;
+}
+
+export const costLadderDatasets: Record<string, CostLadderDataset> = {
+  /* Degrau 1 — a analogia. Nenhum dado real: as PROPORÇÕES é que são as reais
+     (150 contra 83 na barra = os tokens de saída; 2,87 contra 100 = o custo por
+     tarefa, US$ 0,09 contra US$ 3,14). A procedência declara isso dentro do SVG. */
+  'glm53flash-corridas': {
+    workLabel: 'quanto cada carro rodou até o mesmo endereço',
+    billLabel: 'o que o taxímetro marcou',
+    rows: [
+      {
+        label: 'O carro caro',
+        sublabel: 'rota curta, tarifa alta',
+        work: 83,
+        bill: 'R$ 100,00',
+      },
+      {
+        label: 'O carro barato',
+        sublabel: 'rota longa, tarifa baixa',
+        work: 150,
+        bill: 'R$ 2,87',
+        destaque: true,
+      },
+    ],
+    conclusao: 'O carro barato rodou 1,8 vez mais e a conta saiu por 2,9% da do outro.',
+  },
+
+  /* Degrau 2 — a mesma figura, com os nomes e os números medidos. */
+  'glm53flash-com-nomes': {
+    workLabel: 'tokens de saída gastos na avaliação',
+    billLabel: 'custo por tarefa',
+    notaLabel: 'inteligência',
+    rows: [
+      {
+        label: 'Claude Fable 5',
+        sublabel: 'esforço máximo, raciocínio adaptativo',
+        work: 83,
+        bill: 'US$ 3,14',
+        nota: '62 pontos',
+      },
+      {
+        label: 'GLM-5.3-Flash',
+        sublabel: '320B totais, 18B ativos, licença MIT',
+        work: 150,
+        bill: 'US$ 0,09',
+        nota: '57 pontos',
+        destaque: true,
+      },
+    ],
+    conclusao: 'Gastou quase o dobro de tokens e a tarefa saiu por 2,9% do preço da outra.',
+  },
+
+  /* Degrau 3 — o limite: por que a gulodice de tokens não derruba a conta.
+     A barra passa a medir o PREÇO do milhão de tokens de saída. */
+  'glm53flash-gulodice': {
+    workLabel: 'preço de tabela do milhão de tokens de saída',
+    billLabel: 'a conta inteira da avaliação',
+    notaLabel: 'tokens gastos',
+    rows: [
+      {
+        label: 'Claude Fable 5',
+        sublabel: 'US$ 50,00 por milhão de tokens',
+        work: 50,
+        bill: 'US$ 5.455,22',
+        nota: '83 M',
+      },
+      {
+        label: 'GLM-5.3-Flash',
+        sublabel: 'US$ 0,50 por milhão de tokens',
+        work: 0.5,
+        bill: 'US$ 138,02',
+        nota: '150 M',
+        destaque: true,
+      },
+    ],
+    conclusao: 'Cem vezes mais barato por token, quase o dobro de tokens: conta 39 vezes menor.',
+  },
+
+  /* Degrau 5 — a retomada da figura do degrau 1, em escala maior: os seis modelos
+     que eu consegui verificar na AA. A barra volta a ser "o que se gasta" (custo
+     por tarefa) e o número volta a ser o que se leva (pontos). Ordenado por índice. */
+  'glm53flash-seis-modelos': {
+    workLabel: 'o que cada tarefa custou',
+    billLabel: 'pontos no índice',
+    notaLabel: 'velocidade',
+    rows: [
+      {
+        label: 'Claude Fable 5',
+        sublabel: 'fechado, esforço máximo',
+        work: 3.14,
+        bill: '62',
+        nota: '64,6 tok/s',
+      },
+      {
+        label: 'GLM-5.3',
+        sublabel: 'o irmão grande, de 14 de agosto',
+        work: 0.68,
+        bill: '60',
+        nota: '69,6 tok/s',
+        recessiva: true,
+      },
+      {
+        label: 'Kimi K3',
+        sublabel: 'pesos abertos, esforço máximo',
+        work: 0.84,
+        bill: '60',
+        nota: '37,8 tok/s',
+        recessiva: true,
+      },
+      {
+        label: 'GLM-5.3-Flash',
+        sublabel: 'pesos abertos, licença MIT',
+        work: 0.09,
+        bill: '57',
+        nota: '42,5 tok/s',
+        destaque: true,
+      },
+      {
+        label: 'Gemini 3.7 Flash',
+        sublabel: 'fechado, esforço alto',
+        work: 0.4,
+        bill: '56',
+        nota: '279,4 tok/s',
+      },
+      {
+        label: 'GPT-5.6 Luna',
+        sublabel: 'fechado, esforço máximo',
+        work: 0.05,
+        bill: '52',
+        nota: '126,4 tok/s',
+      },
+    ],
+    conclusao: 'O Flash não é o mais barato por tarefa, e é o segundo mais lento da lista.',
+  },
+
+  /* Degrau 5b — a consequência: o que "pesos abertos" pede de memória.
+     Só os PESOS. O cache de contexto do Flash não foi publicado por ninguém —
+     e é justamente a parcela que o artigo /artigos/ia-local-por-vram mostrou faltar.
+     Faixas (3 e 4 bits) entram pelo PISO da faixa; o texto declara a faixa inteira. */
+  'glm53flash-memoria': {
+    workLabel: 'memória que só os pesos ocupam',
+    billLabel: 'numa máquina de 128 GB',
+    rows: [
+      {
+        label: '1 bit',
+        sublabel: 'a menor quantização publicada',
+        work: 100,
+        bill: 'cabe',
+      },
+      {
+        label: '3 bits',
+        sublabel: 'faixa de 128 a 150 GB',
+        work: 128,
+        bill: 'no limite',
+      },
+      {
+        label: '4 bits (Q4_K_XL)',
+        sublabel: 'faixa de 162 a 210 GB',
+        work: 162,
+        bill: 'não cabe',
+      },
+      {
+        label: 'os pesos publicados',
+        sublabel: '62 arquivos, 328,3 GB em FP8',
+        work: 328,
+        bill: 'não cabe',
+        destaque: true,
+      },
+      {
+        label: '16 bits (BF16)',
+        sublabel: 'a precisão original de treino',
+        work: 650,
+        bill: 'não cabe',
+        recessiva: true,
+      },
+    ],
+    referencia: { valor: 128, texto: '128 GB: o teto de um laptop de topo' },
+    conclusao: 'Só a menor quantização cabe num laptop — e nenhuma conta aqui inclui o cache.',
+  },
+
+  /* ── en ────────────────────────────────────────────────────────────────
+     Traducao dos ROTULOS; nenhum numero muda. Separador decimal do ingles
+     (ponto) e milhar por virgula: US$ 5,455.22. */
+  'glm53flash-corridas-en': {
+    workLabel: 'how far each car drove to the same address',
+    billLabel: 'what the meter read',
+    rows: [
+      {
+        label: 'The expensive car',
+        sublabel: 'short route, high fare',
+        work: 83,
+        bill: 'US$ 100.00',
+      },
+      {
+        label: 'The cheap car',
+        sublabel: 'long route, low fare',
+        work: 150,
+        bill: 'US$ 2.87',
+        destaque: true,
+      },
+    ],
+    conclusao: 'The cheap car drove 1.8 times further and its fare was 2.9% of the other.',
+  },
+
+  'glm53flash-com-nomes-en': {
+    workLabel: 'output tokens spent on the evaluation',
+    billLabel: 'cost per task',
+    notaLabel: 'intelligence',
+    rows: [
+      {
+        label: 'Claude Fable 5',
+        sublabel: 'max effort, adaptive reasoning',
+        work: 83,
+        bill: 'US$ 3.14',
+        nota: '62 points',
+      },
+      {
+        label: 'GLM-5.3-Flash',
+        sublabel: '320B total, 18B active, MIT license',
+        work: 150,
+        bill: 'US$ 0.09',
+        nota: '57 points',
+        destaque: true,
+      },
+    ],
+    conclusao: 'It spent nearly twice the tokens and the task cost 2.9% of the price.',
+  },
+
+  'glm53flash-gulodice-en': {
+    workLabel: 'list price per million output tokens',
+    billLabel: 'the whole bill for the evaluation',
+    notaLabel: 'tokens spent',
+    rows: [
+      {
+        label: 'Claude Fable 5',
+        sublabel: 'US$ 50.00 per million tokens',
+        work: 50,
+        bill: 'US$ 5,455.22',
+        nota: '83 M',
+      },
+      {
+        label: 'GLM-5.3-Flash',
+        sublabel: 'US$ 0.50 per million tokens',
+        work: 0.5,
+        bill: 'US$ 138.02',
+        nota: '150 M',
+        destaque: true,
+      },
+    ],
+    conclusao: 'A hundred times cheaper per token, twice the tokens: a bill 39 times smaller.',
+  },
+
+  'glm53flash-seis-modelos-en': {
+    workLabel: 'what each task cost',
+    billLabel: 'points on the index',
+    notaLabel: 'speed',
+    rows: [
+      {
+        label: 'Claude Fable 5',
+        sublabel: 'closed, max effort',
+        work: 3.14,
+        bill: '62',
+        nota: '64.6 tok/s',
+      },
+      {
+        label: 'GLM-5.3',
+        sublabel: 'the big brother, from August 14',
+        work: 0.68,
+        bill: '60',
+        nota: '69.6 tok/s',
+        recessiva: true,
+      },
+      {
+        label: 'Kimi K3',
+        sublabel: 'open weights, max effort',
+        work: 0.84,
+        bill: '60',
+        nota: '37.8 tok/s',
+        recessiva: true,
+      },
+      {
+        label: 'GLM-5.3-Flash',
+        sublabel: 'open weights, MIT license',
+        work: 0.09,
+        bill: '57',
+        nota: '42.5 tok/s',
+        destaque: true,
+      },
+      {
+        label: 'Gemini 3.7 Flash',
+        sublabel: 'closed, high effort',
+        work: 0.4,
+        bill: '56',
+        nota: '279.4 tok/s',
+      },
+      {
+        label: 'GPT-5.6 Luna',
+        sublabel: 'closed, max effort',
+        work: 0.05,
+        bill: '52',
+        nota: '126.4 tok/s',
+      },
+    ],
+    conclusao: 'Flash is not the cheapest per task, and it is the second slowest here.',
+  },
+
+  'glm53flash-memoria-en': {
+    workLabel: 'memory the weights alone occupy',
+    billLabel: 'on a 128 GB machine',
+    rows: [
+      {
+        label: '1 bit',
+        sublabel: 'the smallest published quantization',
+        work: 100,
+        bill: 'fits',
+      },
+      {
+        label: '3 bits',
+        sublabel: 'range of 128 to 150 GB',
+        work: 128,
+        bill: 'at the limit',
+      },
+      {
+        label: '4 bits (Q4_K_XL)',
+        sublabel: 'range of 162 to 210 GB',
+        work: 162,
+        bill: 'does not fit',
+      },
+      {
+        label: 'the published weights',
+        sublabel: '62 files, 328.3 GB in FP8',
+        work: 328,
+        bill: 'does not fit',
+        destaque: true,
+      },
+      {
+        label: '16 bits (BF16)',
+        sublabel: 'the original training precision',
+        work: 650,
+        bill: 'does not fit',
+        recessiva: true,
+      },
+    ],
+    referencia: { valor: 128, texto: '128 GB: the ceiling of a top-end laptop' },
+    conclusao: 'Only the smallest quantization fits a laptop — and none of these include cache.',
+  },
+
+
+  /* ── es ────────────────────────────────────────────────────────────────
+     ESCALA LARGA: 10^14 = 100 billones (nao "trilhoes"). Numero com virgula
+     decimal e ponto de milhar; moeda depois do numero, como no `summary`. */
+  'glm53flash-corridas-es': {
+    workLabel: 'cuánto recorrió cada coche hasta la misma dirección',
+    billLabel: 'lo que marcó el taxímetro',
+    rows: [
+      {
+        label: 'El coche caro',
+        sublabel: 'ruta corta, tarifa alta',
+        work: 83,
+        bill: '100,00 USD',
+      },
+      {
+        label: 'El coche barato',
+        sublabel: 'ruta larga, tarifa baja',
+        work: 150,
+        bill: '2,87 USD',
+        destaque: true,
+      },
+    ],
+    conclusao: 'El coche barato recorrió 1,8 veces más y la cuenta salió por el 2,9 % de la otra.',
+  },
+
+  'glm53flash-com-nomes-es': {
+    workLabel: 'tokens de salida gastados en la evaluación',
+    billLabel: 'coste por tarea',
+    notaLabel: 'inteligencia',
+    rows: [
+      {
+        label: 'Claude Fable 5',
+        sublabel: 'modo adaptativo, esfuerzo máximo',
+        work: 83,
+        bill: '3,14 USD',
+        nota: '62 puntos',
+      },
+      {
+        label: 'GLM-5.3-Flash',
+        sublabel: '320.000 M totales, 18.000 M activos',
+        work: 150,
+        bill: '0,09 USD',
+        nota: '57 puntos',
+        destaque: true,
+      },
+    ],
+    conclusao: 'Gastó casi el doble de tokens y la tarea salió por el 2,9 % del precio de la otra.',
+  },
+
+  'glm53flash-gulodice-es': {
+    workLabel: 'tarifa del millón de tokens de salida',
+    billLabel: 'la cuenta entera de la evaluación',
+    notaLabel: 'tokens gastados',
+    rows: [
+      {
+        label: 'Claude Fable 5',
+        sublabel: '50,00 USD por millón de tokens',
+        work: 50,
+        bill: '5.455,22 USD',
+        nota: '83 M',
+      },
+      {
+        label: 'GLM-5.3-Flash',
+        sublabel: '0,50 USD por millón de tokens',
+        work: 0.5,
+        bill: '138,02 USD',
+        nota: '150 M',
+        destaque: true,
+      },
+    ],
+    conclusao: 'Cien veces más barato por token, casi el doble de tokens: cuenta 39 veces menor.',
+  },
+
+  'glm53flash-seis-modelos-es': {
+    workLabel: 'lo que costó cada tarea',
+    billLabel: 'puntos en el índice',
+    notaLabel: 'velocidad',
+    rows: [
+      {
+        label: 'Claude Fable 5',
+        sublabel: 'cerrado, esfuerzo máximo',
+        work: 3.14,
+        bill: '62',
+        nota: '64,6 tok/s',
+      },
+      {
+        label: 'GLM-5.3',
+        sublabel: 'el hermano mayor, del 14 de agosto',
+        work: 0.68,
+        bill: '60',
+        nota: '69,6 tok/s',
+        recessiva: true,
+      },
+      {
+        label: 'Kimi K3',
+        sublabel: 'pesos abiertos, esfuerzo máximo',
+        work: 0.84,
+        bill: '60',
+        nota: '37,8 tok/s',
+        recessiva: true,
+      },
+      {
+        label: 'GLM-5.3-Flash',
+        sublabel: 'pesos abiertos, licencia MIT',
+        work: 0.09,
+        bill: '57',
+        nota: '42,5 tok/s',
+        destaque: true,
+      },
+      {
+        label: 'Gemini 3.7 Flash',
+        sublabel: 'cerrado, esfuerzo alto',
+        work: 0.4,
+        bill: '56',
+        nota: '279,4 tok/s',
+      },
+      {
+        label: 'GPT-5.6 Luna',
+        sublabel: 'cerrado, esfuerzo máximo',
+        work: 0.05,
+        bill: '52',
+        nota: '126,4 tok/s',
+      },
+    ],
+    conclusao: 'El Flash no es el más barato por tarea, y es el segundo más lento de la lista.',
+  },
+
+  'glm53flash-memoria-es': {
+    workLabel: 'memoria que solo los pesos ocupan',
+    billLabel: 'en una máquina de 128 GB',
+    rows: [
+      {
+        label: '1 bit',
+        sublabel: 'la menor cuantización publicada',
+        work: 100,
+        bill: 'cabe',
+      },
+      {
+        label: '3 bits',
+        sublabel: 'franja de 128 a 150 GB',
+        work: 128,
+        bill: 'en el límite',
+      },
+      {
+        label: '4 bits (Q4_K_XL)',
+        sublabel: 'franja de 162 a 210 GB',
+        work: 162,
+        bill: 'no cabe',
+      },
+      {
+        label: 'los pesos publicados',
+        sublabel: '62 archivos, 328,3 GB en FP8',
+        work: 328,
+        bill: 'no cabe',
+        destaque: true,
+      },
+      {
+        label: '16 bits (BF16)',
+        sublabel: 'la precisión original de entrenamiento',
+        work: 650,
+        bill: 'no cabe',
+        recessiva: true,
+      },
+    ],
+    referencia: { valor: 128, texto: '128 GB: el techo de un portátil de gama alta' },
+    conclusao: 'Solo la menor cuantización cabe en un portátil — y ninguna cuenta incluye la caché.',
+  },
+
+
+  /* ── it ────────────────────────────────────────────────────────────────
+     ESCALA LONGA: 10^14 = 100.000 miliardi (nao "trilioni"). Virgula decimal,
+     ponto de milhar, moeda depois do numero. */
+  'glm53flash-corridas-it': {
+    workLabel: 'quanto ha percorso ogni auto fino allo stesso indirizzo',
+    billLabel: 'quanto segnava il tassametro',
+    rows: [
+      {
+        label: 'L\'auto cara',
+        sublabel: 'percorso corto, tariffa alta',
+        work: 83,
+        bill: '100,00 USD',
+      },
+      {
+        label: 'L\'auto economica',
+        sublabel: 'percorso lungo, tariffa bassa',
+        work: 150,
+        bill: '2,87 USD',
+        destaque: true,
+      },
+    ],
+    conclusao: 'L\'auto economica ha percorso 1,8 volte di più e il conto è il 2,9% dell\'altro.',
+  },
+
+  'glm53flash-com-nomes-it': {
+    workLabel: 'token in uscita spesi nella valutazione',
+    billLabel: 'costo per attività',
+    notaLabel: 'intelligenza',
+    rows: [
+      {
+        label: 'Claude Fable 5',
+        sublabel: 'sforzo massimo, ragionamento adattivo',
+        work: 83,
+        bill: '3,14 USD',
+        nota: '62 punti',
+      },
+      {
+        label: 'GLM-5.3-Flash',
+        sublabel: '320 mld totali, 18 mld attivi, licenza MIT',
+        work: 150,
+        bill: '0,09 USD',
+        nota: '57 punti',
+        destaque: true,
+      },
+    ],
+    conclusao: 'Ha speso quasi il doppio dei token e l\'attività è costata il 2,9% del prezzo.',
+  },
+
+  'glm53flash-gulodice-it': {
+    workLabel: 'prezzo di listino del milione di token in uscita',
+    billLabel: 'l\'intero conto della valutazione',
+    notaLabel: 'token spesi',
+    rows: [
+      {
+        label: 'Claude Fable 5',
+        sublabel: '50,00 USD per milione di token',
+        work: 50,
+        bill: '5.455,22 USD',
+        nota: '83 M',
+      },
+      {
+        label: 'GLM-5.3-Flash',
+        sublabel: '0,50 USD per milione di token',
+        work: 0.5,
+        bill: '138,02 USD',
+        nota: '150 M',
+        destaque: true,
+      },
+    ],
+    conclusao: 'Cento volte più economico per token, doppio dei token: conto 39 volte più basso.',
+  },
+
+  'glm53flash-seis-modelos-it': {
+    workLabel: 'quanto è costata ogni attività',
+    billLabel: 'punti nell\'indice',
+    notaLabel: 'velocità',
+    rows: [
+      {
+        label: 'Claude Fable 5',
+        sublabel: 'chiuso, sforzo massimo',
+        work: 3.14,
+        bill: '62',
+        nota: '64,6 tok/s',
+      },
+      {
+        label: 'GLM-5.3',
+        sublabel: 'il fratello maggiore, del 14 agosto',
+        work: 0.68,
+        bill: '60',
+        nota: '69,6 tok/s',
+        recessiva: true,
+      },
+      {
+        label: 'Kimi K3',
+        sublabel: 'pesi aperti, sforzo massimo',
+        work: 0.84,
+        bill: '60',
+        nota: '37,8 tok/s',
+        recessiva: true,
+      },
+      {
+        label: 'GLM-5.3-Flash',
+        sublabel: 'pesi aperti, licenza MIT',
+        work: 0.09,
+        bill: '57',
+        nota: '42,5 tok/s',
+        destaque: true,
+      },
+      {
+        label: 'Gemini 3.7 Flash',
+        sublabel: 'chiuso, sforzo alto',
+        work: 0.4,
+        bill: '56',
+        nota: '279,4 tok/s',
+      },
+      {
+        label: 'GPT-5.6 Luna',
+        sublabel: 'chiuso, sforzo massimo',
+        work: 0.05,
+        bill: '52',
+        nota: '126,4 tok/s',
+      },
+    ],
+    conclusao: 'Il Flash non è il più economico per attività, ed è il secondo più lento.',
+  },
+
+  'glm53flash-memoria-it': {
+    workLabel: 'memoria che occupano i soli pesi',
+    billLabel: 'su una macchina da 128 GB',
+    rows: [
+      {
+        label: '1 bit',
+        sublabel: 'la quantizzazione più piccola pubblicata',
+        work: 100,
+        bill: 'ci sta',
+      },
+      {
+        label: '3 bit',
+        sublabel: 'fascia da 128 a 150 GB',
+        work: 128,
+        bill: 'al limite',
+      },
+      {
+        label: '4 bit (Q4_K_XL)',
+        sublabel: 'fascia da 162 a 210 GB',
+        work: 162,
+        bill: 'non ci sta',
+      },
+      {
+        label: 'i pesi pubblicati',
+        sublabel: '62 file, 328,3 GB in FP8',
+        work: 328,
+        bill: 'non ci sta',
+        destaque: true,
+      },
+      {
+        label: '16 bit (BF16)',
+        sublabel: 'la precisione originale di addestramento',
+        work: 650,
+        bill: 'non ci sta',
+        recessiva: true,
+      },
+    ],
+    referencia: { valor: 128, texto: '128 GB: il tetto di un portatile di fascia alta' },
+    conclusao: 'Solo la quantizzazione più piccola sta in un portatile — e senza la cache.',
+  },
+
+
+  /* ── he ────────────────────────────────────────────────────────────────
+     RTL. O `CostLadder` nasce com `direction:'ltr'` no <svg> e
+     `unicode-bidi:'plaintext'` em CADA <text>: cada rotulo pega a direcao do
+     seu primeiro caractere forte. Numero com PONTO decimal e moeda depois
+     ("0.09 דולר"), como no artigo `glm-5-3` ja publicado em hebraico.
+     Escala curta: 10^14 = 100 טריליון. */
+  'glm53flash-corridas-he': {
+    workLabel: 'כמה נסעה כל מונית לאותה כתובת',
+    billLabel: 'מה שהמונה הראה',
+    rows: [
+      {
+        label: 'המונית היקרה',
+        sublabel: 'מסלול קצר, תעריף גבוה',
+        work: 83,
+        bill: '100.00 דולר',
+      },
+      {
+        label: 'המונית הזולה',
+        sublabel: 'מסלול ארוך, תעריף נמוך',
+        work: 150,
+        bill: '2.87 דולר',
+        destaque: true,
+      },
+    ],
+    conclusao: 'המונית הזולה נסעה פי 1.8 והחשבון יצא 2.9% מזה של השנייה.',
+  },
+
+  'glm53flash-com-nomes-he': {
+    workLabel: 'טוקנים ביציאה שהוצאו בהערכה',
+    billLabel: 'עלות למשימה',
+    notaLabel: 'אינטליגנציה',
+    rows: [
+      {
+        label: 'Claude Fable 5',
+        sublabel: 'מאמץ מרבי, חשיבה מסתגלת',
+        work: 83,
+        bill: '3.14 דולר',
+        nota: '62 נקודות',
+      },
+      {
+        label: 'GLM-5.3-Flash',
+        sublabel: '320 מיליארד סה״כ, 18 פעילים, MIT',
+        work: 150,
+        bill: '0.09 דולר',
+        nota: '57 נקודות',
+        destaque: true,
+      },
+    ],
+    conclusao: 'הוציא כמעט כפול טוקנים והמשימה עלתה 2.9% מהמחיר של השנייה.',
+  },
+
+  'glm53flash-gulodice-he': {
+    workLabel: 'מחיר מחירון למיליון טוקנים ביציאה',
+    billLabel: 'כל חשבון ההערכה',
+    notaLabel: 'טוקנים שהוצאו',
+    rows: [
+      {
+        label: 'Claude Fable 5',
+        sublabel: '50.00 דולר למיליון טוקנים',
+        work: 50,
+        bill: '5,455.22 דולר',
+        nota: '83 מיליון',
+      },
+      {
+        label: 'GLM-5.3-Flash',
+        sublabel: '0.50 דולר למיליון טוקנים',
+        work: 0.5,
+        bill: '138.02 דולר',
+        nota: '150 מיליון',
+        destaque: true,
+      },
+    ],
+    conclusao: 'פי מאה זול יותר לטוקן, כמעט כפול טוקנים: חשבון קטן פי 39.',
+  },
+
+  'glm53flash-seis-modelos-he': {
+    workLabel: 'כמה עלתה כל משימה',
+    billLabel: 'נקודות במדד',
+    notaLabel: 'מהירות',
+    rows: [
+      {
+        label: 'Claude Fable 5',
+        sublabel: 'סגור, מאמץ מרבי',
+        work: 3.14,
+        bill: '62',
+        nota: '64.6 טוקן/ש׳',
+      },
+      {
+        label: 'GLM-5.3',
+        sublabel: 'האח הגדול, מ‑14 באוגוסט',
+        work: 0.68,
+        bill: '60',
+        nota: '69.6 טוקן/ש׳',
+        recessiva: true,
+      },
+      {
+        label: 'Kimi K3',
+        sublabel: 'משקלים פתוחים, מאמץ מרבי',
+        work: 0.84,
+        bill: '60',
+        nota: '37.8 טוקן/ש׳',
+        recessiva: true,
+      },
+      {
+        label: 'GLM-5.3-Flash',
+        sublabel: 'משקלים פתוחים, רישיון MIT',
+        work: 0.09,
+        bill: '57',
+        nota: '42.5 טוקן/ש׳',
+        destaque: true,
+      },
+      {
+        label: 'Gemini 3.7 Flash',
+        sublabel: 'סגור, מאמץ גבוה',
+        work: 0.4,
+        bill: '56',
+        nota: '279.4 טוקן/ש׳',
+      },
+      {
+        label: 'GPT-5.6 Luna',
+        sublabel: 'סגור, מאמץ מרבי',
+        work: 0.05,
+        bill: '52',
+        nota: '126.4 טוקן/ש׳',
+      },
+    ],
+    conclusao: '‏Flash אינו הזול ביותר למשימה, והוא השני הכי איטי ברשימה.',
+  },
+
+  'glm53flash-memoria-he': {
+    workLabel: 'זיכרון שרק המשקלים תופסים',
+    billLabel: 'במכונה של 128 ג׳יגה',
+    rows: [
+      {
+        label: '1 ביט',
+        sublabel: 'הקוונטיזציה הקטנה ביותר שפורסמה',
+        work: 100,
+        bill: 'נכנס',
+      },
+      {
+        label: '3 ביט',
+        sublabel: 'טווח של 128 עד 150 ג׳יגה',
+        work: 128,
+        bill: 'בגבול',
+      },
+      {
+        label: '4 ביט (Q4_K_XL)',
+        sublabel: 'טווח של 162 עד 210 ג׳יגה',
+        work: 162,
+        bill: 'לא נכנס',
+      },
+      {
+        label: 'המשקלים שפורסמו',
+        sublabel: '62 קבצים, 328.3 ג׳יגה ב‑FP8',
+        work: 328,
+        bill: 'לא נכנס',
+        destaque: true,
+      },
+      {
+        label: '16 ביט (BF16)',
+        sublabel: 'דיוק האימון המקורי',
+        work: 650,
+        bill: 'לא נכנס',
+        recessiva: true,
+      },
+    ],
+    referencia: { valor: 128, texto: '128 ג׳יגה: התקרה של נייד עילי' },
+    conclusao: 'רק הקוונטיזציה הקטנה ביותר נכנסת לנייד — ואף חשבון כאן לא כולל מטמון.',
+  },
+
 };

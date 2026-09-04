@@ -129,6 +129,7 @@ FAMILIAS = {
     "vramLadderDatasets": "vramLadder",
     "obligationMatrixDatasets": "obligationMatrix",
     "thermometerTrioDatasets": "thermometerTrio",
+    "costLadderDatasets": "costLadder",
 }
 
 # Fragmento de entrega (chaves soltas, para colar dentro de um `Record` do site): a
@@ -1003,6 +1004,75 @@ def cena_termometros(ds: dict, props: dict) -> Cena:
     return c
 
 
+# ── CostLadder — geometria de `cost-ladder.tsx` ────────────────────────────────
+# Cinco colunas fixas, todas em coordenada absoluta: rótulo | trilha | conta | nota.
+# Os números saem do próprio .tsx (W, PAD, COL_*) e batem, um a um, com os orçamentos
+# que a `CostLadderDataset` documenta em `data/artigos-charts.ts` — 196 px de rótulo,
+# 122 px de conta, 98 px de nota, 740 px de conclusão, 410 px divididos pelos dois
+# cabeçalhos. Bater com o que está escrito na interface não é coincidência: é o
+# contrato, e se o .tsx mudar os dois lados têm de mudar juntos.
+#   · folga_parede ZERO, mesmo motivo da cena dos termômetros: `title`, `subtitle`,
+#     `conclusao` e `source` nascem ancorados EM `PAD.left`, que é a própria parede.
+#     O respiro de 12 px entre COLUNAS já vem embutido nas paredes de cada coluna
+#     abaixo, então nenhum orçamento fica mais frouxo por causa disso.
+#   · folga_vizinho 12 px (e não os 6 do default) porque é o respiro que o medidor da
+#     redação usou para auditar as 5 figuras deste artigo — 12 e não 8 porque o Chrome
+#     desenha um fio mais largo que a medição em Pillow. Manter os dois medidores no
+#     mesmo número é o que permite comparar veredito com veredito.
+# O peso 700 nos rótulos de linha e na conclusão é deliberadamente o pior caso: o .tsx
+# usa 600 quando a linha não é destaque, e 700 é sempre mais largo — medir pelo mais
+# largo nunca produz um verde falso.
+CL_W, CL_PAD_L, CL_PAD_R = 760.0, 10.0, 10.0
+CL_COL_LABEL, CL_COL_BILL, CL_COL_NOTA = 208.0, 134.0, 110.0
+CL_GAP = 12.0
+CL_PLOT = CL_W - CL_PAD_L - CL_PAD_R - CL_COL_LABEL - CL_COL_BILL - CL_COL_NOTA
+CL_X0 = CL_PAD_L + CL_COL_LABEL
+CL_X_BILL = CL_X0 + CL_PLOT + CL_COL_BILL
+CL_X_NOTA = CL_W - CL_PAD_R
+CL_MOLDURA = (CL_PAD_L, CL_W - CL_PAD_R)
+
+
+def cena_cost_ladder(ds: dict, props: dict) -> Cena:
+    c = Cena("CostLadder", folga_vizinho=CL_GAP, folga_parede=0.0)
+    esq = CL_PAD_L
+    c.inicio("title", props["title"], 15, 700, esq, CL_MOLDURA)
+    if props.get("subtitle"):
+        c.inicio("subtitle", props["subtitle"], 11, 400, esq, CL_MOLDURA)
+
+    # Os três cabeçalhos dividem a mesma altura: `workLabel` cresce para a direita a
+    # partir da trilha, `billLabel` e `notaLabel` crescem para a esquerda das suas
+    # âncoras. Quem reprova aqui é o vizinho, não a moldura — por isso a mesma fila.
+    c.inicio("workLabel", ds["workLabel"], 9.5, 400, CL_X0, CL_MOLDURA, fila="cabecalho")
+    c.fim("billLabel", ds["billLabel"], 9.5, 400, CL_X_BILL, CL_MOLDURA, fila="cabecalho")
+    if ds.get("notaLabel"):
+        c.fim("notaLabel", ds["notaLabel"], 9.5, 400, CL_X_NOTA, CL_MOLDURA, fila="cabecalho")
+
+    par_rotulo = (CL_PAD_L, CL_X0 - CL_GAP)
+    par_conta = (CL_X0 + CL_PLOT + CL_GAP, CL_X_BILL)
+    par_nota = (CL_X_BILL + CL_GAP, CL_X_NOTA)
+    for i, r in enumerate(ds["rows"]):
+        c.inicio(f"rows[{i}].label", r["label"], 13.5, 700, CL_PAD_L, par_rotulo)
+        if r.get("sublabel"):
+            c.inicio(f"rows[{i}].sublabel", r["sublabel"], 9.5, 400, CL_PAD_L, par_rotulo)
+        c.fim(f"rows[{i}].bill", r["bill"], 14, 700, CL_X_BILL, par_conta)
+        if r.get("nota"):
+            c.fim(f"rows[{i}].nota", r["nota"], 10.5, 400, CL_X_NOTA, par_nota)
+
+    ref = ds.get("referencia")
+    if ref:
+        # A tracejada mora em `x0 + sx(valor) + 6` e o texto cresce dali para a direita.
+        # O pior caso não é o desenho de hoje, é a tracejada encostada no fim da trilha;
+        # medir a partir de `x0` com a parede em `W - PAD.right - 6` é a mesma conta que
+        # o medidor da redação faz, e não depende do valor do dataset.
+        c.inicio("referencia", ref["texto"], 9.5, 400, CL_X0,
+                 (CL_X0, CL_W - CL_PAD_R - 6))
+
+    c.inicio("conclusao", ds["conclusao"], 11.5, 700, esq, CL_MOLDURA)
+    if props.get("source"):
+        c.inicio("source", props["source"], 9, 400, esq, CL_MOLDURA)
+    return c
+
+
 # componente -> (família do dataset, construtor da cena)
 CENAS = {
     "WordChoiceDiagram": ("wordChoice", cena_word_choice),
@@ -1016,6 +1086,7 @@ CENAS = {
     "VramLadder": ("vramLadder", cena_vram_ladder),
     "ObligationMatrix": ("obligationMatrix", cena_obligation_matrix),
     "ThermometerTrioDiagram": ("thermometerTrio", cena_termometros),
+    "CostLadder": ("costLadder", cena_cost_ladder),
 }
 
 # Registrado em `mdx-components.tsx` mas sem `<text>` próprio: medir não se aplica.

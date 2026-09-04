@@ -20,6 +20,7 @@ import { NoiseVsSignalBars } from './noise-vs-signal-bars';
 import { TvChannelsDiagram } from './tv-channels-diagram';
 import { InvertedUChart } from './inverted-u-chart';
 import { StepFlowDiagram } from './step-flow-diagram';
+import { CostLadder } from './cost-ladder';
 import { ThermometerTrioDiagram } from './thermometer-trio-diagram';
 import { KitchenDiagram } from './kitchen-diagram';
 import { WordChoiceDiagram } from './word-choice-diagram';
@@ -58,6 +59,7 @@ export const mdxComponents: MDXComponents = {
   StepFlowDiagram,
   ThermometerTrioDiagram,
   EffortCostChart,
+  CostLadder,
   WaffleChart,
   CountryBarsChart,
   FunnelChart,

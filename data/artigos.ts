@@ -51,6 +51,52 @@ export function localizeArtigo(artigo: Artigo, locale: Locale): Pick<Artigo, 'ti
 }
 
 export const artigos: readonly Artigo[] = [
+  {
+    slug: 'glm-5-3-flash',
+    title:
+      'GLM 5.3 Flash: 5 pontos abaixo do Fable por 3% do custo por tarefa — e a manchete dos 100 trilhões trocou de verbo no caminho',
+    summary:
+      'Os quatro números conferem: 57 contra 62 no índice, US$ 0,09 contra US$ 3,14 por tarefa. A manchete dos 100 trilhões, não: a frase é de outra empresa.',
+    date: '2026-09-04',
+    tags: ['glm', 'z.ai', 'llm', 'benchmarks', 'open-weights', 'fact-check'],
+    hero: {
+      width: 2400,
+      height: 1260,
+      locales: {
+        'pt-br': { src: '/artigos/glm-5-3-flash/hero.jpg', og: '/artigos/glm-5-3-flash/hero-og.jpg' },
+        'en': { src: '/artigos/glm-5-3-flash/hero-en.jpg', og: '/artigos/glm-5-3-flash/hero-en-og.jpg' },
+        'es': { src: '/artigos/glm-5-3-flash/hero-es.jpg', og: '/artigos/glm-5-3-flash/hero-es-og.jpg' },
+        'it': { src: '/artigos/glm-5-3-flash/hero-it.jpg', og: '/artigos/glm-5-3-flash/hero-it-og.jpg' },
+        'he': { src: '/artigos/glm-5-3-flash/hero-he.jpg', og: '/artigos/glm-5-3-flash/hero-he-og.jpg' },
+      },
+    },
+    i18n: {
+      en: {
+        title:
+          'GLM 5.3 Flash: five points below Fable at 3% of the cost per task — and the 100-trillion headline changed verbs along the way',
+        summary:
+          'Four numbers check out: 57 against 62 on the index, US$ 0.09 against US$ 3.14 per task. The 100-trillion headline does not: the sentence belongs to another company.',
+      },
+      es: {
+        title:
+          'GLM 5.3 Flash: cinco puntos por debajo de Fable por el 3 % del coste por tarea — y el titular de los 100 billones cambió de verbo por el camino',
+        summary:
+          'Los cuatro números cuadran: 57 frente a 62 en el índice, 0,09 USD frente a 3,14 USD por tarea. El titular de los 100 billones, no: la frase es de otra empresa.',
+      },
+      it: {
+        title:
+          'GLM 5.3 Flash: cinque punti sotto Fable al 3% del costo per attività — e il titolo dei 100.000 miliardi ha cambiato verbo per strada',
+        summary:
+          'I quattro numeri tornano: 57 contro 62 nell’indice, 0,09 USD contro 3,14 USD per attività. Il titolo dei 100.000 miliardi no: la frase è di un’altra azienda.',
+      },
+      he: {
+        title:
+          'GLM 5.3 Flash: ‏חמש נקודות מתחת ל‑Fable בשלושה אחוזים מהעלות למשימה — והכותרת על 100 טריליון החליפה פועל בדרך',
+        summary:
+          'ארבעת המספרים מאומתים: 57 מול 62 במדד, ‏0.09 דולר מול 3.14 דולר למשימה. הכותרת על 100 טריליון — לא: המשפט שייך לחברה אחרת.',
+      },
+    },
+  },
   /**
    * Primeiro do array porque é o mais recente e não divide data com ninguém;
    * a ordenação real é o `sort` estável de `artigosByDateDesc`.

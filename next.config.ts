@@ -189,6 +189,11 @@ const nextConfig: NextConfig = {
       { source: '/trabalho-es', destination: '/es/artigos/ia-mercado-de-trabalho', permanent: true },
       { source: '/trabalho-it', destination: '/it/artigos/ia-mercado-de-trabalho', permanent: true },
       { source: '/trabalho-he', destination: '/he/artigos/ia-mercado-de-trabalho', permanent: true },
+      { source: '/flash',    destination: '/artigos/glm-5-3-flash',    permanent: true },
+      { source: '/flash-en', destination: '/en/artigos/glm-5-3-flash', permanent: true },
+      { source: '/flash-es', destination: '/es/artigos/glm-5-3-flash', permanent: true },
+      { source: '/flash-it', destination: '/it/artigos/glm-5-3-flash', permanent: true },
+      { source: '/flash-he', destination: '/he/artigos/glm-5-3-flash', permanent: true },
     ];
 
     // Locale handling (double-locale 410 + single-locale 301 + i18n rewrite) moved to middleware.ts

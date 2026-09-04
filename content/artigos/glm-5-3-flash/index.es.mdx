@@ -1,0 +1,467 @@
+---
+title: 'GLM 5.3 Flash: cinco puntos por debajo de Fable por el 3 % del coste por tarea — y el titular de los 100 billones cambió de verbo por el camino'
+slug: glm-5-3-flash
+category: artigos
+date: '2026-09-04'
+language: es-ES
+---
+
+Un modelo de pesos abiertos marcó **57** en el índice de inteligencia de Artificial Analysis
+donde Claude Fable 5 marcó **62**, y cobró **0,09 USD** por la tarea en la que Fable cobró
+**3,14 USD**. Los cuatro números son de un medidor externo, no del fabricante, y los verifiqué
+hoy, uno a uno, en las páginas de cada modelo.
+
+El titular que circuló no fue ese. Fue que Z.ai estaba sirviendo **cien billones de tokens al
+día** en chips chinos. Fui a buscar la frase original: existe, es de otra empresa, está en el
+tiempo verbal equivocado y hablaba de una promoción. **El coste cuadra; el titular no.** Este
+artículo separa una cosa de la otra.
+
+---
+
+> **Nota metodológica — léala antes de citar cualquier número de aquí.** El Intelligence Index
+> ("índice de inteligencia") de Artificial Analysis es un promedio de varias pruebas
+> normalizadas. Tres advertencias que valen para toda la comparación: **(1)** la página de
+> Claude Fable 5 mide la configuración *"Adaptive Reasoning, Max Effort, Opus 4.8 Fallback"*
+> ("razonamiento adaptativo, esfuerzo máximo, con caída al Opus 4.8") y la de GLM-5.3-Flash
+> mide la única variante de razonamiento que publica — no es la misma regla de esfuerzo;
+> **(2)** un índice de un modelo con días de vida es provisional, y el precio que alimenta el
+> coste por tarea es el de tarifa, que hoy está en promoción; **(3)** dividir 57 entre 62 y
+> anunciar "el 92 % de la inteligencia" es el tipo de cuenta que este artículo existe para no
+> hacer — los cinco puntos que faltan son las tareas más difíciles del conjunto, y un índice
+> compuesto no autoriza razones. Aquí los dos ejes van por separado: **diferencia de puntos**
+> por un lado, **razón de coste** por el otro.
+
+## El marcador, antes del cuerpo
+
+| Lo que circuló | Veredicto |
+|---|---|
+| 320.000 millones de parámetros totales, 18.000 millones activos, licencia MIT | ✅ cuadra — está en la ficha oficial |
+| Índice 57 frente al 62 de Claude Fable 5 | ✅ cuadra — Artificial Analysis, 02/09/2026 |
+| 0,09 USD frente a 3,14 USD por tarea | ✅ cuadra — Artificial Analysis, 02/09/2026 |
+| Gasta casi el doble de tokens de salida (150 M frente a 83 M) | ✅ cuadra — y no tumba la cuenta |
+| Terminal-Bench 2.1 = 84,3 y Deep-SWE = 63,4 | ⚠️ números del fabricante, sin banco de pruebas publicado |
+| "Z.ai estaba sirviendo 100 billones de tokens al día" | ❌ **no cuadra** — la frase es de otra empresa, en otro tiempo verbal |
+| "Corre en tu máquina" | ⚠️ depende de la máquina — falso en un portátil común, verdadero en una estación grande |
+| "Primer lugar en GDPval por amplio margen" | ❌ no localicé ninguna fuente |
+| "Cancela tus suscripciones" | ❌ es el segundo más lento de los seis que medí, y no es el más barato por tarea |
+
+El cuerpo lo prueba línea a línea, en el orden en que una persona que nunca ha oído hablar de
+nada de esto puede seguirlo.
+
+---
+
+## Lo que cuesta una tarea, sin una sola palabra técnica
+
+Dos coches van a la misma dirección. El primero conoce un atajo y cobra caro por kilómetro. El
+segundo da una vuelta mucho mayor y cobra una miseria por kilómetro. Los dos llegan. **La
+pregunta que importa no es quién rodó menos: es cuánto marcó el taxímetro cuando se abrió la
+puerta.**
+
+<CostLadder
+  dataset="glm53flash-corridas-es"
+  title="Dos carreras a la misma dirección"
+  subtitle="La barra es la distancia recorrida; el número es lo que costó la carrera"
+  source="Analogía, no medición: las proporciones son las de los números reales de las figuras siguientes. · ulissesflores.com/flash-es"
+  description="Dos filas con la misma geometría. El coche caro recorrió el equivalente a 83 unidades de distancia y el taxímetro marcó cien dólares. El coche barato recorrió 150 unidades, casi el doble, y el taxímetro marcó dos dólares con ochenta y siete centavos. La barra mayor es la del coche barato; la cuenta mayor es la del coche caro."
+/>
+
+Fíjese en la inversión de la figura: la barra mayor está en la fila de abajo y la cuenta mayor
+en la de arriba. Es la cosa entera. Llamar a esto "coste por tarea" es solo ponerle nombre al
+taxímetro — lo que se paga no es el recorrido, es la llegada. Cuando alguien compara dos
+modelos de inteligencia artificial por el precio del *token* (los pedacitos de texto que el
+modelo produce, y la unidad en la que se cobra), está comparando el precio del kilómetro. Es la
+comparación equivocada, y fue justamente por ella que
+[medí 43 mil llamadas reales para descubrir quién paga la relectura](/artigos/tokens-por-dolar)
+en un artículo anterior.
+
+## Los mismos dos coches, con sus nombres verdaderos
+
+Ahora la misma figura, con los datos medidos. El coche caro es **Claude Fable 5**. El coche
+barato es **GLM-5.3-Flash**, lanzado por la china Z.ai el 26 de agosto de 2026 bajo licencia
+MIT — 320.000 millones de parámetros en total, 18.000 millones activos en cada token.
+
+<CostLadder
+  dataset="glm53flash-com-nomes-es"
+  title="La misma carrera, con los nombres: 57 contra 62, 0,09 USD contra 3,14 USD"
+  subtitle="La barra es cuánta salida gastó cada modelo para responder el conjunto entero de tareas"
+  source="Artificial Analysis, páginas de los dos modelos, verificadas el 02/09/2026. · ulissesflores.com/flash-es"
+  description="Las mismas dos filas de la figura anterior, ahora con los nombres reales. Claude Fable 5 gastó 83 millones de tokens de salida y costó 3 dólares con 14 centavos por tarea, con 62 puntos de índice. GLM-5.3-Flash gastó 150 millones de tokens y costó 9 centavos por tarea, con 57 puntos."
+/>
+
+**Intelligence Index 57 contra 62 (Artificial Analysis, 02/09/2026); 0,09 USD contra 3,14 USD
+por tarea en el mismo conjunto, en la misma fecha.** Las dos líneas del artículo salen de ahí,
+y cualquiera puede reabrir las dos páginas y verificar. Fíjese en lo que la figura *no* dice:
+no dice que el Flash tenga el 92 % de la inteligencia del Fable. Dice que queda cinco puntos
+por debajo en un índice compuesto, y que la tarea sale por el 2,9 % del precio. Son
+afirmaciones de naturalezas distintas, y mezclarlas es el primer paso de todo titular torcido.
+
+## Gasta casi el doble de tokens — y por eso cae la cuenta
+
+La objeción obvia es que el precio por token engaña: un modelo hablador puede ser más barato en
+la tarifa y más caro en la factura. Es una buena objeción, y en este caso ya está respondida
+dentro del número — porque el Flash **es** el hablador de los dos.
+
+<CostLadder
+  dataset="glm53flash-gulodice-es"
+  title="Cien veces más barato por token, casi el doble de tokens gastados"
+  subtitle="La barra es ahora la tarifa del millón de tokens de salida; el número es la cuenta entera de la evaluación"
+  source="Tarifas y coste total de la evaluación: Artificial Analysis, 02/09/2026. · ulissesflores.com/flash-es"
+  description="Dos filas. Claude Fable 5 cobra cincuenta dólares por millón de tokens de salida y la evaluación entera costó 5.455 dólares con 22 centavos, con 83 millones de tokens gastados. GLM-5.3-Flash cobra cincuenta centavos por millón, su evaluación costó 138 dólares con 2 centavos, con 150 millones de tokens gastados. La barra del Fable ocupa la pista entera; la del Flash es un hilo."
+/>
+
+El hilo casi invisible de la fila de abajo es el argumento entero: **0,50 USD contra 50,00 USD
+por el mismo millón de tokens de salida — cien veces menos.** El Flash quemó 150 millones de
+tokens contra 83 millones del Fable, 1,8 veces más, y aun así la cuenta cerrada de la
+evaluación fue de **138,02 USD contra 5.455,22 USD** — treinta y nueve veces menor. La glotonería
+existe, está medida, y se la traga la diferencia de tarifa antes de llegar a la factura.
+
+Eso responde la objeción del precio por token, y solo esa. **No responde si las tareas
+concluidas son las mismas** — y esa es una pregunta que ningún índice agregado responde por
+usted.
+
+---
+
+## La frase de los 100 billones cambió de verbo y de dueño en nueve días
+
+Ahora la parte que me hizo escribir el artículo. La afirmación que viajó más lejos en este
+lanzamiento fue la de que el modelo estaba siendo servido a cien billones de tokens al día en
+chips chinos. Fui a buscar la primera aparición de la frase. Existe, tiene enlace, y **no es de
+Z.ai**.
+
+Quien la escribió fue **OpenCode** — no un laboratorio de IA, sino el programa de terminal por
+el que mucha gente conversa con estos modelos. Y el mensaje no anunciaba una hazaña de
+ingeniería: anunciaba una promoción de una semana con un modelo todavía anónimo, apodado "Ox
+Alpha", del que nadie sabía de quién era.
+
+> "Ox Alpha (stealth model) is free for the next week — 1M Context — Multi-modal — Zero Data
+> Retention. Generous rate limits, near unlimited usage. **We have capacity for 100T tokens
+> per day**, lets see what you can do"
+>
+> En español: "Ox Alpha (modelo sigiloso) es gratis durante la próxima semana — 1 millón de
+> tokens de contexto — multimodal — retención cero de datos. Límites de uso generosos, uso casi
+> ilimitado. **Tenemos capacidad para 100 billones de tokens al día**, a ver qué son capaces de
+> hacer." —
+> [@opencode en X](https://x.com/opencode/status/2090544355824038300), 20 de agosto de 2026
+
+Guarde dos palabras: **"tenemos"** y **"capacidad"**. Es OpenCode hablando de su propia
+infraestructura, y es una oferta, no una medición. El 22 de agosto
+[Techmeme ya repetía la frase](https://www.techmeme.com/260822/p7) con el calificativo intacto
+— *"a stealth model from an unknown AI lab ... and capacity for 100T tokens/day"* ("un modelo
+sigiloso de un laboratorio de IA desconocido... y capacidad para 100 billones de tokens al
+día"). Nadie sabía todavía quién había construido el modelo.
+
+En los nueve días siguientes, la frase perdió un calificativo por vez.
+
+<StepFlowDiagram
+  dataset="glm53flash-cadeia-100t-es"
+  title="Cómo 'tenemos capacidad para' se volvió 'Z.ai estaba sirviendo'"
+  subtitle="Seis eslabones, cada uno con enlace y fecha; en ámbar, donde la afirmación dejó de ser la de la fuente primaria"
+  source="Mensajes y artículos primarios, verificados el 01 y 02/09/2026; fechas derivadas del ID de cada uno. · ulissesflores.com/flash-es"
+  description="Cadena de seis etapas. Primera: el 20 de agosto OpenCode anuncia una semana gratis diciendo tener capacidad para 100 billones de tokens al día. Segunda: el 22 de agosto la prensa repite la palabra capacidad y registra que el autor del modelo es desconocido. Tercera, marcada en ámbar: el 26 de agosto SemiAnalysis escribe que los 100 billones son servidos. Cuarta, en ámbar: Wccftech pone al laboratorio Zhipu en el lugar de la aplicación. Quinta, en ámbar: the-decoder atribuye el volumen a Z.ai. Sexta, en ámbar: el vídeo del día 29 afirma que Z.ai estaba sirviendo cien billones de tokens al día."
+/>
+
+Lea la figura de arriba abajo y fíjese en que cambian **dos cosas**, no una. Cambia el **verbo**
+— de "tenemos capacidad para" (una oferta) a "está sirviendo" (una medición). Y cambia el
+**sujeto** — de OpenCode, una aplicación de terminal, a Z.ai, un laboratorio que nunca dijo ese
+número. Los eslabones intermedios están publicados y se pueden leer: SemiAnalysis escribió
+*"the 100T tokens per day is served on Chinese chip"* ("los 100 billones de tokens al día son
+servidos en chip chino")
+[en su propio hilo](https://x.com/SemiAnalysis_/status/2092623833630998556); Wccftech convirtió
+eso en titular con el verbo en gerundio; y
+[the-decoder](https://the-decoder.com/the-chinese-ai-model-glm-5-3-flash-runs-without-nvidia-and-costs-a-fraction-of-what-the-competition-does/)
+ya escribió, el 27 de agosto, que fue Z.ai quien "sirvió 100 billones de tokens al día".
+
+**El anuncio oficial de Z.ai no contiene el número.** Lo que la empresa afirmó, en su
+[mensaje de lanzamiento](https://x.com/Zai_org/status/2092616204787626030), fue otra cosa — y
+esa otra cosa es notable por sí misma: *"Previously previewed as Ox Alpha, running entirely on
+Chinese AI chips"* ("presentado previamente como Ox Alpha, corriendo enteramente en chips de IA
+chinos"). Correr un modelo de frontera sin hardware estadounidense es el titular verdadero de
+este lanzamiento, y no necesitaba el número inflado.
+
+### Lo que se puede decir sobre la plausibilidad, con las premisas sobre la mesa
+
+No puedo probar que los cien billones no ocurrieran — nadie puede probar una negativa así desde
+fuera. Se pueden hacer dos cosas honestas.
+
+La primera es mirar la única medición pública que existe, declarando lo que es. OpenRouter, que
+es **uno** de varios canales de distribución,
+[publicó](https://x.com/OpenRouter/status/2092616758612172994) que el Ox Alpha fue *"the biggest
+model ever on OpenRouter, processing over 20 trillion tokens in 6 days"* ("el mayor modelo de
+todos los tiempos en OpenRouter, procesando más de 20 billones de tokens en 6 días") — cerca de
+3,3 billones al día. **No es el total de Z.ai, es el de un canal**, y por eso no sirve para
+decir "medido X contra alegado Y". Sirve para decir que el mayor volumen jamás registrado por
+ese canal, en un modelo que era el tema de la semana y estaba gratis, quedó un orden de
+magnitud por debajo del número que circuló.
+
+La segunda es dimensionar. Cien billones de tokens al día, por un solo laboratorio, es del
+orden de lo que procesa **Google entero** (cerca de 107 billones al día, por la cifra de 3.200
+billones al mes divulgada en mayo de 2026) y algo entre el 55 % y el 70 % de lo que consume
+toda China — las dos estimaciones públicas del consumo chino son 180 y 140 billones al día. No
+es imposible — es extraordinario, y una afirmación extraordinaria pide evidencia del mismo
+tamaño. [implicator.ai registró el agujero](https://www.implicator.ai/zai-glm-5-3-flash-chinese-chips-nvidia-cost/)
+con todas las letras: *"none of the serving results has been independently audited"* ("ninguno
+de los resultados de servicio ha sido auditado de forma independiente"). Y existe una
+ambigüedad que por sí sola mueve la cuenta de diez a cien veces: **ninguna de las fuentes dice
+si los "tokens" son de entrada o de salida** — leer texto es barato y paralelizable, escribir
+texto es caro y serial. Sin esa palabra, el número no es verificable ni en principio.
+
+---
+
+## El coste por tarea no es el único eje, y el Flash pierde en los otros
+
+Aquí vuelve la figura de la analogía, con la misma geometría y más datos: ahora son los seis
+modelos que conseguí verificar uno a uno en Artificial Analysis. La barra sigue siendo lo que
+se gasta; el número sigue siendo lo que se lleva.
+
+<CostLadder
+  dataset="glm53flash-seis-modelos-es"
+  title="La misma carrera, con seis coches: quien cobra menos por tarea no es el Flash"
+  subtitle="Barra: coste por tarea del índice. Número: puntos de inteligencia. A la derecha, la velocidad de salida"
+  source="Artificial Analysis, seis páginas de modelo verificadas el 02/09/2026. · ulissesflores.com/flash-es"
+  description="Seis filas ordenadas por puntuación. Claude Fable 5, 62 puntos, 3 dólares con 14 centavos por tarea, 64,6 tokens por segundo. GLM-5.3, 60 puntos, 68 centavos, 69,6 por segundo. Kimi K3, 60 puntos, 84 centavos, 37,8 por segundo. GLM-5.3-Flash destacado, 57 puntos, 9 centavos, 42,5 por segundo. Gemini 3.7 Flash, 56 puntos, 40 centavos, 279,4 por segundo. GPT-5.6 Luna, 52 puntos, 5 centavos, 126,4 por segundo. La barra más corta es la del Luna, no la del Flash."
+/>
+
+**La barra más corta de la figura no es la del Flash: es la del GPT-5.6 Luna, que cobra cinco
+centavos por tarea.** El Flash entrega cinco puntos más de índice por casi el doble del precio
+por tarea — lo que es un intercambio defendible, pero es un intercambio, no una victoria. Y en
+la columna de la derecha la cosa empeora: el Flash produce 42,5 tokens por segundo, contra
+279,4 del Gemini 3.7 Flash. **Más de seis veces más lento por un punto más de índice.**
+
+Esto no es observación mía: es la crítica que
+[Hacker News hizo en primer lugar](https://news.ycombinator.com/item?id=49449507), y merecía
+estar en la cobertura. Un lector lo resumió así — *"Gemini 3.7 flash 56 intel / 0.40 cost / 338
+speed. GLM 5.3 flash 57 / 0.09 / 49. I have both ... and see no reason for choosing GLM 5.3
+Flash"* ("Gemini 3.7 flash: 56 de inteligencia, 0,40 de coste, 338 de velocidad. GLM 5.3 flash:
+57, 0,09, 49. Tengo los dos... y no veo razón para elegir el GLM 5.3 Flash"). Sus números no
+coinciden exactamente con los que medí hoy — la velocidad varía por proveedor y por día — pero
+la dirección sí, y es la dirección lo que interesa.
+
+Los mismos seis, ahora en el gráfico:
+
+<EffortCostChart
+  dataset="glm53flash-aa-pareto-es"
+  title="Inteligencia por coste de tarea"
+  subtitle="Índice de inteligencia de Artificial Analysis contra el coste por tarea, en escala logarítmica"
+  xLabel="Coste por tarea del índice (USD, escala logarítmica)"
+  yLabel="Índice de inteligencia (Artificial Analysis)"
+  source="Artificial Analysis, cinco páginas de modelo verificadas el 02/09/2026; el Kimi K3 queda en la tabla. · ulissesflores.com/flash-es"
+  description="Dispersión de cinco modelos, con el coste por tarea en el eje horizontal logarítmico y el índice de inteligencia en el vertical. El GLM-5.3-Flash aparece destacado en dorado a 9 centavos y 57 puntos. El Claude Fable 5 está en el extremo caro, a 3 dólares con 14 centavos y 62 puntos. El GPT-5.6 Luna está más a la izquierda, a 5 centavos y 52 puntos. El Gemini 3.7 Flash está a 40 centavos y 56 puntos, y el GLM-5.3 a 68 centavos y 60 puntos."
+/>
+
+La tabla completa, con el Kimi K3 que no cupo en el gráfico:
+
+| Modelo | Índice | Coste por tarea | Velocidad | Precio por 1M (entrada / salida) |
+|---|---|---|---|---|
+| Claude Fable 5 | 62 | 3,14 USD | 64,6 tok/s | 10,00 USD / 50,00 USD |
+| GLM-5.3 | 60 | 0,68 USD | 69,6 tok/s | 1,40 USD / 4,40 USD |
+| Kimi K3 | 60 | 0,84 USD | 37,8 tok/s | 3,00 USD / 15,00 USD |
+| **GLM-5.3-Flash** | **57** | **0,09 USD** | **42,5 tok/s** | 0,15 USD / 0,50 USD |
+| Gemini 3.7 Flash | 56 | 0,40 USD | 279,4 tok/s | 0,75 USD / 3,75 USD |
+| GPT-5.6 Luna | 52 | 0,05 USD | 126,4 tok/s | 0,20 USD / 1,20 USD |
+
+La fila del **GLM-5.3** merece un párrafo propio, porque es la comparación que casi nadie hizo:
+el hermano mayor, [del que traté el 14 de agosto](/artigos/glm-5-3), hace 60 puntos por 0,68
+USD la tarea. El Flash hace 57 por 0,09 USD. **Tres puntos de índice cuestan siete veces y
+media más dentro de la misma casa.** Es la decisión de enrutamiento más concreta que ofrece
+este lanzamiento, y no depende de creer en ningún titular.
+
+### Donde el Flash se rompe, según el segundo medidor
+
+Artificial Analysis no es la única regla independiente. **LiveBench** también ha listado el
+modelo, y su retrato es más específico — y más útil:
+
+| Modelo | Media global | Programación | Seguir instrucciones | Coste por tarea |
+|---|---|---|---|---|
+| GLM-5.3 | 76,1 | 79,0 | **69,3** | 0,450 USD |
+| GLM-5.3-Flash | 71,6 | **79,0** | **52,8** | 0,031 USD |
+
+**En programación el Flash empata de lleno con el hermano mayor — 79,0 contra 79,0 — y el
+agujero entero está en seguir instrucciones: 52,8 contra 69,3.** Si su uso es escribir código
+dentro de un andamio que ya dice qué hacer, el barato entrega lo mismo. Si su uso es un agente
+suelto que tiene que obedecer un contrato largo, esos 16,5 puntos de diferencia son la cuenta
+que va a pagar en retrabajo. Es la misma lección que ya había aparecido aquí cuando mostré que
+[la nota de seguridad es del par, no del modelo](/artigos/benchmark-harness-modelo).
+
+Y hay un número del fabricante que vale la pena verificar con cuidado: la ficha oficial anuncia
+**63,4 en Deep-SWE**, circuló un rumor de **~80 %**, y la única ronda completa e independiente
+de las 113 tareas que localicé — hecha por
+[Henry Zhang](https://x.com/henryzhangumich/status/2091066210721141009) — dio **58,4 %**: *"The
+Rumored ~80% pass rate is completely incorrect. Actual benchmark result is 58.4%"* ("La tasa de
+acierto de ~80 % que se rumoreaba es completamente incorrecta. El resultado real es 58,4 %").
+Tres números para la misma prueba, y el menor de ellos es el único con procedimiento declarado.
+
+---
+
+## Abierto de derecho, cerrado de hecho: 328 gigabytes
+
+La licencia es MIT — la más permisiva que existe, sin registro y sin puerta. Es una virtud real
+y merece decirse. Lo que "abierto" no quiere decir es "cabe en su máquina".
+
+Descargué la lista de archivos del repositorio por la API de Hugging Face y sumé: **62 archivos
+de pesos, 328,3 gigabytes.** No es una estimación a ojo, es la suma de los blobs. La comunidad
+ya publicó versiones comprimidas — el proceso se llama *cuantización*, y equivale a grabar la
+misma música con menos bits: ocupa menos, pierde un poco de fidelidad.
+
+<CostLadder
+  dataset="glm53flash-memoria-es"
+  title="Abierto de derecho: lo que cada versión pide de memoria"
+  subtitle="La línea discontinua son 128 GB, el techo de un portátil de gama alta; las barras son solo los pesos"
+  source="Cuantizaciones de Unsloth y API de Hugging Face, 02/09/2026 — solo los pesos; la caché de contexto no se publicó. · ulissesflores.com/flash-es"
+  description="Cinco filas con una línea discontinua de referencia en 128 gigabytes. La versión de 1 bit ocupa cerca de 100 gigabytes y cabe. La de 3 bits ocupa de 128 a 150 gigabytes y queda en el límite. La de 4 bits ocupa de 162 a 210 gigabytes y no cabe. Los pesos publicados, 62 archivos en precisión FP8, ocupan 328,3 gigabytes y no caben. La versión original de 16 bits ocupa 650 gigabytes y no cabe."
+/>
+
+La lectura honesta de esta figura tiene dos mitades, y la cobertura dio solo una. **Es falso que
+corra "en su ordenador"** si su ordenador es un portátil común: solo la compresión más agresiva,
+de 1 bit, entra en 128 GB. **Y es verdad que corre en una estación de trabajo de 128 a 256 GB**
+— hay gente relatando exactamente eso en Hacker News, uno de ellos diciendo que es *"the first
+local model that feels good enough to me to be a 'main' model"* ("el primer modelo local que me
+parece lo bastante bueno para ser el modelo principal"). Decir solo la primera mitad sería
+cometer el mismo pecado de encuadre que este artículo denuncia.
+
+Y falta una parte en toda cuenta de arriba. Los números de la figura son **solo los pesos**.
+Cuando mostré [cómo saber si un modelo corre en su tarjeta](/artigos/ia-local-por-vram), el
+error que decidía la tabla entera era exactamente ese: la ficha presupuestaba los pesos y
+olvidaba la caché del contexto, que crece mientras usted conversa. Para el Flash, nadie publicó
+esa parte. Entonces la regla correcta es: los números de la figura son el **suelo**, y el suelo
+ya no cabe.
+
+---
+
+## El precio es una campaña, y tiene fecha de fin
+
+El último peldaño es el más fácil de olvidar y el que más cambia la decisión de quien va a
+adoptar.
+
+<StepFlowDiagram
+  dataset="glm53flash-precos-es"
+  title="El precio que está viendo es promocional hasta el 9 de septiembre"
+  subtitle="De la semana gratis del modelo anónimo a la tarifa completa que vuelve en una semana"
+  source="Página de precios oficial de Z.ai, verificada el 02/09/2026. · ulissesflores.com/flash-es"
+  description="Línea de tiempo de cuatro hitos. Hasta el 26 de agosto, la semana gratuita de Ox Alpha. El 26 de agosto, la tarifa oficial de 15 y 50 centavos por millón de tokens. Hoy, la mitad de eso. El 9 de septiembre de 2026, marcado como alerta, acaba la promoción."
+/>
+
+La [página de precios de Z.ai](https://docs.z.ai/guides/overview/pricing) dice, hoy, en una
+línea: *"GLM-5.3-Flash is available at a 50% discount ... The promotion ends at 24:00 on
+September 9, 2026 (UTC+8, Singapore time)"* ("El GLM-5.3-Flash está disponible con un 50 % de
+descuento... La promoción termina a las 24:00 del 9 de septiembre de 2026, hora de Singapur").
+Entrada a 0,075 USD y salida a 0,25 USD hoy; 0,15 USD y 0,50 USD después.
+
+Dos advertencias que la cobertura mezcló, y yo también mezclé antes de verificar hoy:
+
+1. **El coste por tarea de este artículo no depende de la promoción.** Los 0,09 USD salen de la
+   tarifa completa, que es la que usó Artificial Analysis. Si la promoción acaba, el número no
+   cambia. Quien está pagando la mitad hoy es quien verá la cuenta duplicarse.
+2. **No existe "capa gratuita" del GLM-5.3-Flash en Z.ai.** Lo que la tabla de precios marca
+   como *"Limited-time Free"* ("gratis por tiempo limitado") es la columna de **almacenamiento
+   de caché**, no el uso del modelo. El uso gratuito que mucha gente vio fue la semana de
+   divulgación del "Ox Alpha" en OpenCode y en OpenRouter, con el modelo todavía anónimo — la
+   misma promoción de donde salió la frase de los cien billones.
+
+---
+
+## Lo que la verificación no alcanzó
+
+Este es el trozo que suele desaparecer de los textos de lanzamiento, y es el que más vale.
+
+- **No probé el modelo en producción.** Tiene menos de una semana de vida; cualquier afirmación
+  mía sobre "cómo se comporta en su código" sería invención.
+- **El mensaje oficial de lanzamiento de Z.ai sigue siendo ilegible para mí.** La dirección
+  responde, pero devuelve solo la cáscara del sitio; el lector de texto que probé devolvió el
+  contenido de un documento completamente distinto. Nada que dependa exclusivamente de ese
+  mensaje entró aquí.
+- **No encontré fuente para el "primer lugar en GDPval por amplio margen".** Busqué; no existe
+  en ningún lugar que yo haya alcanzado. Queda registrado como afirmación no verificada.
+- **No conseguí citar a r/LocalLLaMA.** Las respuestas vinieron sin autor y sin fecha
+  atribuibles, y una cita sin procedencia no entra.
+- **No verifiqué cuántos chips usó Z.ai.** El número de "100 mil chips domésticos" que aparece
+  en agregadores no tiene declaración primaria que yo haya localizado.
+- **El índice es de ahora.** Un modelo con días de vida suele cambiar de posición cuando el
+  medidor reprocesa. Los números de aquí llevan fecha porque la fecha es parte del número.
+- **Un séptimo modelo apareció después de que las figuras cerraran.** Al verificarlo todo de
+  nuevo el 02/09/2026, el **GPT-5.6 Terra** pasó a responder en Artificial Analysis: **el mismo
+  índice 57 del Flash, por 0,53 USD la tarea** — casi seis veces más caro por el mismo número, y
+  2,4 veces más rápido. No rehíce las figuras, que están cerradas en los seis que había medido
+  uno a uno; lo registro aquí porque el dato refuerza la cuenta en vez de contrariarla, y omitir
+  un hallazgo por haber llegado tarde sería el pecado que este artículo se pasa el texto entero
+  denunciando. El GPT-5.6 Soul, que el vídeo cita, sigue sin página en el medidor.
+
+## Lo que yo haría con esto
+
+**Enrutar por tarea, no por suscripción.** El dato más accionable del lanzamiento no es el
+enfrentamiento con el Fable 5: es el enfrentamiento con el hermano de casa. Tres puntos de
+índice cuestan siete veces y media más entre el GLM-5.3 y el Flash. Si su trabajo es lo que
+LiveBench llama programación, los dos empatan en 79,0 — y usted está pagando la diferencia por
+nada.
+
+**Medir su propio "seguir instrucciones" antes de cambiar.** El agujero de 52,8 contra 69,3 es
+el aviso más específico que existe sobre este modelo. Coja veinte tareas reales de su cola con
+instrucciones largas, ejecútelas en los dos, y cuente cuántas volvieron exigiendo corrección.
+Es esa cuenta, no el índice, la que decide.
+
+**Contar la velocidad junto con el precio.** Más de seis veces más lento que el Gemini 3.7 Flash
+es gente esperando. Para un lote nocturno no cuesta nada; para alguien escribiendo y esperando,
+cuesta todo.
+
+**Anotar el 9 de septiembre en el calendario.** Si monta el presupuesto con el precio de hoy, se
+duplica en una semana.
+
+**Y desconfiar de toda frase que gana un verbo por el camino.** La regla que sobra de este
+artículo no es sobre Z.ai: es que "tenemos capacidad para" y "está sirviendo" son afirmaciones
+distintas, y que la distancia entre ellas cabe en nueve días de reproducción. Cuando un número
+extraordinario llegue hasta usted, busque su primera aparición. Suele estar a tres clics, y
+suele decir otra cosa.
+
+---
+
+## Rehaga la cuenta
+
+Nada de aquí depende de creerme. Los cuatro números del título salen de dos páginas públicas —
+[artificialanalysis.ai/models/glm-5-3-flash](https://artificialanalysis.ai/models/glm-5-3-flash)
+y [artificialanalysis.ai/models/claude-fable-5](https://artificialanalysis.ai/models/claude-fable-5)
+— y el tamaño del repositorio sale de una línea de terminal:
+
+```bash
+curl -s 'https://huggingface.co/api/models/zai-org/GLM-5.3-Flash?blobs=true' \
+  | python3 -c "import json,sys; d=json.load(sys.stdin); \
+    print(sum(f['size'] for f in d['siblings'] if f['rfilename'].endswith('.safetensors'))/1e9, 'GB')"
+```
+
+En español: el comando pide a Hugging Face la lista de archivos del repositorio y suma el tamaño
+de todos los que guardan pesos. El resultado sale en gigabytes.
+
+Si le da distinto de lo que está escrito aquí, mándeme el resultado con la fecha: yo corrijo el
+artículo y acredito a quien lo señaló.
+
+## Fuentes
+
+- Índice independiente: [Artificial Analysis](https://artificialanalysis.ai/) — páginas de
+  `glm-5-3-flash`, `claude-fable-5`, `glm-5-3`, `kimi-k3`, `gemini-3-7-flash` y `gpt-5-6-luna`
+- Segunda regla independiente: [LiveBench](https://livebench.ai/)
+- Pesos y ficha oficial: [huggingface.co/zai-org/GLM-5.3-Flash](https://huggingface.co/zai-org/GLM-5.3-Flash)
+- Precios: [docs.z.ai/guides/overview/pricing](https://docs.z.ai/guides/overview/pricing)
+- Anuncio de Z.ai: [@Zai_org en X](https://x.com/Zai_org/status/2092616204787626030)
+- La frase original de los 100 billones: [@opencode en X](https://x.com/opencode/status/2090544355824038300) ·
+  [Techmeme, 22/08/2026](https://www.techmeme.com/260822/p7) ·
+  [SemiAnalysis](https://x.com/SemiAnalysis_/status/2092623833630998556) ·
+  [the-decoder](https://the-decoder.com/the-chinese-ai-model-glm-5-3-flash-runs-without-nvidia-and-costs-a-fraction-of-what-the-competition-does/) ·
+  [implicator.ai](https://www.implicator.ai/zai-glm-5-3-flash-chinese-chips-nvidia-cost/)
+- Medición de un canal: [@OpenRouter en X](https://x.com/OpenRouter/status/2092616758612172994)
+- Ronda independiente del Deep-SWE: [Henry Zhang en X](https://x.com/henryzhangumich/status/2091066210721141009)
+- Comparación entre los dos GLM: [Together AI](https://www.together.ai/blog/glm-5-3-vs-glm-5-3-flash-on-deepswe-cost-coding-and-routing)
+- Cuantizaciones: [Unsloth](https://unsloth.ai/docs/models/glm-5.3-flash)
+- Recepción: [hilo de Hacker News](https://news.ycombinator.com/item?id=49449507)
+
+*Todos los números de índice, coste por tarea, velocidad y precio fueron verificados por mí el
+01/09/2026 y verificados de nuevo el 02/09/2026, en las páginas en vivo de Artificial Analysis y
+de Z.ai; el tamaño del repositorio fue sumado por la API de Hugging Face en las dos fechas, con
+resultado idéntico. Entre una verificación y otra solo se movieron las velocidades — son media
+móvil del medidor —, y es la lectura del 02/09/2026 la que está publicada aquí. Las citas de
+comunidad fueron recogidas el 30/08/2026 y el 01/09/2026 y transcritas de los mensajes
+originales, con enlace en cada una; traducciones mías. Las fechas de los mensajes de la cadena
+de los 100 billones no fueron leídas de la pantalla: cada una fue derivada del identificador del
+propio mensaje, que lleva la marca de tiempo — y las cinco coinciden con lo que registró la
+recogida. La fecha del artículo de Wccftech (26/08/2026, 16:01 UTC) fue leída de la cabecera de
+la propia página el 02/09/2026. Los números de LiveBench y de las cuantizaciones de Unsloth
+fueron leídos de las páginas públicas el 01/09/2026 y verificados de nuevo el 02/09/2026, sin
+cambio. El mensaje oficial de lanzamiento de Z.ai no fue accesible en ningún intento, y nada en
+este artículo depende de él.*
