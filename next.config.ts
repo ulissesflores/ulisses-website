@@ -189,6 +189,7 @@ const nextConfig: NextConfig = {
       { source: '/agentes-en', destination: '/en/artigos/estatisticas-agentes-de-ia', permanent: true },
       { source: '/agentes-es', destination: '/es/artigos/estatisticas-agentes-de-ia', permanent: true },
       { source: '/agentes-it', destination: '/it/artigos/estatisticas-agentes-de-ia', permanent: true },
+      { source: '/agentes-he', destination: '/he/artigos/estatisticas-agentes-de-ia', permanent: true },
       { source: '/par',    destination: '/artigos/benchmark-harness-modelo',    permanent: true },
       { source: '/par-en', destination: '/en/artigos/benchmark-harness-modelo', permanent: true },
       { source: '/par-es', destination: '/es/artigos/benchmark-harness-modelo', permanent: true },

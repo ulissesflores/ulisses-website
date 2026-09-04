@@ -509,6 +509,10 @@ export const artigos: readonly Artigo[] = [
         title: '"Il 95% dei progetti pilota di IA fallisce" viene da 52 interviste — e le tre domande che evitano il prossimo',
         summary: 'Il "95% dei progetti pilota di IA fallisce" viene da 52 interviste e non ha misurato agenti. Sono andato alle fonti primarie: ogni statistica sugli agenti è previsione, dichiarazione o misurazione — e ciascuna fallisce a modo suo. Gartner pubblica una previsione e un sondaggio da webinar sulla stessa pagina; l\'AI Index dice 70% nel riassunto e 79% nel proprio grafico; METR ha cronometrato sviluppatori il 19% più lenti mentre loro si credevano il 20% più veloci, e nel 2026 non ha potuto ripetere l\'esperimento perché nessuno accetta di lavorare senza IA; la metrica di consistenza è sparita dalle classifiche; un record è stato ritirato per fuga di risposte. Ho misurato le tubature (SDK di MCP: 1.087 volte in 18 mesi) e il Brasile (il 17% delle aziende usa l\'IA; il 68% di questo è automazione di flussi). Nessun numero è falso — tutti cambiano peso quando l\'etichetta viaggia con loro.'
       },
+      he: {
+        title: '"95% מהפיילוטים של AI נכשלים" יצא מ-52 ראיונות — והכלל של שלוש השאלות שמונע את הבא',
+        summary: '"95% מהפיילוטים של AI נכשלים" יצא מ-52 ראיונות ולא מדד סוכנים. הלכתי למקורות הראשוניים: כל סטטיסטיקה על סוכנים היא תחזית, הצהרה או מדידה — וכל אחת נכשלת בדרך משלה. Gartner מפרסמת תחזית וסקר וובינר באותו עמוד; ה-AI Index אומר 70% בתקציר ו-79% בגרף; METR מדדה מפתחים 19% איטיים יותר בזמן שהם חשבו שהם 20% מהירים יותר, וב-2026 לא הצליחה לחזור על כך כי אף אחד לא מוכן לעבוד בלי AI; מדד העקביות נעלם מהלוחות; שיא הוסר בעקבות דליפת פתרונות. מדדתי את הצנרת (SDK של MCP: פי 1,087 תוך 18 חודשים) ואת ברזיל (17% מהחברות משתמשות ב-AI; 68% מזה הוא אוטומציית תהליכים). אף מספר לא שקרי — כולם משנים משקל כשהתווית מגיעה איתם.'
+      },
     },
   },
   {

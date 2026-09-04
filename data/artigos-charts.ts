@@ -59,6 +59,48 @@ export interface ChartDataset {
  */
 export const chartDatasets: Record<string, ChartDataset> = {
   /**
+   * `agentes-custo-por-tarefa-he` — acurácia × custo por tarefa (US$, log), pares do mesmo
+   * benchmark. PROCEDÊNCIA: HAL (hal.cs.princeton.edu, HTML lido em 13/08/2026): Online
+   * Mind2Web — SeeAct + GPT-5 Medium 42,33% a US$ 171,07 · Browser-Use + Claude Sonnet 4 40,00%
+   * a US$ 1.577,26; ScienceAgentBench — SAB Self-Debug + o4-mini Low 27,45% a US$ 3,95 · +
+   * GPT-5 Medium 30,39% a US$ 18,26. TheAgentCompany (leaderboard.json, 13/08/2026):
+   * TTE-MatrixAgent + DeepSeek-V3.2 42,86% a US$ 0,40 · OpenHands + Gemini 2.5 Pro 30,29% a
+   * US$ 4,23. Ouro = o par em que o barato ganha por mais. Séries são nomes próprios (não
+   * traduzidas).
+   */
+  'agentes-custo-por-tarefa-he': {
+    series: [
+      {
+        label: 'TheAgentCompany',
+        color: '#a48f65',
+        points: [
+          [0.4, 42.86],
+          [4.23, 30.29],
+        ],
+      },
+      {
+        label: 'HAL · Mind2Web',
+        color: '#60a5fa',
+        points: [
+          [171.07, 42.33],
+          [1577.26, 40.0],
+        ],
+      },
+      {
+        label: 'HAL · Science',
+        color: '#fbbf24',
+        points: [
+          [3.95, 27.45],
+          [18.26, 30.39],
+        ],
+      },
+    ],
+    xDomain: [0.3, 3000],
+    yDomain: [0, 50],
+    xTicks: [0.3, 1, 3, 10, 30, 100, 300, 1000, 3000],
+    yTicks: [0, 10, 20, 30, 40, 50],
+  },
+  /**
    * `modelos-preco-por-nota` — nota no SWE-bench Verified × custo por tarefa (US$, log), TUDO
    * medido pelo MESMO avaliador (Vals AI, payload da tabela "Updated 8/19/2026", campos
    * `accuracy` e `cost_per_test`, lido em 26/08/2026). Um avaliador por figura: nunca misturar
@@ -1135,6 +1177,130 @@ export interface CountryBarsDataset {
  * TIC Domicílios 2025, 1ª medição) sobre 213,4 mi (IBGE 2025).
  */
 export const countryBarsDatasets: Record<string, CountryBarsDataset> = {
+  /**
+   * `agentes-nenhum-uso-funcao-he` — bloco 1: % "Not at all" (nenhum uso de agente) por função,
+   * McKinsey 2025 republicado no AI Index 2026, Fig. 4.3.7 (N não declarado no capítulo).
+   * Bloco 2: agentes em produção em DUAS populações diferentes — LangChain State of Agent
+   * Engineering 2026 (n = 1.340, campo nov-dez/2025) e Stack Overflow Developer Survey 2025
+   * (n = 33.662, "usam agentes diariamente"). NUNCA fundir num ranking: a tese do artigo é
+   * que são perguntas diferentes a populações diferentes.
+   */
+  'agentes-nenhum-uso-funcao-he': {
+    max: 100,
+    groups: [
+      {
+        label: 'מצהירים על אין שימוש בסוכן (McKinsey, AI Index 2026)',
+        color: '#64748b',
+        items: [
+          { name: 'ייצור', value: 91, valueLabel: '91%', emphasis: true },
+          { name: 'שרשרת אספקה', value: 88, valueLabel: '88%' },
+          { name: 'כספים תאגידיים', value: 85, valueLabel: '85%' },
+          { name: 'משאבי אנוש', value: 82, valueLabel: '82%' },
+          { name: 'הנדסת תוכנה', value: 77, valueLabel: '77%' },
+          { name: 'IT', value: 69, valueLabel: '69%' },
+          { name: 'ניהול ידע', value: 66, valueLabel: '66%' },
+        ],
+      },
+      {
+        label: 'מצהירים על סוכן בפרודקשן — שאלה אחרת, אוכלוסייה אחרת',
+        color: '#60a5fa',
+        items: [
+          { name: 'LangChain', value: 57, valueLabel: '57% · n=1,340', emphasis: true },
+          { name: 'Stack Overflow', value: 14.1, valueLabel: '14.1% · יומי' },
+        ],
+      },
+    ],
+  },
+
+  /**
+   * `agentes-metr-percepcao-he` — tempo relativo para concluir a tarefa com IA, sem IA = 100.
+   * PROCEDÊNCIA: METR, 10/07/2025 — devs previram −24% de tempo; medido +19% (IC 95%: +2% a
+   * +39%); estimaram depois −20%. Conversão 100 × (1 + variação) feita pelo autor.
+   */
+  'agentes-metr-percepcao-he': {
+    max: 130,
+    groups: [
+      {
+        label: 'זמן להשלמת המשימה עם AI (בלי AI = 100)',
+        color: '#fbbf24',
+        items: [
+          { name: 'חזוי מראש', value: 76, valueLabel: '76 · −24%' },
+          { name: 'נמדד (שעון)', value: 119, valueLabel: '119 · +19%', emphasis: true },
+          { name: 'מוערך אחרי', value: 80, valueLabel: '80 · −20%' },
+        ],
+      },
+    ],
+  },
+
+  /**
+   * `agentes-mcp-sdk-mensal-he` — downloads mensais de @modelcontextprotocol/sdk no npm.
+   * PROCEDÊNCIA: api.npmjs.org/downloads/range, medida pelo autor em 26/08/2026
+   * (fontes/serie-npm-encanamento.json + sonda-npm-encanamento.py). jan/2025 = 176.533;
+   * jul/2026 = 191.923.439 (×1.087). Download = instalação, não pessoa. Nomes em MM/YYYY
+   * (numérico) por consistência — decisão do tradutor, ver dúvidas na entrega.
+   */
+  'agentes-mcp-sdk-mensal-he': {
+    max: 200,
+    groups: [
+      {
+        label: 'הורדות חודשיות של ה-SDK של MCP (מיליונים)',
+        color: '#a48f65',
+        items: [
+          { name: '01/2025', value: 0.18, valueLabel: '0.18 מיליון', emphasis: true },
+          { name: '02/2025', value: 0.35, valueLabel: '0.35 מיליון' },
+          { name: '03/2025', value: 1.87, valueLabel: '1.9 מיליון' },
+          { name: '04/2025', value: 4.21, valueLabel: '4.2 מיליון' },
+          { name: '05/2025', value: 20.93, valueLabel: '20.9 מיליון' },
+          { name: '06/2025', value: 16.84, valueLabel: '16.8 מיליון' },
+          { name: '07/2025', value: 21.61, valueLabel: '21.6 מיליון' },
+          { name: '08/2025', value: 24.66, valueLabel: '24.7 מיליון' },
+          { name: '09/2025', value: 31.26, valueLabel: '31.3 מיליון' },
+          { name: '10/2025', value: 31.81, valueLabel: '31.8 מיליון' },
+          { name: '11/2025', value: 35.01, valueLabel: '35.0 מיליון' },
+          { name: '12/2025', value: 38.52, valueLabel: '38.5 מיליון' },
+          { name: '01/2026', value: 50.25, valueLabel: '50.2 מיליון' },
+          { name: '02/2026', value: 71.66, valueLabel: '71.7 מיליון' },
+          { name: '03/2026', value: 141.91, valueLabel: '141.9 מיליון' },
+          { name: '04/2026', value: 140.09, valueLabel: '140.1 מיליון' },
+          { name: '05/2026', value: 153.16, valueLabel: '153.2 מיליון' },
+          { name: '06/2026', value: 165.18, valueLabel: '165.2 מיליון' },
+          { name: '07/2026', value: 191.92, valueLabel: '191.9 מיליון', emphasis: true },
+        ],
+      },
+    ],
+  },
+
+  /**
+   * `agentes-brasil-cetic-he` — Cetic.br, TIC Empresas 2025 (CATI, n = 4.174, campo fev/2025 a
+   * jan/2026, lançado 15/06/2026). Bloco 1: slide H9 (usaram algum tipo de IA, por porte).
+   * Bloco 2: slide H9A (tipo de IA, entre as que usam) — cinco primeiras categorias.
+   */
+  'agentes-brasil-cetic-he': {
+    max: 100,
+    groups: [
+      {
+        label: 'השתמשו בסוג כלשהו של AI ב-2025, לפי גודל',
+        color: '#60a5fa',
+        items: [
+          { name: 'סה״כ', value: 17, valueLabel: '17%', emphasis: true },
+          { name: 'קטנות', value: 15, valueLabel: '15%' },
+          { name: 'בינוניות', value: 32, valueLabel: '32%' },
+          { name: 'גדולות', value: 50, valueLabel: '50%' },
+        ],
+      },
+      {
+        label: 'מה שנקרא AI, מבין המשתמשות',
+        color: '#a48f65',
+        items: [
+          { name: 'אוטומציית תהליכים', value: 68, valueLabel: '68%', emphasis: true },
+          { name: 'כריית טקסט', value: 38, valueLabel: '38%' },
+          { name: 'תמונות', value: 31, valueLabel: '31%' },
+          { name: 'יצירת שפה', value: 30, valueLabel: '30%' },
+          { name: 'machine learning', value: 25, valueLabel: '25%' },
+        ],
+      },
+    ],
+  },
   /**
    * `openai-links-da-pagina` — bloco 1: a página alemã tem 76 afirmações numéricas, 14 links
    * externos e 7 fontes citadas só pelo nome (contagem em `fontes/auditoria-links-gradually.md`,
@@ -8037,6 +8203,29 @@ export interface StepFlowDataset {
 }
 
 export const stepFlowDatasets: Record<string, StepFlowDataset> = {
+  /**
+   * `agentes-tres-reguas-he` — a régua do artigo: três naturezas de estatística, cada uma com
+   * seu modo de falha. PROCEDÊNCIA: classificação do autor; os modos de falha vêm de Gartner
+   * (previsão sem amostra), METR 2025 (percepção × cronômetro) e HAL/ICLR 2026 (agente que
+   * acha o gabarito).
+   */
+  'agentes-tres-reguas-he': {
+    orientation: 'chain',
+    steps: [
+      {
+        label: 'תחזית — מי שהפיק את המספר לא מדד כלום',
+        detail: 'דעת אנליסט עם אופק. בלי מדגם: אין מה לבדוק.',
+      },
+      {
+        label: 'הצהרה — מישהו ענה על שאלה',
+        detail: 'סקר תפיסה. מודד את מה שמדווח — וטועה בכיוון האפקט.',
+      },
+      {
+        label: 'מדידה — מישהו תזמן או הריץ מבחן',
+        detail: "בנצ'מארק או ניסוי. ניתן לשחזור — והסוכן לומד לעקוף את הפרוקסי.",
+      },
+    ],
+  },
   /**
    * `openai-quatro-naturezas` — a régua do artigo: toda estatística sobre a OpenAI cabe numa
    * de quatro caixas. PROCEDÊNCIA: classificação do autor sobre os 20 números centrais da
