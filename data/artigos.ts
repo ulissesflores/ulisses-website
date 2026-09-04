@@ -138,6 +138,45 @@ export const artigos: readonly Artigo[] = [
     },
   },
   {
+    slug: 'estatisticas-deepfakes',
+    title:
+      'As 7 estatísticas centrais de deepfake vêm de quem vende o detector — o único número oficial de dano conta "menções a IA" e a ciência dá 55%, uma moeda',
+    summary:
+      'A página de estatísticas de deepfake mais completa que encontrei avisa que os números vêm de quem vende detector — e mesmo assim tira as sete cifras centrais dela exatamente daí. Conferi uma a uma: Signicat, Entrust duas vezes, Sumsub duas vezes, Resemble AI e iProov. Sete de sete fornecedores, nenhum órgão oficial, nenhuma academia, nenhuma pesquisa pública. Quatro linhas do placar estão erradas, e os erros sobre lei vão todos na mesma direção: fazem a regulação parecer mais adiantada do que é. Fui atrás do que existe de verdade: o único número oficial de dano é US$ 893 milhões — 4,28% das perdas do ano, sob uma etiqueta que o FBI define como "contém uma referência a inteligência artificial"; a única medição independente da capacidade humana é acadêmica e dá 55,5%, com intervalo de confiança que cruza os 50%, ou seja, uma moeda; e o melhor dado público do mundo é brasileiro, do Cetic.br, porque testa em vez de perguntar (41% se dizem confiantes, 17% acertaram, sem correlação entre as duas coisas). Contei o painel da Resemble AI eu mesmo: dos 2.266 incidentes, o famoso "US$ 1,3 bilhão" descreve 159.',
+    date: '2026-08-28',
+    tags: ['deepfake', 'estatisticas', 'desinformacao', 'metodologia', 'fraude', 'brasil'],
+    hero: {
+      width: 2400,
+      height: 1260,
+      locales: {
+        'pt-br': { src: '/artigos/estatisticas-deepfakes/hero.png', og: '/artigos/estatisticas-deepfakes/hero-og.png' },
+        'en': { src: '/artigos/estatisticas-deepfakes/hero-en.png', og: '/artigos/estatisticas-deepfakes/hero-en-og.png' },
+        'es': { src: '/artigos/estatisticas-deepfakes/hero-es.png', og: '/artigos/estatisticas-deepfakes/hero-es-og.png' },
+        'it': { src: '/artigos/estatisticas-deepfakes/hero-it.png', og: '/artigos/estatisticas-deepfakes/hero-it-og.png' },
+      },
+    },
+    i18n: {
+      en: {
+        title:
+          'Deepfake\'s 7 core statistics all come from the people selling the detector — the only official damage figure counts "mentions of AI", and the science says 55%, a coin flip',
+        summary:
+          'The most complete page of deepfake statistics I could find warns that the numbers come from the people who sell detectors — and then draws its seven core figures from exactly there. I checked them one by one: Signicat, Entrust twice, Sumsub twice, Resemble AI and iProov. Seven out of seven vendors, no official body, no academia, no public survey. Four rows of the scoreboard are wrong, and the legal errors all point the same way: they make regulation look further along than it is. So I went looking for what actually exists: the only official damage figure is US$ 893 million — 4.28% of the year\'s losses, under a label the FBI defines as "contains a reference to artificial intelligence"; the only independent measurement of human detection ability is academic and lands at 55.5%, with a confidence interval that crosses 50%, which is a coin flip; and the best public data in the world on this is Brazilian, from Cetic.br, because it tests instead of asking (41% say they are confident, 17% got it right, and the two are uncorrelated). I counted the Resemble AI dashboard myself: of the 2,266 incidents, the famous "US$ 1.3 billion" describes 159.',
+      },
+      es: {
+        title:
+          'Las 7 estadísticas centrales de deepfake vienen de quien vende el detector — la única cifra oficial de daño cuenta "menciones a IA" y la ciencia da 55%, una moneda',
+        summary:
+          'La página de estadísticas de deepfake más completa que encontré avisa que los números vienen de quien vende detectores — y aun así saca de ahí sus siete cifras centrales. Las comprobé una a una: Signicat, Entrust dos veces, Sumsub dos veces, Resemble AI e iProov. Siete de siete proveedores, ningún organismo oficial, ninguna academia, ninguna encuesta pública. Cuatro filas del marcador son falsas, y los errores sobre leyes van todos en la misma dirección: hacen que la regulación parezca más avanzada de lo que es. Fui a buscar lo que existe de verdad: la única cifra oficial de daño es de US$ 893 millones — el 4,28% de las pérdidas del año, bajo una etiqueta que el FBI define como "contiene una referencia a inteligencia artificial"; la única medición independiente de la capacidad humana es académica y da 55,5%, con un intervalo de confianza que cruza el 50%, es decir, una moneda; y el mejor dato público del mundo es brasileño, del Cetic.br, porque prueba en vez de preguntar (41% se dicen confiados, 17% acertaron, sin correlación entre ambas cosas). Conté el panel de Resemble AI yo mismo: de los 2.266 incidentes, el famoso "US$ 1.300 millones" describe 159.',
+      },
+      it: {
+        title:
+          'Le 7 statistiche centrali sui deepfake vengono da chi vende il rilevatore — l\'unica cifra ufficiale di danno conta le "menzioni all\'IA" e la scienza dà 55%, una monetina',
+        summary:
+          'La pagina di statistiche sui deepfake più completa che ho trovato avverte che i numeri vengono da chi vende rilevatori — e nonostante questo prende da lì le sue sette cifre centrali. Le ho controllate una a una: Signicat, Entrust due volte, Sumsub due volte, Resemble AI e iProov. Sette su sette fornitori, nessun organo ufficiale, nessuna accademia, nessuna indagine pubblica. Quattro righe del tabellone sono sbagliate, e gli errori sulle leggi vanno tutti nella stessa direzione: fanno sembrare la regolamentazione più avanti di quanto sia. Sono andato a cercare quello che esiste davvero: l\'unica cifra ufficiale di danno è 893 milioni di dollari — il 4,28% delle perdite dell\'anno, sotto un\'etichetta che l\'FBI definisce come "contiene un riferimento all\'intelligenza artificiale"; l\'unica misurazione indipendente della capacità umana è accademica e dà 55,5%, con un intervallo di confidenza che attraversa il 50%, cioè una monetina; e il miglior dato pubblico al mondo è brasiliano, del Cetic.br, perché mette alla prova invece di chiedere (il 41% si dice sicuro, il 17% ha risposto bene, e le due cose non sono correlate). Ho contato io stesso il pannello di Resemble AI: dei 2.266 incidenti, il famoso "1,3 miliardi di dollari" ne descrive 159.',
+      },
+    },
+  },
+  {
     slug: 'carta-ciberdefesa-openai',
     title: 'A carta de ciberdefesa assinada por 155 empresas não contém um único compromisso',
     summary:

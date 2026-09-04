@@ -1,0 +1,485 @@
+---
+title: 'As 7 estatísticas centrais de deepfake vêm de quem vende o detector — o único número oficial de dano conta "menções a IA" e a ciência dá 55%, uma moeda'
+slug: estatisticas-deepfakes
+category: artigos
+date: '2026-08-28'
+language: pt-BR
+---
+
+O artigo de estatísticas de deepfake mais completo que encontrei abre com um aviso honesto:
+*"Deepfake-Statistiken stammen überwiegend von Anbietern für Identitätsprüfung und
+Betrugserkennung, die ein kommerzielles Interesse am Thema haben"* — "as estatísticas de deepfake
+vêm predominantemente de fornecedores de verificação de identidade e detecção de fraude, que têm
+interesse comercial no assunto". Duas telas depois vem a tabela das sete cifras centrais do texto.
+Fui conferir uma a uma: **as sete são desses fornecedores**. Signicat, Entrust Onfido duas vezes,
+Sumsub duas vezes, Resemble AI e iProov.
+
+Não é desleixo do autor — e é isso que torna o caso interessante. Ele declara o conflito, faz a
+conta de crescimento do jeito certo, avisa quando um número não tem base. **Mesmo assim a tabela
+sai 7 de 7, porque não existe outra coisa para citar.** Passei três dias atrás do que existe: o
+único número oficial de dano é uma etiqueta do FBI definida como "menciona inteligência
+artificial"; a única medição independente da capacidade humana de reconhecer um deepfake é
+acadêmica e dá 55%, com margem que encosta na moeda; e o melhor dado público do mundo sobre o
+assunto, com teste objetivo em vez de autodeclaração, é brasileiro.
+
+> **Nota metodológica.** Conferi cada número contra a fonte original entre 26 e 28 de agosto de
+> 2026 — comunicado da empresa, relatório em PDF, ato normativo no diário oficial, artigo com DOI —
+> e digo no texto quando só consegui chegar à fonte secundária. A página alemã que motivou a pauta
+> foi capturada em 26/08/2026 com navegador real (`curl` recebe erro 429). Três medições são minhas
+> e reprodutíveis: a procedência linha a linha da tabela de sete cifras; os percentuais calculados
+> do PDF do relatório anual do FBI; e a contagem do painel público de incidentes da Resemble AI,
+> feita em 28/08/2026 com o script que publico no fim. O que não consegui ler está declarado: os
+> relatórios completos da Signicat, da Sumsub e da Resemble estão atrás de formulário de cadastro
+> (usei os comunicados públicos), o artigo de Stockner 2026 só me deu o resumo, e a decisão do
+> ministro Mendonça no TSE não tem inteiro teor publicado — digo isso no lugar em que ela aparece.
+
+---
+
+## O placar: 7 cifras centrais, 7 fornecedores
+
+O veredito antes do argumento. A coluna do meio é a única pergunta que importa: **quem mediu, e
+mede o quê?**
+
+| A cifra que circula | Quem mediu | O que a conferência achou |
+|---|---|---|
+| 6,5% das tentativas de fraude na Europa são deepfake (1 em 15) | Signicat — vende verificação de identidade | ⚠️ Não é medição: é **pesquisa de opinião** com 1.206 gestores de fraude em 7 países (Censuswide, 2024) |
+| Um ataque deepfake a cada 5 minutos (2024) | Entrust Onfido — vende verificação de identidade | ⚠️ Medido **na plataforma da própria empresa**, não no mundo |
+| 1 em cada 5 fraudes biométricas é deepfake (nov/2025) | Entrust — a mesma empresa | ⚠️ Mesma base: os clientes dela |
+| Incidentes na Alemanha cresceram 53% em 2025 | Sumsub — vende verificação de identidade | ⚠️ Mesma natureza: tráfego da plataforma dela |
+| 88% dos casos de deepfake são no setor cripto (2023) | Sumsub — a mesma empresa | ⚠️ Diz mais sobre a carteira de clientes dela que sobre deepfake |
+| ~US$ 1,3 bilhão em danos documentados em 2025 | Resemble AI — vende detecção e clonagem de voz | ⚠️ Contei o painel: o valor descreve **159 incidentes**, não os 2.266 do banco |
+| Só 0,1% das pessoas reconhecem deepfakes com segurança | iProov — vende verificação de identidade | ❌ É estatística **tudo-ou-nada** em 7 testes; a empresa **não publica** a acurácia por item |
+| "O FBI criou pela primeira vez uma categoria própria de IA" | Página alemã, sobre o relatório do FBI | ❌ **Errado.** O FBI define a etiqueta como *"contém uma referência a inteligência artificial"* — é descritor, não categoria de crime |
+| Remoção em 48h da lei americana passa a valer em maio de 2026 | Página alemã, sobre a TAKE IT DOWN Act | ❌ **Errado.** Vale desde **19/05/2025**; maio de 2026 é o prazo para as plataformas terem o processo pronto |
+| A Dinamarca aprovou lei de direito à própria imagem | Página alemã | ❌ **Errado.** Existe só um **anteprojeto em consulta pública**, nunca apresentado ao parlamento |
+| 95.800 vídeos deepfake, 98% pornográficos, 99% com mulheres (2023) | Security Hero | ⚠️ É **site de afiliados**, com o estudo comissionado por uma empresa de proteção de identidade |
+| 55,54% de acerto humano, com intervalo que cruza os 50% | Diel et al., 2024 — meta-análise revisada por pares | ✅ **Confere.** 56 artigos, 67 experimentos, 86.155 participantes. A página alemã não cita nenhum estudo assim |
+| 41% se dizem capazes de identificar conteúdo falso; 17% foram bem no teste | Cetic.br / NIC.br — pesquisa pública brasileira | ✅ **Confere.** n = 5.250, com **teste objetivo**, não autodeclaração |
+
+Onze das treze linhas ou vêm de quem vende a solução, ou estão erradas — quatro estão erradas.
+**As duas que aguentam sozinhas são as duas que ninguém repete: uma meta-análise acadêmica e uma
+pesquisa pública brasileira.**
+
+---
+
+## A régua: cinco maneiras de "medir" deepfake, e só duas medem o mundo
+
+Antes de acreditar em qualquer cifra sobre deepfake, uma pergunta resolve quase tudo: **o número
+saiu de contar o mundo, ou de contar os clientes de quem vende o remédio?** A figura é a régua
+inteira; o resto do artigo é a demonstração, linha a linha.
+
+<StepFlowDiagram
+  dataset="deepfake-cinco-reguas"
+  title="Cinco maneiras de medir deepfake"
+  subtitle="As duas primeiras produzem quase toda a estatística que circula — e nenhuma delas mede a população"
+  source="Fonte: classificação do autor sobre as 14 afirmações da página alemã, 28/08/2026. ulissesflores.com/deepfake"
+  description="Diagrama em cadeia com cinco caixas. Primeira: plataforma do fornecedor — a empresa conta o que passou pelo produto dela; mede a carteira de clientes, não o país. Segunda: pesquisa de opinião encomendada pelo fornecedor — pergunta a gestores o que eles acham que viram; mede percepção, não incidente. Terceira: órgão oficial — queixa registrada em delegacia ou agência; mede o que foi denunciado e sobrevive à definição do formulário. Quarta: academia revisada por pares — experimento com pessoas reais e intervalo de confiança; mede a capacidade humana, não a prevalência. Quinta, em destaque: censo com teste objetivo — pergunta e depois testa; é o único desenho que mostra a distância entre o que a pessoa acha e o que ela faz."
+/>
+
+Repare que a régua não diz "fornecedor mente". Diz que cada caixa responde a uma pergunta
+diferente. A plataforma do fornecedor mede com precisão **a carteira de clientes dele**: se a
+Sumsub atende muita corretora de criptomoeda, o "88% dos casos são cripto" descreve a clientela,
+não o crime. A pesquisa de opinião mede o que gestores de fraude **acham** que viram. O órgão
+oficial mede o que foi denunciado, filtrado pelas palavras do formulário. A academia mede a
+capacidade humana num laboratório, e não a prevalência lá fora. E a última caixa — perguntar e
+depois **testar** — é a única que mostra a distância entre as duas coisas. Só encontrei uma
+pesquisa assim, e ela é brasileira.
+
+O erro que atravessa o assunto inteiro não é inventar número. **É pôr as cinco caixas na mesma
+frase, com o mesmo verbo.**
+
+<CountryBarsChart
+  dataset="deepfake-procedencia-sete"
+  title="As 7 cifras centrais, por quem as produziu"
+  subtitle="A tabela tem 7 linhas e 7 fontes; todas vendem verificação de identidade, detecção ou clonagem de voz"
+  source="Fonte: contagem do autor na tabela 'Kernzahlen' da página capturada em 26/08/2026. ulissesflores.com/deepfake"
+  description="Gráfico de barras horizontais com a contagem por tipo de fonte nas sete cifras centrais: fornecedor de verificação ou detecção, sete de sete, em destaque; órgão oficial, zero; academia revisada por pares, zero; pesquisa pública com teste, zero."
+/>
+
+Sete de sete. Nenhum órgão oficial, nenhum estudo revisado por pares, nenhuma pesquisa pública —
+na tabela que resume o artigo. Os números oficiais aparecem no corpo do texto, mais adiante, e são
+justamente os que não sustentam a manchete.
+
+---
+
+## O crescimento: o texto acerta a conta, e a fonte dele é que erra
+
+Esperava encontrar aqui o erro clássico — e não encontrei. **O texto alemão faz a conta certa; quem
+produz a manchete inconsistente é a empresa que a assina.**
+
+A Signicat diz que a fatia de deepfake nas tentativas de fraude foi de **0,1% em 2022 para 6,5% em
+2024**. A página alemã descreve isso como `+6,4 PP` — mais 6,4 pontos percentuais. Está correto:
+é a diferença entre duas porcentagens, e é assim que se escreve. Na frase seguinte ela acrescenta,
+com atribuição explícita: *"Signicat selbst beziffert das Wachstum […] auf 2.137 %"* — "a própria
+Signicat quantifica o crescimento em 2.137%".
+
+O problema mora na fonte. Ir de 0,1% a 6,5% é multiplicar por **65** — um crescimento de
+**+6.400%**, não de +2.137%. Os dois números convivem no mesmo comunicado da empresa, sem uma
+linha reconciliando um com o outro, e o endereço do comunicado carrega o segundo:
+`fraud-attempts-with-deepfakes-have-increased-by-2137-over-the-last-three-year`. O `+2.137%`
+corresponde a multiplicar por 22,4, não por 65.
+
+Não sei qual dos dois a Signicat considera o certo, porque o relatório completo está atrás de
+formulário de cadastro e o comunicado público não explica. Sei que **os dois não podem ser a mesma
+medição**, e que o que viaja é sempre o maior.
+
+E há um detalhe de método que pesa mais que a aritmética: esse "6,5%" **não é contagem de ataque
+nenhum**. Saiu de um questionário aplicado pela Censuswide a 1.206 gestores de fraude em sete
+países europeus, em 2024. É a média do que profissionais estimaram sobre as próprias empresas. A
+página alemã chama a série de "a medição antes-depois mais limpa" do assunto — e ela é, de fato, a
+mais limpa disponível. **É esse o tamanho do que existe.**
+
+---
+
+## Detecção humana: 0,1% e 55% respondem a perguntas diferentes
+
+O número mais citado do assunto é da iProov: **0,1% das pessoas reconhecem deepfakes com
+segurança**. Ele é verdadeiro e é enganoso ao mesmo tempo, e a diferença está na palavra que some
+no caminho.
+
+O teste da iProov mostrou sete estímulos a 2.000 pessoas no Reino Unido e nos Estados Unidos. O
+0,1% é a fatia que acertou **todos os sete**. É uma barra tudo-ou-nada: quem errou um de sete cai
+para fora dela. Perguntei-me qual seria a acurácia por item — quantos por cento dos julgamentos
+individuais estavam certos — e a resposta é que **a empresa não publica esse número**. Publica só o
+tudo-ou-nada e um relativo ("vídeo é 36% menos detectado que imagem").
+
+A acurácia por item existe, e é acadêmica. Duas meta-análises a estimaram, e vale dar as duas
+porque **elas não dizem exatamente a mesma coisa**:
+
+| Estudo | Escopo | Acurácia | Veredito sobre o acaso |
+|---|---|---|---|
+| Diel et al., 2024 | 56 artigos, 67 experimentos, **86.155** participantes, todas as modalidades | **55,54%** — intervalo de 95% entre 48,87% e 62,10% | O intervalo **cruza os 50%**: não dá para distinguir de uma moeda |
+| Stockner et al., 2026 | 36 estudos, 51 experimentos, **13.197** participantes, só rostos estáticos | **56,1%** | Acima do acaso, **por margem pequena** |
+| Stockner et al., 2026 — subgrupo treinado | Experimentos que tentaram melhorar a detecção | **62,2%** | Melhor, e os autores pedem cautela sobre a relevância prática |
+
+As duas convergem no ponto — 55,5% e 56,1%, meio ponto de diferença — e divergem no veredito
+estatístico. A maior delas não consegue separar o desempenho humano de um cara-ou-coroa; a mais
+recente, com escopo mais estreito e amostra seis vezes menor, consegue, por seis pontos
+percentuais. **A afirmação que as duas sustentam é a única que vale repetir: o humano fica na casa
+dos 55%, e mesmo quem foi treinado para detectar não passa de 62%.**
+
+Isso muda a leitura do 0,1%. Ele não significa "quase ninguém percebe um deepfake". Significa
+"quase ninguém acerta sete de sete" — e uma régua tudo-ou-nada produz números minúsculos por
+construção. Faça a conta: com 55% de acerto por item, acertar sete vezes seguidas dá cerca de
+**1,5%**. Ou seja, a literatura já prevê que quase ninguém passe num teste desses — e ainda assim
+prevê **quinze vezes mais gente** do que a iProov encontrou. Não sei explicar a diferença com o que
+é público: pode ser que os sete estímulos fossem mais difíceis que a média dos experimentos
+acadêmicos, ou que os julgamentos não sejam independentes entre si. **O que o 0,1% mede com certeza
+é o desenho da métrica, não a cegueira do público** — e é por isso que ele não deveria ser lido como
+"só uma pessoa em mil percebe um deepfake".
+
+<CountryBarsChart
+  dataset="deepfake-deteccao-humana"
+  title="O que as pessoas acham × o que elas acertam"
+  subtitle="Autodeclaração na casa dos 40%; desempenho medido, dos 55% — e o teste objetivo brasileiro, 17%"
+  source="Fontes: iProov 2025; Diel 2024; Stockner 2026; BSI e Bitkom 2026; Cetic.br 2025. ulissesflores.com/deepfake"
+  description="Gráfico de barras horizontais comparando seis medidas. Autodeclaração: 47% dos alemães acham que reconhecem conteúdo manipulado, 34% se dizem capazes de identificar deepfake, 41% dos brasileiros se dizem confiantes. Desempenho medido: 55,5% de acerto na meta-análise de Diel, 56,1% na de Stockner, 62,2% no subgrupo treinado, e apenas 17% dos brasileiros no grupo de melhor desempenho do teste objetivo do Cetic.br. A barra de 17% está em destaque."
+/>
+
+Repare no salto entre as duas metades da figura. À esquerda, o que as pessoas dizem sobre si —
+entre 34% e 47%, em três países. À direita, o que acontece quando alguém mede. As três primeiras
+barras da direita são **acurácia média por julgamento**; a de 17% é de outra unidade — é a **fatia
+de pessoas** que ficou no grupo de melhor desempenho do teste brasileiro. Não são somáveis, e é a
+comparação com os 41% logo acima dela que interessa: mesma pesquisa, mesmas pessoas. E a barra de 17% é
+de outra natureza: é a única em que as mesmas pessoas foram **perguntadas e depois testadas**. Já
+escrevi sobre essa distância em [quantas pessoas realmente usam
+IA](/artigos/quantas-pessoas-usam-ia); vale igual aqui. **Declaração não é medição, nem quando a
+declaração é modesta.**
+
+---
+
+## O dano: o único número oficial conta "menções a IA"
+
+Quando o assunto vira dinheiro, uma cifra aparece em todo lugar: **US$ 893,35 milhões**, do
+relatório anual de 2025 do IC3, o centro de queixas de crime cibernético do FBI. É o único número
+de dano com carimbo de governo, e é por isso que ele viaja.
+
+Fui ao PDF. O relatório define a etiqueta assim, e cito na íntegra: *"AI Related: Information
+reported contains a reference to artificial intelligence (AI)"* — "Relacionado a IA: a informação
+reportada contém uma referência a inteligência artificial". **Não é uma categoria de crime. É uma
+marcação de texto:** a queixa entra na conta se em algum lugar dela alguém escreveu "inteligência
+artificial". A palavra "deepfake" aparece três vezes no relatório inteiro, sempre em prosa
+corrida, nunca como rubrica com número atrás.
+
+A página alemã descreve isso como *"erstmals eigene KI-Kategorie"* — "pela primeira vez uma
+categoria própria de IA". É o erro mais consequente do texto, porque transforma um descritor em
+estatística criminal.
+
+Os percentuais também mudam a leitura, e são conta de dividir que qualquer pessoa refaz:
+
+| Do relatório do FBI de 2025 | Total | Etiqueta "relacionado a IA" | Fatia |
+|---|---|---|---|
+| Queixas registradas | 1.008.597 | 22.364 | **2,22%** |
+| Perdas reportadas | US$ 20,877 bilhões | US$ 893,35 milhões | **4,28%** |
+
+**A cifra que se lê como "o custo dos deepfakes" é 4,28% das perdas de um único país, num balde que
+entra qualquer queixa em que a sigla foi digitada.** O maior componente dela, segundo o próprio
+relatório, é golpe de investimento — a modalidade que ficou em US$ 632 milhões.
+
+### Contei o banco de incidentes que produz o "US$ 1,3 bilhão"
+
+A outra cifra grande do assunto é da Resemble AI: cerca de **US$ 1,3 bilhão em danos documentados
+em 2025**, sobre 1.567 incidentes verificados. A empresa mantém um painel público, e a página alemã
+já avisa que *"bei über 80 % wurde kein Schaden beziffert"* — "em mais de 80% não foi quantificado
+dano nenhum". Fui contar por conta própria.
+
+O painel, na janela "todo o período", tinha em 28/08/2026 **2.266 incidentes** (a tabela dinâmica
+fecha linha a linha; a soma dos últimos doze meses dá 1.537, batendo com o "1.5K" que o painel
+exibe). E logo abaixo do valor de US$ 1,3 bilhão está impressa, em letra miúda, a legenda que
+não viaja junto: **`159 incidents with verified losses`** — "159 incidentes com perdas verificadas".
+
+<WaffleChart
+  dataset="deepfake-perdas-verificadas"
+  title="De onde vem o 'US$ 1,3 bilhão'"
+  subtitle="Cada ponto é um incidente do banco público da Resemble AI, contado em 28/08/2026"
+  source="Fonte: contagem do autor no painel público da Resemble AI, janela 'All time', 28/08/2026. ulissesflores.com/deepfake"
+  description="Gráfico de waffle com 2.266 pontos representando os incidentes do banco público da Resemble AI. 2.107 pontos em cinza recessivo representam os 93% de incidentes sem qualquer valor financeiro atribuído. 159 pontos em ouro, em destaque, representam os 7% com perda verificada — os únicos que compõem a cifra de 1,3 bilhão de dólares."
+/>
+
+São **7,0% do banco**. Os outros 93% não têm valor nenhum atribuído. Entre os 159 que têm, a média
+é de **US$ 8,18 milhões por incidente** — um patamar que só se sustenta porque casos como o da Arup
+(US$ 25,6 milhões numa videochamada) puxam a conta para cima. O número não descreve "o prejuízo dos
+deepfakes": descreve a soma de uma minoria de casos grandes o bastante para virar notícia com
+cifra. **A frase certa não é "deepfakes causaram 1,3 bilhão"; é "159 casos noticiados somaram 1,3
+bilhão".**
+
+E a contagem revelou algo que nenhum dos textos sobre o assunto menciona: **a categoria dominante
+do banco não é fraude.**
+
+<CountryBarsChart
+  dataset="deepfake-resemble-categorias"
+  title="O que o maior banco público de incidentes realmente cataloga"
+  subtitle="Fraude corporativa — o problema que os fornecedores vendem solução para — é a menor das seis categorias"
+  source="Fonte: contagem do autor na tabela dinâmica do painel da Resemble AI, 2.266 incidentes, 28/08/2026. ulissesflores.com/deepfake"
+  description="Gráfico de barras horizontais com a distribuição dos 2.266 incidentes por tipo de ataque: marca e reputação 757, que é 33,4%; desinformação política 447, 19,7%; fraude ao consumidor 382, 16,9%; imagem íntima não consensual 256, 11,3%; material de abuso sexual infantil 239, 10,5%; e fraude corporativa 185, apenas 8,2% — esta última em destaque por ser a menor."
+/>
+
+Um terço do banco é dano de marca e reputação. Abuso sexual — imagem íntima não consensual somada a
+material de abuso infantil — é **21,8%**, e é aí que mora o recorte que ninguém publica: **95,8% do
+material de abuso infantil catalogado (229 de 239 casos) tem um indivíduo privado como vítima**,
+não uma celebridade. Já a fraude corporativa, o cenário do executivo enganado em videochamada que
+abre praticamente todo artigo sobre o tema, é **8,2%** — a menor das seis categorias.
+
+Duas ressalvas que a honestidade exige, porque o banco também tem defeitos. Nos **oito incidentes
+mais recentes** da lista, **dois são o mesmo caso** com fichas e endereços diferentes: o mesmo
+golpe amoroso de US$ 180 mil contra um psicólogo aposentado, contado duas vezes. Não consigo dizer
+quanto isso infla o total — a página que lista os incidentes um a um responde, mas não renderiza
+uma linha sequer, e sem ela não há como medir a taxa de duplicação. A segunda ressalva é a favor
+do painel: procurei nota de método, glossário ou explicação de cálculo no código da página e não há
+**nenhuma** — o que também significa que o mostrador "633,5 bilhões de alcance mensal potencial",
+setenta e sete vezes a população da Terra, é publicado sem uma linha dizendo o que mede.
+
+---
+
+## A lei que está em vigor de verdade
+
+Aqui a página alemã erra três vezes, e os três erros vão na mesma direção: fazem a regulação
+parecer mais adiantada do que é. **Conferi cada prazo no ato original, e a lei está mais atrasada
+que a manchete — menos num ponto, que é o brasileiro.**
+
+<StepFlowDiagram
+  dataset="deepfake-linha-do-tempo-lei"
+  title="O que já vale, com data conferida no ato original"
+  subtitle="Cinco marcos em vigor — e três normas que circulam como aprovadas sem estar"
+  source="Fontes: EUR-Lex (AI Act), Congress.gov, DOU, legislation.gov.uk, DJE/TSE. Conferido em 28/08/2026. ulissesflores.com/deepfake"
+  description="Linha do tempo com cinco marcos em vigor: TAKE IT DOWN Act nos Estados Unidos com remoção em 48 horas desde maio de 2025; Reino Unido com a criação de imagem íntima falsa como crime desde fevereiro de 2026; Resolução 23.755 do TSE brasileiro de março de 2026 com blackout de conteúdo sintético; Lei 15.487 de agosto de 2026 reescrevendo os artigos 241-C, D e E do Estatuto da Criança e do Adolescente; e a obrigação de rotulagem do AI Act europeu desde 2 de agosto de 2026, com multa de até 15 milhões de euros ou 3% do faturamento."
+/>
+
+A figura é a lista do que se pode cobrar hoje. O que **não** está nela, e circula como se estivesse:
+
+1. **A remoção em 48 horas da TAKE IT DOWN Act já vale desde 19 de maio de 2025.** A página alemã
+   marca maio de 2026 como a entrada em vigor — mas essa data é o prazo para as plataformas terem o
+   processo de recebimento pronto, não o começo da obrigação. É um erro que atrasa o direito da
+   vítima em um ano inteiro.
+2. **A Dinamarca não aprovou lei nenhuma.** O que existe é um anteprojeto que foi a consulta
+   pública e nunca chegou a ser apresentado ao parlamento. O texto o descreve como marco aprovado.
+3. **A NO FAKES Act americana não é lei.** Foi aprovada na Comissão de Justiça do Senado em 18 de
+   junho de 2026 — passo real, mas ainda a metade do caminho.
+
+E há uma quarta correção, no sentido inverso, que só aparece quando se lê o ato britânico: o Reino
+Unido tornou a **criação** de imagem íntima falsa um crime autônomo, em vigor desde **6 de fevereiro
+de 2026**. Não é apenas remover: é criminalizar quem faz. Nenhum dos compilados que li tinha essa
+data.
+
+### O maior caso de 2026 não está em nenhum artigo de estatística
+
+Todos os textos sobre deepfake abrem com a Arup — os US$ 25,6 milhões perdidos numa videochamada em
+janeiro de 2024. Nenhum menciona o que aconteceu na virada de 2025 para 2026, que mobilizou cinco
+reguladores em três semanas: a função de edição de imagem do Grok, no X, passou a atender pedidos
+para "despir" fotos de pessoas reais.
+
+| Órgão | Ato | Data | Sanção possível |
+|---|---|---|---|
+| Ofcom (Reino Unido) | Investigação formal contra a X sob a Online Safety Act | 12/01/2026 | até £ 18 milhões ou 10% da receita mundial |
+| Comissão Europeia | Investigação formal sob a Digital Services Act (IP/26/203) | 26/01/2026 | procedimento em curso |
+| Procuradoria-Geral da Califórnia | Investigação sobre a xAI | 14/01/2026 | procedimento em curso |
+| ICO (Reino Unido, proteção de dados) | Investigação formal | 03/02/2026 | até £ 17,5 milhões ou 4% do faturamento |
+| Governo francês | Comunicação ao Ministério Público (art. 40 CPP) e acionamento da Arcom | 02/01/2026 | procedimento em curso |
+
+Nenhuma multa foi aplicada até hoje; todos os processos seguem abertos. E o caso repete, em tempo
+real, exatamente o problema deste artigo: **os cinco atos regulatórios são documentos públicos e
+conferíveis; todos os números de volume que circulam sobre ele não são.** O "uma imagem sexualizada
+não consensual por minuto" é de uma empresa de detecção; o "6.700 por hora" está atrás de assinatura;
+o "7.751 por hora" e "1,8 milhão de posts" aparecem num comunicado parlamentar americano atribuído a
+"pesquisadores", sem link para a pesquisa. Não uso nenhum dos quatro. **Fica registrado o que dá para
+provar: cinco reguladores abriram investigação em três semanas, e isso não é pouco.**
+
+O que a legislação europeia exige agora — rotular conteúdo gerado por máquina — é o assunto que
+tratei em [a marca d'água que o Claude passou a embutir no
+texto](/artigos/marca-dagua-claude): o AI Act cobra a marcação, e a parte difícil é que marcar
+funciona muito melhor para quem quer ser honesto do que contra quem não quer.
+
+---
+
+## Brasil: a melhor medição pública do mundo é daqui, e a eleição é em outubro
+
+O dado que eu procurava no mundo inteiro existe, é público, e é brasileiro. O Painel TIC do
+**Cetic.br/NIC.br** (n = 5.250, campo entre agosto e setembro de 2025) fez o que nenhuma das
+pesquisas europeias fez: perguntou **e depois testou**.
+
+- **41%** dizem ter contato diário com conteúdo sintético;
+- **41%** se dizem confiantes para identificar conteúdo falso;
+- **17%** ficaram no grupo de melhor desempenho no teste objetivo;
+- e **não houve correlação** entre a confiança declarada e o acerto.
+
+Essa última linha é a mais importante das quatro, e é a que nunca circula. **Quem se acha bom em
+detectar deepfake não é melhor em detectar deepfake** — a confiança não prevê nada. É o mesmo
+achado de Köbis et al. (2021), que mediu correlação **negativa** entre confiança e acurácia
+(r = −0,475), agora reproduzido em amostra brasileira representativa.
+
+A régua do começo do artigo, agora com os dados de cada seção encaixados:
+
+<StepFlowDiagram
+  dataset="deepfake-cinco-reguas-com-dados"
+  title="A mesma régua, com os números deste artigo"
+  subtitle="Cada caixa produziu um número; só a última mediu a distância entre achar e acertar"
+  source="Fontes conferidas entre 26 e 28/08/2026; procedência de cada cifra nas seções acima. ulissesflores.com/deepfake"
+  description="Diagrama em cadeia com cinco caixas, cada uma com o número que produziu. Plataforma do fornecedor: um ataque a cada cinco minutos e 88% em cripto, medidos na carteira de clientes. Pesquisa de opinião do fornecedor: 6,5% das tentativas de fraude, estimadas por 1.206 gestores. Órgão oficial: 893 milhões de dólares, que são 4,28% das perdas e uma etiqueta de texto. Academia revisada por pares: 55,5% e 56,1% de acerto humano, com o intervalo da maior meta-análise cruzando os 50%. Censo com teste objetivo, em destaque: 41% se dizem confiantes e 17% foram bem, sem correlação entre as duas coisas."
+/>
+
+Repare que as duas primeiras caixas — as que produziram sete das sete cifras da tabela alemã — são
+as únicas que não medem população nenhuma. E a última, a única que mede, produziu o número que
+ninguém repete.
+
+### O que já está valendo aqui, e o que vem em outubro
+
+A **Resolução 23.755 do TSE**, de 2 de março de 2026, é mais dura do que a cobertura sugere, e tem
+uma particularidade que fecha o círculo deste artigo: **a palavra "deepfake" não aparece uma única
+vez no texto**. A norma fala em "conteúdo sintético multimídia gerado por meio de inteligência
+artificial ou tecnologia equivalente" — o mesmo movimento do FBI, que também não usa o termo da
+imprensa. Os órgãos que precisam da definição para aplicar sanção fogem da palavra; quem produz
+manchete, não.
+
+Três dispositivos que mudam o jogo em outubro:
+
+1. **Blackout de 72 horas (art. 9º-B, § 3º-A).** Entre 72 horas antes e 24 horas depois da votação,
+   ficam vedadas publicação, republicação e impulsionamento de conteúdo sintético — e a norma diz
+   *"mesmo que rotulados"*. O § 4º manda remover de imediato.
+2. **Inversão do ônus da prova (art. 9º-I).** O juiz pode inverter o ônus quando a manipulação for
+   tecnicamente difícil de comprovar. É a resposta jurídica exata aos 55,5% de acerto humano: **se a
+   literatura diz que ninguém detecta de forma confiável, exigir que a vítima prove a falsificação é
+   exigir o impossível** — então prova quem publicou.
+3. **Proibição ao próprio provedor de IA (art. 15, § 1º-C).** É vedado ao provedor ranquear ou
+   recomendar candidato, opinar sobre voto — inclusive por resposta automatizada — e gerar cena de
+   sexo ou nudez com candidato. A regra não mira só quem usa a ferramenta; mira quem a opera.
+
+**Um adendo quente, marcado como o que é.** Em 25 de agosto de 2026 — três dias antes de eu fechar
+este texto — o ministro André Mendonça, do STF e vice-presidente do TSE, decidiu uma representação
+eleitoral, mandou retirar em 24 horas um vídeo sintético e, na mesma decisão, propôs ao plenário uma
+**tese sobre o que conta como "deep fake"**: para fins do art. 9º-C, § 1º, seria o conteúdo sintético
+que *"apresente grau de realismo ou verossimilhança objetivamente apto a produzir falsa percepção de
+autenticidade"*. É proposta de tese dentro de uma decisão individual — **não é julgamento de plenário
+nem mudança da Resolução 23.755**, que segue valendo como está. E **entra aqui como apuração de
+imprensa, não como ato conferido**: quatro veículos transcrevem o critério de forma concordante, com
+autor e horário — O Globo às 20h01, o g1 às 20h31 e a Agência Brasil às 21h44 do dia 25, o JOTA às
+10h36 do dia 26 —, mas o inteiro teor e o número do processo não estão no PJe público, na página de
+notícias do TSE, nem em nenhum dos portais que consultei. Se aparecerem, atualizo com o número dos
+autos. Registro assim porque este é o ponto em que a régua do artigo se vira contra o próprio autor:
+o verbo que virou manchete não é do ministro — **"flexibilizar" está no título do g1, não em nenhuma
+das aspas atribuídas à decisão** —, e a leitura de que caricatura e paródia sairiam do regime especial
+é interpretação do critério, não texto da tese. É o mesmo mecanismo que o resto deste artigo audita,
+acontecendo com um gancho que me interessa.
+
+### O resto do quadro brasileiro, conferido
+
+- **Lei 15.487/2026** (6 de agosto de 2026) reescreveu os arts. 241-C, D e E do Estatuto da Criança
+  e do Adolescente para alcançar material sintético. Já vale.
+- **Lupa:** casos de desinformação com IA saltaram de **39 (4,6% do total) em 2024 para 159 (25%) em
+  2025** — de um em vinte para um em quatro.
+- **SaferNet:** 16 casos escolares documentados entre 2023 e 2025, em 10 estados, com **72 vítimas e
+  57 agressores**; a central recebeu 87.689 denúncias em 2025, alta de 28,4%.
+- **Três negativas que também são resultado:** a Febraban **não mede** deepfake; a Lei 14.811/2024 e
+  o ECA Digital (Lei 15.211/2025) **não mencionam** o termo, ao contrário do que circula; e não
+  encontrei pesquisa de instituto brasileiro de opinião sobre percepção de deepfake.
+
+---
+
+## O que eu faria com isso
+
+Três hábitos, que é o que sobra depois de três dias conferindo.
+
+**Antes de repetir uma cifra, pergunte de qual das cinco caixas ela saiu.** Não é preciso ser
+especialista: basta procurar quem pagou pela medição e o que foi contado. Se a resposta for "a
+plataforma da empresa que vende o detector", o número é verdadeiro e descreve a clientela dela.
+
+**Trate o "eu reconheceria" como o dado menos confiável que você tem sobre si.** A evidência é
+consistente em quatro países e em duas meta-análises: o acerto humano fica na casa dos 55%, e a
+confiança não prevê o acerto. A defesa que funciona não é o olho — **é o segundo canal**. Na Arup,
+uma ligação para um número conhecido teria custado trinta segundos e evitado US$ 25,6 milhões.
+Combine hoje uma palavra ou um canal de confirmação com quem pode te pedir dinheiro; é grátis.
+
+**Se você trabalha com eleição, marque 72 horas no calendário.** A partir de 72 horas antes da
+votação de outubro, conteúdo sintético não pode ser publicado nem impulsionado — **mesmo
+rotulado**. Rótulo não salva no blackout.
+
+E, se quiser refazer o que fiz: são três comandos. Baixe o relatório do IC3, extraia o texto e
+conte a etiqueta você mesmo:
+
+```bash
+pdftotext ic3-2025-annual-report.pdf - | grep -c "AI Related"
+```
+
+A contagem do painel da Resemble AI está no script que publico junto com este texto
+([`capturar-resemble.py`](https://ulissesflores.com/artigos/estatisticas-deepfakes/capturar-resemble.py), navegador real porque a página é renderizada por JavaScript). A
+tabela do Cetic.br é pública e vem em planilha. **Se der diferente do que publiquei, me mande —
+atualizo e credito.**
+
+---
+
+## Fontes
+
+- **Signicat** — *Fraud attempts with deepfakes have increased by 2137% over the last three years* (fev. 2025). Pesquisa Censuswide, n = 1.206 gestores de fraude, 7 países.
+- **Entrust / Onfido** — *Identity Fraud Report 2024-2025*.
+- **Sumsub** — *Identity Fraud Report 2025* e *2023*.
+- **iProov** — *Deepfake detection study* (fev. 2025), n = 2.000 (Reino Unido e EUA).
+- **Resemble AI** — *Global Deepfake Incident Database*, https://www.resemble.ai/learn/deepfake-incident-database (contagem própria, 28/08/2026) e *2025 Deepfake Threat Report*.
+- **Deloitte** — *Generative AI is expected to magnify the risk of deepfakes and other fraud* (mai. 2024).
+- **FBI IC3** — *2025 Internet Crime Report* (abr. 2026).
+- **Diel, A. et al.** — *Human performance in detecting deepfakes: A systematic review and meta-analysis*. Computers in Human Behavior Reports, 2024. DOI: 10.1016/j.chbr.2024.100538.
+- **Stockner, M.; Convertino, G.; Cambedda, S.; Mazzoni, G.** — *Are humans able to discriminate between real and deepfake faces? A systematic review and meta-analysis*. Computers in Human Behavior: Artificial Humans, 2026. DOI: 10.1016/j.chbah.2026.100332.
+- **Köbis, N. et al.** — *Fooled twice: People cannot detect deepfakes but think they can*. iScience, 2021.
+- **Groh, M. et al.** — *Deepfake detection by human crowds, machines, and machine-informed crowds*. PNAS, 2022.
+- **Bitkom** — *Deepfakes* (jun. 2026), n = 1.006.
+- **BSI** — *Cybersicherheitsmonitor 2026* (abr. 2026), n = 3.060.
+- **Cetic.br / NIC.br** — *Painel TIC — Percepções sobre desinformação e conteúdo sintético* (n = 5.250, campo ago.-set. 2025).
+- **TSE** — Resolução 23.755, de 2 de março de 2026, e Resolução 23.610/2019 (arts. 9º-B e 9º-C).
+- **Decisão de 25/08/2026 do ministro André Mendonça (TSE) — apuração de imprensa, sem inteiro teor localizado.** Fontes secundárias jornalísticas: O Globo, Mariana Muniz, 25/08/2026 20h01; g1, Márcio Falcão, 25/08/2026 20h31; Agência Brasil, André Richter, 25/08/2026 21h44; JOTA, Flávia Maia, 26/08/2026 10h36 (transcrição mais completa da tese).
+- **Brasil** — Lei 15.487/2026; Lei 15.123/2025.
+- **União Europeia** — Regulamento (UE) 2024/1689 (AI Act), arts. 50(4), 99(4)(g) e 113.
+- **Estados Unidos** — TAKE IT DOWN Act (Public Law 119-12, 19/05/2025); NO FAKES Act, S.4591.
+- **Reino Unido** — Online Safety Act 2023; SI 2024/1188; Data (Use and Access) Act 2025.
+- **Ofcom** — *Ofcom launches investigation into X over Grok sexualised imagery* (12/01/2026).
+- **Comissão Europeia** — IP/26/203, *Commission investigates Grok and X's recommender systems under the DSA* (26/01/2026).
+- **ICO** — *ICO announces investigation into Grok* (03/02/2026).
+- **Procuradoria-Geral da Califórnia** — comunicado de 14/01/2026.
+- **Lupa** e **SaferNet Brasil** — levantamentos de 2025.
+
+> **O que foi verificado, contra o quê e quando.** Todas as cifras acima foram conferidas contra a
+> fonte nomeada entre 26 e 28 de agosto de 2026. Não li os relatórios completos da Signicat, da
+> Sumsub nem da Resemble AI — estão atrás de formulário de cadastro, e usei os comunicados
+> públicos. Do artigo de Stockner et al. (2026) li o resumo depositado pelo editor, não o texto
+> integral. **Não localizei o inteiro teor da decisão de 25/08/2026 do ministro André Mendonça no
+> TSE em nenhuma das fontes que consultei — nem o número do processo — e por isso ela entra no texto
+> marcada como apuração de imprensa**, sobre a transcrição concordante de quatro veículos, e não
+> como ato conferido. Não reverifiquei os números de
+> volume do caso Grok, e por isso nenhum deles está no texto.

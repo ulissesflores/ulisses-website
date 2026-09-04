@@ -194,6 +194,10 @@ const nextConfig: NextConfig = {
       { source: '/flash-es', destination: '/es/artigos/glm-5-3-flash', permanent: true },
       { source: '/flash-it', destination: '/it/artigos/glm-5-3-flash', permanent: true },
       { source: '/flash-he', destination: '/he/artigos/glm-5-3-flash', permanent: true },
+      { source: '/deepfake',    destination: '/artigos/estatisticas-deepfakes',    permanent: true },
+      { source: '/deepfake-en', destination: '/en/artigos/estatisticas-deepfakes', permanent: true },
+      { source: '/deepfake-es', destination: '/es/artigos/estatisticas-deepfakes', permanent: true },
+      { source: '/deepfake-it', destination: '/it/artigos/estatisticas-deepfakes', permanent: true },
     ];
 
     // Locale handling (double-locale 410 + single-locale 301 + i18n rewrite) moved to middleware.ts

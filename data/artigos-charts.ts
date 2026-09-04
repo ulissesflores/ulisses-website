@@ -543,6 +543,38 @@ export interface WaffleDataset {
  * to maintainer -> Acknowledged -> Patched -> Publicly disclosed).
  */
 export const waffleDatasets: Record<string, WaffleDataset> = {
+  /**
+   * `deepfake-perdas-verificadas` — MEDIÇÃO PRÓPRIA: de onde vem o "US$ 1,3 bilhão".
+   * PROCEDÊNCIA: o painel exibe `Direct losses $1.3B` com a legenda literal
+   * `159 incidents with verified losses`, sobre um banco de 2.266 incidentes (tabela dinâmica
+   * contada pelo autor em 28/08/2026). 2.266 - 159 = 2.107 sem valor atribuído = 93,0%.
+   * O cinza do grupo recessivo fica abaixo de 3:1 por decisão editorial ("fora da conta"), com
+   * o alívio exigido: legenda rotulada com contagem + os mesmos números no corpo do artigo.
+   */
+  'deepfake-perdas-verificadas': {
+    categories: [
+      { label: 'Sem valor atribuído', sublabel: '2.107 · 93,0% do banco', color: '#3f3f46', count: 2107 },
+      { label: 'Com perda verificada', sublabel: '159 · 7,0% — os US$ 1,3 bi', color: '#a48f65', count: 159 },
+    ],
+  },
+  'deepfake-perdas-verificadas-en': {
+    categories: [
+      { label: 'No value attributed', sublabel: '2,107 · 93.0% of the base', color: '#3f3f46', count: 2107 },
+      { label: 'With verified loss', sublabel: '159 · 7.0% — the US$ 1.3B', color: '#a48f65', count: 159 },
+    ],
+  },
+  'deepfake-perdas-verificadas-es': {
+    categories: [
+      { label: 'Sin valor atribuido', sublabel: '2.107 · 93,0% de la base', color: '#3f3f46', count: 2107 },
+      { label: 'Con pérdida verificada', sublabel: '159 · 7,0% — los 1.300 M US$', color: '#a48f65', count: 159 },
+    ],
+  },
+  'deepfake-perdas-verificadas-it': {
+    categories: [
+      { label: 'Senza valore attribuito', sublabel: '2.107 · 93,0% della banca dati', color: '#3f3f46', count: 2107 },
+      { label: 'Con perdita verificata', sublabel: '159 · 7,0% — gli 1,3 mld US$', color: '#a48f65', count: 159 },
+    ],
+  },
   'glm53-ledger-status': {
     categories: [
       { label: 'Descoberta', sublabel: '2.239 · 92% — nunca reportada', color: '#3f3f46', count: 2239 },
@@ -903,6 +935,251 @@ export interface CountryBarsDataset {
  * TIC Domicílios 2025, 1ª medição) sobre 213,4 mi (IBGE 2025).
  */
 export const countryBarsDatasets: Record<string, CountryBarsDataset> = {
+  /**
+   * `deepfake-procedencia-sete` — a contagem que sustenta o título. PROCEDÊNCIA: as 7 linhas da
+   * tabela "Kernzahlen" da página alemã, capturada em 26/08/2026
+   * (`fontes/gradually-deepfake-statistiken-capturado-2026-08-26.txt`): Signicat, Entrust
+   * Onfido, Entrust, Sumsub, Sumsub, Resemble AI, iProov — 7 fontes, todas fornecedoras.
+   */
+  'deepfake-procedencia-sete': {
+    max: 7,
+    groups: [
+      {
+        label: 'Quem produziu as 7 cifras centrais',
+        // Ouro = papel de DESTAQUE da marca (PADRAO-ARTIGO §3): esta é a figura da tese do
+        // artigo, e é o único gráfico de barras em que o ouro aparece.
+        color: '#a48f65',
+        items: [
+          { name: 'Fornecedor do setor', value: 7, valueLabel: '7 de 7', emphasis: true },
+          { name: 'Órgão oficial', value: 0, valueLabel: 'nenhuma' },
+          { name: 'Academia', value: 0, valueLabel: 'nenhuma' },
+          { name: 'Pesquisa pública', value: 0, valueLabel: 'nenhuma' },
+        ],
+      },
+    ],
+  },
+  /**
+   * `deepfake-deteccao-humana` — autodeclaração contra desempenho medido. PROCEDÊNCIA: BSI
+   * Cybersicherheitsmonitor 2026 (n=3.060, campo 6-12/jan/2026); Cetic.br Painel TIC (n=5.250,
+   * ago-set/2025, confiança E teste objetivo); Bitkom (n=1.006, jun/2026); Diel et al. 2024
+   * (DOI 10.1016/j.chbr.2024.100538, k=67, n=86.155); Stockner et al. 2026
+   * (DOI 10.1016/j.chbah.2026.100332, k=51, n=13.197, geral e subgrupo treinado).
+   */
+  'deepfake-deteccao-humana': {
+    max: 70,
+    groups: [
+      {
+        label: 'O que dizem sobre si',
+        color: '#fbbf24',
+        items: [
+          { name: 'Acham que reconhecem', value: 47, valueLabel: '47%' },
+          { name: 'Se dizem confiantes', value: 41, valueLabel: '41%' },
+          { name: 'Acham que identificam', value: 34, valueLabel: '34%' },
+        ],
+      },
+      {
+        label: 'O que acertam quando medido',
+        color: '#60a5fa',
+        items: [
+          { name: 'Treinados p/ detectar', value: 62.2, valueLabel: '62,2%' },
+          { name: 'Rostos (Stockner)', value: 56.1, valueLabel: '56,1%' },
+          { name: 'Geral (Diel)', value: 55.5, valueLabel: '55,5%' },
+          { name: 'Teste objetivo (BR)', value: 17, valueLabel: '17%', emphasis: true },
+        ],
+      },
+    ],
+  },
+  /**
+   * `deepfake-resemble-categorias` — MEDIÇÃO PRÓPRIA. PROCEDÊNCIA: tabela dinâmica do painel
+   * público resemble.ai/learn/deepfake-incident-database, janela "All time", contada pelo autor
+   * em 28/08/2026; 2.266 incidentes, com a soma de cada linha conferindo com o total exibido.
+   * Método e cru: `fontes/medicao-propria-resemble-dashboard-2026-08-28.md`.
+   */
+  'deepfake-resemble-categorias': {
+    max: 800,
+    groups: [
+      {
+        label: 'Os 2.266 incidentes do banco, por tipo de ataque',
+        color: '#60a5fa',
+        items: [
+          { name: 'Marca e reputação', value: 757, valueLabel: '33,4%' },
+          { name: 'Desinformação', value: 447, valueLabel: '19,7%' },
+          { name: 'Fraude ao consumidor', value: 382, valueLabel: '16,9%' },
+          { name: 'Imagem íntima', value: 256, valueLabel: '11,3%' },
+          { name: 'Abuso infantil', value: 239, valueLabel: '10,5%' },
+          { name: 'Fraude corporativa', value: 185, valueLabel: '8,2%', emphasis: true },
+        ],
+      },
+    ],
+  },
+  'deepfake-procedencia-sete-en': {
+    max: 7,
+    groups: [
+      {
+        label: 'Who produced the 7 core figures',
+        color: '#a48f65',
+        items: [
+          { name: 'Industry vendor', value: 7, valueLabel: '7 of 7', emphasis: true },
+          { name: 'Official body', value: 0, valueLabel: 'none' },
+          { name: 'Academia', value: 0, valueLabel: 'none' },
+          { name: 'Public survey', value: 0, valueLabel: 'none' },
+        ],
+      },
+    ],
+  },
+  'deepfake-deteccao-humana-en': {
+    max: 70,
+    groups: [
+      {
+        label: 'What they say about themselves',
+        color: '#fbbf24',
+        items: [
+          { name: 'Think they recognise', value: 47, valueLabel: '47%' },
+          { name: 'Say they are confident', value: 41, valueLabel: '41%' },
+          { name: 'Think they identify', value: 34, valueLabel: '34%' },
+        ],
+      },
+      {
+        label: 'What they get right when measured',
+        color: '#60a5fa',
+        items: [
+          { name: 'Trained to detect', value: 62.2, valueLabel: '62.2%' },
+          { name: 'Faces (Stockner)', value: 56.1, valueLabel: '56.1%' },
+          { name: 'Overall (Diel)', value: 55.5, valueLabel: '55.5%' },
+          { name: 'Objective test (BR)', value: 17, valueLabel: '17%', emphasis: true },
+        ],
+      },
+    ],
+  },
+  'deepfake-resemble-categorias-en': {
+    max: 800,
+    groups: [
+      {
+        label: 'The 2,266 incidents, by attack type',
+        color: '#60a5fa',
+        items: [
+          { name: 'Brand & reputation', value: 757, valueLabel: '33.4%' },
+          { name: 'Disinformation', value: 447, valueLabel: '19.7%' },
+          { name: 'Consumer fraud', value: 382, valueLabel: '16.9%' },
+          { name: 'Intimate imagery', value: 256, valueLabel: '11.3%' },
+          { name: 'Child abuse', value: 239, valueLabel: '10.5%' },
+          { name: 'Corporate fraud', value: 185, valueLabel: '8.2%', emphasis: true },
+        ],
+      },
+    ],
+  },
+  'deepfake-procedencia-sete-es': {
+    max: 7,
+    groups: [
+      {
+        label: 'Quién produjo las 7 cifras centrales',
+        color: '#a48f65',
+        items: [
+          { name: 'Proveedor del sector', value: 7, valueLabel: '7 de 7', emphasis: true },
+          { name: 'Organismo oficial', value: 0, valueLabel: 'ninguna' },
+          { name: 'Academia', value: 0, valueLabel: 'ninguna' },
+          { name: 'Encuesta pública', value: 0, valueLabel: 'ninguna' },
+        ],
+      },
+    ],
+  },
+  'deepfake-deteccao-humana-es': {
+    max: 70,
+    groups: [
+      {
+        label: 'Lo que dicen sobre sí mismos',
+        color: '#fbbf24',
+        items: [
+          { name: 'Creen reconocer', value: 47, valueLabel: '47%' },
+          { name: 'Se dicen confiados', value: 41, valueLabel: '41%' },
+          { name: 'Creen identificar', value: 34, valueLabel: '34%' },
+        ],
+      },
+      {
+        label: 'Lo que aciertan cuando se mide',
+        color: '#60a5fa',
+        items: [
+          { name: 'Entrenados', value: 62.2, valueLabel: '62,2%' },
+          { name: 'Rostros (Stockner)', value: 56.1, valueLabel: '56,1%' },
+          { name: 'General (Diel)', value: 55.5, valueLabel: '55,5%' },
+          { name: 'Prueba objetiva (BR)', value: 17, valueLabel: '17%', emphasis: true },
+        ],
+      },
+    ],
+  },
+  'deepfake-resemble-categorias-es': {
+    max: 800,
+    groups: [
+      {
+        label: 'Los 2.266 incidentes, por tipo de ataque',
+        color: '#60a5fa',
+        items: [
+          { name: 'Marca y reputación', value: 757, valueLabel: '33,4%' },
+          { name: 'Desinformación', value: 447, valueLabel: '19,7%' },
+          { name: 'Fraude al consumidor', value: 382, valueLabel: '16,9%' },
+          { name: 'Imagen íntima', value: 256, valueLabel: '11,3%' },
+          { name: 'Abuso infantil', value: 239, valueLabel: '10,5%' },
+          { name: 'Fraude corporativo', value: 185, valueLabel: '8,2%', emphasis: true },
+        ],
+      },
+    ],
+  },
+  'deepfake-procedencia-sete-it': {
+    max: 7,
+    groups: [
+      {
+        label: 'Chi ha prodotto le 7 cifre centrali',
+        color: '#a48f65',
+        items: [
+          { name: 'Fornitore del settore', value: 7, valueLabel: '7 su 7', emphasis: true },
+          { name: 'Organo ufficiale', value: 0, valueLabel: 'nessuna' },
+          { name: 'Accademia', value: 0, valueLabel: 'nessuna' },
+          { name: 'Indagine pubblica', value: 0, valueLabel: 'nessuna' },
+        ],
+      },
+    ],
+  },
+  'deepfake-deteccao-humana-it': {
+    max: 70,
+    groups: [
+      {
+        label: 'Ciò che dicono di sé',
+        color: '#fbbf24',
+        items: [
+          { name: 'Credono di riconoscere', value: 47, valueLabel: '47%' },
+          { name: 'Si dicono sicuri', value: 41, valueLabel: '41%' },
+          { name: 'Credono di identificare', value: 34, valueLabel: '34%' },
+        ],
+      },
+      {
+        label: 'Ciò che azzeccano quando si misura',
+        color: '#60a5fa',
+        items: [
+          { name: 'Addestrati', value: 62.2, valueLabel: '62,2%' },
+          { name: 'Volti (Stockner)', value: 56.1, valueLabel: '56,1%' },
+          { name: 'Generale (Diel)', value: 55.5, valueLabel: '55,5%' },
+          { name: 'Test oggettivo (BR)', value: 17, valueLabel: '17%', emphasis: true },
+        ],
+      },
+    ],
+  },
+  'deepfake-resemble-categorias-it': {
+    max: 800,
+    groups: [
+      {
+        label: 'I 2.266 incidenti, per tipo di attacco',
+        color: '#60a5fa',
+        items: [
+          { name: 'Marchio e reputazione', value: 757, valueLabel: '33,4%' },
+          { name: 'Disinformazione', value: 447, valueLabel: '19,7%' },
+          { name: 'Frode ai consumatori', value: 382, valueLabel: '16,9%' },
+          { name: 'Immagini intime', value: 256, valueLabel: '11,3%' },
+          { name: 'Abuso su minori', value: 239, valueLabel: '10,5%' },
+          { name: 'Frode aziendale', value: 185, valueLabel: '8,2%', emphasis: true },
+        ],
+      },
+    ],
+  },
 
 
   /**
@@ -5780,6 +6057,272 @@ export interface StepFlowDataset {
 }
 
 export const stepFlowDatasets: Record<string, StepFlowDataset> = {
+  /**
+   * `deepfake-cinco-reguas` — a régua do artigo (degrau 1 da escada): as cinco maneiras de
+   * "medir" deepfake. PROCEDÊNCIA: classificação do autor sobre a tabela "Kernzahlen" (7
+   * linhas) e as 14 afirmações numéricas da página alemã capturada em 26/08/2026, cada uma
+   * com o arquivo de evidência em `fontes/`.
+   */
+  'deepfake-cinco-reguas': {
+    orientation: 'chain',
+    steps: [
+      {
+        label: 'Plataforma do fornecedor — conta o que passou por ele',
+        detail: 'Mede a carteira de clientes da empresa, com precisão. Não mede o país nem a população.',
+      },
+      {
+        label: 'Pesquisa de opinião paga pelo fornecedor',
+        detail: 'Pergunta a gestores de fraude o que acham que viram. Mede percepção, não incidente.',
+      },
+      {
+        label: 'Órgão oficial — queixa registrada',
+        detail: 'Mede o que foi denunciado, filtrado pelas palavras do formulário. Sub-registro garantido.',
+      },
+      {
+        label: 'Academia revisada por pares',
+        detail: 'Experimento com pessoas reais e intervalo de confiança. Mede capacidade, não prevalência.',
+      },
+      {
+        label: 'Censo com teste objetivo — pergunta e depois testa',
+        detail: 'O único desenho que mostra a distância entre o que a pessoa acha e o que ela acerta.',
+        alert: true,
+      },
+    ],
+  },
+  /**
+   * `deepfake-cinco-reguas-com-dados` — a MESMA régua do degrau 1, retomada no degrau 5 com o
+   * número que cada caixa produziu (regra do PADRAO-ARTIGO: o degrau 5 repete a geometria do
+   * degrau 1 com mais dados). PROCEDÊNCIA: cada cifra está conferida na seção correspondente.
+   */
+  'deepfake-cinco-reguas-com-dados': {
+    orientation: 'chain',
+    steps: [
+      {
+        label: 'Plataforma do fornecedor: 1 ataque a cada 5 min; 88% cripto',
+        detail: 'Entrust e Sumsub, medido na própria plataforma. Descreve a clientela, não o crime.',
+      },
+      {
+        label: 'Opinião paga pelo fornecedor: 6,5% das tentativas',
+        detail: 'Signicat/Censuswide, 1.206 gestores estimando as próprias empresas. Nenhum ataque contado.',
+      },
+      {
+        label: 'Órgão oficial: US$ 893 mi — 4,28% das perdas',
+        detail: 'FBI IC3 2025. A etiqueta é "contém referência a IA": descritor de texto, não crime.',
+      },
+      {
+        label: 'Academia: 55,5% e 56,1% de acerto humano',
+        detail: 'Diel 2024 e Stockner 2026. Na maior meta-análise, o intervalo cruza os 50% — uma moeda.',
+      },
+      {
+        label: 'Teste objetivo: 41% se dizem confiantes, 17% acertaram',
+        detail: 'Cetic.br, n=5.250. E a confiança declarada não teve correlação nenhuma com o acerto.',
+        alert: true,
+      },
+    ],
+  },
+  /**
+   * `deepfake-linha-do-tempo-lei` — o que está em vigor de verdade, com a data conferida no ato
+   * original. PROCEDÊNCIA: Public Law 119-12 (19/05/2025); SI 2024/1188 + Data (Use and Access)
+   * Act 2025, crime de criação em vigor 06/02/2026; Res.-TSE 23.755 de 02/03/2026 (texto
+   * integral em `fontes/br-tse-res-23755-2026.md`); Regulamento (UE) 2024/1689 art. 50(4) e 113
+   * (02/08/2026); Lei 15.487 de 06/08/2026 (DOU).
+   */
+  'deepfake-linha-do-tempo-lei': {
+    orientation: 'timeline',
+    steps: [
+      { label: 'mai/2025', detail: 'EUA: remoção 48h' },
+      { label: 'fev/2026', detail: 'UK: criar é crime' },
+      { label: 'mar/2026', detail: 'TSE: blackout 72h' },
+      { label: '2/ago/2026', detail: 'UE: rotulagem' },
+      { label: '6/ago/2026', detail: 'ECA: sintético' },
+    ],
+  },
+  'deepfake-cinco-reguas-en': {
+    orientation: 'chain',
+    steps: [
+      {
+        label: 'Vendor platform — counts what passed through it',
+        detail: 'Measures its own client book, precisely. Not the country, and not the population.',
+      },
+      {
+        label: 'Opinion survey paid for by the vendor',
+        detail: 'Asks fraud managers what they think they saw. Measures perception, not incidents.',
+      },
+      {
+        label: 'Official body — filed complaints',
+        detail: 'Measures what was reported, filtered by the form wording. Under-reporting guaranteed.',
+      },
+      {
+        label: 'Peer-reviewed academia',
+        detail: 'Experiment with real people and a confidence interval. Measures ability, not prevalence.',
+      },
+      {
+        label: 'Census with an objective test — asks, then tests',
+        detail: 'The only design that shows the gap between what a person thinks and what they get right.',
+        alert: true,
+      },
+    ],
+  },
+  'deepfake-cinco-reguas-com-dados-en': {
+    orientation: 'chain',
+    steps: [
+      {
+        label: 'Vendor platform: 1 attack every 5 min; 88% crypto',
+        detail: 'Entrust and Sumsub, measured in-house. Describes the clientele, not the crime.',
+      },
+      {
+        label: 'Vendor-paid opinion: 6.5% of fraud attempts',
+        detail: 'Signicat/Censuswide, 1,206 managers estimating their own firms. No attack counted.',
+      },
+      {
+        label: 'Official body: US$ 893M — 4.28% of losses',
+        detail: 'FBI IC3 2025. The tag is "contains a reference to AI": a text descriptor, not a crime.',
+      },
+      {
+        label: 'Academia: 55.5% and 56.1% human accuracy',
+        detail: 'Diel 2024 and Stockner 2026. In the larger meta-analysis the interval crosses 50%.',
+      },
+      {
+        label: 'Objective test: 41% feel confident, 17% got it',
+        detail: 'Cetic.br, n=5,250. And declared confidence had no correlation at all with accuracy.',
+        alert: true,
+      },
+    ],
+  },
+  'deepfake-linha-do-tempo-lei-en': {
+    orientation: 'timeline',
+    steps: [
+      { label: 'May 2025', detail: 'US: 48h takedown' },
+      { label: 'Feb 2026', detail: 'UK: creating a crime' },
+      { label: 'Mar 2026', detail: 'TSE: 72h blackout' },
+      { label: '2 Aug 2026', detail: 'EU: labelling' },
+      { label: '6 Aug 2026', detail: 'Brazil: synthetic' },
+    ],
+  },
+  'deepfake-cinco-reguas-es': {
+    orientation: 'chain',
+    steps: [
+      {
+        label: 'Plataforma del proveedor — cuenta lo que pasó por él',
+        detail: 'Mide su cartera de clientes, con precisión. No mide el país ni la población.',
+      },
+      {
+        label: 'Encuesta de opinión pagada por el proveedor',
+        detail: 'Pregunta a gestores de fraude qué creen haber visto. Mide percepción, no incidentes.',
+      },
+      {
+        label: 'Organismo oficial — denuncia registrada',
+        detail: 'Mide lo denunciado, filtrado por las palabras del formulario. Subregistro garantizado.',
+      },
+      {
+        label: 'Academia revisada por pares',
+        detail: 'Experimento con personas reales e intervalo de confianza. Mide capacidad, no prevalencia.',
+      },
+      {
+        label: 'Censo con prueba objetiva — pregunta y evalúa',
+        detail: 'El único diseño que muestra la distancia entre lo que se cree y lo que se acierta.',
+        alert: true,
+      },
+    ],
+  },
+  'deepfake-cinco-reguas-com-dados-es': {
+    orientation: 'chain',
+    steps: [
+      {
+        label: 'Plataforma: 1 ataque cada 5 min; 88% cripto',
+        detail: 'Entrust y Sumsub, medido en casa. Describe la clientela, no el delito.',
+      },
+      {
+        label: 'Opinión pagada: 6,5% de los intentos de fraude',
+        detail: 'Signicat/Censuswide, 1.206 gestores estimando sus empresas. Ningún ataque contado.',
+      },
+      {
+        label: 'Organismo oficial: 893 M US$ — 4,28% de pérdidas',
+        detail: 'FBI IC3 2025. La etiqueta es "contiene una referencia a IA": descriptor, no delito.',
+      },
+      {
+        label: 'Academia: 55,5% y 56,1% de acierto humano',
+        detail: 'Diel 2024 y Stockner 2026. En el mayor metaanálisis el intervalo cruza el 50%.',
+      },
+      {
+        label: 'Prueba objetiva: 41% confía, 17% acertó',
+        detail: 'Cetic.br, n=5.250. Y la confianza declarada no tuvo correlación alguna con el acierto.',
+        alert: true,
+      },
+    ],
+  },
+  'deepfake-linha-do-tempo-lei-es': {
+    orientation: 'timeline',
+    steps: [
+      { label: 'may. 2025', detail: 'EE. UU.: 48 h' },
+      { label: 'feb. 2026', detail: 'RU: crear es delito' },
+      { label: 'mar. 2026', detail: 'TSE: apagón 72 h' },
+      { label: '2 ago. 2026', detail: 'UE: etiquetado' },
+      { label: '6 ago. 2026', detail: 'Brasil: sintético' },
+    ],
+  },
+  'deepfake-cinco-reguas-it': {
+    orientation: 'chain',
+    steps: [
+      {
+        label: 'Piattaforma del fornitore — conta ciò che vi passa',
+        detail: 'Misura con precisione il proprio portafoglio clienti. Non il Paese, non la popolazione.',
+      },
+      {
+        label: "Sondaggio d'opinione pagato dal fornitore",
+        detail: 'Chiede ai responsabili cosa credono di aver visto. Misura percezione, non incidenti.',
+      },
+      {
+        label: 'Organo ufficiale — denuncia registrata',
+        detail: 'Misura ciò che è denunciato, filtrato dalle parole del modulo. Sottostima garantita.',
+      },
+      {
+        label: 'Accademia con revisione paritaria',
+        detail: 'Esperimento con persone reali e intervallo di confidenza. Misura capacità, non prevalenza.',
+      },
+      {
+        label: 'Censimento con test oggettivo — chiede e verifica',
+        detail: "L'unico disegno che mostra la distanza tra ciò che si crede e ciò che si azzecca.",
+        alert: true,
+      },
+    ],
+  },
+  'deepfake-cinco-reguas-com-dados-it': {
+    orientation: 'chain',
+    steps: [
+      {
+        label: 'Piattaforma: 1 attacco ogni 5 min; 88% cripto',
+        detail: 'Entrust e Sumsub, misurato in casa. Descrive la clientela, non il crimine.',
+      },
+      {
+        label: 'Opinione pagata: 6,5% dei tentativi di frode',
+        detail: 'Signicat/Censuswide, 1.206 responsabili che stimano le proprie aziende. Zero attacchi.',
+      },
+      {
+        label: 'Organo ufficiale: 893 mln US$ — 4,28% perdite',
+        detail: 'FBI IC3 2025. L\'etichetta è "contiene un riferimento all\'IA": descrittore, non reato.',
+      },
+      {
+        label: 'Accademia: 55,5% e 56,1% di accuratezza umana',
+        detail: 'Diel 2024 e Stockner 2026. Nella meta-analisi maggiore l\'intervallo attraversa il 50%.',
+      },
+      {
+        label: 'Test oggettivo: 41% si dice sicuro, 17% azzecca',
+        detail: 'Cetic.br, n=5.250. E la fiducia dichiarata non ha avuto alcuna correlazione con l\'esito.',
+        alert: true,
+      },
+    ],
+  },
+  'deepfake-linha-do-tempo-lei-it': {
+    orientation: 'timeline',
+    steps: [
+      { label: 'mag. 2025', detail: 'USA: rimozione 48h' },
+      { label: 'feb. 2026', detail: 'UK: creare è reato' },
+      { label: 'mar. 2026', detail: 'TSE: blackout 72h' },
+      { label: '2 ago. 2026', detail: 'UE: etichettatura' },
+      { label: '6 ago. 2026', detail: 'Brasile: sintetico' },
+    ],
+  },
   'risco-anthropic-contaminacao': {
     orientation: 'chain',
     steps: [
