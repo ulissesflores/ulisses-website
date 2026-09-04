@@ -1,0 +1,10 @@
+# ═══════════════════════════════════════════════════════════════════════════════
+#  🖋️  COMMIT-MSG — carimbo do PUBLICADOR
+# ───────────────────────────────────────────────────────────────────────────────
+#  Só o publicador exporta PUBLICADOR. O trailer é o que o pre-push confere,
+#  commit a commit — variável marcaria o push inteiro e deixaria commit alheio
+#  passar de carona (foi o que aconteceu em 2026-08-30 e 2026-09-02).
+# ═══════════════════════════════════════════════════════════════════════════════
+
+[ -n "$PUBLICADOR" ] || exit 0
+grep -q '^Publicado-por: ' "$1" || printf '\nPublicado-por: %s\n' "$PUBLICADOR" >> "$1"

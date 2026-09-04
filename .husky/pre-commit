@@ -6,4 +6,14 @@
 #  O build completo roda no pre-push.
 # ═══════════════════════════════════════════════════════════════════════════════
 
+# ── Guarda do publicador (2026-09-03) ────────────────────────────────────────
+#  Neste repo só o PUBLICADOR commita. Sessão de origem entrega MATERIAL:
+#  /Users/ulissesflores/m4/gerente-de-sessoes/publicacao/<data>-<slug>/PEDIDO.md
+#  Desenho: /Users/ulissesflores/m4/docs/projects/ulisses-website-git-flow/02-DESENHO-2026-09-03-publicador.md
+[ -n "$PUBLICADOR" ] || {
+  echo "RECUSADO: só o publicador commita neste repo (exporte PUBLICADOR=<nome>)."
+  echo "Sua entrega é um PEDIDO em /Users/ulissesflores/m4/gerente-de-sessoes/publicacao/."
+  exit 1
+}
+
 npm run sota:check

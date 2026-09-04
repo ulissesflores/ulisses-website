@@ -5,4 +5,30 @@
 #  Este hook chama `sota:full` (com build SSG completo).
 # ═══════════════════════════════════════════════════════════════════════════════
 
+# ── Guarda do publicador (2026-09-03) ────────────────────────────────────────
+#  Recusa push que carregue QUALQUER commit sem a marca do publicador — inclusive
+#  commit alheio pego de carona (incidentes 2026-08-30 `a415900`+`8aee395` e
+#  2026-09-02 `7f3877c`+`2586edd`). stdin do hook: local_ref local_sha remote_ref remote_sha.
+Z=0000000000000000000000000000000000000000
+falhou=
+while read -r local_ref local_sha remote_ref remote_sha; do
+  [ "$local_sha" = "$Z" ] && continue
+  if [ "$remote_sha" = "$Z" ]; then
+    base=$(git rev-parse --verify -q origin/main) || base=""
+    [ -n "$base" ] && range="$base..$local_sha" || range="$local_sha"
+  else
+    range="$remote_sha..$local_sha"
+  fi
+  for c in $(git rev-list "$range" 2>/dev/null); do
+    git show -s --format=%B "$c" | grep -q '^Publicado-por: ' && continue
+    echo "RECUSADO: commit sem marca do publicador -> $(git show -s --format='%h %s' "$c")"
+    falhou=1
+  done
+done
+
+if [ -n "$falhou" ] && [ -z "$PUBLICADOR_OVERRIDE" ]; then
+  echo "Override só com OK do Ulisses no turn: PUBLICADOR_OVERRIDE=1 git push"
+  exit 1
+fi
+
 npm run sota:full
