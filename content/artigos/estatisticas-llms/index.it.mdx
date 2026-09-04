@@ -1,0 +1,445 @@
+---
+title: 'Quanti modelli linguistici esistono? 274, 95 o 403.420 — e il voto di codice che circola viene da un test abbandonato dal suo creatore'
+slug: estatisticas-llms
+category: artigos
+date: '2026-08-26'
+language: it-IT
+---
+
+Tre conteggi di "quanti modelli di linguaggio esistono" — 274, 95 e 403.420 — sono tutti
+corretti, e la differenza fra loro non è errore di nessuno: è la definizione di "modello". Sono
+andato a verificare le statistiche di LLM (*large language model*, il modello di linguaggio di
+grandi dimensioni che sta dietro a ChatGPT, a Claude e agli altri) che circolano nelle raccolte
+del 2026 e ho trovato un problema più grande del conteggio: **il benchmark di programmazione che
+serve da metro per "chi guida la classifica" è stato dichiarato contaminato dal suo stesso
+creatore a febbraio, che ha smesso di pubblicare il voto** — e sei mesi dopo continua a essere
+il metro.
+
+Il metro uscito dalla verifica sta in due domande. **"Modello secondo chi?"** risolve il
+conteggio. **"Voto dato da chi, a quale versione, in un test che ancora misura?"** risolve il
+bilancio. Nessun numero di questo articolo è falso. Quasi tutti cambiano peso quando
+l'etichetta li accompagna.
+
+> **Nota metodologica.** Ogni numero è stato verificato contro la fonte originale — *model
+> card* (la scheda tecnica che il laboratorio pubblica con il modello), PDF, paper, pagina
+> ufficiale dei prezzi o API pubblica — il 26 agosto 2026. Tre misurazioni sono mie e
+> riproducibili: il conteggio dei repository su Hugging Face (comando alla fine dell'articolo),
+> la lettura della tabella completa della Vals AI (86 modelli, estratta dall'HTML della pagina,
+> non dal riepilogo) e la tabella dei prezzi di sette fornitori letta sulle pagine ufficiali.
+> Dove la fonte esiste solo in copia archiviata (la OpenAI blocca la lettura automatizzata), il
+> testo dice "Wayback". Una prima estrazione automatica dei prezzi della xAI è uscita
+> **inventata** ed è stata scartata — l'episodio è nella sezione dei prezzi, perché è il motivo
+> per cui il prezzo entra qui solo da pagina ufficiale letta di persona. Non ci sono Reddit né X
+> in questo articolo: la comunità è Hacker News, dove ogni commento ha un id.
+
+---
+
+## Il bilancio della verifica
+
+Il verdetto prima dell'argomento, perché è quello che circola da solo. "Ciò che circola" è
+quello che le raccolte di statistiche di LLM ripetono nel 2026 — la pagina tedesca che ha
+ispirato questo articolo è l'esempio più completo che ho trovato, con 274 modelli catalogati e
+235 link.
+
+| Cosa circola | Verdetto |
+|---|---|
+| "Esistono 274 LLM, di 35 fornitori" | ⚠️ È il **catalogo** di un sito. Hugging Face ha 403.420 repository con il tag; l'AI Index di Stanford conta 95 "notevoli" nel 2025. Tre definizioni, tre numeri |
+| "Claude Fable 5 guida nel codice con il 95,0% sul SWE-bench Verified" | ⚠️ 95,0% torna nel System Card di Anthropic (media di 5 tentativi). **Non guida**: nella stessa tabella il Mythos 5 fa 95,5%, e nella valutazione indipendente l'Opus 5 fa 97,0% |
+| "DeepSeek-V4-Pro: 80,6%, circa 8 punti dietro l'Opus 4.8" | ❌ 80,6% è il voto della **versione di aprile**. La versione attuale (0813) misura **96,4%** nel valutatore indipendente — 8 punti **avanti** all'Opus 4.8. E la scheda della versione nuova non pubblica nemmeno questa metrica |
+| "GPT-5.5: 82,6% sul Vals-AI-Harness" | ✅ 82,6% torna (Vals AI, 19/08/2026). Ma "Vals-AI-Harness" non è un benchmark: è il SWE-bench Verified eseguito dalla Vals — e, nella stessa tabella, 82,6% è a 14,4 punti dal leader |
+| "GPT-5.5 Pro è il più caro: US$ 30 per milione di token in ingresso" | ❌ L'`o1-pro`, ancora in vendita, costa **US$ 150** — cinque volte tanto. Il "fattore 600" tra il più economico e il più caro è, nel catalogo reale, **fattore 3.000** |
+| "OpenAI mantiene 35 modelli, Anthropic 19, Google 18" | ❌ La stessa pagina dice **38, 20 e 27** cinque sezioni dopo |
+| "AI Index: gli USA hanno lanciato ~60 modelli notevoli nel 2025, la Cina ~35; oltre il 90% viene dall'industria" | ✅ Torna: 59 e 35; 91,2% |
+| "GPT-4 ha 1,76 trilioni di parametri (stima)" | ⚠️ Non è mai stato della OpenAI: il rapporto tecnico dice che **non divulga** la dimensione. Il numero è di George Hotz e della SemiAnalysis (2023). La pagina rimanda a Wikipedia |
+| "Llama 4 Scout e Qwen-Long: 10 milioni di token di contesto" | ⚠️ Torna con asterisco: il Qwen-Long arriva a 10 milioni solo per **upload di file** (testo incollato: 1 milione); lo Scout è stato addestrato con 256 mila |
+| "Gemini 3.1 Pro: 94,3% sul GPQA Diamond; Kimi K3: 93,5%" | ⚠️ 93,5% torna nel repository del Kimi K3 (*self-report*). 94,3% non l'ho trovato su una pagina di Google. E nel valutatore indipendente entrambi sono già stati superati |
+| "6 dei 10 migliori della Chatbot Arena sono chiusi" | ⚠️ Nella tabella del 21/08/2026 non ho trovato **nessun** modello a pesi aperti tra i primi dieci (il primo chiaramente aperto è il 13°; riserva: il 10° è il `kimi-k3-max`, variante di un modello i cui pesi di base sono aperti). E la Arena misura la preferenza in conversazione, non il codice |
+| "Kimi K3: 2,8 trilioni di parametri, 896 esperti, pesi aperti il 27/07, US$ 3 / US$ 15" | ✅ Torna tutto nella scheda ufficiale — e manca il prezzo con *cache* (US$ 0,30), dieci volte più basso |
+
+Tre tornano puliti, tre sono sbagliati, sei esistono con l'etichetta sbagliata. Notate che
+**gli errori gravi sono tutti di confronto, non di numero**: ogni voto singolo sta nella fonte
+che la pagina cita. Ciò che non sta in nessun posto è il metro che autorizza a mettere due voti
+fianco a fianco.
+
+---
+
+## Il metro: "modello secondo chi?"
+
+"Quanti modelli esistono" è la domanda più semplice dell'argomento e non ha risposta — non
+perché manchi il dato, ma perché di definizioni ce n'è in eccesso. La figura riassume le tre che
+compaiono nelle raccolte; il resto della sezione mostra che tutte e tre sono corrette.
+
+<StepFlowDiagram
+  dataset="modelos-tres-definicoes-it"
+  title="Tre definizioni di 'modello', tre conteggi corretti"
+  subtitle="403.420, 95 e 274 rispondono a domande diverse — e nessuna è la domanda del lettore"
+  source="Fonti: Hugging Face (misurato il 26/08/2026) · AI Index 2026, cap. 1 (Epoch AI) · gradually.ai. ulissesflores.com/modelos-it"
+  description="Diagramma a catena con tre caselle. Prima: repository — tutto quanto pubblicato con il tag; Hugging Face, tag text-generation, 403.420 alle 04:43 del 26 agosto 2026, contando copie, fine-tuning e versioni. Seconda: notevole — ciò che una curatela ha giudicato importante; Epoch AI per l'AI Index di Stanford, 95 nel 2025, curatela manuale che il rapporto avverte non essere un censimento. Terza: catalogo — ciò che un sito ha deciso di elencare; la pagina tedesca che ha ispirato l'articolo, 274 modelli di 35 fornitori, con criterio dell'editore."
+/>
+
+Guardate la prima casella. Hugging Face è il deposito pubblico dove laboratori e persone
+pubblicano modelli, e ogni pubblicazione è un "repository". Ho chiesto alla pagina di ricerca
+del sito quanti repository portano il tag `text-generation` (generazione di testo, il tag degli
+LLM): **403.420** alle 04:43 del 26 agosto; **403.535** alle 11:55 dello stesso giorno. Il
+numero cresce mentre leggete, perché conta tutto — ogni copia compressa, ogni fine-tuning fatto
+da uno studente, ogni versione di prova. Il repository più scaricato del lotto (24,4 milioni di
+download) è il Qwen3-0.6B, un modello troppo piccolo per comparire in qualsiasi classifica di
+capacità.
+
+La seconda casella è l'opposto: una lista fatta a mano. L'AI Index di Stanford usa il database
+della Epoch AI, che segna un modello come "notevole" per avanzamento tecnico, importanza storica
+o citazioni — e il rapporto avverte, nel testo: *"This is a manual curation, so the dataset is
+not a census of all AI models"* ("è una curatela manuale, quindi l'insieme non è un censimento
+di tutti i modelli di IA"). Per questo criterio, il 2025 ha avuto **93 modelli notevoli
+dell'industria e 2 dell'accademia** — 95. Nella figura seguente dello stesso capitolo, che
+classifica i lanci per tipo di accesso, la base di calcolo è **102**. Lo stesso rapporto, due
+conteggi, sette modelli di differenza — perché i tagli sono diversi.
+
+La terza casella è il catalogo editoriale: qualcuno decide cosa "conta come modello" per il
+proprio pubblico. La pagina tedesca ne elenca 274, di 35 fornitori — e si contraddice nel
+proprio corpo: nella sezione 2 la OpenAI ha 35 modelli, la Anthropic 19 e la Google 18; nella
+sezione 7, 38, 20 e 27, e compare una Alibaba con 42 che la sezione 2 non menzionava. Non è
+disonestà; è ciò che succede quando un catalogo ha tagli diversi ("modelli attivi" in una
+figura, "tutta la storia" nell'altra) e nessuno scrive il taglio accanto al numero.
+
+**Nessuno dei tre conteggi risponde alla domanda del lettore, che è "quanti modelli contano per
+me" — e questa può contarla solo lui.** Quello che si può fare è mostrare lo stesso fornitore
+sotto le tre definizioni, perché la dimensione dell'abisso diventi visibile.
+
+<CountryBarsChart
+  dataset="modelos-mesmo-fornecedor-it"
+  title="La stessa OpenAI ha 5, 20 o 38 modelli — dipende da chi conta"
+  subtitle="Repository su Hugging Face · modelli notevoli nel 2025 (AI Index) · catalogo editoriale"
+  source="Fonti: Hugging Face, ?author= (26/08/2026) · AI Index 2026, Fig. 1.1.6 · gradually.ai sez. 7. ulissesflores.com/modelos-it"
+  description="Tre blocchi di barre orizzontali. Blocco 1, grigio: repository su Hugging Face con il tag text-generation per organizzazione — Alibaba (Qwen) 307, Google 149, DeepSeek 70, Meta 51, OpenAI 5, Anthropic 0. Blocco 2, blu: modelli notevoli lanciati nel 2025 secondo Epoch AI nell'AI Index 2026 — OpenAI 20, Google 14, Alibaba 11, Anthropic 7, DeepSeek 4, Meta 4. Blocco 3, ambra: catalogo editoriale della pagina tedesca, sezione 7 — Alibaba 42, OpenAI 38, Google 27, Anthropic 20, Meta 15. OpenAI compare con 5, 20 e 38."
+/>
+
+Guardate la OpenAI: **5 repository, 20 modelli notevoli, 38 nel catalogo** — la stessa azienda,
+lo stesso anno. Su Hugging Face quasi non esiste (ha pubblicato solo i modelli aperti
+`gpt-oss`), e la Anthropic non esiste: zero repository, perché nessun modello Claude ha pesi
+pubblicati. Nella curatela della Epoch AI l'ordine si inverte: la OpenAI è chi ha lanciato più
+modelli notevoli nel 2025, seguita da Google (14) e Alibaba (11). E nel catalogo editoriale la
+Alibaba guida, perché l'editore ha deciso di elencare ogni variante del Qwen. **La frase
+"l'azienda X ha più modelli" non significa nulla senza la definizione accanto** — e le tre
+definizioni invertono il podio.
+
+---
+
+## Il voto dato da chi: il test di codice che il creatore ha abbandonato
+
+Ogni raccolta del 2026 ha una sezione "chi è il migliore in programmazione", e il metro è sempre
+lo stesso: il **SWE-bench Verified**, un *benchmark* (test standardizzato che dà un voto al
+modello) con 500 problemi reali presi da repository di codice aperto — il modello riceve la
+descrizione di un difetto e deve correggerlo; un insieme di test automatici dice se ha
+azzeccato. La pagina tedesca pubblica quattro voti: Claude Fable 5 con 95,0%, Opus 4.8 con
+88,6%, DeepSeek-V4-Pro con 80,6% e Kimi K2.6 con 80,2%, e conclude che il DeepSeek resta "circa
+8 punti indietro". Sono andato dietro a tutti e quattro. Stanno tutti nella fonte citata. E
+nessuno dei confronti regge, per tre motivi impilati.
+
+<StepFlowDiagram
+  dataset="modelos-swebench-linha-do-tempo-it"
+  title="Chi creò il test l'ha abbandonato a febbraio — e ad agosto è ancora il metro"
+  subtitle="SWE-bench Verified: creato da OpenAI nel 2024, da lei dichiarato contaminato nel 2026"
+  source="Fonti: OpenAI (13/08/2024, 23/02/2026 Wayback) · HN 47910388 · Vals AI (19/08/2026) · gradually.ai ulissesflores.com/modelos-it"
+  description="Linea del tempo con cinque punti. Agosto 2024: la OpenAI crea il SWE-bench Verified. Febbraio 2026, in evidenza: la OpenAI lo abbandona, dichiarando il test contaminato. Aprile 2026: la discussione arriva su Hacker News con 343 punti. Agosto 2026: la Vals AI misura 97% in cima alla classifica. 23 agosto 2026: la pagina tedesca usa ancora il test come metro di programmazione."
+/>
+
+Il primo motivo è il più grave e il meno citato. Il **23 febbraio 2026** la OpenAI — che creò il
+"Verified" nell'agosto 2024, rivedendo 1.699 problemi del SWE-bench originale con ingegneri
+umani finché non ne restarono 500 — pubblicò un testo intitolato *"Why SWE-bench Verified no
+longer measures frontier coding capabilities"* ("Perché il SWE-bench Verified non misura più la
+capacità di programmazione di frontiera"). Due conclusioni, citate dall'originale:
+
+> "We audited a 27.6% subset of the dataset that models often failed to solve and found that at
+> least 59.4% of the audited problems have flawed test cases that reject functionally correct
+> submissions."
+
+> In italiano: "Abbiamo controllato un sottoinsieme del 27,6% del dataset che i modelli spesso
+> non riuscivano a risolvere e abbiamo scoperto che almeno il 59,4% dei problemi controllati ha
+> casi di test difettosi, che rifiutano soluzioni funzionalmente corrette."
+
+> "In our analysis we found that all frontier models we tested were able to reproduce the
+> original, human-written bug fix [...] indicating that all of them have seen at least some of
+> the problems and solutions during training. [...] This is why we have stopped reporting
+> SWE-bench Verified scores, and we recommend that other model developers do so too."
+
+> In italiano: "Nella nostra analisi abbiamo scoperto che tutti i modelli di frontiera testati
+> erano in grado di riprodurre la correzione originale, scritta da esseri umani [...], il che
+> indica che tutti hanno visto almeno parte dei problemi e delle soluzioni durante
+> l'addestramento. [...] Per questo abbiamo smesso di pubblicare i voti del SWE-bench Verified,
+> e raccomandiamo che anche gli altri sviluppatori di modelli facciano lo stesso."
+
+Traducendo il meccanismo per chi non programma: il test usa problemi pubblici, con le soluzioni
+pubbliche a fianco, presi dagli stessi repository che i laboratori usano per addestrare. Il
+modello può aver "visto la prova con le risposte" prima di farla. La OpenAI ha misurato quanto
+progresso restava — *"improving from 74.9% to 80.9% in the last 6 months"* ("migliorando dal
+74,9% all'80,9% negli ultimi 6 mesi") — e ha deciso che ciò che sale da lì in poi misura
+l'esposizione al test, non la capacità. Sei mesi dopo, la tabella del valutatore indipendente
+mostra sette modelli al 95% o più. La discussione è arrivata su Hacker News ad aprile (343
+punti, 181 commenti); la riga più votata riassume lo scetticismo in una frase: *"Goodhart's Law
+in reverse, what can't be gamed gets rejected"* ("Legge di Goodhart al contrario: quello che non
+si può truccare viene rigettato" — commento 47911060). Un altro lettore: *"This feels very much
+like 'we are now moving the goal posts'"* ("Sembra proprio 'stiamo spostando i pali della
+porta'", 47910902). Le due letture sono possibili. Ciò che non è possibile è usare, ad agosto,
+un metro che il produttore ha ritirato a febbraio senza dirlo al lettore.
+
+**La conseguenza pratica è già nelle schede tecniche: la OpenAI non pubblica più il voto, e i
+laboratori aperti stanno migrando.** Nel System Card del Fable 5, la colonna "GPT-5.5" della
+riga SWE-bench Verified porta un trattino. Nella scheda del Kimi K2.6, la colonna "GPT-5.4",
+idem. Kimi K3, Qwen 3.8 e GLM-5.2 non riportano più la metrica classica — l'hanno sostituita con
+SWE-bench Pro, DeepSWE, FrontierSWE. L'unico posto dove tutti restano confrontabili è un
+valutatore esterno, che fa girare il test vecchio con lo stesso *harness* (l'impalcatura di
+strumenti che il modello riceve per lavorare) per tutti. È la Vals AI, ed è lì che appare il
+secondo motivo.
+
+<CountryBarsChart
+  dataset="modelos-nota-dois-medidores-it"
+  title="Il voto del laboratorio regge; il confronto tra versioni, no"
+  subtitle="SWE-bench Verified: voto del laboratorio · lo stesso modello misurato da fuori · versione attuale"
+  source="Fonti: System Card Fable 5 (Tab. 8.1.A) · model card su Hugging Face · Vals AI, 19/08/2026. ulissesflores.com/modelos-it"
+  description="Tre blocchi di barre orizzontali con voti nel SWE-bench Verified. Blocco 1, grigio, il voto pubblicato dal laboratorio stesso: Claude Fable 5 95,0%, Claude Opus 4.8 88,6%, DeepSeek V4-Pro di aprile 80,6%, Kimi K2.6 80,2%. Blocco 2, blu, lo stesso modello misurato da fuori dalla Vals AI con un unico harness: Fable 5 95,0%, Opus 4.8 88,6%, DeepSeek V4-Pro di aprile 77,4%, Kimi K2.6 76,2%. Blocco 3, oro, la versione attuale di ogni famiglia nella stessa tabella della Vals AI: Claude Opus 5 97,0%, DeepSeek-V4-Pro-0813 96,4%, GPT-5.6 Sol 96,2%, Kimi K3 93,4%."
+/>
+
+Guardate prima cosa **non** è cambiato tra il blocco grigio e quello blu. Il voto che
+l'Anthropic pubblica per il Fable 5 (95,0%, media di cinque tentativi, nel System Card) è lo
+stesso che la Vals misura da fuori; anche quello dell'Opus 4.8 (88,6% in entrambi). La DeepSeek
+pubblica 80,6% per il V4-Pro di aprile, nella modalità di ragionamento più costosa; la Vals
+misura lo stesso modello a 77,4%. Kimi K2.6: 80,2% contro 76,2%. **Il *self-report* (il voto che
+il laboratorio dà a se stesso) regge alla verifica: dove lo stesso modello è stato misurato da
+entrambi, la differenza sta tra zero e quattro punti.** Questo contraddice la mia ipotesi di
+partenza — mi aspettavo che la valutazione indipendente abbattesse i voti ufficiali — e il
+risultato viene pubblicato comunque.
+
+Ciò che non regge è il blocco oro. L'"80,6%" che circola è del **DeepSeek-V4-Pro Preview**,
+pubblicato il 22 aprile; la scheda è stata aggiornata l'ultima volta il 22 giugno. Il **13
+agosto** la DeepSeek ha lanciato la versione definitiva, `DeepSeek-V4-Pro-0813`, in un
+repository separato — e la scheda nuova **non pubblica alcun voto di SWE-bench Verified** (usa
+DeepSWE, Cybergym e altri). Chi misura lo 0813 è la Vals: **96,4%**, secondo posto tra 86
+modelli, dietro solo all'Opus 5 (97,0%) e davanti al GPT-5.6 Sol, al Grok 4.6 e allo stesso
+Fable 5. La frase "il DeepSeek resta 8 punti dietro all'Opus 4.8" confronta il voto di aprile di
+uno con il voto di maggio dell'altro; con le versioni di agosto, il DeepSeek è **8 punti
+avanti**. Nessuno dei due numeri è falso. Il confronto lo è.
+
+Il terzo motivo è il più banale: la leadership in un benchmark ha una scadenza di settimane. La
+pagina tedesca è del 23 agosto e dice che il Fable 5 "guida con 95,0%". Nello stesso System Card
+che porta il 95,0%, il Mythos 5 fa 95,5%. Nella Vals, del 19 agosto, l'Opus 5 fa 97,0%. E
+l'"82,6% sul Vals-AI-Harness" della stessa pagina è l'unico voto che viene da un valutatore
+indipendente — con il nome sbagliato ("Vals-AI-Harness" non è un benchmark, è la Vals che fa
+girare il SWE-bench Verified con l'impalcatura `mini-swe-agent`, con la sola riga di comando
+`bash`) e senza il contesto: nella stessa tabella, 82,6% è a 14,4 punti dal leader. Ho già
+raccontato qui come [la DeepSeek ha pubblicato la tabella in cui è lei stessa a perdere 9 a
+0](/artigos/deepseek-v4-flash-0731) e come [la Z.ai ha rinviato i pesi del GLM-5.3 e ha
+pubblicato ciò che il modello ha pensato](/artigos/glm-5-3): i laboratori sono stati più onesti
+nelle schede che la copertura che li riassume.
+
+**Il metro di questa sezione, in una riga: il voto di un benchmark si confronta solo quando
+quattro campi coincidono — stesso test, stessa impalcatura, stessa versione, stessa data.** La
+copertura mediatica di solito azzecca il primo e ignora gli altri tre.
+
+---
+
+## Quanto costa: lo stesso test, con la colonna che nessuno pubblica
+
+Se il voto isolato non decide niente, cosa decide? Nella tabella della Vals c'è una colonna che
+nessuna raccolta copia: il **costo per compito**, in dollari, per lo stesso test eseguito sulla
+stessa impalcatura. È l'unico confronto di prezzo che attraversa i fornitori senza dipendere da
+quanti token (i pezzi di testo che il modello legge e produce, l'unità di fatturazione) ognuno
+spende per pensare — perché misura la spesa vera, alla fine del compito.
+
+<EffortCostChart
+  dataset="modelos-preco-por-nota-it"
+  title="Sei decimi di voto costano 12 volte tanto — o costano meno"
+  subtitle="Voto nel SWE-bench Verified × costo per compito (US$, log), tutto misurato dalla Vals AI"
+  xLabel="Costo per compito (US$, scala logaritmica)"
+  yLabel="Compiti risolti (%)"
+  source="Fonte: Vals AI, SWE-bench Verified (accuracy, cost_per_test, 'Updated 8/19/2026'), letta 26/08/2026. ulissesflores.com/modelos-it"
+  description="Grafico a dispersione con costo per compito in scala logaritmica sull'asse orizzontale e percentuale di compiti risolti sul verticale, tutti i punti misurati dalla Vals AI. DeepSeek V4, uniti da una linea: Flash 0731 a 0,0099 dollari con 88,8%, Pro 0813 a 0,103 dollari con 96,4%. GPT-5.6, uniti da una linea: Luna a 0,043 dollari con 93,0%, Terra a 0,40 dollari con 95,4%, Sol a 1,15 dollari con 96,2%. Punti isolati: Claude Opus 5 a 1,29 dollari con 97,0%, Claude Opus 4.8 a 1,92 dollari con 88,6%, Claude Fable 5 a 2,05 dollari con 95,0%. Kimi K3 a 0,76 dollari con 93,4%. GPT-5.5 a 1,36 dollari con 82,6%."
+/>
+
+Guardate i due punti più alti: l'Opus 5 risolve il 97,0% dei compiti a US$ 1,29 ciascuno; il
+DeepSeek-V4-Pro-0813 risolve il 96,4% a US$ 0,10. **Sei decimi di punto costano dodici volte e
+mezzo il prezzo.** E guardate il punto più a destra: il Fable 5, a US$ 2,05 per compito, risolve
+meno dell'Opus 5 e costa di più — il System Card spiega che il voto del Fable "riflette le sue
+salvaguardie di produzione", cioè il modello più caro dell'Anthropic non è quello che azzecca di
+più questo test. Dal lato economico, il GPT-5.6 Luna fa 93,0% a quattro centesimi, e il DeepSeek
+V4 Flash, 88,8% a **un centesimo** — lo stesso voto dell'Opus 4.8, che costa US$ 1,92 per
+compito. Ho già mostrato qui, [misurando 43 mila chiamate](/artigos/tokens-por-dolar), che il
+prezzo per token non è il costo per compito; questa tabella è la stessa lezione con un altro
+valutatore.
+
+Questo spiega perché il "più caro" e il "più economico" delle raccolte quasi mai coincidono con
+il catalogo. La pagina tedesca dice che i prezzi vanno da US$ 0,05 (GPT-5 nano) a US$ 30
+(GPT-5.5 Pro) per milione di token in ingresso — "un fattore di 600". Nella tabella ufficiale
+della OpenAI, letta il 26 agosto, l'`o1-pro` resta in vendita a **US$ 150 in ingresso e US$ 600
+in uscita**; il `gpt-5.4-pro` costa gli stessi US$ 30 del 5.5 Pro. Il fattore reale tra il più
+economico e il più caro del catalogo è **3.000**. E il prezzo di listino non è nemmeno il
+prezzo: la DeepSeek fa pagare il V4-Pro-0813 US$ 1,32 per milione di token in ingresso nell'ora
+di punta e US$ 0,66 fuori da essa, e scende a US$ 0,044 quando la richiesta ripete testo già
+elaborato (*cache hit*, la corrispondenza in cache). Il Kimi K3 costa US$ 3 di listino e US$
+0,30 con cache. **Un unico numero di prezzo per modello è una scelta editoriale, mai un fatto.**
+
+Una parentesi sul metodo, perché cambia ciò di cui dovete fidarvi. Nella raccolta di materiale
+per questo articolo, una prima estrazione automatica della pagina dei prezzi della xAI ha
+restituito una tabella completa, plausibile, con modelli e valori — e **inventata**: la pagina
+reale aveva un modello (Grok 4.6, US$ 2 / US$ 6) e lo strumento ha riempito il resto. È stata
+scartata e rifatta a mano. Per questo il prezzo entra qui solo da pagina ufficiale letta da una
+persona, con data; qualsiasi raccolta che non dica da dove ha preso il prezzo è a un passo dallo
+stesso errore.
+
+---
+
+## Parametri e contesto: il numero gigante è sempre di un modello aperto
+
+Dopo "chi guida" viene "chi è più grande". Qui lo schema si inverte: i numeri più grandi
+pubblicati sono tutti di laboratori che aprono i pesi (i miliardi di numeri che compongono il
+modello, pubblicati per il download), e i modelli di punta chiusi non hanno nessun numero.
+
+<CountryBarsChart
+  dataset="modelos-parametros-declarados-it"
+  title="Dimensione nota solo se aperto — il chiuso non la dice"
+  subtitle="Parametri totali in miliardi, come dichiara la scheda tecnica · e ciò che i chiusi divulgano"
+  source="Fonti: model card (HF, Meta), paper GPT-3 e GPT-4, letti il 26/08/2026. *Stima di terzi (2023). ulissesflores.com/modelos-it"
+  description="Due blocchi di barre orizzontali. Blocco 1, blu, parametri totali dichiarati dal laboratorio stesso in miliardi: Kimi K3 2,8 trilioni, Qwen 3.8 2,4 trilioni, DeepSeek-V4-Pro 1,6 trilioni, Kimi K2.6 1 trilione, DeepSeek V3.2 685 miliardi, GPT-3 del 2020 175 miliardi, Mixtral 8x22B 141 miliardi, gpt-oss-120b 117 miliardi, Llama 4 Scout 109 miliardi. Blocco 2, grigio, modelli di punta chiusi: GPT-4 1,76 trilioni segnato come voce di corridoio; GPT-5.6 Sol, Claude Opus 5, Gemini 3.7 Flash e Grok 4.6 con barra vuota e la dicitura 'non divulga'."
+/>
+
+Guardate il blocco in basso: quattro barre vuote. Non è assenza di dato nella mia raccolta; è il
+dato che non esiste. Il rapporto tecnico del GPT-4 dice, nel testo: *"this report contains no
+further details about the architecture (including model size)"* ("questo rapporto non contiene
+ulteriori dettagli sull'architettura, incluse le dimensioni del modello"), per "panorama
+competitivo" e "implicazioni di sicurezza". L'"1,76 trilioni" che ogni raccolta ripete è nato
+nel giugno 2023, da una speculazione di George Hotz (fondatore della Comma.ai) — otto modelli da
+220 miliardi — e da un rapporto della SemiAnalysis, azienda di analisi dei semiconduttori. La
+OpenAI non ha mai confermato né smentito. La pagina tedesca segna il numero come stima, il che è
+corretto; e rimanda, come fonte, a **Wikipedia** — che è dove la voce di corridoio è stata
+compilata.
+
+Nel blocco in alto, i numeri sono reali e verificati scheda per scheda, con una sfumatura che le
+raccolte omettono: quasi tutti sono **MoE** (*mixture of experts*, mescolanza di esperti — il
+modello ha molti blocchi e ne usa pochi alla volta). Il Kimi K3 ha 2,8 trilioni di parametri
+totali, ma attiva 16 di 896 esperti per token: **104 miliardi** al lavoro per volta, il 3,7% del
+totale. Il DeepSeek-V4-Pro: 1,6 trilioni totali, 49 miliardi attivi. Confrontare "2,8 trilioni"
+con i 175 miliardi del GPT-3 del 2020 — che li usava tutti in una volta — è come confrontare la
+dimensione del palazzo con il numero di stanze accese.
+
+La finestra di contesto (quanto testo il modello riesce a leggere in una volta) ha la stessa
+trappola. La pagina dice che Llama 4 Scout e Qwen-Long "guidano con 10 milioni di token" —
+circa trenta volumi di Harry Potter. I due numeri stanno nelle fonti ufficiali. La Meta dice
+anche che lo Scout è stato addestrato con **256 mila** token di contesto e arriva a 10 milioni
+per generalizzazione di lunghezza (una tecnica di estrapolazione, non il regime di
+addestramento). La Alibaba dice che il Qwen-Long arriva a 10 milioni solo per **upload di file**
+con riferimento per identificativo; testo incollato direttamente nel messaggio si ferma a **1
+milione**. E il Kimi K3, con il maggior numero di parametri, ha un contesto di 1.048.576 token —
+un milione, non dieci. Ho già spiegato qui [quanto costa in memoria la finestra di contesto
+quando il modello gira sulla tua macchina](/artigos/memoria-llm-local); la lezione è la stessa:
+il numero di copertina è il tetto teorico, e la scheda porta le condizioni.
+
+**Parametri e contesto sono le due statistiche in cui il numero ufficiale è sempre il più grande
+possibile — e la nota a piè di pagina è sempre più piccola.**
+
+---
+
+## Brasile: l'unico confronto di costo in reais
+
+Nessuna raccolta internazionale di statistiche di LLM ha una riga sul Brasile — la pagina
+tedesca ne ha zero. Sono andato a cercare cosa esiste in fonte ufficiale e ho trovato più di
+quanto mi aspettassi, con una negativa in mezzo.
+
+<CountryBarsChart
+  dataset="modelos-brasil-suite-it"
+  title="La suite brasiliana costa R$ 206 nel Sabiá e R$ 590 nell'Opus 4.8"
+  subtitle="Costo di eseguire la suite completa Maritaca (leggi, OAB, ENEM/USP, conversazione) per modello"
+  source="Fonte: Maritaca AI, docs.maritaca.ai/pt/introducao (26/08/2026) — valori dell'azienda. ulissesflores.com/modelos-it"
+  description="Barre orizzontali con il costo in reais di eseguire la suite completa di prove brasiliane della Maritaca in ogni modello: Sabiá 4 Thinking 206 reais, in oro; Gemini 3.1 Pro 281 reais; GPT-5.4 449 reais; Claude Opus 4.8 590 reais."
+/>
+
+Notate che la figura è di costo, non di voto — ed è l'unico confronto di costo di suite intera
+in moneta nazionale che ho trovato in fonte ufficiale. La Maritaca AI, di Campinas, pubblica la
+famiglia Sabiá 4 con prezzo in reais: **R$ 5 per milione di token in ingresso e R$ 20 in
+uscita** nel Sabiá 4 (R$ 40 nella versione *Thinking*, che ragiona prima di rispondere), **R$ 1
+e R$ 4** nel Sabiazinho 4, e il 30% in più nelle varianti "BR-SP", con "inferenza ed
+elaborazione realizzate al 100% in territorio nazionale". La stessa documentazione pubblica i
+voti del Sabiá 4 nelle prove brasiliane (97,4% in leggi brasiliane; 86,6% nell'aggregato
+ENEM/USP/OAB; voto 7,49 su 10 nella redazione di un atto giuridico) e il costo di eseguire la
+suite intera in ogni concorrente: R$ 206 nel Sabiá 4 Thinking, R$ 281 nel Gemini 3.1 Pro, R$ 449
+nel GPT-5.4, R$ 590 nell'Opus 4.8. **È *self-report*** — è l'azienda che misura i concorrenti
+con le prove sue — ed entra qui con questa etichetta, secondo lo stesso metro della sezione
+precedente: il voto vale come dichiarazione del laboratorio finché qualcuno non lo esegue da
+fuori.
+
+La negativa: **non esiste un progetto chiamato "BR-LLM"**, nonostante il termine circoli. Ciò
+che esiste, in fonte ufficiale o sulla stampa, sono iniziative con nome proprio — il Sabiá
+(Maritaca), l'Amazônia IA (WideLabs, con Oracle e NVIDIA, senza benchmark numerico pubblicato) e
+il programma SoberanIA (MCTI e governo del Piauí, dicembre 2025), la cui pagina ufficiale ha
+servito solo un CAPTCHA a questa macchina e per questo resta qui come non verificata. E il
+"ChatPetrobras", a volte citato come LLM nazionale, è un'applicazione per 110 mila lavoratori
+costruita sopra GPT via Azure — prodotto sopra un modello di terzi, non un modello.
+
+Sul lato dell'uso, il Cetic.br misura ciò che le raccolte solo stimano: **il 17% delle aziende
+brasiliane con più di 10 dipendenti usava l'IA nel 2025** (13% nel 2024; 50% tra le grandi), con
+la "generazione di linguaggio naturale" che salta dal 20% al 30% — la categoria cresciuta di
+più, ed è quella degli LLM; tra gli utenti internet, **il 32% ha già usato IA generativa**,
+circa 50 milioni di persone. Ho già mostrato qui [perché "50 milioni di brasiliani" è l'unico
+conteggio di persone che conta persone](/artigos/quantas-pessoas-usam-ia); vale lo stesso
+avviso.
+
+**Il Brasile ha prezzo in reais, prova in portoghese e uso misurato — ciò che non ha è presenza
+in nessuna raccolta che circola.**
+
+---
+
+## Cosa ne farei
+
+Due domande, dieci secondi ciascuna, prima di ripetere qualsiasi statistica di LLM.
+
+1. **"Modello secondo chi?"** Se il numero è di repository, è misura di attività; se è di
+   "notevoli", è curatela con criterio pubblicato; se è catalogo, è decisione editoriale. I tre
+   sono utili. Nessuno prende il posto dell'altro — e una classifica di "chi ha più modelli"
+   senza la definizione accanto inverte il podio a seconda della definizione.
+2. **"Voto dato da chi, a quale versione, in un test che ancora misura?"** Il self-report del
+   laboratorio ha retto alla verifica di questo articolo — ma si confronta solo con self-report
+   della stessa data, sulla stessa impalcatura, della stessa versione. Due voti di schede
+   diverse fianco a fianco è l'errore più comune e il più invisibile. E il SWE-bench Verified,
+   metro standard del 2026, è stato ritirato dal suo stesso creatore a febbraio: chi lo cita ad
+   agosto deve dirlo.
+
+E una regola di prezzo: **mai un solo numero per modello.** Ingresso, uscita, cache, orario e
+versione; o, meglio, costo per compito misurato da qualcuno di fuori.
+
+Se volete verificare la misurazione più facile di questo articolo, sono dieci secondi:
+
+```bash
+curl -s "https://huggingface.co/models?pipeline_tag=text-generation" -A "Mozilla/5.0" \
+  | grep -o "numTotalItems[^,}]*"
+```
+
+Darà più di 403.420 — sono cresciuti 115 repository tra le 04:43 e le 11:55 del 26 agosto. Se ne
+dà di meno, o se trovate il voto di SWE-bench Verified del DeepSeek-V4-Pro-0813 in qualche
+scheda ufficiale, mandatemelo: aggiorno l'articolo e do credito alla correzione.
+
+---
+
+## Fonti
+
+- [Hugging Face — página de modelos com a etiqueta text-generation](https://huggingface.co/models?pipeline_tag=text-generation) — `numTotalItems` medido em 26/08/2026 (04:43 e 11:55); contagens por organização via `?author=`
+- [Stanford HAI — AI Index Report 2026, capítulo 1 (Research and Development)](https://hai.stanford.edu/assets/files/ai_index_report_2026_chapter_1_research_development.pdf) — seção 1.1, Figuras 1.1.1, 1.1.4–1.1.6 e 1.1.8–1.1.9; [capítulo Technical Performance](https://hai.stanford.edu/ai-index/2026-ai-index-report/technical-performance) (3,3% × 0,5%)
+- [OpenAI — "Introducing SWE-bench Verified", 13/08/2024](https://openai.com/index/introducing-swe-bench-verified/) e [OpenAI — "Why SWE-bench Verified no longer measures frontier coding capabilities", 23/02/2026](https://openai.com/index/why-we-no-longer-evaluate-swe-bench-verified/) — ambos lidos em cópia do Wayback (o site recusa leitura automatizada); [discussão no Hacker News, item 47910388](https://news.ycombinator.com/item?id=47910388)
+- [Vals AI — SWE-bench Verified](https://www.vals.ai/benchmarks/swebench) — tabela "Updated 8/19/2026", 86 modelos, campos `accuracy` e `cost_per_test` extraídos do HTML em 26/08/2026; harness `mini-swe-agent`
+- [Anthropic — Claude Fable 5 & Claude Mythos 5 System Card (PDF)](https://www.anthropic.com/document/claude-fable-5-mythos-5-system-card) — Tabela 8.1.A e seção 8.2
+- [DeepSeek — model card do DeepSeek-V4-Pro (Preview)](https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro) e [DeepSeek-V4-Pro-0813](https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro-0813); [preços oficiais](https://api-docs.deepseek.com/quick_start/pricing); [relatório técnico arXiv 2606.19348](https://arxiv.org/abs/2606.19348)
+- [Moonshot AI — model card do Kimi K2.6](https://huggingface.co/moonshotai/Kimi-K2.6), [Kimi K3](https://huggingface.co/moonshotai/Kimi-K3), [repositório do Kimi K3](https://github.com/MoonshotAI/Kimi-K3) e [preços](https://platform.kimi.ai)
+- [Qwen — model card do Qwen3.8-2.4T-A95B](https://huggingface.co/Qwen/Qwen3.8-2.4T-A95B-FP8); [Alibaba Cloud — Qwen-Long, contexto longo](https://www.alibabacloud.com/help/en/model-studio/long-context-qwen-long)
+- [Meta — "The Llama 4 herd"](https://ai.meta.com/blog/llama-4-multimodal-intelligence/); [Mistral — Mixtral 8x22B](https://huggingface.co/mistralai/Mixtral-8x22B-Instruct-v0.1); [OpenAI — gpt-oss-120b](https://huggingface.co/openai/gpt-oss-120b)
+- [OpenAI — "Language Models are Few-Shot Learners" (GPT-3), arXiv 2005.14165](https://arxiv.org/abs/2005.14165); [GPT-4 Technical Report, arXiv 2303.08774](https://arxiv.org/abs/2303.08774) — seção 2
+- Preços oficiais lidos em 26/08/2026: [OpenAI](https://developers.openai.com/api/docs/pricing) · [Anthropic](https://www.anthropic.com/pricing) · [Google Gemini](https://ai.google.dev/gemini-api/docs/pricing) · [Mistral](https://mistral.ai/pricing) · [xAI](https://docs.x.ai/developers/models)
+- [Arena (ex-LMArena) — leaderboard de texto](https://arena.ai/leaderboard/text) — 21/08/2026, 7.906.317 votos, 394 modelos; [Artificial Analysis — GPQA Diamond](https://artificialanalysis.ai/evaluations/gpqa-diamond)
+- [Maritaca AI — documentação (modelos e benchmarks)](https://docs.maritaca.ai/pt/introducao) e [preços](https://www.maritaca.ai/en/pricing); [Amazônia IA](https://amazoniaia.com.br/); [Petrobras — ChatPetrobras](https://agencia.petrobras.com.br/w/petrobras-cria-ferramenta-com-inteligencia-artificial-generativa-para-apoiar-mais-de-100-mil-trabalhadores)
+- [Cetic.br — TIC Empresas 2025](https://cetic.br/pt/noticia/uso-de-inteligencia-artificial-por-empresas-brasileiras-avanca-e-atinge-17-aponta-pesquisa-do-cetic-br/) e [TIC Domicílios 2025](https://cetic.br/pt/noticia/50-milhoes-de-brasileiros-ja-usam-ia-mas-potenciais-beneficios-continuam-limitados-as-camadas-de-maior-renda-e-escolaridade/)
+- [Página que motivou a pauta — gradually.ai, "LLM-Statistiken 2026"](https://www.gradually.ai/llm-statistiken/) — inspiração de estrutura; nenhuma frase ou número reaproveitado sem conferência
+
+> **Verifica.** Schede tecniche, PDF, paper e pagine di prezzo letti per intero e conservati il
+> 26/08/2026; post della OpenAI tramite copia archiviata; tabella della Vals AI estratta
+> dall'HTML servito (86 di 86 righe); conteggi di Hugging Face misurati dall'autore. Il 94,3%
+> del Gemini 3.1 Pro sul GPQA Diamond e la pagina del SoberanIA non sono stati verificati sulla
+> fonte ufficiale e sono segnalati nel testo. Le citazioni in inglese sono state tradotte da me;
+> le fonti e le misurazioni sono le stesse dell'originale in portoghese. Non ci sono Reddit né X
+> in questo articolo, per indisponibilità delle fonti.

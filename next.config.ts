@@ -155,6 +155,11 @@ const nextConfig: NextConfig = {
     // `redirects()` roda ANTES do middleware, então `/llm` não colide com o
     // rewrite de locale nem com o segmento [locale] das rotas.
     const atalhosCards = [
+      { source: '/modelos',    destination: '/artigos/estatisticas-llms',    permanent: true },
+      { source: '/modelos-en', destination: '/en/artigos/estatisticas-llms', permanent: true },
+      { source: '/modelos-es', destination: '/es/artigos/estatisticas-llms', permanent: true },
+      { source: '/modelos-it', destination: '/it/artigos/estatisticas-llms', permanent: true },
+      { source: '/modelos-he', destination: '/he/artigos/estatisticas-llms', permanent: true },
       { source: '/llm',    destination: '/artigos/memoria-llm-local',    permanent: true },
       { source: '/llm-en', destination: '/en/artigos/memoria-llm-local', permanent: true },
       { source: '/llm-es', destination: '/es/artigos/memoria-llm-local', permanent: true },

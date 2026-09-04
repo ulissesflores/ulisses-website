@@ -52,6 +52,42 @@ export function localizeArtigo(artigo: Artigo, locale: Locale): Pick<Artigo, 'ti
 
 export const artigos: readonly Artigo[] = [
   {
+    slug: 'estatisticas-llms',
+    title: 'Quantos modelos de linguagem existem? 274, 95 ou 403.420 — e a nota de código que circula vem de um teste que o próprio criador abandonou',
+    summary: '274, 95 ou 403.420 modelos de linguagem: as três contagens estão certas. E o benchmark de código que circula foi abandonado pelo próprio criador em fevereiro. Fui conferir as estatísticas de LLM que circulam em compilados: "quantos modelos existem" não tem resposta porque sobra definição — 403.420 repositórios no Hugging Face (medição própria, um comando de uma linha), 95 notáveis no AI Index de Stanford, 274 num catálogo editorial. A nota que o laboratório dá a si mesmo aguentou a conferência (zero a quatro pontos de diferença onde o mesmo modelo foi medido de fora); o que não aguenta é a régua: a OpenAI declarou o SWE-bench Verified contaminado e parou de publicá-lo em 23/02/2026, e em agosto ele ainda é o teste de "quem programa melhor". Comparações entre versões erram o sinal (o DeepSeek de agosto está 8 pontos à frente do Opus 4.8, não atrás); "o mais caro" custa US$ 30 nos compilados e US$ 150 no catálogo real; os maiores modelos com tamanho conhecido são todos abertos. No Brasil, a Maritaca precifica em reais e publica o único comparativo de custo de suíte em moeda nacional: R$ 206 no Sabiá 4 Thinking contra R$ 590 no Opus 4.8.',
+    date: '2026-08-26',
+    tags: ['ia', 'llm', 'estatisticas', 'benchmarks', 'metodologia'],
+    hero: {
+      width: 2400,
+      height: 1260,
+      locales: {
+        'pt-br': { src: '/artigos/estatisticas-llms/hero.png', og: '/artigos/estatisticas-llms/hero-og.png' },
+        'en': { src: '/artigos/estatisticas-llms/hero-en.png', og: '/artigos/estatisticas-llms/hero-en-og.png' },
+        'es': { src: '/artigos/estatisticas-llms/hero-es.png', og: '/artigos/estatisticas-llms/hero-es-og.png' },
+        'it': { src: '/artigos/estatisticas-llms/hero-it.png', og: '/artigos/estatisticas-llms/hero-it-og.png' },
+        'he': { src: '/artigos/estatisticas-llms/hero-he.png', og: '/artigos/estatisticas-llms/hero-he-og.png' },
+      },
+    },
+    i18n: {
+      en: {
+        title: 'How many language models exist? 274, 95, or 403,420 — and the coding score everyone cites comes from a test its own creator abandoned',
+        summary: '274, 95, or 403,420 language models: all three counts are correct. And the coding benchmark everyone cites was abandoned by its own creator in February. I went to check the LLM statistics that circulate in roundups: "how many models exist" has no answer, because there is too much definition — 403,420 repositories on Hugging Face (my own measurement, a one-line command), 95 notable models in Stanford\'s AI Index, 274 in an editorial catalog. The score a lab gives itself held up under checking (zero to four points of difference where the same model was measured from outside); what does not hold up is the ruler: OpenAI declared SWE-bench Verified contaminated and stopped publishing it on February 23, 2026, and in August it is still the test for "who codes best." Version-to-version comparisons get the sign wrong (August\'s DeepSeek is 8 points ahead of Opus 4.8, not behind); "the most expensive" costs US$ 30 in the roundups and US$ 150 in the real catalog; the largest models with a known size are all open. In Brazil, Maritaca prices in reais and publishes the only suite-cost comparison in national currency: R$ 206 on Sabiá 4 Thinking against R$ 590 on Opus 4.8.',
+      },
+      es: {
+        title: '¿Cuántos modelos de lenguaje hay? 274, 95 o 403.420 — y la nota de código que circula viene de una prueba que su propio creador abandonó',
+        summary: '274, 95 o 403.420 modelos de lenguaje: los tres conteos son correctos. Y el benchmark de código que circula fue abandonado por su propio creador en febrero. Fui a verificar las estadísticas de LLM que circulan en compilados: "cuántos modelos existen" no tiene respuesta porque sobra definición — 403.420 repositorios en Hugging Face (medición propia, un comando de una línea), 95 notables en el AI Index de Stanford, 274 en un catálogo editorial. La nota que el laboratorio se da a sí mismo resistió la comprobación (cero a cuatro puntos de diferencia donde el mismo modelo fue medido desde fuera); lo que no resiste es la regla: OpenAI declaró el SWE-bench Verified contaminado y dejó de publicarlo el 23/02/2026, y en agosto todavía es la prueba de "quién programa mejor". Las comparaciones entre versiones se equivocan de signo (el DeepSeek de agosto está 8 puntos por delante del Opus 4.8, no por detrás); "el más caro" cuesta US$ 30 en los compilados y US$ 150 en el catálogo real; los modelos más grandes con tamaño conocido son todos abiertos. En Brasil, Maritaca fija precios en reales y publica el único comparativo de costo de suite en moneda nacional: R$ 206 en el Sabiá 4 Thinking contra R$ 590 en el Opus 4.8.',
+      },
+      it: {
+        title: 'Quanti modelli linguistici esistono? 274, 95 o 403.420 — e il voto di codice che circola viene da un test abbandonato dal suo creatore',
+        summary: '274, 95 o 403.420 modelli linguistici: i tre conteggi sono tutti corretti. E il benchmark di codice che circola è stato abbandonato dal suo stesso creatore a febbraio. Sono andato a verificare le statistiche di LLM che circolano nelle raccolte: "quanti modelli esistono" non ha risposta, perché di definizioni ce n\'è in eccesso — 403.420 repository su Hugging Face (misurazione propria, un comando di una riga), 95 notevoli nell\'AI Index di Stanford, 274 in un catalogo editoriale. Il voto che il laboratorio dà a se stesso ha retto alla verifica (zero-quattro punti di differenza dove lo stesso modello è stato misurato da fuori); ciò che non regge è il metro: la OpenAI ha dichiarato lo SWE-bench Verified contaminato e ha smesso di pubblicarlo il 23/02/2026, e ad agosto è ancora il test di "chi programma meglio". I confronti tra versioni sbagliano il segno (il DeepSeek di agosto è 8 punti avanti a Opus 4.8, non indietro); "il più caro" costa US$ 30 nelle raccolte e US$ 150 nel catalogo reale; i modelli più grandi con dimensione nota sono tutti aperti. In Brasile, la Maritaca fa i prezzi in reais e pubblica l\'unico confronto di costo di suite in moneta nazionale: R$ 206 sul Sabiá 4 Thinking contro R$ 590 sull\'Opus 4.8.',
+      },
+      he: {
+        title: 'כמה מודלי שפה קיימים? 274, 95 או 403,420 — והציון בתכנות שמסתובב מגיע ממבחן שהיוצר שלו עצמו נטש',
+        summary: '274, 95 או 403,420 מודלי שפה: שלוש הספירות נכונות. וה-benchmark של קוד שמסתובב ננטש על ידי היוצר שלו עצמו בפברואר. הלכתי לבדוק את הסטטיסטיקות של LLM שמסתובבות באוספים: ל"כמה מודלים קיימים" אין תשובה כי יש עודף הגדרות — 403,420 מאגרים ב-Hugging Face (מדידה עצמית, פקודה אחת בשורה), 95 בולטים ב-AI Index של סטנפורד, 274 בקטלוג עורכי. הציון שהמעבדה נותנת לעצמה עמד באימות (הפרש של אפס עד ארבע נקודות במקום שבו אותו מודל נמדד מבחוץ); מה שלא עומד הוא הסרגל: OpenAI הכריזה ש-SWE-bench Verified מזוהם והפסיקה לפרסם אותו ב-23 בפברואר 2026, ובאוגוסט הוא עדיין המבחן של "מי מתכנת טוב יותר". השוואות בין גרסאות טועות בכיוון (ה-DeepSeek של אוגוסט נמצא 8 נקודות לפני Opus 4.8, לא אחרי); "היקר ביותר" עולה US$ 30 באוספים ו-US$ 150 בקטלוג האמיתי; המודלים הגדולים ביותר עם גודל ידוע כולם פתוחים. בברזיל, Maritaca מתמחרת בריאלים ומפרסמת את ההשוואה היחידה של עלות חבילה במטבע לאומי: R$ 206 ב-Sabiá 4 Thinking מול R$ 590 ב-Opus 4.8.',
+      },
+    },
+  },
+  {
     slug: 'glm-5-3-flash',
     title:
       'GLM 5.3 Flash: 5 pontos abaixo do Fable por 3% do custo por tarefa — e a manchete dos 100 trilhões trocou de verbo no caminho',

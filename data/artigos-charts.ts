@@ -58,6 +58,206 @@ export interface ChartDataset {
  * 15), com #d4d4d8 mede 17,3 PASS.
  */
 export const chartDatasets: Record<string, ChartDataset> = {
+  /**
+   * `modelos-preco-por-nota` — nota no SWE-bench Verified × custo por tarefa (US$, log), TUDO
+   * medido pelo MESMO avaliador (Vals AI, payload da tabela "Updated 8/19/2026", campos
+   * `accuracy` e `cost_per_test`, lido em 26/08/2026). Um avaliador por figura: nunca misturar
+   * self-report com nota de fora no mesmo gráfico. Linha só onde há trajetória real dentro de uma família
+   * (DeepSeek Flash->Pro; GPT-5.6 Luna->Terra->Sol); o resto é ponto isolado. Ouro = a família em que o modelo mais barato é o melhor.
+   * Pontos: DeepSeek V4 Flash 0731 (0,0099; 88,8) -> V4 Pro 0813 (0,103; 96,4) · GPT-5.6 Luna
+   * (0,0427; 93,0) -> Terra (0,401; 95,4) -> Sol (1,151; 96,2) · Claude Opus 5 (1,291; 97,0) ->
+   * Opus 4.8 (1,923; 88,6) · Fable 5 (2,047; 95,0) · Kimi K3 (0,760; 93,4) · GPT-5.5 (1,362; 82,6).
+   */
+  'modelos-preco-por-nota': {
+    series: [
+      {
+        label: 'DeepSeek V4',
+        color: '#a48f65',
+        points: [
+          [0.0099, 88.8],
+          [0.103, 96.4],
+        ],
+      },
+      {
+        label: 'GPT-5.6 (3 níveis)',
+        color: '#60a5fa',
+        points: [
+          [0.0427, 93.0],
+          [0.401, 95.4],
+          [1.151, 96.2],
+        ],
+      },
+      { label: 'Claude Opus 5', color: '#fbbf24', points: [[1.291, 97.0]] },
+      { label: 'Claude Opus 4.8', color: '#64748b', points: [[1.923, 88.6]] },
+      { label: 'Claude Fable 5', color: '#d4d4d4', points: [[2.047, 95.0]] },
+      { label: 'Kimi K3', color: '#a3a3a3', points: [[0.76, 93.4]] },
+      { label: 'GPT-5.5', color: '#737373', points: [[1.362, 82.6]] },
+    ],
+    xDomain: [0.005, 5],
+    yDomain: [70, 100],
+    xTicks: [0.01, 0.03, 0.1, 0.3, 1, 3],
+    yTicks: [70, 80, 90, 100],
+  },
+  /**
+   * `modelos-preco-por-nota` — nota no SWE-bench Verified × custo por tarefa (US$, log), TUDO
+   * medido pelo MESMO avaliador (Vals AI, payload da tabela "Updated 8/19/2026", campos
+   * `accuracy` e `cost_per_test`, lido em 26/08/2026). Um avaliador por figura: nunca misturar
+   * self-report com nota de fora no mesmo gráfico. Linha só onde há trajetória real dentro de uma família
+   * (DeepSeek Flash->Pro; GPT-5.6 Luna->Terra->Sol); o resto é ponto isolado. Ouro = a família em que o modelo mais barato é o melhor.
+   * Pontos: DeepSeek V4 Flash 0731 (0,0099; 88,8) -> V4 Pro 0813 (0,103; 96,4) · GPT-5.6 Luna
+   * (0,0427; 93,0) -> Terra (0,401; 95,4) -> Sol (1,151; 96,2) · Claude Opus 5 (1,291; 97,0) ->
+   * Opus 4.8 (1,923; 88,6) · Fable 5 (2,047; 95,0) · Kimi K3 (0,760; 93,4) · GPT-5.5 (1,362; 82,6).
+   */
+  'modelos-preco-por-nota-en': {
+    series: [
+      {
+        label: 'DeepSeek V4',
+        color: '#a48f65',
+        points: [
+          [0.0099, 88.8],
+          [0.103, 96.4],
+        ],
+      },
+      {
+        label: 'GPT-5.6 (3 tiers)',
+        color: '#60a5fa',
+        points: [
+          [0.0427, 93.0],
+          [0.401, 95.4],
+          [1.151, 96.2],
+        ],
+      },
+      { label: 'Claude Opus 5', color: '#fbbf24', points: [[1.291, 97.0]] },
+      { label: 'Claude Opus 4.8', color: '#64748b', points: [[1.923, 88.6]] },
+      { label: 'Claude Fable 5', color: '#d4d4d4', points: [[2.047, 95.0]] },
+      { label: 'Kimi K3', color: '#a3a3a3', points: [[0.76, 93.4]] },
+      { label: 'GPT-5.5', color: '#737373', points: [[1.362, 82.6]] },
+    ],
+    xDomain: [0.005, 5],
+    yDomain: [70, 100],
+    xTicks: [0.01, 0.03, 0.1, 0.3, 1, 3],
+    yTicks: [70, 80, 90, 100],
+  },
+  /**
+   * `modelos-preco-por-nota` — nota no SWE-bench Verified × custo por tarefa (US$, log), TUDO
+   * medido pelo MESMO avaliador (Vals AI, payload da tabela "Updated 8/19/2026", campos
+   * `accuracy` e `cost_per_test`, lido em 26/08/2026). Um avaliador por figura: nunca misturar
+   * self-report com nota de fora no mesmo gráfico. Linha só onde há trajetória real dentro de uma família
+   * (DeepSeek Flash->Pro; GPT-5.6 Luna->Terra->Sol); o resto é ponto isolado. Ouro = a família em que o modelo mais barato é o melhor.
+   * Pontos: DeepSeek V4 Flash 0731 (0,0099; 88,8) -> V4 Pro 0813 (0,103; 96,4) · GPT-5.6 Luna
+   * (0,0427; 93,0) -> Terra (0,401; 95,4) -> Sol (1,151; 96,2) · Claude Opus 5 (1,291; 97,0) ->
+   * Opus 4.8 (1,923; 88,6) · Fable 5 (2,047; 95,0) · Kimi K3 (0,760; 93,4) · GPT-5.5 (1,362; 82,6).
+   */
+  'modelos-preco-por-nota-es': {
+    series: [
+      {
+        label: 'DeepSeek V4',
+        color: '#a48f65',
+        points: [
+          [0.0099, 88.8],
+          [0.103, 96.4],
+        ],
+      },
+      {
+        label: 'GPT-5.6 (3 niveles)',
+        color: '#60a5fa',
+        points: [
+          [0.0427, 93.0],
+          [0.401, 95.4],
+          [1.151, 96.2],
+        ],
+      },
+      { label: 'Claude Opus 5', color: '#fbbf24', points: [[1.291, 97.0]] },
+      { label: 'Claude Opus 4.8', color: '#64748b', points: [[1.923, 88.6]] },
+      { label: 'Claude Fable 5', color: '#d4d4d4', points: [[2.047, 95.0]] },
+      { label: 'Kimi K3', color: '#a3a3a3', points: [[0.76, 93.4]] },
+      { label: 'GPT-5.5', color: '#737373', points: [[1.362, 82.6]] },
+    ],
+    xDomain: [0.005, 5],
+    yDomain: [70, 100],
+    xTicks: [0.01, 0.03, 0.1, 0.3, 1, 3],
+    yTicks: [70, 80, 90, 100],
+  },
+  /**
+   * `modelos-preco-por-nota-it` — nota no SWE-bench Verified × custo por tarefa (US$, log), TUDO
+   * medido pelo MESMO avaliador (Vals AI, payload da tabela "Updated 8/19/2026", campos
+   * `accuracy` e `cost_per_test`, lido em 26/08/2026). Um avaliador por figura: nunca misturar
+   * self-report com nota de fora no mesmo gráfico. Linha só onde há trajetória real dentro de uma família
+   * (DeepSeek Flash->Pro; GPT-5.6 Luna->Terra->Sol); o resto é ponto isolado. Ouro = a família em que o modelo mais barato é o melhor.
+   * Pontos: DeepSeek V4 Flash 0731 (0,0099; 88,8) -> V4 Pro 0813 (0,103; 96,4) · GPT-5.6 Luna
+   * (0,0427; 93,0) -> Terra (0,401; 95,4) -> Sol (1,151; 96,2) · Claude Opus 5 (1,291; 97,0) ->
+   * Opus 4.8 (1,923; 88,6) · Fable 5 (2,047; 95,0) · Kimi K3 (0,760; 93,4) · GPT-5.5 (1,362; 82,6).
+   */
+  'modelos-preco-por-nota-it': {
+    series: [
+      {
+        label: 'DeepSeek V4',
+        color: '#a48f65',
+        points: [
+          [0.0099, 88.8],
+          [0.103, 96.4],
+        ],
+      },
+      {
+        label: 'GPT-5.6 (3 livelli)',
+        color: '#60a5fa',
+        points: [
+          [0.0427, 93.0],
+          [0.401, 95.4],
+          [1.151, 96.2],
+        ],
+      },
+      { label: 'Claude Opus 5', color: '#fbbf24', points: [[1.291, 97.0]] },
+      { label: 'Claude Opus 4.8', color: '#64748b', points: [[1.923, 88.6]] },
+      { label: 'Claude Fable 5', color: '#d4d4d4', points: [[2.047, 95.0]] },
+      { label: 'Kimi K3', color: '#a3a3a3', points: [[0.76, 93.4]] },
+      { label: 'GPT-5.5', color: '#737373', points: [[1.362, 82.6]] },
+    ],
+    xDomain: [0.005, 5],
+    yDomain: [70, 100],
+    xTicks: [0.01, 0.03, 0.1, 0.3, 1, 3],
+    yTicks: [70, 80, 90, 100],
+  },
+  /**
+   * `modelos-preco-por-nota` — nota no SWE-bench Verified × custo por tarefa (US$, log), TUDO
+   * medido pelo MESMO avaliador (Vals AI, payload da tabela "Updated 8/19/2026", campos
+   * `accuracy` e `cost_per_test`, lido em 26/08/2026). Um avaliador por figura: nunca misturar
+   * self-report com nota de fora no mesmo gráfico. Linha só onde há trajetória real dentro de uma família
+   * (DeepSeek Flash->Pro; GPT-5.6 Luna->Terra->Sol); o resto é ponto isolado. Ouro = a família em que o modelo mais barato é o melhor.
+   * Pontos: DeepSeek V4 Flash 0731 (0,0099; 88,8) -> V4 Pro 0813 (0,103; 96,4) · GPT-5.6 Luna
+   * (0,0427; 93,0) -> Terra (0,401; 95,4) -> Sol (1,151; 96,2) · Claude Opus 5 (1,291; 97,0) ->
+   * Opus 4.8 (1,923; 88,6) · Fable 5 (2,047; 95,0) · Kimi K3 (0,760; 93,4) · GPT-5.5 (1,362; 82,6).
+   */
+  'modelos-preco-por-nota-he': {
+    series: [
+      {
+        label: 'DeepSeek V4',
+        color: '#a48f65',
+        points: [
+          [0.0099, 88.8],
+          [0.103, 96.4],
+        ],
+      },
+      {
+        label: 'GPT-5.6 (3 רמות)',
+        color: '#60a5fa',
+        points: [
+          [0.0427, 93.0],
+          [0.401, 95.4],
+          [1.151, 96.2],
+        ],
+      },
+      { label: 'Claude Opus 5', color: '#fbbf24', points: [[1.291, 97.0]] },
+      { label: 'Claude Opus 4.8', color: '#64748b', points: [[1.923, 88.6]] },
+      { label: 'Claude Fable 5', color: '#d4d4d4', points: [[2.047, 95.0]] },
+      { label: 'Kimi K3', color: '#a3a3a3', points: [[0.76, 93.4]] },
+      { label: 'GPT-5.5', color: '#737373', points: [[1.362, 82.6]] },
+    ],
+    xDomain: [0.005, 5],
+    yDomain: [70, 100],
+    xTicks: [0.01, 0.03, 0.1, 0.3, 1, 3],
+    yTicks: [70, 80, 90, 100],
+  },
   'opus5-frontier-bench': {
     series: [
       {
@@ -935,6 +1135,788 @@ export interface CountryBarsDataset {
  * TIC Domicílios 2025, 1ª medição) sobre 213,4 mi (IBGE 2025).
  */
 export const countryBarsDatasets: Record<string, CountryBarsDataset> = {
+  /**
+   * `modelos-mesmo-fornecedor` — o MESMO fornecedor contado pelas três definições. Bloco 1:
+   * repositórios no Hugging Face com etiqueta text-generation por organização (`?author=`,
+   * medido em 26/08/2026 ~11:55; Alibaba = org `Qwen`). Bloco 2: modelos notáveis lançados em
+   * 2025 por organização (AI Index 2026, Fig. 1.1.6, fonte Epoch AI; DeepMind conta em Google).
+   * Bloco 3: catálogo editorial da página alemã, seção 7 (ela mesma dá outros números na seção 2:
+   * OpenAI 35, Anthropic 19, Google 18 — a contradição interna vai no texto). NUNCA somar blocos.
+   */
+  'modelos-mesmo-fornecedor': {
+    max: 310,
+    groups: [
+      {
+        label: 'Repositórios no Hugging Face com a etiqueta text-generation (26/08/2026)',
+        color: '#64748b',
+        items: [
+          { name: 'Alibaba (Qwen)', value: 307, valueLabel: '307' },
+          { name: 'Google', value: 149, valueLabel: '149' },
+          { name: 'DeepSeek', value: 70, valueLabel: '70' },
+          { name: 'Meta', value: 51, valueLabel: '51' },
+          { name: 'OpenAI', value: 5, valueLabel: '5', emphasis: true },
+          { name: 'Anthropic', value: 0, valueLabel: '0' },
+        ],
+      },
+      {
+        label: 'Modelos notáveis lançados em 2025 (Epoch AI, no AI Index 2026)',
+        color: '#60a5fa',
+        items: [
+          { name: 'OpenAI', value: 20, valueLabel: '20', emphasis: true },
+          { name: 'Google', value: 14, valueLabel: '14' },
+          { name: 'Alibaba', value: 11, valueLabel: '11' },
+          { name: 'Anthropic', value: 7, valueLabel: '7' },
+          { name: 'DeepSeek', value: 4, valueLabel: '4' },
+          { name: 'Meta', value: 4, valueLabel: '4' },
+        ],
+      },
+      {
+        label: 'Catálogo editorial da página alemã (seção 7, 23/08/2026)',
+        color: '#fbbf24',
+        items: [
+          { name: 'Alibaba', value: 42, valueLabel: '42' },
+          { name: 'OpenAI', value: 38, valueLabel: '38', emphasis: true },
+          { name: 'Google', value: 27, valueLabel: '27' },
+          { name: 'Anthropic', value: 20, valueLabel: '20' },
+          { name: 'Meta', value: 15, valueLabel: '15' },
+        ],
+      },
+    ],
+  },
+
+  /**
+   * `modelos-nota-dois-medidores` — SWE-bench Verified. Bloco 1: a nota que circula = o que o
+   * próprio laboratório publica (Fable 5 e Opus 4.8: System Card Fable 5/Mythos 5, Tabela 8.1.A,
+   * média de 5 tentativas; DeepSeek-V4-Pro Preview: README do HF, modo Max, último commit
+   * 22/06/2026; Kimi K2.6: README do HF). Bloco 2: o MESMO checkpoint medido pela Vals AI com um
+   * único harness (mini-swe-agent, só bash; "Updated 8/19/2026"). Bloco 3: a versão atual de cada
+   * família na mesma tabela da Vals. Barra do 0813 em ouro = o número que a página alemã não viu.
+   */
+  'modelos-nota-dois-medidores': {
+    max: 100,
+    groups: [
+      {
+        label: 'A nota que circula: publicada pelo próprio laboratório',
+        color: '#64748b',
+        items: [
+          { name: 'Claude Fable 5', value: 95.0, valueLabel: '95,0%' },
+          { name: 'Claude Opus 4.8', value: 88.6, valueLabel: '88,6%' },
+          { name: 'DeepSeek V4-Pro', value: 80.6, valueLabel: '80,6%', emphasis: true },
+          { name: 'Kimi K2.6', value: 80.2, valueLabel: '80,2%' },
+        ],
+      },
+      {
+        label: 'O mesmo modelo, medido de fora pela Vals AI (um harness só)',
+        color: '#60a5fa',
+        items: [
+          { name: 'Claude Fable 5', value: 95.0, valueLabel: '95,0%' },
+          { name: 'Claude Opus 4.8', value: 88.6, valueLabel: '88,6%' },
+          { name: 'DeepSeek V4-Pro', value: 77.4, valueLabel: '77,4%', emphasis: true },
+          { name: 'Kimi K2.6', value: 76.2, valueLabel: '76,2%' },
+        ],
+      },
+      {
+        label: 'A versão atual de cada família, na mesma tabela da Vals AI',
+        color: '#a48f65',
+        items: [
+          { name: 'Claude Opus 5', value: 97.0, valueLabel: '97,0%' },
+          { name: 'DeepSeek 0813', value: 96.4, valueLabel: '96,4%', emphasis: true },
+          { name: 'GPT-5.6 Sol', value: 96.2, valueLabel: '96,2%' },
+          { name: 'Kimi K3', value: 93.4, valueLabel: '93,4%' },
+        ],
+      },
+    ],
+  },
+
+  /**
+   * `modelos-parametros-declarados` — bloco 1: parâmetros totais em bilhões, como o próprio
+   * model card ou paper declara (Kimi K3 e Kimi K2.6: huggingface.co/moonshotai; Qwen3.8:
+   * huggingface.co/Qwen/Qwen3.8-2.4T-A95B-FP8; DeepSeek-V4-Pro e V3.2-Exp: huggingface.co/deepseek-ai;
+   * GPT-3: arXiv 2005.14165; Mixtral 8x22B: huggingface.co/mistralai; gpt-oss-120b:
+   * huggingface.co/openai; Llama 4 Scout: ai.meta.com/blog, todos lidos em 26/08/2026).
+   * Bloco 2: os modelos de ponta fechados — o GPT-4 Technical Report diz "no further details
+   * about the architecture (including model size)"; o 1,76 tri é estimativa de terceiros (Hotz /
+   * SemiAnalysis, 2023), nunca da OpenAI. Barra zero = "não divulgado" (dado ausente, não valor).
+   */
+  'modelos-parametros-declarados': {
+    max: 3000,
+    groups: [
+      {
+        label: 'Parâmetros totais declarados pelo próprio laboratório (bilhões)',
+        color: '#60a5fa',
+        items: [
+          { name: 'Kimi K3', value: 2800, valueLabel: '2,8 tri', emphasis: true },
+          { name: 'Qwen 3.8', value: 2400, valueLabel: '2,4 tri' },
+          { name: 'DeepSeek-V4-Pro', value: 1600, valueLabel: '1,6 tri' },
+          { name: 'Kimi K2.6', value: 1000, valueLabel: '1 tri' },
+          { name: 'DeepSeek V3.2', value: 685, valueLabel: '685 bi' },
+          { name: 'GPT-3 (2020)', value: 175, valueLabel: '175 bi' },
+          { name: 'Mixtral 8x22B', value: 141, valueLabel: '141 bi' },
+          { name: 'gpt-oss-120b', value: 117, valueLabel: '117 bi' },
+          { name: 'Llama 4 Scout', value: 109, valueLabel: '109 bi' },
+        ],
+      },
+      {
+        label: 'Modelos de ponta fechados: o laboratório não divulga',
+        color: '#64748b',
+        items: [
+          { name: 'GPT-4 (rumor)', value: 1760, valueLabel: '1,76 tri*' },
+          { name: 'GPT-5.6 Sol', value: 0, valueLabel: 'não divulga' },
+          { name: 'Claude Opus 5', value: 0, valueLabel: 'não divulga' },
+          { name: 'Gemini 3.7 Flash', value: 0, valueLabel: 'não divulga' },
+          { name: 'Grok 4.6', value: 0, valueLabel: 'não divulga' },
+        ],
+      },
+    ],
+  },
+
+  /**
+   * `modelos-brasil-suite` — custo de rodar a suíte completa de provas brasileiras (Leis,
+   * OAB Bench, MAGIS, ENEM/USP/OAB, conversação) em cada modelo, em reais, como a Maritaca
+   * publica em docs.maritaca.ai/pt/introducao (lido em 26/08/2026). É a única comparação de
+   * custo de suíte em moeda nacional que a redação achou. Ouro = o modelo brasileiro.
+   */
+  'modelos-brasil-suite': {
+    max: 600,
+    groups: [
+      {
+        label: 'Custo de rodar a suíte de provas brasileiras da Maritaca (R$, por modelo)',
+        color: '#a48f65',
+        items: [
+          { name: 'Sabiá 4 Thinking', value: 206, valueLabel: 'R$ 206', emphasis: true },
+          { name: 'Gemini 3.1 Pro', value: 281, valueLabel: 'R$ 281' },
+          { name: 'GPT-5.4', value: 449, valueLabel: 'R$ 449' },
+          { name: 'Claude Opus 4.8', value: 590, valueLabel: 'R$ 590' },
+        ],
+      },
+    ],
+  },
+  /**
+   * `modelos-mesmo-fornecedor` — o MESMO fornecedor contado pelas três definições. Bloco 1:
+   * repositórios no Hugging Face com etiqueta text-generation por organização (`?author=`,
+   * medido em 26/08/2026 ~11:55; Alibaba = org `Qwen`). Bloco 2: modelos notáveis lançados em
+   * 2025 por organização (AI Index 2026, Fig. 1.1.6, fonte Epoch AI; DeepMind conta em Google).
+   * Bloco 3: catálogo editorial da página alemã, seção 7 (ela mesma dá outros números na seção 2:
+   * OpenAI 35, Anthropic 19, Google 18 — a contradição interna vai no texto). NUNCA somar blocos.
+   */
+  'modelos-mesmo-fornecedor-en': {
+    max: 310,
+    groups: [
+      {
+        label: 'Repositories on Hugging Face with the text-generation tag (Aug 26, 2026)',
+        color: '#64748b',
+        items: [
+          { name: 'Alibaba (Qwen)', value: 307, valueLabel: '307' },
+          { name: 'Google', value: 149, valueLabel: '149' },
+          { name: 'DeepSeek', value: 70, valueLabel: '70' },
+          { name: 'Meta', value: 51, valueLabel: '51' },
+          { name: 'OpenAI', value: 5, valueLabel: '5', emphasis: true },
+          { name: 'Anthropic', value: 0, valueLabel: '0' },
+        ],
+      },
+      {
+        label: 'Notable models released in 2025 (Epoch AI, in the AI Index 2026)',
+        color: '#60a5fa',
+        items: [
+          { name: 'OpenAI', value: 20, valueLabel: '20', emphasis: true },
+          { name: 'Google', value: 14, valueLabel: '14' },
+          { name: 'Alibaba', value: 11, valueLabel: '11' },
+          { name: 'Anthropic', value: 7, valueLabel: '7' },
+          { name: 'DeepSeek', value: 4, valueLabel: '4' },
+          { name: 'Meta', value: 4, valueLabel: '4' },
+        ],
+      },
+      {
+        label: 'Editorial catalog from the German page (section 7, Aug 23, 2026)',
+        color: '#fbbf24',
+        items: [
+          { name: 'Alibaba', value: 42, valueLabel: '42' },
+          { name: 'OpenAI', value: 38, valueLabel: '38', emphasis: true },
+          { name: 'Google', value: 27, valueLabel: '27' },
+          { name: 'Anthropic', value: 20, valueLabel: '20' },
+          { name: 'Meta', value: 15, valueLabel: '15' },
+        ],
+      },
+    ],
+  },
+
+  /**
+   * `modelos-nota-dois-medidores` — SWE-bench Verified. Bloco 1: a nota que circula = o que o
+   * próprio laboratório publica (Fable 5 e Opus 4.8: System Card Fable 5/Mythos 5, Tabela 8.1.A,
+   * média de 5 tentativas; DeepSeek-V4-Pro Preview: README do HF, modo Max, último commit
+   * 22/06/2026; Kimi K2.6: README do HF). Bloco 2: o MESMO checkpoint medido pela Vals AI com um
+   * único harness (mini-swe-agent, só bash; "Updated 8/19/2026"). Bloco 3: a versão atual de cada
+   * família na mesma tabela da Vals. Barra do 0813 em ouro = o número que a página alemã não viu.
+   */
+  'modelos-nota-dois-medidores-en': {
+    max: 100,
+    groups: [
+      {
+        label: 'The score that circulates: published by the lab itself',
+        color: '#64748b',
+        items: [
+          { name: 'Claude Fable 5', value: 95.0, valueLabel: '95.0%' },
+          { name: 'Claude Opus 4.8', value: 88.6, valueLabel: '88.6%' },
+          { name: 'DeepSeek V4-Pro', value: 80.6, valueLabel: '80.6%', emphasis: true },
+          { name: 'Kimi K2.6', value: 80.2, valueLabel: '80.2%' },
+        ],
+      },
+      {
+        label: 'The same model, measured from outside by Vals AI (one harness)',
+        color: '#60a5fa',
+        items: [
+          { name: 'Claude Fable 5', value: 95.0, valueLabel: '95.0%' },
+          { name: 'Claude Opus 4.8', value: 88.6, valueLabel: '88.6%' },
+          { name: 'DeepSeek V4-Pro', value: 77.4, valueLabel: '77.4%', emphasis: true },
+          { name: 'Kimi K2.6', value: 76.2, valueLabel: '76.2%' },
+        ],
+      },
+      {
+        label: 'The current version of each family, same Vals AI table',
+        color: '#a48f65',
+        items: [
+          { name: 'Claude Opus 5', value: 97.0, valueLabel: '97.0%' },
+          { name: 'DeepSeek 0813', value: 96.4, valueLabel: '96.4%', emphasis: true },
+          { name: 'GPT-5.6 Sol', value: 96.2, valueLabel: '96.2%' },
+          { name: 'Kimi K3', value: 93.4, valueLabel: '93.4%' },
+        ],
+      },
+    ],
+  },
+
+  /**
+   * `modelos-parametros-declarados` — bloco 1: parâmetros totais em bilhões, como o próprio
+   * model card ou paper declara (Kimi K3 e Kimi K2.6: huggingface.co/moonshotai; Qwen3.8:
+   * huggingface.co/Qwen/Qwen3.8-2.4T-A95B-FP8; DeepSeek-V4-Pro e V3.2-Exp: huggingface.co/deepseek-ai;
+   * GPT-3: arXiv 2005.14165; Mixtral 8x22B: huggingface.co/mistralai; gpt-oss-120b:
+   * huggingface.co/openai; Llama 4 Scout: ai.meta.com/blog, todos lidos em 26/08/2026).
+   * Bloco 2: os modelos de ponta fechados — o GPT-4 Technical Report diz "no further details
+   * about the architecture (including model size)"; o 1,76 tri é estimativa de terceiros (Hotz /
+   * SemiAnalysis, 2023), nunca da OpenAI. Barra zero = "não divulgado" (dado ausente, não valor).
+   */
+  'modelos-parametros-declarados-en': {
+    max: 3000,
+    groups: [
+      {
+        label: "Total parameters declared by the lab itself (billions)",
+        color: '#60a5fa',
+        items: [
+          { name: 'Kimi K3', value: 2800, valueLabel: '2.8 tn', emphasis: true },
+          { name: 'Qwen 3.8', value: 2400, valueLabel: '2.4 tn' },
+          { name: 'DeepSeek-V4-Pro', value: 1600, valueLabel: '1.6 tn' },
+          { name: 'Kimi K2.6', value: 1000, valueLabel: '1 tn' },
+          { name: 'DeepSeek V3.2', value: 685, valueLabel: '685 bn' },
+          { name: 'GPT-3 (2020)', value: 175, valueLabel: '175 bn' },
+          { name: 'Mixtral 8x22B', value: 141, valueLabel: '141 bn' },
+          { name: 'gpt-oss-120b', value: 117, valueLabel: '117 bn' },
+          { name: 'Llama 4 Scout', value: 109, valueLabel: '109 bn' },
+        ],
+      },
+      {
+        label: 'Closed frontier models: the lab does not disclose',
+        color: '#64748b',
+        items: [
+          { name: 'GPT-4 (rumor)', value: 1760, valueLabel: '1.76 tn*' },
+          { name: 'GPT-5.6 Sol', value: 0, valueLabel: 'undisclosed' },
+          { name: 'Claude Opus 5', value: 0, valueLabel: 'undisclosed' },
+          { name: 'Gemini 3.7 Flash', value: 0, valueLabel: 'undisclosed' },
+          { name: 'Grok 4.6', value: 0, valueLabel: 'undisclosed' },
+        ],
+      },
+    ],
+  },
+
+  /**
+   * `modelos-brasil-suite` — custo de rodar a suíte completa de provas brasileiras (Leis,
+   * OAB Bench, MAGIS, ENEM/USP/OAB, conversação) em cada modelo, em reais, como a Maritaca
+   * publica em docs.maritaca.ai/pt/introducao (lido em 26/08/2026). É a única comparação de
+   * custo de suíte em moeda nacional que a redação achou. Ouro = o modelo brasileiro.
+   */
+  'modelos-brasil-suite-en': {
+    max: 600,
+    groups: [
+      {
+        label: "Cost of running Maritaca's Brazilian exam suite (R$, per model)",
+        color: '#a48f65',
+        items: [
+          { name: 'Sabiá 4 Thinking', value: 206, valueLabel: 'R$ 206', emphasis: true },
+          { name: 'Gemini 3.1 Pro', value: 281, valueLabel: 'R$ 281' },
+          { name: 'GPT-5.4', value: 449, valueLabel: 'R$ 449' },
+          { name: 'Claude Opus 4.8', value: 590, valueLabel: 'R$ 590' },
+        ],
+      },
+    ],
+  },
+  /**
+   * `modelos-mesmo-fornecedor` — o MESMO fornecedor contado pelas três definições. Bloco 1:
+   * repositórios no Hugging Face com etiqueta text-generation por organização (`?author=`,
+   * medido em 26/08/2026 ~11:55; Alibaba = org `Qwen`). Bloco 2: modelos notáveis lançados em
+   * 2025 por organização (AI Index 2026, Fig. 1.1.6, fonte Epoch AI; DeepMind conta em Google).
+   * Bloco 3: catálogo editorial da página alemã, seção 7 (ela mesma dá outros números na seção 2:
+   * OpenAI 35, Anthropic 19, Google 18 — a contradição interna vai no texto). NUNCA somar blocos.
+   */
+  'modelos-mesmo-fornecedor-es': {
+    max: 310,
+    groups: [
+      {
+        label: 'Repositorios en Hugging Face con la etiqueta text-generation (26/08/2026)',
+        color: '#64748b',
+        items: [
+          { name: 'Alibaba (Qwen)', value: 307, valueLabel: '307' },
+          { name: 'Google', value: 149, valueLabel: '149' },
+          { name: 'DeepSeek', value: 70, valueLabel: '70' },
+          { name: 'Meta', value: 51, valueLabel: '51' },
+          { name: 'OpenAI', value: 5, valueLabel: '5', emphasis: true },
+          { name: 'Anthropic', value: 0, valueLabel: '0' },
+        ],
+      },
+      {
+        label: 'Modelos notables lanzados en 2025 (Epoch AI, en el AI Index 2026)',
+        color: '#60a5fa',
+        items: [
+          { name: 'OpenAI', value: 20, valueLabel: '20', emphasis: true },
+          { name: 'Google', value: 14, valueLabel: '14' },
+          { name: 'Alibaba', value: 11, valueLabel: '11' },
+          { name: 'Anthropic', value: 7, valueLabel: '7' },
+          { name: 'DeepSeek', value: 4, valueLabel: '4' },
+          { name: 'Meta', value: 4, valueLabel: '4' },
+        ],
+      },
+      {
+        label: 'Catálogo editorial de la página alemana (sección 7, 23/08/2026)',
+        color: '#fbbf24',
+        items: [
+          { name: 'Alibaba', value: 42, valueLabel: '42' },
+          { name: 'OpenAI', value: 38, valueLabel: '38', emphasis: true },
+          { name: 'Google', value: 27, valueLabel: '27' },
+          { name: 'Anthropic', value: 20, valueLabel: '20' },
+          { name: 'Meta', value: 15, valueLabel: '15' },
+        ],
+      },
+    ],
+  },
+
+  /**
+   * `modelos-nota-dois-medidores` — SWE-bench Verified. Bloco 1: a nota que circula = o que o
+   * próprio laboratório publica (Fable 5 e Opus 4.8: System Card Fable 5/Mythos 5, Tabela 8.1.A,
+   * média de 5 tentativas; DeepSeek-V4-Pro Preview: README do HF, modo Max, último commit
+   * 22/06/2026; Kimi K2.6: README do HF). Bloco 2: o MESMO checkpoint medido pela Vals AI com um
+   * único harness (mini-swe-agent, só bash; "Updated 8/19/2026"). Bloco 3: a versão atual de cada
+   * família na mesma tabela da Vals. Barra do 0813 em ouro = o número que a página alemã não viu.
+   */
+  'modelos-nota-dois-medidores-es': {
+    max: 100,
+    groups: [
+      {
+        label: 'La nota que circula: publicada por el propio laboratorio',
+        color: '#64748b',
+        items: [
+          { name: 'Claude Fable 5', value: 95.0, valueLabel: '95,0%' },
+          { name: 'Claude Opus 4.8', value: 88.6, valueLabel: '88,6%' },
+          { name: 'DeepSeek V4-Pro', value: 80.6, valueLabel: '80,6%', emphasis: true },
+          { name: 'Kimi K2.6', value: 80.2, valueLabel: '80,2%' },
+        ],
+      },
+      {
+        label: 'El mismo modelo, medido desde fuera por Vals AI (un solo harness)',
+        color: '#60a5fa',
+        items: [
+          { name: 'Claude Fable 5', value: 95.0, valueLabel: '95,0%' },
+          { name: 'Claude Opus 4.8', value: 88.6, valueLabel: '88,6%' },
+          { name: 'DeepSeek V4-Pro', value: 77.4, valueLabel: '77,4%', emphasis: true },
+          { name: 'Kimi K2.6', value: 76.2, valueLabel: '76,2%' },
+        ],
+      },
+      {
+        label: 'La versión actual de cada familia, en la misma tabla de Vals AI',
+        color: '#a48f65',
+        items: [
+          { name: 'Claude Opus 5', value: 97.0, valueLabel: '97,0%' },
+          { name: 'DeepSeek 0813', value: 96.4, valueLabel: '96,4%', emphasis: true },
+          { name: 'GPT-5.6 Sol', value: 96.2, valueLabel: '96,2%' },
+          { name: 'Kimi K3', value: 93.4, valueLabel: '93,4%' },
+        ],
+      },
+    ],
+  },
+
+  /**
+   * `modelos-parametros-declarados` — bloco 1: parâmetros totais em bilhões, como o próprio
+   * model card ou paper declara (Kimi K3 e Kimi K2.6: huggingface.co/moonshotai; Qwen3.8:
+   * huggingface.co/Qwen/Qwen3.8-2.4T-A95B-FP8; DeepSeek-V4-Pro e V3.2-Exp: huggingface.co/deepseek-ai;
+   * GPT-3: arXiv 2005.14165; Mixtral 8x22B: huggingface.co/mistralai; gpt-oss-120b:
+   * huggingface.co/openai; Llama 4 Scout: ai.meta.com/blog, todos lidos em 26/08/2026).
+   * Bloco 2: os modelos de ponta fechados — o GPT-4 Technical Report diz "no further details
+   * about the architecture (including model size)"; o 1,76 tri é estimativa de terceiros (Hotz /
+   * SemiAnalysis, 2023), nunca da OpenAI. Barra zero = "não divulgado" (dado ausente, não valor).
+   */
+  'modelos-parametros-declarados-es': {
+    max: 3000,
+    groups: [
+      {
+        label: 'Parámetros totales declarados por el propio laboratorio (miles de millones)',
+        color: '#60a5fa',
+        items: [
+          { name: 'Kimi K3', value: 2800, valueLabel: '2,8 bill.', emphasis: true },
+          { name: 'Qwen 3.8', value: 2400, valueLabel: '2,4 bill.' },
+          { name: 'DeepSeek-V4-Pro', value: 1600, valueLabel: '1,6 bill.' },
+          { name: 'Kimi K2.6', value: 1000, valueLabel: '1 bill.' },
+          { name: 'DeepSeek V3.2', value: 685, valueLabel: '685 MM' },
+          { name: 'GPT-3 (2020)', value: 175, valueLabel: '175 MM' },
+          { name: 'Mixtral 8x22B', value: 141, valueLabel: '141 MM' },
+          { name: 'gpt-oss-120b', value: 117, valueLabel: '117 MM' },
+          { name: 'Llama 4 Scout', value: 109, valueLabel: '109 MM' },
+        ],
+      },
+      {
+        label: 'Modelos de punta cerrados: el laboratorio no divulga',
+        color: '#64748b',
+        items: [
+          { name: 'GPT-4 (rumor)', value: 1760, valueLabel: '1,76 bill.*' },
+          { name: 'GPT-5.6 Sol', value: 0, valueLabel: 'no divulga' },
+          { name: 'Claude Opus 5', value: 0, valueLabel: 'no divulga' },
+          { name: 'Gemini 3.7 Flash', value: 0, valueLabel: 'no divulga' },
+          { name: 'Grok 4.6', value: 0, valueLabel: 'no divulga' },
+        ],
+      },
+    ],
+  },
+
+  /**
+   * `modelos-brasil-suite` — custo de rodar a suíte completa de provas brasileiras (Leis,
+   * OAB Bench, MAGIS, ENEM/USP/OAB, conversação) em cada modelo, em reais, como a Maritaca
+   * publica em docs.maritaca.ai/pt/introducao (lido em 26/08/2026). É a única comparação de
+   * custo de suíte em moeda nacional que a redação achou. Ouro = o modelo brasileiro.
+   */
+  'modelos-brasil-suite-es': {
+    max: 600,
+    groups: [
+      {
+        label: 'Costo de correr la suite de pruebas brasileñas de Maritaca (R$, por modelo)',
+        color: '#a48f65',
+        items: [
+          { name: 'Sabiá 4 Thinking', value: 206, valueLabel: 'R$ 206', emphasis: true },
+          { name: 'Gemini 3.1 Pro', value: 281, valueLabel: 'R$ 281' },
+          { name: 'GPT-5.4', value: 449, valueLabel: 'R$ 449' },
+          { name: 'Claude Opus 4.8', value: 590, valueLabel: 'R$ 590' },
+        ],
+      },
+    ],
+  },
+  /**
+   * `modelos-mesmo-fornecedor-it` — o MESMO fornecedor contado pelas três definições. Bloco 1:
+   * repositórios no Hugging Face com etiqueta text-generation por organização (`?author=`,
+   * medido em 26/08/2026 ~11:55; Alibaba = org `Qwen`). Bloco 2: modelos notáveis lançados em
+   * 2025 por organização (AI Index 2026, Fig. 1.1.6, fonte Epoch AI; DeepMind conta em Google).
+   * Bloco 3: catálogo editorial da página alemã, seção 7 (ela mesma dá outros números na seção 2:
+   * OpenAI 35, Anthropic 19, Google 18 — a contradição interna vai no texto). NUNCA somar blocos.
+   */
+  'modelos-mesmo-fornecedor-it': {
+    max: 310,
+    groups: [
+      {
+        label: 'Repository su Hugging Face con il tag text-generation (26/08/2026)',
+        color: '#64748b',
+        items: [
+          { name: 'Alibaba (Qwen)', value: 307, valueLabel: '307' },
+          { name: 'Google', value: 149, valueLabel: '149' },
+          { name: 'DeepSeek', value: 70, valueLabel: '70' },
+          { name: 'Meta', value: 51, valueLabel: '51' },
+          { name: 'OpenAI', value: 5, valueLabel: '5', emphasis: true },
+          { name: 'Anthropic', value: 0, valueLabel: '0' },
+        ],
+      },
+      {
+        label: 'Modelli notevoli lanciati nel 2025 (Epoch AI, nell\'AI Index 2026)',
+        color: '#60a5fa',
+        items: [
+          { name: 'OpenAI', value: 20, valueLabel: '20', emphasis: true },
+          { name: 'Google', value: 14, valueLabel: '14' },
+          { name: 'Alibaba', value: 11, valueLabel: '11' },
+          { name: 'Anthropic', value: 7, valueLabel: '7' },
+          { name: 'DeepSeek', value: 4, valueLabel: '4' },
+          { name: 'Meta', value: 4, valueLabel: '4' },
+        ],
+      },
+      {
+        label: 'Catalogo editoriale della pagina tedesca (sezione 7, 23/08/2026)',
+        color: '#fbbf24',
+        items: [
+          { name: 'Alibaba', value: 42, valueLabel: '42' },
+          { name: 'OpenAI', value: 38, valueLabel: '38', emphasis: true },
+          { name: 'Google', value: 27, valueLabel: '27' },
+          { name: 'Anthropic', value: 20, valueLabel: '20' },
+          { name: 'Meta', value: 15, valueLabel: '15' },
+        ],
+      },
+    ],
+  },
+
+  /**
+   * `modelos-nota-dois-medidores-it` — SWE-bench Verified. Bloco 1: a nota que circula = o que o
+   * próprio laboratório publica (Fable 5 e Opus 4.8: System Card Fable 5/Mythos 5, Tabela 8.1.A,
+   * média de 5 tentativas; DeepSeek-V4-Pro Preview: README do HF, modo Max, último commit
+   * 22/06/2026; Kimi K2.6: README do HF). Bloco 2: o MESMO checkpoint medido pela Vals AI com um
+   * único harness (mini-swe-agent, só bash; "Updated 8/19/2026"). Bloco 3: a versão atual de cada
+   * família na mesma tabela da Vals. Barra do 0813 em ouro = o número que a página alemã não viu.
+   */
+  'modelos-nota-dois-medidores-it': {
+    max: 100,
+    groups: [
+      {
+        label: 'Il voto che circola: pubblicato dal laboratorio stesso',
+        color: '#64748b',
+        items: [
+          { name: 'Claude Fable 5', value: 95.0, valueLabel: '95,0%' },
+          { name: 'Claude Opus 4.8', value: 88.6, valueLabel: '88,6%' },
+          { name: 'DeepSeek V4-Pro', value: 80.6, valueLabel: '80,6%', emphasis: true },
+          { name: 'Kimi K2.6', value: 80.2, valueLabel: '80,2%' },
+        ],
+      },
+      {
+        label: 'Lo stesso modello, misurato da fuori dalla Vals AI (un solo harness)',
+        color: '#60a5fa',
+        items: [
+          { name: 'Claude Fable 5', value: 95.0, valueLabel: '95,0%' },
+          { name: 'Claude Opus 4.8', value: 88.6, valueLabel: '88,6%' },
+          { name: 'DeepSeek V4-Pro', value: 77.4, valueLabel: '77,4%', emphasis: true },
+          { name: 'Kimi K2.6', value: 76.2, valueLabel: '76,2%' },
+        ],
+      },
+      {
+        label: "La versione attuale di ogni famiglia, nella stessa tabella della Vals AI",
+        color: '#a48f65',
+        items: [
+          { name: 'Claude Opus 5', value: 97.0, valueLabel: '97,0%' },
+          { name: 'DeepSeek 0813', value: 96.4, valueLabel: '96,4%', emphasis: true },
+          { name: 'GPT-5.6 Sol', value: 96.2, valueLabel: '96,2%' },
+          { name: 'Kimi K3', value: 93.4, valueLabel: '93,4%' },
+        ],
+      },
+    ],
+  },
+
+  /**
+   * `modelos-parametros-declarados-it` — bloco 1: parâmetros totais em bilhões, como o próprio
+   * model card ou paper declara (Kimi K3 e Kimi K2.6: huggingface.co/moonshotai; Qwen3.8:
+   * huggingface.co/Qwen/Qwen3.8-2.4T-A95B-FP8; DeepSeek-V4-Pro e V3.2-Exp: huggingface.co/deepseek-ai;
+   * GPT-3: arXiv 2005.14165; Mixtral 8x22B: huggingface.co/mistralai; gpt-oss-120b:
+   * huggingface.co/openai; Llama 4 Scout: ai.meta.com/blog, todos lidos em 26/08/2026).
+   * Bloco 2: os modelos de ponta fechados — o GPT-4 Technical Report diz "no further details
+   * about the architecture (including model size)"; o 1,76 tri é estimativa de terceiros (Hotz /
+   * SemiAnalysis, 2023), nunca da OpenAI. Barra zero = "não divulgado" (dado ausente, não valor).
+   * Unidades traduzidas: 'bi' -> 'mld' (miliardi), 'tri' -> 'tril' (trilioni) — ver TRADUCAO-BRIEF.md.
+   */
+  'modelos-parametros-declarados-it': {
+    max: 3000,
+    groups: [
+      {
+        label: 'Parametri totali dichiarati dal laboratorio stesso (miliardi)',
+        color: '#60a5fa',
+        items: [
+          { name: 'Kimi K3', value: 2800, valueLabel: '2,8 tril', emphasis: true },
+          { name: 'Qwen 3.8', value: 2400, valueLabel: '2,4 tril' },
+          { name: 'DeepSeek-V4-Pro', value: 1600, valueLabel: '1,6 tril' },
+          { name: 'Kimi K2.6', value: 1000, valueLabel: '1 tril' },
+          { name: 'DeepSeek V3.2', value: 685, valueLabel: '685 mld' },
+          { name: 'GPT-3 (2020)', value: 175, valueLabel: '175 mld' },
+          { name: 'Mixtral 8x22B', value: 141, valueLabel: '141 mld' },
+          { name: 'gpt-oss-120b', value: 117, valueLabel: '117 mld' },
+          { name: 'Llama 4 Scout', value: 109, valueLabel: '109 mld' },
+        ],
+      },
+      {
+        label: 'Modelli di punta chiusi: il laboratorio non divulga',
+        color: '#64748b',
+        items: [
+          { name: 'GPT-4 (voce)', value: 1760, valueLabel: '1,76 tril*' },
+          { name: 'GPT-5.6 Sol', value: 0, valueLabel: 'non divulga' },
+          { name: 'Claude Opus 5', value: 0, valueLabel: 'non divulga' },
+          { name: 'Gemini 3.7 Flash', value: 0, valueLabel: 'non divulga' },
+          { name: 'Grok 4.6', value: 0, valueLabel: 'non divulga' },
+        ],
+      },
+    ],
+  },
+
+  /**
+   * `modelos-brasil-suite-it` — custo de rodar a suíte completa de provas brasileiras (Leis,
+   * OAB Bench, MAGIS, ENEM/USP/OAB, conversação) em cada modelo, em reais, como a Maritaca
+   * publica em docs.maritaca.ai/pt/introducao (lido em 26/08/2026). É a única comparação de
+   * custo de suíte em moeda nacional que a redação achou. Ouro = o modelo brasileiro.
+   */
+  'modelos-brasil-suite-it': {
+    max: 600,
+    groups: [
+      {
+        label: 'Costo di eseguire la suite di prove brasiliane della Maritaca (R$, per modello)',
+        color: '#a48f65',
+        items: [
+          { name: 'Sabiá 4 Thinking', value: 206, valueLabel: 'R$ 206', emphasis: true },
+          { name: 'Gemini 3.1 Pro', value: 281, valueLabel: 'R$ 281' },
+          { name: 'GPT-5.4', value: 449, valueLabel: 'R$ 449' },
+          { name: 'Claude Opus 4.8', value: 590, valueLabel: 'R$ 590' },
+        ],
+      },
+    ],
+  },
+  /**
+   * `modelos-mesmo-fornecedor` — o MESMO fornecedor contado pelas três definições. Bloco 1:
+   * repositórios no Hugging Face com etiqueta text-generation por organização (`?author=`,
+   * medido em 26/08/2026 ~11:55; Alibaba = org `Qwen`). Bloco 2: modelos notáveis lançados em
+   * 2025 por organização (AI Index 2026, Fig. 1.1.6, fonte Epoch AI; DeepMind conta em Google).
+   * Bloco 3: catálogo editorial da página alemã, seção 7 (ela mesma dá outros números na seção 2:
+   * OpenAI 35, Anthropic 19, Google 18 — a contradição interna vai no texto). NUNCA somar blocos.
+   */
+  'modelos-mesmo-fornecedor-he': {
+    max: 310,
+    groups: [
+      {
+        label: 'מאגרים ב-Hugging Face עם התג text-generation (26/08/2026)',
+        color: '#64748b',
+        items: [
+          { name: 'Alibaba (Qwen)', value: 307, valueLabel: '307' },
+          { name: 'Google', value: 149, valueLabel: '149' },
+          { name: 'DeepSeek', value: 70, valueLabel: '70' },
+          { name: 'Meta', value: 51, valueLabel: '51' },
+          { name: 'OpenAI', value: 5, valueLabel: '5', emphasis: true },
+          { name: 'Anthropic', value: 0, valueLabel: '0' },
+        ],
+      },
+      {
+        label: 'מודלים בולטים שהושקו ב-2025 (Epoch AI, ב-AI Index 2026)',
+        color: '#60a5fa',
+        items: [
+          { name: 'OpenAI', value: 20, valueLabel: '20', emphasis: true },
+          { name: 'Google', value: 14, valueLabel: '14' },
+          { name: 'Alibaba', value: 11, valueLabel: '11' },
+          { name: 'Anthropic', value: 7, valueLabel: '7' },
+          { name: 'DeepSeek', value: 4, valueLabel: '4' },
+          { name: 'Meta', value: 4, valueLabel: '4' },
+        ],
+      },
+      {
+        label: 'קטלוג עורכי של העמוד הגרמני (סעיף 7, 23/08/2026)',
+        color: '#fbbf24',
+        items: [
+          { name: 'Alibaba', value: 42, valueLabel: '42' },
+          { name: 'OpenAI', value: 38, valueLabel: '38', emphasis: true },
+          { name: 'Google', value: 27, valueLabel: '27' },
+          { name: 'Anthropic', value: 20, valueLabel: '20' },
+          { name: 'Meta', value: 15, valueLabel: '15' },
+        ],
+      },
+    ],
+  },
+
+  /**
+   * `modelos-nota-dois-medidores` — SWE-bench Verified. Bloco 1: a nota que circula = o que o
+   * próprio laboratório publica (Fable 5 e Opus 4.8: System Card Fable 5/Mythos 5, Tabela 8.1.A,
+   * média de 5 tentativas; DeepSeek-V4-Pro Preview: README do HF, modo Max, último commit
+   * 22/06/2026; Kimi K2.6: README do HF). Bloco 2: o MESMO checkpoint medido pela Vals AI com um
+   * único harness (mini-swe-agent, só bash; "Updated 8/19/2026"). Bloco 3: a versão atual de cada
+   * família na mesma tabela da Vals. Barra do 0813 em ouro = o número que a página alemã não viu.
+   */
+  'modelos-nota-dois-medidores-he': {
+    max: 100,
+    groups: [
+      {
+        label: 'הציון שמסתובב: פורסם על ידי המעבדה עצמה',
+        color: '#64748b',
+        items: [
+          { name: 'Claude Fable 5', value: 95.0, valueLabel: '95.0%' },
+          { name: 'Claude Opus 4.8', value: 88.6, valueLabel: '88.6%' },
+          { name: 'DeepSeek V4-Pro', value: 80.6, valueLabel: '80.6%', emphasis: true },
+          { name: 'Kimi K2.6', value: 80.2, valueLabel: '80.2%' },
+        ],
+      },
+      {
+        label: 'אותו מודל, נמדד מבחוץ על ידי Vals AI (harness אחד בלבד)',
+        color: '#60a5fa',
+        items: [
+          { name: 'Claude Fable 5', value: 95.0, valueLabel: '95.0%' },
+          { name: 'Claude Opus 4.8', value: 88.6, valueLabel: '88.6%' },
+          { name: 'DeepSeek V4-Pro', value: 77.4, valueLabel: '77.4%', emphasis: true },
+          { name: 'Kimi K2.6', value: 76.2, valueLabel: '76.2%' },
+        ],
+      },
+      {
+        label: 'הגרסה הנוכחית של כל משפחה, באותה טבלה של Vals AI',
+        color: '#a48f65',
+        items: [
+          { name: 'Claude Opus 5', value: 97.0, valueLabel: '97.0%' },
+          { name: 'DeepSeek 0813', value: 96.4, valueLabel: '96.4%', emphasis: true },
+          { name: 'GPT-5.6 Sol', value: 96.2, valueLabel: '96.2%' },
+          { name: 'Kimi K3', value: 93.4, valueLabel: '93.4%' },
+        ],
+      },
+    ],
+  },
+
+  /**
+   * `modelos-parametros-declarados` — bloco 1: parâmetros totais em bilhões, como o próprio
+   * model card ou paper declara (Kimi K3 e Kimi K2.6: huggingface.co/moonshotai; Qwen3.8:
+   * huggingface.co/Qwen/Qwen3.8-2.4T-A95B-FP8; DeepSeek-V4-Pro e V3.2-Exp: huggingface.co/deepseek-ai;
+   * GPT-3: arXiv 2005.14165; Mixtral 8x22B: huggingface.co/mistralai; gpt-oss-120b:
+   * huggingface.co/openai; Llama 4 Scout: ai.meta.com/blog, todos lidos em 26/08/2026).
+   * Bloco 2: os modelos de ponta fechados — o GPT-4 Technical Report diz "no further details
+   * about the architecture (including model size)"; o 1,76 tri é estimativa de terceiros (Hotz /
+   * SemiAnalysis, 2023), nunca da OpenAI. Barra zero = "não divulgado" (dado ausente, não valor).
+   * valueLabel em abreviação latina (T/B) por orçamento de largura (64px) — ver checar-rotulos-svg.py.
+   */
+  'modelos-parametros-declarados-he': {
+    max: 3000,
+    groups: [
+      {
+        label: 'סך הפרמטרים שהוצהרו על ידי המעבדה עצמה (במיליארדים)',
+        color: '#60a5fa',
+        items: [
+          { name: 'Kimi K3', value: 2800, valueLabel: '2.8T', emphasis: true },
+          { name: 'Qwen 3.8', value: 2400, valueLabel: '2.4T' },
+          { name: 'DeepSeek-V4-Pro', value: 1600, valueLabel: '1.6T' },
+          { name: 'Kimi K2.6', value: 1000, valueLabel: '1T' },
+          { name: 'DeepSeek V3.2', value: 685, valueLabel: '685B' },
+          { name: 'GPT-3 (2020)', value: 175, valueLabel: '175B' },
+          { name: 'Mixtral 8x22B', value: 141, valueLabel: '141B' },
+          { name: 'gpt-oss-120b', value: 117, valueLabel: '117B' },
+          { name: 'Llama 4 Scout', value: 109, valueLabel: '109B' },
+        ],
+      },
+      {
+        label: 'מודלים מובילים סגורים: המעבדה לא מפרסמת',
+        color: '#64748b',
+        items: [
+          { name: 'GPT-4 (שמועה)', value: 1760, valueLabel: '1.76T*' },
+          { name: 'GPT-5.6 Sol', value: 0, valueLabel: 'לא פורסם' },
+          { name: 'Claude Opus 5', value: 0, valueLabel: 'לא פורסם' },
+          { name: 'Gemini 3.7 Flash', value: 0, valueLabel: 'לא פורסם' },
+          { name: 'Grok 4.6', value: 0, valueLabel: 'לא פורסם' },
+        ],
+      },
+    ],
+  },
+
+  /**
+   * `modelos-brasil-suite` — custo de rodar a suíte completa de provas brasileiras (Leis,
+   * OAB Bench, MAGIS, ENEM/USP/OAB, conversação) em cada modelo, em reais, como a Maritaca
+   * publica em docs.maritaca.ai/pt/introducao (lido em 26/08/2026). É a única comparação de
+   * custo de suíte em moeda nacional que a redação achou. Ouro = o modelo brasileiro.
+   */
+  'modelos-brasil-suite-he': {
+    max: 600,
+    groups: [
+      {
+        label: 'עלות הרצת חבילת המבחנים הברזילאית של Maritaca (R$, למודל)',
+        color: '#a48f65',
+        items: [
+          { name: 'Sabiá 4 Thinking', value: 206, valueLabel: 'R$ 206', emphasis: true },
+          { name: 'Gemini 3.1 Pro', value: 281, valueLabel: 'R$ 281' },
+          { name: 'GPT-5.4', value: 449, valueLabel: 'R$ 449' },
+          { name: 'Claude Opus 4.8', value: 590, valueLabel: 'R$ 590' },
+        ],
+      },
+    ],
+  },
   /**
    * `deepfake-procedencia-sete` — a contagem que sustenta o título. PROCEDÊNCIA: as 7 linhas da
    * tabela "Kernzahlen" da página alemã, capturada em 26/08/2026
@@ -6082,6 +7064,216 @@ export interface StepFlowDataset {
 }
 
 export const stepFlowDatasets: Record<string, StepFlowDataset> = {
+  /**
+   * `modelos-tres-definicoes` — a régua do artigo: "modelo segundo quem?". Três definições, três
+   * contagens corretas e incompatíveis. PROCEDÊNCIA: Hugging Face (numTotalItems da página
+   * `?pipeline_tag=text-generation`, medido em 26/08/2026); AI Index 2026 cap. 1 (Epoch AI: 93 da
+   * indústria + 2 da academia em 2025; "not a census"); página alemã gradually.ai (274 de 35
+   * fornecedores, base proprietária dela).
+   */
+  'modelos-tres-definicoes': {
+    orientation: 'chain',
+    steps: [
+      {
+        label: 'Repositório — tudo que alguém publicou com a etiqueta',
+        detail: 'Hugging Face, etiqueta text-generation: 403.420 em 26/08/2026, 04:43. Conta cópia, ajuste e versão.',
+      },
+      {
+        label: 'Notável — o que uma curadoria julgou importante',
+        detail: 'Epoch AI para o AI Index de Stanford: 95 em 2025. Manual — o relatório avisa que não é censo.',
+      },
+      {
+        label: 'Catálogo — o que um site decidiu listar',
+        detail: 'A página alemã que motivou a pauta: 274 modelos de 35 fornecedores. O critério é do editor.',
+      },
+    ],
+  },
+
+  /**
+   * `modelos-swebench-linha-do-tempo` — o benchmark de código mais citado, do nascimento ao
+   * abandono pelo próprio criador. PROCEDÊNCIA: OpenAI, "Introducing SWE-bench Verified"
+   * (13/08/2024); OpenAI, "Why SWE-bench Verified no longer measures frontier coding capabilities"
+   * (23/02/2026, lido no Wayback); HN item 47910388 (26/04/2026, 343 pontos); Vals AI, tabela
+   * "Updated 8/19/2026" (97,00% Claude Opus 5); gradually.ai/llm-statistiken (23/08/2026).
+   */
+  'modelos-swebench-linha-do-tempo': {
+    orientation: 'timeline',
+    steps: [
+      { label: 'ago/2024', detail: 'OpenAI o cria' },
+      { label: 'fev/2026', detail: 'OpenAI o abandona', alert: true },
+      { label: 'abr/2026', detail: 'HN: 343 pontos' },
+      { label: 'ago/2026', detail: 'Vals: 97% no topo' },
+      { label: '23/08/2026', detail: 'Ainda é a régua' },
+    ],
+  },
+  /**
+   * `modelos-tres-definicoes` — a régua do artigo: "modelo segundo quem?". Três definições, três
+   * contagens corretas e incompatíveis. PROCEDÊNCIA: Hugging Face (numTotalItems da página
+   * `?pipeline_tag=text-generation`, medido em 26/08/2026); AI Index 2026 cap. 1 (Epoch AI: 93 da
+   * indústria + 2 da academia em 2025; "not a census"); página alemã gradually.ai (274 de 35
+   * fornecedores, base proprietária dela).
+   */
+  'modelos-tres-definicoes-en': {
+    orientation: 'chain',
+    steps: [
+      {
+        label: 'Repository — anything published with the tag',
+        detail: 'Hugging Face, text-generation tag: 403,420 at 04:43 on Aug 26. Counts copies and fine-tunes.',
+      },
+      {
+        label: 'Notable — what a curation judged important',
+        detail: "Epoch AI for Stanford's AI Index: 95 in 2025. Manual — the report says it is not a census.",
+      },
+      {
+        label: 'Catalog — what a site decided to list',
+        detail: 'The German page behind this piece: 274 models from 35 vendors. Criterion set by the editor.',
+      },
+    ],
+  },
+
+  /**
+   * `modelos-swebench-linha-do-tempo` — o benchmark de código mais citado, do nascimento ao
+   * abandono pelo próprio criador. PROCEDÊNCIA: OpenAI, "Introducing SWE-bench Verified"
+   * (13/08/2024); OpenAI, "Why SWE-bench Verified no longer measures frontier coding capabilities"
+   * (23/02/2026, lido no Wayback); HN item 47910388 (26/04/2026, 343 pontos); Vals AI, tabela
+   * "Updated 8/19/2026" (97,00% Claude Opus 5); gradually.ai/llm-statistiken (23/08/2026).
+   */
+  'modelos-swebench-linha-do-tempo-en': {
+    orientation: 'timeline',
+    steps: [
+      { label: 'Aug 2024', detail: 'OpenAI creates it' },
+      { label: 'Feb 2026', detail: 'OpenAI abandons it', alert: true },
+      { label: 'Apr 2026', detail: 'HN: 343 points' },
+      { label: 'Aug 2026', detail: 'Vals: 97% on top' },
+      { label: 'Aug 23, 2026', detail: 'Still the ruler' },
+    ],
+  },
+  /**
+   * `modelos-tres-definicoes` — a régua do artigo: "modelo segundo quem?". Três definições, três
+   * contagens corretas e incompatíveis. PROCEDÊNCIA: Hugging Face (numTotalItems da página
+   * `?pipeline_tag=text-generation`, medido em 26/08/2026); AI Index 2026 cap. 1 (Epoch AI: 93 da
+   * indústria + 2 da academia em 2025; "not a census"); página alemã gradually.ai (274 de 35
+   * fornecedores, base proprietária dela).
+   */
+  'modelos-tres-definicoes-es': {
+    orientation: 'chain',
+    steps: [
+      {
+        label: 'Repositorio — todo lo que alguien publicó con la etiqueta',
+        detail: 'Hugging Face, etiqueta text-generation: 403.420 el 26/08/2026, 04:43. Cuenta copia, ajuste y versión.',
+      },
+      {
+        label: 'Notable — lo que una curaduría juzgó importante',
+        detail: 'Epoch AI para el AI Index de Stanford: 95 en 2025. Manual — el informe avisa que no es un censo.',
+      },
+      {
+        label: 'Catálogo — lo que un sitio decidió listar',
+        detail: 'La página alemana que motivó la pauta: 274 modelos de 35 proveedores. El criterio es del editor.',
+      },
+    ],
+  },
+
+  /**
+   * `modelos-swebench-linha-do-tempo` — o benchmark de código mais citado, do nascimento ao
+   * abandono pelo próprio criador. PROCEDÊNCIA: OpenAI, "Introducing SWE-bench Verified"
+   * (13/08/2024); OpenAI, "Why SWE-bench Verified no longer measures frontier coding capabilities"
+   * (23/02/2026, lido no Wayback); HN item 47910388 (26/04/2026, 343 pontos); Vals AI, tabela
+   * "Updated 8/19/2026" (97,00% Claude Opus 5); gradually.ai/llm-statistiken (23/08/2026).
+   */
+  'modelos-swebench-linha-do-tempo-es': {
+    orientation: 'timeline',
+    steps: [
+      { label: 'ago/2024', detail: 'OpenAI la crea' },
+      { label: 'feb/2026', detail: 'OpenAI la abandona', alert: true },
+      { label: 'abr/2026', detail: 'HN: 343 puntos' },
+      { label: 'ago/2026', detail: 'Vals: 97% arriba' },
+      { label: '23/08/2026', detail: 'Aún es la regla' },
+    ],
+  },
+  /**
+   * `modelos-tres-definicoes-it` — a régua do artigo: "modelo segundo quem?". Três definições,
+   * três contagens corretas e incompatíveis. PROCEDÊNCIA: Hugging Face (numTotalItems da página
+   * `?pipeline_tag=text-generation`, medido em 26/08/2026); AI Index 2026 cap. 1 (Epoch AI: 93 da
+   * indústria + 2 da academia em 2025; "not a census"); página alemã gradually.ai (274 de 35
+   * fornecedores, base proprietária dela).
+   */
+  'modelos-tres-definicoes-it': {
+    orientation: 'chain',
+    steps: [
+      {
+        label: 'Repository — tutto quanto pubblicato con il tag',
+        detail: 'Hugging Face, tag text-generation: 403.420 il 26/08/2026, ore 04:43. Conta copie e versioni.',
+      },
+      {
+        label: 'Notevole — giudicato importante da una curatela',
+        detail: "Epoch AI per l'AI Index di Stanford: 95 nel 2025. Manuale, non censimento, avverte il rapporto.",
+      },
+      {
+        label: 'Catalogo — ciò che un sito ha deciso di elencare',
+        detail: "La pagina tedesca che ha ispirato l'articolo: 274 modelli, 35 fornitori. Criterio dell'editore.",
+      },
+    ],
+  },
+
+  /**
+   * `modelos-swebench-linha-do-tempo-it` — o benchmark de código mais citado, do nascimento ao
+   * abandono pelo próprio criador. PROCEDÊNCIA: OpenAI, "Introducing SWE-bench Verified"
+   * (13/08/2024); OpenAI, "Why SWE-bench Verified no longer measures frontier coding capabilities"
+   * (23/02/2026, lido no Wayback); HN item 47910388 (26/04/2026, 343 pontos); Vals AI, tabela
+   * "Updated 8/19/2026" (97,00% Claude Opus 5); gradually.ai/llm-statistiken (23/08/2026).
+   */
+  'modelos-swebench-linha-do-tempo-it': {
+    orientation: 'timeline',
+    steps: [
+      { label: 'ago/2024', detail: 'OpenAI lo crea' },
+      { label: 'feb/2026', detail: "OpenAI l'abbandona", alert: true },
+      { label: 'apr/2026', detail: 'HN: 343 punti' },
+      { label: 'ago/2026', detail: 'Vals: 97% in cima' },
+      { label: '23/08/2026', detail: 'Ancora il metro' },
+    ],
+  },
+  /**
+   * `modelos-tres-definicoes` — a régua do artigo: "modelo segundo quem?". Três definições, três
+   * contagens corretas e incompatíveis. PROCEDÊNCIA: Hugging Face (numTotalItems da página
+   * `?pipeline_tag=text-generation`, medido em 26/08/2026); AI Index 2026 cap. 1 (Epoch AI: 93 da
+   * indústria + 2 da academia em 2025; "not a census"); página alemã gradually.ai (274 de 35
+   * fornecedores, base proprietária dela).
+   */
+  'modelos-tres-definicoes-he': {
+    orientation: 'chain',
+    steps: [
+      {
+        label: 'מאגר — כל מה שמישהו פרסם עם התג',
+        detail: 'Hugging Face, תג text-generation: 403,420 ב-26/08/2026, 04:43. סופר עותק, כוונון וגרסה.',
+      },
+      {
+        label: 'בולט — מה שאצירה שפטה כחשוב',
+        detail: 'Epoch AI עבור ה-AI Index של סטנפורד: 95 ב-2025. ידני — הדוח מזהיר שזה לא מפקד.',
+      },
+      {
+        label: 'קטלוג — מה שאתר החליט לרשום',
+        detail: 'העמוד הגרמני שהניע את הכתבה: 274 מודלים מ-35 ספקים. הקריטריון הוא של העורך.',
+      },
+    ],
+  },
+
+  /**
+   * `modelos-swebench-linha-do-tempo` — o benchmark de código mais citado, do nascimento ao
+   * abandono pelo próprio criador. PROCEDÊNCIA: OpenAI, "Introducing SWE-bench Verified"
+   * (13/08/2024); OpenAI, "Why SWE-bench Verified no longer measures frontier coding capabilities"
+   * (23/02/2026, lido no Wayback); HN item 47910388 (26/04/2026, 343 pontos); Vals AI, tabela
+   * "Updated 8/19/2026" (97,00% Claude Opus 5); gradually.ai/llm-statistiken (23/08/2026).
+   */
+  'modelos-swebench-linha-do-tempo-he': {
+    orientation: 'timeline',
+    steps: [
+      { label: 'אוג׳ 2024', detail: 'OpenAI יוצרת אותו' },
+      { label: 'פבר׳ 2026', detail: 'OpenAI נוטשת אותו', alert: true },
+      { label: 'אפר׳ 2026', detail: 'HN: 343 נקודות' },
+      { label: 'אוג׳ 2026', detail: 'Vals: 97% בראש' },
+      { label: '23/08/2026', detail: 'עדיין הסרגל' },
+    ],
+  },
   /**
    * `deepfake-cinco-reguas` — a régua do artigo (degrau 1 da escada): as cinco maneiras de
    * "medir" deepfake. PROCEDÊNCIA: classificação do autor sobre a tabela "Kernzahlen" (7
