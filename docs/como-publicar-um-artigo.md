@@ -26,6 +26,7 @@ O site é assinado com seu ORCID e seu Lattes ao lado; texto redigido por LLM se
 | Estrutura | corto repetição, ordeno o argumento, escolho os cortes de seção |
 | Crítica | aponto onde o argumento não fecha, onde falta evidência, onde está prolixo |
 | Verificação | confiro cada número, data, preço e citação contra a fonte atual |
+| Dado | dado próprio do artigo vai para um repositório público linkado **antes** da publicação — nunca prometido a quem pedir |
 | Formatação | viro MDX com frontmatter, tabelas GFM, links |
 | Registro | crio `content/artigos/<slug>/index.pt-br.mdx`, a entrada em `data/artigos.ts` e, se houver capa, os arquivos em `public/artigos/<slug>/` |
 | SEO | title, summary, tags, canonical, JSON-LD e sitemap saem daí, sem trabalho extra |
@@ -75,6 +76,29 @@ Que os arquivos existam e que nenhum card passe de 300 KB é gate: `data/artigos
 a rota serve o corpo em português com o `lang` correto (`app/[locale]/artigos/[slug]/page.tsx:90`)
 — medido: `https://ulissesflores.com/en/artigos/2026-07-24-claude-opus-5` responde 200. Traduzir
 é decisão por artigo, não obrigação para publicar.
+
+## Dado do artigo: repositório público, nunca promessa
+
+O texto **nunca** oferece dado, planilha, código ou memória de cálculo "mediante solicitação",
+"sob demanda", "é só pedir" ou "posso enviar". Promessa não é publicação: quem lê seis meses
+depois não tem a quem pedir, e a afirmação fica sem lastro conferível de fora.
+
+Só existem dois desfechos, e o texto declara qual é:
+
+1. **O dado existe** -> ele é publicado **antes** do artigo, num repositório público próprio
+   (o *companion*), e o artigo linka esse repositório. O padrão da casa para esse repositório
+   é a skill `scaffolding-public-repo`
+   (`/Users/ulissesflores/.claude/skills/scaffolding-public-repo/SKILL.md`): entry-point único
+   `run_all.py`, todo número publicado travado como asserção de teste, selo de proveniência
+   SHA-256 (`chain_hash`) conferível com `--verify`, CI que reprova divergência entre texto e
+   dado, e `CITATION.cff` + `codemeta.json` + `.zenodo.json` para o DOI.
+2. **O dado não pode ser publicado** (é de terceiro, tem licença restritiva ou sigilo) -> o
+   texto diz isso na linha em que o número aparece, com o motivo, e apresenta o número como
+   não conferível de fora. Resultado declarado sem lastro vale mais que promessa de lastro.
+
+O repositório companion vive **fora** deste repo: o site linka, não hospeda. O `.zenodo.json`
+nasce com `access_right: closed`, e o DOI só é cunhado na release — com autorização explícita
+do Ulisses no mesmo turn, como todo push.
 
 ## Modelo do arquivo
 
@@ -129,6 +153,9 @@ diz isso — resultado negativo verificado vale mais que conclusão confortável
 - **Português do Brasil.** Termo técnico em inglês onde é canônico (`prompt`, `deploy`, `token`).
 - **Afirmação com lastro.** Número, preço, versão e data são conferidos contra a fonte na hora
   da publicação; sem fonte, o texto declara que não foi verificado.
+- **Nada "mediante solicitação".** Dado prometido a quem pedir não conta como publicado: ou
+  está num repositório público linkado, ou o texto declara por que não está -> seção *Dado do
+  artigo*.
 - **Sem preâmbulo e sem recap.** Nada de "como vimos anteriormente" nem "espero que tenha
   gostado".
 - **Tabela só com pipe** (`| coluna |`). Box-drawing (`┌ ─ ┐`) quebra o render.
