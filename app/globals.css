@@ -152,6 +152,37 @@ html {
   background: linear-gradient(to right, transparent, rgba(164, 143, 101, 0.4), transparent);
 }
 
+/* ── Callouts do GitHub no corpo dos artigos ────────────────────────────────
+   `> [!NOTE]` vira `<blockquote class="callout callout-note">` no
+   lib/content/remark-callouts.ts. Sem estas regras ele herda o traje de CITAÇÃO
+   do Tailwind Typography — itálico, peso 500 e aspas tipográficas via
+   `blockquote p::before/::after` — e o texto do próprio autor apareceria
+   entre aspas, como se fosse de outra pessoa.
+
+   O visual é o do `.sim-callout` acima, que já era o destaque da casa. As duas
+   propriedades da citação são reescritas pela variável do próprio Typography, e
+   não por regra concorrente: `--tw-prose-quote-borders` é o que a folha lê para
+   a barra lateral, herdada pelo `:where()` de especificidade zero.
+
+   `callout-note`/`callout-important` saem do plugin mas ainda não pintam
+   diferente: a paleta da marca é dourado sobre marinho (o manual reprova outro
+   matiz sobre claro), então tipo colorido é decisão de marca, não de conserto.
+   As classes ficam prontas para quando a decisão vier. */
+.callout {
+  --tw-prose-quotes: var(--color-brand-offwhite);
+  --tw-prose-quote-borders: var(--color-brand-gold);
+  background: rgba(23, 23, 23, 0.6);
+  padding: 1rem 1.5rem;
+  font-style: normal;
+  font-weight: 400;
+  border-start-end-radius: 0.5rem;
+  border-end-end-radius: 0.5rem;
+}
+.callout p:first-of-type::before,
+.callout p:last-of-type::after {
+  content: none;
+}
+
 /* ── Charts do acervo sob corpo hebraico ────────────────────────────────────
    O `/he` serve `<html dir="rtl">` e `<article dir="rtl">` (MdxContentWrapper em
    lib/content/mdx-components.tsx). O `<svg>` HERDA esse `direction: rtl`, e aí todo

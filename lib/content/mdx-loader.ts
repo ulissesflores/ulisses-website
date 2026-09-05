@@ -18,6 +18,7 @@ import matter from 'gray-matter';
 import type { MDXComponents } from 'mdx/types';
 import { compileMDX } from 'next-mdx-remote/rsc';
 import remarkGfm from 'remark-gfm';
+import { remarkCallouts } from './remark-callouts';
 import type { ReactElement } from 'react';
 
 export interface ContentFrontmatter {
@@ -115,7 +116,9 @@ export async function loadMdx(
       parseFrontmatter: false,
       // remark-gfm: tabelas, listas de tarefas e autolink de URL nua. Sem ele o
       // corpo em Markdown perde as tabelas (viram parágrafo solto).
-      mdxOptions: { remarkPlugins: [remarkGfm] },
+      // remark-callouts: `> [!NOTE]` é do GitHub, não da spec do GFM — sem ele o
+      // marcador chega literal ao leitor.
+      mdxOptions: { remarkPlugins: [remarkGfm, remarkCallouts] },
     },
   });
 
