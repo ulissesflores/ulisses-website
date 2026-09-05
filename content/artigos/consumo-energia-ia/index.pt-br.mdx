@@ -1,0 +1,348 @@
+---
+title: 'O Brasil virou destino de data center e não mede o que eles gastam'
+slug: consumo-energia-ia
+category: artigos
+date: '2026-09-04'
+language: pt-BR
+---
+
+O Brasil tem entre 21 e 26 gigawatts de data center na fila de conexão à rede elétrica e nenhum
+número oficial sobre o que essa fila vai consumir. Na véspera de eu começar esta apuração, em 1º
+de setembro de 2026, o Senado aprovou o regime tributário que acelera a fila.
+
+Fui conferir os números que circulam sobre energia de inteligência artificial, um por um, contra a
+fonte primária de cada um. Seis dos sete que decidem essa conversa estavam com a ficha técnica
+trocada — e o sétimo, o único que decidiria alguma coisa aqui dentro, não existe.
+
+> **Nota metodológica.** Cada número abaixo foi lido por mim no documento original — relatório,
+> paper, tabela de submissão ou posicionamento oficial —, não em quem repercutiu. Quando eu mesmo
+> calculei alguma coisa (uma razão, uma soma, uma variação), o cálculo está no repositório público
+> linkado no fim, com teste travando o valor publicado. As buscas de comunidade cobriram X/Twitter
+> e Hacker News: **o Reddit ficou fora**, porque a interface pública devolveu erro 403 em todos os
+> tópicos e o caminho alternativo devolveu 429. Também **não houve publicação de Sasha Luccioni,
+> Alex de Vries ou Jonathan Koomey** na janela de seis meses que eu varri — os três nomes que
+> normalmente ancoram esse debate estavam calados no período.
+
+| # | O número que circula | O que a fonte primária diz |
+|---|---|---|
+| 1 | 0,34 Wh por pergunta (OpenAI) | ❌ frase solta num texto do presidente da empresa, sem metodologia, sem modelo e sem link |
+| 2 | 0,24 Wh por pergunta (Google) | ⚠️ correto, mas **exclui o treino do modelo** — o próprio paper diz que deixou isso para depois |
+| 3 | "33 vezes mais eficiente em 12 meses" | ⚠️ 23 vezes disso é **troca de modelo**, não eficiência de engenharia |
+| 4 | "25 vezes mais eficiência energética" (Nvidia GB200) | ❌ número projetado, e **sem nenhuma medição de potência submetida** nas três últimas rodadas do MLPerf Inference |
+| 5 | "Estudo da FGV: 26,7% cai para 17,7% com o REDATA" | ❌ o estudo é da **Brasscom**, e 17,7% **ainda é mais caro** que os Estados Unidos |
+| 6 | "TikTok em Pecém: 4,75 GW, 120 vezes São Paulo" | ❌ os 4,75 GW são de **outra empresa, no Rio Grande do Sul**; Pecém são 300 MW |
+| **7** | **Quanto os data centers do Brasil vão puxar da rede** | ✅ **não existe número publicado** — e quem deveria publicar diz isso com todas as letras |
+
+---
+
+## A pergunta errada é quanto gasta uma pergunta
+
+Todo mundo que discute energia de inteligência artificial discute a mesma unidade: watt-hora por
+pergunta. É um número pequeno, simpático e fácil de repetir. E é também um número que muda de
+tamanho conforme quem mede decide onde a conta começa e onde ela termina.
+
+Pense numa etiqueta de preço que não conta o frete, não conta o imposto e não conta a fábrica. Ela
+não está mentindo. Ela está respondendo a uma pergunta menor do que a que você fez.
+
+<StepFlowDiagram dataset="energia-cadeia-do-escopo" title="Onde a conta de uma pergunta começa e onde ela para" subtitle="Os números publicados param antes da parte que decide se a rede aguenta" description="Cadeia de cinco etapas do consumo de uma pergunta: a pergunta digitada, o modelo que responde, o treino do modelo, o prédio que hospeda e a rede que alimenta o prédio. As etapas do treino e da rede estão marcadas como fora da conta publicada." source="Figura do artigo · ulissesflores.com/energia" />
+
+Repare que a corrente tem cinco elos e os números que circulam cobrem os dois primeiros. O terceiro
+elo — o treino do modelo — está fora por escrito: o paper do Google sobre o consumo do Gemini diz,
+na letra, *"we leave the measurement of AI model training to future work"* ("deixamos a medição do
+treino do modelo para trabalho futuro"). O quinto elo, a rede, não aparece em nenhum dos relatórios
+de empresa que eu li.
+
+**O número mais repetido do mundo sobre energia de IA não tem ficha técnica.** Os 0,34 watt-hora da
+OpenAI saíram de uma frase num texto pessoal de Sam Altman, em junho de 2025, sem dizer qual modelo,
+sem dizer o que entrou na conta e sem link para uma medição. O 0,3 watt-hora do Epoch AI, que
+circula como se confirmasse o de Altman, é de **fevereiro de 2025** — quatro meses antes. Os dois
+nunca conversaram; a coincidência de ordem de grandeza é coincidência.
+
+O do Google tem ficha técnica, e é por isso que dá para ver o buraco: 0,24 watt-hora por pergunta
+com refrigeração, servidor ocioso e perdas elétricas incluídos, e o treino fora. Entre a fronteira
+larga e a estreita de medição há um fator de **2,4 vezes**. Andy Masley, que defende publicamente
+que o consumo por pergunta é pequeno, calculou que amortizar o treino **quase dobra** o número —
+é o argumento vindo do advogado de defesa, não do promotor.
+
+O mesmo vale para o salto de eficiência que a imprensa chamou de "33 vezes em doze meses". O paper
+do Google diz, também na letra: *"a 33x reduction in per-prompt energy consumption (…) including a
+23x reduction from model improvements, and a 1.4x reduction from improved machine utilization"*
+("uma redução de 33 vezes na energia por prompt (…) incluindo uma redução de 23 vezes por melhorias
+de modelo e uma de 1,4 vez por melhor utilização de máquina"). Os fatores se multiplicam: 23 × 1,4
+dá os 33. **Quase todo o ganho é trocar de modelo, não ficar melhor no mesmo modelo** — e trocar de
+modelo é uma decisão de produto, que a empresa pode desfazer amanhã.
+
+Essa é uma lição que já apareceu aqui antes, em outro assunto: o número muda quando muda a régua,
+não quando muda o mundo. Foi o que aconteceu quando [o mesmo modelo de IA mudou de nota ao trocar
+de ferramenta de avaliação](/artigos/benchmark-harness-modelo).
+
+### O 25x da Nvidia é o único número da lista sem contraparte auditada
+
+A página do GB200 NVL72 anuncia *"Energy Efficiency 25X vs. H100"* ("eficiência energética 25 vezes
+maior que a do H100"). A própria página marca o dado como *projected performance subject to change*
+("desempenho projetado, sujeito a alteração"). Até aqui é publicidade normal de fabricante.
+
+O que eu não esperava encontrar é o que veio depois. O MLPerf Inference: Datacenter é a rodada de
+testes em que a indústria submete resultados auditados; ela tem uma categoria específica em que a
+potência é **medida na tomada**, com o consumo real do sistema inteiro durante o teste. Fui contar
+quantas medições de potência a Nvidia submeteu para a geração Blackwell — a geração do 25x.
+
+Baixei o registro de submissões das três últimas rodadas (v5.0, v5.1 e v6.0) direto do repositório
+público da MLCommons e contei linha por linha.
+
+| Rodada | Resultados submetidos pela Nvidia | Com potência medida |
+|---|---|---|
+| v5.0 | 75 | **0** |
+| v5.1 | 34 | **0** |
+| v6.0 | 61 | **0** |
+| **Total** | **170** | **0** |
+
+**Cento e setenta resultados submetidos pela Nvidia nas três últimas rodadas, nenhum com medição de
+potência.** E não é que a categoria seja impossível de cumprir: na geração anterior a própria Nvidia
+cumpria. Os sistemas com sufixo `MaxQ` são as submissões dela com potência medida, e existem para o
+H100 na rodada v4.0 e para o H200 na v4.1 — com os diretórios de medição no lugar, do jeito que a
+regra exige.
+
+<StepFlowDiagram dataset="energia-mlperf-potencia" title="A Nvidia media potência até a geração anterior" subtitle="Submissões da empresa à categoria de potência do MLPerf Inference: Datacenter" description="Linha do tempo de cinco rodadas do MLPerf: nas rodadas v4.0 e v4.1 a Nvidia submeteu sistemas com potência medida, para H100 e H200; nas rodadas v5.0, v5.1 e v6.0, com a geração Blackwell, não submeteu nenhuma medição de potência." source="Registro de submissões da MLCommons, lido em 2026-09-02 · ulissesflores.com/energia" />
+
+Repare no que a linha do tempo não diz: ela não diz que a Nvidia se recusa a medir. Eu não sei a
+intenção de ninguém, e ninguém precisa dessa informação para entender o problema. O que o registro
+mostra é o que ele contém — e ele contém 170 resultados sem potência. Medir Blackwell é possível, e
+alguém mediu: a **Lenovo** submeteu 12 resultados com potência medida em servidores com placas B200,
+na rodada v5.1. Não foi o fabricante que publica o 25 vezes.
+
+Duas ressalvas honestas, porque elas mudam o tamanho da afirmação. A primeira: isso vale para o
+MLPerf Inference: Datacenter, mais as poucas linhas da própria Nvidia nas categorias de borda, nas
+rodadas v5.0, v5.1 e v6.0. Não varri Green500, SPECpower nem as outras suítes do MLPerf, e portanto
+não afirmo nada sobre elas. A segunda: **não dá para comparar esse 25x com o "2,6 vezes" que
+circula como se fosse a auditoria dele.** São grandezas diferentes — o 25x é de eficiência
+energética, o 2,6x é de desempenho puro por placa, e sai de um blog da própria Nvidia. Parear os
+dois seria eu cometendo exatamente o defeito que este artigo veio catalogar.
+
+---
+
+## A conta média esconde quem paga a conta
+
+Antes de sair de watt-hora por pergunta, vale olhar o que a média esconde — porque é o mesmo
+mecanismo que vai esconder o Brasil daqui a três seções.
+
+Um preprint de junho de 2026, de pesquisadores de Michigan, Cambridge e Aberdeen, mediu o consumo
+de energia de modelos de linguagem abertos em **122 idiomas**, com o mesmo conjunto de perguntas
+traduzido para todos. A distância entre o mais barato e o mais caro é de **179 vezes**.
+
+<CountryBarsChart dataset="energia-linguas-acerto" title="Quem gasta mais energia recebe a resposta pior" subtitle="Cinco das 122 línguas medidas — a barra é o acerto; depois do ponto, a energia contra o inglês" description="Barras de acerto para cinco idiomas em dois blocos. No bloco das duas línguas mais baratas, inglês marca 94,6% de acerto com 1 vez a energia e português marca 90,2% com 1,5 vez a energia. No bloco das três mais caras, pashto do sul marca 40,4% de acerto com 188 vezes a energia, tibetano marca 21,9% com 180 vezes e shan marca 10,6% com 175 vezes." source="Deng et al., arXiv 2606.21869v1, Tabela 5 (preprint) · ulissesflores.com/energia" />
+
+Eu ia escrever este trecho de outro jeito. A versão que eu tinha na cabeça era *"a unidade que o
+mundo discute foi medida em inglês, e você, que lê em português, paga mais"*. Fui conferir a tabela
+e a segunda metade é falsa: **o português é a segunda língua mais barata das 122**, atrás só do
+inglês, com 1,47 vez a energia dele. Publicar a versão original teria sido fabricar uma indignação
+contra a minha própria fonte.
+
+O que a tabela mostra é pior, e não é conosco. A divisão existe e é brutal, só que ela cai sobre
+quem fala pashto, tibetano e shan — e essas mesmas línguas recebem a resposta **errada** com muito
+mais frequência. O shan gasta 175 vezes a energia do inglês para acertar 10,6% das vezes, contra
+94,6% do inglês. **A conta média some com quem paga mais e recebe menos.**
+
+Três ressalvas que não cabem em rodapé. É um **preprint**, sem revisão por pares. Os modelos
+medidos são abertos e rodaram numa placa de cluster acadêmico, com contador de hardware, não com
+medidor de tomada: os joules absolutos **não** são comparáveis com o "0,3 watt-hora" de produção, e
+só as **razões** entre línguas viajam. E parte da diferença não é a língua ser mais longa — é o
+modelo travando em repetição quando o idioma é mal coberto pelo treino, o que é defeito de
+engenharia, não custo intrínseco do idioma. O próprio paper dá dois valores para o mesmo par
+inglês-pashto: 179 vezes na tabela principal e 187,8 na Tabela 5, que é a que alimenta a figura
+acima. Uso os 179 que os autores assinam e registro a diferença aqui.
+
+---
+
+## A pergunta certa é quantos megawatts entram na rede, em que rede, em que ano
+
+Watt-hora por pergunta não decide nada. Nenhuma distribuidora de energia planeja subestação com
+esse número, nenhum órgão de planejamento dimensiona linha de transmissão com ele. O que decide é
+quanta potência entra na rede, em qual rede e em que ano.
+
+Nos Estados Unidos esse número é publicado. O Laboratório Nacional Lawrence Berkeley projeta que os
+data centers do país consumam **649 TWh em 2030**, o equivalente a 11,8% de todo o consumo elétrico
+americano, numa faixa de incerteza de 521 a 843 TWh. Mas o número que quase ninguém repercutiu é
+outro, e está no mesmo relatório.
+
+<WaffleChart dataset="energia-crescimento-carga-eua" title="Um terço do crescimento elétrico americano até 2030 é data center" subtitle="Participação no crescimento da carga entre 2024 e 2030, segundo o Lawrence Berkeley National Laboratory" description="Grade de trezentos pontos dividida em duas categorias: noventa e nove pontos, um terço do total, representam a parcela do crescimento da carga elétrica dos Estados Unidos atribuída a data centers entre 2024 e 2030; duzentos e um pontos representam todo o resto do crescimento, equivalente a 926 TWh." source="LBNL, 2025 United States Data Center Energy Usage Report · ulissesflores.com/energia" />
+
+**De cada três unidades de crescimento elétrico americano até 2030, uma é data center.** É uma
+frase muito mais dura que "11,8% do consumo", e ela estava na mesma página. O relatório também diz
+uma coisa que contraria o senso comum: o cenário que mais empurra a projeção para cima não é
+treinar modelos maiores, é **servidor de inferência parado**, ocioso, esperando pergunta. Sozinho,
+esse cenário leva a projeção a 782 TWh.
+
+Uma nota de conferência sobre a fonte que me trouxe até aqui: um levantamento alemão bem feito, que
+acerta o LBNL, acerta a EPRI e acerta a maior parte da Agência Internacional de Energia. Ele erra
+num ponto que qualquer leitor confere com uma divisão — repete "cerca de 1,5% do consumo global"
+para 2024 **e** para 2025, dizendo no mesmo texto que o consumo subiu 17% entre os dois anos. Para
+a participação ficar parada, o consumo elétrico do mundo teria de ter crescido 17% em um ano. Não
+cresceu. A própria Agência Internacional de Energia dá o valor certo: **1,7% em 2025**, indo para
+cerca de 3% em 2030.
+
+---
+
+## Quem mede publica até o endereço — e a América Latina não tem endereço
+
+A Microsoft publica um documento anexo ao relatório de sustentabilidade em que lista o consumo de
+eletricidade dos seus data centers **localidade por localidade**. São 29 endereços, de Dublin a
+Boydton, na Virgínia, somando 15.931.489 MWh — 43% de toda a eletricidade da empresa.
+
+Dessas 29 localidades, **uma única fica na América Latina**: Querétaro, no México, com 6.362 MWh.
+Só que outra tabela do mesmo documento informa o consumo da região inteira: 661.556 MWh no ano
+fiscal de 2025.
+
+<CountryBarsChart dataset="energia-microsoft-enderecos" title="O consumo latino-americano da Microsoft quase todo sem endereço" subtitle="Eletricidade no ano fiscal de 2025, em MWh — em ouro, o que não tem localidade publicada" description="Quatro barras de consumo elétrico. Com endereço publicado: Boydton, na Virgínia, com 3.113.847 MWh; Dublin, na Irlanda, com 1.308.581 MWh; e Querétaro, no México, com 6.362 MWh. Sem endereço publicado: o restante da América Latina, com 655.194 MWh." source="Microsoft, Environmental Data Fact Sheet 2026, Tabelas 13 e 15 · ulissesflores.com/energia" />
+
+A subtração é de uma linha: 661.556 menos 6.362 dá **655.194 MWh — 99,04% do consumo
+latino-americano da Microsoft sem localidade publicada**. E o fecho está na tabela de metodologia do
+mesmo documento, onde a empresa **cita o Brasil pelo nome**: ela usa o fator médio de emissão do
+Ministério da Ciência e Tecnologia brasileiro para calcular a emissão da eletricidade que consome
+aqui. Ela sabe quanto consome no Brasil. Ela calcula a emissão disso. E não publica o número.
+
+A ressalva obrigatória: **essa tabela cobre só data centers próprios**, com controle operacional, e
+exclui localidades que "coletivamente representam menos de 1%" do total. A ausência do Brasil é
+compatível com capacidade alugada de terceiros ou com esse limiar de corte, e o documento não diz
+qual dos dois é o caso. Eu também não sei, e não vou inventar a causa: o que está registrado é a
+ausência.
+
+---
+
+## Quem não mede é o Brasil, e quem deveria medir diz isso por escrito
+
+A Empresa de Pesquisa Energética fez em outubro e novembro de 2025 a **primeira coleta** de dados
+de consumo de data centers do país, cobrindo entre 65% e 82% do mercado, e registrou numa
+apresentação de dezembro que "os dados desta coleta ainda não estão refletidos" no plano de
+expansão. Não é que o número seja ruim. É que ele ainda não existe.
+
+Enquanto isso, a fila cresce.
+
+<CountryBarsChart dataset="energia-brasil-fila" title="A fila brasileira é no mínimo 35 vezes o que já está operando" subtitle="Potência de data center no Brasil, em megawatts" description="Duas barras de potência de data center no Brasil. Pedidos de conexão à rede até 2038 somam entre 21 e 26 gigawatts, plotados no ponto médio de 23.500 megawatts. Capacidade efetivamente em operação hoje soma entre 300 e 600 megawatts, plotados no ponto médio de 450 megawatts. Mesmo comparando a borda mais conservadora de cada faixa, a fila é 35 vezes a operação." source="Pedidos de conexão e capacidade operante, levantamento do artigo · ulissesflores.com/energia" />
+
+**Entre 21 e 26 gigawatts em pedidos de conexão até 2038, contra algo entre 300 e 600 megawatts
+operando hoje.** A barra menor é tão pequena na escala da maior que quase some — e é essa a
+proporção real. Nem todo pedido de conexão vira data center: a fila é intenção, não obra. Mas é
+exatamente por isso que ela precisaria estar medida e publicada, do jeito que o Lawrence Berkeley
+publica a americana. Nos Estados Unidos esse mesmo padrão — fila muito maior que obra — já está maduro
+o bastante para que condados da Virgínia estejam discutindo moratória.
+
+E o regime que puxa essa fila ainda não é lei. O projeto que cria o REDATA foi aprovado na Câmara
+em fevereiro de 2026 e **no Senado em 1º de setembro de 2026** — a véspera desta apuração. Está
+aguardando sanção presidencial. Quem escrever "o Brasil aprovou o regime" sem essa distinção está
+adiantando um passo que não foi dado.
+
+---
+
+## Os números brasileiros que circulam já estão com o dono trocado
+
+Duas vezes, ao rastrear números brasileiros deste assunto, eu cheguei na fonte e encontrei outra
+coisa. Não são erros de digitação: são números que trocaram de dono no caminho.
+
+**O primeiro caso é o estudo da FGV que não é da FGV.** Circula que "um estudo da FGV mostra que o
+custo de um data center no Brasil é 26,7% maior que nos Estados Unidos, e cai para 17,7% com o
+REDATA". Fui ler o relatório. Na página 59 está escrito que **um estudo preliminar da Brasscom** —
+a associação das empresas de tecnologia, não a FGV — é que estima esses valores; que o relatório da
+FGV Projetos foi **encomendado por operadores de data center**; e, principalmente, que os 17,7%
+**ainda são mais caros** que o padrão americano. A paridade, diz a mesma frase, só chega com o
+REDATA **somado** a um ajuste de ICMS. O post que circulou cortou justamente a metade que muda a
+conclusão.
+
+**O segundo caso viajou 2.900 quilômetros.** Circula que o data center do TikTok em Pecém, no
+Ceará, vai chegar a 4,75 gigawatts, mais de 120 vezes os 39 megawatts de São Paulo. Os 4,75
+gigawatts existem, e são reais — só que são da **Scala Data Centers**, num campus chamado AI City,
+em **Eldorado do Sul, no Rio Grande do Sul**. O projeto de Pecém, segundo posicionamento oficial do
+Governo do Ceará em agosto de 2026, é de **300 megawatts brutos**, 200 deles para tecnologia da
+informação, com operação prevista para o último trimestre de 2027.
+
+<StepFlowDiagram dataset="energia-cadeia-da-atribuicao" title="Como um número muda de dono em quatro passos" subtitle="A mesma corrente da primeira figura, agora com um número brasileiro" description="Cadeia de quatro etapas mostrando a migração de um número: a Scala anuncia um campus de até 4,75 gigawatts no Rio Grande do Sul; o número aparece em três fontes independentes ligado ao projeto gaúcho; num post o mesmo número vira o teto do projeto do TikTok em Pecém, no Ceará; e a comparação com São Paulo vira 120 vezes. As duas últimas etapas estão marcadas como o ponto em que a atribuição quebrou." source="Figura do artigo · ulissesflores.com/energia" />
+
+É a mesma corrente da primeira figura, com outro conteúdo: cada elo é defensável sozinho, e o
+resultado no fim é falso. **Com o número certo, a razão contra São Paulo não é 120 vezes: é 7,7.**
+Continua sendo muito. Só não é o que se disse.
+
+Isso é um parente próximo de uma lição que já apareceu aqui: [a estatística que circula pode ser
+milhares de vezes menor que a alegação](/artigos/estatisticas-claude-code) — e o mecanismo é sempre
+o mesmo, um número correto que perde a etiqueta de origem no caminho.
+
+---
+
+## O trunfo real é o carbono, e a restrição real é a água
+
+O argumento de venda do Brasil como destino de data center é a matriz elétrica limpa, e ele é
+verdadeiro. Calculado com os números oficiais de cada país, o mesmo megawatt-hora consumido aqui
+emite uma fração do que emite lá.
+
+<CountryBarsChart dataset="energia-carbono-por-kwh" title="O mesmo megawatt-hora emite sete vezes e meia menos no Brasil" subtitle="Intensidade de carbono da eletricidade, em gramas de CO2 por kWh, dados oficiais de cada país" description="Três barras de intensidade de carbono da eletricidade. Brasil, Sistema Interligado Nacional em 2025, marca 46,1 gramas de CO2 por kWh. Estados Unidos, eGRID 2023, marca 348 gramas. Alemanha, Agência Federal do Ambiente em 2024, marca 363 gramas." source="MCTI (Brasil), EPA eGRID2023 (EUA) e UBA (Alemanha) · ulissesflores.com/energia" />
+
+**46,1 gramas de CO2 por kWh no Brasil, contra 348 nos Estados Unidos: sete vezes e meia menos
+carbono pelo mesmo consumo.** É um trunfo real, e é raro um país ter um argumento tão limpo.
+
+Só que carbono não é a restrição aqui. Água é. Os dois maiores polos de data center do país, Ceará
+e São Paulo, estavam em novembro de 2025 entre os oito estados com **seca em 100% do território**.
+No projeto mais adiantado, em Caucaia, no Ceará, a outorga estadual liberou retirada de 144 mil
+litros de água por dia, contra 19,7 mil litros declarados no licenciamento — **7,3 vezes mais**. E
+o Ministério Público Federal recomendou, em maio de 2026, suspender o início da operação até que
+consulta indígena e monitoramento hidrogeológico estejam regularizados.
+
+Quando a restrição real é outra que a discutida, o gargalo não se move — e essa é uma lição que já
+vale [para qualquer sistema com um só gargalo de verdade](/artigos/teoria-das-restricoes).
+
+### A comparação que eu não fiz, e por quê
+
+Você deve ter reparado que este artigo não traduziu nenhum consumo em "equivalente a tantas
+residências". É a comparação favorita de quem escreve sobre isso, minha inclusive, e a própria
+reportagem de onde saiu o número oficial de Pecém usa o recurso já no título: o consumo dos data
+centers do Ceará "equivalente a 7 milhões de residências".
+
+Deixei de fora porque o órgão ambiental do estado, a Semace, contestou o recurso na mesma
+reportagem: a comparação "deve ser analisada com cautela", porque o data center opera 24 horas por
+dia com carga concentrada, a residência oscila ao longo do dia, e a métrica doméstica não conta o
+consumo indireto de energia por serviços e espaços públicos. A objeção é boa e vale contra mim
+tanto quanto contra qualquer outro. **A comparação com residências dá escala, não dá
+equivalência** — e um artigo que passou sete seções cobrando ficha técnica de número alheio não
+tinha como usar essa.
+
+---
+
+## O que precisaria ser publicado
+
+Não é preciso inventar instituição nova nem esperar tecnologia nenhuma. O que falta já é publicado
+em outros lugares, no mesmo formato:
+
+1. **Carga contratada por empreendimento, com localidade e ano de entrada.** É o que o Lawrence
+   Berkeley publica nos Estados Unidos e o Bitkom publica na Alemanha. A Empresa de Pesquisa
+   Energética já coletou o dado; falta publicá-lo separado no plano de expansão.
+2. **A fila separada da obra.** Pedido de conexão não é data center. Publicar os dois números lado
+   a lado — solicitado e energizado — resolve metade da confusão que este artigo catalogou.
+3. **Outorga de água ao lado da carga elétrica.** No projeto mais adiantado do país os dois números
+   já divergem por um fator de 7,3, e eles vivem em bases de dados que não se falam.
+4. **Potência medida, não projetada, por quem vende eficiência.** A categoria existe, é auditada, e
+   o fabricante que anuncia 25 vezes já a cumpriu na geração anterior.
+
+Enquanto isso não existe, a única defesa do leitor é a mais chata: perguntar de quem é o número
+antes de perguntar se ele é grande. Quase todos os números desta apuração eram verdadeiros em algum
+lugar — só não no lugar onde estavam sendo usados. O mais repetido de todos não era verdadeiro
+em lugar nenhum, porque nunca teve onde ser conferido.
+
+Os cálculos que eu fiz para este artigo — a contagem das submissões do MLPerf Inference, a série dos leilões
+do PJM, a variação do preço residencial americano, a soma das localidades da Microsoft e a tabela
+das 122 línguas — estão no repositório público linkado abaixo, com teste travando
+cada número que apareceu aqui. Rode e confira. Se der diferente, me mande: eu atualizo o texto e credito.
+
+## Fontes
+
+- [LBNL, 2025 United States Data Center Energy Usage Report](https://eta.lbl.gov/publications/united-states-data-center-energy-2025)
+- [IEA, Energy and AI Observatory — Key Questions on Energy and AI (2026)](https://www.iea.org/reports/energy-and-ai)
+- [Google, 2026 Environmental Report](https://sustainability.google/reports/)
+- [Google, Measuring the environmental impact of AI inference (arXiv:2508.15734)](https://arxiv.org/abs/2508.15734)
+- [Microsoft, Environmental Data Fact Sheet 2026](https://aka.ms/SustainabilityFactsheet2026)
+- [MLCommons, MLPerf Inference: Datacenter](https://mlcommons.org/benchmarks/inference-datacenter/)
+- [Deng et al., The Language-Energy Divide (arXiv:2606.21869v1, preprint)](https://arxiv.org/abs/2606.21869)
+- [EPE, Coleta de dados de data centers na distribuição (dez/2025)](https://www.epe.gov.br/)
+- [FGV Projetos, Custo Brasil para data centers](https://fgvprojetos.fgv.br/)
+- [Governo do Ceará, posicionamento sobre o data center de Pecém — Diário do Nordeste, 31/08/2026](https://diariodonordeste.verdesmares.com.br/opiniao/colunistas/mariana-lemos/data-centers-no-ceara-podem-consumir-energia-equivalente-a-7-milhoes-de-residencias-1.3787130)
+- [U.S. Department of Commerce, Brazil: Energy Demands and Data Center Growth](https://www.trade.gov/market-intelligence/brazil-energy-demands-and-data-center-growth)
+- [Gradually.ai, KI-Energieverbrauch: Statistiken 2026](https://www.gradually.ai/ki-energieverbrauch-statistiken/) — o levantamento alemão conferido neste artigo
+- [Andy Masley, sobre amortizar o treino no consumo por pergunta](https://x.com/AndyMasley/status/2040903612168372294)
+- [Repositório companion com os cálculos próprios deste artigo](https://github.com/ulissesflores/ai-energy-claim-provenance)

@@ -124,6 +124,43 @@ export const artigos: readonly Artigo[] = [
     },
   },
   {
+    slug: 'consumo-energia-ia',
+    title: 'O Brasil virou destino de data center e não mede o que eles gastam',
+    summary:
+      'Conferi um a um os números que circulam sobre energia de IA. Seis dos sete tinham a ficha técnica trocada. O sétimo, que decidiria a rede aqui, não existe.',
+    date: '2026-09-04',
+    tags: ['ia', 'energia', 'data-center', 'brasil', 'fact-check', 'metodologia'],
+    hero: {
+      width: 2400,
+      height: 1260,
+      locales: {
+        'pt-br': { src: '/artigos/consumo-energia-ia/hero.png', og: '/artigos/consumo-energia-ia/hero-og.png' },
+        'en': { src: '/artigos/consumo-energia-ia/hero-en.png', og: '/artigos/consumo-energia-ia/hero-en-og.png' },
+        'es': { src: '/artigos/consumo-energia-ia/hero-es.png', og: '/artigos/consumo-energia-ia/hero-es-og.png' },
+        'it': { src: '/artigos/consumo-energia-ia/hero-it.png', og: '/artigos/consumo-energia-ia/hero-it-og.png' },
+        'he': { src: '/artigos/consumo-energia-ia/hero-he.png', og: '/artigos/consumo-energia-ia/hero-he-og.png' },
+      },
+    },
+    i18n: {
+      en: {
+        title: 'Brazil became a data center destination and does not measure what they use',
+        summary: 'I checked the numbers circulating about AI energy one by one. Six of seven had the wrong data sheet. The seventh, which would decide the grid, does not exist.',
+      },
+      es: {
+        title: 'Brasil se volvió destino de centros de datos y no mide lo que gastan',
+        summary: 'Comprobé uno a uno los números sobre energía de IA. Seis de siete tenían la ficha técnica cambiada. El séptimo, el que decidiría la red aquí, no existe.',
+      },
+      it: {
+        title: 'Il Brasile è diventato meta dei data center e non misura quanto consumano',
+        summary: 'Ho verificato uno per uno i numeri sull\'energia dell\'IA. Sei su sette avevano la scheda tecnica scambiata. Il settimo, che deciderebbe la rete qui, non esiste.',
+      },
+      he: {
+        title: 'ברזיל הפכה ליעד של מרכזי נתונים ואינה מודדת כמה הם צורכים',
+        summary: 'בדקתי אחד-אחד את המספרים שמסתובבים על אנרגיה של בינה מלאכותית. לשישה מתוך השבעה הייתה תווית טכנית מוחלפת. השביעי, שהיה מכריע את הרשת בברזיל, לא קיים.',
+      },
+    },
+  },
+  {
     slug: 'glm-5-3-flash',
     title:
       'GLM 5.3 Flash: 5 pontos abaixo do Fable por 3% do custo por tarefa — e a manchete dos 100 trilhões trocou de verbo no caminho',

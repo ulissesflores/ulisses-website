@@ -210,6 +210,11 @@ const nextConfig: NextConfig = {
       { source: '/deepfake-es', destination: '/es/artigos/estatisticas-deepfakes', permanent: true },
       { source: '/deepfake-it', destination: '/it/artigos/estatisticas-deepfakes', permanent: true },
       { source: '/deepfake-he', destination: '/he/artigos/estatisticas-deepfakes', permanent: true },
+      { source: '/energia',    destination: '/artigos/consumo-energia-ia',    permanent: true },
+      { source: '/energia-en', destination: '/en/artigos/consumo-energia-ia', permanent: true },
+      { source: '/energia-es', destination: '/es/artigos/consumo-energia-ia', permanent: true },
+      { source: '/energia-it', destination: '/it/artigos/consumo-energia-ia', permanent: true },
+      { source: '/energia-he', destination: '/he/artigos/consumo-energia-ia', permanent: true },
     ];
 
     // Locale handling (double-locale 410 + single-locale 301 + i18n rewrite) moved to middleware.ts

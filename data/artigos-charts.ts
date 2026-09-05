@@ -785,6 +785,49 @@ export interface WaffleDataset {
  * to maintainer -> Acknowledged -> Patched -> Publicly disclosed).
  */
 export const waffleDatasets: Record<string, WaffleDataset> = {
+  /**
+   * `energia-crescimento-carga-eua` — degrau 3.
+   * PROCEDENCIA: LBNL, 2025 United States Data Center Energy Usage Report (DOI
+   * 10.71468/P1RP4F): "data centers being responsible for 33% of total load growth over
+   * the six-year period" e "non-data center load growth will increase 926 TWh (24%)".
+   * ESCALA: 300 pontos (6 fileiras de 50) = 3 pontos por ponto percentual. A grade tem
+   * COLS=50; 100 pontos dariam só 2 fileiras.
+   */
+  'energia-crescimento-carga-eua': {
+    categories: [
+      { label: 'Data centers', sublabel: '33% do crescimento', color: '#a48f65', count: 99 },
+      { label: 'Todo o resto', sublabel: '67% — 926 TWh', color: '#3f3f46', count: 201 },
+    ],
+  },
+
+  'energia-crescimento-carga-eua-en': {
+    categories: [
+      { label: 'Data centers', sublabel: '33% of the growth', color: '#a48f65', count: 99 },
+      { label: 'All the rest', sublabel: '67% — 926 TWh', color: '#3f3f46', count: 201 },
+    ],
+  },
+
+  'energia-crescimento-carga-eua-es': {
+    categories: [
+      { label: 'Centros de datos', sublabel: '33% del crecimiento', color: '#a48f65', count: 99 },
+      { label: 'Todo lo demás', sublabel: '67% — 926 TWh', color: '#3f3f46', count: 201 },
+    ],
+  },
+
+  'energia-crescimento-carga-eua-it': {
+    categories: [
+      { label: 'Data center', sublabel: '33% della crescita', color: '#a48f65', count: 99 },
+      { label: 'Tutto il resto', sublabel: '67% — 926 TWh', color: '#3f3f46', count: 201 },
+    ],
+  },
+
+  'energia-crescimento-carga-eua-he': {
+    categories: [
+      { label: 'מרכזי נתונים', sublabel: '‏33% מהגידול', color: '#a48f65', count: 99 },
+      { label: 'כל השאר', sublabel: '67% — 926 TWh', color: '#3f3f46', count: 201 },
+    ],
+  },
+
   'deepfake-perdas-verificadas-he': {
     categories: [
       { label: 'בלי ערך מיוחס', sublabel: '2,107 · 93.0% מהמאגר', color: '#3f3f46', count: 2107 },
@@ -1184,6 +1227,467 @@ export interface CountryBarsDataset {
  * TIC Domicílios 2025, 1ª medição) sobre 213,4 mi (IBGE 2025).
  */
 export const countryBarsDatasets: Record<string, CountryBarsDataset> = {
+  /**
+   * `energia-linguas-acerto` — degrau 2. A BARRA CODIFICA O ACERTO (0-100, linear); a
+   * razão de energia contra o ingles vai no `valueLabel`, porque 188x não cabe em barra
+   * linear sem sumir com as duas primeiras.
+   * PROCEDENCIA: Deng et al., arXiv 2606.21869v1 (preprint), Tabela 5, parse próprio das
+   * 122 linhas. Razoes = energia total da lingua / 16.762,1 J do ingles. O par
+   * ingles-pashto da 187,8x na Tabela 5 e 179x na tabela principal, que e o valor que os
+   * autores assinam e que o texto usa; a figura declara que vem da Tabela 5.
+   */
+  'energia-linguas-acerto': {
+    max: 100,
+    groups: [
+      {
+        label: 'As duas línguas mais baratas das 122',
+        color: '#60a5fa',
+        items: [
+          { name: 'Inglês', value: 94.6, valueLabel: '94,6% · 1x' },
+          { name: 'Português', value: 90.2, valueLabel: '90,2% · 1,5x', emphasis: true },
+        ],
+      },
+      {
+        label: 'As três mais caras das 122',
+        color: '#a48f65',
+        items: [
+          { name: 'Pashto do sul', value: 40.4, valueLabel: '40,4% · 188x' },
+          { name: 'Tibetano', value: 21.9, valueLabel: '21,9% · 180x' },
+          { name: 'Shan', value: 10.6, valueLabel: '10,6% · 175x', emphasis: true },
+        ],
+      },
+    ],
+  },
+
+  /**
+   * `energia-microsoft-enderecos` — degrau 4.
+   * PROCEDENCIA: Microsoft, Environmental Data Fact Sheet 2026 (https://aka.ms/SustainabilityFactsheet2026).
+   * Tabela 15 (consumo por localidade, FY25) para Boydton, Dublin e Querétaro; Tabela 13
+   * (consumo por região) para a América Latina, 661.556 MWh. A barra em ouro e subtração
+   * própria: 661.556 - 6.362 = 655.194 MWh, 99,04% da região.
+   * RESSALVA no texto: a Tabela 15 cobre só data centers proprios e exclui localidades que
+   * somam menos de 1% do total.
+   */
+  'energia-microsoft-enderecos': {
+    max: 3200000,
+    groups: [
+      {
+        label: 'Com localidade publicada (3 das 29)',
+        color: '#60a5fa',
+        items: [
+          { name: 'Boydton, EUA', value: 3113847, valueLabel: '3.113.847' },
+          { name: 'Dublin, Irlanda', value: 1308581, valueLabel: '1.308.581' },
+          { name: 'Querétaro, México', value: 6362, valueLabel: '6.362' },
+        ],
+      },
+      {
+        label: 'Sem localidade publicada',
+        color: '#a48f65',
+        items: [
+          { name: 'América Latina', value: 655194, valueLabel: '655.194 — 99% da região', emphasis: true },
+        ],
+      },
+    ],
+  },
+
+  /**
+   * `energia-brasil-fila` — degrau 5.
+   * PROCEDENCIA: pedidos de conexão até 2038 = faixa de 21 a 26 GW levantada no dossie
+   * (ponto médio 23.500 MW plotado, faixa no rotulo); capacidade em operação = faixa de
+   * 300 a 600 MW (ponto médio 450 MW plotado, faixa no rotulo). AMBOS são faixas, não
+   * pontos: o `valueLabel` carrega a faixa e o texto repete que fila e intenção, não obra.
+   */
+  'energia-brasil-fila': {
+    max: 26000,
+    groups: [
+      {
+        label: 'Pedidos de conexão à rede até 2038',
+        color: '#a48f65',
+        items: [
+          { name: 'Na fila', value: 23500, valueLabel: '21 a 26 mil', emphasis: true },
+        ],
+      },
+      {
+        label: 'Capacidade em operação hoje',
+        color: '#60a5fa',
+        items: [
+          { name: 'Operando', value: 450, valueLabel: '300 a 600' },
+        ],
+      },
+    ],
+  },
+
+  /**
+   * `energia-carbono-por-kwh` — degrau 7. A cor codifica o papel: ouro na matriz que o
+   * artigo quer que o leitor veja primeiro, azul nas matrizes de comparação.
+   * PROCEDENCIA: Brasil = fator médio do SIN 2025, MCTI (inventarios corporativos);
+   * EUA = EPA eGRID2023 Summary Tables rev.2; Alemanha = Umweltbundesamt, 2024.
+   */
+  'energia-carbono-por-kwh': {
+    max: 400,
+    groups: [
+      {
+        label: 'A matriz brasileira',
+        color: '#a48f65',
+        items: [
+          { name: 'Brasil (SIN, 2025)', value: 46.1, valueLabel: '46,1 gCO2/kWh', emphasis: true },
+        ],
+      },
+      {
+        label: 'As matrizes de comparação',
+        color: '#60a5fa',
+        items: [
+          { name: 'EUA (eGRID 2023)', value: 348.0, valueLabel: '348 gCO2/kWh' },
+          { name: 'Alemanha (2024)', value: 363, valueLabel: '363 gCO2/kWh' },
+        ],
+      },
+    ],
+  },
+
+  'energia-linguas-acerto-en': {
+    max: 100,
+    groups: [
+      {
+        label: 'The two cheapest of the 122 languages',
+        color: '#60a5fa',
+        items: [
+          { name: 'English', value: 94.6, valueLabel: '94.6% · 1x' },
+          { name: 'Portuguese', value: 90.2, valueLabel: '90.2% · 1.5x', emphasis: true },
+        ],
+      },
+      {
+        label: 'The three most expensive of the 122',
+        color: '#a48f65',
+        items: [
+          { name: 'Southern Pashto', value: 40.4, valueLabel: '40.4% · 188x' },
+          { name: 'Tibetan', value: 21.9, valueLabel: '21.9% · 180x' },
+          { name: 'Shan', value: 10.6, valueLabel: '10.6% · 175x', emphasis: true },
+        ],
+      },
+    ],
+  },
+
+  'energia-microsoft-enderecos-en': {
+    max: 3200000,
+    groups: [
+      {
+        label: 'With a published location (3 of 29)',
+        color: '#60a5fa',
+        items: [
+          { name: 'Boydton, USA', value: 3113847, valueLabel: '3,113,847' },
+          { name: 'Dublin, Ireland', value: 1308581, valueLabel: '1,308,581' },
+          { name: 'Querétaro, Mexico', value: 6362, valueLabel: '6,362' },
+        ],
+      },
+      {
+        label: 'Without a published location',
+        color: '#a48f65',
+        items: [
+          { name: 'Latin America', value: 655194, valueLabel: '655,194 — 99% of the region', emphasis: true },
+        ],
+      },
+    ],
+  },
+
+  'energia-brasil-fila-en': {
+    max: 26000,
+    groups: [
+      {
+        label: 'Grid connection requests to 2038',
+        color: '#a48f65',
+        items: [
+          { name: 'In the queue', value: 23500, valueLabel: '21–26 thousand', emphasis: true },
+        ],
+      },
+      {
+        label: 'Capacity in operation today',
+        color: '#60a5fa',
+        items: [
+          { name: 'Operating', value: 450, valueLabel: '300 to 600' },
+        ],
+      },
+    ],
+  },
+
+  'energia-carbono-por-kwh-en': {
+    max: 400,
+    groups: [
+      {
+        label: 'The Brazilian grid mix',
+        color: '#a48f65',
+        items: [
+          { name: 'Brazil (SIN, 2025)', value: 46.1, valueLabel: '46.1 gCO2/kWh', emphasis: true },
+        ],
+      },
+      {
+        label: 'The comparison grid mixes',
+        color: '#60a5fa',
+        items: [
+          { name: 'USA (eGRID 2023)', value: 348.0, valueLabel: '348 gCO2/kWh' },
+          { name: 'Germany (2024)', value: 363, valueLabel: '363 gCO2/kWh' },
+        ],
+      },
+    ],
+  },
+
+  'energia-linguas-acerto-es': {
+    max: 100,
+    groups: [
+      {
+        label: 'Los dos idiomas más baratos de los 122',
+        color: '#60a5fa',
+        items: [
+          { name: 'Inglés', value: 94.6, valueLabel: '94,6% · 1x' },
+          { name: 'Portugués', value: 90.2, valueLabel: '90,2% · 1,5x', emphasis: true },
+        ],
+      },
+      {
+        label: 'Los tres más caros de los 122',
+        color: '#a48f65',
+        items: [
+          { name: 'Pastún del sur', value: 40.4, valueLabel: '40,4% · 188x' },
+          { name: 'Tibetano', value: 21.9, valueLabel: '21,9% · 180x' },
+          { name: 'Shan', value: 10.6, valueLabel: '10,6% · 175x', emphasis: true },
+        ],
+      },
+    ],
+  },
+
+  'energia-microsoft-enderecos-es': {
+    max: 3200000,
+    groups: [
+      {
+        label: 'Con localidad publicada (3 de 29)',
+        color: '#60a5fa',
+        items: [
+          { name: 'Boydton, EE. UU.', value: 3113847, valueLabel: '3.113.847' },
+          { name: 'Dublín, Irlanda', value: 1308581, valueLabel: '1.308.581' },
+          { name: 'Querétaro, México', value: 6362, valueLabel: '6.362' },
+        ],
+      },
+      {
+        label: 'Sin localidad publicada',
+        color: '#a48f65',
+        items: [
+          { name: 'América Latina', value: 655194, valueLabel: '655.194 — 99% de la región', emphasis: true },
+        ],
+      },
+    ],
+  },
+
+  'energia-brasil-fila-es': {
+    max: 26000,
+    groups: [
+      {
+        label: 'Solicitudes de conexión a la red hasta 2038',
+        color: '#a48f65',
+        items: [
+          { name: 'En la cola', value: 23500, valueLabel: '21 a 26 mil', emphasis: true },
+        ],
+      },
+      {
+        label: 'Capacidad en operación hoy',
+        color: '#60a5fa',
+        items: [
+          { name: 'Operando', value: 450, valueLabel: '300 a 600' },
+        ],
+      },
+    ],
+  },
+
+  'energia-carbono-por-kwh-es': {
+    max: 400,
+    groups: [
+      {
+        label: 'La matriz brasileña',
+        color: '#a48f65',
+        items: [
+          { name: 'Brasil (SIN, 2025)', value: 46.1, valueLabel: '46,1 gCO2/kWh', emphasis: true },
+        ],
+      },
+      {
+        label: 'Las matrices de comparación',
+        color: '#60a5fa',
+        items: [
+          { name: 'EE. UU. (eGRID 2023)', value: 348.0, valueLabel: '348 gCO2/kWh' },
+          { name: 'Alemania (2024)', value: 363, valueLabel: '363 gCO2/kWh' },
+        ],
+      },
+    ],
+  },
+
+  'energia-linguas-acerto-it': {
+    max: 100,
+    groups: [
+      {
+        label: 'Le due lingue più economiche delle 122',
+        color: '#60a5fa',
+        items: [
+          { name: 'Inglese', value: 94.6, valueLabel: '94,6% · 1x' },
+          { name: 'Portoghese', value: 90.2, valueLabel: '90,2% · 1,5x', emphasis: true },
+        ],
+      },
+      {
+        label: 'Le tre più care delle 122',
+        color: '#a48f65',
+        items: [
+          { name: 'Pashto meridionale', value: 40.4, valueLabel: '40,4% · 188x' },
+          { name: 'Tibetano', value: 21.9, valueLabel: '21,9% · 180x' },
+          { name: 'Shan', value: 10.6, valueLabel: '10,6% · 175x', emphasis: true },
+        ],
+      },
+    ],
+  },
+
+  'energia-microsoft-enderecos-it': {
+    max: 3200000,
+    groups: [
+      {
+        label: 'Con località pubblicata (3 su 29)',
+        color: '#60a5fa',
+        items: [
+          { name: 'Boydton, USA', value: 3113847, valueLabel: '3.113.847' },
+          { name: 'Dublino, Irlanda', value: 1308581, valueLabel: '1.308.581' },
+          { name: 'Querétaro, Messico', value: 6362, valueLabel: '6.362' },
+        ],
+      },
+      {
+        label: 'Senza località pubblicata',
+        color: '#a48f65',
+        items: [
+          { name: 'America Latina', value: 655194, valueLabel: '655.194 — 99% della regione', emphasis: true },
+        ],
+      },
+    ],
+  },
+
+  'energia-brasil-fila-it': {
+    max: 26000,
+    groups: [
+      {
+        label: 'Richieste di allacciamento alla rete fino al 2038',
+        color: '#a48f65',
+        items: [
+          { name: 'In coda', value: 23500, valueLabel: '21 a 26 mila', emphasis: true },
+        ],
+      },
+      {
+        label: 'Capacità in funzione oggi',
+        color: '#60a5fa',
+        items: [
+          { name: 'In funzione', value: 450, valueLabel: '300 a 600' },
+        ],
+      },
+    ],
+  },
+
+  'energia-carbono-por-kwh-it': {
+    max: 400,
+    groups: [
+      {
+        label: 'Il mix elettrico brasiliano',
+        color: '#a48f65',
+        items: [
+          { name: 'Brasile (SIN, 2025)', value: 46.1, valueLabel: '46,1 gCO2/kWh', emphasis: true },
+        ],
+      },
+      {
+        label: 'I mix di confronto',
+        color: '#60a5fa',
+        items: [
+          { name: 'USA (eGRID 2023)', value: 348.0, valueLabel: '348 gCO2/kWh' },
+          { name: 'Germania (2024)', value: 363, valueLabel: '363 gCO2/kWh' },
+        ],
+      },
+    ],
+  },
+
+  'energia-linguas-acerto-he': {
+    max: 100,
+    groups: [
+      {
+        label: 'שתי השפות הזולות ביותר מתוך 122',
+        color: '#60a5fa',
+        items: [
+          { name: 'אנגלית', value: 94.6, valueLabel: '94.6% · 1x' },
+          { name: 'פורטוגזית', value: 90.2, valueLabel: '90.2% · 1.5x', emphasis: true },
+        ],
+      },
+      {
+        label: 'שלוש היקרות ביותר מתוך 122',
+        color: '#a48f65',
+        items: [
+          { name: 'פשטו דרומית', value: 40.4, valueLabel: '40.4% · 188x' },
+          { name: 'טיבטית', value: 21.9, valueLabel: '21.9% · 180x' },
+          { name: 'שאן', value: 10.6, valueLabel: '10.6% · 175x', emphasis: true },
+        ],
+      },
+    ],
+  },
+
+  'energia-microsoft-enderecos-he': {
+    max: 3200000,
+    groups: [
+      {
+        label: 'עם אתר מפורסם (3 מתוך 29)',
+        color: '#60a5fa',
+        items: [
+          { name: 'בוידטון, ארצות הברית', value: 3113847, valueLabel: '3,113,847' },
+          { name: 'דבלין, אירלנד', value: 1308581, valueLabel: '1,308,581' },
+          { name: 'קרטארו, מקסיקו', value: 6362, valueLabel: '6,362' },
+        ],
+      },
+      {
+        label: 'בלי אתר מפורסם',
+        color: '#a48f65',
+        items: [
+          { name: 'אמריקה הלטינית', value: 655194, valueLabel: '‏655,194 — 99% מהאזור', emphasis: true },
+        ],
+      },
+    ],
+  },
+
+  'energia-brasil-fila-he': {
+    max: 26000,
+    groups: [
+      {
+        label: 'בקשות חיבור לרשת עד 2038',
+        color: '#a48f65',
+        items: [
+          { name: 'בתור', value: 23500, valueLabel: '‏21 עד 26 אלף', emphasis: true },
+        ],
+      },
+      {
+        label: 'קיבולת בתפעול היום',
+        color: '#60a5fa',
+        items: [
+          { name: 'פועל', value: 450, valueLabel: '‏300 עד 600' },
+        ],
+      },
+    ],
+  },
+
+  'energia-carbono-por-kwh-he': {
+    max: 400,
+    groups: [
+      {
+        label: 'התמהיל הברזילאי',
+        color: '#a48f65',
+        items: [
+          { name: 'ברזיל (SIN, 2025)', value: 46.1, valueLabel: '46.1 gCO2/kWh', emphasis: true },
+        ],
+      },
+      {
+        label: 'תמהילי ההשוואה',
+        color: '#60a5fa',
+        items: [
+          { name: 'ארה״ב (eGRID 2023)', value: 348.0, valueLabel: '348 gCO2/kWh' },
+          { name: 'גרמניה (2024)', value: 363, valueLabel: '363 gCO2/kWh' },
+        ],
+      },
+    ],
+  },
+
   'deepfake-procedencia-sete-he': {
     max: 7,
     groups: [
@@ -8269,6 +8773,187 @@ export interface StepFlowDataset {
 }
 
 export const stepFlowDatasets: Record<string, StepFlowDataset> = {
+  /**
+   * `energia-cadeia-do-escopo` — degrau 1. A corrente de referencia do artigo;
+   * `energia-cadeia-da-atribuicao` a repete com outro conteudo no degrau 6.
+   * PROCEDENCIA: os elos 1-2 são os escopos declarados em Altman (jun/2025) e no paper
+   * do Gemini (arXiv 2508.15734); o elo 3 está marcado por causa da frase literal do
+   * paper ("we leave the measurement of AI model training to future work"); o elo 5 não
+   * consta de nenhum relatorio de empresa consultado.
+   */
+  'energia-cadeia-do-escopo': {
+    orientation: 'chain',
+    steps: [
+      { label: 'A pergunta que você digita', detail: 'Onde começa a conta que todo mundo cita: 0,34 Wh, 0,3 Wh, 0,24 Wh.' },
+      { label: 'O modelo que responde', detail: 'Entra o chip, a memória e o servidor ocioso esperando a próxima pergunta.' },
+      { label: 'O treino do modelo', detail: 'Fica de fora: o paper do Google diz que deixou a medição do treino para depois.', alert: true },
+      { label: 'O prédio que hospeda', detail: 'Refrigeração e perdas entram por fator médio anual, não por medição local.' },
+      { label: 'A rede que alimenta o prédio', detail: 'Nenhum número publicado chega até aqui — e é aqui que se decide a rede.', alert: true },
+    ],
+  },
+
+  /**
+   * `energia-mlperf-potencia` — degrau 1, o achado próprio.
+   * PROCEDENCIA: contagem própria sobre `summary_results.json` das rodadas v5.0, v5.1 e
+   * v6.0 do MLPerf Inference (repositorios `mlcommons/inference_results_v*`), campo
+   * `has_power`, suite `datacenter`; e listagem de `closed/NVIDIA/results` em v4.0 e v4.1
+   * para os sistemas com sufixo `_MaxQ`. Lido em 2026-09-02. Trava no repo companion.
+   */
+  'energia-mlperf-potencia': {
+    orientation: 'timeline',
+    steps: [
+      { label: 'MLPerf v4.0', detail: 'H100 medido' },
+      { label: 'MLPerf v4.1', detail: 'H200 medido' },
+      { label: 'MLPerf v5.0', detail: '75 linhas, zero', alert: true },
+      { label: 'MLPerf v5.1', detail: 'Lenovo mede; Nvidia não', alert: true },
+      { label: 'MLPerf v6.0', detail: '61 linhas, zero', alert: true },
+    ],
+  },
+
+  /**
+   * `energia-cadeia-da-atribuicao` — degrau 6. MESMA geometria do degrau 1, dados novos.
+   * PROCEDENCIA: release da Scala (PR Newswire) e portal do Governo do RS para o campus de
+   * Eldorado do Sul; posicionamento oficial do Governo do Ceará ao Diario do Nordeste
+   * (31/08/2026) para os 300 MW brutos de Pecém; o post de origem está em X.
+   */
+  'energia-cadeia-da-atribuicao': {
+    orientation: 'chain',
+    steps: [
+      { label: 'A fonte', detail: 'A Scala anuncia um campus de até 4,75 GW em Eldorado do Sul, no Rio Grande do Sul.' },
+      { label: 'A repercussão', detail: 'O número aparece em três fontes independentes, sempre ligado ao campus gaúcho.' },
+      { label: 'O post', detail: 'Num post, o mesmo 4,75 GW vira o teto do data center do TikTok em Pecém, no Ceará.', alert: true },
+      { label: 'A comparação', detail: 'A razão contra São Paulo vira 120x. Com os 300 MW oficiais de Pecém, é 7,7x.', alert: true },
+    ],
+  },
+
+  'energia-cadeia-do-escopo-en': {
+    orientation: 'chain',
+    steps: [
+      { label: 'The prompt you type', detail: 'Where the bill everyone quotes begins: 0.34 Wh, 0.3 Wh, 0.24 Wh.' },
+      { label: 'The model that answers', detail: 'In come the chip, the memory and the idle server waiting for the next prompt.' },
+      { label: 'Training the model', detail: 'Left out: the Google paper says it left measuring training for later.', alert: true },
+      { label: 'The building that hosts it', detail: 'Cooling and losses enter by annual average factor, not by local measurement.' },
+      { label: 'The grid that feeds the building', detail: 'No published number reaches this far — and this is where the grid is decided.', alert: true },
+    ],
+  },
+
+  'energia-mlperf-potencia-en': {
+    orientation: 'timeline',
+    steps: [
+      { label: 'MLPerf v4.0', detail: 'H100 measured' },
+      { label: 'MLPerf v4.1', detail: 'H200 measured' },
+      { label: 'MLPerf v5.0', detail: '75 rows, zero', alert: true },
+      { label: 'MLPerf v5.1', detail: 'Lenovo measures; Nvidia not', alert: true },
+      { label: 'MLPerf v6.0', detail: '61 rows, zero', alert: true },
+    ],
+  },
+
+  'energia-cadeia-da-atribuicao-en': {
+    orientation: 'chain',
+    steps: [
+      { label: 'The source', detail: 'Scala announces a campus of up to 4.75 GW in Eldorado do Sul, Rio Grande do Sul.' },
+      { label: 'The pickup', detail: 'The number appears in three independent sources, always tied to the campus in the south.' },
+      { label: 'The post', detail: 'In a post, the same 4.75 GW becomes the ceiling of the TikTok data center in Pecém, Ceará.', alert: true },
+      { label: 'The comparison', detail: 'The ratio against São Paulo becomes 120x. With the official 300 MW of Pecém, it is 7.7x.', alert: true },
+    ],
+  },
+
+  'energia-cadeia-do-escopo-es': {
+    orientation: 'chain',
+    steps: [
+      { label: 'La pregunta que escribes', detail: 'Donde empieza la cuenta que todo el mundo cita: 0,34 Wh, 0,3 Wh, 0,24 Wh.' },
+      { label: 'El modelo que responde', detail: 'Entran el chip, la memoria y el servidor ocioso esperando la siguiente pregunta.' },
+      { label: 'El entrenamiento del modelo', detail: 'Queda fuera: el artículo de Google dice que dejó la medición del entrenamiento para después.', alert: true },
+      { label: 'El edificio que aloja', detail: 'Refrigeración y pérdidas entran por factor medio anual, no por medición local.' },
+      { label: 'La red que alimenta el edificio', detail: 'Ningún número publicado llega hasta aquí — y aquí se decide la red.', alert: true },
+    ],
+  },
+
+  'energia-mlperf-potencia-es': {
+    orientation: 'timeline',
+    steps: [
+      { label: 'MLPerf v4.0', detail: 'H100 medido' },
+      { label: 'MLPerf v4.1', detail: 'H200 medido' },
+      { label: 'MLPerf v5.0', detail: '75 filas, cero', alert: true },
+      { label: 'MLPerf v5.1', detail: 'Lenovo mide; Nvidia no', alert: true },
+      { label: 'MLPerf v6.0', detail: '61 filas, cero', alert: true },
+    ],
+  },
+
+  'energia-cadeia-da-atribuicao-es': {
+    orientation: 'chain',
+    steps: [
+      { label: 'La fuente', detail: 'Scala anuncia un campus de hasta 4,75 GW en Eldorado do Sul, Rio Grande do Sul.' },
+      { label: 'La repercusión', detail: 'El número aparece en tres fuentes independientes, siempre ligado al campus gaúcho.' },
+      { label: 'El post', detail: 'En un post, los mismos 4,75 GW son el techo del centro de datos de TikTok en Pecém, Ceará.', alert: true },
+      { label: 'La comparación', detail: 'La razón contra São Paulo pasa a 120x. Con los 300 MW oficiales de Pecém, es 7,7x.', alert: true },
+    ],
+  },
+
+  'energia-cadeia-do-escopo-it': {
+    orientation: 'chain',
+    steps: [
+      { label: 'La domanda che digiti', detail: 'Dove comincia il conto che tutti citano: 0,34 Wh, 0,3 Wh, 0,24 Wh.' },
+      { label: 'Il modello che risponde', detail: 'Entrano il chip, la memoria e il server inattivo in attesa della prossima domanda.' },
+      { label: 'L\'addestramento del modello', detail: 'Resta fuori: l\'articolo di Google dice di aver lasciato a dopo la misurazione dell\'addestramento.', alert: true },
+      { label: 'Il palazzo che ospita', detail: 'Raffreddamento e perdite entrano per fattore medio annuo, non per misurazione locale.' },
+      { label: 'La rete che alimenta il palazzo', detail: 'Nessun numero pubblicato arriva fin qui — ed è qui che si decide la rete.', alert: true },
+    ],
+  },
+
+  'energia-mlperf-potencia-it': {
+    orientation: 'timeline',
+    steps: [
+      { label: 'MLPerf v4.0', detail: 'H100 misurato' },
+      { label: 'MLPerf v4.1', detail: 'H200 misurato' },
+      { label: 'MLPerf v5.0', detail: '75 righe, zero', alert: true },
+      { label: 'MLPerf v5.1', detail: 'Lenovo misura; Nvidia no', alert: true },
+      { label: 'MLPerf v6.0', detail: '61 righe, zero', alert: true },
+    ],
+  },
+
+  'energia-cadeia-da-atribuicao-it': {
+    orientation: 'chain',
+    steps: [
+      { label: 'La fonte', detail: 'Scala annuncia un campus fino a 4,75 GW a Eldorado do Sul, Rio Grande do Sul.' },
+      { label: 'Il rilancio', detail: 'Il numero compare in tre fonti indipendenti, sempre legato al campus del sud.' },
+      { label: 'Il post', detail: 'In un post, gli stessi 4,75 GW diventano il tetto del data center di TikTok a Pecém, Ceará.', alert: true },
+      { label: 'Il confronto', detail: 'Il rapporto contro San Paolo diventa 120x. Con i 300 MW ufficiali di Pecém, è 7,7x.', alert: true },
+    ],
+  },
+
+  'energia-cadeia-do-escopo-he': {
+    orientation: 'chain',
+    steps: [
+      { label: 'השאלה שאתה מקליד', detail: 'כאן מתחיל החשבון שכולם מצטטים: 0.34, 0.3 ו-0.24 וואט-שעה.' },
+      { label: 'המודל שעונה', detail: 'נכנסים השבב, הזיכרון והשרת הבטל שממתין לשאלה הבאה.' },
+      { label: 'אימון המודל', detail: 'נשאר בחוץ: המאמר של Google אומר שהשאיר את מדידת האימון למועד מאוחר יותר.', alert: true },
+      { label: 'המבנה שמארח', detail: 'קירור ואיבודים נכנסים לפי מקדם שנתי ממוצע, לא לפי מדידה מקומית.' },
+      { label: 'הרשת שמזינה את המבנה', detail: 'שום מספר מפורסם לא מגיע עד לכאן — וכאן נחתך גורלה של הרשת.', alert: true },
+    ],
+  },
+
+  'energia-mlperf-potencia-he': {
+    orientation: 'timeline',
+    steps: [
+      { label: 'MLPerf v4.0', detail: '‏H100 נמדד' },
+      { label: 'MLPerf v4.1', detail: '‏H200 נמדד' },
+      { label: 'MLPerf v5.0', detail: '‏75 שורות, אפס', alert: true },
+      { label: 'MLPerf v5.1', detail: '‏Lenovo מודדת; Nvidia לא', alert: true },
+      { label: 'MLPerf v6.0', detail: '‏61 שורות, אפס', alert: true },
+    ],
+  },
+
+  'energia-cadeia-da-atribuicao-he': {
+    orientation: 'chain',
+    steps: [
+      { label: 'המקור', detail: '‏Scala מכריזה על קמפוס של עד 4.75 ג\'יגה-וואט באלדורדו דו סול.' },
+      { label: 'ההדהוד', detail: 'המספר מופיע בשלושה מקורות בלתי תלויים, תמיד בקישור לקמפוס הדרומי.' },
+      { label: 'הפוסט', detail: 'בפוסט אחד, אותם 4.75 ג\'יגה-וואט הופכים לתקרה של מרכז הנתונים של TikTok בפסם.', alert: true },
+      { label: 'ההשוואה', detail: 'היחס מול סאו פאולו הופך לפי 120. עם 300 המגה-וואט הרשמיים של פסם, הוא פי 7.7.', alert: true },
+    ],
+  },
+
   'deepfake-cinco-reguas-he': {
     orientation: 'chain',
     steps: [
