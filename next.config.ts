@@ -209,6 +209,7 @@ const nextConfig: NextConfig = {
       { source: '/deepfake-en', destination: '/en/artigos/estatisticas-deepfakes', permanent: true },
       { source: '/deepfake-es', destination: '/es/artigos/estatisticas-deepfakes', permanent: true },
       { source: '/deepfake-it', destination: '/it/artigos/estatisticas-deepfakes', permanent: true },
+      { source: '/deepfake-he', destination: '/he/artigos/estatisticas-deepfakes', permanent: true },
     ];
 
     // Locale handling (double-locale 410 + single-locale 301 + i18n rewrite) moved to middleware.ts

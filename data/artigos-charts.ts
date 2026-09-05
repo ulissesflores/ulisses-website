@@ -785,6 +785,13 @@ export interface WaffleDataset {
  * to maintainer -> Acknowledged -> Patched -> Publicly disclosed).
  */
 export const waffleDatasets: Record<string, WaffleDataset> = {
+  'deepfake-perdas-verificadas-he': {
+    categories: [
+      { label: 'בלי ערך מיוחס', sublabel: '2,107 · 93.0% מהמאגר', color: '#3f3f46', count: 2107 },
+      { label: 'עם הפסד מאומת', sublabel: '‏1.3 מיליארד הדולר — 159 · 7.0%', color: '#a48f65', count: 159 },
+    ],
+  },
+
   /**
    * `deepfake-perdas-verificadas` — MEDIÇÃO PRÓPRIA: de onde vem o "US$ 1,3 bilhão".
    * PROCEDÊNCIA: o painel exibe `Direct losses $1.3B` com a legenda literal
@@ -1177,6 +1184,65 @@ export interface CountryBarsDataset {
  * TIC Domicílios 2025, 1ª medição) sobre 213,4 mi (IBGE 2025).
  */
 export const countryBarsDatasets: Record<string, CountryBarsDataset> = {
+  'deepfake-procedencia-sete-he': {
+    max: 7,
+    groups: [
+      {
+        label: 'מי הפיק את שבעת הנתונים המרכזיים',
+        color: '#a48f65',
+        items: [
+          { name: 'ספק מהתעשייה', value: 7, valueLabel: '7 מתוך 7', emphasis: true },
+          { name: 'גוף רשמי', value: 0, valueLabel: 'אפס' },
+          { name: 'אקדמיה', value: 0, valueLabel: 'אפס' },
+          { name: 'סקר ציבורי', value: 0, valueLabel: 'אפס' },
+        ],
+      },
+    ],
+  },
+
+  'deepfake-deteccao-humana-he': {
+    max: 70,
+    groups: [
+      {
+        label: 'מה שהם אומרים על עצמם',
+        color: '#fbbf24',
+        items: [
+          { name: 'חושבים שמזהים', value: 47, valueLabel: '47%' },
+          { name: 'מצהירים על ביטחון', value: 41, valueLabel: '41%' },
+          { name: 'חושבים שמסוגלים', value: 34, valueLabel: '34%' },
+        ],
+      },
+      {
+        label: 'מה שהם קולעים כשמודדים',
+        color: '#60a5fa',
+        items: [
+          { name: 'מאומנים לזהות', value: 62.2, valueLabel: '62.2%' },
+          { name: 'פנים (Stockner)', value: 56.1, valueLabel: '56.1%' },
+          { name: 'כללי (Diel)', value: 55.5, valueLabel: '55.5%' },
+          { name: 'מבחן אובייקטיבי (BR)', value: 17, valueLabel: '17%', emphasis: true },
+        ],
+      },
+    ],
+  },
+
+  'deepfake-resemble-categorias-he': {
+    max: 800,
+    groups: [
+      {
+        label: 'כל 2,266 האירועים במאגר, לפי סוג מתקפה',
+        color: '#60a5fa',
+        items: [
+          { name: 'מותג ומוניטין', value: 757, valueLabel: '33.4%' },
+          { name: 'דיסאינפורמציה', value: 447, valueLabel: '19.7%' },
+          { name: 'הונאת צרכנים', value: 382, valueLabel: '16.9%' },
+          { name: 'תמונות אינטימיות', value: 256, valueLabel: '11.3%' },
+          { name: 'התעללות בילדים', value: 239, valueLabel: '10.5%' },
+          { name: 'הונאה תאגידית', value: 185, valueLabel: '8.2%', emphasis: true },
+        ],
+      },
+    ],
+  },
+
   /**
    * `agentes-nenhum-uso-funcao-he` — bloco 1: % "Not at all" (nenhum uso de agente) por função,
    * McKinsey 2025 republicado no AI Index 2026, Fig. 4.3.7 (N não declarado no capítulo).
@@ -8203,6 +8269,71 @@ export interface StepFlowDataset {
 }
 
 export const stepFlowDatasets: Record<string, StepFlowDataset> = {
+  'deepfake-cinco-reguas-he': {
+    orientation: 'chain',
+    steps: [
+      {
+        label: 'פלטפורמת הספק — סופרת מה שעבר דרכה',
+        detail: 'מודדת בדיוק את תיק הלקוחות שלה. לא את המדינה ולא את האוכלוסייה.',
+      },
+      {
+        label: 'סקר דעת קהל במימון הספק',
+        detail: 'שואל מנהלי הונאה מה הם חושבים שראו. מודד תפיסה, לא אירועים.',
+      },
+      {
+        label: 'גוף רשמי — תלונה שנרשמה',
+        detail: 'מודד את מה שדווח, מסונן דרך מילות הטופס. תת־דיווח מובטח.',
+      },
+      {
+        label: 'אקדמיה עם שיפוט עמיתים',
+        detail: 'ניסוי עם אנשים אמיתיים ורווח סמך. מודד יכולת, לא שכיחות.',
+      },
+      {
+        label: 'מפקד אוכלוסין עם מבחן אובייקטיבי — שואל ואז בודק',
+        detail: 'התכנון היחיד שמראה את המרחק בין מה שחושבים לבין מה שקולעים.',
+        alert: true,
+      },
+    ],
+  },
+
+  'deepfake-cinco-reguas-com-dados-he': {
+    orientation: 'chain',
+    steps: [
+      {
+        label: 'פלטפורמת הספק: מתקפה כל 5 דקות; 88% קריפטו',
+        detail: '‏Entrust ו-Sumsub, נמדד בפלטפורמה שלהן. מתאר את הלקוחות, לא את הפשע.',
+      },
+      {
+        label: 'סקר במימון הספק: 6.5% מניסיונות ההונאה',
+        detail: '‏Signicat/Censuswide, 1,206 מנהלים מעריכים את החברות שלהם. אפס מתקפות נספרו.',
+      },
+      {
+        label: 'גוף רשמי: 893 מיליון דולר — 4.28% מההפסדים',
+        detail: '‏FBI IC3 2025. התווית היא "מכיל אזכור ל-AI": מתאר טקסט, לא עבירה.',
+      },
+      {
+        label: 'אקדמיה: 55.5% ו-56.1% דיוק אנושי',
+        detail: '‏Diel 2024 ו-Stockner 2026. במטא־אנליזה הגדולה הרווח חוצה את 50% — הטלת מטבע.',
+      },
+      {
+        label: 'מבחן אובייקטיבי: 41% בטוחים, 17% הצליחו',
+        detail: '‏Cetic.br, n=5,250. והביטחון המוצהר לא הראה שום מתאם עם ההצלחה.',
+        alert: true,
+      },
+    ],
+  },
+
+  'deepfake-linha-do-tempo-lei-he': {
+    orientation: 'timeline',
+    steps: [
+      { label: 'מאי 2025', detail: 'ארה"ב: הסרה 48 ש׳' },
+      { label: 'פבר׳ 2026', detail: 'בריטניה: יצירה' },
+      { label: 'מרץ 2026', detail: '‏TSE: האפלה 72 ש׳' },
+      { label: '2 אוג׳ 2026', detail: 'אירופה: תיוג' },
+      { label: '6 אוג׳ 2026', detail: 'ברזיל: סינתטי' },
+    ],
+  },
+
   /**
    * `agentes-tres-reguas-he` — a régua do artigo: três naturezas de estatística, cada uma com
    * seu modo de falha. PROCEDÊNCIA: classificação do autor; os modos de falha vêm de Gartner

@@ -225,6 +225,7 @@ export const artigos: readonly Artigo[] = [
         'en': { src: '/artigos/estatisticas-deepfakes/hero-en.png', og: '/artigos/estatisticas-deepfakes/hero-en-og.png' },
         'es': { src: '/artigos/estatisticas-deepfakes/hero-es.png', og: '/artigos/estatisticas-deepfakes/hero-es-og.png' },
         'it': { src: '/artigos/estatisticas-deepfakes/hero-it.png', og: '/artigos/estatisticas-deepfakes/hero-it-og.png' },
+        'he': { src: '/artigos/estatisticas-deepfakes/hero-he.png', og: '/artigos/estatisticas-deepfakes/hero-he-og.png' },
       },
     },
     i18n: {
@@ -245,6 +246,12 @@ export const artigos: readonly Artigo[] = [
           'Le 7 statistiche centrali sui deepfake vengono da chi vende il rilevatore — l\'unica cifra ufficiale di danno conta le "menzioni all\'IA" e la scienza dà 55%, una monetina',
         summary:
           'La pagina di statistiche sui deepfake più completa che ho trovato avverte che i numeri vengono da chi vende rilevatori — e nonostante questo prende da lì le sue sette cifre centrali. Le ho controllate una a una: Signicat, Entrust due volte, Sumsub due volte, Resemble AI e iProov. Sette su sette fornitori, nessun organo ufficiale, nessuna accademia, nessuna indagine pubblica. Quattro righe del tabellone sono sbagliate, e gli errori sulle leggi vanno tutti nella stessa direzione: fanno sembrare la regolamentazione più avanti di quanto sia. Sono andato a cercare quello che esiste davvero: l\'unica cifra ufficiale di danno è 893 milioni di dollari — il 4,28% delle perdite dell\'anno, sotto un\'etichetta che l\'FBI definisce come "contiene un riferimento all\'intelligenza artificiale"; l\'unica misurazione indipendente della capacità umana è accademica e dà 55,5%, con un intervallo di confidenza che attraversa il 50%, cioè una monetina; e il miglior dato pubblico al mondo è brasiliano, del Cetic.br, perché mette alla prova invece di chiedere (il 41% si dice sicuro, il 17% è andato bene al test, e le due cose non sono correlate). Ho contato io stesso il pannello di Resemble AI: dei 2.266 incidenti, il famoso "1,3 miliardi di dollari" ne descrive 159.',
+      },
+      he: {
+        title:
+          'שבע הסטטיסטיקות המרכזיות על דיפ פייק מגיעות ממי שמוכר את הגלאי — המספר הרשמי היחיד לנזק מונה "אזכורים ל-AI", והמדע נותן 55%, הטלת מטבע',
+        summary:
+          'הדף המקיף ביותר על סטטיסטיקות דיפ פייק שמצאתי מזהיר שהמספרים מגיעים ממי שמוכר גלאים — ובכל זאת לוקח משם בדיוק את שבעת הנתונים המרכזיים שלו. בדקתי אותם אחד אחד: Signicat, Entrust פעמיים, Sumsub פעמיים, Resemble AI ו-iProov. שבעה מתוך שבעה ספקים, אף לא גוף רשמי אחד, אף לא אקדמיה, אף לא סקר ציבורי. ארבע שורות בטבלה שגויות, והטעויות בענייני חוק הולכות כולן לאותו כיוון: הן גורמות לרגולציה להיראות מתקדמת יותר משהיא. הלכתי לחפש מה קיים באמת: המספר הרשמי היחיד לנזק הוא 893 מיליון דולר — 4.28% מההפסדים של השנה, תחת תווית שה-FBI מגדיר כ"המידע שדווח מכיל אזכור לבינה מלאכותית"; המדידה העצמאית היחידה של היכולת האנושית היא אקדמית ונותנת 55.5%, עם רווח סמך שחוצה את 50%, כלומר הטלת מטבע; והנתון הציבורי הטוב בעולם הוא ברזילאי, של Cetic.br, כי הוא בודק במקום לשאול (41% אומרים שהם בטוחים, 17% הצליחו במבחן, ואין מתאם בין השניים). ספרתי בעצמי את לוח המחוונים של Resemble AI: מתוך 2,266 האירועים, ה-1.3 מיליארד דולר המפורסמים מתארים 159.',
       },
     },
   },
