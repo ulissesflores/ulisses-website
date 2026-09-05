@@ -20,6 +20,93 @@ export interface ThermometerTrioDataset {
 /* `Record<string, ...>`: o componente indexa por `dataset: string` (o `compileMDX`
    só entrega atributo string), e um literal sem o `Record` reprova no `tsc --strict`. */
 export const thermometerTrioDatasets: Record<string, ThermometerTrioDataset> = {
+  'skills-termometros-comodo': {
+    termometros: [
+      {
+        nome: 'O PRIMEIRO',
+        pergunta: 'pendurado na parede',
+        leitura: 'diz que está frio',
+        sub: 'régua estreita',
+        nivel: 0.14,
+        cor: '#64748b',
+      },
+      {
+        nome: 'O SEGUNDO',
+        pergunta: 'na mesma parede',
+        leitura: 'diz que está ameno',
+        sub: 'régua parecida',
+        nivel: 0.18,
+        cor: '#60a5fa',
+      },
+      {
+        nome: 'O TERCEIRO',
+        pergunta: 'a um palmo dos outros',
+        leitura: 'diz que está quente',
+        sub: 'régua bem mais larga',
+        nivel: 0.86,
+        cor: '#a48f65',
+      },
+    ],
+    conclusao: 'A sala é uma só. Quem mudou a leitura foi a régua de cada termômetro.',
+  },
+  'skills-termometros-scanners': {
+    termometros: [
+      {
+        nome: 'ANÁLISE ESTÁTICA',
+        pergunta: 'lê o código da skill',
+        leitura: '6,57%',
+        sub: '4.434 de 67.453',
+        nivel: 0.12,
+        cor: '#64748b',
+      },
+      {
+        nome: 'VIRUSTOTAL',
+        pergunta: 'compara com malware conhecido',
+        leitura: '7,75%',
+        sub: '5.225 de 67.453',
+        nivel: 0.15,
+        cor: '#60a5fa',
+      },
+      {
+        nome: 'SKILLSPECTOR',
+        pergunta: 'procura padrão de risco no texto',
+        leitura: '48,71%',
+        sub: '32.856 de 67.453',
+        nivel: 0.85,
+        cor: '#a48f65',
+      },
+    ],
+    conclusao: 'Mesma amostra, mesmo dia: a leitura mais alta é 7,4x a mais baixa.',
+  },
+  'skills-termometros-maliciosas': {
+    termometros: [
+      {
+        nome: 'ANÁLISE ESTÁTICA',
+        pergunta: 'lê o código da skill',
+        leitura: '12,6%',
+        sub: '26 das 206',
+        nivel: 0.2,
+        cor: '#64748b',
+      },
+      {
+        nome: 'VIRUSTOTAL',
+        pergunta: 'compara com malware conhecido',
+        leitura: '72,8%',
+        sub: '150 das 206',
+        nivel: 0.85,
+        cor: '#60a5fa',
+      },
+      {
+        nome: 'SKILLSPECTOR',
+        pergunta: 'procura padrão de risco no texto',
+        leitura: '6,8%',
+        sub: '14 das 206',
+        nivel: 0.11,
+        cor: '#a48f65',
+      },
+    ],
+    conclusao: 'Nas 206 de veredito malicioso, a régua mais larga é a que menos enxerga.',
+  },
   'ia-trabalho-termometros-mundo': {
     termometros: [
       {

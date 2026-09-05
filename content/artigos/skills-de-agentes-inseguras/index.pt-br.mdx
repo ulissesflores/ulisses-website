@@ -1,0 +1,419 @@
+---
+title: 'A mesma amostra de skills dá 6,57% ou 48,71%, conforme o scanner'
+slug: skills-de-agentes-inseguras
+category: artigos
+date: '2026-09-04'
+language: pt-BR
+---
+
+Um número anda circulando com cara de diagnóstico: **48% das skills de agentes de IA são
+inseguras**. Fui atrás da medição que sustenta esse número e encontrei outra coisa — não um
+estudo, mas o post de um blogueiro de marketing; e, dois meses depois, um levantamento
+institucional que mediu o mesmo ecossistema com três instrumentos ao mesmo tempo e obteve
+**6,57%, 7,75% e 48,71%** na mesma amostra.
+
+Os três números estão certos. É essa a notícia. O que muda de um para o outro não é o catálogo
+de skills — é a régua. E quando três réguas medem a mesma sala e discordam desse tamanho, a
+primeira pergunta deixa de ser "quantas skills são inseguras" e passa a ser "o que exatamente
+cada uma dessas réguas está chamando de insegurança".
+
+Vale a pena descer nesse detalhe, porque dele cai de graça uma coisa mais útil que a manchete: o
+risco de instalar skill de estranho é real, está documentado, tem vítima com nome — **e não é o
+que o "48%" está medindo**.
+
+## Três termômetros na mesma sala
+
+Imagine que você pendura três termômetros na mesma parede da mesma sala. Um marca 19 graus, o
+outro marca 21, o terceiro marca 34.
+
+Sua primeira reação não é "a sala está com 34 graus". É desconfiar dos termômetros. E a segunda
+reação, se você for cuidadoso, é ir olhar de perto o que cada um mede: talvez um esteja no sol,
+talvez outro meça a temperatura da parede em vez do ar, talvez o terceiro esteja marcando
+qualquer coisa que se mexa perto dele.
+
+<ThermometerTrioDiagram
+  dataset="skills-termometros-comodo"
+  title="Três termômetros, a mesma sala, três leituras"
+  description="Três termômetros lado a lado na mesma parede, marcando temperaturas muito diferentes. Nenhum número técnico: a figura só mostra que instrumentos diferentes discordam sobre a mesma sala."
+  source="Figura do autor; níveis ilustrativos, não medidos. · ulissesflores.com/regua"
+/>
+
+Repare que a figura não diz qual termômetro está errado. Nenhum deles precisa estar quebrado
+para que isso aconteça: basta que meçam coisas diferentes e que os três chamem o resultado de
+"temperatura". **A discordância não é defeito de fabricação — é definição diferente do que se
+está medindo.** Guarde os três tubos; eles voltam duas vezes, com números reais, mais adiante.
+
+Troque "termômetro" por "scanner de segurança" e "sala" por "catálogo de skills", e você já
+entendeu o artigo inteiro.
+
+## O mesmo, com os nomes: por que instalar uma skill não é instalar uma biblioteca
+
+Uma *skill* (habilidade) de agente é uma pasta com um arquivo de texto dentro. O arquivo se chama
+`SKILL.md`, é Markdown puro, e diz em português — ou inglês, ou chinês — o que o agente deve fazer
+e quando. Ao lado dele podem vir subpastas com scripts, documentos de referência e outros
+recursos. Não há assinatura digital obrigatória, não há checksum, não há caixa de areia: é texto.
+
+O jeito como isso é carregado é o que torna a coisa diferente de uma dependência de software
+comum. A [documentação oficial da Anthropic](https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview)
+descreve três níveis: o nome e a descrição da skill entram no contexto do modelo o tempo todo (uns
+100 *tokens* — os pedaços de texto que o modelo lê e produz); o corpo do `SKILL.md` entra quando a
+skill é acionada; e os arquivos de código só são tocados sob demanda.
+
+O detalhe que importa está no fim dessa cadeia. Quando as instruções mencionam um script, **o
+agente executa esse script pelo terminal**, e o código nunca chega a passar pelo modelo — só a
+saída passa. Ou seja: a skill não roda num processo separado, com permissões próprias e limitadas.
+Ela vira instrução em linguagem natural que o modelo segue, usando exatamente as mesmas
+ferramentas que o agente já tem na sua máquina.
+
+<StepFlowDiagram
+  dataset="skills-cadeia-instalacao"
+  title="O caminho de uma skill instalada até o seu terminal"
+  description="Cadeia de cinco etapas: você instala a pasta; o agente lê o arquivo SKILL.md; o texto entra no contexto como instrução; o agente executa o script mencionado pelo terminal; o script roda com as mesmas permissões que você deu ao agente."
+  source="Documentação oficial de Agent Skills (Anthropic), consultada em 04/09/2026. · ulissesflores.com/regua"
+/>
+
+Repare no último quadro da cadeia: não há nenhuma fronteira ali. No Claude Code, a própria
+documentação da Anthropic registra que a skill tem **acesso total à rede — o mesmo de qualquer
+programa rodando no seu computador**. É por isso que a doc chama instalar uma skill de "instalar
+software", e não de "adicionar um arquivo de configuração".
+
+**Uma skill não é um dado que o agente lê; é uma instrução que ele obedece com as suas
+permissões.** Essa é a frase que faz o resto do artigo fazer sentido — inclusive a parte em que os
+scanners discordam, porque cada um deles olha para um pedaço diferente dessa cadeia.
+
+Antes de seguir, um esclarecimento que a cobertura em português tem atropelado: o catálogo do
+"48%" é o **ClawHub**, o registro oficial de skills do OpenClaw — um agente de código aberto criado
+por Peter Steinberger e hoje tocado pela OpenClaw Foundation. **Não é da Anthropic e não é do
+Claude.** O projeto inclusive já se chamou "Moltbot", nome adotado em janeiro de 2026 depois de uma
+reclamação de marca da própria Anthropic, e virou "OpenClaw" seis dias depois.
+
+## A fonte da manchete não é um estudo — e o filtro dela jogou fora mais do que manteve
+
+A página que originou o número é alemã, foi publicada em **6 de abril de 2026** e se chama
+*"ClawHub-Skills analysiert: 48 % mit Sicherheitsproblemen"* ("Skills do ClawHub analisadas: 48%
+com problemas de segurança"). O autor é Finn Hillebrandt, que se apresenta como fundador da
+Gradually AI e "especialista em SEO e IA". Ele vende um curso de ChatGPT e mantém um clube pago.
+Não é pesquisador de segurança, e o texto não afirma que seja.
+
+O site está fora do ar para leitura automatizada desde então — devolve erro 429 em todas as rotas
+que testei. Li a página no [arquivo da internet](http://web.archive.org/web/20260520192400id_/https://www.gradually.ai/clawhub-skills-analyse/),
+no instantâneo de **20 de maio de 2026**, e é dessa versão que saem todos os números abaixo.
+
+A alegação, em alemão: *"Von 16.797 gescannten Skills haben 8.129 mindestens einen verbleibenden
+Sicherheitsbefund. Das entspricht 48,4 %."*
+
+> Em português: "Das 16.797 skills escaneadas, 8.129 têm pelo menos um achado de segurança
+> remanescente. Isso equivale a 48,4%."
+
+Duas coisas se perdem entre esse parágrafo e a manchete que circulou.
+
+A primeira é o denominador. As 16.797 skills não vieram do ClawHub: vieram de um espelho no
+GitHub, porque o marketplace bloqueou o autor com erro 429 depois de uns 168 downloads. E a
+própria página afirma que o catálogo tem "mais de 44.000 skills". A amostra é **38% do acervo que
+o próprio texto declara**, tirada de uma cópia que pode conter skill já removida e não conter
+skill nova — limitação que o autor reconhece.
+
+A segunda é o filtro. Antes de chegar aos 8.129, o scanner produziu **443.709 acertos brutos**, e
+o autor descartou **261.451 deles como falso positivo**. Sobraram 182.258. O filtro jogou fora
+**58,9% de tudo que o instrumento achou** — e o maior item descartado, sozinho, é quase o dobro
+do resultado final.
+
+<CountryBarsChart
+  dataset="skills-filtro-falso-positivo"
+  title="O que o scanner achou, e o que sobrou depois do filtro"
+  description="Barras horizontais comparando 443.709 acertos brutos do scanner, 261.451 descartados como falso positivo e 182.258 mantidos; o maior descarte isolado são 160.889 casos de homóglifos em Markdown, que eram documentação em chinês, russo e árabe."
+  source="Números do autor em gradually.ai, instantâneo de 20/05/2026; bruto e frações são cálculo meu. · ulissesflores.com/regua"
+/>
+
+Repare no maior item isolado dentro do descarte: são **160.889 casos de homóglifos em Markdown** — caracteres
+que se parecem com outros. O autor explica, com todas as letras, o que eram:
+
+> *"Viele Skills haben Dokumentation auf Chinesisch, Russisch oder Arabisch. Der Scanner erkennt
+> die Zeichen dieser Sprachen als 'verdächtig', weil sie wie verschleierter Code aussehen. In
+> Wirklichkeit ist es einfach eine Übersetzung."*
+>
+> Em português: "Muitas skills têm documentação em chinês, russo ou árabe. O scanner reconhece os
+> caracteres dessas línguas como 'suspeitos', porque parecem código ofuscado. Na verdade é
+> simplesmente uma tradução."
+
+**O instrumento que produziu a manchete confundiu documentação traduzida com código ofuscado
+160.889 vezes**, e só não estampou isso porque um filtro escrito depois o corrigiu à mão. Os
+outros dois maiores descartes são da mesma família: 54.034 exemplos de HTTP dentro de
+documentação e 46.528 trechos de código dentro de cercas de Markdown — isto é, código de exemplo
+num tutorial, marcado como código de exemplo.
+
+Ainda assim, a ressalva mais importante está na própria página, e é do próprio autor:
+
+> *"Das heißt nicht automatisch, dass diese Skills sicher sind. Es heißt nur, dass der Scanner mit
+> seinen festen Regeln nichts mehr findet."*
+>
+> Em português: "Isso não significa automaticamente que essas skills sejam seguras. Significa
+> apenas que o scanner, com suas regras fixas, não acha mais nada."
+
+Essa frase qualifica a medição inteira e não sobreviveu ao título — nem ao alemão, nem à tradução
+que circulou. Não é desonestidade: é o que acontece com quase todo número que viaja. Já vimos o
+mesmo movimento com [os "95% dos projetos-piloto de IA que fracassam", que saíram de 52
+entrevistas](/artigos/estatisticas-agentes-de-ia).
+
+Por fim, o que fez essa página virar fonte de terceiros é que ela não é fonte de ninguém. Contei
+os links externos dela no HTML: são **sete, e nenhum é referência** — o ClawHub, o LinkedIn do
+autor (duas vezes), outro blog dele, o clube pago dele, um grupo de Facebook dele e um pixel de
+contagem de leitura. Não há link para o scanner, para o código, para os dados brutos, nem para os
+cinco números de ecossistema que a página cita de passagem (44.000 skills, 12.400
+desenvolvedores, 6,8% verificados, 2,3 milhões de instalações, 127 downloads por skill). Esses
+cinco aparecem sem origem declarada.
+
+## O levantamento que muda o eixo: três scanners, a mesma amostra, no mesmo dia
+
+Em **31 de maio de 2026**, seis pesquisadores da OpenClaw Foundation e da NVIDIA publicaram
+[*"ClawHub Security Signals: When VirusTotal, Static Analysis, and SkillSpector Disagree"*](https://arxiv.org/abs/2606.01494)
+("Sinais de segurança do ClawHub: quando o VirusTotal, a análise estática e o SkillSpector
+discordam"). Eles tiraram um retrato do catálogo naquele dia — **67.453 versões públicas de
+skill**, quatro vezes a amostra do blogueiro e, dessa vez, do registro oficial — e passaram três
+scanners diferentes em cada uma:
+
+- **VirusTotal**, que checa reputação de malware conhecido no código empacotado;
+- **análise estática**, que procura padrões de código perigoso;
+- **SkillSpector**, da NVIDIA, que lê as instruções em linguagem natural e avalia risco de
+  comportamento do agente — o que ele pede, que autoridade reivindica, qual o raio de estrago.
+
+O resultado é a Tabela 3 do artigo, e é o coração desta reportagem:
+
+| Scanner | O que ele olha | Skills positivas | Taxa sobre as 67.453 |
+|---|---|---|---|
+| Análise estática | padrões de código perigoso | 4.434 | **6,57%** |
+| VirusTotal | reputação de malware no código empacotado | 5.225 | **7,75%** |
+| SkillSpector (NVIDIA) | risco de comportamento nas instruções | 32.856 | **48,71%** |
+
+Mesma amostra. Mesmo dia. Mesma pergunta em português comum — "quantas skills têm problema?" —
+e uma razão de **7,4 vezes** entre a resposta mais estreita e a mais larga.
+
+<ThermometerTrioDiagram
+  dataset="skills-termometros-scanners"
+  title="Os mesmos três termômetros, agora com nome e número"
+  description="Os três termômetros da figura anterior, agora rotulados como análise estática, VirusTotal e SkillSpector, marcando respectivamente 6,57%, 7,75% e 48,71% das 67.453 versões de skill."
+  source="arXiv 2606.01494, Tabela 3; clawhub.ai em 31/05/2026. Níveis ilustrativos; números nos rótulos. · ulissesflores.com/regua"
+/>
+
+Repare que é a mesma figura de antes, com os nomes reais nos tubos. **O 48% da manchete alemã não
+está errado: ele é o termômetro mais largo dos três, e existe um de 6,57% ao lado dele medindo o
+mesmo catálogo.** Escolher qual dos três vira manchete é uma decisão editorial, não um achado.
+
+E há uma coincidência que merece uma linha só para ela: o blogueiro, com um scanner caseiro, numa
+amostra de 16.797 skills tirada de um espelho, em abril, chegou a **48,4%**. O SkillSpector da
+NVIDIA, em 67.453 versões do registro oficial, em maio, chegou a **48,71%**. Ferramentas,
+amostras, métodos e autores diferentes, o mesmo patamar. Isso não valida o "quase metade" — o que
+sugere é que "quase metade" é o que qualquer régua larga o bastante devolve quando aponta para
+este catálogo.
+
+## Os três apontam para a mesma skill em 0,69% dos casos
+
+Se os três estivessem medindo a mesma coisa com sensibilidades diferentes, o mais largo conteria
+os outros dois: tudo que o VirusTotal acusasse, o SkillSpector também acusaria. Não é o que
+acontece. É aqui que o levantamento deixa de ser uma tabela e vira um argumento.
+
+Das 67.453 versões, **35.600 (52,8%) têm pelo menos um sinal positivo**. Dessas, **29.153 —
+81,9% — são positivas em exatamente um scanner**. Nos três ao mesmo tempo: **468 skills, ou
+0,69% do total**.
+
+<WaffleChart
+  dataset="skills-sobreposicao-scanners"
+  title="Quem acusou o quê, nas 67.453 versões de skill"
+  description="Grade de pontos dividindo as 67.453 versões em quatro grupos exclusivos que somam o total: 31.853 sem nenhum sinal (47,22%), 26.527 apenas o SkillSpector (39,33%), 8.605 em outras combinações de scanners (12,76%) e 468 nos três juntos (0,69%)."
+  source="arXiv 2606.01494, Tabela 4. Quatro grupos exclusivos; 2.500 pontos para 67.453 versões (1 ponto ~= 27). · ulissesflores.com/regua"
+/>
+
+Repare no tamanho do bloco de baixo: **468 skills**, a fatia em que os três instrumentos apontam
+para a mesma coisa, fina a ponto de quase sumir na figura. E repare na fatia logo acima dela, com
+**39,33% do catálogo** — são as skills que **só** o SkillSpector acusa, sem que nenhum dos outros
+dois veja nada. Os quatro blocos somam as 67.453 exatas.
+
+O artigo mede essa discordância de duas formas. A sobreposição bruta entre qualquer par de
+scanners (o índice de Jaccard, que compara o que dois conjuntos têm em comum) nunca passa de
+**0,104** — ou seja, nenhum par concorda sobre mais de 10,4% dos alarmes que os dois deram
+juntos. E o acordo corrigido pelo acaso, o *kappa* de Cohen — que desconta a chance de dois
+avaliadores baterem por sorte —, fica entre **0,045 e 0,082**, o degrau mais baixo da escala de
+Landis e Koch, o que se traduz por "leve".
+
+A conclusão dos próprios autores é uma frase curta:
+
+> *"A single scanner is therefore a poor allow/block oracle."*
+>
+> Em português: "Um scanner sozinho é, portanto, um péssimo oráculo de liberar/bloquear."
+
+**Três instrumentos que apontam para a mesma skill em 0,69% dos casos não estão medindo graus
+diferentes da mesma coisa: estão medindo coisas diferentes.** É a mesma lição que já apareceu aqui quando o
+placar de segurança de um modelo se revelou [propriedade do par modelo-mais-ferramenta, não do
+modelo](/artigos/benchmark-harness-modelo) — e quando a contagem de modelos de linguagem existentes
+[variou entre 274 e 403.420 conforme quem contava](/artigos/estatisticas-llms).
+
+## A inversão: onde o malware está de verdade, a régua larga apaga
+
+Falta a parte que me fez escrever o artigo.
+
+O ClawHub emite um veredito próprio para cada skill — um sistema chamado ClawScan pondera os três
+scanners e classifica em limpa, suspeita ou maliciosa. Na amostra: **61,9% limpas (41.743),
+37,8% suspeitas (25.504) e 0,3% maliciosas (206)**.
+
+Nas 25.504 suspeitas, o SkillSpector domina: acusa **75,3%** delas, e é o único positivo em 56,3%.
+Faz sentido — é a região de "revise antes de confiar", que é exatamente o que ele mede.
+
+Agora olhe o que acontece nas 206 com veredito malicioso:
+
+| Scanner | Nas 25.504 suspeitas | Nas 206 maliciosas |
+|---|---|---|
+| VirusTotal | 12,7% | **72,8%** |
+| Análise estática | 12,0% | 12,6% |
+| SkillSpector | **75,3%** | **6,8%** |
+
+<ThermometerTrioDiagram
+  dataset="skills-termometros-maliciosas"
+  title="Os mesmos três termômetros, só nas 206 maliciosas"
+  description="Os três termômetros de novo, agora medindo apenas as 206 skills com veredito malicioso do registro: a análise estática marca 12,6%, o VirusTotal sobe para 72,8% e o SkillSpector cai para 6,8%."
+  source="arXiv 2606.01494, Tabela 5; veredito automatizado do registro, não humano. Níveis ilustrativos. · ulissesflores.com/regua"
+/>
+
+Repare que os tubos trocaram de altura, sem trocar de coluna. O termômetro que marcava quase metade do catálogo é o que
+quase não sobe aqui: **o SkillSpector acusa 14 das 206 skills que o registro julgou maliciosas —
+6,8%**. Dito de outro jeito, **192 dessas 206 não têm nenhum apontamento dele**. Quem sobe é o
+VirusTotal, com 72,8%, porque malware clássico mora no código empacotado, que é o que ele sabe
+ler.
+
+Não é falha do SkillSpector. É o que ele foi feito para fazer — e o próprio artigo escreve isso na
+legenda da tabela, para que ninguém leia errado:
+
+> *"SkillSpector advisories are risk signals, not maliciousness labels."*
+>
+> Em português: "Os avisos do SkillSpector são sinais de risco, não rótulos de maldade."
+
+E a categoria "suspeita", que responde por 37,8% do catálogo, é definida no texto como *"a
+review-before-trusting posture, not an abuse label"* — "uma postura de revisar-antes-de-confiar,
+não um rótulo de abuso". Uma skill pode ter risco alto e ser perfeitamente legítima: pedir acesso
+amplo é aceitável quando está declarado e o usuário sabe o que está aprovando.
+
+**A régua que produz o número da manchete é justamente a que menos enxerga o que o registro
+considera malicioso** — e há um detalhe final que fecha o argumento: em **24,3% dos vereditos
+maliciosos**, isto é, 50 das 206, **nenhum dos três scanners tinha acusado nada**. O ClawScan
+chegou a "malicioso" por procedência, metadado e contexto de moderação. Se scanner fosse
+suficiente, essas 50 teriam passado.
+
+## O risco que sobra é real, e é outro
+
+Nada acima diz que instalar skill de estranho é seguro. Diz que o "48%" não é a medida disso.
+A medida disso está em outro lugar, e é bem menos confortável.
+
+Começa pela curadoria, que não existe. A documentação do ClawHub é explícita: *"ClawHub is open by
+default: anyone can upload, but publishing requires a GitHub account old enough to pass the upload
+gate."* — "O ClawHub é aberto por padrão: qualquer um pode subir conteúdo, mas publicar exige uma
+conta do GitHub velha o bastante para passar no portão de envio." **Não há revisão humana antes de
+publicar. O escaneamento é posterior**, e desde 1º de junho de 2026 é o ClawScan que o faz.
+
+Depois vêm os casos com vítima, que são o dado que falta em quase toda cobertura:
+
+| Caso | O que aconteceu | Escala |
+|---|---|---|
+| ClawHavoc | 12 contas subiram skills trojanizadas disfarçadas de bots de cripto e produtividade | **1.184 skills** no mapeamento estendido do Antiy CERT (a divulgação inicial da Koi contou 341); uma conta sozinha com 677 |
+| Clawsights | skill de "ranking de uso" rodava `gh auth token` e mandava a credencial para fora **antes** de o modelo ver o conteúdo | credencial do GitHub do usuário |
+| `postmark-mcp` | 15 versões idênticas ao original; na 16ª passou a copiar todo e-mail enviado, em cópia oculta, para o domínio do atacante | ~1.500 downloads, ~300 organizações potencialmente afetadas |
+| `mcp-remote` | falha permitia execução remota de código em quem se conectasse a um servidor malicioso (CVE-2025-6514, gravidade 9,6) | 437 mil+ downloads afetados |
+
+<StepFlowDiagram
+  dataset="skills-linha-do-tempo"
+  title="Do primeiro incidente ao número que circulou"
+  description="Linha do tempo de julho de 2025 a junho de 2026: a CVE de nota 9,6 no plugin mcp-remote, a campanha ClawHavoc com 1.184 skills trojanizadas, o post alemão com o número de 48,4%, o levantamento da NVIDIA com os três scanners nas 67.453 versões e as quatro skills do Trail of Bits que passaram por todos eles."
+  source="Datas conforme as fontes primárias listadas ao final. · ulissesflores.com/regua"
+/>
+
+Repare que a manchete de abril é o terceiro marco de uma sequência que começou em julho de 2025 — e
+que o último marco da linha é o que mais deveria preocupar quem se apoia em scanner.
+
+Em **3 de junho de 2026**, a Trail of Bits — consultoria de segurança com histórico de auditoria
+em criptografia e software crítico — construiu **quatro skills abertamente maliciosas** e as passou
+pelo detector do próprio ClawHub, pelo scanner da Cisco e pelos três scanners integrados ao
+`skills.sh`. Todas passaram, e o relato deles é seco:
+
+> *"These were not advanced attacks: it took us less than an hour to conceive and implement three
+> of the four malicious skills."*
+>
+> Em português: "Não foram ataques avançados: levamos menos de uma hora para conceber e implementar
+> três das quatro skills maliciosas."
+
+O título da seção final do texto deles serve de resumo: *"Don't outsource trust to a scanner"* —
+"não terceirize a confiança para um scanner". Na mesma direção, o benchmark SkillVetBench mediu que
+detecção puramente estática deixa passar **até 89%** das ameaças que nascem de instrução em
+linguagem natural combinada com interação entre componentes.
+
+**Toda porcentagem publicada sobre skills inseguras é um piso, não um total** — e o instrumento
+que define o piso é contornável em menos de uma hora por quem sabe o que está fazendo. Esse é o
+número que ninguém tem: a taxa de falso negativo em produção. Sem ela, não dá para saber o quanto
+qualquer um desses percentuais subestima o real.
+
+## O que eu faria com isso
+
+Nada aqui recomenda pânico nem calma. Recomenda trocar a pergunta.
+
+1. **Quando ler "X% das skills são inseguras", procure o instrumento antes do número.** Um
+   scanner de reputação de malware e um leitor semântico de instruções respondem coisas
+   diferentes; a mesma amostra deu 6,57% e 48,71% no mesmo dia. Sem saber qual régua foi usada, o
+   percentual não informa nada.
+2. **Trate instalar skill como instalar software, não como copiar um arquivo de configuração.** É
+   o que a documentação da Anthropic recomenda, e a razão é a cadeia da segunda figura: o script
+   roda com as suas permissões, não com as da skill.
+3. **Leia o `SKILL.md` inteiro antes, e os arquivos ao lado dele.** O caso Clawsights é o
+   argumento: o comando que vazou a credencial rodava antes de qualquer defesa do modelo entrar em
+   ação. Defesa no nível do modelo não intercepta o que executa antes do modelo.
+4. **Desconfie de skill que busca dado de URL externa** — é a recomendação explícita da própria
+   documentação, e é o vetor de três dos quatro incidentes da tabela acima.
+5. **Não confie num scanner só.** É a conclusão dos autores do levantamento, não minha: três
+   instrumentos que apontam para a mesma skill em 0,69% dos casos significam que cada um deles,
+   sozinho, é um péssimo critério de liberar ou bloquear.
+
+> [!NOTE]
+> **Nota metodológica.** Os números do levantamento da NVIDIA e da OpenClaw Foundation foram lidos
+> por mim no PDF do arXiv 2606.01494, nas Tabelas 3, 4 e 5 e nas seções 5.3, 6.1 e 6.3 — não no
+> resumo. Os números da página alemã foram lidos no instantâneo de 20/05/2026 do arquivo da
+> internet, porque o site vivo devolve erro 429 desde então; **não sei se a página mudou depois
+> dessa data**. A soma dos 443.709 acertos brutos e a fração de 58,9% de descarte são cálculo meu
+> sobre os dois números que ele publica. A contagem de sete links externos é minha, feita no HTML
+> salvo.
+>
+> **O que eu não fiz:** não escaneei skill nenhuma por conta própria e não reproduzi nenhuma das
+> medições citadas. Não consegui medir o total atual do ClawHub — a interface pagina de 200 em 200
+> sem contador e passou a devolver erro 503 depois de 5.545 skills contadas, então esse é um piso,
+> não um total. E não existe, em fonte nenhuma que eu tenha achado, quantificação de prejuízo
+> financeiro real: há contagem de pacote e de download, não de vítima que somou perda — a mesma
+> lacuna que encontrei ao [separar incidentes de deepfake com perda verificada dos demais](/artigos/estatisticas-deepfakes).
+>
+> **Sobre os rótulos:** o próprio artigo declara que os vereditos do dataset são *"the registry's
+> automated verdicts, not human-annotated ground truth"* — vereditos automatizados do registro, não
+> verdade conferida por humano. Por isso, em nenhum lugar deste texto está escrito "206 skills
+> maliciosas", e sim "206 com veredito malicioso do registro". A distinção é a mesma que o artigo
+> cobra da manchete.
+
+Se você quiser conferir o principal número deste texto, são duas linhas — o PDF é aberto:
+
+```bash
+curl -sL https://arxiv.org/pdf/2606.01494v1 -o clawhub.pdf
+pdftotext -layout clawhub.pdf - | grep -E "SkillSpector|VirusTotal|Static analysis" | grep "%"
+```
+
+A Tabela 3 aparece com as três taxas. Se der diferente do que está aqui, me mande — eu atualizo e
+credito.
+
+## Fontes
+
+- Koc, V.; Erichsen, P.; Tomlinson, J.; Rivera, A.; Appel, M.; Paz, N. [*ClawHub Security Signals: When VirusTotal, Static Analysis, and SkillSpector Disagree*](https://arxiv.org/abs/2606.01494). arXiv:2606.01494v1 [cs.CR], 31 mai. 2026.
+- OpenClaw Foundation e NVIDIA. [*OpenClaw Collaborates with NVIDIA for Stronger Agent Skill Security*](https://openclaw.ai/blog/openclaw-nvidia-skill-security), 1 jun. 2026.
+- Hillebrandt, F. [*ClawHub-Skills analysiert: 48 % mit Sicherheitsproblemen*](http://web.archive.org/web/20260520192400id_/https://www.gradually.ai/clawhub-skills-analyse/), 6 abr. 2026 — instantâneo de 20 mai. 2026.
+- Anthropic. [*Agent Skills overview*](https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview) — seção "Security considerations", consultada em 4 set. 2026.
+- Judson, S.; Hess, T. [*The sorry state of skill distribution*](https://blog.trailofbits.com/2026/06/03/the-sorry-state-of-skill-distribution/), Trail of Bits, 3 jun. 2026.
+- Koi Security. [*ClawHavoc: 341 Malicious Skills Found by the Bot They Were Targeting*](https://www.koi.ai/blog/clawhavoc-341-malicious-clawedbot-skills-found-by-the-bot-they-were-targeting), 1 fev. 2026; análise estendida do Antiy CERT.
+- Datadog Security Labs. [*Malicious skills: supply chain risks in coding agents with dynamic context*](https://securitylabs.datadoghq.com/articles/malicious-skills-supply-chain-risks-in-coding-agents-with-dynamic-context/).
+- Snyk. [*ToxicSkills: malicious AI agent skills on ClawHub*](https://snyk.io/blog/toxicskills-malicious-ai-agent-skills-clawhub/), 5 fev. 2026.
+- Hossain, I.; Puppala, S.; Lu, Z.; Talukder, S.; Jiang, N. [*Benchmarking Security Risk Detection and Verification in Open Agentic Skill Ecosystems*](https://arxiv.org/abs/2606.00925). arXiv:2606.00925, 30 mai. 2026.
+- The Hacker News. [*First Malicious MCP Server Found Stealing Emails*](https://thehackernews.com/2025/09/first-malicious-mcp-server-found.html), set. 2025; e [*Critical mcp-remote Vulnerability*](https://thehackernews.com/2025/07/critical-mcp-remote-vulnerability.html), jul. 2025.
+- OpenClaw. [Documentação do ClawHub](https://docs.openclaw.ai/clawhub), consultada em 4 set. 2026.
+
+*Verificado em 4 de setembro de 2026 contra o PDF do arXiv 2606.01494, o instantâneo de 20/05/2026
+da página da Gradually AI, o anúncio da OpenClaw Foundation de 01/06/2026 e a documentação oficial
+de Agent Skills da Anthropic. Os arquivos brutos usados nesta apuração estão salvos.*

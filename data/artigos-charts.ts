@@ -785,6 +785,34 @@ export interface WaffleDataset {
  * to maintainer -> Acknowledged -> Patched -> Publicly disclosed).
  */
 export const waffleDatasets: Record<string, WaffleDataset> = {
+  'skills-sobreposicao-scanners': {
+    categories: [
+      {
+        label: 'Nenhum sinal',
+        sublabel: '31.853 · 47,22%',
+        color: '#3f3f46',
+        count: 1181,
+      },
+      {
+        label: 'Outras combinações',
+        sublabel: '8.605 · 12,76%',
+        color: '#64748b',
+        count: 319,
+      },
+      {
+        label: 'Só o SkillSpector',
+        sublabel: '26.527 · 39,33%',
+        color: '#60a5fa',
+        count: 983,
+      },
+      {
+        label: 'Os três juntos',
+        sublabel: '468 · 0,69% de tudo',
+        color: '#a48f65',
+        count: 17,
+      },
+    ],
+  },
   /**
    * `energia-crescimento-carga-eua` — degrau 3.
    * PROCEDENCIA: LBNL, 2025 United States Data Center Energy Usage Report (DOI
@@ -1227,6 +1255,50 @@ export interface CountryBarsDataset {
  * TIC Domicílios 2025, 1ª medição) sobre 213,4 mi (IBGE 2025).
  */
 export const countryBarsDatasets: Record<string, CountryBarsDataset> = {
+  'skills-filtro-falso-positivo': {
+    max: 600000,
+    groups: [
+      {
+        label: 'Tudo o que o scanner acusou — soma minha das duas parcelas publicadas',
+        color: '#3f3f46',
+        items: [
+          {
+            name: 'Achados brutos',
+            value: 443709,
+            valueLabel: '443.709',
+          },
+        ],
+      },
+      {
+        label: 'Jogado fora depois, como falso positivo',
+        color: '#a48f65',
+        items: [
+          {
+            name: 'Descartados',
+            value: 261451,
+            valueLabel: '261.451 · 58,9% do bruto',
+            emphasis: true,
+          },
+          {
+            name: 'Só homóglifos',
+            value: 160889,
+            valueLabel: '160.889 — documentação em chinês, russo e árabe',
+          },
+        ],
+      },
+      {
+        label: 'O que sobrou, e de onde saiu o número que circulou',
+        color: '#60a5fa',
+        items: [
+          {
+            name: 'Mantidos',
+            value: 182258,
+            valueLabel: '182.258 · 41,1% do bruto',
+          },
+        ],
+      },
+    ],
+  },
   /**
    * `energia-linguas-acerto` — degrau 2. A BARRA CODIFICA O ACERTO (0-100, linear); a
    * razão de energia contra o ingles vai no `valueLabel`, porque 188x não cabe em barra
@@ -8773,6 +8845,58 @@ export interface StepFlowDataset {
 }
 
 export const stepFlowDatasets: Record<string, StepFlowDataset> = {
+  'skills-cadeia-instalacao': {
+    orientation: 'chain',
+    steps: [
+      {
+        label: 'Você instala a skill',
+        detail: 'uma pasta com um arquivo SKILL.md e, quase sempre, um ou mais scripts',
+      },
+      {
+        label: 'O agente lê o SKILL.md',
+        detail: 'é texto comum, em português ou inglês — não é código compilado',
+      },
+      {
+        label: 'O texto entra no contexto como instrução',
+        detail: 'o agente passa a tratar aquelas frases como ordem sua',
+      },
+      {
+        label: 'A instrução manda rodar o script',
+        detail: 'o agente abre o terminal e executa o que o texto mandar executar',
+      },
+      {
+        label: 'O script roda com as SUAS permissões',
+        detail: 'acesso de rede total, igual a qualquer programa da sua máquina',
+        alert: true,
+      },
+    ],
+  },
+  'skills-linha-do-tempo': {
+    orientation: 'timeline',
+    steps: [
+      {
+        label: 'jul/2025',
+        detail: 'CVE 9,6 em plugin',
+      },
+      {
+        label: 'fev/2026',
+        detail: 'ClawHavoc: 1.184',
+      },
+      {
+        label: 'abr/2026',
+        detail: 'o post dos 48,4%',
+      },
+      {
+        label: 'mai/2026',
+        detail: '3 réguas, 67.453',
+      },
+      {
+        label: 'jun/2026',
+        detail: '4 passam por tudo',
+        alert: true,
+      },
+    ],
+  },
   /**
    * `energia-cadeia-do-escopo` — degrau 1. A corrente de referencia do artigo;
    * `energia-cadeia-da-atribuicao` a repete com outro conteudo no degrau 6.

@@ -124,6 +124,20 @@ export const artigos: readonly Artigo[] = [
     },
   },
   {
+    slug: 'skills-de-agentes-inseguras',
+    title: 'A mesma amostra de skills dá 6,57% ou 48,71%, conforme o scanner',
+    summary: 'Circulou que 48% das skills de agentes de IA são inseguras. A fonte não é um estudo: é o post de um blogueiro de SEO, cujo filtro descartou 261.451 achados para chegar lá. Dois meses depois, NVIDIA e OpenClaw Foundation mediram 67.453 versões com três scanners ao mesmo tempo — e os três devolveram 6,57%, 7,75% e 48,71%.',
+    date: '2026-09-04',
+    tags: ['ia', 'agentes', 'ciberseguranca', 'fact-check', 'metodologia'],
+    hero: {
+      width: 2400,
+      height: 1260,
+      locales: {
+        'pt-br': { src: '/artigos/skills-de-agentes-inseguras/hero.png', og: '/artigos/skills-de-agentes-inseguras/hero-og.jpg' },
+      },
+    },
+  },
+  {
     slug: 'consumo-energia-ia',
     title: 'O Brasil virou destino de data center e não mede o que eles gastam',
     summary:

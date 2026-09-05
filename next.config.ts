@@ -215,6 +215,7 @@ const nextConfig: NextConfig = {
       { source: '/energia-es', destination: '/es/artigos/consumo-energia-ia', permanent: true },
       { source: '/energia-it', destination: '/it/artigos/consumo-energia-ia', permanent: true },
       { source: '/energia-he', destination: '/he/artigos/consumo-energia-ia', permanent: true },
+      { source: '/regua', destination: '/artigos/skills-de-agentes-inseguras', permanent: true },
     ];
 
     // Locale handling (double-locale 410 + single-locale 301 + i18n rewrite) moved to middleware.ts
