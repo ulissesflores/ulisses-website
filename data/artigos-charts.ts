@@ -8724,8 +8724,8 @@ export const stepFlowDatasets: Record<string, StepFlowDataset> = {
         detail: 'Diel 2024 e Stockner 2026. Na maior meta-análise, o intervalo cruza os 50% — uma moeda.',
       },
       {
-        label: 'Teste objetivo: 41% se dizem confiantes, 17% acertaram',
-        detail: 'Cetic.br, n=5.250. E a confiança declarada não teve correlação nenhuma com o acerto.',
+        label: 'Teste objetivo: 41% se dizem confiantes, 17% foram bem',
+        detail: 'Cetic.br, n=5.250. E a confiança declarada não teve correlação nenhuma com o desempenho.',
         alert: true,
       },
     ],
@@ -8790,11 +8790,11 @@ export const stepFlowDatasets: Record<string, StepFlowDataset> = {
       },
       {
         label: 'Academia: 55.5% and 56.1% human accuracy',
-        detail: 'Diel 2024 and Stockner 2026. In the larger meta-analysis the interval crosses 50%.',
+        detail: 'Diel 2024 and Stockner 2026. In the larger meta-analysis the interval crosses 50% — a coin flip.',
       },
       {
-        label: 'Objective test: 41% feel confident, 17% got it',
-        detail: 'Cetic.br, n=5,250. And declared confidence had no correlation at all with accuracy.',
+        label: 'Objective test: 41% feel confident, 17% did well',
+        detail: 'Cetic.br, n=5,250. And declared confidence had no correlation at all with performance.',
         alert: true,
       },
     ],
@@ -8852,11 +8852,11 @@ export const stepFlowDatasets: Record<string, StepFlowDataset> = {
       },
       {
         label: 'Academia: 55,5% y 56,1% de acierto humano',
-        detail: 'Diel 2024 y Stockner 2026. En el mayor metaanálisis el intervalo cruza el 50%.',
+        detail: 'Diel 2024 y Stockner 2026. En el mayor metaanálisis el intervalo cruza el 50% — una moneda.',
       },
       {
-        label: 'Prueba objetiva: 41% confía, 17% acertó',
-        detail: 'Cetic.br, n=5.250. Y la confianza declarada no tuvo correlación alguna con el acierto.',
+        label: 'Prueba objetiva: 41% confía, 17% salió bien',
+        detail: 'Cetic.br, n=5.250. Y la confianza declarada no tuvo correlación alguna con el desempeño.',
         alert: true,
       },
     ],
@@ -8914,11 +8914,11 @@ export const stepFlowDatasets: Record<string, StepFlowDataset> = {
       },
       {
         label: 'Accademia: 55,5% e 56,1% di accuratezza umana',
-        detail: 'Diel 2024 e Stockner 2026. Nella meta-analisi maggiore l\'intervallo attraversa il 50%.',
+        detail: 'Diel 2024 e Stockner 2026. Nella meta-analisi maggiore l\'intervallo attraversa il 50% — una monetina.',
       },
       {
-        label: 'Test oggettivo: 41% si dice sicuro, 17% azzecca',
-        detail: 'Cetic.br, n=5.250. E la fiducia dichiarata non ha avuto alcuna correlazione con l\'esito.',
+        label: 'Test oggettivo: 41% si dice sicuro, 17% è andato bene',
+        detail: 'Cetic.br, n=5.250. E la fiducia dichiarata non ha avuto alcuna correlazione con la prestazione.',
         alert: true,
       },
     ],
