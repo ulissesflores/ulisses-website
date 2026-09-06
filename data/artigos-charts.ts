@@ -1255,6 +1255,115 @@ export interface CountryBarsDataset {
  * TIC Domicílios 2025, 1ª medição) sobre 213,4 mi (IBGE 2025).
  */
 export const countryBarsDatasets: Record<string, CountryBarsDataset> = {
+  'china-serie-penetracao': {
+    max: 60,
+    groups: [
+      {
+        label: 'Mesma pergunta, mesmo método, três ondas de seis em seis meses',
+        color: '#60a5fa',
+        items: [
+          {
+            name: 'dezembro de 2024',
+            value: 17.7,
+            valueLabel: '17,7%',
+          },
+          {
+            name: 'junho de 2025',
+            value: 36.5,
+            valueLabel: '36,5%',
+          },
+          {
+            name: 'dezembro de 2025',
+            value: 42.8,
+            valueLabel: '42,8% · 602 milhões',
+            emphasis: true,
+          },
+        ],
+      },
+    ],
+  },
+  'china-perfil-etario': {
+    max: 30,
+    groups: [
+      {
+        label: 'O maior grupo',
+        color: '#a48f65',
+        items: [
+          {
+            name: '19 anos ou menos',
+            value: 26.4,
+            valueLabel: '26,4%',
+            emphasis: true,
+          },
+        ],
+      },
+      {
+        label: 'As outras cinco faixas',
+        color: '#60a5fa',
+        items: [
+          {
+            name: '30 a 39 anos',
+            value: 22.0,
+            valueLabel: '22,0%',
+          },
+          {
+            name: '20 a 29 anos',
+            value: 21.3,
+            valueLabel: '21,3%',
+          },
+          {
+            name: '40 a 49 anos',
+            value: 15.1,
+            valueLabel: '15,1%',
+          },
+          {
+            name: '50 a 59 anos',
+            value: 10.1,
+            valueLabel: '10,1%',
+          },
+          {
+            name: '60 anos ou mais',
+            value: 5.1,
+            valueLabel: '5,1%',
+          },
+        ],
+      },
+    ],
+  },
+  'china-brasil-mesma-regua': {
+    max: 100,
+    groups: [
+      {
+        label: 'Medido perguntando a pessoas · % dos usuários de internet',
+        color: '#60a5fa',
+        items: [
+          {
+            name: 'China',
+            value: 53.5,
+            valueLabel: '53,5% · derivado do CNNIC, por telefone',
+            emphasis: true,
+          },
+          {
+            name: 'Brasil',
+            value: 32.0,
+            valueLabel: '32% · Cetic.br, domiciliar',
+            emphasis: true,
+          },
+        ],
+      },
+      {
+        label: 'Medido no servidor · não existe denominador humano',
+        color: '#a48f65',
+        items: [
+          {
+            name: 'ChatGPT',
+            value: 0,
+            valueLabel: 'mais de 900 milhões por semana — sem % possível',
+          },
+        ],
+      },
+    ],
+  },
   'skills-filtro-falso-positivo': {
     max: 600000,
     groups: [
@@ -8845,6 +8954,58 @@ export interface StepFlowDataset {
 }
 
 export const stepFlowDatasets: Record<string, StepFlowDataset> = {
+  'china-como-se-conta-uma-multidao': {
+    orientation: 'chain',
+    steps: [
+      {
+        label: 'Bater na porta e perguntar',
+        detail: '«O senhor esteve na praça nos últimos seis meses?» Vale o sim de quem lembrar.',
+      },
+      {
+        label: 'Contar as voltas da catraca',
+        detail: 'Sabe quantas voltas a roleta deu esta semana. Não sabe quantas pessoas são.',
+      },
+      {
+        label: 'Multiplicar por uma razão comprada',
+        detail: '«Para cada um por semana, 1,27 por mês» — a razão vem de um painel de mercado.',
+      },
+      {
+        label: 'Somar os três num total só',
+        detail: 'Aqui as três perguntas viram uma. É o único elo em que alguma coisa se perde.',
+        alert: true,
+      },
+      {
+        label: 'Anunciar o total como pessoas',
+        detail: 'O número sai da praça com um nome que nenhuma das três contagens deu a ele.',
+      },
+    ],
+  },
+  'china-a-cadeia-corrigida': {
+    orientation: 'chain',
+    steps: [
+      {
+        label: 'Contagem publicada',
+        detail: 'ChatGPT: mais de 900 milhões por semana, dito pela OpenAI.',
+      },
+      {
+        label: 'Razão comprada de painel',
+        detail: '1,27 mensal por semanal — Similarweb, fevereiro de 2026.',
+      },
+      {
+        label: 'Fatia de tráfego estimada',
+        detail: '662 milhões fora do ChatGPT, por participação de visitas.',
+      },
+      {
+        label: 'Pesquisa por telefone',
+        detail: '602 milhões na China: seis meses de alcance, a partir dos 6 anos.',
+      },
+      {
+        label: 'Um teto, não um censo',
+        detail: '2,42 bilhões: a própria fonte pede que não se leia «pessoas».',
+        alert: true,
+      },
+    ],
+  },
   'skills-cadeia-instalacao': {
     orientation: 'chain',
     steps: [
@@ -11708,6 +11869,108 @@ export interface CostLadderDataset {
 }
 
 export const costLadderDatasets: Record<string, CostLadderDataset> = {
+  'china-cadeia-datareportal': {
+    workLabel: 'onde a conta chega, em milhões de usuários',
+    billLabel: 'o que entra na conta',
+    notaLabel: 'natureza',
+    rows: [
+      {
+        label: 'ChatGPT',
+        sublabel: 'ponto de partida: semanais, pela OpenAI',
+        work: 900,
+        bill: '900 mi',
+        nota: 'contagem',
+      },
+      {
+        label: 'Semana vira mês',
+        sublabel: 'os mesmos, x 1,27 (Similarweb)',
+        work: 1143,
+        bill: '1,15 bi',
+        nota: 'estimativa',
+      },
+      {
+        label: 'Quem não usa ChatGPT',
+        sublabel: 'acréscimo: 37% do tráfego de IA',
+        work: 662,
+        bill: '662 mi',
+        nota: 'estimativa',
+      },
+      {
+        label: 'Subtotal sem a China',
+        sublabel: 'acumulado: 1,15 bi + 662 mi',
+        work: 1810,
+        bill: '1,81 bi',
+        nota: 'derivado',
+      },
+      {
+        label: 'A China entra',
+        sublabel: 'acréscimo: 42,8% da população',
+        work: 602,
+        bill: '+602 mi',
+        nota: 'pesquisa',
+        destaque: true,
+      },
+      {
+        label: 'Total publicado',
+        sublabel: 'acumulado: o número que circula',
+        work: 2412,
+        bill: '2,42 bi',
+        nota: 'teto',
+      },
+    ],
+    conclusao: 'Um degrau é contagem publicada. Quatro são razão, painel ou pesquisa declarativa.',
+  },
+  'china-cadeia-com-a-leitura-errada': {
+    workLabel: 'onde a conta chega, em milhões de usuários',
+    billLabel: 'o que entra na conta',
+    notaLabel: 'natureza',
+    rows: [
+      {
+        label: 'ChatGPT',
+        sublabel: 'ponto de partida: semanais, pela OpenAI',
+        work: 900,
+        bill: '900 mi',
+        nota: 'contagem',
+      },
+      {
+        label: 'Semana vira mês',
+        sublabel: 'os mesmos, x 1,27 (Similarweb)',
+        work: 1143,
+        bill: '1,15 bi',
+        nota: 'estimativa',
+      },
+      {
+        label: 'Quem não usa ChatGPT',
+        sublabel: 'acréscimo: 37% do tráfego de IA',
+        work: 662,
+        bill: '662 mi',
+        nota: 'estimativa',
+      },
+      {
+        label: 'Subtotal sem a China',
+        sublabel: 'acumulado: 1,15 bi + 662 mi',
+        work: 1810,
+        bill: '1,81 bi',
+        nota: 'derivado',
+      },
+      {
+        label: 'A China, pela frase',
+        sublabel: 'acréscimo: 42,8% dos internautas',
+        work: 482,
+        bill: '+482 mi',
+        nota: 'pesquisa',
+        destaque: true,
+      },
+      {
+        label: 'Total que essa leitura dá',
+        sublabel: 'acumulado: não é o publicado',
+        work: 2292,
+        bill: '2,29 bi',
+        nota: 'não fecha',
+      },
+    ],
+    conclusao: 'Seguindo a descrição ao pé da letra, faltam 120 milhões de pessoas na conta.',
+  },
   /* Degrau 1 — a analogia. Nenhum dado real: as PROPORÇÕES é que são as reais
      (150 contra 83 na barra = os tokens de saída; 2,87 contra 100 = o custo por
      tarefa, US$ 0,09 contra US$ 3,14). A procedência declara isso dentro do SVG. */

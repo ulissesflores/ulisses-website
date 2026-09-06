@@ -1,0 +1,426 @@
+---
+title: 'A China conta 602 milhões de usuários de IA por telefone. A OpenAI conta mais de 900 milhões por servidor'
+slug: quantas-pessoas-usam-ia-china
+category: artigos
+date: '2026-09-05'
+language: pt-BR
+---
+
+Dois números medem a mesma coisa por métodos que não conversam, e ninguém pode somá-los —
+mas eles **são** somados, todo dia, e o resultado virou o censo oficioso da inteligência
+artificial: **2,42 bilhões de usuários no mundo**.
+
+Fui refazer essa soma degrau por degrau, na fonte de quem a faz. Ela tem cinco degraus e
+**um único dado publicado por quem tem o dado**. Todo o resto é razão, painel de mercado ou
+pesquisa por telefone. O último degrau é a China — e é o que mais me interessava, porque a
+pauta deste artigo nasceu de um leitor que perguntou, embaixo do [artigo anterior sobre os
+números de IA](/artigos/quantas-pessoas-usam-ia), onde estavam os chineses nessa conta.
+
+A resposta curta: **estão lá**. A resposta longa é o artigo.
+
+> **Nota metodológica.** Refiz a cadeia de cálculo lendo o *Digital 2026 Mid-Year Global
+> Update Report* da DataReportal e o 57º relatório estatístico do CNNIC — este último em PDF,
+> em chinês, com o texto extraído e conferido linha a linha. As citações em inglês e em
+> chinês vêm traduzidas ao lado. A aritmética de conferência é minha, feita em código, e está
+> reproduzida no corpo: qualquer pessoa refaz com uma calculadora. Onde eu não verifiquei,
+> está escrito que não verifiquei.
+
+| O que se diz por aí | Veredito | O que a conferência mostrou |
+|---|---|---|
+| "As contagens globais de IA ignoram a China" | ❌ **Falso** | A DataReportal soma a China de propósito, cita o CNNIC pelo nome e dedica um parágrafo ao Grande Firewall antes de somar |
+| "2,42 bilhões de pessoas usam IA" | ⚠️ **Impreciso, e o autor avisa** | O próprio relatório desaconselha ler a cifra como pessoas e pede o termo "usuários ativos" |
+| "A China tem 602 milhões de usuários de IA" | ✅ **Confirmado** | 6,02 亿 no 57º relatório do CNNIC, base dezembro de 2025 — o dado mais recente que existe |
+| "O ChatGPT já tem 1 bilhão de usuários semanais" | ❌ **Falso** | A OpenAI publica *"mais de 900 milhões"*; o 1 bilhão é projeção dela mesma, não cifra corrente |
+| Os 42,8% chineses são a fatia dos internautas | ⚠️ **Erro na explicação** | São a fatia da **população inteira**. A conta da DataReportal usa a leitura certa; a frase que a explica, não — e a distância entre as duas leituras é de 120 milhões de pessoas |
+| Os dois números podem ser somados | ⚠️ **Só com ressalva** | Um é alcance de **seis meses** por telefone; o outro é atividade **semanal** medida em servidor |
+
+---
+
+## Como se conta uma multidão
+
+Imagine uma praça cheia e três pessoas encarregadas de dizer quantas passaram por ali.
+
+A primeira **bate na porta das casas ao redor** e pergunta: "o senhor esteve na praça nos
+últimos seis meses?". Anota o sim. É lento, é declarativo, depende da memória de quem
+responde — e alcança quem nunca deixou rastro nenhum, inclusive a criança de sete anos.
+
+A segunda **conta as catracas** na entrada da praça. Ela sabe exatamente quantas voltas a
+roleta deu **esta semana**. Não sabe quantas pessoas são: quem entrou três vezes girou três
+vezes, e quem pulou o muro não girou nenhuma.
+
+A terceira **não conta nada**. Ela pega o número da catraca, multiplica por uma razão que
+comprou de uma consultoria — "para cada pessoa que passa por semana, há 1,27 que passa por
+mês" — e anuncia um total.
+
+<StepFlowDiagram
+  dataset="china-como-se-conta-uma-multidao"
+  title="Três formas de contar a mesma praça"
+  subtitle="A analogia inteira, antes de qualquer número: cada elo responde a uma pergunta diferente"
+  source="Figura qualitativa: não há número nesta cena. ulissesflores.com/censo"
+  description="Diagrama em cadeia com cinco elos. Elo 1: bater na porta e perguntar se esteve na praça nos últimos seis meses. Elo 2: contar as voltas da catraca desta semana. Elo 3: multiplicar o número da catraca por uma razão comprada de terceiros. Elo 4, marcado como ponto de falha: somar o resultado dos três num total só. Elo 5: anunciar o total como se fosse o número de pessoas."
+/>
+
+Repare no quarto elo, o único marcado. O problema nunca é uma das três contagens: cada uma
+responde bem à sua própria pergunta. O problema é o momento em que os três resultados entram
+na mesma soma e saem dela com o mesmo nome — **"usuários"**.
+
+Essa soma existe, tem endereço, e é a origem do número que você já viu em apresentação de
+investidor.
+
+## A conta que produz os 2,42 bilhões
+
+Quem faz a conta é a **DataReportal**, que publica há mais de uma década os relatórios
+*Digital* em parceria com a agência We Are Social — a fonte que praticamente todo slide sobre adoção
+digital cita, quase sempre sem abrir. Abri.
+
+O relatório de meio de ano de 2026 explica a cadeia inteira, em público, num parágrafo que
+existe justamente para dar transparência. Traduzo os degraus na ordem:
+
+1. **O ponto de partida é a única contagem publicada por quem tem o dado.** *"Our starting
+   point is the latest, 900 million weekly active ChatGPT user figure published by OpenAI"*
+   ("nosso ponto de partida é a cifra mais recente, de 900 milhões de usuários semanais
+   ativos do ChatGPT, publicada pela OpenAI").
+2. **A razão que converte semana em mês vem de um painel comercial.** *"Similarweb's global
+   App Intelligence data (...) stood at roughly 1.27"* — a proporção entre usuários mensais e
+   semanais era de cerca de 1,27 em fevereiro de 2026. Multiplicando: **1,15 bilhão de
+   usuários mensais**.
+3. **A fatia que não usa ChatGPT sai de outro painel.** Uma análise de tráfego web indicou
+   que **pouco mais de 63%** dos visitantes de plataformas de IA só visitam o ChatGPT — logo,
+   **pouco menos de 37%** dos usuários ativos usam outra coisa, o que dá **662 milhões**.
+4. **Somam-se os dois:** 1,15 bilhão + 662 milhões = **1,81 bilhão**.
+5. **Por último, entra a China** — com os 42,8% do CNNIC. *"And that takes us to our global
+   active GenAI user figure of 2.42 billion"* ("e é isso que nos leva à nossa cifra global de
+   2,42 bilhões de usuários ativos de IA generativa").
+
+<CostLadder
+  dataset="china-cadeia-datareportal"
+  title="Os cinco degraus dos 2,42 bilhões"
+  subtitle="Cada linha mostra onde a conta chega depois dela; a coluna da direita traz o número"
+  source="Fonte: DataReportal, Digital 2026 Mid-Year (abr/2026), citando OpenAI, Similarweb e CNNIC. ulissesflores.com/censo"
+  description="Escada de cinco linhas. Linha 1: ChatGPT, 900 milhões de usuários semanais, marcada como contagem publicada pela OpenAI. Linha 2: razão mensal por semanal de 1,27, painel Similarweb, resultando em 1,15 bilhão de usuários mensais. Linha 3: 662 milhões que não usam ChatGPT, derivados de participação de tráfego web. Linha 4: subtotal de 1,81 bilhão. Linha 5: mais 602 milhões da China, medidos por pesquisa telefônica do CNNIC, chegando a 2,42 bilhões."
+/>
+
+Refiz a soma com os números que o próprio relatório imprime: 1,81 bilhão mais 602 milhões dá
+**2,412 bilhões** — praticamente os 2,42 bilhões publicados, e a diferença é o arredondamento de cada degrau impresso. **A conta fecha.** Não há
+erro de aritmética aqui, e é importante dizer isso antes de qualquer crítica: o relatório é
+mais transparente que 99% do que se cita sobre IA, e termina o parágrafo pedindo, com todas
+as letras, que ninguém leia a cifra como 2,42 bilhões de *pessoas*.
+
+**O que não fecha não é a conta. É a ideia de que esses cinco degraus medem a mesma coisa.**
+
+## O terceiro degrau não cabe no Gemini
+
+Antes de chegar à China, vale parar no degrau 3 — os **662 milhões** de usuários mensais que,
+segundo a cadeia, usam alguma IA generativa que não é o ChatGPT.
+
+Em 22 de julho de 2026, na conversa de resultados do segundo trimestre da Alphabet, Sundar
+Pichai disse o seguinte, em uma frase:
+
+> *"the Gemini app, which now has 950 million monthly active users, with daily active users
+> tripling in the last year"*
+>
+> Em português: "o aplicativo Gemini, que agora tem 950 milhões de usuários mensais ativos,
+> com os usuários diários triplicando no último ano."
+
+**Um só concorrente declara 950 milhões onde a cadeia inteira reserva 662 milhões para todo
+mundo que não abre o ChatGPT no mês.** Os dois números são públicos, os dois são recentes.
+
+A primeira explicação é a mais simples, e é a sobreposição: os 662 milhões não são "os
+usuários dos concorrentes". São os que usam **só** os concorrentes. Quem abre o Gemini e
+também o ChatGPT já está contado no 1,15 bilhão do degrau anterior — e a cadeia assume que a
+imensa maioria dos usuários do Gemini está nesse caso. Pode ser verdade. Mas note o que a
+premissa faz: transforma um concorrente de 950 milhões numa sobra de 662 milhões que ele
+divide com todos os outros.
+
+A segunda explicação é a régua. "Usuário mensal do aplicativo Gemini" inclui gente que o
+Google conta por integração no Android e na busca, e que a medição de tráfego web usada pela
+cadeia simplesmente não vê. O próprio Pichai citou, na mesma fala, **1 bilhão de usuários
+mensais** para o "AI Mode" da busca — que é ainda outra régua, ainda com o mesmo apelido.
+
+E o contraste com a Anthropic fecha o quadro: **não existe número oficial de usuários do
+Claude**. Procurei, e o que circula (algo como 245 milhões) é estimativa de painel de
+terceiros, não declaração da empresa. Não entra neste texto. Com o Meta AI acontece o mesmo:
+a cifra de 1,2 bilhão que circula em agregadores não tem, até onde consegui verificar,
+declaração oficial correspondente — e por isso ela também não aparece aqui.
+
+Guarde a assimetria, porque ela vai reaparecer na China: **as réguas mais generosas são as das
+empresas que escolhem quando divulgar.** A régua que tem erro amostral publicado é a da
+pesquisa telefônica.
+
+## O degrau chinês entra com outra régua — e a régua está publicada
+
+O 57º *Relatório Estatístico sobre o Desenvolvimento da Internet na China* saiu em **5 de
+fevereiro de 2026**, com dados até dezembro de 2025. Ele é publicado pelo CNNIC, o centro de
+informação da internet chinesa — o órgão que administra o domínio `.cn`. Conferi no índice
+oficial em 4 de setembro de 2026: **não existe edição mais nova**. O 602 milhões é o dado
+mais recente do Estado chinês sobre o assunto.
+
+Baixei o PDF, extraí o texto e fui atrás da definição. Ela está na nota de rodapé 64:
+
+> 指过去半年内，我国整体人口中使用过生成式人工智能产品或服务的比例为 42.8%。
+>
+> Em português: "refere-se à proporção da **população total** do país que **usou** produto ou
+> serviço de inteligência artificial generativa **nos últimos seis meses**: 42,8%."
+
+E a definição de internauta, no glossário do mesmo relatório, fixa a idade:
+
+> 网民：指过去半年内我国使用过互联网的 6 周岁及以上居民。
+>
+> Em português: "internauta: residente de **6 anos ou mais** que usou a internet nos últimos
+> seis meses."
+
+Junte as duas e você tem a régua chinesa inteira: **usuário de IA é quem usou pelo menos uma
+vez em seis meses, a partir dos seis anos de idade**. E o instrumento é o mais antigo que
+existe — o apêndice diz que a apuração é feita por **CATI**, sigla de *computer-assisted
+telephone interviewing*, entrevista telefônica assistida por computador. Duas listas de
+telefones, fixo e celular, 31 províncias da China continental, erro amostral máximo de
+**0,64 ponto percentual** com 95% de confiança.
+
+| A régua chinesa | O que ela é |
+|---|---|
+| Quem é contado | Residente de **6 anos ou mais** |
+| O que conta como uso | **Uma vez** nos últimos **seis meses** |
+| Como se apura | **Entrevista por telefone** (CATI), duas listas amostrais |
+| Cobertura | 31 províncias da China continental — sem Hong Kong, Macau e Taiwan |
+| Erro declarado | 0,64 p.p., 95% de confiança |
+| O que **não** existe | Nenhum recorte semanal, nenhum recorte mensal, nenhum dado por marca |
+
+<CountryBarsChart
+  dataset="china-serie-penetracao"
+  title="A régua não mudou entre as três ondas. O número mais que dobrou assim mesmo"
+  subtitle="Penetração de IA generativa na população chinesa · CNNIC, mesma pergunta nas três ondas"
+  source="Fonte: CNNIC, 57º relatório estatístico da internet chinesa, figura 37. ulissesflores.com/censo"
+  description="Gráfico de barras horizontais com três medições da penetração de IA generativa na população chinesa: dezembro de 2024 com 17,7 por cento; junho de 2025 com 36,5 por cento; dezembro de 2025 com 42,8 por cento, equivalente a 602 milhões de pessoas, a barra destacada."
+/>
+
+Repare que as três barras vêm da mesma pergunta, feita do mesmo jeito, com um intervalo de
+seis meses entre elas — **17,7% em dezembro de 2024, 36,5% em junho de 2025, 42,8% em
+dezembro de 2025**. Isso importa mais do que parece: quando a régua não muda, o crescimento é
+crescimento de verdade. A China não passou de 17,7% a 42,8% porque alguém afrouxou a
+definição no meio do caminho. Passou porque, em doze meses, **353 milhões de pessoas a mais**
+responderam "sim" à mesma pergunta.
+
+Não há nada de errado com essa régua. Pelo contrário: ela é declarada, o erro amostral é
+publicado, e é o mesmo tipo de medição que a Europa e o Brasil usam. O que existe é uma
+**incompatibilidade** — e ela é explícita. A DataReportal soma a China dizendo *"who use
+GenAI each month"* ("que usam IA generativa a cada mês"). O CNNIC nunca mediu mês nenhum.
+
+**Um alcance de seis meses entrou, sem conversão, num total declarado como mensal.**
+
+## Onde a explicação não fecha: 42,8% de quê?
+
+Aqui está o achado que me fez reescrever o pitch deste artigo. O relatório soma a China com
+esta frase:
+
+> *"we add the 42.8 percent of **internet users** within Mainland China who use GenAI each
+> month"*
+>
+> Em português: "somamos os 42,8% dos **usuários de internet** da China continental que usam
+> IA generativa a cada mês."
+
+Mas os 42,8% do CNNIC não são dos usuários de internet. São da **população**. Está na nota de
+rodapé que traduzi acima: 我国整体人口 — "a população total do país". A China tinha, em
+dezembro de 2025, **1,125 bilhão de internautas**. Aplicar 42,8% a eles dá outro número:
+
+| Leitura | Conta | Resultado | Total global que ela produziria |
+|---|---|---|---|
+| A que a frase descreve | 42,8% × 1,125 bi de internautas | **482 milhões** | 2,29 bilhões |
+| A que o CNNIC mede | 42,8% × população | **602 milhões** | **2,41 bilhões** |
+
+A segunda é a que fecha nos 2,42 bilhões publicados. Ou seja: **a conta está certa e a
+explicação da conta está errada.** Quem tentar refazer o número seguindo a descrição impressa
+chega a 2,29 bilhões e não entende por quê.
+
+<CostLadder
+  dataset="china-cadeia-com-a-leitura-errada"
+  title="A mesma escada, refeita pela descrição publicada"
+  subtitle="Só o último degrau muda — e o total deixa de bater com o número anunciado"
+  source="Fontes: DataReportal (degraus 1 a 4) · CNNIC 57º, rodapé 64, para as duas leituras dos 42,8%. Cálculo próprio. ulissesflores.com/censo"
+  description="A mesma escada de cinco degraus da figura anterior, com o último degrau alterado: em vez de 602 milhões, entra 482 milhões, que é 42,8 por cento aplicado ao 1,125 bilhão de internautas chineses. O total desce de 2,42 bilhões para 2,29 bilhões, e a linha final destaca que esse valor não corresponde ao número publicado."
+/>
+
+Repare que os quatro primeiros degraus são idênticos aos da figura anterior: o que muda são
+os dois últimos — o degrau chinês, de 602 para 482 milhões, e o total, de 2,42 para 2,29
+bilhões. Uma ressalva de leitura: as barras são normalizadas dentro de cada figura, então
+compare os números da coluna da direita, nunca o comprimento de uma imagem contra a outra.
+**A diferença entre as duas leituras é de 120 milhões de pessoas** — mais que o dobro de
+todos os brasileiros que usam IA generativa.
+
+Isso não é fraude nem erro de ordem de grandeza, e seria desonesto vender como tal. É uma
+frase que descreve mal a própria aritmética, num parágrafo escrito para dar transparência. Só
+que a frase é a parte que viaja: é ela que vai para o slide, para o relatório de consultoria
+e para o post de LinkedIn. **A conta certa fica no PDF; a explicação errada é que circula.**
+
+E se você quiser a taxa chinesa na régua dos internautas — a que a frase promete —, ela
+existe e é maior: 602 milhões sobre 1,125 bilhão dá **53,5%**. Pouco mais da metade dos
+internautas chineses usou IA generativa nos últimos seis meses.
+
+## Quem são os 602 milhões (não é quem você imagina)
+
+O relatório do CNNIC não para no total. Ele traz o perfil, e o perfil desmonta o estereótipo
+do "chinês hipertecnológico programando com IA".
+
+| Corte | O que o relatório diz |
+|---|---|
+| Faixa etária com mais usuários | **19 anos ou menos: 26,4%** |
+| Depois dela | 30-39 anos: 22,0% · 20-29 anos: 21,3% |
+| 40 anos ou mais, somados | 30,3% — alta de 4,9 pontos em seis meses |
+| Ocupação mais frequente | **Estudante: 30,1%** |
+| Escolaridade | Superior ou tecnólogo: 38,6% |
+| Finalidade mais comum | Responder perguntas: 76,0% |
+| Finalidade **menos** comum da lista | **Gerar ou tratar código: 10,8%** |
+
+<CountryBarsChart
+  dataset="china-perfil-etario"
+  title="O maior grupo de usuários de IA da China tem 19 anos ou menos"
+  subtitle="Distribuição etária dos 602 milhões · a pesquisa começa aos 6 anos de idade"
+  source="Fonte: CNNIC, 57º relatório, figura 39 (base: dezembro de 2025). ulissesflores.com/censo"
+  description="Gráfico de barras horizontais com a distribuição etária dos usuários chineses de IA generativa: 19 anos ou menos com 26,4 por cento, a maior barra e destacada; 30 a 39 anos com 22,0 por cento; 20 a 29 anos com 21,3 por cento; 40 a 49 anos com 15,1 por cento; 50 a 59 anos com 10,1 por cento; 60 anos ou mais com 5,1 por cento."
+/>
+
+Repare na barra do topo, a única em destaque: **26,4% é o maior grupo, não a maioria** — e a
+diferença entre as duas palavras é exatamente o tipo de imprecisão que este artigo está
+conferindo. O que o dado autoriza dizer é isto: a maior fatia dos usuários de IA da China tem
+19 anos ou menos, e a pesquisa **começa aos 6 anos de idade**.
+
+Guarde esse detalhe, porque ele é a segunda incompatibilidade da soma: os termos de uso do
+ChatGPT exigem **13 anos**. Nenhuma contagem de servidor ocidental inclui uma criança de
+sete anos. A pesquisa chinesa inclui — e deve incluir, porque é uma pesquisa de população, e
+crianças de sete anos são população.
+
+Há ainda um número que raramente aparece junto do "602 milhões": o **tempo**. O mesmo
+relatório do CNNIC publica que o uso médio mensal por usuário de aplicativo nativo de IA é de
+**143,2 minutos** — cerca de 4,8 minutos por dia. Vale a ressalva, porque ela é a própria
+lição do artigo: **esse número não é dos 602 milhões**. Ele vem de um painel de celulares da
+consultoria QuestMobile, citado pelo CNNIC na figura 44, e mede quem abre o aplicativo — não
+quem respondeu ao telefone. São populações diferentes, e somar as duas seria repetir o erro
+que estou descrevendo.
+
+E há o dado que fecha a pergunta do leitor. Em outro relatório, o CNNIC mediu que **mais de
+90% dos usuários chineses escolhem primeiro um modelo nacional**. Os 602 milhões não são
+invisíveis nas contagens ocidentais só porque o Grande Firewall bloqueia o ChatGPT. São
+invisíveis porque **essas pessoas usam outros produtos** — o buraco é de catálogo, não só de
+acesso.
+
+## A medição chinesa mais recente não é do Estado
+
+Se o dado oficial para em dezembro de 2025, quem mede a China depois disso é uma empresa
+privada. A **QuestMobile**, a consultoria de dados de mercado que faz na China o papel que a
+Sensor Tower faz no Ocidente, publicou em 14 de julho de 2026 seu relatório semestral do
+mercado de aplicativos de IA:
+
+| Aplicativo | Usuários mensais ativos | Data-base |
+|---|---|---|
+| Aplicativos nativos de IA (total, sem duplicar) | **499 milhões** | maio de 2026 |
+| Doubao (豆包, do ByteDance — o dono do TikTok) | **382 milhões** | junho de 2026 |
+| Qwen (通义千问, do Alibaba) | 167 milhões | junho de 2026 |
+| DeepSeek (深度求索) | 129 milhões | junho de 2026 |
+
+Duas ressalvas que o número exige, e que valem mais que ele:
+
+1. **É painel comercial, não censo.** A QuestMobile vende dashboards sobre esses mesmos
+   aplicativos. O método — tamanho da amostra, critério de deduplicação, se conta
+   mini-programa dentro do WeChat — **não é publicado**. Não há auditoria independente.
+2. **A régua muda de novo.** Aqui "usuário" é *usuário mensal ativo de aplicativo*: nem os
+   seis meses do CNNIC, nem a semana da OpenAI. Um terceiro relógio.
+
+Note o que acontece quando as duas medições chinesas se encontram: o CNNIC diz 602 milhões de
+**pessoas** (dezembro de 2025, por telefone); a QuestMobile diz 499 milhões de **usuários
+mensais de aplicativo** (maio de 2026, num painel cujo critério de deduplicação não é
+publicado — não dá para saber se a unidade é a pessoa, a conta ou o aparelho). **Os dois
+números são chineses, são recentes e não se contradizem — porque não medem a mesma coisa.** É a lição do artigo em
+escala doméstica.
+
+## O Brasil mede a IA do mesmo jeito que a China
+
+Este é o degrau que nenhum ranking internacional tem, e é o que mais me interessa como
+brasileiro: a régua brasileira é **prima da chinesa**, não da americana.
+
+A TIC Domicílios 2025, do Cetic.br, divulgada em 9 de dezembro de 2025, mediu IA generativa
+pela primeira vez. É pesquisa domiciliar probabilística, presencial — e pergunta a pessoas,
+como o CNNIC:
+
+| Dado (Brasil) | Valor |
+|---|---|
+| Usuários de internet (10 anos ou mais) que usam IA generativa | **32% ≈ 50 milhões** |
+| Classe A | 69% |
+| Classes D e E | **16%** |
+| Ensino superior | 59% |
+| Ensino fundamental | **17%** |
+| Finalidade "pessoal" | 84% dos que usaram |
+| Estudantes que recorreram à IA para pesquisa ou trabalho acadêmico | 86% |
+
+<CountryBarsChart
+  dataset="china-brasil-mesma-regua"
+  title="China e Brasil medem perguntando a pessoas. A OpenAI mede contando contas"
+  subtitle="Duas pesquisas na mesma base, e o número que não tem base nenhuma"
+  source="Fontes: CNNIC 57º (dez/2025) · Cetic.br TIC Domicílios 2025 · OpenAI. Sem barra para o ChatGPT: não há denominador. ulissesflores.com/censo"
+  description="Gráfico de barras horizontais em dois blocos separados pelo método de medição. Primeiro bloco, medido perguntando a pessoas, em porcentagem dos usuários de internet: China com 53,5 por cento, medida por telefone pelo CNNIC; Brasil com 32 por cento, medido em domicílio pelo Cetic.br. Segundo bloco, medido no servidor: ChatGPT, com mais de 900 milhões de usuários por semana e nenhuma barra desenhada, porque não existe denominador populacional para esse número."
+/>
+
+Repare que os dois blocos da figura estão separados de propósito, e que o bloco de baixo não
+tem porcentagem nenhuma. **Não é possível calcular a "penetração" do ChatGPT sobre a
+população mundial** com o número que a OpenAI publica: usuários semanais ativos não têm
+denominador humano conhecido. A separação visual é a tese.
+
+E a desigualdade brasileira diz uma coisa que o número chinês também diria, se o CNNIC
+publicasse renda: **69% na classe A contra 16% nas classes D e E**. Quatro vezes. A IA
+generativa chegou ao Brasil pela mesma porta por onde entrou todo o resto — e "50 milhões de
+brasileiros usam IA" é uma frase que esconde que a metade de baixo da pirâmide social quase
+não aparece nela.
+
+## O que eu faria com isso
+
+<StepFlowDiagram
+  dataset="china-a-cadeia-corrigida"
+  title="A mesma cadeia, com o nome certo em cada elo"
+  subtitle="Nenhum degrau some; o que muda é parar de chamar os cinco pela mesma palavra"
+  source="Síntese própria a partir das fontes citadas no corpo. ulissesflores.com/censo"
+  description="Diagrama em cadeia com cinco elos, retomando a figura de abertura com os nomes reais: elo 1, contagem publicada de usuários semanais pela OpenAI; elo 2, razão de conversão comprada de painel comercial; elo 3, participação de tráfego web estimada; elo 4, pesquisa telefônica declarativa de alcance semestral. O último elo traz a observação de que o total resultante é um teto, não um censo."
+/>
+
+É a cadeia da abertura, agora com os nomes certos. Nenhum elo precisou ser removido — só
+deixaram de se chamar todos de "usuário". Daí saem três hábitos que passei a aplicar:
+
+1. **Pergunte "quantos de quê, em quanto tempo".** Semanal, mensal, seis meses, "já usou
+   alguma vez" — a resposta muda a manchete mais que o país. A Alemanha [tem duas
+   verdades](/artigos/quantas-pessoas-usam-ia) pelo mesmo motivo: 58% pela associação
+   setorial, 32,2% pelo Eurostat.
+2. **Desconfie de qualquer soma entre pesquisa e servidor.** Não porque uma seja pior — a
+   pesquisa é frequentemente melhor —, mas porque a soma não converte nada. Se você precisa
+   somar, declare o que fez, como a DataReportal declarou.
+3. **Trate o número da China como o que ele é: bom e específico.** É medição pública, com erro
+   amostral declarado, mais recente que a maioria das ocidentais e feita por um método que o
+   Brasil também usa. Ele só não responde à pergunta "quantos chineses usam IA nesta semana",
+   porque ninguém mediu isso.
+
+O último parágrafo do relatório da DataReportal já dizia o essencial, e vale repetir na
+íntegra, traduzido: *"aconselhamos **contra** interpretar esta cifra como 2,42 bilhões de
+'pessoas'"*. O aviso está lá. O que circula é o número sem ele.
+
+Se você refizer a conta e chegar a outro valor, me mande — o parágrafo da DataReportal está
+aberto no relatório de meio de ano, o PDF do CNNIC está no ar em `cnnic.net.cn`, e a nota de
+rodapé é a de número 64. Atualizo e credito.
+
+## Fontes
+
+- DataReportal — [*Digital 2026 Mid-Year Global Update Report*](https://datareportal.com/reports/digital-2026-mid-year-global-update-report) (dados de abril de 2026; cadeia de cálculo dos 2,42 bilhões)
+- CNNIC — [第57次《中国互联网络发展状况统计报告》](https://www.cnnic.net.cn/n4/2026/0304/c88-11549.html) (57º Relatório Estatístico sobre o Desenvolvimento da Internet na China, 5 de fevereiro de 2026; [PDF](https://www.cnnic.net.cn/NMediaFile/2026/0304/MAIN1772588317069TUXN3827X8.pdf))
+- CNNIC — [《生成式人工智能应用发展报告（2025）》](https://www.cnnic.net.cn/n4/2025/1021/c88-11391.html) (Relatório de Desenvolvimento das Aplicações de IA Generativa, 18 de outubro de 2025)
+- OpenAI — [*Scaling AI for everyone*](https://openai.com/index/scaling-ai-for-everyone/) e [*OpenAI raises $122 billion*](https://openai.com/index/accelerating-the-next-phase-ai/) (cifra de usuários semanais ativos do ChatGPT)
+- Alphabet — [*Q2 2026 earnings call: Remarks from our CEO*](https://blog.google/company-news/inside-google/message-ceo/alphabet-earnings-q2-2026/) (22 de julho de 2026; usuários mensais do aplicativo Gemini e do AI Mode)
+- QuestMobile — [2026年AI应用市场发展半年报](https://www.questmobile.com.cn/research/report/2076954943839809537/) (relatório semestral do mercado de aplicativos de IA, 14 de julho de 2026)
+- Cetic.br / CGI.br — [TIC Domicílios 2025: 50 milhões de brasileiros já usam IA](https://cetic.br/pt/noticia/50-milhoes-de-brasileiros-ja-usam-ia-mas-potenciais-beneficios-continuam-limitados-as-camadas-de-maior-renda-e-escolaridade/) (9 de dezembro de 2025)
+
+---
+
+**Verificado em 4 de setembro de 2026.** A cadeia de cálculo foi lida no relatório de meio de
+ano da DataReportal e refeita em código. Os números chineses foram lidos no PDF do 57º
+relatório do CNNIC, com o texto extraído por `pdftotext` e as duas definições conferidas
+verbatim no original em chinês. A cifra da OpenAI foi lida nas páginas da própria OpenAI. Os
+dados brasileiros vieram do comunicado do Cetic.br sobre a TIC Domicílios 2025. A cifra do
+Gemini foi lida na página da própria Alphabet. **O que não verifiquei:** não abri o PDF do
+relatório setorial de IA generativa do CNNIC — os números dessa fonte vêm da página oficial
+que o divulga; **procurei e não encontrei** número oficial de usuários do Claude nem
+declaração primária do Meta AI para a cifra de 1,2 bilhão que circula, e por isso as duas
+ficaram fora do texto; e não tenho acesso à metodologia da QuestMobile, que não é publicada.

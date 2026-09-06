@@ -52,6 +52,20 @@ export function localizeArtigo(artigo: Artigo, locale: Locale): Pick<Artigo, 'ti
 
 export const artigos: readonly Artigo[] = [
   {
+    slug: 'quantas-pessoas-usam-ia-china',
+    title: 'A China conta 602 milhões de usuários de IA por telefone. A OpenAI conta mais de 900 milhões por servidor',
+    summary: 'Refiz a conta dos 2,42 bilhões de usuários de IA: cinco degraus, um só dado publicado. O último é a China, que mede por telefone quem usou uma vez em 6 meses.',
+    date: '2026-09-05',
+    tags: ['ia', 'estatisticas', 'china', 'brasil', 'metodologia'],
+    hero: {
+      width: 2400,
+      height: 1260,
+      locales: {
+        'pt-br': { src: '/artigos/quantas-pessoas-usam-ia-china/hero.png', og: '/artigos/quantas-pessoas-usam-ia-china/hero-og.jpg' },
+      },
+    },
+  },
+  {
     slug: 'estatisticas-openai',
     title: 'Só 8 dos 20 números mais citados sobre a OpenAI são da OpenAI — o resto é vazamento, meta ou ninguém sabe de onde veio',
     summary: 'Classifiquei os 20 números mais citados sobre a OpenAI: 8 são oficiais, 6 são reportagem, 3 são meta e 3 ninguém sabe de onde vieram. O 92% tem 31 meses. Fui à fonte de cada número que circula em compilados sobre a empresa: os da própria OpenAI conferem — e são os menos interessantes; o que dá manchete é o que ela nunca assinou. O "92% da Fortune 500" saiu da resposta da OpenAI ao processo do New York Times, em janeiro de 2024, e circula sem data; 24 bi de receita é oficial, 40 bi é estimativa, 280 bi é meta — juntar os três com o mesmo verbo está errado mesmo com cada número certo; a SoftBank investiu 64,6 bi, não "mais de 71", e os 500 bi do Stargate são compromisso de computação, não investimento. O "salário de US$ 76.001" de Altman é a soma de duas colunas do Form 990, o ano seguinte dá 113.674, e ele é o décimo de doze nomes em remuneração. No Brasil, o "50 milhões de usuários" aparece idêntico em agosto de 2025 e agosto de 2026 — as mensagens por dia subiram 54%.',
