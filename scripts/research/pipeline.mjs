@@ -412,7 +412,7 @@ function buildDeepResearchMarkdown(publication, identity, generatedAt) {
     polymathic: 960,
     macro: 960,
   };
-  const doi = publication.doi || { status: 'target', target: '' };
+  const mintedDoi = publication.doi?.minted || null;
   const recommendations = publication.articleSections?.recommendations || [
     'Expandir validacao cruzada com replicacoes independentes e protocolo aberto.',
     'Publicar pacote de reproducibilidade com versoes, dados e matriz de risco.',
@@ -535,8 +535,8 @@ function buildDeepResearchMarkdown(publication, identity, generatedAt) {
     `- Compliance score: ${quality.compliance}/1000`,
     `- Polymathic index: ${quality.polymathic}/1000`,
     `- Macro score: ${quality.macro}/1000`,
-    `- DOI status: ${doi.status}`,
-    `- DOI target: ${doi.target || 'N/A'}`,
+    // O bloco Phase Score Summary e todo em ingles nos 5 locales; a linha acompanha.
+    `- DOI: ${mintedDoi || 'not minted (cite by canonical URL)'}`,
     `- Canonical citation seed: ${citationText || 'N/A'}`,
     `- Generated at: ${generatedAt}`,
     '',
@@ -668,6 +668,7 @@ export async function generateManuscripts({ publications, identity, generatedAt,
 
   for (const publication of publications) {
     const slug = publication.id;
+    const mintedDoi = publication.doi?.minted || null;
     const directory = path.join(publicRoot, slug);
     const sourceDirectory = path.join(dataRoot, slug);
     ensureDir(directory);
@@ -707,7 +708,7 @@ export async function generateManuscripts({ publications, identity, generatedAt,
           category: publication.category,
           canonicalUrl: publication.canonicalUrl,
           generatedAt,
-          doi: publication.doi,
+          ...(mintedDoi ? { doi: { status: 'minted', minted: mintedDoi } } : {}),
         },
         null,
         2,
@@ -727,7 +728,7 @@ export async function generateManuscripts({ publications, identity, generatedAt,
         pdf: `/deep-research/${slug}/deep-research.pdf`,
         docx: `/deep-research/${slug}/deep-research.docx`,
       },
-      doi: publication.doi,
+      ...(mintedDoi ? { doi: { status: 'minted', minted: mintedDoi } } : {}),
       quality: baseQuality(publication),
     });
   }
@@ -826,7 +827,7 @@ export function writeDeepResearchArtifacts({ entries, report, docsDir, generated
     };
   });
 
-  const ts = `/* AUTO-GENERATED FILE. DO NOT EDIT MANUALLY. */\n\nexport interface DeepResearchQuality {\n  phase1: number;\n  phase2: number;\n  phase3: number;\n  compliance: number;\n  polymathic: number;\n  macro: number;\n}\n\nexport interface DeepResearchArtifact {\n  slug: string;\n  title: string;\n  abstract: string;\n  abstractEn: string;\n  citation: string;\n  doi: {\n    status: 'target' | 'minted';\n    target?: string;\n    minted?: string;\n  };\n  quality: DeepResearchQuality;\n  polymathicIndex: number;\n  qualityScore: number;\n  files: {\n    md: string;\n    pdf: string;\n    docx: string;\n  };\n}\n\nexport const deepResearchArtifacts: Record<string, DeepResearchArtifact> = ${JSON.stringify(
+  const ts = `/* AUTO-GENERATED FILE. DO NOT EDIT MANUALLY. */\n\nexport interface DeepResearchQuality {\n  phase1: number;\n  phase2: number;\n  phase3: number;\n  compliance: number;\n  polymathic: number;\n  macro: number;\n}\n\nexport interface DeepResearchArtifact {\n  slug: string;\n  title: string;\n  abstract: string;\n  abstractEn: string;\n  citation: string;\n  doi?: {\n    status: 'minted';\n    minted: string;\n  };\n  quality: DeepResearchQuality;\n  polymathicIndex: number;\n  qualityScore: number;\n  files: {\n    md: string;\n    pdf: string;\n    docx: string;\n  };\n}\n\nexport const deepResearchArtifacts: Record<string, DeepResearchArtifact> = ${JSON.stringify(
     Object.fromEntries(enriched.map((entry) => [entry.slug, entry])),
     null,
     2,

@@ -16,7 +16,9 @@ function buildArticleMarkdown(publication: (typeof publications)[number]): strin
   lines.push(`**Autor:** ${upkfMeta.publicDisplayName || upkfMeta.displayName}`);
   lines.push(`**Data:** ${publication.date}`);
   lines.push(`**Categoria:** ${publication.category}`);
-  lines.push(`**DOI:** ${publication.doi.target || publication.doi.status}`);
+  if (publication.doi?.minted) {
+    lines.push(`**DOI:** ${publication.doi.minted}`);
+  }
   lines.push('');
 
   if (sections.abstract) {

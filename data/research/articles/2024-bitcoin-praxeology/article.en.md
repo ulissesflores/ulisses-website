@@ -73,7 +73,6 @@ Continuity agenda: Replicate the study in new operational contexts with a quasi-
 - Compliance score: 960/1000
 - Polymathic index: 960/1000
 - Macro score: 960/1000
-- DOI status: target
-- DOI target: 10.5281/zenodo.202414
+- DOI: not minted (cite by canonical URL)
 - Canonical citation seed: Nakamoto, 2008; Mises, 1912; Hayek, 1976
 - Generated at: 2026-03-12

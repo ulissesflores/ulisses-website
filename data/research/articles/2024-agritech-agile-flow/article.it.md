@@ -73,7 +73,6 @@ Agenda di continuità: Eseguire piloti controllati con metriche di SLO, costo de
 - Compliance score: 960/1000
 - Polymathic index: 960/1000
 - Macro score: 960/1000
-- DOI status: target
-- DOI target: 10.5281/zenodo.202423
+- DOI: not minted (cite by canonical URL)
 - Canonical citation seed: Reinertsen, 2009; Forsgren, 2018; Rother, 1999
 - Generated at: 2026-03-12

@@ -90,7 +90,6 @@ A virada do projeto só foi possível quando a organização aceitou que "menos 
 - Compliance score: 960/1000
 - Polymathic index: 960/1000
 - Macro score: 960/1000
-- DOI status: target
-- DOI target: 10.5281/zenodo.202423
+- DOI: not minted (cite by canonical URL)
 - Canonical citation seed: Perspective, 2026; Management, 2026; PMI, 2026
 - Generated at: 2026-02-21

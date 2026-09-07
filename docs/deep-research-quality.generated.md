@@ -1,8 +1,8 @@
 # Deep Research Quality Report (Generated)
 
-- Generated at: 2026-08-15T02:15:19.806Z
+- Generated at: 2026-09-06T03:20:51.629Z
 - Threshold: 950
-- Project score: 981/1000
+- Project score: 980/1000
 - Approved: no
 
 ## Per-Article Score
@@ -18,14 +18,10 @@
 | 2024-bitcoin-praxeology | 997 | 960 | 993 | 1000 | 970 | 984 | yes |
 | 2024-scribal-canonization-ezra | 997 | 980 | 993 | 1000 | 990 | 992 | yes |
 | 2024-theology-economic-order | 935 | 970 | 910 | 998 | 1000 | 963 | yes |
-| 2024-ring-signatures-privacy | 997 | 970 | 993 | 1000 | 990 | 990 | yes |
 | 2024-agritech-agile-flow | 944 | 970 | 910 | 1000 | 1000 | 965 | yes |
 | 2024-exegetical-treatise-anthropology | 997 | 970 | 993 | 1000 | 990 | 990 | yes |
 | 2023-marian-apparitions-critique | 997 | 980 | 993 | 1000 | 990 | 992 | yes |
-| 2023-digital-legacy | 997 | 950 | 993 | 1000 | 970 | 982 | yes |
 | 2023-holy-club-methodism | 997 | 980 | 993 | 1000 | 990 | 992 | yes |
-| 2022-theology-of-hope | 997 | 950 | 993 | 1000 | 970 | 982 | yes |
-| 2020-robotics-education | 997 | 950 | 993 | 1000 | 970 | 982 | yes |
 | 2017-chaos-theory-economics | 997 | 970 | 993 | 1000 | 990 | 990 | yes |
 
 ## Pending

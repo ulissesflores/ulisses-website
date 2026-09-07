@@ -29,9 +29,9 @@ const JSON_OUT = process.argv.includes('--json');
 // 5 representative URLs — one per pattern (A–E) identified in the XLSX
 const URLS_TO_INSPECT = [
   // Pattern A — www subdomain (should 301 to non-www)
-  { pattern: 'A — www subdomain',         url: 'https://www.ulissesflores.com/whitepapers/2023-digital-legacy' },
+  { pattern: 'A — www subdomain',         url: 'https://www.ulissesflores.com/whitepapers/2025-iot-data-sovereignty' },
   // Pattern B — explicit /pt-br/ prefix (should 301 to root)
-  { pattern: 'B — /pt-br/ prefix',         url: 'https://ulissesflores.com/pt-br/whitepapers/2023-digital-legacy' },
+  { pattern: 'B — /pt-br/ prefix',         url: 'https://ulissesflores.com/pt-br/whitepapers/2025-iot-data-sovereignty' },
   // Pattern C — /sermons/ legacy path (should 301 to /acervo-teologico/)
   { pattern: 'C — /sermons/ legacy',       url: 'https://ulissesflores.com/sermons/jejum-da-vitoria-2023-21-devotionals/12-dia-12-alinhamento-profetico' },
   // Pattern D — non-default locale (en) — should serve 200 with self-canonical + hreflang

@@ -233,32 +233,6 @@
       "url": "https://press.uchicago.edu/ucp/books/book/chicago/B/bo3684036.html"
     }
   ],
-  "2024-ring-signatures-privacy": [
-    {
-      "citation": "Rivest, R.; Shamir, A.; Tauman, Y. (2001). How to Leak a Secret.",
-      "url": "https://doi.org/10.1007/3-540-45682-1_32"
-    },
-    {
-      "citation": "Franklin, M.; Zhang, H. (2012). A framework for unique ring signatures.",
-      "url": "https://doi.org/10.1007/978-3-642-28914-9_6"
-    },
-    {
-      "citation": "Noether, S. (2015). Ring Confidential Transactions.",
-      "url": "https://eprint.iacr.org/2015/1098"
-    },
-    {
-      "citation": "Monero Research Lab publications.",
-      "url": "https://www.getmonero.org/resources/research-lab/"
-    },
-    {
-      "citation": "NIST SP 800-56A Rev. 3.",
-      "url": "https://doi.org/10.6028/NIST.SP.800-56Ar3"
-    },
-    {
-      "citation": "Ruffing, T.; Moreno-Sanchez, P.; Kate, A. (2017). CoinShuffle++.",
-      "url": "https://doi.org/10.1109/EuroSP.2017.47"
-    }
-  ],
   "2024-agritech-agile-flow": [
     {
       "citation": "Reinertsen, D. (2009). The Principles of Product Development Flow.",
@@ -337,32 +311,6 @@
       "url": "https://www.vaticannews.va/en/vatican-city/news/2024-05/new-norms-discernment-apparitions-dicastery-doctrine-faith.html"
     }
   ],
-  "2023-digital-legacy": [
-    {
-      "citation": "European Union (2016). General Data Protection Regulation (GDPR).",
-      "url": "https://eur-lex.europa.eu/eli/reg/2016/679/oj"
-    },
-    {
-      "citation": "ISO 15489-1:2016 Information and documentation -- Records management.",
-      "url": "https://www.iso.org/standard/62542.html"
-    },
-    {
-      "citation": "NIST Privacy Framework 1.0.",
-      "url": "https://www.nist.gov/privacy-framework"
-    },
-    {
-      "citation": "Carroll, E.; Romano, J. (2011). Your Digital Afterlife.",
-      "url": "https://books.google.com/books?id=4W8jAQAAQBAJ"
-    },
-    {
-      "citation": "Apple. Legacy Contact in Apple ID.",
-      "url": "https://support.apple.com/en-us/102631"
-    },
-    {
-      "citation": "Google. Inactive Account Manager.",
-      "url": "https://support.google.com/accounts/answer/3036546"
-    }
-  ],
   "2023-holy-club-methodism": [
     {
       "citation": "Wesley, J. The Journal of John Wesley.",
@@ -387,58 +335,6 @@
     {
       "citation": "Oxford Handbook of Methodist Studies.",
       "url": "https://academic.oup.com/edited-volume/34318"
-    }
-  ],
-  "2022-theology-of-hope": [
-    {
-      "citation": "Moltmann, J. (1967). Theology of Hope.",
-      "url": "https://www.fortresspress.com/store/product/9780800628277/Theology-of-Hope"
-    },
-    {
-      "citation": "Bonhoeffer, D. (1953). Letters and Papers from Prison.",
-      "url": "https://www.scmpress.co.uk/titles/3642/letters-and-papers-from-prison"
-    },
-    {
-      "citation": "Pannenberg, W. (1968). Theology and the Kingdom of God.",
-      "url": "https://www.westminsterjohnknoxpress.com/Products/0664240245/theology-and-the-kingdom-of-god.aspx"
-    },
-    {
-      "citation": "Volf, M. (2011). A Public Faith.",
-      "url": "https://brazospress.com/books/a-public-faith"
-    },
-    {
-      "citation": "Wright, N. T. (2008). Surprised by Hope.",
-      "url": "https://www.harpercollins.com/products/surprised-by-hope-n-t-wright"
-    },
-    {
-      "citation": "Metz, J. B. (1969). Theology of the World.",
-      "url": "https://www.herder.de/theologie-pastoral/shop/p6/10291-theology-of-the-world-hardcover/"
-    }
-  ],
-  "2020-robotics-education": [
-    {
-      "citation": "Papert, S. (1980). Mindstorms.",
-      "url": "https://books.google.com/books?id=5ks9AAAAMAAJ"
-    },
-    {
-      "citation": "Wing, J. M. (2006). Computational Thinking.",
-      "url": "https://doi.org/10.1145/1118178.1118215"
-    },
-    {
-      "citation": "Kolb, D. A. (1984). Experiential Learning.",
-      "url": "https://www.peterlang.com/document/1095800"
-    },
-    {
-      "citation": "Hmelo-Silver, C. E. (2004). Problem-Based Learning.",
-      "url": "https://doi.org/10.1023/B:EDPR.0000034022.16470.f3"
-    },
-    {
-      "citation": "Resnick, M. (2017). Lifelong Kindergarten.",
-      "url": "https://mitpress.mit.edu/9780262536134/lifelong-kindergarten/"
-    },
-    {
-      "citation": "Bers, M. U. (2022). Coding as a Playground.",
-      "url": "https://www.routledge.com/Coding-as-a-Playground-Programming-and-Computational-Thinking-in-the-Early-Childhood-Classroom/Bers/p/book/9781032016153"
     }
   ],
   "2017-chaos-theory-economics": [

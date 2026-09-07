@@ -105,7 +105,6 @@ No campo monetário, a história demonstra que a ordem espontânea (como nas Ilh
 - Compliance score: 960/1000
 - Polymathic index: 960/1000
 - Macro score: 960/1000
-- DOI status: target
-- DOI target: 10.5281/zenodo.202417
+- DOI: not minted (cite by canonical URL)
 - Canonical citation seed: Wikipedia, 2026; St, 2026; Socialism, 2026
 - Generated at: 2026-02-21

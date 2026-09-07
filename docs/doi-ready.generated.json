@@ -1,7 +1,7 @@
 {
   "generatedAt": "2026-02-21",
   "threshold": 950,
-  "taskScore": 981,
+  "taskScore": 975,
   "approved": false,
   "pending": [
     "2025-lstm-asset-prediction",
@@ -21,10 +21,6 @@
       "language": "pt-BR",
       "canonicalUrl": "https://ulissesflores.com/research/2025-little-law-resilience",
       "pdfUrl": "https://ulissesflores.com/deep-research/2025-little-law-resilience/deep-research.pdf",
-      "doi": {
-        "status": "target",
-        "target": "10.5281/zenodo.202501"
-      },
       "version": "v2026-02-21",
       "license": "CC-BY-4.0",
       "creators": [
@@ -117,7 +113,7 @@
             }
           ],
           "version": "v2026-02-21",
-          "notes": "DOI-ready metadata generated automatically from the canonical UPKF publication dataset. DOI target: 10.5281/zenodo.202501 (not minted).",
+          "notes": "DOI-ready metadata generated automatically from the canonical UPKF publication dataset. No DOI minted for this work yet; cite it by the canonical URL.",
           "license": "CC-BY-4.0"
         }
       },
@@ -175,10 +171,9 @@
             "key": "2025-little-law-resilience-ref-7",
             "unstructured": "Sterman, J. D. (2000). Business dynamics: Systems thinking and modeling for a complex world. McGraw-Hill."
           }
-        ],
-        "doi_target": "10.5281/zenodo.202501"
+        ]
       },
-      "citationCff": "cff-version: 1.2.0\nmessage: \"If you use this work, cite with this metadata. DOI target: 10.5281/zenodo.202501 (not minted).\"\ntitle: \"A Lei de Little como Vetor de Resiliência e Qualidade\"\ntype: article\nauthors:\n  - family-names: \"Flores\"\n    given-names: \"Carlos Ulisses\"\n    orcid: \"0000-0002-6034-7765\"\nidentifiers:\n  - type: url\n    value: \"https://ulissesflores.com/research/2025-little-law-resilience\"\n  - type: url\n    value: \"https://ulissesflores.com/deep-research/2025-little-law-resilience/deep-research.pdf\"\nabstract: \"Projetos complexos de Data Science e Inteligência Artificial operam sob elevada incerteza, variabilidade de demanda e forte interdependência técnica, o que frequentemente resulta em crises de entrega e baixa previsibilidade. Este artigo investiga a aplicação da Lei de Little como instrumento sistêmico para aumento da resiliência operacional e da qualidade em ambientes orientados à Business Agility. Por meio de fundamentação teórica e simulação computacional com dados sintéticos, compara-se o comportamento de sistemas com e sem limitação explícita de trabalho em progresso (WIP). Os resultados indicam redução significativa do lead time médio sem prejuízo relevante ao throughput, corroborando a literatura Lean e reforçando a limitação de WIP como mecanismo crítico de estabilização sistêmica. Conclui-se que a Lei de Little, quando aplicada além de seu caráter matemático, constitui um vetor estratégico para previsibilidade, tomada de decisão baseada em dados e escalabilidade sustentável em projetos intensivos em conhecimento.\"\nkeywords: [\"LITTLE\", \"LAW\", \"RESILIENCE\"]\nlicense: \"CC-BY-4.0\"\nversion: \"v2026-02-21\"\ndate-released: \"2025-01-01\"\nrepository-code: \"https://ulissesflores.com/research/2025-little-law-resilience\"\nreferences:\n  - unstructured: \"Anderson, D. J. (2010). Kanban: Successful evolutionary change for your technology business. Blue Hole Press.\"\n  - unstructured: \"Flores, C. U. (2025). Simulação computacional da Lei de Little aplicada a sistemas de fluxo.\"\n    url: \"https://colab.research.google.com/drive/11EsOXTQqGKVvCEb7hpfcIQ1Ic2FcerIo\"\n  - unstructured: \"Kniberg, H., & Skarin, M. (2010). Kanban and Scrum – Making the most of both. C4Media.\"\n  - unstructured: \"Little, J. D. C. (1961). A proof for the queuing formula: L = λW. Operations Research, 9(3), 383–387.\"\n  - unstructured: \"Reinertsen, D. G. (2009). The principles of product development flow. Celeritas Publishing.\"\n  - unstructured: \"Rigby, D. K., Sutherland, J., & Takeuchi, H. (2016). Embracing agile. Harvard Business Review, 94(5), 40–50.\"\n  - unstructured: \"Sterman, J. D. (2000). Business dynamics: Systems thinking and modeling for a complex world. McGraw-Hill.\"\n",
+      "citationCff": "cff-version: 1.2.0\nmessage: \"If you use this work, cite with this metadata. No DOI minted yet; cite by the canonical URL.\"\ntitle: \"A Lei de Little como Vetor de Resiliência e Qualidade\"\ntype: article\nauthors:\n  - family-names: \"Flores\"\n    given-names: \"Carlos Ulisses\"\n    orcid: \"0000-0002-6034-7765\"\nidentifiers:\n  - type: url\n    value: \"https://ulissesflores.com/research/2025-little-law-resilience\"\n  - type: url\n    value: \"https://ulissesflores.com/deep-research/2025-little-law-resilience/deep-research.pdf\"\nabstract: \"Projetos complexos de Data Science e Inteligência Artificial operam sob elevada incerteza, variabilidade de demanda e forte interdependência técnica, o que frequentemente resulta em crises de entrega e baixa previsibilidade. Este artigo investiga a aplicação da Lei de Little como instrumento sistêmico para aumento da resiliência operacional e da qualidade em ambientes orientados à Business Agility. Por meio de fundamentação teórica e simulação computacional com dados sintéticos, compara-se o comportamento de sistemas com e sem limitação explícita de trabalho em progresso (WIP). Os resultados indicam redução significativa do lead time médio sem prejuízo relevante ao throughput, corroborando a literatura Lean e reforçando a limitação de WIP como mecanismo crítico de estabilização sistêmica. Conclui-se que a Lei de Little, quando aplicada além de seu caráter matemático, constitui um vetor estratégico para previsibilidade, tomada de decisão baseada em dados e escalabilidade sustentável em projetos intensivos em conhecimento.\"\nkeywords: [\"LITTLE\", \"LAW\", \"RESILIENCE\"]\nlicense: \"CC-BY-4.0\"\nversion: \"v2026-02-21\"\ndate-released: \"2025-01-01\"\nrepository-code: \"https://ulissesflores.com/research/2025-little-law-resilience\"\nreferences:\n  - unstructured: \"Anderson, D. J. (2010). Kanban: Successful evolutionary change for your technology business. Blue Hole Press.\"\n  - unstructured: \"Flores, C. U. (2025). Simulação computacional da Lei de Little aplicada a sistemas de fluxo.\"\n    url: \"https://colab.research.google.com/drive/11EsOXTQqGKVvCEb7hpfcIQ1Ic2FcerIo\"\n  - unstructured: \"Kniberg, H., & Skarin, M. (2010). Kanban and Scrum – Making the most of both. C4Media.\"\n  - unstructured: \"Little, J. D. C. (1961). A proof for the queuing formula: L = λW. Operations Research, 9(3), 383–387.\"\n  - unstructured: \"Reinertsen, D. G. (2009). The principles of product development flow. Celeritas Publishing.\"\n  - unstructured: \"Rigby, D. K., Sutherland, J., & Takeuchi, H. (2016). Embracing agile. Harvard Business Review, 94(5), 40–50.\"\n  - unstructured: \"Sterman, J. D. (2000). Business dynamics: Systems thinking and modeling for a complex world. McGraw-Hill.\"\n",
       "score": {
         "completenessScore": 1000,
         "referencesScore": 750,
@@ -199,10 +194,6 @@
       "language": "pt-BR",
       "canonicalUrl": "https://ulissesflores.com/research/2025-lstm-asset-prediction",
       "pdfUrl": "https://ulissesflores.com/deep-research/2025-lstm-asset-prediction/deep-research.pdf",
-      "doi": {
-        "status": "target",
-        "target": "10.5281/zenodo.202502"
-      },
       "version": "v2026-02-21",
       "license": "CC-BY-4.0",
       "creators": [
@@ -325,7 +316,7 @@
             }
           ],
           "version": "v2026-02-21",
-          "notes": "DOI-ready metadata generated automatically from the canonical UPKF publication dataset. DOI target: 10.5281/zenodo.202502 (not minted).",
+          "notes": "DOI-ready metadata generated automatically from the canonical UPKF publication dataset. No DOI minted for this work yet; cite it by the canonical URL.",
           "license": "CC-BY-4.0"
         }
       },
@@ -406,10 +397,9 @@
             "key": "2025-lstm-asset-prediction-ref-13",
             "unstructured": "VERBEEK, P.-P. UNESCO: Ethics of Science and Technology. In: AI in Practice: Compliance & Ethics of AI. Delft: Delft University of Technology, 2024. Videoaula."
           }
-        ],
-        "doi_target": "10.5281/zenodo.202502"
+        ]
       },
-      "citationCff": "cff-version: 1.2.0\nmessage: \"If you use this work, cite with this metadata. DOI target: 10.5281/zenodo.202502 (not minted).\"\ntitle: \"Análise Preditiva de Ativos Financeiros com Modelos LSTM\"\ntype: article\nauthors:\n  - family-names: \"Flores\"\n    given-names: \"Carlos Ulisses\"\n    orcid: \"0000-0002-6034-7765\"\nidentifiers:\n  - type: url\n    value: \"https://ulissesflores.com/research/2025-lstm-asset-prediction\"\n  - type: url\n    value: \"https://ulissesflores.com/deep-research/2025-lstm-asset-prediction/deep-research.pdf\"\nabstract: \"A crescente complexidade dos mercados financeiros exige ferramentas analíticas avançadas para a tomada de decisão. Este estudo de caso investiga a aplicação de uma Rede Neural de Memória de Curto e Longo Prazo (LSTM) para prever os preços diários de dois ativos com perfis de volatilidade distintos: Bitcoin (BTC-USD) e Microsoft (MSFT). O objetivo central é avaliar a viabilidade de uma estratégia de investimento algorítmica, baseada nas previsões do modelo, em comparação com a abordagem passiva de Buy and Hold. A metodologia abrange a coleta e preparação de dados, a engenharia de atributos com indicadores técnicos e o treinamento de um modelo LSTM. Os resultados demonstram que, embora o modelo apresente alta acurácia preditiva para ambos os ativos, a estratégia algorítmica demonstra um potencial modesto em termos de retorno ajustado ao risco (Índice de Sharpe) para o ativo de alta volatilidade (Bitcoin), embora sem superar de forma conclusiva a abordagem passiva. O estudo conclui que a aplicação de IA em finanças oferece um potencial considerável, mas sua implementação responsável requer uma estrutura de governança robusta que contemple as limitações de transparência dos modelos e mantenha a supervisão humana como pilar central.\"\nkeywords: [\"LSTM\", \"ASSET\", \"PREDICTION\"]\nlicense: \"CC-BY-4.0\"\nversion: \"v2026-02-21\"\ndate-released: \"2025-01-01\"\nrepository-code: \"https://ulissesflores.com/research/2025-lstm-asset-prediction\"\nreferences:\n  - unstructured: \"DEN HENGST, F. The Promise of Personalization: Why We Need Automated Decision-Making. In: AI in Practice: Applying AI. Delft: Delft University of Technology, 2024. Videoaula.\"\n  - unstructured: \"FISCHER, T.; KRAUSS, C. Deep learning with long short-term memory networks for financial market predictions. European Journal of Operational Research, v. 270, n. 2, p. 654-669, 2018.\"\n  - unstructured: \"FLORES, U. Repositório de dados e códigos do estudo de caso \\\"Agile Capital\\\". 2025. Materiais suplementares do projeto. Acesso em: 18 jun. 2025.\"\n  - unstructured: \"HOCHREITER, S.; SCHMIDHUBER, J. Long short-term memory. Neural Computation, v. 9, n. 8, p. 1735-1780, 1997.\"\n  - unstructured: \"HUYSMAN, M. Implementing AI in organizations. In: AI in Practice: AI Strategy and Implementation Aspects of AI. Delft: Delft University of Technology, 2024. Videoaula.\"\n  - unstructured: \"KOU, G. et al. FinTech with AI: a review of 282 related studies from 2010 to 2020. Technological Forecasting and Social Change, v. 167, 120713, 2021.\"\n  - unstructured: \"LIEM, C. Implications of Modelling. In: AI in Practice: AI Strategy and Implementation Aspects of AI. Delft: Delft University of Technology, 2024. Videoaula.\"\n  - unstructured: \"NELSON, D. M. Q.; PEREIRA, A. C. M.; DE OLIVEIRA, R. A. Stock market's price movement prediction with LSTM neural networks. In: International Joint Conference on Neural Networks (IJCNN), 2017, Anchorage. Proceedings... Anchorage: IEEE, 2017. p. 1419-1426.\"\n  - unstructured: \"O'NEIL, C. Weapons of Math Destruction: How Big Data Increases Inequality and Threatens Democracy. New York: Crown, 2016.\"\n  - unstructured: \"PASCANU, R.; MIKOLOV, T.; BENGIO, Y. On the difficulty of training recurrent neural networks. In: International Conference on Machine Learning (ICML), 2013, Atlanta. Proceedings... Atlanta: JMLR, 2013. p. 1310-1318.\"\n  - unstructured: \"SHNEIDERMAN, B. Human-centered artificial intelligence: Reliable, safe & trustworthy. International Journal of Human-Computer Interaction, v. 36, n. 6, p. 495-504, 2020.\"\n  - unstructured: \"VAN DEURSEN, A. et al. The context of AI in FinTech research. In: AI in Practice: AI Applications in FinTech. Delft: Delft University of Technology, 2022. Videoaula.\"\n  - unstructured: \"VERBEEK, P.-P. UNESCO: Ethics of Science and Technology. In: AI in Practice: Compliance & Ethics of AI. Delft: Delft University of Technology, 2024. Videoaula.\"\n",
+      "citationCff": "cff-version: 1.2.0\nmessage: \"If you use this work, cite with this metadata. No DOI minted yet; cite by the canonical URL.\"\ntitle: \"Análise Preditiva de Ativos Financeiros com Modelos LSTM\"\ntype: article\nauthors:\n  - family-names: \"Flores\"\n    given-names: \"Carlos Ulisses\"\n    orcid: \"0000-0002-6034-7765\"\nidentifiers:\n  - type: url\n    value: \"https://ulissesflores.com/research/2025-lstm-asset-prediction\"\n  - type: url\n    value: \"https://ulissesflores.com/deep-research/2025-lstm-asset-prediction/deep-research.pdf\"\nabstract: \"A crescente complexidade dos mercados financeiros exige ferramentas analíticas avançadas para a tomada de decisão. Este estudo de caso investiga a aplicação de uma Rede Neural de Memória de Curto e Longo Prazo (LSTM) para prever os preços diários de dois ativos com perfis de volatilidade distintos: Bitcoin (BTC-USD) e Microsoft (MSFT). O objetivo central é avaliar a viabilidade de uma estratégia de investimento algorítmica, baseada nas previsões do modelo, em comparação com a abordagem passiva de Buy and Hold. A metodologia abrange a coleta e preparação de dados, a engenharia de atributos com indicadores técnicos e o treinamento de um modelo LSTM. Os resultados demonstram que, embora o modelo apresente alta acurácia preditiva para ambos os ativos, a estratégia algorítmica demonstra um potencial modesto em termos de retorno ajustado ao risco (Índice de Sharpe) para o ativo de alta volatilidade (Bitcoin), embora sem superar de forma conclusiva a abordagem passiva. O estudo conclui que a aplicação de IA em finanças oferece um potencial considerável, mas sua implementação responsável requer uma estrutura de governança robusta que contemple as limitações de transparência dos modelos e mantenha a supervisão humana como pilar central.\"\nkeywords: [\"LSTM\", \"ASSET\", \"PREDICTION\"]\nlicense: \"CC-BY-4.0\"\nversion: \"v2026-02-21\"\ndate-released: \"2025-01-01\"\nrepository-code: \"https://ulissesflores.com/research/2025-lstm-asset-prediction\"\nreferences:\n  - unstructured: \"DEN HENGST, F. The Promise of Personalization: Why We Need Automated Decision-Making. In: AI in Practice: Applying AI. Delft: Delft University of Technology, 2024. Videoaula.\"\n  - unstructured: \"FISCHER, T.; KRAUSS, C. Deep learning with long short-term memory networks for financial market predictions. European Journal of Operational Research, v. 270, n. 2, p. 654-669, 2018.\"\n  - unstructured: \"FLORES, U. Repositório de dados e códigos do estudo de caso \\\"Agile Capital\\\". 2025. Materiais suplementares do projeto. Acesso em: 18 jun. 2025.\"\n  - unstructured: \"HOCHREITER, S.; SCHMIDHUBER, J. Long short-term memory. Neural Computation, v. 9, n. 8, p. 1735-1780, 1997.\"\n  - unstructured: \"HUYSMAN, M. Implementing AI in organizations. In: AI in Practice: AI Strategy and Implementation Aspects of AI. Delft: Delft University of Technology, 2024. Videoaula.\"\n  - unstructured: \"KOU, G. et al. FinTech with AI: a review of 282 related studies from 2010 to 2020. Technological Forecasting and Social Change, v. 167, 120713, 2021.\"\n  - unstructured: \"LIEM, C. Implications of Modelling. In: AI in Practice: AI Strategy and Implementation Aspects of AI. Delft: Delft University of Technology, 2024. Videoaula.\"\n  - unstructured: \"NELSON, D. M. Q.; PEREIRA, A. C. M.; DE OLIVEIRA, R. A. Stock market's price movement prediction with LSTM neural networks. In: International Joint Conference on Neural Networks (IJCNN), 2017, Anchorage. Proceedings... Anchorage: IEEE, 2017. p. 1419-1426.\"\n  - unstructured: \"O'NEIL, C. Weapons of Math Destruction: How Big Data Increases Inequality and Threatens Democracy. New York: Crown, 2016.\"\n  - unstructured: \"PASCANU, R.; MIKOLOV, T.; BENGIO, Y. On the difficulty of training recurrent neural networks. In: International Conference on Machine Learning (ICML), 2013, Atlanta. Proceedings... Atlanta: JMLR, 2013. p. 1310-1318.\"\n  - unstructured: \"SHNEIDERMAN, B. Human-centered artificial intelligence: Reliable, safe & trustworthy. International Journal of Human-Computer Interaction, v. 36, n. 6, p. 495-504, 2020.\"\n  - unstructured: \"VAN DEURSEN, A. et al. The context of AI in FinTech research. In: AI in Practice: AI Applications in FinTech. Delft: Delft University of Technology, 2022. Videoaula.\"\n  - unstructured: \"VERBEEK, P.-P. UNESCO: Ethics of Science and Technology. In: AI in Practice: Compliance & Ethics of AI. Delft: Delft University of Technology, 2024. Videoaula.\"\n",
       "score": {
         "completenessScore": 1000,
         "referencesScore": 700,
@@ -430,10 +420,6 @@
       "language": "pt-BR",
       "canonicalUrl": "https://ulissesflores.com/whitepapers/2025-hybrid-cooling-thermodynamics",
       "pdfUrl": "https://ulissesflores.com/deep-research/2025-hybrid-cooling-thermodynamics/deep-research.pdf",
-      "doi": {
-        "status": "target",
-        "target": "10.5281/zenodo.202503"
-      },
       "version": "v2026-02-21",
       "license": "CC-BY-4.0",
       "creators": [
@@ -681,7 +667,7 @@
             }
           ],
           "version": "v2026-02-21",
-          "notes": "DOI-ready metadata generated automatically from the canonical UPKF publication dataset. DOI target: 10.5281/zenodo.202503 (not minted).",
+          "notes": "DOI-ready metadata generated automatically from the canonical UPKF publication dataset. No DOI minted for this work yet; cite it by the canonical URL.",
           "license": "CC-BY-4.0"
         }
       },
@@ -862,10 +848,9 @@
             "key": "2025-hybrid-cooling-thermodynamics-ref-38",
             "unstructured": "Numerical Assessment of Different Phase Change Materials as a Passive Strategy to Reduce Energy Consumption in Buildings under Tropical Climates - MDPI, https://www.mdpi.com/2075-5309/12/7/906"
           }
-        ],
-        "doi_target": "10.5281/zenodo.202503"
+        ]
       },
-      "citationCff": "cff-version: 1.2.0\nmessage: \"If you use this work, cite with this metadata. DOI target: 10.5281/zenodo.202503 (not minted).\"\ntitle: \"Análise Termodinâmica e Engenharia de Sistemas Híbridos de Resfriamento\"\ntype: article\nauthors:\n  - family-names: \"Flores\"\n    given-names: \"Carlos Ulisses\"\n    orcid: \"0000-0002-6034-7765\"\nidentifiers:\n  - type: url\n    value: \"https://ulissesflores.com/whitepapers/2025-hybrid-cooling-thermodynamics\"\n  - type: url\n    value: \"https://ulissesflores.com/deep-research/2025-hybrid-cooling-thermodynamics/deep-research.pdf\"\nabstract: \"\"\nkeywords: [\"HYBRID\", \"COOLING\", \"THERMODYNAMICS\"]\nlicense: \"CC-BY-4.0\"\nversion: \"v2026-02-21\"\ndate-released: \"2025-01-01\"\nrepository-code: \"https://ulissesflores.com/whitepapers/2025-hybrid-cooling-thermodynamics\"\nreferences:\n  - unstructured: \"Verão 2024/2025 foi um dos mais quentes da história no Brasil desde 1961 - Portal Gov.br, https://www.gov.br/secom/pt-br/assuntos/noticias/2025/03/verao-2024-2025-foi-um-dos-mais-quentes-da-historia-no-brasil-desde-1961\"\n  - unstructured: \"Verão 2024-2025 foi o sexto mais quente no Brasil desde 1961 - INMET, https://portal.inmet.gov.br/noticias/\"\n  - unstructured: \"Otimização de Resfriamento de Ambientes.pdf\"\n  - unstructured: \"Temperature Damping & Thermal Lag - CMACN, https://cmacn.org/energy/basics/thermal-movements/temperature-damping-thermal-lag/\"\n  - unstructured: \"Thermal Lag - Calculating Heat Loss Into the Ground - One Community Global, https://onecommunityglobal.org/thermal-lag/\"\n  - unstructured: \"Cooling Performance of TiO2-Based Radiative Cooling Coating in Tropical Conditions - ACS Omega, https://pubs.acs.org/doi/10.1021/acsomega.4c07223\"\n  - unstructured: \"Radiative sky cooling: Fundamental principles, materials, and applications - AIP Publishing, https://pubs.aip.org/aip/apr/article/6/2/021306/570227/Radiative-sky-cooling-Fundamental-principles\"\n  - unstructured: \"The whitest paint is here – and it's the coolest. Literally. - Purdue University News, https://www.purdue.edu/newsroom/archive/releases/2021/Q2/the-whitest-paint-is-here-and-its-the-coolest.-literally..html\"\n  - unstructured: \"Tintas Reflexivas para Telhados: Combate ao Calor - Blog Moderna Telhados, https://modernatelhados.com.br/blog/tintas-reflexivas-para-telhados-combate-ao-calor\"\n  - unstructured: \"Cool Roofs in Hot Climate Countries: a Study - Sika, https://www.sika.com/en/knowledge-hub/cool-roofs-in-hot-climate.html\"\n  - unstructured: \"Study of Evaporative Cooling Roofing in Sub-tropical Climate - UFS, https://dau.ufs.br/uploads/page_attach/path/1119/Barbosa_Teixeira.pdf\"\n  - unstructured: \"O que é a tinta térmica e ela funciona? - Blog Leroy Merlin, https://blog.leroymerlin.com.br/tinta-termica-funciona/\"\n  - unstructured: \"Tinta Isolante Termico 18 Lts - Magazine Luiza, https://www.magazineluiza.com.br/busca/tinta+isolante+termico+18+lts/\"\n  - unstructured: \"Cooling Paint You Can Actually Make - Hackaday, https://hackaday.com/2023/07/03/cooling-paint-you-can-actually-make/\"\n  - unstructured: \"Pintura à base de cal como alternativa de revestimento frio - SciELO, https://www.scielo.br/j/ac/a/ZvCrp85KbDJR65WW3JvzcHk/\"\n  - unstructured: \"PAINTING YOUR ROOF AT HOME LIME AND WHITE CEMENT COOLS THE ROOF, https://www.youtube.com/watch?v=jupzU4nohg4\"\n  - unstructured: \"Pintura com Cal: como preparar e o que fazer para fixar melhor - Sienge, https://sienge.com.br/blog/pintura-com-cal-como-preparar/\"\n  - unstructured: \"Pintura à base de cal como alternativa de revestimento frio - SciSpace, https://scispace.com/pdf/pintura-a-base-de-cal-como-alternativa-de-revestimento-frio-1ieagnmw26.pdf\"\n  - unstructured: \"Mist System Nozzle Space - Patio Misting System Installation, https://patiomistingsysteminstallation.com/mist-system-nozzle-space\"\n  - unstructured: \"Kit de bico de nebulização de pátio - Leroy Merlin, https://www.leroymerlin.pt/produtos/kit-de-bico-de-nebulizacao-de-patio-de-20-pecas-88786588.html\"\n  - unstructured: \"Motor Pulverizador Eletrico 12v - Mercado Livre, https://lista.mercadolivre.com.br/motor-pulverizador-eletrico-12v\"\n  - unstructured: \"Motor Bomba Diafragma 12v 3,0ah 100psi Pulverizador Elétrico, https://www.nauticarefrigeracao.com.br/MLB-3933089026\"\n  - unstructured: \"Fonte 12v 10A - Shopee 2025, https://shopee.com.br/list/Fonte/12v/10A\"\n  - unstructured: \"SONOFF TH Elite Smart Temperature and Humidity Monitoring Switch - Itead, https://itead.cc/product/sonoff-th-elite-smart-temperature-and-humidity-monitoring-switch/\"\n  - unstructured: \"Sonoff TH Elite 20A Smart Temperature and Humidity Monitoring Switch - isphome, https://isphome.co.za/shop/works-with-ewelink/sonoff-th-elite/\"\n  - unstructured: \"Sensor de Temperatura Digital DS18B20 à Prova d'Água - AF Eletrônica, https://www.afeletronica.com.br/sensor-temperatura-digital-ds18b20-encapsulado-prova-de-agua\"\n  - unstructured: \"Calculadora de consumo de ar-condicionado - Clarke Energia, https://clarke.com.br/calculadora-de-consumo-de-ar-condicionado/\"\n  - unstructured: \"Qual Consumo Ar-Condicionado 30000 BTUs - WebAr, https://www.webarcondicionado.com.br/qual-o-consumo-de-um-ar-condicionado-de-30-000-btu\"\n  - unstructured: \"Quanto custa instalar um ar-condicionado em 2025? - Revista Oeste, https://revistaoeste.com/oestegeral/2025/12/19/quanto-custa-instalar-um-ar-condicionado-em-2025-valores-fatores-e-como-economizar/\"\n  - unstructured: \"Confira o ranking das tarifas de energia mais caras do Brasil em 2025 - Portal Solar, https://www.portalsolar.com.br/noticias/mercado/consumidor/confira-o-ranking-das-tarifas-de-energia-mais-caras-do-brasil-em-2025\"\n  - unstructured: \"Bandeira Vermelha patamar 2 é mantida em setembro - ANEEL, https://www.gov.br/aneel/pt-br/assuntos/noticias/2025/bandeira-vermelha-patamar-2-e-mantida-em-setembro\"\n  - unstructured: \"Revisão da Estrutura Tarifária da SABESP - Mziq, https://api.mziq.com/mzfilemanager/v2/d/9e47ee51-f833-4a23-af98-2bac9e54e0b3/e6692b22-95ea-749a-6f9c-58b4e0f5d841\"\n  - unstructured: \"Night Vent Cooling - 2030 Palette, https://2030palette.org/night-vent-cooling/\"\n  - unstructured: \"Evaluation of the Effect of Passive Cooling Techniques on Thermal Comfort Using Test Cells in the Northern Region of Brazil - MDPI, https://www.mdpi.com/2076-3417/12/3/1546\"\n  - unstructured: \"Radiant Barriers - Department of Energy, https://www.energy.gov/energysaver/radiant-barriers\"\n  - unstructured: \"FAQ's About Reflective Insulation, Radiant Barriers and IRCCs - RIMA-I, https://rimainternational.org/myths/faqs/\"\n  - unstructured: \"What are the key considerations for integrating phase change materials with building envelopes in tropical climates? - Consensus, https://consensus.app/\"\n  - unstructured: \"Numerical Assessment of Different Phase Change Materials as a Passive Strategy to Reduce Energy Consumption in Buildings under Tropical Climates - MDPI, https://www.mdpi.com/2075-5309/12/7/906\"\n",
+      "citationCff": "cff-version: 1.2.0\nmessage: \"If you use this work, cite with this metadata. No DOI minted yet; cite by the canonical URL.\"\ntitle: \"Análise Termodinâmica e Engenharia de Sistemas Híbridos de Resfriamento\"\ntype: article\nauthors:\n  - family-names: \"Flores\"\n    given-names: \"Carlos Ulisses\"\n    orcid: \"0000-0002-6034-7765\"\nidentifiers:\n  - type: url\n    value: \"https://ulissesflores.com/whitepapers/2025-hybrid-cooling-thermodynamics\"\n  - type: url\n    value: \"https://ulissesflores.com/deep-research/2025-hybrid-cooling-thermodynamics/deep-research.pdf\"\nabstract: \"\"\nkeywords: [\"HYBRID\", \"COOLING\", \"THERMODYNAMICS\"]\nlicense: \"CC-BY-4.0\"\nversion: \"v2026-02-21\"\ndate-released: \"2025-01-01\"\nrepository-code: \"https://ulissesflores.com/whitepapers/2025-hybrid-cooling-thermodynamics\"\nreferences:\n  - unstructured: \"Verão 2024/2025 foi um dos mais quentes da história no Brasil desde 1961 - Portal Gov.br, https://www.gov.br/secom/pt-br/assuntos/noticias/2025/03/verao-2024-2025-foi-um-dos-mais-quentes-da-historia-no-brasil-desde-1961\"\n  - unstructured: \"Verão 2024-2025 foi o sexto mais quente no Brasil desde 1961 - INMET, https://portal.inmet.gov.br/noticias/\"\n  - unstructured: \"Otimização de Resfriamento de Ambientes.pdf\"\n  - unstructured: \"Temperature Damping & Thermal Lag - CMACN, https://cmacn.org/energy/basics/thermal-movements/temperature-damping-thermal-lag/\"\n  - unstructured: \"Thermal Lag - Calculating Heat Loss Into the Ground - One Community Global, https://onecommunityglobal.org/thermal-lag/\"\n  - unstructured: \"Cooling Performance of TiO2-Based Radiative Cooling Coating in Tropical Conditions - ACS Omega, https://pubs.acs.org/doi/10.1021/acsomega.4c07223\"\n  - unstructured: \"Radiative sky cooling: Fundamental principles, materials, and applications - AIP Publishing, https://pubs.aip.org/aip/apr/article/6/2/021306/570227/Radiative-sky-cooling-Fundamental-principles\"\n  - unstructured: \"The whitest paint is here – and it's the coolest. Literally. - Purdue University News, https://www.purdue.edu/newsroom/archive/releases/2021/Q2/the-whitest-paint-is-here-and-its-the-coolest.-literally..html\"\n  - unstructured: \"Tintas Reflexivas para Telhados: Combate ao Calor - Blog Moderna Telhados, https://modernatelhados.com.br/blog/tintas-reflexivas-para-telhados-combate-ao-calor\"\n  - unstructured: \"Cool Roofs in Hot Climate Countries: a Study - Sika, https://www.sika.com/en/knowledge-hub/cool-roofs-in-hot-climate.html\"\n  - unstructured: \"Study of Evaporative Cooling Roofing in Sub-tropical Climate - UFS, https://dau.ufs.br/uploads/page_attach/path/1119/Barbosa_Teixeira.pdf\"\n  - unstructured: \"O que é a tinta térmica e ela funciona? - Blog Leroy Merlin, https://blog.leroymerlin.com.br/tinta-termica-funciona/\"\n  - unstructured: \"Tinta Isolante Termico 18 Lts - Magazine Luiza, https://www.magazineluiza.com.br/busca/tinta+isolante+termico+18+lts/\"\n  - unstructured: \"Cooling Paint You Can Actually Make - Hackaday, https://hackaday.com/2023/07/03/cooling-paint-you-can-actually-make/\"\n  - unstructured: \"Pintura à base de cal como alternativa de revestimento frio - SciELO, https://www.scielo.br/j/ac/a/ZvCrp85KbDJR65WW3JvzcHk/\"\n  - unstructured: \"PAINTING YOUR ROOF AT HOME LIME AND WHITE CEMENT COOLS THE ROOF, https://www.youtube.com/watch?v=jupzU4nohg4\"\n  - unstructured: \"Pintura com Cal: como preparar e o que fazer para fixar melhor - Sienge, https://sienge.com.br/blog/pintura-com-cal-como-preparar/\"\n  - unstructured: \"Pintura à base de cal como alternativa de revestimento frio - SciSpace, https://scispace.com/pdf/pintura-a-base-de-cal-como-alternativa-de-revestimento-frio-1ieagnmw26.pdf\"\n  - unstructured: \"Mist System Nozzle Space - Patio Misting System Installation, https://patiomistingsysteminstallation.com/mist-system-nozzle-space\"\n  - unstructured: \"Kit de bico de nebulização de pátio - Leroy Merlin, https://www.leroymerlin.pt/produtos/kit-de-bico-de-nebulizacao-de-patio-de-20-pecas-88786588.html\"\n  - unstructured: \"Motor Pulverizador Eletrico 12v - Mercado Livre, https://lista.mercadolivre.com.br/motor-pulverizador-eletrico-12v\"\n  - unstructured: \"Motor Bomba Diafragma 12v 3,0ah 100psi Pulverizador Elétrico, https://www.nauticarefrigeracao.com.br/MLB-3933089026\"\n  - unstructured: \"Fonte 12v 10A - Shopee 2025, https://shopee.com.br/list/Fonte/12v/10A\"\n  - unstructured: \"SONOFF TH Elite Smart Temperature and Humidity Monitoring Switch - Itead, https://itead.cc/product/sonoff-th-elite-smart-temperature-and-humidity-monitoring-switch/\"\n  - unstructured: \"Sonoff TH Elite 20A Smart Temperature and Humidity Monitoring Switch - isphome, https://isphome.co.za/shop/works-with-ewelink/sonoff-th-elite/\"\n  - unstructured: \"Sensor de Temperatura Digital DS18B20 à Prova d'Água - AF Eletrônica, https://www.afeletronica.com.br/sensor-temperatura-digital-ds18b20-encapsulado-prova-de-agua\"\n  - unstructured: \"Calculadora de consumo de ar-condicionado - Clarke Energia, https://clarke.com.br/calculadora-de-consumo-de-ar-condicionado/\"\n  - unstructured: \"Qual Consumo Ar-Condicionado 30000 BTUs - WebAr, https://www.webarcondicionado.com.br/qual-o-consumo-de-um-ar-condicionado-de-30-000-btu\"\n  - unstructured: \"Quanto custa instalar um ar-condicionado em 2025? - Revista Oeste, https://revistaoeste.com/oestegeral/2025/12/19/quanto-custa-instalar-um-ar-condicionado-em-2025-valores-fatores-e-como-economizar/\"\n  - unstructured: \"Confira o ranking das tarifas de energia mais caras do Brasil em 2025 - Portal Solar, https://www.portalsolar.com.br/noticias/mercado/consumidor/confira-o-ranking-das-tarifas-de-energia-mais-caras-do-brasil-em-2025\"\n  - unstructured: \"Bandeira Vermelha patamar 2 é mantida em setembro - ANEEL, https://www.gov.br/aneel/pt-br/assuntos/noticias/2025/bandeira-vermelha-patamar-2-e-mantida-em-setembro\"\n  - unstructured: \"Revisão da Estrutura Tarifária da SABESP - Mziq, https://api.mziq.com/mzfilemanager/v2/d/9e47ee51-f833-4a23-af98-2bac9e54e0b3/e6692b22-95ea-749a-6f9c-58b4e0f5d841\"\n  - unstructured: \"Night Vent Cooling - 2030 Palette, https://2030palette.org/night-vent-cooling/\"\n  - unstructured: \"Evaluation of the Effect of Passive Cooling Techniques on Thermal Comfort Using Test Cells in the Northern Region of Brazil - MDPI, https://www.mdpi.com/2076-3417/12/3/1546\"\n  - unstructured: \"Radiant Barriers - Department of Energy, https://www.energy.gov/energysaver/radiant-barriers\"\n  - unstructured: \"FAQ's About Reflective Insulation, Radiant Barriers and IRCCs - RIMA-I, https://rimainternational.org/myths/faqs/\"\n  - unstructured: \"What are the key considerations for integrating phase change materials with building envelopes in tropical climates? - Consensus, https://consensus.app/\"\n  - unstructured: \"Numerical Assessment of Different Phase Change Materials as a Passive Strategy to Reduce Energy Consumption in Buildings under Tropical Climates - MDPI, https://www.mdpi.com/2075-5309/12/7/906\"\n",
       "score": {
         "completenessScore": 1000,
         "referencesScore": 700,
@@ -886,10 +871,6 @@
       "language": "pt-BR",
       "canonicalUrl": "https://ulissesflores.com/whitepapers/2025-iot-data-sovereignty",
       "pdfUrl": "https://ulissesflores.com/deep-research/2025-iot-data-sovereignty/deep-research.pdf",
-      "doi": {
-        "status": "target",
-        "target": "10.5281/zenodo.202504"
-      },
       "version": "v2026-02-21",
       "license": "CC-BY-4.0",
       "creators": [
@@ -977,7 +958,7 @@
             }
           ],
           "version": "v2026-02-21",
-          "notes": "DOI-ready metadata generated automatically from the canonical UPKF publication dataset. DOI target: 10.5281/zenodo.202504 (not minted).",
+          "notes": "DOI-ready metadata generated automatically from the canonical UPKF publication dataset. No DOI minted for this work yet; cite it by the canonical URL.",
           "license": "CC-BY-4.0"
         }
       },
@@ -1038,10 +1019,9 @@
             "unstructured": "GAIA-X policy and interoperability framework.",
             "URL": "https://gaia-x.eu/what-is-gaia-x/"
           }
-        ],
-        "doi_target": "10.5281/zenodo.202504"
+        ]
       },
-      "citationCff": "cff-version: 1.2.0\nmessage: \"If you use this work, cite with this metadata. DOI target: 10.5281/zenodo.202504 (not minted).\"\ntitle: \"Arquiteturas Cloudless e Soberania de Dados em IoT\"\ntype: article\nauthors:\n  - family-names: \"Flores\"\n    given-names: \"Carlos Ulisses\"\n    orcid: \"0000-0002-6034-7765\"\nidentifiers:\n  - type: url\n    value: \"https://ulissesflores.com/whitepapers/2025-iot-data-sovereignty\"\n  - type: url\n    value: \"https://ulissesflores.com/deep-research/2025-iot-data-sovereignty/deep-research.pdf\"\nabstract: \"Arquiteturas cloudless para IoT com soberania de dados e processamento local em edge. O problema central investigado e: Dependencia de nuvem publica amplia superficie de ataque, latencia e exposicao regulatoria de dados sensiveis. Adotou-se um desenho metodologico com foco em validade interna, comparabilidade e reproducibilidade: Comparacao de arquiteturas centralizadas versus edge-first, incluindo requisitos de identidade, criptografia e observabilidade. Os resultados principais indicam que o desenho cloudless reduz dependencia externa e melhora controle sobre confidencialidade e disponibilidade local.. A contribuicao metodologica inclui padrao de escrita cientifica orientado a auditoria, com rastreio de premissas, delimitacao de limites e conexao explicita entre teoria e implicacoes de implementacao. O objetivo deste trabalho e avaliar de forma estruturada como \\\"Arquiteturas Cloudless e Soberania de Dados em IoT\\\" pode gerar valor cientifico e operacional com rastreabilidade metodologica. Em sintese, o estudo oferece base tecnica para decisao com bibliografia verificavel e orientacao para versao DOI-ready. (Rose, 2020).\"\nkeywords: [\"IOT\", \"DATA\", \"SOVEREIGNTY\"]\nlicense: \"CC-BY-4.0\"\nversion: \"v2026-02-21\"\ndate-released: \"2025-01-01\"\nrepository-code: \"https://ulissesflores.com/whitepapers/2025-iot-data-sovereignty\"\nreferences:\n  - unstructured: \"Rose, S. et al. (2020). NIST SP 800-207 Zero Trust Architecture.\"\n    url: \"https://doi.org/10.6028/NIST.SP.800-207\"\n  - unstructured: \"Fagan, M. et al. (2020). NISTIR 8259A IoT Device Cybersecurity Capability Core Baseline.\"\n    url: \"https://doi.org/10.6028/NIST.IR.8259A\"\n  - unstructured: \"IEC 62443 series for industrial automation and control systems security.\"\n    url: \"https://www.iec.ch/standards-development/what-makes-a-good-standard/iec-62443-series-standards\"\n  - unstructured: \"ETSI EN 303 645 for consumer IoT cybersecurity.\"\n    url: \"https://www.etsi.org/technologies/consumer-iot-security\"\n  - unstructured: \"OWASP Internet of Things Project.\"\n    url: \"https://owasp.org/www-project-internet-of-things/\"\n  - unstructured: \"GAIA-X policy and interoperability framework.\"\n    url: \"https://gaia-x.eu/what-is-gaia-x/\"\n",
+      "citationCff": "cff-version: 1.2.0\nmessage: \"If you use this work, cite with this metadata. No DOI minted yet; cite by the canonical URL.\"\ntitle: \"Arquiteturas Cloudless e Soberania de Dados em IoT\"\ntype: article\nauthors:\n  - family-names: \"Flores\"\n    given-names: \"Carlos Ulisses\"\n    orcid: \"0000-0002-6034-7765\"\nidentifiers:\n  - type: url\n    value: \"https://ulissesflores.com/whitepapers/2025-iot-data-sovereignty\"\n  - type: url\n    value: \"https://ulissesflores.com/deep-research/2025-iot-data-sovereignty/deep-research.pdf\"\nabstract: \"Arquiteturas cloudless para IoT com soberania de dados e processamento local em edge. O problema central investigado e: Dependencia de nuvem publica amplia superficie de ataque, latencia e exposicao regulatoria de dados sensiveis. Adotou-se um desenho metodologico com foco em validade interna, comparabilidade e reproducibilidade: Comparacao de arquiteturas centralizadas versus edge-first, incluindo requisitos de identidade, criptografia e observabilidade. Os resultados principais indicam que o desenho cloudless reduz dependencia externa e melhora controle sobre confidencialidade e disponibilidade local.. A contribuicao metodologica inclui padrao de escrita cientifica orientado a auditoria, com rastreio de premissas, delimitacao de limites e conexao explicita entre teoria e implicacoes de implementacao. O objetivo deste trabalho e avaliar de forma estruturada como \\\"Arquiteturas Cloudless e Soberania de Dados em IoT\\\" pode gerar valor cientifico e operacional com rastreabilidade metodologica. Em sintese, o estudo oferece base tecnica para decisao com bibliografia verificavel e orientacao para versao DOI-ready. (Rose, 2020).\"\nkeywords: [\"IOT\", \"DATA\", \"SOVEREIGNTY\"]\nlicense: \"CC-BY-4.0\"\nversion: \"v2026-02-21\"\ndate-released: \"2025-01-01\"\nrepository-code: \"https://ulissesflores.com/whitepapers/2025-iot-data-sovereignty\"\nreferences:\n  - unstructured: \"Rose, S. et al. (2020). NIST SP 800-207 Zero Trust Architecture.\"\n    url: \"https://doi.org/10.6028/NIST.SP.800-207\"\n  - unstructured: \"Fagan, M. et al. (2020). NISTIR 8259A IoT Device Cybersecurity Capability Core Baseline.\"\n    url: \"https://doi.org/10.6028/NIST.IR.8259A\"\n  - unstructured: \"IEC 62443 series for industrial automation and control systems security.\"\n    url: \"https://www.iec.ch/standards-development/what-makes-a-good-standard/iec-62443-series-standards\"\n  - unstructured: \"ETSI EN 303 645 for consumer IoT cybersecurity.\"\n    url: \"https://www.etsi.org/technologies/consumer-iot-security\"\n  - unstructured: \"OWASP Internet of Things Project.\"\n    url: \"https://owasp.org/www-project-internet-of-things/\"\n  - unstructured: \"GAIA-X policy and interoperability framework.\"\n    url: \"https://gaia-x.eu/what-is-gaia-x/\"\n",
       "score": {
         "completenessScore": 1000,
         "referencesScore": 1000,
@@ -1062,10 +1042,6 @@
       "language": "pt-BR",
       "canonicalUrl": "https://ulissesflores.com/research/2025-fraud-detection-mlp",
       "pdfUrl": "https://ulissesflores.com/deep-research/2025-fraud-detection-mlp/deep-research.pdf",
-      "doi": {
-        "status": "target",
-        "target": "10.5281/zenodo.202506"
-      },
       "version": "v2026-02-21",
       "license": "CC-BY-4.0",
       "creators": [
@@ -1218,7 +1194,7 @@
             }
           ],
           "version": "v2026-02-21",
-          "notes": "DOI-ready metadata generated automatically from the canonical UPKF publication dataset. DOI target: 10.5281/zenodo.202506 (not minted).",
+          "notes": "DOI-ready metadata generated automatically from the canonical UPKF publication dataset. No DOI minted for this work yet; cite it by the canonical URL.",
           "license": "CC-BY-4.0"
         }
       },
@@ -1323,10 +1299,9 @@
             "key": "2025-fraud-detection-mlp-ref-19",
             "unstructured": "FLORES, Carlos Ulisses. Notebook estudo_caso_fraude_cartao_pytorch_v3p2_final_full.ipynb. Colab, 2025. Acesso em: 16/08/2025."
           }
-        ],
-        "doi_target": "10.5281/zenodo.202506"
+        ]
       },
-      "citationCff": "cff-version: 1.2.0\nmessage: \"If you use this work, cite with this metadata. DOI target: 10.5281/zenodo.202506 (not minted).\"\ntitle: \"Detecção de Fraudes em Cartões com Redes Neurais\"\ntype: article\nauthors:\n  - family-names: \"Flores\"\n    given-names: \"Carlos Ulisses\"\n    orcid: \"0000-0002-6034-7765\"\nidentifiers:\n  - type: url\n    value: \"https://ulissesflores.com/research/2025-fraud-detection-mlp\"\n  - type: url\n    value: \"https://ulissesflores.com/deep-research/2025-fraud-detection-mlp/deep-research.pdf\"\nabstract: \"Este trabalho apresenta um estudo de caso de detecção de fraudes em cartões de crédito sob forte desbalanceamento, comparando um Perceptron Multi-Camadas (MLP) supervisionado às alternativas Autoencoder (AE), Regressão Logística (LR) e Isolation Forest (IF) no conjunto público ULB/Worldline. O protocolo prioriza métricas apropriadas a classes raras, em especial AUC-PR e F1 (além de Fβ), com thresholds calibrados na validação e aplicados no teste; reportamos curvas ROC/PR, matrizes de confusão, importância por permutação e teste de robustez a variações de prevalência. O MLP obteve o melhor F1 na classe positiva e AUC-PR competitiva, superando AE/IF e empatando/superando LR; discutimos escolha de limiar sensível a custos, calibração e governança, com artefatos completos para replicação (SAITO; REHMSMEIER, 2015; DAVIS; GOADRICH, 2006).\"\nkeywords: [\"FRAUD\", \"DETECTION\", \"MLP\"]\nlicense: \"CC-BY-4.0\"\nversion: \"v2026-02-21\"\ndate-released: \"2025-01-01\"\nrepository-code: \"https://ulissesflores.com/research/2025-fraud-detection-mlp\"\nreferences:\n  - unstructured: \"SAITO, T.; REHMSMEIER, M. The Precision-Recall Plot Is More Informative than the ROC Plot on Imbalanced Datasets. PLoS ONE, 2015.\"\n  - unstructured: \"DAVIS, J.; GOADRICH, M. The Relationship Between Precision-Recall and ROC Curves. In: ICML, 2006.\"\n  - unstructured: \"KING, G.; ZENG, L. Logistic Regression in Rare Events Data. Political Analysis, 2001.\"\n  - unstructured: \"NICULESCU-MIZIL, A.; CARUANA, R. Predicting Good Probabilities with Supervised Learning. In: ICML, 2005.\"\n  - unstructured: \"GUO, C.; PLEISS, G.; SUN, Y.; WEINBERGER, K. On Calibration of Modern Neural Networks. In: ICML, 2017.\"\n  - unstructured: \"LIU, F. T.; TING, K. M.; ZHOU, Z.-H. Isolation Forest. In: ICDM, 2008.\"\n  - unstructured: \"CHAWLA, N. V. et al. SMOTE: Synthetic Minority Over-sampling Technique. JAIR, 2002.\"\n  - unstructured: \"DAL POZZOLO, A. Adaptive Machine Learning for Credit Card Fraud Detection. PhD Thesis, 2015.\"\n  - unstructured: \"ULB/WORLDLINE. Credit Card Fraud Dataset. Kaggle mirror, 2013.\"\n  - unstructured: \"GOODFELLOW, I.; BENGIO, Y.; COURVILLE, A. Deep Learning. MIT Press, 2016.\"\n  - unstructured: \"BISHOP, C. Pattern Recognition and Machine Learning. Springer, 2006.\"\n  - unstructured: \"HASTIE, T.; TIBSHIRANI, R.; FRIEDMAN, J. The Elements of Statistical Learning. Springer, 2009.\"\n  - unstructured: \"MURPHY, K. Machine Learning: A Probabilistic Perspective. MIT Press, 2012.\"\n  - unstructured: \"CHEN, W. et al. A survey on imbalanced learning: latest research. Artificial Intelligence Review, 2024.\"\n  - unstructured: \"HERNANDEZ AROS, L. et al. Financial fraud detection through ML. Humanities and Social Sciences Communications, 2024.\"\n  - unstructured: \"CHERIF, A. et al. Credit card fraud detection in the era of disruptive technologies. JISA, 2023.\"\n  - unstructured: \"IBM Skills Network. AI Development — Estudo de Caso (Diretrizes). 2025.\"\n  - unstructured: \"IBM Skills Network. Unit 3.x — Laboratórios de Métricas, Treinamento e Avaliação. 2025.\"\n  - unstructured: \"FLORES, Carlos Ulisses. Notebook estudo_caso_fraude_cartao_pytorch_v3p2_final_full.ipynb. Colab, 2025. Acesso em: 16/08/2025.\"\n",
+      "citationCff": "cff-version: 1.2.0\nmessage: \"If you use this work, cite with this metadata. No DOI minted yet; cite by the canonical URL.\"\ntitle: \"Detecção de Fraudes em Cartões com Redes Neurais\"\ntype: article\nauthors:\n  - family-names: \"Flores\"\n    given-names: \"Carlos Ulisses\"\n    orcid: \"0000-0002-6034-7765\"\nidentifiers:\n  - type: url\n    value: \"https://ulissesflores.com/research/2025-fraud-detection-mlp\"\n  - type: url\n    value: \"https://ulissesflores.com/deep-research/2025-fraud-detection-mlp/deep-research.pdf\"\nabstract: \"Este trabalho apresenta um estudo de caso de detecção de fraudes em cartões de crédito sob forte desbalanceamento, comparando um Perceptron Multi-Camadas (MLP) supervisionado às alternativas Autoencoder (AE), Regressão Logística (LR) e Isolation Forest (IF) no conjunto público ULB/Worldline. O protocolo prioriza métricas apropriadas a classes raras, em especial AUC-PR e F1 (além de Fβ), com thresholds calibrados na validação e aplicados no teste; reportamos curvas ROC/PR, matrizes de confusão, importância por permutação e teste de robustez a variações de prevalência. O MLP obteve o melhor F1 na classe positiva e AUC-PR competitiva, superando AE/IF e empatando/superando LR; discutimos escolha de limiar sensível a custos, calibração e governança, com artefatos completos para replicação (SAITO; REHMSMEIER, 2015; DAVIS; GOADRICH, 2006).\"\nkeywords: [\"FRAUD\", \"DETECTION\", \"MLP\"]\nlicense: \"CC-BY-4.0\"\nversion: \"v2026-02-21\"\ndate-released: \"2025-01-01\"\nrepository-code: \"https://ulissesflores.com/research/2025-fraud-detection-mlp\"\nreferences:\n  - unstructured: \"SAITO, T.; REHMSMEIER, M. The Precision-Recall Plot Is More Informative than the ROC Plot on Imbalanced Datasets. PLoS ONE, 2015.\"\n  - unstructured: \"DAVIS, J.; GOADRICH, M. The Relationship Between Precision-Recall and ROC Curves. In: ICML, 2006.\"\n  - unstructured: \"KING, G.; ZENG, L. Logistic Regression in Rare Events Data. Political Analysis, 2001.\"\n  - unstructured: \"NICULESCU-MIZIL, A.; CARUANA, R. Predicting Good Probabilities with Supervised Learning. In: ICML, 2005.\"\n  - unstructured: \"GUO, C.; PLEISS, G.; SUN, Y.; WEINBERGER, K. On Calibration of Modern Neural Networks. In: ICML, 2017.\"\n  - unstructured: \"LIU, F. T.; TING, K. M.; ZHOU, Z.-H. Isolation Forest. In: ICDM, 2008.\"\n  - unstructured: \"CHAWLA, N. V. et al. SMOTE: Synthetic Minority Over-sampling Technique. JAIR, 2002.\"\n  - unstructured: \"DAL POZZOLO, A. Adaptive Machine Learning for Credit Card Fraud Detection. PhD Thesis, 2015.\"\n  - unstructured: \"ULB/WORLDLINE. Credit Card Fraud Dataset. Kaggle mirror, 2013.\"\n  - unstructured: \"GOODFELLOW, I.; BENGIO, Y.; COURVILLE, A. Deep Learning. MIT Press, 2016.\"\n  - unstructured: \"BISHOP, C. Pattern Recognition and Machine Learning. Springer, 2006.\"\n  - unstructured: \"HASTIE, T.; TIBSHIRANI, R.; FRIEDMAN, J. The Elements of Statistical Learning. Springer, 2009.\"\n  - unstructured: \"MURPHY, K. Machine Learning: A Probabilistic Perspective. MIT Press, 2012.\"\n  - unstructured: \"CHEN, W. et al. A survey on imbalanced learning: latest research. Artificial Intelligence Review, 2024.\"\n  - unstructured: \"HERNANDEZ AROS, L. et al. Financial fraud detection through ML. Humanities and Social Sciences Communications, 2024.\"\n  - unstructured: \"CHERIF, A. et al. Credit card fraud detection in the era of disruptive technologies. JISA, 2023.\"\n  - unstructured: \"IBM Skills Network. AI Development — Estudo de Caso (Diretrizes). 2025.\"\n  - unstructured: \"IBM Skills Network. Unit 3.x — Laboratórios de Métricas, Treinamento e Avaliação. 2025.\"\n  - unstructured: \"FLORES, Carlos Ulisses. Notebook estudo_caso_fraude_cartao_pytorch_v3p2_final_full.ipynb. Colab, 2025. Acesso em: 16/08/2025.\"\n",
       "score": {
         "completenessScore": 1000,
         "referencesScore": 700,
@@ -1347,10 +1322,6 @@
       "language": "pt-BR",
       "canonicalUrl": "https://ulissesflores.com/research/2024-historicity-jesus-archaeology",
       "pdfUrl": "https://ulissesflores.com/deep-research/2024-historicity-jesus-archaeology/deep-research.pdf",
-      "doi": {
-        "status": "target",
-        "target": "10.5281/zenodo.202412"
-      },
       "version": "v2026-02-21",
       "license": "CC-BY-4.0",
       "creators": [
@@ -1438,7 +1409,7 @@
             }
           ],
           "version": "v2026-02-21",
-          "notes": "DOI-ready metadata generated automatically from the canonical UPKF publication dataset. DOI target: 10.5281/zenodo.202412 (not minted).",
+          "notes": "DOI-ready metadata generated automatically from the canonical UPKF publication dataset. No DOI minted for this work yet; cite it by the canonical URL.",
           "license": "CC-BY-4.0"
         }
       },
@@ -1497,10 +1468,9 @@
             "unstructured": "Tacitus. Annals, Book 15.",
             "URL": "https://www.perseus.tufts.edu/hopper/text?doc=Tac.+Ann.+15"
           }
-        ],
-        "doi_target": "10.5281/zenodo.202412"
+        ]
       },
-      "citationCff": "cff-version: 1.2.0\nmessage: \"If you use this work, cite with this metadata. DOI target: 10.5281/zenodo.202412 (not minted).\"\ntitle: \"Análise Historiográfica e Arqueológica Exaustiva: A Historicidade de Jesus\"\ntype: article\nauthors:\n  - family-names: \"Flores\"\n    given-names: \"Carlos Ulisses\"\n    orcid: \"0000-0002-6034-7765\"\nidentifiers:\n  - type: url\n    value: \"https://ulissesflores.com/research/2024-historicity-jesus-archaeology\"\n  - type: url\n    value: \"https://ulissesflores.com/deep-research/2024-historicity-jesus-archaeology/deep-research.pdf\"\nabstract: \"Pesquisa historiografica sobre historicidade de Jesus combinando critica textual, fontes antigas e evidencias arqueologicas. O problema central investigado e: Debates publicos misturam categorias teologicas e historicas sem separacao metodologica rigorosa. Adotou-se um desenho metodologico com foco em validade interna, comparabilidade e reproducibilidade: Revisao historico-critica de fontes primarias e secundarias com avaliacao de contexto, autoria e data. Os resultados principais indicam que o estudo delimita consenso academico minimo e identifica zonas de alta e baixa confianca documental.. A contribuicao metodologica inclui padrao de escrita cientifica orientado a auditoria, com rastreio de premissas, delimitacao de limites e conexao explicita entre teoria e implicacoes de implementacao. O objetivo deste trabalho e avaliar de forma estruturada como \\\"Análise Historiográfica e Arqueológica Exaustiva: A Historicidade de Jesus\\\" pode gerar valor cientifico e operacional com rastreabilidade metodologica. Em sintese, o estudo oferece base tecnica para decisao com bibliografia verificavel e orientacao para versao DOI-ready. (Ehrman, 2012).\"\nkeywords: [\"HISTORICITY\", \"JESUS\", \"ARCHAEOLOGY\"]\nlicense: \"CC-BY-4.0\"\nversion: \"v2026-02-21\"\ndate-released: \"2024-01-01\"\nrepository-code: \"https://ulissesflores.com/research/2024-historicity-jesus-archaeology\"\nreferences:\n  - unstructured: \"Ehrman, B. D. (2012). Did Jesus Exist?\"\n    url: \"https://global.oup.com/academic/product/did-jesus-exist-9780062206442\"\n  - unstructured: \"Sanders, E. P. (1993). The Historical Figure of Jesus.\"\n    url: \"https://www.penguinrandomhouse.com/books/322275/the-historical-figure-of-jesus-by-e-p-sanders/\"\n  - unstructured: \"Meier, J. P. (1991-2016). A Marginal Jew.\"\n    url: \"https://yalebooks.yale.edu/book/9780300140181/a-marginal-jew/\"\n  - unstructured: \"Vermes, G. (2001). The Changing Faces of Jesus.\"\n    url: \"https://www.penguin.co.uk/books/35040/the-changing-faces-of-jesus-by-geza-vermes/9780140287844\"\n  - unstructured: \"Josephus. Antiquities of the Jews, Book 18.\"\n    url: \"https://www.perseus.tufts.edu/hopper/text?doc=J.+AJ+18\"\n  - unstructured: \"Tacitus. Annals, Book 15.\"\n    url: \"https://www.perseus.tufts.edu/hopper/text?doc=Tac.+Ann.+15\"\n",
+      "citationCff": "cff-version: 1.2.0\nmessage: \"If you use this work, cite with this metadata. No DOI minted yet; cite by the canonical URL.\"\ntitle: \"Análise Historiográfica e Arqueológica Exaustiva: A Historicidade de Jesus\"\ntype: article\nauthors:\n  - family-names: \"Flores\"\n    given-names: \"Carlos Ulisses\"\n    orcid: \"0000-0002-6034-7765\"\nidentifiers:\n  - type: url\n    value: \"https://ulissesflores.com/research/2024-historicity-jesus-archaeology\"\n  - type: url\n    value: \"https://ulissesflores.com/deep-research/2024-historicity-jesus-archaeology/deep-research.pdf\"\nabstract: \"Pesquisa historiografica sobre historicidade de Jesus combinando critica textual, fontes antigas e evidencias arqueologicas. O problema central investigado e: Debates publicos misturam categorias teologicas e historicas sem separacao metodologica rigorosa. Adotou-se um desenho metodologico com foco em validade interna, comparabilidade e reproducibilidade: Revisao historico-critica de fontes primarias e secundarias com avaliacao de contexto, autoria e data. Os resultados principais indicam que o estudo delimita consenso academico minimo e identifica zonas de alta e baixa confianca documental.. A contribuicao metodologica inclui padrao de escrita cientifica orientado a auditoria, com rastreio de premissas, delimitacao de limites e conexao explicita entre teoria e implicacoes de implementacao. O objetivo deste trabalho e avaliar de forma estruturada como \\\"Análise Historiográfica e Arqueológica Exaustiva: A Historicidade de Jesus\\\" pode gerar valor cientifico e operacional com rastreabilidade metodologica. Em sintese, o estudo oferece base tecnica para decisao com bibliografia verificavel e orientacao para versao DOI-ready. (Ehrman, 2012).\"\nkeywords: [\"HISTORICITY\", \"JESUS\", \"ARCHAEOLOGY\"]\nlicense: \"CC-BY-4.0\"\nversion: \"v2026-02-21\"\ndate-released: \"2024-01-01\"\nrepository-code: \"https://ulissesflores.com/research/2024-historicity-jesus-archaeology\"\nreferences:\n  - unstructured: \"Ehrman, B. D. (2012). Did Jesus Exist?\"\n    url: \"https://global.oup.com/academic/product/did-jesus-exist-9780062206442\"\n  - unstructured: \"Sanders, E. P. (1993). The Historical Figure of Jesus.\"\n    url: \"https://www.penguinrandomhouse.com/books/322275/the-historical-figure-of-jesus-by-e-p-sanders/\"\n  - unstructured: \"Meier, J. P. (1991-2016). A Marginal Jew.\"\n    url: \"https://yalebooks.yale.edu/book/9780300140181/a-marginal-jew/\"\n  - unstructured: \"Vermes, G. (2001). The Changing Faces of Jesus.\"\n    url: \"https://www.penguin.co.uk/books/35040/the-changing-faces-of-jesus-by-geza-vermes/9780140287844\"\n  - unstructured: \"Josephus. Antiquities of the Jews, Book 18.\"\n    url: \"https://www.perseus.tufts.edu/hopper/text?doc=J.+AJ+18\"\n  - unstructured: \"Tacitus. Annals, Book 15.\"\n    url: \"https://www.perseus.tufts.edu/hopper/text?doc=Tac.+Ann.+15\"\n",
       "score": {
         "completenessScore": 1000,
         "referencesScore": 1000,
@@ -1521,10 +1491,6 @@
       "language": "pt-BR",
       "canonicalUrl": "https://ulissesflores.com/research/2024-bitcoin-praxeology",
       "pdfUrl": "https://ulissesflores.com/deep-research/2024-bitcoin-praxeology/deep-research.pdf",
-      "doi": {
-        "status": "target",
-        "target": "10.5281/zenodo.202414"
-      },
       "version": "v2026-02-21",
       "license": "CC-BY-4.0",
       "creators": [
@@ -1610,7 +1576,7 @@
             }
           ],
           "version": "v2026-02-21",
-          "notes": "DOI-ready metadata generated automatically from the canonical UPKF publication dataset. DOI target: 10.5281/zenodo.202414 (not minted).",
+          "notes": "DOI-ready metadata generated automatically from the canonical UPKF publication dataset. No DOI minted for this work yet; cite it by the canonical URL.",
           "license": "CC-BY-4.0"
         }
       },
@@ -1670,10 +1636,9 @@
             "unstructured": "Ammous, S. (2018). The Bitcoin Standard.",
             "URL": "https://saifedean.com/thebitcoinstandard"
           }
-        ],
-        "doi_target": "10.5281/zenodo.202414"
+        ]
       },
-      "citationCff": "cff-version: 1.2.0\nmessage: \"If you use this work, cite with this metadata. DOI target: 10.5281/zenodo.202414 (not minted).\"\ntitle: \"Bitcoin como Ativo de Reserva e a Teoria da Moeda na Escola Austríaca\"\ntype: article\nauthors:\n  - family-names: \"Flores\"\n    given-names: \"Carlos Ulisses\"\n    orcid: \"0000-0002-6034-7765\"\nidentifiers:\n  - type: url\n    value: \"https://ulissesflores.com/research/2024-bitcoin-praxeology\"\n  - type: url\n    value: \"https://ulissesflores.com/deep-research/2024-bitcoin-praxeology/deep-research.pdf\"\nabstract: \"Analise do Bitcoin como ativo de reserva sob praxeologia e teoria monetaria da Escola Austriaca. O problema central investigado e: Avaliacoes estritamente tecnicas ignoram fundamentos economicos de escassez, preferencia temporal e coordenacao social. Adotou-se um desenho metodologico com foco em validade interna, comparabilidade e reproducibilidade: Discussao teoretica com comparacao entre propriedades monetarias e mecanismos de governanca de oferta. Os resultados principais indicam que o artigo sustenta que bitcoin combina previsibilidade de emissao e portabilidade digital com implicacoes macroeconomicas relevantes.. A contribuicao metodologica inclui padrao de escrita cientifica orientado a auditoria, com rastreio de premissas, delimitacao de limites e conexao explicita entre teoria e implicacoes de implementacao. O objetivo deste trabalho e avaliar de forma estruturada como \\\"Bitcoin como Ativo de Reserva e a Teoria da Moeda na Escola Austríaca\\\" pode gerar valor cientifico e operacional com rastreabilidade metodologica. Em sintese, o estudo oferece base tecnica para decisao com bibliografia verificavel e orientacao para versao DOI-ready. (Nakamoto, 2008).\"\nkeywords: [\"BITCOIN\", \"PRAXEOLOGY\"]\nlicense: \"CC-BY-4.0\"\nversion: \"v2026-02-21\"\ndate-released: \"2024-01-01\"\nrepository-code: \"https://ulissesflores.com/research/2024-bitcoin-praxeology\"\nreferences:\n  - unstructured: \"Nakamoto, S. (2008). Bitcoin: A Peer-to-Peer Electronic Cash System.\"\n    url: \"https://bitcoin.org/bitcoin.pdf\"\n  - unstructured: \"Mises, L. von (1912). The Theory of Money and Credit.\"\n    url: \"https://mises.org/library/book/theory-money-and-credit\"\n  - unstructured: \"Hayek, F. A. (1976). Denationalisation of Money.\"\n    url: \"https://mises.org/library/book/denationalisation-money\"\n  - unstructured: \"Bohme, R. et al. (2015). Bitcoin: Economics, Technology, and Governance.\"\n    url: \"https://doi.org/10.1257/jep.29.2.213\"\n  - unstructured: \"Selgin, G. (2015). Synthetic Commodity Money.\"\n    url: \"https://www.alt-m.org/2015/09/02/synthetic-commodity-money/\"\n  - unstructured: \"Ammous, S. (2018). The Bitcoin Standard.\"\n    url: \"https://saifedean.com/thebitcoinstandard\"\n",
+      "citationCff": "cff-version: 1.2.0\nmessage: \"If you use this work, cite with this metadata. No DOI minted yet; cite by the canonical URL.\"\ntitle: \"Bitcoin como Ativo de Reserva e a Teoria da Moeda na Escola Austríaca\"\ntype: article\nauthors:\n  - family-names: \"Flores\"\n    given-names: \"Carlos Ulisses\"\n    orcid: \"0000-0002-6034-7765\"\nidentifiers:\n  - type: url\n    value: \"https://ulissesflores.com/research/2024-bitcoin-praxeology\"\n  - type: url\n    value: \"https://ulissesflores.com/deep-research/2024-bitcoin-praxeology/deep-research.pdf\"\nabstract: \"Analise do Bitcoin como ativo de reserva sob praxeologia e teoria monetaria da Escola Austriaca. O problema central investigado e: Avaliacoes estritamente tecnicas ignoram fundamentos economicos de escassez, preferencia temporal e coordenacao social. Adotou-se um desenho metodologico com foco em validade interna, comparabilidade e reproducibilidade: Discussao teoretica com comparacao entre propriedades monetarias e mecanismos de governanca de oferta. Os resultados principais indicam que o artigo sustenta que bitcoin combina previsibilidade de emissao e portabilidade digital com implicacoes macroeconomicas relevantes.. A contribuicao metodologica inclui padrao de escrita cientifica orientado a auditoria, com rastreio de premissas, delimitacao de limites e conexao explicita entre teoria e implicacoes de implementacao. O objetivo deste trabalho e avaliar de forma estruturada como \\\"Bitcoin como Ativo de Reserva e a Teoria da Moeda na Escola Austríaca\\\" pode gerar valor cientifico e operacional com rastreabilidade metodologica. Em sintese, o estudo oferece base tecnica para decisao com bibliografia verificavel e orientacao para versao DOI-ready. (Nakamoto, 2008).\"\nkeywords: [\"BITCOIN\", \"PRAXEOLOGY\"]\nlicense: \"CC-BY-4.0\"\nversion: \"v2026-02-21\"\ndate-released: \"2024-01-01\"\nrepository-code: \"https://ulissesflores.com/research/2024-bitcoin-praxeology\"\nreferences:\n  - unstructured: \"Nakamoto, S. (2008). Bitcoin: A Peer-to-Peer Electronic Cash System.\"\n    url: \"https://bitcoin.org/bitcoin.pdf\"\n  - unstructured: \"Mises, L. von (1912). The Theory of Money and Credit.\"\n    url: \"https://mises.org/library/book/theory-money-and-credit\"\n  - unstructured: \"Hayek, F. A. (1976). Denationalisation of Money.\"\n    url: \"https://mises.org/library/book/denationalisation-money\"\n  - unstructured: \"Bohme, R. et al. (2015). Bitcoin: Economics, Technology, and Governance.\"\n    url: \"https://doi.org/10.1257/jep.29.2.213\"\n  - unstructured: \"Selgin, G. (2015). Synthetic Commodity Money.\"\n    url: \"https://www.alt-m.org/2015/09/02/synthetic-commodity-money/\"\n  - unstructured: \"Ammous, S. (2018). The Bitcoin Standard.\"\n    url: \"https://saifedean.com/thebitcoinstandard\"\n",
       "score": {
         "completenessScore": 1000,
         "referencesScore": 1000,
@@ -1694,10 +1659,6 @@
       "language": "pt-BR",
       "canonicalUrl": "https://ulissesflores.com/research/2024-scribal-canonization-ezra",
       "pdfUrl": "https://ulissesflores.com/deep-research/2024-scribal-canonization-ezra/deep-research.pdf",
-      "doi": {
-        "status": "target",
-        "target": "10.5281/zenodo.202415"
-      },
       "version": "v2026-02-21",
       "license": "CC-BY-4.0",
       "creators": [
@@ -1785,7 +1746,7 @@
             }
           ],
           "version": "v2026-02-21",
-          "notes": "DOI-ready metadata generated automatically from the canonical UPKF publication dataset. DOI target: 10.5281/zenodo.202415 (not minted).",
+          "notes": "DOI-ready metadata generated automatically from the canonical UPKF publication dataset. No DOI minted for this work yet; cite it by the canonical URL.",
           "license": "CC-BY-4.0"
         }
       },
@@ -1844,10 +1805,9 @@
             "unstructured": "Sanders, J. A. (1987). Canon and Community.",
             "URL": "https://www.fortresspress.com/store/product/9780800615918/Canon-and-Community"
           }
-        ],
-        "doi_target": "10.5281/zenodo.202415"
+        ]
       },
-      "citationCff": "cff-version: 1.2.0\nmessage: \"If you use this work, cite with this metadata. DOI target: 10.5281/zenodo.202415 (not minted).\"\ntitle: \"Canonização Escribal: Análise Histórico-Crítica da Formação do Cânon\"\ntype: article\nauthors:\n  - family-names: \"Flores\"\n    given-names: \"Carlos Ulisses\"\n    orcid: \"0000-0002-6034-7765\"\nidentifiers:\n  - type: url\n    value: \"https://ulissesflores.com/research/2024-scribal-canonization-ezra\"\n  - type: url\n    value: \"https://ulissesflores.com/deep-research/2024-scribal-canonization-ezra/deep-research.pdf\"\nabstract: \"Estudo historico-critico sobre canonizacao escribal e processos de consolidacao textual associados a Esdras. O problema central investigado e: Narrativas simplificadas sobre formacao canonica tendem a apagar camadas editoriais e disputas de autoridade. Adotou-se um desenho metodologico com foco em validade interna, comparabilidade e reproducibilidade: Analise de tradicoes textuais, historia da transmissao e contexto sociopolitico do periodo pos-exilico. Os resultados principais indicam que a pesquisa destaca dinamica incremental de consolidacao canonica com mediação institucional e escribal.. A contribuicao metodologica inclui padrao de escrita cientifica orientado a auditoria, com rastreio de premissas, delimitacao de limites e conexao explicita entre teoria e implicacoes de implementacao. O objetivo deste trabalho e avaliar de forma estruturada como \\\"Canonização Escribal: Análise Histórico-Crítica da Formação do Cânon\\\" pode gerar valor cientifico e operacional com rastreabilidade metodologica. Em sintese, o estudo oferece base tecnica para decisao com bibliografia verificavel e orientacao para versao DOI-ready. (Childs, 1979).\"\nkeywords: [\"SCRIBAL\", \"CANONIZATION\", \"EZRA\"]\nlicense: \"CC-BY-4.0\"\nversion: \"v2026-02-21\"\ndate-released: \"2024-01-01\"\nrepository-code: \"https://ulissesflores.com/research/2024-scribal-canonization-ezra\"\nreferences:\n  - unstructured: \"Childs, B. S. (1979). Introduction to the Old Testament as Scripture.\"\n    url: \"https://books.google.com/books?id=6lEJY7X0fVoC\"\n  - unstructured: \"Kugel, J. L. (2007). How to Read the Bible.\"\n    url: \"https://www.simonandschuster.com/books/How-to-Read-the-Bible/James-L-Kugel/9780743235860\"\n  - unstructured: \"Cohen, S. J. D. (2006). From the Maccabees to the Mishnah.\"\n    url: \"https://www.wjkbooks.com/Products/9780664239046/from-the-maccabees-to-the-mishnah-third-edition.aspx\"\n  - unstructured: \"Tov, E. (2012). Textual Criticism of the Hebrew Bible.\"\n    url: \"https://www.fortresspress.com/store/product/9780800696641/Textual-Criticism-of-the-Hebrew-Bible\"\n  - unstructured: \"McDonald, L. M. (2017). The Formation of the Biblical Canon.\"\n    url: \"https://www.bloomsbury.com/us/formation-of-the-biblical-canon-9780567668851/\"\n  - unstructured: \"Sanders, J. A. (1987). Canon and Community.\"\n    url: \"https://www.fortresspress.com/store/product/9780800615918/Canon-and-Community\"\n",
+      "citationCff": "cff-version: 1.2.0\nmessage: \"If you use this work, cite with this metadata. No DOI minted yet; cite by the canonical URL.\"\ntitle: \"Canonização Escribal: Análise Histórico-Crítica da Formação do Cânon\"\ntype: article\nauthors:\n  - family-names: \"Flores\"\n    given-names: \"Carlos Ulisses\"\n    orcid: \"0000-0002-6034-7765\"\nidentifiers:\n  - type: url\n    value: \"https://ulissesflores.com/research/2024-scribal-canonization-ezra\"\n  - type: url\n    value: \"https://ulissesflores.com/deep-research/2024-scribal-canonization-ezra/deep-research.pdf\"\nabstract: \"Estudo historico-critico sobre canonizacao escribal e processos de consolidacao textual associados a Esdras. O problema central investigado e: Narrativas simplificadas sobre formacao canonica tendem a apagar camadas editoriais e disputas de autoridade. Adotou-se um desenho metodologico com foco em validade interna, comparabilidade e reproducibilidade: Analise de tradicoes textuais, historia da transmissao e contexto sociopolitico do periodo pos-exilico. Os resultados principais indicam que a pesquisa destaca dinamica incremental de consolidacao canonica com mediação institucional e escribal.. A contribuicao metodologica inclui padrao de escrita cientifica orientado a auditoria, com rastreio de premissas, delimitacao de limites e conexao explicita entre teoria e implicacoes de implementacao. O objetivo deste trabalho e avaliar de forma estruturada como \\\"Canonização Escribal: Análise Histórico-Crítica da Formação do Cânon\\\" pode gerar valor cientifico e operacional com rastreabilidade metodologica. Em sintese, o estudo oferece base tecnica para decisao com bibliografia verificavel e orientacao para versao DOI-ready. (Childs, 1979).\"\nkeywords: [\"SCRIBAL\", \"CANONIZATION\", \"EZRA\"]\nlicense: \"CC-BY-4.0\"\nversion: \"v2026-02-21\"\ndate-released: \"2024-01-01\"\nrepository-code: \"https://ulissesflores.com/research/2024-scribal-canonization-ezra\"\nreferences:\n  - unstructured: \"Childs, B. S. (1979). Introduction to the Old Testament as Scripture.\"\n    url: \"https://books.google.com/books?id=6lEJY7X0fVoC\"\n  - unstructured: \"Kugel, J. L. (2007). How to Read the Bible.\"\n    url: \"https://www.simonandschuster.com/books/How-to-Read-the-Bible/James-L-Kugel/9780743235860\"\n  - unstructured: \"Cohen, S. J. D. (2006). From the Maccabees to the Mishnah.\"\n    url: \"https://www.wjkbooks.com/Products/9780664239046/from-the-maccabees-to-the-mishnah-third-edition.aspx\"\n  - unstructured: \"Tov, E. (2012). Textual Criticism of the Hebrew Bible.\"\n    url: \"https://www.fortresspress.com/store/product/9780800696641/Textual-Criticism-of-the-Hebrew-Bible\"\n  - unstructured: \"McDonald, L. M. (2017). The Formation of the Biblical Canon.\"\n    url: \"https://www.bloomsbury.com/us/formation-of-the-biblical-canon-9780567668851/\"\n  - unstructured: \"Sanders, J. A. (1987). Canon and Community.\"\n    url: \"https://www.fortresspress.com/store/product/9780800615918/Canon-and-Community\"\n",
       "score": {
         "completenessScore": 1000,
         "referencesScore": 1000,
@@ -1868,10 +1828,6 @@
       "language": "pt-BR",
       "canonicalUrl": "https://ulissesflores.com/essays/2024-theology-economic-order",
       "pdfUrl": "https://ulissesflores.com/deep-research/2024-theology-economic-order/deep-research.pdf",
-      "doi": {
-        "status": "target",
-        "target": "10.5281/zenodo.202417"
-      },
       "version": "v2026-02-21",
       "license": "CC-BY-4.0",
       "creators": [
@@ -2154,7 +2110,7 @@
             }
           ],
           "version": "v2026-02-21",
-          "notes": "DOI-ready metadata generated automatically from the canonical UPKF publication dataset. DOI target: 10.5281/zenodo.202417 (not minted).",
+          "notes": "DOI-ready metadata generated automatically from the canonical UPKF publication dataset. No DOI minted for this work yet; cite it by the canonical URL.",
           "license": "CC-BY-4.0"
         }
       },
@@ -2363,10 +2319,9 @@
             "key": "2024-theology-economic-order-ref-45",
             "unstructured": "The Heterogeneous Effect of Economic Complexity on Growth and Human Development - ResearchGate, https://www.researchgate.net/publication/394858900"
           }
-        ],
-        "doi_target": "10.5281/zenodo.202417"
+        ]
       },
-      "citationCff": "cff-version: 1.2.0\nmessage: \"If you use this work, cite with this metadata. DOI target: 10.5281/zenodo.202417 (not minted).\"\ntitle: \"Fundamentos Transcendentes da Ordem Econômica\"\ntype: article\nauthors:\n  - family-names: \"Flores\"\n    given-names: \"Carlos Ulisses\"\n    orcid: \"0000-0002-6034-7765\"\nidentifiers:\n  - type: url\n    value: \"https://ulissesflores.com/essays/2024-theology-economic-order\"\n  - type: url\n    value: \"https://ulissesflores.com/deep-research/2024-theology-economic-order/deep-research.pdf\"\nabstract: \"\"\nkeywords: [\"THEOLOGY\", \"ECONOMIC\", \"ORDER\"]\nlicense: \"CC-BY-4.0\"\nversion: \"v2026-02-21\"\ndate-released: \"2024-01-01\"\nrepository-code: \"https://ulissesflores.com/essays/2024-theology-economic-order\"\nreferences:\n  - unstructured: \"Economic calculation problem - Wikipedia, https://en.wikipedia.org/wiki/Economic_calculation_problem\"\n  - unstructured: \"Monetary Calculation and Mises's Critique of Planning - St. Lawrence University, https://myslu.stlawu.edu/~shorwitz/Papers/Mises_HOPE_1998.pdf\"\n  - unstructured: \"Ludwig von Mises and Economic Calculation Under Socialism, Part 1 - Libertarianism.org, https://www.libertarianism.org/publications/essays/excursions/ludwig-von-mises-economic-calculation-under-socialism-part-1\"\n  - unstructured: \"Economic Calculation in the Socialist Commonwealth - Mises Institute, https://cdn.mises.org/Economic%20Calculation%20in%20the%20Socialist%20Commonwealth_Vol_2_3.pdf\"\n  - unstructured: \"Labor theory of value - Wikipedia, https://en.wikipedia.org/wiki/Labor_theory_of_value\"\n  - unstructured: \"Eugen von Böhm-Bawerk, \\\"The Error in the Marxist System\\\" (1896) - Online Library of Liberty, https://oll.libertyfund.org/pages/reader-bawerk-marx\"\n  - unstructured: \"Karl Marx and the Close of His System - School of Cooperative Individualism, https://cooperative-individualism.org/bohm-bawerk-eugen-von_karl-marx-and-the-close-of-his-system-1949-06.pdf\"\n  - unstructured: \"Hayek's \\\"The Use of Knowledge in Society\\\" - A Summary - Bleeding Heart Libertarians, https://bleedingheartlibertarians.com/2016/05/hayeks-the-use-of-knowledge-in-society-a-summary/\"\n  - unstructured: \"F.A. Hayek on the Discovery, Use, and Transmission of Knowledge - Austrian Institute, https://austrian-institute.org/en/blog/f-a-hayek-on-the-discovery-use-and-transmission-of-knowledge/\"\n  - unstructured: \"Hayek's Knowledge Problem and its Relevance in Organizational Management - Canadian Center of Science and Education, https://ccsenet.org/journal/index.php/ijbm/article/download/0/0/50004/54089\"\n  - unstructured: \"Benjamin M. Anderson: Hayek's Precursor on the Knowledge Problem - Cato at Liberty Blog, https://www.cato.org/blog/benjamin-m-anderson-hayeks-precursor-knowledge-problem\"\n  - unstructured: \"Systems biology beyond networks: generating order from disorder through self-organization, https://pmc.ncbi.nlm.nih.gov/articles/PMC3148307/\"\n  - unstructured: \"Hayek's Legacy of the Spontaneous Order - Federal Reserve Bank of Minneapolis, https://www.minneapolisfed.org/article/1992/hayeks-legacy-of-the-spontaneous-order\"\n  - unstructured: \"Spontaneous Order: A Testament to Human Creativity and Adaptability - The IHS, https://www.theihs.org/blog/spontaneous-order-a-testament-to-human-creativity-and-adaptability/\"\n  - unstructured: \"Spontaneous order - Wikipedia, https://en.wikipedia.org/wiki/Spontaneous_order\"\n  - unstructured: \"O BNDES e a crise dos caminhoneiros, https://web.bndes.gov.br/bib/jspui/bitstream/1408/15200/1/O-BNDES-e-a-crise-dos-caminhoneiros.pdf\"\n  - unstructured: \"No auge, subsídio para setor de caminhões atingiu R$ 34 bilhões, https://www.brasilagro.com.br/conteudo/no-auge-subsidio-para-setor-de-caminhoes-atingiu-r-34-bilhoes.html\"\n  - unstructured: \"Efeito crowding-out no Brasil, https://repositorio.fgv.br/items/027e589b-15c7-4f9f-88bb-df7e118d97ab\"\n  - unstructured: \"O efeito crowding-out via BNDES no mercado brasileiro, no século XXI - Revista Espacios, https://www.revistaespacios.com/a17v38n61/a17v38n61p08.pdf\"\n  - unstructured: \"Análise dos efeitos crowding-in e crowding-out para a economia brasileira - AmeliCA, https://portal.amelica.org/ameli/jatsRepo/65/6521005/html/\"\n  - unstructured: \"Investimento privado: uma análise empírica para o Brasil - SciELO, https://www.scielo.br/j/ecos/a/5z4RPHCTGZnj9Vjzh5r6tMK/\"\n  - unstructured: \"Greve dos caminhoneiros custará R$ 15 bilhões para a economia - Agência Brasil/EBC, https://agenciabrasil.ebc.com.br/economia/noticia/2018-06/greve-dos-caminhoneiros-custara-r-15-bilhoes-para-economia\"\n  - unstructured: \"Seigniorage Explained: Impact on Inflation and Government Revenue - Investopedia, https://www.investopedia.com/terms/s/seigniorage.asp\"\n  - unstructured: \"Seigniorage - Wikipedia, https://en.wikipedia.org/wiki/Seigniorage\"\n  - unstructured: \"Making Money From Making Money - New Economics Foundation, https://new-economicsf.files.svdcdn.com/production/files/NEF_MAKING-MONEY-OUT-OF-MONEY_amendment_E.pdf\"\n  - unstructured: \"The Economic Consequences of the Weimar Hyperinflation - Econlib, https://www.econlib.org/the-economic-consequences-of-the-weimar-hyperinflation/\"\n  - unstructured: \"Global M2 Money Supply: The Long-Term Liquidity Indicator - Babypips.com, https://www.babypips.com/learn/forex/global-m2-money-supply-liquidity-indicator\"\n  - unstructured: \"The Rise and Fall of M2 - St. Louis Fed, https://www.stlouisfed.org/on-the-economy/2023/may/the-rise-and-fall-of-m2\"\n  - unstructured: \"Inflation forecasts based on money growth proved accurate in 2021, though generally unreliable - Dallasfed.org, https://www.dallasfed.org/research/economics/2024/0220\"\n  - unstructured: \"Hyperinflation in the Weimar Republic - ResearchOnline@JCU, https://researchonline.jcu.edu.au/21599/3/21599.pdf\"\n  - unstructured: \"Hyperinflation in the Weimar Republic - Wikipedia, https://en.wikipedia.org/wiki/Hyperinflation_in_the_Weimar_Republic\"\n  - unstructured: \"Venezuela, the Weimar Republic and Zimbabwe prove MMT is true, https://www.taxresearch.org.uk/Blog/2024/10/10/venezuela-the-weimar-republic-and-zimbabwe-prove-mmt-is-true/\"\n  - unstructured: \"Rai stones - Wikipedia, https://en.wikipedia.org/wiki/Rai_stones\"\n  - unstructured: \"Researchers turn to stones to find the ancient origin of Bitcoin - University of Oregon, https://news.uoregon.edu/content/researchers-turn-stones-find-ancient-origin-bitcoin\"\n  - unstructured: \"Rai: big money - Bank of Canada Museum, https://www.bankofcanadamuseum.ca/2024/07/rai-big-money/\"\n  - unstructured: \"The Tale of Rai Stones (And Its Resemblance To Bitcoin) - Netcoins, https://www.netcoins.com/blog/the-tale-of-stone-money-and-how-it-resembles-bitcoin\"\n  - unstructured: \"What were the Rai Stones? - Pocket, https://pocketbitcoin.com/learn/economy/rai-stones-explained\"\n  - unstructured: \"The Protestant Ethic and the Spirit of Capitalism - Wikipedia, https://en.wikipedia.org/wiki/The_Protestant_Ethic_and_the_Spirit_of_Capitalism\"\n  - unstructured: \"Max Weber – The Protestant Ethic and the Spirit of Capitalism (1905) - SozTheo, https://soztheo.com/sociology/key-works-in-sociology/max-weber-the-protestant-ethic-and-the-spirit-of-capitalism-1905/\"\n  - unstructured: \"The Protestant Ethic and the Spirit of Capitalism, https://gpde.direito.ufmg.br/wp-content/uploads/2019/03/MAX-WEBER.pdf\"\n  - unstructured: \"The building blocks of economic complexity - PNAS, https://www.pnas.org/doi/10.1073/pnas.0900943106\"\n  - unstructured: \"How and why should we study 'economic complexity'? - Our World in Data, https://ourworldindata.org/how-and-why-econ-complexity\"\n  - unstructured: \"Economic Complexity, Institutions, and Property Rights - ResearchGate, https://www.researchgate.net/publication/377305744\"\n  - unstructured: \"Economic Complexity, Institutions, and Property Rights, https://press.wz.uw.edu.pl/cgi/viewcontent.cgi?article=1045&context=ems\"\n  - unstructured: \"The Heterogeneous Effect of Economic Complexity on Growth and Human Development - ResearchGate, https://www.researchgate.net/publication/394858900\"\n",
+      "citationCff": "cff-version: 1.2.0\nmessage: \"If you use this work, cite with this metadata. No DOI minted yet; cite by the canonical URL.\"\ntitle: \"Fundamentos Transcendentes da Ordem Econômica\"\ntype: article\nauthors:\n  - family-names: \"Flores\"\n    given-names: \"Carlos Ulisses\"\n    orcid: \"0000-0002-6034-7765\"\nidentifiers:\n  - type: url\n    value: \"https://ulissesflores.com/essays/2024-theology-economic-order\"\n  - type: url\n    value: \"https://ulissesflores.com/deep-research/2024-theology-economic-order/deep-research.pdf\"\nabstract: \"\"\nkeywords: [\"THEOLOGY\", \"ECONOMIC\", \"ORDER\"]\nlicense: \"CC-BY-4.0\"\nversion: \"v2026-02-21\"\ndate-released: \"2024-01-01\"\nrepository-code: \"https://ulissesflores.com/essays/2024-theology-economic-order\"\nreferences:\n  - unstructured: \"Economic calculation problem - Wikipedia, https://en.wikipedia.org/wiki/Economic_calculation_problem\"\n  - unstructured: \"Monetary Calculation and Mises's Critique of Planning - St. Lawrence University, https://myslu.stlawu.edu/~shorwitz/Papers/Mises_HOPE_1998.pdf\"\n  - unstructured: \"Ludwig von Mises and Economic Calculation Under Socialism, Part 1 - Libertarianism.org, https://www.libertarianism.org/publications/essays/excursions/ludwig-von-mises-economic-calculation-under-socialism-part-1\"\n  - unstructured: \"Economic Calculation in the Socialist Commonwealth - Mises Institute, https://cdn.mises.org/Economic%20Calculation%20in%20the%20Socialist%20Commonwealth_Vol_2_3.pdf\"\n  - unstructured: \"Labor theory of value - Wikipedia, https://en.wikipedia.org/wiki/Labor_theory_of_value\"\n  - unstructured: \"Eugen von Böhm-Bawerk, \\\"The Error in the Marxist System\\\" (1896) - Online Library of Liberty, https://oll.libertyfund.org/pages/reader-bawerk-marx\"\n  - unstructured: \"Karl Marx and the Close of His System - School of Cooperative Individualism, https://cooperative-individualism.org/bohm-bawerk-eugen-von_karl-marx-and-the-close-of-his-system-1949-06.pdf\"\n  - unstructured: \"Hayek's \\\"The Use of Knowledge in Society\\\" - A Summary - Bleeding Heart Libertarians, https://bleedingheartlibertarians.com/2016/05/hayeks-the-use-of-knowledge-in-society-a-summary/\"\n  - unstructured: \"F.A. Hayek on the Discovery, Use, and Transmission of Knowledge - Austrian Institute, https://austrian-institute.org/en/blog/f-a-hayek-on-the-discovery-use-and-transmission-of-knowledge/\"\n  - unstructured: \"Hayek's Knowledge Problem and its Relevance in Organizational Management - Canadian Center of Science and Education, https://ccsenet.org/journal/index.php/ijbm/article/download/0/0/50004/54089\"\n  - unstructured: \"Benjamin M. Anderson: Hayek's Precursor on the Knowledge Problem - Cato at Liberty Blog, https://www.cato.org/blog/benjamin-m-anderson-hayeks-precursor-knowledge-problem\"\n  - unstructured: \"Systems biology beyond networks: generating order from disorder through self-organization, https://pmc.ncbi.nlm.nih.gov/articles/PMC3148307/\"\n  - unstructured: \"Hayek's Legacy of the Spontaneous Order - Federal Reserve Bank of Minneapolis, https://www.minneapolisfed.org/article/1992/hayeks-legacy-of-the-spontaneous-order\"\n  - unstructured: \"Spontaneous Order: A Testament to Human Creativity and Adaptability - The IHS, https://www.theihs.org/blog/spontaneous-order-a-testament-to-human-creativity-and-adaptability/\"\n  - unstructured: \"Spontaneous order - Wikipedia, https://en.wikipedia.org/wiki/Spontaneous_order\"\n  - unstructured: \"O BNDES e a crise dos caminhoneiros, https://web.bndes.gov.br/bib/jspui/bitstream/1408/15200/1/O-BNDES-e-a-crise-dos-caminhoneiros.pdf\"\n  - unstructured: \"No auge, subsídio para setor de caminhões atingiu R$ 34 bilhões, https://www.brasilagro.com.br/conteudo/no-auge-subsidio-para-setor-de-caminhoes-atingiu-r-34-bilhoes.html\"\n  - unstructured: \"Efeito crowding-out no Brasil, https://repositorio.fgv.br/items/027e589b-15c7-4f9f-88bb-df7e118d97ab\"\n  - unstructured: \"O efeito crowding-out via BNDES no mercado brasileiro, no século XXI - Revista Espacios, https://www.revistaespacios.com/a17v38n61/a17v38n61p08.pdf\"\n  - unstructured: \"Análise dos efeitos crowding-in e crowding-out para a economia brasileira - AmeliCA, https://portal.amelica.org/ameli/jatsRepo/65/6521005/html/\"\n  - unstructured: \"Investimento privado: uma análise empírica para o Brasil - SciELO, https://www.scielo.br/j/ecos/a/5z4RPHCTGZnj9Vjzh5r6tMK/\"\n  - unstructured: \"Greve dos caminhoneiros custará R$ 15 bilhões para a economia - Agência Brasil/EBC, https://agenciabrasil.ebc.com.br/economia/noticia/2018-06/greve-dos-caminhoneiros-custara-r-15-bilhoes-para-economia\"\n  - unstructured: \"Seigniorage Explained: Impact on Inflation and Government Revenue - Investopedia, https://www.investopedia.com/terms/s/seigniorage.asp\"\n  - unstructured: \"Seigniorage - Wikipedia, https://en.wikipedia.org/wiki/Seigniorage\"\n  - unstructured: \"Making Money From Making Money - New Economics Foundation, https://new-economicsf.files.svdcdn.com/production/files/NEF_MAKING-MONEY-OUT-OF-MONEY_amendment_E.pdf\"\n  - unstructured: \"The Economic Consequences of the Weimar Hyperinflation - Econlib, https://www.econlib.org/the-economic-consequences-of-the-weimar-hyperinflation/\"\n  - unstructured: \"Global M2 Money Supply: The Long-Term Liquidity Indicator - Babypips.com, https://www.babypips.com/learn/forex/global-m2-money-supply-liquidity-indicator\"\n  - unstructured: \"The Rise and Fall of M2 - St. Louis Fed, https://www.stlouisfed.org/on-the-economy/2023/may/the-rise-and-fall-of-m2\"\n  - unstructured: \"Inflation forecasts based on money growth proved accurate in 2021, though generally unreliable - Dallasfed.org, https://www.dallasfed.org/research/economics/2024/0220\"\n  - unstructured: \"Hyperinflation in the Weimar Republic - ResearchOnline@JCU, https://researchonline.jcu.edu.au/21599/3/21599.pdf\"\n  - unstructured: \"Hyperinflation in the Weimar Republic - Wikipedia, https://en.wikipedia.org/wiki/Hyperinflation_in_the_Weimar_Republic\"\n  - unstructured: \"Venezuela, the Weimar Republic and Zimbabwe prove MMT is true, https://www.taxresearch.org.uk/Blog/2024/10/10/venezuela-the-weimar-republic-and-zimbabwe-prove-mmt-is-true/\"\n  - unstructured: \"Rai stones - Wikipedia, https://en.wikipedia.org/wiki/Rai_stones\"\n  - unstructured: \"Researchers turn to stones to find the ancient origin of Bitcoin - University of Oregon, https://news.uoregon.edu/content/researchers-turn-stones-find-ancient-origin-bitcoin\"\n  - unstructured: \"Rai: big money - Bank of Canada Museum, https://www.bankofcanadamuseum.ca/2024/07/rai-big-money/\"\n  - unstructured: \"The Tale of Rai Stones (And Its Resemblance To Bitcoin) - Netcoins, https://www.netcoins.com/blog/the-tale-of-stone-money-and-how-it-resembles-bitcoin\"\n  - unstructured: \"What were the Rai Stones? - Pocket, https://pocketbitcoin.com/learn/economy/rai-stones-explained\"\n  - unstructured: \"The Protestant Ethic and the Spirit of Capitalism - Wikipedia, https://en.wikipedia.org/wiki/The_Protestant_Ethic_and_the_Spirit_of_Capitalism\"\n  - unstructured: \"Max Weber – The Protestant Ethic and the Spirit of Capitalism (1905) - SozTheo, https://soztheo.com/sociology/key-works-in-sociology/max-weber-the-protestant-ethic-and-the-spirit-of-capitalism-1905/\"\n  - unstructured: \"The Protestant Ethic and the Spirit of Capitalism, https://gpde.direito.ufmg.br/wp-content/uploads/2019/03/MAX-WEBER.pdf\"\n  - unstructured: \"The building blocks of economic complexity - PNAS, https://www.pnas.org/doi/10.1073/pnas.0900943106\"\n  - unstructured: \"How and why should we study 'economic complexity'? - Our World in Data, https://ourworldindata.org/how-and-why-econ-complexity\"\n  - unstructured: \"Economic Complexity, Institutions, and Property Rights - ResearchGate, https://www.researchgate.net/publication/377305744\"\n  - unstructured: \"Economic Complexity, Institutions, and Property Rights, https://press.wz.uw.edu.pl/cgi/viewcontent.cgi?article=1045&context=ems\"\n  - unstructured: \"The Heterogeneous Effect of Economic Complexity on Growth and Human Development - ResearchGate, https://www.researchgate.net/publication/394858900\"\n",
       "score": {
         "completenessScore": 1000,
         "referencesScore": 700,
@@ -2378,184 +2333,6 @@
       "approved": false
     },
     {
-      "slug": "2024-ring-signatures-privacy",
-      "title": "Implementação de Ring Signatures e Endereços Furtivos",
-      "category": "whitepapers",
-      "publicationType": "report",
-      "kind": "R",
-      "publishedAt": "2024-01-01",
-      "language": "pt-BR",
-      "canonicalUrl": "https://ulissesflores.com/whitepapers/2024-ring-signatures-privacy",
-      "pdfUrl": "https://ulissesflores.com/deep-research/2024-ring-signatures-privacy/deep-research.pdf",
-      "doi": {
-        "status": "target",
-        "target": "10.5281/zenodo.202418"
-      },
-      "version": "v2026-02-21",
-      "license": "CC-BY-4.0",
-      "creators": [
-        {
-          "name": "Flores, Carlos Ulisses",
-          "givenName": "Carlos Ulisses",
-          "familyName": "Flores",
-          "affiliation": "Codex Hash Research",
-          "orcid": "0000-0002-6034-7765"
-        }
-      ],
-      "keywords": [
-        "RING",
-        "SIGNATURES",
-        "PRIVACY"
-      ],
-      "abstract": "Whitepaper sobre ring signatures e enderecos furtivos para privacidade transacional em sistemas distribuidos. O problema central investigado e: Transparencia absoluta em blockchains publicas pode expor metadados sensiveis e comprometer fungibilidade. Adotou-se um desenho metodologico com foco em validade interna, comparabilidade e reproducibilidade: Revisao de primitives criptograficas com analise de seguranca, custos computacionais e requisitos de implementacao. Os resultados principais indicam que a combinacao de assinaturas em anel e stealth addresses melhora privacidade sem eliminar verificabilidade criptografica.. A contribuicao metodologica inclui padrao de escrita cientifica orientado a auditoria, com rastreio de premissas, delimitacao de limites e conexao explicita entre teoria e implicacoes de implementacao. O objetivo deste trabalho e avaliar de forma estruturada como \"Implementação de Ring Signatures e Endereços Furtivos\" pode gerar valor cientifico e operacional com rastreabilidade metodologica. Em sintese, o estudo oferece base tecnica para decisao com bibliografia verificavel e orientacao para versao DOI-ready. (Rivest, 2001).",
-      "references": [
-        {
-          "citation": "Rivest, R.; Shamir, A.; Tauman, Y. (2001). How to Leak a Secret.",
-          "url": "https://doi.org/10.1007/3-540-45682-1_32"
-        },
-        {
-          "citation": "Franklin, M.; Zhang, H. (2012). A framework for unique ring signatures.",
-          "url": "https://doi.org/10.1007/978-3-642-28914-9_6"
-        },
-        {
-          "citation": "Noether, S. (2015). Ring Confidential Transactions.",
-          "url": "https://eprint.iacr.org/2015/1098"
-        },
-        {
-          "citation": "Monero Research Lab publications.",
-          "url": "https://www.getmonero.org/resources/research-lab/"
-        },
-        {
-          "citation": "NIST SP 800-56A Rev. 3.",
-          "url": "https://doi.org/10.6028/NIST.SP.800-56Ar3"
-        },
-        {
-          "citation": "Ruffing, T.; Moreno-Sanchez, P.; Kate, A. (2017). CoinShuffle++.",
-          "url": "https://doi.org/10.1109/EuroSP.2017.47"
-        }
-      ],
-      "cffPath": "/doi/2024-ring-signatures-privacy/CITATION.cff",
-      "zenodoPath": "/doi/2024-ring-signatures-privacy/zenodo.json",
-      "crossrefPath": "/doi/2024-ring-signatures-privacy/crossref.json",
-      "zenodoMetadata": {
-        "metadata": {
-          "title": "Implementação de Ring Signatures e Endereços Furtivos",
-          "upload_type": "publication",
-          "publication_type": "report",
-          "publication_date": "2024-01-01",
-          "description": "<p>Whitepaper sobre ring signatures e enderecos furtivos para privacidade transacional em sistemas distribuidos. O problema central investigado e: Transparencia absoluta em blockchains publicas pode expor metadados sensiveis e comprometer fungibilidade. Adotou-se um desenho metodologico com foco em validade interna, comparabilidade e reproducibilidade: Revisao de primitives criptograficas com analise de seguranca, custos computacionais e requisitos de implementacao. Os resultados principais indicam que a combinacao de assinaturas em anel e stealth addresses melhora privacidade sem eliminar verificabilidade criptografica.. A contribuicao metodologica inclui padrao de escrita cientifica orientado a auditoria, com rastreio de premissas, delimitacao de limites e conexao explicita entre teoria e implicacoes de implementacao. O objetivo deste trabalho e avaliar de forma estruturada como &quot;Implementação de Ring Signatures e Endereços Furtivos&quot; pode gerar valor cientifico e operacional com rastreabilidade metodologica. Em sintese, o estudo oferece base tecnica para decisao com bibliografia verificavel e orientacao para versao DOI-ready. (Rivest, 2001).</p>",
-          "creators": [
-            {
-              "name": "Flores, Carlos Ulisses",
-              "affiliation": "Codex Hash Research",
-              "orcid": "0000-0002-6034-7765"
-            }
-          ],
-          "keywords": [
-            "RING",
-            "SIGNATURES",
-            "PRIVACY"
-          ],
-          "language": "pt-BR",
-          "references": [
-            "Rivest, R.; Shamir, A.; Tauman, Y. (2001). How to Leak a Secret. (https://doi.org/10.1007/3-540-45682-1_32)",
-            "Franklin, M.; Zhang, H. (2012). A framework for unique ring signatures. (https://doi.org/10.1007/978-3-642-28914-9_6)",
-            "Noether, S. (2015). Ring Confidential Transactions. (https://eprint.iacr.org/2015/1098)",
-            "Monero Research Lab publications. (https://www.getmonero.org/resources/research-lab/)",
-            "NIST SP 800-56A Rev. 3. (https://doi.org/10.6028/NIST.SP.800-56Ar3)",
-            "Ruffing, T.; Moreno-Sanchez, P.; Kate, A. (2017). CoinShuffle++. (https://doi.org/10.1109/EuroSP.2017.47)"
-          ],
-          "related_identifiers": [
-            {
-              "identifier": "https://ulissesflores.com/whitepapers/2024-ring-signatures-privacy",
-              "relation": "isSupplementTo",
-              "resource_type": "publication-article"
-            },
-            {
-              "identifier": "https://ulissesflores.com/deep-research/2024-ring-signatures-privacy/deep-research.pdf",
-              "relation": "isIdenticalTo",
-              "resource_type": "publication-article"
-            }
-          ],
-          "version": "v2026-02-21",
-          "notes": "DOI-ready metadata generated automatically from the canonical UPKF publication dataset. DOI target: 10.5281/zenodo.202418 (not minted).",
-          "license": "CC-BY-4.0"
-        }
-      },
-      "crossrefMetadata": {
-        "schema": "https://data.crossref.org/schemas/crossref_input.json",
-        "type": "report",
-        "title": "Implementação de Ring Signatures e Endereços Furtivos",
-        "abstract": "Whitepaper sobre ring signatures e enderecos furtivos para privacidade transacional em sistemas distribuidos. O problema central investigado e: Transparencia absoluta em blockchains publicas pode expor metadados sensiveis e comprometer fungibilidade. Adotou-se um desenho metodologico com foco em validade interna, comparabilidade e reproducibilidade: Revisao de primitives criptograficas com analise de seguranca, custos computacionais e requisitos de implementacao. Os resultados principais indicam que a combinacao de assinaturas em anel e stealth addresses melhora privacidade sem eliminar verificabilidade criptografica.. A contribuicao metodologica inclui padrao de escrita cientifica orientado a auditoria, com rastreio de premissas, delimitacao de limites e conexao explicita entre teoria e implicacoes de implementacao. O objetivo deste trabalho e avaliar de forma estruturada como \"Implementação de Ring Signatures e Endereços Furtivos\" pode gerar valor cientifico e operacional com rastreabilidade metodologica. Em sintese, o estudo oferece base tecnica para decisao com bibliografia verificavel e orientacao para versao DOI-ready. (Rivest, 2001).",
-        "authors": [
-          {
-            "given": "Carlos Ulisses",
-            "family": "Flores",
-            "ORCID": "https://orcid.org/0000-0002-6034-7765",
-            "affiliation": "Codex Hash Research"
-          }
-        ],
-        "issued": "2024-01-01",
-        "language": "pt-BR",
-        "URL": "https://ulissesflores.com/whitepapers/2024-ring-signatures-privacy",
-        "resource": {
-          "primary": {
-            "URL": "https://ulissesflores.com/whitepapers/2024-ring-signatures-privacy"
-          },
-          "pdf": {
-            "URL": "https://ulissesflores.com/deep-research/2024-ring-signatures-privacy/deep-research.pdf"
-          }
-        },
-        "reference": [
-          {
-            "key": "2024-ring-signatures-privacy-ref-1",
-            "unstructured": "Rivest, R.; Shamir, A.; Tauman, Y. (2001). How to Leak a Secret.",
-            "DOI": "10.1007/3-540-45682-1_32",
-            "URL": "https://doi.org/10.1007/3-540-45682-1_32"
-          },
-          {
-            "key": "2024-ring-signatures-privacy-ref-2",
-            "unstructured": "Franklin, M.; Zhang, H. (2012). A framework for unique ring signatures.",
-            "DOI": "10.1007/978-3-642-28914-9_6",
-            "URL": "https://doi.org/10.1007/978-3-642-28914-9_6"
-          },
-          {
-            "key": "2024-ring-signatures-privacy-ref-3",
-            "unstructured": "Noether, S. (2015). Ring Confidential Transactions.",
-            "URL": "https://eprint.iacr.org/2015/1098"
-          },
-          {
-            "key": "2024-ring-signatures-privacy-ref-4",
-            "unstructured": "Monero Research Lab publications.",
-            "URL": "https://www.getmonero.org/resources/research-lab/"
-          },
-          {
-            "key": "2024-ring-signatures-privacy-ref-5",
-            "unstructured": "NIST SP 800-56A Rev. 3.",
-            "DOI": "10.6028/NIST.SP.800-56Ar3",
-            "URL": "https://doi.org/10.6028/NIST.SP.800-56Ar3"
-          },
-          {
-            "key": "2024-ring-signatures-privacy-ref-6",
-            "unstructured": "Ruffing, T.; Moreno-Sanchez, P.; Kate, A. (2017). CoinShuffle++.",
-            "DOI": "10.1109/EuroSP.2017.47",
-            "URL": "https://doi.org/10.1109/EuroSP.2017.47"
-          }
-        ],
-        "doi_target": "10.5281/zenodo.202418"
-      },
-      "citationCff": "cff-version: 1.2.0\nmessage: \"If you use this work, cite with this metadata. DOI target: 10.5281/zenodo.202418 (not minted).\"\ntitle: \"Implementação de Ring Signatures e Endereços Furtivos\"\ntype: article\nauthors:\n  - family-names: \"Flores\"\n    given-names: \"Carlos Ulisses\"\n    orcid: \"0000-0002-6034-7765\"\nidentifiers:\n  - type: url\n    value: \"https://ulissesflores.com/whitepapers/2024-ring-signatures-privacy\"\n  - type: url\n    value: \"https://ulissesflores.com/deep-research/2024-ring-signatures-privacy/deep-research.pdf\"\nabstract: \"Whitepaper sobre ring signatures e enderecos furtivos para privacidade transacional em sistemas distribuidos. O problema central investigado e: Transparencia absoluta em blockchains publicas pode expor metadados sensiveis e comprometer fungibilidade. Adotou-se um desenho metodologico com foco em validade interna, comparabilidade e reproducibilidade: Revisao de primitives criptograficas com analise de seguranca, custos computacionais e requisitos de implementacao. Os resultados principais indicam que a combinacao de assinaturas em anel e stealth addresses melhora privacidade sem eliminar verificabilidade criptografica.. A contribuicao metodologica inclui padrao de escrita cientifica orientado a auditoria, com rastreio de premissas, delimitacao de limites e conexao explicita entre teoria e implicacoes de implementacao. O objetivo deste trabalho e avaliar de forma estruturada como \\\"Implementação de Ring Signatures e Endereços Furtivos\\\" pode gerar valor cientifico e operacional com rastreabilidade metodologica. Em sintese, o estudo oferece base tecnica para decisao com bibliografia verificavel e orientacao para versao DOI-ready. (Rivest, 2001).\"\nkeywords: [\"RING\", \"SIGNATURES\", \"PRIVACY\"]\nlicense: \"CC-BY-4.0\"\nversion: \"v2026-02-21\"\ndate-released: \"2024-01-01\"\nrepository-code: \"https://ulissesflores.com/whitepapers/2024-ring-signatures-privacy\"\nreferences:\n  - unstructured: \"Rivest, R.; Shamir, A.; Tauman, Y. (2001). How to Leak a Secret.\"\n    url: \"https://doi.org/10.1007/3-540-45682-1_32\"\n  - unstructured: \"Franklin, M.; Zhang, H. (2012). A framework for unique ring signatures.\"\n    url: \"https://doi.org/10.1007/978-3-642-28914-9_6\"\n  - unstructured: \"Noether, S. (2015). Ring Confidential Transactions.\"\n    url: \"https://eprint.iacr.org/2015/1098\"\n  - unstructured: \"Monero Research Lab publications.\"\n    url: \"https://www.getmonero.org/resources/research-lab/\"\n  - unstructured: \"NIST SP 800-56A Rev. 3.\"\n    url: \"https://doi.org/10.6028/NIST.SP.800-56Ar3\"\n  - unstructured: \"Ruffing, T.; Moreno-Sanchez, P.; Kate, A. (2017). CoinShuffle++.\"\n    url: \"https://doi.org/10.1109/EuroSP.2017.47\"\n",
-      "score": {
-        "completenessScore": 1000,
-        "referencesScore": 1000,
-        "identifierScore": 1000,
-        "workflowScore": 1000,
-        "cffScore": 1000,
-        "finalScore": 1000
-      },
-      "approved": true
-    },
-    {
       "slug": "2024-agritech-agile-flow",
       "title": "Transformação Ágil e Engenharia de Fluxo em Data Science",
       "category": "whitepapers",
@@ -2565,10 +2342,6 @@
       "language": "pt-BR",
       "canonicalUrl": "https://ulissesflores.com/whitepapers/2024-agritech-agile-flow",
       "pdfUrl": "https://ulissesflores.com/deep-research/2024-agritech-agile-flow/deep-research.pdf",
-      "doi": {
-        "status": "target",
-        "target": "10.5281/zenodo.202423"
-      },
       "version": "v2026-02-21",
       "license": "CC-BY-4.0",
       "creators": [
@@ -2756,7 +2529,7 @@
             }
           ],
           "version": "v2026-02-21",
-          "notes": "DOI-ready metadata generated automatically from the canonical UPKF publication dataset. DOI target: 10.5281/zenodo.202423 (not minted).",
+          "notes": "DOI-ready metadata generated automatically from the canonical UPKF publication dataset. No DOI minted for this work yet; cite it by the canonical URL.",
           "license": "CC-BY-4.0"
         }
       },
@@ -2889,10 +2662,9 @@
             "key": "2024-agritech-agile-flow-ref-26",
             "unstructured": "Benefits and Challenges of Making Data More Agile: A Review of Recent Key Approaches in Agriculture. MDPI, https://www.mdpi.com/2071-1050/14/24/16480"
           }
-        ],
-        "doi_target": "10.5281/zenodo.202423"
+        ]
       },
-      "citationCff": "cff-version: 1.2.0\nmessage: \"If you use this work, cite with this metadata. DOI target: 10.5281/zenodo.202423 (not minted).\"\ntitle: \"Transformação Ágil e Engenharia de Fluxo em Data Science\"\ntype: article\nauthors:\n  - family-names: \"Flores\"\n    given-names: \"Carlos Ulisses\"\n    orcid: \"0000-0002-6034-7765\"\nidentifiers:\n  - type: url\n    value: \"https://ulissesflores.com/whitepapers/2024-agritech-agile-flow\"\n  - type: url\n    value: \"https://ulissesflores.com/deep-research/2024-agritech-agile-flow/deep-research.pdf\"\nabstract: \"O presente estudo de caso propõe uma análise profunda e multidimensional da trajetória de transformação organizacional vivenciada pela AgriGrowth Inc., uma gigante do setor de agronegócio, durante sua migração de metodologias tradicionais de gestão (Waterfall) para abordagens ágeis adaptativas. Em um cenário de mercado caracterizado pela volatilidade extrema e pela digitalização acelerada — frequentemente denominado Agronegócio 4.0 —, a organização enfrentou o desafio de desenvolver módulos avançados de análise preditiva de culturas baseados em Big Data e Machine Learning. A investigação detalha a crise operacional e de qualidade desencadeada pela aplicação inicial imatura de conceitos ágeis e a subsequente estabilização alcançada através da adoção rigorosa do Método Kanban. A análise disseca os mecanismos de falha e recuperação, focando em quatro pilares críticos: (1) a adequação superior do Kanban para gerir a variabilidade estocástica inerente a projetos de Ciência de Dados em comparação ao Scrum; (2) a aplicação da Lei de Little e da Teoria das Filas na gestão de Limites de Trabalho em Progresso (WIP) para eliminar gargalos e reduzir o Lead Time; (3) a reestruturação dos papéis de liderança, contrastando a eficácia do Service Delivery Manager (SDM) versus o Scrum Master em contextos de fluxo contínuo; e (4) a implementação de engenharia de qualidade robusta através de automação de testes, traçando paralelos com práticas de DevSecOps e engenharia de software de alta confiabilidade. Este trabalho conclui apresentando um modelo de governança híbrido que integra a flexibilidade tática do Kanban com a visão estratégica de entrega de valor, essencial para a sustentabilidade tecnológica no campo.\"\nkeywords: [\"AGRITECH\", \"AGILE\", \"FLOW\"]\nlicense: \"CC-BY-4.0\"\nversion: \"v2026-02-21\"\ndate-released: \"2024-01-01\"\nrepository-code: \"https://ulissesflores.com/whitepapers/2024-agritech-agile-flow\"\nreferences:\n  - unstructured: \"Sustainable Agile Project Management in Complex Agriculture Projects: An Institutional Theory Perspective. IDEAS/RePEc, https://ideas.repec.org/p/osf/socarx/v4je2.html\"\n  - unstructured: \"Using Agile in Implementing Agriculture AI Projects and Farm Management. ResearchGate, https://www.researchgate.net/publication/372310924\"\n  - unstructured: \"Can Agile Approaches Get Farmers Up To Speed On Tech? PMI, https://www.pmi.org/learning/library/agile-approaches-farmers-technology-10967\"\n  - unstructured: \"MBU-508 — Artigo / Estudo de caso (65 Pontos). Material do curso.\"\n  - unstructured: \"Scrum vs. Kanban — what works better for a Data Science project? Oleksii Bielov, Medium, https://medium.com/@oleksii.bielov/scrum-vs-kanban-which-is-better-for-a-ds-project-f58497675926\"\n  - unstructured: \"Why Limiting WIP is a Crucial Skill for Agile Product Development. Lucid Software, https://lucid.co/blog/limiting-WIP-for-agile-development\"\n  - unstructured: \"Benefits of WIP Limits. Planview, https://www.planview.com/resources/articles/benefits-wip-limits/\"\n  - unstructured: \"Kanban vs. scrum: Which agile are you? Atlassian, https://www.atlassian.com/agile/kanban/kanban-vs-scrum\"\n  - unstructured: \"The Mystery Behind Little's Law and WIP Limits. Erez Morabia, Medium, https://emorabia.medium.com/the-mystery-behind-littles-law-and-wip-limits-e71cecfaf0e3\"\n  - unstructured: \"Using Little's Law: Boost Productivity and Predictability. Agility at Scale, https://agility-at-scale.com/principles/littles-law/\"\n  - unstructured: \"WIP? WIP! Or how to decrease time to market using Jira Agile Boards. Atlassian Community, https://community.atlassian.com/forums/App-Central-articles/WIP-WIP-Or-how-to-decrease-time-to-market-using-Jira-Agile/ba-p/1924131\"\n  - unstructured: \"Kanban for AI Projects. David J. Anderson School of Management, https://djaa.com/kanban-for-ai-projects/\"\n  - unstructured: \"Identifying the Key Drivers for Teams to Use a Data Science Process Methodology. AIS eLibrary, https://aisel.aisnet.org/cgi/viewcontent.cgi?article=1057&context=ecis2018_rip\"\n  - unstructured: \"What is Agile Testing and why is it important? OpenText, https://www.opentext.com/what-is/agile-testing\"\n  - unstructured: \"Why We Need WIP Limits. Planview, https://www.planview.com/resources/articles/wip-limits/\"\n  - unstructured: \"Stop Overcommitting and Start Delivering: The Benefits of WIP Limit in Software Development. Daniele Scillia, Medium, https://medium.com/learn-agile-practices/stop-overcommitting-and-start-delivering-the-benefits-of-wip-limit-in-software-development-98d3fa1ddfda\"\n  - unstructured: \"The Surprising Impact of Limiting Work in Progress on the Flow of Work in a Scrum Team. Scrum.org, https://www.scrum.org/resources/blog/surprising-impact-limiting-work-progress-flow-work-scrum-team\"\n  - unstructured: \"Agile Testing: Best Practices, Benefits, Drawbacks, and More. Sandra Parker, Medium, https://sandra-parker.medium.com/agile-testing-best-practices-benefits-drawbacks-and-more-54017d3a66ff\"\n  - unstructured: \"Automation in Agile. GeeksforGeeks, https://www.geeksforgeeks.org/software-engineering/automation-in-agile/\"\n  - unstructured: \"Agile Software Development: How Modern Teams Succeed In 2025. Monday.com, https://monday.com/blog/rnd/agile-software-development/\"\n  - unstructured: \"Ignoring QA as a Service? The Hidden Risk to Agile Success. TestingXperts, https://www.testingxperts.com/blog/qa-as-a-service/\"\n  - unstructured: \"Delivery Manager vs. Scrum Master: What Are the Differences? Review N Prep, https://reviewnprep.com/blog/delivery-manager-vs-scrum-master-what-are-the-differences/\"\n  - unstructured: \"Difference between Scrum Master and Agile Delivery Manager. PM StackExchange, https://pm.stackexchange.com/questions/24566/difference-between-scrum-master-and-agile-delivery-manager\"\n  - unstructured: \"Project Management for Virtual Teams: A Comparative Analysis. Iowa State University Digital Repository, https://dr.lib.iastate.edu/bitstreams/b895cfcf-b432-493b-a9e6-d3d28b5018ae/download\"\n  - unstructured: \"Kanban Roles for Great Project Management. KnowledgeHut, https://www.knowledgehut.com/blog/agile/kanban-roles-for-project-management\"\n  - unstructured: \"Benefits and Challenges of Making Data More Agile: A Review of Recent Key Approaches in Agriculture. MDPI, https://www.mdpi.com/2071-1050/14/24/16480\"\n",
+      "citationCff": "cff-version: 1.2.0\nmessage: \"If you use this work, cite with this metadata. No DOI minted yet; cite by the canonical URL.\"\ntitle: \"Transformação Ágil e Engenharia de Fluxo em Data Science\"\ntype: article\nauthors:\n  - family-names: \"Flores\"\n    given-names: \"Carlos Ulisses\"\n    orcid: \"0000-0002-6034-7765\"\nidentifiers:\n  - type: url\n    value: \"https://ulissesflores.com/whitepapers/2024-agritech-agile-flow\"\n  - type: url\n    value: \"https://ulissesflores.com/deep-research/2024-agritech-agile-flow/deep-research.pdf\"\nabstract: \"O presente estudo de caso propõe uma análise profunda e multidimensional da trajetória de transformação organizacional vivenciada pela AgriGrowth Inc., uma gigante do setor de agronegócio, durante sua migração de metodologias tradicionais de gestão (Waterfall) para abordagens ágeis adaptativas. Em um cenário de mercado caracterizado pela volatilidade extrema e pela digitalização acelerada — frequentemente denominado Agronegócio 4.0 —, a organização enfrentou o desafio de desenvolver módulos avançados de análise preditiva de culturas baseados em Big Data e Machine Learning. A investigação detalha a crise operacional e de qualidade desencadeada pela aplicação inicial imatura de conceitos ágeis e a subsequente estabilização alcançada através da adoção rigorosa do Método Kanban. A análise disseca os mecanismos de falha e recuperação, focando em quatro pilares críticos: (1) a adequação superior do Kanban para gerir a variabilidade estocástica inerente a projetos de Ciência de Dados em comparação ao Scrum; (2) a aplicação da Lei de Little e da Teoria das Filas na gestão de Limites de Trabalho em Progresso (WIP) para eliminar gargalos e reduzir o Lead Time; (3) a reestruturação dos papéis de liderança, contrastando a eficácia do Service Delivery Manager (SDM) versus o Scrum Master em contextos de fluxo contínuo; e (4) a implementação de engenharia de qualidade robusta através de automação de testes, traçando paralelos com práticas de DevSecOps e engenharia de software de alta confiabilidade. Este trabalho conclui apresentando um modelo de governança híbrido que integra a flexibilidade tática do Kanban com a visão estratégica de entrega de valor, essencial para a sustentabilidade tecnológica no campo.\"\nkeywords: [\"AGRITECH\", \"AGILE\", \"FLOW\"]\nlicense: \"CC-BY-4.0\"\nversion: \"v2026-02-21\"\ndate-released: \"2024-01-01\"\nrepository-code: \"https://ulissesflores.com/whitepapers/2024-agritech-agile-flow\"\nreferences:\n  - unstructured: \"Sustainable Agile Project Management in Complex Agriculture Projects: An Institutional Theory Perspective. IDEAS/RePEc, https://ideas.repec.org/p/osf/socarx/v4je2.html\"\n  - unstructured: \"Using Agile in Implementing Agriculture AI Projects and Farm Management. ResearchGate, https://www.researchgate.net/publication/372310924\"\n  - unstructured: \"Can Agile Approaches Get Farmers Up To Speed On Tech? PMI, https://www.pmi.org/learning/library/agile-approaches-farmers-technology-10967\"\n  - unstructured: \"MBU-508 — Artigo / Estudo de caso (65 Pontos). Material do curso.\"\n  - unstructured: \"Scrum vs. Kanban — what works better for a Data Science project? Oleksii Bielov, Medium, https://medium.com/@oleksii.bielov/scrum-vs-kanban-which-is-better-for-a-ds-project-f58497675926\"\n  - unstructured: \"Why Limiting WIP is a Crucial Skill for Agile Product Development. Lucid Software, https://lucid.co/blog/limiting-WIP-for-agile-development\"\n  - unstructured: \"Benefits of WIP Limits. Planview, https://www.planview.com/resources/articles/benefits-wip-limits/\"\n  - unstructured: \"Kanban vs. scrum: Which agile are you? Atlassian, https://www.atlassian.com/agile/kanban/kanban-vs-scrum\"\n  - unstructured: \"The Mystery Behind Little's Law and WIP Limits. Erez Morabia, Medium, https://emorabia.medium.com/the-mystery-behind-littles-law-and-wip-limits-e71cecfaf0e3\"\n  - unstructured: \"Using Little's Law: Boost Productivity and Predictability. Agility at Scale, https://agility-at-scale.com/principles/littles-law/\"\n  - unstructured: \"WIP? WIP! Or how to decrease time to market using Jira Agile Boards. Atlassian Community, https://community.atlassian.com/forums/App-Central-articles/WIP-WIP-Or-how-to-decrease-time-to-market-using-Jira-Agile/ba-p/1924131\"\n  - unstructured: \"Kanban for AI Projects. David J. Anderson School of Management, https://djaa.com/kanban-for-ai-projects/\"\n  - unstructured: \"Identifying the Key Drivers for Teams to Use a Data Science Process Methodology. AIS eLibrary, https://aisel.aisnet.org/cgi/viewcontent.cgi?article=1057&context=ecis2018_rip\"\n  - unstructured: \"What is Agile Testing and why is it important? OpenText, https://www.opentext.com/what-is/agile-testing\"\n  - unstructured: \"Why We Need WIP Limits. Planview, https://www.planview.com/resources/articles/wip-limits/\"\n  - unstructured: \"Stop Overcommitting and Start Delivering: The Benefits of WIP Limit in Software Development. Daniele Scillia, Medium, https://medium.com/learn-agile-practices/stop-overcommitting-and-start-delivering-the-benefits-of-wip-limit-in-software-development-98d3fa1ddfda\"\n  - unstructured: \"The Surprising Impact of Limiting Work in Progress on the Flow of Work in a Scrum Team. Scrum.org, https://www.scrum.org/resources/blog/surprising-impact-limiting-work-progress-flow-work-scrum-team\"\n  - unstructured: \"Agile Testing: Best Practices, Benefits, Drawbacks, and More. Sandra Parker, Medium, https://sandra-parker.medium.com/agile-testing-best-practices-benefits-drawbacks-and-more-54017d3a66ff\"\n  - unstructured: \"Automation in Agile. GeeksforGeeks, https://www.geeksforgeeks.org/software-engineering/automation-in-agile/\"\n  - unstructured: \"Agile Software Development: How Modern Teams Succeed In 2025. Monday.com, https://monday.com/blog/rnd/agile-software-development/\"\n  - unstructured: \"Ignoring QA as a Service? The Hidden Risk to Agile Success. TestingXperts, https://www.testingxperts.com/blog/qa-as-a-service/\"\n  - unstructured: \"Delivery Manager vs. Scrum Master: What Are the Differences? Review N Prep, https://reviewnprep.com/blog/delivery-manager-vs-scrum-master-what-are-the-differences/\"\n  - unstructured: \"Difference between Scrum Master and Agile Delivery Manager. PM StackExchange, https://pm.stackexchange.com/questions/24566/difference-between-scrum-master-and-agile-delivery-manager\"\n  - unstructured: \"Project Management for Virtual Teams: A Comparative Analysis. Iowa State University Digital Repository, https://dr.lib.iastate.edu/bitstreams/b895cfcf-b432-493b-a9e6-d3d28b5018ae/download\"\n  - unstructured: \"Kanban Roles for Great Project Management. KnowledgeHut, https://www.knowledgehut.com/blog/agile/kanban-roles-for-project-management\"\n  - unstructured: \"Benefits and Challenges of Making Data More Agile: A Review of Recent Key Approaches in Agriculture. MDPI, https://www.mdpi.com/2071-1050/14/24/16480\"\n",
       "score": {
         "completenessScore": 1000,
         "referencesScore": 700,
@@ -2913,10 +2685,6 @@
       "language": "pt-BR",
       "canonicalUrl": "https://ulissesflores.com/essays/2024-exegetical-treatise-anthropology",
       "pdfUrl": "https://ulissesflores.com/deep-research/2024-exegetical-treatise-anthropology/deep-research.pdf",
-      "doi": {
-        "status": "target",
-        "target": "10.5281/zenodo.202424"
-      },
       "version": "v2026-02-21",
       "license": "CC-BY-4.0",
       "creators": [
@@ -3004,7 +2772,7 @@
             }
           ],
           "version": "v2026-02-21",
-          "notes": "DOI-ready metadata generated automatically from the canonical UPKF publication dataset. DOI target: 10.5281/zenodo.202424 (not minted).",
+          "notes": "DOI-ready metadata generated automatically from the canonical UPKF publication dataset. No DOI minted for this work yet; cite it by the canonical URL.",
           "license": "CC-BY-4.0"
         }
       },
@@ -3063,10 +2831,9 @@
             "unstructured": "von Rad, G. (2001). Old Testament Theology.",
             "URL": "https://www.wjkbooks.com/Products/9780664223984/old-testament-theology-volume-1.aspx"
           }
-        ],
-        "doi_target": "10.5281/zenodo.202424"
+        ]
       },
-      "citationCff": "cff-version: 1.2.0\nmessage: \"If you use this work, cite with this metadata. DOI target: 10.5281/zenodo.202424 (not minted).\"\ntitle: \"Tratado Exegético sobre a Representação da Moralidade e Antropologia\"\ntype: article\nauthors:\n  - family-names: \"Flores\"\n    given-names: \"Carlos Ulisses\"\n    orcid: \"0000-0002-6034-7765\"\nidentifiers:\n  - type: url\n    value: \"https://ulissesflores.com/essays/2024-exegetical-treatise-anthropology\"\n  - type: url\n    value: \"https://ulissesflores.com/deep-research/2024-exegetical-treatise-anthropology/deep-research.pdf\"\nabstract: \"Tratado exegético sobre representacao da moralidade e antropologia em tradicoes textuais teologicas. O problema central investigado e: Interpretacoes atomizadas de passagens isoladas fragilizam coerencia antropologica e moral do corpus. Adotou-se um desenho metodologico com foco em validade interna, comparabilidade e reproducibilidade: Leitura exegética com cruzamento de contexto historico, semantica e tradicao interpretativa. Os resultados principais indicam que o artigo organiza categorias antropologicas recorrentes e explicita implicacoes eticas contemporaneas.. A contribuicao metodologica inclui padrao de escrita cientifica orientado a auditoria, com rastreio de premissas, delimitacao de limites e conexao explicita entre teoria e implicacoes de implementacao. O objetivo deste trabalho e avaliar de forma estruturada como \\\"Tratado Exegético sobre a Representação da Moralidade e Antropologia\\\" pode gerar valor cientifico e operacional com rastreabilidade metodologica. Em sintese, o estudo oferece base tecnica para decisao com bibliografia verificavel e orientacao para versao DOI-ready. (Ricoeur, 1976).\"\nkeywords: [\"EXEGETICAL\", \"TREATISE\", \"ANTHROPOLOGY\"]\nlicense: \"CC-BY-4.0\"\nversion: \"v2026-02-21\"\ndate-released: \"2024-01-01\"\nrepository-code: \"https://ulissesflores.com/essays/2024-exegetical-treatise-anthropology\"\nreferences:\n  - unstructured: \"Ricoeur, P. (1976). Interpretation Theory.\"\n    url: \"https://www.degruyter.com/document/doi/10.3138/9781442678286/html\"\n  - unstructured: \"Brueggemann, W. (1997). Theology of the Old Testament.\"\n    url: \"https://www.fortresspress.com/store/product/9780800628307/Theology-of-the-Old-Testament\"\n  - unstructured: \"Wright, N. T. (1992). The New Testament and the People of God.\"\n    url: \"https://www.fortresspress.com/store/product/9780800626815/The-New-Testament-and-the-People-of-God\"\n  - unstructured: \"Gadamer, H.-G. (1960). Truth and Method.\"\n    url: \"https://www.bloomsbury.com/us/truth-and-method-9780826405852/\"\n  - unstructured: \"Thiselton, A. C. (1980). The Two Horizons.\"\n    url: \"https://www.eerdmans.com/9780802800169/the-two-horizons/\"\n  - unstructured: \"von Rad, G. (2001). Old Testament Theology.\"\n    url: \"https://www.wjkbooks.com/Products/9780664223984/old-testament-theology-volume-1.aspx\"\n",
+      "citationCff": "cff-version: 1.2.0\nmessage: \"If you use this work, cite with this metadata. No DOI minted yet; cite by the canonical URL.\"\ntitle: \"Tratado Exegético sobre a Representação da Moralidade e Antropologia\"\ntype: article\nauthors:\n  - family-names: \"Flores\"\n    given-names: \"Carlos Ulisses\"\n    orcid: \"0000-0002-6034-7765\"\nidentifiers:\n  - type: url\n    value: \"https://ulissesflores.com/essays/2024-exegetical-treatise-anthropology\"\n  - type: url\n    value: \"https://ulissesflores.com/deep-research/2024-exegetical-treatise-anthropology/deep-research.pdf\"\nabstract: \"Tratado exegético sobre representacao da moralidade e antropologia em tradicoes textuais teologicas. O problema central investigado e: Interpretacoes atomizadas de passagens isoladas fragilizam coerencia antropologica e moral do corpus. Adotou-se um desenho metodologico com foco em validade interna, comparabilidade e reproducibilidade: Leitura exegética com cruzamento de contexto historico, semantica e tradicao interpretativa. Os resultados principais indicam que o artigo organiza categorias antropologicas recorrentes e explicita implicacoes eticas contemporaneas.. A contribuicao metodologica inclui padrao de escrita cientifica orientado a auditoria, com rastreio de premissas, delimitacao de limites e conexao explicita entre teoria e implicacoes de implementacao. O objetivo deste trabalho e avaliar de forma estruturada como \\\"Tratado Exegético sobre a Representação da Moralidade e Antropologia\\\" pode gerar valor cientifico e operacional com rastreabilidade metodologica. Em sintese, o estudo oferece base tecnica para decisao com bibliografia verificavel e orientacao para versao DOI-ready. (Ricoeur, 1976).\"\nkeywords: [\"EXEGETICAL\", \"TREATISE\", \"ANTHROPOLOGY\"]\nlicense: \"CC-BY-4.0\"\nversion: \"v2026-02-21\"\ndate-released: \"2024-01-01\"\nrepository-code: \"https://ulissesflores.com/essays/2024-exegetical-treatise-anthropology\"\nreferences:\n  - unstructured: \"Ricoeur, P. (1976). Interpretation Theory.\"\n    url: \"https://www.degruyter.com/document/doi/10.3138/9781442678286/html\"\n  - unstructured: \"Brueggemann, W. (1997). Theology of the Old Testament.\"\n    url: \"https://www.fortresspress.com/store/product/9780800628307/Theology-of-the-Old-Testament\"\n  - unstructured: \"Wright, N. T. (1992). The New Testament and the People of God.\"\n    url: \"https://www.fortresspress.com/store/product/9780800626815/The-New-Testament-and-the-People-of-God\"\n  - unstructured: \"Gadamer, H.-G. (1960). Truth and Method.\"\n    url: \"https://www.bloomsbury.com/us/truth-and-method-9780826405852/\"\n  - unstructured: \"Thiselton, A. C. (1980). The Two Horizons.\"\n    url: \"https://www.eerdmans.com/9780802800169/the-two-horizons/\"\n  - unstructured: \"von Rad, G. (2001). Old Testament Theology.\"\n    url: \"https://www.wjkbooks.com/Products/9780664223984/old-testament-theology-volume-1.aspx\"\n",
       "score": {
         "completenessScore": 1000,
         "referencesScore": 1000,
@@ -3087,10 +2854,6 @@
       "language": "pt-BR",
       "canonicalUrl": "https://ulissesflores.com/research/2023-marian-apparitions-critique",
       "pdfUrl": "https://ulissesflores.com/deep-research/2023-marian-apparitions-critique/deep-research.pdf",
-      "doi": {
-        "status": "target",
-        "target": "10.5281/zenodo.202325"
-      },
       "version": "v2026-02-21",
       "license": "CC-BY-4.0",
       "creators": [
@@ -3178,7 +2941,7 @@
             }
           ],
           "version": "v2026-02-21",
-          "notes": "DOI-ready metadata generated automatically from the canonical UPKF publication dataset. DOI target: 10.5281/zenodo.202325 (not minted).",
+          "notes": "DOI-ready metadata generated automatically from the canonical UPKF publication dataset. No DOI minted for this work yet; cite it by the canonical URL.",
           "license": "CC-BY-4.0"
         }
       },
@@ -3237,182 +3000,9 @@
             "unstructured": "Vatican Dicastery (2024). New Norms for discernment of supernatural phenomena.",
             "URL": "https://www.vaticannews.va/en/vatican-city/news/2024-05/new-norms-discernment-apparitions-dicastery-doctrine-faith.html"
           }
-        ],
-        "doi_target": "10.5281/zenodo.202325"
+        ]
       },
-      "citationCff": "cff-version: 1.2.0\nmessage: \"If you use this work, cite with this metadata. DOI target: 10.5281/zenodo.202325 (not minted).\"\ntitle: \"A Coroa e a Cruz: Análise Teológica e Fenomenológica das Aparições Marianas\"\ntype: article\nauthors:\n  - family-names: \"Flores\"\n    given-names: \"Carlos Ulisses\"\n    orcid: \"0000-0002-6034-7765\"\nidentifiers:\n  - type: url\n    value: \"https://ulissesflores.com/research/2023-marian-apparitions-critique\"\n  - type: url\n    value: \"https://ulissesflores.com/deep-research/2023-marian-apparitions-critique/deep-research.pdf\"\nabstract: \"Analise teologica e fenomenologica critica de narrativas de aparicoes marianas. O problema central investigado e: Relatos devocionais frequentemente carecem de criterios consistentes de discernimento historico e fenomenologico. Adotou-se um desenho metodologico com foco em validade interna, comparabilidade e reproducibilidade: Comparacao de documentos, tradicoes e criterios de autenticidade em abordagem historico-critica. Os resultados principais indicam que o estudo distingue elementos simbolicos, historicos e pastorais sem reduzir o fenomeno a uma unica explicacao.. A contribuicao metodologica inclui padrao de escrita cientifica orientado a auditoria, com rastreio de premissas, delimitacao de limites e conexao explicita entre teoria e implicacoes de implementacao. O objetivo deste trabalho e avaliar de forma estruturada como \\\"A Coroa e a Cruz: Análise Teológica e Fenomenológica das Aparições Marianas\\\" pode gerar valor cientifico e operacional com rastreabilidade metodologica. Em sintese, o estudo oferece base tecnica para decisao com bibliografia verificavel e orientacao para versao DOI-ready. (Faith, 1978).\"\nkeywords: [\"MARIAN\", \"APPARITIONS\", \"CRITIQUE\"]\nlicense: \"CC-BY-4.0\"\nversion: \"v2026-02-21\"\ndate-released: \"2023-01-01\"\nrepository-code: \"https://ulissesflores.com/research/2023-marian-apparitions-critique\"\nreferences:\n  - unstructured: \"Congregation for the Doctrine of the Faith (1978). Norms regarding alleged apparitions.\"\n    url: \"https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_19780225_norme-apparizioni_en.html\"\n  - unstructured: \"Zimdars-Swartz, S. L. (1991). Encountering Mary.\"\n    url: \"https://press.princeton.edu/books/paperback/9780691028675/encountering-mary\"\n  - unstructured: \"Christian Jr., W. A. (1981). Local Religion in Sixteenth-Century Spain.\"\n    url: \"https://press.princeton.edu/books/paperback/9780691101965/local-religion-in-sixteenth-century-spain\"\n  - unstructured: \"Laurentin, R. (1990). The Apparitions of the Blessed Virgin Mary Today.\"\n    url: \"https://books.google.com/books?id=GdoIAQAAMAAJ\"\n  - unstructured: \"Pelikan, J. (1996). Mary Through the Centuries.\"\n    url: \"https://yalebooks.yale.edu/book/9780300076619/mary-through-the-centuries/\"\n  - unstructured: \"Vatican Dicastery (2024). New Norms for discernment of supernatural phenomena.\"\n    url: \"https://www.vaticannews.va/en/vatican-city/news/2024-05/new-norms-discernment-apparitions-dicastery-doctrine-faith.html\"\n",
-      "score": {
-        "completenessScore": 1000,
-        "referencesScore": 1000,
-        "identifierScore": 1000,
-        "workflowScore": 1000,
-        "cffScore": 1000,
-        "finalScore": 1000
-      },
-      "approved": true
-    },
-    {
-      "slug": "2023-digital-legacy",
-      "title": "Desafios da Herança Digital: Preservação de Memória Pós-Mortem",
-      "category": "whitepapers",
-      "publicationType": "report",
-      "kind": "R",
-      "publishedAt": "2023-01-01",
-      "language": "pt-BR",
-      "canonicalUrl": "https://ulissesflores.com/whitepapers/2023-digital-legacy",
-      "pdfUrl": "https://ulissesflores.com/deep-research/2023-digital-legacy/deep-research.pdf",
-      "doi": {
-        "status": "target",
-        "target": "10.5281/zenodo.202327"
-      },
-      "version": "v2026-02-21",
-      "license": "CC-BY-4.0",
-      "creators": [
-        {
-          "name": "Flores, Carlos Ulisses",
-          "givenName": "Carlos Ulisses",
-          "familyName": "Flores",
-          "affiliation": "Codex Hash Research",
-          "orcid": "0000-0002-6034-7765"
-        }
-      ],
-      "keywords": [
-        "DIGITAL",
-        "LEGACY"
-      ],
-      "abstract": "Whitepaper sobre desafios da heranca digital e preservacao de memoria pos-mortem. O problema central investigado e: Ativos digitais e identidades online carecem de protocolos claros de sucessao, custodia e consentimento. Adotou-se um desenho metodologico com foco em validade interna, comparabilidade e reproducibilidade: Analise de risco juridico-tecnico com proposta de arquitetura de preservacao e governanca de acesso. Os resultados principais indicam que o documento define requisitos minimos para continuidade, autenticidade e privacidade de acervos digitais.. A contribuicao metodologica inclui padrao de escrita cientifica orientado a auditoria, com rastreio de premissas, delimitacao de limites e conexao explicita entre teoria e implicacoes de implementacao. O objetivo deste trabalho e avaliar de forma estruturada como \"Desafios da Herança Digital: Preservação de Memória Pós-Mortem\" pode gerar valor cientifico e operacional com rastreabilidade metodologica. Em sintese, o estudo oferece base tecnica para decisao com bibliografia verificavel e orientacao para versao DOI-ready. (Union, 2016).",
-      "references": [
-        {
-          "citation": "European Union (2016). General Data Protection Regulation (GDPR).",
-          "url": "https://eur-lex.europa.eu/eli/reg/2016/679/oj"
-        },
-        {
-          "citation": "ISO 15489-1:2016 Information and documentation -- Records management.",
-          "url": "https://www.iso.org/standard/62542.html"
-        },
-        {
-          "citation": "NIST Privacy Framework 1.0.",
-          "url": "https://www.nist.gov/privacy-framework"
-        },
-        {
-          "citation": "Carroll, E.; Romano, J. (2011). Your Digital Afterlife.",
-          "url": "https://books.google.com/books?id=4W8jAQAAQBAJ"
-        },
-        {
-          "citation": "Apple. Legacy Contact in Apple ID.",
-          "url": "https://support.apple.com/en-us/102631"
-        },
-        {
-          "citation": "Google. Inactive Account Manager.",
-          "url": "https://support.google.com/accounts/answer/3036546"
-        }
-      ],
-      "cffPath": "/doi/2023-digital-legacy/CITATION.cff",
-      "zenodoPath": "/doi/2023-digital-legacy/zenodo.json",
-      "crossrefPath": "/doi/2023-digital-legacy/crossref.json",
-      "zenodoMetadata": {
-        "metadata": {
-          "title": "Desafios da Herança Digital: Preservação de Memória Pós-Mortem",
-          "upload_type": "publication",
-          "publication_type": "report",
-          "publication_date": "2023-01-01",
-          "description": "<p>Whitepaper sobre desafios da heranca digital e preservacao de memoria pos-mortem. O problema central investigado e: Ativos digitais e identidades online carecem de protocolos claros de sucessao, custodia e consentimento. Adotou-se um desenho metodologico com foco em validade interna, comparabilidade e reproducibilidade: Analise de risco juridico-tecnico com proposta de arquitetura de preservacao e governanca de acesso. Os resultados principais indicam que o documento define requisitos minimos para continuidade, autenticidade e privacidade de acervos digitais.. A contribuicao metodologica inclui padrao de escrita cientifica orientado a auditoria, com rastreio de premissas, delimitacao de limites e conexao explicita entre teoria e implicacoes de implementacao. O objetivo deste trabalho e avaliar de forma estruturada como &quot;Desafios da Herança Digital: Preservação de Memória Pós-Mortem&quot; pode gerar valor cientifico e operacional com rastreabilidade metodologica. Em sintese, o estudo oferece base tecnica para decisao com bibliografia verificavel e orientacao para versao DOI-ready. (Union, 2016).</p>",
-          "creators": [
-            {
-              "name": "Flores, Carlos Ulisses",
-              "affiliation": "Codex Hash Research",
-              "orcid": "0000-0002-6034-7765"
-            }
-          ],
-          "keywords": [
-            "DIGITAL",
-            "LEGACY"
-          ],
-          "language": "pt-BR",
-          "references": [
-            "European Union (2016). General Data Protection Regulation (GDPR). (https://eur-lex.europa.eu/eli/reg/2016/679/oj)",
-            "ISO 15489-1:2016 Information and documentation -- Records management. (https://www.iso.org/standard/62542.html)",
-            "NIST Privacy Framework 1.0. (https://www.nist.gov/privacy-framework)",
-            "Carroll, E.; Romano, J. (2011). Your Digital Afterlife. (https://books.google.com/books?id=4W8jAQAAQBAJ)",
-            "Apple. Legacy Contact in Apple ID. (https://support.apple.com/en-us/102631)",
-            "Google. Inactive Account Manager. (https://support.google.com/accounts/answer/3036546)"
-          ],
-          "related_identifiers": [
-            {
-              "identifier": "https://ulissesflores.com/whitepapers/2023-digital-legacy",
-              "relation": "isSupplementTo",
-              "resource_type": "publication-article"
-            },
-            {
-              "identifier": "https://ulissesflores.com/deep-research/2023-digital-legacy/deep-research.pdf",
-              "relation": "isIdenticalTo",
-              "resource_type": "publication-article"
-            }
-          ],
-          "version": "v2026-02-21",
-          "notes": "DOI-ready metadata generated automatically from the canonical UPKF publication dataset. DOI target: 10.5281/zenodo.202327 (not minted).",
-          "license": "CC-BY-4.0"
-        }
-      },
-      "crossrefMetadata": {
-        "schema": "https://data.crossref.org/schemas/crossref_input.json",
-        "type": "report",
-        "title": "Desafios da Herança Digital: Preservação de Memória Pós-Mortem",
-        "abstract": "Whitepaper sobre desafios da heranca digital e preservacao de memoria pos-mortem. O problema central investigado e: Ativos digitais e identidades online carecem de protocolos claros de sucessao, custodia e consentimento. Adotou-se um desenho metodologico com foco em validade interna, comparabilidade e reproducibilidade: Analise de risco juridico-tecnico com proposta de arquitetura de preservacao e governanca de acesso. Os resultados principais indicam que o documento define requisitos minimos para continuidade, autenticidade e privacidade de acervos digitais.. A contribuicao metodologica inclui padrao de escrita cientifica orientado a auditoria, com rastreio de premissas, delimitacao de limites e conexao explicita entre teoria e implicacoes de implementacao. O objetivo deste trabalho e avaliar de forma estruturada como \"Desafios da Herança Digital: Preservação de Memória Pós-Mortem\" pode gerar valor cientifico e operacional com rastreabilidade metodologica. Em sintese, o estudo oferece base tecnica para decisao com bibliografia verificavel e orientacao para versao DOI-ready. (Union, 2016).",
-        "authors": [
-          {
-            "given": "Carlos Ulisses",
-            "family": "Flores",
-            "ORCID": "https://orcid.org/0000-0002-6034-7765",
-            "affiliation": "Codex Hash Research"
-          }
-        ],
-        "issued": "2023-01-01",
-        "language": "pt-BR",
-        "URL": "https://ulissesflores.com/whitepapers/2023-digital-legacy",
-        "resource": {
-          "primary": {
-            "URL": "https://ulissesflores.com/whitepapers/2023-digital-legacy"
-          },
-          "pdf": {
-            "URL": "https://ulissesflores.com/deep-research/2023-digital-legacy/deep-research.pdf"
-          }
-        },
-        "reference": [
-          {
-            "key": "2023-digital-legacy-ref-1",
-            "unstructured": "European Union (2016). General Data Protection Regulation (GDPR).",
-            "URL": "https://eur-lex.europa.eu/eli/reg/2016/679/oj"
-          },
-          {
-            "key": "2023-digital-legacy-ref-2",
-            "unstructured": "ISO 15489-1:2016 Information and documentation -- Records management.",
-            "URL": "https://www.iso.org/standard/62542.html"
-          },
-          {
-            "key": "2023-digital-legacy-ref-3",
-            "unstructured": "NIST Privacy Framework 1.0.",
-            "URL": "https://www.nist.gov/privacy-framework"
-          },
-          {
-            "key": "2023-digital-legacy-ref-4",
-            "unstructured": "Carroll, E.; Romano, J. (2011). Your Digital Afterlife.",
-            "URL": "https://books.google.com/books?id=4W8jAQAAQBAJ"
-          },
-          {
-            "key": "2023-digital-legacy-ref-5",
-            "unstructured": "Apple. Legacy Contact in Apple ID.",
-            "URL": "https://support.apple.com/en-us/102631"
-          },
-          {
-            "key": "2023-digital-legacy-ref-6",
-            "unstructured": "Google. Inactive Account Manager.",
-            "URL": "https://support.google.com/accounts/answer/3036546"
-          }
-        ],
-        "doi_target": "10.5281/zenodo.202327"
-      },
-      "citationCff": "cff-version: 1.2.0\nmessage: \"If you use this work, cite with this metadata. DOI target: 10.5281/zenodo.202327 (not minted).\"\ntitle: \"Desafios da Herança Digital: Preservação de Memória Pós-Mortem\"\ntype: article\nauthors:\n  - family-names: \"Flores\"\n    given-names: \"Carlos Ulisses\"\n    orcid: \"0000-0002-6034-7765\"\nidentifiers:\n  - type: url\n    value: \"https://ulissesflores.com/whitepapers/2023-digital-legacy\"\n  - type: url\n    value: \"https://ulissesflores.com/deep-research/2023-digital-legacy/deep-research.pdf\"\nabstract: \"Whitepaper sobre desafios da heranca digital e preservacao de memoria pos-mortem. O problema central investigado e: Ativos digitais e identidades online carecem de protocolos claros de sucessao, custodia e consentimento. Adotou-se um desenho metodologico com foco em validade interna, comparabilidade e reproducibilidade: Analise de risco juridico-tecnico com proposta de arquitetura de preservacao e governanca de acesso. Os resultados principais indicam que o documento define requisitos minimos para continuidade, autenticidade e privacidade de acervos digitais.. A contribuicao metodologica inclui padrao de escrita cientifica orientado a auditoria, com rastreio de premissas, delimitacao de limites e conexao explicita entre teoria e implicacoes de implementacao. O objetivo deste trabalho e avaliar de forma estruturada como \\\"Desafios da Herança Digital: Preservação de Memória Pós-Mortem\\\" pode gerar valor cientifico e operacional com rastreabilidade metodologica. Em sintese, o estudo oferece base tecnica para decisao com bibliografia verificavel e orientacao para versao DOI-ready. (Union, 2016).\"\nkeywords: [\"DIGITAL\", \"LEGACY\"]\nlicense: \"CC-BY-4.0\"\nversion: \"v2026-02-21\"\ndate-released: \"2023-01-01\"\nrepository-code: \"https://ulissesflores.com/whitepapers/2023-digital-legacy\"\nreferences:\n  - unstructured: \"European Union (2016). General Data Protection Regulation (GDPR).\"\n    url: \"https://eur-lex.europa.eu/eli/reg/2016/679/oj\"\n  - unstructured: \"ISO 15489-1:2016 Information and documentation -- Records management.\"\n    url: \"https://www.iso.org/standard/62542.html\"\n  - unstructured: \"NIST Privacy Framework 1.0.\"\n    url: \"https://www.nist.gov/privacy-framework\"\n  - unstructured: \"Carroll, E.; Romano, J. (2011). Your Digital Afterlife.\"\n    url: \"https://books.google.com/books?id=4W8jAQAAQBAJ\"\n  - unstructured: \"Apple. Legacy Contact in Apple ID.\"\n    url: \"https://support.apple.com/en-us/102631\"\n  - unstructured: \"Google. Inactive Account Manager.\"\n    url: \"https://support.google.com/accounts/answer/3036546\"\n",
+      "citationCff": "cff-version: 1.2.0\nmessage: \"If you use this work, cite with this metadata. No DOI minted yet; cite by the canonical URL.\"\ntitle: \"A Coroa e a Cruz: Análise Teológica e Fenomenológica das Aparições Marianas\"\ntype: article\nauthors:\n  - family-names: \"Flores\"\n    given-names: \"Carlos Ulisses\"\n    orcid: \"0000-0002-6034-7765\"\nidentifiers:\n  - type: url\n    value: \"https://ulissesflores.com/research/2023-marian-apparitions-critique\"\n  - type: url\n    value: \"https://ulissesflores.com/deep-research/2023-marian-apparitions-critique/deep-research.pdf\"\nabstract: \"Analise teologica e fenomenologica critica de narrativas de aparicoes marianas. O problema central investigado e: Relatos devocionais frequentemente carecem de criterios consistentes de discernimento historico e fenomenologico. Adotou-se um desenho metodologico com foco em validade interna, comparabilidade e reproducibilidade: Comparacao de documentos, tradicoes e criterios de autenticidade em abordagem historico-critica. Os resultados principais indicam que o estudo distingue elementos simbolicos, historicos e pastorais sem reduzir o fenomeno a uma unica explicacao.. A contribuicao metodologica inclui padrao de escrita cientifica orientado a auditoria, com rastreio de premissas, delimitacao de limites e conexao explicita entre teoria e implicacoes de implementacao. O objetivo deste trabalho e avaliar de forma estruturada como \\\"A Coroa e a Cruz: Análise Teológica e Fenomenológica das Aparições Marianas\\\" pode gerar valor cientifico e operacional com rastreabilidade metodologica. Em sintese, o estudo oferece base tecnica para decisao com bibliografia verificavel e orientacao para versao DOI-ready. (Faith, 1978).\"\nkeywords: [\"MARIAN\", \"APPARITIONS\", \"CRITIQUE\"]\nlicense: \"CC-BY-4.0\"\nversion: \"v2026-02-21\"\ndate-released: \"2023-01-01\"\nrepository-code: \"https://ulissesflores.com/research/2023-marian-apparitions-critique\"\nreferences:\n  - unstructured: \"Congregation for the Doctrine of the Faith (1978). Norms regarding alleged apparitions.\"\n    url: \"https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_19780225_norme-apparizioni_en.html\"\n  - unstructured: \"Zimdars-Swartz, S. L. (1991). Encountering Mary.\"\n    url: \"https://press.princeton.edu/books/paperback/9780691028675/encountering-mary\"\n  - unstructured: \"Christian Jr., W. A. (1981). Local Religion in Sixteenth-Century Spain.\"\n    url: \"https://press.princeton.edu/books/paperback/9780691101965/local-religion-in-sixteenth-century-spain\"\n  - unstructured: \"Laurentin, R. (1990). The Apparitions of the Blessed Virgin Mary Today.\"\n    url: \"https://books.google.com/books?id=GdoIAQAAMAAJ\"\n  - unstructured: \"Pelikan, J. (1996). Mary Through the Centuries.\"\n    url: \"https://yalebooks.yale.edu/book/9780300076619/mary-through-the-centuries/\"\n  - unstructured: \"Vatican Dicastery (2024). New Norms for discernment of supernatural phenomena.\"\n    url: \"https://www.vaticannews.va/en/vatican-city/news/2024-05/new-norms-discernment-apparitions-dicastery-doctrine-faith.html\"\n",
       "score": {
         "completenessScore": 1000,
         "referencesScore": 1000,
@@ -3433,10 +3023,6 @@
       "language": "pt-BR",
       "canonicalUrl": "https://ulissesflores.com/research/2023-holy-club-methodism",
       "pdfUrl": "https://ulissesflores.com/deep-research/2023-holy-club-methodism/deep-research.pdf",
-      "doi": {
-        "status": "target",
-        "target": "10.5281/zenodo.202329"
-      },
       "version": "v2026-02-21",
       "license": "CC-BY-4.0",
       "creators": [
@@ -3524,7 +3110,7 @@
             }
           ],
           "version": "v2026-02-21",
-          "notes": "DOI-ready metadata generated automatically from the canonical UPKF publication dataset. DOI target: 10.5281/zenodo.202329 (not minted).",
+          "notes": "DOI-ready metadata generated automatically from the canonical UPKF publication dataset. No DOI minted for this work yet; cite it by the canonical URL.",
           "license": "CC-BY-4.0"
         }
       },
@@ -3583,356 +3169,9 @@
             "unstructured": "Oxford Handbook of Methodist Studies.",
             "URL": "https://academic.oup.com/edited-volume/34318"
           }
-        ],
-        "doi_target": "10.5281/zenodo.202329"
+        ]
       },
-      "citationCff": "cff-version: 1.2.0\nmessage: \"If you use this work, cite with this metadata. DOI target: 10.5281/zenodo.202329 (not minted).\"\ntitle: \"O Clube Santo: Arqueologia Espiritual, Teológica e Visual do Metodismo\"\ntype: article\nauthors:\n  - family-names: \"Flores\"\n    given-names: \"Carlos Ulisses\"\n    orcid: \"0000-0002-6034-7765\"\nidentifiers:\n  - type: url\n    value: \"https://ulissesflores.com/research/2023-holy-club-methodism\"\n  - type: url\n    value: \"https://ulissesflores.com/deep-research/2023-holy-club-methodism/deep-research.pdf\"\nabstract: \"Investigacao arqueologica espiritual, teologica e visual do Holy Club e suas implicacoes para o metodismo. O problema central investigado e: A memoria do movimento metodista inicial e frequentemente reduzida a narrativas lineares e pouco contextualizadas. Adotou-se um desenho metodologico com foco em validade interna, comparabilidade e reproducibilidade: Leitura historica interdisciplinar com fontes primarias, iconografia e tradicao institucional. Os resultados principais indicam que o estudo reconstrói redes de praticas formativas e disciplina comunitaria no contexto original.. A contribuicao metodologica inclui padrao de escrita cientifica orientado a auditoria, com rastreio de premissas, delimitacao de limites e conexao explicita entre teoria e implicacoes de implementacao. O objetivo deste trabalho e avaliar de forma estruturada como \\\"O Clube Santo: Arqueologia Espiritual, Teológica e Visual do Metodismo\\\" pode gerar valor cientifico e operacional com rastreabilidade metodologica. Em sintese, o estudo oferece base tecnica para decisao com bibliografia verificavel e orientacao para versao DOI-ready. (Wesley, 2026).\"\nkeywords: [\"HOLY\", \"CLUB\", \"METHODISM\"]\nlicense: \"CC-BY-4.0\"\nversion: \"v2026-02-21\"\ndate-released: \"2023-01-01\"\nrepository-code: \"https://ulissesflores.com/research/2023-holy-club-methodism\"\nreferences:\n  - unstructured: \"Wesley, J. The Journal of John Wesley.\"\n    url: \"https://wesley.nnu.edu/john-wesley/the-journal-of-john-wesley/\"\n  - unstructured: \"Heitzenrater, R. P. (2013). Wesley and the People Called Methodists.\"\n    url: \"https://www.abingdonpress.com/product/9781426775642\"\n  - unstructured: \"Hempton, D. (2005). Methodism: Empire of the Spirit.\"\n    url: \"https://yalebooks.yale.edu/book/9780300106149/methodism/\"\n  - unstructured: \"Maddox, R. L. (1994). Responsible Grace.\"\n    url: \"https://www.abingdonpress.com/product/9780687467426\"\n  - unstructured: \"Outler, A. C. (1964). John Wesley.\"\n    url: \"https://global.oup.com/academic/product/john-wesley-9780195028102\"\n  - unstructured: \"Oxford Handbook of Methodist Studies.\"\n    url: \"https://academic.oup.com/edited-volume/34318\"\n",
-      "score": {
-        "completenessScore": 1000,
-        "referencesScore": 1000,
-        "identifierScore": 1000,
-        "workflowScore": 1000,
-        "cffScore": 1000,
-        "finalScore": 1000
-      },
-      "approved": true
-    },
-    {
-      "slug": "2022-theology-of-hope",
-      "title": "A Teologia da Esperança em Tempos de Crise",
-      "category": "essays",
-      "publicationType": "article",
-      "kind": "J",
-      "publishedAt": "2022-01-01",
-      "language": "pt-BR",
-      "canonicalUrl": "https://ulissesflores.com/essays/2022-theology-of-hope",
-      "pdfUrl": "https://ulissesflores.com/deep-research/2022-theology-of-hope/deep-research.pdf",
-      "doi": {
-        "status": "target",
-        "target": "10.5281/zenodo.202231"
-      },
-      "version": "v2026-02-21",
-      "license": "CC-BY-4.0",
-      "creators": [
-        {
-          "name": "Flores, Carlos Ulisses",
-          "givenName": "Carlos Ulisses",
-          "familyName": "Flores",
-          "affiliation": "Codex Hash Research",
-          "orcid": "0000-0002-6034-7765"
-        }
-      ],
-      "keywords": [
-        "THEOLOGY",
-        "HOPE"
-      ],
-      "abstract": "Ensaio sobre teologia da esperanca em contextos de crise social, economica e institucional. O problema central investigado e: Cenarios de incerteza tendem a produzir fatalismo ou respostas imediatistas sem base antropologica robusta. Adotou-se um desenho metodologico com foco em validade interna, comparabilidade e reproducibilidade: Analise teologica e filosofica de categorias de esperanca, sofrimento e responsabilidade comunitaria. Os resultados principais indicam que o artigo explicita como a esperanca pode operar como categoria ativa de acao e nao apenas conforto simbólico.. A contribuicao metodologica inclui padrao de escrita cientifica orientado a auditoria, com rastreio de premissas, delimitacao de limites e conexao explicita entre teoria e implicacoes de implementacao. O objetivo deste trabalho e avaliar de forma estruturada como \"A Teologia da Esperança em Tempos de Crise\" pode gerar valor cientifico e operacional com rastreabilidade metodologica. Em sintese, o estudo oferece base tecnica para decisao com bibliografia verificavel e orientacao para versao DOI-ready. (Moltmann, 1967).",
-      "references": [
-        {
-          "citation": "Moltmann, J. (1967). Theology of Hope.",
-          "url": "https://www.fortresspress.com/store/product/9780800628277/Theology-of-Hope"
-        },
-        {
-          "citation": "Bonhoeffer, D. (1953). Letters and Papers from Prison.",
-          "url": "https://www.scmpress.co.uk/titles/3642/letters-and-papers-from-prison"
-        },
-        {
-          "citation": "Pannenberg, W. (1968). Theology and the Kingdom of God.",
-          "url": "https://www.westminsterjohnknoxpress.com/Products/0664240245/theology-and-the-kingdom-of-god.aspx"
-        },
-        {
-          "citation": "Volf, M. (2011). A Public Faith.",
-          "url": "https://brazospress.com/books/a-public-faith"
-        },
-        {
-          "citation": "Wright, N. T. (2008). Surprised by Hope.",
-          "url": "https://www.harpercollins.com/products/surprised-by-hope-n-t-wright"
-        },
-        {
-          "citation": "Metz, J. B. (1969). Theology of the World.",
-          "url": "https://www.herder.de/theologie-pastoral/shop/p6/10291-theology-of-the-world-hardcover/"
-        }
-      ],
-      "cffPath": "/doi/2022-theology-of-hope/CITATION.cff",
-      "zenodoPath": "/doi/2022-theology-of-hope/zenodo.json",
-      "crossrefPath": "/doi/2022-theology-of-hope/crossref.json",
-      "zenodoMetadata": {
-        "metadata": {
-          "title": "A Teologia da Esperança em Tempos de Crise",
-          "upload_type": "publication",
-          "publication_type": "article",
-          "publication_date": "2022-01-01",
-          "description": "<p>Ensaio sobre teologia da esperanca em contextos de crise social, economica e institucional. O problema central investigado e: Cenarios de incerteza tendem a produzir fatalismo ou respostas imediatistas sem base antropologica robusta. Adotou-se um desenho metodologico com foco em validade interna, comparabilidade e reproducibilidade: Analise teologica e filosofica de categorias de esperanca, sofrimento e responsabilidade comunitaria. Os resultados principais indicam que o artigo explicita como a esperanca pode operar como categoria ativa de acao e nao apenas conforto simbólico.. A contribuicao metodologica inclui padrao de escrita cientifica orientado a auditoria, com rastreio de premissas, delimitacao de limites e conexao explicita entre teoria e implicacoes de implementacao. O objetivo deste trabalho e avaliar de forma estruturada como &quot;A Teologia da Esperança em Tempos de Crise&quot; pode gerar valor cientifico e operacional com rastreabilidade metodologica. Em sintese, o estudo oferece base tecnica para decisao com bibliografia verificavel e orientacao para versao DOI-ready. (Moltmann, 1967).</p>",
-          "creators": [
-            {
-              "name": "Flores, Carlos Ulisses",
-              "affiliation": "Codex Hash Research",
-              "orcid": "0000-0002-6034-7765"
-            }
-          ],
-          "keywords": [
-            "THEOLOGY",
-            "HOPE"
-          ],
-          "language": "pt-BR",
-          "references": [
-            "Moltmann, J. (1967). Theology of Hope. (https://www.fortresspress.com/store/product/9780800628277/Theology-of-Hope)",
-            "Bonhoeffer, D. (1953). Letters and Papers from Prison. (https://www.scmpress.co.uk/titles/3642/letters-and-papers-from-prison)",
-            "Pannenberg, W. (1968). Theology and the Kingdom of God. (https://www.westminsterjohnknoxpress.com/Products/0664240245/theology-and-the-kingdom-of-god.aspx)",
-            "Volf, M. (2011). A Public Faith. (https://brazospress.com/books/a-public-faith)",
-            "Wright, N. T. (2008). Surprised by Hope. (https://www.harpercollins.com/products/surprised-by-hope-n-t-wright)",
-            "Metz, J. B. (1969). Theology of the World. (https://www.herder.de/theologie-pastoral/shop/p6/10291-theology-of-the-world-hardcover/)"
-          ],
-          "related_identifiers": [
-            {
-              "identifier": "https://ulissesflores.com/essays/2022-theology-of-hope",
-              "relation": "isSupplementTo",
-              "resource_type": "publication-article"
-            },
-            {
-              "identifier": "https://ulissesflores.com/deep-research/2022-theology-of-hope/deep-research.pdf",
-              "relation": "isIdenticalTo",
-              "resource_type": "publication-article"
-            }
-          ],
-          "version": "v2026-02-21",
-          "notes": "DOI-ready metadata generated automatically from the canonical UPKF publication dataset. DOI target: 10.5281/zenodo.202231 (not minted).",
-          "license": "CC-BY-4.0"
-        }
-      },
-      "crossrefMetadata": {
-        "schema": "https://data.crossref.org/schemas/crossref_input.json",
-        "type": "article",
-        "title": "A Teologia da Esperança em Tempos de Crise",
-        "abstract": "Ensaio sobre teologia da esperanca em contextos de crise social, economica e institucional. O problema central investigado e: Cenarios de incerteza tendem a produzir fatalismo ou respostas imediatistas sem base antropologica robusta. Adotou-se um desenho metodologico com foco em validade interna, comparabilidade e reproducibilidade: Analise teologica e filosofica de categorias de esperanca, sofrimento e responsabilidade comunitaria. Os resultados principais indicam que o artigo explicita como a esperanca pode operar como categoria ativa de acao e nao apenas conforto simbólico.. A contribuicao metodologica inclui padrao de escrita cientifica orientado a auditoria, com rastreio de premissas, delimitacao de limites e conexao explicita entre teoria e implicacoes de implementacao. O objetivo deste trabalho e avaliar de forma estruturada como \"A Teologia da Esperança em Tempos de Crise\" pode gerar valor cientifico e operacional com rastreabilidade metodologica. Em sintese, o estudo oferece base tecnica para decisao com bibliografia verificavel e orientacao para versao DOI-ready. (Moltmann, 1967).",
-        "authors": [
-          {
-            "given": "Carlos Ulisses",
-            "family": "Flores",
-            "ORCID": "https://orcid.org/0000-0002-6034-7765",
-            "affiliation": "Codex Hash Research"
-          }
-        ],
-        "issued": "2022-01-01",
-        "language": "pt-BR",
-        "URL": "https://ulissesflores.com/essays/2022-theology-of-hope",
-        "resource": {
-          "primary": {
-            "URL": "https://ulissesflores.com/essays/2022-theology-of-hope"
-          },
-          "pdf": {
-            "URL": "https://ulissesflores.com/deep-research/2022-theology-of-hope/deep-research.pdf"
-          }
-        },
-        "reference": [
-          {
-            "key": "2022-theology-of-hope-ref-1",
-            "unstructured": "Moltmann, J. (1967). Theology of Hope.",
-            "URL": "https://www.fortresspress.com/store/product/9780800628277/Theology-of-Hope"
-          },
-          {
-            "key": "2022-theology-of-hope-ref-2",
-            "unstructured": "Bonhoeffer, D. (1953). Letters and Papers from Prison.",
-            "URL": "https://www.scmpress.co.uk/titles/3642/letters-and-papers-from-prison"
-          },
-          {
-            "key": "2022-theology-of-hope-ref-3",
-            "unstructured": "Pannenberg, W. (1968). Theology and the Kingdom of God.",
-            "URL": "https://www.westminsterjohnknoxpress.com/Products/0664240245/theology-and-the-kingdom-of-god.aspx"
-          },
-          {
-            "key": "2022-theology-of-hope-ref-4",
-            "unstructured": "Volf, M. (2011). A Public Faith.",
-            "URL": "https://brazospress.com/books/a-public-faith"
-          },
-          {
-            "key": "2022-theology-of-hope-ref-5",
-            "unstructured": "Wright, N. T. (2008). Surprised by Hope.",
-            "URL": "https://www.harpercollins.com/products/surprised-by-hope-n-t-wright"
-          },
-          {
-            "key": "2022-theology-of-hope-ref-6",
-            "unstructured": "Metz, J. B. (1969). Theology of the World.",
-            "URL": "https://www.herder.de/theologie-pastoral/shop/p6/10291-theology-of-the-world-hardcover/"
-          }
-        ],
-        "doi_target": "10.5281/zenodo.202231"
-      },
-      "citationCff": "cff-version: 1.2.0\nmessage: \"If you use this work, cite with this metadata. DOI target: 10.5281/zenodo.202231 (not minted).\"\ntitle: \"A Teologia da Esperança em Tempos de Crise\"\ntype: article\nauthors:\n  - family-names: \"Flores\"\n    given-names: \"Carlos Ulisses\"\n    orcid: \"0000-0002-6034-7765\"\nidentifiers:\n  - type: url\n    value: \"https://ulissesflores.com/essays/2022-theology-of-hope\"\n  - type: url\n    value: \"https://ulissesflores.com/deep-research/2022-theology-of-hope/deep-research.pdf\"\nabstract: \"Ensaio sobre teologia da esperanca em contextos de crise social, economica e institucional. O problema central investigado e: Cenarios de incerteza tendem a produzir fatalismo ou respostas imediatistas sem base antropologica robusta. Adotou-se um desenho metodologico com foco em validade interna, comparabilidade e reproducibilidade: Analise teologica e filosofica de categorias de esperanca, sofrimento e responsabilidade comunitaria. Os resultados principais indicam que o artigo explicita como a esperanca pode operar como categoria ativa de acao e nao apenas conforto simbólico.. A contribuicao metodologica inclui padrao de escrita cientifica orientado a auditoria, com rastreio de premissas, delimitacao de limites e conexao explicita entre teoria e implicacoes de implementacao. O objetivo deste trabalho e avaliar de forma estruturada como \\\"A Teologia da Esperança em Tempos de Crise\\\" pode gerar valor cientifico e operacional com rastreabilidade metodologica. Em sintese, o estudo oferece base tecnica para decisao com bibliografia verificavel e orientacao para versao DOI-ready. (Moltmann, 1967).\"\nkeywords: [\"THEOLOGY\", \"HOPE\"]\nlicense: \"CC-BY-4.0\"\nversion: \"v2026-02-21\"\ndate-released: \"2022-01-01\"\nrepository-code: \"https://ulissesflores.com/essays/2022-theology-of-hope\"\nreferences:\n  - unstructured: \"Moltmann, J. (1967). Theology of Hope.\"\n    url: \"https://www.fortresspress.com/store/product/9780800628277/Theology-of-Hope\"\n  - unstructured: \"Bonhoeffer, D. (1953). Letters and Papers from Prison.\"\n    url: \"https://www.scmpress.co.uk/titles/3642/letters-and-papers-from-prison\"\n  - unstructured: \"Pannenberg, W. (1968). Theology and the Kingdom of God.\"\n    url: \"https://www.westminsterjohnknoxpress.com/Products/0664240245/theology-and-the-kingdom-of-god.aspx\"\n  - unstructured: \"Volf, M. (2011). A Public Faith.\"\n    url: \"https://brazospress.com/books/a-public-faith\"\n  - unstructured: \"Wright, N. T. (2008). Surprised by Hope.\"\n    url: \"https://www.harpercollins.com/products/surprised-by-hope-n-t-wright\"\n  - unstructured: \"Metz, J. B. (1969). Theology of the World.\"\n    url: \"https://www.herder.de/theologie-pastoral/shop/p6/10291-theology-of-the-world-hardcover/\"\n",
-      "score": {
-        "completenessScore": 1000,
-        "referencesScore": 1000,
-        "identifierScore": 1000,
-        "workflowScore": 1000,
-        "cffScore": 1000,
-        "finalScore": 1000
-      },
-      "approved": true
-    },
-    {
-      "slug": "2020-robotics-education",
-      "title": "Metodologias Ativas no Ensino de Lógica de Programação",
-      "category": "essays",
-      "publicationType": "article",
-      "kind": "J",
-      "publishedAt": "2020-01-01",
-      "language": "pt-BR",
-      "canonicalUrl": "https://ulissesflores.com/essays/2020-robotics-education",
-      "pdfUrl": "https://ulissesflores.com/deep-research/2020-robotics-education/deep-research.pdf",
-      "doi": {
-        "status": "target",
-        "target": "10.5281/zenodo.202033"
-      },
-      "version": "v2026-02-21",
-      "license": "CC-BY-4.0",
-      "creators": [
-        {
-          "name": "Flores, Carlos Ulisses",
-          "givenName": "Carlos Ulisses",
-          "familyName": "Flores",
-          "affiliation": "Codex Hash Research",
-          "orcid": "0000-0002-6034-7765"
-        }
-      ],
-      "keywords": [
-        "ROBOTICS",
-        "EDUCATION"
-      ],
-      "abstract": "Estudo sobre robotica educacional e metodologias ativas no ensino de logica de programacao para jovens. O problema central investigado e: Modelos expositivos tradicionais geram baixa retencao e pouca transferencia de aprendizagem computacional. Adotou-se um desenho metodologico com foco em validade interna, comparabilidade e reproducibilidade: Intervencao didatica com atividades praticas, resolucao de problemas e avaliacao por competencias. Os resultados principais indicam que a abordagem hands-on melhora engajamento, colaboracao e consolidacao de raciocinio logico.. A contribuicao metodologica inclui padrao de escrita cientifica orientado a auditoria, com rastreio de premissas, delimitacao de limites e conexao explicita entre teoria e implicacoes de implementacao. O objetivo deste trabalho e avaliar de forma estruturada como \"Metodologias Ativas no Ensino de Lógica de Programação\" pode gerar valor cientifico e operacional com rastreabilidade metodologica. Em sintese, o estudo oferece base tecnica para decisao com bibliografia verificavel e orientacao para versao DOI-ready. (Papert, 1980).",
-      "references": [
-        {
-          "citation": "Papert, S. (1980). Mindstorms.",
-          "url": "https://books.google.com/books?id=5ks9AAAAMAAJ"
-        },
-        {
-          "citation": "Wing, J. M. (2006). Computational Thinking.",
-          "url": "https://doi.org/10.1145/1118178.1118215"
-        },
-        {
-          "citation": "Kolb, D. A. (1984). Experiential Learning.",
-          "url": "https://www.peterlang.com/document/1095800"
-        },
-        {
-          "citation": "Hmelo-Silver, C. E. (2004). Problem-Based Learning.",
-          "url": "https://doi.org/10.1023/B:EDPR.0000034022.16470.f3"
-        },
-        {
-          "citation": "Resnick, M. (2017). Lifelong Kindergarten.",
-          "url": "https://mitpress.mit.edu/9780262536134/lifelong-kindergarten/"
-        },
-        {
-          "citation": "Bers, M. U. (2022). Coding as a Playground.",
-          "url": "https://www.routledge.com/Coding-as-a-Playground-Programming-and-Computational-Thinking-in-the-Early-Childhood-Classroom/Bers/p/book/9781032016153"
-        }
-      ],
-      "cffPath": "/doi/2020-robotics-education/CITATION.cff",
-      "zenodoPath": "/doi/2020-robotics-education/zenodo.json",
-      "crossrefPath": "/doi/2020-robotics-education/crossref.json",
-      "zenodoMetadata": {
-        "metadata": {
-          "title": "Metodologias Ativas no Ensino de Lógica de Programação",
-          "upload_type": "publication",
-          "publication_type": "article",
-          "publication_date": "2020-01-01",
-          "description": "<p>Estudo sobre robotica educacional e metodologias ativas no ensino de logica de programacao para jovens. O problema central investigado e: Modelos expositivos tradicionais geram baixa retencao e pouca transferencia de aprendizagem computacional. Adotou-se um desenho metodologico com foco em validade interna, comparabilidade e reproducibilidade: Intervencao didatica com atividades praticas, resolucao de problemas e avaliacao por competencias. Os resultados principais indicam que a abordagem hands-on melhora engajamento, colaboracao e consolidacao de raciocinio logico.. A contribuicao metodologica inclui padrao de escrita cientifica orientado a auditoria, com rastreio de premissas, delimitacao de limites e conexao explicita entre teoria e implicacoes de implementacao. O objetivo deste trabalho e avaliar de forma estruturada como &quot;Metodologias Ativas no Ensino de Lógica de Programação&quot; pode gerar valor cientifico e operacional com rastreabilidade metodologica. Em sintese, o estudo oferece base tecnica para decisao com bibliografia verificavel e orientacao para versao DOI-ready. (Papert, 1980).</p>",
-          "creators": [
-            {
-              "name": "Flores, Carlos Ulisses",
-              "affiliation": "Codex Hash Research",
-              "orcid": "0000-0002-6034-7765"
-            }
-          ],
-          "keywords": [
-            "ROBOTICS",
-            "EDUCATION"
-          ],
-          "language": "pt-BR",
-          "references": [
-            "Papert, S. (1980). Mindstorms. (https://books.google.com/books?id=5ks9AAAAMAAJ)",
-            "Wing, J. M. (2006). Computational Thinking. (https://doi.org/10.1145/1118178.1118215)",
-            "Kolb, D. A. (1984). Experiential Learning. (https://www.peterlang.com/document/1095800)",
-            "Hmelo-Silver, C. E. (2004). Problem-Based Learning. (https://doi.org/10.1023/B:EDPR.0000034022.16470.f3)",
-            "Resnick, M. (2017). Lifelong Kindergarten. (https://mitpress.mit.edu/9780262536134/lifelong-kindergarten/)",
-            "Bers, M. U. (2022). Coding as a Playground. (https://www.routledge.com/Coding-as-a-Playground-Programming-and-Computational-Thinking-in-the-Early-Childhood-Classroom/Bers/p/book/9781032016153)"
-          ],
-          "related_identifiers": [
-            {
-              "identifier": "https://ulissesflores.com/essays/2020-robotics-education",
-              "relation": "isSupplementTo",
-              "resource_type": "publication-article"
-            },
-            {
-              "identifier": "https://ulissesflores.com/deep-research/2020-robotics-education/deep-research.pdf",
-              "relation": "isIdenticalTo",
-              "resource_type": "publication-article"
-            }
-          ],
-          "version": "v2026-02-21",
-          "notes": "DOI-ready metadata generated automatically from the canonical UPKF publication dataset. DOI target: 10.5281/zenodo.202033 (not minted).",
-          "license": "CC-BY-4.0"
-        }
-      },
-      "crossrefMetadata": {
-        "schema": "https://data.crossref.org/schemas/crossref_input.json",
-        "type": "article",
-        "title": "Metodologias Ativas no Ensino de Lógica de Programação",
-        "abstract": "Estudo sobre robotica educacional e metodologias ativas no ensino de logica de programacao para jovens. O problema central investigado e: Modelos expositivos tradicionais geram baixa retencao e pouca transferencia de aprendizagem computacional. Adotou-se um desenho metodologico com foco em validade interna, comparabilidade e reproducibilidade: Intervencao didatica com atividades praticas, resolucao de problemas e avaliacao por competencias. Os resultados principais indicam que a abordagem hands-on melhora engajamento, colaboracao e consolidacao de raciocinio logico.. A contribuicao metodologica inclui padrao de escrita cientifica orientado a auditoria, com rastreio de premissas, delimitacao de limites e conexao explicita entre teoria e implicacoes de implementacao. O objetivo deste trabalho e avaliar de forma estruturada como \"Metodologias Ativas no Ensino de Lógica de Programação\" pode gerar valor cientifico e operacional com rastreabilidade metodologica. Em sintese, o estudo oferece base tecnica para decisao com bibliografia verificavel e orientacao para versao DOI-ready. (Papert, 1980).",
-        "authors": [
-          {
-            "given": "Carlos Ulisses",
-            "family": "Flores",
-            "ORCID": "https://orcid.org/0000-0002-6034-7765",
-            "affiliation": "Codex Hash Research"
-          }
-        ],
-        "issued": "2020-01-01",
-        "language": "pt-BR",
-        "URL": "https://ulissesflores.com/essays/2020-robotics-education",
-        "resource": {
-          "primary": {
-            "URL": "https://ulissesflores.com/essays/2020-robotics-education"
-          },
-          "pdf": {
-            "URL": "https://ulissesflores.com/deep-research/2020-robotics-education/deep-research.pdf"
-          }
-        },
-        "reference": [
-          {
-            "key": "2020-robotics-education-ref-1",
-            "unstructured": "Papert, S. (1980). Mindstorms.",
-            "URL": "https://books.google.com/books?id=5ks9AAAAMAAJ"
-          },
-          {
-            "key": "2020-robotics-education-ref-2",
-            "unstructured": "Wing, J. M. (2006). Computational Thinking.",
-            "DOI": "10.1145/1118178.1118215",
-            "URL": "https://doi.org/10.1145/1118178.1118215"
-          },
-          {
-            "key": "2020-robotics-education-ref-3",
-            "unstructured": "Kolb, D. A. (1984). Experiential Learning.",
-            "URL": "https://www.peterlang.com/document/1095800"
-          },
-          {
-            "key": "2020-robotics-education-ref-4",
-            "unstructured": "Hmelo-Silver, C. E. (2004). Problem-Based Learning.",
-            "DOI": "10.1023/B:EDPR.0000034022.16470.f3",
-            "URL": "https://doi.org/10.1023/B:EDPR.0000034022.16470.f3"
-          },
-          {
-            "key": "2020-robotics-education-ref-5",
-            "unstructured": "Resnick, M. (2017). Lifelong Kindergarten.",
-            "URL": "https://mitpress.mit.edu/9780262536134/lifelong-kindergarten/"
-          },
-          {
-            "key": "2020-robotics-education-ref-6",
-            "unstructured": "Bers, M. U. (2022). Coding as a Playground.",
-            "URL": "https://www.routledge.com/Coding-as-a-Playground-Programming-and-Computational-Thinking-in-the-Early-Childhood-Classroom/Bers/p/book/9781032016153"
-          }
-        ],
-        "doi_target": "10.5281/zenodo.202033"
-      },
-      "citationCff": "cff-version: 1.2.0\nmessage: \"If you use this work, cite with this metadata. DOI target: 10.5281/zenodo.202033 (not minted).\"\ntitle: \"Metodologias Ativas no Ensino de Lógica de Programação\"\ntype: article\nauthors:\n  - family-names: \"Flores\"\n    given-names: \"Carlos Ulisses\"\n    orcid: \"0000-0002-6034-7765\"\nidentifiers:\n  - type: url\n    value: \"https://ulissesflores.com/essays/2020-robotics-education\"\n  - type: url\n    value: \"https://ulissesflores.com/deep-research/2020-robotics-education/deep-research.pdf\"\nabstract: \"Estudo sobre robotica educacional e metodologias ativas no ensino de logica de programacao para jovens. O problema central investigado e: Modelos expositivos tradicionais geram baixa retencao e pouca transferencia de aprendizagem computacional. Adotou-se um desenho metodologico com foco em validade interna, comparabilidade e reproducibilidade: Intervencao didatica com atividades praticas, resolucao de problemas e avaliacao por competencias. Os resultados principais indicam que a abordagem hands-on melhora engajamento, colaboracao e consolidacao de raciocinio logico.. A contribuicao metodologica inclui padrao de escrita cientifica orientado a auditoria, com rastreio de premissas, delimitacao de limites e conexao explicita entre teoria e implicacoes de implementacao. O objetivo deste trabalho e avaliar de forma estruturada como \\\"Metodologias Ativas no Ensino de Lógica de Programação\\\" pode gerar valor cientifico e operacional com rastreabilidade metodologica. Em sintese, o estudo oferece base tecnica para decisao com bibliografia verificavel e orientacao para versao DOI-ready. (Papert, 1980).\"\nkeywords: [\"ROBOTICS\", \"EDUCATION\"]\nlicense: \"CC-BY-4.0\"\nversion: \"v2026-02-21\"\ndate-released: \"2020-01-01\"\nrepository-code: \"https://ulissesflores.com/essays/2020-robotics-education\"\nreferences:\n  - unstructured: \"Papert, S. (1980). Mindstorms.\"\n    url: \"https://books.google.com/books?id=5ks9AAAAMAAJ\"\n  - unstructured: \"Wing, J. M. (2006). Computational Thinking.\"\n    url: \"https://doi.org/10.1145/1118178.1118215\"\n  - unstructured: \"Kolb, D. A. (1984). Experiential Learning.\"\n    url: \"https://www.peterlang.com/document/1095800\"\n  - unstructured: \"Hmelo-Silver, C. E. (2004). Problem-Based Learning.\"\n    url: \"https://doi.org/10.1023/B:EDPR.0000034022.16470.f3\"\n  - unstructured: \"Resnick, M. (2017). Lifelong Kindergarten.\"\n    url: \"https://mitpress.mit.edu/9780262536134/lifelong-kindergarten/\"\n  - unstructured: \"Bers, M. U. (2022). Coding as a Playground.\"\n    url: \"https://www.routledge.com/Coding-as-a-Playground-Programming-and-Computational-Thinking-in-the-Early-Childhood-Classroom/Bers/p/book/9781032016153\"\n",
+      "citationCff": "cff-version: 1.2.0\nmessage: \"If you use this work, cite with this metadata. No DOI minted yet; cite by the canonical URL.\"\ntitle: \"O Clube Santo: Arqueologia Espiritual, Teológica e Visual do Metodismo\"\ntype: article\nauthors:\n  - family-names: \"Flores\"\n    given-names: \"Carlos Ulisses\"\n    orcid: \"0000-0002-6034-7765\"\nidentifiers:\n  - type: url\n    value: \"https://ulissesflores.com/research/2023-holy-club-methodism\"\n  - type: url\n    value: \"https://ulissesflores.com/deep-research/2023-holy-club-methodism/deep-research.pdf\"\nabstract: \"Investigacao arqueologica espiritual, teologica e visual do Holy Club e suas implicacoes para o metodismo. O problema central investigado e: A memoria do movimento metodista inicial e frequentemente reduzida a narrativas lineares e pouco contextualizadas. Adotou-se um desenho metodologico com foco em validade interna, comparabilidade e reproducibilidade: Leitura historica interdisciplinar com fontes primarias, iconografia e tradicao institucional. Os resultados principais indicam que o estudo reconstrói redes de praticas formativas e disciplina comunitaria no contexto original.. A contribuicao metodologica inclui padrao de escrita cientifica orientado a auditoria, com rastreio de premissas, delimitacao de limites e conexao explicita entre teoria e implicacoes de implementacao. O objetivo deste trabalho e avaliar de forma estruturada como \\\"O Clube Santo: Arqueologia Espiritual, Teológica e Visual do Metodismo\\\" pode gerar valor cientifico e operacional com rastreabilidade metodologica. Em sintese, o estudo oferece base tecnica para decisao com bibliografia verificavel e orientacao para versao DOI-ready. (Wesley, 2026).\"\nkeywords: [\"HOLY\", \"CLUB\", \"METHODISM\"]\nlicense: \"CC-BY-4.0\"\nversion: \"v2026-02-21\"\ndate-released: \"2023-01-01\"\nrepository-code: \"https://ulissesflores.com/research/2023-holy-club-methodism\"\nreferences:\n  - unstructured: \"Wesley, J. The Journal of John Wesley.\"\n    url: \"https://wesley.nnu.edu/john-wesley/the-journal-of-john-wesley/\"\n  - unstructured: \"Heitzenrater, R. P. (2013). Wesley and the People Called Methodists.\"\n    url: \"https://www.abingdonpress.com/product/9781426775642\"\n  - unstructured: \"Hempton, D. (2005). Methodism: Empire of the Spirit.\"\n    url: \"https://yalebooks.yale.edu/book/9780300106149/methodism/\"\n  - unstructured: \"Maddox, R. L. (1994). Responsible Grace.\"\n    url: \"https://www.abingdonpress.com/product/9780687467426\"\n  - unstructured: \"Outler, A. C. (1964). John Wesley.\"\n    url: \"https://global.oup.com/academic/product/john-wesley-9780195028102\"\n  - unstructured: \"Oxford Handbook of Methodist Studies.\"\n    url: \"https://academic.oup.com/edited-volume/34318\"\n",
       "score": {
         "completenessScore": 1000,
         "referencesScore": 1000,
@@ -3953,10 +3192,6 @@
       "language": "pt-BR",
       "canonicalUrl": "https://ulissesflores.com/essays/2017-chaos-theory-economics",
       "pdfUrl": "https://ulissesflores.com/deep-research/2017-chaos-theory-economics/deep-research.pdf",
-      "doi": {
-        "status": "target",
-        "target": "10.5281/zenodo.201737"
-      },
       "version": "v2026-02-21",
       "license": "CC-BY-4.0",
       "creators": [
@@ -4044,7 +3279,7 @@
             }
           ],
           "version": "v2026-02-21",
-          "notes": "DOI-ready metadata generated automatically from the canonical UPKF publication dataset. DOI target: 10.5281/zenodo.201737 (not minted).",
+          "notes": "DOI-ready metadata generated automatically from the canonical UPKF publication dataset. No DOI minted for this work yet; cite it by the canonical URL.",
           "license": "CC-BY-4.0"
         }
       },
@@ -4107,10 +3342,9 @@
             "unstructured": "Beinhocker, E. D. (2006). The Origin of Wealth.",
             "URL": "https://www.hbs.edu/faculty/Pages/item.aspx?num=19867"
           }
-        ],
-        "doi_target": "10.5281/zenodo.201737"
+        ]
       },
-      "citationCff": "cff-version: 1.2.0\nmessage: \"If you use this work, cite with this metadata. DOI target: 10.5281/zenodo.201737 (not minted).\"\ntitle: \"Teoria do Caos: Emergência e Auto-organização em Mercados\"\ntype: article\nauthors:\n  - family-names: \"Flores\"\n    given-names: \"Carlos Ulisses\"\n    orcid: \"0000-0002-6034-7765\"\nidentifiers:\n  - type: url\n    value: \"https://ulissesflores.com/essays/2017-chaos-theory-economics\"\n  - type: url\n    value: \"https://ulissesflores.com/deep-research/2017-chaos-theory-economics/deep-research.pdf\"\nabstract: \"Trabalho sobre teoria do caos e auto-organizacao em mercados nao lineares. O problema central investigado e: Hipoteses de equilibrio linear falham em explicar dinamicas de instabilidade e transicoes abruptas de mercado. Adotou-se um desenho metodologico com foco em validade interna, comparabilidade e reproducibilidade: Discussao teorica com referencia a sistemas dinamicos, sensibilidade a condicoes iniciais e comportamento emergente. Os resultados principais indicam que o estudo mostra que pequenas perturbacoes podem amplificar risco e alterar padroes macro de forma nao proporcional.. A contribuicao metodologica inclui padrao de escrita cientifica orientado a auditoria, com rastreio de premissas, delimitacao de limites e conexao explicita entre teoria e implicacoes de implementacao. O objetivo deste trabalho e avaliar de forma estruturada como \\\"Teoria do Caos: Emergência e Auto-organização em Mercados\\\" pode gerar valor cientifico e operacional com rastreabilidade metodologica. Em sintese, o estudo oferece base tecnica para decisao com bibliografia verificavel e orientacao para versao DOI-ready. (Lorenz, 1963).\"\nkeywords: [\"CHAOS\", \"THEORY\", \"ECONOMICS\"]\nlicense: \"CC-BY-4.0\"\nversion: \"v2026-02-21\"\ndate-released: \"2017-01-01\"\nrepository-code: \"https://ulissesflores.com/essays/2017-chaos-theory-economics\"\nreferences:\n  - unstructured: \"Lorenz, E. N. (1963). Deterministic Nonperiodic Flow.\"\n    url: \"https://doi.org/10.1175/1520-0469(1963)020%3C0130:DNF%3E2.0.CO;2\"\n  - unstructured: \"Mandelbrot, B. (1963). The Variation of Certain Speculative Prices.\"\n    url: \"https://doi.org/10.1080/01621459.1963.10500830\"\n  - unstructured: \"Arthur, W. B. (1999). Complexity and the Economy.\"\n    url: \"https://doi.org/10.1126/science.284.5411.107\"\n  - unstructured: \"Farmer, J. D.; Foley, D. (2009). The economy needs agent-based modelling.\"\n    url: \"https://doi.org/10.1038/460685a\"\n  - unstructured: \"Rosser, J. B. (2000). From Catastrophe to Chaos.\"\n    url: \"https://link.springer.com/book/10.1007/978-1-4615-4481-9\"\n  - unstructured: \"Beinhocker, E. D. (2006). The Origin of Wealth.\"\n    url: \"https://www.hbs.edu/faculty/Pages/item.aspx?num=19867\"\n",
+      "citationCff": "cff-version: 1.2.0\nmessage: \"If you use this work, cite with this metadata. No DOI minted yet; cite by the canonical URL.\"\ntitle: \"Teoria do Caos: Emergência e Auto-organização em Mercados\"\ntype: article\nauthors:\n  - family-names: \"Flores\"\n    given-names: \"Carlos Ulisses\"\n    orcid: \"0000-0002-6034-7765\"\nidentifiers:\n  - type: url\n    value: \"https://ulissesflores.com/essays/2017-chaos-theory-economics\"\n  - type: url\n    value: \"https://ulissesflores.com/deep-research/2017-chaos-theory-economics/deep-research.pdf\"\nabstract: \"Trabalho sobre teoria do caos e auto-organizacao em mercados nao lineares. O problema central investigado e: Hipoteses de equilibrio linear falham em explicar dinamicas de instabilidade e transicoes abruptas de mercado. Adotou-se um desenho metodologico com foco em validade interna, comparabilidade e reproducibilidade: Discussao teorica com referencia a sistemas dinamicos, sensibilidade a condicoes iniciais e comportamento emergente. Os resultados principais indicam que o estudo mostra que pequenas perturbacoes podem amplificar risco e alterar padroes macro de forma nao proporcional.. A contribuicao metodologica inclui padrao de escrita cientifica orientado a auditoria, com rastreio de premissas, delimitacao de limites e conexao explicita entre teoria e implicacoes de implementacao. O objetivo deste trabalho e avaliar de forma estruturada como \\\"Teoria do Caos: Emergência e Auto-organização em Mercados\\\" pode gerar valor cientifico e operacional com rastreabilidade metodologica. Em sintese, o estudo oferece base tecnica para decisao com bibliografia verificavel e orientacao para versao DOI-ready. (Lorenz, 1963).\"\nkeywords: [\"CHAOS\", \"THEORY\", \"ECONOMICS\"]\nlicense: \"CC-BY-4.0\"\nversion: \"v2026-02-21\"\ndate-released: \"2017-01-01\"\nrepository-code: \"https://ulissesflores.com/essays/2017-chaos-theory-economics\"\nreferences:\n  - unstructured: \"Lorenz, E. N. (1963). Deterministic Nonperiodic Flow.\"\n    url: \"https://doi.org/10.1175/1520-0469(1963)020%3C0130:DNF%3E2.0.CO;2\"\n  - unstructured: \"Mandelbrot, B. (1963). The Variation of Certain Speculative Prices.\"\n    url: \"https://doi.org/10.1080/01621459.1963.10500830\"\n  - unstructured: \"Arthur, W. B. (1999). Complexity and the Economy.\"\n    url: \"https://doi.org/10.1126/science.284.5411.107\"\n  - unstructured: \"Farmer, J. D.; Foley, D. (2009). The economy needs agent-based modelling.\"\n    url: \"https://doi.org/10.1038/460685a\"\n  - unstructured: \"Rosser, J. B. (2000). From Catastrophe to Chaos.\"\n    url: \"https://link.springer.com/book/10.1007/978-1-4615-4481-9\"\n  - unstructured: \"Beinhocker, E. D. (2006). The Origin of Wealth.\"\n    url: \"https://www.hbs.edu/faculty/Pages/item.aspx?num=19867\"\n",
       "score": {
         "completenessScore": 1000,
         "referencesScore": 1000,

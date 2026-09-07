@@ -75,7 +75,6 @@ Contudo, a análise também reforçou a complexidade de transpor um modelo de IA
 - Compliance score: 960/1000
 - Polymathic index: 960/1000
 - Macro score: 960/1000
-- DOI status: target
-- DOI target: 10.5281/zenodo.202502
+- DOI: not minted (cite by canonical URL)
 - Canonical citation seed: HENGST, 2026; FISCHER, 2026; FLORES, 2026
 - Generated at: 2026-02-21

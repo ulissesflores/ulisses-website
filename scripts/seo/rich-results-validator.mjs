@@ -25,7 +25,7 @@
 const DEFAULT_URLS = [
   'https://ulissesflores.com/',
   'https://ulissesflores.com/identidade',
-  'https://ulissesflores.com/whitepapers/2023-digital-legacy',
+  'https://ulissesflores.com/whitepapers/2025-iot-data-sovereignty',
   'https://ulissesflores.com/acervo-teologico/avivamento-e-consagracao/restaurando-o-primeiro-amor',
   'https://ulissesflores.com/public.jsonld',
 ];

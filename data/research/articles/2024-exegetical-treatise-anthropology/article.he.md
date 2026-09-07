@@ -73,7 +73,6 @@
 - Compliance score: 960/1000
 - Polymathic index: 960/1000
 - Macro score: 960/1000
-- DOI status: target
-- DOI target: 10.5281/zenodo.202424
+- DOI: not minted (cite by canonical URL)
 - Canonical citation seed: Ricoeur, 1976; Brueggemann, 1997; Wright, 1992
 - Generated at: 2026-03-12

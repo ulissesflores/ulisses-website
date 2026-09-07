@@ -73,7 +73,6 @@ Agenda de continuidade: Replicar o estudo em novos contextos operacionais com de
 - Compliance score: 960/1000
 - Polymathic index: 960/1000
 - Macro score: 960/1000
-- DOI status: target
-- DOI target: 10.5281/zenodo.202412
+- DOI: not minted (cite by canonical URL)
 - Canonical citation seed: Ehrman, 2012; Sanders, 1993; Meier, 1991-2016
 - Generated at: 2026-02-21

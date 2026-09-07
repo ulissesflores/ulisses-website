@@ -15,10 +15,9 @@ export interface DeepResearchArtifact {
   abstract: string;
   abstractEn: string;
   citation: string;
-  doi: {
-    status: 'target' | 'minted';
-    target?: string;
-    minted?: string;
+  doi?: {
+    status: 'minted';
+    minted: string;
   };
   quality: DeepResearchQuality;
   polymathicIndex: number;
@@ -42,10 +41,6 @@ export const deepResearchArtifacts: Record<string, DeepResearchArtifact> = {
       "pdf": "/deep-research/2025-little-law-resilience/deep-research.pdf",
       "docx": "/deep-research/2025-little-law-resilience/deep-research.docx"
     },
-    "doi": {
-      "status": "target",
-      "target": "10.5281/zenodo.202501"
-    },
     "quality": {
       "phase1": 952,
       "phase2": 980,
@@ -67,10 +62,6 @@ export const deepResearchArtifacts: Record<string, DeepResearchArtifact> = {
       "md": "/deep-research/2025-lstm-asset-prediction/deep-research.md",
       "pdf": "/deep-research/2025-lstm-asset-prediction/deep-research.pdf",
       "docx": "/deep-research/2025-lstm-asset-prediction/deep-research.docx"
-    },
-    "doi": {
-      "status": "target",
-      "target": "10.5281/zenodo.202502"
     },
     "quality": {
       "phase1": 940,
@@ -94,10 +85,6 @@ export const deepResearchArtifacts: Record<string, DeepResearchArtifact> = {
       "pdf": "/deep-research/2025-hybrid-cooling-thermodynamics/deep-research.pdf",
       "docx": "/deep-research/2025-hybrid-cooling-thermodynamics/deep-research.docx"
     },
-    "doi": {
-      "status": "target",
-      "target": "10.5281/zenodo.202503"
-    },
     "quality": {
       "phase1": 940,
       "phase2": 970,
@@ -119,10 +106,6 @@ export const deepResearchArtifacts: Record<string, DeepResearchArtifact> = {
       "md": "/deep-research/2025-iot-data-sovereignty/deep-research.md",
       "pdf": "/deep-research/2025-iot-data-sovereignty/deep-research.pdf",
       "docx": "/deep-research/2025-iot-data-sovereignty/deep-research.docx"
-    },
-    "doi": {
-      "status": "target",
-      "target": "10.5281/zenodo.202504"
     },
     "quality": {
       "phase1": 997,
@@ -146,10 +129,6 @@ export const deepResearchArtifacts: Record<string, DeepResearchArtifact> = {
       "pdf": "/deep-research/2025-fraud-detection-mlp/deep-research.pdf",
       "docx": "/deep-research/2025-fraud-detection-mlp/deep-research.docx"
     },
-    "doi": {
-      "status": "target",
-      "target": "10.5281/zenodo.202506"
-    },
     "quality": {
       "phase1": 948,
       "phase2": 980,
@@ -171,10 +150,6 @@ export const deepResearchArtifacts: Record<string, DeepResearchArtifact> = {
       "md": "/deep-research/2024-historicity-jesus-archaeology/deep-research.md",
       "pdf": "/deep-research/2024-historicity-jesus-archaeology/deep-research.pdf",
       "docx": "/deep-research/2024-historicity-jesus-archaeology/deep-research.docx"
-    },
-    "doi": {
-      "status": "target",
-      "target": "10.5281/zenodo.202412"
     },
     "quality": {
       "phase1": 997,
@@ -198,10 +173,6 @@ export const deepResearchArtifacts: Record<string, DeepResearchArtifact> = {
       "pdf": "/deep-research/2024-bitcoin-praxeology/deep-research.pdf",
       "docx": "/deep-research/2024-bitcoin-praxeology/deep-research.docx"
     },
-    "doi": {
-      "status": "target",
-      "target": "10.5281/zenodo.202414"
-    },
     "quality": {
       "phase1": 997,
       "phase2": 960,
@@ -223,10 +194,6 @@ export const deepResearchArtifacts: Record<string, DeepResearchArtifact> = {
       "md": "/deep-research/2024-scribal-canonization-ezra/deep-research.md",
       "pdf": "/deep-research/2024-scribal-canonization-ezra/deep-research.pdf",
       "docx": "/deep-research/2024-scribal-canonization-ezra/deep-research.docx"
-    },
-    "doi": {
-      "status": "target",
-      "target": "10.5281/zenodo.202415"
     },
     "quality": {
       "phase1": 997,
@@ -250,10 +217,6 @@ export const deepResearchArtifacts: Record<string, DeepResearchArtifact> = {
       "pdf": "/deep-research/2024-theology-economic-order/deep-research.pdf",
       "docx": "/deep-research/2024-theology-economic-order/deep-research.docx"
     },
-    "doi": {
-      "status": "target",
-      "target": "10.5281/zenodo.202417"
-    },
     "quality": {
       "phase1": 935,
       "phase2": 970,
@@ -265,32 +228,6 @@ export const deepResearchArtifacts: Record<string, DeepResearchArtifact> = {
     "polymathicIndex": 1000,
     "qualityScore": 963
   },
-  "2024-ring-signatures-privacy": {
-    "slug": "2024-ring-signatures-privacy",
-    "title": "Implementação de Ring Signatures e Endereços Furtivos",
-    "abstract": "Whitepaper sobre ring signatures e enderecos furtivos para privacidade transacional em sistemas distribuidos. O problema central investigado e: Transparencia absoluta em blockchains publicas pode expor metadados sensiveis e comprometer fungibilidade. Adotou-se um desenho metodologico com foco em validade interna, comparabilidade e reproducibilidade: Revisao de primitives criptograficas com analise de seguranca, custos computacionais e requisitos de implementacao. Os resultados principais indicam que a combinacao de assinaturas em anel e stealth addresses melhora privacidade sem eliminar verificabilidade criptografica.. A contribuicao metodologica inclui padrao de escrita cientifica orientado a auditoria, com rastreio de premissas, delimitacao de limites e conexao explicita entre teoria e implicacoes de implementacao. O objetivo deste trabalho e avaliar de forma estruturada como \"Implementação de Ring Signatures e Endereços Furtivos\" pode gerar valor cientifico e operacional com rastreabilidade metodologica. Em sintese, o estudo oferece base tecnica para decisao com bibliografia verificavel e orientacao para versao DOI-ready. (Rivest, 2001).",
-    "abstractEn": "This article presents a reproducible, high-rigor synthesis of \"Implementação de Ring Signatures e Endereços Furtivos\" by aligning methodological traceability, interdisciplinary evidence, and operational recommendations for deployment contexts with explicit governance constraints. (Franklin, 2012).",
-    "citation": "Ulisses Flores (2026) Implementação de Ring Signatures e Endereços Furtivos. Codex Hash Research Lab.",
-    "files": {
-      "md": "/deep-research/2024-ring-signatures-privacy/deep-research.md",
-      "pdf": "/deep-research/2024-ring-signatures-privacy/deep-research.pdf",
-      "docx": "/deep-research/2024-ring-signatures-privacy/deep-research.docx"
-    },
-    "doi": {
-      "status": "target",
-      "target": "10.5281/zenodo.202418"
-    },
-    "quality": {
-      "phase1": 997,
-      "phase2": 970,
-      "phase3": 993,
-      "compliance": 1000,
-      "polymathic": 990,
-      "macro": 990
-    },
-    "polymathicIndex": 990,
-    "qualityScore": 990
-  },
   "2024-agritech-agile-flow": {
     "slug": "2024-agritech-agile-flow",
     "title": "Transformação Ágil e Engenharia de Fluxo em Data Science",
@@ -301,10 +238,6 @@ export const deepResearchArtifacts: Record<string, DeepResearchArtifact> = {
       "md": "/deep-research/2024-agritech-agile-flow/deep-research.md",
       "pdf": "/deep-research/2024-agritech-agile-flow/deep-research.pdf",
       "docx": "/deep-research/2024-agritech-agile-flow/deep-research.docx"
-    },
-    "doi": {
-      "status": "target",
-      "target": "10.5281/zenodo.202423"
     },
     "quality": {
       "phase1": 944,
@@ -328,10 +261,6 @@ export const deepResearchArtifacts: Record<string, DeepResearchArtifact> = {
       "pdf": "/deep-research/2024-exegetical-treatise-anthropology/deep-research.pdf",
       "docx": "/deep-research/2024-exegetical-treatise-anthropology/deep-research.docx"
     },
-    "doi": {
-      "status": "target",
-      "target": "10.5281/zenodo.202424"
-    },
     "quality": {
       "phase1": 997,
       "phase2": 970,
@@ -354,10 +283,6 @@ export const deepResearchArtifacts: Record<string, DeepResearchArtifact> = {
       "pdf": "/deep-research/2023-marian-apparitions-critique/deep-research.pdf",
       "docx": "/deep-research/2023-marian-apparitions-critique/deep-research.docx"
     },
-    "doi": {
-      "status": "target",
-      "target": "10.5281/zenodo.202325"
-    },
     "quality": {
       "phase1": 997,
       "phase2": 980,
@@ -368,32 +293,6 @@ export const deepResearchArtifacts: Record<string, DeepResearchArtifact> = {
     },
     "polymathicIndex": 990,
     "qualityScore": 992
-  },
-  "2023-digital-legacy": {
-    "slug": "2023-digital-legacy",
-    "title": "Desafios da Herança Digital: Preservação de Memória Pós-Mortem",
-    "abstract": "Whitepaper sobre desafios da heranca digital e preservacao de memoria pos-mortem. O problema central investigado e: Ativos digitais e identidades online carecem de protocolos claros de sucessao, custodia e consentimento. Adotou-se um desenho metodologico com foco em validade interna, comparabilidade e reproducibilidade: Analise de risco juridico-tecnico com proposta de arquitetura de preservacao e governanca de acesso. Os resultados principais indicam que o documento define requisitos minimos para continuidade, autenticidade e privacidade de acervos digitais.. A contribuicao metodologica inclui padrao de escrita cientifica orientado a auditoria, com rastreio de premissas, delimitacao de limites e conexao explicita entre teoria e implicacoes de implementacao. O objetivo deste trabalho e avaliar de forma estruturada como \"Desafios da Herança Digital: Preservação de Memória Pós-Mortem\" pode gerar valor cientifico e operacional com rastreabilidade metodologica. Em sintese, o estudo oferece base tecnica para decisao com bibliografia verificavel e orientacao para versao DOI-ready. (Union, 2016).",
-    "abstractEn": "This article presents a reproducible, high-rigor synthesis of \"Desafios da Herança Digital: Preservação de Memória Pós-Mortem\" by aligning methodological traceability, interdisciplinary evidence, and operational recommendations for deployment contexts with explicit governance constraints. (management, 2026).",
-    "citation": "Ulisses Flores (2026) Desafios da Herança Digital: Preservação de Memória Pós-Mortem. Codex Hash Research Lab.",
-    "files": {
-      "md": "/deep-research/2023-digital-legacy/deep-research.md",
-      "pdf": "/deep-research/2023-digital-legacy/deep-research.pdf",
-      "docx": "/deep-research/2023-digital-legacy/deep-research.docx"
-    },
-    "doi": {
-      "status": "target",
-      "target": "10.5281/zenodo.202327"
-    },
-    "quality": {
-      "phase1": 997,
-      "phase2": 950,
-      "phase3": 993,
-      "compliance": 1000,
-      "polymathic": 970,
-      "macro": 982
-    },
-    "polymathicIndex": 970,
-    "qualityScore": 982
   },
   "2023-holy-club-methodism": {
     "slug": "2023-holy-club-methodism",
@@ -406,10 +305,6 @@ export const deepResearchArtifacts: Record<string, DeepResearchArtifact> = {
       "pdf": "/deep-research/2023-holy-club-methodism/deep-research.pdf",
       "docx": "/deep-research/2023-holy-club-methodism/deep-research.docx"
     },
-    "doi": {
-      "status": "target",
-      "target": "10.5281/zenodo.202329"
-    },
     "quality": {
       "phase1": 997,
       "phase2": 980,
@@ -421,58 +316,6 @@ export const deepResearchArtifacts: Record<string, DeepResearchArtifact> = {
     "polymathicIndex": 990,
     "qualityScore": 992
   },
-  "2022-theology-of-hope": {
-    "slug": "2022-theology-of-hope",
-    "title": "A Teologia da Esperança em Tempos de Crise",
-    "abstract": "Ensaio sobre teologia da esperanca em contextos de crise social, economica e institucional. O problema central investigado e: Cenarios de incerteza tendem a produzir fatalismo ou respostas imediatistas sem base antropologica robusta. Adotou-se um desenho metodologico com foco em validade interna, comparabilidade e reproducibilidade: Analise teologica e filosofica de categorias de esperanca, sofrimento e responsabilidade comunitaria. Os resultados principais indicam que o artigo explicita como a esperanca pode operar como categoria ativa de acao e nao apenas conforto simbólico.. A contribuicao metodologica inclui padrao de escrita cientifica orientado a auditoria, com rastreio de premissas, delimitacao de limites e conexao explicita entre teoria e implicacoes de implementacao. O objetivo deste trabalho e avaliar de forma estruturada como \"A Teologia da Esperança em Tempos de Crise\" pode gerar valor cientifico e operacional com rastreabilidade metodologica. Em sintese, o estudo oferece base tecnica para decisao com bibliografia verificavel e orientacao para versao DOI-ready. (Moltmann, 1967).",
-    "abstractEn": "This article presents a reproducible, high-rigor synthesis of \"A Teologia da Esperança em Tempos de Crise\" by aligning methodological traceability, interdisciplinary evidence, and operational recommendations for deployment contexts with explicit governance constraints. (Bonhoeffer, 1953).",
-    "citation": "Ulisses Flores (2026) A Teologia da Esperança em Tempos de Crise. Codex Hash Research Lab.",
-    "files": {
-      "md": "/deep-research/2022-theology-of-hope/deep-research.md",
-      "pdf": "/deep-research/2022-theology-of-hope/deep-research.pdf",
-      "docx": "/deep-research/2022-theology-of-hope/deep-research.docx"
-    },
-    "doi": {
-      "status": "target",
-      "target": "10.5281/zenodo.202231"
-    },
-    "quality": {
-      "phase1": 997,
-      "phase2": 950,
-      "phase3": 993,
-      "compliance": 1000,
-      "polymathic": 970,
-      "macro": 982
-    },
-    "polymathicIndex": 970,
-    "qualityScore": 982
-  },
-  "2020-robotics-education": {
-    "slug": "2020-robotics-education",
-    "title": "Metodologias Ativas no Ensino de Lógica de Programação",
-    "abstract": "Estudo sobre robotica educacional e metodologias ativas no ensino de logica de programacao para jovens. O problema central investigado e: Modelos expositivos tradicionais geram baixa retencao e pouca transferencia de aprendizagem computacional. Adotou-se um desenho metodologico com foco em validade interna, comparabilidade e reproducibilidade: Intervencao didatica com atividades praticas, resolucao de problemas e avaliacao por competencias. Os resultados principais indicam que a abordagem hands-on melhora engajamento, colaboracao e consolidacao de raciocinio logico.. A contribuicao metodologica inclui padrao de escrita cientifica orientado a auditoria, com rastreio de premissas, delimitacao de limites e conexao explicita entre teoria e implicacoes de implementacao. O objetivo deste trabalho e avaliar de forma estruturada como \"Metodologias Ativas no Ensino de Lógica de Programação\" pode gerar valor cientifico e operacional com rastreabilidade metodologica. Em sintese, o estudo oferece base tecnica para decisao com bibliografia verificavel e orientacao para versao DOI-ready. (Papert, 1980).",
-    "abstractEn": "This article presents a reproducible, high-rigor synthesis of \"Metodologias Ativas no Ensino de Lógica de Programação\" by aligning methodological traceability, interdisciplinary evidence, and operational recommendations for deployment contexts with explicit governance constraints. (Wing, 2006).",
-    "citation": "Ulisses Flores (2026) Metodologias Ativas no Ensino de Lógica de Programação. Codex Hash Research Lab.",
-    "files": {
-      "md": "/deep-research/2020-robotics-education/deep-research.md",
-      "pdf": "/deep-research/2020-robotics-education/deep-research.pdf",
-      "docx": "/deep-research/2020-robotics-education/deep-research.docx"
-    },
-    "doi": {
-      "status": "target",
-      "target": "10.5281/zenodo.202033"
-    },
-    "quality": {
-      "phase1": 997,
-      "phase2": 950,
-      "phase3": 993,
-      "compliance": 1000,
-      "polymathic": 970,
-      "macro": 982
-    },
-    "polymathicIndex": 970,
-    "qualityScore": 982
-  },
   "2017-chaos-theory-economics": {
     "slug": "2017-chaos-theory-economics",
     "title": "Teoria do Caos: Emergência e Auto-organização em Mercados",
@@ -483,10 +326,6 @@ export const deepResearchArtifacts: Record<string, DeepResearchArtifact> = {
       "md": "/deep-research/2017-chaos-theory-economics/deep-research.md",
       "pdf": "/deep-research/2017-chaos-theory-economics/deep-research.pdf",
       "docx": "/deep-research/2017-chaos-theory-economics/deep-research.docx"
-    },
-    "doi": {
-      "status": "target",
-      "target": "10.5281/zenodo.201737"
     },
     "quality": {
       "phase1": 997,

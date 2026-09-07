@@ -2,7 +2,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { buildLandingContent, buildSummary, getEvidenceSentence, inferFutureAgenda, inferLimitations, inferResearchQuestion, resolveTopicProfile, selectEvidenceSnippets, selectScientificReferences } from './corpus.mjs';
 import { ARTICLE_LONGFORM_DIR, GENERATED_DIR, PUBLICATION_I18N, STOPWORDS } from './constants.mjs';
-import { buildDoiTarget, normalizeLineBreaks } from './text.mjs';
+import { normalizeLineBreaks } from './text.mjs';
 
 function extractCitationToken(citation, fallback = 'Author, 2026') {
   const clean = String(citation || '').replace(/\s+/g, ' ').trim();
@@ -401,10 +401,8 @@ export function buildPublications(rawRows, generatedAt, corpus, referencesLibrar
       mdUrl: `/deep-research/${row.slug}/deep-research.md`,
       docxUrl: `/deep-research/${row.slug}/deep-research.docx`,
       pdfPath: `/deep-research/${row.slug}/deep-research.pdf`,
-      doi: {
-        status: 'target',
-        target: buildDoiTarget({ date: row.year, ordinal: row.ordinal }),
-      },
+      // Sem campo `doi`: uma obra so ganha DOI depois de depositada, e o valor
+      // vem do deposito. O gerador nao monta identificador.
       quality: {
         phase1: 960,
         phase2: 960,

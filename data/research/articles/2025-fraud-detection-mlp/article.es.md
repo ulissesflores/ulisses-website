@@ -73,7 +73,6 @@ Agenda de continuidad: Replicar el estudio en nuevos contextos operacionales con
 - Compliance score: 960/1000
 - Polymathic index: 960/1000
 - Macro score: 960/1000
-- DOI status: target
-- DOI target: 10.5281/zenodo.202506
+- DOI: not minted (cite by canonical URL)
 - Canonical citation seed: Ngai, 2011; Whitrow, 2009; Jurgovsky, 2018
 - Generated at: 2026-03-12

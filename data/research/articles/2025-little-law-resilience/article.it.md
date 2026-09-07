@@ -73,7 +73,6 @@ Agenda di continuità: Replicare lo studio in nuovi contesti operativi con diseg
 - Compliance score: 960/1000
 - Polymathic index: 960/1000
 - Macro score: 960/1000
-- DOI status: target
-- DOI target: 10.5281/zenodo.202501
+- DOI: not minted (cite by canonical URL)
 - Canonical citation seed: Little, 1961; Kingman, 1961; Anderson, 2010
 - Generated at: 2026-03-12

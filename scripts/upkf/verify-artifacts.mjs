@@ -367,17 +367,20 @@ function main() {
     Array.isArray(doiReady.items) && doiReady.items.every((item) => item.score?.finalScore >= 950),
     'Todos os pacotes DOI por artigo com score >= 950',
   );
+  // Antes esta asserção EXIGIA que todo artigo carregasse um doi.target montado —
+  // ou seja, o verificador cobrava o defeito. Agora ela exige o contrário: nenhum
+  // identificador pode existir sem ter sido cunhado num depósito.
   assert(
     checks,
     Array.isArray(doiReady.items) &&
-      doiReady.items.every((item) => item.doi?.status === 'target' && Boolean(item.doi?.target)),
-    'DOI-ready usa politica doi_target para todos os artigos',
+      doiReady.items.every((item) => item.doi === undefined || Boolean(item.doi?.minted)),
+    'Nenhum artigo carrega DOI que nao tenha sido cunhado em deposito',
   );
   assert(
     checks,
     Array.isArray(doiReady.items) &&
       doiReady.items.every((item) => typeof item.citationCff === 'string' && !item.citationCff.includes('\ndoi:')),
-    'CITATION.cff sem campo doi oficial quando status=target',
+    'CITATION.cff sem campo doi oficial enquanto nao houver DOI cunhado',
   );
   assert(
     checks,

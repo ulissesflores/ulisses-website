@@ -73,7 +73,6 @@ Agenda de continuidade: Replicar o estudo em novos contextos operacionais com de
 - Compliance score: 960/1000
 - Polymathic index: 960/1000
 - Macro score: 960/1000
-- DOI status: target
-- DOI target: 10.5281/zenodo.202325
+- DOI: not minted (cite by canonical URL)
 - Canonical citation seed: Faith, 1978; Zimdars-Swartz, 1991; Jr, 1981
 - Generated at: 2026-02-21

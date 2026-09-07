@@ -73,7 +73,6 @@
 - Compliance score: 960/1000
 - Polymathic index: 960/1000
 - Macro score: 960/1000
-- DOI status: target
-- DOI target: 10.5281/zenodo.201737
+- DOI: not minted (cite by canonical URL)
 - Canonical citation seed: Lorenz, 1963; Mandelbrot, 1963; Arthur, 1999
 - Generated at: 2026-03-12

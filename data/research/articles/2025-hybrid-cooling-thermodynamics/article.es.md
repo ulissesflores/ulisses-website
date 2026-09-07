@@ -73,7 +73,6 @@ Agenda de continuidad: Ejecutar pilotos controlados con métricas de SLO, costo 
 - Compliance score: 960/1000
 - Polymathic index: 960/1000
 - Macro score: 960/1000
-- DOI status: target
-- DOI target: 10.5281/zenodo.202503
+- DOI: not minted (cite by canonical URL)
 - Canonical citation seed: ASHRAE, 2026; 90, 2026; systems, 2026
 - Generated at: 2026-03-12

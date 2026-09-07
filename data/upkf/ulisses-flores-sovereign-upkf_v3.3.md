@@ -948,7 +948,7 @@ Competências Interpessoais, Habilidades Analíticas.
 | 15 | J | Canonização Escribal: Análise Histórico-Crítica da Formação do Cânon | 2024 | pt-BR | https://ulissesflores.com/research/2024-scribal-canonization-ezra |
 | 16 | S | Codex Hash Algo-Trading: Sistema Estocástico de Arbitragem | 2024 | pt-BR | — |
 | 17 | J | Fundamentos Transcendentes da Ordem Econômica | 2024 | pt-BR | https://ulissesflores.com/essays/2024-theology-economic-order |
-| 18 | R | Implementação de Ring Signatures e Endereços Furtivos | 2024 | pt-BR | https://ulissesflores.com/whitepapers/2024-ring-signatures-privacy |
+| 18 | R | Implementação de Ring Signatures e Endereços Furtivos | 2024 | pt-BR | — |
 | 19 | S | Interface de Conversação Natural via Integração de APIs de LLM | 2024 | pt-BR | — |
 | 20 | S | Interface de Conversação Natural (Módulo II) | 2024 | pt-BR | — |
 | 21 | S | Plataforma de Análise de Dados Políticos e Monitoramento Legislativo | 2024 | pt-BR | — |
@@ -962,7 +962,7 @@ Competências Interpessoais, Habilidades Analíticas.
 |:--|:--|:---|:---|:---|:---|
 | 25 | J | A Coroa e a Cruz: Análise Teológica e Fenomenológica das Aparições Marianas | 2023 | pt-BR | https://ulissesflores.com/research/2023-marian-apparitions-critique |
 | 26 | S | BioBytes: Sistema de Preservação Digital de Memória | 2023 | pt-BR | — |
-| 27 | R | Desafios da Herança Digital: Preservação de Memória Pós-Mortem | 2023 | pt-BR | https://ulissesflores.com/whitepapers/2023-digital-legacy |
+| 27 | R | Desafios da Herança Digital: Preservação de Memória Pós-Mortem | 2023 | pt-BR | — |
 | 28 | S | Gerador de Entropia e Gestão de Chaves Privadas | 2023 | pt-BR | — |
 | 29 | J | O Clube Santo: Arqueologia Espiritual, Teológica e Visual do Metodismo | 2023 | pt-BR | https://ulissesflores.com/research/2023-holy-club-methodism |
 | 30 | S | Time-Ledger System: Plataforma de Tokenização para Economia do Cuidado | 2023 | pt-BR | — |
@@ -971,9 +971,9 @@ Competências Interpessoais, Habilidades Analíticas.
 
 | # | T | Year | Title | inLanguage | url |
 |:--|:--|:--|:---|:---|:---|
-| 31 | J | 2022 | A Teologia da Esperança em Tempos de Crise | pt-BR | https://ulissesflores.com/essays/2022-theology-of-hope |
+| 31 | J | 2022 | A Teologia da Esperança em Tempos de Crise | pt-BR | — |
 | 32 | S | 2022 | Sistema de Validação Estocástica e Análise Combinatória | pt-BR | — |
-| 33 | J | 2020 | Metodologias Ativas no Ensino de Lógica de Programação | pt-BR | https://ulissesflores.com/essays/2020-robotics-education |
+| 33 | J | 2020 | Metodologias Ativas no Ensino de Lógica de Programação | pt-BR | — |
 | 34 | S | 2020 | Robótica Educacional e Lógica de Programação para Jovens | pt-BR | — |
 | 35 | S | 2019 | Implementação de DLT Permissionada para Aplicações Bancárias | pt-BR | — |
 | 36 | S | 2018 | GoldenLeaf: Sistema Embarcado para Controle Ambiental | pt-BR | — |
@@ -983,6 +983,13 @@ Competências Interpessoais, Habilidades Analíticas.
 | 40 | S | 1998 | Sistemas de Processamento de Dados Financeiros em Ambientes Legados | pt-BR | — |
 
 **Total: 40/40 ORCID works mapped.** ✓
+
+> As obras 18, 27, 31 e 33 continuam registradas no ORCID e continuam sendo dele, mas ficaram
+> **sem URL de site** em 2026-09-06: o original de cada uma foi procurado por título no Google Drive
+> e por conteúdo no disco, em duas medições independentes a três meses de distância, e não existe.
+> Enquanto o original não aparecer, a linha fica sem `url` — o site não pode servir uma página de
+> obra que ninguém consegue mostrar. Auditoria:
+> `/Users/ulissesflores/Developer/publicacoes-recuperacao/docs/01-INVENTARIO-R1.md`.
 
 
 ---

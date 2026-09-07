@@ -230,9 +230,11 @@ export default async function ArticlePage({ params }: PageProps) {
             <span className='text-xs text-neutral-400 border border-neutral-700 rounded-full px-2 py-1'>
               {publication.kind === 'R' ? 'Report' : 'ScholarlyArticle'}
             </span>
-            <span className='text-xs text-brand-gold-light border border-brand-gold/40 rounded-full px-2 py-1'>
-              DOI: {publication.doi.status.toUpperCase()} {publication.doi.target ? `(${publication.doi.target})` : ''}
-            </span>
+            {publication.doi?.minted ? (
+              <span className='text-xs text-brand-gold-light border border-brand-gold/40 rounded-full px-2 py-1'>
+                DOI: {publication.doi.minted}
+              </span>
+            ) : null}
           </div>
 
           <h1 className='text-3xl md:text-5xl font-bold text-brand-offwhite mb-8 leading-tight'>{localizedTitle}</h1>

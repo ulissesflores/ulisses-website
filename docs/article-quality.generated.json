@@ -2,7 +2,7 @@
   "generatedAt": "2026-02-21",
   "rubric": "Yape model (Resumo, Introducao, Desenvolvimento, Consideracoes Finais, Referencias, SEO/GEO)",
   "threshold": 950,
-  "projectScore": 936,
+  "projectScore": 927,
   "approvedSota": false,
   "pendingActions": [
     "[2025-little-law-resilience] Aumentar profundidade de metodo/resultados/discussao com evidencias adicionais.",
@@ -248,30 +248,6 @@
       }
     },
     {
-      "id": "2024-ring-signatures-privacy",
-      "title": "Implementação de Ring Signatures e Endereços Furtivos",
-      "canonicalUrl": "https://ulissesflores.com/whitepapers/2024-ring-signatures-privacy",
-      "partScores": {
-        "resumo": 956,
-        "introducao": 942,
-        "desenvolvimento": 931,
-        "consideracoesFinais": 977,
-        "referencias": 1000,
-        "seoGeo": 1000
-      },
-      "finalScore": 968,
-      "approvedSota": true,
-      "improvementActions": [],
-      "metrics": {
-        "abstractWords": 148,
-        "introWords": 208,
-        "developmentWords": 492,
-        "conclusionWords": 166,
-        "referencesCount": 6,
-        "referencesWithUrl": 6
-      }
-    },
-    {
       "id": "2024-agritech-agile-flow",
       "title": "Transformação Ágil e Engenharia de Fluxo em Data Science",
       "canonicalUrl": "https://ulissesflores.com/whitepapers/2024-agritech-agile-flow",
@@ -344,30 +320,6 @@
       }
     },
     {
-      "id": "2023-digital-legacy",
-      "title": "Desafios da Herança Digital: Preservação de Memória Pós-Mortem",
-      "canonicalUrl": "https://ulissesflores.com/whitepapers/2023-digital-legacy",
-      "partScores": {
-        "resumo": 954,
-        "introducao": 944,
-        "desenvolvimento": 931,
-        "consideracoesFinais": 973,
-        "referencias": 1000,
-        "seoGeo": 1000
-      },
-      "finalScore": 967,
-      "approvedSota": true,
-      "improvementActions": [],
-      "metrics": {
-        "abstractWords": 147,
-        "introWords": 210,
-        "developmentWords": 491,
-        "conclusionWords": 164,
-        "referencesCount": 6,
-        "referencesWithUrl": 6
-      }
-    },
-    {
       "id": "2023-holy-club-methodism",
       "title": "O Clube Santo: Arqueologia Espiritual, Teológica e Visual do Metodismo",
       "canonicalUrl": "https://ulissesflores.com/research/2023-holy-club-methodism",
@@ -387,54 +339,6 @@
         "introWords": 218,
         "developmentWords": 492,
         "conclusionWords": 159,
-        "referencesCount": 6,
-        "referencesWithUrl": 6
-      }
-    },
-    {
-      "id": "2022-theology-of-hope",
-      "title": "A Teologia da Esperança em Tempos de Crise",
-      "canonicalUrl": "https://ulissesflores.com/essays/2022-theology-of-hope",
-      "partScores": {
-        "resumo": 964,
-        "introducao": 940,
-        "desenvolvimento": 933,
-        "consideracoesFinais": 967,
-        "referencias": 1000,
-        "seoGeo": 1000
-      },
-      "finalScore": 967,
-      "approvedSota": true,
-      "improvementActions": [],
-      "metrics": {
-        "abstractWords": 152,
-        "introWords": 206,
-        "developmentWords": 497,
-        "conclusionWords": 160,
-        "referencesCount": 6,
-        "referencesWithUrl": 6
-      }
-    },
-    {
-      "id": "2020-robotics-education",
-      "title": "Metodologias Ativas no Ensino de Lógica de Programação",
-      "canonicalUrl": "https://ulissesflores.com/essays/2020-robotics-education",
-      "partScores": {
-        "resumo": 950,
-        "introducao": 940,
-        "desenvolvimento": 929,
-        "consideracoesFinais": 960,
-        "referencias": 1000,
-        "seoGeo": 1000
-      },
-      "finalScore": 963,
-      "approvedSota": true,
-      "improvementActions": [],
-      "metrics": {
-        "abstractWords": 145,
-        "introWords": 206,
-        "developmentWords": 486,
-        "conclusionWords": 156,
         "referencesCount": 6,
         "referencesWithUrl": 6
       }

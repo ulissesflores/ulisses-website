@@ -1,4 +1,4 @@
-import { buildDoiTarget, htmlEscape } from './text.mjs';
+import { htmlEscape } from './text.mjs';
 
 function countWords(text) {
   return String(text || '')
@@ -185,17 +185,19 @@ function scoreDoiReadinessItem(item) {
     (Boolean(item.zenodoMetadata?.metadata?.publication_type) ? 1 : 0) +
     (Array.isArray(item.zenodoMetadata?.metadata?.related_identifiers) ? 1 : 0) +
     (Boolean(item.crossrefMetadata?.title) ? 1 : 0) +
-    (Array.isArray(item.crossrefMetadata?.authors) ? 1 : 0) +
-    (item.doi?.status === 'target' && Boolean(item.doi?.target) ? 1 : 0);
-  const workflowScore = clampScore((workflowSignals / 6) * 1000);
+    (Array.isArray(item.crossrefMetadata?.authors) ? 1 : 0);
+  // O sexto sinal era "tem doi.target" — premiava exatamente o defeito que este
+  // repositorio acabou de remover: identificador montado pelo gerador. Sinal retirado,
+  // divisor ajustado de 6 para 5, em vez de reponderado para esconder a queda.
+  const workflowScore = clampScore((workflowSignals / 5) * 1000);
 
   const cffSignals =
     (item.citationCff.includes('cff-version: 1.2.0') ? 1 : 0) +
     (!item.citationCff.includes('\ndoi:') ? 1 : 0) +
-    (item.citationCff.includes('DOI target:') ? 1 : 0) +
     (item.citationCff.includes('authors:') ? 1 : 0) +
     (item.citationCff.includes('references:') ? 1 : 0);
-  const cffScore = clampScore((cffSignals / 5) * 1000);
+  // Idem: o sinal "o CFF cita um DOI target" saiu junto com o padrao. Divisor 5 -> 4.
+  const cffScore = clampScore((cffSignals / 4) * 1000);
 
   const finalScore = clampScore(
     (completenessScore + referencesScore + identifierScore + workflowScore + cffScore) / 5,
@@ -233,7 +235,7 @@ function buildCitationCff(item, generatedAt) {
     .join('\n');
 
   return `cff-version: 1.2.0
-message: "If you use this work, cite with this metadata. DOI target: ${item.doi.target} (not minted)."
+message: "${item.doi?.minted ? `If you use this work, cite with this metadata. DOI: ${item.doi.minted}.` : 'If you use this work, cite with this metadata. No DOI minted yet; cite by the canonical URL.'}"
 title: "${item.title.replace(/"/g, '\\"')}"
 type: article
 authors:
@@ -267,7 +269,7 @@ export function buildDoiReadyPackage(publications, identity, generatedAt) {
 
   const items = publications.map((publication) => {
     const publicationType = buildPublicationType(publication);
-    const doiTarget = publication.doi?.target || buildDoiTarget(publication);
+    const mintedDoi = publication.doi?.minted || null;
     const references = publication.sections.references.map((reference) => ({
       citation: reference.citation,
       url: reference.url || '',
@@ -312,7 +314,9 @@ export function buildDoiReadyPackage(publications, identity, generatedAt) {
           },
         ],
         version,
-        notes: `DOI-ready metadata generated automatically from the canonical UPKF publication dataset. DOI target: ${doiTarget} (not minted).`,
+        notes: mintedDoi
+          ? `DOI-ready metadata generated automatically from the canonical UPKF publication dataset. Minted DOI: ${mintedDoi}.`
+          : 'DOI-ready metadata generated automatically from the canonical UPKF publication dataset. No DOI minted for this work yet; cite it by the canonical URL.',
         license: 'CC-BY-4.0',
       },
     };
@@ -349,7 +353,7 @@ export function buildDoiReadyPackage(publications, identity, generatedAt) {
           : undefined,
         URL: reference.url || undefined,
       })),
-      doi_target: doiTarget,
+      ...(mintedDoi ? { DOI: mintedDoi } : {}),
     };
 
     const item = {
@@ -362,10 +366,7 @@ export function buildDoiReadyPackage(publications, identity, generatedAt) {
       language: publication.inLanguage,
       canonicalUrl,
       pdfUrl,
-      doi: {
-        status: 'target',
-        target: doiTarget,
-      },
+      ...(mintedDoi ? { doi: { status: 'minted', minted: mintedDoi } } : {}),
       version,
       license: 'CC-BY-4.0',
       creators: [creator],
@@ -415,11 +416,11 @@ export function buildDoiReadyMarkdown(doiReady) {
     '',
     '## Per-Article Score',
     '',
-    '| Slug | DOI status | DOI target | Completeness | References | Identifiers | Workflow | CFF | Final | Approved |',
-    '|:--|:--:|:--|--:|--:|--:|--:|--:|--:|:--:|',
+    '| Slug | DOI cunhado | Completeness | References | Identifiers | Workflow | CFF | Final | Approved |',
+    '|:--|:--|--:|--:|--:|--:|--:|--:|:--:|',
     ...doiReady.items.map(
       (item) =>
-        `| ${item.slug} | ${item.doi?.status || 'target'} | ${item.doi?.target || '-'} | ${item.score.completenessScore} | ${item.score.referencesScore} | ${item.score.identifierScore} | ${item.score.workflowScore} | ${item.score.cffScore} | ${item.score.finalScore} | ${item.approved ? 'yes' : 'no'} |`,
+        `| ${item.slug} | ${item.doi?.minted || '-'} | ${item.score.completenessScore} | ${item.score.referencesScore} | ${item.score.identifierScore} | ${item.score.workflowScore} | ${item.score.cffScore} | ${item.score.finalScore} | ${item.approved ? 'yes' : 'no'} |`,
     ),
     '',
   ];

@@ -1,5 +1,5 @@
 /* AUTO-GENERATED FILE. DO NOT EDIT MANUALLY.
- * Source: public/upkf-source.md
+ * Source: data/upkf/ulisses-flores-sovereign-upkf_v3.3.md
  * Generated at: 2026-02-21
  */
 
@@ -8,7 +8,7 @@ export const upkfMeta = {
   "upkfVersion": "3.3",
   "generatedAt": "2026-02-21",
   "schemaTarget": "Schema.org JSON-LD via deterministic derivation",
-  "sourcePath": "public/upkf-source.md",
+  "sourcePath": "data/upkf/ulisses-flores-sovereign-upkf_v3.3.md",
   "displayName": "Ulisses Flores",
   "preferredName": "Ulisses",
   "publicDisplayName": "Ulisses Flores",
@@ -1082,15 +1082,15 @@ export const upkfMeta = {
     "sourceMd": "/upkf-source.md"
   },
   "jsonldCoverage": {
-    "markdownBytes": 95720,
-    "markdownLines": 1560,
+    "markdownBytes": 96038,
+    "markdownLines": 1567,
     "sectionCount": 108,
     "siteGraphNodes": 43,
-    "publicGraphNodes": 192,
-    "fullGraphNodes": 301,
+    "publicGraphNodes": 188,
+    "fullGraphNodes": 297,
     "siteJsonldBytes": 28992,
-    "publicJsonldBytes": 194063,
-    "fullJsonldBytes": 309852,
+    "publicJsonldBytes": 181057,
+    "fullJsonldBytes": 297220,
     "corpusFiles": 0,
     "corpusSnippets": 0,
     "corpusDirs": [],

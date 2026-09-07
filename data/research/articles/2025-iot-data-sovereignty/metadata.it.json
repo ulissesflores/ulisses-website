@@ -3,9 +3,5 @@
   "title": "Architetture Cloudless e Sovranità dei Dati nell'IoT",
   "category": "whitepapers",
   "canonicalUrl": "https://ulissesflores.com/whitepapers/2025-iot-data-sovereignty",
-  "generatedAt": "2026-03-12",
-  "doi": {
-    "status": "target",
-    "target": "10.5281/zenodo.202504"
-  }
+  "generatedAt": "2026-03-12"
 }

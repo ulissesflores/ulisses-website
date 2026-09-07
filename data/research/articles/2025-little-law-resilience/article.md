@@ -72,7 +72,6 @@ Este estudo demonstra que a Lei de Little, quando aplicada como princ√≠pio sist√
 - Compliance score: 960/1000
 - Polymathic index: 960/1000
 - Macro score: 960/1000
-- DOI status: target
-- DOI target: 10.5281/zenodo.202501
+- DOI: not minted (cite by canonical URL)
 - Canonical citation seed: Anderson, 2010; Flores, 2025; Kniberg, 2010
 - Generated at: 2026-02-21

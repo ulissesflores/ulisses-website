@@ -395,9 +395,9 @@ describe('SEO infrastructure — buildCanonical & buildLanguageAlternates', () =
   // ~142 URLs flagged as "Alternate page with proper canonical tag".
   it('pt-BR hreflang resolves to bare canonical (no /pt-br/ prefix)', async () => {
     const { buildLanguageAlternates } = await import('@/data/seo');
-    const alternates = buildLanguageAlternates('/whitepapers/2023-digital-legacy');
+    const alternates = buildLanguageAlternates('/whitepapers/2025-iot-data-sovereignty');
 
-    expect(alternates['pt-BR']).toBe('https://ulissesflores.com/whitepapers/2023-digital-legacy');
+    expect(alternates['pt-BR']).toBe('https://ulissesflores.com/whitepapers/2025-iot-data-sovereignty');
     expect(alternates['pt-BR']).not.toMatch(/\/pt-br\//);
   });
 

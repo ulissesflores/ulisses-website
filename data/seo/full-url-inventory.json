@@ -652,31 +652,6 @@
       "expectedStatus": 200
     },
     {
-      "path": "/whitepapers/2024-ring-signatures-privacy",
-      "type": "publication",
-      "expectedStatus": 200
-    },
-    {
-      "path": "/en/whitepapers/2024-ring-signatures-privacy",
-      "type": "publication",
-      "expectedStatus": 200
-    },
-    {
-      "path": "/es/whitepapers/2024-ring-signatures-privacy",
-      "type": "publication",
-      "expectedStatus": 200
-    },
-    {
-      "path": "/it/whitepapers/2024-ring-signatures-privacy",
-      "type": "publication",
-      "expectedStatus": 200
-    },
-    {
-      "path": "/he/whitepapers/2024-ring-signatures-privacy",
-      "type": "publication",
-      "expectedStatus": 200
-    },
-    {
       "path": "/whitepapers/2024-agritech-agile-flow",
       "type": "publication",
       "expectedStatus": 200
@@ -752,31 +727,6 @@
       "expectedStatus": 200
     },
     {
-      "path": "/whitepapers/2023-digital-legacy",
-      "type": "publication",
-      "expectedStatus": 200
-    },
-    {
-      "path": "/en/whitepapers/2023-digital-legacy",
-      "type": "publication",
-      "expectedStatus": 200
-    },
-    {
-      "path": "/es/whitepapers/2023-digital-legacy",
-      "type": "publication",
-      "expectedStatus": 200
-    },
-    {
-      "path": "/it/whitepapers/2023-digital-legacy",
-      "type": "publication",
-      "expectedStatus": 200
-    },
-    {
-      "path": "/he/whitepapers/2023-digital-legacy",
-      "type": "publication",
-      "expectedStatus": 200
-    },
-    {
       "path": "/research/2023-holy-club-methodism",
       "type": "publication",
       "expectedStatus": 200
@@ -798,56 +748,6 @@
     },
     {
       "path": "/he/research/2023-holy-club-methodism",
-      "type": "publication",
-      "expectedStatus": 200
-    },
-    {
-      "path": "/essays/2022-theology-of-hope",
-      "type": "publication",
-      "expectedStatus": 200
-    },
-    {
-      "path": "/en/essays/2022-theology-of-hope",
-      "type": "publication",
-      "expectedStatus": 200
-    },
-    {
-      "path": "/es/essays/2022-theology-of-hope",
-      "type": "publication",
-      "expectedStatus": 200
-    },
-    {
-      "path": "/it/essays/2022-theology-of-hope",
-      "type": "publication",
-      "expectedStatus": 200
-    },
-    {
-      "path": "/he/essays/2022-theology-of-hope",
-      "type": "publication",
-      "expectedStatus": 200
-    },
-    {
-      "path": "/essays/2020-robotics-education",
-      "type": "publication",
-      "expectedStatus": 200
-    },
-    {
-      "path": "/en/essays/2020-robotics-education",
-      "type": "publication",
-      "expectedStatus": 200
-    },
-    {
-      "path": "/es/essays/2020-robotics-education",
-      "type": "publication",
-      "expectedStatus": 200
-    },
-    {
-      "path": "/it/essays/2020-robotics-education",
-      "type": "publication",
-      "expectedStatus": 200
-    },
-    {
-      "path": "/he/essays/2020-robotics-education",
       "type": "publication",
       "expectedStatus": 200
     },
@@ -1512,21 +1412,6 @@
       "expectedStatus": 200
     },
     {
-      "path": "/deep-research/2024-ring-signatures-privacy/deep-research.pdf",
-      "type": "asset",
-      "expectedStatus": 200
-    },
-    {
-      "path": "/deep-research/2024-ring-signatures-privacy/deep-research.md",
-      "type": "asset",
-      "expectedStatus": 200
-    },
-    {
-      "path": "/deep-research/2024-ring-signatures-privacy/deep-research.docx",
-      "type": "asset",
-      "expectedStatus": 200
-    },
-    {
       "path": "/deep-research/2024-agritech-agile-flow/deep-research.pdf",
       "type": "asset",
       "expectedStatus": 200
@@ -1572,21 +1457,6 @@
       "expectedStatus": 200
     },
     {
-      "path": "/deep-research/2023-digital-legacy/deep-research.pdf",
-      "type": "asset",
-      "expectedStatus": 200
-    },
-    {
-      "path": "/deep-research/2023-digital-legacy/deep-research.md",
-      "type": "asset",
-      "expectedStatus": 200
-    },
-    {
-      "path": "/deep-research/2023-digital-legacy/deep-research.docx",
-      "type": "asset",
-      "expectedStatus": 200
-    },
-    {
       "path": "/deep-research/2023-holy-club-methodism/deep-research.pdf",
       "type": "asset",
       "expectedStatus": 200
@@ -1598,36 +1468,6 @@
     },
     {
       "path": "/deep-research/2023-holy-club-methodism/deep-research.docx",
-      "type": "asset",
-      "expectedStatus": 200
-    },
-    {
-      "path": "/deep-research/2022-theology-of-hope/deep-research.pdf",
-      "type": "asset",
-      "expectedStatus": 200
-    },
-    {
-      "path": "/deep-research/2022-theology-of-hope/deep-research.md",
-      "type": "asset",
-      "expectedStatus": 200
-    },
-    {
-      "path": "/deep-research/2022-theology-of-hope/deep-research.docx",
-      "type": "asset",
-      "expectedStatus": 200
-    },
-    {
-      "path": "/deep-research/2020-robotics-education/deep-research.pdf",
-      "type": "asset",
-      "expectedStatus": 200
-    },
-    {
-      "path": "/deep-research/2020-robotics-education/deep-research.md",
-      "type": "asset",
-      "expectedStatus": 200
-    },
-    {
-      "path": "/deep-research/2020-robotics-education/deep-research.docx",
       "type": "asset",
       "expectedStatus": 200
     },

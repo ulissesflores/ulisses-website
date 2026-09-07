@@ -73,7 +73,6 @@ Layout note: Times New Roman (12), רווח כפול, שוליים של אינץ
 - Compliance score: 960/1000
 - Polymathic index: 960/1000
 - Macro score: 960/1000
-- DOI status: target
-- DOI target: 10.5281/zenodo.202329
+- DOI: not minted (cite by canonical URL)
 - Canonical citation seed: Wesley, 2026; Heitzenrater, 2013; Hempton, 2005
 - Generated at: 2026-03-12

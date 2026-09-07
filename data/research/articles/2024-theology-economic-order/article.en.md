@@ -73,7 +73,6 @@ Continuity agenda: Expand confrontation with frontier bibliography and thematic 
 - Compliance score: 960/1000
 - Polymathic index: 960/1000
 - Macro score: 960/1000
-- DOI status: target
-- DOI target: 10.5281/zenodo.202417
+- DOI: not minted (cite by canonical URL)
 - Canonical citation seed: Augustine, 2026; Aquinas, 2026; Ropke, 1960
 - Generated at: 2026-03-12

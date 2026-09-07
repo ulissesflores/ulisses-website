@@ -320,6 +320,7 @@ export function htmlEscape(value) {
     .replace(/'/g, '&#39;');
 }
 
-export function buildDoiTarget(publication) {
-  return `10.5281/zenodo.${publication.date}${publication.ordinal.toString().padStart(2, '0')}`;
-}
+// buildDoiTarget() foi REMOVIDA em 2026-09-06. Ela montava um DOI por padrao
+// (`10.5281/zenodo.<ano><ordinal>`), e essa faixa do Zenodo ja estava ocupada desde 2011:
+// dos 18 identificadores que o site publicava, 17 resolviam para trabalho de TERCEIROS.
+// Regra que fica: o site LINKA um DOI cunhado no deposito, nunca monta um.

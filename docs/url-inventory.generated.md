@@ -1,8 +1,8 @@
 # URL Inventory (Generated)
 
-- Source: `public/upkf-source.md`
+- Source: `data/upkf/ulisses-flores-sovereign-upkf_v3.3.md`
 - Generated at: 2026-02-21
-- Total URLs: 274
+- Total URLs: 254
 
 ## Collections
 - https://ulissesflores.com/certifications
@@ -48,8 +48,6 @@
 - https://ulissesflores.com/certifications/coursera-philosophy-science-and-religion-science-and-philosophy
 - https://ulissesflores.com/certifications/edx-ai-in-practice-preparing-for-ai
 - https://ulissesflores.com/essays/2017-chaos-theory-economics
-- https://ulissesflores.com/essays/2020-robotics-education
-- https://ulissesflores.com/essays/2022-theology-of-hope
 - https://ulissesflores.com/essays/2024-exegetical-treatise-anthropology
 - https://ulissesflores.com/essays/2024-theology-economic-order
 - https://ulissesflores.com/mundo-politico/1-campanha-do-governo-lula-para-reconstruir-confianca-no-pix-detalhes-e-im
@@ -139,24 +137,18 @@
 - https://ulissesflores.com/sermons/outros-5-specials/3-o-selo-profetico-para-os-12-meses-de-vitoria-dia-12
 - https://ulissesflores.com/sermons/outros-5-specials/4-o-grande-rompimento-celebracao-dos-testemunhos-dia-40
 - https://ulissesflores.com/sermons/outros-5-specials/5-cantata-de-natal-o-verbo-que-se-fez-carne-e-habitou-entre-nos-18
-- https://ulissesflores.com/whitepapers/2023-digital-legacy
 - https://ulissesflores.com/whitepapers/2024-agritech-agile-flow
-- https://ulissesflores.com/whitepapers/2024-ring-signatures-privacy
 - https://ulissesflores.com/whitepapers/2025-hybrid-cooling-thermodynamics
 - https://ulissesflores.com/whitepapers/2025-iot-data-sovereignty
 
 ## PDF Assets
 - https://ulissesflores.com/deep-research/2017-chaos-theory-economics/deep-research.pdf
-- https://ulissesflores.com/deep-research/2020-robotics-education/deep-research.pdf
-- https://ulissesflores.com/deep-research/2022-theology-of-hope/deep-research.pdf
-- https://ulissesflores.com/deep-research/2023-digital-legacy/deep-research.pdf
 - https://ulissesflores.com/deep-research/2023-holy-club-methodism/deep-research.pdf
 - https://ulissesflores.com/deep-research/2023-marian-apparitions-critique/deep-research.pdf
 - https://ulissesflores.com/deep-research/2024-agritech-agile-flow/deep-research.pdf
 - https://ulissesflores.com/deep-research/2024-bitcoin-praxeology/deep-research.pdf
 - https://ulissesflores.com/deep-research/2024-exegetical-treatise-anthropology/deep-research.pdf
 - https://ulissesflores.com/deep-research/2024-historicity-jesus-archaeology/deep-research.pdf
-- https://ulissesflores.com/deep-research/2024-ring-signatures-privacy/deep-research.pdf
 - https://ulissesflores.com/deep-research/2024-scribal-canonization-ezra/deep-research.pdf
 - https://ulissesflores.com/deep-research/2024-theology-economic-order/deep-research.pdf
 - https://ulissesflores.com/deep-research/2025-fraud-detection-mlp/deep-research.pdf
@@ -165,8 +157,6 @@
 - https://ulissesflores.com/deep-research/2025-little-law-resilience/deep-research.pdf
 - https://ulissesflores.com/deep-research/2025-lstm-asset-prediction/deep-research.pdf
 - https://ulissesflores.com/essays/2017-chaos-theory-economics.pdf
-- https://ulissesflores.com/essays/2020-robotics-education.pdf
-- https://ulissesflores.com/essays/2022-theology-of-hope.pdf
 - https://ulissesflores.com/essays/2024-exegetical-treatise-anthropology.pdf
 - https://ulissesflores.com/essays/2024-theology-economic-order.pdf
 - https://ulissesflores.com/research/2023-holy-club-methodism.pdf
@@ -177,9 +167,7 @@
 - https://ulissesflores.com/research/2025-fraud-detection-mlp.pdf
 - https://ulissesflores.com/research/2025-little-law-resilience.pdf
 - https://ulissesflores.com/research/2025-lstm-asset-prediction.pdf
-- https://ulissesflores.com/whitepapers/2023-digital-legacy.pdf
 - https://ulissesflores.com/whitepapers/2024-agritech-agile-flow.pdf
-- https://ulissesflores.com/whitepapers/2024-ring-signatures-privacy.pdf
 - https://ulissesflores.com/whitepapers/2025-hybrid-cooling-thermodynamics.pdf
 - https://ulissesflores.com/whitepapers/2025-iot-data-sovereignty.pdf
 

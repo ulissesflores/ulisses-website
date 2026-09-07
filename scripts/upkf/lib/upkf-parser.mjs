@@ -50,7 +50,12 @@ export function loadArticleReferencesMap() {
 }
 
 export function findSourcePath() {
-  const candidates = [process.env.UPKF_SOURCE, PUBLIC_UPKF_PATH, LOCAL_UPKF_PATH, DOCS_UPKF_PATH].filter(Boolean);
+  // A ordem importa: public/upkf-source.md e SAIDA deste gerador (escrito em
+  // generate-artifacts-v2.mjs) e nao e versionado. Le-lo primeiro fazia o artefato
+  // gerado ser a propria fonte, entao editar o UPKF versionado nao surtia efeito
+  // enquanto a copia publica existisse, e um checkout limpo gerava bytes diferentes.
+  // A fonte da verdade e o arquivo versionado; a copia publica so serve de ultimo recurso.
+  const candidates = [process.env.UPKF_SOURCE, LOCAL_UPKF_PATH, DOCS_UPKF_PATH, PUBLIC_UPKF_PATH].filter(Boolean);
   for (const candidate of candidates) {
     if (fs.existsSync(candidate)) {
       return candidate;
