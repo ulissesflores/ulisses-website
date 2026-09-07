@@ -32,6 +32,8 @@ import { FlowLineDiagram } from './flow-line-diagram';
 import { ConstraintExperimentChart } from './constraint-experiment-chart';
 import { VramLadder } from './vram-ladder';
 import { ObligationMatrix } from './obligation-matrix';
+import { DailyColumnsChart } from './daily-columns-chart';
+import { DialogueDiagram } from './dialogue-diagram';
 import { ArticleFigure } from './article-figure';
 import { YouTube } from './youtube-embed';
 
@@ -77,6 +79,8 @@ export const mdxComponents: MDXComponents = {
   ConstraintExperimentChart,
   VramLadder,
   ObligationMatrix,
+  DailyColumnsChart,
+  DialogueDiagram,
   ArticleFigure,
   YouTube,
   /**

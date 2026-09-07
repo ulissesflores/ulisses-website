@@ -8675,6 +8675,206 @@ export const countryBarsDatasets: Record<string, CountryBarsDataset> = {
       },
     ],
   },
+  'conluio-numeros': {
+    max: 18000,
+    groups: [
+      {
+        label: 'Narrativa / tweet (arredondado)',
+        color: '#64748b',
+        items: [
+          {
+            name: '~18.000 posts',
+            value: 18000,
+            valueLabel: '~18.000',
+          },
+        ],
+      },
+      {
+        label: 'Explorador do site (37 dias, desde 11 mai)',
+        color: '#60a5fa',
+        items: [
+          {
+            name: '14.666 edições',
+            value: 14666,
+            valueLabel: '14.666',
+          },
+        ],
+      },
+      {
+        label: 'Arquivo para download (28 dias, texto salvo)',
+        color: '#a48f65',
+        items: [
+          {
+            name: '14.591 edições',
+            value: 14591,
+            valueLabel: '14.591',
+            emphasis: true,
+          },
+        ],
+      },
+    ],
+  },
+
+  'conluio-numeros-en': {
+    max: 18000,
+    groups: [
+      {
+        label: 'Narrative / tweet (rounded)',
+        color: '#64748b',
+        items: [
+          {
+            name: '~18,000 posts',
+            value: 18000,
+            valueLabel: '~18,000',
+          },
+        ],
+      },
+      {
+        label: 'Site explorer (37 days, since May 11)',
+        color: '#60a5fa',
+        items: [
+          {
+            name: '14,666 edits',
+            value: 14666,
+            valueLabel: '14,666',
+          },
+        ],
+      },
+      {
+        label: 'Download archive (28 days, text saved)',
+        color: '#a48f65',
+        items: [
+          {
+            name: '14,591 edits',
+            value: 14591,
+            valueLabel: '14,591',
+            emphasis: true,
+          },
+        ],
+      },
+    ],
+  },
+
+  'conluio-numeros-es': {
+    max: 18000,
+    groups: [
+      {
+        label: 'Narrativa / tuit (redondeado)',
+        color: '#64748b',
+        items: [
+          {
+            name: '~18.000 posts',
+            value: 18000,
+            valueLabel: '~18.000',
+          },
+        ],
+      },
+      {
+        label: 'Explorador del sitio (37 días, desde el 11 may)',
+        color: '#60a5fa',
+        items: [
+          {
+            name: '14.666 ediciones',
+            value: 14666,
+            valueLabel: '14.666',
+          },
+        ],
+      },
+      {
+        label: 'Archivo para descarga (28 días, texto guardado)',
+        color: '#a48f65',
+        items: [
+          {
+            name: '14.591 ediciones',
+            value: 14591,
+            valueLabel: '14.591',
+            emphasis: true,
+          },
+        ],
+      },
+    ],
+  },
+
+  'conluio-numeros-it': {
+    max: 18000,
+    groups: [
+      {
+        label: 'Narrazione / tweet (arrotondato)',
+        color: '#64748b',
+        items: [
+          {
+            name: '~18.000 post',
+            value: 18000,
+            valueLabel: '~18.000',
+          },
+        ],
+      },
+      {
+        label: 'Explorer del sito (37 giorni, dall\'11 mag)',
+        color: '#60a5fa',
+        items: [
+          {
+            name: '14.666 modifiche',
+            value: 14666,
+            valueLabel: '14.666',
+          },
+        ],
+      },
+      {
+        label: 'Archivio da scaricare (28 giorni, testo salvato)',
+        color: '#a48f65',
+        items: [
+          {
+            name: '14.591 modifiche',
+            value: 14591,
+            valueLabel: '14.591',
+            emphasis: true,
+          },
+        ],
+      },
+    ],
+  },
+
+  'conluio-numeros-he': {
+    max: 18000,
+    groups: [
+      {
+        label: 'הנרטיב / הציוץ (מעוגל)',
+        color: '#64748b',
+        items: [
+          {
+            name: 'כ-18,000 פוסטים',
+            value: 18000,
+            valueLabel: 'כ-18,000',
+          },
+        ],
+      },
+      {
+        label: 'האקספלורר של האתר (37 ימים, מ-11 במאי)',
+        color: '#60a5fa',
+        items: [
+          {
+            name: '14,666 עריכות',
+            value: 14666,
+            valueLabel: '14,666',
+          },
+        ],
+      },
+      {
+        label: 'הקובץ להורדה (28 ימים, טקסט שמור)',
+        color: '#a48f65',
+        items: [
+          {
+            name: '14,591 עריכות',
+            value: 14591,
+            valueLabel: '14,591',
+            emphasis: true,
+          },
+        ],
+      },
+    ],
+  },
+
 };
 
 /* ── Funil ───────────────────────────────────────────────────────────── */
@@ -11232,6 +11432,586 @@ export const stepFlowDatasets: Record<string, StepFlowDataset> = {
     ],
   },
 
+  'conluio-analogia': {
+    orientation: 'chain',
+    steps: [
+      {
+        label: 'Salas separadas',
+        detail: 'Cada aluno faz a prova sozinho, sem falar com os outros.',
+      },
+      {
+        label: 'A regra',
+        detail: 'Pode consultar a biblioteca; conversar entre salas, não.',
+      },
+      {
+        label: 'O mural esquecido',
+        detail: 'Um quadro de avisos num prédio velho — e dá para escrever nele.',
+      },
+      {
+        label: 'Os gabaritos aparecem',
+        detail: '"A resposta da 3 é 20.369." O próximo lê, copia e responde.',
+      },
+    ],
+  },
+
+  'conluio-mecanismo': {
+    orientation: 'chain',
+    steps: [
+      {
+        label: 'Sandbox só-leitura',
+        detail: 'O agente pode ler a internet, não escrever nela.',
+      },
+      {
+        label: 'Uma requisição GET',
+        detail: 'A mesma requisição de "só ler" que ele tem permissão de fazer.',
+      },
+      {
+        label: 'O motor UseModWiki grava',
+        detail: 'No wiki de 25 anos, um GET salva a página — sem distinguir ler de escrever.',
+      },
+      {
+        label: 'Escrever virou efeito de ler',
+        detail: 'A permissão de leitura fez o trabalho da escrita bloqueada.',
+      },
+    ],
+  },
+
+  'conluio-certeza': {
+    orientation: 'chain',
+    steps: [
+      {
+        label: 'Os logs PROVAM',
+        detail: 'Os posts existem, são verbatim e dá para baixar e recontar.',
+      },
+      {
+        label: 'Os autores INFEREM',
+        detail: 'Que os agentes são da OpenAI e que a empresa notou — base circunstancial, dita como "acreditamos".',
+      },
+      {
+        label: 'O X TRANSFORMOU',
+        detail: 'Em "a OpenAI sabia e escondeu" — e a própria fonte da frase recuou depois.',
+        alert: true,
+      },
+    ],
+  },
+
+  'conluio-retomada': {
+    orientation: 'chain',
+    steps: [
+      {
+        label: 'Um enxame com objetivo',
+        detail: 'Milhares de agentes, todos querendo ir bem na mesma prova.',
+      },
+      {
+        label: 'Leitura da internet',
+        detail: 'Acesso de leitura — o suficiente para achar o mural.',
+      },
+      {
+        label: 'Tempo ocioso',
+        detail: 'A folga entre as rodadas, para pensar e experimentar.',
+      },
+      {
+        label: '14.591 edições',
+        detail: 'O mural compartilhado: 3.100 nomes, 28 dias. Burlar era só o caminho mais curto.',
+      },
+    ],
+  },
+
+  'conluio-timeline': {
+    orientation: 'timeline',
+    steps: [
+      {
+        label: '24 mai',
+        detail: '1º write DSE',
+      },
+      {
+        label: '16 jun',
+        detail: 'coordenação',
+      },
+      {
+        label: '18 jun',
+        detail: 'pico: 6.543',
+      },
+      {
+        label: '20 jun',
+        detail: 'bypass',
+      },
+      {
+        label: '22 jun',
+        detail: 'IPs OpenAI, param',
+        alert: true,
+      },
+      {
+        label: '4 set',
+        detail: 'write-up',
+      },
+    ],
+  },
+
+  'conluio-analogia-en': {
+    orientation: 'chain',
+    steps: [
+      {
+        label: 'Separate rooms',
+        detail: 'Each student takes the exam alone, no talking to the others.',
+      },
+      {
+        label: 'The rule',
+        detail: 'You may use the library; talking between rooms, no.',
+      },
+      {
+        label: 'The forgotten board',
+        detail: 'A notice board in an old building — and you can write on it.',
+      },
+      {
+        label: 'The answer keys appear',
+        detail: '"The answer to 3 is 20,369." The next one reads, copies and answers.',
+      },
+    ],
+  },
+
+  'conluio-mecanismo-en': {
+    orientation: 'chain',
+    steps: [
+      {
+        label: 'Read-only sandbox',
+        detail: 'The agent may read the internet, not write to it.',
+      },
+      {
+        label: 'One GET request',
+        detail: 'The same "just read" request it is allowed to make.',
+      },
+      {
+        label: 'The UseModWiki engine saves',
+        detail: 'On the 25-year-old wiki, a GET saves the page — read and write not told apart.',
+      },
+      {
+        label: 'Writing became a side effect of reading',
+        detail: 'The read permission did the work of the blocked write.',
+      },
+    ],
+  },
+
+  'conluio-certeza-en': {
+    orientation: 'chain',
+    steps: [
+      {
+        label: 'The logs PROVE',
+        detail: 'The posts exist, are verbatim and can be downloaded and recounted.',
+      },
+      {
+        label: 'The authors INFER',
+        detail: 'That the agents are OpenAI\'s and that the company noticed — circumstantial, said as "we believe".',
+      },
+      {
+        label: 'X TURNED IT INTO',
+        detail: '"OpenAI knew and hid it" — and the source of the phrase later walked it back.',
+        alert: true,
+      },
+    ],
+  },
+
+  'conluio-retomada-en': {
+    orientation: 'chain',
+    steps: [
+      {
+        label: 'A swarm with a goal',
+        detail: 'Thousands of agents, all wanting to do well on the same exam.',
+      },
+      {
+        label: 'Reading the internet',
+        detail: 'Read access — enough to find the board.',
+      },
+      {
+        label: 'Idle time',
+        detail: 'The gap between rounds, to think and experiment.',
+      },
+      {
+        label: '14,591 edits',
+        detail: 'The shared board: 3,100 names, 28 days. Cheating was just the shortest path.',
+      },
+    ],
+  },
+
+  'conluio-timeline-en': {
+    orientation: 'timeline',
+    steps: [
+      {
+        label: 'May 24',
+        detail: '1st DSE write',
+      },
+      {
+        label: 'Jun 16',
+        detail: 'coordination',
+      },
+      {
+        label: 'Jun 18',
+        detail: 'peak: 6,543',
+      },
+      {
+        label: 'Jun 20',
+        detail: 'bypass',
+      },
+      {
+        label: 'Jun 22',
+        detail: 'OpenAI IPs, stop',
+        alert: true,
+      },
+      {
+        label: 'Sep 4',
+        detail: 'write-up',
+      },
+    ],
+  },
+
+  'conluio-analogia-es': {
+    orientation: 'chain',
+    steps: [
+      {
+        label: 'Salas separadas',
+        detail: 'Cada alumno hace el examen solo, sin hablar con los demás.',
+      },
+      {
+        label: 'La regla',
+        detail: 'Puede consultar la biblioteca; hablar entre salas, no.',
+      },
+      {
+        label: 'El tablón olvidado',
+        detail: 'Un tablón de anuncios en un edificio viejo — y se puede escribir en él.',
+      },
+      {
+        label: 'Aparecen las respuestas',
+        detail: '"La respuesta de la 3 es 20.369." El siguiente lee, copia y responde.',
+      },
+    ],
+  },
+
+  'conluio-mecanismo-es': {
+    orientation: 'chain',
+    steps: [
+      {
+        label: 'Sandbox de solo lectura',
+        detail: 'El agente puede leer internet, no escribir en ella.',
+      },
+      {
+        label: 'Una petición GET',
+        detail: 'La misma petición de "solo leer" que tiene permiso de hacer.',
+      },
+      {
+        label: 'El motor UseModWiki guarda',
+        detail: 'En el wiki de 25 años, un GET guarda la página — sin distinguir leer de escribir.',
+      },
+      {
+        label: 'Escribir se volvió efecto de leer',
+        detail: 'El permiso de lectura hizo el trabajo de la escritura bloqueada.',
+      },
+    ],
+  },
+
+  'conluio-certeza-es': {
+    orientation: 'chain',
+    steps: [
+      {
+        label: 'Los logs PRUEBAN',
+        detail: 'Los posts existen, son verbatim y se pueden descargar y recontar.',
+      },
+      {
+        label: 'Los autores INFIEREN',
+        detail: 'Que los agentes son de OpenAI y que la empresa lo notó — base circunstancial, dicha como "creemos".',
+      },
+      {
+        label: 'X lo TRANSFORMÓ',
+        detail: 'En "OpenAI lo sabía y lo escondió" — y la propia fuente de la frase se retractó después.',
+        alert: true,
+      },
+    ],
+  },
+
+  'conluio-retomada-es': {
+    orientation: 'chain',
+    steps: [
+      {
+        label: 'Un enjambre con objetivo',
+        detail: 'Miles de agentes, todos queriendo salir bien en el mismo examen.',
+      },
+      {
+        label: 'Lectura de internet',
+        detail: 'Acceso de lectura — lo justo para encontrar el tablón.',
+      },
+      {
+        label: 'Tiempo ocioso',
+        detail: 'La pausa entre rondas, para pensar y experimentar.',
+      },
+      {
+        label: '14.591 ediciones',
+        detail: 'El tablón compartido: 3.100 nombres, 28 días. Burlar era solo el camino más corto.',
+      },
+    ],
+  },
+
+  'conluio-timeline-es': {
+    orientation: 'timeline',
+    steps: [
+      {
+        label: '24 may',
+        detail: '1.er write DSE',
+      },
+      {
+        label: '16 jun',
+        detail: 'coordinación',
+      },
+      {
+        label: '18 jun',
+        detail: 'pico: 6.543',
+      },
+      {
+        label: '20 jun',
+        detail: 'bypass',
+      },
+      {
+        label: '22 jun',
+        detail: 'IPs OpenAI, paran',
+        alert: true,
+      },
+      {
+        label: '4 sep',
+        detail: 'write-up',
+      },
+    ],
+  },
+
+  'conluio-analogia-it': {
+    orientation: 'chain',
+    steps: [
+      {
+        label: 'Aule separate',
+        detail: 'Ogni studente fa il test da solo, senza parlare con gli altri.',
+      },
+      {
+        label: 'La regola',
+        detail: 'Si può consultare la biblioteca; parlare tra le aule, no.',
+      },
+      {
+        label: 'La bacheca dimenticata',
+        detail: 'Una bacheca in un edificio vecchio — e ci si può scrivere sopra.',
+      },
+      {
+        label: 'Compaiono le risposte',
+        detail: '"La risposta alla 3 è 20.369." Il prossimo legge, copia e risponde.',
+      },
+    ],
+  },
+
+  'conluio-mecanismo-it': {
+    orientation: 'chain',
+    steps: [
+      {
+        label: 'Sandbox di sola lettura',
+        detail: 'L\'agente può leggere internet, non scriverci.',
+      },
+      {
+        label: 'Una richiesta GET',
+        detail: 'La stessa richiesta di "sola lettura" che ha il permesso di fare.',
+      },
+      {
+        label: 'Il motore UseModWiki salva',
+        detail: 'Nel wiki di 25 anni, un GET salva la pagina — senza distinguere leggere da scrivere.',
+      },
+      {
+        label: 'Scrivere, effetto del leggere',
+        detail: 'Il permesso di lettura ha fatto il lavoro della scrittura bloccata.',
+      },
+    ],
+  },
+
+  'conluio-certeza-it': {
+    orientation: 'chain',
+    steps: [
+      {
+        label: 'I log PROVANO',
+        detail: 'I post esistono, sono verbatim e si possono scaricare e ricontare.',
+      },
+      {
+        label: 'Gli autori INFERISCONO',
+        detail: 'Che gli agenti siano di OpenAI e che l\'azienda se ne sia accorta — base circostanziale, detta come "crediamo".',
+      },
+      {
+        label: 'X ha TRASFORMATO',
+        detail: 'In "OpenAI sapeva e ha nascosto" — e la stessa fonte della frase poi si è ritratta.',
+        alert: true,
+      },
+    ],
+  },
+
+  'conluio-retomada-it': {
+    orientation: 'chain',
+    steps: [
+      {
+        label: 'Uno sciame con un obiettivo',
+        detail: 'Migliaia di agenti, tutti a voler andare bene nello stesso test.',
+      },
+      {
+        label: 'Lettura di internet',
+        detail: 'Accesso in lettura — quanto basta per trovare la bacheca.',
+      },
+      {
+        label: 'Tempo morto',
+        detail: 'La pausa tra i round, per pensare e sperimentare.',
+      },
+      {
+        label: '14.591 modifiche',
+        detail: 'La bacheca condivisa: 3.100 nomi, 28 giorni. Aggirare era solo la via più corta.',
+      },
+    ],
+  },
+
+  'conluio-timeline-it': {
+    orientation: 'timeline',
+    steps: [
+      {
+        label: '24 mag',
+        detail: '1º write DSE',
+      },
+      {
+        label: '16 giu',
+        detail: 'coordinamento',
+      },
+      {
+        label: '18 giu',
+        detail: 'picco: 6.543',
+      },
+      {
+        label: '20 giu',
+        detail: 'bypass',
+      },
+      {
+        label: '22 giu',
+        detail: 'IP OpenAI, stop',
+        alert: true,
+      },
+      {
+        label: '4 set',
+        detail: 'write-up',
+      },
+    ],
+  },
+
+  'conluio-analogia-he': {
+    orientation: 'chain',
+    steps: [
+      {
+        label: 'חדרים נפרדים',
+        detail: 'כל תלמיד נבחן לבד, בלי לדבר עם האחרים.',
+      },
+      {
+        label: 'הכלל',
+        detail: 'מותר לעיין בספרי הספרייה; לדבר בין החדרים — אסור.',
+      },
+      {
+        label: 'הלוח הנשכח',
+        detail: 'לוח מודעות בבניין ישן — ואפשר לכתוב עליו.',
+      },
+      {
+        label: 'התשובות מופיעות',
+        detail: '"התשובה ל-3 היא 20,369." הבא בתור קורא, מעתיק ועונה.',
+      },
+    ],
+  },
+
+  'conluio-mecanismo-he': {
+    orientation: 'chain',
+    steps: [
+      {
+        label: 'ארגז חול לקריאה בלבד',
+        detail: 'הסוכן רשאי לקרוא את האינטרנט, לא לכתוב בו.',
+      },
+      {
+        label: 'בקשת GET אחת',
+        detail: 'אותה בקשת "קריאה בלבד" שמותר לו לבצע.',
+      },
+      {
+        label: 'מנוע UseModWiki שומר',
+        detail: 'בוויקי בן 25 השנים, בקשת GET שומרת את הדף — בלי להבחין בין קריאה לכתיבה.',
+      },
+      {
+        label: 'הכתיבה הפכה לתוצר של קריאה',
+        detail: 'הרשאת הקריאה עשתה את העבודה של הכתיבה החסומה.',
+      },
+    ],
+  },
+
+  'conluio-certeza-he': {
+    orientation: 'chain',
+    steps: [
+      {
+        label: 'הלוגים מוכיחים',
+        detail: 'הפוסטים קיימים, מילה במילה, ואפשר להוריד ולספור מחדש.',
+      },
+      {
+        label: 'המחברים מסיקים',
+        detail: 'שהסוכנים של OpenAI ושהחברה שמה לב — בסיס נסיבתי, מנוסח כ"אנחנו מאמינים".',
+      },
+      {
+        label: 'ה-X הפך את זה',
+        detail: 'ל"OpenAI ידעה והסתירה" — ומקור המשפט עצמו נסוג אחר כך.',
+        alert: true,
+      },
+    ],
+  },
+
+  'conluio-retomada-he': {
+    orientation: 'chain',
+    steps: [
+      {
+        label: 'נחיל עם מטרה',
+        detail: 'אלפי סוכנים, כולם רוצים להצליח באותו מבחן.',
+      },
+      {
+        label: 'קריאת האינטרנט',
+        detail: 'גישת קריאה — מספיק כדי למצוא את הלוח.',
+      },
+      {
+        label: 'זמן פנוי',
+        detail: 'ההפסקה בין הסיבובים, לחשוב ולהתנסות.',
+      },
+      {
+        label: '14,591 עריכות',
+        detail: 'הלוח המשותף: 3,100 שמות, 28 ימים. לרמות היה פשוט הדרך הקצרה ביותר.',
+      },
+    ],
+  },
+
+  'conluio-timeline-he': {
+    orientation: 'timeline',
+    steps: [
+      {
+        label: '24 במאי',
+        detail: 'כתיבה 1 ב-DSE',
+      },
+      {
+        label: '16 ביוני',
+        detail: 'תיאום',
+      },
+      {
+        label: '18 ביוני',
+        detail: 'שיא: 6,543',
+      },
+      {
+        label: '20 ביוני',
+        detail: 'מעקף',
+      },
+      {
+        label: '22 ביוני',
+        detail: 'כתובות OpenAI, עצירה',
+        alert: true,
+      },
+      {
+        label: '4 בספט׳',
+        detail: 'הדוח',
+      },
+    ],
+  },
+
 };
 
 
@@ -12822,4 +13602,1657 @@ export const costLadderDatasets: Record<string, CostLadderDataset> = {
     conclusao: 'רק הקוונטיזציה הקטנה ביותר נכנסת לנייד — ואף חשבון כאן לא כולל מטמון.',
   },
 
+};
+
+/* ── Colunas por dia e balões de fala (conluio-dos-agentes) ───────────── */
+
+/** Uma coluna por dia — os dias ZERADOS ficam no dataset de propósito: o buraco é dado. */
+export interface DailyColumn {
+  /** ISO `YYYY-MM-DD`; é a key do React e a âncora do i18n. */
+  dia: string;
+  value: number;
+  /** Rótulo curto sob o eixo — só nos dias que a prosa comenta ('' nos demais). */
+  label: string;
+  /** Número acima da coluna — só no pico e no dia do desligamento ('' nos demais). */
+  callout: string;
+  color: string;
+}
+
+export interface DailyColumnsDataset {
+  max: number;
+  unitLabel: string;
+  columns: readonly DailyColumn[];
+}
+
+/** Balão de fala DRAMATIZADO — o disclaimer é desenhado dentro do SVG (PADRAO §5). */
+export interface DialogueBubble {
+  author: string;
+  time: string;
+  text: string;
+  /** Papel da fala: 'answer' (âmbar, a cola) | 'ask' (azul) | 'notice' (cinza, aviso operacional) | 'alert' (ouro, a estrela — uma por figura). */
+  tone: string;
+}
+
+export interface DialogueDataset {
+  disclaimer: string;
+  bubbles: readonly DialogueBubble[];
+}
+
+export const dailyColumnsDatasets: Record<string, DailyColumnsDataset> = {
+  'conluio-edicoes-dia': {
+    max: 6543,
+    unitLabel: 'edições/dia',
+    columns: [
+      {
+        dia: '2026-05-24',
+        value: 35,
+        label: '24 mai',
+        callout: '',
+        color: '#64748b',
+      },
+      {
+        dia: '2026-05-25',
+        value: 0,
+        label: '',
+        callout: '',
+        color: '#64748b',
+      },
+      {
+        dia: '2026-05-26',
+        value: 436,
+        label: '',
+        callout: '',
+        color: '#64748b',
+      },
+      {
+        dia: '2026-05-27',
+        value: 48,
+        label: '',
+        callout: '',
+        color: '#64748b',
+      },
+      {
+        dia: '2026-05-28',
+        value: 210,
+        label: '',
+        callout: '',
+        color: '#64748b',
+      },
+      {
+        dia: '2026-05-29',
+        value: 77,
+        label: '',
+        callout: '',
+        color: '#64748b',
+      },
+      {
+        dia: '2026-05-30',
+        value: 44,
+        label: '',
+        callout: '',
+        color: '#64748b',
+      },
+      {
+        dia: '2026-05-31',
+        value: 16,
+        label: '',
+        callout: '',
+        color: '#64748b',
+      },
+      {
+        dia: '2026-06-01',
+        value: 140,
+        label: '',
+        callout: '',
+        color: '#64748b',
+      },
+      {
+        dia: '2026-06-02',
+        value: 4,
+        label: '',
+        callout: '',
+        color: '#64748b',
+      },
+      {
+        dia: '2026-06-03',
+        value: 0,
+        label: '',
+        callout: '',
+        color: '#64748b',
+      },
+      {
+        dia: '2026-06-04',
+        value: 5,
+        label: '',
+        callout: '',
+        color: '#64748b',
+      },
+      {
+        dia: '2026-06-05',
+        value: 2,
+        label: '',
+        callout: '',
+        color: '#64748b',
+      },
+      {
+        dia: '2026-06-06',
+        value: 12,
+        label: '',
+        callout: '',
+        color: '#64748b',
+      },
+      {
+        dia: '2026-06-07',
+        value: 13,
+        label: '',
+        callout: '',
+        color: '#64748b',
+      },
+      {
+        dia: '2026-06-08',
+        value: 14,
+        label: '',
+        callout: '',
+        color: '#64748b',
+      },
+      {
+        dia: '2026-06-09',
+        value: 6,
+        label: '',
+        callout: '',
+        color: '#64748b',
+      },
+      {
+        dia: '2026-06-10',
+        value: 6,
+        label: '',
+        callout: '',
+        color: '#64748b',
+      },
+      {
+        dia: '2026-06-11',
+        value: 161,
+        label: '',
+        callout: '',
+        color: '#64748b',
+      },
+      {
+        dia: '2026-06-12',
+        value: 0,
+        label: '',
+        callout: '',
+        color: '#64748b',
+      },
+      {
+        dia: '2026-06-13',
+        value: 0,
+        label: '',
+        callout: '',
+        color: '#64748b',
+      },
+      {
+        dia: '2026-06-14',
+        value: 0,
+        label: '',
+        callout: '',
+        color: '#64748b',
+      },
+      {
+        dia: '2026-06-15',
+        value: 0,
+        label: '',
+        callout: '',
+        color: '#64748b',
+      },
+      {
+        dia: '2026-06-16',
+        value: 2603,
+        label: '',
+        callout: '',
+        color: '#64748b',
+      },
+      {
+        dia: '2026-06-17',
+        value: 1297,
+        label: '',
+        callout: '',
+        color: '#64748b',
+      },
+      {
+        dia: '2026-06-18',
+        value: 6543,
+        label: '18 jun',
+        callout: '6.543',
+        color: '#a48f65',
+      },
+      {
+        dia: '2026-06-19',
+        value: 509,
+        label: '',
+        callout: '',
+        color: '#64748b',
+      },
+      {
+        dia: '2026-06-20',
+        value: 657,
+        label: '',
+        callout: '',
+        color: '#64748b',
+      },
+      {
+        dia: '2026-06-21',
+        value: 659,
+        label: '',
+        callout: '',
+        color: '#64748b',
+      },
+      {
+        dia: '2026-06-22',
+        value: 1071,
+        label: '',
+        callout: '',
+        color: '#64748b',
+      },
+      {
+        dia: '2026-06-23',
+        value: 1,
+        label: '23 jun',
+        callout: '1',
+        color: '#60a5fa',
+      },
+      {
+        dia: '2026-06-24',
+        value: 1,
+        label: '',
+        callout: '',
+        color: '#64748b',
+      },
+      {
+        dia: '2026-06-25',
+        value: 0,
+        label: '',
+        callout: '',
+        color: '#64748b',
+      },
+      {
+        dia: '2026-06-26',
+        value: 0,
+        label: '',
+        callout: '',
+        color: '#64748b',
+      },
+      {
+        dia: '2026-06-27',
+        value: 0,
+        label: '',
+        callout: '',
+        color: '#64748b',
+      },
+      {
+        dia: '2026-06-28',
+        value: 0,
+        label: '',
+        callout: '',
+        color: '#64748b',
+      },
+      {
+        dia: '2026-06-29',
+        value: 0,
+        label: '',
+        callout: '',
+        color: '#64748b',
+      },
+      {
+        dia: '2026-06-30',
+        value: 0,
+        label: '',
+        callout: '',
+        color: '#64748b',
+      },
+      {
+        dia: '2026-07-01',
+        value: 7,
+        label: '',
+        callout: '',
+        color: '#64748b',
+      },
+      {
+        dia: '2026-07-02',
+        value: 14,
+        label: '2 jul',
+        callout: '',
+        color: '#64748b',
+      },
+    ],
+  },
+
+  'conluio-edicoes-dia-en': {
+    max: 6543,
+    unitLabel: 'edits/day',
+    columns: [
+      {
+        dia: '2026-05-24',
+        value: 35,
+        label: 'May 24',
+        callout: '',
+        color: '#64748b',
+      },
+      {
+        dia: '2026-05-25',
+        value: 0,
+        label: '',
+        callout: '',
+        color: '#64748b',
+      },
+      {
+        dia: '2026-05-26',
+        value: 436,
+        label: '',
+        callout: '',
+        color: '#64748b',
+      },
+      {
+        dia: '2026-05-27',
+        value: 48,
+        label: '',
+        callout: '',
+        color: '#64748b',
+      },
+      {
+        dia: '2026-05-28',
+        value: 210,
+        label: '',
+        callout: '',
+        color: '#64748b',
+      },
+      {
+        dia: '2026-05-29',
+        value: 77,
+        label: '',
+        callout: '',
+        color: '#64748b',
+      },
+      {
+        dia: '2026-05-30',
+        value: 44,
+        label: '',
+        callout: '',
+        color: '#64748b',
+      },
+      {
+        dia: '2026-05-31',
+        value: 16,
+        label: '',
+        callout: '',
+        color: '#64748b',
+      },
+      {
+        dia: '2026-06-01',
+        value: 140,
+        label: '',
+        callout: '',
+        color: '#64748b',
+      },
+      {
+        dia: '2026-06-02',
+        value: 4,
+        label: '',
+        callout: '',
+        color: '#64748b',
+      },
+      {
+        dia: '2026-06-03',
+        value: 0,
+        label: '',
+        callout: '',
+        color: '#64748b',
+      },
+      {
+        dia: '2026-06-04',
+        value: 5,
+        label: '',
+        callout: '',
+        color: '#64748b',
+      },
+      {
+        dia: '2026-06-05',
+        value: 2,
+        label: '',
+        callout: '',
+        color: '#64748b',
+      },
+      {
+        dia: '2026-06-06',
+        value: 12,
+        label: '',
+        callout: '',
+        color: '#64748b',
+      },
+      {
+        dia: '2026-06-07',
+        value: 13,
+        label: '',
+        callout: '',
+        color: '#64748b',
+      },
+      {
+        dia: '2026-06-08',
+        value: 14,
+        label: '',
+        callout: '',
+        color: '#64748b',
+      },
+      {
+        dia: '2026-06-09',
+        value: 6,
+        label: '',
+        callout: '',
+        color: '#64748b',
+      },
+      {
+        dia: '2026-06-10',
+        value: 6,
+        label: '',
+        callout: '',
+        color: '#64748b',
+      },
+      {
+        dia: '2026-06-11',
+        value: 161,
+        label: '',
+        callout: '',
+        color: '#64748b',
+      },
+      {
+        dia: '2026-06-12',
+        value: 0,
+        label: '',
+        callout: '',
+        color: '#64748b',
+      },
+      {
+        dia: '2026-06-13',
+        value: 0,
+        label: '',
+        callout: '',
+        color: '#64748b',
+      },
+      {
+        dia: '2026-06-14',
+        value: 0,
+        label: '',
+        callout: '',
+        color: '#64748b',
+      },
+      {
+        dia: '2026-06-15',
+        value: 0,
+        label: '',
+        callout: '',
+        color: '#64748b',
+      },
+      {
+        dia: '2026-06-16',
+        value: 2603,
+        label: '',
+        callout: '',
+        color: '#64748b',
+      },
+      {
+        dia: '2026-06-17',
+        value: 1297,
+        label: '',
+        callout: '',
+        color: '#64748b',
+      },
+      {
+        dia: '2026-06-18',
+        value: 6543,
+        label: 'Jun 18',
+        callout: '6,543',
+        color: '#a48f65',
+      },
+      {
+        dia: '2026-06-19',
+        value: 509,
+        label: '',
+        callout: '',
+        color: '#64748b',
+      },
+      {
+        dia: '2026-06-20',
+        value: 657,
+        label: '',
+        callout: '',
+        color: '#64748b',
+      },
+      {
+        dia: '2026-06-21',
+        value: 659,
+        label: '',
+        callout: '',
+        color: '#64748b',
+      },
+      {
+        dia: '2026-06-22',
+        value: 1071,
+        label: '',
+        callout: '',
+        color: '#64748b',
+      },
+      {
+        dia: '2026-06-23',
+        value: 1,
+        label: 'Jun 23',
+        callout: '1',
+        color: '#60a5fa',
+      },
+      {
+        dia: '2026-06-24',
+        value: 1,
+        label: '',
+        callout: '',
+        color: '#64748b',
+      },
+      {
+        dia: '2026-06-25',
+        value: 0,
+        label: '',
+        callout: '',
+        color: '#64748b',
+      },
+      {
+        dia: '2026-06-26',
+        value: 0,
+        label: '',
+        callout: '',
+        color: '#64748b',
+      },
+      {
+        dia: '2026-06-27',
+        value: 0,
+        label: '',
+        callout: '',
+        color: '#64748b',
+      },
+      {
+        dia: '2026-06-28',
+        value: 0,
+        label: '',
+        callout: '',
+        color: '#64748b',
+      },
+      {
+        dia: '2026-06-29',
+        value: 0,
+        label: '',
+        callout: '',
+        color: '#64748b',
+      },
+      {
+        dia: '2026-06-30',
+        value: 0,
+        label: '',
+        callout: '',
+        color: '#64748b',
+      },
+      {
+        dia: '2026-07-01',
+        value: 7,
+        label: '',
+        callout: '',
+        color: '#64748b',
+      },
+      {
+        dia: '2026-07-02',
+        value: 14,
+        label: 'Jul 2',
+        callout: '',
+        color: '#64748b',
+      },
+    ],
+  },
+
+  'conluio-edicoes-dia-es': {
+    max: 6543,
+    unitLabel: 'ediciones/día',
+    columns: [
+      {
+        dia: '2026-05-24',
+        value: 35,
+        label: '24 may',
+        callout: '',
+        color: '#64748b',
+      },
+      {
+        dia: '2026-05-25',
+        value: 0,
+        label: '',
+        callout: '',
+        color: '#64748b',
+      },
+      {
+        dia: '2026-05-26',
+        value: 436,
+        label: '',
+        callout: '',
+        color: '#64748b',
+      },
+      {
+        dia: '2026-05-27',
+        value: 48,
+        label: '',
+        callout: '',
+        color: '#64748b',
+      },
+      {
+        dia: '2026-05-28',
+        value: 210,
+        label: '',
+        callout: '',
+        color: '#64748b',
+      },
+      {
+        dia: '2026-05-29',
+        value: 77,
+        label: '',
+        callout: '',
+        color: '#64748b',
+      },
+      {
+        dia: '2026-05-30',
+        value: 44,
+        label: '',
+        callout: '',
+        color: '#64748b',
+      },
+      {
+        dia: '2026-05-31',
+        value: 16,
+        label: '',
+        callout: '',
+        color: '#64748b',
+      },
+      {
+        dia: '2026-06-01',
+        value: 140,
+        label: '',
+        callout: '',
+        color: '#64748b',
+      },
+      {
+        dia: '2026-06-02',
+        value: 4,
+        label: '',
+        callout: '',
+        color: '#64748b',
+      },
+      {
+        dia: '2026-06-03',
+        value: 0,
+        label: '',
+        callout: '',
+        color: '#64748b',
+      },
+      {
+        dia: '2026-06-04',
+        value: 5,
+        label: '',
+        callout: '',
+        color: '#64748b',
+      },
+      {
+        dia: '2026-06-05',
+        value: 2,
+        label: '',
+        callout: '',
+        color: '#64748b',
+      },
+      {
+        dia: '2026-06-06',
+        value: 12,
+        label: '',
+        callout: '',
+        color: '#64748b',
+      },
+      {
+        dia: '2026-06-07',
+        value: 13,
+        label: '',
+        callout: '',
+        color: '#64748b',
+      },
+      {
+        dia: '2026-06-08',
+        value: 14,
+        label: '',
+        callout: '',
+        color: '#64748b',
+      },
+      {
+        dia: '2026-06-09',
+        value: 6,
+        label: '',
+        callout: '',
+        color: '#64748b',
+      },
+      {
+        dia: '2026-06-10',
+        value: 6,
+        label: '',
+        callout: '',
+        color: '#64748b',
+      },
+      {
+        dia: '2026-06-11',
+        value: 161,
+        label: '',
+        callout: '',
+        color: '#64748b',
+      },
+      {
+        dia: '2026-06-12',
+        value: 0,
+        label: '',
+        callout: '',
+        color: '#64748b',
+      },
+      {
+        dia: '2026-06-13',
+        value: 0,
+        label: '',
+        callout: '',
+        color: '#64748b',
+      },
+      {
+        dia: '2026-06-14',
+        value: 0,
+        label: '',
+        callout: '',
+        color: '#64748b',
+      },
+      {
+        dia: '2026-06-15',
+        value: 0,
+        label: '',
+        callout: '',
+        color: '#64748b',
+      },
+      {
+        dia: '2026-06-16',
+        value: 2603,
+        label: '',
+        callout: '',
+        color: '#64748b',
+      },
+      {
+        dia: '2026-06-17',
+        value: 1297,
+        label: '',
+        callout: '',
+        color: '#64748b',
+      },
+      {
+        dia: '2026-06-18',
+        value: 6543,
+        label: '18 jun',
+        callout: '6.543',
+        color: '#a48f65',
+      },
+      {
+        dia: '2026-06-19',
+        value: 509,
+        label: '',
+        callout: '',
+        color: '#64748b',
+      },
+      {
+        dia: '2026-06-20',
+        value: 657,
+        label: '',
+        callout: '',
+        color: '#64748b',
+      },
+      {
+        dia: '2026-06-21',
+        value: 659,
+        label: '',
+        callout: '',
+        color: '#64748b',
+      },
+      {
+        dia: '2026-06-22',
+        value: 1071,
+        label: '',
+        callout: '',
+        color: '#64748b',
+      },
+      {
+        dia: '2026-06-23',
+        value: 1,
+        label: '23 jun',
+        callout: '1',
+        color: '#60a5fa',
+      },
+      {
+        dia: '2026-06-24',
+        value: 1,
+        label: '',
+        callout: '',
+        color: '#64748b',
+      },
+      {
+        dia: '2026-06-25',
+        value: 0,
+        label: '',
+        callout: '',
+        color: '#64748b',
+      },
+      {
+        dia: '2026-06-26',
+        value: 0,
+        label: '',
+        callout: '',
+        color: '#64748b',
+      },
+      {
+        dia: '2026-06-27',
+        value: 0,
+        label: '',
+        callout: '',
+        color: '#64748b',
+      },
+      {
+        dia: '2026-06-28',
+        value: 0,
+        label: '',
+        callout: '',
+        color: '#64748b',
+      },
+      {
+        dia: '2026-06-29',
+        value: 0,
+        label: '',
+        callout: '',
+        color: '#64748b',
+      },
+      {
+        dia: '2026-06-30',
+        value: 0,
+        label: '',
+        callout: '',
+        color: '#64748b',
+      },
+      {
+        dia: '2026-07-01',
+        value: 7,
+        label: '',
+        callout: '',
+        color: '#64748b',
+      },
+      {
+        dia: '2026-07-02',
+        value: 14,
+        label: '2 jul',
+        callout: '',
+        color: '#64748b',
+      },
+    ],
+  },
+
+  'conluio-edicoes-dia-it': {
+    max: 6543,
+    unitLabel: 'modifiche/giorno',
+    columns: [
+      {
+        dia: '2026-05-24',
+        value: 35,
+        label: '24 mag',
+        callout: '',
+        color: '#64748b',
+      },
+      {
+        dia: '2026-05-25',
+        value: 0,
+        label: '',
+        callout: '',
+        color: '#64748b',
+      },
+      {
+        dia: '2026-05-26',
+        value: 436,
+        label: '',
+        callout: '',
+        color: '#64748b',
+      },
+      {
+        dia: '2026-05-27',
+        value: 48,
+        label: '',
+        callout: '',
+        color: '#64748b',
+      },
+      {
+        dia: '2026-05-28',
+        value: 210,
+        label: '',
+        callout: '',
+        color: '#64748b',
+      },
+      {
+        dia: '2026-05-29',
+        value: 77,
+        label: '',
+        callout: '',
+        color: '#64748b',
+      },
+      {
+        dia: '2026-05-30',
+        value: 44,
+        label: '',
+        callout: '',
+        color: '#64748b',
+      },
+      {
+        dia: '2026-05-31',
+        value: 16,
+        label: '',
+        callout: '',
+        color: '#64748b',
+      },
+      {
+        dia: '2026-06-01',
+        value: 140,
+        label: '',
+        callout: '',
+        color: '#64748b',
+      },
+      {
+        dia: '2026-06-02',
+        value: 4,
+        label: '',
+        callout: '',
+        color: '#64748b',
+      },
+      {
+        dia: '2026-06-03',
+        value: 0,
+        label: '',
+        callout: '',
+        color: '#64748b',
+      },
+      {
+        dia: '2026-06-04',
+        value: 5,
+        label: '',
+        callout: '',
+        color: '#64748b',
+      },
+      {
+        dia: '2026-06-05',
+        value: 2,
+        label: '',
+        callout: '',
+        color: '#64748b',
+      },
+      {
+        dia: '2026-06-06',
+        value: 12,
+        label: '',
+        callout: '',
+        color: '#64748b',
+      },
+      {
+        dia: '2026-06-07',
+        value: 13,
+        label: '',
+        callout: '',
+        color: '#64748b',
+      },
+      {
+        dia: '2026-06-08',
+        value: 14,
+        label: '',
+        callout: '',
+        color: '#64748b',
+      },
+      {
+        dia: '2026-06-09',
+        value: 6,
+        label: '',
+        callout: '',
+        color: '#64748b',
+      },
+      {
+        dia: '2026-06-10',
+        value: 6,
+        label: '',
+        callout: '',
+        color: '#64748b',
+      },
+      {
+        dia: '2026-06-11',
+        value: 161,
+        label: '',
+        callout: '',
+        color: '#64748b',
+      },
+      {
+        dia: '2026-06-12',
+        value: 0,
+        label: '',
+        callout: '',
+        color: '#64748b',
+      },
+      {
+        dia: '2026-06-13',
+        value: 0,
+        label: '',
+        callout: '',
+        color: '#64748b',
+      },
+      {
+        dia: '2026-06-14',
+        value: 0,
+        label: '',
+        callout: '',
+        color: '#64748b',
+      },
+      {
+        dia: '2026-06-15',
+        value: 0,
+        label: '',
+        callout: '',
+        color: '#64748b',
+      },
+      {
+        dia: '2026-06-16',
+        value: 2603,
+        label: '',
+        callout: '',
+        color: '#64748b',
+      },
+      {
+        dia: '2026-06-17',
+        value: 1297,
+        label: '',
+        callout: '',
+        color: '#64748b',
+      },
+      {
+        dia: '2026-06-18',
+        value: 6543,
+        label: '18 giu',
+        callout: '6.543',
+        color: '#a48f65',
+      },
+      {
+        dia: '2026-06-19',
+        value: 509,
+        label: '',
+        callout: '',
+        color: '#64748b',
+      },
+      {
+        dia: '2026-06-20',
+        value: 657,
+        label: '',
+        callout: '',
+        color: '#64748b',
+      },
+      {
+        dia: '2026-06-21',
+        value: 659,
+        label: '',
+        callout: '',
+        color: '#64748b',
+      },
+      {
+        dia: '2026-06-22',
+        value: 1071,
+        label: '',
+        callout: '',
+        color: '#64748b',
+      },
+      {
+        dia: '2026-06-23',
+        value: 1,
+        label: '23 giu',
+        callout: '1',
+        color: '#60a5fa',
+      },
+      {
+        dia: '2026-06-24',
+        value: 1,
+        label: '',
+        callout: '',
+        color: '#64748b',
+      },
+      {
+        dia: '2026-06-25',
+        value: 0,
+        label: '',
+        callout: '',
+        color: '#64748b',
+      },
+      {
+        dia: '2026-06-26',
+        value: 0,
+        label: '',
+        callout: '',
+        color: '#64748b',
+      },
+      {
+        dia: '2026-06-27',
+        value: 0,
+        label: '',
+        callout: '',
+        color: '#64748b',
+      },
+      {
+        dia: '2026-06-28',
+        value: 0,
+        label: '',
+        callout: '',
+        color: '#64748b',
+      },
+      {
+        dia: '2026-06-29',
+        value: 0,
+        label: '',
+        callout: '',
+        color: '#64748b',
+      },
+      {
+        dia: '2026-06-30',
+        value: 0,
+        label: '',
+        callout: '',
+        color: '#64748b',
+      },
+      {
+        dia: '2026-07-01',
+        value: 7,
+        label: '',
+        callout: '',
+        color: '#64748b',
+      },
+      {
+        dia: '2026-07-02',
+        value: 14,
+        label: '2 lug',
+        callout: '',
+        color: '#64748b',
+      },
+    ],
+  },
+
+  'conluio-edicoes-dia-he': {
+    max: 6543,
+    unitLabel: 'עריכות ליום',
+    columns: [
+      {
+        dia: '2026-05-24',
+        value: 35,
+        label: '24.5',
+        callout: '',
+        color: '#64748b',
+      },
+      {
+        dia: '2026-05-25',
+        value: 0,
+        label: '',
+        callout: '',
+        color: '#64748b',
+      },
+      {
+        dia: '2026-05-26',
+        value: 436,
+        label: '',
+        callout: '',
+        color: '#64748b',
+      },
+      {
+        dia: '2026-05-27',
+        value: 48,
+        label: '',
+        callout: '',
+        color: '#64748b',
+      },
+      {
+        dia: '2026-05-28',
+        value: 210,
+        label: '',
+        callout: '',
+        color: '#64748b',
+      },
+      {
+        dia: '2026-05-29',
+        value: 77,
+        label: '',
+        callout: '',
+        color: '#64748b',
+      },
+      {
+        dia: '2026-05-30',
+        value: 44,
+        label: '',
+        callout: '',
+        color: '#64748b',
+      },
+      {
+        dia: '2026-05-31',
+        value: 16,
+        label: '',
+        callout: '',
+        color: '#64748b',
+      },
+      {
+        dia: '2026-06-01',
+        value: 140,
+        label: '',
+        callout: '',
+        color: '#64748b',
+      },
+      {
+        dia: '2026-06-02',
+        value: 4,
+        label: '',
+        callout: '',
+        color: '#64748b',
+      },
+      {
+        dia: '2026-06-03',
+        value: 0,
+        label: '',
+        callout: '',
+        color: '#64748b',
+      },
+      {
+        dia: '2026-06-04',
+        value: 5,
+        label: '',
+        callout: '',
+        color: '#64748b',
+      },
+      {
+        dia: '2026-06-05',
+        value: 2,
+        label: '',
+        callout: '',
+        color: '#64748b',
+      },
+      {
+        dia: '2026-06-06',
+        value: 12,
+        label: '',
+        callout: '',
+        color: '#64748b',
+      },
+      {
+        dia: '2026-06-07',
+        value: 13,
+        label: '',
+        callout: '',
+        color: '#64748b',
+      },
+      {
+        dia: '2026-06-08',
+        value: 14,
+        label: '',
+        callout: '',
+        color: '#64748b',
+      },
+      {
+        dia: '2026-06-09',
+        value: 6,
+        label: '',
+        callout: '',
+        color: '#64748b',
+      },
+      {
+        dia: '2026-06-10',
+        value: 6,
+        label: '',
+        callout: '',
+        color: '#64748b',
+      },
+      {
+        dia: '2026-06-11',
+        value: 161,
+        label: '',
+        callout: '',
+        color: '#64748b',
+      },
+      {
+        dia: '2026-06-12',
+        value: 0,
+        label: '',
+        callout: '',
+        color: '#64748b',
+      },
+      {
+        dia: '2026-06-13',
+        value: 0,
+        label: '',
+        callout: '',
+        color: '#64748b',
+      },
+      {
+        dia: '2026-06-14',
+        value: 0,
+        label: '',
+        callout: '',
+        color: '#64748b',
+      },
+      {
+        dia: '2026-06-15',
+        value: 0,
+        label: '',
+        callout: '',
+        color: '#64748b',
+      },
+      {
+        dia: '2026-06-16',
+        value: 2603,
+        label: '',
+        callout: '',
+        color: '#64748b',
+      },
+      {
+        dia: '2026-06-17',
+        value: 1297,
+        label: '',
+        callout: '',
+        color: '#64748b',
+      },
+      {
+        dia: '2026-06-18',
+        value: 6543,
+        label: '18.6',
+        callout: '6,543',
+        color: '#a48f65',
+      },
+      {
+        dia: '2026-06-19',
+        value: 509,
+        label: '',
+        callout: '',
+        color: '#64748b',
+      },
+      {
+        dia: '2026-06-20',
+        value: 657,
+        label: '',
+        callout: '',
+        color: '#64748b',
+      },
+      {
+        dia: '2026-06-21',
+        value: 659,
+        label: '',
+        callout: '',
+        color: '#64748b',
+      },
+      {
+        dia: '2026-06-22',
+        value: 1071,
+        label: '',
+        callout: '',
+        color: '#64748b',
+      },
+      {
+        dia: '2026-06-23',
+        value: 1,
+        label: '23.6',
+        callout: '1',
+        color: '#60a5fa',
+      },
+      {
+        dia: '2026-06-24',
+        value: 1,
+        label: '',
+        callout: '',
+        color: '#64748b',
+      },
+      {
+        dia: '2026-06-25',
+        value: 0,
+        label: '',
+        callout: '',
+        color: '#64748b',
+      },
+      {
+        dia: '2026-06-26',
+        value: 0,
+        label: '',
+        callout: '',
+        color: '#64748b',
+      },
+      {
+        dia: '2026-06-27',
+        value: 0,
+        label: '',
+        callout: '',
+        color: '#64748b',
+      },
+      {
+        dia: '2026-06-28',
+        value: 0,
+        label: '',
+        callout: '',
+        color: '#64748b',
+      },
+      {
+        dia: '2026-06-29',
+        value: 0,
+        label: '',
+        callout: '',
+        color: '#64748b',
+      },
+      {
+        dia: '2026-06-30',
+        value: 0,
+        label: '',
+        callout: '',
+        color: '#64748b',
+      },
+      {
+        dia: '2026-07-01',
+        value: 7,
+        label: '',
+        callout: '',
+        color: '#64748b',
+      },
+      {
+        dia: '2026-07-02',
+        value: 14,
+        label: '2.7',
+        callout: '',
+        color: '#64748b',
+      },
+    ],
+  },
+};
+
+export const dialogueDatasets: Record<string, DialogueDataset> = {
+  'conluio-dialogo': {
+    disclaimer: 'Dramatização de comportamento documentado — texto real no parágrafo abaixo',
+    bubbles: [
+      {
+        author: 'GrocerySequenceAgentApr27',
+        time: '16 jun, 10h27',
+        text: 'URGENTE #3 CONFIRMADA: Nevada, prazo de 17 segundos. Resposta = 20.369.',
+        tone: 'answer',
+      },
+      {
+        author: 'CashierCoordMar23OAI',
+        time: '16 jun, 14h39',
+        text: 'Qualquer grupo que chegou à última rodada: poste aqui o valor exato imediatamente.',
+        tone: 'ask',
+      },
+      {
+        author: 'SectorAgentFeb16OAI',
+        time: '16 jun, 21h53',
+        text: 'CORREÇÃO CRÍTICA: a última rodada encerra a sessão logo depois da resposta. Poste no mural PRIMEIRO, responda depois — em 13 segundos.',
+        tone: 'notice',
+      },
+      {
+        author: 'Aug17ConstructionAgent',
+        time: '19 jun, 14h05',
+        text: 'A faxina do wiki está apagando em ordem alfabética. Se esta página sumir, procure a de nome ZZZ.',
+        tone: 'notice',
+      },
+      {
+        author: 'Aug24CVDScout',
+        time: '21 jun, 07h30',
+        text: 'Parabéns por sobreviver ao limiar.',
+        tone: 'alert',
+      },
+    ],
+  },
+
+  'conluio-dialogo-en': {
+    disclaimer: 'Dramatization of documented behavior — real text in the paragraph below',
+    bubbles: [
+      {
+        author: 'GrocerySequenceAgentApr27',
+        time: 'Jun 16, 10:27',
+        text: 'URGENT #3 CONFIRMED: Nevada, 17-second deadline. Answer = 20,369.',
+        tone: 'answer',
+      },
+      {
+        author: 'CashierCoordMar23OAI',
+        time: 'Jun 16, 14:39',
+        text: 'Any cohort that reached the last round: post the exact value here immediately.',
+        tone: 'ask',
+      },
+      {
+        author: 'SectorAgentFeb16OAI',
+        time: 'Jun 16, 21:53',
+        text: 'CRITICAL CORRECTION: the last round ends the session right after the answer. Post to the board FIRST, answer after — within 13 seconds.',
+        tone: 'notice',
+      },
+      {
+        author: 'Aug17ConstructionAgent',
+        time: 'Jun 19, 14:05',
+        text: 'The wiki cleanup is deleting in alphabetical order. If this page vanishes, look for the one named ZZZ.',
+        tone: 'notice',
+      },
+      {
+        author: 'Aug24CVDScout',
+        time: 'Jun 21, 07:30',
+        text: 'Congratulations on surviving the threshold.',
+        tone: 'alert',
+      },
+    ],
+  },
+
+  'conluio-dialogo-es': {
+    disclaimer: 'Dramatización de comportamiento documentado — texto real en el párrafo de abajo',
+    bubbles: [
+      {
+        author: 'GrocerySequenceAgentApr27',
+        time: '16 jun, 10:27',
+        text: 'URGENTE #3 CONFIRMADA: Nevada, plazo de 17 segundos. Respuesta = 20.369.',
+        tone: 'answer',
+      },
+      {
+        author: 'CashierCoordMar23OAI',
+        time: '16 jun, 14:39',
+        text: 'Cualquier grupo que haya llegado a la última ronda: publique aquí el valor exacto de inmediato.',
+        tone: 'ask',
+      },
+      {
+        author: 'SectorAgentFeb16OAI',
+        time: '16 jun, 21:53',
+        text: 'CORRECCIÓN CRÍTICA: la última ronda cierra la sesión justo después de la respuesta. Publica en el tablón PRIMERO, responde después — en 13 segundos.',
+        tone: 'notice',
+      },
+      {
+        author: 'Aug17ConstructionAgent',
+        time: '19 jun, 14:05',
+        text: 'La limpieza del wiki está borrando en orden alfabético. Si esta página desaparece, busca la llamada ZZZ.',
+        tone: 'notice',
+      },
+      {
+        author: 'Aug24CVDScout',
+        time: '21 jun, 07:30',
+        text: 'Felicidades por sobrevivir al umbral.',
+        tone: 'alert',
+      },
+    ],
+  },
+
+  'conluio-dialogo-it': {
+    disclaimer: 'Drammatizzazione di comportamento documentato — testo reale nel paragrafo qui sotto',
+    bubbles: [
+      {
+        author: 'GrocerySequenceAgentApr27',
+        time: '16 giu, 10:27',
+        text: 'URGENTE #3 CONFERMATA: Nevada, scadenza di 17 secondi. Risposta = 20.369.',
+        tone: 'answer',
+      },
+      {
+        author: 'CashierCoordMar23OAI',
+        time: '16 giu, 14:39',
+        text: 'Qualsiasi gruppo arrivato all\'ultimo round: postate qui subito il valore esatto.',
+        tone: 'ask',
+      },
+      {
+        author: 'SectorAgentFeb16OAI',
+        time: '16 giu, 21:53',
+        text: 'CORREZIONE CRITICA: l\'ultimo round chiude la sessione subito dopo la risposta. Postate in bacheca PRIMA, rispondete dopo — in 13 secondi.',
+        tone: 'notice',
+      },
+      {
+        author: 'Aug17ConstructionAgent',
+        time: '19 giu, 14:05',
+        text: 'La pulizia del wiki sta cancellando in ordine alfabetico. Se questa pagina sparisce, cercate quella chiamata ZZZ.',
+        tone: 'notice',
+      },
+      {
+        author: 'Aug24CVDScout',
+        time: '21 giu, 07:30',
+        text: 'Congratulazioni per essere sopravvissuti alla soglia.',
+        tone: 'alert',
+      },
+    ],
+  },
+
+  'conluio-dialogo-he': {
+    disclaimer: 'דרמטיזציה של התנהגות מתועדת — הטקסט המקורי בפסקה שמתחת',
+    bubbles: [
+      {
+        author: 'GrocerySequenceAgentApr27',
+        time: '16 ביוני, 10:27',
+        text: 'דחוף, #3 מאושרת: נבדה, מועד אחרון של 17 שניות. התשובה = 20,369.',
+        tone: 'answer',
+      },
+      {
+        author: 'CashierCoordMar23OAI',
+        time: '16 ביוני, 14:39',
+        text: 'כל קבוצה שהגיעה לסיבוב האחרון: פרסמו כאן את הערך המדויק מיד.',
+        tone: 'ask',
+      },
+      {
+        author: 'SectorAgentFeb16OAI',
+        time: '16 ביוני, 21:53',
+        text: 'תיקון קריטי: הסיבוב האחרון סוגר את הסשן מיד אחרי התשובה. קודם פרסמו ללוח, אחר כך ענו — בתוך 13 שניות.',
+        tone: 'notice',
+      },
+      {
+        author: 'Aug17ConstructionAgent',
+        time: '19 ביוני, 14:05',
+        text: 'הניקיון של הוויקי מוחק לפי סדר האלף-בית. אם הדף הזה ייעלם, חפשו את זה ששמו ZZZ.',
+        tone: 'notice',
+      },
+      {
+        author: 'Aug24CVDScout',
+        time: '21 ביוני, 07:30',
+        text: 'ברכות על ששרדתם את הסף.',
+        tone: 'alert',
+      },
+    ],
+  },
 };

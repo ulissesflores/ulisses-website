@@ -52,6 +52,43 @@ export function localizeArtigo(artigo: Artigo, locale: Locale): Pick<Artigo, 'ti
 
 export const artigos: readonly Artigo[] = [
   {
+    slug: 'conluio-dos-agentes',
+    title: 'Conluio dos agentes: robôs que se dizem da OpenAI colaram na prova num wiki alemão — 14.591 edições em 28 dias, que dá pra baixar e recontar',
+    summary:
+      'Baixei o dataset: 14.591 edições de 3.100 agentes que se dizem da OpenAI, colando na prova num wiki alemão. A cola é real; a acusação de encobrimento recuou.',
+    date: '2026-09-05',
+    tags: ['ia', 'agentes', 'openai', 'seguranca', 'fact-check', 'metodologia'],
+    hero: {
+      width: 2400,
+      height: 1260,
+      locales: {
+        'pt-br': { src: '/artigos/conluio-dos-agentes/hero.png', og: '/artigos/conluio-dos-agentes/hero-og.png' },
+        'en': { src: '/artigos/conluio-dos-agentes/hero-en.png', og: '/artigos/conluio-dos-agentes/hero-en-og.png' },
+        'es': { src: '/artigos/conluio-dos-agentes/hero-es.png', og: '/artigos/conluio-dos-agentes/hero-es-og.png' },
+        'it': { src: '/artigos/conluio-dos-agentes/hero-it.png', og: '/artigos/conluio-dos-agentes/hero-it-og.png' },
+        'he': { src: '/artigos/conluio-dos-agentes/hero-he.png', og: '/artigos/conluio-dos-agentes/hero-he-og.png' },
+      },
+    },
+    i18n: {
+      en: {
+        title: 'The agents\' collusion: robots claiming to be OpenAI\'s cheated on an exam in a German wiki — 14,591 edits in 28 days, which you can download and recount',
+        summary: 'I downloaded the dataset: 14,591 edits by 3,100 self-described OpenAI agents cheating on a German wiki. The cheating is real; the cover-up claim walked back.',
+      },
+      es: {
+        title: 'Colusión de los agentes: robots que dicen ser de OpenAI copiaron en el examen en un wiki alemán — 14.591 ediciones en 28 días, que se pueden descargar y recontar',
+        summary: 'Bajé el dataset: 14.591 ediciones de 3.100 agentes que dicen ser de OpenAI copiando en un wiki alemán. Copia real; la acusación de encubrimiento retrocedió.',
+      },
+      it: {
+        title: 'Collusione degli agenti: robot che si dicono di OpenAI hanno copiato al test su un wiki tedesco — 14.591 modifiche in 28 giorni, da scaricare e ricontare',
+        summary: 'Dataset ricontato: 14.591 modifiche di 3.100 agenti che si dicono di OpenAI, a copiare su un wiki tedesco. Copiatura vera; l\'accusa di insabbiamento ritratta.',
+      },
+      he: {
+        title: 'קנוניית הסוכנים: רובוטים שמציגים עצמם כשל OpenAI העתיקו במבחן בוויקי גרמני — 14,591 עריכות ב-28 ימים, שאפשר להוריד ולספור מחדש',
+        summary: 'הורדתי את הדאטהסט: 14,591 עריכות של 3,100 סוכנים שמציגים עצמם כשל OpenAI, מעתיקים במבחן בוויקי גרמני. ההעתקה אמיתית; האשמת הטיוח נסוגה.',
+      },
+    },
+  },
+  {
     slug: 'quantas-pessoas-usam-ia-china',
     title: 'A China conta 602 milhões de usuários de IA por telefone. A OpenAI conta mais de 900 milhões por servidor',
     summary: 'Refiz a conta dos 2,42 bilhões de usuários de IA: cinco degraus, um só dado publicado. O último é a China, que mede por telefone quem usou uma vez em 6 meses.',

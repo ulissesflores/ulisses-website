@@ -217,6 +217,11 @@ const nextConfig: NextConfig = {
       { source: '/energia-he', destination: '/he/artigos/consumo-energia-ia', permanent: true },
       { source: '/regua', destination: '/artigos/skills-de-agentes-inseguras', permanent: true },
       { source: '/censo', destination: '/artigos/quantas-pessoas-usam-ia-china', permanent: true },
+      { source: '/conluio',    destination: '/artigos/conluio-dos-agentes',    permanent: true },
+      { source: '/conluio-en', destination: '/en/artigos/conluio-dos-agentes', permanent: true },
+      { source: '/conluio-es', destination: '/es/artigos/conluio-dos-agentes', permanent: true },
+      { source: '/conluio-it', destination: '/it/artigos/conluio-dos-agentes', permanent: true },
+      { source: '/conluio-he', destination: '/he/artigos/conluio-dos-agentes', permanent: true },
     ];
 
     // Locale handling (double-locale 410 + single-locale 301 + i18n rewrite) moved to middleware.ts

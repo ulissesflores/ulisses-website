@@ -20,7 +20,7 @@ DOIS REGIMES DE MEDIÇÃO, porque são dois tipos de figura:
    várias dessas caixas são dimensionadas pelo próprio texto (fórmula de contagem de
    caractere), então elas vivem, por construção, acima de 85%.
 
-COBERTURA (espelho de `lib/content/mdx-components.tsx`, lido em 2026-09-02 — 22 entradas):
+COBERTURA (espelho de `lib/content/mdx-components.tsx`, lido em 2026-09-05 — 24 entradas):
 
 | Componente | Regime | Texto medido |
 |---|---|---|
@@ -31,6 +31,7 @@ COBERTURA (espelho de `lib/content/mdx-components.tsx`, lido em 2026-09-02 — 2
 | FlowLineDiagram, ConstraintExperimentChart, VramLadder | 2 | props + tudo que o dataset desenha |
 | ObligationMatrix | 2 | props + tudo que o dataset desenha |
 | ThermometerTrioDiagram | 2 | props + tudo que o dataset desenha |
+| DailyColumnsChart, DialogueDiagram | 2 | props + tudo que o dataset desenha |
 | SimulationRenderer, YouTube, ArticleFigure | — | não desenham texto em SVG |
 
 Componente instanciado num `.mdx` que não esteja nessa lista **reprova com exit 1** em vez
@@ -130,6 +131,8 @@ FAMILIAS = {
     "obligationMatrixDatasets": "obligationMatrix",
     "thermometerTrioDatasets": "thermometerTrio",
     "costLadderDatasets": "costLadder",
+    "dailyColumnsDatasets": "dailyColumns",
+    "dialogueDatasets": "dialogue",
 }
 
 # Fragmento de entrega (chaves soltas, para colar dentro de um `Record` do site): a
@@ -1073,6 +1076,84 @@ def cena_cost_ladder(ds: dict, props: dict) -> Cena:
     return c
 
 
+# ── DailyColumnsChart — geometria de `daily-columns-chart.tsx` (novo: conluio) ──────
+# W=720, H=400, PAD={top:64, right:24, bottom:56, left:26}; plotW=670; n colunas de
+# step=plotW/n; callout (12/700) e label (11/400) centrados no eixo da coluna;
+# unitLabel à esquerda e source à direita dividem a MESMA linha de rodapé.
+DCC_W = 720
+DCC_MOLDURA = (0.0, 720.0)
+DCC_LEFT, DCC_RIGHT = 26, 24
+DCC_PLOT_W = DCC_W - DCC_LEFT - DCC_RIGHT  # 670
+
+
+def cena_daily_columns(ds: dict, props: dict) -> Cena:
+    c = Cena("DailyColumnsChart", folga_vizinho=8.0)
+    c.inicio("title", props["title"], 15, 700, DCC_LEFT, DCC_MOLDURA)
+    if props.get("subtitle"):
+        c.inicio("subtitle", props["subtitle"], 12, 400, DCC_LEFT, DCC_MOLDURA)
+    cols = ds["columns"]
+    passo = DCC_PLOT_W / len(cols)
+    for i, col in enumerate(cols):
+        cx = DCC_LEFT + i * passo + passo / 2
+        # O que reprova aqui é vizinhança (colunas de ~17px num dataset de 40 dias),
+        # não a moldura — mesma régua da linha do tempo do StepFlow.
+        if col.get("callout"):
+            c.centro(f"columns[{i}].callout", col["callout"], 12, 700, cx, DCC_MOLDURA, fila="callout")
+        if col.get("label"):
+            c.centro(f"columns[{i}].label", col["label"], 11, 400, cx, DCC_MOLDURA, fila="label")
+    c.inicio("unitLabel", ds["unitLabel"], 11, 400, DCC_LEFT, DCC_MOLDURA, fila="rodape")
+    if props.get("source"):
+        c.fim("source", props["source"], 11, 400, DCC_W - DCC_RIGHT, DCC_MOLDURA, fila="rodape")
+    return c
+
+
+# ── DialogueDiagram — geometria de `dialogue-diagram.tsx` (novo: conluio) ───────────
+# W=720, PAD={top:92, left:24, right:24}; bubbleW=672. disclaimer a x=36 na faixa
+# (borda direita 696). Em cada balão: author (bold) a left+16=40 e time end-anchored a
+# left+bubbleW-16=680 na MESMA linha; fala quebrada em linhas de <=68 chars (a mesma
+# quebra gulosa do componente), parede = a borda DESENHADA do balão (680) — encostar
+# nela é feio, não corte silencioso, então folga_parede=0 (mesma régua do Kitchen).
+DLG_W = 720
+DLG_MOLDURA = (0.0, 720.0)
+DLG_LEFT = 24
+DLG_TEXT_X = 40
+DLG_WALL = 680.0
+DLG_LINE_CHARS = 68
+
+
+def _wrap_dialogo(texto: str) -> list[str]:
+    """Réplica exata do `wrap()` de `dialogue-diagram.tsx` — quebra por CONTAGEM de
+    caracteres (68), determinística; quem confere se as linhas resultantes CABEM em
+    pixel é a cena abaixo, na fonte real."""
+    palavras, linhas, atual = texto.split(" "), [], ""
+    for p in palavras:
+        if atual and len(atual + " " + p) > DLG_LINE_CHARS:
+            linhas.append(atual)
+            atual = p
+        else:
+            atual = (atual + " " + p) if atual else p
+    if atual:
+        linhas.append(atual)
+    return linhas
+
+
+def cena_dialogue(ds: dict, props: dict) -> Cena:
+    c = Cena("DialogueDiagram", folga_vizinho=8.0, folga_parede=0.0)
+    c.inicio("title", props["title"], 15, 700, DLG_LEFT, DLG_MOLDURA)
+    if props.get("subtitle"):
+        c.inicio("subtitle", props["subtitle"], 12, 400, DLG_LEFT, DLG_MOLDURA)
+    c.inicio("disclaimer", ds["disclaimer"], 12, 400, 36.0, (24.0, 696.0))
+    for bi, b in enumerate(ds["bubbles"]):
+        fila = f"b{bi}-head"
+        c.inicio(f"bubbles[{bi}].author", b["author"], 13, 700, DLG_TEXT_X, (DLG_LEFT, DLG_WALL), fila=fila)
+        c.fim(f"bubbles[{bi}].time", b["time"], 11, 400, DLG_WALL, (DLG_LEFT, DLG_WALL), fila=fila)
+        for li, ln in enumerate(_wrap_dialogo(b["text"])):
+            c.inicio(f"bubbles[{bi}].text[{li}]", ln, 14, 400, DLG_TEXT_X, (DLG_TEXT_X, DLG_WALL))
+    if props.get("source"):
+        c.fim("source", props["source"], 11, 400, DLG_W - 24, DLG_MOLDURA)
+    return c
+
+
 # componente -> (família do dataset, construtor da cena)
 CENAS = {
     "WordChoiceDiagram": ("wordChoice", cena_word_choice),
@@ -1087,6 +1168,8 @@ CENAS = {
     "ObligationMatrix": ("obligationMatrix", cena_obligation_matrix),
     "ThermometerTrioDiagram": ("thermometerTrio", cena_termometros),
     "CostLadder": ("costLadder", cena_cost_ladder),
+    "DailyColumnsChart": ("dailyColumns", cena_daily_columns),
+    "DialogueDiagram": ("dialogue", cena_dialogue),
 }
 
 # Registrado em `mdx-components.tsx` mas sem `<text>` próprio: medir não se aplica.
