@@ -134,9 +134,9 @@ success('Markdown limpo — sem erros estruturais');
 // O medidor usa os TTF reais em scripts/charts/fonts/ e reprova acima de 100%
 // do orçamento; sem argumento, varre todo artigo de content/artigos/.
 
-header(3, totalSteps, 'Charts — Rótulo cortado em SVG');
-run('charts:labels', 'python3 scripts/charts/checar-rotulos-svg.py');
-success('Nenhum rótulo estourando o viewBox');
+header(3, totalSteps, 'Charts — Rótulo cortado e description');
+run('charts:labels', 'python3 scripts/charts/checar-rotulos-svg.py && python3 scripts/charts/checar-description.py');
+success('Nenhum rótulo estourando o viewBox; nenhuma description em desacordo');
 
 // ── STEP 4: i18n Parity ─────────────────────────────────────────────────────────
 
@@ -225,7 +225,7 @@ console.log(`${BOLD}${GREEN}  🏆 SOTA VALIDATION PASSED — Score 1000/1000${R
 console.log(`${BOLD}${GREEN}═══════════════════════════════════════════════════════════════${RESET}`);
 console.log(`${GREEN}  ✅ TypeScript:     0 erros${RESET}`);
 console.log(`${GREEN}  ✅ Markdown Lint:  limpo${RESET}`);
-console.log(`${GREEN}  ✅ Charts:          nenhum rótulo cortado${RESET}`);
+console.log(`${GREEN}  ✅ Charts:          nenhum rótulo cortado, nenhuma description em desacordo${RESET}`);
 console.log(`${GREEN}  ✅ i18n Parity:    ALL CHECKS PASSED${RESET}`);
 console.log(`${GREEN}  ✅ Test Suite:     todos passaram${RESET}`);
 console.log(`${GREEN}  ✅ SEO:            validado${RESET}`);
