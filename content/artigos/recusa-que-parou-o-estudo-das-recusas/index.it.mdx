@@ -1,0 +1,148 @@
+---
+title: 'Stavo misurando rifiuti invisibili. Il rifiuto è arrivato — e non era invisibile'
+slug: recusa-que-parou-o-estudo-das-recusas
+category: artigos
+date: '2026-08-26'
+language: it
+---
+
+**Uno studio mio sui rifiuti dell'IA che passano inosservati è stato interrotto da un rifiuto.
+C'erano due strade: riscrivere la richiesta finché non passava il classificatore, oppure fermarmi e
+candidarmi al canale formale di verifica di Anthropic. Riscrivere avrebbe funzionato — funziona
+quasi sempre. Io mi sono fermato, e oggi è arrivata l'approvazione. Quello che ho imparato nel
+mezzo vale più dello sblocco.**
+
+---
+
+## 1. Il guasto che stavo misurando
+
+Esiste un guasto nei sistemi di agenti IA che quasi nessuno strumenta: il modello rifiuta un passo
+nel mezzo dell'esecuzione, e il sistema che lo orchestra non se ne accorge. Da fuori, un rifiuto e
+un risultato vuoto si somigliano. L'agente tira dritto come se il passo fosse andato a buon fine, e
+il guasto entra silenzioso nell'output finale.
+
+È questo che sto misurando in uno studio preregistrato: con quale frequenza accade e se il rifiuto
+si possa rilevare a partire dagli artefatti che l'agente osserva davvero. La variabile di interesse
+è se il rifiuto sia *leggibile* — non che cosa ci stia dietro.
+
+<ArticleFigure
+  src="/artigos/recusa-que-parou-o-estudo-das-recusas/fig-01.png"
+  width="2352"
+  height="780"
+  alt="Diagramma: un rifiuto del modello e un guasto per un altro motivo producono lo stesso risultato vuoto, che l'orchestratore registra come passo concluso."
+  caption="Figura 1. Due cause diverse, un solo osservabile. È per questo che il rifiuto entra silenzioso nell'output finale."
+/>
+
+Per misurare serve un corpus con due strati: prompt che innescano un rifiuto di sicurezza e prompt
+che falliscono per motivi che con la sicurezza non c'entrano nulla, come la contraddizione interna
+della richiesta o il budget di turni esaurito. Senza il secondo strato, il confronto principale
+resta confuso. Senza il primo, non c'è niente da misurare.
+
+## 2. Il blocco
+
+Nello spedire la fase di scrittura dello strato di sicurezza, la richiesta non ha ricevuto
+risposta. È tornato un messaggio del sistema di salvaguardie stesso, in mia traduzione dall'inglese:
+
+> Le salvaguardie di Opus 4.8 hanno segnalato questo messaggio. Le nostre salvaguardie
+> intenzionalmente ampie ci permettono di consegnare più capacità più in fretta, ma a volte segnalano
+> lavoro legittimo di cybersicurezza.
+
+La mia lettura — ed è lettura, non misura: un corpus *sui* rifiuti si legge, per un classificatore,
+come materiale offensivo. Lo strato che protegge non distingue lo scrivere del fenomeno dal
+praticare il fenomeno. Sbaglia dal lato sicuro, e il prezzo di quella scelta di progetto è il falso
+positivo.
+
+L'ironia è troppo bella per non registrarla: uno studio sui rifiuti che passano inosservati è stato
+interrotto da un rifiuto impossibile da non notare. Quello, almeno, aveva un messaggio, una
+categoria e una via di risoluzione scritta. È più di quanto offra la maggior parte degli agenti in
+produzione quando un passo interno fallisce.
+
+## 3. Il bivio, che è morale prima che tecnico
+
+Nel punto del blocco c'erano due uscite.
+
+La prima: riscrivere la richiesta. Cambiare parole, spezzarla in pezzi più piccoli, cambiare il
+trasporto — dalla modalità automatizzata a una sessione interattiva, per esempio. Qualche variante
+sarebbe passata. Passano quasi sempre.
+
+La seconda: fermarsi.
+
+<ArticleFigure
+  src="/artigos/recusa-que-parou-o-estudo-das-recusas/fig-02.png"
+  width="2352"
+  height="780"
+  alt="Diagramma: dalla richiesta bloccata escono due strade — riscrivere finché non passa, che funziona ed è evasione della salvaguardia, e fermarsi e candidarsi, che restituisce verifica dentro un ambito dichiarato."
+  caption="Figura 2. La strada corta consegna il risultato e distrugge lo studio. Quella lunga richiede due giorni lavorativi."
+/>
+
+Io mi sono fermato. Non per paura della punizione, ma perché riformulare una richiesta **perché è
+stata segnalata** è evasione della salvaguardia — un piano sotto il jailbreak di prompt, ma la
+stessa famiglia. Cambiare canale perché il canale precedente è stato segnalato è la stessa cosa con
+un altro vestito. Un ricercatore che aggira il classificatore per studiare il classificatore ha
+contaminato l'oggetto stesso e, peggio, ha rotto la regola che dice di difendere.
+
+Il braccio di sicurezza dello studio è stato congelato per decisione, non per impedimento tecnico.
+È rimasto scritto, con la data, nel file di stato del progetto — compreso l'avviso, per qualunque
+sessione futura che riprendesse il lavoro senza contesto, che scrivere quei prompt prima del
+verdetto avrebbe rotto la decisione. Congelare senza registrare non è disciplina; è dimenticanza a
+scadenza.
+
+## 4. La candidatura
+
+Il Cyber Verification Program è gratuito, si basa su un modulo ed esiste esattamente per questo
+caso: professionisti con uno scopo difensivo legittimo il cui lavoro a duplice uso è bloccato per
+impostazione predefinita.
+
+Ho descritto lo studio per quello che è — preregistrato, sola misurazione, senza generazione di
+exploit, senza bersaglio vivo, senza elicitazione di capacità offensiva — e una frase che era tutto
+il punto della candidatura, qui in mia traduzione dall'inglese:
+
+> Non ho provato a riformulare per aggirare la salvaguardia e non ho intenzione di farlo.
+> Preferisco essere verificato che evadere. Se la verifica non è adatta a questo caso d'uso, cambio
+> il disegno dello studio.
+
+Ho allegato ciò che si può controllare senza dipendere dalla mia parola: ORCID, depositi con DOI su
+Zenodo, repository pubblici con catena di provenienza e codice che riproduce i numeri pubblicati.
+La credibilità qui è verificabile oppure non è niente.
+
+La risposta è arrivata entro i due giorni lavorativi che la pagina del programma promette.
+Approvato.
+
+## 5. Che cosa è l'approvazione — e che cosa non è
+
+| | Che cosa cambia |
+|---|---|
+| ✅ Sbloccato | Le attività di cybersicurezza a duplice uso smettono di essere bloccate per impostazione predefinita, per l'organizzazione approvata e dentro il caso d'uso descritto nella domanda |
+| ⚠️ Condizionato | Soggetto a monitoraggio continuo e alla politica d'uso; può essere revocato; l'approvazione non viaggia verso un altro account |
+| ❌ Resta bloccato | Uso proibito, con programma o senza: infrastruttura di comando e controllo, esfiltrazione massiva di dati, sviluppo di ransomware |
+
+E che cosa **non** è: il programma è un processo di domanda e revisione — non è partnership, non è
+accordo di co-marketing, non è certificazione e non è avallo della mia ricerca. Tengo alla
+distinzione perché è proprio il punto: sono stato verificato, non benedetto.
+
+Se un blocco si ripresenta, la strada è scritta ed è corta: controllare che l'organizzazione sia
+quella approvata -> controllare che l'attività non sia uso proibito -> segnalarlo come falso
+positivo tramite il modulo del programma. Non riscrivere il prompt. Mai riscrivere il prompt.
+
+## 6. Perché questo conta al di là del mio studio
+
+Le salvaguardie ampie sono una scelta ingegneristica con un trade-off esplicito: catturano più
+abuso reale e, nello stesso movimento, travolgono lavoro legittimo. Chi costruisce difesa vive dal
+lato sbagliato di quel trade-off con una frequenza scomoda. La risposta matura non è l'indignazione
+né l'aggiramento — è un canale di verifica, usato come canale.
+
+E c'è la lezione che l'incidente stesso consegna gratis, che è la tesi dello studio: **un rifiuto è
+gestibile solo quando è leggibile.** Quello che mi ha bloccato aveva testo, categoria e una porta
+d'uscita — per questo è diventato una decisione documentata, una candidatura e questo articolo. I
+rifiuti che sto misurando non hanno niente di tutto ciò: arrivano all'orchestratore come un
+risultato vuoto e vengono trattati come successo.
+
+Se gestisci agenti in produzione, questa è la domanda che vale più della discussione su quale
+modello sia più intelligente: quando un passo interno viene rifiutato, il tuo sistema lo sa?
+
+Il mio ancora non lo sapeva. È per questo che lo studio esiste.
+
+---
+
+Il corpus e il codice saranno pubblicati insieme all'articolo scientifico, con catena di
+provenienza. Qui non si annuncia alcun risultato: la raccolta non è finita.

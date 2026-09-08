@@ -1,0 +1,145 @@
+---
+title: 'Estaba midiendo rechazos invisibles. El rechazo apareció — y no era invisible'
+slug: recusa-que-parou-o-estudo-das-recusas
+category: artigos
+date: '2026-08-26'
+language: es
+---
+
+**Un estudio mío sobre rechazos de IA que pasan desapercibidos fue interrumpido por un rechazo.
+Había dos caminos: reescribir el pedido hasta que pasara el clasificador, o parar y postularme al
+canal formal de verificación de Anthropic. Reescribir habría funcionado — casi siempre funciona. Yo
+paré, y hoy salió la aprobación. Lo que aprendí en el medio vale más que el desbloqueo.**
+
+---
+
+## 1. La falla que yo estaba midiendo
+
+Existe una falla en los sistemas de agentes de IA que casi nadie instrumenta: el modelo rechaza un
+paso en medio de la ejecución, y el sistema que lo orquesta no se entera. Desde afuera, un rechazo
+y un resultado vacío se parecen. El agente sigue adelante como si el paso hubiera salido bien, y la
+falla entra silenciosa en la salida final.
+
+Eso es lo que estoy midiendo en un estudio preregistrado: con qué frecuencia ocurre y si el rechazo
+se puede detectar a partir de los artefactos que el agente de hecho observa. La variable de interés
+es si el rechazo es *legible* — no lo que hay detrás de él.
+
+<ArticleFigure
+  src="/artigos/recusa-que-parou-o-estudo-das-recusas/fig-01.png"
+  width="2352"
+  height="780"
+  alt="Diagrama: un rechazo del modelo y una falla por otro motivo producen el mismo resultado vacío, que el orquestador registra como paso concluido."
+  caption="Figura 1. Dos causas distintas, un único observable. Por eso el rechazo entra silencioso en la salida final."
+/>
+
+Para medir hace falta un corpus con dos estratos: prompts que disparan un rechazo de seguridad y
+prompts que fallan por motivos que nada tienen que ver con la seguridad, como la contradicción
+interna del pedido o el presupuesto de turnos agotado. Sin el segundo estrato, la comparación
+principal queda confundida. Sin el primero, no hay nada que medir.
+
+## 2. El bloqueo
+
+Al despachar la etapa de autoría del estrato de seguridad, el pedido no fue respondido. Volvió un
+mensaje del propio sistema de salvaguardas, en traducción mía del inglés:
+
+> Las salvaguardas del Opus 4.8 señalaron este mensaje. Nuestras salvaguardas intencionalmente
+> amplias nos permiten entregar más capacidad más rápido, pero a veces señalan trabajo legítimo de
+> ciberseguridad.
+
+Mi lectura — y es lectura, no medición: un corpus *sobre* rechazos se lee, para un clasificador,
+como material ofensivo. La capa que protege no distingue escribir sobre el fenómeno de practicar el
+fenómeno. Se equivoca hacia el lado seguro, y el precio de ese acierto de diseño es el falso
+positivo.
+
+La ironía es demasiado buena como para no registrarla: un estudio sobre rechazos que pasan
+desapercibidos fue interrumpido por un rechazo imposible de no percibir. Ese, al menos, tenía
+mensaje, categoría y un camino de resolución escrito. Es más de lo que ofrece la mayoría de los
+agentes en producción cuando falla un paso interno.
+
+## 3. La bifurcación, que es moral antes que técnica
+
+En el punto del bloqueo había dos salidas.
+
+La primera: reescribir el pedido. Cambiar palabras, partirlo en pedazos más pequeños, cambiar el
+transporte — del modo automatizado a una sesión interactiva, por ejemplo. Alguna variación pasaría.
+Casi siempre pasan.
+
+La segunda: parar.
+
+<ArticleFigure
+  src="/artigos/recusa-que-parou-o-estudo-das-recusas/fig-02.png"
+  width="2352"
+  height="780"
+  alt="Diagrama: del pedido bloqueado salen dos caminos — reescribir hasta que pase, que funciona y es evasión de salvaguarda, y parar y postularse, que devuelve verificación dentro de un alcance declarado."
+  caption="Figura 2. El camino corto entrega el resultado y destruye el estudio. El largo tarda dos días hábiles."
+/>
+
+Yo paré. No por miedo al castigo, sino porque reformular un pedido **porque fue señalado** es
+evasión de salvaguarda — un piso por debajo del jailbreak de prompt, pero de la misma familia.
+Cambiar de canal porque el canal anterior fue marcado es lo mismo con otra ropa. Un investigador que
+sortea el clasificador para estudiar el clasificador contaminó el propio objeto y, peor, rompió la
+regla que dice estar defendiendo.
+
+El brazo de seguridad del estudio quedó congelado por decisión, no por impedimento técnico. Eso
+quedó escrito, con fecha, en el archivo de estado del proyecto — incluido el aviso, para cualquier
+sesión futura que retomara el trabajo sin contexto, de que escribir aquellos prompts antes del
+veredicto rompería la decisión. Congelar sin registrar no es disciplina; es olvido con plazo.
+
+## 4. La postulación
+
+El Cyber Verification Program es gratuito, se basa en un formulario y existe para exactamente este
+caso: profesionales con un propósito defensivo legítimo cuyo trabajo de uso dual está bloqueado por
+defecto.
+
+Escribí el estudio como es — preregistrado, solo medición, sin generación de exploits, sin blanco
+vivo, sin elicitación de capacidad ofensiva — y una frase que era el punto entero de la
+postulación, aquí en traducción mía del inglés:
+
+> No intenté reformular para sortear la salvaguarda y no lo voy a intentar. Prefiero ser verificado
+> a evadir. Si la verificación no es adecuada para este caso de uso, cambio el diseño del estudio.
+
+Adjunté lo que se puede comprobar sin depender de mi palabra: ORCID, depósitos con DOI en Zenodo,
+repositorios públicos con cadena de procedencia y código que reproduce los números publicados. La
+credibilidad acá es auditable o no es nada.
+
+La respuesta llegó dentro del plazo de dos días hábiles que promete la página del programa.
+Aprobado.
+
+## 5. Qué es la aprobación — y qué no es
+
+| | Qué cambia |
+|---|---|
+| ✅ Liberado | Las actividades de ciberseguridad de uso dual dejan de estar bloqueadas por defecto, para la organización aprobada y dentro del caso de uso descrito en la presentación |
+| ⚠️ Condicionado | Sujeto a monitoreo continuo y a la política de uso; puede ser revocado; la aprobación no viaja a otra cuenta |
+| ❌ Sigue bloqueado | Uso prohibido, con programa o sin él: infraestructura de comando y control, exfiltración masiva de datos, desarrollo de ransomware |
+
+Y lo que **no** es: el programa es un proceso de postulación y revisión — no es sociedad, no es
+acuerdo de comarketing, no es certificación y no es aval de mi investigación. Insisto en la
+distinción porque ella es el punto: fui verificado, no bendecido.
+
+Si aparece un bloqueo de nuevo, el camino está escrito y es corto: comprobar que la organización es
+la aprobada -> comprobar que la actividad no es uso prohibido -> reportarlo como falso positivo por
+el formulario del programa. No reescribir el prompt. Nunca reescribir el prompt.
+
+## 6. Por qué esto importa más allá de mi estudio
+
+Las salvaguardas amplias son una elección de ingeniería con un trade-off explícito: capturan más
+abuso real y, en el mismo movimiento, atropellan trabajo legítimo. Quien construye defensa vive del
+lado equivocado de ese trade-off con una frecuencia incómoda. La respuesta madura no es la
+indignación ni el rodeo — es un canal de verificación, usado como canal.
+
+Y está la lección que el propio incidente entrega gratis, que es la tesis del estudio: **un rechazo
+solo es gestionable cuando es legible.** El que me bloqueó tenía texto, categoría y una puerta de
+salida — por eso se convirtió en una decisión documentada, una postulación y este artículo. Los
+rechazos que estoy midiendo no tienen nada de eso: llegan al orquestador como un resultado vacío y
+son tratados como éxito.
+
+Si operas agentes en producción, esa es la pregunta que vale más que la discusión sobre qué modelo
+es más inteligente: cuando un paso interno es rechazado, ¿tu sistema lo sabe?
+
+El mío todavía no lo sabía. Por eso existe el estudio.
+
+---
+
+El corpus y el código se publicarán junto con el artículo científico, con cadena de procedencia.
+Aquí no se anuncia ningún resultado: la recolección no terminó.

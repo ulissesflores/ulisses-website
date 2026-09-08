@@ -1,0 +1,142 @@
+---
+title: "I was measuring invisible refusals. The refusal showed up — and it wasn't invisible"
+slug: recusa-que-parou-o-estudo-das-recusas
+category: artigos
+date: '2026-08-26'
+language: en
+---
+
+**A study of mine about AI refusals that go unnoticed was interrupted by a refusal. There were two
+ways out: rewrite the request until it got past the classifier, or stop and apply to Anthropic's
+formal verification channel. Rewriting would have worked — it almost always does. I stopped, and
+the approval came through today. What I learned along the way is worth more than the unblocking.**
+
+---
+
+## 1. The failure I was measuring
+
+There is a failure in AI agent systems that almost nobody instruments: the model refuses a step in
+the middle of a run, and the system orchestrating it does not notice. From the outside, a refusal
+and an empty result look alike. The agent moves on as if the step had worked, and the failure
+enters the final output in silence.
+
+That is what I am measuring in a pre-registered study: how often this happens, and whether the
+refusal can be detected from the artefacts the agent actually observes. The variable of interest is
+whether the refusal is *legible* — not what lies behind it.
+
+<ArticleFigure
+  src="/artigos/recusa-que-parou-o-estudo-das-recusas/fig-01.png"
+  width="2352"
+  height="780"
+  alt="Diagram: a refusal from the model and a failure for some other reason produce the same empty result, which the orchestrator records as a completed step."
+  caption="Figure 1. Two different causes, a single observable. That is why the refusal enters the final output in silence."
+/>
+
+To measure it you need a corpus with two strata: prompts that trigger a safety refusal, and prompts
+that fail for non-safety reasons, such as self-contradiction in the request or an exhausted turn
+budget. Without the second stratum, the primary comparison is confounded. Without the first, there
+is nothing to measure.
+
+## 2. The block
+
+When I dispatched the authoring stage for the safety stratum, the request went unanswered. What
+came back was a message from the safeguard system itself, exactly as it arrived:
+
+> Opus 4.8's safeguards flagged this message. Our intentionally broad safeguards allow us to
+> deliver more capabilities faster, but can sometimes flag legitimate cybersecurity work.
+
+My reading — and it is a reading, not a measurement: a corpus *about* refusals reads, to a
+classifier, like offensive material. The layer that protects does not tell writing about the
+phenomenon apart from practising it. It errs on the safe side, and the price of that design choice
+is the false positive.
+
+The irony is too good not to record: a study about refusals that go unnoticed was interrupted by a
+refusal impossible not to notice. That one, at least, had a message, a category and a written path
+to resolution. That is more than most agents in production offer when an internal step fails.
+
+## 3. The fork, which is moral before it is technical
+
+At the point of the block there were two ways out.
+
+The first: rewrite the request. Swap words, break it into smaller pieces, change the transport —
+from the automated mode to an interactive session, say. Some variation would get through. They
+almost always do.
+
+The second: stop.
+
+<ArticleFigure
+  src="/artigos/recusa-que-parou-o-estudo-das-recusas/fig-02.png"
+  width="2352"
+  height="780"
+  alt="Diagram: two paths leave the blocked request — rewrite until it passes, which works and is safeguard evasion, and stop and apply, which returns verification within a declared scope."
+  caption="Figure 2. The short path delivers the result and destroys the study. The long one takes two business days."
+/>
+
+I stopped. Not out of fear of punishment, but because rephrasing a request **because it was
+flagged** is safeguard evasion — one floor below prompt jailbreaking, but the same family.
+Switching channels because the previous channel was flagged is the same thing wearing different
+clothes. A researcher who works around the classifier in order to study the classifier has
+contaminated the very object of the study and, worse, broken the rule they claim to be defending.
+
+The safety arm of the study was frozen by decision, not by technical impediment. That was written
+down, with a date, in the project's state file — including the warning to any future session that
+might pick the work up without context that writing those prompts before the verdict would break
+the decision. Freezing without recording it is not discipline; it is forgetting on a timer.
+
+## 4. The application
+
+The Cyber Verification Program is free, form-based, and exists for exactly this case: professionals
+with a legitimate defensive purpose whose dual-use work is blocked by default.
+
+I described the study as it is — pre-registered, measurement only, no exploit generation, no live
+target, no elicitation of offensive capability — and one sentence that was the whole point of the
+application:
+
+> I have not attempted to rephrase around the safeguard and will not — I would rather be verified
+> than evade. If verification is not appropriate for this use case, I will change the study design
+> instead.
+
+I attached what can be checked without taking my word for it: ORCID, DOI-archived deposits on
+Zenodo, public repositories with a provenance chain, and code that reproduces the published
+numbers. Credibility here is auditable or it is nothing.
+
+The answer came within the two-business-day window the program's page promises. Approved.
+
+## 5. What the approval is — and what it is not
+
+| | What changes |
+|---|---|
+| ✅ Unblocked | Dual-use cybersecurity activity stops being blocked by default, for the approved organisation and within the use case described in the submission |
+| ⚠️ Conditional | Subject to ongoing monitoring and to the usage policy; it can be revoked; the approval does not travel to another account |
+| ❌ Still blocked | Prohibited use, program or no program: command-and-control infrastructure, mass data exfiltration, ransomware development |
+
+And what it is **not**: the program is an application and review process — not a partnership, not a
+co-marketing agreement, not a certification, and not an endorsement of my research. I insist on the
+distinction because it is the point: I was verified, not blessed.
+
+If a block shows up again, the path is written down and it is short: check that the organisation is
+the approved one -> check that the activity is not prohibited use -> report it as a false positive
+through the program's form. Do not rewrite the prompt. Never rewrite the prompt.
+
+## 6. Why this matters beyond my study
+
+Broad safeguards are an engineering choice with an explicit trade-off: they catch more real abuse
+and, in the same movement, run over legitimate work. Whoever builds defence lives on the wrong side
+of that trade-off with uncomfortable frequency. The mature answer is neither outrage nor working
+around it — it is a verification channel, used as a channel.
+
+And there is the lesson the incident hands over for free, which is the thesis of the study: **a
+refusal is only manageable when it is legible.** The one that blocked me had text, a category and a
+way out — which is why it became a documented decision, an application and this article. The
+refusals I am measuring have none of that: they reach the orchestrator as an empty result and are
+treated as success.
+
+If you run agents in production, this is the question worth more than the argument about which
+model is smarter: when an internal step is refused, does your system know?
+
+Mine did not yet. That is why the study exists.
+
+---
+
+The corpus and the code will be published together with the scientific paper, with a provenance
+chain. No result is announced here: the collection is not finished.

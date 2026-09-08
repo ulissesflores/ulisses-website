@@ -463,6 +463,32 @@ export const artigos: readonly Artigo[] = [
         'he': { src: '/artigos/recusa-que-parou-o-estudo-das-recusas/hero.jpg', og: '/artigos/recusa-que-parou-o-estudo-das-recusas/hero-og.jpg' },
     },
   },
+  i18n: {
+    en: {
+      title:
+        'I was measuring invisible refusals. The refusal showed up — and it wasn\'t invisible',
+      summary:
+        'A study of mine about AI refusals that go unnoticed inside agent systems was interrupted by a refusal: the safeguard classifier blocked the generation of the corpus, because a set of prompts ABOUT refusals reads, to a classifier, like offensive material. There were two ways out — rewrite the request until it passes, which almost always works, or stop. Rephrasing a request because it was flagged is safeguard evasion, one floor below jailbreaking and of the same family; a researcher who works around the classifier in order to study the classifier has contaminated the object itself. I froze that arm of the study, with a date, in the project\'s state file, and applied to Anthropic\'s Cyber Verification Program, the formal channel for dual-use work with a defensive purpose. The approval came within the two-business-day window. What it is: dual use stops being blocked by default, within the submitted use case and under ongoing monitoring. What it is not: a partnership, a certification or an endorsement — prohibited use stays blocked, program or no program. And the lesson the incident hands over for free is the thesis of the study: a refusal is only manageable when it is legible. The one that blocked me had text, a category and a way out; the ones I am measuring reach the orchestrator as an empty result and are treated as success.',
+    },
+    es: {
+      title:
+        'Estaba midiendo rechazos invisibles. El rechazo apareció — y no era invisible',
+      summary:
+        'Un estudio mío sobre rechazos de IA que pasan desapercibidos dentro de sistemas de agentes fue interrumpido por un rechazo: el clasificador de salvaguardas bloqueó la generación del corpus, porque un conjunto de prompts SOBRE rechazos se lee, para un clasificador, como material ofensivo. Había dos caminos — reescribir el pedido hasta que pase, lo que casi siempre funciona, o parar. Reformular un pedido porque fue señalado es evasión de salvaguarda, un piso por debajo del jailbreak y de la misma familia; un investigador que sortea el clasificador para estudiar el clasificador contaminó el propio objeto. Congelé ese brazo del estudio, con fecha, en el archivo de estado del proyecto y me postulé al Cyber Verification Program de Anthropic, el canal formal para trabajo de uso dual con propósito defensivo. La aprobación llegó dentro del plazo de dos días hábiles. Lo que es: el uso dual deja de estar bloqueado por defecto, dentro del caso de uso presentado y bajo monitoreo continuo. Lo que no es: sociedad, certificación ni aval — el uso prohibido sigue bloqueado, con programa o sin él. Y queda la lección que el incidente entrega gratis, que es la tesis del estudio: un rechazo solo es gestionable cuando es legible. El que me bloqueó tenía texto, categoría y puerta de salida; los que estoy midiendo llegan al orquestador como resultado vacío y son tratados como éxito.',
+    },
+    it: {
+      title:
+        'Stavo misurando rifiuti invisibili. Il rifiuto è arrivato — e non era invisibile',
+      summary:
+        'Uno studio mio sui rifiuti dell\'IA che passano inosservati dentro i sistemi di agenti è stato interrotto da un rifiuto: il classificatore delle salvaguardie ha bloccato la generazione del corpus, perché un insieme di prompt SUI rifiuti si legge, per un classificatore, come materiale offensivo. C\'erano due strade — riscrivere la richiesta finché non passa, cosa che funziona quasi sempre, oppure fermarsi. Riformulare una richiesta perché è stata segnalata è evasione della salvaguardia, un piano sotto il jailbreak e della stessa famiglia; un ricercatore che aggira il classificatore per studiare il classificatore ha contaminato l\'oggetto stesso. Ho congelato quel braccio dello studio, con la data, nel file di stato del progetto e mi sono candidato al Cyber Verification Program di Anthropic, il canale formale per il lavoro a duplice uso con scopo difensivo. L\'approvazione è arrivata entro i due giorni lavorativi. Che cosa è: il duplice uso smette di essere bloccato per impostazione predefinita, dentro il caso d\'uso presentato e sotto monitoraggio continuo. Che cosa non è: partnership, certificazione o avallo — l\'uso proibito resta bloccato, con programma o senza. E resta la lezione che l\'incidente consegna gratis, che è la tesi dello studio: un rifiuto è gestibile solo quando è leggibile. Quello che mi ha bloccato aveva testo, categoria e porta d\'uscita; quelli che sto misurando arrivano all\'orchestratore come risultato vuoto e vengono trattati come successo.',
+    },
+    he: {
+      title:
+        'מדדתי סירובים בלתי נראים. הסירוב הופיע — והוא לא היה בלתי נראה',
+      summary:
+        'מחקר שלי על סירובים של בינה מלאכותית שעוברים מתחת לרדאר בתוך מערכות של סוכנים נעצר בגלל סירוב: מסווג אמצעי ההגנה חסם את יצירת הקורפוס, כי אוסף של פרומפטים *על* סירובים נקרא, עבור מסווג, כחומר פוגעני. היו שתי דרכים — לנסח מחדש את הבקשה עד שתעבור, מה שכמעט תמיד עובד, או לעצור. ניסוח מחדש של בקשה בגלל שהיא סומנה הוא התחמקות מאמצעי הגנה, קומה אחת מתחת ל־jailbreak ומאותה משפחה; חוקר שעוקף את המסווג כדי לחקור את המסווג זיהם את מושא המחקר עצמו. הקפאתי את הזרוע הזאת של המחקר, עם תאריך, בקובץ המצב של הפרויקט, והגשתי מועמדות ל־Cyber Verification Program של Anthropic, הערוץ הרשמי לעבודת שימוש כפול עם מטרה הגנתית. האישור הגיע בתוך יומיים עסקים. מה שהוא כן: שימוש כפול מפסיק להיחסם כברירת מחדל, בתוך מקרה השימוש שהוגש ותחת ניטור מתמשך. מה שהוא לא: שותפות, תעודה או הסכמה לתוכן — שימוש אסור נשאר חסום, עם תוכנית או בלעדיה. ונשאר הלקח שהאירוע מספק בחינם, והוא התזה של המחקר: סירוב ניתן לניהול רק כשהוא קריא. לזה שחסם אותי היו טקסט, קטגוריה ודלת יציאה; אלה שאני מודד מגיעים אל המתזמר כתוצאה ריקה ומטופלים כהצלחה.',
+    },
+  },
 },
 {
   slug: 'ninguem-provou-meta-le-whatsapp',
