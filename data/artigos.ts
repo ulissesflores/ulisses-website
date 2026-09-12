@@ -175,6 +175,14 @@ export const artigos: readonly Artigo[] = [
     },
   },
   {
+    slug: 'rotulo-20x-anthropic',
+    title: 'O 20x da Anthropic valia 20 na janela de cinco horas e 6 na semanal — depois os dois números saíram da página',
+    summary:
+      'Conferi os dois números do rótulo 20x da Anthropic: na sessão de cinco horas a razão é 20; no teto semanal, 6. Entre 26 e 29/01/2026 saíram da página.',
+    date: '2026-09-04',
+    tags: ['ia', 'anthropic', 'claude', 'fact-check', 'metodologia'],
+  },
+  {
     slug: 'skills-de-agentes-inseguras',
     title: 'A mesma amostra de skills dá 6,57% ou 48,71%, conforme o scanner',
     summary: 'Circulou que 48% das skills de agentes de IA são inseguras. A fonte não é um estudo: é o post de um blogueiro de SEO, cujo filtro descartou 261.451 achados para chegar lá. Dois meses depois, NVIDIA e OpenClaw Foundation mediram 67.453 versões com três scanners ao mesmo tempo — e os três devolveram 6,57%, 7,75% e 48,71%.',

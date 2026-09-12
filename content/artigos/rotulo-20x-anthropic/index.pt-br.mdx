@@ -1,0 +1,964 @@
+---
+title: 'O 20x da Anthropic valia 20 na janela de cinco horas e 6 na semanal — depois os dois números saíram da página'
+slug: rotulo-20x-anthropic
+category: artigos
+date: '2026-09-04'
+language: pt-BR
+---
+
+O rótulo custa 200 dólares por mês e promete vinte vezes: `20x Pro usage` ("uso 20x o do plano
+Pro"). Fui conferir os dois números que a própria Anthropic publicou para sustentá-lo e eles não
+dizem a mesma coisa — num deles a proporção é exatamente 20; no outro, ela é 6.
+
+Os dois números moravam na mesma página de ajuda, na mesma captura, ao lado do rótulo que eles
+deveriam confirmar. Não é preciso cruzar fonte nem data: quem abrisse aquele documento em setembro
+de 2025 tinha a promessa e a aritmética na mesma tela. Entre 26 e 29 de janeiro de 2026, os números
+saíram da página — e o rótulo saiu com eles; o que ficou ali é o nome do plano, não a promessa. A
+promessa de vinte vezes continua publicada no outro artigo de ajuda, o que explica o plano Max.
+
+---
+
+## O placar, antes do argumento
+
+> [!NOTE]
+> **De onde sai cada número deste artigo.** Toda cifra abaixo é uma **célula** de uma tabela
+> montada a partir de capturas datadas do Internet Archive, e toda proporção é calculada **dentro
+> de uma mesma captura** — numerador e denominador da mesma coluna, mesma janela, mesma unidade.
+> Nenhum número foi estimado, e nenhum ponto médio de faixa entrou em conta nenhuma. O corpus são
+> **132 capturas** de dois artigos de ajuda da Anthropic mais **cinco documentos de setembro de
+> 2026** — quatro extratos das páginas vivas de 4 de setembro e a captura do Internet Archive do
+> artigo `11145838` do mesmo dia —, todos em disco. O que eu **não** fiz está na seção da régua, e
+> não em nota de rodapé.
+
+A primeira tabela reproduz, entre aspas, três formulações que **circularam de fato** sobre este
+caso — todas recortadas de posts datados que estão no meu registro de fontes, e a segunda reúne
+dois recortes, de autores diferentes. **Elas estão aqui para serem conferidas, não para serem
+endossadas**, e por isso vão entre marcas de citação declarada: nenhuma delas é afirmação minha.
+
+{/* MENCAO */}
+
+| O que se diz por aí | Veredito | O que a fonte mostra |
+|---|---|---|
+| «a Anthropic nunca divulgou os denominadores» — *"They never published real numbers."* | ❌ falso | publicou ao TechCrunch em 29/07/2025 e na própria página de ajuda; **38 das 39 capturas** desse documento trazem número, de 17/09/2025 a 26/01/2026 |
+| «o 20x é mentira» — *"is a scam"*, *"wildly misleading"* | ⚠️ impreciso | na janela de cinco horas o rótulo é **exato**: 900 ÷ 45 = 20,0 em mensagens, 200 ÷ 10 e 800 ÷ 40 = 20,0 em prompts |
+| «o plano de 200 é mais para 6–8x que para 20x» — *"the $200 plan is more like 6–8x Pro, not 20x"* | ✅ verdadeiro na janela semanal | na janela **semanal**, 240 ÷ 40 e 480 ÷ 80 dão **6,0** nos dois extremos, dentro da faixa que o post nomeia — e o crédito pela conta é do TechCrunch, que a publicou em 29/07/2025 |
+
+{/* /MENCAO */}
+
+A segunda tabela não é citação de ninguém, e é por isso que ela fica fora daquelas marcas: são três
+objeções que eu levantei contra o meu próprio texto e fui medir. Elas estão aqui porque um leitor
+razoável as levanta sozinho, e porque a resposta a cada uma tem corpus.
+
+| O que eu fui testar | Resposta | O que a fonte mostra |
+|---|---|---|
+| a retirada dos números foi um evento único? | não | foram **três edições datadas** por par de capturas, entre novembro de 2025 e janeiro de 2026, e só as duas últimas tiraram número: a primeira acrescentou um cabeçalho de ressalva |
+| há hoje número publicado com que refazer a conta? | não | nos **cinco documentos de setembro de 2026** em disco — quatro extratos das páginas vivas de 04/09 e a captura do Internet Archive do artigo `11145838` do mesmo dia — não há número de limite de uso em janela nenhuma; sem número não há proporção a divergir |
+| o rótulo saiu da página junto com os números? | **naquela página, sim** | no `11145838` a linha `20x Pro usage` sai na mesma edição que os números; o rótulo segue publicado no outro artigo de ajuda, o que explica o plano Max, em **três frases** — duas que nomeiam a sessão e uma que não nomeia janela nenhuma |
+
+**O achado que sobrevive à conferência inteira cabe numa linha: o rótulo é exato na janela que a
+forma qualificada de hoje nomeia — a sessão, nomeada em 80 das 93 capturas do artigo que explica o
+plano Max — e valia 6 na janela que ela não nomeia, a semana; e os números das duas saíram da
+página em janeiro de 2026.**
+
+Das três formulações que circularam, uma é falsa e outra é imprecisa — e essa proporção não é
+incomum: quando eu fui atrás da estatística mais citada sobre o Claude Code,
+[o número que circulava era quatro mil vezes menor que o que qualquer pessoa pode medir](/artigos/estatisticas-claude-code).
+
+Nada aqui atribui intenção a ninguém. Eu não sei o motivo de nenhuma das três edições, e o texto vai
+repetir isso todas as vezes em que a tentação de preencher a lacuna aparecer — porque ela aparece.
+
+---
+
+## A régua: como eu medi, e o que eu não medi
+
+Esta seção vem antes dos resultados de propósito. Um artigo que cobra precisão de uma empresa tem de
+declarar a sua própria antes de o leitor encontrar o primeiro número, e não depois de ele já ter
+formado opinião.
+
+### O que foi fixado antes de medir, e o que é declaração posterior
+
+Chamar tudo de "pré-registrado" seria a mesma imprecisão que este artigo denuncia. A separação é
+explícita:
+
+| Item | Quando foi fixado |
+|---|---|
+| a regra de que afirmar ausência exige lista fechada de arquivos | antes de qualquer medição |
+| a proibição de preencher célula por inferência ou por ponto médio de faixa | antes de qualquer medição |
+| o critério de materialidade, com o seu próprio falsificador | **antes** do veredito, e há um conferidor que reprova se a ordem se inverter |
+| a decisão de não procurar a empresa | antes da redação |
+| o escopo de busca e o critério de inclusão de fonte | **depois** das duas primeiras medições — declaração posterior, e está declarada como tal |
+
+O que a declaração posterior custa: escopo escrito depois dos dados pode ser escopo desenhado para
+caber nos dados. A contenção é que nada nela **afrouxa** um critério anterior. Os dois itens que ela
+mexeu **estreitaram** afirmações que estavam largas demais, e o estreitamento foi imposto por
+medição que reprovou — não escolhido por conveniência. As duas correções estão contadas mais
+adiante, com o texto original preservado.
+
+### Três níveis de custódia, e o que cada um autoriza
+
+Este é o filtro que decide o que vira frase e o que não vira:
+
+| Nível | O que exige | O que autoriza |
+|---|---|---|
+| 1 — extrato ancorado | texto integral em disco, com a assinatura digital do arquivo baixado, e a citação reencontrada literalmente dentro dele | citar palavra por palavra, preencher célula, afirmar ausência |
+| 2 — referência de contexto | o endereço responde, mas não há extrato no disco | mencionar que o documento existe; **nunca** citar número dele |
+| 3 — fora do registro | nem uma coisa nem outra | nada |
+
+Três regras decorrem daí, e as três me custaram correção no caminho:
+
+1. **Grafia por fonte, nunca normalizada.** A página de ajuda escreve `140-280 hours` com hífen; o
+   TechCrunch escreve `140 to 280 hours` por extenso. Busca literal na forma errada devolve zero e
+   simula ausência. Cada citação sai com a grafia da sua própria captura, mesmo quando isso deixa o
+   texto visualmente irregular.
+2. **Apóstrofo importa.** As fontes em inglês não usam todas o mesmo. A matéria do Quartz grafa
+   `Anthropic's` com o apóstrofo reto do teclado; o TechCrunch grafa `It’s` com o tipográfico. Três
+   citações minhas foram reprovadas por isso e corrigidas. Nenhuma leitura a olho pega esse defeito
+   — só a busca literal pega.
+3. **Endereço que responde não é fonte.** Um código 200 prova que o servidor respondeu, nunca o que
+   o documento diz. O que faz fonte é o extrato ancorado. E fonte verificada é retrato, não
+   contrato: uma das páginas deste levantamento resolvia em 2 de setembro de 2026 e passou a
+   responder 403 em 4 de setembro, dois dias depois.
+
+### A regra que governa toda frase de ausência
+
+Esta é a regra mais dura do levantamento, e ela existe porque eu mesmo produzi o erro que ela
+impede, três vezes. Uma frase que afirma que **algo não existe** só entra no texto com duas coisas
+juntas:
+
+- **um corpus enumerado** — uma lista fechada de arquivos que qualquer leitor pode abrir, nunca "as
+  fontes" nem "as capturas";
+- **um controle positivo** — a mesma busca tem de achar o que procura onde ele sabidamente existe.
+  Sem esse controle, zero ocorrências não distingue *ausente* de *medidor quebrado*.
+
+Na prática, isso significa que o corpus vai **dentro** da frase, e não numa nota ao lado. Escrever
+"a única cifra que a empresa publica" recairia no mesmo defeito, porque "a única" é "nenhuma outra",
+e "o que a empresa publica" não é uma lista de arquivos.
+
+### O que ficou fora do escopo, e por quê
+
+Não houve busca em fórum, canal de suporte, Discord, changelog de produto nem documentação de API. O
+eixo aqui é o que a empresa **publicou ao assinante na página de ajuda** — ampliar o escopo sem
+ampliar a custódia produziria afirmação que ninguém reconfere. Um documento fora desse escopo não
+refuta nada do que está aqui: ele abre escopo novo, com medição nova.
+
+E não houve pedido de posicionamento à Anthropic. **É decisão editorial minha, tomada antes da
+redação, e ela tem consequência nos dois sentidos.** Eu escrevo aqui como autor, não como veículo de imprensa, e direito de
+resposta prévio é prática de redação jornalística, não requisito de honestidade factual. A primeira metade da consequência: nenhuma afirmação deste texto dependia de resposta —
+toda cifra sai de documento público da própria empresa, com captura datada e extrato em disco, e não
+há aqui pergunta pendente cuja resposta mudaria uma célula. A segunda metade obriga tanto quanto a
+primeira, e vale para a versão em português e para as quatro traduções: **como não houve pergunta,
+não há silêncio a reportar, e este texto não relata nenhum.**
+
+### O que eu declaro não ter medido
+
+Seis limites, e nenhum deles é detalhe:
+
+1. **A comparação por horas é aproximação declarada.** A empresa afirma que o limite dispara por
+   número de *tokens* (os pedaços de texto que o modelo lê e produz), não por tempo — e a âncora
+   dessa afirmação é o TechCrunch relatando a empresa, na versão viva de 02/09/2026: *"the company
+   says that rate limits are activated when users hit a certain number of tokens, rather than a
+   certain time limit"* ("a empresa diz que os limites de uso são acionados quando o usuário atinge
+   um certo número de tokens, e não um certo limite de tempo"). As horas são a unidade em que ela
+   própria escolheu expressar o teto ao assinante, e os dois lados de cada proporção são horas do
+   mesmo modelo — mas proporção em horas não é, e não se apresenta como, proporção em tokens.
+2. **A data exata de cada edição é desconhecida.** Cada uma é datada por um **par de capturas
+   consecutivas**: a última em que a coisa estava lá e a primeira em que não estava. O intervalo é o
+   que se sabe; o instante, não.
+3. **O motivo de cada edição é desconhecido.** Nenhuma intenção é atribuída neste texto.
+4. **A estrutura do teto semanal mudou pelo menos três vezes** entre julho de 2025 e setembro de
+   2026, e proporção de um regime não se compara com limite de outro. Onde eu comparo, comparo
+   dentro da mesma captura.
+5. **O veredito é sobre uma captura, não sobre hoje.** Sobre hoje há veredito de **forma**, não de
+   proporção — porque proporção exige número, e hoje não há número publicado.
+6. **A proporção de 6 não é achado meu.** O TechCrunch a publicou em 29 de julho de 2025. O que é
+   original aqui é outra coisa, e ela está na conclusão.
+
+### O dado deste artigo
+
+Não há planilha para pedir, e não haveria sentido em prometê-la: **o dado deste artigo é público e
+já está publicado — são capturas do Internet Archive, e cada uma tem endereço próprio.** Mas os
+números daqui são de duas espécies, e elas se refazem de modos diferentes. Isso precisa ficar claro
+antes de eu convidar alguém a conferir.
+
+**Os números de célula e as dez proporções** — os 45, os 900, os 240-480, o 20,0 e o 6,0 — saem de
+**uma** captura, e essa captura tem endereço. Abrir o endereço e reler a frase refaz a conta
+inteira. Os identificadores aparecem no corpo do texto na forma `AAAAMMDDHHMMSS`, e a última seção
+traz os endereços completos das principais.
+
+**As contagens de corpus** — as 38 de 39 capturas, as 26 sem a ressalva, as 137 sem teto de uso
+em tokens, os 53 dias, as 5 capturas da frase sem qualificador — são de outra espécie: **elas não se
+refazem abrindo uma captura, porque afirmam alguma coisa sobre o conjunto inteiro.** Para essas,
+o que reproduz o meu passo é a consulta de enumeração, e ela é pública:
+
+```text
+https://web.archive.org/cdx/search/cdx?url=support.claude.com/en/articles/<artigo>
+    &from=<AAAAMMDD>&to=<AAAAMMDD>&output=json&fl=timestamp,statuscode,digest,length&collapse=digest
+```
+
+O `collapse=digest` está na consulta para reduzir repetição — é o que a documentação do CDX
+oferece para isso, e o comportamento dele eu não medi. O que eu medi está no disco, e limita o que
+a contagem significa: das 39 capturas do `11145838`, **25 têm texto extraído idêntico ao de outra**,
+em oito grupos, o maior com sete arquivos. A contagem de 39 é de capturas, não de textos distintos. Os dois artigos são o `11145838` e o
+`11049741`, e as janelas são as que eu usei: `from=20250901&to=20260201` para o `11145838`, que
+devolve as 39 capturas, e `from=20250101&to=20260905` para o `11049741`, que devolve as 93. **Dos
+resultados entram só as linhas com `statuscode` 200**, e esse filtro é meu, aplicado sobre a
+resposta e não dentro da URL. Para o `11049741` a resposta dessa consulta está em disco; para o
+`11145838` eu guardei o corpus que ela produziu, e não a resposta. Quem rodar essas duas consultas com esses limites, aplicar o mesmo
+filtro e baixar as capturas que elas listam reconstrói o mesmo corpus que eu montei.
+
+**O que eu não publiquei, e digo com todas as letras: o código que rodou essas buscas.** Ele existe,
+tem controle positivo em cada medição e é o que produziu cada contagem deste artigo — mas ele está no
+meu computador, e não num repositório público. Então as contagens de corpus são **conferíveis
+refazendo a enumeração acima**, não auditando o meu programa. É menos do que eu gostaria de
+oferecer, e é mais honesto que prometer uma planilha a quem escrever.
+
+Se você refizer qualquer uma das duas espécies e der diferente, me escreva: eu corrijo e credito.
+
+---
+
+## Duas janelas, dois medidores: o mecanismo antes dos números
+
+Antes de qualquer aritmética, o mecanismo — e ele cabe numa analogia sem uma palavra técnica.
+
+Pense numa academia com dois medidores na catraca. O primeiro conta quanto você usou **nesta
+visita** e zera algumas horas depois: se você estourar, espera e volta. O segundo conta quanto você
+usou **na semana inteira** e zera no domingo: se você estourar esse, acabou a semana. Os dois
+existem ao mesmo tempo, e são independentes. Você pode caber folgado no primeiro todos os dias e
+mesmo assim bater no segundo na quinta-feira.
+
+Agora suponha que a academia venda um plano "vinte vezes o básico". A pergunta que decide se a
+promessa é verdadeira é: **vinte vezes em qual medidor?** Se o plano caro dá vinte vezes mais uso
+por visita, mas só seis vezes mais uso por semana, então "vinte vezes" descreve um dos medidores e
+não descreve o outro. E se a placa na parede não disser em qual medidor ela está falando, quem paga
+não tem como saber qual das duas contas é a que vale para ele.
+
+<MedidorDuplo
+  dataset="rotulo20x-fig1-pt-br"
+  title="Uma placa, dois medidores"
+  subtitle="A analogia: o mesmo aviso é verdadeiro num medidor e falso no outro"
+  description="Dois painéis lado a lado. No painel da esquerda, o medidor da visita: o plano básico marca uma medida e o plano caro marca vinte, e a razão entre eles é 20x. No painel da direita, destacado em ouro, o medidor da semana: o plano básico marca uma medida e o plano caro marca seis, e a razão entre eles é 6x. Os dois painéis têm a mesma geometria, e a barra do plano de comparação é vazada em cada um. A figura conclui: a placa na parede diz «vinte vezes», ela é verdadeira num medidor e falsa no outro, e não diz em qual dos dois está falando. Figura qualitativa — as barras ilustram a analogia do texto e não medem nada."
+  source="Figura qualitativa: as barras ilustram a analogia do texto e não medem nada. · ulissesflores.com/20x"
+/>
+
+Repare no segundo medidor, o da semana — o que está em ouro na figura. Dentro da analogia, é o
+medidor que passa despercebido, e é ele que decide quanto se usa na semana; está em ouro
+exatamente por isso.
+Guarde a distinção, porque ela reaparece no caso real: é o número desse medidor que sai da página
+primeiro.
+
+**Um multiplicador que não diz em qual medidor ele vale não é uma promessa exagerada: é uma promessa
+que não dá para conferir.**
+
+### Os mesmos dois medidores, agora com os nomes
+
+Traduzindo a analogia para o produto, sem mudar o mecanismo:
+
+- **A janela de sessão** é o medidor da visita. A própria Anthropic a define hoje, na página que
+  explica o plano Max: *"Your session-based usage limit will reset every five hours."* ("O seu
+  limite de uso por sessão será zerado a cada cinco horas.") São cinco horas, e ela zera sozinha.
+- **O teto semanal** é o medidor da semana. Ele também existe, e a mesma página o reconhece hoje:
+  *"Max plans also have a weekly usage limit that applies across all models"* ("os planos Max também
+  têm um limite de uso semanal que se aplica a todos os modelos").
+
+E **`Claude Code`** é a ferramenta de linha de comando da Anthropic — o programa que roda no
+terminal do desenvolvedor e usa o modelo para escrever e editar código. Ela é o contexto de quase
+todos os números deste artigo, porque foi para ela que os limites foram publicados.
+
+Os três planos que interessam, com os nomes que a empresa usa: o **Pro**, o mais barato dos pagos; o
+**Max 5x**, de 100 dólares por mês; e o **Max 20x**, de 200 dólares por mês. Os dois últimos são
+vendidos por multiplicador — é isso que os nomes `5x` e `20x` significam.
+
+<MedidorDuplo
+  dataset="rotulo20x-fig2-pt-br"
+  title="Os mesmos dois medidores, com os nomes reais"
+  subtitle="Sessão de cinco horas e teto semanal, os três planos, uma captura só"
+  description="A mesma figura anterior, agora com os nomes reais e três barras em cada painel. No painel da esquerda, a sessão de cinco horas, medida em mensagens: Pro cerca de 45, Max 5x cerca de 225 e Max 20x cerca de 900, o que dá a razão 20,0 pela conta 900 dividido por 45. No painel da direita, destacado em ouro, o teto semanal, medido em horas de Sonnet 4: Pro de 40 a 80 horas, Max 5x de 140 a 280 e Max 20x de 240 a 480, o que dá a razão 6,0 pelas contas 240 dividido por 40 e 480 dividido por 80. A figura conclui: o mesmo rótulo, o mesmo par de planos na conta, a mesma captura de 17/09/2025 — e duas contas diferentes, porque o medidor é outro."
+  source="Fonte: captura de 17/09/2025 do artigo de ajuda 11145838 — as seis células de mensagens e de horas de Sonnet. · ulissesflores.com/20x"
+/>
+
+Repare que a figura é a mesma de antes, com uma barra a mais em cada medidor e os nomes reais no
+lugar dos inventados. É de propósito: o mecanismo não mudou, mudou o vocabulário. A partir daqui os
+números são todos reais, e todos vieram de uma captura datada.
+
+---
+
+## Os números publicados: de julho de 2025 a setembro de 2026
+
+A história tem quatro momentos, e cada um deles é um documento em disco.
+
+### Julho de 2025: o número nasce numa matéria, não num anúncio
+
+Em 28 de julho de 2025 a Anthropic anunciou novos limites de uso, e o TechCrunch publicou a matéria
+que os detalhava. A matéria foi reescrita no próprio dia — as duas versões estão capturadas, e a
+grafia dos números muda entre elas.
+
+Na captura de 28/07/2025 às 19:31:32Z, só a faixa do plano Pro, com hífen:
+*"Most Pro users can expect 40-80 hours of Sonnet 4 within their weekly rate limits"* ("a maioria
+dos usuários Pro pode esperar de 40 a 80 horas de Sonnet 4 dentro dos seus limites semanais").
+
+Na captura do dia seguinte, 29/07/2025 às 01:11:31Z, a matéria já traz as três faixas semanais, por
+extenso. Para o Pro: *"most Pro users can expect 40 to 80 hours of Sonnet 4 through Claude Code
+within their weekly rate limits"* ("a maioria dos usuários Pro pode esperar de 40 a 80 horas de
+Sonnet 4 no Claude Code dentro dos seus limites semanais"). Para o Max 5x: *"can expect 140 to 280
+hours of Sonnet 4 and 15 to 35 hours of Opus 4"* ("pode esperar de 140 a 280 horas de Sonnet 4 e de
+15 a 35 horas de Opus 4"). E para o Max 20x: *"can expect 240 to 480 hours of Sonnet 4 and 24 to 40
+hours of Opus 4"* ("pode esperar de 240 a 480 horas de Sonnet 4 e de 24 a 40 horas de Opus 4").
+
+E é nessa mesma captura que a proporção aparece publicada pela primeira vez, escrita pelo próprio
+veículo: *"subscribers now get only about 6x as many Claude Code hours as Pro users"* — "os
+assinantes agora recebem apenas cerca de 6x mais horas de Claude Code que os usuários Pro".
+
+**O 6 não é meu. Ele foi publicado em 29 de julho de 2025, por um veículo terceiro, e some da versão
+viva da mesma matéria.** Na versão de 2 de setembro de 2026 as cinco faixas de horas continuam lá,
+uma a uma — o que saiu foi a frase da proporção. O terceiro segue publicando os insumos e deixou de
+publicar a conta.
+
+### Setembro de 2025: a página de ajuda publica tudo, e o rótulo mora ao lado
+
+Em 17 de setembro de 2025, às 04:27:09Z, o artigo de ajuda `11145838` — o que explica como usar o
+Claude Code com o plano Pro ou Max — trazia onze números publicados no mesmo documento. Seis da
+janela de sessão e cinco da janela semanal.
+
+E a captura de 17/09/2025 trazia, na mesma página e ao lado deles, o rótulo que eles deveriam
+confirmar, sem nomear janela nenhuma:
+*"Max plan offers two usage tiers: 5x Pro usage ($100/month) 20x Pro usage ($200/month)"* — "o plano
+Max oferece dois níveis de uso: uso 5x o do Pro (100 dólares/mês), uso 20x o do Pro (200
+dólares/mês)".
+
+Essa convivência não é peculiaridade de uma captura isolada. Medida em todo o corpus de 39 capturas
+desse artigo: o rótulo e os números aparecem juntos em **38 delas**, de 17/09/2025 a 26/01/2026 —
+quatro meses e nove dias. A trigésima nona, a de 29/01/2026, não traz nenhum dos dois. E em **26**
+dessas capturas, de 17/09/2025 a 22/11/2025, eles convivem sem
+nenhuma ressalva de que os números sejam de modelos antigos.
+
+Os onze números como a página os publicava, com uma abreviação minha e declarada. Nas **seis
+células da janela de sessão** a página escreve `approximately` antes do número — `approximately 45
+messages`, `approximately 10-40 prompts`, e assim por diante —, e a tabela abaixo troca essa palavra
+pelo til: `~45`, `~10-40`, `~225`, `~50-200`, `~900`, `~200-800`. É a forma que cabe na coluna e nas
+figuras. **As cinco células da janela semanal não trazem `approximately` na captura de 17/09/2025**:
+a palavra aparece sete vezes nela, seis delas antes de um número de célula — as seis da janela de
+sessão — e a sétima numa frase sobre velocidade de modelo, que não é célula. Essas cinco estão aqui
+exatamente como a página as escreve:
+
+| Plano | Sessão de 5h — mensagens | Sessão de 5h — prompts de Claude Code | Semana — horas de Sonnet | Semana — horas de Opus |
+|---|---|---|---|---|
+| Pro | ~45 | ~10-40 | 40-80 | não aplicável |
+| Max 5x | ~225 | ~50-200 | 140-280 | 15-35 |
+| Max 20x | ~900 | ~200-800 | 240-480 | 24-40 |
+
+A célula do Opus semanal do Pro está marcada como **não aplicável**, e não como ausente, porque a
+diferença importa: naquele regime o plano Pro não tinha acesso ao Opus dentro do Claude Code.
+Verbatim da mesma captura: *"Pro plan subscribers can access Sonnet 4, but won’t be able to use Opus
+4 with Claude Code"* ("assinantes do plano Pro podem acessar o Sonnet 4, mas não poderão usar o Opus
+4 com o Claude Code"). Não havia hora a publicar. Tratar "não existe" e "foi retirado" como o mesmo
+estado apagaria a única distinção que essa tabela tem.
+
+<MatrizJanelas
+  dataset="rotulo20x-fig3-pt-br"
+  title="A grade que a página publicava em 17 de setembro de 2025"
+  subtitle="Três planos, quatro unidades, duas janelas — onze células numa página só"
+  description="Uma grade de três linhas por quatro colunas. As colunas são agrupadas em duas janelas: a sessão de cinco horas, com as colunas de mensagens e de prompts de Claude Code, e o teto semanal, destacado em ouro, com as colunas de horas de Sonnet 4 e de horas de Opus 4. A linha do Pro traz cerca de 45, cerca de 10 a 40, de 40 a 80, e a quarta célula não se aplica: está marcada com um traço e a nota de que o plano não tinha Opus no Claude Code. A linha do Max 5x traz cerca de 225, cerca de 50 a 200, de 140 a 280 e de 15 a 35. A linha do Max 20x traz cerca de 900, cerca de 200 a 800, de 240 a 480 e de 24 a 40. A figura conclui: onze células publicadas numa página só, em 17/09/2025; a célula que falta não está ausente, ela não se aplica, e a diferença é o que essa tabela tem de mais frágil a perder."
+  source="Fonte: captura de 17/09/2025 do artigo de ajuda 11145838 — onze células; o til reproduz o approximately da página. · ulissesflores.com/20x"
+/>
+
+Repare que a linha do Max 20x tem número em todas as quatro colunas. É esse conjunto, e não uma
+seleção conveniente dele, que sustenta as contas da próxima seção.
+
+### Novembro de 2025 a janeiro de 2026: três edições, não uma
+
+A retirada dos números não foi um evento. Foram três edições, cada uma datada por um par de capturas
+consecutivas, e só as duas últimas levaram número — a primeira acrescentou um cabeçalho de
+ressalva:
+
+| Edição | Entre estas duas capturas | O que mudou |
+|---|---|---|
+| 1 | 22/11/2025 16:41:27Z e 04/12/2025 00:17:36Z | os números ganham um cabeçalho de ressalva, *"Usage Limits for Older Models"* ("limites de uso para modelos antigos"); nenhum número sai |
+| 2 | 14/01/2026 16:09:08Z e 17/01/2026 11:33:48Z | saem as horas semanais de Opus dos dois planos Max — as faixas `15-35 hours` e `24-40 hours` |
+| 3 | 26/01/2026 00:28:09Z e 29/01/2026 04:00:03Z | sai todo o resto: as três faixas semanais de Sonnet, os seis números de sessão **e a própria linha do rótulo** — *"Max plan offers two usage tiers: 5x Pro usage ($100/month) 20x Pro usage ($200/month)"* |
+
+**O verbo que a fonte sustenta é erosão em três etapas, cada uma citável por um par de capturas — e
+a terceira levou as duas janelas, não só uma, e levou junto o rótulo que os números
+contradiziam.** Essa precisão custou caro: a formulação que eu vinha
+carregando dizia que a semana tinha saído da página, e a medição mostrou que os números da sessão
+saíram junto, na mesma edição.
+
+Que a seção encolheu também tem número, e ele é do arquivo, não de impressão: na terceira edição o
+texto do artigo cai de 9.169 caracteres, na captura de 26/01/2026, para 6.385 na de 29/01/2026.
+
+Duas coisas que essa linha do tempo **não** diz, e que este texto não vai dizer: não se sabe a data
+exata de nenhuma das três edições, só o intervalo entre capturas; e não se sabe o motivo de nenhuma
+delas.
+
+### Janeiro e fevereiro de 2026: os dois documentos mudam na mesma janela curta
+
+O assinante lê dois artigos de ajuda, não um. O `11145838` trazia os números. O `11049741` — o que
+explica o que é o plano Max — traz o rótulo. Entre 26 de janeiro e 2 de fevereiro de 2026 os dois
+mudaram, e as duas mudanças estão datadas por par de capturas:
+
+| O que muda | Documento | Última captura antes | Primeira captura depois | Janela |
+|---|---|---|---|---|
+| os números **saem** | 11145838 | 26/01/2026 00:28:09Z | 29/01/2026 04:00:03Z | 75,5 h |
+| entra o qualificador `per session` ("por sessão") | 11049741 | 28/01/2026 11:30:00Z | 02/02/2026 16:01:59Z | 124,5 h |
+| entra a descrição do teto semanal | 11049741 | 28/01/2026 11:30:00Z | 02/02/2026 16:01:59Z | 124,5 h |
+| sai a frase do multiplicador **sem** janela nomeada | 11049741 | 28/01/2026 11:30:00Z | 02/02/2026 16:01:59Z | 124,5 h |
+
+A quarta linha é a que responde à objeção mais forte contra este artigo, e vou tratá-la por inteiro
+na seção das vozes contrárias. Por ora, o fato: a frase *"Provides 20 times more usage than the Pro
+plan"* ("oferece 20 vezes mais uso que o plano Pro"), **sem nomear janela**, existe em cinco capturas
+do artigo do rótulo, de 26/12/2025 a 28/01/2026, e desaparece exatamente quando entra a forma que
+diz `per session`.
+
+**O que essas duas metades autorizam dizer, e nada além:** no mesmo intervalo curto, o documento que
+trazia os números deixou de trazê-los, e o documento que traz o rótulo passou a qualificá-lo por
+sessão e a descrever, pela primeira vez, o teto semanal.
+
+E aqui vale a cautela que mais me custou reescrita. Juntando as duas janelas, a distância entre as
+duas edições é de **zero a 7,65 dias** — esse é o envelope, e é tudo o que o relógio permite
+afirmar. As bordas dessas janelas são carimbos de **captura**, não de edição: a sobreposição de 16,5
+horas entre elas existiria idêntica se as duas edições tivessem distado uma semana. O que ela
+estabelece, e só isto: a **ordem** entre as duas edições é indeterminada, e a distância mínima
+compatível é zero. Eu escrevi, num rascunho, que as duas coisas aconteceram "numa janela de uma
+semana", e depois escrevi que essa forma era falsa por quinze horas. As duas frases estavam erradas,
+em sentidos opostos: a primeira afirmava proximidade que a medição não sustenta, e a segunda
+afirmava refutação que a medição também não sustenta. **Medir a amostra não é medir o fato.**
+
+### O teto semanal mudou de estrutura pelo menos três vezes, e isso limita o que se pode comparar
+
+Antes de chegar a hoje, uma honestidade que restringe o meu próprio argumento. O teto semanal não é
+a mesma coisa em 2025 e em 2026 — a estrutura dele mudou, e proporção de um regime não se compara
+com limite de outro.
+
+| Quando | Como o teto semanal era descrito |
+|---|---|
+| julho de 2025 | dois limites: um geral e um específico do modelo mais avançado, o Opus 4 |
+| de 02/02/2026 a 06/08/2026 | dois limites, mas outros dois: *"two weekly usage limits: one that applies across all models and another for Sonnet models only"* ("dois limites de uso semanais: um que se aplica a todos os modelos e outro só para os modelos Sonnet") |
+| de 08/08/2026 em diante, no artigo `11049741` | um limite só: *"Max plans also have a weekly usage limit that applies across all models"* |
+
+As datas da segunda e da terceira linha saem do corpus de 93 capturas do artigo do rótulo, medidas
+por par de capturas como toda data deste texto. A terceira linha está escopada a esse documento de
+propósito, porque outra página da mesma central de ajuda diverge dela no mesmo dia: o artigo
+`9797557`, num extrato da página viva de 04/09/2026, descreve **dois** tetos semanais — *"Weekly
+limits: Check when your plan’s weekly usage limit resets for Opus only and all other models."*
+("limites semanais: veja quando o limite semanal de uso do seu plano zera, para o Opus apenas e
+para todos os outros modelos"). Os dois são páginas de ajuda da empresa, os dois foram baixados em
+4 de setembro de 2026, e eles descrevem estruturas diferentes.
+
+Isso reforça o "pelo menos" da minha frase, que permanece por três motivos, e nenhum é falta de
+captura. O primeiro: o artigo que trazia os números não foi **enumerado em corpus** depois de
+fevereiro de 2026 — a varredura de horas do `11145838`, sobre 60 capturas, foi até 30/04/2026 e não
+achou faixa em nenhuma delas posterior a janeiro de 2026, mas ela mediu faixa, e não a estrutura do
+teto. O segundo: o regime de julho de 2025 tem uma fonte só. O terceiro: a estrutura do teto semanal
+não é uniforme nem entre duas páginas de ajuda do mesmo dia.
+
+**A consequência é uma proibição que eu me impus e que o texto cumpre: as dez proporções deste
+artigo são todas de dentro da captura de 17 de setembro de 2025, e nenhuma delas é comparada com o
+limite de hoje.** O 6,0 é um fato do regime que valia entre julho de 2025 e janeiro de 2026 — horas
+de Sonnet 4 no Claude Code, teto separado de Opus 4, plano Pro sem Opus. Pegar esse 6,0 e dizer que
+ele descreve o que o assinante recebe hoje seria a mesma troca de denominador que este artigo
+denuncia do começo ao fim.
+
+Houve também uma mudança de grafia no meio disso, pequena e registrada porque mostra que o documento
+é editado com frequência: a troca é datável pelo par de capturas consecutivas que a cerca, como toda data
+deste texto. Em 06/08/2026 a página ainda escrevia *"5 times more usage per session"* ("5 vezes
+mais uso por sessão"), com o algarismo; em 08/08/2026 já escrevia *"Max 5x provides five times more
+usage per session than the Pro plan"*, com o número por extenso. É a mesma fronteira da terceira
+linha da tabela acima, e nas 93 capturas do corpus desse artigo não há nenhuma entre as duas.
+
+### Setembro de 2026: o rótulo, sem número
+
+Nos cinco documentos de setembro de 2026 — os dois artigos acima e mais três artigos de limite de
+uso — **não há nenhum número de limite de uso publicado**, em janela nenhuma. Essa é uma afirmação
+de ausência, então ela vem com o corpus dentro da frase: os cinco arquivos são `11049741`,
+`11145838`, `11647753`, `14552983` e `9797557`; quatro deles são extratos das páginas vivas de 4 de
+setembro, e o do `11145838` é a captura do Internet Archive do mesmo dia. Todos em disco, e a mesma
+busca que devolve zero neles encontra as onze faixas na captura de 17 de setembro de 2025. O controle positivo
+existe justamente para distinguir *não há* de *meu medidor quebrou*.
+
+E a ausência não é artefato da expressão de busca. As expressões foram desenhadas sobre a grafia de
+2025; se a página de hoje escrevesse a mesma coisa de outro jeito, a busca não veria. Então rodei
+duas varreduras. A primeira procura intervalo numérico — `10-40`, `10–40`, `10 to 40` — ou
+`approximately` seguido de número, com "horas", "mensagens" ou "prompts" logo depois: ela não
+depende da grafia do hífen, mas depende da ordem das palavras. Nos cinco documentos acima e nas 93
+capturas do artigo do rótulo, zero. Como essa dependência de ordem é uma fraqueza declarada, rodei
+uma segunda, deliberadamente larga: qualquer algarismo a até quarenta caracteres de uma dessas três
+unidades, nas duas ordens, sem exigir intervalo nem `approximately`. Nos mesmos 98 documentos ela
+devolve **sete formas, e as sete são ruído** — item de lista numerada como *"4. Batch similar
+requests in one message"*, fronteira de frase como *"messages. 6"*. Na captura de 17/09/2025, que
+publicava os números, a mesma rede larga acha dezessete. A rede que enxerga o número quando ele
+existe não acha nenhum onde eu afirmo que não há. A varredura é sobre algarismo, e um limite escrito por extenso
+escaparia dela: a seção «O teto semanal mudou de estrutura pelo menos três vezes» mede essa mesma
+página trocando *"5 times"* por *"five times"* entre 06/08 e 08/08/2026.
+
+O que continua publicado é o rótulo, em **três frases** ao mesmo tempo na mesma página, de dois
+tipos:
+
+| Forma | Verbatim | Que janela a frase nomeia |
+|---|---|---|
+| qualificada, plano de 200 | *"Max 20x provides 20 times more usage per session than the Pro plan"* | sessão |
+| qualificada, plano de 100 | *"Max 5x provides five times more usage per session than the Pro plan"* | sessão |
+| **não qualificada** | *"Get 5x or 20x more usage than the Pro plan, depending on your selected tier"* | **nenhuma** |
+
+Traduzindo a terceira, que é a que interessa: "obtenha 5x ou 20x mais uso que o plano Pro, dependendo
+do nível escolhido". Ela não diz por sessão, não diz por semana, não diz por nada.
+
+---
+
+## A discrepância, lida na matriz: onde o rótulo é exato e onde ele não é
+
+Aqui está o coração do artigo, e ele é uma operação de divisão feita com disciplina.
+
+A disciplina: **toda proporção sai de duas células da mesma coluna** — mesma captura, mesma janela,
+mesma unidade — e os dois planos que a frase nomeia são exatamente os planos das duas células. É
+proibido dividir número de sessão por número semanal; dividir mensagem por prompt; misturar
+capturas; ou usar como operando qualquer coisa que não seja o valor publicado. Essas proibições não
+são retóricas: há um conferidor que reprova por código, e ele foi testado contra duas contas erradas
+que eu mesmo tinha escrito num rascunho anterior — as duas foram reprovadas pelo mesmo código que
+aprova as dez de baixo.
+
+As dez proporções, todas dentro da captura de 17 de setembro de 2025:
+
+| Proporção | Conta | Resultado | Janela e unidade |
+|---|---|---|---|
+| Max 20x ÷ Pro, mensagens | 900 ÷ 45 | **20,0** | sessão de 5h |
+| Max 20x ÷ Pro, prompts de Claude Code | 200 ÷ 10 e 800 ÷ 40 | **20,0** | sessão de 5h |
+| Max 5x ÷ Pro, mensagens | 225 ÷ 45 | 5,0 | sessão de 5h |
+| Max 5x ÷ Pro, prompts de Claude Code | 50 ÷ 10 e 200 ÷ 40 | 5,0 | sessão de 5h |
+| Max 20x ÷ Max 5x, mensagens | 900 ÷ 225 | 4,0 | sessão de 5h |
+| Max 20x ÷ Max 5x, prompts de Claude Code | 200 ÷ 50 e 800 ÷ 200 | 4,0 | sessão de 5h |
+| **Max 20x ÷ Pro, horas de Sonnet** | **240 ÷ 40 e 480 ÷ 80** | **6,0** | **teto semanal** |
+| Max 5x ÷ Pro, horas de Sonnet | 140 ÷ 40 e 280 ÷ 80 | 3,5 | teto semanal |
+| Max 20x ÷ Max 5x, horas de Sonnet | 240 ÷ 140 e 480 ÷ 280 | 1,714 | teto semanal |
+| Max 20x ÷ Max 5x, horas de Opus | 24 ÷ 15 e 40 ÷ 35 | 1,6 e 1,143 | teto semanal |
+
+<MatrizJanelas
+  dataset="rotulo20x-fig4-pt-br"
+  title="A mesma grade, agora dividida"
+  subtitle="Cada célula é uma linha dividida pela outra, dentro da mesma captura"
+  description="A mesma grade da figura anterior, toda da captura de 17/09/2025, com as mesmas quatro colunas e as mesmas duas janelas, mas agora cada linha é uma razão entre dois planos e cada célula traz o resultado com a conta embaixo. A linha Max 20x dividido por Pro dá 20,0 em mensagens, 20,0 em prompts de Claude Code, 6,0 nas horas de Sonnet 4 — coluna da janela em ouro — e não se aplica nas horas de Opus 4. A linha Max 5x dividido por Pro dá 5,0, 5,0, 3,5 e não se aplica. A linha Max 20x dividido por Max 5x dá 4,0, 4,0, 1,714 e o par 1,6 e 1,143. A figura conclui: na janela de ouro, o rótulo que diz 20 dá 6,0 nas horas de Sonnet, e a escada que anuncia 5 e 20 aparece como 1,714; nas duas colunas da esquerda ele é exato."
+  source="Fonte: as dez razões da captura de 17/09/2025; numerador e denominador da mesma coluna. · ulissesflores.com/20x"
+/>
+
+Repare na primeira linha da figura: nas duas colunas da esquerda ela dá 20,0, e na coluna de ouro
+das horas de Sonnet ela dá 6,0. É a mesma captura, o mesmo par de planos, o mesmo documento — e dois
+resultados diferentes. Na janela de cinco horas, 900 ÷ 45 dá 20,0 exatamente, e a promessa se
+cumpre. Na janela semanal, 240 ÷ 40 dá 6,0 e 480 ÷ 80 também dá 6,0.
+**A divergência não está dentro de uma janela: está entre janelas.**
+
+### Por que 6,0 é material, e não apenas diferente
+
+Diferença numérica não é, por si, um problema. O que transforma diferença em problema é o rótulo
+perder a função para a qual existe. Então o critério foi escrito **antes** do veredito, com o seu
+próprio falsificador junto, e há um conferidor que reprova se alguém trocar a ordem depois.
+
+Antes dos testes, uma condição de escopo — que não é teste, é o que faz o caso ser um caso: **o
+rótulo e o número que o contradiz estavam publicados no mesmo documento, na mesma captura.** O
+assinante não precisava cruzar fontes nem datas.
+
+Dentro desse escopo, a diferença é material quando as três condições valem ao mesmo tempo:
+
+1. **A janela divergente é apresentada como limite.** Não é ilustração: o texto das três faixas
+   semanais diz *"within their weekly usage limits"* ("dentro dos seus limites semanais de uso").
+2. **A divergência vale nos dois extremos da faixa.** Isso anula a objeção do extremo conveniente e
+   absorve a incerteza que a própria empresa declarou ao publicar faixa em vez de número: 240 ÷ 40 e
+   480 ÷ 80 dão 6,0 os dois.
+3. **O rótulo perde a função de distinguir os degraus da escada.** Entre os dois planos Max, os
+   nomes `5x` e `20x` anunciam a relação 4. Na sessão, é exatamente isso que se mede: 900 ÷ 225 =
+   4,0. Na semana, os mesmos dois planos medem 1,714.
+
+Não há limiar percentual, porque qualquer percentual seria número inventado. O limiar é a **função**
+do rótulo.
+
+E o critério carrega o próprio falsificador: bastaria **uma** destas para o veredito virar
+contrário — as proporções semanais iguais às de sessão nos dois extremos; divergência em só um dos
+extremos; a janela divergente apresentada como ilustração e não como limite; ou o rótulo aparecendo
+na página apenas na forma que nomeia a sessão. Nenhuma das quatro vale na captura de 17/09/2025. Se
+valesse, não haveria artigo.
+
+O veredito, dentro daquela captura, é **sim**: a diferença é material para quem paga.
+
+### O 6,0 cai do lado errado da escada
+
+Há um detalhe que a tabela mostra e que vale dizer em voz alta. A escada de planos é 1 (Pro), 5
+(Max 5x), 20 (Max 20x). Na janela semanal, o assinante do plano de 200 dólares recebe 6,0 — que fica
+**entre os dois degraus, e do lado do 5**. Na janela semanal dessa captura, o plano de cima entrega
+uma proporção mais próxima da que o plano de baixo anuncia do que da que o seu próprio plano
+anuncia.
+
+O mesmo mecanismo aparece no plano de 100, e ele entra aqui como apoio, nunca como segunda
+manchete: Max 5x ÷ Pro em horas de Sonnet dá **3,5** contra um rótulo que diz 5, enquanto na sessão
+a mesma divisão dá 5,0. Os dois planos exibem o mesmo padrão, o que sugere que ele é estrutural ao
+modo como os rótulos foram construídos — e não escolha de um plano conveniente para o argumento.
+
+### Onde o rótulo acerta, e por que isso agrava em vez de aliviar
+
+**Na janela de cinco horas o rótulo é exato, e é justamente por isso que a forma não qualificada
+incomoda.** Uma promessa que errasse nas duas janelas seria só um número errado. Uma promessa que
+acerta numa janela e não na outra, publicada numa forma que **não diz em qual das duas está
+falando**, transfere para o leitor o trabalho de descobrir qual das duas contas vale — e, a partir
+de janeiro de 2026, tira dele os números com que ele faria essa descoberta.
+
+Sobre hoje, e a distinção é fina: há veredito de **forma**, não de proporção. A forma qualificada
+nomeia a janela em que o rótulo é exato na captura de 17/09/2025 — 900 ÷ 45 dá 20,0 —, e nenhum
+número publicado hoje diverge dela. A forma **não** qualificada não nomeia janela, logo alcança
+também a semanal, onde o número da mesma captura deu 6,0 — e, como nos cinco documentos de setembro
+de 2026 não há número em janela nenhuma, essa forma é **inverificável por quem lê**. A afirmação
+larga do bloco de benefícios afirma mais do que a definição estreita da mesma página sustenta.
+
+### Cinquenta e três dias com os números de um modelo e a recomendação de outro
+
+Há um detalhe menor na cronologia que merece ficar registrado, porque ele diz algo sobre o estado da
+página nos meses finais. Em doze capturas do artigo `11145838`, de 04/12/2025 a 26/01/2026 —
+cinquenta e três dias —, a página dizia ao assinante que ele usa *"Sonnet or Opus 4.5"* enquanto os
+únicos números publicados eram de **Sonnet 4**, embaixo do cabeçalho *"Usage Limits for Older
+Models"*. Em nenhuma das 39 capturas desse artigo existe faixa de horas, mensagens ou prompts
+atribuída a um modelo 4.5 — e o controle positivo dessa busca é que a expressão `4.5` **encontra**
+duas ocorrências na captura de 26/01/2026, então o medidor enxerga.
+
+Ou seja: nos últimos dois meses em que houve número na página, o número já não era do modelo que a
+própria página mandava usar.
+
+---
+
+## O processo: contexto factual datado, e nada além disso
+
+Existe uma ação judicial contra a Anthropic sobre os limites do plano Max. Ela entra aqui como
+contexto factual datado — **não como argumento**, porque este artigo não julga mérito nem prevê
+desfecho, e porque a minha custódia é da cobertura de imprensa, não da peça processual.
+
+O que a matéria do Quartz, capturada em 16/06/2026 às 12:38:14Z, registra:
+
+- **Onde e por quem:** *"Filed Monday in the Northern District of California on behalf of
+  Washington, D.C.-based plaintiff Karl Kahn"* — "protocolada na segunda-feira no Distrito Norte da
+  Califórnia em nome do autor Karl Kahn, de Washington, D.C.".
+- **Como a peça descreve o que se compra:** *"Subscribers pay for the promise of five or 20 times
+  the computing access available on the base Pro plan"* — "assinantes pagam pela promessa de cinco
+  ou vinte vezes o acesso computacional disponível no plano Pro básico".
+- **A alegação central:** *"The actual usage provided by the Max 5x and Max 20x plans is far below
+  the advertised amount of usage"* — "o uso efetivamente entregue pelos planos Max 5x e Max 20x
+  fica muito abaixo da quantidade de uso anunciada".
+- **O que se pede:** *"It also seeks a finding that Anthropic's marketing of the plans is
+  fraudulent"* — "pede também uma declaração de que o marketing dos planos é fraudulento".
+- **O relato concreto do autor:** *"A single five-hour work session consumed 15% of his weekly
+  allotment"* — "uma única sessão de trabalho de cinco horas consumiu 15% da sua cota semanal".
+
+Repare que a linguagem da peça, como a imprensa a reporta, é a mesma que este artigo mediu: **ela
+descreve o produto por multiplicador, e a queixa é sobre a distância entre o multiplicador e o uso
+entregue.** O relato dos 15% é, aliás, a mesma tensão entre os dois medidores da analogia — uma
+sessão inteira dentro do limite de sessão consumindo 15% da semana.
+
+**O limite de custódia deste bloco, declarado e não contornado:** a fonte deste bloco é cobertura
+de imprensa — a matéria do Quartz, e só ela.
+A busca no CourtListener, que é onde a peça estaria, respondeu 403 ao meu verificador — em
+GET e em HEAD — e por isso o processo ficou fora do meu registro de fontes de propósito, não por
+esquecimento. Este texto não descreve pedido, fundamento ou andamento além do que a imprensa
+reportou, e não afirma nada sobre procedência ou desfecho. Um artigo que cobra precisão não pode
+tratar uma alegação como se fosse um fato provado.
+
+---
+
+## Competidores: a mesma gramática, e o que eu não conferi
+
+A gramática do multiplicador não é invenção de uma empresa só — os planos pagos de outros produtos
+do mesmo nicho também se apresentam por "Nx". Mas aqui eu preciso ser rigoroso sobre o que posso
+afirmar, e a resposta honesta é: pouco.
+
+**Das cinco fontes desse eixo, uma está ancorada em disco e quatro não estão.** A ancorada é a
+captura de 31/08/2026 da página comercial de preços do ChatGPT — e ela tem um limite próprio que
+também é medição, não impressão: a página **renderiza os preços por script**, então o arquivo
+estático traz a estrutura dos planos e **nenhuma cifra**. As outras quatro — a página de ajuda da
+OpenAI sobre o ChatGPT Pro, a notícia sobre a restauração do limite de cinco horas no Plus em agosto
+de 2026, a página de preços do Cursor e a de planos do GitHub Copilot — estão em custódia de
+contexto: eu sei que os documentos existem e respondem, mas não tenho extrato verbatim de nenhuma.
+Pela regra que declarei na seção da régua, **custódia de contexto autoriza mencionar que o documento
+existe e proíbe citar número dele**. Então não cito.
+
+Fica registrado o que este artigo **não** fez: não há extrato verbatim de nenhum concorrente, e
+nenhuma cifra de concorrente foi conferida por mim na fonte viva. Qualquer número de competidor
+teria de passar antes por âncora própria, e essa medição não foi feita.
+
+O que sobrevive sem cifra é uma observação estrutural, e ela é minha, não medida:
+
+**Limite declarado em número absoluto é falseável por quem paga; limite declarado em multiplicador
+só é falseável se o denominador estiver publicado.** Se um produto diz "você tem N requisições por
+mês", o assinante confere sozinho, contando. Se diz "você tem 20 vezes o plano básico", ele precisa
+de duas coisas — o que o plano básico tem e o que o dele tem — e as duas vêm da mesma empresa. É
+exatamente o par de números que saiu da página em janeiro de 2026.
+
+Isso não é acusação: é uma propriedade da forma de declarar. Um multiplicador sem denominador
+publicado é uma afirmação que não pode ser conferida de fora, e vale a pena saber disso ao ler
+qualquer plano vendido assim — deste ou de qualquer produto. É a mesma lição que apareceu aqui
+quando eu fui conferir uma tabela de segurança de agentes e descobri que
+[a nota medida era do par ferramenta-mais-modelo, e mudava quando só a ferramenta mudava](/artigos/benchmark-harness-modelo):
+um número só significa alguma coisa quando você sabe por quem ele está sendo dividido.
+
+---
+
+## A régua com que se julga uma remoção — e por que ela é minha, e declarada
+
+Seria confortável abrir esta seção citando um framework de governança ou um guia regulatório de
+publicidade e dizer que a remoção viola tal princípio. Eu identifiquei três documentos candidatos
+para isso. **E não vou citar nenhum, porque nenhum dos três está ancorado no meu disco** — os três
+estão em custódia de contexto, o nível que autoriza dizer que o documento existe e proíbe extrair
+critério dele. Citar norma que eu não abri e não ancorei, para dar peso institucional a um
+julgamento que é meu, seria a fabricação que este artigo inteiro existe para evitar.
+
+Então a régua é minha, e está declarada — com uma distinção que eu não posso apagar: ela tem
+**quatro** testes, e os quatro não têm a mesma idade. Os **dois últimos** são as condições 2 e 3 do
+critério da seção «Por que 6,0 é material, e não apenas diferente», aquelas que foram escritas antes
+do veredito, com o falsificador junto. Dos **dois primeiros**, o da janela nomeada consta
+daquele critério — mas como o **quarto falsificador**, não como condição, que é o nome que a seção
+«A objeção que de fato pesa» lhe dá; o do denominador publicado não consta de forma nenhuma. Chamar
+os quatro de pré-registrados seria a imprecisão que este artigo cobra dos outros. Nenhum padrão legal é invocado neste texto, e nenhuma
+conclusão daqui depende de um.
+
+O que eu posso oferecer no lugar de uma citação de norma é a régua em forma utilizável — o que ela
+pede de qualquer promessa vendida por multiplicador:
+
+1. **O multiplicador nomeia a janela?** Uma promessa que não diz "por sessão" ou "por semana" afirma
+   para todas as janelas, e será lida como tal.
+2. **O denominador está publicado?** Sem o número do plano base, o multiplicador não é conferível de
+   fora. Nenhuma boa-fé supre isso: é uma propriedade aritmética.
+3. **A promessa vale nos dois extremos da faixa?** Empresa que publica faixa em vez de número está
+   declarando incerteza, e é justo medi-la nas duas pontas.
+4. **O multiplicador distingue os degraus que ele mesmo anuncia?** Se a escada diz 5 e 20, a razão
+   entre os dois planos tem de ser 4 na janela de que se está falando. Onde ela não é, o rótulo
+   deixou de descrever a escada.
+
+<MedidorDuplo
+  dataset="rotulo20x-fig5-pt-br"
+  title="A régua aplicada aos dois medidores"
+  subtitle="Os quatro testes da régua, e os quatro não têm a mesma idade"
+  description="A mesma geometria da figura que abriu o artigo, agora com dois planos por painel e os números reais da captura de 17/09/2025. À esquerda, a sessão de cinco horas: Pro cerca de 45 e Max 20x cerca de 900, razão 20,0. À direita, em ouro, o teto semanal: Pro de 40 a 80 horas e Max 20x de 240 a 480, razão 6,0. Abaixo dos painéis, os quatro testes da régua, cada um com a sua resposta. «O multiplicador nomeia a janela?»: não, na forma que abre a página. «O denominador está publicado?»: sim, estava — até 26 de janeiro de 2026, e não está mais; é o único teste marcado com anel em vez de disco cheio. «A promessa vale nos dois extremos?»: não na janela semanal, onde as horas de Sonnet dão 6,0 nos dois extremos, e sim na janela de sessão, onde a faixa de prompts dá 20,0 nos dois extremos, por 200 ÷ 10 e 800 ÷ 40. «Distingue os degraus que anuncia?»: não na janela semanal, onde a razão entre Max 5x e Max 20x é 1,714, e sim na de sessão, onde as mensagens dão 4,0, por 900 ÷ 225. Dos quatro testes, os dois últimos são as condições fixadas antes do veredito; dos dois primeiros, o da janela nomeada consta desse mesmo critério, como o quarto falsificador, não como condição, e o do denominador publicado não consta de forma nenhuma. Os painéis e os dois últimos vereditos saem da captura de 17/09/2025; os dois primeiros vereditos não saem dela, e sim dos corpora dos dois artigos de ajuda — o do denominador, das 39 capturas do 11145838, onde os números estão até 26 de janeiro de 2026 e não depois; o da janela nomeada, das 93 capturas do 11049741. A figura conclui: dois dos quatro acendem só na janela semanal, e o primeiro acende em qualquer uma, porque a forma não qualificada do rótulo não nomeia janela."
+  source="Fonte: painéis e os dois últimos vereditos, da captura de 17/09/2025; os dois primeiros, dos corpora de 11049741 e 11145838. · ulissesflores.com/20x"
+/>
+
+Repare que a figura tem a mesma geometria da primeira, agora com os números reais e com os quatro
+testes desenhados embaixo dela. O mecanismo que abriu o artigo é o mesmo que fecha a régua: dois medidores, uma promessa, e a
+pergunta de qual dos dois ela está descrevendo.
+
+---
+
+## As vozes contrárias, cada uma com a sua disposição
+
+Nenhuma delas veio até mim: as três defesas abaixo são **de registro público** — saíram do texto
+vivo do TechCrunch e das próprias páginas de ajuda. Este artigo as enfrenta porque elas existem
+publicadas.
+
+### «O limite é medido em tokens, não em horas»
+
+É a defesa mais séria, e ela é do registro: em 29/07/2025 o próprio veículo escreveu *"It’s possible
+the 20x figure still applies when measured in tokens or compute, but the company didn’t immediately
+clarify"* — "é possível que o número de 20x ainda se aplique quando medido em tokens ou em
+computação, mas a empresa não esclareceu de imediato". Essa frase sumiu da versão viva de
+02/09/2026 — e é preciso dizer o que entrou no lugar dela, porque não foi vazio: o mesmo arquivo
+traz *"the company says that rate limits are activated when users hit a certain number of tokens,
+rather than a certain time limit"* ("a empresa diz que os limites de uso são acionados quando o
+usuário atinge um certo número de tokens, e não um certo limite de tempo"). A especulação de 2025
+deu lugar a uma declaração atribuída à empresa. Isso é esclarecimento do registro, não erosão dele.
+
+Ela não muda o veredito, por três motivos, e nenhum deles é retórico. Primeiro: hora foi a unidade
+em que a **própria empresa** escolheu expressar o teto ao assinante. Segundo: os dois lados de cada
+proporção são horas do **mesmo** modelo — Sonnet 4 dividido por Sonnet 4 —, então a conversão para
+tokens, seja qual for, incide igual nos dois lados. Terceiro, e este é medido: **em nenhum dos 137
+documentos da empresa em disco — as 39 capturas do artigo `11145838`, as 93 do `11049741` e os 5
+documentos de setembro de 2026 — o teto de uso é expresso em tokens.** A única cifra em tokens nesse corpus inteiro é
+o tamanho da janela de contexto. Sobre cobrança por token eu já tinha aprendido, medindo máquina
+contra API, que [a regra de cobrança decide mais que o número bruto](/artigos/tokens-por-dolar) — o
+que só reforça a exigência de que a unidade esteja publicada. O verbatim, de outro artigo de ajuda: *"the newest models support up to a 1M
+token context window, while others support 500K or 200K tokens"* ("os modelos mais novos suportam
+uma janela de contexto de até 1 milhão de tokens, enquanto outros suportam 500 mil ou 200 mil"). Isso
+é quanto texto cabe de uma vez, não quanto uso o plano dá.
+
+Essa forma precisa **fortalece** a resposta em vez de enfraquecê-la, e a história de como ela chegou
+aqui vale ser contada: eu tinha escrito "em nenhuma captura em disco há número em tokens", e a
+medição me reprovou, achando a frase da janela de contexto. Corrigir a afirmação para a forma
+estreita — teto de uso, corpus enumerado dentro da frase — melhorou o argumento: o TechCrunch relata
+a empresa afirmando que o limite dispara por tokens e, no mesmo conjunto de páginas de ajuda, ela
+publica número em tokens apenas para outra grandeza.
+
+### «Os números removidos já estavam marcados como de modelos antigos»
+
+Também é de registro, e também não muda o veredito — mas ela **obriga** o verbo da retirada, e é por
+isso que este texto nunca diz que a página simplesmente apagou os números sem mais.
+
+Os fatos, datados: na captura de 17/09/2025 o cabeçalho de ressalva **não existe** — zero ocorrências
+—, e os números valem para os modelos que a página declara correntes: *"Max plan subscribers can use
+Sonnet or Opus 4 on Claude Code"* ("assinantes do plano Max podem usar Sonnet ou Opus 4 no Claude
+Code"). O cabeçalho entra entre 22/11/2025 e 04/12/2025. E na captura de 26/01/2026, a última com
+números, o rótulo `20x Pro usage` está **fora** da ressalva: ele aparece no caractere 1726 do
+documento, e a ressalva começa no 3816, com todos os números depois dela.
+
+Ou seja: quando os números saíram, eles já estavam rotulados como de modelos antigos — e na captura
+de 26/01/2026, a última com números, o rótulo que eles contradiziam continuava acima, sem ressalva
+nenhuma.
+
+### «As faixas continuam publicadas por um veículo terceiro»
+
+Verdadeira, e medida: na versão viva do TechCrunch de 02/09/2026 as cinco faixas de horas continuam
+lá, uma ocorrência cada. O que saiu de lá foi a frase da proporção — `6x as many` devolve zero na
+versão viva contra uma na captura de 29/07/2025.
+
+O que isso muda: os números não ficaram indisponíveis ao público. Ficaram indisponíveis **na fonte
+da própria empresa**, que é onde o assinante vai olhar quando quiser conferir o que comprou. E o
+terceiro que os publicou passou a publicar os insumos sem a conta.
+
+### A objeção que de fato pesa: «a proporção sempre foi por sessão»
+
+Esta é a contra-leitura que tocaria o quarto falsificador do critério, e ela merece a resposta mais
+cuidadosa do artigo. Se `20x` sempre significou "por sessão", então a forma qualificada de hoje não
+é uma mudança de sentido — é só uma explicitação do que já se queria dizer, e a conta semanal nunca
+foi a conta relevante.
+
+O corpus responde, em dois documentos, e a resposta é de presença e ausência de texto, não de
+interpretação.
+
+**No documento que trazia os números:** a expressão `per session` devolve **zero** nas 39 capturas
+do artigo `11145838` — e a mesma busca acha a expressão na captura de 02/02/2026 do `11049741`.
+A forma qualificada nunca esteve nesse documento — o que esteve, do primeiro
+ao último dia, foi o rótulo sem janela nomeada, ao lado dos números das duas janelas.
+
+**No documento do rótulo:** `per session` não aparece em **nenhuma** das 13 capturas do artigo
+`11049741` até a de 28/01/2026 às 11:30:00Z, que é a última antes de ele entrar; e aparece na
+seguinte, a de 02/02/2026 às 16:01:59Z, que é o controle positivo dessa busca. Na mesma transição
+entra a primeira descrição do teto semanal nesse documento — que, nas mesmas 13 capturas anteriores,
+também não existia.
+
+E o achado que fecha a objeção: **o multiplicador sem janela nomeada não era uma abreviação casual —
+era a forma publicada, e continua sendo.** *"Provides 20 times more usage than the Pro plan"*, sem
+qualificador, existe em cinco capturas consecutivas do artigo do rótulo, de 26/12/2025 a 28/01/2026,
+e some exatamente quando entra a forma com `per session`, que ocupa as 80 capturas seguintes. A
+edição de janeiro não acrescentou uma frase qualificada onde não havia frase: ela **inseriu duas
+palavras numa frase que já estava publicada sem qualificador** — enquanto o outro artigo ainda
+publicava os números que dão 6,0 na semana. E a troca não encerrou a forma larga: a outra frase sem
+janela nomeada, *"Get 5x or 20x more usage than the Pro plan"*, está nas 93 capturas do artigo do
+rótulo, de 18/09/2025 a 01/09/2026, e no extrato da página viva de 04/09/2026. Essa nunca saiu.
+
+Duas cautelas que vêm com esse achado, e as duas são minhas. A primeira: esse marcador tem **duas
+viradas**, não uma — ele entra entre 21/11/2025 e 26/12/2025 e sai entre 28/01/2026 e 02/02/2026 —,
+e por isso foi medido por série inteira, e não pela regra de virada única que os outros marcadores
+usam. A segunda: a proximidade entre a entrada do qualificador e a do cabeçalho de ressalva é
+**registro datado, nunca insinuação**. Não sei o motivo de nenhum dos dois, e a ordem entre as
+edições é indeterminada.
+
+Há ainda uma contra-leitura mais fraca, que registro para não parecer que a escolhi por conveniência:
+a de que `20x` seria apenas o **nome do nível**, sem afirmar proporção nenhuma. Ela não tem um único
+documento a favor nas 93 capturas do artigo `11049741`, e tem **as 93 contra** — todas trazem
+*"Get 5x or 20x more usage than the Pro plan"*, que define o nome com valor proporcional, e 80 delas
+trazem ainda a forma que qualifica esse valor por sessão. E o
+falsificador continua declarado: um documento da empresa que defina `20x` como nome sem valor
+proporcional derruba a leitura que eu adotei.
+
+### Uma afirmação de terceiro que eu me recusei a assinar
+
+Nas discussões que circularam sobre o assunto, um post resumiu a história assim:
+{/* MENCAO */}
+*"then they removed the numbers and never published them again"* — "aí eles removeram os números e
+nunca mais os publicaram".
+{/* /MENCAO */}
+
+A primeira metade confere e está datada nesta reportagem. **A segunda eu não assino**, e o motivo é
+a regra da seção da régua: ela afirma ausência sobre todo o corpo publicado da empresa, um corpus que
+ninguém enumerou — nem eu. Eu posso afirmar ausência sobre 39 capturas de um artigo, sobre 93 de
+outro e sobre cinco documentos de setembro de 2026, porque abri os 137 e listei os arquivos. Sobre
+"tudo o que a Anthropic já publicou", não.
+
+É uma distinção chata e é a diferença entre reportagem e boato.
+
+---
+
+## O que sobra, e o que eu faria com isso
+
+Duas metades sobram, e as duas são verificáveis por quem quiser refazer o caminho.
+
+**A primeira:** houve um período — de 17 de setembro de 2025 a 26 de janeiro de 2026, quatro meses e
+nove dias, 38 das 39 capturas do documento — em que o assinante que quisesse conferir o rótulo tinha
+onde. O multiplicador não nomeava janela, e os números das duas janelas estavam publicados na mesma
+página. Uma das contas dava 20,0 e confirmava a promessa; a outra dava 6,0 e não confirmava.
+
+**A segunda:** depois de três edições datadas, o rótulo passou a nomear a janela em que a medição
+da captura de 17/09/2025 era exata, e a janela em que ela não era passa a ser descrita sem número
+nenhum nos cinco documentos de setembro de 2026.
+
+**O efeito sobre quem lê é verificável e independe do motivo: o que sobrou publicado é a metade que
+confere.** Essa frase é o mais longe que a evidência me leva, e eu não vou um centímetro além dela.
+Não sei por que os números saíram. Não sei se as duas edições foram decididas juntas — a ordem entre
+elas é indeterminada, e a distância vai de zero a 7,65 dias. Não sei se alguém, em algum momento,
+pensou na conta que eu acabei de fazer. Duas edições próximas no tempo são duas edições próximas no
+tempo, e é tudo.
+
+O que **é** original neste artigo, dito com precisão para não roubar crédito de ninguém: a proporção
+de 6 é do TechCrunch, de 29 de julho de 2025. O que eu acrescento é a comparação exata entre as duas
+janelas dentro de uma mesma captura, a erosão em três edições datadas por par de capturas, e o
+rótulo não qualificado convivendo com os números que o contradiziam no mesmo documento, por quatro
+meses e nove dias.
+
+### O que eu faria com isso
+
+Não é conselho de consumo, é método de leitura. Quando você encontrar um plano vendido por
+multiplicador — deste produto ou de qualquer outro:
+
+1. **Procure a janela.** Se a frase não diz "por sessão", "por dia" ou "por mês", ela está afirmando
+   para todas, e você vai descobrir qual valia quando bater no limite.
+2. **Procure o denominador.** Se o número do plano base não está publicado, o multiplicador não é
+   conferível por você. Anote a data em que você procurou, porque essa data é a única coisa que
+   sobra quando a página mudar.
+3. **Guarde a captura.** O Internet Archive aceita salvar uma página na hora, e leva segundos.
+   Uma captura datada de hoje é a diferença entre lembrar e provar. Toda a reportagem acima existe
+   porque outras pessoas fizeram isso, sem saber que eu precisaria.
+4. **Meça nos dois extremos.** Quando o limite vier em faixa, faça as duas contas. Se a promessa só
+   vale numa ponta, ela não vale.
+
+A última coisa que eu diria a quem paga por um desses planos não é sobre a Anthropic. É que o número
+que decide se você está sendo bem servido não é o multiplicador do nome do plano — é o que você
+consegue fazer numa semana, medido por você, no seu trabalho, depois que a novidade passar.
+
+---
+
+## Como refazer esta reportagem
+
+Todos os documentos citados aqui são públicos e datados. Os quatro que sustentam a maior parte das
+contas:
+
+- **A captura de 17/09/2025 do artigo `11145838`** — os onze números e o rótulo no mesmo documento:
+  `https://web.archive.org/web/20250917042709/https://support.claude.com/en/articles/11145838-using-claude-code-with-your-pro-or-max-plan`
+- **A captura de 26/01/2026 do mesmo artigo** — a última com números:
+  `https://web.archive.org/web/20260126002809/https://support.claude.com/en/articles/11145838-using-claude-code-with-your-pro-or-max-plan`
+- **A captura de 29/01/2026 do mesmo artigo** — a primeira sem nenhum:
+  `https://web.archive.org/web/20260129040003/https://support.claude.com/en/articles/11145838-using-claude-code-with-your-pro-or-max-plan`
+- **A captura de 29/07/2025 da matéria do TechCrunch** — as faixas por extenso e a proporção de 6:
+  `https://web.archive.org/web/20250729011131/https://techcrunch.com/2025/07/28/anthropic-unveils-new-rate-limits-to-curb-claude-code-power-users/`
+
+As demais capturas citadas seguem o mesmo endereço, trocando só o carimbo de tempo — que aparece no
+corpo deste texto na forma `AAAAMMDDHHMMSS` sempre que uma medição depende dela.
+
+## Fontes
+
+- [Anthropic — Using Claude Code with your Pro or Max plan (artigo 11145838)](https://support.claude.com/en/articles/11145838-using-claude-code-with-your-pro-or-max-plan)
+- [Anthropic — What is the Max plan (artigo 11049741)](https://support.claude.com/en/articles/11049741-what-is-the-max-plan)
+- [TechCrunch — Anthropic unveils new rate limits to curb Claude Code power users (28/07/2025)](https://techcrunch.com/2025/07/28/anthropic-unveils-new-rate-limits-to-curb-claude-code-power-users)
+- [Quartz — Anthropic sued over Claude Max subscription usage limits](https://qz.com/anthropic-sued-claude-max-subscription-usage-limits-061526)
+
+As citações de terceiros deste artigo — as quatro do placar e a do fecho — saíram de três
+destes posts (@JesusGodAndKing, @emanueledpt e @Hesamation). Os outros dois estão aqui
+porque entraram no levantamento e foram ancorados, ainda que eu não os cite. Cada link
+abaixo é uma captura de arquivo criada por mim em 4 de setembro de 2026, e ela é a
+testemunha datada por terceiro de que o post existia com aquele conteúdo; a citação em si sai do
+extrato da página viva baixado em 2 de setembro de 2026, que está no meu disco. Doze citações do
+levantamento foram conferidas uma a uma dentro dessas capturas; duas — *"is a scam"* e *"wildly
+misleading"* — entraram no texto depois dessa conferência, e para elas a âncora é só o extrato do
+meu disco. O `archive.ph` recusa cliente que não seja navegador, então esses cinco endereços abrem
+no navegador e devolvem 429 a `curl`; isso é política do serviço, medida, e não sinal de fonte
+inventada.
+
+- [Captura do post de @JesusGodAndKing](https://archive.ph/xBj3q)
+- [Captura do post de @SataEricUX](https://archive.ph/D8fIQ)
+- [Captura do post de @emanueledpt](https://archive.ph/JVfrV)
+- [Captura do post de @AekayAka](https://archive.ph/1MYrl)
+- [Captura do post de @Hesamation](https://archive.ph/26A3i)
+
+> **Verificado em 4 de setembro de 2026.** As onze células e as dez proporções foram conferidas
+> contra a captura de 17/09/2025; a linha do tempo das três edições, contra 39 capturas do artigo
+> `11145838`; as afirmações de ausência, contra os corpora nomeados em cada frase, cada uma com o
+> seu controle positivo; e os cinco documentos de setembro de 2026, contra os quatro extratos de
+> página viva e a captura de arquivo baixados no dia. Nada foi conferido depois dessa data, e
+> nenhum pedido de posicionamento foi feito à empresa.

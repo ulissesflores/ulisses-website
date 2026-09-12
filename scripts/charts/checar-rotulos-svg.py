@@ -20,7 +20,7 @@ DOIS REGIMES DE MEDIÇÃO, porque são dois tipos de figura:
    várias dessas caixas são dimensionadas pelo próprio texto (fórmula de contagem de
    caractere), então elas vivem, por construção, acima de 85%.
 
-COBERTURA (espelho de `lib/content/mdx-components.tsx`, lido em 2026-09-05 — 24 entradas):
+COBERTURA (espelho de `lib/content/mdx-components.tsx`, lido em 2026-09-06 — 26 entradas):
 
 | Componente | Regime | Texto medido |
 |---|---|---|
@@ -31,6 +31,7 @@ COBERTURA (espelho de `lib/content/mdx-components.tsx`, lido em 2026-09-05 — 2
 | FlowLineDiagram, ConstraintExperimentChart, VramLadder | 2 | props + tudo que o dataset desenha |
 | ObligationMatrix | 2 | props + tudo que o dataset desenha |
 | ThermometerTrioDiagram | 2 | props + tudo que o dataset desenha |
+| MedidorDuplo, MatrizJanelas | 2 | props + tudo que o dataset desenha |
 | DailyColumnsChart, DialogueDiagram | 2 | props + tudo que o dataset desenha |
 | SimulationRenderer, YouTube, ArticleFigure | — | não desenham texto em SVG |
 
@@ -131,6 +132,8 @@ FAMILIAS = {
     "obligationMatrixDatasets": "obligationMatrix",
     "thermometerTrioDatasets": "thermometerTrio",
     "costLadderDatasets": "costLadder",
+    "medidorDuploDatasets": "medidorDuplo",
+    "matrizJanelasDatasets": "matrizJanelas",
     "dailyColumnsDatasets": "dailyColumns",
     "dialogueDatasets": "dialogue",
 }
@@ -1076,6 +1079,168 @@ def cena_cost_ladder(ds: dict, props: dict) -> Cena:
     return c
 
 
+# componente -> (família do dataset, construtor da cena)
+# ── MedidorDuplo — geometria de `medidor-duplo.tsx` ─────────────────────────────
+# Dois painéis lado a lado, e dentro de cada um TRÊS COLUNAS FIXAS: nome | barra | valor.
+# O valor não fica na ponta da barra de propósito — na ponta, o plano de maior múltiplo
+# teria orçamento zero e o maior número seria o primeiro a ser cortado, em silêncio.
+# A barra entra na fila como CAIXA: o que reprova a linha não é a parede do painel, é o
+# rótulo encostar na barra que está entre ele e o vizinho.
+MD_W = 760
+MD_PAD = {"left": 8, "right": 8}
+MD_GAP_PAINEL = 24
+MD_W_PAINEL = (MD_W - MD_PAD["left"] - MD_PAD["right"] - MD_GAP_PAINEL) / 2  # 360
+MD_PAINEL_X = (float(MD_PAD["left"]), MD_PAD["left"] + MD_W_PAINEL + MD_GAP_PAINEL)
+MD_PAINEL_PAD = 12
+MD_NOME_W = 80
+MD_VALOR_W = 84
+MD_GAP_COL = 8
+MD_TRACK_W = MD_W_PAINEL - 2 * MD_PAINEL_PAD - MD_NOME_W - MD_VALOR_W - 2 * MD_GAP_COL  # 156
+MD_MOLDURA = (0.0, float(MD_W))
+MD_TESTE_PERGUNTA_X = MD_PAD["left"] + 20
+MD_TESTE_PERGUNTA_W = 470
+MD_TESTE_VEREDITO_X = MD_TESTE_PERGUNTA_X + MD_TESTE_PERGUNTA_W
+
+
+def _md_unidade(paineis: list[dict]) -> float:
+    """Uma unidade de barra em px — a MESMA conta de `medidor-duplo.tsx`: o maior multiplo
+    da figura inteira ocupa a pista toda, e os dois paineis dividem a unidade."""
+    return MD_TRACK_W / max(x["multiplo"] for p in paineis for x in p["planos"])
+
+
+def _md_painel(c: Cena, p: dict, px: float, razao_px: int, i: int, unidade: float) -> None:
+    dentro = (px, px + MD_W_PAINEL)
+    esq = px + MD_PAINEL_PAD
+    c.inicio(f"paineis[{i}].titulo", p["titulo"], 12, 700, esq, dentro)
+    c.inicio(f"paineis[{i}].unidade", p["unidade"], 9.5, 400, esq, dentro)
+
+    track_x = esq + MD_NOME_W + MD_GAP_COL
+    valor_x = px + MD_W_PAINEL - MD_PAINEL_PAD - MD_VALOR_W
+    for j, plano in enumerate(p["planos"]):
+        fila = f"painel{i}linha{j}"
+        c.inicio(
+            f"paineis[{i}].planos[{j}].nome", plano["nome"], 10, 400, esq,
+            (px, track_x - MD_GAP_COL), fila=fila,
+        )
+        c.caixa(
+            f"paineis[{i}].planos[{j}] (barra)", f"multiplo={plano['multiplo']}",
+            track_x, track_x + max(unidade * plano["multiplo"], 3),
+            (px, px + MD_W_PAINEL), fila=fila,
+        )
+        c.inicio(
+            f"paineis[{i}].planos[{j}].valor", plano["valor"], 10, 400, valor_x,
+            (track_x + MD_TRACK_W, px + MD_W_PAINEL - MD_PAINEL_PAD), fila=fila,
+        )
+
+    caixa_razao = (esq, px + MD_W_PAINEL - MD_PAINEL_PAD)
+    c.inicio(f"paineis[{i}].razaoRotulo", p["razaoRotulo"], razao_px, 700, esq + 10, caixa_razao)
+    if p["razaoConta"]:
+        c.inicio(f"paineis[{i}].razaoConta", p["razaoConta"], 9, 400, esq + 10, caixa_razao)
+
+
+def cena_medidor_duplo(ds: dict, props: dict) -> Cena:
+    c = Cena("MedidorDuplo")
+    esq = float(MD_PAD["left"])
+    c.inicio("title", props["title"], 15, 700, esq, MD_MOLDURA)
+    if props.get("subtitle"):
+        c.inicio("subtitle", props["subtitle"], 11, 400, esq, MD_MOLDURA)
+
+    razao_px = 28 if ds["modo"] == "regua" else 22
+    unidade = _md_unidade(ds["paineis"])
+    for i, painel in enumerate(ds["paineis"]):
+        _md_painel(c, painel, MD_PAINEL_X[i], razao_px, i, unidade)
+
+    # Legenda: marca desenhada + rótulo, uma em cada metade. A marca entra como caixa
+    # para o vão medido ser rótulo -> marca do item seguinte, e não texto -> texto.
+    c.inicio("legenda.base", ds["legenda"]["base"], 10, 400, esq + 20,
+             (0.0, MD_W / 2), fila="legenda")
+    c.caixa("legenda.comparado (marca)", ds["legenda"]["comparado"],
+            MD_W / 2, MD_W / 2 + 14, MD_MOLDURA, fila="legenda")
+    c.inicio("legenda.comparado", ds["legenda"]["comparado"], 10, 400, MD_W / 2 + 20,
+             (MD_W / 2, float(MD_W)))
+
+    if ds["modo"] == "regua":
+        for k, teste in enumerate(ds.get("testes") or []):
+            c.inicio(
+                f"testes[{k}].pergunta", teste["pergunta"], 10, 400, MD_TESTE_PERGUNTA_X,
+                (MD_TESTE_PERGUNTA_X - MD_GAP_COL, MD_TESTE_VEREDITO_X - MD_GAP_COL),
+            )
+            c.inicio(
+                f"testes[{k}].veredito", teste["veredito"], 9.5, 400, MD_TESTE_VEREDITO_X,
+                (MD_TESTE_VEREDITO_X - MD_GAP_COL, MD_W - MD_PAD["right"]),
+            )
+
+    for k, linha in enumerate(ds["conclusao"]):
+        c.inicio(f"conclusao[{k}]", linha, 11, 400, esq, MD_MOLDURA)
+    if props.get("source"):
+        c.inicio("source", props["source"], 9, 400, esq, MD_MOLDURA)
+    return c
+
+
+# ── MatrizJanelas — geometria de `matriz-janelas.tsx` ──────────────────────────
+# Duas paredes distintas, como no ObligationMatrix: a coluna de rótulo à esquerda é cortada
+# por onde a primeira célula começa, e o texto de cada célula é preso à CÉLULA dele. O
+# rótulo do GRUPO é centrado sobre a faixa de colunas que ele cobre, não sobre a figura.
+MJ_W = 760
+MJ_PAD = {"left": 8, "right": 8}
+MJ_COL_ROTULO = 120
+MJ_X0 = MJ_PAD["left"] + MJ_COL_ROTULO  # 128
+MJ_N_COLUNAS = 4
+MJ_COL_W = (MJ_W - MJ_PAD["left"] - MJ_PAD["right"] - MJ_COL_ROTULO) / MJ_N_COLUNAS  # 156
+MJ_MOLDURA = (0.0, float(MJ_W))
+MJ_ROTULO = (0.0, float(MJ_X0))
+
+
+def _mj_celula(c: int) -> tuple[float, float]:
+    return (MJ_X0 + c * MJ_COL_W, MJ_X0 + (c + 1) * MJ_COL_W)
+
+
+def cena_matriz_janelas(ds: dict, props: dict) -> Cena:
+    c = Cena("MatrizJanelas")
+    esq = float(MJ_PAD["left"])
+    c.inicio("title", props["title"], 15, 700, esq, MJ_MOLDURA)
+    if props.get("subtitle"):
+        c.inicio("subtitle", props["subtitle"], 11, 400, esq, MJ_MOLDURA)
+
+    cursor = 0
+    for i, grupo in enumerate(ds["grupos"]):
+        inicio, fim = cursor, cursor + grupo["colunas"]
+        cursor = fim
+        faixa = (MJ_X0 + inicio * MJ_COL_W, MJ_X0 + fim * MJ_COL_W)
+        c.centro(f"grupos[{i}].rotulo", grupo["rotulo"], 11, 700,
+                 (faixa[0] + faixa[1]) / 2, faixa)
+
+    for j, coluna in enumerate(ds["colunas"]):
+        c.centro(f"colunas[{j}].rotulo", coluna["rotulo"], 9.5, 400,
+                 MJ_X0 + (j + 0.5) * MJ_COL_W, _mj_celula(j))
+
+    for i, linha in enumerate(ds["linhas"]):
+        c.inicio(f"linhas[{i}].rotulo", linha["rotulo"], 11, 400, esq, MJ_ROTULO)
+        for j, celula in enumerate(linha["celulas"]):
+            cx = MJ_X0 + (j + 0.5) * MJ_COL_W
+            onde = f"linhas[{i}].celulas[{j}]"
+            if celula["estado"] == "naoAplicavel":
+                for k, nota in enumerate(celula["nota"]):
+                    c.centro(f"{onde}.nota[{k}]", nota, 8, 400, cx, _mj_celula(j))
+                continue
+            c.centro(f"{onde}.valor", celula["valor"], 13, 700, cx, _mj_celula(j))
+            if celula["conta"]:
+                c.centro(f"{onde}.conta", celula["conta"], 8, 400, cx, _mj_celula(j))
+
+    c.inicio("legenda.publicada", ds["legenda"]["publicada"], 10, 400, esq + 20,
+             (0.0, MJ_W / 2), fila="legenda")
+    c.caixa("legenda.naoAplicavel (marca)", ds["legenda"]["naoAplicavel"],
+            MJ_W / 2, MJ_W / 2 + 14, MJ_MOLDURA, fila="legenda")
+    c.inicio("legenda.naoAplicavel", ds["legenda"]["naoAplicavel"], 10, 400, MJ_W / 2 + 20,
+             (MJ_W / 2, float(MJ_W)))
+
+    for k, linha in enumerate(ds["conclusao"]):
+        c.inicio(f"conclusao[{k}]", linha, 11, 400, esq, MJ_MOLDURA)
+    if props.get("source"):
+        c.inicio("source", props["source"], 9, 400, esq, MJ_MOLDURA)
+    return c
+
+
 # ── DailyColumnsChart — geometria de `daily-columns-chart.tsx` (novo: conluio) ──────
 # W=720, H=400, PAD={top:64, right:24, bottom:56, left:26}; plotW=670; n colunas de
 # step=plotW/n; callout (12/700) e label (11/400) centrados no eixo da coluna;
@@ -1154,7 +1319,6 @@ def cena_dialogue(ds: dict, props: dict) -> Cena:
     return c
 
 
-# componente -> (família do dataset, construtor da cena)
 CENAS = {
     "WordChoiceDiagram": ("wordChoice", cena_word_choice),
     "WatermarkReachDiagram": ("watermarkReach", cena_watermark_reach),
@@ -1168,6 +1332,8 @@ CENAS = {
     "ObligationMatrix": ("obligationMatrix", cena_obligation_matrix),
     "ThermometerTrioDiagram": ("thermometerTrio", cena_termometros),
     "CostLadder": ("costLadder", cena_cost_ladder),
+    "MedidorDuplo": ("medidorDuplo", cena_medidor_duplo),
+    "MatrizJanelas": ("matrizJanelas", cena_matriz_janelas),
     "DailyColumnsChart": ("dailyColumns", cena_daily_columns),
     "DialogueDiagram": ("dialogue", cena_dialogue),
 }
@@ -1363,6 +1529,11 @@ def main() -> int:
         # linha, o módulo seria pulado em silêncio pela varredura — o mesmo silêncio
         # que este arquivo existe para acabar.
         caminhos.append(raiz / "data/obligation-matrix.ts")
+        # Mesmo motivo: `rotulo-20x-figuras.ts` não termina em `-diagram.ts`. Sem esta
+        # linha os cinco datasets do artigo `rotulo-20x-anthropic` nunca são carregados,
+        # e as cinco figuras dele caem como "dataset ausente" — ou, pior, um dia passariam
+        # despercebidas. Componente fora do caminho que a varredura varre não é medido.
+        caminhos.append(raiz / "data/rotulo-20x-figuras.ts")
 
     medidas, colisoes, faltas = checar(caminhos)
     limite = ALVO if args.estrito else 1.0

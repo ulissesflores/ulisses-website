@@ -32,6 +32,8 @@ import { FlowLineDiagram } from './flow-line-diagram';
 import { ConstraintExperimentChart } from './constraint-experiment-chart';
 import { VramLadder } from './vram-ladder';
 import { ObligationMatrix } from './obligation-matrix';
+import { MedidorDuplo } from './medidor-duplo';
+import { MatrizJanelas } from './matriz-janelas';
 import { DailyColumnsChart } from './daily-columns-chart';
 import { DialogueDiagram } from './dialogue-diagram';
 import { ArticleFigure } from './article-figure';
@@ -79,6 +81,8 @@ export const mdxComponents: MDXComponents = {
   ConstraintExperimentChart,
   VramLadder,
   ObligationMatrix,
+  MedidorDuplo,
+  MatrizJanelas,
   DailyColumnsChart,
   DialogueDiagram,
   ArticleFigure,
