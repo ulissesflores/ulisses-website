@@ -10,10 +10,10 @@ export const category = {
     research: {
       h1: 'Ricerca Scientifica Applicata e Sistemi Complessi',
       metaTitle: 'Ricerca Scientifica Applicata',
-      metaDescription: 'Pubblicazioni originali di Ulisses Flores in IA, Economia Austriaca e Sistemi Distribuiti. Rigore accademico Q1 con identificatori DOI.',
-      lead: 'La vera innovazione non nasce dall\'hype aziendale, ma dal rigore accademico convalidato dai pari. Questo repository consolida decenni di ricerca scientifica e modellazione analitica condotte da Ulisses Flores. Esplorando l\'intersezione tra Intelligenza Artificiale, Resilienza Cibernetico-Finanziaria e la Teoria dei Sistemi Complessi, ogni pubblicazione qui elencata (con registrazione DOI) rappresenta un contributo documentato allo stato dell\'arte dell\'ingegneria e dell\'economia.',
-      authorityTitle: 'Rigore di livello Q1 con tracciabilità DOI',
-      authorityBody: 'Ogni articolo segue standard di pubblicazione accademica internazionale con revisione paritaria, identificatori DOI e metodologia riproducibile — applicati direttamente a progetti reali di consulenza, architettura di sistemi e ricerca in IA.',
+      metaDescription: 'Articoli scientifici di Ulisses Flores con testo integrale, DOI su Zenodo e codice e dati pubblici.',
+      lead: 'Questa collezione raccoglie la ricerca di Ulisses Flores. Prima vengono gli articoli con testo integrale nella pagina stessa, pubblicati da luglio 2026 su temi come il rilevamento delle frodi, i modelli linguistici e la ricerca nei registri di sperimentazioni cliniche; ciascuno riporta data, versione, il DOI del deposito su Zenodo e il repository con codice e dati. Seguono opere precedenti, senza DOI. Nessuna opera di questa collezione è uscita su una rivista.',
+      authorityTitle: 'Tracciabilità al posto del sigillo',
+      authorityBody: 'Gli articoli con testo integrale sono autopubblicati: il testo, o il pacchetto di replicazione che lo accompagna, è depositato su Zenodo, che assegna il DOI. Il DOI identifica il deposito e porta ad esso; non è un sigillo di revisione. Nessuno di questi articoli è passato per la revisione paritaria di una rivista, e la pagina di ciascuno lo dichiara nella riga di stato. Al posto del sigillo resta il metodo aperto: codice, dati e versione pubblici, per chi voglia rifare il calcolo.',
       chips: [
         "Consulente Strategico di IA",
         "Scienziato dei Dati",

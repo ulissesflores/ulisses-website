@@ -10,10 +10,10 @@ export const category = {
     research: {
       h1: 'Applied Scientific Research and Complex Systems',
       metaTitle: 'Applied Scientific Research',
-      metaDescription: 'Original publications by Ulisses Flores in AI, Austrian Economics, and Distributed Systems. Q1 academic rigor with DOI identifiers.',
-      lead: 'True innovation is not born from corporate hype, but from peer-validated academic rigor. This repository consolidates decades of scientific research and analytical modeling conducted by Ulisses Flores. Exploring the intersection between Artificial Intelligence, Cyber-Financial Resilience, and Complex Systems Theory, each publication listed here (with DOI registration) represents a documented contribution to the state of the art in engineering and economics.',
-      authorityTitle: 'Q1-level rigor with DOI traceability',
-      authorityBody: 'Each article follows international academic publication standards with peer review, DOI identifiers, and reproducible methodology — directly applied to real-world projects in consulting, systems architecture, and AI research.',
+      metaDescription: 'Scientific articles by Ulisses Flores with full text, Zenodo DOI, and public code and data.',
+      lead: 'This collection gathers the research of Ulisses Flores. First come the papers with the full text on the page itself, published since July 2026 on topics such as fraud detection, language models, and search in clinical-trial registries; each one shows its date, version, the DOI of its Zenodo deposit, and the repository with code and data. Older works follow, without a DOI. No work in this collection has appeared in a journal.',
+      authorityTitle: 'Traceability instead of a seal',
+      authorityBody: 'The full-text papers are self-published: the text, or the replication package that accompanies it, is deposited on Zenodo, which assigns the DOI. The DOI identifies the deposit and leads to it; it is not a seal of review. None of these papers has gone through journal peer review, and the page of each one says so in its status line. In place of the seal, the method stays open: public code, data, and versions, for anyone who wants to redo the math.',
       chips: [
         "Strategic AI Consultant",
         "Data Scientist",

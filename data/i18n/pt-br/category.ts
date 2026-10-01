@@ -10,10 +10,10 @@ export const category = {
     research: {
       h1: 'Pesquisa Científica Aplicada e Sistemas Complexos',
       metaTitle: 'Pesquisa Científica Aplicada',
-      metaDescription: 'Publicações originais de Ulisses Flores em IA, Economia Austríaca e Sistemas Distribuídos. Rigor acadêmico Q1 com identificadores DOI.',
-      lead: 'A verdadeira inovação não nasce do hype corporativo, mas do rigor acadêmico validado por pares. Este repositório consolida décadas de pesquisa científica e modelagem analítica conduzidas por Ulisses Flores. Explorando a intersecção entre Inteligência Artificial, Resiliência Cibernética-Financeira e a Teoria dos Sistemas Complexos, cada publicação aqui listada (com registro DOI) representa uma contribuição documentada para o estado da arte da engenharia e da economia.',
-      authorityTitle: 'Rigor de nível Q1 com rastreabilidade DOI',
-      authorityBody: 'Cada artigo segue padrões de publicação acadêmica internacional com revisão por pares, identificadores DOI e metodologia reprodutível — aplicados diretamente a projetos reais de consultoria, arquitetura de sistemas e pesquisa em IA.',
+      metaDescription: 'Artigos científicos de Ulisses Flores com texto integral, DOI no Zenodo e código e dados públicos.',
+      lead: 'Esta coleção reúne a pesquisa de Ulisses Flores. Primeiro vêm os artigos com texto integral na própria página, publicados desde julho de 2026 sobre temas como detecção de fraude, modelos de linguagem e busca em registros de ensaios clínicos; cada um traz data, versão, o DOI do depósito no Zenodo e o repositório com código e dados. Em seguida vêm obras anteriores, sem DOI. Nenhuma obra desta coleção saiu em periódico.',
+      authorityTitle: 'Rastreabilidade no lugar de selo',
+      authorityBody: 'Os artigos com texto integral são auto-publicados: o texto, ou o pacote de replicação que o acompanha, é depositado no Zenodo, que atribui o DOI. O DOI identifica o depósito e leva a ele; não é selo de revisão. Nenhum desses artigos passou por revisão por pares de periódico, e a página de cada um diz isso na linha de estado. No lugar do selo fica o método aberto: código, dados e versão públicos, para quem quiser refazer a conta.',
       chips: ['Consultor Estratégico de IA', 'Cientista de Dados', 'Mestrando AGTU', 'Publicações com DOI', 'Sistemas Complexos'],
     },
     whitepapers: {

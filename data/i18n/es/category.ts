@@ -10,10 +10,10 @@ export const category = {
     research: {
       h1: 'Investigación Científica Aplicada y Sistemas Complejos',
       metaTitle: 'Investigación Científica Aplicada',
-      metaDescription: 'Publicaciones originales de Ulisses Flores en IA, Economía Austríaca y Sistemas Distribuidos. Rigor académico Q1 con identificadores DOI.',
-      lead: 'La verdadera innovación no nace del hype corporativo, sino del rigor académico validado por pares. Este repositorio consolida décadas de investigación científica y modelado analítico conducidas por Ulisses Flores. Explorando la intersección entre Inteligencia Artificial, Resiliencia Cibernético-Financiera y la Teoría de los Sistemas Complejos, cada publicación aquí listada (con registro DOI) representa una contribución documentada al estado del arte de la ingeniería y la economía.',
-      authorityTitle: 'Rigor de nivel Q1 con trazabilidad DOI',
-      authorityBody: 'Cada artículo sigue estándares de publicación académica internacional con revisión por pares, identificadores DOI y metodología reproducible — aplicados directamente a proyectos reales de consultoría, arquitectura de sistemas e investigación en IA.',
+      metaDescription: 'Artículos científicos de Ulisses Flores con texto completo, DOI en Zenodo y código y datos públicos.',
+      lead: 'Esta colección reúne la investigación de Ulisses Flores. Primero aparecen los artículos con texto completo en la propia página, publicados desde julio de 2026 sobre temas como detección de fraude, modelos de lenguaje y búsqueda en registros de ensayos clínicos; cada uno muestra fecha, versión, el DOI del depósito en Zenodo y el repositorio con código y datos. Después vienen obras anteriores, sin DOI. Ninguna obra de esta colección se publicó en una revista.',
+      authorityTitle: 'Trazabilidad en lugar de sello',
+      authorityBody: 'Los artículos con texto completo son autopublicados: el texto, o el paquete de replicación que lo acompaña, se deposita en Zenodo, que asigna el DOI. El DOI identifica el depósito y lleva a él; no es un sello de revisión. Ninguno de estos artículos pasó por revisión por pares de revista, y la página de cada uno lo dice en la línea de estado. En lugar del sello queda el método abierto: código, datos y versión públicos, para quien quiera rehacer la cuenta.',
       chips: [
         "Consultor Estratégico de IA",
         "Científico de Datos",
