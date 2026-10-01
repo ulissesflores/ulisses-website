@@ -4,6 +4,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { publicationCollections, publications, type PublicationCategory } from '@/data/publications';
+import { abstractFor, paperPath, paperUrl, plainAbstract, researchPapersByDateDesc } from '@/data/research';
 import { upkfMeta } from '@/data/generated/upkf.generated';
 import { AuthorHubCard } from '@/components/author-hub-card';
 import { getDictionary } from '@/lib/get-dictionary';
@@ -86,6 +87,11 @@ export default async function CategoryPage({ params }: PageProps) {
       return Number(b.date) - Number(a.date);
     });
 
+  // Papers com corpo na página (`data/research.ts`) vêm antes das publicações geradas: são o
+  // objeto real da coleção. Só em `/research`; as outras categorias não têm.
+  const papers = typedCategory === 'research' ? researchPapersByDateDesc() : [];
+  const tp = dict.common.paperPage;
+
   const collectionUrl = `${upkfMeta.primaryWebsite}/${typedCategory}`;
   const collectionJsonLd = {
     '@context': 'https://schema.org',
@@ -103,14 +109,24 @@ export default async function CategoryPage({ params }: PageProps) {
       '@id': `${upkfMeta.primaryWebsite}/#person`,
       name: 'Ulisses Flores',
     },
-    hasPart: categoryPublications.map((pub) => ({
-      '@type': pub.kind === 'R' ? 'Report' : 'ScholarlyArticle',
-      '@id': `${pub.canonicalUrl}#article`,
-      name: pub.title,
-      url: pub.canonicalUrl,
-      datePublished: pub.publishedAt,
-      keywords: pub.tags.join(', '),
-    })),
+    hasPart: [
+      ...papers.map((paper) => ({
+        '@type': 'ScholarlyArticle',
+        '@id': `${paperUrl(paper, paper.language)}#article`,
+        name: paper.title,
+        url: paperUrl(paper, paper.language),
+        datePublished: paper.publishedAt,
+        keywords: abstractFor(paper, paper.language).keywords.join(', '),
+      })),
+      ...categoryPublications.map((pub) => ({
+        '@type': pub.kind === 'R' ? 'Report' : 'ScholarlyArticle',
+        '@id': `${pub.canonicalUrl}#article`,
+        name: pub.title,
+        url: pub.canonicalUrl,
+        datePublished: pub.publishedAt,
+        keywords: pub.tags.join(', '),
+      })),
+    ],
   };
 
   const breadcrumbBase = locale === 'pt-br' ? upkfMeta.primaryWebsite : `${upkfMeta.primaryWebsite}/${locale}`;
@@ -212,6 +228,49 @@ export default async function CategoryPage({ params }: PageProps) {
 
       {/* ── Publications Grid ── */}
       <main className='relative max-w-5xl mx-auto px-6 py-16 z-10'>
+        {papers.length ? (
+          <>
+            <h2 className='text-2xl font-bold text-brand-offwhite mb-8'>
+              {papers.length} {tp.listHeading}
+            </h2>
+            <section className='space-y-4 mb-16'>
+              {papers.map((paper) => {
+                const abstract = abstractFor(paper, locale);
+                return (
+                  <article
+                    key={paper.slug}
+                    className='p-6 rounded-xl bg-neutral-900/40 border border-brand-gold/30 hover:border-brand-gold/60 transition-colors'
+                  >
+                    <div className='flex flex-wrap items-center gap-3 mb-3 text-xs text-neutral-400'>
+                      <span className='px-2 py-1 border border-brand-gold/40 rounded-full uppercase tracking-widest text-brand-gold-light font-bold'>
+                        {tp.kicker}
+                      </span>
+                      <span>{paper.publishedAt}</span>
+                      <span>{paper.status === 'technical-report' ? tp.status.technicalReport : tp.status.selfPublished}</span>
+                      <span className='font-mono'>v{paper.version}</span>
+                    </div>
+                    <h2 className='text-2xl font-semibold text-brand-offwhite mb-3' lang={paper.language === 'pt-br' ? 'pt-BR' : paper.language}>
+                      <Link href={localePath(paperPath(paper), locale)} className='hover:text-brand-gold-light transition-colors'>
+                        {paper.title}
+                      </Link>
+                    </h2>
+                    <p className='text-neutral-400 mb-4 leading-relaxed line-clamp-4' lang={abstract.locale === 'pt-br' ? 'pt-BR' : abstract.locale}>
+                      {plainAbstract(abstract.text)}
+                    </p>
+                    <div className='flex flex-wrap gap-2'>
+                      {abstract.keywords.map((tag) => (
+                        <span key={tag} className='text-[11px] bg-neutral-950 border border-neutral-800 rounded-full px-2 py-1 text-neutral-400'>
+                          #{tag}
+                        </span>
+                      ))}
+                    </div>
+                  </article>
+                );
+              })}
+            </section>
+          </>
+        ) : null}
+
         <h2 className='text-2xl font-bold text-brand-offwhite mb-8'>
           {categoryPublications.length} {t.publicationsCount}
         </h2>

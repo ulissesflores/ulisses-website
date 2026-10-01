@@ -1,0 +1,252 @@
+---
+title: 'Grounding Doesn''t Pay: A Token-Matched Negative Result on Creative Diversity'
+slug: grounding-doesnt-pay
+category: research
+date: '2026-07-19'
+language: en
+---
+
+## 1. Introduction
+
+A recurring claim in the multi-agent LLM literature (Wang L. et al., 2024; Ueda et al., 2025) is that diversity of *output* follows from diversity of *agents*: give each generator a distinct persona, role, or knowledge domain and the ensemble explores more of the idea space than a single model sampled repeatedly. This intuition motivates elaborate architectures in which agents are grounded in specialized substrates. What the claim almost never accounts for is **tokens**. Heterogeneity that requires a two-thousand-token specification per agent is not free, and whether it is *worth its cost* is a separate question from whether it *helps at all* — a distinction the budget-matching literature has begun to force (Tran & Kiela, 2026).
+
+We isolate that question. We compare three ways of inducing diversity at the generation stage, holding the model, the temperature, and the number of sampled ideas fixed:
+
+- **C1 — repeated sampling:** one generic prompt, sampled repeatedly.
+- **C2 — style-persona:** a cheap stylistic label with no knowledge substrate.
+- **C7 — in-context domain spec:** a full, researched domain specification (domain × mode × persona), placed verbatim in the context.
+
+The three arms are defined in full in §3 (with C2's persona-prompting ancestry in §2).
+
+C7 is the treatment the rest of our project was built to enable: it is the difference between a *domain* and a mere *persona-prompt*. If grounded specs are the mechanism by which heterogeneous agents earn their diversity, C7 should dominate — and it should dominate under a fair, token-matched accounting, because in deployment every arm draws from the same budget.
+
+We pre-register a decision rule, collect the data once, and score diversity with a **judge-free** metric — the count of distinct clusters in a domain-blind embedding space — so that no LLM from the generator's family sits in judgment of its own output, the self-preference bias LLM judges are known to exhibit (Panickssery et al., 2024; Zheng et al., 2023). Our finding is deliberately two-sided. Grounding *does* help per proposal — under the agglomerative view it beats plain repeated sampling by +0.19 to +0.26 clusters per idea across both an English and a Portuguese-aware encoder — though that per-proposal gain is algorithm-scoped: it reverses under HDBSCAN (§4.6). But it never earns its tokens. The central result is a null that does not depend on any single analysis choice: **grounded in-context specs are never the token-efficient frontier.** Some cheap arm always beats them per token; grounding loses to plain repeated sampling on tokens-matched diversity under both clustering algorithms and both encoders. This is not a surprise the data revealed against expectation but arithmetic, which we present as economics rather than dressing as discovery: a distinct-cluster count is bounded above by the fixed idea count, so a spec that costs 6.8× the input tokens for an **observed 1.63× cluster gain** — against a 1.8× ceiling it never approached — could not have been the per-token frontier for *any* generation outcome (§3, Eq. 1).
+
+**Contributions.**
+
+1. **A pre-registered, judge-free, token-matched protocol** for ablating creative-diversity mechanisms (arms C1 / C2 / C7), with a frozen decision rule and per-record hashing.
+2. **An analysis-robust efficiency null** — distinct from the pre-registered *ordering*-invariance rule the data did not satisfy (§4.4): in-context domain grounding is never the token-efficient frontier, losing to plain repeated sampling per token under *both* clustering algorithms and *both* embedding encoders, because a 6.8× input-token cost cannot be recovered by an at-most-1.8× *achievable* cluster gain (the count is capped at the fixed idea number, §3); *which* cheap arm is the frontier is algorithm-dependent, which we disclose rather than tune away.
+3. **The budget-accounting lesson, as a worked case:** under the decisive tokens-matched view the conclusion about agent heterogeneity reverses — grounding adds real per-proposal diversity (+0.19 to +0.26 clusters/idea, agglomerative) yet is the worst option per token — a flip we report on both axes and scope to the agglomerative display view, since it does not survive the switch to HDBSCAN (where grounding already loses per proposal).
+
+## 2. Related Work
+
+Our result sits where several adjacent literatures meet — multi-agent diversity, budget-matched evaluation, diversity measurement, and persona prompting — and we take each in turn, marking where the finding agrees, extends, or pushes back.
+
+**Multi-agent diversity from heterogeneity.** A line of recent work argues that broadening the persona or role heterogeneity of agents enriches the diversity of their collective output (Ueda et al., 2025). This is the neighbor we differentiate from: that work reports diversity gains without a token accounting, and our result speaks directly to it — the same intervention that helps per proposal can hurt per token, and even where it helps per proposal it is never the efficient frontier. LLM Discussion (Lu et al., 2024) supplies a comparable Alternate-Uses-style diversity metric and is our closest methodological neighbor on measurement.
+
+**When budget-matching inverts the conclusion.** The observation that matching compute can flip a multi-agent advantage is not new. Under equal "thinking-token" budgets, a single agent has been shown to match or beat multi-agent setups (Tran & Kiela, 2026), and diversity has been reported to *contract* under agent interaction rather than expand (Chen et al., 2026). Our contribution is to bring that budget discipline to the *generation-stage diversity* question specifically, with a pre-registered judge-free metric, and to show that grounded domain specs are never the token-efficient frontier.
+
+**Measuring diversity.** Our dependent variable is set diversity in an embedding space. The Vendi Score (Friedman & Dieng, 2022) formalizes exactly this — the effective number of distinct modes from a similarity kernel — and our two continuous signals, distinct-cluster count and mean pairwise cosine distance, are coarser instances of the same idea; distinct-n and Self-BLEU are the lexical alternatives we do not use because they miss semantic near-duplication. We report cluster counts as the pre-registered primary and treat mean pairwise cosine distance as the threshold-free check.
+
+**Scaling by aggregation vs. creative diversity.** "More agents is all you need" (Li et al., 2024) scales performance by sampling-and-voting on tasks with a checkable answer. This does not transfer to open-ended creative diversity, where there is no gold answer to vote toward; we flag the category difference rather than treat that result as a baseline.
+
+**Persona prompting without substrate.** Solo Performance Prompting (Wang Z. et al., 2024) instantiates multiple personas within a single model with no external knowledge substrate — the direct ancestor of our C2 arm. Encouraging divergent thinking through multi-agent debate (Liang et al., 2024) is the debate-diversity line we position against at the interaction stage, which we deliberately do not test here.
+
+**Quality-diversity.** QDAIF and the quality-diversity tradition (Bradley et al., 2024) maintain an explicit diverse archive; we note it as the incumbent "keep a diverse set" framing and explain in §6 why an archive-maintenance objective is out of scope for a generation-stage ablation.
+
+## 3. Method
+
+The protocol fixes three arms that differ only in their prompt scaffold and holds the model, temperature, and idea count constant (Arms); argues why one in-context spec is a charitable proxy for grounded generation (proxy); states the budget-matching that makes the tokens-matched comparison decisive and its governing arithmetic (budget); specifies the judge-free scoring pipeline (scoring); and records the pre-registration and determinism that froze every parameter before the first record was written.
+
+**Arms.** All three arms share the same model (Grok-4.20, non-reasoning; xAI, 2026), the same temperature (T = 0.9), and the same sample count: N = 90 ideas per arm per query, over 2 queries, for 180 ideas per arm. They differ only in the prompt scaffold:
+
+- **C1 (repeated sampling)** — a single generic idea-generation prompt, no persona, sampled 90 times. This is the sampling step of self-consistency (Wang et al., 2023) *without* its answer-aggregation; there is no gold answer to marginalize toward in open-ended creativity, so we use the term only for the sampling mechanism and label the arm by what it does.
+- **C2 (style-persona)** — the generic prompt augmented with a short stylistic label (a named aesthetic stance), carrying no domain knowledge.
+- **C7 (in-context domain spec)** — the generic prompt augmented with a full, researched domain specification (domain × mode × persona) drawn verbatim from the grounded domains in our corpus, placed in the context window. The pilot sampled 53 distinct source specifications for C7 (39 for C2), out of a corpus of roughly one hundred possible domain × mode × persona combinations. The arms are not matched on the *number* of source identities; §6 notes this and §4.5 shows the null does not rest on it.
+
+**Why a proxy, and what it does and does not measure.** C7 is a proxy for the generation stage of a grounded multi-agent architecture, not the full interactive architecture. This is deliberate: semantic diversity can only *originate* at generation. If a grounded spec does not produce token-efficient diversity when it is read directly into context — the most charitable, interference-free setting — then grounding's *contribution at the generation stage* is bounded by what we measure here. We do not claim that no downstream interaction can add diversity: debate has been argued to increase divergence (Liang et al., 2024) even as structural coupling has been argued to contract it (Chen et al., 2026), and we test neither. We treat C7 as a charitable upper bound on what grounding contributes *at generation*, and we do not claim to have measured the full architecture. This is a scope limitation, stated as such, not a hidden weakness.
+
+**Budget matching — the crux, and its arithmetic.** One cannot simultaneously match the number of proposals and the number of tokens across arms, because C7's spec inflates input tokens by design. We report **both** accountings and pre-register the **tokens-matched** view as decisive, on the grounds that tokens are the resource actually consumed in deployment. A structural fact governs the tokens-matched view, and we state it up front. A distinct-cluster count is bounded above by the fixed idea count (180 per arm), so C7's tokens-matched diversity has a hard ceiling:
+
+> clusters per 1k input tok ≤ 1000 × 180 / 127,470 = 1.41     (1)
+
+already below C1's *observed* 5.263. Equivalently, C7 pays 6.8× C1's input tokens for a cluster count that cannot exceed 1.8× C1's (180 / 99), so no generation outcome — however diverse — could have made the grounded arm the per-token frontier against a cheap arm spending 6.8× fewer input tokens. The per-token null is therefore not an empirical surprise but the economics of the token cost; what the experiment establishes empirically is the *size* of the diversity C7 actually buys (§4.1) and whether it helps at all per proposal (§4.6). We log input tokens, output tokens, and USD cost per call so the verdict can be re-checked under any budget unit.
+
+**Scoring (judge-free, local).** Each generated response is decomposed into atomic ideas; each idea is embedded with a domain-blind sentence encoder (`all-MiniLM-L6-v2`; Reimers & Gurevych, 2019) after removing a fixed stopword list of domain, persona, and mode tokens so the embedding cannot cluster on the treatment label itself. The pre-registered encoder is English-centric while the generated ideas are Portuguese; we disclose this mismatch and re-run the whole pipeline under a multilingual encoder as a robustness check (§4.5). Diversity is the count of distinct clusters, computed under **two** algorithms — HDBSCAN (`min_cluster_size = 3`; Campello et al., 2013; McInnes et al., 2017) and agglomerative clustering (cosine distance, average linkage, threshold 0.35) — per arm. The primary diversity variable is **clusters per idea**; secondary measures are mean pairwise cosine distance (a continuous, threshold-free diversity signal in the spirit of the Vendi Score; Friedman & Dieng, 2022), fluency (idea count, fixed at 180 per arm by design and hence non-discriminating — reported only to document that atomic extraction and exact dedup left the count unchanged), and *r*, the Pearson correlation of per-identity cluster-coverage vectors, as a decorrelation proxy. The creative queries follow the Alternate Uses Task tradition (Guilford, 1967).
+
+**Pre-registration and determinism.** All parameters were frozen before the first record was written (van Miltenburg et al., 2021). SEED = 42; every record carries a SHA-256 hash; the gate decision rule was fixed in advance. The pre-registration names the **tokens-matched budget view** as decisive and pre-registers **two** clustering algorithms symmetrically, with a validity condition — ordering invariance across the two — rather than a primacy for either; we lead the display with agglomerative (a post-collection choice, because HDBSCAN's counts are near-degenerate at this sample size) and report HDBSCAN alongside. Bootstrap confidence intervals use 10,000 resamples of the ideas (Efron, 1979; Efron & Tibshirani, 1993); they quantify idea-resampling variance conditional on a clustering computed once and on the fixed two-query, single-model design, not query-level or model-level variance. Re-running the scorer on the original environment reproduces the reported numbers; signs, orderings, and CI conclusions are robust to last-decimal embedding and library noise (§8).
+
+**Model amendment (honest method note).** The original pre-registration named a different provider (Cerebras `qwen-3-235b`); its API key returned a 401 (invalid/dead) *before any record was written*, as did a second fallback key. Because no record existed, we switched to Grok-4.20 — which also realigned the pilot to a run already locked in the project state — and re-froze: all three arms on the *same* model, so internal validity is preserved; external generality becomes Grok-specific (stated in §6). The amendment is dated in the pre-registration.
+
+## 4. Results
+
+This section reads in order: §4.1 gives diversity and cost per arm; §4.2 states the efficiency null that anchors the paper; §4.3 and §4.4 handle the budget-accounting flip and the two clustering algorithms; §4.5 through §4.7 give the robustness of the null, what grounding does and does not buy, and the efficient mechanism. Two conventions govern the numbers throughout. All values are from the pre-registered scores and a clearly-labeled post-hoc exploratory view (Flores, 2026), with bootstrap CIs over 10,000 resamples of the ideas. Reported differences are **bootstrap means over resamples**; because a distinct-cluster count is a concave (saturating) function of the resampled points, a bootstrap-mean difference is a downward-biased estimate of the naive difference of the point estimates in the tables below — so the reported deficit is *conservative* relative to the naive difference, and both are given honestly. Unless noted, cluster counts are agglomerative, the algorithm we display by default; the pre-registration names tokens-matched as the decisive *budget* view, not an algorithm.
+
+### 4.1 Diversity and cost per arm (agglomerative)
+
+The decisive column is **clusters per 1k input tokens** (tokens-matched diversity). Table 1 reports diversity and cost per arm.
+
+**Table 1 — Diversity and cost per arm, agglomerative clustering.**
+
+| Arm | Ideas | Input tok | Clusters | Clusters/idea | **Clusters / 1k input tok** | Mean cos-dist | *r* (Pearson) |
+|---|---|---|---|---|---|---|---|
+| C1 repeated sampling | 180 | 18,810 | 99 | 0.550 | **5.263** | 0.606 | n/a |
+| C2 style-persona | 180 | 19,076 | 145 | 0.806 | **7.601** | 0.593 | −0.012 |
+| C7 in-context spec | 180 | 127,470 | 161 | 0.894 | **1.263** | **0.681** | −0.014 |
+
+Read across Table 1, the two accountings disagree. On **clusters per idea** (proposals-matched), C7 is highest (0.894) and C1 lowest (0.550) — grounding does add proposal-level diversity. On **clusters per 1k input tokens** (tokens-matched), the order reverses at the top: C2 is highest (7.601), C1 is second (5.263), and C7 collapses to last (1.263), because its 127,470 input tokens are ~6.8× C1's for only 1.63× the raw clusters (161 vs 99). Figure 1 shows the tokens-matched picture under both clustering algorithms.
+
+<ArticleFigure src="/research/grounding-doesnt-pay/fig1.png" alt="Two bar panels, agglomerative and HDBSCAN, of clusters per 1k input tokens for arms C1, C2 and C7: the grounded in-context spec C7 is the shortest bar in both panels, so grounding is never the token-efficient frontier." width="1800" height="740" caption="Figure 1 — Tokens-matched diversity (clusters per 1k input tokens) by arm under the two pre-registered clustering algorithms. The grounded in-context spec (C7) is last by point estimate under both algorithms (never the token-efficient frontier; significantly last only under agglomerative — §4.4); which cheap arm leads is algorithm-dependent (C2 under agglomerative, C1 under HDBSCAN). Regenerated from the locked scores." />
+
+### 4.2 The analysis-robust null: grounding is never the token-efficient frontier
+
+The result that survives every analysis choice we varied is a null about grounding's *efficiency*, and it is the spine of the paper. (We call it *analysis-robust* to keep it distinct from the pre-registered *ordering*-invariance validity rule, which the data did **not** satisfy — §4.4.) Its real support is arithmetic, not any single clustering: cluster counts are capped at the fixed idea count for every arm (Eq. 1), and C7 pays 6.8× the input tokens, so no threshold, algorithm, or encoder can lift it to the per-token frontier.
+
+- C7 **never leads** on tokens-matched diversity — it is last by point estimate under **both** clustering algorithms (agglomerative: C2 7.601 > C1 5.263 > C7 1.263; HDBSCAN: C1 0.585 > C2 0.105 > C7 0.071), significantly last under agglomerative and never above the others under HDBSCAN (§4.4).
+- The head-to-head grounding-vs-repeated-sampling contrast confirms it. **C7-vs-C1, tokens-matched, is negative under both algorithms:** agglomerative −2.894, CI [−3.286, −2.502]; HDBSCAN −0.511, CI [−0.522, −0.461]. Every CI lies entirely below zero.
+
+The confidence intervals here resample ideas over a clustering computed once; they establish that the tokens-matched deficit is not an artifact of *which ideas* landed in the sample, but they do not — and are not asked to — speak to query- or model-level variance (§6). The deficit does not need them: it is orders of magnitude beyond any interval, being the arithmetic of §3 (Eq. 1) — a 6.8× token ratio against an observed 1.63× cluster gain, ceiling 1.8×. That is the claim the title rests on — not the flip of §4.3, and not any single arm being "unbeatable."
+
+### 4.3 The accounting-dependence (scoped to the agglomerative view)
+
+On the agglomerative view, the budget accounting inverts the C7-vs-C1 conclusion:
+
+- **Proposals-matched:** +0.194, CI [0.133, 0.256] — C7 **wins** (grounding helps per proposal, under this algorithm and, as §4.5 shows, under a multilingual encoder too).
+- **Tokens-matched:** −2.894, CI [−3.286, −2.502] — C7 **loses decisively**; the entire CI lies below zero.
+
+In one line: the choice of budget accounting flips the sign of the conclusion about agent heterogeneity. A reviewer who reads only the proposals-matched number would conclude grounding is the diversity mechanism; the tokens-matched number — the one that matches what is actually spent — says the opposite. We report this flip as a **methodological warning, scoped to the agglomerative view**, and we do not promote it to the headline, precisely because — as §4.4 shows — it is not invariant across clustering algorithms.
+
+### 4.4 Two clustering algorithms: where they agree and where they disagree
+
+Honesty requires reporting both pre-registered algorithms side by side, including where they disagree. As pre-registered, a valid reading requires ordering invariance across HDBSCAN and agglomerative, with a non-invariant metric to be reported as fragile rather than tuned post-hoc (Flores, 2026). The computed ordering is **not invariant** across the two algorithms, and the scorer flags the reading as provisional accordingly. We disclose this rather than tune it away. Table 2 places the two algorithms side by side.
+
+**Table 2 — The two pre-registered clustering algorithms, side by side (tokens-matched unless noted).**
+
+| Contrast (tokens-matched unless noted) | Agglomerative | HDBSCAN |
+|---|---|---|
+| Raw clusters: C1 / C2 / C7 | 99 / 145 / 161 | 11 / 2 / 9 |
+| Efficient frontier (clusters/1k input tok) | **C2** (7.601) | **C1** (0.585) |
+| C7 rank (tokens-matched) | last (1.263) | last (0.071) |
+| C7-vs-C1 tokens-matched | −2.894 [−3.286, −2.502] | −0.511 [−0.522, −0.461] |
+| C7-vs-C2 tokens-matched | −4.246 [−4.667, −3.826] | −0.033 [−0.042, +0.018] (crosses 0) |
+| C7-vs-C1 proposals-matched | +0.194 [0.133, 0.256] (C7 wins) | −0.012 [−0.017, −0.006] (C7 loses) |
+| C7-vs-C2 proposals-matched | +0.045 [−0.017, 0.111] (crosses 0) | +0.038 [0.033, 0.044] (C7 wins) |
+
+What survives both algorithms is the efficiency null: **C7 is never the token-efficient frontier**, and C7 loses to C1 tokens-matched under both. We are careful *not* to over-claim "C7 is last under both": under HDBSCAN the C7-vs-C2 tokens-matched difference crosses zero (−0.033, CI [−0.042, +0.018]), so C7 is not significantly *below* C2 there; what is significant and stable across both algorithms is that C7 never *leads*. Everything else is algorithm-dependent and we say so. Under agglomerative the efficient frontier is the style-persona C2; under HDBSCAN it is repeated sampling C1, and the style-persona degenerates to just two clusters (against C1's eleven and C7's nine), so its apparent HDBSCAN standing is not one we would defend. HDBSCAN at `min_cluster_size = 3` discards most ideas as noise for every arm (2–11 clusters survive of 180), so it is a mostly-noise metric at this sample size and we treat it as corroboration of the arithmetic null, not as an independent valid witness. The sign-flip of §4.3 lives on the agglomerative view: under HDBSCAN, C7 already loses per proposal, so there is nothing to flip.
+
+### 4.5 Robustness of the null
+
+The tokens-matched defeat of C7 does not depend on the budget unit, on pooling across queries, on the clustering algorithm, or on the embedding encoder. The last of these is the one that could have rescued grounding, so we ran it on frozen data (no new generation).
+
+**Three budget units** (agglomerative). C7 loses to C1 whether budget is counted in input tokens (6.78×), total tokens (5.24×), or USD (4.35×) — each dwarfing the 1.63× cluster gain, with all CIs below zero (input −2.894 [−3.284, −2.496]; total −1.936 [−2.224, −1.645]; USD CI also entirely below zero). These are the post-hoc budget-unit recomputations; the input-token CI is re-estimated on the post-hoc file and so differs at the third decimal from the pre-registered [−3.286, −2.502] of §4.2 — same quantity, different bootstrap draw.
+
+**Both queries** (agglomerative). C7 is last on tokens-matched diversity in each query separately (aut_brick: C1 = 6.33, C2 = 7.91, C7 = 1.25; water_compartment: C1 = 4.39, C2 = 7.82, C7 = 1.35). The pattern holds in each of the two queries, ruling out an averaging artifact; two queries cannot, of course, speak to query-level variance (§6).
+
+**Two encoders and a stopword ablation** (agglomerative; frozen ideas re-embedded and re-clustered, no new generation). The pre-registered `all-MiniLM-L6-v2` is English-centric and the ideas are Portuguese, so we re-ran the pipeline with a multilingual encoder (`paraphrase-multilingual-MiniLM-L12-v2`) and, separately, with a minimal stopword list that keeps domain-descriptor words (the same English encoder, a pre-processing ablation, not a third encoder). The re-score reproduces the frozen scores exactly under the original encoder. Table 3 summarizes the null across encoders.
+
+**Table 3 — Robustness of the null across two encoders and a stopword ablation (agglomerative).**
+
+| Contrast (agglomerative) | MiniLM-EN (pre-registered) | Multilingual-PT | Minimal-stopword |
+|---|---|---|---|
+| C7 tokens-matched rank, point estimate (agg / HDBSCAN) | last / last | last / last | last / last |
+| C7-vs-C1 tokens-matched | −2.894 [−3.29, −2.50] | −1.858 [−2.17, −1.54] | −2.894 |
+| C7-vs-C1 proposals-matched | +0.194 [0.13, 0.26] | +0.260 [0.21, 0.32] | +0.194 |
+| C7-vs-C2 proposals-matched | +0.045 [−0.02, 0.11] | +0.104 [0.04, 0.17] | +0.044 |
+| C7 mean-cos-distance rank | 1st (0.681) | 2nd (0.660 \< C2 0.665) | 1st |
+
+Two things the encoder cannot change: **C7 never leads on tokens-matched diversity (it is last by point estimate under all three variants), and, under the agglomerative view, grounding beats plain repeated sampling per proposal** (+0.194 English, +0.260 multilingual). Two things it does change, which we therefore refuse to lean on: whether grounding also beats the *cheap persona* per proposal (a tie under English, a win under the multilingual encoder), and whether C7 carries the largest continuous cosine distance (yes under English, no under the multilingual encoder, where C2 edges it). The minimal-stopword re-score leaves C7's cluster count identical (161), so the domain-blind stripping did not bias the null against C7. We report the encoder-sensitivity as a measurement caveat for diversity work on non-English text, and we lean the verdict on what all three variants share. (The per-proposal gain's own algorithm-fragility — it holds under agglomerative but reverses under HDBSCAN — is separate from encoder choice and is treated in §4.4 and §4.6.)
+
+We claim robustness only for what we checked: the budget-unit and per-query robustness were computed on the agglomerative view; the algorithm robustness is the two-column agreement of §4.2 and §4.4; the encoder robustness is the table above.
+
+### 4.6 What grounding does and does not buy
+
+The null is about *efficiency*, not about grounding being inert — and we are careful to say only what survives the robustness checks.
+
+- **Grounding helps per proposal — under one algorithm.** On the agglomerative view, C7 beats C1 by +0.194 (English) to +0.260 (multilingual) clusters per idea, CIs above zero under both encoders. But this gain is *algorithm-scoped, not analysis-robust*: under HDBSCAN grounding *loses* per proposal (−0.012 English, −0.028 multilingual, CIs entirely below zero), and the CIs resample ideas under only two queries and one model. A grounded spec does add proposal-level diversity over plain repeated sampling on the agglomerative view; we do not claim more than that.
+- **Grounding is not merely a persona — but we cannot prove the converse either.** On the English pre-registered encoder, C7 ≈ C2 per proposal (+0.045, CI [−0.017, 0.111], crossing zero), which would say a grounded spec buys nothing a cheap style label does not. But under the multilingual encoder — arguably the better instrument for Portuguese ideas — C7 *beats* C2 per proposal (+0.104, CI [0.044, 0.167]). Because this comparison flips with the encoder, we decline both the claim "grounding is just a persona" and its converse; the honest statement is that the per-proposal grounding-vs-persona verdict is **encoder-dependent** and we do not build on it.
+- **What is analysis-robust is the inefficiency.** Under both encoders and both algorithms, the proposal-level gain does not convert into token-efficient diversity — the 6.8×-for-1.63× arithmetic of §4.2 (Eq. 1) is untouched by the encoder or the algorithm.
+- **Continuous signal.** On the pre-registered English encoder C7 carries the largest mean cosine distance (0.681 vs C1 0.606 and C2 0.593); under the multilingual encoder that lead disappears (C2 0.665 > C7 0.660). We therefore report the continuous signal as encoder-sensitive too, not as a stable point in grounding's favor.
+- **Decorrelation.** The grounded arm's per-identity cluster coverage is essentially uncorrelated (Pearson *r*_C7 = −0.014), but so is the cheap label's (*r*_C2 = −0.012); with 161 near-singleton clusters over 180 ideas and ~3.4 ideas per identity, coverage vectors are near-orthogonal by construction, so *r* ≈ 0 is close to the sparse-coverage null rather than proof of active decorrelation. We report *r* as *not distinguishing* grounding from a cheap label, and do not read it as a mechanism on its own.
+
+### 4.7 The efficient mechanism (scoped to the agglomerative view)
+
+The efficient mechanism, on the decisive pre-registered budget view (tokens-matched) and the algorithm we display (agglomerative), is a cheap one.
+
+- Under agglomerative (tokens-matched), C2 is the frontier: 7.601 clusters/1k input tokens, above both C1 (5.263) and C7 (1.263).
+- **C2 vs C1** (post-hoc, agglomerative): proposals-matched +0.149, CI [0.089, 0.211]; tokens-matched +1.350, CI [0.783, 1.942]. **Both entirely above zero** — the style-persona beats plain repeated sampling on both accountings.
+- The message: under a token budget, prefer a cheap arm over the grounded spec. *Which* cheap arm is the frontier is algorithm-dependent — the style-persona under agglomerative, repeated sampling under HDBSCAN — but under *no* algorithm and *no* encoder is the frontier the grounded spec, which is the point.
+
+## 5. Discussion
+
+**A refined picture: a real gain, overpriced.** The natural story for why grounding *should* help is that it decorrelates sampling — different substrates pull the model toward different regions. That story does not survive contact with the data as a *mechanism*. The grounded arm does add per-proposal diversity on the agglomerative view (§4.6), and its per-identity coverage is uncorrelated (*r* ≈ 0) — but so is the cheap style label's (*r*_C2 ≈ *r*_C7 ≈ 0), and both sit near the sparse-coverage null (§4.6), so *r* does not distinguish grounding from a cheap label and we do not read it as active decorrelation. What is real is the small per-proposal gain, and it costs 6–7× the tokens of simply sampling a cheap generic prompt more times. Earlier framings of this project anticipated "structural coupling that collapses diversity" (Chen et al., 2026); the data say something more specific and less dramatic — the diversity is not collapsed, it is *real but overpriced*.
+
+**The prompt-caching objection, quantified.** In production, a spec reused across many calls amortizes most of its input cost via prompt caching, which could blunt the tokens-matched penalty. Rather than hand-wave this, we quantify it from the locked token counts under a declared pricing model (Anthropic, 2025). Decompose C7's input per idea into a generic-prompt base *b* ≈ 104.5 tokens (≈ C1's per-idea input) plus a spec overhead *S* ≈ 603.7 tokens. The amortized spec cost per idea over *R* reuses of one spec is
+
+> [cache-write·*S* + cache-read·*S*·(*R* − 1)] / *R* = *S*·((cache-write − cache-read)/*R* + cache-read)     (2)
+
+which, with an Anthropic-style cache-write = 1.25× and cache-read = 0.10× base input (Anthropic, 2025), equals *S*·(1.15/*R* + 0.10) — the 1.15 being the write premium *net* of the read already counted in the 0.10 term. The effective input per idea and its perfect-reuse floor are then
+
+> *b* + *S*·(1.15/*R* + 0.10),   floor *b* + 0.10·*S* ≈ 165 tokens as *R* → ∞     (3)
+
+Table 4 traces C7's effective diversity as one spec is reused, and Figure 2 plots the same break-even.
+
+**Table 4 — C7 effective tokens-matched diversity under prompt-caching reuse (agglomerative).**
+
+| Reuse regime | C7 clusters/1k effective (agglom) | vs C1 (5.263) | vs C2 (7.601) |
+|---|---|---|---|
+| True no cache (measured) | 1.263 | loses | loses |
+| Cache-write, single use (R=1) | 1.041 | loses | loses |
+| This design (~1.1 calls/spec) | 1.15 | loses | loses |
+| R=10 | 3.818 | loses | loses |
+| R=100 | 5.206 | loses | loses |
+| R→∞, cache-read 0.10× | 5.425 | **wins** | loses |
+| R→∞, cache-read 0.16× (model's own rate) | 4.448 | loses | loses |
+
+<ArticleFigure src="/research/grounding-doesnt-pay/fig2.png" alt="Curve of C7's effective tokens-matched diversity against the number of identical spec reuses: it rises to a perfect-cache floor that stays under the style-persona C2 always, and under repeated sampling C1 at the model's own cache-read rate." width="1320" height="780" caption="Figure 2 — Prompt-caching break-even on the agglomerative view. As one spec is reused R times, C7's effective tokens-matched diversity rises toward a perfect-cache floor and never reaches the style-persona (C2). Under the charitable Anthropic-style 0.10× cache-read it overtakes repeated sampling (C1) only after R ≈ 137 identical reuses (floor 5.425 > 5.263); under the Grok-4.20 card's own listed rate (cached input $0.20/M ≈ 0.16× of the $1.25/M input) the floor is 4.448 and it never reaches C1. Derived from the logged tokens." />
+
+Two honest points sharpen the null rather than soften it. First, the "no cache" baseline is C7's *measured* 1.263 (1.0×S); the R=1 row (1.041) already pays the 1.25× cache-write premium, so caching with no reuse is *worse* than not caching — grounding does not begin to recover until many identical reuses. Second, and decisively, the R ≈ 137 vs-C1 break-even exists only under the charitable 0.10× cache-read; at the model's own listed 0.16× rate the vs-C1 break-even *vanishes* (floor 4.448 \< 5.263). What is cache-robust under **both** algorithms is that C7 never reaches C1 under HDBSCAN either (cached floor ≈ 0.303 \< C1's 0.585 even at infinite reuse). These numbers are illustrative and derivable from the logged tokens, not read from a bill; the practical reading is that grounding does not pay under any caching regime we can construct from these numbers, and only overtakes the *cheapest* arm at all under a pricing assumption more generous than the model's own.
+
+**Scope: "spec-in-context", not "domain-grounding" in general.** We tested a full spec (~2.1–2.5k tokens) read verbatim into the context window. We did **not** test retrieval — pulling small, targeted chunks of a domain substrate into context on demand (Lewis et al., 2020). Retrieval could change the economics substantially, because it decouples "the model conditions on real domain knowledge" from "the model pays 2k tokens per call for it." Whether targeted retrieval recovers token-efficient diversity is a genuinely open question and a different experiment; nothing here forecloses it. Stating this scope narrowly both protects the claim against over-reading and closes the door on the reflex "so let us just build the retrieval system" — that would be a new pre-registration, not a rescue of this one.
+
+## 6. Limitations
+
+Each limitation below is a scope boundary, and each points at a specific future experiment.
+
+- **One model, and a single-model baseline.** All arms use Grok-4.20 (non-reasoning; xAI, 2026). Internal validity is preserved (same model across arms), but external generality is Grok-specific; another model family could shift the constants. We also note that Grok-4.20 ships a separate opt-in `-multi-agent` variant (an internal council of agents); our pilot used the standard `grok-4.20` route, **not** the `-multi-agent` variant, so the C1 baseline is a single-model generator and the heterogeneity we manipulate is prompt-level, not the model's internal council. (The call was made with `reasoning` disabled and the logged records show empty reasoning content and short outputs consistent with the non-reasoning head, under model id `x-ai/grok-4.20-20260309` — distinct from the `-multi-agent` variant; we did not otherwise probe which internal head served the call.)
+- **Two queries.** One Alternate-Uses prompt and one functional-design prompt. The pattern holds in each query separately, but two queries is low power against query-level variance, and the bootstrap CIs resample ideas, not queries.
+- **A fragile, encoder- and algorithm-sensitive metric.** Flexibility-by-clustering is not as established as judged diversity or the Vendi Score (Friedman & Dieng, 2022); its proposals-matched ordering is not invariant across clustering algorithms, and its per-proposal grounding-vs-persona verdict is not invariant across embedding encoders (§4.5). We report the metric as fragile, disclose both disagreements, and lean the verdict on what is stable under both algorithms and all three robustness variants (two encoders plus a stopword ablation) — grounding is never the token-efficient frontier.
+- **Unmatched source-identity counts.** C7 draws on 53 source identities, C2 on 39; part of C7's larger raw-cluster count could reflect drawing from more sources rather than grounding per se. This cannot rescue the tokens-matched null (which is arithmetic), but it is a confound for the per-proposal comparison and a matched-identity design is future work.
+- **No human anchor / no ICC.** We did not collect human diversity ratings; that is new data collection and out of scope for this null. Adding a human anchor is future work, not a fix to be retrofitted here.
+- **A generation-stage proxy.** We measure independent generation, not the full interactive architecture, by design — the charitable-upper-bound-at-generation argument of §3, which we are careful not to extend into a claim about interaction.
+- **No quality or novelty axis.** We measured diversity-as-clustering only. Grounding could still pay off on a *different* dependent variable — quality, novelty-against-a-corpus, or downstream utility. We explicitly do **not** claim domain grounding is useless on any metric; we claim it is not token-efficient for cluster-diversity, while it does add proposal-level cluster-diversity.
+
+## 7. Conclusion
+
+For token-bounded creative diversity, in-context domain specifications do not pay for their cost. Grounding is not inert — on the agglomerative view it adds real per-proposal diversity over plain repeated sampling (+0.19 to +0.26 clusters per idea across both encoders, a gain that is itself algorithm-scoped and reverses under HDBSCAN). But under neither pre-registered clustering algorithm and under neither encoder are grounded specs the token-efficient frontier, and they lose to plain repeated sampling per token under both algorithms — because a 6.8× token cost cannot be amortized by an at-most-1.8× achievable cluster gain. On the pre-registered decisive budget view the efficient frontier is a cheap arm, and the conclusion about agent heterogeneity **depends on the budget accounting** — grounding wins per proposal and loses per token — a methodological warning we scope to the agglomerative view, because the flip does not survive the switch to HDBSCAN. The mechanism is a real gain, overpriced: grounded specs add diversity and reach *r* ≈ 0, no better than a style label, but do not convert either into token-efficient diversity. Two questions remain open: (i) does retrieval of small, targeted chunks change the economics, decoupling conditioning on real domain knowledge from paying ~2k tokens per call for it; and (ii) does a quality- or novelty-based dependent variable rescue grounding on an axis this study did not measure?
+
+## 8. Reproducibility
+
+- **Pre-registration:** the frozen decision rule and config were fixed before collection (van Miltenburg et al., 2021); the tokens-matched budget view is named decisive, with two clustering algorithms pre-registered symmetrically under an ordering-invariance validity rule.
+- **Harness:** generation, pre-registered scoring, and post-hoc exploratory views are separate scripts; the gate decision is produced by the pre-registered scorer only. The encoder/stopword robustness re-scores (`scripts/rescore_robustness.py`) re-embed and re-cluster the frozen records with no new generation.
+- **Data:** 180 records with a SHA-256 hash per record; pre-registered scores and post-hoc views in separate files; the raw generation log ships in the archived replication package (Flores, 2026).
+- **Settings:** SEED = 42; embeddings `all-MiniLM-L6-v2` primary, `paraphrase-multilingual-MiniLM-L12-v2` for robustness (Reimers & Gurevych, 2019); clustering HDBSCAN (`min_cluster_size = 3`; Campello et al., 2013; McInnes et al., 2017) and agglomerative (cosine, average, threshold 0.35); 10,000 bootstrap resamples (Efron, 1979; Efron & Tibshirani, 1993).
+- **Reproducibility of the numbers:** re-scoring the provided log on the original pinned environment reproduces the reported scores; the signs, orderings, and CI conclusions the paper claims are robust to last-decimal embedding and library noise across hardware, and a stdlib-only test (`tests/test_paper_numbers.py`) ties every headline number to the frozen JSON. A bit-for-bit match is guaranteed only on the original machine.
+- **Cost:** total pilot cost ≈ $0.26, derived from logged input/output tokens at the Grok-4.20 published rate (xAI, 2026), not a separate invoice.
+- **Model amendment:** a pre-collection provider switch (a dead-key 401 before any record), documented and dated in the pre-registration; all arms share the final model.
+
+## References
+
+- Anthropic (2025). Prompt caching. Available at: https://platform.claude.com/docs/en/docs/build-with-claude/prompt-caching (Accessed: 19 July 2026).
+- Bradley, H., Dai, A., Teufel, H., Zhang, J., Oostermeijer, K., Bellagente, M., Clune, J., Stanley, K., Schott, G. & Lehman, J. (2024). 'Quality-diversity through AI feedback'. arXiv:2310.13032. https://doi.org/10.48550/arXiv.2310.13032
+- Campello, R. J. G. B., Moulavi, D. & Sander, J. (2013). Density-based clustering based on hierarchical density estimates. In: Advances in Knowledge Discovery and Data Mining (PAKDD 2013), LNCS vol. 7819, pp. 160-172. https://doi.org/10.1007/978-3-642-37456-2_14
+- Chen, N., Tong, Y., Yang, Y., He, Y., Zhang, X., Zou, Q., Wang, Q. & He, B. (2026). 'Diversity collapse in multi-agent LLM systems: structural coupling and collective failure in open-ended idea generation'. arXiv:2604.18005. https://doi.org/10.48550/arXiv.2604.18005
+- Efron, B. (1979). 'Bootstrap methods: another look at the jackknife', The Annals of Statistics, vol. 7, no. 1, pp. 1-26. https://doi.org/10.1214/aos/1176344552
+- Efron, B. & Tibshirani, R. J. (1993). An Introduction to the Bootstrap. Chapman & Hall/CRC. https://doi.org/10.1201/9780429246593
+- Flores, C. U. (2026). Grounding Doesn't Pay: replication package [software and dataset]. Codex Hash Research Laboratory. Zenodo. https://doi.org/10.5281/zenodo.21445129. Code repository: https://github.com/ulissesflores/grounding-doesnt-pay.
+- Friedman, D. & Dieng, A. B. (2022). 'The Vendi Score: a diversity evaluation metric for machine learning'. arXiv:2210.02410. Transactions on Machine Learning Research (2023). https://doi.org/10.48550/arXiv.2210.02410
+- Guilford, J. P. (1967). The Nature of Human Intelligence. McGraw-Hill.
+- Lewis, P., Perez, E., Piktus, A., Petroni, F., Karpukhin, V., Goyal, N., Küttler, H., Lewis, M., Yih, W.-t., Rocktäschel, T., Riedel, S. & Kiela, D. (2020). Retrieval-augmented generation for knowledge-intensive NLP tasks. In: Advances in Neural Information Processing Systems 33 (NeurIPS 2020). https://doi.org/10.48550/arXiv.2005.11401
+- Li, J., Zhang, Q., Yu, Y., Fu, Q. & Ye, D. (2024). 'More agents is all you need'. arXiv:2402.05120. https://doi.org/10.48550/arXiv.2402.05120
+- Liang, T., He, Z., Jiao, W., Wang, X., Wang, Y., Wang, R., Yang, Y., Shi, S. & Tu, Z. (2024). Encouraging divergent thinking in large language models through multi-agent debate. In: Proceedings of the 2024 Conference on Empirical Methods in Natural Language Processing (EMNLP), pp. 17889-17904. https://doi.org/10.18653/v1/2024.emnlp-main.992
+- Lu, L.-C., Chen, S.-J., Pai, T.-M., Yu, C.-H., Lee, H.-y. & Sun, S.-H. (2024). 'LLM discussion: enhancing the creativity of large language models via discussion framework and role-play'. arXiv:2405.06373. https://doi.org/10.48550/arXiv.2405.06373
+- McInnes, L., Healy, J. & Astels, S. (2017). 'hdbscan: hierarchical density based clustering', Journal of Open Source Software, vol. 2, no. 11, p. 205. https://doi.org/10.21105/joss.00205
+- Panickssery, A., Bowman, S. R. & Feng, S. (2024). LLM evaluators recognize and favor their own generations. In: Advances in Neural Information Processing Systems 37, pp. 68772-68802. https://doi.org/10.52202/079017-2197
+- Reimers, N. & Gurevych, I. (2019). Sentence-BERT: sentence embeddings using Siamese BERT-networks. In: Proceedings of the 2019 Conference on Empirical Methods in Natural Language Processing and the 9th International Joint Conference on Natural Language Processing (EMNLP-IJCNLP), pp. 3982-3992. https://doi.org/10.18653/v1/D19-1410
+- Tran, D. & Kiela, D. (2026). 'Single-agent LLMs outperform multi-agent systems on multi-hop reasoning under equal thinking token budgets'. arXiv:2604.02460. https://doi.org/10.48550/arXiv.2604.02460
+- Ueda, K., Hirota, W., Asakura, T., Omi, T., Takahashi, K., Arima, K. & Ishigaki, T. (2025). 'Exploring design of multi-agent LLM dialogues for research ideation'. arXiv:2507.08350. https://doi.org/10.48550/arXiv.2507.08350
+- van Miltenburg, E., van der Lee, C. & Krahmer, E. (2021). Preregistering NLP research. In: Proceedings of the 2021 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies (NAACL-HLT), pp. 613-623. https://doi.org/10.18653/v1/2021.naacl-main.51
+- Wang, L., Ma, C., Feng, X., Zhang, Z., Yang, H., Zhang, J., Chen, Z., Tang, J., Chen, X., Lin, Y., Zhao, W. X., Wei, Z. & Wen, J. (2024). 'A survey on large language model based autonomous agents', Frontiers of Computer Science, vol. 18, no. 6, art. 186345. https://doi.org/10.1007/s11704-024-40231-1
+- Wang, X., Wei, J., Schuurmans, D., Le, Q., Chi, E., Narang, S., Chowdhery, A. & Zhou, D. (2023). 'Self-consistency improves chain of thought reasoning in language models'. arXiv:2203.11171. https://doi.org/10.48550/arXiv.2203.11171
+- Wang, Z., Mao, S., Wu, W., Ge, T., Wei, F. & Ji, H. (2024). Unleashing the emergent cognitive synergy in large language models: a task-solving agent through multi-persona self-collaboration. In: Proceedings of the 2024 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies (NAACL-HLT), pp. 257-279. https://doi.org/10.18653/v1/2024.naacl-long.15
+- xAI (2026). Grok-4.20 [model card]. Available at: https://docs.x.ai/developers/models/grok-4.20 (Accessed: 12 July 2026).
+- Zheng, L., Chiang, W.-L., Sheng, Y., Zhuang, S., Wu, Z., Zhuang, Y., Lin, Z., Li, Z., Li, D., Xing, E. P., Zhang, H., Gonzalez, J. E. & Stoica, I. (2023). Judging LLM-as-a-judge with MT-Bench and Chatbot Arena. In: Advances in Neural Information Processing Systems 36 Datasets and Benchmarks Track. https://doi.org/10.48550/arXiv.2306.05685

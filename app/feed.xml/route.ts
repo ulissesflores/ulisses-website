@@ -1,5 +1,6 @@
 import { publications } from '@/data/publications';
 import { artigoDateToIso, artigos, artigosCanonicalPath } from '@/data/artigos';
+import { abstractFor, paperUrl, plainAbstract, researchPapers } from '@/data/research';
 import { upkfMeta } from '@/data/generated/upkf.generated';
 
 export const revalidate = 3600;
@@ -64,7 +65,23 @@ export async function GET() {
     };
   });
 
-  const sorted = [...publicationEntries, ...artigoEntries].sort((a, b) => {
+  // Papers com corpo na página: link no idioma original, resumo sem marcação, PDF só se existe.
+  const paperEntries: FeedEntry[] = researchPapers.map((paper) => {
+    const abstract = abstractFor(paper, paper.language);
+    const pdf = paper.pdf?.[paper.language];
+    return {
+      title: paper.title,
+      link: paperUrl(paper, paper.language),
+      publishedAt: paper.publishedAt,
+      updatedAt: paper.updatedAt,
+      summary: plainAbstract(abstract.text),
+      tags: abstract.keywords,
+      pdfUrl: pdf ? `${siteUrl}${pdf.path}` : undefined,
+      ordinal: 0,
+    };
+  });
+
+  const sorted = [...publicationEntries, ...artigoEntries, ...paperEntries].sort((a, b) => {
     if (a.publishedAt === b.publishedAt) {
       return a.ordinal - b.ordinal;
     }

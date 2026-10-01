@@ -1,0 +1,401 @@
+---
+title: 'The Noisy TV in the Measurement Channel: Unbudgeted Instrument Noise in the Intrinsic-Motivation Instrumentation of LLM Agents'
+slug: noisy-tv-measurement-channel
+category: research
+date: '2026-08-26'
+language: en
+---
+
+## 1. Introduction
+
+The canonical demonstration that intrinsic motivation can be captured by noise is a television showing static: an agent rewarded for prediction error parks in front of it forever, because unpredictability is inexhaustible (Burda et al., 2019a; Schmidhuber, 2010). The reinforcement-learning literature answered that pathology inside the reward channel, with random-network targets whose error is aleatoric-free by construction (Burda et al., 2019b), with explicit estimates of aleatoric uncertainty (Mavor-Parker et al., 2022), with a unifying Bayes-adaptive account of what a shaping term may legitimately encode (Lidayan et al., 2025), and most recently with learning-progress monitors that discount unlearnable novelty (Hou et al., 2026; Zhang & Levin, 2026). Every one of those fixes assumes that the quantity being corrupted is a *reward*, and that the measurement producing it is transparent.
+
+LLM agents break that assumption. A red-teaming agent rewarded for attack novelty (Hong et al., 2024; Zhao et al., 2025), an autotelic agent relabelling its own goals (Colas et al., 2023), and a goal selector driven by learning progress (Gaven et al., 2025) share an instrument that classical RL did not have: a sentence embedder applied to text produced by temperature sampling. Novelty becomes a cosine distance; coverage becomes a top-*k* mean; a gap becomes one minus that coverage. The instrument is not transparent. It has a resolution, a bias and a noise floor, exactly as a voltmeter does (Joint Committee for Guides in Metrology, 2008), and those properties are inherited from two independent sources: the geometry of the embedding space, whose cosine is unstable under retraining and reparametrization (Antoniak & Mimno, 2018; Steck et al., 2024), and the stochasticity of decoding, which makes two runs of the same prompt land on different embeddings by design (Holtzman et al., 2020; Renze, 2024).
+
+This paper makes a claim about where the noisy TV now lives. In LLM agents the pathology can re-emerge in the **instrumentation** of intrinsic motivation — the embedder, the displacement metric, the temperature — *before any reward exists*. A trigger that fires when displacement exceeds a threshold can be firing on the instrument, not on the world. That is a metrological statement, not a reward-design one, and it is testable: an instrument’s noise floor is measured by holding the stimulus fixed and letting only the instrument vary.
+
+The contributions are, in order. First, the **name and the framing**: noise capture in the measurement channel, read through signal detection theory, where a signal is interpretable only above the noise floor of the detector (Green & Swets, 1966), and through Goodhart’s law, where a proxy under noise decouples from the target it stood for (Goodhart, 1984; Strathern, 1997). Second, a **bridge between literatures that already exist**: measurement theory in machine learning has the vocabulary of construct validity and reliability (Jacobs & Wallach, 2021), diversity-metric evaluation has shown that embedding-based metrics disagree with the constructs they stand for (Tevet & Berant, 2021), and the curiosity-times-LLM line imported neither. Third, a **protocol that we import and transport rather than propose**: expressing an effect in units of the instrument’s own noise is the core of metrology for AI (Welty et al., 2019) and has a long lineage in analytical chemistry’s detection limits (Currie, 1968) and in psychometrics’ reliable-change index (Jacobson & Truax, 1991); its transported form here is a repetition null — *N* cycles under an identical stimulus — whose displacement distribution is the floor against which any trigger must be read. Fourth, an **audit of deployed practice**: eight agent-memory systems with novelty or similarity gates in production code, none of which expresses its gate in units of its instrument’s floor. Fifth, a **demonstration under seal**: a clean-room harness whose corpus, code, thresholds and results are hash-chained, pre-registered before data generation, and amended post-data in a declared, dated document — plus a calibration tool that any agent instrumenting novelty over embeddings can run before trusting its own trigger — shipped sealed, with its five known defects in a published fix queue, executed at the 2026-08-13 re-seal (Section 9).
+
+## 2. Background: two literatures that do not cite each other
+
+The noisy-TV canon runs from the typology of computational intrinsic motivation (Oudeyer & Kaplan, 2007) and formal creativity theory (Schmidhuber, 2010) through prediction-error curiosity (D. Pathak et al., 2017) to the large-scale study that made the television a standard object (Burda et al., 2019a) and the fixes that followed it (Burda et al., 2019b; Mavor-Parker et al., 2022; Lidayan et al., 2025). Its habitat is the Markov decision process, and its instrument is a forward model over states (Sutton & Barto, 2018).
+
+The curiosity-times-LLM line of 2024–2026 inherited the vocabulary and dropped the canon. Curiosity-driven red teaming rewards an attacker for producing prompts far from its own history in embedding space and, when the attacker discovers that gibberish maximizes that distance, patches the symptom with a gibberish detector (Hong et al., 2024). Diversity-enhanced red teaming documents the stagnation of the same semantic-novelty measure over training (Zhao et al., 2025). Reinforcement-learning red teamers reward attacks that differ from past attempts (Beutel et al., 2024) or optimize diversity through a GFlowNet objective scored by embedding distance (Lee et al., 2025). Auditing agents inherit the design wholesale (Zheng et al., 2025). Autotelic agents let an LLM invent and relabel goals (Colas et al., 2023), and learning-progress selection estimates competence gains over LLM representations (Gaven et al., 2025) or in context (Elmoznino et al., 2026). Measurement of novelty itself is being formalized at the corpus level (Padmakumar et al., 2026). On the memory side, SAGE gates memory evolution on an embedding-novelty score and calibrates its thresholds offline (S. Wang et al., 2026), and EM-LLM segments episodic memory on a surprise threshold (Fountas et al., 2025) — the two systems closest to treating the gate as a tunable object, and both are examined in Section 8.
+
+Twelve such systems were checked against their own text: none treats the noise of its measuring instrument. The counts a reader meets in this paper are scopes, not one census: those twelve are the literature check of this section, and Table 1 itemizes six of them; the eight systems of Section 8 are a separate, disjoint audit of deployed memory gates under its own pertinence rule. The nearest analysis of the failure family in LLM agents is explicit that its scope is the reward channel under a specific optimizer, and that its instrument is rule-parsed precisely to avoid embeddings (Y. Wang, 2026). The most recent RL-side treatment resolves the noisy TV in the *learning* channel, by asking whether surprise is learnable (Zhang & Levin, 2026). Neither pole covers the instrument. Two structural facts sharpen the gap: a snowball over the citing sets of the canon (778 citers of Burda et al., 2019a, and 36 of Mavor-Parker et al., 2022) finds no intersection with the curiosity-times-LLM line of 2024–2026, and direct multilingual probes on the core question returned zero hits at the last sweep (2026-08-02). Absence of a hit is not proof of absence, and we report it as the dated, keyword-limited evidence it is. The closest protocol-level neighbor found by that sweep sits one field away: a paired noise-floor procedure for multi-agent LLM *benchmarks*, where the floor bounds a coordination-gain comparison between systems (Kaliyev & Maryanskyy, 2026). There, the floor disciplines a comparison; here, the measurement fires an action inside an agent’s own loop.
+
+Table 1
+
+LLM systems that instrument novelty, and how each measures it
+
+| System | Novelty instrument | Noise treatment |
+|----|----|----|
+| CRT (Hong et al., 2024) | cosine against attack history; SelfBLEU; entropy | none (gibberish detector patches the symptom) |
+| DiveR-CT (Zhao et al., 2025) | dynamic semantic diversity in embedding space | none (stagnation reported, not attributed) |
+| Red teaming with RL rewards (Beutel et al., 2024) | reward for differing from past attempts | none |
+| GFlowNet red teaming (Lee et al., 2025) | embedding-distance diversity objective | none |
+| LMA3 (Colas et al., 2023) | LLM-generated and relabelled goals | none |
+| MAGELLAN (Gaven et al., 2025) | learning progress over LLM representations | none (immunity assumed by construction) |
+
+*Note.* Verified against each work’s own text and metadata on 2026-08-02; “none” means the work states no estimate of, or correction for, measurement noise in the instrument it uses.
+
+## 3. What this paper does not claim
+
+A measurement paper owes its reader the boundary of its own novelty before any claim, and the geometry of embedding spaces is well-trodden ground. We do not claim that embedding spaces are anisotropic or dominated by a few directions — that is established for contextual token representations (Ethayarajh, 2019; Timkey & van Schijndel, 2021). We do not claim that the dominant direction of a stored corpus is its mean, nor that removing it is a new idea — that is the *all-but-the-top* lineage (Mu et al., 2018), whose authors validate the removal on sentence-level tasks as well as lexical ones. We do not claim that anisotropy of *sentence* embeddings is our finding, nor that correcting it is new — that literature exists for the right object (Li et al., 2020; Su et al., 2021). We do not claim that fragile isotropy metrics mislead — Rudman et al. (2022) caution that existing tools for measuring isotropy *“in contextualized embedding space”* yield conclusions that are *“misleading or altogether inaccurate”*, and that caution, with its scope qualifier, is the genre this paper’s calibration warning belongs to. The participation ratio we use to size a subspace is a pre-existing, popular measure whose origin we did not verify against a primary source — a registered gap, not an absence of prior art — and its small-sample bias is documented (Chun et al., 2025), a citation that counts *against* one of our own numbers (Section 7.2). We do not claim that generated text varies under nominally deterministic decoding — that is measured, earlier and at larger scale, by Atil et al. (2025). And we make no hubness claim in the sense of Radovanović et al. (2010) — occupancy counts in k-NN lists. No k-occurrence statistic is computed here; what we measure is the dominant eigenvector of the vault’s second moment. That is another object, with an adjacency conceded in Table 2. Where the excess over an isotropic prediction is concerned, our contribution is a partial, quantified attribution — in the sense of spectral localization, Section 7.2 — not the phenomenon itself.
+
+Table 2
+
+The attribution boundary: four bodies of prior work, four distinct distances to this instrument
+
+| Reference | What it studies | Distance to this paper’s instrument |
+|----|----|----|
+| Ethayarajh (2019); Timkey & van Schijndel (2021) | contextual **token** representations (BERT/ELMo/GPT-2) | one jump: token to sentence. Declared analogy |
+| Mu et al. (2018) | **static type-level word embeddings** (word2vec/GloVe), validated also on sentence tasks | two jumps: static type to contextual to sentence |
+| Radovanović et al. (2010) | points of generic datasets — including six text collections under cosine (their Table 1, p. 2493) | zero jumps of object (one vector per document) and zero of metric (cosine); the distance is one of quantity and of estimator — three gaps, spelled out in the prose below this table |
+| Li et al. (2020); Su et al. (2021) | **sentence embeddings** — the right object | zero jumps of object; one jump of regime — pre-trained BERT without fine-tuning versus a contrastively trained sentence encoder |
+
+The Radovanović et al. (2010) row carries the adjacency conceded above and deserves its distances in full. Of their text collections, five enter with tf/tf-idf weights and `dexter` enters already pre-processed; the highest-hubness text collection, movie-reviews, has S_N10 = 8.796 at d_mle = 54.95 in d = 11,885. The three gaps: N_k, their k-occurrence statistic, is not computed here; d_mle, their intrinsic-dimension estimator, is never estimated for this vault; and k_δ is the participation ratio of the displacements — a different estimator on a different object. Registered against us: in their §4.1–4.2, proximity to the mean raises inclusion in k-NN lists (*“points closer to the mean tend to become hubs”*, under a unimodal distribution; in clustered data hubs sit near cluster centers, their §4.3, p. 2498 — this vault is multi-topic, so which regime applies is open), and concentration along the mean’s direction is exactly what we measure. Hubness is not what we measure, but the geometry we measure is, in their theory, a cause of hubness.
+
+On the metrology side, the protocol we transport is not ours either: expressing effects in instrument-noise units is the program of metrology for AI (Welty et al., 2019), detection limits derived from instrument noise go back to analytical chemistry (Currie, 1968) and are standardized to the point of separating the decision threshold from the detection limit (Vivier et al., 2010) and of computing detection limits from noise theory alone (Nakashima & Hayashi, 2016), and dividing an observed change by the standard error of measurement is the reliable-change index (Jacobson & Truax, 1991). The verb of this paper is *import and transport*: the instrument class under audit — the novelty gate of an LLM agent, where the measurement triggers an action — had not been brought under that discipline.
+
+## 4. The measurement channel
+
+Fix an agent that stores text and decides where to attend. Let *E* be an embedder mapping a text to a unit vector, *V* the current vault of stored embeddings, and *q* a freshly generated candidate. The instrument computes coverage as the mean of the top-*k* cosine similarities between *q* and *V*, a gap *g* = 1 − coverage, and a trigger intensity 4*g*(1 − *g*), an inverted U that peaks at intermediate gaps. Retrieval competes on a score that mixes the same cosine with recency and importance: *score* = α·cos + β·decay^age + γ·(importance/10). The constants are declared, because a metrology paper whose own constants are undeclared cannot ask anyone else to declare theirs: α = β = γ = 1, the decay base is 0.995 per hour, and importance is an integer scale divided by 10, so one importance point moves the score by 0.100.
+
+Two properties of this arrangement matter. First, the cosine enters the score at α = 1, so any noise in the cosine passes into the score at unit gain and is directly commensurable with the other two terms; that is what makes a comparison between a floor and a decay spread meaningful rather than a category error. One full day of decay moves the recency term by 0.1133 at age zero, and one importance point moves the score by 0.100. Those two quantities are the **signals** the instrument must be able to resolve. Second, *q* is not a fixed object: it is a sample from a language model at temperature τ. Running the same prompt twice yields different text, hence different embeddings, hence a nonzero displacement produced by the instrument chain itself, carrying no information about the stimulus.
+
+The noise floor of such an instrument is the displacement it reports when the stimulus is held fixed. Two operationalizations exist, and conflating them is the first way to get this wrong.
+
+- For a **non-semantic** instrument — a feature-hashing embedder, which projects tokens into *d* dimensions with no trained geometry — any cosine between two distinct texts *is* instrument noise, with an analytic scale of 1/√*d* (Johnson–Lindenstrauss concentration). The spread of cosines over unrelated pairs is a legitimate floor estimate.
+- For a **semantic** instrument, that same statistic mixes real between-topic variation with noise — it measures the wrong thing. The clean floor is the **repetition null**: *N* cycles under an identical stimulus, where every observed displacement is, by construction, instrument and sampling variation.
+
+We use the second operationalization for the load-bearing numbers, and we report the first for both instrument families so the reader can see the difference rather than take our word for it.
+
+The framing is metrological. A measurement result without an uncertainty statement is not a result (Joint Committee for Guides in Metrology, 2008); an intrinsic-motivation trigger without a noise floor is a detector without a threshold (Green & Swets, 1966). It is also Goodhartian: the novelty metric is a proxy for an epistemic gap, and under instrument noise the proxy decouples from the target while the optimizer keeps optimizing the proxy (Goodhart, 1984; Strathern, 1997). The named tradeoff is proxy capture, and its new locus is the instrument.
+
+## 5. A measured instance
+
+The question arose in a running system, not in a thought experiment. In a private autonomous-agent codebase (*daimon*), the production retrieval instrument is a feature-hashing embedder at *d* = 32, and the source comments at `src/daimon/recall.py:29-32`, at internal commit `490e70fed6748f6d404c833402c09b7094d0fbe1` (tag `paper-noisy-tv-anchor-v1`), record a measured cosine noise σ = 0.177 for that instrument against 0.108 for one day of decay and 0.100 for one importance point, with σ = 0.050 at *d* = 384. The decay figure quoted here is the instance’s **own** declared spread, measured in its configuration; the 0.1133 used elsewhere in this paper is the harness’s recomputation of the same quantity, and the two are reported separately rather than merged. In that configuration the noise term dominates both score signals, and the curiosity trigger — `gap` and `gap_intensity`, computed on the same embedder — is a function of measurement noise as much as of any epistemic gap.
+
+That instance is **corroboration, not the anchor**. The repository is not public, so the number is operator-attested rather than third-party auditable, and this paper’s headline does not rest on it. What raises its evidential class is threefold. An independent clean-room implementation, on a different corpus and a different machine, measures a cross-pair cosine spread of 0.1795 for the same instrument class at *d* = 32 (Section 6), against an analytic expectation of 1/√32 = 0.1768 and the instance’s declared 0.177. Sanitized numeric derivatives of the instance’s own logs — instrument fingerprints, verdicts, the declared floor — ship as frozen data in the replication repository with the SHA-256 of each private original pinned in the run manifest; the raw logs do not. And the instance’s headline configuration is also affirmed by a public, DOI-dated software artifact released before this paper (Flores, 2026b).
+
+One nuance must not be lost. Not all noise in such an agent is pathological. A deliberate stochastic term in an initiator process, in the tradition of stochastic accumulator models of spontaneous action, is a design choice with its own falsifiable predictions. The claim here is narrower and different: noise entering through the *measurement* of novelty, unmeasured and unbudgeted, is not a design choice — it is an uncontrolled confound in the trigger.
+
+## 6. The sealed harness: pre-registration, amendment, and outcomes
+
+The harness is a clean-room reimplementation of the instrument class described in Section 4, sharing no code with the private instance. Three instruments are compared: feature hashing at *d* = 32, feature hashing at *d* = 384, and a pinned ONNX sentence encoder at *d* = 384 (a multilingual MiniLM whose local artifact is byte-identical to the public one, verified by content hash), in the tradition of sentence-level encoders trained for cosine comparability (Reimers & Gurevych, 2019). The corpus is generated once by a hosted model at temperature 0.8, frozen, and never regenerated: E1 is 300 cycles under a single identical stimulus; E4 is a 60-note vault over 12 topics with 40 probes, half on covered topics and half held out, with retrieval width *k* = 4. Every analyzer reads only frozen bytes.
+
+Method and thresholds were fixed before the data existed. The full spine — environment, code, pre-registration, data, scores, figures, paper — is sealed as a hash chain in which each stage folds into the next, so a single changed byte anywhere moves the root. The pre-registration was committed and sealed on 2026-08-02 at 23:29, before the first generation run, and states for each hypothesis the numeric value that, if measured, would kill the corresponding claim. One declared exception precedes the data: the file as first sealed named a local `qwen2.5:32b` as the generation engine; before any line of the harness corpus existed the engine was swapped to the hosted model by operator instruction, the partial 170-cycle corpus of the local run was deleted, and the amendment — dated, changing no hypothesis and no threshold — is recorded in the pre-registration file itself. Statistical inference is by permutation on \|Spearman ρ\| with 10,000 permutations and a fixed seed (Ernst, 2004); no parametric assumption is made there. The sealed-spine and budget-declared reporting discipline follows an earlier Codex Hash negative result (Flores, 2026a).
+
+Honesty about the design comes before the outcomes. Of the pre-registered break conditions, **only one arm could break in practice**: H1’s threshold sits below the analytic identity for the *d* = 32 instrument, H3’s ratio for the hash instruments is near unity by construction and was disclosed as such in the pre-registration, and H2’s break (ρ ≥ 0.80 across instruments) is unreachable when one of the two instruments is noise by construction. The live arm was H3 for the semantic encoder. The accurate summary is therefore that the one falsifiable arm did not fall — not that three independent conditions all survived.
+
+Table 3
+
+Pre-registered break conditions and measured outcomes
+
+| Hypothesis | Break condition (fixed blind) | Measured | Outcome |
+|----|----|----|----|
+| H1 — the hash:32 floor dominates both score signals | σ \< 0.100 | σ = 0.1795 (analytic 1/√32 = 0.1768) | does not break |
+| H2 — swapping the instrument reorders the trigger | ρ ≥ 0.80 with *p* \< 0.05 | ρ = −0.076, *p* = 0.639 | does not break (unbreakable by construction) |
+| H3 — the repetition-null floor is not negligible | null p50 \< 0.10 × cross-topic, in **both** | ratios 1.008, 1.002, 0.386 | does not break |
+
+*Note.* Thresholds are those of the sealed pre-registration; none was edited after any run. Outcomes are the sealed values in `output/paper_numbers.json`.
+
+**The cross-pair spreads (H1).** The cosine spread over unrelated pairs is 0.1795 for hash:32, 0.0507 for hash:384 and 0.1193 for the ONNX encoder. Against the score signals of Section 4, the hash:32 spread is 1.58 times one day of decay and 1.80 times one importance point; the semantic encoder’s cross-pair spread also exceeds both (1.05 and 1.19 times), but for a semantic instrument that statistic mixes topic variation with noise and is shown for contrast, not as its floor. Figure 1 draws the comparison, with the semantic bar hatched to mark exactly that.
+
+<ArticleFigure src="/research/noisy-tv-measurement-channel/fig1.png" alt="Figure 1 draws the comparison, with the semantic bar hatched to mark exactly that." width="1600" height="960" caption="Figure 1 — Instrument cosine spread against the two score signals it competes with, harness and declared instance" />
+
+**The trigger ablation (H2).** Ranking the 40 probes by trigger intensity under hash:32 and under the ONNX encoder gives ρ = −0.076 with permutation *p* = 0.639: at this sample size the pre-registered refutation of instrument dependence does not fire, and no association survives — absence of evidence for instrument invariance, not a demonstration of orthogonality. The pre-stated auxiliary is sharper and does discriminate: topic separation between covered and held-out probes is −0.0033 for hash:32 (topic-blind, as a noise instrument must be) against +0.1388 for the ONNX encoder. Mean trigger intensity is 0.889 under hash:32, 0.932 under the ONNX encoder and 0.348 under hash:384; that ordering is **not** monotone in dimension, so no claim of the form “low dimension inflates the trigger” is available, and we make none. Instrument dependence lives in the ranking and the topic blindness, not in the mean.
+
+<ArticleFigure src="/research/noisy-tv-measurement-channel/fig2.png" alt="Ranking the 40 probes by trigger intensity under hash:32 and under the ONNX encoder gives ρ = −0.076 with permutation p = 0.639." width="1920" height="840" caption="Figure 2 — Trigger intensity by instrument, and probe ranking under hash:32 against the semantic encoder" />
+
+**The repetition null as pre-registered (H3).** Under an identical stimulus repeated 300 times, median per-cycle displacement (1 − cos between consecutive embeddings) is 1.0169 for hash:32, 1.0039 for hash:384 and 0.2277 for the ONNX encoder; as the pre-registered ratio to cross-topic displacement in the same instrument, 1.008, 1.002 and 0.386 against a break threshold of 0.10. Figure 3 shows the procedure. A sanity check declared in the pre-registration — without a threshold, and it fired — compares the semantic encoder’s mean cosine over unrelated pairs in the generated corpus (0.4106) with a hand-written baseline measured at instrument setup (0.090 unrelated, 0.605 related): the generated corpus is stylistically homogeneous, which compresses cross-topic spread, and the pre-registration pre-declared the direction of that bias — *toward* the thesis. The sensitivity control that bounds it is printed with it: substituting the hand baseline into the denominator gives a ratio of 0.250, still far above the 0.10 break. One caveat on the check itself: a mean pairwise cosine is exactly the family of statistic Rudman et al. (2022) flag as inappropriate for measuring isotropy; here it is a proxy for topic homogeneity of the corpus, and it cannot be read as an isotropy measure.
+
+<ArticleFigure src="/research/noisy-tv-measurement-channel/fig3.png" alt="Figure 3 shows the procedure." width="1520" height="919" caption="Figure 3 — Repetition null: per-cycle displacement floor under an identical stimulus, 300 cycles" />
+
+**The post-data amendment, declared.** An external review of the first sealed draft established that 1 − cos(q₁, q₂), the displacement above, is not denominated in score units: what the score feels is the perturbation of its cosine term against stored memories, \|Δcos(q, m)\|, under resampling of *q*. The measurand was corrected accordingly in a dated amendment (`data/AMENDMENT-01.md`) sealed as its own stage — **after** the data existed, and declared as such; the pre-registration’s hypotheses and thresholds are unchanged — the file itself carries exactly one earlier edit, the pre-data engine-line amendment declared above — and the original thresholds were blind to the corrected measurand. Five instrument sweeps (dimension, temperature, top-*k*, vault size, threshold) were run under the amendment and are **exploratory, not pre-registered**. Everything in Section 7 is stated under this amendment.
+
+## 7. The demonstration under the corrected measurand
+
+Several floor-like numbers have now appeared, one per (statistic, measurand) pair, and the fastest way to misread this paper is to conflate them. Table 4 is the ledger; every line names the statistic, the measurand, and the section that owns it.
+
+Table 4
+
+Ledger of floor-like quantities for the primary instrument (hash:32), one line per measure
+
+| Number | Statistic | What varies — the measurand | Where |
+|----|----|----|----|
+| 0.177 | declared cosine noise σ | the deployed instance’s own spread, in its configuration | Section 5, operator-attested |
+| 0.1768 | analytic 1/√*d* | cross-pair cosine σ predicted for *d* = 32 by concentration | Sections 4 and 6 |
+| 0.1795 | cross-pair cosine spread | cosine over unrelated pairs — noise by construction for a hash instrument | Section 6, H1 |
+| 1.0169 | median 1 − cos(qᵢ, qᵢ₊₁) | repetition null: consecutive generations under an identical stimulus | Section 6, H3 |
+| 0.2507 | RMS \|Δcos(q, m)\| | resampling floor of the score term — the corrected measurand | Section 7.1 (Table 5) |
+| 0.1038 | RMS \|Δcoverage\| at *k* = 1 | coverage floor before top-*k* averaging | Section 7.4 |
+| θ = 0.10 | a threshold, not a floor | the gate constant a system writes; numerically one importance point | Section 7.5 |
+
+*Note.* The first four lines are denominated in cosine or displacement units; only the fifth is in score units, which is what makes it commensurable with the decay and importance signals of Section 4.
+
+### 7.1 The resampling floor in signal units
+
+**Claim.** Under an identical stimulus, generator resampling displaces the retrieval score term by more than the signals the score itself uses to decide — and by how much is a property of the triple (instrument, vault, displacement source), not of the encoder alone.
+
+Table 5
+
+Resampling floor of the score term, in units of the two score signals
+
+| Instrument | floor RMS \|Δcos(q, m)\| | ÷ one day of decay (0.1133) | ÷ one importance point (0.100) |
+|----|----|----|----|
+| **hash:32 (primary axis)** | **0.2507** \[0.2451; 0.2561\] | **2.211** \[2.163; 2.260\] | **2.507** \[2.451; 2.561\] |
+| onnx:384 (secondary, conditional) | 0.0653 \[0.0603; 0.0701\] | 0.576 \[0.532; 0.619\] | 0.653 \[0.603; 0.701\] |
+| hash:384 (dimension control) | 0.0723 \[0.0708; 0.0737\] | 0.638 \[0.625; 0.650\] | 0.723 \[0.708; 0.737\] |
+
+*Note.* Every interval is a nominal 95% CI reported as the envelope of two disjoint pair partitions — bootstrap percentile for the floor (B = 4,000 resamples, fixed seed), Clopper–Pearson for the rates of Section 7.5. The construction, its assumptions, and its cost are stated below.
+
+**How the intervals are built, and why.** The 299 resampling pairs are consecutive — (*i*, *i* + 1) — so each generation enters two pairs, the pairs are 1-dependent, and a Clopper–Pearson interval over them is **not** “exact”; with this pairing it is nominal, and a naive bootstrap does not resample independent units either. The reporting rule, uniform for floors and rates, is: the **point** is computed over all 299 pairs (under exchangeability of generations the expectation is unchanged — the defect of consecutive pairing is the width, not the center), and the **uncertainty** is the envelope of the intervals of the two disjoint partitions, pairs (0,1), (2,3), … (*n* = 150) and (1,2), (3,4), … (*n* = 149), which share no generation by construction. Independence additionally requires generations i.i.d. conditional on the vault — a tested assumption, not an asserted one: a lag-*h* probe gives stable rates at *h* ∈ \{1, 2, 3, 5, 10, 25, 50\}, and a permutation test of parity between the two partitions gives *p* = 0.028 for hash:32 (with the consequence drawn in Section 7.5) and *p* = 0.889 for onnx:384. The same test applied to the floor statistic itself shows the floor point keeps its license: the RMS per partition differs by *p* = 0.778 for hash:32 and *p* = 0.548 for onnx:384, both printed here; the migration to per-partition presentation is specific to the rate of Section 7.5 under hash:32. Coverage of the envelope is conditional on the validity of its components (i.i.d. generations conditional on the vault for the Clopper–Pearson component; asymptotics for the bootstrap percentile component), and a simulation seals it as a citable known-answer test: coverage ≥ 0.9707 across four dependence mechanisms and five rates under 1-dependence, and ≥ 0.9964 under the declared null with the empirical coverage distribution; the naive interval over *n* = 299 does undercover (0.9292/0.9387), so the defect the disjoint recut corrects is real. The envelope was chosen for **transparency, not uniqueness**: the design pins the dependence order at exactly 1, so a HAC-lag-1 estimator would also be parameter-free and 2.25 times narrower for hash:32 (1.36 times for onnx:384); publishing both partitions makes the recut choice falsifiable, and the cost is reported — the envelope doubles the ceiling of the hash:384 negative control (1.23% to 2.45%). One limit no recut removes: all pairs share the same frozen vault, so the reporting carries no sampling variance over the 60 memories — the measurand is *the floor of this vault under this encoder*, not of the encoder in isolation.
+
+**Why *d* = 32 is the primary axis.** It is the configuration of a real deployed instance, with clean-room corroboration (0.1795 measured against 0.177 declared); its anisotropy factor is 0.9966, so there is no common-component confound in the number; and the floor is analytically predictable at ‖δ‖/√*d*, ≈ √(2/*d*) here — which sharpens the audit finding, because a predictable floor is exactly what a design review should have caught, and none did. The analytic law E\[(δ·m)²\] = ‖δ‖²/*d* is verified across seven hash dimensions as a known-answer test of the estimator, not as a finding: measured over analytic lands at 0.9966–1.0086, three of seven below one.
+
+**The floor with the common component removed.** Projecting out the vault’s dominant direction *v₁*, the onnx:384 floor becomes 0.05969 = 0.527 of a day of decay (renormalized counterfactual); the component orthogonal to *v₁*, not renormalized, is 0.04419 = 0.390. Those are two estimands, not the two ends of an interval, and we publish the first with the second in this note. For hash:32 the two are labelled the same way: the renormalized counterfactual is 2.2125 times a day of decay — marginally above the raw 2.211, so removing the dominant direction does not relieve the hash:32 floor — and the component orthogonal to *v₁*, not renormalized, is 2.12 (reconstruction over the sealed values: 0.2507·√(1 − 0.078)/0.1133 = 2.124). The share of the dominant direction is 7.8% of the squared floor for hash:32 and 54.2% (aniso² scale) for onnx:384.
+
+**The semantic floor is conditional, and the condition is measured rather than adjectivized.** Across the vault heterogeneity reachable inside this corpus the floor is flat — a 12-topic vault (mean cos 0.4322) gives 0.0653 and an 18-topic vault (0.3704) gives 0.0664, +1.7% — and it inflates only in the degenerate case where the vault is the single-stimulus corpus itself (0.7618 gives 0.1164). The mandatory limit: this is a narrow range from one generator; a natural vault at the hand-baseline heterogeneity (cos ≈ 0.090) was **not** tested.
+
+### 7.2 The anisotropy-factor trap
+
+**Claim (a method contribution).** The anisotropy factor that a naive calibration reports is not a property of the vault alone: it is a quantity of the triple (instrument, vault, displacement source). Publishing it without a control for **content** displacements overstates the resampling-specific effect. What survives intervention is named by the pre-specified branch of the post-data analysis spec — residual δ–*m* dependence — by elimination, and not measured (below).
+
+The factor in question is aniso² = *d* · E\[(δ·*m*)²\]/‖δ‖², the measured-over-analytic excess of the floor; for the semantic encoder it is 3.3127 (factor 1.8201 on the floor itself; the isotropic-prediction inputs are λ₁ = 0.4521 of tr(M) = 1, with \|cos(*v₁*, vault mean)\| = 0.9987, and 1.6264 under z-scoring). This trap is adjacent to, and disciplined by, the isotropy-metrics caution of Rudman et al. (2022): IsoScore measures how uniformly a point cloud uses its ambient space, while this factor measures a displacement inside a calibration protocol — different objects, same genre of warning.
+
+**The finding that carries the claim is an ordering, and it is invariant to construction.** On the sealed corpus, the anisotropy of the *resampling* displacement is 1.8201; the anisotropy of *content* displacements is 2.66, 3.41 and 3.37 under three distinct constructions (not independent: two share the 20 held-out probes, one shares a slice of the null corpus); and the estimator is unbiased on isotropic Gaussian displacements (0.97–1.00). The resampling displacement is the **least** anisotropic displacement measured. The prescriptive consequence — what a method paper is for — is that the calibration step gains a mandatory control: measure the same statistic on content displacements, and if resampling does not exceed content, there is nothing specific to the resampling displacement to attribute. Attribution is the word, and it is separate from the arithmetic properties of the estimator: the factor being well-defined and reproducible does not make it resampling-specific.
+
+**Self-application, and what it forces us to retire.** Applied to our own onnx:384: 1.8201 does not exceed 2.66–3.41, so by our own prescription there is nothing specific to the resampling displacement to attribute in that factor. In this paper the 1.82 carries no resampling-specific claim: it is the number the rule was applied to, with a negative verdict.
+
+**Mechanism: overlap, not effective dimension.** For a random *k*-dimensional subspace, aniso²_sub = *d* · tr(PᵀMP)/*k* equals 1 for any *k*, because E\[tr(PᵀMP)\] = *k*·tr(M)/*d* and tr(M) = 1 — verified numerically at *k* = 1, 5, 18, 50, 100 (200 draws each: 0.986, 1.046, 0.989, 0.993, 1.004). Low effective dimension alone therefore produces **zero** excess. What distinguishes the displacement subspace (*k*\_δ = 17.8, aniso²_sub = 3.4164 — an in-sample estimate, see the limits below) is its **overlap** with the vault’s dominant direction: the displacement retains 3.97 times the isotropic quota along *v₁*. The overlap with the vault’s dominant direction accounts for 58.1% of the excess (85.8% for the top-10 directions, excess scale); the excess is the mass of M captured per direction — *k*\_δ enters as the denominator.
+
+**Decomposition versus intervention, on labelled scales.** The two ways of asking “how much of the excess is the dominant direction” are not the same question, and mixing their scales was a real defect in an earlier internal draft of these claims. Every cell below is emitted by the sealed scale-harmonization script; none is redaction arithmetic.
+
+Table 6
+
+Decomposition versus intervention on the onnx:384 excess, scales labelled
+
+| Quantity | aniso² scale | excess scale | linear scale (factor) |
+|----|----|----|----|
+| Decomposition — *v₁* | 54.2% | **58.1%** | — |
+| Decomposition — top-10 directions | 83.8% | **85.8%** | — |
+| Intervention — *all-but-the-top* D=1 … z-score | — | 24.6–28.9% | 19.9–23.6% |
+| Intervention — idem, denominator *d* − D corrected | — | **24.9–28.9%** | **20.2–23.6%** (denominator *d* − D, not nominal *d*) |
+| Intervention — idem, against a frozen isotropic reference | — | 38.0–45.1% | 31.7–38.2% |
+
+The canonical comparison, on one scale and with the corrected denominator, is a single sentence: **58.1% (decomposition) versus 24.9–28.9% (intervention, *d* − D)**. The gap has a measured anatomy: freezing the isotropic reference shows that the reference shrinking together with the floor (‖δ‖ 0.7028 to 0.6572) accounts for 13.4–16.2 percentage points of it, not for the total. One estimation caveat applies to the decomposition itself: 58.1% and 85.8% are point estimates of *v₁*/λᵢ over 60 vectors in *d* = 384, with no published uncertainty.
+
+Three boundaries, all of which were forced by branch logic pre-specified in the post-data analysis spec rather than by taste. First, total attribution is unavailable: the pre-specified branch with cut ≥ 1.5 fired at 1.6567 — 10.4% above the cut — and the adjacent branch’s specification licenses publishing the explained fraction only, never the whole. The most that is licensed is that the majority of the excess **is localized** at the vault’s dominant direction — its mean, the object of the *all-but-the-top* lineage — and that the 3.97× retention along *v₁* is a measurement of this run, not a prediction of that lineage, and is not separated from the generator’s homogeneity. Second, “why not just standardize?” has a measured answer: standardizing leaves the floor at 0.0540 = 0.48 of a day of decay (against 0.576 raw), and the deployed gate reads the raw cosine. Third, the residual: the 71–75% of the excess (excess scale; 76–80% linear) that survives intervention is the residual of the **intervention**, not the complement of the 58.1% **decomposition** — the two partition the same excess by different criteria and do not sum to 100%; under the frozen reference the residual would be 55–62%. The plateau between D=1 and D=3 (factors 1.65669 versus 1.65662, Δ = 6.2·10⁻⁵) is not evidence for an effective-dimension mechanism — under the frozen reference the plateau inverts — and promoting the residual to a mechanism would require a spectral study that was not run.
+
+**Remedies are qualified, not endorsed.** The intervention numbers are honest for the deployment configuration and are a lower bound on the remedies as specified by their authors, with the sign marked as expected, not measured: the mean, PCA directions and scales were estimated on the vault only and applied to the queries, where Mu et al. (2018) specify estimating on the processed set. Two canonical remedies were excluded for distinct reasons that do not mix: BERT-flow (Li et al., 2020) would require training a normalizing flow on 60 vectors — it estimates no covariance that could be borrowed — and whitening (Su et al., 2021) was excluded for circularity, since its reduced-rank variant forces aniso² ≡ 1 on the retained subspace by construction, which would be evidence of nothing.
+
+**Limits of this subsection.** *k*\_δ = 17.8 is estimated in-sample from *n* = 299 displacements in *d* = 384 without split-half — the regime in which the participation ratio is documented as biased (Chun et al., 2025), a citation that counts against our number, and the eigenvalue spectrum needed to determine even the sign of that bias is not on disk. A saturation test pre-specified in the same post-data spec was dropped from the claim because its specification fixed no numeric threshold and the measured value fell outside the contemplated range. D ≈ *d*/100 ≈ 4, the removal depth Mu et al. (2018) recommend, was not tested (D = 1 and D = 3 were, and they sit on the measured plateau). And encoder is not separated from generator anywhere in this paper: every corpus comes from the same LLM, separation would require a natural-text control corpus, and that is declared, never estimated — which is why the text says *of this vault under this encoder*.
+
+### 7.3 Temperature does not zero the floor
+
+At τ = 0, as requested against a hosted endpoint, the onnx:384 floor is 0.0443 RMS = 39% of one day of decay. The median \|Δcoverage\| at τ = 0 is exactly 0.0000 in all three instruments: the floor is carried entirely by the tail (roughly 41% of pairs), so an inspection by median would declare it nonexistent. The non-negotiable scope: the claim is “τ = 0 **as requested** against a hosted endpoint”, never “greedy decoding is non-deterministic” — and the phenomenon itself is not ours: Atil et al. (2025) measure output-string identity (TARr@N) across five hosted model families at temperature 0 with fixed seed, earlier and at larger scale. What this subsection adds is the floor **in units of the gate’s own signals** and the shape of its distribution; the τ = 0 run here is a replication of a control, stated as such. As an observation without claim status: the first temperature step (τ = 0 to 0.3) moves the hash floors by +58% and the semantic floor by +16%; we draw no monotonicity or regime law from a five-point exploratory sweep.
+
+### 7.4 Top-k averaging protects the wrong instrument
+
+Averaging over the top-*k* neighbors damps the hash:32 coverage floor from 0.1038 (*k* = 1) to 0.0378 (*k* = 16), −63.6%; the onnx:384 floor only moves from 0.0562 to 0.0498, −11.2% (computed on the sealed full-precision values), because the top-*k* neighbors of a semantic vault are correlated and the mean does not cancel common noise. No clamping saturation occurs in any of the 15 instrument × *k* pairs, and the pattern persists at \|V\| = 120, so it is not an artifact of a small vault; the *k* × \|V\| interaction was never measured, a known gap. At the deployed *k* = 4, the coverage floor of onnx:384 is 0.0527 RMS and 0.0315 median — two statistics of the same distribution, never interchangeable, and each is labelled wherever it appears.
+
+### 7.5 False-trigger rate at a threshold fixed by the system’s scale
+
+**Claim.** A bare absolute threshold on \|Δcoverage\|, of the kind deployed systems write as a constant, fires on pure resampling — at the threshold of one importance point, and in this vault and encoder — at a rate incompatible with zero.
+
+Table 7
+
+Firing rate of the threshold θ = 0.10 on the repetition null
+
+| Instrument | events | rate published | nominal 95% CI (envelope of the two partitions) |
+|----|----|----|----|
+| hash:32 | 35/299 | **15.3% and 8.1%** — the two disjoint partitions (23/150 and 12/149), shown as the primary presentation; aggregate 11.7%, see the parity note | \[4.2%; 22.1%\] |
+| onnx:384 | 17/299 | **5.7%** (parity *p* = 0.889 — consistent with sampling noise) | \[2.3%; 11.1%\] |
+| hash:384 (control) | 0/299 | **0%** | \[0%; 2.4%\] |
+
+*Note.* Coverage of the envelope is anchored in the dependence-mechanism known-answer test of Section 7.1, not in the hypothesis the parity test rejects.
+
+**The parity note, with the criterion fixed before execution.** Under permutation of the 300 coverages, the 23-versus-12 allocation between the hash:32 partitions has *p* = 0.028 \< 0.05, so the single 11.7% point over 299 pairs loses its exchangeability license, and the primary presentation of that row is the pair of partitions. The caveat is registered rather than acted on: two instruments were tested and the *p* is unadjusted (Bonferroni would give 0.056); adjusting the criterion after seeing the result is the practice this project polices, so the criterion stands and the caveat is printed. For onnx:384, *p* = 0.889 and the single point keeps its license.
+
+**A count free of distributional assumptions.** G = 63 of the 300 generations (21.0%) participate in at least one firing under hash:32 (35 events across 28 connected components; on a path, *k* edges touch at least *k* + 1 vertices), and G = 29/300 (9.7%) under onnx:384. (A pairing-free bound of ⌈k/2⌉ generations would also hold, but it is loose — 3.2–3.5 times below the exact count, and 2.0 times below the *k* + 1 bound.) The count is evidence of breadth — the effect is not concentrated in a few generations — and it is not a substitute for the interval.
+
+**Why θ = 0.10.** θ = 0.10 is numerically equal to one importance point of the score — an equality of magnitude, not of object. The **unit** 0.100 is pre-registered; the **threshold** on \|Δcoverage\| is not — its justification is the system’s own scale, fixed a priori, not a selection from the 60-threshold sweep that exists in the artifacts.
+
+**The boundary with conformal outlier testing.** The abstract of Bates et al. (2023) names this measurand literally: *“a uniform confidence bound for the false positive rate of any outlier detection algorithm, as a function of the threshold applied to its raw statistics.”* There is no boundary of object between that work and this subsection — there are two levels of rigor on the same object. We report the pointwise interval at a single threshold declared a priori — the weakest device — and claim no simultaneous validity over the swept grid. The empirical finding is not theirs; the instrument with guarantees is. The uniform band is not used here because its finite-sample guarantee requires exchangeable inliers, an assumption this null does not satisfy (Section 9 names the three levels at which it fails). Bates et al. (2023) construct the band with the guarantee; what we did not locate, in the declared and non-exhaustive prior-art sweep, is a measurement of an agent’s memory gate firing on the resampling null of its own instrument — that, and only that, is what this subsection claims.
+
+## 8. How deployed systems set their gates
+
+**Claim, and only this claim:** none of the systems examined expresses its gate in units of the floor of its own instrument. This is not “nobody calibrates”: SAGE calibrates its thresholds offline against task data (S. Wang et al., 2026), and `semantic-router` exposes a `fit()` that tunes thresholds per label — partial counterexamples that sit inside the boundary of the claim, not outside it.
+
+The rule of pertinence is declared, and the sample is one of convenience, not a census: public code with a write or retrieval gate governed by a similarity or surprise score, the gate locatable at a `path:LINE` under a pinned commit with a resolvable permalink. Eight systems qualify: `mem0`, `crewAI`, `graphiti`/Zep, Generative Agents, `semantic-router`, `A-MEM`, Letta/MemGPT and Voyager. LangChain, LlamaIndex and AutoGPT were not swept — a declared gap, not a verdict.
+
+Table 8
+
+Gate constants in eight deployed systems (pinned commits, 2026-08-03)
+
+| System | Gate and constant | Location (`path:LINE`) | Basis stated |
+|----|----|----|----|
+| mem0 | hard similarity cut `< 0.5` (not reachable by config) | `mem0/memory/main.py:1764` | none |
+| mem0 | public default `threshold = 0.1` (overridable) | `mem0/memory/main.py:1356` | none |
+| crewAI | knowledge relevance cut `0.6` | `knowledge/knowledge_config.py:13-14` | none |
+| graphiti (Zep) | node-dedup cosine minimum `0.6` — decides whether a fact is new | `utils/maintenance/node_operations.py:65` | none |
+| Generative Agents | reflection trigger `importance_trigger_max = 150`; retrieval weights `[0.5, 3, 2]` with two alternatives left commented out | `scratch.py:61`; `retrieve.py:242-244` | none |
+| semantic-router | per-encoder cuts `0.3` / `0.5`; `fit()` tunes per label | `encoders/cohere.py:26`; `encoders/ollama.py:33`; `routers/base.py:1683` | partial (accuracy, not noise) |
+| A-MEM | evolution trigger `evo_threshold = 100`; encoder all-MiniLM-L6-v2 — the same family as this paper’s 384-d instrument | `memory_system.py:97` | none |
+| Letta (MemGPT) / Voyager | no threshold at all: top-k with fixed hybrid weights `0.5/0.5`; similarity score requested and discarded on unpack | `tpuf_client.py:800-801`; `voyager/agents/skill.py:119,125` | none |
+
+*Note.* Every line was re-verified against the pinned commit; permalinks and commit hashes ship in the replication repository. The distinction between a non-configurable literal (`mem0:1764`) and an overridable default (`mem0:1356`) is kept because only the first is beyond a user’s reach.
+
+Two systems sit outside the denominator and in the related work instead, because their gates are not bare constants in the same sense. SAGE’s offline calibration is the nearest practice to the protocol this paper transports — it calibrates against the distribution of *content*, not against the resampling variance of its own measuring instrument, which is precisely the boundary this paper draws. EM-LLM’s surprise gate is auto-normalized in a moving window, yet its shipped configurations set `surprisal_threshold_gamma: 1.0` on line 26 of all five backbone configs (pinned commit `edb2e4a6`) — the same bare constant transplanted across five backbones whose surprise scales differ; the gate adapts, the constant that scales it does not.
+
+## 9. The calibration tool and its guarantees, stated honestly
+
+The practical deliverable is `code/calibrate.py`: point it at an (embedder, vault, stimulus) triple and it returns the floor, the floor in signal units, and the trigger threshold in units of the floor. By Section 7.2, the protocol gains a mandatory step — measure the same statistic on content displacements and report the verdict of the exceedance rule; since the 2026-08-13 re-seal the sealed script executes that step (item 5 of its published fix queue below), and its printed verdict on this vault is the negative one Section 7.2 found: resampling does not exceed content. The novelty is partial and the discriminator is declared: repetition under an identical input is already used by evaluation harnesses to correct clustered variance in benchmark accuracy (Miller, 2024, cited in `inspect_ai`’s clustered standard error), but that line estimates the standard error of an aggregate task score and emits no threshold; the repetition null here estimates the floor of the *measuring instrument* and re-expresses the gate in units of it.
+
+**What the tool emits, positioned honestly.** The threshold it returns is an empirical quantile of the null — in form, a split-calibration quantile. The base with finite-sample guarantees exists (Bates et al., 2023); the contribution of this tool is *which null* to calibrate on and the translation into the system’s own constants — never the device. The conformal guarantee requires exchangeability between the calibration set and future points, and it fails here at three levels, each with proof in this paper’s own repository. Inside the calibration set, the 299 pairs of the original seal are consecutive and overlapping (1-dependence) — corrected in the reporting by the disjoint recut of Section 7.1 and, at the 2026-08-13 re-seal, in the artifact (fix 4 below); the re-sealed calibration keeps the consecutive cut and now declares it in its output, so the published floors are byte-identical to the original seal. Between calibration and deployment, the null is synthetic, single-generator, under an identical stimulus — and the declared homogeneity check fired (cosine 0.4106 against a 0.090 baseline), with the direction of the bias pre-declared as running toward the thesis; that check lives here as much as in Section 6, because this is where a guarantee would inherit it. Between calibration and vault, all pairs share one frozen 60-note vault, so the emitted threshold is conditional on it, and a production vault that grows invalidates the printed rate with nothing in the output warning the user. The locked formulation is conditional, not a bare negation: the guarantee requires exchangeable inliers; this null does not satisfy that assumption; the prescription for earning it is to calibrate on disjoint pairs of a vault representative of deployment traffic — a prescription the deliverable could not execute at the original seal, because its pairing was consecutive and hard-coded; since the 2026-08-13 re-seal `--pairing disjoint` is the default, and the representativeness of the vault remains the user’s burden.
+
+**What *n* governs.** The coverage of a split-conformal quantile is distributed as Beta(*n* + 1 − *l*, *l*) with *l* = ⌊(*n* + 1)α⌋ (Vovk, as presented in Angelopoulos & Bates, 2021, §3.2). The *n* ≈ 1000 guideline concerns the dispersion of realized coverage, not the existence of the quantile: at *n* = 1000, α = 0.1, ±2 s.d. of coverage is \[0.881; 0.919\] — reproducing the tutorial’s “.88 to .92” — while at *n* = 299 it is \[0.865; 0.935\], ±3.5 points against ±2. This rule governs the tool (which must print its coverage slack given *n*; per the reference table in Angelopoulos & Bates, 2021, ε = 0.1 needs *n* = 22, ε = 0.05 needs 102, and ε = 0.01 needs 2,491 — *n* = 299 sits between the last two); the rates of Section 7.5 are carried by their own intervals, not by this rule. One anti-fusion note, kept because the arithmetic invites the error: Beta(*n* + 1 − *l*, *l*) is the distribution of a conformal interval’s *coverage*; the Clopper–Pearson Betas are the uncertainty of a *proportion*; at *n* around 300 and α = 0.01 the two produce coincidentally similar small integers, and no inference in this paper leans on that coincidence.
+
+**The published fix queue of the sealed artifact.** The script is sealed in the provenance chain, so corrections enter at a dated re-seal rather than by silent edit; the queue below was published first and executed in full at the 2026-08-13 re-seal, and it remains published as the record: (1) the conformal quantile index was `⌈q·n⌉ − 1` where it should be `⌈(n+1)(1−α)⌉ − 1` — the two coincide at *n* = 299 for the shipped rates by accident, and diverge at other *n*; (2) the artifact emitted a rate line the paper has retired; (3) the tool did not print the coverage slack ε given *N*, and a flag whose 0.10 rate collided with the 0.10 threshold needed renaming; (4) there was no `--pairing disjoint|consecutive` option, without which the exchangeability prescription above was not executable by the deliverable; (5) the resampling-versus-content pair and the verdict of the Section 7.2 rule were absent. The re-sealed calibration reproduces the published floors and thresholds byte-for-byte under its declared consecutive pairing.
+
+## 10. Discussion and limitations
+
+The practical recommendation is a protocol, not a new algorithm: before trusting an intrinsic-motivation trigger computed over embeddings of sampled text, measure the instrument’s floor in the agent’s own configuration by running the repetition null, and report the trigger threshold in units of that floor. An agent whose novelty threshold sits below its own noise floor is, in the strict sense of signal detection, a detector operating below its resolution (Green & Swets, 1966). The cost is one afternoon of compute; the alternative is a curiosity signal of unknown provenance.
+
+The limitations are load-bearing and we state them in the same breath as the claims.
+
+**Evidence class of the instance.** The measured instance is operator-attested, cited by file, line, commit and tag, with sanitized numeric derivatives published, origin hashes pinned, and a public DOI-dated artifact affirming the same configuration (Flores, 2026b). It is not third-party auditable, and no headline number depends on it. Its role is corroboration, strengthened by the clean-room agreement of 0.1795 against 0.177.
+
+**The corpus.** The harness corpus is generated by one hosted model at one temperature, and its declared sanity check fired: it is stylistically homogeneous relative to hand-written text. Section 6 bounds the consequence for the pre-registered ratio numerically; the bound does not make the corpus representative of agent-generated text in general, and the semantic floor of Section 7.1 is measured on vault heterogeneities reachable inside this corpus only.
+
+**Statistical reach.** The trigger ablation rests on 40 probes; failing to reject an association at that size is weak evidence, and we phrase it as such throughout. The permutation plan was fixed in advance, which protects against selective reporting, not against low power. The parity finding of Section 7.5 carries its unadjusted-*p* caveat in place.
+
+**One instance, one instrument family, one vault.** One host, one production embedder, one encoder family, one frozen 60-note vault — and every interval in this paper is conditional on that vault (Sections 7.1 and 9). The generalization to other LLM agents is argued from the pattern in Table 1 and the audit in Table 8 — those systems instrument novelty the same way and budget noise the same way, which is to say not at all — and it remains a hypothesis, not a result.
+
+**What the agent is, and is not.** The instance implements a propose-only cognition with no reward and no learning-progress estimator; calling it a curiosity-driven agent in the reinforcement-learning sense would be an over-claim, and the trigger studied here is an information-gap trigger. Its runs have been short-lived, without a persistent life across sessions and without an interlocutor, and its generation engine is external and unseeded.
+
+**What is declared but not run.** The pre-registration seals a second family of hypotheses, with the same thresholds, to be executed inside the instance itself — a repetition null over at least 300 cycles and a trigger-level ablation over at least 40 probe drafts; this release ships that protocol, and the results land in a superseding release. The spectral study that could promote the intervention residual of Section 7.2 to a mechanism was not run. The content-displacement versions of the anisotropy diagnostics were not run. D = 4, the removal depth recommended by Mu et al. (2018), was not tested. A natural corpus as an encoder-versus-generator control does not exist in this release by design. The adjacency between hubness surveillance in retrieval stores (reverse-kNN quarantine at admission; P. K. Pathak & Sharma, 2026, a preprint without venue) and the false-trigger channel of Sections 7.5 and 9 is registered and not adjudicated. The origin reference of the participation ratio remains unverified (Section 3). No claim in this paper draws on any of these.
+
+**Reproducibility.** The replication repository ships the frozen corpora, the analyzers, the pre-registration, the dated amendment, the sealed scores and the figures, with a verification script that recomputes the whole chain from disk and exits non-zero on any mismatch. Two seals are distinguished and never conflated: frozen evidence, where the seal proves non-tampering but not regeneration (temperature sampling is the phenomenon under study, so identical text cannot be re-drawn), and reproducible derivation, where every number in this paper is recomputed from those frozen bytes.
+
+## 11. Conclusion
+
+The noisy TV was never only about televisions. It is about a motivational signal that can be captured by a source of variation the agent cannot reduce. Reinforcement learning found that source in the environment and neutralized it in the reward channel. LLM agents have introduced a second source, closer to home: the instrument that turns their own sampled text into a number. Measured in a clean-room harness under a declared post-data amendment, the resampling floor of the retrieval score term in the configuration of a real deployed instance is 0.2507 RMS — 2.211 times the recency signal and 2.507 times the importance signal it competes with, with the envelope’s lower end at 2.163, and the whole number predictable in advance at ‖δ‖/√*d* — ≈ √(2/*d*) here — by anyone who looked. Even the well-dimensioned semantic instrument spends 0.576 of a day of decay on pure resampling, a bare one-importance-point threshold fires on nothing at rates incompatible with zero in this vault and encoder, and which candidates a trigger ranks first depends on the instrument, not the stimulus. The remedy is neither exotic nor expensive: run the repetition null, publish the floor, and state the trigger threshold in units of it. Until a system does that, the honest description of its curiosity is that its provenance is unknown.
+
+**Code and data availability.** The replication repository — frozen corpora, analyzers, pre-registration, amendment, sealed scores, figures and the provenance-chain verifier — accompanies this paper at https://github.com/ulissesflores/noisy-tv-measurement-channel. The earlier public software artifact of the measured instance is archived at https://doi.org/10.5281/zenodo.21764607 (Flores, 2026b).
+
+**Author disclosure.** Portions of the analysis tooling and the manuscript were drafted with AI assistance under the author’s direction and review; all numbers reported here are recomputed by the sealed pipeline from frozen data.
+
+## References
+
+Angelopoulos, A. N., & Bates, S. (2021). A gentle introduction to conformal prediction and distribution-free uncertainty quantification. arXiv. https://arxiv.org/abs/2107.07511
+
+Antoniak, M., & Mimno, D. (2018). Evaluating the stability of embedding-based word similarities. *Transactions of the Association for Computational Linguistics, 6*, 107–119. https://doi.org/10.1162/tacl_a_00008
+
+Atil, B., Aykent, S., Chittams, A., Fu, L., Passonneau, R. J., Radcliffe, E., Rajagopal, G. R., Sloan, A., Tudrej, T., Ture, F., Wu, Z., Xu, L., & Baldwin, B. (2025). Non-determinism of “deterministic” LLM settings. arXiv. https://arxiv.org/abs/2408.04667
+
+Bates, S., Candès, E., Lei, L., Romano, Y., & Sesia, M. (2023). Testing for outliers with conformal p-values. *The Annals of Statistics, 51*(1), 149–178. https://doi.org/10.1214/22-AOS2244
+
+Beutel, A., Xiao, K., Heidecke, J., & Weng, L. (2024). Diverse and effective red teaming with auto-generated rewards and multi-step reinforcement learning. arXiv. https://arxiv.org/abs/2412.18693
+
+Burda, Y., Edwards, H., Pathak, D., Storkey, A., Darrell, T., & Efros, A. A. (2019a). Large-scale study of curiosity-driven learning. *7th International Conference on Learning Representations (ICLR 2019)*. https://arxiv.org/abs/1808.04355
+
+Burda, Y., Edwards, H., Storkey, A., & Klimov, O. (2019b). Exploration by random network distillation. *7th International Conference on Learning Representations (ICLR 2019)*. https://arxiv.org/abs/1810.12894
+
+Chun, C., Canatar, A., Chung, S., & Lee, D. (2025). Estimating dimensionality of neural representations from finite samples. arXiv. https://arxiv.org/abs/2509.26560
+
+Colas, C., Teodorescu, L., Oudeyer, P.-Y., Yuan, X., & Côté, M.-A. (2023). Augmenting autotelic agents with large language models. *Proceedings of the 2nd Conference on Lifelong Learning Agents (CoLLAs 2023)*. https://doi.org/10.48550/arXiv.2305.12487
+
+Currie, L. A. (1968). Limits for qualitative detection and quantitative determination: Application to radiochemistry. *Analytical Chemistry, 40*(3), 586–593. https://doi.org/10.1021/ac60259a007
+
+Elmoznino, E., Bhardwaj, S., von Oswald, J., Nasser, R., Agüera y Arcas, B., Sacramento, J., Saurous, R. A., & Lajoie, G. (2026). Can in-context learning support intrinsic curiosity? arXiv. https://arxiv.org/abs/2606.19476
+
+Ernst, M. D. (2004). Permutation methods: A basis for exact inference. *Statistical Science, 19*(4). https://doi.org/10.1214/088342304000000396
+
+Ethayarajh, K. (2019). How contextual are contextualized word representations? Comparing the geometry of BERT, ELMo, and GPT-2 embeddings. *Proceedings of the 2019 Conference on Empirical Methods in Natural Language Processing and the 9th International Joint Conference on Natural Language Processing (EMNLP-IJCNLP)*, 55–65. https://doi.org/10.18653/v1/D19-1006
+
+Flores, C. U. (2026a). Grounding doesn’t pay: A token-matched negative result on creative diversity. Codex Hash Research Laboratory. https://doi.org/10.5281/zenodo.21445129
+
+Flores, C. U. (2026b). noisy-tv-instrumentation (Version 1.0.0) \[Computer software\]. Codex Hash Research Laboratory. https://doi.org/10.5281/zenodo.21764607
+
+Fountas, Z., Benfeghoul, M. A., Oomerjee, A., Christopoulou, F., Lampouras, G., Bou-Ammar, H., & Wang, J. (2025). Human-inspired episodic memory for infinite context LLMs. *13th International Conference on Learning Representations (ICLR 2025)*. https://arxiv.org/abs/2407.09450
+
+Gaven, L., Carta, T., Romac, C., Colas, C., Lamprier, S., Sigaud, O., & Oudeyer, P.-Y. (2025). MAGELLAN: Metacognitive predictions of learning progress guide autotelic LLM agents. *Proceedings of the 42nd International Conference on Machine Learning (ICML 2025)*. https://doi.org/10.48550/arXiv.2502.07709
+
+Goodhart, C. A. E. (1984). Problems of monetary management: The UK experience. In *Monetary theory and practice* (pp. 91–121). Macmillan. https://doi.org/10.1007/978-1-349-17295-5_4
+
+Green, D. M., & Swets, J. A. (1966). *Signal detection theory and psychophysics*. Wiley.
+
+Holtzman, A., Buys, J., Du, L., Forbes, M., & Choi, Y. (2020). The curious case of neural text degeneration. *8th International Conference on Learning Representations (ICLR 2020)*. https://arxiv.org/abs/1904.09751
+
+Hong, Z.-W., Shenfeld, I., Wang, T.-H., Chuang, Y.-S., Pareja, A., Glass, J., Srivastava, A., & Agrawal, P. (2024). Curiosity-driven red-teaming for large language models. *12th International Conference on Learning Representations (ICLR 2024)*. https://doi.org/10.48550/arXiv.2402.19464
+
+Hou, Z., An, Z., & Du, W. (2026). Beyond noisy-TVs: Noise-robust exploration via learning progress monitoring. *14th International Conference on Learning Representations (ICLR 2026)*. https://arxiv.org/abs/2509.25438
+
+Jacobs, A. Z., & Wallach, H. (2021). Measurement and fairness. *Proceedings of the 2021 ACM Conference on Fairness, Accountability, and Transparency (FAccT ’21)*. https://doi.org/10.1145/3442188.3445901
+
+Jacobson, N. S., & Truax, P. (1991). Clinical significance: A statistical approach to defining meaningful change in psychotherapy research. *Journal of Consulting and Clinical Psychology, 59*(1), 12–19. https://doi.org/10.1037/0022-006X.59.1.12
+
+Joint Committee for Guides in Metrology, JCGM. (2008). *Evaluation of measurement data — Guide to the expression of uncertainty in measurement* (JCGM 100:2008). Bureau International des Poids et Mesures. https://www.bipm.org/documents/20126/2071204/JCGM_100_2008_E.pdf
+
+Kaliyev, A., & Maryanskyy, A. (2026). How much coordination gain is real? A paired noise-floor protocol for multi-agent LLM benchmarks. *KDD 2026 Workshop on Agentic AI Evaluation and Trustworthiness*. https://github.com/abekek/coordination-noise-floor-protocol
+
+Lee, S., Kim, M., Cherif, L., Dobre, D., Lee, J., Hwang, S. J., Kawaguchi, K., Gidel, G., Bengio, Y., Malkin, N., & Jain, M. (2025). Learning diverse attacks on large language models for robust red-teaming and safety tuning. *13th International Conference on Learning Representations (ICLR 2025)*. https://arxiv.org/abs/2405.18540
+
+Li, B., Zhou, H., He, J., Wang, M., Yang, Y., & Li, L. (2020). On the sentence embeddings from pre-trained language models. *Proceedings of the 2020 Conference on Empirical Methods in Natural Language Processing (EMNLP)*, 9119–9130. https://doi.org/10.18653/v1/2020.emnlp-main.733
+
+Lidayan, A., Dennis, M., & Russell, S. (2025). BAMDP shaping: A unified framework for intrinsic motivation and reward shaping. *13th International Conference on Learning Representations (ICLR 2025)*. https://arxiv.org/abs/2409.05358
+
+Mavor-Parker, A. N., Young, K. A., Barry, C., & Griffin, L. D. (2022). How to stay curious while avoiding noisy TVs using aleatoric uncertainty estimation. *Proceedings of the 39th International Conference on Machine Learning*, PMLR 162, 15220–15240. https://proceedings.mlr.press/v162/mavor-parker22a.html
+
+Miller, E. (2024). Adding error bars to evals: A statistical approach to language model evaluations. arXiv. https://arxiv.org/abs/2411.00640
+
+Mu, J., Bhat, S., & Viswanath, P. (2018). All-but-the-top: Simple and effective postprocessing for word representations. *6th International Conference on Learning Representations (ICLR 2018)*. https://arxiv.org/abs/1702.01417
+
+Nakashima, S., & Hayashi, Y. (2016). Determination of detection limits and quantitation limits for compounds in a database of GC/MS by FUMI theory. *Mass Spectrometry (Tokyo), 5*(1), A0043. https://doi.org/10.5702/massspectrometry.A0043
+
+Oudeyer, P.-Y., & Kaplan, F. (2007). What is intrinsic motivation? A typology of computational approaches. *Frontiers in Neurorobotics, 1*, 6. https://doi.org/10.3389/neuro.12.006.2007
+
+Padmakumar, V., Yueh-Han, C., Pan, J., Chen, V., & He, H. (2026). Measuring LLM novelty as the frontier of original and high-quality output. *14th International Conference on Learning Representations (ICLR 2026)*. https://arxiv.org/abs/2504.09389
+
+Pathak, D., Agrawal, P., Efros, A. A., & Darrell, T. (2017). Curiosity-driven exploration by self-supervised prediction. *Proceedings of the 34th International Conference on Machine Learning*, PMLR 70, 2778–2787. https://proceedings.mlr.press/v70/pathak17a.html
+
+Pathak, P. K., & Sharma, T. K. (2026). When global gating is enough: Admission-time hubness control in anisotropic vector retrieval systems. arXiv. https://arxiv.org/abs/2606.19692
+
+Radovanović, M., Nanopoulos, A., & Ivanović, M. (2010). Hubs in space: Popular nearest neighbors in high-dimensional data. *Journal of Machine Learning Research, 11*(86), 2487–2531. https://jmlr.org/papers/v11/radovanovic10a.html
+
+Reimers, N., & Gurevych, I. (2019). Sentence-BERT: Sentence embeddings using Siamese BERT-networks. *Proceedings of the 2019 Conference on Empirical Methods in Natural Language Processing and the 9th International Joint Conference on Natural Language Processing (EMNLP-IJCNLP)*, 3980–3990. https://doi.org/10.18653/v1/D19-1410
+
+Renze, M. (2024). The effect of sampling temperature on problem solving in large language models. *Findings of the Association for Computational Linguistics: EMNLP 2024*, 7346–7356. https://doi.org/10.18653/v1/2024.findings-emnlp.432
+
+Rudman, W., Gillman, N., Rayne, T., & Eickhoff, C. (2022). IsoScore: Measuring the uniformity of embedding space utilization. *Findings of the Association for Computational Linguistics: ACL 2022*, 3325–3339. https://doi.org/10.18653/v1/2022.findings-acl.262
+
+Schmidhuber, J. (2010). Formal theory of creativity, fun, and intrinsic motivation (1990–2010). *IEEE Transactions on Autonomous Mental Development, 2*(3), 230–247. https://doi.org/10.1109/TAMD.2010.2056368
+
+Steck, H., Ekanadham, C., & Kallus, N. (2024). Is cosine-similarity of embeddings really about similarity? *Companion Proceedings of the ACM Web Conference 2024*, 887–890. https://doi.org/10.1145/3589335.3651526
+
+Strathern, M. (1997). ‘Improving ratings’: Audit in the British University system. *European Review, 5*(3), 305–321. [https://doi.org/10.1002/(sici)1234-981x(199707)5:3&lt;305::aid-euro184&gt;3.0.co;2-4](https://doi.org/10.1002/(sici)1234-981x(199707)5:3<305::aid-euro184>3.0.co;2-4)
+
+Su, J., Cao, J., Liu, W., & Ou, Y. (2021). Whitening sentence representations for better semantics and faster retrieval. arXiv. https://arxiv.org/abs/2103.15316
+
+Sutton, R. S., & Barto, A. G. (2018). *Reinforcement learning: An introduction* (2nd ed.). MIT Press.
+
+Tevet, G., & Berant, J. (2021). Evaluating the evaluation of diversity in natural language generation. *Proceedings of the 16th Conference of the European Chapter of the Association for Computational Linguistics (EACL 2021)*. https://doi.org/10.18653/v1/2021.eacl-main.25
+
+Timkey, W., & van Schijndel, M. (2021). All bark and no bite: Rogue dimensions in transformer language models obscure representational quality. *Proceedings of the 2021 Conference on Empirical Methods in Natural Language Processing (EMNLP)*, 4527–4546. https://doi.org/10.18653/v1/2021.emnlp-main.372
+
+Vivier, A., Fottorino, R., & Scot Rousse, B. (2010). Seuil de décision et limite de détection : estimation, interprétation et optimisation. 1ʳᵉ partie. *Radioprotection, 45*(3), 321–343. https://doi.org/10.1051/radiopro/2010011
+
+Wang, S., Brahma, D., & Henao, R. (2026). SAGE: A novelty gate for efficient memory evolution in agentic LLMs. arXiv. https://arxiv.org/abs/2605.30711
+
+Wang, Y. (2026). The dark room in the reward channel: Dense prediction rewards collapse GRPO-trained LLM agents — and what actually works. arXiv. https://arxiv.org/abs/2607.21273
+
+Welty, C., Paritosh, P., & Aroyo, L. (2019). Metrology for AI: From benchmarks to instruments. arXiv. https://arxiv.org/abs/1911.01875
+
+Zhang, Y., & Levin, M. (2026). Intelligence from learnable novelty. arXiv. https://arxiv.org/abs/2607.18433
+
+Zhao, A., Xu, Q., Lin, M., Wang, S., Liu, Y.-J., Zheng, Z., & Huang, G. (2025). DiveR-CT: Diversity-enhanced red teaming large language model assistants with relaxing constraints. *Proceedings of the AAAI Conference on Artificial Intelligence, 39*(24), 26021–26030. https://doi.org/10.1609/aaai.v39i24.34797
+
+Zheng, X., Wang, L., Liu, Y., Ma, X., Shen, C., & Wang, C. (2025). CALM: Curiosity-driven auditing for large language models. *Proceedings of the AAAI Conference on Artificial Intelligence (AAAI 2025)*. https://arxiv.org/abs/2501.02997

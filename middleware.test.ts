@@ -2,11 +2,45 @@ import { describe, it, expect } from 'vitest';
 import {
   stripLocalePrefix,
   isRewritablePublicRoute,
+  isIndexableResearchPaper,
+  researchPaperSlug,
   toMarkdownPath,
   collapseDuplicatedPrefix,
   mapPtAliases,
   extractLocale,
 } from './middleware';
+import { researchPapers } from './data/research';
+
+/*
+ * Os papers de `data/research.ts` moram em `/research/<slug>` ao lado das páginas geradas pelo
+ * UPKF, mas não têm o `.md` que a reescrita dos bots procura (o gerador não os conhece), e o
+ * corpo em `en` é o original, não tradução automática — o `noindex` dos locales não-pt-br
+ * apagaria do índice exatamente as páginas que carregam as tags do Google Scholar.
+ */
+describe('research papers no middleware', () => {
+  const paper = researchPapers[0];
+
+  it('reconhece o slug de um paper registrado e ignora os legados', () => {
+    expect(researchPaperSlug(`/research/${paper.slug}`)).toBe(paper.slug);
+    expect(researchPaperSlug('/research/2024-bitcoin-praxeology')).toBeNull();
+    expect(researchPaperSlug(`/whitepapers/${paper.slug}`)).toBeNull();
+    expect(researchPaperSlug(`/research/${paper.slug}/x`)).toBeNull();
+  });
+
+  it('não reescreve paper para .md (o arquivo não existe)', () => {
+    expect(isRewritablePublicRoute(`/research/${paper.slug}`)).toBe(false);
+    expect(isRewritablePublicRoute('/research/2024-bitcoin-praxeology')).toBe(true);
+  });
+
+  it('só é indexável no locale em que o corpo existe', () => {
+    for (const p of researchPapers) {
+      for (const locale of ['pt-br', 'en', 'es', 'it', 'he']) {
+        expect(isIndexableResearchPaper(`/research/${p.slug}`, locale), `${p.slug} ${locale}`).toBe(p.bodies.includes(locale as never));
+      }
+    }
+    expect(isIndexableResearchPaper('/research/2024-bitcoin-praxeology', 'en')).toBe(false);
+  });
+});
 
 describe('stripLocalePrefix', () => {
   it('returns / for root', () => {

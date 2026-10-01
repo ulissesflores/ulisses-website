@@ -4,6 +4,8 @@ import { knowledgeData } from '@/data/knowledge';
 import { upkfMeta } from '@/data/generated/upkf.generated';
 import { acervoCanonicalPath, acervoLatestPublishedAt } from '@/data/acervo-teologico';
 import { artigosByDateDesc, artigosCanonicalPath, artigosLatestDate } from '@/data/artigos';
+import { paperLanguageAlternates, paperUrl, researchPapersByDateDesc } from '@/data/research';
+import { softwareCanonicalPath, softwareMeasuredAt } from '@/data/software';
 import { buildLanguageAlternates, isPublicationNoindexed } from '@/data/seo';
 
 // ── Helpers ─────────────────────────────────────────────────────────────────────
@@ -149,6 +151,22 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ),
   ].filter((entry): entry is MetadataRoute.Sitemap[number] => Boolean(entry));
 
+  // Papers com corpo na página (`data/research.ts`): `hreflang` só entre os locales com corpo
+  // real — o helper geral anunciaria cinco idiomas para um corpo. A URL é a do idioma ORIGINAL
+  // (`/en/...` para paper em inglês): a rota sem prefixo de um paper sem corpo pt-br é `noindex`,
+  // e URL noindex no sitemap é o sinal conflitante que este arquivo já evita nas legadas. PDF
+  // espelho não entra: a página é o objeto. `/software` é a seção dos repositórios com DOI.
+  const researchPaperEntries = researchPapersByDateDesc().map((paper) => ({
+    url: paperUrl(paper, paper.language),
+    lastModified: paper.updatedAt,
+    changeFrequency: 'monthly' as const,
+    priority: 0.9,
+    alternates: { languages: paperLanguageAlternates(paper) },
+  }));
+  const softwareEntries = [maybeMakeSitemapEntry(softwareCanonicalPath, softwareMeasuredAt, 'monthly', 0.8)].filter(
+    (entry): entry is MetadataRoute.Sitemap[number] => Boolean(entry),
+  );
+
   const identidadeEntry = maybeMakeSitemapEntry('/identidade', upkfMeta.generatedAt, 'daily', 0.92);
 
   const commercialEntries = [
@@ -172,6 +190,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...(identidadeEntry ? [identidadeEntry] : []),
     ...commercialEntries,
     ...artigosEntries,
+    ...researchPaperEntries,
+    ...softwareEntries,
     ...simulationEntries,
     ...collectionEntries,
     ...publicationEntries,

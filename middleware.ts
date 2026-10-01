@@ -1,6 +1,8 @@
 import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
 import { SERMON_REDIRECTS } from './data/seo/sermon-redirects';
+import { findResearchPaper, hasBody } from './data/research';
+import type { Locale } from './data/i18n';
 
 // ─── Constants ─────────────────────────────────────────────────────────────────
 
@@ -77,9 +79,31 @@ export function stripLocalePrefix(pathname: string): string {
   return pathname;
 }
 
+/**
+ * Paper de `data/research.ts` servido em `/research/<slug>` (caminho já sem locale). Esses
+ * corpos são originais transportados do manuscrito, não tradução automática — por isso
+ * escapam do `noindex` dos locales não-pt-br quando o corpo existe naquele locale, e escapam
+ * da reescrita `.md` dos bots, que só existe para as páginas geradas pelo UPKF.
+ */
+export function researchPaperSlug(pathname: string): string | null {
+  const m = /^\/research\/([^/]+)$/.exec(pathname);
+  if (!m) return null;
+  return findResearchPaper(m[1]) ? m[1] : null;
+}
+
+export function isIndexableResearchPaper(pathname: string, locale: string): boolean {
+  const slug = researchPaperSlug(pathname);
+  if (!slug) return false;
+  const paper = findResearchPaper(slug);
+  return Boolean(paper && SUPPORTED_LOCALES.has(locale) && hasBody(paper, locale as Locale));
+}
+
 export function isRewritablePublicRoute(pathname: string): boolean {
   if (pathname === '/') {
     return true;
+  }
+  if (researchPaperSlug(pathname)) {
+    return false;
   }
   return REWRITABLE_PREFIXES.some(
     (prefix) => pathname === prefix || pathname.startsWith(`${prefix}/`),
@@ -201,7 +225,9 @@ export function middleware(request: NextRequest) {
 
   if (!AI_BOT_REGEX.test(ua)) {
     const res = NextResponse.next();
-    res.headers.set('X-Robots-Tag', 'noindex, follow');
+    if (!isIndexableResearchPaper(stripLocalePrefix(rawPathname), localeMatch[1].toLowerCase())) {
+      res.headers.set('X-Robots-Tag', 'noindex, follow');
+    }
     return res;
   }
 

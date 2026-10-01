@@ -82,7 +82,29 @@ async function loadGeneratedData() {
     artigos.push({ slug: a[1], title, path: `/artigos/${a[1]}` });
   }
 
-  return { publications, artigos, blogPostCount, sermonCount, certCount };
+  // Papers com corpo na página (data/research.ts) e software com DOI (data/software.ts):
+  // registros manuais, lidos por regex como os artigos. Os títulos ali estão em aspas DUPLAS
+  // (JSON), porque "Grounding Doesn't Pay" tem apóstrofo — o mesmo tropeço do marca-dagua-claude.
+  const papers = [];
+  const researchContent = readFileSync(join(ROOT, 'data/research.ts'), 'utf8');
+  // A URL é a do idioma original (`/en/...` quando o paper é em inglês): a rota sem prefixo de um
+  // paper sem corpo pt-br é `noindex` — mesma regra do sitemap.
+  const paperRe = /slug:\s*'([^']+)',\s*\n\s*title:\s*"((?:\\.|[^"\\])*)",\s*\n\s*language:\s*'([^']+)'/g;
+  let r;
+  while ((r = paperRe.exec(researchContent)) !== null) {
+    const prefix = r[3] === 'pt-br' ? '' : `/${r[3]}`;
+    papers.push({ slug: r[1], title: JSON.parse(`"${r[2]}"`), path: `${prefix}/research/${r[1]}` });
+  }
+
+  const software = [];
+  const softwareContent = readFileSync(join(ROOT, 'data/software.ts'), 'utf8');
+  const softwareRe = /repo:\s*'([^']+)',\s*\n\s*name:\s*(['"])((?:\\.|(?!\2)[^\\])*)\2[\s\S]*?conceptDoi:\s*'([^']+)'/g;
+  let sw;
+  while ((sw = softwareRe.exec(softwareContent)) !== null) {
+    software.push({ repo: sw[1], name: sw[3].replaceAll("\\'", "'"), doi: sw[4] });
+  }
+
+  return { publications, artigos, papers, software, blogPostCount, sermonCount, certCount };
 }
 
 // ── Generate llms.txt ───────────────────────────────────────────────────────────
@@ -160,6 +182,7 @@ function generateLlmsTxt(data) {
     '## Primary Collections',
     `- Artigos: ${origin}/artigos`,
     `- Research: ${origin}/research`,
+    `- Software: ${origin}/software`,
     `- Whitepapers: ${origin}/whitepapers`,
     `- Essays: ${origin}/essays`,
     `- Certifications: ${origin}/certifications`,
@@ -172,6 +195,20 @@ function generateLlmsTxt(data) {
   // Dynamic: list all publications
   for (const pub of data.publications) {
     lines.push(`- ${pub.title}: ${origin}${pub.path}`);
+  }
+
+  lines.push('');
+  lines.push('## Research Papers');
+  lines.push('Papers com o texto integral na página; PDF é espelho. DOI rotulado pelo objeto que identifica.');
+  for (const paper of data.papers) {
+    lines.push(`- ${paper.title}: ${origin}${paper.path}`);
+  }
+
+  lines.push('');
+  lines.push('## Software');
+  lines.push(`Repositórios com DOI (concept DOI, todas as versões). Software não é artigo: ${origin}/software`);
+  for (const item of data.software) {
+    lines.push(`- ${item.name}: https://doi.org/${item.doi}`);
   }
 
   lines.push('');
@@ -250,7 +287,7 @@ async function main() {
   const content = generateLlmsTxt(data);
 
   writeFileSync(join(ROOT, 'public/llms.txt'), content, 'utf8');
-  console.log(`  ✅ public/llms.txt updated (${data.publications.length} publications, ${data.blogPostCount} posts, ${data.sermonCount} sermons)`);
+  console.log(`  ✅ public/llms.txt updated (${data.publications.length} publications, ${data.papers.length} papers, ${data.software.length} software, ${data.artigos.length} artigos, ${data.blogPostCount} posts, ${data.sermonCount} sermons)`);
 }
 
 main().catch(err => {

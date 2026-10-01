@@ -3,6 +3,23 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { ArrowLeft, BookOpen, Calendar, Download, FileText } from 'lucide-react';
 import { publicationCollections, publications, type TranslatableLocale } from '@/data/publications';
+import {
+  AUTHOR,
+  abstractFor,
+  bodyLocaleFor,
+  findResearchPaper,
+  hasBody,
+  paperLanguageAlternates,
+  paperPath,
+  paperUrl,
+  plainAbstract,
+  researchPapers,
+  scholarDate,
+} from '@/data/research';
+import { PaperPage } from '@/components/research/paper-page';
+import { loadMdx } from '@/lib/content/mdx-loader';
+import { mdxComponents } from '@/lib/content/mdx-components';
+import { headingComponents } from '@/lib/content/mdx-heading-ids';
 import { upkfMeta } from '@/data/generated/upkf.generated';
 import { AuthorHubCard } from '@/components/author-hub-card';
 import { ArticleToc } from '@/components/article-toc';
@@ -16,16 +33,74 @@ interface PageProps {
 }
 
 export function generateStaticParams() {
-  return publications.map((publication) => ({
-    category: publication.category,
-    slug: publication.id,
-  }));
+  return [
+    ...researchPapers.map((paper) => ({ category: 'research', slug: paper.slug })),
+    ...publications.map((publication) => ({
+      category: publication.category,
+      slug: publication.id,
+    })),
+  ];
+}
+
+/**
+ * Papers reais (`data/research.ts`) moram em `/research/<slug>` ao lado das publicações
+ * geradas pelo UPKF. O ramo decide pelo registro, não pela categoria: um slug que está em
+ * `researchPapers` rende a página de paper; os outros seguem o renderizador legado abaixo.
+ */
+function researchPaperFor(category: string, slug: string) {
+  return category === 'research' ? findResearchPaper(slug) : undefined;
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { category, slug, locale: rawLocale } = await params;
   const locale = (isLocale(rawLocale) ? rawLocale : defaultLocale) as Locale;
   const dict = await getDictionary(locale);
+  const paper = researchPaperFor(category, slug);
+
+  if (paper) {
+    const original = paper.language;
+    const withBody = hasBody(paper, locale);
+    const abstract = abstractFor(paper, locale);
+    const description = toMetaDescription(abstract.text ? plainAbstract(abstract.text) : paper.title);
+    const pdf = paper.pdf?.[original];
+    return {
+      title: paper.title,
+      description,
+      // Locale sem corpo próprio: a página existe (o menu de idiomas não pode dar 404), mas o
+      // canonical aponta para o original e ela não entra no índice — metadado só do que mostra.
+      robots: withBody ? undefined : { index: false, follow: true },
+      authors: [{ name: AUTHOR.name, url: AUTHOR.orcid }],
+      alternates: {
+        canonical: withBody ? buildCanonical(locale, paperPath(paper)) : paperUrl(paper, original),
+        languages: paperLanguageAlternates(paper),
+      },
+      openGraph: {
+        images: defaultOgImages(locale),
+        type: 'article',
+        title: paper.title,
+        description,
+        url: paperUrl(paper, locale),
+        publishedTime: paper.publishedAt,
+        modifiedTime: paper.updatedAt,
+        authors: [AUTHOR.name],
+        tags: [...abstract.keywords],
+      },
+      // Google Scholar só na página do idioma original: cinco URLs com o mesmo `citation_title`
+      // viram registros duplicados (docs/06). Três tags obrigatórias + PDF no mesmo subdiretório.
+      // `citation_language` não existe na documentação do Scholar e não é emitida.
+      other:
+        locale === original
+          ? {
+              citation_title: paper.title,
+              citation_author: AUTHOR.citationName,
+              citation_publication_date: scholarDate(paper.publishedAt),
+              ...(pdf ? { citation_pdf_url: `${upkfMeta.primaryWebsite}${pdf.path}` } : {}),
+              ...(paper.doi ? { citation_doi: paper.doi.value } : {}),
+            }
+          : undefined,
+    };
+  }
+
   const publication = publications.find((item) => item.category === category && item.id === slug);
 
   if (!publication) {
@@ -75,7 +150,6 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       citation_title: localizedTitle as string,
       citation_author: upkfMeta.publicDisplayName || upkfMeta.displayName,
       citation_publication_date: publication.publishedAt,
-      citation_language: locale,
       citation_pdf_url: `${upkfMeta.primaryWebsite}${publication.primaryPdfUrl || publication.downloadUrl}`,
     },
   };
@@ -85,6 +159,17 @@ export default async function ArticlePage({ params }: PageProps) {
   const { category, slug, locale: rawLocale } = await params;
   const locale = (isLocale(rawLocale) ? rawLocale : defaultLocale) as Locale;
   const dict = await getDictionary(locale);
+  const paper = researchPaperFor(category, slug);
+
+  if (paper) {
+    const bodyLocale = bodyLocaleFor(paper, locale);
+    const mdx = await loadMdx('research', paper.slug, bodyLocale, { ...mdxComponents, ...headingComponents() });
+    if (!mdx) {
+      notFound();
+    }
+    return <PaperPage paper={paper} locale={locale} dict={dict} body={mdx.content} rawBody={mdx.rawBody} />;
+  }
+
   const t = dict.common.articleDetail;
   const publication = publications.find((item) => item.category === category && item.id === slug);
 

@@ -9,6 +9,8 @@
 
 import { describe, it, expect } from 'vitest';
 import { artigos } from './artigos';
+import { paperUrl, researchPapers } from './research';
+import { software } from './software';
 import { readFileSync, existsSync } from 'node:fs';
 import { resolve } from 'node:path';
 
@@ -72,5 +74,19 @@ describe('llms.txt — LLM SEO Integrity (Lote 22)', () => {
       .map((a) => `https://ulissesflores.com/artigos/${a.slug}`)
       .filter((url) => !content.includes(`: ${url}`));
     expect(ausentes).toEqual([]);
+  });
+
+  // Mesmo gate para os dois registros manuais novos, lidos pelo mesmo tipo de regex. A URL do
+  // paper é a do idioma original ("Grounding Doesn't Pay" tem apóstrofo — o tropeço documentado acima).
+  it('lista os 4 papers de data/research.ts pela URL do idioma original e os 11 software pelo DOI de conceito', () => {
+    const content = readFileSync(llmsPath, 'utf-8');
+    const papersAusentes = researchPapers
+      .map((p) => paperUrl(p, p.language))
+      .filter((url) => !content.includes(`: ${url}\n`));
+    expect(papersAusentes).toEqual([]);
+    const softwareAusente = software
+      .map((s) => `https://doi.org/${s.conceptDoi}`)
+      .filter((url) => !content.includes(`: ${url}\n`));
+    expect(softwareAusente).toEqual([]);
   });
 });
