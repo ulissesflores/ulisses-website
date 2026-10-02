@@ -11177,12 +11177,12 @@ export const stepFlowDatasets: Record<string, StepFlowDataset> = {
         detail: 'Tabela: US$ 0,15 / 0,50',
       },
       {
-        label: 'Hoje',
+        label: 'Até 09/09',
         detail: 'Metade: US$ 0,075 e 0,25',
       },
       {
         label: '09/09/2026',
-        detail: 'A promoção acaba',
+        detail: 'A promoção acabou',
         alert: true,
       },
     ],
@@ -11235,12 +11235,12 @@ export const stepFlowDatasets: Record<string, StepFlowDataset> = {
         detail: 'List: US$ 0.15 / 0.50',
       },
       {
-        label: 'Today',
+        label: 'Until Sep 9',
         detail: 'Half: US$ 0.075 and 0.25',
       },
       {
         label: 'Sep 9, 2026',
-        detail: 'The promotion ends',
+        detail: 'The promotion ended',
         alert: true,
       },
     ],
@@ -11294,12 +11294,12 @@ export const stepFlowDatasets: Record<string, StepFlowDataset> = {
         detail: 'Tarifa: 0,15 / 0,50 USD',
       },
       {
-        label: 'Hoy',
+        label: 'Hasta 09/09',
         detail: 'La mitad: 0,075 y 0,25',
       },
       {
         label: '09/09/2026',
-        detail: 'Acaba la promoción',
+        detail: 'Acabó la promoción',
         alert: true,
       },
     ],
@@ -11353,12 +11353,12 @@ export const stepFlowDatasets: Record<string, StepFlowDataset> = {
         detail: 'Listino: 0,15 / 0,50 USD',
       },
       {
-        label: 'Oggi',
+        label: 'Fino al 09/09',
         detail: 'La metà: 0,075 e 0,25',
       },
       {
         label: '09/09/2026',
-        detail: 'La promozione finisce',
+        detail: 'La promozione è finita',
         alert: true,
       },
     ],
@@ -11418,7 +11418,7 @@ export const stepFlowDatasets: Record<string, StepFlowDataset> = {
         alert: true,
       },
       {
-        label: 'היום',
+        label: 'עד 09/09',
         detail: 'חצי: 0.075 / 0.25',
       },
       {
