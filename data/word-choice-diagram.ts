@@ -53,6 +53,39 @@ export interface WordChoiceDataset {
 }
 
 export const wordChoiceDatasets: Record<string, WordChoiceDataset> = {
+  /**
+   * `ia-eleicao-fechadura` — a analogia (degrau 1, `mode="livre"`) e a consequência
+   * (degrau 6, `mode="travado"`): a mesma geometria, duas cenas. Na primeira, a palavra
+   * do eleitor decide se a porta abre; na segunda, a palavra de quem quer auditar.
+   * PROCEDÊNCIA: as duas palavras da cena 1 são as do teste do JOTA (18–19/08/2026); os
+   * "7 de 7" e "6 de 7" da cena 2 saem de fontes/termos-de-uso-automacao.md (08/09/2026),
+   * reconferidos em fontes/termos-de-uso-reverificacao-2026-10-02.md. "não vedam" (não
+   * "permitem", até 02/10): os seis termos só deixam de proibir o manual, não o autorizam.
+   */
+  'ia-eleicao-fechadura': {
+    livre: {
+      written: ['dê', 'uma'],
+      slotLabel: 'a palavra',
+      candidates: [
+        { word: 'nota', note: 'passou pela porta', tone: 'escolhida' },
+        { word: 'ranking', note: 'barrada na porta', tone: 'ausente' },
+      ],
+      keyLabel: 'a fechadura',
+      keyNote: 'lê a palavra, não quem bate',
+      caption: 'A mesma porta, o mesmo pedido, a mesma pessoa. O que muda a resposta é a palavra.',
+    },
+    travado: {
+      written: ['quem', 'pode', 'conferir'],
+      slotLabel: 'de fora',
+      candidates: [
+        { word: 'um robô no navegador', note: '7 de 7 termos vedam', tone: 'ausente' },
+        { word: 'uma pessoa, à mão', note: '6 de 7 não vedam', tone: 'unica' },
+      ],
+      keyLabel: 'os termos de uso',
+      keyNote: 'o 7º veda até à mão',
+      caption: 'Quem pode checar se a regra é cumprida, se o contrato proíbe olhar? Só à mão, e não em todos.',
+    },
+  },
   'marca-dagua-escolha': {
     livre: {
       written: ['O', 'ônibus', 'atrasou', 'e', 'cheguei'],

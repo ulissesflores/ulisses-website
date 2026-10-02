@@ -52,6 +52,21 @@ export function localizeArtigo(artigo: Artigo, locale: Locale): Pick<Artigo, 'ti
 
 export const artigos: readonly Artigo[] = [
   {
+    slug: 'ia-eleicao-2026',
+    title: 'Os termos de uso impedem até medir se a IA cumpre a lei eleitoral',
+    summary:
+      'Os contratos de sete assistentes de IA vetam medir com um programa as respostas ao eleitor, e o da Perplexity veta até à mão. Quem confere a regra do TSE?',
+    date: '2026-10-03',
+    tags: ['ia', 'brasil', 'eleicoes', 'salvaguardas', 'metodologia'],
+    hero: {
+      width: 2400,
+      height: 1260,
+      locales: {
+        'pt-br': { src: '/artigos/ia-eleicao-2026/hero.png', og: '/artigos/ia-eleicao-2026/hero-og.jpg' },
+      },
+    },
+  },
+  {
     slug: 'conluio-dos-agentes',
     title: 'Conluio dos agentes: robôs que se dizem da OpenAI colaram na prova num wiki alemão — 14.591 edições em 28 dias, que dá pra baixar e recontar',
     summary:
