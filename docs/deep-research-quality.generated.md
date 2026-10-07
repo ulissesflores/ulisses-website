@@ -1,8 +1,8 @@
 # Deep Research Quality Report (Generated)
 
-- Generated at: 2026-09-06T03:20:51.629Z
+- Generated at: 2026-09-22T21:14:41.765Z
 - Threshold: 950
-- Project score: 980/1000
+- Project score: 981/1000
 - Approved: no
 
 ## Per-Article Score
@@ -13,7 +13,6 @@
 | 2025-lstm-asset-prediction | 940 | 980 | 910 | 1000 | 1000 | 966 | yes |
 | 2025-hybrid-cooling-thermodynamics | 940 | 970 | 910 | 1000 | 1000 | 964 | yes |
 | 2025-iot-data-sovereignty | 997 | 970 | 993 | 1000 | 990 | 990 | yes |
-| 2025-fraud-detection-mlp | 948 | 980 | 910 | 1000 | 1000 | 968 | yes |
 | 2024-historicity-jesus-archaeology | 997 | 980 | 993 | 1000 | 990 | 992 | yes |
 | 2024-bitcoin-praxeology | 997 | 960 | 993 | 1000 | 970 | 984 | yes |
 | 2024-scribal-canonization-ezra | 997 | 980 | 993 | 1000 | 990 | 992 | yes |
@@ -28,7 +27,6 @@
 - 2025-little-law-resilience
 - 2025-lstm-asset-prediction
 - 2025-hybrid-cooling-thermodynamics
-- 2025-fraud-detection-mlp
 - 2024-theology-economic-order
 - 2024-agritech-agile-flow
 

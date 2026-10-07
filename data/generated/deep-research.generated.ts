@@ -118,28 +118,6 @@ export const deepResearchArtifacts: Record<string, DeepResearchArtifact> = {
     "polymathicIndex": 990,
     "qualityScore": 990
   },
-  "2025-fraud-detection-mlp": {
-    "slug": "2025-fraud-detection-mlp",
-    "title": "Detecção de Fraudes em Cartões com Redes Neurais",
-    "abstract": "Este trabalho apresenta um estudo de caso de detecção de fraudes em cartões de crédito sob forte desbalanceamento, comparando um Perceptron Multi-Camadas (MLP) supervisionado às alternativas Autoencoder (AE), Regressão Logística (LR) e Isolation Forest (IF) no conjunto público ULB/Worldline. O protocolo prioriza métricas apropriadas a classes raras, em especial AUC-PR e F1 (além de Fβ), com thresholds calibrados na validação e aplicados no teste; reportamos curvas ROC/PR, matrizes de confusão, importância por permutação e teste de robustez a variações de prevalência. O MLP obteve o melhor F1 na classe positiva e AUC-PR competitiva, superando AE/IF e empatando/superando LR; discutimos escolha de limiar sensível a custos, calibração e governança, com artefatos completos para replicação (SAITO; REHMSMEIER, 2015; DAVIS; GOADRICH, 2006).",
-    "abstractEn": "This paper presents a credit card fraud detection case study under severe class imbalance, benchmarking a supervised MLP against Autoencoder, Logistic Regression and Isolation Forest on the public ULB/Worldline dataset. The protocol emphasizes PR-AUC and F1/Fβ thresholds calibrated on validation; we report ROC/PR curves, confusion matrices, permutation feature importance and a prior-shift robustness test. The MLP achieved the best F1 on the positive class and competitive PR-AUC, surpassing AE/IF and matching/exceeding LR. We discuss cost-sensitive thresholding, calibration and governance, providing full artifacts for replication (IBM Skills Network, 2025a; SAITO; REHMSMEIER, 2015; DAVIS; GOADRICH, 2006).",
-    "citation": "Ulisses Flores (2026) Detecção de Fraudes em Cartões com Redes Neurais. Codex Hash Research Lab.",
-    "files": {
-      "md": "/deep-research/2025-fraud-detection-mlp/deep-research.md",
-      "pdf": "/deep-research/2025-fraud-detection-mlp/deep-research.pdf",
-      "docx": "/deep-research/2025-fraud-detection-mlp/deep-research.docx"
-    },
-    "quality": {
-      "phase1": 948,
-      "phase2": 980,
-      "phase3": 910,
-      "compliance": 1000,
-      "polymathic": 1000,
-      "macro": 968
-    },
-    "polymathicIndex": 1000,
-    "qualityScore": 968
-  },
   "2024-historicity-jesus-archaeology": {
     "slug": "2024-historicity-jesus-archaeology",
     "title": "Análise Historiográfica e Arqueológica Exaustiva: A Historicidade de Jesus",

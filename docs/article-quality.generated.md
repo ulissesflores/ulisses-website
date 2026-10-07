@@ -3,7 +3,7 @@
 - Generated at: 2026-02-21
 - Rubric: Yape model (Resumo, Introducao, Desenvolvimento, Consideracoes Finais, Referencias, SEO/GEO)
 - Threshold (SOTA): 950
-- Project score: 927/1000
+- Project score: 933/1000
 - Approved: no
 
 ## Per-Article Scores
@@ -14,7 +14,6 @@
 | 2025-lstm-asset-prediction | 1000 | 1000 | 1000 | 1000 | 700 | 1000 | 950 | yes |
 | 2025-hybrid-cooling-thermodynamics | 0 | 1000 | 1000 | 1000 | 700 | 1000 | 783 | no |
 | 2025-iot-data-sovereignty | 960 | 948 | 934 | 972 | 1000 | 1000 | 969 | yes |
-| 2025-fraud-detection-mlp | 893 | 1000 | 1000 | 533 | 700 | 1000 | 854 | no |
 | 2024-historicity-jesus-archaeology | 960 | 946 | 933 | 972 | 1000 | 1000 | 969 | yes |
 | 2024-bitcoin-praxeology | 974 | 958 | 932 | 972 | 1000 | 1000 | 973 | yes |
 | 2024-scribal-canonization-ezra | 956 | 946 | 930 | 963 | 1000 | 1000 | 966 | yes |
@@ -31,9 +30,6 @@
 - [2025-little-law-resilience] Adicionar referencias com DOI/URL verificavel e maior diversidade bibliografica.
 - [2025-hybrid-cooling-thermodynamics] Expandir resumo com objetivo, metodo e resultado mensuravel.
 - [2025-hybrid-cooling-thermodynamics] Adicionar referencias com DOI/URL verificavel e maior diversidade bibliografica.
-- [2025-fraud-detection-mlp] Expandir resumo com objetivo, metodo e resultado mensuravel.
-- [2025-fraud-detection-mlp] Reforcar limitacoes e agenda de pesquisa futura na conclusao.
-- [2025-fraud-detection-mlp] Adicionar referencias com DOI/URL verificavel e maior diversidade bibliografica.
 - [2024-theology-economic-order] Expandir resumo com objetivo, metodo e resultado mensuravel.
 - [2024-theology-economic-order] Adicionar referencias com DOI/URL verificavel e maior diversidade bibliografica.
 

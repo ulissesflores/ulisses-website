@@ -2,7 +2,7 @@
   "generatedAt": "2026-02-21",
   "rubric": "Yape model (Resumo, Introducao, Desenvolvimento, Consideracoes Finais, Referencias, SEO/GEO)",
   "threshold": 950,
-  "projectScore": 927,
+  "projectScore": 933,
   "approvedSota": false,
   "pendingActions": [
     "[2025-little-law-resilience] Aumentar profundidade de metodo/resultados/discussao com evidencias adicionais.",
@@ -10,9 +10,6 @@
     "[2025-little-law-resilience] Adicionar referencias com DOI/URL verificavel e maior diversidade bibliografica.",
     "[2025-hybrid-cooling-thermodynamics] Expandir resumo com objetivo, metodo e resultado mensuravel.",
     "[2025-hybrid-cooling-thermodynamics] Adicionar referencias com DOI/URL verificavel e maior diversidade bibliografica.",
-    "[2025-fraud-detection-mlp] Expandir resumo com objetivo, metodo e resultado mensuravel.",
-    "[2025-fraud-detection-mlp] Reforcar limitacoes e agenda de pesquisa futura na conclusao.",
-    "[2025-fraud-detection-mlp] Adicionar referencias com DOI/URL verificavel e maior diversidade bibliografica.",
     "[2024-theology-economic-order] Expandir resumo com objetivo, metodo e resultado mensuravel.",
     "[2024-theology-economic-order] Adicionar referencias com DOI/URL verificavel e maior diversidade bibliografica."
   ],
@@ -118,34 +115,6 @@
         "conclusionWords": 163,
         "referencesCount": 6,
         "referencesWithUrl": 6
-      }
-    },
-    {
-      "id": "2025-fraud-detection-mlp",
-      "title": "Detecção de Fraudes em Cartões com Redes Neurais",
-      "canonicalUrl": "https://ulissesflores.com/research/2025-fraud-detection-mlp",
-      "partScores": {
-        "resumo": 893,
-        "introducao": 1000,
-        "desenvolvimento": 1000,
-        "consideracoesFinais": 533,
-        "referencias": 700,
-        "seoGeo": 1000
-      },
-      "finalScore": 854,
-      "approvedSota": false,
-      "improvementActions": [
-        "Expandir resumo com objetivo, metodo e resultado mensuravel.",
-        "Reforcar limitacoes e agenda de pesquisa futura na conclusao.",
-        "Adicionar referencias com DOI/URL verificavel e maior diversidade bibliografica."
-      ],
-      "metrics": {
-        "abstractWords": 119,
-        "introWords": 397,
-        "developmentWords": 1138,
-        "conclusionWords": 71,
-        "referencesCount": 19,
-        "referencesWithUrl": 0
       }
     },
     {

@@ -103,32 +103,6 @@
       "url": "https://gaia-x.eu/what-is-gaia-x/"
     }
   ],
-  "2025-fraud-detection-mlp": [
-    {
-      "citation": "Ngai, E. W. T. et al. (2011). The application of data mining techniques in financial fraud detection.",
-      "url": "https://doi.org/10.1016/j.dss.2010.08.006"
-    },
-    {
-      "citation": "Whitrow, C. et al. (2009). Transaction aggregation as a strategy for credit card fraud detection.",
-      "url": "https://doi.org/10.1016/j.eswa.2008.10.008"
-    },
-    {
-      "citation": "Jurgovsky, J. et al. (2018). Sequence classification for credit-card fraud detection.",
-      "url": "https://arxiv.org/abs/1811.07293"
-    },
-    {
-      "citation": "Carcillo, F. et al. (2021). Combining unsupervised and supervised learning in credit card fraud detection.",
-      "url": "https://doi.org/10.1016/j.is.2021.101705"
-    },
-    {
-      "citation": "Bahnsen, A. C. et al. (2016). Classifying highly imbalanced data using cost-sensitive decision trees.",
-      "url": "https://doi.org/10.1016/j.eswa.2016.05.032"
-    },
-    {
-      "citation": "NIST. AI Risk Management Framework 1.0.",
-      "url": "https://www.nist.gov/itl/ai-risk-management-framework"
-    }
-  ],
   "2024-historicity-jesus-archaeology": [
     {
       "citation": "Ehrman, B. D. (2012). Did Jesus Exist?",

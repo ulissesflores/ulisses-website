@@ -93,17 +93,20 @@ describe('DOI — nenhum identificador fabricado pelo gerador', () => {
     }
   });
 
-  it('as 4 obras sem original nao voltaram ao registro', () => {
+  it('as 4 obras sem original e a pagina legada da deteccao de fraudes nao voltaram ao registro', () => {
     const removidas = [
       '2024-ring-signatures-privacy',
       '2023-digital-legacy',
       '2022-theology-of-hope',
       '2020-robotics-education',
+      // 2026-09-22: o texto servido era gerado e o original e coursework confidencial; a obra real
+      // derivada dele e `operating-point-dominance` (data/research.ts), e a rota legada faz 308 para la.
+      '2025-fraud-detection-mlp',
     ];
     const presentes = publications.map((p) => p.id);
     for (const slug of removidas) {
       expect(presentes, `${slug} voltou ao registro sem original recuperado`).not.toContain(slug);
     }
-    expect(publications.length).toBe(14);
+    expect(publications.length).toBe(13);
   });
 });

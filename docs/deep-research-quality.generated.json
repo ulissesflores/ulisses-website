@@ -1,13 +1,12 @@
 {
-  "generatedAt": "2026-09-06T03:20:51.629Z",
+  "generatedAt": "2026-09-22T21:14:41.765Z",
   "threshold": 950,
-  "projectScore": 980,
+  "projectScore": 981,
   "approved": false,
   "pending": [
     "2025-little-law-resilience",
     "2025-lstm-asset-prediction",
     "2025-hybrid-cooling-thermodynamics",
-    "2025-fraud-detection-mlp",
     "2024-theology-economic-order",
     "2024-agritech-agile-flow"
   ],
@@ -90,26 +89,6 @@
         "references": 6,
         "referencesWithUrl": 6,
         "refCoverage": 1
-      }
-    },
-    {
-      "id": "2025-fraud-detection-mlp",
-      "title": "Detecção de Fraudes em Cartões com Redes Neurais",
-      "quality": {
-        "phase1": 948,
-        "phase2": 980,
-        "phase3": 910,
-        "compliance": 1000,
-        "polymathic": 1000,
-        "macro": 968
-      },
-      "metrics": {
-        "paragraphs": 28,
-        "citedParagraphs": 21,
-        "citationDensity": 0.75,
-        "references": 19,
-        "referencesWithUrl": 0,
-        "refCoverage": 0
       }
     },
     {

@@ -527,31 +527,6 @@
       "expectedStatus": 200
     },
     {
-      "path": "/research/2025-fraud-detection-mlp",
-      "type": "publication",
-      "expectedStatus": 200
-    },
-    {
-      "path": "/en/research/2025-fraud-detection-mlp",
-      "type": "publication",
-      "expectedStatus": 200
-    },
-    {
-      "path": "/es/research/2025-fraud-detection-mlp",
-      "type": "publication",
-      "expectedStatus": 200
-    },
-    {
-      "path": "/it/research/2025-fraud-detection-mlp",
-      "type": "publication",
-      "expectedStatus": 200
-    },
-    {
-      "path": "/he/research/2025-fraud-detection-mlp",
-      "type": "publication",
-      "expectedStatus": 200
-    },
-    {
       "path": "/research/2024-historicity-jesus-archaeology",
       "type": "publication",
       "expectedStatus": 200
@@ -1333,21 +1308,6 @@
     },
     {
       "path": "/deep-research/2025-iot-data-sovereignty/deep-research.docx",
-      "type": "asset",
-      "expectedStatus": 200
-    },
-    {
-      "path": "/deep-research/2025-fraud-detection-mlp/deep-research.pdf",
-      "type": "asset",
-      "expectedStatus": 200
-    },
-    {
-      "path": "/deep-research/2025-fraud-detection-mlp/deep-research.md",
-      "type": "asset",
-      "expectedStatus": 200
-    },
-    {
-      "path": "/deep-research/2025-fraud-detection-mlp/deep-research.docx",
       "type": "asset",
       "expectedStatus": 200
     },

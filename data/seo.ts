@@ -22,7 +22,6 @@ export const noindexPublicationCategories: readonly string[] = ['research', 'ess
 export const reindexedPublicationSlugs: readonly string[] = [
   '2024-agritech-agile-flow',
   '2024-theology-economic-order',
-  '2025-fraud-detection-mlp',
   '2025-hybrid-cooling-thermodynamics',
   '2025-little-law-resilience',
   '2025-lstm-asset-prediction',

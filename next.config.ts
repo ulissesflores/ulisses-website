@@ -122,6 +122,31 @@ const nextConfig: NextConfig = {
         destination: "/identidade",
         permanent: true,
       },
+      // 2026-09-22: a página legada `2025-fraud-detection-mlp` saiu do ar (texto gerado; o original é
+      // coursework confidencial). A obra real derivada do mesmo material é `operating-point-dominance`
+      // (data/research.ts). O ORCID (obra 202629307) e o índice do Google apontavam para a URL legada —
+      // e o objeto indexado era o PDF, não a página (docs/gsc-reports/sitemap-inspection-2026-07-04.json).
+      // `permanent: true` responde 308, que o Google trata como o 301. Trava: data/redirect-fraud-detection-legado.test.ts
+      {
+        source: "/research/2025-fraud-detection-mlp",
+        destination: "/research/operating-point-dominance",
+        permanent: true,
+      },
+      {
+        source: "/:locale(en|es|it|he)/research/2025-fraud-detection-mlp",
+        destination: "/:locale/research/operating-point-dominance",
+        permanent: true,
+      },
+      {
+        source: "/deep-research/2025-fraud-detection-mlp/deep-research.pdf",
+        destination: "/research/operating-point-dominance/operating-point-dominance.pdf",
+        permanent: true,
+      },
+      {
+        source: "/research/2025-fraud-detection-mlp.pdf",
+        destination: "/research/operating-point-dominance/operating-point-dominance.pdf",
+        permanent: true,
+      },
     ];
 
     // Projeto PSI → whitepapers route migration (301)

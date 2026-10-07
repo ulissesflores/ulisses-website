@@ -931,7 +931,7 @@ Competências Interpessoais, Habilidades Analíticas.
 | 3 | R | Análise Termodinâmica e Engenharia de Sistemas Híbridos de Resfriamento | 2025 | pt-BR | https://ulissesflores.com/whitepapers/2025-hybrid-cooling-thermodynamics |
 | 4 | R | Arquiteturas Cloudless e Soberania de Dados em IoT | 2025 | pt-BR | https://ulissesflores.com/whitepapers/2025-iot-data-sovereignty |
 | 5 | S | Clube Santo: Plataforma Digital de Ensino Teológico e Comunidade | 2025 | pt-BR | — |
-| 6 | J | Detecção de Fraudes em Cartões com Redes Neurais | 2025 | pt-BR | https://ulissesflores.com/research/2025-fraud-detection-mlp |
+| 6 | J | Detecção de Fraudes em Cartões com Redes Neurais | 2025 | pt-BR | — |
 | 7 | S | Gerador de Contexto Semântico e Engenharia de Prompt para LLMs | 2025 | pt-BR | — |
 | 8 | S | Orquestração de Ambientes Inteligentes: Integração Tuya, Zigbee e Home Assistant | 2025 | pt-BR | — |
 | 9 | S | Pipeline de Extração e Estruturação de Conhecimento de Mídias Audiovisuais | 2025 | pt-BR | — |

@@ -2,7 +2,7 @@
 
 - Source: `data/upkf/ulisses-flores-sovereign-upkf_v3.3.md`
 - Generated at: 2026-02-21
-- Total URLs: 254
+- Total URLs: 249
 
 ## Collections
 - https://ulissesflores.com/certifications
@@ -74,7 +74,6 @@
 - https://ulissesflores.com/research/2024-bitcoin-praxeology
 - https://ulissesflores.com/research/2024-historicity-jesus-archaeology
 - https://ulissesflores.com/research/2024-scribal-canonization-ezra
-- https://ulissesflores.com/research/2025-fraud-detection-mlp
 - https://ulissesflores.com/research/2025-little-law-resilience
 - https://ulissesflores.com/research/2025-lstm-asset-prediction
 - https://ulissesflores.com/sermons/cultos-3-services
@@ -151,7 +150,6 @@
 - https://ulissesflores.com/deep-research/2024-historicity-jesus-archaeology/deep-research.pdf
 - https://ulissesflores.com/deep-research/2024-scribal-canonization-ezra/deep-research.pdf
 - https://ulissesflores.com/deep-research/2024-theology-economic-order/deep-research.pdf
-- https://ulissesflores.com/deep-research/2025-fraud-detection-mlp/deep-research.pdf
 - https://ulissesflores.com/deep-research/2025-hybrid-cooling-thermodynamics/deep-research.pdf
 - https://ulissesflores.com/deep-research/2025-iot-data-sovereignty/deep-research.pdf
 - https://ulissesflores.com/deep-research/2025-little-law-resilience/deep-research.pdf
@@ -164,7 +162,6 @@
 - https://ulissesflores.com/research/2024-bitcoin-praxeology.pdf
 - https://ulissesflores.com/research/2024-historicity-jesus-archaeology.pdf
 - https://ulissesflores.com/research/2024-scribal-canonization-ezra.pdf
-- https://ulissesflores.com/research/2025-fraud-detection-mlp.pdf
 - https://ulissesflores.com/research/2025-little-law-resilience.pdf
 - https://ulissesflores.com/research/2025-lstm-asset-prediction.pdf
 - https://ulissesflores.com/whitepapers/2024-agritech-agile-flow.pdf
