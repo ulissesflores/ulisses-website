@@ -26,6 +26,33 @@ porque os 3 achados reais são escolha narrativa — a description agrupa por pa
 ordena por valor —, e nenhuma delas afirma número errado. Fidelidade de ORDEM é matéria de
 leitura humana; fidelidade de CONTAGEM não é.
 
+MedidorDuplo (`medidorDuploDatasets`) e MatrizJanelas (`matrizJanelasDatasets`) entram
+em 2026-10-07. O dataset não mora em `artigos-charts.ts`: vem de `data/rotulo-20x-figuras.ts`,
+e o gate lê os dois arquivos. `desenhado` devolve a série que o componente itera, na ordem
+do desenho — planos da esquerda para a direita e de cima para baixo; células linha a linha,
+da esquerda para a direita, inclusive a que não se aplica, porque o traço é desenhado.
+Razão, legenda, testes e conclusão ficam de fora, como `referencia` e `conclusao` ficam de
+fora da CostLadder: não são a série enumerável. Os quatro testes da cena `regua`, medidos
+dentro da mesma lista, apagariam a checagem de ordem das barras: o teste não tem número, a
+âncora deixa de ser completa, e a fig. 5 — que está em ordem — passaria em silêncio.
+
+A âncora destas duas famílias é o `valor` impresso, o equivalente do `valueLabel` e do
+`bill`. Medido nas 5 invocações do acervo (1 artigo) em 2026-10-07:
+
+| Checagem                                            | Reprovadas | Reais | Falsas | Papel      |
+|-----------------------------------------------------|-----------:|------:|-------:|------------|
+| marcadores ordinais, nestas 5 descriptions          |          0 |     0 |      0 | REPROVA    |
+| ordem, âncora `valor`, série completa               |          0 |     0 |      0 | AVISA      |
+| ordem só na célula com número, pulando a sem número |          1 |     0 |      1 | NÃO ENTROU |
+
+A terceira ficou de fora. Na fig. 3 o «200» de «50 a 200» (linha do Max 5x) aparece na
+prosa antes do «900» da linha seguinte, e o gate acusaria ordem trocada numa description
+que segue o desenho. Com a série completa essa figura não entra na checagem de ordem: a
+célula sem número deixa a âncora incompleta, que é a regra que já existia. A fig. 1 também
+fica de fora dela — o valor está por extenso («uma medida», «vinte medidas»), e token de
+palavra não é âncora. A fig. 4 de `rotulo-20x-anthropic` repete «20,0», «5,0» e «4,0»; âncora repetida não ordena.
+A fig. 2 e a fig. 5 foram conferidas em ordem e não avisam.
+
 `degrau` e `nível` estão FORA da lista de palavras ordinais de propósito: são vocabulário
 editorial, não estrutura. A fig. 4 do mesmo artigo do china diz "cinco degraus" numa escada
 de seis linhas e está CERTA — a sexta linha é o total, e total não é degrau. Um gate que
@@ -48,7 +75,12 @@ import unicodedata
 from pathlib import Path
 
 RAIZ = Path(__file__).resolve().parents[2]
-FONTE_TS = RAIZ / "data/artigos-charts.ts"
+# Um arquivo por família de dataset. O segundo não entra em `artigos-charts.ts` de
+# propósito — é dado de um artigo só. Componente novo sem linha aqui continua pulado.
+FONTES_TS = [
+    RAIZ / "data/artigos-charts.ts",
+    RAIZ / "data/rotulo-20x-figuras.ts",
+]
 
 # Componente -> `export const` que guarda os datasets dele. Componente que não estiver
 # aqui é PULADO com linha-resumo, nunca aborta: figura nova não pode derrubar o gate do
@@ -57,6 +89,8 @@ FAMILIA = {
     "StepFlowDiagram": "stepFlowDatasets",
     "CostLadder": "costLadderDatasets",
     "CountryBarsChart": "countryBarsDatasets",
+    "MedidorDuplo": "medidorDuploDatasets",
+    "MatrizJanelas": "matrizJanelasDatasets",
 }
 
 # Palavra ordinal que abre um elemento enumerado: "Linha 1:", "Elo 3", "Etapa 4,".
@@ -74,30 +108,38 @@ def sem_acento(s: str) -> str:
     return "".join(c for c in unicodedata.normalize("NFD", s) if unicodedata.category(c) != "Mn")
 
 
-def datasets_do_ts(caminho: Path) -> dict[str, dict]:
-    """Lê os mapas de dataset do `.ts` pelo próprio `node`.
+def datasets_do_ts(caminhos: list[Path]) -> dict[str, dict]:
+    """Lê os mapas de dataset dos `.ts` pelo próprio `node`.
 
     ponytail: o `checar-rotulos-svg.py` tem um parser equivalente e maior. Não importo dele
     de propósito — importar grava um `__pycache__` na árvore de trabalho e acopla este gate
-    a um arquivo que outra sessão edita. São doze linhas; a duplicação é mais barata que o
-    acoplamento.
+    a um arquivo que outra sessão edita. A duplicação é mais barata que o acoplamento.
+    Cada arquivo é avaliado sozinho: export que não existe nele vem null e é descartado.
     """
-    js = caminho.read_text(encoding="utf-8")
-    for padrao, troca in (
-        (r"^import .*$", ""),
-        (r"^(export )?type \w+\s*=[^;{]*;$", ""),
-        (r"^(export )?(interface|type)[\s\S]*?\n\}", ""),
-        (r"^export const (\w+)\s*:[^=]+=", r"const \1 ="),
-        (r"^export const ", "const "),
-    ):
-        js = re.sub(padrao, troca, js, flags=re.M)
     nomes = sorted(set(FAMILIA.values()))
     pares = ",".join(f"['{n}',typeof {n}!=='undefined'?{n}:null]" for n in nomes)
-    js += f"\nconsole.log(JSON.stringify(Object.fromEntries([{pares}])));"
-    saida = subprocess.run(["node", "-e", js], capture_output=True, text=True)
-    if saida.returncode:
-        sys.exit(f"não consegui ler {caminho}:\n{saida.stderr[:800]}")
-    return json.loads(saida.stdout)
+    unidos: dict[str, dict] = {}
+    for caminho in caminhos:
+        js = caminho.read_text(encoding="utf-8")
+        for padrao, troca in (
+            (r"^import .*$", ""),
+            (r"^(export )?type \w+\s*=[^;{]*;$", ""),
+            (r"^(export )?(interface|type)[\s\S]*?\n\}", ""),
+            (r"^export const (\w+)\s*:[^=]+=", r"const \1 ="),
+            (r"^export const ", "const "),
+        ):
+            js = re.sub(padrao, troca, js, flags=re.M)
+        js += f"\nconsole.log(JSON.stringify(Object.fromEntries([{pares}])));"
+        saida = subprocess.run(["node", "-e", js], capture_output=True, text=True)
+        if saida.returncode:
+            sys.exit(f"não consegui ler {caminho}:\n{saida.stderr[:800]}")
+        for nome, valor in json.loads(saida.stdout).items():
+            if not valor:
+                continue
+            if nome in unidos:
+                sys.exit(f"{nome} aparece em mais de um arquivo de dados; o gate não escolhe")
+            unidos[nome] = valor
+    return unidos
 
 
 def desenhado(componente: str, dataset: dict) -> list[dict]:
@@ -108,11 +150,20 @@ def desenhado(componente: str, dataset: dict) -> list[dict]:
         return list(dataset["rows"])
     if componente == "CountryBarsChart":
         return [item for grupo in dataset["groups"] for item in grupo["items"]]
+    if componente == "MedidorDuplo":
+        # `paineis.map` da esquerda para a direita, `planos.map` de cima para baixo.
+        # Testes da cena `regua` não entram — ver o cabeçalho.
+        return [plano for painel in dataset["paineis"] for plano in painel["planos"]]
+    if componente == "MatrizJanelas":
+        # `linhas.map` de cima para baixo, `celulas.map` da esquerda para a direita,
+        # inclusive `naoAplicavel`: o traço é desenhado.
+        return [celula for linha in dataset["linhas"] for celula in linha["celulas"]]
     raise KeyError(componente)
 
 
 def rotulo(elemento: dict) -> str:
-    return str(elemento.get("label") or elemento.get("name") or "")
+    # `nome` é o rótulo do plano no MedidorDuplo; as outras famílias usam label/name.
+    return str(elemento.get("label") or elemento.get("name") or elemento.get("nome") or "")
 
 
 def ancora_numerica(elemento: dict) -> str | None:
@@ -121,8 +172,11 @@ def ancora_numerica(elemento: dict) -> str | None:
     Token de palavra NÃO serve de âncora: colide com o vocabulário da própria frase. Medido
     — em `glm53flash-cadeia-100t` a âncora `cadeia` do 6º passo casa na abertura
     "Cadeia de seis etapas", dá posição 0 e acusa ordem trocada numa description correta.
+    `valor` é o número impresso por MedidorDuplo e MatrizJanelas. Medido nas 5 invocações
+    de 2026-10-07: zero falso. Pular a célula sem número, para forçar âncora na fig. 3,
+    acusou ordem trocada e não entrou — ver o cabeçalho.
     """
-    for chave in ("valueLabel", "bill"):
+    for chave in ("valueLabel", "bill", "valor"):
         achado = re.search(r"\d+(?:[.,]\d+)?", str(elemento.get(chave) or ""))
         if achado:
             return achado.group(0)
@@ -193,7 +247,8 @@ def mdx_rastreados() -> list[Path]:
 
 def main(argv: list[str]) -> int:
     alvos = [Path(a).resolve() for a in argv[1:]] or mdx_rastreados()
-    bancos = datasets_do_ts(FONTE_TS)
+    bancos = datasets_do_ts(FONTES_TS)
+    fontes = " ou ".join(p.name for p in FONTES_TS)
 
     medidas = 0
     reprovadas: list[tuple[str, str, list[str]]] = []
@@ -217,7 +272,7 @@ def main(argv: list[str]) -> int:
             nome = props.get("dataset")
             banco = bancos.get(FAMILIA[componente]) or {}
             if nome not in banco:
-                pular(f"dataset ausente de {FONTE_TS.name}: {componente}/{nome}")
+                pular(f"dataset ausente de {fontes}: {componente}/{nome}")
                 continue
             if "description" not in props:
                 pular(f"sem prop description literal: {componente}/{nome}")
