@@ -20,7 +20,7 @@ DOIS REGIMES DE MEDIÇÃO, porque são dois tipos de figura:
    várias dessas caixas são dimensionadas pelo próprio texto (fórmula de contagem de
    caractere), então elas vivem, por construção, acima de 85%.
 
-COBERTURA (espelho de `lib/content/mdx-components.tsx`, lido em 2026-09-06 — 26 entradas):
+COBERTURA (espelho de `lib/content/mdx-components.tsx`, lido em 2026-10-10 — 29 entradas):
 
 | Componente | Regime | Texto medido |
 |---|---|---|
@@ -33,6 +33,7 @@ COBERTURA (espelho de `lib/content/mdx-components.tsx`, lido em 2026-09-06 — 2
 | ThermometerTrioDiagram | 2 | props + tudo que o dataset desenha |
 | MedidorDuplo, MatrizJanelas | 2 | props + tudo que o dataset desenha |
 | DailyColumnsChart, DialogueDiagram | 2 | props + tudo que o dataset desenha |
+| LimitadorDiagram | 2 | props + tudo que o dataset desenha |
 | SimulationRenderer, YouTube, ArticleFigure | — | não desenham texto em SVG |
 
 Componente instanciado num `.mdx` que não esteja nessa lista **reprova com exit 1** em vez
@@ -136,6 +137,7 @@ FAMILIAS = {
     "matrizJanelasDatasets": "matrizJanelas",
     "dailyColumnsDatasets": "dailyColumns",
     "dialogueDatasets": "dialogue",
+    "limitadorDatasets": "limitador",
 }
 
 # Fragmento de entrega (chaves soltas, para colar dentro de um `Record` do site): a
@@ -1319,6 +1321,71 @@ def cena_dialogue(ds: dict, props: dict) -> Cena:
     return c
 
 
+# ── LimitadorDiagram — geometria de `limitador-diagram.tsx` (novo: acesso-mythos-5-1) ──
+# W=720, cartão x 24..696, uma faixa por carro. Por faixa: name (12/700) e detail (10/400)
+# a x=44, parede = a pista (290), porque y+78/y+94 dividem a altura com os quadrados das
+# rodadas quando a cena é `numeros`; motor: caixa 170..254, rótulo centrado em 212 (11/700);
+# rótulo da pista (10/400) a x=290 e rótulo do limitador (10/700) centrado em 290+382·cut,
+# os DOIS em y+18 — é a fila que importa: limitador perto do começo da pista encosta no
+# rótulo dela; rodadas/prova: rótulo a x=290, parede = fim da pista (672); pílula "igual"
+# 128 px centrada em 212, no vão entre os cartões; conclusão (12) e source (9) a x=24.
+# Portado de `redacao/dossies/acesso-mythos-5-1/assets/checar-figuras.py` (medidor do
+# dossiê, com teste negativo), que validou as 2 figuras na produção do artigo.
+LM_MOLDURA = (0.0, 720.0)
+LM_CARD = (24.0, 696.0)
+LM_NAME_X = 44.0
+LM_ENGINE = (170.0, 254.0)
+LM_TRACK_X = 290.0
+LM_TRACK_W = 382.0
+LM_PILL_W = 128.0
+
+
+def cena_limitador(ds: dict, props: dict) -> Cena:
+    c = Cena(f"LimitadorDiagram · {ds['mode']}")
+    c.inicio("title", props["title"], 15, 700, 24.0, LM_MOLDURA)
+    if props.get("subtitle"):
+        c.inicio("subtitle", props["subtitle"], 11, 400, 24.0, LM_MOLDURA)
+    motor_cx = (LM_ENGINE[0] + LM_ENGINE[1]) / 2
+    # Paredes = o que está DESENHADO em volta: name/detail entre a borda do cartão e a pista;
+    # rodadas/prova entre a caixa do motor e o fim da pista (o texto nasce em 290, e o que
+    # corta é a direita). As filas de cima (`l{i}-topo`) usam o cartão: ali o risco é o
+    # rótulo do limitador encostar no da pista, e isso é colisão de fila, não parede.
+    esq = (LM_CARD[0], LM_TRACK_X)
+    pista = (LM_ENGINE[1], LM_TRACK_X + LM_TRACK_W)
+    for i, lane in enumerate(ds["lanes"]):
+        c.inicio(f"lanes[{i}].name", lane["name"], 12, 700, LM_NAME_X, esq)
+        c.inicio(f"lanes[{i}].detail", lane["detail"], 10, 400, LM_NAME_X, esq)
+        c.centro(f"lanes[{i}].motor", ds["motor"], 11, 700, motor_cx, LM_ENGINE)
+        lim_x = LM_TRACK_X + LM_TRACK_W * lane["cut"]
+        c.inicio(f"lanes[{i}].pista", ds["pista"], 10, 400, LM_TRACK_X, LM_CARD, fila=f"l{i}-topo")
+        c.centro(f"lanes[{i}].limitador", ds["limitador"], 10, 700, lim_x, LM_CARD, fila=f"l{i}-topo")
+        if lane.get("rounds"):
+            c.inicio(f"lanes[{i}].rounds.label", lane["rounds"]["label"], 10, 400, LM_TRACK_X, pista)
+            # Os quadrados (20 px, passo 28) também têm de caber na pista: geometria, não texto.
+            c.caixa(
+                f"lanes[{i}].rounds (quadrados)",
+                f"{lane['rounds']['total']} quadrados",
+                LM_TRACK_X,
+                LM_TRACK_X + 28 * (lane["rounds"]["total"] - 1) + 20,
+                pista,
+            )
+        if lane.get("proof"):
+            c.inicio(f"lanes[{i}].proof.label", lane["proof"]["label"], 10, 400, LM_TRACK_X, pista)
+            c.caixa(
+                f"lanes[{i}].proof (círculos)",
+                f"{lane['proof']['total']} círculos",
+                LM_TRACK_X,
+                LM_TRACK_X + 28 * (lane["proof"]["total"] - 1) + 14,
+                pista,
+            )
+    c.centro("igual (pílula)", ds["igual"], 10, 700, motor_cx, (motor_cx - LM_PILL_W / 2, motor_cx + LM_PILL_W / 2))
+    for k, linha in enumerate(ds["conclusion"]):
+        c.inicio(f"conclusion[{k}]", linha, 12, 400, 24.0, LM_MOLDURA)
+    if props.get("source"):
+        c.inicio("source", props["source"], 9, 400, 24.0, LM_MOLDURA)
+    return c
+
+
 CENAS = {
     "WordChoiceDiagram": ("wordChoice", cena_word_choice),
     "WatermarkReachDiagram": ("watermarkReach", cena_watermark_reach),
@@ -1336,6 +1403,7 @@ CENAS = {
     "MatrizJanelas": ("matrizJanelas", cena_matriz_janelas),
     "DailyColumnsChart": ("dailyColumns", cena_daily_columns),
     "DialogueDiagram": ("dialogue", cena_dialogue),
+    "LimitadorDiagram": ("limitador", cena_limitador),
 }
 
 # Registrado em `mdx-components.tsx` mas sem `<text>` próprio: medir não se aplica.

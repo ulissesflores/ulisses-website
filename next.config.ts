@@ -249,6 +249,7 @@ const nextConfig: NextConfig = {
       { source: '/conluio-he', destination: '/he/artigos/conluio-dos-agentes', permanent: true },
       { source: '/20x', destination: '/artigos/rotulo-20x-anthropic', permanent: true },
       { source: '/formulacao', destination: '/artigos/ia-eleicao-2026', permanent: true },
+      { source: '/mythos', destination: '/artigos/acesso-mythos-5-1', permanent: true },
     ];
 
     // Locale handling (double-locale 410 + single-locale 301 + i18n rewrite) moved to middleware.ts

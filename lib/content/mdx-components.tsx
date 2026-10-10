@@ -36,6 +36,7 @@ import { MedidorDuplo } from './medidor-duplo';
 import { MatrizJanelas } from './matriz-janelas';
 import { DailyColumnsChart } from './daily-columns-chart';
 import { DialogueDiagram } from './dialogue-diagram';
+import { LimitadorDiagram } from './limitador-diagram';
 import { ArticleFigure } from './article-figure';
 import { YouTube } from './youtube-embed';
 
@@ -85,6 +86,7 @@ export const mdxComponents: MDXComponents = {
   MatrizJanelas,
   DailyColumnsChart,
   DialogueDiagram,
+  LimitadorDiagram,
   ArticleFigure,
   YouTube,
   /**

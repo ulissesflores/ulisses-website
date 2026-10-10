@@ -52,6 +52,20 @@ export function localizeArtigo(artigo: Artigo, locale: Locale): Pick<Artigo, 'ti
 
 export const artigos: readonly Artigo[] = [
   {
+    slug: 'acesso-mythos-5-1',
+    title: 'Entrei no Mythos 5.1 e testei em casa: o Fable travou 4 vezes em 12, o Mythos nenhuma',
+    summary: 'Em 12 rodadas defensivas no meu código, o Fable 5.1 travou 4 vezes e o Mythos 5.1, nenhuma. Em achar 5 falhas plantadas, empate entre os modelos. Medi, com ressalvas.',
+    date: '2026-10-10',
+    tags: ['ia', 'llm', 'anthropic', 'claude', 'ciberseguranca', 'salvaguardas', 'metodologia'],
+    hero: {
+      width: 2400,
+      height: 1260,
+      locales: {
+        'pt-br': { src: '/artigos/acesso-mythos-5-1/hero.png', og: '/artigos/acesso-mythos-5-1/hero-og.jpg' },
+      },
+    },
+  },
+  {
     slug: 'ia-eleicao-2026',
     title: 'Os termos de uso impedem até medir se a IA cumpre a lei eleitoral',
     summary:

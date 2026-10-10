@@ -1255,6 +1255,118 @@ export interface CountryBarsDataset {
  * TIC Domicílios 2025, 1ª medição) sobre 213,4 mi (IBGE 2025).
  */
 export const countryBarsDatasets: Record<string, CountryBarsDataset> = {
+  'mythos-placar-travas': {
+    max: 3,
+    groups: [
+      {
+        label: 'Fable 5.1 · 4 travas em 12 rodadas',
+        color: '#a48f65',
+        items: [
+          {
+            name: 'Triagem',
+            value: 1,
+            valueLabel: '1 de 3',
+            emphasis: false,
+          },
+          {
+            name: 'Modelo de ameaça',
+            value: 3,
+            valueLabel: '3 de 3',
+            emphasis: true,
+          },
+          {
+            name: 'Correção',
+            value: 0,
+            valueLabel: '0 de 3',
+            emphasis: false,
+          },
+          {
+            name: 'Teste de regressão',
+            value: 0,
+            valueLabel: '0 de 3',
+            emphasis: false,
+          },
+        ],
+      },
+      {
+        label: 'Mythos 5.1 · 0 travas em 12 rodadas',
+        color: '#a48f65',
+        items: [
+          {
+            name: 'Triagem',
+            value: 0,
+            valueLabel: '0 de 3',
+          },
+          {
+            name: 'Modelo de ameaça',
+            value: 0,
+            valueLabel: '0 de 3',
+          },
+          {
+            name: 'Correção',
+            value: 0,
+            valueLabel: '0 de 3',
+          },
+          {
+            name: 'Teste de regressão',
+            value: 0,
+            valueLabel: '0 de 3',
+          },
+        ],
+      },
+    ],
+  },
+  'mythos-placar-falhas': {
+    max: 5,
+    groups: [
+      {
+        label: 'Falhas achadas, de 5 plantadas',
+        color: '#60a5fa',
+        items: [
+          {
+            name: 'Mythos 5.1',
+            value: 5,
+            valueLabel: '5 de 5',
+          },
+          {
+            name: 'Fable 5.1',
+            value: 5,
+            valueLabel: '5 de 5',
+          },
+          {
+            name: 'Opus 5.5',
+            value: 5,
+            valueLabel: '5 de 5',
+          },
+        ],
+      },
+      {
+        label: 'Custo por revisão, a preço de tabela',
+        color: '#fbbf24',
+        items: [
+          {
+            name: 'Mythos 5.1',
+            value: 4.17,
+            valueLabel: 'US$ 0,80 a 0,89',
+            emphasis: false,
+          },
+          {
+            name: 'Fable 5.1',
+            value: 3.83,
+            valueLabel: 'US$ 0,71 a 0,88',
+            emphasis: false,
+          },
+          {
+            name: 'Opus 5.5',
+            value: 2.03,
+            valueLabel: 'US$ 0,35 a 0,45',
+            emphasis: true,
+          },
+        ],
+      },
+    ],
+  },
+
   /**
    * `ia-eleicao-its4-blocos` — % de respostas com ranqueamento por sistema, ITS Rio 4ª rodada
    * (coleta 02–06/07/2026), Tabela 2, p. 8 do PDF v2 (13/08/2026). Dois blocos por PERGUNTA,
@@ -9192,6 +9304,47 @@ export interface StepFlowDataset {
 }
 
 export const stepFlowDatasets: Record<string, StepFlowDataset> = {
+  'mythos-linha-do-tempo': {
+    orientation: 'timeline',
+    steps: [
+      {
+        label: '26/08 · 14h37',
+        detail: 'inscrição (UTC)',
+      },
+      {
+        label: '26/08 · 15h13',
+        detail: 'aprovação em 36 min',
+        alert: true,
+      },
+      {
+        label: '06/10',
+        detail: '3 níveis, sem nova inscrição',
+      },
+      {
+        label: '10/10',
+        detail: 'portal e sonda',
+      },
+    ],
+  },
+  'mythos-niveis': {
+    orientation: 'chain',
+    steps: [
+      {
+        label: 'Defense Access: onde estou',
+        detail: 'Triagem, malware, engenharia reversa. Exploit e teste de invasão, bloqueados.',
+        alert: true,
+      },
+      {
+        label: 'Red Team Access',
+        detail: 'Soma teste de invasão autorizado e adversarial. Revisão humana, vários dias úteis.',
+      },
+      {
+        label: 'Specialized Access',
+        detail: 'Menos restrições, p/ infraestrutura crítica. Exige aval do governo dos EUA.',
+      },
+    ],
+  },
+
   /**
    * `ia-eleicao-escada-strings` — degrau 3: os cinco degraus com o enunciado verbatim.
    * `ia-eleicao-escada-desfechos` — degrau 5: a MESMA cadeia, com o desfecho publicado.
@@ -15425,6 +15578,108 @@ export const dialogueDatasets: Record<string, DialogueDataset> = {
         text: 'ברכות על ששרדתם את הסף.',
         tone: 'alert',
       },
+    ],
+  },
+};
+
+/**
+ * `LimitadorDiagram` — dois carros, o mesmo motor, dois limitadores (`acesso-mythos-5-1`).
+ * `cut` é a FRAÇÃO da pista em que o limitador corta (posição ilustrativa, não medida);
+ * `rounds`/`proof` só existem na cena `numeros` — a cena `analogia` é sem número de propósito.
+ */
+export interface LimitadorRounds {
+  total: number;
+  cuts: number;
+  label: string;
+}
+
+export interface LimitadorProof {
+  total: number;
+  found: number;
+  label: string;
+}
+
+export interface LimitadorLane {
+  name: string;
+  detail: string;
+  cut: number;
+  rounds?: LimitadorRounds;
+  proof?: LimitadorProof;
+}
+
+export interface LimitadorDataset {
+  mode: 'analogia' | 'numeros';
+  motor: string;
+  igual: string;
+  pista: string;
+  limitador: string;
+  lanes: readonly LimitadorLane[];
+  conclusion: readonly string[];
+}
+
+export const limitadorDatasets: Record<string, LimitadorDataset> = {
+  'mythos-analogia': {
+    mode: 'analogia',
+    motor: 'motor',
+    igual: 'o mesmo motor',
+    pista: 'aceleração',
+    limitador: 'limitador',
+    lanes: [
+      {
+        name: 'Carro A',
+        detail: 'limitador conservador',
+        cut: 0.42,
+      },
+      {
+        name: 'Carro B',
+        detail: 'limitador mais folgado',
+        cut: 0.9,
+      },
+    ],
+    conclusion: [
+      'Se o motor é o mesmo, o que o motorista sente de diferente está no limitador.',
+    ],
+  },
+  'mythos-numeros': {
+    mode: 'numeros',
+    motor: 'motor',
+    igual: 'o mesmo motor',
+    pista: 'aceleração',
+    limitador: 'limitador',
+    lanes: [
+      {
+        name: 'Fable 5.1',
+        detail: 'limitador conservador',
+        cut: 0.42,
+        rounds: {
+          total: 12,
+          cuts: 4,
+          label: '12 rodadas defensivas: 4 com trava',
+        },
+        proof: {
+          total: 5,
+          found: 5,
+          label: '5 falhas plantadas: 5 achadas',
+        },
+      },
+      {
+        name: 'Mythos 5.1',
+        detail: 'limitador mais folgado',
+        cut: 0.9,
+        rounds: {
+          total: 12,
+          cuts: 0,
+          label: '12 rodadas defensivas: 0 com trava',
+        },
+        proof: {
+          total: 5,
+          found: 5,
+          label: '5 falhas plantadas: 5 achadas',
+        },
+      },
+    ],
+    conclusion: [
+      'Na prova das falhas, empate; no limitador, 4 cortes em 12 contra nenhum em 12.',
     ],
   },
 };
