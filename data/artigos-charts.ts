@@ -1255,6 +1255,284 @@ export interface CountryBarsDataset {
  * TIC Domicílios 2025, 1ª medição) sobre 213,4 mi (IBGE 2025).
  */
 export const countryBarsDatasets: Record<string, CountryBarsDataset> = {
+  /**
+   * Datasets do artigo `pesquisas-eleitorais-2026` (CountryBarsChart).
+   * PROCEDÊNCIA: gerado por codigo/site_charts.py a partir de resultados/*.json do repositório
+   * companion (pesquisas finais presidenciais 1989-2026, base Pindograma 2012-2022, rodadas de
+   * 2º turno 2026 com registro conferido no dado aberto do TSE). Não editar à mão.
+   */
+  'pesquisas-2026-erro-1t-2t': {
+    max: 8,
+    groups: [
+      {
+        label: '1º turno · erro da média das pesquisas finais',
+        color: '#a48f65',
+        items: [
+          {
+            name: '2002',
+            value: 1.78,
+            valueLabel: '−1,8 pp',
+          },
+          {
+            name: '2006',
+            value: 6.74,
+            valueLabel: '−6,7 pp',
+          },
+          {
+            name: '2010',
+            value: 1.82,
+            valueLabel: '−1,8 pp',
+          },
+          {
+            name: '2014',
+            value: 7.18,
+            valueLabel: '−7,2 pp',
+          },
+          {
+            name: '2018',
+            value: 5.71,
+            valueLabel: '−5,7 pp',
+          },
+          {
+            name: '2022',
+            value: 3.29,
+            valueLabel: '−3,3 pp',
+          },
+        ],
+      },
+      {
+        label: '2º turno · erro da média das pesquisas finais',
+        color: '#d4d4d8',
+        items: [
+          {
+            name: '2002',
+            value: 2.5,
+            valueLabel: '−2,5 pp',
+          },
+          {
+            name: '2006',
+            value: 0.9,
+            valueLabel: '−0,9 pp',
+          },
+          {
+            name: '2010',
+            value: 0.41,
+            valueLabel: '−0,4 pp',
+          },
+          {
+            name: '2014',
+            value: 1.08,
+            valueLabel: '+1,1 pp',
+          },
+          {
+            name: '2018',
+            value: 0.97,
+            valueLabel: '+1,0 pp',
+          },
+          {
+            name: '2022',
+            value: 0.04,
+            valueLabel: '0,0 pp',
+          },
+        ],
+      },
+    ],
+  },
+  'pesquisas-2026-acerto-2t': {
+    max: 3.5,
+    groups: [
+      {
+        label: 'Erro médio no 2º turno presidencial (pp) · eleições',
+        color: '#a48f65',
+        items: [
+          {
+            name: 'Datafolha',
+            value: 0.93,
+            valueLabel: '0,9 · 7',
+            emphasis: true,
+          },
+          {
+            name: 'Ibope/Ipec',
+            value: 1.16,
+            valueLabel: '1,2 · 6',
+            emphasis: true,
+          },
+          {
+            name: 'MDA',
+            value: 1.25,
+            valueLabel: '1,3 · 3',
+            emphasis: true,
+          },
+          {
+            name: 'Ipespe',
+            value: 2.49,
+            valueLabel: '2,5 · 2',
+            emphasis: false,
+          },
+          {
+            name: 'Vox Populi',
+            value: 2.69,
+            valueLabel: '2,7 · 4',
+            emphasis: false,
+          },
+          {
+            name: 'Sensus',
+            value: 2.78,
+            valueLabel: '2,8 · 4',
+            emphasis: false,
+          },
+          {
+            name: 'Paraná Pesquisas',
+            value: 2.99,
+            valueLabel: '3,0 · 2',
+            emphasis: false,
+          },
+          {
+            name: 'Veritá',
+            value: 3.36,
+            valueLabel: '3,4 · 2',
+            emphasis: false,
+          },
+        ],
+      },
+    ],
+  },
+  'pesquisas-2026-casa-pt': {
+    max: 5,
+    groups: [
+      {
+        label: 'Abaixo dos rivais na fatia do PT (pp · ciclos a favor)',
+        color: '#d4d4d8',
+        items: [
+          {
+            name: 'Veritá',
+            value: 4.48,
+            valueLabel: '−4,5 · 0/5',
+            emphasis: true,
+          },
+          {
+            name: 'Paraná Pesquisas',
+            value: 3.37,
+            valueLabel: '−3,4 · 0/4',
+            emphasis: true,
+          },
+          {
+            name: 'Futura',
+            value: 0.62,
+            valueLabel: '−0,6 · 2/3',
+            emphasis: false,
+          },
+          {
+            name: 'Real Time Big Data',
+            value: 0.28,
+            valueLabel: '−0,3 · 1/3',
+            emphasis: false,
+          },
+        ],
+      },
+      {
+        label: 'Acima dos rivais na fatia do PT (pp · ciclos a favor)',
+        color: '#a48f65',
+        items: [
+          {
+            name: 'Vox Populi',
+            value: 3.52,
+            valueLabel: '+3,5 · 3/4',
+            emphasis: false,
+          },
+          {
+            name: 'AtlasIntel',
+            value: 2.87,
+            valueLabel: '+2,9 · 1/2',
+            emphasis: false,
+          },
+          {
+            name: 'Ibope/Ipec',
+            value: 1.21,
+            valueLabel: '+1,2 · 4/6',
+            emphasis: false,
+          },
+          {
+            name: 'Ipespe',
+            value: 0.72,
+            valueLabel: '+0,7 · 2/4',
+            emphasis: false,
+          },
+          {
+            name: 'Quaest',
+            value: 0.56,
+            valueLabel: '+0,6 · 2/2',
+            emphasis: true,
+          },
+          {
+            name: 'Datafolha',
+            value: 0.39,
+            valueLabel: '+0,4 · 4/6',
+            emphasis: false,
+          },
+          {
+            name: 'MDA',
+            value: 0.37,
+            valueLabel: '+0,4 · 2/4',
+            emphasis: false,
+          },
+        ],
+      },
+    ],
+  },
+  'pesquisas-2026-cenarios': {
+    max: 100,
+    groups: [
+      {
+        label: 'Probabilidade de Flávio vencer, por cenário',
+        color: '#a48f65',
+        items: [
+          {
+            name: 'Central: mediana',
+            value: 77,
+            valueLabel: '77%',
+            emphasis: true,
+          },
+          {
+            name: 'Só quem tem 20+',
+            value: 69,
+            valueLabel: '69%',
+            emphasis: false,
+          },
+          {
+            name: 'Os 4 mais precisos',
+            value: 73,
+            valueLabel: '73%',
+            emphasis: false,
+          },
+          {
+            name: 'Sem os 3 mais altos',
+            value: 72,
+            valueLabel: '72%',
+            emphasis: false,
+          },
+          {
+            name: 'Erro de 14 dias',
+            value: 75,
+            valueLabel: '75%',
+            emphasis: false,
+          },
+          {
+            name: 'Estável desde 15/10',
+            value: 79,
+            valueLabel: '79%',
+            emphasis: false,
+          },
+          {
+            name: 'Queda continua',
+            value: 55,
+            valueLabel: '55%',
+            emphasis: false,
+          },
+        ],
+      },
+    ],
+  },
   'mythos-placar-travas': {
     max: 3,
     groups: [

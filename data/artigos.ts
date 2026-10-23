@@ -52,6 +52,43 @@ export function localizeArtigo(artigo: Artigo, locale: Locale): Pick<Artigo, 'ti
 
 export const artigos: readonly Artigo[] = [
   {
+    slug: 'pesquisas-eleitorais-2026',
+    title: 'As pesquisas erram contra a direita há 24 anos. No 2º turno, não: o que isso diz sobre domingo',
+    summary:
+      'Juntei as 38 rodadas registradas no TSE para o 2º turno: Flávio tem 51,0% dos válidos na mediana e 77% de chance de vencer, calibrando com o erro real das pesquisas nos segundos turnos desde 2002. O 1º turno subestimou Flávio, como subestima a direita há seis eleições, mas no 2º turno o erro histórico é pequeno e não tem lado. Acertar numa eleição prevê pouco o acerto na seguinte, e nenhum instituto tem viés direcional comprovado. Previsões registradas antes do resultado, com dados e código públicos.',
+    date: '2026-10-23',
+    tags: ['eleicoes', 'pesquisas-eleitorais', 'estatistica', 'brasil', 'dados-abertos'],
+    hero: {
+      width: 2400,
+      height: 1260,
+      locales: {
+        'pt-br': { src: '/artigos/pesquisas-eleitorais-2026/hero.png', og: '/artigos/pesquisas-eleitorais-2026/hero-og.jpg' },
+        'en': { src: '/artigos/pesquisas-eleitorais-2026/hero.png', og: '/artigos/pesquisas-eleitorais-2026/hero-og.jpg' },
+        'es': { src: '/artigos/pesquisas-eleitorais-2026/hero.png', og: '/artigos/pesquisas-eleitorais-2026/hero-og.jpg' },
+        'it': { src: '/artigos/pesquisas-eleitorais-2026/hero.png', og: '/artigos/pesquisas-eleitorais-2026/hero-og.jpg' },
+        'he': { src: '/artigos/pesquisas-eleitorais-2026/hero.png', og: '/artigos/pesquisas-eleitorais-2026/hero-og.jpg' },
+      },
+    },
+    i18n: {
+      en: {
+        title: 'Polls have erred against the right for 24 years. Not in the runoff: what that says about Sunday',
+        summary: 'I pooled the 38 runoff poll rounds registered with Brazil\'s electoral court: Flávio has 51.0% of valid votes at the median and a 77% chance of winning, calibrated on the real error of polls in presidential runoffs since 2002. The first round underestimated Flávio, as it has underestimated the right for six elections, but in runoffs the historical error is small and has no side. Being right in one election predicts little about the next, and no pollster has a proven directional bias. Predictions registered before the result, with public data and code.',
+      },
+      es: {
+        title: 'Las encuestas yerran contra la derecha desde hace 24 años. En la segunda vuelta, no: lo que eso dice sobre el domingo',
+        summary: 'Reuní las 38 rondas registradas en el TSE para la segunda vuelta: Flávio tiene el 51,0% de los votos válidos en la mediana y un 77% de probabilidad de ganar, calibrando con el error real de las encuestas en las segundas vueltas presidenciales desde 2002. La primera vuelta subestimó a Flávio, como subestima a la derecha desde hace seis elecciones, pero en la segunda vuelta el error histórico es pequeño y no tiene lado. Acertar en una elección predice poco el acierto en la siguiente, y ningún instituto tiene un sesgo direccional comprobado. Predicciones registradas antes del resultado, con datos y código públicos.',
+      },
+      it: {
+        title: 'I sondaggi sbagliano contro la destra da 24 anni. Al ballottaggio no: cosa significa per domenica',
+        summary: 'Ho riunito i 38 sondaggi registrati presso il TSE per il ballottaggio: Flávio ha il 51,0% dei voti validi nella mediana e il 77% di probabilità di vincere, calibrando sull\'errore reale dei sondaggi nei ballottaggi presidenziali dal 2002. Il primo turno ha sottostimato Flávio, come sottostima la destra da sei elezioni, ma nel ballottaggio l\'errore storico è piccolo e non ha un lato. Indovinare un\'elezione dice poco sulla successiva, e nessun istituto ha un bias direzionale dimostrato. Previsioni registrate prima del risultato, con dati e codice pubblici.',
+      },
+      he: {
+        title: 'הסקרים טועים נגד הימין כבר 24 שנים. בסיבוב השני לא: מה זה אומר על יום ראשון',
+        summary: 'איחדתי את 38 סבבי הסקרים שנרשמו בבית הדין הבחירות של ברזיל לסיבוב השני: לפלאביו יש 51.0% מהקולות הכשרים בחציון וסיכוי של 77% לנצח, בכיול לפי הטעות האמיתית של הסקרים בסיבובים השניים לנשיאות מאז 2002. הסיבוב הראשון הפחית בערכו של פלאביו, כפי שהוא מפחית בערך הימין כבר שש בחירות, אבל בסיבוב השני הטעות ההיסטורית קטנה ואין לה צד. צדקה בבחירות אחת מנבאת מעט על הבאות, ולאף מכון אין הטיה כיוונית מוכחת. תחזיות שנרשמו לפני התוצאה, עם נתונים וקוד פומביים.',
+      },
+    },
+  },
+  {
     slug: 'acesso-mythos-5-1',
     title: 'Entrei no Mythos 5.1 e testei em casa: o Fable travou 4 vezes em 12, o Mythos nenhuma',
     summary: 'Em 12 rodadas defensivas no meu código, o Fable 5.1 travou 4 vezes e o Mythos 5.1, nenhuma. Em achar 5 falhas plantadas, empate entre os modelos. Medi, com ressalvas.',
