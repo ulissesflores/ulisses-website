@@ -20,7 +20,7 @@ DOIS REGIMES DE MEDIÇÃO, porque são dois tipos de figura:
    várias dessas caixas são dimensionadas pelo próprio texto (fórmula de contagem de
    caractere), então elas vivem, por construção, acima de 85%.
 
-COBERTURA (espelho de `lib/content/mdx-components.tsx`, lido em 2026-10-10 — 29 entradas):
+COBERTURA (espelho de `lib/content/mdx-components.tsx`, lido em 2026-10-28 — 31 entradas):
 
 | Componente | Regime | Texto medido |
 |---|---|---|
@@ -34,6 +34,7 @@ COBERTURA (espelho de `lib/content/mdx-components.tsx`, lido em 2026-10-10 — 2
 | MedidorDuplo, MatrizJanelas | 2 | props + tudo que o dataset desenha |
 | DailyColumnsChart, DialogueDiagram | 2 | props + tudo que o dataset desenha |
 | LimitadorDiagram | 2 | props + tudo que o dataset desenha |
+| MandatosChart, SeriesLinesChart | 2 | props + tudo que o dataset desenha |
 | SimulationRenderer, YouTube, ArticleFigure | — | não desenham texto em SVG |
 
 Componente instanciado num `.mdx` que não esteja nessa lista **reprova com exit 1** em vez
@@ -138,6 +139,8 @@ FAMILIAS = {
     "dailyColumnsDatasets": "dailyColumns",
     "dialogueDatasets": "dialogue",
     "limitadorDatasets": "limitador",
+    "mandatosDatasets": "mandatos",
+    "seriesLinesDatasets": "seriesLines",
 }
 
 # Fragmento de entrega (chaves soltas, para colar dentro de um `Record` do site): a
@@ -1386,6 +1389,150 @@ def cena_limitador(ds: dict, props: dict) -> Cena:
     return c
 
 
+# ── MandatosChart e SeriesLinesChart — geometria de `mandatos-chart.tsx` e
+# `series-lines-chart.tsx` (novos: raio-x-do-brasil-por-governo). A geometria está no
+# cabeçalho de cada `.tsx` e foi conferida offset a offset contra o JSX (2026-10-28).
+# Portado de `redacao/dossies/governos-do-brasil-economia/assets/checar-figuras.py`
+# (medidor do dossiê, com teste negativo e paridade com o SVG renderizado).
+# As paredes internas são marcas DESENHADAS (corpo do candle, colchete, fio da anotação,
+# fim da linha): encostar nelas é feio, não corte silencioso, então folga_parede=0 com a
+# moldura recuada 12 px do viewBox (régua do StepFlow/FlowLine); vizinho a 8 px.
+MC_MOLDURA = (12.0, 708.0)  # W=720
+MC_X0, MC_X1 = 48.0, 688.0
+MC_STRIP_Y = {"janelas": 96, "indice": 228}
+MC_STRIP_H = 26
+MC_PLOT = (58.0, 204.0)  # topo (=100) e base (=0) da área dos candles
+MC_CANDLE_HALF, MC_BRACKET_DX, MC_CLOSE_DX = 8.0, 17.0, 13.0
+
+
+def cena_mandatos(ds: dict, props: dict) -> Cena:
+    mode = props["mode"]
+    c = Cena(f"MandatosChart · {mode}", folga_vizinho=8.0, folga_parede=0.0)
+    a0, a1 = ds["axis"]["from"], ds["axis"]["to"]
+    px = lambda a: MC_X0 + (a - a0) / (a1 - a0) * (MC_X1 - MC_X0)  # noqa: E731
+    sy = lambda v: MC_PLOT[1] - v / 100 * (MC_PLOT[1] - MC_PLOT[0])  # noqa: E731
+    c.inicio("title", props["title"], 15, 700, 24.0, MC_MOLDURA)
+    if props.get("subtitle"):
+        c.inicio("subtitle", props["subtitle"], 11, 400, 24.0, MC_MOLDURA)
+    for i, t in enumerate(ds["axis"]["ticks"]):
+        c.centro(f"axis.ticks[{i}]", t["label"], 10, 400, px(t["at"]), MC_MOLDURA, fila="anos")
+    if mode == "indice":
+        for i, t in enumerate(ds["yTicks"]):
+            c.fim(f"yTicks[{i}]", t["label"], 10, 400, 40.0, (MC_MOLDURA[0], MC_X0))
+        centro = {g["id"]: px((g["start"] + g["end"]) / 2) for g in ds["govs"]}
+        # Rótulo de fechamento: ancorado no fim a 13 px do pavio; à direita, o corpo do
+        # candle (borda desenhada em cx-9 com o traço de 2 px); à esquerda, o colchete do
+        # candle anterior (cx+17, traço de 2 px) ou o começo do eixo, no primeiro.
+        lo = MC_X0
+        for i, k in enumerate(ds["candles"]):
+            cx = centro[k["gov"]]
+            c.fim(f"candles[{i}].closeLabel", k["closeLabel"], 11, 700, cx - MC_CLOSE_DX,
+                  (lo, cx - MC_CANDLE_HALF - 1))
+            lo = cx + MC_BRACKET_DX + 1
+    # Rótulos de governo: uma fila por linha (0 colada sob a faixa; 1..3 com fio-guia).
+    # O fio-guia de um rótulo da linha r desce da faixa e atravessa as linhas 0..r-1. Fio é
+    # traço de 1 px, não texto: a régua dele é a do medidor do dossiê (passar a menos de 3 px
+    # de um rótulo de linha acima = cruzá-lo), não os 8 px de texto contra texto. Cruzamento
+    # entra como caixa de folga -1 (reprova com o nome dos dois), não como vizinho de fila.
+    strip_b = MC_STRIP_Y[mode] + MC_STRIP_H
+    rotulos = []  # (linha, x0, x1, cx, texto)
+    for i, g in enumerate(ds["govs"]):
+        if g["row"] < 0 or not g["label"]:
+            continue
+        cx = px((g["start"] + g["end"]) / 2)
+        c.centro(f"govs[{i}].label", g["label"], 10, 400, cx, MC_MOLDURA, fila=f"govs-L{g['row']}")
+        m = largura(g["label"], 10) / 2
+        rotulos.append((g["row"], cx - m, cx + m, cx, g["label"]))
+    for r, _x0, _x1, cx, rot in rotulos:
+        for r2, x0, x1, _cx2, rot2 in rotulos:
+            if r2 < r and x0 - 3 <= cx <= x1 + 3:
+                c.caixa(f"fio-guia de {rot!r} (linha {r}) cruza {rot2!r} (linha {r2})", "fio-guia",
+                        -1.0, -1.0, (0.0, 0.0))
+    for k, linha in enumerate(ds["conclusion"]):
+        c.inicio(f"conclusion[{k}]", linha, 12, 700, 24.0, MC_MOLDURA)
+    cols = ds["legend"]["cols"]
+    slot = (720 - 48) / cols
+    for i, it in enumerate(ds["legend"]["items"]):
+        x0 = 24 + (i % cols) * slot
+        # parede = o próprio swatch (x0..x0+14) e o swatch da coluna seguinte
+        c.inicio(f"legend[{i}]", it["label"], 10, 400, x0 + 22, (x0 + 14, x0 + slot))
+    if props.get("source"):
+        c.inicio("source", props["source"], 9, 400, 24.0, MC_MOLDURA)
+    return c
+
+
+SL_PLOT = dict(x0=52.0, x1=580.0, y0=72.0, y1=322.0)
+SL_PAREDE_DIREITA = 704.0  # o cabeçalho do componente: fim de linha não passa daqui
+
+
+def _filas_por_altura(textos: list[dict]) -> None:
+    """Põe em filas comuns os textos cujas caixas verticais se tocam (topo y-0,8px, base
+    y+0,25px). A `Cena` só vê colisão na horizontal; rótulos de fim de linha empilham na
+    VERTICAL quando dois valores finais são próximos, e é isso que esta fila pega."""
+    pai = list(range(len(textos)))
+
+    def raiz(i: int) -> int:
+        while pai[i] != i:
+            i = pai[i]
+        return i
+
+    for i, a in enumerate(textos):
+        for j in range(i + 1, len(textos)):
+            b = textos[j]
+            topo = max(a["y"] - 0.8 * a["px"], b["y"] - 0.8 * b["px"])
+            base = min(a["y"] + 0.25 * a["px"], b["y"] + 0.25 * b["px"])
+            if base - topo > 1.0:
+                pai[raiz(j)] = raiz(i)
+    for i, t in enumerate(textos):
+        t["fila"] = f"altura-{raiz(i)}"
+
+
+def cena_series_lines(ds: dict, props: dict) -> Cena:
+    c = Cena("SeriesLinesChart", folga_vizinho=8.0, folga_parede=0.0)
+    px = lambda a: SL_PLOT["x0"] + (a - ds["xFrom"]) / (ds["xTo"] - ds["xFrom"]) * (SL_PLOT["x1"] - SL_PLOT["x0"])  # noqa: E731
+    py = lambda v: SL_PLOT["y1"] - (v - ds["yMin"]) / (ds["yMax"] - ds["yMin"]) * (SL_PLOT["y1"] - SL_PLOT["y0"])  # noqa: E731
+    H = SL_PLOT["y1"] + 90
+    c.inicio("title", props["title"], 15, 700, 24.0, MC_MOLDURA)
+    if props.get("subtitle"):
+        c.inicio("subtitle", props["subtitle"], 11, 400, 24.0, MC_MOLDURA)
+    c.inicio("unit", ds["unit"], 10, 400, 24.0, MC_MOLDURA)
+    for i, t in enumerate(ds["yTicks"]):
+        c.fim(f"yTicks[{i}]", t["label"], 10, 700 if t["at"] == 0 else 400, 44.0, (MC_MOLDURA[0], SL_PLOT["x0"]))
+    for i, t in enumerate(ds["xTicks"]):
+        c.centro(f"xTicks[{i}]", t["label"], 10, 400, px(t["at"]), MC_MOLDURA, fila="anos")
+    # Anotações, fins de linha, conclusão e source: filas montadas pela ALTURA (a conclusão
+    # e o source dividem o rodapé fixo H-12; conclusão de 3 linhas cai em cima do source).
+    soltos = []
+    for i, m in enumerate(ds["marks"]):
+        cx, base = px(m["at"]), py(m["value"]) - m["lift"]
+        if m["side"] == "right":  # parede esquerda = o fio vertical da anotação
+            soltos.append(dict(f="inicio", quem=f"marks[{i}]", t=m["label"], px=10, peso=700,
+                               x=cx + 5, paredes=(cx + 0.5, MC_MOLDURA[1]), y=base))
+        else:
+            soltos.append(dict(f="fim", quem=f"marks[{i}]", t=m["label"], px=10, peso=700,
+                               x=cx - 5, paredes=(SL_PLOT["x0"], cx - 0.5), y=base))
+    for i, s in enumerate(ds["series"]):
+        a, v = s["points"][-1]
+        soltos.append(dict(f="inicio", quem=f"series[{i}].endLabel", t=s["endLabel"], px=10, peso=700,
+                           x=px(a) + 8, paredes=(px(a) + s["width"] / 2, SL_PAREDE_DIREITA), y=py(v) + 3.5))
+    for k, linha in enumerate(ds["conclusion"]):
+        soltos.append(dict(f="inicio", quem=f"conclusion[{k}]", t=linha, px=12, peso=700,
+                           x=24.0, paredes=MC_MOLDURA, y=SL_PLOT["y1"] + 46 + 16 * k))
+    if props.get("source"):
+        soltos.append(dict(f="inicio", quem="source", t=props["source"], px=9, peso=400,
+                           x=24.0, paredes=MC_MOLDURA, y=H - 12))
+    _filas_por_altura(soltos)
+    for s in soltos:
+        getattr(c, s["f"])(s["quem"], s["t"], s["px"], s["peso"], s["x"], s["paredes"], fila=s["fila"])
+    # Ponto fora do plot é desenho que vaza pela moldura do gráfico: geometria, não texto.
+    for i, s in enumerate(ds["series"]):
+        for a, v in s["points"]:
+            if not (ds["xFrom"] - 1e-6 <= a <= ds["xTo"] + 1e-6 and ds["yMin"] <= v <= ds["yMax"]):
+                c.caixa(f"series[{i}] ponto ({a}, {v})", "ponto fora do plot", -1.0, -1.0, (0.0, 0.0))
+                break
+    return c
+
+
 CENAS = {
     "WordChoiceDiagram": ("wordChoice", cena_word_choice),
     "WatermarkReachDiagram": ("watermarkReach", cena_watermark_reach),
@@ -1404,6 +1551,8 @@ CENAS = {
     "DailyColumnsChart": ("dailyColumns", cena_daily_columns),
     "DialogueDiagram": ("dialogue", cena_dialogue),
     "LimitadorDiagram": ("limitador", cena_limitador),
+    "MandatosChart": ("mandatos", cena_mandatos),
+    "SeriesLinesChart": ("seriesLines", cena_series_lines),
 }
 
 # Registrado em `mdx-components.tsx` mas sem `<text>` próprio: medir não se aplica.

@@ -1,0 +1,277 @@
+---
+title: 'Qual è stato il miglior governo del Brasile? Che cosa rispondono i dati pubblici e che cosa no'
+slug: raio-x-do-brasil-por-governo
+category: artigos
+date: '2026-10-24'
+language: it-IT
+---
+
+Con l'immagine che è circolata non si può rispondere: 29 dei 57 numeri non escono dai dati pubblici. Diciassette di questi non escono con nessun calcolo testato, e l'immagine omette cinque governi.
+
+L'immagine mi è arrivata su WhatsApp il 19 ottobre 2026. Il post più vecchio che ho trovato è su X, del 18 ottobre, con la didascalia (in portoghese) "Ho chiesto a ChatGPT qual è stato il miglior governo del Brasile?".
+
+Con i dati pubblici, solo in parte. In un indice scritto prima del calcolo, solo il primo e l'ultimo posto si separano quando cambiano i pesi. Il centro della classifica (Dilma, Temer, Bolsonaro) non si separa, e l'indice descrive il paese, non il merito del governo. Non riprodurre non prova che l'immagine abbia mentito: con un'altra soglia di povertà o un'altra finestra, 12 dei 29 rientrano nella tolleranza.
+
+## Cinque governi restano fuori, e fanno il 34,3% dei mesi
+
+<MandatosChart
+  dataset="raiox-regua-1964-2026-it"
+  mode="janelas"
+  title="L'infografica copre 8 dei 13 presidenti dal 1964"
+  subtitle="Ogni segmento è un mandato; le barre grigio chiaro sono le finestre che l'infografica ha stampato."
+  description="Fascia orizzontale dal 1964 a ottobre 2026 con 15 segmenti di governo, in ordine: Castelo (fuori dall'infografica, in oro tratteggiato), Costa e Silva (nell'infografica, in blu), Giunta militare del 1969 (grigio, senza etichetta), Medici (nell'infografica, in blu), Geisel (fuori dall'infografica, in oro tratteggiato), Figueiredo (fuori dall'infografica, in oro tratteggiato), Sarney (fuori dall'infografica, in oro tratteggiato), Collor (fuori dall'infografica, in oro tratteggiato), Itamar (nell'infografica, in blu), FHC (nell'infografica, in blu), Lula 1-2 (nell'infografica, in blu), Dilma (nell'infografica, in blu), Temer (nell'infografica, in blu), Bolsonaro (nell'infografica, in blu), Lula 3 (nell'infografica, in blu). Sopra la fascia, 8 finestre stampate dall'infografica, in barre sottili grigio chiaro, in ordine: Dittatura, dal 1967 al 1974; Itamar Franco, dal 1992 al 1994; FHC, dal 1995 al 2002; Lula 1-2, dal 2003 al 2010; Dilma, dal 2011 al 2016; Temer, dal 2016 al 2018; Bolsonaro, dal 2019 al 2022; Lula 3, dal 2023 al 2026. Conclusione: 5 governi e il 34,3% dei mesi restano fuori dall'infografica."
+  source="Mandati: Archivio Nazionale e Camera dei Deputati · Giunta del 1969 (2 mesi): tratto grigio, senza etichetta · ulissesflores.com/raio-x"
+/>
+
+I blocchi tratteggiati in oro sono i governi che l'infografica non ha.
+
+**Tra il 1964 e il 2026, l'immagine copre 8 capi di governo su 13 e omette il 34,3% dei mesi.**
+
+I cinque omessi sono Castelo Branco, Geisel, Figueiredo, Sarney e Collor: 257,6 mesi su 750,1. L'intestazione della dittatura dice 1967-1974, ma il PIL (prodotto interno lordo) usa 1968-1973 e l'inflazione 1967-1973. Resta fuori anche tutto ciò che va oltre i sette indicatori del tabellone: il [repository](https://github.com/ulissesflores/brazil-governments-factcheck) pubblica 101 serie in 19 ambiti, e l'immagine non ne porta nessuna.
+
+> **Nota metodologica.** Il criterio è nel codice (`verdict.py`) ed è stato fissato prima del risultato. *Riprodotto*: arrotondato alle cifre decimali stampate, coincide. *Approssimato*: entro 0,3 punti percentuali (differenza tra percentuali) nelle righe in %, oppure 5% relativo. *Non riprodotto*: oltre questo. *Senza serie*: nessuna serie ufficiale copre la finestra.
+>
+> Una specifica per indicatore; il resto è analisi di sensibilità. PIL: IBGE (Istituto brasiliano di geografia e statistica) e Ipeadata. IPCA (indice ufficiale dell'inflazione): serie 433 dell'SGS, il catalogo della Banca Centrale del Brasile. Disoccupazione: PME (Indagine mensile sull'occupazione) e PNAD Contínua (Indagine nazionale continua per campione di famiglie). Salario reale, da dicembre a dicembre: Ipea (Istituto di ricerca economica applicata). Povertà e Gini (indice da 0 a 1: più vicino a 1, reddito più diseguale): PIP della Banca Mondiale (piattaforma su povertà e disuguaglianza), a US$ 6,85 al giorno in PPA (parità di potere d'acquisto). Aspettativa di vita: ONU, tramite la Banca Mondiale.
+>
+> Ogni download entra in `manifest.jsonl` con l'*hash* (l'impronta digitale di un file) della riga precedente, e il sigillo SHA-256 (l'algoritmo di quell'impronta) si verifica con `python3 make_provenance.py --verify`. Niente è stimato, imputato (riempito con un valore attribuito) né interpolato (unendo due punti noti); una serie con rottura di metodo non si cuce. La preregistrazione (regola sigillata prima del calcolo) ha 13 emendamenti datati; prima di scaricare, era sigillato solo l'elenco di ciò che l'immagine omette, e le specifiche sono arrivate dopo un passaggio esplorativo. Il DOI è l'identificatore permanente del deposito. Lo stesso disegno è in [come ho verificato i sondaggi elettorali del 2026](/artigos/pesquisas-eleitorais-2026).
+
+## Ventinove numeri non escono dalla serie scelta
+
+**Su 57 numeri, 2 si riproducono, 19 si approssimano, 29 non si riproducono e 7 non hanno una serie.**
+
+Dei 50 con serie, 21 rientrano nella tolleranza e 29 restano fuori.
+
+<ArticleFigure
+  src="/artigos/raio-x-do-brasil-por-governo/placar.it.png"
+  alt="Griglia di 7 indicatori per 8 governi con 57 numeri: in ogni cella, il valore stampato nell'infografica e quello che esce dai dati pubblici. 2 si riproducono, 19 si approssimano, 29 non si riproducono e 7 non hanno una serie."
+  width="1760"
+  height="1430"
+  caption="Il tabellone delle 57 righe dell'infografica contro i dati pubblici: la cornice dorata segna ciò che non si riproduce."
+  credit="Repository brazil-governments-factcheck · ulissesflores.com/raio-x"
+/>
+
+Ogni cornice dorata circonda una cella che non si riproduce. In ogni cella, il numero piccolo è quello stampato e quello grande è quello che esce dai dati pubblici. I due cerchi blu pieni sono i Gini che quadrano, 0,52 (2014) e 0,54 (2018). Cella per cella, nella [pagina della verifica](https://economia.ulissesflores.com).
+
+| Indicatore | Riprodotto | Approssimato | Non riprodotto | Senza serie |
+|---|---|---|---|---|
+| PIL | 0 | 4 | 4 | 0 |
+| IPCA | 0 | 2 | 5 | 1 |
+| Disoccupazione | 0 | 3 | 4 | 2 |
+| Salario minimo reale | 0 | 0 | 8 | 0 |
+| Povertà | 0 | 1 | 5 | 2 |
+| Gini | 2 | 2 | 2 | 2 |
+| Aspettativa di vita | 0 | 7 | 1 | 0 |
+| **Totale** | **2** | **19** | **29** | **7** |
+
+C'è una riserva che la tabella non mostra: ho testato ogni riga anche con calcoli alternativi: un'altra soglia di povertà, la finestra spostata di un anno, la media annua al posto della variazione da dicembre a dicembre. Dei 29 che non si riproducono con il calcolo primario, 12 rientrano nella tolleranza con qualche alternativa. Gli altri 17 non escono dai dati pubblici con nessuno dei calcoli testati.
+
+Due esempi dei 12. L'inflazione di FHC, stampata come 7,6, esce 9,25 con il calcolo primario e 7,37 con la finestra 1996-2002. La povertà di Bolsonaro, stampata come 31,6, esce 28,45 a US$ 6,85 al giorno e 30,58 a US$ 8,30.
+
+<CountryBarsChart
+  dataset="raiox-placar-por-indicador-it"
+  title="29 dei 57 numeri dell'infografica non si riproducono"
+  subtitle="Per indicatore: quante righe di ciascuno cadono in ciascun verdetto."
+  description="Grafico di 18 barre orizzontali in 3 blocchi. Blocco Non riprodotto, per indicatore: Salario minimo, 8 su 8; Inflazione, 5 su 8; Povertà, 5 su 8; PIL, 4 su 8; Disoccupazione, 4 su 9; Gini, 2 su 8; Aspettativa di vita, 1 su 8. Blocco Entro la tolleranza (riprodotto o approssimato): Salario minimo, 0 su 8; Inflazione, 2 su 8; Povertà, 1 su 8; PIL, 4 su 8; Disoccupazione, 3 su 9; Gini, 4 su 8; Aspettativa di vita, 7 su 8. Blocco Senza serie ufficiale: Inflazione, 1 su 8; Povertà, 2 su 8; Disoccupazione, 2 su 9; Gini, 2 su 8. Conclusione: nessuno dei sette indicatori rientra per intero nella tolleranza, e nessuno degli otto casi del salario minimo si riproduce."
+  source="Tabellone di 57 righe contro serie ufficiali (IBGE, Ipeadata, BCB) · ulissesflores.com/raio-x"
+/>
+
+Nella barra dorata più lunga, nessuno degli otto casi del salario minimo si riproduce. L'immagine non dice se il calcolo del salario è reale (al netto dell'inflazione). Nella variazione reale da dicembre a dicembre, dell'Ipea, il 42,8 della dittatura (1968-1973) esce 0,29. Il -13,9 di Itamar (1992-1994) esce 37,69, e il 4,8 di FHC (1995-2002) esce 40,05.
+
+La disoccupazione ha nove celle perché Lula 1-2 stampa due tassi, 8,4 e 6,5. Sette non hanno serie. Il 20,3 (1967-1973) resta senza perché l'IPCA comincia solo nel 1980; il 3,7 di disoccupazione, perché non c'è una serie ufficiale nella finestra. Una sedia vuota non è uno zero.
+
+Non si riproducono neppure l'IPCA di Itamar (1.088 contro 1.504,22) e il PIL di Dilma (1,4 contro 0,43). Nemmeno il PIL di Temer: 0,7 contro -0,06.
+
+La didascalia che cita ChatGPT è dell'autore del post, non autenticata: una didascalia non è una fonte. Un'altra catena di WhatsApp, verificata alla fonte: [nessuno ha provato che Meta legga WhatsApp](/artigos/ninguem-provou-meta-le-whatsapp).
+
+## Dal Plano Real in poi, solo il primo e l'ultimo posto si separano
+
+Secondo la chiusura dell'indice delle condizioni del paese, dal Plano Real (il piano di stabilizzazione monetaria) in poi: 6° FHC (33,6; mantiene il posto nel 100% delle 10.000 estrazioni di pesi); 5° Dilma (57,5; 61%); 4° Temer (58,8; 72%); 3° Bolsonaro (63,9; 64%); 2° Lula 1-2 (75,4; 81%); 1° Lula 3 (83,0; 88%). L'ordine è quello dell'ultimo anno di ciascun mandato nell'indice, non quello del merito del governo. Dilma, Temer e Bolsonaro non si separano: le fasce dal percentile 5 al 95 si sovrappongono.
+
+Due cautele in più, oltre al fatto che l'indice descrive le condizioni del paese e non il merito. Primo, dieci voci sono tendenze lunghe, come aspettativa di vita, mortalità infantile e PIL pro capite, che salgono quasi ogni anno e favoriscono chi governa dopo.
+
+Secondo, in due voci del V-Dem (*Varieties of Democracy*, "varietà di democrazia") il valore del 2024 è esso stesso il riferimento "migliore" del 1995-2024. Sono le restrizioni giudiziarie all'Esecutivo (v2x_jucon), a 0,954, e la corruzione politica (v2x_corr), a 0,438. Parte del salto delle Istituzioni in Lula 3 è il tetto della scala.
+
+Sono 35 voci in 12 aree, da 0 (il peggiore del 1995-2024) a 100 (il migliore). La direzione viene da un articolo Q1 con DOI (Q1 è il quartile superiore dell'SJR 2024, la classifica delle riviste). Omicidio, inflazione e debito sono invertiti. Il peso uguale per area è un giudizio dichiarato; la correzione per importanza effettiva non è giunta a convergenza.
+
+Le 10.000 estrazioni (seme 20261020) danno la fascia dal percentile 5 al 95. Ogni mandato è una candela di borsa (*candle*). FHC apre nel 1995, senza il 1994; Temer apre a 71,8 (2015), non al 57,5 del 2016, perché l'insediamento è stato in agosto.
+
+<MandatosChart
+  dataset="raiox-indice-por-mandato-it"
+  mode="indice"
+  title="Nell'indice, Dilma, Temer e Bolsonaro non si separano; gli estremi sì"
+  subtitle="Indice composto da 0 a 100 (versione N); ogni candela di borsa è un mandato."
+  description="Fascia di 6 governi dal 1994 al 2024, con sei candele sopra di essa, una per mandato, in ordine: FHC, corpo pieno, apre a 30,2, chiude a 33,6, minimo 30,2, massimo 42,4, fascia dei pesi da 27,1 a 40,2; Lula 1-2, corpo pieno, apre a 33,6, chiude a 75,4, minimo 32,8, massimo 75,4, fascia dei pesi da 67,6 a 81,6; Dilma, corpo vuoto, apre a 75,4, chiude a 57,5, minimo 57,5, massimo 77,2, fascia dei pesi da 44,4 a 69,0; Temer, corpo vuoto, apre a 71,8, chiude a 58,8, minimo 57,5, massimo 71,8, fascia dei pesi da 46,7 a 70,6; Bolsonaro, corpo pieno, apre a 58,8, chiude a 63,9, minimo 53,0, massimo 64,4, fascia dei pesi da 51,8 a 73,4; Lula 3, corpo pieno, apre a 63,9, chiude a 83,0, minimo 63,9, massimo 83,0, fascia dei pesi da 71,7 a 91,3. Conclusione: il centro della classifica non si separa su 10.000 estrazioni di pesi; il primo e l'ultimo posto, sì."
+  source="FHC apre nel 1995: non c'è il 1994 · Lula 3 arriva al 2024, ultimo anno dell'indice · ulissesflores.com/raio-x"
+/>
+
+Ogni candela ha un corpo e, accanto, una parentesi quadra dorata. Il corpo pieno ha chiuso sopra l'apertura; quello vuoto, solo contorno, sotto, come in Dilma e Temer. Le parentesi di Dilma, Temer e Bolsonaro si sovrappongono.
+
+| Mandato | Apre | Chiude | Max. | Min. | p5 | p95 | Posto | Mantiene il posto (estrazioni) |
+|---|---|---|---|---|---|---|---|---|
+| FHC | 30,2 | 33,6 | 42,4 | 30,2 | 27,1 | 40,2 | 6° | 100% |
+| Lula 1-2 | 33,6 | 75,4 | 75,4 | 32,8 | 67,6 | 81,6 | 2° | 81% |
+| Dilma | 75,4 | 57,5 | 77,2 | 57,5 | 44,4 | 69,0 | 5° | 61% |
+| Temer | 71,8 | 58,8 | 71,8 | 57,5 | 46,7 | 70,6 | 4° | 72% |
+| Bolsonaro | 58,8 | 63,9 | 64,4 | 53,0 | 51,8 | 73,4 | 3° | 64% |
+| Lula 3 | 63,9 | 83,0 | 83,0 | 63,9 | 71,7 | 91,3 | 1° | 88% |
+
+**Dal Plano Real in poi, solo il primo e l'ultimo posto si separano nelle estrazioni; l'indice descrive il paese, non il merito del governo.**
+
+Sale: Lavoro va da 14,9 a 84,1 in Lula 1-2 e chiude Lula 3 a 100,0. Scende: Istituzioni va da 76,8 a 34,1 in Dilma e da 76,4 (2015) a 21,5 in Temer. Si ripete: Fisco e vulnerabilità sale a 71,0 alla chiusura di Lula 1-2 e scende in ogni mandato successivo, fino a 38,5 nel 2024. La figura riporta i punteggi di ciascuna area.
+
+<ArticleFigure
+  src="/artigos/raio-x-do-brasil-por-governo/areas.it.png"
+  alt="Tabella di 13 righe (l'indice e 12 aree) per 6 mandati, da FHC a Lula 3. In ogni cella, il punteggio da 0 a 100 all'apertura e alla chiusura del mandato e un righello con i due punti: blu quando ha chiuso sopra l'apertura, dorato quando ha chiuso sotto. Istruzione e Abitazione non hanno punteggio alla chiusura di nessun mandato."
+  width="1760"
+  height="1494"
+  caption="L'indice per area in ogni mandato, punteggio all'apertura e alla chiusura: l'indice descrive le condizioni del paese, non il merito del governo."
+  credit="Repository brazil-governments-factcheck, output/figures/areas.it.svg · ulissesflores.com/raio-x"
+/>
+
+Mancano 1996, 1998 e 2000 (meno del 70% delle voci con dato). Cinque voci si fermano nel 2014-2015, perché la PNAD Contínua non si sovrappone alla vecchia e la preregistrazione vieta di concatenarle. Nel 2025 e nel 2026 esiste solo l'ultimo valore riportato in avanti, che non è l'indice; per questo Lula 3 chiude nel 2024.
+
+## Il pavimento istituzionale descrive il paese; la causa resta aperta
+
+L'indipendenza dei poteri è già nell'indice, in quattro misure del V-Dem v16. Il V-Dem aggrega con un modello di misurazione la codifica degli esperti, pubblica limiti di incertezza, e ogni versione ristima l'intera serie.
+
+| Voce (da 0 a 1) | 1994 | 2002 | 2010 | 2016 | 2018 | 2022 | 2024 | Riferimenti 1995-2024 (peggiore e migliore) |
+|---|---|---|---|---|---|---|---|---|
+| Restrizioni giudiziarie all'Esecutivo (v2x_jucon) | 0,825 | 0,825 | 0,93 | 0,872 | 0,859 | 0,827 | 0,954 | 0,806 e 0,954 |
+| Restrizioni legislative (v2xlg_legcon) | 0,831 | 0,831 | 0,902 | 0,83 | 0,792 | 0,822 | 0,933 | 0,778 e 0,937 |
+| Democrazia liberale (v2x_libdem) | 0,707 | 0,721 | 0,776 | 0,653 | 0,608 | 0,54 | 0,712 | 0,528 e 0,783 |
+| Corruzione politica (v2x_corr; minore è meglio) | 0,511 | 0,545 | 0,494 | 0,535 | 0,535 | 0,545 | 0,438 | 0,546 e 0,438 |
+
+L'editore ha chiesto un indicatore dopo la pubblicazione dell'indice. È il v2x_freexp_altinf, *Freedom of Expression and Alternative Sources of Information* ("libertà di espressione e fonti alternative di informazione"). È contesto nel terminale e non fa punteggio (emendamento EMENDA-13, 25 ottobre 2026). Includere una voce dopo aver visto il risultato è ciò che la preregistrazione impedisce.
+
+Stima puntuale: 0,924 nel 1995, 0,931 nel 2010, 0,809 nel 2016, 0,704 nel 2022, 0,923 nel 2024. La democrazia liberale contiene già la libertà di espressione.
+
+L'ipotesi dell'editore è nell'emendamento EMENDA-12, del 25 ottobre 2026, registrata prima di cercare. Per lui, l'autonomia della Banca Centrale e i limiti legali di spesa "in un certo senso impediscono di peggiorare". Questo articolo non la afferma né la mette alla prova: parlano solo gli studi sottoposti a revisione tra pari.
+
+Ciclo 11: 54 ricerche, 7.487 pubblicazioni restituite, 43 incluse. Nei quattro episodi nuovi ne sono passate 1, 4, 1 e 0; indipendenza giudiziaria, nessuna.
+
+Parole dell'episodio nel titolo o nelle frasi di risultato: nessuna. Gli studi che sono passati, per episodio:
+
+- Autonomia: *Alice Amsden* (Development and Change, 2008), testo con il nome dell'autrice nel titolo.
+- Regole fiscali: *The effects of intergovernmental transfers on the local fiscal incentives of Brazilian municipalities* ("Gli effetti dei trasferimenti intergovernativi sugli incentivi fiscali locali dei comuni brasiliani", 2024); *Intergovernmental transfers and fiscal performance: evidence from Brazil* ("Trasferimenti intergovernativi e performance fiscale: evidenze dal Brasile", 2026); *Municipal Secession and Transfer Incentives in Brazil* ("Secessione municipale e incentivi ai trasferimenti in Brasile", 2026); *Sales vs. profit-based royalties: Evidence from lithium in LAC countries* ("Royalty sulle vendite contro royalty sugli utili: evidenze dal litio nei paesi dell'America Latina e dei Caraibi", 2025).
+- Stampa: *"Yes, I Saw It – But Didn't Read It…"* ("Sì, l'ho visto, ma non l'ho letto…", 2020).
+
+Sono passati perché nominano una strategia di identificazione (il metodo che lo studio usa per separare l'effetto dalla coincidenza), non perché misurino l'episodio.
+
+**L'ipotesi resta aperta nella letteratura Q1 con strategia di identificazione sul Brasile.**
+
+Quello che questo articolo porta è descrizione: l'inflazione da dicembre a dicembre e la serie del debito. La causa resta al lettore.
+
+## Il segno cambia a seconda del vicino che si sceglie
+
+Il calcolo è lo stesso sui tre lati: media degli anni del mandato, stessa serie e stessa fonte, senza somma e senza punteggio. Il confronto con il mondo comincia nel 1995; restano fuori i cinque governi omessi e anche Costa e Silva, Medici e Itamar. Crescita reale del PIL, in % annua:
+
+| Mandato | Brasile | America Latina e Caraibi | Reddito medio-alto |
+|---|---|---|---|
+| FHC | 2,4 | 2,3 | 4,7 |
+| Lula 1-2 | 4,1 | 3,8 | 7,2 |
+| Dilma | 0,4 | 1,7 | 5,4 |
+| Temer | 1,6 | 1,4 | 5,2 |
+| Bolsonaro | 1,4 | 1,2 | 3,7 |
+| Lula 3 | 3,0 | 2,3 | 4,3 |
+
+**Nella crescita, solo Dilma resta sotto l'America Latina e i Caraibi; tutti restano sotto il reddito medio-alto.**
+
+Nell'aspettativa di vita, il vicino cambia il segno. Bolsonaro, con 74,6 anni, sta sopra l'America Latina e i Caraibi (73,7) e sotto il reddito medio-alto (75,2). Lula 3, con 75,9, è alla pari con il reddito medio-alto (76,0) e sopra l'America Latina e i Caraibi (75,7).
+
+## Il Plano Real entra nel filtro ed esce con zero
+
+Questo strato non misura se una politica ha funzionato. Entra l'articolo con DOI registrato su Crossref, di una rivista Q1, con Brasile nel titolo o nel riassunto e con una strategia di identificazione nominata nel riassunto.
+
+Su 7.487 pubblicazioni, 2.909 sono uscite senza DOI e 2.625 perché fuori dall'SJR 2024. Altri tagli hanno tolto il resto, e sono rimasti 43 studi per i 27 episodi. Chi si limita a menzionare la strategia passa: tagliare a mano sarebbe un mio giudizio.
+
+Il ciclo 10 aveva 6.497 pubblicazioni e 38 incluse; quattro episodi istituzionali sono entrati il 25 ottobre 2026 con un emendamento datato. Contare gli studi per mandato misurerebbe anni trascorsi ed episodi dichiarati, mai la qualità del governo; non conto.
+
+<CountryBarsChart
+  dataset="raiox-estudos-por-episodio-it"
+  title="43 studi Q1 in 27 episodi: 10 episodi restano senza nessuno"
+  subtitle="Uno stesso studio può valere in due episodi: le barre sommano 47."
+  description="Grafico di 27 barre orizzontali in 2 blocchi. Blocco Episodi con uno studio Q1 che ha passato il filtro: Deforestazione 04-24, 8 studi; Bolsa Família 2001-, 6 studi; Salario minimo 2005-, 4 studi; Materie prime 03-11, 4 studi; Pensioni 2019, 4 studi; Bolsa Família 2023, 4 studi; Regole fiscali, 4 studi; Recessione 2014-16, 2 studi; Riforma del lavoro, 2 studi; Debito pubbl. 2014-, 2 studi; Minha Casa 2009-, 1 studio; Pandemia 2020-21, 1 studio; Pix 2020-21, 1 studio; Quadro fiscale, 1 studio; Riserve e FMI 05-08, 1 studio; Autonomia della BCB, 1 studio; Stampa 1995-, 1 studio. Blocco Nessuno studio ha passato il filtro: Plano Real, 0 (assenza dichiarata); Target d'inflazione, 0 (assenza dichiarata); Resp. fiscale 2000, 0 (assenza dichiarata); Crisi del 2008, 0 (assenza dichiarata); BNDES 2008-14, 0 (assenza dichiarata); Sgravi fiscali 11-14, 0 (assenza dichiarata); Lava Jato 2014-18, 0 (assenza dichiarata); Tetto di spesa 2016, 0 (assenza dichiarata); Debito estero 1994-, 0 (assenza dichiarata); Indip. giudiziaria, 0 (assenza dichiarata). Conclusione: dieci dei 27 episodi non hanno nessuno studio che abbia passato il filtro."
+  source="Crossref, SJR 2024 e riassunti di OpenAlex · filtro preregistrato · ulissesflores.com/raio-x"
+/>
+
+Guardate il blocco in basso, senza nessuna barra: ogni episodio senza studio ha uno zero scritto. Per il Plano Real, 400 pubblicazioni lette, su 10.734 restituite; per debito estero, riserve e vulnerabilità dal 1994, 377, su 556. Nessuna è stata inclusa. Zero in questo filtro non è zero nella letteratura.
+
+**Su 7.487 pubblicazioni, 43 hanno passato il filtro; il Plano Real e il debito estero sono rimasti a zero.**
+
+Dove c'è uno studio, la causa compare solo per bocca sua. Tre esempi:
+
+*Impact of the Bolsa Família program on food availability of low-income Brazilian families: a quasi experimental study* ("Impatto del programma Bolsa Família sulla disponibilità di alimenti nelle famiglie brasiliane a basso reddito: uno studio quasi sperimentale", BMC Public Health, 2016, [10.1186/s12889-016-3486-y](https://doi.org/10.1186/s12889-016-3486-y)): *"higher food expenditure, higher availability of fresh foods and culinary ingredients"* ("maggiore spesa alimentare, maggiore disponibilità di alimenti freschi e di ingredienti da cucina").
+
+*Deforestation slowdown in the Brazilian Amazon: prices or policies?* ("Il rallentamento della deforestazione nell'Amazzonia brasiliana: prezzi o politiche?", Environment and Development Economics, 2015, [10.1017/s1355770x15000078](https://doi.org/10.1017/s1355770x15000078)): *"After controlling for price effects, we find that conservation policies implemented beginning in 2004 and 2008 significantly contributed to the curbing of deforestation."* ("Dopo aver controllato l'effetto dei prezzi, troviamo che le politiche di conservazione attuate a partire dal 2004 e dal 2008 hanno contribuito in modo significativo a frenare la deforestazione.")
+
+*Social Security Reforms, Retirement and Sectoral Decisions* ("Riforme previdenziali, pensionamento e decisioni settoriali", International Economic Review, 2025, [10.1111/iere.70083](https://doi.org/10.1111/iere.70083)): *"Calibrated to Brazil, the model shows that unifying pension systems and raising the minimum retirement age reduce the pension deficit by nearly 40 percent [...]"* ("Calibrato sul Brasile, il modello mostra che unificare i sistemi pensionistici e innalzare l'età minima di pensionamento riducono il deficit pensionistico di quasi il 40% [...]"). Calibrato vuol dire adattato ai dati del paese: il calcolo è dello studio.
+
+## Il titolo di giornale ha azzeccato il saldo e ha cambiato il nome dell'attività
+
+Il 21 e 22 ottobre 2026, sei testate hanno pubblicato lo stesso trio, 407,1 miliardi di dollari, 402 miliardi e 5,1 miliardi (Estadão/Broadcast, NC News, Brasil em Folhas, Cardinot, Revista Oeste e O Antagonista, quest'ultimo citando l'Estadão). Ripetere non è una seconda verifica.
+
+**I 5,1 miliardi di dollari di giugno 2026 sono il numero ufficiale della serie 3685; i 402 miliardi non sono le riserve di cassa.**
+
+La Banca Centrale ha due lordi, e io non li sommo mai. Quello ristretto, serie 3684, dal 1972, riunisce prestiti, titoli all'estero e credito commerciale. È quello dei titoli di giornale: 407,1 miliardi di dollari a giugno 2026, il valore nominale più alto (in dollari correnti).
+
+Il BPM6 (Manuale della bilancia dei pagamenti, 6ª edizione), serie 25563, dal 2002, aggiunge a questo totale le operazioni tra imprese dello stesso gruppo e i titoli nazionali in mano a chi non risiede nel paese. A giugno 2026 segna 869,5 miliardi di dollari, ciò che la Banca Centrale chiama "il debito estero brasiliano".
+
+Quella netta, serie 3685, continua a essere pubblicata. È la colonna M della Tabella 31 della Banca Centrale. Risulta dal lordo ristretto meno riserve, crediti all'estero e disponibilità delle banche (ciò che le banche brasiliane hanno depositato all'estero). Negativo vuol dire creditore.
+
+A giugno 2026 segna +5,1 miliardi, il primo positivo da settembre 2007 (17,0 miliardi); a dicembre 2007 era a -11,9 miliardi. Il titolo ha azzeccato il numero e il "prima volta in 19 anni".
+
+I 402 miliardi di dollari, però, non sono la cassa della serie 3546, che segnava 367,6 miliardi a giugno 2026: mettono insieme riserve, crediti e disponibilità, che la Banca Centrale sottrae. L'articolo dice che i crediti già rientrano.
+
+Il rapporto sul PIL, serie 11409, si è fermato a febbraio 2026 e io non lo prolungo: 46,3% a dicembre 1984, 32,7% a dicembre 2002, -0,9% a settembre 2025. L'articolo dice che la netta "è sotto lo 0,3% del PIL"; il calcolo è suo, io non l'ho fatto.
+
+<SeriesLinesChart
+  dataset="raiox-divida-externa-it"
+  title="Il debito estero netto è tornato positivo a giu/2026"
+  subtitle="Lordo, riserve e netto, in miliardi di US$, da dic/1994 a set/2026."
+  description="Grafico di 3 linee su un'unica scala, in miliardi di US$, da dicembre 1994 a settembre 2026, in ordine: Debito lordo 407,1 (debito estero lordo, in blu, parte da 148,3 a dic/1994); Riserve 362,8 (riserve internazionali, in grigio chiaro tratteggiato, parte da 38,8 a dic/1994); Debito netto +5,1 (debito estero netto, in oro, parte da 88,2 a dic/1994). Due annotazioni in oro: set/2007: ultimo trimestre positivo; giu/2026: +5,1 mld. Conclusione: Debito meno riserve non è il debito netto: la BCB sottrae anche i crediti all'estero e le disponibilità delle banche."
+  source="BCB SGS 3684, 3546 e 3685 · debiti fino a giu/2026, riserve fino a set/2026 · ulissesflores.com/raio-x"
+/>
+
+Nella linea dorata, quella del debito netto, il valore parte sopra lo zero e attraversa lo zero nel 2007. Torna a toccarlo a giugno 2026. I +5,1 miliardi di giugno 2026 non si confrontano con il 46,3% del PIL del 1984: uno è un valore, l'altro è un rapporto. E il numero si rivede: dicembre 2025 è uscito, nella nota di gennaio 2026, come stima di -17,2 miliardi e sta nella serie a -8,7.
+
+Errata: la versione 1.0.0, del 23 ottobre 2026, diceva che il 2026 non aveva un valore ufficiale e che il titolo faceva lordo meno riserve. Le due frasi erano sbagliate: la 3685 è ancora online e coincide al centesimo con la Tabella 31. Ho corretto il 24 ottobre.
+
+## Che cosa ne farei
+
+Io non risponderei a quale governo sia stato il migliore con questa immagine: non ha quella risposta. La domanda del titolo trova risposta solo dopo aver detto che cosa si vuole sapere: le condizioni del paese o il merito del governo.
+
+**Prima di inoltrare il prossimo numero, esigerei tre nomi: la serie, la finestra e il calcolo.**
+
+Senza il nome del calcolo (media, variazione reale da dicembre a dicembre o livello di un anno), la cella non è un fatto. Chi vuole rifarlo:
+
+```bash
+git clone https://github.com/ulissesflores/brazil-governments-factcheck
+cd brazil-governments-factcheck
+python3 run_all.py
+```
+
+Basta la libreria standard di Python 3.11 o più recente; l'esecuzione termina con `run_all: OK`. Se esce un risultato diverso, mandatemelo: aggiorno e ne do credito.
+
+*Verificato il 25 ottobre 2026 rispetto al repository sigillato (DOI [10.5281/zenodo.23604103](https://doi.org/10.5281/zenodo.23604103)), alla metodologia e alle serie della Banca Centrale, IBGE, Ipea, Banca Mondiale, OpenAlex, Crossref e SJR. Su X, la raccolta è un campione: il post più vecchio è del 18 ottobre 2026, 19:42 UTC. Non ho accertato né la paternità né l'intenzione. Nessun valore del 2026 è stato calcolato qui.*
+
+## Fonti
+
+- Pagina con le serie, il tabellone e l'indice: [economia.ulissesflores.com](https://economia.ulissesflores.com)
+- Repository pubblico, con dati, test e catena di hash: [brazil-governments-factcheck](https://github.com/ulissesflores/brazil-governments-factcheck)
+- DOI del concetto, su Zenodo: [10.5281/zenodo.23604103](https://doi.org/10.5281/zenodo.23604103). Versione 1.0.0: [10.5281/zenodo.23604137](https://doi.org/10.5281/zenodo.23604137)
+- Metodologia in portoghese: [METHODOLOGY.md](https://github.com/ulissesflores/brazil-governments-factcheck/blob/main/docs/it/METHODOLOGY.md)
+- Banca Centrale del Brasile, SGS 433, IPCA: [serie 433](https://api.bcb.gov.br/dados/serie/bcdata.sgs.433/dados?formato=json)
+- Banca Centrale del Brasile, SGS 3684, debito estero lordo nel concetto ristretto: [serie 3684](https://api.bcb.gov.br/dados/serie/bcdata.sgs.3684/dados?formato=json)
+- Banca Centrale del Brasile, SGS 25563, debito estero lordo nel concetto BPM6: [serie 25563](https://api.bcb.gov.br/dados/serie/bcdata.sgs.25563/dados?formato=json)
+- Banca Centrale del Brasile, SGS 3685, debito estero netto in dollari: [serie 3685](https://api.bcb.gov.br/dados/serie/bcdata.sgs.3685/dados?formato=json)
+- Banca Centrale del Brasile, SGS 3546, riserve internazionali nel concetto di cassa: [serie 3546](https://api.bcb.gov.br/dados/serie/bcdata.sgs.3546/dados?formato=json)
+- Banca Centrale del Brasile, SGS 11409, debito estero netto sul PIL, interrotta a febbraio 2026: [serie 11409](https://api.bcb.gov.br/dados/serie/bcdata.sgs.11409/dados?formato=json)
+- Banca Mondiale, povertà e disuguaglianza: [PIP](https://pip.worldbank.org/)
+- Banca Mondiale, indicatori di sviluppo: [World Development Indicators](https://data.worldbank.org/)
+- IBGE: [ibge.gov.br](https://www.ibge.gov.br/)
+- Ipea, serie storiche: [Ipeadata](https://www.ipeadata.gov.br/)
+- Catalogo di pubblicazioni: [OpenAlex](https://openalex.org/). Registro dei DOI: [Crossref](https://www.crossref.org/). Classifica delle riviste: [SJR](https://www.scimagojr.com/)
+- Post su X con l'immagine e la didascalia, 18 ottobre 2026: [@ffrancisconl](https://x.com/ffrancisconl/status/2111905813992513673)
+- Titolo di Estadão/Broadcast, 21 ottobre 2026, in portoghese: ["Dívida externa cresce mais que reservas e Brasil volta a ser devedor internacional após 19 anos"](https://www.estadao.com.br/economia/divida-externa-cresce-mais-que-reservas-e-brasil-volta-a-ser-devedor-internacional-apos-19-anos/) ("Il debito estero cresce più delle riserve e il Brasile torna a essere debitore internazionale dopo diciannove anni")
+- V-Dem v16 (*Varieties of Democracy*), pacchetto `vdemdata`, tag V16
+- Emendamenti 12 e 13 della preregistrazione, sigillati il 25 ottobre 2026 nella catena `data/raw/preregistro/manifest.jsonl` del [repository](https://github.com/ulissesflores/brazil-governments-factcheck)

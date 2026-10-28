@@ -1,0 +1,277 @@
+---
+title: 'Qual foi o melhor governo do Brasil? O que os dados públicos respondem e o que não respondem'
+slug: raio-x-do-brasil-por-governo
+category: artigos
+date: '2026-10-24'
+language: pt-BR
+---
+
+Com a imagem que circulou, não dá: 29 dos 57 números não saem dos dados públicos. Dezessete deles não saem sob nenhuma conta testada, e a imagem omite cinco governos.
+
+A imagem chegou a mim pelo WhatsApp em 19 de outubro de 2026. O post mais antigo que achei está no X, de 18 de outubro, com a legenda "Perguntei ao ChatGPT qual foi o melhor governo do Brasil?".
+
+Com os dados públicos, só em parte. Num índice escrito antes da conta, só a primeira e a última posições se separam quando os pesos mudam. O meio da tabela (Dilma, Temer, Bolsonaro) não se separa, e o índice descreve o país, não o mérito do governo. Não reproduzir não prova que a imagem mentiu: sob outra linha de pobreza ou outra janela, 12 dos 29 ficam dentro da tolerância.
+
+## Cinco governos ficam de fora, e somam 34,3% dos meses
+
+<MandatosChart
+  dataset="raiox-regua-1964-2026"
+  mode="janelas"
+  title="O infográfico cobre 8 dos 13 presidentes desde 1964"
+  subtitle="Cada segmento é um mandato; as barras cinza-claro são as janelas que o infográfico imprimiu."
+  description="Faixa horizontal de 1964 a outubro de 2026 com 15 segmentos de governo, em ordem: Castelo (fora do infográfico, em ouro hachurado), Costa e Silva (no infográfico, em azul), Junta Militar de 1969 (cinza, sem rótulo), Medici (no infográfico, em azul), Geisel (fora do infográfico, em ouro hachurado), Figueiredo (fora do infográfico, em ouro hachurado), Sarney (fora do infográfico, em ouro hachurado), Collor (fora do infográfico, em ouro hachurado), Itamar (no infográfico, em azul), FHC (no infográfico, em azul), Lula 1-2 (no infográfico, em azul), Dilma (no infográfico, em azul), Temer (no infográfico, em azul), Bolsonaro (no infográfico, em azul), Lula 3 (no infográfico, em azul). Acima da faixa, 8 janelas impressas pelo infográfico, em barras finas cinza-claro, em ordem: Ditadura, de 1967 a 1974; Itamar Franco, de 1992 a 1994; FHC, de 1995 a 2002; Lula 1-2, de 2003 a 2010; Dilma, de 2011 a 2016; Temer, de 2016 a 2018; Bolsonaro, de 2019 a 2022; Lula 3, de 2023 a 2026. Conclusão: 5 governos e 34,3% dos meses ficam fora do infográfico."
+  source="Mandatos: Arquivo Nacional e Câmara · Junta de 1969 (2 meses): traço cinza, sem rótulo · ulissesflores.com/raio-x"
+/>
+
+Os blocos hachurados em ouro são os governos que o infográfico não tem.
+
+**Entre 1964 e 2026, a imagem cobre 8 de 13 chefes de governo e omite 34,3% dos meses.**
+
+Os cinco omitidos são Castelo Branco, Geisel, Figueiredo, Sarney e Collor: 257,6 meses de 750,1. O cabeçalho da ditadura diz 1967-1974, mas o PIB usa 1968-1973 e a inflação, 1967-1973. Fica de fora também tudo além dos sete indicadores do placar: o [repositório](https://github.com/ulissesflores/brazil-governments-factcheck) publica 101 séries em 19 domínios, e a imagem não traz nenhuma.
+
+> **Nota metodológica.** O critério está em código (`verdict.py`) e foi fixado antes do resultado. *Reproduz*: arredondado nas casas impressas, bate. *Aproxima*: até 0,3 ponto percentual (diferença entre porcentagens) nas linhas em %, ou 5% relativos. *Não reproduz*: passa disso. *Sem série*: nenhuma série oficial cobre a janela.
+>
+> Uma especificação por indicador; o resto é sensibilidade. PIB: IBGE (Instituto Brasileiro de Geografia e Estatística) e Ipeadata. IPCA (índice oficial de inflação): série 433 do SGS, catálogo do Banco Central. Desemprego: PME (Pesquisa Mensal de Emprego) e PNAD Contínua (Pesquisa Nacional por Amostra de Domicílios Contínua). Salário real, dezembro a dezembro: Ipea (Instituto de Pesquisa Econômica Aplicada). Pobreza e Gini (índice de 0 a 1: perto de 1, renda mais desigual): PIP do Banco Mundial (plataforma de pobreza e desigualdade), a US$ 6,85/dia em PPC (paridade do poder de compra). Expectativa de vida: ONU, via Banco Mundial.
+>
+> Cada download entra em `manifest.jsonl` com o hash (impressão digital de um arquivo) da linha anterior, e o selo SHA-256 (o algoritmo dessa impressão) se confere com `python3 make_provenance.py --verify`. Nada é estimado, imputado (preenchido com valor atribuído) nem interpolado (ligando dois pontos conhecidos); série com quebra de método não se emenda. O pré-registro (regra selada antes da conta) tem 13 emendas datadas; antes de baixar, só a lista do que a imagem omite estava selada, e as especificações vieram depois de uma passada exploratória. DOI é o identificador permanente do depósito. O mesmo desenho está em [como conferi as pesquisas eleitorais de 2026](/artigos/pesquisas-eleitorais-2026).
+
+## Vinte e nove números não saem da série escolhida
+
+**De 57 números, 2 reproduzem, 19 aproximam, 29 não reproduzem e 7 não têm série.**
+
+Dos 50 com série, 21 ficam dentro da tolerância e 29 ficam fora.
+
+<ArticleFigure
+  src="/artigos/raio-x-do-brasil-por-governo/placar.png"
+  alt="Grade de 7 indicadores por 8 governos com 57 números: em cada célula, o valor impresso no infográfico e o que sai dos dados públicos. 2 reproduzem, 19 aproximam, 29 não reproduzem e 7 não têm série."
+  width="1760"
+  height="1430"
+  caption="O placar das 57 linhas do infográfico contra os dados públicos: a moldura dourada marca o que não reproduz."
+  credit="Repositório brazil-governments-factcheck · ulissesflores.com/raio-x"
+/>
+
+Cada moldura dourada cerca uma célula que não reproduz. Em cada célula, o número pequeno é o impresso e o grande, o que sai dos dados públicos. Os dois círculos azuis cheios são os Ginis que fecham, 0,52 (2014) e 0,54 (2018). Célula a célula, na [página da conferência](https://economia.ulissesflores.com).
+
+| Indicador | Reproduz | Aproxima | Não reproduz | Sem série |
+|---|---|---|---|---|
+| PIB | 0 | 4 | 4 | 0 |
+| IPCA | 0 | 2 | 5 | 1 |
+| Desemprego | 0 | 3 | 4 | 2 |
+| Salário mínimo real | 0 | 0 | 8 | 0 |
+| Pobreza | 0 | 1 | 5 | 2 |
+| Gini | 2 | 2 | 2 | 2 |
+| Expectativa de vida | 0 | 7 | 1 | 0 |
+| **Total** | **2** | **19** | **29** | **7** |
+
+Há uma ressalva que a tabela não mostra: testei cada linha também com contas alternativas: outra linha de pobreza, janela deslocada um ano, média anual no lugar de dezembro a dezembro. Dos 29 que não reproduzem na conta primária, 12 ficam dentro da tolerância sob alguma alternativa. Os outros 17 não saem dos dados públicos sob nenhuma testada.
+
+Dois exemplos dos 12. A inflação de FHC, impressa como 7,6, sai 9,25 na primária e 7,37 com a janela 1996-2002. A pobreza de Bolsonaro, impressa como 31,6, sai 28,45 a US$ 6,85 por dia e 30,58 a US$ 8,30.
+
+<CountryBarsChart
+  dataset="raiox-placar-por-indicador"
+  title="29 dos 57 números do infográfico não se reproduzem"
+  subtitle="Por indicador: quantas das linhas de cada um caem em cada veredito."
+  description="Gráfico de 18 barras horizontais em 3 blocos. Bloco Não reproduz, por indicador: Salário mínimo, 8 de 8; Inflação, 5 de 8; Pobreza, 5 de 8; PIB, 4 de 8; Desemprego, 4 de 9; Gini, 2 de 8; Expectativa de vida, 1 de 8. Bloco Dentro da tolerância (reproduz ou aproxima): Salário mínimo, 0 de 8; Inflação, 2 de 8; Pobreza, 1 de 8; PIB, 4 de 8; Desemprego, 3 de 9; Gini, 4 de 8; Expectativa de vida, 7 de 8. Bloco Sem série oficial: Inflação, 1 de 8; Pobreza, 2 de 8; Desemprego, 2 de 9; Gini, 2 de 8. Conclusão: nenhum dos sete indicadores fica inteiro dentro da tolerância, e o salário mínimo não reproduz em nenhum dos oito casos."
+  source="Placar de 57 linhas contra séries oficiais (IBGE, Ipeadata, BCB) · ulissesflores.com/raio-x"
+/>
+
+Na barra dourada mais longa, o salário mínimo não reproduz em nenhum dos oito casos. A imagem não diz se a conta do salário é real. Na variação real de dezembro a dezembro, do Ipea, o 42,8 da ditadura (1968-1973) sai 0,29. O -13,9 de Itamar (1992-1994) sai 37,69, e o 4,8 de FHC (1995-2002) sai 40,05.
+
+O desemprego tem nove células porque Lula 1-2 imprime duas taxas, 8,4 e 6,5. Sete não têm série. O 20,3 (1967-1973) fica sem ela porque o IPCA só começa em 1980; o 3,7 de desemprego, porque não há série oficial na janela. Cadeira vazia não é zero.
+
+Também não reproduzem o IPCA de Itamar (1.088 contra 1.504,22) e o PIB de Dilma (1,4 contra 0,43). O PIB de Temer também não: 0,7 contra -0,06.
+
+A legenda que cita o ChatGPT é do autor do post, não autenticada: legenda não é fonte. Outra corrente de WhatsApp, conferida na fonte: [ninguém provou que a Meta lê o WhatsApp](/artigos/ninguem-provou-meta-le-whatsapp).
+
+## Desde o Plano Real, só a primeira e a última posições se separam
+
+Pelo fechamento do índice de condições do país, desde o Plano Real: 6º FHC (33,6; mantém o lugar em 100% dos 10.000 sorteios de pesos); 5º Dilma (57,5; 61%); 4º Temer (58,8; 72%); 3º Bolsonaro (63,9; 64%); 2º Lula 1-2 (75,4; 81%); 1º Lula 3 (83,0; 88%). A ordem é a do último ano de cada mandato no índice, não a do mérito do governo. Dilma, Temer e Bolsonaro não se separam: as faixas do percentil 5 ao 95 se sobrepõem.
+
+Dois cuidados a mais, além de o índice descrever condições do país e não mérito. Primeiro, dez itens são tendências longas, como expectativa de vida, mortalidade infantil e PIB per capita, que sobem quase todo ano e favorecem quem governa depois.
+
+Segundo, em dois itens do V-Dem (Varieties of Democracy, "variedades de democracia") o valor de 2024 é a própria baliza "melhor" de 1995-2024. São restrições judiciais ao Executivo (v2x_jucon), em 0,954, e corrupção política (v2x_corr), em 0,438. Parte do salto das Instituições em Lula 3 é o teto da escala.
+
+São 35 itens em 12 áreas, de 0 (pior de 1995-2024) a 100 (melhor). A direção vem de artigo Q1 com DOI (Q1 é o quarto superior do SJR 2024, ranking de periódicos). Homicídio, inflação e dívida são invertidos. O peso igual por área é juízo declarado; o ajuste por importância efetiva não convergiu.
+
+Os 10.000 sorteios (semente 20261020) dão a faixa do percentil 5 ao 95. Cada mandato é uma vela de pregão (*candle*). FHC abre em 1995, sem 1994; Temer abre em 71,8 (2015), não no 57,5 de 2016, porque a posse foi em agosto.
+
+<MandatosChart
+  dataset="raiox-indice-por-mandato"
+  mode="indice"
+  title="No índice, Dilma, Temer e Bolsonaro não se separam; os extremos, sim"
+  subtitle="Índice composto de 0 a 100 (versão N); cada vela de pregão é um mandato."
+  description="Faixa de 6 governos de 1994 a 2024, com seis candles acima dela, um para cada mandato, em ordem: FHC, corpo cheio, abre em 30,2, fecha em 33,6, mínimo 30,2, máximo 42,4, faixa dos pesos de 27,1 a 40,2; Lula 1-2, corpo cheio, abre em 33,6, fecha em 75,4, mínimo 32,8, máximo 75,4, faixa dos pesos de 67,6 a 81,6; Dilma, corpo vazado, abre em 75,4, fecha em 57,5, mínimo 57,5, máximo 77,2, faixa dos pesos de 44,4 a 69,0; Temer, corpo vazado, abre em 71,8, fecha em 58,8, mínimo 57,5, máximo 71,8, faixa dos pesos de 46,7 a 70,6; Bolsonaro, corpo cheio, abre em 58,8, fecha em 63,9, mínimo 53,0, máximo 64,4, faixa dos pesos de 51,8 a 73,4; Lula 3, corpo cheio, abre em 63,9, fecha em 83,0, mínimo 63,9, máximo 83,0, faixa dos pesos de 71,7 a 91,3. Conclusão: O meio da tabela não se separa sob 10.000 sorteios de pesos; a primeira e a última posições, sim."
+  source="FHC abre em 1995: não há 1994 · Lula 3 vai até 2024, último ano do índice · ulissesflores.com/raio-x"
+/>
+
+Cada vela tem um corpo e, ao lado, um colchete de ouro. O corpo cheio fechou acima da abertura; o vazado, só contorno, abaixo, como em Dilma e Temer. Os colchetes de Dilma, Temer e Bolsonaro se sobrepõem.
+
+| Mandato | Abre | Fecha | Máx. | Mín. | p5 | p95 | Lugar | Mantém o lugar (sorteios) |
+|---|---|---|---|---|---|---|---|---|
+| FHC | 30,2 | 33,6 | 42,4 | 30,2 | 27,1 | 40,2 | 6º | 100% |
+| Lula 1-2 | 33,6 | 75,4 | 75,4 | 32,8 | 67,6 | 81,6 | 2º | 81% |
+| Dilma | 75,4 | 57,5 | 77,2 | 57,5 | 44,4 | 69,0 | 5º | 61% |
+| Temer | 71,8 | 58,8 | 71,8 | 57,5 | 46,7 | 70,6 | 4º | 72% |
+| Bolsonaro | 58,8 | 63,9 | 64,4 | 53,0 | 51,8 | 73,4 | 3º | 64% |
+| Lula 3 | 63,9 | 83,0 | 83,0 | 63,9 | 71,7 | 91,3 | 1º | 88% |
+
+**Desde o Plano Real, só a primeira e a última posições se separam nos sorteios; o índice descreve o país, não o mérito do governo.**
+
+Sobe: Trabalho vai de 14,9 a 84,1 em Lula 1-2 e fecha Lula 3 em 100,0. Cai: Instituições vai de 76,8 a 34,1 em Dilma e de 76,4 (2015) a 21,5 em Temer. Repete: Fiscal e vulnerabilidade sobe a 71,0 no fechamento de Lula 1-2 e cai em todo mandato seguinte, até 38,5 em 2024. A figura traz as notas de cada área.
+
+<ArticleFigure
+  src="/artigos/raio-x-do-brasil-por-governo/areas.png"
+  alt="Tabela de 13 linhas (o índice e 12 áreas) por 6 mandatos, de FHC a Lula 3. Em cada célula, a nota de 0 a 100 na abertura e no fechamento do mandato e uma régua com os dois pontos: azul quando fechou acima da abertura, dourado quando fechou abaixo. Educação e Moradia não têm nota no fechamento de nenhum mandato."
+  width="1760"
+  height="1494"
+  caption="O índice por área em cada mandato, nota na abertura e no fechamento: o índice descreve condições do país, não mérito de governo."
+  credit="Repositório brazil-governments-factcheck, output/figures/areas.pt-BR.svg · ulissesflores.com/raio-x"
+/>
+
+Faltam 1996, 1998 e 2000 (menos de 70% dos itens com dado). Cinco itens param em 2014-2015, porque a PNAD Contínua não se sobrepõe à antiga e o pré-registro proíbe encadear. Em 2025 e 2026 só existe o último valor carregado, que não é o índice; por isso Lula 3 fecha em 2024.
+
+## O piso institucional descreve o país; a causa fica em aberto
+
+A independência dos poderes já está no índice, em quatro medidas do V-Dem v16. O V-Dem agrega por um modelo de medição a codificação de especialistas, publica limites de incerteza, e cada versão reestima a série inteira.
+
+| Item (0 a 1) | 1994 | 2002 | 2010 | 2016 | 2018 | 2022 | 2024 | Balizas de 1995-2024 (pior e melhor) |
+|---|---|---|---|---|---|---|---|---|
+| Restrições judiciais ao Executivo (v2x_jucon) | 0,825 | 0,825 | 0,93 | 0,872 | 0,859 | 0,827 | 0,954 | 0,806 e 0,954 |
+| Restrições legislativas (v2xlg_legcon) | 0,831 | 0,831 | 0,902 | 0,83 | 0,792 | 0,822 | 0,933 | 0,778 e 0,937 |
+| Democracia liberal (v2x_libdem) | 0,707 | 0,721 | 0,776 | 0,653 | 0,608 | 0,54 | 0,712 | 0,528 e 0,783 |
+| Corrupção política (v2x_corr; menor é melhor) | 0,511 | 0,545 | 0,494 | 0,535 | 0,535 | 0,545 | 0,438 | 0,546 e 0,438 |
+
+O editor pediu um indicador depois da publicação do índice. É o v2x_freexp_altinf, *Freedom of Expression and Alternative Sources of Information* ("liberdade de expressão e fontes alternativas de informação"). Ele é contexto no terminal e não pontua (EMENDA-13, 25 de outubro de 2026). Incluir um item depois de ver o resultado é o que o pré-registro impede.
+
+Estimativa pontual: 0,924 em 1995, 0,931 em 2010, 0,809 em 2016, 0,704 em 2022, 0,923 em 2024. A democracia liberal já contém a liberdade de expressão.
+
+A hipótese do editor está na EMENDA-12, de 25 de outubro de 2026, registrada antes de buscar. Para ele, a autonomia do Banco Central e os limites legais de gasto "de certa forma impedem de ficar pior". Este artigo não a afirma nem a testa: só estudos revisados por pares falam.
+
+Rodada 11: 54 consultas, 7.487 trabalhos devolvidos, 43 incluídos. Nos quatro episódios novos passaram 1, 4, 1 e 0; independência judicial, nenhum.
+
+Palavras do episódio no título ou nas frases de resultado: nenhuma. Os estudos que passaram, por episódio:
+
+- Autonomia: *Alice Amsden* (Development and Change, 2008), texto com o nome da autora no título.
+- Regras fiscais: *The effects of intergovernmental transfers on the local fiscal incentives of Brazilian municipalities* ("Efeitos das transferências intergovernamentais sobre os incentivos fiscais municipais", 2024); *Intergovernmental transfers and fiscal performance: evidence from Brazil* ("Transferências intergovernamentais e desempenho fiscal: evidência do Brasil", 2026); *Municipal Secession and Transfer Incentives in Brazil* ("Secessão municipal e incentivos de transferência no Brasil", 2026); *Sales vs. profit-based royalties: Evidence from lithium in LAC countries* ("Royalties sobre vendas versus sobre lucro: evidência do lítio na América Latina e Caribe", 2025).
+- Imprensa: *"Yes, I Saw It – But Didn't Read It…"* ("Sim, eu vi — mas não li…", 2020).
+
+Passaram por nomear um desenho de identificação (o método que o estudo usa para separar efeito de coincidência), não por medir o episódio.
+
+**A hipótese fica em aberto na literatura Q1 com desenho de identificação sobre o Brasil.**
+
+O que este artigo traz é descrição: a inflação de dezembro a dezembro e a série da dívida. A causa fica com o leitor.
+
+## O sinal muda conforme o vizinho que se escolhe
+
+A conta é a mesma nos três lados: média dos anos do mandato, mesma série e fonte, sem soma e sem nota. A comparação com o mundo começa em 1995; ficam de fora os cinco governos omitidos e também Costa e Silva, Medici e Itamar. Crescimento real do PIB, em % ao ano:
+
+| Mandato | Brasil | América Latina e Caribe | Renda média-alta |
+|---|---|---|---|
+| FHC | 2,4 | 2,3 | 4,7 |
+| Lula 1-2 | 4,1 | 3,8 | 7,2 |
+| Dilma | 0,4 | 1,7 | 5,4 |
+| Temer | 1,6 | 1,4 | 5,2 |
+| Bolsonaro | 1,4 | 1,2 | 3,7 |
+| Lula 3 | 3,0 | 2,3 | 4,3 |
+
+**No crescimento, só Dilma fica abaixo da América Latina e Caribe; todos ficam abaixo da renda média-alta.**
+
+Na expectativa de vida, o vizinho muda o sinal. Bolsonaro, com 74,6 anos, fica acima da América Latina e Caribe (73,7) e abaixo da renda média-alta (75,2). Lula 3, com 75,9, fica a par da renda média-alta (76,0) e acima da outra (75,7).
+
+## O Plano Real entra no filtro e sai com zero
+
+Esta camada não mede se uma política funcionou. Entra artigo com DOI registrado no Crossref, de periódico Q1, com Brasil no título ou no resumo e com desenho de identificação nomeado no resumo.
+
+De 7.487 trabalhos, 2.909 saíram sem DOI e 2.625 por estarem fora do SJR 2024. Outros cortes tiraram o resto, e ficaram 43 estudos para os 27 episódios. Quem só menciona o desenho passa: cortar à mão seria juízo meu.
+
+A rodada 10 tinha 6.497 trabalhos e 38 incluídos; quatro episódios institucionais entraram em 25 de outubro de 2026 por emenda datada. Contar estudos por mandato mediria anos decorridos e episódios declarados, nunca a qualidade do governo; não conto.
+
+<CountryBarsChart
+  dataset="raiox-estudos-por-episodio"
+  title="43 estudos Q1 em 27 episódios: 10 episódios ficam sem nenhum"
+  subtitle="Um mesmo estudo pode valer em dois episódios: as barras somam 47."
+  description="Gráfico de 27 barras horizontais em 2 blocos. Bloco Episódios com estudo Q1 que passou o filtro: Desmatamento 04-24, 8 estudos; Bolsa Família 2001-, 6 estudos; Salário mínimo 2005-, 4 estudos; Commodities 03-11, 4 estudos; Previdência 2019, 4 estudos; Bolsa Família 2023, 4 estudos; Regras fiscais, 4 estudos; Recessão 2014-16, 2 estudos; Reforma trabalhista, 2 estudos; Dívida pública 2014-, 2 estudos; Minha Casa 2009-, 1 estudo; Pandemia 2020-21, 1 estudo; Pix 2020-21, 1 estudo; Arcabouço fiscal, 1 estudo; Reservas e FMI 05-08, 1 estudo; Autonomia do BC, 1 estudo; Imprensa 1995-, 1 estudo. Bloco Nenhum estudo passou o filtro: Plano Real, 0 (ausência declarada); Metas de inflação, 0 (ausência declarada); Resp. Fiscal 2000, 0 (ausência declarada); Crise de 2008, 0 (ausência declarada); BNDES 2008-14, 0 (ausência declarada); Desonerações 11-14, 0 (ausência declarada); Lava Jato 2014-18, 0 (ausência declarada); Teto de gastos 2016, 0 (ausência declarada); Dívida externa 1994-, 0 (ausência declarada); Indep. judicial, 0 (ausência declarada). Conclusão: dez dos 27 episódios não têm nenhum estudo que tenha passado o filtro."
+  source="Crossref, SJR 2024 e resumos do OpenAlex · filtro pré-registrado · ulissesflores.com/raio-x"
+/>
+
+Repare no bloco de baixo, sem barra nenhuma: cada episódio sem estudo tem um zero escrito. No Plano Real, 400 trabalhos lidos, de 10.734 devolvidos; em dívida externa, reservas e vulnerabilidade desde 1994, 377, de 556. Nenhum foi incluído. Zero neste filtro não é zero na literatura.
+
+**De 7.487 trabalhos, 43 passaram o filtro; o Plano Real e a dívida externa ficaram com zero.**
+
+Onde há estudo, a causa só aparece pela boca dele. Três exemplos:
+
+*Impact of the Bolsa Família program on food availability of low-income Brazilian families: a quasi experimental study* ("Impacto do programa Bolsa Família na disponibilidade de alimentos de famílias brasileiras de baixa renda: um estudo quase-experimental", BMC Public Health, 2016, [10.1186/s12889-016-3486-y](https://doi.org/10.1186/s12889-016-3486-y)): *"higher food expenditure, higher availability of fresh foods and culinary ingredients"* ("maior gasto com alimentos, maior disponibilidade de alimentos frescos e de ingredientes de cozinha").
+
+*Deforestation slowdown in the Brazilian Amazon: prices or policies?* ("A desaceleração do desmatamento na Amazônia: preços ou políticas?", Environment and Development Economics, 2015, [10.1017/s1355770x15000078](https://doi.org/10.1017/s1355770x15000078)): *"After controlling for price effects, we find that conservation policies implemented beginning in 2004 and 2008 significantly contributed to the curbing of deforestation."* ("Depois de controlar o efeito dos preços, encontramos que as políticas de conservação a partir de 2004 e de 2008 contribuíram de forma significativa para conter o desmatamento.")
+
+*Social Security Reforms, Retirement and Sectoral Decisions* ("Reformas da previdência, aposentadoria e decisões por setor", International Economic Review, 2025, [10.1111/iere.70083](https://doi.org/10.1111/iere.70083)): *"Calibrated to Brazil, the model shows that unifying pension systems and raising the minimum retirement age reduce the pension deficit by nearly 40 percent [...]"* ("Calibrado para o Brasil, o modelo mostra que unificar os sistemas e elevar a idade mínima reduzem o déficit previdenciário em quase 40% [...]"). Calibrado é ajustado aos dados do país: a conta é do estudo.
+
+## A manchete acertou o saldo e trocou o nome do ativo
+
+Em 21 e 22 de outubro de 2026, seis veículos publicaram o mesmo trio, US$ 407,1 bilhões, US$ 402 bilhões e US$ 5,1 bilhões (Estadão/Broadcast, NC News, Brasil em Folhas, Cardinot, Revista Oeste e O Antagonista, este citando o Estadão). Repetição não é segunda apuração.
+
+**Os US$ 5,1 bilhões de junho de 2026 são o número oficial da série 3685; os US$ 402 bilhões não são as reservas em caixa.**
+
+O Banco Central tem dois brutos, e eu nunca os somo. O restrito, série 3684, desde 1972, reúne empréstimos, títulos no exterior e crédito comercial. É o das manchetes: US$ 407,1 bilhões em junho de 2026, o maior valor nominal (em dólares correntes).
+
+O BPM6 (Manual de Balanço de Pagamentos, 6ª edição), série 25563, desde 2002, soma a esse total operações entre empresas do mesmo grupo e títulos domésticos em poder de quem não mora no país. Em junho de 2026 ele marca US$ 869,5 bilhões, o que o Banco Central chama de "a dívida externa brasileira".
+
+A líquida, série 3685, continua publicada. É a coluna M da Tabela 31 do Banco Central. Resulta do bruto restrito menos reservas, créditos no exterior e haveres de bancos (o que os bancos brasileiros têm depositado no exterior). Negativo é credor.
+
+Em junho de 2026 marca +5,1 bilhões, o primeiro positivo desde setembro de 2007 (17,0 bilhões); em dezembro de 2007 estava em -11,9 bilhões. A manchete acertou o número e o "primeira vez em 19 anos".
+
+Os US$ 402 bilhões, porém, não são o caixa da série 3546, que marcava 367,6 bilhões em junho de 2026: juntam reservas, créditos e haveres, que o Banco Central subtrai. A matéria diz que os créditos já entram.
+
+A razão sobre o PIB, série 11409, parou em fevereiro de 2026 e eu não a prolongo: 46,3% em dezembro de 1984, 32,7% em dezembro de 2002, -0,9% em setembro de 2025. A matéria diz que a líquida "está abaixo de 0,3% do PIB"; a conta é dela, eu não a calculei.
+
+<SeriesLinesChart
+  dataset="raiox-divida-externa"
+  title="A dívida externa líquida voltou ao positivo em jun/2026"
+  subtitle="Bruta, reservas e líquida, em US$ bilhões, de dez/1994 a set/2026."
+  description="Gráfico de 3 linhas em uma só escala, em US$ bilhões, de dezembro de 1994 a setembro de 2026, em ordem: Dívida bruta 407,1 (dívida externa bruta, em azul, começa em 148,3 em dez/1994); Reservas 362,8 (reservas internacionais, em cinza-claro tracejado, começa em 38,8 em dez/1994); Dívida líquida +5,1 (dívida externa líquida, em ouro, começa em 88,2 em dez/1994). Duas anotações em ouro: set/2007: último trimestre positivo; jun/2026: +5,1 bi. Conclusão: Dívida menos reservas não é a dívida líquida: o BCB subtrai também créditos no exterior e haveres de bancos."
+  source="BCB SGS 3684, 3546 e 3685 · dívidas até jun/2026, reservas até set/2026 · ulissesflores.com/raio-x"
+/>
+
+Na linha de ouro, a da dívida líquida, o valor começa acima de zero e cruza o zero em 2007. Volta a tocá-lo em junho de 2026. Os +5,1 bilhões de junho de 2026 não se comparam aos 46,3% do PIB de 1984: um é valor, o outro é razão. E o número se revisa: dezembro de 2025 saiu, na nota de janeiro de 2026, como estimativa de -17,2 bilhões e está na série em -8,7.
+
+Errata: a versão 1.0.0, de 23 de outubro de 2026, dizia que 2026 não tinha valor oficial e que a manchete fazia bruta menos reservas. As duas frases estavam erradas: a 3685 continua no ar e bate ao centavo com a Tabela 31. Corrigi em 24 de outubro.
+
+## O que eu faria com isso
+
+Eu não responderia qual governo foi melhor com essa imagem: ela não tem essa resposta. A pergunta do título só se responde depois de dizer o que se quer saber: condições do país ou mérito do governo.
+
+**Antes de encaminhar o próximo número, eu exigiria três nomes: a série, a janela e a conta.**
+
+Sem o nome da conta (média, variação real de dezembro a dezembro ou nível de um ano), a célula não é fato. Quem quiser refazer:
+
+```bash
+git clone https://github.com/ulissesflores/brazil-governments-factcheck
+cd brazil-governments-factcheck
+python3 run_all.py
+```
+
+Basta a biblioteca padrão do Python 3.11 ou mais nova; a execução termina em `run_all: OK`. Se der diferente, me mande: atualizo e credito.
+
+*Verificado em 25 de outubro de 2026 contra o repositório selado (DOI [10.5281/zenodo.23604103](https://doi.org/10.5281/zenodo.23604103)), a metodologia e as séries do Banco Central, IBGE, Ipea, Banco Mundial, OpenAlex, Crossref e SJR. No X, a colheita é uma amostra: o post mais antigo é de 18 de outubro de 2026, 19:42 UTC. Não apurei autoria nem intenção. Nenhum valor de 2026 foi calculado aqui.*
+
+## Fontes
+
+- Página com as séries, o placar e o índice: [economia.ulissesflores.com](https://economia.ulissesflores.com)
+- Repositório público, com dados, testes e cadeia de hash: [brazil-governments-factcheck](https://github.com/ulissesflores/brazil-governments-factcheck)
+- DOI do conceito, no Zenodo: [10.5281/zenodo.23604103](https://doi.org/10.5281/zenodo.23604103). Versão 1.0.0: [10.5281/zenodo.23604137](https://doi.org/10.5281/zenodo.23604137)
+- Metodologia em português: [METHODOLOGY.md](https://github.com/ulissesflores/brazil-governments-factcheck/blob/main/docs/pt-BR/METHODOLOGY.md)
+- Banco Central, SGS 433, IPCA: [série 433](https://api.bcb.gov.br/dados/serie/bcdata.sgs.433/dados?formato=json)
+- Banco Central, SGS 3684, dívida externa bruta no conceito restrito: [série 3684](https://api.bcb.gov.br/dados/serie/bcdata.sgs.3684/dados?formato=json)
+- Banco Central, SGS 25563, dívida externa bruta no conceito BPM6: [série 25563](https://api.bcb.gov.br/dados/serie/bcdata.sgs.25563/dados?formato=json)
+- Banco Central, SGS 3685, dívida externa líquida em dólares: [série 3685](https://api.bcb.gov.br/dados/serie/bcdata.sgs.3685/dados?formato=json)
+- Banco Central, SGS 3546, reservas internacionais no conceito caixa: [série 3546](https://api.bcb.gov.br/dados/serie/bcdata.sgs.3546/dados?formato=json)
+- Banco Central, SGS 11409, dívida externa líquida sobre o PIB, descontinuada em fevereiro de 2026: [série 11409](https://api.bcb.gov.br/dados/serie/bcdata.sgs.11409/dados?formato=json)
+- Banco Mundial, pobreza e desigualdade: [PIP](https://pip.worldbank.org/)
+- Banco Mundial, indicadores de desenvolvimento: [World Development Indicators](https://data.worldbank.org/)
+- IBGE: [ibge.gov.br](https://www.ibge.gov.br/)
+- Ipea, séries históricas: [Ipeadata](https://www.ipeadata.gov.br/)
+- Catálogo de trabalhos: [OpenAlex](https://openalex.org/). Registro de DOI: [Crossref](https://www.crossref.org/). Ranking de periódicos: [SJR](https://www.scimagojr.com/)
+- Post no X com a imagem e a legenda, 18 de outubro de 2026: [@ffrancisconl](https://x.com/ffrancisconl/status/2111905813992513673)
+- Manchete do Estadão/Broadcast, 21 de outubro de 2026: ["Dívida externa cresce mais que reservas e Brasil volta a ser devedor internacional após 19 anos"](https://www.estadao.com.br/economia/divida-externa-cresce-mais-que-reservas-e-brasil-volta-a-ser-devedor-internacional-apos-19-anos/)
+- V-Dem v16 (Varieties of Democracy), pacote `vdemdata`, tag V16
+- Emendas 12 e 13 do pré-registro, seladas em 25 de outubro de 2026 na cadeia `data/raw/preregistro/manifest.jsonl` do [repositório](https://github.com/ulissesflores/brazil-governments-factcheck)

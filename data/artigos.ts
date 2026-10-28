@@ -52,6 +52,42 @@ export function localizeArtigo(artigo: Artigo, locale: Locale): Pick<Artigo, 'ti
 
 export const artigos: readonly Artigo[] = [
   {
+    slug: 'raio-x-do-brasil-por-governo',
+    title: 'Qual foi o melhor governo do Brasil? O que os dados públicos respondem e o que não respondem',
+    summary: 'Os 57 números do infográfico "qual foi o melhor governo do Brasil" contra os dados públicos: 29 não se reproduzem, 17 sob nenhuma conta, e cinco governos (34,3% dos meses desde 1964) ficaram de fora. Código e dados abertos.',
+    date: '2026-10-24',
+    tags: ['brasil', 'economia', 'fact-check', 'metodologia', 'estatisticas', 'whatsapp'],
+    hero: {
+      width: 2400,
+      height: 1260,
+      locales: {
+        'pt-br': { src: '/artigos/raio-x-do-brasil-por-governo/hero.png', og: '/artigos/raio-x-do-brasil-por-governo/hero-og.jpg' },
+        'en': { src: '/artigos/raio-x-do-brasil-por-governo/hero-en.png', og: '/artigos/raio-x-do-brasil-por-governo/hero-en-og.jpg' },
+        'es': { src: '/artigos/raio-x-do-brasil-por-governo/hero-es.png', og: '/artigos/raio-x-do-brasil-por-governo/hero-es-og.jpg' },
+        'it': { src: '/artigos/raio-x-do-brasil-por-governo/hero-it.png', og: '/artigos/raio-x-do-brasil-por-governo/hero-it-og.jpg' },
+        'he': { src: '/artigos/raio-x-do-brasil-por-governo/hero-he.png', og: '/artigos/raio-x-do-brasil-por-governo/hero-he-og.jpg' },
+      },
+    },
+    i18n: {
+      en: {
+        title: 'Which government was Brazil\'s best? What the public data answer, and what they don\'t',
+        summary: 'The 57 numbers of the infographic "which was Brazil\'s best government" against public data: 29 do not reproduce, 17 under no calculation, and five governments (34.3% of the months since 1964) were left out. Open code and data.',
+      },
+      es: {
+        title: '¿Cuál fue el mejor gobierno de Brasil? Lo que responden los datos públicos y lo que no responden',
+        summary: 'Los 57 números del infográfico "cuál fue el mejor gobierno de Brasil" frente a los datos públicos: 29 no se reproducen, 17 con ningún cálculo, y cinco gobiernos (34,3 % de los meses desde 1964) quedaron fuera. Código y datos abiertos.',
+      },
+      it: {
+        title: 'Qual è stato il miglior governo del Brasile? Che cosa rispondono i dati pubblici e che cosa no',
+        summary: 'I 57 numeri dell\'infografica "qual è stato il miglior governo del Brasile" contro i dati pubblici: 29 non si riproducono, 17 con nessun calcolo, e cinque governi (il 34,3% dei mesi dal 1964) sono rimasti fuori. Codice e dati aperti.',
+      },
+      he: {
+        title: 'איזו הייתה הממשלה הטובה ביותר של ברזיל? מה שהנתונים הציבוריים משיבים ומה שאינם משיבים',
+        summary: '57 המספרים באינפוגרפיקה "איזו הייתה הממשלה הטובה ביותר של ברזיל" מול הנתונים הציבוריים: 29 אינם משוחזרים, 17 בשום חישוב, וחמש ממשלות (34.3% מהחודשים מאז 1964) נשארו בחוץ. קוד ונתונים פתוחים.',
+      },
+    },
+  },
+  {
     slug: 'pesquisas-eleitorais-2026',
     title: 'As pesquisas erram contra a direita há 24 anos. No 2º turno, não: o que isso diz sobre domingo',
     summary:
