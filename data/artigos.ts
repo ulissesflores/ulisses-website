@@ -52,6 +52,42 @@ export function localizeArtigo(artigo: Artigo, locale: Locale): Pick<Artigo, 'ti
 
 export const artigos: readonly Artigo[] = [
   {
+    slug: 'claude-ameaca-policia-sp',
+    title: 'Quatro dias depois de pedir a uma inteligência artificial um plano para matar o Presidente da República, um empresário recebeu policiais em casa, em São Paulo',
+    summary: 'Um termo da Polícia Civil de SP põe policiais na porta de um usuário quatro dias depois de uma conversa com o Claude. O papel não diz quem avisou; os Termos da Anthropic dizem que ela pode.',
+    date: '2026-10-31',
+    tags: ['ia', 'claude', 'anthropic', 'privacidade', 'brasil', 'fact-check', 'salvaguardas'],
+    hero: {
+      width: 2400,
+      height: 1260,
+      locales: {
+        'pt-br': { src: '/artigos/claude-ameaca-policia-sp/hero.png', og: '/artigos/claude-ameaca-policia-sp/hero-og.jpg' },
+        'en': { src: '/artigos/claude-ameaca-policia-sp/hero-en.png', og: '/artigos/claude-ameaca-policia-sp/hero-en-og.jpg' },
+        'es': { src: '/artigos/claude-ameaca-policia-sp/hero-es.png', og: '/artigos/claude-ameaca-policia-sp/hero-es-og.jpg' },
+        'it': { src: '/artigos/claude-ameaca-policia-sp/hero-it.png', og: '/artigos/claude-ameaca-policia-sp/hero-it-og.jpg' },
+        'he': { src: '/artigos/claude-ameaca-policia-sp/hero-he.png', og: '/artigos/claude-ameaca-policia-sp/hero-he-og.jpg' },
+      },
+    },
+    i18n: {
+      en: {
+        title: 'Four days after asking an AI for a plan to kill Brazil\'s President, a businessman got a visit from police at his home in São Paulo',
+        summary: 'A São Paulo police record puts officers at a user\'s door four days after a chat with Claude. It doesn\'t say who tipped them off; Anthropic\'s Terms say it can.',
+      },
+      es: {
+        title: 'Cuatro días después de pedirle a una inteligencia artificial un plan para matar al presidente de Brasil, un empresario recibió a policías en su casa, en São Paulo',
+        summary: 'Un acta de la Polícia Civil de SP pone a policías en la puerta de un usuario cuatro días después de una conversación con Claude. El papel no dice quién avisó; los Términos de Anthropic dicen que la empresa puede.',
+      },
+      it: {
+        title: 'Quattro giorni dopo aver chiesto a un assistente di intelligenza artificiale un piano per uccidere il Presidente del Brasile, un imprenditore si è trovato la polizia in casa, a San Paolo',
+        summary: 'Un verbale della polizia di San Paolo mette gli agenti alla porta di un utente quattro giorni dopo una chat con Claude. Non dice chi li ha avvisati; i Termini di Anthropic dicono che l\'azienda può farlo.',
+      },
+      he: {
+        title: 'ארבעה ימים אחרי שביקש מבינה מלאכותית תוכנית להרוג את נשיא ברזיל, שוטרים הגיעו לביתו של איש עסקים בסאו פאולו',
+        summary: 'פרוטוקול של משטרת סאו פאולו מציב שוטרים בפתח ביתו של משתמש ארבעה ימים אחרי שיחה עם Claude. המסמך לא אומר מי הודיע; תנאי השימוש של Anthropic אומרים שהיא רשאית.',
+      },
+    },
+  },
+  {
     slug: 'raio-x-do-brasil-por-governo',
     title: 'Qual foi o melhor governo do Brasil? O que os dados públicos respondem e o que não respondem',
     summary: 'Os 57 números do infográfico "qual foi o melhor governo do Brasil" contra os dados públicos: 29 não se reproduzem, 17 sob nenhuma conta, e cinco governos (34,3% dos meses desde 1964) ficaram de fora. Código e dados abertos.',
