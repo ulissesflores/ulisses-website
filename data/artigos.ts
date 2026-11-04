@@ -88,6 +88,42 @@ export const artigos: readonly Artigo[] = [
     },
   },
   {
+    slug: 'pesquisa-causal-politicas-brasil',
+    title: 'O que a pesquisa científica já mediu de forma causal sobre as políticas econômicas do Brasil, e o que ficou sem medida?',
+    summary: 'Das 27 decisões de política econômica desde o Plano Real, só 7 têm estudo de revista que as meça, 4 sem ressalva; 10 não têm estudo nenhum. Também: quem decidia, o custeio por mandato e o que a pesquisa não mede.',
+    date: '2026-10-30',
+    tags: ['brasil', 'economia', 'metodologia', 'estatisticas', 'pesquisa'],
+    hero: {
+      width: 2400,
+      height: 1260,
+      locales: {
+        'pt-br': { src: '/artigos/pesquisa-causal-politicas-brasil/hero.png', og: '/artigos/pesquisa-causal-politicas-brasil/hero-og.jpg' },
+        'en': { src: '/artigos/pesquisa-causal-politicas-brasil/hero-en.png', og: '/artigos/pesquisa-causal-politicas-brasil/hero-en-og.jpg' },
+        'es': { src: '/artigos/pesquisa-causal-politicas-brasil/hero-es.png', og: '/artigos/pesquisa-causal-politicas-brasil/hero-es-og.jpg' },
+        'it': { src: '/artigos/pesquisa-causal-politicas-brasil/hero-it.png', og: '/artigos/pesquisa-causal-politicas-brasil/hero-it-og.jpg' },
+        'he': { src: '/artigos/pesquisa-causal-politicas-brasil/hero-he.png', og: '/artigos/pesquisa-causal-politicas-brasil/hero-he-og.jpg' },
+      },
+    },
+    i18n: {
+      en: {
+        title: 'What has scientific research already measured causally about Brazil\'s economic policies, and what was left unmeasured?',
+        summary: 'Of the 27 economic policy decisions since the Real Plan, only 7 have a journal study that measures them, 4 without caveat; 10 have none. Also: who had the power to decide, operating cost by term, and what research does not measure.',
+      },
+      es: {
+        title: '¿Qué ha medido la investigación científica de forma causal sobre las políticas económicas de Brasil, y qué quedó sin medir?',
+        summary: 'De las 27 decisiones de política económica desde el Plan Real, solo 7 tienen un estudio de revista que las mida, 4 sin reservas; 10 no tienen ninguno. También: quién decidía, el gasto por mandato y lo que la investigación no mide.',
+      },
+      it: {
+        title: 'Che cosa ha già misurato in modo causale la ricerca scientifica sulle politiche economiche del Brasile, e che cosa è rimasto senza misura?',
+        summary: 'Delle 27 decisioni di politica economica dal Plano Real, solo 7 hanno uno studio di rivista che le misuri, 4 senza riserve; 10 non ne hanno nessuno. Inoltre: chi decideva, il costo per mandato e ciò che la ricerca non misura.',
+      },
+      he: {
+        title: 'מה כבר מדד המחקר המדעי באופן סיבתי על המדיניות הכלכלית של ברזיל, ומה נשאר בלי מדידה?',
+        summary: 'מתוך 27 החלטות של מדיניות כלכלית מאז תוכנית הריאל, רק ל-7 יש מחקר בכתב עת שמודד אותן, ל-4 ללא הסתייגות; ל-10 אין מחקר כלל. וגם: מי החליט, ההוצאה השוטפת לפי כהונה ומה שהמחקר אינו מודד.',
+      },
+    },
+  },
+  {
     slug: 'raio-x-do-brasil-por-governo',
     title: 'Qual foi o melhor governo do Brasil? O que os dados públicos respondem e o que não respondem',
     summary: 'Os 57 números do infográfico "qual foi o melhor governo do Brasil" contra os dados públicos: 29 não se reproduzem, 17 sob nenhuma conta, e cinco governos (34,3% dos meses desde 1964) ficaram de fora. Código e dados abertos.',
