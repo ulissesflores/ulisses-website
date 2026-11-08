@@ -52,6 +52,42 @@ export function localizeArtigo(artigo: Artigo, locale: Locale): Pick<Artigo, 'ti
 
 export const artigos: readonly Artigo[] = [
   {
+    slug: 'dado-faltante-teste-do-prefeito',
+    title: 'O prefeito melhora a cidade além do acaso? Dado faltando na troca de prefeito faz o teste dizer que sim',
+    summary: 'Um teste da Science Advances diz que o prefeito importa em 89,4% das vezes em que ele não importa, se faltar um período de dado na troca. O certo seria 5%.',
+    date: '2026-11-07',
+    tags: ['brasil', 'metodologia', 'estatisticas', 'pesquisa', 'fact-check'],
+    hero: {
+      width: 2400,
+      height: 1260,
+      locales: {
+        'pt-br': { src: '/artigos/dado-faltante-teste-do-prefeito/hero.png', og: '/artigos/dado-faltante-teste-do-prefeito/hero-og.jpg' },
+        'en': { src: '/artigos/dado-faltante-teste-do-prefeito/hero-en.png', og: '/artigos/dado-faltante-teste-do-prefeito/hero-en-og.jpg' },
+        'es': { src: '/artigos/dado-faltante-teste-do-prefeito/hero-es.png', og: '/artigos/dado-faltante-teste-do-prefeito/hero-es-og.jpg' },
+        'it': { src: '/artigos/dado-faltante-teste-do-prefeito/hero-it.png', og: '/artigos/dado-faltante-teste-do-prefeito/hero-it-og.jpg' },
+        'he': { src: '/artigos/dado-faltante-teste-do-prefeito/hero-he.png', og: '/artigos/dado-faltante-teste-do-prefeito/hero-he-og.jpg' },
+      },
+    },
+    i18n: {
+      en: {
+        title: 'Does the mayor improve the city beyond chance? Missing data at the change of mayor makes the test say yes',
+        summary: 'A Science Advances test says mayors matter in 89.4% of cases where they do not, if a period of data is missing at the change. The right rate is 5%.',
+      },
+      es: {
+        title: '¿Mejora el alcalde la ciudad más allá del azar? Un dato faltante en el cambio de alcalde hace que la prueba diga que sí',
+        summary: 'Una prueba de Science Advances dice que el alcalde importa en el 89,4% de los casos en que no importa, si falta un período de dato en el cambio. Debería ser 5%.',
+      },
+      it: {
+        title: 'Il sindaco migliora la città oltre il caso? Un dato mancante al cambio di sindaco fa dire di sì al test',
+        summary: 'Un test di Science Advances dice che il sindaco conta nell\'89,4% dei casi in cui non conta, se manca un periodo di dati al cambio. Il giusto sarebbe il 5%.',
+      },
+      he: {
+        title: 'האם ראש העירייה משפר את העיר מעבר למקרה? נתונים חסרים בהחלפת ראש העירייה גורמים למבחן לומר שכן',
+        summary: 'מבחן מ-Science Advances אומר שראש העירייה חשוב ב-89.4% מהפעמים שבהן הוא לא חשוב, אם חסרה תקופה של נתון בהחלפה. הנכון: 5%.',
+      },
+    },
+  },
+  {
     slug: 'claude-ameaca-policia-sp',
     title: 'Quatro dias depois de pedir a uma inteligência artificial um plano para matar o Presidente da República, um empresário recebeu policiais em casa, em São Paulo',
     summary: 'Um termo da Polícia Civil de SP põe policiais na porta de um usuário quatro dias depois de uma conversa com o Claude. O papel não diz quem avisou; os Termos da Anthropic dizem que ela pode.',
