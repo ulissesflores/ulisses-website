@@ -78,7 +78,7 @@ describe('llms.txt — LLM SEO Integrity (Lote 22)', () => {
 
   // Mesmo gate para os dois registros manuais novos, lidos pelo mesmo tipo de regex. A URL do
   // paper é a do idioma original ("Grounding Doesn't Pay" tem apóstrofo — o tropeço documentado acima).
-  it('lista os 4 papers de data/research.ts pela URL do idioma original e os 11 software pelo DOI de conceito', () => {
+  it('lista os 7 papers de data/research.ts pela URL do idioma original e os 11 software pelo DOI de conceito', () => {
     const content = readFileSync(llmsPath, 'utf-8');
     const papersAusentes = researchPapers
       .map((p) => paperUrl(p, p.language))

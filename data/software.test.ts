@@ -26,7 +26,12 @@ describe('data/software.ts — repositórios com DOI', () => {
     expect(software.length).toBe(11);
     expect(new Set(software.map((s) => s.repo)).size).toBe(11);
     const paperRepos = new Set(researchPapers.map((p) => p.repository));
-    expect(software.filter((s) => paperRepos.has(s.url)).map((s) => s.repo)).toEqual([]);
+    // Exceção nominal: o repositório do ASP é a skill (software) E o repositório companheiro da série
+    // de 3 relatórios `Codex Hash Research Report 2026-01..03` (2026-11-21); cada objeto tem o seu DOI.
+    const serieDoRepositorio = new Set(['anticipating-shadow-points']);
+    expect(
+      software.filter((s) => paperRepos.has(s.url) && !serieDoRepositorio.has(s.repo)).map((s) => s.repo),
+    ).toEqual([]);
   });
 
   it('DOI de conceito e de versão: formato real, distintos, únicos entre os itens', () => {

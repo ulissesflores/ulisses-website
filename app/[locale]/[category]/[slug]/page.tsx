@@ -96,6 +96,12 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
               citation_publication_date: scholarDate(paper.publishedAt),
               ...(pdf ? { citation_pdf_url: `${upkfMeta.primaryWebsite}${pdf.path}` } : {}),
               ...(paper.doi ? { citation_doi: paper.doi.value } : {}),
+              ...(paper.reportNumber
+                ? {
+                    citation_technical_report_number: paper.reportNumber,
+                    citation_technical_report_institution: AUTHOR.affiliation,
+                  }
+                : {}),
             }
           : undefined,
     };

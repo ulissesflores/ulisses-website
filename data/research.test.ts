@@ -26,9 +26,9 @@ const ROOT = join(import.meta.dirname, '..');
 const PDF_MAX_BYTES = 5 * 1024 * 1024;
 
 describe('data/research.ts — registro dos papers', () => {
-  it('tem 4 papers com slugs únicos', () => {
-    expect(researchPapers.length).toBe(4);
-    expect(new Set(researchPapers.map((p) => p.slug)).size).toBe(4);
+  it('tem 7 papers com slugs únicos', () => {
+    expect(researchPapers.length).toBe(7);
+    expect(new Set(researchPapers.map((p) => p.slug)).size).toBe(7);
   });
 
   it('todo locale em `bodies` tem corpo em content/research/<slug>/, e o original está entre eles', () => {
@@ -121,12 +121,12 @@ describe('data/research.ts — registro dos papers', () => {
     expect(new Set(dois).size).toBe(dois.length);
   });
 
-  it('datas ISO, updatedAt >= publishedAt, versão semver, licença do texto com URL', () => {
+  it('datas ISO, updatedAt >= publishedAt, versão numérica (X.Y ou X.Y.Z), licença do texto com URL', () => {
     for (const p of researchPapers) {
       expect(p.publishedAt, p.slug).toMatch(/^\d{4}-\d{2}-\d{2}$/);
       expect(p.updatedAt, p.slug).toMatch(/^\d{4}-\d{2}-\d{2}$/);
       expect(p.updatedAt >= p.publishedAt, `${p.slug}: updatedAt antes de publishedAt`).toBe(true);
-      expect(p.version, p.slug).toMatch(/^\d+\.\d+\.\d+$/);
+      expect(p.version, p.slug).toMatch(/^\d+\.\d+(\.\d+)?$/);
       expect(p.textLicense.url, p.slug).toMatch(/^https:\/\//);
       for (const u of p.updates) {
         expect(u.date >= p.publishedAt, `${p.slug}: correção anterior à publicação`).toBe(true);
